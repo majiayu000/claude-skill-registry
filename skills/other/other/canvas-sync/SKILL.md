@@ -1,7 +1,8 @@
 ---
 name: canvas-sync
 description: "Synchronize canvas state across team sessions via git. Ensures all team members see the same product knowledge."
-instruction_budget: 8
+metadata:
+  instruction_budget: "8"
 ---
 
 # Canvas Sync

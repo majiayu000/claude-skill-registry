@@ -209,6 +209,7 @@ Read [references/ol-wave-integration.md](references/ol-wave-integration.md) when
 
 ## References
 
+- **Executable acceptance:** [references/swarm.feature](references/swarm.feature) — wave-validity gate, fresh-context workers, conflict-free ownership, results+cleanup (soc-qk4b)
 - **Local Mode Details:** `skills/swarm/references/local-mode.md`
 - **Validation Contract:** `skills/swarm/references/validation-contract.md`
 

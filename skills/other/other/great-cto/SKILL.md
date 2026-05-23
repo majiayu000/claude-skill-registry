@@ -30,6 +30,9 @@ pipeline gets bypassed.
 | Play Store / App Store / iOS / Android release | `mobile-store-reviewer` |
 | API contract: OpenAPI, GraphQL schema, webhook signatures | `api-platform-reviewer` |
 | Voice/IVR/telephony, Twilio, recording-consent, TCPA | `voice-ai-reviewer` |
+| GDPR, EU AI Act, NIS2, EU data residency, DSGVO, data subject rights, DPO, DPIA, cookie consent, ePrivacy | `gdpr-reviewer` |
+| CCPA, CPRA, US state privacy, FTC Act, do not sell, California residents, COPPA, GLBA | `us-privacy-reviewer` |
+| DPDPA, India personal data, DPDPA 2023, Aadhaar, RBI data localisation, MeitY, Indian users | `dpdpa-reviewer` |
 | Clinical / SaMD / FDA / FHIR / PHI / HIPAA | `ai-clinical-reviewer`, `fda-reviewer` |
 | Wearable telemetry, HealthKit, Health Connect, Garmin, Samsung Health, fitness AI, mental health AI, nutrition AI, supplement AI, physician HITL | `digital-health-reviewer` |
 | Lending, ECOA, FCRA, NMLS, adverse action | `lending-credit-reviewer` |

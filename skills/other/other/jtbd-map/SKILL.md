@@ -1,7 +1,8 @@
 ---
 name: jtbd-map
 description: "Map user Jobs to be Done across functional, emotional, and social dimensions. Based on Christensen's JTBD theory."
-instruction_budget: 6
+metadata:
+  instruction_budget: "6"
 ---
 
 # Jobs to be Done Mapping

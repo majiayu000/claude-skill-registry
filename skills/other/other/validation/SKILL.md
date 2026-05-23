@@ -118,6 +118,7 @@ See [references/troubleshooting.md](references/troubleshooting.md).
 
 ## Reference Documents
 
+- [references/validation.feature](references/validation.feature) — Executable spec: criterion→test roll-up, strict delegation, verdict.json, strict-surface blocking (soc-qk4b.2)
 - [references/dag.md](references/dag.md) — executable workflow, gate detail, blocking conditions, phase summary format, phase budgets, expensive-command policy
 - [references/per-criterion-rubric.md](references/per-criterion-rubric.md) — per-criterion verdict rubric and runner contract
 - [references/step-1.8-behavioral-validation.md](references/step-1.8-behavioral-validation.md) — STEP 1.8 holdout + agent-spec evaluator council

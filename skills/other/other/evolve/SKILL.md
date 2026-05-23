@@ -223,7 +223,10 @@ For confirmed learnings, use atomic rewrite strategy:
    - `expires_at`: current date + `learning-expiry-days` (default: 30) (ISO 8601)
 5. **Verify write**: Read back the first line of the written file to confirm valid JSON. If read-back fails or is not valid JSON, report error to user.
 6. **Prune:** remove entries where `expires_at` < current date OR `confidence` <= 0.0
-7. **Consolidate duplicates:** if same `type` + `subject` appears more than once, keep the entry with highest confidence
+7. **Consolidate duplicates (NULL-SUBJECT SAFE):** if same `type` + `subject` appears more than once
+   AND `subject` is a non-empty string, keep the entry with highest confidence.
+   Entries with null/empty/missing `subject` are NEVER collapsed — each is keyed by its unique `id`
+   and always preserved. (Fix for issue #284: empty-subject dedupe collapse.)
 8. Write entire result back to `.orchestrator/metrics/learnings.jsonl` with `>` (atomic rewrite, NOT append `>>`)
 9. **Vault mirror (conditional):** Check `$CONFIG."vault-integration".enabled` via jq. If the field is missing or `false`, skip this step entirely — skill behavior is unchanged.
 
@@ -316,7 +319,8 @@ Use the same atomic rewrite strategy as Phase 3, Step 3.5:
    - **Delete:** remove selected entries
    - **Extend:** reset expires_at to current date + `learning-expiry-days`
 3. Prune entries where `expires_at` < current date OR `confidence` <= 0.0
-4. Consolidate duplicates (same type + subject): keep highest confidence
+4. Consolidate duplicates (same `type` + non-empty `subject`): keep highest confidence.
+   Null-subject entries are preserved individually (keyed by `id`). See SKILL.md #284 fix note.
 5. Write entire result back with `>` (atomic rewrite)
 
 Report: "Updated N learnings. Total active: K."

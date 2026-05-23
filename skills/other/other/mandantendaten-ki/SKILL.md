@@ -113,3 +113,12 @@ Das Modell benötigt:
 ## Quellenpflicht
 
 Alle Aussagen sind nach `references/zitierweise.md` zu belegen. Mindestens zwei Rspr.-Belege im BGH-Stil, zwei Kommentarbelege im Bearbeiter-Stil. Bei Hinweisen zur KI-Nutzung ohne gesicherte Rspr. ausdrücklich auf Kommentarliteratur und EDSA-Leitlinien (insb. EDSA-Leitlinien 07/2020 zu Art. 46 DSGVO) verweisen.
+
+## Quellen / Updates
+
+Stand: 05/2026. Aktualität prüfen bei Anpassungen von § 203 StGB, neuen BRAO-Berufsordnungsregeln zur KI-Nutzung, EU-KI-VO-Umsetzungsrechtsakten sowie Änderungen am EU-US Data Privacy Framework (DPF).
+
+**Querverweise:**
+- `datenschutzrecht/skills/avv-pruefung/SKILL.md` — AVV-Prüfung für den konkreten KI-Dienstleister
+- `datenschutzrecht/skills/drittlandstransfer-pruefung/SKILL.md` — Vollständige TIA-Methodik bei US- oder Drittland-KI-Diensten
+- **ki-richtlinie-kanzleien** (geplant ab v3.3.0): Kanzleiweite KI-Nutzungsrichtlinien, Rollen und Freigabeprozesse für den Einsatz von KI-Werkzeugen in der Rechtsberatung. Querverweis sobald Plugin verfügbar.

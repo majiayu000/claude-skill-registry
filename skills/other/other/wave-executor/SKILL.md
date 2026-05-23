@@ -340,6 +340,52 @@ The diff JSON block (`{ new_errors, resolved_errors, baseline_count, current_cou
 
 > **Cross-reference:** baseline file shape, diff output schema, and schema-hash mismatch handling are documented in `skills/vault-sync/SKILL.md` § Modes (#327).
 
+## Inter-Wave Quality-Gate (with Auto-Fix Loop — #521)
+
+After each wave, run the Quality-Gate. If `verification-auto-fix.enabled: true`
+in Session Config, the gate uses `runQualityGateWithRetry()` from
+`scripts/lib/quality-gate.mjs` which dispatches up to `max-retries` (default 2)
+fixer-agent dispatches on failure.
+
+### Invocation
+
+```javascript
+import { runQualityGateWithRetry } from '../../scripts/lib/quality-gate.mjs';
+
+const result = await runQualityGateWithRetry({
+  maxRetries: config['verification-auto-fix']?.['max-retries'] ?? 2,
+  repoRoot: process.cwd(),
+  dispatchFixer: async ({ failures, correctiveContext, changedFiles }) => {
+    // Coordinator dispatches a code-implementer fixer subagent here with:
+    //   - failures (gate + output)
+    //   - correctiveContext (from .orchestrator/current-session.json)
+    //   - changedFiles (since last green SHA)
+    // Subagent's task: fix the failing gate, never broaden scope.
+    await dispatchFixerSubagent({ failures, correctiveContext, changedFiles });
+  },
+});
+```
+
+### Decision flow
+
+- `result.ok === true` → Wave green, proceed to next wave or session-end.
+- `result.ok === false` → Hard abort. Write `.orchestrator/metrics/verification-failures/<ts>.json` (handled by quality-gate.mjs itself).
+- `result.attempts > 1` → log a Deviation in STATE.md: `auto-fix used N retries to clear Wave <wave>`.
+
+### Skip Conditions
+
+- `verification-auto-fix.enabled: false` (default) → fall back to single-shot
+  quality-gate, abort on first failure (current behavior preserved per PRD § 3
+  Gherkin negative path).
+- `verification-auto-fix.max-retries: 0` → equivalent to disabled.
+
+### Anti-pattern (BE-012 awareness)
+
+The fixer-agent prompt MUST include a reminder of `.claude/rules/test-quality.md`
+"test-the-mock" anti-pattern. A fix that makes tests green by mocking out the
+real failure is a regression vector. The fixer prompt should explicitly say:
+"Do NOT change test mocks to make tests pass. Fix the actual code defect."
+
 ## Frontmatter-Guard (#328)
 
 When an agent's task scope includes vault paths (`~/Projects/vault/` or vault subdirectories such as `40-learnings/`, `50-sessions/`, `03-daily/`, `01-projects/`), the wave-executor injects a deterministic frontmatter-schema snippet into the agent's prompt. This eliminates the recurring failure class where agents guess at enum values for `type`, `status`, or `tags`.

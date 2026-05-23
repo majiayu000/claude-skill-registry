@@ -1,13 +1,17 @@
 ---
 name: janitor-audit
-description: "Show all your installed skills"
+description: "Show all your installed skills. Deprecated alias — use /janitor-report --brief."
 metadata:
-  version: 1.2.0
+  version: 1.3.0
+  deprecated: true
+  replaced_by: janitor-report
 ---
 
-# Skill Audit
+# Skill Audit (Deprecated Alias)
 
-Run a full inventory scan of all Claude Code skills across every scope.
+**Renamed in v1.3.** This command is kept as a working alias for one release; please switch to `/janitor-report --brief` (inventory-only) or `/janitor-report` (full health check). It will be removed in v1.4.
+
+When invoked, run the inventory scan and tell the user about the rename in one short line at the top of the output.
 
 ## How to Run
 
@@ -15,38 +19,9 @@ Run a full inventory scan of all Claude Code skills across every scope.
 bash ~/.claude/skills/skills-janitor/scripts/scan.sh
 ```
 
-## What It Scans
+Output is the JSON inventory `/janitor-report --brief` would produce. Present it as a summary table the same way you would for `/janitor-report --brief`.
 
-- **User scope**: `~/.claude/skills/`
-- **Project scope**: `./.claude/skills/` (current project)
-- **Plugin skills**: `~/.claude/plugins/` and marketplace sources
-- **Source links**: `~/.claude/sources/`
-- **Account-level**: `~/.claude-account-personal/plugins/`, `~/.claude-account-company/plugins/`
+## Migration
 
-## Output
-
-JSON inventory with per-skill details:
-- Folder name, scope, full path
-- Symlink status (valid/broken/target)
-- Frontmatter fields (name, description, version)
-- Body content presence
-- Line counts, extra files
-
-## After Scanning
-
-Present findings as a summary table:
-
-```
-| Skill              | Scope   | Status   | Issues                    |
-|--------------------|---------|----------|---------------------------|
-| marketing-copy     | user    | OK       | -                         |
-| seo-audit          | user    | WARNING  | Description too short     |
-| old-deploy-helper  | user    | CRITICAL | Broken symlink            |
-```
-
-## Related Skills
-
-- For duplicate detection: `/janitor-duplicates`
-- For error check: `/janitor-check`
-- For auto-fixing issues: `/janitor-fix`
-- For a full health report: `/janitor-report`
+- Inventory only → `/janitor-report --brief`
+- Inventory + health checks → `/janitor-report`

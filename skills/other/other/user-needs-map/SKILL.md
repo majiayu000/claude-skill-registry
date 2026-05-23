@@ -1,7 +1,8 @@
 ---
 name: user-needs-map
 description: "Map user needs independently of solutions using Allen's User Needs Mapping methodology. Identifies underserved needs that feed into the Opportunity Solution Tree."
-instruction_budget: 35
+metadata:
+  instruction_budget: "35"
 ---
 
 # User Needs Mapping

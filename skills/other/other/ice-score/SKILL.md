@@ -1,7 +1,8 @@
 ---
 name: ice-score
 description: "Use to prioritize solutions or opportunities using ICE scoring with evidence-backed confidence."
-instruction_budget: 35
+metadata:
+  instruction_budget: "35"
 ---
 
 # ICE Score Skill

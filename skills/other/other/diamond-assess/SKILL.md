@@ -1,7 +1,8 @@
 ---
 name: diamond-assess
 description: "Use to evaluate the current state of a diamond. Checks theory gates, confidence levels, and recommends next action."
-instruction_budget: 82
+metadata:
+  instruction_budget: "82"
 ---
 
 # Diamond Assess Skill

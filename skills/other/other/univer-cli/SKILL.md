@@ -1,6 +1,6 @@
 ---
 name: univer-cli
-description: "Use when solving spreadsheet workbook problems with the `univer` or `unv` CLI as a terminal-native spreadsheet engine: Excel-compatible `.xlsx` handoff, `.univer` or `.unv` packages, workbook inspection, range search, formulas, formatting, charts, shapes, rich spreadsheet edits, live preview and viewer review comments, versioning, shell-native `pipe out`/`pipe in` roundtrips, or bounded `run` scripts."
+description: "Use when solving spreadsheet workbook problems with the `univer` or `unv` CLI as a terminal-native spreadsheet engine: Excel-compatible `.xlsx` handoff, `.univer` or `.unv` packages, workbook inspection, range search, formulas, formatting, charts, shapes, floating images, rich spreadsheet edits, live preview and viewer review comments, versioning, shell-native `pipe out`/`pipe in` roundtrips, or bounded `run` scripts."
 ---
 
 # univer-cli
@@ -26,7 +26,7 @@ Use this skill when the task involves spreadsheet or workbook work, especially:
 - creating, importing, exporting, or handing off `.xlsx`, `.csv`, `.univer`, or `.unv` files
 - inspecting workbook shape, sheets, ranges, formulas, formatting, or visible cell state
 - locating content-defined rows, columns, headers, or cells before editing
-- making bounded edits to cells, formulas, formatting, charts, shapes, layout, or sheet structure
+- making bounded edits to cells, formulas, formatting, charts, shapes, floating images, layout, or sheet structure
 - streaming rectangular workbook data through shell tools before reading it into context
 - writing generated matrix data back into a sheet-qualified range
 - previewing workbook state locally with `univer view`
@@ -72,6 +72,7 @@ Direct package access can corrupt workbooks or teach the agent false state. If t
 | Apply bounded workbook-local logic | `univer run --file` |
 | Create or maintain workbook charts | `univer run --file` with `univer help run charts` |
 | Create or maintain workbook shapes and connectors | `univer run --file` with `univer help run shapes` |
+| Create or maintain workbook floating images | `univer run --file` with `univer help run images` |
 | Preview readonly workbook state | `univer view --no-open --json` or `univer view` |
 | Read local viewer review feedback | `univer view comments "$WB" --json` |
 | Check local versioning state | `univer status` |
@@ -223,6 +224,7 @@ univer inspect range "$WB" --range 'Sheet1!I1:J3'
 - use official enum references for conditional formatting color scales, data bars, and icon sets: `ConditionFormatIconSetTypeEnum` supplies `setIconSet().iconConfigs[].iconType`, and `ConditionFormatValueTypeEnum` supplies value config `type` values
 - use documented chart builders and worksheet chart APIs from `univer help run charts` instead of editing chart resource internals
 - use documented shape builders and worksheet shape APIs from `univer help run shapes` instead of editing drawing or shape resource internals
+- use documented floating image builders and worksheet image APIs from `univer help run images` instead of editing drawing or resource internals
 - wait for formula calculation with the documented formula wait API before reading same-run computed results
 - prefer `--file` for scripts beyond a short one-liner
 
@@ -248,7 +250,7 @@ Special chart types have stricter source shapes:
 
 ### Create Or Maintain Shapes
 
-Use `univer run` for workbook-local shapes and connectors, and `univer view` for visual inspection. Command-line verification should read facade state such as `sheet.getShapes()`, `shape.getShapeId()`, `shape.getShapeType()`, `shape.isLineShape()`, `shape.getPosition()`, and connector connection info.
+Use `univer run` for workbook-local shapes and connectors and `univer view` for visual inspection. Command-line verification should read facade state such as `sheet.getShapes()`, `shape.isLineShape()`, `shape.getShapeId()`, `shape.getShapeType()`, `shape.getPosition()`, `shape.getSize()`, `shape.getStartConnectInfo()`, and `shape.getEndConnectInfo()`.
 
 ```bash
 univer help run shapes
@@ -256,7 +258,27 @@ univer run "$WB" --file ./create-shapes.js
 univer view "$WB" --no-open --json
 ```
 
-In scripts, configure `sheet.newShape()` or `sheet.newConnector()`, call `build()`, then insert it with `sheet.insertShape(shapeInfo)`. Use `sheet.connectShapes(...)` for connector endpoints, and `sheet.updateShape(shapeInfo)` or `sheet.removeShape(shape)` for maintenance.
+In scripts, configure `sheet.newShape()`, call `build()`, then insert it with `sheet.insertShape(shapeInfo)`. Use `sheet.newConnector()` for connector lines, `sheet.connectShapes()` to attach connector endpoints to facade shape objects from the same worksheet, `sheet.newShape(existingShape)` with `sheet.updateShape(updatedShapeInfo)` for updates, and `sheet.removeShape(shape)` for deletion.
+
+Use `univerAPI.Enum.ShapeTypeEnum` with `setShapeType()`. Common starts are `Rect`, `RoundRect`, `Ellipse`, `Diamond`, flowchart values such as `FlowchartProcess`, and connector values such as `StraightConnector1`, `BentConnector3`, or `CurvedConnector3`. Use shape facade enums for fill, stroke, dash, cap, join, and arrows: `ShapeFillEnum`, `ShapeGradientTypeEnum`, `ShapeLineTypeEnum`, `ShapeLineDashEnum`, `ShapeLineCapEnum`, `ShapeLineJoinEnum`, `ShapeArrowTypeEnum`, and `ShapeArrowSizeEnum`.
+
+The shapes topic covers workbook-local floating shapes and connectors only. `univer run` does not export shape images, perform browser screenshots, or provide an interactive shape editor.
+
+### Create Or Maintain Floating Images
+
+Use `univer run` for workbook-local floating images and `univer view` for visual inspection. Command-line verification should read facade state such as `sheet.getImages()`, `sheet.getImageById(id)`, `image.getId()`, `image.toBuilder().getSource()`, `image.toBuilder().getSourceType()`, and update or delete return values.
+
+```bash
+univer help run images
+univer run "$WB" --file ./create-image.js
+univer view "$WB" --no-open --json
+```
+
+In scripts, configure `sheet.newOverGridImage()`, call `buildAsync()`, then insert it with `sheet.insertImages([image])`. Use `image.toBuilder()` with `sheet.updateImages([newImage])`, direct `FOverGridImage` methods such as `setSizeAsync()` or `setPositionAsync()`, or `sheet.deleteImages([image])` for maintenance.
+
+Use `univerAPI.Enum.ImageSourceType.URL` for HTTP(S) image URLs and full data URLs, `ImageSourceType.BASE64` for raw base64 payloads, and `ImageSourceType.UUID` only for existing Univer-managed image or file UUIDs. For predictable report placement, start with `univerAPI.Enum.SheetDrawingAnchorType.Position`.
+
+The images topic covers floating images only. It does not cover cell images, floating DOM, screenshot export, local image upload helpers, or a top-level `univer image` command.
 
 ### Preview Locally
 
@@ -374,6 +396,9 @@ Avoid `pnpm dev -- ...` in clean pipeline examples. The pnpm/tsx wrapper can pri
 - Shell row counts can pass while headers, columns, or keys shift. Check headers, samples, and key columns together.
 - `pipe in` writes parsed matrix data and reports a summary; it does not echo input.
 - `view` is readonly preview. Do not treat it as mutation verification unless the task is visual review.
+- Charts are maintained through `univer run` and the Pro Charts facade. Do not edit chart resource internals or expect `run` to export chart images.
+- Shapes are maintained through `univer run` and the Pro Shapes facade. Do not inspect private drawing resource storage or expect `run` to export shape images.
+- Floating images are maintained through `univer run` and the Sheets Drawing facade. Do not invent a top-level `univer image` command or inspect private drawing resource storage.
 - `commit` is local only; use `sync` to push local changesets.
 - `restore` discards only uncommitted local mutations; it does not remove local commits.
 - `reset` is local-only and limited to `HEAD~N` over unsynced local commits. Do not use it as a remote revert or force-push workflow.
@@ -388,4 +413,4 @@ Avoid `pnpm dev -- ...` in clean pipeline examples. The pnpm/tsx wrapper can pri
 
 Only enter support flow when the user asks to report a suspected CLI bug. Public issues: https://github.com/dream-num/skills/issues. Community support and builder discussions: https://discord.gg/nThHPupraR. Private artifacts: email developer@univer.ai; get authorization before guiding `univer doctor collect`.
 
-Skill document revision: 2026-05-21.
+Skill document revision: 2026-05-22.

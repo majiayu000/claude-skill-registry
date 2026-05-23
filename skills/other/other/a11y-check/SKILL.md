@@ -1,7 +1,8 @@
 ---
 name: a11y-check
 description: "Accessibility audit against WCAG 2.1 AA. Checks semantic HTML, ARIA, keyboard navigation, color contrast, screen reader compatibility."
-instruction_budget: 26
+metadata:
+  instruction_budget: "26"
 ---
 
 # Accessibility Audit

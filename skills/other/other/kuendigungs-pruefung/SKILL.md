@@ -110,6 +110,30 @@ Tarifvertragliche Abweichungen prüfen! Ggf. günstigere Individualvereinbarung.
 
 Arbeitgeber kann mit der Kündigung eine Abfindung nach § 1a KSchG anbieten (0,5 Monatsgehalt × Beschäftigungsjahre), wenn Arbeitnehmer keine Klage erhebt. Dies schließt Wiedereinstellungsansprüche aus.
 
+### 7. DSGVO-Auskunftsersuchen als Druckmittel im Kündigungskontext
+
+**Typische Konstellation:** Unmittelbar vor oder nach Ausspruch der Kündigung – oft zeitgleich mit der Ankündigung einer KSchG-Klage – stellt der Arbeitnehmer oder sein Bevollmächtigter ein Auskunftsersuchen nach Art. 15 DSGVO. Ziel ist häufig, über den Umweg des Datenschutzrechts Einblick in interne Personalakten, Abmahnungsunterlagen oder Vermerke zu erlangen und so den Arbeitgeber unter Vergleichsdruck zu setzen.
+
+**Maßstab für Rechtsmissbrauch (EuGH, Urt. v. 19.03.2026 – C-526/24, Brillen Rottler):**
+Ein Auskunftsersuchen kann nach Art. 12 Abs. 5 S. 2 DSGVO als exzessiv abgelehnt oder mit angemessenen Kosten belegt werden, wenn der Verantwortliche (Arbeitgeber) zwei Elemente nachweist:
+
+1. **Objektives Element:** Äußere Umstände lassen auf missbräuchliche Zweckverfolgung schließen — z. B. ungewöhnlich kurzer zeitlicher Abstand zwischen Zugang der Kündigung und Auskunftsantrag, Muster massenhafter Legal-Tech-gestützter Antragstellung, Anmeldung zur Datenverarbeitung allein zum Zweck der Anfrage.
+2. **Subjektives Element:** Missbräuchliche Absicht — Instrumentalisierung des Auskunftsrechts vorrangig zur Generierung von Schadensersatzansprüchen nach Art. 82 DSGVO oder zur Prozesstaktik, nicht zum Schutz personenbezogener Daten.
+
+Hürden sind **hoch**: Das Auskunftsrecht ist ein Grundrecht (Art. 8 GRCh); Ausnahmen sind eng auszulegen. Auch ein erstmaliges Ersuchen kann exzessiv sein, aber bloße Mehrfachanträge oder die bloße Tatsache vergangener Auskunftsansprüche genügen nicht.
+
+**BAG-Linie zu Art. 82 DSGVO:**
+- BAG, Urt. v. 20.06.2024 – 8 AZR 91/22: Bloßer Kontrollverlust durch eine Auskunftspflichtverletzung nach Art. 15 DSGVO begründet keinen eigenständigen immateriellen Schaden i.S.v. Art. 82 DSGVO, wenn kein objektiv erhöhtes Missbrauchsrisiko nachgewiesen wird. `[Modellwissen – prüfen]`
+- BAG, Urt. v. 17.10.2024 – 8 AZR 215/23: Auskunftsanspruch nach Art. 15 DSGVO besteht grundsätzlich auch für ehemalige Auszubildende nach Beendigung des Ausbildungsverhältnisses. `[Modellwissen – prüfen]`
+- BAG, Urt. v. 20.02.2025 – 8 AZR 61/24: Präzisierung des immateriellen Schadens — konkrete nachteilige Auswirkungen auf die betroffene Person müssen dargelegt werden. `[Modellwissen – prüfen]`
+
+**Praxishinweise für den Arbeitgeber:**
+- DSGVO-Auskunft fristgerecht innerhalb eines Monats beantworten (Art. 12 Abs. 3 DSGVO); unberechtigte Ablehnung kann eigenständigen Schadensersatzanspruch nach Art. 82 DSGVO auslösen.
+- Dokumentation für Missbrauchseinwand anlegen: Datum Kündigung, Datum Auskunftsantrag, Vorliegen von Legal-Tech-Vollmacht, Muster bei anderen Mitarbeitern.
+- Parallellauf Kündigungsschutzverfahren und DSGVO-Auskunftsstreit im Blick behalten: Zuständiges Gericht für Auskunftsklage ist nach § 44 DSGVO das Landgericht (nicht das Arbeitsgericht); Koordinierung der Prozesstaktik erforderlich.
+
+Querverweis: `datenschutzrecht/skills/dsgvo-auskunft/SKILL.md` (soweit im Plugin vorhanden).
+
 ## Quellen und Zitierweise
 
 Zitierstandard: `../references/zitierweise.md`. Methodik: `../references/methodik-buergerliches-recht.md`.

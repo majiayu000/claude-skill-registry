@@ -18,15 +18,19 @@ description: Use when running existing project validation commands and fixing fa
    - unit/integration tests
    - build
 3. 仔细阅读失败输出。
-4. 先做范围最小且正确的修复。
-5. 每次关键修复后重新执行受影响命令。
-6. 最后按 `Expected Output` 总结执行结果、修复内容和剩余风险。
+4. 将错误按文件、错误类型和依赖关系分组，优先处理阻塞后续诊断的根因。
+5. 一次只修复一类问题，并显示或记录关键错误上下文。
+6. 每次关键修复后重新执行受影响命令，确认错误是否减少。
+7. 如果同一错误连续三次修复仍失败，停止扩大改动并报告阻塞。
+8. 最后按 `Expected Output` 总结执行结果、修复内容和剩余风险。
 
 ## 强约束
 
 - 不要盲目关闭规则来消除报错
 - 除非有明确理由，不要为了通过检查而降低类型安全
 - 不要因为附近测试失败就顺手重写无关模块
+- 不要一次性修改多个无关根因
+- 不要删除失败测试来让验证通过
 
 ## Expected Output
 
@@ -34,3 +38,7 @@ description: Use when running existing project validation commands and fixing fa
 - 失败项已修复或给出明确原因和后续行动
 - 修复报告保存为 `reports/validation-fix-YYYY-MM-DD-HHmmss.md`
 - 报告包含命令状态表、问题根因、修复说明、变更文件和剩余风险
+
+## Related Agent
+
+- [frontend-build-fixer](../../agents/frontend-build-fixer.md) - 复杂构建、类型检查、测试或 CI 失败的增量修复。

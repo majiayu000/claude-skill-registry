@@ -6,7 +6,10 @@ practices:
 - refactoring
 - continuous-integration
 hexagonal_role: domain
-consumes: []
+consumes:
+- validation
+- vibe
+- post-mortem
 produces:
 - .agents/rpi/*.md
 context_rel:
@@ -151,3 +154,7 @@ Progress stored in `.agents/ao/chain.jsonl`:
 | Step already completed error | Attempting to re-ratchet locked step | Use `ao ratchet status` to check state; skip if already done |
 | chain.jsonl corrupted | Malformed JSON entries | Manually edit to fix JSON; validate each line with `jq -c '.' <file>` |
 | Out-of-order steps | Implementing before planning | Follow RPI order strictly; use `--skip` only with explicit reason |
+
+## Reference Documents
+
+- [references/ratchet.feature](references/ratchet.feature) — Executable spec: Chaos×Filter→Ratchet, record/check loop-step gates, monotonic chain (soc-qk4b.2)

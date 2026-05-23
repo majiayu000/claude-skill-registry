@@ -4,6 +4,17 @@ description: "Creates, updates, validates, and displays the architectural DNA of
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash, AskUserQuestion, TodoWrite
 ---
 
+## Overview
+
+The Constitution skill manages the architectural DNA of a project through two shared documents:
+
+| File | Purpose |
+|------|---------|
+| `docs/specs/architecture.md` | Technology stack, infrastructure, architectural rules, security constraints, AI guardrails |
+| `docs/specs/ontology.md` | Domain glossary (Ubiquitous Language) — terms, definitions, bounded contexts |
+
+These files live at `docs/specs/` and are shared across all specifications. Unlike a monolithic `constitution.md`, these are created/enriched by `brainstorm` (Phase 6.8.6) and `spec-to-tasks` (Phase 1.5).
+
 ## Instructions
 
 1. Identify the operation from `$ARGUMENTS` or user intent: `create`, `update`, `check`, or `show`.
@@ -15,42 +26,20 @@ allowed-tools: Read, Write, Edit, Grep, Glob, Bash, AskUserQuestion, TodoWrite
 
 ## Examples
 
-**Create constitution before first brainstorm:**
-```
+```bash
+# Create constitution before first brainstorm
 /developer-kit-specs:constitution create
-```
 
-**Validate a spec against architecture and ontology:**
-```
+# Validate a spec against architecture and ontology
 /developer-kit-specs:constitution check --target=docs/specs/001/2024-01-15--user-auth.md
-```
 
-**Update the security constraints section:**
-```
+# Update the security constraints section
 /developer-kit-specs:constitution update --file=architecture --section=security
-```
 
-**Show current constitution:**
-```
+# Show current constitution
 /developer-kit-specs:constitution show
 ```
 
----
-
-# Constitution Skill
-
-## Overview
-
-The **Constitution** is the architectural DNA of a project, expressed through two shared documents:
-
-| File | Purpose |
-|------|---------|
-| `docs/specs/architecture.md` | Technology stack, infrastructure choices, architectural rules, security constraints, AI guardrails |
-| `docs/specs/ontology.md` | Domain glossary (Ubiquitous Language) — terms, definitions, bounded contexts |
-
-These files live at the `docs/specs/` level and are **shared across all specifications**.
-
-**Key difference from the old constitution.md approach**: instead of a single monolithic file, the constitution is split into two focused documents that are also created and enriched by `brainstorm` (Phase 6.8.6) and `spec-to-tasks` (Phase 1.5). This skill lets you create or manage them **before brainstorm**, as a project setup step.
 
 ## When to Use
 
@@ -67,246 +56,134 @@ These files live at the `docs/specs/` level and are **shared across all specific
 - "Constitution check", "Validate against constitution"
 - "Show constitution", "Project principles", "Architectural guardrails"
 
-## Available Operations
+## Operations
 
-**1. create** — Create one or both files interactively
-**2. update** — Update a specific section of one file
-**3. check** — Validate a spec/task/file against both documents
-**4. show** — Display the current state of both documents
+### create
+1. Ask which files to create: "Both" (recommended), "architecture.md only", "ontology.md only"
+2. Check if files exist → ask to overwrite or skip
+3. For **architecture.md**: gather via `AskUserQuestion` (domains, infrastructure, stack, data, style, rules)
+4. For **ontology.md**: ask for terms or create empty scaffold
+5. Confirm before writing each file
 
----
+Template lookup order:
+- Primary: `${CLAUDE_PLUGIN_ROOT}/templates/architecture.md`
+- Fallback: `skills/constitution/references/architecture.md`
 
-## Operation: create
+### update
+1. Parse `--file=architecture|ontology` and `--section=<name>`
+2. Read target file, apply change surgically
+3. Update `Last Updated` date
+4. Write file
 
-1. Ask the user which files to create (if not specified in `$ARGUMENTS`):
-   - Options: "Both architecture.md and ontology.md" (recommended), "architecture.md only", "ontology.md only"
+### check
+1. Read both constitution files
+2. Read target file (`--target=<path>`)
+3. Validate against architecture rules, security constraints, and ontology
+4. Output **Constitution Check Report**
 
-2. For each file to create, check if it already exists. If yes, ask: overwrite or skip.
+### show
+1. Read both `docs/specs/architecture.md` and `docs/specs/ontology.md`
+2. Display formatted for readability
 
-3. **For `docs/specs/architecture.md`**, gather via `AskUserQuestion`:
+## Context Rot Prevention
 
-   **Q1 — Software Stack**:
-   - Options: "Java / Spring Boot", "TypeScript / NestJS", "TypeScript / React", "Python / Django or FastAPI", "PHP / Laravel or Symfony", or freeform
+The Constitution survives context rot through file-based storage:
 
-   **Q2 — Data Architecture**:
-   - Options: "PostgreSQL", "MySQL", "MongoDB", "Multiple databases", or freeform
+- **Read at session start**: Both `docs/specs/architecture.md` and `docs/specs/ontology.md`
+- **Never assume in context**: MUST be read from file before implementation
+- **Validate work**: Compare against constitution, not memory
 
-   **Q3 — Infrastructure**:
-   - Options: "AWS", "Docker / Docker Compose", "Kubernetes", "Serverless", "Not yet decided", or freeform
+For detailed scenarios and recovery protocols, see `references/context-rot-prevention.md`.
 
-   **Q4 — Architectural Rules** (optional, freeform):
-   - Forbidden patterns, required patterns, security constraints, AI guardrails
+## Constraints and Warnings
 
-   Then create `docs/specs/architecture.md` using the **Architecture Template** below.
+- **Does NOT modify source code** — only creates/updates constitution files
+- **CRITICAL violations MUST be resolved** — WARNINGs are advisory
+- **One architecture.md and one ontology.md per project** — shared across all specs
+- **Update `Last Updated` date** on every change
+- **Use ADRs** for significant architectural decisions
+- **Context rot risk**: Files > 30 days old may have drifted
 
-4. **For `docs/specs/ontology.md`**, gather via `AskUserQuestion`:
+## Best Practices
 
-   Ask the user to list the main domain terms and their definitions. Explain:
-   > "The ontology captures the Ubiquitous Language of your project. It is normally enriched during brainstorming when terms emerge from the idea. You can seed it now with known terms, or create an empty scaffold to fill later."
-
-   - Options: "Seed with known terms (I'll provide them)", "Create empty scaffold", "Skip for now"
-
-   Then create `docs/specs/ontology.md` using the **Ontology Template** below.
-
-5. Confirm with the user before writing each file.
-
----
-
-## Operation: update
-
-1. Identify the target file and section from `$ARGUMENTS`:
-   - `--file=architecture` or `--file=ontology`
-   - `--section=<section-name>` (e.g., `--section=security`, `--section=glossary`)
-2. Read the target file.
-3. Apply the update surgically — do not touch other sections.
-4. Update the `Last Updated` date.
-5. Write the updated file.
-
----
-
-## Operation: check
-
-1. Read both `docs/specs/architecture.md` and `docs/specs/ontology.md`. If either is missing, warn the user but continue with the available file(s).
-2. Read the target file from `$ARGUMENTS` (`--target=<path>`).
-3. Check against **architecture.md**:
-   - Forbidden libraries/imports present?
-   - Unapproved patterns used?
-   - Security constraints violated (raw SQL, hardcoded secrets, etc.)?
-   - AI guardrails violated?
-4. Check against **ontology.md**:
-   - Are domain terms used consistently (no synonyms for defined terms)?
-   - Are new domain concepts introduced without being added to the glossary?
-5. Output a **Constitution Check Report** (see format below).
-
----
-
-## Operation: show
-
-1. Read `docs/specs/architecture.md` and `docs/specs/ontology.md`.
-2. Print both files formatted for readability, with a header indicating which file is which.
-
----
-
-## Architecture Template
-
-```markdown
-# Project Architecture
-
-**Created**: YYYY-MM-DD
-**Last Updated**: YYYY-MM-DD
-
-## Software Stack
-
-| Component | Technology | Notes |
-|-----------|-----------|-------|
-| Language | [e.g., TypeScript] | [version if known] |
-| Framework | [e.g., NestJS] | [version if known] |
-| Key Libraries | [e.g., Drizzle ORM, Passport] | |
-
-## Data Architecture
-
-| Component | Technology | Notes |
-|-----------|-----------|-------|
-| Primary Database | [e.g., PostgreSQL] | |
-| Caching | [e.g., Redis, none] | |
-| ORM / Data Access | [e.g., Drizzle, Hibernate] | |
-| Migrations | [e.g., Flyway, Drizzle Kit] | |
-
-## Infrastructure
-
-| Component | Technology | Notes |
-|-----------|-----------|-------|
-| Hosting | [e.g., AWS ECS] | |
-| CI/CD | [e.g., GitHub Actions] | |
-| Containerization | [e.g., Docker] | |
-| Orchestration | [e.g., Kubernetes, none] | |
-
-## Architectural Rules
-
-- [Rule 1, e.g., "Use constructor injection. Never use @Autowired on fields."]
-- [Rule 2, e.g., "Domain entities must not depend on framework annotations."]
-
-## Security Constraints
-
-- Forbidden patterns:
-  - No raw SQL string concatenation (SQL injection — CWE-89)
-  - No hardcoded secrets or credentials (CWE-798)
-  - No deserialization of untrusted data (CWE-502)
-- Required patterns:
-  - [e.g., All inputs validated with Bean Validation]
-  - [e.g., All secrets via environment variables or Secrets Manager]
-
-## AI Guardrails
-
-Rules that AI agents MUST follow when generating code for this project:
-
-- [Guardrail 1, e.g., "Never generate @Transactional on repository methods."]
-- [Guardrail 2, e.g., "Always generate tests alongside implementation code."]
-- [Guardrail 3, e.g., "Do not introduce new dependencies without explicit approval."]
-
-## Architecture Decisions
-
-> Significant modifications to this architecture document must be tracked
-> via **ADR (Architecture Decision Records)** using the `adr-drafting` skill.
->
-> ADR location: `docs/architecture/adr/`
-```
-
----
-
-## Ontology Template
-
-```markdown
-# Project Ontology — Ubiquitous Language
-
-**Created**: YYYY-MM-DD
-**Last Updated**: YYYY-MM-DD
-
-## Domain Glossary
-
-| Term | Definition | Bounded Context |
-|------|-----------|-----------------|
-| [Term 1] | [Definition] | [Context where this term applies] |
-| [Term 2] | [Definition] | [Context where this term applies] |
-
-## Bounded Contexts
-
-| Context | Description | Key Terms |
-|---------|-------------|-----------|
-| [Context 1] | [Description] | [Key terms] |
-
-## Conceptual Mapping
-
-[Relationships between key domain entities — to be refined during brainstorming and task generation]
-```
-
----
+- **Create before brainstorm**: Constitution established early ensures consistency
+- **Library Verification**: Before using ANY external library, verify it's in the architecture's Library Verification section
+- **Spec Death Principle**: Archive completed specs to `archived/` — never let specs become stale
+- **Ontology enrichment**: Updated by `brainstorm` (Phase 6.8.6) and `spec-to-tasks` (Phase 1.5)
+- **Report format**: Security section first, then CWE compliance, architecture, library verification, ontology
 
 ## Constitution Check Report Format
 
 ```
 ## Constitution Check Report
-Target: <file or spec path>
+Target: <file path>
 Date: YYYY-MM-DD
 
-### Architecture Check
+### Security Check (CWE/OWASP Compliance)
+| Rule | Level | Status | Location | CWE/OWASP |
+|------|-------|--------|----------|-----------|
+| No SQL injection | CRITICAL | ✅ OK | - | CWE-89 |
 
+### CWE Compliance Report
+| CWE | OWASP | Status | Location |
+|-----|-------|--------|----------|
+| CWE-89 | A03 | ✅ OK | - |
+
+### Architecture Check
 | Rule | Status | Detail |
 |------|--------|--------|
-| Constructor injection required | ✅ OK | No field injection found |
-| No hardcoded secrets | ❌ CRITICAL | Line 42: hardcoded password string |
-| JWT authentication | ⚠️ WARNING | Missing @PreAuthorize on endpoint |
+| Constructor injection | ✅ OK | - |
+
+### Library Verification Check
+| Library | Status | Detail |
+|---------|--------|--------|
+| bcrypt | ✅ OK | Using hash(password, 12) |
 
 ### Ontology Check
-
 | Term | Status | Detail |
 |------|--------|--------|
-| "Reservation" used consistently | ✅ OK | No synonym "Booking" found |
-| New term "Voucher" introduced | ⚠️ WARNING | Not defined in ontology.md |
+| "User" used consistently | ✅ OK | - |
 
 ### Summary
-- CRITICAL violations: 1 (must fix before proceeding)
-- WARNING violations: 2 (should fix)
-- Compliant rules: 2
+- CRITICAL violations: 0
+- WARNING violations: 0
+- Compliant rules: N
 ```
 
----
-
-## Relationship with brainstorm and spec-to-tasks
-
-This skill is the **pre-brainstorm setup** entry point. The same files are also created/enriched by:
-
-| Command | When | What it does |
-|---------|------|-------------|
-| `constitution create` | Before brainstorm (this skill) | Creates architecture.md and/or ontology.md from scratch |
-| `brainstorm` Phase 6.8.6 | During brainstorming | Creates/enriches ontology.md with terms extracted from the idea |
-| `spec-to-tasks` Phase 1.5 | After brainstorm | Creates architecture.md if missing; enriches ontology.md with new terms from the spec |
-
-**If you run `constitution create` before brainstorm**, the brainstorm and spec-to-tasks commands will detect the existing files and load them instead of creating new ones — no duplication.
-
-**Note on ontology.md**: The ontology is normally most naturally created during brainstorming, because domain terms emerge from the idea description. Using `constitution create` to seed it beforehand is useful when the team already has a well-defined domain language.
-
----
+For detailed security patterns (CWE/OWASP mappings), see `references/security-patterns.md`.
 
 ## Integration with SDD Workflow
 
 ```
+[Session Start] → Read Constitution files
+        ↓
 [Optional] constitution create        ← this skill (pre-brainstorm setup)
         ↓
-brainstorm                            ← enriches ontology.md (Phase 6.8.6)
+brainstorm                            ← Constitution loaded before brainstorming
         ↓
-spec-to-tasks                         ← loads/creates architecture.md, enriches ontology.md (Phase 1.5)
+spec-to-tasks                         ← Constitution validates spec
         ↓
-task-implementation                   ← AI guardrails from architecture.md prevent unapproved patterns
+task-implementation                   ← Constitution guardrails active
         ↓
-task-review / ralph-loop              ← constitution check validates implementation
+task-review                           ← Constitution check validates
+        ↓
+[Session End] → Constitution files updated if needed
 ```
 
----
+Required loading before:
+- `specs.brainstorm` — Validate requirements align with architecture
+- `specs.spec-to-tasks` — Check stack compatibility
+- `specs.task-implementation` — Apply AI guardrails
+- `specs.task-review` — Constitution check
 
-## Constraints
+## Reference Files
 
-- **Does NOT modify source code** — only creates/updates `docs/specs/architecture.md` and `docs/specs/ontology.md`
-- **Constitution Check is advisory for WARNINGs** — CRITICAL violations must be resolved
-- **One architecture.md and one ontology.md per project** — shared across all specs
-- **Version the architecture** — update `Last Updated` date on every change; use ADRs for significant decisions
+| File | Purpose |
+|------|---------|
+| `references/architecture.md` | Full architecture template |
+| `references/ontology.md` | Full ontology template |
+| `references/security-patterns.md` | CWE/OWASP patterns, verification format |
+| `references/context-rot-prevention.md` | Detailed scenarios and recovery protocols |
+| `references/constitution-check-report.md` | Complete report examples |
+
+For complete templates and detailed reference material, consult the `references/` directory.

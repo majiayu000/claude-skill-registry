@@ -70,8 +70,7 @@ fix_plan.json state machine:
 │    → User executes, then runs loop again                  │
 │    → Next state: "review"                                │
 │                                                             │
-│  state: "review"                                          │
-│    → Show /developer-kit-specs:specs.task-review command                     │
+│  state: "review"                                          ││    → Show /developer-kit-specs:specs.task-implementation --action=cleanup command│},{find:                    │
 │    → User reviews results, then runs loop again          │
 │    → Issues found → state: "fix" (retry ≤ 3)             │
 │    → Clean → state: "cleanup"                            │
@@ -82,11 +81,11 @@ fix_plan.json state machine:
 │    → Next state: "review"                                │
 │                                                             │
 │  state: "cleanup"                                         │
-│    → Show /developer-kit-specs:specs-code-cleanup command│
+│    → Show /developer-kit-specs:specs.task-implementation --action=cleanup command│
 │    → Next state: "sync"                                  │
 │                                                             │
 │  state: "sync"                                            │
-│    → Show /developer-kit-specs:specs.spec-sync-with-code command             │
+│    → Show /developer-kit-specs:specs.sync command             │
 │    → Next state: "update_done"                           │
 │                                                             │
 │  state: "update_done"                                     │
@@ -257,7 +256,7 @@ The script shows:
 → Cleanup: TASK-037
 
 Execute:
-  /developer-kit-specs:specs-code-cleanup --task=TASK-037
+  /developer-kit-specs:specs.task-implementation --task=TASK-037 --action=cleanup
 ```
 
 ### Step 7: Sync (`sync`)
@@ -267,7 +266,7 @@ The script shows:
 → Sync: TASK-037
 
 Execute:
-  /developer-kit-specs:specs.spec-sync-with-code docs/specs/001-feature/ --after-task=TASK-037
+  /developer-kit-specs:specs.sync docs/specs/001-feature/ --after-task=TASK-037
 ```
 
 ### Step 8: Update Done (`update_done`)

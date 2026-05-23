@@ -6,9 +6,17 @@ practices:
 - dora-metrics
 - agile-manifesto
 hexagonal_role: supporting
-consumes: []
-produces: []
-context_rel: []
+consumes:
+- rpi
+- goals
+- post-mortem
+- compile
+produces:
+- git-changes
+- goals-fitness-delta
+context_rel:
+- kind: customer-of
+  with: rpi
 skill_api_version: 1
 user-invocable: true
 context:
@@ -142,6 +150,7 @@ Before cycle recovery, load the repo execution profile contract when it exists. 
 - Read the ordered `startup_reads` and bootstrap from those repo paths before selecting work.
 - Cache repo `validation_commands`, `tracker_commands`, and `definition_of_done` into session state.
 - If the repo execution profile is present but missing required fields, stop or downgrade with an explicit warning before cycle 1. Do not silently invent repo policy.
+- Read operating-doctrine ADRs (`docs/adr/` or `docs/decisions/`) when present — intent the loop re-reads each cycle: only operator markers stop the loop; the bead queue is a hypothesis re-confirmed against the goal, not spec; file-a-bead when a candidate is architecture disguised as bounded work.
 
 Then load the repo-local autodev program contract when it exists. The execution profile remains the repo bootstrap and landing-policy layer; `PROGRAM.md` or `AUTODEV.md` is the repo-local execution layer for the current improvement loop.
 
@@ -199,52 +208,35 @@ Run at the TOP of every cycle:
 
 ```bash
 CYCLE_START_SHA=$(git rev-parse HEAD)
-# Kill-switch with auto-expiration: a KILL file older than EVOLVE_KILL_TTL_DAYS
-# (default 7) days is treated as STALE — surface it loudly and continue, do not
-# silently block. Operator must re-touch the file to keep blocking. Closes F5
-# from the 2026-05-18 merge-arc post-mortem.
-EVOLVE_KILL_TTL_DAYS="${EVOLVE_KILL_TTL_DAYS:-7}"
-check_stale_kill() {
-    local path="$1"
-    local ttl_days="$2"
-    [ -f "$path" ] || return 1
-    local mtime_epoch now_epoch age_days
-    mtime_epoch=$(stat -c %Y "$path" 2>/dev/null || stat -f %m "$path" 2>/dev/null)
-    now_epoch=$(date +%s)
-    age_days=$(( (now_epoch - mtime_epoch) / 86400 ))
-    if [ "$age_days" -gt "$ttl_days" ]; then
-        echo "WARN: ${path} is ${age_days} days old (> ${ttl_days}); treating as STALE and proceeding. Re-touch the file or set EVOLVE_KILL_TTL_DAYS to keep blocking." >&2
-        return 1  # stale -> not a real block
+# Mechanical pre-cycle gate (soc-sfjx): markers (KILL/STOP/DORMANT/HANDOFF with
+# TTL + soc-5qit non-sticky semantics), goal-regression, and prior-cycle-FAIL.
+# This is a SCRIPT the loop MUST run, not prose it can skip — externalized from
+# the old inline block so the kill-switch + revert-on-red are enforced, not
+# advisory. Adapted from the mt-olympus unbounded-evolve substrate.
+if [ -x scripts/evolve/halt-check.sh ]; then
+  if ! HALT_OUT=$(bash scripts/evolve/halt-check.sh --json); then
+    REASON=$(printf '%s' "$HALT_OUT" | jq -r '.halt_reason // "unknown"')
+    if [ "$REASON" = "prior_cycle_fail" ]; then
+      export EVOLVE_RESTORATIVE=1   # not terminal: Step 1.5 restricts scope to CI-red reduction
+    else
+      echo "halt: $REASON"; exit 0  # kill/user_halt/dormant/goal_regression -> stop this cycle
     fi
-    return 0  # fresh -> honor the block
-}
-if check_stale_kill ~/.config/evolve/KILL "$EVOLVE_KILL_TTL_DAYS"; then
-    echo "KILL: $(cat ~/.config/evolve/KILL)"
-    exit 0
-fi
-if check_stale_kill .agents/evolve/STOP "$EVOLVE_KILL_TTL_DAYS"; then
-    echo "STOP: $(cat .agents/evolve/STOP 2>/dev/null)"
-    exit 0
-fi
-if [ -f .agents/evolve/DORMANT ]; then
-  READY=$(bd ready --json 2>/dev/null | jq -r 'length // 0' 2>/dev/null || echo 0)
-  HARVESTED=$(jq -r 'select(.consumed==false) | .severity' .agents/rpi/next-work.jsonl 2>/dev/null | wc -l | tr -d ' ')
-  if [ "$READY" -gt 0 ] || [ "$HARVESTED" -gt 0 ]; then
-    rm -f .agents/evolve/DORMANT  # stale: real work exists, loop resumes
-  else
-    echo "Dormant since $(head -1 .agents/evolve/DORMANT 2>/dev/null)."; exit 0
   fi
+else
+  # Fallback for repos without the substrate: minimal inline marker check.
+  for m in "$HOME/.config/evolve/KILL" .agents/evolve/STOP; do [ -f "$m" ] && { echo "halt: $m"; exit 0; }; done
+  [ -f .agents/evolve/DORMANT ] && { [ "$(bd ready --json 2>/dev/null | jq -r 'length // 0')" -gt 0 ] && rm -f .agents/evolve/DORMANT || { echo dormant; exit 0; }; }
+  [ -f .agents/evolve/HANDOFF ] && rm -f .agents/evolve/HANDOFF
 fi
-[ -f .agents/evolve/HANDOFF ] && rm -f .agents/evolve/HANDOFF  # non-sticky: cleared on fresh fire
 ```
 
-**Agile-first dormancy (soc-5qit):** `DORMANT` is NEVER sticky while ready beads exist; Step 1 re-validates every fire and auto-clears stale markers. KILL/STOP honor `EVOLVE_KILL_TTL_DAYS` (default 7). Heavy-context sessions write non-sticky HANDOFF and exit the turn; the next fire (compacted/fresh) clears HANDOFF and resumes — the loop is continuous across compactions.
+**Agile-first dormancy (soc-5qit):** `DORMANT` is NEVER sticky while ready beads exist — `halt-check.sh` auto-clears it when `bd ready`/harvested work exists. KILL/STOP honor `EVOLVE_KILL_TTL_DAYS` (default 7); stale markers are surfaced and bypassed. `goal_regression` (latest cycle report `goals_passing_after < before`) halts the loop for operator attention. Heavy-context sessions write non-sticky HANDOFF; the next fire clears it and resumes. The gate is mechanical: see `scripts/evolve/halt-check.sh`.
 
 ### Step 1.5: Healing-first classifier
 
-Before fitness or work selection, classify the cycle: `ao ci recent --limit 1 2>/dev/null | jq -r '.Conclusion // empty'`. The command routes through the typed BC2 `CIStatusPort` (`cli/cmd/ao/ci_status_adapter.go`, cycle 117 productionCIStatus) — no inline `gh` shell-outs in the evolve hot path (soc-y5vh.2). If the last push CI was `failure`, this cycle is **restorative-only** — Step 3 selection MUST take only work that reduces CI red (bug-type harvested items, gate-failure-fix beads, or generator output typed bug). No PG4 promotions, feature additions, or new shape work allowed until CI is green. The cycle-history.jsonl `gate` field of any FAIL cycle automatically triggers this mode for cycle N+1. See `references/convergence-mechanics.md`.
+Before fitness or work selection, classify the cycle: `ao ci recent --limit 1 2>/dev/null | jq -r '.Conclusion // empty'` (typed BC2 `CIStatusPort`, soc-y5vh.2). If the last push CI was `failure`, this cycle is **restorative-only** — Step 3 takes only CI-red-reducing work (bug-type harvested items, gate-failure-fix beads, generator bug output); no promotions, features, or new-shape work until green. A `gate=FAIL` in cycle-history.jsonl auto-triggers this for cycle N+1 (and `halt-check.sh` surfaces it as `prior_cycle_fail`). See `references/convergence-mechanics.md`.
 
-**Convergence check:** evaluate the STOP predicate through the typed BC3 `ConvergenceCheckPort` — `ao loop converged --green-streak <n> --unconsumed-high-medium <n> [--fitness-baseline]` (soc-y5vh.8). It emits `{converged, ci_green_streak, unconsumed_high_medium, fitness_baseline_captured, reasons}`; branch on `.converged` instead of hand-parsing `.agents/evolve/session-convergence.json`. If `converged` is true (default criteria: CI green streak ≥ 3, outstanding HIGH+MEDIUM next-work ≤ 1, fitness baseline captured), emit teardown and DO NOT re-arm wakeup.
+**Convergence check:** evaluate the STOP predicate via the typed BC3 `ConvergenceCheckPort` — `ao loop converged --green-streak <n> --unconsumed-high-medium <n> [--fitness-baseline]` (soc-y5vh.8). Branch on `.converged` (default: CI green streak ≥ 3, HIGH+MEDIUM next-work ≤ 1, fitness baseline captured); if true, emit teardown and do NOT re-arm wakeup.
 
 ### Step 2: Measure Fitness
 
@@ -252,166 +244,19 @@ Skip if `--beads-only`. Run `scripts/evolve-measure-fitness.sh` to produce a rol
 
 ### Step 3: Select Work
 
-Selection is a ladder, not a one-shot check. After every productive cycle, return to the TOP of this step and re-read the queue before considering dormancy.
+Selection is a ladder, not a one-shot check — after every productive cycle, return to the TOP and re-read the queue before considering dormancy. **Read [references/work-selection-ladder.md](references/work-selection-ladder.md) for the full per-rung procedure** (programmatic `ao evolve next-work` recommendation, scope filter, metronome gate, the generator rungs with their code blocks, the `--quality` inverted cascade, and the dormancy hard-gate).
 
-When a repo-local program contract exists, apply a scope filter before Step 4:
-- candidate work that clearly requires immutable-scope edits is not eligible for direct execution
-- prefer harvested, beads, goals, and generated work that can plausibly land within mutable scope
-- if the selected item is inherently out of scope, escalate it or convert it into durable follow-up work instead of invoking `/rpi` and hoping discovery widens scope
+Ladder order (standard mode):
+- **3.0 Scope filter** (soc-5qit) — split-or-defer oversized candidates via scout-mode; never bail.
+- **3.1 Harvested** — `.agents/rpi/next-work.jsonl`, highest-value unconsumed.
+- **3.2 Open ready beads** — `bd ready`, highest priority.
+- **3.3 Failing goals + directive gaps** — skip if `--beads-only`; skip quarantined oscillators.
+- **3.4–3.6 Generators** — `/test` coverage, `/deps`+`/perf`, `/refactor`; findings → beads/queue items.
+- **3.7 Feature suggestions** grounded in repo purpose.
 
-**Step 3.0: Scope filter — split-or-defer, never bail (soc-5qit)**
+`--quality` inverts the top (findings before goals/directives). The metronome gate blocks a rung that would repeat the trailing run's `mode` (streak ≥3).
 
-Before claiming a candidate, gate scope vs session budget. If the work touches > 5 non-uniform files, introduces a new shape (schema field, validator, contract surface), is operator-level epic work, OR `PRODUCTIVE_THIS_SESSION > 5` and would extend an arc rather than close one — route to **scout-mode**, which MUST produce one of:
-
-1. **Split** — `bd create` 2-N child beads (each ≤5 files, single-shape) with `--deps discovered-from:<parent-id>`, annotate parent, then **re-enter Step 3** so the smallest child (or another ready bead) gets claimed THIS cycle.
-2. **Defer** — annotate the candidate with `defer:<reason>` and re-enter Step 3 so the next-priority ready bead gets claimed.
-3. **Park** (rare) — `bd update <id> --status blocked --notes "scope-too-big"` and re-enter Step 3.
-
-Scout NEVER returns "no work done." If `bd ready` ≥1, the loop MUST claim one this cycle. See `references/scout-mode.md` and `references/mechanical-batches.md`.
-
-**Metronome gate:** read `mode_repeat_streak` from `session-state.json` (kept current by `scripts/evolve-update-session-state.sh`). If `mode_repeat_streak >= 3` AND the candidate work would produce the same `mode` value as the trailing run, BLOCK selection at this rung and force a jump to the NEXT rung in the ladder. If `mode_repeat_streak >= 5`, file a `bd remember "metronome-N: <mode>"` and require operator override before continuing on that rung. See `references/metronome-gate.md` for the detection rule and the cycles 144-154 retrospective.
-
-**Step 3.1: Harvested work first**
-
-Read `.agents/rpi/next-work.jsonl` and pick the highest-value unconsumed item. Prefer exact repo match, then concrete implementation work, then higher severity. Read `references/knowledge-loop-integration.md` for the claim/release protocol.
-
-**Step 3.2: Open ready beads**
-
-If no harvested item is ready, check `bd ready`. Pick the highest-priority unblocked issue.
-
-**Step 3.3: Failing goals and directive gaps** (skip if `--beads-only`)
-
-First assess directives, then goals:
-- top-priority directive gap from `ao goals measure --directives`
-- highest-weight failing goals (skip quarantined oscillators)
-- lower-weight failing goals
-
-This step exists even when all queued work is empty. Goals are the third source, not the stop condition.
-
-```bash
-DIRECTIVES=$(ao goals measure --directives 2>/dev/null)
-FAILING=$(jq -r '.goals[] | select(.result=="fail") | .id' .agents/evolve/fitness-latest.json | head -1)
-```
-
-**Oscillation check:** Before working a failing goal, check if it has oscillated (improved-to-fail transitions >= 3 times). If so, quarantine it and try the next goal. See `references/oscillation.md` and `references/fitness-scoring.md` for the detection procedure.
-
-**Step 3.4: Testing improvements**
-
-When queues and goals are empty, generate concrete testing work via `/test`:
-
-```
-if --no-lifecycle is NOT set:
-  Skill(skill="test", args="coverage")
-  Only files with < 40% coverage become queue items (severity threshold).
-```
-
-If `/test` is unavailable or `--no-lifecycle` is set, fall back to manual scanning:
-- find packages/files with thin or missing tests
-- look for missing regression tests around recent bug-fix paths
-- identify flaky or absent headless/runtime smokes
-
-Convert any real finding into durable work:
-- add a bead when the work needs tracked backlog ownership, or
-- append a queue item under the shared next-work contract when it should flow directly back into `/rpi`
-
-**Step 3.5: Validation tightening and bug-hunt passes**
-
-If testing improvement generation returns nothing, run lifecycle generators then bug-hunt sweeps:
-
-```
-if --no-lifecycle is NOT set:
-  a) Skill(skill="deps", args="audit")
-     Only deps with CVSS >= 7.0 or 2+ major versions behind become queue items.
-
-  b) if perf-sensitive code detected (benchmarks exist, hot path patterns):
-       Skill(skill="perf", args="profile --quick")
-       Convert significant perf findings to queue items.
-```
-
-If lifecycle generators return nothing or are skipped, fall back to manual sweeps:
-- missing validation gates
-- weak lint/contract coverage
-- bug-hunt style audits for risky areas
-- stale assumptions between docs, contracts, and runtime truth
-
-Again: convert findings into beads or queue items, then immediately select the highest-priority result and continue.
-
-**Step 3.6: Drift / hotspot / dead-code mining**
-
-If the prior generators are empty, mine for complexity debt via `/refactor`:
-
-```
-if --no-lifecycle is NOT set:
-  Skill(skill="refactor", args="--sweep all --dry-run")
-  Only functions with CC > 20 become queue items (severity threshold).
-```
-
-If `/refactor` is unavailable or `--no-lifecycle` is set, fall back to manual mining:
-- complexity hotspots
-- stale TODO/FIXME markers
-- dead code
-- stale docs
-- stale research
-- drift between generated artifacts and source-of-truth files
-
-Do not stop here. Normalize findings into tracked work and continue.
-
-**Step 3.7: Feature suggestions**
-
-If all concrete remediation layers are empty, propose one or more specific feature ideas grounded in the repo purpose, write them as durable work, and continue:
-- create a bead when the feature needs review/backlog treatment
-- or append a queue item with `source: "feature-suggestion"` when it is ready for the next `/rpi` cycle
-
-**Quality mode (`--quality`)** — inverted cascade (findings before directives):
-
-Step 3.0q: Unconsumed high-severity post-mortem findings:
-```bash
-HIGH=$(jq -r 'select(.consumed==false) | .items[] | select(.severity=="high") | .title' \
-  .agents/rpi/next-work.jsonl 2>/dev/null | head -1)
-```
-
-Step 3.1q: Unconsumed medium-severity findings.
-
-Step 3.2q: Open ready beads.
-
-Step 3.3q: Emergency gates (weight >= 5) and top directive gaps.
-
-Step 3.4q: Testing improvements.
-
-Step 3.5q: Validation tightening / bug-hunt / drift mining.
-
-Step 3.6q: Feature suggestions.
-
-This inverts the standard cascade only at the top of the ladder: findings BEFORE goals and directives. It does NOT skip the generator layers.
-
-When evolve picks a finding, claim it first in next-work.jsonl:
-- Set `claim_status: "in_progress"`, `claimed_by: "evolve-quality:cycle-N"`, `claimed_at: "<timestamp>"`
-- Set `consumed: true` only after the /rpi cycle and regression gate succeed
-- If the /rpi cycle fails (regression), clear the claim and leave `consumed: false`
-
-See `references/quality-mode.md` for scoring and full details.
-
-**Nothing found?** HARD GATE — dormancy only when ALL sources empty (soc-5qit):
-
-```bash
-READY_BEADS=$(bd ready --json 2>/dev/null | jq -r 'length // 0' 2>/dev/null || echo 0)
-HARVESTED=$(jq -r 'select(.consumed==false) | .severity' .agents/rpi/next-work.jsonl 2>/dev/null | wc -l | tr -d ' ')
-FAILING_GOALS=$(jq -r '.goals[] | select(.result=="fail") | .id' .agents/evolve/fitness-latest.json 2>/dev/null | wc -l | tr -d ' ')
-IDLE_STREAK=$(jq -r '.idle_streak // 0' .agents/evolve/session-state.json 2>/dev/null)
-
-if [ "$READY_BEADS" -gt 0 ] || [ "$HARVESTED" -gt 0 ] || [ "$FAILING_GOALS" -gt 0 ]; then
-  continue  # work exists — loop back to Step 3 (agile invariant)
-fi
-if [ "${GENERATOR_EMPTY_STREAK:-0}" -ge 2 ] && [ "${IDLE_STREAK:-0}" -ge 2 ]; then
-  printf '%s\n%s\n%s\n' "cycle $CYCLE" "$(date -u +%FT%TZ)" "stagnation: all sources empty x3" > .agents/evolve/DORMANT
-fi
-```
-
-**Agile invariant (soc-5qit):** `bd ready ≥ 1` ⇒ loop NEVER writes DORMANT, NEVER exits. The only path to DORMANT is fully empty backlog + dry generators. Context exhaustion → HANDOFF, not DORMANT.
-
-If work layers were empty but generators haven't exhausted 3 passes yet, persist `GENERATOR_EMPTY_STREAK` and loop back to Step 1.
-
-A cycle is idle only if NO work source returned actionable work and every generator layer also came up empty. A cycle that targeted an oscillating goal and skipped it counts as idle only after the remaining ladder was exhausted.
+**Agile invariant (soc-5qit):** `bd ready ≥ 1` ⇒ the loop NEVER writes DORMANT and NEVER exits. The only path to DORMANT is a fully empty backlog + dry generators (3 passes). Context exhaustion → HANDOFF, not DORMANT. Under loop mode, `write-stop-marker` refuses → log blocked + operator-wait (ADR-0007).
 
 If `--dry-run`: report what would be worked on and go to Teardown.
 
@@ -514,6 +359,8 @@ if [ $((PRODUCTIVE_THIS_SESSION % 5)) -eq 0 ] && [ "$PRODUCTIVE_THIS_SESSION" -g
 fi
 ```
 
+**Drive to completion (orchestrator-merge model, soc-2drk).** Where the repo requires PRs (branch protection rejects direct `main` pushes), a productive cycle does not stop at "PR opened" — the loop is the orchestrator that drives each bead to *merged*. Ship the bead from its per-bead worktree as a PR (trailers `Closes-scenario` / `Bounded-context` / `Evidence`), wait for CI, and **squash-merge to main yourself once CI is green** (`gh pr merge <N> --squash --admin`), then `bd close` the bead and remove the worktree. **Green CI is the only merge gate** — on a quality/test red, fix-and-repush or revert; never merge red. The loop may dispatch sub-agents to implement and drives their PRs to merge too. The operator stays *on* the loop (intent + STOP marker), not *in* it (per-PR approval). This **supersedes "operator is the merge gate"** for the autonomous loop — see [ADR-0008](../../docs/adr/ADR-0008-evolve-intelligent-agile-operating-model.md).
+
 ### Teardown
 
 Read `references/knowledge-loop-integration.md` for the full teardown learning extraction procedure (commit staged artifacts, run `/post-mortem`, push, report summary).
@@ -588,14 +435,15 @@ See `references/cycle-history.md` for advanced troubleshooting.
 
 ## References
 
+- [references/evolve.feature](references/evolve.feature) — Executable spec: gated cycles, ladder, bounded slice, never-self-halt
 - [references/long-loop-discipline.md](references/long-loop-discipline.md) — Disk-is-truth axiom
 - [references/artifacts.md](references/artifacts.md) — Generated files registry
-- [references/autonomous-execution.md](references/autonomous-execution.md) — Autonomous-loop rules, operator-shape carve-out, ScheduleWakeup self-perpetuation
-- [references/snapshot-pattern-for-long-cycle-gates.md](references/snapshot-pattern-for-long-cycle-gates.md) — 4-step pattern for multi-session corpus gates
+- [references/autonomous-execution.md](references/autonomous-execution.md) — Autonomous-loop rules + operator-shape carve-out
+- [references/snapshot-pattern-for-long-cycle-gates.md](references/snapshot-pattern-for-long-cycle-gates.md) — Snapshot pattern for long-cycle gates
 - [references/compounding.md](references/compounding.md) — Knowledge flywheel and work harvesting
 - [references/context-budget.md](references/context-budget.md) — `CONTEXT_BUDGET_EXHAUSTED` as a third stop reason and handoff protocol
-- [references/convergence-mechanics.md](references/convergence-mechanics.md) — Read-path mechanisms (prior-failure injection, healing-first classifier, hypothesis tracking, STOP criteria) that turn write-only ledgers into compounding behavior
-- [references/domain-evolution-bootstrap.md](references/domain-evolution-bootstrap.md) — BDD/DDD/Hexagonal/TDD/XP control surface for AgentOps 3.0 skill/domain evolution
+- [references/convergence-mechanics.md](references/convergence-mechanics.md) — Read-path mechanisms for compounding
+- [references/domain-evolution-bootstrap.md](references/domain-evolution-bootstrap.md) — BDD/DDD/Hexagonal/TDD/XP control surface for skill/domain evolution
 - [references/cycle-history.md](references/cycle-history.md) — JSONL format, recovery protocol, kill switch
 - [references/examples.md](references/examples.md) — Detailed usage examples
 - [references/fitness-scoring.md](references/fitness-scoring.md) — Baseline capture, regression detection, revert procedure
@@ -603,10 +451,10 @@ See `references/cycle-history.md` for advanced troubleshooting.
 - [references/goals-schema.md](references/goals-schema.md) — GOALS.yaml format and continuous metrics
 - [references/knowledge-loop-integration.md](references/knowledge-loop-integration.md) — Claim/release semantics and harvest re-read
 - [references/mechanical-batches.md](references/mechanical-batches.md) — Script-first vs per-file Edit for > 20-file uniform batches
-- [references/metronome-gate.md](references/metronome-gate.md) — Cross-cycle detector that blocks the same-mode-repeated failure mode (cycles 144-154)
+- [references/metronome-gate.md](references/metronome-gate.md) — Cross-cycle same-mode-repeat blocker
 - [references/oscillation.md](references/oscillation.md) — Oscillation detection and quarantine
 - [references/pre-flight-schema-check.md](references/pre-flight-schema-check.md) — Cheap field-fit check before architectural migration cycles
-- [references/postmortem-checkpoint.md](references/postmortem-checkpoint.md) — Stop reason #6: session-PR threshold mandatory `/post-mortem --deep` checkpoint (soc-n75z)
+- [references/postmortem-checkpoint.md](references/postmortem-checkpoint.md) — Stop reason #6: session-PR post-mortem checkpoint (soc-n75z)
 - [references/parallel-execution.md](references/parallel-execution.md) — Parallel /swarm architecture
 - [references/quality-mode.md](references/quality-mode.md) — Quality-first mode: scoring, priority cascade, artifacts
 - [references/scout-mode.md](references/scout-mode.md) — Scout-mode as a first-class cycle result; scope filter procedure

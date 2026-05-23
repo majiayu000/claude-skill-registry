@@ -8,7 +8,7 @@ allowed-tools: Task, Read, Write, Edit, Bash, Grep, Glob, TodoWrite, AskUserQues
 
 ## Overview
 
-Performs post-review cosmetic cleanup to make code production-ready. This is the final workflow step after `/developer-kit-specs:specs.task-review` approval.
+Performs post-review cosmetic cleanup to make code production-ready. This workflow is now integrated as Phase T-7 of `/developer-kit-specs:specs.task-implementation`. It can also be invoked manually using `--action=cleanup`.
 
 **Input**: `docs/specs/[id]/tasks/TASK-XXX.md` (reviewed status)  
 **Output**: Cleaned code, task marked `completed`
@@ -26,6 +26,7 @@ Performs post-review cosmetic cleanup to make code production-ready. This is the
 |----------|----------|-------------|
 | `--lang` | No | `java`, `spring`, `typescript`, `nestjs`, `react`, `python`, `general` |
 | `--task` | Yes | Path to task file |
+| `--action`| No | Set to `cleanup` for manual invocation |
 
 ## Best Practices
 
@@ -118,7 +119,7 @@ Review context for each finding. Remove confirmed debt and document what was rem
 ### Spring Boot Cleanup
 
 ```bash
-/developer-kit-specs:specs-code-cleanup --lang=spring --task="docs/specs/001-user-auth/tasks/TASK-001.md"
+/developer-kit-specs:specs.task-implementation --lang=spring --task="docs/specs/001-user-auth/tasks/TASK-001.md" --action=cleanup
 ```
 
 Actions:
@@ -132,7 +133,7 @@ Actions:
 ### TypeScript Cleanup
 
 ```bash
-/developer-kit-specs:specs-code-cleanup --lang=typescript --task="docs/specs/002-dashboard/tasks/TASK-003.md"
+/developer-kit-specs:specs.task-implementation --lang=typescript --task="docs/specs/002-dashboard/tasks/TASK-003.md" --action=cleanup
 ```
 
 Actions:

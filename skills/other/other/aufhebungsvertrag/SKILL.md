@@ -140,6 +140,29 @@ Dieser Skill dient der Prüfung und dem Entwurf eines Aufhebungsvertrags (auch: 
 | § 203 StGB / Datenschutz | Strafbarkeit bei unbefugter Datenweitergabe | Mandantendaten nur in zulässigen Systemen |
 | Keine Prüfung Sonderkündigungsschutz | Aufhebungsvertrag ggf. unwirksam (z. B. § 9 MuSchG) | Sonderschutz vorab abklären |
 
+## DSGVO-Auskunftsersuchen als Verhandlungshebel bei Aufhebungsverträgen
+
+**Typische Konstellation:** Während laufender Aufhebungsvertragsverhandlungen stellen Arbeitnehmer oder deren Bevollmächtigte ein Auskunftsersuchen nach Art. 15 DSGVO, um internen Druck auf den Arbeitgeber aufzubauen und die Abfindungshöhe zu treiben. Das Auskunftsersuchen dient dabei weniger dem Schutz personenbezogener Daten als vielmehr der Verhandlungsführung.
+
+**Missbrauchsmaßstab (EuGH, Urt. v. 19.03.2026 – C-526/24, Brillen Rottler):**
+Ein Auskunftsersuchen kann nach Art. 12 Abs. 5 S. 2 DSGVO als exzessiv abgelehnt werden, wenn der Arbeitgeber zwei Elemente kumulativ nachweist:
+
+1. **Objektives Element:** Äußere Umstände, die auf missbräuchliche Zweckverfolgung hindeuten — insbesondere der zeitliche Zusammenhang zwischen Aufhebungsverhandlung und Auskunftsantrag, massenhaftes Legal-Tech-Vorgehen oder fehlende inhaltliche Anbindung des Auskunftsersuchens an Datenschutzinteressen.
+2. **Subjektives Element:** Missbräuchliche Absicht — das Ersuchen dient vorrangig dazu, Schadensersatz nach Art. 82 DSGVO zu generieren oder Verhandlungsdruck auszuüben.
+
+Die Hürden sind **hoch**: Das Auskunftsrecht nach Art. 15 DSGVO ist ein Grundrecht; ein einzelner Antrag genügt nicht, um Missbrauch anzunehmen. Die Generalanwältin (GA Szpunar, Schlussanträge v. 12.09.2025 – C-526/24) betonte, dass nur außerordentliche Umstände die Ausnahmewirkung rechtfertigen.
+
+**BAG-Linie zum immateriellen Schaden nach Art. 82 DSGVO:**
+- BAG, Urt. v. 20.06.2024 – 8 AZR 91/22: Bloßer Kontrollverlust durch eine Auskunftspflichtverletzung genügt nicht für eigenständigen immateriellen Schaden; es bedarf eines objektiv erhöhten Missbrauchsrisikos. `[Modellwissen – prüfen]`
+- BAG, Urt. v. 20.02.2025 – 8 AZR 61/24: Konkrete nachteilige Auswirkungen auf die betroffene Person müssen dargelegt werden; abstrakte Beunruhigung genügt nicht. `[Modellwissen – prüfen]`
+
+**Praxishinweise:**
+- **Nicht ignorieren:** Auch ein im Verdacht der Missbräuchlichkeit stehendes Auskunftsersuchen muss fristgerecht beantwortet oder zumindest beschieden werden (Art. 12 Abs. 3 DSGVO: einen Monat). Eine unberechtigte Ablehnung löst eigenständige Schadensersatzansprüche nach Art. 82 DSGVO aus.
+- **Dokumentation anlegen:** Datum der Aufhebungsverhandlung, Datum des Auskunftsersuchens, verwendete Legal-Tech-Vollmacht, Muster bei anderen Mitarbeitern — diese Dokumente bilden die Grundlage für einen späteren Missbrauchseinwand.
+- **Ausgleichsklausel:** Beim Aufhebungsvertrag prüfen, ob laufende oder angekündigte DSGVO-Auskunftsverfahren sowie etwaige Art.-82-DSGVO-Schadensersatzansprüche in die Ausgleichsklausel einbezogen werden sollen; andernfalls sind sie nach Vertragsschluss weiter verfügbar.
+
+Querverweis: `arbeitsrecht/skills/kuendigungs-pruefung/SKILL.md` (Abschnitt DSGVO-Auskunftsersuchen als Druckmittel).
+
 ## Quellenpflicht
 
 Jede juristische Aussage in jedem auf diesem Skill basierenden Dokument ist nach **references/zitierweise.md** zu belegen:

@@ -1,7 +1,8 @@
 ---
 name: wardley-map
 description: "Create or update a Wardley Map of the value chain. Maps user needs, components, evolution stages, and strategic gameplay."
-instruction_budget: 10
+metadata:
+  instruction_budget: "10"
 ---
 
 # Wardley Mapping

@@ -112,3 +112,13 @@ Der AVV enthält EU-SCC nach Beschluss 2021/914/EU (Modul 2: Verantwortlicher-zu
 - **TIA nur Formalie:** Eine TIA muss ehrliche Risikobewertung enthalten. Pauschal „Risiko akzeptabel" ohne Begründung genügt Art. 28 DSGVO und den EDSA-Empfehlungen 01/2020 nicht.
 - **Sub-AV-Haftungslücke:** Art. 28 Abs. 4 DSGVO verlangt, dass dem Sub-AV „dieselben Datenschutzpflichten" auferlegt werden. Ein AVV, der nur auf die DSGVO verweist, ohne Mindestklauseln zu spiegeln, erfüllt diese Anforderung nicht (str., vgl. Hartung, in: Kühling/Buchner, Art. 28 Rn. 80).
 - **Berufsgeheimnisträger:** Bei Mandanten-AVVs (Kanzleien, Ärzte) muss der AVV § 203 StGB und § 43a Abs. 2 BRAO berücksichtigen – unzureichende Vertraulichkeitsklausel kann Strafbarkeit begründen.
+
+## Quellen / Updates
+
+Stand: 05/2026. Aktualität prüfen bei neuen EDSA-Leitlinien zur Auftragsverarbeitung, Änderungen des SCC-Beschlusses 2021/914/EU oder neuen DPF-Entwicklungen.
+
+**Hinweis EDSA-Leitlinien zur Auftragsverarbeitung:** Der EDSA hat Leitlinien zur Abgrenzung von Verantwortlichen und Auftragsverarbeitern veröffentlicht (EDSA, Leitlinien 07/2020 zur Abgrenzung Verantwortlicher/Auftragsverarbeiter, angenommen 07.07.2021). Diese sind bei der Richtungserkennung (Schritt 1) und bei der Prüfung der Pflichtklauseln verbindlich heranzuziehen. Insbesondere: Wer weisungsgebunden und ohne eigenen Entscheidungsspielraum verarbeitet, ist Auftragsverarbeiter; eigenständige Zwecksetzung begründet Mit-Verantwortlichkeit (Art. 26 DSGVO). `[Modellwissen – aktuellen EDSA-Leitlinienstand auf edpb.europa.eu prüfen]`
+
+**Querverweise:**
+- `datenschutzrecht/skills/drittlandstransfer-pruefung/SKILL.md` — Vollständige TIA-Methodik und SCC-Modul-Auswahl-Matrix
+- `datenschutzrecht/skills/dsfa-erstellung/SKILL.md` — DSFA bei Hochrisiko-AVV-Konstellationen

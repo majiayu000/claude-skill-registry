@@ -105,3 +105,63 @@ Das Modell benötigt folgende Informationen:
 ## Quellenpflicht
 
 Jede juristische Aussage in Auskunftsschreiben, Memos und Ablehnungsschreiben ist nach dem Standard in `references/zitierweise.md` zu belegen. Mindestens zwei Rechtsprechungsbelege im BGH-Stil und zwei Kommentarbelege im Bearbeiter-Stil. Nicht belegte Rechtsbehauptungen gelten als Qualitätsfehler. Bei fehlendem Rspr.-Nachweis zu einzelnen Rechtsfragen ist dies ausdrücklich zu kennzeichnen und durch Kommentarliteratur zu kompensieren.
+
+## Rechtsmissbrauch (Art. 12 Abs. 5 DSGVO) — EuGH C-526/24
+
+### Leitentscheidung
+
+EuGH, Urt. v. 19.03.2026 – C-526/24 (Brillen Rottler), Vorabentscheidung auf Vorlage AG Arnsberg; Schlussanträge GA Maciej Szpunar v. 12.09.2025 in C-526/24.
+
+### Grundsatz
+
+Auch ein erstmaliger Auskunftsantrag kann „exzessiv" i.S.d. Art. 12 Abs. 5 DSGVO und damit rechtsmissbräuchlich sein — nicht nur bei einer Vielzahl von Anfragen (quantitativ), sondern auch qualitativ. Da das Auskunftsrecht ein fundamentales Recht ist, sind die Ausnahmen nach Art. 12 Abs. 5 DSGVO eng auszulegen; Rechtsmissbrauch setzt außergewöhnliche Umstände voraus. Die Beweislast für das Vorliegen von Rechtsmissbrauch liegt beim Verantwortlichen.
+
+### Zweistufiges Prüfschema (objektives + subjektives Element)
+
+Der Verantwortliche muss kumulativ nachweisen:
+
+**Stufe 1 — Objektives Element:**
+Umstände, die auf ein künstliches Herbeiführen der Anfragesituation hindeuten, z.B.:
+- Ungewöhnlich kurzer Zeitabstand zwischen Datenerhebung und Auskunftsantrag
+- Gezielte Anmeldung zu einem Newsletter o.Ä. kurz vor Antragstellung ohne erkennbares Informationsinteresse
+- Dokumentiertes Muster massenhaften Vorgehens (öffentlich bekannte Serienanfragen)
+
+**Stufe 2 — Subjektives Element:**
+Missbräuchliche Absicht der betroffenen Person, das Verfahren zu instrumentalisieren — insbesondere um einen Schadensersatzanspruch nach Art. 82 DSGVO künstlich herbeizuführen.
+
+### Indizien-Checkliste (Gesamtschau Einzelfall)
+
+| Indiz | Gewicht | Erläuterung |
+|---|---|---|
+| Zeitpunkt und Abstand Datenerhebung → Anfrage | mittel–hoch | Sehr kurzer Abstand ohne erkennbaren Anlass erhöht Missbrauchsverdacht |
+| Art der Datenerhebung (aktive Anmeldung kurz vor Anfrage) | hoch | Spricht für künstliches Herbeiführen der Situation |
+| Verhalten vor und nach Antragstellung | mittel | Kommunikationsmuster, öffentliche Äußerungen |
+| Art der Kommunikation | mittel | Formulierungsgleichheit mit Serienmustern, sofortiger Schadensersatzhinweis |
+| Öffentlich dokumentiertes massenhaftes Vorgehen | allein nicht ausreichend | EuGH C-526/24: Für sich genommen kein Missbrauchsnachweis |
+| Frühere ähnliche Anfragen derselben Person | allein nicht ausreichend | Geltendmachung von Rechten ist nicht per se missbräuchlich |
+
+### Konsequenzen für den Verantwortlichen
+
+- **Ablehnung nur bei vollständigem Nachweis beider Stufen:** Weder das objektive noch das subjektive Element allein genügt; beide müssen durch konkrete, dokumentierte Umstände belegt werden.
+- **Dokumentationspflicht:** Alle zur Ablehnung herangezogenen Umstände sind intern zu dokumentieren (Zeitachse, Newsletter-Anmeldedaten, Korrespondenzverlauf) — Rechenschaftspflicht Art. 5 Abs. 2 DSGVO.
+- **Risiko unberechtigter Ablehnung:** Lehnt der Verantwortliche eine Auskunft ab, ohne den zweistufigen Nachweis führen zu können, stellt dies einen eigenständigen DSGVO-Verstoß dar, der einen eigenständigen Schadensersatzanspruch nach Art. 82 DSGVO auslöst — auch wenn die zugrundeliegende Datenverarbeitung selbst vollständig DSGVO-konform war.
+- **Kein Automatismus beim Schadensersatz:** Der bloße Verstoß löst nicht automatisch Schadensersatz aus; die betroffene Person muss den konkreten materiellen oder immateriellen Schaden darlegen (Kontrollverlust, Ungewissheit über Verarbeitung). Kein verschuldensunabhängiges Haftungsregime.
+- **Eigenverschulden der betroffenen Person:** Ist das Verhalten der betroffenen Person selbst die entscheidende Schadensursache, entfällt der Anspruch.
+
+### Empfehlung
+
+Vorzugsweise vollständige, fristgerechte Auskunft erteilen. Ablehnung nur als ultima ratio bei lückenlos dokumentiertem zweistufigen Nachweis. Im Zweifel Auskunft erteilen und ggf. Gebühr nach Art. 12 Abs. 5 DSGVO erheben.
+
+### Querverweise
+
+- `datenschutzrecht/skills/dsgvo-auskunft-antwort/SKILL.md` — Abschnitt „Ablehnung wegen Rechtsmissbrauch" mit Formulierungsbausteinen
+
+## Ergänzende Rechtsprechung (Aktualitäten)
+
+### EuGH C-579/21 — Protokolldaten als Gegenstand des Auskunftsrechts
+
+EuGH, Urt. v. 22.06.2023 – C-579/21 (Pankki S), NJW 2023, 2545: Das Auskunftsrecht nach Art. 15 DSGVO umfasst auch Protokolldaten (Zugriffsprotokolle, Log-Dateien), in denen die betroffene Person als Benutzer oder als betroffene Person erfasst ist, sofern diese Daten personenbezogene Daten i.S.d. Art. 4 Nr. 1 DSGVO darstellen. Der Verantwortliche kann die Auskunft über solche Protokolldaten nicht allein mit dem Hinweis verweigern, dass die Protokollierung primär IT-Sicherheitszwecken dient. Maßgeblich ist, ob die Daten die betroffene Person identifizieren oder identifizierbar machen. Konsequenz für die Praxis: Protokolldaten (Server-Logs, Zugangsprotokolle, Datenbankzugriffe) sind systematisch in die Dateninventur nach Schritt 3 einzubeziehen.
+
+### Quellen / Updates
+
+Stand: 05/2026. Aktualität prüfen bei weiteren EuGH-Vorabentscheidungen zu Art. 15 DSGVO sowie bei EDSA-Leitlinien zu Auskunftsersuchen. Nächste Überprüfung: 05/2027 oder bei wesentlichen Änderungen.

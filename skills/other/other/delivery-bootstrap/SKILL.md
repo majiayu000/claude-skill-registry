@@ -1,7 +1,8 @@
 ---
 name: delivery-bootstrap
 description: "Use when starting implementation on a new or unfamiliar codebase. Auto-detects tech stack and sets up development context."
-instruction_budget: 54
+metadata:
+  instruction_budget: "54"
 ---
 
 # Delivery Bootstrap Skill

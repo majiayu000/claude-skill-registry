@@ -1,7 +1,8 @@
 ---
 name: privacy-check
 description: "Use to assess Privacy by Design compliance and GDPR/data protection alignment for a feature or system."
-instruction_budget: 37
+metadata:
+  instruction_budget: "37"
 ---
 
 # Privacy Check Skill

@@ -1,68 +1,31 @@
 ---
 name: janitor-tokens
-description: "Show how many context window tokens each skill consumes. Use when the user asks about token cost, context budget, skill size, or wants to know which skills waste the most context space."
+description: "Show how many context window tokens each skill consumes. Deprecated alias — use /janitor-value (which combines tokens with usage)."
 metadata:
-  version: 1.2.0
+  version: 1.3.0
+  deprecated: true
+  replaced_by: janitor-value
 ---
 
-# Context Window Token Cost
+# Context Window Token Cost (Deprecated Alias)
 
-Show how many tokens each skill's system prompt consumes and identify unused skills wasting context budget.
+**Renamed in v1.3.** Token cost and usage tracking are now merged into one view: `/janitor-value`. The combined report sorts by waste (heavy + unused first), which is more actionable than tokens alone. This alias will be removed in v1.4.
+
+When invoked, run `/janitor-value` and mention the rename in one short line at the top.
 
 ## How to Run
 
 ```bash
-bash ~/.claude/skills/skills-janitor/scripts/tokencost.sh [--budget N] [--weeks N] [--json]
+bash ~/.claude/skills/skills-janitor/scripts/value.sh [--budget N] [--weeks N] [--json]
 ```
 
-## Options
+## Migration
 
-- `--budget N` - Context window size in tokens (default: 200,000)
-- `--weeks N` - Usage lookback period for cross-referencing (default: 4)
-- `--json` - Output as JSON
-
-## Output
-
-```
-=== Skills Janitor - Context Window Cost ===
-Budget: 200,000 tokens
-
-  Skill                               Tokens  Budget  Used?  Last Used
-  ─────────────────────────────────── ─────── ─────── ────── ──────────
-  marketing-copywriting                 2,340   1.2%    yes  2026-04-10
-  n8n-workflows                         1,890   0.9%    yes  2026-04-12
-  marketing-seo-audit                   1,560   0.8%     NO  never
-  marketing-page-cro                    1,230   0.6%     NO  never
-  ...
-
-──────────────────────────────────────────────────────────────────────────
-  TOTAL                                18,720   9.4%
-
---- Summary ---
-  Skills loaded: 35 (4 active, 31 unused)
-  Total token cost: 18,720 (9.4% of 200,000 budget)
-  Unused skill cost: 14,300 (7.2% of budget wasted)
-
---- Top Unused Token Wasters ---
-  1,560 tokens (0.8%)  marketing-seo-audit
-  1,230 tokens (0.6%)  marketing-page-cro
-  ...
-```
-
-## How Token Estimation Works
-
-- Counts words in each SKILL.md file
-- Applies 1.3x multiplier (average English markdown token ratio)
-- Cross-references with usage history to flag unused + expensive skills
-
-## After Reviewing
-
-- Remove unused skills with the highest token cost first
-- Skills you actively use are worth keeping regardless of size
-- Use `/janitor-report` to find other issues before cleaning up
+- Token cost only → still available; `value.sh` includes the same token table plus usage cross-reference
+- JSON output → same `--json` flag works on `value.sh`
 
 ## Related Skills
 
-- For usage tracking: `/janitor-usage`
-- For removing broken skills: `/janitor-fix --prune`
-- For full health report: `/janitor-report`
+- `/janitor-value` — the new combined view
+- `/janitor-report` — full health check
+- `/janitor-fix --prune` — remove broken or unused skills

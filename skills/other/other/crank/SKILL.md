@@ -182,6 +182,7 @@ Crank runs as an isolated phase-2 execution context — discovery and validation
 
 ## Reference Documents
 
+- [references/crank.feature](references/crank.feature) — Executable spec: wave-validity hard gate, FIRE loop, mandatory completion marker, 50-wave cap (soc-qk4b.2)
 - [references/de-sloppify.md](references/de-sloppify.md)
 - [references/execution-preflight.md](references/execution-preflight.md)
 - [references/parallel-wave-isolation.md](references/parallel-wave-isolation.md)

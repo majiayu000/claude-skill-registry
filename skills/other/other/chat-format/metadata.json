@@ -1,0 +1,17 @@
+{
+  "name": "chat-format",
+  "repo": "ruvnet/ruflo",
+  "path": "plugins/ruflo-ruvllm/skills/chat-format/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ruvnet/ruflo",
+  "dir_name": "chat-format",
+  "downloaded_at": "2026-05-23T03:29:46.544277Z",
+  "author": "ruvnet",
+  "source_url": "https://github.com/ruvnet/ruflo/blob/main/plugins/ruflo-ruvllm/skills/chat-format/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ruvnet/ruflo/blob/main/plugins/ruflo-ruvllm/skills/chat-format/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

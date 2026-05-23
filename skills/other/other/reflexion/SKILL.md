@@ -1,7 +1,8 @@
 ---
 name: reflexion
 description: "Use for self-correcting implementation. Implements the reflexion loop: implement, validate, self-critique, retry (max 3 iterations)."
-instruction_budget: 52
+metadata:
+  instruction_budget: "52"
 ---
 
 # Reflexion Skill

@@ -1,7 +1,8 @@
 ---
 name: canvas-health
 description: "Lint canvas files for staleness, missing fields, inconsistent evidence types, and orphaned references. Run periodically or before major transitions."
-instruction_budget: 87
+metadata:
+  instruction_budget: "87"
 ---
 
 # Canvas Health Check
@@ -107,6 +108,22 @@ Audit the canvas knowledge base for quality, consistency, and completeness. The 
    - **Marketing-voice scan**: scan for "powerful", "comprehensive", "robust", "seamless", "best-in-class". Flag occurrences for voice review per `docs/contributing/style.md`.
    - **Receipts case frontmatter**: every file under `docs/receipts/cases/` must have YAML frontmatter with the required fields (id, date, contributor, contributor_link, project, mechanism_or_status, commits, subclass). Flag missing fields.
    - **Highlights rotation cadence**: if README's "How Mycelium got smarter" section has not changed in >90 days (check git log for last commit touching that section), flag as a rotation candidate per `docs/contributing/style.md#highlights-rotation`. The flag is informational; rotation is a `/mycelium:framework-health` decision, not an automatic move.
+
+9c. **Check action-flag timeout handling** (added 2026-05-23 v0.23.43, closes a documented-rule-diverges-from-enforcement instance):
+
+Per `${CLAUDE_PLUGIN_ROOT}/engine/canvas-guidance.yml#action_flags.transitions.timeout_handling`: "ON HOLD entries with calendar conditions (e.g., 'pending May 7 evidence') that pass their named date should be flagged, not silently expired. Surface as a stale flagged item via /canvas-health (existing staleness machinery applies). Do NOT auto-transition to OPEN — the absence of the awaited evidence is itself a finding worth surfacing to the user. After 30 days past a named date with no resolution, suggest re-evaluating whether the condition is still relevant."
+
+The convention says canvas-health surfaces this. Until v0.23.43 it didn't — the convention was written 2026-05-03 but no canvas-health check was added. This check closes that gap (cluster instance #11 of documented-rule-diverges-from-enforcement, 2026-05-23).
+
+Concretely:
+- Scan all canvas `.yml` files for ON HOLD markers via the keyword pattern: `(ON HOLD|on hold)` with a parenthetical containing a calendar date in any of: `YYYY-MM-DD`, `Month DD`, `MM/DD/YYYY`, or month-name forms (e.g., "May 7", "May 2026").
+- For each match, parse the date. Resolve relative months to the most plausible recent occurrence (e.g., "May 7" → most recent 2026-05-07).
+- Compare to today's date:
+  - Future date → no flag (item correctly waiting).
+  - Past date, <30 days → **warning**: surface the item as a flagged-pending-with-passed-date, recommend the user check whether the awaited evidence has arrived (and if so, transition per `transitions.on_hold_condition_met` audit rules). Format: "Canvas [file]: item flagged ON HOLD pending [name] [date]; date passed [N] days ago. Evidence: check if [name] arrived; if yes, transition ON HOLD → OPEN per canvas-guidance#transitions; if no, leave."
+  - Past date, ≥30 days → **escalation**: same format plus "≥30 days past named date — re-evaluate whether the condition is still relevant or whether the underlying assumption has changed (per canvas-guidance#transitions.timeout_handling.escalation)."
+- Do NOT auto-transition any marker. The check surfaces; the maintainer decides.
+- The check is INCOMPLETE without inspection of awaited-evidence sources. Treat the output as a prompt for human judgment, not a verdict.
 
 10. **Log findings to .claude/harness/decision-log.md** (MANDATORY):
    - APPEND a `### Canvas Health Report` entry to `.claude/harness/decision-log.md`

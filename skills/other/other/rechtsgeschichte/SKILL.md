@@ -20,7 +20,7 @@ Diese Skill ist **kein** Rechtsgeschichte-Skript. Sie ist ein Lerngerüst, mit d
 
 ### 1. Römisches Recht und die BGB-Entstehung (bis 1900)
 
-- **Corpus Iuris Civilis (Justinian, 533/534)**: Digesten, Institutionen, Codex, Novellen. Vorbild dogmatischer Systematik.
+- **Corpus Iuris Civilis (Justinian, 533/534)**: Digesten, Institutionen, Codex Iustinianus, Novellen. Vorbild dogmatischer Systematik.
 - **Glossatoren** (Bologna, 11./12. Jh.) und **Kommentatoren** (Postglossatoren, Bartolus, 14. Jh.): Wiederbelebung und Anpassung an die mittelalterliche Lebenswelt.
 - **Rezeption** in Deutschland ab dem 15. Jh.: römisch-gemeines Recht als subsidiäres Recht im Reich.
 - **Naturrechtskodifikationen**: Allgemeines Landrecht für die Preußischen Staaten (ALR, 1794), Code civil (1804, in linksrheinischen Gebieten geltendes Recht), ABGB (1811, Österreich), Code Napoléon im Rheinland.

@@ -6,7 +6,10 @@ practices:
 - sre
 - lean-startup
 hexagonal_role: domain
-consumes: []
+consumes:
+- implement
+- vibe
+- council
 produces:
 - result.json
 context_rel:
@@ -247,6 +250,7 @@ should change. See the `/goals` skill.
 
 ## Reference Documents
 
+- [references/post-mortem.feature](references/post-mortem.feature) — Executable spec: validate-shipped, ratcheted learning promotion, next-work harvest, result.json (soc-qk4b.2)
 - [references/harvest-next-work.md](references/harvest-next-work.md)
 - [references/learning-templates.md](references/learning-templates.md)
 - [references/plan-compliance-checklist.md](references/plan-compliance-checklist.md)

@@ -14,9 +14,8 @@ At the start, use `TaskCreate` to create a task for each step:
 1. Resolve and read the plan file
 2. Read context files
 3. Load task-specific skills
-4. Create sub-tasks for plan Implementation Steps
-5. Run `/implement` skill
-6. Update plan status
+4. Run `/implement` skill
+5. Update plan status
 
 ## Step 1: Resolve and Read the Plan File
 
@@ -48,15 +47,11 @@ Scan the plan's **Implementation Steps** for work types that match available ski
 
 If unsure, do not load. Do not load `/code-style` here.
 
-## Step 4: Create Sub-Tasks for Plan Implementation Steps
-
-Use `TaskCreate` to add one sub-task per plan Implementation Step. These sub-tasks belong to `/implement`; do not start or complete them in this skill.
-
-## Step 5: Run `/implement` Skill
+## Step 4: Run `/implement` Skill
 
 Run the `/implement` skill. The plan file, its file references, and its Verification section are already in conversation context from Step 1.
 
-## Step 6: Update Plan Status
+## Step 5: Update Plan Status
 
 After `/implement` completes, set the plan's frontmatter `status:` to `done`. If the plan is the legacy `.turbo/plan.md` without frontmatter, skip this step.
 
@@ -65,4 +60,4 @@ After `/implement` completes, set the plan's frontmatter `status:` to `done`. If
 - The plan file is read-only during execution. If revisions are needed, run `/refine-plan` or `/draft-plan` separately.
 - Never skip Steps 2 or 3.
 - Never enumerate or execute the plan's Implementation Steps inline. The work runs through `/implement`. Restating steps as a turn-level narration counts as inline execution and bypasses the delegation.
-- If the plan's Implementation Steps or Verification include `git commit`, `git push`, or PR creation, halt before Step 5 and ask the user to remove them via `/refine-plan`.
+- If the plan's Implementation Steps or Verification include `git commit`, `git push`, or PR creation, halt before Step 4 and ask the user to remove them via `/refine-plan`.

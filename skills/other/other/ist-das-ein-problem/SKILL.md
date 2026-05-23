@@ -68,7 +68,7 @@ Manche Fragen sind auf der Oberfläche in Ordnung haben aber eine Wendung. Das M
 | „Können wir auf diesen Daten trainieren?" | Nutzungsrechte für den ursprünglichen Erhebungszweck erstrecken sich möglicherweise nicht auf Training – vgl. DSGVO Art. 5 Abs. 1 lit. b (Zweckbindung), BGH, Urt. v. 27.07.2020 – VI ZR 405/18 | „Was haben wir Nutzern bei der Erhebung mitgeteilt? In welchen Jurisdiktionen sind die Nutzer?" |
 | „Es ist nur ein internes Tool" | Interne Tools verarbeiten trotzdem personenbezogene Daten – Art. 3 DSGVO kennt keine „intern"-Ausnahme | „Wessen Daten berührt es? Mitarbeiter, Kunden, Dritte?" |
 | „Wir machen schon etwas Ähnliches" | „Ähnlich" macht viel Arbeit – das Delta ist meistens wo die Frage liegt | „Ähnlich wie? Was ist tatsächlich anders?" |
-| „Können wir [KI-Anbieter / LLM] dafür verwenden?" | Anbieter-KI-Bedingungen können Training auf Eingaben erlauben; Nutzungsfall braucht möglicherweise KI-Folgenabschätzung (KI-VO Art. 9) – weiterleiten an `/ki-governance:anwendungsfall-triage` | „Gibt es einen KI-Zusatz? Welche Daten gehen ins Modell?" |
+| „Können wir [KI-Anbieter / KI-System] dafür verwenden?" | Anbieter-KI-Bedingungen können Training auf Eingaben erlauben; Nutzungsfall braucht möglicherweise KI-Folgenabschätzung (KI-VO Art. 9) – weiterleiten an `/ki-governance:anwendungsfall-triage` | „Gibt es einen KI-Zusatz? Welche Daten gehen ins Modell?" |
 | „Können wir KI zu diesem Feature hinzufügen?" | Möglicherweise neuer Nutzungsfall nicht im Register; könnte KI-VO-Anforderungen auslösen – weiterleiten an `/ki-governance:anwendungsfall-triage` | „Was macht die KI – assistierend oder automatisiert? Auf wen wirkt sie?" |
 | „Das Modell entscheidet automatisch" | Automatisierte Entscheidungsfindung ohne menschliche Überprüfung ist in einigen Jurisdiktionen reguliert (Art. 22 DSGVO, KI-VO Art. 14) | „Wer ist betroffen? Gibt es einen Menschen in der Schleife? Wo sind die betroffenen Nutzer?" |
 | „Es ist KI-generierter Inhalt" | Ausgabe-IP und Offenlegungspflichten variieren nach Jurisdiktion und Anbieterbedingungen – vgl. KI-VO Art. 50 (Kennzeichnung), UrhG § 2 (Werkschutz) | „Was ist der Inhaltstyp? Behandeln die Anbieterbedingungen Ausgabe-Eigentümerschaft? Wer ist das Publikum?" |
@@ -113,7 +113,7 @@ das dem Kunden verspricht. (Art. 5 Abs. 1 lit. b DSGVO, § 25 TTDSG)
 ```
 
 ```
-⚠️ Braucht KI-Governance-Triage – ein LLM zu diesem Ablauf hinzufügen bedeutet
+⚠️ Braucht KI-Governance-Triage – ein KI-System zu diesem Ablauf hinzufügen bedeutet
 wir müssen den Nutzungsfall gegen das Register prüfen und eine KI-Folgenabschätzung
 bestätigen bevor es shippt. Dauert einen Tag. Soll ich `/ki-governance:anwendungsfall-triage`
 jetzt ausführen? (KI-VO Art. 9, Art. 13)

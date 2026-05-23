@@ -1,7 +1,8 @@
 ---
 name: dora-check
 description: "Assess delivery health metrics. For software: DORA + APEX. For content/AI/service products: product-type-appropriate metrics."
-instruction_budget: 126
+metadata:
+  instruction_budget: "126"
 ---
 
 # Delivery Metrics Check

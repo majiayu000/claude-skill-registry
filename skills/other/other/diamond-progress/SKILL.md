@@ -1,7 +1,8 @@
 ---
 name: diamond-progress
 description: "Progress a diamond from one phase to the next. Runs all required theory gate checks, validates evidence, and at Deliver->Complete runs the executable Definition of Done checklist."
-instruction_budget: 205
+metadata:
+  instruction_budget: "205"
 ---
 
 # Diamond Progress Skill

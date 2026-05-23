@@ -164,12 +164,30 @@ Use `AskUserQuestion` — header "Behaviors", question "Does this decomposition 
 
 For **bug fixes**: the first behavior is always "reproduce the bug" — a test that demonstrates the current broken behavior.
 
+### Anti-pattern: horizontal slicing
+
+**Do not write all tests first, then all implementations.** That is "horizontal slicing" — treating Red as "write every test in the list" and Green as "implement everything at once." Tests written in bulk test *imagined* behavior, not actual behavior: they end up checking the shape of things (signatures, data structures) rather than user-facing outcomes, and they become insensitive to real changes — passing when behavior breaks, failing when behavior is fine.
+
+The correct shape is vertical: one test → one implementation → next test. Each cycle responds to what you learned from the previous one. Because you just wrote the code, you know exactly which behavior matters next and how to verify it.
+
+```
+WRONG (horizontal):
+  RED:   test1, test2, test3, test4, test5
+  GREEN: impl1, impl2, impl3, impl4, impl5
+
+RIGHT (vertical):
+  RED→GREEN: test1→impl1
+  RED→GREEN: test2→impl2
+  RED→GREEN: test3→impl3
+  ...
+```
+
 ## Step 4: Red — Write a Failing Test
 
 For the current behavior, write a minimal test that:
 - Follows the project's testing conventions from `testing.md` (framework, file location, naming, mocking patterns)
 - Tests exactly one behavior — clear expected input and output
-- Uses descriptive test names that read as behavior specifications (e.g., `"returns 401 when token is expired"`, not `"test auth"`)
+- Uses descriptive test names that read as behavior specifications (e.g., `"returns 401 when token is expired"`, not `"test auth"`) — the test name is documentation of what capability exists
 - Avoids common testing anti-patterns — read `$CLAUDE_PLUGIN_ROOT/skills/tdd/references/testing-anti-patterns.md` before writing mocks; prefer real code over mocks, never assert on mock behavior, mock only external services or non-deterministic dependencies
 
 Place the test file according to the project's convention (from `testing.md`). If adding to an existing test file, append; if the convention calls for a new file, create one.

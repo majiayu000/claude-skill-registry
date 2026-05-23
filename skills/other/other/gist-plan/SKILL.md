@@ -1,7 +1,8 @@
 ---
 name: gist-plan
 description: "GIST planning workflow. Structure goals into ideas, steps, and tasks using Gilad's evidence-guided framework."
-instruction_budget: 32
+metadata:
+  instruction_budget: "32"
 ---
 
 # GIST Planning

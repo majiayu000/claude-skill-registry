@@ -1,7 +1,8 @@
 ---
 name: xai-check
 description: "Explainability (XAI) audit for products containing AI components. Five-stage tier-scaled check: risk classification, stakeholder×question matrix, fidelity audit, system card, recourse path. Honest about what was validated functionally vs what needs user testing."
-instruction_budget: 60
+metadata:
+  instruction_budget: "60"
 ---
 
 # XAI Check Skill

@@ -1,7 +1,8 @@
 ---
 name: team-shape
 description: "Assess team structure against Skelton's Team Topologies. Evaluate cognitive load, interaction modes, and Conway's Law alignment."
-instruction_budget: 26
+metadata:
+  instruction_budget: "26"
 ---
 
 # Team Shape Assessment

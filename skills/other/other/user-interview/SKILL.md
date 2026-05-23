@@ -1,7 +1,8 @@
 ---
 name: user-interview
 description: "Guide for conducting Torres-style story-based user interviews with bias mitigation and JTBD lens."
-instruction_budget: 39
+metadata:
+  instruction_budget: "39"
 ---
 
 # User Interview Guide

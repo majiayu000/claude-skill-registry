@@ -298,7 +298,7 @@ Distribute tasks across waves using 5 named roles. Read `waves` from Session Con
 | **Discovery** | Understand the current state before changing anything | No (read-only) |
 | **Impl-Core** | Primary implementation — core feature code, APIs, DB changes | Yes |
 | **Impl-Polish** | Fix issues from Impl-Core, secondary tasks, integration, edge cases | Yes |
-| **Quality** | Tests, typecheck, lint, security review | Yes (tests only) |
+| **Quality** | Tests, typecheck, lint, security review | Yes (tests only). Lint MUST use the canonical `{lint-command}` unscoped — never domain-split (e.g., `pnpm lint src/` hides errors in `tests/`). See quality-gates § Scope Policy. |
 | **Finalization** | Documentation, issue cleanup, commit preparation | Minimal |
 
 ### Role-to-Wave Mapping

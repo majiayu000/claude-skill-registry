@@ -1,7 +1,8 @@
 ---
 name: interview
 description: "Use when onboarding a new product/project. Progressive interview to understand purpose, vision, north star, and competitive landscape."
-instruction_budget: 110
+metadata:
+  instruction_budget: "110"
 ---
 
 # Interview Skill
@@ -86,18 +87,33 @@ Output the brief markdown to the chat. This is the visible payoff and it MUST ap
 <one paragraph sharpened from Q4: what to do, what you'll learn, when you'd know>
 ```
 
-#### Step 2 — Side-effect canvas writes (after brief is rendered)
+#### Step 2 — Side-effect canvas + decision-log writes (after brief is rendered)
 
-Read+Edit in parallel where possible (one tool batch for Reads, one for Edits) to minimize TUI noise:
+**Hard requirement**: all FOUR files below must be written before Step 3. This is not optional or "best-effort" — downstream skills (`/mycelium:diamond-assess`, `/mycelium:jtbd-map`, `/mycelium:opportunity`) AND the auto-dogfood verification all assume the brief flow produces this complete artifact set. The brief flow's "10-min first value" promise IS this four-file write.
 
-- `.claude/canvas/purpose.yml`: purpose statement from Q1, JTBD functional from Q1+Q2, workarounds from Q2. Tag all entries `source_class: internal_stakeholder, validated: false`.
-- `.claude/diamonds/active.yml`: L0 Purpose diamond, phase Discover, `confidence: 0.15` (canvas-density-derived: purpose 0.05 + JTBD functional 0.05 + workarounds 0.025 ≈ 0.125 → 0.15; see formula table at end of file), evidence_type: internal_stakeholder, theory_gates_status all pending, note: `created_via: brief`.
+Read+Edit in parallel where possible (one tool batch for Reads, one for Edits) to minimize TUI noise. Order does not matter, but ALL FOUR must land:
 
-Do NOT write `opportunities.yml`, `north-star.yml`, `landscape.yml`, or any other canvas file from the brief alone — those are populated when the user picks a depth option.
+- **(1 of 4) `.claude/harness/decision-log.md`** — APPEND a minimal entry naming the brief's substance. Do NOT defer to the "After the Interview" section below; that section EXTENDS this minimal entry, it does NOT replace it. If you skip this write, the audit trail has a hole for any user who stops after the brief (which is most of them). Format (literal — do not paraphrase the section headers):
+  ```
+  ### YYYY-MM-DD - Interview brief: <Q1 idea name>
+  - **Decision**: Conducted 4-question brief on <Q1 idea name>. Purpose, JTBD-functional, and biggest risk captured. Tagged as internal_stakeholder evidence pending external validation.
+  - **Theory**: Sinek (purpose), Christensen (JTBD-functional from Q1+Q2), Torres (riskiest assumption from Q3), Cagan (four-risks classification on Q3).
+  - **Evidence**: User-supplied Q1-Q4 answers (paraphrase Q1+Q3 in 1-2 sentences each, mentioning the project name and the user's own words about what they're building).
+  - **Confidence**: 0.15 (canvas-density-emergent — see formula).
+  - **Why_not_alternatives**: N/A (first interview).
+  ```
+  Added 2026-05-22 (v0.23.40), hoisted to first-in-list 2026-05-23 (v0.23.41) per Phase 5 finding that the decision-log write was being skipped when buried mid-list — the agent followed canvas-write bullets but treated this one as optional.
 
-After writes, output three lines:
+- **(2 of 4) `.claude/canvas/purpose.yml`**: purpose statement from Q1, JTBD functional from Q1+Q2, workarounds from Q2. Tag all entries `source_class: internal_stakeholder, validated: false`.
+- **(3 of 4) `.claude/canvas/jobs-to-be-done.yml`**: stub JTBD entry from Q1+Q2 with `functional` dimension populated and `emotional`/`social`/`hiring`/`firing`/`opportunity_score` fields present as placeholders for downstream `/mycelium:jtbd-map` enrichment. Even a one-line stub (e.g., `hiring: "TBD via /mycelium:jtbd-map"`) is enough — the file existing with the JTBD structural shape is what lets the auto-dogfood evaluator's `jtbd_mapped` check pass AND lets `/mycelium:jtbd-map` build incrementally rather than from a blank file. Tag `source_class: internal_stakeholder, validated: false`. Added 2026-05-22 (v0.23.39) per Phase 3c onboarding-cold-start finding.
 
-1. `Saved your brief to canvas (purpose.yml + .claude/diamonds/active.yml).`
+- **(4 of 4) `.claude/diamonds/active.yml`**: L0 Purpose diamond, **`scale: L0`, `phase: discover`** (lowercase per active.yml schema convention), `confidence: 0.15` (canvas-density-derived: purpose 0.05 + JTBD functional 0.05 + workarounds 0.025 ≈ 0.125 → 0.15; see formula table at end of file), evidence_type: internal_stakeholder, theory_gates_status all pending, note: `created_via: brief`.
+
+Do NOT write `opportunities.yml`, `north-star.yml`, `landscape.yml`, or any other canvas file from the brief alone — those are populated when the user picks a depth option in Step 3.
+
+After writing all four files, output four lines (one per file written):
+
+1. `Saved your brief to canvas (purpose.yml + jobs-to-be-done.yml + diamonds/active.yml) + decision-log entry.`
 2. `L0 confidence set to 0.15 — this reflects what a 4-question brief can establish (purpose 0.05 + JTBD functional 0.05 + workarounds 0.025). Confidence increases as more canvas dimensions get evidence; see the formula at the end of this skill for the full ladder.`
 3. `Tagged your brief as source_class: internal_stakeholder (your own description, not independent user evidence yet) + validated: false. If you have real interview data, user research, or behavioral evidence behind these answers, run /mycelium:assumption-test or /mycelium:log-evidence to attach it — the source class then shifts and confidence rises. The five source classes are: external_human, external_data, internal_stakeholder, internal_desk, internal_simulated (see schema for full definitions).`
 
@@ -380,11 +396,13 @@ The interview creates an **L0 Purpose diamond** in Discover phase. Here's the br
 ### Decision Log Entry (v0.11.1)
 
 Write a decision-log entry for the interview itself. The interview shapes all downstream work — it is the most foundational decision in the project lifecycle. Log entry must include:
-- **Decision**: "Conducted initial product interview. Established purpose, JTBD, north star, landscape, and classification."
+**Coordinate with Step 2's minimal entry** (added v0.23.40, hoisted v0.23.41). If Step 2 already wrote `### YYYY-MM-DD - Interview brief: <name>`, EXTEND that entry with the fields below — do NOT write a second, duplicate entry. If Step 2's write was somehow missed (recovery path), write the full entry now.
+
+- **Decision**: "Conducted initial product interview. Established purpose, JTBD, north star, landscape, and classification." (Replaces or extends Step 2's minimal "Conducted 4-question brief" decision text if classic Phase 1-6 depth completed.)
 - **Theory**: Sinek (purpose), Christensen (JTBD), Torres (opportunity identification), Wardley (landscape)
-- **Evidence**: Summary of key inputs from the user (problem statement, target users, strategic bets)
-- **Confidence**: The initial diamond confidence (typically 0.2-0.35 for a first interview)
-- **Alternatives considered**: N/A for initial interview (but note if the user considered alternative framings)
+- **Evidence**: Summary of key inputs from the user (problem statement, target users, strategic bets) — including the project name and the user's own framing words.
+- **Confidence**: The initial diamond confidence (typically 0.2-0.35 for a first interview completing Phase 1-6, higher than brief-only 0.15)
+- **Why_not_alternatives**: For initial interview, generally N/A (note any framings the user explicitly considered and rejected).
 - **Classification rationale**: Why this project_type and dogfood status were chosen
 
 ### Theory Gates Initialization (v0.11.1)

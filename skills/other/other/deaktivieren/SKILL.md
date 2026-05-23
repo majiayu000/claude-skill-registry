@@ -49,7 +49,7 @@ Den Deaktivierungs-Arbeitsablauf aus dem `skill-verwalter`-Referenz-Skill ausfü
 ### Schritt 2: Dateien identifizieren
 
 Folgende Umbenennungen vorbereiten:
-- `SKILL.md` → `SKILL.md.disabled` (Claude entdeckt den Skill nicht mehr als aktiven Skill)
+- `SKILL.md` → `SKILL.md.disabled` (das System entdeckt den Skill nicht mehr als aktiven Skill)
 - `ausloeser/ausloeser.json` → `ausloeser/ausloeser.json.disabled` (falls vorhanden — verhindert automatisches Auslösen)
 - Alle Agentendateien `agents/*.md` → `agents/*.md.disabled` (falls vorhanden — stoppt geplante Agenten)
 

@@ -57,14 +57,7 @@ for the boundary from Discovery into Plan:
 | Context packet | slice plan, file dependency matrix, acceptance criteria, test levels |
 | Guard adapter | stale-scope verification, symbol verification, wave-validity check |
 
-```gherkin
-Feature: Plan converts dense intent into executable slices
-  Scenario: Plan consumes Discovery output
-    Given Discovery provides density fields and artifact links
-    When Plan receives the `plan_slices` port request
-    Then each slice has acceptance criteria, write scope, test levels, and ownership
-    And no slice depends on raw Discovery chat context
-```
+Executable acceptance: [references/plan.feature](references/plan.feature) — consumes Discovery output, one slice per Given/When/Then row, wave-validity gate, durable slice-validation artifact.
 
 ## Flags
 

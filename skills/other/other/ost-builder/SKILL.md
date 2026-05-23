@@ -1,7 +1,8 @@
 ---
 name: ost-builder
 description: "Use to build or update an Opportunity Solution Tree from research data. Never from brainstorming."
-instruction_budget: 47
+metadata:
+  instruction_budget: "47"
 ---
 
 # OST Builder Skill

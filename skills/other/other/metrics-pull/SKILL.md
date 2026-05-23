@@ -1,7 +1,8 @@
 ---
 name: metrics-pull
 description: "Pull snapshots from all configured metric sources, compute deltas against prior snapshots, flag unexplained signals, and draft evidence entries for canvas files. One entry point for all external product/market metrics."
-instruction_budget: 47
+metadata:
+  instruction_budget: "47"
 ---
 
 # Metrics Pull Skill

@@ -1,7 +1,8 @@
 ---
 name: retrospective
 description: "Structured retrospective after completing a delivery increment or diamond. Captures learning for continuous improvement."
-instruction_budget: 58
+metadata:
+  instruction_budget: "58"
 ---
 
 # Retrospective

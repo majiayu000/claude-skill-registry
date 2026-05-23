@@ -1,7 +1,8 @@
 ---
 name: devils-advocate
 description: "Systematically challenge current assumptions before major decisions. Counters confirmation bias, groupthink, and overconfidence."
-instruction_budget: 26
+metadata:
+  instruction_budget: "26"
 ---
 
 # Devil's Advocate

@@ -1,7 +1,8 @@
 ---
 name: assumption-test
 description: "Design the smallest viable test to validate or invalidate a critical assumption. Based on Torres's assumption testing framework, organized by Gilad's AFTER model (Assessment → Fact-Finding → Tests → Experiments → Release Results)."
-instruction_budget: 38
+metadata:
+  instruction_budget: "38"
 ---
 
 # Assumption Testing

@@ -1,7 +1,8 @@
 ---
 name: bias-check
 description: "Use before any research activity or significant decision. Reviews cognitive biases relevant to the current stage."
-instruction_budget: 27
+metadata:
+  instruction_budget: "27"
 ---
 
 # Bias Check Skill

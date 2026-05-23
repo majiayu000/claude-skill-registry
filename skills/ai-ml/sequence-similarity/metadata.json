@@ -1,0 +1,16 @@
+{
+  "name": "sequence-similarity",
+  "repo": "GPTomics/bioSkills",
+  "path": "database-access/sequence-similarity/SKILL.md",
+  "source": "github.com/GPTomics/bioSkills",
+  "downloaded_at": "2026-02-02T04:43:48.358123Z",
+  "dir_name": "sequence-similarity",
+  "category": "ai-ml",
+  "author": "GPTomics",
+  "source_url": "https://github.com/GPTomics/bioSkills/blob/main/database-access/sequence-similarity/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 GPTomics",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

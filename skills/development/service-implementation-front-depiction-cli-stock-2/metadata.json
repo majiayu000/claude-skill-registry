@@ -1,0 +1,18 @@
+{
+  "name": "service-implementation",
+  "description": "Implement Effect services as fine-grained capabilities avoiding monolithic designs",
+  "repo": "front-depiction/cli-stock",
+  "path": ".claude/skills/service-implementation",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/front-depiction/cli-stock",
+  "dir_name": "service-implementation-front-depiction-cli-stock-2",
+  "author": "front-depiction",
+  "source_url": "https://github.com/front-depiction/cli-stock/blob/main/.claude/skills/service-implementation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/front-depiction/cli-stock/blob/main/.claude/skills/service-implementation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

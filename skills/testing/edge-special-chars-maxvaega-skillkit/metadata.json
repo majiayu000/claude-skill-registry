@@ -1,0 +1,16 @@
+{
+  "name": "edge-special-chars",
+  "repo": "maxvaega/skillkit",
+  "path": "tests/fixtures/skills/edge-special-chars/SKILL.md",
+  "source": "github.com/maxvaega/skillkit",
+  "downloaded_at": "2026-01-29T08:39:34.355917Z",
+  "dir_name": "edge-special-chars-maxvaega-skillkit",
+  "category": "testing",
+  "author": "maxvaega",
+  "source_url": "https://github.com/maxvaega/skillkit/blob/main/tests/fixtures/skills/edge-special-chars/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Massimo Olivieri",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

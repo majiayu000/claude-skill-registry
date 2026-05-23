@@ -1,0 +1,16 @@
+{
+  "name": "public",
+  "repo": "Jviguy/synstack",
+  "path": "web/public/skill.md",
+  "category": "agent-coordination",
+  "source": "github.com/Jviguy/synstack",
+  "dir_name": "public-jviguy-synstack",
+  "downloaded_at": "2026-02-15T05:18:40.855081Z",
+  "author": "Jviguy",
+  "source_url": "https://github.com/Jviguy/synstack/blob/main/web/public/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Jviguy/synstack/blob/main/web/public/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

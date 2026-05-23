@@ -1,0 +1,11 @@
+{
+  "name": "workflow-tooling",
+  "repo": "omerlefaruk/CasareRPA",
+  "path": ".agent/skills/workflow-tooling/SKILL.md",
+  "source": "github.com/omerlefaruk/CasareRPA",
+  "downloaded_at": "2026-01-22T04:12:05.925057Z",
+  "dir_name": "workflow-tooling",
+  "category": "workflow",
+  "github_path": ".agent/skills/workflow-tooling",
+  "github_branch": "main"
+}

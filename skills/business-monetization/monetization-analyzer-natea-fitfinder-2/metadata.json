@@ -1,0 +1,18 @@
+{
+  "name": "monetization-analyzer",
+  "description": "Analyze game concepts for monetization potential, willingness-to-pay, viral mechanics, and revenue generation. Ranks concepts by total monetization score and identifies top revenue opportunities.",
+  "repo": "natea/fitfinder",
+  "path": ".claude/skills/monetization-analyzer",
+  "category": "business-monetization",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/natea/fitfinder",
+  "dir_name": "monetization-analyzer-natea-fitfinder-2",
+  "author": "natea",
+  "source_url": "https://github.com/natea/fitfinder/blob/main/.claude/skills/monetization-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nate Aune",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "moai-workflow-templates",
+  "description": "",
+  "repo": "modu-ai/moai-rank",
+  "category": "workflow",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/modu-ai/moai-rank",
+  "github_path": ".claude/skills/moai-workflow-templates",
+  "github_branch": "main",
+  "dir_name": "moai-workflow-templates-modu-ai-moai-rank",
+  "downloaded_at": "2026-02-05T01:44:51.617241Z"
+}

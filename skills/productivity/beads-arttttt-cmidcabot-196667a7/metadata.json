@@ -1,0 +1,20 @@
+{
+  "name": "beads",
+  "description": "",
+  "repo": "arttttt/CMIDCABot",
+  "category": "productivity",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".codex/skills/beads",
+  "github_branch": "main",
+  "dir_name": "beads-arttttt-cmidcabot-196667a7",
+  "downloaded_at": "2026-02-05T01:45:35.370469Z",
+  "author": "arttttt",
+  "source_url": "https://github.com/arttttt/CMIDCABot/blob/main/.codex/skills/beads/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/arttttt/CMIDCABot/blob/main/.codex/skills/beads/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

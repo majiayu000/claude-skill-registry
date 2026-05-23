@@ -1,0 +1,18 @@
+{
+  "name": "surf",
+  "description": "Unified browser automation and CDP management for AI agents. Single entry point for ALL Chrome/browser interactions: - Start/stop Chrome with CDP for Puppeteer-based testing - Navigate, click, type, s",
+  "repo": "grahama1970/agent-skills",
+  "path": "skills/surf",
+  "category": "testing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/grahama1970/agent-skills",
+  "dir_name": "surf-grahama1970-agent-skills-2",
+  "author": "grahama1970",
+  "source_url": "https://github.com/grahama1970/agent-skills/blob/main/skills/surf/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/grahama1970/agent-skills/blob/main/skills/surf/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

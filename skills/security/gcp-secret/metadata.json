@@ -1,0 +1,13 @@
+{
+  "name": "gcp-secret",
+  "description": "",
+  "repo": "kubony/openclaw-gcp-setup",
+  "category": "security",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kubony/openclaw-gcp-setup",
+  "github_path": ".claude/skills/gcp-secret",
+  "github_branch": "main",
+  "dir_name": "gcp-secret",
+  "downloaded_at": "2026-02-05T01:45:01.750159Z"
+}

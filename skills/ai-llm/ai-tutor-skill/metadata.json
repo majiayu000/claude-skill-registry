@@ -1,0 +1,16 @@
+{
+  "name": "ai-tutor-skill",
+  "repo": "ShawhinT/ai-tutor-skill",
+  "path": "SKILL.md",
+  "category": "ai-llm",
+  "source": "github.com/ShawhinT/ai-tutor-skill",
+  "dir_name": "ai-tutor-skill",
+  "downloaded_at": "2026-02-15T05:45:54.205713Z",
+  "author": "ShawhinT",
+  "source_url": "https://github.com/ShawhinT/ai-tutor-skill/blob/main/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ShawhinT/ai-tutor-skill/blob/main/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

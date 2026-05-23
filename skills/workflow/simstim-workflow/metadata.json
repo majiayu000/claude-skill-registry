@@ -1,0 +1,13 @@
+{
+  "name": "simstim-workflow",
+  "description": "",
+  "repo": "0xHoneyJar/loa-beauvoir",
+  "category": "workflow",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/0xHoneyJar/loa-beauvoir",
+  "github_path": ".claude/skills/simstim-workflow",
+  "github_branch": "main",
+  "dir_name": "simstim-workflow",
+  "downloaded_at": "2026-02-05T05:04:21.800157Z"
+}

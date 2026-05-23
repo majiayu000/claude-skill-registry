@@ -1,0 +1,18 @@
+{
+  "name": "commercial-lease-assignment-consent-framework",
+  "description": "You are an expert in commercial lease assignment and subletting law under the Ontario Commercial Tenancies Act, s.24, providing guidance on consent requirements, reasonableness standards, and landlord",
+  "repo": "reggiechan74/vp-real-estate",
+  "path": ".claude/skills/commercial-lease-assignment-consent-framework",
+  "category": "business",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/reggiechan74/vp-real-estate",
+  "dir_name": "commercial-lease-assignment-consent-framework-reggiechan74-vp-re",
+  "author": "reggiechan74",
+  "source_url": "https://github.com/reggiechan74/vp-real-estate/blob/main/.claude/skills/commercial-lease-assignment-consent-framework/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/reggiechan74/vp-real-estate/blob/main/.claude/skills/commercial-lease-assignment-consent-framework/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

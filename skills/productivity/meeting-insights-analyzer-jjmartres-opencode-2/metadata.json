@@ -1,0 +1,18 @@
+{
+  "name": "meeting-insights-analyzer",
+  "description": "Analyzes meeting transcripts and recordings to uncover behavioral patterns, communication insights, and actionable feedback. Identifies when you avoid conflict, use filler words, dominate conversation",
+  "repo": "jjmartres/opencode",
+  "path": "opencode/skill/meeting-insights-analyzer",
+  "category": "productivity",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jjmartres/opencode",
+  "dir_name": "meeting-insights-analyzer-jjmartres-opencode-2",
+  "author": "jjmartres",
+  "source_url": "https://github.com/jjmartres/opencode/blob/main/opencode/skill/meeting-insights-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jean-Jacques Martrès",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

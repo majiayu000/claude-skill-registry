@@ -1,0 +1,16 @@
+{
+  "name": "design-asset-parser",
+  "repo": "munlucky/claude-settings",
+  "path": ".claude/skills/design-asset-parser/SKILL.md",
+  "source": "github.com/munlucky/claude-settings",
+  "downloaded_at": "2026-01-29T08:37:01.286206Z",
+  "dir_name": "design-asset-parser-munlucky-claude-settings",
+  "category": "design",
+  "author": "munlucky",
+  "source_url": "https://github.com/munlucky/claude-settings/blob/main/.claude/skills/design-asset-parser/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/munlucky/claude-settings/blob/main/.claude/skills/design-asset-parser/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

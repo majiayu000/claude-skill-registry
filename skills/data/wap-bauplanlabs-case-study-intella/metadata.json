@@ -1,0 +1,16 @@
+{
+  "name": "wap",
+  "repo": "BauplanLabs/case-study-intella",
+  "path": ".claude/skills/wap/SKILL.MD",
+  "category": "data",
+  "source": "github.com/BauplanLabs/case-study-intella",
+  "dir_name": "wap-bauplanlabs-case-study-intella",
+  "downloaded_at": "2026-02-15T04:50:28.685758Z",
+  "author": "BauplanLabs",
+  "source_url": "https://github.com/BauplanLabs/case-study-intella/blob/main/.claude/skills/wap/SKILL.MD",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BauplanLabs/case-study-intella/blob/main/.claude/skills/wap/SKILL.MD",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

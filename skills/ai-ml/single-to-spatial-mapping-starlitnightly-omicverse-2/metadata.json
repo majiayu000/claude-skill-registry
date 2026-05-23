@@ -1,0 +1,18 @@
+{
+  "name": "single-to-spatial-mapping",
+  "description": "Map scRNA-seq atlases onto spatial transcriptomics slides using omicverse's Single2Spatial workflow for deep-forest training, spot-level assessment, and marker visualisation.",
+  "repo": "Starlitnightly/omicverse",
+  "path": ".claude/skills/single-to-spatial-mapping",
+  "category": "ai-ml",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Starlitnightly/omicverse",
+  "dir_name": "single-to-spatial-mapping-starlitnightly-omicverse-2",
+  "author": "Starlitnightly",
+  "source_url": "https://github.com/Starlitnightly/omicverse/blob/main/.claude/skills/single-to-spatial-mapping/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

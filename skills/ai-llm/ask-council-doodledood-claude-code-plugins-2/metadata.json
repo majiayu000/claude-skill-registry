@@ -1,0 +1,18 @@
+{
+  "name": "ask-council",
+  "description": "Multi-model ensemble consultation. Runs 3 models in parallel for diverse perspectives.",
+  "repo": "doodledood/claude-code-plugins",
+  "path": "claude-plugins/consultant/skills/ask-council",
+  "category": "ai-llm",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/doodledood/claude-code-plugins",
+  "dir_name": "ask-council-doodledood-claude-code-plugins-2",
+  "author": "doodledood",
+  "source_url": "https://github.com/doodledood/claude-code-plugins/blob/main/claude-plugins/consultant/skills/ask-council/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/doodledood/claude-code-plugins/blob/main/claude-plugins/consultant/skills/ask-council/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

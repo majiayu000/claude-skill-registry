@@ -1,0 +1,11 @@
+{
+  "name": "apply-openapi-overlay",
+  "repo": "speakeasy-api/speakeasy",
+  "path": "skills/apply-openapi-overlay/SKILL.md",
+  "source": "github.com/speakeasy-api/speakeasy",
+  "downloaded_at": "2026-01-22T01:17:37.644869Z",
+  "dir_name": "apply-openapi-overlay",
+  "category": "api",
+  "github_path": "skills/apply-openapi-overlay",
+  "github_branch": "main"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "make-research",
+  "repo": "kasperjunge/agent-resources",
+  "path": "skills/make-research/SKILL.md",
+  "source": "github.com/kasperjunge/agent-resources",
+  "downloaded_at": "2026-01-29T08:22:32.834960Z",
+  "dir_name": "make-research-kasperjunge-agent-resources",
+  "category": "research-analysis",
+  "author": "kasperjunge",
+  "source_url": "https://github.com/kasperjunge/agent-resources/blob/main/skills/make-research/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Kasper Junge",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

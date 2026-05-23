@@ -1,0 +1,18 @@
+{
+  "name": "needs",
+  "description": "Dynamic motivations (Sims-style) — needs fluctuate and drive behavior",
+  "repo": "SimHacker/moollm",
+  "path": "skills/needs",
+  "category": "gaming",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SimHacker/moollm",
+  "dir_name": "needs-simhacker-moollm-2",
+  "author": "SimHacker",
+  "source_url": "https://github.com/SimHacker/moollm/blob/main/skills/needs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Don Hopkins, Leela AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "wavecap-whisper",
+  "repo": "TobiasWooldridge/WaveCap",
+  "path": ".claude/skills/wavecap-whisper/skill.md",
+  "source": "github.com/TobiasWooldridge/WaveCap",
+  "downloaded_at": "2026-01-22T02:11:28.249104Z",
+  "dir_name": "wavecap-whisper-tobiaswooldridge-wavecap",
+  "category": "ai-ml",
+  "github_path": ".claude/skills/wavecap-whisper",
+  "github_branch": "main"
+}

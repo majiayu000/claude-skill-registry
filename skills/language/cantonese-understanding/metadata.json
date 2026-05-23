@@ -1,0 +1,16 @@
+{
+  "name": "cantonese-understanding",
+  "repo": "NewJerseyStyle/cant-agent",
+  "path": "skills/cantonese-understanding/SKILL.md",
+  "source": "github.com/NewJerseyStyle/cant-agent",
+  "downloaded_at": "2026-01-27T01:25:21.744162Z",
+  "dir_name": "cantonese-understanding",
+  "category": "language",
+  "author": "NewJerseyStyle",
+  "source_url": "https://github.com/NewJerseyStyle/cant-agent/blob/main/skills/cantonese-understanding/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 David H.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

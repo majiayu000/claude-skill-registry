@@ -1,0 +1,17 @@
+{
+  "name": "mcp-doc-sync",
+  "repo": "Z-M-Huang/vcp",
+  "path": "plugins/mcp-doc/skills/mcp-doc-sync/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/Z-M-Huang/vcp",
+  "dir_name": "mcp-doc-sync",
+  "downloaded_at": "2026-03-22T06:35:22.307283Z",
+  "author": "Z-M-Huang",
+  "source_url": "https://github.com/Z-M-Huang/vcp/blob/main/plugins/mcp-doc/skills/mcp-doc-sync/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Z-M-Huang/vcp/blob/main/plugins/mcp-doc/skills/mcp-doc-sync/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

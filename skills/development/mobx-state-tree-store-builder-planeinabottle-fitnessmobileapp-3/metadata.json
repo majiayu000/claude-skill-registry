@@ -1,0 +1,17 @@
+{
+  "name": "mobx-state-tree-store-builder",
+  "repo": "PlaneInABottle/fitnessMobileApp",
+  "path": ".claude/skills/mobx-state-tree-store-builder/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/PlaneInABottle/fitnessMobileApp",
+  "dir_name": "mobx-state-tree-store-builder-planeinabottle-fitnessmobileapp-3",
+  "downloaded_at": "2026-03-01T05:54:35.307687Z",
+  "author": "PlaneInABottle",
+  "source_url": "https://github.com/PlaneInABottle/fitnessMobileApp/blob/main/.claude/skills/mobx-state-tree-store-builder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PlaneInABottle/fitnessMobileApp/blob/main/.claude/skills/mobx-state-tree-store-builder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

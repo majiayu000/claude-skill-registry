@@ -1,0 +1,17 @@
+{
+  "name": "cloud-backup",
+  "repo": "chaterm/terminal-skills",
+  "path": "backup/cloud-backup/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/chaterm/terminal-skills",
+  "dir_name": "cloud-backup",
+  "downloaded_at": "2026-03-22T07:27:03.641877Z",
+  "author": "chaterm",
+  "source_url": "https://github.com/chaterm/terminal-skills/blob/main/backup/cloud-backup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/chaterm/terminal-skills/blob/main/backup/cloud-backup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

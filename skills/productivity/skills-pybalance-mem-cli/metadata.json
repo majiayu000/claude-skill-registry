@@ -1,0 +1,16 @@
+{
+  "name": "skills",
+  "repo": "PyBalance/mem_cli",
+  "path": "SKILLS/skill.md",
+  "category": "productivity",
+  "source": "github.com/PyBalance/mem_cli",
+  "dir_name": "skills-pybalance-mem-cli",
+  "downloaded_at": "2026-02-15T05:39:40.290532Z",
+  "author": "PyBalance",
+  "source_url": "https://github.com/PyBalance/mem_cli/blob/main/SKILLS/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PyBalance/mem_cli/blob/main/SKILLS/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

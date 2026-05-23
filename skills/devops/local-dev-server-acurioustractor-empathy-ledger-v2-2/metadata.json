@@ -1,0 +1,18 @@
+{
+  "name": "local-dev-server",
+  "description": "PM2-based local development server management for Empathy Ledger. Handles port conflicts and auto-restart.",
+  "repo": "Acurioustractor/empathy-ledger-v2",
+  "path": ".claude/skills/local/local-dev-server",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Acurioustractor/empathy-ledger-v2",
+  "dir_name": "local-dev-server-acurioustractor-empathy-ledger-v2-2",
+  "author": "Acurioustractor",
+  "source_url": "https://github.com/Acurioustractor/empathy-ledger-v2/blob/main/.claude/skills/local/local-dev-server/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Acurioustractor/empathy-ledger-v2/blob/main/.claude/skills/local/local-dev-server/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

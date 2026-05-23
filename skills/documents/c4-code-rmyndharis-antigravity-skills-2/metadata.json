@@ -1,0 +1,18 @@
+{
+  "name": "c4-code",
+  "description": "Expert C4 Code-level documentation specialist. Analyzes code directories to create comprehensive C4 code-level documentation including function signatures, arguments, dependencies, and code structure.",
+  "repo": "rmyndharis/antigravity-skills",
+  "path": "skills/c4-code",
+  "category": "documents",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rmyndharis/antigravity-skills",
+  "dir_name": "c4-code-rmyndharis-antigravity-skills-2",
+  "author": "rmyndharis",
+  "source_url": "https://github.com/rmyndharis/antigravity-skills/blob/main/skills/c4-code/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Yudhi Armyndharis",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

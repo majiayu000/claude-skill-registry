@@ -1,0 +1,18 @@
+{
+  "name": "xiaohongshu-recruiter",
+  "description": "用于在小红书上发布高质量的 AI 相关岗位招聘帖子。包含自动生成极客风格的招聘封面图和详情图，并提供自动化发布脚本。当用户需要发布招聘信息、寻找 Agent 设计师或其他 AI 领域人才时使用。",
+  "repo": "iOfficeAI/AionUi",
+  "path": "skills/xiaohongshu-recruiter",
+  "category": "marketing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/iOfficeAI/AionUi",
+  "dir_name": "xiaohongshu-recruiter-iofficeai-aionui-2",
+  "author": "iOfficeAI",
+  "source_url": "https://github.com/iOfficeAI/AionUi/blob/main/skills/xiaohongshu-recruiter/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 AionUi (aionui.com)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "common-patterns",
+  "repo": "meriley/claude-code-skills",
+  "path": "skills/claude-skills-go/common-patterns/Skill.md",
+  "source": "github.com/meriley/claude-code-skills",
+  "downloaded_at": "2026-01-27T02:16:07.503809Z",
+  "dir_name": "common-patterns",
+  "category": "development",
+  "author": "meriley",
+  "source_url": "https://github.com/meriley/claude-code-skills/blob/main/skills/claude-skills-go/common-patterns/Skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/meriley/claude-code-skills/blob/main/skills/claude-skills-go/common-patterns/Skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

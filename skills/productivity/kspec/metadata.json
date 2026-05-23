@@ -1,0 +1,13 @@
+{
+  "name": "kspec",
+  "description": "",
+  "repo": "kynetic-ai/kynetic-spec",
+  "category": "productivity",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kynetic-ai/kynetic-spec",
+  "github_path": ".claude/skills/kspec",
+  "github_branch": "main",
+  "dir_name": "kspec",
+  "downloaded_at": "2026-02-05T05:32:51.110247Z"
+}

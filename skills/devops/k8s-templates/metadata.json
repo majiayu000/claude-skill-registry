@@ -1,0 +1,17 @@
+{
+  "name": "k8s-templates",
+  "repo": "Sagart-cactus/codex-skills",
+  "path": "skills/k8s-templates/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/Sagart-cactus/codex-skills",
+  "dir_name": "k8s-templates",
+  "downloaded_at": "2026-03-22T06:12:03.420630Z",
+  "author": "Sagart-cactus",
+  "source_url": "https://github.com/Sagart-cactus/codex-skills/blob/main/skills/k8s-templates/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Sagart-cactus/codex-skills/blob/main/skills/k8s-templates/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

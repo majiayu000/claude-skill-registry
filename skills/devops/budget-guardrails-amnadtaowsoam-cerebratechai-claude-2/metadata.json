@@ -1,0 +1,18 @@
+{
+  "name": "budget-guardrails",
+  "description": "Implementation of preventive and detective controls to prevent cloud bill shock and ensure fiscal governance.",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "42-cost-engineering/budget-guardrails",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "budget-guardrails-amnadtaowsoam-cerebratechai-claude-2",
+  "author": "AmnadTaowsoam",
+  "source_url": "https://github.com/AmnadTaowsoam/cerebratechai-claude-skills/blob/main/42-cost-engineering/budget-guardrails/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CerebratechAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

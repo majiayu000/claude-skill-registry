@@ -1,0 +1,17 @@
+{
+  "name": "af-generate-quotations",
+  "repo": "GainInsightDev/websites",
+  "path": ".claude/skills/af-generate-quotations/SKILL.md",
+  "github_branch": "main",
+  "category": "business",
+  "source": "github.com/GainInsightDev/websites",
+  "dir_name": "af-generate-quotations",
+  "downloaded_at": "2026-03-22T05:22:54.972950Z",
+  "author": "GainInsightDev",
+  "source_url": "https://github.com/GainInsightDev/websites/blob/main/.claude/skills/af-generate-quotations/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/GainInsightDev/websites/blob/main/.claude/skills/af-generate-quotations/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

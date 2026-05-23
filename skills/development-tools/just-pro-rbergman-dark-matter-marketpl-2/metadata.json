@@ -1,0 +1,18 @@
+{
+  "name": "just-pro",
+  "description": "This skill provides patterns for setting up just (command runner) in projects. Use PROACTIVELY when creating build systems, setting up new repos, or when the user asks about just/justfile configuratio",
+  "repo": "rbergman/dark-matter-marketplace",
+  "path": "plugins/language-pro/skills/just-pro",
+  "category": "development-tools",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rbergman/dark-matter-marketplace",
+  "dir_name": "just-pro-rbergman-dark-matter-marketpl-2",
+  "author": "rbergman",
+  "source_url": "https://github.com/rbergman/dark-matter-marketplace/blob/main/plugins/language-pro/skills/just-pro/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rbergman/dark-matter-marketplace/blob/main/plugins/language-pro/skills/just-pro/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "customer-insights",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/customer-marketing/skills/customer-insights/SKILL.md",
+  "source": "github.com/gtmagents/gtm-agents",
+  "downloaded_at": "2026-01-22T03:37:44.733831Z",
+  "dir_name": "customer-insights-gtmagents-gtm-agents-8570103c",
+  "category": "product",
+  "github_path": "plugins/customer-marketing/skills/customer-insights",
+  "github_branch": "main",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/customer-marketing/skills/customer-insights/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gtmagents/gtm-agents/blob/main/plugins/customer-marketing/skills/customer-insights/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

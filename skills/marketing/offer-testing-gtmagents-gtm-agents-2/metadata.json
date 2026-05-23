@@ -1,0 +1,18 @@
+{
+  "name": "offer-testing",
+  "description": "Use when designing copy experiments to optimize hooks, offers, and CTAs.",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/copywriting/skills/offer-testing",
+  "category": "marketing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "offer-testing-gtmagents-gtm-agents-2",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/copywriting/skills/offer-testing/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gtmagents/gtm-agents/blob/main/plugins/copywriting/skills/offer-testing/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

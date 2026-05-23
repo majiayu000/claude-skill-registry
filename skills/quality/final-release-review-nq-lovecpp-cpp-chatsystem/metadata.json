@@ -1,0 +1,16 @@
+{
+  "name": "final-release-review",
+  "repo": "NQ-lovecpp/cpp_chatsystem",
+  "path": "ChatSystem-Backend/8.Agent_Server/examples/openai-agents-python-main/.agents/skills/final-release-review/SKILL.md",
+  "category": "quality",
+  "source": "github.com/NQ-lovecpp/cpp_chatsystem",
+  "dir_name": "final-release-review-nq-lovecpp-cpp-chatsystem",
+  "downloaded_at": "2026-02-22T05:26:19.528046Z",
+  "author": "NQ-lovecpp",
+  "source_url": "https://github.com/NQ-lovecpp/cpp_chatsystem/blob/main/ChatSystem-Backend/8.Agent_Server/examples/openai-agents-python-main/.agents/skills/final-release-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/NQ-lovecpp/cpp_chatsystem/blob/main/ChatSystem-Backend/8.Agent_Server/examples/openai-agents-python-main/.agents/skills/final-release-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

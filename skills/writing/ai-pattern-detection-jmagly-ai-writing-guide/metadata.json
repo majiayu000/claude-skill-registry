@@ -1,0 +1,18 @@
+{
+  "name": "ai-pattern-detection",
+  "repo": "jmagly/ai-writing-guide",
+  "path": "plugins/writing/skills/ai-pattern-detection/SKILL.md",
+  "source": "github.com/jmagly/ai-writing-guide",
+  "downloaded_at": "2026-01-22T03:04:50.717890Z",
+  "dir_name": "ai-pattern-detection-jmagly-ai-writing-guide",
+  "category": "writing",
+  "github_path": "plugins/writing/skills/ai-pattern-detection",
+  "github_branch": "main",
+  "author": "jmagly",
+  "source_url": "https://github.com/jmagly/ai-writing-guide/blob/main/plugins/writing/skills/ai-pattern-detection/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Joe Magly",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

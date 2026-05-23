@@ -1,0 +1,17 @@
+{
+  "name": "setup-sonos-lastfm",
+  "repo": "denya/sonos-lastfm",
+  "path": "skills/setup-sonos-lastfm/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/denya/sonos-lastfm",
+  "dir_name": "setup-sonos-lastfm",
+  "downloaded_at": "2026-03-22T07:43:46.375283Z",
+  "author": "denya",
+  "source_url": "https://github.com/denya/sonos-lastfm/blob/main/skills/setup-sonos-lastfm/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/denya/sonos-lastfm/blob/main/skills/setup-sonos-lastfm/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

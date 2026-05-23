@@ -1,0 +1,16 @@
+{
+  "name": "pattern-test",
+  "repo": "commontoolsinc/labs",
+  "path": ".claude/skills/pattern-test/SKILL.md",
+  "category": "testing",
+  "source": "github.com/commontoolsinc/labs",
+  "dir_name": "pattern-test-commontoolsinc-labs-3",
+  "downloaded_at": "2026-02-15T06:47:48.583752Z",
+  "author": "commontoolsinc",
+  "source_url": "https://github.com/commontoolsinc/labs/blob/main/.claude/skills/pattern-test/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/commontoolsinc/labs/blob/main/.claude/skills/pattern-test/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

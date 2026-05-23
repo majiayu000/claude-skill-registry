@@ -1,0 +1,17 @@
+{
+  "name": "obsidian-vault-intelligence",
+  "repo": "dbmcco/claude-agent-toolkit",
+  "path": "skills/obsidian-vault-intelligence/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/dbmcco/claude-agent-toolkit",
+  "dir_name": "obsidian-vault-intelligence",
+  "downloaded_at": "2026-03-22T07:41:21.530615Z",
+  "author": "dbmcco",
+  "source_url": "https://github.com/dbmcco/claude-agent-toolkit/blob/main/skills/obsidian-vault-intelligence/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dbmcco/claude-agent-toolkit/blob/main/skills/obsidian-vault-intelligence/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

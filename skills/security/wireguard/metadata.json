@@ -1,0 +1,20 @@
+{
+  "name": "wireguard",
+  "description": "",
+  "repo": "HouseGarofalo/claude-code-base",
+  "category": "security",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HouseGarofalo/claude-code-base",
+  "github_path": ".claude/skills/wireguard",
+  "github_branch": "master",
+  "dir_name": "wireguard",
+  "downloaded_at": "2026-02-05T01:44:38.964257Z",
+  "author": "HouseGarofalo",
+  "source_url": "https://github.com/HouseGarofalo/claude-code-base/blob/master/.claude/skills/wireguard/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 HouseGarofalo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

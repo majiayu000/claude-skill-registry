@@ -1,0 +1,18 @@
+{
+  "name": "subagent",
+  "description": "Activate when you are a delegated subagent (not the orchestrator). Establishes subagent protocol with terse returns, details to history/, file ownership boundaries, and escalation rules. You implement",
+  "repo": "rbergman/dark-matter-marketplace",
+  "path": "plugins/workflow/skills/subagent",
+  "category": "agent",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rbergman/dark-matter-marketplace",
+  "dir_name": "subagent-rbergman-dark-matter-marketpl-2",
+  "author": "rbergman",
+  "source_url": "https://github.com/rbergman/dark-matter-marketplace/blob/main/plugins/workflow/skills/subagent/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rbergman/dark-matter-marketplace/blob/main/plugins/workflow/skills/subagent/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

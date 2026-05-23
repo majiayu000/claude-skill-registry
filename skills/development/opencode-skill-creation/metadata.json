@@ -1,0 +1,16 @@
+{
+  "name": "opencode-skill-creation",
+  "repo": "darellchua2/opencode-config-template",
+  "path": "skills/opencode-skill-creation/SKILL.md",
+  "source": "github.com/darellchua2/opencode-config-template",
+  "downloaded_at": "2026-01-27T03:48:04.658356Z",
+  "dir_name": "opencode-skill-creation",
+  "category": "development",
+  "author": "darellchua2",
+  "source_url": "https://github.com/darellchua2/opencode-config-template/blob/main/skills/opencode-skill-creation/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2026 OpenCode Configuration Template Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

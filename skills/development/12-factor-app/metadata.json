@@ -1,0 +1,16 @@
+{
+  "name": "12-factor-app",
+  "repo": "pproenca/dot-skills",
+  "path": "skills/.experimental/12-factor-app/SKILL.md",
+  "source": "github.com/pproenca/dot-skills",
+  "downloaded_at": "2026-02-02T04:40:45.792844Z",
+  "dir_name": "12-factor-app",
+  "category": "development",
+  "author": "pproenca",
+  "source_url": "https://github.com/pproenca/dot-skills/blob/main/skills/.experimental/12-factor-app/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

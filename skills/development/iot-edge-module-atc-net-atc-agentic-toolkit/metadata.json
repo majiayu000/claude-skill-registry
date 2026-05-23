@@ -1,0 +1,13 @@
+{
+  "name": "iot-edge-module",
+  "description": "A curated collection of prompts, skills, plugins, and best practices for AI coding agents. Standardize and accelerate agent setup across teams.",
+  "repo": "atc-net/atc-agentic-toolkit",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".claude/plugins/azure-iot/skills/iot-edge-module",
+  "github_branch": "main",
+  "dir_name": "iot-edge-module-atc-net-atc-agentic-toolkit",
+  "downloaded_at": "2026-02-05T01:45:36.963203Z"
+}

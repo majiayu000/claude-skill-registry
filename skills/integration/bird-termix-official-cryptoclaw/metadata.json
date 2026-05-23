@@ -1,0 +1,17 @@
+{
+  "name": "bird",
+  "repo": "TermiX-official/cryptoclaw",
+  "path": "skills/bird/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/TermiX-official/cryptoclaw",
+  "dir_name": "bird-termix-official-cryptoclaw",
+  "downloaded_at": "2026-03-22T06:21:40.967158Z",
+  "author": "TermiX-official",
+  "source_url": "https://github.com/TermiX-official/cryptoclaw/blob/main/skills/bird/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TermiX-official/cryptoclaw/blob/main/skills/bird/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

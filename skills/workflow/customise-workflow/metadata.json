@@ -1,0 +1,17 @@
+{
+  "name": "customise-workflow",
+  "repo": "anombyte93/prd-taskmaster",
+  "path": "companion-skills/customise-workflow/SKILL.md",
+  "github_branch": "main",
+  "category": "workflow",
+  "source": "github.com/anombyte93/prd-taskmaster",
+  "dir_name": "customise-workflow",
+  "downloaded_at": "2026-04-17T01:32:55.672281Z",
+  "author": "anombyte93",
+  "source_url": "https://github.com/anombyte93/prd-taskmaster/blob/main/companion-skills/customise-workflow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anombyte93/prd-taskmaster/blob/main/companion-skills/customise-workflow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

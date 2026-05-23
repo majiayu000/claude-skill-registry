@@ -1,0 +1,18 @@
+{
+  "name": "smooth-scroll",
+  "description": "Add smooth scrolling for same-page anchor links only. Uses JavaScript to handle",
+  "repo": "deomiarn/website-template",
+  "path": ".claude/skills/smooth-scroll",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/deomiarn/website-template",
+  "dir_name": "smooth-scroll-deomiarn-website-template-2",
+  "author": "deomiarn",
+  "source_url": "https://github.com/deomiarn/website-template/blob/main/.claude/skills/smooth-scroll/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/deomiarn/website-template/blob/main/.claude/skills/smooth-scroll/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

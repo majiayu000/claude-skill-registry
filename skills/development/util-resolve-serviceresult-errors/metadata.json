@@ -1,0 +1,16 @@
+{
+  "name": "util-resolve-serviceresult-errors",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/util-resolve-serviceresult-errors/SKILL.md",
+  "source": "github.com/dawiddutoit/custom-claude",
+  "downloaded_at": "2026-01-27T02:53:52.511048Z",
+  "dir_name": "util-resolve-serviceresult-errors",
+  "category": "development",
+  "author": "dawiddutoit",
+  "source_url": "https://github.com/dawiddutoit/custom-claude/blob/main/skills/util-resolve-serviceresult-errors/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dawiddutoit/custom-claude/blob/main/skills/util-resolve-serviceresult-errors/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

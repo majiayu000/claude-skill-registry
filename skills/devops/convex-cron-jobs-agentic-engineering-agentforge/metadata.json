@@ -1,0 +1,17 @@
+{
+  "name": "convex-cron-jobs",
+  "repo": "Agentic-Engineering-Agency/agentforge",
+  "path": ".agents/skills/convex-cron-jobs/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/Agentic-Engineering-Agency/agentforge",
+  "dir_name": "convex-cron-jobs-agentic-engineering-agentforge",
+  "downloaded_at": "2026-03-22T04:48:27.677271Z",
+  "author": "Agentic-Engineering-Agency",
+  "source_url": "https://github.com/Agentic-Engineering-Agency/agentforge/blob/main/.agents/skills/convex-cron-jobs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Agentic-Engineering-Agency/agentforge/blob/main/.agents/skills/convex-cron-jobs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

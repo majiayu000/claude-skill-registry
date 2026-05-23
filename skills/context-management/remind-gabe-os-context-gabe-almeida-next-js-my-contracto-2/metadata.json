@@ -1,0 +1,18 @@
+{
+  "name": "remind-gabe-os-context",
+  "description": "Proactively remind about Gabe-OS workflows when context may have been lost, especially after /compact operations. Prevent manual implementation by checking for existing specs first.",
+  "repo": "gabe-almeida/next-js-my-contractor-now",
+  "path": ".claude/skills/remind-gabe-os-context",
+  "category": "context-management",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gabe-almeida/next-js-my-contractor-now",
+  "dir_name": "remind-gabe-os-context-gabe-almeida-next-js-my-contracto-2",
+  "author": "gabe-almeida",
+  "source_url": "https://github.com/gabe-almeida/next-js-my-contractor-now/blob/main/.claude/skills/remind-gabe-os-context/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gabe-almeida/next-js-my-contractor-now/blob/main/.claude/skills/remind-gabe-os-context/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

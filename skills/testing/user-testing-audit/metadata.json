@@ -1,0 +1,16 @@
+{
+  "name": "user-testing-audit",
+  "repo": "PeterCowling/base-shop",
+  "path": ".claude/skills/user-testing-audit/SKILL.md",
+  "category": "testing",
+  "source": "github.com/PeterCowling/base-shop",
+  "dir_name": "user-testing-audit",
+  "downloaded_at": "2026-02-15T05:37:24.173253Z",
+  "author": "PeterCowling",
+  "source_url": "https://github.com/PeterCowling/base-shop/blob/main/.claude/skills/user-testing-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PeterCowling/base-shop/blob/main/.claude/skills/user-testing-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

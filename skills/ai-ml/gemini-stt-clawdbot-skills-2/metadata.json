@@ -1,0 +1,18 @@
+{
+  "name": "gemini-stt",
+  "description": "Transcribe audio files using Google's Gemini API or Vertex AI",
+  "repo": "clawdbot/skills",
+  "path": "skills/araa47/gemini-stt",
+  "category": "ai-ml",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "gemini-stt-clawdbot-skills-2",
+  "author": "clawdbot",
+  "source_url": "https://github.com/clawdbot/skills/blob/main/skills/araa47/gemini-stt/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 clawdbot",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

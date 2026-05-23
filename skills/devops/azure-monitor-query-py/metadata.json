@@ -1,0 +1,13 @@
+{
+  "name": "azure-monitor-query-py",
+  "description": "",
+  "repo": "microsoft/skills",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/microsoft/skills",
+  "github_path": ".github/skills/azure-monitor-query-py",
+  "github_branch": "main",
+  "dir_name": "azure-monitor-query-py",
+  "downloaded_at": "2026-02-05T01:44:52.462476Z"
+}

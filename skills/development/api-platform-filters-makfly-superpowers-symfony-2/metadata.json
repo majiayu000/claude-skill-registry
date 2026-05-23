@@ -1,0 +1,18 @@
+{
+  "name": "api-platform-filters",
+  "description": "Use when symfony api platform filters",
+  "repo": "MakFly/superpowers-symfony",
+  "path": "skills/api-platform-filters",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MakFly/superpowers-symfony",
+  "dir_name": "api-platform-filters-makfly-superpowers-symfony-2",
+  "author": "MakFly",
+  "source_url": "https://github.com/MakFly/superpowers-symfony/blob/main/skills/api-platform-filters/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

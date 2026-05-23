@@ -1,0 +1,20 @@
+{
+  "name": "init",
+  "description": "AI agent tooling for data engineering workflows.",
+  "repo": "astronomer/agents",
+  "category": "data",
+  "tags": [],
+  "stars": 6,
+  "source": "",
+  "github_path": "skills/init",
+  "github_branch": "main",
+  "dir_name": "init-astronomer-agents",
+  "downloaded_at": "2026-02-05T01:45:29.656707Z",
+  "author": "astronomer",
+  "source_url": "https://github.com/astronomer/agents/blob/main/skills/init/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/astronomer/agents/blob/main/skills/init/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

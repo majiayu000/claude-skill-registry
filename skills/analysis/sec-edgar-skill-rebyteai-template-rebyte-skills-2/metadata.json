@@ -1,0 +1,18 @@
+{
+  "name": "sec-edgar-skill",
+  "description": "SEC EDGAR filing analysis using EdgarTools. Use when user asks about SEC filings, company financials, 10-K/10-Q analysis, insider trading, revenue trends, or financial comparisons. Triggers include \"S",
+  "repo": "rebyteai-template/rebyte-skills",
+  "path": "sec-edgar-skill",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rebyteai-template/rebyte-skills",
+  "dir_name": "sec-edgar-skill-rebyteai-template-rebyte-skills-2",
+  "author": "rebyteai-template",
+  "source_url": "https://github.com/rebyteai-template/rebyte-skills/blob/main/sec-edgar-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rebyteai-template/rebyte-skills/blob/main/sec-edgar-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

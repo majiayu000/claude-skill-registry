@@ -1,0 +1,16 @@
+{
+  "name": "markersfinder",
+  "repo": "pwwang/immunopipe",
+  "path": "skills/markersfinder/SKILL.md",
+  "source": "github.com/pwwang/immunopipe",
+  "downloaded_at": "2026-01-29T08:23:39.814445Z",
+  "dir_name": "markersfinder-pwwang-immunopipe",
+  "category": "analysis",
+  "author": "pwwang",
+  "source_url": "https://github.com/pwwang/immunopipe/blob/main/skills/markersfinder/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

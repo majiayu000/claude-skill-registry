@@ -1,0 +1,16 @@
+{
+  "name": "react-review",
+  "repo": "gricha/perry",
+  "path": ".claude/skills/react-review/SKILL.md",
+  "category": "performance",
+  "source": "github.com/gricha/perry",
+  "dir_name": "react-review-gricha-perry",
+  "downloaded_at": "2026-02-22T07:21:32.832886Z",
+  "author": "gricha",
+  "source_url": "https://github.com/gricha/perry/blob/main/.claude/skills/react-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gricha/perry/blob/main/.claude/skills/react-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "friction",
+  "repo": "benhuds/pm-os",
+  "path": ".claude/skills/friction/skill.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/benhuds/pm-os",
+  "dir_name": "friction",
+  "downloaded_at": "2026-03-22T07:12:53.779163Z",
+  "author": "benhuds",
+  "source_url": "https://github.com/benhuds/pm-os/blob/main/.claude/skills/friction/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/benhuds/pm-os/blob/main/.claude/skills/friction/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "rr",
+  "repo": "dgk-dev/dgk-gpt",
+  "path": "skills/rr/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/dgk-dev/dgk-gpt",
+  "dir_name": "rr",
+  "downloaded_at": "2026-03-22T07:44:48.998305Z",
+  "author": "dgk-dev",
+  "source_url": "https://github.com/dgk-dev/dgk-gpt/blob/main/skills/rr/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dgk-dev/dgk-gpt/blob/main/skills/rr/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "scienceworld-living-entity-identifier",
+  "description": "",
+  "repo": "zjunlp/SkillNet",
+  "category": "gaming",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zjunlp/SkillNet",
+  "github_path": "skills/benchmark_skills/scienceworld/scienceworld-living-entity-identifier",
+  "github_branch": "main",
+  "dir_name": "scienceworld-living-entity-identifier",
+  "downloaded_at": "2026-02-05T01:44:58.893461Z",
+  "author": "zjunlp",
+  "source_url": "https://github.com/zjunlp/SkillNet/blob/main/skills/benchmark_skills/scienceworld/scienceworld-living-entity-identifier/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 ZJUNLP",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

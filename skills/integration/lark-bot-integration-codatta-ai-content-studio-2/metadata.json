@@ -1,0 +1,18 @@
+{
+  "name": "lark-bot-integration",
+  "description": "Deploy and manage Lark (Feishu) bot for Milady meme generation, command handling, and team collaboration. Use when setting up Lark webhooks, handling bot commands, deploying to production, or integrat",
+  "repo": "codatta/ai-content-studio",
+  "path": "skills/lark-bot-integration",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/codatta/ai-content-studio",
+  "dir_name": "lark-bot-integration-codatta-ai-content-studio-2",
+  "author": "codatta",
+  "source_url": "https://github.com/codatta/ai-content-studio/blob/main/skills/lark-bot-integration/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Jessie Bot Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

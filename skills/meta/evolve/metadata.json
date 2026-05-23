@@ -1,0 +1,17 @@
+{
+  "name": "evolve",
+  "repo": "boshu2/agentops",
+  "path": "skills/evolve/SKILL.md",
+  "github_branch": "main",
+  "category": "meta",
+  "source": "github.com/boshu2/agentops",
+  "dir_name": "evolve",
+  "downloaded_at": "2026-05-18T03:57:56.123094Z",
+  "author": "boshu2",
+  "source_url": "https://github.com/boshu2/agentops/blob/main/skills/evolve/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/boshu2/agentops/blob/main/skills/evolve/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "rathena-wiki",
+  "repo": "cydh/rathena-wiki",
+  "path": "Custom_skill.md",
+  "category": "gaming",
+  "source": "github.com/cydh/rathena-wiki",
+  "dir_name": "rathena-wiki-cydh-rathena-wiki-6",
+  "downloaded_at": "2026-02-15T06:51:58.415466Z",
+  "author": "cydh",
+  "source_url": "https://github.com/cydh/rathena-wiki/blob/main/Custom_skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cydh/rathena-wiki/blob/main/Custom_skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

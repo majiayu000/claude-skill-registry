@@ -1,0 +1,18 @@
+{
+  "name": "report-writing",
+  "description": "작업 완료 후 상세 리포트 문서를 작성. 변경 이력, 영향도 분석, 검증 결과를 문서화할 때 사용. 파일명 규칙 YYYY-MM-DD-<제목>-report.md",
+  "repo": "Doyajin174/myskills",
+  "path": ".public/skills/report-writing",
+  "category": "documents",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Doyajin174/myskills",
+  "dir_name": "report-writing-doyajin174-myskills-2",
+  "author": "Doyajin174",
+  "source_url": "https://github.com/Doyajin174/myskills/blob/main/.public/skills/report-writing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Doyajin174/myskills/blob/main/.public/skills/report-writing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

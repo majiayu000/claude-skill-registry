@@ -1,0 +1,20 @@
+{
+  "name": "session-boundary",
+  "description": "",
+  "repo": "Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "category": "context-management",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "github_path": ".claude/skills/session-boundary",
+  "github_branch": "main",
+  "dir_name": "session-boundary",
+  "downloaded_at": "2026-02-05T01:44:16.300904Z",
+  "author": "Sjdjdiejdrirhdkjej",
+  "source_url": "https://github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor/blob/main/.claude/skills/session-boundary/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor/blob/main/.claude/skills/session-boundary/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "make_latex_model",
+  "description": "LaTeX 模板高保真优化器，支持任意 LaTeX 模板的样式参数对齐、标题文字对齐、标题格式对比（加粗）、HTML 可视化报告、LaTeX 自动修复建议和像素级 PDF 对比验证",
+  "repo": "huangwb8/ChineseResearchLaTeX",
+  "path": "skills/make_latex_model",
+  "category": "documents",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/huangwb8/ChineseResearchLaTeX",
+  "dir_name": "make-latex-model-huangwb8-chineseresearchlatex-2",
+  "author": "huangwb8",
+  "source_url": "https://github.com/huangwb8/ChineseResearchLaTeX/blob/main/skills/make_latex_model/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright © 2024 Weibin Huang",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

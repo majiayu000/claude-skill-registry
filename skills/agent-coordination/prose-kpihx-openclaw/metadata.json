@@ -1,0 +1,13 @@
+{
+  "name": "prose",
+  "description": "",
+  "repo": "KpihX/OpenClaw",
+  "category": "agent-coordination",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/KpihX/OpenClaw",
+  "github_path": "extensions/open-prose/skills/prose",
+  "github_branch": "main",
+  "dir_name": "prose-kpihx-openclaw",
+  "downloaded_at": "2026-02-05T01:44:30.651974Z"
+}

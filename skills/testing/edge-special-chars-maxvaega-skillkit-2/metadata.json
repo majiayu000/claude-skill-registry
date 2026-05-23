@@ -1,0 +1,18 @@
+{
+  "name": "edge-special-chars",
+  "description": "A skill for testing special characters and injection patterns",
+  "repo": "maxvaega/skillkit",
+  "path": "tests/fixtures/skills/edge-special-chars",
+  "category": "testing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maxvaega/skillkit",
+  "dir_name": "edge-special-chars-maxvaega-skillkit-2",
+  "author": "maxvaega",
+  "source_url": "https://github.com/maxvaega/skillkit/blob/main/tests/fixtures/skills/edge-special-chars/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Massimo Olivieri",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

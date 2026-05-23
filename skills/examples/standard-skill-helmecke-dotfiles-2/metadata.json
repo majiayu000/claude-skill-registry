@@ -1,0 +1,18 @@
+{
+  "name": "standard-skill",
+  "description": "This skill should be used when the user asks to \"perform standard task\", \"follow best practices\", \"implement common pattern\", or needs comprehensive guidance. Demonstrates recommended skill structure ",
+  "repo": "helmecke/dotfiles",
+  "path": "dot_config/opencode/skill/skill-development/examples/standard-skill",
+  "category": "examples",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/helmecke/dotfiles",
+  "dir_name": "standard-skill-helmecke-dotfiles-2",
+  "author": "helmecke",
+  "source_url": "https://github.com/helmecke/dotfiles/blob/main/dot_config/opencode/skill/skill-development/examples/standard-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/helmecke/dotfiles/blob/main/dot_config/opencode/skill/skill-development/examples/standard-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

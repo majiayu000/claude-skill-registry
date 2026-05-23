@@ -1,0 +1,18 @@
+{
+  "name": "62-validate-integrity-150",
+  "description": "[62] VALIDATE. Final self-check before delivery. Verify goal alignment, completeness, correctness, and identify residual risks. Produces quality score (0-100) and delivery status. Use when completing ",
+  "repo": "MykhailoDmytriakha/my-preacher-helper",
+  "path": ".codex/skills/62-validate-integrity-150",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/MykhailoDmytriakha/my-preacher-helper",
+  "dir_name": "62-validate-integrity-150-mykhailodmytriakha-my-preacher-helper-",
+  "author": "MykhailoDmytriakha",
+  "source_url": "https://github.com/MykhailoDmytriakha/my-preacher-helper/blob/main/.codex/skills/62-validate-integrity-150/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MykhailoDmytriakha/my-preacher-helper/blob/main/.codex/skills/62-validate-integrity-150/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

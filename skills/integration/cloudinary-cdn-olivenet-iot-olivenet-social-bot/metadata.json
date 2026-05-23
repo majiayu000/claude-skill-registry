@@ -1,0 +1,16 @@
+{
+  "name": "cloudinary-cdn",
+  "repo": "olivenet-iot/olivenet-social-bot",
+  "path": ".claude/skills/cloudinary-cdn/SKILL.md",
+  "source": "github.com/olivenet-iot/olivenet-social-bot",
+  "downloaded_at": "2026-01-29T08:20:02.671604Z",
+  "dir_name": "cloudinary-cdn-olivenet-iot-olivenet-social-bot",
+  "category": "integration",
+  "author": "olivenet-iot",
+  "source_url": "https://github.com/olivenet-iot/olivenet-social-bot/blob/main/.claude/skills/cloudinary-cdn/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/olivenet-iot/olivenet-social-bot/blob/main/.claude/skills/cloudinary-cdn/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

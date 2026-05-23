@@ -1,0 +1,18 @@
+{
+  "name": "error-annihilator",
+  "description": "Elite debugging and error-resolution system optimized for Next.js/TypeScript/Supabase stacks. Use when encountering ANY error, bug, or unexpected behavior including API failures, database issues, buil",
+  "repo": "AIBPM42/hodgesfooshee-site-spark",
+  "path": ".claude/skills/error-annihilator",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AIBPM42/hodgesfooshee-site-spark",
+  "dir_name": "error-annihilator-aibpm42-hodgesfooshee-site-s-2",
+  "author": "AIBPM42",
+  "source_url": "https://github.com/AIBPM42/hodgesfooshee-site-spark/blob/main/.claude/skills/error-annihilator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AIBPM42/hodgesfooshee-site-spark/blob/main/.claude/skills/error-annihilator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

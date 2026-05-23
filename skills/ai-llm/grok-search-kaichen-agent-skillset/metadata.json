@@ -1,0 +1,16 @@
+{
+  "name": "grok-search",
+  "repo": "kaichen/agent-skillset",
+  "path": "plugins/grok-search/skills/grok-search/SKILL.md",
+  "category": "ai-llm",
+  "source": "github.com/kaichen/agent-skillset",
+  "dir_name": "grok-search-kaichen-agent-skillset",
+  "downloaded_at": "2026-02-15T07:49:51.214205Z",
+  "author": "kaichen",
+  "source_url": "https://github.com/kaichen/agent-skillset/blob/main/plugins/grok-search/skills/grok-search/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kaichen/agent-skillset/blob/main/plugins/grok-search/skills/grok-search/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

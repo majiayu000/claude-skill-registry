@@ -1,0 +1,18 @@
+{
+  "name": "when-optimizing-prompts-use-prompt-optimization-analyzer",
+  "repo": "DNYoussef/context-cascade",
+  "path": "skills/foundry/when-optimizing-prompts-use-prompt-optimization-analyzer/SKILL.md",
+  "source": "github.com/DNYoussef/context-cascade",
+  "downloaded_at": "2026-01-22T02:03:56.953686Z",
+  "dir_name": "when-optimizing-prompts-use-prompt-optimization-analyzer-dnyouss-dnyoussef-context-cascade",
+  "category": "ai-llm",
+  "github_path": "skills/foundry/meta-tools/when-optimizing-prompts-use-prompt-optimization-analyzer",
+  "github_branch": "main",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/context-cascade/blob/main/skills/foundry/meta-tools/when-optimizing-prompts-use-prompt-optimization-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ruvnet",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

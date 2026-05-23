@@ -1,0 +1,18 @@
+{
+  "name": "common-fate",
+  "description": "Elementos que se mueven juntos se perciben como grupo. Use cuando diseñe animaciones, transiciones, drag-and-drop, o elementos que reaccionan en conjunto.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/gestalt/common-fate",
+  "category": "design",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "common-fate-vjrivmon-handwriting-ocr-2",
+  "author": "vjrivmon",
+  "source_url": "https://github.com/vjrivmon/handwriting-ocr/blob/main/.claude/skills/ux-ui/gestalt/common-fate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vjrivmon/handwriting-ocr/blob/main/.claude/skills/ux-ui/gestalt/common-fate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

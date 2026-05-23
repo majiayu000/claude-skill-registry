@@ -1,0 +1,16 @@
+{
+  "name": "checkpoint-protocol",
+  "repo": "fluxlabs/project-autopilot",
+  "path": "skills/checkpoint-protocol/SKILL.md",
+  "source": "github.com/fluxlabs/project-autopilot",
+  "downloaded_at": "2026-02-01T02:58:31.946901Z",
+  "dir_name": "checkpoint-protocol",
+  "category": "workflow",
+  "author": "fluxlabs",
+  "source_url": "https://github.com/fluxlabs/project-autopilot/blob/main/skills/checkpoint-protocol/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fluxlabs/project-autopilot/blob/main/skills/checkpoint-protocol/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "wrap-session",
+  "description": "End-of-session documentation workflow that updates README, CHANGELOG, agent context files, and creates session logs. Use when wrapping up a working session, when asked to document session progress, wh",
+  "repo": "product-on-purpose/pm-skills",
+  "path": ".claude/skills/wrap-session",
+  "category": "productivity",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/product-on-purpose/pm-skills",
+  "dir_name": "wrap-session-product-on-purpose-pm-skills-2",
+  "author": "product-on-purpose",
+  "source_url": "https://github.com/product-on-purpose/pm-skills/blob/main/.claude/skills/wrap-session/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2026 Jonathan",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

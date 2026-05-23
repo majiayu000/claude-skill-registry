@@ -1,0 +1,18 @@
+{
+  "name": "scaffold-rules@plaited_development-skills",
+  "description": "Scaffold development rules for AI coding agents. Auto-invoked when user asks about setting up rules, coding conventions, or configuring their AI agent environment.",
+  "repo": "plaited/plaited",
+  "path": ".claude/skills/scaffold-rules@plaited_development-skills",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plaited/plaited",
+  "dir_name": "scaffold-rules-plaited-development-skills-plaited-plaited-2",
+  "author": "plaited",
+  "source_url": "https://github.com/plaited/plaited/blob/main/.claude/skills/scaffold-rules@plaited_development-skills/SKILL.md",
+  "license": "ISC",
+  "copyright": "Copyright (c) 2023 - present Edward Irby",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

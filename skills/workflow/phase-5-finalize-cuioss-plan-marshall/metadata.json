@@ -1,0 +1,18 @@
+{
+  "name": "phase-5-finalize",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-workflow/skills/phase-5-finalize/SKILL.md",
+  "source": "github.com/cuioss/plan-marshall",
+  "downloaded_at": "2026-01-14T03:33:24.706866Z",
+  "dir_name": "phase-5-finalize-cuioss-plan-marshall",
+  "category": "workflow",
+  "github_path": "marketplace/bundles/pm-workflow/skills/phase-5-finalize",
+  "github_branch": "main",
+  "author": "cuioss",
+  "source_url": "https://github.com/cuioss/plan-marshall/blob/main/marketplace/bundles/pm-workflow/skills/phase-5-finalize/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 Oliver Wolff",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "mova-run-gates",
+  "description": "Runs npm validate/test/smoke gates and emits a JSON gate report with log paths.",
+  "repo": "Leryk1981/mova_wf_cycle",
+  "category": "testing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Leryk1981/mova_wf_cycle",
+  "dir_name": "mova-run-gates-leryk1981-mova-wf-cycle-083a1ec3"
+}

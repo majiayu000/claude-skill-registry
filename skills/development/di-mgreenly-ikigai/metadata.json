@@ -1,0 +1,18 @@
+{
+  "name": "di",
+  "repo": "mgreenly/ikigai",
+  "path": ".claude/library/di/SKILL.md",
+  "source": "github.com/mgreenly/ikigai",
+  "downloaded_at": "2026-01-19T04:08:19.861102Z",
+  "dir_name": "di-mgreenly-ikigai",
+  "category": "development",
+  "github_path": ".claude/library/di",
+  "github_branch": "main",
+  "author": "mgreenly",
+  "source_url": "https://github.com/mgreenly/ikigai/blob/main/.claude/library/di/SKILL.md",
+  "license": "MIT-0",
+  "copyright": "Copyright (c) 2025 Michael Greenly",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

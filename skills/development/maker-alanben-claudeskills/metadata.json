@@ -1,0 +1,16 @@
+{
+  "name": "maker",
+  "repo": "alanben/ClaudeSkills",
+  "path": "maker/SKILL.md",
+  "source": "github.com/alanben/ClaudeSkills",
+  "downloaded_at": "2026-01-29T08:40:20.083155Z",
+  "dir_name": "maker-alanben-claudeskills",
+  "category": "development",
+  "author": "alanben",
+  "source_url": "https://github.com/alanben/ClaudeSkills/blob/main/maker/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Alan Benington",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

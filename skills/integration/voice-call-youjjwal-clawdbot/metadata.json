@@ -1,0 +1,16 @@
+{
+  "name": "voice-call",
+  "repo": "Youjjwal/clawdbot",
+  "path": "skills/voice-call/SKILL.md",
+  "source": "github.com/Youjjwal/clawdbot",
+  "downloaded_at": "2026-01-29T06:18:43.804231Z",
+  "dir_name": "voice-call-youjjwal-clawdbot",
+  "category": "integration",
+  "author": "Youjjwal",
+  "source_url": "https://github.com/Youjjwal/clawdbot/blob/main/skills/voice-call/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Peter Steinberger",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

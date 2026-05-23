@@ -1,0 +1,17 @@
+{
+  "name": "sf-soql",
+  "repo": "Clientell-Ai/salesforce-skills",
+  "path": "skills/sf-soql/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/Clientell-Ai/salesforce-skills",
+  "dir_name": "sf-soql-clientell-ai-salesforce-skills",
+  "downloaded_at": "2026-03-22T05:05:48.780844Z",
+  "author": "Clientell-Ai",
+  "source_url": "https://github.com/Clientell-Ai/salesforce-skills/blob/main/skills/sf-soql/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Clientell-Ai/salesforce-skills/blob/main/skills/sf-soql/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

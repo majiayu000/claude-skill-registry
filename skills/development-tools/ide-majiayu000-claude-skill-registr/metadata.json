@@ -1,0 +1,16 @@
+{
+  "name": "ide",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/ide/SKILL.md",
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "downloaded_at": "2026-02-02T04:36:10.071122Z",
+  "dir_name": "ide-majiayu000-claude-skill-registr",
+  "category": "development-tools",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/ide/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

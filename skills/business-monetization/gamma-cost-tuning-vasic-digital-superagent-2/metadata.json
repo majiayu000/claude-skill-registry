@@ -1,0 +1,18 @@
+{
+  "name": "gamma-cost-tuning",
+  "description": "Optimize Gamma usage costs and manage API spending.\nUse when reducing API costs, implementing usage quotas,\nor planning for scale with budget constraints.\nTrigger with phrases like \"gamma cost\", \"gamm",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/gamma-pack/gamma-cost-tuning",
+  "category": "business-monetization",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "gamma-cost-tuning-vasic-digital-superagent-2",
+  "author": "vasic-digital",
+  "source_url": "https://github.com/vasic-digital/SuperAgent/blob/main/skills/plugins/saas-packs/gamma-pack/gamma-cost-tuning/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vasic-digital/SuperAgent/blob/main/skills/plugins/saas-packs/gamma-pack/gamma-cost-tuning/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "global-error-handling",
+  "description": "Implement comprehensive error handling strategies including try-catch blocks, API error responses, Content Collection error handling, custom error pages, and production error monitoring. Use this skil",
+  "repo": "SpacePlushy/portfolio",
+  "path": ".claude/skills/global-error-handling",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SpacePlushy/portfolio",
+  "dir_name": "global-error-handling-spaceplushy-portfolio-2",
+  "author": "SpacePlushy",
+  "source_url": "https://github.com/SpacePlushy/portfolio/blob/main/.claude/skills/global-error-handling/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SpacePlushy/portfolio/blob/main/.claude/skills/global-error-handling/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

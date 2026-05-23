@@ -1,0 +1,13 @@
+{
+  "name": "gcp-iam",
+  "description": "",
+  "repo": "kubony/openclaw-gcp-setup",
+  "category": "security",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kubony/openclaw-gcp-setup",
+  "github_path": ".claude/skills/gcp-iam",
+  "github_branch": "main",
+  "dir_name": "gcp-iam",
+  "downloaded_at": "2026-02-05T01:45:01.740329Z"
+}

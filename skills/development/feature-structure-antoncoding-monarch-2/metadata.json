@@ -1,0 +1,18 @@
+{
+  "name": "feature-structure",
+  "description": "Architecture patterns for organizing feature modules in the codebase. Use when creating new files, brand new features or pages.",
+  "repo": "antoncoding/monarch",
+  "path": ".claude/skills/feature-structure",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/antoncoding/monarch",
+  "dir_name": "feature-structure-antoncoding-monarch-2",
+  "author": "antoncoding",
+  "source_url": "https://github.com/antoncoding/monarch/blob/main/.claude/skills/feature-structure/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

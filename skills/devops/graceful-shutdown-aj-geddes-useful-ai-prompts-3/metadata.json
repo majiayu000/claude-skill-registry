@@ -1,0 +1,16 @@
+{
+  "name": "graceful-shutdown",
+  "repo": "aj-geddes/useful-ai-prompts",
+  "path": "skills/graceful-shutdown/SKILL.md",
+  "category": "devops",
+  "source": "github.com/aj-geddes/useful-ai-prompts",
+  "dir_name": "graceful-shutdown-aj-geddes-useful-ai-prompts-3",
+  "downloaded_at": "2026-02-15T06:12:31.640492Z",
+  "author": "aj-geddes",
+  "source_url": "https://github.com/aj-geddes/useful-ai-prompts/blob/main/skills/graceful-shutdown/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AJ Geddes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

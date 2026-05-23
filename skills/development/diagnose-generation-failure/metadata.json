@@ -1,0 +1,11 @@
+{
+  "name": "diagnose-generation-failure",
+  "repo": "speakeasy-api/speakeasy",
+  "path": "skills/diagnose-generation-failure/SKILL.md",
+  "source": "github.com/speakeasy-api/speakeasy",
+  "downloaded_at": "2026-01-22T01:17:37.900994Z",
+  "dir_name": "diagnose-generation-failure",
+  "category": "development",
+  "github_path": "skills/diagnose-generation-failure",
+  "github_branch": "main"
+}

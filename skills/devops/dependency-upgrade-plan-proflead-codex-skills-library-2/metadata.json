@@ -1,0 +1,18 @@
+{
+  "name": "dependency-upgrade-plan",
+  "description": "Plan safe dependency upgrades with risk notes. Use when a mid-level developer is tasked with upgrading libraries.",
+  "repo": "proflead/codex-skills-library",
+  "path": "skills/planning/dependency-upgrade-plan",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/proflead/codex-skills-library",
+  "dir_name": "dependency-upgrade-plan-proflead-codex-skills-library-2",
+  "author": "proflead",
+  "source_url": "https://github.com/proflead/codex-skills-library/blob/main/skills/planning/dependency-upgrade-plan/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/proflead/codex-skills-library/blob/main/skills/planning/dependency-upgrade-plan/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

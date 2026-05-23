@@ -1,0 +1,13 @@
+{
+  "name": "workleap-web-configs",
+  "description": "",
+  "repo": "workleap/wl-agents-code-review-poc",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/workleap/wl-agents-code-review-poc",
+  "github_path": ".claude/skills/workleap-web-configs",
+  "github_branch": "main",
+  "dir_name": "workleap-web-configs",
+  "downloaded_at": "2026-02-05T05:07:59.848572Z"
+}

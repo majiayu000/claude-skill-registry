@@ -1,0 +1,17 @@
+{
+  "name": "skill",
+  "repo": "Prajwalsrinvas/claude-code-reverse-engineering",
+  "path": "skill/SKILL.md",
+  "github_branch": "master",
+  "category": "analysis",
+  "source": "github.com/Prajwalsrinvas/claude-code-reverse-engineering",
+  "dir_name": "skill-prajwalsrinvas-claude-code-reverse",
+  "downloaded_at": "2026-03-22T06:05:45.218874Z",
+  "author": "Prajwalsrinvas",
+  "source_url": "https://github.com/Prajwalsrinvas/claude-code-reverse-engineering/blob/master/skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Prajwalsrinvas/claude-code-reverse-engineering/blob/master/skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

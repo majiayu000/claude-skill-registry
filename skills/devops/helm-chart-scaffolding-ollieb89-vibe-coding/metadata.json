@@ -1,0 +1,13 @@
+{
+  "name": "helm-chart-scaffolding",
+  "description": "",
+  "repo": "ollieb89/vibe_coding",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ollieb89/vibe_coding",
+  "github_path": ".agent/kubernetes-operations/skills/helm-chart-scaffolding",
+  "github_branch": "main",
+  "dir_name": "helm-chart-scaffolding-ollieb89-vibe-coding",
+  "downloaded_at": "2026-02-05T01:44:17.908674Z"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "conflict-resolution",
+  "description": "Use when encountering merge conflicts - handle conflicts cleanly, verify resolution, and maintain code integrity",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/conflict-resolution",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "conflict-resolution-troykelly-codex-skills-2",
+  "author": "troykelly",
+  "source_url": "https://github.com/troykelly/codex-skills/blob/main/skills/conflict-resolution/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/troykelly/codex-skills/blob/main/skills/conflict-resolution/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

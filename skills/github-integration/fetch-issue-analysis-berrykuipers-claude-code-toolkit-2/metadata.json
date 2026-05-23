@@ -1,0 +1,17 @@
+{
+  "name": "fetch-issue-analysis",
+  "repo": "BerryKuipers/claude-code-toolkit",
+  "path": ".claude/skills/github-integration/fetch-issue-analysis/SKILL.md",
+  "github_branch": "main",
+  "category": "github-integration",
+  "source": "github.com/BerryKuipers/claude-code-toolkit",
+  "dir_name": "fetch-issue-analysis-berrykuipers-claude-code-toolkit-2",
+  "downloaded_at": "2026-03-22T04:59:46.205626Z",
+  "author": "BerryKuipers",
+  "source_url": "https://github.com/BerryKuipers/claude-code-toolkit/blob/main/.claude/skills/github-integration/fetch-issue-analysis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BerryKuipers/claude-code-toolkit/blob/main/.claude/skills/github-integration/fetch-issue-analysis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

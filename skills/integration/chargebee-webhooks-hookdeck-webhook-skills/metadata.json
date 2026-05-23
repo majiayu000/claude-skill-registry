@@ -1,0 +1,16 @@
+{
+  "name": "chargebee-webhooks",
+  "repo": "hookdeck/webhook-skills",
+  "path": "skills/chargebee-webhooks/SKILL.md",
+  "category": "integration",
+  "source": "github.com/hookdeck/webhook-skills",
+  "dir_name": "chargebee-webhooks-hookdeck-webhook-skills",
+  "downloaded_at": "2026-02-22T07:28:23.737708Z",
+  "author": "hookdeck",
+  "source_url": "https://github.com/hookdeck/webhook-skills/blob/main/skills/chargebee-webhooks/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Hookdeck",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

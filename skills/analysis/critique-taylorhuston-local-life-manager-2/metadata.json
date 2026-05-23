@@ -1,0 +1,18 @@
+{
+  "name": "critique",
+  "description": "Challenge idea assumptions with skeptical VC-style evaluation. Use when user requests critique, validation, or 'is this a good idea' assessment.",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/critique",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "critique-taylorhuston-local-life-manager-2",
+  "author": "TaylorHuston",
+  "source_url": "https://github.com/TaylorHuston/local-life-manager/blob/main/.claude/skills/critique/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TaylorHuston/local-life-manager/blob/main/.claude/skills/critique/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

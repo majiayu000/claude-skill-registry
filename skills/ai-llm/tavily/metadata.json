@@ -1,0 +1,16 @@
+{
+  "name": "tavily",
+  "repo": "itechmeat/llm-code",
+  "path": "skills/tavily/SKILL.md",
+  "source": "github.com/itechmeat/llm-code",
+  "downloaded_at": "2026-02-02T04:37:05.235989Z",
+  "dir_name": "tavily",
+  "category": "ai-llm",
+  "author": "itechmeat",
+  "source_url": "https://github.com/itechmeat/llm-code/blob/main/skills/tavily/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 itechmeat",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

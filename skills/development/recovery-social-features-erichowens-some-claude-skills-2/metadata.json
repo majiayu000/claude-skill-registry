@@ -1,0 +1,18 @@
+{
+  "name": "recovery-social-features",
+  "description": "Privacy-first social features for recovery apps - sponsors, groups, messaging, friend connections. Use for sponsor/sponsee systems, meeting-based groups, peer support, safe messaging. Activate on \"spo",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/recovery-social-features",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "recovery-social-features-erichowens-some-claude-skills-2",
+  "author": "erichowens",
+  "source_url": "https://github.com/erichowens/some_claude_skills/blob/main/.claude/skills/recovery-social-features/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Erich Owens",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

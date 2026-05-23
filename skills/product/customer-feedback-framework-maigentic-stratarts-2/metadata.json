@@ -1,0 +1,18 @@
+{
+  "name": "customer-feedback-framework",
+  "description": "Comprehensive customer feedback framework including NPS, CSAT, CES surveys, exit interviews, user research, feature request management with RICE prioritization, feedback analysis, close-the-loop proce",
+  "repo": "maigentic/stratarts",
+  "path": "skills/retention-metrics/customer-feedback-framework",
+  "category": "product",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maigentic/stratarts",
+  "dir_name": "customer-feedback-framework-maigentic-stratarts-2",
+  "author": "maigentic",
+  "source_url": "https://github.com/maigentic/stratarts/blob/main/skills/retention-metrics/customer-feedback-framework/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 maigentic",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

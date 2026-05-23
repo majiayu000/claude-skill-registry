@@ -1,0 +1,16 @@
+{
+  "name": "convex-patterns",
+  "repo": "planetaryescape/blah.chat",
+  "path": ".claude/skills/convex-patterns/SKILL.md",
+  "source": "github.com/planetaryescape/blah.chat",
+  "downloaded_at": "2026-01-29T05:17:50.566334Z",
+  "dir_name": "convex-patterns-planetaryescape-blah-chat",
+  "category": "development",
+  "author": "planetaryescape",
+  "source_url": "https://github.com/planetaryescape/blah.chat/blob/main/.claude/skills/convex-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (C) 2025 Bhekani Khumalo",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

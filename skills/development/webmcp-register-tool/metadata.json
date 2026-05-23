@@ -1,0 +1,17 @@
+{
+  "name": "webmcp-register-tool",
+  "repo": "OrcaQubits/agentic-commerce-claude-plugins",
+  "path": "webmcp-browser-agents/skills/webmcp-register-tool/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/OrcaQubits/agentic-commerce-claude-plugins",
+  "dir_name": "webmcp-register-tool",
+  "downloaded_at": "2026-03-25T01:14:27.975593Z",
+  "author": "OrcaQubits",
+  "source_url": "https://github.com/OrcaQubits/agentic-commerce-claude-plugins/blob/main/webmcp-browser-agents/skills/webmcp-register-tool/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OrcaQubits/agentic-commerce-claude-plugins/blob/main/webmcp-browser-agents/skills/webmcp-register-tool/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "cobrapy",
+  "description": "Constraint-based metabolic modeling (COBRA). FBA, FVA, gene knockouts, flux sampling, SBML models, for systems biology and metabolic engineering analysis.",
+  "repo": "sanand0/scientific-research",
+  "path": ".claude/skills/cobrapy",
+  "category": "ai-ml",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sanand0/scientific-research",
+  "dir_name": "cobrapy-sanand0-scientific-research-2",
+  "author": "sanand0",
+  "source_url": "https://github.com/sanand0/scientific-research/blob/main/.claude/skills/cobrapy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sanand0/scientific-research/blob/main/.claude/skills/cobrapy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

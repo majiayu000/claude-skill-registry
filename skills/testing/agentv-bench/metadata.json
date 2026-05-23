@@ -1,0 +1,17 @@
+{
+  "name": "agentv-bench",
+  "repo": "EntityProcess/agentv",
+  "path": "plugins/agentv-dev/skills/agentv-bench/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/EntityProcess/agentv",
+  "dir_name": "agentv-bench",
+  "downloaded_at": "2026-03-22T05:17:49.233879Z",
+  "author": "EntityProcess",
+  "source_url": "https://github.com/EntityProcess/agentv/blob/main/plugins/agentv-dev/skills/agentv-bench/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/EntityProcess/agentv/blob/main/plugins/agentv-dev/skills/agentv-bench/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

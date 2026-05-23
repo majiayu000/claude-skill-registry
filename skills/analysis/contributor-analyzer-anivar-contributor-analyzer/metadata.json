@@ -1,0 +1,16 @@
+{
+  "name": "contributor-analyzer",
+  "repo": "anivar/contributor-analyzer",
+  "path": "SKILL.md",
+  "category": "analysis",
+  "source": "github.com/anivar/contributor-analyzer",
+  "dir_name": "contributor-analyzer-anivar-contributor-analyzer",
+  "downloaded_at": "2026-02-15T06:20:26.730846Z",
+  "author": "anivar",
+  "source_url": "https://github.com/anivar/contributor-analyzer/blob/main/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anivar/contributor-analyzer/blob/main/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

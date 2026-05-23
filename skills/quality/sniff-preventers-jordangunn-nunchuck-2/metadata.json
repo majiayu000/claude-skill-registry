@@ -1,0 +1,18 @@
+{
+  "name": "sniff-preventers",
+  "description": "Detect change preventers smells (Shotgun Surgery) using deterministic heuristics and append findings to `.sniff/findings.jsonl`.\n",
+  "repo": "JordanGunn/nunchuck",
+  "path": "skills/sniff/sniff-preventers",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JordanGunn/nunchuck",
+  "dir_name": "sniff-preventers-jordangunn-nunchuck-2",
+  "author": "JordanGunn",
+  "source_url": "https://github.com/JordanGunn/nunchuck/blob/main/skills/sniff/sniff-preventers/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Jordan Godau",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

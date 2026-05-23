@@ -1,0 +1,13 @@
+{
+  "name": "executing-plans",
+  "description": "",
+  "repo": "datasciencemonkey/claude-code-cli-bricks",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/datasciencemonkey/claude-code-cli-bricks",
+  "github_path": ".claude/skills/executing-plans",
+  "github_branch": "main",
+  "dir_name": "executing-plans-datasciencemonkey-claude-code-cli-bric",
+  "downloaded_at": "2026-02-05T01:44:57.029172Z"
+}

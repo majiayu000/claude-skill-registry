@@ -1,0 +1,17 @@
+{
+  "name": "openai-whisper-api",
+  "repo": "Adamuuuu/medical_evaluation_system",
+  "path": ".claude/skills/openai-whisper-api/SKILL.md",
+  "github_branch": "master",
+  "category": "ai-llm",
+  "source": "github.com/Adamuuuu/medical_evaluation_system",
+  "dir_name": "openai-whisper-api-adamuuuu-medical-evaluation-s",
+  "downloaded_at": "2026-03-22T04:47:26.507894Z",
+  "author": "Adamuuuu",
+  "source_url": "https://github.com/Adamuuuu/medical_evaluation_system/blob/master/.claude/skills/openai-whisper-api/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Adamuuuu/medical_evaluation_system/blob/master/.claude/skills/openai-whisper-api/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

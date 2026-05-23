@@ -1,0 +1,16 @@
+{
+  "name": "cloud-pricing",
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave-cost-optimizer/skills/cloud-pricing/SKILL.md",
+  "source": "github.com/anton-abyzov/specweave",
+  "downloaded_at": "2026-02-01T01:48:17.231277Z",
+  "dir_name": "cloud-pricing",
+  "category": "business",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave-cost-optimizer/skills/cloud-pricing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

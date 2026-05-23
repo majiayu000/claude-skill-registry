@@ -1,0 +1,17 @@
+{
+  "name": "weekly-digest",
+  "repo": "composio-community/support-skills",
+  "path": "weekly-digest/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/composio-community/support-skills",
+  "dir_name": "weekly-digest",
+  "downloaded_at": "2026-05-20T03:53:39.193967Z",
+  "author": "composio-community",
+  "source_url": "https://github.com/composio-community/support-skills/blob/main/weekly-digest/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/composio-community/support-skills/blob/main/weekly-digest/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "problem-solving",
+  "repo": "darthlinuxer/Agentic-Skills",
+  "path": ".agent/skills/problem-solving/SKILL.md",
+  "github_branch": "main",
+  "category": "analysis",
+  "source": "github.com/darthlinuxer/Agentic-Skills",
+  "dir_name": "problem-solving-darthlinuxer-agentic-skills",
+  "downloaded_at": "2026-03-22T07:39:31.336911Z",
+  "author": "darthlinuxer",
+  "source_url": "https://github.com/darthlinuxer/Agentic-Skills/blob/main/.agent/skills/problem-solving/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/darthlinuxer/Agentic-Skills/blob/main/.agent/skills/problem-solving/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

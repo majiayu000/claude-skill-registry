@@ -1,0 +1,16 @@
+{
+  "name": "diffdock",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/k-dense-ai/diffdock/SKILL.md",
+  "category": "ai-ml",
+  "source": "github.com/aiskillstore/marketplace",
+  "dir_name": "diffdock-aiskillstore-marketplace",
+  "downloaded_at": "2026-02-19T01:17:14.725417Z",
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/k-dense-ai/diffdock/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/k-dense-ai/diffdock/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "paperback-android",
+  "description": "Guide for developing and maintaining the Paperand React Native manga reader application",
+  "repo": "chiraitori/paperand",
+  "path": ".agent/skills/paperback-android",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/chiraitori/paperand",
+  "dir_name": "paperback-android-chiraitori-paperand-2",
+  "author": "chiraitori",
+  "source_url": "https://github.com/chiraitori/paperand/blob/main/.agent/skills/paperback-android/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/chiraitori/paperand/blob/main/.agent/skills/paperback-android/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "supabaseauth",
+  "repo": "Prasmin/Antifragile",
+  "path": "Skills/supabaseAuth/skill.md",
+  "category": "development",
+  "source": "github.com/Prasmin/Antifragile",
+  "dir_name": "supabaseauth",
+  "downloaded_at": "2026-02-22T05:34:31.934437Z",
+  "author": "Prasmin",
+  "source_url": "https://github.com/Prasmin/Antifragile/blob/main/Skills/supabaseAuth/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Prasmin/Antifragile/blob/main/Skills/supabaseAuth/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "esp32-wifi-tests",
+  "repo": "SensorsIot/Universal-ESP32-Workbench",
+  "path": ".claude/skills/esp32-wifi-tests/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/SensorsIot/Universal-ESP32-Workbench",
+  "dir_name": "esp32-wifi-tests",
+  "downloaded_at": "2026-03-01T06:04:48.805855Z",
+  "author": "SensorsIot",
+  "source_url": "https://github.com/SensorsIot/Universal-ESP32-Workbench/blob/main/.claude/skills/esp32-wifi-tests/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SensorsIot/Universal-ESP32-Workbench/blob/main/.claude/skills/esp32-wifi-tests/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "latest-react",
+  "description": "Latest React features from React 19 and React Compiler (past 1.5 years - mid 2024 to 2026)",
+  "repo": "jovermier/claude-code-plugins-ip-labs",
+  "path": "plugins/react/skills/latest-react",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jovermier/claude-code-plugins-ip-labs",
+  "dir_name": "latest-react-jovermier-claude-code-plugins-2",
+  "author": "jovermier",
+  "source_url": "https://github.com/jovermier/claude-code-plugins-ip-labs/blob/main/plugins/react/skills/latest-react/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Innovative Prospects",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

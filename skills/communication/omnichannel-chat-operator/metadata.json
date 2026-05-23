@@ -1,0 +1,16 @@
+{
+  "name": "Omnichannel_Chat_Operator",
+  "repo": "adriangmrraa/MultiAgents-Platform-ROI",
+  "path": ".agent/skills/Omnichannel_Chat_Operator/SKILL.md",
+  "source": "github.com/adriangmrraa/MultiAgents-Platform-ROI",
+  "downloaded_at": "2026-02-02T02:09:52.828659Z",
+  "dir_name": "omnichannel-chat-operator",
+  "category": "communication",
+  "author": "adriangmrraa",
+  "source_url": "https://github.com/adriangmrraa/MultiAgents-Platform-ROI/blob/main/.agent/skills/Omnichannel_Chat_Operator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adriangmrraa/MultiAgents-Platform-ROI/blob/main/.agent/skills/Omnichannel_Chat_Operator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

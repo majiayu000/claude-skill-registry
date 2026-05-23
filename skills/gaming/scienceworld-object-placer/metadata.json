@@ -1,0 +1,20 @@
+{
+  "name": "scienceworld-object-placer",
+  "description": "",
+  "repo": "zjunlp/SkillNet",
+  "category": "gaming",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zjunlp/SkillNet",
+  "github_path": "skills/benchmark_skills/scienceworld/scienceworld-object-placer",
+  "github_branch": "main",
+  "dir_name": "scienceworld-object-placer",
+  "downloaded_at": "2026-02-05T01:44:59.150997Z",
+  "author": "zjunlp",
+  "source_url": "https://github.com/zjunlp/SkillNet/blob/main/skills/benchmark_skills/scienceworld/scienceworld-object-placer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 ZJUNLP",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

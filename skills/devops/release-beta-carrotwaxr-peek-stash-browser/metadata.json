@@ -1,0 +1,17 @@
+{
+  "name": "release-beta",
+  "repo": "carrotwaxr/peek-stash-browser",
+  "path": ".claude/skills/release-beta/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/carrotwaxr/peek-stash-browser",
+  "dir_name": "release-beta-carrotwaxr-peek-stash-browser",
+  "downloaded_at": "2026-03-22T07:24:44.377644Z",
+  "author": "carrotwaxr",
+  "source_url": "https://github.com/carrotwaxr/peek-stash-browser/blob/main/.claude/skills/release-beta/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/carrotwaxr/peek-stash-browser/blob/main/.claude/skills/release-beta/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

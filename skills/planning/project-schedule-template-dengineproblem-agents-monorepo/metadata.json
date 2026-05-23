@@ -1,0 +1,16 @@
+{
+  "name": "project-schedule-template",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/project-schedule-template/SKILL.md",
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "downloaded_at": "2026-01-29T07:43:46.814427Z",
+  "dir_name": "project-schedule-template-dengineproblem-agents-monorepo",
+  "category": "planning",
+  "author": "dengineproblem",
+  "source_url": "https://github.com/dengineproblem/agents-monorepo/blob/main/.claude/skills/project-schedule-template/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dengineproblem/agents-monorepo/blob/main/.claude/skills/project-schedule-template/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

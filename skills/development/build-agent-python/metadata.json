@@ -1,0 +1,17 @@
+{
+  "name": "build-agent-python",
+  "repo": "Agile-V/agile_v_skills",
+  "path": "domains/build-agent-python/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/Agile-V/agile_v_skills",
+  "dir_name": "build-agent-python",
+  "downloaded_at": "2026-03-01T04:48:04.784925Z",
+  "author": "Agile-V",
+  "source_url": "https://github.com/Agile-V/agile_v_skills/blob/main/domains/build-agent-python/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Agile-V/agile_v_skills/blob/main/domains/build-agent-python/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

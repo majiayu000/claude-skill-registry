@@ -1,0 +1,11 @@
+{
+  "name": "claude-hud",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/claude-hud/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-22T01:25:15.142062Z",
+  "dir_name": "claude-hud",
+  "category": "platform",
+  "github_path": "skills/claude-hud",
+  "github_branch": "main"
+}

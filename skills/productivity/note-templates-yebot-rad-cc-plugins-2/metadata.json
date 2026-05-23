@@ -1,0 +1,18 @@
+{
+  "name": "note-templates",
+  "description": "Collection of reusable templates for common Apple Notes use cases. Use when creating structured notes for meetings, journals, projects, or references.",
+  "repo": "yebot/rad-cc-plugins",
+  "path": "plugins/apple-notes-cli/skills/note-templates",
+  "category": "productivity",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yebot/rad-cc-plugins",
+  "dir_name": "note-templates-yebot-rad-cc-plugins-2",
+  "author": "yebot",
+  "source_url": "https://github.com/yebot/rad-cc-plugins/blob/main/plugins/apple-notes-cli/skills/note-templates/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yebot/rad-cc-plugins/blob/main/plugins/apple-notes-cli/skills/note-templates/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

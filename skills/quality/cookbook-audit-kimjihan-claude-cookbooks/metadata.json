@@ -1,0 +1,20 @@
+{
+  "name": "cookbook-audit",
+  "description": "claude-cookbooks",
+  "repo": "KimJiHan/claude-cookbooks",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".claude/skills/cookbook-audit",
+  "github_branch": "main",
+  "dir_name": "cookbook-audit-kimjihan-claude-cookbooks",
+  "downloaded_at": "2026-02-05T01:45:38.845272Z",
+  "author": "KimJiHan",
+  "source_url": "https://github.com/KimJiHan/claude-cookbooks/blob/main/.claude/skills/cookbook-audit/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2023 Anthropic",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

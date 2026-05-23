@@ -1,0 +1,16 @@
+{
+  "name": "clean-project",
+  "repo": "yu-iskw/skill-inspector",
+  "path": ".claude/skills/clean-project/SKILL.md",
+  "source": "github.com/yu-iskw/skill-inspector",
+  "downloaded_at": "2026-01-29T05:54:38.381406Z",
+  "dir_name": "clean-project-yu-iskw-skill-inspector",
+  "category": "devops",
+  "author": "yu-iskw",
+  "source_url": "https://github.com/yu-iskw/skill-inspector/blob/main/.claude/skills/clean-project/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yu-iskw/skill-inspector/blob/main/.claude/skills/clean-project/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

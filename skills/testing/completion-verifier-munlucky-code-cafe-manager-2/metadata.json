@@ -1,0 +1,18 @@
+{
+  "name": "completion-verifier",
+  "description": "Verifies implementation completion by running acceptance tests and triggers retry loop on failure.",
+  "repo": "munlucky/code-cafe-manager",
+  "path": ".claude/skills/completion-verifier",
+  "category": "testing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/munlucky/code-cafe-manager",
+  "dir_name": "completion-verifier-munlucky-code-cafe-manager-2",
+  "author": "munlucky",
+  "source_url": "https://github.com/munlucky/code-cafe-manager/blob/main/.claude/skills/completion-verifier/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/munlucky/code-cafe-manager/blob/main/.claude/skills/completion-verifier/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

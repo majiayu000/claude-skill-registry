@@ -1,0 +1,17 @@
+{
+  "name": "spec-kit-skill",
+  "repo": "feiskyer/codex-settings",
+  "path": "skills/spec-kit-skill/SKILL.md",
+  "github_branch": "main",
+  "category": "workflow",
+  "source": "github.com/feiskyer/codex-settings",
+  "dir_name": "spec-kit-skill-feiskyer-codex-settings",
+  "downloaded_at": "2026-04-29T02:07:28.068265Z",
+  "author": "feiskyer",
+  "source_url": "https://github.com/feiskyer/codex-settings/blob/main/skills/spec-kit-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/feiskyer/codex-settings/blob/main/skills/spec-kit-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

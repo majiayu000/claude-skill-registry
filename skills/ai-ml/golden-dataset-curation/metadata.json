@@ -1,0 +1,11 @@
+{
+  "name": "golden-dataset-curation",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/golden-dataset-curation/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-22T01:25:14.368332Z",
+  "dir_name": "golden-dataset-curation",
+  "category": "ai-ml",
+  "github_path": "skills/golden-dataset-curation",
+  "github_branch": "main"
+}

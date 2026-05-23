@@ -1,0 +1,18 @@
+{
+  "name": "coding-prompt-optimizer",
+  "description": "コーディング用プロンプトを最適化・添削するスキル。\n以下の状況で使用:\n(1) ユーザーが「このプロンプトを改善して」「プロンプトを最適化して」と依頼した時\n(2) ユーザーが明示的に「/coding-prompt-optimizer」を実行した時\n(3) AI向けプロンプトの品質改善を求められた時",
+  "repo": "goldeneggg/dotfiles",
+  "path": "claude-linux/.claude/skills/coding-prompt-optimizer",
+  "category": "ai-llm",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/goldeneggg/dotfiles",
+  "dir_name": "coding-prompt-optimizer-goldeneggg-dotfiles-2",
+  "author": "goldeneggg",
+  "source_url": "https://github.com/goldeneggg/dotfiles/blob/main/claude-linux/.claude/skills/coding-prompt-optimizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/goldeneggg/dotfiles/blob/main/claude-linux/.claude/skills/coding-prompt-optimizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

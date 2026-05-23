@@ -1,0 +1,16 @@
+{
+  "name": "similarity-network",
+  "repo": "GPTomics/bioSkills",
+  "path": "multi-omics-integration/similarity-network/SKILL.md",
+  "source": "github.com/GPTomics/bioSkills",
+  "downloaded_at": "2026-01-29T08:13:11.964989Z",
+  "dir_name": "similarity-network-gptomics-bioskills",
+  "category": "ai-ml",
+  "author": "GPTomics",
+  "source_url": "https://github.com/GPTomics/bioSkills/blob/main/multi-omics-integration/similarity-network/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 GPTomics",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

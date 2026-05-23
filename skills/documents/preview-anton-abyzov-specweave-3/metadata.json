@@ -1,0 +1,16 @@
+{
+  "name": "preview",
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave-docs/skills/preview/SKILL.md",
+  "category": "documents",
+  "source": "github.com/anton-abyzov/specweave",
+  "dir_name": "preview-anton-abyzov-specweave-3",
+  "downloaded_at": "2026-02-22T06:18:48.695011Z",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave-docs/skills/preview/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

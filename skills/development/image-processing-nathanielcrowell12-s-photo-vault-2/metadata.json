@@ -1,0 +1,18 @@
+{
+  "name": "image-processing",
+  "description": "Implement image processing for PhotoVault using Sharp and streaming patterns. Use when working with photo uploads, thumbnail generation, EXIF handling, ZIP extraction, or optimizing images for web. In",
+  "repo": "nathanielcrowell12-spec/photo-vault",
+  "path": ".claude/skills/image-processing",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nathanielcrowell12-spec/photo-vault",
+  "dir_name": "image-processing-nathanielcrowell12-s-photo-vault-2",
+  "author": "nathanielcrowell12-spec",
+  "source_url": "https://github.com/nathanielcrowell12-spec/photo-vault/blob/main/.claude/skills/image-processing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nathanielcrowell12-spec/photo-vault/blob/main/.claude/skills/image-processing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

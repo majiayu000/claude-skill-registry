@@ -1,0 +1,18 @@
+{
+  "name": "ip-evaluator",
+  "description": "梳理IP网络信息并进行多维度评估打分。适用于评估小说、剧本等IP的改编价值、分析市场潜力和创新属性",
+  "repo": "VanGongwanxiaowan/screen-creative-skills",
+  "path": "category/evaluation/ip-evaluator",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/VanGongwanxiaowan/screen-creative-skills",
+  "dir_name": "ip-evaluator-vangongwanxiaowan-screen-creative-skil-2",
+  "author": "VanGongwanxiaowan",
+  "source_url": "https://github.com/VanGongwanxiaowan/screen-creative-skills/blob/main/category/evaluation/ip-evaluator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 宫凡",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

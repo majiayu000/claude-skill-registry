@@ -1,0 +1,17 @@
+{
+  "name": "cleanup",
+  "repo": "Vero-Ventures/fuzzycat",
+  "path": ".claude/skills/cleanup/skill.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/Vero-Ventures/fuzzycat",
+  "dir_name": "cleanup-vero-ventures-fuzzycat",
+  "downloaded_at": "2026-03-22T06:27:02.698204Z",
+  "author": "Vero-Ventures",
+  "source_url": "https://github.com/Vero-Ventures/fuzzycat/blob/main/.claude/skills/cleanup/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Vero-Ventures/fuzzycat/blob/main/.claude/skills/cleanup/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "codebase-update",
+  "description": "코드베이스 변경 후 .codebase 문서를 업데이트합니다. 새 기능 추가, 구조 변경, 리팩토링 후 문서 동기화가 필요할 때 사용하세요.",
+  "repo": "stravinest/house-hold-account",
+  "path": ".claude/skills/codebase-update",
+  "category": "documents",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/stravinest/house-hold-account",
+  "dir_name": "codebase-update-stravinest-house-hold-account-2",
+  "author": "stravinest",
+  "source_url": "https://github.com/stravinest/house-hold-account/blob/main/.claude/skills/codebase-update/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/stravinest/house-hold-account/blob/main/.claude/skills/codebase-update/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

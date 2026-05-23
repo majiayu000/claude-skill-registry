@@ -1,0 +1,17 @@
+{
+  "name": "weekly",
+  "repo": "benhuds/pm-os",
+  "path": ".claude/skills/weekly/skill.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/benhuds/pm-os",
+  "dir_name": "weekly",
+  "downloaded_at": "2026-03-22T07:12:53.513973Z",
+  "author": "benhuds",
+  "source_url": "https://github.com/benhuds/pm-os/blob/main/.claude/skills/weekly/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/benhuds/pm-os/blob/main/.claude/skills/weekly/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

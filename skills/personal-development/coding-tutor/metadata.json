@@ -1,0 +1,13 @@
+{
+  "name": "coding-tutor",
+  "description": "Official Claude Code compound engineering plugin",
+  "repo": "EveryInc/compound-engineering-plugin",
+  "category": "personal-development",
+  "tags": [],
+  "stars": 6217,
+  "source": "",
+  "github_path": "plugins/coding-tutor/skills/coding-tutor",
+  "github_branch": "main",
+  "dir_name": "coding-tutor",
+  "downloaded_at": "2026-02-05T01:45:12.162956Z"
+}

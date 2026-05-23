@@ -1,0 +1,17 @@
+{
+  "name": "gource-visualizer",
+  "repo": "Tibsfox/gsd-skill-creator",
+  "path": "skills/gource-visualizer/SKILL.md",
+  "github_branch": "main",
+  "category": "development-tools",
+  "source": "github.com/Tibsfox/gsd-skill-creator",
+  "dir_name": "gource-visualizer",
+  "downloaded_at": "2026-05-03T01:55:27.413293Z",
+  "author": "Tibsfox",
+  "source_url": "https://github.com/Tibsfox/gsd-skill-creator/blob/main/skills/gource-visualizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tibsfox/gsd-skill-creator/blob/main/skills/gource-visualizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

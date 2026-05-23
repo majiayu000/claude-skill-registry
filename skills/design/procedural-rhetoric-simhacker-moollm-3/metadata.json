@@ -1,0 +1,17 @@
+{
+  "name": "procedural-rhetoric",
+  "repo": "SimHacker/moollm",
+  "path": "skills/procedural-rhetoric/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/SimHacker/moollm",
+  "dir_name": "procedural-rhetoric-simhacker-moollm-3",
+  "downloaded_at": "2026-03-22T06:16:17.845132Z",
+  "author": "SimHacker",
+  "source_url": "https://github.com/SimHacker/moollm/blob/main/skills/procedural-rhetoric/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SimHacker/moollm/blob/main/skills/procedural-rhetoric/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

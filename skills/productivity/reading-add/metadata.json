@@ -1,0 +1,17 @@
+{
+  "name": "reading-add",
+  "repo": "edwinhu/workflows",
+  "path": "skills/reading-add/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/edwinhu/workflows",
+  "dir_name": "reading-add",
+  "downloaded_at": "2026-03-22T07:53:59.609440Z",
+  "author": "edwinhu",
+  "source_url": "https://github.com/edwinhu/workflows/blob/main/skills/reading-add/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/edwinhu/workflows/blob/main/skills/reading-add/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

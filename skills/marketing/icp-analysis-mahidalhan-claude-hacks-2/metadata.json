@@ -1,0 +1,18 @@
+{
+  "name": "icp-analysis",
+  "description": "Analyze a company to identify their Ideal Customer Profiles (ICPs) - buyer personas, verticals, and tiers",
+  "repo": "mahidalhan/claude-hacks",
+  "path": "skills/icp-analysis/skills/icp-analysis",
+  "category": "marketing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mahidalhan/claude-hacks",
+  "dir_name": "icp-analysis-mahidalhan-claude-hacks-2",
+  "author": "mahidalhan",
+  "source_url": "https://github.com/mahidalhan/claude-hacks/blob/main/skills/icp-analysis/skills/icp-analysis/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Skilled Spec Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "release-message",
+  "repo": "kasperjunge/agent-resources",
+  "path": "resources/skills/release-message/SKILL.md",
+  "source": "github.com/kasperjunge/agent-resources",
+  "downloaded_at": "2026-01-22T01:33:45.569581Z",
+  "dir_name": "release-message",
+  "category": "marketing",
+  "github_path": "resources/skills/release-message",
+  "github_branch": "main",
+  "author": "kasperjunge",
+  "source_url": "https://github.com/kasperjunge/agent-resources/blob/main/resources/skills/release-message/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Kasper Junge",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

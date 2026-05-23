@@ -1,0 +1,17 @@
+{
+  "name": "ln-813-optimization-plan-validator",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-813-optimization-plan-validator/SKILL.md",
+  "github_branch": "master",
+  "category": "agent-coordination",
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-813-optimization-plan-validator",
+  "downloaded_at": "2026-03-23T01:32:36.809553Z",
+  "author": "levnikolaevich",
+  "source_url": "https://github.com/levnikolaevich/claude-code-skills/blob/master/ln-813-optimization-plan-validator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/levnikolaevich/claude-code-skills/blob/master/ln-813-optimization-plan-validator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

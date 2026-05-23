@@ -1,0 +1,13 @@
+{
+  "name": "azure-ai-document-intelligence-ts",
+  "description": "",
+  "repo": "microsoft/skills",
+  "category": "ai-llm",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/microsoft/skills",
+  "github_path": ".github/skills/azure-ai-document-intelligence-ts",
+  "github_branch": "main",
+  "dir_name": "azure-ai-document-intelligence-ts",
+  "downloaded_at": "2026-02-05T01:44:52.577661Z"
+}

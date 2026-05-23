@@ -1,0 +1,16 @@
+{
+  "name": "validate",
+  "repo": "gricha/perry",
+  "path": ".claude/skills/validate/SKILL.md",
+  "category": "testing",
+  "source": "github.com/gricha/perry",
+  "dir_name": "validate-gricha-perry",
+  "downloaded_at": "2026-02-22T07:21:32.620716Z",
+  "author": "gricha",
+  "source_url": "https://github.com/gricha/perry/blob/main/.claude/skills/validate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gricha/perry/blob/main/.claude/skills/validate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

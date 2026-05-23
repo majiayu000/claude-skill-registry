@@ -1,0 +1,16 @@
+{
+  "name": "async-python-patterns",
+  "repo": "haxllo/repolens",
+  "path": ".claude/skills/async-python-patterns/SKILL.md",
+  "category": "development",
+  "source": "github.com/haxllo/repolens",
+  "dir_name": "async-python-patterns-haxllo-repolens",
+  "downloaded_at": "2026-02-15T07:28:04.704277Z",
+  "author": "haxllo",
+  "source_url": "https://github.com/haxllo/repolens/blob/main/.claude/skills/async-python-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/haxllo/repolens/blob/main/.claude/skills/async-python-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

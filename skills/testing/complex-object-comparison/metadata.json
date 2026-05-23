@@ -1,0 +1,18 @@
+{
+  "name": "complex-object-comparison",
+  "repo": "kevintsengtw/dotnet-testing-agent-skills",
+  "path": ".github/skills/dotnet-testing/complex-object-comparison/SKILL.md",
+  "source": "github.com/kevintsengtw/dotnet-testing-agent-skills",
+  "downloaded_at": "2026-01-22T03:32:20.704346Z",
+  "dir_name": "complex-object-comparison",
+  "category": "testing",
+  "github_path": ".github/skills/dotnet-testing/complex-object-comparison",
+  "github_branch": "main",
+  "author": "kevintsengtw",
+  "source_url": "https://github.com/kevintsengtw/dotnet-testing-agent-skills/blob/main/.github/skills/dotnet-testing/complex-object-comparison/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Kevin Tseng",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

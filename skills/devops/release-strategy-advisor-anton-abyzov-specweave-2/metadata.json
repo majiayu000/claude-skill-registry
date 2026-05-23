@@ -1,0 +1,16 @@
+{
+  "name": "release-strategy-advisor",
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave-release/skills/release-strategy-advisor/SKILL.md",
+  "source": "github.com/anton-abyzov/specweave",
+  "downloaded_at": "2026-02-01T01:48:17.518255Z",
+  "dir_name": "release-strategy-advisor-anton-abyzov-specweave-2",
+  "category": "devops",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave-release/skills/release-strategy-advisor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "glm5",
+  "repo": "alfredolopez80/multi-agent-ralph-loop",
+  "path": ".claude/skills/glm5/SKILL.md",
+  "github_branch": "main",
+  "category": "agent",
+  "source": "github.com/alfredolopez80/multi-agent-ralph-loop",
+  "dir_name": "glm5",
+  "downloaded_at": "2026-03-01T06:38:41.453599Z",
+  "author": "alfredolopez80",
+  "source_url": "https://github.com/alfredolopez80/multi-agent-ralph-loop/blob/main/.claude/skills/glm5/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alfredolopez80/multi-agent-ralph-loop/blob/main/.claude/skills/glm5/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "agentic-workflow",
+  "description": "Context management for Claude Code. Hooks maintain state via ledgers and handoffs. MCP execution without context pollution. Agent orchestration with isolated context windows.",
+  "repo": "parcadei/Continuous-Claude-v3",
+  "category": "workflow",
+  "tags": [],
+  "stars": 3392,
+  "source": "",
+  "github_path": ".claude/skills/agentic-workflow",
+  "github_branch": "main",
+  "dir_name": "agentic-workflow",
+  "downloaded_at": "2026-02-05T01:45:12.170634Z",
+  "author": "parcadei",
+  "source_url": "https://github.com/parcadei/Continuous-Claude-v3/blob/main/.claude/skills/agentic-workflow/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Cosimo Streppone",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

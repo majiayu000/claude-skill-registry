@@ -1,0 +1,17 @@
+{
+  "name": "salesmate-automation",
+  "repo": "LUNARTECH-X/superpowers",
+  "path": "skills/document-editorial/composio-skills/salesmate-automation/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/LUNARTECH-X/superpowers",
+  "dir_name": "salesmate-automation",
+  "downloaded_at": "2026-03-22T05:41:43.816192Z",
+  "author": "LUNARTECH-X",
+  "source_url": "https://github.com/LUNARTECH-X/superpowers/blob/main/skills/document-editorial/composio-skills/salesmate-automation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/LUNARTECH-X/superpowers/blob/main/skills/document-editorial/composio-skills/salesmate-automation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

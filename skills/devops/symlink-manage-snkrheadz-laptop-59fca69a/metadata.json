@@ -1,0 +1,16 @@
+{
+  "name": "symlink-manage",
+  "repo": "snkrheadz/laptop",
+  "path": ".claude/skills/symlink-manage/SKILL.md",
+  "source": "github.com/snkrheadz/laptop",
+  "downloaded_at": "2026-01-29T07:49:42.399098Z",
+  "dir_name": "symlink-manage-snkrheadz-laptop-59fca69a",
+  "category": "devops",
+  "author": "snkrheadz",
+  "source_url": "https://github.com/snkrheadz/laptop/blob/main/.claude/skills/symlink-manage/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/snkrheadz/laptop/blob/main/.claude/skills/symlink-manage/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

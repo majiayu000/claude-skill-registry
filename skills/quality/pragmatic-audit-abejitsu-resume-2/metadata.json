@@ -1,0 +1,17 @@
+{
+  "name": "pragmatic-audit",
+  "repo": "AbeJitsu/Resume",
+  "path": ".claude/skills/pragmatic-audit/skill.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/AbeJitsu/Resume",
+  "dir_name": "pragmatic-audit-abejitsu-resume-2",
+  "downloaded_at": "2026-03-22T04:46:21.702595Z",
+  "author": "AbeJitsu",
+  "source_url": "https://github.com/AbeJitsu/Resume/blob/main/.claude/skills/pragmatic-audit/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AbeJitsu/Resume/blob/main/.claude/skills/pragmatic-audit/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

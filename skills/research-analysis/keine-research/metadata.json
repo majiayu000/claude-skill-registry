@@ -1,0 +1,17 @@
+{
+  "name": "keine-research",
+  "repo": "duskmoon314/keine",
+  "path": ".agents/skills/keine-research/SKILL.md",
+  "github_branch": "main",
+  "category": "research-analysis",
+  "source": "github.com/duskmoon314/keine",
+  "dir_name": "keine-research",
+  "downloaded_at": "2026-03-22T07:50:58.302008Z",
+  "author": "duskmoon314",
+  "source_url": "https://github.com/duskmoon314/keine/blob/main/.agents/skills/keine-research/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/duskmoon314/keine/blob/main/.agents/skills/keine-research/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

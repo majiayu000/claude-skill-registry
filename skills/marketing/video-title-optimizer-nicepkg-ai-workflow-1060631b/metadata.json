@@ -1,0 +1,16 @@
+{
+  "name": "video-title-optimizer",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/video-creator-workflow/.claude/skills/video-title-optimizer/SKILL.md",
+  "source": "github.com/nicepkg/ai-workflow",
+  "downloaded_at": "2026-01-29T05:19:48.304625Z",
+  "dir_name": "video-title-optimizer-nicepkg-ai-workflow-1060631b",
+  "category": "marketing",
+  "author": "nicepkg",
+  "source_url": "https://github.com/nicepkg/ai-workflow/blob/main/workflows/video-creator-workflow/.claude/skills/video-title-optimizer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 nicepkg",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

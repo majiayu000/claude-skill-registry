@@ -1,0 +1,17 @@
+{
+  "name": "gsd-audit-uat",
+  "repo": "davepoon/buildwithclaude",
+  "path": "plugins/gsd/skills/gsd-audit-uat/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/davepoon/buildwithclaude",
+  "dir_name": "gsd-audit-uat",
+  "downloaded_at": "2026-05-04T02:01:02.765426Z",
+  "author": "davepoon",
+  "source_url": "https://github.com/davepoon/buildwithclaude/blob/main/plugins/gsd/skills/gsd-audit-uat/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/davepoon/buildwithclaude/blob/main/plugins/gsd/skills/gsd-audit-uat/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

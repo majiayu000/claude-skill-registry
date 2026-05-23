@@ -1,0 +1,17 @@
+{
+  "name": "intelligent-chat-condenser-for-seamless-restart",
+  "repo": "BetterPromptme/skills",
+  "path": "skills/intelligent-chat-condenser-for-seamless-restart/SKILL.md",
+  "github_branch": "main",
+  "category": "context-management",
+  "source": "github.com/BetterPromptme/skills",
+  "dir_name": "intelligent-chat-condenser-for-seamless-restart",
+  "downloaded_at": "2026-03-22T05:00:02.902775Z",
+  "author": "BetterPromptme",
+  "source_url": "https://github.com/BetterPromptme/skills/blob/main/skills/intelligent-chat-condenser-for-seamless-restart/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BetterPromptme/skills/blob/main/skills/intelligent-chat-condenser-for-seamless-restart/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

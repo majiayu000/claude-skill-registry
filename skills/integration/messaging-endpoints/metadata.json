@@ -1,0 +1,16 @@
+{
+  "name": "messaging-endpoints",
+  "repo": "Tyler-R-Kendrick/agent-skills",
+  "path": "skills/dev/integration-patterns/messaging-endpoints/SKILL.md",
+  "category": "integration",
+  "source": "github.com/Tyler-R-Kendrick/agent-skills",
+  "dir_name": "messaging-endpoints",
+  "downloaded_at": "2026-02-22T05:52:27.295869Z",
+  "author": "Tyler-R-Kendrick",
+  "source_url": "https://github.com/Tyler-R-Kendrick/agent-skills/blob/main/skills/dev/integration-patterns/messaging-endpoints/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tyler-R-Kendrick/agent-skills/blob/main/skills/dev/integration-patterns/messaging-endpoints/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

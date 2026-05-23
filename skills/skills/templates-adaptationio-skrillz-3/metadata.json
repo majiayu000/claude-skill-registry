@@ -1,0 +1,17 @@
+{
+  "name": "templates",
+  "repo": "adaptationio/Skrillz",
+  "path": "skills/skill-builder-generic/templates/workflow-based-skill.md",
+  "github_branch": "main",
+  "category": "skills",
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "templates-adaptationio-skrillz-3",
+  "downloaded_at": "2026-03-01T06:26:58.186064Z",
+  "author": "adaptationio",
+  "source_url": "https://github.com/adaptationio/Skrillz/blob/main/skills/skill-builder-generic/templates/workflow-based-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adaptationio/Skrillz/blob/main/skills/skill-builder-generic/templates/workflow-based-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

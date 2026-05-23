@@ -1,0 +1,16 @@
+{
+  "name": "greptile-tools",
+  "repo": "bsamiee/Parametric_Portal",
+  "path": ".claude/skills/greptile-tools/SKILL.md",
+  "category": "development-tools",
+  "source": "github.com/bsamiee/Parametric_Portal",
+  "dir_name": "greptile-tools",
+  "downloaded_at": "2026-02-15T06:39:24.295977Z",
+  "author": "bsamiee",
+  "source_url": "https://github.com/bsamiee/Parametric_Portal/blob/main/.claude/skills/greptile-tools/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 bsamiee",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "task",
+  "repo": "dohernandez/claude-project-skills-template",
+  "path": ".claude/skills/task/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/dohernandez/claude-project-skills-template",
+  "dir_name": "task-dohernandez-claude-project-skill",
+  "downloaded_at": "2026-03-22T07:47:36.366638Z",
+  "author": "dohernandez",
+  "source_url": "https://github.com/dohernandez/claude-project-skills-template/blob/main/.claude/skills/task/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dohernandez/claude-project-skills-template/blob/main/.claude/skills/task/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

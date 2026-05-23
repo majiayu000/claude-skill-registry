@@ -1,0 +1,18 @@
+{
+  "name": "queue-based-flow",
+  "description": "Stack prompts in queue while agent runs, minimizing context switches to achieve sustained 6k lines per day output and preserved flow state. Use for heavy coding sessions, iterative refinements, rapid ",
+  "repo": "dredd-us/seashells",
+  "path": ".claude/skills/queue-based-flow",
+  "category": "productivity",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dredd-us/seashells",
+  "dir_name": "queue-based-flow-dredd-us-seashells-2",
+  "author": "dredd-us",
+  "source_url": "https://github.com/dredd-us/seashells/blob/main/.claude/skills/queue-based-flow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dredd-us/seashells/blob/main/.claude/skills/queue-based-flow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

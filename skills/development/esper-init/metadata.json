@@ -1,0 +1,17 @@
+{
+  "name": "esper-init",
+  "repo": "sichengchen/esper",
+  "path": "skills/esper-init/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/sichengchen/esper",
+  "dir_name": "esper-init",
+  "downloaded_at": "2026-03-02T14:19:29.876024Z",
+  "author": "sichengchen",
+  "source_url": "https://github.com/sichengchen/esper/blob/main/skills/esper-init/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sichengchen/esper/blob/main/skills/esper-init/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

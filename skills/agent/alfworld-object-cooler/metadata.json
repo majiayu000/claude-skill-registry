@@ -1,0 +1,20 @@
+{
+  "name": "alfworld-object-cooler",
+  "description": "",
+  "repo": "zjunlp/SkillNet",
+  "category": "agent",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zjunlp/SkillNet",
+  "github_path": "skills/benchmark_skills/alfworld/alfworld-object-cooler",
+  "github_branch": "main",
+  "dir_name": "alfworld-object-cooler",
+  "downloaded_at": "2026-02-05T01:44:59.146628Z",
+  "author": "zjunlp",
+  "source_url": "https://github.com/zjunlp/SkillNet/blob/main/skills/benchmark_skills/alfworld/alfworld-object-cooler/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 ZJUNLP",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

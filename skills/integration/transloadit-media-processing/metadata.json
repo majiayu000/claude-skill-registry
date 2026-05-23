@@ -1,0 +1,17 @@
+{
+  "name": "transloadit-media-processing",
+  "repo": "beel-collab/presets",
+  "path": "third-party-integrations/transloadit-media-processing/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/beel-collab/presets",
+  "dir_name": "transloadit-media-processing",
+  "downloaded_at": "2026-03-22T07:11:57.526125Z",
+  "author": "beel-collab",
+  "source_url": "https://github.com/beel-collab/presets/blob/main/third-party-integrations/transloadit-media-processing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/beel-collab/presets/blob/main/third-party-integrations/transloadit-media-processing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

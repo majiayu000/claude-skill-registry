@@ -1,0 +1,17 @@
+{
+  "name": "x-promo",
+  "repo": "Chachamaru127/claude-code-harness",
+  "path": "codex/.codex/skills/x-promo/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/Chachamaru127/claude-code-harness",
+  "dir_name": "x-promo",
+  "downloaded_at": "2026-03-01T05:02:56.273934Z",
+  "author": "Chachamaru127",
+  "source_url": "https://github.com/Chachamaru127/claude-code-harness/blob/main/codex/.codex/skills/x-promo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Chachamaru127/claude-code-harness/blob/main/codex/.codex/skills/x-promo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

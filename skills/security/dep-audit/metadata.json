@@ -1,0 +1,17 @@
+{
+  "name": "dep-audit",
+  "repo": "cacheforge-ai/cacheforge-skills",
+  "path": "skills/dep-audit/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/cacheforge-ai/cacheforge-skills",
+  "dir_name": "dep-audit",
+  "downloaded_at": "2026-03-22T07:22:25.704697Z",
+  "author": "cacheforge-ai",
+  "source_url": "https://github.com/cacheforge-ai/cacheforge-skills/blob/main/skills/dep-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cacheforge-ai/cacheforge-skills/blob/main/skills/dep-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

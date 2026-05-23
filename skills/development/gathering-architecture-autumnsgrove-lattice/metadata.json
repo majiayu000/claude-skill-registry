@@ -1,0 +1,16 @@
+{
+  "name": "gathering-architecture",
+  "repo": "AutumnsGrove/Lattice",
+  "path": ".claude/skills/gathering-architecture/SKILL.md",
+  "category": "development",
+  "source": "github.com/AutumnsGrove/Lattice",
+  "dir_name": "gathering-architecture-autumnsgrove-lattice",
+  "downloaded_at": "2026-02-22T04:45:15.710488Z",
+  "author": "AutumnsGrove",
+  "source_url": "https://github.com/AutumnsGrove/Lattice/blob/main/.claude/skills/gathering-architecture/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AutumnsGrove/Lattice/blob/main/.claude/skills/gathering-architecture/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

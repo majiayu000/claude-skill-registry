@@ -1,0 +1,16 @@
+{
+  "name": "asyncredux-check-internet-mixin",
+  "repo": "marcglasberg/async_redux",
+  "path": ".claude/skills/asyncredux-check-internet-mixin/SKILL.md",
+  "source": "github.com/marcglasberg/async_redux",
+  "downloaded_at": "2026-02-02T01:47:08.776513Z",
+  "dir_name": "asyncredux-check-internet-mixin",
+  "category": "development",
+  "author": "marcglasberg",
+  "source_url": "https://github.com/marcglasberg/async_redux/blob/main/.claude/skills/asyncredux-check-internet-mixin/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2019 Marcelo Glasberg",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

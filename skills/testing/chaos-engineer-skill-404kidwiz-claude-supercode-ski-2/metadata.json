@@ -1,0 +1,18 @@
+{
+  "name": "chaos-engineer-skill",
+  "description": "Expert in resilience testing, fault injection, and building anti-fragile systems using controlled experiments.",
+  "repo": "404kidwiz/claude-supercode-skills",
+  "path": "chaos-engineer-skill",
+  "category": "testing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/404kidwiz/claude-supercode-skills",
+  "dir_name": "chaos-engineer-skill-404kidwiz-claude-supercode-ski-2",
+  "author": "404kidwiz",
+  "source_url": "https://github.com/404kidwiz/claude-supercode-skills/blob/main/chaos-engineer-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/404kidwiz/claude-supercode-skills/blob/main/chaos-engineer-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

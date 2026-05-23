@@ -1,0 +1,16 @@
+{
+  "name": "task",
+  "repo": "JordanGunn/skills",
+  "path": "skills/task/SKILL.md",
+  "category": "productivity",
+  "source": "github.com/JordanGunn/skills",
+  "dir_name": "task-jordangunn-skills",
+  "downloaded_at": "2026-02-15T05:17:50.900683Z",
+  "author": "JordanGunn",
+  "source_url": "https://github.com/JordanGunn/skills/blob/main/skills/task/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JordanGunn/skills/blob/main/skills/task/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

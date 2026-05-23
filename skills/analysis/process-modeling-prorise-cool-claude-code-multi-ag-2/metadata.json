@@ -1,0 +1,18 @@
+{
+  "name": "process-modeling",
+  "description": "Process modeling using BPMN notation and flowchart patterns. Creates process diagrams with activities, gateways, events, swimlanes, and decision points for workflow documentation.",
+  "repo": "Prorise-cool/Claude-Code-Multi-Agent",
+  "path": ".claude/skills/business-analysis/process-modeling",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
+  "dir_name": "process-modeling-prorise-cool-claude-code-multi-ag-2",
+  "author": "Prorise-cool",
+  "source_url": "https://github.com/Prorise-cool/Claude-Code-Multi-Agent/blob/main/.claude/skills/business-analysis/process-modeling/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Prorise-cool/Claude-Code-Multi-Agent/blob/main/.claude/skills/business-analysis/process-modeling/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

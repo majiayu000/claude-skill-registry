@@ -1,0 +1,17 @@
+{
+  "name": "chrome-devtools",
+  "repo": "ComeOnOliver/skillshub",
+  "path": "skills/github/awesome-copilot/chrome-devtools/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/ComeOnOliver/skillshub",
+  "dir_name": "chrome-devtools-comeonoliver-skillshub",
+  "downloaded_at": "2026-03-22T05:08:03.440079Z",
+  "author": "ComeOnOliver",
+  "source_url": "https://github.com/ComeOnOliver/skillshub/blob/main/skills/github/awesome-copilot/chrome-devtools/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ComeOnOliver/skillshub/blob/main/skills/github/awesome-copilot/chrome-devtools/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

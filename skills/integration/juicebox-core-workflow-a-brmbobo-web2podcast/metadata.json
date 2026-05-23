@@ -1,0 +1,17 @@
+{
+  "name": "juicebox-core-workflow-a",
+  "repo": "Brmbobo/Web2podcast",
+  "path": ".claude/agents/enterprise-frontend-design/agents/saas-packs/juicebox-pack/skills/juicebox-core-workflow-a/SKILL.md",
+  "github_branch": "master",
+  "category": "integration",
+  "source": "github.com/Brmbobo/Web2podcast",
+  "dir_name": "juicebox-core-workflow-a-brmbobo-web2podcast",
+  "downloaded_at": "2026-03-22T05:01:42.669902Z",
+  "author": "Brmbobo",
+  "source_url": "https://github.com/Brmbobo/Web2podcast/blob/master/.claude/agents/enterprise-frontend-design/agents/saas-packs/juicebox-pack/skills/juicebox-core-workflow-a/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Brmbobo/Web2podcast/blob/master/.claude/agents/enterprise-frontend-design/agents/saas-packs/juicebox-pack/skills/juicebox-core-workflow-a/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

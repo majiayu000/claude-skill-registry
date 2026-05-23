@@ -1,0 +1,13 @@
+{
+  "name": "azure-mgmt-mongodbatlas-dotnet",
+  "description": "",
+  "repo": "microsoft/skills",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/microsoft/skills",
+  "github_path": ".github/skills/azure-mgmt-mongodbatlas-dotnet",
+  "github_branch": "main",
+  "dir_name": "azure-mgmt-mongodbatlas-dotnet",
+  "downloaded_at": "2026-02-05T01:44:52.355145Z"
+}

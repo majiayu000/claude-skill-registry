@@ -1,0 +1,17 @@
+{
+  "name": "cran",
+  "repo": "JDenn0514/surveycore",
+  "path": ".claude/skills/cran/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/JDenn0514/surveycore",
+  "dir_name": "cran",
+  "downloaded_at": "2026-03-22T05:30:53.135837Z",
+  "author": "JDenn0514",
+  "source_url": "https://github.com/JDenn0514/surveycore/blob/main/.claude/skills/cran/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JDenn0514/surveycore/blob/main/.claude/skills/cran/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

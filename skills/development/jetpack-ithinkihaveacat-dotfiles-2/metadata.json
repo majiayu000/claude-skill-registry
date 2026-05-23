@@ -1,0 +1,18 @@
+{
+  "name": "jetpack",
+  "description": "Resolves AndroidX/Jetpack library information including version lookup, package-to-Maven-coordinate conversion, and source code downloading. Provides tools for inspecting Jetpack library implementatio",
+  "repo": "ithinkihaveacat/dotfiles",
+  "path": "etc/skills/jetpack",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ithinkihaveacat/dotfiles",
+  "dir_name": "jetpack-ithinkihaveacat-dotfiles-2",
+  "author": "ithinkihaveacat",
+  "source_url": "https://github.com/ithinkihaveacat/dotfiles/blob/main/etc/skills/jetpack/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ithinkihaveacat/dotfiles/blob/main/etc/skills/jetpack/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

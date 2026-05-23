@@ -1,0 +1,16 @@
+{
+  "name": "gh-aw-firewall",
+  "repo": "github/gh-aw-firewall",
+  "path": "skill.md",
+  "category": "security",
+  "source": "github.com/github/gh-aw-firewall",
+  "dir_name": "gh-aw-firewall",
+  "downloaded_at": "2026-02-22T07:18:23.348379Z",
+  "author": "github",
+  "source_url": "https://github.com/github/gh-aw-firewall/blob/main/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/github/gh-aw-firewall/blob/main/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

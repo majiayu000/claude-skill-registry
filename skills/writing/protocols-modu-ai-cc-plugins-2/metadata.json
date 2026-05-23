@@ -1,0 +1,18 @@
+{
+  "name": "protocols",
+  "description": "Solo(단일 페르소나), Crew(다중 페르소나), Adaptive(컨텍스트 전환) 모드를 위한 글쓰기 프로토콜. 섹션 매핑과 페르소나 조율 전략을 정의한다. 콘텐츠 생성 워크플로우를 결정하거나 다중 페르소나 콘텐츠를 조율할 때 사용한다.",
+  "repo": "modu-ai/cc-plugins",
+  "path": "plugins/astory-blog-writers/skills/protocols",
+  "category": "writing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/modu-ai/cc-plugins",
+  "dir_name": "protocols-modu-ai-cc-plugins-2",
+  "author": "modu-ai",
+  "source_url": "https://github.com/modu-ai/cc-plugins/blob/main/plugins/astory-blog-writers/skills/protocols/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/modu-ai/cc-plugins/blob/main/plugins/astory-blog-writers/skills/protocols/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

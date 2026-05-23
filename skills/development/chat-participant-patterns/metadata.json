@@ -1,0 +1,17 @@
+{
+  "name": "chat-participant-patterns",
+  "repo": "fabioc-aloha/AIRS_Data_Analysis",
+  "path": ".github/skills/chat-participant-patterns/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/fabioc-aloha/AIRS_Data_Analysis",
+  "dir_name": "chat-participant-patterns",
+  "downloaded_at": "2026-03-01T07:40:54.389528Z",
+  "author": "fabioc-aloha",
+  "source_url": "https://github.com/fabioc-aloha/AIRS_Data_Analysis/blob/main/.github/skills/chat-participant-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fabioc-aloha/AIRS_Data_Analysis/blob/main/.github/skills/chat-participant-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

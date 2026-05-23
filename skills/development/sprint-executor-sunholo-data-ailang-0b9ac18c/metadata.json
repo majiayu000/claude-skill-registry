@@ -1,0 +1,16 @@
+{
+  "name": "sprint-executor",
+  "repo": "sunholo-data/ailang",
+  "path": ".claude/skills/sprint-executor/SKILL.md",
+  "source": "github.com/sunholo-data/ailang",
+  "downloaded_at": "2026-01-29T06:03:46.118656Z",
+  "dir_name": "sprint-executor-sunholo-data-ailang-0b9ac18c",
+  "category": "development",
+  "author": "sunholo-data",
+  "source_url": "https://github.com/sunholo-data/ailang/blob/main/.claude/skills/sprint-executor/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sunholo-data/ailang/blob/main/.claude/skills/sprint-executor/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

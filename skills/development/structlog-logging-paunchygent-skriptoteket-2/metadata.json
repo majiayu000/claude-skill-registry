@@ -1,0 +1,18 @@
+{
+  "name": "structlog-logging",
+  "description": "Configure and use Structlog for structured logging in HuleEdu services. Guides correlation context propagation, async-safe logging, and integration with error handling. Integrates with Context7 for la",
+  "repo": "paunchygent/skriptoteket",
+  "path": ".claude/skills/structlog-logging",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/paunchygent/skriptoteket",
+  "dir_name": "structlog-logging-paunchygent-skriptoteket-2",
+  "author": "paunchygent",
+  "source_url": "https://github.com/paunchygent/skriptoteket/blob/main/.claude/skills/structlog-logging/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/paunchygent/skriptoteket/blob/main/.claude/skills/structlog-logging/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "codebase-review",
+  "repo": "LightForgeLabsStudio/AIDE",
+  "path": "skills/codebase-review/SKILL.md",
+  "github_branch": "master",
+  "category": "quality",
+  "source": "github.com/LightForgeLabsStudio/AIDE",
+  "dir_name": "codebase-review",
+  "downloaded_at": "2026-03-22T05:42:59.917980Z",
+  "author": "LightForgeLabsStudio",
+  "source_url": "https://github.com/LightForgeLabsStudio/AIDE/blob/master/skills/codebase-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/LightForgeLabsStudio/AIDE/blob/master/skills/codebase-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

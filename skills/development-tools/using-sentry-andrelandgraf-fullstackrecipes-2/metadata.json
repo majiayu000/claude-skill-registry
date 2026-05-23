@@ -1,0 +1,18 @@
+{
+  "name": "using-sentry",
+  "description": "Capture exceptions, add context, create performance spans, and use structured logging with Sentry.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/using-sentry",
+  "category": "development-tools",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "using-sentry-andrelandgraf-fullstackrecipes-2",
+  "author": "andrelandgraf",
+  "source_url": "https://github.com/andrelandgraf/fullstackrecipes/blob/main/.agents/skills/using-sentry/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/andrelandgraf/fullstackrecipes/blob/main/.agents/skills/using-sentry/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

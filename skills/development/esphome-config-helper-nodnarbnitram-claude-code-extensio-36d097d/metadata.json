@@ -1,0 +1,16 @@
+{
+  "name": "esphome-config-helper",
+  "repo": "nodnarbnitram/claude-code-extensions",
+  "path": ".claude/skills/esphome-config-helper/SKILL.md",
+  "source": "github.com/nodnarbnitram/claude-code-extensions",
+  "downloaded_at": "2026-01-29T07:08:56.846263Z",
+  "dir_name": "esphome-config-helper-nodnarbnitram-claude-code-extensio-36d097d",
+  "category": "development",
+  "author": "nodnarbnitram",
+  "source_url": "https://github.com/nodnarbnitram/claude-code-extensions/blob/main/.claude/skills/esphome-config-helper/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Brandon Martin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

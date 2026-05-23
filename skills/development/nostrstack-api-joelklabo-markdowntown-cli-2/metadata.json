@@ -1,0 +1,18 @@
+{
+  "name": "nostrstack-api",
+  "description": "Nostrstack API development (Fastify + Prisma) including routing patterns, services, tenancy resolution, LightningProvider integration, and Nostr endpoints. Use when editing apps/api (routes, services,",
+  "repo": "joelklabo/markdowntown-cli",
+  "path": "codex/skills/nostrstack-api",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/joelklabo/markdowntown-cli",
+  "dir_name": "nostrstack-api-joelklabo-markdowntown-cli-2",
+  "author": "joelklabo",
+  "source_url": "https://github.com/joelklabo/markdowntown-cli/blob/main/codex/skills/nostrstack-api/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Markdowntown Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

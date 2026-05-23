@@ -1,0 +1,18 @@
+{
+  "name": "file-reference",
+  "description": "Process and analyze user-uploaded file references, extract key information, and provide application recommendations. Suitable for parsing @symbol references, natural language references, and extractin",
+  "repo": "VanGongwanxiaowan/screen-creative-skills",
+  "path": "category/tools/file-reference",
+  "category": "document-processing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/VanGongwanxiaowan/screen-creative-skills",
+  "dir_name": "file-reference-vangongwanxiaowan-screen-creative-skil-2",
+  "author": "VanGongwanxiaowan",
+  "source_url": "https://github.com/VanGongwanxiaowan/screen-creative-skills/blob/main/category/tools/file-reference/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 宫凡",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

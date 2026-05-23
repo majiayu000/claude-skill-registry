@@ -1,0 +1,18 @@
+{
+  "name": "mise",
+  "description": "Modern dev tool version management with mise. Use PROACTIVELY when setting up repos, managing tool versions, or when users ask about nvm/pyenv/goenv alternatives. Covers project setup, direnv integrat",
+  "repo": "rbergman/dark-matter-marketplace",
+  "path": "plugins/workflow/skills/mise",
+  "category": "development-tools",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rbergman/dark-matter-marketplace",
+  "dir_name": "mise-rbergman-dark-matter-marketpl-2",
+  "author": "rbergman",
+  "source_url": "https://github.com/rbergman/dark-matter-marketplace/blob/main/plugins/workflow/skills/mise/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rbergman/dark-matter-marketplace/blob/main/plugins/workflow/skills/mise/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

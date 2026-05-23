@@ -1,0 +1,17 @@
+{
+  "name": "lisa",
+  "repo": "TonyCasey/lisa",
+  "path": "src/project/.lisa/skills/lisa/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/TonyCasey/lisa",
+  "dir_name": "lisa-tonycasey-lisa-2",
+  "downloaded_at": "2026-03-22T06:24:39.198387Z",
+  "author": "TonyCasey",
+  "source_url": "https://github.com/TonyCasey/lisa/blob/main/src/project/.lisa/skills/lisa/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TonyCasey/lisa/blob/main/src/project/.lisa/skills/lisa/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

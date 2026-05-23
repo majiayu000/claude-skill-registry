@@ -1,0 +1,16 @@
+{
+  "name": "slack-gif-creator",
+  "repo": "MICHAEL-BODO/LT-MISSION-CONTROL",
+  "path": ".agent/skills/slack-gif-creator/SKILL.md",
+  "category": "creative",
+  "source": "github.com/MICHAEL-BODO/LT-MISSION-CONTROL",
+  "dir_name": "slack-gif-creator-michael-bodo-lt-mission-control",
+  "downloaded_at": "2026-02-22T05:21:07.250534Z",
+  "author": "MICHAEL-BODO",
+  "source_url": "https://github.com/MICHAEL-BODO/LT-MISSION-CONTROL/blob/main/.agent/skills/slack-gif-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MICHAEL-BODO/LT-MISSION-CONTROL/blob/main/.agent/skills/slack-gif-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

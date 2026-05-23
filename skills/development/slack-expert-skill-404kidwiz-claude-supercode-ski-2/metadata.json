@@ -1,0 +1,18 @@
+{
+  "name": "slack-expert-skill",
+  "description": "Use when user needs Slack app development, @slack/bolt implementation, Block Kit UI design, event handling, OAuth flows, or Slack API integrations for bots and interactive components.",
+  "repo": "404kidwiz/claude-supercode-skills",
+  "path": "slack-expert-skill",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/404kidwiz/claude-supercode-skills",
+  "dir_name": "slack-expert-skill-404kidwiz-claude-supercode-ski-2",
+  "author": "404kidwiz",
+  "source_url": "https://github.com/404kidwiz/claude-supercode-skills/blob/main/slack-expert-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/404kidwiz/claude-supercode-skills/blob/main/slack-expert-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

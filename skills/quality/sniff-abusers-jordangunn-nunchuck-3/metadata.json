@@ -1,0 +1,17 @@
+{
+  "name": "sniff-abusers",
+  "repo": "JordanGunn/nunchuck",
+  "path": "skills/sniff/sniff-abusers/SKILL.md",
+  "github_branch": "master",
+  "category": "quality",
+  "source": "github.com/JordanGunn/nunchuck",
+  "dir_name": "sniff-abusers-jordangunn-nunchuck-3",
+  "downloaded_at": "2026-03-22T05:35:29.578223Z",
+  "author": "JordanGunn",
+  "source_url": "https://github.com/JordanGunn/nunchuck/blob/master/skills/sniff/sniff-abusers/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JordanGunn/nunchuck/blob/master/skills/sniff/sniff-abusers/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

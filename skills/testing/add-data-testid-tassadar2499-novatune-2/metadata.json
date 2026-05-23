@@ -1,0 +1,17 @@
+{
+  "name": "add-data-testid",
+  "repo": "Tassadar2499/NovaTune",
+  "path": ".claude/skills/add-data-testid/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/Tassadar2499/NovaTune",
+  "dir_name": "add-data-testid-tassadar2499-novatune-2",
+  "downloaded_at": "2026-03-22T06:21:07.824735Z",
+  "author": "Tassadar2499",
+  "source_url": "https://github.com/Tassadar2499/NovaTune/blob/main/.claude/skills/add-data-testid/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tassadar2499/NovaTune/blob/main/.claude/skills/add-data-testid/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "awf-skill",
+  "repo": "github/gh-aw-firewall",
+  "path": ".claude/skills/awf-skill/SKILL.md",
+  "category": "security",
+  "source": "github.com/github/gh-aw-firewall",
+  "dir_name": "awf-skill",
+  "downloaded_at": "2026-02-22T07:18:23.653842Z",
+  "author": "github",
+  "source_url": "https://github.com/github/gh-aw-firewall/blob/main/.claude/skills/awf-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/github/gh-aw-firewall/blob/main/.claude/skills/awf-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

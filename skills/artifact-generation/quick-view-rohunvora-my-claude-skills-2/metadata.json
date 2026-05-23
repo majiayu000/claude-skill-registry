@@ -1,0 +1,18 @@
+{
+  "name": "quick-view",
+  "description": "Generate minimal HTML pages to review Claude Code output in a browser. Use when terminal output is hard to read, when reviewing lists/tables/drafts, or when user says \"show me\", \"make this reviewable\"",
+  "repo": "rohunvora/my-claude-skills",
+  "path": ".claude/skills/quick-view",
+  "category": "artifact-generation",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rohunvora/my-claude-skills",
+  "dir_name": "quick-view-rohunvora-my-claude-skills-2",
+  "author": "rohunvora",
+  "source_url": "https://github.com/rohunvora/my-claude-skills/blob/main/.claude/skills/quick-view/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rohunvora/my-claude-skills/blob/main/.claude/skills/quick-view/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

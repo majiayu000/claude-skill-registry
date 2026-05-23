@@ -1,0 +1,18 @@
+{
+  "name": "party",
+  "description": "Companions and group dynamics — you're never alone",
+  "repo": "SimHacker/moollm",
+  "path": "skills/party",
+  "category": "gaming",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SimHacker/moollm",
+  "dir_name": "party-simhacker-moollm-2",
+  "author": "SimHacker",
+  "source_url": "https://github.com/SimHacker/moollm/blob/main/skills/party/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Don Hopkins, Leela AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

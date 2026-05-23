@@ -1,0 +1,17 @@
+{
+  "name": "chiptune-composer",
+  "repo": "GGPrompts/htmlstyleguides",
+  "path": ".claude/skills/chiptune-composer/SKILL.md",
+  "github_branch": "main",
+  "category": "creative",
+  "source": "github.com/GGPrompts/htmlstyleguides",
+  "dir_name": "chiptune-composer",
+  "downloaded_at": "2026-03-22T05:22:37.063424Z",
+  "author": "GGPrompts",
+  "source_url": "https://github.com/GGPrompts/htmlstyleguides/blob/main/.claude/skills/chiptune-composer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/GGPrompts/htmlstyleguides/blob/main/.claude/skills/chiptune-composer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

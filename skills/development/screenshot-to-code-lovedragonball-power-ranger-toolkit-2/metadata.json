@@ -1,0 +1,18 @@
+{
+  "name": "screenshot-to-code",
+  "description": "แปลง screenshots หรือ design mockups เป็น working code (HTML/CSS/React)",
+  "repo": "lovedragonball/power-ranger-toolkit",
+  "path": "src/skills/screenshot-to-code",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lovedragonball/power-ranger-toolkit",
+  "dir_name": "screenshot-to-code-lovedragonball-power-ranger-toolkit-2",
+  "author": "lovedragonball",
+  "source_url": "https://github.com/lovedragonball/power-ranger-toolkit/blob/main/src/skills/screenshot-to-code/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/lovedragonball/power-ranger-toolkit/blob/main/src/skills/screenshot-to-code/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

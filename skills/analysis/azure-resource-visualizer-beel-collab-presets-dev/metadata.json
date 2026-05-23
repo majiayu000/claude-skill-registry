@@ -1,0 +1,20 @@
+{
+  "name": "azure-resource-visualizer",
+  "description": "",
+  "repo": "beel-collab/presets.dev",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/beel-collab/presets.dev",
+  "github_path": "skills/azure-resource-visualizer",
+  "github_branch": "main",
+  "dir_name": "azure-resource-visualizer-beel-collab-presets-dev",
+  "downloaded_at": "2026-02-05T01:44:51.398639Z",
+  "author": "beel-collab",
+  "source_url": "https://github.com/beel-collab/presets.dev/blob/main/skills/azure-resource-visualizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/beel-collab/presets.dev/blob/main/skills/azure-resource-visualizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

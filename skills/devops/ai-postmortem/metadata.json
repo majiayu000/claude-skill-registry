@@ -1,0 +1,17 @@
+{
+  "name": "ai-postmortem",
+  "repo": "arcasilesgroup/ai-engineering",
+  "path": ".claude/skills/ai-postmortem/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/arcasilesgroup/ai-engineering",
+  "dir_name": "ai-postmortem",
+  "downloaded_at": "2026-03-22T07:01:38.558950Z",
+  "author": "arcasilesgroup",
+  "source_url": "https://github.com/arcasilesgroup/ai-engineering/blob/main/.claude/skills/ai-postmortem/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/arcasilesgroup/ai-engineering/blob/main/.claude/skills/ai-postmortem/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

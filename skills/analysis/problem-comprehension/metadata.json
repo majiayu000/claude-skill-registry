@@ -1,0 +1,17 @@
+{
+  "name": "problem-comprehension",
+  "repo": "Tibsfox/gsd-skill-creator",
+  "path": "examples/skills/problem-solving/problem-comprehension/SKILL.md",
+  "github_branch": "main",
+  "category": "analysis",
+  "source": "github.com/Tibsfox/gsd-skill-creator",
+  "dir_name": "problem-comprehension",
+  "downloaded_at": "2026-04-16T01:32:01.579129Z",
+  "author": "Tibsfox",
+  "source_url": "https://github.com/Tibsfox/gsd-skill-creator/blob/main/examples/skills/problem-solving/problem-comprehension/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tibsfox/gsd-skill-creator/blob/main/examples/skills/problem-solving/problem-comprehension/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

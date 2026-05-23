@@ -1,0 +1,17 @@
+{
+  "name": "cvm-troubleshooter",
+  "repo": "KiselevAleksey/cvm",
+  "path": "skills/cvm-troubleshooter/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/KiselevAleksey/cvm",
+  "dir_name": "cvm-troubleshooter",
+  "downloaded_at": "2026-03-22T05:39:39.686269Z",
+  "author": "KiselevAleksey",
+  "source_url": "https://github.com/KiselevAleksey/cvm/blob/main/skills/cvm-troubleshooter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/KiselevAleksey/cvm/blob/main/skills/cvm-troubleshooter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

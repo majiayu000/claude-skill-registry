@@ -1,0 +1,17 @@
+{
+  "name": "mvn-build",
+  "repo": "alexmond/jhelm",
+  "path": ".claude/skills/mvn-build/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/alexmond/jhelm",
+  "dir_name": "mvn-build",
+  "downloaded_at": "2026-03-22T06:50:19.872504Z",
+  "author": "alexmond",
+  "source_url": "https://github.com/alexmond/jhelm/blob/main/.claude/skills/mvn-build/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alexmond/jhelm/blob/main/.claude/skills/mvn-build/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

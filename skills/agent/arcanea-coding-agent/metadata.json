@@ -1,0 +1,17 @@
+{
+  "name": "arcanea-coding-agent",
+  "repo": "frankxai/arcanea",
+  "path": ".opencode/skills/arcanea-coding-agent/SKILL.md",
+  "github_branch": "main",
+  "category": "agent",
+  "source": "github.com/frankxai/arcanea",
+  "dir_name": "arcanea-coding-agent",
+  "downloaded_at": "2026-03-01T07:46:47.913553Z",
+  "author": "frankxai",
+  "source_url": "https://github.com/frankxai/arcanea/blob/main/.opencode/skills/arcanea-coding-agent/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/frankxai/arcanea/blob/main/.opencode/skills/arcanea-coding-agent/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "local-vco-roles",
+  "repo": "foryourhealth111-pixel/Vibe-Skills",
+  "path": "bundled/skills/local-vco-roles/SKILL.md",
+  "github_branch": "main",
+  "category": "agent-coordination",
+  "source": "github.com/foryourhealth111-pixel/Vibe-Skills",
+  "dir_name": "local-vco-roles",
+  "downloaded_at": "2026-04-21T01:31:40.621435Z",
+  "author": "foryourhealth111-pixel",
+  "source_url": "https://github.com/foryourhealth111-pixel/Vibe-Skills/blob/main/bundled/skills/local-vco-roles/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/foryourhealth111-pixel/Vibe-Skills/blob/main/bundled/skills/local-vco-roles/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

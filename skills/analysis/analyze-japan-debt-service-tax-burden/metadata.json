@@ -1,0 +1,16 @@
+{
+  "name": "analyze-japan-debt-service-tax-burden",
+  "repo": "fatfingererr/macro-skills",
+  "path": "skills/analyze-japan-debt-service-tax-burden/SKILL.md",
+  "source": "github.com/fatfingererr/macro-skills",
+  "downloaded_at": "2026-01-27T01:02:11.350670Z",
+  "dir_name": "analyze-japan-debt-service-tax-burden",
+  "category": "analysis",
+  "author": "fatfingererr",
+  "source_url": "https://github.com/fatfingererr/macro-skills/blob/main/skills/analyze-japan-debt-service-tax-burden/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Ruei-Ci Wang",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

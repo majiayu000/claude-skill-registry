@@ -1,0 +1,20 @@
+{
+  "name": "energy-management",
+  "description": "",
+  "repo": "RefoundAI/lenny-skills",
+  "category": "personal-development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RefoundAI/lenny-skills",
+  "github_path": "skills/energy-management",
+  "github_branch": "main",
+  "dir_name": "energy-management-refoundai-lenny-skills",
+  "downloaded_at": "2026-02-05T05:41:55.535942Z",
+  "author": "RefoundAI",
+  "source_url": "https://github.com/RefoundAI/lenny-skills/blob/main/skills/energy-management/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Refound AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

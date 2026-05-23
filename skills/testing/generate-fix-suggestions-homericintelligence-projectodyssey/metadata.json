@@ -1,0 +1,13 @@
+{
+  "name": "generate-fix-suggestions",
+  "description": "",
+  "repo": "HomericIntelligence/ProjectOdyssey",
+  "category": "testing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HomericIntelligence/ProjectOdyssey",
+  "github_path": ".claude/skills/generate-fix-suggestions",
+  "github_branch": "main",
+  "dir_name": "generate-fix-suggestions-homericintelligence-projectodyssey",
+  "downloaded_at": "2026-02-05T01:44:43.001031Z"
+}

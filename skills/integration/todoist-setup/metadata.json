@@ -1,0 +1,16 @@
+{
+  "name": "todoist-setup",
+  "repo": "davekilleen/Dex",
+  "path": ".claude/skills/todoist-setup/SKILL.md",
+  "category": "integration",
+  "source": "github.com/davekilleen/Dex",
+  "dir_name": "todoist-setup",
+  "downloaded_at": "2026-02-22T06:51:24.493347Z",
+  "author": "davekilleen",
+  "source_url": "https://github.com/davekilleen/Dex/blob/main/.claude/skills/todoist-setup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/davekilleen/Dex/blob/main/.claude/skills/todoist-setup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

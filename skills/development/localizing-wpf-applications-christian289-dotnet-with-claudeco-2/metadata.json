@@ -1,0 +1,18 @@
+{
+  "name": "localizing-wpf-applications",
+  "description": "Localizes WPF applications using resource files, x:Uid, and BAML localization. Use when building multi-language applications or supporting right-to-left layouts.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/localizing-wpf-applications",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "localizing-wpf-applications-christian289-dotnet-with-claudeco-2",
+  "author": "christian289",
+  "source_url": "https://github.com/christian289/dotnet-with-claudecode/blob/main/wpf-dev-pack/skills/localizing-wpf-applications/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 christian289",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

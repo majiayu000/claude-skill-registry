@@ -1,0 +1,16 @@
+{
+  "name": "karpathy-style",
+  "repo": "erwinkn/ai-config",
+  "path": ".claude/skills/karpathy-style/SKILL.md",
+  "source": "github.com/erwinkn/ai-config",
+  "downloaded_at": "2026-02-01T02:49:10.483910Z",
+  "dir_name": "karpathy-style",
+  "category": "development",
+  "author": "erwinkn",
+  "source_url": "https://github.com/erwinkn/ai-config/blob/main/.claude/skills/karpathy-style/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/erwinkn/ai-config/blob/main/.claude/skills/karpathy-style/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

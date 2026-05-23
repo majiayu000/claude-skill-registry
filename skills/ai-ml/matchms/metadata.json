@@ -1,0 +1,13 @@
+{
+  "name": "matchms",
+  "description": "Human-vetted, community-curated skills for AI coding & agent tools.",
+  "repo": "x-cmd/skill",
+  "category": "ai-ml",
+  "tags": [],
+  "stars": 8,
+  "source": "",
+  "github_path": "data/k-dense-ai/matchms",
+  "github_branch": "main",
+  "dir_name": "matchms",
+  "downloaded_at": "2026-02-05T01:45:29.683938Z"
+}

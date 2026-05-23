@@ -1,0 +1,16 @@
+{
+  "name": "inngest-flow-control",
+  "repo": "inngest/inngest-skills",
+  "path": "inngest-flow-control/SKILL.md",
+  "category": "integration",
+  "source": "github.com/inngest/inngest-skills",
+  "dir_name": "inngest-flow-control",
+  "downloaded_at": "2026-02-20T01:22:25.158045Z",
+  "author": "inngest",
+  "source_url": "https://github.com/inngest/inngest-skills/blob/main/inngest-flow-control/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/inngest/inngest-skills/blob/main/inngest-flow-control/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

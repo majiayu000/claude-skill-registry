@@ -1,0 +1,16 @@
+{
+  "name": "81-pipecat",
+  "repo": "panaversity/agentfactory",
+  "path": "apps/learn-app/docs/09-Building-Realtime-Voice-Agents/81-pipecat/00-build-pipecat-skill.md",
+  "source": "github.com/panaversity/agentfactory",
+  "downloaded_at": "2026-02-02T04:49:35.844722Z",
+  "dir_name": "81-pipecat",
+  "category": "agent",
+  "author": "panaversity",
+  "source_url": "https://github.com/panaversity/agentfactory/blob/main/apps/learn-app/docs/09-Building-Realtime-Voice-Agents/81-pipecat/00-build-pipecat-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/panaversity/agentfactory/blob/main/apps/learn-app/docs/09-Building-Realtime-Voice-Agents/81-pipecat/00-build-pipecat-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

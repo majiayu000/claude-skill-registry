@@ -1,0 +1,11 @@
+{
+  "name": "gemini-caption-translate",
+  "repo": "lattifai/gemini-caption-skills",
+  "path": "skills/gemini-caption-translate/SKILL.md",
+  "source": "github.com/lattifai/gemini-caption-skills",
+  "downloaded_at": "2026-01-22T02:17:33.500580Z",
+  "dir_name": "gemini-caption-translate",
+  "category": "ai-llm",
+  "github_path": "skills/gemini-caption-translate",
+  "github_branch": "main"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "spec-creation",
+  "repo": "bybren-llc/safe-agentic-workflow",
+  "path": ".gemini/skills/spec-creation/SKILL.md",
+  "source": "github.com/bybren-llc/safe-agentic-workflow",
+  "downloaded_at": "2026-01-29T06:10:11.130966Z",
+  "dir_name": "spec-creation-bybren-llc-safe-agentic-workflo-f048ed9c",
+  "category": "product",
+  "author": "bybren-llc",
+  "source_url": "https://github.com/bybren-llc/safe-agentic-workflow/blob/main/.gemini/skills/spec-creation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 J. Scott Graham (@cheddarfox) / ByBren, LLC",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

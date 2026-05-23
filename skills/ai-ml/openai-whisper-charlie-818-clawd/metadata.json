@@ -1,0 +1,20 @@
+{
+  "name": "openai-whisper",
+  "description": "",
+  "repo": "charlie-818/CLAWD",
+  "category": "ai-ml",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/charlie-818/CLAWD",
+  "github_path": "skills/openai-whisper",
+  "github_branch": "main",
+  "dir_name": "openai-whisper-charlie-818-clawd",
+  "downloaded_at": "2026-02-05T01:44:52.194706Z",
+  "author": "charlie-818",
+  "source_url": "https://github.com/charlie-818/CLAWD/blob/main/skills/openai-whisper/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Peter Steinberger",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

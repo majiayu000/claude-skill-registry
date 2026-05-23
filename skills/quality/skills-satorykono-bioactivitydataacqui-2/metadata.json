@@ -1,0 +1,17 @@
+{
+  "name": "skills",
+  "repo": "SatoryKono/BioactivityDataAcquisition",
+  "path": ".claude/skills/architecture-guardian.skill.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/SatoryKono/BioactivityDataAcquisition",
+  "dir_name": "skills-satorykono-bioactivitydataacqui-2",
+  "downloaded_at": "2026-03-01T06:03:49.663715Z",
+  "author": "SatoryKono",
+  "source_url": "https://github.com/SatoryKono/BioactivityDataAcquisition/blob/main/.claude/skills/architecture-guardian.skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SatoryKono/BioactivityDataAcquisition/blob/main/.claude/skills/architecture-guardian.skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

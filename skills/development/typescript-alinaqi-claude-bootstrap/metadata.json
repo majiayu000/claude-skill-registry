@@ -1,0 +1,16 @@
+{
+  "name": "typescript",
+  "repo": "alinaqi/claude-bootstrap",
+  "path": "skills/typescript/SKILL.md",
+  "category": "development",
+  "source": "github.com/alinaqi/claude-bootstrap",
+  "dir_name": "typescript-alinaqi-claude-bootstrap",
+  "downloaded_at": "2026-02-15T06:17:16.431867Z",
+  "author": "alinaqi",
+  "source_url": "https://github.com/alinaqi/claude-bootstrap/blob/main/skills/typescript/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ali Naqi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

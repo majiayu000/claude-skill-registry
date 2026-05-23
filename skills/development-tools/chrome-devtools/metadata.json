@@ -1,0 +1,13 @@
+{
+  "name": "chrome-devtools",
+  "description": "",
+  "repo": "vumichien/bi-agent",
+  "category": "development-tools",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vumichien/bi-agent",
+  "github_path": ".claude/skills/chrome-devtools",
+  "github_branch": "main",
+  "dir_name": "chrome-devtools",
+  "downloaded_at": "2026-02-05T01:44:53.823930Z"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "github-copilot-agent-tips-and-tricks",
+  "description": "Tips and Tricks for Working with GitHub Copilot Agent PRs",
+  "repo": "githubnext/gh-aw",
+  "path": "skills/github-copilot-agent-tips-and-tricks",
+  "category": "github-integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/githubnext/gh-aw",
+  "dir_name": "github-copilot-agent-tips-and-tricks-githubnext-gh-aw-2",
+  "author": "githubnext",
+  "source_url": "https://github.com/githubnext/gh-aw/blob/main/skills/github-copilot-agent-tips-and-tricks/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright GitHub, Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

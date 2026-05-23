@@ -1,0 +1,16 @@
+{
+  "name": "repository-class-conventions",
+  "repo": "oimiragieo/agent-studio",
+  "path": ".claude/skills/repository-class-conventions/SKILL.md",
+  "source": "github.com/oimiragieo/agent-studio",
+  "downloaded_at": "2026-02-02T04:36:43.267346Z",
+  "dir_name": "repository-class-conventions",
+  "category": "development",
+  "author": "oimiragieo",
+  "source_url": "https://github.com/oimiragieo/agent-studio/blob/main/.claude/skills/repository-class-conventions/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oimiragieo/agent-studio/blob/main/.claude/skills/repository-class-conventions/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

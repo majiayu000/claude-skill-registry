@@ -1,0 +1,17 @@
+{
+  "name": "hooks-automation",
+  "repo": "Finimo-Solutions/research",
+  "path": "multi-agent/claude-flow/.claude/skills/hooks-automation/SKILL.md",
+  "github_branch": "main",
+  "category": "workflow",
+  "source": "github.com/Finimo-Solutions/research",
+  "dir_name": "hooks-automation-finimo-solutions-research-2",
+  "downloaded_at": "2026-03-01T05:17:31.359737Z",
+  "author": "Finimo-Solutions",
+  "source_url": "https://github.com/Finimo-Solutions/research/blob/main/multi-agent/claude-flow/.claude/skills/hooks-automation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Finimo-Solutions/research/blob/main/multi-agent/claude-flow/.claude/skills/hooks-automation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

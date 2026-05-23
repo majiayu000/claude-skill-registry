@@ -1,0 +1,18 @@
+{
+  "name": "rfp-ingest",
+  "description": "Ingest RFP opportunities from multiple data sources (SAM.gov, eMMA, RFPMart). Use when adding new data sources, modifying ingestion logic, or debugging data fetching issues.",
+  "repo": "Atemndobs/nebula-rfp",
+  "path": ".claude/skills/rfp-ingest",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Atemndobs/nebula-rfp",
+  "dir_name": "rfp-ingest-atemndobs-nebula-rfp-2",
+  "author": "Atemndobs",
+  "source_url": "https://github.com/Atemndobs/nebula-rfp/blob/main/.claude/skills/rfp-ingest/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Atemndobs/nebula-rfp/blob/main/.claude/skills/rfp-ingest/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "generate-api-client",
+  "repo": "Tassadar2499/NovaTune",
+  "path": ".claude/skills/generate-api-client/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/Tassadar2499/NovaTune",
+  "dir_name": "generate-api-client-tassadar2499-novatune-3",
+  "downloaded_at": "2026-03-22T06:21:08.629078Z",
+  "author": "Tassadar2499",
+  "source_url": "https://github.com/Tassadar2499/NovaTune/blob/main/.claude/skills/generate-api-client/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tassadar2499/NovaTune/blob/main/.claude/skills/generate-api-client/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

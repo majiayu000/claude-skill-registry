@@ -1,0 +1,18 @@
+{
+  "name": "adynato-seo",
+  "description": "Handles SEO requirements for all web content including blogs, landing pages, and documentation. Covers LD+JSON schema.org structured data, internal backlinks strategy, further reading sections, meta t",
+  "repo": "adynato/skills",
+  "path": "skills/adynato-seo",
+  "category": "marketing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adynato/skills",
+  "dir_name": "adynato-seo-adynato-skills-2",
+  "author": "adynato",
+  "source_url": "https://github.com/adynato/skills/blob/main/skills/adynato-seo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adynato/skills/blob/main/skills/adynato-seo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

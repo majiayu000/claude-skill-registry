@@ -1,0 +1,16 @@
+{
+  "name": "ta-input-validation",
+  "repo": "feliperyba/ralph-orchestra",
+  "path": ".claude/skills/ta-input-validation/SKILL.md",
+  "source": "github.com/feliperyba/ralph-orchestra",
+  "downloaded_at": "2026-01-29T08:12:54.009204Z",
+  "dir_name": "ta-input-validation-feliperyba-ralph-orchestra",
+  "category": "testing",
+  "author": "feliperyba",
+  "source_url": "https://github.com/feliperyba/ralph-orchestra/blob/main/.claude/skills/ta-input-validation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 feliperyba",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

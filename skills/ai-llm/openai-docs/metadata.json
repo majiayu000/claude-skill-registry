@@ -1,0 +1,13 @@
+{
+  "name": "openai-docs",
+  "description": "",
+  "repo": "platxa/platxa-skill-generator",
+  "category": "ai-llm",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/platxa/platxa-skill-generator",
+  "github_path": "skills/openai-docs",
+  "github_branch": "main",
+  "dir_name": "openai-docs",
+  "downloaded_at": "2026-02-05T01:45:09.361920Z"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "nix",
+  "description": "Develop with Nix including packages, flakes, NixOS, and derivations. Activate when working with .nix files, flake.nix, flake.lock, or user mentions Nix, nixpkgs, NixOS, derivations, flakes, nix-shell,",
+  "repo": "anntnzrb/agents",
+  "path": "assets/skills/nix",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/anntnzrb/agents",
+  "dir_name": "nix-anntnzrb-agents-2",
+  "author": "anntnzrb",
+  "source_url": "https://github.com/anntnzrb/agents/blob/main/assets/skills/nix/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anntnzrb/agents/blob/main/assets/skills/nix/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

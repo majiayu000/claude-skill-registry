@@ -1,0 +1,20 @@
+{
+  "name": "agents-md-authoring-majo",
+  "description": "",
+  "repo": "markjoshwel/skills",
+  "category": "agent",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/markjoshwel/skills",
+  "github_path": "agents-md-authoring-majo",
+  "github_branch": "main",
+  "dir_name": "agents-md-authoring-majo",
+  "downloaded_at": "2026-02-05T01:44:43.033581Z",
+  "author": "markjoshwel",
+  "source_url": "https://github.com/markjoshwel/skills/blob/main/agents-md-authoring-majo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/markjoshwel/skills/blob/main/agents-md-authoring-majo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "snakemake-workflows",
+  "description": "Build reproducible bioinformatics pipelines with Snakemake using rules, wildcards, and automatic dependency resolution. Use when creating Python-based workflows, automating multi-step analyses with ma",
+  "repo": "GPTomics/bioSkills",
+  "path": "workflow-management/snakemake-workflows",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "snakemake-workflows-gptomics-bioskills-2",
+  "author": "GPTomics",
+  "source_url": "https://github.com/GPTomics/bioSkills/blob/main/workflow-management/snakemake-workflows/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 GPTomics",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

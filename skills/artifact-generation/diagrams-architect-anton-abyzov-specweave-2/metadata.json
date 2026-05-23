@@ -1,0 +1,16 @@
+{
+  "name": "diagrams-architect",
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave-diagrams/skills/diagrams-architect/SKILL.md",
+  "category": "artifact-generation",
+  "source": "github.com/anton-abyzov/specweave",
+  "dir_name": "diagrams-architect-anton-abyzov-specweave-2",
+  "downloaded_at": "2026-02-22T06:18:57.756705Z",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave-diagrams/skills/diagrams-architect/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

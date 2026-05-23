@@ -1,0 +1,18 @@
+{
+  "name": "blockchain-data-collection-validation",
+  "description": "Empirical validation workflow for blockchain data collection pipelines before production implementation. Use when validating data sources, testing DuckDB integration, building POC collectors, or verif",
+  "repo": "terrylica/gapless-network-data",
+  "path": ".claude/skills/blockchain-data-collection-validation",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/terrylica/gapless-network-data",
+  "dir_name": "blockchain-data-collection-validation-terrylica-gapless-network-",
+  "author": "terrylica",
+  "source_url": "https://github.com/terrylica/gapless-network-data/blob/main/.claude/skills/blockchain-data-collection-validation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Eon Labs",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

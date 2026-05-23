@@ -1,0 +1,18 @@
+{
+  "name": "configuring-avalonia-dependency-injection",
+  "description": "Configures GenericHost and Dependency Injection in AvaloniaUI applications. Use when setting up DI container, registering services, or implementing IoC patterns in AvaloniaUI projects.",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": ".claude/skills/configuring-avalonia-dependency-injection",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "dir_name": "configuring-avalonia-dependency-injection-christian289-dotnet-wi",
+  "author": "christian289",
+  "source_url": "https://github.com/christian289/dotnet-with-claudecode/blob/main/.claude/skills/configuring-avalonia-dependency-injection/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 christian289",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

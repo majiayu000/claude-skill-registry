@@ -1,0 +1,18 @@
+{
+  "name": "write-skill",
+  "description": "Create Claude Code skills with proper structure and documentation. Use when building custom skills, writing SKILL.md files, or when user asks \"write a skill\" or \"create Claude skill\".",
+  "repo": "yurifrl/cly",
+  "path": ".claude/skills/write-skill",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yurifrl/cly",
+  "dir_name": "write-skill-yurifrl-cly-2",
+  "author": "yurifrl",
+  "source_url": "https://github.com/yurifrl/cly/blob/main/.claude/skills/write-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yurifrl/cly/blob/main/.claude/skills/write-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

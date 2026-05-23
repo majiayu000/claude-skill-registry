@@ -1,0 +1,18 @@
+{
+  "name": "log-summarizer",
+  "description": "Summarize noisy logs into likely causes and next steps. Use when a junior developer needs help interpreting logs.",
+  "repo": "proflead/codex-skills-library",
+  "path": "skills/foundation/log-summarizer",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/proflead/codex-skills-library",
+  "dir_name": "log-summarizer-proflead-codex-skills-library-2",
+  "author": "proflead",
+  "source_url": "https://github.com/proflead/codex-skills-library/blob/main/skills/foundation/log-summarizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/proflead/codex-skills-library/blob/main/skills/foundation/log-summarizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

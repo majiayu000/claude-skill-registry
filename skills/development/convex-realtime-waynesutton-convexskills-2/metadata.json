@@ -1,0 +1,18 @@
+{
+  "name": "convex-realtime",
+  "description": "Patterns for building reactive apps including subscription management, optimistic updates, cache behavior, and paginated queries with cursor-based loading",
+  "repo": "waynesutton/convexskills",
+  "path": "skills/convex-realtime",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/waynesutton/convexskills",
+  "dir_name": "convex-realtime-waynesutton-convexskills-2",
+  "author": "waynesutton",
+  "source_url": "https://github.com/waynesutton/convexskills/blob/main/skills/convex-realtime/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2026 Convex, Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

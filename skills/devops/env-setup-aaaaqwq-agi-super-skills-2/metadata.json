@@ -1,0 +1,16 @@
+{
+  "name": "env-setup",
+  "repo": "aAAaqwq/AGI-Super-Skills",
+  "path": "skills/api-config/env-setup/SKILL.md",
+  "category": "devops",
+  "source": "github.com/aAAaqwq/AGI-Super-Skills",
+  "dir_name": "env-setup-aaaaqwq-agi-super-skills-2",
+  "downloaded_at": "2026-02-15T06:02:50.705403Z",
+  "author": "aAAaqwq",
+  "source_url": "https://github.com/aAAaqwq/AGI-Super-Skills/blob/main/skills/api-config/env-setup/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 AGI Super Team Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

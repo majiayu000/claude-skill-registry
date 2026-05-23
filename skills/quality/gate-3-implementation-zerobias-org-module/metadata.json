@@ -1,0 +1,16 @@
+{
+  "name": "gate-3-implementation",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/gate-3-implementation/SKILL.md",
+  "source": "github.com/zerobias-org/module",
+  "downloaded_at": "2026-01-29T06:03:57.184406Z",
+  "dir_name": "gate-3-implementation-zerobias-org-module",
+  "category": "quality",
+  "author": "zerobias-org",
+  "source_url": "https://github.com/zerobias-org/module/blob/main/.claude/skills/gate-3-implementation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zerobias-org/module/blob/main/.claude/skills/gate-3-implementation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

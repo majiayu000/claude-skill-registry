@@ -1,0 +1,17 @@
+{
+  "name": "fal-platform",
+  "repo": "JantonioFC/skillsbank",
+  "path": "skills/fal-platform/SKILL.md",
+  "github_branch": "main",
+  "category": "api",
+  "source": "github.com/JantonioFC/skillsbank",
+  "dir_name": "fal-platform-jantoniofc-skillsbank",
+  "downloaded_at": "2026-03-22T05:32:47.263985Z",
+  "author": "JantonioFC",
+  "source_url": "https://github.com/JantonioFC/skillsbank/blob/main/skills/fal-platform/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JantonioFC/skillsbank/blob/main/skills/fal-platform/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

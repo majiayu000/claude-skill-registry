@@ -1,0 +1,18 @@
+{
+  "name": "boliga-api",
+  "description": "Query Danish real estate data from Boliga.dk as pandas DataFrames. Use when the user asks about Danish property prices, real estate searches, market statistics, or housing analysis in Denmark.",
+  "repo": "kasperjunge/agent-resources-legacy",
+  "path": ".claude/skills/boliga-api",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kasperjunge/agent-resources-legacy",
+  "dir_name": "boliga-api-kasperjunge-agent-resources-lega-2",
+  "author": "kasperjunge",
+  "source_url": "https://github.com/kasperjunge/agent-resources-legacy/blob/main/.claude/skills/boliga-api/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kasperjunge/agent-resources-legacy/blob/main/.claude/skills/boliga-api/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

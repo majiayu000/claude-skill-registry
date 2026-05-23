@@ -1,0 +1,18 @@
+{
+  "name": "python-micrometer-core",
+  "description": "Instrument Java/Spring Boot applications with observability metrics. Use when adding metrics to microservices,\nintegrating with monitoring systems (Prometheus, Cloud Monitoring), managing metric cardi",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/python-micrometer-core",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dawiddutoit/custom-claude",
+  "dir_name": "python-micrometer-core-dawiddutoit-custom-claude-2",
+  "author": "dawiddutoit",
+  "source_url": "https://github.com/dawiddutoit/custom-claude/blob/main/skills/python-micrometer-core/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dawiddutoit/custom-claude/blob/main/skills/python-micrometer-core/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

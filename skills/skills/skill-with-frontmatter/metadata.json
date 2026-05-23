@@ -1,0 +1,18 @@
+{
+  "name": "skill-with-frontmatter",
+  "repo": "kasperjunge/agent-resources",
+  "path": "resources/skills/_test/skill-with-frontmatter/SKILL.md",
+  "source": "github.com/kasperjunge/agent-resources",
+  "downloaded_at": "2026-01-22T01:33:46.362559Z",
+  "dir_name": "skill-with-frontmatter",
+  "category": "skills",
+  "github_path": "resources/skills/_test/skill-with-frontmatter",
+  "github_branch": "main",
+  "author": "kasperjunge",
+  "source_url": "https://github.com/kasperjunge/agent-resources/blob/main/resources/skills/_test/skill-with-frontmatter/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Kasper Junge",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "diffdock",
+  "repo": "Microck/ordinary-claude-skills",
+  "path": "skills_all/diffdock/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-ml",
+  "source": "github.com/Microck/ordinary-claude-skills",
+  "dir_name": "diffdock-microck-ordinary-claude-skil",
+  "downloaded_at": "2026-05-16T03:03:18.291900Z",
+  "author": "Microck",
+  "source_url": "https://github.com/Microck/ordinary-claude-skills/blob/main/skills_all/diffdock/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Microck/ordinary-claude-skills/blob/main/skills_all/diffdock/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

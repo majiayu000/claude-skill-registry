@@ -1,0 +1,18 @@
+{
+  "name": "ai-elements",
+  "description": "AI Elements component library for AI-native applications. Use when building chatbots, AI workflows, or integrating with Vercel AI SDK's useChat hook.",
+  "repo": "laguagu/claude-code-nextjs-skills",
+  "path": "skills/ai-elements",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/laguagu/claude-code-nextjs-skills",
+  "dir_name": "ai-elements-laguagu-claude-code-nextjs-s-2",
+  "author": "laguagu",
+  "source_url": "https://github.com/laguagu/claude-code-nextjs-skills/blob/main/skills/ai-elements/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 laguagu",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

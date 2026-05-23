@@ -1,0 +1,20 @@
+{
+  "name": "agent-repair",
+  "description": "The most comprehensive Claude Code skills registry - 50,000+ skills indexed",
+  "repo": "majiayu000/claude-skill-registry",
+  "category": "agent",
+  "tags": [],
+  "stars": 48,
+  "source": "",
+  "github_path": "skills/data/agent-repair",
+  "github_branch": "main",
+  "dir_name": "agent-repair",
+  "downloaded_at": "2026-02-05T01:45:24.006944Z",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/data/agent-repair/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "grafana-dashboards",
+  "description": "",
+  "repo": "ollieb89/vibe_coding",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ollieb89/vibe_coding",
+  "github_path": ".agent/observability-monitoring/skills/grafana-dashboards",
+  "github_branch": "main",
+  "dir_name": "grafana-dashboards",
+  "downloaded_at": "2026-02-05T01:44:17.907559Z"
+}

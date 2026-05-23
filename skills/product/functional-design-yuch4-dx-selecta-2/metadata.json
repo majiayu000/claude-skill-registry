@@ -1,0 +1,18 @@
+{
+  "name": "functional-design",
+  "description": "プロダクト要求定義書（docs/product-requirements.md）から機能設計書（docs/functional-design.md）を作成する。 「機能設計して」「設計書を作って」「PRDを設計に落として」「コンポーネント設計」「データモデル設計」 「シーケンス図を書いて」「ER図を作って」などの依頼時に発火。 システム構成図・データモデル・コンポーネント責務・ユースケースフロー・",
+  "repo": "yuch4/dx-selecta",
+  "path": ".claude/skills/functional-design",
+  "category": "product",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yuch4/dx-selecta",
+  "dir_name": "functional-design-yuch4-dx-selecta-2",
+  "author": "yuch4",
+  "source_url": "https://github.com/yuch4/dx-selecta/blob/main/.claude/skills/functional-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yuch4/dx-selecta/blob/main/.claude/skills/functional-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

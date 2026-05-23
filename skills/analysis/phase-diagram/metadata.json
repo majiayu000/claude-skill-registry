@@ -1,0 +1,17 @@
+{
+  "name": "phase-diagram",
+  "repo": "DingyangLyu/MatClaw",
+  "path": "container/skills/phase-diagram/SKILL.md",
+  "github_branch": "main",
+  "category": "analysis",
+  "source": "github.com/DingyangLyu/MatClaw",
+  "dir_name": "phase-diagram",
+  "downloaded_at": "2026-03-22T05:14:37.104557Z",
+  "author": "DingyangLyu",
+  "source_url": "https://github.com/DingyangLyu/MatClaw/blob/main/container/skills/phase-diagram/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DingyangLyu/MatClaw/blob/main/container/skills/phase-diagram/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

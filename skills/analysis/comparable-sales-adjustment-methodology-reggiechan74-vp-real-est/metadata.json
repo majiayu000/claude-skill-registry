@@ -1,0 +1,18 @@
+{
+  "name": "comparable-sales-adjustment-methodology",
+  "description": "Expert in technical adjustment grid construction for comparable sales analysis including adjustment hierarchy, quantification methods (paired sales, regression, cost, income), and validation technique",
+  "repo": "reggiechan74/vp-real-estate",
+  "path": ".claude/skills/comparable-sales-adjustment-methodology",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/reggiechan74/vp-real-estate",
+  "dir_name": "comparable-sales-adjustment-methodology-reggiechan74-vp-real-est",
+  "author": "reggiechan74",
+  "source_url": "https://github.com/reggiechan74/vp-real-estate/blob/main/.claude/skills/comparable-sales-adjustment-methodology/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/reggiechan74/vp-real-estate/blob/main/.claude/skills/comparable-sales-adjustment-methodology/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

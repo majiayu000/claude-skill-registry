@@ -1,0 +1,17 @@
+{
+  "name": "recovery-social-features",
+  "repo": "curiositech/windags-skills",
+  "path": "skills/recovery-social-features/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/curiositech/windags-skills",
+  "dir_name": "recovery-social-features-curiositech-windags-skills",
+  "downloaded_at": "2026-03-22T07:36:30.785911Z",
+  "author": "curiositech",
+  "source_url": "https://github.com/curiositech/windags-skills/blob/main/skills/recovery-social-features/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/curiositech/windags-skills/blob/main/skills/recovery-social-features/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

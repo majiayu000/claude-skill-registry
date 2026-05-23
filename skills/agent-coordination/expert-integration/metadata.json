@@ -1,0 +1,11 @@
+{
+  "name": "expert-integration",
+  "repo": "WalkerVVV/firstmile-deals-pipeline",
+  "path": ".claude/skills/expert-integration/SKILL.md",
+  "source": "github.com/WalkerVVV/firstmile-deals-pipeline",
+  "downloaded_at": "2026-01-22T01:08:34.971173Z",
+  "dir_name": "expert-integration",
+  "category": "agent-coordination",
+  "github_path": ".claude/skills/expert-integration",
+  "github_branch": "main"
+}

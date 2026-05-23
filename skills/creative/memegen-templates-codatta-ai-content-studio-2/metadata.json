@@ -1,0 +1,18 @@
+{
+  "name": "memegen-templates",
+  "description": "Generate classic meme images using 207+ templates from memegen.link. Use when creating memes with popular formats like Drake, Distracted Boyfriend, This is Fine, or any classic internet meme template.",
+  "repo": "codatta/ai-content-studio",
+  "path": "skills/memegen-templates",
+  "category": "creative",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/codatta/ai-content-studio",
+  "dir_name": "memegen-templates-codatta-ai-content-studio-2",
+  "author": "codatta",
+  "source_url": "https://github.com/codatta/ai-content-studio/blob/main/skills/memegen-templates/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Jessie Bot Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

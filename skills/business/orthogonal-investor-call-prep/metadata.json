@@ -1,0 +1,17 @@
+{
+  "name": "orthogonal-investor-call-prep",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/capabilities/orthogonal-investor-call-prep/SKILL.md",
+  "github_branch": "main",
+  "category": "business",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "orthogonal-investor-call-prep",
+  "downloaded_at": "2026-04-27T01:46:14.183593Z",
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/capabilities/orthogonal-investor-call-prep/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/capabilities/orthogonal-investor-call-prep/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

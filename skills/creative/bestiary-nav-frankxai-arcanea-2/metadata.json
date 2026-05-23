@@ -1,0 +1,18 @@
+{
+  "name": "bestiary-nav",
+  "description": "Navigate creative blocks using the Arcanean Bestiary - a taxonomy of psychological obstacles every creator faces, with naming rituals and navigation protocols for each creature type",
+  "repo": "frankxai/arcanea",
+  "path": ".claude/skills/oss/bestiary-nav",
+  "category": "creative",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/frankxai/arcanea",
+  "dir_name": "bestiary-nav-frankxai-arcanea-2",
+  "author": "frankxai",
+  "source_url": "https://github.com/frankxai/arcanea/blob/main/.claude/skills/oss/bestiary-nav/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2026 FrankX",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

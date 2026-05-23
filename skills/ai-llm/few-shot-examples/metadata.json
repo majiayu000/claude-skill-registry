@@ -1,0 +1,16 @@
+{
+  "name": "few-shot-examples",
+  "repo": "datadrivenconstruction/DDC_Skills_for_AI_Agents_in_Construction",
+  "path": "4_DDC_Curated/Prompt-Engineering/few-shot-examples/SKILL.md",
+  "source": "github.com/datadrivenconstruction/DDC_Skills_for_AI_Agents_in_Construction",
+  "downloaded_at": "2026-02-02T02:56:36.237343Z",
+  "dir_name": "few-shot-examples",
+  "category": "ai-llm",
+  "author": "datadrivenconstruction",
+  "source_url": "https://github.com/datadrivenconstruction/DDC_Skills_for_AI_Agents_in_Construction/blob/main/4_DDC_Curated/Prompt-Engineering/few-shot-examples/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 DataDrivenConstruction",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

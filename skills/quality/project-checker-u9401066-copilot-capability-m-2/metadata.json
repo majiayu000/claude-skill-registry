@@ -1,0 +1,18 @@
+{
+  "name": "project-checker",
+  "description": "全面檢查專案狀態，包含文件完整性、架構合規性、測試覆蓋等。",
+  "repo": "u9401066/copilot-capability-manager",
+  "path": ".claude/skills/project-checker",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/u9401066/copilot-capability-manager",
+  "dir_name": "project-checker-u9401066-copilot-capability-m-2",
+  "author": "u9401066",
+  "source_url": "https://github.com/u9401066/copilot-capability-manager/blob/main/.claude/skills/project-checker/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 [Your Name or Organization]",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

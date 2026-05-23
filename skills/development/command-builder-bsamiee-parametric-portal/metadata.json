@@ -1,0 +1,16 @@
+{
+  "name": "command-builder",
+  "repo": "bsamiee/Parametric_Portal",
+  "path": ".claude/skills/command-builder/SKILL.md",
+  "category": "development",
+  "source": "github.com/bsamiee/Parametric_Portal",
+  "dir_name": "command-builder-bsamiee-parametric-portal",
+  "downloaded_at": "2026-02-15T06:39:24.076742Z",
+  "author": "bsamiee",
+  "source_url": "https://github.com/bsamiee/Parametric_Portal/blob/main/.claude/skills/command-builder/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 bsamiee",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

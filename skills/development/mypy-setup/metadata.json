@@ -1,0 +1,20 @@
+{
+  "name": "mypy-setup",
+  "description": "",
+  "repo": "jpoutrin/product-forge",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jpoutrin/product-forge",
+  "github_path": "plugins/python-experts/skills/mypy-setup",
+  "github_branch": "main",
+  "dir_name": "mypy-setup",
+  "downloaded_at": "2026-02-05T01:44:46.722385Z",
+  "author": "jpoutrin",
+  "source_url": "https://github.com/jpoutrin/product-forge/blob/main/plugins/python-experts/skills/mypy-setup/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 jpoutrin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

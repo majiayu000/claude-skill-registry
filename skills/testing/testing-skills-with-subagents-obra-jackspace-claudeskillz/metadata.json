@@ -1,0 +1,16 @@
+{
+  "name": "testing-skills-with-subagents_obra",
+  "repo": "jackspace/ClaudeSkillz",
+  "path": "skills/testing-skills-with-subagents_obra/SKILL.md",
+  "source": "github.com/jackspace/ClaudeSkillz",
+  "downloaded_at": "2026-01-29T08:01:38.266312Z",
+  "dir_name": "testing-skills-with-subagents-obra-jackspace-claudeskillz",
+  "category": "testing",
+  "author": "jackspace",
+  "source_url": "https://github.com/jackspace/ClaudeSkillz/blob/main/skills/testing-skills-with-subagents_obra/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ClaudeSkillz Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

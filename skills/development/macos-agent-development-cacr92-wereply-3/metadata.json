@@ -1,0 +1,17 @@
+{
+  "name": "macos-agent-development",
+  "repo": "cacr92/WeReply",
+  "path": ".claude/skills/macos-agent-development/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/cacr92/WeReply",
+  "dir_name": "macos-agent-development-cacr92-wereply-3",
+  "downloaded_at": "2026-03-22T07:22:40.180256Z",
+  "author": "cacr92",
+  "source_url": "https://github.com/cacr92/WeReply/blob/main/.claude/skills/macos-agent-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cacr92/WeReply/blob/main/.claude/skills/macos-agent-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

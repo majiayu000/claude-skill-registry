@@ -1,0 +1,18 @@
+{
+  "name": "land-assembly-expert",
+  "description": "Multi-parcel corridor acquisition budgeting and phasing (10-100+ parcels). Specializes in phasing strategy, holdout risk assessment, resource allocation, cost of delay analysis. Use for transit corrid",
+  "repo": "reggiechan74/vp-real-estate",
+  "path": ".claude/skills/land-assembly-expert",
+  "category": "business",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/reggiechan74/vp-real-estate",
+  "dir_name": "land-assembly-expert-reggiechan74-vp-real-estate-2",
+  "author": "reggiechan74",
+  "source_url": "https://github.com/reggiechan74/vp-real-estate/blob/main/.claude/skills/land-assembly-expert/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/reggiechan74/vp-real-estate/blob/main/.claude/skills/land-assembly-expert/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

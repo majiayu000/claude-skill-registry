@@ -1,0 +1,16 @@
+{
+  "name": "patterns",
+  "repo": "zeyxx/CYNIC",
+  "path": ".claude/skills/patterns/SKILL.md",
+  "source": "github.com/zeyxx/CYNIC",
+  "downloaded_at": "2026-02-02T03:58:18.208019Z",
+  "dir_name": "patterns-zeyxx-cynic",
+  "category": "analysis",
+  "author": "zeyxx",
+  "source_url": "https://github.com/zeyxx/CYNIC/blob/main/.claude/skills/patterns/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zeyxx/CYNIC/blob/main/.claude/skills/patterns/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

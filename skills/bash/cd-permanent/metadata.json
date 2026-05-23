@@ -1,0 +1,16 @@
+{
+  "name": "cd-permanent",
+  "repo": "YoniChechik/claude-code-config",
+  "path": "skills/cd-permanent/SKILL.md",
+  "category": "bash",
+  "source": "github.com/YoniChechik/claude-code-config",
+  "dir_name": "cd-permanent",
+  "downloaded_at": "2026-02-22T05:58:44.758533Z",
+  "author": "YoniChechik",
+  "source_url": "https://github.com/YoniChechik/claude-code-config/blob/main/skills/cd-permanent/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/YoniChechik/claude-code-config/blob/main/skills/cd-permanent/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

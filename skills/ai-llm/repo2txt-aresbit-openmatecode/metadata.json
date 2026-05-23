@@ -1,0 +1,17 @@
+{
+  "name": "repo2txt",
+  "repo": "aresbit/OpenMateCode",
+  "path": "skills/repo2txt/SKILL.md",
+  "github_branch": "master",
+  "category": "ai-llm",
+  "source": "github.com/aresbit/OpenMateCode",
+  "dir_name": "repo2txt-aresbit-openmatecode",
+  "downloaded_at": "2026-03-01T06:48:09.492099Z",
+  "author": "aresbit",
+  "source_url": "https://github.com/aresbit/OpenMateCode/blob/master/skills/repo2txt/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aresbit/OpenMateCode/blob/master/skills/repo2txt/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

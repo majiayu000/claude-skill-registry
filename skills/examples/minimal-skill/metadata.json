@@ -1,0 +1,20 @@
+{
+  "name": "minimal-skill",
+  "description": "My dotfiles",
+  "repo": "helmecke/dotfiles",
+  "category": "examples",
+  "tags": [],
+  "stars": 1,
+  "source": "",
+  "github_path": "dot_config/opencode/skill/skill-development/examples/minimal-skill",
+  "github_branch": "master",
+  "dir_name": "minimal-skill",
+  "downloaded_at": "2026-02-05T01:45:33.027067Z",
+  "author": "helmecke",
+  "source_url": "https://github.com/helmecke/dotfiles/blob/master/dot_config/opencode/skill/skill-development/examples/minimal-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/helmecke/dotfiles/blob/master/dot_config/opencode/skill/skill-development/examples/minimal-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

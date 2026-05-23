@@ -1,0 +1,16 @@
+{
+  "name": "80-livekit-agents",
+  "repo": "panaversity/agentfactory",
+  "path": "apps/learn-app/docs/09-Building-Realtime-Voice-Agents/80-livekit-agents/00-build-livekit-skill.md",
+  "source": "github.com/panaversity/agentfactory",
+  "downloaded_at": "2026-01-29T05:43:35.692184Z",
+  "dir_name": "80-livekit-agents-panaversity-agentfactory-1f8ecf89",
+  "category": "agent",
+  "author": "panaversity",
+  "source_url": "https://github.com/panaversity/agentfactory/blob/main/apps/learn-app/docs/09-Building-Realtime-Voice-Agents/80-livekit-agents/00-build-livekit-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/panaversity/agentfactory/blob/main/apps/learn-app/docs/09-Building-Realtime-Voice-Agents/80-livekit-agents/00-build-livekit-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

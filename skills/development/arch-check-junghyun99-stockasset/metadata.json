@@ -1,0 +1,16 @@
+{
+  "name": "arch-check",
+  "repo": "Junghyun99/StockAsset",
+  "path": ".claude/skills/arch-check/SKILL.md",
+  "category": "development",
+  "source": "github.com/Junghyun99/StockAsset",
+  "dir_name": "arch-check-junghyun99-stockasset",
+  "downloaded_at": "2026-02-15T05:18:38.188720Z",
+  "author": "Junghyun99",
+  "source_url": "https://github.com/Junghyun99/StockAsset/blob/main/.claude/skills/arch-check/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Junghyun99/StockAsset/blob/main/.claude/skills/arch-check/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

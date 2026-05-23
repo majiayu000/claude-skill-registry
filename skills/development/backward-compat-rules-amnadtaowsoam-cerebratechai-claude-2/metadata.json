@@ -1,0 +1,18 @@
+{
+  "name": "backward-compat-rules",
+  "description": "Comprehensive guide to backward compatibility rules for APIs, databases, and data contracts with migration strategies and testing approaches",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "51-contracts-governance/backward-compat-rules",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "backward-compat-rules-amnadtaowsoam-cerebratechai-claude-2",
+  "author": "AmnadTaowsoam",
+  "source_url": "https://github.com/AmnadTaowsoam/cerebratechai-claude-skills/blob/main/51-contracts-governance/backward-compat-rules/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CerebratechAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

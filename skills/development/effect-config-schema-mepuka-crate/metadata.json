@@ -1,0 +1,16 @@
+{
+  "name": "effect-config-schema",
+  "repo": "mepuka/crate",
+  "path": ".claude/skills/effect-config-schema/SKILL.md",
+  "source": "github.com/mepuka/crate",
+  "downloaded_at": "2026-01-29T07:39:32.832374Z",
+  "dir_name": "effect-config-schema-mepuka-crate",
+  "category": "development",
+  "author": "mepuka",
+  "source_url": "https://github.com/mepuka/crate/blob/main/.claude/skills/effect-config-schema/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-present Mepuka Kessy",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

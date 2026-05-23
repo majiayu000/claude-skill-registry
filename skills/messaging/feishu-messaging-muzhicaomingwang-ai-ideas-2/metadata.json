@@ -1,0 +1,18 @@
+{
+  "name": "feishu-messaging",
+  "description": "飞书消息发送与文档创建工作流。\n触发场景：用户提到\"发飞书消息\"、\"飞书文档\"、\"通知某人\"、\"发送到飞书\"、\"飞书通知\"。\n适用于：发送飞书消息、创建飞书文档、操作多维表格、管理知识库。",
+  "repo": "muzhicaomingwang/ai-ideas",
+  "path": ".claude/skills/feishu-messaging",
+  "category": "messaging",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/muzhicaomingwang/ai-ideas",
+  "dir_name": "feishu-messaging-muzhicaomingwang-ai-ideas-2",
+  "author": "muzhicaomingwang",
+  "source_url": "https://github.com/muzhicaomingwang/ai-ideas/blob/main/.claude/skills/feishu-messaging/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/muzhicaomingwang/ai-ideas/blob/main/.claude/skills/feishu-messaging/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

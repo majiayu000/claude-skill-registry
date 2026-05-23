@@ -1,0 +1,16 @@
+{
+  "name": "expansion-evaluation",
+  "repo": "jasonmichaelbell78-creator/sonash-v0",
+  "path": ".claude/skills/expansion-evaluation/SKILL.md",
+  "source": "github.com/jasonmichaelbell78-creator/sonash-v0",
+  "downloaded_at": "2026-01-29T08:27:31.188667Z",
+  "dir_name": "expansion-evaluation-jasonmichaelbell78-c-sonash-v0",
+  "category": "product",
+  "author": "jasonmichaelbell78-creator",
+  "source_url": "https://github.com/jasonmichaelbell78-creator/sonash-v0/blob/main/.claude/skills/expansion-evaluation/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jasonmichaelbell78-creator/sonash-v0/blob/main/.claude/skills/expansion-evaluation/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

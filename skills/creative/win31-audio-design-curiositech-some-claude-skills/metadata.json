@@ -1,0 +1,17 @@
+{
+  "name": "win31-audio-design",
+  "repo": "curiositech/some_claude_skills",
+  "path": ".claude/skills/win31-audio-design/SKILL.md",
+  "github_branch": "main",
+  "category": "creative",
+  "source": "github.com/curiositech/some_claude_skills",
+  "dir_name": "win31-audio-design-curiositech-some-claude-skills",
+  "downloaded_at": "2026-03-01T07:19:47.245383Z",
+  "author": "curiositech",
+  "source_url": "https://github.com/curiositech/some_claude_skills/blob/main/.claude/skills/win31-audio-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/curiositech/some_claude_skills/blob/main/.claude/skills/win31-audio-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

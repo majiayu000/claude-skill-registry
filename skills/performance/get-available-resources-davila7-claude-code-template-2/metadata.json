@@ -1,0 +1,18 @@
+{
+  "name": "get-available-resources",
+  "description": "This skill should be used at the start of any computationally intensive scientific task to detect and report available system resources (CPU cores, GPUs, memory, disk space). It creates a JSON file wi",
+  "repo": "davila7/claude-code-templates",
+  "path": "cli-tool/components/skills/scientific/get-available-resources",
+  "category": "performance",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/davila7/claude-code-templates",
+  "dir_name": "get-available-resources-davila7-claude-code-template-2",
+  "author": "davila7",
+  "source_url": "https://github.com/davila7/claude-code-templates/blob/main/cli-tool/components/skills/scientific/get-available-resources/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel (San) Ávila",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "jimubi-bigscreen",
+  "repo": "jeecgboot/skills",
+  "path": "jimubi-bigscreen/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/jeecgboot/skills",
+  "dir_name": "jimubi-bigscreen",
+  "downloaded_at": "2026-05-20T03:59:01.234886Z",
+  "author": "jeecgboot",
+  "source_url": "https://github.com/jeecgboot/skills/blob/main/jimubi-bigscreen/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jeecgboot/skills/blob/main/jimubi-bigscreen/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "cv-content-manager",
+  "repo": "fotescodev/portfolio",
+  "path": ".claude/skills/cv-content-manager/SKILL.md",
+  "source": "github.com/fotescodev/portfolio",
+  "downloaded_at": "2026-01-29T06:08:04.533163Z",
+  "dir_name": "cv-content-manager-fotescodev-portfolio",
+  "category": "documents",
+  "author": "fotescodev",
+  "source_url": "https://github.com/fotescodev/portfolio/blob/main/.claude/skills/cv-content-manager/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fotescodev/portfolio/blob/main/.claude/skills/cv-content-manager/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

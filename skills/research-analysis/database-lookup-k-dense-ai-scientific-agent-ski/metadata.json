@@ -1,0 +1,17 @@
+{
+  "name": "database-lookup",
+  "repo": "K-Dense-AI/scientific-agent-skills",
+  "path": "scientific-skills/database-lookup/SKILL.md",
+  "github_branch": "main",
+  "category": "research-analysis",
+  "source": "github.com/K-Dense-AI/scientific-agent-skills",
+  "dir_name": "database-lookup-k-dense-ai-scientific-agent-ski",
+  "downloaded_at": "2026-05-20T03:43:23.367520Z",
+  "author": "K-Dense-AI",
+  "source_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/scientific-skills/database-lookup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/scientific-skills/database-lookup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

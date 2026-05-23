@@ -1,0 +1,18 @@
+{
+  "name": "observability-control",
+  "description": "Manage observability stack lifecycle (start, stop, backup, restore, upgrade). Use when controlling the LGTM stack for Claude Code monitoring.",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/observability-control",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "observability-control-adaptationio-skrillz-2",
+  "author": "adaptationio",
+  "source_url": "https://github.com/adaptationio/Skrillz/blob/main/.claude/skills/observability-control/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adaptationio/Skrillz/blob/main/.claude/skills/observability-control/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

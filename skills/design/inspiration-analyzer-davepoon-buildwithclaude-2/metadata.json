@@ -1,0 +1,18 @@
+{
+  "name": "inspiration-analyzer",
+  "description": "Analyze websites for design inspiration, extracting colors, typography, layouts, and patterns. Use when you have specific URLs to analyze for a design project.",
+  "repo": "davepoon/buildwithclaude",
+  "path": "plugins/frontend-design-pro/skills/inspiration-analyzer",
+  "category": "design",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/davepoon/buildwithclaude",
+  "dir_name": "inspiration-analyzer-davepoon-buildwithclaude-2",
+  "author": "davepoon",
+  "source_url": "https://github.com/davepoon/buildwithclaude/blob/main/plugins/frontend-design-pro/skills/inspiration-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 davepoon",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

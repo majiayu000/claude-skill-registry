@@ -1,0 +1,16 @@
+{
+  "name": "doc-to-app",
+  "repo": "renpayero/.agent",
+  "path": "skills/doc-to-app/SKILL.md",
+  "source": "github.com/renpayero/.agent",
+  "downloaded_at": "2026-02-01T02:06:56.598363Z",
+  "dir_name": "doc-to-app",
+  "category": "artifact-generation",
+  "author": "renpayero",
+  "source_url": "https://github.com/renpayero/.agent/blob/main/skills/doc-to-app/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/renpayero/.agent/blob/main/skills/doc-to-app/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

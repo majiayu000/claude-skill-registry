@@ -1,0 +1,18 @@
+{
+  "name": "build-cmake",
+  "repo": "iPlug2/iPlug2",
+  "path": ".claude/skills/build-cmake/SKILL.md",
+  "source": "github.com/iPlug2/iPlug2",
+  "downloaded_at": "2026-01-22T01:23:12.253164Z",
+  "dir_name": "build-cmake-iplug2-iplug2-e829492e",
+  "category": "devops",
+  "github_path": ".claude/skills/build-cmake",
+  "github_branch": "main",
+  "author": "iPlug2",
+  "source_url": "https://github.com/iPlug2/iPlug2/blob/main/.claude/skills/build-cmake/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (C) the iPlug 2 Developers. Portions copyright other contributors, see each source file for more information.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

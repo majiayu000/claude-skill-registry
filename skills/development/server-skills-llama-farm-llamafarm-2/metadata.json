@@ -1,0 +1,18 @@
+{
+  "name": "server-skills",
+  "description": "Server-specific best practices for FastAPI, Celery, and Pydantic. Extends python-skills with framework-specific patterns.",
+  "repo": "llama-farm/llamafarm",
+  "path": ".claude/skills/server-skills",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/llama-farm/llamafarm",
+  "dir_name": "server-skills-llama-farm-llamafarm-2",
+  "author": "llama-farm",
+  "source_url": "https://github.com/llama-farm/llamafarm/blob/main/.claude/skills/server-skills/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/llama-farm/llamafarm/blob/main/.claude/skills/server-skills/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

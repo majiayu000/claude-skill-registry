@@ -1,0 +1,17 @@
+{
+  "name": "server-log-health-check",
+  "repo": "fulviomanente/IQRight_Local",
+  "path": ".claude/skills/server-log-health-check/SKILL.md",
+  "github_branch": "master",
+  "category": "devops",
+  "source": "github.com/fulviomanente/IQRight_Local",
+  "dir_name": "server-log-health-check",
+  "downloaded_at": "2026-03-01T07:47:46.182145Z",
+  "author": "fulviomanente",
+  "source_url": "https://github.com/fulviomanente/IQRight_Local/blob/master/.claude/skills/server-log-health-check/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fulviomanente/IQRight_Local/blob/master/.claude/skills/server-log-health-check/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

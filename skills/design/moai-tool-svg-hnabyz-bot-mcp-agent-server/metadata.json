@@ -1,0 +1,16 @@
+{
+  "name": "moai-tool-svg",
+  "repo": "hnabyz-bot/mcp-agent-server",
+  "path": ".claude/skills/moai-tool-svg/SKILL.md",
+  "category": "design",
+  "source": "github.com/hnabyz-bot/mcp-agent-server",
+  "dir_name": "moai-tool-svg-hnabyz-bot-mcp-agent-server",
+  "downloaded_at": "2026-02-15T07:30:01.320881Z",
+  "author": "hnabyz-bot",
+  "source_url": "https://github.com/hnabyz-bot/mcp-agent-server/blob/main/.claude/skills/moai-tool-svg/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hnabyz-bot/mcp-agent-server/blob/main/.claude/skills/moai-tool-svg/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

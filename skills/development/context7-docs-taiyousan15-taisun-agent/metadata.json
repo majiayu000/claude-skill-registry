@@ -1,0 +1,16 @@
+{
+  "name": "context7-docs",
+  "repo": "taiyousan15/taisun_agent",
+  "path": ".claude/skills/context7-docs/SKILL.md",
+  "source": "github.com/taiyousan15/taisun_agent",
+  "downloaded_at": "2026-01-29T07:13:04.803174Z",
+  "dir_name": "context7-docs-taiyousan15-taisun-agent",
+  "category": "development",
+  "author": "taiyousan15",
+  "source_url": "https://github.com/taiyousan15/taisun_agent/blob/main/.claude/skills/context7-docs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 taiyousan15",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "session-log-fixer",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/session-log-fixer/SKILL.md",
+  "source": "github.com/rjmurillo/ai-agents",
+  "downloaded_at": "2026-01-29T08:27:54.659728Z",
+  "dir_name": "session-log-fixer-rjmurillo-ai-agents-d7708bea",
+  "category": "devops",
+  "author": "rjmurillo",
+  "source_url": "https://github.com/rjmurillo/ai-agents/blob/main/.claude/skills/session-log-fixer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

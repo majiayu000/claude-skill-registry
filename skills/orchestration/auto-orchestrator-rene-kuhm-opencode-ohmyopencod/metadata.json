@@ -1,0 +1,16 @@
+{
+  "name": "auto-orchestrator",
+  "repo": "Rene-Kuhm/opencode-ohmyopencode-claude-configuracion",
+  "path": "skills/auto-orchestrator/SKILL.md",
+  "category": "orchestration",
+  "source": "github.com/Rene-Kuhm/opencode-ohmyopencode-claude-configuracion",
+  "dir_name": "auto-orchestrator-rene-kuhm-opencode-ohmyopencod",
+  "downloaded_at": "2026-02-22T05:37:45.141551Z",
+  "author": "Rene-Kuhm",
+  "source_url": "https://github.com/Rene-Kuhm/opencode-ohmyopencode-claude-configuracion/blob/main/skills/auto-orchestrator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Rene-Kuhm/opencode-ohmyopencode-claude-configuracion/blob/main/skills/auto-orchestrator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "textmate-grammar",
+  "repo": "mcclowes/lea",
+  "path": ".claude/skills/textmate-grammar/SKILL.md",
+  "source": "github.com/mcclowes/lea",
+  "downloaded_at": "2026-01-29T07:54:06.700355Z",
+  "dir_name": "textmate-grammar-mcclowes-lea-197a001d",
+  "category": "development",
+  "author": "mcclowes",
+  "source_url": "https://github.com/mcclowes/lea/blob/main/.claude/skills/textmate-grammar/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Max Clayton Clowes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

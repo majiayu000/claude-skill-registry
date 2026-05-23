@@ -1,0 +1,20 @@
+{
+  "name": "add-knowledge",
+  "description": "",
+  "repo": "tdhopper/dotfiles2.0",
+  "category": "productivity",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tdhopper/dotfiles2.0",
+  "github_path": ".claude/skills/add-knowledge",
+  "github_branch": "master",
+  "dir_name": "add-knowledge",
+  "downloaded_at": "2026-02-05T01:44:43.120375Z",
+  "author": "tdhopper",
+  "source_url": "https://github.com/tdhopper/dotfiles2.0/blob/master/.claude/skills/add-knowledge/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tdhopper/dotfiles2.0/blob/master/.claude/skills/add-knowledge/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

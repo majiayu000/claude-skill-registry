@@ -1,0 +1,17 @@
+{
+  "name": "chatkit-frontend-integration",
+  "repo": "HasnainCodeHub/todo-evaluation",
+  "path": ".claude/skills/chatkit-frontend-integration/skill.md",
+  "github_branch": "master",
+  "category": "development",
+  "source": "github.com/HasnainCodeHub/todo-evaluation",
+  "dir_name": "chatkit-frontend-integration",
+  "downloaded_at": "2026-03-01T05:24:00.430658Z",
+  "author": "HasnainCodeHub",
+  "source_url": "https://github.com/HasnainCodeHub/todo-evaluation/blob/master/.claude/skills/chatkit-frontend-integration/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HasnainCodeHub/todo-evaluation/blob/master/.claude/skills/chatkit-frontend-integration/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

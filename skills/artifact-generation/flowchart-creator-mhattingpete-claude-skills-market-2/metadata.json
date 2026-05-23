@@ -1,0 +1,17 @@
+{
+  "name": "flowchart-creator",
+  "repo": "mhattingpete/claude-skills-marketplace",
+  "path": "visual-documentation-plugin/skills/flowchart-creator/SKILL.md",
+  "github_branch": "main",
+  "category": "artifact-generation",
+  "source": "github.com/mhattingpete/claude-skills-marketplace",
+  "dir_name": "flowchart-creator-mhattingpete-claude-skills-market-2",
+  "downloaded_at": "2026-05-20T04:02:51.907562Z",
+  "author": "mhattingpete",
+  "source_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/visual-documentation-plugin/skills/flowchart-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mhattingpete/claude-skills-marketplace/blob/main/visual-documentation-plugin/skills/flowchart-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

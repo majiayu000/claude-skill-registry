@@ -1,0 +1,18 @@
+{
+  "name": "texture-creation",
+  "description": "Guide for creating mod textures using vanilla texture reuse and color transformation",
+  "repo": "ksoichiro/ChronoDawn",
+  "path": ".claude/skills/texture-creation",
+  "category": "creative",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ksoichiro/ChronoDawn",
+  "dir_name": "texture-creation-ksoichiro-chronodawn-2",
+  "author": "ksoichiro",
+  "source_url": "https://github.com/ksoichiro/ChronoDawn/blob/main/.claude/skills/texture-creation/SKILL.md",
+  "license": "LGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

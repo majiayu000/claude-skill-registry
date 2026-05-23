@@ -1,0 +1,16 @@
+{
+  "name": "recovery-app-onboarding",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/recovery-app-onboarding/SKILL.md",
+  "source": "github.com/erichowens/some_claude_skills",
+  "downloaded_at": "2026-01-29T06:31:13.238150Z",
+  "dir_name": "recovery-app-onboarding-erichowens-some-claude-skills-f7583998",
+  "category": "design",
+  "author": "erichowens",
+  "source_url": "https://github.com/erichowens/some_claude_skills/blob/main/.claude/skills/recovery-app-onboarding/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Erich Owens",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

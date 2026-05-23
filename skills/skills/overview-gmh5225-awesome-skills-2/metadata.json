@@ -1,0 +1,18 @@
+{
+  "name": "overview",
+  "description": "Guide for understanding and contributing to the awesome-skills curated resource list. Use this skill when adding resources, organizing categories, or maintaining README.md consistency (no duplicates).",
+  "repo": "gmh5225/awesome-skills",
+  "path": ".claude/skills/overview",
+  "category": "skills",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gmh5225/awesome-skills",
+  "dir_name": "overview-gmh5225-awesome-skills-2",
+  "author": "gmh5225",
+  "source_url": "https://github.com/gmh5225/awesome-skills/blob/main/.claude/skills/overview/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 gmh5225.eth",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

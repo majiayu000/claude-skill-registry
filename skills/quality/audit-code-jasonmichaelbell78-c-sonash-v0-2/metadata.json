@@ -1,0 +1,18 @@
+{
+  "name": "audit-code",
+  "description": "Run a single-session code review audit on the codebase",
+  "repo": "jasonmichaelbell78-creator/sonash-v0",
+  "path": ".claude/skills/audit-code",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jasonmichaelbell78-creator/sonash-v0",
+  "dir_name": "audit-code-jasonmichaelbell78-c-sonash-v0-2",
+  "author": "jasonmichaelbell78-creator",
+  "source_url": "https://github.com/jasonmichaelbell78-creator/sonash-v0/blob/main/.claude/skills/audit-code/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jasonmichaelbell78-creator/sonash-v0/blob/main/.claude/skills/audit-code/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

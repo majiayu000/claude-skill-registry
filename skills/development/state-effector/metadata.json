@@ -1,0 +1,16 @@
+{
+  "name": "state-effector",
+  "repo": "aussiegingersnap/cursor-skills",
+  "path": "skills/state-effector/SKILL.md",
+  "source": "github.com/aussiegingersnap/cursor-skills",
+  "downloaded_at": "2026-02-01T03:46:43.631365Z",
+  "dir_name": "state-effector",
+  "category": "development",
+  "author": "aussiegingersnap",
+  "source_url": "https://github.com/aussiegingersnap/cursor-skills/blob/main/skills/state-effector/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2026 Jason Toevs",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

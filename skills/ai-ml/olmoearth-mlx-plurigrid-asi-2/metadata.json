@@ -1,0 +1,18 @@
+{
+  "name": "olmoearth-mlx",
+  "description": "OlmoEarth MLX: Spatio-Temporal Earth Intelligence",
+  "repo": "plurigrid/asi",
+  "path": "skills/olmoearth-mlx",
+  "category": "ai-ml",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "olmoearth-mlx-plurigrid-asi-2",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/olmoearth-mlx/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

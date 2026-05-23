@@ -1,0 +1,16 @@
+{
+  "name": "dev-coordination-message-formats",
+  "repo": "feliperyba/ralph-orchestra",
+  "path": ".claude/skills/dev-coordination-message-formats/SKILL.md",
+  "source": "github.com/feliperyba/ralph-orchestra",
+  "downloaded_at": "2026-01-29T03:35:10.383685Z",
+  "dir_name": "dev-coordination-message-formats",
+  "category": "agent-coordination",
+  "author": "feliperyba",
+  "source_url": "https://github.com/feliperyba/ralph-orchestra/blob/main/.claude/skills/dev-coordination-message-formats/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 feliperyba",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

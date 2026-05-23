@@ -1,0 +1,16 @@
+{
+  "name": "n-version-workflow",
+  "repo": "rysweet/AzureHayMaker",
+  "path": ".claude/skills/n-version-workflow/SKILL.md",
+  "source": "github.com/rysweet/AzureHayMaker",
+  "downloaded_at": "2026-01-29T07:43:35.060358Z",
+  "dir_name": "n-version-workflow-rysweet-azurehaymaker",
+  "category": "development",
+  "author": "rysweet",
+  "source_url": "https://github.com/rysweet/AzureHayMaker/blob/main/.claude/skills/n-version-workflow/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ryan Sweet / Microsoft",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "discover-agentic",
+  "description": "",
+  "repo": "rand/cc-polymath",
+  "category": "agent",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rand/cc-polymath",
+  "github_path": "skills/discover-agentic",
+  "github_branch": "main",
+  "dir_name": "discover-agentic",
+  "downloaded_at": "2026-02-05T01:44:55.682936Z",
+  "author": "rand",
+  "source_url": "https://github.com/rand/cc-polymath/blob/main/skills/discover-agentic/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 rand",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "azure-compute-batch-java",
+  "description": "",
+  "repo": "microsoft/skills",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/microsoft/skills",
+  "github_path": ".github/skills/azure-compute-batch-java",
+  "github_branch": "main",
+  "dir_name": "azure-compute-batch-java",
+  "downloaded_at": "2026-02-05T01:44:52.461281Z"
+}

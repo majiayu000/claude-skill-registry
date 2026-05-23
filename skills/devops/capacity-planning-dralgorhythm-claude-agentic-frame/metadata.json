@@ -1,0 +1,20 @@
+{
+  "name": "capacity-planning",
+  "description": "",
+  "repo": "dralgorhythm/claude-agentic-framework",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dralgorhythm/claude-agentic-framework",
+  "github_path": ".claude/skills/architecture/capacity-planning",
+  "github_branch": "main",
+  "dir_name": "capacity-planning-dralgorhythm-claude-agentic-frame",
+  "downloaded_at": "2026-02-05T01:44:49.762207Z",
+  "author": "dralgorhythm",
+  "source_url": "https://github.com/dralgorhythm/claude-agentic-framework/blob/main/.claude/skills/architecture/capacity-planning/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dralgorhythm/claude-agentic-framework/blob/main/.claude/skills/architecture/capacity-planning/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

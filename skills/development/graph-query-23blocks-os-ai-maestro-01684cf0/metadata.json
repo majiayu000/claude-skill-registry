@@ -1,0 +1,16 @@
+{
+  "name": "graph-query",
+  "repo": "23blocks-OS/ai-maestro",
+  "path": "plugin/skills/graph-query/SKILL.md",
+  "source": "github.com/23blocks-OS/ai-maestro",
+  "downloaded_at": "2026-01-29T08:06:48.887734Z",
+  "dir_name": "graph-query-23blocks-os-ai-maestro-01684cf0",
+  "category": "development",
+  "author": "23blocks-OS",
+  "source_url": "https://github.com/23blocks-OS/ai-maestro/blob/main/plugin/skills/graph-query/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Juan Peláez / 23blocks",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

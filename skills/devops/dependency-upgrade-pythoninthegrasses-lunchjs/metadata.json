@@ -1,0 +1,20 @@
+{
+  "name": "dependency-upgrade",
+  "description": "",
+  "repo": "pythoninthegrasses/lunchjs",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pythoninthegrasses/lunchjs",
+  "github_path": ".claude/skills/dependency-upgrade",
+  "github_branch": "main",
+  "dir_name": "dependency-upgrade-pythoninthegrasses-lunchjs",
+  "downloaded_at": "2026-02-05T01:44:53.969079Z",
+  "author": "pythoninthegrasses",
+  "source_url": "https://github.com/pythoninthegrasses/lunchjs/blob/main/.claude/skills/dependency-upgrade/SKILL.md",
+  "license": "Unlicense",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pythoninthegrasses/lunchjs/blob/main/.claude/skills/dependency-upgrade/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

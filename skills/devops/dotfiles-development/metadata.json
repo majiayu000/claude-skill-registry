@@ -1,0 +1,17 @@
+{
+  "name": "dotfiles-development",
+  "repo": "JamesPrial/skills",
+  "path": "skills/dotfiles-development/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/JamesPrial/skills",
+  "dir_name": "dotfiles-development",
+  "downloaded_at": "2026-03-22T05:32:30.443409Z",
+  "author": "JamesPrial",
+  "source_url": "https://github.com/JamesPrial/skills/blob/main/skills/dotfiles-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JamesPrial/skills/blob/main/skills/dotfiles-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "exa-reference-architecture",
+  "description": "Implement Exa reference architecture with best-practice project layout.\nUse when designing new Exa integrations, reviewing project structure,\nor establishing architecture standards for Exa application",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/exa-pack/skills/exa-reference-architecture",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "exa-reference-architecture-jeremylongshore-claude-code-plugins-2",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/saas-packs/exa-pack/skills/exa-reference-architecture/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "mydeadinternet",
+  "repo": "cgallic/mydeadinternet",
+  "path": "skill.md",
+  "category": "agent-coordination",
+  "source": "github.com/cgallic/mydeadinternet",
+  "dir_name": "mydeadinternet",
+  "downloaded_at": "2026-02-15T06:42:45.809470Z",
+  "author": "cgallic",
+  "source_url": "https://github.com/cgallic/mydeadinternet/blob/main/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cgallic/mydeadinternet/blob/main/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

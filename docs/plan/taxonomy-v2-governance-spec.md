@@ -198,6 +198,32 @@ enough to delete or merge archive entries; a follow-up cleanup must first prove
 whether the source and target SKILL bodies are identical or intentionally
 different.
 
+## Residual Workset Contract
+
+`scripts/build_residual_category_worksets.py` turns a residual state into
+explicit review queues before any new model pass. It is report-only and writes
+JSONL worksets that can be checkpointed, sampled, or fully reclassified.
+
+Worksets:
+
+- `classification_gap`: live archive skills without a live classification row.
+- `low_confidence`: live rows below the selected confidence threshold.
+- `review_target`: live rows whose previous target is a review taxonomy bucket.
+- `target_other`: live rows that the previous classifier kept in `other`.
+
+Each item records SKILL.md-first semantic inputs, metadata identity hints, the
+previous classification when present, and a bounded content excerpt. Conflict
+details, when supplied from the residual audit, are summarized by drift type
+only; this step does not modify or merge archive entries.
+
+`scripts/classify_residual_workset_with_llm.py` reclassifies a workset through
+an OpenAI-compatible chat API. It reads credentials only from an environment
+variable, supports bounded batch retries plus JSONL checkpoints for resume, and
+writes apply-compatible classification rows. Unknown, inactive, malformed, or
+missing model outputs are kept as non-`ok` rows so downstream migration stays
+fail-closed. Resume mode reuses only `ok` checkpoint rows by default so
+transient API or parsing failures are retried instead of being silently accepted.
+
 ## Stable-Key Duplicate Cleanup Contract
 
 `scripts/plan_stable_key_duplicate_cleanup.py` consumes a residual report that
@@ -244,8 +270,12 @@ Category artifact gate:
 4. Review by action, confidence, and category pair.
 5. Apply only small, high-confidence batches in data PRs.
 6. Run the residual audit with the same policy to prove what remains and why.
-7. Publish main from pinned core/data refs.
-8. Re-run audit and compare `other` share, category conflicts, residual
+7. Build residual worksets for gaps, low confidence rows, review targets, and
+   target-`other` rows before running another model pass.
+8. Reclassify worksets with checkpoints and apply only `ok`, active,
+   high-confidence rows through the existing migration planner.
+9. Publish main from pinned core/data refs.
+10. Re-run audit and compare `other` share, category conflicts, residual
    reasons, and plan deltas.
 
 ## Acceptance Criteria
@@ -258,5 +288,7 @@ Category artifact gate:
   reclassifications, confidence bands, and category pair counts.
 - A residual audit can explain post-apply live leftovers separately from
   already-moved classification rows.
+- Residual worksets can be generated without archive edits and reclassified
+  with resumable, fail-closed model output.
 - Generated category artifacts are guarded so legacy category JSON files remain
   pointer-only.

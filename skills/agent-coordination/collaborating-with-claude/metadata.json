@@ -1,0 +1,16 @@
+{
+  "name": "collaborating-with-claude",
+  "repo": "appautomaton/agent-designer",
+  "path": ".codex/skills/collaborating-with-claude/SKILL.md",
+  "source": "github.com/appautomaton/agent-designer",
+  "downloaded_at": "2026-02-02T04:50:38.981234Z",
+  "dir_name": "collaborating-with-claude",
+  "category": "agent-coordination",
+  "author": "appautomaton",
+  "source_url": "https://github.com/appautomaton/agent-designer/blob/main/.codex/skills/collaborating-with-claude/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/appautomaton/agent-designer/blob/main/.codex/skills/collaborating-with-claude/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

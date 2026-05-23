@@ -1,0 +1,18 @@
+{
+  "name": "ffmpeg-hardware-acceleration",
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/ffmpeg-master/skills/ffmpeg-hardware-acceleration/SKILL.md",
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "downloaded_at": "2026-01-22T03:16:48.899999Z",
+  "dir_name": "ffmpeg-hardware-acceleration-josiahsiegel-claude-plugin-market-0",
+  "category": "development-tools",
+  "github_path": "plugins/ffmpeg-master/skills/ffmpeg-hardware-acceleration",
+  "github_branch": "main",
+  "author": "JosiahSiegel",
+  "source_url": "https://github.com/JosiahSiegel/claude-plugin-marketplace/blob/main/plugins/ffmpeg-master/skills/ffmpeg-hardware-acceleration/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Josiah Siegel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

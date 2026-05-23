@@ -1,0 +1,18 @@
+{
+  "name": "claude-code-telemetry-enable",
+  "description": "Enable and configure Claude Code OTEL telemetry for local or Railway observability stacks. Use when setting up Claude Code to send metrics, logs, and traces to observability backends.",
+  "repo": "adaptationio/Skrillz",
+  "path": ".claude/skills/claude-code-telemetry-enable",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adaptationio/Skrillz",
+  "dir_name": "claude-code-telemetry-enable-adaptationio-skrillz-2",
+  "author": "adaptationio",
+  "source_url": "https://github.com/adaptationio/Skrillz/blob/main/.claude/skills/claude-code-telemetry-enable/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adaptationio/Skrillz/blob/main/.claude/skills/claude-code-telemetry-enable/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

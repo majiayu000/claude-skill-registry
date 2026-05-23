@@ -1,0 +1,16 @@
+{
+  "name": "adk-frontend",
+  "repo": "botpress/skills",
+  "path": "skills/adk-frontend/SKILL.md",
+  "source": "github.com/botpress/skills",
+  "downloaded_at": "2026-01-29T08:00:07.632917Z",
+  "dir_name": "adk-frontend-botpress-skills",
+  "category": "development",
+  "author": "botpress",
+  "source_url": "https://github.com/botpress/skills/blob/main/skills/adk-frontend/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Botpress",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

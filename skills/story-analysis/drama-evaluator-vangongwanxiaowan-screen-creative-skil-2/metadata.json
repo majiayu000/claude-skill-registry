@@ -1,0 +1,18 @@
+{
+  "name": "drama-evaluator",
+  "description": "Evaluate and score according to vertical short drama evaluation standards, from dimensions including core satisfaction points, story types, etc. Suitable for evaluating story adaptation potential for ",
+  "repo": "VanGongwanxiaowan/screen-creative-skills",
+  "path": "category/evaluation/drama-evaluator",
+  "category": "story-analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/VanGongwanxiaowan/screen-creative-skills",
+  "dir_name": "drama-evaluator-vangongwanxiaowan-screen-creative-skil-2",
+  "author": "VanGongwanxiaowan",
+  "source_url": "https://github.com/VanGongwanxiaowan/screen-creative-skills/blob/main/category/evaluation/drama-evaluator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 宫凡",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

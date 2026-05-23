@@ -1,0 +1,18 @@
+{
+  "name": "agentica-prompts",
+  "description": "Write reliable prompts for Agentica/REPL agents that avoid LLM instruction ambiguity",
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/agentica-prompts",
+  "category": "agent",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "dir_name": "agentica-prompts-parcadei-continuous-claude-v3-2",
+  "author": "parcadei",
+  "source_url": "https://github.com/parcadei/Continuous-Claude-v3/blob/main/.claude/skills/agentica-prompts/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Cosimo Streppone",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

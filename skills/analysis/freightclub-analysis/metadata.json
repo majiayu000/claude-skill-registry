@@ -1,0 +1,11 @@
+{
+  "name": "freightclub-analysis",
+  "repo": "WalkerVVV/firstmile-deals-pipeline",
+  "path": ".claude/skills/freightclub-analysis/SKILL.md",
+  "source": "github.com/WalkerVVV/firstmile-deals-pipeline",
+  "downloaded_at": "2026-01-22T01:08:35.513575Z",
+  "dir_name": "freightclub-analysis",
+  "category": "analysis",
+  "github_path": ".claude/skills/freightclub-analysis",
+  "github_branch": "main"
+}

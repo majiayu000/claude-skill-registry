@@ -1,0 +1,17 @@
+{
+  "name": "proof-trace-summarizer",
+  "repo": "ArabelaTso/Skills-4-SE",
+  "path": "skills/proof-trace-summarizer/SKILL.md",
+  "github_branch": "main",
+  "category": "analysis",
+  "source": "github.com/ArabelaTso/Skills-4-SE",
+  "dir_name": "proof-trace-summarizer",
+  "downloaded_at": "2026-03-22T04:52:27.256646Z",
+  "author": "ArabelaTso",
+  "source_url": "https://github.com/ArabelaTso/Skills-4-SE/blob/main/skills/proof-trace-summarizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ArabelaTso/Skills-4-SE/blob/main/skills/proof-trace-summarizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

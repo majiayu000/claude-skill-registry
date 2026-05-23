@@ -1,0 +1,13 @@
+{
+  "name": "prose",
+  "description": "",
+  "repo": "mbanner77/realbot",
+  "category": "agent-coordination",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mbanner77/realbot",
+  "github_path": "extensions/open-prose/skills/prose",
+  "github_branch": "main",
+  "dir_name": "prose-mbanner77-realbot",
+  "downloaded_at": "2026-02-05T05:14:18.297307Z"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "challenge-assumptions",
+  "repo": "AhmedHabiba/architor",
+  "path": ".claude/skills/challenge-assumptions/SKILL.md",
+  "github_branch": "main",
+  "category": "analysis",
+  "source": "github.com/AhmedHabiba/architor",
+  "dir_name": "challenge-assumptions",
+  "downloaded_at": "2026-03-22T04:49:01.471239Z",
+  "author": "AhmedHabiba",
+  "source_url": "https://github.com/AhmedHabiba/architor/blob/main/.claude/skills/challenge-assumptions/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AhmedHabiba/architor/blob/main/.claude/skills/challenge-assumptions/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

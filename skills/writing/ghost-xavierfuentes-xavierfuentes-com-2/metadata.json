@@ -1,0 +1,18 @@
+{
+  "name": "ghost",
+  "description": "Publish and manage content in Ghost CMS. Use for publishing posts, validating frontmatter, and understanding the Ghost sync workflow. Includes /publish and /validate commands.",
+  "repo": "xavierfuentes/xavierfuentes.com",
+  "path": ".claude/skills/ghost",
+  "category": "writing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/xavierfuentes/xavierfuentes.com",
+  "dir_name": "ghost-xavierfuentes-xavierfuentes-com-2",
+  "author": "xavierfuentes",
+  "source_url": "https://github.com/xavierfuentes/xavierfuentes.com/blob/main/.claude/skills/ghost/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/xavierfuentes/xavierfuentes.com/blob/main/.claude/skills/ghost/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

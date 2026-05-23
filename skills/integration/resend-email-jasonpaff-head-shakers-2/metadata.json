@@ -1,0 +1,18 @@
+{
+  "name": "resend-email",
+  "description": "Enforces project Resend email conventions when implementing email sending, templates, batch operations, and newsletter broadcasts. This skill ensures consistent patterns for email service methods, err",
+  "repo": "JasonPaff/head-shakers",
+  "path": ".claude/skills/resend-email",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JasonPaff/head-shakers",
+  "dir_name": "resend-email-jasonpaff-head-shakers-2",
+  "author": "JasonPaff",
+  "source_url": "https://github.com/JasonPaff/head-shakers/blob/main/.claude/skills/resend-email/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JasonPaff/head-shakers/blob/main/.claude/skills/resend-email/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

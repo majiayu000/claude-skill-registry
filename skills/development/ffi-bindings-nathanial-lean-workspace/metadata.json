@@ -1,0 +1,16 @@
+{
+  "name": "ffi-bindings",
+  "repo": "nathanial/lean-workspace",
+  "path": ".claude/skills/ffi-bindings/SKILL.md",
+  "source": "github.com/nathanial/lean-workspace",
+  "downloaded_at": "2026-01-29T07:44:37.308278Z",
+  "dir_name": "ffi-bindings-nathanial-lean-workspace",
+  "category": "development",
+  "author": "nathanial",
+  "source_url": "https://github.com/nathanial/lean-workspace/blob/main/.claude/skills/ffi-bindings/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nathanial/lean-workspace/blob/main/.claude/skills/ffi-bindings/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

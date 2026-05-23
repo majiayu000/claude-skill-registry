@@ -1,0 +1,16 @@
+{
+  "name": "key-rotation-manager",
+  "repo": "byteworthy/Upstream",
+  "path": ".agents/skills/key-rotation-manager/SKILL.md",
+  "source": "github.com/byteworthy/Upstream",
+  "downloaded_at": "2026-01-30T04:24:26.268253Z",
+  "dir_name": "key-rotation-manager-byteworthy-upstream",
+  "category": "security",
+  "author": "byteworthy",
+  "source_url": "https://github.com/byteworthy/Upstream/blob/main/.agents/skills/key-rotation-manager/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2024-2026 ByteWorthy LLC. All rights reserved.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

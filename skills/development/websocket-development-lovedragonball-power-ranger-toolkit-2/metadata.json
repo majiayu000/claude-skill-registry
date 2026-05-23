@@ -1,0 +1,18 @@
+{
+  "name": "websocket-development",
+  "description": "พัฒนา real-time features โดยใช้ WebSockets และ Socket.io",
+  "repo": "lovedragonball/power-ranger-toolkit",
+  "path": "src/skills/websocket-development",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lovedragonball/power-ranger-toolkit",
+  "dir_name": "websocket-development-lovedragonball-power-ranger-toolkit-2",
+  "author": "lovedragonball",
+  "source_url": "https://github.com/lovedragonball/power-ranger-toolkit/blob/main/src/skills/websocket-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/lovedragonball/power-ranger-toolkit/blob/main/src/skills/websocket-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

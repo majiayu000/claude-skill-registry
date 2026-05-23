@@ -1,0 +1,16 @@
+{
+  "name": "commit.test",
+  "repo": "Unsupervisedcom/deepwork",
+  "path": ".claude/skills/commit.test/SKILL.md",
+  "source": "github.com/Unsupervisedcom/deepwork",
+  "downloaded_at": "2026-01-28T03:28:11.608825Z",
+  "dir_name": "commit-test",
+  "category": "testing",
+  "author": "Unsupervisedcom",
+  "source_url": "https://github.com/Unsupervisedcom/deepwork/blob/main/.claude/skills/commit.test/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Unsupervisedcom/deepwork/blob/main/.claude/skills/commit.test/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

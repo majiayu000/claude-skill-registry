@@ -1,0 +1,16 @@
+{
+  "name": "python-best-practices-fail-fast-imports",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/python-best-practices-fail-fast-imports/SKILL.md",
+  "source": "github.com/dawiddutoit/custom-claude",
+  "downloaded_at": "2026-01-27T02:53:47.333296Z",
+  "dir_name": "python-best-practices-fail-fast-imports",
+  "category": "quality",
+  "author": "dawiddutoit",
+  "source_url": "https://github.com/dawiddutoit/custom-claude/blob/main/skills/python-best-practices-fail-fast-imports/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dawiddutoit/custom-claude/blob/main/skills/python-best-practices-fail-fast-imports/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

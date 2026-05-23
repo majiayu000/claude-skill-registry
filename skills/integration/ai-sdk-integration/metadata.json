@@ -1,0 +1,16 @@
+{
+  "name": "ai-sdk-integration",
+  "repo": "youdotcom-oss/agent-skills",
+  "path": "skills/ai-sdk-integration/SKILL.md",
+  "source": "github.com/youdotcom-oss/agent-skills",
+  "downloaded_at": "2026-02-01T04:12:08.568845Z",
+  "dir_name": "ai-sdk-integration",
+  "category": "integration",
+  "author": "youdotcom-oss",
+  "source_url": "https://github.com/youdotcom-oss/agent-skills/blob/main/skills/ai-sdk-integration/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 You.com",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "sleep-analyzer",
+  "repo": "huifer/WellAlly-health",
+  "path": "skills/sleep-analyzer/SKILL.md",
+  "category": "analysis",
+  "source": "github.com/huifer/WellAlly-health",
+  "dir_name": "sleep-analyzer-huifer-wellally-health-3",
+  "downloaded_at": "2026-02-15T07:32:04.923499Z",
+  "author": "huifer",
+  "source_url": "https://github.com/huifer/WellAlly-health/blob/main/skills/sleep-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 WellAlly Tech",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

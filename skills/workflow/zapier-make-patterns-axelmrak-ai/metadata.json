@@ -1,0 +1,16 @@
+{
+  "name": "zapier-make-patterns",
+  "repo": "AxelMrak/ai",
+  "path": "skills/zapier-make-patterns/SKILL.md",
+  "source": "github.com/AxelMrak/ai",
+  "downloaded_at": "2026-02-02T03:09:23.971655Z",
+  "dir_name": "zapier-make-patterns-axelmrak-ai",
+  "category": "workflow",
+  "author": "AxelMrak",
+  "source_url": "https://github.com/AxelMrak/ai/blob/main/skills/zapier-make-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AxelMrak/ai/blob/main/skills/zapier-make-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "inspira-ui",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/inspira-ui/skills/inspira-ui/SKILL.md",
+  "source": "github.com/secondsky/claude-skills",
+  "downloaded_at": "2026-01-29T03:11:06.407384Z",
+  "dir_name": "inspira-ui-secondsky-claude-skills-2",
+  "category": "design",
+  "author": "secondsky",
+  "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/inspira-ui/skills/inspira-ui/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Skills Maintainers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "conductor-new-track",
+  "repo": "agent-skills-hub/agent-skills-hub",
+  "path": "skills/conductor-new-track/SKILL.md",
+  "github_branch": "main",
+  "category": "workflow",
+  "source": "github.com/agent-skills-hub/agent-skills-hub",
+  "dir_name": "conductor-new-track-agent-skills-hub-agent-skills-hub",
+  "downloaded_at": "2026-03-01T06:29:17.064030Z",
+  "author": "agent-skills-hub",
+  "source_url": "https://github.com/agent-skills-hub/agent-skills-hub/blob/main/skills/conductor-new-track/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agent-skills-hub/agent-skills-hub/blob/main/skills/conductor-new-track/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

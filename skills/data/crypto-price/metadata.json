@@ -1,0 +1,17 @@
+{
+  "name": "crypto-price",
+  "repo": "dohoon84/openchiken",
+  "path": "skills/crypto_price/SKILL.md",
+  "github_branch": "master",
+  "category": "data",
+  "source": "github.com/dohoon84/openchiken",
+  "dir_name": "crypto-price",
+  "downloaded_at": "2026-03-22T07:47:42.767569Z",
+  "author": "dohoon84",
+  "source_url": "https://github.com/dohoon84/openchiken/blob/master/skills/crypto_price/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dohoon84/openchiken/blob/master/skills/crypto_price/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

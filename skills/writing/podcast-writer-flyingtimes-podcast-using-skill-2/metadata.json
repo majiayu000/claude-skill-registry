@@ -1,0 +1,18 @@
+{
+  "name": "podcast-writer",
+  "description": "根据用户给出的文字或者用户指定的txt/md文件内容，从类型列表中选择合适的文本类型，按照指定的格式给出podcast直播口述稿",
+  "repo": "flyingtimes/podcast-using-skill",
+  "path": ".claude/skills/podcast-writer",
+  "category": "writing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/flyingtimes/podcast-using-skill",
+  "dir_name": "podcast-writer-flyingtimes-podcast-using-skill-2",
+  "author": "flyingtimes",
+  "source_url": "https://github.com/flyingtimes/podcast-using-skill/blob/main/.claude/skills/podcast-writer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/flyingtimes/podcast-using-skill/blob/main/.claude/skills/podcast-writer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

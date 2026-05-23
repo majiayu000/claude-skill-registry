@@ -1,0 +1,9 @@
+{
+  "name": "redis-development",
+  "repo": "redis/agent-skills",
+  "path": "skills/redis-development/SKILL.md",
+  "source": "github.com/redis/agent-skills",
+  "downloaded_at": "2026-02-02T04:03:03.521647Z",
+  "dir_name": "redis-development",
+  "category": "development"
+}

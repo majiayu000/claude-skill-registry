@@ -1,0 +1,17 @@
+{
+  "name": "writing-svelte5",
+  "repo": "TrevorS/dot-claude",
+  "path": "skills/writing-svelte5/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
+  "source": "github.com/TrevorS/dot-claude",
+  "dir_name": "writing-svelte5",
+  "downloaded_at": "2026-03-22T06:25:45.035771Z",
+  "author": "TrevorS",
+  "source_url": "https://github.com/TrevorS/dot-claude/blob/master/skills/writing-svelte5/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TrevorS/dot-claude/blob/master/skills/writing-svelte5/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

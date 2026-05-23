@@ -1,0 +1,18 @@
+{
+  "name": "maker",
+  "description": "Generate .NET Core data API code from model definitions using the Maker XML specification and CLI. Use when users need to: (1) Create Maker XML models from JSON objects, SQL scripts, or database schem",
+  "repo": "alanben/ClaudeSkills",
+  "path": "maker",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alanben/ClaudeSkills",
+  "dir_name": "maker-alanben-claudeskills-2",
+  "author": "alanben",
+  "source_url": "https://github.com/alanben/ClaudeSkills/blob/main/maker/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Alan Benington",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

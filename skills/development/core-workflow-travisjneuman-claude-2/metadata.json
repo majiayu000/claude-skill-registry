@@ -1,0 +1,18 @@
+{
+  "name": "core-workflow",
+  "description": "Detailed development workflow patterns, checklists, and standards. Auto-loads for complex tasks, planning, debugging, testing, or when explicit patterns are needed. Contains session protocols, git con",
+  "repo": "travisjneuman/.claude",
+  "path": "skills/core-workflow",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/travisjneuman/.claude",
+  "dir_name": "core-workflow-travisjneuman-claude-2",
+  "author": "travisjneuman",
+  "source_url": "https://github.com/travisjneuman/.claude/blob/main/skills/core-workflow/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Travis Neuman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

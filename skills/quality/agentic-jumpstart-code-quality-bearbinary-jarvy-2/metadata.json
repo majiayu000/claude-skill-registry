@@ -1,0 +1,18 @@
+{
+  "name": "agentic-jumpstart-code-quality",
+  "description": "Code quality guidelines for Jarvy CLI - Rust formatting, Clippy linting, error handling patterns, documentation standards, and Conventional Commits.",
+  "repo": "bearbinary/Jarvy",
+  "path": ".claude/skills/agentic-jumpstart-code-quality",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bearbinary/Jarvy",
+  "dir_name": "agentic-jumpstart-code-quality-bearbinary-jarvy-2",
+  "author": "bearbinary",
+  "source_url": "https://github.com/bearbinary/Jarvy/blob/main/.claude/skills/agentic-jumpstart-code-quality/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Zac Clifton",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

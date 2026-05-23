@@ -1,0 +1,17 @@
+{
+  "name": "orthogonal-api-tester",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/capabilities/orthogonal-api-tester/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "orthogonal-api-tester",
+  "downloaded_at": "2026-04-22T01:38:08.622118Z",
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/capabilities/orthogonal-api-tester/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/capabilities/orthogonal-api-tester/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

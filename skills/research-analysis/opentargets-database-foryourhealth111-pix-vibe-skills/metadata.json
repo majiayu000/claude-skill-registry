@@ -1,0 +1,17 @@
+{
+  "name": "opentargets-database",
+  "repo": "foryourhealth111-pixel/Vibe-Skills",
+  "path": "bundled/skills/opentargets-database/SKILL.md",
+  "github_branch": "main",
+  "category": "research-analysis",
+  "source": "github.com/foryourhealth111-pixel/Vibe-Skills",
+  "dir_name": "opentargets-database-foryourhealth111-pix-vibe-skills",
+  "downloaded_at": "2026-04-04T03:54:00.509319Z",
+  "author": "foryourhealth111-pixel",
+  "source_url": "https://github.com/foryourhealth111-pixel/Vibe-Skills/blob/main/bundled/skills/opentargets-database/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/foryourhealth111-pixel/Vibe-Skills/blob/main/bundled/skills/opentargets-database/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

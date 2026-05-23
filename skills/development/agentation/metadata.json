@@ -1,0 +1,20 @@
+{
+  "name": "agentation",
+  "description": "",
+  "repo": "petekp/claude-code-setup",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/petekp/claude-code-setup",
+  "github_path": "skills/agentation",
+  "github_branch": "main",
+  "dir_name": "agentation",
+  "downloaded_at": "2026-02-05T01:45:09.715534Z",
+  "author": "petekp",
+  "source_url": "https://github.com/petekp/claude-code-setup/blob/main/skills/agentation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Pete Petrash",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

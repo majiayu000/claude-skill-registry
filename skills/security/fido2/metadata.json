@@ -1,0 +1,16 @@
+{
+  "name": "fido2",
+  "repo": "hirokazu-kobayashi-koba-hiro/idp-server",
+  "path": ".claude/skills/fido2/SKILL.md",
+  "category": "security",
+  "source": "github.com/hirokazu-kobayashi-koba-hiro/idp-server",
+  "dir_name": "fido2",
+  "downloaded_at": "2026-02-22T07:26:53.162919Z",
+  "author": "hirokazu-kobayashi-koba-hiro",
+  "source_url": "https://github.com/hirokazu-kobayashi-koba-hiro/idp-server/blob/main/.claude/skills/fido2/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hirokazu-kobayashi-koba-hiro/idp-server/blob/main/.claude/skills/fido2/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

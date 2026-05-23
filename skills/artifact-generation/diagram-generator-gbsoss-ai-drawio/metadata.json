@@ -1,0 +1,16 @@
+{
+  "name": "diagram-generator",
+  "repo": "GBSOSS/ai-drawio",
+  "path": "skills/diagram-generator/SKILL.md",
+  "source": "github.com/GBSOSS/ai-drawio",
+  "downloaded_at": "2026-01-29T06:16:20.463550Z",
+  "dir_name": "diagram-generator-gbsoss-ai-drawio",
+  "category": "artifact-generation",
+  "author": "GBSOSS",
+  "source_url": "https://github.com/GBSOSS/ai-drawio/blob/main/skills/diagram-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 GBSOSS",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

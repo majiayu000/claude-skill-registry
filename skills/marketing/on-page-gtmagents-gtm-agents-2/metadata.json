@@ -1,0 +1,18 @@
+{
+  "name": "on-page",
+  "description": "Use when crafting or refreshing pages to align copy, UX, and conversion goals with target keywords.",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/seo/skills/on-page",
+  "category": "marketing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gtmagents/gtm-agents",
+  "dir_name": "on-page-gtmagents-gtm-agents-2",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/seo/skills/on-page/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gtmagents/gtm-agents/blob/main/plugins/seo/skills/on-page/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

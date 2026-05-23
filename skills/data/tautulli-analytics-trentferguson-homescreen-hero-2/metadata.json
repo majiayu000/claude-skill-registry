@@ -1,0 +1,18 @@
+{
+  "name": "tautulli-analytics",
+  "description": "Work with Tautulli analytics integration for Plex streaming metrics. Use when building analytics features, adding charts, fetching streaming data, working with watch history, or analyzing user activit",
+  "repo": "trentferguson/homescreen-hero",
+  "path": ".claude/skills/tautulli-analytics",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/trentferguson/homescreen-hero",
+  "dir_name": "tautulli-analytics-trentferguson-homescreen-hero-2",
+  "author": "trentferguson",
+  "source_url": "https://github.com/trentferguson/homescreen-hero/blob/main/.claude/skills/tautulli-analytics/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Trent Ferguson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

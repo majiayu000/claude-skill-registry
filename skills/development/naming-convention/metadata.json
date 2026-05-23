@@ -1,0 +1,16 @@
+{
+  "name": "naming-convention",
+  "repo": "meriley/claude-code-skills",
+  "path": "skills/claude-skills-go/naming-convention/Skill.md",
+  "source": "github.com/meriley/claude-code-skills",
+  "downloaded_at": "2026-01-27T02:16:06.720595Z",
+  "dir_name": "naming-convention",
+  "category": "development",
+  "author": "meriley",
+  "source_url": "https://github.com/meriley/claude-code-skills/blob/main/skills/claude-skills-go/naming-convention/Skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/meriley/claude-code-skills/blob/main/skills/claude-skills-go/naming-convention/Skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "harbor",
+  "description": "Harbor framework for agent evaluation. Use when: (1) Running harbor commands (harbor run, harbor tasks check), (2) Creating/validating SkillsBench tasks, (3) Understanding task format or debugging fai",
+  "repo": "benchflow-ai/skillsbench",
+  "path": ".claude/skills/harbor",
+  "category": "testing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/benchflow-ai/skillsbench",
+  "dir_name": "harbor-benchflow-ai-skillsbench-2",
+  "author": "benchflow-ai",
+  "source_url": "https://github.com/benchflow-ai/skillsbench/blob/main/.claude/skills/harbor/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/benchflow-ai/skillsbench/blob/main/.claude/skills/harbor/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

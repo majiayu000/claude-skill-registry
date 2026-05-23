@@ -1,0 +1,18 @@
+{
+  "name": "daily-morning-routine-base",
+  "description": "Framework for starting new daily chat with gentle context loading from previous session's summary. Use when user says \"good morning\", starts new chat with minimal prompt, or explicitly requests mornin",
+  "repo": "ZachBeta/claude-as-coach",
+  "path": "skills/daily-morning-routine-base",
+  "category": "productivity",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ZachBeta/claude-as-coach",
+  "dir_name": "daily-morning-routine-base-zachbeta-claude-as-coach-2",
+  "author": "ZachBeta",
+  "source_url": "https://github.com/ZachBeta/claude-as-coach/blob/main/skills/daily-morning-routine-base/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Zach Morek",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

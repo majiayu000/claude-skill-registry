@@ -1,0 +1,16 @@
+{
+  "name": "b2c-business-manager-extensions",
+  "repo": "SalesforceCommerceCloud/b2c-developer-tooling",
+  "path": "plugins/b2c/skills/b2c-business-manager-extensions/SKILL.md",
+  "source": "github.com/SalesforceCommerceCloud/b2c-developer-tooling",
+  "downloaded_at": "2026-01-29T05:18:27.813192Z",
+  "dir_name": "b2c-business-manager-extensions-salesforcecommercecl-b2c-develop-salesforcecommercecl-b2c-developer-toolin",
+  "category": "development",
+  "author": "SalesforceCommerceCloud",
+  "source_url": "https://github.com/SalesforceCommerceCloud/b2c-developer-tooling/blob/main/plugins/b2c/skills/b2c-business-manager-extensions/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright (c) 2024 Salesforce, Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

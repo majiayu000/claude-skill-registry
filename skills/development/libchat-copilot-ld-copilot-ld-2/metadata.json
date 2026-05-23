@@ -1,0 +1,16 @@
+{
+  "name": "libchat",
+  "repo": "copilot-ld/copilot-ld",
+  "path": "packages/libchat/SKILL.md",
+  "category": "development",
+  "source": "github.com/copilot-ld/copilot-ld",
+  "dir_name": "libchat-copilot-ld-copilot-ld-2",
+  "downloaded_at": "2026-02-15T06:48:51.478817Z",
+  "author": "copilot-ld",
+  "source_url": "https://github.com/copilot-ld/copilot-ld/blob/main/packages/libchat/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/copilot-ld/copilot-ld/blob/main/packages/libchat/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

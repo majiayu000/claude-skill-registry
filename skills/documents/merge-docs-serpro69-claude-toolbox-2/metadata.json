@@ -1,0 +1,17 @@
+{
+  "name": "merge-docs",
+  "repo": "serpro69/claude-toolbox",
+  "path": "klaude-plugin/skills/merge-docs/SKILL.md",
+  "github_branch": "master",
+  "category": "documents",
+  "source": "github.com/serpro69/claude-toolbox",
+  "dir_name": "merge-docs-serpro69-claude-toolbox-2",
+  "downloaded_at": "2026-03-23T01:38:03.598624Z",
+  "author": "serpro69",
+  "source_url": "https://github.com/serpro69/claude-toolbox/blob/master/klaude-plugin/skills/merge-docs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/serpro69/claude-toolbox/blob/master/klaude-plugin/skills/merge-docs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

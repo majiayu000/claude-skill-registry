@@ -1,0 +1,17 @@
+{
+  "name": "component-variants",
+  "repo": "fusengine/agents",
+  "path": "plugins/design-expert/skills/component-variants/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/fusengine/agents",
+  "dir_name": "component-variants-fusengine-agents",
+  "downloaded_at": "2026-03-01T07:47:59.480101Z",
+  "author": "fusengine",
+  "source_url": "https://github.com/fusengine/agents/blob/main/plugins/design-expert/skills/component-variants/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fusengine/agents/blob/main/plugins/design-expert/skills/component-variants/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

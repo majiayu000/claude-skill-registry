@@ -1,0 +1,18 @@
+{
+  "name": "rpg-migration-analyzer",
+  "description": "Analyzes legacy RPG (Report Program Generator) programs from AS/400 and IBM i systems for migration to modern Java applications. Extracts business logic from RPG III/IV/ILE source code, identifies dat",
+  "repo": "DauQuangThanh/hanoi-rainbow",
+  "path": "skills/rpg-migration-analyzer",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DauQuangThanh/hanoi-rainbow",
+  "dir_name": "rpg-migration-analyzer-dauquangthanh-hanoi-rainbow-2",
+  "author": "DauQuangThanh",
+  "source_url": "https://github.com/DauQuangThanh/hanoi-rainbow/blob/main/skills/rpg-migration-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Dau Quang Thanh",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

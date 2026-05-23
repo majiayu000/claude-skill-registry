@@ -1,0 +1,16 @@
+{
+  "name": "slack-gif-creator",
+  "repo": "SpencerGeee/SpenTrade",
+  "path": ".agent/skills/slack-gif-creator/SKILL.md",
+  "category": "creative",
+  "source": "github.com/SpencerGeee/SpenTrade",
+  "dir_name": "slack-gif-creator-spencergeee-spentrade",
+  "downloaded_at": "2026-02-15T05:48:02.719156Z",
+  "author": "SpencerGeee",
+  "source_url": "https://github.com/SpencerGeee/SpenTrade/blob/main/.agent/skills/slack-gif-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SpencerGeee/SpenTrade/blob/main/.agent/skills/slack-gif-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "bird",
+  "repo": "ThinkfleetAI/thinkfleet-engine",
+  "path": "skills/bird/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/ThinkfleetAI/thinkfleet-engine",
+  "dir_name": "bird-thinkfleetai-thinkfleet-engine",
+  "downloaded_at": "2026-03-22T06:23:35.844436Z",
+  "author": "ThinkfleetAI",
+  "source_url": "https://github.com/ThinkfleetAI/thinkfleet-engine/blob/main/skills/bird/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ThinkfleetAI/thinkfleet-engine/blob/main/skills/bird/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

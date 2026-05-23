@@ -1,0 +1,13 @@
+{
+  "name": "similarity-search-patterns",
+  "description": "",
+  "repo": "ACGSpgp/ACGS",
+  "category": "ai-ml",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ACGSpgp/ACGS",
+  "github_path": ".agent/workflows/llm-application-dev/1.2.1/skills/similarity-search-patterns",
+  "github_branch": "main",
+  "dir_name": "similarity-search-patterns-acgspgp-acgs",
+  "downloaded_at": "2026-02-05T05:40:33.129256Z"
+}

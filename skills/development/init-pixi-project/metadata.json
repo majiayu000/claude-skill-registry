@@ -1,0 +1,16 @@
+{
+  "name": "init-pixi-project",
+  "repo": "igamenovoer/magic-context",
+  "path": "skills/devel/init-pixi-project/SKILL.md",
+  "source": "github.com/igamenovoer/magic-context",
+  "downloaded_at": "2026-02-02T02:28:49.759562Z",
+  "dir_name": "init-pixi-project",
+  "category": "development",
+  "author": "igamenovoer",
+  "source_url": "https://github.com/igamenovoer/magic-context/blob/main/skills/devel/init-pixi-project/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 James Wong",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

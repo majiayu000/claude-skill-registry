@@ -1,0 +1,18 @@
+{
+  "name": "alto-protocol",
+  "description": "Use when working with ALTO protocol files - runs/state.json, runs/handoffs/*.md, runs/tasks/*.md, runs/plan.md, or runs/milestones.md. Reference for file formats and state machine.",
+  "repo": "gonzaloetjo/alto",
+  "path": "skills/alto-protocol",
+  "category": "workflow",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gonzaloetjo/alto",
+  "dir_name": "alto-protocol-gonzaloetjo-alto-2",
+  "author": "gonzaloetjo",
+  "source_url": "https://github.com/gonzaloetjo/alto/blob/main/skills/alto-protocol/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gonzaloetjo/alto/blob/main/skills/alto-protocol/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

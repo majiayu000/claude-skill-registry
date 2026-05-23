@@ -1,0 +1,17 @@
+{
+  "name": "block-storage",
+  "repo": "BagelHole/DevOps-Security-Agent-Skills",
+  "path": "infrastructure/storage/block-storage/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/BagelHole/DevOps-Security-Agent-Skills",
+  "dir_name": "block-storage",
+  "downloaded_at": "2026-03-01T04:56:48.382878Z",
+  "author": "BagelHole",
+  "source_url": "https://github.com/BagelHole/DevOps-Security-Agent-Skills/blob/main/infrastructure/storage/block-storage/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BagelHole/DevOps-Security-Agent-Skills/blob/main/infrastructure/storage/block-storage/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

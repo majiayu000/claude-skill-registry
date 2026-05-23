@@ -1,0 +1,17 @@
+{
+  "name": "parallel-ai",
+  "repo": "0xkemcho/AutoClaw",
+  "path": ".claude/skills/parallel-ai/SKILL.md",
+  "github_branch": "main",
+  "category": "api",
+  "source": "github.com/0xkemcho/AutoClaw",
+  "dir_name": "parallel-ai",
+  "downloaded_at": "2026-03-22T04:39:51.352828Z",
+  "author": "0xkemcho",
+  "source_url": "https://github.com/0xkemcho/AutoClaw/blob/main/.claude/skills/parallel-ai/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/0xkemcho/AutoClaw/blob/main/.claude/skills/parallel-ai/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

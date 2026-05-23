@@ -1,0 +1,18 @@
+{
+  "name": "gamma-rate-limits",
+  "description": "Understand and manage Gamma API rate limits effectively.\nUse when hitting rate limits, optimizing API usage,\nor implementing request queuing systems.\nTrigger with phrases like \"gamma rate limit\", \"gam",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/gamma-pack/gamma-rate-limits",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "gamma-rate-limits-vasic-digital-superagent-2",
+  "author": "vasic-digital",
+  "source_url": "https://github.com/vasic-digital/SuperAgent/blob/main/skills/plugins/saas-packs/gamma-pack/gamma-rate-limits/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vasic-digital/SuperAgent/blob/main/skills/plugins/saas-packs/gamma-pack/gamma-rate-limits/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "research-by-reddit",
+  "description": "基于 Reddit API 进行深度调研并生成研究报告。支持搜索、获取帖子、评论分析、情感分析等功能",
+  "repo": "muzhicaomingwang/ai-ideas",
+  "path": ".claude/skills/research-by-reddit",
+  "category": "research-analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/muzhicaomingwang/ai-ideas",
+  "dir_name": "research-by-reddit-muzhicaomingwang-ai-ideas-2",
+  "author": "muzhicaomingwang",
+  "source_url": "https://github.com/muzhicaomingwang/ai-ideas/blob/main/.claude/skills/research-by-reddit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/muzhicaomingwang/ai-ideas/blob/main/.claude/skills/research-by-reddit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

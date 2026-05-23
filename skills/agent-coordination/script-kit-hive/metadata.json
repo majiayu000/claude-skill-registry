@@ -1,0 +1,20 @@
+{
+  "name": "script-kit-hive",
+  "description": "",
+  "repo": "johnlindquist/script-kit-next",
+  "category": "agent-coordination",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/johnlindquist/script-kit-next",
+  "github_path": ".claude/skills/script-kit-hive",
+  "github_branch": "main",
+  "dir_name": "script-kit-hive",
+  "downloaded_at": "2026-02-05T01:44:28.721415Z",
+  "author": "johnlindquist",
+  "source_url": "https://github.com/johnlindquist/script-kit-next/blob/main/.claude/skills/script-kit-hive/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/johnlindquist/script-kit-next/blob/main/.claude/skills/script-kit-hive/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

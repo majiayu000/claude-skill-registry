@@ -1,0 +1,16 @@
+{
+  "name": "lint-markdown",
+  "repo": "CsHeng/dot-claude",
+  "path": "skills/lint-markdown/SKILL.md",
+  "category": "quality",
+  "source": "github.com/CsHeng/dot-claude",
+  "dir_name": "lint-markdown",
+  "downloaded_at": "2026-02-15T04:58:30.759207Z",
+  "author": "CsHeng",
+  "source_url": "https://github.com/CsHeng/dot-claude/blob/main/skills/lint-markdown/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CsHeng/dot-claude/blob/main/skills/lint-markdown/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

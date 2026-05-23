@@ -1,0 +1,18 @@
+{
+  "name": "recovery-app-onboarding",
+  "description": "Expert guidance for designing and implementing onboarding flows in recovery, wellness, and mental health applications. This skill should be used when building onboarding experiences, first-time user f",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/recovery-app-onboarding",
+  "category": "design",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "recovery-app-onboarding-erichowens-some-claude-skills-2",
+  "author": "erichowens",
+  "source_url": "https://github.com/erichowens/some_claude_skills/blob/main/.claude/skills/recovery-app-onboarding/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Erich Owens",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

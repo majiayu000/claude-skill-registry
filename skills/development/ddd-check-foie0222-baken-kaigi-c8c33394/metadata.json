@@ -1,0 +1,16 @@
+{
+  "name": "ddd-check",
+  "repo": "foie0222/baken-kaigi",
+  "path": ".claude/skills/ddd-check/SKILL.md",
+  "source": "github.com/foie0222/baken-kaigi",
+  "downloaded_at": "2026-01-29T08:13:05.200599Z",
+  "dir_name": "ddd-check-foie0222-baken-kaigi-c8c33394",
+  "category": "development",
+  "author": "foie0222",
+  "source_url": "https://github.com/foie0222/baken-kaigi/blob/main/.claude/skills/ddd-check/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/foie0222/baken-kaigi/blob/main/.claude/skills/ddd-check/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

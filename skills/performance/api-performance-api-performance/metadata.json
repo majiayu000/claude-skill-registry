@@ -1,0 +1,17 @@
+{
+  "name": "api-performance-api-performance",
+  "repo": "agents-inc/skills",
+  "path": "src/skills/api-performance-api-performance/SKILL.md",
+  "github_branch": "main",
+  "category": "performance",
+  "source": "github.com/agents-inc/skills",
+  "dir_name": "api-performance-api-performance",
+  "downloaded_at": "2026-03-01T06:30:07.461506Z",
+  "author": "agents-inc",
+  "source_url": "https://github.com/agents-inc/skills/blob/main/src/skills/api-performance-api-performance/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agents-inc/skills/blob/main/src/skills/api-performance-api-performance/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

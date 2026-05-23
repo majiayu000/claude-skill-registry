@@ -1,0 +1,20 @@
+{
+  "name": "harness-coder",
+  "description": "",
+  "repo": "HouseGarofalo/claude-code-base",
+  "category": "agent",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HouseGarofalo/claude-code-base",
+  "github_path": ".claude/skills/harness-coder",
+  "github_branch": "master",
+  "dir_name": "harness-coder",
+  "downloaded_at": "2026-02-05T01:44:39.036673Z",
+  "author": "HouseGarofalo",
+  "source_url": "https://github.com/HouseGarofalo/claude-code-base/blob/master/.claude/skills/harness-coder/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 HouseGarofalo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

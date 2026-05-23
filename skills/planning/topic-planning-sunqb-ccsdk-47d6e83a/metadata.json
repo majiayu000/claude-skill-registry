@@ -1,0 +1,17 @@
+{
+  "name": "topic-planning",
+  "description": "选题策划主入口 - 识别策划场景，引导用户进入对应的专项Skill流程",
+  "repo": "sunqb/ccsdk",
+  "category": "planning",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sunqb/ccsdk",
+  "dir_name": "topic-planning-sunqb-ccsdk-47d6e83a",
+  "author": "sunqb",
+  "source_url": "https://github.com/sunqb/ccsdk",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sunqb/ccsdk",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

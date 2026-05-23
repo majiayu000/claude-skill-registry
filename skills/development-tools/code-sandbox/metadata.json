@@ -1,0 +1,16 @@
+{
+  "name": "code-sandbox",
+  "repo": "XPRNetwork/xpr-agents",
+  "path": "openclaw/starter/agent/skills/code-sandbox/SKILL.md",
+  "category": "development-tools",
+  "source": "github.com/XPRNetwork/xpr-agents",
+  "dir_name": "code-sandbox",
+  "downloaded_at": "2026-02-15T05:59:37.964514Z",
+  "author": "XPRNetwork",
+  "source_url": "https://github.com/XPRNetwork/xpr-agents/blob/main/openclaw/starter/agent/skills/code-sandbox/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/XPRNetwork/xpr-agents/blob/main/openclaw/starter/agent/skills/code-sandbox/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

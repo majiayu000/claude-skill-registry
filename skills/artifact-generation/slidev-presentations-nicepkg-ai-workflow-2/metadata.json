@@ -1,0 +1,18 @@
+{
+  "name": "slidev-presentations",
+  "description": "Generate professional, browser-based presentations using Slidev - the presentation framework for developers.",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/talk-to-slidev-workflow/.claude/skills/slidev-presentations",
+  "category": "artifact-generation",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nicepkg/ai-workflow",
+  "dir_name": "slidev-presentations-nicepkg-ai-workflow-2",
+  "author": "nicepkg",
+  "source_url": "https://github.com/nicepkg/ai-workflow/blob/main/workflows/talk-to-slidev-workflow/.claude/skills/slidev-presentations/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 nicepkg",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

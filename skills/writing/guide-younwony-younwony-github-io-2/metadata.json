@@ -1,0 +1,18 @@
+{
+  "name": "guide",
+  "description": "STAR+I 기법으로 이력서/경력기술서 작성이 필요할 때",
+  "repo": "younwony/younwony.github.io",
+  "path": ".claude/skills/write/guide",
+  "category": "writing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/younwony/younwony.github.io",
+  "dir_name": "guide-younwony-younwony-github-io-2",
+  "author": "younwony",
+  "source_url": "https://github.com/younwony/younwony.github.io/blob/main/.claude/skills/write/guide/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/younwony/younwony.github.io/blob/main/.claude/skills/write/guide/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

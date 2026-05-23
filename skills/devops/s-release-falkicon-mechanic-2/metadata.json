@@ -1,0 +1,17 @@
+{
+  "name": "s-release",
+  "repo": "Falkicon/Mechanic",
+  "path": ".agent/skills/s-release/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/Falkicon/Mechanic",
+  "dir_name": "s-release-falkicon-mechanic-2",
+  "downloaded_at": "2026-03-22T05:20:20.801802Z",
+  "author": "Falkicon",
+  "source_url": "https://github.com/Falkicon/Mechanic/blob/main/.agent/skills/s-release/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Falkicon/Mechanic/blob/main/.agent/skills/s-release/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

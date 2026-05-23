@@ -1,0 +1,17 @@
+{
+  "name": "rtk-optimizer",
+  "repo": "FlorianBruniaux/claude-code-ultimate-guide",
+  "path": "examples/skills/rtk-optimizer/SKILL.md",
+  "github_branch": "main",
+  "category": "development-tools",
+  "source": "github.com/FlorianBruniaux/claude-code-ultimate-guide",
+  "dir_name": "rtk-optimizer",
+  "downloaded_at": "2026-03-01T05:17:49.952515Z",
+  "author": "FlorianBruniaux",
+  "source_url": "https://github.com/FlorianBruniaux/claude-code-ultimate-guide/blob/main/examples/skills/rtk-optimizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/FlorianBruniaux/claude-code-ultimate-guide/blob/main/examples/skills/rtk-optimizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

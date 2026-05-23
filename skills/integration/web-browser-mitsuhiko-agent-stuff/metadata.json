@@ -1,0 +1,18 @@
+{
+  "name": "web-browser",
+  "repo": "mitsuhiko/agent-stuff",
+  "path": "skills/web-browser/SKILL.md",
+  "source": "github.com/mitsuhiko/agent-stuff",
+  "downloaded_at": "2026-01-19T02:51:53.660722Z",
+  "dir_name": "web-browser-mitsuhiko-agent-stuff",
+  "category": "integration",
+  "github_path": "skills/web-browser",
+  "github_branch": "main",
+  "author": "mitsuhiko",
+  "source_url": "https://github.com/mitsuhiko/agent-stuff/blob/main/skills/web-browser/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mitsuhiko/agent-stuff/blob/main/skills/web-browser/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

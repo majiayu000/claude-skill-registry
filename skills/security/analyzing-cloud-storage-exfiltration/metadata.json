@@ -1,0 +1,17 @@
+{
+  "name": "analyzing-cloud-storage-exfiltration",
+  "repo": "defconxt/CIPHER",
+  "path": "skills/cloud-forensics/techniques/analyzing-cloud-storage-exfiltration/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/defconxt/CIPHER",
+  "dir_name": "analyzing-cloud-storage-exfiltration",
+  "downloaded_at": "2026-03-22T07:42:59.010160Z",
+  "author": "defconxt",
+  "source_url": "https://github.com/defconxt/CIPHER/blob/main/skills/cloud-forensics/techniques/analyzing-cloud-storage-exfiltration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/defconxt/CIPHER/blob/main/skills/cloud-forensics/techniques/analyzing-cloud-storage-exfiltration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

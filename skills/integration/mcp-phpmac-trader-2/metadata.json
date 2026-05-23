@@ -1,0 +1,18 @@
+{
+  "name": "MCP工具编写",
+  "description": "使用 FastMCP 框架开发交易相关的 MCP 工具, 包括交易所 API 集成(币安/OKX等)、行情数据获取、订单管理等.当需要创建 MCP 服务器或交易工具时触发此技能.",
+  "repo": "phpmac/trader",
+  "path": ".claude/skills/MCP工具编写",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/phpmac/trader",
+  "dir_name": "mcp-phpmac-trader-2",
+  "author": "phpmac",
+  "source_url": "https://github.com/phpmac/trader/blob/main/.claude/skills/MCP工具编写/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/phpmac/trader/blob/main/.claude/skills/MCP工具编写/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

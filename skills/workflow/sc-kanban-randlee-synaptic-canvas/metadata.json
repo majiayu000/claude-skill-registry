@@ -1,0 +1,16 @@
+{
+  "name": "sc-kanban",
+  "repo": "randlee/synaptic-canvas",
+  "path": "packages/sc-kanban/skills/sc-kanban/SKILL.md",
+  "source": "github.com/randlee/synaptic-canvas",
+  "downloaded_at": "2026-01-29T05:29:57.144155Z",
+  "dir_name": "sc-kanban-randlee-synaptic-canvas",
+  "category": "workflow",
+  "author": "randlee",
+  "source_url": "https://github.com/randlee/synaptic-canvas/blob/main/packages/sc-kanban/skills/sc-kanban/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Rand Lee",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

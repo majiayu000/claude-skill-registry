@@ -1,0 +1,16 @@
+{
+  "name": "debugging-atmos",
+  "repo": "cloudposse/docs",
+  "path": "examples/snippets/.claude/skills/debugging-atmos/SKILL.md",
+  "category": "devops",
+  "source": "github.com/cloudposse/docs",
+  "dir_name": "debugging-atmos",
+  "downloaded_at": "2026-02-15T06:46:14.978358Z",
+  "author": "cloudposse",
+  "source_url": "https://github.com/cloudposse/docs/blob/main/examples/snippets/.claude/skills/debugging-atmos/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cloudposse/docs/blob/main/examples/snippets/.claude/skills/debugging-atmos/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

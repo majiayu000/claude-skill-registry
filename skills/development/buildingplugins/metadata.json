@@ -1,0 +1,16 @@
+{
+  "name": "buildingplugins",
+  "repo": "GGPrompts/my-plugins",
+  "path": "plugins/plugin-dev/skills/buildingplugins/SKILL.md",
+  "source": "github.com/GGPrompts/my-plugins",
+  "downloaded_at": "2026-01-19T01:51:57.190249Z",
+  "dir_name": "buildingplugins",
+  "category": "development",
+  "author": "GGPrompts",
+  "source_url": "https://github.com/GGPrompts/my-plugins/blob/main/plugins/plugin-dev/skills/buildingplugins/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/GGPrompts/my-plugins/blob/main/plugins/plugin-dev/skills/buildingplugins/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "expansion-evaluation",
+  "description": "Manage the SoNash expansion evaluation process for reviewing ~280 feature and technical ideas across 21 modules. This skill should be used when the user wants to evaluate expansion ideas, track progre",
+  "repo": "jasonmichaelbell78-creator/sonash-v0",
+  "path": ".claude/skills/expansion-evaluation",
+  "category": "product",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jasonmichaelbell78-creator/sonash-v0",
+  "dir_name": "expansion-evaluation-jasonmichaelbell78-c-sonash-v0-2",
+  "author": "jasonmichaelbell78-creator",
+  "source_url": "https://github.com/jasonmichaelbell78-creator/sonash-v0/blob/main/.claude/skills/expansion-evaluation/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jasonmichaelbell78-creator/sonash-v0/blob/main/.claude/skills/expansion-evaluation/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

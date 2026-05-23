@@ -1,0 +1,16 @@
+{
+  "name": "Prompt_Architect",
+  "repo": "adriangmrraa/MultiAgents-Platform-ROI",
+  "path": ".agent/skills/Prompt_Architect/SKILL.md",
+  "source": "github.com/adriangmrraa/MultiAgents-Platform-ROI",
+  "downloaded_at": "2026-02-02T02:09:52.347095Z",
+  "dir_name": "prompt-architect-adriangmrraa-multiagents-platform",
+  "category": "ai-llm",
+  "author": "adriangmrraa",
+  "source_url": "https://github.com/adriangmrraa/MultiAgents-Platform-ROI/blob/main/.agent/skills/Prompt_Architect/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adriangmrraa/MultiAgents-Platform-ROI/blob/main/.agent/skills/Prompt_Architect/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

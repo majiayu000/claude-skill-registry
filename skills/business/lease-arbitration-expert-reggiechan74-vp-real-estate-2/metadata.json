@@ -1,0 +1,18 @@
+{
+  "name": "lease-arbitration-expert",
+  "description": "Expert in lease arbitration agreements that create binding dispute resolution when parties cannot agree on renewal rent or fair market value. Use when drafting renewal option clauses with rent arbitra",
+  "repo": "reggiechan74/vp-real-estate",
+  "path": ".claude/skills/lease-arbitration-expert",
+  "category": "business",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/reggiechan74/vp-real-estate",
+  "dir_name": "lease-arbitration-expert-reggiechan74-vp-real-estate-2",
+  "author": "reggiechan74",
+  "source_url": "https://github.com/reggiechan74/vp-real-estate/blob/main/.claude/skills/lease-arbitration-expert/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/reggiechan74/vp-real-estate/blob/main/.claude/skills/lease-arbitration-expert/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

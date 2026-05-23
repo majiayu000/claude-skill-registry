@@ -1,0 +1,13 @@
+{
+  "name": "abductive-analyst",
+  "description": "Claude Code plugins for quantitative and qualitative sociological research",
+  "repo": "nealcaren/sociology-analysis-agents",
+  "category": "analysis",
+  "tags": [],
+  "stars": 3,
+  "source": "",
+  "github_path": "plugins/abductive-analyst/skills/abductive-analyst",
+  "github_branch": "main",
+  "dir_name": "abductive-analyst-nealcaren-sociology-analysis-a",
+  "downloaded_at": "2026-02-05T01:45:31.393923Z"
+}

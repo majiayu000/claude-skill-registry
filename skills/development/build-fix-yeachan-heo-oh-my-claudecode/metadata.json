@@ -1,0 +1,16 @@
+{
+  "name": "build-fix",
+  "repo": "Yeachan-Heo/oh-my-claudecode",
+  "path": "skills/build-fix/SKILL.md",
+  "source": "github.com/Yeachan-Heo/oh-my-claudecode",
+  "downloaded_at": "2026-02-02T01:07:32.362918Z",
+  "dir_name": "build-fix-yeachan-heo-oh-my-claudecode",
+  "category": "development",
+  "author": "Yeachan-Heo",
+  "source_url": "https://github.com/Yeachan-Heo/oh-my-claudecode/blob/main/skills/build-fix/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Yeachan Heo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

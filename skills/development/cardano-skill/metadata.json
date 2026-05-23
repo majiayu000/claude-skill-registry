@@ -1,0 +1,17 @@
+{
+  "name": "cardano-skill",
+  "repo": "ADAvault/cardano-skill",
+  "path": "SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/ADAvault/cardano-skill",
+  "dir_name": "cardano-skill",
+  "downloaded_at": "2026-03-22T04:42:48.562952Z",
+  "author": "ADAvault",
+  "source_url": "https://github.com/ADAvault/cardano-skill/blob/main/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ADAvault/cardano-skill/blob/main/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

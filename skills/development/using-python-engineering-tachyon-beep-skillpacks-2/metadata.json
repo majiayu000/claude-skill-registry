@@ -1,0 +1,18 @@
+{
+  "name": "using-python-engineering",
+  "description": "Routes to appropriate Python specialist skill based on symptoms and problem type",
+  "repo": "tachyon-beep/skillpacks",
+  "path": "plugins/axiom-python-engineering/skills/using-python-engineering",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tachyon-beep/skillpacks",
+  "dir_name": "using-python-engineering-tachyon-beep-skillpacks-2",
+  "author": "tachyon-beep",
+  "source_url": "https://github.com/tachyon-beep/skillpacks/blob/main/plugins/axiom-python-engineering/skills/using-python-engineering/SKILL.md",
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tachyon-beep/skillpacks/blob/main/plugins/axiom-python-engineering/skills/using-python-engineering/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "implementation-spec",
+  "description": "Master orchestrator that generates all implementation specs (PRD, Architecture, UX, Implementation, Test, Release) from product plan. Use when generating complete specification package.",
+  "repo": "rshankras/claude-code-apple-skills",
+  "path": "skills/product/implementation-spec",
+  "category": "product",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rshankras/claude-code-apple-skills",
+  "dir_name": "implementation-spec-rshankras-claude-code-apple-sk-2",
+  "author": "rshankras",
+  "source_url": "https://github.com/rshankras/claude-code-apple-skills/blob/main/skills/product/implementation-spec/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ravishankar",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

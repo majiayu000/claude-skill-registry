@@ -1,0 +1,16 @@
+{
+  "name": "performance",
+  "repo": "TheBeardedBearSAS/claude-craft",
+  "path": "Dev/i18n/en/ReactNative/skills/performance/SKILL.md",
+  "category": "performance",
+  "source": "github.com/TheBeardedBearSAS/claude-craft",
+  "dir_name": "performance-thebeardedbearsas-claude-craft-12",
+  "downloaded_at": "2026-02-22T05:49:38.115631Z",
+  "author": "TheBeardedBearSAS",
+  "source_url": "https://github.com/TheBeardedBearSAS/claude-craft/blob/main/Dev/i18n/en/ReactNative/skills/performance/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2026 TheBeardedCTO",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

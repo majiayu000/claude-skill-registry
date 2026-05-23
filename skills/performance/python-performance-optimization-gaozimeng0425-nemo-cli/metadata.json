@@ -1,0 +1,16 @@
+{
+  "name": "python-performance-optimization",
+  "repo": "GaoZimeng0425/nemo-cli",
+  "path": ".claude/skills/python-performance-optimization/SKILL.md",
+  "source": "github.com/GaoZimeng0425/nemo-cli",
+  "downloaded_at": "2026-02-02T03:50:34.522261Z",
+  "dir_name": "python-performance-optimization-gaozimeng0425-nemo-cli",
+  "category": "performance",
+  "author": "GaoZimeng0425",
+  "source_url": "https://github.com/GaoZimeng0425/nemo-cli/blob/main/.claude/skills/python-performance-optimization/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/GaoZimeng0425/nemo-cli/blob/main/.claude/skills/python-performance-optimization/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

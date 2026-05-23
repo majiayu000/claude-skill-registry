@@ -1,0 +1,20 @@
+{
+  "name": "internal-comms",
+  "description": "",
+  "repo": "nimeshgurung/artifact-hub-collections",
+  "category": "communication",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nimeshgurung/artifact-hub-collections",
+  "github_path": "skills/raw/anthropics/skills/internal-comms",
+  "github_branch": "main",
+  "dir_name": "internal-comms-nimeshgurung-artifact-hub-collect",
+  "downloaded_at": "2026-02-05T05:10:23.697975Z",
+  "author": "nimeshgurung",
+  "source_url": "https://github.com/nimeshgurung/artifact-hub-collections/blob/main/skills/raw/anthropics/skills/internal-comms/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nimeshgurung/artifact-hub-collections/blob/main/skills/raw/anthropics/skills/internal-comms/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "git-commit-message",
+  "repo": "iplaylf2/coding-profile",
+  "path": "agent/skills/git-commit-message/SKILL.md",
+  "source": "github.com/iplaylf2/coding-profile",
+  "downloaded_at": "2026-01-29T05:22:38.281430Z",
+  "dir_name": "git-commit-message-iplaylf2-coding-profile",
+  "category": "development-tools",
+  "author": "iplaylf2",
+  "source_url": "https://github.com/iplaylf2/coding-profile/blob/main/agent/skills/git-commit-message/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/iplaylf2/coding-profile/blob/main/agent/skills/git-commit-message/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

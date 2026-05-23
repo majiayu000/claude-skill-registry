@@ -1,0 +1,18 @@
+{
+  "name": "estimation-techniques",
+  "repo": "daishiman/AIWorkflowOrchestrator",
+  "path": "docs/99-claude/skills/estimation-techniques/SKILL.md",
+  "source": "github.com/daishiman/AIWorkflowOrchestrator",
+  "downloaded_at": "2026-01-17T02:52:39.138897Z",
+  "dir_name": "estimation-techniques",
+  "category": "planning",
+  "github_path": "docs/99-claude/skills/estimation-techniques",
+  "github_branch": "main",
+  "author": "daishiman",
+  "source_url": "https://github.com/daishiman/AIWorkflowOrchestrator/blob/main/docs/99-claude/skills/estimation-techniques/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/daishiman/AIWorkflowOrchestrator/blob/main/docs/99-claude/skills/estimation-techniques/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

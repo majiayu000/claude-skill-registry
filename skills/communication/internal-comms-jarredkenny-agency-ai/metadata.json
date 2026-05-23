@@ -1,0 +1,13 @@
+{
+  "name": "internal-comms",
+  "description": "",
+  "repo": "jarredkenny/agency-ai",
+  "category": "communication",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jarredkenny/agency-ai",
+  "github_path": "roles/orchestrator/skills/internal-comms",
+  "github_branch": "main",
+  "dir_name": "internal-comms-jarredkenny-agency-ai",
+  "downloaded_at": "2026-02-05T01:45:07.661956Z"
+}

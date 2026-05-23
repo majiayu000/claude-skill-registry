@@ -1,0 +1,17 @@
+{
+  "name": "ln-300-task-coordinator",
+  "repo": "cbbkrd-tech/jl-finishes",
+  "path": ".claude/skills/ln-300-task-coordinator/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/cbbkrd-tech/jl-finishes",
+  "dir_name": "ln-300-task-coordinator-cbbkrd-tech-jl-finishes",
+  "downloaded_at": "2026-03-22T07:25:34.116656Z",
+  "author": "cbbkrd-tech",
+  "source_url": "https://github.com/cbbkrd-tech/jl-finishes/blob/main/.claude/skills/ln-300-task-coordinator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cbbkrd-tech/jl-finishes/blob/main/.claude/skills/ln-300-task-coordinator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

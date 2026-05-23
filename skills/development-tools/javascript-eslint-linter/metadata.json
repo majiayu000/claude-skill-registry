@@ -1,0 +1,16 @@
+{
+  "name": "javascript-eslint-linter",
+  "repo": "darellchua2/opencode-config-template",
+  "path": "skills/javascript-eslint-linter/SKILL.md",
+  "source": "github.com/darellchua2/opencode-config-template",
+  "downloaded_at": "2026-01-27T03:48:04.993395Z",
+  "dir_name": "javascript-eslint-linter",
+  "category": "development-tools",
+  "author": "darellchua2",
+  "source_url": "https://github.com/darellchua2/opencode-config-template/blob/main/skills/javascript-eslint-linter/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2026 OpenCode Configuration Template Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

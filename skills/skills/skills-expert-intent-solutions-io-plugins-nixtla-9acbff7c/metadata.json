@@ -1,0 +1,16 @@
+{
+  "name": "skills-expert",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": ".claude/skills/skills-expert/SKILL.md",
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "downloaded_at": "2026-01-29T05:17:39.031219Z",
+  "dir_name": "skills-expert-intent-solutions-io-plugins-nixtla-9acbff7c",
+  "category": "skills",
+  "author": "intent-solutions-io",
+  "source_url": "https://github.com/intent-solutions-io/plugins-nixtla/blob/main/.claude/skills/skills-expert/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025-2026 Jeremy Longshore",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

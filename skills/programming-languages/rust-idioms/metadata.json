@@ -1,0 +1,18 @@
+{
+  "name": "rust-idioms",
+  "repo": "pproenca/dot-skills",
+  "path": "skills/.experimental/rust-idioms/SKILL.md",
+  "source": "github.com/pproenca/dot-skills",
+  "downloaded_at": "2026-01-22T02:36:28.968014Z",
+  "dir_name": "rust-idioms",
+  "category": "programming-languages",
+  "github_path": "skills/.experimental/rust-idioms",
+  "github_branch": "main",
+  "author": "pproenca",
+  "source_url": "https://github.com/pproenca/dot-skills/blob/main/skills/.experimental/rust-idioms/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,9 +1,0 @@
-{
-  "name": "issue-creation",
-  "repo": "langadventurellc/claude-marketplace",
-  "path": "plugins/task-trellis/skills/issue-creation/SKILL.md",
-  "source": "github.com/langadventurellc/claude-marketplace",
-  "downloaded_at": "2026-01-31T04:03:38.515295Z",
-  "dir_name": "issue-creation",
-  "category": "other"
-}

@@ -1,0 +1,16 @@
+{
+  "name": "team-lead",
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave/skills/team-lead/SKILL.md",
+  "category": "agent-coordination",
+  "source": "github.com/anton-abyzov/specweave",
+  "dir_name": "team-lead",
+  "downloaded_at": "2026-02-22T06:18:52.980190Z",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave/skills/team-lead/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

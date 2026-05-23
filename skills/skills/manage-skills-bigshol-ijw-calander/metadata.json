@@ -1,0 +1,17 @@
+{
+  "name": "manage-skills",
+  "repo": "BIGSHOL/ijw-Calander",
+  "path": ".claude/skills/manage-skills/SKILL.md",
+  "github_branch": "main",
+  "category": "skills",
+  "source": "github.com/BIGSHOL/ijw-Calander",
+  "dir_name": "manage-skills-bigshol-ijw-calander",
+  "downloaded_at": "2026-03-01T04:56:26.998307Z",
+  "author": "BIGSHOL",
+  "source_url": "https://github.com/BIGSHOL/ijw-Calander/blob/main/.claude/skills/manage-skills/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BIGSHOL/ijw-Calander/blob/main/.claude/skills/manage-skills/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

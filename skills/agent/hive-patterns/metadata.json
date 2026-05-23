@@ -1,0 +1,16 @@
+{
+  "name": "hive-patterns",
+  "repo": "adenhq/hive",
+  "path": ".claude/skills/hive-patterns/SKILL.md",
+  "category": "agent",
+  "source": "github.com/adenhq/hive",
+  "dir_name": "hive-patterns",
+  "downloaded_at": "2026-02-15T06:06:00.340339Z",
+  "author": "adenhq",
+  "source_url": "https://github.com/adenhq/hive/blob/main/.claude/skills/hive-patterns/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adenhq/hive/blob/main/.claude/skills/hive-patterns/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

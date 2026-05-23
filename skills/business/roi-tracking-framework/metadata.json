@@ -1,0 +1,17 @@
+{
+  "name": "roi-tracking-framework",
+  "repo": "ChunkyTortoise/EnterpriseHub",
+  "path": ".claude/skills/analytics/roi-tracking-framework/SKILL.md",
+  "github_branch": "main",
+  "category": "business",
+  "source": "github.com/ChunkyTortoise/EnterpriseHub",
+  "dir_name": "roi-tracking-framework",
+  "downloaded_at": "2026-03-01T05:03:44.643317Z",
+  "author": "ChunkyTortoise",
+  "source_url": "https://github.com/ChunkyTortoise/EnterpriseHub/blob/main/.claude/skills/analytics/roi-tracking-framework/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ChunkyTortoise/EnterpriseHub/blob/main/.claude/skills/analytics/roi-tracking-framework/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

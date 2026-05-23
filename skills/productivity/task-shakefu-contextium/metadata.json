@@ -1,0 +1,16 @@
+{
+  "name": "task",
+  "repo": "shakefu/contextium",
+  "path": ".claude/skills/task/SKILL.md",
+  "source": "github.com/shakefu/contextium",
+  "downloaded_at": "2026-01-29T08:54:02.332993Z",
+  "dir_name": "task-shakefu-contextium",
+  "category": "productivity",
+  "author": "shakefu",
+  "source_url": "https://github.com/shakefu/contextium/blob/main/.claude/skills/task/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

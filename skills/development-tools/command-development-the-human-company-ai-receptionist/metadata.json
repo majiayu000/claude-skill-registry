@@ -1,0 +1,16 @@
+{
+  "name": "command-development",
+  "repo": "The-Human-Company/ai-receptionist",
+  "path": ".claude/skills/plugin-dev/skills/command-development/SKILL.md",
+  "category": "development-tools",
+  "source": "github.com/The-Human-Company/ai-receptionist",
+  "dir_name": "command-development-the-human-company-ai-receptionist",
+  "downloaded_at": "2026-02-22T05:49:18.519046Z",
+  "author": "The-Human-Company",
+  "source_url": "https://github.com/The-Human-Company/ai-receptionist/blob/main/.claude/skills/plugin-dev/skills/command-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/The-Human-Company/ai-receptionist/blob/main/.claude/skills/plugin-dev/skills/command-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

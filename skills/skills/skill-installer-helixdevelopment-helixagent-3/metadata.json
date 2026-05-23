@@ -1,0 +1,17 @@
+{
+  "name": "skill-installer",
+  "repo": "HelixDevelopment/HelixAgent",
+  "path": "skills/misc/vtcode/skill-installer/SKILL.md",
+  "github_branch": "main",
+  "category": "skills",
+  "source": "github.com/HelixDevelopment/HelixAgent",
+  "dir_name": "skill-installer-helixdevelopment-helixagent-3",
+  "downloaded_at": "2026-03-22T05:27:42.708353Z",
+  "author": "HelixDevelopment",
+  "source_url": "https://github.com/HelixDevelopment/HelixAgent/blob/main/skills/misc/vtcode/skill-installer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HelixDevelopment/HelixAgent/blob/main/skills/misc/vtcode/skill-installer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

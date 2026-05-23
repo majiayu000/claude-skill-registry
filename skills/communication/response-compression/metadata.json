@@ -1,0 +1,16 @@
+{
+  "name": "response-compression",
+  "repo": "Ven0m0/claude-config",
+  "path": "plugins/conserve/skills/response-compression/SKILL.md",
+  "source": "github.com/Ven0m0/claude-config",
+  "downloaded_at": "2026-02-02T04:09:59.867635Z",
+  "dir_name": "response-compression",
+  "category": "communication",
+  "author": "Ven0m0",
+  "source_url": "https://github.com/Ven0m0/claude-config/blob/main/plugins/conserve/skills/response-compression/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

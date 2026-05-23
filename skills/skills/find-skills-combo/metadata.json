@@ -1,0 +1,17 @@
+{
+  "name": "find-skills-combo",
+  "repo": "agentscope-ai/OpenJudge",
+  "path": "skills/find-skills-combo/SKILL.md",
+  "github_branch": "main",
+  "category": "skills",
+  "source": "github.com/agentscope-ai/OpenJudge",
+  "dir_name": "find-skills-combo",
+  "downloaded_at": "2026-03-22T06:42:49.299606Z",
+  "author": "agentscope-ai",
+  "source_url": "https://github.com/agentscope-ai/OpenJudge/blob/main/skills/find-skills-combo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agentscope-ai/OpenJudge/blob/main/skills/find-skills-combo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "gh-review-pr",
+  "repo": "mvillmow/ProjectOdyssey",
+  "path": ".claude/skills/gh-review-pr/SKILL.md",
+  "source": "github.com/mvillmow/ProjectOdyssey",
+  "downloaded_at": "2026-01-22T02:46:10.179633Z",
+  "dir_name": "gh-review-pr",
+  "category": "github-integration",
+  "github_path": ".claude/skills/gh-review-pr",
+  "github_branch": "main",
+  "author": "mvillmow",
+  "source_url": "https://github.com/mvillmow/ProjectOdyssey/blob/main/.claude/skills/gh-review-pr/SKILL.md",
+  "license": "BSD-3-Clause",
+  "copyright": "Copyright (c) 2025, ML Odyssey Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

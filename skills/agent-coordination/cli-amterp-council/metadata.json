@@ -1,0 +1,17 @@
+{
+  "name": "cli",
+  "repo": "amterp/council",
+  "path": "internal/cli/skill.md",
+  "github_branch": "main",
+  "category": "agent-coordination",
+  "source": "github.com/amterp/council",
+  "dir_name": "cli-amterp-council",
+  "downloaded_at": "2026-03-22T06:54:23.208339Z",
+  "author": "amterp",
+  "source_url": "https://github.com/amterp/council/blob/main/internal/cli/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/amterp/council/blob/main/internal/cli/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

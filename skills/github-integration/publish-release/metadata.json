@@ -1,0 +1,11 @@
+{
+  "name": "publish-release",
+  "repo": "stoicstudio/ClaudeConductor",
+  "path": ".claude/skills/publish-release/SKILL.md",
+  "source": "github.com/stoicstudio/ClaudeConductor",
+  "downloaded_at": "2026-01-22T02:34:20.837498Z",
+  "dir_name": "publish-release",
+  "category": "github-integration",
+  "github_path": ".claude/skills/publish-release",
+  "github_branch": "main"
+}

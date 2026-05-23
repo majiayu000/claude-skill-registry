@@ -1,0 +1,20 @@
+{
+  "name": "gh-address-comments",
+  "description": "",
+  "repo": "northseadl/skillwisp",
+  "category": "github-integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/northseadl/skillwisp",
+  "github_path": "skills/@openai/gh-address-comments",
+  "github_branch": "main",
+  "dir_name": "gh-address-comments-northseadl-skillwisp",
+  "downloaded_at": "2026-02-05T01:44:58.842295Z",
+  "author": "northseadl",
+  "source_url": "https://github.com/northseadl/skillwisp/blob/main/skills/@openai/gh-address-comments/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 SkillWisp",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

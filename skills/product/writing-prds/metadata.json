@@ -1,0 +1,16 @@
+{
+  "name": "writing-prds",
+  "repo": "liqiongyu/lenny_skills_plus",
+  "path": "skills/writing-prds/SKILL.md",
+  "source": "github.com/liqiongyu/lenny_skills_plus",
+  "downloaded_at": "2026-01-29T08:27:43.285144Z",
+  "dir_name": "writing-prds",
+  "category": "product",
+  "author": "liqiongyu",
+  "source_url": "https://github.com/liqiongyu/lenny_skills_plus/blob/main/skills/writing-prds/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/liqiongyu/lenny_skills_plus/blob/main/skills/writing-prds/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

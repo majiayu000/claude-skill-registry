@@ -1,0 +1,17 @@
+{
+  "name": "research-assistant",
+  "repo": "alchimie-di-circe/Extractor-desktop-app",
+  "path": ".taskmaster/docs/research/COLE-MEDIN-SKILL-SYSTEM/custom-agent-with-skills-main/skills/research_assistant/SKILL.md",
+  "github_branch": "main",
+  "category": "research-analysis",
+  "source": "github.com/alchimie-di-circe/Extractor-desktop-app",
+  "dir_name": "research-assistant-alchimie-di-circe-extractor-desktop-ap",
+  "downloaded_at": "2026-03-01T06:36:25.070512Z",
+  "author": "alchimie-di-circe",
+  "source_url": "https://github.com/alchimie-di-circe/Extractor-desktop-app/blob/main/.taskmaster/docs/research/COLE-MEDIN-SKILL-SYSTEM/custom-agent-with-skills-main/skills/research_assistant/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alchimie-di-circe/Extractor-desktop-app/blob/main/.taskmaster/docs/research/COLE-MEDIN-SKILL-SYSTEM/custom-agent-with-skills-main/skills/research_assistant/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

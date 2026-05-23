@@ -1,0 +1,20 @@
+{
+  "name": "orchestrating-parallel-tasks",
+  "description": "",
+  "repo": "yu-iskw/coding-agent-skills",
+  "category": "orchestration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yu-iskw/coding-agent-skills",
+  "github_path": "skills/orchestrating-parallel-tasks",
+  "github_branch": "main",
+  "dir_name": "orchestrating-parallel-tasks",
+  "downloaded_at": "2026-02-05T01:44:37.893446Z",
+  "author": "yu-iskw",
+  "source_url": "https://github.com/yu-iskw/coding-agent-skills/blob/main/skills/orchestrating-parallel-tasks/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yu-iskw/coding-agent-skills/blob/main/skills/orchestrating-parallel-tasks/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

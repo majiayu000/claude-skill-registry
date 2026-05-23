@@ -1,0 +1,16 @@
+{
+  "name": "github-multi-repo",
+  "repo": "DNYoussef/ai-chrome-extension",
+  "path": ".claude/skills/github-multi-repo/SKILL.md",
+  "source": "github.com/DNYoussef/ai-chrome-extension",
+  "downloaded_at": "2026-01-29T08:56:01.930042Z",
+  "dir_name": "github-multi-repo-dnyoussef-ai-chrome-extension",
+  "category": "github-integration",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/ai-chrome-extension/blob/main/.claude/skills/github-multi-repo/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ReadFlow Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "taiyo-style-bullet",
+  "repo": "taiyousan15/taisun_agent",
+  "path": ".claude/skills/taiyo-style-bullet/SKILL.md",
+  "source": "github.com/taiyousan15/taisun_agent",
+  "downloaded_at": "2026-01-29T07:13:06.688883Z",
+  "dir_name": "taiyo-style-bullet-taiyousan15-taisun-agent-ea2e1e88",
+  "category": "writing",
+  "author": "taiyousan15",
+  "source_url": "https://github.com/taiyousan15/taisun_agent/blob/main/.claude/skills/taiyo-style-bullet/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 taiyousan15",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

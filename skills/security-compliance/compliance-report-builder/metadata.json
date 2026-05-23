@@ -1,0 +1,16 @@
+{
+  "name": "compliance-report-builder",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/compliance-report-builder/SKILL.md",
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "downloaded_at": "2026-02-02T02:28:09.089501Z",
+  "dir_name": "compliance-report-builder",
+  "category": "security-compliance",
+  "author": "dengineproblem",
+  "source_url": "https://github.com/dengineproblem/agents-monorepo/blob/main/.claude/skills/compliance-report-builder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dengineproblem/agents-monorepo/blob/main/.claude/skills/compliance-report-builder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

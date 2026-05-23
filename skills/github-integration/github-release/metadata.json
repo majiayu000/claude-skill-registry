@@ -1,0 +1,16 @@
+{
+  "name": "github-release",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/github-release/SKILL.md",
+  "category": "github-integration",
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "github-release",
+  "downloaded_at": "2026-02-22T07:39:30.691458Z",
+  "author": "jezweb",
+  "source_url": "https://github.com/jezweb/claude-skills/blob/main/skills/github-release/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Dawes (Jezweb)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

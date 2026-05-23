@@ -1,0 +1,18 @@
+{
+  "name": "using-lsp-tools",
+  "repo": "axiomantic/spellbook",
+  "path": "skills/using-lsp-tools/SKILL.md",
+  "source": "github.com/axiomantic/spellbook",
+  "downloaded_at": "2026-01-14T03:44:29.232834Z",
+  "dir_name": "using-lsp-tools",
+  "category": "development-tools",
+  "github_path": "skills/using-lsp-tools",
+  "github_branch": "main",
+  "author": "axiomantic",
+  "source_url": "https://github.com/axiomantic/spellbook/blob/main/skills/using-lsp-tools/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Elijah Rutschman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

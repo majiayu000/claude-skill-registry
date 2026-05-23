@@ -1,0 +1,13 @@
+{
+  "name": "gh-implement-issue",
+  "description": "",
+  "repo": "HomericIntelligence/ProjectOdyssey",
+  "category": "github-integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HomericIntelligence/ProjectOdyssey",
+  "github_path": ".claude/skills/gh-implement-issue",
+  "github_branch": "main",
+  "dir_name": "gh-implement-issue-homericintelligence-projectodyssey",
+  "downloaded_at": "2026-02-05T01:44:42.805916Z"
+}

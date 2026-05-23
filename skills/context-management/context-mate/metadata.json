@@ -1,0 +1,16 @@
+{
+  "name": "context-mate",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/context-mate/SKILL.md",
+  "source": "github.com/jezweb/claude-skills",
+  "downloaded_at": "2026-02-02T04:09:01.466403Z",
+  "dir_name": "context-mate",
+  "category": "context-management",
+  "author": "jezweb",
+  "source_url": "https://github.com/jezweb/claude-skills/blob/main/skills/context-mate/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Dawes (Jezweb)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "claude-dj",
+  "description": "",
+  "repo": "uetuluk/claude-dj-mcp",
+  "category": "creative",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/uetuluk/claude-dj-mcp",
+  "github_path": "claude-dj",
+  "github_branch": "master",
+  "dir_name": "claude-dj",
+  "downloaded_at": "2026-02-05T01:44:59.318220Z",
+  "author": "uetuluk",
+  "source_url": "https://github.com/uetuluk/claude-dj-mcp/blob/master/claude-dj/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/uetuluk/claude-dj-mcp/blob/master/claude-dj/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

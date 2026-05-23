@@ -1,0 +1,18 @@
+{
+  "name": "codex-git",
+  "repo": "adaptationio/Skrillz",
+  "path": "skills/codex-git/SKILL.md",
+  "source": "github.com/adaptationio/Skrillz",
+  "downloaded_at": "2026-01-22T03:07:08.746593Z",
+  "dir_name": "codex-git",
+  "category": "github-integration",
+  "github_path": ".claude/skills/codex-git",
+  "github_branch": "main",
+  "author": "adaptationio",
+  "source_url": "https://github.com/adaptationio/Skrillz/blob/main/.claude/skills/codex-git/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adaptationio/Skrillz/blob/main/.claude/skills/codex-git/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "claude-skill-bit-cli",
+  "repo": "teambit/bit",
+  "path": "contrib/claude-skill-bit-cli/SKILL.md",
+  "source": "github.com/teambit/bit",
+  "downloaded_at": "2026-01-22T01:29:30.624002Z",
+  "dir_name": "claude-skill-bit-cli",
+  "category": "development-tools",
+  "github_path": "contrib/claude-skill-bit-cli",
+  "github_branch": "main",
+  "author": "teambit",
+  "source_url": "https://github.com/teambit/bit/blob/main/contrib/claude-skill-bit-cli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (C) 2017 Cocycles Ltd.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

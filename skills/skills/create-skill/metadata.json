@@ -1,0 +1,13 @@
+{
+  "name": "create-skill",
+  "description": "",
+  "repo": "launchdarkly/agent-skills",
+  "category": "skills",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/launchdarkly/agent-skills",
+  "github_path": "skills/skill-authoring/create-skill",
+  "github_branch": "main",
+  "dir_name": "create-skill",
+  "downloaded_at": "2026-02-05T01:44:57.133973Z"
+}

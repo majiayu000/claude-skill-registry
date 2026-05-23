@@ -1,0 +1,18 @@
+{
+  "name": "independent-research",
+  "repo": "audunstrand/status-app",
+  "path": ".github/skills/independent-research/SKILL.md",
+  "source": "github.com/audunstrand/status-app",
+  "downloaded_at": "2026-01-14T01:52:03.394964Z",
+  "dir_name": "independent-research",
+  "category": "research-analysis",
+  "github_path": ".github/skills/independent-research",
+  "github_branch": "main",
+  "author": "audunstrand",
+  "source_url": "https://github.com/audunstrand/status-app/blob/main/.github/skills/independent-research/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/audunstrand/status-app/blob/main/.github/skills/independent-research/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

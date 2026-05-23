@@ -1,0 +1,16 @@
+{
+  "name": "hive",
+  "repo": "rdfitted/Claude-Code-Setup",
+  "path": ".codex/skills/hive/SKILL.md",
+  "source": "github.com/rdfitted/Claude-Code-Setup",
+  "downloaded_at": "2026-02-02T01:55:56.220715Z",
+  "dir_name": "hive",
+  "category": "orchestration",
+  "author": "rdfitted",
+  "source_url": "https://github.com/rdfitted/Claude-Code-Setup/blob/main/.codex/skills/hive/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rdfitted/Claude-Code-Setup/blob/main/.codex/skills/hive/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "evo-os-gh-triage",
+  "repo": "EvolutionAPI/EVO-METHOD",
+  "path": ".claude/skills/evo-os-gh-triage/SKILL.md",
+  "github_branch": "main",
+  "category": "github-integration",
+  "source": "github.com/EvolutionAPI/EVO-METHOD",
+  "dir_name": "evo-os-gh-triage",
+  "downloaded_at": "2026-03-22T05:19:46.733600Z",
+  "author": "EvolutionAPI",
+  "source_url": "https://github.com/EvolutionAPI/EVO-METHOD/blob/main/.claude/skills/evo-os-gh-triage/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/EvolutionAPI/EVO-METHOD/blob/main/.claude/skills/evo-os-gh-triage/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

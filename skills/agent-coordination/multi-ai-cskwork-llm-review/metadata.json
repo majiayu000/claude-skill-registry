@@ -1,0 +1,9 @@
+{
+  "name": "multi-ai",
+  "repo": "cskwork/llm-review",
+  "path": ".claude/skills/multi-ai/SKILL.md",
+  "source": "github.com/cskwork/llm-review",
+  "downloaded_at": "2026-02-02T01:08:57.093729Z",
+  "dir_name": "multi-ai-cskwork-llm-review",
+  "category": "agent-coordination"
+}

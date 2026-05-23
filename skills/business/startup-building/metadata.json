@@ -1,0 +1,18 @@
+{
+  "name": "startup-building",
+  "repo": "frankxai/arcanea",
+  "path": ".claude/skills/industry/startup-building/SKILL.md",
+  "source": "github.com/frankxai/arcanea",
+  "downloaded_at": "2026-01-22T04:16:12.627722Z",
+  "dir_name": "startup-building",
+  "category": "business",
+  "github_path": ".claude/skills/industry/startup-building",
+  "github_branch": "main",
+  "author": "frankxai",
+  "source_url": "https://github.com/frankxai/arcanea/blob/main/.claude/skills/industry/startup-building/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2026 FrankX",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

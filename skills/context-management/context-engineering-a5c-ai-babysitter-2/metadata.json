@@ -1,0 +1,17 @@
+{
+  "name": "context-engineering",
+  "repo": "a5c-ai/babysitter",
+  "path": "library/methodologies/gsd/skills/context-engineering/SKILL.md",
+  "github_branch": "main",
+  "category": "context-management",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "context-engineering-a5c-ai-babysitter-2",
+  "downloaded_at": "2026-05-20T03:48:28.502052Z",
+  "author": "a5c-ai",
+  "source_url": "https://github.com/a5c-ai/babysitter/blob/main/library/methodologies/gsd/skills/context-engineering/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/a5c-ai/babysitter/blob/main/library/methodologies/gsd/skills/context-engineering/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

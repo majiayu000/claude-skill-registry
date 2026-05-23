@@ -1,0 +1,11 @@
+{
+  "name": "shipping-data-analysis",
+  "repo": "WalkerVVV/firstmile-deals-pipeline",
+  "path": ".claude/skills/shipping-data-analysis/SKILL.md",
+  "source": "github.com/WalkerVVV/firstmile-deals-pipeline",
+  "downloaded_at": "2026-01-22T01:08:36.307410Z",
+  "dir_name": "shipping-data-analysis",
+  "category": "analysis",
+  "github_path": ".claude/skills/shipping-data-analysis",
+  "github_branch": "main"
+}

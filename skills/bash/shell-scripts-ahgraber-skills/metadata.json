@@ -1,0 +1,17 @@
+{
+  "name": "shell-scripts",
+  "repo": "ahgraber/skills",
+  "path": "skills/shell-scripts/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/ahgraber/skills",
+  "dir_name": "shell-scripts-ahgraber-skills",
+  "downloaded_at": "2026-03-01T06:32:06.531609Z",
+  "author": "ahgraber",
+  "source_url": "https://github.com/ahgraber/skills/blob/main/skills/shell-scripts/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ahgraber/skills/blob/main/skills/shell-scripts/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

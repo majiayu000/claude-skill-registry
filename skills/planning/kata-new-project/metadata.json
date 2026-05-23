@@ -1,0 +1,17 @@
+{
+  "name": "kata-new-project",
+  "repo": "gannonh/kata-agents",
+  "path": "skills/kata-new-project/SKILL.md",
+  "github_branch": "main",
+  "category": "planning",
+  "source": "github.com/gannonh/kata-agents",
+  "dir_name": "kata-new-project",
+  "downloaded_at": "2026-03-01T07:50:01.377852Z",
+  "author": "gannonh",
+  "source_url": "https://github.com/gannonh/kata-agents/blob/main/skills/kata-new-project/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gannonh/kata-agents/blob/main/skills/kata-new-project/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

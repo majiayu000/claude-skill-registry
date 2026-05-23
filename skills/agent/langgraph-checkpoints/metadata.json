@@ -1,0 +1,11 @@
+{
+  "name": "langgraph-checkpoints",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/langgraph-checkpoints/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-22T01:25:13.126852Z",
+  "dir_name": "langgraph-checkpoints",
+  "category": "agent",
+  "github_path": "skills/langgraph-checkpoints",
+  "github_branch": "main"
+}

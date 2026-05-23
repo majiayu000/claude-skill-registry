@@ -1,0 +1,16 @@
+{
+  "name": "php-expert",
+  "repo": "personamanagmentlayer/pcl",
+  "path": "stdlib/languages/php-expert/SKILL.md",
+  "source": "github.com/personamanagmentlayer/pcl",
+  "downloaded_at": "2026-01-29T06:01:52.884688Z",
+  "dir_name": "php-expert-personamanagmentlaye-pcl-468bd132",
+  "category": "programming-languages",
+  "author": "personamanagmentlayer",
+  "source_url": "https://github.com/personamanagmentlayer/pcl/blob/main/stdlib/languages/php-expert/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/personamanagmentlayer/pcl/blob/main/stdlib/languages/php-expert/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

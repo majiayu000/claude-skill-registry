@@ -1,0 +1,18 @@
+{
+  "name": "prd-implementation",
+  "repo": "jonit-dev/pixelperfect",
+  "path": ".claude/skills/prd-implementation/SKILL.md",
+  "source": "github.com/jonit-dev/pixelperfect",
+  "downloaded_at": "2026-01-21T01:34:48.126972Z",
+  "dir_name": "prd-implementation",
+  "category": "product",
+  "github_path": ".claude/skills/prd-implementation",
+  "github_branch": "main",
+  "author": "jonit-dev",
+  "source_url": "https://github.com/jonit-dev/pixelperfect/blob/main/.claude/skills/prd-implementation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jonit-dev/pixelperfect/blob/main/.claude/skills/prd-implementation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

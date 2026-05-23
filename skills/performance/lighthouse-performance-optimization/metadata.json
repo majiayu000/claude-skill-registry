@@ -1,0 +1,16 @@
+{
+  "name": "lighthouse-performance-optimization",
+  "repo": "liauw-media/household-expense-tracker",
+  "path": ".claude/skills/testing/lighthouse-performance-optimization/SKILL.md",
+  "source": "github.com/liauw-media/household-expense-tracker",
+  "downloaded_at": "2026-01-29T07:43:24.725887Z",
+  "dir_name": "lighthouse-performance-optimization",
+  "category": "performance",
+  "author": "liauw-media",
+  "source_url": "https://github.com/liauw-media/household-expense-tracker/blob/main/.claude/skills/testing/lighthouse-performance-optimization/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/liauw-media/household-expense-tracker/blob/main/.claude/skills/testing/lighthouse-performance-optimization/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

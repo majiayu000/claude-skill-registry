@@ -1,0 +1,18 @@
+{
+  "name": "session-launcher",
+  "repo": "jackspace/ClaudeSkillz",
+  "path": "skills/session-launcher/SKILL.md",
+  "source": "github.com/jackspace/ClaudeSkillz",
+  "downloaded_at": "2026-01-22T02:34:36.232237Z",
+  "dir_name": "session-launcher",
+  "category": "context-management",
+  "github_path": "skills/session-launcher",
+  "github_branch": "main",
+  "author": "jackspace",
+  "source_url": "https://github.com/jackspace/ClaudeSkillz/blob/main/skills/session-launcher/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ClaudeSkillz Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

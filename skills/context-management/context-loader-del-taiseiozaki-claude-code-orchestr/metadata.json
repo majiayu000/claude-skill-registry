@@ -1,0 +1,16 @@
+{
+  "name": "context-loader",
+  "repo": "DeL-TaiseiOzaki/claude-code-orchestra",
+  "path": ".gemini/skills/context-loader/SKILL.md",
+  "category": "context-management",
+  "source": "github.com/DeL-TaiseiOzaki/claude-code-orchestra",
+  "dir_name": "context-loader-del-taiseiozaki-claude-code-orchestr",
+  "downloaded_at": "2026-02-22T04:55:55.230756Z",
+  "author": "DeL-TaiseiOzaki",
+  "source_url": "https://github.com/DeL-TaiseiOzaki/claude-code-orchestra/blob/main/.gemini/skills/context-loader/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DeL-TaiseiOzaki/claude-code-orchestra/blob/main/.gemini/skills/context-loader/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

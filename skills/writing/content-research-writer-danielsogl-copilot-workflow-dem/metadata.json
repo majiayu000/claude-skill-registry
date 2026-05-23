@@ -1,0 +1,17 @@
+{
+  "name": "content-research-writer",
+  "repo": "danielsogl/copilot-workflow-demo",
+  "path": ".agents/skills/content-research-writer/SKILL.md",
+  "github_branch": "main",
+  "category": "writing",
+  "source": "github.com/danielsogl/copilot-workflow-demo",
+  "dir_name": "content-research-writer-danielsogl-copilot-workflow-dem",
+  "downloaded_at": "2026-03-22T07:39:11.819785Z",
+  "author": "danielsogl",
+  "source_url": "https://github.com/danielsogl/copilot-workflow-demo/blob/main/.agents/skills/content-research-writer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/danielsogl/copilot-workflow-demo/blob/main/.agents/skills/content-research-writer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

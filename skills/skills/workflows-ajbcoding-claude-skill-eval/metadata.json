@@ -1,0 +1,16 @@
+{
+  "name": "Workflows",
+  "repo": "AJBcoding/claude-skill-eval",
+  "path": "agentic-coding-main/Cline/Workflows/create-skill.md",
+  "source": "github.com/AJBcoding/claude-skill-eval",
+  "downloaded_at": "2026-01-29T08:59:17.861637Z",
+  "dir_name": "workflows-ajbcoding-claude-skill-eval",
+  "category": "skills",
+  "author": "AJBcoding",
+  "source_url": "https://github.com/AJBcoding/claude-skill-eval/blob/main/agentic-coding-main/Cline/Workflows/create-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AJBcoding/claude-skill-eval/blob/main/agentic-coding-main/Cline/Workflows/create-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

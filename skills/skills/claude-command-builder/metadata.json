@@ -1,0 +1,18 @@
+{
+  "name": "claude-command-builder",
+  "repo": "raintree-technology/claude-starter",
+  "path": "templates/.claude/skills/anthropic/claude-command-builder/skill.md",
+  "source": "github.com/raintree-technology/claude-starter",
+  "downloaded_at": "2026-01-22T02:31:19.114593Z",
+  "dir_name": "claude-command-builder",
+  "category": "skills",
+  "github_path": ".claude/skills/anthropic/claude-command-builder",
+  "github_branch": "main",
+  "author": "raintree-technology",
+  "source_url": "https://github.com/raintree-technology/claude-starter/blob/main/.claude/skills/anthropic/claude-command-builder/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Raintree Technology",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "claude-code",
+  "repo": "danielctc/ReactSpacesMonoRepo",
+  "path": ".claude/skills/claude-code/skill.md",
+  "github_branch": "main",
+  "category": "development-tools",
+  "source": "github.com/danielctc/ReactSpacesMonoRepo",
+  "dir_name": "claude-code-danielctc-reactspacesmonorepo",
+  "downloaded_at": "2026-03-01T07:21:46.205137Z",
+  "author": "danielctc",
+  "source_url": "https://github.com/danielctc/ReactSpacesMonoRepo/blob/main/.claude/skills/claude-code/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/danielctc/ReactSpacesMonoRepo/blob/main/.claude/skills/claude-code/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

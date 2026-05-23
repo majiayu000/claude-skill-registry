@@ -1,0 +1,16 @@
+{
+  "name": "codebase-overview",
+  "repo": "Hoang604/get-thing-done",
+  "path": ".claude/skills/codebase-overview/SKILL.md",
+  "source": "github.com/Hoang604/get-thing-done",
+  "downloaded_at": "2026-02-01T04:32:22.515010Z",
+  "dir_name": "codebase-overview",
+  "category": "analysis",
+  "author": "Hoang604",
+  "source_url": "https://github.com/Hoang604/get-thing-done/blob/main/.claude/skills/codebase-overview/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Hoang604/get-thing-done/blob/main/.claude/skills/codebase-overview/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

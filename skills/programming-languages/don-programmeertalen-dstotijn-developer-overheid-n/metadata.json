@@ -1,0 +1,16 @@
+{
+  "name": "don-programmeertalen",
+  "repo": "dstotijn/developer-overheid-nl-agent-skills",
+  "path": "skills/don-programmeertalen/SKILL.md",
+  "source": "github.com/dstotijn/developer-overheid-nl-agent-skills",
+  "downloaded_at": "2026-01-29T07:25:30.303410Z",
+  "dir_name": "don-programmeertalen-dstotijn-developer-overheid-n",
+  "category": "programming-languages",
+  "author": "dstotijn",
+  "source_url": "https://github.com/dstotijn/developer-overheid-nl-agent-skills/blob/main/skills/don-programmeertalen/SKILL.md",
+  "license": "EUPL-1.2",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dstotijn/developer-overheid-nl-agent-skills/blob/main/skills/don-programmeertalen/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

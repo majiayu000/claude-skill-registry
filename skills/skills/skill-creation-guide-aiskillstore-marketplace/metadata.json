@@ -1,0 +1,20 @@
+{
+  "name": "skill-creation-guide",
+  "description": "Security-audited skills for Claude, Codex & Claude Code. One-click install, quality verified.",
+  "repo": "aiskillstore/marketplace",
+  "category": "skills",
+  "tags": [],
+  "stars": 114,
+  "source": "",
+  "github_path": "skills/notedit/skill-creation-guide",
+  "github_branch": "main",
+  "dir_name": "skill-creation-guide-aiskillstore-marketplace",
+  "downloaded_at": "2026-02-05T01:45:13.589146Z",
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/notedit/skill-creation-guide/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/notedit/skill-creation-guide/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

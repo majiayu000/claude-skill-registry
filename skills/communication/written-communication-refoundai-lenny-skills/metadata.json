@@ -1,0 +1,20 @@
+{
+  "name": "written-communication",
+  "description": "",
+  "repo": "RefoundAI/lenny-skills",
+  "category": "communication",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RefoundAI/lenny-skills",
+  "github_path": "skills/written-communication",
+  "github_branch": "main",
+  "dir_name": "written-communication-refoundai-lenny-skills",
+  "downloaded_at": "2026-02-05T05:43:12.280202Z",
+  "author": "RefoundAI",
+  "source_url": "https://github.com/RefoundAI/lenny-skills/blob/main/skills/written-communication/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Refound AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

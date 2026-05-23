@@ -1,0 +1,18 @@
+{
+  "name": "workflow-orchestrator",
+  "repo": "EdWrld/config.files",
+  "path": "skills/workflow-orchestrator/SKILL.md",
+  "source": "github.com/EdWrld/config.files",
+  "downloaded_at": "2026-01-22T02:51:29.359996Z",
+  "dir_name": "workflow-orchestrator-edwrld-config-files",
+  "category": "orchestration",
+  "github_path": "skills/workflow-orchestrator",
+  "github_branch": "main",
+  "author": "EdWrld",
+  "source_url": "https://github.com/EdWrld/config.files/blob/main/skills/workflow-orchestrator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Edwrld",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

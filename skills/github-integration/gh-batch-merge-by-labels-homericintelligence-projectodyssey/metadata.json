@@ -1,0 +1,13 @@
+{
+  "name": "gh-batch-merge-by-labels",
+  "description": "",
+  "repo": "HomericIntelligence/ProjectOdyssey",
+  "category": "github-integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HomericIntelligence/ProjectOdyssey",
+  "github_path": ".claude/skills/gh-batch-merge-by-labels",
+  "github_branch": "main",
+  "dir_name": "gh-batch-merge-by-labels-homericintelligence-projectodyssey",
+  "downloaded_at": "2026-02-05T01:44:42.840369Z"
+}

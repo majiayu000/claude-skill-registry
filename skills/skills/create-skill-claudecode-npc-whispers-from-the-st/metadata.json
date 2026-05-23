@@ -1,0 +1,17 @@
+{
+  "name": "create-skill",
+  "repo": "ClaudeCode-NPC/Whispers-from-the-Star",
+  "path": ".claude/skills/create_skill/SKILL.md",
+  "github_branch": "master",
+  "category": "skills",
+  "source": "github.com/ClaudeCode-NPC/Whispers-from-the-Star",
+  "dir_name": "create-skill-claudecode-npc-whispers-from-the-st",
+  "downloaded_at": "2026-03-22T05:05:16.909374Z",
+  "author": "ClaudeCode-NPC",
+  "source_url": "https://github.com/ClaudeCode-NPC/Whispers-from-the-Star/blob/master/.claude/skills/create_skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ClaudeCode-NPC/Whispers-from-the-Star/blob/master/.claude/skills/create_skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

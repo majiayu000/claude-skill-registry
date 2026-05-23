@@ -1,0 +1,16 @@
+{
+  "name": "generate-image",
+  "repo": "cluesmith/codev",
+  "path": "codev-skeleton/.claude/skills/generate-image/SKILL.md",
+  "category": "generation",
+  "source": "github.com/cluesmith/codev",
+  "dir_name": "generate-image-cluesmith-codev-2",
+  "downloaded_at": "2026-02-15T06:46:17.832964Z",
+  "author": "cluesmith",
+  "source_url": "https://github.com/cluesmith/codev/blob/main/codev-skeleton/.claude/skills/generate-image/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cluesmith/codev/blob/main/codev-skeleton/.claude/skills/generate-image/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

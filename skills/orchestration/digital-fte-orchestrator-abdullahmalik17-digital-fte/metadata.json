@@ -1,0 +1,16 @@
+{
+  "name": "digital-fte-orchestrator",
+  "repo": "AbdullahMalik17/Digital-FTE",
+  "path": ".claude/skills/digital-fte-orchestrator/SKILL.md",
+  "source": "github.com/AbdullahMalik17/Digital-FTE",
+  "downloaded_at": "2026-02-02T02:32:17.256329Z",
+  "dir_name": "digital-fte-orchestrator-abdullahmalik17-digital-fte",
+  "category": "orchestration",
+  "author": "AbdullahMalik17",
+  "source_url": "https://github.com/AbdullahMalik17/Digital-FTE/blob/main/.claude/skills/digital-fte-orchestrator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Muhammad Abdullah Athar",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

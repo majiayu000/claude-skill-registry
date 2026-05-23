@@ -1,0 +1,11 @@
+{
+  "name": "prd-v08-runbook-creation",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": ".claude/skills/prd-v08-runbook-creation/SKILL.md",
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "downloaded_at": "2026-01-22T02:02:06.104364Z",
+  "dir_name": "prd-v08-runbook-creation",
+  "category": "product",
+  "github_path": ".claude/skills/prd-v08-runbook-creation",
+  "github_branch": "main"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "result-to-claim",
+  "repo": "wanshuiyin/Auto-claude-code-research-in-sleep",
+  "path": "skills/skills-codex/result-to-claim/SKILL.md",
+  "github_branch": "main",
+  "category": "research-analysis",
+  "source": "github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
+  "dir_name": "result-to-claim-wanshuiyin-auto-claude-code-res",
+  "downloaded_at": "2026-05-16T03:30:47.346979Z",
+  "author": "wanshuiyin",
+  "source_url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/main/skills/skills-codex/result-to-claim/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/main/skills/skills-codex/result-to-claim/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

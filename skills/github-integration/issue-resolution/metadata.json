@@ -1,0 +1,13 @@
+{
+  "name": "issue-resolution",
+  "description": "",
+  "repo": "mthangtr/groaly",
+  "category": "github-integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mthangtr/groaly",
+  "github_path": ".claude/skills/issue-resolution",
+  "github_branch": "master",
+  "dir_name": "issue-resolution",
+  "downloaded_at": "2026-02-05T01:45:10.016264Z"
+}

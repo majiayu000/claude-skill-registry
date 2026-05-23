@@ -1,0 +1,9 @@
+{
+  "name": "gh-release-skill",
+  "repo": "masx200/http-proxy-go-server",
+  "path": ".claude/skills/gh-release-skill/SKILL.md",
+  "source": "github.com/masx200/http-proxy-go-server",
+  "downloaded_at": "2026-01-29T03:25:50.673755Z",
+  "dir_name": "gh-release-skill",
+  "category": "github-integration"
+}

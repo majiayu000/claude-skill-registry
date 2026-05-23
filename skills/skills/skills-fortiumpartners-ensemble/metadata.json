@@ -1,0 +1,20 @@
+{
+  "name": "skills",
+  "description": "Ensemble Plugin Ecosystem - Modular Claude Code plugins for AI-augmented development workflows",
+  "repo": "FortiumPartners/ensemble",
+  "category": "skills",
+  "tags": [],
+  "stars": 1,
+  "source": "",
+  "github_path": "packages/blazor/skills",
+  "github_branch": "main",
+  "dir_name": "skills-fortiumpartners-ensemble",
+  "downloaded_at": "2026-02-05T01:45:32.858067Z",
+  "author": "FortiumPartners",
+  "source_url": "https://github.com/FortiumPartners/ensemble/blob/main/packages/blazor/skills/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Fortium Partners",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

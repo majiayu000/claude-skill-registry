@@ -1,0 +1,16 @@
+{
+  "name": "github-ops",
+  "repo": "leon30083/wenjing-aigc",
+  "path": ".claude/skills/github-ops/SKILL.md",
+  "source": "github.com/leon30083/wenjing-aigc",
+  "downloaded_at": "2026-02-02T04:40:12.960518Z",
+  "dir_name": "github-ops-leon30083-wenjing-aigc",
+  "category": "github-integration",
+  "author": "leon30083",
+  "source_url": "https://github.com/leon30083/wenjing-aigc/blob/main/.claude/skills/github-ops/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/leon30083/wenjing-aigc/blob/main/.claude/skills/github-ops/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

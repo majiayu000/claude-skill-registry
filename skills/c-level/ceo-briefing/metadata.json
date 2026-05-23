@@ -1,0 +1,18 @@
+{
+  "name": "ceo-briefing",
+  "repo": "maneeshanif/AI-Employee-Hackathon-spec-driven",
+  "path": ".claude/skills/ceo-briefing/SKILL.md",
+  "source": "github.com/maneeshanif/AI-Employee-Hackathon-spec-driven",
+  "downloaded_at": "2026-01-22T01:24:03.875266Z",
+  "dir_name": "ceo-briefing",
+  "category": "c-level",
+  "github_path": ".claude/skills/ceo-briefing",
+  "github_branch": "main",
+  "author": "maneeshanif",
+  "source_url": "https://github.com/maneeshanif/AI-Employee-Hackathon-spec-driven/blob/main/.claude/skills/ceo-briefing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/maneeshanif/AI-Employee-Hackathon-spec-driven/blob/main/.claude/skills/ceo-briefing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

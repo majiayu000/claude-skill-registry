@@ -1,0 +1,16 @@
+{
+  "name": "platform-backend",
+  "repo": "ravnhq/ai-toolkit",
+  "path": "skills/platform-backend/SKILL.md",
+  "source": "github.com/ravnhq/ai-toolkit",
+  "downloaded_at": "2026-02-02T03:14:23.652236Z",
+  "dir_name": "platform-backend",
+  "category": "platform",
+  "author": "ravnhq",
+  "source_url": "https://github.com/ravnhq/ai-toolkit/blob/main/skills/platform-backend/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ravnhq/ai-toolkit/blob/main/skills/platform-backend/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

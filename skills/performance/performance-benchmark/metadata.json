@@ -1,0 +1,18 @@
+{
+  "name": "performance-benchmark",
+  "repo": "kzahedi/YARS",
+  "path": ".claude/skills/performance-benchmark/SKILL.md",
+  "source": "github.com/kzahedi/YARS",
+  "downloaded_at": "2026-01-22T02:58:47.665917Z",
+  "dir_name": "performance-benchmark",
+  "category": "performance",
+  "github_path": ".claude/skills/performance-benchmark",
+  "github_branch": "main",
+  "author": "kzahedi",
+  "source_url": "https://github.com/kzahedi/YARS/blob/main/.claude/skills/performance-benchmark/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2016 Keyan Ghazi-Zahedi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

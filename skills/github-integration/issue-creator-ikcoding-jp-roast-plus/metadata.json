@@ -1,0 +1,16 @@
+{
+  "name": "issue-creator",
+  "repo": "IKcoding-jp/Roast-Plus",
+  "path": ".claude/skills/issue-creator/SKILL.md",
+  "category": "github-integration",
+  "source": "github.com/IKcoding-jp/Roast-Plus",
+  "dir_name": "issue-creator-ikcoding-jp-roast-plus",
+  "downloaded_at": "2026-02-15T05:14:05.989952Z",
+  "author": "IKcoding-jp",
+  "source_url": "https://github.com/IKcoding-jp/Roast-Plus/blob/main/.claude/skills/issue-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/IKcoding-jp/Roast-Plus/blob/main/.claude/skills/issue-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

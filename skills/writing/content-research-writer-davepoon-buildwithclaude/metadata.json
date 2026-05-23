@@ -1,0 +1,17 @@
+{
+  "name": "content-research-writer",
+  "repo": "davepoon/buildwithclaude",
+  "path": "plugins/all-skills/skills/content-research-writer/SKILL.md",
+  "github_branch": "main",
+  "category": "writing",
+  "source": "github.com/davepoon/buildwithclaude",
+  "dir_name": "content-research-writer-davepoon-buildwithclaude",
+  "downloaded_at": "2026-05-20T03:54:39.879652Z",
+  "author": "davepoon",
+  "source_url": "https://github.com/davepoon/buildwithclaude/blob/main/plugins/all-skills/skills/content-research-writer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/davepoon/buildwithclaude/blob/main/plugins/all-skills/skills/content-research-writer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

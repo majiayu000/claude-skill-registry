@@ -1,0 +1,16 @@
+{
+  "name": "dynamic-res-scaler",
+  "repo": "deadronos/voxel-celebration",
+  "path": ".github/skills/dynamic-res-scaler/SKILL.md",
+  "source": "github.com/deadronos/voxel-celebration",
+  "downloaded_at": "2026-01-31T03:46:06.224905Z",
+  "dir_name": "dynamic-res-scaler",
+  "category": "performance",
+  "author": "deadronos",
+  "source_url": "https://github.com/deadronos/voxel-celebration/blob/main/.github/skills/dynamic-res-scaler/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 deadronos",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

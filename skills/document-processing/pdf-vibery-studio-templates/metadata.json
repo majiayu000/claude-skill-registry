@@ -1,0 +1,13 @@
+{
+  "name": "pdf",
+  "description": "Curated templates for Claude Code - agents, skills, commands, MCPs",
+  "repo": "vibery-studio/templates",
+  "category": "document-processing",
+  "tags": [],
+  "stars": 2,
+  "source": "",
+  "github_path": "skills/pdf",
+  "github_branch": "main",
+  "dir_name": "pdf-vibery-studio-templates",
+  "downloaded_at": "2026-02-05T01:45:31.400437Z"
+}

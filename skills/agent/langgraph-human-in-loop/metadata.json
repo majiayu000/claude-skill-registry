@@ -1,0 +1,11 @@
+{
+  "name": "langgraph-human-in-loop",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/langgraph-human-in-loop/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-22T01:25:11.311258Z",
+  "dir_name": "langgraph-human-in-loop",
+  "category": "agent",
+  "github_path": "skills/langgraph-human-in-loop",
+  "github_branch": "main"
+}

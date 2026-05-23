@@ -1,0 +1,16 @@
+{
+  "name": "gt",
+  "repo": "dagster-io/erk",
+  "path": ".claude/skills/gt/SKILL.md",
+  "source": "github.com/dagster-io/erk",
+  "downloaded_at": "2026-02-02T01:09:47.657921Z",
+  "dir_name": "gt",
+  "category": "github-integration",
+  "author": "dagster-io",
+  "source_url": "https://github.com/dagster-io/erk/blob/main/.claude/skills/gt/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dagster-io/erk/blob/main/.claude/skills/gt/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "metrics-dashboard-designer",
+  "repo": "maigentic/stratarts",
+  "path": "skills/retention-metrics/metrics-dashboard-designer/SKILL.md",
+  "source": "github.com/maigentic/stratarts",
+  "downloaded_at": "2026-01-22T04:05:43.232594Z",
+  "dir_name": "metrics-dashboard-designer",
+  "category": "product",
+  "github_path": "skills/retention-metrics/metrics-dashboard-designer",
+  "github_branch": "main",
+  "author": "maigentic",
+  "source_url": "https://github.com/maigentic/stratarts/blob/main/skills/retention-metrics/metrics-dashboard-designer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 maigentic",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

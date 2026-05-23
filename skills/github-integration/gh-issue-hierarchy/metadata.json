@@ -1,0 +1,11 @@
+{
+  "name": "gh-issue-hierarchy",
+  "repo": "kynoptic/markdownlint-trap",
+  "path": ".claude/skills/gh-issue-hierarchy/SKILL.md",
+  "source": "github.com/kynoptic/markdownlint-trap",
+  "downloaded_at": "2026-01-22T03:26:46.543405Z",
+  "dir_name": "gh-issue-hierarchy",
+  "category": "github-integration",
+  "github_path": ".claude/skills/gh-issue-hierarchy",
+  "github_branch": "main"
+}

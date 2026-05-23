@@ -1,0 +1,16 @@
+{
+  "name": "git-stats",
+  "repo": "AIDotNet/MoYuCode",
+  "path": "skills/tools/git-stats/SKILL.md",
+  "source": "github.com/AIDotNet/MoYuCode",
+  "downloaded_at": "2026-02-02T03:22:19.163802Z",
+  "dir_name": "git-stats",
+  "category": "github-integration",
+  "author": "AIDotNet",
+  "source_url": "https://github.com/AIDotNet/MoYuCode/blob/main/skills/tools/git-stats/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AIDotNet",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

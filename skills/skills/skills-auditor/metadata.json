@@ -1,0 +1,20 @@
+{
+  "name": "skills-auditor",
+  "description": "AERA: local-first workstation for quantitative research, visualization, and backtesting.",
+  "repo": "CheekyCodexConjurer/quant-lab",
+  "category": "skills",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".codex/skills/skills_auditor",
+  "github_branch": "main",
+  "dir_name": "skills-auditor",
+  "downloaded_at": "2026-02-05T05:48:38.450355Z",
+  "author": "CheekyCodexConjurer",
+  "source_url": "https://github.com/CheekyCodexConjurer/quant-lab/blob/main/.codex/skills/skills_auditor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CheekyCodexConjurer/quant-lab/blob/main/.codex/skills/skills_auditor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

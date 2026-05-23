@@ -1,0 +1,18 @@
+{
+  "name": "planning-phase",
+  "repo": "Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "path": ".claude/skills/planning-phase/SKILL.md",
+  "source": "github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "downloaded_at": "2026-01-22T00:54:54.925260Z",
+  "dir_name": "planning-phase",
+  "category": "planning",
+  "github_path": ".claude/skills/planning-phase",
+  "github_branch": "main",
+  "author": "Sjdjdiejdrirhdkjej",
+  "source_url": "https://github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor/blob/main/.claude/skills/planning-phase/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor/blob/main/.claude/skills/planning-phase/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

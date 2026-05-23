@@ -1,0 +1,18 @@
+{
+  "name": "scientific-thinking-literature-review",
+  "repo": "jackspace/ClaudeSkillz",
+  "path": "skills/scientific-thinking-literature-review/SKILL.md",
+  "source": "github.com/jackspace/ClaudeSkillz",
+  "downloaded_at": "2026-01-22T02:34:25.652590Z",
+  "dir_name": "scientific-thinking-literature-review",
+  "category": "research-analysis",
+  "github_path": "skills/scientific-thinking-literature-review",
+  "github_branch": "main",
+  "author": "jackspace",
+  "source_url": "https://github.com/jackspace/ClaudeSkillz/blob/main/skills/scientific-thinking-literature-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ClaudeSkillz Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

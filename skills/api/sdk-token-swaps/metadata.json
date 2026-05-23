@@ -1,0 +1,16 @@
+{
+  "name": "sdk-token-swaps",
+  "repo": "BankrBot/claude-plugins",
+  "path": "x402-sdk-dev/skills/sdk-token-swaps/SKILL.md",
+  "source": "github.com/BankrBot/claude-plugins",
+  "downloaded_at": "2026-01-27T04:17:46.325199Z",
+  "dir_name": "sdk-token-swaps",
+  "category": "api",
+  "author": "BankrBot",
+  "source_url": "https://github.com/BankrBot/claude-plugins/blob/main/x402-sdk-dev/skills/sdk-token-swaps/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Bankr",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

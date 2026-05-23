@@ -1,0 +1,20 @@
+{
+  "name": "content-research-writer",
+  "description": "",
+  "repo": "cacr92/WeReply",
+  "category": "writing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cacr92/WeReply",
+  "github_path": ".trae/skills/content-research-writer",
+  "github_branch": "main",
+  "dir_name": "content-research-writer-cacr92-wereply",
+  "downloaded_at": "2026-02-05T01:44:19.463769Z",
+  "author": "cacr92",
+  "source_url": "https://github.com/cacr92/WeReply/blob/main/.trae/skills/content-research-writer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 WeReply",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

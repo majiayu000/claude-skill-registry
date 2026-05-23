@@ -1,0 +1,17 @@
+{
+  "name": "skill-creator",
+  "repo": "anthropics/skills",
+  "path": "skills/skill-creator/SKILL.md",
+  "github_branch": "main",
+  "category": "skills",
+  "source": "github.com/anthropics/skills",
+  "dir_name": "skill-creator-anthropics-skills",
+  "downloaded_at": "2026-03-22T06:58:14.251137Z",
+  "author": "anthropics",
+  "source_url": "https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

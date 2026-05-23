@@ -1,0 +1,13 @@
+{
+  "name": "google-adk-python",
+  "description": "",
+  "repo": "vumichien/bi-agent",
+  "category": "agent",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vumichien/bi-agent",
+  "github_path": ".claude/skills/google-adk-python",
+  "github_branch": "main",
+  "dir_name": "google-adk-python",
+  "downloaded_at": "2026-02-05T01:44:53.817499Z"
+}

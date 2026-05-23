@@ -1,0 +1,13 @@
+{
+  "name": "github-issues",
+  "description": "",
+  "repo": "tidemann/st44-home",
+  "category": "github-integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tidemann/st44-home",
+  "github_path": ".claude/skills/github-issues",
+  "github_branch": "main",
+  "dir_name": "github-issues",
+  "downloaded_at": "2026-02-05T05:37:49.400062Z"
+}

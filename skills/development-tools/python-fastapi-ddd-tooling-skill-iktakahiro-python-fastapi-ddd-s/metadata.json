@@ -1,0 +1,16 @@
+{
+  "name": "python-fastapi-ddd-tooling-skill",
+  "repo": "iktakahiro/python-fastapi-ddd-skill",
+  "path": "skills/python-fastapi-ddd-tooling-skill/SKILL.md",
+  "category": "development-tools",
+  "source": "github.com/iktakahiro/python-fastapi-ddd-skill",
+  "dir_name": "python-fastapi-ddd-tooling-skill-iktakahiro-python-fastapi-ddd-s",
+  "downloaded_at": "2026-02-22T07:31:28.141896Z",
+  "author": "iktakahiro",
+  "source_url": "https://github.com/iktakahiro/python-fastapi-ddd-skill/blob/main/skills/python-fastapi-ddd-tooling-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/iktakahiro/python-fastapi-ddd-skill/blob/main/skills/python-fastapi-ddd-tooling-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

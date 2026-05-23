@@ -1,0 +1,13 @@
+{
+  "name": "shell",
+  "description": "",
+  "repo": "invowk/invowk",
+  "category": "bash",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/invowk/invowk",
+  "github_path": ".claude/skills/shell",
+  "github_branch": "main",
+  "dir_name": "shell-invowk-invowk",
+  "downloaded_at": "2026-02-05T05:39:11.973047Z"
+}

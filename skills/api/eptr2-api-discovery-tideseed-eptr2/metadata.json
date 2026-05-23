@@ -1,0 +1,16 @@
+{
+  "name": "eptr2-api-discovery",
+  "repo": "Tideseed/eptr2",
+  "path": ".claude/skills/eptr2-api-discovery/SKILL.md",
+  "source": "github.com/Tideseed/eptr2",
+  "downloaded_at": "2026-01-29T08:27:57.609729Z",
+  "dir_name": "eptr2-api-discovery-tideseed-eptr2",
+  "category": "api",
+  "author": "Tideseed",
+  "source_url": "https://github.com/Tideseed/eptr2/blob/main/.claude/skills/eptr2-api-discovery/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tideseed/eptr2/blob/main/.claude/skills/eptr2-api-discovery/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

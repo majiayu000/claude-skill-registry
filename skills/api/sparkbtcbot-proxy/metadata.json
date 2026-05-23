@@ -1,0 +1,17 @@
+{
+  "name": "sparkbtcbot-proxy",
+  "repo": "echennells/sparkbtcbot-proxy",
+  "path": "skills/sparkbtcbot-proxy/SKILL.md",
+  "github_branch": "main",
+  "category": "api",
+  "source": "github.com/echennells/sparkbtcbot-proxy",
+  "dir_name": "sparkbtcbot-proxy",
+  "downloaded_at": "2026-03-22T07:52:03.097087Z",
+  "author": "echennells",
+  "source_url": "https://github.com/echennells/sparkbtcbot-proxy/blob/main/skills/sparkbtcbot-proxy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/echennells/sparkbtcbot-proxy/blob/main/skills/sparkbtcbot-proxy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

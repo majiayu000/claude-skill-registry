@@ -1,0 +1,20 @@
+{
+  "name": "create-prd",
+  "description": "",
+  "repo": "jpoutrin/product-forge",
+  "category": "product",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jpoutrin/product-forge",
+  "github_path": "plugins/product-design/skills/create-prd",
+  "github_branch": "main",
+  "dir_name": "create-prd-jpoutrin-product-forge",
+  "downloaded_at": "2026-02-05T01:44:46.703310Z",
+  "author": "jpoutrin",
+  "source_url": "https://github.com/jpoutrin/product-forge/blob/main/plugins/product-design/skills/create-prd/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 jpoutrin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

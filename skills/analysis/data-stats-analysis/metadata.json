@@ -1,0 +1,16 @@
+{
+  "name": "data-stats-analysis",
+  "repo": "Starlitnightly/omicverse",
+  "path": ".claude/skills/data-stats-analysis/SKILL.md",
+  "source": "github.com/Starlitnightly/omicverse",
+  "downloaded_at": "2026-01-29T01:56:17.079996Z",
+  "dir_name": "data-stats-analysis",
+  "category": "analysis",
+  "author": "Starlitnightly",
+  "source_url": "https://github.com/Starlitnightly/omicverse/blob/main/.claude/skills/data-stats-analysis/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

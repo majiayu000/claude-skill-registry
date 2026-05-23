@@ -1,0 +1,13 @@
+{
+  "name": "postmortem-writing",
+  "description": "",
+  "repo": "ACGSpgp/ACGS",
+  "category": "writing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ACGSpgp/ACGS",
+  "github_path": ".agent/workflows/incident-response/1.2.1/skills/postmortem-writing",
+  "github_branch": "main",
+  "dir_name": "postmortem-writing-acgspgp-acgs",
+  "downloaded_at": "2026-02-05T05:40:32.990460Z"
+}

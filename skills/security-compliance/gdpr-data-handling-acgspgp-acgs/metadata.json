@@ -1,0 +1,13 @@
+{
+  "name": "gdpr-data-handling",
+  "description": "",
+  "repo": "ACGSpgp/ACGS",
+  "category": "security-compliance",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ACGSpgp/ACGS",
+  "github_path": ".agent/workflows/hr-legal-compliance/1.2.0/skills/gdpr-data-handling",
+  "github_branch": "main",
+  "dir_name": "gdpr-data-handling-acgspgp-acgs",
+  "downloaded_at": "2026-02-05T05:40:33.071141Z"
+}

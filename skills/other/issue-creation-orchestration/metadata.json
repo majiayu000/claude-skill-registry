@@ -1,9 +1,0 @@
-{
-  "name": "issue-creation-orchestration",
-  "repo": "langadventurellc/claude-marketplace",
-  "path": "plugins/task-trellis/skills/issue-creation-orchestration/SKILL.md",
-  "source": "github.com/langadventurellc/claude-marketplace",
-  "downloaded_at": "2026-01-31T04:03:39.057000Z",
-  "dir_name": "issue-creation-orchestration",
-  "category": "other"
-}

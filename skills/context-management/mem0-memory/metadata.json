@@ -1,0 +1,11 @@
+{
+  "name": "mem0-memory",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/mem0-memory/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-22T01:25:12.899373Z",
+  "dir_name": "mem0-memory",
+  "category": "context-management",
+  "github_path": "skills/mem0-memory",
+  "github_branch": "main"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "skill-installer",
+  "description": "",
+  "repo": "notdp/.dotfiles",
+  "category": "skills",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/notdp/.dotfiles",
+  "github_path": "skills/.system/skill-installer",
+  "github_branch": "main",
+  "dir_name": "skill-installer-notdp-dotfiles",
+  "downloaded_at": "2026-02-05T01:44:37.784246Z"
+}

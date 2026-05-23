@@ -1,0 +1,17 @@
+{
+  "name": "spec-driven-lifecycle",
+  "repo": "bankielewicz/DevForgeAI",
+  "path": "src/claude/skills/spec-driven-lifecycle/SKILL.md",
+  "github_branch": "main",
+  "category": "orchestration",
+  "source": "github.com/bankielewicz/DevForgeAI",
+  "dir_name": "spec-driven-lifecycle-bankielewicz-devforgeai",
+  "downloaded_at": "2026-03-22T07:10:06.347317Z",
+  "author": "bankielewicz",
+  "source_url": "https://github.com/bankielewicz/DevForgeAI/blob/main/src/claude/skills/spec-driven-lifecycle/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bankielewicz/DevForgeAI/blob/main/src/claude/skills/spec-driven-lifecycle/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

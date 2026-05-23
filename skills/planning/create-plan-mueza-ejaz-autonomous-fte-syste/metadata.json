@@ -1,0 +1,17 @@
+{
+  "name": "create-plan",
+  "repo": "Mueza-Ejaz/Autonomous-FTE-System",
+  "path": ".claude/skills/create-plan/SKILL.md",
+  "github_branch": "main",
+  "category": "planning",
+  "source": "github.com/Mueza-Ejaz/Autonomous-FTE-System",
+  "dir_name": "create-plan-mueza-ejaz-autonomous-fte-syste",
+  "downloaded_at": "2026-03-01T05:44:46.483328Z",
+  "author": "Mueza-Ejaz",
+  "source_url": "https://github.com/Mueza-Ejaz/Autonomous-FTE-System/blob/main/.claude/skills/create-plan/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Mueza-Ejaz/Autonomous-FTE-System/blob/main/.claude/skills/create-plan/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

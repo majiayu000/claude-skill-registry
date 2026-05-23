@@ -1,0 +1,17 @@
+{
+  "name": "pr-writter",
+  "repo": "dobraga/dotfiles",
+  "path": ".claude/skills/pr-writter/SKILL.md",
+  "github_branch": "master",
+  "category": "github-integration",
+  "source": "github.com/dobraga/dotfiles",
+  "dir_name": "pr-writter",
+  "downloaded_at": "2026-03-22T07:47:16.935166Z",
+  "author": "dobraga",
+  "source_url": "https://github.com/dobraga/dotfiles/blob/master/.claude/skills/pr-writter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dobraga/dotfiles/blob/master/.claude/skills/pr-writter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

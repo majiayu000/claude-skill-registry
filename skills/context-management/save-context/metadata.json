@@ -1,0 +1,16 @@
+{
+  "name": "save-context",
+  "repo": "jasonmichaelbell78-creator/sonash-v0",
+  "path": ".claude/skills/save-context/SKILL.md",
+  "source": "github.com/jasonmichaelbell78-creator/sonash-v0",
+  "downloaded_at": "2026-02-02T02:00:36.813729Z",
+  "dir_name": "save-context",
+  "category": "context-management",
+  "author": "jasonmichaelbell78-creator",
+  "source_url": "https://github.com/jasonmichaelbell78-creator/sonash-v0/blob/main/.claude/skills/save-context/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jasonmichaelbell78-creator/sonash-v0/blob/main/.claude/skills/save-context/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

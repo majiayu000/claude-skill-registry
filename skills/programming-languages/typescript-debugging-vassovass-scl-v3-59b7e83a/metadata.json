@@ -1,0 +1,16 @@
+{
+  "name": "typescript-debugging",
+  "repo": "vassovass/scl-v3",
+  "path": ".claude/skills/typescript-debugging/SKILL.md",
+  "source": "github.com/vassovass/scl-v3",
+  "downloaded_at": "2026-01-29T08:29:34.609043Z",
+  "dir_name": "typescript-debugging-vassovass-scl-v3-59b7e83a",
+  "category": "programming-languages",
+  "author": "vassovass",
+  "source_url": "https://github.com/vassovass/scl-v3/blob/main/.claude/skills/typescript-debugging/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vassovass/scl-v3/blob/main/.claude/skills/typescript-debugging/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

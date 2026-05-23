@@ -1,0 +1,16 @@
+{
+  "name": "multi-agency-orchestrator",
+  "repo": "jgtolentino/insightpulse-odoo",
+  "path": "docs/claude-code-skills/community/multi-agency-orchestrator/SKILL.md",
+  "source": "github.com/jgtolentino/insightpulse-odoo",
+  "downloaded_at": "2026-02-01T01:34:01.461564Z",
+  "dir_name": "multi-agency-orchestrator",
+  "category": "agent-coordination",
+  "author": "jgtolentino",
+  "source_url": "https://github.com/jgtolentino/insightpulse-odoo/blob/main/docs/claude-code-skills/community/multi-agency-orchestrator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jgtolentino/insightpulse-odoo/blob/main/docs/claude-code-skills/community/multi-agency-orchestrator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

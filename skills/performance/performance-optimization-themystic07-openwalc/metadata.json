@@ -1,0 +1,17 @@
+{
+  "name": "performance-optimization",
+  "repo": "TheMystic07/OpenWalc",
+  "path": "skills/performance-optimization/SKILL.md",
+  "github_branch": "main",
+  "category": "performance",
+  "source": "github.com/TheMystic07/OpenWalc",
+  "dir_name": "performance-optimization-themystic07-openwalc",
+  "downloaded_at": "2026-03-22T06:23:03.686659Z",
+  "author": "TheMystic07",
+  "source_url": "https://github.com/TheMystic07/OpenWalc/blob/main/skills/performance-optimization/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TheMystic07/OpenWalc/blob/main/skills/performance-optimization/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

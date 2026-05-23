@@ -1,0 +1,18 @@
+{
+  "name": "snd-questionable",
+  "repo": "vaoan/SND",
+  "path": ".claude/skills/snd-questionable/SKILL.md",
+  "source": "github.com/vaoan/SND",
+  "downloaded_at": "2026-01-22T01:11:52.293132Z",
+  "dir_name": "snd-questionable",
+  "category": "gaming",
+  "github_path": ".claude/skills/snd-questionable",
+  "github_branch": "main",
+  "author": "vaoan",
+  "source_url": "https://github.com/vaoan/SND/blob/main/.claude/skills/snd-questionable/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vaoan/SND/blob/main/.claude/skills/snd-questionable/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

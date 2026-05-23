@@ -1,0 +1,18 @@
+{
+  "name": "planning-prompts-skill",
+  "repo": "ScientiaCapital/skills",
+  "path": "active/planning-prompts-skill/SKILL.md",
+  "source": "github.com/ScientiaCapital/skills",
+  "downloaded_at": "2026-01-19T03:08:03.686159Z",
+  "dir_name": "planning-prompts-skill",
+  "category": "planning",
+  "github_path": "active/planning-prompts-skill",
+  "github_branch": "main",
+  "author": "ScientiaCapital",
+  "source_url": "https://github.com/ScientiaCapital/skills/blob/main/active/planning-prompts-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ScientiaCapital/skills/blob/main/active/planning-prompts-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

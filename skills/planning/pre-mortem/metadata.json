@@ -1,0 +1,18 @@
+{
+  "name": "pre-mortem",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/pre-mortem/SKILL.md",
+  "source": "github.com/rjmurillo/ai-agents",
+  "downloaded_at": "2026-01-22T04:17:14.127988Z",
+  "dir_name": "pre-mortem",
+  "category": "planning",
+  "github_path": ".claude/skills/pre-mortem",
+  "github_branch": "main",
+  "author": "rjmurillo",
+  "source_url": "https://github.com/rjmurillo/ai-agents/blob/main/.claude/skills/pre-mortem/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "ralph-tui",
+  "description": "",
+  "repo": "hathbanger/fridas-choppers-gtm",
+  "category": "agent",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hathbanger/fridas-choppers-gtm",
+  "github_path": ".claude/skills/ralph-tui",
+  "github_branch": "main",
+  "dir_name": "ralph-tui",
+  "downloaded_at": "2026-02-05T05:40:33.230319Z",
+  "author": "hathbanger",
+  "source_url": "https://github.com/hathbanger/fridas-choppers-gtm/blob/main/.claude/skills/ralph-tui/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hathbanger/fridas-choppers-gtm/blob/main/.claude/skills/ralph-tui/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "threaded-explainer",
+  "repo": "mahidalhan/claude-hacks",
+  "path": "skills/threaded-explainer/skills/threaded-explainer/SKILL.md",
+  "source": "github.com/mahidalhan/claude-hacks",
+  "downloaded_at": "2026-01-14T01:59:29.307528Z",
+  "dir_name": "threaded-explainer",
+  "category": "communication",
+  "github_path": "skills/threaded-explainer/skills/threaded-explainer",
+  "github_branch": "main",
+  "author": "mahidalhan",
+  "source_url": "https://github.com/mahidalhan/claude-hacks/blob/main/skills/threaded-explainer/skills/threaded-explainer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Skilled Spec Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

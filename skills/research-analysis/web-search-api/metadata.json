@@ -1,0 +1,17 @@
+{
+  "name": "web-search-api",
+  "repo": "besoeasy/open-skills",
+  "path": "skills/web-search-api/SKILL.md",
+  "github_branch": "main",
+  "category": "research-analysis",
+  "source": "github.com/besoeasy/open-skills",
+  "dir_name": "web-search-api",
+  "downloaded_at": "2026-03-22T07:13:57.402511Z",
+  "author": "besoeasy",
+  "source_url": "https://github.com/besoeasy/open-skills/blob/main/skills/web-search-api/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/besoeasy/open-skills/blob/main/skills/web-search-api/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "swarm-fan-out",
+  "repo": "ben-alkov/the_swarm",
+  "path": "src/skills/swarm-fan-out/SKILL.md",
+  "github_branch": "main",
+  "category": "agent-coordination",
+  "source": "github.com/ben-alkov/the_swarm",
+  "dir_name": "swarm-fan-out",
+  "downloaded_at": "2026-03-31T01:27:59.570819Z",
+  "author": "ben-alkov",
+  "source_url": "https://github.com/ben-alkov/the_swarm/blob/main/src/skills/swarm-fan-out/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ben-alkov/the_swarm/blob/main/src/skills/swarm-fan-out/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

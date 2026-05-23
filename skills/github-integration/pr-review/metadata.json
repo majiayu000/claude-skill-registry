@@ -1,0 +1,16 @@
+{
+  "name": "pr-review",
+  "repo": "sensei-hacker/inav-claude",
+  "path": ".claude/skills/pr-review/SKILL.md",
+  "source": "github.com/sensei-hacker/inav-claude",
+  "downloaded_at": "2026-02-02T04:58:19.358574Z",
+  "dir_name": "pr-review",
+  "category": "github-integration",
+  "author": "sensei-hacker",
+  "source_url": "https://github.com/sensei-hacker/inav-claude/blob/main/.claude/skills/pr-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sensei-hacker/inav-claude/blob/main/.claude/skills/pr-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

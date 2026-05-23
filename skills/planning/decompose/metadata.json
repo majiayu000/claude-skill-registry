@@ -1,0 +1,16 @@
+{
+  "name": "decompose",
+  "repo": "synaptiai/agent-capability-standard",
+  "path": "skills/decompose/SKILL.md",
+  "source": "github.com/synaptiai/agent-capability-standard",
+  "downloaded_at": "2026-01-31T04:20:33.014375Z",
+  "dir_name": "decompose",
+  "category": "planning",
+  "author": "synaptiai",
+  "source_url": "https://github.com/synaptiai/agent-capability-standard/blob/main/skills/decompose/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/synaptiai/agent-capability-standard/blob/main/skills/decompose/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

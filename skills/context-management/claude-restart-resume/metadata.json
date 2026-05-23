@@ -1,0 +1,18 @@
+{
+  "name": "claude-restart-resume",
+  "repo": "ManuelKugelmann/BitBot",
+  "path": "container/templates/bitbot-config/.claude/skills/claude-restart-resume/skill.md",
+  "source": "github.com/ManuelKugelmann/BitBot",
+  "downloaded_at": "2026-01-22T02:56:42.073037Z",
+  "dir_name": "claude-restart-resume",
+  "category": "context-management",
+  "github_path": ".bitbot/internal/bitbot-config/.claude/skills/claude-restart-resume",
+  "github_branch": "main",
+  "author": "ManuelKugelmann",
+  "source_url": "https://github.com/ManuelKugelmann/BitBot/blob/main/.bitbot/internal/bitbot-config/.claude/skills/claude-restart-resume/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Manuel Kugelmann, Bitcraft IT Consulting",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "simple-pr",
+  "repo": "quickwit-oss/tantivy",
+  "path": ".claude/skills/simple-pr/SKILL.md",
+  "source": "github.com/quickwit-oss/tantivy",
+  "downloaded_at": "2026-02-02T04:58:32.180976Z",
+  "dir_name": "simple-pr",
+  "category": "github-integration"
+}

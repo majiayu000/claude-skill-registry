@@ -1,0 +1,17 @@
+{
+  "name": "stock-market-pro",
+  "repo": "AIDEN0602/openclaw",
+  "path": "skills/stock-market-pro/SKILL.md",
+  "github_branch": "main",
+  "category": "analysis",
+  "source": "github.com/AIDEN0602/openclaw",
+  "dir_name": "stock-market-pro",
+  "downloaded_at": "2026-03-22T04:43:56.385487Z",
+  "author": "AIDEN0602",
+  "source_url": "https://github.com/AIDEN0602/openclaw/blob/main/skills/stock-market-pro/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AIDEN0602/openclaw/blob/main/skills/stock-market-pro/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "fiction",
+  "repo": "howells/fiction",
+  "path": "skills/fiction/skill.md",
+  "source": "github.com/howells/fiction",
+  "downloaded_at": "2026-02-02T02:14:21.977039Z",
+  "dir_name": "fiction",
+  "category": "writing",
+  "author": "howells",
+  "source_url": "https://github.com/howells/fiction/blob/main/skills/fiction/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/howells/fiction/blob/main/skills/fiction/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "cursor-git-integration",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/cursor-pack/skills/cursor-git-integration/SKILL.md",
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "downloaded_at": "2026-01-31T03:32:34.721250Z",
+  "dir_name": "cursor-git-integration",
+  "category": "development-tools",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/saas-packs/cursor-pack/skills/cursor-git-integration/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

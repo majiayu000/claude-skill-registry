@@ -1,0 +1,17 @@
+{
+  "name": "sibyl-supervisor",
+  "repo": "Sibyl-Research-Team/AutoResearch-SibylSystem",
+  "path": ".claude/skills/sibyl-supervisor/SKILL.md",
+  "github_branch": "main",
+  "category": "agent",
+  "source": "github.com/Sibyl-Research-Team/AutoResearch-SibylSystem",
+  "dir_name": "sibyl-supervisor",
+  "downloaded_at": "2026-03-22T06:15:30.048817Z",
+  "author": "Sibyl-Research-Team",
+  "source_url": "https://github.com/Sibyl-Research-Team/AutoResearch-SibylSystem/blob/main/.claude/skills/sibyl-supervisor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Sibyl-Research-Team/AutoResearch-SibylSystem/blob/main/.claude/skills/sibyl-supervisor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

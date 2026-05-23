@@ -1,0 +1,16 @@
+{
+  "name": "skill-authoring",
+  "repo": "pproenca/dot-skills",
+  "path": "skills/.curated/skill-authoring/SKILL.md",
+  "source": "github.com/pproenca/dot-skills",
+  "downloaded_at": "2026-01-29T07:56:19.385344Z",
+  "dir_name": "skill-authoring",
+  "category": "skills",
+  "author": "pproenca",
+  "source_url": "https://github.com/pproenca/dot-skills/blob/main/skills/.curated/skill-authoring/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

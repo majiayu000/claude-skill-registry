@@ -1,0 +1,16 @@
+{
+  "name": "exploring-data",
+  "repo": "oaustegard/claude-skills",
+  "path": "exploring-data/SKILL.md",
+  "source": "github.com/oaustegard/claude-skills",
+  "downloaded_at": "2026-01-29T07:52:47.375198Z",
+  "dir_name": "exploring-data-oaustegard-claude-skills",
+  "category": "analysis",
+  "author": "oaustegard",
+  "source_url": "https://github.com/oaustegard/claude-skills/blob/main/exploring-data/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Oskar Austegard",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

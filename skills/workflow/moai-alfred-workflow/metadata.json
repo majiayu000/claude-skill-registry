@@ -1,0 +1,11 @@
+{
+  "name": "moai-alfred-workflow",
+  "repo": "dolsoon/my-awesome-project",
+  "path": ".claude/skills/moai-alfred-workflow/SKILL.md",
+  "source": "github.com/dolsoon/my-awesome-project",
+  "downloaded_at": "2026-01-22T02:19:54.046364Z",
+  "dir_name": "moai-alfred-workflow",
+  "category": "workflow",
+  "github_path": ".claude/skills/moai-alfred-workflow",
+  "github_branch": "main"
+}

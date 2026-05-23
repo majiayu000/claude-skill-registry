@@ -1,0 +1,16 @@
+{
+  "name": "phase-status",
+  "repo": "EtroxTaran/conductor",
+  "path": ".claude/skills/phase-status/SKILL.md",
+  "source": "github.com/EtroxTaran/conductor",
+  "downloaded_at": "2026-02-02T02:12:18.272787Z",
+  "dir_name": "phase-status",
+  "category": "workflow",
+  "author": "EtroxTaran",
+  "source_url": "https://github.com/EtroxTaran/conductor/blob/main/.claude/skills/phase-status/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 EtroxTaran",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

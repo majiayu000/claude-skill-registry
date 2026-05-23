@@ -1,0 +1,17 @@
+{
+  "name": "worker-integration",
+  "repo": "ruvnet/claude-flow",
+  "path": ".agents/skills/worker-integration/skill.md",
+  "github_branch": "main",
+  "category": "agent-coordination",
+  "source": "github.com/ruvnet/claude-flow",
+  "dir_name": "worker-integration-ruvnet-claude-flow-3",
+  "downloaded_at": "2026-02-27T01:30:58.170162Z",
+  "author": "ruvnet",
+  "source_url": "https://github.com/ruvnet/claude-flow/blob/main/.agents/skills/worker-integration/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ruvnet/claude-flow/blob/main/.agents/skills/worker-integration/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

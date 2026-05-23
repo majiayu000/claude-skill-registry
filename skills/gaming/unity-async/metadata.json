@@ -1,0 +1,16 @@
+{
+  "name": "unity-async",
+  "repo": "creator-hian/claude-code-plugins",
+  "path": "unity-plugin/skills/unity-async/SKILL.md",
+  "source": "github.com/creator-hian/claude-code-plugins",
+  "downloaded_at": "2026-02-02T04:41:57.793332Z",
+  "dir_name": "unity-async",
+  "category": "gaming",
+  "author": "creator-hian",
+  "source_url": "https://github.com/creator-hian/claude-code-plugins/blob/main/unity-plugin/skills/unity-async/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/creator-hian/claude-code-plugins/blob/main/unity-plugin/skills/unity-async/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

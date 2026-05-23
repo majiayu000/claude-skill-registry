@@ -1,0 +1,18 @@
+{
+  "name": "managing-blog-ideas",
+  "repo": "alexanderop/second-brain-nuxt",
+  "path": ".claude/skills/managing-blog-ideas/SKILL.md",
+  "source": "github.com/alexanderop/second-brain-nuxt",
+  "downloaded_at": "2026-01-22T01:45:16.649963Z",
+  "dir_name": "managing-blog-ideas",
+  "category": "writing",
+  "github_path": ".claude/skills/managing-blog-ideas",
+  "github_branch": "main",
+  "author": "alexanderop",
+  "source_url": "https://github.com/alexanderop/second-brain-nuxt/blob/main/.claude/skills/managing-blog-ideas/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alexanderop/second-brain-nuxt/blob/main/.claude/skills/managing-blog-ideas/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

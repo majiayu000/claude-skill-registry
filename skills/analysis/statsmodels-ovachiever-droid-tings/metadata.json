@@ -1,0 +1,18 @@
+{
+  "name": "statsmodels",
+  "repo": "ovachiever/droid-tings",
+  "path": "skills/statsmodels/SKILL.md",
+  "source": "github.com/ovachiever/droid-tings",
+  "downloaded_at": "2026-01-22T04:10:04.532180Z",
+  "dir_name": "statsmodels-ovachiever-droid-tings",
+  "category": "analysis",
+  "github_path": "skills/statsmodels",
+  "github_branch": "main",
+  "author": "ovachiever",
+  "source_url": "https://github.com/ovachiever/droid-tings/blob/main/skills/statsmodels/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Claude Skills Collection Contributors",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

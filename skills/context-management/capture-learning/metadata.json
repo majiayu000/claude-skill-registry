@@ -1,0 +1,20 @@
+{
+  "name": "capture-learning",
+  "description": "",
+  "repo": "petekp/claude-code-setup",
+  "category": "context-management",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/petekp/claude-code-setup",
+  "github_path": "skills/capture-learning",
+  "github_branch": "main",
+  "dir_name": "capture-learning",
+  "downloaded_at": "2026-02-05T01:45:09.754629Z",
+  "author": "petekp",
+  "source_url": "https://github.com/petekp/claude-code-setup/blob/main/skills/capture-learning/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Pete Petrash",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

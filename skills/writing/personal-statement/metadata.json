@@ -1,0 +1,17 @@
+{
+  "name": "personal-statement",
+  "repo": "DiamondhunterSA/personal-statement-skill",
+  "path": "skills/personal-statement/SKILL.md",
+  "github_branch": "master",
+  "category": "writing",
+  "source": "github.com/DiamondhunterSA/personal-statement-skill",
+  "dir_name": "personal-statement",
+  "downloaded_at": "2026-03-01T05:11:13.974428Z",
+  "author": "DiamondhunterSA",
+  "source_url": "https://github.com/DiamondhunterSA/personal-statement-skill/blob/master/skills/personal-statement/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DiamondhunterSA/personal-statement-skill/blob/master/skills/personal-statement/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "mcp-dynamic-orchestrator",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/mcp-dynamic-orchestrator/skills/mcp-dynamic-orchestrator/SKILL.md",
+  "source": "github.com/secondsky/claude-skills",
+  "downloaded_at": "2026-02-02T02:14:06.509612Z",
+  "dir_name": "mcp-dynamic-orchestrator",
+  "category": "orchestration",
+  "author": "secondsky",
+  "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/mcp-dynamic-orchestrator/skills/mcp-dynamic-orchestrator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Skills Maintainers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

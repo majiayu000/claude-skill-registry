@@ -1,0 +1,13 @@
+{
+  "name": "full-investigation",
+  "description": "",
+  "repo": "dandye/ai-runbooks",
+  "category": "security-operations",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dandye/ai-runbooks",
+  "github_path": "skills/_workflows/full-investigation",
+  "github_branch": "main",
+  "dir_name": "full-investigation",
+  "downloaded_at": "2026-02-05T01:44:13.035701Z"
+}

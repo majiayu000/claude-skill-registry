@@ -1,0 +1,16 @@
+{
+  "name": "calendar-scheduling",
+  "repo": "dglowacki/mega-agent-v2",
+  "path": ".claude/skills/calendar-scheduling/SKILL.md",
+  "source": "github.com/dglowacki/mega-agent-v2",
+  "downloaded_at": "2026-01-29T06:01:28.545493Z",
+  "dir_name": "calendar-scheduling-dglowacki-mega-agent-v2",
+  "category": "productivity",
+  "author": "dglowacki",
+  "source_url": "https://github.com/dglowacki/mega-agent-v2/blob/main/.claude/skills/calendar-scheduling/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dglowacki/mega-agent-v2/blob/main/.claude/skills/calendar-scheduling/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

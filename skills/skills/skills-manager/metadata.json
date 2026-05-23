@@ -1,0 +1,16 @@
+{
+  "name": "skills-manager",
+  "repo": "concaoccc/skill-manager",
+  "path": "skills/skills-manager/Skill.md",
+  "category": "skills",
+  "source": "github.com/concaoccc/skill-manager",
+  "dir_name": "skills-manager",
+  "downloaded_at": "2026-02-15T06:47:50.846404Z",
+  "author": "concaoccc",
+  "source_url": "https://github.com/concaoccc/skill-manager/blob/main/skills/skills-manager/Skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/concaoccc/skill-manager/blob/main/skills/skills-manager/Skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

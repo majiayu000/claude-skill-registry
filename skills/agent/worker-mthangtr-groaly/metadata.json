@@ -1,0 +1,13 @@
+{
+  "name": "worker",
+  "description": "",
+  "repo": "mthangtr/groaly",
+  "category": "agent",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mthangtr/groaly",
+  "github_path": ".claude/skills/worker",
+  "github_branch": "master",
+  "dir_name": "worker-mthangtr-groaly",
+  "downloaded_at": "2026-02-05T01:45:09.831292Z"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "compliance-check",
+  "repo": "KyteApp/growth-agents-and-skills",
+  "path": ".github/skills/compliance-check/SKILL.md",
+  "category": "security-compliance",
+  "source": "github.com/KyteApp/growth-agents-and-skills",
+  "dir_name": "compliance-check-kyteapp-growth-agents-and-sk-5",
+  "downloaded_at": "2026-02-22T05:18:10.422626Z",
+  "author": "KyteApp",
+  "source_url": "https://github.com/KyteApp/growth-agents-and-skills/blob/main/.github/skills/compliance-check/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/KyteApp/growth-agents-and-skills/blob/main/.github/skills/compliance-check/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

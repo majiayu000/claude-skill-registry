@@ -1,0 +1,18 @@
+{
+  "name": "style-transform",
+  "repo": "sunqb/ccsdk",
+  "path": ".claude/skills/style-transform/SKILL.md",
+  "source": "github.com/sunqb/ccsdk",
+  "downloaded_at": "2026-01-22T02:52:21.890452Z",
+  "dir_name": "style-transform",
+  "category": "writing",
+  "github_path": ".claude/skills/style-transform",
+  "github_branch": "main",
+  "author": "sunqb",
+  "source_url": "https://github.com/sunqb/ccsdk/blob/main/.claude/skills/style-transform/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sunqb/ccsdk/blob/main/.claude/skills/style-transform/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

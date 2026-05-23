@@ -1,0 +1,20 @@
+{
+  "name": "github-issue",
+  "description": "",
+  "repo": "NodeSentinel/beacon-chain-validators-monitor",
+  "category": "github-integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/NodeSentinel/beacon-chain-validators-monitor",
+  "github_path": ".claude/skills/github-issue",
+  "github_branch": "main",
+  "dir_name": "github-issue-nodesentinel-beacon-chain-validat",
+  "downloaded_at": "2026-02-05T01:44:52.204794Z",
+  "author": "NodeSentinel",
+  "source_url": "https://github.com/NodeSentinel/beacon-chain-validators-monitor/blob/main/.claude/skills/github-issue/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Domínguez Nicolás",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

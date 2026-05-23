@@ -1,0 +1,13 @@
+{
+  "name": "pdf",
+  "description": "",
+  "repo": "Victory-Hugo/S2-Agent-Skill",
+  "category": "document-processing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Victory-Hugo/S2-Agent-Skill",
+  "github_path": "skills/pdf",
+  "github_branch": "master",
+  "dir_name": "pdf-victory-hugo-s2-agent-skill",
+  "downloaded_at": "2026-02-05T05:39:12.273810Z"
+}

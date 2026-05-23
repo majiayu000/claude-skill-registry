@@ -1,0 +1,17 @@
+{
+  "name": "skill-doctor",
+  "repo": "dotCMS/core",
+  "path": ".claude/skills/skill-doctor/SKILL.md",
+  "github_branch": "main",
+  "category": "skills",
+  "source": "github.com/dotCMS/core",
+  "dir_name": "skill-doctor",
+  "downloaded_at": "2026-03-22T07:48:39.923589Z",
+  "author": "dotCMS",
+  "source_url": "https://github.com/dotCMS/core/blob/main/.claude/skills/skill-doctor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dotCMS/core/blob/main/.claude/skills/skill-doctor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

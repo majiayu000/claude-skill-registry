@@ -1,0 +1,18 @@
+{
+  "name": "prd-implementation-precheck",
+  "repo": "Charon-Fan/agent-playbook",
+  "path": "skills/prd-implementation-precheck/SKILL.md",
+  "source": "github.com/Charon-Fan/agent-playbook",
+  "downloaded_at": "2026-01-21T03:43:47.742399Z",
+  "dir_name": "prd-implementation-precheck",
+  "category": "product",
+  "github_path": "skills/prd-implementation-precheck",
+  "github_branch": "main",
+  "author": "Charon-Fan",
+  "source_url": "https://github.com/Charon-Fan/agent-playbook/blob/main/skills/prd-implementation-precheck/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Charon-Fan/agent-playbook/blob/main/skills/prd-implementation-precheck/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "performance",
+  "description": "",
+  "repo": "workleap/wl-agents-code-review-poc",
+  "category": "performance",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/workleap/wl-agents-code-review-poc",
+  "github_path": ".claude/skills/performance",
+  "github_branch": "main",
+  "dir_name": "performance-workleap-wl-agents-code-revie-45a384f5",
+  "downloaded_at": "2026-02-05T05:07:59.598213Z"
+}

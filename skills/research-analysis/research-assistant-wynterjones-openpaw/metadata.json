@@ -1,0 +1,17 @@
+{
+  "name": "research-assistant",
+  "repo": "WynterJones/OpenPaw",
+  "path": "internal/skilllibrary/catalog/research-assistant/SKILL.md",
+  "github_branch": "main",
+  "category": "research-analysis",
+  "source": "github.com/WynterJones/OpenPaw",
+  "dir_name": "research-assistant-wynterjones-openpaw",
+  "downloaded_at": "2026-03-22T06:31:14.641826Z",
+  "author": "WynterJones",
+  "source_url": "https://github.com/WynterJones/OpenPaw/blob/main/internal/skilllibrary/catalog/research-assistant/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/WynterJones/OpenPaw/blob/main/internal/skilllibrary/catalog/research-assistant/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

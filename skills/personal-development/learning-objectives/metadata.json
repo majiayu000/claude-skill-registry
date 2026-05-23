@@ -1,0 +1,18 @@
+{
+  "name": "learning-objectives",
+  "repo": "panaversity/agentfactory",
+  "path": ".claude/skills/learning-objectives/SKILL.md",
+  "source": "github.com/panaversity/agentfactory",
+  "downloaded_at": "2026-01-22T03:41:31.418075Z",
+  "dir_name": "learning-objectives",
+  "category": "personal-development",
+  "github_path": ".claude/skills/learning-objectives",
+  "github_branch": "main",
+  "author": "panaversity",
+  "source_url": "https://github.com/panaversity/agentfactory/blob/main/.claude/skills/learning-objectives/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/panaversity/agentfactory/blob/main/.claude/skills/learning-objectives/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

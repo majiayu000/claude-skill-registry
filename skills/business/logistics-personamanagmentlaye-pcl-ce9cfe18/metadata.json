@@ -1,0 +1,18 @@
+{
+  "name": "logistics",
+  "repo": "personamanagmentlayer/pcl",
+  "path": "stdlib/domains/logistics/SKILL.md",
+  "source": "github.com/personamanagmentlayer/pcl",
+  "downloaded_at": "2026-01-22T04:02:07.470210Z",
+  "dir_name": "logistics-personamanagmentlaye-pcl-ce9cfe18",
+  "category": "business",
+  "github_path": "stdlib/domains/logistics",
+  "github_branch": "main",
+  "author": "personamanagmentlayer",
+  "source_url": "https://github.com/personamanagmentlayer/pcl/blob/main/stdlib/domains/logistics/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/personamanagmentlayer/pcl/blob/main/stdlib/domains/logistics/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

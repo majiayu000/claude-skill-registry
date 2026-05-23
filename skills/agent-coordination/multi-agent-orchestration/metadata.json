@@ -1,0 +1,11 @@
+{
+  "name": "multi-agent-orchestration",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/multi-agent-orchestration/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-22T01:25:14.575413Z",
+  "dir_name": "multi-agent-orchestration",
+  "category": "agent-coordination",
+  "github_path": "skills/multi-agent-orchestration",
+  "github_branch": "main"
+}

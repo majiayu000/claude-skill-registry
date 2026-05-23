@@ -1,0 +1,20 @@
+{
+  "name": "fundraising",
+  "description": "",
+  "repo": "RefoundAI/lenny-skills",
+  "category": "business",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RefoundAI/lenny-skills",
+  "github_path": "skills/fundraising",
+  "github_branch": "main",
+  "dir_name": "fundraising-refoundai-lenny-skills",
+  "downloaded_at": "2026-02-05T05:41:55.464749Z",
+  "author": "RefoundAI",
+  "source_url": "https://github.com/RefoundAI/lenny-skills/blob/main/skills/fundraising/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Refound AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

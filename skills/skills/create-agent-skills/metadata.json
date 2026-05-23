@@ -1,0 +1,16 @@
+{
+  "name": "create-agent-skills",
+  "repo": "saxjax/saxjaxTuner",
+  "path": ".claude/skills/create-agent-skills/SKILL.md",
+  "source": "github.com/saxjax/saxjaxTuner",
+  "downloaded_at": "2026-02-02T04:34:23.236248Z",
+  "dir_name": "create-agent-skills",
+  "category": "skills",
+  "author": "saxjax",
+  "source_url": "https://github.com/saxjax/saxjaxTuner/blob/main/.claude/skills/create-agent-skills/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/saxjax/saxjaxTuner/blob/main/.claude/skills/create-agent-skills/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "way-magefile",
+  "repo": "way-platform/skills",
+  "path": "way-magefile/SKILL.md",
+  "source": "github.com/way-platform/skills",
+  "downloaded_at": "2026-02-02T02:22:35.099680Z",
+  "dir_name": "way-magefile",
+  "category": "development-tools",
+  "author": "way-platform",
+  "source_url": "https://github.com/way-platform/skills/blob/main/way-magefile/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Way Data Technologies Oy",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

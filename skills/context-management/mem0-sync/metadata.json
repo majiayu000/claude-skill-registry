@@ -1,0 +1,11 @@
+{
+  "name": "mem0-sync",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/mem0-sync/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-20T01:39:05.395823Z",
+  "dir_name": "mem0-sync",
+  "category": "context-management",
+  "github_path": "skills/mem0-sync",
+  "github_branch": "main"
+}

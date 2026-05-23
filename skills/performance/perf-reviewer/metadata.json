@@ -1,0 +1,16 @@
+{
+  "name": "perf-reviewer",
+  "repo": "sunholo-data/ailang",
+  "path": ".claude/skills/perf-reviewer/SKILL.md",
+  "source": "github.com/sunholo-data/ailang",
+  "downloaded_at": "2026-02-02T02:24:36.352975Z",
+  "dir_name": "perf-reviewer",
+  "category": "performance",
+  "author": "sunholo-data",
+  "source_url": "https://github.com/sunholo-data/ailang/blob/main/.claude/skills/perf-reviewer/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sunholo-data/ailang/blob/main/.claude/skills/perf-reviewer/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

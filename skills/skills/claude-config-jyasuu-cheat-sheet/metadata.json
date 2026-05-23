@@ -1,0 +1,16 @@
+{
+  "name": "claude-config",
+  "repo": "jyasuu/cheat-sheet",
+  "path": "skills/claude-config/SKILL.md",
+  "source": "github.com/jyasuu/cheat-sheet",
+  "downloaded_at": "2026-02-02T03:19:49.679181Z",
+  "dir_name": "claude-config-jyasuu-cheat-sheet",
+  "category": "skills",
+  "author": "jyasuu",
+  "source_url": "https://github.com/jyasuu/cheat-sheet/blob/main/skills/claude-config/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jyasuu/cheat-sheet/blob/main/skills/claude-config/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

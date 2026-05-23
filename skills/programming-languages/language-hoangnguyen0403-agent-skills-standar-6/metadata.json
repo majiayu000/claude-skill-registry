@@ -1,0 +1,16 @@
+{
+  "name": "language",
+  "repo": "HoangNguyen0403/agent-skills-standard",
+  "path": "skills/typescript/language/SKILL.md",
+  "category": "programming-languages",
+  "source": "github.com/HoangNguyen0403/agent-skills-standard",
+  "dir_name": "language-hoangnguyen0403-agent-skills-standar-6",
+  "downloaded_at": "2026-02-15T05:13:29.192436Z",
+  "author": "HoangNguyen0403",
+  "source_url": "https://github.com/HoangNguyen0403/agent-skills-standard/blob/main/skills/typescript/language/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HoangNguyen0403/agent-skills-standard/blob/main/skills/typescript/language/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

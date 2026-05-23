@@ -1,0 +1,18 @@
+{
+  "name": "snd-lifestream",
+  "repo": "vaoan/SND",
+  "path": ".claude/skills/snd-lifestream/SKILL.md",
+  "source": "github.com/vaoan/SND",
+  "downloaded_at": "2026-01-22T01:11:52.055140Z",
+  "dir_name": "snd-lifestream",
+  "category": "gaming",
+  "github_path": ".claude/skills/snd-lifestream",
+  "github_branch": "main",
+  "author": "vaoan",
+  "source_url": "https://github.com/vaoan/SND/blob/main/.claude/skills/snd-lifestream/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vaoan/SND/blob/main/.claude/skills/snd-lifestream/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

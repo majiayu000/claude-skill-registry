@@ -1,0 +1,13 @@
+{
+  "name": "context-hunter",
+  "description": "Agent-to-Agent MCP communication tool for feedback requests",
+  "repo": "MrLesk/agents-council",
+  "category": "context-management",
+  "tags": [],
+  "stars": 16,
+  "source": "",
+  "github_path": ".codex/skills/context-hunter",
+  "github_branch": "main",
+  "dir_name": "context-hunter",
+  "downloaded_at": "2026-02-05T01:45:28.246764Z"
+}

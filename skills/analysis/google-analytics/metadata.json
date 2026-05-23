@@ -1,0 +1,16 @@
+{
+  "name": "google-analytics",
+  "repo": "davila7/claude-code-templates",
+  "path": "cli-tool/components/skills/analytics/google-analytics/SKILL.md",
+  "source": "github.com/davila7/claude-code-templates",
+  "downloaded_at": "2026-01-31T01:05:35.784233Z",
+  "dir_name": "google-analytics",
+  "category": "analysis",
+  "author": "davila7",
+  "source_url": "https://github.com/davila7/claude-code-templates/blob/main/cli-tool/components/skills/analytics/google-analytics/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel (San) Ávila",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "writing-north-star-metrics",
+  "repo": "RefoundAI/lenny-skills",
+  "path": "skills/writing-north-star-metrics/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/RefoundAI/lenny-skills",
+  "dir_name": "writing-north-star-metrics-refoundai-lenny-skills-2",
+  "downloaded_at": "2026-03-01T05:58:56.798658Z",
+  "author": "RefoundAI",
+  "source_url": "https://github.com/RefoundAI/lenny-skills/blob/main/skills/writing-north-star-metrics/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/RefoundAI/lenny-skills/blob/main/skills/writing-north-star-metrics/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

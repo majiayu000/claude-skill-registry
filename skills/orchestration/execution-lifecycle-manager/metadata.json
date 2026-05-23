@@ -1,0 +1,16 @@
+{
+  "name": "execution-lifecycle-manager",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/execution-lifecycle-manager/SKILL.md",
+  "source": "github.com/erichowens/some_claude_skills",
+  "downloaded_at": "2026-02-02T01:27:03.029649Z",
+  "dir_name": "execution-lifecycle-manager",
+  "category": "orchestration",
+  "author": "erichowens",
+  "source_url": "https://github.com/erichowens/some_claude_skills/blob/main/.claude/skills/execution-lifecycle-manager/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Erich Owens",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "parallel-exec",
+  "repo": "omerlefaruk/CasareRPA",
+  "path": ".claude/skills/parallel-exec/SKILL.md",
+  "source": "github.com/omerlefaruk/CasareRPA",
+  "downloaded_at": "2026-01-22T04:12:07.641278Z",
+  "dir_name": "parallel-exec",
+  "category": "agent-coordination",
+  "github_path": ".claude/skills/parallel-exec",
+  "github_branch": "main"
+}

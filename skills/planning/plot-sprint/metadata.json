@@ -1,0 +1,17 @@
+{
+  "name": "plot-sprint",
+  "repo": "eins78/skills",
+  "path": "skills/plot-sprint/SKILL.md",
+  "github_branch": "main",
+  "category": "planning",
+  "source": "github.com/eins78/skills",
+  "dir_name": "plot-sprint",
+  "downloaded_at": "2026-03-01T07:35:07.566358Z",
+  "author": "eins78",
+  "source_url": "https://github.com/eins78/skills/blob/main/skills/plot-sprint/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/eins78/skills/blob/main/skills/plot-sprint/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

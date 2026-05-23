@@ -1,0 +1,17 @@
+{
+  "name": "writing-plans",
+  "repo": "AristidesAI/VisionEmoji",
+  "path": ".claude/skills/writing-plans/SKILL.md",
+  "github_branch": "main",
+  "category": "planning",
+  "source": "github.com/AristidesAI/VisionEmoji",
+  "dir_name": "writing-plans-aristidesai-visionemoji",
+  "downloaded_at": "2026-03-22T04:53:13.491683Z",
+  "author": "AristidesAI",
+  "source_url": "https://github.com/AristidesAI/VisionEmoji/blob/main/.claude/skills/writing-plans/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AristidesAI/VisionEmoji/blob/main/.claude/skills/writing-plans/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "cc-session-search",
+  "repo": "jasonkuhrt/dotfiles",
+  "path": "claude/skills/cc-session-search/SKILL.md",
+  "source": "github.com/jasonkuhrt/dotfiles",
+  "downloaded_at": "2026-01-28T04:15:12.331024Z",
+  "dir_name": "cc-session-search",
+  "category": "context-management",
+  "author": "jasonkuhrt",
+  "source_url": "https://github.com/jasonkuhrt/dotfiles/blob/main/claude/skills/cc-session-search/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jasonkuhrt/dotfiles/blob/main/claude/skills/cc-session-search/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

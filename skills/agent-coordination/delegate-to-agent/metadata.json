@@ -1,0 +1,13 @@
+{
+  "name": "delegate-to-agent",
+  "description": "",
+  "repo": "Khamel83/oneshot",
+  "category": "agent-coordination",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Khamel83/oneshot",
+  "github_path": ".claude/skills/delegate-to-agent",
+  "github_branch": "master",
+  "dir_name": "delegate-to-agent",
+  "downloaded_at": "2026-02-05T01:44:38.032004Z"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "github-multi-repo",
+  "description": "",
+  "repo": "smith-horn/skillsmith",
+  "category": "github-integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/smith-horn/skillsmith",
+  "github_path": ".claude/skills/github-multi-repo",
+  "github_branch": "main",
+  "dir_name": "github-multi-repo-smith-horn-skillsmith",
+  "downloaded_at": "2026-02-05T01:44:48.367161Z"
+}

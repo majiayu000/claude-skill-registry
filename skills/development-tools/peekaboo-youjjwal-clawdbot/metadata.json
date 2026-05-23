@@ -1,0 +1,16 @@
+{
+  "name": "peekaboo",
+  "repo": "Youjjwal/clawdbot",
+  "path": "skills/peekaboo/SKILL.md",
+  "source": "github.com/Youjjwal/clawdbot",
+  "downloaded_at": "2026-01-29T06:18:43.011467Z",
+  "dir_name": "peekaboo-youjjwal-clawdbot",
+  "category": "development-tools",
+  "author": "Youjjwal",
+  "source_url": "https://github.com/Youjjwal/clawdbot/blob/main/skills/peekaboo/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Peter Steinberger",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

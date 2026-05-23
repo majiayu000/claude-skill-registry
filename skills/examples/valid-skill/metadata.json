@@ -1,0 +1,16 @@
+{
+  "name": "valid-skill",
+  "repo": "pproenca/dot-skills",
+  "path": "tests/fixtures/valid-skill/SKILL.md",
+  "source": "github.com/pproenca/dot-skills",
+  "downloaded_at": "2026-02-02T04:40:49.108803Z",
+  "dir_name": "valid-skill",
+  "category": "examples",
+  "author": "pproenca",
+  "source_url": "https://github.com/pproenca/dot-skills/blob/main/tests/fixtures/valid-skill/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

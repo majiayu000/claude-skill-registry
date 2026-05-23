@@ -1,0 +1,17 @@
+{
+  "name": "uv-package-manager",
+  "repo": "EricGrill/agents-skills-plugins",
+  "path": "plugins/python-development/skills/uv-package-manager/SKILL.md",
+  "github_branch": "main",
+  "category": "development-tools",
+  "source": "github.com/EricGrill/agents-skills-plugins",
+  "dir_name": "uv-package-manager-ericgrill-agents-skills-plugin",
+  "downloaded_at": "2026-03-22T05:18:48.656085Z",
+  "author": "EricGrill",
+  "source_url": "https://github.com/EricGrill/agents-skills-plugins/blob/main/plugins/python-development/skills/uv-package-manager/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/EricGrill/agents-skills-plugins/blob/main/plugins/python-development/skills/uv-package-manager/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

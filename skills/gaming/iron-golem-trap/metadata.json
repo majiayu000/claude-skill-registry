@@ -1,0 +1,17 @@
+{
+  "name": "iron-golem-trap",
+  "repo": "Shin0205go/auto-mineflayer-mcp-server",
+  "path": ".claude/skills/iron-golem-trap/SKILL.md",
+  "github_branch": "main",
+  "category": "gaming",
+  "source": "github.com/Shin0205go/auto-mineflayer-mcp-server",
+  "dir_name": "iron-golem-trap",
+  "downloaded_at": "2026-03-01T06:05:51.434567Z",
+  "author": "Shin0205go",
+  "source_url": "https://github.com/Shin0205go/auto-mineflayer-mcp-server/blob/main/.claude/skills/iron-golem-trap/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Shin0205go/auto-mineflayer-mcp-server/blob/main/.claude/skills/iron-golem-trap/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

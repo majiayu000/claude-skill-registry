@@ -1,0 +1,20 @@
+{
+  "name": "skill-creator",
+  "description": "",
+  "repo": "fercracix33/poli2-clean-architecture",
+  "category": "skills",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/fercracix33/poli2-clean-architecture",
+  "github_path": ".claude/skills/skill-creator",
+  "github_branch": "main",
+  "dir_name": "skill-creator-fercracix33-poli2-clean-architec",
+  "downloaded_at": "2026-02-05T01:44:49.896974Z",
+  "author": "fercracix33",
+  "source_url": "https://github.com/fercracix33/poli2-clean-architecture/blob/main/.claude/skills/skill-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fercracix33/poli2-clean-architecture/blob/main/.claude/skills/skill-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

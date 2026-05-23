@@ -1,0 +1,13 @@
+{
+  "name": "workflow-auto",
+  "description": "",
+  "repo": "specvital/infra",
+  "category": "workflow",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/specvital/infra",
+  "github_path": ".claude/skills/workflow-auto",
+  "github_branch": "main",
+  "dir_name": "workflow-auto-specvital-infra",
+  "downloaded_at": "2026-02-05T01:44:17.819884Z"
+}

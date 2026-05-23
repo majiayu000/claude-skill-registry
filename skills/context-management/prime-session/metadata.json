@@ -1,0 +1,18 @@
+{
+  "name": "prime-session",
+  "repo": "fusupo/escapement",
+  "path": "skills/prime-session/SKILL.md",
+  "source": "github.com/fusupo/escapement",
+  "downloaded_at": "2026-01-14T03:23:44.360707Z",
+  "dir_name": "prime-session",
+  "category": "context-management",
+  "github_path": "skills/prime-session",
+  "github_branch": "main",
+  "author": "fusupo",
+  "source_url": "https://github.com/fusupo/escapement/blob/main/skills/prime-session/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fusupo/escapement/blob/main/skills/prime-session/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

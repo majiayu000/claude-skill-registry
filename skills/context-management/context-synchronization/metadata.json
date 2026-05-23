@@ -1,0 +1,18 @@
+{
+  "name": "context-synchronization",
+  "repo": "vinothpandian/v-marketplace",
+  "path": "plugins/claude-conductor/skills/context-synchronization/SKILL.md",
+  "source": "github.com/vinothpandian/v-marketplace",
+  "downloaded_at": "2026-01-14T03:51:18.979956Z",
+  "dir_name": "context-synchronization",
+  "category": "context-management",
+  "github_path": "plugins/claude-conductor/skills/context-synchronization",
+  "github_branch": "main",
+  "author": "vinothpandian",
+  "source_url": "https://github.com/vinothpandian/v-marketplace/blob/main/plugins/claude-conductor/skills/context-synchronization/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vinothpandian/v-marketplace/blob/main/plugins/claude-conductor/skills/context-synchronization/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

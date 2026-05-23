@@ -1,0 +1,16 @@
+{
+  "name": "verb-entry",
+  "repo": "tkgally/je-dict-1",
+  "path": ".claude/skills/verb-entry/SKILL.md",
+  "source": "github.com/tkgally/je-dict-1",
+  "downloaded_at": "2026-01-29T07:30:49.165468Z",
+  "dir_name": "verb-entry-tkgally-je-dict-1-243c3fb1",
+  "category": "language",
+  "author": "tkgally",
+  "source_url": "https://github.com/tkgally/je-dict-1/blob/main/.claude/skills/verb-entry/SKILL.md",
+  "license": "CC0-1.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tkgally/je-dict-1/blob/main/.claude/skills/verb-entry/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

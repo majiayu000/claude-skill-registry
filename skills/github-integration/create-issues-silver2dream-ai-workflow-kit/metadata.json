@@ -1,0 +1,13 @@
+{
+  "name": "create-issues",
+  "description": "AI-assisted development workflow kit for Spec → Implement → PR → Merge automation",
+  "repo": "silver2dream/ai-workflow-kit",
+  "category": "github-integration",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".ai/skills/create-issues",
+  "github_branch": "main",
+  "dir_name": "create-issues-silver2dream-ai-workflow-kit",
+  "downloaded_at": "2026-02-05T01:45:36.978791Z"
+}

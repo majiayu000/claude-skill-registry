@@ -1,0 +1,16 @@
+{
+  "name": "flow-nexus-swarm",
+  "repo": "DNYoussef/ai-chrome-extension",
+  "path": ".claude/skills/flow-nexus-swarm/SKILL.md",
+  "source": "github.com/DNYoussef/ai-chrome-extension",
+  "downloaded_at": "2026-01-29T08:56:02.136634Z",
+  "dir_name": "flow-nexus-swarm-dnyoussef-ai-chrome-extension",
+  "category": "agent-coordination",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/ai-chrome-extension/blob/main/.claude/skills/flow-nexus-swarm/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ReadFlow Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

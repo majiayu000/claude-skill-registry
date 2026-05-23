@@ -1,0 +1,16 @@
+{
+  "name": "moai",
+  "repo": "hnabyz-bot/fpga-work",
+  "path": ".claude/agents/moai/builder-skill.md",
+  "category": "skills",
+  "source": "github.com/hnabyz-bot/fpga-work",
+  "dir_name": "moai-hnabyz-bot-fpga-work",
+  "downloaded_at": "2026-02-22T07:27:08.685797Z",
+  "author": "hnabyz-bot",
+  "source_url": "https://github.com/hnabyz-bot/fpga-work/blob/main/.claude/agents/moai/builder-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hnabyz-bot/fpga-work/blob/main/.claude/agents/moai/builder-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

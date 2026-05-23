@@ -1,0 +1,13 @@
+{
+  "name": "pr-comment-resolver",
+  "description": "",
+  "repo": "mattjefferson/agents",
+  "category": "github-integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattjefferson/agents",
+  "github_path": "skills/pr-comment-resolver",
+  "github_branch": "main",
+  "dir_name": "pr-comment-resolver",
+  "downloaded_at": "2026-02-05T05:43:57.386228Z"
+}

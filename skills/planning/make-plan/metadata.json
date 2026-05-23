@@ -1,0 +1,13 @@
+{
+  "name": "make-plan",
+  "description": "",
+  "repo": "tomcounsell/ai",
+  "category": "planning",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tomcounsell/ai",
+  "github_path": ".claude/skills/make-plan",
+  "github_branch": "main",
+  "dir_name": "make-plan",
+  "downloaded_at": "2026-02-05T01:44:59.194147Z"
+}

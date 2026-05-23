@@ -1,0 +1,13 @@
+{
+  "name": "gh-get-review-comments",
+  "description": "",
+  "repo": "HomericIntelligence/ProjectOdyssey",
+  "category": "github-integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HomericIntelligence/ProjectOdyssey",
+  "github_path": ".claude/skills/gh-get-review-comments",
+  "github_branch": "main",
+  "dir_name": "gh-get-review-comments-homericintelligence-projectodyssey",
+  "downloaded_at": "2026-02-05T01:44:42.782036Z"
+}

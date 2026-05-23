@@ -1,0 +1,16 @@
+{
+  "name": "gh-ticket",
+  "repo": "Cygnusfear/claude-stuff",
+  "path": "skills/gh-ticket/SKILL.md",
+  "source": "github.com/Cygnusfear/claude-stuff",
+  "downloaded_at": "2026-01-28T01:39:45.714045Z",
+  "dir_name": "gh-ticket",
+  "category": "github-integration",
+  "author": "Cygnusfear",
+  "source_url": "https://github.com/Cygnusfear/claude-stuff/blob/main/skills/gh-ticket/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Cygnusfear/claude-stuff/blob/main/skills/gh-ticket/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

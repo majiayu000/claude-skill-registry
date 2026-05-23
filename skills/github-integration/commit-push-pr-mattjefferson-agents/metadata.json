@@ -1,0 +1,13 @@
+{
+  "name": "commit-push-pr",
+  "description": "",
+  "repo": "mattjefferson/agents",
+  "category": "github-integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattjefferson/agents",
+  "github_path": "skills/commit-push-pr",
+  "github_branch": "main",
+  "dir_name": "commit-push-pr-mattjefferson-agents",
+  "downloaded_at": "2026-02-05T05:43:57.400307Z"
+}

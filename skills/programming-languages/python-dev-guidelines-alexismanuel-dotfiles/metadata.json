@@ -1,0 +1,17 @@
+{
+  "name": "python-dev-guidelines",
+  "repo": "alexismanuel/dotfiles",
+  "path": ".config/opencode/skills/python-dev-guidelines/SKILL.md",
+  "github_branch": "master",
+  "category": "programming-languages",
+  "source": "github.com/alexismanuel/dotfiles",
+  "dir_name": "python-dev-guidelines-alexismanuel-dotfiles",
+  "downloaded_at": "2026-03-01T06:37:43.620506Z",
+  "author": "alexismanuel",
+  "source_url": "https://github.com/alexismanuel/dotfiles/blob/master/.config/opencode/skills/python-dev-guidelines/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alexismanuel/dotfiles/blob/master/.config/opencode/skills/python-dev-guidelines/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

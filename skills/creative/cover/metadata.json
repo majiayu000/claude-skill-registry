@@ -1,0 +1,16 @@
+{
+  "name": "cover",
+  "repo": "howells/fiction",
+  "path": "skills/cover/skill.md",
+  "source": "github.com/howells/fiction",
+  "downloaded_at": "2026-02-02T02:14:21.475000Z",
+  "dir_name": "cover",
+  "category": "creative",
+  "author": "howells",
+  "source_url": "https://github.com/howells/fiction/blob/main/skills/cover/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/howells/fiction/blob/main/skills/cover/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

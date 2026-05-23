@@ -1,0 +1,16 @@
+{
+  "name": "skill-tuning",
+  "repo": "catlog22/Claude-Code-Workflow",
+  "path": ".claude/skills/skill-tuning/SKILL.md",
+  "source": "github.com/catlog22/Claude-Code-Workflow",
+  "downloaded_at": "2026-02-02T05:01:36.747546Z",
+  "dir_name": "skill-tuning",
+  "category": "skills",
+  "author": "catlog22",
+  "source_url": "https://github.com/catlog22/Claude-Code-Workflow/blob/main/.claude/skills/skill-tuning/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Claude Development Guidelines",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "langgraph-multiagent",
+  "repo": "BjornMelin/dev-skills",
+  "path": "skills/langgraph-multiagent/SKILL.md",
+  "source": "github.com/BjornMelin/dev-skills",
+  "downloaded_at": "2026-02-02T04:10:51.507263Z",
+  "dir_name": "langgraph-multiagent",
+  "category": "agent-coordination",
+  "author": "BjornMelin",
+  "source_url": "https://github.com/BjornMelin/dev-skills/blob/main/skills/langgraph-multiagent/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BjornMelin/dev-skills/blob/main/skills/langgraph-multiagent/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "hunt",
+  "repo": "google/mcp-security",
+  "path": "extensions/google-secops/skills/hunt/SKILL.md",
+  "source": "github.com/google/mcp-security",
+  "downloaded_at": "2026-02-02T01:35:16.111062Z",
+  "dir_name": "hunt-google-mcp-security",
+  "category": "security-operations"
+}

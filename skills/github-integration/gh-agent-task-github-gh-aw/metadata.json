@@ -1,0 +1,13 @@
+{
+  "name": "gh-agent-task",
+  "description": "",
+  "repo": "github/gh-aw",
+  "category": "github-integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/github/gh-aw",
+  "github_path": "skills/gh-agent-task",
+  "github_branch": "main",
+  "dir_name": "gh-agent-task-github-gh-aw",
+  "downloaded_at": "2026-02-05T01:44:29.687338Z"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "risk-metrics-calculation",
+  "repo": "ccf/claude-code-ccf-marketplace",
+  "path": "plugins/quantitative-trading/skills/risk-metrics-calculation/SKILL.md",
+  "source": "github.com/ccf/claude-code-ccf-marketplace",
+  "downloaded_at": "2026-02-02T05:11:56.997529Z",
+  "dir_name": "risk-metrics-calculation-ccf-claude-code-ccf-mark",
+  "category": "analysis",
+  "author": "ccf",
+  "source_url": "https://github.com/ccf/claude-code-ccf-marketplace/blob/main/plugins/quantitative-trading/skills/risk-metrics-calculation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Seth Hobson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

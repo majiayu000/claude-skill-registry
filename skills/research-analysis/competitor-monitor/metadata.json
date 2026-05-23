@@ -1,0 +1,16 @@
+{
+  "name": "competitor-monitor",
+  "repo": "guia-matthieu/clawfu-skills",
+  "path": "skills/automation/competitor-monitor/SKILL.md",
+  "category": "research-analysis",
+  "source": "github.com/guia-matthieu/clawfu-skills",
+  "dir_name": "competitor-monitor",
+  "downloaded_at": "2026-02-22T07:22:42.954257Z",
+  "author": "guia-matthieu",
+  "source_url": "https://github.com/guia-matthieu/clawfu-skills/blob/main/skills/automation/competitor-monitor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/guia-matthieu/clawfu-skills/blob/main/skills/automation/competitor-monitor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

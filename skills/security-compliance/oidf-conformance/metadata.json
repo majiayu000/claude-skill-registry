@@ -1,0 +1,16 @@
+{
+  "name": "oidf-conformance",
+  "repo": "hirokazu-kobayashi-koba-hiro/idp-server",
+  "path": ".claude/skills/oidf-conformance/skill.md",
+  "category": "security-compliance",
+  "source": "github.com/hirokazu-kobayashi-koba-hiro/idp-server",
+  "dir_name": "oidf-conformance",
+  "downloaded_at": "2026-02-22T07:26:54.747092Z",
+  "author": "hirokazu-kobayashi-koba-hiro",
+  "source_url": "https://github.com/hirokazu-kobayashi-koba-hiro/idp-server/blob/main/.claude/skills/oidf-conformance/skill.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hirokazu-kobayashi-koba-hiro/idp-server/blob/main/.claude/skills/oidf-conformance/skill.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

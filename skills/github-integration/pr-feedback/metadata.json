@@ -1,0 +1,13 @@
+{
+  "name": "pr-feedback",
+  "description": "",
+  "repo": "mattjefferson/agents",
+  "category": "github-integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattjefferson/agents",
+  "github_path": "skills/pr-feedback",
+  "github_branch": "main",
+  "dir_name": "pr-feedback",
+  "downloaded_at": "2026-02-05T05:43:57.304931Z"
+}

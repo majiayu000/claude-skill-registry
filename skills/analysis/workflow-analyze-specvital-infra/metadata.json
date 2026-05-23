@@ -1,0 +1,13 @@
+{
+  "name": "workflow-analyze",
+  "description": "",
+  "repo": "specvital/infra",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/specvital/infra",
+  "github_path": ".claude/skills/workflow-analyze",
+  "github_branch": "main",
+  "dir_name": "workflow-analyze-specvital-infra",
+  "downloaded_at": "2026-02-05T01:44:17.812183Z"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "powershell-master",
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/powershell-master/skills/powershell-master/SKILL.md",
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "downloaded_at": "2026-02-02T01:30:45.026176Z",
+  "dir_name": "powershell-master",
+  "category": "bash",
+  "author": "JosiahSiegel",
+  "source_url": "https://github.com/JosiahSiegel/claude-plugin-marketplace/blob/main/plugins/powershell-master/skills/powershell-master/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Josiah Siegel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

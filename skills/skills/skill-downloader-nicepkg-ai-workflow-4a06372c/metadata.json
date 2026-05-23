@@ -1,0 +1,16 @@
+{
+  "name": "skill-downloader",
+  "repo": "nicepkg/ai-workflow",
+  "path": ".claude/skills/skill-downloader/SKILL.md",
+  "source": "github.com/nicepkg/ai-workflow",
+  "downloaded_at": "2026-02-02T05:10:20.928545Z",
+  "dir_name": "skill-downloader-nicepkg-ai-workflow-4a06372c",
+  "category": "skills",
+  "author": "nicepkg",
+  "source_url": "https://github.com/nicepkg/ai-workflow/blob/main/.claude/skills/skill-downloader/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 nicepkg",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

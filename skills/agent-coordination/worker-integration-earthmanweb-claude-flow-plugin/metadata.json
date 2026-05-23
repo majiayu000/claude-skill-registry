@@ -1,0 +1,16 @@
+{
+  "name": "worker-integration",
+  "repo": "EarthmanWeb/claude-flow-plugin",
+  "path": "v3/@claude-flow/cli/.claude/skills/worker-integration/skill.md",
+  "source": "github.com/EarthmanWeb/claude-flow-plugin",
+  "downloaded_at": "2026-01-29T08:21:11.827792Z",
+  "dir_name": "worker-integration-earthmanweb-claude-flow-plugin",
+  "category": "agent-coordination",
+  "author": "EarthmanWeb",
+  "source_url": "https://github.com/EarthmanWeb/claude-flow-plugin/blob/main/v3/@claude-flow/cli/.claude/skills/worker-integration/skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2026 ruvnet",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

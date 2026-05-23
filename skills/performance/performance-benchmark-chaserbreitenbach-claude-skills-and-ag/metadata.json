@@ -1,0 +1,16 @@
+{
+  "name": "performance-benchmark",
+  "repo": "chaserbreitenbach/claude-skills-and-agents",
+  "path": "skills/testing/performance-benchmark/SKILL.md",
+  "source": "github.com/chaserbreitenbach/claude-skills-and-agents",
+  "downloaded_at": "2026-01-29T06:30:05.117508Z",
+  "dir_name": "performance-benchmark-chaserbreitenbach-claude-skills-and-ag",
+  "category": "performance",
+  "author": "chaserbreitenbach",
+  "source_url": "https://github.com/chaserbreitenbach/claude-skills-and-agents/blob/main/skills/testing/performance-benchmark/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/chaserbreitenbach/claude-skills-and-agents/blob/main/skills/testing/performance-benchmark/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

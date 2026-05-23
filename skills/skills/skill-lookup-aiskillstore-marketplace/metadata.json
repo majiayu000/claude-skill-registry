@@ -1,0 +1,17 @@
+{
+  "name": "skill-lookup",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/f/skill-lookup/SKILL.md",
+  "github_branch": "main",
+  "category": "skills",
+  "source": "github.com/aiskillstore/marketplace",
+  "dir_name": "skill-lookup-aiskillstore-marketplace",
+  "downloaded_at": "2026-04-30T02:00:33.623930Z",
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/f/skill-lookup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/f/skill-lookup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

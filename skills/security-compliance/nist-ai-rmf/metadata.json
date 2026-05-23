@@ -1,0 +1,17 @@
+{
+  "name": "nist-ai-rmf",
+  "repo": "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+  "path": "plugins/nist-ai-rmf/skills/nist-ai-rmf/SKILL.md",
+  "github_branch": "main",
+  "category": "security-compliance",
+  "source": "github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+  "dir_name": "nist-ai-rmf",
+  "downloaded_at": "2026-05-20T03:46:28.495804Z",
+  "author": "Sushegaad",
+  "source_url": "https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/blob/main/plugins/nist-ai-rmf/skills/nist-ai-rmf/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/blob/main/plugins/nist-ai-rmf/skills/nist-ai-rmf/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

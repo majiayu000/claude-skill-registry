@@ -1,0 +1,13 @@
+{
+  "name": "skill-creator",
+  "description": "",
+  "repo": "microsoft/skills",
+  "category": "skills",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/microsoft/skills",
+  "github_path": ".github/skills/skill-creator",
+  "github_branch": "main",
+  "dir_name": "skill-creator-microsoft-skills",
+  "downloaded_at": "2026-02-05T01:44:52.323503Z"
+}

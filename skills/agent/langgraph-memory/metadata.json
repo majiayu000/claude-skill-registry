@@ -1,0 +1,16 @@
+{
+  "name": "langgraph-memory",
+  "repo": "evanfang0054/cc-system-creator-scripts",
+  "path": "skills/langchain-skills/langgraph-memory/SKILL.md",
+  "category": "agent",
+  "source": "github.com/evanfang0054/cc-system-creator-scripts",
+  "dir_name": "langgraph-memory",
+  "downloaded_at": "2026-02-22T07:06:52.292835Z",
+  "author": "evanfang0054",
+  "source_url": "https://github.com/evanfang0054/cc-system-creator-scripts/blob/main/skills/langchain-skills/langgraph-memory/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Evan Fang",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

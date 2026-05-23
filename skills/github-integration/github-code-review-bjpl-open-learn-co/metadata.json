@@ -1,0 +1,11 @@
+{
+  "name": "github-code-review",
+  "repo": "bjpl/open_learn_co",
+  "path": ".claude/skills/github-code-review/SKILL.md",
+  "source": "github.com/bjpl/open_learn_co",
+  "downloaded_at": "2026-01-22T04:08:47.063972Z",
+  "dir_name": "github-code-review-bjpl-open-learn-co",
+  "category": "github-integration",
+  "github_path": ".claude/skills/github-code-review",
+  "github_branch": "main"
+}

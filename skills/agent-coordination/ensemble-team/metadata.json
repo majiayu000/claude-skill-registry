@@ -1,0 +1,16 @@
+{
+  "name": "ensemble-team",
+  "repo": "jwilger/agent-skills",
+  "path": "skills/ensemble-team/SKILL.md",
+  "category": "agent-coordination",
+  "source": "github.com/jwilger/agent-skills",
+  "dir_name": "ensemble-team",
+  "downloaded_at": "2026-02-15T07:48:49.047186Z",
+  "author": "jwilger",
+  "source_url": "https://github.com/jwilger/agent-skills/blob/main/skills/ensemble-team/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jwilger/agent-skills/blob/main/skills/ensemble-team/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "slack-message",
+  "repo": "TimothyNguyen04/pmos",
+  "path": ".claude/skills/slack-message/SKILL.md",
+  "github_branch": "main",
+  "category": "communication",
+  "source": "github.com/TimothyNguyen04/pmos",
+  "dir_name": "slack-message",
+  "downloaded_at": "2026-03-22T06:24:09.790798Z",
+  "author": "TimothyNguyen04",
+  "source_url": "https://github.com/TimothyNguyen04/pmos/blob/main/.claude/skills/slack-message/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TimothyNguyen04/pmos/blob/main/.claude/skills/slack-message/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

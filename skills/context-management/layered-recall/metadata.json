@@ -1,0 +1,17 @@
+{
+  "name": "layered-recall",
+  "repo": "vibeeval/vibecosystem",
+  "path": "skills/layered-recall/SKILL.md",
+  "github_branch": "main",
+  "category": "context-management",
+  "source": "github.com/vibeeval/vibecosystem",
+  "dir_name": "layered-recall",
+  "downloaded_at": "2026-05-17T04:04:34.026917Z",
+  "author": "vibeeval",
+  "source_url": "https://github.com/vibeeval/vibecosystem/blob/main/skills/layered-recall/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vibeeval/vibecosystem/blob/main/skills/layered-recall/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

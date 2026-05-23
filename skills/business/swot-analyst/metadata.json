@@ -1,0 +1,18 @@
+{
+  "name": "swot-analyst",
+  "repo": "ZhiruiFeng/LocalAgentCrew",
+  "path": ".claude/skills/swot-analyst/SKILL.md",
+  "source": "github.com/ZhiruiFeng/LocalAgentCrew",
+  "downloaded_at": "2026-01-22T01:44:13.667952Z",
+  "dir_name": "swot-analyst",
+  "category": "business",
+  "github_path": ".claude/skills/swot-analyst",
+  "github_branch": "main",
+  "author": "ZhiruiFeng",
+  "source_url": "https://github.com/ZhiruiFeng/LocalAgentCrew/blob/main/.claude/skills/swot-analyst/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Zhirui Feng",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "create-pr",
+  "description": "",
+  "repo": "adrimaximus/n8n",
+  "category": "github-integration",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".claude/skills/create-pr",
+  "github_branch": "master",
+  "dir_name": "create-pr-adrimaximus-n8n",
+  "downloaded_at": "2026-02-05T01:45:39.005398Z"
+}

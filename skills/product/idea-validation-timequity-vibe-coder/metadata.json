@@ -1,0 +1,18 @@
+{
+  "name": "idea-validation",
+  "repo": "timequity/vibe-coder",
+  "path": "skills/idea-validation/SKILL.md",
+  "source": "github.com/timequity/vibe-coder",
+  "downloaded_at": "2026-01-22T03:40:31.644323Z",
+  "dir_name": "idea-validation-timequity-vibe-coder",
+  "category": "product",
+  "github_path": "skills/idea-validation",
+  "github_branch": "main",
+  "author": "timequity",
+  "source_url": "https://github.com/timequity/vibe-coder/blob/main/skills/idea-validation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 timequity",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

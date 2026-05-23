@@ -1,0 +1,13 @@
+{
+  "name": "saga-orchestration",
+  "description": "",
+  "repo": "ACGSpgp/ACGS",
+  "category": "orchestration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ACGSpgp/ACGS",
+  "github_path": ".agent/workflows/backend-development/1.2.3/skills/saga-orchestration",
+  "github_branch": "main",
+  "dir_name": "saga-orchestration-acgspgp-acgs",
+  "downloaded_at": "2026-02-05T05:40:33.034827Z"
+}

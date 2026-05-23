@@ -1,0 +1,17 @@
+{
+  "name": "nextjs-performance",
+  "repo": "GeneralJerel/chalk-skills",
+  "path": "skills/nextjs-performance/SKILL.md",
+  "github_branch": "main",
+  "category": "performance",
+  "source": "github.com/GeneralJerel/chalk-skills",
+  "dir_name": "nextjs-performance-generaljerel-chalk-skills",
+  "downloaded_at": "2026-03-22T05:24:05.008851Z",
+  "author": "GeneralJerel",
+  "source_url": "https://github.com/GeneralJerel/chalk-skills/blob/main/skills/nextjs-performance/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/GeneralJerel/chalk-skills/blob/main/skills/nextjs-performance/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

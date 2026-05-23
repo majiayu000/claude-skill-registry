@@ -1,0 +1,16 @@
+{
+  "name": "github-issue",
+  "repo": "randlee/synaptic-canvas",
+  "path": ".claude/skills/github-issue/SKILL.md",
+  "source": "github.com/randlee/synaptic-canvas",
+  "downloaded_at": "2026-02-02T03:29:15.724983Z",
+  "dir_name": "github-issue",
+  "category": "github-integration",
+  "author": "randlee",
+  "source_url": "https://github.com/randlee/synaptic-canvas/blob/main/.claude/skills/github-issue/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Rand Lee",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

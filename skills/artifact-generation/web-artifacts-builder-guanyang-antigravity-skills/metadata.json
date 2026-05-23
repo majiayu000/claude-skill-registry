@@ -1,0 +1,20 @@
+{
+  "name": "web-artifacts-builder",
+  "description": "",
+  "repo": "guanyang/antigravity-skills",
+  "category": "artifact-generation",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/guanyang/antigravity-skills",
+  "github_path": "skills/web-artifacts-builder",
+  "github_branch": "main",
+  "dir_name": "web-artifacts-builder-guanyang-antigravity-skills",
+  "downloaded_at": "2026-02-05T01:44:19.575227Z",
+  "author": "guanyang",
+  "source_url": "https://github.com/guanyang/antigravity-skills/blob/main/skills/web-artifacts-builder/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 guanyang",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "pipeline-orchestration",
+  "repo": "turbobeest/cursor-dev-system",
+  "path": "skills/pipeline-orchestration/SKILL.md",
+  "source": "github.com/turbobeest/cursor-dev-system",
+  "downloaded_at": "2026-01-22T02:41:41.330899Z",
+  "dir_name": "pipeline-orchestration-turbobeest-cursor-dev-system",
+  "category": "orchestration",
+  "github_path": "skills/pipeline-orchestration",
+  "github_branch": "main",
+  "author": "turbobeest",
+  "source_url": "https://github.com/turbobeest/cursor-dev-system/blob/main/skills/pipeline-orchestration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/turbobeest/cursor-dev-system/blob/main/skills/pipeline-orchestration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

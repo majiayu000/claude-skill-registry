@@ -1,0 +1,11 @@
+{
+  "name": "create-feature-branch",
+  "repo": "tettuan/breakdown",
+  "path": ".claude/skills/create-feature-branch/SKILL.md",
+  "source": "github.com/tettuan/breakdown",
+  "downloaded_at": "2026-01-22T01:28:07.348168Z",
+  "dir_name": "create-feature-branch-tettuan-breakdown",
+  "category": "github-integration",
+  "github_path": ".claude/skills/create-feature-branch",
+  "github_branch": "main"
+}

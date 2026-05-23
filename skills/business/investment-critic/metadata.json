@@ -1,0 +1,18 @@
+{
+  "name": "investment-critic",
+  "repo": "ZhiruiFeng/LocalAgentCrew",
+  "path": ".claude/skills/investment-critic/SKILL.md",
+  "source": "github.com/ZhiruiFeng/LocalAgentCrew",
+  "downloaded_at": "2026-01-22T01:44:14.911712Z",
+  "dir_name": "investment-critic",
+  "category": "business",
+  "github_path": ".claude/skills/investment-critic",
+  "github_branch": "main",
+  "author": "ZhiruiFeng",
+  "source_url": "https://github.com/ZhiruiFeng/LocalAgentCrew/blob/main/.claude/skills/investment-critic/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Zhirui Feng",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

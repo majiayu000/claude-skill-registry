@@ -1,0 +1,17 @@
+{
+  "name": "skill-io-creator",
+  "repo": "arbgjr/smart_alarm",
+  "path": ".claude/skills/skill-io-creator/SKILL.md",
+  "github_branch": "main",
+  "category": "skills",
+  "source": "github.com/arbgjr/smart_alarm",
+  "dir_name": "skill-io-creator-arbgjr-smart-alarm",
+  "downloaded_at": "2026-03-22T07:01:28.026243Z",
+  "author": "arbgjr",
+  "source_url": "https://github.com/arbgjr/smart_alarm/blob/main/.claude/skills/skill-io-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/arbgjr/smart_alarm/blob/main/.claude/skills/skill-io-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "personal-weekly-workflow",
+  "repo": "orient-bot/orient",
+  "path": ".claude/skills/personal-weekly-workflow/SKILL.md",
+  "source": "github.com/orient-bot/orient",
+  "downloaded_at": "2026-01-31T01:36:52.905628Z",
+  "dir_name": "personal-weekly-workflow",
+  "category": "productivity",
+  "author": "orient-bot",
+  "source_url": "https://github.com/orient-bot/orient/blob/main/.claude/skills/personal-weekly-workflow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/orient-bot/orient/blob/main/.claude/skills/personal-weekly-workflow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

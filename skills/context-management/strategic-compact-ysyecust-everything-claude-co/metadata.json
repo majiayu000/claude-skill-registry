@@ -1,0 +1,13 @@
+{
+  "name": "strategic-compact",
+  "description": "Complete collection of Claude Code configs for C++20 HPC development - agents, skills, hooks, commands, and rules",
+  "repo": "ysyecust/everything-claude-code",
+  "category": "context-management",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": "skills/strategic-compact",
+  "github_branch": "main",
+  "dir_name": "strategic-compact-ysyecust-everything-claude-co",
+  "downloaded_at": "2026-02-05T01:45:37.083347Z"
+}

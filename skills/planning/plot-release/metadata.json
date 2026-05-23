@@ -1,0 +1,17 @@
+{
+  "name": "plot-release",
+  "repo": "eins78/skills",
+  "path": "skills/plot-release/SKILL.md",
+  "github_branch": "main",
+  "category": "planning",
+  "source": "github.com/eins78/skills",
+  "dir_name": "plot-release",
+  "downloaded_at": "2026-03-01T07:35:07.456574Z",
+  "author": "eins78",
+  "source_url": "https://github.com/eins78/skills/blob/main/skills/plot-release/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/eins78/skills/blob/main/skills/plot-release/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

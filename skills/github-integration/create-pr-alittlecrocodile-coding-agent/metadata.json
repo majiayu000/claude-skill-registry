@@ -1,0 +1,13 @@
+{
+  "name": "create-pr",
+  "description": "",
+  "repo": "aLittlecrocodile/coding-agent",
+  "category": "github-integration",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".claude/skills/create-pr",
+  "github_branch": "main",
+  "dir_name": "create-pr-alittlecrocodile-coding-agent",
+  "downloaded_at": "2026-02-05T01:45:39.054246Z"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "materials-characterization",
+  "repo": "Tibsfox/gsd-skill-creator",
+  "path": "examples/skills/materials/materials-characterization/SKILL.md",
+  "github_branch": "main",
+  "category": "analysis",
+  "source": "github.com/Tibsfox/gsd-skill-creator",
+  "dir_name": "materials-characterization",
+  "downloaded_at": "2026-05-04T01:54:57.292664Z",
+  "author": "Tibsfox",
+  "source_url": "https://github.com/Tibsfox/gsd-skill-creator/blob/main/examples/skills/materials/materials-characterization/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tibsfox/gsd-skill-creator/blob/main/examples/skills/materials/materials-characterization/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "prd-analysis",
+  "repo": "sequenzia/claude-alchemy",
+  "path": "claude-tools/prd-tools/skills/prd-analysis/SKILL.md",
+  "source": "github.com/sequenzia/claude-alchemy",
+  "downloaded_at": "2026-01-29T07:31:44.301556Z",
+  "dir_name": "prd-analysis",
+  "category": "product",
+  "author": "sequenzia",
+  "source_url": "https://github.com/sequenzia/claude-alchemy/blob/main/claude-tools/prd-tools/skills/prd-analysis/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Stephen Sequenzia",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

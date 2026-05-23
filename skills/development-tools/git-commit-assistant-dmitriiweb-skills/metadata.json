@@ -1,0 +1,13 @@
+{
+  "name": "git-commit-assistant",
+  "description": "skills for agents",
+  "repo": "dmitriiweb/skills",
+  "category": "development-tools",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".codex/skills/git-commit-assistant",
+  "github_branch": "main",
+  "dir_name": "git-commit-assistant-dmitriiweb-skills",
+  "downloaded_at": "2026-02-05T01:45:42.359381Z"
+}

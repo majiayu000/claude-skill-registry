@@ -1,0 +1,16 @@
+{
+  "name": "workflows",
+  "repo": "MykhailoDmytriakha/my-preacher-helper",
+  "path": ".agent/workflows/03-capture-skill.md",
+  "category": "skills",
+  "source": "github.com/MykhailoDmytriakha/my-preacher-helper",
+  "dir_name": "workflows-mykhailodmytriakha-my-preacher-helper",
+  "downloaded_at": "2026-02-22T05:26:10.490227Z",
+  "author": "MykhailoDmytriakha",
+  "source_url": "https://github.com/MykhailoDmytriakha/my-preacher-helper/blob/main/.agent/workflows/03-capture-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MykhailoDmytriakha/my-preacher-helper/blob/main/.agent/workflows/03-capture-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

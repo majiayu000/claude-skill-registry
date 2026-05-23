@@ -1,0 +1,16 @@
+{
+  "name": "schedule-manager",
+  "repo": "niracler/skill",
+  "path": "src/schedule-manager/SKILL.md",
+  "source": "github.com/niracler/skill",
+  "downloaded_at": "2026-01-29T06:51:57.105965Z",
+  "dir_name": "schedule-manager-niracler-skill",
+  "category": "productivity",
+  "author": "niracler",
+  "source_url": "https://github.com/niracler/skill/blob/main/src/schedule-manager/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Niracler",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "gh-issue-triage",
+  "repo": "poindexter12/waypoint",
+  "path": "workflows/skills/gh-issue-triage/SKILL.md",
+  "source": "github.com/poindexter12/waypoint",
+  "downloaded_at": "2026-01-19T03:24:53.741863Z",
+  "dir_name": "gh-issue-triage-poindexter12-waypoint",
+  "category": "github-integration",
+  "github_path": "workflows/skills/gh-issue-triage",
+  "github_branch": "main",
+  "author": "poindexter12",
+  "source_url": "https://github.com/poindexter12/waypoint/blob/main/workflows/skills/gh-issue-triage/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Joe Seymour",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

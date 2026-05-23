@@ -1,0 +1,16 @@
+{
+  "name": "orchestrator",
+  "repo": "alfredolopez80/multi-agent-ralph-loop",
+  "path": ".claude/skills/orchestrator/SKILL.md",
+  "source": "github.com/alfredolopez80/multi-agent-ralph-loop",
+  "downloaded_at": "2026-01-29T08:47:47.148390Z",
+  "dir_name": "orchestrator-alfredolopez80-multi-agent-ralph-lo",
+  "category": "orchestration",
+  "author": "alfredolopez80",
+  "source_url": "https://github.com/alfredolopez80/multi-agent-ralph-loop/blob/main/.claude/skills/orchestrator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alfredolopez80/multi-agent-ralph-loop/blob/main/.claude/skills/orchestrator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

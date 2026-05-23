@@ -1,0 +1,16 @@
+{
+  "name": "typescript-core",
+  "repo": "aaronbassett/paneful",
+  "path": ".claude/skills/typescript-core/SKILL.md",
+  "source": "github.com/aaronbassett/paneful",
+  "downloaded_at": "2026-02-02T01:31:45.398493Z",
+  "dir_name": "typescript-core",
+  "category": "programming-languages",
+  "author": "aaronbassett",
+  "source_url": "https://github.com/aaronbassett/paneful/blob/main/.claude/skills/typescript-core/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Aaron Bassett",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

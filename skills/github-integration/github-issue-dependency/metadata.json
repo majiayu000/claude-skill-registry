@@ -1,0 +1,16 @@
+{
+  "name": "github-issue-dependency",
+  "repo": "takemo101/compose-workflow",
+  "path": ".opencode/skill/github-issue-dependency/SKILL.md",
+  "source": "github.com/takemo101/compose-workflow",
+  "downloaded_at": "2026-02-02T03:53:25.044584Z",
+  "dir_name": "github-issue-dependency",
+  "category": "github-integration",
+  "author": "takemo101",
+  "source_url": "https://github.com/takemo101/compose-workflow/blob/main/.opencode/skill/github-issue-dependency/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/takemo101/compose-workflow/blob/main/.opencode/skill/github-issue-dependency/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "cm",
+  "repo": "carmandale/agent-config",
+  "path": "skills/tools/cm/SKILL.md",
+  "source": "github.com/carmandale/agent-config",
+  "downloaded_at": "2026-02-02T04:55:30.773063Z",
+  "dir_name": "cm",
+  "category": "context-management",
+  "author": "carmandale",
+  "source_url": "https://github.com/carmandale/agent-config/blob/main/skills/tools/cm/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/carmandale/agent-config/blob/main/skills/tools/cm/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

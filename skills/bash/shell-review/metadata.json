@@ -1,0 +1,18 @@
+{
+  "name": "shell-review",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/pensive/skills/shell-review/SKILL.md",
+  "source": "github.com/athola/claude-night-market",
+  "downloaded_at": "2026-01-22T03:09:21.147450Z",
+  "dir_name": "shell-review",
+  "category": "bash",
+  "github_path": "plugins/pensive/skills/shell-review",
+  "github_branch": "main",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/pensive/skills/shell-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 athola",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

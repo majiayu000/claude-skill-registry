@@ -1,0 +1,17 @@
+{
+  "name": "research-notebook",
+  "repo": "SimHacker/moollm",
+  "path": "skills/research-notebook/SKILL.md",
+  "github_branch": "main",
+  "category": "research-analysis",
+  "source": "github.com/SimHacker/moollm",
+  "dir_name": "research-notebook-simhacker-moollm-3",
+  "downloaded_at": "2026-03-22T06:16:23.646094Z",
+  "author": "SimHacker",
+  "source_url": "https://github.com/SimHacker/moollm/blob/main/skills/research-notebook/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SimHacker/moollm/blob/main/skills/research-notebook/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

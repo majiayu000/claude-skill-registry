@@ -1,0 +1,16 @@
+{
+  "name": "managing-timelines",
+  "repo": "liqiongyu/lenny_skills_plus",
+  "path": "skills/managing-timelines/SKILL.md",
+  "source": "github.com/liqiongyu/lenny_skills_plus",
+  "downloaded_at": "2026-02-02T03:13:09.943925Z",
+  "dir_name": "managing-timelines",
+  "category": "planning",
+  "author": "liqiongyu",
+  "source_url": "https://github.com/liqiongyu/lenny_skills_plus/blob/main/skills/managing-timelines/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/liqiongyu/lenny_skills_plus/blob/main/skills/managing-timelines/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

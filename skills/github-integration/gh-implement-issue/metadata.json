@@ -1,0 +1,18 @@
+{
+  "name": "gh-implement-issue",
+  "repo": "mvillmow/ProjectOdyssey",
+  "path": ".claude/skills/gh-implement-issue/SKILL.md",
+  "source": "github.com/mvillmow/ProjectOdyssey",
+  "downloaded_at": "2026-01-22T02:46:10.589974Z",
+  "dir_name": "gh-implement-issue",
+  "category": "github-integration",
+  "github_path": ".claude/skills/gh-implement-issue",
+  "github_branch": "main",
+  "author": "mvillmow",
+  "source_url": "https://github.com/mvillmow/ProjectOdyssey/blob/main/.claude/skills/gh-implement-issue/SKILL.md",
+  "license": "BSD-3-Clause",
+  "copyright": "Copyright (c) 2025, ML Odyssey Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

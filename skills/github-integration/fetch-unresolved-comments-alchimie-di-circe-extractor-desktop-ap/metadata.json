@@ -1,0 +1,13 @@
+{
+  "name": "fetch-unresolved-comments",
+  "description": "",
+  "repo": "alchimie-di-circe/Extractor-desktop-app",
+  "category": "github-integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alchimie-di-circe/Extractor-desktop-app",
+  "github_path": ".codex/skills/fetch-unresolved-comments",
+  "github_branch": "main",
+  "dir_name": "fetch-unresolved-comments-alchimie-di-circe-extractor-desktop-ap",
+  "downloaded_at": "2026-02-05T01:44:39.800006Z"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "task-orchestrator",
+  "repo": "mahidalhan/claude-hacks",
+  "path": "skills/task-orchestrator/skills/task-orchestrator/SKILL.md",
+  "source": "github.com/mahidalhan/claude-hacks",
+  "downloaded_at": "2026-01-14T01:59:29.903851Z",
+  "dir_name": "task-orchestrator",
+  "category": "planning",
+  "github_path": "skills/task-orchestrator/skills/task-orchestrator",
+  "github_branch": "main",
+  "author": "mahidalhan",
+  "source_url": "https://github.com/mahidalhan/claude-hacks/blob/main/skills/task-orchestrator/skills/task-orchestrator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Skilled Spec Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

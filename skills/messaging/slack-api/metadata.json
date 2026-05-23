@@ -1,0 +1,18 @@
+{
+  "name": "slack-api",
+  "repo": "vamseeachanta/workspace-hub",
+  "path": ".claude/skills/communication/slack-api/SKILL.md",
+  "source": "github.com/vamseeachanta/workspace-hub",
+  "downloaded_at": "2026-01-22T03:43:54.971790Z",
+  "dir_name": "slack-api",
+  "category": "messaging",
+  "github_path": ".claude/skills/communication/slack-api",
+  "github_branch": "main",
+  "author": "vamseeachanta",
+  "source_url": "https://github.com/vamseeachanta/workspace-hub/blob/main/.claude/skills/communication/slack-api/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vamseeachanta/workspace-hub/blob/main/.claude/skills/communication/slack-api/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

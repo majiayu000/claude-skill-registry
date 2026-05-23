@@ -1,0 +1,13 @@
+{
+  "name": "docs-seeker",
+  "description": "",
+  "repo": "vumichien/bi-agent",
+  "category": "research-analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vumichien/bi-agent",
+  "github_path": ".claude/skills/docs-seeker",
+  "github_branch": "main",
+  "dir_name": "docs-seeker",
+  "downloaded_at": "2026-02-05T01:44:53.838693Z"
+}

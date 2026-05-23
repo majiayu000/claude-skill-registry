@@ -1,0 +1,17 @@
+{
+  "name": "performance-optimization",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/abstract/skills/performance-optimization/SKILL.md",
+  "github_branch": "master",
+  "category": "performance",
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "performance-optimization-athola-claude-night-market",
+  "downloaded_at": "2026-02-27T01:15:48.860579Z",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/master/plugins/abstract/skills/performance-optimization/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/athola/claude-night-market/blob/master/plugins/abstract/skills/performance-optimization/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

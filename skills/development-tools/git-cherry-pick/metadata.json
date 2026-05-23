@@ -1,0 +1,17 @@
+{
+  "name": "git-cherry-pick",
+  "repo": "adamdriscoll/skills",
+  "path": "skills/git-cherry-pick/SKILL.md",
+  "github_branch": "main",
+  "category": "development-tools",
+  "source": "github.com/adamdriscoll/skills",
+  "dir_name": "git-cherry-pick",
+  "downloaded_at": "2026-03-22T06:39:40.093121Z",
+  "author": "adamdriscoll",
+  "source_url": "https://github.com/adamdriscoll/skills/blob/main/skills/git-cherry-pick/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adamdriscoll/skills/blob/main/skills/git-cherry-pick/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

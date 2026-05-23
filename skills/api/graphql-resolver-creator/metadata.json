@@ -1,0 +1,16 @@
+{
+  "name": "graphql-resolver-creator",
+  "repo": "byteworthy/Upstream",
+  "path": ".agents/skills/graphql-resolver-creator/SKILL.md",
+  "source": "github.com/byteworthy/Upstream",
+  "downloaded_at": "2026-01-29T07:14:12.961498Z",
+  "dir_name": "graphql-resolver-creator",
+  "category": "api",
+  "author": "byteworthy",
+  "source_url": "https://github.com/byteworthy/Upstream/blob/main/.agents/skills/graphql-resolver-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2024-2026 ByteWorthy LLC. All rights reserved.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

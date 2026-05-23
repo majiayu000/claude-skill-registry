@@ -1,0 +1,13 @@
+{
+  "name": "create-tia-agent",
+  "description": "TIA Intelligence Agency",
+  "repo": "danja/tia",
+  "category": "agent",
+  "tags": [],
+  "stars": 3,
+  "source": "",
+  "github_path": ".claude/skills/create-tia-agent",
+  "github_branch": "main",
+  "dir_name": "create-tia-agent",
+  "downloaded_at": "2026-02-05T01:45:31.385019Z"
+}

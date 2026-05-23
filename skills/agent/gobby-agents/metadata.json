@@ -1,0 +1,11 @@
+{
+  "name": "gobby-agents",
+  "repo": "GobbyAI/gobby",
+  "path": "src/gobby/install/shared/skills/gobby-agents/SKILL.md",
+  "source": "github.com/GobbyAI/gobby",
+  "downloaded_at": "2026-01-17T01:37:09.850572Z",
+  "dir_name": "gobby-agents",
+  "category": "agent",
+  "github_path": ".claude/skills/gobby-agents",
+  "github_branch": "main"
+}

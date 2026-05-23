@@ -1,0 +1,16 @@
+{
+  "name": "example-skill",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/ancplua/example-skill/SKILL.md",
+  "category": "examples",
+  "source": "github.com/aiskillstore/marketplace",
+  "dir_name": "example-skill-aiskillstore-marketplace",
+  "downloaded_at": "2026-02-11T01:24:55.333423Z",
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/ancplua/example-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/ancplua/example-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

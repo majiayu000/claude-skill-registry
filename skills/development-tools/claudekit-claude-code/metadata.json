@@ -1,0 +1,9 @@
+{
+  "source": "https://github.com/mrgoonie/claudekit-skills",
+  "path": ".claude/skills/claude-code/SKILL.md",
+  "branch": "main",
+  "fetched_at": "2026-01-08T03:09:27Z",
+  "name": "claudekit-claude-code",
+  "category": "development-tools",
+  "dir_name": "claudekit-claude-code"
+}

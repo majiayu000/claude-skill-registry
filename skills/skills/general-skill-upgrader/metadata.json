@@ -1,0 +1,16 @@
+{
+  "name": "general-skill-upgrader",
+  "repo": "Przemocny/generic-skills",
+  "path": "skills/general-skill-upgrader/SKILL.md",
+  "source": "github.com/Przemocny/generic-skills",
+  "downloaded_at": "2026-02-02T02:37:16.596034Z",
+  "dir_name": "general-skill-upgrader",
+  "category": "skills",
+  "author": "Przemocny",
+  "source_url": "https://github.com/Przemocny/generic-skills/blob/main/skills/general-skill-upgrader/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Przemocny/generic-skills/blob/main/skills/general-skill-upgrader/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "pipeline-orchestration",
+  "repo": "turbobeest/squawk",
+  "path": ".claude/skills/pipeline-orchestration/SKILL.md",
+  "source": "github.com/turbobeest/squawk",
+  "downloaded_at": "2026-02-02T04:02:32.876768Z",
+  "dir_name": "pipeline-orchestration",
+  "category": "orchestration",
+  "author": "turbobeest",
+  "source_url": "https://github.com/turbobeest/squawk/blob/main/.claude/skills/pipeline-orchestration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/turbobeest/squawk/blob/main/.claude/skills/pipeline-orchestration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

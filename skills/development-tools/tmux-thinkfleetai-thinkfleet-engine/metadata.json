@@ -1,0 +1,17 @@
+{
+  "name": "tmux",
+  "repo": "ThinkfleetAI/thinkfleet-engine",
+  "path": "skills/tmux/SKILL.md",
+  "github_branch": "main",
+  "category": "development-tools",
+  "source": "github.com/ThinkfleetAI/thinkfleet-engine",
+  "dir_name": "tmux-thinkfleetai-thinkfleet-engine",
+  "downloaded_at": "2026-03-22T06:23:35.975146Z",
+  "author": "ThinkfleetAI",
+  "source_url": "https://github.com/ThinkfleetAI/thinkfleet-engine/blob/main/skills/tmux/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ThinkfleetAI/thinkfleet-engine/blob/main/skills/tmux/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

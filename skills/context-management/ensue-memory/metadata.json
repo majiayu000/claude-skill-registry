@@ -1,0 +1,18 @@
+{
+  "name": "ensue-memory",
+  "repo": "mutable-state-inc/ensue-skill",
+  "path": "skills/ensue-memory/SKILL.md",
+  "source": "github.com/mutable-state-inc/ensue-skill",
+  "downloaded_at": "2026-01-22T02:58:30.719901Z",
+  "dir_name": "ensue-memory",
+  "category": "context-management",
+  "github_path": "skills/ensue-memory",
+  "github_branch": "main",
+  "author": "mutable-state-inc",
+  "source_url": "https://github.com/mutable-state-inc/ensue-skill/blob/main/skills/ensue-memory/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mutable-state-inc/ensue-skill/blob/main/skills/ensue-memory/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

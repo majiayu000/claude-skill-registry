@@ -1,0 +1,17 @@
+{
+  "name": "requirements-gatherer",
+  "repo": "camoa/claude-skills",
+  "path": "drupal-dev-framework/skills/requirements-gatherer/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/camoa/claude-skills",
+  "dir_name": "requirements-gatherer",
+  "downloaded_at": "2026-03-22T07:22:56.669687Z",
+  "author": "camoa",
+  "source_url": "https://github.com/camoa/claude-skills/blob/main/drupal-dev-framework/skills/requirements-gatherer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/camoa/claude-skills/blob/main/drupal-dev-framework/skills/requirements-gatherer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

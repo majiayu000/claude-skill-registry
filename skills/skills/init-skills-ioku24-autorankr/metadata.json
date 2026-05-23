@@ -1,0 +1,16 @@
+{
+  "name": "init-skills",
+  "repo": "ioku24/autorankr",
+  "path": ".claude/skills/init-skills/SKILL.md",
+  "source": "github.com/ioku24/autorankr",
+  "downloaded_at": "2026-01-29T08:01:13.837078Z",
+  "dir_name": "init-skills-ioku24-autorankr",
+  "category": "skills",
+  "author": "ioku24",
+  "source_url": "https://github.com/ioku24/autorankr/blob/main/.claude/skills/init-skills/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ioku24/autorankr/blob/main/.claude/skills/init-skills/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

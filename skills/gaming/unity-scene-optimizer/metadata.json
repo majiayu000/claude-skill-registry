@@ -1,0 +1,18 @@
+{
+  "name": "unity-scene-optimizer",
+  "repo": "zsutxz/ClaudeLearning",
+  "path": ".claude/skills/unity-scene-optimizer/SKILL.md",
+  "source": "github.com/zsutxz/ClaudeLearning",
+  "downloaded_at": "2026-01-22T01:05:27.814370Z",
+  "dir_name": "unity-scene-optimizer",
+  "category": "gaming",
+  "github_path": ".claude/skills/unity-scene-optimizer",
+  "github_branch": "main",
+  "author": "zsutxz",
+  "source_url": "https://github.com/zsutxz/ClaudeLearning/blob/main/.claude/skills/unity-scene-optimizer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Gomoku Game Project",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

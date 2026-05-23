@@ -1,0 +1,18 @@
+{
+  "name": "pull-request",
+  "description": "Creating pull requests with concise descriptions",
+  "repo": "mgreenly/ikigai",
+  "path": ".claude/library/pull-request",
+  "category": "github-integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgreenly/ikigai",
+  "dir_name": "pull-request-mgreenly-ikigai-2",
+  "author": "mgreenly",
+  "source_url": "https://github.com/mgreenly/ikigai/blob/main/.claude/library/pull-request/SKILL.md",
+  "license": "MIT-0",
+  "copyright": "Copyright (c) 2025 Michael Greenly",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

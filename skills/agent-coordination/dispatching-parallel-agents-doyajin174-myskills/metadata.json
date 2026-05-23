@@ -1,0 +1,20 @@
+{
+  "name": "dispatching-parallel-agents",
+  "description": "",
+  "repo": "Doyajin174/myskills",
+  "category": "agent-coordination",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".public/skills/dispatching-parallel-agents",
+  "github_branch": "main",
+  "dir_name": "dispatching-parallel-agents-doyajin174-myskills",
+  "downloaded_at": "2026-02-05T01:45:47.402571Z",
+  "author": "Doyajin174",
+  "source_url": "https://github.com/Doyajin174/myskills/blob/main/.public/skills/dispatching-parallel-agents/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Doyajin174/myskills/blob/main/.public/skills/dispatching-parallel-agents/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

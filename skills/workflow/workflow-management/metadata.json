@@ -1,0 +1,16 @@
+{
+  "name": "workflow-management",
+  "repo": "sgcarstrends/sgcarstrends",
+  "path": ".claude/skills/workflow-management/SKILL.md",
+  "source": "github.com/sgcarstrends/sgcarstrends",
+  "downloaded_at": "2026-02-02T01:51:10.830575Z",
+  "dir_name": "workflow-management",
+  "category": "workflow",
+  "author": "sgcarstrends",
+  "source_url": "https://github.com/sgcarstrends/sgcarstrends/blob/main/.claude/skills/workflow-management/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SG Cars Trends",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

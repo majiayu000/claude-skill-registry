@@ -1,0 +1,17 @@
+{
+  "name": "scope-management",
+  "repo": "baphled/dotopencode",
+  "path": "skills/scope-management/SKILL.md",
+  "github_branch": "main",
+  "category": "planning",
+  "source": "github.com/baphled/dotopencode",
+  "dir_name": "scope-management-baphled-dotopencode",
+  "downloaded_at": "2026-03-22T07:10:24.131730Z",
+  "author": "baphled",
+  "source_url": "https://github.com/baphled/dotopencode/blob/main/skills/scope-management/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/baphled/dotopencode/blob/main/skills/scope-management/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

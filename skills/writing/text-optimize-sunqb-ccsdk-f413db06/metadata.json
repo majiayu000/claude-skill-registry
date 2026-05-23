@@ -1,0 +1,16 @@
+{
+  "name": "text-optimize",
+  "repo": "sunqb/ccsdk",
+  "path": ".claude/skills/text-optimize/SKILL.md",
+  "source": "github.com/sunqb/ccsdk",
+  "downloaded_at": "2026-01-29T05:49:59.122684Z",
+  "dir_name": "text-optimize-sunqb-ccsdk-f413db06",
+  "category": "writing",
+  "author": "sunqb",
+  "source_url": "https://github.com/sunqb/ccsdk/blob/main/.claude/skills/text-optimize/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sunqb/ccsdk/blob/main/.claude/skills/text-optimize/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

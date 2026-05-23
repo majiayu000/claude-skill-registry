@@ -1,0 +1,13 @@
+{
+  "name": "git-pushing",
+  "description": "",
+  "repo": "BhurkeSiddhesh/Agent-Central",
+  "category": "github-integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BhurkeSiddhesh/Agent-Central",
+  "github_path": "agency-hq/skills/git-pushing",
+  "github_branch": "main",
+  "dir_name": "git-pushing-bhurkesiddhesh-agent-central",
+  "downloaded_at": "2026-02-05T05:34:10.196048Z"
+}

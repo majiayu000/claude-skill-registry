@@ -1,0 +1,16 @@
+{
+  "name": "content-research-writer",
+  "repo": "POWERFULMOVES/PMOVES-BoTZ",
+  "path": ".claude/skills/content-research-writer/SKILL.md",
+  "category": "writing",
+  "source": "github.com/POWERFULMOVES/PMOVES-BoTZ",
+  "dir_name": "content-research-writer-powerfulmoves-pmoves-botz",
+  "downloaded_at": "2026-02-15T05:35:48.486876Z",
+  "author": "POWERFULMOVES",
+  "source_url": "https://github.com/POWERFULMOVES/PMOVES-BoTZ/blob/main/.claude/skills/content-research-writer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/POWERFULMOVES/PMOVES-BoTZ/blob/main/.claude/skills/content-research-writer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

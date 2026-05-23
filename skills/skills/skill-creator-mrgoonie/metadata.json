@@ -1,0 +1,16 @@
+{
+  "name": "skill-creator_mrgoonie",
+  "repo": "jackspace/ClaudeSkillz",
+  "path": "skills/skill-creator_mrgoonie/SKILL.md",
+  "source": "github.com/jackspace/ClaudeSkillz",
+  "downloaded_at": "2026-02-02T01:20:31.352925Z",
+  "dir_name": "skill-creator-mrgoonie",
+  "category": "skills",
+  "author": "jackspace",
+  "source_url": "https://github.com/jackspace/ClaudeSkillz/blob/main/skills/skill-creator_mrgoonie/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ClaudeSkillz Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

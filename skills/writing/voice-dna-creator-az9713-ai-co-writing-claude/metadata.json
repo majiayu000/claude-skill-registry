@@ -1,0 +1,16 @@
+{
+  "name": "voice-dna-creator",
+  "repo": "az9713/ai-co-writing-claude-skills",
+  "path": ".claude/skills/voice-dna-creator/SKILL.md",
+  "source": "github.com/az9713/ai-co-writing-claude-skills",
+  "downloaded_at": "2026-02-02T01:40:11.377776Z",
+  "dir_name": "voice-dna-creator-az9713-ai-co-writing-claude",
+  "category": "writing",
+  "author": "az9713",
+  "source_url": "https://github.com/az9713/ai-co-writing-claude-skills/blob/main/.claude/skills/voice-dna-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/az9713/ai-co-writing-claude-skills/blob/main/.claude/skills/voice-dna-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

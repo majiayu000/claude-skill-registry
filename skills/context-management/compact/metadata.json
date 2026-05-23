@@ -1,0 +1,16 @@
+{
+  "name": "compact",
+  "repo": "alfredolopez80/multi-agent-ralph-loop",
+  "path": ".claude/skills/compact/SKILL.md.disabled",
+  "source": "github.com/alfredolopez80/multi-agent-ralph-loop",
+  "downloaded_at": "2026-01-29T08:47:45.919427Z",
+  "dir_name": "compact",
+  "category": "context-management",
+  "author": "alfredolopez80",
+  "source_url": "https://github.com/alfredolopez80/multi-agent-ralph-loop/blob/main/.claude/skills/compact/SKILL.md.disabled/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alfredolopez80/multi-agent-ralph-loop/blob/main/.claude/skills/compact/SKILL.md.disabled/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

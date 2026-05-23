@@ -1,0 +1,17 @@
+{
+  "name": "prd",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/github/prd/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/aiskillstore/marketplace",
+  "dir_name": "prd-aiskillstore-marketplace",
+  "downloaded_at": "2026-05-04T01:56:56.141186Z",
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/github/prd/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/github/prd/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

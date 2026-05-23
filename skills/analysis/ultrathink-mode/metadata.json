@@ -1,0 +1,16 @@
+{
+  "name": "ultrathink-mode",
+  "repo": "merllinsbeard/ai-claude-skills-collection",
+  "path": "meta/ultrathink-mode/SKILL.md",
+  "source": "github.com/merllinsbeard/ai-claude-skills-collection",
+  "downloaded_at": "2026-02-02T03:00:01.706618Z",
+  "dir_name": "ultrathink-mode",
+  "category": "analysis",
+  "author": "merllinsbeard",
+  "source_url": "https://github.com/merllinsbeard/ai-claude-skills-collection/blob/main/meta/ultrathink-mode/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/merllinsbeard/ai-claude-skills-collection/blob/main/meta/ultrathink-mode/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

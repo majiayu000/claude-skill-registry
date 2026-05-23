@@ -1,0 +1,11 @@
+{
+  "name": "langgraph-functional",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/langgraph-functional/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-22T01:25:12.738946Z",
+  "dir_name": "langgraph-functional",
+  "category": "agent",
+  "github_path": "skills/langgraph-functional",
+  "github_branch": "main"
+}

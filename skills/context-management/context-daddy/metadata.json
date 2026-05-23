@@ -1,0 +1,16 @@
+{
+  "name": "context-daddy",
+  "repo": "ChipFlow/context-daddy",
+  "path": "SKILL.md",
+  "category": "context-management",
+  "source": "github.com/ChipFlow/context-daddy",
+  "dir_name": "context-daddy",
+  "downloaded_at": "2026-02-22T04:51:27.769708Z",
+  "author": "ChipFlow",
+  "source_url": "https://github.com/ChipFlow/context-daddy/blob/main/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ChipFlow/context-daddy/blob/main/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "continuity_ledger",
+  "repo": "tfunk1030/vibe",
+  "path": ".claude/skills/continuity_ledger/SKILL.md",
+  "source": "github.com/tfunk1030/vibe",
+  "downloaded_at": "2026-01-29T08:44:30.991587Z",
+  "dir_name": "continuity-ledger-tfunk1030-vibe",
+  "category": "context-management",
+  "author": "tfunk1030",
+  "source_url": "https://github.com/tfunk1030/vibe/blob/main/.claude/skills/continuity_ledger/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tfunk1030/vibe/blob/main/.claude/skills/continuity_ledger/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "context-review",
+  "repo": "savvy-web/pnpm-module-template",
+  "path": ".claude/skills/context-review/SKILL.md",
+  "source": "github.com/savvy-web/pnpm-module-template",
+  "downloaded_at": "2026-02-01T04:27:58.013509Z",
+  "dir_name": "context-review-savvy-web-pnpm-module-template",
+  "category": "context-management"
+}

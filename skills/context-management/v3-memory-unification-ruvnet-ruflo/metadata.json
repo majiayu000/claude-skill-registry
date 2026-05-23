@@ -1,0 +1,17 @@
+{
+  "name": "v3-memory-unification",
+  "repo": "ruvnet/ruflo",
+  "path": ".claude/skills/v3-memory-unification/SKILL.md",
+  "github_branch": "main",
+  "category": "context-management",
+  "source": "github.com/ruvnet/ruflo",
+  "dir_name": "v3-memory-unification-ruvnet-ruflo",
+  "downloaded_at": "2026-05-03T02:15:14.078681Z",
+  "author": "ruvnet",
+  "source_url": "https://github.com/ruvnet/ruflo/blob/main/.claude/skills/v3-memory-unification/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ruvnet/ruflo/blob/main/.claude/skills/v3-memory-unification/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

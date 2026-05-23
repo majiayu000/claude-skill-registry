@@ -1,0 +1,16 @@
+{
+  "name": "github-copilot-cli-expert",
+  "repo": "rysweet/amplihack",
+  "path": ".claude/skills/github-copilot-cli-expert/SKILL.md",
+  "source": "github.com/rysweet/amplihack",
+  "downloaded_at": "2026-02-02T04:29:59.032528Z",
+  "dir_name": "github-copilot-cli-expert",
+  "category": "development-tools",
+  "author": "rysweet",
+  "source_url": "https://github.com/rysweet/amplihack/blob/main/.claude/skills/github-copilot-cli-expert/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rysweet/amplihack/blob/main/.claude/skills/github-copilot-cli-expert/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

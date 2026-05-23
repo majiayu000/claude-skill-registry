@@ -1,0 +1,11 @@
+{
+  "name": "langgraph-parallel",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/langgraph-parallel/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-20T01:39:03.272676Z",
+  "dir_name": "langgraph-parallel",
+  "category": "agent",
+  "github_path": "skills/langgraph-parallel",
+  "github_branch": "main"
+}

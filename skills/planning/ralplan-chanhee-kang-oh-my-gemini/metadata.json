@@ -1,0 +1,20 @@
+{
+  "name": "ralplan",
+  "description": "",
+  "repo": "chanhee-kang/oh-my-gemini",
+  "category": "planning",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/chanhee-kang/oh-my-gemini",
+  "github_path": "skills/ralplan",
+  "github_branch": "main",
+  "dir_name": "ralplan-chanhee-kang-oh-my-gemini",
+  "downloaded_at": "2026-02-05T01:44:16.161983Z",
+  "author": "chanhee-kang",
+  "source_url": "https://github.com/chanhee-kang/oh-my-gemini/blob/main/skills/ralplan/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/chanhee-kang/oh-my-gemini/blob/main/skills/ralplan/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

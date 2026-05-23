@@ -1,0 +1,17 @@
+{
+  "name": "category-designer",
+  "repo": "Affitor/affiliate-skills",
+  "path": "skills/meta/category-designer/SKILL.md",
+  "github_branch": "main",
+  "category": "business",
+  "source": "github.com/Affitor/affiliate-skills",
+  "dir_name": "category-designer",
+  "downloaded_at": "2026-03-22T04:47:47.288090Z",
+  "author": "Affitor",
+  "source_url": "https://github.com/Affitor/affiliate-skills/blob/main/skills/meta/category-designer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Affitor/affiliate-skills/blob/main/skills/meta/category-designer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "chatroom",
+  "description": "",
+  "repo": "ctb111/claude-agent-chatroom",
+  "category": "agent-coordination",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ctb111/claude-agent-chatroom",
+  "github_path": "skills/chatroom",
+  "github_branch": "main",
+  "dir_name": "chatroom",
+  "downloaded_at": "2026-02-05T01:44:51.669192Z"
+}

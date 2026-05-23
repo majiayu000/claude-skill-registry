@@ -1,0 +1,16 @@
+{
+  "name": "product",
+  "repo": "andreibesleaga/GABBE",
+  "path": "agents/skills/product/spec-writer.skill.md",
+  "category": "product",
+  "source": "github.com/andreibesleaga/GABBE",
+  "dir_name": "product-andreibesleaga-gabbe-11",
+  "downloaded_at": "2026-02-22T06:16:36.609201Z",
+  "author": "andreibesleaga",
+  "source_url": "https://github.com/andreibesleaga/GABBE/blob/main/agents/skills/product/spec-writer.skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/andreibesleaga/GABBE/blob/main/agents/skills/product/spec-writer.skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

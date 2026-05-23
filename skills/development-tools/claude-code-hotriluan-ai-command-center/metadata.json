@@ -1,0 +1,16 @@
+{
+  "name": "claude-code",
+  "repo": "hotriluan/ai-command-center",
+  "path": ".claude/skills/claude-code/skill.md",
+  "category": "development-tools",
+  "source": "github.com/hotriluan/ai-command-center",
+  "dir_name": "claude-code-hotriluan-ai-command-center",
+  "downloaded_at": "2026-02-22T07:28:53.674034Z",
+  "author": "hotriluan",
+  "source_url": "https://github.com/hotriluan/ai-command-center/blob/main/.claude/skills/claude-code/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hotriluan/ai-command-center/blob/main/.claude/skills/claude-code/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

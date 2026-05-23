@@ -1,0 +1,13 @@
+{
+  "name": "github-projects",
+  "description": "",
+  "repo": "arbgjr/sdlc_agentico",
+  "category": "github-integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arbgjr/sdlc_agentico",
+  "github_path": ".claude/skills/github-projects",
+  "github_branch": "main",
+  "dir_name": "github-projects",
+  "downloaded_at": "2026-02-05T01:45:01.820278Z"
+}

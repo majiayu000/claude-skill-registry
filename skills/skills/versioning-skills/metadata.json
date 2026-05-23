@@ -1,0 +1,18 @@
+{
+  "name": "versioning-skills",
+  "repo": "oaustegard/claude-skills",
+  "path": "versioning-skills/SKILL.md",
+  "source": "github.com/oaustegard/claude-skills",
+  "downloaded_at": "2026-01-22T02:23:08.959171Z",
+  "dir_name": "versioning-skills",
+  "category": "skills",
+  "github_path": "versioning-skills",
+  "github_branch": "main",
+  "author": "oaustegard",
+  "source_url": "https://github.com/oaustegard/claude-skills/blob/main/versioning-skills/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Oskar Austegard",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

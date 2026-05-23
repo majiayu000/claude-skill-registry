@@ -1,0 +1,18 @@
+{
+  "name": "improve-instructions",
+  "repo": "philoserf/claude-code-setup",
+  "path": "skills/improve-instructions/SKILL.md",
+  "source": "github.com/philoserf/claude-code-setup",
+  "downloaded_at": "2026-01-22T01:30:33.882261Z",
+  "dir_name": "improve-instructions",
+  "category": "context-management",
+  "github_path": "skills/improve-instructions",
+  "github_branch": "main",
+  "author": "philoserf",
+  "source_url": "https://github.com/philoserf/claude-code-setup/blob/main/skills/improve-instructions/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Mark Ayers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

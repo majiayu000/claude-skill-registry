@@ -1,0 +1,17 @@
+{
+  "name": "memory-setup",
+  "repo": "delorenj/00_ceiling",
+  "path": "memory-setup/SKILL.md",
+  "github_branch": "main",
+  "category": "context-management",
+  "source": "github.com/delorenj/00_ceiling",
+  "dir_name": "memory-setup",
+  "downloaded_at": "2026-03-01T07:26:13.038439Z",
+  "author": "delorenj",
+  "source_url": "https://github.com/delorenj/00_ceiling/blob/main/memory-setup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/delorenj/00_ceiling/blob/main/memory-setup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

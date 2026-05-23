@@ -1,0 +1,17 @@
+{
+  "name": "php-modern",
+  "repo": "OrcaQubits/agentic-commerce-claude-plugins",
+  "path": "magento2-commerce/skills/php-modern/SKILL.md",
+  "github_branch": "main",
+  "category": "programming-languages",
+  "source": "github.com/OrcaQubits/agentic-commerce-claude-plugins",
+  "dir_name": "php-modern",
+  "downloaded_at": "2026-03-25T01:14:30.328260Z",
+  "author": "OrcaQubits",
+  "source_url": "https://github.com/OrcaQubits/agentic-commerce-claude-plugins/blob/main/magento2-commerce/skills/php-modern/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OrcaQubits/agentic-commerce-claude-plugins/blob/main/magento2-commerce/skills/php-modern/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

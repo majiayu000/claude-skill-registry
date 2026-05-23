@@ -1,0 +1,20 @@
+{
+  "name": "plan-create",
+  "description": "",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "category": "planning",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "github_path": ".claude/skills/plan-create",
+  "github_branch": "main",
+  "dir_name": "plan-create",
+  "downloaded_at": "2026-02-05T01:44:16.146282Z",
+  "author": "spencerbeggs",
+  "source_url": "https://github.com/spencerbeggs/claude-design-coordinator/blob/main/.claude/skills/plan-create/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/spencerbeggs/claude-design-coordinator/blob/main/.claude/skills/plan-create/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

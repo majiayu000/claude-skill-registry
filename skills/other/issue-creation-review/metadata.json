@@ -1,9 +1,0 @@
-{
-  "name": "issue-creation-review",
-  "repo": "langadventurellc/claude-marketplace",
-  "path": "plugins/task-trellis/skills/issue-creation-review/SKILL.md",
-  "source": "github.com/langadventurellc/claude-marketplace",
-  "downloaded_at": "2026-01-31T04:03:38.912635Z",
-  "dir_name": "issue-creation-review",
-  "category": "other"
-}

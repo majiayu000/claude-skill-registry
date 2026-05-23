@@ -1,0 +1,11 @@
+{
+  "name": "orchestrator-agent",
+  "repo": "WalkerVVV/firstmile-deals-pipeline",
+  "path": ".claude/skills/orchestrator-agent/SKILL.md",
+  "source": "github.com/WalkerVVV/firstmile-deals-pipeline",
+  "downloaded_at": "2026-01-22T01:08:35.935878Z",
+  "dir_name": "orchestrator-agent",
+  "category": "orchestration",
+  "github_path": ".claude/skills/orchestrator-agent",
+  "github_branch": "main"
+}

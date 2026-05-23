@@ -1,0 +1,16 @@
+{
+  "name": "optimizer",
+  "repo": "Geralt1983/Thanos",
+  "path": ".gemini/skills/optimizer/SKILL.md",
+  "source": "github.com/Geralt1983/Thanos",
+  "downloaded_at": "2026-02-02T04:52:51.775958Z",
+  "dir_name": "optimizer",
+  "category": "performance",
+  "author": "Geralt1983",
+  "source_url": "https://github.com/Geralt1983/Thanos/blob/main/.gemini/skills/optimizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Geralt1983/Thanos/blob/main/.gemini/skills/optimizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "kasperjunge-writing-style",
+  "repo": "kasperjunge/agent-resources-legacy",
+  "path": ".claude/skills/kasperjunge-writing-style/SKILL.md",
+  "source": "github.com/kasperjunge/agent-resources-legacy",
+  "downloaded_at": "2026-01-29T07:24:28.565099Z",
+  "dir_name": "kasperjunge-writing-style-kasperjunge-agent-resources-lega",
+  "category": "writing",
+  "author": "kasperjunge",
+  "source_url": "https://github.com/kasperjunge/agent-resources-legacy/blob/main/.claude/skills/kasperjunge-writing-style/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kasperjunge/agent-resources-legacy/blob/main/.claude/skills/kasperjunge-writing-style/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

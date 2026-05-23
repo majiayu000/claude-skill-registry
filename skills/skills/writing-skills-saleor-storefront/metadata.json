@@ -1,0 +1,13 @@
+{
+  "name": "writing-skills",
+  "description": "",
+  "repo": "saleor/storefront",
+  "category": "skills",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/saleor/storefront",
+  "github_path": ".claude/skills/writing-skills",
+  "github_branch": "main",
+  "dir_name": "writing-skills-saleor-storefront",
+  "downloaded_at": "2026-02-05T01:44:42.579814Z"
+}

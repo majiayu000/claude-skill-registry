@@ -1,0 +1,17 @@
+{
+  "name": "mpp-session-flow",
+  "repo": "OrcaQubits/agentic-commerce-claude-plugins",
+  "path": "stripe-mpp/skills/mpp-session-flow/SKILL.md",
+  "github_branch": "main",
+  "category": "business-monetization",
+  "source": "github.com/OrcaQubits/agentic-commerce-claude-plugins",
+  "dir_name": "mpp-session-flow",
+  "downloaded_at": "2026-03-25T01:14:29.971894Z",
+  "author": "OrcaQubits",
+  "source_url": "https://github.com/OrcaQubits/agentic-commerce-claude-plugins/blob/main/stripe-mpp/skills/mpp-session-flow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OrcaQubits/agentic-commerce-claude-plugins/blob/main/stripe-mpp/skills/mpp-session-flow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "clojure-http-kit",
+  "repo": "Ramblurr/nix-devenv",
+  "path": "prompts/skills/clojure-http-kit/SKILL.md",
+  "source": "github.com/Ramblurr/nix-devenv",
+  "downloaded_at": "2026-01-30T01:57:21.098638Z",
+  "dir_name": "clojure-http-kit-ramblurr-nix-devenv",
+  "category": "programming-languages",
+  "author": "Ramblurr",
+  "source_url": "https://github.com/Ramblurr/nix-devenv/blob/main/prompts/skills/clojure-http-kit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Ramblurr/nix-devenv/blob/main/prompts/skills/clojure-http-kit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "pagination-implementation",
+  "repo": "zerobias-org/module",
+  "path": ".claude/skills/pagination-implementation/SKILL.md",
+  "source": "github.com/zerobias-org/module",
+  "downloaded_at": "2026-01-21T01:50:59.418789Z",
+  "dir_name": "pagination-implementation",
+  "category": "api",
+  "github_path": ".claude/skills/pagination-implementation",
+  "github_branch": "main",
+  "author": "zerobias-org",
+  "source_url": "https://github.com/zerobias-org/module/blob/main/.claude/skills/pagination-implementation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zerobias-org/module/blob/main/.claude/skills/pagination-implementation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

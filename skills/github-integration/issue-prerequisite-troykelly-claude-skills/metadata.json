@@ -1,0 +1,16 @@
+{
+  "name": "issue-prerequisite",
+  "repo": "troykelly/claude-skills",
+  "path": "skills/issue-prerequisite/SKILL.md",
+  "source": "github.com/troykelly/claude-skills",
+  "downloaded_at": "2026-01-29T08:45:27.369601Z",
+  "dir_name": "issue-prerequisite-troykelly-claude-skills",
+  "category": "github-integration",
+  "author": "troykelly",
+  "source_url": "https://github.com/troykelly/claude-skills/blob/main/skills/issue-prerequisite/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/troykelly/claude-skills/blob/main/skills/issue-prerequisite/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

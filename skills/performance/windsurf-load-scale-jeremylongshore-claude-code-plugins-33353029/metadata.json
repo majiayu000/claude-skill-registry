@@ -1,0 +1,16 @@
+{
+  "name": "windsurf-load-scale",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/windsurf-pack/skills/windsurf-load-scale/SKILL.md",
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "downloaded_at": "2026-01-29T06:20:37.898583Z",
+  "dir_name": "windsurf-load-scale-jeremylongshore-claude-code-plugins-33353029",
+  "category": "performance",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/saas-packs/windsurf-pack/skills/windsurf-load-scale/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

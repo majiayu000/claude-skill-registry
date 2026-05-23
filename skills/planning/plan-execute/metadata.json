@@ -1,0 +1,18 @@
+{
+  "name": "plan-execute",
+  "repo": "dredd-us/seashells",
+  "path": ".claude/skills/plan-execute/SKILL.md",
+  "source": "github.com/dredd-us/seashells",
+  "downloaded_at": "2026-01-22T01:30:15.627943Z",
+  "dir_name": "plan-execute",
+  "category": "planning",
+  "github_path": ".claude/skills/plan-execute",
+  "github_branch": "main",
+  "author": "dredd-us",
+  "source_url": "https://github.com/dredd-us/seashells/blob/main/.claude/skills/plan-execute/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dredd-us/seashells/blob/main/.claude/skills/plan-execute/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

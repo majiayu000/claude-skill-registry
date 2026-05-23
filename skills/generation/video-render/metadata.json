@@ -1,0 +1,13 @@
+{
+  "name": "video-render",
+  "description": "",
+  "repo": "az9713/whatsapp-claude-old",
+  "category": "generation",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/az9713/whatsapp-claude-old",
+  "github_path": ".claude/skills/video-render",
+  "github_branch": "main",
+  "dir_name": "video-render",
+  "downloaded_at": "2026-02-05T01:44:37.773854Z"
+}

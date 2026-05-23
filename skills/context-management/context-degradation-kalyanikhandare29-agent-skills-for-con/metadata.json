@@ -1,0 +1,18 @@
+{
+  "name": "context-degradation",
+  "repo": "Kalyanikhandare29/Agent-Skills-for-Context-Engineering",
+  "path": "skills/context-degradation/SKILL.md",
+  "source": "github.com/Kalyanikhandare29/Agent-Skills-for-Context-Engineering",
+  "downloaded_at": "2026-01-22T04:11:07.101356Z",
+  "dir_name": "context-degradation-kalyanikhandare29-agent-skills-for-con",
+  "category": "context-management",
+  "github_path": "skills/context-degradation",
+  "github_branch": "main",
+  "author": "Kalyanikhandare29",
+  "source_url": "https://github.com/Kalyanikhandare29/Agent-Skills-for-Context-Engineering/blob/main/skills/context-degradation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Context Engineering Agent Skills Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

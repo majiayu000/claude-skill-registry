@@ -1,0 +1,9 @@
+{
+  "name": "rebase-merged-parent",
+  "repo": "flurdy/agent-skills",
+  "path": "skills/rebase-merged-parent/SKILL.md",
+  "source": "github.com/flurdy/agent-skills",
+  "downloaded_at": "2026-02-02T04:39:14.010102Z",
+  "dir_name": "rebase-merged-parent",
+  "category": "github-integration"
+}

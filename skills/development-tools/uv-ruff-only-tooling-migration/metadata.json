@@ -1,0 +1,16 @@
+{
+  "name": "uv-ruff-only-tooling-migration",
+  "repo": "z3z1ma/vibe-pipe",
+  "path": ".opencode/skills/uv-ruff-only-tooling-migration/SKILL.md",
+  "source": "github.com/z3z1ma/vibe-pipe",
+  "downloaded_at": "2026-02-02T04:52:12.944768Z",
+  "dir_name": "uv-ruff-only-tooling-migration",
+  "category": "development-tools",
+  "author": "z3z1ma",
+  "source_url": "https://github.com/z3z1ma/vibe-pipe/blob/main/.opencode/skills/uv-ruff-only-tooling-migration/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Alexander Butler",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

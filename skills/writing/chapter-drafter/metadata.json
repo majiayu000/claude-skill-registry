@@ -1,0 +1,18 @@
+{
+  "name": "chapter-drafter",
+  "repo": "jwynia/agent-skills",
+  "path": "skills/fiction/orchestrators/chapter-drafter/SKILL.md",
+  "source": "github.com/jwynia/agent-skills",
+  "downloaded_at": "2026-01-21T03:40:38.785907Z",
+  "dir_name": "chapter-drafter",
+  "category": "writing",
+  "github_path": "skills/fiction/orchestrators/chapter-drafter",
+  "github_branch": "main",
+  "author": "jwynia",
+  "source_url": "https://github.com/jwynia/agent-skills/blob/main/skills/fiction/orchestrators/chapter-drafter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jwynia/agent-skills/blob/main/skills/fiction/orchestrators/chapter-drafter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

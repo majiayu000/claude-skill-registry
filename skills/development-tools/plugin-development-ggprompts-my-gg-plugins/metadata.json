@@ -1,0 +1,18 @@
+{
+  "name": "plugin-development",
+  "repo": "GGPrompts/my-gg-plugins",
+  "path": "skills/plugin-development/SKILL.md",
+  "source": "github.com/GGPrompts/my-gg-plugins",
+  "downloaded_at": "2026-01-21T01:06:44.365648Z",
+  "dir_name": "plugin-development-ggprompts-my-gg-plugins",
+  "category": "development-tools",
+  "github_path": "skills/plugin-development",
+  "github_branch": "main",
+  "author": "GGPrompts",
+  "source_url": "https://github.com/GGPrompts/my-gg-plugins/blob/main/skills/plugin-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/GGPrompts/my-gg-plugins/blob/main/skills/plugin-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

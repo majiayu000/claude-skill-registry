@@ -1,0 +1,17 @@
+{
+  "name": "make-skill-template",
+  "repo": "darkglow-net/github-copilot-kickstarter",
+  "path": "skills/make-skill-template/SKILL.md",
+  "github_branch": "master",
+  "category": "skills",
+  "source": "github.com/darkglow-net/github-copilot-kickstarter",
+  "dir_name": "make-skill-template-darkglow-net-github-copilot-kicks",
+  "downloaded_at": "2026-03-01T07:22:39.156588Z",
+  "author": "darkglow-net",
+  "source_url": "https://github.com/darkglow-net/github-copilot-kickstarter/blob/master/skills/make-skill-template/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/darkglow-net/github-copilot-kickstarter/blob/master/skills/make-skill-template/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

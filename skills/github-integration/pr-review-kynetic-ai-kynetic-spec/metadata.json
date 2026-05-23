@@ -1,0 +1,13 @@
+{
+  "name": "pr-review",
+  "description": "",
+  "repo": "kynetic-ai/kynetic-spec",
+  "category": "github-integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kynetic-ai/kynetic-spec",
+  "github_path": ".claude/skills/pr-review",
+  "github_branch": "main",
+  "dir_name": "pr-review-kynetic-ai-kynetic-spec",
+  "downloaded_at": "2026-02-05T05:32:51.126059Z"
+}

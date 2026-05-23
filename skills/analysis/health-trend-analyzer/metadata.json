@@ -1,0 +1,18 @@
+{
+  "name": "health-trend-analyzer",
+  "repo": "huifer/WellAlly-health",
+  "path": ".claude/skills/health-trend-analyzer/SKILL.md",
+  "source": "github.com/huifer/WellAlly-health",
+  "downloaded_at": "2026-01-22T01:15:43.644411Z",
+  "dir_name": "health-trend-analyzer",
+  "category": "analysis",
+  "github_path": ".claude/skills/health-trend-analyzer",
+  "github_branch": "main",
+  "author": "huifer",
+  "source_url": "https://github.com/huifer/WellAlly-health/blob/main/.claude/skills/health-trend-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 WellAlly Tech",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "context-manager",
+  "description": "",
+  "repo": "yunaamelia/vps-rdp-workstation",
+  "category": "context-management",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yunaamelia/vps-rdp-workstation",
+  "github_path": ".agent/skills/context-manager",
+  "github_branch": "main",
+  "dir_name": "context-manager",
+  "downloaded_at": "2026-02-05T05:41:55.319350Z",
+  "author": "yunaamelia",
+  "source_url": "https://github.com/yunaamelia/vps-rdp-workstation/blob/main/.agent/skills/context-manager/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 VPS RDP Workstation Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

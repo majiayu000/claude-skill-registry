@@ -1,0 +1,17 @@
+{
+  "name": "worktree-manager-skill",
+  "repo": "bjornslib/cobuilder-harness",
+  "path": ".claude/skills/worktree-manager-skill/SKILL.md",
+  "github_branch": "main",
+  "category": "development-tools",
+  "source": "github.com/bjornslib/cobuilder-harness",
+  "dir_name": "worktree-manager-skill-bjornslib-cobuilder-harness",
+  "downloaded_at": "2026-03-22T07:15:43.210939Z",
+  "author": "bjornslib",
+  "source_url": "https://github.com/bjornslib/cobuilder-harness/blob/main/.claude/skills/worktree-manager-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bjornslib/cobuilder-harness/blob/main/.claude/skills/worktree-manager-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

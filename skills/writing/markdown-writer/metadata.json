@@ -1,0 +1,20 @@
+{
+  "name": "markdown-writer",
+  "description": "",
+  "repo": "4meta5/skills",
+  "category": "writing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/4meta5/skills",
+  "github_path": "skills/markdown-writer",
+  "github_branch": "main",
+  "dir_name": "markdown-writer",
+  "downloaded_at": "2026-02-05T01:44:44.681572Z",
+  "author": "4meta5",
+  "source_url": "https://github.com/4meta5/skills/blob/main/skills/markdown-writer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/4meta5/skills/blob/main/skills/markdown-writer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

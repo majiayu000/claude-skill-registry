@@ -1,0 +1,17 @@
+{
+  "name": "game-audio",
+  "repo": "brunolimaff-jpg/NOVO-APP",
+  "path": ".agent/skills/game-development/game-audio/SKILL.md",
+  "github_branch": "main",
+  "category": "gaming",
+  "source": "github.com/brunolimaff-jpg/NOVO-APP",
+  "dir_name": "game-audio-brunolimaff-jpg-novo-app",
+  "downloaded_at": "2026-03-22T07:20:36.133871Z",
+  "author": "brunolimaff-jpg",
+  "source_url": "https://github.com/brunolimaff-jpg/NOVO-APP/blob/main/.agent/skills/game-development/game-audio/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/brunolimaff-jpg/NOVO-APP/blob/main/.agent/skills/game-development/game-audio/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "session",
+  "description": "",
+  "repo": "Chachamaru127/claude-code-harness",
+  "category": "context-management",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Chachamaru127/claude-code-harness",
+  "github_path": "codex/.codex/skills/session",
+  "github_branch": "main",
+  "dir_name": "session-chachamaru127-claude-code-harness",
+  "downloaded_at": "2026-02-05T01:44:28.372314Z",
+  "author": "Chachamaru127",
+  "source_url": "https://github.com/Chachamaru127/claude-code-harness/blob/main/codex/.codex/skills/session/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2025 Manus AI & Chachamaru",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

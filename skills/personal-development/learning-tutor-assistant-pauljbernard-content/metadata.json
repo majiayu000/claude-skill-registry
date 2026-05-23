@@ -1,0 +1,16 @@
+{
+  "name": "learning-tutor-assistant",
+  "repo": "pauljbernard/content",
+  "path": ".claude/skills/learning-tutor-assistant/SKILL.md",
+  "source": "github.com/pauljbernard/content",
+  "downloaded_at": "2026-01-29T07:10:11.686808Z",
+  "dir_name": "learning-tutor-assistant-pauljbernard-content",
+  "category": "personal-development",
+  "author": "pauljbernard",
+  "source_url": "https://github.com/pauljbernard/content/blob/main/.claude/skills/learning-tutor-assistant/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pauljbernard/content/blob/main/.claude/skills/learning-tutor-assistant/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

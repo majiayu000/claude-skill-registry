@@ -1,0 +1,16 @@
+{
+  "name": "game-changing-features",
+  "repo": "softaworks/agent-toolkit",
+  "path": "skills/game-changing-features/SKILL.md",
+  "source": "github.com/softaworks/agent-toolkit",
+  "downloaded_at": "2026-02-02T04:46:29.734808Z",
+  "dir_name": "game-changing-features",
+  "category": "product",
+  "author": "softaworks",
+  "source_url": "https://github.com/softaworks/agent-toolkit/blob/main/skills/game-changing-features/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Leonardo Flores",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "writing-skills",
+  "repo": "EricGrill/agents-skills-plugins",
+  "path": "plugins/superpowers/skills/writing-skills/SKILL.md",
+  "github_branch": "main",
+  "category": "skills",
+  "source": "github.com/EricGrill/agents-skills-plugins",
+  "dir_name": "writing-skills-ericgrill-agents-skills-plugin",
+  "downloaded_at": "2026-03-22T05:18:45.675811Z",
+  "author": "EricGrill",
+  "source_url": "https://github.com/EricGrill/agents-skills-plugins/blob/main/plugins/superpowers/skills/writing-skills/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/EricGrill/agents-skills-plugins/blob/main/plugins/superpowers/skills/writing-skills/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

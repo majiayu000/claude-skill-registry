@@ -1,0 +1,16 @@
+{
+  "name": "legal-assistant",
+  "repo": "eddiebe147/claude-settings",
+  "path": "skills/legal-assistant/SKILL.md",
+  "source": "github.com/eddiebe147/claude-settings",
+  "downloaded_at": "2026-01-29T07:35:19.276884Z",
+  "dir_name": "legal-assistant-eddiebe147-claude-settings",
+  "category": "security-compliance",
+  "author": "eddiebe147",
+  "source_url": "https://github.com/eddiebe147/claude-settings/blob/main/skills/legal-assistant/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/eddiebe147/claude-settings/blob/main/skills/legal-assistant/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

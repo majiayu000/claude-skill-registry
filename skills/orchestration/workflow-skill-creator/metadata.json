@@ -1,0 +1,18 @@
+{
+  "name": "workflow-skill-creator",
+  "repo": "adaptationio/Skrillz",
+  "path": "skills/workflow-skill-creator/SKILL.md",
+  "source": "github.com/adaptationio/Skrillz",
+  "downloaded_at": "2026-01-22T03:07:12.862734Z",
+  "dir_name": "workflow-skill-creator",
+  "category": "orchestration",
+  "github_path": ".claude/skills/workflow-skill-creator",
+  "github_branch": "main",
+  "author": "adaptationio",
+  "source_url": "https://github.com/adaptationio/Skrillz/blob/main/.claude/skills/workflow-skill-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adaptationio/Skrillz/blob/main/.claude/skills/workflow-skill-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

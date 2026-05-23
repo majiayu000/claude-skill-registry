@@ -1,0 +1,18 @@
+{
+  "name": "prioritize",
+  "repo": "duc01226/EasyPlatform",
+  "path": ".claude/skills/prioritize/SKILL.md",
+  "source": "github.com/duc01226/EasyPlatform",
+  "downloaded_at": "2026-01-22T01:20:58.975184Z",
+  "dir_name": "prioritize",
+  "category": "product",
+  "github_path": ".claude/skills/prioritize",
+  "github_branch": "main",
+  "author": "duc01226",
+  "source_url": "https://github.com/duc01226/EasyPlatform/blob/main/.claude/skills/prioritize/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2021 Dang Phuoc Duc",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

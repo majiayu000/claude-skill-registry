@@ -1,0 +1,20 @@
+{
+  "name": "kindle-publishing",
+  "description": "",
+  "repo": "taiyousan15/taisun_agent",
+  "category": "writing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/taiyousan15/taisun_agent",
+  "github_path": ".claude/skills/kindle-publishing",
+  "github_branch": "main",
+  "dir_name": "kindle-publishing",
+  "downloaded_at": "2026-02-05T01:44:48.252753Z",
+  "author": "taiyousan15",
+  "source_url": "https://github.com/taiyousan15/taisun_agent/blob/main/.claude/skills/kindle-publishing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 taiyousan15",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

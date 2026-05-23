@@ -1,0 +1,16 @@
+{
+  "name": "content-research-writer",
+  "repo": "illogical/InstructionLibrary",
+  "path": "skills/content-research-writer/SKILL.md",
+  "category": "writing",
+  "source": "github.com/illogical/InstructionLibrary",
+  "dir_name": "content-research-writer-illogical-instructionlibrary",
+  "downloaded_at": "2026-02-15T07:35:01.834921Z",
+  "author": "illogical",
+  "source_url": "https://github.com/illogical/InstructionLibrary/blob/main/skills/content-research-writer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/illogical/InstructionLibrary/blob/main/skills/content-research-writer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

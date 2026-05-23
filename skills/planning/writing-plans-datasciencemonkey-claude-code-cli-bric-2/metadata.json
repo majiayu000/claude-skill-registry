@@ -1,0 +1,16 @@
+{
+  "name": "writing-plans",
+  "repo": "datasciencemonkey/claude-code-cli-bricks",
+  "path": ".claude/skills/writing-plans/SKILL.md",
+  "category": "planning",
+  "source": "github.com/datasciencemonkey/claude-code-cli-bricks",
+  "dir_name": "writing-plans-datasciencemonkey-claude-code-cli-bric-2",
+  "downloaded_at": "2026-02-22T06:51:09.798037Z",
+  "author": "datasciencemonkey",
+  "source_url": "https://github.com/datasciencemonkey/claude-code-cli-bricks/blob/main/.claude/skills/writing-plans/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/datasciencemonkey/claude-code-cli-bricks/blob/main/.claude/skills/writing-plans/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

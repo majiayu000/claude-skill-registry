@@ -1,0 +1,17 @@
+{
+  "name": "git-commit-pr",
+  "repo": "SomtechSolutionMAxime/somtech-pack",
+  "path": ".cursor/skills/git-commit-pr/SKILL.md",
+  "github_branch": "main",
+  "category": "development-tools",
+  "source": "github.com/SomtechSolutionMAxime/somtech-pack",
+  "dir_name": "git-commit-pr",
+  "downloaded_at": "2026-03-22T06:17:22.841254Z",
+  "author": "SomtechSolutionMAxime",
+  "source_url": "https://github.com/SomtechSolutionMAxime/somtech-pack/blob/main/.cursor/skills/git-commit-pr/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SomtechSolutionMAxime/somtech-pack/blob/main/.cursor/skills/git-commit-pr/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

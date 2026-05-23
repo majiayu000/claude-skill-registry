@@ -1,0 +1,18 @@
+{
+  "name": "creating-issues",
+  "repo": "C0ntr0lledCha0s/claude-code-plugin-automations",
+  "path": "github-workflows/skills/creating-issues/SKILL.md",
+  "source": "github.com/C0ntr0lledCha0s/claude-code-plugin-automations",
+  "downloaded_at": "2026-01-22T01:49:14.151789Z",
+  "dir_name": "creating-issues",
+  "category": "github-integration",
+  "github_path": "github-workflows/skills/creating-issues",
+  "github_branch": "main",
+  "author": "C0ntr0lledCha0s",
+  "source_url": "https://github.com/C0ntr0lledCha0s/claude-code-plugin-automations/blob/main/github-workflows/skills/creating-issues/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 C0ntr0lledCha0s",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "finishing-a-development-branch",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills/finishing-a-development-branch/SKILL.md",
+  "github_branch": "main",
+  "category": "workflow",
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "finishing-a-development-branch-enuno-claude-command-and-c",
+  "downloaded_at": "2026-03-22T07:57:16.785355Z",
+  "author": "enuno",
+  "source_url": "https://github.com/enuno/claude-command-and-control/blob/main/skills/finishing-a-development-branch/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/enuno/claude-command-and-control/blob/main/skills/finishing-a-development-branch/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

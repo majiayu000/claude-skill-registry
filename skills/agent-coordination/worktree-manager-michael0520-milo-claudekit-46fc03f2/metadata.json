@@ -1,0 +1,16 @@
+{
+  "name": "worktree-manager",
+  "repo": "Michael0520/milo-claudekit",
+  "path": "plugins/worktree-manager/skills/worktree-manager/SKILL.md",
+  "source": "github.com/Michael0520/milo-claudekit",
+  "downloaded_at": "2026-01-29T05:49:54.243372Z",
+  "dir_name": "worktree-manager-michael0520-milo-claudekit-46fc03f2",
+  "category": "agent-coordination",
+  "author": "Michael0520",
+  "source_url": "https://github.com/Michael0520/milo-claudekit/blob/main/plugins/worktree-manager/skills/worktree-manager/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Michael Lo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

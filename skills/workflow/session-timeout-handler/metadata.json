@@ -1,0 +1,16 @@
+{
+  "name": "session-timeout-handler",
+  "repo": "jackspace/ClaudeSkillz",
+  "path": "skills/session-timeout-handler/SKILL.md",
+  "source": "github.com/jackspace/ClaudeSkillz",
+  "downloaded_at": "2026-01-29T02:09:05.983432Z",
+  "dir_name": "session-timeout-handler",
+  "category": "workflow",
+  "author": "jackspace",
+  "source_url": "https://github.com/jackspace/ClaudeSkillz/blob/main/skills/session-timeout-handler/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ClaudeSkillz Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

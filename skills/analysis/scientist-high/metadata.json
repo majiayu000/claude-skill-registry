@@ -1,0 +1,16 @@
+{
+  "name": "scientist-high",
+  "repo": "TurnaboutHero/oh-my-antigravity",
+  "path": "skills/scientist-high/SKILL.md",
+  "source": "github.com/TurnaboutHero/oh-my-antigravity",
+  "downloaded_at": "2026-02-02T03:39:59.198607Z",
+  "dir_name": "scientist-high",
+  "category": "analysis",
+  "author": "TurnaboutHero",
+  "source_url": "https://github.com/TurnaboutHero/oh-my-antigravity/blob/main/skills/scientist-high/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Oh My Antigravity",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

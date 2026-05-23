@@ -1,0 +1,18 @@
+{
+  "name": "hk-stock-analysis",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/stock-trader-workflow/.claude/skills/hk-stock-analysis/SKILL.md",
+  "source": "github.com/nicepkg/ai-workflow",
+  "downloaded_at": "2026-01-22T03:29:19.934155Z",
+  "dir_name": "hk-stock-analysis",
+  "category": "analysis",
+  "github_path": "workflows/stock-trader-workflow/.claude/skills/hk-stock-analysis",
+  "github_branch": "main",
+  "author": "nicepkg",
+  "source_url": "https://github.com/nicepkg/ai-workflow/blob/main/workflows/stock-trader-workflow/.claude/skills/hk-stock-analysis/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 nicepkg",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

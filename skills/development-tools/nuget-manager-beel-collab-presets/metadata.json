@@ -1,0 +1,17 @@
+{
+  "name": "nuget-manager",
+  "repo": "beel-collab/presets",
+  "path": "dotnet/nuget-manager/SKILL.md",
+  "github_branch": "main",
+  "category": "development-tools",
+  "source": "github.com/beel-collab/presets",
+  "dir_name": "nuget-manager-beel-collab-presets",
+  "downloaded_at": "2026-03-22T07:11:56.329883Z",
+  "author": "beel-collab",
+  "source_url": "https://github.com/beel-collab/presets/blob/main/dotnet/nuget-manager/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/beel-collab/presets/blob/main/dotnet/nuget-manager/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

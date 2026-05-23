@@ -1,0 +1,18 @@
+{
+  "name": "pm",
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave/skills/pm/SKILL.md",
+  "source": "github.com/anton-abyzov/specweave",
+  "downloaded_at": "2026-01-14T03:26:36.644672Z",
+  "dir_name": "pm-anton-abyzov-specweave",
+  "category": "product",
+  "github_path": "plugins/specweave-plugin-dev/skills/plugin-development",
+  "github_branch": "main",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave-plugin-dev/skills/plugin-development/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

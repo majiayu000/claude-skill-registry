@@ -1,0 +1,16 @@
+{
+  "name": "learn-from-this",
+  "repo": "ElliotJLT/Claude-Skill-Potions",
+  "path": "skills/learn-from-this/SKILL.md",
+  "category": "context-management",
+  "source": "github.com/ElliotJLT/Claude-Skill-Potions",
+  "dir_name": "learn-from-this",
+  "downloaded_at": "2026-02-15T05:05:01.064628Z",
+  "author": "ElliotJLT",
+  "source_url": "https://github.com/ElliotJLT/Claude-Skill-Potions/blob/main/skills/learn-from-this/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ElliotJLT/Claude-Skill-Potions/blob/main/skills/learn-from-this/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

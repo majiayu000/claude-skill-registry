@@ -1,0 +1,17 @@
+{
+  "name": "feature-orchestrator",
+  "repo": "Coverage-Creatives/zeus",
+  "path": ".windsurf/feature-orchestrator/SKILL.md",
+  "github_branch": "main",
+  "category": "planning",
+  "source": "github.com/Coverage-Creatives/zeus",
+  "dir_name": "feature-orchestrator",
+  "downloaded_at": "2026-03-01T05:06:26.932537Z",
+  "author": "Coverage-Creatives",
+  "source_url": "https://github.com/Coverage-Creatives/zeus/blob/main/.windsurf/feature-orchestrator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Coverage-Creatives/zeus/blob/main/.windsurf/feature-orchestrator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

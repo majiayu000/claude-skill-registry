@@ -1,0 +1,18 @@
+{
+  "name": "python-dev",
+  "repo": "doccker/cc-use-exp",
+  "path": ".claude/skills/python-dev/SKILL.md",
+  "source": "github.com/doccker/cc-use-exp",
+  "downloaded_at": "2026-01-22T01:13:43.225459Z",
+  "dir_name": "python-dev",
+  "category": "programming-languages",
+  "github_path": ".claude/skills/python-dev",
+  "github_branch": "main",
+  "author": "doccker",
+  "source_url": "https://github.com/doccker/cc-use-exp/blob/main/.claude/skills/python-dev/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/doccker/cc-use-exp/blob/main/.claude/skills/python-dev/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

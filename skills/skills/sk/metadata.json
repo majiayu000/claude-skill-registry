@@ -1,0 +1,18 @@
+{
+  "name": "sk",
+  "repo": "lambdamechanic/sk",
+  "path": "skills/sk/SKILL.md",
+  "source": "github.com/lambdamechanic/sk",
+  "downloaded_at": "2026-01-14T03:44:22.863201Z",
+  "dir_name": "sk",
+  "category": "skills",
+  "github_path": "skills/sk",
+  "github_branch": "main",
+  "author": "lambdamechanic",
+  "source_url": "https://github.com/lambdamechanic/sk/blob/main/skills/sk/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/lambdamechanic/sk/blob/main/skills/sk/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

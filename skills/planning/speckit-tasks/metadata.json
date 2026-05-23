@@ -1,0 +1,13 @@
+{
+  "name": "speckit-tasks",
+  "description": "",
+  "repo": "invowk/invowk",
+  "category": "planning",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/invowk/invowk",
+  "github_path": ".claude/skills/speckit.tasks",
+  "github_branch": "main",
+  "dir_name": "speckit-tasks",
+  "downloaded_at": "2026-02-05T05:39:12.085243Z"
+}

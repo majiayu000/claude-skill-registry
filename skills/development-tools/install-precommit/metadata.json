@@ -1,0 +1,18 @@
+{
+  "name": "install-precommit",
+  "repo": "zbruhnke/claude-code-starter",
+  "path": ".claude/skills/install-precommit/SKILL.md",
+  "source": "github.com/zbruhnke/claude-code-starter",
+  "downloaded_at": "2026-01-22T02:20:55.583337Z",
+  "dir_name": "install-precommit",
+  "category": "development-tools",
+  "github_path": ".claude/skills/install-precommit",
+  "github_branch": "main",
+  "author": "zbruhnke",
+  "source_url": "https://github.com/zbruhnke/claude-code-starter/blob/main/.claude/skills/install-precommit/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Zach Bruhnke",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

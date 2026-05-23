@@ -1,0 +1,13 @@
+{
+  "name": "github-project-management",
+  "description": "",
+  "repo": "smith-horn/skillsmith",
+  "category": "github-integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/smith-horn/skillsmith",
+  "github_path": ".claude/skills/github-project-management",
+  "github_branch": "main",
+  "dir_name": "github-project-management",
+  "downloaded_at": "2026-02-05T01:44:48.381886Z"
+}

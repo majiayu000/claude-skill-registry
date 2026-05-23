@@ -1,0 +1,13 @@
+{
+  "name": "copilot",
+  "description": "A fork of the mlflow/mlflow repository for testing automation jobs",
+  "repo": "mlflow/dev",
+  "category": "github-integration",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".claude/skills/copilot",
+  "github_branch": "master",
+  "dir_name": "copilot-mlflow-dev",
+  "downloaded_at": "2026-02-05T01:45:39.034377Z"
+}

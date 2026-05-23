@@ -1,0 +1,17 @@
+{
+  "name": "v3-memory-unification",
+  "repo": "frankxai/arcanea-records",
+  "path": ".claude/skills/v3-memory-unification/SKILL.md",
+  "github_branch": "main",
+  "category": "context-management",
+  "source": "github.com/frankxai/arcanea-records",
+  "dir_name": "v3-memory-unification-frankxai-arcanea-records",
+  "downloaded_at": "2026-03-01T07:46:56.399785Z",
+  "author": "frankxai",
+  "source_url": "https://github.com/frankxai/arcanea-records/blob/main/.claude/skills/v3-memory-unification/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/frankxai/arcanea-records/blob/main/.claude/skills/v3-memory-unification/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

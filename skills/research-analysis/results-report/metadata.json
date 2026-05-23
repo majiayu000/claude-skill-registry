@@ -1,0 +1,17 @@
+{
+  "name": "results-report",
+  "repo": "Galaxy-Dawn/claude-scholar",
+  "path": "skills/results-report/SKILL.md",
+  "github_branch": "main",
+  "category": "research-analysis",
+  "source": "github.com/Galaxy-Dawn/claude-scholar",
+  "dir_name": "results-report",
+  "downloaded_at": "2026-03-22T05:23:13.302675Z",
+  "author": "Galaxy-Dawn",
+  "source_url": "https://github.com/Galaxy-Dawn/claude-scholar/blob/main/skills/results-report/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Galaxy-Dawn/claude-scholar/blob/main/skills/results-report/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

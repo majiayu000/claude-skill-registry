@@ -1,0 +1,20 @@
+{
+  "name": "sequential-thinking",
+  "description": "Copy .* folder and AGENTS.md then paste  /root of project ",
+  "repo": "CongDon1207/AGENTS.md",
+  "category": "analysis",
+  "tags": [],
+  "stars": 5,
+  "source": "",
+  "github_path": ".codex/skills/sequential-thinking",
+  "github_branch": "main",
+  "dir_name": "sequential-thinking",
+  "downloaded_at": "2026-02-05T01:45:29.673385Z",
+  "author": "CongDon1207",
+  "source_url": "https://github.com/CongDon1207/AGENTS.md/blob/main/.codex/skills/sequential-thinking/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CongDon1207/AGENTS.md/blob/main/.codex/skills/sequential-thinking/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

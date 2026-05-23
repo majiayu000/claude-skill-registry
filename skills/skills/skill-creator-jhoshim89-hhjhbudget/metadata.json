@@ -1,0 +1,16 @@
+{
+  "name": "skill-creator",
+  "repo": "jhoshim89/hhjhbudget",
+  "path": ".claude/skills/skill-creator/SKILL.md",
+  "category": "skills",
+  "source": "github.com/jhoshim89/hhjhbudget",
+  "dir_name": "skill-creator-jhoshim89-hhjhbudget",
+  "downloaded_at": "2026-02-15T07:43:23.735282Z",
+  "author": "jhoshim89",
+  "source_url": "https://github.com/jhoshim89/hhjhbudget/blob/main/.claude/skills/skill-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jhoshim89/hhjhbudget/blob/main/.claude/skills/skill-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

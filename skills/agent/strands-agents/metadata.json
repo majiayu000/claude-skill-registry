@@ -1,0 +1,16 @@
+{
+  "name": "strands-agents",
+  "repo": "charlesmsiegel/tg",
+  "path": ".claude/skills/strands-agents/SKILL.md",
+  "source": "github.com/charlesmsiegel/tg",
+  "downloaded_at": "2026-01-22T04:08:52.818153Z",
+  "dir_name": "strands-agents",
+  "category": "agent",
+  "author": "charlesmsiegel",
+  "source_url": "https://github.com/charlesmsiegel/tg/blob/main/.claude/skills/strands-agents/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/charlesmsiegel/tg/blob/main/.claude/skills/strands-agents/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

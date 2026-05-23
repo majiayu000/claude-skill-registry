@@ -1,0 +1,11 @@
+{
+  "name": "temporal-io",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/temporal-io/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-22T01:25:10.442924Z",
+  "dir_name": "temporal-io",
+  "category": "workflow",
+  "github_path": "skills/temporal-io",
+  "github_branch": "main"
+}

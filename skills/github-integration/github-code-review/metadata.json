@@ -1,0 +1,13 @@
+{
+  "name": "github-code-review",
+  "description": "",
+  "repo": "smith-horn/skillsmith",
+  "category": "github-integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/smith-horn/skillsmith",
+  "github_path": ".claude/skills/github-code-review",
+  "github_branch": "main",
+  "dir_name": "github-code-review",
+  "downloaded_at": "2026-02-05T01:44:48.373485Z"
+}

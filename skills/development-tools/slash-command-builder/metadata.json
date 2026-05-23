@@ -1,0 +1,16 @@
+{
+  "name": "slash-command-builder",
+  "repo": "pr-pm/prpm",
+  "path": ".claude/skills/slash-command-builder/SKILL.md",
+  "source": "github.com/pr-pm/prpm",
+  "downloaded_at": "2026-02-02T04:17:18.337779Z",
+  "dir_name": "slash-command-builder",
+  "category": "development-tools",
+  "author": "pr-pm",
+  "source_url": "https://github.com/pr-pm/prpm/blob/main/.claude/skills/slash-command-builder/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 PRPM (Prompt Package Manager)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "pdf",
+  "description": "",
+  "repo": "thucpru/fontkit",
+  "category": "document-processing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/thucpru/fontkit",
+  "github_path": ".claude/skills/document-skills/pdf",
+  "github_branch": "master",
+  "dir_name": "pdf-thucpru-fontkit",
+  "downloaded_at": "2026-02-05T01:44:25.125844Z"
+}

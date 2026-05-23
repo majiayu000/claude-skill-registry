@@ -1,0 +1,16 @@
+{
+  "name": "jsonapi",
+  "repo": "prowler-cloud/prowler",
+  "path": "skills/jsonapi/SKILL.md",
+  "source": "github.com/prowler-cloud/prowler",
+  "downloaded_at": "2026-02-02T01:17:36.310575Z",
+  "dir_name": "jsonapi",
+  "category": "api",
+  "author": "prowler-cloud",
+  "source_url": "https://github.com/prowler-cloud/prowler/blob/main/skills/jsonapi/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/prowler-cloud/prowler/blob/main/skills/jsonapi/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

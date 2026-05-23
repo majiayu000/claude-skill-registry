@@ -10,6 +10,7 @@ and --apply only after reviewing the planned destinations.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import shutil
 from collections import defaultdict
@@ -31,6 +32,17 @@ from utils import (
 
 LAYOUT_EXPECTED = "<category>/<skill>/SKILL.md"
 SKILLS_PREFIX_NAMES = {"skill", "skills"}
+METADATA_IDENTITY_FIELDS = (
+    "name",
+    "repo",
+    "path",
+    "github_path",
+    "github_branch",
+    "branch",
+    "source_url",
+    "license",
+    "author",
+)
 
 
 def is_standard(rel_parts: tuple[str, ...]) -> bool:
@@ -113,6 +125,39 @@ def unique_dir_name(
     return candidate, False
 
 
+def file_sha256(path: Path) -> str:
+    if not path.exists() or not path.is_file():
+        return ""
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def metadata_identity(metadata: dict[str, Any]) -> dict[str, Any]:
+    identity: dict[str, Any] = {}
+    for field in METADATA_IDENTITY_FIELDS:
+        value = metadata.get(field)
+        if value not in (None, ""):
+            identity[field] = value
+    return identity
+
+
+def duplicate_safety(skills_dir: Path, source_dir: Path, target_rel: Path) -> dict[str, Any]:
+    target_dir = skills_dir / target_rel
+    source_metadata = load_metadata(source_dir)
+    target_metadata = load_metadata(target_dir) if target_dir.exists() else {}
+    source_skill_hash = file_sha256(source_dir / "SKILL.md")
+    target_skill_hash = file_sha256(target_dir / "SKILL.md")
+    source_identity = metadata_identity(source_metadata)
+    target_identity = metadata_identity(target_metadata)
+    return {
+        "same_key_target_path": str(target_rel),
+        "same_key_target_exists": target_dir.exists(),
+        "skill_content_equal": bool(source_skill_hash and source_skill_hash == target_skill_hash),
+        "metadata_identity_equal": source_identity == target_identity,
+        "source_skill_sha256": source_skill_hash,
+        "target_skill_sha256": target_skill_hash,
+    }
+
+
 def build_depth_plan(skills_dir: Path) -> dict[str, Any]:
     state = existing_category_state(skills_dir)
     moves: list[dict[str, Any]] = []
@@ -126,18 +171,40 @@ def build_depth_plan(skills_dir: Path) -> dict[str, Any]:
         path = meta.get("github_path") or meta.get("path") or ""
         key = build_skill_key(repo, path, name=name, category=category)
         category_state = state[category]
-        target_name, reuses_existing_key = unique_dir_name(
-            category_state=category_state,
-            base_name=name,
-            repo=repo,
-            key=key or str(rel),
-        )
+        duplicate_info: dict[str, Any] = {}
+        operation = "move"
+
+        if key and key in category_state["key_to_name"]:
+            same_key_target_rel = Path(category) / category_state["key_to_name"][key]
+            duplicate_info = duplicate_safety(skills_dir, skill_dir, same_key_target_rel)
+            if (
+                duplicate_info["same_key_target_exists"]
+                and duplicate_info["skill_content_equal"]
+                and duplicate_info["metadata_identity_equal"]
+            ):
+                target_name = category_state["key_to_name"][key]
+                operation = "remove_duplicate"
+            else:
+                target_name, _reuses_existing_key = unique_dir_name(
+                    category_state=category_state,
+                    base_name=name,
+                    repo=repo,
+                    key=f"{key}:{rel}",
+                )
+        else:
+            target_name, _reuses_existing_key = unique_dir_name(
+                category_state=category_state,
+                base_name=name,
+                repo=repo,
+                key=key or str(rel),
+            )
+
         target_rel = Path(category) / target_name
         moves.append(
             {
                 "source_path": str(skill_dir.relative_to(skills_dir)),
                 "source_skill": str(rel),
-                "operation": "remove_duplicate" if reuses_existing_key else "move",
+                "operation": operation,
                 "target_path": str(target_rel),
                 "target_skill": str(target_rel / "SKILL.md"),
                 "category": category,
@@ -147,15 +214,24 @@ def build_depth_plan(skills_dir: Path) -> dict[str, Any]:
                 "metadata_category": meta.get("category", ""),
                 "layout_depth": len(rel.parts),
                 "expected_layout": LAYOUT_EXPECTED,
+                **duplicate_info,
             }
         )
 
     duplicate_count = sum(1 for move in moves if move["operation"] == "remove_duplicate")
+    same_key_conflict_count = sum(1 for move in moves if move.get("same_key_target_path"))
+    same_key_preserved_count = sum(
+        1
+        for move in moves
+        if move.get("same_key_target_path") and move["operation"] != "remove_duplicate"
+    )
     return {
         "skills_dir": str(skills_dir),
         "expected_layout": LAYOUT_EXPECTED,
         "move_count": len(moves),
         "duplicate_count": duplicate_count,
+        "same_key_conflict_count": same_key_conflict_count,
+        "same_key_preserved_count": same_key_preserved_count,
         "moves": moves,
     }
 
@@ -183,6 +259,9 @@ def apply_depth_plan(skills_dir: Path, plan: dict[str, Any]) -> None:
                 raise FileNotFoundError(f"Duplicate target does not exist: {target}")
             if skill_key_for_dir(target, str(move["category"])) != move.get("key"):
                 raise ValueError(f"Duplicate target key mismatch: {target}")
+            safety = duplicate_safety(skills_dir, source, Path(move["target_path"]))
+            if not safety["skill_content_equal"] or not safety["metadata_identity_equal"]:
+                raise ValueError(f"Duplicate target is not content/metadata identical: {target}")
             shutil.rmtree(source)
             continue
         if target.exists():

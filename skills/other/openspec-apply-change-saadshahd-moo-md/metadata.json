@@ -1,0 +1,17 @@
+{
+  "name": "openspec-apply-change",
+  "repo": "saadshahd/moo.md",
+  "path": ".claude/skills/openspec-apply-change/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/saadshahd/moo.md",
+  "dir_name": "openspec-apply-change-saadshahd-moo-md",
+  "downloaded_at": "2026-05-23T03:29:52.592101Z",
+  "author": "saadshahd",
+  "source_url": "https://github.com/saadshahd/moo.md/blob/main/.claude/skills/openspec-apply-change/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/saadshahd/moo.md/blob/main/.claude/skills/openspec-apply-change/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

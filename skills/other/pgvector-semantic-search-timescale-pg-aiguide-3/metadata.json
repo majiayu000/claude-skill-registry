@@ -1,0 +1,17 @@
+{
+  "name": "pgvector-semantic-search",
+  "repo": "timescale/pg-aiguide",
+  "path": "skills/pgvector-semantic-search/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/timescale/pg-aiguide",
+  "dir_name": "pgvector-semantic-search-timescale-pg-aiguide-3",
+  "downloaded_at": "2026-05-23T03:32:25.905137Z",
+  "author": "timescale",
+  "source_url": "https://github.com/timescale/pg-aiguide/blob/main/skills/pgvector-semantic-search/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/timescale/pg-aiguide/blob/main/skills/pgvector-semantic-search/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

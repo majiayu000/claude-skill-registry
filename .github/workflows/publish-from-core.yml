@@ -135,6 +135,7 @@ jobs:
           import hashlib
           import json
           import os
+          import subprocess
           from datetime import datetime, timezone
           from pathlib import Path
           from typing import Any
@@ -233,6 +234,44 @@ jobs:
                   raise ValueError(f"missing positive shard counts: {', '.join(missing)}")
               return f"largest_generated_file_bytes={largest}"
 
+          def validate_skill_mirror() -> str:
+              stats = load_json("docs/stats.json")
+              expected_skills = int(stats.get("archive_skill_md_count_raw", 0) or 0)
+              expected_metadata = int(stats.get("archive_metadata_count_raw", 0) or 0)
+              skill_paths = sorted((root / "skills").rglob("SKILL.md"))
+              metadata_paths = sorted((root / "skills").rglob("metadata.json"))
+              if len(skill_paths) != expected_skills:
+                  raise ValueError(
+                      f"skills/SKILL.md count={len(skill_paths)}, expected {expected_skills}"
+                  )
+              if len(metadata_paths) != expected_metadata:
+                  raise ValueError(
+                      f"skills/metadata.json count={len(metadata_paths)}, expected {expected_metadata}"
+                  )
+              rel_paths = [
+                  str(path.relative_to(root))
+                  for path in [*skill_paths, *metadata_paths]
+              ]
+              check_ignore = subprocess.run(
+                  ["git", "check-ignore", "--stdin"],
+                  input="\n".join(rel_paths) + "\n",
+                  text=True,
+                  capture_output=True,
+                  check=False,
+              )
+              if check_ignore.returncode == 0:
+                  ignored = [line for line in check_ignore.stdout.splitlines() if line]
+                  sample = ", ".join(ignored[:5])
+                  raise ValueError(
+                      f"{len(ignored)} mirrored skill files are ignored by git: {sample}"
+                  )
+              if check_ignore.returncode != 1:
+                  raise ValueError(check_ignore.stderr.strip() or "git check-ignore failed")
+              return (
+                  f"{len(skill_paths)} SKILL.md and {len(metadata_paths)} metadata files "
+                  "match stats and are not ignored"
+              )
+
           def validate_registry() -> str:
               assert_pointer("registry.json", "registry-manifest.json")
               return assert_manifest("registry-manifest.json")
@@ -268,6 +307,7 @@ jobs:
               ),
           )
           check("stats shard summary", validate_stats)
+          check("skills mirror count and gitignore", validate_skill_mirror)
 
           failed = [item for item in checks if item["status"] != "passed"]
           status = {
@@ -330,6 +370,7 @@ jobs:
           git config --local user.name "github-actions[bot]"
 
           git add -A
+          git add -f skills
           if git diff --staged --quiet; then
             echo "No main artifact changes"
             exit 0

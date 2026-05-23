@@ -184,11 +184,38 @@ The report records:
 - mutually exclusive primary reason counts;
 - overlapping blocker reason counts;
 - target category/status distributions and bounded representative examples.
+- optional stable-key conflict details via `--conflict-detail-limit`, including
+  source/target paths, metadata identity fields, SKILL content hashes, and
+  equality flags.
 
 Residual reason buckets include low confidence, target category/status excluded
 by policy, target `other`, classification status/path failures, stable-key
 conflicts, source missing, current archive category filtered out, and movable
 candidates under the selected policy.
+
+Stable-key conflict details are diagnostic only. Matching stable keys are not
+enough to delete or merge archive entries; a follow-up cleanup must first prove
+whether the source and target SKILL bodies are identical or intentionally
+different.
+
+## Stable-Key Duplicate Cleanup Contract
+
+`scripts/plan_stable_key_duplicate_cleanup.py` consumes a residual report that
+was generated with `--conflict-detail-limit`. It is the only approved automatic
+cleanup path for stable-key conflicts.
+
+Defaults:
+
+- Input is a residual report with `details.stable_key_conflicts`.
+- Default mode is dry-run. Only `--apply` removes source directories.
+- Source and target `SKILL.md` hashes must match.
+- Metadata identity fields must match unless
+  `--allow-metadata-identity-drift` is explicitly passed after review.
+- Apply mode re-reads the source and target hashes before deleting anything.
+
+The cleanup plan records `remove_duplicate` operations only. It never rewrites,
+renames, merges, or overwrites skills. Non-identical conflicts remain residuals
+for manual or model-assisted review.
 
 ## Governance Gates
 

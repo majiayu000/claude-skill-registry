@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-05-23T02:42:56.933846Z",
-  "archive_skill_md_count_raw": 234691,
-  "archive_metadata_count_raw": 234691,
-  "indexed_skill_count_scan_shape": 234691,
-  "registry_skill_count_dedup": 156287,
+  "updated_at": "2026-05-23T03:35:20.445232Z",
+  "archive_skill_md_count_raw": 221952,
+  "archive_metadata_count_raw": 221952,
+  "indexed_skill_count_scan_shape": 221952,
+  "registry_skill_count_dedup": 156282,
   "total_plugins": 3,
   "categories": 78,
   "category_counts": [
@@ -245,7 +245,7 @@
     {
       "name": "other",
       "code": "oth",
-      "count": 81326
+      "count": 68587
     },
     {
       "name": "performance",
@@ -403,72 +403,72 @@
   "top_repositories": [
     {
       "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-      "count": 3462
+      "count": 3337
     },
     {
       "repo": "majiayu000/claude-skill-registry",
-      "count": 2081
+      "count": 1934
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "count": 1663
-    },
-    {
-      "repo": "a5c-ai/babysitter",
-      "count": 1474
+      "count": 1626
     },
     {
       "repo": "plurigrid/asi",
-      "count": 1472
+      "count": 1428
     },
     {
-      "repo": "boisenoise/skills-collections",
-      "count": 1110
+      "repo": "a5c-ai/babysitter",
+      "count": 1418
     },
     {
       "repo": "levnikolaevich/claude-code-skills",
-      "count": 1082
-    },
-    {
-      "repo": "melodic-software/claude-code-plugins",
-      "count": 1034
-    },
-    {
-      "repo": "TheBushidoCollective/han",
-      "count": 1009
+      "count": 1016
     },
     {
       "repo": "aiskillstore/marketplace",
-      "count": 997
+      "count": 988
+    },
+    {
+      "repo": "melodic-software/claude-code-plugins",
+      "count": 985
+    },
+    {
+      "repo": "TheBushidoCollective/han",
+      "count": 966
+    },
+    {
+      "repo": "boisenoise/skills-collections",
+      "count": 958
     }
   ],
   "featured_count": 100,
   "index_size_bytes": 162,
-  "index_size_gzip_bytes": 175,
-  "search_shard_count": 7,
-  "search_largest_shard_bytes": 8388684,
-  "search_largest_shard_gzip_bytes": 2581039,
-  "category_shard_count": 90,
-  "category_largest_part_bytes": 8388711,
+  "index_size_gzip_bytes": 174,
+  "search_shard_count": 6,
+  "search_largest_shard_bytes": 8388687,
+  "search_largest_shard_gzip_bytes": 2591742,
+  "category_shard_count": 89,
+  "category_largest_part_bytes": 8388650,
   "category_largest_part_gzip_bytes": 1741351,
-  "lite_index_count": 156853,
+  "lite_index_count": 156848,
   "lite_index_included_count": 5000,
-  "lite_index_size_bytes": 3497747,
-  "lite_index_gzip_size_bytes": 675028,
+  "lite_index_size_bytes": 3497673,
+  "lite_index_gzip_size_bytes": 674987,
   "quality_index_size_bytes": 220,
   "quality_index_gzip_size_bytes": 213,
   "quality_shard_count": 6,
-  "quality_largest_shard_bytes": 8388622,
-  "quality_largest_shard_gzip_bytes": 1759371,
+  "quality_largest_shard_bytes": 8388685,
+  "quality_largest_shard_gzip_bytes": 1759614,
   "security_index_size_bytes": 223,
   "security_index_gzip_size_bytes": 215,
   "security_shard_count": 4,
-  "security_largest_shard_bytes": 8388696,
-  "security_largest_shard_gzip_bytes": 2403698,
+  "security_largest_shard_bytes": 8388700,
+  "security_largest_shard_gzip_bytes": 2406647,
   "ranking_index_size_bytes": 220,
-  "ranking_index_gzip_size_bytes": 213,
+  "ranking_index_gzip_size_bytes": 214,
   "ranking_shard_count": 5,
-  "ranking_largest_shard_bytes": 8388678,
-  "ranking_largest_shard_gzip_bytes": 2208722,
-  "largest_generated_file_bytes": 8388711
+  "ranking_largest_shard_bytes": 8388639,
+  "ranking_largest_shard_gzip_bytes": 2208019,
+  "largest_generated_file_bytes": 8388700
 }

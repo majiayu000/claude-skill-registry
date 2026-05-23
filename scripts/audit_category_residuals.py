@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
@@ -26,6 +27,17 @@ from utils import load_metadata, normalize_name, normalize_repo
 
 SCHEMA_VERSION = 1
 MOVABLE_REASON = "movable candidate under selected policy"
+CONFLICT_METADATA_IDENTITY_FIELDS = (
+    "name",
+    "repo",
+    "path",
+    "github_path",
+    "github_branch",
+    "branch",
+    "source_url",
+    "license",
+    "author",
+)
 
 
 def count_archive_categories(skills_dir: Path) -> Counter[str]:
@@ -94,6 +106,58 @@ def add_bucket_example(
         bucket.append(example)
 
 
+def file_sha256(path: Path) -> str:
+    if not path.exists() or not path.is_file():
+        return ""
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def metadata_identity(metadata: dict[str, Any]) -> dict[str, Any]:
+    identity: dict[str, Any] = {}
+    for field in CONFLICT_METADATA_IDENTITY_FIELDS:
+        value = metadata.get(field)
+        if value not in (None, ""):
+            identity[field] = value
+    return identity
+
+
+def stable_key_conflict_detail(
+    *,
+    skills_dir: Path,
+    row: ClassificationRow,
+    source_dir: Path,
+    target_dir_rel: Path,
+    target_category: str,
+    target_status: str,
+    key: str,
+) -> dict[str, Any]:
+    target_dir = skills_dir / target_dir_rel
+    source_metadata = load_metadata(source_dir)
+    target_metadata = load_metadata(target_dir) if target_dir.exists() else {}
+    source_identity = metadata_identity(source_metadata)
+    target_identity = metadata_identity(target_metadata)
+    source_skill_hash = file_sha256(source_dir / "SKILL.md")
+    target_skill_hash = file_sha256(target_dir / "SKILL.md")
+    return {
+        "source_path": str(source_dir.relative_to(skills_dir)),
+        "source_skill": str(source_dir.relative_to(skills_dir) / "SKILL.md"),
+        "target_path": str(target_dir_rel),
+        "target_skill": str(target_dir_rel / "SKILL.md"),
+        "target_exists": target_dir.exists(),
+        "target_category": target_category,
+        "target_status": target_status,
+        "classification_name": row.name,
+        "confidence": row.confidence,
+        "key": key,
+        "source_metadata_identity": source_identity,
+        "target_metadata_identity": target_identity,
+        "metadata_identity_equal": source_identity == target_identity,
+        "source_skill_sha256": source_skill_hash,
+        "target_skill_sha256": target_skill_hash,
+        "skill_content_equal": bool(source_skill_hash and source_skill_hash == target_skill_hash),
+    }
+
+
 def blocker_reasons(
     row: ClassificationRow,
     *,
@@ -137,6 +201,7 @@ def build_report(
     allow_target_other: bool = False,
     limit_examples: int = 20,
     top_targets: int = 20,
+    conflict_detail_limit: int = 0,
 ) -> dict[str, Any]:
     taxonomy = get_taxonomy()
     from_categories = from_categories or set()
@@ -166,6 +231,8 @@ def build_report(
     reason_target_counts: dict[str, Counter[str]] = defaultdict(Counter)
     reason_target_status_counts: dict[str, Counter[str]] = defaultdict(Counter)
     examples: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    conflict_details: list[dict[str, Any]] = []
+    conflict_detail_summary: Counter[str] = Counter()
 
     candidate_move_count = 0
     blocked_existing_key_count = 0
@@ -282,6 +349,23 @@ def build_report(
                 reason = operation_reason
                 if operation == "blocked_existing_key":
                     blocked_existing_key_count += 1
+                    if len(conflict_details) < max(conflict_detail_limit, 0):
+                        detail = stable_key_conflict_detail(
+                            skills_dir=skills_dir,
+                            row=row,
+                            source_dir=source_dir,
+                            target_dir_rel=target_dir_rel,
+                            target_category=target_category,
+                            target_status=target_status,
+                            key=key,
+                        )
+                        conflict_details.append(detail)
+                        if detail["skill_content_equal"]:
+                            conflict_detail_summary["skill_content_equal"] += 1
+                        if detail["metadata_identity_equal"]:
+                            conflict_detail_summary["metadata_identity_equal"] += 1
+                        if not detail["target_exists"]:
+                            conflict_detail_summary["target_missing"] += 1
                 all_blocker_reason_counts[reason] += 1
 
         primary_reason_counts[reason] += 1
@@ -340,6 +424,7 @@ def build_report(
             "apply_mode": "report-only",
             "example_limit_per_reason": limit_examples,
             "top_targets_per_reason": top_targets,
+            "conflict_detail_limit": conflict_detail_limit,
         },
         "summary": {
             "classification_row_count": len(rows),
@@ -354,6 +439,8 @@ def build_report(
             "scoped_existing_source_count": scoped_existing_source_count,
             "candidate_move_count": candidate_move_count,
             "blocked_existing_key_count": blocked_existing_key_count,
+            "stable_key_conflict_detail_count": len(conflict_details),
+            "stable_key_conflict_detail_summary": sorted_counter(conflict_detail_summary),
             "primary_reason_counts": sorted_counter(primary_reason_counts),
             "all_blocker_reason_counts": sorted_counter(all_blocker_reason_counts),
             "target_category_counts": sorted_counter(target_category_counts),
@@ -361,6 +448,9 @@ def build_report(
             "same_policy_plan_summary": same_policy_plan["summary"],
         },
         "buckets": buckets,
+        "details": {
+            "stable_key_conflicts": conflict_details,
+        },
         "notes": [
             "This report is read-only and never moves, deletes, or rewrites skills.",
             "same_policy_plan_summary is generated by apply_category_migration.py with the same flags.",
@@ -370,6 +460,8 @@ def build_report(
             "scoped_archive_classification_gap is scoped_archive_skill_count minus "
             "scoped_existing_source_count; positive values indicate archive skills "
             "not covered by the classification file or duplicate classification coverage.",
+            "stable_key_conflicts detail is bounded by --conflict-detail-limit and includes "
+            "content hashes so duplicate removal is not inferred from the stable key alone.",
         ],
     }
 
@@ -404,6 +496,12 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--allow-target-other", action="store_true")
     parser.add_argument("--limit-examples", type=int, default=20)
     parser.add_argument("--top-targets", type=int, default=20)
+    parser.add_argument(
+        "--conflict-detail-limit",
+        type=int,
+        default=0,
+        help="Emit up to N stable-key conflict details with source/target hashes",
+    )
     parser.add_argument("--preview-limit", type=int, default=20)
     parser.add_argument("--json", action="store_true")
     parser.add_argument("--output", type=Path)
@@ -426,6 +524,7 @@ def main(argv: list[str] | None = None) -> int:
         allow_target_other=args.allow_target_other,
         limit_examples=args.limit_examples,
         top_targets=args.top_targets,
+        conflict_detail_limit=args.conflict_detail_limit,
     )
     payload = json.dumps(report, indent=2, ensure_ascii=False)
     if args.output:

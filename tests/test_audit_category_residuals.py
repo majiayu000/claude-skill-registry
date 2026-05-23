@@ -21,6 +21,7 @@ def _write_skill(
     name: str | None = None,
     repo: str = "",
     path: str = "",
+    body: str | None = None,
 ) -> None:
     skill_dir = root / category / dirname
     skill_dir.mkdir(parents=True)
@@ -38,7 +39,7 @@ def _write_skill(
         encoding="utf-8",
     )
     (skill_dir / "SKILL.md").write_text(
-        f"---\nname: {name or dirname}\n---\n\n{dirname}",
+        body if body is not None else f"---\nname: {name or dirname}\n---\n\n{dirname}",
         encoding="utf-8",
     )
 
@@ -148,6 +149,140 @@ def test_report_counts_candidates_and_stable_key_conflicts(tmp_path):
     assert report["summary"]["primary_reason_counts"][conflict] == 1
     assert report["summary"]["same_policy_plan_summary"]["movable_count"] == 1
     assert report["summary"]["same_policy_plan_summary"]["blocked_count"] == 1
+
+
+def test_report_can_emit_stable_key_conflict_details(tmp_path):
+    audit = _load_module()
+    skills_dir = tmp_path / "skills"
+    _write_skill(
+        skills_dir,
+        "development",
+        "already-there",
+        name="duplicate",
+        repo="owner/repo",
+        path=".claude/skills/duplicate/SKILL.md",
+        body="same skill body",
+    )
+    _write_skill(
+        skills_dir,
+        "other",
+        "duplicate",
+        repo="owner/repo",
+        path=".claude/skills/duplicate/SKILL.md",
+        body="same skill body",
+    )
+    _write_skill(
+        skills_dir,
+        "development",
+        "already-there-different",
+        name="different",
+        repo="owner/different",
+        path=".claude/skills/different/SKILL.md",
+        body="target body",
+    )
+    _write_skill(
+        skills_dir,
+        "other",
+        "different",
+        repo="owner/different",
+        path=".claude/skills/different/SKILL.md",
+        body="source body",
+    )
+    classification = tmp_path / "classification.jsonl"
+    _write_classification(
+        classification,
+        [
+            {
+                "path": "other/duplicate/SKILL.md",
+                "name": "duplicate",
+                "current_category": "other",
+                "llm_category": "development",
+                "confidence": 0.95,
+                "status": "ok",
+            },
+            {
+                "path": "other/different/SKILL.md",
+                "name": "different",
+                "current_category": "other",
+                "llm_category": "development",
+                "confidence": 0.95,
+                "status": "ok",
+            },
+        ],
+    )
+
+    report = audit.build_report(
+        skills_dir=skills_dir,
+        classification_jsonl=classification,
+        from_categories={"other"},
+        conflict_detail_limit=10,
+    )
+
+    details = report["details"]["stable_key_conflicts"]
+    assert len(details) == 2
+    by_name = {detail["classification_name"]: detail for detail in details}
+    duplicate = by_name["duplicate"]
+    different = by_name["different"]
+    assert duplicate["source_path"] == "other/duplicate"
+    assert duplicate["target_path"] == "development/already-there"
+    assert duplicate["skill_content_equal"] is True
+    assert duplicate["metadata_identity_equal"] is True
+    assert duplicate["source_skill_sha256"] == duplicate["target_skill_sha256"]
+    assert different["target_path"] == "development/already-there-different"
+    assert different["skill_content_equal"] is False
+    assert different["metadata_identity_equal"] is True
+    assert report["summary"]["stable_key_conflict_detail_count"] == 2
+    assert report["summary"]["stable_key_conflict_detail_summary"] == {
+        "metadata_identity_equal": 2,
+        "skill_content_equal": 1,
+    }
+
+
+def test_report_conflict_detail_limit_is_bounded(tmp_path):
+    audit = _load_module()
+    skills_dir = tmp_path / "skills"
+    for name in ("one", "two"):
+        _write_skill(
+            skills_dir,
+            "development",
+            f"target-{name}",
+            name=name,
+            repo=f"owner/{name}",
+            path=f".claude/skills/{name}/SKILL.md",
+        )
+        _write_skill(
+            skills_dir,
+            "other",
+            name,
+            repo=f"owner/{name}",
+            path=f".claude/skills/{name}/SKILL.md",
+        )
+    classification = tmp_path / "classification.jsonl"
+    _write_classification(
+        classification,
+        [
+            {
+                "path": f"other/{name}/SKILL.md",
+                "name": name,
+                "current_category": "other",
+                "llm_category": "development",
+                "confidence": 0.95,
+                "status": "ok",
+            }
+            for name in ("one", "two")
+        ],
+    )
+
+    report = audit.build_report(
+        skills_dir=skills_dir,
+        classification_jsonl=classification,
+        from_categories={"other"},
+        conflict_detail_limit=1,
+    )
+
+    assert report["summary"]["blocked_existing_key_count"] == 2
+    assert report["summary"]["stable_key_conflict_detail_count"] == 1
+    assert len(report["details"]["stable_key_conflicts"]) == 1
 
 
 def test_report_limits_examples_for_excluded_target_category(tmp_path):

@@ -56,3 +56,9 @@ coverage.xml
 # Test artifacts
 .pytest_cache/
 .mypy_cache/
+
+# The publish artifact mirrors the data repository under skills/**.
+# Skill names can legitimately collide with generic ignored directories
+# such as build/ or dist/, so never ignore mirrored skill files.
+!/skills/
+!/skills/**

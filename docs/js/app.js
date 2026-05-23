@@ -1,6 +1,6 @@
 /**
  * Claude Skills Registry - Search Application
- * Fast client-side search for 67,000+ skills
+ * Fast client-side search for Claude Code skills
  * v2.0 - Added Leaderboard, Stats, Favorites, Random Discovery
  */
 
@@ -92,6 +92,7 @@ let state = {
 // DOM Elements
 const elements = {
     searchInput: document.getElementById('search-input'),
+    metaDescription: document.querySelector('meta[name="description"]'),
     categoryFilter: document.getElementById('category-filter'),
     sortFilter: document.getElementById('sort-filter'),
     totalCount: document.getElementById('total-count'),
@@ -237,6 +238,55 @@ function formatResultCount(count) {
     return base;
 }
 
+function readNumericStat(key, fallback = 0) {
+    const rawValue = state.stats?.[key];
+    if (rawValue === null || rawValue === undefined || rawValue === '') {
+        return fallback;
+    }
+
+    const value = Number(rawValue);
+    return Number.isFinite(value) ? value : fallback;
+}
+
+function getDisplaySkillCount() {
+    return readNumericStat(
+        'registry_skill_count_dedup',
+        Number(state.index?.t || state.index?.s?.length || 0)
+    );
+}
+
+function updateRegistryCountDisplay() {
+    const dedupedCount = getDisplaySkillCount();
+    if (!Number.isFinite(dedupedCount) || dedupedCount <= 0) {
+        elements.totalCount.textContent = 'skills';
+        elements.totalCount.removeAttribute('title');
+        return;
+    }
+
+    const formattedDeduped = dedupedCount.toLocaleString();
+    const rawArchiveCount = readNumericStat('archive_skill_md_count_raw', 0);
+    const includedCount = Number(state.index?.includedCount || 0);
+
+    elements.totalCount.textContent = formattedDeduped;
+
+    const titleParts = [`${formattedDeduped} deduplicated skills`];
+    if (rawArchiveCount > 0) {
+        titleParts.push(`${rawArchiveCount.toLocaleString()} archived SKILL.md files`);
+    }
+    if (state.index?.isLite && includedCount > 0 && includedCount < dedupedCount) {
+        titleParts.push(`${includedCount.toLocaleString()} highlighted skills loaded for first paint`);
+    }
+    elements.totalCount.title = titleParts.join(' · ');
+
+    document.title = `Claude Skills Registry - Search ${formattedDeduped} Skills`;
+    if (elements.metaDescription) {
+        elements.metaDescription.setAttribute(
+            'content',
+            `Search and discover ${formattedDeduped} Claude Code skills for Claude Code, Codex CLI, and ChatGPT.`
+        );
+    }
+}
+
 // Initialize
 async function init() {
     try {
@@ -259,10 +309,7 @@ async function init() {
         state.fuse = new Fuse(state.index.s, CONFIG.FUSE_OPTIONS);
 
         // Update UI
-        elements.totalCount.textContent = state.index.t.toLocaleString();
-        if (state.index.isLite && state.index.includedCount < state.index.t) {
-            elements.totalCount.title = `Searching ${state.index.includedCount.toLocaleString()} highlighted skills out of ${state.index.t.toLocaleString()} total`;
-        }
+        updateRegistryCountDisplay();
         elements.lastUpdated.textContent = `Updated: ${state.index.v}`;
 
         // Populate category filters

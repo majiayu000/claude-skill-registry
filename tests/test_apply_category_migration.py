@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import importlib
 import json
 import sys
@@ -177,6 +178,41 @@ def test_existing_target_key_is_blocked_not_deleted(tmp_path):
     assert (skills_dir / "development" / "already-there" / "SKILL.md").exists()
 
 
+def test_source_hash_mismatch_blocks_stale_classification(tmp_path):
+    migrator = _load_module()
+    skills_dir = tmp_path / "skills"
+    _write_skill(skills_dir, "other", "stale")
+    skill_path = skills_dir / "other" / "stale" / "SKILL.md"
+    original_hash = hashlib.sha256(skill_path.read_bytes()).hexdigest()
+    skill_path.write_text("---\nname: stale\n---\n\nchanged", encoding="utf-8")
+    classification = tmp_path / "classification.jsonl"
+    _write_classification(
+        classification,
+        [
+            {
+                "path": "other/stale/SKILL.md",
+                "name": "stale",
+                "current_category": "other",
+                "llm_category": "development",
+                "confidence": 0.95,
+                "status": "ok",
+                "source_sha256": original_hash,
+            }
+        ],
+    )
+
+    plan = migrator.build_apply_plan(
+        skills_dir=skills_dir,
+        classification_jsonl=classification,
+        from_categories={"other"},
+    )
+
+    assert plan["summary"]["planned_move_count"] == 0
+    assert plan["summary"]["reject_reasons"] == {
+        "source SKILL.md sha256 changed since classification": 1
+    }
+
+
 def test_movable_only_skips_blocked_moves_and_fills_limit(tmp_path):
     migrator = _load_module()
     skills_dir = tmp_path / "skills"
@@ -295,5 +331,5 @@ def test_filters_exclude_low_confidence_review_targets_and_other_targets(tmp_pat
     assert plan["summary"]["reject_reasons"] == {
         "classification target matches current category": 1,
         "confidence below threshold": 1,
-        "target category status 'review' excluded by filter": 1,
+        "target category status 'legacy' excluded by filter": 1,
     }

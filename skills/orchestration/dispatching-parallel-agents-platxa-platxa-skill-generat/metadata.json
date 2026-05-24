@@ -1,0 +1,20 @@
+{
+  "name": "dispatching-parallel-agents",
+  "description": "",
+  "repo": "platxa/platxa-skill-generator",
+  "category": "orchestration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/platxa/platxa-skill-generator",
+  "github_path": "skills/dispatching-parallel-agents",
+  "github_branch": "main",
+  "dir_name": "dispatching-parallel-agents-platxa-platxa-skill-generat",
+  "downloaded_at": "2026-02-05T01:45:09.501249Z",
+  "author": "platxa",
+  "source_url": "https://github.com/platxa/platxa-skill-generator/blob/main/skills/dispatching-parallel-agents/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/platxa/platxa-skill-generator/blob/main/skills/dispatching-parallel-agents/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

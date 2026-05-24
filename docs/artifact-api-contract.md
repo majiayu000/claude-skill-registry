@@ -123,6 +123,12 @@ Search shard payload arrays are `skills`. Signal shard payload arrays are
 `records`. Category part payload arrays are `skills`. Registry shard payload
 arrays are `skills`.
 
+Security signal records expose `security_status` plus `security_decision` when
+scanner evidence was available. The decision object contains the scanner name,
+scanner version, ruleset hash, source content hash, scan timestamp, and a
+deterministic decision id. Missing security decisions must be treated as
+unknown evidence, not clean evidence.
+
 Shard ordering is deterministic for a given generator version, but consumers
 must not treat ordering as a stable API unless the manifest explicitly documents
 the ordering strategy.

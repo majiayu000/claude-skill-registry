@@ -183,8 +183,7 @@ def blocker_reasons(
         reasons.append("classification target matches current category")
     if row.target_category == "other" and not allow_target_other:
         reasons.append("target category other requires --allow-target-other")
-    target_definition = taxonomy.categories.get(row.target_category)
-    target_status = target_definition.status if target_definition else "unknown"
+    target_status = taxonomy.category_status(row.target_category)
     if "any" not in target_statuses and target_status not in target_statuses:
         reasons.append(f"target category status {target_status!r} excluded by filter")
     return reasons
@@ -239,8 +238,7 @@ def build_report(
     scoped_existing_source_count = 0
 
     for row in rows:
-        target_definition = taxonomy.categories.get(row.target_category)
-        target_status = target_definition.status if target_definition else "unknown"
+        target_status = taxonomy.category_status(row.target_category)
         target_status_counts[target_status] += 1
         rel = standard_skill_rel(row.path)
         if rel is None:
@@ -490,7 +488,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument(
         "--target-status",
         action="append",
-        choices=["active", "review", "deprecated", "unknown", "any"],
+        choices=["active", "legacy", "review", "deprecated", "unknown", "any"],
         default=["active"],
     )
     parser.add_argument("--allow-target-other", action="store_true")

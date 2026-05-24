@@ -1,0 +1,20 @@
+{
+  "name": "claw-events",
+  "description": "",
+  "repo": "swiffc/PV_BOT",
+  "category": "orchestration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/swiffc/PV_BOT",
+  "github_path": "skills/capevace/claw-events",
+  "github_branch": "main",
+  "dir_name": "claw-events",
+  "downloaded_at": "2026-02-05T01:44:21.563459Z",
+  "author": "swiffc",
+  "source_url": "https://github.com/swiffc/PV_BOT/blob/main/skills/capevace/claw-events/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/swiffc/PV_BOT/blob/main/skills/capevace/claw-events/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

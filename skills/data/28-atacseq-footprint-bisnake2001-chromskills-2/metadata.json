@@ -1,0 +1,18 @@
+{
+  "name": "28.ATACseq-footprint",
+  "description": "This skill performs transcription factor (TF) footprint analysis using TOBIAS on ATAC-seq data. It corrects Tn5 sequence bias, quantifies TF occupancy at motif sites, generates footprint scores, and o",
+  "repo": "BIsnake2001/ChromSkills",
+  "path": "28.ATACseq-footprint",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BIsnake2001/ChromSkills",
+  "dir_name": "28-atacseq-footprint-bisnake2001-chromskills-2",
+  "author": "BIsnake2001",
+  "source_url": "https://github.com/BIsnake2001/ChromSkills/blob/main/28.ATACseq-footprint/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BIsnake2001/ChromSkills/blob/main/28.ATACseq-footprint/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

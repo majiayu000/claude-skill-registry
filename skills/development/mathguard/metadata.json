@@ -1,0 +1,28 @@
+{
+  "name": "mathguard",
+  "description": "Advanced math optimization guard for probabilistic methods, FFT-style pivots, approximations, and algorithmic floor checks when classical approaches stop scaling.",
+  "repo": "morsechimwai/lemmaly",
+  "path": "skills/mathguard",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [
+    "algorithms",
+    "math",
+    "probability",
+    "fft",
+    "optimization",
+    "performance"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "mathguard",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "morsechimwai",
+  "source_url": "https://github.com/morsechimwai/lemmaly/blob/main/skills/mathguard/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/morsechimwai/lemmaly/blob/main/skills/mathguard/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

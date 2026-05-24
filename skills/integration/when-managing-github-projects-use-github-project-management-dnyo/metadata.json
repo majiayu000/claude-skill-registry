@@ -1,0 +1,16 @@
+{
+  "name": "when-managing-github-projects-use-github-project-management",
+  "repo": "DNYoussef/ai-chrome-extension",
+  "path": ".claude/skills/github-integration/when-managing-github-projects-use-github-project-management/SKILL.md",
+  "source": "github.com/DNYoussef/ai-chrome-extension",
+  "downloaded_at": "2026-01-29T08:56:03.221474Z",
+  "dir_name": "when-managing-github-projects-use-github-project-management-dnyo",
+  "category": "integration",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/ai-chrome-extension/blob/main/.claude/skills/github-integration/when-managing-github-projects-use-github-project-management/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ReadFlow Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

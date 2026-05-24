@@ -1,0 +1,16 @@
+{
+  "name": "mcporter",
+  "repo": "yoyo99/openclaw",
+  "path": "skills/mcporter/SKILL.md",
+  "source": "github.com/yoyo99/openclaw",
+  "downloaded_at": "2026-02-02T05:00:31.688087Z",
+  "dir_name": "mcporter-yoyo99-openclaw",
+  "category": "development",
+  "author": "yoyo99",
+  "source_url": "https://github.com/yoyo99/openclaw/blob/main/skills/mcporter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yoyo99/openclaw/blob/main/skills/mcporter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

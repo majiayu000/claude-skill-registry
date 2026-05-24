@@ -1,0 +1,20 @@
+{
+  "name": "subagent-driven-development",
+  "description": "",
+  "repo": "KyteApp/growth-agents-and-skills",
+  "category": "orchestration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/KyteApp/growth-agents-and-skills",
+  "github_path": ".github/skills/subagent-driven-development",
+  "github_branch": "main",
+  "dir_name": "subagent-driven-development-kyteapp-growth-agents-and-sk",
+  "downloaded_at": "2026-02-05T01:44:30.015765Z",
+  "author": "KyteApp",
+  "source_url": "https://github.com/KyteApp/growth-agents-and-skills/blob/main/.github/skills/subagent-driven-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/KyteApp/growth-agents-and-skills/blob/main/.github/skills/subagent-driven-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

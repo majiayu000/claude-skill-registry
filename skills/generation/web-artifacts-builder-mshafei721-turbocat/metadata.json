@@ -1,0 +1,20 @@
+{
+  "name": "web-artifacts-builder",
+  "description": "",
+  "repo": "mshafei721/Turbocat",
+  "category": "generation",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mshafei721/Turbocat",
+  "github_path": "backend/.claude/skills/web-artifacts-builder",
+  "github_branch": "main",
+  "dir_name": "web-artifacts-builder-mshafei721-turbocat",
+  "downloaded_at": "2026-02-05T01:44:46.942421Z",
+  "author": "mshafei721",
+  "source_url": "https://github.com/mshafei721/Turbocat/blob/main/backend/.claude/skills/web-artifacts-builder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mshafei721/Turbocat/blob/main/backend/.claude/skills/web-artifacts-builder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

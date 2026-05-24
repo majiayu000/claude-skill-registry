@@ -1,0 +1,16 @@
+{
+  "name": "kramme:markdown-converter",
+  "repo": "Abildtoft/kramme-cc-workflow",
+  "path": "skills/kramme:markdown-converter/SKILL.md",
+  "source": "github.com/Abildtoft/kramme-cc-workflow",
+  "downloaded_at": "2026-02-02T01:32:50.026449Z",
+  "dir_name": "kramme-markdown-converter",
+  "category": "documents",
+  "author": "Abildtoft",
+  "source_url": "https://github.com/Abildtoft/kramme-cc-workflow/blob/main/skills/kramme:markdown-converter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Abildtoft/kramme-cc-workflow/blob/main/skills/kramme:markdown-converter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -142,6 +142,103 @@ def test_rejects_rewrites_of_existing_entries():
     ]
 
 
+def test_accepts_category_only_canonicalization_of_existing_entries():
+    base = render_catalog(
+        [
+            {
+                "name": "bridge",
+                "repo": "acme/bridge",
+                "path": "",
+                "description": "Bridge chat systems.",
+                "category": "messaging",
+                "tags": ["chat"],
+                "stars": 0,
+            }
+        ]
+    )
+    head = render_catalog(
+        [
+            {
+                "name": "bridge",
+                "repo": "acme/bridge",
+                "path": "",
+                "description": "Bridge chat systems.",
+                "category": "communication",
+                "tags": ["chat"],
+                "stars": 0,
+            }
+        ]
+    )
+
+    assert validate_community_intake_text(base, head) == []
+
+
+def test_rejects_category_rewrite_from_already_canonical_existing_entry():
+    base = render_catalog(
+        [
+            {
+                "name": "alpha",
+                "repo": "acme/alpha",
+                "path": "",
+                "description": "A",
+                "category": "development",
+                "tags": ["a"],
+                "stars": 0,
+            }
+        ]
+    )
+    head = render_catalog(
+        [
+            {
+                "name": "alpha",
+                "repo": "acme/alpha",
+                "path": "",
+                "description": "A",
+                "category": "documents",
+                "tags": ["a"],
+                "stars": 0,
+            }
+        ]
+    )
+
+    assert validate_community_intake_text(base, head) == [
+        "community intake PRs must preserve the existing `skills` list and append new entries at the end"
+    ]
+
+
+def test_rejects_category_canonicalization_with_whitespace():
+    base = render_catalog(
+        [
+            {
+                "name": "bridge",
+                "repo": "acme/bridge",
+                "path": "",
+                "description": "Bridge chat systems.",
+                "category": "messaging",
+                "tags": ["chat"],
+                "stars": 0,
+            }
+        ]
+    )
+    head = render_catalog(
+        [
+            {
+                "name": "bridge",
+                "repo": "acme/bridge",
+                "path": "",
+                "description": "Bridge chat systems.",
+                "category": "communication ",
+                "tags": ["chat"],
+                "stars": 0,
+            }
+        ]
+    )
+
+    assert validate_community_intake_text(base, head) == [
+        "community intake PRs must preserve the existing `skills` list and append new entries at the end"
+    ]
+
+
 def test_rejects_format_only_changes_without_new_entries():
     base = render_catalog(
         [

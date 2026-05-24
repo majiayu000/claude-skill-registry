@@ -1,0 +1,17 @@
+{
+  "name": "AXEL-Skill",
+  "description": "",
+  "repo": "apiksdev/axel-core",
+  "category": "skills",
+  "tags": [],
+  "stars": 0,
+  "source": "Unknown",
+  "dir_name": "axel-skill",
+  "author": "apiksdev",
+  "source_url": "https://github.com/apiksdev/axel-core",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/apiksdev/axel-core",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

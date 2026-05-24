@@ -1,0 +1,20 @@
+{
+  "name": "last30days",
+  "description": "",
+  "repo": "guilhermedemorais-dev/context-engineering-factory",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/guilhermedemorais-dev/context-engineering-factory",
+  "github_path": "library/skills/last30days",
+  "github_branch": "main",
+  "dir_name": "last30days-guilhermedemorais-de-context-engineering",
+  "downloaded_at": "2026-02-05T05:36:35.764720Z",
+  "author": "guilhermedemorais-dev",
+  "source_url": "https://github.com/guilhermedemorais-dev/context-engineering-factory/blob/main/library/skills/last30days/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/guilhermedemorais-dev/context-engineering-factory/blob/main/library/skills/last30days/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

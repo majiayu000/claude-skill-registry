@@ -1,10 +1,10 @@
 {
-  "name": "mcp-generator",
+  "name": "pop-mcp-generator",
   "repo": "jrc1883/popkit-claude",
   "category": "development",
   "description": "Use when setting up project-specific development tools or after analyzing a codebase - generates custom MCP server with semantic search, project-aware tools, and health monitoring capabilities. Works ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:24.442605Z",
+  "source": "github.com/jrc1883/popkit-claude",
+  "downloaded_at": "2026-01-14T02:05:40.828402Z",
   "github_path": "packages/popkit-core/skills/pop-mcp-generator",
   "github_branch": "main",
   "dir_name": "mcp-generator-jrc1883-popkit-claude",
@@ -14,5 +14,6 @@
   "copyright": "Copyright belongs to upstream author(s); see https://github.com/jrc1883/popkit-claude/blob/main/packages/popkit-core/skills/pop-mcp-generator/SKILL.md",
   "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
   "distribution": "restricted",
-  "license_class": "restricted"
+  "license_class": "restricted",
+  "path": "packages/popkit-core/skills/pop-mcp-generator/SKILL.md"
 }

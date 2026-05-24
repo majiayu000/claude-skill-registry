@@ -1,0 +1,20 @@
+{
+  "name": "dm-bot",
+  "description": "",
+  "repo": "swiffc/PV_BOT",
+  "category": "communication",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/swiffc/PV_BOT",
+  "github_path": "skills/dommholland/dm-bot",
+  "github_branch": "main",
+  "dir_name": "dm-bot",
+  "downloaded_at": "2026-02-05T01:44:21.379171Z",
+  "author": "swiffc",
+  "source_url": "https://github.com/swiffc/PV_BOT/blob/main/skills/dommholland/dm-bot/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/swiffc/PV_BOT/blob/main/skills/dommholland/dm-bot/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

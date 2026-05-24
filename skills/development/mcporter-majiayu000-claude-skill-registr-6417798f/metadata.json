@@ -1,0 +1,20 @@
+{
+  "name": "mcporter",
+  "description": "The most comprehensive Claude Code skills registry - 50,000+ skills indexed",
+  "repo": "majiayu000/claude-skill-registry",
+  "category": "development",
+  "tags": [],
+  "stars": 48,
+  "source": "",
+  "github_path": "skills/development/mcporter",
+  "github_branch": "main",
+  "dir_name": "mcporter-majiayu000-claude-skill-registr-6417798f",
+  "downloaded_at": "2026-02-05T05:45:45.928199Z",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/development/mcporter/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

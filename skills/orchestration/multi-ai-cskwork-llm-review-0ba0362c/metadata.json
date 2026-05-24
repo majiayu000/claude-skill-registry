@@ -1,0 +1,20 @@
+{
+  "name": "multi-ai",
+  "description": "Claude (planner + coder) and codex (reviewer)",
+  "repo": "cskwork/llm-review",
+  "category": "orchestration",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": "skill/multi-ai",
+  "github_branch": "main",
+  "dir_name": "multi-ai-cskwork-llm-review-0ba0362c",
+  "downloaded_at": "2026-02-05T01:45:35.471182Z",
+  "author": "cskwork",
+  "source_url": "https://github.com/cskwork/llm-review/blob/main/skill/multi-ai/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cskwork/llm-review/blob/main/skill/multi-ai/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

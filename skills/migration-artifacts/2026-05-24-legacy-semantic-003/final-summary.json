@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-05-24-legacy-semantic-003",
+  "issue": "majiayu000/claude-skill-registry-data#27",
+  "core_fix": "majiayu000/claude-skill-registry-core#154 / #155",
+  "input_count": 92,
+  "llm_status_counts": {
+    "ok": 92
+  },
+  "llm_category_counts": {
+    "agent": 5,
+    "ai-llm": 5,
+    "analysis": 4,
+    "bash": 1,
+    "context-management": 2,
+    "data": 1,
+    "development": 44,
+    "devops": 5,
+    "documents": 2,
+    "integration": 5,
+    "orchestration": 1,
+    "other": 3,
+    "quality": 3,
+    "security": 4,
+    "skills": 2,
+    "testing": 3,
+    "workflow": 2
+  },
+  "applied": {
+    "metadata_compliant_moves": 21,
+    "duplicate_removals": 21,
+    "metadata_compliance_blocked_restored": 22
+  },
+  "residual": {
+    "legacy_skill_count": 50,
+    "canonical_gate_errors": 100,
+    "primary_reason_counts": {
+      "classification status is not ok": 22,
+      "confidence below threshold": 1,
+      "source directory missing": 42,
+      "target category already contains a skill with the same stable key": 27
+    },
+    "existing_source_category_counts": {
+      "agent-coordination": 1,
+      "artifact-generation": 1,
+      "development-tools": 20,
+      "github-integration": 4,
+      "programming-languages": 13,
+      "project": 1,
+      "research-analysis": 3,
+      "security-compliance": 3,
+      "string": 1,
+      "technical-integration": 1,
+      "template": 1,
+      "test": 1
+    }
+  },
+  "verification": {
+    "metadata_compliance_changed_files": "passed: 21 scanned, 0 errors, 0 warnings",
+    "case_conflicts": "passed",
+    "diff_check": "passed",
+    "canonical_categories": "expected fail: 100 errors / 50 legacy skills remain"
+  }
+}

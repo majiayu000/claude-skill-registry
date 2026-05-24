@@ -1,0 +1,16 @@
+{
+  "name": "lsp-validation",
+  "repo": "jakezp/everything-opencode",
+  "path": "skills/lsp-validation/SKILL.md",
+  "source": "github.com/jakezp/everything-opencode",
+  "downloaded_at": "2026-02-02T01:24:35.753022Z",
+  "dir_name": "lsp-validation",
+  "category": "development",
+  "author": "jakezp",
+  "source_url": "https://github.com/jakezp/everything-opencode/blob/main/skills/lsp-validation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jakezp/everything-opencode/blob/main/skills/lsp-validation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

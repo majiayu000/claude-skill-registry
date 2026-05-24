@@ -1,0 +1,16 @@
+{
+  "name": "setup-antigravity",
+  "repo": "google/mcp-security",
+  "path": "extensions/google-secops/skills/setup-antigravity/SKILL.md",
+  "category": "security",
+  "source": "github.com/google/mcp-security",
+  "dir_name": "setup-antigravity-google-mcp-security-3",
+  "downloaded_at": "2026-02-22T07:20:31.862745Z",
+  "author": "google",
+  "source_url": "https://github.com/google/mcp-security/blob/main/extensions/google-secops/skills/setup-antigravity/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/google/mcp-security/blob/main/extensions/google-secops/skills/setup-antigravity/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

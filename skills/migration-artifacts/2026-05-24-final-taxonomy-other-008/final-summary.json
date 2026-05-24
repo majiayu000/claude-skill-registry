@@ -1,0 +1,26 @@
+{
+  "batch": "2026-05-24-final-taxonomy-other-008",
+  "issue": "https://github.com/majiayu000/claude-skill-registry-data/issues/39",
+  "scope": "Resolve final string/template/test taxonomy rows.",
+  "decisions": {
+    "removed": 2,
+    "removed_duplicate": 1
+  },
+  "canonical_gate_errors_after": 0,
+  "scoped_existing_source_count_after": 0,
+  "blocked_existing_key_count_after": 0,
+  "remaining_primary_reasons": {
+    "source directory missing": 92
+  },
+  "verification": [
+    "check_canonical_categories.py --limit 20: passed with Errors: 0",
+    "check_case_conflicts.py: no case conflicts found",
+    "git diff --check: passed",
+    "audit_category_residuals.py: scoped_existing_source_count=0, stable_key_conflicts=0"
+  ],
+  "policy_notes": [
+    "Removed non-skill schema documentation and unresolved placeholder template from publishable archive.",
+    "Removed legacy test duplicate because canonical testing copy already existed with identical SKILL.md hash.",
+    "No legacy category directories remain in the audited classification scope."
+  ]
+}

@@ -26,7 +26,7 @@ def _write_skill(root: Path, category: str, name: str, metadata: dict, body: str
     )
 
 
-def test_plan_includes_taxonomy_deprecation_and_heuristic_reclassify(tmp_path):
+def test_plan_includes_legacy_migration_and_heuristic_reclassify(tmp_path):
     planner = _load_module()
     skills_dir = tmp_path / "skills"
     _write_skill(
@@ -54,7 +54,7 @@ def test_plan_includes_taxonomy_deprecation_and_heuristic_reclassify(tmp_path):
     plan = planner.build_plan(skills_dir, min_score=2, min_delta=2)
     changes = {item["path"]: item for item in plan["changes"]}
 
-    assert changes["docs/pdf-helper/SKILL.md"]["action"] == "taxonomy_deprecation"
+    assert changes["docs/pdf-helper/SKILL.md"]["action"] == "legacy_category_migration"
     assert changes["docs/pdf-helper/SKILL.md"]["proposed_category"] == "documents"
     assert changes["other/devops-helper/SKILL.md"]["action"] == "heuristic_reclassify"
     assert changes["other/devops-helper/SKILL.md"]["confidence"] == "high"
@@ -90,13 +90,38 @@ def test_plan_reports_alias_and_source_conflict(tmp_path):
     plan = planner.build_plan(skills_dir, include_frontmatter=True)
     changes = {item["path"]: item for item in plan["changes"]}
 
-    assert changes["engineering/builder/SKILL.md"]["action"] == "normalize_alias"
+    assert changes["engineering/builder/SKILL.md"]["action"] == "legacy_category_migration"
     assert changes["engineering/builder/SKILL.md"]["proposed_category"] == "development"
+    assert changes["engineering/builder/SKILL.md"]["review_required"] is True
     assert changes["development/conflicted/SKILL.md"]["action"] == "resolve_source_conflict"
     assert changes["development/conflicted/SKILL.md"]["review_required"] is True
 
 
-def test_plan_reports_source_conflict_before_deprecation(tmp_path):
+def test_plan_routes_broad_legacy_slug_to_review_queue(tmp_path):
+    planner = _load_module()
+    skills_dir = tmp_path / "skills"
+    _write_skill(
+        skills_dir,
+        "applied",
+        "broad",
+        {
+            "name": "broad",
+            "category": "applied",
+            "description": "Legacy imported bucket with no precise category.",
+        },
+    )
+
+    plan = planner.build_plan(skills_dir)
+    change = {item["path"]: item for item in plan["changes"]}[
+        "applied/broad/SKILL.md"
+    ]
+
+    assert change["action"] == "legacy_category_review"
+    assert change["proposed_category"] == "other"
+    assert change["review_required"] is True
+
+
+def test_plan_reports_source_conflict_before_legacy_migration(tmp_path):
     planner = _load_module()
     skills_dir = tmp_path / "skills"
     _write_skill(

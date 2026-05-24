@@ -1,0 +1,17 @@
+{
+  "name": "git-wizard-agent",
+  "repo": "HouseGarofalo/claude-code-base",
+  "path": ".claude/skills/git-wizard-agent/SKILL.md",
+  "github_branch": "master",
+  "category": "integration",
+  "source": "github.com/HouseGarofalo/claude-code-base",
+  "dir_name": "git-wizard-agent-housegarofalo-claude-code-base",
+  "downloaded_at": "2026-03-22T05:28:52.915701Z",
+  "author": "HouseGarofalo",
+  "source_url": "https://github.com/HouseGarofalo/claude-code-base/blob/master/.claude/skills/git-wizard-agent/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HouseGarofalo/claude-code-base/blob/master/.claude/skills/git-wizard-agent/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

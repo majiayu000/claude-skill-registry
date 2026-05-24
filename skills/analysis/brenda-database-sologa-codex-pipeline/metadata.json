@@ -1,0 +1,20 @@
+{
+  "name": "brenda-database",
+  "description": "研究 codex 使用 skill 生成 survey 這件事",
+  "repo": "Sologa/codex-pipeline",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".codex/skills/brenda-database",
+  "github_branch": "main",
+  "dir_name": "brenda-database-sologa-codex-pipeline",
+  "downloaded_at": "2026-02-05T01:45:44.081255Z",
+  "author": "Sologa",
+  "source_url": "https://github.com/Sologa/codex-pipeline/blob/main/.codex/skills/brenda-database/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Sologa/codex-pipeline/blob/main/.codex/skills/brenda-database/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "firecrawl-scrape",
+  "repo": "tfunk1030/vibe",
+  "path": ".claude/skills/firecrawl-scrape/SKILL.md",
+  "source": "github.com/tfunk1030/vibe",
+  "downloaded_at": "2026-01-30T03:08:44.833331Z",
+  "dir_name": "firecrawl-scrape",
+  "category": "analysis",
+  "author": "tfunk1030",
+  "source_url": "https://github.com/tfunk1030/vibe/blob/main/.claude/skills/firecrawl-scrape/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tfunk1030/vibe/blob/main/.claude/skills/firecrawl-scrape/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

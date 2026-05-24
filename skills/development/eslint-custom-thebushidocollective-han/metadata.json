@@ -1,0 +1,16 @@
+{
+  "name": "eslint-custom",
+  "repo": "TheBushidoCollective/han",
+  "path": "jutsu/jutsu-eslint/skills/eslint-custom/SKILL.md",
+  "source": "github.com/TheBushidoCollective/han",
+  "downloaded_at": "2026-01-29T04:12:54.415915Z",
+  "dir_name": "eslint-custom-thebushidocollective-han",
+  "category": "development",
+  "author": "TheBushidoCollective",
+  "source_url": "https://github.com/TheBushidoCollective/han/blob/main/jutsu/jutsu-eslint/skills/eslint-custom/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 The Bushido Collective",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,6 +1,7 @@
 ---
-name: converting-slash-commands
-description: Convert Claude Code slash commands to OpenCode commands format. Use when migrating from Claude Code to OpenCode or when you have existing slash command definitions to port.
+name: convertCommands
+description: Atlas skill for converting Claude Code slash commands to OpenCode commands format. USE WHEN migrating from Claude Code to OpenCode or when you have existing slash command definitions to port.
+context: fork
 ---
 
 # Converting Claude Code Slash Commands to OpenCode Commands
@@ -12,13 +13,16 @@ This skill helps you convert Claude Code slash command definitions (from `.claud
 ## Quick Reference
 
 **Source formats:**
+
 - Claude Code: `.claude/commands/*.md` or `~/.claude/commands/*.md`
 
 **Target formats:**
+
 - OpenCode Markdown: `.opencode/command/*.md` or `~/.config/opencode/command/*.md`
 - OpenCode JSON: `opencode.json` config file
 
 **Key differences:**
+
 - Frontmatter fields: Different field names and options
 - Argument syntax: Same (`$ARGUMENTS`, `$1`, `$2`, etc.)
 - Shell commands: Same syntax (`!`command``)
@@ -53,15 +57,15 @@ Convert each field from Claude Code format to OpenCode format:
 
 **Frontmatter mapping:**
 
-| Claude Code | OpenCode | Notes |
-|-------------|----------|-------|
-| `allowed-tools` | `agent` | Convert tool list to agent name |
-| `argument-hint` | N/A | Not supported in OpenCode |
-| `description` | `description` | Keep identical |
-| `model` | `model` | Keep identical |
-| `disable-model-invocation` | N/A | Not supported in OpenCode |
-| N/A | `subtask` | New: Force subagent invocation |
-| N/A | `template` | New: Only in JSON format |
+| Claude Code                | OpenCode      | Notes                           |
+| -------------------------- | ------------- | ------------------------------- |
+| `allowed-tools`            | `agent`       | Convert tool list to agent name |
+| `argument-hint`            | N/A           | Not supported in OpenCode       |
+| `description`              | `description` | Keep identical                  |
+| `model`                    | `model`       | Keep identical                  |
+| `disable-model-invocation` | N/A           | Not supported in OpenCode       |
+| N/A                        | `subtask`     | New: Force subagent invocation  |
+| N/A                        | `template`    | New: Only in JSON format        |
 
 **Tool conversion:**
 
@@ -82,6 +86,7 @@ agent: build
 **Bash commands with allowed-tools:**
 
 Claude Code:
+
 ```markdown
 ---
 allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*)
@@ -90,6 +95,7 @@ description: Create a git commit
 ```
 
 OpenCode - Use agent with appropriate permissions:
+
 ```markdown
 ---
 description: Create a git commit
@@ -102,6 +108,7 @@ Note: OpenCode handles tool permissions at the agent level, not command level.
 **Model invocation control:**
 
 Claude Code:
+
 ```markdown
 ---
 disable-model-invocation: true
@@ -124,6 +131,7 @@ model: anthropic/claude-sonnet-4-20250514
 ---
 
 Review this code for:
+
 - Security vulnerabilities
 - Performance issues
 - Code style violations
@@ -180,6 +188,7 @@ cat EXAMPLES.md
 ```
 
 The EXAMPLES.md file includes:
+
 - Simple code review command
 - Git commit command with bash execution
 - PR review with arguments
@@ -191,24 +200,24 @@ The EXAMPLES.md file includes:
 **Quick example snippet:**
 
 Claude Code format:
+
 ```yaml
 ---
 description: Review code for quality and security
 allowed-tools: Read, Grep, Glob
 model: claude-3-5-sonnet-20241022
 ---
-
 Review this code focusing on security and performance.
 ```
 
 OpenCode format:
+
 ```yaml
 ---
 description: Review code for quality and security
 agent: plan
 model: anthropic/claude-3-5-sonnet-20241022
 ---
-
 Review this code focusing on security and performance.
 ```
 
@@ -217,28 +226,29 @@ Review this code focusing on security and performance.
 ### Pattern 1: Simple Review Command
 
 **Claude Code:**
+
 ```yaml
 ---
 description: Review this code
 allowed-tools: Read, Grep
 ---
-
 Review this code for bugs and improvements.
 ```
 
 **OpenCode:**
+
 ```yaml
 ---
 description: Review this code
 agent: plan
 ---
-
 Review this code for bugs and improvements.
 ```
 
 ### Pattern 2: Git Commit Command
 
 **Claude Code:**
+
 ```yaml
 ---
 allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*)
@@ -252,6 +262,7 @@ Create a commit based on these changes.
 ```
 
 **OpenCode:**
+
 ```yaml
 ---
 description: Create a git commit
@@ -267,6 +278,7 @@ Create a commit based on these changes.
 ### Pattern 3: Command with Arguments
 
 **Claude Code:**
+
 ```yaml
 ---
 argument-hint: [pr-number] [priority]
@@ -277,11 +289,11 @@ Review PR #$1 with priority $2.
 ```
 
 **OpenCode:**
+
 ```yaml
 ---
 description: Review pull request
 ---
-
 Review PR #$1 with priority $2.
 ```
 
@@ -293,13 +305,13 @@ Note: `argument-hint` is not supported in OpenCode, but the argument placeholder
 No direct equivalent - commands run in main conversation.
 
 **OpenCode:**
+
 ```yaml
 ---
 description: Analyze performance
 agent: plan
 subtask: true
 ---
-
 Analyze performance issues in this codebase.
 ```
 
@@ -336,11 +348,13 @@ OpenCode controls tools at the agent level. Choose the appropriate agent for you
 Both systems use similar model strings, but ensure you use the correct provider prefix:
 
 **Claude Code:**
+
 ```yaml
 model: claude-3-5-sonnet-20241022
 ```
 
 **OpenCode:**
+
 ```yaml
 model: anthropic/claude-3-5-sonnet-20241022
 ```
@@ -369,7 +383,7 @@ This works identically in both systems.
 
 ### Shell Command Execution
 
-Both systems use the same ``` !`command` ``` syntax:
+Both systems use the same `` !`command` `` syntax:
 
 ```markdown
 Current git status: !`git status`
@@ -391,7 +405,7 @@ After conversion, verify:
 - [ ] Frontmatter has `description` (optional but recommended)
 - [ ] Command content is preserved exactly from original
 - [ ] Argument placeholders (`$ARGUMENTS`, `$1`, etc.) are preserved
-- [ ] Shell commands (``` !`command` ```) are preserved
+- [ ] Shell commands (`` !`command` ``) are preserved
 - [ ] File references (`@filename`) are preserved
 - [ ] Model string uses correct provider prefix (if specified)
 - [ ] Agent is appropriate for command's needs (if specified)
@@ -400,29 +414,35 @@ After conversion, verify:
 ## Troubleshooting
 
 **Issue:** Command not appearing in OpenCode
+
 - Check file is in correct directory (`.opencode/command/` or `~/.config/opencode/command/`)
 - Verify frontmatter YAML is valid (if present)
 - Try restarting OpenCode
 
 **Issue:** Arguments not working
+
 - Verify you're using `$ARGUMENTS`, `$1`, `$2`, etc. (not `{arg1}` or other syntax)
 - Check argument is being passed when invoking command
 
 **Issue:** Shell commands not executing
-- Verify syntax: ``` !`command` ``` (backticks inside the !`` `` markers)
+
+- Verify syntax: `` !`command` `` (backticks inside the !` ` markers)
 - Check the shell command works when run manually
 - Ensure agent has bash tool permissions
 
 **Issue:** File references not working
+
 - Verify syntax: `@path/to/file.ext`
 - Check the file path is correct relative to project root
 
 **Issue:** Model errors
+
 - Verify model string format: `provider/model-name`
 - Check provider is configured in OpenCode
 - Try using `model: inherit` or omit the field
 
 **Issue:** Command runs in wrong context
+
 - Set `subtask: true` to force subagent invocation
 - Choose appropriate `agent` for the command
 

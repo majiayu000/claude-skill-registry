@@ -1,0 +1,16 @@
+{
+  "name": "paper-search-usage",
+  "repo": "fcakyon/claude-codex-settings",
+  "path": "plugins/paper-search-tools/skills/paper-search-usage/SKILL.md",
+  "source": "github.com/fcakyon/claude-codex-settings",
+  "downloaded_at": "2026-02-02T02:39:40.064998Z",
+  "dir_name": "paper-search-usage",
+  "category": "analysis",
+  "author": "fcakyon",
+  "source_url": "https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/paper-search-tools/skills/paper-search-usage/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/paper-search-tools/skills/paper-search-usage/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

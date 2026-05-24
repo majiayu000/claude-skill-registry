@@ -1,0 +1,18 @@
+{
+  "name": "create-pr",
+  "repo": "yairbederman/EngineeringAgency",
+  "path": "skills/create-pr/SKILL.md",
+  "source": "github.com/yairbederman/EngineeringAgency",
+  "downloaded_at": "2026-01-22T04:09:01.230818Z",
+  "dir_name": "create-pr-yairbederman-engineeringagency",
+  "category": "integration",
+  "github_path": "skills/create-pr",
+  "github_branch": "main",
+  "author": "yairbederman",
+  "source_url": "https://github.com/yairbederman/EngineeringAgency/blob/main/skills/create-pr/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yairbederman/EngineeringAgency/blob/main/skills/create-pr/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "nav-multi",
+  "repo": "alekspetrov/navigator",
+  "path": "skills/nav-multi/SKILL.md",
+  "source": "github.com/alekspetrov/navigator",
+  "downloaded_at": "2026-02-02T04:11:26.575376Z",
+  "dir_name": "nav-multi",
+  "category": "orchestration",
+  "author": "alekspetrov",
+  "source_url": "https://github.com/alekspetrov/navigator/blob/main/skills/nav-multi/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alekspetrov/navigator/blob/main/skills/nav-multi/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

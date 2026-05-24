@@ -1,0 +1,16 @@
+{
+  "name": "agent-swarm-orchestrator",
+  "repo": "4444J99/a-i--skills",
+  "path": "skills/tools/agent-swarm-orchestrator/SKILL.md",
+  "source": "github.com/4444J99/a-i--skills",
+  "downloaded_at": "2026-01-31T04:19:44.404906Z",
+  "dir_name": "agent-swarm-orchestrator",
+  "category": "orchestration",
+  "author": "4444J99",
+  "source_url": "https://github.com/4444J99/a-i--skills/blob/main/skills/tools/agent-swarm-orchestrator/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/4444J99/a-i--skills/blob/main/skills/tools/agent-swarm-orchestrator/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "read-arxiv-paper",
+  "description": "",
+  "repo": "timothyobiso/nanochat",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/timothyobiso/nanochat",
+  "github_path": ".claude/skills/read-arxiv-paper",
+  "github_branch": "master",
+  "dir_name": "read-arxiv-paper",
+  "downloaded_at": "2026-02-05T01:44:21.583242Z",
+  "author": "timothyobiso",
+  "source_url": "https://github.com/timothyobiso/nanochat/blob/master/.claude/skills/read-arxiv-paper/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/timothyobiso/nanochat/blob/master/.claude/skills/read-arxiv-paper/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

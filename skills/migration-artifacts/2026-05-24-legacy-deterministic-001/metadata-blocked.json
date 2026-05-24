@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "blocked_count": 17,
+  "reason": "metadata lacks trusted repo/source_url; do not invent provenance",
+  "rows": [
+    {
+      "source_path": "research-analysis/open-source-librarian-ec616468",
+      "source_skill": "research-analysis/open-source-librarian-ec616468/SKILL.md",
+      "target_category": "analysis",
+      "target_path": "analysis/open-source-librarian-ec616468",
+      "repo": ""
+    },
+    {
+      "source_path": "research-analysis/research-synthesizer-046f3a5c",
+      "source_skill": "research-analysis/research-synthesizer-046f3a5c/SKILL.md",
+      "target_category": "analysis",
+      "target_path": "analysis/research-synthesizer-046f3a5c",
+      "repo": ""
+    },
+    {
+      "source_path": "development-tools/cargo-ecosystem",
+      "source_skill": "development-tools/cargo-ecosystem/SKILL.md",
+      "target_category": "development",
+      "target_path": "development/cargo-ecosystem",
+      "repo": ""
+    },
+    {
+      "source_path": "development-tools/claudekit-claude-code",
+      "source_skill": "development-tools/claudekit-claude-code/SKILL.md",
+      "target_category": "development",
+      "target_path": "development/claudekit-claude-code",
+      "repo": ""
+    },
+    {
+      "source_path": "development-tools/git-convention",
+      "source_skill": "development-tools/git-convention/SKILL.md",
+      "target_category": "development",
+      "target_path": "development/git-convention",
+      "repo": ""
+    },
+    {
+      "source_path": "programming-languages/haskell",
+      "source_skill": "programming-languages/haskell/SKILL.md",
+      "target_category": "development",
+      "target_path": "development/haskell",
+      "repo": ""
+    },
+    {
+      "source_path": "programming-languages/languages-0ef2a701",
+      "source_skill": "programming-languages/languages-0ef2a701/SKILL.md",
+      "target_category": "development",
+      "target_path": "development/languages-0ef2a701",
+      "repo": ""
+    },
+    {
+      "source_path": "development-tools/lindquist-chrome-devtools",
+      "source_skill": "development-tools/lindquist-chrome-devtools/SKILL.md",
+      "target_category": "development",
+      "target_path": "development/lindquist-chrome-devtools",
+      "repo": ""
+    },
+    {
+      "source_path": "programming-languages/ownership-borrowing",
+      "source_skill": "programming-languages/ownership-borrowing/SKILL.md",
+      "target_category": "development",
+      "target_path": "development/ownership-borrowing",
+      "repo": ""
+    },
+    {
+      "source_path": "programming-languages/rust-macros",
+      "source_skill": "programming-languages/rust-macros/SKILL.md",
+      "target_category": "development",
+      "target_path": "development/rust-macros",
+      "repo": ""
+    },
+    {
+      "source_path": "programming-languages/trait-generics",
+      "source_skill": "programming-languages/trait-generics/SKILL.md",
+      "target_category": "development",
+      "target_path": "development/trait-generics",
+      "repo": ""
+    },
+    {
+      "source_path": "artifact-generation/manage-artifact",
+      "source_skill": "artifact-generation/manage-artifact/SKILL.md",
+      "target_category": "generation",
+      "target_path": "generation/manage-artifact",
+      "repo": ""
+    },
+    {
+      "source_path": "github-integration/git-opensource",
+      "source_skill": "github-integration/git-opensource/SKILL.md",
+      "target_category": "integration",
+      "target_path": "integration/git-opensource",
+      "repo": ""
+    },
+    {
+      "source_path": "github-integration/pr-comment-resolver-b0932455",
+      "source_skill": "github-integration/pr-comment-resolver-b0932455/SKILL.md",
+      "target_category": "integration",
+      "target_path": "integration/pr-comment-resolver-b0932455",
+      "repo": ""
+    },
+    {
+      "source_path": "github-integration/pr-description-writer-ba20554f",
+      "source_skill": "github-integration/pr-description-writer-ba20554f/SKILL.md",
+      "target_category": "integration",
+      "target_path": "integration/pr-description-writer-ba20554f",
+      "repo": ""
+    },
+    {
+      "source_path": "github-integration/write-pr-desc",
+      "source_skill": "github-integration/write-pr-desc/SKILL.md",
+      "target_category": "integration",
+      "target_path": "integration/write-pr-desc",
+      "repo": ""
+    },
+    {
+      "source_path": "agent-coordination/multi-agent-parallel-investigation",
+      "source_skill": "agent-coordination/multi-agent-parallel-investigation/SKILL.md",
+      "target_category": "orchestration",
+      "target_path": "orchestration/multi-agent-parallel-investigation",
+      "repo": ""
+    }
+  ]
+}

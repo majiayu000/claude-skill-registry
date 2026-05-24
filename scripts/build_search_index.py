@@ -29,7 +29,7 @@ from index_artifacts import write_category_artifacts, write_search_artifacts, wr
 from plugin_index import build_plugins_index, load_plugins_from_registry, load_plugins_from_source
 from utils import extract_description, get_repo_suffix, load_metadata
 
-logging.basicConfig(level=logging.INFO, format='%(message)s')
+logging.basicConfig(level=logging.INFO, format="%(message)s")
 logger = logging.getLogger(__name__)
 
 # First-paint catalog index used by the static Pages app. Full search shards
@@ -51,7 +51,7 @@ def truncate_text(text: Any, max_length: int) -> str:
     text = str(text).strip().replace("\n", " ").replace("\r", "")
     if len(text) <= max_length:
         return text
-    return text[:max_length - 3] + "..."
+    return text[: max_length - 3] + "..."
 
 
 def get_stable_id(install: str, branch: str) -> str:
@@ -97,6 +97,69 @@ def infer_security_status(skill: Dict[str, Any]) -> str:
     return "unknown"
 
 
+def validate_security_decision(decision: Any, context: str) -> Dict[str, Any]:
+    """Return a valid security decision or raise with a precise evidence error."""
+    if not isinstance(decision, dict):
+        raise ValueError(f"Missing security_decision for {context}")
+    status = decision.get("status")
+    if status not in {"passed", "failed"}:
+        raise ValueError(f"Invalid security_decision.status for {context}: {status!r}")
+    scanner = decision.get("scanner")
+    if not isinstance(scanner, dict):
+        raise ValueError(f"Missing security_decision.scanner for {context}")
+    for key in ("name", "version", "ruleset_sha256"):
+        if not scanner.get(key):
+            raise ValueError(f"Missing security_decision.scanner.{key} for {context}")
+    provenance = decision.get("provenance")
+    if not isinstance(provenance, dict):
+        raise ValueError(f"Missing security_decision.provenance for {context}")
+    for key in ("content_sha256", "scanned_at"):
+        if not provenance.get(key):
+            raise ValueError(f"Missing security_decision.provenance.{key} for {context}")
+    return decision
+
+
+def load_security_report_decisions(
+    output_dir: Path,
+    require_security_evidence: bool,
+) -> tuple[Dict[str, Dict[str, Any]], Dict[str, Any]]:
+    """Load per-skill security decisions from docs/security-report.json."""
+    report_path = output_dir / "security-report.json"
+    if not report_path.exists():
+        if require_security_evidence:
+            raise FileNotFoundError(f"Required security evidence is missing: {report_path}")
+        return {}, {}
+
+    with open(report_path, "r", encoding="utf-8") as f:
+        payload = json.load(f)
+    skills = payload.get("skills")
+    if not isinstance(skills, list):
+        if require_security_evidence:
+            raise ValueError(f"Security report is missing per-skill evidence: {report_path}")
+        return {}, payload
+
+    decisions: Dict[str, Dict[str, Any]] = {}
+    for index, result in enumerate(skills):
+        if not isinstance(result, dict):
+            if require_security_evidence:
+                raise ValueError(f"Security report result is not an object: skills[{index}]")
+            continue
+        archive_path = result.get("path")
+        if not isinstance(archive_path, str) or not archive_path.strip():
+            if require_security_evidence:
+                raise ValueError(f"Security report result is missing path: skills[{index}]")
+            continue
+        decision = result.get("security_decision")
+        if not isinstance(decision, dict) and not require_security_evidence:
+            continue
+        decisions[archive_path] = validate_security_decision(
+            decision,
+            archive_path,
+        )
+
+    return decisions, payload
+
+
 def infer_compatible_agents(skill: Dict[str, Any]) -> List[str]:
     """Infer a conservative compatible-agent hint from metadata and path."""
     haystack = " ".join(
@@ -122,7 +185,9 @@ def infer_compatible_agents(skill: Dict[str, Any]) -> List[str]:
     return agents[:5]
 
 
-def score_skill_quality(skill: Dict[str, Any], install_status: str, security_status: str) -> Dict[str, Any]:
+def score_skill_quality(
+    skill: Dict[str, Any], install_status: str, security_status: str
+) -> Dict[str, Any]:
     """Compute a transparent first-pass quality score from existing metadata."""
     description = str(skill.get("description", "") or "")
     repo = str(skill.get("repo", "") or "")
@@ -135,7 +200,9 @@ def score_skill_quality(skill: Dict[str, Any], install_status: str, security_sta
         "repo": 15 if repo and "/" in repo else 0,
         "path": 15 if has_install_location(path) else 0,
         "tags": 10 if len(tags) >= 3 else 6 if tags else 0,
-        "install": 20 if install_status == "known_good" else 8 if install_status == "unknown" else 0,
+        "install": (
+            20 if install_status == "known_good" else 8 if install_status == "unknown" else 0
+        ),
         "security": 10 if security_status == "passed" else 0,
         "popularity": 10 if stars >= 1000 else 6 if stars >= 100 else 3 if stars > 0 else 0,
     }
@@ -165,7 +232,9 @@ def score_skill_quality(skill: Dict[str, Any], install_status: str, security_sta
     }
 
 
-def score_skill_trust(repo: str, path: str, install_status: str, security_status: str, stars: int) -> int:
+def score_skill_trust(
+    repo: str, path: str, install_status: str, security_status: str, stars: int
+) -> int:
     """Compute trust score without treating missing security evidence as clean."""
     return min(
         100,
@@ -206,7 +275,7 @@ def scan_skills_v2(skills_dir: Path) -> List[Dict]:
         description = metadata.get("description", "")
         if not description:
             try:
-                content = skill_md.read_text(encoding='utf-8')
+                content = skill_md.read_text(encoding="utf-8")
                 description = extract_description(content)
             except Exception:
                 pass
@@ -220,16 +289,8 @@ def scan_skills_v2(skills_dir: Path) -> List[Dict]:
 
         # Build install path
         repo = metadata.get("repo", "")
-        github_path = (
-            metadata.get("github_path")
-            or metadata.get("path")
-            or "/".join(rel_parts)
-        )
-        github_branch = (
-            metadata.get("github_branch")
-            or metadata.get("branch")
-            or "main"
-        )
+        github_path = metadata.get("github_path") or metadata.get("path") or "/".join(rel_parts)
+        github_branch = metadata.get("github_branch") or metadata.get("branch") or "main"
 
         if github_path and repo:
             install = f"{repo}/{github_path}"
@@ -254,6 +315,7 @@ def scan_skills_v2(skills_dir: Path) -> List[Dict]:
             "description": description,
             "repo": repo,
             "path": github_path,
+            "archive_path": skill_md.relative_to(skills_dir).as_posix(),
             "branch": github_branch,
             "category": category,
             "tags": tags,
@@ -272,7 +334,7 @@ def load_registry_count(registry_path: Path) -> Optional[int]:
     if not registry_path.exists():
         return None
     try:
-        with open(registry_path, 'r', encoding='utf-8') as f:
+        with open(registry_path, "r", encoding="utf-8") as f:
             registry = json.load(f)
     except Exception:
         return None
@@ -309,16 +371,17 @@ def build_search_index(
     archive_skill_md_count_raw: Optional[int] = None,
     archive_metadata_count_raw: Optional[int] = None,
     registry_skill_count_dedup: Optional[int] = None,
+    require_security_evidence: bool = False,
 ) -> Dict[str, Any]:
     """Build the lightweight search index."""
     logger.info(f"Building index from {len(skills)} {source_name}...")
+    security_decisions_by_path, _security_report = load_security_report_decisions(
+        output_dir,
+        require_security_evidence,
+    )
 
     # Build minimal search index
-    search_index = {
-        "v": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
-        "t": len(skills),
-        "s": []
-    }
+    search_index = {"v": datetime.now(timezone.utc).strftime("%Y-%m-%d"), "t": len(skills), "s": []}
 
     # Category indexes
     categories: Dict[str, List[Dict]] = {}
@@ -331,19 +394,29 @@ def build_search_index(
     ranking_records_by_id: Dict[str, Dict[str, Any]] = {}
 
     for skill in skills:
-        name = skill.get('name', '')
-        description = skill.get('description', '')
-        category = resolve_category(skill.get('category', 'other'), allow_unknown=True)
-        tags = skill.get('tags', [])
-        stars = skill.get('stars', 0)
-        repo = skill.get('repo', '')
-        install = skill.get('install', repo)
-        branch = skill.get('branch', 'main')
-        path = skill.get('path', '')
+        name = skill.get("name", "")
+        description = skill.get("description", "")
+        category = resolve_category(skill.get("category", "other"), allow_unknown=True)
+        tags = skill.get("tags", [])
+        stars = skill.get("stars", 0)
+        repo = skill.get("repo", "")
+        install = skill.get("install", repo)
+        branch = skill.get("branch", "main")
+        path = skill.get("path", "")
+        archive_path = skill.get("archive_path", "")
         skill_id = get_stable_id(install, branch)
         owner = repo.split("/", 1)[0] if "/" in repo else ""
         install_status = infer_install_status(repo, path, install)
-        security_status = infer_security_status(skill)
+        security_decision = None
+        if isinstance(archive_path, str) and archive_path:
+            security_decision = security_decisions_by_path.get(archive_path)
+        if require_security_evidence and not security_decision:
+            raise ValueError(
+                "Missing required security evidence for " f"{archive_path or install or name}"
+            )
+        security_status = (
+            security_decision["status"] if security_decision else infer_security_status(skill)
+        )
         compatible_agents = infer_compatible_agents(skill)
         quality = score_skill_quality(skill, install_status, security_status)
         quality_score = quality["quality_score"]
@@ -358,7 +431,7 @@ def build_search_index(
             "g": tags[:5] if tags else [],
             "r": stars,
             "i": install,
-            "b": branch  # branch for GitHub URL
+            "b": branch,  # branch for GitHub URL
         }
         search_index["s"].append(mini_record)
 
@@ -373,7 +446,7 @@ def build_search_index(
             "tags": tags[:10] if tags else [],
             "stars": stars,
             "install": install,
-            "source": skill.get('source', ''),
+            "source": skill.get("source", ""),
             "id": skill_id,
             "owner": owner,
             "quality_grade": quality_grade,
@@ -438,9 +511,12 @@ def build_search_index(
                 "id": skill_id,
                 "install": install,
                 "branch": branch,
+                "archive_path": archive_path,
                 "security_status": security_status,
                 "install_status": install_status,
             }
+            if security_decision:
+                security_records_by_id[skill_id]["security_decision"] = security_decision
             ranking_records_by_id[skill_id] = {
                 "id": skill_id,
                 "install": install,
@@ -449,9 +525,7 @@ def build_search_index(
                 "quality_score": quality_score,
                 "trust_score": trust_score,
                 "recommended_score": round(
-                    quality_score * 0.45
-                    + trust_score * 0.30
-                    + min(100, stars ** 0.5) * 0.25,
+                    quality_score * 0.45 + trust_score * 0.30 + min(100, stars**0.5) * 0.25,
                     2,
                 ),
             }
@@ -587,9 +661,9 @@ def build_search_index(
     featured_data = {
         "updated_at": utc_now_isoformat(),
         "count": len(featured_skills),
-        "skills": featured_skills
+        "skills": featured_skills,
     }
-    with open(output_dir / "featured.json", 'w', encoding='utf-8') as f:
+    with open(output_dir / "featured.json", "w", encoding="utf-8") as f:
         json.dump(featured_data, f, ensure_ascii=False, indent=2)
 
     logger.info(f"  featured.json: {len(featured_skills)} skills")
@@ -619,7 +693,7 @@ def build_search_index(
     plugin_count = 0
     if plugins_count_path.exists():
         try:
-            with open(plugins_count_path, 'r', encoding='utf-8') as f:
+            with open(plugins_count_path, "r", encoding="utf-8") as f:
                 plugin_count = json.load(f).get("count", 0)
         except Exception:
             pass
@@ -637,8 +711,7 @@ def build_search_index(
         "unique_repo_count": len(repo_counts),
         "official_skill_count": official_skill_count,
         "top_repositories": [
-            {"repo": repo, "count": count}
-            for repo, count in repo_counts.most_common(10)
+            {"repo": repo, "count": count} for repo, count in repo_counts.most_common(10)
         ],
         "featured_count": len(featured_skills),
         "index_size_bytes": search_artifacts.index_size_bytes,
@@ -694,7 +767,7 @@ def build_search_index(
     security_report_path = output_dir / "security-report.json"
     if security_report_path.exists():
         try:
-            with open(security_report_path, 'r', encoding='utf-8') as f:
+            with open(security_report_path, "r", encoding="utf-8") as f:
                 security_report = json.load(f)
             stats["security_scan"] = {
                 "total": security_report.get("total"),
@@ -707,7 +780,7 @@ def build_search_index(
                 "passed": None,
                 "failed": None,
             }
-    with open(output_dir / "stats.json", 'w', encoding='utf-8') as f:
+    with open(output_dir / "stats.json", "w", encoding="utf-8") as f:
         json.dump(stats, f, ensure_ascii=False, indent=2)
 
     logger.info("\nIndex build complete!")
@@ -739,7 +812,7 @@ def load_registry_manifest_shards(registry_path: Path, registry: Dict) -> List[D
         return []
 
     manifest_path = resolve_registry_artifact(registry_path.parent, manifest_ref)
-    with open(manifest_path, 'r', encoding='utf-8') as f:
+    with open(manifest_path, "r", encoding="utf-8") as f:
         manifest = json.load(f)
 
     skills: List[Dict] = []
@@ -748,7 +821,7 @@ def load_registry_manifest_shards(registry_path: Path, registry: Dict) -> List[D
         if not isinstance(shard_ref, str) or not shard_ref.strip():
             raise ValueError(f"Invalid registry shard reference in {manifest_path}: {shard!r}")
         shard_path = resolve_registry_artifact(manifest_path.parent, shard_ref)
-        with open(shard_path, 'r', encoding='utf-8') as f:
+        with open(shard_path, "r", encoding="utf-8") as f:
             shard_payload = json.load(f)
         shard_skills = shard_payload.get("skills")
         if not isinstance(shard_skills, list):
@@ -760,27 +833,27 @@ def load_registry_manifest_shards(registry_path: Path, registry: Dict) -> List[D
 def add_registry_install_fields(skills: List[Dict]) -> List[Dict]:
     """Populate install fields for registry fallback rows."""
     for skill in skills:
-        repo = skill.get('repo', '')
-        path = skill.get('path', '')
-        name = skill.get('name', 'unknown')
+        repo = skill.get("repo", "")
+        path = skill.get("path", "")
+        name = skill.get("name", "unknown")
         if repo and path:
-            skill['install'] = f"{repo}/{path}"
+            skill["install"] = f"{repo}/{path}"
         elif repo:
-            skill['install'] = repo
+            skill["install"] = repo
         elif path:
-            skill['install'] = f"local/{path}"
+            skill["install"] = f"local/{path}"
         else:
-            skill['install'] = f"local/{name}"
+            skill["install"] = f"local/{name}"
 
     return skills
 
 
 def load_from_registry(registry_path: Path) -> List[Dict]:
     """Load skills from registry.json or its manifest shards (fallback mode)."""
-    with open(registry_path, 'r', encoding='utf-8') as f:
+    with open(registry_path, "r", encoding="utf-8") as f:
         registry = json.load(f)
 
-    skills = registry.get('skills')
+    skills = registry.get("skills")
     if not isinstance(skills, list):
         skills = load_registry_manifest_shards(registry_path, registry)
 
@@ -788,14 +861,21 @@ def load_from_registry(registry_path: Path) -> List[Dict]:
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Build search index for skill registry')
-    parser.add_argument('--skills-dir', '-s', default='skills', help='Skills directory')
-    parser.add_argument('--registry', '-r', default='registry.json', help='Registry.json (fallback)')
-    parser.add_argument('--output', '-o', default='docs', help='Output directory')
+    parser = argparse.ArgumentParser(description="Build search index for skill registry")
+    parser.add_argument("--skills-dir", "-s", default="skills", help="Skills directory")
     parser.add_argument(
-        '--use-registry',
-        action='store_true',
-        help='Fallback to registry.json only when skills dir is unavailable',
+        "--registry", "-r", default="registry.json", help="Registry.json (fallback)"
+    )
+    parser.add_argument("--output", "-o", default="docs", help="Output directory")
+    parser.add_argument(
+        "--use-registry",
+        action="store_true",
+        help="Fallback to registry.json only when skills dir is unavailable",
+    )
+    parser.add_argument(
+        "--allow-missing-security-evidence",
+        action="store_true",
+        help="Allow trust-sensitive outputs to mark security evidence unknown",
     )
 
     args = parser.parse_args()
@@ -853,8 +933,9 @@ def main():
         archive_skill_md_count_raw=archive_skill_md_count_raw,
         archive_metadata_count_raw=archive_metadata_count_raw,
         registry_skill_count_dedup=registry_skill_count_dedup,
+        require_security_evidence=not args.allow_missing_security_evidence,
     )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

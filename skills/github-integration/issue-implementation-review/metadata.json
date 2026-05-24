@@ -1,9 +1,0 @@
-{
-  "name": "issue-implementation-review",
-  "repo": "langadventurellc/claude-marketplace",
-  "path": "plugins/task-trellis/skills/issue-implementation-review/SKILL.md",
-  "source": "github.com/langadventurellc/claude-marketplace",
-  "downloaded_at": "2026-01-31T04:03:38.979613Z",
-  "dir_name": "issue-implementation-review",
-  "category": "github-integration"
-}

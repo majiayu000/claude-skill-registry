@@ -1,0 +1,20 @@
+{
+  "name": "subagent-driven-development",
+  "description": "",
+  "repo": "jarredkenny/agency-ai",
+  "category": "orchestration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jarredkenny/agency-ai",
+  "github_path": "roles/orchestrator/skills/subagent-driven-development",
+  "github_branch": "main",
+  "dir_name": "subagent-driven-development-jarredkenny-agency-ai",
+  "downloaded_at": "2026-02-05T01:45:07.782164Z",
+  "author": "jarredkenny",
+  "source_url": "https://github.com/jarredkenny/agency-ai/blob/main/roles/orchestrator/skills/subagent-driven-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jarredkenny/agency-ai/blob/main/roles/orchestrator/skills/subagent-driven-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

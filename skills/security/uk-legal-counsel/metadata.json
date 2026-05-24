@@ -1,0 +1,16 @@
+{
+  "name": "uk-legal-counsel",
+  "repo": "olehsvyrydov/selfemploy-uk",
+  "path": ".claude/skills/uk-legal-counsel/SKILL.md",
+  "source": "github.com/olehsvyrydov/selfemploy-uk",
+  "downloaded_at": "2026-01-31T01:34:54.911960Z",
+  "dir_name": "uk-legal-counsel",
+  "category": "security",
+  "author": "olehsvyrydov",
+  "source_url": "https://github.com/olehsvyrydov/selfemploy-uk/blob/main/.claude/skills/uk-legal-counsel/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/olehsvyrydov/selfemploy-uk/blob/main/.claude/skills/uk-legal-counsel/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

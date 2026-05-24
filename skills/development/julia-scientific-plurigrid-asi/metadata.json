@@ -1,0 +1,16 @@
+{
+  "name": "julia-scientific",
+  "repo": "plurigrid/asi",
+  "path": "skills/julia-scientific/SKILL.md",
+  "source": "github.com/plurigrid/asi",
+  "downloaded_at": "2026-01-29T07:42:20.757251Z",
+  "dir_name": "julia-scientific-plurigrid-asi",
+  "category": "development",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/julia-scientific/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

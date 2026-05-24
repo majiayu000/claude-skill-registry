@@ -11,5 +11,13 @@
   "stars": 0,
   "github_path": "skills/raw-tool-creator",
   "github_branch": "main",
-  "dir_name": "raw-tool-creator"
+  "dir_name": "raw-tool-creator",
+  "path": "skills/raw-tool-creator/SKILL.md",
+  "source_url": "https://github.com/mpuig/raw/blob/main/skills/raw-tool-creator/SKILL.md",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mpuig/raw/blob/main/skills/raw-tool-creator/SKILL.md",
+  "author": "mpuig",
+  "license": "NOASSERTION",
+  "license_class": "restricted",
+  "distribution": "restricted",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse."
 }

@@ -1,0 +1,64 @@
+{
+  "summary": {
+    "items": 3
+  },
+  "items": [
+    {
+      "source_path": "string/string/SKILL.md",
+      "dir_path": "string/string",
+      "decision": "remove_non_skill",
+      "target_category": null,
+      "reason": "schema.org.ai Skill class documentation, not an executable registry skill",
+      "name": "string",
+      "skill_sha256": "97835cd0107a470566abb30c99ea5dd90a1afb7c0d503e2eee75b83c920fe397",
+      "metadata_sha256": "17720b73e8c53980f0f4e55db94fdbfa5c1ccac9ea4fbe00c5757b9652e5eb60",
+      "metadata": {
+        "name": "string",
+        "category": "string",
+        "repo": "dot-do/mdx",
+        "path": "schema/schema.org.ai/Skill.mdx",
+        "source": "github.com/dot-do/mdx",
+        "source_url": null,
+        "dir_name": "string"
+      }
+    },
+    {
+      "source_path": "template/template/SKILL.md",
+      "dir_path": "template/template",
+      "decision": "remove_placeholder_template",
+      "target_category": null,
+      "reason": "placeholder template with unresolved placeholders, not a publishable skill",
+      "name": ".template",
+      "skill_sha256": "9e38a7b047e88f08a639575ff612688918891f24c9695323390de304485756c1",
+      "metadata_sha256": "433c0aed0d54872e7579c325fe654d36f85c829a6ab747229db8f7daf9926c0d",
+      "metadata": {
+        "name": ".template",
+        "category": "template",
+        "repo": "pproenca/dot-skills",
+        "path": "skills/.template/SKILL.md.template",
+        "source": "github.com/pproenca/dot-skills",
+        "source_url": "https://github.com/pproenca/dot-skills/blob/main/skills/.template/SKILL.md.template/SKILL.md",
+        "dir_name": "template"
+      }
+    },
+    {
+      "source_path": "test/test-skill-mickdarling-dollhouse-portfolio/SKILL.md",
+      "dir_path": "test/test-skill-mickdarling-dollhouse-portfolio",
+      "decision": "move_to_testing",
+      "target_category": "testing",
+      "reason": "real test skill; canonical category is testing, not legacy test",
+      "name": "test-skill",
+      "skill_sha256": "6cf394aaf54dcdec0b889ef277b0a5066236c278534c1a51af54671c712b3c80",
+      "metadata_sha256": "c85c2bd616fea4ae0b79426b8e7968cbb4792612d9d7a3bb0ec53299bae703d9",
+      "metadata": {
+        "name": "test-skill",
+        "category": "test",
+        "repo": "mickdarling/dollhouse-portfolio",
+        "path": "skills/skill.md",
+        "source": "github.com/mickdarling/dollhouse-portfolio",
+        "source_url": null,
+        "dir_name": "test-skill-mickdarling-dollhouse-portfolio"
+      }
+    }
+  ]
+}

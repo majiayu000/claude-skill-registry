@@ -1,0 +1,20 @@
+{
+  "name": "tooling",
+  "description": "",
+  "repo": "fierzone/agent-skills-standard",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/fierzone/agent-skills-standard",
+  "github_path": "skills/javascript/tooling",
+  "github_branch": "main",
+  "dir_name": "tooling-fierzone-agent-skills-standar",
+  "downloaded_at": "2026-02-05T01:45:03.645132Z",
+  "author": "fierzone",
+  "source_url": "https://github.com/fierzone/agent-skills-standard/blob/main/skills/javascript/tooling/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fierzone/agent-skills-standard/blob/main/skills/javascript/tooling/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

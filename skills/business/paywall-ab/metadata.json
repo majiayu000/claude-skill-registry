@@ -1,0 +1,17 @@
+{
+  "name": "paywall-ab",
+  "repo": "Daisuke134/anicca-products",
+  "path": ".claude/skills/paywall-ab/SKILL.md",
+  "github_branch": "main",
+  "category": "business",
+  "source": "github.com/Daisuke134/anicca-products",
+  "dir_name": "paywall-ab",
+  "downloaded_at": "2026-03-01T05:08:00.926403Z",
+  "author": "Daisuke134",
+  "source_url": "https://github.com/Daisuke134/anicca-products/blob/main/.claude/skills/paywall-ab/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Daisuke134/anicca-products/blob/main/.claude/skills/paywall-ab/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

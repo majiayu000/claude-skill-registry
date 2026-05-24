@@ -1,0 +1,20 @@
+{
+  "name": "gh-cli",
+  "description": "",
+  "repo": "1Mangesh1/dev-skills",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/1Mangesh1/dev-skills",
+  "github_path": "skills/gh-cli",
+  "github_branch": "main",
+  "dir_name": "gh-cli-1mangesh1-dev-skills",
+  "downloaded_at": "2026-02-05T01:44:13.236804Z",
+  "author": "1Mangesh1",
+  "source_url": "https://github.com/1Mangesh1/dev-skills/blob/main/skills/gh-cli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/1Mangesh1/dev-skills/blob/main/skills/gh-cli/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

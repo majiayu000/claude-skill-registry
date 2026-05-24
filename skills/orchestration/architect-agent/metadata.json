@@ -1,0 +1,20 @@
+{
+  "name": "architect-agent",
+  "description": "architect-agent",
+  "repo": "SpillwaveSolutions/architect-agent",
+  "category": "orchestration",
+  "tags": [],
+  "stars": 9,
+  "source": "",
+  "github_path": "",
+  "github_branch": "main",
+  "dir_name": "architect-agent",
+  "downloaded_at": "2026-02-05T01:45:28.368735Z",
+  "author": "SpillwaveSolutions",
+  "source_url": "https://github.com/SpillwaveSolutions/architect-agent",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SpillwaveSolutions/architect-agent",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

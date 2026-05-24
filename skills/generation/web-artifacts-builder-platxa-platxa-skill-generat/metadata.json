@@ -1,0 +1,20 @@
+{
+  "name": "web-artifacts-builder",
+  "description": "",
+  "repo": "platxa/platxa-skill-generator",
+  "category": "generation",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/platxa/platxa-skill-generator",
+  "github_path": "skills-regenerated/web-artifacts-builder",
+  "github_branch": "main",
+  "dir_name": "web-artifacts-builder-platxa-platxa-skill-generat",
+  "downloaded_at": "2026-02-05T01:45:09.517038Z",
+  "author": "platxa",
+  "source_url": "https://github.com/platxa/platxa-skill-generator/blob/main/skills-regenerated/web-artifacts-builder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/platxa/platxa-skill-generator/blob/main/skills-regenerated/web-artifacts-builder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "github",
+  "description": "",
+  "repo": "danilouchoa/openclaw",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/danilouchoa/openclaw",
+  "github_path": "skills/github",
+  "github_branch": "main",
+  "dir_name": "github-danilouchoa-openclaw",
+  "downloaded_at": "2026-02-05T05:13:03.294866Z",
+  "author": "danilouchoa",
+  "source_url": "https://github.com/danilouchoa/openclaw/blob/main/skills/github/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/danilouchoa/openclaw/blob/main/skills/github/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

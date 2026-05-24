@@ -1,0 +1,18 @@
+{
+  "name": "docs-seeker",
+  "repo": "sourman-dev/mianix-userscript",
+  "path": ".claude/skills/docs-seeker/SKILL.md",
+  "source": "github.com/sourman-dev/mianix-userscript",
+  "downloaded_at": "2026-01-22T04:15:10.565998Z",
+  "dir_name": "docs-seeker-sourman-dev-mianix-userscript",
+  "category": "analysis",
+  "github_path": ".claude/skills/docs-seeker",
+  "github_branch": "main",
+  "author": "sourman-dev",
+  "source_url": "https://github.com/sourman-dev/mianix-userscript/blob/main/.claude/skills/docs-seeker/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sourman-dev/mianix-userscript/blob/main/.claude/skills/docs-seeker/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

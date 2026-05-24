@@ -1,0 +1,18 @@
+{
+  "name": "project-mgmt",
+  "description": "GitHub プロジェクト管理を一括操作。Issue作成、ラベル設定、プロジェクト紐付け、マイルストーン、日付、ステータス変更。\nトリガー例: 「Issue作成」「プロジェクト管理」「project-mgmt」「Issueを立てて」「プロジェクトに追加」\n",
+  "repo": "Sunwood-AI-OSS-Hub/zero-cc",
+  "path": ".claude/skills/project-mgmt",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sunwood-AI-OSS-Hub/zero-cc",
+  "dir_name": "project-mgmt-sunwood-ai-oss-hub-zero-cc-2",
+  "author": "Sunwood-AI-OSS-Hub",
+  "source_url": "https://github.com/Sunwood-AI-OSS-Hub/zero-cc/blob/main/.claude/skills/project-mgmt/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Sunwood-AI-OSS-Hub/zero-cc/blob/main/.claude/skills/project-mgmt/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

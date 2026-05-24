@@ -1,0 +1,20 @@
+{
+  "name": "bl-sync",
+  "description": "",
+  "repo": "jpoutrin/product-forge",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jpoutrin/product-forge",
+  "github_path": "plugins/git-workflow/skills/bl-sync",
+  "github_branch": "main",
+  "dir_name": "bl-sync",
+  "downloaded_at": "2026-02-05T01:44:46.716915Z",
+  "author": "jpoutrin",
+  "source_url": "https://github.com/jpoutrin/product-forge/blob/main/plugins/git-workflow/skills/bl-sync/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 jpoutrin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

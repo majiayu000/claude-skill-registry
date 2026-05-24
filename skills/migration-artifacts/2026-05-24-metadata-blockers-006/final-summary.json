@@ -1,0 +1,48 @@
+{
+  "batch": "2026-05-24-metadata-blockers-006",
+  "issue": "https://github.com/majiayu000/claude-skill-registry-data/issues/35",
+  "scope": "Repair and migrate metadata-compliance-blocked rows only when provenance can be derived from existing metadata or GitHub tree evidence.",
+  "input_metadata_blocked_rows": 22,
+  "applied_count": 5,
+  "skipped_count": 17,
+  "decisions": {
+    "defer_missing_provenance": 15,
+    "repair_and_move": 5,
+    "defer_taxonomy_other": 2
+  },
+  "residual_existing_source_count_after": 18,
+  "canonical_gate_errors_after": 36,
+  "remaining_primary_reasons": {
+    "classification status is not ok": 17,
+    "source directory missing": 74,
+    "target category other requires --allow-target-other": 1
+  },
+  "remaining_existing_source_categories": {
+    "agent-coordination": 1,
+    "artifact-generation": 1,
+    "development-tools": 2,
+    "github-integration": 4,
+    "programming-languages": 5,
+    "research-analysis": 2,
+    "string": 1,
+    "template": 1,
+    "test": 1
+  },
+  "deferred_counts": {
+    "defer_missing_provenance": 15,
+    "repair_and_move": 5,
+    "defer_taxonomy_other": 2
+  },
+  "verification": [
+    "upstream checks for 5 repaired rows: reachable",
+    "check_metadata_compliance.py on 5 changed/added metadata files: 0 errors, 0 warnings",
+    "check_case_conflicts.py: no case conflicts found",
+    "git diff --check: passed",
+    "check_canonical_categories.py --limit 20: expected failure with 36 legacy-category errors remaining"
+  ],
+  "policy_notes": [
+    "Did not invent provenance for rows without repo/path/source_url.",
+    "Deferred target category other rows to taxonomy/other governance.",
+    "Migrated only metadata-blocked rows with concrete upstream repo/path evidence."
+  ]
+}

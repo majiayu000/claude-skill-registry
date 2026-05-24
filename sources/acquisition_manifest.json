@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated_at": "2026-05-24T04:15:52.999075Z",
-  "total_count": 1477,
+  "updated_at": "2026-05-24T15:32:59.448874Z",
+  "total_count": 1500,
   "entries": {
     "Xquik-dev/x-twitter-scraper": {
       "repo": "Xquik-dev/x-twitter-scraper",
@@ -8864,6 +8864,144 @@
       "branch": "master",
       "relative_path": "skills/flowhunt/SKILL.md",
       "updated_at": "2026-05-24T04:15:34.927738Z"
+    },
+    "morsechimwai/lemmaly:skills/complexity-cuts": {
+      "repo": "morsechimwai/lemmaly",
+      "branch": "main",
+      "relative_path": "skills/complexity-cuts/SKILL.md",
+      "updated_at": "2026-05-24T15:32:34.159198Z"
+    },
+    "morsechimwai/lemmaly:skills/mathguard": {
+      "repo": "morsechimwai/lemmaly",
+      "branch": "main",
+      "relative_path": "skills/mathguard/SKILL.md",
+      "updated_at": "2026-05-24T15:32:34.175400Z"
+    },
+    "morsechimwai/lemmaly:skills/invariant-guard": {
+      "repo": "morsechimwai/lemmaly",
+      "branch": "main",
+      "relative_path": "skills/invariant-guard/SKILL.md",
+      "updated_at": "2026-05-24T15:32:34.184470Z"
+    },
+    "dot-do/mdx:schema/schema.org.ai/Skill.mdx": {
+      "repo": "dot-do/mdx",
+      "branch": "main",
+      "relative_path": "schema/schema.org.ai/Skill.mdx",
+      "updated_at": "2026-05-24T15:32:35.207106Z"
+    },
+    "yusufkaraaslan/Skill_Seekers:skill-seekers": {
+      "repo": "yusufkaraaslan/Skill_Seekers",
+      "branch": "main",
+      "relative_path": "skills/skill-seekers/SKILL.md",
+      "updated_at": "2026-05-24T15:32:35.209841Z"
+    },
+    "lackeyjb/playwright-skill:playwright-skill": {
+      "repo": "lackeyjb/playwright-skill",
+      "branch": "main",
+      "relative_path": "skills/playwright-skill/SKILL.md",
+      "updated_at": "2026-05-24T15:32:35.549716Z"
+    },
+    "b33kman/professional-business-writing-skill:professional-business-writing": {
+      "repo": "b33kman/professional-business-writing-skill",
+      "branch": "main",
+      "relative_path": "SKILL.md",
+      "updated_at": "2026-05-24T15:32:37.389404Z"
+    },
+    "mguozhen/social-bot:social-reply-bot": {
+      "repo": "mguozhen/social-bot",
+      "branch": "main",
+      "relative_path": "SKILL.md",
+      "updated_at": "2026-05-24T15:32:37.398006Z"
+    },
+    "ToniPerea/humanizar-texto-es:humanizar-texto-es": {
+      "repo": "ToniPerea/humanizar-texto-es",
+      "branch": "main",
+      "relative_path": "SKILL.md",
+      "updated_at": "2026-05-24T15:32:37.404792Z"
+    },
+    "getterdoneinc/skill:getterdone": {
+      "repo": "getterdoneinc/skill",
+      "branch": "main",
+      "relative_path": "SKILL.md",
+      "updated_at": "2026-05-24T15:32:37.424607Z"
+    },
+    "mguozhen/dingtalk-bridge:dingtalk-bridge": {
+      "repo": "mguozhen/dingtalk-bridge",
+      "branch": "main",
+      "relative_path": "SKILL.md",
+      "updated_at": "2026-05-24T15:32:37.667732Z"
+    },
+    "Chris1220-cmd/deep-research-skill:deep-research": {
+      "repo": "Chris1220-cmd/deep-research-skill",
+      "branch": "master",
+      "relative_path": "SKILL.md",
+      "updated_at": "2026-05-24T15:32:37.831522Z"
+    },
+    "alonw0/web-asset-generator:web-asset-generator": {
+      "repo": "alonw0/web-asset-generator",
+      "branch": "main",
+      "relative_path": "skills/web-asset-generator/SKILL.md",
+      "updated_at": "2026-05-24T15:32:37.935705Z"
+    },
+    "varfolomejev/query-victorialogs:query-victorialogs": {
+      "repo": "varfolomejev/query-victorialogs",
+      "branch": "main",
+      "relative_path": "SKILL.md",
+      "updated_at": "2026-05-24T15:32:37.979287Z"
+    },
+    "Enreign/pagerunner-skill:pagerunner-skill": {
+      "repo": "Enreign/pagerunner-skill",
+      "branch": "main",
+      "relative_path": "skills/pagerunner-skill/SKILL.md",
+      "updated_at": "2026-05-24T15:32:38.287254Z"
+    },
+    "Xquik-dev/x-twitter-scraper:x-twitter-scraper": {
+      "repo": "Xquik-dev/x-twitter-scraper",
+      "branch": "master",
+      "relative_path": "skills/x-twitter-scraper/SKILL.md",
+      "updated_at": "2026-05-24T15:32:38.707949Z"
+    },
+    "MetcalfSolutions/Satori:satori": {
+      "repo": "MetcalfSolutions/Satori",
+      "branch": "main",
+      "relative_path": "SKILL.md",
+      "updated_at": "2026-05-24T15:32:38.908239Z"
+    },
+    "dofollow-nl/google-ads-scripts-skills:google-ads-scripts": {
+      "repo": "dofollow-nl/google-ads-scripts-skills",
+      "branch": "main",
+      "relative_path": "SKILL.md",
+      "updated_at": "2026-05-24T15:32:38.937211Z"
+    },
+    "0xRy4n/hubspot-developer-skill:hubspot-developer-skill": {
+      "repo": "0xRy4n/hubspot-developer-skill",
+      "branch": "main",
+      "relative_path": "SKILL.md",
+      "updated_at": "2026-05-24T15:32:39.441600Z"
+    },
+    "miningstore/confluence-to-agent-knowledge-base:confluence-to-agent-knowledge-base": {
+      "repo": "miningstore/confluence-to-agent-knowledge-base",
+      "branch": "main",
+      "relative_path": "SKILL.md",
+      "updated_at": "2026-05-24T15:32:39.717620Z"
+    },
+    "Digidai/product-manager-skills:product-manager-skills": {
+      "repo": "Digidai/product-manager-skills",
+      "branch": "main",
+      "relative_path": "SKILL.md",
+      "updated_at": "2026-05-24T15:32:40.443164Z"
+    },
+    "morsechimwai/lemmaly:skills/lemmaly": {
+      "repo": "morsechimwai/lemmaly",
+      "branch": "main",
+      "relative_path": "skills/lemmaly/SKILL.md",
+      "updated_at": "2026-05-24T15:32:43.575572Z"
+    },
+    "clockless-org/html-anything:html-anything": {
+      "repo": "clockless-org/html-anything",
+      "branch": "main",
+      "relative_path": "SKILL.md",
+      "updated_at": "2026-05-24T15:32:54.570312Z"
     }
   }
 }

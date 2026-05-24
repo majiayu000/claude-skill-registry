@@ -1,0 +1,18 @@
+{
+  "name": "plugin-scaffolder",
+  "repo": "squirrelsoft-dev/claude-builder",
+  "path": "skills/plugin-scaffolder/SKILL.md",
+  "source": "github.com/squirrelsoft-dev/claude-builder",
+  "downloaded_at": "2026-01-14T04:00:12.037698Z",
+  "dir_name": "plugin-scaffolder",
+  "category": "development",
+  "github_path": "skills/plugin-scaffolder",
+  "github_branch": "main",
+  "author": "squirrelsoft-dev",
+  "source_url": "https://github.com/squirrelsoft-dev/claude-builder/blob/main/skills/plugin-scaffolder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/squirrelsoft-dev/claude-builder/blob/main/skills/plugin-scaffolder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

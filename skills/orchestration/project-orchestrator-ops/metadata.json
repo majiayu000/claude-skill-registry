@@ -1,0 +1,16 @@
+{
+  "name": "project-orchestrator-ops",
+  "repo": "Parlay-Kei/stratanoble-site",
+  "path": ".claude/skills/project-orchestrator-ops/SKILL.md",
+  "source": "github.com/Parlay-Kei/stratanoble-site",
+  "downloaded_at": "2026-01-22T01:20:03.222595Z",
+  "dir_name": "project-orchestrator-ops",
+  "category": "orchestration",
+  "author": "Parlay-Kei",
+  "source_url": "https://github.com/Parlay-Kei/stratanoble-site/blob/main/.claude/skills/project-orchestrator-ops/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Parlay-Kei/stratanoble-site/blob/main/.claude/skills/project-orchestrator-ops/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

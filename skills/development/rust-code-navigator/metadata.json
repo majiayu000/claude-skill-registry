@@ -1,0 +1,16 @@
+{
+  "name": "rust-code-navigator",
+  "repo": "actionbook/rust-skills",
+  "path": "skills/rust-code-navigator/SKILL.md",
+  "source": "github.com/actionbook/rust-skills",
+  "downloaded_at": "2026-02-02T03:31:04.748258Z",
+  "dir_name": "rust-code-navigator",
+  "category": "development",
+  "author": "actionbook",
+  "source_url": "https://github.com/actionbook/rust-skills/blob/main/skills/rust-code-navigator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/actionbook/rust-skills/blob/main/skills/rust-code-navigator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

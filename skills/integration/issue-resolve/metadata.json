@@ -1,0 +1,16 @@
+{
+  "name": "issue-resolve",
+  "repo": "catlog22/Claude-Code-Workflow",
+  "path": ".claude/skills/issue-resolve/SKILL.md",
+  "category": "integration",
+  "source": "github.com/catlog22/Claude-Code-Workflow",
+  "dir_name": "issue-resolve",
+  "downloaded_at": "2026-02-15T06:41:48.374271Z",
+  "author": "catlog22",
+  "source_url": "https://github.com/catlog22/Claude-Code-Workflow/blob/main/.claude/skills/issue-resolve/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Claude Development Guidelines",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "fleet-mission",
+  "repo": "Tibsfox/gsd-skill-creator",
+  "path": ".claude/skills/fleet-mission/SKILL.md",
+  "github_branch": "main",
+  "category": "orchestration",
+  "source": "github.com/Tibsfox/gsd-skill-creator",
+  "dir_name": "fleet-mission",
+  "downloaded_at": "2026-04-14T01:29:52.731361Z",
+  "author": "Tibsfox",
+  "source_url": "https://github.com/Tibsfox/gsd-skill-creator/blob/main/.claude/skills/fleet-mission/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tibsfox/gsd-skill-creator/blob/main/.claude/skills/fleet-mission/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

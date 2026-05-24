@@ -1,0 +1,20 @@
+{
+  "name": "github",
+  "description": "These are commands I use with agents, mostly Claude",
+  "repo": "mitsuhiko/agent-stuff",
+  "category": "integration",
+  "tags": [],
+  "stars": 670,
+  "source": "",
+  "github_path": "skills/github",
+  "github_branch": "main",
+  "dir_name": "github",
+  "downloaded_at": "2026-02-05T01:45:12.173187Z",
+  "author": "mitsuhiko",
+  "source_url": "https://github.com/mitsuhiko/agent-stuff/blob/main/skills/github/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mitsuhiko/agent-stuff/blob/main/skills/github/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

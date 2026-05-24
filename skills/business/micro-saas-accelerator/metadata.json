@@ -1,0 +1,18 @@
+{
+  "name": "micro-saas-accelerator",
+  "repo": "agentpoet/Agentic-Coding-System-Self-Improving-Framework",
+  "path": ".claude/skills/micro-saas-accelerator/SKILL.md",
+  "source": "github.com/agentpoet/Agentic-Coding-System-Self-Improving-Framework",
+  "downloaded_at": "2026-01-22T04:10:36.782270Z",
+  "dir_name": "micro-saas-accelerator",
+  "category": "business",
+  "github_path": ".claude/skills/micro-saas-accelerator",
+  "github_branch": "main",
+  "author": "agentpoet",
+  "source_url": "https://github.com/agentpoet/Agentic-Coding-System-Self-Improving-Framework/blob/main/.claude/skills/micro-saas-accelerator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agentpoet/Agentic-Coding-System-Self-Improving-Framework/blob/main/.claude/skills/micro-saas-accelerator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

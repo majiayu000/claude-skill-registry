@@ -1,0 +1,18 @@
+{
+  "name": "run-issues",
+  "description": "Autonomous workflow for processing multiple GitHub issues in parallel with priority-based scheduling and verification.",
+  "repo": "silver2dream/ai-workflow-kit",
+  "path": ".ai/skills/run-issues",
+  "category": "orchestration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/silver2dream/ai-workflow-kit",
+  "dir_name": "run-issues-silver2dream-ai-workflow-kit-2",
+  "author": "silver2dream",
+  "source_url": "https://github.com/silver2dream/ai-workflow-kit/blob/main/.ai/skills/run-issues/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/silver2dream/ai-workflow-kit/blob/main/.ai/skills/run-issues/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

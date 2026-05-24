@@ -1,0 +1,20 @@
+{
+  "name": "subagent-driven-development",
+  "description": "",
+  "repo": "mbcoalson/skills",
+  "category": "orchestration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mbcoalson/skills",
+  "github_path": ".claude/skills/subagent-driven-development",
+  "github_branch": "main",
+  "dir_name": "subagent-driven-development-mbcoalson-skills",
+  "downloaded_at": "2026-02-05T01:44:36.178059Z",
+  "author": "mbcoalson",
+  "source_url": "https://github.com/mbcoalson/skills/blob/main/.claude/skills/subagent-driven-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mbcoalson/skills/blob/main/.claude/skills/subagent-driven-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

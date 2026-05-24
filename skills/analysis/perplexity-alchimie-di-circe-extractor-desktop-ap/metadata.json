@@ -1,0 +1,20 @@
+{
+  "name": "perplexity",
+  "description": "",
+  "repo": "alchimie-di-circe/Extractor-desktop-app",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alchimie-di-circe/Extractor-desktop-app",
+  "github_path": ".codex/skills/perplexity",
+  "github_branch": "main",
+  "dir_name": "perplexity-alchimie-di-circe-extractor-desktop-ap",
+  "downloaded_at": "2026-02-05T01:44:38.945549Z",
+  "author": "alchimie-di-circe",
+  "source_url": "https://github.com/alchimie-di-circe/Extractor-desktop-app/blob/main/.codex/skills/perplexity/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alchimie-di-circe/Extractor-desktop-app/blob/main/.codex/skills/perplexity/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

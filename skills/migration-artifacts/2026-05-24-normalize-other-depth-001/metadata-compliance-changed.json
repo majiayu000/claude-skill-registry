@@ -1,0 +1,1533 @@
+{
+  "scanned": 305,
+  "missing_metadata": 0,
+  "errors": 0,
+  "warnings": 0,
+  "results": [
+    {
+      "path": "other/3d-web-experience/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/about-bitwize-music-studio-claude-ai-music-skil-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/adaptyv-aiskillstore-marketplace/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/address-github-comments/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/agent-credit-aaronjmars-agent-credit-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/agentica-claude-proxy-parcadei-continuous-claude-v3-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/ai-agent-development/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/album-art-director-bitwize-music-studio-claude-ai-music-skil-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/album-conceptualizer-bitwize-music-studio-claude-ai-music-skil-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/album-ideas-bitwize-music-studio-claude-ai-music-skil-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/alert-manager-aaron-he-zhu-seo-geo-claude-skill-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/analytics/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/angular-state-management/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/animation-spec/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/anndata-aiskillstore-marketplace/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/api-testing-observability-api-mock/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/apify-ecommerce/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/architecture-diagram-creator-mhattingpete-claude-skills-market-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/architecture-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/assembling-components-ancoleman-ai-design-components-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/astropy-aiskillstore-marketplace/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/authoring-stitch-prompts-joaquimscosta-arkhe-claude-plugins-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/autodev-boshu2-agentops-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/autoresearch-mxyhi-ok-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/aws-amplify/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/aws-mcp-setup-zxkane-aws-skills-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/aws-security-audit/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/azure-ai-voicelive-py/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/azure-appconfiguration-py-sickn33-antigravity-awesome--2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/azure-identity-ts/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/azure-keyvault-secrets-ts/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/azure-monitor-opentelemetry-exporter-py-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/azure-storage-queue-ts/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/azure-usage-fcakyon-claude-codex-setting-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/backlink-analyzer-aaron-he-zhu-seo-geo-claude-skill-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/badskill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/baoyu-image-gen-jimliu-baoyu-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/baoyu-imagine-jimliu-baoyu-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/baoyu-post-to-wechat-jimliu-baoyu-skills-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/basecamp-automation-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/bash-joaquimscosta-arkhe-claude-plugins-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/bash-pro/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/beads-boshu2-agentops-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/behavior-trees/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/biopython-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/box-automation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/brainstorm-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/braintrust-analyze-parcadei-continuous-claude-v3-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/brand-yml-posit-dev-skills-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/brandkit/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/browser-act-browser-act-skills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/bug-hunt-boshu2-agentops/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/building-ai-chat-ancoleman-ai-design-components-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/bun-cloudflare-workers-secondsky-claude-skills-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/catchup-athola-claude-night-market-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/chaos-engineer-jeffallan-claude-skills-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/circleci-automation-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/claude-legal-skill-evolsb-claude-legal-skill-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/claude-win11-speckit-update-skill-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/clerk-auth/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/cli-posit-dev-skills-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/cloud-uploader-bitwize-music-studio-claude-ai-music-skil-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/code-review-ai-ai-review/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/code-transfer-mhattingpete-claude-skills-market-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/codex-team-boshu2-agentops/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/compactness-parcadei-continuous-claude-v3-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/competitor-analysis-aaron-he-zhu-seo-geo-claude-skill-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/compile-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/component-inventory/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/conductor-new-track/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/configure-canvas-mcp-microsoft-power-platform-skill-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/configuring-firewalls-ancoleman-ai-design-components-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/content-collections-secondsky-claude-skills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/context-degradation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/conversation-analyzer-mhattingpete-claude-skills-market-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/cost-optimization-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/council-boshu2-agentops-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/cran-extrachecks-posit-dev-skills-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/crank-boshu2-agentops-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/create-release-checklist-posit-dev-skills-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/ctf-osint-ljagiello-ctf-skills-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/curate-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/dashboard-creator-mhattingpete-claude-skills-market-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/dast-scanner/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/database-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/datamol-aiskillstore-marketplace/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/decisive-action-athola-claude-night-market-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/deepline-sdk-getaero-io-gtm-eng-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/defi-protocol-templates-wshobson-agents-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/delphi-aiskillstore-marketplace/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/deps-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/design-review-secondsky-claude-skills-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/diagramming-joaquimscosta-arkhe-claude-plugins-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/differential-review/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/discourse-athola-claude-night-market-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/discovery-boshu2-agentops-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/displaying-timelines-ancoleman-ai-design-components-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/do-issue-athola-claude-night-market-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/doc-boshu2-agentops/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/document-hunter-bitwize-music-studio-claude-ai-music-skil-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/domain-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/dotnet-backend/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/dream-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/dwarf-expert-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/einstellungspruefung-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/ensemble-solving-mhattingpete-claude-skills-market-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/evolve-kanevry-session-orchestrator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/explicit-checker-bitwize-music-studio-claude-ai-music-skil-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/file-operations-mhattingpete-claude-skills-market-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/filesystem-context/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/first-order-odes-parcadei-continuous-claude-v3-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fixing-motion-performance/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/flow-tdd/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/flowchart-creator-mhattingpete-claude-skills-market-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fluidsim/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/flywheel-boshu2-agentops-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/forge-boshu2-agentops-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/formula-authoring/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fp-data-transforms/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fp-option-ref-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/free-tool-strategy/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/freshdesk-automation-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/genesis-aiskillstore-marketplace-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/goals-boshu2-agentops-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/godot-3d/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/goodskill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/google-sheets-automation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/gpu-benchmarking/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/grafana-platform-dashboard/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/grafana-platform-dashboard-boshu2-agentops/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/great-cto-avelikiy-great-cto/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/grpc-golang/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/guiding-users-ancoleman-ai-design-components-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/handoff-boshu2-agentops/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/headline-psychologist/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/heal-skill-boshu2-agentops-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/hls-cpp-to-rtl-a5c-ai-babysitter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/hook-authoring-athola-claude-night-market-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/hooks-authoring-boshu2-agentops/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/hugging-face-jobs/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/hugging-face-model-trainer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/icon-lookup-malob-nix-config-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/image-crop-rotate-instavm-coderunner-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/implement-boshu2-agentops/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/implement-boshu2-agentops-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/implementing-navigation-ancoleman-ai-design-components-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/implementing-realtime-sync-ancoleman-ai-design-components-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/import-art-bitwize-music-studio-claude-ai-music-skil-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/import-audio-bitwize-music-studio-claude-ai-music-skil-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/import-track-bitwize-music-studio-claude-ai-music-skil-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/impressum-pflicht-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/instagram-automation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/intent-saadshahd-moo-md-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/interactive-portfolio-sickn33-antigravity-awesome--3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/internal-linking-optimizer-aaron-he-zhu-seo-geo-claude-skill-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/ios-simulator-skill-conorluddy-ios-simulator-skill-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/ist-das-ein-problem-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/it-manager-hospital/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/json-canvas-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/knowledge-activation-boshu2-agentops/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/kotler-macro-analyzer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/lamindb-aiskillstore-marketplace/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/leann-search-parcadei-continuous-claude-v3-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/limits-parcadei-continuous-claude-v3-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/linkedin-automation-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/llm-council-gcpdev-llm-council-skill-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/makefile-generation-athola-claude-night-market-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/makefile-review-athola-claude-night-market-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/managing-incidents-ancoleman-ai-design-components-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/managing-media-ancoleman-ai-design-components-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/mastering-engineer-bitwize-music-studio-claude-ai-music-skil-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/maz-ui-secondsky-claude-skills-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/memory-analysis/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/microservices-patterns-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/mind-memvid-claude-brain-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/mmx-cli/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/new-album-bitwize-music-studio-claude-ai-music-skil-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/notion-knowledge-capture-prat011-awesome-llm-skills-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/nuxt-studio-secondsky-claude-skills-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/nuxt-ui-v4-secondsky-claude-skills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/observe-before-editing-parcadei-continuous-claude-v3-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/okr-planning/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/onboarding-cro/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/open-interpreter-tdimino-claude-code-minoan-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/openai-docs-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/opencli-usage-mxyhi-ok-skills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/orchestrate-batch-refactor/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pathml-aiskillstore-marketplace/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pdf-official/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pgvector-semantic-search-timescale-pg-aiguide-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/php-pro-aiskillstore-marketplace/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pinia-colada-secondsky-claude-skills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pinia-v3-secondsky-claude-skills-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/planning-with-files-mxyhi-ok-skills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/post-mortem-boshu2-agentops-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/postgres-hybrid-text-search-timescale-pg-aiguide-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pr-implement-boshu2-agentops-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pr-oprogramadorreal-optimus-claude/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pr-plan-boshu2-agentops-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pr-prep-boshu2-agentops/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pr-prep-boshu2-agentops-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pr-research-boshu2-agentops-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pr-retro-boshu2-agentops-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pr-validate-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/prd-taskmaster-anombyte93-prd-taskmaster-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pre-mortem-boshu2-agentops-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/process-builder-a5c-ai-babysitter-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/process-validator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/professional-proofreader/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/project-bootstrapper-mhattingpete-claude-skills-market-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/promo-director-bitwize-music-studio-claude-ai-music-skil-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/prompt-library/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pronunciation-specialist-bitwize-music-studio-claude-ai-music-skil-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/providing-feedback-ancoleman-ai-design-components-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/push-boshu2-agentops-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pwdebug-aiskillstore-marketplace-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pydeseq2-aiskillstore-marketplace/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pyopenms-aiskillstore-marketplace/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/python-anti-patterns-wshobson-agents-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/python-background-jobs-wshobson-agents-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/python-observability-wshobson-agents-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/python-pro-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/qlty-during-development-parcadei-continuous-claude-v3-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/ragdoll/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/ratchet-boshu2-agentops-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/refactor-aiskillstore-marketplace/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/refactor-boshu2-agentops-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/release-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/release-director-bitwize-music-studio-claude-ai-music-skil-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/release-post-posit-dev-skills-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/research-boshu2-agentops-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/research-oliver-kriska-claude-elixir-phoeni-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/researchers-security-bitwize-music-studio-claude-ai-music-skil-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/researchers-tech-bitwize-music-studio-claude-ai-music-skil-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/root-finding-parcadei-continuous-claude-v3-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/rpi-boshu2-agentops-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/rpi-boshu2-agentops-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/rudin-real-complex-analysis-parcadei-continuous-claude-v3-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/salesforce-development/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/scientific-writing-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/scope-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/second-order-odes-parcadei-continuous-claude-v3-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/security-boshu2-agentops/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/seo-aiskillstore-marketplace/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/seo-content-refresher/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/session-end-kanevry-session-orchestrator-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/session-management-secondsky-claude-skills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/session-start-kanevry-session-orchestrator-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/setup-timescaledb-hypertables-timescale-pg-aiguide-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/sheet-music-publisher-bitwize-music-studio-claude-ai-music-skil-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/shellcheck-configuration-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/ship-loop-boshu2-agentops/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/skill-builder-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/snapdom-aiskillstore-marketplace-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/spec-kit-skill-feiskyer-claude-code-settings-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/specs-code-cleanup-giuseppe-trisciuogli-developer-kit-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/spring-boot-observability-joaquimscosta-arkhe-claude-plugins-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/sprints-aiskillstore-marketplace-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/status-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/story-import-worldwonderer-oh-story-claudecode/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/story-long-scan-worldwonderer-oh-story-claudecode/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/story-review-worldwonderer-oh-story-claudecode/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/story-setup-worldwonderer-oh-story-claudecode/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/subject-line-psychologist/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/swarm-boshu2-agentops-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/swift-concurrency-expert/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/swift-swiftui/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/system-overview-parcadei-continuous-claude-v3-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/system-tuning-boshu2-agentops-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/system-tuning-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/systematic-debugging-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/tavily-usage-fcakyon-claude-codex-setting-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/tdd-oprogramadorreal-optimus-claude-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/tdd-workflow-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/team-composition-analysis-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/template-skill-prat011-awesome-llm-skills-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/terraform-skill-antonbabenko-terraform-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/tester-aiskillstore-marketplace/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/thesys-generative-ui-secondsky-claude-skills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/threejs-interaction/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/trace-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/tutorial-bitwize-music-studio-claude-ai-music-skil-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/typescript-pro/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/understand-chat-lum1104-understand-anything/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/understand-diff-lum1104-understand-anything/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/understand-explain-lum1104-understand-anything/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/understand-lum1104-understand-anything/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/understand-onboard-lum1104-understand-anything/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/univer-cli-dream-num-skills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/uvm-methodology/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/ux-audit-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/validate-album-bitwize-music-studio-claude-ai-music-skil-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/vexor-sickn33-antigravity-awesome--2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/vibe-boshu2-agentops-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/voice-ai-development/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/voice-review-athola-claude-night-market-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/wave-executor-kanevry-session-orchestrator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/web-artifacts-builder/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/wiki-changelog-sickn33-antigravity-awesome--2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/worktree-isolation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/writing-plans/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/writing-rules-athola-claude-night-market-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/youtube-automation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/youtube-marketing/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/zapier-make-patterns/metadata.json",
+      "errors": [],
+      "warnings": []
+    }
+  ]
+}

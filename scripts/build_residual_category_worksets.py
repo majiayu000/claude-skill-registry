@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 from collections import Counter
 from datetime import datetime, timezone
@@ -18,6 +19,18 @@ from plan_category_migration import iter_skill_dirs
 from utils import extract_frontmatter, load_metadata, skill_semantic_fields
 
 SCHEMA_VERSION = 1
+
+
+def file_sha256(path: Path) -> str:
+    if not path.exists() or not path.is_file():
+        return ""
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def text_sha256(value: str) -> str:
+    if not value:
+        return ""
+    return hashlib.sha256(value.encode("utf-8")).hexdigest()
 
 
 def sorted_counter(counter: Counter[str]) -> dict[str, int]:
@@ -35,6 +48,8 @@ def work_item_for_skill(
     content_chars: int = 1600,
 ) -> dict[str, Any]:
     content = read_text_prefix(skill_dir / "SKILL.md", max_chars=max(content_chars, 8192))
+    source_sha256 = file_sha256(skill_dir / "SKILL.md")
+    metadata_sha256 = file_sha256(skill_dir / "metadata.json")
     metadata = load_metadata(skill_dir)
     frontmatter = extract_frontmatter(content)
     semantics = skill_semantic_fields(
@@ -62,6 +77,9 @@ def work_item_for_skill(
             "category": metadata.get("category", ""),
         },
         "semantic_sources": semantics["sources"],
+        "source_sha256": source_sha256,
+        "metadata_sha256": metadata_sha256,
+        "semantic_text_sha256": text_sha256(str(semantics.get("text") or "")),
         "content_excerpt": content[:content_chars],
     }
     if classification:
@@ -159,8 +177,7 @@ def build_worksets(
     review_target_items: list[dict[str, Any]] = []
     target_other_items: list[dict[str, Any]] = []
     for row, rel, source_dir in existing_rows:
-        target_definition = taxonomy.categories.get(row.target_category)
-        target_status = target_definition.status if target_definition else "unknown"
+        target_status = taxonomy.category_status(row.target_category)
         if row.confidence is None or row.confidence < min_confidence:
             low_confidence_items.append(
                 work_item_for_skill(
@@ -187,14 +204,14 @@ def build_worksets(
                 )
             )
             continue
-        if target_status == "review":
+        if target_status in {"legacy", "review"}:
             review_target_items.append(
                 work_item_for_skill(
                     skills_dir=skills_dir,
                     skill_dir=source_dir,
                     rel=rel,
                     workset="review_target",
-                    reason="previous classification target is a review taxonomy category",
+                    reason="previous classification target is not a publishable category",
                     classification=row,
                     content_chars=content_chars,
                 )

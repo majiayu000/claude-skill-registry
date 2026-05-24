@@ -1,0 +1,18 @@
+{
+  "name": "ln-002-best-practices-researcher",
+  "description": "Research best practices via MCP Ref/Context7/WebSearch and create documentation (guide/manual/ADR/research). Single research, multiple output types.",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-002-best-practices-researcher",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-002-best-practices-researcher-levnikolaevich-claude-code-skil",
+  "author": "levnikolaevich",
+  "source_url": "https://github.com/levnikolaevich/claude-code-skills/blob/main/ln-002-best-practices-researcher/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/levnikolaevich/claude-code-skills/blob/main/ln-002-best-practices-researcher/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

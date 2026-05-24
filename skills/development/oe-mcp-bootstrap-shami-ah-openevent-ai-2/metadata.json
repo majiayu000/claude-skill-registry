@@ -1,0 +1,20 @@
+{
+  "name": "oe-mcp-bootstrap",
+  "description": "",
+  "repo": "shami-ah/OpenEvent-AI",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".codex/skills/oe-mcp-bootstrap",
+  "github_branch": "main",
+  "dir_name": "oe-mcp-bootstrap-shami-ah-openevent-ai-2",
+  "downloaded_at": "2026-02-05T01:45:45.446380Z",
+  "author": "shami-ah",
+  "source_url": "https://github.com/shami-ah/OpenEvent-AI/blob/main/.codex/skills/oe-mcp-bootstrap/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shami-ah/OpenEvent-AI/blob/main/.codex/skills/oe-mcp-bootstrap/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

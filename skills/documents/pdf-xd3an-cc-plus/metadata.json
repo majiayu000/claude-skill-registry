@@ -1,0 +1,20 @@
+{
+  "name": "pdf",
+  "description": "",
+  "repo": "XD3an/cc-plus",
+  "category": "documents",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/XD3an/cc-plus",
+  "github_path": "skills/pdf",
+  "github_branch": "main",
+  "dir_name": "pdf-xd3an-cc-plus",
+  "downloaded_at": "2026-02-05T01:44:12.920150Z",
+  "author": "XD3an",
+  "source_url": "https://github.com/XD3an/cc-plus/blob/main/skills/pdf/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/XD3an/cc-plus/blob/main/skills/pdf/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

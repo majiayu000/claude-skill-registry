@@ -1,0 +1,78 @@
+{
+  "scanned": 14,
+  "missing_metadata": 0,
+  "errors": 0,
+  "warnings": 0,
+  "results": [
+    {
+      "path": "development/biome-js/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/converting-claude-subagents-edheltzel-atlas/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/converting-slash-commands-edheltzel-atlas/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/cpp-templates-metaprogramming/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/cpp-templates-metaprogramming-thebushidocollective-han/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/makefile-generation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/makefile-review/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/mcp-generator-jrc1883-popkit-claude/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/plaited-development-skills-plaited-plaited-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/plaited-development-skills-plaited-plaited-63520c43/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/searching-code-alexei-led-claude-code-config/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/typescript-dry-principle/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/using-xcode/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/utilizing-cli-tools-thkt-claude-config/metadata.json",
+      "errors": [],
+      "warnings": []
+    }
+  ]
+}

@@ -1,9 +1,0 @@
-{
-  "name": "git-pull-request",
-  "repo": "LandonSchropp/agent-toolkit",
-  "path": "skills/git-pull-request/SKILL.md",
-  "source": "github.com/LandonSchropp/agent-toolkit",
-  "downloaded_at": "2026-01-29T01:58:37.902812Z",
-  "dir_name": "git-pull-request-landonschropp-agent-toolkit",
-  "category": "github-integration"
-}

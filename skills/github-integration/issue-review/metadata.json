@@ -1,9 +1,0 @@
-{
-  "name": "issue-review",
-  "repo": "DennisLiuCk/claude-plugin-marketplace",
-  "path": "plugins/issue-review/skills/issue-review/SKILL.md",
-  "source": "github.com/DennisLiuCk/claude-plugin-marketplace",
-  "downloaded_at": "2026-02-02T02:46:58.085974Z",
-  "dir_name": "issue-review",
-  "category": "github-integration"
-}

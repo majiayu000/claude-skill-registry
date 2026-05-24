@@ -353,6 +353,6 @@ def test_report_blocks_review_target_status_by_default(tmp_path):
         from_categories={"other"},
     )
 
-    reason = "target category status 'review' excluded by filter"
+    reason = "target category status 'legacy' excluded by filter"
     assert report["summary"]["primary_reason_counts"] == {reason: 1}
-    assert report["buckets"][0]["target_status_counts"] == {"review": 1}
+    assert report["buckets"][0]["target_status_counts"] == {"legacy": 1}

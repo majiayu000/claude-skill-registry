@@ -1,0 +1,102 @@
+{
+  "summary": {
+    "already_applied": 5,
+    "applied": 7
+  },
+  "by_decision": {
+    "keep_target_remove_source": 3,
+    "replace_target_with_source_remove_source": 7,
+    "move_source_as_distinct_and_keep_target": 2
+  },
+  "results": [
+    {
+      "index": 1,
+      "decision": "keep_target_remove_source",
+      "status": "already_applied",
+      "source_path": "development-tools/biome-js",
+      "target_path": "development/biome-js"
+    },
+    {
+      "index": 4,
+      "decision": "replace_target_with_source_remove_source",
+      "status": "already_applied",
+      "source_path": "development-tools/converting-claude-subagents-edheltzel-atlas",
+      "target_path": "development/converting-claude-subagents-edheltzel-atlas"
+    },
+    {
+      "index": 5,
+      "decision": "replace_target_with_source_remove_source",
+      "status": "already_applied",
+      "source_path": "development-tools/converting-slash-commands-edheltzel-atlas",
+      "target_path": "development/converting-slash-commands-edheltzel-atlas"
+    },
+    {
+      "index": 6,
+      "decision": "replace_target_with_source_remove_source",
+      "status": "already_applied",
+      "source_path": "development-tools/makefile-generation-athola-claude-night-market-bb8563ba",
+      "target_path": "development/makefile-generation"
+    },
+    {
+      "index": 7,
+      "decision": "replace_target_with_source_remove_source",
+      "status": "already_applied",
+      "source_path": "development-tools/makefile-review-athola-claude-night-market-e4a9bac7",
+      "target_path": "development/makefile-review"
+    },
+    {
+      "index": 9,
+      "decision": "move_source_as_distinct_and_keep_target",
+      "status": "applied",
+      "mode": "merged_into_existing",
+      "moved_source_to": "development/plaited-development-skills-plaited-plaited-63520c43",
+      "target_path": "development/plaited-development-skills-plaited-plaited-2"
+    },
+    {
+      "index": 11,
+      "decision": "replace_target_with_source_remove_source",
+      "status": "applied",
+      "removed_source": "development-tools/pop-mcp-generator-jrc1883-popkit-claude",
+      "target_path": "development/mcp-generator-jrc1883-popkit-claude",
+      "target_sha256_after": "5179bfc391b482fbf72b6814c728897e66311cf7d23251b2d2726b0940ab093e"
+    },
+    {
+      "index": 13,
+      "decision": "replace_target_with_source_remove_source",
+      "status": "applied",
+      "removed_source": "development-tools/searching-code",
+      "target_path": "development/searching-code-alexei-led-claude-code-config",
+      "target_sha256_after": "4505bd63063ce863a53dabb90625ac5ed8e4a9cc5adf4153e43ee5484eb36e74"
+    },
+    {
+      "index": 15,
+      "decision": "keep_target_remove_source",
+      "status": "applied",
+      "removed_source": "development-tools/using-xcode",
+      "target_path": "development/using-xcode"
+    },
+    {
+      "index": 16,
+      "decision": "keep_target_remove_source",
+      "status": "applied",
+      "removed_source": "development-tools/utilizing-cli-tools",
+      "target_path": "development/utilizing-cli-tools-thkt-claude-config"
+    },
+    {
+      "index": 17,
+      "decision": "move_source_as_distinct_and_keep_target",
+      "status": "applied",
+      "mode": "moved",
+      "moved_source_to": "development/cpp-templates-metaprogramming-thebushidocollective-han",
+      "target_path": "development/cpp-templates-metaprogramming"
+    },
+    {
+      "index": 24,
+      "decision": "replace_target_with_source_remove_source",
+      "status": "applied",
+      "removed_source": "programming-languages/typescript-dry-principle",
+      "target_path": "development/typescript-dry-principle",
+      "target_sha256_after": "1392999291d96a7b50099c35f262b12246cc64665577fe4a1aeb260b8f32e8b3"
+    }
+  ]
+}

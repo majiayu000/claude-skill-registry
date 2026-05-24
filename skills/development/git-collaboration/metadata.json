@@ -1,0 +1,16 @@
+{
+  "name": "git-collaboration",
+  "repo": "DaleSeo/git-skills",
+  "path": "skills/git-collaboration/SKILL.md",
+  "source": "github.com/DaleSeo/git-skills",
+  "downloaded_at": "2026-02-02T05:08:15.053198Z",
+  "dir_name": "git-collaboration",
+  "category": "development",
+  "author": "DaleSeo",
+  "source_url": "https://github.com/DaleSeo/git-skills/blob/main/skills/git-collaboration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DaleSeo/git-skills/blob/main/skills/git-collaboration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

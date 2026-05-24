@@ -1,0 +1,18 @@
+{
+  "name": "pr-prepare",
+  "repo": "ByronWilliamsCPA/audio-processor",
+  "path": ".claude/skills/pr-prepare/SKILL.md",
+  "source": "github.com/ByronWilliamsCPA/audio-processor",
+  "downloaded_at": "2026-01-22T04:05:39.778119Z",
+  "dir_name": "pr-prepare-byronwilliamscpa-audio-processor",
+  "category": "integration",
+  "github_path": ".claude/skills/pr-prepare",
+  "github_branch": "main",
+  "author": "ByronWilliamsCPA",
+  "source_url": "https://github.com/ByronWilliamsCPA/audio-processor/blob/main/.claude/skills/pr-prepare/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ByronWilliamsCPA/audio-processor/blob/main/.claude/skills/pr-prepare/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

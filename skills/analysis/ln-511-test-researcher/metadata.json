@@ -1,0 +1,18 @@
+{
+  "name": "ln-511-test-researcher",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-511-test-researcher/SKILL.md",
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "downloaded_at": "2026-01-22T02:43:10.791156Z",
+  "dir_name": "ln-511-test-researcher",
+  "category": "analysis",
+  "github_path": "ln-511-test-researcher",
+  "github_branch": "main",
+  "author": "levnikolaevich",
+  "source_url": "https://github.com/levnikolaevich/claude-code-skills/blob/main/ln-511-test-researcher/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/levnikolaevich/claude-code-skills/blob/main/ln-511-test-researcher/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

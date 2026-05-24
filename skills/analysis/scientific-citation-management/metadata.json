@@ -1,0 +1,16 @@
+{
+  "name": "scientific-citation-management",
+  "repo": "pathvanasoftware/IOSStorageCleaner",
+  "path": ".claude/skills/scientific-citation-management/SKILL.md",
+  "source": "github.com/pathvanasoftware/IOSStorageCleaner",
+  "downloaded_at": "2026-01-29T01:13:22.007585Z",
+  "dir_name": "scientific-citation-management",
+  "category": "analysis",
+  "author": "pathvanasoftware",
+  "source_url": "https://github.com/pathvanasoftware/IOSStorageCleaner/blob/main/.claude/skills/scientific-citation-management/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pathvanasoftware/IOSStorageCleaner/blob/main/.claude/skills/scientific-citation-management/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

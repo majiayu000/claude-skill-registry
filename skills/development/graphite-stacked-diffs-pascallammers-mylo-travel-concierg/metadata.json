@@ -1,0 +1,16 @@
+{
+  "name": "graphite-stacked-diffs",
+  "repo": "pascallammers/mylo-travel-concierge-v2",
+  "path": ".factory/skills/graphite-stacked-diffs/SKILL.md",
+  "source": "github.com/pascallammers/mylo-travel-concierge-v2",
+  "downloaded_at": "2026-01-29T08:54:55.084338Z",
+  "dir_name": "graphite-stacked-diffs-pascallammers-mylo-travel-concierg",
+  "category": "development",
+  "author": "pascallammers",
+  "source_url": "https://github.com/pascallammers/mylo-travel-concierge-v2/blob/main/.factory/skills/graphite-stacked-diffs/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

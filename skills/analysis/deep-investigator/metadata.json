@@ -1,0 +1,18 @@
+{
+  "name": "deep-investigator",
+  "repo": "LostAbaddon/InfoCollector",
+  "path": "skills/deep-investigator/skill.md",
+  "source": "github.com/LostAbaddon/InfoCollector",
+  "downloaded_at": "2026-01-14T01:28:58.433079Z",
+  "dir_name": "deep-investigator",
+  "category": "analysis",
+  "github_path": "skills/deep-investigator",
+  "github_branch": "main",
+  "author": "LostAbaddon",
+  "source_url": "https://github.com/LostAbaddon/InfoCollector/blob/main/skills/deep-investigator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/LostAbaddon/InfoCollector/blob/main/skills/deep-investigator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

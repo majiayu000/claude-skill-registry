@@ -1,0 +1,18 @@
+{
+  "name": "windsurf-cost-tuning",
+  "description": "Optimize Windsurf costs through tier selection, sampling, and usage monitoring.\nUse when analyzing Windsurf billing, reducing API costs,\nor implementing usage monitoring and budget alerts.\nTrigger wit",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/windsurf-pack/skills/windsurf-cost-tuning",
+  "category": "business",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "windsurf-cost-tuning-jeremylongshore-claude-code-plugins-2",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/saas-packs/windsurf-pack/skills/windsurf-cost-tuning/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -14,5 +14,6 @@
   "copyright": "Copyright (c) 2025 ruvnet",
   "permission_note": "Use according to upstream license terms and attribution requirements.",
   "distribution": "compatible",
-  "license_class": "compatible"
+  "license_class": "compatible",
+  "path": "skills/tooling/pilot-1-code-formatter/SKILL.md"
 }

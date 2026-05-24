@@ -1,0 +1,16 @@
+{
+  "name": "task-distributor-skill",
+  "repo": "404kidwiz/claude-supercode-skills",
+  "path": "task-distributor-skill/SKILL.md",
+  "source": "github.com/404kidwiz/claude-supercode-skills",
+  "downloaded_at": "2026-01-29T07:04:41.285903Z",
+  "dir_name": "task-distributor-skill-404kidwiz-claude-supercode-ski-3107a434",
+  "category": "orchestration",
+  "author": "404kidwiz",
+  "source_url": "https://github.com/404kidwiz/claude-supercode-skills/blob/main/task-distributor-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/404kidwiz/claude-supercode-skills/blob/main/task-distributor-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

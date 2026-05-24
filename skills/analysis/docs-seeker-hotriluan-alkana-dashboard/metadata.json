@@ -1,0 +1,20 @@
+{
+  "name": "docs-seeker",
+  "description": "",
+  "repo": "hotriluan/alkana-dashboard",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hotriluan/alkana-dashboard",
+  "github_path": ".opencode/skill/docs-seeker",
+  "github_branch": "main",
+  "dir_name": "docs-seeker-hotriluan-alkana-dashboard",
+  "downloaded_at": "2026-02-05T01:44:34.336448Z",
+  "author": "hotriluan",
+  "source_url": "https://github.com/hotriluan/alkana-dashboard/blob/main/.opencode/skill/docs-seeker/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hotriluan/alkana-dashboard/blob/main/.opencode/skill/docs-seeker/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

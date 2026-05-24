@@ -1,0 +1,20 @@
+{
+  "name": "gh-locking-conversations",
+  "description": "",
+  "repo": "yu-iskw/github-project-skills",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yu-iskw/github-project-skills",
+  "github_path": "skills/gh-locking-conversations",
+  "github_branch": "main",
+  "dir_name": "gh-locking-conversations",
+  "downloaded_at": "2026-02-05T01:44:42.563393Z",
+  "author": "yu-iskw",
+  "source_url": "https://github.com/yu-iskw/github-project-skills/blob/main/skills/gh-locking-conversations/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yu-iskw/github-project-skills/blob/main/skills/gh-locking-conversations/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

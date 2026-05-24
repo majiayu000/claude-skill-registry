@@ -1,0 +1,20 @@
+{
+  "name": "vite",
+  "description": "",
+  "repo": "9aia/pachira",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/9aia/pachira",
+  "github_path": ".claude/skills/vite",
+  "github_branch": "main",
+  "dir_name": "vite-9aia-pachira",
+  "downloaded_at": "2026-02-05T01:44:40.080324Z",
+  "author": "9aia",
+  "source_url": "https://github.com/9aia/pachira/blob/main/.claude/skills/vite/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/9aia/pachira/blob/main/.claude/skills/vite/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

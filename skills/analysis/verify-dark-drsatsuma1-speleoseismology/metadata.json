@@ -1,0 +1,18 @@
+{
+  "name": "verify-dark",
+  "repo": "DrSatsuma1/speleoseismology",
+  "path": ".claude/skills/verify-dark/SKILL.md",
+  "source": "github.com/DrSatsuma1/speleoseismology",
+  "downloaded_at": "2026-01-22T01:03:08.399748Z",
+  "dir_name": "verify-dark-drsatsuma1-speleoseismology",
+  "category": "analysis",
+  "github_path": ".claude/skills/verify-dark",
+  "github_branch": "main",
+  "author": "DrSatsuma1",
+  "source_url": "https://github.com/DrSatsuma1/speleoseismology/blob/main/.claude/skills/verify-dark/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DrSatsuma1/speleoseismology/blob/main/.claude/skills/verify-dark/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

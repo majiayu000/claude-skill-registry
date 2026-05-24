@@ -1,0 +1,19 @@
+{
+  "source": "https://github.com/mrgoonie/claudekit-skills",
+  "path": ".claude/skills/claude-code/SKILL.md",
+  "branch": "main",
+  "fetched_at": "2026-01-08T03:09:27Z",
+  "name": "claudekit-claude-code",
+  "category": "development",
+  "dir_name": "claudekit-claude-code",
+  "repo": "mrgoonie/claudekit-skills",
+  "github_path": ".claude/skills/claude-code",
+  "github_branch": "main",
+  "author": "mrgoonie",
+  "source_url": "https://github.com/mrgoonie/claudekit-skills/blob/main/.claude/skills/claude-code/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mrgoonie/claudekit-skills/blob/main/.claude/skills/claude-code/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

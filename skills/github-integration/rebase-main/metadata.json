@@ -1,9 +1,0 @@
-{
-  "name": "rebase-main",
-  "repo": "flurdy/agent-skills",
-  "path": "skills/rebase-main/SKILL.md",
-  "source": "github.com/flurdy/agent-skills",
-  "downloaded_at": "2026-02-02T04:39:12.730400Z",
-  "dir_name": "rebase-main",
-  "category": "github-integration"
-}

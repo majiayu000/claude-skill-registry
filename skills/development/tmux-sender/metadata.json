@@ -1,0 +1,16 @@
+{
+  "name": "tmux-sender",
+  "repo": "uuta/dotfiles",
+  "path": "skills/tmux-sender/SKILL.md",
+  "source": "github.com/uuta/dotfiles",
+  "downloaded_at": "2026-02-02T05:05:28.365470Z",
+  "dir_name": "tmux-sender",
+  "category": "development",
+  "author": "uuta",
+  "source_url": "https://github.com/uuta/dotfiles/blob/main/skills/tmux-sender/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/uuta/dotfiles/blob/main/skills/tmux-sender/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

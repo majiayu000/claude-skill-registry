@@ -1,9 +1,27 @@
 ---
 name: makefile-generation
 description: Generate language-specific Makefile with common development targets
+
+Triggers: language-specific, makefile, development, targets, generation
 model: claude-sonnet-4
 tools: [Read, Write, Bash]
 ---
+## Table of Contents
+
+- [Use When](#use-when)
+- [Standard Targets](#standard-targets)
+- [Python Makefile](#python-makefile)
+- [Rust Makefile](#rust-makefile)
+- [TypeScript Makefile](#typescript-makefile)
+- [Workflow](#workflow)
+- [1. Detect Language](#1-detect-language)
+- [2. Load Template](#2-load-template)
+- [3. Collect Project Info](#3-collect-project-info)
+- [4. Render Template](#4-render-template)
+- [5. Verify](#5-verify)
+- [Customization](#customization)
+- [Related Skills](#related-skills)
+
 
 # Makefile Generation Skill
 
@@ -69,6 +87,7 @@ elif [ -f "package.json" ]; then
     LANGUAGE="typescript"
 fi
 ```
+**Verification:** Run the command with `--help` flag to verify availability.
 
 ### 2. Load Template
 
@@ -77,6 +96,7 @@ from pathlib import Path
 
 template_path = Path("plugins/attune/templates") / language / "Makefile.template"
 ```
+**Verification:** Run the command with `--help` flag to verify availability.
 
 ### 3. Collect Project Info
 
@@ -87,6 +107,7 @@ metadata = {
     "PYTHON_VERSION": "3.10",
 }
 ```
+**Verification:** Run the command with `--help` flag to verify availability.
 
 ### 4. Render Template
 
@@ -96,12 +117,14 @@ from template_engine import TemplateEngine
 engine = TemplateEngine(metadata)
 engine.render_file(template_path, Path("Makefile"))
 ```
+**Verification:** Run the command with `--help` flag to verify availability.
 
 ### 5. Verify
 
 ```bash
 make help
 ```
+**Verification:** Run `make --dry-run` to verify build configuration.
 
 ## Customization
 
@@ -115,8 +138,21 @@ Users can add custom targets after the generated ones:
 deploy: build ## Deploy to production
 	./scripts/deploy.sh
 ```
+**Verification:** Run the command with `--help` flag to verify availability.
 
 ## Related Skills
 
 - `Skill(attune:project-init)` - Full project initialization
 - `Skill(abstract:makefile-dogfooder)` - Makefile testing and validation
+## Troubleshooting
+
+### Common Issues
+
+**Command not found**
+Ensure all dependencies are installed and in PATH
+
+**Permission errors**
+Check file permissions and run with appropriate privileges
+
+**Unexpected behavior**
+Enable verbose logging with `--verbose` flag

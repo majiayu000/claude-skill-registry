@@ -1,0 +1,16 @@
+{
+  "name": "pubmed-quick-search",
+  "repo": "u9401066/pubmed-search-mcp",
+  "path": ".claude/skills/pubmed-quick-search/SKILL.md",
+  "source": "github.com/u9401066/pubmed-search-mcp",
+  "downloaded_at": "2026-01-29T05:56:18.850449Z",
+  "dir_name": "pubmed-quick-search-u9401066-pubmed-search-mcp-822e0377",
+  "category": "analysis",
+  "author": "u9401066",
+  "source_url": "https://github.com/u9401066/pubmed-search-mcp/blob/main/.claude/skills/pubmed-quick-search/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/u9401066/pubmed-search-mcp/blob/main/.claude/skills/pubmed-quick-search/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

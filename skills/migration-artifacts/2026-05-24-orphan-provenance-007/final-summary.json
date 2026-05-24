@@ -1,0 +1,28 @@
+{
+  "batch": "2026-05-24-orphan-provenance-007",
+  "issue": "https://github.com/majiayu000/claude-skill-registry-data/issues/37",
+  "scope": "Remove legacy skills with no derivable provenance instead of fabricating metadata.",
+  "removed_count": 15,
+  "residual_existing_source_count_after": 3,
+  "canonical_gate_errors_after": 6,
+  "remaining_primary_reasons": {
+    "classification status is not ok": 2,
+    "source directory missing": 89,
+    "target category other requires --allow-target-other": 1
+  },
+  "remaining_existing_source_categories": {
+    "string": 1,
+    "template": 1,
+    "test": 1
+  },
+  "verification": [
+    "check_case_conflicts.py: no case conflicts found",
+    "git diff --check: passed",
+    "check_canonical_categories.py --limit 20: expected failure with 6 taxonomy/other errors remaining"
+  ],
+  "policy_notes": [
+    "Removed only rows whose metadata lacked repo/path/source_url/source and could not be safely repaired.",
+    "Removal report preserves name, category, target category, hashes, byte size, headings, and reason.",
+    "Left string/template/test rows untouched for taxonomy/other governance."
+  ]
+}

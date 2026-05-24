@@ -21,7 +21,11 @@ from category_taxonomy import CategoryTaxonomy, get_taxonomy
 DEFAULT_BASE_URL = "https://token-plan-sgp.xiaomimimo.com/v1"
 DEFAULT_MODEL = "mimo-v2.5-pro"
 DEFAULT_API_KEY_ENV = "MIMO_API_KEY"
-DEFAULT_ACTIONS = ("heuristic_reclassify", "resolve_source_conflict")
+DEFAULT_ACTIONS = (
+    "heuristic_reclassify",
+    "legacy_category_review",
+    "resolve_source_conflict",
+)
 DEFAULT_MAX_COMPLETION_TOKENS = 1024
 DEFAULT_THINKING = "disabled"
 CONFIDENCE_PRIORITY = {"low": 0, "medium": 1, "high": 2}
@@ -112,7 +116,7 @@ def active_category_payload(taxonomy: CategoryTaxonomy) -> list[dict[str, str]]:
             "description": definition.description,
         }
         for definition in sorted(taxonomy.categories.values(), key=lambda item: item.slug)
-        if definition.status != "deprecated"
+        if definition.status == "active"
     ]
 
 
@@ -260,7 +264,7 @@ def build_review_entry(
     raw_category = parsed.get("category") if parsed else ""
     llm_category = taxonomy.resolve(str(raw_category), allow_unknown=True) if raw_category else ""
     allowed_category = llm_category in taxonomy.categories and (
-        taxonomy.categories[llm_category].status != "deprecated"
+        taxonomy.categories[llm_category].status == "active"
     )
     llm_confidence = normalized_confidence(parsed.get("confidence") if parsed else None)
     if parse_status == "ok" and not allowed_category:

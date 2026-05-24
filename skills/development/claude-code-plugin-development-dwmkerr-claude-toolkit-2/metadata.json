@@ -2,7 +2,7 @@
   "name": "claude-code-plugin-development",
   "description": "This skill should be used when the user asks to \"create a plugin\", \"build a plugin\", \"write a plugin\", or wants to bundle agents, hooks, commands, skills, or MCP servers into a distributable Claude Co",
   "repo": "dwmkerr/claude-toolkit",
-  "path": "plugins/toolkit/skills/claude-code-plugin-development",
+  "path": "plugins/toolkit/skills/claude-code-plugin-development/SKILL.md",
   "category": "development",
   "tags": [],
   "stars": 0,
@@ -14,5 +14,7 @@
   "copyright": "Copyright (c) 2025 Dave Kerr",
   "permission_note": "Use according to upstream license terms and attribution requirements.",
   "distribution": "compatible",
-  "license_class": "compatible"
+  "license_class": "compatible",
+  "github_path": "plugins/toolkit/skills/claude-code-plugin-development",
+  "github_branch": "main"
 }

@@ -1,0 +1,18 @@
+{
+  "name": "slides-as-code",
+  "repo": "brandomagnani/swarmkit",
+  "path": "skills/slides-as-code/SKILL.md",
+  "source": "github.com/brandomagnani/swarmkit",
+  "downloaded_at": "2026-01-22T02:10:24.522137Z",
+  "dir_name": "slides-as-code",
+  "category": "generation",
+  "github_path": "skills/slides-as-code",
+  "github_branch": "main",
+  "author": "brandomagnani",
+  "source_url": "https://github.com/brandomagnani/swarmkit/blob/main/skills/slides-as-code/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/brandomagnani/swarmkit/blob/main/skills/slides-as-code/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

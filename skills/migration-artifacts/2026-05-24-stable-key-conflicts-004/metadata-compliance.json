@@ -1,0 +1,103 @@
+{
+  "scanned": 19,
+  "missing_metadata": 0,
+  "errors": 0,
+  "warnings": 0,
+  "results": [
+    {
+      "path": "analysis/prove-majiayu000-claude-skill-registr-dc7985ac/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/claude-code-plugin-development-dwmkerr-claude-toolkit-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/code-search/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/code-search-1ambda-dataops-platform-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/golang-pro/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/javascript-pro/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/php-modernization/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/php-pro/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/pilot-1-code-formatter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/pilot-1-code-formatter-dnyoussef-context-cascade/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/plugin-master/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/plugin-master-josiahsiegel-claude-plugin-market-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/raw-tool-creator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/rust-engineer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/rust-pro-rmyndharis-antigravity-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/tooling/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/tooling-thebeardedbearsas-claude-craft-11/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/iso27001-gap-analyzer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/license-compliance-scanner/metadata.json",
+      "errors": [],
+      "warnings": []
+    }
+  ]
+}

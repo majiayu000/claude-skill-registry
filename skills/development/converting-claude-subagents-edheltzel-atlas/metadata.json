@@ -3,16 +3,17 @@
   "repo": "edheltzel/atlas",
   "category": "development",
   "description": "Convert Claude Code Subagents to OpenCode Agents format. Use when migrating from Claude Code to OpenCode or when you have existing subagent definitions to port.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:19.636321Z",
-  "github_path": ".atlasOG/exports/modules/skills/skills/converting-claude-subagents",
+  "source": "github.com/edheltzel/atlas",
+  "downloaded_at": "2026-01-14T01:35:27.060462Z",
+  "github_path": ".claude/skills/converting-claude-subagents",
   "github_branch": "main",
   "dir_name": "converting-claude-subagents-edheltzel-atlas",
   "author": "edheltzel",
-  "source_url": "https://github.com/edheltzel/atlas/blob/main/.atlasOG/exports/modules/skills/skills/converting-claude-subagents/SKILL.md",
+  "source_url": "https://github.com/edheltzel/atlas/blob/main/.claude/skills/converting-claude-subagents/SKILL.md",
   "license": "NOASSERTION",
-  "copyright": "Copyright belongs to upstream author(s); see https://github.com/edheltzel/atlas/blob/main/.atlasOG/exports/modules/skills/skills/converting-claude-subagents/SKILL.md",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/edheltzel/atlas/blob/main/.claude/skills/converting-claude-subagents/SKILL.md",
   "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
   "distribution": "restricted",
-  "license_class": "restricted"
+  "license_class": "restricted",
+  "path": ".claude/skills/converting-claude-subagents/SKILL.md"
 }

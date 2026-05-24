@@ -1,0 +1,18 @@
+{
+  "name": "researching-codebase",
+  "description": "This skill should be used when the user asks to \"research the codebase\", \"understand how X works\", \"explore the code\", \"gather context\", \"investigate the implementation\", \"analyze the architecture\", o",
+  "repo": "bostonaholic/rpikit",
+  "path": "skills/researching-codebase",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bostonaholic/rpikit",
+  "dir_name": "researching-codebase-bostonaholic-rpikit-2",
+  "author": "bostonaholic",
+  "source_url": "https://github.com/bostonaholic/rpikit/blob/main/skills/researching-codebase/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bostonaholic/rpikit/blob/main/skills/researching-codebase/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

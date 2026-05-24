@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Validate ``sources/*.json`` shape, repo references, and category codes.
+Validate ``sources/*.json`` shape, repo references, and canonical categories.
 
 Most contributor PRs add a row to ``sources/community.json`` (the README's
 "Option 2: Submit via PR" path). The crawler later trusts those rows.
 This script runs offline, prints a single-line message per problem, and
-exits non-zero only when there is a structural error so it can be wired
-into CI without false positives from optional / advisory checks.
+exits non-zero when a structural error or non-canonical category is found so
+invalid source rows cannot enter the archive pipeline.
 
 Usage::
 
@@ -26,13 +26,13 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Iterable
 
-from category_taxonomy import category_aliases, category_slug, known_categories
+from category_taxonomy import category_slug, get_taxonomy
 from utils import build_skill_key
 
 # -- Canonical category rules -------------------------------------------------
 
-VALID_CATEGORIES: frozenset[str] = known_categories()
-CATEGORY_ALIASES: dict[str, str] = category_aliases()
+TAXONOMY = get_taxonomy()
+VALID_CATEGORIES: frozenset[str] = TAXONOMY.publishable_categories()
 
 REPO_PATTERN = re.compile(r"^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$")
 NAME_PATTERN = re.compile(r"^[a-z0-9][a-z0-9-]{0,63}$")
@@ -206,9 +206,9 @@ def validate_skill_entry(
             report.add(
                 Issue(
                     file,
-                    "warning",
-                    "W_CATEGORY_MISSING",
-                    "category missing; will fall back to 'other'",
+                    "error",
+                    "E_CATEGORY_MISSING",
+                    "category is required and must be a canonical taxonomy slug",
                     location,
                 )
             )
@@ -216,25 +216,29 @@ def validate_skill_entry(
         report.add(
             Issue(file, "error", "E_CATEGORY_TYPE", "category must be a string", location)
         )
-    elif category_slug(category) in CATEGORY_ALIASES:
-        target = CATEGORY_ALIASES[category_slug(category)]
+    elif category != category_slug(category):
         report.add(
             Issue(
                 file,
-                "warning",
-                "W_CATEGORY_ALIAS",
-                f"category '{category}' is an alias for canonical category "
-                f"'{target}'",
+                "error",
+                "E_CATEGORY_FORMAT",
+                f"category '{category}' must be written as canonical slug "
+                f"'{category_slug(category)}'",
                 location,
             )
         )
     elif category_slug(category) not in VALID_CATEGORIES:
+        slug = category_slug(category)
+        status = TAXONOMY.category_status(slug)
+        target = TAXONOMY.migration_target(slug)
+        hint = f"; use '{target}' after review" if target else "; choose a canonical category"
+        code = "E_CATEGORY_LEGACY" if status == "legacy" else "E_CATEGORY_UNKNOWN"
         report.add(
             Issue(
                 file,
-                "warning",
-                "W_CATEGORY_UNKNOWN",
-                f"category '{category}' is not in the known set ({sorted(VALID_CATEGORIES)})",
+                "error",
+                code,
+                f"category '{category}' is {status}, not a publishable canonical slug{hint}",
                 location,
             )
         )

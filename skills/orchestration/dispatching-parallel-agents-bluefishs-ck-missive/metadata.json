@@ -1,0 +1,20 @@
+{
+  "name": "dispatching-parallel-agents",
+  "description": "",
+  "repo": "bluefishs/CK_Missive",
+  "category": "orchestration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bluefishs/CK_Missive",
+  "github_path": ".claude/skills/_shared/shared/superpowers/dispatching-parallel-agents",
+  "github_branch": "main",
+  "dir_name": "dispatching-parallel-agents-bluefishs-ck-missive",
+  "downloaded_at": "2026-02-05T01:44:18.030832Z",
+  "author": "bluefishs",
+  "source_url": "https://github.com/bluefishs/CK_Missive/blob/main/.claude/skills/_shared/shared/superpowers/dispatching-parallel-agents/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bluefishs/CK_Missive/blob/main/.claude/skills/_shared/shared/superpowers/dispatching-parallel-agents/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

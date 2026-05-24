@@ -80,9 +80,11 @@ BUNDLED_DIR_ALLOWLIST = {
     "reference",
     "scripts",
     "assets",
+    "knowledge",
     "templates",
     "examples",
     "prompts",
+    "rules",
 }
 BUNDLED_ROOT_FILE_ALLOWLIST = {
     "audit.md",

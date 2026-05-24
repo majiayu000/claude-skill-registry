@@ -1,0 +1,18 @@
+{
+  "name": "git",
+  "repo": "TonyCasey/lisa",
+  "path": "src/project/.lisa/skills/git/SKILL.md",
+  "source": "github.com/TonyCasey/lisa",
+  "downloaded_at": "2026-01-22T04:09:06.022510Z",
+  "dir_name": "git-tonycasey-lisa",
+  "category": "integration",
+  "github_path": "src/project/.lisa/skills/git",
+  "github_branch": "main",
+  "author": "TonyCasey",
+  "source_url": "https://github.com/TonyCasey/lisa/blob/main/src/project/.lisa/skills/git/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TonyCasey/lisa/blob/main/src/project/.lisa/skills/git/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

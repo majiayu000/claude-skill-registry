@@ -1,0 +1,16 @@
+{
+  "name": "tool-priority",
+  "repo": "maplin-co/ai-course",
+  "path": ".opencode/skill/tool-priority/SKILL.md",
+  "source": "github.com/maplin-co/ai-course",
+  "downloaded_at": "2026-01-27T04:40:55.119491Z",
+  "dir_name": "tool-priority",
+  "category": "development",
+  "author": "maplin-co",
+  "source_url": "https://github.com/maplin-co/ai-course/blob/main/.opencode/skill/tool-priority/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/maplin-co/ai-course/blob/main/.opencode/skill/tool-priority/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

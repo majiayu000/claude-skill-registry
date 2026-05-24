@@ -1,0 +1,16 @@
+{
+  "name": "article-extractor",
+  "repo": "Dedalus-ERP-PAS/foundation-skills",
+  "path": "skills/article-extractor/SKILL.md",
+  "category": "documents",
+  "source": "github.com/Dedalus-ERP-PAS/foundation-skills",
+  "dir_name": "article-extractor-dedalus-erp-pas-foundation-skills",
+  "downloaded_at": "2026-02-22T04:56:41.648965Z",
+  "author": "Dedalus-ERP-PAS",
+  "source_url": "https://github.com/Dedalus-ERP-PAS/foundation-skills/blob/main/skills/article-extractor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

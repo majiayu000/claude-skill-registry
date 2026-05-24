@@ -1,0 +1,20 @@
+{
+  "name": "freesearch",
+  "description": "",
+  "repo": "Khamel83/oneshot",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Khamel83/oneshot",
+  "github_path": ".claude/skills/freesearch",
+  "github_branch": "master",
+  "dir_name": "freesearch",
+  "downloaded_at": "2026-02-05T01:44:38.034172Z",
+  "author": "Khamel83",
+  "source_url": "https://github.com/Khamel83/oneshot/blob/master/.claude/skills/freesearch/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Khamel83/oneshot/blob/master/.claude/skills/freesearch/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

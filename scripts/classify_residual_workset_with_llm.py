@@ -67,6 +67,9 @@ def item_review_key(item: dict[str, Any]) -> str:
         "description": item.get("description", ""),
         "tags": item.get("tags", []),
         "previous_classification": item.get("previous_classification", {}),
+        "source_sha256": item.get("source_sha256", ""),
+        "metadata_sha256": item.get("metadata_sha256", ""),
+        "semantic_text_sha256": item.get("semantic_text_sha256", ""),
         "content_excerpt": item.get("content_excerpt", ""),
     }
     encoded = json.dumps(
@@ -127,6 +130,10 @@ def compact_candidate(item: dict[str, Any]) -> dict[str, Any]:
         "tags": item.get("tags", []),
         "current_category": item.get("current_category", ""),
         "metadata": item.get("metadata", {}),
+        "semantic_sources": item.get("semantic_sources", {}),
+        "source_sha256": item.get("source_sha256", ""),
+        "metadata_sha256": item.get("metadata_sha256", ""),
+        "semantic_text_sha256": item.get("semantic_text_sha256", ""),
         "previous_classification": item.get("previous_classification", {}),
         "content_excerpt": item.get("content_excerpt", ""),
     }
@@ -235,6 +242,9 @@ def build_result_entry(
         "evidence": evidence,
         "workset": item.get("workset", ""),
         "previous_classification": item.get("previous_classification", {}),
+        "source_sha256": item.get("source_sha256", ""),
+        "metadata_sha256": item.get("metadata_sha256", ""),
+        "semantic_text_sha256": item.get("semantic_text_sha256", ""),
         "input_index": item.get("_input_index"),
     }
 
@@ -414,6 +424,9 @@ def write_classification_jsonl(report: dict[str, Any], output: Path) -> None:
                 "reason": row.get("reason", ""),
                 "evidence": row.get("evidence", []),
                 "workset": row.get("workset", ""),
+                "source_sha256": row.get("source_sha256", ""),
+                "metadata_sha256": row.get("metadata_sha256", ""),
+                "semantic_text_sha256": row.get("semantic_text_sha256", ""),
             }
             handle.write(json.dumps(payload, ensure_ascii=False, sort_keys=True) + "\n")
 

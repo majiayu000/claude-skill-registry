@@ -1,0 +1,20 @@
+{
+  "name": "research",
+  "description": "",
+  "repo": "taiyousan15/taisun_agent",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/taiyousan15/taisun_agent",
+  "github_path": ".claude/skills/research",
+  "github_branch": "main",
+  "dir_name": "research-taiyousan15-taisun-agent",
+  "downloaded_at": "2026-02-05T01:44:48.257630Z",
+  "author": "taiyousan15",
+  "source_url": "https://github.com/taiyousan15/taisun_agent/blob/main/.claude/skills/research/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 taiyousan15",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

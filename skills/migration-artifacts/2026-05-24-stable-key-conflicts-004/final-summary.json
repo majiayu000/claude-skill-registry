@@ -1,0 +1,145 @@
+{
+  "batch": "2026-05-24-stable-key-conflicts-004",
+  "issue": "https://github.com/majiayu000/claude-skill-registry-data/issues/31",
+  "scope": "Resolve upstream-provable stable-key content conflicts after legacy semantic batch 003.",
+  "input_conflicts": 27,
+  "applied_count": 15,
+  "skipped_manual_review_count": 12,
+  "decisions": {
+    "manual_review": 12,
+    "refresh_target_from_upstream_remove_source": 8,
+    "move_source_as_distinct_and_keep_target": 5,
+    "replace_target_with_source_remove_source": 2
+  },
+  "residual_existing_source_count_after": 35,
+  "canonical_gate_errors_after": 70,
+  "remaining_primary_reasons": {
+    "classification status is not ok": 22,
+    "source directory missing": 57,
+    "target category already contains a skill with the same stable key": 12,
+    "target category other requires --allow-target-other": 1
+  },
+  "remaining_existing_source_categories": {
+    "agent-coordination": 1,
+    "artifact-generation": 1,
+    "development-tools": 14,
+    "github-integration": 4,
+    "programming-languages": 7,
+    "project": 1,
+    "research-analysis": 2,
+    "security-compliance": 1,
+    "string": 1,
+    "technical-integration": 1,
+    "template": 1,
+    "test": 1
+  },
+  "manual_review_items": [
+    {
+      "index": 1,
+      "source_path": "development-tools/biome-js",
+      "target_path": "development/biome-js",
+      "confidence": 0.92,
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable"
+    },
+    {
+      "index": 4,
+      "source_path": "development-tools/converting-claude-subagents-edheltzel-atlas",
+      "target_path": "development/converting-claude-subagents-edheltzel-atlas",
+      "confidence": 0.9,
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable"
+    },
+    {
+      "index": 5,
+      "source_path": "development-tools/converting-slash-commands-edheltzel-atlas",
+      "target_path": "development/converting-slash-commands-edheltzel-atlas",
+      "confidence": 0.9,
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable"
+    },
+    {
+      "index": 6,
+      "source_path": "development-tools/makefile-generation-athola-claude-night-market-bb8563ba",
+      "target_path": "development/makefile-generation",
+      "confidence": 0.9,
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable"
+    },
+    {
+      "index": 7,
+      "source_path": "development-tools/makefile-review-athola-claude-night-market-e4a9bac7",
+      "target_path": "development/makefile-review",
+      "confidence": 0.95,
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable"
+    },
+    {
+      "index": 9,
+      "source_path": "development-tools/plaited-development-skills-plaited-plaited-e807424e",
+      "target_path": "development/plaited-development-skills-plaited-plaited-2",
+      "confidence": 0.85,
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable"
+    },
+    {
+      "index": 11,
+      "source_path": "development-tools/pop-mcp-generator-jrc1883-popkit-claude",
+      "target_path": "development/mcp-generator-jrc1883-popkit-claude",
+      "confidence": 0.9,
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable"
+    },
+    {
+      "index": 13,
+      "source_path": "development-tools/searching-code",
+      "target_path": "development/searching-code-alexei-led-claude-code-config",
+      "confidence": 0.85,
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable"
+    },
+    {
+      "index": 15,
+      "source_path": "development-tools/using-xcode",
+      "target_path": "development/using-xcode",
+      "confidence": 0.95,
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable"
+    },
+    {
+      "index": 16,
+      "source_path": "development-tools/utilizing-cli-tools",
+      "target_path": "development/utilizing-cli-tools-thkt-claude-config",
+      "confidence": 0.9,
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable"
+    },
+    {
+      "index": 17,
+      "source_path": "programming-languages/cpp-templates-metaprogramming",
+      "target_path": "development/cpp-templates-metaprogramming",
+      "confidence": 0.95,
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable"
+    },
+    {
+      "index": 24,
+      "source_path": "programming-languages/typescript-dry-principle",
+      "target_path": "development/typescript-dry-principle",
+      "confidence": 0.95,
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable"
+    }
+  ],
+  "verification": [
+    "check_metadata_compliance.py on 19 changed/added metadata files: 0 errors, 0 warnings",
+    "check_case_conflicts.py: no case conflicts found",
+    "git diff --check: passed",
+    "check_canonical_categories.py --limit 20: expected failure with 70 legacy-category errors remaining"
+  ],
+  "policy_notes": [
+    "Applied only conflicts with reachable upstream proof or distinct reachable source/target URLs.",
+    "Preserved distinct upstream sources by moving them into canonical category instead of deleting them.",
+    "Left all 12 all-upstream-unavailable conflicts untouched for a separate manual/LLM audit batch."
+  ]
+}

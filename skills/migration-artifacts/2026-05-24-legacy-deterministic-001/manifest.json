@@ -1,0 +1,282 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-05-24-legacy-deterministic-001",
+  "generated_at": "2026-05-24T08:32:50.832115+00:00",
+  "skills_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-other-batch-001",
+  "policy": {
+    "source": "taxonomy legacy_migrations with non-empty target and review_required=false",
+    "apply_mode": "review-first",
+    "content_chars": 600,
+    "min_confidence": 1.0
+  },
+  "artifacts": {
+    "input_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-other-batch-001/migration-artifacts/2026-05-24-legacy-deterministic-001/input.jsonl",
+    "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-other-batch-001/migration-artifacts/2026-05-24-legacy-deterministic-001/classification.jsonl",
+    "sample_audit": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-other-batch-001/migration-artifacts/2026-05-24-legacy-deterministic-001/sample-audit.json",
+    "apply_plan": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-other-batch-001/migration-artifacts/2026-05-24-legacy-deterministic-001/apply-plan.json",
+    "residual_report": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-other-batch-001/migration-artifacts/2026-05-24-legacy-deterministic-001/residual-report.json",
+    "apply_plan_dry_run": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-other-batch-001/migration-artifacts/2026-05-24-legacy-deterministic-001/apply-plan.json",
+    "apply_result": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-other-batch-001/migration-artifacts/2026-05-24-legacy-deterministic-001/apply-result.json",
+    "apply_plan_reviewed": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-other-batch-001/migration-artifacts/2026-05-24-legacy-deterministic-001/apply-plan-reviewed.json",
+    "metadata_blocked": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-other-batch-001/migration-artifacts/2026-05-24-legacy-deterministic-001/metadata-blocked.json"
+  },
+  "summary": {
+    "input_count": 8173,
+    "source_category_counts": {
+      "adb-meta-automation": 16,
+      "agent-coordination": 1483,
+      "analysis-methods": 16,
+      "artifact-generation": 234,
+      "business-monetization": 188,
+      "business-productivity": 41,
+      "data-access": 1,
+      "design-principles": 29,
+      "development-code": 2,
+      "development-tools": 1537,
+      "docs": 1,
+      "document-processing": 175,
+      "engineering": 3,
+      "framework": 9,
+      "github-integration": 1467,
+      "github-skills": 1,
+      "messaging": 265,
+      "meta": 113,
+      "programming-languages": 865,
+      "research-analysis": 1345,
+      "security-compliance": 300,
+      "security-operations": 57,
+      "specialized-testing": 2,
+      "story-analysis": 10,
+      "technical-integration": 2,
+      "test": 2,
+      "testing-methodologies": 4,
+      "wix-extensions": 5
+    },
+    "target_category_counts": {
+      "analysis": 1371,
+      "business": 188,
+      "communication": 265,
+      "data": 1,
+      "design": 29,
+      "development": 2416,
+      "documents": 176,
+      "generation": 234,
+      "integration": 1474,
+      "orchestration": 1483,
+      "platform": 16,
+      "productivity": 41,
+      "security": 357,
+      "skills": 114,
+      "testing": 8
+    },
+    "review_required_legacy_counts": {
+      "applied": 5,
+      "core": 6,
+      "extended": 4,
+      "foundation": 5,
+      "project": 1,
+      "specialized": 2,
+      "string": 1,
+      "template": 1,
+      "utility": 4
+    },
+    "dry_run_plan_summary": {
+      "classification_row_count": 8173,
+      "classification_status_counts": {
+        "ok": 8173
+      },
+      "planned_move_count": 8063,
+      "movable_count": 8063,
+      "blocked_count": 0,
+      "operation_counts": {
+        "move": 8063
+      },
+      "reject_reasons": {
+        "target category already contains a skill with the same stable key": 110
+      },
+      "source_category_counts": {
+        "adb-meta-automation": 15,
+        "agent-coordination": 1482,
+        "analysis-methods": 15,
+        "artifact-generation": 233,
+        "business-monetization": 187,
+        "business-productivity": 40,
+        "design-principles": 28,
+        "development-code": 1,
+        "development-tools": 1504,
+        "docs": 1,
+        "document-processing": 172,
+        "engineering": 3,
+        "framework": 8,
+        "github-integration": 1466,
+        "github-skills": 1,
+        "messaging": 233,
+        "meta": 112,
+        "programming-languages": 848,
+        "research-analysis": 1342,
+        "security-compliance": 295,
+        "security-operations": 57,
+        "specialized-testing": 1,
+        "story-analysis": 10,
+        "technical-integration": 1,
+        "test": 1,
+        "testing-methodologies": 2,
+        "wix-extensions": 5
+      },
+      "target_category_counts": {
+        "analysis": 1367,
+        "business": 187,
+        "communication": 233,
+        "design": 28,
+        "development": 2364,
+        "documents": 173,
+        "generation": 233,
+        "integration": 1472,
+        "orchestration": 1482,
+        "platform": 15,
+        "productivity": 40,
+        "security": 352,
+        "skills": 113,
+        "testing": 4
+      }
+    },
+    "apply_result_summary": {
+      "classification_row_count": 8173,
+      "classification_status_counts": {
+        "ok": 8173
+      },
+      "planned_move_count": 8046,
+      "movable_count": 8046,
+      "blocked_count": 0,
+      "operation_counts": {
+        "move": 8046
+      },
+      "reject_reasons": {
+        "target category already contains a skill with the same stable key": 110
+      },
+      "source_category_counts": {
+        "adb-meta-automation": 15,
+        "agent-coordination": 1481,
+        "analysis-methods": 15,
+        "artifact-generation": 232,
+        "business-monetization": 187,
+        "business-productivity": 40,
+        "design-principles": 28,
+        "development-code": 1,
+        "development-tools": 1500,
+        "docs": 1,
+        "document-processing": 172,
+        "engineering": 3,
+        "framework": 8,
+        "github-integration": 1462,
+        "github-skills": 1,
+        "messaging": 233,
+        "meta": 112,
+        "programming-languages": 843,
+        "research-analysis": 1340,
+        "security-compliance": 295,
+        "security-operations": 57,
+        "specialized-testing": 1,
+        "story-analysis": 10,
+        "technical-integration": 1,
+        "test": 1,
+        "testing-methodologies": 2,
+        "wix-extensions": 5
+      },
+      "target_category_counts": {
+        "analysis": 1365,
+        "business": 187,
+        "communication": 233,
+        "design": 28,
+        "development": 2355,
+        "documents": 173,
+        "generation": 232,
+        "integration": 1468,
+        "orchestration": 1481,
+        "platform": 15,
+        "productivity": 40,
+        "security": 352,
+        "skills": 113,
+        "testing": 4
+      }
+    },
+    "residual_primary_reason_counts": {
+      "classification status is not ok": 17,
+      "source directory missing": 8046,
+      "target category already contains a skill with the same stable key": 110
+    },
+    "residual_scoped_existing_source_count": 127,
+    "residual_archive_classification_gap_count": 226220,
+    "reviewed_apply_plan_summary": {
+      "classification_row_count": 8173,
+      "classification_status_counts": {
+        "ok": 8173
+      },
+      "planned_move_count": 8046,
+      "movable_count": 8046,
+      "blocked_count": 0,
+      "operation_counts": {
+        "move": 8046
+      },
+      "reject_reasons": {
+        "metadata lacks trusted repo/source_url": 17,
+        "target category already contains a skill with the same stable key": 110
+      },
+      "source_category_counts": {
+        "adb-meta-automation": 15,
+        "agent-coordination": 1481,
+        "analysis-methods": 15,
+        "artifact-generation": 232,
+        "business-monetization": 187,
+        "business-productivity": 40,
+        "design-principles": 28,
+        "development-code": 1,
+        "development-tools": 1500,
+        "docs": 1,
+        "document-processing": 172,
+        "engineering": 3,
+        "framework": 8,
+        "github-integration": 1462,
+        "github-skills": 1,
+        "messaging": 233,
+        "meta": 112,
+        "programming-languages": 843,
+        "research-analysis": 1340,
+        "security-compliance": 295,
+        "security-operations": 57,
+        "specialized-testing": 1,
+        "story-analysis": 10,
+        "technical-integration": 1,
+        "test": 1,
+        "testing-methodologies": 2,
+        "wix-extensions": 5
+      },
+      "target_category_counts": {
+        "analysis": 1365,
+        "business": 187,
+        "communication": 233,
+        "design": 28,
+        "development": 2355,
+        "documents": 173,
+        "generation": 232,
+        "integration": 1468,
+        "orchestration": 1481,
+        "platform": 15,
+        "productivity": 40,
+        "security": 352,
+        "skills": 113,
+        "testing": 4
+      }
+    },
+    "metadata_blocked_count": 17,
+    "post_batch_legacy_skill_count": 156,
+    "post_batch_canonical_gate_errors": 312,
+    "post_batch_other_count": 53074
+  },
+  "notes": [
+    "This batch is deterministic: no model classification was used.",
+    "Rows still carry SKILL.md and metadata hashes so apply planning can reject stale sources.",
+    "Review-required legacy categories are left untouched for SKILL.md-first classification.",
+    "Post-batch canonical gate still fails on 156 legacy skills: 110 stable-key conflicts, 17 metadata provenance blockers, and 29 review-required legacy rows."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "scout-ai-lite",
+  "description": "Claude Desktop skill for researching accelerator portfolio companies ",
+  "repo": "RS42-AI/scout-ai-lite",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": "",
+  "github_branch": "main",
+  "dir_name": "scout-ai-lite",
+  "downloaded_at": "2026-02-05T01:45:47.328858Z",
+  "author": "RS42-AI",
+  "source_url": "https://github.com/RS42-AI/scout-ai-lite",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/RS42-AI/scout-ai-lite",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

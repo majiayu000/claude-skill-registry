@@ -1,0 +1,18 @@
+{
+  "name": "docling",
+  "repo": "LeandroLarrosa/gentlemonster",
+  "path": "skills/docling/SKILL.md",
+  "source": "github.com/LeandroLarrosa/gentlemonster",
+  "downloaded_at": "2026-01-22T03:33:11.730618Z",
+  "dir_name": "docling-leandrolarrosa-gentlemonster",
+  "category": "documents",
+  "github_path": "skills/docling",
+  "github_branch": "main",
+  "author": "LeandroLarrosa",
+  "source_url": "https://github.com/LeandroLarrosa/gentlemonster/blob/main/skills/docling/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/LeandroLarrosa/gentlemonster/blob/main/skills/docling/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

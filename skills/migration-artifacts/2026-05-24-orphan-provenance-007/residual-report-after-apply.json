@@ -1,0 +1,540 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-24T11:13:54.147998+00:00",
+  "skills_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-stable-conflicts-004",
+  "classification_jsonl": "migration-artifacts/2026-05-24-legacy-semantic-003/classification-reviewed.jsonl",
+  "policy": {
+    "min_confidence": 0.0,
+    "from_categories": [],
+    "to_categories": [],
+    "target_statuses": [
+      "active",
+      "any"
+    ],
+    "allow_target_other": false,
+    "apply_mode": "report-only",
+    "example_limit_per_reason": 20,
+    "top_targets_per_reason": 20,
+    "conflict_detail_limit": 0
+  },
+  "summary": {
+    "classification_row_count": 92,
+    "archive_skill_count": 226223,
+    "scoped_archive_skill_count": 226223,
+    "scoped_archive_classification_gap": 226220,
+    "classification_status_counts": {
+      "metadata_compliance_blocked": 22,
+      "ok": 70
+    },
+    "archive_category_counts": {
+      "agent": 1305,
+      "ai-llm": 2045,
+      "ai-ml": 2012,
+      "analysis": 3002,
+      "api": 797,
+      "bash": 179,
+      "business": 1031,
+      "c-level": 49,
+      "communication": 561,
+      "context-management": 1157,
+      "creative": 660,
+      "data": 48863,
+      "design": 13379,
+      "development": 36097,
+      "devops": 10210,
+      "documents": 6175,
+      "domains": 49,
+      "examples": 84,
+      "forensics": 56,
+      "gaming": 689,
+      "generation": 454,
+      "integration": 4583,
+      "language": 62,
+      "local-ai-infrastructure": 50,
+      "marketing": 2575,
+      "orchestration": 1841,
+      "other": 58088,
+      "performance": 848,
+      "personal-development": 284,
+      "planning": 1295,
+      "platform": 234,
+      "product": 2319,
+      "productivity": 2948,
+      "quality": 2644,
+      "security": 4931,
+      "skills": 1700,
+      "string": 1,
+      "system": 17,
+      "template": 1,
+      "test": 1,
+      "testing": 11122,
+      "travel": 43,
+      "war-room": 4,
+      "workflow": 877,
+      "writing": 901
+    },
+    "source_state_counts": {
+      "exists": 3,
+      "missing": 89
+    },
+    "existing_source_category_counts": {
+      "string": 1,
+      "template": 1,
+      "test": 1
+    },
+    "scoped_source_category_counts": {
+      "string": 1,
+      "template": 1,
+      "test": 1
+    },
+    "scoped_existing_source_count": 3,
+    "candidate_move_count": 0,
+    "blocked_existing_key_count": 0,
+    "stable_key_conflict_detail_count": 0,
+    "stable_key_conflict_detail_summary": {},
+    "primary_reason_counts": {
+      "classification status is not ok": 2,
+      "source directory missing": 89,
+      "target category other requires --allow-target-other": 1
+    },
+    "all_blocker_reason_counts": {
+      "classification status is not ok": 2,
+      "target category other requires --allow-target-other": 3
+    },
+    "target_category_counts": {
+      "agent": 5,
+      "ai-llm": 5,
+      "analysis": 4,
+      "bash": 1,
+      "context-management": 2,
+      "data": 1,
+      "development": 44,
+      "devops": 5,
+      "documents": 2,
+      "integration": 5,
+      "orchestration": 1,
+      "other": 3,
+      "quality": 3,
+      "security": 4,
+      "skills": 2,
+      "testing": 3,
+      "workflow": 2
+    },
+    "target_status_counts": {
+      "active": 92
+    },
+    "same_policy_plan_summary": {
+      "classification_row_count": 92,
+      "classification_status_counts": {
+        "metadata_compliance_blocked": 22,
+        "ok": 70
+      },
+      "planned_move_count": 0,
+      "movable_count": 0,
+      "blocked_count": 0,
+      "operation_counts": {},
+      "reject_reasons": {
+        "classification status is not ok": 22,
+        "source directory missing": 69,
+        "target category other requires --allow-target-other": 1
+      },
+      "source_category_counts": {},
+      "target_category_counts": {}
+    }
+  },
+  "buckets": [
+    {
+      "reason": "source directory missing",
+      "count": 89,
+      "target_categories": [
+        {
+          "value": "development",
+          "count": 44
+        },
+        {
+          "value": "agent",
+          "count": 5
+        },
+        {
+          "value": "ai-llm",
+          "count": 5
+        },
+        {
+          "value": "devops",
+          "count": 5
+        },
+        {
+          "value": "integration",
+          "count": 5
+        },
+        {
+          "value": "analysis",
+          "count": 4
+        },
+        {
+          "value": "security",
+          "count": 4
+        },
+        {
+          "value": "quality",
+          "count": 3
+        },
+        {
+          "value": "testing",
+          "count": 3
+        },
+        {
+          "value": "context-management",
+          "count": 2
+        },
+        {
+          "value": "documents",
+          "count": 2
+        },
+        {
+          "value": "skills",
+          "count": 2
+        },
+        {
+          "value": "workflow",
+          "count": 2
+        },
+        {
+          "value": "bash",
+          "count": 1
+        },
+        {
+          "value": "data",
+          "count": 1
+        },
+        {
+          "value": "orchestration",
+          "count": 1
+        }
+      ],
+      "target_status_counts": {
+        "active": 89
+      },
+      "examples": [
+        {
+          "path": "agent-coordination/multi-agent-parallel-investigation/SKILL.md",
+          "name": "multi-agent-parallel-investigation",
+          "source_exists": false,
+          "source_category": "agent-coordination",
+          "classification_current_category": "agent-coordination",
+          "target_category": "agent",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "metadata_compliance_blocked",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "applied/35-google-adk-reliable-agents/SKILL.md",
+          "name": "35-google-adk-reliable-agents",
+          "source_exists": false,
+          "source_category": "applied",
+          "classification_current_category": "applied",
+          "target_category": "ai-llm",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "applied/35-google-adk-reliable-agents-majiayu000-claude-skill-registr/SKILL.md",
+          "name": "35-google-adk-reliable-agents",
+          "source_exists": false,
+          "source_category": "applied",
+          "classification_current_category": "applied",
+          "target_category": "ai-llm",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "applied/80-livekit-agents-panaversity-agentfactory/SKILL.md",
+          "name": "80-livekit-agents-panaversity-agentfactory",
+          "source_exists": false,
+          "source_category": "applied",
+          "classification_current_category": "applied",
+          "target_category": "ai-llm",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "applied/81-pipecat/SKILL.md",
+          "name": "81-pipecat",
+          "source_exists": false,
+          "source_category": "applied",
+          "classification_current_category": "applied",
+          "target_category": "ai-llm",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "applied/81-pipecat-panaversity-agentfactory/SKILL.md",
+          "name": "81-pipecat",
+          "source_exists": false,
+          "source_category": "applied",
+          "classification_current_category": "applied",
+          "target_category": "ai-llm",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "artifact-generation/manage-artifact/SKILL.md",
+          "name": "manage-artifact",
+          "source_exists": false,
+          "source_category": "artifact-generation",
+          "classification_current_category": "artifact-generation",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.8,
+          "status": "metadata_compliance_blocked",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "core/agent-ops-spec/SKILL.md",
+          "name": "agent-ops-spec",
+          "source_exists": false,
+          "source_category": "core",
+          "classification_current_category": "core",
+          "target_category": "agent",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "core/agent-ops-spec-majiayu000-claude-skill-registr/SKILL.md",
+          "name": "agent-ops-spec",
+          "source_exists": false,
+          "source_category": "core",
+          "classification_current_category": "core",
+          "target_category": "agent",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "core/agent-ops-state/SKILL.md",
+          "name": "agent-ops-state",
+          "source_exists": false,
+          "source_category": "core",
+          "classification_current_category": "core",
+          "target_category": "agent",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "core/agent-ops-state-majiayu000-claude-skill-registr/SKILL.md",
+          "name": "agent-ops-state",
+          "source_exists": false,
+          "source_category": "core",
+          "classification_current_category": "core",
+          "target_category": "agent",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "core/agent-ops-testing/SKILL.md",
+          "name": "agent-ops-testing",
+          "source_exists": false,
+          "source_category": "core",
+          "classification_current_category": "core",
+          "target_category": "testing",
+          "target_status": "active",
+          "confidence": 0.92,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "core/agent-ops-testing-majiayu000-claude-skill-registr/SKILL.md",
+          "name": "agent-ops-testing",
+          "source_exists": false,
+          "source_category": "core",
+          "classification_current_category": "core",
+          "target_category": "testing",
+          "target_status": "active",
+          "confidence": 0.92,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "data-access/deduplication-dadbodgeoff-drift/SKILL.md",
+          "name": "deduplication",
+          "source_exists": false,
+          "source_category": "data-access",
+          "classification_current_category": "data-access",
+          "target_category": "data",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "development-tools/00-build-your-mcp-server-skill/SKILL.md",
+          "name": "00-build-your-mcp-server-skill",
+          "source_exists": false,
+          "source_category": "development-tools",
+          "classification_current_category": "development-tools",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.88,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "development-tools/better-skill-builder-gmickel-better-skill-builder-2/SKILL.md",
+          "name": "better-skill-builder",
+          "source_exists": false,
+          "source_category": "development-tools",
+          "classification_current_category": "development-tools",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "development-tools/biome-js/SKILL.md",
+          "name": "biome-js",
+          "source_exists": false,
+          "source_category": "development-tools",
+          "classification_current_category": "development-tools",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.92,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "development-tools/cargo-ecosystem/SKILL.md",
+          "name": "cargo-ecosystem",
+          "source_exists": false,
+          "source_category": "development-tools",
+          "classification_current_category": "development-tools",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.94,
+          "status": "metadata_compliance_blocked",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "development-tools/claude-code-plugin-development/SKILL.md",
+          "name": "claude-code-plugin-development",
+          "source_exists": false,
+          "source_category": "development-tools",
+          "classification_current_category": "development-tools",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.96,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "development-tools/claudekit-claude-code/SKILL.md",
+          "name": "claudekit-claude-code",
+          "source_exists": false,
+          "source_category": "development-tools",
+          "classification_current_category": "development-tools",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.93,
+          "status": "metadata_compliance_blocked",
+          "reason": "source directory missing"
+        }
+      ]
+    },
+    {
+      "reason": "classification status is not ok",
+      "count": 2,
+      "target_categories": [
+        {
+          "value": "other",
+          "count": 2
+        }
+      ],
+      "target_status_counts": {
+        "active": 2
+      },
+      "examples": [
+        {
+          "path": "string/string/SKILL.md",
+          "name": "string",
+          "source_exists": true,
+          "source_category": "string",
+          "classification_current_category": "string",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.6,
+          "status": "metadata_compliance_blocked",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "test/test-skill-mickdarling-dollhouse-portfolio/SKILL.md",
+          "name": "Test skill",
+          "source_exists": true,
+          "source_category": "test",
+          "classification_current_category": "test",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.4,
+          "status": "metadata_compliance_blocked",
+          "reason": "classification status is not ok"
+        }
+      ]
+    },
+    {
+      "reason": "target category other requires --allow-target-other",
+      "count": 1,
+      "target_categories": [
+        {
+          "value": "other",
+          "count": 1
+        }
+      ],
+      "target_status_counts": {
+        "active": 1
+      },
+      "examples": [
+        {
+          "path": "template/template/SKILL.md",
+          "name": "<your-skill-name>",
+          "source_exists": true,
+          "source_category": "template",
+          "classification_current_category": "template",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.5,
+          "status": "ok",
+          "reason": "target category other requires --allow-target-other"
+        }
+      ]
+    }
+  ],
+  "details": {
+    "stable_key_conflicts": []
+  },
+  "notes": [
+    "This report is read-only and never moves, deletes, or rewrites skills.",
+    "same_policy_plan_summary is generated by apply_category_migration.py with the same flags.",
+    "primary_reason_counts are mutually exclusive and explain the current archive state first.",
+    "all_blocker_reason_counts can exceed scoped_existing_source_count because one row may have multiple blockers.",
+    "source directory missing usually means the classification row points at a pre-migration path that has already moved.",
+    "scoped_archive_classification_gap is scoped_archive_skill_count minus scoped_existing_source_count; positive values indicate archive skills not covered by the classification file or duplicate classification coverage.",
+    "stable_key_conflicts detail is bounded by --conflict-detail-limit and includes content hashes so duplicate removal is not inferred from the stable key alone."
+  ]
+}

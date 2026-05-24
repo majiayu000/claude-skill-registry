@@ -1,0 +1,18 @@
+{
+  "name": "multi-agent-coordination",
+  "repo": "Lobbi-Docs/claude",
+  "path": "plugins/orchestrate-complex/skills/multi-agent-coordination/SKILL.md",
+  "source": "github.com/Lobbi-Docs/claude",
+  "downloaded_at": "2026-01-22T03:56:15.834703Z",
+  "dir_name": "multi-agent-coordination",
+  "category": "orchestration",
+  "github_path": "plugins/orchestrate-complex/skills/multi-agent-coordination",
+  "github_branch": "main",
+  "author": "Lobbi-Docs",
+  "source_url": "https://github.com/Lobbi-Docs/claude/blob/main/plugins/orchestrate-complex/skills/multi-agent-coordination/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Golden Armada Team",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

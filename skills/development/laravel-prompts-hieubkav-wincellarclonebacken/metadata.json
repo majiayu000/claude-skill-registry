@@ -1,0 +1,16 @@
+{
+  "name": "laravel-prompts",
+  "repo": "Hieubkav/wincellarCloneBackend",
+  "path": ".claude/skills/laravel/laravel-prompts/SKILL.md",
+  "source": "github.com/Hieubkav/wincellarCloneBackend",
+  "downloaded_at": "2026-01-19T03:13:23.573460Z",
+  "dir_name": "laravel-prompts-hieubkav-wincellarclonebacken",
+  "category": "development",
+  "author": "Hieubkav",
+  "source_url": "https://github.com/Hieubkav/wincellarCloneBackend/blob/main/.claude/skills/laravel/laravel-prompts/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Hieubkav/wincellarCloneBackend/blob/main/.claude/skills/laravel/laravel-prompts/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "3.peak-calling",
+  "description": "Perform peak calling for ChIP-seq or ATAC-seq data using MACS2, with intelligent parameter detection from user feedback. Use it when you want to call peaks for ChIP-seq data or ATAC-seq data.",
+  "repo": "BIsnake2001/ChromSkills",
+  "path": "3.peak-calling",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BIsnake2001/ChromSkills",
+  "dir_name": "3-peak-calling-bisnake2001-chromskills-2",
+  "author": "BIsnake2001",
+  "source_url": "https://github.com/BIsnake2001/ChromSkills/blob/main/3.peak-calling/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BIsnake2001/ChromSkills/blob/main/3.peak-calling/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

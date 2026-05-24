@@ -1,0 +1,16 @@
+{
+  "name": "monetization-analyzer",
+  "repo": "natea/fitfinder",
+  "path": ".claude/skills/monetization-analyzer/SKILL.md",
+  "source": "github.com/natea/fitfinder",
+  "downloaded_at": "2026-01-29T07:15:21.021200Z",
+  "dir_name": "monetization-analyzer-natea-fitfinder",
+  "category": "business",
+  "author": "natea",
+  "source_url": "https://github.com/natea/fitfinder/blob/main/.claude/skills/monetization-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nate Aune",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

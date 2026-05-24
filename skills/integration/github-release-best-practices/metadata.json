@@ -1,0 +1,16 @@
+{
+  "name": "github-release-best-practices",
+  "repo": "d-o-hub/rust-self-learning-memory",
+  "path": ".opencode/skill/github-release-best-practices/SKILL.md",
+  "source": "github.com/d-o-hub/rust-self-learning-memory",
+  "downloaded_at": "2026-01-29T01:48:14.560892Z",
+  "dir_name": "github-release-best-practices",
+  "category": "integration",
+  "author": "d-o-hub",
+  "source_url": "https://github.com/d-o-hub/rust-self-learning-memory/blob/main/.opencode/skill/github-release-best-practices/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2019 Zachary Rice",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

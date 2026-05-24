@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-24T09:33:49.584463+00:00",
+  "skills_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-legacy-semantic-003",
+  "residual_report": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-legacy-semantic-003/migration-artifacts/2026-05-24-legacy-semantic-003/residual-report-min075.json",
+  "policy": {
+    "from_categories": [],
+    "require_metadata_identity": false,
+    "limit": null,
+    "apply_mode": "review-only"
+  },
+  "summary": {
+    "conflict_detail_count": 52,
+    "planned_remove_count": 9,
+    "skipped_reasons": {
+      "SKILL content differs": 31,
+      "target path missing": 12
+    },
+    "source_category_counts": {
+      "data-access": 1,
+      "development-tools": 5,
+      "document-processing": 2,
+      "programming-languages": 1
+    },
+    "target_category_counts": {
+      "data": 1,
+      "development": 6,
+      "documents": 2
+    }
+  },
+  "removals": [
+    {
+      "operation": "remove_duplicate",
+      "source_path": "data-access/deduplication-dadbodgeoff-drift",
+      "source_skill": "data-access/deduplication-dadbodgeoff-drift/SKILL.md",
+      "target_path": "data/deduplication",
+      "target_skill": "data/deduplication/SKILL.md",
+      "target_category": "data",
+      "target_status": "active",
+      "key": "dadbodgeoff/drift:skills/deduplication/SKILL.md",
+      "source_skill_sha256": "4deb634eb2c423d4c175b0ac25cf35e595556b53a588b270acabc9677727164c",
+      "target_skill_sha256": "4deb634eb2c423d4c175b0ac25cf35e595556b53a588b270acabc9677727164c",
+      "metadata_identity_equal": false,
+      "skill_content_equal": true,
+      "reason": "exact duplicate"
+    },
+    {
+      "operation": "remove_duplicate",
+      "source_path": "development-tools/better-skill-builder-gmickel-better-skill-builder-2",
+      "source_skill": "development-tools/better-skill-builder-gmickel-better-skill-builder-2/SKILL.md",
+      "target_path": "development/better-skill-builder",
+      "target_skill": "development/better-skill-builder/SKILL.md",
+      "target_category": "development",
+      "target_status": "active",
+      "key": "gmickel/better-skill-builder",
+      "source_skill_sha256": "45a76d69e0d3d21ba85492e92deee67cab4efac420f50190f3d053dea06d3613",
+      "target_skill_sha256": "45a76d69e0d3d21ba85492e92deee67cab4efac420f50190f3d053dea06d3613",
+      "metadata_identity_equal": false,
+      "skill_content_equal": true,
+      "reason": "exact duplicate"
+    },
+    {
+      "operation": "remove_duplicate",
+      "source_path": "development-tools/mcp-tool-writer-sunalamye-naki-2",
+      "source_skill": "development-tools/mcp-tool-writer-sunalamye-naki-2/SKILL.md",
+      "target_path": "development/mcp-tool-writer",
+      "target_skill": "development/mcp-tool-writer/SKILL.md",
+      "target_category": "development",
+      "target_status": "active",
+      "key": "Sunalamye/Naki:.claude/skills/mcp-tool-writer",
+      "source_skill_sha256": "46b058b90c2beae57dfc5e3c7445e89404e67a3aa52eed3b2f1a5ea781209f55",
+      "target_skill_sha256": "46b058b90c2beae57dfc5e3c7445e89404e67a3aa52eed3b2f1a5ea781209f55",
+      "metadata_identity_equal": false,
+      "skill_content_equal": true,
+      "reason": "exact duplicate"
+    },
+    {
+      "operation": "remove_duplicate",
+      "source_path": "development-tools/package-upgrade-congdon1207-agents-md-3",
+      "source_skill": "development-tools/package-upgrade-congdon1207-agents-md-3/SKILL.md",
+      "target_path": "development/package-upgrade-congdon1207-agents-md",
+      "target_skill": "development/package-upgrade-congdon1207-agents-md/SKILL.md",
+      "target_category": "development",
+      "target_status": "active",
+      "key": "CongDon1207/AGENTS.md:.codex/skills/package-upgrade/SKILL.md",
+      "source_skill_sha256": "8bdfa6311e4ecc6056d386dbb21ced32113114441a401535dffd5396d2db8e93",
+      "target_skill_sha256": "8bdfa6311e4ecc6056d386dbb21ced32113114441a401535dffd5396d2db8e93",
+      "metadata_identity_equal": false,
+      "skill_content_equal": true,
+      "reason": "exact duplicate"
+    },
+    {
+      "operation": "remove_duplicate",
+      "source_path": "development-tools/slash-commands-parcadei-continuous-claude-v3",
+      "source_skill": "development-tools/slash-commands-parcadei-continuous-claude-v3/SKILL.md",
+      "target_path": "development/slash-commands-parcadei-continuous-claude-v3",
+      "target_skill": "development/slash-commands-parcadei-continuous-claude-v3/SKILL.md",
+      "target_category": "development",
+      "target_status": "active",
+      "key": "parcadei/Continuous-Claude-v3:.claude/skills/slash-commands/SKILL.md",
+      "source_skill_sha256": "1aae27e0a28f91b54971da43f17b86d935808f90de928b1ee908724d18425075",
+      "target_skill_sha256": "1aae27e0a28f91b54971da43f17b86d935808f90de928b1ee908724d18425075",
+      "metadata_identity_equal": false,
+      "skill_content_equal": true,
+      "reason": "exact duplicate"
+    },
+    {
+      "operation": "remove_duplicate",
+      "source_path": "development-tools/vscode-ext-commands-helixdevelopment-helixagent",
+      "source_skill": "development-tools/vscode-ext-commands-helixdevelopment-helixagent/SKILL.md",
+      "target_path": "development/vscode-ext-commands-helixdevelopment-helixagent-2",
+      "target_skill": "development/vscode-ext-commands-helixdevelopment-helixagent-2/SKILL.md",
+      "target_category": "development",
+      "target_status": "active",
+      "key": "HelixDevelopment/HelixAgent:skills/github-copilot/vscode-ext-commands/SKILL.md",
+      "source_skill_sha256": "64067e4a8188d5c7598f8b208698d7c4f5e1c233f3e6e8e628ec96acd65fdeb6",
+      "target_skill_sha256": "64067e4a8188d5c7598f8b208698d7c4f5e1c233f3e6e8e628ec96acd65fdeb6",
+      "metadata_identity_equal": false,
+      "skill_content_equal": true,
+      "reason": "exact duplicate"
+    },
+    {
+      "operation": "remove_duplicate",
+      "source_path": "document-processing/pdf",
+      "source_skill": "document-processing/pdf/SKILL.md",
+      "target_path": "documents/pdf-davepoon-buildwithclaude",
+      "target_skill": "documents/pdf-davepoon-buildwithclaude/SKILL.md",
+      "target_category": "documents",
+      "target_status": "active",
+      "key": "davepoon/buildwithclaude:plugins/all-skills/skills/pdf/SKILL.md",
+      "source_skill_sha256": "902419535460487bf8814a5565db78cc22991b06c14b549241983c6cac8838cd",
+      "target_skill_sha256": "902419535460487bf8814a5565db78cc22991b06c14b549241983c6cac8838cd",
+      "metadata_identity_equal": false,
+      "skill_content_equal": true,
+      "reason": "exact duplicate"
+    },
+    {
+      "operation": "remove_duplicate",
+      "source_path": "document-processing/pdf-davepoon-buildwithclaude",
+      "source_skill": "document-processing/pdf-davepoon-buildwithclaude/SKILL.md",
+      "target_path": "documents/pdf-davepoon-buildwithclaude",
+      "target_skill": "documents/pdf-davepoon-buildwithclaude/SKILL.md",
+      "target_category": "documents",
+      "target_status": "active",
+      "key": "davepoon/buildwithclaude:plugins/all-skills/skills/pdf/SKILL.md",
+      "source_skill_sha256": "902419535460487bf8814a5565db78cc22991b06c14b549241983c6cac8838cd",
+      "target_skill_sha256": "902419535460487bf8814a5565db78cc22991b06c14b549241983c6cac8838cd",
+      "metadata_identity_equal": false,
+      "skill_content_equal": true,
+      "reason": "exact duplicate"
+    },
+    {
+      "operation": "remove_duplicate",
+      "source_path": "programming-languages/rust-core-aaronbassett-paneful",
+      "source_skill": "programming-languages/rust-core-aaronbassett-paneful/SKILL.md",
+      "target_path": "development/rust-core",
+      "target_skill": "development/rust-core/SKILL.md",
+      "target_category": "development",
+      "target_status": "active",
+      "key": "aaronbassett/paneful:.claude/skills/rust-core/SKILL.md",
+      "source_skill_sha256": "9f0a36765987f1014432ae066ba83c97d494d4d60afc5140a3f7f4a3284bd3cf",
+      "target_skill_sha256": "9f0a36765987f1014432ae066ba83c97d494d4d60afc5140a3f7f4a3284bd3cf",
+      "metadata_identity_equal": false,
+      "skill_content_equal": true,
+      "reason": "exact duplicate"
+    }
+  ],
+  "notes": [
+    "Default mode is review-only and does not modify files.",
+    "Apply mode re-verifies source and target SKILL hashes before removal.",
+    "Metadata identity must match by default; use --allow-metadata-identity-drift only after review."
+  ]
+}

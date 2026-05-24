@@ -1,0 +1,20 @@
+{
+  "name": "gh-address-comments",
+  "description": "",
+  "repo": "platxa/platxa-skill-generator",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/platxa/platxa-skill-generator",
+  "github_path": "skills/gh-address-comments",
+  "github_branch": "main",
+  "dir_name": "gh-address-comments-platxa-platxa-skill-generat",
+  "downloaded_at": "2026-02-05T01:45:09.374264Z",
+  "author": "platxa",
+  "source_url": "https://github.com/platxa/platxa-skill-generator/blob/main/skills/gh-address-comments/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/platxa/platxa-skill-generator/blob/main/skills/gh-address-comments/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

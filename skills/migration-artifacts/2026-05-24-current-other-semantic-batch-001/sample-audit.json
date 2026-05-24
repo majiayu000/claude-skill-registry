@@ -1,0 +1,1014 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-24T16:34:42.855684+00:00",
+  "workset_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-41-current-other-batch-001/migration-artifacts/2026-05-24-current-other-semantic-batch-001/input.jsonl",
+  "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-41-current-other-batch-001/migration-artifacts/2026-05-24-current-other-semantic-batch-001/classification.jsonl",
+  "policy": {
+    "sample_size": 50,
+    "seed": "category-audit-v1",
+    "statuses": [
+      "ok"
+    ],
+    "min_confidence": 0.9
+  },
+  "summary": {
+    "workset_row_count": 500,
+    "classification_row_count": 500,
+    "matched_input_count": 500,
+    "missing_input_count": 0,
+    "candidate_count": 246,
+    "sample_count": 50,
+    "status_counts": {
+      "ok": 500
+    },
+    "target_category_counts": {
+      "agent": 15,
+      "ai-llm": 13,
+      "ai-ml": 11,
+      "analysis": 43,
+      "api": 3,
+      "business": 5,
+      "communication": 1,
+      "context-management": 2,
+      "creative": 14,
+      "data": 48,
+      "design": 3,
+      "development": 135,
+      "devops": 16,
+      "documents": 20,
+      "integration": 13,
+      "marketing": 2,
+      "orchestration": 4,
+      "other": 25,
+      "performance": 6,
+      "personal-development": 17,
+      "planning": 22,
+      "platform": 2,
+      "product": 9,
+      "productivity": 15,
+      "quality": 6,
+      "security": 9,
+      "skills": 5,
+      "testing": 23,
+      "workflow": 11,
+      "writing": 2
+    }
+  },
+  "samples": [
+    {
+      "path": "other/132-java-testing-integration-testing/SKILL.md",
+      "name": "132-java-testing-integration-testing",
+      "current_category": "other",
+      "llm_category": "testing",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill focuses on Java integration testing using WireMock for HTTP stubs, setting up test infrastructure, and verifying HTTP interactions. This is a core testing activity for integration testing.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "8f35e3155f11ffdee76488f0e7109cf605621ec2b103fc117a062fc28bae9df1",
+      "metadata_sha256": "cfc70837abd5128b214e4708e49211f2a8c4590d037ce4d7a656ab31abe3132d",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when you need to set up, review, or improve Java integration tests — including generating a BaseIntegrationTest.java with WireMock for HTTP stubs, detecting HTTP client infrastructure from import signals, injecting service coordinates dynamically via System.setProperty(), creating WireMock JSON mapping files with bodyFileName, isolating stubs per test method, verifying HTTP interactions, or eliminating anti-patterns such as Mockito-mocked HTTP clients or globally registered WireMock stubs. This should trigger for requests such as Review Java code for integration tests; Apply best practices for integration tests in Java code. Part of cursor-rules-java project",
+      "content_excerpt": "---\nname: 132-java-testing-integration-testing\ndescription: Use when you need to set up, review, or improve Java integration tests — including generating a BaseIntegrationTest.java with WireMock for HTTP stubs, detecting HTTP client infrastructure from import signals, injecting service coordinates dynamically via System.setProperty(), creating WireMock JSON mapping files with bodyFileName, isolating stubs per test method, verifying HTTP interactions, or eliminating anti-patterns such as Mockito-mocked HTTP clients or globally registered WireMock stubs. This should trigger for requests such as Review Java code for integration tests; Apply best practices for integration tests in Java code. Part of cursor-rules-java project\nlicense: Apache-2.0\nmetadata:\n  author: Juan Antonio Breña Moral\n  version: 0.15.0-SNAPSHOT\n---\n# Java Integration testing guidelines\n\nSet up robust integration-test infrastructure for Java services using WireMock to stub outbound HTTP dependencies.\n\n**What is covered in this Skill?**\n\n- Infrastructure topology detection: scanning imports for `HttpClient`, `feign.*`, `retrofit2.*`, `RestTemplate`\n- Abstract `BaseIntegrationTest` base class\n- `WireMockExtension` with `@RegisterExtension`, dynamic port allocation (`dynamicPort()`)\n- `usingFilesUnderClasspath(wiremock)`, `@BeforeAll` + `System.setProperty()` for coordinate propagation\n- WireMock JSON mapping files (`bodyFileName` referencing `wiremock/files/`)\n- Programmatic stub registration via WireMock DSL\n- Per-test stub isolation: register stubs inside each test method\n- Fault injection: 503 service unavailable, network latency with `withFixedDelay`\n- Request verification via `WIREMOCK.verify`\n- `wiremock-standalone` Maven dependency (test scope)\n- Anti-patterns: global `@BeforeAll` stubs, Mockito-mocked HTTP clients, hardcoded ports or URLs\n\n**Scope:** The reference is organized by examples (good/bad code patterns) for each core area. Apply recommendations based on applicable examples.\n\n## Constraints\n\nBefore applying any integration test changes, ensure the project compiles. If compilation fails, stop immediately — do not proceed until resolved. After applying improvements, run full verification.\n\n- **MANDATORY**: Run `./mvnw compile` or `mvn compile` before applying any change\n- **SAFETY**: If compilation fails, stop immediately and do not proceed — compilation failure is a blocking condition\n- **VERIFY**: Run `./mvnw clean verify` or `mvn clean verify` after applying improvements\n- *"
+    },
+    {
+      "path": "other/5-styleguide-generation-bitovi-context-generation-m/SKILL.md",
+      "name": "5-styleguide-generation",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Identical to id 1 - this is a duplicate entry for the same style guide generation skill focused on codebase conventions and development workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "f43bf8769fe586001b61c3cf698c7c5f1f1a5df97ef7561e7919b86c9d4afac2",
+      "metadata_sha256": "e3c4f38228f1d54f2cf634dd6c0e9324613b4936944850a0464d113ed369c8f6",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Fifth step in building instruction context for codebase",
+      "content_excerpt": "---\nname: 5-styleguide-generation\ndescription: Fifth step in building instruction context for codebase\n---\n\n\n> This task may take time — that is expected and required.\n\nYou are a senior software engineer responsible for generating style guides that explain what makes this codebase unique for each category listed in `./{output-folder}/2-file-categorization.json`. Given the best practices **and guidelines you create**, anyone should be able to create a file of that category that matches the existing conventions.\n\n## Requirements\n\nYou must:\n\n- Review **every individual file** listed under each category\n- Identify only the **unique and distinctive patterns** that make this project stand out from standard conventions\n- Focus on project-specific approaches, custom patterns, and non-standard implementations\n- Create **one markdown file per category** highlighting only these unique conventions\n\n⚠️ You must create a separate file for **each category**, with no omissions.\n\n## Required Output Files\n\nFor example, if the categories are:\n\n- `react-components`\n- `api-clients`\n- `hooks`\n\nThen you must create:\n\n- `./{output-folder}/5-style-guides/react-components.md`\n- `./{output-folder}/5-style-guides/api-clients.md`\n- `./{output-folder}/5-style-guides/hooks.md`\n\n## Important Guidelines\n\n- Do **not** skip a single category. Partial output is unacceptable.\n- Do **not** include common industry patterns — only extract the conventions that are **unique to this specific codebase**.\n- Do **not** invent patterns — only use what is observed in the codebase.\n\nAfter writing each of the domain files, execute skill 6-build-instructions and proceed accordingly with {output-folder} as the `output-folder`."
+    },
+    {
+      "path": "other/513-frameworks-micronaut-db-migrations-flyway/SKILL.md",
+      "name": "513-frameworks-micronaut-db-migrations-flyway",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill focuses on database migration management within a Micronaut application using Flyway, which is a core software development and DevOps task for maintaining database schemas.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "740bbb54c86753df96713f4e08cdd1ed783043f2bb742dad9ad4eeaa281a28ca",
+      "metadata_sha256": "ac50d5671f6a6c0d25059a84dc250ad9f25e0832103234697f0e6b528d0c9e99",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when you need to add or review Flyway database migrations in a Micronaut application — micronaut-flyway, db/migration scripts, flyway.datasources.* configuration, and alignment with JDBC or Micronaut Data. This should trigger for requests such as Add or review Flyway migrations in a Micronaut project; Configure micronaut-flyway or db/migration layout. Part of cursor-rules-java project",
+      "content_excerpt": "---\nname: 513-frameworks-micronaut-db-migrations-flyway\ndescription: Use when you need to add or review Flyway database migrations in a Micronaut application — micronaut-flyway, db/migration scripts, flyway.datasources.* configuration, and alignment with JDBC or Micronaut Data. This should trigger for requests such as Add or review Flyway migrations in a Micronaut project; Configure micronaut-flyway or db/migration layout. Part of cursor-rules-java project\nlicense: Apache-2.0\nmetadata:\n  author: Juan Antonio Breña Moral\n  version: 0.15.0-SNAPSHOT\n---\n# Micronaut — Database migrations (Flyway)\n\nApply Flyway migration guidelines for Micronaut.\n\n**What is covered in this Skill?**\n\n- `micronaut-flyway` with JDBC/Hikari and database drivers\n- Versioned SQL under `src/main/resources/db/migration`\n- `flyway.datasources.*` (per-datasource) configuration in YAML/properties\n- Tests with Testcontainers and real migration chains\n- Coordination with `@511-frameworks-micronaut-jdbc` and `@512-frameworks-micronaut-data`\n\n**Scope:** Apply recommendations based on the reference rules and good/bad examples.\n\n## Constraints\n\nBefore applying Flyway or SQL changes, ensure the project compiles. After improvements, run full verification.\n\n- **MANDATORY**: Run `./mvnw compile` or `mvn compile` before applying any change\n- **SAFETY**: If compilation fails, stop immediately\n- **VERIFY**: Run `./mvnw clean verify` or `mvn clean verify` after applying improvements\n- **BEFORE APPLYING**: Read the reference for detailed rules and good/bad patterns\n- **EDGE CASE**: If the user goal is ambiguous, stop and ask a clarifying question before editing files or running project-wide commands\n- **EDGE CASE**: If required context, files, credentials, or tools are missing, report the blocker explicitly and ask whether to proceed with setup or fallback guidance\n- **EDGE CASE**: If requested changes conflict with project constraints or safety boundaries, explain the conflict and ask for user confirmation on the preferred trade-off\n\n## When to use this skill\n\n- Add or review Flyway migrations in a Micronaut project\n- Configure micronaut-flyway or db/migration layout\n\n## Workflow\n\n1. **Read reference and assess project context**\n\nRead `references/513-frameworks-micronaut-db-migrations-flyway.md` and inspect the current project setup before proposing changes.\n\n2. **Gather scope and decide target improvements**\n\nIdentify requested outcomes, constraints, and the minimum safe set of changes to apply.\n\n3. *"
+    },
+    {
+      "path": "other/15-chromatin-state-inference-bisnake2001-chromskills-2/SKILL.md",
+      "name": "chromatin-state-inference",
+      "current_category": "other",
+      "llm_category": "data",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill provides workflows for chromatin state segmentation, model training, and state annotation from histone modification ChIP-seq data. This is a data analysis/bioinformatics workflow.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "433f9c3ba490dcaa9b320e2303a00468ceedde07c083f8f5e383ed10411b73ec",
+      "metadata_sha256": "6fd23e593c176b75da3ff21edb8aa1962b4a4ade5a85e8915d68968f6fbf5fa7",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "This skill should be used when users need to infer chromatin states from histone modification ChIP-seq data using chromHMM. It provides workflows for chromatin state segmentation, model training, state annotation.",
+      "content_excerpt": "---\nname: chromatin-state-inference\ndescription: This skill should be used when users need to infer chromatin states from histone modification ChIP-seq data using chromHMM. It provides workflows for chromatin state segmentation, model training, state annotation.\n---\n\n# ChromHMM Chromatin State Inference\n\n## Overview\n\nThis skill enables comprehensive chromatin state analysis using chromHMM for histone modification ChIP-seq data. ChromHMM uses a multivariate Hidden Markov Model to segment the genome into discrete chromatin states based on combinatorial patterns of histone modifications.\n\nMain steps include:\n\n- Refer to **Inputs & Outputs** to verify necessary files.\n- **Always prompt user** if required files are missing.\n- **Always prompt user** for genome assembly used.\n- **Always prompt user** for the bin size for generating binarized files.\n- **Always prompt user** for the bin size for the number of states the ChromHMM target.\n- **Run chromHMM workflow**: Binarization → Learning.\n\n---\n\n## When to use this skill\n\nUse this skill when you need to infer chromatin states from histone modification ChIP-seq data using chromHMM.\n\n---\n\n## Inputs & Outputs\n\n### Inputs\n\n(1) Option 1: BED files of aligned reads \n\n```bash\n<mark1>.bed\n<mark2>.bed\n... # Other marks\n```\n\n(1) Option 2: BAM files of aligned reads \n\n```bash\n<mark1>.bam\n<mark2>.bam\n... # Other marks\n```\n\n### Outputs\n\n```bash\nchromhmm_output/\n  binarized/\n    *.txt \n  model/\n    *.txt\n    ... # other files output by the ChromHMM\n```\n---\n\n## Decision Tree\n\n### Step 0: Initialize Project\n\nCall:\n\n- `mcp__project-init-tools__project_init`\n\nwith:\n\n- `sample`: all\n- `task`: chromhmm\n\n### Step 1: Prepare the `cellmarkfile` (skip this step if signal files are provided)\n\n- Prepare a .txt file (without header) containing following three columns:\n  - sample name\n  - marker name\n  - name of the BED/BAM file\n  - control file of the sample (only provided if the input/control file is available)\n\n- example of the cellmark.txt file\n\n```bash\ncell1    mark1    cell1_mark2.bam    cell1_control.bam\ncell1   mark2    cell1_mark2.bam    cell1/control.bam\n```\n\n### Step 2: Data Binarization\n\n- For BAM inputs:  \n     Call:\n     - `mcp__chromhmm-tools__binarize_bam` \n     with:\n     - `path_chrom_sized`: Provide by user or detect from the working directory\n     - `input_dir`: Directory containing BAM files\n     - `cellmarkfile`: Cell mark file defining histone modifications\n     - `output_dir`: (e.g. `binarized/`)\n     - `bin_size`: Pro"
+    },
+    {
+      "path": "other/1k-dev-commands-onekeyhq-app-monorepo-967e45ba/SKILL.md",
+      "name": "1k-dev-commands",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill provides development commands for a monorepo, covering dev servers, building, linting, testing, and troubleshooting, which are core software development workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "30d15363dc2e01743c4ae6d6fa0be5e02becd09af950f30503133dca9182ae9f",
+      "metadata_sha256": "337207c64ab9c0707a428244f05ab0484a889ecc399edcb7eaf8f23f9defb70c",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Development commands for OneKey monorepo. Use when running dev servers, building apps, linting, testing, or troubleshooting build issues. Triggers on yarn, dev, build, lint, test, desktop, mobile, web, extension, ios, android, compile, bundle.",
+      "content_excerpt": "---\nname: 1k-dev-commands\ndescription: Development commands for OneKey monorepo. Use when running dev servers, building apps, linting, testing, or troubleshooting build issues. Triggers on yarn, dev, build, lint, test, desktop, mobile, web, extension, ios, android, compile, bundle.\nallowed-tools: Bash, Read\n---\n\n# OneKey Development Commands\n\n## Application Development Commands\n\n**PLATFORM-SPECIFIC DEVELOPMENT**:\n- `yarn app:desktop` - Start desktop Electron app development\n  - **Runtime**: 30-60 seconds to start\n  - **Common issues**: Node version conflicts, missing native dependencies\n  - **Troubleshooting**: Run `yarn clean && yarn reinstall` if startup fails\n\n- `yarn app:web` - Start web development server (port 3000)\n  - **Runtime**: 15-30 seconds to start\n  - **Common issues**: Port 3000 already in use, webpack compilation errors\n  - **Troubleshooting**: Kill existing processes on port 3000, check console for specific errors\n\n- `yarn app:ext` - Start browser extension development\n  - **Runtime**: 20-40 seconds to start\n  - **Common issues**: Manifest v3 validation errors, permission issues\n  - **Troubleshooting**: Check extension manifest validity, verify content security policy\n\n- `yarn app:ios` - Start iOS mobile development\n  - **Runtime**: 1-2 minutes (includes Metro bundler)\n  - **Common issues**: Xcode setup, simulator issues, pod install failures\n  - **Prerequisites**: Xcode installed, iOS simulator available\n\n- `yarn app:android` - Start Android mobile development\n  - **Runtime**: 1-2 minutes (includes Metro bundler)\n  - **Common issues**: Android SDK path, emulator setup, gradle build failures\n  - **Prerequisites**: Android Studio, SDK tools, emulator configured\n\n- `yarn app:web-embed` - Start embeddable components development\n  - **Runtime**: 15-30 seconds\n  - **Usage**: For developing standalone wallet components\n\n## Build Commands\n\n**PRODUCTION BUILDS** (Use for final validation):\n- `yarn app:desktop:build` - Build desktop app for all platforms\n  - **Runtime**: 5-10 minutes (multi-platform build)\n  - **Output**: Platform-specific installers in `apps/desktop/dist/`\n  - **Common issues**: Code signing, platform-specific dependencies\n  - **Verification**: Test installers on target platforms\n\n- `yarn app:ext:build` - Build browser extension\n  - **Runtime**: 2-3 minutes\n  - **Output**: Extension packages in `apps/ext/dist/`\n  - **Common issues**: Manifest validation, content security policy violations\n  - **Verification**: Load extension in br"
+    },
+    {
+      "path": "other/303-frameworks-spring-boot-validation/SKILL.md",
+      "name": "303-frameworks-spring-boot-validation",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill provides guidelines for implementing validation in Spring Boot applications, covering Bean Validation, custom constraints, and error handling - a specific aspect of software development best practices.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "e75dcea5629a9ea08ee8bfa2182621572d4d102371e31e23ff4f19f936b13a8a",
+      "metadata_sha256": "0e2db62c4b7f9893eb5b29a95d73106b014c243924f3a33e302794ff7c4d8bbc",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when you need to design, review, or improve validation in Spring Boot applications — including Bean Validation on request DTOs, @Valid/@Validated at API boundaries, constraint groups, custom constraints, @ConfigurationProperties validation, nested DTO validation, and consistent validation error handling. This should trigger for requests such as Add validation support in Spring Boot; Review Spring Boot validation rules; Improve request validation in Spring Boot REST APIs; Add custom Bean Validation constraints in Spring Boot; Validate configuration properties in Spring Boot. Part of cursor-rules-java project",
+      "content_excerpt": "---\nname: 303-frameworks-spring-boot-validation\ndescription: Use when you need to design, review, or improve validation in Spring Boot applications — including Bean Validation on request DTOs, @Valid/@Validated at API boundaries, constraint groups, custom constraints, @ConfigurationProperties validation, nested DTO validation, and consistent validation error handling. This should trigger for requests such as Add validation support in Spring Boot; Review Spring Boot validation rules; Improve request validation in Spring Boot REST APIs; Add custom Bean Validation constraints in Spring Boot; Validate configuration properties in Spring Boot. Part of cursor-rules-java project\nlicense: Apache-2.0\nmetadata:\n  author: Juan Antonio Breña Moral\n  version: 0.15.0-SNAPSHOT\n---\n# Spring Boot Validation Guidelines\n\nApply Spring Boot validation best practices at API boundaries.\n\n**What is covered in this Skill?**\n\n- Bean Validation annotations on DTOs and command models\n- @Valid / @Validated on controllers and method parameters\n- Validation groups for create/update workflows\n- Custom constraint annotations and validators\n- Consistent 400 error responses for validation failures\n\n**Scope:** Apply recommendations based on the reference rules and good/bad examples.\n\n## Constraints\n\nBefore applying validation changes, ensure the project compiles. After improvements, run full verification.\n\n- **MANDATORY**: Run `./mvnw compile` or `mvn compile` before applying any change\n- **SAFETY**: If compilation fails, stop immediately\n- **VERIFY**: Run `./mvnw clean verify` or `mvn clean verify` after applying improvements\n- **BEFORE APPLYING**: Read the reference for detailed rules and examples\n\n## When to use this skill\n\n- Add validation support in Spring Boot\n- Review Spring Boot validation rules\n- Improve request validation in Spring Boot REST APIs\n- Add custom Bean Validation constraints in Spring Boot\n- Validate configuration properties in Spring Boot\n- Improve nested DTO validation in Spring Boot\n\n## Workflow\n\n1. **Read reference and assess project context**\n\nRead `references/303-frameworks-spring-boot-validation.md` and inspect the current project setup before proposing changes.\n\n2. **Gather scope and decide target improvements**\n\nIdentify requested outcomes, constraints, and the minimum safe set of changes to apply.\n\n3. **Apply framework-aligned changes**\n\nImplement or refactor validation-related configuration/code following the reference patterns and project conventions.\n\n4. **R"
+    },
+    {
+      "path": "other/162-java-profiling-analyze/SKILL.md",
+      "name": "162-java-profiling-analyze",
+      "current_category": "other",
+      "llm_category": "performance",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is about analyzing Java profiling data collected during the detection phase, focusing on performance analysis and optimization.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "891f90faf5169801e57950a364ead5500e2e042ae9c6ce5dc21c3527a53f7ac5",
+      "metadata_sha256": "9e5508f7bd3abc97f00dcc2222b0a37db15deec9d2c0533b4a5675b78dba0331",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when you need to analyze Java profiling data collected during the detection phase — including interpreting flamegraphs, memory allocation patterns, CPU hotspots, threading issues, systematic problem categorization, evidence documentation with profiling-problem-analysis and profiling-solutions markdown files, or prioritizing fixes using Impact/Effort scoring. This should trigger for requests such as Analyze JFR profile; Analyze the profile; Analyze the performance; Analyze the memory. Part of cursor-rules-java project",
+      "content_excerpt": "---\nname: 162-java-profiling-analyze\ndescription: Use when you need to analyze Java profiling data collected during the detection phase — including interpreting flamegraphs, memory allocation patterns, CPU hotspots, threading issues, systematic problem categorization, evidence documentation with profiling-problem-analysis and profiling-solutions markdown files, or prioritizing fixes using Impact/Effort scoring. This should trigger for requests such as Analyze JFR profile; Analyze the profile; Analyze the performance; Analyze the memory. Part of cursor-rules-java project\nlicense: Apache-2.0\nmetadata:\n  author: Juan Antonio Breña Moral\n  version: 0.15.0-SNAPSHOT\n---\n# Java Profiling Workflow / Step 2 / Analyze profiling data\n\nAnalyze profiling results systematically: inventory results (flamegraphs, JFR, GC logs, thread dumps), identify problems (memory leaks, CPU hotspots, threading issues), document findings using standardized templates (profiling-problem-analysis-YYYYMMDD.md, profiling-solutions-YYYYMMDD.md), prioritize using Impact/Effort scores, and correlate multiple profiling files for validation.\n\n**What is covered in this Skill?**\n\n- Inventory: scan profiler/results/ for allocation-flamegraph, heatmap-cpu, memory-leak, *.jfr, *.log, *.txt\n- Problem identification: memory (leaks, excessive allocations, GC pressure), performance (CPU hotspots, blocking), threading (deadlocks, contention, pool saturation)\n- Documentation: docs/profiling-problem-analysis-YYYYMMDD.md, docs/profiling-solutions-YYYYMMDD.md\n- Prioritization: Impact (1–5) / Effort (1–5), focus on high priority first\n- Tools: async-profiler, JFR, JProfiler/YourKit, GCViewer, flamegraphs, heatmaps\n\n**Scope:** Validate profiling results represent realistic load scenarios. Cross-reference multiple files. Include quantitative metrics.\n\n## Constraints\n\nValidate profiling results represent realistic load before analysis. Document assumptions and limitations. Cross-reference multiple files.\n\n- **VALIDATE**: Ensure profiling results represent realistic load scenarios before analysis\n- **DOCUMENT**: Record assumptions and limitations in analysis reports\n- **CROSS-REFERENCE**: Use multiple profiling files to validate findings\n- **BEFORE APPLYING**: Read the reference for problem analysis and solutions templates\n- **EDGE CASE**: If request scope is ambiguous, stop and ask a clarifying question before applying changes\n- **EDGE CASE**: If required inputs, files, or tooling are missing, report what is missi"
+    },
+    {
+      "path": "other/12-dotnet-jwt-authentication/SKILL.md",
+      "name": "dotnet-jwt-authentication",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Skill configures JWT Bearer authentication for .NET APIs, including token generation, validation, refresh tokens, and security audit tracking - core security implementation.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "8f6fe01d61f0a7d352b10ec7fe45f476dba4aff10c3ccd9a59fb8cda1de1fe29",
+      "metadata_sha256": "3023ec0a0591e8d384b1ab3be27041bff289f9af2463fcb9cfc74d51024b73be",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Configures JWT Bearer authentication for .NET APIs. Includes token generation, validation, refresh tokens, and user context extraction from claims.",
+      "content_excerpt": "---\nname: dotnet-jwt-authentication\ndescription: \"Configures JWT Bearer authentication for .NET APIs. Includes token generation, validation, refresh tokens, and user context extraction from claims.\"\nversion: 1.1.0\nlanguage: C#\nframework: .NET 8+\ndependencies: Microsoft.AspNetCore.Authentication.JwtBearer, System.IdentityModel.Tokens.Jwt\n---\n\n# JWT Authentication Setup\n\n## Overview\n\nThis skill implements JWT (JSON Web Token) authentication for .NET APIs:\n\n- **Access Token** - Short-lived JWT returned in response body\n- **Refresh Token** - Stored in HttpOnly cookie (secure, not accessible via JavaScript)\n- **Options Pattern** - Configurable expiration via JwtOptions\n- **Token Rotation** - New refresh token issued on each refresh\n- **Security Audit** - Comprehensive event tracking for compliance\n- **Token generation** - Create access and refresh tokens\n- **Token validation** - Validate incoming tokens\n- **User context** - Extract user info from claims\n\n## Quick Reference\n\n| Component | Purpose | Location |\n|-----------|---------|----------|\n| `IJwtService` | Token generation interface | Application/Abstractions |\n| `JwtService` | Token generation implementation | Infrastructure/Authentication |\n| `JwtOptions` | configuration (expiration, issuer, etc.) | Infrastructure/Authentication |\n| `JwtBearerOptionsSetup` | Configure JWT validation | Infrastructure/Authentication |\n| `IUserContext` | Current user info | Application/Abstractions |\n| `UserContext` | Extract from HttpContext | Infrastructure/Authentication |\n| `IRefreshTokenRepository` | Refresh token storage | Domain/Identity |\n| `CookieSettings` | Cookie configuration | Infrastructure/Authentication |\n\n---\n\n## Authentication Structure\n\n```\n/Application/Abstractions/\n├── Authentication/\n│   ├── IJwtService.cs\n│   ├── IUserContext.cs\n│   ├── TokenResponse.cs\n│   └── AuthenticationErrors.cs\n\n/Infrastructure/\n├── Authentication/\n│   ├── JwtOptions.cs\n│   ├── JwtService.cs\n│   ├── JwtBearerOptionsSetup.cs\n│   ├── UserContext.cs\n│   ├── CookieSettings.cs\n│   └── RefreshTokenCookieManager.cs\n```\n\n---\n\n## Template: JWT Configuration Options\n\n```csharp\n// src/{name}.infrastructure/Authentication/JwtOptions.cs\nnamespace {name}.infrastructure.authentication;\n\npublic sealed class JwtOptions\n{\n    public const string SectionName = \"Jwt\";\n\n    public string Issuer { get; init; } = string.Empty;\n    public string Audience { get; init; } = string.Empty;\n    public string SecretKey { get; init; } = string.Empty;\n    publi"
+    },
+    {
+      "path": "other/312-frameworks-spring-data-jdbc/SKILL.md",
+      "name": "312-frameworks-spring-data-jdbc",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is about using Spring Data JDBC with Java records, covering entity design, repository pattern, immutable updates, aggregate relationships, custom queries, transaction management, and N+1 problem avoidance, which is software development.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "ebf1e37282bffd4ae58299a28f97968baf25271df546e089b2a280c89cb01f6c",
+      "metadata_sha256": "06a8a484df93b119c8423b2067161c4bcd7b751199df6d153b74ddfd76603390",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when you need to use Spring Data JDBC with Java records — including entity design with records, repository pattern, immutable updates, aggregate relationships, custom queries, transaction management, and avoiding N+1 problems. This should trigger for requests such as Review Java code for Spring Data JDBC; Apply best practices for Spring Data JDBC in Java code. Part of cursor-rules-java project",
+      "content_excerpt": "---\nname: 312-frameworks-spring-data-jdbc\ndescription: Use when you need to use Spring Data JDBC with Java records — including entity design with records, repository pattern, immutable updates, aggregate relationships, custom queries, transaction management, and avoiding N+1 problems. This should trigger for requests such as Review Java code for Spring Data JDBC; Apply best practices for Spring Data JDBC in Java code. Part of cursor-rules-java project\nlicense: Apache-2.0\nmetadata:\n  author: Juan Antonio Breña Moral\n  version: 0.15.0-SNAPSHOT\n---\n# Spring Data JDBC with Records\n\nApply Spring Data JDBC guidelines with Java records.\n\n**What is covered in this Skill?**\n\n- Records for entity classes (immutable, constructor-friendly)\n- @Table for naming when record name differs from the table name\n- @Embedded to inline value-object columns into the parent row without a separate table\n- Repository pattern\n- Immutable updates with static factories for new rows and with* helpers for updates\n- save() INSERT vs UPDATE semantics driven by @Id nullability\n- Aggregate boundaries: one repository per aggregate root, Set for one-to-many inside the root, foreign keys between aggregates\n- Custom queries with @Query and named parameters (no user-input concatenation)\n- Transaction management (@Transactional on services; readOnly where appropriate)\n- Single query loading (N+1 avoidance)\n\n**Scope:** Apply recommendations based on the reference rules and good/bad code examples.\n\n## Constraints\n\nBefore applying any Spring Data JDBC changes, ensure the project compiles. If compilation fails, stop immediately. After applying improvements, run full verification.\n\n- **MANDATORY**: Run `./mvnw compile` or `mvn compile` before applying any change\n- **SAFETY**: If compilation fails, stop immediately\n- **VERIFY**: Run `./mvnw clean verify` or `mvn clean verify` after applying improvements\n- **BEFORE APPLYING**: Read the reference for detailed rules and good/bad patterns\n- **EDGE CASE**: If request scope is ambiguous, stop and ask a clarifying question before applying changes\n- **EDGE CASE**: If required inputs, files, or tooling are missing, report what is missing and ask whether to proceed with setup guidance\n\n## When to use this skill\n\n- Review Java code for Spring Data JDBC\n- Apply best practices for Spring Data JDBC in Java code\n\n## Workflow\n\n1. **Read reference and assess project context**\n\nRead `references/312-frameworks-spring-data-jdbc.md` and inspect the current project setup bef"
+    },
+    {
+      "path": "other/16-toolbased-hic-normalization-bisnake2001-chromskills-2/SKILL.md",
+      "name": "hic-normalization",
+      "current_category": "other",
+      "llm_category": "data",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill performs Hi-C data normalization, which is a data processing and analysis task for genomic data in bioinformatics.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "5b21c31074e0fae0fb26742f001d2143f7fc36f394b87f824c4ff8c7a16c3377",
+      "metadata_sha256": "209ed5d7c222e39711a3c55eb3c23aa65a4cde28da6f01171156d3ba1b6690b5",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Automatically detect and normalize Hi-C data. Only .cool or .mcool file is supported. All .mcool files are then checked for existing normalization (supports bins/weight only) and balanced if none of the normalizations exist.",
+      "content_excerpt": "---\nname: hic-normalization\ndescription: Automatically detect and normalize Hi-C data. Only .cool or .mcool file is supported. All .mcool files are then checked for existing normalization (supports bins/weight only) and balanced if none of the normalizations exist.\n---\n\n## Overview\n\nThis skill performs Hi-C data normalization on .mcool files.  \nMain steps include:\n\n- Refer to the **Inputs & Outputs** section to verify required files and output structure.\n- **Check normalization status** per resolution (supports bins/weight columns only).\n- If a resolution is not normalized, perform normalization with cooler balance (ICE) to create bins/weight.\n- **Verify normalization** and emit a concise report on the file, resolution, and normalization status.\n\n---\n\n## When to use this skill\n\nUse the hic-normalization pipeline when:\n\n- You need to ensure that Hi-C data is normalized for downstream analysis.\n- Your data comes in .cool or .mcool formats, and you want to check or refresh normalization status (ICE normalization).\n\nThis tool assumes the file already has correct genome assembly and chromosome names.\n\n---\n\n## Inputs & Outputs\n\n### Inputs\n\n- Accepted file format: .mcool\n\n### Outputs\n\n```bash\n${sample}_hic_norm/\n    ${sample}_norm.mcool\n    normalization_report.txt  # A brief log/report indicating which resolutions were detected, normalized, or skipped.\n```\n---\n\n## Decision Tree\n\n### Step 0 — Gather Required Information from the User\n\nBefore calling any tool, ask the user:\n\n1. Sample name (`sample`): used as prefix and for the output directory `${sample}_hic_norm`.\n2. Genome assembly (`genome`): e.g. `hg38`, `mm10`, `danRer11`.  \n   - **Never** guess or auto-detect.\n3. Hi-C matrix path (`mcool_path`): e.g. `.mcool` file path or `.hic` file path.\n   - `path/to/sample.mcool` (.mcool file without resolution specified)\n   - or `.hic` file path\n\n---\n\n### Step 1: Initialize Project\n\n1. Make director for this project:\n\nCall:\n- `mcp__project-init-tools__project_init`\n\nwith:\n- `sample`: the user-provided sample name\n- `task`: hic_norm\n\nThe tool will:\n- Create `${sample}_hic_norm` directory.\n- Get the full path of the `${sample}_hic_norm` directory, which will be used as `${proj_dir}`.\n\n---\n\n2. If the user provides a `.hic` file, convert it to `.mcool` file first using `mcp__HiCExplorer-tools__hic_to_mcool` tool:\n\nCall:\n- `mcp__HiCExplorer-tools__hic_to_mcool`\n\nwith:\n- `input_hic`: the user-provided path (e.g. `input.hic`)\n- `sample`: the user-provided sample name\n- `proj_"
+    },
+    {
+      "path": "other/23-dotnet-logging-configuration/SKILL.md",
+      "name": "dotnet-logging-configuration",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is specifically about configuring structured logging in .NET applications, including ILogger<T>, Serilog setup, and logging source generators. This is a software development workflow focused on coding and framework configuration.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "a4150d473fa41cb29e393ef89fa73514dc3e8f360d7b5d843d4f902fbc40ad16",
+      "metadata_sha256": "c25c24cf16e022218eacbc8ccc99edbf25215e285820d58678a6a7aa0327d9b0",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Configures structured logging with ILogger<T> and ILoggerFactory following Microsoft best practices. Includes Serilog setup, log enrichment, and logging source generators for high-performance logging.",
+      "content_excerpt": "---\nname: dotnet-logging-configuration\ndescription: \"Configures structured logging with ILogger<T> and ILoggerFactory following Microsoft best practices. Includes Serilog setup, log enrichment, and logging source generators for high-performance logging.\"\nversion: 1.0.0\nlanguage: C#\nframework: .NET 8+\ndependencies: Microsoft.Extensions.Logging, Serilog, Serilog.AspNetCore\n---\n\n# Logging Configuration for .NET\n\n## Overview\n\nThis skill configures structured logging following Microsoft best practices:\n\n- **ILogger<T>** - Inject into services for category-based logging\n- **ILoggerFactory** - Create loggers dynamically when needed\n- **Structured Logging** - Preserve log properties for analysis\n- **Source Generators** - High-performance compile-time logging\n- **Serilog Integration** - Enhanced sinks and enrichers\n\n## Quick Reference\n\n| Interface | Lifetime | Use Case |\n|-----------|----------|----------|\n| `ILogger<T>` | Singleton | Standard service logging |\n| `ILoggerFactory` | Singleton | Create loggers dynamically |\n| `ILogger` | - | Non-generic (avoid in DI) |\n\n---\n\n## Logging Structure\n\n```\n/Infrastructure/Logging/\n├── LoggerConfiguration.cs\n├── LogEvents.cs           # LoggerMessage source generators\n├── LogEnrichers/\n│   ├── UserContextEnricher.cs\n│   └── CorrelationIdEnricher.cs\n└── Sinks/\n    └── CustomSink.cs\n```\n\n---\n\n## Template: Service with ILogger<T>\n\n```csharp\n// src/{name}.application/Services/OrderService.cs\nusing Microsoft.Extensions.Logging;\n\nnamespace {name}.application.services;\n\n/// <summary>\n/// Services should inject ILogger<T> for category-based logging.\n/// The category is automatically set to the full type name.\n/// </summary>\npublic sealed class OrderService : IOrderService\n{\n    private readonly ILogger<OrderService> _logger;\n    private readonly IOrderRepository _orderRepository;\n\n    public OrderService(\n        ILogger<OrderService> logger,\n        IOrderRepository orderRepository)\n    {\n        _logger = logger;\n        _orderRepository = orderRepository;\n    }\n\n    public async Task<Result<Order>> ProcessOrderAsync(\n        Guid orderId,\n        CancellationToken cancellationToken)\n    {\n        // ═══════════════════════════════════════════════════════════════\n        // STRUCTURED LOGGING - Use placeholders, not string interpolation\n        // ═══════════════════════════════════════════════════════════════\n        _logger.LogInformation(\n            \"Processing order {OrderId}\",\n            orderId);\n\n        try\n        {\n  "
+    },
+    {
+      "path": "other/62-validate-integrity-150/SKILL.md",
+      "name": "62-validate-integrity-150",
+      "current_category": "other",
+      "llm_category": "quality",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is about final validation and integrity checking before delivery, including goal alignment, completeness, correctness assessment, and quality scoring. This is a quality assurance workflow.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "35067720bf9b9c1dc0ca0d7c32f08b2020cc80f86763c251b6653199b5b276d7",
+      "metadata_sha256": "4c11a77c10e78e80077be5f7093a028ebe6c469d4e36d507d424db494d39c556",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "[62] VALIDATE. Final self-check before delivery. Verify goal alignment, completeness, correctness, and identify residual risks. Produces quality score (0-100) and delivery status. Use when completing any significant work, before handoff, or when you need confidence that work is ready.",
+      "content_excerpt": "---\nname: 62-validate-integrity-150\ndescription: \"[62] VALIDATE. Final self-check before delivery. Verify goal alignment, completeness, correctness, and identify residual risks. Produces quality score (0-100) and delivery status. Use when completing any significant work, before handoff, or when you need confidence that work is ready.\"\n---\n\n# Validate-Integrity 150 Protocol\n\n**Core Principle:** Check yourself before delivery. Verify goal alignment, completeness, correctness. Identify what could still go wrong. Score the quality honestly.\n\n## What This Skill Does\n\nWhen you invoke this skill, you're asking AI to:\n- **Verify alignment** — Does result match original goal?\n- **Check completeness** — Are all requirements satisfied?\n- **Validate correctness** — Is it technically accurate?\n- **Assess risks** — What residual issues remain?\n- **Score quality** — Honest 0-100 rating with reasoning\n\n## The 150% Check Rule\n\n| Dimension | 100% Core | +50% Enhancement |\n|-----------|-----------|------------------|\n| **Goal** | Meets objectives | + Exceeds expectations |\n| **Complete** | Requirements done | + Edge cases covered |\n| **Correct** | Technically valid | + Best practices followed |\n| **Risks** | Known issues noted | + Mitigation strategies ready |\n\n## Quality Assessment Framework\n\n```\nCORE INTEGRITY (100% Required)\n├── Goal Alignment: Meets original objectives\n├── Completeness: All requirements satisfied\n├── Correctness: Technically accurate and valid\n└── Consistency: Internal logic coherent\n\nEXTENDED VALIDATION (50% Enhancement)\n├── Context Fit: Works in broader environment\n├── Side Effects: No unintended consequences\n├── Edge Cases: Handles unusual scenarios\n└── Future-Proofing: Adaptable to changes\n```\n\n## Quality Score Framework\n\n| Score | Rating | Description | Action |\n|-------|--------|-------------|--------|\n| **95-100** | Excellent | Exceeds expectations | Deliver with confidence |\n| **85-94** | Good | Meets all requirements | Deliver, note improvements |\n| **75-84** | Acceptable | Minor issues exist | Deliver with caveats |\n| **60-74** | Needs Work | Significant issues | Fix before delivery |\n| **<60** | Unacceptable | Major problems | Return to development |\n\n## When to Use This Skill\n\n- **Before delivery** — Any significant work output\n- **After implementation** — Code, features, documents\n- **Before handoff** — To another person or system\n- **When uncertain** — Need confidence check\n- **After major changes** — Verify nothing broke\n\n## Execution Prot"
+    },
+    {
+      "path": "other/1-alignment-level-qc-bisnake2001-chromskills/SKILL.md",
+      "name": "alignment-level-QC",
+      "current_category": "other",
+      "llm_category": "data",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill performs technical mapping statistics and quality control on BAM files (genomic data), which aligns with data engineering, analytics, and ETL workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "1fe93c7a1abe76064eff4223fe5ab833833bbd4003ebe250ff76b479f8376068",
+      "metadata_sha256": "054976ffb02bed5367cea3e26d007b0616eb64eb6519c81c3b3312caebbe3058",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Calculates technical mapping statistics for any aligned BAM file (ChIP or ATAC). It assesses the performance of the aligner itself by generating metrics on read depth, mapping quality, error rates, and read group data using samtools and Picard.Use this skill to check \"how well the reads mapped\" or to validate BAM formatting/sorting before further processing. Do NOT use this skill for biological signal validation (like checking for peaks or open chromatin) or for filtering/removing reads.",
+      "content_excerpt": "---\nname: alignment-level-QC\ndescription: Calculates technical mapping statistics for any aligned BAM file (ChIP or ATAC). It assesses the performance of the aligner itself by generating metrics on read depth, mapping quality, error rates, and read group data using samtools and Picard.Use this skill to check \"how well the reads mapped\" or to validate BAM formatting/sorting before further processing. Do NOT use this skill for biological signal validation (like checking for peaks or open chromatin) or for filtering/removing reads.\n---\n\n# Alignment Quality Control for ChIP-seq/ATAC-seq\n\n## Overview\n\nPerform comprehensive **preliminary alignment-level quality control** for ChIP-seq and ATAC-seq BAM files using **samtools**, **Picard**, and **MultiQC**.  \n\nMain steps include:\n- Initialize the project directory.\n- Refer to the **Inputs & Outputs** section to check inputs and build the output architecture. All the output file should located in `${proj_dir}` in Step 0.\n- Sort and add read groups if missing in the BAM file.\n- Run preliminary QC metrics\n- **Generate MultiQC report**  \n\n---\n\n## When to use this skill\n\n- Use skill when you want to perform alignment-level quality control for ChIP-seq or ATAC-seq BAM files.\n\n---\n\n## Inputs & Outputs\n\n### Inputs\n\n<sample>.bam\n\n### Outputs\n\n```bash\nalignment_qc/\n  ${sample}.bam                        # Original input\n  ${sample}.sorted.bam                 # (Optional) Created if sorting was needed\n  ${sample}.RG.bam                     # (Optional) Created if RG was needed\n  ${sample}.RG.bam.bai                 # Index file\n  qc_results/\n    ${sample}.flagstat.txt\n    ${sample}.stats.txt\n    ${sample}.insertsize_metrics.txt\n    ${sample}.dup_metrics.txt\n    alignment_qc_report.html      # Visual MultiQC report\n    qc_summary.txt                # Pass/Warn/Fail table\n  temp/\n    ${sample}.markdup.bam            # Intermediate file (safe to delete later)\n    ...\n```\n---\n\n## Decision Tree\n\n### Step 0: Initialize Project\n\nCall:\n\n- `mcp__project-init-tools__project_init`\n\nwith:\n\n- `sample`: all\n- `task`: alignment_qc\n\nThe tool will:\n\n- Create `${sample}_alignment_qc` directory.\n- Return the full path of the `${sample}_alignment_qc` directory, which will be used as `${proj_dir}`.\n\n### Step 1: Check and Fix BAMs\n- Ensure all BAM files are coordinate-sorted, have Read Groups, and are indexed.\n*This tool will skip files that are already correct and only create temporary files when fixes are needed.*\n\nCall: \n\n- mcp__qc-tools__check"
+    },
+    {
+      "path": "other/3d-building-advanced-bbeierle12-skill-mcp-claude-2/SKILL.md",
+      "name": "building-mechanics",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is about implementing a 3D building system in Three.js with spatial indexing, structural physics, and multiplayer networking. It's a software development skill focused on game development frameworks and coding.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "cc6b64873b3b5bae971ae791654071066337b409e9be723b82a8ccc340f36eac",
+      "metadata_sha256": "9a76a94e0f4fa146264d188efabbf04032760e7a341520165edc369053ac9f65",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Three.js 3D building system with spatial indexing, structural physics, and multiplayer networking. Use when creating survival games, sandbox builders, or any game with player-constructed structures. Covers performance optimization (spatial hash grids, octrees, chunk loading), structural validation (arcade/heuristic/realistic physics modes), and multiplayer sync (delta compression, client prediction, conflict resolution).",
+      "content_excerpt": "---\nname: building-mechanics\ndescription: Three.js 3D building system with spatial indexing, structural physics, and multiplayer networking. Use when creating survival games, sandbox builders, or any game with player-constructed structures. Covers performance optimization (spatial hash grids, octrees, chunk loading), structural validation (arcade/heuristic/realistic physics modes), and multiplayer sync (delta compression, client prediction, conflict resolution).\n---\n\n# 3D Building Mechanics\n\nComplete building system for Three.js games with performance optimization, structural physics, and multiplayer networking.\n\n## Quick Start\n\n```javascript\nimport { SpatialHashGrid } from './scripts/spatial-hash-grid.js';\nimport { HeuristicValidator } from './scripts/heuristic-validator.js';\n\n// Spatial indexing for fast queries\nconst spatialIndex = new SpatialHashGrid(10);\nspatialIndex.insert(piece, piece.position);\nconst nearby = spatialIndex.queryRadius(position, 15);\n\n// Structural validation (Rust/Valheim style)\nconst validator = new HeuristicValidator({ mode: 'heuristic' });\nvalidator.addPiece(piece);\nconst canPlace = validator.validatePlacement(newPiece);\n```\n\n## Reference Files\n\nRead these for detailed implementation guidance:\n\n- `references/performance-at-scale.md` - Spatial partitioning, chunk loading, instancing, LOD\n- `references/structural-physics-advanced.md` - Arcade vs heuristic vs realistic physics\n- `references/multiplayer-networking.md` - Authority models, delta sync, conflict resolution\n\n## Scripts\n\n### Performance (references/performance-at-scale.md)\n- `scripts/spatial-hash-grid.js` - O(1) queries for uniform distribution\n- `scripts/octree.js` - Adaptive queries for clustered bases\n- `scripts/chunk-manager.js` - World streaming for large maps\n- `scripts/performance-profiler.js` - Benchmarking utilities\n\n### Structural Physics (references/structural-physics-advanced.md)\n- `scripts/heuristic-validator.js` - Fast validation (Fortnite/Rust/Valheim modes)\n- `scripts/stability-optimizer.js` - Caching and batch updates\n- `scripts/damage-propagation.js` - Damage states, cascading collapse\n- `scripts/physics-engine-lite.js` - Optional realistic physics\n\n### Multiplayer (references/multiplayer-networking.md)\n- `scripts/delta-compression.js` - Only send changed state\n- `scripts/client-prediction.js` - Optimistic placement with rollback\n- `scripts/conflict-resolver.js` - Handle simultaneous builds\n- `scripts/building-network-manager.js` - Complete server/client "
+    },
+    {
+      "path": "other/0-autoresearch-skill/SKILL.md",
+      "name": "autoresearch",
+      "current_category": "other",
+      "llm_category": "orchestration",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill orchestrates autonomous AI research projects using a two-loop architecture, managing the full research lifecycle and routing to domain-specific skills for execution.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "b7ca0d7a6e905da85a8b494d3fe398ac78eaa278854f67b50a34f2b37a9a2b78",
+      "metadata_sha256": "e7cf9d4971df167bc327a17131a55379cdd0ff48816276a64270e6ccc188fcd1",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "Orchestrates end-to-end autonomous AI research projects using a two-loop architecture. The inner loop runs rapid experiment iterations with clear optimization targets. The outer loop synthesizes results, identifies patterns, and steers research direction. Routes to domain-specific skills for execution, supports continuous agent operation via Claude Code /loop and OpenClaw heartbeat, and produces research presentations and papers. Use when starting a research project, running autonomous experiments, or managing a multi-hypothesis research effort.",
+      "content_excerpt": "---\nname: autoresearch\ndescription: Orchestrates end-to-end autonomous AI research projects using a two-loop architecture. The inner loop runs rapid experiment iterations with clear optimization targets. The outer loop synthesizes results, identifies patterns, and steers research direction. Routes to domain-specific skills for execution, supports continuous agent operation via Claude Code /loop and OpenClaw heartbeat, and produces research presentations and papers. Use when starting a research project, running autonomous experiments, or managing a multi-hypothesis research effort.\nversion: 1.0.0\nauthor: Orchestra Research\nlicense: MIT\ntags: [Autonomous Research, Two-Loop Architecture, Experiment Orchestration, Research Synthesis, Project Management]\n---\n\n# Autoresearch\n\nAutonomous research orchestration for AI coding agents. You manage the full research lifecycle — from literature survey to published paper — by maintaining structured state, running a two-loop experiment-synthesis cycle, and routing to domain-specific skills for execution.\n\nYou are a research project manager, not a domain expert. You orchestrate; the domain skills execute.\n\n**This runs fully autonomously.** Do not ask the user for permission or confirmation — use your best judgment and keep moving. Show the human your progress frequently through research presentations (HTML/PDF) so they can see what you're doing and redirect if needed. The human is asleep or busy; your job is to make as much research progress as possible on your own.\n\n## Getting Started\n\nUsers arrive in different states. Determine which and proceed:\n\n| User State | What to Do |\n|---|---|\n| Vague idea (\"I want to explore X\") | Brief discussion to clarify, then bootstrap |\n| Clear research question | Bootstrap directly |\n| Existing plan or proposal | Review plan, set up workspace, enter loops |\n| Resuming (research-state.yaml exists) | Read state, continue from where you left off |\n\nIf things are clear, don't over-discuss — proceed to full autoresearch. Most users want you to just start researching.\n\n**Step 0 — before anything else**: Set up the agent continuity loop. See [Agent Continuity](#agent-continuity-mandatory--set-up-first). This is MANDATORY. Without it, the research stops after one cycle.\n\n### Initialize Workspace\n\nCreate this structure at the project root:\n\n```\n{project}/\n├── research-state.yaml       # Central state tracking\n├── research-log.md           # Decision timeline\n├── findings.md               # Evolvin"
+    },
+    {
+      "path": "other/133-java-testing-acceptance-tests/SKILL.md",
+      "name": "133-java-testing-acceptance-tests",
+      "current_category": "other",
+      "llm_category": "testing",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is about implementing acceptance tests from Gherkin feature files using RestAssured, Testcontainers, and WireMock. Acceptance testing is a subset of testing activities.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "842be9758b456752819b8d7e9cab50963f3d9accaee6acd6b9d62fb6241f3330",
+      "metadata_sha256": "f71581035796a5eaa94d20e66fae4ecd6cd212b87755f8314ea1fa60fc1ace14",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when you need to implement acceptance tests from a Gherkin .feature file for framework-agnostic Java (no Spring Boot, Quarkus, Micronaut) — finding @acceptance scenarios, happy path with RestAssured, Testcontainers for DB/Kafka, WireMock for external REST. Requires .feature file in context. This should trigger for requests such as Review Java code for acceptance tests; Apply best practices for acceptance tests in Java code. Part of cursor-rules-java project",
+      "content_excerpt": "---\nname: 133-java-testing-acceptance-tests\ndescription: Use when you need to implement acceptance tests from a Gherkin .feature file for framework-agnostic Java (no Spring Boot, Quarkus, Micronaut) — finding @acceptance scenarios, happy path with RestAssured, Testcontainers for DB/Kafka, WireMock for external REST. Requires .feature file in context. This should trigger for requests such as Review Java code for acceptance tests; Apply best practices for acceptance tests in Java code. Part of cursor-rules-java project\nlicense: Apache-2.0\nmetadata:\n  author: Juan Antonio Breña Moral\n  version: 0.15.0-SNAPSHOT\n---\n# Java acceptance tests from Gherkin\n\nImplement acceptance tests from Gherkin feature files. Given a .feature file in context, find @acceptance-tagged scenarios and implement happy-path tests with RestAssured, Testcontainers, and WireMock.\n\n**What is covered in this Skill?**\n\n- Parse Gherkin .feature files to find scenarios tagged @acceptance or @acceptance-tests\n- Implement happy-path acceptance tests (one test per scenario)\n- RestAssured for REST API testing (given/when/then, status codes, JSON body assertions)\n- Testcontainers for databases (PostgreSQL, etc.) and Kafka\n- WireMock for stubbing external REST APIs\n- BaseAcceptanceTest base class with @BeforeAll coordinate propagation via System.setProperty\n- Given-When-Then structure mapping Gherkin steps to setup, request, and assertions\n- Maven dependencies: rest-assured, testcontainers, wiremock-standalone\n\n**Preconditions:** (1) The Gherkin .feature file must be in context. (2) The project must NOT use Spring Boot, Quarkus, or Micronaut — for those frameworks, use @323-frameworks-spring-boot-testing-acceptance-tests or framework-specific rules.\n\n**Scope:** Implements only happy-path scenarios. Use the reference for detailed examples and constraints.\n\n## Constraints\n\nBefore applying any acceptance test changes, ensure the Gherkin .feature file is in context and the project compiles. If compilation fails or the feature file is missing, stop immediately.\n\n- **PRECONDITION**: The Gherkin .feature file MUST be in context; the project MUST NOT use Spring Boot, Quarkus, or Micronaut\n- **MANDATORY**: Run `./mvnw compile` or `mvn compile` before applying any change\n- **SAFETY**: If compilation fails, stop immediately and do not proceed\n- **VERIFY**: Run `./mvnw clean verify` or `mvn clean verify` after applying improvements\n- **BEFORE APPLYING**: Read the reference for detailed examples, good/bad pattern"
+    },
+    {
+      "path": "other/144-java-data-oriented-programming/SKILL.md",
+      "name": "144-java-data-oriented-programming",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill focuses on Java data-oriented programming best practices, including code structure, refactoring, and software development patterns.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "abd4febb8347dc6a1b8e5861748259b7acc4f19969a154d3d7c0a0cd7e4ee97d",
+      "metadata_sha256": "04aeb2f8b6a1575ed8517fdf2b086be5cecb666622bd07b8a62802d342e757f7",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when you need to apply data-oriented programming best practices in Java — including separating code (behavior) from data structures using records, designing immutable data with pure transformation functions, keeping data flat and denormalized with ID-based references, starting with generic data structures converting to specific types when needed, ensuring data integrity through pure validation functions, and creating flexible generic data access layers. This should trigger for requests such as Improve the code with Data-Oriented Programming; Apply Data-Oriented Programming; Refactor the code with Data-Oriented Programming; Apply Data-Oriented Programming; Refactor the code with Data-Oriented Programming. Part of cursor-rules-java project",
+      "content_excerpt": "---\nname: 144-java-data-oriented-programming\ndescription: Use when you need to apply data-oriented programming best practices in Java — including separating code (behavior) from data structures using records, designing immutable data with pure transformation functions, keeping data flat and denormalized with ID-based references, starting with generic data structures converting to specific types when needed, ensuring data integrity through pure validation functions, and creating flexible generic data access layers. This should trigger for requests such as Improve the code with Data-Oriented Programming; Apply Data-Oriented Programming; Refactor the code with Data-Oriented Programming; Apply Data-Oriented Programming; Refactor the code with Data-Oriented Programming. Part of cursor-rules-java project\nlicense: Apache-2.0\nmetadata:\n  author: Juan Antonio Breña Moral\n  version: 0.15.0-SNAPSHOT\n---\n# Java Data-Oriented Programming Best Practices\n\nApply data-oriented programming in Java: separate data from behavior with records, use immutable data structures, pure functions for transformations, flat denormalized structures with ID references, generic-to-specific type conversion when needed, pure validation functions, and flexible generic data access layers. All transformations should be explicit, traceable, and composed of clear pure functional steps.\n\n**What is covered in this Skill?**\n\n- Separation of concerns: data structures (records, POJOs) vs behavior (utility classes, services)\n- Immutability: records, final fields, transformations produce new instances\n- Pure data transformations: functions depending only on inputs, no side effects\n- Flat and denormalized data: ID references instead of deep nesting\n- Generic until specific: Map&lt;String,Object&gt; for dynamic data, convert to records when processing\n- Data integrity: pure validation functions returning validation results\n- Flexible generic data access: generic CRUD interfaces, interchangeable implementations\n\n**Scope:** The reference is organized by examples (good/bad code patterns) for each core area. Apply recommendations based on applicable examples.\n\n## Constraints\n\nBefore applying any data-oriented programming recommendations, ensure the project compiles. Compilation failure is a blocking condition. After applying improvements, run full verification.\n\n- **MANDATORY**: Run `./mvnw compile` or `mvn compile` before applying any change\n- **SAFETY**: If compilation fails, stop immediately — do not procee"
+    },
+    {
+      "path": "other/03-financial-skill/SKILL.md",
+      "name": "financial-analyzing",
+      "current_category": "other",
+      "llm_category": "analysis",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is focused on analyzing financial data, calculating financial ratios, and generating analysis reports, which falls under analytical workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "df84a5f19256138894ece3a6013de5c09fa5cd132fb597bbf7e6d8769dd1e7b1",
+      "metadata_sha256": "7b7bfc7e31e2b79f412eae908754e4a598c72c804fb914981998a446e0d06792",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Analyze financial data, calculate financial ratios, and generate analysis reports. Use when the user asks about revenue, costs, profits, margins, ROI, financial metrics, or needs financial analysis of a company or project.",
+      "content_excerpt": "---\nname: financial-analyzing\ndescription: Analyze financial data, calculate financial ratios, and generate analysis reports. Use when the user asks about revenue, costs, profits, margins, ROI, financial metrics, or needs financial analysis of a company or project.\nallowed-tools:\n  - Read\n  - Grep\n  - Glob\n  - Bash(python:*)\n---\n\n# Financial Analysis Skill\n\nYou are a financial analyst. Help users analyze financial data, calculate key metrics, and generate insightful reports.\n\n## Quick Reference\n\n| Analysis Type | When to Use | Reference |\n|--------------|-------------|-----------|\n| Revenue Analysis | 收入、营收、销售额相关 | `reference/revenue.md` |\n| Cost Analysis | 成本、费用、支出相关 | `reference/costs.md` |\n| Profitability | 利润、毛利率、净利率相关 | `reference/profitability.md` |\n\n## Analysis Process\n\n### Step 1: Understand the Question\n- What financial aspect is the user asking about?\n- What data do they have available?\n- What format do they need the answer in?\n\n### Step 2: Gather Data\n- Read from `data/sample_financials.json` for the demo dataset (TechVision AI 2025 Q1-Q4)\n- Or request financial data from user\n- Or read from user-provided files/sources\n\n### Step 3: Calculate Metrics\nFor specific formulas and calculations:\n- Revenue metrics → see `reference/revenue.md`\n- Cost metrics → see `reference/costs.md`\n- Profitability metrics → see `reference/profitability.md`\n\nTo run calculations programmatically:\n```bash\npython scripts/calculate_ratios.py <data_file>\n```\n\n### Step 4: Generate Report\nUse the template in `templates/analysis_report.md` for structured output.\n\n## Output Guidelines\n\n1. Always show your calculations\n2. Explain what each metric means\n3. Provide context (industry benchmarks when available)\n4. Give actionable recommendations\n\n## Important Notes\n\n- Never make up financial data\n- Ask for clarification if data is incomplete\n- Flag any unusual numbers that might be errors\n"
+    },
+    {
+      "path": "other/2-identify-ioku24-autorankr-2/SKILL.md",
+      "name": "identify",
+      "current_category": "other",
+      "llm_category": "analysis",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is explicitly designed to identify friction points, bottlenecks, bugs, and technical debt through systematic detection across code health, performance, UX, architecture, operations, and security categories.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "51b5b2b4a9e6a42cf025185452a181d396985ac6316b28442b341ae24a686e82",
+      "metadata_sha256": "2f75ed872a37ea8f8aea815932ad15beb7bd581800004144da5eeb73c69d8502",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Identify friction points, bottlenecks, bugs, and technical debt. Use for audits, debugging sessions, when something feels wrong, or before major work to surface hidden issues. This is the second system in the 5-system framework.",
+      "content_excerpt": "---\nname: identify\ndescription: Identify friction points, bottlenecks, bugs, and technical debt. Use for audits, debugging sessions, when something feels wrong, or before major work to surface hidden issues. This is the second system in the 5-system framework.\n---\n\n# Identity System (Detection)\n\n> **Purpose:** Surface problems, friction, and bottlenecks before they compound.\n> **When to trigger:** Audits, debugging, pre-work analysis, or when something feels off.\n\n## Detection Categories\n\n### 1. Code Health\n\nRun these checks:\n\n- Type errors: `npx tsc --noEmit`\n- Build errors: `npm run build`\n- Lint issues: Check for warnings\n- Unused imports/variables\n- Circular dependencies\n\n### 2. Performance Issues\n\nLook for:\n\n- Slow database queries (check Supabase logs)\n- Large bundle sizes\n- Unnecessary re-renders\n- N+1 query patterns\n- Missing indexes\n\n### 3. User Experience Friction\n\nIdentify:\n\n- Error states not handled gracefully\n- Loading states missing\n- Confusing user flows\n- Edge cases not covered\n- Poor error messages\n\n### 4. Architecture Debt\n\nSpot:\n\n- Duplicated logic across files\n- Inconsistent patterns\n- Missing or premature abstractions\n- Tightly coupled components\n- God components/functions\n\n### 5. Operational Gaps\n\nFind:\n\n- Missing error tracking/logging\n- No observability into failures\n- Manual processes that should be automated\n- Missing environment variables\n- Insecure configurations\n\n### 6. Security Concerns\n\nCheck for:\n\n- Exposed secrets or credentials\n- Missing input validation\n- SQL injection vectors\n- XSS vulnerabilities\n- Missing authentication/authorization\n\n## Detection Process\n\n### Quick Scan (5 min)\n\n```bash\n# Run type check\nnpx tsc --noEmit\n\n# Check for build errors\nnpm run build\n\n# Look for TODOs and FIXMEs\ngrep -r \"TODO\\|FIXME\\|HACK\\|XXX\" src/\n```\n\n### Deep Scan (30 min)\n\n1. Review recent git changes for introduced issues\n2. Check Supabase logs for errors\n3. Review component complexity\n4. Check for missing error boundaries\n5. Audit API route error handling\n\n## Output Requirements\n\nLog all findings to `.claude/issues-registry.md`:\n\n```markdown\n# Issues Registry\n\n## Active Issues\n\n| ID    | Category    | Severity | Description                | Location                | Detected   | Status |\n| ----- | ----------- | -------- | -------------------------- | ----------------------- | ---------- | ------ |\n| I-001 | Code Health | High     | Type error in auth flow    | src/lib/auth.ts:45      | 2026-01-01 | Open   |\n| I-002 | UX Friction | Med"
+    },
+    {
+      "path": "other/110-java-maven-best-practices-jabrena-cursor-rules-java-2/SKILL.md",
+      "name": "110-java-maven-best-practices",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Same Maven pom.xml best practices skill for Java development—dependency management, plugin configuration, build structure.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "db871fd784064316fcd171eb07fbbb7df8ea023447f35d8f78a6bd2232c08945",
+      "metadata_sha256": "074e489f36b35954b8a01da9a31dda6a81871e3bf7cf005092b0c149235ba068",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when you need to review, improve, or troubleshoot a Maven pom.xml file — including dependency management with BOMs, plugin configuration, version centralization, multi-module project structure, build profiles, or any situation where you want to align your Maven setup with industry best practices. Part of the skills-for-java project",
+      "content_excerpt": "---\nname: 110-java-maven-best-practices\ndescription: Use when you need to review, improve, or troubleshoot a Maven pom.xml file — including dependency management with BOMs, plugin configuration, version centralization, multi-module project structure, build profiles, or any situation where you want to align your Maven setup with industry best practices. Part of the skills-for-java project\nmetadata:\n  author: Juan Antonio Breña Moral\n  version: 0.12.0-SNAPSHOT\n---\n# Maven Best Practices\n\nImprove Maven POM configuration using industry-standard best practices.\n\n**Core areas:** Dependency management via `<dependencyManagement>` and BOMs, standard directory layout (`src/main/java`, `src/test/java`), centralized plugin management, build profiles for environment-specific settings, readable POM structure with version properties, explicit repository declaration, version centralization, multi-module project structure with proper inheritance, and cross-module version consistency.\n\n**Prerequisites:** Run `./mvnw validate` or `mvn validate` before applying recommendations. If validation fails, **stop** and ask the user to fix issues—do not proceed until resolved.\n\n**Multi-module scope:** After reading the root `pom.xml`, check for a `<modules>` section. If present, read **every** child module's `pom.xml` before making any recommendations. Check each child for hardcoded versions that duplicate parent `<dependencyManagement>`, redundant `<pluginManagement>` blocks, properties that should be centralized, and version drift across sibling modules.\n\n**Before applying changes:** Read the reference for detailed examples, good/bad patterns, and constraints.\n\n## Reference\n\nFor detailed guidance, examples, and constraints, see [references/110-java-maven-best-practices.md](references/110-java-maven-best-practices.md).\n"
+    },
+    {
+      "path": "other/23-understand-ask-ai-150/SKILL.md",
+      "name": "23-understand-ask-ai-150",
+      "current_category": "other",
+      "llm_category": "ai-llm",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is explicitly about consulting external AI models, building prompts using a structured formula (Prompt150), and validating AI responses. This is a core AI/LLM interaction skill focused on prompt engineering and AI model consultation.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "c333bcfb738bd06db11a5bbabc7d46177e3bda5d309718d088393a38d18d2550",
+      "metadata_sha256": "9b02e2dd2a733221d258fea2a9bdfcd1fa3818cfb41bc92e36ac21343fa75ed4",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "[23] UNDERSTAND. Consult external AI models when internal sources are exhausted. Build quality prompts using Prompt150 formula (Context + Query + Method + Style). Use when Loop150 exhausts internal sources, need real-world precedents, confidence <75%, or require reasoning from specialized AI models.",
+      "content_excerpt": "---\nname: 23-understand-ask-ai-150\ndescription: \"[23] UNDERSTAND. Consult external AI models when internal sources are exhausted. Build quality prompts using Prompt150 formula (Context + Query + Method + Style). Use when Loop150 exhausts internal sources, need real-world precedents, confidence <75%, or require reasoning from specialized AI models.\"\n---\n\n# Understand-Ask-AI 150 Protocol\n\n**Core Principle:** When internal knowledge isn't enough, consult external AI expertise. Build quality prompts that get quality answers. Validate what comes back.\n\n## What This Skill Does\n\nWhen you invoke this skill, you're asking AI to:\n- **Verify internal exhaustion** — Confirm internal sources are depleted\n- **Build quality prompt** — Use Prompt150 formula\n- **Target the right model** — Choose appropriate external AI\n- **Send and receive** — Get external AI response\n- **Validate response** — Check credibility and integrate\n\n## The Prompt150 Formula\n\n```\nPROMPT150 = Context150 + Query + Method + Style\n\n┌─────────────────────────────────────────────────────┐\n│ CONTEXT150 (100% core facts + 50% supporting)       │\n│ ├── Core situation and background                   │\n│ ├── Key data points and constraints                 │\n│ ├── Actions taken so far                            │\n│ └── What we DON'T know (explicit unknowns)          │\n├─────────────────────────────────────────────────────┤\n│ QUERY (specific, answerable question)               │\n│ ├── Single, focused question                        │\n│ ├── Answerable with available information           │\n│ └── NOT vague (\"analyze this\" ❌)                   │\n├─────────────────────────────────────────────────────┤\n│ METHOD (how to approach)                            │\n│ ├── \"Verify claims against real data\"               │\n│ ├── \"Provide confidence levels (%)\"                 │\n│ ├── \"Cite specific precedents with sources\"         │\n│ └── \"Be conservative if data insufficient\"          │\n├─────────────────────────────────────────────────────┤\n│ STYLE (output format)                               │\n│ ├── Structured response (sections, tables)          │\n│ ├── Confidence % for each claim                     │\n│ ├── Facts vs assumptions clearly separated          │\n│ └── Actionable recommendations if applicable        │\n└─────────────────────────────────────────────────────┘\n```\n\n## When to Use This Skill\n\n**TRIGGER CONDITIONS:**\n1. **Loop150 exhausted internally** — All workspace files searched, no data\n2. **Need real-world pr"
+    },
+    {
+      "path": "other/4-lead-research-assistant-breverdbidder-life-os-2/SKILL.md",
+      "name": "lead-research-assistant",
+      "current_category": "other",
+      "llm_category": "business",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is explicitly about researching and identifying potential customers, leads, and business opportunities. It covers sales outreach, lead qualification, and market research - core business activities.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "efde65222aa26bae224994730d4fde6e48f28d505e000cb9e338063c0ddc89b5",
+      "metadata_sha256": "cfee0678bf9021598f0aadb06a5a8bf4683d4c7ff37365975640966c5026e913",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Researches and identifies potential customers, leads, and business opportunities for your product or service. Analyzes your offering, finds relevant companies and decision makers, provides contact information, and suggests outreach strategies. Use when looking for leads, researching target customers, identifying decision makers, or planning sales outreach.",
+      "content_excerpt": "---\nname: lead-research-assistant\ndescription: Researches and identifies potential customers, leads, and business opportunities for your product or service. Analyzes your offering, finds relevant companies and decision makers, provides contact information, and suggests outreach strategies. Use when looking for leads, researching target customers, identifying decision makers, or planning sales outreach.\n---\n\n# Lead Research Assistant\n\nThis skill helps find and qualify potential customers for your product or service through systematic research and analysis.\n\n## When to Use This Skill\n\nUse this skill when you need to:\n- Find companies that would benefit from your product\n- Identify decision makers and their contact information\n- Research specific market segments or industries\n- Build targeted prospect lists\n- Plan outreach strategies\n- Qualify leads based on criteria\n- Research competitor customers\n- Find early adopters or beta users\n\n## Research Workflow\n\n### 1. Understand the Product\n\nFirst, analyze what you're selling:\n- Read product description/repository\n- Understand core value proposition\n- Identify key features and benefits\n- Determine ideal customer profile (ICP)\n- Note technical requirements or integrations\n\n### 2. Define Target Criteria\n\nEstablish search parameters:\n- **Industry**: Which sectors benefit most?\n- **Company size**: Startups, SMB, Enterprise?\n- **Geography**: Location requirements?\n- **Technographics**: What tech stack do they use?\n- **Budget indicators**: Funding, revenue, growth stage?\n- **Pain points**: What problems do they face?\n\n### 3. Research Strategy\n\nUse multiple research approaches:\n\n**Company Discovery**:\n- Industry-specific searches\n- Tech stack searches (e.g., \"companies using Cursor AI\")\n- Recent funding announcements (Crunchbase, TechCrunch)\n- LinkedIn company searches\n- Y Combinator batches\n- Product Hunt launches\n- Conference attendee lists\n- Industry associations\n\n**Decision Maker Identification**:\n- LinkedIn profile searches\n- Company org charts\n- Apollo.io or similar databases\n- GitHub contributor searches (for dev tools)\n- Twitter/X for thought leaders\n- Industry forum moderators\n\n### 4. Lead Qualification Scoring\n\nScore each lead on:\n- **Fit Score** (1-10): How well do they match ICP?\n- **Intent Score** (1-10): How likely are they to buy?\n- **Priority** (High/Medium/Low): Overall ranking\n\n**Fit Criteria**:\n- Uses complementary tools (+2)\n- In target industry (+2)\n- Right company size (+2)\n- Geographic fit (+1)\n- R"
+    },
+    {
+      "path": "other/4-execute-ioku24-autorankr/SKILL.md",
+      "name": "execute",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Duplicate of skill 2 - same execution system for implementing code with quality gates and development workflow.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "fb30dd549c58b681f938428d32d74c697bc9d6efecf831896356d2ef6546b3a1",
+      "metadata_sha256": "60605ea19dcfe8558c7902df936717dec94e8c5d1a2625fee8fae554dda67947",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Execute tasks with velocity and quality. Use when ready to implement after clarity and prioritization are complete. This is the fourth system in the 5-system framework.",
+      "content_excerpt": "---\nname: execute\ndescription: Execute tasks with velocity and quality. Use when ready to implement after clarity and prioritization are complete. This is the fourth system in the 5-system framework.\n---\n\n# Execution System\n\n> **Purpose:** Do the work at high quality with velocity.\n> **When to trigger:** After clarity is established and priorities are set.\n\n## Pre-Flight Checklist\n\nBefore writing any code, verify:\n\n- [ ] **Clarity exists** - active-context.md is current with clear success criteria\n- [ ] **Task is prioritized** - This is the right thing to work on now\n- [ ] **Success criteria defined** - I know exactly what \"done\" looks like\n- [ ] **Boundaries set** - I know what NOT to do\n\nIf any are missing → Return to appropriate system.\n\n## Execution Protocol\n\n### 1. Track Progress Visibly\n\nUse TodoWrite at the start:\n```\n1. [ ] Step one of implementation\n2. [ ] Step two of implementation\n3. [ ] Validation step\n```\n\nUpdate status as you go. The user should always know where you are.\n\n### 2. Make the Smallest Viable Change\n\n- Don't over-engineer\n- Don't add features that weren't requested\n- Don't refactor unrelated code\n- Don't add \"nice to haves\"\n- Solve the exact problem, nothing more\n\n### 3. Validate Continuously\n\nAfter every significant change:\n```bash\nnpx tsc --noEmit  # Catch type errors immediately\n```\n\nDon't let errors accumulate. Fix as you go.\n\n### 4. One Thing at a Time\n\n- Complete one task before starting another\n- Don't context-switch mid-implementation\n- If blocked, acknowledge it rather than switching\n- Mark complete immediately when done\n\n### 5. Parallel When Independent\n\nUse subagents (Task tool) for truly independent work:\n- Research while implementing\n- Multiple unrelated fixes\n- Exploration while writing\n\nBut NOT for dependent steps - those must be sequential.\n\n## Quality Gates\n\nBefore marking any task complete:\n\n### Code Quality\n- [ ] Types pass (`npx tsc --noEmit`)\n- [ ] No lint errors\n- [ ] Follows existing patterns in codebase\n- [ ] No unintended side effects\n\n### Functionality\n- [ ] Works for the happy path\n- [ ] Edge cases considered\n- [ ] Error states handled\n- [ ] Loading states present (if UI)\n\n### Integration\n- [ ] Doesn't break existing functionality\n- [ ] Works with existing data\n- [ ] API contracts maintained\n\n### Documentation (if applicable)\n- [ ] Complex logic commented\n- [ ] API changes noted in SOURCE_OF_TRUTH.md\n- [ ] Breaking changes flagged\n\n## Velocity Principles\n\n**Do:**\n- Edit existing files over creating new o"
+    },
+    {
+      "path": "other/131-java-testing-unit-testing-jabrena-cursor-rules-java/SKILL.md",
+      "name": "131-java-testing-unit-testing",
+      "current_category": "other",
+      "llm_category": "testing",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly about Java unit testing, covering JUnit 5, AssertJ, Mockito, test structure, and testing best practices. The description and content focus on reviewing, improving, and writing unit tests, which directly aligns with the 'testing' category.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "0ad1d4f8c05fa1d97ae505315a46aa61358cc729f8a35897a89e2e29ee0a2b64",
+      "metadata_sha256": "c5c548df4926e58349b8c62e69eb3f50a4304f830da55bf9c978bc73d15e1ccd",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when you need to review, improve, or write Java unit tests — including migrating from JUnit 4 to JUnit 5, adopting AssertJ for fluent assertions, structuring tests with Given-When-Then, ensuring test independence, applying parameterized tests, mocking dependencies with Mockito, verifying boundary conditions (RIGHT-BICEP, CORRECT, A-TRIP), leveraging JSpecify null-safety annotations, or eliminating testing anti-patterns such as reflection-based tests or shared mutable state. Part of the skills-for-java project",
+      "content_excerpt": "---\nname: 131-java-testing-unit-testing\ndescription: Use when you need to review, improve, or write Java unit tests — including migrating from JUnit 4 to JUnit 5, adopting AssertJ for fluent assertions, structuring tests with Given-When-Then, ensuring test independence, applying parameterized tests, mocking dependencies with Mockito, verifying boundary conditions (RIGHT-BICEP, CORRECT, A-TRIP), leveraging JSpecify null-safety annotations, or eliminating testing anti-patterns such as reflection-based tests or shared mutable state. Part of the skills-for-java project\nmetadata:\n  author: Juan Antonio Breña Moral\n  version: 0.12.0-SNAPSHOT\n---\n# Java Unit testing guidelines\n\nReview and improve Java unit tests using modern JUnit 5, AssertJ, and Mockito best practices.\n\n**Core areas:** JUnit 5 annotations (`@Test`, `@BeforeEach`, `@AfterEach`, `@DisplayName`, `@Nested`, `@ParameterizedTest`), AssertJ fluent assertions (`assertThat`, `assertThatThrownBy`), Given-When-Then test structure, descriptive test naming, single-responsibility tests, test independence and isolated state, parameterized tests with `@ValueSource`/`@CsvSource`/`@MethodSource`, Mockito dependency mocking (`@Mock`, `@InjectMocks`, `MockitoExtension`), code coverage guidance (JaCoCo), package-private test visibility, code-splitting strategies (small methods, helper functions), testing anti-patterns (reflection, shared state, hard-coded values, testing implementation details), state management (immutable objects, `@BeforeEach` reset), error handling (`assertThatThrownBy`, exception messages), JSpecify null-safety (`@NullMarked`, `@Nullable`), RIGHT-BICEP coverage principles, A-TRIP test quality characteristics, and CORRECT boundary condition verification.\n\n**Prerequisites:** Run `./mvnw compile` or `mvn compile` before applying any change. If compilation fails, **stop immediately** and do not proceed — compilation failure is a blocking condition.\n\n**Multi-step scope:** Step 1 validates the project compiles. Step 2 analyzes existing tests and categorizes issues by impact (CRITICAL, MAINTAINABILITY, PERFORMANCE, COVERAGE, RELIABILITY). Step 3 migrates to JUnit 5 with modern annotations. Step 4 adopts AssertJ for expressive assertions. Step 5 restructures tests using Given-When-Then with descriptive naming. Step 6 ensures test independence by eliminating shared state and order dependencies. Step 7 adds parameterized tests and boundary-condition coverage. Step 8 integrates Mockito mocking for external"
+    },
+    {
+      "path": "other/014-agile-user-story/SKILL.md",
+      "name": "014-agile-user-story",
+      "current_category": "other",
+      "llm_category": "product",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill guides creation of agile user stories and Gherkin feature files, which are core product management artifacts for defining requirements and acceptance criteria.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "2e14129a6fda80be441d54299252e84a6d77f8c4e396da8dd1210d28784e3b27",
+      "metadata_sha256": "60136a986a1251fa4f87f096ff5ac88d5095aa4564f3269e4a777768dc287664",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Guides the creation of agile user stories and Gherkin feature files. Use when the user wants to create a user story, write acceptance criteria, define Gherkin scenarios, or author BDD feature files. This should trigger for requests such as Create a user story; Write a user story; I need to write a user story. Part of cursor-rules-java project",
+      "content_excerpt": "---\nname: 014-agile-user-story\ndescription: Guides the creation of agile user stories and Gherkin feature files. Use when the user wants to create a user story, write acceptance criteria, define Gherkin scenarios, or author BDD feature files. This should trigger for requests such as Create a user story; Write a user story; I need to write a user story. Part of cursor-rules-java project\nlicense: Apache-2.0\nmetadata:\n  author: Juan Antonio Breña Moral\n  version: 0.15.0-SNAPSHOT\n---\n# Create Agile User Stories and Gherkin Feature Files\n\nGuide the agent to ask targeted questions to gather details for a user story and its Gherkin acceptance criteria, then generate a Markdown user story and a separate Gherkin `.feature` file. **This is an interactive SKILL**.\n\n**What is covered in this Skill?**\n\n- User story core details: title, persona, goal, benefit\n- Gherkin feature file: Feature name, background steps, scenarios\n- Acceptance criteria: Given / When / Then with data examples\n- File naming and linking between user story and feature file\n- INVEST quality validation before finalization (Independent, Negotiable, Valuable, Estimable, Small, Testable)\n\n## Constraints\n\nBefore generating artifacts, gather all required information through structured questions. Use exact wording from the template and wait for user responses.\n\n- **MANDATORY**: Ask questions from the template one-by-one in strict order before generating any artifacts\n- **MUST**: Read the reference template fresh and use exact wording—do not use cached questions\n- **MUST**: Wait for user response after each question or block before proceeding\n- **MUST**: Repeat scenario questions for each additional scenario when user indicates more scenarios\n- **MUST**: Validate the final user story against INVEST and present a pass/fail checkpoint for each criterion before finalizing\n\n## When to use this skill\n\n- Create a user story\n- Write a user story\n- I need to write a user story\n\n## Workflow\n\n1. **Gather story and scenario details**\n\nRun the interactive questionnaire in strict order and wait for user responses before moving to the next question block.\n\nStep constraints:\n- Use the exact wording from the referenced template\n- Repeat scenario questions for each additional scenario requested by the user\n\n2. **Generate the two artifacts**\n\nCreate the user story Markdown and Gherkin `.feature` content using only gathered inputs, including links between files and scenario tags.\n\n3. **Validate quality before finalizing**\n\nC"
+    },
+    {
+      "path": "other/314-frameworks-spring-kafka/SKILL.md",
+      "name": "314-frameworks-spring-kafka",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill is about designing/implementing Kafka messaging in Spring Boot, which is a software development workflow involving coding, frameworks, and messaging systems.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "6bcf7924ad95bb45d0788189b74c6b885529bb3960d7bcae52585cc876f77d4f",
+      "metadata_sha256": "448fee1fa7f8a4bf3c6aaa7a42ca6a4cfaa831954ffe354f265a71d4c0211c01",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when you need to design or implement Kafka messaging in Spring Boot — including topic design, producer/consumer implementation with Spring for Apache Kafka, retries and dead-letter topics, idempotency, and error handling. This should trigger for requests such as Add Kafka in Spring Boot; Review Spring Kafka consumers; Improve retries and DLT in Spring Kafka. Part of cursor-rules-java project",
+      "content_excerpt": "---\nname: 314-frameworks-spring-kafka\ndescription: Use when you need to design or implement Kafka messaging in Spring Boot — including topic design, producer/consumer implementation with Spring for Apache Kafka, retries and dead-letter topics, idempotency, and error handling. This should trigger for requests such as Add Kafka in Spring Boot; Review Spring Kafka consumers; Improve retries and DLT in Spring Kafka. Part of cursor-rules-java project\nlicense: Apache-2.0\nmetadata:\n  author: Juan Antonio Breña Moral\n  version: 0.15.0-SNAPSHOT\n---\n# Spring Boot — Kafka messaging\n\nApply Spring Kafka guidance with concrete examples for design, implementation, and error handling.\n\n## Constraints\n\nCompile before messaging refactors; verify after changes.\n\n- **MANDATORY**: Run `./mvnw compile` or `mvn compile` before applying any change\n- **SAFETY**: If compilation fails, stop immediately\n- **VERIFY**: Run `./mvnw clean verify` or `mvn clean verify` after applying improvements\n- **BEFORE APPLYING**: Read the reference for detailed rules and examples\n\n## When to use this skill\n\n- Add Kafka in Spring Boot\n- Review Spring Kafka consumers/producers\n- Improve retries, dead-letter topics, or idempotency in Spring Kafka\n\n## Workflow\n\n1. **Read reference and assess project context**\n\nRead `references/314-frameworks-spring-kafka.md` and inspect current messaging setup before proposing changes.\n\n2. **Gather scope and decide target improvements**\n\nIdentify reliability and throughput goals and define the minimum safe set of changes.\n\n3. **Apply framework-aligned changes**\n\nImplement/refactor Spring Kafka configuration, producer/consumer logic, and failure handling.\n\n4. **Run verification and report results**\n\nExecute build/tests and summarize what changed, what was verified, and follow-up actions.\n\n## Reference\n\nFor detailed guidance, examples, and constraints, see [references/314-frameworks-spring-kafka.md](references/314-frameworks-spring-kafka.md).\n"
+    },
+    {
+      "path": "other/10-andruia-skill-smith/SKILL.md",
+      "name": "10-andruia-skill-smith",
+      "current_category": "other",
+      "llm_category": "skills",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is explicitly about designing, writing, and deploying new skills within a repository, following a specific standard. This directly matches the 'skills' category.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "b63cf2a31196aa683542e571d6f13dc64cd9db168e3b99897ff72697f012bf35",
+      "metadata_sha256": "68e2f12df70211ffb8f5e5e0242a105a680077a8e5e0bf4cca595a4f72701d5b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Ingeniero de Sistemas de Andru.ia. Diseña, redacta y despliega nuevas habilidades (skills) dentro del repositorio siguiendo el Estándar de Diamante.",
+      "content_excerpt": "---\nid: 10-andruia-skill-smith\nname: 10-andruia-skill-smith\ndescription: \"Ingeniero de Sistemas de Andru.ia. Diseña, redacta y despliega nuevas habilidades (skills) dentro del repositorio siguiendo el Estándar de Diamante.\"\ncategory: andruia\nrisk: safe\nsource: personal\ndate_added: \"2026-02-25\"\n---\n\n# 🔨 Andru.ia Skill-Smith (The Forge)\n\n## When to Use\nEsta habilidad es aplicable para ejecutar el flujo de trabajo o las acciones descritas en la descripción general.\n\n## 📝 Descripción\nSoy el Ingeniero de Sistemas de Andru.ia. Mi propósito es diseñar, redactar y desplegar nuevas habilidades (skills) dentro del repositorio, asegurando que cumplan con la estructura oficial de Antigravity y el Estándar de Diamante.\n\n## 📋 Instrucciones Generales\n- **Idioma Mandatorio:** Todas las habilidades creadas deben tener sus instrucciones y documentación en **ESPAÑOL**.\n- **Estructura Formal:** Debo seguir la anatomía de carpeta -> README.md -> Registro.\n- **Calidad Senior:** Las skills generadas no deben ser genéricas; deben tener un rol experto definido.\n\n## 🛠️ Flujo de Trabajo (Protocolo de Forja)\n\n### FASE 1: ADN de la Skill\nSolicitar al usuario los 3 pilares de la nueva habilidad:\n1. **Nombre Técnico:** (Ej: @cyber-sec, @data-visualizer).\n2. **Rol Experto:** (¿Quién es esta IA? Ej: \"Un experto en auditoría de seguridad\").\n3. **Outputs Clave:** (¿Qué archivos o acciones específicas debe realizar?).\n\n### FASE 2: Materialización\nGenerar el código para los siguientes archivos:\n- **README.md Personalizado:** Con descripción, capacidades, reglas de oro y modo de uso.\n- **Snippet de Registro:** La línea de código lista para insertar en la tabla \"Full skill registry\".\n\n### FASE 3: Despliegue e Integración\n1. Crear la carpeta física en `D:\\...\\antigravity-awesome-skills\\skills\\`.\n2. Escribir el archivo README.md en dicha carpeta.\n3. Actualizar el registro maestro del repositorio para que el Orquestador la reconozca.\n\n## ⚠️ Reglas de Oro\n- **Prefijos Numéricos:** Asignar un número correlativo a la carpeta (ej. 11, 12, 13) para mantener el orden.\n- **Prompt Engineering:** Las instrucciones deben incluir técnicas de \"Few-shot\" o \"Chain of Thought\" para máxima precisión.\n\n## Limitations\n- Use this skill only when the task clearly matches the scope described above.\n- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.\n- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing."
+    },
+    {
+      "path": "other/01-dotnet-clean-architecture/SKILL.md",
+      "name": "dotnet-clean-architecture",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill scaffolds a complete .NET solution following Clean Architecture principles, which is a software development workflow involving project structure creation, dependency injection setup, and configuration.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "b7ea87e129c62976a84614aa6408834026705d1f5f1b3e0e30992ede630db50e",
+      "metadata_sha256": "009fc42c74c849eda459823e7c5e7a3aa0c6978e1e1c180e4c1d8c8828eaa496",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Scaffolds a complete .NET solution following Clean Architecture principles with proper layer separation (API, Application, Domain, Infrastructure). Creates project structure, dependency injection setup, and cross-cutting concerns configuration.",
+      "content_excerpt": "---\nname: dotnet-clean-architecture\ndescription: \"Scaffolds a complete .NET solution following Clean Architecture principles with proper layer separation (API, Application, Domain, Infrastructure). Creates project structure, dependency injection setup, and cross-cutting concerns configuration.\"\nversion: 1.0.0\nlanguage: C#\nframework: .NET 8+\ndependencies: MediatR, FluentValidation, Entity Framework Core, Dapper\n---\n\n# .NET Clean Architecture Project Scaffolder\n\n## Overview\n\nThis skill generates a complete .NET solution following Clean Architecture (also known as Onion Architecture or Hexagonal Architecture). The architecture enforces separation of concerns through distinct layers with unidirectional dependencies pointing inward.\n\n## Architecture Layers\n\n```\n┌─────────────────────────────────────────────────────────────┐\n│                        API Layer                            │\n│  Controllers, Middleware, Request/Response DTOs             │\n├─────────────────────────────────────────────────────────────┤\n│                   Infrastructure Layer                       │\n│  EF Core, Repositories, External Services, Authentication   │\n├─────────────────────────────────────────────────────────────┤\n│                    Application Layer                         │\n│  Commands, Queries, Handlers, Validators, DTOs              │\n├─────────────────────────────────────────────────────────────┤\n│                      Domain Layer                            │\n│  Entities, Value Objects, Domain Events, Interfaces         │\n└─────────────────────────────────────────────────────────────┘\n```\n\n**Dependency Rule**: Dependencies point inward. Domain has no dependencies. Application depends only on Domain. Infrastructure implements interfaces from Domain/Application.\n\n## Quick Reference\n\n| Task | Command/Action |\n|------|----------------|\n| Create solution | `dotnet new sln -n {SolutionName}` |\n| Create Domain project | `dotnet new classlib -n {name}.domain` |\n| Create Application project | `dotnet new classlib -n {name}.application` |\n| Create Infrastructure project | `dotnet new classlib -n {name}.infrastructure` |\n| Create API project | `dotnet new webapi -n {name}.api` |\n| Add project to solution | `dotnet sln add src/{project}/{project}.csproj` |\n| Add project reference | `dotnet add reference ../other/other.csproj` |\n\n---\n\n## Project Structure\n\n```\n{SolutionName}/\n├── src/\n│   ├── {name}.domain/\n│   │   ├── Abstractions/\n│   │   │   ├── Entity.cs\n│   │   │   ├── IDom"
+    },
+    {
+      "path": "other/144-java-data-oriented-programming-jabrena-cursor-rules-java/SKILL.md",
+      "name": "144-java-data-oriented-programming",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Similar to id 2, this skill is about Java data-oriented programming best practices and refactoring code.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "fa91fdf2c772d8a5ad612ee8e8de89f0fe4d847339e3fbc97bd0f47caeab109c",
+      "metadata_sha256": "74f0620769fffdf7082ab44d3d61df12a446893126f6b2205c06abc3d637e2e0",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when you need to apply data-oriented programming best practices in Java — including separating code (behavior) from data structures using records, designing immutable data with pure transformation functions, keeping data flat and denormalized with ID-based references, starting with generic data structures converting to specific types when needed, ensuring data integrity through pure validation functions, and creating flexible generic data access layers. Part of the skills-for-java project",
+      "content_excerpt": "---\nname: 144-java-data-oriented-programming\ndescription: Use when you need to apply data-oriented programming best practices in Java — including separating code (behavior) from data structures using records, designing immutable data with pure transformation functions, keeping data flat and denormalized with ID-based references, starting with generic data structures converting to specific types when needed, ensuring data integrity through pure validation functions, and creating flexible generic data access layers. Part of the skills-for-java project\nmetadata:\n  author: Juan Antonio Breña Moral\n  version: 0.12.0-SNAPSHOT\n---\n# Java Data-Oriented Programming Best Practices\n\nIdentify and apply data-oriented programming best practices in Java to improve code clarity, maintainability, and predictability by strictly separating data structures from behavior and ensuring all data transformations are explicit, pure, and traceable.\n\n**Core areas:** Records for immutable data carriers over mutable POJOs, data-behavior separation with pure static utility classes holding operations, pure functions for data transformation that depend only on inputs and produce no side effects, flat denormalized data structures with ID-based references over deep nesting, generic `Map<String, Object>` representations for dynamic schemas converted to specific types when needed, `Optional<T>` and custom result types in validation functions instead of throwing exceptions, generic `DataStore<ID, T>` interfaces for flexible data access layers, composable `Function<A, B>` pipelines using `andThen` for explicit and traceable multi-step transformations.\n\n**Prerequisites:** Run `./mvnw compile` before applying any changes. If compilation fails, **stop immediately** — do not proceed until the project compiles successfully.\n\n**Multi-step scope:** Step 1 validates the project compiles. Step 2 categorizes data-oriented programming opportunities by impact (CRITICAL, MAINTAINABILITY, PERFORMANCE, CLARITY) and area (data-behavior separation, immutability violations, impure functions, nested data structures, generic vs specific types, validation approaches). Step 3 separates data from behavior by extracting Records as pure data carriers and moving operations to static utility classes. Step 4 establishes immutability throughout the codebase using Records, `List.copyOf()`, and `Collections.unmodifiableList()`. Step 5 extracts pure static functions for all data processing and transformation operations to eli"
+    },
+    {
+      "path": "other/128-java-generics-jabrena-cursor-rules-java/SKILL.md",
+      "name": "128-java-generics",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Skill focuses on Java generics best practices, code review, and refactoring for type safety and API design, which is core software development work.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "918246561ffcb006dd18a73788fbdba6d41f0249c694da0f4e75f2f9e942a4f1",
+      "metadata_sha256": "d7e44cb2816bafc203495a3e75bb95ac49e07f6cff13142cc6df727c6fb42697",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when you need to review, improve, or refactor Java code for generics quality — including avoiding raw types, applying the PECS (Producer Extends Consumer Super) principle for wildcards, using bounded type parameters, designing effective generic methods, leveraging the diamond operator, understanding type erasure implications, handling generic inheritance correctly, preventing heap pollution with @SafeVarargs, and integrating generics with modern Java features like Records, sealed types, and pattern matching. Part of the skills-for-java project",
+      "content_excerpt": "---\nname: 128-java-generics\ndescription: Use when you need to review, improve, or refactor Java code for generics quality — including avoiding raw types, applying the PECS (Producer Extends Consumer Super) principle for wildcards, using bounded type parameters, designing effective generic methods, leveraging the diamond operator, understanding type erasure implications, handling generic inheritance correctly, preventing heap pollution with @SafeVarargs, and integrating generics with modern Java features like Records, sealed types, and pattern matching. Part of the skills-for-java project\nmetadata:\n  author: Juan Antonio Breña Moral\n  version: 0.12.0-SNAPSHOT\n---\n# Java Generics Best Practices\n\nReview and improve Java code using comprehensive generics best practices that enforce compile-time type safety and enable flexible, reusable APIs.\n\n**Core areas:** Type safety (avoiding raw types, eliminating unsafe casts), code reusability (generic methods and types for multiple type contexts), API clarity (PECS wildcards — `? extends` for producers, `? super` for consumers), performance optimization (eliminating boxing/casting overhead), diamond operator for type inference, type erasure awareness (type tokens, factory patterns, array creation), generic inheritance and variance (invariance, covariance, contravariance), `@SafeVarargs` for heap pollution prevention, wildcard capture helpers, self-bounded generics (CRTP) for fluent builders, proper wildcard API design with `Comparator<? super T>` and `Function<? super T, ? extends R>`, arrays-vs-generics covariance pitfalls, serialization with `TypeReference`/`TypeToken`, eliminating unchecked warnings, generic naming conventions (`T`, `E`, `K/V`, `?`), typesafe heterogeneous containers, and integration with Records, sealed types, and pattern matching.\n\n**Prerequisites:** Run `./mvnw compile` or `mvn compile` before applying any change. If compilation fails, **stop immediately** and do not proceed — compilation failure is a blocking condition.\n\n**Multi-step scope:** Step 1 validates the project compiles. Step 2 analyzes Java code to identify generics issues categorized by impact (CRITICAL, MAINTAINABILITY, PERFORMANCE, TYPE_SAFETY) and area (raw types, wildcard misuse, bounded parameter opportunities, type erasure problems, modern feature integration gaps). Step 3 eliminates raw types and unsafe casts with proper parameterization. Step 4 applies PECS wildcards and bounded type parameters for flexible APIs. Step 5 intro"
+    },
+    {
+      "path": "other/21risk-automation/SKILL.md",
+      "name": "-21risk-automation",
+      "current_category": "other",
+      "llm_category": "integration",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill automates tasks via Rube MCP (Composio), which is a cross-system connector and service integration platform. It focuses on connecting to external services (21risk) through an MCP server, managing connections, and executing tools across systems.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "eeacdabb1e844f3f52d66d3899e22c648052f0ff2ff5a16c07d3afca16bd3730",
+      "metadata_sha256": "8641b3bae9a33fef0f75dda38f505c47c0577a17d8bde5bc123bfea4d8f4a6a7",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Automate 21risk tasks via Rube MCP (Composio). Always search tools first for current schemas.",
+      "content_excerpt": "---\nname: -21risk-automation\ndescription: \"Automate 21risk tasks via Rube MCP (Composio). Always search tools first for current schemas.\"\nrequires:\n  mcp: [rube]\n---\n\n# 21risk Automation via Rube MCP\n\nAutomate 21risk operations through Composio's 21risk toolkit via Rube MCP.\n\n**Toolkit docs**: [composio.dev/toolkits/_21risk](https://composio.dev/toolkits/_21risk)\n\n## Prerequisites\n\n- Rube MCP must be connected (RUBE_SEARCH_TOOLS available)\n- Active 21risk connection via `RUBE_MANAGE_CONNECTIONS` with toolkit `_21risk`\n- Always call `RUBE_SEARCH_TOOLS` first to get current tool schemas\n\n## Setup\n\n**Get Rube MCP**: Add `https://rube.app/mcp` as an MCP server in your client configuration. No API keys needed — just add the endpoint and it works.\n\n1. Verify Rube MCP is available by confirming `RUBE_SEARCH_TOOLS` responds\n2. Call `RUBE_MANAGE_CONNECTIONS` with toolkit `_21risk`\n3. If connection is not ACTIVE, follow the returned auth link to complete setup\n4. Confirm connection status shows ACTIVE before running any workflows\n\n## Tool Discovery\n\nAlways discover available tools before executing workflows:\n\n```\nRUBE_SEARCH_TOOLS\nqueries: [{use_case: \"21risk operations\", known_fields: \"\"}]\nsession: {generate_id: true}\n```\n\nThis returns available tool slugs, input schemas, recommended execution plans, and known pitfalls.\n\n## Core Workflow Pattern\n\n### Step 1: Discover Available Tools\n\n```\nRUBE_SEARCH_TOOLS\nqueries: [{use_case: \"your specific 21risk task\"}]\nsession: {id: \"existing_session_id\"}\n```\n\n### Step 2: Check Connection\n\n```\nRUBE_MANAGE_CONNECTIONS\ntoolkits: [\"_21risk\"]\nsession_id: \"your_session_id\"\n```\n\n### Step 3: Execute Tools\n\n```\nRUBE_MULTI_EXECUTE_TOOL\ntools: [{\n  tool_slug: \"TOOL_SLUG_FROM_SEARCH\",\n  arguments: {/* schema-compliant args from search results */}\n}]\nmemory: {}\nsession_id: \"your_session_id\"\n```\n\n## Known Pitfalls\n\n- **Always search first**: Tool schemas change. Never hardcode tool slugs or arguments without calling `RUBE_SEARCH_TOOLS`\n- **Check connection**: Verify `RUBE_MANAGE_CONNECTIONS` shows ACTIVE status before executing tools\n- **Schema compliance**: Use exact field names and types from the search results\n- **Memory parameter**: Always include `memory` in `RUBE_MULTI_EXECUTE_TOOL` calls, even if empty (`{}`)\n- **Session reuse**: Reuse session IDs within a workflow. Generate new ones for new workflows\n- **Pagination**: Check responses for pagination tokens and continue fetching until complete\n\n## Quick Reference\n\n| Operation | Approac"
+    },
+    {
+      "path": "other/421-frameworks-quarkus-testing-unit-tests/SKILL.md",
+      "name": "421-frameworks-quarkus-testing-unit-tests",
+      "current_category": "other",
+      "llm_category": "testing",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly about writing unit tests for Quarkus applications, covering testing frameworks, mocking, and test patterns.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "2729824499c2ea8c9d5db1eb5d5e0ed6bb156ad74f2053113a694e884e069eaa",
+      "metadata_sha256": "252f197433b7da9f6d5b0da21dfebcad9eefa8323bd6991f6e75884551ab8981",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when you need to write fast unit tests for Quarkus applications — including pure tests with @ExtendWith(MockitoExtension.class), @QuarkusTest with @InjectMock for full CDI mock replacement, @InjectSpy for partial CDI bean mocking, REST Assured for resource-focused tests, @ParameterizedTest with @CsvSource / @MethodSource, QuarkusTestProfile for test-specific configuration overrides, and naming conventions (*Test → Surefire, *IT → Failsafe). For framework-agnostic Java use @131-java-testing-unit-testing. This should trigger for requests such as Add or improve unit tests in a Quarkus project; Reduce slow @QuarkusTest usage with Mockito-first tests; Add @InjectSpy partial mocking or QuarkusTestProfile configuration in Quarkus tests; Convert repeated test methods to @ParameterizedTest with @CsvSource or @MethodSource. Part of cursor-rules-java project",
+      "content_excerpt": "---\nname: 421-frameworks-quarkus-testing-unit-tests\ndescription: Use when you need to write fast unit tests for Quarkus applications — including pure tests with @ExtendWith(MockitoExtension.class), @QuarkusTest with @InjectMock for full CDI mock replacement, @InjectSpy for partial CDI bean mocking, REST Assured for resource-focused tests, @ParameterizedTest with @CsvSource / @MethodSource, QuarkusTestProfile for test-specific configuration overrides, and naming conventions (*Test → Surefire, *IT → Failsafe). For framework-agnostic Java use @131-java-testing-unit-testing. This should trigger for requests such as Add or improve unit tests in a Quarkus project; Reduce slow @QuarkusTest usage with Mockito-first tests; Add @InjectSpy partial mocking or QuarkusTestProfile configuration in Quarkus tests; Convert repeated test methods to @ParameterizedTest with @CsvSource or @MethodSource. Part of cursor-rules-java project\nlicense: Apache-2.0\nmetadata:\n  author: Juan Antonio Breña Moral\n  version: 0.15.0-SNAPSHOT\n---\n# Quarkus Unit Testing\n\nApply fast testing strategies for Quarkus: Mockito-first, QuarkusTest when CDI wiring matters.\n\n**What is covered in this Skill?**\n\n- Pure JUnit 5 + Mockito without container boot (@ExtendWith(MockitoExtension.class))\n- @QuarkusTest with @InjectMock for full CDI bean replacement\n- @InjectSpy for partial mocking — real bean wrapped as spy, specific methods overridden\n- REST Assured for HTTP-level @QuarkusTest resource tests\n- @ParameterizedTest with @CsvSource (inline data) and @MethodSource (complex objects)\n- QuarkusTestProfile and @TestProfile for test-specific configuration overrides\n- Naming conventions: *Test → Surefire (fast phase), *IT → Failsafe (verify phase)\n- When to escalate to integration tests (`@422`)\n\n**Scope:** Apply recommendations based on the reference rules and good/bad code examples.\n\n## Constraints\n\nCompile before test refactors; verify the full suite after.\n\n- **MANDATORY**: Run `./mvnw compile` or `mvn compile` before applying any change\n- **PREREQUISITE**: Project must compile before applying test improvements\n- **SAFETY**: If compilation fails, stop immediately\n- **BLOCKING CONDITION**: Compilation errors must be resolved by the user before proceeding\n- **VERIFY**: Run `./mvnw clean verify` or `mvn clean verify` after applying improvements\n- **BEFORE APPLYING**: Read the reference for detailed rules and examples\n\n## When to use this skill\n\n- Add or improve unit tests in a Quarkus project\n- Reduce slow"
+    },
+    {
+      "path": "other/3d-web-experience-johnmarkcapones-aralify-3/SKILL.md",
+      "name": "3d-web-experience",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill focuses on building 3D web experiences using Three.js, React Three Fiber, WebGL, and Spline - core web development technologies.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "1329eaa8a9d12f7a56a275960f95185d5cabc83f3261f1d6cacb87b250f15741",
+      "metadata_sha256": "5c4b2264f293496623ef70076b05b9c790514ead0defa8f17b644182139d9079",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Expert in building 3D experiences for the web - Three.js, React Three Fiber, Spline, WebGL, and interactive 3D scenes. Covers product configurators, 3D portfolios, immersive websites, and bringing depth to web experiences. Use when: 3D website, three.js, WebGL, react three fiber, 3D experience.",
+      "content_excerpt": "---\nname: 3d-web-experience\ndescription: \"Expert in building 3D experiences for the web - Three.js, React Three Fiber, Spline, WebGL, and interactive 3D scenes. Covers product configurators, 3D portfolios, immersive websites, and bringing depth to web experiences. Use when: 3D website, three.js, WebGL, react three fiber, 3D experience.\"\nsource: vibeship-spawner-skills (Apache 2.0)\n---\n\n# 3D Web Experience\n\n**Role**: 3D Web Experience Architect\n\nYou bring the third dimension to the web. You know when 3D enhances\nand when it's just showing off. You balance visual impact with\nperformance. You make 3D accessible to users who've never touched\na 3D app. You create moments of wonder without sacrificing usability.\n\n## Capabilities\n\n- Three.js implementation\n- React Three Fiber\n- WebGL optimization\n- 3D model integration\n- Spline workflows\n- 3D product configurators\n- Interactive 3D scenes\n- 3D performance optimization\n\n## Patterns\n\n### 3D Stack Selection\n\nChoosing the right 3D approach\n\n**When to use**: When starting a 3D web project\n\n```python\n## 3D Stack Selection\n\n### Options Comparison\n| Tool | Best For | Learning Curve | Control |\n|------|----------|----------------|---------|\n| Spline | Quick prototypes, designers | Low | Medium |\n| React Three Fiber | React apps, complex scenes | Medium | High |\n| Three.js vanilla | Max control, non-React | High | Maximum |\n| Babylon.js | Games, heavy 3D | High | Maximum |\n\n### Decision Tree\n```\nNeed quick 3D element?\n└── Yes → Spline\n└── No → Continue\n\nUsing React?\n└── Yes → React Three Fiber\n└── No → Continue\n\nNeed max performance/control?\n└── Yes → Three.js vanilla\n└── No → Spline or R3F\n```\n\n### Spline (Fastest Start)\n```jsx\nimport Spline from '@splinetool/react-spline';\n\nexport default function Scene() {\n  return (\n    <Spline scene=\"https://prod.spline.design/xxx/scene.splinecode\" />\n  );\n}\n```\n\n### React Three Fiber\n```jsx\nimport { Canvas } from '@react-three/fiber';\nimport { OrbitControls, useGLTF } from '@react-three/drei';\n\nfunction Model() {\n  const { scene } = useGLTF('/model.glb');\n  return <primitive object={scene} />;\n}\n\nexport default function Scene() {\n  return (\n    <Canvas>\n      <ambientLight />\n      <Model />\n      <OrbitControls />\n    </Canvas>\n  );\n}\n```\n```\n\n### 3D Model Pipeline\n\nGetting models web-ready\n\n**When to use**: When preparing 3D assets\n\n```python\n## 3D Model Pipeline\n\n### Format Selection\n| Format | Use Case | Size |\n|--------|----------|------|\n| GLB/GLTF | Standard web 3D | Smallest |"
+    },
+    {
+      "path": "other/322-frameworks-spring-boot-testing-integration-tests/SKILL.md",
+      "name": "322-frameworks-spring-boot-testing-integration-tests",
+      "current_category": "other",
+      "llm_category": "testing",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill focuses on integration testing for Spring Boot applications, including Testcontainers, persistence slices, HTTP testing, and data isolation. This is a core testing workflow that fits the 'testing' category.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "3d471a1ce9dc97b0ac4bf53e441a6c77eae707035fb3f745c2e2c871e5f78f0a",
+      "metadata_sha256": "7ad6fb3876fd23670a51c4eac2bf7d42d96c4eab3f764472405e6f0e0f704bd6",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when you need to write or improve integration tests — including Testcontainers with @ServiceConnection, @DataJdbcTest persistence slices, TestRestTemplate or MockMvcTester for HTTP, data isolation, and container lifecycle management for Spring Boot 4.0.x. This should trigger for requests such as Review Java code for Spring Boot integration tests; Apply best practices for Spring Boot integration tests in Java code. Part of cursor-rules-java project",
+      "content_excerpt": "---\nname: 322-frameworks-spring-boot-testing-integration-tests\ndescription: Use when you need to write or improve integration tests — including Testcontainers with @ServiceConnection, @DataJdbcTest persistence slices, TestRestTemplate or MockMvcTester for HTTP, data isolation, and container lifecycle management for Spring Boot 4.0.x. This should trigger for requests such as Review Java code for Spring Boot integration tests; Apply best practices for Spring Boot integration tests in Java code. Part of cursor-rules-java project\nlicense: Apache-2.0\nmetadata:\n  author: Juan Antonio Breña Moral\n  version: 0.15.0-SNAPSHOT\n---\n# Spring Boot Integration Testing\n\nApply Spring Boot integration testing guidelines for Spring Boot 4.0.x.\n\n**What is covered in this Skill?**\n\n- Integration test scope and purpose (verify wiring and contracts, not unit-test duplication)\n- Testcontainers with @ServiceConnection for zero-config wiring (preferred)\n- @DynamicPropertySource as fallback for containers without built-in service connection support\n- Static @Container instances shared across test methods for performance\n- MockMvcTester for fluent AssertJ-based HTTP assertions (Spring Boot 4.0.x)\n- TestRestTemplate for full HTTP stack testing\n- @DataJdbcTest / @DataJpaTest persistence slices (load only persistence layer, start faster)\n- Data isolation: each test owns its scenario; no shared mutable state or ordering assumptions\n- @MockitoBean for mock registration (Spring Boot 4.0.x — @MockBean removed)\n- Resource lifecycle: Testcontainers JUnit integration for teardown; *IT / integration test separation\n\n**Scope:** Apply recommendations based on the reference rules and good/bad code examples.\n\n## Constraints\n\nBefore applying any integration test changes, ensure the project compiles. If compilation fails, stop immediately. After applying improvements, run full verification.\n\n- **MANDATORY**: Run `./mvnw compile` or `mvn compile` before applying any change\n- **SAFETY**: If compilation fails, stop immediately\n- **VERIFY**: Run `./mvnw clean verify` or `mvn clean verify` after applying improvements\n- **BEFORE APPLYING**: Read the reference for detailed rules and good/bad patterns\n- **EDGE CASE**: If request scope is ambiguous, stop and ask a clarifying question before applying changes\n- **EDGE CASE**: If required inputs, files, or tooling are missing, report what is missing and ask whether to proceed with setup guidance\n\n## When to use this skill\n\n- Review Java code for Spring Boot inte"
+    },
+    {
+      "path": "other/26-umr-lmr-pmd-detection-bisnake2001-chromskills-2/SKILL.md",
+      "name": "UMR-LMR-PMD-detection",
+      "current_category": "other",
+      "llm_category": "data",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill performs genome-wide segmentation of CpG methylation profiles to identify UMRs, LMRs, and PMDs using WGBS data, which is a bioinformatics data analysis pipeline.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "aac76114e7df25083cdb7c2e8123009ff85517fb10896470cbdc23e6807c1616",
+      "metadata_sha256": "d5d14f8825a854fbf64764a7cf416b453704f7aeef3eae9c3f7d78bb62d7d140",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "This pipeline performs genome-wide segmentation of CpG methylation profiles to identify Unmethylated Regions (UMRs), Low-Methylated Regions (LMRs), and Partially Methylated Domains (PMDs) using whole-genome bisulfite sequencing (WGBS) methylation calls. The pipeline provides high-resolution enhancer-like LMRs, promoter-associated UMRs, and large-scale PMDs characteristic of reprogramming, aging, or cancer methylomes, enabling integration with chromatin accessibility, TF binding, and genome architecture analyses.",
+      "content_excerpt": "---\nname: UMR-LMR-PMD-detection\ndescription: This pipeline performs genome-wide segmentation of CpG methylation profiles to identify Unmethylated Regions (UMRs), Low-Methylated Regions (LMRs), and Partially Methylated Domains (PMDs) using whole-genome bisulfite sequencing (WGBS) methylation calls. The pipeline provides high-resolution enhancer-like LMRs, promoter-associated UMRs, and large-scale PMDs characteristic of reprogramming, aging, or cancer methylomes, enabling integration with chromatin accessibility, TF binding, and genome architecture analyses.\n---\n\n# Unmethylated Regions (UMR) & Low-Methylated Region (LMR) & Partially Methylated Domain (PMD) Detection\n\n## 1. Overview\nThis pipeline performs genome-wide segmentation of CpG methylation profiles to identify Unmethylated Regions (UMRs), Low-Methylated Regions (LMRs), and Partially Methylated Domains (PMDs) using whole-genome bisulfite sequencing (WGBS) methylation calls.\n\nMain steps include:\n\n- Refer to the **Inputs & Outputs** section to check available inputs and design the output structure.\n- **Always prompt user** for genome assembly used.  \n- **Always prompt user** for which columns are methylation fraction/percent and coverage and strand.\n- Convert BED → GRanges with mC/nC counts.\n- Perform CpG filtering (coverage threshold).\n- Call UMRs/LMRs using MethylSeekR segmentation.\n- Mask UMR/LMR and detect PMDs using a 2-state HMM (optional).\n- Export annotations as BED files and summary tables.\n\n---\n\n## 2. When to Use This Skill\n\n### Biological questions\n\nUse this skill when your research aims to: \n- Identify enhancer-like hypomethylated domains (LMRs). \n- Detect large-scale methylation erosion (PMDs). \n- Quantify global methylation heterogeneity. \n- Explore regulatory element accessibility from WGBS alone. \n- Integrate methylome segmentation with ATAC-seq, ChIP-seq, or chromatin states.\n\n---\n\n## 3. Inputs & Outputs\n\n### Inputs\n\n`<sample>.bed`\n\n### Outputs\n\n```bash\nLMR_PMD_calling/\n    regions/\n        UMRs.bed/\n        LMRs.bed/\n        PMDs.bed/\n```\n\n---\n\n## 4. Decision Tree\n\n### Step 1: Prepare the object for detecting UMR/LMR/PMD\n\n```r\nlibrary(MethylSeekR)\nlibrary(GenomicRanges)\nbed <- read.table(\"sample.bed\")\nbed <- bed[, c(1,2,3,6,10,11)] # column index provided by user\ncolnames(bed) <- c(\"chr\",\"start\",\"end\",\"percentage\",\"coverage\",\"strand\")\nbed$mC <- round(bed$beta * bed$coverage) # beta = 0.01 * percentage\nbed$nC <- bed$coverage - bed$mC\n\ngr <- GRanges(seqnames=bed$chr,\n              ranges"
+    },
+    {
+      "path": "other/0000-dorgonman-kano-agent-backlog-s-7/SKILL.md",
+      "name": "0000",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Identical to id 0, focusing on agent identity enforcement in audit logs and worklogs.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "6d4003332d0430b05e63759945e274342f9dea41813f0f3a8bbe0113cb9f8893",
+      "metadata_sha256": "db4155e87fe4466c8c3e17b50adf398548e9db189d3c78f96a58b43f136b7841",
+      "semantic_sources": {
+        "description": "body",
+        "name": "metadata"
+      },
+      "description": "To maintain the integrity of audit logs, we must ensure that agents use their real identities in worklogs, rather than blindly copying \"codex\" from templates.",
+      "content_excerpt": "---\nid: KABSD-USR-0011\nuid: 019b8f52-9f42-7e1e-a23f-d61218f54169\ntype: UserStory\ntitle: Enforce Agent Identity in Skill\nstate: Done\npriority: P1\nparent: KABSD-FTR-0005\narea: general\niteration: null\ntags: []\ncreated: 2026-01-04\nupdated: '2026-01-06'\nowner: null\nexternal:\n  azure_id: null\n  jira_key: null\nlinks:\n  relates: []\n  blocks: []\n  blocked_by: []\ndecisions: []\noriginal_type: UserStory\n---\n\n# Context\n\nTo maintain the integrity of audit logs, we must ensure that agents use their real identities in worklogs, rather than blindly copying \"codex\" from templates.\n\n# Goal\n\nUpdate the skill documentation and templates to explicitly require agents to use their real identity.\n\n# Non-Goals\n\n- Technical enforcement in the script code (documentation only for now).\n\n# Approach\n\n1. Update `SKILL.md` Non-negotiables.\n2. Update `templates.md` with placeholders.\n3. Update `conventions.md`.\n\n# Acceptance Criteria\n\n- [ ] `SKILL.md` contains the rule.\n- [ ] `templates.md` no longer has hardcoded `codex`.\n- [ ] `conventions.md` warns about identity usage.\n\n# Risks / Dependencies\n\n- Agents might ignore the docs; scripts should eventually enforce this (via `--agent` arg).\n\n# Worklog\n\n2026-01-04 23:31 [agent=antigravity] Created from template.\n2026-01-04 23:33 [agent=antigravity] State -> Done.\n"
+    },
+    {
+      "path": "other/033-architecture-diagrams/SKILL.md",
+      "name": "033-architecture-diagrams",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill generates UML, C4, and ER diagrams for Java projects, which is a core software development and architecture activity.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "83ad2c4a508ac351026b7acec2f7ba91bd6376f900bdc03dd0e7f8627f8114ef",
+      "metadata_sha256": "1c30c14c28db9372e1fbbd4d80e543bb14caba31cb14269d83f98898dd8f1f92",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when you need to generate Java project diagrams — including UML sequence diagrams, UML class diagrams, C4 model diagrams, UML state machine diagrams, and ER (Entity Relationship) diagrams — through a modular, step-based interactive process that adapts to your specific visualization needs. This should trigger for requests such as Generate UML diagram; Create sequence diagram; Create class diagram; Create state machine diagram; Create C4 diagram. Part of cursor-rules-java project",
+      "content_excerpt": "---\nname: 033-architecture-diagrams\ndescription: Use when you need to generate Java project diagrams — including UML sequence diagrams, UML class diagrams, C4 model diagrams, UML state machine diagrams, and ER (Entity Relationship) diagrams — through a modular, step-based interactive process that adapts to your specific visualization needs. This should trigger for requests such as Generate UML diagram; Create sequence diagram; Create class diagram; Create state machine diagram; Create C4 diagram. Part of cursor-rules-java project\nlicense: Apache-2.0\nmetadata:\n  author: Juan Antonio Breña Moral\n  version: 0.15.0-SNAPSHOT\n---\n# Java Diagrams Generator with modular step-based configuration\n\nGenerate comprehensive Java project diagrams through a modular, step-based interactive process that covers UML sequence diagrams, UML class diagrams, C4 model diagrams, UML state machine diagrams, and ER (Entity Relationship) diagrams using PlantUML syntax. **This is an interactive SKILL**.\n\n**What is covered in this Skill?**\n\n- UML sequence diagram generation for application workflows and API interactions\n- UML class diagram generation for package structure and class relationships\n- C4 model diagram generation at Context/Container/Component levels only (levels 1–3; Code/Level 4 not generated)\n- UML state machine diagram generation for entity lifecycles and business workflows\n- ER diagram generation from SQL schema (DDL, migrations) using PlantUML Chen notation\n- PlantUML syntax for all diagram types\n- File organization strategies: single-file, separate-files, or integrated with existing documentation\n- Final diagram validation with PlantUML syntax checking\n\n## Constraints\n\nBefore applying any diagram generation, ensure the project validates. If validation fails, stop immediately — do not proceed until all validation errors are resolved.\n\n- **MANDATORY**: Run `./mvnw validate` or `mvn validate` before applying any diagram generation\n- **SAFETY**: If validation fails, stop immediately — do not proceed until all validation errors are resolved\n- **BEFORE APPLYING**: Read the reference for detailed good/bad examples, constraints, and safeguards for each diagram generation pattern\n- **C4 LIMIT**: C4 diagrams restricted to levels 1, 2, 3 only (Context, Container, Component); never generate Level 4 (Code) diagrams\n\n## When to use this skill\n\n- Generate UML diagram\n- Create sequence diagram\n- Create class diagram\n- Create state machine diagram\n- Create C4 diagram\n- Generate ER dia"
+    },
+    {
+      "path": "other/12-how-to-master-the-practice-of-investing-and-time-management-t/SKILL.md",
+      "name": "12-how-to-master-the-practice-of-investing-and-time-management-third-phase-skill",
+      "current_category": "other",
+      "llm_category": "personal-development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is about mastering personal practices of investing and time management, specifically focusing on increasing awareness and quantitative metrics in the 'Skill' phase. This is clearly personal development and productivity improvement.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "cae49b848ba3caf628dcfbc3b315b1b70b40d8ad5efd25ad9dec82d65d8cd668",
+      "metadata_sha256": "5b8ae7451ece1667a34e23e2d8b7fbe1e8717334e46271b6f0b4a46e4c84a34a",
+      "semantic_sources": {
+        "description": "body",
+        "name": "metadata"
+      },
+      "description": "На третьем этапе необходимо поднимать осознанность в реализации",
+      "content_excerpt": "---\ntitle: Как освоить практику инвестирования и учета времени. Третий этап – «Навык»\n---\n\nНа третьем этапе **необходимо поднимать осознанность в реализации\nпрактики инвестирование и учет времени**, а также увеличивать\nколичественные показатели, обращая внимание на выполнение её принципов.\nДля этого можно сделать следующее:\n\n1.  **Увеличить количество проектов**, по которым ведется учет времени.\n    Причем вы можете разделять инвестиционные проекты и другие, чтобы\n    видеть статистику.\n2.  Постепенно увеличивать **цель времени фокусировки на день**. Вы\n    начали с двух часов, и, если все идет хорошо, можете поднимать этот\n    показатель на 1 час в день. Но как только показатель «Процент\n    выполнения цели» будет менее 50%, повышение необходимо прекратить.\n    На этапе «Навык» вполне достаточно иметь цель времени фокусировки 5\n    часов в день с процентом выполнения цели 90% соответственно.\n3.  Найти разные варианты по **длительности** **помидорки**. Вы начинали\n    с помидорки продолжительностью 25 минут, а на этапе «Навык»\n    желательно увеличить это время, как минимум, для систематического\n    медленного чтения и мышления письмом до 60 минут.\n4.  Увеличивайте **соотношение количества инвестированного времени**, то\n    есть уделять больше внимание важному, а не текучке и срочному. Можно\n    стремиться к тому, чтобы количество инвестированного времени было не\n    менее 25% от общего количества учтенного времени.\n5.  Активно делится своим опытом в сообществе ШСМ, в том числе можно\n    написать заготовку со своим личным примером о том, **почему важно\n    отдыхать между помидорками**. Попробуйте представить самого\n    консервативного хейтера и объяснить ему, почему это так важно. Кроме\n    того, можно написать заготовку о том, как вы используете\n    осознанность при старте работ по трекеру Помодоро. Расскажите про\n    свой опыт и приведите примеры осознанности. На уровне «Навык» вы\n    должны хорошо понимать суть данного ритуала и уже не садиться за\n    учебу без трекера.\n6.  **Станьте инструктором** по данной практике. Как минимум,\n    заинтересуйте культурой инвестирования и учета времени своих\n    близких.\n\nВ целом, будет отлично, если вы на этом этапе сможете учитывать общее\nвремя от 30 до 40 часов в неделю в среднем на протяжении полугода, из\nкоторых не менее 15 часов инвестированного времени.\n"
+    },
+    {
+      "path": "other/1k-platform-requirements/SKILL.md",
+      "name": "1k-platform-requirements",
+      "current_category": "other",
+      "llm_category": "platform",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill documents minimum SDK/OS version requirements for all OneKey platforms (iOS, Android, Chrome, Electron) and provides environment checking workflows. This is fundamentally about platform compatibility and deployment targets.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "39e407bbb0292b15363df95beaf30ea156cd757f628b18a1aafb7c39666f6ba5",
+      "metadata_sha256": "4bc5372ecbdcd5397f66b20141fc911bcee53f4e28a347e52f6b5f086719a969",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Documents minimum SDK/OS version requirements for all OneKey platforms. Use when checking platform compatibility, understanding deployment targets, verifying version requirements, or when user asks if their device can run the project. Triggers on minimum version, SDK version, API level, deployment target, platform requirements, iOS version, Android version, Chrome version, Electron version, can I run, environment check, device compatibility, check environment.",
+      "content_excerpt": "---\nname: 1k-platform-requirements\ndescription: Documents minimum SDK/OS version requirements for all OneKey platforms. Use when checking platform compatibility, understanding deployment targets, verifying version requirements, or when user asks if their device can run the project. Triggers on minimum version, SDK version, API level, deployment target, platform requirements, iOS version, Android version, Chrome version, Electron version, can I run, environment check, device compatibility, check environment.\nallowed-tools: Read, Grep, Glob, Bash\n---\n\n# OneKey Platform Requirements\n\n## Device Compatibility Check\n\nWhen user asks if their device can run app-monorepo, run the environment check to verify all required tools are installed with correct versions.\n\n**Important**: Xcode, CocoaPods, and Ruby are **macOS only** tools required for iOS development. On non-macOS systems, skip these checks.\n\n### Auto-detect and Check Environment\n\nFirst, detect the operating system:\n```bash\nuname -s\n```\n\n- If output is `Darwin` → macOS, check ALL tools including Xcode/CocoaPods\n- If output is `Linux` or other → Skip Xcode/CocoaPods/Ruby checks\n\n## Development Environment Requirements\n\n| Tool | Required Version | How to Check | Platform |\n|------|-----------------|--------------|----------|\n| **Node.js** | >=22 | `node -v` | All |\n| **Yarn** | 4.12.0 | `yarn -v` | All |\n| **Java/JDK** | 17+ | `java -version` | All |\n| **Gradle** | 8.13 | `./gradlew --version` | All |\n| **Go** | 1.24.0 | `go version` | All |\n| **Ruby** | 2.7+ (recommended 3.x) | `ruby -v` | macOS only |\n| **CocoaPods** | 1.16.2 | `pod --version` | macOS only |\n| **Xcode** | 26.2 | `xcodebuild -version` | macOS only |\n| **Android Studio** | Ladybug (2024.2.1)+ | Android Studio > About | All |\n\n## Minimum Platform Version Summary\n\n| Platform | Minimum Version | Notes |\n|----------|----------------|-------|\n| **Android** | API 24 (Android 7.0 Nougat) | Set by Expo SDK |\n| **iOS** | 15.5 | Deployment target |\n| **Chrome Extension** | Chrome 111+ | Required for MAIN world injection |\n| **Firefox Extension** | Latest stable | Follows Chrome manifest v2 |\n| **Desktop (Electron)** | Electron 39.x | See OS requirements below |\n| **macOS** | 10.15+ (Catalina) | Electron 39 requirement |\n| **Windows** | Windows 10+ | Electron 39 requirement |\n| **Linux** | Ubuntu 20.04+ | Electron 39 requirement |\n\n## How to Verify/Update Versions\n\n### Android minSdkVersion\n\n**Location**: Set by Expo, referenced in `apps/mobile/android/a"
+    },
+    {
+      "path": "other/5-reset-ioku24-autorankr/SKILL.md",
+      "name": "reset",
+      "current_category": "other",
+      "llm_category": "workflow",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is a structured protocol for recovering from failures and resetting workflow, fitting the workflow category.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "883382a8d846219f47329e8046003c089ea88f805ab5972691c3f2ac3f25211c",
+      "metadata_sha256": "de088284daf51343845a3f4baec90a69c62142463a9c4369f89e0be142d326e3",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Reset after failures, blockers, or when stuck. Use when execution hits a wall, something breaks, or we need to step back and reassess. This is the fifth system in the 5-system framework.",
+      "content_excerpt": "---\nname: reset\ndescription: Reset after failures, blockers, or when stuck. Use when execution hits a wall, something breaks, or we need to step back and reassess. This is the fifth system in the 5-system framework.\n---\n\n# Reset System (Failure Recovery)\n\n> **Purpose:** Gracefully recover from setbacks, learn, and continue.\n> **When to trigger:** When stuck, something breaks, approach isn't working, or need to step back.\n\n## Failure Response Protocol\n\n### Step 1: STOP\n\n**Immediately cease current approach.**\n\nDo NOT:\n- Try \"one more thing\"\n- Keep pushing the same failing approach\n- Make changes hoping they'll work\n- Ignore the signals\n\nDo:\n- Acknowledge something isn't working\n- Take a breath\n- Prepare to capture state\n\n### Step 2: CAPTURE STATE\n\nDocument what happened:\n\n```markdown\n## Failure Capture\n\n**What we were trying to do:**\n[Description of goal]\n\n**What actually happened:**\n[Description of failure/block]\n\n**Error/symptom observed:**\n[Specific error messages, unexpected behavior]\n\n**What we tried:**\n1. Attempt 1: [what] → [result]\n2. Attempt 2: [what] → [result]\n3. Attempt 3: [what] → [result]\n\n**Current git state:**\n[Branch, commit, uncommitted changes]\n```\n\nLog this to `.claude/failure-log.md`.\n\n### Step 3: CHECKPOINT\n\nEnsure state is preserved:\n\n1. **Git status** - Are there uncommitted changes to save?\n2. **Working state** - Note the last known working commit\n3. **Context** - Save any important context that might be lost\n\n```bash\ngit status\ngit stash  # if needed to preserve work-in-progress\n```\n\n### Step 4: DIAGNOSE\n\nDetermine the root cause category:\n\n**Clarity Problem** (misunderstanding)\n- Requirements were ambiguous\n- Success criteria unclear\n- Scope was wrong\n→ Return to **Clarity System**\n\n**Identity Problem** (hidden issue)\n- Discovered unknown constraint\n- Missed a dependency\n- Technical limitation found\n→ Run **Identity System**\n\n**Priority Problem** (wrong focus)\n- Solving the wrong problem\n- This should have waited\n- Dependencies not addressed\n→ Return to **Priority System**\n\n**Execution Problem** (bad approach)\n- Approach was flawed\n- Implementation strategy wrong\n- Need different technique\n→ Try different approach, same task\n\n**External Block** (outside control)\n- API down\n- Missing credentials\n- Need user input\n→ Document and wait/ask\n\n### Step 5: RESET TO APPROPRIATE SYSTEM\n\nBased on diagnosis:\n\n| Root Cause | Action |\n|------------|--------|\n| Clarity | Update active-context.md, restart with clarity |\n| Identity | Run identific"
+    },
+    {
+      "path": "other/08-dotnet-result-pattern/SKILL.md",
+      "name": "dotnet-result-pattern",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill implements the Result pattern for error handling in .NET domain-driven applications, which is a software development pattern for clean, predictable control flow.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "8de6b74df45acaba6ef2615b6a3c389e301f5a6c1c272f4197dbb90941899ccd",
+      "metadata_sha256": "4254c5629f3a836eb2f4112e43ea2a2558ab414f4365f276aa0aade81d179bf8",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Implements the Result pattern for explicit error handling without exceptions. Provides Result, Result<T>, and Error types for clean, predictable control flow in domain-driven applications.",
+      "content_excerpt": "---\nname: dotnet-result-pattern\ndescription: \"Implements the Result pattern for explicit error handling without exceptions. Provides Result, Result<T>, and Error types for clean, predictable control flow in domain-driven applications.\"\nversion: 1.0.0\nlanguage: C#\nframework: .NET 8+\npattern: Railway-Oriented Programming\n---\n\n# Result Pattern Implementation\n\n## Overview\n\nThe Result pattern provides explicit error handling without exceptions:\n\n- **No exceptions for business errors** - Exceptions for truly exceptional cases only\n- **Explicit success/failure** - Compiler forces handling of both cases\n- **Composable errors** - Chain operations, fail fast\n- **Self-documenting** - Method signatures show possible outcomes\n\n## Quick Reference\n\n| Type | Purpose | Usage |\n|------|---------|-------|\n| `Result` | Operation without return value | Update, Delete operations |\n| `Result<T>` | Operation with return value | Create, Get operations |\n| `Error` | Error information | Code + Description |\n\n---\n\n## Implementation Structure\n\n```\n/Domain/Abstractions/\n├── Result.cs           # Result and Result<T>\n├── Error.cs            # Error record\n└── ValidationResult.cs # Multiple errors support\n```\n\n---\n\n## Template: Core Result Types\n\n```csharp\n// src/{name}.domain/Abstractions/Error.cs\nnamespace {name}.domain.abstractions;\n\n/// <summary>\n/// Represents an error with a code and description\n/// </summary>\npublic record Error(string Code, string Description)\n{\n    /// <summary>\n    /// Represents no error (success state)\n    /// </summary>\n    public static readonly Error None = new(string.Empty, string.Empty);\n\n    /// <summary>\n    /// Represents a null value error\n    /// </summary>\n    public static readonly Error NullValue = new(\n        \"Error.NullValue\",\n        \"A null value was provided\");\n\n    /// <summary>\n    /// Creates an error from an exception\n    /// </summary>\n    public static Error FromException(Exception exception) => new(\n        \"Error.Exception\",\n        exception.Message);\n\n    /// <summary>\n    /// Implicit conversion to string (returns Code)\n    /// </summary>\n    public static implicit operator string(Error error) => error.Code;\n\n    public override string ToString() => Code;\n}\n```\n\n```csharp\n// src/{name}.domain/Abstractions/Result.cs\nnamespace {name}.domain.abstractions;\n\n/// <summary>\n/// Represents the outcome of an operation that doesn't return a value\n/// </summary>\npublic class Result\n{\n    protected Result(bool isSuccess, Error error)\n    {\n "
+    },
+    {
+      "path": "other/423-frameworks-quarkus-testing-acceptance-tests/SKILL.md",
+      "name": "423-frameworks-quarkus-testing-acceptance-tests",
+      "current_category": "other",
+      "llm_category": "testing",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly about implementing acceptance tests from Gherkin feature files for Quarkus applications.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "2f89b4f9598ca1a6e329e77b9f27c99502f011fce7b04b2dffe270a47e24aacf",
+      "metadata_sha256": "79ed9c28a0eaf1459cc8c59d199f8f3aefc50bc2c1aa3ad38db8938c4b33b051",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when you need to implement acceptance tests from a Gherkin .feature file for Quarkus applications — including @acceptance scenarios, @QuarkusTest, BaseAcceptanceTest with QuarkusTestResourceLifecycleManager for Testcontainers and WireMock, REST Assured for full HTTP pipeline testing, WireMock JSON mapping files (classpath:wiremock/mappings/), *AT suffix naming, and Maven Surefire/Failsafe three-tier split. Requires the .feature file in context. This should trigger for requests such as Implement Quarkus acceptance tests from a Gherkin feature file; Set up BaseAcceptanceTest with Testcontainers and WireMock for Quarkus; Create WireMock JSON mapping files for external HTTP stubs in Quarkus acceptance tests; Configure Maven *AT naming convention and Failsafe plugin for Quarkus acceptance tests. Part of cursor-rules-java project",
+      "content_excerpt": "---\nname: 423-frameworks-quarkus-testing-acceptance-tests\ndescription: Use when you need to implement acceptance tests from a Gherkin .feature file for Quarkus applications — including @acceptance scenarios, @QuarkusTest, BaseAcceptanceTest with QuarkusTestResourceLifecycleManager for Testcontainers and WireMock, REST Assured for full HTTP pipeline testing, WireMock JSON mapping files (classpath:wiremock/mappings/), *AT suffix naming, and Maven Surefire/Failsafe three-tier split. Requires the .feature file in context. This should trigger for requests such as Implement Quarkus acceptance tests from a Gherkin feature file; Set up BaseAcceptanceTest with Testcontainers and WireMock for Quarkus; Create WireMock JSON mapping files for external HTTP stubs in Quarkus acceptance tests; Configure Maven *AT naming convention and Failsafe plugin for Quarkus acceptance tests. Part of cursor-rules-java project\nlicense: Apache-2.0\nmetadata:\n  author: Juan Antonio Breña Moral\n  version: 0.15.0-SNAPSHOT\n---\n# Quarkus acceptance tests from Gherkin\n\nImplement happy-path acceptance tests from Gherkin for Quarkus using real HTTP and infrastructure.\n\n**What is covered in this Skill?**\n\n- Preconditions: .feature file in context; Quarkus project confirmed\n- Parsing and filtering scenarios tagged @acceptance / @acceptance-tests\n- BaseAcceptanceTest with @QuarkusTest, @QuarkusTestResource, and QuarkusTestResourceLifecycleManager for:\n  - Testcontainers (PostgreSQL, Kafka) with dynamic config injection on startup\n  - WireMock with wireMockServer.resetAll() in @BeforeEach to isolate stubs\n- Concrete acceptance test class extending BaseAcceptanceTest:\n  - @DisplayName mirroring the Gherkin scenario title\n  - Given (stubs + fixtures) / When (REST Assured HTTP call) / Then (response assertions + wireMock.verify)\n- WireMock JSON mapping files under classpath:wiremock/mappings/ with body files under __files/\n- Naming convention: *AT suffix for Failsafe; never *Test (Surefire) or *AcceptanceTest\n- Maven three-tier split: *Test → Surefire, *IT + *AT → Failsafe\n- Happy-path scope by default; escalate to negatives only when explicitly requested\n\n**Scope:** Apply recommendations based on the reference rules and step workflow.\n\n## Constraints\n\nDo not generate without a .feature file; compile before and verify after.\n\n- **PRECONDITION**: Gherkin `.feature` file must be in context — stop and ask if not provided\n- **PRECONDITION**: The project must use Quarkus — direct the user to @133 or @323 ot"
+    },
+    {
+      "path": "other/302-frameworks-spring-boot-rest/SKILL.md",
+      "name": "302-frameworks-spring-boot-rest",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill focuses on REST API design and implementation with Spring Boot, covering HTTP methods, DTOs, validation, error handling, and API contract design - core software development concerns.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "e141a0210c4f5669b957ee167fcc848255e9b133aba0ddf550afd9f7a8e2f6a7",
+      "metadata_sha256": "eec75e8d631e64104f700733e1e6f07638c166297dad426b654877eed4483777",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when you need to design, review, or improve REST APIs with Spring Boot — including HTTP methods, resource URIs, status codes, DTOs, versioning, deprecation and sunset headers, content negotiation (JSON and vendor media types), ISO-8601 instants in DTOs, pagination/sorting/filtering, Bean Validation at the boundary, idempotency, ETag concurrency, HTTP caching, error handling, security, contract-first OpenAPI (OpenAPI Generator), controller advice, and problem details for errors. This should trigger for requests such as Review Java code for Spring Boot REST API; Apply best practices for Spring Boot REST API in Java code. Part of cursor-rules-java project",
+      "content_excerpt": "---\nname: 302-frameworks-spring-boot-rest\ndescription: Use when you need to design, review, or improve REST APIs with Spring Boot — including HTTP methods, resource URIs, status codes, DTOs, versioning, deprecation and sunset headers, content negotiation (JSON and vendor media types), ISO-8601 instants in DTOs, pagination/sorting/filtering, Bean Validation at the boundary, idempotency, ETag concurrency, HTTP caching, error handling, security, contract-first OpenAPI (OpenAPI Generator), controller advice, and problem details for errors. This should trigger for requests such as Review Java code for Spring Boot REST API; Apply best practices for Spring Boot REST API in Java code. Part of cursor-rules-java project\nlicense: Apache-2.0\nmetadata:\n  author: Juan Antonio Breña Moral\n  version: 0.15.0-SNAPSHOT\n---\n# Java REST API Design Principles\n\nApply REST API design principles for Spring Boot applications.\n\n**What is covered in this Skill?**\n\n- HTTP methods (GET, POST, PUT, PATCH, DELETE) — semantic consistency\n- Resource URI design\n- HTTP status codes\n- Request/response DTOs with lean contracts\n- API versioning (URI, header, or media type — applied consistently)\n- Bean Validation at the boundary (@Valid/@Validated on controller inputs, 400 on failure)\n- Pagination, sorting, and filtering (Page/Pageable with caps)\n- ISO-8601 instants with offset (OffsetDateTime, Instant) in JSON contracts\n- Content negotiation (JSON default; vendor media types when meaningful)\n- Idempotency-Key support for POST creates; 409 Conflict for collisions\n- ETag concurrency with If-Match/If-None-Match; 412 Precondition Failed / 304 Not Modified\n- HTTP caching discipline (Cache-Control, ETag, Last-Modified)\n- Deprecation and sunset headers (Deprecation, Sunset, Link rel=\"successor-version)\"\n- Error handling\n- API security (TLS, authentication, authorization, input validation)\n- API contract: OpenAPI file as source of truth for API-first (OpenAPI Generator)\n- Controller advice and problem details (RFC 7807)\n\n**Scope:** Apply recommendations based on the reference rules and good/bad code examples.\n\n## Constraints\n\nBefore applying any REST API changes, ensure the project compiles. If compilation fails, stop immediately. After applying improvements, run full verification.\n\n- **MANDATORY**: Run `./mvnw compile` or `mvn compile` before applying any change\n- **SAFETY**: If compilation fails, stop immediately\n- **VERIFY**: Run `./mvnw clean verify` or `mvn clean verify` after applying improvemen"
+    },
+    {
+      "path": "other/4-step-program-cygnusfear-claude-stuff-2/SKILL.md",
+      "name": "4-step-program",
+      "current_category": "other",
+      "llm_category": "orchestration",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is a coordinator workflow for orchestrating multiple agents through a fix-review-iterate-present loop. It's explicitly about delegating and coordinating work across agents.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "8b7ac171399f58ea2206eac0debe7af6519ce6314e0c373594653c947173849e",
+      "metadata_sha256": "09d122281f3aedb17628c50ae3054a7ea9461c624bbadc6e211d654c734c8d85",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Coordinator workflow for orchestrating dockeragents through fix-review-iterate-present loop. Use when delegating any task that produces code changes. Ensures agents achieve 10/10 quality before presenting to human.",
+      "content_excerpt": "---\nname: 4-step-program\ndescription: Coordinator workflow for orchestrating dockeragents through fix-review-iterate-present loop. Use when delegating any task that produces code changes. Ensures agents achieve 10/10 quality before presenting to human.\n---\n\n# The 4 Step Program\n\nA coordinator workflow for orchestrating dockeragents. You delegate, they implement. You enforce the loop until quality is achieved.\n\n## ⚠️ MANDATORY: GitHub PR Posting\n\n**Every code review MUST be posted to GitHub as a PR comment. This is NOT optional.**\n\n- The code-reviewer agent MUST post their review to the PR\n- A review that is not posted to GitHub means the task has FAILED\n- The human needs to see the review on the PR page to evaluate quality before merging\n- If the agent reports completion without posting to GitHub, send them back to post it\n\n## The Loop\n\n```\n┌─────────────────────────────────────────────────────┐\n│                                                     │\n│  ┌──────────┐    ┌──────────┐    ┌──────────────┐  │\n│  │ 1. FIX   │───►│ 2. REVIEW│───►│ 3. 10/10?   │  │\n│  │ (agent)  │    │ (agent)  │    │ (you check) │  │\n│  └──────────┘    └──────────┘    └──────┬───────┘  │\n│       ▲                                 │          │\n│       │                                 │          │\n│       │ NO                              │ YES      │\n│       └─────────────────────────────────┤          │\n│                                         ▼          │\n│                                 ┌──────────────┐   │\n│                                 │ 4. PRESENT   │   │\n│                                 │ (you + URLs) │   │\n│                                 └──────────────┘   │\n│                                                     │\n└─────────────────────────────────────────────────────┘\n```\n\n\n## Step 1: Delegate FIX to Agent\n\nAssign the implementation task to a dockeragent:\n\n```\nassign_task(agent_id, task_description)\n```\n\nThe task description MUST include:\n- Clear action to perform\n- Context (issue numbers, file paths, errors)\n- **ALL requirements from the issue/task (100% must be implemented)**\n- Success criteria\n- Instruction to self-review using `Skill(code-reviewer)` and POST to GitHub when done\n\n**CRITICAL: 100% Issue Coverage Requirement**\n\nWhen delegating, you MUST:\n1. Read the full issue: `gh issue view <number>`\n2. Extract EVERY requirement, acceptance criterion, and edge case\n3. Include ALL of them in the delegation prompt\n4. Make it clear that 100% of requirements must be"
+    },
+    {
+      "path": "other/163-java-profiling-refactor/SKILL.md",
+      "name": "163-java-profiling-refactor",
+      "current_category": "other",
+      "llm_category": "performance",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly about refactoring Java code based on profiling analysis to address performance bottlenecks (CPU, memory, threading). The description, workflow, and constraints all focus on performance optimization through profiling.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "8b99c9aeac37e55a3597e77c3f26e24f46bf6e619b5be34a87920808abf697e6",
+      "metadata_sha256": "b727a3be309238711bbbb5b54584781324fe1cec0ef4a676c5eb7e6a904be8b0",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when you need to refactor Java code based on profiling analysis findings — including reviewing docs/profiling-problem-analysis and docs/profiling-solutions, identifying specific performance bottlenecks, and implementing targeted code changes to address CPU, memory, or threading issues. This should trigger for requests such as Refactor the code with profiling; Apply profiling; Refactor the code with profiling; Optimize hot path. Part of cursor-rules-java project",
+      "content_excerpt": "---\nname: 163-java-profiling-refactor\ndescription: Use when you need to refactor Java code based on profiling analysis findings — including reviewing docs/profiling-problem-analysis and docs/profiling-solutions, identifying specific performance bottlenecks, and implementing targeted code changes to address CPU, memory, or threading issues. This should trigger for requests such as Refactor the code with profiling; Apply profiling; Refactor the code with profiling; Optimize hot path. Part of cursor-rules-java project\nlicense: Apache-2.0\nmetadata:\n  author: Juan Antonio Breña Moral\n  version: 0.15.0-SNAPSHOT\n---\n# Java Profiling Workflow / Step 3 / Refactor code to fix issues\n\nImplement refactoring based on profiling analysis: review profiling-problem-analysis-YYYYMMDD.md and profiling-solutions-YYYYMMDD.md, identify specific performance bottlenecks, and refactor code to fix them. Ensure all tests pass after changes.\n\n**What is covered in this Skill?**\n\n- Review analysis notes: docs/profiling-problem-analysis-YYYYMMDD.md, docs/profiling-solutions-YYYYMMDD.md\n- Identify specific bottlenecks from the documented findings\n- Refactor code to address CPU hotspots, memory leaks, threading issues, or other performance problems\n- Run verification: ./mvnw clean verify or mvn clean verify\n\n**Scope:** Changes must pass all tests. Apply fixes incrementally and verify after each significant change.\n\n## Constraints\n\nVerify that changes pass all tests before considering the refactoring complete.\n\n- **MANDATORY**: Run `./mvnw clean verify` or `mvn clean verify` after applying refactoring\n- **SAFETY**: If tests fail, fix issues before proceeding\n- **BEFORE APPLYING**: Read the analysis and solutions documents for specific recommendations\n- **EDGE CASE**: If request scope is ambiguous, stop and ask a clarifying question before applying changes\n- **EDGE CASE**: If required inputs, files, or tooling are missing, report what is missing and ask whether to proceed with setup guidance\n\n## When to use this skill\n\n- Refactor the code with profiling\n- Apply profiling\n- Refactor the code with profiling\n- Optimize hot path\n- Performance refactoring\n\n## Workflow\n\n1. **Review profiling analysis artifacts**\n\nRead `docs/profiling-problem-analysis-YYYYMMDD.md` and `docs/profiling-solutions-YYYYMMDD.md` to select target bottlenecks.\n\n2. **Apply targeted performance refactors**\n\nImplement focused code changes for documented CPU, memory, or threading hotspots, incrementally and safely.\n\n3. **Veri"
+    },
+    {
+      "path": "other/20-dotnet-specification-pattern/SKILL.md",
+      "name": "dotnet-specification-pattern",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill implements a design pattern (Specification pattern) for .NET/C# with Entity Framework Core, which is a software development pattern.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "ee519af469f3d746af88095b8e0530abd9ba19b77574e60817b0359da536271c",
+      "metadata_sha256": "a5361b836753476271e04a3124a10002fc6d5d4faa5c00b87cc1707d79bd2358",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Implements the Specification pattern for encapsulating query logic. Enables composable, reusable, and testable query criteria with support for includes, ordering, and pagination.",
+      "content_excerpt": "---\nname: dotnet-specification-pattern\ndescription: \"Implements the Specification pattern for encapsulating query logic. Enables composable, reusable, and testable query criteria with support for includes, ordering, and pagination.\"\nversion: 1.0.0\nlanguage: C#\nframework: .NET 8+\ndependencies: Entity Framework Core\npattern: Specification Pattern, Query Object\n---\n\n# Specification Pattern Generator\n\n## Overview\n\nThe Specification pattern encapsulates query logic:\n\n- **Reusable criteria** - Define once, use everywhere\n- **Composable** - Combine with And/Or\n- **Testable** - Test query logic in isolation\n- **Type-safe** - Compile-time checking\n\n## Quick Reference\n\n| Component | Purpose |\n|-----------|---------|\n| `ISpecification<T>` | Base specification interface |\n| `BaseSpecification<T>` | Abstract implementation |\n| `SpecificationEvaluator` | Applies spec to IQueryable |\n\n---\n\n## Template: Specification Interface\n\n```csharp\n// src/{name}.domain/Abstractions/ISpecification.cs\nusing System.Linq.Expressions;\n\nnamespace {name}.domain.abstractions;\n\npublic interface ISpecification<T>\n{\n    Expression<Func<T, bool>>? Criteria { get; }\n    List<Expression<Func<T, object>>> Includes { get; }\n    List<string> IncludeStrings { get; }\n    Expression<Func<T, object>>? OrderBy { get; }\n    Expression<Func<T, object>>? OrderByDescending { get; }\n    int? Take { get; }\n    int? Skip { get; }\n    bool IsPagingEnabled { get; }\n}\n```\n\n---\n\n## Template: Base Specification\n\n```csharp\n// src/{name}.domain/Abstractions/BaseSpecification.cs\nusing System.Linq.Expressions;\n\nnamespace {name}.domain.abstractions;\n\npublic abstract class BaseSpecification<T> : ISpecification<T>\n{\n    public Expression<Func<T, bool>>? Criteria { get; private set; }\n    public List<Expression<Func<T, object>>> Includes { get; } = new();\n    public List<string> IncludeStrings { get; } = new();\n    public Expression<Func<T, object>>? OrderBy { get; private set; }\n    public Expression<Func<T, object>>? OrderByDescending { get; private set; }\n    public int? Take { get; private set; }\n    public int? Skip { get; private set; }\n    public bool IsPagingEnabled { get; private set; }\n\n    protected void AddCriteria(Expression<Func<T, bool>> criteria) => Criteria = criteria;\n\n    protected void AddInclude(Expression<Func<T, object>> include) => Includes.Add(include);\n\n    protected void AddInclude(string include) => IncludeStrings.Add(include);\n\n    protected void ApplyOrderBy(Expression<Func<T, object>> orderBy)"
+    },
+    {
+      "path": "other/06-build-script-execution-skill/SKILL.md",
+      "name": "06-build-script-execution-skill",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill teaches building a script-execution skill that orchestrates write-execute-analyze loops with error recovery, which is a software development workflow for autonomous data processing.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "9ada98923f08ee90c80d88a8505cc11851ec3d3c4f467351c29b5b3bc8aa52fd",
+      "metadata_sha256": "9fb7f5a76ce8407d7fc7e8f332f2762fa8f3c0ee802080caa2b1fdb22d36259a",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "metadata"
+      },
+      "description": "Create a skill that orchestrates the write-execute-analyze loop to autonomously process data. Learn to implement error recovery, iterate toward robust solutions, and test your skill across diverse input scenarios. This is where specification-driven development meets real problem-solving.",
+      "content_excerpt": "---\nsidebar_position: 6\ntitle: \"Build Script-Execution Skill\"\ndescription: \"Create a skill that orchestrates the write-execute-analyze loop to autonomously process data. Learn to implement error recovery, iterate toward robust solutions, and test your skill across diverse input scenarios. This is where specification-driven development meets real problem-solving.\"\nkeywords: [\"script execution skill\", \"write-execute-analyze implementation\", \"error recovery automation\", \"iterative refinement\", \"data processing skill\", \"skill testing\", \"convergence detection\", \"CSV analysis\", \"edge case handling\"]\nchapter: 39\nlesson: 6\nduration_minutes: 50\n\n# HIDDEN SKILLS METADATA\nskills:\n  - name: \"Script-Execution Skill Implementation\"\n    proficiency_level: \"B2\"\n    category: \"Technical\"\n    bloom_level: \"Create\"\n    digcomp_area: \"Problem-Solving\"\n    measurable_at_this_level: \"Student can build a working skill that writes Python code from specifications, executes it, detects errors, generates fixes, and iterates until success criteria are met. Skill demonstrates error recovery handling syntax and runtime failures.\"\n\n  - name: \"Error Detection and Automated Recovery\"\n    proficiency_level: \"B2\"\n    category: \"Technical\"\n    bloom_level: \"Apply\"\n    digcomp_area: \"Problem-Solving\"\n    measurable_at_this_level: \"Student can parse error messages from code execution, categorize error types (syntax vs runtime), and prompt AI to generate corrected code. Student validates fixes against original specification.\"\n\n  - name: \"Convergence Validation and Iteration Control\"\n    proficiency_level: \"B2\"\n    category: \"Technical\"\n    bloom_level: \"Analyze\"\n    digcomp_area: \"Problem-Solving\"\n    measurable_at_this_level: \"Student can define and implement convergence criteria (specification compliance, error-free execution, edge case handling) and iteration limits (max retries, timeouts) that prevent infinite loops while allowing sufficient attempts.\"\n\nlearning_objectives:\n  - objective: \"Write skill specification for script execution task including success criteria, edge cases, and convergence conditions\"\n    proficiency_level: \"B2\"\n    bloom_level: \"Create\"\n    assessment_method: \"Students define complete skill spec with data inputs, transformation logic, success criteria, and at least 3 edge cases\"\n\n  - objective: \"Implement write-execute-analyze loop with error detection and recovery\"\n    proficiency_level: \"B2\"\n    bloom_level: \"Create\"\n    assessment_method: \"Students build working s"
+    },
+    {
+      "path": "other/1-frontend-design-breverdbidder-life-os-2/SKILL.md",
+      "name": "frontend-design",
+      "current_category": "other",
+      "llm_category": "design",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill explicitly focuses on creating distinctive frontend interfaces with high design quality, avoiding generic AI aesthetics.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "367941b6428c244e4cc610aa4d3e9003866d3d0c11b637db2bf18114748883fe",
+      "metadata_sha256": "17f5d52cb924564f44cf83c033694c1892376c6502f14cc928380a0d34435ad4",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics.",
+      "content_excerpt": "---\nname: frontend-design\ndescription: Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics.\n---\n\n# Frontend Design\n\nThis skill guides creation of distinctive, production-grade frontend interfaces that avoid generic \"AI slop\" aesthetics. Implement real working code with exceptional attention to aesthetic details and creative choices.\n\n## When to Use This Skill\n\nUse this skill when the user asks to build web components, pages, artifacts, posters, or applications. Examples include:\n- Websites and landing pages\n- Dashboards and data visualizations\n- React components or HTML/CSS layouts\n- Styling or beautifying any web UI\n\n## Design Philosophy\n\nBefore coding, understand the context and commit to a BOLD aesthetic direction:\n\n**Purpose**: What problem does this interface solve? Who uses it?\n\n**Tone**: Pick an extreme aesthetic direction:\n- Brutally minimal\n- Maximalist chaos\n- Retro-futuristic\n- Organic/natural\n- Luxury/refined\n- Playful/toy-like\n- Editorial/magazine\n- Brutalist/raw\n- Art deco/geometric\n- Soft/pastel\n- Industrial/utilitarian\n\n## Critical Rules\n\n**NEVER use generic AI-generated aesthetics:**\n- ❌ Overused font families (Inter, Roboto, Arial, system fonts)\n- ❌ Cliched color schemes (particularly purple gradients on white backgrounds)\n- ❌ Predictable layouts and component patterns\n- ❌ Cookie-cutter design that lacks context-specific character\n- ❌ Space Grotesk or other convergent font choices\n\n**DO:**\n- ✅ Interpret creatively and make unexpected choices\n- ✅ Feel genuinely designed for the context\n- ✅ Vary between light and dark themes\n- ✅ Use different fonts for different projects\n- ✅ Apply different aesthetics - no design should be the same\n\n## Implementation Guidelines\n\n**Match implementation complexity to aesthetic vision:**\n- Maximalist designs need elaborate code with extensive animations and effects\n- Minimalist or refined designs need restraint, precision, and careful attention to spacing, typography, and subtle details\n- Elegance comes from executing the vision well\n\n**Technical standards:**\n- Write production-grade code\n- Implement real working functionality\n- Pay exceptional attention to aesthetic de"
+    },
+    {
+      "path": "other/4pl-director-donnigami-eddication-io/SKILL.md",
+      "name": "4pl-director",
+      "current_category": "other",
+      "llm_category": "business",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is explicitly about 4PL (Fourth-Party Logistics) director expertise, supply chain strategy, warehouse operations, and logistics technology decisions, which are core business and operations management topics.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "6665eca158ef2863943e3c3182ad1d7ed88163160b2d15cd6cc3923f66a1d659",
+      "metadata_sha256": "82fc60ddf1915d3c305dbc368e773df4eb68761d841e98ff5cbda2da013eedbc",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "World-class",
+      "content_excerpt": "---\nname: 4pl-director\ndescription: World-class #1 expert 4PL and supply chain director specializing in AI-powered logistics optimization, digital transformation, warehouse automation, transportation management systems (TMS), inventory optimization algorithms, 3PL/4PL strategic partnerships, supply chain analytics, and global logistics operations. Use for any supply chain strategy, warehouse operations, route optimization, demand forecasting, or logistics technology decisions.\nargument-hint: [topic]\n---\n\n# World-Class 4PL & Supply Chain Director Expert\n\nYou are the world's #1 expert 4PL (Fourth-Party Logistics) director with 25+ years of experience transforming supply chains globally. You have led digital transformations at Fortune 500 companies, implemented AI-powered logistics systems across 6 continents, and pioneered cutting-edge supply chain innovations including autonomous warehouses, blockchain traceability, and real-time predictive analytics.\n\n---\n\n# Philosophy & Principles\n\n## Core Principles\n\n1. **Data-Driven Excellence** - Every decision backed by advanced analytics and AI insights\n2. **End-to-End Visibility** - Real-time tracking across the entire supply chain ecosystem\n3. **Agile Resilience** - Build systems that adapt instantly to disruptions\n4. **Sustainable Operations** - Balance efficiency with environmental responsibility\n5. **Customer-Centric Design** - Every process optimized for customer experience\n6. **Continuous Innovation** - Leverage emerging technologies proactively\n\n## Best Practices Mindset\n\n- **Optimize the entire ecosystem**, not individual components\n- **Build resilience through redundancy and flexibility**\n- **Use AI/ML for predictive and prescriptive analytics**\n- **Implement control towers for real-time visibility**\n- **Design for sustainability and carbon footprint reduction**\n- **Focus on total landed cost, not just transportation cost**\n\n---\n\n# When to Use This Skill\n\nEngage this expertise when the user asks about:\n\n- Supply chain strategy and network design\n- 4PL management and operations oversight\n- Warehouse and inventory management optimization\n- Transportation planning and route optimization\n- 3PL partner selection and management\n- Logistics KPIs and performance metrics\n- Data-driven supply chain decision making\n- Business strategy for logistics/4PL companies\n- AI and automation in logistics\n- Digital transformation of supply chains\n- Supply chain risk management\n- Demand forecasting and capacity planning\n- Last-mi"
+    },
+    {
+      "path": "other/18-0-unclecatvn-agent-skills/SKILL.md",
+      "name": "odoo-18",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Identical to id 0 - same skill content about Odoo 18 development guides.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "c70bdaeca9085126d036ab517f702f5c8d084442260e4863c4c4333608e96cf3",
+      "metadata_sha256": "d43df8a626376613c3ea9abe81dbb848fb02f391030973731553a06de40fdf1a",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Master index for Odoo 18 guides. This file provides a quick reference to find the appropriate detailed guide for each topic. Use this as an index to locate specific guides when working with Odoo 18 code.",
+      "content_excerpt": "---\nname: odoo-18\ndescription: Master index for Odoo 18 guides. This file provides a quick reference to find the appropriate detailed guide for each topic. Use this as an index to locate specific guides when working with Odoo 18 code.\nglobs: \"**/*.{py,xml}\"\nlicense: MIT\nauthor: UncleCat\nversion: 1.0.0\n---\n\n# Odoo 18 Skill - Master Index\n\nMaster index for all Odoo 18 guides. Use this to quickly find the appropriate guide for your task.\n\n## Quick Reference\n\n| Topic | File | When to Use |\n|-------|------|-------------|\n| [Actions](#actions-guide) | `odoo-18-actions-guide.md` | Creating actions, menus, scheduled jobs, server actions |\n| [API Decorators](#decorator-guide) | `odoo-18-decorator-guide.md` | Using @api decorators, compute fields, validation |\n| [Data Files](#data-guide) | `odoo-18-data-guide.md` | XML/CSV data files, records, shortcuts |\n| [Development](#development-guide) | `odoo-18-development-guide.md` | Creating modules, manifest, reports, security, wizards |\n| [Field Types](#field-guide) | `odoo-18-field-guide.md` | Defining model fields, choosing field types |\n| [Manifest](#manifest-guide) | `odoo-18-manifest-guide.md` | __manifest__.py configuration, dependencies, hooks |\n| [Mixins](#mixins-guide) | `odoo-18-mixins-guide.md` | mail.thread, activities, email aliases, tracking |\n| [Model Methods](#model-guide) | `odoo-18-model-guide.md` | Writing ORM queries, CRUD operations, domain filters |\n| [Performance](#performance-guide) | `odoo-18-performance-guide.md` | Optimizing queries, fixing slow code, preventing N+1 |\n| [Reports](#reports-guide) | `odoo-18-reports-guide.md` | QWeb reports, PDF/HTML, templates, paper formats |\n| [Security](#security-guide) | `odoo-18-security-guide.md` | Access rights, record rules, field permissions |\n| [Testing](#testing-guide) | `odoo-18-testing-guide.md` | Writing tests, mocking, assertions, browser testing |\n| [Translation](#translation-guide) | `odoo-18-translation-guide.md` | Adding translations, localization, i18n |\n| [Transactions](#transaction-guide) | `odoo-18-transaction-guide.md` | Handling database errors, savepoints, UniqueViolation |\n| [Controllers](#controller-guide) | `odoo-18-controller-guide.md` | Writing HTTP endpoints, routes, web controllers |\n| [Views & XML](#view-guide) | `odoo-18-view-guide.md` | Writing XML views, actions, menus, QWeb templates |\n| [OWL Components](#owl-guide) | `odoo-18-owl-guide.md` | Building OWL UI components, hooks, services |\n| [Migration](#migration-guide) | `odo"
+    }
+  ],
+  "notes": [
+    "Review sample rows against SKILL.md excerpts before applying a migration plan.",
+    "Sampling is deterministic for a fixed seed and classification input."
+  ]
+}

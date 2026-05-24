@@ -1,0 +1,18 @@
+{
+  "name": "github-mcp-server",
+  "repo": "githubnext/gh-aw",
+  "path": "skills/github-mcp-server/SKILL.md",
+  "source": "github.com/githubnext/gh-aw",
+  "downloaded_at": "2026-01-14T02:08:48.892125Z",
+  "dir_name": "github-mcp-server",
+  "category": "integration",
+  "github_path": "skills/github-mcp-server",
+  "github_branch": "main",
+  "author": "githubnext",
+  "source_url": "https://github.com/githubnext/gh-aw/blob/main/skills/github-mcp-server/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright GitHub, Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

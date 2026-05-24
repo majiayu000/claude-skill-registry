@@ -1,0 +1,18 @@
+{
+  "name": "string-database",
+  "description": "Query STRING API for protein-protein interactions (59M proteins, 20B interactions). Network analysis, GO/KEGG enrichment, interaction discovery, 5000+ species, for systems biology.",
+  "repo": "hxk622/TokenDance",
+  "path": "backend/app/skills/builtin/scientific/bioinformatics/string-database",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hxk622/TokenDance",
+  "dir_name": "string-database-hxk622-tokendance-2",
+  "author": "hxk622",
+  "source_url": "https://github.com/hxk622/TokenDance/blob/main/backend/app/skills/builtin/scientific/bioinformatics/string-database/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hxk622/TokenDance/blob/main/backend/app/skills/builtin/scientific/bioinformatics/string-database/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

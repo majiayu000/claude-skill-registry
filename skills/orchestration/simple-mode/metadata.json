@@ -1,0 +1,16 @@
+{
+  "name": "simple-mode",
+  "repo": "wtthornton/HomeIQ",
+  "path": ".claude/skills/simple-mode/SKILL.md",
+  "source": "github.com/wtthornton/HomeIQ",
+  "downloaded_at": "2026-01-22T03:13:13.789356Z",
+  "dir_name": "simple-mode",
+  "category": "orchestration",
+  "author": "wtthornton",
+  "source_url": "https://github.com/wtthornton/HomeIQ/blob/main/.claude/skills/simple-mode/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Home Assistant Ingestor Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

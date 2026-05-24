@@ -1,0 +1,17 @@
+{
+  "name": "file-tracker",
+  "repo": "besoeasy/open-skills",
+  "path": "skills/file-tracker/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/besoeasy/open-skills",
+  "dir_name": "file-tracker",
+  "downloaded_at": "2026-03-22T07:13:57.154410Z",
+  "author": "besoeasy",
+  "source_url": "https://github.com/besoeasy/open-skills/blob/main/skills/file-tracker/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/besoeasy/open-skills/blob/main/skills/file-tracker/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

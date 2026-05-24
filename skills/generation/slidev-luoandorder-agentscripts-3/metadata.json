@@ -1,0 +1,16 @@
+{
+  "name": "slidev",
+  "repo": "LuoAndOrder/AgentScripts",
+  "path": ".claude/skills/slidev/SKILL.md",
+  "category": "generation",
+  "source": "github.com/LuoAndOrder/AgentScripts",
+  "dir_name": "slidev-luoandorder-agentscripts-3",
+  "downloaded_at": "2026-02-22T05:20:52.885040Z",
+  "author": "LuoAndOrder",
+  "source_url": "https://github.com/LuoAndOrder/AgentScripts/blob/main/.claude/skills/slidev/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/LuoAndOrder/AgentScripts/blob/main/.claude/skills/slidev/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

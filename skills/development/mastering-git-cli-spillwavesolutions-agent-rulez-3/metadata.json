@@ -1,0 +1,17 @@
+{
+  "name": "mastering-git-cli",
+  "repo": "SpillwaveSolutions/agent_rulez",
+  "path": ".opencode/skill/mastering-git-cli/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/SpillwaveSolutions/agent_rulez",
+  "dir_name": "mastering-git-cli-spillwavesolutions-agent-rulez-3",
+  "downloaded_at": "2026-03-22T06:17:32.410900Z",
+  "author": "SpillwaveSolutions",
+  "source_url": "https://github.com/SpillwaveSolutions/agent_rulez/blob/main/.opencode/skill/mastering-git-cli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SpillwaveSolutions/agent_rulez/blob/main/.opencode/skill/mastering-git-cli/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

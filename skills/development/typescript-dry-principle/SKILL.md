@@ -935,6 +935,7 @@ After refactoring:
 
 ## Related Skills
 
+- `nextjs-standard-setup`: For creating standardized Next.js 16 applications with proper component architecture
 - `linting-workflow`: Ensure code quality during refactoring
 - `docstring-generator`: Add documentation to refactored code
 - `typescript-dry-principle`: This skill

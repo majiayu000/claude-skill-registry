@@ -1,0 +1,16 @@
+{
+  "name": "5.reset",
+  "repo": "ioku24/autorankr",
+  "path": ".claude/skills/5-system-framework/5.reset/SKILL.md",
+  "source": "github.com/ioku24/autorankr",
+  "downloaded_at": "2026-02-01T03:56:15.768408Z",
+  "dir_name": "5-reset",
+  "category": "workflow",
+  "author": "ioku24",
+  "source_url": "https://github.com/ioku24/autorankr/blob/main/.claude/skills/5-system-framework/5.reset/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ioku24/autorankr/blob/main/.claude/skills/5-system-framework/5.reset/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

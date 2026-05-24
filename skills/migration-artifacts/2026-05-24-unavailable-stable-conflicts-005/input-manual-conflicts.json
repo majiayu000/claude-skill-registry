@@ -1,0 +1,98 @@
+[
+  {
+    "index": 1,
+    "source_path": "development-tools/biome-js",
+    "target_path": "development/biome-js",
+    "confidence": 0.92,
+    "decision": "manual_review",
+    "reason": "all candidate upstream URLs missing or unavailable"
+  },
+  {
+    "index": 4,
+    "source_path": "development-tools/converting-claude-subagents-edheltzel-atlas",
+    "target_path": "development/converting-claude-subagents-edheltzel-atlas",
+    "confidence": 0.9,
+    "decision": "manual_review",
+    "reason": "all candidate upstream URLs missing or unavailable"
+  },
+  {
+    "index": 5,
+    "source_path": "development-tools/converting-slash-commands-edheltzel-atlas",
+    "target_path": "development/converting-slash-commands-edheltzel-atlas",
+    "confidence": 0.9,
+    "decision": "manual_review",
+    "reason": "all candidate upstream URLs missing or unavailable"
+  },
+  {
+    "index": 6,
+    "source_path": "development-tools/makefile-generation-athola-claude-night-market-bb8563ba",
+    "target_path": "development/makefile-generation",
+    "confidence": 0.9,
+    "decision": "manual_review",
+    "reason": "all candidate upstream URLs missing or unavailable"
+  },
+  {
+    "index": 7,
+    "source_path": "development-tools/makefile-review-athola-claude-night-market-e4a9bac7",
+    "target_path": "development/makefile-review",
+    "confidence": 0.95,
+    "decision": "manual_review",
+    "reason": "all candidate upstream URLs missing or unavailable"
+  },
+  {
+    "index": 9,
+    "source_path": "development-tools/plaited-development-skills-plaited-plaited-e807424e",
+    "target_path": "development/plaited-development-skills-plaited-plaited-2",
+    "confidence": 0.85,
+    "decision": "manual_review",
+    "reason": "all candidate upstream URLs missing or unavailable"
+  },
+  {
+    "index": 11,
+    "source_path": "development-tools/pop-mcp-generator-jrc1883-popkit-claude",
+    "target_path": "development/mcp-generator-jrc1883-popkit-claude",
+    "confidence": 0.9,
+    "decision": "manual_review",
+    "reason": "all candidate upstream URLs missing or unavailable"
+  },
+  {
+    "index": 13,
+    "source_path": "development-tools/searching-code",
+    "target_path": "development/searching-code-alexei-led-claude-code-config",
+    "confidence": 0.85,
+    "decision": "manual_review",
+    "reason": "all candidate upstream URLs missing or unavailable"
+  },
+  {
+    "index": 15,
+    "source_path": "development-tools/using-xcode",
+    "target_path": "development/using-xcode",
+    "confidence": 0.95,
+    "decision": "manual_review",
+    "reason": "all candidate upstream URLs missing or unavailable"
+  },
+  {
+    "index": 16,
+    "source_path": "development-tools/utilizing-cli-tools",
+    "target_path": "development/utilizing-cli-tools-thkt-claude-config",
+    "confidence": 0.9,
+    "decision": "manual_review",
+    "reason": "all candidate upstream URLs missing or unavailable"
+  },
+  {
+    "index": 17,
+    "source_path": "programming-languages/cpp-templates-metaprogramming",
+    "target_path": "development/cpp-templates-metaprogramming",
+    "confidence": 0.95,
+    "decision": "manual_review",
+    "reason": "all candidate upstream URLs missing or unavailable"
+  },
+  {
+    "index": 24,
+    "source_path": "programming-languages/typescript-dry-principle",
+    "target_path": "development/typescript-dry-principle",
+    "confidence": 0.95,
+    "decision": "manual_review",
+    "reason": "all candidate upstream URLs missing or unavailable"
+  }
+]

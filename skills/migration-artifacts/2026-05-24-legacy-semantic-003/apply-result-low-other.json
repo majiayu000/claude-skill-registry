@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-24T09:37:47.635573+00:00",
+  "skills_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-legacy-semantic-003",
+  "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-legacy-semantic-003/migration-artifacts/2026-05-24-legacy-semantic-003/classification.jsonl",
+  "policy": {
+    "min_confidence": 0.0,
+    "from_categories": [
+      "string",
+      "test"
+    ],
+    "to_categories": [],
+    "target_statuses": [
+      "active"
+    ],
+    "allow_target_other": true,
+    "movable_only": true,
+    "limit": null,
+    "apply_mode": "apply"
+  },
+  "summary": {
+    "classification_row_count": 92,
+    "classification_status_counts": {
+      "ok": 92
+    },
+    "planned_move_count": 2,
+    "movable_count": 2,
+    "blocked_count": 0,
+    "operation_counts": {
+      "move": 2
+    },
+    "reject_reasons": {
+      "current category excluded by filter": 90
+    },
+    "source_category_counts": {
+      "string": 1,
+      "test": 1
+    },
+    "target_category_counts": {
+      "other": 2
+    }
+  },
+  "moves": [
+    {
+      "operation": "move",
+      "source_path": "string/string",
+      "source_skill": "string/string/SKILL.md",
+      "source_category": "string",
+      "current_category": "string",
+      "target_category": "other",
+      "target_status": "active",
+      "target_path": "other/string",
+      "target_skill": "other/string/SKILL.md",
+      "name": "string",
+      "confidence": 0.6,
+      "key": "dot-do/mdx:schema/schema.org.ai/Skill.mdx",
+      "repo": "dot-do/mdx",
+      "reason": "classification target passed filters",
+      "source_sha256": "97835cd0107a470566abb30c99ea5dd90a1afb7c0d503e2eee75b83c920fe397",
+      "metadata_sha256": "17720b73e8c53980f0f4e55db94fdbfa5c1ccac9ea4fbe00c5757b9652e5eb60",
+      "semantic_text_sha256": "6566d01e0db1976d181551ad2913aae1206f051fbece97a9a04aa354e563ed8b"
+    },
+    {
+      "operation": "move",
+      "source_path": "test/test-skill-mickdarling-dollhouse-portfolio",
+      "source_skill": "test/test-skill-mickdarling-dollhouse-portfolio/SKILL.md",
+      "source_category": "test",
+      "current_category": "test",
+      "target_category": "other",
+      "target_status": "active",
+      "target_path": "other/test-skill-mickdarling-dollhouse-portfolio",
+      "target_skill": "other/test-skill-mickdarling-dollhouse-portfolio/SKILL.md",
+      "name": "Test skill",
+      "confidence": 0.4,
+      "key": "mickdarling/dollhouse-portfolio:skills/skill.md",
+      "repo": "mickdarling/dollhouse-portfolio",
+      "reason": "classification target passed filters",
+      "source_sha256": "6cf394aaf54dcdec0b889ef277b0a5066236c278534c1a51af54671c712b3c80",
+      "metadata_sha256": "c85c2bd616fea4ae0b79426b8e7968cbb4792612d9d7a3bb0ec53299bae703d9",
+      "semantic_text_sha256": "a9e1633c103018f2429f5f489f6d2f16fd05bda704d6c971c5f2b15f369aae5a"
+    }
+  ],
+  "notes": [
+    "Default mode is review-only and does not modify files.",
+    "Only --apply moves directories and updates metadata.json.",
+    "Blocked moves are never applied automatically."
+  ],
+  "applied_at": "2026-05-24T09:37:47.663646+00:00"
+}

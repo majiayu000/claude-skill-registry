@@ -1,0 +1,17 @@
+{
+  "name": "label-issues",
+  "repo": "bright-room/claude-skills",
+  "path": "label-issues/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/bright-room/claude-skills",
+  "dir_name": "label-issues",
+  "downloaded_at": "2026-03-22T07:20:19.600146Z",
+  "author": "bright-room",
+  "source_url": "https://github.com/bright-room/claude-skills/blob/main/label-issues/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bright-room/claude-skills/blob/main/label-issues/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

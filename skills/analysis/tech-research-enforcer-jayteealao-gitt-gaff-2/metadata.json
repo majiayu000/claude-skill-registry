@@ -1,0 +1,18 @@
+{
+  "name": "tech-research-enforcer",
+  "description": "Enforces iterative web research for coding and DevOps questions to prevent assumptions about libraries, frameworks, APIs, versions, and configurations. Use this skill when the user asks about programm",
+  "repo": "jayteealao/gitt-gaff",
+  "path": ".claude/skills/tech-research-enforcer",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jayteealao/gitt-gaff",
+  "dir_name": "tech-research-enforcer-jayteealao-gitt-gaff-2",
+  "author": "jayteealao",
+  "source_url": "https://github.com/jayteealao/gitt-gaff/blob/main/.claude/skills/tech-research-enforcer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jayteealao/gitt-gaff/blob/main/.claude/skills/tech-research-enforcer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "subagent-driven-development",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills/subagent-driven-development/SKILL.md",
+  "github_branch": "main",
+  "category": "orchestration",
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "subagent-driven-development-enuno-claude-command-and-c-2",
+  "downloaded_at": "2026-03-22T07:57:15.214625Z",
+  "author": "enuno",
+  "source_url": "https://github.com/enuno/claude-command-and-control/blob/main/skills/subagent-driven-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/enuno/claude-command-and-control/blob/main/skills/subagent-driven-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

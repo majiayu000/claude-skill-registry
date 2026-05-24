@@ -1,9 +1,0 @@
-{
-  "name": "sitrep-coordinator",
-  "repo": "hummbl-dev/hummbl-claude-skills",
-  "path": "sitrep-coordinator/SKILL.md",
-  "source": "github.com/hummbl-dev/hummbl-claude-skills",
-  "downloaded_at": "2026-02-02T05:08:40.540848Z",
-  "dir_name": "sitrep-coordinator-hummbl-dev-hummbl-claude-skills",
-  "category": "agent-coordination"
-}

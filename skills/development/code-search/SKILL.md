@@ -45,10 +45,19 @@ serena.find_symbol("*Service", include_kinds=[5])      # Classes
 serena.find_symbol("UserService/create", include_body=True)  # Method
 ```
 
-### By Pattern
-```
-serena.search_for_pattern("@Cacheable|@cached")        # Annotations
-serena.search_for_pattern("TODO|FIXME")                # Comments
+### By Pattern (TOKEN CRITICAL - Always Scope!)
+
+```python
+# WRONG - Will return 20k+ tokens:
+serena.search_for_pattern("@Cacheable|@cached")
+
+# CORRECT - Scoped and limited:
+serena.search_for_pattern(
+    substring_pattern="@Cacheable",
+    relative_path="module-core-domain/",
+    context_lines_after=1,
+    max_answer_chars=3000
+)
 ```
 
 ### Dependencies

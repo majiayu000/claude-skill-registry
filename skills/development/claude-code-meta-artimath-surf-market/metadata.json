@@ -1,0 +1,20 @@
+{
+  "name": "claude-code-meta",
+  "description": "",
+  "repo": "artimath/surf-market",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": "plugins/claude-code-meta/skills/claude-code-meta",
+  "github_branch": "main",
+  "dir_name": "claude-code-meta-artimath-surf-market",
+  "downloaded_at": "2026-02-05T01:45:47.173906Z",
+  "author": "artimath",
+  "source_url": "https://github.com/artimath/surf-market/blob/main/plugins/claude-code-meta/skills/claude-code-meta/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/artimath/surf-market/blob/main/plugins/claude-code-meta/skills/claude-code-meta/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

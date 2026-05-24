@@ -1,0 +1,20 @@
+{
+  "name": "github-multi-repo",
+  "description": "",
+  "repo": "smith-horn/skillsmith",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/smith-horn/skillsmith",
+  "github_path": ".claude/skills/github-multi-repo",
+  "github_branch": "main",
+  "dir_name": "github-multi-repo-smith-horn-skillsmith",
+  "downloaded_at": "2026-02-05T01:44:48.367161Z",
+  "author": "smith-horn",
+  "source_url": "https://github.com/smith-horn/skillsmith/blob/main/.claude/skills/github-multi-repo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/smith-horn/skillsmith/blob/main/.claude/skills/github-multi-repo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

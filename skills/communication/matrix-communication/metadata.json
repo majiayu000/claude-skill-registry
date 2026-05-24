@@ -1,0 +1,16 @@
+{
+  "name": "matrix-communication",
+  "repo": "netresearch/matrix-skill",
+  "path": "skills/matrix-communication/SKILL.md",
+  "source": "github.com/netresearch/matrix-skill",
+  "downloaded_at": "2026-02-02T05:03:22.312314Z",
+  "dir_name": "matrix-communication",
+  "category": "communication",
+  "author": "netresearch",
+  "source_url": "https://github.com/netresearch/matrix-skill/blob/main/skills/matrix-communication/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/netresearch/matrix-skill/blob/main/skills/matrix-communication/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

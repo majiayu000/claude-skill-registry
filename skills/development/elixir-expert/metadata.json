@@ -1,0 +1,18 @@
+{
+  "name": "elixir-expert",
+  "repo": "personamanagmentlayer/pcl",
+  "path": "stdlib/languages/elixir-expert/SKILL.md",
+  "source": "github.com/personamanagmentlayer/pcl",
+  "downloaded_at": "2026-01-22T04:02:11.900988Z",
+  "dir_name": "elixir-expert",
+  "category": "development",
+  "github_path": "stdlib/languages/elixir-expert",
+  "github_branch": "main",
+  "author": "personamanagmentlayer",
+  "source_url": "https://github.com/personamanagmentlayer/pcl/blob/main/stdlib/languages/elixir-expert/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/personamanagmentlayer/pcl/blob/main/stdlib/languages/elixir-expert/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

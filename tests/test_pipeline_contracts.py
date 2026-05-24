@@ -95,15 +95,22 @@ def test_pages_leaderboard_loads_full_data_before_ranking():
 def test_publish_sync_runs_generated_size_guard_after_rebuild():
     sync_script = read_repo_file("scripts/sync_main_repo.sh")
 
+    security_pos = sync_script.index("scripts/security_scanner.py")
     rebuild_pos = sync_script.index("scripts/build_search_index.py")
+    cleanup_pos = sync_script.index("rm -f \"$main_dir/docs/security-report.json\"")
+    canonical_pos = sync_script.index("scripts/check_canonical_categories.py")
     guard_pos = sync_script.index("scripts/check_generated_file_sizes.py")
     category_guard_pos = sync_script.index("scripts/check_category_artifacts.py")
 
-    assert category_guard_pos > guard_pos > rebuild_pos
+    assert category_guard_pos > guard_pos > canonical_pos > cleanup_pos > rebuild_pos > security_pos
+    assert "--output \"$main_dir/docs/security-report.json\"" in sync_script
+    assert "--report-only" in sync_script[sync_script.index("scripts/security_scanner.py") : rebuild_pos]
+    assert "--allow-missing-security-evidence" not in sync_script
     assert "--include registry.json" in sync_script
     assert "--include registry-shards" in sync_script
     assert "--include docs" in sync_script
     assert "--categories-dir" in sync_script
+    assert "--registry-shards" in sync_script
 
 
 def test_publish_sync_metadata_compliance_is_advisory_for_historical_notices():
@@ -131,23 +138,38 @@ def test_build_index_runs_generated_size_guard_before_pages_upload():
 
     guard_pos = workflow.index("scripts/check_generated_file_sizes.py")
     category_guard_pos = workflow.index("scripts/check_category_artifacts.py")
+    canonical_pos = workflow.rindex("scripts/check_canonical_categories.py")
     upload_pos = workflow.index("actions/upload-pages-artifact")
 
-    assert guard_pos < category_guard_pos < upload_pos
+    assert guard_pos < category_guard_pos < canonical_pos < upload_pos
     assert "--include docs" in workflow
+    assert "--docs-dir docs" in workflow
 
 
 def test_sync_data_runs_generated_size_guard_after_registry_rebuild():
     workflow = read_repo_file(".github/workflows/sync-data.yml")
 
     rebuild_pos = workflow.index("scripts/rebuild_registry.py")
+    canonical_pos = workflow.index("scripts/check_canonical_categories.py --registry-shards")
     guard_pos = workflow.index("scripts/check_generated_file_sizes.py")
     commit_pos = workflow.index("Commit & push data repo changes")
 
-    assert rebuild_pos < guard_pos < commit_pos
+    assert rebuild_pos < canonical_pos < guard_pos < commit_pos
     assert "--include registry.json" in workflow
     assert "--include registry-shards" in workflow
     assert "--include docs" in workflow
+
+
+def test_sync_data_checks_sources_and_archive_categories():
+    workflow = read_repo_file(".github/workflows/sync-data.yml")
+
+    validate_pos = workflow.index("scripts/validate_sources.py --sources-dir sources")
+    sync_pos = workflow.index("scripts/sync_and_download.py --sync-only")
+    archive_gate_pos = workflow.index("scripts/check_canonical_categories.py --skills-dir skills")
+    security_pos = workflow.index("Resolve security scope")
+
+    assert validate_pos < sync_pos
+    assert sync_pos < archive_gate_pos < security_pos
 
 
 def test_sync_data_stages_registry_shard_artifacts():

@@ -1,0 +1,28 @@
+{
+  "name": "complexity-cuts",
+  "description": "Corrective playbook for shipped code with bad complexity. Finds repeated work, nested scans, N+1 access, and wrong data structures, then proposes scoped fixes.",
+  "repo": "morsechimwai/lemmaly",
+  "path": "skills/complexity-cuts",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [
+    "algorithms",
+    "big-o",
+    "n-plus-one",
+    "refactoring",
+    "performance",
+    "code-review"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "complexity-cuts",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "morsechimwai",
+  "source_url": "https://github.com/morsechimwai/lemmaly/blob/main/skills/complexity-cuts/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/morsechimwai/lemmaly/blob/main/skills/complexity-cuts/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

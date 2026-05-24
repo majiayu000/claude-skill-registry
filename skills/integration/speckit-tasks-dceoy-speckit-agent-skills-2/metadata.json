@@ -1,0 +1,18 @@
+{
+  "name": "speckit-tasks",
+  "description": "Generate an actionable, dependency-ordered tasks.md for the feature based on available design artifacts.",
+  "repo": "dceoy/speckit-agent-skills",
+  "path": "skills/speckit-taskstoissues",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dceoy/speckit-agent-skills",
+  "dir_name": "speckit-tasks-dceoy-speckit-agent-skills-2",
+  "author": "dceoy",
+  "source_url": "https://github.com/dceoy/speckit-agent-skills/blob/main/skills/speckit-taskstoissues/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dceoy/speckit-agent-skills/blob/main/skills/speckit-taskstoissues/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

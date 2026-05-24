@@ -1,0 +1,16 @@
+{
+  "name": "moai-lang-dart",
+  "repo": "kivo360/quickhooks",
+  "path": ".claude/skills/moai-lang-dart/SKILL.md",
+  "source": "github.com/kivo360/quickhooks",
+  "downloaded_at": "2026-02-01T02:39:58.469837Z",
+  "dir_name": "moai-lang-dart-kivo360-quickhooks",
+  "category": "development",
+  "author": "kivo360",
+  "source_url": "https://github.com/kivo360/quickhooks/blob/main/.claude/skills/moai-lang-dart/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kivo360/quickhooks/blob/main/.claude/skills/moai-lang-dart/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

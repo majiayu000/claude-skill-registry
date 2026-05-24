@@ -1,0 +1,16 @@
+{
+  "name": "council",
+  "repo": "davidgasquez/dotfiles",
+  "path": "agents/disabled-skills/council/SKILL.md",
+  "source": "github.com/davidgasquez/dotfiles",
+  "downloaded_at": "2026-01-29T06:55:07.760003Z",
+  "dir_name": "council-davidgasquez-dotfiles",
+  "category": "orchestration",
+  "author": "davidgasquez",
+  "source_url": "https://github.com/davidgasquez/dotfiles/blob/main/agents/disabled-skills/council/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2016 David Gasquez",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

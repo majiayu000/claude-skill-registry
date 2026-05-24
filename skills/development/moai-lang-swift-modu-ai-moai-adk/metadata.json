@@ -1,0 +1,16 @@
+{
+  "name": "moai-lang-swift",
+  "repo": "modu-ai/moai-adk",
+  "path": "src/MoAI-GO/pkg/templates/.claude/skills/moai-lang-swift/SKILL.md",
+  "source": "github.com/modu-ai/moai-adk",
+  "downloaded_at": "2026-01-29T08:57:17.620220Z",
+  "dir_name": "moai-lang-swift-modu-ai-moai-adk",
+  "category": "development",
+  "author": "modu-ai",
+  "source_url": "https://github.com/modu-ai/moai-adk/blob/main/src/MoAI-GO/pkg/templates/.claude/skills/moai-lang-swift/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/modu-ai/moai-adk/blob/main/src/MoAI-GO/pkg/templates/.claude/skills/moai-lang-swift/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

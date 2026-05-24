@@ -1,0 +1,16 @@
+{
+  "name": "research",
+  "repo": "danielmiessler/Personal_AI_Infrastructure",
+  "path": "Packs/pai-research-skill/src/skills/Research/SKILL.md",
+  "category": "analysis",
+  "source": "github.com/danielmiessler/Personal_AI_Infrastructure",
+  "dir_name": "research-danielmiessler-personal-ai-infrastr-4",
+  "downloaded_at": "2026-02-15T06:53:10.618359Z",
+  "author": "danielmiessler",
+  "source_url": "https://github.com/danielmiessler/Personal_AI_Infrastructure/blob/main/Packs/pai-research-skill/src/skills/Research/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel Miessler",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

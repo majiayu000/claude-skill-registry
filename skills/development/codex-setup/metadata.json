@@ -1,0 +1,20 @@
+{
+  "name": "codex-setup",
+  "description": "",
+  "repo": "Chachamaru127/claude-code-harness",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Chachamaru127/claude-code-harness",
+  "github_path": "skills/codex-setup",
+  "github_branch": "main",
+  "dir_name": "codex-setup",
+  "downloaded_at": "2026-02-05T01:44:28.294159Z",
+  "author": "Chachamaru127",
+  "source_url": "https://github.com/Chachamaru127/claude-code-harness/blob/main/skills/codex-setup/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2025 Manus AI & Chachamaru",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

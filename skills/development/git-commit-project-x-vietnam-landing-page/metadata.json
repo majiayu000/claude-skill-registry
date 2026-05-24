@@ -1,0 +1,16 @@
+{
+  "name": "git-commit",
+  "repo": "Project-X-Vietnam/landing-page",
+  "path": ".claude/skills/git-commit/SKILL.md",
+  "category": "development",
+  "source": "github.com/Project-X-Vietnam/landing-page",
+  "dir_name": "git-commit-project-x-vietnam-landing-page",
+  "downloaded_at": "2026-02-22T05:35:29.695513Z",
+  "author": "Project-X-Vietnam",
+  "source_url": "https://github.com/Project-X-Vietnam/landing-page/blob/main/.claude/skills/git-commit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Project-X-Vietnam/landing-page/blob/main/.claude/skills/git-commit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

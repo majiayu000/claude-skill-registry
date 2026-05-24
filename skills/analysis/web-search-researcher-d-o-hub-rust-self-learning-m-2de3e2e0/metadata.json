@@ -1,0 +1,16 @@
+{
+  "name": "web-search-researcher",
+  "repo": "d-o-hub/rust-self-learning-memory",
+  "path": ".claude/skills/web-search-researcher/SKILL.md",
+  "source": "github.com/d-o-hub/rust-self-learning-memory",
+  "downloaded_at": "2026-01-29T07:03:25.909705Z",
+  "dir_name": "web-search-researcher-d-o-hub-rust-self-learning-m-2de3e2e0",
+  "category": "analysis",
+  "author": "d-o-hub",
+  "source_url": "https://github.com/d-o-hub/rust-self-learning-memory/blob/main/.claude/skills/web-search-researcher/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2019 Zachary Rice",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

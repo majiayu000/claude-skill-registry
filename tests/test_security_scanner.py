@@ -17,6 +17,49 @@ def load_module():
     return module
 
 
+def test_scan_directory_emits_security_decision_with_provenance(tmp_path):
+    module = load_module()
+    skill_dir = tmp_path / "skills" / "development" / "demo"
+    skill_dir.mkdir(parents=True)
+    (skill_dir / "SKILL.md").write_text(
+        """---
+name: demo
+description: Demo skill used to verify security decision evidence.
+---
+
+# Demo
+""",
+        encoding="utf-8",
+    )
+    (skill_dir / "metadata.json").write_text(
+        json.dumps(
+            {
+                "repo": "acme/demo",
+                "path": "skills/demo",
+                "github_branch": "main",
+                "source_url": "https://github.com/acme/demo",
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    report = module.scan_directory(
+        tmp_path / "skills",
+        quiet=True,
+        scanned_at="2026-05-24T00:00:00Z",
+    )
+
+    decision = report["skills"][0]["security_decision"]
+    assert report["scanner"]["version"] == module.SECURITY_SCANNER_VERSION
+    assert decision["status"] == "passed"
+    assert decision["scanner"]["ruleset_sha256"]
+    assert decision["provenance"]["source_repo"] == "acme/demo"
+    assert decision["provenance"]["source_path"] == "skills/demo"
+    assert decision["provenance"]["source_ref"] == "main"
+    assert decision["provenance"]["content_sha256"]
+    assert decision["provenance"]["scanned_at"] == "2026-05-24T00:00:00Z"
+
+
 def test_scanner_checks_reference_implementations(tmp_path):
     module = load_module()
     skill_dir = tmp_path / "demo"
@@ -45,6 +88,38 @@ description: Demo skill used to verify bundled reference scanning.
         issue.get("type") == "dangerous_pattern"
         and issue.get("pattern") == "shell=True"
         and "references/helper.py" in issue.get("file", "")
+        for issue in issues
+    )
+
+
+def test_scanner_checks_bundled_rules(tmp_path):
+    module = load_module()
+    skill_dir = tmp_path / "demo"
+    rules_dir = skill_dir / "rules"
+    rules_dir.mkdir(parents=True)
+    (skill_dir / "SKILL.md").write_text(
+        """---
+name: demo
+description: Demo skill used to verify bundled rule scanning.
+---
+
+# Demo
+""",
+        encoding="utf-8",
+    )
+    (rules_dir / "dangerous.md").write_text(
+        "Run subprocess.run('echo unsafe', shell=True) from this rule.\n",
+        encoding="utf-8",
+    )
+
+    scanner = module.SecurityScanner()
+    is_safe, issues = scanner.scan_file(skill_dir / "SKILL.md")
+
+    assert is_safe is False
+    assert any(
+        issue.get("type") == "dangerous_pattern"
+        and issue.get("pattern") == "shell=True"
+        and "rules/dangerous.md" in issue.get("file", "")
         for issue in issues
     )
 
@@ -195,8 +270,7 @@ description: Demo skill used to verify file list ownership.
     (examples_dir / "install.sh").write_text("echo ok\n", encoding="utf-8")
     file_list = tmp_path / "changed-files.txt"
     file_list.write_text(
-        "demo/examples/install.sh\n"
-        "demo/metadata.json\n",
+        "demo/examples/install.sh\n" "demo/metadata.json\n",
         encoding="utf-8",
     )
 
@@ -209,9 +283,11 @@ def test_scanner_checks_all_archived_support_dirs(tmp_path):
     module = load_module()
     skill_dir = tmp_path / "demo"
     examples_dir = skill_dir / "examples"
+    knowledge_dir = skill_dir / "knowledge"
     templates_dir = skill_dir / "templates"
     assets_dir = skill_dir / "assets"
     examples_dir.mkdir(parents=True)
+    knowledge_dir.mkdir()
     templates_dir.mkdir()
     assets_dir.mkdir()
     (skill_dir / "SKILL.md").write_text(
@@ -226,6 +302,10 @@ description: Demo skill used to verify bundled support dir scanning.
     )
     (examples_dir / "install.sh").write_text(
         "python -c \"eval('unsafe')\"\n",
+        encoding="utf-8",
+    )
+    (knowledge_dir / "workflow.md").write_text(
+        "Call subprocess.run(['setup']) for setup.\n",
         encoding="utf-8",
     )
     (templates_dir / "postinstall.js").write_text(
@@ -243,6 +323,7 @@ description: Demo skill used to verify bundled support dir scanning.
     assert is_safe is False
     issue_files = {issue.get("file", "") for issue in issues}
     assert any("examples/install.sh" in file for file in issue_files)
+    assert any("knowledge/workflow.md" in file for file in issue_files)
     assert any("templates/postinstall.js" in file for file in issue_files)
     assert any("assets/payload.svg" in file for file in issue_files)
 
@@ -297,8 +378,7 @@ description: Demo skill used to verify bundled file size checks.
 
     assert is_safe is False
     assert any(
-        issue.get("type") == "file_too_large"
-        and "scripts/payload.bin" in issue.get("file", "")
+        issue.get("type") == "file_too_large" and "scripts/payload.bin" in issue.get("file", "")
         for issue in issues
     )
 

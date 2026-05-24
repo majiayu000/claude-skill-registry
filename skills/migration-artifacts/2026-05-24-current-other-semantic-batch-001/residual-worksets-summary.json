@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-24T16:36:29.244108+00:00",
+  "skills_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-41-current-other-batch-001",
+  "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-41-current-other-batch-001/migration-artifacts/2026-05-24-current-other-semantic-batch-001/classification.jsonl",
+  "policy": {
+    "from_categories": [
+      "other"
+    ],
+    "min_confidence": 0.9,
+    "content_chars": 1600,
+    "apply_mode": "report-only"
+  },
+  "summary": {
+    "classification_row_count": 500,
+    "archive_category_counts": {
+      "agent": 1305,
+      "ai-llm": 2045,
+      "ai-ml": 2012,
+      "analysis": 3002,
+      "api": 797,
+      "bash": 179,
+      "business": 1031,
+      "c-level": 49,
+      "communication": 561,
+      "context-management": 1157,
+      "creative": 660,
+      "data": 48864,
+      "design": 13380,
+      "development": 36102,
+      "devops": 10210,
+      "documents": 6175,
+      "domains": 49,
+      "examples": 84,
+      "forensics": 56,
+      "gaming": 689,
+      "generation": 454,
+      "integration": 4583,
+      "language": 62,
+      "local-ai-infrastructure": 50,
+      "marketing": 2575,
+      "orchestration": 1841,
+      "other": 53379,
+      "performance": 848,
+      "personal-development": 284,
+      "planning": 1295,
+      "platform": 234,
+      "product": 2320,
+      "productivity": 2949,
+      "quality": 2644,
+      "security": 4931,
+      "skills": 1700,
+      "system": 17,
+      "testing": 11123,
+      "travel": 43,
+      "war-room": 4,
+      "workflow": 877,
+      "writing": 901
+    },
+    "scoped_existing_classification_count": 500,
+    "workset_counts": {
+      "classification_gap": 52879,
+      "low_confidence": 254,
+      "review_target": 0,
+      "target_other": 0
+    },
+    "conflict_detail_count": 0,
+    "conflict_clusters": {},
+    "conflict_target_category_counts": {}
+  },
+  "notes": [
+    "This report does not modify archive files.",
+    "classification_gap contains live archive paths absent from the classification JSONL.",
+    "low_confidence and review_target rows should be reclassified before apply.",
+    "conflict clusters are diagnostic; content drift conflicts must not be auto-deleted."
+  ]
+}

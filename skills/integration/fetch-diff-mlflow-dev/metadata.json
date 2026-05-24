@@ -1,0 +1,20 @@
+{
+  "name": "fetch-diff",
+  "description": "A fork of the mlflow/mlflow repository for testing automation jobs",
+  "repo": "mlflow/dev",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".claude/skills/fetch-diff",
+  "github_branch": "master",
+  "dir_name": "fetch-diff-mlflow-dev",
+  "downloaded_at": "2026-02-05T01:45:39.047677Z",
+  "author": "mlflow",
+  "source_url": "https://github.com/mlflow/dev/blob/master/.claude/skills/fetch-diff/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mlflow/dev/blob/master/.claude/skills/fetch-diff/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

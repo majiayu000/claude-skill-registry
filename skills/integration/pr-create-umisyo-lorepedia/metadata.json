@@ -1,0 +1,18 @@
+{
+  "name": "pr-create",
+  "repo": "Umisyo/Lorepedia",
+  "path": ".claude/skills/pr-create/SKILL.md",
+  "source": "github.com/Umisyo/Lorepedia",
+  "downloaded_at": "2026-01-22T04:07:50.725740Z",
+  "dir_name": "pr-create-umisyo-lorepedia",
+  "category": "integration",
+  "github_path": ".claude/skills/pr-create",
+  "github_branch": "main",
+  "author": "Umisyo",
+  "source_url": "https://github.com/Umisyo/Lorepedia/blob/main/.claude/skills/pr-create/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Umisyo/Lorepedia/blob/main/.claude/skills/pr-create/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

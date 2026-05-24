@@ -1,0 +1,16 @@
+{
+  "name": "github-task-splitter",
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave-github/skills/github-task-splitter/SKILL.md",
+  "source": "github.com/anton-abyzov/specweave",
+  "downloaded_at": "2026-01-29T05:36:50.209346Z",
+  "dir_name": "github-task-splitter-anton-abyzov-specweave",
+  "category": "integration",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave-github/skills/github-task-splitter/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "convex-agents-workflows",
+  "description": "",
+  "repo": "danmarauda/agent-alias-configurator",
+  "category": "orchestration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/danmarauda/agent-alias-configurator",
+  "github_path": "convex-skills-main/convex-agents-workflows",
+  "github_branch": "main",
+  "dir_name": "convex-agents-workflows",
+  "downloaded_at": "2026-02-05T05:36:35.672699Z",
+  "author": "danmarauda",
+  "source_url": "https://github.com/danmarauda/agent-alias-configurator/blob/main/convex-skills-main/convex-agents-workflows/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/danmarauda/agent-alias-configurator/blob/main/convex-skills-main/convex-agents-workflows/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

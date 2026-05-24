@@ -1,0 +1,16 @@
+{
+  "name": "github-pull-request-description",
+  "repo": "longbridge/gpui-component",
+  "path": ".claude/skills/github-pull-request-description/SKILL.md",
+  "source": "github.com/longbridge/gpui-component",
+  "downloaded_at": "2026-01-29T08:52:35.819623Z",
+  "dir_name": "github-pull-request-description-longbridge-gpui-component",
+  "category": "integration",
+  "author": "longbridge",
+  "source_url": "https://github.com/longbridge/gpui-component/blob/main/.claude/skills/github-pull-request-description/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/longbridge/gpui-component/blob/main/.claude/skills/github-pull-request-description/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

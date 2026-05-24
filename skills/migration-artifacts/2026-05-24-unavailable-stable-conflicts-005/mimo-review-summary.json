@@ -1,0 +1,147 @@
+{
+  "summary": {
+    "error": 11,
+    "move_source_as_distinct_and_keep_target": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "source_path": "development-tools/biome-js",
+      "target_path": "development/biome-js",
+      "source_sha256": "74d97a91853e9345b49b43d5b9aea5c1bb0fabfde1990bf629db2f901b3be8d5",
+      "target_sha256": "09d3568964db0deb5edeb14c9757498b9f2296059db746ff93836c27422407a0",
+      "source_bytes": 6164,
+      "target_bytes": 6791,
+      "mimo": null,
+      "raw": "ERROR attempt 2: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "index": 4,
+      "source_path": "development-tools/converting-claude-subagents-edheltzel-atlas",
+      "target_path": "development/converting-claude-subagents-edheltzel-atlas",
+      "source_sha256": "3a832ac6eff06295551aac99dfd648307e3bf95b696d3fada1ec270889d188f4",
+      "target_sha256": "f8bbee7b56b9809cc42f6b03fe16134c4539ceb285d1e4e3af17335a5fe2b591",
+      "source_bytes": 12521,
+      "target_bytes": 11963,
+      "mimo": null,
+      "raw": "ERROR attempt 2: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "index": 5,
+      "source_path": "development-tools/converting-slash-commands-edheltzel-atlas",
+      "target_path": "development/converting-slash-commands-edheltzel-atlas",
+      "source_sha256": "b78c4b5fc7866d890f7a2cc7bdaf85dea7ee05c6827d8390e3f1bd8899ed578b",
+      "target_sha256": "dba3ec65d9e21c314aab957b431de4d3c9fefba1d74343674b5746179e4197d7",
+      "source_bytes": 11868,
+      "target_bytes": 11549,
+      "mimo": null,
+      "raw": "ERROR attempt 2: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "index": 6,
+      "source_path": "development-tools/makefile-generation-athola-claude-night-market-bb8563ba",
+      "target_path": "development/makefile-generation",
+      "source_sha256": "65b8a2b34b504b98bb6381673d96542548435a6864e4e75638d95ef628106c2d",
+      "target_sha256": "bb19b92eae9fbead0f529ef3ca0f7700ced5f1e1026af5c9a624edc26c10cbc7",
+      "source_bytes": 3990,
+      "target_bytes": 2697,
+      "mimo": null,
+      "raw": "ERROR attempt 2: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "index": 7,
+      "source_path": "development-tools/makefile-review-athola-claude-night-market-e4a9bac7",
+      "target_path": "development/makefile-review",
+      "source_sha256": "a556cf8c8a8f0b808095ba504d3c666c853b8440fc223497a85577550b93131c",
+      "target_sha256": "86aa59bb623c3f3513103fbcc5b1f6b5a1eab86f5b67c53ed02e3fac2d74d653",
+      "source_bytes": 4988,
+      "target_bytes": 3156,
+      "mimo": null,
+      "raw": "ERROR attempt 2: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "index": 9,
+      "source_path": "development-tools/plaited-development-skills-plaited-plaited-e807424e",
+      "target_path": "development/plaited-development-skills-plaited-plaited-2",
+      "source_sha256": "bcdb752efa77ad9b9034e2b4a95aeee38c611ee8aa0eb7320e729261e6dc8078",
+      "target_sha256": "2fdcd79c975f7f75a29a2be45761f31b917b99ae2a8d265093c7b76ff6a3e538",
+      "source_bytes": 820,
+      "target_bytes": 2269,
+      "mimo": {
+        "decision": "move_source_as_distinct_and_keep_target",
+        "confidence": 0.95,
+        "rationale": "Source and target are entirely different artifacts serving different purposes. Source is a CLI command (validate-skill.md) that runs 'bunx @plaited/development-skills validate-skill' to validate skill directories against the AgentSkills spec. Target is a full code documentation skill with TSDoc templates, maintenance workflows, and navigation to reference files. They share the 'plaited_development-skills' parent namespace but have zero content overlap. The source resides under .claude/commands/ (a command file) while the target resides under .claude/skills/ (a skill). Both are unique and valuable.",
+        "source_unique_value": "Validation command for skill directories against AgentSkills spec, using bunx CLI and MCP agent-skills-spec server for error resolution.",
+        "target_unique_value": "Comprehensive TSDoc code documentation skill with templates for public APIs, internal modules, type documentation, maintenance workflows, and related skill integrations (typescript-lsp).",
+        "risk": "Low. Moving source as distinct preserves both artifacts. Only risk is if the namespace collision causes confusion in downstream tooling, but the paths and purposes are clearly distinct."
+      },
+      "raw": "{\"decision\": \"move_source_as_distinct_and_keep_target\", \"confidence\": 0.95, \"rationale\": \"Source and target are entirely different artifacts serving different purposes. Source is a CLI command (validate-skill.md) that runs 'bunx @plaited/development-skills validate-skill' to validate skill directories against the AgentSkills spec. Target is a full code documentation skill with TSDoc templates, maintenance workflows, and navigation to reference files. They share the 'plaited_development-skills' parent namespace but have zero content overlap. The source resides under .claude/commands/ (a command file) while the target resides under .claude/skills/ (a skill). Both are unique and valuable.\", \"source_unique_value\": \"Validation command for skill directories against AgentSkills spec, using bunx CLI and MCP agent-skills-spec server for error resolution.\", \"target_unique_value\": \"Comprehensive TSDoc code documentation skill with templates for public APIs, internal modules, type documentation, maintenance workflows, and related skill integrations (typescript-lsp).\", \"risk\": \"Low. Moving source as distinct preserves both artifacts. Only risk is if the namespace collision causes confusion in downstream tooling, but the paths and purposes are clearly distinct.\"}"
+    },
+    {
+      "index": 11,
+      "source_path": "development-tools/pop-mcp-generator-jrc1883-popkit-claude",
+      "target_path": "development/mcp-generator-jrc1883-popkit-claude",
+      "source_sha256": "5179bfc391b482fbf72b6814c728897e66311cf7d23251b2d2726b0940ab093e",
+      "target_sha256": "e1812e771499ceb9f796995ccdf7e2467e4518b5e472fb1ae65264ae0b9f1309",
+      "source_bytes": 8774,
+      "target_bytes": 6309,
+      "mimo": null,
+      "raw": "ERROR attempt 2: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "index": 13,
+      "source_path": "development-tools/searching-code",
+      "target_path": "development/searching-code-alexei-led-claude-code-config",
+      "source_sha256": "4505bd63063ce863a53dabb90625ac5ed8e4a9cc5adf4153e43ee5484eb36e74",
+      "target_sha256": "7eaba4815f87fff16f06298e576d56703581921099f4e589749326d0271b65cf",
+      "source_bytes": 2201,
+      "target_bytes": 2163,
+      "mimo": null,
+      "raw": "ERROR attempt 2: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "index": 15,
+      "source_path": "development-tools/using-xcode",
+      "target_path": "development/using-xcode",
+      "source_sha256": "72a0a909a7b8fc41acd3f6beacd6096289c60a9c7a0aae93c18f374fe3d56fb3",
+      "target_sha256": "199890d39155c15515ae02bd774ecd1fe494ee879e48819ec172ef76704a4a14",
+      "source_bytes": 682,
+      "target_bytes": 743,
+      "mimo": null,
+      "raw": "ERROR attempt 2: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "index": 16,
+      "source_path": "development-tools/utilizing-cli-tools",
+      "target_path": "development/utilizing-cli-tools-thkt-claude-config",
+      "source_sha256": "c003a7a8b2f6b08b8cda014a057f2c6c8e813e15e05eaeddf50efbb90da96bc4",
+      "target_sha256": "8dbb57cb4744fd83afb5fb77bb86ef7793d0b5844d99624948381064fe9005ab",
+      "source_bytes": 1027,
+      "target_bytes": 2750,
+      "mimo": null,
+      "raw": "ERROR attempt 2: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "index": 17,
+      "source_path": "programming-languages/cpp-templates-metaprogramming",
+      "target_path": "development/cpp-templates-metaprogramming",
+      "source_sha256": "898641fbeaaf2b015265adb84b3f9367079681e6c477717c3dd1008fb724a774",
+      "target_sha256": "7597edd694461c1240ee67f2a42d28cfa9f7f0d753e7b2051997d0e8cd32c3cb",
+      "source_bytes": 25010,
+      "target_bytes": 17826,
+      "mimo": null,
+      "raw": "ERROR attempt 2: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "index": 24,
+      "source_path": "programming-languages/typescript-dry-principle",
+      "target_path": "development/typescript-dry-principle",
+      "source_sha256": "1392999291d96a7b50099c35f262b12246cc64665577fe4a1aeb260b8f32e8b3",
+      "target_sha256": "bb6cb7334452ffae4063ef0a04c119fc109aa27b6e67996dbaec3eac89da1c76",
+      "source_bytes": 26471,
+      "target_bytes": 26359,
+      "mimo": null,
+      "raw": "ERROR attempt 2: Expecting value: line 1 column 1 (char 0)"
+    }
+  ]
+}

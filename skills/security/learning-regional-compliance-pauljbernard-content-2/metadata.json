@@ -1,0 +1,18 @@
+{
+  "name": "learning-regional-compliance",
+  "description": "Validate compliance with regional data privacy laws (GDPR, CCPA, PIPEDA), accessibility requirements, age-appropriate content regulations, and copyright laws by jurisdiction. Use when ensuring legal c",
+  "repo": "pauljbernard/content",
+  "path": ".archive/old-content-directory-2025-11-06/content/.claude/skills/learning-regional-compliance",
+  "category": "security",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pauljbernard/content",
+  "dir_name": "learning-regional-compliance-pauljbernard-content-2",
+  "author": "pauljbernard",
+  "source_url": "https://github.com/pauljbernard/content/blob/main/.archive/old-content-directory-2025-11-06/content/.claude/skills/learning-regional-compliance/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pauljbernard/content/blob/main/.archive/old-content-directory-2025-11-06/content/.claude/skills/learning-regional-compliance/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

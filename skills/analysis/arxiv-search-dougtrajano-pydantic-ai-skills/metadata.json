@@ -1,0 +1,16 @@
+{
+  "name": "arxiv-search",
+  "repo": "DougTrajano/pydantic-ai-skills",
+  "path": "examples/skills/arxiv-search/SKILL.md",
+  "source": "github.com/DougTrajano/pydantic-ai-skills",
+  "downloaded_at": "2026-02-02T04:59:22.400246Z",
+  "dir_name": "arxiv-search-dougtrajano-pydantic-ai-skills",
+  "category": "analysis",
+  "author": "DougTrajano",
+  "source_url": "https://github.com/DougTrajano/pydantic-ai-skills/blob/main/examples/skills/arxiv-search/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DougTrajano/pydantic-ai-skills/blob/main/examples/skills/arxiv-search/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

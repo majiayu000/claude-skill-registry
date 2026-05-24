@@ -1,0 +1,17 @@
+{
+  "name": "git-review-orchestrator",
+  "repo": "cromesdk/ai-skills",
+  "path": "skills/project/git-review-orchestrator/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/cromesdk/ai-skills",
+  "dir_name": "git-review-orchestrator",
+  "downloaded_at": "2026-03-01T07:18:59.681334Z",
+  "author": "cromesdk",
+  "source_url": "https://github.com/cromesdk/ai-skills/blob/main/skills/project/git-review-orchestrator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cromesdk/ai-skills/blob/main/skills/project/git-review-orchestrator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

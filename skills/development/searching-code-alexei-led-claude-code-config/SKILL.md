@@ -1,7 +1,13 @@
 ---
 name: searching-code
 description: Intelligent codebase search via WarpGrep. Use when user asks "how does X work", "trace flow", "find all implementations", "understand codebase", or needs cross-file exploration in large repos (1000+ files).
-allowed-tools: mcp__morphllm__warpgrep_codebase_search, mcp__morphllm__codebase_search, Read, Grep, Glob
+user-invocable: false
+allowed-tools:
+  - mcp__morphllm__warpgrep_codebase_search
+  - mcp__morphllm__codebase_search
+  - Read
+  - Grep
+  - Glob
 ---
 
 # Intelligent Code Search with WarpGrep

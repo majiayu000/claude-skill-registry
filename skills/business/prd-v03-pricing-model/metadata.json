@@ -1,0 +1,18 @@
+{
+  "name": "prd-v03-pricing-model",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": ".claude/skills/prd-v03-pricing-model/SKILL.md",
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "downloaded_at": "2026-01-22T02:02:06.312205Z",
+  "dir_name": "prd-v03-pricing-model",
+  "category": "business",
+  "github_path": ".claude/skills/prd-v03-pricing-model",
+  "github_branch": "main",
+  "author": "mattgierhart",
+  "source_url": "https://github.com/mattgierhart/PRD-driven-context-engineering/blob/main/.claude/skills/prd-v03-pricing-model/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mattgierhart/PRD-driven-context-engineering/blob/main/.claude/skills/prd-v03-pricing-model/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

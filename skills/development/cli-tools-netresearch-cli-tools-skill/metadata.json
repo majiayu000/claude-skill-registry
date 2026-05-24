@@ -1,0 +1,16 @@
+{
+  "name": "cli-tools",
+  "repo": "netresearch/cli-tools-skill",
+  "path": "skills/cli-tools/SKILL.md",
+  "source": "github.com/netresearch/cli-tools-skill",
+  "downloaded_at": "2026-01-29T06:15:05.192692Z",
+  "dir_name": "cli-tools-netresearch-cli-tools-skill",
+  "category": "development",
+  "author": "netresearch",
+  "source_url": "https://github.com/netresearch/cli-tools-skill/blob/main/skills/cli-tools/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025-2026 Netresearch DTT GmbH",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

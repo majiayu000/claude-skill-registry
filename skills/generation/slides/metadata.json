@@ -1,0 +1,16 @@
+{
+  "name": "slides",
+  "repo": "yugasun/skills",
+  "path": "skills/slides/SKILL.md",
+  "source": "github.com/yugasun/skills",
+  "downloaded_at": "2026-02-02T03:17:28.860357Z",
+  "dir_name": "slides",
+  "category": "generation",
+  "author": "yugasun",
+  "source_url": "https://github.com/yugasun/skills/blob/main/skills/slides/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yugasun/skills/blob/main/skills/slides/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

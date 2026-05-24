@@ -223,7 +223,8 @@ def normalize_name(name: str) -> str:
 def normalize_category(category: str) -> str:
     """
     Normalize category name for directory creation.
-    Resolve declared aliases through the canonical taxonomy, then normalize.
+    Do not resolve legacy aliases here: source intake should either provide a
+    canonical category slug or be routed into an explicit review queue.
     """
     if not category:
         return "other"
@@ -253,8 +254,14 @@ def build_skill_key(repo: str = "", path: str = "", name: str = "", category: st
     """Build a stable key for a skill to detect duplicates."""
     repo = _skill_key_text(repo).strip()
     path = _normalize_skill_key_path(path)
+    name = _skill_key_text(name).strip()
+    category = _skill_key_text(category).strip()
     if repo and path:
         return f"{repo}:{path}"
+    if repo and name:
+        return f"{repo}:{name}"
+    if repo and category:
+        return f"{repo}:{category}"
     if repo:
         return repo
     if category or name:

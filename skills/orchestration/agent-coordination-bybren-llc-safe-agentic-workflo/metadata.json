@@ -1,0 +1,18 @@
+{
+  "name": "agent-coordination",
+  "repo": "bybren-llc/safe-agentic-workflow",
+  "path": ".claude/skills/agent-coordination/SKILL.md",
+  "source": "github.com/bybren-llc/safe-agentic-workflow",
+  "downloaded_at": "2026-01-22T03:11:02.811919Z",
+  "dir_name": "agent-coordination-bybren-llc-safe-agentic-workflo",
+  "category": "orchestration",
+  "github_path": ".claude/skills/agent-coordination",
+  "github_branch": "main",
+  "author": "bybren-llc",
+  "source_url": "https://github.com/bybren-llc/safe-agentic-workflow/blob/main/.claude/skills/agent-coordination/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 J. Scott Graham (@cheddarfox) / ByBren, LLC",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

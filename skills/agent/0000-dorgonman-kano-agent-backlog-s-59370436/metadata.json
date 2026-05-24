@@ -1,0 +1,16 @@
+{
+  "name": "0000",
+  "repo": "dorgonman/kano-agent-backlog-skill-demo",
+  "path": "_kano/backlog/products/kano-agent-backlog-skill/items/userstory/0000/KABSD-USR-0011_enforce-agent-identity-in-skill.md",
+  "source": "github.com/dorgonman/kano-agent-backlog-skill-demo",
+  "downloaded_at": "2026-01-29T06:46:40.650158Z",
+  "dir_name": "0000-dorgonman-kano-agent-backlog-s-59370436",
+  "category": "agent",
+  "author": "dorgonman",
+  "source_url": "https://github.com/dorgonman/kano-agent-backlog-skill-demo/blob/main/_kano/backlog/products/kano-agent-backlog-skill/items/userstory/0000/KABSD-USR-0011_enforce-agent-identity-in-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dorgonman/kano-agent-backlog-skill-demo/blob/main/_kano/backlog/products/kano-agent-backlog-skill/items/userstory/0000/KABSD-USR-0011_enforce-agent-identity-in-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

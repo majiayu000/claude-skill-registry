@@ -1,0 +1,20 @@
+{
+  "name": "fetch-unresolved-comments",
+  "description": "",
+  "repo": "alchimie-di-circe/Extractor-desktop-app",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alchimie-di-circe/Extractor-desktop-app",
+  "github_path": ".codex/skills/fetch-unresolved-comments",
+  "github_branch": "main",
+  "dir_name": "fetch-unresolved-comments-alchimie-di-circe-extractor-desktop-ap",
+  "downloaded_at": "2026-02-05T01:44:39.800006Z",
+  "author": "alchimie-di-circe",
+  "source_url": "https://github.com/alchimie-di-circe/Extractor-desktop-app/blob/main/.codex/skills/fetch-unresolved-comments/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alchimie-di-circe/Extractor-desktop-app/blob/main/.codex/skills/fetch-unresolved-comments/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "moai-alfred-feedback-templates",
+  "repo": "dolsoon/my-awesome-project",
+  "path": ".claude/skills/moai-alfred-feedback-templates/SKILL.md",
+  "source": "github.com/dolsoon/my-awesome-project",
+  "downloaded_at": "2026-02-02T04:00:44.878898Z",
+  "dir_name": "moai-alfred-feedback-templates-dolsoon-my-awesome-project-56090f",
+  "category": "integration",
+  "author": "dolsoon",
+  "source_url": "https://github.com/dolsoon/my-awesome-project/blob/main/.claude/skills/moai-alfred-feedback-templates/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dolsoon/my-awesome-project/blob/main/.claude/skills/moai-alfred-feedback-templates/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

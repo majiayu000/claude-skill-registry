@@ -1,0 +1,249 @@
+{
+  "generated_at": "2026-05-24T16:46:56.342430+00:00",
+  "source_report": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-41-current-other-batch-001/migration-artifacts/2026-05-24-current-other-semantic-batch-001/metadata-compliance-post.json",
+  "input_error_path_count": 20,
+  "changed_count": 20,
+  "changed": [
+    {
+      "path": "agent/0000-dorgonman-kano-agent-backlog-s-59370436/metadata.json",
+      "changed_fields": [
+        "author",
+        "source_url",
+        "license",
+        "copyright",
+        "permission_note",
+        "distribution",
+        "license_class"
+      ]
+    },
+    {
+      "path": "analysis/20-toolbased-differential-tad-analysis/metadata.json",
+      "changed_fields": [
+        "author",
+        "source_url",
+        "license",
+        "copyright",
+        "permission_note",
+        "distribution",
+        "license_class"
+      ]
+    },
+    {
+      "path": "data/1-alignment-level-qc-bisnake2001-chromskills/metadata.json",
+      "changed_fields": [
+        "author",
+        "source_url",
+        "license",
+        "copyright",
+        "permission_note",
+        "distribution",
+        "license_class"
+      ]
+    },
+    {
+      "path": "data/15-chromatin-state-inference-bisnake2001-chromskills-2/metadata.json",
+      "changed_fields": [
+        "author",
+        "source_url",
+        "license",
+        "copyright",
+        "permission_note",
+        "distribution",
+        "license_class"
+      ]
+    },
+    {
+      "path": "data/16-toolbased-hic-normalization-bisnake2001-chromskills-2/metadata.json",
+      "changed_fields": [
+        "author",
+        "source_url",
+        "license",
+        "copyright",
+        "permission_note",
+        "distribution",
+        "license_class"
+      ]
+    },
+    {
+      "path": "data/18-toolbased-hic-tad-calling-bisnake2001-chromskills-2/metadata.json",
+      "changed_fields": [
+        "author",
+        "source_url",
+        "license",
+        "copyright",
+        "permission_note",
+        "distribution",
+        "license_class"
+      ]
+    },
+    {
+      "path": "data/24-global-methylation-profile-bisnake2001-chromskills-2/metadata.json",
+      "changed_fields": [
+        "author",
+        "source_url",
+        "license",
+        "copyright",
+        "permission_note",
+        "distribution",
+        "license_class"
+      ]
+    },
+    {
+      "path": "data/25-methylation-variability-bisnake2001-chromskills-2/metadata.json",
+      "changed_fields": [
+        "author",
+        "source_url",
+        "license",
+        "copyright",
+        "permission_note",
+        "distribution",
+        "license_class"
+      ]
+    },
+    {
+      "path": "data/26-umr-lmr-pmd-detection-bisnake2001-chromskills-2/metadata.json",
+      "changed_fields": [
+        "author",
+        "source_url",
+        "license",
+        "copyright",
+        "permission_note",
+        "distribution",
+        "license_class"
+      ]
+    },
+    {
+      "path": "data/27-correlation-methylation-epifeatures-bisnake2001-chromskills-2/metadata.json",
+      "changed_fields": [
+        "author",
+        "source_url",
+        "license",
+        "copyright",
+        "permission_note",
+        "distribution",
+        "license_class"
+      ]
+    },
+    {
+      "path": "data/28-atacseq-footprint-bisnake2001-chromskills-2/metadata.json",
+      "changed_fields": [
+        "author",
+        "source_url",
+        "license",
+        "copyright",
+        "permission_note",
+        "distribution",
+        "license_class"
+      ]
+    },
+    {
+      "path": "data/29-regulatory-community-chia-pet-bisnake2001-chromskills-2/metadata.json",
+      "changed_fields": [
+        "author",
+        "source_url",
+        "license",
+        "copyright",
+        "permission_note",
+        "distribution",
+        "license_class"
+      ]
+    },
+    {
+      "path": "data/3-peak-calling-bisnake2001-chromskills-2/metadata.json",
+      "changed_fields": [
+        "author",
+        "source_url",
+        "license",
+        "copyright",
+        "permission_note",
+        "distribution",
+        "license_class"
+      ]
+    },
+    {
+      "path": "data/4-atacseq-qc-bisnake2001-chromskills-2/metadata.json",
+      "changed_fields": [
+        "author",
+        "source_url",
+        "license",
+        "copyright",
+        "permission_note",
+        "distribution",
+        "license_class"
+      ]
+    },
+    {
+      "path": "data/7-replicates-incorporation-bisnake2001-chromskills/metadata.json",
+      "changed_fields": [
+        "author",
+        "source_url",
+        "license",
+        "copyright",
+        "permission_note",
+        "distribution",
+        "license_class"
+      ]
+    },
+    {
+      "path": "development/18-0/metadata.json",
+      "changed_fields": [
+        "author",
+        "source_url",
+        "license",
+        "copyright",
+        "permission_note",
+        "distribution",
+        "license_class"
+      ]
+    },
+    {
+      "path": "development/2020-6-10-java-skill/metadata.json",
+      "changed_fields": [
+        "author",
+        "source_url",
+        "license",
+        "copyright",
+        "permission_note",
+        "distribution",
+        "license_class"
+      ]
+    },
+    {
+      "path": "development/5-styleguide-generation-bitovi-context-generation-m/metadata.json",
+      "changed_fields": [
+        "author",
+        "source_url",
+        "license",
+        "copyright",
+        "permission_note",
+        "distribution",
+        "license_class"
+      ]
+    },
+    {
+      "path": "personal-development/12-how-to-master-the-practice-of-investing-and-time-management-t/metadata.json",
+      "changed_fields": [
+        "author",
+        "source_url",
+        "license",
+        "copyright",
+        "permission_note",
+        "distribution",
+        "license_class"
+      ]
+    },
+    {
+      "path": "planning/10-planning-aisystant-self-development/metadata.json",
+      "changed_fields": [
+        "author",
+        "source_url",
+        "license",
+        "copyright",
+        "permission_note",
+        "distribution",
+        "license_class"
+      ]
+    }
+  ],
+  "policy": "fill only missing legal metadata fields using repo/path-derived conservative NOASSERTION defaults"
+}

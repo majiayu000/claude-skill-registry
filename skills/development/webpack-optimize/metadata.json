@@ -1,0 +1,16 @@
+{
+  "name": "webpack-optimize",
+  "repo": "manastalukdar/claude-devstudio",
+  "path": "skills/webpack-optimize/SKILL.md",
+  "source": "github.com/manastalukdar/claude-devstudio",
+  "downloaded_at": "2026-02-02T03:11:58.127667Z",
+  "dir_name": "webpack-optimize",
+  "category": "development",
+  "author": "manastalukdar",
+  "source_url": "https://github.com/manastalukdar/claude-devstudio/blob/main/skills/webpack-optimize/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Brenner Cruvinel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "research-brainstormer",
+  "description": "",
+  "repo": "TerryTong-Git/toolproj-claude-config",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TerryTong-Git/toolproj-claude-config",
+  "github_path": "skills/research-brainstormer",
+  "github_branch": "main",
+  "dir_name": "research-brainstormer",
+  "downloaded_at": "2026-02-05T01:44:29.890016Z",
+  "author": "TerryTong-Git",
+  "source_url": "https://github.com/TerryTong-Git/toolproj-claude-config/blob/main/skills/research-brainstormer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TerryTong-Git/toolproj-claude-config/blob/main/skills/research-brainstormer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

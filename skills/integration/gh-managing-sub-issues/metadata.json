@@ -1,0 +1,20 @@
+{
+  "name": "gh-managing-sub-issues",
+  "description": "",
+  "repo": "yu-iskw/github-project-skills",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yu-iskw/github-project-skills",
+  "github_path": "skills/gh-managing-sub-issues",
+  "github_branch": "main",
+  "dir_name": "gh-managing-sub-issues",
+  "downloaded_at": "2026-02-05T01:44:42.575453Z",
+  "author": "yu-iskw",
+  "source_url": "https://github.com/yu-iskw/github-project-skills/blob/main/skills/gh-managing-sub-issues/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yu-iskw/github-project-skills/blob/main/skills/gh-managing-sub-issues/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

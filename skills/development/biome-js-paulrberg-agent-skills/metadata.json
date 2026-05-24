@@ -1,0 +1,17 @@
+{
+  "name": "biome-js",
+  "repo": "PaulRBerg/agent-skills",
+  "path": "skills/biome-js/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/PaulRBerg/agent-skills",
+  "dir_name": "biome-js-paulrberg-agent-skills",
+  "downloaded_at": "2026-03-22T06:04:34.591857Z",
+  "author": "PaulRBerg",
+  "source_url": "https://github.com/PaulRBerg/agent-skills/blob/main/skills/biome-js/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PaulRBerg/agent-skills/blob/main/skills/biome-js/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

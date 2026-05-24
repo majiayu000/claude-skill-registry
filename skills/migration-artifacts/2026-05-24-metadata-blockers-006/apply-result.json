@@ -1,0 +1,165 @@
+{
+  "summary": {
+    "skipped": 17,
+    "applied": 5
+  },
+  "by_decision": {
+    "defer_missing_provenance": 15,
+    "repair_and_move": 5,
+    "defer_taxonomy_other": 2
+  },
+  "results": [
+    {
+      "source_path": "agent-coordination/multi-agent-parallel-investigation/SKILL.md",
+      "decision": "defer_missing_provenance",
+      "status": "skipped",
+      "reason": "metadata lacks repo/path/source_url; provenance cannot be invented"
+    },
+    {
+      "source_path": "artifact-generation/manage-artifact/SKILL.md",
+      "decision": "defer_missing_provenance",
+      "status": "skipped",
+      "reason": "metadata lacks repo/path/source_url; provenance cannot be invented"
+    },
+    {
+      "source_path": "development-tools/cargo-ecosystem/SKILL.md",
+      "decision": "defer_missing_provenance",
+      "status": "skipped",
+      "reason": "metadata lacks repo/path/source_url; provenance cannot be invented"
+    },
+    {
+      "source_path": "development-tools/claudekit-claude-code/SKILL.md",
+      "decision": "repair_and_move",
+      "status": "applied",
+      "target_path": "development/claudekit-claude-code",
+      "target_category": "development",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": ".claude/skills/claude-code/SKILL.md",
+      "skill_sha256": "196133ca0328dd48ed5bf62fdeea0f1a37b41dcdece1b3b83fa0baf09fb51905"
+    },
+    {
+      "source_path": "development-tools/git-convention/SKILL.md",
+      "decision": "defer_missing_provenance",
+      "status": "skipped",
+      "reason": "metadata lacks repo/path/source_url; provenance cannot be invented"
+    },
+    {
+      "source_path": "development-tools/lindquist-chrome-devtools/SKILL.md",
+      "decision": "repair_and_move",
+      "status": "applied",
+      "target_path": "testing/lindquist-chrome-devtools",
+      "target_category": "testing",
+      "repo": "johnlindquist/claude-workshop-skills",
+      "path": "skills/chrome-devtools/SKILL.md",
+      "skill_sha256": "3be30280e79565a09f58e8b4096e9c47b4d6b29b658f9f9c41e3f673b91864d9"
+    },
+    {
+      "source_path": "github-integration/git-opensource/SKILL.md",
+      "decision": "defer_missing_provenance",
+      "status": "skipped",
+      "reason": "metadata lacks repo/path/source_url; provenance cannot be invented"
+    },
+    {
+      "source_path": "github-integration/pr-comment-resolver-b0932455/SKILL.md",
+      "decision": "defer_missing_provenance",
+      "status": "skipped",
+      "reason": "metadata lacks repo/path/source_url; provenance cannot be invented"
+    },
+    {
+      "source_path": "github-integration/pr-description-writer-ba20554f/SKILL.md",
+      "decision": "defer_missing_provenance",
+      "status": "skipped",
+      "reason": "metadata lacks repo/path/source_url; provenance cannot be invented"
+    },
+    {
+      "source_path": "github-integration/write-pr-desc/SKILL.md",
+      "decision": "defer_missing_provenance",
+      "status": "skipped",
+      "reason": "metadata lacks repo/path/source_url; provenance cannot be invented"
+    },
+    {
+      "source_path": "programming-languages/haskell/SKILL.md",
+      "decision": "defer_missing_provenance",
+      "status": "skipped",
+      "reason": "metadata lacks repo/path/source_url; provenance cannot be invented"
+    },
+    {
+      "source_path": "programming-languages/languages-0ef2a701/SKILL.md",
+      "decision": "defer_missing_provenance",
+      "status": "skipped",
+      "reason": "metadata lacks repo/path/source_url; provenance cannot be invented"
+    },
+    {
+      "source_path": "programming-languages/ownership-borrowing/SKILL.md",
+      "decision": "defer_missing_provenance",
+      "status": "skipped",
+      "reason": "metadata lacks repo/path/source_url; provenance cannot be invented"
+    },
+    {
+      "source_path": "programming-languages/rust-macros/SKILL.md",
+      "decision": "defer_missing_provenance",
+      "status": "skipped",
+      "reason": "metadata lacks repo/path/source_url; provenance cannot be invented"
+    },
+    {
+      "source_path": "programming-languages/trait-generics/SKILL.md",
+      "decision": "defer_missing_provenance",
+      "status": "skipped",
+      "reason": "metadata lacks repo/path/source_url; provenance cannot be invented"
+    },
+    {
+      "source_path": "project/resume/SKILL.md",
+      "decision": "repair_and_move",
+      "status": "applied",
+      "target_path": "development/resume-cbillowes-curious-programmer-t",
+      "target_category": "development",
+      "repo": "cbillowes/curious-programmer-tungsten",
+      "path": "resume/2025-open-skill.md",
+      "skill_sha256": "960a6698fd23b761bbe8474f2993ae68b7668d146a56a967f712bee248fb358c"
+    },
+    {
+      "source_path": "research-analysis/open-source-librarian-ec616468/SKILL.md",
+      "decision": "defer_missing_provenance",
+      "status": "skipped",
+      "reason": "metadata lacks repo/path/source_url; provenance cannot be invented"
+    },
+    {
+      "source_path": "research-analysis/research-synthesizer-046f3a5c/SKILL.md",
+      "decision": "defer_missing_provenance",
+      "status": "skipped",
+      "reason": "metadata lacks repo/path/source_url; provenance cannot be invented"
+    },
+    {
+      "source_path": "security-compliance/compliance-check-skill/SKILL.md",
+      "decision": "repair_and_move",
+      "status": "applied",
+      "target_path": "security/compliance-check-skill",
+      "target_category": "security",
+      "repo": "plannededge/codebook",
+      "path": ".claude/skills/compliance-check.skill.md",
+      "skill_sha256": "1ff4948402a5cbe1130b5ba8149f3516c9e6537f22713910a01f02075e2fcd11"
+    },
+    {
+      "source_path": "string/string/SKILL.md",
+      "decision": "defer_taxonomy_other",
+      "status": "skipped",
+      "reason": "target category other needs taxonomy decision, not metadata-only migration"
+    },
+    {
+      "source_path": "technical-integration/skills-mitkox-fteplusai/SKILL.md",
+      "decision": "repair_and_move",
+      "status": "applied",
+      "target_path": "analysis/skills-mitkox-fteplusai",
+      "target_category": "analysis",
+      "repo": "mitkox/fteplusai",
+      "path": "skills/tool-evaluation.skill.md",
+      "skill_sha256": "ece6039ea9ec01bc48d6de101286b8692a19bae28b6b40ae6669e1da4432fec9"
+    },
+    {
+      "source_path": "test/test-skill-mickdarling-dollhouse-portfolio/SKILL.md",
+      "decision": "defer_taxonomy_other",
+      "status": "skipped",
+      "reason": "target category other needs taxonomy decision, not metadata-only migration"
+    }
+  ]
+}

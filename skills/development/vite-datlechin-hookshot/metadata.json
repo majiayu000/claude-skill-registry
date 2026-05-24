@@ -1,0 +1,20 @@
+{
+  "name": "vite",
+  "description": "",
+  "repo": "datlechin/hookshot",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/datlechin/hookshot",
+  "github_path": ".claude/skills/vite",
+  "github_branch": "main",
+  "dir_name": "vite-datlechin-hookshot",
+  "downloaded_at": "2026-02-05T01:44:36.452213Z",
+  "author": "datlechin",
+  "source_url": "https://github.com/datlechin/hookshot/blob/main/.claude/skills/vite/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/datlechin/hookshot/blob/main/.claude/skills/vite/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

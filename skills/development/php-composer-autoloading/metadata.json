@@ -1,0 +1,16 @@
+{
+  "name": "php-composer-autoloading",
+  "repo": "TheBushidoCollective/han",
+  "path": "jutsu/jutsu-php/skills/php-composer-autoloading/SKILL.md",
+  "source": "github.com/TheBushidoCollective/han",
+  "downloaded_at": "2026-01-30T03:34:01.456791Z",
+  "dir_name": "php-composer-autoloading",
+  "category": "development",
+  "author": "TheBushidoCollective",
+  "source_url": "https://github.com/TheBushidoCollective/han/blob/main/jutsu/jutsu-php/skills/php-composer-autoloading/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 The Bushido Collective",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

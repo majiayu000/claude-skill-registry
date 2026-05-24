@@ -1,0 +1,16 @@
+{
+  "name": "moai-lang-kotlin",
+  "repo": "hnabyz-bot/fpga-work",
+  "path": ".claude/skills/moai-lang-kotlin/SKILL.md",
+  "category": "development",
+  "source": "github.com/hnabyz-bot/fpga-work",
+  "dir_name": "moai-lang-kotlin-hnabyz-bot-fpga-work",
+  "downloaded_at": "2026-02-22T07:27:12.113029Z",
+  "author": "hnabyz-bot",
+  "source_url": "https://github.com/hnabyz-bot/fpga-work/blob/main/.claude/skills/moai-lang-kotlin/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hnabyz-bot/fpga-work/blob/main/.claude/skills/moai-lang-kotlin/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

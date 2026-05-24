@@ -1,0 +1,2697 @@
+{
+  "summary": {
+    "items": 12,
+    "repos": 10,
+    "exact_source_matches": 0,
+    "exact_target_matches": 0
+  },
+  "items": [
+    {
+      "index": 1,
+      "source_path": "development-tools/biome-js",
+      "target_path": "development/biome-js",
+      "confidence": 0.92,
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable",
+      "repo": "PaulRBerg/dot-claude",
+      "default_branch": "main",
+      "source_sha256": "74d97a91853e9345b49b43d5b9aea5c1bb0fabfde1990bf629db2f901b3be8d5",
+      "target_sha256": "09d3568964db0deb5edeb14c9757498b9f2296059db746ff93836c27422407a0",
+      "source_metadata": {
+        "name": "biome-js",
+        "category": "development-tools",
+        "repo": "PaulRBerg/dot-claude",
+        "path": "skills/biome-js/SKILL.md",
+        "github_path": "skills/biome-js",
+        "source_url": null
+      },
+      "target_metadata": {
+        "name": "biome-js",
+        "category": "development",
+        "repo": "PaulRBerg/dot-claude",
+        "path": null,
+        "github_path": "skills/biome-js",
+        "source_url": null
+      },
+      "query_tokens": [
+        "biome",
+        "biome-js",
+        "skill"
+      ],
+      "candidate_count": 25,
+      "candidates": [
+        {
+          "score": 1,
+          "path": "commands/yeet/discussion-biome.md"
+        },
+        {
+          "score": 1,
+          "path": "commands/yeet/issue-biome.md"
+        },
+        {
+          "score": 1,
+          "path": "commands/yeet/issue-skills.md"
+        },
+        {
+          "score": 1,
+          "path": "settings/permissions/skills.jsonc"
+        },
+        {
+          "score": 1,
+          "path": "skills/autoresearch"
+        },
+        {
+          "score": 1,
+          "path": "skills/bump-deps"
+        },
+        {
+          "score": 1,
+          "path": "skills/bump-release"
+        },
+        {
+          "score": 1,
+          "path": "skills/cli-cast"
+        },
+        {
+          "score": 1,
+          "path": "skills/cli-gh"
+        },
+        {
+          "score": 1,
+          "path": "skills/cli-just"
+        },
+        {
+          "score": 1,
+          "path": "skills/code-polish"
+        },
+        {
+          "score": 1,
+          "path": "skills/code-review"
+        },
+        {
+          "score": 1,
+          "path": "skills/code-simplify"
+        },
+        {
+          "score": 1,
+          "path": "skills/coderabbit"
+        },
+        {
+          "score": 1,
+          "path": "skills/coingecko-api"
+        },
+        {
+          "score": 1,
+          "path": "skills/coingecko-cli"
+        },
+        {
+          "score": 1,
+          "path": "skills/coingecko-historical"
+        },
+        {
+          "score": 1,
+          "path": "skills/commit"
+        },
+        {
+          "score": 1,
+          "path": "skills/create-skill"
+        },
+        {
+          "score": 1,
+          "path": "skills/debrief"
+        },
+        {
+          "score": 1,
+          "path": "skills/effect-ts"
+        },
+        {
+          "score": 1,
+          "path": "skills/etherscan-api"
+        },
+        {
+          "score": 1,
+          "path": "skills/evm-chains"
+        },
+        {
+          "score": 1,
+          "path": "skills/find-skills"
+        },
+        {
+          "score": 1,
+          "path": "skills/frontend-design"
+        }
+      ],
+      "fetched": [
+        {
+          "score": 1,
+          "path": "commands/yeet/discussion-biome.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/PaulRBerg/dot-claude/main/commands/yeet/discussion-biome.md",
+          "sha256": "bd482faf23a309859dc01937e57da6f3ee30df7f4db4ae31c01c62004ae76f03",
+          "bytes": 439,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "commands/yeet/issue-biome.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/PaulRBerg/dot-claude/main/commands/yeet/issue-biome.md",
+          "sha256": "1b279dd9646f1fa25dbdcf1bbe241e6346a559a404d472b9b5353bb16597e936",
+          "bytes": 496,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "commands/yeet/issue-skills.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/PaulRBerg/dot-claude/main/commands/yeet/issue-skills.md",
+          "sha256": "6032cdc3826e70eef7d1c64984fe831920f201d6990f0b766367a41927d1fb4a",
+          "bytes": 596,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "settings/permissions/skills.jsonc",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/PaulRBerg/dot-claude/main/settings/permissions/skills.jsonc",
+          "sha256": "58c4a64889f900098a3e8b240ee2ca012a510081765e39ce237cbd1ab706594d",
+          "bytes": 1184,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "skills/autoresearch",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/PaulRBerg/dot-claude/main/skills/autoresearch",
+          "sha256": "fb82a8acd8ab0930a71f449bc7aa77b3527d549328d172b5f38d7a3ac1a8f3c3",
+          "bytes": 33,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "skills/bump-deps",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/PaulRBerg/dot-claude/main/skills/bump-deps",
+          "sha256": "7dcabe72807e8c50d057aa5cf4e8f40df5bee0003ed80dcf5fbff1b78766bed1",
+          "bytes": 30,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "skills/bump-release",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/PaulRBerg/dot-claude/main/skills/bump-release",
+          "sha256": "4b37364c777afc6f4e22c7927382dcfe57659b084bd95db1e50165d5abba4cef",
+          "bytes": 33,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "skills/cli-cast",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/PaulRBerg/dot-claude/main/skills/cli-cast",
+          "sha256": "8629d5ea2d456b69635011f4f1fb98e0f3eb96bef32ca921dff70c78481867c4",
+          "bytes": 29,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "skills/cli-gh",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/PaulRBerg/dot-claude/main/skills/cli-gh",
+          "sha256": "cdc1688a78fd5228e91b31712cbc4752d4640d9f1a3e7efcc5e5c4aa5ae084c4",
+          "bytes": 27,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "skills/cli-just",
+          "status": "error",
+          "url": "https://raw.githubusercontent.com/PaulRBerg/dot-claude/main/skills/cli-just",
+          "error": "<urlopen error EOF occurred in violation of protocol (_ssl.c:992)>"
+        },
+        {
+          "score": 1,
+          "path": "skills/code-polish",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/PaulRBerg/dot-claude/main/skills/code-polish",
+          "sha256": "7be331c37a85956b318de2a62b1d04057a02afcc94d429e41fb0a0eec7b21bd5",
+          "bytes": 32,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "skills/code-review",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/PaulRBerg/dot-claude/main/skills/code-review",
+          "sha256": "d5622c89fc695a20ab08cab65f699e60a61b03c98a1157dddede6c3223046fe2",
+          "bytes": 32,
+          "matches_source": false,
+          "matches_target": false
+        }
+      ],
+      "tree_error": null
+    },
+    {
+      "index": 4,
+      "source_path": "development-tools/converting-claude-subagents-edheltzel-atlas",
+      "target_path": "development/converting-claude-subagents-edheltzel-atlas",
+      "confidence": 0.9,
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable",
+      "repo": "edheltzel/atlas",
+      "default_branch": "master",
+      "source_sha256": "3a832ac6eff06295551aac99dfd648307e3bf95b696d3fada1ec270889d188f4",
+      "target_sha256": "f8bbee7b56b9809cc42f6b03fe16134c4539ceb285d1e4e3af17335a5fe2b591",
+      "source_metadata": {
+        "name": "converting-claude-subagents",
+        "category": "development-tools",
+        "repo": "edheltzel/atlas",
+        "path": ".claude/skills/converting-claude-subagents/SKILL.md",
+        "github_path": ".atlasOG/exports/modules/skills/skills/converting-claude-subagents",
+        "source_url": "https://github.com/edheltzel/atlas/blob/main/.atlasOG/exports/modules/skills/skills/converting-claude-subagents/SKILL.md"
+      },
+      "target_metadata": {
+        "name": "converting-claude-subagents",
+        "category": "development",
+        "repo": "edheltzel/atlas",
+        "path": null,
+        "github_path": ".atlasOG/exports/modules/skills/skills/converting-claude-subagents",
+        "source_url": "https://github.com/edheltzel/atlas/blob/main/.atlasOG/exports/modules/skills/skills/converting-claude-subagents/SKILL.md"
+      },
+      "query_tokens": [
+        "atlas",
+        "atlasog",
+        "converting",
+        "converting-claude-subagents",
+        "converting-claude-subagents-edheltzel-atlas",
+        "edheltzel",
+        "exports",
+        "modules",
+        "skill",
+        "subagents"
+      ],
+      "candidate_count": 25,
+      "candidates": [
+        {
+          "score": 1,
+          "path": "claudecode/.claude/hooks/handlers/RebuildSkill.ts"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/AgentPersonalities.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/AgentProfileSystem.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/ArchitectContext.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/ArtistContext.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/ClaudeResearcherContext.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/CodexResearcherContext.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/Data/Traits.yaml"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/DesignerContext.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/EngineerContext.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/GeminiResearcherContext.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/GrokResearcherContext.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/QATesterContext.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/REDESIGN-SUMMARY.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/Scratchpad/sparkline-color-analysis.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/Templates/DynamicAgent.hbs"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/Tools/AgentFactory.ts"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/Tools/ComposeAgent.ts"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/Tools/LoadAgentContext.ts"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/Tools/SpawnAgentWithProfile.ts"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/Tools/bun.lock"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/Tools/package.json"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/Workflows/CreateCustomAgent.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/Workflows/ListTraits.md"
+        }
+      ],
+      "fetched": [
+        {
+          "score": 1,
+          "path": "claudecode/.claude/hooks/handlers/RebuildSkill.ts",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/master/claudecode/.claude/hooks/handlers/RebuildSkill.ts",
+          "sha256": "74df295ec95a9dfc20fdbfbd810fc5569b3b737a829e5cbe3b56e66b723d795f",
+          "bytes": 2451,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/AgentPersonalities.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/master/claudecode/.claude/skills/Agents/AgentPersonalities.md",
+          "sha256": "5d52ffc3cf39b361968094931e8fa416cafea373c2abd30abe7739843a22464b",
+          "bytes": 49193,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/AgentProfileSystem.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/master/claudecode/.claude/skills/Agents/AgentProfileSystem.md",
+          "sha256": "a04224b475268d42bcd18fd94ead5788b426407758ac57623edaee21ff38c57a",
+          "bytes": 7482,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/ArchitectContext.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/master/claudecode/.claude/skills/Agents/ArchitectContext.md",
+          "sha256": "e0796c2ca9e4847fdc9bc710bf480565fc11806afa88b4a5c8287c1d3ec6f60a",
+          "bytes": 2136,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/ArtistContext.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/master/claudecode/.claude/skills/Agents/ArtistContext.md",
+          "sha256": "5fba801f0a3f66e2fdcd2bcfc8309e0dd61c9b241d8019d8391aa5db6a7aacde",
+          "bytes": 2203,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/ClaudeResearcherContext.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/master/claudecode/.claude/skills/Agents/ClaudeResearcherContext.md",
+          "sha256": "3ae7306f62f64e00d5a6b5a899f55e6318a18699738d415ed600773a7e339836",
+          "bytes": 2671,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/CodexResearcherContext.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/master/claudecode/.claude/skills/Agents/CodexResearcherContext.md",
+          "sha256": "5e34cfec7087ecc7ddd5ac7548fc575affd5ace44641ccc1e2e560a005181f91",
+          "bytes": 3404,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/Data/Traits.yaml",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/master/claudecode/.claude/skills/Agents/Data/Traits.yaml",
+          "sha256": "0c83fabbfe476a10ba6a19d5b5943f532d9e27c46605b1a13c335ff463cd219e",
+          "bytes": 18336,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/DesignerContext.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/master/claudecode/.claude/skills/Agents/DesignerContext.md",
+          "sha256": "86a0ea04414bc719dfc87fcebc748d7f9a437c795a9d165a9cf5d40da20314ec",
+          "bytes": 2300,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/EngineerContext.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/master/claudecode/.claude/skills/Agents/EngineerContext.md",
+          "sha256": "ed0933e90d84d18024383ab1f49805156f687ced5957ffad909439841534e0a1",
+          "bytes": 2071,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/GeminiResearcherContext.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/master/claudecode/.claude/skills/Agents/GeminiResearcherContext.md",
+          "sha256": "a071bbb6a04adc06bfa516ae005ee03803739aea83af11344aeb403ca1022a9f",
+          "bytes": 3118,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/GrokResearcherContext.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/master/claudecode/.claude/skills/Agents/GrokResearcherContext.md",
+          "sha256": "810c4945646246c788c9b8be3ee5988a2bf5d718a9aaa120fbb81a3a7841bdd4",
+          "bytes": 2924,
+          "matches_source": false,
+          "matches_target": false
+        }
+      ],
+      "tree_error": null
+    },
+    {
+      "index": 5,
+      "source_path": "development-tools/converting-slash-commands-edheltzel-atlas",
+      "target_path": "development/converting-slash-commands-edheltzel-atlas",
+      "confidence": 0.9,
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable",
+      "repo": "edheltzel/atlas",
+      "default_branch": "master",
+      "source_sha256": "b78c4b5fc7866d890f7a2cc7bdaf85dea7ee05c6827d8390e3f1bd8899ed578b",
+      "target_sha256": "dba3ec65d9e21c314aab957b431de4d3c9fefba1d74343674b5746179e4197d7",
+      "source_metadata": {
+        "name": "converting-slash-commands",
+        "category": "development-tools",
+        "repo": "edheltzel/atlas",
+        "path": ".claude/skills/converting-slash-commands/SKILL.md",
+        "github_path": ".atlasOG/exports/modules/skills/skills/converting-slash-commands",
+        "source_url": "https://github.com/edheltzel/atlas/blob/main/.atlasOG/exports/modules/skills/skills/converting-slash-commands/SKILL.md"
+      },
+      "target_metadata": {
+        "name": "converting-slash-commands",
+        "category": "development",
+        "repo": "edheltzel/atlas",
+        "path": null,
+        "github_path": ".atlasOG/exports/modules/skills/skills/converting-slash-commands",
+        "source_url": "https://github.com/edheltzel/atlas/blob/main/.atlasOG/exports/modules/skills/skills/converting-slash-commands/SKILL.md"
+      },
+      "query_tokens": [
+        "atlas",
+        "atlasog",
+        "commands",
+        "converting",
+        "converting-slash-commands",
+        "converting-slash-commands-edheltzel-atlas",
+        "edheltzel",
+        "exports",
+        "modules",
+        "skill",
+        "slash"
+      ],
+      "candidate_count": 25,
+      "candidates": [
+        {
+          "score": 1,
+          "path": "claudecode/.claude/commands/clean-branches.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/commands/commit.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/commands/docs.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/commands/observability.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/commands/pr.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/commands/push.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/commands/rams.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/hooks/handlers/RebuildSkill.ts"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/AgentPersonalities.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/AgentProfileSystem.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/ArchitectContext.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/ArtistContext.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/ClaudeResearcherContext.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/CodexResearcherContext.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/Data/Traits.yaml"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/DesignerContext.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/EngineerContext.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/GeminiResearcherContext.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/GrokResearcherContext.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/QATesterContext.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/REDESIGN-SUMMARY.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/Scratchpad/sparkline-color-analysis.md"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/Templates/DynamicAgent.hbs"
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/Tools/AgentFactory.ts"
+        }
+      ],
+      "fetched": [
+        {
+          "score": 1,
+          "path": "claudecode/.claude/commands/clean-branches.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/master/claudecode/.claude/commands/clean-branches.md",
+          "sha256": "9869f56d2bdb9466667e878d1897073c9ac7f3e8033c3cc7d9e4fbf898e3debd",
+          "bytes": 901,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/commands/commit.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/master/claudecode/.claude/commands/commit.md",
+          "sha256": "d399e97d897e6def360b850cfa0086aa6e18310878af62441129d8014eca91b9",
+          "bytes": 1025,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/commands/docs.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/master/claudecode/.claude/commands/docs.md",
+          "sha256": "97cd1e6201f12218509d77ae0b0178d6dc3fcc7cc70dca736d62c754636bea8d",
+          "bytes": 1918,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/commands/observability.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/master/claudecode/.claude/commands/observability.md",
+          "sha256": "27871515cec5671851959f3892601224e30c5a905c25aa0d24390b94501c9f33",
+          "bytes": 1278,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/commands/pr.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/master/claudecode/.claude/commands/pr.md",
+          "sha256": "a02c8c1492fd5cc15f27a5dc8b9a570193779e7d702d4274ebd423a81f005def",
+          "bytes": 1276,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/commands/push.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/master/claudecode/.claude/commands/push.md",
+          "sha256": "1996b6616f6c9d062f93b410534e48c2ea61c3d09f330538cadb06e579799f60",
+          "bytes": 990,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/commands/rams.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/master/claudecode/.claude/commands/rams.md",
+          "sha256": "119469b2dadff848eeaf3173a55fc8a478b363c73f2b9ba5665d2c0016dc4b38",
+          "bytes": 3111,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/hooks/handlers/RebuildSkill.ts",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/master/claudecode/.claude/hooks/handlers/RebuildSkill.ts",
+          "sha256": "74df295ec95a9dfc20fdbfbd810fc5569b3b737a829e5cbe3b56e66b723d795f",
+          "bytes": 2451,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/AgentPersonalities.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/master/claudecode/.claude/skills/Agents/AgentPersonalities.md",
+          "sha256": "5d52ffc3cf39b361968094931e8fa416cafea373c2abd30abe7739843a22464b",
+          "bytes": 49193,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/AgentProfileSystem.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/master/claudecode/.claude/skills/Agents/AgentProfileSystem.md",
+          "sha256": "a04224b475268d42bcd18fd94ead5788b426407758ac57623edaee21ff38c57a",
+          "bytes": 7482,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/ArchitectContext.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/master/claudecode/.claude/skills/Agents/ArchitectContext.md",
+          "sha256": "e0796c2ca9e4847fdc9bc710bf480565fc11806afa88b4a5c8287c1d3ec6f60a",
+          "bytes": 2136,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "claudecode/.claude/skills/Agents/ArtistContext.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/master/claudecode/.claude/skills/Agents/ArtistContext.md",
+          "sha256": "5fba801f0a3f66e2fdcd2bcfc8309e0dd61c9b241d8019d8391aa5db6a7aacde",
+          "bytes": 2203,
+          "matches_source": false,
+          "matches_target": false
+        }
+      ],
+      "tree_error": null
+    },
+    {
+      "index": 6,
+      "source_path": "development-tools/makefile-generation-athola-claude-night-market-bb8563ba",
+      "target_path": "development/makefile-generation",
+      "confidence": 0.9,
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable",
+      "repo": "athola/claude-night-market",
+      "default_branch": "master",
+      "source_sha256": "65b8a2b34b504b98bb6381673d96542548435a6864e4e75638d95ef628106c2d",
+      "target_sha256": "bb19b92eae9fbead0f529ef3ca0f7700ced5f1e1026af5c9a624edc26c10cbc7",
+      "source_metadata": {
+        "name": "makefile-generation",
+        "category": "development-tools",
+        "repo": "athola/claude-night-market",
+        "path": "plugins/attune/skills/makefile-generation/SKILL.md",
+        "github_path": "plugins/attune/skills/makefile-generation",
+        "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/attune/skills/makefile-generation/SKILL.md"
+      },
+      "target_metadata": {
+        "name": "makefile-generation",
+        "category": "development",
+        "repo": "athola/claude-night-market",
+        "path": null,
+        "github_path": "plugins/attune/skills/makefile-generation",
+        "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/attune/skills/makefile-generation/SKILL.md"
+      },
+      "query_tokens": [
+        "athola",
+        "attune",
+        "bb8563ba",
+        "generation",
+        "makefile",
+        "makefile-generation",
+        "makefile-generation-athola-claude-night-market-bb8563ba",
+        "market",
+        "night",
+        "plugins",
+        "skill"
+      ],
+      "candidate_count": 25,
+      "candidates": [
+        {
+          "score": 6,
+          "path": "plugins/attune/skills/makefile-generation/SKILL.md"
+        },
+        {
+          "score": 4,
+          "path": "plugins/attune/skills/architecture-aware-init/modules/scaffold-generation.md"
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/architecture-aware-init/SKILL.md"
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/architecture-aware-init/modules/paradigm-selection.md"
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/architecture-aware-init/modules/research-flow.md"
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/architecture-aware-init/modules/script-integration.md"
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/dorodango/SKILL.md"
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/dorodango/modules/pass-definitions.md"
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/mission-orchestrator/SKILL.md"
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/mission-orchestrator/modules/adaptive-constraints.md"
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/mission-orchestrator/modules/context-injector.md"
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/mission-orchestrator/modules/feedback-collector.md"
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/mission-orchestrator/modules/iteration-governor.md"
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/mission-orchestrator/modules/mission-state.md"
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/mission-orchestrator/modules/mission-types.md"
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/mission-orchestrator/modules/phase-routing.md"
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/mission-orchestrator/modules/plan-review.md"
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/mission-orchestrator/modules/plan-versioner.md"
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/mission-orchestrator/modules/reflexion-buffer.md"
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/mission-orchestrator/modules/state-detection.md"
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/mission-orchestrator/modules/trust-tier.md"
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/mission-orchestrator/references/mission-charter.md"
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/mission-orchestrator/references/progress-report.md"
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/precommit-setup/SKILL.md"
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/precommit-setup/modules/ci-integration.md"
+        }
+      ],
+      "fetched": [
+        {
+          "score": 6,
+          "path": "plugins/attune/skills/makefile-generation/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/master/plugins/attune/skills/makefile-generation/SKILL.md",
+          "sha256": "4fcea9add968725e7fc5c3527c33315128278774bddb5c4ccaa549d23f13b6d5",
+          "bytes": 4289,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 4,
+          "path": "plugins/attune/skills/architecture-aware-init/modules/scaffold-generation.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/master/plugins/attune/skills/architecture-aware-init/modules/scaffold-generation.md",
+          "sha256": "a548a348338f7c5e1ff9836c08d8c34e384e0b2bc562ac63a5cb458786f04fa6",
+          "bytes": 3579,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/architecture-aware-init/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/master/plugins/attune/skills/architecture-aware-init/SKILL.md",
+          "sha256": "cbbc7cafe602fab4ca1a4d36fab5babaa8c46ad79d68d8d700c4aa39a467fd2d",
+          "bytes": 5009,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/architecture-aware-init/modules/paradigm-selection.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/master/plugins/attune/skills/architecture-aware-init/modules/paradigm-selection.md",
+          "sha256": "d60c8e268e491c6b77e39faaa1a29fb6bbdc322b28e6d54cd2418d0f5946fe8f",
+          "bytes": 3005,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/architecture-aware-init/modules/research-flow.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/master/plugins/attune/skills/architecture-aware-init/modules/research-flow.md",
+          "sha256": "f6070190aaa9a10e42556f4ac97779470e1d646687a429522425b17de9dfd5b7",
+          "bytes": 2329,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/architecture-aware-init/modules/script-integration.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/master/plugins/attune/skills/architecture-aware-init/modules/script-integration.md",
+          "sha256": "9e8f120ad91ad3806b69408cb2fb0e642a27c783f98d506189ee24dde38db9e8",
+          "bytes": 1879,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/dorodango/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/master/plugins/attune/skills/dorodango/SKILL.md",
+          "sha256": "a4e3691e27313bb3bbf994ab502ceb1070e39d804cf35f7e9ebc7d79eaa69b00",
+          "bytes": 3429,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/dorodango/modules/pass-definitions.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/master/plugins/attune/skills/dorodango/modules/pass-definitions.md",
+          "sha256": "0541bbfe33028ca63e3fbc656751a7b92af14e6842480a34be7df3cd272172ff",
+          "bytes": 2404,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/mission-orchestrator/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/master/plugins/attune/skills/mission-orchestrator/SKILL.md",
+          "sha256": "a6d5649236cc5076df0beb1c06a4aa51251d0dbfff7add8db50999e50c19604f",
+          "bytes": 11440,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/mission-orchestrator/modules/adaptive-constraints.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/master/plugins/attune/skills/mission-orchestrator/modules/adaptive-constraints.md",
+          "sha256": "15095be63e64c072a907a929bcd3f028bb0ef5d04622cac06706314d0d1701ef",
+          "bytes": 7700,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/mission-orchestrator/modules/context-injector.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/master/plugins/attune/skills/mission-orchestrator/modules/context-injector.md",
+          "sha256": "9667455001d2c5f4befeef1f14b58cb03f3b88526b6511f97e155591ec8f1a77",
+          "bytes": 2684,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 3,
+          "path": "plugins/attune/skills/mission-orchestrator/modules/feedback-collector.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/master/plugins/attune/skills/mission-orchestrator/modules/feedback-collector.md",
+          "sha256": "09f25d51033de9252d943405e03aa308b403d0676fba8edc7d13fe017e43aed5",
+          "bytes": 3230,
+          "matches_source": false,
+          "matches_target": false
+        }
+      ],
+      "tree_error": null
+    },
+    {
+      "index": 7,
+      "source_path": "development-tools/makefile-review-athola-claude-night-market-e4a9bac7",
+      "target_path": "development/makefile-review",
+      "confidence": 0.95,
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable",
+      "repo": "athola/claude-night-market",
+      "default_branch": "master",
+      "source_sha256": "a556cf8c8a8f0b808095ba504d3c666c853b8440fc223497a85577550b93131c",
+      "target_sha256": "86aa59bb623c3f3513103fbcc5b1f6b5a1eab86f5b67c53ed02e3fac2d74d653",
+      "source_metadata": {
+        "name": "makefile-review",
+        "category": "development-tools",
+        "repo": "athola/claude-night-market",
+        "path": "plugins/pensive/skills/makefile-review/SKILL.md",
+        "github_path": "plugins/pensive/skills/makefile-review",
+        "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/pensive/skills/makefile-review/SKILL.md"
+      },
+      "target_metadata": {
+        "name": "makefile-review",
+        "category": "development",
+        "repo": "athola/claude-night-market",
+        "path": null,
+        "github_path": "plugins/pensive/skills/makefile-review",
+        "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/pensive/skills/makefile-review/SKILL.md"
+      },
+      "query_tokens": [
+        "athola",
+        "e4a9bac7",
+        "makefile",
+        "makefile-review",
+        "makefile-review-athola-claude-night-market-e4a9bac7",
+        "market",
+        "night",
+        "pensive",
+        "plugins",
+        "review",
+        "skill"
+      ],
+      "candidate_count": 25,
+      "candidates": [
+        {
+          "score": 6,
+          "path": "plugins/pensive/skills/makefile-review/SKILL.md"
+        },
+        {
+          "score": 6,
+          "path": "plugins/pensive/skills/makefile-review/modules/best-practices.md"
+        },
+        {
+          "score": 6,
+          "path": "plugins/pensive/skills/makefile-review/modules/deduplication-patterns.md"
+        },
+        {
+          "score": 6,
+          "path": "plugins/pensive/skills/makefile-review/modules/dependency-graph.md"
+        },
+        {
+          "score": 6,
+          "path": "plugins/pensive/skills/makefile-review/modules/plugin-dogfood-checks.md"
+        },
+        {
+          "score": 6,
+          "path": "plugins/pensive/skills/makefile-review/modules/portability-checks.md"
+        },
+        {
+          "score": 5,
+          "path": "plugins/pensive/commands/makefile-review.md"
+        },
+        {
+          "score": 5,
+          "path": "plugins/pensive/src/pensive/skills/makefile_review.py"
+        },
+        {
+          "score": 5,
+          "path": "plugins/pensive/tests/skills/test_makefile_review.py"
+        },
+        {
+          "score": 4,
+          "path": "plugins/pensive/commands/skill-review.md"
+        },
+        {
+          "score": 4,
+          "path": "plugins/pensive/skills/api-review/SKILL.md"
+        },
+        {
+          "score": 4,
+          "path": "plugins/pensive/skills/api-review/modules/consistency-audit.md"
+        },
+        {
+          "score": 4,
+          "path": "plugins/pensive/skills/api-review/modules/exemplar-research.md"
+        },
+        {
+          "score": 4,
+          "path": "plugins/pensive/skills/api-review/modules/surface-inventory.md"
+        },
+        {
+          "score": 4,
+          "path": "plugins/pensive/skills/architecture-review/SKILL.md"
+        },
+        {
+          "score": 4,
+          "path": "plugins/pensive/skills/architecture-review/modules/adr-audit.md"
+        },
+        {
+          "score": 4,
+          "path": "plugins/pensive/skills/architecture-review/modules/coupling-analysis.md"
+        },
+        {
+          "score": 4,
+          "path": "plugins/pensive/skills/architecture-review/modules/fpf-methodology.md"
+        },
+        {
+          "score": 4,
+          "path": "plugins/pensive/skills/architecture-review/modules/principle-checks.md"
+        },
+        {
+          "score": 4,
+          "path": "plugins/pensive/skills/bug-review/SKILL.md"
+        },
+        {
+          "score": 4,
+          "path": "plugins/pensive/skills/bug-review/modules/defect-documentation.md"
+        },
+        {
+          "score": 4,
+          "path": "plugins/pensive/skills/bug-review/modules/fix-preparation.md"
+        },
+        {
+          "score": 4,
+          "path": "plugins/pensive/skills/bug-review/modules/language-detection.md"
+        },
+        {
+          "score": 4,
+          "path": "plugins/pensive/skills/math-review/SKILL.md"
+        },
+        {
+          "score": 4,
+          "path": "plugins/pensive/skills/math-review/modules/derivation-verification.md"
+        }
+      ],
+      "fetched": [
+        {
+          "score": 6,
+          "path": "plugins/pensive/skills/makefile-review/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/master/plugins/pensive/skills/makefile-review/SKILL.md",
+          "sha256": "4112620f2fb377896ae3c80ed8474dce702d2fe7b70d4fb4484b3db9d0b86712",
+          "bytes": 4382,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 6,
+          "path": "plugins/pensive/skills/makefile-review/modules/best-practices.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/master/plugins/pensive/skills/makefile-review/modules/best-practices.md",
+          "sha256": "e9b8af00ab9f828d0f3e1c56f5d2eb273a4489608dc6a45bed4f27a47cff3880",
+          "bytes": 4064,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 6,
+          "path": "plugins/pensive/skills/makefile-review/modules/deduplication-patterns.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/master/plugins/pensive/skills/makefile-review/modules/deduplication-patterns.md",
+          "sha256": "098d8997456584dc7220164b6f26a807c1c0e811497e91648193e14a78977c66",
+          "bytes": 2530,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 6,
+          "path": "plugins/pensive/skills/makefile-review/modules/dependency-graph.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/master/plugins/pensive/skills/makefile-review/modules/dependency-graph.md",
+          "sha256": "926ccb9f19ba669224548b6fd72b9704e2c69e19b38af2b32a936e8b86871580",
+          "bytes": 1306,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 6,
+          "path": "plugins/pensive/skills/makefile-review/modules/plugin-dogfood-checks.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/master/plugins/pensive/skills/makefile-review/modules/plugin-dogfood-checks.md",
+          "sha256": "ebca7e63ad4b82d118438119fd105188f03e330b4964737233f0a37583110bd5",
+          "bytes": 3322,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 6,
+          "path": "plugins/pensive/skills/makefile-review/modules/portability-checks.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/master/plugins/pensive/skills/makefile-review/modules/portability-checks.md",
+          "sha256": "da4b9e8ec516001b634ccb59ab0fe5815e5a954a0497902b06da6edb8cfe084c",
+          "bytes": 2735,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 5,
+          "path": "plugins/pensive/commands/makefile-review.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/master/plugins/pensive/commands/makefile-review.md",
+          "sha256": "235b453f3b397741acb6ae52d84de61104d382d92b25cb057b9000cf2c3046e9",
+          "bytes": 604,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 5,
+          "path": "plugins/pensive/src/pensive/skills/makefile_review.py",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/master/plugins/pensive/src/pensive/skills/makefile_review.py",
+          "sha256": "b7814b5da4e17989cd0a38e44f65100ae81c4806a3139c5008b4a4bd2257404d",
+          "bytes": 35779,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 5,
+          "path": "plugins/pensive/tests/skills/test_makefile_review.py",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/master/plugins/pensive/tests/skills/test_makefile_review.py",
+          "sha256": "329d33786713a310e42d4c08d4b84789e81ade51694024b6c05103da9fb2ca44",
+          "bytes": 19544,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 4,
+          "path": "plugins/pensive/commands/skill-review.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/master/plugins/pensive/commands/skill-review.md",
+          "sha256": "4b75b56e757068a4684a05f15de62155b0d527d7270e43ac465d0e13f671dba6",
+          "bytes": 5226,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 4,
+          "path": "plugins/pensive/skills/api-review/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/master/plugins/pensive/skills/api-review/SKILL.md",
+          "sha256": "4c94fcd4e5db0eaf98caa57aaae5dbdcacf3d856f31134d002b5575c726dc9a4",
+          "bytes": 4161,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 4,
+          "path": "plugins/pensive/skills/api-review/modules/consistency-audit.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/master/plugins/pensive/skills/api-review/modules/consistency-audit.md",
+          "sha256": "dc61655f6b5491380ae0c01a46a9a18a6a124cdce29de93d91f2c84553772409",
+          "bytes": 5500,
+          "matches_source": false,
+          "matches_target": false
+        }
+      ],
+      "tree_error": null
+    },
+    {
+      "index": 9,
+      "source_path": "development-tools/plaited-development-skills-plaited-plaited-e807424e",
+      "target_path": "development/plaited-development-skills-plaited-plaited-2",
+      "confidence": 0.85,
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable",
+      "repo": "plaited/plaited",
+      "default_branch": "dev",
+      "source_sha256": "bcdb752efa77ad9b9034e2b4a95aeee38c611ee8aa0eb7320e729261e6dc8078",
+      "target_sha256": "2fdcd79c975f7f75a29a2be45761f31b917b99ae2a8d265093c7b76ff6a3e538",
+      "source_metadata": {
+        "name": "plaited_development-skills",
+        "category": "development-tools",
+        "repo": "plaited/plaited",
+        "path": ".claude/commands/plaited_development-skills/validate-skill.md",
+        "github_path": ".claude/skills/code-documentation@plaited_development-skills",
+        "source_url": "https://github.com/plaited/plaited/blob/main/.claude/skills/code-documentation@plaited_development-skills/SKILL.md"
+      },
+      "target_metadata": {
+        "name": "plaited_development-skills",
+        "category": "development",
+        "repo": "plaited/plaited",
+        "path": ".claude/skills/code-documentation@plaited_development-skills",
+        "github_path": null,
+        "source_url": "https://github.com/plaited/plaited/blob/main/.claude/skills/code-documentation@plaited_development-skills/SKILL.md"
+      },
+      "query_tokens": [
+        "code-documentation@plaited_development-skills",
+        "commands",
+        "development",
+        "documentation",
+        "e807424e",
+        "plaited",
+        "plaited-development-skills-plaited-plaited-2",
+        "plaited-development-skills-plaited-plaited-e807424e",
+        "plaited_development-skills",
+        "validate",
+        "validate-skill"
+      ],
+      "candidate_count": 18,
+      "candidates": [
+        {
+          "score": 1,
+          "path": "docs/wiki/plaited-experience-standard.md"
+        },
+        {
+          "score": 1,
+          "path": "skills/code-documentation/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "skills/code-documentation/references/internal-templates.md"
+        },
+        {
+          "score": 1,
+          "path": "skills/code-documentation/references/maintenance.md"
+        },
+        {
+          "score": 1,
+          "path": "skills/code-documentation/references/public-api-templates.md"
+        },
+        {
+          "score": 1,
+          "path": "skills/code-documentation/references/type-documentation.md"
+        },
+        {
+          "score": 1,
+          "path": "skills/code-documentation/references/workflow.md"
+        },
+        {
+          "score": 1,
+          "path": "skills/plaited-runtime/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "skills/plaited-runtime/references/agent-runtime-notes.md"
+        },
+        {
+          "score": 1,
+          "path": "skills/plaited-runtime/references/behavioral-runtime.md"
+        },
+        {
+          "score": 1,
+          "path": "skills/plaited-runtime/references/modnet-mss-lineage.md"
+        },
+        {
+          "score": 1,
+          "path": "skills/plaited-runtime/references/runtime-boundary-review.md"
+        },
+        {
+          "score": 1,
+          "path": "skills/plaited-ui/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "skills/plaited-ui/references/controller-modules.md"
+        },
+        {
+          "score": 1,
+          "path": "skills/plaited-ui/references/css-system.md"
+        },
+        {
+          "score": 1,
+          "path": "skills/plaited-ui/references/server-pipeline.md"
+        },
+        {
+          "score": 1,
+          "path": "skills/plaited-ui/references/testing.md"
+        },
+        {
+          "score": 1,
+          "path": "skills/plaited-ui/references/websocket-decisions.md"
+        }
+      ],
+      "fetched": [
+        {
+          "score": 1,
+          "path": "docs/wiki/plaited-experience-standard.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/plaited/plaited/dev/docs/wiki/plaited-experience-standard.md",
+          "sha256": "0c8844a9fb745b12de860fa72a597e3ae8bee9d5a2154b873778b1a3fafcd999",
+          "bytes": 2057,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "skills/code-documentation/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/plaited/plaited/dev/skills/code-documentation/SKILL.md",
+          "sha256": "008e3a26eebf8921d5f6dfad47282e1f81f1834065832c4f618f409b3aa606a8",
+          "bytes": 3325,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "skills/code-documentation/references/internal-templates.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/plaited/plaited/dev/skills/code-documentation/references/internal-templates.md",
+          "sha256": "fea13060cbc7b93e405d1e93b290ffb0c3b331812aee2f3ec475a25a0fe98ea5",
+          "bytes": 2645,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "skills/code-documentation/references/maintenance.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/plaited/plaited/dev/skills/code-documentation/references/maintenance.md",
+          "sha256": "2f716a6a3794b5850b58f645d31e014067551467e36a495a42dd56518c0b587f",
+          "bytes": 4273,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "skills/code-documentation/references/public-api-templates.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/plaited/plaited/dev/skills/code-documentation/references/public-api-templates.md",
+          "sha256": "f0a086caac79aafd68df11174e41afb5d272c1e0f06afaad440c7c2ccde218ea",
+          "bytes": 2711,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "skills/code-documentation/references/type-documentation.md",
+          "status": "error",
+          "url": "https://raw.githubusercontent.com/plaited/plaited/dev/skills/code-documentation/references/type-documentation.md",
+          "error": "<urlopen error EOF occurred in violation of protocol (_ssl.c:992)>"
+        },
+        {
+          "score": 1,
+          "path": "skills/code-documentation/references/workflow.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/plaited/plaited/dev/skills/code-documentation/references/workflow.md",
+          "sha256": "2c83537db6a29d95288fa24885804d881bb3a55c7e5aed6dc19fe11576028d4c",
+          "bytes": 2537,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "skills/plaited-runtime/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/plaited/plaited/dev/skills/plaited-runtime/SKILL.md",
+          "sha256": "df81d5935198102d0117f0b1bac1cced6fe9ae45aa343a0696029a8c29126212",
+          "bytes": 3098,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "skills/plaited-runtime/references/agent-runtime-notes.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/plaited/plaited/dev/skills/plaited-runtime/references/agent-runtime-notes.md",
+          "sha256": "3c2647af30e1e9cb1797162d4d91ef87f1e3bb43c9d77370e17d91ab42ea3cd2",
+          "bytes": 672,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "skills/plaited-runtime/references/behavioral-runtime.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/plaited/plaited/dev/skills/plaited-runtime/references/behavioral-runtime.md",
+          "sha256": "a538d4a4809f60917daa2f3c18137a3ce6aeae2bc43ba3a64f4209d1f9eea602",
+          "bytes": 702,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "skills/plaited-runtime/references/modnet-mss-lineage.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/plaited/plaited/dev/skills/plaited-runtime/references/modnet-mss-lineage.md",
+          "sha256": "544a78c04707286082da3ae97b582dc94dd385998d7c1f3e6d3533168e495f74",
+          "bytes": 810,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "skills/plaited-runtime/references/runtime-boundary-review.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/plaited/plaited/dev/skills/plaited-runtime/references/runtime-boundary-review.md",
+          "sha256": "c0767e3d290938f785f1e235f1021cb482bb876576c0825eaf9c34e895cf063c",
+          "bytes": 1023,
+          "matches_source": false,
+          "matches_target": false
+        }
+      ],
+      "tree_error": null
+    },
+    {
+      "index": 11,
+      "source_path": "development-tools/pop-mcp-generator-jrc1883-popkit-claude",
+      "target_path": "development/mcp-generator-jrc1883-popkit-claude",
+      "confidence": 0.9,
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable",
+      "repo": "jrc1883/popkit-claude",
+      "default_branch": "main",
+      "source_sha256": "5179bfc391b482fbf72b6814c728897e66311cf7d23251b2d2726b0940ab093e",
+      "target_sha256": "e1812e771499ceb9f796995ccdf7e2467e4518b5e472fb1ae65264ae0b9f1309",
+      "source_metadata": {
+        "name": "pop-mcp-generator",
+        "category": "development-tools",
+        "repo": "jrc1883/popkit-claude",
+        "path": "packages/popkit-core/skills/pop-mcp-generator/SKILL.md",
+        "github_path": "packages/popkit-core/skills/pop-mcp-generator",
+        "source_url": "https://github.com/jrc1883/popkit-claude/blob/main/packages/popkit-core/skills/pop-mcp-generator/SKILL.md"
+      },
+      "target_metadata": {
+        "name": "mcp-generator",
+        "category": "development",
+        "repo": "jrc1883/popkit-claude",
+        "path": null,
+        "github_path": "packages/popkit-core/skills/pop-mcp-generator",
+        "source_url": "https://github.com/jrc1883/popkit-claude/blob/main/packages/popkit-core/skills/pop-mcp-generator/SKILL.md"
+      },
+      "query_tokens": [
+        "core",
+        "generator",
+        "jrc1883",
+        "mcp-generator",
+        "mcp-generator-jrc1883-popkit-claude",
+        "packages",
+        "pop-mcp-generator",
+        "pop-mcp-generator-jrc1883-popkit-claude",
+        "popkit",
+        "skill"
+      ],
+      "candidate_count": 0,
+      "candidates": [],
+      "fetched": [],
+      "tree_error": "Command '['gh', 'api', 'repos/jrc1883/popkit-claude/git/trees/main?recursive=1']' returned non-zero exit status 1."
+    },
+    {
+      "index": 13,
+      "source_path": "development-tools/searching-code",
+      "target_path": "development/searching-code-alexei-led-claude-code-config",
+      "confidence": 0.85,
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable",
+      "repo": "alexei-led/claude-code-config",
+      "default_branch": "master",
+      "source_sha256": "4505bd63063ce863a53dabb90625ac5ed8e4a9cc5adf4153e43ee5484eb36e74",
+      "target_sha256": "7eaba4815f87fff16f06298e576d56703581921099f4e589749326d0271b65cf",
+      "source_metadata": {
+        "name": "searching-code",
+        "category": "development-tools",
+        "repo": "alexei-led/claude-code-config",
+        "path": "skills/searching-code/SKILL.md",
+        "github_path": "skills/searching-code",
+        "source_url": "https://github.com/alexei-led/claude-code-config/blob/main/skills/searching-code/SKILL.md"
+      },
+      "target_metadata": {
+        "name": "searching-code",
+        "category": "development",
+        "repo": "alexei-led/claude-code-config",
+        "path": null,
+        "github_path": "skills/searching-code",
+        "source_url": "https://github.com/alexei-led/claude-code-config/blob/main/skills/searching-code/SKILL.md"
+      },
+      "query_tokens": [
+        "alexei",
+        "config",
+        "searching",
+        "searching-code",
+        "searching-code-alexei-led-claude-code-config",
+        "skill"
+      ],
+      "candidate_count": 25,
+      "candidates": [
+        {
+          "score": 3,
+          "path": "dist/claude/plugins/dev-flow/skills/searching-code/SKILL.md"
+        },
+        {
+          "score": 3,
+          "path": "dist/claude/plugins/dev-flow/skills/searching-code/references/ast-grep-rule-reference.md"
+        },
+        {
+          "score": 3,
+          "path": "dist/codex/plugins/dev-flow/skills/searching-code/SKILL.md"
+        },
+        {
+          "score": 3,
+          "path": "dist/codex/plugins/dev-flow/skills/searching-code/references/ast-grep-rule-reference.md"
+        },
+        {
+          "score": 3,
+          "path": "dist/gemini/skills/searching-code/SKILL.md"
+        },
+        {
+          "score": 3,
+          "path": "dist/gemini/skills/searching-code/references/ast-grep-rule-reference.md"
+        },
+        {
+          "score": 3,
+          "path": "dist/pi/skills/searching-code/SKILL.md"
+        },
+        {
+          "score": 3,
+          "path": "dist/pi/skills/searching-code/references/ast-grep-rule-reference.md"
+        },
+        {
+          "score": 3,
+          "path": "src/skills/searching-code/SKILL.md"
+        },
+        {
+          "score": 3,
+          "path": "src/skills/searching-code/claude/frontmatter.yaml"
+        },
+        {
+          "score": 3,
+          "path": "src/skills/searching-code/pi/body.md"
+        },
+        {
+          "score": 3,
+          "path": "src/skills/searching-code/references/ast-grep-rule-reference.md"
+        },
+        {
+          "score": 3,
+          "path": "tests/skill-evals/dev-workflow/searching-code/evals/evals.json"
+        },
+        {
+          "score": 2,
+          "path": "dist/claude/plugins/dev-tools/skills/evolving-config/SKILL.md"
+        },
+        {
+          "score": 2,
+          "path": "dist/claude/plugins/dev-tools/skills/researching-web/SKILL.md"
+        },
+        {
+          "score": 2,
+          "path": "dist/claude/plugins/dev-tools/skills/reviewing-cc-config/SKILL.md"
+        },
+        {
+          "score": 2,
+          "path": "dist/claude/plugins/dev-tools/skills/reviewing-cc-config/references/RUBRIC.md"
+        },
+        {
+          "score": 2,
+          "path": "dist/claude/plugins/dev-tools/skills/reviewing-cc-config/references/apply-fixes.md"
+        },
+        {
+          "score": 2,
+          "path": "dist/codex/plugins/dev-tools/skills/evolving-config/SKILL.md"
+        },
+        {
+          "score": 2,
+          "path": "dist/codex/plugins/dev-tools/skills/researching-web/SKILL.md"
+        },
+        {
+          "score": 2,
+          "path": "dist/gemini/skills/evolving-config/SKILL.md"
+        },
+        {
+          "score": 2,
+          "path": "dist/gemini/skills/researching-web/SKILL.md"
+        },
+        {
+          "score": 2,
+          "path": "dist/pi/skills/evolving-config/SKILL.md"
+        },
+        {
+          "score": 2,
+          "path": "dist/pi/skills/researching-web/SKILL.md"
+        },
+        {
+          "score": 2,
+          "path": "src/skills/evolving-config/SKILL.md"
+        }
+      ],
+      "fetched": [
+        {
+          "score": 3,
+          "path": "dist/claude/plugins/dev-flow/skills/searching-code/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/alexei-led/claude-code-config/master/dist/claude/plugins/dev-flow/skills/searching-code/SKILL.md",
+          "sha256": "4e2f3f8e09781cfa63529b2cbd282c6d7aa42463f20be06cebb386d77c344fcb",
+          "bytes": 7575,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 3,
+          "path": "dist/claude/plugins/dev-flow/skills/searching-code/references/ast-grep-rule-reference.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/alexei-led/claude-code-config/master/dist/claude/plugins/dev-flow/skills/searching-code/references/ast-grep-rule-reference.md",
+          "sha256": "63d2a2d8d582b0438e0403398c13832bba781f4534e29aa33a34535c2ad05f31",
+          "bytes": 7594,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 3,
+          "path": "dist/codex/plugins/dev-flow/skills/searching-code/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/alexei-led/claude-code-config/master/dist/codex/plugins/dev-flow/skills/searching-code/SKILL.md",
+          "sha256": "09c9c7c74ed6612d6633ba6cd461475c47aeb0c8356b22ee9a16bf05f848111c",
+          "bytes": 7198,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 3,
+          "path": "dist/codex/plugins/dev-flow/skills/searching-code/references/ast-grep-rule-reference.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/alexei-led/claude-code-config/master/dist/codex/plugins/dev-flow/skills/searching-code/references/ast-grep-rule-reference.md",
+          "sha256": "63d2a2d8d582b0438e0403398c13832bba781f4534e29aa33a34535c2ad05f31",
+          "bytes": 7594,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 3,
+          "path": "dist/gemini/skills/searching-code/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/alexei-led/claude-code-config/master/dist/gemini/skills/searching-code/SKILL.md",
+          "sha256": "09c9c7c74ed6612d6633ba6cd461475c47aeb0c8356b22ee9a16bf05f848111c",
+          "bytes": 7198,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 3,
+          "path": "dist/gemini/skills/searching-code/references/ast-grep-rule-reference.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/alexei-led/claude-code-config/master/dist/gemini/skills/searching-code/references/ast-grep-rule-reference.md",
+          "sha256": "63d2a2d8d582b0438e0403398c13832bba781f4534e29aa33a34535c2ad05f31",
+          "bytes": 7594,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 3,
+          "path": "dist/pi/skills/searching-code/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/alexei-led/claude-code-config/master/dist/pi/skills/searching-code/SKILL.md",
+          "sha256": "6793a870f9f812e9cbc6d3bfb696ea65cf19203e5f1fa29542b284816a1c7c76",
+          "bytes": 3071,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 3,
+          "path": "dist/pi/skills/searching-code/references/ast-grep-rule-reference.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/alexei-led/claude-code-config/master/dist/pi/skills/searching-code/references/ast-grep-rule-reference.md",
+          "sha256": "63d2a2d8d582b0438e0403398c13832bba781f4534e29aa33a34535c2ad05f31",
+          "bytes": 7594,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 3,
+          "path": "src/skills/searching-code/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/alexei-led/claude-code-config/master/src/skills/searching-code/SKILL.md",
+          "sha256": "d16ff5981f00c27547a8fa82a9730cf3d613eb287ee9c42aeeb9df7fe73a1b0b",
+          "bytes": 7200,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 3,
+          "path": "src/skills/searching-code/claude/frontmatter.yaml",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/alexei-led/claude-code-config/master/src/skills/searching-code/claude/frontmatter.yaml",
+          "sha256": "a70e010059150f624b3f3fc6e53a6517013560d85ead13f56a7ce2f3b2d6095d",
+          "bytes": 403,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 3,
+          "path": "src/skills/searching-code/pi/body.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/alexei-led/claude-code-config/master/src/skills/searching-code/pi/body.md",
+          "sha256": "e67fa51161bcd04d8ab897ef7d7a1f3dded2f0e9cec0d18411021646dd240d35",
+          "bytes": 2261,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 3,
+          "path": "src/skills/searching-code/references/ast-grep-rule-reference.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/alexei-led/claude-code-config/master/src/skills/searching-code/references/ast-grep-rule-reference.md",
+          "sha256": "63d2a2d8d582b0438e0403398c13832bba781f4534e29aa33a34535c2ad05f31",
+          "bytes": 7594,
+          "matches_source": false,
+          "matches_target": false
+        }
+      ],
+      "tree_error": null
+    },
+    {
+      "index": 15,
+      "source_path": "development-tools/using-xcode",
+      "target_path": "development/using-xcode",
+      "confidence": 0.95,
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable",
+      "repo": "czottmann/claude-code-stuff",
+      "default_branch": "main",
+      "source_sha256": "72a0a909a7b8fc41acd3f6beacd6096289c60a9c7a0aae93c18f374fe3d56fb3",
+      "target_sha256": "199890d39155c15515ae02bd774ecd1fe494ee879e48819ec172ef76704a4a14",
+      "source_metadata": {
+        "name": "using-xcode",
+        "category": "development-tools",
+        "repo": "czottmann/claude-code-stuff",
+        "path": "skills/using-xcode/SKILL.md",
+        "github_path": "skills/using-xcode",
+        "source_url": null
+      },
+      "target_metadata": {
+        "name": "using-xcode",
+        "category": "development",
+        "repo": "czottmann/claude-code-stuff",
+        "path": null,
+        "github_path": "skills/using-xcode",
+        "source_url": null
+      },
+      "query_tokens": [
+        "skill",
+        "using",
+        "using-xcode",
+        "xcode"
+      ],
+      "candidate_count": 0,
+      "candidates": [],
+      "fetched": [],
+      "tree_error": "Command '['gh', 'api', 'repos/czottmann/claude-code-stuff/git/trees/main?recursive=1']' returned non-zero exit status 1."
+    },
+    {
+      "index": 16,
+      "source_path": "development-tools/utilizing-cli-tools",
+      "target_path": "development/utilizing-cli-tools-thkt-claude-config",
+      "confidence": 0.9,
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable",
+      "repo": "thkt/claude-config",
+      "default_branch": "main",
+      "source_sha256": "c003a7a8b2f6b08b8cda014a057f2c6c8e813e15e05eaeddf50efbb90da96bc4",
+      "target_sha256": "8dbb57cb4744fd83afb5fb77bb86ef7793d0b5844d99624948381064fe9005ab",
+      "source_metadata": {
+        "name": "utilizing-cli-tools",
+        "category": "development-tools",
+        "repo": "thkt/claude-config",
+        "path": ".ja/skills/utilizing-cli-tools/SKILL.md",
+        "github_path": ".ja/skills/utilizing-cli-tools",
+        "source_url": "https://github.com/thkt/claude-config/blob/main/.ja/skills/utilizing-cli-tools/SKILL.md"
+      },
+      "target_metadata": {
+        "name": "utilizing-cli-tools",
+        "category": "development",
+        "repo": "thkt/claude-config",
+        "path": null,
+        "github_path": ".ja/skills/utilizing-cli-tools",
+        "source_url": "https://github.com/thkt/claude-config/blob/main/.ja/skills/utilizing-cli-tools/SKILL.md"
+      },
+      "query_tokens": [
+        "config",
+        "skill",
+        "thkt",
+        "tools",
+        "utilizing",
+        "utilizing-cli-tools",
+        "utilizing-cli-tools-thkt-claude-config"
+      ],
+      "candidate_count": 25,
+      "candidates": [
+        {
+          "score": 1,
+          "path": ".ja/docs/CLI_TOOLS.md"
+        },
+        {
+          "score": 1,
+          "path": ".ja/docs/SKILLS_AGENTS.md"
+        },
+        {
+          "score": 1,
+          "path": ".ja/rules/conventions/SKILLS.md"
+        },
+        {
+          "score": 1,
+          "path": ".ja/rules/development/TOOLS.md"
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/_lib/sow-resolution.md"
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/adr/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/adr/TUNING_LOG.md"
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/adr/references/fowler-adr.md"
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/adr/references/madr-format.md"
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/adr/templates/architecture-pattern.md"
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/adr/templates/deprecation.md"
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/adr/templates/process-change.md"
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/adr/templates/technology-selection.md"
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/assert/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/assert/references/adversarial.md"
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/assert/references/bootstrap.md"
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/assert/references/gate-decision.md"
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/assert/references/phase-details.md"
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/audit/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/audit/references/calibration-examples.md"
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/audit/references/finding-schema.md"
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/audit/references/pre-flight.md"
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/audit/references/snapshot-schema.md"
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/audit/templates/output.md"
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/challenge/SKILL.md"
+        }
+      ],
+      "fetched": [
+        {
+          "score": 1,
+          "path": ".ja/docs/CLI_TOOLS.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/thkt/claude-config/main/.ja/docs/CLI_TOOLS.md",
+          "sha256": "01c960647868f2d5235ba05d7d55a7925523a2da33883b5b95f6e3e27a40fbde",
+          "bytes": 5360,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": ".ja/docs/SKILLS_AGENTS.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/thkt/claude-config/main/.ja/docs/SKILLS_AGENTS.md",
+          "sha256": "0bcbd024552e10128c0d15b22b3d0a32255b09435ef8f9b1bea334bbe574db9f",
+          "bytes": 6067,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": ".ja/rules/conventions/SKILLS.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/thkt/claude-config/main/.ja/rules/conventions/SKILLS.md",
+          "sha256": "331cfcb589bddea1dd3bd2df8ea61249bbdde1f1803e7b678e9193f737edb9f0",
+          "bytes": 3336,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": ".ja/rules/development/TOOLS.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/thkt/claude-config/main/.ja/rules/development/TOOLS.md",
+          "sha256": "834dcdbe0a5ba2802dcc3340c98ba25564afafe27b18c4aa7641b79c936e472c",
+          "bytes": 719,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/_lib/sow-resolution.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/thkt/claude-config/main/.ja/skills/_lib/sow-resolution.md",
+          "sha256": "52aa198e2e3dfbf05b608c1b4078b2cab59234d7942496a879a5de57ad6ecf7d",
+          "bytes": 914,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/adr/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/thkt/claude-config/main/.ja/skills/adr/SKILL.md",
+          "sha256": "8548da2d1d4f49e468153f7e13aae2787c2d04d39459f8f65def638a4b4af8aa",
+          "bytes": 8290,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/adr/TUNING_LOG.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/thkt/claude-config/main/.ja/skills/adr/TUNING_LOG.md",
+          "sha256": "8c9dbf20d241be995f4d06319a8a5e1e274fb304ef58dc490bbf868bbd259df6",
+          "bytes": 12051,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/adr/references/fowler-adr.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/thkt/claude-config/main/.ja/skills/adr/references/fowler-adr.md",
+          "sha256": "3fb2b59086f79bcdd218b3412648eaf0406ad3b438197ad3ae7680b13d9e4a8f",
+          "bytes": 1983,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/adr/references/madr-format.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/thkt/claude-config/main/.ja/skills/adr/references/madr-format.md",
+          "sha256": "9d5da70c46153736bb992e825b5356daf015e567b83ece1dd7b2992e70bc6bd5",
+          "bytes": 3043,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/adr/templates/architecture-pattern.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/thkt/claude-config/main/.ja/skills/adr/templates/architecture-pattern.md",
+          "sha256": "3a9f237d7e998a8176cd112de476413d374193ed4d08eaf27fba86ebba3f905f",
+          "bytes": 3182,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/adr/templates/deprecation.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/thkt/claude-config/main/.ja/skills/adr/templates/deprecation.md",
+          "sha256": "14c17172fab88436df498605099ab1523c60808b2e3c91fc914e829c09661f0b",
+          "bytes": 4374,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": ".ja/skills/adr/templates/process-change.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/thkt/claude-config/main/.ja/skills/adr/templates/process-change.md",
+          "sha256": "460aa28bc80b3fa28de380b324a028d52b8b108aadacff7178bde3751d4b2642",
+          "bytes": 2906,
+          "matches_source": false,
+          "matches_target": false
+        }
+      ],
+      "tree_error": null
+    },
+    {
+      "index": 17,
+      "source_path": "programming-languages/cpp-templates-metaprogramming",
+      "target_path": "development/cpp-templates-metaprogramming",
+      "confidence": 0.95,
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable",
+      "repo": "TheBushidoCollective/han",
+      "default_branch": "main",
+      "source_sha256": "898641fbeaaf2b015265adb84b3f9367079681e6c477717c3dd1008fb724a774",
+      "target_sha256": "7597edd694461c1240ee67f2a42d28cfa9f7f0d753e7b2051997d0e8cd32c3cb",
+      "source_metadata": {
+        "name": "cpp-templates-metaprogramming",
+        "category": "programming-languages",
+        "repo": "TheBushidoCollective/han",
+        "path": "jutsu/jutsu-cpp/skills/cpp-templates-metaprogramming/SKILL.md",
+        "github_path": "jutsu/jutsu-cpp/cpp-templates-metaprogramming",
+        "source_url": "https://github.com/TheBushidoCollective/han/blob/main/jutsu/jutsu-cpp/cpp-templates-metaprogramming/SKILL.md"
+      },
+      "target_metadata": {
+        "name": "cpp-templates-metaprogramming",
+        "category": "development",
+        "repo": "TheBushidoCollective/han",
+        "path": null,
+        "github_path": "jutsu/jutsu-cpp/cpp-templates-metaprogramming",
+        "source_url": "https://github.com/TheBushidoCollective/han/blob/main/jutsu/jutsu-cpp/cpp-templates-metaprogramming/SKILL.md"
+      },
+      "query_tokens": [
+        "cpp-templates-metaprogramming",
+        "jutsu",
+        "metaprogramming",
+        "skill",
+        "templates"
+      ],
+      "candidate_count": 25,
+      "candidates": [
+        {
+          "score": 4,
+          "path": "plugins/languages/cpp/cpp-templates-metaprogramming/SKILL.md"
+        },
+        {
+          "score": 4,
+          "path": "plugins/languages/cpp/skills/cpp-templates-metaprogramming/SKILL.md"
+        },
+        {
+          "score": 2,
+          "path": ".claude/skills/create-jutsu/SKILL.md"
+        },
+        {
+          "score": 2,
+          "path": "examples/example-jutsu-plugin/skills/plugin-development/SKILL.md"
+        },
+        {
+          "score": 2,
+          "path": "plugins/frameworks/phoenix/skills/phoenix-views-templates/SKILL.md"
+        },
+        {
+          "score": 2,
+          "path": "plugins/languages/nim/skills/nim-metaprogramming/SKILL.md"
+        },
+        {
+          "score": 2,
+          "path": "plugins/languages/ruby/skills/ruby-metaprogramming/SKILL.md"
+        },
+        {
+          "score": 2,
+          "path": "plugins/patterns/atomic-design/skills/atomic-design-templates/SKILL.md"
+        },
+        {
+          "score": 2,
+          "path": "plugins/tools/helm/skills/helm-templates/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": ".ai-dlc/anti-rationalization-tables/unit-01-core-dev-skills.md"
+        },
+        {
+          "score": 1,
+          "path": ".ai-dlc/anti-rationalization-tables/unit-02-core-principle-skills.md"
+        },
+        {
+          "score": 1,
+          "path": ".claude/rules/plugin-structure/skills-not-commands.md"
+        },
+        {
+          "score": 1,
+          "path": ".claude/skills/create-blog-post/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": ".claude/skills/create-do/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": ".claude/skills/create-hashi/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": ".claude/skills/research-new-features/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "examples/example-jutsu-plugin/CHANGELOG.md"
+        },
+        {
+          "score": 1,
+          "path": "examples/example-jutsu-plugin/README.md"
+        },
+        {
+          "score": 1,
+          "path": "examples/example-jutsu-plugin/commands/greet.md"
+        },
+        {
+          "score": 1,
+          "path": "plugins/bridges/codex/src/skills.ts"
+        },
+        {
+          "score": 1,
+          "path": "plugins/bridges/gemini-cli/src/skills.ts"
+        },
+        {
+          "score": 1,
+          "path": "plugins/bridges/kiro/src/skills.ts"
+        },
+        {
+          "score": 1,
+          "path": "plugins/bridges/opencode/dist/skills.d.ts"
+        },
+        {
+          "score": 1,
+          "path": "plugins/bridges/opencode/dist/skills.js"
+        },
+        {
+          "score": 1,
+          "path": "plugins/bridges/opencode/src/skills.ts"
+        }
+      ],
+      "fetched": [
+        {
+          "score": 4,
+          "path": "plugins/languages/cpp/cpp-templates-metaprogramming/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/TheBushidoCollective/han/main/plugins/languages/cpp/cpp-templates-metaprogramming/SKILL.md",
+          "sha256": "7137cb22f203d6d8fae9024747e538a6bbe7a71a4fd4c309987755c755d5c64b",
+          "bytes": 17848,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 4,
+          "path": "plugins/languages/cpp/skills/cpp-templates-metaprogramming/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/TheBushidoCollective/han/main/plugins/languages/cpp/skills/cpp-templates-metaprogramming/SKILL.md",
+          "sha256": "bf72c121726370428e38a9e8ce40e301db5167c75e0cb04ac682a787e5111046",
+          "bytes": 25032,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 2,
+          "path": ".claude/skills/create-jutsu/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/TheBushidoCollective/han/main/.claude/skills/create-jutsu/SKILL.md",
+          "sha256": "c104b9deae79d023a34aeb496eef4c0a2f4147d227b0adadaa0bdddb17df37d7",
+          "bytes": 5742,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 2,
+          "path": "examples/example-jutsu-plugin/skills/plugin-development/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/TheBushidoCollective/han/main/examples/example-jutsu-plugin/skills/plugin-development/SKILL.md",
+          "sha256": "5037369d8290543c2b6c62da64f0c85bc1d6b9eb9fda80e7cf19131426f02f60",
+          "bytes": 4789,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 2,
+          "path": "plugins/frameworks/phoenix/skills/phoenix-views-templates/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/TheBushidoCollective/han/main/plugins/frameworks/phoenix/skills/phoenix-views-templates/SKILL.md",
+          "sha256": "17947aff5f646499ceb516d6dfd476e7b55b6312e9ca8d71f3b124bb6f7da404",
+          "bytes": 13326,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 2,
+          "path": "plugins/languages/nim/skills/nim-metaprogramming/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/TheBushidoCollective/han/main/plugins/languages/nim/skills/nim-metaprogramming/SKILL.md",
+          "sha256": "9cbe4a86ae55b20152900ae552621c2f66c164d8b22dca4d7cd99c9699c2cf20",
+          "bytes": 16482,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 2,
+          "path": "plugins/languages/ruby/skills/ruby-metaprogramming/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/TheBushidoCollective/han/main/plugins/languages/ruby/skills/ruby-metaprogramming/SKILL.md",
+          "sha256": "3ed27832b6003bb4c7e5faa280e4abb0a49b4b9e8e2e19c009e0a6fc4a055cb9",
+          "bytes": 9789,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 2,
+          "path": "plugins/patterns/atomic-design/skills/atomic-design-templates/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/TheBushidoCollective/han/main/plugins/patterns/atomic-design/skills/atomic-design-templates/SKILL.md",
+          "sha256": "a1c9a821276148c1d414dc94947eef9b189f45d1bc9d3e9029fc8f4315434bcd",
+          "bytes": 24656,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 2,
+          "path": "plugins/tools/helm/skills/helm-templates/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/TheBushidoCollective/han/main/plugins/tools/helm/skills/helm-templates/SKILL.md",
+          "sha256": "0a4c985e71529bb78df0a6774d985cdb51cddf38e9000954104335524116f9c4",
+          "bytes": 4964,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": ".ai-dlc/anti-rationalization-tables/unit-01-core-dev-skills.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/TheBushidoCollective/han/main/.ai-dlc/anti-rationalization-tables/unit-01-core-dev-skills.md",
+          "sha256": "513053a3bd1e265fef128cab385858855ac7a5c7f5d69d4e74c8ae700efab095",
+          "bytes": 5332,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": ".ai-dlc/anti-rationalization-tables/unit-02-core-principle-skills.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/TheBushidoCollective/han/main/.ai-dlc/anti-rationalization-tables/unit-02-core-principle-skills.md",
+          "sha256": "3c3f1bb523abb48f890dfecc60761ebcaf2f5e7d31283187e1ab422701c10281",
+          "bytes": 6135,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": ".claude/rules/plugin-structure/skills-not-commands.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/TheBushidoCollective/han/main/.claude/rules/plugin-structure/skills-not-commands.md",
+          "sha256": "afef542d6fb9673dad45471ac60282c54f4925a0e8b61f1def820202f5d03d4e",
+          "bytes": 1940,
+          "matches_source": false,
+          "matches_target": false
+        }
+      ],
+      "tree_error": null
+    },
+    {
+      "index": 24,
+      "source_path": "programming-languages/typescript-dry-principle",
+      "target_path": "development/typescript-dry-principle",
+      "confidence": 0.95,
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable",
+      "repo": "darellchua2/opencode-config-template",
+      "default_branch": "main",
+      "source_sha256": "1392999291d96a7b50099c35f262b12246cc64665577fe4a1aeb260b8f32e8b3",
+      "target_sha256": "bb6cb7334452ffae4063ef0a04c119fc109aa27b6e67996dbaec3eac89da1c76",
+      "source_metadata": {
+        "name": "typescript-dry-principle",
+        "category": "programming-languages",
+        "repo": "darellchua2/opencode-config-template",
+        "path": "skills/typescript-dry-principle/SKILL.md",
+        "github_path": null,
+        "source_url": "https://github.com/darellchua2/opencode-config-template/blob/main/skills/typescript-dry-principle/SKILL.md"
+      },
+      "target_metadata": {
+        "name": "typescript-dry-principle",
+        "category": "development",
+        "repo": "darellchua2/opencode-config-template",
+        "path": "skills/typescript-dry-principle/SKILL.md",
+        "github_path": null,
+        "source_url": "https://github.com/darellchua2/opencode-config-template/blob/main/skills/typescript-dry-principle/SKILL.md"
+      },
+      "query_tokens": [
+        "principle",
+        "skill",
+        "typescript",
+        "typescript-dry-principle"
+      ],
+      "candidate_count": 25,
+      "candidates": [
+        {
+          "score": 4,
+          "path": "opencode_app/.opencode/skills/typescript-dry-principle-skill/SKILL.md"
+        },
+        {
+          "score": 2,
+          "path": "opencode_app/.opencode/skills/solid-principles-skill/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/_archived/README.md"
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/_archived/git-issue-plan-workflow/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/_archived/git-pr-creator/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/_archived/jira-ticket-plan-workflow/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/_archived/nextjs-complete-setup/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/_archived/nextjs-tsdoc-documentor/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/_archived/python-docstring-generator/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/accessibility-a11y-skill/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/api-design-skill/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/ascii-diagram-creator-skill/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/authentication-authorization-skill/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/changelog-python-cliff-skill/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/clean-architecture-skill/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/clean-code-skill/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/code-smells-skill/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/codegraph-setup-skill/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/complexity-management-skill/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/construction-bd-skill/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/continuous-learning-skill/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/coverage-readme-workflow-skill/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/database-migration-skill/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/design-patterns-skill/SKILL.md"
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/docker-containerization-skill/SKILL.md"
+        }
+      ],
+      "fetched": [
+        {
+          "score": 4,
+          "path": "opencode_app/.opencode/skills/typescript-dry-principle-skill/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/darellchua2/opencode-config-template/main/opencode_app/.opencode/skills/typescript-dry-principle-skill/SKILL.md",
+          "sha256": "cf8994f89a206bb37fb1fe45c453dab4663bfedb65641c23f817f7edeb42ea5a",
+          "bytes": 26054,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 2,
+          "path": "opencode_app/.opencode/skills/solid-principles-skill/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/darellchua2/opencode-config-template/main/opencode_app/.opencode/skills/solid-principles-skill/SKILL.md",
+          "sha256": "d67ca1e92d117e10eabba1cba1cf1a564e225bbef9e05e337a637097d0b3ec6b",
+          "bytes": 12986,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/_archived/README.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/darellchua2/opencode-config-template/main/opencode_app/.opencode/skills/_archived/README.md",
+          "sha256": "ae4c5ac16599f40e5eb3a9e83996bd52d4344f7970226a986b707917b8572048",
+          "bytes": 1534,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/_archived/git-issue-plan-workflow/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/darellchua2/opencode-config-template/main/opencode_app/.opencode/skills/_archived/git-issue-plan-workflow/SKILL.md",
+          "sha256": "1609b0f01a328e97da5811834345d216e403583e49c1e6010212a08a81f0f4c2",
+          "bytes": 14562,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/_archived/git-pr-creator/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/darellchua2/opencode-config-template/main/opencode_app/.opencode/skills/_archived/git-pr-creator/SKILL.md",
+          "sha256": "ef8ce19eb6f1c46e90c8f9dafb094cd6ff283f0421c8985dcd242c8d0704850b",
+          "bytes": 19166,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/_archived/jira-ticket-plan-workflow/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/darellchua2/opencode-config-template/main/opencode_app/.opencode/skills/_archived/jira-ticket-plan-workflow/SKILL.md",
+          "sha256": "5f54c01ac0d80048ba43c0cf132fe1336170c140059a6474c65d6a78aec81dbb",
+          "bytes": 11859,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/_archived/nextjs-complete-setup/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/darellchua2/opencode-config-template/main/opencode_app/.opencode/skills/_archived/nextjs-complete-setup/SKILL.md",
+          "sha256": "8c61cba279f126d284c1f318d3ec6cd2c4863f3513cf359c60e1742fbd7f5ddf",
+          "bytes": 21243,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/_archived/nextjs-tsdoc-documentor/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/darellchua2/opencode-config-template/main/opencode_app/.opencode/skills/_archived/nextjs-tsdoc-documentor/SKILL.md",
+          "sha256": "9690c54c4841d44bfce732402eef893a30c482eb750c13a089289062a3e98283",
+          "bytes": 17008,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/_archived/python-docstring-generator/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/darellchua2/opencode-config-template/main/opencode_app/.opencode/skills/_archived/python-docstring-generator/SKILL.md",
+          "sha256": "62fbe3fc2813cba99da463d45df1852e78ca46f3cca092748e8d3c7993548c81",
+          "bytes": 19590,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/accessibility-a11y-skill/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/darellchua2/opencode-config-template/main/opencode_app/.opencode/skills/accessibility-a11y-skill/SKILL.md",
+          "sha256": "d690e14ba33947c2cc895c7a5aa3235cf0ba97d41edf38aaaf66e1d2dcd8f2eb",
+          "bytes": 10144,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/api-design-skill/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/darellchua2/opencode-config-template/main/opencode_app/.opencode/skills/api-design-skill/SKILL.md",
+          "sha256": "6e51324210da764f2647a744b13882a3e670ab4716afe93dd22fe664cb73ba27",
+          "bytes": 10056,
+          "matches_source": false,
+          "matches_target": false
+        },
+        {
+          "score": 1,
+          "path": "opencode_app/.opencode/skills/ascii-diagram-creator-skill/SKILL.md",
+          "status": "ok",
+          "url": "https://raw.githubusercontent.com/darellchua2/opencode-config-template/main/opencode_app/.opencode/skills/ascii-diagram-creator-skill/SKILL.md",
+          "sha256": "4dfc345fe30f39764488f5d11f594b3e1cf6905ce1fd35ea86901ffd63950214",
+          "bytes": 10118,
+          "matches_source": false,
+          "matches_target": false
+        }
+      ],
+      "tree_error": null
+    }
+  ]
+}

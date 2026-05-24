@@ -1,0 +1,16 @@
+{
+  "name": "swarm-discussion",
+  "repo": "Ischca/swarm-discussion-skill",
+  "path": ".claude/skills/swarm-discussion/SKILL.md",
+  "source": "github.com/Ischca/swarm-discussion-skill",
+  "downloaded_at": "2026-02-02T03:48:57.338935Z",
+  "dir_name": "swarm-discussion",
+  "category": "orchestration",
+  "author": "Ischca",
+  "source_url": "https://github.com/Ischca/swarm-discussion-skill/blob/main/.claude/skills/swarm-discussion/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Ischca/swarm-discussion-skill/blob/main/.claude/skills/swarm-discussion/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

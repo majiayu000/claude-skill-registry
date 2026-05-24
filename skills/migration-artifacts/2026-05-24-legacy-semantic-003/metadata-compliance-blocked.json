@@ -1,0 +1,447 @@
+{
+  "schema_version": 1,
+  "blocked_count": 22,
+  "classification_reviewed": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-legacy-semantic-003/migration-artifacts/2026-05-24-legacy-semantic-003/classification-reviewed.jsonl",
+  "blocked": [
+    {
+      "source_path": "agent-coordination/multi-agent-parallel-investigation",
+      "target_path": "agent/multi-agent-parallel-investigation",
+      "target_metadata": "agent/multi-agent-parallel-investigation/metadata.json",
+      "source_category": "agent-coordination",
+      "target_category": "agent",
+      "confidence": 0.95,
+      "source_artifact": "apply-result-min075.json",
+      "errors": [
+        "Schema validation failed at <root>: 'repo' is a required property",
+        "author is missing or placeholder value",
+        "source_url must be a valid https URL",
+        "permission_note must be descriptive (>= 10 characters)",
+        "copyright must be descriptive",
+        "distribution must be \"restricted\" for license \"NOASSERTION\""
+      ],
+      "warnings": [
+        "license normalized to \"NOASSERTION\""
+      ]
+    },
+    {
+      "source_path": "research-analysis/open-source-librarian-ec616468",
+      "target_path": "analysis/open-source-librarian-ec616468",
+      "target_metadata": "analysis/open-source-librarian-ec616468/metadata.json",
+      "source_category": "research-analysis",
+      "target_category": "analysis",
+      "confidence": 0.85,
+      "source_artifact": "apply-result-min075.json",
+      "errors": [
+        "Schema validation failed at <root>: 'repo' is a required property",
+        "author is missing or placeholder value",
+        "source_url must be a valid https URL",
+        "permission_note must be descriptive (>= 10 characters)",
+        "copyright must be descriptive",
+        "distribution must be \"restricted\" for license \"NOASSERTION\""
+      ],
+      "warnings": [
+        "license normalized to \"NOASSERTION\""
+      ]
+    },
+    {
+      "source_path": "research-analysis/research-synthesizer-046f3a5c",
+      "target_path": "analysis/research-synthesizer-046f3a5c",
+      "target_metadata": "analysis/research-synthesizer-046f3a5c/metadata.json",
+      "source_category": "research-analysis",
+      "target_category": "analysis",
+      "confidence": 0.8,
+      "source_artifact": "apply-result-min075.json",
+      "errors": [
+        "Schema validation failed at <root>: 'repo' is a required property",
+        "author is missing or placeholder value",
+        "source_url must be a valid https URL",
+        "permission_note must be descriptive (>= 10 characters)",
+        "copyright must be descriptive",
+        "distribution must be \"restricted\" for license \"NOASSERTION\""
+      ],
+      "warnings": [
+        "license normalized to \"NOASSERTION\""
+      ]
+    },
+    {
+      "source_path": "technical-integration/skills-mitkox-fteplusai",
+      "target_path": "analysis/skills-mitkox-fteplusai",
+      "target_metadata": "analysis/skills-mitkox-fteplusai/metadata.json",
+      "source_category": "technical-integration",
+      "target_category": "analysis",
+      "confidence": 0.85,
+      "source_artifact": "apply-result-min075.json",
+      "errors": [
+        "Schema validation failed at <root>: 'author' is a required property",
+        "author is missing or placeholder value",
+        "source_url must be a valid https URL",
+        "permission_note must be descriptive (>= 10 characters)",
+        "copyright must be descriptive",
+        "distribution must be \"restricted\" for license \"NOASSERTION\""
+      ],
+      "warnings": [
+        "license normalized to \"NOASSERTION\""
+      ]
+    },
+    {
+      "source_path": "development-tools/cargo-ecosystem",
+      "target_path": "development/cargo-ecosystem",
+      "target_metadata": "development/cargo-ecosystem/metadata.json",
+      "source_category": "development-tools",
+      "target_category": "development",
+      "confidence": 0.94,
+      "source_artifact": "apply-result-min075.json",
+      "errors": [
+        "Schema validation failed at <root>: 'repo' is a required property",
+        "author is missing or placeholder value",
+        "source_url must be a valid https URL",
+        "permission_note must be descriptive (>= 10 characters)",
+        "copyright must be descriptive",
+        "distribution must be \"restricted\" for license \"NOASSERTION\""
+      ],
+      "warnings": [
+        "license normalized to \"NOASSERTION\""
+      ]
+    },
+    {
+      "source_path": "development-tools/claudekit-claude-code",
+      "target_path": "development/claudekit-claude-code",
+      "target_metadata": "development/claudekit-claude-code/metadata.json",
+      "source_category": "development-tools",
+      "target_category": "development",
+      "confidence": 0.93,
+      "source_artifact": "apply-result-min075.json",
+      "errors": [
+        "Schema validation failed at <root>: 'repo' is a required property",
+        "author is missing or placeholder value",
+        "source_url must be a valid https URL",
+        "permission_note must be descriptive (>= 10 characters)",
+        "copyright must be descriptive",
+        "distribution must be \"restricted\" for license \"NOASSERTION\""
+      ],
+      "warnings": [
+        "license normalized to \"NOASSERTION\""
+      ]
+    },
+    {
+      "source_path": "development-tools/git-convention",
+      "target_path": "development/git-convention",
+      "target_metadata": "development/git-convention/metadata.json",
+      "source_category": "development-tools",
+      "target_category": "development",
+      "confidence": 0.95,
+      "source_artifact": "apply-result-min075.json",
+      "errors": [
+        "Schema validation failed at <root>: 'repo' is a required property",
+        "author is missing or placeholder value",
+        "source_url must be a valid https URL",
+        "permission_note must be descriptive (>= 10 characters)",
+        "copyright must be descriptive",
+        "distribution must be \"restricted\" for license \"NOASSERTION\""
+      ],
+      "warnings": [
+        "license normalized to \"NOASSERTION\""
+      ]
+    },
+    {
+      "source_path": "programming-languages/haskell",
+      "target_path": "development/haskell",
+      "target_metadata": "development/haskell/metadata.json",
+      "source_category": "programming-languages",
+      "target_category": "development",
+      "confidence": 0.95,
+      "source_artifact": "apply-result-min075.json",
+      "errors": [
+        "Schema validation failed at <root>: 'repo' is a required property",
+        "author is missing or placeholder value",
+        "source_url must be a valid https URL",
+        "permission_note must be descriptive (>= 10 characters)",
+        "copyright must be descriptive",
+        "distribution must be \"restricted\" for license \"NOASSERTION\""
+      ],
+      "warnings": [
+        "license normalized to \"NOASSERTION\""
+      ]
+    },
+    {
+      "source_path": "programming-languages/languages-0ef2a701",
+      "target_path": "development/languages-0ef2a701",
+      "target_metadata": "development/languages-0ef2a701/metadata.json",
+      "source_category": "programming-languages",
+      "target_category": "development",
+      "confidence": 0.95,
+      "source_artifact": "apply-result-min075.json",
+      "errors": [
+        "Schema validation failed at <root>: 'repo' is a required property",
+        "author is missing or placeholder value",
+        "source_url must be a valid https URL",
+        "permission_note must be descriptive (>= 10 characters)",
+        "copyright must be descriptive",
+        "distribution must be \"restricted\" for license \"NOASSERTION\""
+      ],
+      "warnings": [
+        "license normalized to \"NOASSERTION\""
+      ]
+    },
+    {
+      "source_path": "artifact-generation/manage-artifact",
+      "target_path": "development/manage-artifact",
+      "target_metadata": "development/manage-artifact/metadata.json",
+      "source_category": "artifact-generation",
+      "target_category": "development",
+      "confidence": 0.8,
+      "source_artifact": "apply-result-min075.json",
+      "errors": [
+        "Schema validation failed at <root>: 'repo' is a required property",
+        "author is missing or placeholder value",
+        "source_url must be a valid https URL",
+        "permission_note must be descriptive (>= 10 characters)",
+        "copyright must be descriptive",
+        "distribution must be \"restricted\" for license \"NOASSERTION\""
+      ],
+      "warnings": [
+        "license normalized to \"NOASSERTION\""
+      ]
+    },
+    {
+      "source_path": "programming-languages/ownership-borrowing",
+      "target_path": "development/ownership-borrowing",
+      "target_metadata": "development/ownership-borrowing/metadata.json",
+      "source_category": "programming-languages",
+      "target_category": "development",
+      "confidence": 0.95,
+      "source_artifact": "apply-result-min075.json",
+      "errors": [
+        "Schema validation failed at <root>: 'repo' is a required property",
+        "author is missing or placeholder value",
+        "source_url must be a valid https URL",
+        "permission_note must be descriptive (>= 10 characters)",
+        "copyright must be descriptive",
+        "distribution must be \"restricted\" for license \"NOASSERTION\""
+      ],
+      "warnings": [
+        "license normalized to \"NOASSERTION\""
+      ]
+    },
+    {
+      "source_path": "project/resume",
+      "target_path": "development/resume-cbillowes-curious-programmer-t",
+      "target_metadata": "development/resume-cbillowes-curious-programmer-t/metadata.json",
+      "source_category": "project",
+      "target_category": "development",
+      "confidence": 0.9,
+      "source_artifact": "apply-result-min075.json",
+      "errors": [
+        "Schema validation failed at <root>: 'author' is a required property",
+        "author is missing or placeholder value",
+        "source_url must be a valid https URL",
+        "permission_note must be descriptive (>= 10 characters)",
+        "copyright must be descriptive",
+        "distribution must be \"restricted\" for license \"NOASSERTION\""
+      ],
+      "warnings": [
+        "license normalized to \"NOASSERTION\""
+      ]
+    },
+    {
+      "source_path": "programming-languages/rust-macros",
+      "target_path": "development/rust-macros",
+      "target_metadata": "development/rust-macros/metadata.json",
+      "source_category": "programming-languages",
+      "target_category": "development",
+      "confidence": 0.95,
+      "source_artifact": "apply-result-min075.json",
+      "errors": [
+        "Schema validation failed at <root>: 'repo' is a required property",
+        "author is missing or placeholder value",
+        "source_url must be a valid https URL",
+        "permission_note must be descriptive (>= 10 characters)",
+        "copyright must be descriptive",
+        "distribution must be \"restricted\" for license \"NOASSERTION\""
+      ],
+      "warnings": [
+        "license normalized to \"NOASSERTION\""
+      ]
+    },
+    {
+      "source_path": "programming-languages/trait-generics",
+      "target_path": "development/trait-generics",
+      "target_metadata": "development/trait-generics/metadata.json",
+      "source_category": "programming-languages",
+      "target_category": "development",
+      "confidence": 0.95,
+      "source_artifact": "apply-result-min075.json",
+      "errors": [
+        "Schema validation failed at <root>: 'repo' is a required property",
+        "author is missing or placeholder value",
+        "source_url must be a valid https URL",
+        "permission_note must be descriptive (>= 10 characters)",
+        "copyright must be descriptive",
+        "distribution must be \"restricted\" for license \"NOASSERTION\""
+      ],
+      "warnings": [
+        "license normalized to \"NOASSERTION\""
+      ]
+    },
+    {
+      "source_path": "github-integration/git-opensource",
+      "target_path": "integration/git-opensource",
+      "target_metadata": "integration/git-opensource/metadata.json",
+      "source_category": "github-integration",
+      "target_category": "integration",
+      "confidence": 0.9,
+      "source_artifact": "apply-result-min075.json",
+      "errors": [
+        "Schema validation failed at <root>: 'repo' is a required property",
+        "author is missing or placeholder value",
+        "source_url must be a valid https URL",
+        "permission_note must be descriptive (>= 10 characters)",
+        "copyright must be descriptive",
+        "distribution must be \"restricted\" for license \"NOASSERTION\""
+      ],
+      "warnings": [
+        "license normalized to \"NOASSERTION\""
+      ]
+    },
+    {
+      "source_path": "github-integration/pr-comment-resolver-b0932455",
+      "target_path": "integration/pr-comment-resolver-b0932455",
+      "target_metadata": "integration/pr-comment-resolver-b0932455/metadata.json",
+      "source_category": "github-integration",
+      "target_category": "integration",
+      "confidence": 0.95,
+      "source_artifact": "apply-result-min075.json",
+      "errors": [
+        "Schema validation failed at <root>: 'repo' is a required property",
+        "author is missing or placeholder value",
+        "source_url must be a valid https URL",
+        "permission_note must be descriptive (>= 10 characters)",
+        "copyright must be descriptive",
+        "distribution must be \"restricted\" for license \"NOASSERTION\""
+      ],
+      "warnings": [
+        "license normalized to \"NOASSERTION\""
+      ]
+    },
+    {
+      "source_path": "github-integration/pr-description-writer-ba20554f",
+      "target_path": "integration/pr-description-writer-ba20554f",
+      "target_metadata": "integration/pr-description-writer-ba20554f/metadata.json",
+      "source_category": "github-integration",
+      "target_category": "integration",
+      "confidence": 0.85,
+      "source_artifact": "apply-result-min075.json",
+      "errors": [
+        "Schema validation failed at <root>: 'repo' is a required property",
+        "author is missing or placeholder value",
+        "source_url must be a valid https URL",
+        "permission_note must be descriptive (>= 10 characters)",
+        "copyright must be descriptive",
+        "distribution must be \"restricted\" for license \"NOASSERTION\""
+      ],
+      "warnings": [
+        "license normalized to \"NOASSERTION\""
+      ]
+    },
+    {
+      "source_path": "github-integration/write-pr-desc",
+      "target_path": "integration/write-pr-desc",
+      "target_metadata": "integration/write-pr-desc/metadata.json",
+      "source_category": "github-integration",
+      "target_category": "integration",
+      "confidence": 0.85,
+      "source_artifact": "apply-result-min075.json",
+      "errors": [
+        "Schema validation failed at <root>: 'repo' is a required property",
+        "author is missing or placeholder value",
+        "source_url must be a valid https URL",
+        "permission_note must be descriptive (>= 10 characters)",
+        "copyright must be descriptive",
+        "distribution must be \"restricted\" for license \"NOASSERTION\""
+      ],
+      "warnings": [
+        "license normalized to \"NOASSERTION\""
+      ]
+    },
+    {
+      "source_path": "string/string",
+      "target_path": "other/string",
+      "target_metadata": "other/string/metadata.json",
+      "source_category": "string",
+      "target_category": "other",
+      "confidence": 0.6,
+      "source_artifact": "apply-result-low-other.json",
+      "errors": [
+        "Schema validation failed at <root>: 'author' is a required property",
+        "author is missing or placeholder value",
+        "source_url must be a valid https URL",
+        "permission_note must be descriptive (>= 10 characters)",
+        "copyright must be descriptive",
+        "distribution must be \"restricted\" for license \"NOASSERTION\""
+      ],
+      "warnings": [
+        "license normalized to \"NOASSERTION\""
+      ]
+    },
+    {
+      "source_path": "test/test-skill-mickdarling-dollhouse-portfolio",
+      "target_path": "other/test-skill-mickdarling-dollhouse-portfolio",
+      "target_metadata": "other/test-skill-mickdarling-dollhouse-portfolio/metadata.json",
+      "source_category": "test",
+      "target_category": "other",
+      "confidence": 0.4,
+      "source_artifact": "apply-result-low-other.json",
+      "errors": [
+        "Schema validation failed at <root>: 'author' is a required property",
+        "author is missing or placeholder value",
+        "source_url must be a valid https URL",
+        "permission_note must be descriptive (>= 10 characters)",
+        "copyright must be descriptive",
+        "distribution must be \"restricted\" for license \"NOASSERTION\""
+      ],
+      "warnings": [
+        "license normalized to \"NOASSERTION\""
+      ]
+    },
+    {
+      "source_path": "security-compliance/compliance-check-skill",
+      "target_path": "security/compliance-check-skill",
+      "target_metadata": "security/compliance-check-skill/metadata.json",
+      "source_category": "security-compliance",
+      "target_category": "security",
+      "confidence": 0.95,
+      "source_artifact": "apply-result-after-key-fix.json",
+      "errors": [
+        "Schema validation failed at <root>: 'author' is a required property",
+        "author is missing or placeholder value",
+        "source_url must be a valid https URL",
+        "permission_note must be descriptive (>= 10 characters)",
+        "copyright must be descriptive",
+        "distribution must be \"restricted\" for license \"NOASSERTION\""
+      ],
+      "warnings": [
+        "license normalized to \"NOASSERTION\""
+      ]
+    },
+    {
+      "source_path": "development-tools/lindquist-chrome-devtools",
+      "target_path": "testing/lindquist-chrome-devtools",
+      "target_metadata": "testing/lindquist-chrome-devtools/metadata.json",
+      "source_category": "development-tools",
+      "target_category": "testing",
+      "confidence": 0.85,
+      "source_artifact": "apply-result-min075.json",
+      "errors": [
+        "Schema validation failed at <root>: 'repo' is a required property",
+        "author is missing or placeholder value",
+        "source_url must be a valid https URL",
+        "permission_note must be descriptive (>= 10 characters)",
+        "copyright must be descriptive",
+        "distribution must be \"restricted\" for license \"NOASSERTION\""
+      ],
+      "warnings": [
+        "license normalized to \"NOASSERTION\""
+      ]
+    }
+  ]
+}

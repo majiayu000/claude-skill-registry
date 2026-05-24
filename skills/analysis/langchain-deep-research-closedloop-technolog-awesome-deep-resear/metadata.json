@@ -1,0 +1,18 @@
+{
+  "name": "langchain-deep-research",
+  "description": "Run LangChain Open Deep Research agent for iterative web research and comprehensive reports. Requires LLM API keys and search API (e.g., OPENAI_API_KEY, TAVILY_API_KEY).",
+  "repo": "closedloop-technologies/awesome-deep-researchers",
+  "path": ".claude/skills/langchain-deep-research",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/closedloop-technologies/awesome-deep-researchers",
+  "dir_name": "langchain-deep-research-closedloop-technolog-awesome-deep-resear",
+  "author": "closedloop-technologies",
+  "source_url": "https://github.com/closedloop-technologies/awesome-deep-researchers/blob/main/.claude/skills/langchain-deep-research/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/closedloop-technologies/awesome-deep-researchers/blob/main/.claude/skills/langchain-deep-research/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

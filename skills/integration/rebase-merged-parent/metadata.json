@@ -1,0 +1,16 @@
+{
+  "name": "rebase-merged-parent",
+  "repo": "flurdy/agent-skills",
+  "path": "skills/rebase-merged-parent/SKILL.md",
+  "source": "github.com/flurdy/agent-skills",
+  "downloaded_at": "2026-02-02T04:39:14.010102Z",
+  "dir_name": "rebase-merged-parent",
+  "category": "integration",
+  "author": "flurdy",
+  "source_url": "https://github.com/flurdy/agent-skills/blob/main/skills/rebase-merged-parent/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/flurdy/agent-skills/blob/main/skills/rebase-merged-parent/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

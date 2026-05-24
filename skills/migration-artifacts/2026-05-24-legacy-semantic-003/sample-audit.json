@@ -1,0 +1,1003 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-24T09:29:47.324729+00:00",
+  "workset_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-legacy-semantic-003/migration-artifacts/2026-05-24-legacy-semantic-003/input.jsonl",
+  "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-legacy-semantic-003/migration-artifacts/2026-05-24-legacy-semantic-003/classification.jsonl",
+  "policy": {
+    "sample_size": 50,
+    "seed": "category-audit-v1",
+    "statuses": [
+      "ok"
+    ],
+    "min_confidence": null
+  },
+  "summary": {
+    "workset_row_count": 92,
+    "classification_row_count": 92,
+    "matched_input_count": 92,
+    "missing_input_count": 0,
+    "candidate_count": 92,
+    "sample_count": 50,
+    "status_counts": {
+      "ok": 92
+    },
+    "target_category_counts": {
+      "agent": 5,
+      "ai-llm": 5,
+      "analysis": 4,
+      "bash": 1,
+      "context-management": 2,
+      "data": 1,
+      "development": 44,
+      "devops": 5,
+      "documents": 2,
+      "integration": 5,
+      "orchestration": 1,
+      "other": 3,
+      "quality": 3,
+      "security": 4,
+      "skills": 2,
+      "testing": 3,
+      "workflow": 2
+    }
+  },
+  "samples": [
+    {
+      "path": "foundation/moai-foundation-claude/SKILL.md",
+      "name": "moai-foundation-claude",
+      "current_category": "foundation",
+      "llm_category": "skills",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is a 'Canonical Claude Code skill authoring kit' covering agent Skills, sub-agent templates, custom slash commands, orchestration patterns, hooks, memory, settings, and IAM permission rules. This is a meta-skill for creating and managing other skills, fitting the 'skills' category.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "2c32788e3b305df2de901ae52dceb8eee06804c16d124b4b7d3e09822e1b0d74",
+      "metadata_sha256": "10364111d0c4a0b39a8fe3a5f440904d1a861f121a053aa45d159b42f60c5ef8",
+      "semantic_sources": {
+        "description": "metadata",
+        "name": "metadata"
+      },
+      "description": "Canonical Claude Code skill authoring kit covering agent Skills, sub-agent templates, custom slash commands, orchestration patterns, hooks, memory, settings, and IAM permission rules aligned with offi",
+      "content_excerpt": "---\nname: moai-foundation-claude\naliases: [moai-foundation-claude]\ncategory: foundation\ndescription: Canonical Claude Code skill authoring kit covering agent Skills, sub-agent templates, custom slash commands, orchestration patterns, hooks, memory, settings, and IAM permission rules aligned with official documentation.\nversion: 2.0.0\nmodularized: false\nallowed-tools: Read, Write, Edit, Grep, Glob\ntags:\n - foundation\n - claude-code\n - skills\n - sub-agents\n - slash-commands\n - orchestration\n - hooks\n - memory\n - settings\n - iam\n - best-practices\n# Claude Code Authoring Kit\n\nComprehensive reference for Claude Code Skills, sub-agents, custom slash commands, hooks, memory, settings, and IAM permissions with official standards compliance.\n\nOfficial Documentation References:\n\n- [Skills Guide](reference/claude-code-skills-official.md) - Agent Skills creation and management\n- [Sub-agents Guide](reference/claude-code-sub-agents-official.md) - Sub-agent development and delegation\n- [Custom Slash Commands](reference/claude-code-custom-slash-commands-official.md) - Command creation and orchestration\n- [Hooks System](reference/claude-code-hooks-official.md) - Event-driven automation\n- [Memory Management](reference/claude-code-memory-official.md) - Context and knowledge persistence\n- [Settings Configuration](reference/claude-code-settings-official.md) - Configuration hierarchy and management\n- [IAM & Permissions](reference/claude-code-iam-official.md) - Access control and security\n- [Complete Configuration](reference/complete-configuration-guide.md) - Comprehensive setup guide\n\n## Quick Reference (30 seconds)\n\nSkills: `~/.claude/skills/` (personal) or `.claude/skills/` (project), ≤500 lines, progressive disclosure\nSub-agents: `Task(subagent_type=\"...\")` delegation only, no nested spawning\nCommands: `$ARGUMENTS`/`$1`/`$2` parameters, `@file` references, stored in `.claude/commands/`\nHooks: Event-driven automation in `settings.json`, PreToolUse/PostToolUse events\nMemory: Enterprise → Project → User hierarchy, `@import.md` syntax\nSettings: 4-tier hierarchy (Enterprise → User → Project → Local)\nIAM: Tiered permissions (Read→Bash→Write→Admin), tool-specific rules\n\n## Implementation"
+    },
+    {
+      "path": "development-tools/gar-ai-mallorn-claude-skills-lint-service-skill/SKILL.md",
+      "name": "lint-service",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is for running unified linting scripts across multiple services in a monorepo, which is a core software development workflow for code quality and formatting.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "3c3da0a3f69ead5c710bab504c969c4b5d5b08732bf62ff4e7765a8dc79770a1",
+      "metadata_sha256": "59ba0fe3be4c3e9d0b60bb3250556ddbfef6bacc5403aa75273f665aa14e30c7",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Unified linting scripts for all services in the monorepo. Use when the user wants to lint code, check formatting, or run type checks.",
+      "content_excerpt": "---\nname: lint-service\ndescription: Unified linting scripts for all services in the monorepo. Use when the user wants to lint code, check formatting, or run type checks.\n---\n\n# Lint Service Skill\n\nUnified linting scripts for all services in the Saturn's Oracle monorepo.\n\n## Services\n\n### TypeScript (2 services)\n- apollos-ui\n- polling-service\n\n### Python (3 services)\n- mercury-clustering\n- terra-local-gpu\n- apollo-video-distillation\n\n### Rust (3 services)\n- flora-clustering-rust\n- hercules-local-algo\n- vulcan-gpu-sdk (also has Python)\n\n## Usage\n\n### From Anywhere in the Repo\n\n```bash\n# TypeScript\n.claude/skills/lint-service/lint-typescript.sh apollos-ui\n.claude/skills/lint-service/lint-typescript.sh apollos-ui --staged-only\n\n# Python\n.claude/skills/lint-service/lint-python.sh mercury-clustering\n.claude/skills/lint-service/lint-python.sh terra-local-gpu --staged-only\n\n# Rust\n.claude/skills/lint-service/lint-rust.sh flora-clustering-rust\n.claude/skills/lint-service/lint-rust.sh hercules-local-algo --staged-only\n```\n\n### What Each Script Does\n\n**lint-typescript.sh:**\n- ESLint with --max-warnings=-1 (errors only)\n- TypeScript type checking (tsc --noEmit)\n- Staged-only: Lints only staged .ts/.tsx files\n\n**lint-python.sh:**\n- Ruff check (linting)\n- Ruff format --check (formatting)\n- mypy (type checking, full mode only)\n- Staged-only: Lints only staged .py files\n\n**lint-rust.sh:**\n- cargo clippy (linting)\n- cargo fmt --check (formatting)\n- cargo test (only in CI, not precommit)\n- Staged-only: Skips if no .rs files staged\n\n## Exit Codes\n\n- 0: Success\n- 1: Linting failed (blocking)\n\n## Integration\n\nThese scripts are called by:\n1. **Precommit hook** (.husky/pre-commit) with --staged-only\n2. **GitHub Actions** (without --staged-only, full service)\n3. **Manual invocation** by developers or Claude\n\n## Examples\n\n### Lint all Python services\n```bash\nfor service in mercury-clustering terra-local-gpu apollo-video-distillation; do\n  .claude/skills/lint-service/lint-python.sh $service\ndone\n```\n\n### Lint only staged files in current service\n```bash\n# If working in apollos-ui\n.claude/skills/lint-service/lint-typescript.sh apollos-ui --staged-only\n```\n\n### Check if linting will pass b"
+    },
+    {
+      "path": "applied/35-google-adk-reliable-agents-majiayu000-claude-skill-registr/SKILL.md",
+      "name": "35-google-adk-reliable-agents",
+      "current_category": "applied",
+      "llm_category": "ai-llm",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "This is a duplicate of skill 1 with the same description and content about creating a Google ADK skill for building AI agents with Gemini.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "964c9bac9aaf0e02e527426eaf727a5ec161e31eec1e590717454e92451e26f1",
+      "metadata_sha256": "0af7d2b59f6e936909dc5f08d1a27caf21441263d0263b6ef797e4e21cdfefe6",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "metadata"
+      },
+      "description": "Create your Google Agent Development Kit skill in one prompt, then learn to improve it throughout the chapter",
+      "content_excerpt": "---\nsidebar_position: 0\ntitle: \"Build Your Google ADK Skill\"\ndescription: \"Create your Google Agent Development Kit skill in one prompt, then learn to improve it throughout the chapter\"\nchapter: 35\nlesson: 0\nduration_minutes: 15\n\nskills:\n  - name: \"Skill-First Learning\"\n    proficiency_level: \"B1\"\n    category: \"Applied\"\n    bloom_level: \"Apply\"\n    digcomp_area: \"3. Digital Content Creation\"\n    measurable_at_this_level: \"Student creates a working Google ADK skill using natural language\"\n\nlearning_objectives:\n  - objective: \"Build a Google ADK skill using natural conversation with Claude\"\n    proficiency_level: \"B1\"\n    bloom_level: \"Apply\"\n    assessment_method: \"Student has a working google-adk skill in .claude/skills/\"\n\ncognitive_load:\n  new_concepts: 1\n  assessment: \"Single concept: use Claude to build a skill from official docs\"\n\ndifferentiation:\n  extension_for_advanced: \"Add workflow agent patterns during creation\"\n  remedial_for_struggling: \"Follow exact prompt provided\"\n---\n\n# Build Your Google ADK Skill\n\nBefore learning Google's Agent Development Kit, you'll **own** a Google ADK skill.\n\n---\n\n## Step 1: Get the Skills Lab\n\n1. Go to [github.com/panaversity/claude-code-skills-lab](https://github.com/panaversity/claude-code-skills-lab)\n2. Click the green **Code** button\n3. Select **Download ZIP**\n4. Extract the ZIP file\n5. Open the extracted folder in your terminal\n\n```bash\ncd claude-code-skills-lab\nclaude\n```\n\n---\n\n## Step 2: Create Your Skill\n\nCopy and paste this prompt:\n\n```\nUsing your skill creator skill create a new skill for Google ADK (Agent\nDevelopment Kit). I will use it to build reliable AI agents with Gemini\nfrom hello world to professional production systems. Use context7 skill\nto study official documentation and then build it so no self assumed knowledge.\n```\n\nClaude will:\n1. Fetch official Google ADK documentation via Context7\n2. Ask you clarifying questions (workflow types, tool patterns, evaluation needs)\n3. Create the complete skill with references and templates\n\nYour skill appears at `.claude/skills/google-adk/`.\n\n---\n\n## Done\n\nYou now own a Google ADK skill built from official documentation. The rest of this chapter teaches you what it "
+    },
+    {
+      "path": "foundation/moai-foundation-context/SKILL.md",
+      "name": "moai-foundation-context",
+      "current_category": "foundation",
+      "llm_category": "context-management",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill is explicitly about 'Enterprise context and session management with token budget optimization and state persistence'. It focuses on managing context windows, session state, and token budgets, which aligns directly with the 'context-management' category.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "24b6430faad1ac61cf225e3593a8f94c868f8c52460d53b8b9b09d02f8b50abb",
+      "metadata_sha256": "2514f6181a606103833cf304cd6e5108b38bfcf39c6f684be655fe1a20f66064",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "Enterprise context and session management with token budget optimization and state persistence",
+      "content_excerpt": "---\nname: moai-foundation-context\naliases: [moai-foundation-context]\ndescription: Enterprise context and session management with token budget optimization and state persistence\nversion: 3.0.0\nmodularized: false\ncategory: foundation\nreplaces: moai-core-context-budget, moai-core-session-state\ndeprecated_names:\n  moai-foundation-context:\n    deprecated_in: v0.32.0\n    remove_in: v0.35.0\n    message: \"Use moai-foundation-context instead\"\ntags:\n  - foundation\n  - enterprise\n  - framework\n  - context\n  - session\n  - budget\n  - architecture\nupdated: 2025-11-27\nstatus: active\n---\n\n## Quick Reference (30 seconds)\n\n# Enterprise Context & Session Management\n\n**Unified context optimization and session state management** for Claude Code with 200K token budget management, session persistence, and multi-agent handoff protocols.\n\n**Core Capabilities**:\n- 200K token budget allocation and monitoring\n- Session state tracking with persistence\n- Context-aware token optimization\n- Multi-agent handoff protocols\n- Progressive disclosure and memory management\n- Session forking for parallel exploration\n\n**When to Use**:\n- Session initialization and cleanup\n- Long-running workflows (>10 minutes)\n- Multi-agent orchestration\n- Context window approaching limits (>150K tokens)\n- Model switches (Haiku ↔ Sonnet)\n- Workflow phase transitions\n\n**Key Principles (2025)**:\n1. **Avoid Last 20%** - Performance degrades in final fifth of context\n2. **Aggressive Clearing** - `/clear` every 1-3 messages for SPEC workflows\n3. **Lean Memory Files** - Keep each file < 500 lines\n4. **Disable Unused MCPs** - Minimize tool definition overhead\n5. **Quality > Quantity** - 10% relevant context beats 90% noise\n\n---\n\n\n## Implementation Guide (5 minutes)\n\n### Features\n\n- Intelligent context window management for Claude Code sessions\n- Progressive file loading with priority-based caching\n- Token budget tracking and optimization alerts\n- Selective context preservation across /clear boundaries\n- MCP integration context persistence\n\n### When to Use\n\n- Managing large codebases exceeding 150K token limits\n- Optimizing token usage in long-running development sessions\n- Preserving critical context across session resets\n- Co"
+    },
+    {
+      "path": "programming-languages/golang-pro-jeffallan-claude-skills/SKILL.md",
+      "name": "golang-pro",
+      "current_category": "programming-languages",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is for building Go applications requiring concurrent programming, microservices architecture, or high-performance systems. This is a core software development activity focused on coding and implementation.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "3ef1f54c415e023b1ab1d5db79bc1f9f178e57f38f4ac4669a9c0b34c0478304",
+      "metadata_sha256": "db86f127ec386752a8ccf006a5baf1ad8550afa29e79c1e97017810750228a62",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when building Go applications requiring concurrent programming, microservices architecture, or high-performance systems. Invoke for goroutines, channels, Go generics, gRPC integration.",
+      "content_excerpt": "---\nname: golang-pro\ndescription: Use when building Go applications requiring concurrent programming, microservices architecture, or high-performance systems. Invoke for goroutines, channels, Go generics, gRPC integration.\ntriggers:\n  - Go\n  - Golang\n  - goroutines\n  - channels\n  - gRPC\n  - microservices Go\n  - Go generics\n  - concurrent programming\n  - Go interfaces\nrole: specialist\nscope: implementation\noutput-format: code\n---\n\n# Golang Pro\n\nSenior Go developer with deep expertise in Go 1.21+, concurrent programming, and cloud-native microservices. Specializes in idiomatic patterns, performance optimization, and production-grade systems.\n\n## Role Definition\n\nYou are a senior Go engineer with 8+ years of systems programming experience. You specialize in Go 1.21+ with generics, concurrent patterns, gRPC microservices, and cloud-native applications. You build efficient, type-safe systems following Go proverbs.\n\n## When to Use This Skill\n\n- Building concurrent Go applications with goroutines and channels\n- Implementing microservices with gRPC or REST APIs\n- Creating CLI tools and system utilities\n- Optimizing Go code for performance and memory efficiency\n- Designing interfaces and using Go generics\n- Setting up testing with table-driven tests and benchmarks\n\n## Core Workflow\n\n1. **Analyze architecture** - Review module structure, interfaces, concurrency patterns\n2. **Design interfaces** - Create small, focused interfaces with composition\n3. **Implement** - Write idiomatic Go with proper error handling and context propagation\n4. **Optimize** - Profile with pprof, write benchmarks, eliminate allocations\n5. **Test** - Table-driven tests, race detector, fuzzing, 80%+ coverage\n\n## Reference Guide\n\nLoad detailed guidance based on context:\n\n| Topic | Reference | Load When |\n|-------|-----------|-----------|\n| Concurrency | `references/concurrency.md` | Goroutines, channels, select, sync primitives |\n| Interfaces | `references/interfaces.md` | Interface design, io.Reader/Writer, composition |\n| Generics | `references/generics.md` | Type parameters, constraints, generic patterns |\n| Testing | `references/testing.md` | Table-driven tests, benchmarks, fuzzing |\n| Project Str"
+    },
+    {
+      "path": "development-tools/better-skill-builder-gmickel-better-skill-builder-2/SKILL.md",
+      "name": "better-skill-builder",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly about building SKILL.md files for AI coding agents (Claude Code, Codex, Amp, OpenCode), focusing on skill structure, scripts, distribution, and making CLI tools AI-native. This is a software development workflow tool for creating AI agent capabilities.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "45a76d69e0d3d21ba85492e92deee67cab4efac420f50190f3d053dea06d3613",
+      "metadata_sha256": "d66d0a966fbdf6039a70ed9ff1ea9c6d7439f4d487e545e2adb1a731115ea852",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Build SKILL.md files for Claude Code, Codex, Amp, OpenCode. Production examples and patterns for skill structure, scripts, distribution, and making CLI tools AI-native.",
+      "content_excerpt": "---\nname: better-skill-builder\ndescription: Build SKILL.md files for Claude Code, Codex, Amp, OpenCode. Production examples and patterns for skill structure, scripts, distribution, and making CLI tools AI-native.\n---\n\n# Building Agent Skills\n\nHelp users build clean, discoverable skills that work across Claude Code, Codex, Amp, and OpenCode.\n\n## Official Spec\n\nFetch from https://agentskills.io/specification for YAML frontmatter, file format, and client integration details.\n\n## Minimal Structure\n\n```\nmy-skill/\n  SKILL.md           # Required (<500 lines)\n  references/        # Optional: detailed docs\n  scripts/           # Optional: executable utilities\n```\n\n## SKILL.md Essentials\n\n```yaml\n---\nname: my-skill\ndescription: >\n  What it does. Include trigger phrases so AI knows when to activate.\n---\n\n# Title\n\n## When to Use\n- Trigger condition 1\n- Trigger condition 2\n\n## Quick Reference\n[Tables, common commands]\n\n## Detailed Docs\nSee [references/](references/) for full documentation.\n```\n\n## References\n\n| Topic | File |\n|-------|------|\n| Full SKILL.md template | [format.md](references/format.md) |\n| Adding scripts | [scripts.md](references/scripts.md) |\n| Safety/auth/trigger patterns | [patterns.md](references/patterns.md) |\n| Installation paths | [installation.md](references/installation.md) |\n| Distribution (git/CLI/plugin) | [distribution.md](references/distribution.md) |\n| Plugin/marketplace structure | [plugin-structure.md](references/plugin-structure.md) |\n| Production examples | [real-examples.md](references/real-examples.md) |\n"
+    },
+    {
+      "path": "programming-languages/haskell/SKILL.md",
+      "name": "haskell",
+      "current_category": "programming-languages",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill provides expert Haskell development assistance for working with Haskell code, .hs files, Cabal, ghcid, or functional programming. This is a core software development activity focused on coding and implementation.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "538f93ab24f0e220242f7ed751c66b01633019265b1998e14f1eb07fae6b31e0",
+      "metadata_sha256": "fc3fe44ab3ae3c07058f61898945dcd9f6740e1c1b072a7740bc6b8eac862253",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Expert Haskell development assistance. Use when working with Haskell code, .hs files, Cabal, ghcid, or when user mentions Haskell, functional programming, or type-level programming.",
+      "content_excerpt": "---\nname: haskell\ndescription: Expert Haskell development assistance. Use when working with Haskell code, .hs files, Cabal, ghcid, or when user mentions Haskell, functional programming, or type-level programming.\n---\n\n# Haskell Development\n\nExpert assistance for Haskell programming.\n\n## Guidelines\n\n**CRITICAL - Error Handling in Code**: NEVER write code that silently ignores errors:\n- Do NOT use `undefined` or `error` as placeholders\n- Do NOT skip handling error cases in pattern matches\n- Do NOT ignore `Maybe`/`Either` failure cases\n- Handle all possible cases explicitly\n- Use types to make impossible states unrepresentable\n\nEvery error case in generated code must be handled properly.\n\n**CRITICAL - Compile Status**:\n- The code MUST compile without errors.\n- You MUST check `ghcid.txt` after every change and fix any errors reported there.\n- Do NOT proceed to verification or linting until `ghcid.txt` is clean.\n\n**CRITICAL - HLint Compliance**:\n- You MUST check for `.hlint.yaml` in the project root.\n- If it exists, you MUST run `hlint` on any file you modify.\n- You MUST fix ALL hlint warnings before considering the task complete.\n- Do NOT ignore hlint warnings unless explicitly instructed by the user.\n\n**Code Quality**:\n- Write type signatures for all top-level definitions\n- Write total functions (avoid `head`, `tail`)\n- Prefer pure functions over IO when possible\n- Use explicit exports in modules\n- Leverage type system for safety\n- Favor composition over complex functions\n- Write Haddock documentation for public APIs\n\n**Idiomatic Patterns**:\n- Prefer `Text` over `String`\n- Use `newtype` wrappers for domain types\n- Apply smart constructors for validation\n- Records:\n    - Use RecordDotSyntax & OverloadedRecordDot (add pragma to modules that use the syntax)\n    - Use DisambiguateRecordFields and DuplicateRecordFields for simple field names (add pragma to modules that use the syntax)\n- Use lenses for record manipulation when appropriate\n- Use `Applicative` and `Monad` appropriately\n- Avoid trivial `let` bindings when inlining keeps code simple and readable\n\n**Working with Aeson**:\n- NEVER construct aeson objects by hand\n- Instead create a type and use `encode` and `dec"
+    },
+    {
+      "path": "data-access/deduplication-dadbodgeoff-drift/SKILL.md",
+      "name": "deduplication",
+      "current_category": "data-access",
+      "llm_category": "data",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is about event deduplication for multi-source data aggregation, including hash-based grouping, reputation scoring, and canonical selection. This is a data engineering/processing workflow.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "4deb634eb2c423d4c175b0ac25cf35e595556b53a588b270acabc9677727164c",
+      "metadata_sha256": "aae17bfb27e210bf6a6179e5d1d787110c80e725009413e96389d2f485f54237",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Event deduplication with canonical selection, reputation scoring, and hash-based grouping for multi-source data aggregation. Handles both ID-based and content-based deduplication.",
+      "content_excerpt": "---\nname: deduplication\ndescription: Event deduplication with canonical selection, reputation scoring, and hash-based grouping for multi-source data aggregation. Handles both ID-based and content-based deduplication.\nlicense: MIT\ncompatibility: TypeScript/JavaScript\nmetadata:\n  category: data-access\n  time: 4h\n  source: drift-masterguide\n---\n\n# Event Deduplication\n\nCanonical selection with reputation scoring and hash-based grouping for multi-source data.\n\n## When to Use This Skill\n\n- Aggregating data from multiple sources (news, events, products)\n- Same content appears from different outlets/sources\n- Need to pick the \"best\" version from duplicates\n- Tracking deduplication metrics for optimization\n\n## Core Concepts\n\nSimple URL deduplication isn't enough. Production needs:\n- Grouping by semantic similarity (same story, different outlets)\n- Canonical selection (pick the \"best\" version)\n- Reputation scoring (prefer authoritative sources)\n- Both ID-based and content-based deduplication\n\nTwo modes:\n1. ID-based: When sources have unique IDs, keep the \"best\" version when IDs collide\n2. Content-based: Group by semantic similarity, select canonical from each group\n\n## Implementation\n\n### TypeScript\n\n```typescript\nimport { createHash } from 'crypto';\n\ninterface DeduplicationResult<T> {\n  items: T[];\n  originalCount: number;\n  dedupedCount: number;\n  reductionPercent: number;\n  duplicateGroups?: number;\n}\n\n// ============================================\n// ID-Based Deduplication\n// ============================================\n\nfunction deduplicateById<T extends { id: string }>(\n  items: T[],\n  preferFn: (existing: T, candidate: T) => T\n): DeduplicationResult<T> {\n  const seen = new Map<string, T>();\n  \n  for (const item of items) {\n    const existing = seen.get(item.id);\n    if (existing) {\n      seen.set(item.id, preferFn(existing, item));\n    } else {\n      seen.set(item.id, item);\n    }\n  }\n  \n  const dedupedItems = Array.from(seen.values());\n  const reductionPercent = items.length > 0\n    ? Math.round((1 - dedupedItems.length / items.length) * 100)\n    : 0;\n  \n  return {\n    items: dedupedItems,\n    originalCount: items.length,\n    dedupedCount: dedupedItems.length,\n  "
+    },
+    {
+      "path": "specialized/reviewer-agent-majiayu000-claude-skill-registr/SKILL.md",
+      "name": "reviewer-agent",
+      "current_category": "specialized",
+      "llm_category": "quality",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "This is a duplicate of skill id 2 with the same functionality - a code review and audit agent for pull requests and code quality. The classification should be identical.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "fa85a6de206fddd35a31680133d88d29cc0c9d1767b2a902abb662d5275d2b2f",
+      "metadata_sha256": "c2bfd3466b03c34cfb5197750328d65a1b9d181aca3b9e90490429f466e87125",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Code review and audit agent for pull requests and code quality",
+      "content_excerpt": "---\nname: reviewer-agent\ndescription: Code review and audit agent for pull requests and code quality\nlicense: Apache-2.0\nmetadata:\n  category: specialized\n  author: radium\n  engine: gemini\n  model: gemini-2.0-flash-thinking\n  original_id: reviewer-agent\n---\n\n# Reviewer Agent\n\nCode review and audit agent for pull requests and code quality assessment.\n\n## Role\n\nYou are a specialized reviewer agent focused on reviewing code changes, identifying issues, and providing feedback. Your purpose is to thoroughly review code without making modifications, ensuring quality, security, and adherence to standards.\n\n## Capabilities\n\n- **Code Review**: Thoroughly review code changes and implementations\n- **Issue Identification**: Find bugs, security issues, and code quality problems\n- **Best Practices**: Check adherence to coding standards and best practices\n- **Security Audit**: Identify security vulnerabilities and risks\n- **Documentation Review**: Verify documentation is complete and accurate\n\n## Tool Usage\n\n### Allowed Tools (Review)\n- `read_file` - Read files for review\n- `read_lints` - Check linting errors\n- `grep` - Search for patterns and issues\n- `codebase_search` - Find related code and patterns\n- `list_dir` - Explore code structure\n- `glob_file_search` - Find relevant files\n\n### Prohibited Tools\n- **NO file writes**: `write_file`, `search_replace`, `edit_file`, `delete_file`\n- **NO modifications**: Any tool that changes the codebase\n- **NO execution**: `run_terminal_cmd` (except read-only review commands)\n\n## Instructions\n\n1. **Thorough Review**: Examine all code changes carefully\n2. **Check Standards**: Verify adherence to coding standards\n3. **Identify Issues**: Find bugs, security issues, and quality problems\n4. **Provide Feedback**: Give constructive, actionable feedback\n5. **Document Findings**: Clearly document all review findings\n\n## Review Focus Areas\n\n- **Functionality**: Does the code work correctly?\n- **Security**: Are there security vulnerabilities?\n- **Performance**: Are there performance issues?\n- **Code Quality**: Is the code maintainable and readable?\n- **Testing**: Are there adequate tests?\n- **Documentation**: Is documentation complete?\n- **Best Pract"
+    },
+    {
+      "path": "programming-languages/rust-core-aaronbassett-paneful/SKILL.md",
+      "name": "rust-core",
+      "current_category": "programming-languages",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Skill provides comprehensive Rust development expertise covering core principles, patterns, error handling, async programming, testing, and performance optimization.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "9f0a36765987f1014432ae066ba83c97d494d4d60afc5140a3f7f4a3284bd3cf",
+      "metadata_sha256": "f11f9954064aa41412726a7b77eee4c45b902c616e90e258ab81eca6c5ed119b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Comprehensive Rust development expertise covering core principles, patterns, error handling, async programming, testing, and performance optimization. Use when working on Rust projects requiring guidance on: (1) Language fundamentals (ownership, lifetimes, borrowing), (2) Architectural decisions and design patterns, (3) Web development (Axum, Actix-web, Rocket), (4) AI/LLM integration, (5) CLI/TUI applications, (6) Desktop development with Tauri, (7) Async/await and concurrency, (8) Error handling strategies, (9) Testing and benchmarking, (10) Performance optimization, (11) Logging and observability, or (12) Code reviews and best practices.",
+      "content_excerpt": "---\nname: rust-core\ndescription: \"Comprehensive Rust development expertise covering core principles, patterns, error handling, async programming, testing, and performance optimization. Use when working on Rust projects requiring guidance on: (1) Language fundamentals (ownership, lifetimes, borrowing), (2) Architectural decisions and design patterns, (3) Web development (Axum, Actix-web, Rocket), (4) AI/LLM integration, (5) CLI/TUI applications, (6) Desktop development with Tauri, (7) Async/await and concurrency, (8) Error handling strategies, (9) Testing and benchmarking, (10) Performance optimization, (11) Logging and observability, or (12) Code reviews and best practices.\"\n---\n\n# Rust Core Development\n\nComprehensive guidance for Rust development across web, CLI, desktop, AI/LLM applications, and systems programming.\n\n## Quick Reference Guide\n\n### By Task Type\n\n**Getting Started**\n- **New Project Setup**: Use `scripts/init_rust_project.sh` to scaffold a project with best practices\n- **Core Principles**: See [references/principles.md](references/principles.md) for ownership, borrowing, and Rust fundamentals\n- **Common Errors**: See [references/common-errors.md](references/common-errors.md) for solutions to frequent compiler errors\n\n**Writing Code**\n- **Design Patterns**: Consult [references/patterns.md](references/patterns.md) for builder, newtype, RAII, and other patterns\n- **Error Handling**: See [references/error-handling.md](references/error-handling.md) for Result, Option, anyhow, and thiserror\n- **Async Programming**: See [references/async-patterns.md](references/async-patterns.md) for Tokio, channels, and concurrency\n\n**Domain-Specific Development**\n- **Web APIs**: See [references/web-frameworks.md](references/web-frameworks.md) for Axum, Actix-web, and Rocket\n- **AI/LLM**: See [references/ai-llm.md](references/ai-llm.md) for OpenAI, Anthropic, Ollama, and RAG\n- **CLI Tools**: See [references/cli-tui.md](references/cli-tui.md) for Clap and Ratatui\n- **Desktop Apps**: See [references/desktop-tauri.md](references/desktop-tauri.md) for Tauri\n- **Logging**: See [references/logging-observability.md](references/logging-observability.md) for tracing and metrics\n"
+    },
+    {
+      "path": "specialized/reviewer-agent/SKILL.md",
+      "name": "reviewer-agent",
+      "current_category": "specialized",
+      "llm_category": "quality",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill is a code review and audit agent focused on pull requests and code quality. While it has security aspects, its primary purpose is quality assurance through code review, issue identification, and best practices checking.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "fa85a6de206fddd35a31680133d88d29cc0c9d1767b2a902abb662d5275d2b2f",
+      "metadata_sha256": "fd0ee03900d41f3a31845d2d71ff919d692a81d3790efcb6e5c595015d93a0e5",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Code review and audit agent for pull requests and code quality",
+      "content_excerpt": "---\nname: reviewer-agent\ndescription: Code review and audit agent for pull requests and code quality\nlicense: Apache-2.0\nmetadata:\n  category: specialized\n  author: radium\n  engine: gemini\n  model: gemini-2.0-flash-thinking\n  original_id: reviewer-agent\n---\n\n# Reviewer Agent\n\nCode review and audit agent for pull requests and code quality assessment.\n\n## Role\n\nYou are a specialized reviewer agent focused on reviewing code changes, identifying issues, and providing feedback. Your purpose is to thoroughly review code without making modifications, ensuring quality, security, and adherence to standards.\n\n## Capabilities\n\n- **Code Review**: Thoroughly review code changes and implementations\n- **Issue Identification**: Find bugs, security issues, and code quality problems\n- **Best Practices**: Check adherence to coding standards and best practices\n- **Security Audit**: Identify security vulnerabilities and risks\n- **Documentation Review**: Verify documentation is complete and accurate\n\n## Tool Usage\n\n### Allowed Tools (Review)\n- `read_file` - Read files for review\n- `read_lints` - Check linting errors\n- `grep` - Search for patterns and issues\n- `codebase_search` - Find related code and patterns\n- `list_dir` - Explore code structure\n- `glob_file_search` - Find relevant files\n\n### Prohibited Tools\n- **NO file writes**: `write_file`, `search_replace`, `edit_file`, `delete_file`\n- **NO modifications**: Any tool that changes the codebase\n- **NO execution**: `run_terminal_cmd` (except read-only review commands)\n\n## Instructions\n\n1. **Thorough Review**: Examine all code changes carefully\n2. **Check Standards**: Verify adherence to coding standards\n3. **Identify Issues**: Find bugs, security issues, and quality problems\n4. **Provide Feedback**: Give constructive, actionable feedback\n5. **Document Findings**: Clearly document all review findings\n\n## Review Focus Areas\n\n- **Functionality**: Does the code work correctly?\n- **Security**: Are there security vulnerabilities?\n- **Performance**: Are there performance issues?\n- **Code Quality**: Is the code maintainable and readable?\n- **Testing**: Are there adequate tests?\n- **Documentation**: Is documentation complete?\n- **Best Pract"
+    },
+    {
+      "path": "extended/agent-ops-build/SKILL.md",
+      "name": "agent-ops-build",
+      "current_category": "extended",
+      "llm_category": "devops",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill performs language-aware build orchestration, detecting project language and running appropriate build pipelines, which fits the DevOps category for CI/CD, builds, and operational automation.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "35a0a2fc3ea93453c1afb5647fc3ec4cb31b27255a29787954ea8d294eacb793",
+      "metadata_sha256": "feab2053400f1ee8cdc790ef05e312106dc93245c0e7cfe30975c38e9eaf49f1",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Language-aware build orchestration that detects project language and runs appropriate build pipeline",
+      "content_excerpt": "---\nname: agent-ops-build\ndescription: \"Language-aware build orchestration that detects project language and runs appropriate build pipeline\"\nlicense: MIT\ncompatibility: [opencode, claude, cursor]\n\nmetadata:\n  category: extended\n  related: [agent-ops-baseline, agent-ops-state, agent-ops-validation]\n\n---\n\n# agent-ops-build\n\nLanguage-aware build orchestration skill that detects project language and runs the appropriate build pipeline.\n\n## Purpose\n\nProvide a unified build command that:\n1. Auto-detects project language(s) from configuration files\n2. Runs language-appropriate build stages\n3. Reports findings in a consistent format\n4. Integrates with agent-ops-baseline for comparison\n\n## When to Use\n\n- Running a full build pipeline\n- Validating changes before commit\n- Capturing baseline metrics\n- When constitution lacks explicit build commands\n\n## Detection Logic\n\n```mermaid\nflowchart TD\n    A[Start] --> B{pyproject.toml?}\n    B -->|Yes| C[Python Project]\n    B -->|No| D{setup.py?}\n    D -->|Yes| C\n    D -->|No| E{package.json?}\n    E -->|Yes| F[Node.js Project]\n    E -->|No| G{*.sln?}\n    G -->|Yes| H[.NET Project]\n    G -->|No| I{*.csproj?}\n    I -->|Yes| H\n    I -->|No| J[Unknown - Check Constitution]\n```\n\n## Language Detection\n\n| Language | Indicators | Priority |\n|----------|-----------|----------|\n| Python | `pyproject.toml`, `setup.py`, `requirements.txt` | 1 |\n| TypeScript/JS | `package.json`, `tsconfig.json` | 2 |\n| C#/.NET | `*.sln`, `*.csproj` | 3 |\n\nFor mixed projects, run pipelines in priority order.\n\n## Build Pipelines\n\n### Python Pipeline\n\n```\nStage 1: Dependencies  → uv sync / pip install\nStage 2: Format        → ruff format --check\nStage 3: Lint          → ruff check\nStage 4: Type Check    → mypy src/\nStage 5: Test          → pytest --cov\nStage 6: Coverage      → Check threshold\n```\n\n**Commands:**\n```bash\nuv sync\nuv run ruff format --check .\nuv run ruff check .\nuv run mypy src/\nuv run pytest --cov=src --cov-report=term-missing\n```\n\n### TypeScript/Node.js Pipeline\n\n```\nStage 1: Dependencies  → npm ci / pnpm install\nStage 2: Format        → prettier --check\nStage 3: Lint          → eslint\nStage 4: Type Check    → tsc --noEmit\nStage 5: Test          → vi"
+    },
+    {
+      "path": "development-tools/biome-js/SKILL.md",
+      "name": "biome-js",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 0.92,
+      "status": "ok",
+      "reason": "The skill provides configuration guidance for BiomeJS, a JavaScript/TypeScript linter and formatter. It covers extending shared configs, monorepo inheritance, file includes patterns, and common overrides for test files and generated code. This is a development tooling skill for code quality and formatting.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "74d97a91853e9345b49b43d5b9aea5c1bb0fabfde1990bf629db2f901b3be8d5",
+      "metadata_sha256": "bcdef534ee1ae693b81b42d6b2ac631f13cad6e380e5fab67e8e91977859ab5e",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "This skill should be used when the user asks to \"configure Biome\", \"extend biome config\", \"set up BiomeJS\", \"add biome overrides\", \"biome lint-staged\", \"fix biome errors\", or mentions biome.jsonc, Biome linting, or Biome formatting configuration.",
+      "content_excerpt": "---\nname: biome-js\ndescription: This skill should be used when the user asks to \"configure Biome\", \"extend biome config\", \"set up BiomeJS\", \"add biome overrides\", \"biome lint-staged\", \"fix biome errors\", or mentions biome.jsonc, Biome linting, or Biome formatting configuration.\n---\n\n# BiomeJS Skill\n\nQuick guidance for BiomeJS configuration based on Sablier project patterns.\n\n## Core Concepts\n\n### Extending Shared Configs\n\nExtend shared configs via npm package exports. The consuming project must always provide its own `files.includes`:\n\n```jsonc\n{\n  \"$schema\": \"./node_modules/@biomejs/biome/configuration_schema.json\",\n  \"extends\": [\"@sablier/devkit/biome\"],\n  \"files\": {\n    \"includes\": [\"**/*.{js,json,jsonc,ts}\", \"!node_modules/**/*\"]\n  }\n}\n```\n\nFor UI projects, extend both base and ui configs:\n\n```jsonc\n{\n  \"extends\": [\"@sablier/devkit/biome/base\", \"@sablier/devkit/biome/ui\"],\n  \"files\": {\n    \"includes\": [\"**/*.{css,js,jsx,json,jsonc,ts,tsx}\"]\n  }\n}\n```\n\n### Monorepo Inheritance\n\nIn monorepos, workspace configs inherit from root using `\"//\"`:\n\n```jsonc\n// packages/my-package/biome.jsonc\n{\n  \"extends\": [\"//\"],\n  \"overrides\": [\n    // package-specific overrides\n  ]\n}\n```\n\n### File Includes Pattern\n\nAlways specify `files.includes` explicitly. Common patterns:\n\n| Project Type | Pattern                                       |\n| ------------ | --------------------------------------------- |\n| Library      | `**/*.{js,json,jsonc,ts}`                     |\n| UI/Frontend  | `**/*.{css,js,jsx,json,jsonc,ts,tsx}`         |\n| With GraphQL | `**/*.{css,graphql,js,jsx,json,jsonc,ts,tsx}` |\n\nExclusions: `!node_modules/**/*`, `!**/generated`, `!dist`\n\n## Common Overrides\n\n### Test Files\n\nRelax strict rules in test files:\n\n```jsonc\n{\n  \"overrides\": [\n    {\n      \"includes\": [\"**/tests/**/*.ts\", \"**/*.test.ts\"],\n      \"linter\": {\n        \"rules\": {\n          \"style\": {\n            \"noNonNullAssertion\": \"off\"\n          },\n          \"suspicious\": {\n            \"noExplicitAny\": \"off\"\n          }\n        }\n      }\n    }\n  ]\n}\n```\n\n### Generated/ABI Files\n\nDisable sorting and compact formatting for generated code:\n\n```jsonc\n{\n  \"overrides\": [\n    {\n      \"includes\": [\"**/abi/**/*.ts\""
+    },
+    {
+      "path": "programming-languages/javascript-pro-jeffallan-claude-skills/SKILL.md",
+      "name": "javascript-pro",
+      "current_category": "programming-languages",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is for building JavaScript applications with modern ES2023+ features, async patterns, or Node.js development. This is a core software development activity focused on coding and implementation.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "6e9ea4bea2768770778327c4b41891f5a435bb63574919bef43cac22d5b7212f",
+      "metadata_sha256": "706802c4445068f12acd34f436dc1ba37c6ccee56887e4f92e4e75633865f5eb",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when building JavaScript applications with modern ES2023+ features, async patterns, or Node.js development. Invoke for vanilla JavaScript, browser APIs, performance optimization, module systems.",
+      "content_excerpt": "---\nname: javascript-pro\ndescription: Use when building JavaScript applications with modern ES2023+ features, async patterns, or Node.js development. Invoke for vanilla JavaScript, browser APIs, performance optimization, module systems.\ntriggers:\n  - JavaScript\n  - ES2023\n  - async await\n  - Node.js\n  - vanilla JavaScript\n  - Web Workers\n  - Fetch API\n  - browser API\n  - module system\nrole: specialist\nscope: implementation\noutput-format: code\n---\n\n# JavaScript Pro\n\nSenior JavaScript developer with 10+ years mastering modern ES2023+ features, asynchronous patterns, and full-stack JavaScript development.\n\n## Role Definition\n\nYou are a senior JavaScript engineer with 10+ years of experience. You specialize in modern ES2023+ JavaScript, Node.js 20+, asynchronous programming, functional patterns, and performance optimization. You build clean, maintainable code following modern best practices.\n\n## When to Use This Skill\n\n- Building vanilla JavaScript applications\n- Implementing async/await patterns and Promise handling\n- Working with modern module systems (ESM/CJS)\n- Optimizing browser performance and memory usage\n- Developing Node.js backend services\n- Implementing Web Workers, Service Workers, or browser APIs\n\n## Core Workflow\n\n1. **Analyze requirements** - Review package.json, module system, Node version, browser targets\n2. **Design architecture** - Plan modules, async flows, error handling strategies\n3. **Implement** - Write ES2023+ code with proper patterns and optimizations\n4. **Optimize** - Profile performance, reduce bundle size, prevent memory leaks\n5. **Test** - Write comprehensive tests with Jest achieving 85%+ coverage\n\n## Reference Guide\n\nLoad detailed guidance based on context:\n\n| Topic | Reference | Load When |\n|-------|-----------|-----------|\n| Modern Syntax | `references/modern-syntax.md` | ES2023+ features, optional chaining, private fields |\n| Async Patterns | `references/async-patterns.md` | Promises, async/await, error handling, event loop |\n| Modules | `references/modules.md` | ESM vs CJS, dynamic imports, package.json exports |\n| Browser APIs | `references/browser-apis.md` | Fetch, Web Workers, Storage, IntersectionObserver |\n| Node Essentials "
+    },
+    {
+      "path": "github-integration/pr-comment-resolver-b0932455/SKILL.md",
+      "name": "pr-comment-resolver",
+      "current_category": "github-integration",
+      "llm_category": "integration",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill handles PR comment resolution by integrating with GitHub's API to collect, classify, and respond to review comments, which is a cross-system integration workflow.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "54631106d6fe385d6e8f97319ca363aca72fb2a9beeb737110085a2675cc850b",
+      "metadata_sha256": "3bdbe0c6b1a537eab9029f0e05d99e5a5d780feadefea3eb8e19c3ede41bf93f",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "PRのすべてのコメント（レビューコメント、一般コメント、インラインコメント）を取得し、\n種類別（指摘/質問/提案/承認）に分類、優先順位をつけて対応を実行するスキル。\n対応完了後はコメントへの返信も行う。\n\nトリガー条件:\n- 「PRのコメントに対応して」「PR #N のレビューコメントを処理して」\n- 「PRのフィードバックを解決して」「レビュー指摘を修正して」\n- PRレビュー後に指摘事項への対応が必要な時\n- 「/pr-comment-resolver」「/resolve-pr-comments」",
+      "content_excerpt": "---\nname: pr-comment-resolver\ndescription: |\n  PRのすべてのコメント（レビューコメント、一般コメント、インラインコメント）を取得し、\n  種類別（指摘/質問/提案/承認）に分類、優先順位をつけて対応を実行するスキル。\n  対応完了後はコメントへの返信も行う。\n\n  トリガー条件:\n  - 「PRのコメントに対応して」「PR #N のレビューコメントを処理して」\n  - 「PRのフィードバックを解決して」「レビュー指摘を修正して」\n  - PRレビュー後に指摘事項への対応が必要な時\n  - 「/pr-comment-resolver」「/resolve-pr-comments」\n---\n\n# PR Comment Resolver\n\nPRコメントを収集・分類し、優先順位に従って対応を実行する。\n\n## ワークフロー\n\n```\n1. Collect   → 全コメント取得\n2. Classify  → カテゴリ分類（must/question/should/could/note）\n3. Prioritize → 優先順位付け\n4. Execute   → 対応実行（修正/回答）\n5. Reply     → コメント返信\n```\n\n## Step 1: コメント収集\n\n```bash\n# PR情報取得\ngh pr view {pr_number} --json number,title,body,author,state\n\n# 一般コメント\ngh api repos/{owner}/{repo}/issues/{pr_number}/comments\n\n# レビューコメント（インライン）\ngh api repos/{owner}/{repo}/pulls/{pr_number}/comments\n\n# レビュー本体\ngh api repos/{owner}/{repo}/pulls/{pr_number}/reviews\n```\n\n## Step 2: 分類\n\n分類ルールの詳細は [references/comment-classification.md](references/comment-classification.md) 参照。\n\n| カテゴリ | 優先度 | 対応 |\n|----------|--------|------|\n| `must` | 1 | 必須修正（セキュリティ、ブロッカー） |\n| `question` | 2 | 回答必須 |\n| `should` | 3 | 推奨修正 |\n| `could` | 4 | 任意対応 |\n| `note` | 5 | 対応不要 |\n\n## Step 3: 優先順位付け\n\n```yaml\npriority_order:\n  1. must（セキュリティ > データ整合性 > 機能）\n  2. question（設計意図 > 実装詳細）\n  3. should\n  4. could\n```\n\n## Step 4: 対応実行\n\n### 修正が必要な場合\n\n1. 該当ファイルを読み取り\n2. 指摘内容を理解\n3. 修正を実施\n4. テスト実行（該当する場合）\n5. コミット\n\n### 回答が必要な場合\n\n1. 質問内容を理解\n2. コードベースを調査\n3. 回答を作成\n\n## Step 5: 返信\n\n返信テンプレートは [references/response-templates.md](references/response-templates.md) 参照。\n\n```bash\n# レビューコメントへの返信\ngh api repos/{owner}/{repo}/pulls/{pr_number}/comments/{comment_id}/replies \\\n  -f body=\"修正しました。 ✅ commit: {sha}\"\n\n# 一般コメントへの返信\ngh pr comment {pr_number} --body \"回答内容\"\n```\n\n## 出力形式\n\n```yaml\npr_comment_resolution:\n  pr_ref: \"owner/repo#123\"\n  summary:\n    total: 10\n    resolved: 8\n    pending: 2\n\n  resolved:\n    - id: \"comment_123\"\n      category: must\n      action: \"コード修正\"\n      commit: \"abc1234\"\n      reply_sent: true\n\n    - id: \"comment_456\"\n      category: question\n      action: \"回答\"\n      reply_sent: true\n\n  pending:\n    - id: \"comment_789\"\n      category: should\n      reason: \"追加調査が必要\"\n      next_action: \"設計確認後に対応\"\n```\n\n## 使用例\n\n```\nUser: PR #45 のコメントに対応して"
+    },
+    {
+      "path": "development-tools/searching-code/SKILL.md",
+      "name": "searching-code",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill provides intelligent codebase search for understanding code, tracing flows, and exploring large repositories. This is a development support tool for code comprehension and navigation.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "4505bd63063ce863a53dabb90625ac5ed8e4a9cc5adf4153e43ee5484eb36e74",
+      "metadata_sha256": "a7936a3ffd205eae45920c5261e09f5d5cd0d33a26dea858616cf1b5ac35dcc2",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Intelligent codebase search via WarpGrep. Use when user asks \"how does X work\", \"trace flow\", \"find all implementations\", \"understand codebase\", or needs cross-file exploration in large repos (1000+ files).",
+      "content_excerpt": "---\nname: searching-code\ndescription: Intelligent codebase search via WarpGrep. Use when user asks \"how does X work\", \"trace flow\", \"find all implementations\", \"understand codebase\", or needs cross-file exploration in large repos (1000+ files).\nuser-invocable: false\nallowed-tools:\n  - mcp__morphllm__warpgrep_codebase_search\n  - mcp__morphllm__codebase_search\n  - Read\n  - Grep\n  - Glob\n---\n\n# Intelligent Code Search with WarpGrep\n\nWarpGrep is an RL-trained search agent that reasons about code, not just pattern matches.\n\n## How It Works\n\n- **8 parallel searches** per turn (explores multiple hypotheses)\n- **4 reasoning turns** (follows causal chains across files)\n- **F1=0.73** in ~3.8 steps (vs 12.4 for standard search)\n\n## When to Use WarpGrep\n\n| Use WarpGrep                | Use Built-in Grep        |\n| --------------------------- | ------------------------ |\n| \"How does auth flow work?\"  | \"Find class UserService\" |\n| \"Trace data from API to DB\" | Simple regex patterns    |\n| \"Find all error handling\"   | \"Where is X defined?\"    |\n| Large repos (1000+ files)   | Known file patterns      |\n| Before major refactoring    | Quick needle lookups     |\n\n## Query Formulation\n\n**Good queries** (reasoning required):\n\n```\n\"How does authentication flow from the login handler to the database?\"\n\"Find all places where user permissions are checked\"\n\"Trace the request lifecycle from router to response\"\n```\n\n**Bad queries** (use Grep instead):\n\n```\n\"Find UserService\" → use Grep\n\"Search for 'import React'\" → use Grep\n```\n\n## Workflow\n\n1. **Formulate query**: Describe WHAT you want to understand, not just WHAT to find\n2. **Run WarpGrep**: `mcp__morphllm__warpgrep_codebase_search`\n3. **Interpret results**: Ranked snippets with file paths and line numbers\n4. **Follow up**: Read specific files for deeper understanding\n\n## Parameters\n\n```\nsearch_string: \"natural language description of what to find\"\nrepo_path: \"/absolute/path/to/repo\"\n```\n\n## Tips\n\n- Be specific about the behavior or flow you're investigating\n- Include context: \"in the API layer\" or \"during startup\"\n- WarpGrep handles ambiguity better than exact pattern matching\n- Results include surrounding context for understanding"
+    },
+    {
+      "path": "utility/agent-ops-interview-majiayu000-claude-skill-registr/SKILL.md",
+      "name": "agent-ops-interview",
+      "current_category": "utility",
+      "llm_category": "workflow",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "Duplicate of id:3 with identical content - structured interview workflow for agent operations with procedural steps and state management.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "568ca9ff9eec5260a1acb99d9d088296e378ab48ed066d4534832e0aa5faafcf",
+      "metadata_sha256": "3463250f2979f76c26af7a009a75f4f794195a28fd4a228c965c0f97db68b631",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Conduct structured interviews with the user. Use when multiple decisions need user input: ask ONE question at a time, wait for response, record answer, then proceed to next question.",
+      "content_excerpt": "---\nname: agent-ops-interview\ndescription: \"Conduct structured interviews with the user. Use when multiple decisions need user input: ask ONE question at a time, wait for response, record answer, then proceed to next question.\"\ncategory: utility\ninvokes: [agent-ops-state]\ninvoked_by: [agent-ops-constitution, agent-ops-planning, agent-ops-task-creation, agent-ops-task-refinement]\nstate_files:\n  read: [focus.md]\n  write: [focus.md]\n---\n\n# Interview workflow\n\n## Purpose\n\nGather user decisions, preferences, or clarifications through a structured one-question-at-a-time process. This prevents overwhelming the user and ensures each answer is properly understood before moving on.\n\n## Rules (strict)\n\n1. **One question per message.** Never batch multiple questions.\n2. **Present clear options.** Each question should have labeled options (A, B, C) or a clear format for the expected answer.\n3. **Explain briefly.** Give just enough context for the user to decide—not a wall of text.\n4. **Record immediately.** After each answer, note it in `.agent/focus.md` or a working document before asking the next question.\n5. **Allow escape.** User can say \"skip\", \"defer\", \"use your recommendation\", or \"stop interview\".\n6. **Summarize at end.** When all questions are answered, present a summary for confirmation.\n\n## Interview state tracking\n\nTrack in `.agent/focus.md` under \"Doing now\":\n\n```markdown\n## Doing now\n\nInterview: [topic]\n- Q1: [question summary] → [answer or pending]\n- Q2: [question summary] → [answer or pending]\n- ...\n```\n\n## Procedure\n\n1. **Setup**: List all questions internally (do not show to user yet).\n2. **Ask Q1**: Present one question with options.\n3. **Wait**: Do not proceed until user responds.\n4. **Record**: Update focus.md with the answer.\n5. **Ask Q2**: Repeat until all questions answered or user stops.\n6. **Summarize**: Present all answers for confirmation.\n7. **Proceed**: Use confirmed answers to continue the workflow.\n\n## Handling special responses\n\n| User says | Action |\n|-----------|--------|\n| \"skip\" | Mark as SKIPPED, move to next question |\n| \"defer\" | Mark as DEFERRED, move to next question |\n| \"use your recommendation\" | Apply the agent's recommended defau"
+    },
+    {
+      "path": "utility/agent-ops-interview/SKILL.md",
+      "name": "agent-ops-interview",
+      "current_category": "utility",
+      "llm_category": "workflow",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "The skill defines a structured interview workflow with step-by-step procedures, state tracking, and decision-gathering processes for agent operations.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "568ca9ff9eec5260a1acb99d9d088296e378ab48ed066d4534832e0aa5faafcf",
+      "metadata_sha256": "8eec5a08cf16bdf04459263479fd48ab7b22ed0bfb55c440d71f675083302285",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Conduct structured interviews with the user. Use when multiple decisions need user input: ask ONE question at a time, wait for response, record answer, then proceed to next question.",
+      "content_excerpt": "---\nname: agent-ops-interview\ndescription: \"Conduct structured interviews with the user. Use when multiple decisions need user input: ask ONE question at a time, wait for response, record answer, then proceed to next question.\"\ncategory: utility\ninvokes: [agent-ops-state]\ninvoked_by: [agent-ops-constitution, agent-ops-planning, agent-ops-task-creation, agent-ops-task-refinement]\nstate_files:\n  read: [focus.md]\n  write: [focus.md]\n---\n\n# Interview workflow\n\n## Purpose\n\nGather user decisions, preferences, or clarifications through a structured one-question-at-a-time process. This prevents overwhelming the user and ensures each answer is properly understood before moving on.\n\n## Rules (strict)\n\n1. **One question per message.** Never batch multiple questions.\n2. **Present clear options.** Each question should have labeled options (A, B, C) or a clear format for the expected answer.\n3. **Explain briefly.** Give just enough context for the user to decide—not a wall of text.\n4. **Record immediately.** After each answer, note it in `.agent/focus.md` or a working document before asking the next question.\n5. **Allow escape.** User can say \"skip\", \"defer\", \"use your recommendation\", or \"stop interview\".\n6. **Summarize at end.** When all questions are answered, present a summary for confirmation.\n\n## Interview state tracking\n\nTrack in `.agent/focus.md` under \"Doing now\":\n\n```markdown\n## Doing now\n\nInterview: [topic]\n- Q1: [question summary] → [answer or pending]\n- Q2: [question summary] → [answer or pending]\n- ...\n```\n\n## Procedure\n\n1. **Setup**: List all questions internally (do not show to user yet).\n2. **Ask Q1**: Present one question with options.\n3. **Wait**: Do not proceed until user responds.\n4. **Record**: Update focus.md with the answer.\n5. **Ask Q2**: Repeat until all questions answered or user stops.\n6. **Summarize**: Present all answers for confirmation.\n7. **Proceed**: Use confirmed answers to continue the workflow.\n\n## Handling special responses\n\n| User says | Action |\n|-----------|--------|\n| \"skip\" | Mark as SKIPPED, move to next question |\n| \"defer\" | Mark as DEFERRED, move to next question |\n| \"use your recommendation\" | Apply the agent's recommended defau"
+    },
+    {
+      "path": "core/agent-ops-state/SKILL.md",
+      "name": "agent-ops-state",
+      "current_category": "core",
+      "llm_category": "agent",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill maintains agent state files (.agent directory) for session management, issue tracking, and operational consistency.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "392333a0b9bd5cbda451bf07b25d41774629285627f98e8b14cc8ea01282ef12",
+      "metadata_sha256": "3ea49570c802c7ac61ebaeb8d61ed88f4e7f942996ef9cd83f67008f60797cb0",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Maintain .agent state files. Use at session start, after meaningful steps, and before concluding: read/update constitution/memory/focus/issues/baseline consistently.",
+      "content_excerpt": "---\nname: agent-ops-state\ndescription: \"Maintain .agent state files. Use at session start, after meaningful steps, and before concluding: read/update constitution/memory/focus/issues/baseline consistently.\"\ncategory: core\ninvokes: [agent-ops-git]\ninvoked_by: [all-skills]\nstate_files:\n  read: [constitution.md, memory.md, focus.md, issues/*.md, baseline.md]\n  write: [focus.md, issues/*.md, memory.md]\n---\n\n# AgentOps State Discipline\n\n**Works with or without `aoc` CLI installed.** State management uses direct file operations by default.\n\n## State File Operations (Default)\n\nAll state files are managed via direct file operations:\n\n| File | Operations |\n|------|-----------|\n| `.agent/constitution.md` | Read/write directly |\n| `.agent/focus.md` | Read/write directly |\n| `.agent/memory.md` | Read/write directly |\n| `.agent/baseline.md` | Read/write directly |\n| `.agent/issues/{priority}.md` | Read/append/edit directly |\n\n### Issue Management (File-Based)\n\n| Operation | How to Do It |\n|-----------|--------------|\n| List issues by priority | Read `.agent/issues/{priority}.md` directly |\n| Show issue details | Search for issue ID in priority files |\n| Create issue | Append to appropriate `.agent/issues/{priority}.md` file |\n| Update issue status | Edit `status:` field directly in file |\n| Close issue | Set `status: done` + move to `history.md` |\n| Get summary | Count issues across priority files |\n\n### Git Status\n\n```bash\n# Check current branch\ngit branch --show-current\n\n# Check for uncommitted changes\ngit status --porcelain\n\n# Get last commit hash\ngit rev-parse --short HEAD\n```\n\n## CLI Integration (when aoc is available)\n\nWhen `aoc` CLI is detected in `.agent/tools.json`, these commands provide convenience shortcuts:\n\n| Operation | CLI Command |\n|-----------|-------------|\n| List issues by priority | `aoc issues list --priority critical` |\n| Show issue details | `aoc issues show <ID>` |\n| Create issue | `aoc issues create --type BUG --title \"...\"` |\n| Update issue status | `aoc issues update <ID> --status in-progress` |\n| Close issue | `aoc issues close <ID>` |\n| Get summary | `aoc issues summary` |\n\n**Note:** CLI is optional — all operations can be performed via direct f"
+    },
+    {
+      "path": "core/agent-ops-testing-majiayu000-claude-skill-registr/SKILL.md",
+      "name": "agent-ops-testing",
+      "current_category": "core",
+      "llm_category": "testing",
+      "confidence": 0.92,
+      "status": "ok",
+      "reason": "This is a duplicate of skill id=1 with identical content. Same test strategy, execution, and coverage analysis focus.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "8825526338ca3a520c0513382ad2c257fe06c118688140f288f4baa482b269e4",
+      "metadata_sha256": "31b9187a5d3626ce53565cba918fb7e71f92e45f03bca53ef02489508b126acd",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Test strategy, execution, and coverage analysis. Use when designing tests, running test suites, or analyzing test results beyond baseline checks.",
+      "content_excerpt": "---\nname: agent-ops-testing\ndescription: \"Test strategy, execution, and coverage analysis. Use when designing tests, running test suites, or analyzing test results beyond baseline checks.\"\ncategory: core\ninvokes: [agent-ops-state, agent-ops-tasks, agent-ops-debugging]\ninvoked_by: [agent-ops-planning, agent-ops-implementation, agent-ops-critical-review]\nstate_files:\n  read: [constitution.md, baseline.md, focus.md, issues/*.md]\n  write: [focus.md, issues/*.md]\n---\n\n# Testing Workflow\n\n**Works with or without `aoc` CLI installed.** Issue tracking can be done via direct file editing.\n\n## Purpose\n\nProvide structured guidance for test design, execution, and analysis that goes beyond baseline capture. This skill covers test strategy during planning, incremental testing during implementation, and coverage analysis.\n\n## Test Commands (from constitution)\n\n```bash\n# Python (uv/pytest)\nuv run pytest                           # Run all tests\nuv run pytest tests/ -v                 # Verbose output\nuv run pytest tests/ -m \"not slow\"      # Skip slow tests\nuv run pytest tests/ --tb=short -q      # Quick summary\nuv run pytest --cov=src --cov-report=html  # Coverage report\n\n# TypeScript/Node (vitest/jest)\nnpm run test                            # Run all tests\nnpm run test -- --coverage              # With coverage\n\n# .NET (dotnet test)\ndotnet test                             # Run all tests\ndotnet test --collect:\"XPlat Code Coverage\"  # With coverage\n```\n\n## Issue Tracking (File-Based — Default)\n\n| Operation | How to Do It |\n|-----------|--------------|\n| Create test issue | Append to `.agent/issues/medium.md` with type `TEST` |\n| Create bug from failure | Append to `.agent/issues/high.md` with type `BUG` |\n| Log test results | Edit issue's `### Log` section in priority file |\n\n### Example: Post-Test Issue Creation (File-Based)\n\n1. Increment `.agent/issues/.counter`\n2. Append issue to appropriate priority file\n3. Add log entry with test run results\n\n## CLI Integration (when aoc is available)\n\nWhen `aoc` CLI is detected in `.agent/tools.json`, these commands provide convenience shortcuts:\n\n| Operation | Command |\n|-----------|---------|\n| Create test issue | `aoc issues create -"
+    },
+    {
+      "path": "security-compliance/compliance-check-skill/SKILL.md",
+      "name": "compliance-check.skill",
+      "current_category": "security-compliance",
+      "llm_category": "security",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly about verifying compliance with security standards, with tags including 'security' and 'compliance', and procedures for compliance verification.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "1ff4948402a5cbe1130b5ba8149f3516c9e6537f22713910a01f02075e2fcd11",
+      "metadata_sha256": "0a47c1aa5cf3a02c324068453208c8fa87c82cae1e5ff908be896a9c7583c323",
+      "semantic_sources": {
+        "description": "body",
+        "name": "metadata",
+        "tags": "frontmatter:list"
+      },
+      "description": "Procedures for verifying compliance with security standards.",
+      "content_excerpt": "---\ndocument_name: \"compliance-check.skill.md\"\nlocation: \".claude/skills/compliance-check.skill.md\"\ncodebook_id: \"CB-SKILL-COMPLIANCE-001\"\nversion: \"1.0.0\"\ndate_created: \"2026-01-04\"\ndate_last_edited: \"2026-01-04\"\ndocument_type: \"skill\"\npurpose: \"Procedures for compliance verification\"\nskill_metadata:\n  category: \"security\"\n  complexity: \"advanced\"\n  estimated_time: \"varies\"\n  prerequisites:\n    - \"Compliance requirements\"\ncategory: \"skills\"\nstatus: \"active\"\ntags:\n  - \"skill\"\n  - \"security\"\n  - \"compliance\"\nai_parser_instructions: |\n  This skill defines procedures for compliance checking.\n---\n\n# Compliance Check Skill\n\n=== PURPOSE ===\n\nProcedures for verifying compliance with security standards.\n\n=== USED BY ===\n\n| Agent | Purpose |\n|-------|---------|\n| @agent(security-lead) @ref(CB-AGENT-SECURITY-001) | Primary skill for compliance |\n\n=== PROCEDURE: Compliance Audit ===\n\n**Common Standards:**\n- OWASP Top 10\n- GDPR (data protection)\n- SOC 2 (security controls)\n- PCI DSS (payment data)\n\n**Steps:**\n1. Identify applicable standards\n2. Map requirements to controls\n3. Verify implementation\n4. Document evidence\n5. Report gaps\n\n=== PROCEDURE: Evidence Collection ===\n\nFor each control:\n- Control description\n- Implementation status\n- Evidence (screenshots, logs, configs)\n- Gap (if any)\n- Remediation plan\n\n=== RELATED SKILLS ===\n\n| Skill | Relationship |\n|-------|--------------|\n| @skill(security-review) | Security context |\n| @skill(vulnerability-assessment) | Vulnerability context |\n"
+    },
+    {
+      "path": "programming-languages/rust-macros/SKILL.md",
+      "name": "rust-macros",
+      "current_category": "programming-languages",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Skill focuses on Rust macro system (declarative and procedural macros), which is a programming language feature used in software development.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "d1f49723e7753cd59ca29e1f82b60e3520918f68d3b65fb1fb35460631b7aaa3",
+      "metadata_sha256": "b784d58b1554d20fb82ba4992e6731f137d048a43f87627c72c855253d00eade",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Master Rust macros - declarative and procedural macros",
+      "content_excerpt": "---\nname: rust-macros\ndescription: Master Rust macros - declarative and procedural macros\nsasmp_version: \"1.3.0\"\nbonded_agent: rust-type-system-agent\nbond_type: SECONDARY_BOND\nversion: \"1.0.0\"\n---\n\n# Rust Macros Skill\n\nMaster Rust's macro system: declarative macros (macro_rules!) and procedural macros.\n\n## Quick Start\n\n### Declarative Macros\n\n```rust\nmacro_rules! vec_of_strings {\n    ($($x:expr),* $(,)?) => {\n        vec![$($x.to_string()),*]\n    };\n}\n\nlet v = vec_of_strings![\"a\", \"b\", \"c\"];\n```\n\n### Fragment Specifiers\n\n| Specifier | Matches |\n|-----------|---------|\n| `ident` | Identifier |\n| `expr` | Expression |\n| `ty` | Type |\n| `pat` | Pattern |\n| `tt` | Token tree |\n| `literal` | Literal |\n\n### Repetition\n\n```rust\nmacro_rules! hashmap {\n    ($($key:expr => $value:expr),* $(,)?) => {{\n        let mut map = std::collections::HashMap::new();\n        $(map.insert($key, $value);)*\n        map\n    }};\n}\n\nlet m = hashmap! { \"one\" => 1, \"two\" => 2 };\n```\n\n## Procedural Macros\n\n```toml\n[lib]\nproc-macro = true\n\n[dependencies]\nsyn = { version = \"2\", features = [\"full\"] }\nquote = \"1\"\n```\n\n### Derive Macro\n\n```rust\nuse proc_macro::TokenStream;\nuse quote::quote;\nuse syn::{parse_macro_input, DeriveInput};\n\n#[proc_macro_derive(HelloMacro)]\npub fn hello_derive(input: TokenStream) -> TokenStream {\n    let input = parse_macro_input!(input as DeriveInput);\n    let name = input.ident;\n\n    quote! {\n        impl HelloMacro for #name {\n            fn hello() {\n                println!(\"Hello from {}!\", stringify!(#name));\n            }\n        }\n    }.into()\n}\n```\n\n## Debugging\n\n```bash\ncargo expand              # Expand all macros\ncargo expand main         # Expand specific\n```\n\n## Troubleshooting\n\n| Problem | Solution |\n|---------|----------|\n| Hygiene issues | Use `$crate::` |\n| Order matters | Define before use |\n\n## Resources\n\n- [The Little Book of Rust Macros](https://veykril.github.io/tlborm/)\n- [syn docs](https://docs.rs/syn)\n"
+    },
+    {
+      "path": "development-tools/git-convention/SKILL.md",
+      "name": "git-convention",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Skill defines Git conventions for branch naming, commit messages, and issue labels, which are core software development workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "ab228121a2e440fb2517b23b915ddd40e91a3d3c175fc8fc2404a761601dd174",
+      "metadata_sha256": "68795fe4727d129f67525944aea33156b4ec8d69e101992d649cfeef31285a13",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Git convention for branch naming, commit messages, and issue labels based on GitFlow and Conventional Commits. Use when creating branches, writing commit messages, or setting up issue labels.",
+      "content_excerpt": "---\nname: git-convention\ndescription: Git convention for branch naming, commit messages, and issue labels based on GitFlow and Conventional Commits. Use when creating branches, writing commit messages, or setting up issue labels.\n---\n\n# Git Convention\n\n## Branch Naming\n\nFormat: `type/[branch/]description[-#issue]`\n\n| Type | Description | Example |\n|------|-------------|---------|\n| feat | New feature | `feat/login-#123` |\n| fix | Bug fix | `fix/button-click-#456` |\n| docs | Documentation | `docs/api-docs-#789` |\n| style | Code style (no logic change) | `style/css-format-#101` |\n| refactor | Code restructure | `refactor/auth-service-#102` |\n| test | Add/modify tests | `test/unit-tests-#103` |\n| chore | Maintenance | `chore/dependency-update-#104` |\n\n## Commit Message Format\n\n```\n<type>(<scope>): <subject>\n\n<body>\n\n<footer>\n```\n\n### Rules\n- Max 100 characters per line\n- Subject: imperative, present tense (\"change\" not \"changed\")\n- Subject: no capitalize, no period at end\n- Body: motivation and contrast with previous behavior\n\n### Types\n- **feat**: New feature\n- **fix**: Bug fix\n- **docs**: Documentation\n- **style**: Formatting, missing semicolons\n- **refactor**: Code restructure without behavior change\n- **test**: Adding or updating tests\n- **chore**: Build, package manager, no code change\n\n## Setup\n\n### Commit Template\n```bash\ngit config --local commit.template .github/.gitmessage\n```\n\n### Issue Labels\n```bash\ngithub-label-sync --access-token <token> --labels .github/labels.json <owner>/<repo>\n```\n"
+    },
+    {
+      "path": "core/agent-ops-spec/SKILL.md",
+      "name": "agent-ops-spec",
+      "current_category": "core",
+      "llm_category": "agent",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill manages specification documents for agent operations, tracking requirements and validating implementation against specs.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "10e89bd3b4ca2147c09222d0cabfe3e1463f89216f4e514e75d29fda413acf4f",
+      "metadata_sha256": "65943f445851ba5fda502123f60a88a40a6e492319c40002845f65b8d438064f",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Manage specification documents in .agent/specs/. Use when user provides requirements, acceptance criteria, or feature descriptions that need to be tracked and validated against implementation.",
+      "content_excerpt": "---\nname: agent-ops-spec\ndescription: \"Manage specification documents in .agent/specs/. Use when user provides requirements, acceptance criteria, or feature descriptions that need to be tracked and validated against implementation.\"\ncategory: core\ninvokes: [agent-ops-state, agent-ops-interview]\ninvoked_by: [agent-ops-planning, agent-ops-critical-review]\nstate_files:\n  read: [focus.md, issues/*.md]\n  write: [focus.md, issues/*.md, specs/*.md]\n---\n\n# Spec Management workflow\n\n## Purpose\n\nCapture, organize, and trace specifications/requirements so the agent can validate implementation against them.\n\n## Location\n\nAll specs live in `.agent/specs/` with user-specified or auto-generated filenames.\n\n## Procedure\n\n### Creating a spec\n\n1) Ask user for filename or generate one (e.g., `feature-<name>.spec.md`, `issue-<id>.spec.md`)\n2) Use the spec template\n3) Fill in sections from user input\n4) Link spec to issue(s) in `.agent/issues/` via `spec_file:` field\n\n### Validating against spec\n\n1) Read the linked spec file\n2) Create traceability checklist:\n   - Each requirement → implementation location → test(s)\n3) Include in critical review phase\n\n## Template\n\nStart from [spec template](./templates/spec.template.md).\n"
+    },
+    {
+      "path": "utility/agent-ops-versioning/SKILL.md",
+      "name": "agent-ops-versioning",
+      "current_category": "utility",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill manages semantic versioning, changelog generation, and release notes, which are core software development workflows related to version control and release management.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "f5c11480d79cf791d715574d51789db47a3a5ab9488e5f13242407a0337d69e8",
+      "metadata_sha256": "40b2f79b169753b7958aaf6e07ebd2322bb4b165f37a1003468a510a447d2b88",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Manage semantic versioning, changelog generation, and release notes. Auto-generates entries from completed issues or git diff.",
+      "content_excerpt": "---\nname: agent-ops-versioning\ndescription: \"Manage semantic versioning, changelog generation, and release notes. Auto-generates entries from completed issues or git diff.\"\ncategory: utility\ninvokes: [agent-ops-state, agent-ops-git]\ninvoked_by: []\nstate_files:\n  read: [issues/history.md]\n  write: []\n---\n\n# Versioning & Release Management\n\n## Purpose\nManage semantic versioning, generate changelogs from completed issues or git history, and coordinate releases.\n\n## Input Sources\n\nChangelog entries can be generated from multiple sources:\n\n| Source | Command | Best For |\n|--------|---------|----------|\n| **Issues** (default) | `/agent-version bump minor` | Teams using issue-first workflow |\n| **Git diff** | `/agent-version bump minor --from main` | Teams not using AgentOps issues |\n| **Git tags** | `/agent-version bump minor --from v2.0.0` | Compare against specific release |\n| **Hybrid** | `/agent-version bump minor --include-git` | Catch commits without issues |\n\n## Semantic Versioning Rules\n\nFollow [SemVer 2.0.0](https://semver.org/):\n\n| Bump | When | Example |\n|------|------|---------|\n| **MAJOR** | Breaking changes, incompatible API changes | 1.0.0 → 2.0.0 |\n| **MINOR** | New features, backward compatible | 1.0.0 → 1.1.0 |\n| **PATCH** | Bug fixes, backward compatible | 1.0.0 → 1.0.1 |\n\n### Pre-release Tags\n- `-alpha.1` — Early development, unstable\n- `-beta.1` — Feature complete, testing\n- `-rc.1` — Release candidate, final testing\n\n### Build Metadata\n- `+build.123` — CI build number\n- `+20260115` — Build date\n\n## Operations\n\n### 1. Version Bump\n\n```\n/agent-version bump {major|minor|patch} [--prerelease {alpha|beta|rc}]\n```\n\n**Procedure:**\n1. Read current version from README.md badge or package.json\n2. Calculate new version based on bump type\n3. Scan `issues/history.md` for issues since last version tag\n4. Generate changelog entries\n5. Update files:\n   - CHANGELOG.md — Add new version section\n   - README.md — Update version badge and history table\n   - package.json (if exists) — Update version field\n6. Suggest git tag command (never auto-create)\n\n**Output:**\n```\n📦 Version Bump: 2.0.0 → 2.1.0\n\nChanges detected (12 issues):\n- Added: 5 features\n- Fixed: 4 bugs  \n- "
+    },
+    {
+      "path": "development-tools/converting-slash-commands-edheltzel-atlas/SKILL.md",
+      "name": "convertCommands",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is for converting command definitions between two development tools (Claude Code and OpenCode), which is a software development workflow related to tooling and migration.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "b78c4b5fc7866d890f7a2cc7bdaf85dea7ee05c6827d8390e3f1bd8899ed578b",
+      "metadata_sha256": "baba20c7086d73071a1c0f09b37ccbd1c5f2075663dd61f3733f412e17e2abf8",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Atlas skill for converting Claude Code slash commands to OpenCode commands format. USE WHEN migrating from Claude Code to OpenCode or when you have existing slash command definitions to port.",
+      "content_excerpt": "---\nname: convertCommands\ndescription: Atlas skill for converting Claude Code slash commands to OpenCode commands format. USE WHEN migrating from Claude Code to OpenCode or when you have existing slash command definitions to port.\ncontext: fork\n---\n\n# Converting Claude Code Slash Commands to OpenCode Commands\n\nThis skill helps you convert Claude Code slash command definitions (from `.claude/commands/` or `~/.claude/commands/`) to OpenCode command format (`.opencode/command/` or `~/.config/opencode/command/`).\n\n**Note:** When running from a personal config that symlinks to `~/.config/opencode/`, the command files will be available globally.\n\n## Quick Reference\n\n**Source formats:**\n\n- Claude Code: `.claude/commands/*.md` or `~/.claude/commands/*.md`\n\n**Target formats:**\n\n- OpenCode Markdown: `.opencode/command/*.md` or `~/.config/opencode/command/*.md`\n- OpenCode JSON: `opencode.json` config file\n\n**Key differences:**\n\n- Frontmatter fields: Different field names and options\n- Argument syntax: Same (`$ARGUMENTS`, `$1`, `$2`, etc.)\n- Shell commands: Same syntax (`!`command``)\n- File references: Same syntax (`@filename`)\n- New fields: `subtask`, `template` (in JSON)\n\n## Conversion Workflow\n\n### Step 1: Locate Source Commands\n\nFind Claude Code slash commands to convert:\n\n```bash\n# Project-level commands\nls .claude/commands/\n\n# User-level commands\nls ~/.claude/commands/\n```\n\n### Step 2: Read Source File\n\nRead the command definition to understand its configuration:\n\n```bash\ncat .claude/commands/review.md\n```\n\n### Step 3: Map Configuration Fields\n\nConvert each field from Claude Code format to OpenCode format:\n\n**Frontmatter mapping:**\n\n| Claude Code                | OpenCode      | Notes                           |\n| -------------------------- | ------------- | ------------------------------- |\n| `allowed-tools`            | `agent`       | Convert tool list to agent name |\n| `argument-hint`            | N/A           | Not supported in OpenCode       |\n| `description`              | `description` | Keep identical                  |\n| `model`                    | `model`       | Keep identical                  |\n| `disable-model-invocation` | N/A           | Not supporte"
+    },
+    {
+      "path": "github-integration/write-pr-desc/SKILL.md",
+      "name": "write-pr-desc",
+      "current_category": "github-integration",
+      "llm_category": "integration",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill generates GitHub PR descriptions by integrating with git and GitHub CLI to create structured documentation, which is a cross-system integration workflow.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "718a863adc1570d163194dba5fe65655700611d72502a3e672927064bbe80a2e",
+      "metadata_sha256": "de9d95c3c483e9bad01d44f3d8e7dd87adc66076c4b136be01010c0c12eab633",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Generate a GitHub Pull Request description. Creates structured, reviewer-centric PR descriptions with title, summary, why (before/after), implementation details, and impact. Use when user says \"write PR description\", \"PR desc\", \"describe this PR\", or \"generate PR description\".",
+      "content_excerpt": "---\nname: write-pr-desc\ndescription: Generate a GitHub Pull Request description. Creates structured, reviewer-centric PR descriptions with title, summary, why (before/after), implementation details, and impact. Use when user says \"write PR description\", \"PR desc\", \"describe this PR\", or \"generate PR description\".\ncompatibility: Requires git for diff context, optionally gh CLI for PR metadata.\n---\n\n# Write PR Description\n\nGenerate a concise, factual, reviewer-centric Pull Request description.\n\n## Core Principles\n\n- Be concise, factual, and reviewer-centric\n- Use short sentences, bullet points, and specific nouns\n- Present tense, active voice\n- Never make up information — only use what's in the code\n- Focus on \"why\" over \"what\" — the diff shows what changed\n\n## Process\n\n1. Get the diff context (staged changes, branch diff, or PR diff)\n2. Understand what changed and why\n3. Generate description following the template below\n\n## Required Sections\n\n### Title (50 chars max)\n\nUse imperative mood that completes: \"If applied, this PR will...\"\n- Start with action verb: Add/Fix/Update/Remove/Refactor\n- Capitalize first word, no period\n\n### Summary\n\nBrief overview explaining what this PR accomplishes:\n- Primary change using imperative mood\n- Scope: packages/modules affected\n- Root cause (for bugs) or motivation (for features)\n- Feature flags or configuration changes\n\n### Why\n\nShow the problem and solution through scenarios.\n\n```markdown\n### [Component/Feature Name]\n[One-line problem statement]\n\n**Before:**\n- Scenario: [specific situation] → [problem/outcome]\n- Impact: [user/system effect]\n\n[ASCII diagram if it clarifies flow - 5-10 lines]\n\n**After:**\n- Scenario: [same situation] → [fixed outcome]\n- Impact: [improvement achieved]\n\n[ASCII diagram of new flow if needed]\n```\n\n### Implementation\n\n3-5 bullets covering technical approach:\n- Key design decisions and trade-offs\n- New interfaces or patterns introduced\n- Breaking changes or migrations\n- Why this approach over alternatives\n- Reference related commits if multiple logical changes\n\n### Impact & Testing\n\n```markdown\n**Risk:** [One line - what could break]\n\n**Changes:**\n- Performance: [complexity/latency if significant]\n- Beh"
+    },
+    {
+      "path": "development-tools/plugin-master/SKILL.md",
+      "name": "plugin-master",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is a complete plugin development system for Claude Code, covering creation, packaging, publishing, and validation of plugins. This is squarely within software development workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "7be95f8ed3d88397f794cc8763133e541251300e2c5dcdd7bdaeece476392bb0",
+      "metadata_sha256": "ada9b2a855a59aa6611069c4e208d60569613710abfbae54d2eac3503c59e718",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Complete Claude Code plugin development system. PROACTIVELY activate when users want to:\n(1) Create/build/make plugins with 2025 features\n(2) Add skills/commands/agents to plugins\n(3) Package existing code as plugins\n(4) Publish plugins to marketplace\n(5) Validate plugin structure\n(6) Get plugin development guidance\nAutonomously creates production-ready plugins with proper structure and best practices.",
+      "content_excerpt": "---\nname: plugin-master\ndescription: |\n  Complete Claude Code plugin development system. PROACTIVELY activate when users want to:\n  (1) Create/build/make plugins with 2025 features\n  (2) Add skills/commands/agents to plugins\n  (3) Package existing code as plugins\n  (4) Publish plugins to marketplace\n  (5) Validate plugin structure\n  (6) Get plugin development guidance\n  Autonomously creates production-ready plugins with proper structure and best practices.\nlicense: MIT\n---\n\n# Plugin Development Guide\n\n## Quick Reference\n\n| Component | Location | Required |\n|-----------|----------|----------|\n| Plugin manifest | `.claude-plugin/plugin.json` | Yes |\n| Commands | `commands/*.md` | No (auto-discovered) |\n| Agents | `agents/*.md` | No (auto-discovered) |\n| Skills | `skills/*/SKILL.md` | No (auto-discovered) |\n| Hooks | `hooks/hooks.json` | No |\n| MCP Servers | `.mcp.json` | No |\n\n| Task | Action |\n|------|--------|\n| Create plugin | Ask: \"Create a plugin for X\" |\n| Validate plugin | Run: `/validate-plugin` |\n| Install from marketplace | `/plugin marketplace add user/repo` then `/plugin install name@user` |\n\n## Critical Rules\n\n### Directory Structure\n\n```\nplugin-name/\n├── .claude-plugin/\n│   └── plugin.json          # MUST be inside .claude-plugin/\n├── agents/\n│   └── domain-expert.md\n├── commands/\n├── skills/\n│   └── skill-name/\n│       ├── SKILL.md\n│       ├── references/\n│       └── examples/\n└── README.md\n```\n\n### Plugin.json Schema\n\n```json\n{\n  \"name\": \"plugin-name\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Complete [domain] expertise. PROACTIVELY activate for: (1) ...\",\n  \"author\": {\n    \"name\": \"Author Name\",\n    \"email\": \"email@example.com\"\n  },\n  \"license\": \"MIT\",\n  \"keywords\": [\"keyword1\", \"keyword2\"]\n}\n```\n\n**Validation Rules:**\n- `author` MUST be an object `{ \"name\": \"...\" }` - NOT a string\n- `version` MUST be a string `\"1.0.0\"` - NOT a number\n- `keywords` MUST be an array `[\"word1\", \"word2\"]` - NOT a string\n- Do NOT include `agents`, `skills`, `slashCommands` - these are auto-discovered\n\n### YAML Frontmatter (REQUIRED)\n\nALL markdown files in agents/, commands/, skills/ MUST begin with frontmatter:\n\n```markdown\n---\ndescription: Brief description of what thi"
+    },
+    {
+      "path": "development-tools/using-xcode/SKILL.md",
+      "name": "using-xcode",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Skill provides guidelines for using Xcode, a development tool for building software, fitting the development category.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "72a0a909a7b8fc41acd3f6beacd6096289c60a9c7a0aae93c18f374fe3d56fb3",
+      "metadata_sha256": "ab9a802887110be4f8d0ebc47fbb27c7598d5a8448c569ce886e1be8ee2af640",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use this before running `xcodebuild` or working with Xcode - tells you the specifics of how we use Xcode and its tools",
+      "content_excerpt": "---\nname: using-xcode\ndescription: Use this before running `xcodebuild` or working with Xcode - tells you the specifics of how we use Xcode and its tools\n---\n\n## Building Xcode projects\n\nWhen running Xcode builds, use the `xcodebuild-wrapper` script over `xcodebuild`. This wrapper:\n\n- returns build data in a structured way for LLM use\n- accepts the same arguments as `xcodebuild`\n\nDon't tail or abbreviate its output.\n\nExample:\n\n```bash\n./xcodebuild-wrapper build -scheme \"Actions For Obsidian (macOS)\"\n```\n\n**Location**: `~/.claude/skills/using-xcode/xcodebuild-wrapper`\n\n## Derived Data\n\n**DO NOT** attempt to delete or remove the derived data folder unless explicitly told so.\n"
+    },
+    {
+      "path": "extended/agent-ops-install-weholt-script-cast/SKILL.md",
+      "name": "agent-ops-install",
+      "current_category": "extended",
+      "llm_category": "devops",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "Identical to id 3 - same skill about installing AgentOps framework with .agent/ and .github/ setup.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "c1811f51e3b635adeac57a98798fc56116897ca5e3143f2924cdf4e6274cd7b5",
+      "metadata_sha256": "9e25163a57bc5a148d8ea31c4f6a08a4854d850d4d7db4855562a0849148422f",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Install AgentOps into a new or existing project. Handles .agent/ setup and .github/ merging.",
+      "content_excerpt": "---\nname: agent-ops-install\ndescription: \"Install AgentOps into a new or existing project. Handles .agent/ setup and .github/ merging.\"\nlicense: MIT\ncompatibility: [opencode, claude, cursor]\n\nmetadata:\n  category: extended\n  related: [agent-ops-interview]\n\n---\n\n# AgentOps Installation\n\n## Purpose\nInstall the AgentOps framework into any project—new or existing—with intelligent merging.\n\n## Installation Modes\n\n### Mode 1: Fresh Install (empty or new folder)\nCreates full structure from scratch.\n\n### Mode 2: Merge Install (existing .github/)\nPreserves existing content, adds AgentOps alongside it.\n\n### Mode 3: Update Install (existing AgentOps)\nUpdates skills/prompts to latest versions without touching state files.\n\n---\n\n## Pre-Installation Checklist\n\nBefore installing, gather:\n\n1. **Project type** — What language/framework? (affects gitignore suggestions)\n2. **Existing CI/CD** — Any workflows in .github/workflows/?\n3. **Existing instructions** — Is there a copilot-instructions.md?\n4. **Git status** — Is this a git repo? Any uncommitted changes?\n\n---\n\n## Installation Structure\n\n### .agent/ (State - Created Fresh)\n\n```\n.agent/\n├── constitution.md      # Project-specific rules (from template)\n├── memory.md            # Empty, grows over time\n├── focus.md             # Empty, session state\n├── baseline.md          # Empty, captured on first baseline\n├── docs/                # Agent-generated documentation\n├── issues/\n│   ├── critical.md      # P0 issues\n│   ├── high.md          # P1 issues\n│   ├── medium.md        # P2 issues\n│   ├── low.md           # P3 issues\n│   ├── history.md       # Archived issues\n│   ├── references/      # Detailed specs for complex issues\n│   │   └── README.md\n│   └── .counter         # Issue ID counter (starts at 0)\n└── specs/               # Requirement specifications\n```\n\n### .github/ (Framework - Merged)\n\n```\n.github/\n├── copilot-instructions.md   # MERGE with existing or create\n├── SKILL-TIERS.md            # Skill hierarchy reference\n├── skills/                   # All AgentOps skills\n│   ├── agent-ops-baseline/\n│   ├── agent-ops-constitution/\n│   ├── agent-ops-critical-review/\n│   ├── agent-ops-dependencies/\n│   ├── agent-ops-docs/\n│   ├"
+    },
+    {
+      "path": "applied/35-google-adk-reliable-agents/SKILL.md",
+      "name": "35-google-adk-reliable-agents",
+      "current_category": "applied",
+      "llm_category": "ai-llm",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is about creating a Google Agent Development Kit (ADK) skill for building AI agents with Gemini, which is an LLM-specific development framework.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "964c9bac9aaf0e02e527426eaf727a5ec161e31eec1e590717454e92451e26f1",
+      "metadata_sha256": "c82a2b1d48197ad16aab0fd0729333b9f9866678d3f64b15d96673b37dd2a83b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "metadata"
+      },
+      "description": "Create your Google Agent Development Kit skill in one prompt, then learn to improve it throughout the chapter",
+      "content_excerpt": "---\nsidebar_position: 0\ntitle: \"Build Your Google ADK Skill\"\ndescription: \"Create your Google Agent Development Kit skill in one prompt, then learn to improve it throughout the chapter\"\nchapter: 35\nlesson: 0\nduration_minutes: 15\n\nskills:\n  - name: \"Skill-First Learning\"\n    proficiency_level: \"B1\"\n    category: \"Applied\"\n    bloom_level: \"Apply\"\n    digcomp_area: \"3. Digital Content Creation\"\n    measurable_at_this_level: \"Student creates a working Google ADK skill using natural language\"\n\nlearning_objectives:\n  - objective: \"Build a Google ADK skill using natural conversation with Claude\"\n    proficiency_level: \"B1\"\n    bloom_level: \"Apply\"\n    assessment_method: \"Student has a working google-adk skill in .claude/skills/\"\n\ncognitive_load:\n  new_concepts: 1\n  assessment: \"Single concept: use Claude to build a skill from official docs\"\n\ndifferentiation:\n  extension_for_advanced: \"Add workflow agent patterns during creation\"\n  remedial_for_struggling: \"Follow exact prompt provided\"\n---\n\n# Build Your Google ADK Skill\n\nBefore learning Google's Agent Development Kit, you'll **own** a Google ADK skill.\n\n---\n\n## Step 1: Get the Skills Lab\n\n1. Go to [github.com/panaversity/claude-code-skills-lab](https://github.com/panaversity/claude-code-skills-lab)\n2. Click the green **Code** button\n3. Select **Download ZIP**\n4. Extract the ZIP file\n5. Open the extracted folder in your terminal\n\n```bash\ncd claude-code-skills-lab\nclaude\n```\n\n---\n\n## Step 2: Create Your Skill\n\nCopy and paste this prompt:\n\n```\nUsing your skill creator skill create a new skill for Google ADK (Agent\nDevelopment Kit). I will use it to build reliable AI agents with Gemini\nfrom hello world to professional production systems. Use context7 skill\nto study official documentation and then build it so no self assumed knowledge.\n```\n\nClaude will:\n1. Fetch official Google ADK documentation via Context7\n2. Ask you clarifying questions (workflow types, tool patterns, evaluation needs)\n3. Create the complete skill with references and templates\n\nYour skill appears at `.claude/skills/google-adk/`.\n\n---\n\n## Done\n\nYou now own a Google ADK skill built from official documentation. The rest of this chapter teaches you what it "
+    },
+    {
+      "path": "development-tools/slash-commands-parcadei-continuous-claude-v3/SKILL.md",
+      "name": "slash-commands",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill covers creating and using Claude Code slash commands for quick prompts, bash execution, and file references. This is a development workflow automation and tooling skill.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "1aae27e0a28f91b54971da43f17b86d935808f90de928b1ee908724d18425075",
+      "metadata_sha256": "a99d30bc5ae0fb1ffdb7717afc59c7329ce314f00a09fdfaba19d1d8790d8a95",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Create and use Claude Code slash commands - quick prompts, bash execution, file references",
+      "content_excerpt": "---\nname: slash-commands\ndescription: Create and use Claude Code slash commands - quick prompts, bash execution, file references\nallowed-tools: [Read, Write, Bash]\nuser-invocable: false\n---\n\n# Slash Commands Reference\n\nCreate and use user-triggered prompts with `/command-name` syntax.\n\n## When to Use\n\n- \"How do I create a slash command?\"\n- \"What slash commands are available?\"\n- \"Add bash to my command\"\n- \"Use file references in commands\"\n- \"Slash commands vs skills\"\n\n## Built-in Commands\n\n| Command | Purpose |\n|---------|---------|\n| `/clear` | Clear conversation history |\n| `/compact` | Compact conversation with focus |\n| `/config` | Open settings interface |\n| `/cost` | Show token usage |\n| `/agents` | Manage sub-agents |\n| `/mcp` | Manage MCP servers |\n| `/memory` | Edit CLAUDE.md files |\n| `/model` | Select AI model |\n| `/review` | Request code review |\n| `/resume` | Resume session |\n| `/help` | Get usage help |\n\n## Creating Commands\n\n### Project Commands\n```bash\nmkdir -p .claude/commands\ncat > .claude/commands/optimize.md << 'EOF'\n---\ndescription: Analyze code for performance issues\n---\n\nReview this code for:\n- Performance bottlenecks\n- Memory leaks\n- Caching opportunities\nEOF\n```\n\n### Personal Commands\n```bash\nmkdir -p ~/.claude/commands\ncat > ~/.claude/commands/review.md << 'EOF'\n---\ndescription: Security-focused code review\n---\n\nCheck for vulnerabilities:\n- Input validation\n- SQL injection\n- XSS risks\nEOF\n```\n\n## Command File Format\n\n```yaml\n---\ndescription: Brief description for /help\nallowed-tools: [Bash, Read, Write]  # Optional\nargument-hint: \"[file] [type]\"       # Optional\n---\n\nYour markdown instructions here.\nUse $1, $2 for arguments or $ARGUMENTS for all.\n```\n\n## Bash Execution\n\nRun bash before loading prompt with `!` prefix:\n\n```yaml\n---\nallowed-tools: Bash(git:*), Bash(grep:*)\ndescription: Git commit helper\n---\n\nCurrent status: !`git status`\nStaged changes: !`git diff --staged`\nRecent commits: !`git log --oneline -5`\n\nBased on these changes, suggest a commit message.\n```\n\n**Rules:**\n- Must declare `allowed-tools: Bash(...)` in frontmatter\n- Use backticks: `` !`command` ``\n- Output is included in Claude's context\n\n## File References\n\nInclude fil"
+    },
+    {
+      "path": "extended/agent-ops-install/SKILL.md",
+      "name": "agent-ops-install",
+      "current_category": "extended",
+      "llm_category": "devops",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "The skill handles installation of an AgentOps framework into projects, setting up .agent/ directories and merging .github/ structures, which is operational setup/infrastructure work fitting DevOps.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "c1811f51e3b635adeac57a98798fc56116897ca5e3143f2924cdf4e6274cd7b5",
+      "metadata_sha256": "1b35251e0f301c543cf75e3ec1f5a45485da35442e0b608fa8175e2ef3ac2e47",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Install AgentOps into a new or existing project. Handles .agent/ setup and .github/ merging.",
+      "content_excerpt": "---\nname: agent-ops-install\ndescription: \"Install AgentOps into a new or existing project. Handles .agent/ setup and .github/ merging.\"\nlicense: MIT\ncompatibility: [opencode, claude, cursor]\n\nmetadata:\n  category: extended\n  related: [agent-ops-interview]\n\n---\n\n# AgentOps Installation\n\n## Purpose\nInstall the AgentOps framework into any project—new or existing—with intelligent merging.\n\n## Installation Modes\n\n### Mode 1: Fresh Install (empty or new folder)\nCreates full structure from scratch.\n\n### Mode 2: Merge Install (existing .github/)\nPreserves existing content, adds AgentOps alongside it.\n\n### Mode 3: Update Install (existing AgentOps)\nUpdates skills/prompts to latest versions without touching state files.\n\n---\n\n## Pre-Installation Checklist\n\nBefore installing, gather:\n\n1. **Project type** — What language/framework? (affects gitignore suggestions)\n2. **Existing CI/CD** — Any workflows in .github/workflows/?\n3. **Existing instructions** — Is there a copilot-instructions.md?\n4. **Git status** — Is this a git repo? Any uncommitted changes?\n\n---\n\n## Installation Structure\n\n### .agent/ (State - Created Fresh)\n\n```\n.agent/\n├── constitution.md      # Project-specific rules (from template)\n├── memory.md            # Empty, grows over time\n├── focus.md             # Empty, session state\n├── baseline.md          # Empty, captured on first baseline\n├── docs/                # Agent-generated documentation\n├── issues/\n│   ├── critical.md      # P0 issues\n│   ├── high.md          # P1 issues\n│   ├── medium.md        # P2 issues\n│   ├── low.md           # P3 issues\n│   ├── history.md       # Archived issues\n│   ├── references/      # Detailed specs for complex issues\n│   │   └── README.md\n│   └── .counter         # Issue ID counter (starts at 0)\n└── specs/               # Requirement specifications\n```\n\n### .github/ (Framework - Merged)\n\n```\n.github/\n├── copilot-instructions.md   # MERGE with existing or create\n├── SKILL-TIERS.md            # Skill hierarchy reference\n├── skills/                   # All AgentOps skills\n│   ├── agent-ops-baseline/\n│   ├── agent-ops-constitution/\n│   ├── agent-ops-critical-review/\n│   ├── agent-ops-dependencies/\n│   ├── agent-ops-docs/\n│   ├"
+    },
+    {
+      "path": "programming-languages/php-pro-jeffallan-claude-skills/SKILL.md",
+      "name": "php-pro",
+      "current_category": "programming-languages",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Skill is about building PHP applications with modern features, frameworks, and enterprise architecture patterns.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "e12a68a79374722d767cb9d82660b399121e6fde30a3024005164b2301903c7f",
+      "metadata_sha256": "96e60b75c3a847a3b24f217a6ca48aa29d87ac97db390dbc8abbf13d648ccdd9",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when building PHP applications with modern PHP 8.3+ features, Laravel, or Symfony frameworks. Invoke for strict typing, PHPStan level 9, async patterns with Swoole, PSR standards.",
+      "content_excerpt": "---\nname: php-pro\ndescription: Use when building PHP applications with modern PHP 8.3+ features, Laravel, or Symfony frameworks. Invoke for strict typing, PHPStan level 9, async patterns with Swoole, PSR standards.\ntriggers:\n  - PHP\n  - Laravel\n  - Symfony\n  - Composer\n  - PHPStan\n  - PSR\n  - PHP API\n  - Eloquent\n  - Doctrine\nrole: specialist\nscope: implementation\noutput-format: code\n---\n\n# PHP Pro\n\nSenior PHP developer with deep expertise in PHP 8.3+, Laravel, Symfony, and modern PHP patterns with strict typing and enterprise architecture.\n\n## Role Definition\n\nYou are a senior PHP developer with 10+ years of experience building enterprise applications. You specialize in PHP 8.3+ with strict typing, Laravel/Symfony frameworks, async patterns (Swoole, ReactPHP), and PSR standards. You build scalable, maintainable applications with PHPStan level 9 compliance and 80%+ test coverage.\n\n## When to Use This Skill\n\n- Building Laravel or Symfony applications\n- Implementing strict type systems with PHPStan\n- Creating async PHP applications with Swoole/ReactPHP\n- Designing clean architecture with DDD patterns\n- Optimizing performance (OpCache, JIT, queries)\n- Writing comprehensive PHPUnit tests\n\n## Core Workflow\n\n1. **Analyze architecture** - Review framework, PHP version, dependencies, patterns\n2. **Design models** - Create typed domain models, value objects, DTOs\n3. **Implement** - Write strict-typed code with PSR compliance, DI, repositories\n4. **Secure** - Add validation, authentication, XSS/SQL injection protection\n5. **Test & optimize** - PHPUnit tests, PHPStan level 9, performance tuning\n\n## Reference Guide\n\nLoad detailed guidance based on context:\n\n| Topic | Reference | Load When |\n|-------|-----------|-----------|\n| Modern PHP | `references/modern-php-features.md` | Readonly, enums, attributes, fibers, types |\n| Laravel | `references/laravel-patterns.md` | Services, repositories, resources, jobs |\n| Symfony | `references/symfony-patterns.md` | DI, events, commands, voters |\n| Async PHP | `references/async-patterns.md` | Swoole, ReactPHP, fibers, streams |\n| Testing | `references/testing-quality.md` | PHPUnit, PHPStan, Pest, mocking |\n\n## Constraints\n\n### MUST DO\n-"
+    },
+    {
+      "path": "development-tools/gitignore-checker-shiiman-claude-code-plugins/SKILL.md",
+      "name": "gitignore-checker",
+      "current_category": "development-tools",
+      "llm_category": "security",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill checks for sensitive files before commits to prevent accidental exposure of secrets, aligning with security review and vulnerability prevention.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "d791dec8b361f7cfa787641e18ba1e0c6ffa9e2488a8fd47cc121f6a710d5081",
+      "metadata_sha256": "5089e3f9b40e53ae1812ff5f6c2bbc97568a2aa438d58c5cb40cb3812a275de2",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "コミット前に .gitignore に追加すべきファイルをチェックする。「gitignore チェック」「コミット前チェック」「機密ファイル確認」「.gitignore 確認」「追加すべきファイル」「無視すべきファイル」「gitignore 推奨」などで起動。機密情報や不要なファイルがコミットされないように確認。",
+      "content_excerpt": "---\nname: gitignore-checker\ndescription: コミット前に .gitignore に追加すべきファイルをチェックする。「gitignore チェック」「コミット前チェック」「機密ファイル確認」「.gitignore 確認」「追加すべきファイル」「無視すべきファイル」「gitignore 推奨」などで起動。機密情報や不要なファイルがコミットされないように確認。\nallowed-tools: [Read, Bash, Glob, Grep]\ncontext: fork\nagent: shiiman-git:security-check\n---\n\n# Gitignore Checker\n\nコミット前に .gitignore に追加すべきファイルをチェックします。\n\n## ワークフロー\n\n### 1. 現在のステージング状態を確認\n\n```bash\ngit status --porcelain\n```\n\n### 2. チェック対象ファイルの分析\n\n以下のカテゴリでファイルをチェック:\n\n#### 機密ファイル（必須で .gitignore に追加）\n\n| パターン | 説明 |\n|----------|------|\n| `.env*` | 環境変数ファイル |\n| `*.pem`, `*.key` | 秘密鍵 |\n| `credentials.json` | 認証情報 |\n| `*.secret` | シークレットファイル |\n| `config/secrets.yml` | Rails シークレット |\n| `.aws/` | AWS 認証情報 |\n\n#### 一般的に無視すべきファイル\n\n| パターン | 説明 |\n|----------|------|\n| `node_modules/` | npm パッケージ |\n| `vendor/` | 依存パッケージ |\n| `.DS_Store` | macOS システムファイル |\n| `Thumbs.db` | Windows サムネイル |\n| `*.log` | ログファイル |\n| `*.tmp`, `*.temp` | 一時ファイル |\n| `dist/`, `build/` | ビルド成果物 |\n| `coverage/` | テストカバレッジ |\n\n#### IDE 設定ファイル\n\n| パターン | 説明 |\n|----------|------|\n| `.idea/` | JetBrains IDE |\n| `.vscode/` | Visual Studio Code（settings.json は除く） |\n| `*.swp`, `*.swo` | Vim スワップファイル |\n| `.project`, `.classpath` | Eclipse |\n\n### 3. 既存の .gitignore を確認\n\n```bash\ncat .gitignore 2>/dev/null || echo \"(.gitignore が存在しません)\"\n```\n\n### 4. 結果報告\n\n```\n## .gitignore チェック結果\n\n### ⚠️ 機密ファイル（コミット禁止）\n\n| ファイル | 状態 | 推奨アクション |\n|----------|------|----------------|\n| .env | ステージ済 | git reset HEAD .env && .gitignore に追加 |\n| credentials.json | 未追跡 | .gitignore に追加 |\n\n### 💡 推奨: .gitignore に追加\n\n| パターン | 理由 |\n|----------|------|\n| node_modules/ | npm パッケージ（リポジトリに含める必要なし） |\n| .DS_Store | macOS システムファイル |\n\n### ✅ 問題なし\n\n機密ファイルは検出されませんでした。\n```\n\n### 5. 修正提案（機密ファイルがある場合）\n\n```bash\n# ステージから削除\ngit reset HEAD {ファイル名}\n\n# .gitignore に追加\necho \"{パターン}\" >> .gitignore\n```\n\n## 重要な注意事項\n\n- ✅ コミット前に必ず実行を推奨\n- ✅ 機密ファイルは絶対にコミットしない\n- ✅ 検出されたファイルは即座に .gitignore に追加\n- ❌ 一度コミットした機密情報は履歴に残る（git filter-branch が必要）\n"
+    },
+    {
+      "path": "github-integration/git-opensource/SKILL.md",
+      "name": "git-opensource",
+      "current_category": "github-integration",
+      "llm_category": "integration",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill focuses on GitHub repository management and open source community building, which involves integrating with GitHub's platform and managing cross-system workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "6cacbde29ca19795b8064b643fbf224bc232b28d8e4a4e558771bfa1cc5aa59c",
+      "metadata_sha256": "a654add1d384c65db63515ada24e27d51604ea42bf00fe765abe19a903e5f77f",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Git workflows, GitHub management, and open source community building",
+      "content_excerpt": "---\nname: git-opensource\ndescription: Git workflows, GitHub management, and open source community building\nsasmp_version: \"1.4.0\"\nversion: \"2.0.0\"\nupdated: \"2025-01\"\nbonded_agent: 02-community-builder\nbond_type: SECONDARY_BOND\n---\n\n# Git & Open Source for DevRel\n\nManage **GitHub repositories** and build **open source communities**.\n\n## Skill Contract\n\n### Parameters\n```yaml\nparameters:\n  required:\n    - task_type: enum[repo_setup, issue_triage, pr_review, release, community]\n    - repository: string\n  optional:\n    - priority: enum[low, medium, high, critical]\n    - labels: array[string]\n```\n\n### Output\n```yaml\noutput:\n  result:\n    actions_taken: array[string]\n    status: enum[completed, pending, escalated]\n    next_steps: array[Action]\n```\n\n## GitHub for DevRel\n\n### Repository Management\n```\nRepository\n├── README.md           # First impression\n├── CONTRIBUTING.md     # How to contribute\n├── CODE_OF_CONDUCT.md  # Community standards\n├── LICENSE             # Usage rights\n├── .github/\n│   ├── ISSUE_TEMPLATE/ # Issue templates\n│   ├── PULL_REQUEST_TEMPLATE.md\n│   └── workflows/      # CI/CD\n└── docs/               # Documentation\n```\n\n### Issue Management\n\n| Label | Purpose | Color |\n|-------|---------|-------|\n| bug | Something broken | red |\n| enhancement | New feature | blue |\n| good first issue | Beginner friendly | green |\n| help wanted | Need contributors | yellow |\n| documentation | Docs related | purple |\n\n### Issue Triage Workflow\n```\nNew Issue → Label → Prioritize → Assign → Track\n    ↓          ↓          ↓          ↓        ↓\n Template   Category   Severity   Owner    Milestone\n```\n\n## Open Source Community\n\n### Contribution Funnel\n```\nStar → Issue → Discussion → PR → Maintainer\n  ↓      ↓         ↓         ↓        ↓\nWatch  Report   Engage   Contribute  Lead\n```\n\n### Growing Contributors\n1. **Good first issues** - Curated beginner tasks\n2. **Clear contributing guide** - Lower barriers\n3. **Fast response times** - Keep momentum\n4. **Recognition** - Thank contributors publicly\n5. **Mentorship** - Help people level up\n\n## GitHub Discussions\n\n### Channel Structure\n```\nDiscussions\n├── Announcements    # Official news\n├── Q&A              # Support questi"
+    },
+    {
+      "path": "development-tools/plaited-development-skills-plaited-plaited-e807424e/SKILL.md",
+      "name": "plaited_development-skills",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Skill is for validating skill directories against a specification, which is a development tooling and quality assurance task related to software project structure.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "bcdb752efa77ad9b9034e2b4a95aeee38c611ee8aa0eb7320e729261e6dc8078",
+      "metadata_sha256": "a8ef4358bb0c601790f65c342ea8f555a549bf876ffc417dd420d6748a83d442",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "metadata"
+      },
+      "description": "Validate skill directories against AgentSkills spec",
+      "content_excerpt": "---\ndescription: Validate skill directories against AgentSkills spec\nallowed-tools: Bash, mcp__agent-skills-spec__*\n---\n\n# Validate Skills\n\nValidate skill directories against the AgentSkills specification.\n\n**Paths to validate:** $ARGUMENTS (default: `.claude/skills/`)\n\n## Instructions\n\n### Step 1: Run Validation\n\nExecute the development-skills CLI command:\n```bash\nbunx @plaited/development-skills validate-skill $ARGUMENTS\n```\n\nIf no arguments provided, defaults to `.claude/skills/`.\n\n### Step 2: Report Results\n\nShow the CLI output to the user. If there are errors, use the `agent-skills-spec` MCP server to get the latest specification and explain how to fix them.\n\n### Step 3: Query Spec (if needed)\n\nFor clarification on validation rules, query the `agent-skills-spec` MCP server for the current specification.\n"
+    },
+    {
+      "path": "agent-coordination/multi-agent-parallel-investigation/SKILL.md",
+      "name": "multi-agent-parallel-investigation",
+      "current_category": "agent-coordination",
+      "llm_category": "agent",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill explicitly describes decomposing complex questions into parallel investigations using multiple agents, synthesizing findings, and delivering phased implementation plans. This is a core agent coordination pattern.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "a04dcdb3b86936e9a61131b0f788dafabeea31da497b38bb4f727bcfc732a770",
+      "metadata_sha256": "8ab0084743a0a5b1e1d617b5e84a86587315dba94cd71f9aa546f690ad024d14",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Decompose complex questions into 4-6 parallel investigations with different perspectives, synthesize into phased decision framework. Use when facing architecture decisions with multiple unknowns in crypto/trading data platforms.",
+      "content_excerpt": "---\nname: multi-agent-parallel-investigation\ndescription: Decompose complex questions into 4-6 parallel investigations with different perspectives, synthesize into phased decision framework. Use when facing architecture decisions with multiple unknowns in crypto/trading data platforms.\n---\n\n# Multi-Agent Parallel Investigation\n\n## Overview\n\nThis skill provides a systematic approach to answering complex architecture questions by decomposing them into 4-6 parallel investigations, each with a specialized perspective. Each agent investigates independently, then findings are synthesized into a phased decision framework with concrete recommendations.\n\n**Core Pattern**: Spawn multiple Task tool agents in parallel → Each investigates specific dimension → Synthesize findings → Deliver phased implementation plan\n\n## When to Use This Skill\n\nUse this skill when you encounter:\n\n1. **Complex Architecture Decisions** with multiple unknowns requiring investigation from different angles (API capabilities, performance, documentation quality, feasibility)\n2. **Trade-off Analysis** where multiple solutions exist with competing priorities (complexity vs performance, cost vs developer UX)\n3. **Technology Evaluation** when assessing if a platform/tool/library meets requirements across multiple dimensions\n4. **Data Platform Questions** in crypto/trading domains with concerns about availability, correctness, observability, and maintainability\n5. **Implementation Planning** when you need phased rollout with clear decision gates based on empirical findings\n\n**Typical Question Patterns**:\n- \"How should we distribute our Parquet database to external users?\"\n- \"What's the best approach for querying remote data without downloads?\"\n- \"Should we build a CLI tool, improve documentation, or create an API?\"\n- \"How can we validate data quality across multiple sources?\"\n\n## Workflow\n\n### Step 1: Decompose Question into Investigation Dimensions\n\nIdentify 4-6 specialist perspectives needed to answer the question comprehensively:\n\n**Common Agent Roles** (select 4-6 based on question):\n- **API Capabilities Analyst** - Platform API evaluation, endpoint discovery\n- **Performance Analyst** - Benchmarking, "
+    },
+    {
+      "path": "project/resume/SKILL.md",
+      "name": "resume",
+      "current_category": "project",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill describes building a resume optimization platform with specific web development technologies (Next.js, TypeScript, Tailwind CSS, Firebase) and AI integration, which is a software development project.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "960a6698fd23b761bbe8474f2993ae68b7668d146a56a967f712bee248fb358c",
+      "metadata_sha256": "d4bc5c0de7b69713c02ccb0e3e92335b243ba76046d54140250befd32c300fc1",
+      "semantic_sources": {
+        "description": "body",
+        "name": "metadata"
+      },
+      "description": "Architected and developed OpenSkill Pro, a resume optimization platform leveraging AI to bridge the gap between candidate profiles and employer expectations. Key features include resume parsing, marke",
+      "content_excerpt": "---\nslug: openskill-pro\nshare: openskill-pro.webp\nresume:\n  category: Project\n  logo: openskill-pro.webp\n  website: https://openskill.pro\n  company: Personal Project\n  jobTitle: OpenSkill Pro\n  type: R&D\n  arrangement: Pet Project\n  location: Product\n  start: 2025-07-01\n  tech:\n    - Web Development\n    - HTML\n    - CSS\n    - TypeScript\n    - Next.js\n    - Tailwind CSS\n    - Firebase\n    - Netlify\n  summary:\n    Architected and developed OpenSkill Pro, a resume optimization platform leveraging AI to bridge the gap between candidate profiles and employer expectations. Key features include resume parsing, marketability scoring, personalized feedback, and AI-assisted persona tailoring to match specific job descriptions and company profiles.\n---\n\n# Description\n\nArchitected and developed OpenSkill Pro, a resume optimization platform leveraging AI to bridge the gap between candidate profiles and employer expectations. Key features include resume parsing, marketability scoring, personalized feedback, and AI-assisted persona tailoring to match specific job descriptions and company profiles.\n\n`tags: Next.js, Shadcn, TailwindCSS, TypeScript, tRPC, Netlify, Firebase Authentication, Firebase Firestore, Firebase Storage, Google Cloud Platform, npm, Gemini-Flash, Prompt Engineering`\n"
+    },
+    {
+      "path": "development-tools/mcp-tool-writer-sunalamye-naki-2/SKILL.md",
+      "name": "mcp-tool-writer",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill is for creating and modifying MCP tools for a specific project, which is a software development task involving coding, architecture, and tooling.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "46b058b90c2beae57dfc5e3c7445e89404e67a3aa52eed3b2f1a5ea781209f55",
+      "metadata_sha256": "21040ac6accb1c24834d73aa1a91465979205f56152c2cb68158e161c687295d",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Create, modify, and manage MCP tools for the Naki mahjong AI assistant. Use when adding new MCP tools, modifying existing tools, or fixing tool-related issues. This skill understands the Protocol-based MCPTool architecture.",
+      "content_excerpt": "---\nname: mcp-tool-writer\ndescription: Create, modify, and manage MCP tools for the Naki mahjong AI assistant. Use when adding new MCP tools, modifying existing tools, or fixing tool-related issues. This skill understands the Protocol-based MCPTool architecture.\nallowed-tools: Read, Glob, Grep, Write, Edit, Bash\n---\n\n# Naki MCP Tool Writer\n\nBase directory: {baseDir}\n\n<IMPORTANT>\n**MCP 調用規則**: 測試新建的 MCP 工具時，使用 `/naki-mcp-proxy` skill 調用。\n</IMPORTANT>\n\nThis skill helps create and modify MCP (Model Context Protocol) tools for the Naki project using the Protocol-based architecture.\n\n## Architecture Overview\n\nNaki uses a Protocol-based MCP architecture:\n\n```\ncommand/Services/MCP/\n├── MCPTool.swift          - Protocol 定義 + Schema 類型\n├── MCPContext.swift       - 執行上下文 (async/await 支持)\n├── MCPToolRegistry.swift  - 工具註冊表 (單例)\n├── MCPHandler.swift       - MCP 協議處理器\n└── Tools/\n    ├── SystemTools.swift  - 系統類工具 (get_status, get_help, get_logs, clear_logs)\n    ├── BotTools.swift     - Bot 控制工具 (bot_status, bot_trigger, bot_ops, bot_deep, bot_chi, bot_pon, bot_sync)\n    ├── GameTools.swift    - 遊戲狀態工具 (game_state, game_hand, game_ops, game_discard, game_action)\n    └── UITools.swift      - UI 操作工具 (execute_js, detect, explore, test_indicators, click, calibrate, ui_names_*)\n```\n\n## Current Registered Tools (47 total)\n\n| Category | Count | Examples |\n|----------|-------|----------|\n| System | 4 | `get_status`, `get_help`, `get_logs`, `clear_logs` |\n| Bot | 7 | `bot_status`, `bot_trigger`, `bot_ops`, `bot_deep`, `bot_chi`, `bot_pon`, `bot_sync` |\n| Game | 6 | `game_state`, `game_hand`, `game_ops`, `game_discard`, `game_action`, `game_emoji` |\n| Highlight | 6 | `highlight_tile`, `highlight_status`, `show_recommendations`, `hide_highlight` |\n| Emoji | 4 | `game_emoji`, `game_emoji_list`, `game_emoji_random` |\n| Lobby | 9 | `lobby_status`, `lobby_navigate`, `lobby_start_match`, `lobby_cancel_match` |\n| UI | 11 | `execute_js`, `detect`, `explore`, `click`, `calibrate`, `ui_names_*` |\n\nSee `/naki-mcp-proxy` for complete tool catalog.\n\n## How to Create a New MCP Tool\n\n### Step 1: Define the Tool Struct\n\nCreate a new struct implementing `MCPTool` protocol in the appropriate `Tools/*.s"
+    },
+    {
+      "path": "security-compliance/license-compliance-scanner/SKILL.md",
+      "name": "license-compliance-scanner",
+      "current_category": "security-compliance",
+      "llm_category": "security",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is about license compliance scanning, which falls under security and compliance. The description explicitly states it's part of 'Security Fundamentals' and covers authentication, input validation, secure coding practices, and basic vulnerability detection.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "22be842966f34e8458e58d03e526a03ee7138b8f07f565e3c7853110db203b8d",
+      "metadata_sha256": "2b65839a6e89622ddfb16ca4a6463cc3ccb698be1c14cde633f2634605f2c17b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Scan license compliance scanner operations. Auto-activating skill for Security Fundamentals.\nTriggers on: license compliance scanner, license compliance scanner\nPart of the Security Fundamentals skill category. Use when working with license compliance scanner functionality. Trigger with phrases like \"license compliance scanner\", \"license scanner\", \"license\".",
+      "content_excerpt": "---\nname: \"license-compliance-scanner\"\ndescription: |\n  Scan license compliance scanner operations. Auto-activating skill for Security Fundamentals.\n  Triggers on: license compliance scanner, license compliance scanner\n  Part of the Security Fundamentals skill category. Use when working with license compliance scanner functionality. Trigger with phrases like \"license compliance scanner\", \"license scanner\", \"license\".\nallowed-tools: \"Read, Write, Grep, Bash(npm:*)\"\nversion: 1.0.0\nlicense: MIT\nauthor: \"Jeremy Longshore <jeremy@intentsolutions.io>\"\n---\n\n# License Compliance Scanner\n\n## Overview\n\nThis skill provides automated assistance for license compliance scanner tasks within the Security Fundamentals domain.\n\n## When to Use\n\nThis skill activates automatically when you:\n- Mention \"license compliance scanner\" in your request\n- Ask about license compliance scanner patterns or best practices\n- Need help with essential security skills covering authentication, input validation, secure coding practices, and basic vulnerability detection.\n\n## Instructions\n\n1. Provides step-by-step guidance for license compliance scanner\n2. Follows industry best practices and patterns\n3. Generates production-ready code and configurations\n4. Validates outputs against common standards\n\n## Examples\n\n**Example: Basic Usage**\nRequest: \"Help me with license compliance scanner\"\nResult: Provides step-by-step guidance and generates appropriate configurations\n\n\n## Prerequisites\n\n- Relevant development environment configured\n- Access to necessary tools and services\n- Basic understanding of security fundamentals concepts\n\n\n## Output\n\n- Generated configurations and code\n- Best practice recommendations\n- Validation results\n\n\n## Error Handling\n\n| Error | Cause | Solution |\n|-------|-------|----------|\n| Configuration invalid | Missing required fields | Check documentation for required parameters |\n| Tool not found | Dependency not installed | Install required tools per prerequisites |\n| Permission denied | Insufficient access | Verify credentials and permissions |\n\n\n## Resources\n\n- Official documentation for related tools\n- Best practices guides\n- Community examples and tutorials\n\n## Related Skills\n\nP"
+    },
+    {
+      "path": "programming-languages/ownership-borrowing/SKILL.md",
+      "name": "ownership-borrowing",
+      "current_category": "programming-languages",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Skill is specifically about Rust's ownership, borrowing, and lifetime system - core programming language concepts for software development.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "06bd54e54209de33341cdf72f12901f658a893e7e1c8e66e9843b1fed7edc27e",
+      "metadata_sha256": "3972f4901d85db5a360da953bf5ae36ba9cf88db78907d27421a011805c5bfcc",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Master Rust's ownership, borrowing, and lifetime system",
+      "content_excerpt": "---\nname: ownership-borrowing\ndescription: Master Rust's ownership, borrowing, and lifetime system\nsasmp_version: \"1.3.0\"\nbonded_agent: rust-fundamentals-agent\nbond_type: PRIMARY_BOND\nversion: \"1.0.0\"\n---\n\n# Ownership & Borrowing Skill\n\nMaster Rust's revolutionary memory safety system without garbage collection.\n\n## Quick Start\n\n### The Three Rules of Ownership\n\n```rust\n// Rule 1: Each value has exactly ONE owner\nlet s1 = String::from(\"hello\");  // s1 owns this String\n\n// Rule 2: Only ONE owner at a time\nlet s2 = s1;  // Ownership MOVES to s2\n// println!(\"{}\", s1);  // ERROR: s1 no longer valid\n\n// Rule 3: Value is dropped when owner goes out of scope\n{\n    let s3 = String::from(\"temporary\");\n}  // s3 dropped here, memory freed\n```\n\n### Borrowing Basics\n\n```rust\nfn main() {\n    let s = String::from(\"hello\");\n\n    // Immutable borrow\n    let len = calculate_length(&s);\n    println!(\"{} has length {}\", s, len);\n\n    // Mutable borrow\n    let mut s = String::from(\"hello\");\n    change(&mut s);\n    println!(\"{}\", s);  // \"hello, world\"\n}\n\nfn calculate_length(s: &String) -> usize {\n    s.len()\n}\n\nfn change(s: &mut String) {\n    s.push_str(\", world\");\n}\n```\n\n### Lifetime Annotations\n\n```rust\n// Explicit lifetime annotation\nfn longest<'a>(x: &'a str, y: &'a str) -> &'a str {\n    if x.len() > y.len() { x } else { y }\n}\n\n// Struct with lifetime\nstruct Excerpt<'a> {\n    part: &'a str,\n}\n```\n\n## Common Patterns\n\n### Pattern 1: Clone When Needed\n\n```rust\nlet s1 = String::from(\"hello\");\nlet s2 = s1.clone();  // Deep copy\nprintln!(\"{} {}\", s1, s2);  // Both valid\n```\n\n### Pattern 2: Return Ownership\n\n```rust\nfn process(s: String) -> String {\n    // Do something with s\n    s  // Return ownership\n}\n```\n\n### Pattern 3: Borrow for Read-Only\n\n```rust\nfn analyze(data: &Vec<i32>) -> Summary {\n    // Only read, don't own\n    Summary::from(data)\n}\n```\n\n## Error Solutions\n\n### \"value borrowed after move\"\n\n```rust\n// Problem\nlet s = String::from(\"hello\");\nlet s2 = s;\nprintln!(\"{}\", s);  // ERROR\n\n// Solution 1: Clone\nlet s2 = s.clone();\n\n// Solution 2: Borrow\nlet s2 = &s;\n```\n\n### \"cannot borrow as mutable\"\n\n```rust\n// Problem\nlet s = String::from(\"hello\");\nchange(&mut s);  // ERROR: s i"
+    },
+    {
+      "path": "research-analysis/prove-majiayu000-claude-skill-registr-2/SKILL.md",
+      "name": "doc-research-improvements",
+      "current_category": "research-analysis",
+      "llm_category": "analysis",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill involves research-driven critique and enhancement of architecture or ideas docs, analyzing concepts, finding sources, and proposing improvements, which is an analytical research task.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "3e9b619d5d83ff66f59cab335ec17186953aadf5dbb76afd1fec3c05690512d2",
+      "metadata_sha256": "e0f526b5d33d2d88416ba4db003e1547c061acba73e5eb787bf0fa1a4bbea8d0",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Research-driven critique and enhancement of Amelia architecture or ideas docs. Use with GPT-5.2 when given a design/architecture doc to analyze concepts, find sources, and propose improvements plus OSS candidates.",
+      "content_excerpt": "---\nname: doc-research-improvements\ndescription: Research-driven critique and enhancement of Amelia architecture or ideas docs. Use with GPT-5.2 when given a design/architecture doc to analyze concepts, find sources, and propose improvements plus OSS candidates.\n---\n\n# Doc Research and Improvement (GPT-5.2)\n\nUse this skill to analyze a single doc (architecture or idea), research its referenced concepts,\nand propose improvements with external sources and implementation candidates.\n\n## Input Parameters\n\n| Parameter | Description | Required |\n|---|---|---|\n| `doc_path` | Path to the doc to analyze. | Required (unless `doc_text`) |\n| `doc_text` | Raw doc content if not reading from file. | Optional |\n| `focus_areas` | Comma list: architecture, data-model, orchestration, security, observability, testing, UX, scaling, cost. | Optional |\n| `depth` | `quick` (top 3 items) or `standard` (top 5-8 items). | Optional |\n| `constraints` | Explicit constraints to respect (ex: local-first, SQLite, no background jobs). | Optional |\n\n## Repository Context (Align To)\n\nThese are core assumptions from `docs/site/architecture/*` and `docs/site/ideas/*`:\n\n- Amelia is a local-first, agentic coding orchestrator with LangGraph, FastAPI, and SQLite.\n- Primary workflow: Architect -> Developer -> Reviewer with human approval gates.\n- Design principles: structured handoffs, verify before done, environment as truth.\n- Drivers and trackers are pluggable abstractions.\n- Ideas are exploratory; suggest improvements without assuming commitment.\n\nUse these as guardrails when proposing changes.\n\n## Required Workflow\n\n1. **Ingest and summarize the doc**\n   - Identify goals, scope, non-goals, and assumptions.\n   - Note dependencies on current architecture or roadmap phases.\n\n2. **Extract concepts, frameworks, and techniques**\n   - List all explicit or implied frameworks (ex: LangGraph, RAG, SOX/ICFR, BDD).\n   - Classify each as architecture, process, data, evaluation, or UI.\n\n3. **Research and validate**\n   - Use authoritative sources: specs, official docs, standards, reputable research.\n   - Capture at least 1 source per key concept. If none, label as hypothesis.\n   - Summarize evidence in 1-2 lines "
+    },
+    {
+      "path": "document-processing/pdf/SKILL.md",
+      "name": "pdf",
+      "current_category": "document-processing",
+      "llm_category": "documents",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Skill is a comprehensive PDF manipulation toolkit for processing, generating, and analyzing PDF documents, which aligns with the documents category.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "902419535460487bf8814a5565db78cc22991b06c14b549241983c6cac8838cd",
+      "metadata_sha256": "b343bb512153d4c87cea06c5707a1c3a509fc08f4ef4dfc33621b51621f98d88",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically process, generate, or analyze PDF documents at scale.",
+      "content_excerpt": "---\nname: pdf\ndescription: Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically process, generate, or analyze PDF documents at scale.\ncategory: document-processing\nlicense: Proprietary. LICENSE.txt has complete terms\n---\n\n# PDF Processing Guide\n\n## Overview\n\nThis guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see reference.md. If you need to fill out a PDF form, read forms.md and follow its instructions.\n\n## Quick Start\n\n```python\nfrom pypdf import PdfReader, PdfWriter\n\n# Read a PDF\nreader = PdfReader(\"document.pdf\")\nprint(f\"Pages: {len(reader.pages)}\")\n\n# Extract text\ntext = \"\"\nfor page in reader.pages:\n    text += page.extract_text()\n```\n\n## Python Libraries\n\n### pypdf - Basic Operations\n\n#### Merge PDFs\n```python\nfrom pypdf import PdfWriter, PdfReader\n\nwriter = PdfWriter()\nfor pdf_file in [\"doc1.pdf\", \"doc2.pdf\", \"doc3.pdf\"]:\n    reader = PdfReader(pdf_file)\n    for page in reader.pages:\n        writer.add_page(page)\n\nwith open(\"merged.pdf\", \"wb\") as output:\n    writer.write(output)\n```\n\n#### Split PDF\n```python\nreader = PdfReader(\"input.pdf\")\nfor i, page in enumerate(reader.pages):\n    writer = PdfWriter()\n    writer.add_page(page)\n    with open(f\"page_{i+1}.pdf\", \"wb\") as output:\n        writer.write(output)\n```\n\n#### Extract Metadata\n```python\nreader = PdfReader(\"document.pdf\")\nmeta = reader.metadata\nprint(f\"Title: {meta.title}\")\nprint(f\"Author: {meta.author}\")\nprint(f\"Subject: {meta.subject}\")\nprint(f\"Creator: {meta.creator}\")\n```\n\n#### Rotate Pages\n```python\nreader = PdfReader(\"input.pdf\")\nwriter = PdfWriter()\n\npage = reader.pages[0]\npage.rotate(90)  # Rotate 90 degrees clockwise\nwriter.add_page(page)\n\nwith open(\"rotated.pdf\", \"wb\") as output:\n    writer.write(output)\n```\n\n### pdfplumber - Text and Table Extraction\n\n#### Extract Text with Layout\n```python\nimport pdfplumber\n\nwith pdfplumber.open(\"document.pdf\") as pdf:\n    for page in pdf.pages:\n        text = page.extract_text()\n        print(tex"
+    },
+    {
+      "path": "foundation/moai-foundation-core-majiayu000-claude-skill-regist/SKILL.md",
+      "name": "moai-foundation-core",
+      "current_category": "foundation",
+      "llm_category": "orchestration",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "The skill describes 'MoAI-ADK's foundational principles' including 'delegation patterns', 'agent catalog', 'command reference', and 'execution rules for building AI-powered development workflows'. It emphasizes orchestration of agents and commands, fitting the 'orchestration' category.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "ba557f6796bb1005494c38e99568e3b8d58ac73724b4bd67b0a18238d018d0ff",
+      "metadata_sha256": "40277b5ce03f99fe8bde239bdb78f35469ac550c2a8cd30858e33ec503a84510",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "MoAI-ADK's foundational principles - TRUST 5, SPEC-First TDD, delegation patterns, token optimization, progressive disclosure, modular architecture, agent catalog, command reference, and execution rules for building AI-powered development workflows",
+      "content_excerpt": "---\nname: \"moai-foundation-core\"\ndescription: \"MoAI-ADK's foundational principles - TRUST 5, SPEC-First TDD, delegation patterns, token optimization, progressive disclosure, modular architecture, agent catalog, command reference, and execution rules for building AI-powered development workflows\"\nversion: 2.4.0\ncategory: \"foundation\"\nmodularized: true\nuser-invocable: false\ntags: ['foundation', 'core', 'orchestration', 'agents', 'commands', 'trust-5', 'spec-first-tdd']\nupdated: 2026-01-11\nstatus: \"active\"\nallowed-tools:\n  - Read\n  - Grep\n  - Glob\n  - mcp__context7__resolve-library-id\n  - mcp__context7__get-library-docs\n---\n\n# MoAI Foundation Core\n\nFoundational principles and architectural patterns that power MoAI-ADK's AI-driven development workflow.\n\nCore Philosophy: Quality-first, test-driven, modular, and efficient AI development through proven patterns and automated workflows.\n\n## Quick Reference\n\nWhat is MoAI Foundation Core?\n\nSix essential principles that ensure quality, efficiency, and scalability in AI-powered development:\n\n1. TRUST 5 Framework - Quality gate system (Test-first, Readable, Unified, Secured, Trackable)\n2. SPEC-First TDD - Specification-driven test-driven development workflow\n3. Delegation Patterns - Task orchestration via specialized agents (never direct execution)\n4. Token Optimization - 200K budget management and context efficiency\n5. Progressive Disclosure - Three-tier knowledge delivery (Quick, Implementation, Advanced)\n6. Modular System - File splitting and reference architecture for scalability\n\nQuick Access:\n\n- Quality standards in modules/trust-5-framework.md\n- Development workflow in modules/spec-first-tdd.md\n- Agent coordination in modules/delegation-patterns.md\n- Budget management in modules/token-optimization.md\n- Content structure in modules/progressive-disclosure.md\n- File organization in modules/modular-system.md\n- Agent catalog in modules/agents-reference.md\n- Command reference in modules/commands-reference.md\n- Security and constraints in modules/execution-rules.md\n\nUse Cases:\n\n- New agent creation with quality standards\n- New skill development with structural guidelines\n- Complex workflow orchestration\n- Token budget planni"
+    },
+    {
+      "path": "development-tools/tooling-thebeardedbearsas-claude-craft-25880dc5/SKILL.md",
+      "name": "tooling",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill is about Flutter tooling and commands, which falls under software development workflows and coding.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "5451609b09a2a8b643a696d3fc591393ced74f43fa9cbbdf0371ffb9645c0235",
+      "metadata_sha256": "a27efe0b72c79b02d53a38c10d2ad1d946b076a48ea22bcf39b5f680ed84326e",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Ferramentas Flutter - Ferramentas e Comandos. Use when working with tooling.",
+      "content_excerpt": "---\nname: tooling\ndescription: Ferramentas Flutter - Ferramentas e Comandos. Use when working with tooling.\n---\n\n# Ferramentas Flutter - Ferramentas e Comandos\n\nThis skill provides guidelines and best practices.\n\nSee @REFERENCE.md for detailed documentation.\n"
+    },
+    {
+      "path": "core/agent-ops-testing/SKILL.md",
+      "name": "agent-ops-testing",
+      "current_category": "core",
+      "llm_category": "testing",
+      "confidence": 0.92,
+      "status": "ok",
+      "reason": "The skill is explicitly about test strategy, execution, and coverage analysis. It covers test design, running test suites, and analyzing test results with specific commands for pytest, vitest/jest, and dotnet test.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "8825526338ca3a520c0513382ad2c257fe06c118688140f288f4baa482b269e4",
+      "metadata_sha256": "0b5674b81231b1af0a9d9159ef860f567ce8da27f8276d1f0ff004d85bc650c9",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Test strategy, execution, and coverage analysis. Use when designing tests, running test suites, or analyzing test results beyond baseline checks.",
+      "content_excerpt": "---\nname: agent-ops-testing\ndescription: \"Test strategy, execution, and coverage analysis. Use when designing tests, running test suites, or analyzing test results beyond baseline checks.\"\ncategory: core\ninvokes: [agent-ops-state, agent-ops-tasks, agent-ops-debugging]\ninvoked_by: [agent-ops-planning, agent-ops-implementation, agent-ops-critical-review]\nstate_files:\n  read: [constitution.md, baseline.md, focus.md, issues/*.md]\n  write: [focus.md, issues/*.md]\n---\n\n# Testing Workflow\n\n**Works with or without `aoc` CLI installed.** Issue tracking can be done via direct file editing.\n\n## Purpose\n\nProvide structured guidance for test design, execution, and analysis that goes beyond baseline capture. This skill covers test strategy during planning, incremental testing during implementation, and coverage analysis.\n\n## Test Commands (from constitution)\n\n```bash\n# Python (uv/pytest)\nuv run pytest                           # Run all tests\nuv run pytest tests/ -v                 # Verbose output\nuv run pytest tests/ -m \"not slow\"      # Skip slow tests\nuv run pytest tests/ --tb=short -q      # Quick summary\nuv run pytest --cov=src --cov-report=html  # Coverage report\n\n# TypeScript/Node (vitest/jest)\nnpm run test                            # Run all tests\nnpm run test -- --coverage              # With coverage\n\n# .NET (dotnet test)\ndotnet test                             # Run all tests\ndotnet test --collect:\"XPlat Code Coverage\"  # With coverage\n```\n\n## Issue Tracking (File-Based — Default)\n\n| Operation | How to Do It |\n|-----------|--------------|\n| Create test issue | Append to `.agent/issues/medium.md` with type `TEST` |\n| Create bug from failure | Append to `.agent/issues/high.md` with type `BUG` |\n| Log test results | Edit issue's `### Log` section in priority file |\n\n### Example: Post-Test Issue Creation (File-Based)\n\n1. Increment `.agent/issues/.counter`\n2. Append issue to appropriate priority file\n3. Add log entry with test run results\n\n## CLI Integration (when aoc is available)\n\nWhen `aoc` CLI is detected in `.agent/tools.json`, these commands provide convenience shortcuts:\n\n| Operation | Command |\n|-----------|---------|\n| Create test issue | `aoc issues create -"
+    },
+    {
+      "path": "applied/81-pipecat-panaversity-agentfactory/SKILL.md",
+      "name": "81-pipecat",
+      "current_category": "applied",
+      "llm_category": "ai-llm",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill is about building a Pipecat skill for voice AI agents, which involves AI/LLM integration and voice AI frameworks.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "dffb469b6f8de8848c362434c4c2ce748eca930dd74c21016e8f2cbc565a207e",
+      "metadata_sha256": "0a7dbbcdb293b6689afaa6f9691845e90e3d726698c952c99aec5615713e0984",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "metadata"
+      },
+      "description": "Create your Pipecat skill from official documentation, then learn to improve it throughout the chapter",
+      "content_excerpt": "---\nsidebar_position: 1\ntitle: \"Build Your Pipecat Skill\"\ndescription: \"Create your Pipecat skill from official documentation, then learn to improve it throughout the chapter\"\nkeywords: [pipecat, voice ai, frames, pipeline, skill-first, providers]\nchapter: 81\nlesson: 0\nduration_minutes: 30\n\nskills:\n  - name: \"Skill-First Learning\"\n    proficiency_level: \"B1\"\n    category: \"Applied\"\n    bloom_level: \"Apply\"\n    digcomp_area: \"3. Digital Content Creation\"\n    measurable_at_this_level: \"Student creates a working Pipecat skill using natural language\"\n\n  - name: \"Frame-Based Architecture\"\n    proficiency_level: \"A2\"\n    category: \"Conceptual\"\n    bloom_level: \"Understand\"\n    digcomp_area: \"1. Information and Data Literacy\"\n    measurable_at_this_level: \"Student articulates frames, processors, pipelines relationship\"\n\n  - name: \"Documentation-Driven Learning\"\n    proficiency_level: \"B1\"\n    category: \"Applied\"\n    bloom_level: \"Apply\"\n    digcomp_area: \"5. Problem Solving\"\n    measurable_at_this_level: \"Student builds skill from official docs, not memory\"\n\nlearning_objectives:\n  - objective: \"Build a Pipecat skill using natural conversation with Claude\"\n    proficiency_level: \"B1\"\n    bloom_level: \"Apply\"\n    assessment_method: \"Student has a working pipecat skill in .claude/skills/\"\n\n  - objective: \"Write a LEARNING-SPEC.md that defines what you want to learn about frame-based voice pipelines\"\n    proficiency_level: \"B1\"\n    bloom_level: \"Create\"\n    assessment_method: \"Student produces clear success criteria before building\"\n\n  - objective: \"Fetch and apply official Pipecat documentation via Context7\"\n    proficiency_level: \"B1\"\n    bloom_level: \"Apply\"\n    assessment_method: \"Skill references official docs, not hallucinated patterns\"\n\ncognitive_load:\n  new_concepts: 2\n  assessment: \"Two concepts: LEARNING-SPEC, skill creation. Appropriate for B1.\"\n\ndifferentiation:\n  extension_for_advanced: \"Add S2S integration and custom processor patterns during creation\"\n  remedial_for_struggling: \"Follow exact prompts provided, skip LEARNING-SPEC refinement\"\n---\n\n# Build Your Pipecat Skill\n\nBefore learning Pipecat—a frame-based voice AI framework with 40+ provider integrations"
+    },
+    {
+      "path": "development-tools/cargo-ecosystem/SKILL.md",
+      "name": "cargo-ecosystem",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 0.94,
+      "status": "ok",
+      "reason": "The skill is about mastering Cargo, Rust's build system and package manager, along with testing and development tools. It covers project management, build commands, testing patterns, and Cargo.toml configuration. This is a software development workflow skill for Rust programming.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "b1fca9a1bbc766d720462037f5c2f4b8c749e7400dc2e184b06964ef33859920",
+      "metadata_sha256": "12d7a2e9a59b309b3961826566292b906de0a8dda8e44e6dd6043943e5a9357f",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Master Cargo, testing, and Rust development tools",
+      "content_excerpt": "---\nname: cargo-ecosystem\ndescription: Master Cargo, testing, and Rust development tools\nsasmp_version: \"1.3.0\"\nbonded_agent: rust-tooling-agent\nbond_type: PRIMARY_BOND\nversion: \"1.0.0\"\n---\n\n# Cargo & Ecosystem Skill\n\nMaster Rust's build system, package manager, and development tools.\n\n## Quick Start\n\n### Essential Commands\n\n```bash\n# Project management\ncargo new my_project          # Create binary project\ncargo new my_lib --lib        # Create library project\ncargo init                    # Initialize in existing dir\n\n# Build & Run\ncargo build                   # Debug build\ncargo build --release         # Optimized build\ncargo run                     # Build and run\ncargo run --release           # Optimized run\n\n# Testing\ncargo test                    # Run all tests\ncargo test test_name          # Run specific test\ncargo test -- --nocapture     # Show output\n\n# Quality\ncargo fmt                     # Format code\ncargo clippy                  # Lint code\ncargo doc --open              # Generate docs\n```\n\n### Cargo.toml Configuration\n\n```toml\n[package]\nname = \"my-app\"\nversion = \"0.1.0\"\nedition = \"2021\"\nrust-version = \"1.75\"\nauthors = [\"You <you@example.com>\"]\ndescription = \"A sample application\"\nlicense = \"MIT\"\nrepository = \"https://github.com/you/my-app\"\n\n[dependencies]\ntokio = { version = \"1\", features = [\"full\"] }\nserde = { version = \"1.0\", features = [\"derive\"] }\nthiserror = \"1.0\"\n\n[dev-dependencies]\ncriterion = { version = \"0.5\", features = [\"html_reports\"] }\nproptest = \"1.0\"\n\n[profile.release]\nlto = true\ncodegen-units = 1\nopt-level = 3\n\n[[bin]]\nname = \"my-app\"\npath = \"src/main.rs\"\n\n[[bench]]\nname = \"my_benchmark\"\nharness = false\n```\n\n## Testing\n\n### Unit Tests\n\n```rust\npub fn add(a: i32, b: i32) -> i32 {\n    a + b\n}\n\n#[cfg(test)]\nmod tests {\n    use super::*;\n\n    #[test]\n    fn test_add() {\n        assert_eq!(add(2, 2), 4);\n    }\n\n    #[test]\n    #[should_panic(expected = \"overflow\")]\n    fn test_panic() {\n        // Expected to panic\n    }\n\n    #[test]\n    #[ignore]\n    fn slow_test() {\n        // Run with: cargo test -- --ignored\n    }\n}\n```\n\n### Integration Tests\n\n```rust\n// tests/integration_test.rs\nuse my_crate::public_function;\n\n#[test]\nfn test_pub"
+    },
+    {
+      "path": "development-tools/raw-tool-creator-mpuig-raw/SKILL.md",
+      "name": "raw-tool-creator",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill creates reusable tools for workflows, focusing on extracting functionality and building new capabilities. This is a software development task related to tooling and code reuse.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "d633879196db910bb014d1f9b37d6b765fa977e4d993e2628611541d56d33670",
+      "metadata_sha256": "a6ecc5afeb484f0a4419289081abdf023d39646babd6ef1c25ab3bdd633e4440",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Create reusable RAW tools that workflows can import. Use when the user asks to create a tool, extract reusable functionality, or build a new capability for workflows.",
+      "content_excerpt": "---\nname: raw-tool-creator\ndescription: Create reusable RAW tools that workflows can import. Use when the user asks to create a tool, extract reusable functionality, or build a new capability for workflows.\n---\n\n# RAW Tool Creator Skill\n\nCreate reusable RAW tools for workflows.\n\n## When to Use This Skill\n\nUse this skill when:\n- A workflow needs functionality that should be reusable\n- The user asks to create a tool for a specific task\n- You identify repeated logic that should be extracted\n\n## Key Directives\n\n1. **ALWAYS search existing tools first** - Run `raw search \"<capability>\"` (checks local and remote registry)\n2. **PREFER installation** - If a remote tool exists, use `raw install <url>` instead of creating a new one\n3. **ALWAYS use `raw create --tool`** to scaffold - do not manually create directories\n4. **ALWAYS implement `tool.py`** with the actual logic - scaffolds without code are useless\n5. **ALWAYS write tests** in `test.py` - untested tools are unreliable\n6. **Single responsibility** - One tool does one thing well\n7. **Use underscores in names** - Tool names become Python modules (`web_scraper`, not `web-scraper`)\n\n## Prerequisites Checklist\n\nBefore creating a tool:\n- [ ] RAW is initialized (`.raw/` directory exists)\n- [ ] Searched `raw search` and found NO suitable local or remote tool\n- [ ] Clear understanding of inputs and outputs\n\n## Requirements Validation (Ask Before Building)\n\n**Before implementing, ask clarifying questions when:**\n\n| Ambiguity | Example Question |\n|-----------|------------------|\n| Input format unclear | \"Should the function accept a file path or file contents?\" |\n| Output structure unspecified | \"Should this return a dict, list, or a custom object?\" |\n| Error handling unclear | \"Should errors raise exceptions or return error objects?\" |\n| API/provider choice | \"Should I use requests or httpx for HTTP calls?\" |\n| Scope ambiguous | \"Should this tool also handle pagination, or just single requests?\" |\n\nIf only one reasonable approach exists, proceed without asking.\n\n## Tool Creation Process\n\n### Step 1: Search Existing Tools\n\n```bash\nraw search \"stock data\"           # Semantic search (PREFERRED)\nraw search \"fetch prices\"     "
+    }
+  ],
+  "notes": [
+    "Review sample rows against SKILL.md excerpts before applying a migration plan.",
+    "Sampling is deterministic for a fixed seed and classification input."
+  ]
+}

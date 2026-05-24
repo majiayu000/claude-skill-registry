@@ -1,0 +1,18 @@
+{
+  "name": "ac-parallel-coordinator",
+  "repo": "adaptationio/Skrillz",
+  "path": "skills/ac-parallel-coordinator/SKILL.md",
+  "source": "github.com/adaptationio/Skrillz",
+  "downloaded_at": "2026-01-22T03:07:13.025552Z",
+  "dir_name": "ac-parallel-coordinator",
+  "category": "orchestration",
+  "github_path": ".claude/skills/ac-parallel-coordinator",
+  "github_branch": "main",
+  "author": "adaptationio",
+  "source_url": "https://github.com/adaptationio/Skrillz/blob/main/.claude/skills/ac-parallel-coordinator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adaptationio/Skrillz/blob/main/.claude/skills/ac-parallel-coordinator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

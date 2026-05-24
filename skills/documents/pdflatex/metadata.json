@@ -1,0 +1,17 @@
+{
+  "name": "pdflatex",
+  "repo": "HelixDevelopment/HelixAgent",
+  "path": "skills/openhands/pdflatex/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/HelixDevelopment/HelixAgent",
+  "dir_name": "pdflatex",
+  "downloaded_at": "2026-03-22T05:27:38.526178Z",
+  "author": "HelixDevelopment",
+  "source_url": "https://github.com/HelixDevelopment/HelixAgent/blob/main/skills/openhands/pdflatex/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HelixDevelopment/HelixAgent/blob/main/skills/openhands/pdflatex/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

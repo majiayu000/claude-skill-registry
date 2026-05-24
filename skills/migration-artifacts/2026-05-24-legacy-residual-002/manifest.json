@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-05-24-legacy-residual-002",
+  "generated_at": "2026-05-24T09:15:28.686197+00:00",
+  "policy": {
+    "operation": "stable-key exact duplicate cleanup",
+    "require_skill_content_equal": true,
+    "require_metadata_identity_equal": true,
+    "apply_mode": "apply"
+  },
+  "artifacts": {
+    "residual_report_full": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-legacy-residual-002/migration-artifacts/2026-05-24-legacy-residual-002/residual-report-full.json",
+    "duplicate_cleanup_plan": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-legacy-residual-002/migration-artifacts/2026-05-24-legacy-residual-002/duplicate-cleanup-plan.json",
+    "duplicate_cleanup_result": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-legacy-residual-002/migration-artifacts/2026-05-24-legacy-residual-002/duplicate-cleanup-result.json",
+    "residual_report_after_cleanup": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-legacy-residual-002/migration-artifacts/2026-05-24-legacy-residual-002/residual-report-after-cleanup.json"
+  },
+  "summary": {
+    "initial_primary_reason_counts": {
+      "classification status is not ok": 17,
+      "source directory missing": 8046,
+      "target category already contains a skill with the same stable key": 110
+    },
+    "conflict_detail_count": 110,
+    "planned_exact_duplicate_removals": 64,
+    "skipped_conflict_reasons": {
+      "SKILL content differs": 34,
+      "metadata identity differs": 12
+    },
+    "applied_removals": 64,
+    "post_cleanup_primary_reason_counts": {
+      "classification status is not ok": 17,
+      "source directory missing": 8110,
+      "target category already contains a skill with the same stable key": 46
+    },
+    "post_batch_canonical_gate_errors": 184,
+    "post_batch_legacy_skill_count": 92
+  },
+  "notes": [
+    "Only exact duplicate legacy sources were removed.",
+    "Conflicts with different SKILL content or metadata identity are retained for semantic review."
+  ]
+}

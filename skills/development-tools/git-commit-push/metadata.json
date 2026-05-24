@@ -1,9 +1,0 @@
-{
-  "name": "git-commit-push",
-  "repo": "msalganik/torchtune_config_writer",
-  "path": ".claude/skills/git-commit-push/SKILL.md",
-  "source": "github.com/msalganik/torchtune_config_writer",
-  "downloaded_at": "2026-02-02T03:48:50.132096Z",
-  "dir_name": "git-commit-push",
-  "category": "development-tools"
-}

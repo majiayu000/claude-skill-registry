@@ -1,0 +1,20 @@
+{
+  "name": "haskell-pro",
+  "description": "",
+  "repo": "guilhermedemorais-dev/context-engineering-factory",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/guilhermedemorais-dev/context-engineering-factory",
+  "github_path": "library/skills/haskell-pro",
+  "github_branch": "main",
+  "dir_name": "haskell-pro-guilhermedemorais-de-context-engineering",
+  "downloaded_at": "2026-02-05T05:36:35.765867Z",
+  "author": "guilhermedemorais-dev",
+  "source_url": "https://github.com/guilhermedemorais-dev/context-engineering-factory/blob/main/library/skills/haskell-pro/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/guilhermedemorais-dev/context-engineering-factory/blob/main/library/skills/haskell-pro/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

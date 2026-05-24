@@ -1,0 +1,16 @@
+{
+  "name": "meta",
+  "repo": "CreativeEntelechy/trading-agent",
+  "path": ".agent/skills/meta/swarm-optimization-skill.md",
+  "source": "github.com/CreativeEntelechy/trading-agent",
+  "downloaded_at": "2026-01-20T03:26:05.267197Z",
+  "dir_name": "meta-creativeentelechy-trading-agent",
+  "category": "skills",
+  "author": "CreativeEntelechy",
+  "source_url": "https://github.com/CreativeEntelechy/trading-agent/blob/main/.agent/skills/meta/swarm-optimization-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CreativeEntelechy/trading-agent/blob/main/.agent/skills/meta/swarm-optimization-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

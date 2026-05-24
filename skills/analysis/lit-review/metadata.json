@@ -1,0 +1,18 @@
+{
+  "name": "lit-review",
+  "repo": "nealcaren/sociology-analysis-agents",
+  "path": "plugins/lit-review/skills/lit-review/SKILL.md",
+  "source": "github.com/nealcaren/sociology-analysis-agents",
+  "downloaded_at": "2026-01-22T04:00:27.138145Z",
+  "dir_name": "lit-review",
+  "category": "analysis",
+  "github_path": "plugins/lit-review/skills/lit-review",
+  "github_branch": "main",
+  "author": "nealcaren",
+  "source_url": "https://github.com/nealcaren/sociology-analysis-agents/blob/main/plugins/lit-review/skills/lit-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nealcaren/sociology-analysis-agents/blob/main/plugins/lit-review/skills/lit-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

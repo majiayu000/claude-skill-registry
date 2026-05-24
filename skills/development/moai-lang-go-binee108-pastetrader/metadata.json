@@ -1,0 +1,16 @@
+{
+  "name": "moai-lang-go",
+  "repo": "binee108/PasteTrader",
+  "path": ".claude/skills/moai-lang-go/SKILL.md",
+  "category": "development",
+  "source": "github.com/binee108/PasteTrader",
+  "dir_name": "moai-lang-go-binee108-pastetrader",
+  "downloaded_at": "2026-02-22T06:32:22.631075Z",
+  "author": "binee108",
+  "source_url": "https://github.com/binee108/PasteTrader/blob/main/.claude/skills/moai-lang-go/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/binee108/PasteTrader/blob/main/.claude/skills/moai-lang-go/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

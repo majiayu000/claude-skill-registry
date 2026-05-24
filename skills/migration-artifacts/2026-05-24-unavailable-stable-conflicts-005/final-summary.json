@@ -1,0 +1,49 @@
+{
+  "batch": "2026-05-24-unavailable-stable-conflicts-005",
+  "issue": "https://github.com/majiayu000/claude-skill-registry-data/issues/33",
+  "scope": "Resolve the 12 stable-key conflicts whose candidate upstream URLs were unavailable after PR #32.",
+  "input_conflicts": 12,
+  "applied_count": 12,
+  "decisions": {
+    "keep_target_remove_source": 3,
+    "replace_target_with_source_remove_source": 7,
+    "move_source_as_distinct_and_keep_target": 2
+  },
+  "mimo_parseable_decisions": 1,
+  "local_semantic_rule_decisions": 11,
+  "residual_existing_source_count_after": 23,
+  "blocked_existing_key_count_after": 0,
+  "canonical_gate_errors_after": 46,
+  "remaining_primary_reasons": {
+    "classification status is not ok": 22,
+    "source directory missing": 69,
+    "target category other requires --allow-target-other": 1
+  },
+  "remaining_existing_source_categories": {
+    "agent-coordination": 1,
+    "artifact-generation": 1,
+    "development-tools": 4,
+    "github-integration": 4,
+    "programming-languages": 5,
+    "project": 1,
+    "research-analysis": 2,
+    "security-compliance": 1,
+    "string": 1,
+    "technical-integration": 1,
+    "template": 1,
+    "test": 1
+  },
+  "verification": [
+    "upstream-search.json: searched current GitHub trees; no exact source/target matches recovered",
+    "check_metadata_compliance.py on 14 changed/added metadata files: 0 errors, 0 warnings",
+    "check_case_conflicts.py: no case conflicts found",
+    "git diff --check: passed",
+    "check_canonical_categories.py --limit 20: expected failure with 46 legacy-category errors remaining"
+  ],
+  "policy_notes": [
+    "No blind deletion from stable-key alone.",
+    "Same-purpose conflicts kept the more complete local copy.",
+    "Distinct-purpose/path conflicts were preserved as separate canonical skills.",
+    "Remaining blockers are metadata-compliance and taxonomy/other governance, not stable-key content conflicts."
+  ]
+}

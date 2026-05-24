@@ -1,0 +1,18 @@
+{
+  "name": "pdf2audio-parallel",
+  "repo": "aicoder2048/story-writer",
+  "path": ".claude/skills/pdf2audio-parallel/SKILL.md",
+  "source": "github.com/aicoder2048/story-writer",
+  "downloaded_at": "2026-01-20T00:58:25.463701Z",
+  "dir_name": "pdf2audio-parallel",
+  "category": "documents",
+  "github_path": ".claude/skills/pdf2audio-parallel",
+  "github_branch": "main",
+  "author": "aicoder2048",
+  "source_url": "https://github.com/aicoder2048/story-writer/blob/main/.claude/skills/pdf2audio-parallel/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aicoder2048/story-writer/blob/main/.claude/skills/pdf2audio-parallel/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

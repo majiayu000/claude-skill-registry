@@ -1,0 +1,17 @@
+{
+  "name": "agent-quorum-manager",
+  "repo": "Finimo-Solutions/research",
+  "path": "mcp-agent/claude-flow/.agents/skills/agent-quorum-manager/SKILL.md",
+  "github_branch": "main",
+  "category": "orchestration",
+  "source": "github.com/Finimo-Solutions/research",
+  "dir_name": "agent-quorum-manager-finimo-solutions-research",
+  "downloaded_at": "2026-03-01T05:17:36.183724Z",
+  "author": "Finimo-Solutions",
+  "source_url": "https://github.com/Finimo-Solutions/research/blob/main/mcp-agent/claude-flow/.agents/skills/agent-quorum-manager/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Finimo-Solutions/research/blob/main/mcp-agent/claude-flow/.agents/skills/agent-quorum-manager/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

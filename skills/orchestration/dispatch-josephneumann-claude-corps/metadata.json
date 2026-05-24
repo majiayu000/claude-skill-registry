@@ -1,0 +1,17 @@
+{
+  "name": "dispatch",
+  "repo": "josephneumann/claude-corps",
+  "path": "skills/dispatch/SKILL.md",
+  "github_branch": "main",
+  "category": "orchestration",
+  "source": "github.com/josephneumann/claude-corps",
+  "dir_name": "dispatch-josephneumann-claude-corps",
+  "downloaded_at": "2026-03-19T01:31:36.063914Z",
+  "author": "josephneumann",
+  "source_url": "https://github.com/josephneumann/claude-corps/blob/main/skills/dispatch/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/josephneumann/claude-corps/blob/main/skills/dispatch/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

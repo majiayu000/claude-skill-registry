@@ -1,0 +1,16 @@
+{
+  "name": "mcp-coordination",
+  "repo": "metasaver/metasaver-marketplace",
+  "path": "zzzold/skills/cross-cutting/mcp-coordination/SKILL.md",
+  "source": "github.com/metasaver/metasaver-marketplace",
+  "downloaded_at": "2026-01-17T02:44:43.930032Z",
+  "dir_name": "mcp-coordination",
+  "category": "orchestration",
+  "author": "metasaver",
+  "source_url": "https://github.com/metasaver/metasaver-marketplace/blob/main/zzzold/skills/cross-cutting/mcp-coordination/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/metasaver/metasaver-marketplace/blob/main/zzzold/skills/cross-cutting/mcp-coordination/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

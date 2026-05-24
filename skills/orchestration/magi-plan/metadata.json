@@ -1,0 +1,17 @@
+{
+  "name": "magi-plan",
+  "repo": "weiting-tw/MAGI-System",
+  "path": "skills/magi-plan/SKILL.md",
+  "github_branch": "main",
+  "category": "orchestration",
+  "source": "github.com/weiting-tw/MAGI-System",
+  "dir_name": "magi-plan",
+  "downloaded_at": "2026-03-18T01:42:11.854067Z",
+  "author": "weiting-tw",
+  "source_url": "https://github.com/weiting-tw/MAGI-System/blob/main/skills/magi-plan/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/weiting-tw/MAGI-System/blob/main/skills/magi-plan/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

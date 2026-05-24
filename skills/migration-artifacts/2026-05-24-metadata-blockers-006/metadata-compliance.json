@@ -1,0 +1,33 @@
+{
+  "scanned": 5,
+  "missing_metadata": 0,
+  "errors": 0,
+  "warnings": 0,
+  "results": [
+    {
+      "path": "analysis/skills-mitkox-fteplusai/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/claudekit-claude-code/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/resume-cbillowes-curious-programmer-t/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/compliance-check-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "testing/lindquist-chrome-devtools/metadata.json",
+      "errors": [],
+      "warnings": []
+    }
+  ]
+}

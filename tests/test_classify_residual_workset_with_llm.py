@@ -37,6 +37,9 @@ def _work_item(path: str, *, workset: str = "classification_gap") -> dict:
         "current_category": "other",
         "metadata": {"repo": "owner/repo", "path": ".claude/skills/test/SKILL.md"},
         "previous_classification": {},
+        "source_sha256": f"skill-{path}",
+        "metadata_sha256": f"metadata-{path}",
+        "semantic_text_sha256": f"semantic-{path}",
         "content_excerpt": "Use this skill for coding workflows and unit tests.",
     }
 
@@ -99,6 +102,9 @@ def test_batch_classification_accepts_json_array_and_writes_apply_rows(tmp_path)
     assert rows[0]["llm_category"] == "development"
     assert rows[0]["status"] == "ok"
     assert rows[0]["workset"] == "classification_gap"
+    assert rows[0]["source_sha256"] == "skill-other/dev"
+    assert rows[0]["metadata_sha256"] == "metadata-other/dev"
+    assert rows[0]["semantic_text_sha256"] == "semantic-other/dev"
 
 
 def test_batch_classification_accepts_fenced_json_array(tmp_path):
@@ -111,7 +117,7 @@ def test_batch_classification_accepts_fenced_json_array(tmp_path):
 [
   {
     "id": "0",
-    "category": "research-analysis",
+    "category": "analysis",
     "confidence": 0.92,
     "reason": "research workflow",
     "evidence": ["analysis"]
@@ -133,7 +139,7 @@ def test_batch_classification_accepts_fenced_json_array(tmp_path):
     )
 
     assert report["summary"]["status_counts"] == {"ok": 1}
-    assert report["rows"][0]["llm_category"] == "research-analysis"
+    assert report["rows"][0]["llm_category"] == "analysis"
 
 
 def test_resume_uses_checkpoint_without_calling_client(tmp_path):

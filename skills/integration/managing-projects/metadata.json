@@ -1,0 +1,16 @@
+{
+  "name": "managing-projects",
+  "repo": "C0ntr0lledCha0s/claude-code-plugin-automations",
+  "path": "github-workflows/skills/managing-projects/SKILL.md",
+  "source": "github.com/C0ntr0lledCha0s/claude-code-plugin-automations",
+  "downloaded_at": "2026-01-27T03:44:21.090891Z",
+  "dir_name": "managing-projects",
+  "category": "integration",
+  "author": "C0ntr0lledCha0s",
+  "source_url": "https://github.com/C0ntr0lledCha0s/claude-code-plugin-automations/blob/main/github-workflows/skills/managing-projects/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 C0ntr0lledCha0s",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "dive",
+  "repo": "NeverSight/skills_feed",
+  "path": "data/skills-md/lidessen/skills/dive/SKILL.md",
+  "category": "analysis",
+  "source": "github.com/NeverSight/skills_feed",
+  "dir_name": "dive",
+  "downloaded_at": "2026-02-22T05:27:30.226022Z",
+  "author": "NeverSight",
+  "source_url": "https://github.com/NeverSight/skills_feed/blob/main/data/skills-md/lidessen/skills/dive/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/NeverSight/skills_feed/blob/main/data/skills-md/lidessen/skills/dive/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

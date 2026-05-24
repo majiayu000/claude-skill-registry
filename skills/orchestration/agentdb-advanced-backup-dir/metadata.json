@@ -1,0 +1,16 @@
+{
+  "name": "agentdb-advanced.backup_dir",
+  "repo": "zellycloud/zyflow",
+  "path": ".claude/skills/agentdb-advanced.backup_dir/SKILL.md",
+  "source": "github.com/zellycloud/zyflow",
+  "downloaded_at": "2026-02-01T02:29:25.851466Z",
+  "dir_name": "agentdb-advanced-backup-dir",
+  "category": "orchestration",
+  "author": "zellycloud",
+  "source_url": "https://github.com/zellycloud/zyflow/blob/main/.claude/skills/agentdb-advanced.backup_dir/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zellycloud/zyflow/blob/main/.claude/skills/agentdb-advanced.backup_dir/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

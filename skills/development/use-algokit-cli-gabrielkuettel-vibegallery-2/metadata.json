@@ -1,0 +1,18 @@
+{
+  "name": "use-algokit-cli",
+  "description": "AlgoKit CLI commands for building, testing, and deploying Algorand applications. Use when building or compiling smart contracts, running test suites, deploying to localnet, managing local Algorand net",
+  "repo": "gabrielkuettel/vibegallery",
+  "path": ".claude/skills/use-algokit-cli",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gabrielkuettel/vibegallery",
+  "dir_name": "use-algokit-cli-gabrielkuettel-vibegallery-2",
+  "author": "gabrielkuettel",
+  "source_url": "https://github.com/gabrielkuettel/vibegallery/blob/main/.claude/skills/use-algokit-cli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gabrielkuettel/vibegallery/blob/main/.claude/skills/use-algokit-cli/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

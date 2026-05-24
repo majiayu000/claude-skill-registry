@@ -1,0 +1,16 @@
+{
+  "name": "creating-pds-issues",
+  "repo": "NASA-PDS/pds-claude-skills",
+  "path": "creating-pds-issues/SKILL.md",
+  "source": "github.com/NASA-PDS/pds-claude-skills",
+  "downloaded_at": "2026-01-29T05:43:55.597872Z",
+  "dir_name": "creating-pds-issues-nasa-pds-pds-claude-skills",
+  "category": "integration",
+  "author": "NASA-PDS",
+  "source_url": "https://github.com/NASA-PDS/pds-claude-skills/blob/main/creating-pds-issues/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright (c) 2022 California Institute of Technology (\"Caltech\").",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "imsg",
+  "repo": "yoyo99/openclaw",
+  "path": "skills/imsg/SKILL.md",
+  "source": "github.com/yoyo99/openclaw",
+  "downloaded_at": "2026-02-02T05:00:32.348561Z",
+  "dir_name": "imsg-yoyo99-openclaw",
+  "category": "communication",
+  "author": "yoyo99",
+  "source_url": "https://github.com/yoyo99/openclaw/blob/main/skills/imsg/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yoyo99/openclaw/blob/main/skills/imsg/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

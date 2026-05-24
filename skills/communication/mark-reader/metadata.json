@@ -1,0 +1,18 @@
+{
+  "name": "mark-reader",
+  "repo": "shiiman/claude-code-plugins",
+  "path": "plugins/shiiman-slack/skills/mark-reader/SKILL.md",
+  "source": "github.com/shiiman/claude-code-plugins",
+  "downloaded_at": "2026-01-17T03:40:05.371247Z",
+  "dir_name": "mark-reader",
+  "category": "communication",
+  "github_path": "plugins/shiiman-slack/skills/mark-reader",
+  "github_branch": "main",
+  "author": "shiiman",
+  "source_url": "https://github.com/shiiman/claude-code-plugins/blob/main/plugins/shiiman-slack/skills/mark-reader/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shiiman/claude-code-plugins/blob/main/plugins/shiiman-slack/skills/mark-reader/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

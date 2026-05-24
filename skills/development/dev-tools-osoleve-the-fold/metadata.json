@@ -1,0 +1,16 @@
+{
+  "name": "dev-tools",
+  "repo": "osoleve/the-fold",
+  "path": ".claude/skills/dev-tools/SKILL.md",
+  "source": "github.com/osoleve/the-fold",
+  "downloaded_at": "2026-02-02T01:08:38.483051Z",
+  "dir_name": "dev-tools-osoleve-the-fold",
+  "category": "development",
+  "author": "osoleve",
+  "source_url": "https://github.com/osoleve/the-fold/blob/main/.claude/skills/dev-tools/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/osoleve/the-fold/blob/main/.claude/skills/dev-tools/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

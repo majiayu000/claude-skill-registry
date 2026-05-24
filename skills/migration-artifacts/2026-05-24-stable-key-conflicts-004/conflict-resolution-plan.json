@@ -1,0 +1,1913 @@
+{
+  "summary": {
+    "manual_review": 12,
+    "refresh_target_from_upstream_remove_source": 8,
+    "move_source_as_distinct_and_keep_target": 5,
+    "replace_target_with_source_remove_source": 2
+  },
+  "items": [
+    {
+      "index": 1,
+      "source_path": "development-tools/biome-js",
+      "target_path": "development/biome-js",
+      "confidence": 0.92,
+      "key": "PaulRBerg/dot-claude:skills/biome-js",
+      "source_skill_sha256": "74d97a91853e9345b49b43d5b9aea5c1bb0fabfde1990bf629db2f901b3be8d5",
+      "target_skill_sha256": "09d3568964db0deb5edeb14c9757498b9f2296059db746ff93836c27422407a0",
+      "source_bytes": 6164,
+      "target_bytes": 6791,
+      "source_metadata": {
+        "name": "biome-js",
+        "category": "development-tools",
+        "repo": "PaulRBerg/dot-claude",
+        "path": "skills/biome-js/SKILL.md",
+        "github_path": "skills/biome-js",
+        "github_branch": "main",
+        "source_url": null,
+        "license": null,
+        "distribution": null,
+        "license_class": null
+      },
+      "target_metadata": {
+        "name": "biome-js",
+        "category": "development",
+        "repo": "PaulRBerg/dot-claude",
+        "path": null,
+        "github_path": "skills/biome-js",
+        "github_branch": "main",
+        "source_url": null,
+        "license": null,
+        "distribution": null,
+        "license_class": null
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "path",
+          "url": "https://raw.githubusercontent.com/PaulRBerg/dot-claude/main/skills/biome-js/SKILL.md",
+          "status": "http_404"
+        },
+        {
+          "owner": "target",
+          "kind": "github_path",
+          "url": "https://raw.githubusercontent.com/PaulRBerg/dot-claude/main/skills/biome-js/SKILL.md",
+          "status": "http_404"
+        }
+      ],
+      "source_matches": [],
+      "target_matches": [],
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable",
+      "selected_urls": {}
+    },
+    {
+      "index": 2,
+      "source_path": "development-tools/claude-code-plugin-development",
+      "target_path": "development/claude-code-plugin-development-dwmkerr-claude-toolkit-2",
+      "confidence": 0.96,
+      "key": "dwmkerr/claude-toolkit:plugins/toolkit/skills/claude-code-plugin-development",
+      "source_skill_sha256": "1367ce7cdf7cabc865f8add2adfb5e8e2a2610be110bd8ee98a3dc570a4e5765",
+      "target_skill_sha256": "0f20dc51231ea2017e184e7f197d207cfa0ec3f70f314f88e5973115e4481afa",
+      "source_bytes": 4650,
+      "target_bytes": 5895,
+      "source_metadata": {
+        "name": "claude-code-plugin-development",
+        "category": "development-tools",
+        "repo": "dwmkerr/claude-toolkit",
+        "path": "plugins/toolkit/skills/claude-code-plugin-development/SKILL.md",
+        "github_path": "plugins/toolkit/skills/claude-code-plugin-development",
+        "github_branch": "main",
+        "source_url": "https://github.com/dwmkerr/claude-toolkit/blob/main/plugins/toolkit/skills/claude-code-plugin-development/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "target_metadata": {
+        "name": "claude-code-plugin-development",
+        "category": "development",
+        "repo": "dwmkerr/claude-toolkit",
+        "path": "plugins/toolkit/skills/claude-code-plugin-development",
+        "github_path": null,
+        "github_branch": null,
+        "source_url": "https://github.com/dwmkerr/claude-toolkit/blob/main/plugins/toolkit/skills/claude-code-plugin-development/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/dwmkerr/claude-toolkit/main/plugins/toolkit/skills/claude-code-plugin-development/SKILL.md",
+          "status": "ok",
+          "sha256": "23f7bc01c2a4823d0a4a86b752794ad04122603f42a678ebb3084862ac64ff04",
+          "bytes": 5921,
+          "matches_source": false,
+          "matches_target": false,
+          "norm_matches_source": false,
+          "norm_matches_target": false
+        },
+        {
+          "owner": "target",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/dwmkerr/claude-toolkit/main/plugins/toolkit/skills/claude-code-plugin-development/SKILL.md",
+          "status": "ok",
+          "sha256": "23f7bc01c2a4823d0a4a86b752794ad04122603f42a678ebb3084862ac64ff04",
+          "bytes": 5921,
+          "matches_source": false,
+          "matches_target": false,
+          "norm_matches_source": false,
+          "norm_matches_target": false
+        }
+      ],
+      "source_matches": [],
+      "target_matches": [],
+      "decision": "refresh_target_from_upstream_remove_source",
+      "reason": "reachable upstream selected for canonical target; local copies are stale",
+      "selected_urls": {
+        "target_url": "https://raw.githubusercontent.com/dwmkerr/claude-toolkit/main/plugins/toolkit/skills/claude-code-plugin-development/SKILL.md"
+      }
+    },
+    {
+      "index": 3,
+      "source_path": "development-tools/code-search-1ambda-dataops-platform",
+      "target_path": "development/code-search",
+      "confidence": 0.95,
+      "key": "1ambda/dataops-platform:.claude/skills/code-search",
+      "source_skill_sha256": "dc8fad2ef213be2a4f75cb75783bddf0cfc53469cdab00614292b24195575fe8",
+      "target_skill_sha256": "e31174cf53600aae00ebea49556df9cd32cd99408af31ef179dc4bc49c6b5a05",
+      "source_bytes": 2988,
+      "target_bytes": 2808,
+      "source_metadata": {
+        "name": "code-search",
+        "category": "development-tools",
+        "repo": "1ambda/dataops-platform",
+        "path": ".copilot/skills/code-search/SKILL.md",
+        "github_path": ".claude/skills/code-search",
+        "github_branch": "main",
+        "source_url": "https://github.com/1ambda/dataops-platform/blob/main/.claude/skills/code-search/SKILL.md",
+        "license": "NOASSERTION",
+        "distribution": "restricted",
+        "license_class": "restricted"
+      },
+      "target_metadata": {
+        "name": "code-search",
+        "category": "development",
+        "repo": "1ambda/dataops-platform",
+        "path": null,
+        "github_path": ".claude/skills/code-search",
+        "github_branch": "main",
+        "source_url": "https://github.com/1ambda/dataops-platform/blob/main/.claude/skills/code-search/SKILL.md",
+        "license": "NOASSERTION",
+        "distribution": "restricted",
+        "license_class": "restricted"
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/1ambda/dataops-platform/main/.claude/skills/code-search/SKILL.md",
+          "status": "ok",
+          "sha256": "dc8fad2ef213be2a4f75cb75783bddf0cfc53469cdab00614292b24195575fe8",
+          "bytes": 2988,
+          "matches_source": true,
+          "matches_target": false,
+          "norm_matches_source": true,
+          "norm_matches_target": false
+        },
+        {
+          "owner": "source",
+          "kind": "path",
+          "url": "https://raw.githubusercontent.com/1ambda/dataops-platform/main/.copilot/skills/code-search/SKILL.md",
+          "status": "ok",
+          "sha256": "dc8fad2ef213be2a4f75cb75783bddf0cfc53469cdab00614292b24195575fe8",
+          "bytes": 2988,
+          "matches_source": true,
+          "matches_target": false,
+          "norm_matches_source": true,
+          "norm_matches_target": false
+        },
+        {
+          "owner": "target",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/1ambda/dataops-platform/main/.claude/skills/code-search/SKILL.md",
+          "status": "ok",
+          "sha256": "dc8fad2ef213be2a4f75cb75783bddf0cfc53469cdab00614292b24195575fe8",
+          "bytes": 2988,
+          "matches_source": true,
+          "matches_target": false,
+          "norm_matches_source": true,
+          "norm_matches_target": false
+        }
+      ],
+      "source_matches": [
+        {
+          "owner": "source",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/1ambda/dataops-platform/main/.claude/skills/code-search/SKILL.md",
+          "status": "ok",
+          "sha256": "dc8fad2ef213be2a4f75cb75783bddf0cfc53469cdab00614292b24195575fe8",
+          "bytes": 2988,
+          "matches_source": true,
+          "matches_target": false,
+          "norm_matches_source": true,
+          "norm_matches_target": false
+        },
+        {
+          "owner": "source",
+          "kind": "path",
+          "url": "https://raw.githubusercontent.com/1ambda/dataops-platform/main/.copilot/skills/code-search/SKILL.md",
+          "status": "ok",
+          "sha256": "dc8fad2ef213be2a4f75cb75783bddf0cfc53469cdab00614292b24195575fe8",
+          "bytes": 2988,
+          "matches_source": true,
+          "matches_target": false,
+          "norm_matches_source": true,
+          "norm_matches_target": false
+        },
+        {
+          "owner": "target",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/1ambda/dataops-platform/main/.claude/skills/code-search/SKILL.md",
+          "status": "ok",
+          "sha256": "dc8fad2ef213be2a4f75cb75783bddf0cfc53469cdab00614292b24195575fe8",
+          "bytes": 2988,
+          "matches_source": true,
+          "matches_target": false,
+          "norm_matches_source": true,
+          "norm_matches_target": false
+        }
+      ],
+      "target_matches": [],
+      "decision": "move_source_as_distinct_and_keep_target",
+      "reason": "source path and target identity are different reachable upstream URLs",
+      "selected_urls": {
+        "source_url": "https://raw.githubusercontent.com/1ambda/dataops-platform/main/.copilot/skills/code-search/SKILL.md",
+        "target_url": "https://raw.githubusercontent.com/1ambda/dataops-platform/main/.claude/skills/code-search/SKILL.md"
+      }
+    },
+    {
+      "index": 4,
+      "source_path": "development-tools/converting-claude-subagents-edheltzel-atlas",
+      "target_path": "development/converting-claude-subagents-edheltzel-atlas",
+      "confidence": 0.9,
+      "key": "edheltzel/atlas:.atlasOG/exports/modules/skills/skills/converting-claude-subagents",
+      "source_skill_sha256": "3a832ac6eff06295551aac99dfd648307e3bf95b696d3fada1ec270889d188f4",
+      "target_skill_sha256": "f8bbee7b56b9809cc42f6b03fe16134c4539ceb285d1e4e3af17335a5fe2b591",
+      "source_bytes": 12521,
+      "target_bytes": 11963,
+      "source_metadata": {
+        "name": "converting-claude-subagents",
+        "category": "development-tools",
+        "repo": "edheltzel/atlas",
+        "path": ".claude/skills/converting-claude-subagents/SKILL.md",
+        "github_path": ".atlasOG/exports/modules/skills/skills/converting-claude-subagents",
+        "github_branch": "main",
+        "source_url": "https://github.com/edheltzel/atlas/blob/main/.atlasOG/exports/modules/skills/skills/converting-claude-subagents/SKILL.md",
+        "license": "NOASSERTION",
+        "distribution": "restricted",
+        "license_class": "restricted"
+      },
+      "target_metadata": {
+        "name": "converting-claude-subagents",
+        "category": "development",
+        "repo": "edheltzel/atlas",
+        "path": null,
+        "github_path": ".atlasOG/exports/modules/skills/skills/converting-claude-subagents",
+        "github_branch": "main",
+        "source_url": "https://github.com/edheltzel/atlas/blob/main/.atlasOG/exports/modules/skills/skills/converting-claude-subagents/SKILL.md",
+        "license": "NOASSERTION",
+        "distribution": "restricted",
+        "license_class": "restricted"
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/main/.atlasOG/exports/modules/skills/skills/converting-claude-subagents/SKILL.md",
+          "status": "error",
+          "error": "<urlopen error EOF occurred in violation of protocol (_ssl.c:992)>"
+        },
+        {
+          "owner": "source",
+          "kind": "path",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/main/.claude/skills/converting-claude-subagents/SKILL.md",
+          "status": "http_404"
+        },
+        {
+          "owner": "target",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/main/.atlasOG/exports/modules/skills/skills/converting-claude-subagents/SKILL.md",
+          "status": "error",
+          "error": "<urlopen error EOF occurred in violation of protocol (_ssl.c:992)>"
+        }
+      ],
+      "source_matches": [],
+      "target_matches": [],
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable",
+      "selected_urls": {}
+    },
+    {
+      "index": 5,
+      "source_path": "development-tools/converting-slash-commands-edheltzel-atlas",
+      "target_path": "development/converting-slash-commands-edheltzel-atlas",
+      "confidence": 0.9,
+      "key": "edheltzel/atlas:.atlasOG/exports/modules/skills/skills/converting-slash-commands",
+      "source_skill_sha256": "b78c4b5fc7866d890f7a2cc7bdaf85dea7ee05c6827d8390e3f1bd8899ed578b",
+      "target_skill_sha256": "dba3ec65d9e21c314aab957b431de4d3c9fefba1d74343674b5746179e4197d7",
+      "source_bytes": 11868,
+      "target_bytes": 11549,
+      "source_metadata": {
+        "name": "converting-slash-commands",
+        "category": "development-tools",
+        "repo": "edheltzel/atlas",
+        "path": ".claude/skills/converting-slash-commands/SKILL.md",
+        "github_path": ".atlasOG/exports/modules/skills/skills/converting-slash-commands",
+        "github_branch": "main",
+        "source_url": "https://github.com/edheltzel/atlas/blob/main/.atlasOG/exports/modules/skills/skills/converting-slash-commands/SKILL.md",
+        "license": "NOASSERTION",
+        "distribution": "restricted",
+        "license_class": "restricted"
+      },
+      "target_metadata": {
+        "name": "converting-slash-commands",
+        "category": "development",
+        "repo": "edheltzel/atlas",
+        "path": null,
+        "github_path": ".atlasOG/exports/modules/skills/skills/converting-slash-commands",
+        "github_branch": "main",
+        "source_url": "https://github.com/edheltzel/atlas/blob/main/.atlasOG/exports/modules/skills/skills/converting-slash-commands/SKILL.md",
+        "license": "NOASSERTION",
+        "distribution": "restricted",
+        "license_class": "restricted"
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/main/.atlasOG/exports/modules/skills/skills/converting-slash-commands/SKILL.md",
+          "status": "http_404"
+        },
+        {
+          "owner": "source",
+          "kind": "path",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/main/.claude/skills/converting-slash-commands/SKILL.md",
+          "status": "http_404"
+        },
+        {
+          "owner": "target",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/edheltzel/atlas/main/.atlasOG/exports/modules/skills/skills/converting-slash-commands/SKILL.md",
+          "status": "http_404"
+        }
+      ],
+      "source_matches": [],
+      "target_matches": [],
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable",
+      "selected_urls": {}
+    },
+    {
+      "index": 6,
+      "source_path": "development-tools/makefile-generation-athola-claude-night-market-bb8563ba",
+      "target_path": "development/makefile-generation",
+      "confidence": 0.9,
+      "key": "athola/claude-night-market:plugins/attune/skills/makefile-generation",
+      "source_skill_sha256": "65b8a2b34b504b98bb6381673d96542548435a6864e4e75638d95ef628106c2d",
+      "target_skill_sha256": "bb19b92eae9fbead0f529ef3ca0f7700ced5f1e1026af5c9a624edc26c10cbc7",
+      "source_bytes": 3990,
+      "target_bytes": 2697,
+      "source_metadata": {
+        "name": "makefile-generation",
+        "category": "development-tools",
+        "repo": "athola/claude-night-market",
+        "path": "plugins/attune/skills/makefile-generation/SKILL.md",
+        "github_path": "plugins/attune/skills/makefile-generation",
+        "github_branch": "main",
+        "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/attune/skills/makefile-generation/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "target_metadata": {
+        "name": "makefile-generation",
+        "category": "development",
+        "repo": "athola/claude-night-market",
+        "path": null,
+        "github_path": "plugins/attune/skills/makefile-generation",
+        "github_branch": "main",
+        "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/attune/skills/makefile-generation/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/main/plugins/attune/skills/makefile-generation/SKILL.md",
+          "status": "http_404"
+        },
+        {
+          "owner": "target",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/main/plugins/attune/skills/makefile-generation/SKILL.md",
+          "status": "http_404"
+        }
+      ],
+      "source_matches": [],
+      "target_matches": [],
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable",
+      "selected_urls": {}
+    },
+    {
+      "index": 7,
+      "source_path": "development-tools/makefile-review-athola-claude-night-market-e4a9bac7",
+      "target_path": "development/makefile-review",
+      "confidence": 0.95,
+      "key": "athola/claude-night-market:plugins/pensive/skills/makefile-review",
+      "source_skill_sha256": "a556cf8c8a8f0b808095ba504d3c666c853b8440fc223497a85577550b93131c",
+      "target_skill_sha256": "86aa59bb623c3f3513103fbcc5b1f6b5a1eab86f5b67c53ed02e3fac2d74d653",
+      "source_bytes": 4988,
+      "target_bytes": 3156,
+      "source_metadata": {
+        "name": "makefile-review",
+        "category": "development-tools",
+        "repo": "athola/claude-night-market",
+        "path": "plugins/pensive/skills/makefile-review/SKILL.md",
+        "github_path": "plugins/pensive/skills/makefile-review",
+        "github_branch": "main",
+        "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/pensive/skills/makefile-review/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "target_metadata": {
+        "name": "makefile-review",
+        "category": "development",
+        "repo": "athola/claude-night-market",
+        "path": null,
+        "github_path": "plugins/pensive/skills/makefile-review",
+        "github_branch": "main",
+        "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/pensive/skills/makefile-review/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/main/plugins/pensive/skills/makefile-review/SKILL.md",
+          "status": "http_404"
+        },
+        {
+          "owner": "target",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/athola/claude-night-market/main/plugins/pensive/skills/makefile-review/SKILL.md",
+          "status": "http_404"
+        }
+      ],
+      "source_matches": [],
+      "target_matches": [],
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable",
+      "selected_urls": {}
+    },
+    {
+      "index": 8,
+      "source_path": "development-tools/pilot-1-code-formatter",
+      "target_path": "development/pilot-1-code-formatter",
+      "confidence": 0.95,
+      "key": "DNYoussef/context-cascade:skills/tooling/pilot-1-code-formatter",
+      "source_skill_sha256": "65afb8e03802ad86231e2f97816ce56396bd5b93a6e3f1619c5efa50c3280528",
+      "target_skill_sha256": "566945b13790bec6f520b04b096bbd6513b47b212f3ff6a1d63823926dab8776",
+      "source_bytes": 10078,
+      "target_bytes": 8632,
+      "source_metadata": {
+        "name": "pilot-1-code-formatter",
+        "category": "development-tools",
+        "repo": "DNYoussef/context-cascade",
+        "path": "skills/tooling/pilot-1-code-formatter/V1-SKILL.md",
+        "github_path": "skills/tooling/pilot-1-code-formatter",
+        "github_branch": "main",
+        "source_url": "https://github.com/DNYoussef/context-cascade/blob/main/skills/tooling/pilot-1-code-formatter/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "target_metadata": {
+        "name": "pilot-1-code-formatter",
+        "category": "development",
+        "repo": "DNYoussef/context-cascade",
+        "path": null,
+        "github_path": "skills/tooling/pilot-1-code-formatter",
+        "github_branch": "main",
+        "source_url": "https://github.com/DNYoussef/context-cascade/blob/main/skills/tooling/pilot-1-code-formatter/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/DNYoussef/context-cascade/main/skills/tooling/pilot-1-code-formatter/SKILL.md",
+          "status": "ok",
+          "sha256": "6c75c2e952e1ca4a459baf49e0d633c97704ba567a5c766162b7d47a01f0c921",
+          "bytes": 9621,
+          "matches_source": false,
+          "matches_target": false,
+          "norm_matches_source": false,
+          "norm_matches_target": false
+        },
+        {
+          "owner": "source",
+          "kind": "path",
+          "url": "https://raw.githubusercontent.com/DNYoussef/context-cascade/main/skills/tooling/pilot-1-code-formatter/V1-SKILL.md",
+          "status": "ok",
+          "sha256": "65afb8e03802ad86231e2f97816ce56396bd5b93a6e3f1619c5efa50c3280528",
+          "bytes": 10078,
+          "matches_source": true,
+          "matches_target": false,
+          "norm_matches_source": true,
+          "norm_matches_target": false
+        },
+        {
+          "owner": "target",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/DNYoussef/context-cascade/main/skills/tooling/pilot-1-code-formatter/SKILL.md",
+          "status": "ok",
+          "sha256": "6c75c2e952e1ca4a459baf49e0d633c97704ba567a5c766162b7d47a01f0c921",
+          "bytes": 9621,
+          "matches_source": false,
+          "matches_target": false,
+          "norm_matches_source": false,
+          "norm_matches_target": false
+        }
+      ],
+      "source_matches": [
+        {
+          "owner": "source",
+          "kind": "path",
+          "url": "https://raw.githubusercontent.com/DNYoussef/context-cascade/main/skills/tooling/pilot-1-code-formatter/V1-SKILL.md",
+          "status": "ok",
+          "sha256": "65afb8e03802ad86231e2f97816ce56396bd5b93a6e3f1619c5efa50c3280528",
+          "bytes": 10078,
+          "matches_source": true,
+          "matches_target": false,
+          "norm_matches_source": true,
+          "norm_matches_target": false
+        }
+      ],
+      "target_matches": [],
+      "decision": "move_source_as_distinct_and_keep_target",
+      "reason": "source path and target identity are different reachable upstream URLs",
+      "selected_urls": {
+        "source_url": "https://raw.githubusercontent.com/DNYoussef/context-cascade/main/skills/tooling/pilot-1-code-formatter/V1-SKILL.md",
+        "target_url": "https://raw.githubusercontent.com/DNYoussef/context-cascade/main/skills/tooling/pilot-1-code-formatter/SKILL.md"
+      }
+    },
+    {
+      "index": 9,
+      "source_path": "development-tools/plaited-development-skills-plaited-plaited-e807424e",
+      "target_path": "development/plaited-development-skills-plaited-plaited-2",
+      "confidence": 0.85,
+      "key": "plaited/plaited:.claude/skills/code-documentation@plaited_development-skills",
+      "source_skill_sha256": "bcdb752efa77ad9b9034e2b4a95aeee38c611ee8aa0eb7320e729261e6dc8078",
+      "target_skill_sha256": "2fdcd79c975f7f75a29a2be45761f31b917b99ae2a8d265093c7b76ff6a3e538",
+      "source_bytes": 820,
+      "target_bytes": 2269,
+      "source_metadata": {
+        "name": "plaited_development-skills",
+        "category": "development-tools",
+        "repo": "plaited/plaited",
+        "path": ".claude/commands/plaited_development-skills/validate-skill.md",
+        "github_path": ".claude/skills/code-documentation@plaited_development-skills",
+        "github_branch": "main",
+        "source_url": "https://github.com/plaited/plaited/blob/main/.claude/skills/code-documentation@plaited_development-skills/SKILL.md",
+        "license": "ISC",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "target_metadata": {
+        "name": "plaited_development-skills",
+        "category": "development",
+        "repo": "plaited/plaited",
+        "path": ".claude/skills/code-documentation@plaited_development-skills",
+        "github_path": null,
+        "github_branch": null,
+        "source_url": "https://github.com/plaited/plaited/blob/main/.claude/skills/code-documentation@plaited_development-skills/SKILL.md",
+        "license": "ISC",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/plaited/plaited/main/.claude/skills/code-documentation@plaited_development-skills/SKILL.md",
+          "status": "http_404"
+        },
+        {
+          "owner": "source",
+          "kind": "path",
+          "url": "https://raw.githubusercontent.com/plaited/plaited/main/.claude/commands/plaited_development-skills/validate-skill.md",
+          "status": "http_404"
+        },
+        {
+          "owner": "target",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/plaited/plaited/main/.claude/skills/code-documentation@plaited_development-skills/SKILL.md",
+          "status": "http_404"
+        }
+      ],
+      "source_matches": [],
+      "target_matches": [],
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable",
+      "selected_urls": {}
+    },
+    {
+      "index": 10,
+      "source_path": "development-tools/plugin-master",
+      "target_path": "development/plugin-master",
+      "confidence": 0.95,
+      "key": "JosiahSiegel/claude-plugin-marketplace:plugins/plugin-master/skills/advanced-features-2025",
+      "source_skill_sha256": "7be95f8ed3d88397f794cc8763133e541251300e2c5dcdd7bdaeece476392bb0",
+      "target_skill_sha256": "6b43794361926ad86f5f48b40ef538d2ca82ca30f94e1aa2b6a47d273bedbe63",
+      "source_bytes": 6585,
+      "target_bytes": 65762,
+      "source_metadata": {
+        "name": "plugin-master",
+        "category": "development-tools",
+        "repo": "JosiahSiegel/claude-plugin-marketplace",
+        "path": "plugins/plugin-master/skills/plugin-master/SKILL.md",
+        "github_path": "plugins/plugin-master/skills/advanced-features-2025",
+        "github_branch": "main",
+        "source_url": "https://github.com/JosiahSiegel/claude-plugin-marketplace/blob/main/plugins/plugin-master/skills/advanced-features-2025/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "target_metadata": {
+        "name": "plugin-master",
+        "category": "development",
+        "repo": "JosiahSiegel/claude-plugin-marketplace",
+        "path": null,
+        "github_path": "plugins/plugin-master/skills/advanced-features-2025",
+        "github_branch": "main",
+        "source_url": "https://github.com/JosiahSiegel/claude-plugin-marketplace/blob/main/plugins/plugin-master/skills/advanced-features-2025/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/JosiahSiegel/claude-plugin-marketplace/main/plugins/plugin-master/skills/advanced-features-2025/SKILL.md",
+          "status": "ok",
+          "sha256": "1872041110ca17e040fc8a41869c82073039b997e1ce0de67de188fbaf57a7c2",
+          "bytes": 5385,
+          "matches_source": false,
+          "matches_target": false,
+          "norm_matches_source": false,
+          "norm_matches_target": false
+        },
+        {
+          "owner": "source",
+          "kind": "path",
+          "url": "https://raw.githubusercontent.com/JosiahSiegel/claude-plugin-marketplace/main/plugins/plugin-master/skills/plugin-master/SKILL.md",
+          "status": "ok",
+          "sha256": "acc306565dbe4982f4aa8f3cc49785907bef6937b78c8f417d74e552d2bf5498",
+          "bytes": 7660,
+          "matches_source": false,
+          "matches_target": false,
+          "norm_matches_source": false,
+          "norm_matches_target": false
+        },
+        {
+          "owner": "target",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/JosiahSiegel/claude-plugin-marketplace/main/plugins/plugin-master/skills/advanced-features-2025/SKILL.md",
+          "status": "ok",
+          "sha256": "1872041110ca17e040fc8a41869c82073039b997e1ce0de67de188fbaf57a7c2",
+          "bytes": 5385,
+          "matches_source": false,
+          "matches_target": false,
+          "norm_matches_source": false,
+          "norm_matches_target": false
+        }
+      ],
+      "source_matches": [],
+      "target_matches": [],
+      "decision": "move_source_as_distinct_and_keep_target",
+      "reason": "source path and target identity are different reachable upstream URLs",
+      "selected_urls": {
+        "source_url": "https://raw.githubusercontent.com/JosiahSiegel/claude-plugin-marketplace/main/plugins/plugin-master/skills/plugin-master/SKILL.md",
+        "target_url": "https://raw.githubusercontent.com/JosiahSiegel/claude-plugin-marketplace/main/plugins/plugin-master/skills/advanced-features-2025/SKILL.md"
+      }
+    },
+    {
+      "index": 11,
+      "source_path": "development-tools/pop-mcp-generator-jrc1883-popkit-claude",
+      "target_path": "development/mcp-generator-jrc1883-popkit-claude",
+      "confidence": 0.9,
+      "key": "jrc1883/popkit-claude:packages/popkit-core/skills/pop-mcp-generator",
+      "source_skill_sha256": "5179bfc391b482fbf72b6814c728897e66311cf7d23251b2d2726b0940ab093e",
+      "target_skill_sha256": "e1812e771499ceb9f796995ccdf7e2467e4518b5e472fb1ae65264ae0b9f1309",
+      "source_bytes": 8774,
+      "target_bytes": 6309,
+      "source_metadata": {
+        "name": "pop-mcp-generator",
+        "category": "development-tools",
+        "repo": "jrc1883/popkit-claude",
+        "path": "packages/popkit-core/skills/pop-mcp-generator/SKILL.md",
+        "github_path": "packages/popkit-core/skills/pop-mcp-generator",
+        "github_branch": "main",
+        "source_url": "https://github.com/jrc1883/popkit-claude/blob/main/packages/popkit-core/skills/pop-mcp-generator/SKILL.md",
+        "license": "NOASSERTION",
+        "distribution": "restricted",
+        "license_class": "restricted"
+      },
+      "target_metadata": {
+        "name": "mcp-generator",
+        "category": "development",
+        "repo": "jrc1883/popkit-claude",
+        "path": null,
+        "github_path": "packages/popkit-core/skills/pop-mcp-generator",
+        "github_branch": "main",
+        "source_url": "https://github.com/jrc1883/popkit-claude/blob/main/packages/popkit-core/skills/pop-mcp-generator/SKILL.md",
+        "license": "NOASSERTION",
+        "distribution": "restricted",
+        "license_class": "restricted"
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/jrc1883/popkit-claude/main/packages/popkit-core/skills/pop-mcp-generator/SKILL.md",
+          "status": "http_404"
+        },
+        {
+          "owner": "target",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/jrc1883/popkit-claude/main/packages/popkit-core/skills/pop-mcp-generator/SKILL.md",
+          "status": "http_404"
+        }
+      ],
+      "source_matches": [],
+      "target_matches": [],
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable",
+      "selected_urls": {}
+    },
+    {
+      "index": 12,
+      "source_path": "development-tools/raw-tool-creator-mpuig-raw",
+      "target_path": "development/raw-tool-creator",
+      "confidence": 0.9,
+      "key": "mpuig/raw:skills/raw-tool-creator",
+      "source_skill_sha256": "d633879196db910bb014d1f9b37d6b765fa977e4d993e2628611541d56d33670",
+      "target_skill_sha256": "77831e0b3f4a6dd3479c14613ea17c3fcfe776ba429ba8aa491bb51281622178",
+      "source_bytes": 9956,
+      "target_bytes": 13456,
+      "source_metadata": {
+        "name": "raw-tool-creator",
+        "category": "development-tools",
+        "repo": "mpuig/raw",
+        "path": "skills/raw-tool-creator/SKILL.md",
+        "github_path": "skills/raw-tool-creator",
+        "github_branch": "main",
+        "source_url": null,
+        "license": null,
+        "distribution": null,
+        "license_class": null
+      },
+      "target_metadata": {
+        "name": "raw-tool-creator",
+        "category": "development",
+        "repo": "mpuig/raw",
+        "path": null,
+        "github_path": "skills/raw-tool-creator",
+        "github_branch": "main",
+        "source_url": null,
+        "license": null,
+        "distribution": null,
+        "license_class": null
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "path",
+          "url": "https://raw.githubusercontent.com/mpuig/raw/main/skills/raw-tool-creator/SKILL.md",
+          "status": "ok",
+          "sha256": "d633879196db910bb014d1f9b37d6b765fa977e4d993e2628611541d56d33670",
+          "bytes": 9956,
+          "matches_source": true,
+          "matches_target": false,
+          "norm_matches_source": true,
+          "norm_matches_target": false
+        },
+        {
+          "owner": "target",
+          "kind": "github_path",
+          "url": "https://raw.githubusercontent.com/mpuig/raw/main/skills/raw-tool-creator/SKILL.md",
+          "status": "ok",
+          "sha256": "d633879196db910bb014d1f9b37d6b765fa977e4d993e2628611541d56d33670",
+          "bytes": 9956,
+          "matches_source": true,
+          "matches_target": false,
+          "norm_matches_source": true,
+          "norm_matches_target": false
+        }
+      ],
+      "source_matches": [
+        {
+          "owner": "source",
+          "kind": "path",
+          "url": "https://raw.githubusercontent.com/mpuig/raw/main/skills/raw-tool-creator/SKILL.md",
+          "status": "ok",
+          "sha256": "d633879196db910bb014d1f9b37d6b765fa977e4d993e2628611541d56d33670",
+          "bytes": 9956,
+          "matches_source": true,
+          "matches_target": false,
+          "norm_matches_source": true,
+          "norm_matches_target": false
+        },
+        {
+          "owner": "target",
+          "kind": "github_path",
+          "url": "https://raw.githubusercontent.com/mpuig/raw/main/skills/raw-tool-creator/SKILL.md",
+          "status": "ok",
+          "sha256": "d633879196db910bb014d1f9b37d6b765fa977e4d993e2628611541d56d33670",
+          "bytes": 9956,
+          "matches_source": true,
+          "matches_target": false,
+          "norm_matches_source": true,
+          "norm_matches_target": false
+        }
+      ],
+      "target_matches": [],
+      "decision": "replace_target_with_source_remove_source",
+      "reason": "source content is the only content with upstream proof",
+      "selected_urls": {
+        "target_url": "https://raw.githubusercontent.com/mpuig/raw/main/skills/raw-tool-creator/SKILL.md"
+      }
+    },
+    {
+      "index": 13,
+      "source_path": "development-tools/searching-code",
+      "target_path": "development/searching-code-alexei-led-claude-code-config",
+      "confidence": 0.85,
+      "key": "alexei-led/claude-code-config:skills/searching-code",
+      "source_skill_sha256": "4505bd63063ce863a53dabb90625ac5ed8e4a9cc5adf4153e43ee5484eb36e74",
+      "target_skill_sha256": "7eaba4815f87fff16f06298e576d56703581921099f4e589749326d0271b65cf",
+      "source_bytes": 2201,
+      "target_bytes": 2163,
+      "source_metadata": {
+        "name": "searching-code",
+        "category": "development-tools",
+        "repo": "alexei-led/claude-code-config",
+        "path": "skills/searching-code/SKILL.md",
+        "github_path": "skills/searching-code",
+        "github_branch": "main",
+        "source_url": "https://github.com/alexei-led/claude-code-config/blob/main/skills/searching-code/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "target_metadata": {
+        "name": "searching-code",
+        "category": "development",
+        "repo": "alexei-led/claude-code-config",
+        "path": null,
+        "github_path": "skills/searching-code",
+        "github_branch": "main",
+        "source_url": "https://github.com/alexei-led/claude-code-config/blob/main/skills/searching-code/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/alexei-led/claude-code-config/main/skills/searching-code/SKILL.md",
+          "status": "http_404"
+        },
+        {
+          "owner": "target",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/alexei-led/claude-code-config/main/skills/searching-code/SKILL.md",
+          "status": "http_404"
+        }
+      ],
+      "source_matches": [],
+      "target_matches": [],
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable",
+      "selected_urls": {}
+    },
+    {
+      "index": 14,
+      "source_path": "development-tools/tooling-thebeardedbearsas-claude-craft-25880dc5",
+      "target_path": "development/tooling",
+      "confidence": 0.9,
+      "key": "TheBeardedBearSAS/claude-craft:Dev/i18n/pt/Python/skills/tooling",
+      "source_skill_sha256": "5451609b09a2a8b643a696d3fc591393ced74f43fa9cbbdf0371ffb9645c0235",
+      "target_skill_sha256": "0fdc1b7011fb9c5c6c4a812c91426ee6240acbc1c33823de025a014a669bfb00",
+      "source_bytes": 259,
+      "target_bytes": 243,
+      "source_metadata": {
+        "name": "tooling",
+        "category": "development-tools",
+        "repo": "TheBeardedBearSAS/claude-craft",
+        "path": "Dev/i18n/pt/Flutter/skills/tooling/SKILL.md",
+        "github_path": "Dev/i18n/pt/Python/skills/tooling",
+        "github_branch": "main",
+        "source_url": "https://github.com/TheBeardedBearSAS/claude-craft/blob/main/Dev/i18n/pt/Python/skills/tooling/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "target_metadata": {
+        "name": "tooling",
+        "category": "development",
+        "repo": "TheBeardedBearSAS/claude-craft",
+        "path": null,
+        "github_path": "Dev/i18n/pt/Python/skills/tooling",
+        "github_branch": "main",
+        "source_url": "https://github.com/TheBeardedBearSAS/claude-craft/blob/main/Dev/i18n/pt/Python/skills/tooling/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/TheBeardedBearSAS/claude-craft/main/Dev/i18n/pt/Python/skills/tooling/SKILL.md",
+          "status": "ok",
+          "sha256": "b675eea565a7b7c7042eadc80f436c7c15087e267594589a7b5b11dc2d7b82cd",
+          "bytes": 225,
+          "matches_source": false,
+          "matches_target": false,
+          "norm_matches_source": false,
+          "norm_matches_target": false
+        },
+        {
+          "owner": "source",
+          "kind": "path",
+          "url": "https://raw.githubusercontent.com/TheBeardedBearSAS/claude-craft/main/Dev/i18n/pt/Flutter/skills/tooling/SKILL.md",
+          "status": "ok",
+          "sha256": "e4674789b8157919ae67aae82b07b5a5c47e75e1db82ed41e27dc27c69f2924d",
+          "bytes": 271,
+          "matches_source": false,
+          "matches_target": false,
+          "norm_matches_source": false,
+          "norm_matches_target": false
+        },
+        {
+          "owner": "target",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/TheBeardedBearSAS/claude-craft/main/Dev/i18n/pt/Python/skills/tooling/SKILL.md",
+          "status": "ok",
+          "sha256": "b675eea565a7b7c7042eadc80f436c7c15087e267594589a7b5b11dc2d7b82cd",
+          "bytes": 225,
+          "matches_source": false,
+          "matches_target": false,
+          "norm_matches_source": false,
+          "norm_matches_target": false
+        }
+      ],
+      "source_matches": [],
+      "target_matches": [],
+      "decision": "move_source_as_distinct_and_keep_target",
+      "reason": "source path and target identity are different reachable upstream URLs",
+      "selected_urls": {
+        "source_url": "https://raw.githubusercontent.com/TheBeardedBearSAS/claude-craft/main/Dev/i18n/pt/Flutter/skills/tooling/SKILL.md",
+        "target_url": "https://raw.githubusercontent.com/TheBeardedBearSAS/claude-craft/main/Dev/i18n/pt/Python/skills/tooling/SKILL.md"
+      }
+    },
+    {
+      "index": 15,
+      "source_path": "development-tools/using-xcode",
+      "target_path": "development/using-xcode",
+      "confidence": 0.95,
+      "key": "czottmann/claude-code-stuff:skills/using-xcode",
+      "source_skill_sha256": "72a0a909a7b8fc41acd3f6beacd6096289c60a9c7a0aae93c18f374fe3d56fb3",
+      "target_skill_sha256": "199890d39155c15515ae02bd774ecd1fe494ee879e48819ec172ef76704a4a14",
+      "source_bytes": 682,
+      "target_bytes": 743,
+      "source_metadata": {
+        "name": "using-xcode",
+        "category": "development-tools",
+        "repo": "czottmann/claude-code-stuff",
+        "path": "skills/using-xcode/SKILL.md",
+        "github_path": "skills/using-xcode",
+        "github_branch": "main",
+        "source_url": null,
+        "license": null,
+        "distribution": null,
+        "license_class": null
+      },
+      "target_metadata": {
+        "name": "using-xcode",
+        "category": "development",
+        "repo": "czottmann/claude-code-stuff",
+        "path": null,
+        "github_path": "skills/using-xcode",
+        "github_branch": "main",
+        "source_url": null,
+        "license": null,
+        "distribution": null,
+        "license_class": null
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "path",
+          "url": "https://raw.githubusercontent.com/czottmann/claude-code-stuff/main/skills/using-xcode/SKILL.md",
+          "status": "http_404"
+        },
+        {
+          "owner": "target",
+          "kind": "github_path",
+          "url": "https://raw.githubusercontent.com/czottmann/claude-code-stuff/main/skills/using-xcode/SKILL.md",
+          "status": "http_404"
+        }
+      ],
+      "source_matches": [],
+      "target_matches": [],
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable",
+      "selected_urls": {}
+    },
+    {
+      "index": 16,
+      "source_path": "development-tools/utilizing-cli-tools",
+      "target_path": "development/utilizing-cli-tools-thkt-claude-config",
+      "confidence": 0.9,
+      "key": "thkt/claude-config:.ja/skills/utilizing-cli-tools",
+      "source_skill_sha256": "c003a7a8b2f6b08b8cda014a057f2c6c8e813e15e05eaeddf50efbb90da96bc4",
+      "target_skill_sha256": "8dbb57cb4744fd83afb5fb77bb86ef7793d0b5844d99624948381064fe9005ab",
+      "source_bytes": 1027,
+      "target_bytes": 2750,
+      "source_metadata": {
+        "name": "utilizing-cli-tools",
+        "category": "development-tools",
+        "repo": "thkt/claude-config",
+        "path": ".ja/skills/utilizing-cli-tools/SKILL.md",
+        "github_path": ".ja/skills/utilizing-cli-tools",
+        "github_branch": "main",
+        "source_url": "https://github.com/thkt/claude-config/blob/main/.ja/skills/utilizing-cli-tools/SKILL.md",
+        "license": "NOASSERTION",
+        "distribution": "restricted",
+        "license_class": "restricted"
+      },
+      "target_metadata": {
+        "name": "utilizing-cli-tools",
+        "category": "development",
+        "repo": "thkt/claude-config",
+        "path": null,
+        "github_path": ".ja/skills/utilizing-cli-tools",
+        "github_branch": "main",
+        "source_url": "https://github.com/thkt/claude-config/blob/main/.ja/skills/utilizing-cli-tools/SKILL.md",
+        "license": "NOASSERTION",
+        "distribution": "restricted",
+        "license_class": "restricted"
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/thkt/claude-config/main/.ja/skills/utilizing-cli-tools/SKILL.md",
+          "status": "http_404"
+        },
+        {
+          "owner": "target",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/thkt/claude-config/main/.ja/skills/utilizing-cli-tools/SKILL.md",
+          "status": "http_404"
+        }
+      ],
+      "source_matches": [],
+      "target_matches": [],
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable",
+      "selected_urls": {}
+    },
+    {
+      "index": 17,
+      "source_path": "programming-languages/cpp-templates-metaprogramming",
+      "target_path": "development/cpp-templates-metaprogramming",
+      "confidence": 0.95,
+      "key": "TheBushidoCollective/han:jutsu/jutsu-cpp/cpp-templates-metaprogramming",
+      "source_skill_sha256": "898641fbeaaf2b015265adb84b3f9367079681e6c477717c3dd1008fb724a774",
+      "target_skill_sha256": "7597edd694461c1240ee67f2a42d28cfa9f7f0d753e7b2051997d0e8cd32c3cb",
+      "source_bytes": 25010,
+      "target_bytes": 17826,
+      "source_metadata": {
+        "name": "cpp-templates-metaprogramming",
+        "category": "programming-languages",
+        "repo": "TheBushidoCollective/han",
+        "path": "jutsu/jutsu-cpp/skills/cpp-templates-metaprogramming/SKILL.md",
+        "github_path": "jutsu/jutsu-cpp/cpp-templates-metaprogramming",
+        "github_branch": "main",
+        "source_url": "https://github.com/TheBushidoCollective/han/blob/main/jutsu/jutsu-cpp/cpp-templates-metaprogramming/SKILL.md",
+        "license": "NOASSERTION",
+        "distribution": "restricted",
+        "license_class": "restricted"
+      },
+      "target_metadata": {
+        "name": "cpp-templates-metaprogramming",
+        "category": "development",
+        "repo": "TheBushidoCollective/han",
+        "path": null,
+        "github_path": "jutsu/jutsu-cpp/cpp-templates-metaprogramming",
+        "github_branch": "main",
+        "source_url": "https://github.com/TheBushidoCollective/han/blob/main/jutsu/jutsu-cpp/cpp-templates-metaprogramming/SKILL.md",
+        "license": "NOASSERTION",
+        "distribution": "restricted",
+        "license_class": "restricted"
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/TheBushidoCollective/han/main/jutsu/jutsu-cpp/cpp-templates-metaprogramming/SKILL.md",
+          "status": "http_404"
+        },
+        {
+          "owner": "source",
+          "kind": "path",
+          "url": "https://raw.githubusercontent.com/TheBushidoCollective/han/main/jutsu/jutsu-cpp/skills/cpp-templates-metaprogramming/SKILL.md",
+          "status": "http_404"
+        },
+        {
+          "owner": "target",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/TheBushidoCollective/han/main/jutsu/jutsu-cpp/cpp-templates-metaprogramming/SKILL.md",
+          "status": "http_404"
+        }
+      ],
+      "source_matches": [],
+      "target_matches": [],
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable",
+      "selected_urls": {}
+    },
+    {
+      "index": 18,
+      "source_path": "programming-languages/golang-pro-jeffallan-claude-skills",
+      "target_path": "development/golang-pro",
+      "confidence": 0.95,
+      "key": "Jeffallan/claude-skills:skills/golang-pro",
+      "source_skill_sha256": "3ef1f54c415e023b1ab1d5db79bc1f9f178e57f38f4ac4669a9c0b34c0478304",
+      "target_skill_sha256": "8e993953c1b78aadf5d24d44a8561ac8ca3944ade1ee930abb295651fd2b80bb",
+      "source_bytes": 3806,
+      "target_bytes": 3868,
+      "source_metadata": {
+        "name": "golang-pro",
+        "category": "programming-languages",
+        "repo": "Jeffallan/claude-skills",
+        "path": "skills/golang-pro/SKILL.md",
+        "github_path": "skills/golang-pro",
+        "github_branch": "main",
+        "source_url": "https://github.com/Jeffallan/claude-skills/blob/main/skills/golang-pro/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "target_metadata": {
+        "name": "golang-pro",
+        "category": "development",
+        "repo": "Jeffallan/claude-skills",
+        "path": null,
+        "github_path": "skills/golang-pro",
+        "github_branch": "main",
+        "source_url": "https://github.com/Jeffallan/claude-skills/blob/main/skills/golang-pro/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/Jeffallan/claude-skills/main/skills/golang-pro/SKILL.md",
+          "status": "ok",
+          "sha256": "937bafb4bd14906e33420206500a8404a9de14705184ade02c77734221e748d6",
+          "bytes": 5021,
+          "matches_source": false,
+          "matches_target": false,
+          "norm_matches_source": false,
+          "norm_matches_target": false
+        },
+        {
+          "owner": "target",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/Jeffallan/claude-skills/main/skills/golang-pro/SKILL.md",
+          "status": "ok",
+          "sha256": "937bafb4bd14906e33420206500a8404a9de14705184ade02c77734221e748d6",
+          "bytes": 5021,
+          "matches_source": false,
+          "matches_target": false,
+          "norm_matches_source": false,
+          "norm_matches_target": false
+        }
+      ],
+      "source_matches": [],
+      "target_matches": [],
+      "decision": "refresh_target_from_upstream_remove_source",
+      "reason": "reachable upstream selected for canonical target; local copies are stale",
+      "selected_urls": {
+        "target_url": "https://raw.githubusercontent.com/Jeffallan/claude-skills/main/skills/golang-pro/SKILL.md"
+      }
+    },
+    {
+      "index": 19,
+      "source_path": "programming-languages/javascript-pro-jeffallan-claude-skills",
+      "target_path": "development/javascript-pro",
+      "confidence": 0.95,
+      "key": "Jeffallan/claude-skills:skills/javascript-pro",
+      "source_skill_sha256": "6e9ea4bea2768770778327c4b41891f5a435bb63574919bef43cac22d5b7212f",
+      "target_skill_sha256": "4a3dc3f09fce227351fb6289677fcb3b7ba47ba7254a003776e449b70a3ac5e5",
+      "source_bytes": 3795,
+      "target_bytes": 3865,
+      "source_metadata": {
+        "name": "javascript-pro",
+        "category": "programming-languages",
+        "repo": "Jeffallan/claude-skills",
+        "path": "skills/javascript-pro/SKILL.md",
+        "github_path": "skills/javascript-pro",
+        "github_branch": "main",
+        "source_url": "https://github.com/Jeffallan/claude-skills/blob/main/skills/javascript-pro/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "target_metadata": {
+        "name": "javascript-pro",
+        "category": "development",
+        "repo": "Jeffallan/claude-skills",
+        "path": null,
+        "github_path": "skills/javascript-pro",
+        "github_branch": "main",
+        "source_url": "https://github.com/Jeffallan/claude-skills/blob/main/skills/javascript-pro/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/Jeffallan/claude-skills/main/skills/javascript-pro/SKILL.md",
+          "status": "ok",
+          "sha256": "fb73d05454525647884f3aae73ec831fad4efc3c128a1a584bf6d97e73b35e15",
+          "bytes": 4786,
+          "matches_source": false,
+          "matches_target": false,
+          "norm_matches_source": false,
+          "norm_matches_target": false
+        },
+        {
+          "owner": "target",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/Jeffallan/claude-skills/main/skills/javascript-pro/SKILL.md",
+          "status": "ok",
+          "sha256": "fb73d05454525647884f3aae73ec831fad4efc3c128a1a584bf6d97e73b35e15",
+          "bytes": 4786,
+          "matches_source": false,
+          "matches_target": false,
+          "norm_matches_source": false,
+          "norm_matches_target": false
+        }
+      ],
+      "source_matches": [],
+      "target_matches": [],
+      "decision": "refresh_target_from_upstream_remove_source",
+      "reason": "reachable upstream selected for canonical target; local copies are stale",
+      "selected_urls": {
+        "target_url": "https://raw.githubusercontent.com/Jeffallan/claude-skills/main/skills/javascript-pro/SKILL.md"
+      }
+    },
+    {
+      "index": 20,
+      "source_path": "programming-languages/php-modernization",
+      "target_path": "development/php-modernization",
+      "confidence": 0.95,
+      "key": "netresearch/php-modernization-skill:skills/php-modernization",
+      "source_skill_sha256": "c46617bf2f25eafdb51ddb50fa8c01bbb0105844adf797cc2b6a3394a6ba0f5e",
+      "target_skill_sha256": "f01d755beee77698d4116eb64a4cf0768d0dc87ea79cccd1f8d04138e16f0745",
+      "source_bytes": 4267,
+      "target_bytes": 7125,
+      "source_metadata": {
+        "name": "php-modernization",
+        "category": "programming-languages",
+        "repo": "netresearch/php-modernization-skill",
+        "path": "skills/php-modernization/SKILL.md",
+        "github_path": "skills/php-modernization",
+        "github_branch": "main",
+        "source_url": null,
+        "license": null,
+        "distribution": null,
+        "license_class": null
+      },
+      "target_metadata": {
+        "name": "php-modernization",
+        "category": "development",
+        "repo": "netresearch/php-modernization-skill",
+        "path": null,
+        "github_path": "skills/php-modernization",
+        "github_branch": "main",
+        "source_url": null,
+        "license": null,
+        "distribution": null,
+        "license_class": null
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "path",
+          "url": "https://raw.githubusercontent.com/netresearch/php-modernization-skill/main/skills/php-modernization/SKILL.md",
+          "status": "ok",
+          "sha256": "789a3436c34a602ed9e97793c2a02602b8506d6031542998a0fc7b94123fbc99",
+          "bytes": 4112,
+          "matches_source": false,
+          "matches_target": false,
+          "norm_matches_source": false,
+          "norm_matches_target": false
+        },
+        {
+          "owner": "target",
+          "kind": "github_path",
+          "url": "https://raw.githubusercontent.com/netresearch/php-modernization-skill/main/skills/php-modernization/SKILL.md",
+          "status": "ok",
+          "sha256": "789a3436c34a602ed9e97793c2a02602b8506d6031542998a0fc7b94123fbc99",
+          "bytes": 4112,
+          "matches_source": false,
+          "matches_target": false,
+          "norm_matches_source": false,
+          "norm_matches_target": false
+        }
+      ],
+      "source_matches": [],
+      "target_matches": [],
+      "decision": "refresh_target_from_upstream_remove_source",
+      "reason": "reachable upstream selected for canonical target; local copies are stale",
+      "selected_urls": {
+        "target_url": "https://raw.githubusercontent.com/netresearch/php-modernization-skill/main/skills/php-modernization/SKILL.md"
+      }
+    },
+    {
+      "index": 21,
+      "source_path": "programming-languages/php-pro-jeffallan-claude-skills",
+      "target_path": "development/php-pro",
+      "confidence": 0.95,
+      "key": "Jeffallan/claude-skills:skills/php-pro",
+      "source_skill_sha256": "e12a68a79374722d767cb9d82660b399121e6fde30a3024005164b2301903c7f",
+      "target_skill_sha256": "0aa2ac24d546dd1888518f055f405e020eb7975dab6350a977b95873beebfd4b",
+      "source_bytes": 3534,
+      "target_bytes": 3600,
+      "source_metadata": {
+        "name": "php-pro",
+        "category": "programming-languages",
+        "repo": "Jeffallan/claude-skills",
+        "path": "skills/php-pro/SKILL.md",
+        "github_path": "skills/php-pro",
+        "github_branch": "main",
+        "source_url": "https://github.com/Jeffallan/claude-skills/blob/main/skills/php-pro/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "target_metadata": {
+        "name": "php-pro",
+        "category": "development",
+        "repo": "Jeffallan/claude-skills",
+        "path": null,
+        "github_path": "skills/php-pro",
+        "github_branch": "main",
+        "source_url": "https://github.com/Jeffallan/claude-skills/blob/main/skills/php-pro/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/Jeffallan/claude-skills/main/skills/php-pro/SKILL.md",
+          "status": "ok",
+          "sha256": "6aa71a7bd4129ab0bf1921a9402bcb441cd31513ffa10406f539b8959a525d10",
+          "bytes": 6064,
+          "matches_source": false,
+          "matches_target": false,
+          "norm_matches_source": false,
+          "norm_matches_target": false
+        },
+        {
+          "owner": "target",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/Jeffallan/claude-skills/main/skills/php-pro/SKILL.md",
+          "status": "ok",
+          "sha256": "6aa71a7bd4129ab0bf1921a9402bcb441cd31513ffa10406f539b8959a525d10",
+          "bytes": 6064,
+          "matches_source": false,
+          "matches_target": false,
+          "norm_matches_source": false,
+          "norm_matches_target": false
+        }
+      ],
+      "source_matches": [],
+      "target_matches": [],
+      "decision": "refresh_target_from_upstream_remove_source",
+      "reason": "reachable upstream selected for canonical target; local copies are stale",
+      "selected_urls": {
+        "target_url": "https://raw.githubusercontent.com/Jeffallan/claude-skills/main/skills/php-pro/SKILL.md"
+      }
+    },
+    {
+      "index": 22,
+      "source_path": "programming-languages/rust-engineer",
+      "target_path": "development/rust-engineer",
+      "confidence": 0.95,
+      "key": "Jeffallan/claude-skills:skills/rust-engineer",
+      "source_skill_sha256": "57d94a6194b16b5d28d69a08f5969011ce46ef292d4f0710151757d96c1e50b4",
+      "target_skill_sha256": "e2b75d8432fd3e704973ff603a5187ca0edcb3980ec20304df82ed26b016f83f",
+      "source_bytes": 3676,
+      "target_bytes": 3736,
+      "source_metadata": {
+        "name": "rust-engineer",
+        "category": "programming-languages",
+        "repo": "Jeffallan/claude-skills",
+        "path": "skills/rust-engineer/SKILL.md",
+        "github_path": "skills/rust-engineer",
+        "github_branch": "main",
+        "source_url": "https://github.com/Jeffallan/claude-skills/blob/main/skills/rust-engineer/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "target_metadata": {
+        "name": "rust-engineer",
+        "category": "development",
+        "repo": "Jeffallan/claude-skills",
+        "path": null,
+        "github_path": "skills/rust-engineer",
+        "github_branch": "main",
+        "source_url": "https://github.com/Jeffallan/claude-skills/blob/main/skills/rust-engineer/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/Jeffallan/claude-skills/main/skills/rust-engineer/SKILL.md",
+          "status": "ok",
+          "sha256": "c8e11f71fa92c956b5750d1bdae1cbe27c89b12763b6f2d897ee6dce1fed6bda",
+          "bytes": 5997,
+          "matches_source": false,
+          "matches_target": false,
+          "norm_matches_source": false,
+          "norm_matches_target": false
+        },
+        {
+          "owner": "target",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/Jeffallan/claude-skills/main/skills/rust-engineer/SKILL.md",
+          "status": "ok",
+          "sha256": "c8e11f71fa92c956b5750d1bdae1cbe27c89b12763b6f2d897ee6dce1fed6bda",
+          "bytes": 5997,
+          "matches_source": false,
+          "matches_target": false,
+          "norm_matches_source": false,
+          "norm_matches_target": false
+        }
+      ],
+      "source_matches": [],
+      "target_matches": [],
+      "decision": "refresh_target_from_upstream_remove_source",
+      "reason": "reachable upstream selected for canonical target; local copies are stale",
+      "selected_urls": {
+        "target_url": "https://raw.githubusercontent.com/Jeffallan/claude-skills/main/skills/rust-engineer/SKILL.md"
+      }
+    },
+    {
+      "index": 23,
+      "source_path": "programming-languages/rust-pro-rmyndharis-antigravity-skills",
+      "target_path": "development/rust-pro-rmyndharis-antigravity-skills-2",
+      "confidence": 0.95,
+      "key": "rmyndharis/antigravity-skills:skills/systems-programming-rust-project",
+      "source_skill_sha256": "8959d6271d69e1d942dc247277e8a88b3a7d4894ef8701fcf23b880d92c8b708",
+      "target_skill_sha256": "3cc0f1bb7bce261e3842542e29bf0523fea3154ad0b422702f95a2622fb0b47e",
+      "source_bytes": 7580,
+      "target_bytes": 8740,
+      "source_metadata": {
+        "name": "rust-pro",
+        "category": "programming-languages",
+        "repo": "rmyndharis/antigravity-skills",
+        "path": "skills/rust-pro/SKILL.md",
+        "github_path": "skills/systems-programming-rust-project",
+        "github_branch": "main",
+        "source_url": "https://github.com/rmyndharis/antigravity-skills/blob/main/skills/systems-programming-rust-project/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "target_metadata": {
+        "name": "rust-pro",
+        "category": "development",
+        "repo": "rmyndharis/antigravity-skills",
+        "path": "skills/systems-programming-rust-project",
+        "github_path": null,
+        "github_branch": null,
+        "source_url": "https://github.com/rmyndharis/antigravity-skills/blob/main/skills/systems-programming-rust-project/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/rmyndharis/antigravity-skills/main/skills/systems-programming-rust-project/SKILL.md",
+          "status": "ok",
+          "sha256": "3cc0f1bb7bce261e3842542e29bf0523fea3154ad0b422702f95a2622fb0b47e",
+          "bytes": 8740,
+          "matches_source": false,
+          "matches_target": true,
+          "norm_matches_source": false,
+          "norm_matches_target": true
+        },
+        {
+          "owner": "source",
+          "kind": "path",
+          "url": "https://raw.githubusercontent.com/rmyndharis/antigravity-skills/main/skills/rust-pro/SKILL.md",
+          "status": "ok",
+          "sha256": "8959d6271d69e1d942dc247277e8a88b3a7d4894ef8701fcf23b880d92c8b708",
+          "bytes": 7580,
+          "matches_source": true,
+          "matches_target": false,
+          "norm_matches_source": true,
+          "norm_matches_target": false
+        },
+        {
+          "owner": "target",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/rmyndharis/antigravity-skills/main/skills/systems-programming-rust-project/SKILL.md",
+          "status": "ok",
+          "sha256": "3cc0f1bb7bce261e3842542e29bf0523fea3154ad0b422702f95a2622fb0b47e",
+          "bytes": 8740,
+          "matches_source": false,
+          "matches_target": true,
+          "norm_matches_source": false,
+          "norm_matches_target": true
+        }
+      ],
+      "source_matches": [
+        {
+          "owner": "source",
+          "kind": "path",
+          "url": "https://raw.githubusercontent.com/rmyndharis/antigravity-skills/main/skills/rust-pro/SKILL.md",
+          "status": "ok",
+          "sha256": "8959d6271d69e1d942dc247277e8a88b3a7d4894ef8701fcf23b880d92c8b708",
+          "bytes": 7580,
+          "matches_source": true,
+          "matches_target": false,
+          "norm_matches_source": true,
+          "norm_matches_target": false
+        }
+      ],
+      "target_matches": [
+        {
+          "owner": "source",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/rmyndharis/antigravity-skills/main/skills/systems-programming-rust-project/SKILL.md",
+          "status": "ok",
+          "sha256": "3cc0f1bb7bce261e3842542e29bf0523fea3154ad0b422702f95a2622fb0b47e",
+          "bytes": 8740,
+          "matches_source": false,
+          "matches_target": true,
+          "norm_matches_source": false,
+          "norm_matches_target": true
+        },
+        {
+          "owner": "target",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/rmyndharis/antigravity-skills/main/skills/systems-programming-rust-project/SKILL.md",
+          "status": "ok",
+          "sha256": "3cc0f1bb7bce261e3842542e29bf0523fea3154ad0b422702f95a2622fb0b47e",
+          "bytes": 8740,
+          "matches_source": false,
+          "matches_target": true,
+          "norm_matches_source": false,
+          "norm_matches_target": true
+        }
+      ],
+      "decision": "move_source_as_distinct_and_keep_target",
+      "reason": "source path and target identity are different reachable upstream URLs",
+      "selected_urls": {
+        "source_url": "https://raw.githubusercontent.com/rmyndharis/antigravity-skills/main/skills/rust-pro/SKILL.md",
+        "target_url": "https://raw.githubusercontent.com/rmyndharis/antigravity-skills/main/skills/systems-programming-rust-project/SKILL.md"
+      }
+    },
+    {
+      "index": 24,
+      "source_path": "programming-languages/typescript-dry-principle",
+      "target_path": "development/typescript-dry-principle",
+      "confidence": 0.95,
+      "key": "darellchua2/opencode-config-template:skills/typescript-dry-principle/SKILL.md",
+      "source_skill_sha256": "1392999291d96a7b50099c35f262b12246cc64665577fe4a1aeb260b8f32e8b3",
+      "target_skill_sha256": "bb6cb7334452ffae4063ef0a04c119fc109aa27b6e67996dbaec3eac89da1c76",
+      "source_bytes": 26471,
+      "target_bytes": 26359,
+      "source_metadata": {
+        "name": "typescript-dry-principle",
+        "category": "programming-languages",
+        "repo": "darellchua2/opencode-config-template",
+        "path": "skills/typescript-dry-principle/SKILL.md",
+        "github_path": null,
+        "github_branch": null,
+        "source_url": "https://github.com/darellchua2/opencode-config-template/blob/main/skills/typescript-dry-principle/SKILL.md",
+        "license": "Apache-2.0",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "target_metadata": {
+        "name": "typescript-dry-principle",
+        "category": "development",
+        "repo": "darellchua2/opencode-config-template",
+        "path": "skills/typescript-dry-principle/SKILL.md",
+        "github_path": null,
+        "github_branch": null,
+        "source_url": "https://github.com/darellchua2/opencode-config-template/blob/main/skills/typescript-dry-principle/SKILL.md",
+        "license": "Apache-2.0",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/darellchua2/opencode-config-template/main/skills/typescript-dry-principle/SKILL.md",
+          "status": "http_404"
+        },
+        {
+          "owner": "target",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/darellchua2/opencode-config-template/main/skills/typescript-dry-principle/SKILL.md",
+          "status": "http_404"
+        }
+      ],
+      "source_matches": [],
+      "target_matches": [],
+      "decision": "manual_review",
+      "reason": "all candidate upstream URLs missing or unavailable",
+      "selected_urls": {}
+    },
+    {
+      "index": 25,
+      "source_path": "research-analysis/prove-majiayu000-claude-skill-registr-2",
+      "target_path": "analysis/prove-majiayu000-claude-skill-registr-dc7985ac",
+      "confidence": 0.85,
+      "key": "majiayu000/claude-skill-registry:skills/design/doc-research-improvements",
+      "source_skill_sha256": "3e9b619d5d83ff66f59cab335ec17186953aadf5dbb76afd1fec3c05690512d2",
+      "target_skill_sha256": "766e1ce18d06b4a33af035b09771eac503d530bc2724f721c0a93b55b364574b",
+      "source_bytes": 3547,
+      "target_bytes": 7580,
+      "source_metadata": {
+        "name": "prove",
+        "category": "research-analysis",
+        "repo": "majiayu000/claude-skill-registry",
+        "path": "skills/design/doc-research-improvements",
+        "github_path": null,
+        "github_branch": null,
+        "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/design/doc-research-improvements/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "target_metadata": {
+        "name": "prove",
+        "category": "analysis",
+        "repo": "majiayu000/claude-skill-registry",
+        "path": "skills/prove/SKILL.md",
+        "github_path": "skills/design/doc-research-improvements",
+        "github_branch": "main",
+        "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/design/doc-research-improvements/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/majiayu000/claude-skill-registry/main/skills/design/doc-research-improvements/SKILL.md",
+          "status": "ok",
+          "sha256": "3e9b619d5d83ff66f59cab335ec17186953aadf5dbb76afd1fec3c05690512d2",
+          "bytes": 3547,
+          "matches_source": true,
+          "matches_target": false,
+          "norm_matches_source": true,
+          "norm_matches_target": false
+        },
+        {
+          "owner": "target",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/majiayu000/claude-skill-registry/main/skills/design/doc-research-improvements/SKILL.md",
+          "status": "ok",
+          "sha256": "3e9b619d5d83ff66f59cab335ec17186953aadf5dbb76afd1fec3c05690512d2",
+          "bytes": 3547,
+          "matches_source": true,
+          "matches_target": false,
+          "norm_matches_source": true,
+          "norm_matches_target": false
+        },
+        {
+          "owner": "target",
+          "kind": "path",
+          "url": "https://raw.githubusercontent.com/majiayu000/claude-skill-registry/main/skills/prove/SKILL.md",
+          "status": "http_404"
+        }
+      ],
+      "source_matches": [
+        {
+          "owner": "source",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/majiayu000/claude-skill-registry/main/skills/design/doc-research-improvements/SKILL.md",
+          "status": "ok",
+          "sha256": "3e9b619d5d83ff66f59cab335ec17186953aadf5dbb76afd1fec3c05690512d2",
+          "bytes": 3547,
+          "matches_source": true,
+          "matches_target": false,
+          "norm_matches_source": true,
+          "norm_matches_target": false
+        },
+        {
+          "owner": "target",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/majiayu000/claude-skill-registry/main/skills/design/doc-research-improvements/SKILL.md",
+          "status": "ok",
+          "sha256": "3e9b619d5d83ff66f59cab335ec17186953aadf5dbb76afd1fec3c05690512d2",
+          "bytes": 3547,
+          "matches_source": true,
+          "matches_target": false,
+          "norm_matches_source": true,
+          "norm_matches_target": false
+        }
+      ],
+      "target_matches": [],
+      "decision": "replace_target_with_source_remove_source",
+      "reason": "source content is the only content with upstream proof",
+      "selected_urls": {
+        "target_url": "https://raw.githubusercontent.com/majiayu000/claude-skill-registry/main/skills/design/doc-research-improvements/SKILL.md"
+      }
+    },
+    {
+      "index": 26,
+      "source_path": "security-compliance/iso27001-gap-analyzer",
+      "target_path": "security/iso27001-gap-analyzer",
+      "confidence": 0.95,
+      "key": "jeremylongshore/claude-code-plugins-plus-skills:planned-skills/generated/04-security-advanced/iso27001-gap-analyzer",
+      "source_skill_sha256": "5e6c3cf7fa583123f1b96654220d47364acb76c3bce712e523e113df65424578",
+      "target_skill_sha256": "0b5c0c4c69e05f856199c5d8a8a3b01b6389c93b375a25ceb4bfa3d0bf37f5a6",
+      "source_bytes": 2243,
+      "target_bytes": 1304,
+      "source_metadata": {
+        "name": "iso27001-gap-analyzer",
+        "category": "security-compliance",
+        "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+        "path": "skills/04-security-advanced/iso27001-gap-analyzer/SKILL.md",
+        "github_path": "planned-skills/generated/04-security-advanced/iso27001-gap-analyzer",
+        "github_branch": "main",
+        "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/planned-skills/generated/04-security-advanced/iso27001-gap-analyzer/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "target_metadata": {
+        "name": "iso27001-gap-analyzer",
+        "category": "security",
+        "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+        "path": null,
+        "github_path": "planned-skills/generated/04-security-advanced/iso27001-gap-analyzer",
+        "github_branch": "main",
+        "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/planned-skills/generated/04-security-advanced/iso27001-gap-analyzer/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/jeremylongshore/claude-code-plugins-plus-skills/main/planned-skills/generated/04-security-advanced/iso27001-gap-analyzer/SKILL.md",
+          "status": "http_404"
+        },
+        {
+          "owner": "source",
+          "kind": "path",
+          "url": "https://raw.githubusercontent.com/jeremylongshore/claude-code-plugins-plus-skills/main/skills/04-security-advanced/iso27001-gap-analyzer/SKILL.md",
+          "status": "ok",
+          "sha256": "d990b32b11e5f6ba142a0f2071b013e876c6b9f22f2eaa5f7a3c2ab65c5c7683",
+          "bytes": 2272,
+          "matches_source": false,
+          "matches_target": false,
+          "norm_matches_source": false,
+          "norm_matches_target": false
+        },
+        {
+          "owner": "target",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/jeremylongshore/claude-code-plugins-plus-skills/main/planned-skills/generated/04-security-advanced/iso27001-gap-analyzer/SKILL.md",
+          "status": "http_404"
+        }
+      ],
+      "source_matches": [],
+      "target_matches": [],
+      "decision": "refresh_target_from_upstream_remove_source",
+      "reason": "reachable upstream selected for canonical target; local copies are stale",
+      "selected_urls": {
+        "target_url": "https://raw.githubusercontent.com/jeremylongshore/claude-code-plugins-plus-skills/main/skills/04-security-advanced/iso27001-gap-analyzer/SKILL.md"
+      }
+    },
+    {
+      "index": 27,
+      "source_path": "security-compliance/license-compliance-scanner",
+      "target_path": "security/license-compliance-scanner",
+      "confidence": 0.9,
+      "key": "jeremylongshore/claude-code-plugins-plus-skills:planned-skills/generated/03-security-fundamentals/license-compliance-scanner",
+      "source_skill_sha256": "22be842966f34e8458e58d03e526a03ee7138b8f07f565e3c7853110db203b8d",
+      "target_skill_sha256": "e1eb41ebbb2a514f937d38583c3fb6dfda0a14616becb9fcd82c7e86783b2015",
+      "source_bytes": 2318,
+      "target_bytes": 1397,
+      "source_metadata": {
+        "name": "license-compliance-scanner",
+        "category": "security-compliance",
+        "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+        "path": "skills/03-security-fundamentals/license-compliance-scanner/SKILL.md",
+        "github_path": "planned-skills/generated/03-security-fundamentals/license-compliance-scanner",
+        "github_branch": "main",
+        "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/planned-skills/generated/03-security-fundamentals/license-compliance-scanner/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "target_metadata": {
+        "name": "license-compliance-scanner",
+        "category": "security",
+        "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+        "path": null,
+        "github_path": "planned-skills/generated/03-security-fundamentals/license-compliance-scanner",
+        "github_branch": "main",
+        "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/planned-skills/generated/03-security-fundamentals/license-compliance-scanner/SKILL.md",
+        "license": "MIT",
+        "distribution": "compatible",
+        "license_class": "compatible"
+      },
+      "candidate_urls": [
+        {
+          "owner": "source",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/jeremylongshore/claude-code-plugins-plus-skills/main/planned-skills/generated/03-security-fundamentals/license-compliance-scanner/SKILL.md",
+          "status": "http_404"
+        },
+        {
+          "owner": "source",
+          "kind": "path",
+          "url": "https://raw.githubusercontent.com/jeremylongshore/claude-code-plugins-plus-skills/main/skills/03-security-fundamentals/license-compliance-scanner/SKILL.md",
+          "status": "ok",
+          "sha256": "c5897cfae47fce3f8b2253f8ae2dda15b5d108aad583afb4b727100d0f3cfa8a",
+          "bytes": 2347,
+          "matches_source": false,
+          "matches_target": false,
+          "norm_matches_source": false,
+          "norm_matches_target": false
+        },
+        {
+          "owner": "target",
+          "kind": "source_url",
+          "url": "https://raw.githubusercontent.com/jeremylongshore/claude-code-plugins-plus-skills/main/planned-skills/generated/03-security-fundamentals/license-compliance-scanner/SKILL.md",
+          "status": "http_404"
+        }
+      ],
+      "source_matches": [],
+      "target_matches": [],
+      "decision": "refresh_target_from_upstream_remove_source",
+      "reason": "reachable upstream selected for canonical target; local copies are stale",
+      "selected_urls": {
+        "target_url": "https://raw.githubusercontent.com/jeremylongshore/claude-code-plugins-plus-skills/main/skills/03-security-fundamentals/license-compliance-scanner/SKILL.md"
+      }
+    }
+  ]
+}

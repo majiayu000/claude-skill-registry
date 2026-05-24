@@ -1,0 +1,17 @@
+{
+  "name": "compile-analysis",
+  "repo": "eclipse-oniro-mirrors/arkui_ace_engine",
+  "path": ".claude/skills/compile-analysis/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
+  "source": "github.com/eclipse-oniro-mirrors/arkui_ace_engine",
+  "dir_name": "compile-analysis",
+  "downloaded_at": "2026-03-22T07:52:54.308865Z",
+  "author": "eclipse-oniro-mirrors",
+  "source_url": "https://github.com/eclipse-oniro-mirrors/arkui_ace_engine/blob/master/.claude/skills/compile-analysis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/eclipse-oniro-mirrors/arkui_ace_engine/blob/master/.claude/skills/compile-analysis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "goap-agent",
+  "repo": "d-o-hub/rust-self-learning-memory",
+  "path": ".opencode/skill/goap-agent/SKILL.md",
+  "source": "github.com/d-o-hub/rust-self-learning-memory",
+  "downloaded_at": "2026-01-29T01:48:13.663295Z",
+  "dir_name": "goap-agent",
+  "category": "orchestration",
+  "author": "d-o-hub",
+  "source_url": "https://github.com/d-o-hub/rust-self-learning-memory/blob/main/.opencode/skill/goap-agent/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2019 Zachary Rice",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

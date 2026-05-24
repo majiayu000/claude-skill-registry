@@ -290,9 +290,9 @@ def test_normalize_category_empty(utils):
     assert utils.normalize_category(None) == "other"
 
 
-def test_normalize_category_resolves_declared_aliases(utils):
-    assert utils.normalize_category("Engineering") == "development"
-    assert utils.normalize_category("dev") == "development"
+def test_normalize_category_keeps_legacy_aliases_for_review(utils):
+    assert utils.normalize_category("Engineering") == "engineering"
+    assert utils.normalize_category("dev") == "dev"
 
 
 # ---------------------------------------------------------------------------
@@ -323,12 +323,13 @@ def test_build_dir_name_uses_repo_suffix(utils):
 
 
 def test_build_skill_key_priority(utils):
-    # Per implementation: repo+path > repo > category:name > "".
+    # Per implementation: repo+path > repo+name > repo+category > repo > category:name > "".
     assert utils.build_skill_key(repo="o/r", path="x/y") == "o/r:x/y"
     assert utils.build_skill_key(repo="o/r") == "o/r"
-    assert utils.build_skill_key(repo="o/r", path=".") == "o/r"
-    assert utils.build_skill_key(repo="o/r", path="SKILL.md") == "o/r"
-    assert utils.build_skill_key(repo="o/r", path="./SKILL.md") == "o/r"
+    assert utils.build_skill_key(repo="o/r", path=".", name="foo") == "o/r:foo"
+    assert utils.build_skill_key(repo="o/r", path="SKILL.md", name="foo") == "o/r:foo"
+    assert utils.build_skill_key(repo="o/r", path="./SKILL.md", name="foo") == "o/r:foo"
+    assert utils.build_skill_key(repo="o/r", category="dev") == "o/r:dev"
     assert utils.build_skill_key(category="dev", name="foo") == "dev:foo"
     assert utils.build_skill_key() == ""
     # path alone is ignored once repo is missing — the category:name fallback wins.
@@ -344,6 +345,7 @@ def test_build_skill_key_coerces_non_string_repo_and_path(utils):
 def test_build_skill_key_treats_boolean_repo_and_path_as_missing(utils):
     assert utils.build_skill_key(repo="o/r", path=False) == "o/r"
     assert utils.build_skill_key(repo="o/r", path=True) == "o/r"
+    assert utils.build_skill_key(repo="o/r", path=False, name="foo") == "o/r:foo"
     assert utils.build_skill_key(repo=False, path="x/y", category="dev", name="foo") == "dev:foo"
 
 

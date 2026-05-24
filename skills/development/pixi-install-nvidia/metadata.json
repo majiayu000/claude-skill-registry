@@ -1,0 +1,16 @@
+{
+  "name": "pixi-install-nvidia",
+  "repo": "igamenovoer/magic-context",
+  "path": "skills/tools/pixi/pixi-install-nvidia/SKILL.md",
+  "source": "github.com/igamenovoer/magic-context",
+  "downloaded_at": "2026-02-02T02:28:50.339785Z",
+  "dir_name": "pixi-install-nvidia",
+  "category": "development",
+  "author": "igamenovoer",
+  "source_url": "https://github.com/igamenovoer/magic-context/blob/main/skills/tools/pixi/pixi-install-nvidia/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 James Wong",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

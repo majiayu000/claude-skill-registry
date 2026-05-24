@@ -1,0 +1,16 @@
+{
+  "name": "gourmet-research",
+  "repo": "narumiruna/agent-skills",
+  "path": "skills/gourmet-research/SKILL.md",
+  "source": "github.com/narumiruna/agent-skills",
+  "downloaded_at": "2026-01-29T07:07:44.112216Z",
+  "dir_name": "gourmet-research-narumiruna-agent-skills",
+  "category": "analysis",
+  "author": "narumiruna",
+  "source_url": "https://github.com/narumiruna/agent-skills/blob/main/skills/gourmet-research/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/narumiruna/agent-skills/blob/main/skills/gourmet-research/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

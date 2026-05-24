@@ -1,0 +1,20 @@
+{
+  "name": "init-claude-code-statusline",
+  "description": "",
+  "repo": "ruan-cat/monorepo",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ruan-cat/monorepo",
+  "github_path": "claude-code-marketplace/common-tools/skills/init-claude-code-statusline",
+  "github_branch": "main",
+  "dir_name": "init-claude-code-statusline",
+  "downloaded_at": "2026-02-05T01:44:49.726234Z",
+  "author": "ruan-cat",
+  "source_url": "https://github.com/ruan-cat/monorepo/blob/main/claude-code-marketplace/common-tools/skills/init-claude-code-statusline/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ruan-cat/monorepo/blob/main/claude-code-marketplace/common-tools/skills/init-claude-code-statusline/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

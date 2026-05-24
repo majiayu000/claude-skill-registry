@@ -1,0 +1,18 @@
+{
+  "name": "ln-001-standards-researcher",
+  "description": "Research standards/patterns via MCP Ref. Generates Standards Research for Story Technical Notes subsection. Reusable worker.",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-001-standards-researcher",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-001-standards-researcher-levnikolaevich-claude-code-skills-2",
+  "author": "levnikolaevich",
+  "source_url": "https://github.com/levnikolaevich/claude-code-skills/blob/main/ln-001-standards-researcher/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/levnikolaevich/claude-code-skills/blob/main/ln-001-standards-researcher/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

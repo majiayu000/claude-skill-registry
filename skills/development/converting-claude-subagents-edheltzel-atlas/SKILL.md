@@ -1,6 +1,7 @@
 ---
-name: converting-claude-subagents
-description: Convert Claude Code Subagents to OpenCode Agents format. Use when migrating from Claude Code to OpenCode or when you have existing subagent definitions to port.
+name: convertSubagents
+description: Atlas skill for converting Claude Code Subagents to OpenCode Agents format. USE WHEN migrating from Claude Code to OpenCode or when you have existing subagent definitions to port.
+context: fork
 ---
 
 # Converting Claude Code Subagents to OpenCode Agents
@@ -12,14 +13,17 @@ This skill helps you convert Claude Code Subagent definitions (from `.claude/age
 ## Quick Reference
 
 **Source formats:**
+
 - Claude Code: `.claude/agents/*.md` or `~/.claude/agents/*.md`
 - JSON via CLI: `--agents` flag with JSON object
 
 **Target formats:**
+
 - OpenCode Markdown: `.opencode/agent/*.md` or `~/.config/opencode/agent/*.md`
 - OpenCode JSON: `opencode.json` config file
 
 **Key differences:**
+
 - Tools: Comma-separated string → Object with boolean values
 - Mode: Implicit → Explicit `mode` field (`primary`, `subagent`, `all`)
 - Permissions: Via tools only → Explicit `permission` field
@@ -53,25 +57,27 @@ Convert each field from Claude Code format to OpenCode format:
 
 **Frontmatter mapping:**
 
-| Claude Code | OpenCode | Notes |
-|-------------|----------|-------|
-| `name` | filename or `name` in JSON | Filename becomes agent name in markdown |
-| `description` | `description` | Keep identical |
-| `tools` | `tools` | Convert format (see below) |
-| `model` | `model` | Keep identical, adjust defaults |
-| n/a | `mode` | Add explicit mode: `subagent` (default), `primary`, or `all` |
-| n/a | `temperature` | Optional: Set 0.0-1.0 for response variability |
-| n/a | `disable` | Optional: Set `true` to disable agent |
-| n/a | `permission` | Optional: Set granular permissions |
+| Claude Code   | OpenCode                   | Notes                                                        |
+| ------------- | -------------------------- | ------------------------------------------------------------ |
+| `name`        | filename or `name` in JSON | Filename becomes agent name in markdown                      |
+| `description` | `description`              | Keep identical                                               |
+| `tools`       | `tools`                    | Convert format (see below)                                   |
+| `model`       | `model`                    | Keep identical, adjust defaults                              |
+| n/a           | `mode`                     | Add explicit mode: `subagent` (default), `primary`, or `all` |
+| n/a           | `temperature`              | Optional: Set 0.0-1.0 for response variability               |
+| n/a           | `disable`                  | Optional: Set `true` to disable agent                        |
+| n/a           | `permission`               | Optional: Set granular permissions                           |
 
 **Tool format conversion:**
 
 Claude Code (comma-separated or omitted):
+
 ```yaml
 tools: Read, Grep, Glob, Bash
 ```
 
 OpenCode (object with booleans):
+
 ```yaml
 tools:
   read: true
@@ -87,10 +93,12 @@ tools:
 **Model mapping:**
 
 Claude Code models:
+
 - `sonnet`, `opus`, `haiku` (aliases)
 - `'inherit'` (use main conversation model)
 
 OpenCode models:
+
 - Full provider/model format: `anthropic/claude-sonnet-4-20250514`
 - Can use same aliases if configured in OpenCode
 
@@ -99,19 +107,22 @@ OpenCode models:
 Consider adding these optional fields:
 
 **Temperature:**
+
 ```yaml
-temperature: 0.1  # Lower = more focused, higher = more creative
+temperature: 0.1 # Lower = more focused, higher = more creative
 ```
 
 **Mode:**
+
 ```yaml
-mode: subagent  # or 'primary' or 'all'
+mode: subagent # or 'primary' or 'all'
 ```
 
 **Permissions:**
+
 ```yaml
 permission:
-  edit: ask      # Options: ask, allow, deny
+  edit: ask # Options: ask, allow, deny
   bash:
     "git push": ask
     "git status": allow
@@ -207,6 +218,7 @@ cat EXAMPLES.md
 ```
 
 The EXAMPLES.md file includes:
+
 - Code Reviewer (read-only agent)
 - Debugger (with edit access)
 - Test Runner (with bash permissions)
@@ -220,6 +232,7 @@ The EXAMPLES.md file includes:
 **Quick example snippet:**
 
 Claude Code format:
+
 ```yaml
 ---
 name: code-reviewer
@@ -230,6 +243,7 @@ model: sonnet
 ```
 
 OpenCode format:
+
 ```yaml
 ---
 description: Reviews code for quality and security
@@ -252,11 +266,13 @@ permission:
 ### Pattern 1: Read-Only Analysis Agent
 
 **Claude Code:**
+
 ```yaml
 tools: Read, Grep, Glob
 ```
 
 **OpenCode:**
+
 ```yaml
 mode: subagent
 tools:
@@ -274,11 +290,13 @@ permission:
 ### Pattern 2: Development Agent with Full Access
 
 **Claude Code:**
+
 ```yaml
-tools:  # Omitted = inherits all
+tools: # Omitted = inherits all
 ```
 
 **OpenCode:**
+
 ```yaml
 mode: subagent
 # Omit tools field to inherit all, or:
@@ -299,11 +317,13 @@ permission:
 ### Pattern 3: Selective Bash Permissions
 
 **Claude Code:**
+
 ```yaml
 tools: Bash, Read
 ```
 
 **OpenCode:**
+
 ```yaml
 mode: subagent
 tools:
@@ -318,7 +338,7 @@ permission:
     "git log*": allow
     "npm test": allow
     "npm run*": allow
-    "*": ask  # All other commands require approval
+    "*": ask # All other commands require approval
 ```
 
 ## Special Considerations
@@ -326,6 +346,7 @@ permission:
 ### Built-in Agents
 
 Claude Code has built-in agents like the "Plan" subagent. OpenCode also has built-in agents:
+
 - **Build**: Primary agent with all tools (equivalent to Claude Code default)
 - **Plan**: Primary agent with restricted tools (similar to Claude Code Plan subagent)
 - **General**: Subagent for complex research (similar to Claude Code general-purpose usage)
@@ -349,6 +370,7 @@ claude --agents '{
 
 **OpenCode equivalent:**
 Pass configuration via environment or config file. No direct CLI equivalent, but you can:
+
 1. Define in `opencode.json` for persistence
 2. Use project-specific `.opencode/agent/` files
 3. Use global `~/.config/opencode/agent/` files
@@ -356,6 +378,7 @@ Pass configuration via environment or config file. No direct CLI equivalent, but
 ### Tool Name Differences
 
 Most tools have the same names, but watch for:
+
 - Claude Code: `Bash`, `Read`, `Write`, `Edit`, `Grep`, `Glob`
 - OpenCode: `bash`, `read`, `write`, `edit`, `grep`, `glob` (lowercase in YAML)
 
@@ -364,25 +387,29 @@ In OpenCode markdown frontmatter, use lowercase. In JSON, also lowercase.
 ### MCP Tools
 
 Both systems support MCP (Model Context Protocol) tools:
+
 - **Claude Code**: Subagents inherit MCP tools when `tools` field is omitted
 - **OpenCode**: Same behavior, plus wildcard control: `mymcp_*: false`
 
 When converting, if the Claude Code agent uses MCP tools:
+
 ```yaml
 # OpenCode - allow specific MCP server tools
 tools:
   read: true
-  myserver_*: true  # All tools from 'myserver' MCP
+  myserver_*: true # All tools from 'myserver' MCP
   write: false
 ```
 
 ### Resumable Agents
 
 Claude Code supports resumable subagents via `agentId` and `resume` parameter. OpenCode uses session-based continuity with parent/child session navigation:
+
 - **Ctrl+Right**: Cycle forward through sessions
 - **Ctrl+Left**: Cycle backward through sessions
 
-**Conversion strategy:** 
+**Conversion strategy:**
+
 - Claude Code's resumable agents → OpenCode's session continuity (automatic)
 - No configuration changes needed
 - Sessions are tracked automatically in OpenCode
@@ -405,22 +432,26 @@ After conversion, verify:
 ## Troubleshooting
 
 **Issue:** Agent not appearing in OpenCode
+
 - Check file is in correct directory (`.opencode/agent/` or `~/.config/opencode/agent/`)
 - Verify frontmatter YAML is valid
 - Ensure `description` field is present
 - Check for `disable: true` in frontmatter
 
 **Issue:** Tools not working as expected
+
 - Verify `tools` object format (not comma-separated string)
 - Check permissions aren't blocking tool usage
 - Ensure tool names are lowercase
 
 **Issue:** Agent behaves differently than in Claude Code
+
 - Review `temperature` setting (may need adjustment)
 - Check `permission` settings (may be blocking operations)
 - Verify system prompt is identical to original
 
 **Issue:** Model errors
+
 - Verify model string format: `provider/model-name`
 - Check provider is configured in OpenCode
 - Try using `inherit` if main model should be used

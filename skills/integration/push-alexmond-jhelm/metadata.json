@@ -1,0 +1,17 @@
+{
+  "name": "push",
+  "repo": "alexmond/jhelm",
+  "path": ".claude/skills/push/skill.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/alexmond/jhelm",
+  "dir_name": "push-alexmond-jhelm",
+  "downloaded_at": "2026-03-22T06:50:19.115221Z",
+  "author": "alexmond",
+  "source_url": "https://github.com/alexmond/jhelm/blob/main/.claude/skills/push/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alexmond/jhelm/blob/main/.claude/skills/push/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

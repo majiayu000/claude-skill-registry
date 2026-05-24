@@ -1,0 +1,20 @@
+{
+  "name": "review-pr-changes",
+  "description": "",
+  "repo": "HomericIntelligence/ProjectOdyssey",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HomericIntelligence/ProjectOdyssey",
+  "github_path": ".claude/skills/review-pr-changes",
+  "github_branch": "main",
+  "dir_name": "review-pr-changes-homericintelligence-projectodyssey",
+  "downloaded_at": "2026-02-05T01:44:42.825554Z",
+  "author": "HomericIntelligence",
+  "source_url": "https://github.com/HomericIntelligence/ProjectOdyssey/blob/main/.claude/skills/review-pr-changes/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HomericIntelligence/ProjectOdyssey/blob/main/.claude/skills/review-pr-changes/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

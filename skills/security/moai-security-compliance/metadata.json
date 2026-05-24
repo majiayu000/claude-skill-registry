@@ -1,0 +1,18 @@
+{
+  "name": "moai-security-compliance",
+  "repo": "dolsoon/my-awesome-project",
+  "path": ".claude/skills/moai-security-compliance/SKILL.md",
+  "source": "github.com/dolsoon/my-awesome-project",
+  "downloaded_at": "2026-01-22T02:19:59.210942Z",
+  "dir_name": "moai-security-compliance",
+  "category": "security",
+  "github_path": ".claude/skills/moai-security-compliance",
+  "github_branch": "main",
+  "author": "dolsoon",
+  "source_url": "https://github.com/dolsoon/my-awesome-project/blob/main/.claude/skills/moai-security-compliance/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dolsoon/my-awesome-project/blob/main/.claude/skills/moai-security-compliance/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

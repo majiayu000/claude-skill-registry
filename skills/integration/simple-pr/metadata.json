@@ -1,0 +1,16 @@
+{
+  "name": "simple-pr",
+  "repo": "quickwit-oss/tantivy",
+  "path": ".claude/skills/simple-pr/SKILL.md",
+  "source": "github.com/quickwit-oss/tantivy",
+  "downloaded_at": "2026-02-02T04:58:32.180976Z",
+  "dir_name": "simple-pr",
+  "category": "integration",
+  "author": "quickwit-oss",
+  "source_url": "https://github.com/quickwit-oss/tantivy/blob/main/.claude/skills/simple-pr/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/quickwit-oss/tantivy/blob/main/.claude/skills/simple-pr/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

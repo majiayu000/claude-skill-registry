@@ -1,0 +1,16 @@
+{
+  "name": "scientific-pkg-gget",
+  "repo": "jackspace/ClaudeSkillz",
+  "path": "skills/scientific-pkg-gget/SKILL.md",
+  "source": "github.com/jackspace/ClaudeSkillz",
+  "downloaded_at": "2026-01-29T02:09:09.329985Z",
+  "dir_name": "scientific-pkg-gget",
+  "category": "analysis",
+  "author": "jackspace",
+  "source_url": "https://github.com/jackspace/ClaudeSkillz/blob/main/skills/scientific-pkg-gget/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ClaudeSkillz Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,393 @@
+{
+  "scanned": 77,
+  "missing_metadata": 0,
+  "errors": 0,
+  "warnings": 0,
+  "results": [
+    {
+      "path": "agent/0000-dorgonman-kano-agent-backlog-s-59370436/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/003-agents-installation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/00-build-fine-tuning-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/00-build-your-chatkit-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/00-build-your-claude-agent-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/42-openai-apps-sdk-panaversity-agentfactory/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-ml/00-finalize-llmops-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-ml/69-evaluation-quality-gates/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/20-toolbased-differential-tad-analysis/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/402-frameworks-quarkus-rest/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "business/4pl-director-donnigami-eddication-io/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "creative/5164e31c-9aa8-4cdb-a065-82e7bcce85d4-onurkanbakirci-awesome-skil/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/00-build-data-engineering-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/1-alignment-level-qc-bisnake2001-chromskills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/15-chromatin-state-inference-bisnake2001-chromskills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/16-toolbased-hic-normalization-bisnake2001-chromskills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/18-toolbased-hic-tad-calling-bisnake2001-chromskills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/19-dotnet-dapper-query-builder/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/24-global-methylation-profile-bisnake2001-chromskills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/25-methylation-variability-bisnake2001-chromskills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/26-umr-lmr-pmd-detection-bisnake2001-chromskills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/27-correlation-methylation-epifeatures-bisnake2001-chromskills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/28-atacseq-footprint-bisnake2001-chromskills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/29-regulatory-community-chia-pet-bisnake2001-chromskills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/3-peak-calling-bisnake2001-chromskills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/4-atacseq-qc-bisnake2001-chromskills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/7-replicates-incorporation-bisnake2001-chromskills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/0000-dorgonman-kano-agent-backlog-s-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/01-singleton/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/06-build-script-execution-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/18-0/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/1k-adding-socket-events/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/20-build-domain/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/2020-6-10-java-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/26-options-pattern/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/3d-building-advanced-bbeierle12-skill-mcp-claude-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/3d-games-congdon1207-agents-md-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/4-execute/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/4-execute-ioku24-autorankr/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/40-fastapi-for-agents-panaversity-agentfactory/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/412-frameworks-quarkus-panache/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/5-styleguide-generation-bitovi-context-generation-m/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/512-frameworks-micronaut-data/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/513-frameworks-micronaut-db-migrations-flyway/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/6d7e8f9a-0b1c-2d3e-4f5a-6b7c8d9e0f1a-onurkanbakirci-awesome-skil/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/00-build-your-docker-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/00-build-your-gitops-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/00-build-your-helm-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/00-build-your-kubernetes-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/00-build-your-observability-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/00-build-your-operational-excellence-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/07-docker-image-builder-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/17-dotnet-health-checks/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/29d936eb-f246-4177-a091-5f16e70b76cc-onurkanbakirci-awesome-skil-onurkanbakirci-awesome-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/16-2-email-service-aws-ses/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/1k-defi-module-integration/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/21risk-automation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/21risk-automation-diegosouzapw-awesome-omni-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/302ai-api-integration-skill-302ai-302ai-api-integratio/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/0-autoresearch-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/0-autoresearch-skill-orchestra-research-ai-research-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "personal-development/12-how-to-master-the-practice-of-investing-and-time-management-t/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "planning/042-planning-openspec/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "planning/10-planning-aisystant-self-development/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "planning/10-planning-majiayu000-claude-skill-registr/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "planning/15-04-review-to-tickets/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "platform/1k-platform-requirements/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "productivity/05-01-ticket/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/12-dotnet-jwt-authentication/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/13-dotnet-permission-authorization/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/24-rate-limiting/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "testing/21-dotnet-unit-testing/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "testing/22-dotnet-integration-testing/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "testing/47-evals-agent-performance/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "testing/47-evals-agent-performance-panaversity-agentfactory/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "workflow/5-reset/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "workflow/5-reset-ioku24-autorankr/metadata.json",
+      "errors": [],
+      "warnings": []
+    }
+  ]
+}

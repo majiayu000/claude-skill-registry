@@ -1,0 +1,16 @@
+{
+  "name": "github-issue-creator",
+  "repo": "alex-ilgayev/MCPSpy",
+  "path": ".claude/skills/github-issue-creator/SKILL.md",
+  "source": "github.com/alex-ilgayev/MCPSpy",
+  "downloaded_at": "2026-01-29T06:09:50.421159Z",
+  "dir_name": "github-issue-creator-alex-ilgayev-mcpspy",
+  "category": "integration",
+  "author": "alex-ilgayev",
+  "source_url": "https://github.com/alex-ilgayev/MCPSpy/blob/main/.claude/skills/github-issue-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alex-ilgayev/MCPSpy/blob/main/.claude/skills/github-issue-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

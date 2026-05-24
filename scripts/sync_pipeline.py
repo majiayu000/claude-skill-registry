@@ -126,7 +126,7 @@ def build_unified_registry(
                 continue
             seen.add(key)
 
-            all_skills.append({
+            record = {
                 "name": name,
                 "description": skill.get("description", ""),
                 "repo": repo,
@@ -136,7 +136,23 @@ def build_unified_registry(
                 "stars": skill.get("stars", 0),
                 "source": source_name,
                 "featured": skill.get("featured", False),
-            })
+            }
+            for legal_key in (
+                "author",
+                "source_url",
+                "license",
+                "copyright",
+                "permission_note",
+                "distribution",
+            ):
+                raw_value = skill.get(legal_key)
+                if raw_value is None:
+                    continue
+                value = str(raw_value).strip()
+                if value:
+                    record[legal_key] = value
+
+            all_skills.append(record)
 
     # Sort by stars (descending) then name
     all_skills.sort(key=lambda x: (-x.get("stars", 0), x["name"].lower()))

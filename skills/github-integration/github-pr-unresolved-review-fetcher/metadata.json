@@ -1,9 +1,0 @@
-{
-  "name": "github-pr-unresolved-review-fetcher",
-  "repo": "yaakaito/env",
-  "path": "dotfiles/.claude/skills/github-pr-unresolved-review-fetcher/SKILL.md",
-  "source": "github.com/yaakaito/env",
-  "downloaded_at": "2026-01-30T01:18:44.669936Z",
-  "dir_name": "github-pr-unresolved-review-fetcher",
-  "category": "github-integration"
-}

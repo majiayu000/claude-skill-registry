@@ -1,0 +1,20 @@
+{
+  "name": "open-pr",
+  "description": "",
+  "repo": "raine/workmux",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/raine/workmux",
+  "github_path": "skills/open-pr",
+  "github_branch": "main",
+  "dir_name": "open-pr",
+  "downloaded_at": "2026-02-05T01:44:34.615569Z",
+  "author": "raine",
+  "source_url": "https://github.com/raine/workmux/blob/main/skills/open-pr/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/raine/workmux/blob/main/skills/open-pr/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

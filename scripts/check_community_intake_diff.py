@@ -13,6 +13,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from category_taxonomy import category_slug, get_taxonomy
+
 
 @dataclass(frozen=True)
 class CommunityIntakeInput:
@@ -58,6 +60,47 @@ def _find_last_skill_line(lines: list[str]) -> int | None:
     return None
 
 
+def _is_allowed_category_canonicalization(base_entry: Any, head_entry: Any) -> bool:
+    if not isinstance(base_entry, dict) or not isinstance(head_entry, dict):
+        return False
+    if base_entry == head_entry:
+        return True
+
+    base_without_category = {key: value for key, value in base_entry.items() if key != "category"}
+    head_without_category = {key: value for key, value in head_entry.items() if key != "category"}
+    if base_without_category != head_without_category:
+        return False
+
+    base_category = base_entry.get("category")
+    head_category = head_entry.get("category")
+    if not isinstance(base_category, str) or not isinstance(head_category, str):
+        return False
+
+    taxonomy = get_taxonomy()
+    base_slug = category_slug(base_category)
+    head_slug = category_slug(head_category)
+    return (
+        head_category == head_slug
+        and taxonomy.category_status(base_slug) != "active"
+        and taxonomy.is_publishable(head_slug)
+    )
+
+
+def _existing_entries_are_preserved_or_canonicalized(
+    base_skills: list[Any], head_skills: list[Any]
+) -> tuple[bool, bool]:
+    changed = False
+    for base_entry, head_entry in zip(
+        base_skills, head_skills[: len(base_skills)], strict=True
+    ):
+        if base_entry == head_entry:
+            continue
+        if not _is_allowed_category_canonicalization(base_entry, head_entry):
+            return False, changed
+        changed = True
+    return True, changed
+
+
 def validate_community_intake_text(base_text: str, head_text: str) -> list[str]:
     if base_text == head_text:
         return []
@@ -97,14 +140,22 @@ def validate_community_intake_text(base_text: str, head_text: str) -> list[str]:
         errors.append("community intake PRs must not remove catalog entries")
         return errors
 
-    if head_skills[: len(base_skills)] != base_skills:
+    existing_entries_ok, canonicalized_existing_category = (
+        _existing_entries_are_preserved_or_canonicalized(base_skills, head_skills)
+    )
+    if not existing_entries_ok:
         errors.append(
             "community intake PRs must preserve the existing `skills` list and append new entries at the end"
         )
         return errors
 
     if len(head_skills) == len(base_skills):
+        if canonicalized_existing_category:
+            return errors
         errors.append("community intake PRs must add at least one new `skills` entry")
+        return errors
+
+    if canonicalized_existing_category:
         return errors
 
     base_lines = base_text.splitlines()

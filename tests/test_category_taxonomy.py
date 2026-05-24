@@ -21,16 +21,49 @@ def test_taxonomy_loads_current_category_set():
     assert loaded.default_category == "other"
     assert "development" in loaded.categories
     assert "other" in loaded.categories
-    assert len(loaded.categories) >= 77
-    assert loaded.categories["docs"].status == "deprecated"
+    assert loaded.categories["development"].inclusion_rule
+    assert loaded.categories["development"].exclusion_rule
+    assert loaded.categories["development"].examples
+    assert len(loaded.categories) >= 42
+    assert "docs" not in loaded.categories
     assert loaded.migration_target("docs") == "documents"
+    assert loaded.legacy_migration("docs").target == "documents"
+    assert loaded.legacy_migration("applied").review_required is True
 
 
-def test_taxonomy_resolves_aliases_and_codes():
+def test_taxonomy_rejects_aliases_by_default_and_codes():
     taxonomy = _load_module()
-    assert taxonomy.resolve_category("Engineering") == "development"
+    with pytest.raises(taxonomy.UnknownCategoryError):
+        taxonomy.resolve_category("Engineering")
+    assert taxonomy.resolve_category("Engineering", allow_unknown=True) == "engineering"
+    assert taxonomy.resolve_category("Engineering", allow_alias=True) == "development"
     assert taxonomy.get_category_code("development") == "dev"
+    assert taxonomy.get_category_code("Engineering") == "engineering"
+    assert taxonomy.get_category_code("Engineering", allow_alias=True) == "dev"
     assert taxonomy.get_category_code("unknown-new-bucket") == "unknown-new-bucket"
+    assert "development" in taxonomy.publishable_categories()
+    assert "docs" not in taxonomy.publishable_categories()
+    assert "applied" not in taxonomy.publishable_categories()
+
+
+def test_taxonomy_rejects_legacy_migration_conflicts(tmp_path):
+    taxonomy = _load_module()
+    taxonomy_file = tmp_path / "categories.yaml"
+    taxonomy_file.write_text(
+        """
+schema_version: 2
+default_category: other
+legacy_migrations:
+  - slug: old
+    target: missing
+categories:
+  - slug: other
+    code: oth
+""",
+        encoding="utf-8",
+    )
+    with pytest.raises(ValueError, match="unknown target"):
+        taxonomy.load_taxonomy(taxonomy_file)
 
 
 def test_taxonomy_rejects_alias_category_conflict(tmp_path):

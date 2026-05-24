@@ -1,0 +1,18 @@
+{
+  "name": "claim-investigation",
+  "repo": "jwynia/agent-skills",
+  "path": "skills/research/verification/claim-investigation/SKILL.md",
+  "source": "github.com/jwynia/agent-skills",
+  "downloaded_at": "2026-01-21T03:40:39.167757Z",
+  "dir_name": "claim-investigation",
+  "category": "analysis",
+  "github_path": "skills/research/verification/claim-investigation",
+  "github_branch": "main",
+  "author": "jwynia",
+  "source_url": "https://github.com/jwynia/agent-skills/blob/main/skills/research/verification/claim-investigation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jwynia/agent-skills/blob/main/skills/research/verification/claim-investigation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

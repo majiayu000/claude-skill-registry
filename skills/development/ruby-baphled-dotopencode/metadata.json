@@ -1,0 +1,17 @@
+{
+  "name": "ruby",
+  "repo": "baphled/dotopencode",
+  "path": "skills/ruby/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/baphled/dotopencode",
+  "dir_name": "ruby-baphled-dotopencode",
+  "downloaded_at": "2026-03-22T07:10:25.730957Z",
+  "author": "baphled",
+  "source_url": "https://github.com/baphled/dotopencode/blob/main/skills/ruby/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/baphled/dotopencode/blob/main/skills/ruby/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

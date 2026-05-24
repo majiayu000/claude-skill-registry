@@ -1,0 +1,17 @@
+{
+  "name": "worker-integration",
+  "repo": "ruvnet/ruflo",
+  "path": ".claude/skills/worker-integration/SKILL.md",
+  "github_branch": "main",
+  "category": "orchestration",
+  "source": "github.com/ruvnet/ruflo",
+  "dir_name": "worker-integration-ruvnet-ruflo-5",
+  "downloaded_at": "2026-05-20T04:07:21.025617Z",
+  "author": "ruvnet",
+  "source_url": "https://github.com/ruvnet/ruflo/blob/main/.claude/skills/worker-integration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ruvnet/ruflo/blob/main/.claude/skills/worker-integration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

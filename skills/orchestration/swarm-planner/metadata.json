@@ -1,0 +1,20 @@
+{
+  "name": "swarm-planner",
+  "description": "",
+  "repo": "am-will/codex-skills",
+  "category": "orchestration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/am-will/codex-skills",
+  "github_path": "skills/swarm-planner",
+  "github_branch": "main",
+  "dir_name": "swarm-planner",
+  "downloaded_at": "2026-02-05T01:44:56.907431Z",
+  "author": "am-will",
+  "source_url": "https://github.com/am-will/codex-skills/blob/main/skills/swarm-planner/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/am-will/codex-skills/blob/main/skills/swarm-planner/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

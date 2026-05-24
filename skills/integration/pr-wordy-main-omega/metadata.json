@@ -1,0 +1,17 @@
+{
+  "name": "pr-wordy-main-omega",
+  "repo": "JasonWarrenUK/goblin-mode",
+  "path": "skills/pr-wordy-main-omega/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/JasonWarrenUK/goblin-mode",
+  "dir_name": "pr-wordy-main-omega",
+  "downloaded_at": "2026-04-08T04:29:16.873062Z",
+  "author": "JasonWarrenUK",
+  "source_url": "https://github.com/JasonWarrenUK/goblin-mode/blob/main/skills/pr-wordy-main-omega/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JasonWarrenUK/goblin-mode/blob/main/skills/pr-wordy-main-omega/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

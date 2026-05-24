@@ -1,0 +1,16 @@
+{
+  "name": "pr-description-template",
+  "repo": "libertininick/chain-reaction",
+  "path": ".claude/skills/pr-description-template/skill.md",
+  "source": "github.com/libertininick/chain-reaction",
+  "downloaded_at": "2026-02-02T04:39:27.722349Z",
+  "dir_name": "pr-description-template",
+  "category": "integration",
+  "author": "libertininick",
+  "source_url": "https://github.com/libertininick/chain-reaction/blob/main/.claude/skills/pr-description-template/skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 - Present Nick Libertini",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

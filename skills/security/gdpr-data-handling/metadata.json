@@ -1,0 +1,18 @@
+{
+  "name": "gdpr-data-handling",
+  "repo": "wshobson/agents",
+  "path": "plugins/hr-legal-compliance/skills/gdpr-data-handling/SKILL.md",
+  "source": "github.com/wshobson/agents",
+  "downloaded_at": "2026-01-22T03:51:06.102006Z",
+  "dir_name": "gdpr-data-handling",
+  "category": "security",
+  "github_path": "plugins/hr-legal-compliance/skills/gdpr-data-handling",
+  "github_branch": "main",
+  "author": "wshobson",
+  "source_url": "https://github.com/wshobson/agents/blob/main/plugins/hr-legal-compliance/skills/gdpr-data-handling/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wshobson/agents/blob/main/plugins/hr-legal-compliance/skills/gdpr-data-handling/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

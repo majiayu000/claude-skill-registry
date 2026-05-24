@@ -11,8 +11,10 @@
   "author": "plaited",
   "source_url": "https://github.com/plaited/plaited/blob/main/.claude/skills/code-documentation@plaited_development-skills/SKILL.md",
   "license": "ISC",
-  "copyright": "Copyright (c) 2023 - present Edward Irby",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/plaited/plaited/blob/main/.claude/skills/code-documentation@plaited_development-skills/SKILL.md",
   "permission_note": "Use according to upstream license terms and attribution requirements.",
   "distribution": "compatible",
-  "license_class": "compatible"
+  "license_class": "compatible",
+  "github_path": ".claude/skills/code-documentation@plaited_development-skills",
+  "github_branch": "main"
 }

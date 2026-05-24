@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-24T09:51:15.329766+00:00",
+  "skills_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-legacy-semantic-003",
+  "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-legacy-semantic-003/migration-artifacts/2026-05-24-legacy-semantic-003/classification.jsonl",
+  "policy": {
+    "min_confidence": 0.75,
+    "from_categories": [
+      "development-tools",
+      "github-integration",
+      "programming-languages",
+      "research-analysis",
+      "security-compliance",
+      "template"
+    ],
+    "to_categories": [],
+    "target_statuses": [
+      "active"
+    ],
+    "allow_target_other": true,
+    "movable_only": true,
+    "limit": null,
+    "apply_mode": "apply"
+  },
+  "summary": {
+    "classification_row_count": 92,
+    "classification_status_counts": {
+      "ok": 92
+    },
+    "planned_move_count": 4,
+    "movable_count": 4,
+    "blocked_count": 0,
+    "operation_counts": {
+      "move": 4
+    },
+    "reject_reasons": {
+      "confidence below threshold": 3,
+      "current category excluded by filter": 33,
+      "source directory missing": 25,
+      "target category already contains a skill with the same stable key": 27
+    },
+    "source_category_counts": {
+      "development-tools": 2,
+      "github-integration": 1,
+      "security-compliance": 1
+    },
+    "target_category_counts": {
+      "development": 2,
+      "integration": 1,
+      "security": 1
+    }
+  },
+  "moves": [
+    {
+      "operation": "move",
+      "source_path": "development-tools/00-build-your-mcp-server-skill",
+      "source_skill": "development-tools/00-build-your-mcp-server-skill/SKILL.md",
+      "source_category": "development-tools",
+      "current_category": "development-tools",
+      "target_category": "development",
+      "target_status": "active",
+      "target_path": "development/00-build-your-mcp-server-skill",
+      "target_skill": "development/00-build-your-mcp-server-skill/SKILL.md",
+      "name": "00-build-your-mcp-server-skill",
+      "confidence": 0.88,
+      "key": "panaversity/agentfactory:00-build-your-mcp-server-skill",
+      "repo": "panaversity/agentfactory",
+      "reason": "classification target passed filters",
+      "source_sha256": "06d77b742454cd8dc7e29e3b9c5b8fcdf281cd08652feb98f73f32a2ac668f0e",
+      "metadata_sha256": "22ad0b599464dd590af3933d7c2d4685373c5ceb5531178ca5523b1ff979a856",
+      "semantic_text_sha256": "6345d70eec20c90041a48c0a8cd3c72d92975e31c55e027bad559d9ffea249f8"
+    },
+    {
+      "operation": "move",
+      "source_path": "development-tools/gar-ai-mallorn-claude-skills-lint-service-skill",
+      "source_skill": "development-tools/gar-ai-mallorn-claude-skills-lint-service-skill/SKILL.md",
+      "source_category": "development-tools",
+      "current_category": "development-tools",
+      "target_category": "development",
+      "target_status": "active",
+      "target_path": "development/gar-ai-mallorn-claude-skills-lint-service-skill",
+      "target_skill": "development/gar-ai-mallorn-claude-skills-lint-service-skill/SKILL.md",
+      "name": "lint-service",
+      "confidence": 0.9,
+      "key": "mattnigh/skills_collection:lint-service",
+      "repo": "mattnigh/skills_collection",
+      "reason": "classification target passed filters",
+      "source_sha256": "3c3da0a3f69ead5c710bab504c969c4b5d5b08732bf62ff4e7765a8dc79770a1",
+      "metadata_sha256": "59ba0fe3be4c3e9d0b60bb3250556ddbfef6bacc5403aa75273f665aa14e30c7",
+      "semantic_text_sha256": "486c3f95f1ef5b7648ac523f80e80f542211488611b3461fe89e376d4773c97b"
+    },
+    {
+      "operation": "move",
+      "source_path": "github-integration/canpok1-ai-feed-claude-skills-github-skill",
+      "source_skill": "github-integration/canpok1-ai-feed-claude-skills-github-skill/SKILL.md",
+      "source_category": "github-integration",
+      "current_category": "github-integration",
+      "target_category": "integration",
+      "target_status": "active",
+      "target_path": "integration/canpok1-ai-feed-claude-skills-github-skill",
+      "target_skill": "integration/canpok1-ai-feed-claude-skills-github-skill/SKILL.md",
+      "name": "github",
+      "confidence": 0.95,
+      "key": "mattnigh/skills_collection:github",
+      "repo": "mattnigh/skills_collection",
+      "reason": "classification target passed filters",
+      "source_sha256": "fdda9fe59b587e0a43df460b81d2c12649c33fa387143c8c5ee29cb587028cd2",
+      "metadata_sha256": "0ef2e24d94648e4442206909c480a7ce360a1ea667dc9a8960f5825c52d64149",
+      "semantic_text_sha256": "0e035ff6b8a47e4cac98d65fc9a0c791505ad9f689ffae6ffea93d61b0e33719"
+    },
+    {
+      "operation": "move",
+      "source_path": "security-compliance/compliance-check-skill",
+      "source_skill": "security-compliance/compliance-check-skill/SKILL.md",
+      "source_category": "security-compliance",
+      "current_category": "security-compliance",
+      "target_category": "security",
+      "target_status": "active",
+      "target_path": "security/compliance-check-skill",
+      "target_skill": "security/compliance-check-skill/SKILL.md",
+      "name": "compliance-check.skill",
+      "confidence": 0.95,
+      "key": "plannededge/codebook:compliance-check-skill",
+      "repo": "plannededge/codebook",
+      "reason": "classification target passed filters",
+      "source_sha256": "1ff4948402a5cbe1130b5ba8149f3516c9e6537f22713910a01f02075e2fcd11",
+      "metadata_sha256": "0a47c1aa5cf3a02c324068453208c8fa87c82cae1e5ff908be896a9c7583c323",
+      "semantic_text_sha256": "b59b8c8dcbbc1f75c09fa3cf812e9df3c5e525a7999d5cc197454421e9f68d70"
+    }
+  ],
+  "notes": [
+    "Default mode is review-only and does not modify files.",
+    "Only --apply moves directories and updates metadata.json.",
+    "Blocked moves are never applied automatically."
+  ],
+  "applied_at": "2026-05-24T09:51:15.359708+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "elixir-pro",
+  "description": "",
+  "repo": "BhurkeSiddhesh/Agent-Central",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BhurkeSiddhesh/Agent-Central",
+  "github_path": "agency-hq/skills/elixir-pro",
+  "github_branch": "main",
+  "dir_name": "elixir-pro-bhurkesiddhesh-agent-central",
+  "downloaded_at": "2026-02-05T05:34:10.145265Z",
+  "author": "BhurkeSiddhesh",
+  "source_url": "https://github.com/BhurkeSiddhesh/Agent-Central/blob/main/agency-hq/skills/elixir-pro/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BhurkeSiddhesh/Agent-Central/blob/main/agency-hq/skills/elixir-pro/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

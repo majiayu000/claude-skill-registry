@@ -1,0 +1,20 @@
+{
+  "name": "literature-review",
+  "description": "",
+  "repo": "Victory-Hugo/S2-Agent-Skill",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Victory-Hugo/S2-Agent-Skill",
+  "github_path": "skills/writing/literature-review",
+  "github_branch": "master",
+  "dir_name": "literature-review-victory-hugo-s2-agent-skill",
+  "downloaded_at": "2026-02-05T05:39:12.263068Z",
+  "author": "Victory-Hugo",
+  "source_url": "https://github.com/Victory-Hugo/S2-Agent-Skill/blob/master/skills/writing/literature-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Victory-Hugo/S2-Agent-Skill/blob/master/skills/writing/literature-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

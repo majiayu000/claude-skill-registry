@@ -1,0 +1,16 @@
+{
+  "name": "package-upgrade",
+  "repo": "duc01226/EasyPlatform",
+  "path": ".claude/skills/package-upgrade/SKILL.md",
+  "source": "github.com/duc01226/EasyPlatform",
+  "downloaded_at": "2026-01-29T05:54:19.296290Z",
+  "dir_name": "package-upgrade-duc01226-easyplatform",
+  "category": "development",
+  "author": "duc01226",
+  "source_url": "https://github.com/duc01226/EasyPlatform/blob/main/.claude/skills/package-upgrade/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2021 Dang Phuoc Duc",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

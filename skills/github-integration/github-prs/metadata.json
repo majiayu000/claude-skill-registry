@@ -1,9 +1,0 @@
-{
-  "name": "github-prs",
-  "repo": "KeyArc/keyarc",
-  "path": ".claude/skills/github-prs/SKILL.md",
-  "source": "github.com/KeyArc/keyarc",
-  "downloaded_at": "2026-02-02T03:33:31.538209Z",
-  "dir_name": "github-prs",
-  "category": "github-integration"
-}

@@ -1,0 +1,18 @@
+{
+  "name": "file-to-markdown",
+  "repo": "plipowczan/portfolio",
+  "path": ".claude/skills/file-to-markdown/SKILL.md",
+  "source": "github.com/plipowczan/portfolio",
+  "downloaded_at": "2026-01-22T00:52:39.503993Z",
+  "dir_name": "file-to-markdown",
+  "category": "documents",
+  "github_path": ".claude/skills/file-to-markdown",
+  "github_branch": "main",
+  "author": "plipowczan",
+  "source_url": "https://github.com/plipowczan/portfolio/blob/main/.claude/skills/file-to-markdown/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/plipowczan/portfolio/blob/main/.claude/skills/file-to-markdown/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

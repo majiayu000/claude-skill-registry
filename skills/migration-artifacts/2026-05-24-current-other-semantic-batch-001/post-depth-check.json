@@ -1,0 +1,9 @@
+{
+  "skills_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-41-current-other-batch-001",
+  "expected_layout": "<category>/<skill>/SKILL.md",
+  "move_count": 0,
+  "duplicate_count": 0,
+  "same_key_conflict_count": 0,
+  "same_key_preserved_count": 0,
+  "moves": []
+}

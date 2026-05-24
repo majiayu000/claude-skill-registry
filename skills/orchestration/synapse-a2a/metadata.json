@@ -1,0 +1,18 @@
+{
+  "name": "synapse-a2a",
+  "repo": "s-hiraoku/synapse-a2a",
+  "path": "plugins/synapse-a2a/skills/synapse-a2a/SKILL.md",
+  "source": "github.com/s-hiraoku/synapse-a2a",
+  "downloaded_at": "2026-01-17T01:13:30.711382Z",
+  "dir_name": "synapse-a2a",
+  "category": "orchestration",
+  "github_path": ".claude/skills/synapse-a2a",
+  "github_branch": "main",
+  "author": "s-hiraoku",
+  "source_url": "https://github.com/s-hiraoku/synapse-a2a/blob/main/.claude/skills/synapse-a2a/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/s-hiraoku/synapse-a2a/blob/main/.claude/skills/synapse-a2a/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

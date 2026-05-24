@@ -1,0 +1,17 @@
+{
+  "name": "agentic-jujutsu",
+  "repo": "JoeyJoziah/investment-analysis-platform",
+  "path": ".claude/v3/@claude-flow/cli/.claude/skills/agentic-jujutsu/SKILL.md",
+  "github_branch": "main",
+  "category": "orchestration",
+  "source": "github.com/JoeyJoziah/investment-analysis-platform",
+  "dir_name": "agentic-jujutsu-joeyjoziah-investment-analysis",
+  "downloaded_at": "2026-03-01T05:30:39.927732Z",
+  "author": "JoeyJoziah",
+  "source_url": "https://github.com/JoeyJoziah/investment-analysis-platform/blob/main/.claude/v3/@claude-flow/cli/.claude/skills/agentic-jujutsu/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JoeyJoziah/investment-analysis-platform/blob/main/.claude/v3/@claude-flow/cli/.claude/skills/agentic-jujutsu/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

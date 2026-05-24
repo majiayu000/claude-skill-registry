@@ -1,0 +1,60 @@
+{
+  "name": "product-manager-skills",
+  "version": "0.5.4",
+  "description": "PM skill for Claude Code, Codex, Cursor, Windsurf, and GitHub-based skill loaders. Diagnoses SaaS metrics, critiques PRDs, plans roadmaps, runs discovery, coaches PM career transitions, designs PLG growth strategies, and pressure-tests AI product decisions across seven knowledge domains.",
+  "keywords": [
+    "product-manager-skills",
+    "openclaw-skill",
+    "agent-skill",
+    "product-manager",
+    "product-management",
+    "pm",
+    "prd",
+    "user-story",
+    "roadmap",
+    "product-strategy",
+    "discovery",
+    "positioning",
+    "growth-plg",
+    "product-led-growth",
+    "activation",
+    "career-coaching",
+    "saas-metrics",
+    "ai-product",
+    "pm-sprint",
+    "claude-code",
+    "cursor",
+    "codex",
+    "windsurf",
+    "ai-agent",
+    "skill-md"
+  ],
+  "homepage": "https://clawhub.ai/Digidai/product-manager-skills",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Digidai/product-manager-skills.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Digidai/product-manager-skills/issues"
+  },
+  "author": "Gene Dai <gene@genedai.me> (https://genedai.me/)",
+  "license": "CC-BY-NC-SA-4.0",
+  "scripts": {
+    "check:release": "bash bin/validate-release"
+  },
+  "files": [
+    "SKILL.md",
+    "VERSION",
+    "bin/",
+    "knowledge/",
+    "templates/",
+    "examples/",
+    "STARTER-PROMPTS.md",
+    "ETHOS.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "README.zh-CN.md",
+    "README.md",
+    "LICENSE"
+  ]
+}

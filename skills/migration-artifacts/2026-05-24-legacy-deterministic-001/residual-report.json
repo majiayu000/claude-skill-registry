@@ -1,0 +1,1791 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-24T08:57:04.975548+00:00",
+  "skills_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-other-batch-001",
+  "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-other-batch-001/migration-artifacts/2026-05-24-legacy-deterministic-001/classification.jsonl",
+  "policy": {
+    "min_confidence": 1.0,
+    "from_categories": [],
+    "to_categories": [],
+    "target_statuses": [
+      "active"
+    ],
+    "allow_target_other": false,
+    "apply_mode": "report-only",
+    "example_limit_per_reason": 20,
+    "top_targets_per_reason": 20,
+    "conflict_detail_limit": 20
+  },
+  "summary": {
+    "classification_row_count": 8173,
+    "archive_skill_count": 226347,
+    "scoped_archive_skill_count": 226347,
+    "scoped_archive_classification_gap": 226220,
+    "classification_status_counts": {
+      "metadata_compliance_blocked": 17,
+      "ok": 8156
+    },
+    "archive_category_counts": {
+      "adb-meta-automation": 1,
+      "agent": 1303,
+      "agent-coordination": 2,
+      "ai-llm": 2042,
+      "ai-ml": 2012,
+      "analysis": 3001,
+      "analysis-methods": 1,
+      "api": 797,
+      "applied": 5,
+      "artifact-generation": 2,
+      "bash": 178,
+      "business": 1031,
+      "business-monetization": 1,
+      "business-productivity": 1,
+      "c-level": 49,
+      "communication": 561,
+      "context-management": 1156,
+      "core": 6,
+      "creative": 660,
+      "data": 48863,
+      "data-access": 1,
+      "design": 13379,
+      "design-principles": 1,
+      "development": 36089,
+      "development-code": 1,
+      "development-tools": 37,
+      "devops": 10207,
+      "document-processing": 3,
+      "documents": 6175,
+      "domains": 49,
+      "examples": 84,
+      "extended": 4,
+      "forensics": 56,
+      "foundation": 5,
+      "framework": 1,
+      "gaming": 689,
+      "generation": 454,
+      "github-integration": 5,
+      "integration": 4582,
+      "language": 62,
+      "local-ai-infrastructure": 50,
+      "marketing": 2575,
+      "messaging": 32,
+      "meta": 1,
+      "orchestration": 1840,
+      "other": 58088,
+      "performance": 848,
+      "personal-development": 284,
+      "planning": 1295,
+      "platform": 234,
+      "product": 2319,
+      "productivity": 2948,
+      "programming-languages": 22,
+      "project": 1,
+      "quality": 2642,
+      "research-analysis": 5,
+      "security": 4929,
+      "security-compliance": 5,
+      "skills": 1699,
+      "specialized": 2,
+      "specialized-testing": 1,
+      "string": 1,
+      "system": 17,
+      "technical-integration": 1,
+      "template": 1,
+      "test": 1,
+      "testing": 11120,
+      "testing-methodologies": 2,
+      "travel": 43,
+      "utility": 4,
+      "war-room": 4,
+      "workflow": 876,
+      "writing": 901
+    },
+    "source_state_counts": {
+      "exists": 127,
+      "missing": 8046
+    },
+    "existing_source_category_counts": {
+      "adb-meta-automation": 1,
+      "agent-coordination": 2,
+      "analysis-methods": 1,
+      "artifact-generation": 2,
+      "business-monetization": 1,
+      "business-productivity": 1,
+      "data-access": 1,
+      "design-principles": 1,
+      "development-code": 1,
+      "development-tools": 37,
+      "document-processing": 3,
+      "framework": 1,
+      "github-integration": 5,
+      "messaging": 32,
+      "meta": 1,
+      "programming-languages": 22,
+      "research-analysis": 5,
+      "security-compliance": 5,
+      "specialized-testing": 1,
+      "technical-integration": 1,
+      "test": 1,
+      "testing-methodologies": 2
+    },
+    "scoped_source_category_counts": {
+      "adb-meta-automation": 1,
+      "agent-coordination": 2,
+      "analysis-methods": 1,
+      "artifact-generation": 2,
+      "business-monetization": 1,
+      "business-productivity": 1,
+      "data-access": 1,
+      "design-principles": 1,
+      "development-code": 1,
+      "development-tools": 37,
+      "document-processing": 3,
+      "framework": 1,
+      "github-integration": 5,
+      "messaging": 32,
+      "meta": 1,
+      "programming-languages": 22,
+      "research-analysis": 5,
+      "security-compliance": 5,
+      "specialized-testing": 1,
+      "technical-integration": 1,
+      "test": 1,
+      "testing-methodologies": 2
+    },
+    "scoped_existing_source_count": 127,
+    "candidate_move_count": 0,
+    "blocked_existing_key_count": 110,
+    "stable_key_conflict_detail_count": 20,
+    "stable_key_conflict_detail_summary": {
+      "metadata_identity_equal": 11,
+      "skill_content_equal": 13
+    },
+    "primary_reason_counts": {
+      "classification status is not ok": 17,
+      "source directory missing": 8046,
+      "target category already contains a skill with the same stable key": 110
+    },
+    "all_blocker_reason_counts": {
+      "classification status is not ok": 17,
+      "target category already contains a skill with the same stable key": 110
+    },
+    "target_category_counts": {
+      "analysis": 1371,
+      "business": 188,
+      "communication": 265,
+      "data": 1,
+      "design": 29,
+      "development": 2416,
+      "documents": 176,
+      "generation": 234,
+      "integration": 1474,
+      "orchestration": 1483,
+      "platform": 16,
+      "productivity": 41,
+      "security": 357,
+      "skills": 114,
+      "testing": 8
+    },
+    "target_status_counts": {
+      "active": 8173
+    },
+    "same_policy_plan_summary": {
+      "classification_row_count": 8173,
+      "classification_status_counts": {
+        "metadata_compliance_blocked": 17,
+        "ok": 8156
+      },
+      "planned_move_count": 110,
+      "movable_count": 0,
+      "blocked_count": 110,
+      "operation_counts": {
+        "blocked_existing_key": 110
+      },
+      "reject_reasons": {
+        "classification status is not ok": 17,
+        "source directory missing": 8046
+      },
+      "source_category_counts": {
+        "adb-meta-automation": 1,
+        "agent-coordination": 1,
+        "analysis-methods": 1,
+        "artifact-generation": 1,
+        "business-monetization": 1,
+        "business-productivity": 1,
+        "data-access": 1,
+        "design-principles": 1,
+        "development-code": 1,
+        "development-tools": 33,
+        "document-processing": 3,
+        "framework": 1,
+        "github-integration": 1,
+        "messaging": 32,
+        "meta": 1,
+        "programming-languages": 17,
+        "research-analysis": 3,
+        "security-compliance": 5,
+        "specialized-testing": 1,
+        "technical-integration": 1,
+        "test": 1,
+        "testing-methodologies": 2
+      },
+      "target_category_counts": {
+        "analysis": 4,
+        "business": 1,
+        "communication": 32,
+        "data": 1,
+        "design": 1,
+        "development": 52,
+        "documents": 3,
+        "generation": 1,
+        "integration": 2,
+        "orchestration": 1,
+        "platform": 1,
+        "productivity": 1,
+        "security": 5,
+        "skills": 1,
+        "testing": 4
+      }
+    }
+  },
+  "buckets": [
+    {
+      "reason": "source directory missing",
+      "count": 8046,
+      "target_categories": [
+        {
+          "value": "development",
+          "count": 2355
+        },
+        {
+          "value": "orchestration",
+          "count": 1481
+        },
+        {
+          "value": "integration",
+          "count": 1468
+        },
+        {
+          "value": "analysis",
+          "count": 1365
+        },
+        {
+          "value": "security",
+          "count": 352
+        },
+        {
+          "value": "communication",
+          "count": 233
+        },
+        {
+          "value": "generation",
+          "count": 232
+        },
+        {
+          "value": "business",
+          "count": 187
+        },
+        {
+          "value": "documents",
+          "count": 173
+        },
+        {
+          "value": "skills",
+          "count": 113
+        },
+        {
+          "value": "productivity",
+          "count": 40
+        },
+        {
+          "value": "design",
+          "count": 28
+        },
+        {
+          "value": "platform",
+          "count": 15
+        },
+        {
+          "value": "testing",
+          "count": 4
+        }
+      ],
+      "target_status_counts": {
+        "active": 8046
+      },
+      "examples": [
+        {
+          "path": "adb-meta-automation/adb/SKILL.md",
+          "name": "adb",
+          "source_exists": false,
+          "source_category": "adb-meta-automation",
+          "classification_current_category": "adb-meta-automation",
+          "target_category": "platform",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "adb-meta-automation/adb-builder/SKILL.md",
+          "name": "adb-builder",
+          "source_exists": false,
+          "source_category": "adb-meta-automation",
+          "classification_current_category": "adb-meta-automation",
+          "target_category": "platform",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "adb-meta-automation/adb-bypass/SKILL.md",
+          "name": "adb-bypass",
+          "source_exists": false,
+          "source_category": "adb-meta-automation",
+          "classification_current_category": "adb-meta-automation",
+          "target_category": "platform",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "adb-meta-automation/adb-karrot/SKILL.md",
+          "name": "adb-karrot",
+          "source_exists": false,
+          "source_category": "adb-meta-automation",
+          "classification_current_category": "adb-meta-automation",
+          "target_category": "platform",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "adb-meta-automation/adb-magisk/SKILL.md",
+          "name": "adb-magisk",
+          "source_exists": false,
+          "source_category": "adb-meta-automation",
+          "classification_current_category": "adb-meta-automation",
+          "target_category": "platform",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "adb-meta-automation/adb-magisk-installer/SKILL.md",
+          "name": "adb-magisk-installer",
+          "source_exists": false,
+          "source_category": "adb-meta-automation",
+          "classification_current_category": "adb-meta-automation",
+          "target_category": "platform",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "adb-meta-automation/adb-navigation-base/SKILL.md",
+          "name": "adb-navigation-base",
+          "source_exists": false,
+          "source_category": "adb-meta-automation",
+          "classification_current_category": "adb-meta-automation",
+          "target_category": "platform",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "adb-meta-automation/adb-screen-detection/SKILL.md",
+          "name": "adb-screen-detection",
+          "source_exists": false,
+          "source_category": "adb-meta-automation",
+          "classification_current_category": "adb-meta-automation",
+          "target_category": "platform",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "adb-meta-automation/adb-skill-generator/SKILL.md",
+          "name": "adb-skill-generator",
+          "source_exists": false,
+          "source_category": "adb-meta-automation",
+          "classification_current_category": "adb-meta-automation",
+          "target_category": "platform",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "adb-meta-automation/adb-skill-generator-rdmptv-adbautoplayer/SKILL.md",
+          "name": "adb-skill-generator",
+          "source_exists": false,
+          "source_category": "adb-meta-automation",
+          "classification_current_category": "adb-meta-automation",
+          "target_category": "platform",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "adb-meta-automation/adb-skill-generator-rdmptv-adbautoplayer-2/SKILL.md",
+          "name": "adb-skill-generator",
+          "source_exists": false,
+          "source_category": "adb-meta-automation",
+          "classification_current_category": "adb-meta-automation",
+          "target_category": "platform",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "adb-meta-automation/adb-uiautomator/SKILL.md",
+          "name": "adb-uiautomator",
+          "source_exists": false,
+          "source_category": "adb-meta-automation",
+          "classification_current_category": "adb-meta-automation",
+          "target_category": "platform",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "adb-meta-automation/adb-workflow-orchestrator/SKILL.md",
+          "name": "adb-workflow-orchestrator",
+          "source_exists": false,
+          "source_category": "adb-meta-automation",
+          "classification_current_category": "adb-meta-automation",
+          "target_category": "platform",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "adb-meta-automation/moai-domain-adb/SKILL.md",
+          "name": "moai-domain-adb",
+          "source_exists": false,
+          "source_category": "adb-meta-automation",
+          "classification_current_category": "adb-meta-automation",
+          "target_category": "platform",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "adb-meta-automation/rdmptv-adbautoplayer-claude-skills-adb-adb-foundation-adb-skill/SKILL.md",
+          "name": "adb-skill-generator",
+          "source_exists": false,
+          "source_category": "adb-meta-automation",
+          "classification_current_category": "adb-meta-automation",
+          "target_category": "platform",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "agent-coordination/1k-group-think/SKILL.md",
+          "name": "1k-group-think",
+          "source_exists": false,
+          "source_category": "agent-coordination",
+          "classification_current_category": "agent-coordination",
+          "target_category": "orchestration",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "agent-coordination/2agent/SKILL.md",
+          "name": "2agent",
+          "source_exists": false,
+          "source_category": "agent-coordination",
+          "classification_current_category": "agent-coordination",
+          "target_category": "orchestration",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "agent-coordination/2agent-aiskillstore-marketplace/SKILL.md",
+          "name": "2agent",
+          "source_exists": false,
+          "source_category": "agent-coordination",
+          "classification_current_category": "agent-coordination",
+          "target_category": "orchestration",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "agent-coordination/2agent-chachamaru127-claude-code-harness-3b1548bd/SKILL.md",
+          "name": "2agent",
+          "source_exists": false,
+          "source_category": "agent-coordination",
+          "classification_current_category": "agent-coordination",
+          "target_category": "orchestration",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "agent-coordination/4-step-program/SKILL.md",
+          "name": "4-step-program",
+          "source_exists": false,
+          "source_category": "agent-coordination",
+          "classification_current_category": "agent-coordination",
+          "target_category": "orchestration",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "source directory missing"
+        }
+      ]
+    },
+    {
+      "reason": "target category already contains a skill with the same stable key",
+      "count": 110,
+      "target_categories": [
+        {
+          "value": "development",
+          "count": 52
+        },
+        {
+          "value": "communication",
+          "count": 32
+        },
+        {
+          "value": "security",
+          "count": 5
+        },
+        {
+          "value": "analysis",
+          "count": 4
+        },
+        {
+          "value": "testing",
+          "count": 4
+        },
+        {
+          "value": "documents",
+          "count": 3
+        },
+        {
+          "value": "integration",
+          "count": 2
+        },
+        {
+          "value": "business",
+          "count": 1
+        },
+        {
+          "value": "data",
+          "count": 1
+        },
+        {
+          "value": "design",
+          "count": 1
+        },
+        {
+          "value": "generation",
+          "count": 1
+        },
+        {
+          "value": "orchestration",
+          "count": 1
+        },
+        {
+          "value": "platform",
+          "count": 1
+        },
+        {
+          "value": "productivity",
+          "count": 1
+        },
+        {
+          "value": "skills",
+          "count": 1
+        }
+      ],
+      "target_status_counts": {
+        "active": 110
+      },
+      "examples": [
+        {
+          "path": "adb-meta-automation/adb-skill-generator-majiayu000-claude-skill-registr/SKILL.md",
+          "name": "adb-skill-generator",
+          "source_exists": true,
+          "source_category": "adb-meta-automation",
+          "classification_current_category": "adb-meta-automation",
+          "target_category": "platform",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "platform/adb-skill-generator/SKILL.md"
+        },
+        {
+          "path": "agent-coordination/wolf-scripts-agents-majiayu000-claude-skill-regist-majiayu000-claude-skill-registr/SKILL.md",
+          "name": "wolf-scripts-agents",
+          "source_exists": true,
+          "source_category": "agent-coordination",
+          "classification_current_category": "agent-coordination",
+          "target_category": "orchestration",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "orchestration/wolf-scripts-agents-majiayu000-claude-skill-regist/SKILL.md"
+        },
+        {
+          "path": "analysis-methods/diff-analysis-majiayu000-claude-skill-registr/SKILL.md",
+          "name": "diff-analysis",
+          "source_exists": true,
+          "source_category": "analysis-methods",
+          "classification_current_category": "analysis-methods",
+          "target_category": "analysis",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "analysis/diff-analysis/SKILL.md"
+        },
+        {
+          "path": "artifact-generation/doc-updates-majiayu000-claude-skill-registr/SKILL.md",
+          "name": "doc-updates",
+          "source_exists": true,
+          "source_category": "artifact-generation",
+          "classification_current_category": "artifact-generation",
+          "target_category": "generation",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "generation/doc-updates/SKILL.md"
+        },
+        {
+          "path": "business-monetization/revenue-modeler-eddiebe147-claude-settings/SKILL.md",
+          "name": "Revenue Modeler",
+          "source_exists": true,
+          "source_category": "business-monetization",
+          "classification_current_category": "business-monetization",
+          "target_category": "business",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "business/revenue-modeler/SKILL.md"
+        },
+        {
+          "path": "business-productivity/content-research-writer-davepoon-buildwithclaude/SKILL.md",
+          "name": "content-research-writer",
+          "source_exists": true,
+          "source_category": "business-productivity",
+          "classification_current_category": "business-productivity",
+          "target_category": "productivity",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "productivity/content-research-writer/SKILL.md"
+        },
+        {
+          "path": "data-access/deduplication-dadbodgeoff-drift/SKILL.md",
+          "name": "deduplication",
+          "source_exists": true,
+          "source_category": "data-access",
+          "classification_current_category": "data-access",
+          "target_category": "data",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "data/deduplication/SKILL.md"
+        },
+        {
+          "path": "design-principles/affordances/SKILL.md",
+          "name": "affordances",
+          "source_exists": true,
+          "source_category": "design-principles",
+          "classification_current_category": "design-principles",
+          "target_category": "design",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "design/affordances-vjrivmon-setup-software-ia/SKILL.md"
+        },
+        {
+          "path": "development-code/skill-creator-davepoon-buildwithclaude/SKILL.md",
+          "name": "skill-creator",
+          "source_exists": true,
+          "source_category": "development-code",
+          "classification_current_category": "development-code",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "development/skill-creator-davepoon-buildwithclaude/SKILL.md"
+        },
+        {
+          "path": "development-tools/00-build-your-mcp-server-skill/SKILL.md",
+          "name": "00-build-your-mcp-server-skill",
+          "source_exists": true,
+          "source_category": "development-tools",
+          "classification_current_category": "development-tools",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "development/00-build-your-fastapi-skill/SKILL.md"
+        },
+        {
+          "path": "development-tools/better-skill-builder-gmickel-better-skill-builder-2/SKILL.md",
+          "name": "better-skill-builder",
+          "source_exists": true,
+          "source_category": "development-tools",
+          "classification_current_category": "development-tools",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "development/better-skill-builder/SKILL.md"
+        },
+        {
+          "path": "development-tools/biome-js/SKILL.md",
+          "name": "biome-js",
+          "source_exists": true,
+          "source_category": "development-tools",
+          "classification_current_category": "development-tools",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "development/biome-js/SKILL.md"
+        },
+        {
+          "path": "development-tools/claude-agent-ts-sdk-szweibel-claude-skills/SKILL.md",
+          "name": "claude-agent-ts-sdk",
+          "source_exists": true,
+          "source_category": "development-tools",
+          "classification_current_category": "development-tools",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "development/claude-agent-ts-sdk-szweibel-claude-skills/SKILL.md"
+        },
+        {
+          "path": "development-tools/claude-cli/SKILL.md",
+          "name": "claude-cli",
+          "source_exists": true,
+          "source_category": "development-tools",
+          "classification_current_category": "development-tools",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "development/claude-cli/SKILL.md"
+        },
+        {
+          "path": "development-tools/claude-code-plugin-development/SKILL.md",
+          "name": "claude-code-plugin-development",
+          "source_exists": true,
+          "source_category": "development-tools",
+          "classification_current_category": "development-tools",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "development/claude-code-plugin-development-dwmkerr-claude-toolkit-2/SKILL.md"
+        },
+        {
+          "path": "development-tools/code-search-1ambda-dataops-platform/SKILL.md",
+          "name": "code-search",
+          "source_exists": true,
+          "source_category": "development-tools",
+          "classification_current_category": "development-tools",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "development/code-search/SKILL.md"
+        },
+        {
+          "path": "development-tools/command-creator-softaworks-agent-toolkit/SKILL.md",
+          "name": "command-creator",
+          "source_exists": true,
+          "source_category": "development-tools",
+          "classification_current_category": "development-tools",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "development/command-creator-softaworks-agent-toolkit/SKILL.md"
+        },
+        {
+          "path": "development-tools/converting-claude-subagents-edheltzel-atlas/SKILL.md",
+          "name": "convertSubagents",
+          "source_exists": true,
+          "source_category": "development-tools",
+          "classification_current_category": "development-tools",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "development/converting-claude-subagents-edheltzel-atlas/SKILL.md"
+        },
+        {
+          "path": "development-tools/converting-slash-commands-edheltzel-atlas/SKILL.md",
+          "name": "convertCommands",
+          "source_exists": true,
+          "source_category": "development-tools",
+          "classification_current_category": "development-tools",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "development/converting-slash-commands-edheltzel-atlas/SKILL.md"
+        },
+        {
+          "path": "development-tools/fix-line-endings-check-bash/SKILL.md",
+          "name": "fix-line-endings-check-bash",
+          "source_exists": true,
+          "source_category": "development-tools",
+          "classification_current_category": "development-tools",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "development/fix-line-endings-check-bash/SKILL.md"
+        }
+      ]
+    },
+    {
+      "reason": "classification status is not ok",
+      "count": 17,
+      "target_categories": [
+        {
+          "value": "development",
+          "count": 9
+        },
+        {
+          "value": "integration",
+          "count": 4
+        },
+        {
+          "value": "analysis",
+          "count": 2
+        },
+        {
+          "value": "generation",
+          "count": 1
+        },
+        {
+          "value": "orchestration",
+          "count": 1
+        }
+      ],
+      "target_status_counts": {
+        "active": 17
+      },
+      "examples": [
+        {
+          "path": "agent-coordination/multi-agent-parallel-investigation/SKILL.md",
+          "name": "multi-agent-parallel-investigation",
+          "source_exists": true,
+          "source_category": "agent-coordination",
+          "classification_current_category": "agent-coordination",
+          "target_category": "orchestration",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "metadata_compliance_blocked",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "artifact-generation/manage-artifact/SKILL.md",
+          "name": "manage-artifact",
+          "source_exists": true,
+          "source_category": "artifact-generation",
+          "classification_current_category": "artifact-generation",
+          "target_category": "generation",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "metadata_compliance_blocked",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "development-tools/cargo-ecosystem/SKILL.md",
+          "name": "cargo-ecosystem",
+          "source_exists": true,
+          "source_category": "development-tools",
+          "classification_current_category": "development-tools",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "metadata_compliance_blocked",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "development-tools/claudekit-claude-code/SKILL.md",
+          "name": "claudekit-claude-code",
+          "source_exists": true,
+          "source_category": "development-tools",
+          "classification_current_category": "development-tools",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "metadata_compliance_blocked",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "development-tools/git-convention/SKILL.md",
+          "name": "git-convention",
+          "source_exists": true,
+          "source_category": "development-tools",
+          "classification_current_category": "development-tools",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "metadata_compliance_blocked",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "development-tools/lindquist-chrome-devtools/SKILL.md",
+          "name": "chrome-devtools",
+          "source_exists": true,
+          "source_category": "development-tools",
+          "classification_current_category": "development-tools",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "metadata_compliance_blocked",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "github-integration/git-opensource/SKILL.md",
+          "name": "git-opensource",
+          "source_exists": true,
+          "source_category": "github-integration",
+          "classification_current_category": "github-integration",
+          "target_category": "integration",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "metadata_compliance_blocked",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "github-integration/pr-comment-resolver-b0932455/SKILL.md",
+          "name": "pr-comment-resolver",
+          "source_exists": true,
+          "source_category": "github-integration",
+          "classification_current_category": "github-integration",
+          "target_category": "integration",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "metadata_compliance_blocked",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "github-integration/pr-description-writer-ba20554f/SKILL.md",
+          "name": "pr-description-writer",
+          "source_exists": true,
+          "source_category": "github-integration",
+          "classification_current_category": "github-integration",
+          "target_category": "integration",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "metadata_compliance_blocked",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "github-integration/write-pr-desc/SKILL.md",
+          "name": "write-pr-desc",
+          "source_exists": true,
+          "source_category": "github-integration",
+          "classification_current_category": "github-integration",
+          "target_category": "integration",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "metadata_compliance_blocked",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "programming-languages/haskell/SKILL.md",
+          "name": "haskell",
+          "source_exists": true,
+          "source_category": "programming-languages",
+          "classification_current_category": "programming-languages",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "metadata_compliance_blocked",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "programming-languages/languages-0ef2a701/SKILL.md",
+          "name": "languages",
+          "source_exists": true,
+          "source_category": "programming-languages",
+          "classification_current_category": "programming-languages",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "metadata_compliance_blocked",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "programming-languages/ownership-borrowing/SKILL.md",
+          "name": "ownership-borrowing",
+          "source_exists": true,
+          "source_category": "programming-languages",
+          "classification_current_category": "programming-languages",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "metadata_compliance_blocked",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "programming-languages/rust-macros/SKILL.md",
+          "name": "rust-macros",
+          "source_exists": true,
+          "source_category": "programming-languages",
+          "classification_current_category": "programming-languages",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "metadata_compliance_blocked",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "programming-languages/trait-generics/SKILL.md",
+          "name": "trait-generics",
+          "source_exists": true,
+          "source_category": "programming-languages",
+          "classification_current_category": "programming-languages",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "metadata_compliance_blocked",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "research-analysis/open-source-librarian-ec616468/SKILL.md",
+          "name": "open-source-librarian",
+          "source_exists": true,
+          "source_category": "research-analysis",
+          "classification_current_category": "research-analysis",
+          "target_category": "analysis",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "metadata_compliance_blocked",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "research-analysis/research-synthesizer-046f3a5c/SKILL.md",
+          "name": "research-synthesizer",
+          "source_exists": true,
+          "source_category": "research-analysis",
+          "classification_current_category": "research-analysis",
+          "target_category": "analysis",
+          "target_status": "active",
+          "confidence": 1.0,
+          "status": "metadata_compliance_blocked",
+          "reason": "classification status is not ok"
+        }
+      ]
+    }
+  ],
+  "details": {
+    "stable_key_conflicts": [
+      {
+        "source_path": "adb-meta-automation/adb-skill-generator-majiayu000-claude-skill-registr",
+        "source_skill": "adb-meta-automation/adb-skill-generator-majiayu000-claude-skill-registr/SKILL.md",
+        "target_path": "platform/adb-skill-generator",
+        "target_skill": "platform/adb-skill-generator/SKILL.md",
+        "target_exists": true,
+        "target_category": "platform",
+        "target_status": "active",
+        "classification_name": "adb-skill-generator",
+        "confidence": 1.0,
+        "key": "majiayu000/claude-skill-registry:skills/data/adb-skill-generator/SKILL.md",
+        "source_metadata_identity": {
+          "name": "adb-skill-generator",
+          "repo": "majiayu000/claude-skill-registry",
+          "path": "skills/data/adb-skill-generator/SKILL.md",
+          "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/data/adb-skill-generator/SKILL.md",
+          "license": "MIT",
+          "author": "majiayu000"
+        },
+        "target_metadata_identity": {
+          "name": "adb-skill-generator",
+          "repo": "majiayu000/claude-skill-registry",
+          "path": "skills/data/adb-skill-generator/SKILL.md",
+          "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/data/adb-skill-generator/SKILL.md",
+          "license": "MIT",
+          "author": "majiayu000"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "f990c394e6ceffa34595d1fe0bb8abfd0b53dc718a395e9833eaeee4681bec12",
+        "target_skill_sha256": "f990c394e6ceffa34595d1fe0bb8abfd0b53dc718a395e9833eaeee4681bec12",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "agent-coordination/wolf-scripts-agents-majiayu000-claude-skill-regist-majiayu000-claude-skill-registr",
+        "source_skill": "agent-coordination/wolf-scripts-agents-majiayu000-claude-skill-regist-majiayu000-claude-skill-registr/SKILL.md",
+        "target_path": "orchestration/wolf-scripts-agents-majiayu000-claude-skill-regist",
+        "target_skill": "orchestration/wolf-scripts-agents-majiayu000-claude-skill-regist/SKILL.md",
+        "target_exists": true,
+        "target_category": "orchestration",
+        "target_status": "active",
+        "classification_name": "wolf-scripts-agents",
+        "confidence": 1.0,
+        "key": "majiayu000/claude-skill-registry:skills/productivity/wolf-scripts-agents/SKILL.md",
+        "source_metadata_identity": {
+          "name": "wolf-scripts-agents-majiayu000-claude-skill-regist",
+          "repo": "majiayu000/claude-skill-registry",
+          "path": "skills/productivity/wolf-scripts-agents/SKILL.md",
+          "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/productivity/wolf-scripts-agents/SKILL.md",
+          "license": "MIT",
+          "author": "majiayu000"
+        },
+        "target_metadata_identity": {
+          "name": "wolf-scripts-agents-majiayu000-claude-skill-regist",
+          "repo": "majiayu000/claude-skill-registry",
+          "path": "skills/productivity/wolf-scripts-agents/SKILL.md",
+          "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/productivity/wolf-scripts-agents/SKILL.md",
+          "license": "MIT",
+          "author": "majiayu000"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "7a553183040a3eb3be2bb7bf94943504726a1a1be38e24384430c237cbf1565f",
+        "target_skill_sha256": "7a553183040a3eb3be2bb7bf94943504726a1a1be38e24384430c237cbf1565f",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "analysis-methods/diff-analysis-majiayu000-claude-skill-registr",
+        "source_skill": "analysis-methods/diff-analysis-majiayu000-claude-skill-registr/SKILL.md",
+        "target_path": "analysis/diff-analysis",
+        "target_skill": "analysis/diff-analysis/SKILL.md",
+        "target_exists": true,
+        "target_category": "analysis",
+        "target_status": "active",
+        "classification_name": "diff-analysis",
+        "confidence": 1.0,
+        "key": "majiayu000/claude-skill-registry:skills/development/diff-analysis/SKILL.md",
+        "source_metadata_identity": {
+          "name": "diff-analysis",
+          "repo": "majiayu000/claude-skill-registry",
+          "path": "skills/development/diff-analysis/SKILL.md",
+          "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/development/diff-analysis/SKILL.md",
+          "license": "MIT",
+          "author": "majiayu000"
+        },
+        "target_metadata_identity": {
+          "name": "diff-analysis",
+          "repo": "majiayu000/claude-skill-registry",
+          "path": "skills/development/diff-analysis/SKILL.md",
+          "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/development/diff-analysis/SKILL.md",
+          "license": "MIT",
+          "author": "majiayu000"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "944c53608f7bc1c73686001cd906371fe32a305cb33815a913a27fd2c111b9f2",
+        "target_skill_sha256": "944c53608f7bc1c73686001cd906371fe32a305cb33815a913a27fd2c111b9f2",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "artifact-generation/doc-updates-majiayu000-claude-skill-registr",
+        "source_skill": "artifact-generation/doc-updates-majiayu000-claude-skill-registr/SKILL.md",
+        "target_path": "generation/doc-updates",
+        "target_skill": "generation/doc-updates/SKILL.md",
+        "target_exists": true,
+        "target_category": "generation",
+        "target_status": "active",
+        "classification_name": "doc-updates",
+        "confidence": 1.0,
+        "key": "majiayu000/claude-skill-registry:skills/other/doc-updates/SKILL.md",
+        "source_metadata_identity": {
+          "name": "doc-updates",
+          "repo": "majiayu000/claude-skill-registry",
+          "path": "skills/other/doc-updates/SKILL.md",
+          "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/other/doc-updates/SKILL.md",
+          "license": "MIT",
+          "author": "majiayu000"
+        },
+        "target_metadata_identity": {
+          "name": "doc-updates",
+          "repo": "majiayu000/claude-skill-registry",
+          "path": "skills/other/doc-updates/SKILL.md",
+          "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/other/doc-updates/SKILL.md",
+          "license": "MIT",
+          "author": "majiayu000"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "79e893d4e6936fd3143ebe9e43bf6cbc3d7e2ea1753624f5c8157f155ca1f264",
+        "target_skill_sha256": "79e893d4e6936fd3143ebe9e43bf6cbc3d7e2ea1753624f5c8157f155ca1f264",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "business-monetization/revenue-modeler-eddiebe147-claude-settings",
+        "source_skill": "business-monetization/revenue-modeler-eddiebe147-claude-settings/SKILL.md",
+        "target_path": "business/revenue-modeler",
+        "target_skill": "business/revenue-modeler/SKILL.md",
+        "target_exists": true,
+        "target_category": "business",
+        "target_status": "active",
+        "classification_name": "Revenue Modeler",
+        "confidence": 1.0,
+        "key": "eddiebe147/claude-settings:skills/revenue-modeler",
+        "source_metadata_identity": {
+          "name": "revenue-modeler",
+          "repo": "eddiebe147/claude-settings",
+          "path": "skills/revenue-modeler/SKILL.md",
+          "github_path": "skills/revenue-modeler",
+          "github_branch": "main",
+          "source_url": "https://github.com/eddiebe147/claude-settings/blob/main/skills/revenue-modeler/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "eddiebe147"
+        },
+        "target_metadata_identity": {
+          "name": "revenue-modeler",
+          "repo": "eddiebe147/claude-settings",
+          "path": "skills/revenue-modeler/SKILL.md",
+          "github_path": "skills/revenue-modeler",
+          "github_branch": "main",
+          "source_url": "https://github.com/eddiebe147/claude-settings/blob/main/skills/revenue-modeler/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "eddiebe147"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "c7b7c6dbf2563c7490bfdd3100f57b20ecb88371946fb22a8fc2991f5d58e69f",
+        "target_skill_sha256": "c7b7c6dbf2563c7490bfdd3100f57b20ecb88371946fb22a8fc2991f5d58e69f",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "business-productivity/content-research-writer-davepoon-buildwithclaude",
+        "source_skill": "business-productivity/content-research-writer-davepoon-buildwithclaude/SKILL.md",
+        "target_path": "productivity/content-research-writer",
+        "target_skill": "productivity/content-research-writer/SKILL.md",
+        "target_exists": true,
+        "target_category": "productivity",
+        "target_status": "active",
+        "classification_name": "content-research-writer",
+        "confidence": 1.0,
+        "key": "davepoon/buildwithclaude:plugins/all-skills/skills/content-research-writer/SKILL.md",
+        "source_metadata_identity": {
+          "name": "content-research-writer",
+          "repo": "davepoon/buildwithclaude",
+          "path": "plugins/all-skills/skills/content-research-writer/SKILL.md",
+          "source_url": "https://github.com/davepoon/buildwithclaude/blob/main/plugins/all-skills/skills/content-research-writer/SKILL.md",
+          "license": "MIT",
+          "author": "davepoon"
+        },
+        "target_metadata_identity": {
+          "name": "content-research-writer",
+          "repo": "davepoon/buildwithclaude",
+          "path": "plugins/all-skills/skills/content-research-writer/SKILL.md",
+          "source_url": "https://github.com/davepoon/buildwithclaude/blob/main/plugins/all-skills/skills/content-research-writer/SKILL.md",
+          "license": "MIT",
+          "author": "davepoon"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "1e2e8681cf7ba31550ac69151ec3fcb427559bcd3a92dc5e3b7070b7f4e076d3",
+        "target_skill_sha256": "1e2e8681cf7ba31550ac69151ec3fcb427559bcd3a92dc5e3b7070b7f4e076d3",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "data-access/deduplication-dadbodgeoff-drift",
+        "source_skill": "data-access/deduplication-dadbodgeoff-drift/SKILL.md",
+        "target_path": "data/deduplication",
+        "target_skill": "data/deduplication/SKILL.md",
+        "target_exists": true,
+        "target_category": "data",
+        "target_status": "active",
+        "classification_name": "deduplication",
+        "confidence": 1.0,
+        "key": "dadbodgeoff/drift:skills/deduplication/SKILL.md",
+        "source_metadata_identity": {
+          "name": "deduplication-dadbodgeoff-drift",
+          "repo": "dadbodgeoff/drift",
+          "path": "skills/deduplication/SKILL.md",
+          "source_url": "https://github.com/dadbodgeoff/drift/blob/main/skills/deduplication/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "dadbodgeoff"
+        },
+        "target_metadata_identity": {
+          "name": "deduplication",
+          "repo": "dadbodgeoff/drift",
+          "path": "skills/deduplication/SKILL.md",
+          "source_url": "https://github.com/dadbodgeoff/drift/blob/main/skills/deduplication/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "dadbodgeoff"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "4deb634eb2c423d4c175b0ac25cf35e595556b53a588b270acabc9677727164c",
+        "target_skill_sha256": "4deb634eb2c423d4c175b0ac25cf35e595556b53a588b270acabc9677727164c",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "design-principles/affordances",
+        "source_skill": "design-principles/affordances/SKILL.md",
+        "target_path": "design/affordances-vjrivmon-setup-software-ia",
+        "target_skill": "design/affordances-vjrivmon-setup-software-ia/SKILL.md",
+        "target_exists": true,
+        "target_category": "design",
+        "target_status": "active",
+        "classification_name": "affordances",
+        "confidence": 1.0,
+        "key": "vjrivmon/Setup-Software-IA:.claude/skills/ux-ui/design-principles/affordances/SKILL.md",
+        "source_metadata_identity": {
+          "name": "affordances",
+          "repo": "vjrivmon/Setup-Software-IA",
+          "path": ".claude/skills/ux-ui/design-principles/affordances/SKILL.md",
+          "source_url": "https://github.com/vjrivmon/Setup-Software-IA/blob/main/.claude/skills/ux-ui/design-principles/affordances/SKILL.md",
+          "license": "MIT",
+          "author": "vjrivmon"
+        },
+        "target_metadata_identity": {
+          "name": "affordances",
+          "repo": "vjrivmon/Setup-Software-IA",
+          "path": ".claude/skills/ux-ui/design-principles/affordances/SKILL.md",
+          "source_url": "https://github.com/vjrivmon/Setup-Software-IA/blob/main/.claude/skills/ux-ui/design-principles/affordances/SKILL.md",
+          "license": "MIT",
+          "author": "vjrivmon"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "835ec70c7918322d85a1fedf12c5b00fda3b23b943478a23ca3efaf682e2090a",
+        "target_skill_sha256": "835ec70c7918322d85a1fedf12c5b00fda3b23b943478a23ca3efaf682e2090a",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "development-code/skill-creator-davepoon-buildwithclaude",
+        "source_skill": "development-code/skill-creator-davepoon-buildwithclaude/SKILL.md",
+        "target_path": "development/skill-creator-davepoon-buildwithclaude",
+        "target_skill": "development/skill-creator-davepoon-buildwithclaude/SKILL.md",
+        "target_exists": true,
+        "target_category": "development",
+        "target_status": "active",
+        "classification_name": "skill-creator",
+        "confidence": 1.0,
+        "key": "davepoon/buildwithclaude:plugins/all-skills/skills/skill-creator/SKILL.md",
+        "source_metadata_identity": {
+          "name": "skill-creator",
+          "repo": "davepoon/buildwithclaude",
+          "path": "plugins/all-skills/skills/skill-creator/SKILL.md",
+          "source_url": "https://github.com/davepoon/buildwithclaude/blob/main/plugins/all-skills/skills/skill-creator/SKILL.md",
+          "license": "MIT",
+          "author": "davepoon"
+        },
+        "target_metadata_identity": {
+          "name": "skill-creator",
+          "repo": "davepoon/buildwithclaude",
+          "path": "plugins/all-skills/skills/skill-creator/SKILL.md",
+          "source_url": "https://github.com/davepoon/buildwithclaude/blob/main/plugins/all-skills/skills/skill-creator/SKILL.md",
+          "license": "MIT",
+          "author": "davepoon"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "8f838531ae760bcfe0dbbf77450e9935cc27f016b9c47cafe9a98d5306cc1b0f",
+        "target_skill_sha256": "8f838531ae760bcfe0dbbf77450e9935cc27f016b9c47cafe9a98d5306cc1b0f",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "development-tools/00-build-your-mcp-server-skill",
+        "source_skill": "development-tools/00-build-your-mcp-server-skill/SKILL.md",
+        "target_path": "development/00-build-your-fastapi-skill",
+        "target_skill": "development/00-build-your-fastapi-skill/SKILL.md",
+        "target_exists": true,
+        "target_category": "development",
+        "target_status": "active",
+        "classification_name": "00-build-your-mcp-server-skill",
+        "confidence": 1.0,
+        "key": "panaversity/agentfactory",
+        "source_metadata_identity": {
+          "name": "00-build-your-mcp-server-skill",
+          "repo": "panaversity/agentfactory",
+          "source_url": "https://github.com/panaversity/agentfactory",
+          "license": "NOASSERTION",
+          "author": "panaversity"
+        },
+        "target_metadata_identity": {
+          "name": "00-build-your-fastapi-skill",
+          "repo": "panaversity/agentfactory",
+          "source_url": "https://github.com/panaversity/agentfactory",
+          "license": "NOASSERTION",
+          "author": "panaversity"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "06d77b742454cd8dc7e29e3b9c5b8fcdf281cd08652feb98f73f32a2ac668f0e",
+        "target_skill_sha256": "d0b0e6d8bb8cd234df2ed64c3a57cfa8921527017d126f98436f29190443a04e",
+        "skill_content_equal": false
+      },
+      {
+        "source_path": "development-tools/better-skill-builder-gmickel-better-skill-builder-2",
+        "source_skill": "development-tools/better-skill-builder-gmickel-better-skill-builder-2/SKILL.md",
+        "target_path": "development/better-skill-builder",
+        "target_skill": "development/better-skill-builder/SKILL.md",
+        "target_exists": true,
+        "target_category": "development",
+        "target_status": "active",
+        "classification_name": "better-skill-builder",
+        "confidence": 1.0,
+        "key": "gmickel/better-skill-builder",
+        "source_metadata_identity": {
+          "name": "better-skill-builder",
+          "repo": "gmickel/better-skill-builder",
+          "path": "SKILL.md",
+          "source_url": "https://github.com/gmickel/better-skill-builder/blob/main/SKILL.md",
+          "license": "MIT",
+          "author": "gmickel"
+        },
+        "target_metadata_identity": {
+          "name": "better-skill-builder",
+          "repo": "gmickel/better-skill-builder",
+          "source_url": "https://github.com/gmickel/better-skill-builder",
+          "license": "MIT",
+          "author": "gmickel"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "45a76d69e0d3d21ba85492e92deee67cab4efac420f50190f3d053dea06d3613",
+        "target_skill_sha256": "45a76d69e0d3d21ba85492e92deee67cab4efac420f50190f3d053dea06d3613",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "development-tools/biome-js",
+        "source_skill": "development-tools/biome-js/SKILL.md",
+        "target_path": "development/biome-js",
+        "target_skill": "development/biome-js/SKILL.md",
+        "target_exists": true,
+        "target_category": "development",
+        "target_status": "active",
+        "classification_name": "biome-js",
+        "confidence": 1.0,
+        "key": "PaulRBerg/dot-claude:skills/biome-js",
+        "source_metadata_identity": {
+          "name": "biome-js",
+          "repo": "PaulRBerg/dot-claude",
+          "path": "skills/biome-js/SKILL.md",
+          "github_path": "skills/biome-js",
+          "github_branch": "main"
+        },
+        "target_metadata_identity": {
+          "name": "biome-js",
+          "repo": "PaulRBerg/dot-claude",
+          "github_path": "skills/biome-js",
+          "github_branch": "main"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "74d97a91853e9345b49b43d5b9aea5c1bb0fabfde1990bf629db2f901b3be8d5",
+        "target_skill_sha256": "09d3568964db0deb5edeb14c9757498b9f2296059db746ff93836c27422407a0",
+        "skill_content_equal": false
+      },
+      {
+        "source_path": "development-tools/claude-agent-ts-sdk-szweibel-claude-skills",
+        "source_skill": "development-tools/claude-agent-ts-sdk-szweibel-claude-skills/SKILL.md",
+        "target_path": "development/claude-agent-ts-sdk-szweibel-claude-skills",
+        "target_skill": "development/claude-agent-ts-sdk-szweibel-claude-skills/SKILL.md",
+        "target_exists": true,
+        "target_category": "development",
+        "target_status": "active",
+        "classification_name": "claude-agent-ts-sdk",
+        "confidence": 1.0,
+        "key": "szweibel/claude-skills:claude-agent-ts-sdk/SKILL.md.backup",
+        "source_metadata_identity": {
+          "name": "claude-agent-ts-sdk",
+          "repo": "szweibel/claude-skills",
+          "path": "claude-agent-ts-sdk/SKILL.md.backup",
+          "source_url": "https://github.com/szweibel/claude-skills/blob/main/claude-agent-ts-sdk/SKILL.md.backup/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "szweibel"
+        },
+        "target_metadata_identity": {
+          "name": "claude-agent-ts-sdk",
+          "repo": "szweibel/claude-skills",
+          "path": "claude-agent-ts-sdk/SKILL.md.backup",
+          "source_url": "https://github.com/szweibel/claude-skills/blob/main/claude-agent-ts-sdk/SKILL.md.backup/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "szweibel"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "705e38ee048485c828646c228559aa29a784398b3960cd050c9c729f99d776d3",
+        "target_skill_sha256": "705e38ee048485c828646c228559aa29a784398b3960cd050c9c729f99d776d3",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "development-tools/claude-cli",
+        "source_skill": "development-tools/claude-cli/SKILL.md",
+        "target_path": "development/claude-cli",
+        "target_skill": "development/claude-cli/SKILL.md",
+        "target_exists": true,
+        "target_category": "development",
+        "target_status": "active",
+        "classification_name": "claude-cli",
+        "confidence": 1.0,
+        "key": "lanej/dotfiles:claude/skills/claude-cli/SKILL.md",
+        "source_metadata_identity": {
+          "name": "claude-cli",
+          "repo": "lanej/dotfiles",
+          "path": "claude/skills/claude-cli/SKILL.md",
+          "source_url": "https://github.com/lanej/dotfiles/blob/main/claude/skills/claude-cli/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "lanej"
+        },
+        "target_metadata_identity": {
+          "name": "claude-cli",
+          "repo": "lanej/dotfiles",
+          "path": "claude/skills/claude-cli/SKILL.md",
+          "source_url": "https://github.com/lanej/dotfiles/blob/main/claude/skills/claude-cli/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "lanej"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "cf4f9e0836b0d710ca8b5b8b7218e4b7dbfe27a72ead4338e3c4b7751b57f1eb",
+        "target_skill_sha256": "cf4f9e0836b0d710ca8b5b8b7218e4b7dbfe27a72ead4338e3c4b7751b57f1eb",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "development-tools/claude-code-plugin-development",
+        "source_skill": "development-tools/claude-code-plugin-development/SKILL.md",
+        "target_path": "development/claude-code-plugin-development-dwmkerr-claude-toolkit-2",
+        "target_skill": "development/claude-code-plugin-development-dwmkerr-claude-toolkit-2/SKILL.md",
+        "target_exists": true,
+        "target_category": "development",
+        "target_status": "active",
+        "classification_name": "claude-code-plugin-development",
+        "confidence": 1.0,
+        "key": "dwmkerr/claude-toolkit:plugins/toolkit/skills/claude-code-plugin-development",
+        "source_metadata_identity": {
+          "name": "claude-code-plugin-development",
+          "repo": "dwmkerr/claude-toolkit",
+          "path": "plugins/toolkit/skills/claude-code-plugin-development/SKILL.md",
+          "github_path": "plugins/toolkit/skills/claude-code-plugin-development",
+          "github_branch": "main",
+          "source_url": "https://github.com/dwmkerr/claude-toolkit/blob/main/plugins/toolkit/skills/claude-code-plugin-development/SKILL.md",
+          "license": "MIT",
+          "author": "dwmkerr"
+        },
+        "target_metadata_identity": {
+          "name": "claude-code-plugin-development",
+          "repo": "dwmkerr/claude-toolkit",
+          "path": "plugins/toolkit/skills/claude-code-plugin-development",
+          "source_url": "https://github.com/dwmkerr/claude-toolkit/blob/main/plugins/toolkit/skills/claude-code-plugin-development/SKILL.md",
+          "license": "MIT",
+          "author": "dwmkerr"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "1367ce7cdf7cabc865f8add2adfb5e8e2a2610be110bd8ee98a3dc570a4e5765",
+        "target_skill_sha256": "0f20dc51231ea2017e184e7f197d207cfa0ec3f70f314f88e5973115e4481afa",
+        "skill_content_equal": false
+      },
+      {
+        "source_path": "development-tools/code-search-1ambda-dataops-platform",
+        "source_skill": "development-tools/code-search-1ambda-dataops-platform/SKILL.md",
+        "target_path": "development/code-search",
+        "target_skill": "development/code-search/SKILL.md",
+        "target_exists": true,
+        "target_category": "development",
+        "target_status": "active",
+        "classification_name": "code-search",
+        "confidence": 1.0,
+        "key": "1ambda/dataops-platform:.claude/skills/code-search",
+        "source_metadata_identity": {
+          "name": "code-search",
+          "repo": "1ambda/dataops-platform",
+          "path": ".copilot/skills/code-search/SKILL.md",
+          "github_path": ".claude/skills/code-search",
+          "github_branch": "main",
+          "source_url": "https://github.com/1ambda/dataops-platform/blob/main/.claude/skills/code-search/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "1ambda"
+        },
+        "target_metadata_identity": {
+          "name": "code-search",
+          "repo": "1ambda/dataops-platform",
+          "github_path": ".claude/skills/code-search",
+          "github_branch": "main",
+          "source_url": "https://github.com/1ambda/dataops-platform/blob/main/.claude/skills/code-search/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "1ambda"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "dc8fad2ef213be2a4f75cb75783bddf0cfc53469cdab00614292b24195575fe8",
+        "target_skill_sha256": "e31174cf53600aae00ebea49556df9cd32cd99408af31ef179dc4bc49c6b5a05",
+        "skill_content_equal": false
+      },
+      {
+        "source_path": "development-tools/command-creator-softaworks-agent-toolkit",
+        "source_skill": "development-tools/command-creator-softaworks-agent-toolkit/SKILL.md",
+        "target_path": "development/command-creator-softaworks-agent-toolkit",
+        "target_skill": "development/command-creator-softaworks-agent-toolkit/SKILL.md",
+        "target_exists": true,
+        "target_category": "development",
+        "target_status": "active",
+        "classification_name": "command-creator",
+        "confidence": 1.0,
+        "key": "softaworks/agent-toolkit:skills/command-creator/SKILL.md",
+        "source_metadata_identity": {
+          "name": "command-creator",
+          "repo": "softaworks/agent-toolkit",
+          "path": "skills/command-creator/SKILL.md",
+          "source_url": "https://github.com/softaworks/agent-toolkit/blob/main/skills/command-creator/SKILL.md",
+          "license": "MIT",
+          "author": "softaworks"
+        },
+        "target_metadata_identity": {
+          "name": "command-creator",
+          "repo": "softaworks/agent-toolkit",
+          "path": "skills/command-creator/SKILL.md",
+          "source_url": "https://github.com/softaworks/agent-toolkit/blob/main/skills/command-creator/SKILL.md",
+          "license": "MIT",
+          "author": "softaworks"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "250a46ebe34c22746c3f67f1f67be1627bcf9da3ccb470e080a6d33b551a4351",
+        "target_skill_sha256": "250a46ebe34c22746c3f67f1f67be1627bcf9da3ccb470e080a6d33b551a4351",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "development-tools/converting-claude-subagents-edheltzel-atlas",
+        "source_skill": "development-tools/converting-claude-subagents-edheltzel-atlas/SKILL.md",
+        "target_path": "development/converting-claude-subagents-edheltzel-atlas",
+        "target_skill": "development/converting-claude-subagents-edheltzel-atlas/SKILL.md",
+        "target_exists": true,
+        "target_category": "development",
+        "target_status": "active",
+        "classification_name": "convertSubagents",
+        "confidence": 1.0,
+        "key": "edheltzel/atlas:.atlasOG/exports/modules/skills/skills/converting-claude-subagents",
+        "source_metadata_identity": {
+          "name": "converting-claude-subagents",
+          "repo": "edheltzel/atlas",
+          "path": ".claude/skills/converting-claude-subagents/SKILL.md",
+          "github_path": ".atlasOG/exports/modules/skills/skills/converting-claude-subagents",
+          "github_branch": "main",
+          "source_url": "https://github.com/edheltzel/atlas/blob/main/.atlasOG/exports/modules/skills/skills/converting-claude-subagents/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "edheltzel"
+        },
+        "target_metadata_identity": {
+          "name": "converting-claude-subagents",
+          "repo": "edheltzel/atlas",
+          "github_path": ".atlasOG/exports/modules/skills/skills/converting-claude-subagents",
+          "github_branch": "main",
+          "source_url": "https://github.com/edheltzel/atlas/blob/main/.atlasOG/exports/modules/skills/skills/converting-claude-subagents/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "edheltzel"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "3a832ac6eff06295551aac99dfd648307e3bf95b696d3fada1ec270889d188f4",
+        "target_skill_sha256": "f8bbee7b56b9809cc42f6b03fe16134c4539ceb285d1e4e3af17335a5fe2b591",
+        "skill_content_equal": false
+      },
+      {
+        "source_path": "development-tools/converting-slash-commands-edheltzel-atlas",
+        "source_skill": "development-tools/converting-slash-commands-edheltzel-atlas/SKILL.md",
+        "target_path": "development/converting-slash-commands-edheltzel-atlas",
+        "target_skill": "development/converting-slash-commands-edheltzel-atlas/SKILL.md",
+        "target_exists": true,
+        "target_category": "development",
+        "target_status": "active",
+        "classification_name": "convertCommands",
+        "confidence": 1.0,
+        "key": "edheltzel/atlas:.atlasOG/exports/modules/skills/skills/converting-slash-commands",
+        "source_metadata_identity": {
+          "name": "converting-slash-commands",
+          "repo": "edheltzel/atlas",
+          "path": ".claude/skills/converting-slash-commands/SKILL.md",
+          "github_path": ".atlasOG/exports/modules/skills/skills/converting-slash-commands",
+          "github_branch": "main",
+          "source_url": "https://github.com/edheltzel/atlas/blob/main/.atlasOG/exports/modules/skills/skills/converting-slash-commands/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "edheltzel"
+        },
+        "target_metadata_identity": {
+          "name": "converting-slash-commands",
+          "repo": "edheltzel/atlas",
+          "github_path": ".atlasOG/exports/modules/skills/skills/converting-slash-commands",
+          "github_branch": "main",
+          "source_url": "https://github.com/edheltzel/atlas/blob/main/.atlasOG/exports/modules/skills/skills/converting-slash-commands/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "edheltzel"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "b78c4b5fc7866d890f7a2cc7bdaf85dea7ee05c6827d8390e3f1bd8899ed578b",
+        "target_skill_sha256": "dba3ec65d9e21c314aab957b431de4d3c9fefba1d74343674b5746179e4197d7",
+        "skill_content_equal": false
+      },
+      {
+        "source_path": "development-tools/fix-line-endings-check-bash",
+        "source_skill": "development-tools/fix-line-endings-check-bash/SKILL.md",
+        "target_path": "development/fix-line-endings-check-bash",
+        "target_skill": "development/fix-line-endings-check-bash/SKILL.md",
+        "target_exists": true,
+        "target_category": "development",
+        "target_status": "active",
+        "classification_name": "fix-line-endings-check-bash",
+        "confidence": 1.0,
+        "key": "ManuelKugelmann/BitBot:.bitbot/internal/bitbot-config/.claude/skills/fix-line-endings-check-bash",
+        "source_metadata_identity": {
+          "name": "fix-line-endings-check-bash",
+          "repo": "ManuelKugelmann/BitBot",
+          "path": "container/templates/bitbot-config/.claude/skills/fix-line-endings-check-bash/SKILL.md",
+          "github_path": ".bitbot/internal/bitbot-config/.claude/skills/fix-line-endings-check-bash",
+          "github_branch": "main",
+          "source_url": "https://github.com/ManuelKugelmann/BitBot/blob/main/.bitbot/internal/bitbot-config/.claude/skills/fix-line-endings-check-bash/SKILL.md",
+          "license": "MIT",
+          "author": "ManuelKugelmann"
+        },
+        "target_metadata_identity": {
+          "name": "fix-line-endings-check-bash",
+          "repo": "ManuelKugelmann/BitBot",
+          "github_path": ".bitbot/internal/bitbot-config/.claude/skills/fix-line-endings-check-bash",
+          "github_branch": "main",
+          "source_url": "https://github.com/ManuelKugelmann/BitBot/blob/main/.bitbot/internal/bitbot-config/.claude/skills/fix-line-endings-check-bash/SKILL.md",
+          "license": "MIT",
+          "author": "ManuelKugelmann"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "1fbc4ddfbf7e17e45bfb83ee319da74bce608e64c42d77ada1b51d817db13625",
+        "target_skill_sha256": "817bb78efb255239450d4ff3fc4d2d36fc092c31c3fd6e068ea80590885f96aa",
+        "skill_content_equal": false
+      }
+    ]
+  },
+  "notes": [
+    "This report is read-only and never moves, deletes, or rewrites skills.",
+    "same_policy_plan_summary is generated by apply_category_migration.py with the same flags.",
+    "primary_reason_counts are mutually exclusive and explain the current archive state first.",
+    "all_blocker_reason_counts can exceed scoped_existing_source_count because one row may have multiple blockers.",
+    "source directory missing usually means the classification row points at a pre-migration path that has already moved.",
+    "scoped_archive_classification_gap is scoped_archive_skill_count minus scoped_existing_source_count; positive values indicate archive skills not covered by the classification file or duplicate classification coverage.",
+    "stable_key_conflicts detail is bounded by --conflict-detail-limit and includes content hashes so duplicate removal is not inferred from the stable key alone."
+  ]
+}

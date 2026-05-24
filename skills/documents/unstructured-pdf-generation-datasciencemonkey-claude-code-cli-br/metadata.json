@@ -1,0 +1,20 @@
+{
+  "name": "unstructured-pdf-generation",
+  "description": "",
+  "repo": "datasciencemonkey/claude-code-cli-bricks",
+  "category": "documents",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/datasciencemonkey/claude-code-cli-bricks",
+  "github_path": ".claude/skills/unstructured-pdf-generation",
+  "github_branch": "main",
+  "dir_name": "unstructured-pdf-generation-datasciencemonkey-claude-code-cli-br",
+  "downloaded_at": "2026-02-05T01:44:57.063837Z",
+  "author": "datasciencemonkey",
+  "source_url": "https://github.com/datasciencemonkey/claude-code-cli-bricks/blob/main/.claude/skills/unstructured-pdf-generation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/datasciencemonkey/claude-code-cli-bricks/blob/main/.claude/skills/unstructured-pdf-generation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

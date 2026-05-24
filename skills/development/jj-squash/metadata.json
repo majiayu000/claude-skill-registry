@@ -1,0 +1,16 @@
+{
+  "name": "jj:squash",
+  "repo": "jbott/nix-config",
+  "path": "home-manager/programs/claude-code/skills/jj:squash/SKILL.md",
+  "source": "github.com/jbott/nix-config",
+  "downloaded_at": "2026-02-02T04:56:14.365444Z",
+  "dir_name": "jj-squash",
+  "category": "development",
+  "author": "jbott",
+  "source_url": "https://github.com/jbott/nix-config/blob/main/home-manager/programs/claude-code/skills/jj:squash/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jbott/nix-config/blob/main/home-manager/programs/claude-code/skills/jj:squash/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

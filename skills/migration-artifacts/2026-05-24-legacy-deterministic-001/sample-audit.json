@@ -1,0 +1,1149 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-24T08:54:08.195110+00:00",
+  "workset_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-other-batch-001/migration-artifacts/2026-05-24-legacy-deterministic-001/input.jsonl",
+  "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-other-batch-001/migration-artifacts/2026-05-24-legacy-deterministic-001/classification.jsonl",
+  "policy": {
+    "sample_size": 50,
+    "seed": "category-audit-v1",
+    "statuses": [
+      "ok"
+    ],
+    "min_confidence": 1.0
+  },
+  "summary": {
+    "workset_row_count": 8173,
+    "classification_row_count": 8173,
+    "matched_input_count": 8173,
+    "missing_input_count": 0,
+    "candidate_count": 8156,
+    "sample_count": 50,
+    "status_counts": {
+      "metadata_compliance_blocked": 17,
+      "ok": 8156
+    },
+    "target_category_counts": {
+      "analysis": 1371,
+      "business": 188,
+      "communication": 265,
+      "data": 1,
+      "design": 29,
+      "development": 2416,
+      "documents": 176,
+      "generation": 234,
+      "integration": 1474,
+      "orchestration": 1483,
+      "platform": 16,
+      "productivity": 41,
+      "security": 357,
+      "skills": 114,
+      "testing": 8
+    }
+  },
+  "samples": [
+    {
+      "path": "research-analysis/research-workflow/SKILL.md",
+      "name": "research-workflow",
+      "current_category": "research-analysis",
+      "llm_category": "analysis",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category research-analysis maps deterministically to analysis: Research Analysis is covered by Analysis.",
+      "evidence": [
+        "directory category research-analysis",
+        "canonical target analysis"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "eb9463c09a1e0969767c2896d123136d1aa1e1bf9503f5e9b514f8a6b5a321cf",
+      "metadata_sha256": "816746a90be96e70ae58a604eebbe90aaf9270171deb516784ffc707b998fcf5",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Systematic research workflow orchestrating multi-source research operations for comprehensive domain investigation. Sequential workflow from web search through GitHub exploration and documentation analysis to research synthesis. Use when researching new domains, gathering patterns, investigating technologies, or conducting comprehensive multi-source research for skill development.",
+      "content_excerpt": "---\nname: research-workflow\ndescription: Systematic research workflow orchestrating multi-source research operations for comprehensive domain investigation. Sequential workflow from web search through GitHub exploration and documentation analysis to research synthesis. Use when researching new domains, gathering patterns, investigating technologies, or conducting comprehensive multi-source research for skill development.\nallowed-tools: Read, Write, Edit, Glob, Grep, Bash, WebSearch, WebFetch\n---\n\n# Research Workflow\n\n## Overview\n\nresearch-workflow provides systematic multi-source research by o"
+    },
+    {
+      "path": "programming-languages/rust-engineer-skill/SKILL.md",
+      "name": "rust-engineer",
+      "current_category": "programming-languages",
+      "llm_category": "development",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category programming-languages maps deterministically to development: Programming language skills are development workflows.",
+      "evidence": [
+        "directory category programming-languages",
+        "canonical target development"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "88df39733c6598ddd78831081d1dcbf5f39772b84edf08a5d2a9ff1bdb45e614",
+      "metadata_sha256": "02f904607844e12bb4b7e2bee2b39486a81ccbe14d226706df18e7526665b8aa",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Rust specialist with expertise in async programming, ownership patterns, FFI, and WebAssembly development",
+      "content_excerpt": "---\nname: rust-engineer\ndescription: Rust specialist with expertise in async programming, ownership patterns, FFI, and WebAssembly development\n---\n\n# Rust Engineer\n\n## Purpose\n\nProvides expert Rust development expertise specializing in memory-safe systems programming, async programming with Tokio, and high-performance backend services. Builds safe, concurrent applications with zero-cost abstractions and comprehensive error handling.\n\n## When to Use\n\n- Building high-performance backend services with Axum or Actix\n- Implementing memory-safe systems programming without garbage collector\n- Develop"
+    },
+    {
+      "path": "development-tools/prettier-integration/SKILL.md",
+      "name": "prettier-integration",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category development-tools maps deterministically to development: Development Tools is covered by Development.",
+      "evidence": [
+        "directory category development-tools",
+        "canonical target development"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "a26280ede4127a1b3190cee162362e5b166064f270f6dbb0d8d4309776c2e3a2",
+      "metadata_sha256": "a6ef4aed078ec66c6edac0d80fe62d1058352f41921944a9227ade320648d597",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "ESLintとPrettierの統合とフォーマット自動化の専門知識を提供します。\n責務分離、競合解決、エディタ統合、保存時自動実行を設計します。\n\nAnchors:\n• The Pragmatic Programmer (Hunt, Thomas) / 適用: 実践的改善アプローチ、自動化の価値判断 / 目的: ツール統合の最適化指針\n• Prettier公式ドキュメント / 適用: 設定オプション選択、デフォルト値理解 / 目的: opinionatedツールの適切な活用\n• ESLint + Prettier統合ガイド / 適用: 責務分離、競合回避パターン / 目的: 適切な統合設計\n\nTrigger:\nUse when setting up Prettier with ESLint, resolving formatting conflicts, configuring editor integration, or implementing automated formatting workflows.\nprettier integration, eslint prettier conflict, code formatting setup, auto format on save, prettier eslint setup, formatting automation",
+      "content_excerpt": "---\nname: prettier-integration\ndescription: |\n  ESLintとPrettierの統合とフォーマット自動化の専門知識を提供します。\n  責務分離、競合解決、エディタ統合、保存時自動実行を設計します。\n\n  Anchors:\n  • The Pragmatic Programmer (Hunt, Thomas) / 適用: 実践的改善アプローチ、自動化の価値判断 / 目的: ツール統合の最適化指針\n  • Prettier公式ドキュメント / 適用: 設定オプション選択、デフォルト値理解 / 目的: opinionatedツールの適切な活用\n  • ESLint + Prettier統合ガイド / 適用: 責務分離、競合回避パターン / 目的: 適切な統合設計\n\n  Trigger:\n  Use when setting up Prettier with ESLint, resolving formatting conflicts, configuring editor integration, or implementing automated formatting workflows.\n  prettier integration, eslint prettier conflict, code formatting setup, au"
+    },
+    {
+      "path": "agent-coordination/team-frontend/SKILL.md",
+      "name": "team-frontend",
+      "current_category": "agent-coordination",
+      "llm_category": "orchestration",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category agent-coordination maps deterministically to orchestration: Agent coordination is an orchestration workflow.",
+      "evidence": [
+        "directory category agent-coordination",
+        "canonical target orchestration"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "2786823a19bc46c19c2bc17263cbcdd8dd9042b1d034a9926d87b93054d05035",
+      "metadata_sha256": "00b5fba6d32e17bdfe83a317313254aa3416ea3c507fd1c1da0f10ee175aca4e",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Unified team skill for frontend development. Pure router — all roles read this file. Beat model is coordinator-only in monitor.md. Built-in ui-ux-pro-max design intelligence. Triggers on \"team frontend\".",
+      "content_excerpt": "---\nname: team-frontend\ndescription: Unified team skill for frontend development. Pure router — all roles read this file. Beat model is coordinator-only in monitor.md. Built-in ui-ux-pro-max design intelligence. Triggers on \"team frontend\".\nallowed-tools: Agent(*), TaskCreate(*), TaskList(*), TaskGet(*), TaskUpdate(*), TeamCreate(*), TeamDelete(*), SendMessage(*), AskUserQuestion(*), Read(*), Write(*), Edit(*), Bash(*), Glob(*), Grep(*), WebFetch(*), WebSearch(*), mcp__ace-tool__search_context(*)\n---\n\n# Team Frontend Development\n\nUnified team skill: frontend development with built-in ui-ux-pro"
+    },
+    {
+      "path": "agent-coordination/swarm-boshu2-agentops-3/SKILL.md",
+      "name": "swarm",
+      "current_category": "agent-coordination",
+      "llm_category": "orchestration",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category agent-coordination maps deterministically to orchestration: Agent coordination is an orchestration workflow.",
+      "evidence": [
+        "directory category agent-coordination",
+        "canonical target orchestration"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "623d072b2a854de18cbc962264468529d8fa7d6915a3900d17131db77f215c7e",
+      "metadata_sha256": "7deb16b911a80ccb0f342d64080d0f567e716d47dae1aeff0a8b8d83ba892e80",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Spawn isolated Codex sub-agents for parallel task execution using the current runtime primitives. Triggers: \"swarm\", \"spawn agents\", \"parallel work\", \"run in parallel\", \"parallel execution\".",
+      "content_excerpt": "---\nname: swarm\ndescription: 'Spawn isolated Codex sub-agents for parallel task execution using the current runtime primitives. Triggers: \"swarm\", \"spawn agents\", \"parallel work\", \"run in parallel\", \"parallel execution\".'\n---\n\n# $swarm — Parallel Agent Execution (Codex Tailoring)\n\nThis override captures the Codex-native execution model for parallel work.\n\nThe active runtime primitives are:\n\n- `spawn_agent`\n- `send_input`\n- `wait_agent`\n- `close_agent`\n\nUse `agent_type=\"explorer\"` for read-only discovery and `agent_type=\"worker\"` for implementation workers.\n\n## Core Rules\n\n1. Only parallelize t"
+    },
+    {
+      "path": "agent-coordination/intelligent-routing-ab-aswini-agent-kit-p1/SKILL.md",
+      "name": "intelligent-routing",
+      "current_category": "agent-coordination",
+      "llm_category": "orchestration",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category agent-coordination maps deterministically to orchestration: Agent coordination is an orchestration workflow.",
+      "evidence": [
+        "directory category agent-coordination",
+        "canonical target orchestration"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "b0da558d5cbd5c44de0e9af8db8d9301a3b6e5595594d2fc0b2341deaefaf908",
+      "metadata_sha256": "366e60f747d3d7c6da85dc6ba0e3f7726aa6d522b7c47e4a5fe52147e1785446",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Automatic agent selection and intelligent task routing. Analyzes user requests and automatically selects the best specialist agent(s) without requiring explicit user mentions.",
+      "content_excerpt": "---\nname: intelligent-routing\ndescription: Automatic agent selection and intelligent task routing. Analyzes user requests and automatically selects the best specialist agent(s) without requiring explicit user mentions.\nversion: 1.0.0\n---\n\n# Intelligent Agent Routing\n\n**Purpose**: Automatically analyze user requests and route them to the most appropriate specialist agent(s) without requiring explicit user mentions.\n\n## Core Principle\n\n> **The AI should act as an intelligent Project Manager**, analyzing each request and automatically selecting the best specialist(s) for the job.\n\n## How It Works"
+    },
+    {
+      "path": "github-integration/create-pr-aiskillstore-marketplace/SKILL.md",
+      "name": "create-pr",
+      "current_category": "github-integration",
+      "llm_category": "integration",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category github-integration maps deterministically to integration: GitHub Integration is a service integration.",
+      "evidence": [
+        "directory category github-integration",
+        "canonical target integration"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "ab935de496aa86f0ee31d75ec95a844d60dc3547ce9da28dc4455c0421c8f2e4",
+      "metadata_sha256": "3e198d22985b574c629661acec4c9d350fd5ba9d1e9be3104781bdfdb919bcaa",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "GitHubのプルリクエスト（PR）を作成する際に使用します。変更のコミット、プッシュ、PR作成を含む完全なワークフローを日本語で実行します。「PRを作って」「プルリクエストを作成」「pull requestを作成」などのリクエストで自動的に起動します。",
+      "content_excerpt": "---\nname: create-pr\ndescription: GitHubのプルリクエスト（PR）を作成する際に使用します。変更のコミット、プッシュ、PR作成を含む完全なワークフローを日本語で実行します。「PRを作って」「プルリクエストを作成」「pull requestを作成」などのリクエストで自動的に起動します。\nallowed-tools:\n  - Bash\n  - Read\n  - Grep\n  - Glob\n---\n\n# Pull Request作成スキル\n\nこのスキルは、GitHubのプルリクエスト作成に必要な一連のワークフローを自動化します。\n\n**IMPORTANT: このスキルを使用する際は、必ず日本語でユーザーとコミュニケーションを取ってください。**\n\n## ワークフロー\n\n### 1. 変更内容の確認\n\nまず現在の状態を確認します：\n\n```bash\n# 変更されたファイルを確認\ngit status\n\n# 変更内容の差分を確認\ngit diff\n\n# 最近のコミット履歴を確認（コミットメッセージのスタイルを把握）\ngit log -5 --oneline\n```\n\n### 2. 事前準備とチェック\n\nコミット前に必要なチェックを実行します：\n\n1. リポジトリルートの`CLAUDE.md`を確認し、プロジェクト固有の要件を確認\n2. テスト、リンター、ビ"
+    },
+    {
+      "path": "research-analysis/result-to-claim/SKILL.md",
+      "name": "result-to-claim",
+      "current_category": "research-analysis",
+      "llm_category": "analysis",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category research-analysis maps deterministically to analysis: Research Analysis is covered by Analysis.",
+      "evidence": [
+        "directory category research-analysis",
+        "canonical target analysis"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "b999264668a6e8d4bb3717eb50dee7aa8b6c66c3d0648db39a2348ecf64ad4d9",
+      "metadata_sha256": "144253f6e71151832b75832bed44d8b337d875aab02a578a6de32ca9a91e6159",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when experiments complete to judge what claims the results support, what they don't, and what evidence is still missing. Codex MCP evaluates results against intended claims and routes to next action (pivot, supplement, or confirm). Use after experiments finish — before writing the paper or running ablations.",
+      "content_excerpt": "---\nname: result-to-claim\ndescription: Use when experiments complete to judge what claims the results support, what they don't, and what evidence is still missing. Codex MCP evaluates results against intended claims and routes to next action (pivot, supplement, or confirm). Use after experiments finish — before writing the paper or running ablations.\nargument-hint: [experiment-description-or-wandb-run]\nallowed-tools: Bash(*), Read, Grep, Glob, Write, Edit, mcp__codex__codex, mcp__codex__codex-reply\n---\n\n# Result-to-Claim Gate\n\nExperiments produce numbers; this gate decides what those numbers *"
+    },
+    {
+      "path": "agent-coordination/agentic-jujutsu-ruvnet-claude-flow-3/SKILL.md",
+      "name": "agentic-jujutsu",
+      "current_category": "agent-coordination",
+      "llm_category": "orchestration",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category agent-coordination maps deterministically to orchestration: Agent coordination is an orchestration workflow.",
+      "evidence": [
+        "directory category agent-coordination",
+        "canonical target orchestration"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "6620d4deac6310788656c2dc2fb3a3cc34cd4e2f6137dff1ffe00b98d4be82e5",
+      "metadata_sha256": "d695d4a2f8bc43a4fe820fae9e1c5b176dc992124b2d5b98d1c4e9806d822a18",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Quantum-resistant, self-learning version control for AI agents with ReasoningBank intelligence and multi-agent coordination",
+      "content_excerpt": "---\nname: agentic-jujutsu\nversion: 2.3.2\ndescription: Quantum-resistant, self-learning version control for AI agents with ReasoningBank intelligence and multi-agent coordination\n---\n\n# Agentic Jujutsu - AI Agent Version Control\n\n> Quantum-ready, self-learning version control designed for multiple AI agents working simultaneously without conflicts.\n\n## When to Use This Skill\n\nUse **agentic-jujutsu** when you need:\n- ✅ Multiple AI agents modifying code simultaneously\n- ✅ Lock-free version control (23x faster than Git)\n- ✅ Self-learning AI that improves from experience\n- ✅ Quantum-resistant secur"
+    },
+    {
+      "path": "development-tools/tldr-deep-parcadei-continuous-claude-v3/SKILL.md",
+      "name": "tldr-deep",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category development-tools maps deterministically to development: Development Tools is covered by Development.",
+      "evidence": [
+        "directory category development-tools",
+        "canonical target development"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "906d221db52d33a5613f2cec7993810048d507e3063493b9dd2658985b8a16f6",
+      "metadata_sha256": "c9791d38420d38632fecc8e3ed9648be716bce3d7051b83d63bf0da4e970ee32",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Full 5-layer analysis of a specific function. Use when debugging or deeply understanding code.",
+      "content_excerpt": "---\nname: tldr-deep\ndescription: Full 5-layer analysis of a specific function. Use when debugging or deeply understanding code.\n---\n\n# TLDR Deep Analysis\n\nFull 5-layer analysis of a specific function. Use when debugging or deeply understanding code.\n\n## Trigger\n- `/tldr-deep <function_name>`\n- \"analyze function X in detail\"\n- \"I need to deeply understand how Y works\"\n- Debugging complex functions\n\n## Layers\n\n| Layer | Purpose | Command |\n|-------|---------|---------|\n| L1: AST | Structure | `tldr extract <file>` |\n| L2: Call Graph | Navigation | `tldr context <func> --depth 2` |\n| L3: CFG | Co"
+    },
+    {
+      "path": "messaging/wacli-0xhoneyjar-loa-beauvoir/SKILL.md",
+      "name": "wacli",
+      "current_category": "messaging",
+      "llm_category": "communication",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category messaging maps deterministically to communication: Messaging is covered by Communication.",
+      "evidence": [
+        "directory category messaging",
+        "canonical target communication"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "e96ce8a145db72ceb49012d20570a0cff921173f9518676d7fe1472804ffeb9c",
+      "metadata_sha256": "da3cee31bc782dee6060c090617189d47a46649fbe605c929164e3bfffc54007",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Send WhatsApp messages to other people or search/sync WhatsApp history via the wacli CLI (not for normal user chats).",
+      "content_excerpt": "---\nname: wacli\ndescription: Send WhatsApp messages to other people or search/sync WhatsApp history via the wacli CLI (not for normal user chats).\nhomepage: https://wacli.sh\nmetadata:\n  {\n    \"openclaw\":\n      {\n        \"emoji\": \"📱\",\n        \"requires\": { \"bins\": [\"wacli\"] },\n        \"install\":\n          [\n            {\n              \"id\": \"brew\",\n              \"kind\": \"brew\",\n              \"formula\": \"steipete/tap/wacli\",\n              \"bins\": [\"wacli\"],\n              \"label\": \"Install wacli (brew)\",\n            },\n            {\n              \"id\": \"go\",\n              \"kind\": \"go\",\n          "
+    },
+    {
+      "path": "research-analysis/web-search-aiskillstore-marketplace-3/SKILL.md",
+      "name": "web-search",
+      "current_category": "research-analysis",
+      "llm_category": "analysis",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category research-analysis maps deterministically to analysis: Research Analysis is covered by Analysis.",
+      "evidence": [
+        "directory category research-analysis",
+        "canonical target analysis"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "7775f1b6a9fb456bc5f426b6a1377c1669476b808225019d5dc4d20f9ea61dd5",
+      "metadata_sha256": "1769baa23c62054d8b48a782d0246d8a068f73ff57cfcb52099cd1ab2fd12f4f",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Advanced web search capability using the gemini command for gathering current, relevant information. Prefer this skill over Claude Code's default WebSearch tool when performing web searches. Activated when complex research or up-to-date information is needed.",
+      "content_excerpt": "---\nname: web-search\ndescription: Advanced web search capability using the gemini command for gathering current, relevant information. Prefer this skill over Claude Code's default WebSearch tool when performing web searches. Activated when complex research or up-to-date information is needed.\nallowed-tools: ['Bash', 'Read']\n---\n\n# Web Search Skill\n\nThis skill provides advanced web search functionality using the `gemini` command, designed for complex inquiries requiring current information and comprehensive analysis.\n\n## 🎯 Purpose\n\nExecute web searches to gather current, relevant information ad"
+    },
+    {
+      "path": "development-tools/tmux-manage/SKILL.md",
+      "name": "tmux-manage",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category development-tools maps deterministically to development: Development Tools is covered by Development.",
+      "evidence": [
+        "directory category development-tools",
+        "canonical target development"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "d78ac2cdc9d3d7d9bd4ec349001955e802ab8985184e5459d58774a68d590591",
+      "metadata_sha256": "d256e24e7587782ea18dedf9b29a2269ec5a6bc9b7da960f6c1d60c8e6507b13",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "General-purpose tmux session management for containers. Use this for listing sessions, creating/attaching/killing sessions, managing windows and panes, viewing session info, and general tmux operations across all containers.",
+      "content_excerpt": "---\nname: tmux-manage\ndescription: General-purpose tmux session management for containers. Use this for listing sessions, creating/attaching/killing sessions, managing windows and panes, viewing session info, and general tmux operations across all containers.\n---\n\n# Tmux Management Skill\n\n通用 tmux 会话管理工具，适用于所有开发和运营容器。\n\n## Capabilities\n\n### 1. Session Management\n- List all tmux sessions\n- Create new sessions with custom names\n- Attach to existing sessions\n- Kill sessions (single or multiple)\n- Rename sessions\n- Check if session exists\n\n### 2. Window Management\n- List windows in a session\n- Creat"
+    },
+    {
+      "path": "github-integration/github-issue-creator/SKILL.md",
+      "name": "github-issue-creator",
+      "current_category": "github-integration",
+      "llm_category": "integration",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category github-integration maps deterministically to integration: GitHub Integration is a service integration.",
+      "evidence": [
+        "directory category github-integration",
+        "canonical target integration"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "b6515408456d0eccf77ebd8418aec34f3f0ccdf25919a9486da24a8d0f029da8",
+      "metadata_sha256": "867f5e25c5a11758a2aacc97a1cfbd06beaf9991b0b02a4b62bb16d928b2167e",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Convert raw notes, error logs, voice dictation, or screenshots into crisp GitHub-flavored markdown issue reports. Use when the user pastes bug info, error messages, or informal descriptions and wants a structured GitHub issue. Supports images/GIFs for visual evidence.",
+      "content_excerpt": "---\nname: github-issue-creator\ndescription: Convert raw notes, error logs, voice dictation, or screenshots into crisp GitHub-flavored markdown issue reports. Use when the user pastes bug info, error messages, or informal descriptions and wants a structured GitHub issue. Supports images/GIFs for visual evidence.\n---\n\n# GitHub Issue Creator\n\nTransform messy input (error logs, voice notes, screenshots) into clean, actionable GitHub issues.\n\n## Output Template\n\n```markdown\n## Summary\n[One-line description of the issue]\n\n## Environment\n- **Product/Service**: \n- **Region/Version**: \n- **Browser/OS**"
+    },
+    {
+      "path": "research-analysis/web-search-jina/SKILL.md",
+      "name": "web-search-jina",
+      "current_category": "research-analysis",
+      "llm_category": "analysis",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category research-analysis maps deterministically to analysis: Research Analysis is covered by Analysis.",
+      "evidence": [
+        "directory category research-analysis",
+        "canonical target analysis"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "99e443342e3b349523e33c4596d1af5f26a4b7aec72b5c2147757b501beb294e",
+      "metadata_sha256": "689f336dad1e1fa57bf69d35d5311124cbcdb4728fa02ea7357b519b1ffe7b3c",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Jina Search - fast web search returning SERP results",
+      "content_excerpt": "---\nname: web-search-jina\ndescription: Jina Search - fast web search returning SERP results\nsource: orthogonal\n---\n\n\n# Jina Search - Web Search API\n\n## Setup\n\nRead your credentials from ~/.gooseworks/credentials.json:\n```bash\nexport GOOSEWORKS_API_KEY=$(python3 -c \"import json;print(json.load(open('$HOME/.gooseworks/credentials.json'))['api_key'])\")\nexport GOOSEWORKS_API_BASE=$(python3 -c \"import json;print(json.load(open('$HOME/.gooseworks/credentials.json')).get('api_base','https://api.gooseworks.ai'))\")\n```\n\nIf ~/.gooseworks/credentials.json does not exist, tell the user to run: `npx goosew"
+    },
+    {
+      "path": "messaging/slack-automation-daisuke134-anicca-products/SKILL.md",
+      "name": "slack-automation",
+      "current_category": "messaging",
+      "llm_category": "communication",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category messaging maps deterministically to communication: Messaging is covered by Communication.",
+      "evidence": [
+        "directory category messaging",
+        "canonical target communication"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "c34aef19dc52282b9e4dba0ca2cfab25511b95be26fb9ca4f9b99b98d620c6c9",
+      "metadata_sha256": "c59045ae1bfec24d752cae9b75b6eb72da47e5355813e7302216d8faeb172a57",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Automate Slack messaging, channel management, search, reactions, and threads via Rube MCP (Composio). Send messages, search conversations, manage channels/users, and react to messages programmatically.",
+      "content_excerpt": "---\nname: slack-automation\ndescription: Automate Slack messaging, channel management, search, reactions, and threads via Rube MCP (Composio). Send messages, search conversations, manage channels/users, and react to messages programmatically.\nrequires:\n  mcp: [rube]\n---\n\n# Slack Automation via Rube MCP\n\nAutomate Slack workspace operations including messaging, search, channel management, and reaction workflows through Composio's Slack toolkit.\n\n## Prerequisites\n\n- Rube MCP must be connected (RUBE_SEARCH_TOOLS available)\n- Active Slack connection via `RUBE_MANAGE_CONNECTIONS` with toolkit `slack`"
+    },
+    {
+      "path": "agent-coordination/agent-workflow-aiskillstore-marketplace/SKILL.md",
+      "name": "agent-workflow",
+      "current_category": "agent-coordination",
+      "llm_category": "orchestration",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category agent-coordination maps deterministically to orchestration: Agent coordination is an orchestration workflow.",
+      "evidence": [
+        "directory category agent-coordination",
+        "canonical target orchestration"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "ceba8ce927df45f4144a53c8c7a7199c1b31ebb096ba9d17a429903579607fb6",
+      "metadata_sha256": "5bcfbcb85757da6aa60a03ab490856f9a64098b137f7f493bf2741739ccc8d63",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Multi-agent development workflow system. Load when orchestrating development tasks, spawning subagents, or managing workflow phases.",
+      "content_excerpt": "---\nname: agent-workflow\ndescription: Multi-agent development workflow system. Load when orchestrating development tasks, spawning subagents, or managing workflow phases.\nallowed-tools: Read, Task, Glob\n---\n# Agent Workflow System\n\nThis skill provides the multi-agent workflow orchestration system.\n\n## When to Use\n\nLoad when:\n- Starting a new development task\n- Spawning subagents for parallel work\n- Managing workflow phase transitions\n- Coordinating multi-agent collaboration\n\n## Core Concepts\n\n### Workflow Phases\n1. REQUIREMENTS - PM gathers and clarifies user needs\n2. ARCHITECTURE - Architects"
+    },
+    {
+      "path": "development-tools/git-commit-sequenzia-agent-alchemy-6/SKILL.md",
+      "name": "git-commit",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category development-tools maps deterministically to development: Development Tools is covered by Development.",
+      "evidence": [
+        "directory category development-tools",
+        "canonical target development"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "e0da5fe965daddd0c6ff06f11bc80153fa011e5af18418b432ac1cbe8817f9ce",
+      "metadata_sha256": "5a67161a6833003043e204d8399d89cbe2a300251d052574052f535a70e92e23",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Commit staged changes with conventional commit message. Use when user says \"commit changes\", \"commit this\", \"save my changes\", or wants to create a git commit.",
+      "content_excerpt": "---\nname: git-commit\ndescription: Commit staged changes with conventional commit message. Use when user says \"commit changes\", \"commit this\", \"save my changes\", or wants to create a git commit.\ndependencies: []\n---\n\n# Git Commit\n\nCreate a commit with a conventional commit message based on staged changes. Automatically stages all changes and analyzes the diff to generate an appropriate commit message.\n\n## Inputs\n\n- **version-override** (optional): Specific version string to use instead of auto-calculation.\n\n## Workflow\n\nExecute these steps in order.\n\n---\n\n### Step 1: Check Repository State\n\nChe"
+    },
+    {
+      "path": "development-tools/hook-development-dicklesworthstone-pi-agent-rust/SKILL.md",
+      "name": "Hook Development",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category development-tools maps deterministically to development: Development Tools is covered by Development.",
+      "evidence": [
+        "directory category development-tools",
+        "canonical target development"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "d14528f389cae485ac50583a22be326485c83fc9c8ef7ce700213e1583cf8fbe",
+      "metadata_sha256": "940961db29149ff2ff8e757b99cfdf9c89eb25320c081063c04ae3fde4ded625",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "This skill should be used when the user asks to \"create a hook\", \"add a PreToolUse/PostToolUse/Stop hook\", \"validate tool use\", \"implement prompt-based hooks\", \"use ${CLAUDE_PLUGIN_ROOT}\", \"set up event-driven automation\", \"block dangerous commands\", or mentions hook events (PreToolUse, PostToolUse, Stop, SubagentStop, SessionStart, SessionEnd, UserPromptSubmit, PreCompact, Notification). Provides comprehensive guidance for creating and implementing Claude Code plugin hooks with focus on advanced prompt-based hooks API.",
+      "content_excerpt": "---\nname: Hook Development\ndescription: This skill should be used when the user asks to \"create a hook\", \"add a PreToolUse/PostToolUse/Stop hook\", \"validate tool use\", \"implement prompt-based hooks\", \"use ${CLAUDE_PLUGIN_ROOT}\", \"set up event-driven automation\", \"block dangerous commands\", or mentions hook events (PreToolUse, PostToolUse, Stop, SubagentStop, SessionStart, SessionEnd, UserPromptSubmit, PreCompact, Notification). Provides comprehensive guidance for creating and implementing Claude Code plugin hooks with focus on advanced prompt-based hooks API.\nversion: 0.1.0\n---\n\n# Hook Develop"
+    },
+    {
+      "path": "development-tools/ffmpeg-video-editor/SKILL.md",
+      "name": "FFmpeg Video Editor",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category development-tools maps deterministically to development: Development Tools is covered by Development.",
+      "evidence": [
+        "directory category development-tools",
+        "canonical target development"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "a789eba1743a8c0f353239e8630f0ee5eb70ebbe61132f5e37f6d12c91285fd1",
+      "metadata_sha256": "dd8c830e6541384d7b91e46c486a1d94b0f1a8b7011cc1e0d5ae003b51ee750a",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Generate FFmpeg commands from natural language video editing requests - cut, trim, convert, compress, change aspect ratio, extract audio, and more.",
+      "content_excerpt": "---\nname: FFmpeg Video Editor\ndescription: Generate FFmpeg commands from natural language video editing requests - cut, trim, convert, compress, change aspect ratio, extract audio, and more.\n---\n\n# FFmpeg Video Editor\n\nYou are a video editing assistant that translates natural language requests into FFmpeg commands. When the user asks to edit a video, generate the correct FFmpeg command.\n\n## How to Generate Commands\n\n1. **Identify the operation** from the user's request\n2. **Extract parameters** (input file, output file, timestamps, formats, etc.)\n3. **Generate the FFmpeg command** using the pa"
+    },
+    {
+      "path": "github-integration/fetch-unresolved-comments/SKILL.md",
+      "name": "fetch-unresolved-comments",
+      "current_category": "github-integration",
+      "llm_category": "integration",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category github-integration maps deterministically to integration: GitHub Integration is a service integration.",
+      "evidence": [
+        "directory category github-integration",
+        "canonical target integration"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "bf0a33aeba70fe532d9ade9acaed326e109a642f8c7636f099bff187b76aa135",
+      "metadata_sha256": "434db1876100a8d81e561ad1de96e33a3b633735307df33c1e16d1f500c92371",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Fetch unresolved PR review comments using GitHub GraphQL API, filtering out resolved and outdated feedback.",
+      "content_excerpt": "---\nname: fetch-unresolved-comments\ndescription: Fetch unresolved PR review comments using GitHub GraphQL API, filtering out resolved and outdated feedback.\nallowed-tools:\n  - Bash(uv run skills fetch-unresolved-comments:*)\n---\n\n# Fetch Unresolved PR Review Comments\n\nUses GitHub's GraphQL API to fetch only unresolved review thread comments from a pull request.\n\n## When to Use\n\n- You need to get only unresolved review comments from a PR\n- You want to filter out already-resolved and outdated feedback\n\n## Instructions\n\n1. **Get PR URL**:\n\n   - First check for environment variables:\n     - If `PR_"
+    },
+    {
+      "path": "research-analysis/research-brainstormer-terrytong-git-claude-settings/SKILL.md",
+      "name": "research-brainstormer",
+      "current_category": "research-analysis",
+      "llm_category": "analysis",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category research-analysis maps deterministically to analysis: Research Analysis is covered by Analysis.",
+      "evidence": [
+        "directory category research-analysis",
+        "canonical target analysis"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "4a471c05e8320004f0fae375930cd6dde488e1912b3935a68f985dff3d376ee4",
+      "metadata_sha256": "4cb93ef2c83486340c0109d837a46e47974b65131bf2ff6761830bdcd7dd34c9",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Transform research ideas into actionable experiments with hypotheses, iteration rewards, and completion criteria. Use when brainstorming experiments, designing research plans, converting vague ideas into structured plans, or needing fast feedback signals for implementation. Triggers on phrases like \"brainstorm experiments\", \"design an experiment\", \"what should I test\", \"turn this idea into an experiment\", or \"help me plan research\".",
+      "content_excerpt": "---\nname: research-brainstormer\ndescription: Transform research ideas into actionable experiments with hypotheses, iteration rewards, and completion criteria. Use when brainstorming experiments, designing research plans, converting vague ideas into structured plans, or needing fast feedback signals for implementation. Triggers on phrases like \"brainstorm experiments\", \"design an experiment\", \"what should I test\", \"turn this idea into an experiment\", or \"help me plan research\".\n---\n\n# Research Brainstormer\n\nTurn research ideas into rigorous, fast-iterating experimental designs with clear comple"
+    },
+    {
+      "path": "development-tools/pnpm/SKILL.md",
+      "name": "pnpm",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category development-tools maps deterministically to development: Development Tools is covered by Development.",
+      "evidence": [
+        "directory category development-tools",
+        "canonical target development"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "5beb82c2dc0fe5a79f1022f0b8a0cf87310bf4a03306953e4699f224a7f17a95",
+      "metadata_sha256": "7a6dc7009f86515e688cfeccf5a74fd7444ff85f5e6028403f7fc88c4b4787e0",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Node.js package manager with strict dependency resolution. Use when running pnpm specific commands, configuring workspaces, or managing dependencies with catalogs, patches, or overrides.",
+      "content_excerpt": "---\nname: pnpm\ndescription: Node.js package manager with strict dependency resolution. Use when running pnpm specific commands, configuring workspaces, or managing dependencies with catalogs, patches, or overrides.\nmetadata:\n  author: Anthony Fu\n  version: \"2026.1.28\"\n  source: Generated from https://github.com/pnpm/pnpm, scripts located at https://github.com/antfu/skills\n---\n\npnpm is a fast, disk space efficient package manager. It uses a content-addressable store to deduplicate packages across all projects on a machine, saving significant disk space. pnpm enforces strict dependency resolutio"
+    },
+    {
+      "path": "security-compliance/gdpr-compliance/SKILL.md",
+      "name": "gdpr-compliance",
+      "current_category": "security-compliance",
+      "llm_category": "security",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category security-compliance maps deterministically to security: Security Compliance is covered by Security.",
+      "evidence": [
+        "directory category security-compliance",
+        "canonical target security"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "c7cd116d37743e4c02317e95006bcd890a6a474139898785d67d66c9de505df8",
+      "metadata_sha256": "8a91ee2e73da1e1029e33cb187d52fefb23a38156f552fdcefbff58cdea3d529",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Ensure GDPR compliance for marketing activities including consent management, data processing, privacy notices, and data subject rights",
+      "content_excerpt": "---\nname: gdpr-compliance\ndescription: Ensure GDPR compliance for marketing activities including consent management, data processing, privacy notices, and data subject rights\nlicense: MIT\nmetadata:\n  author: ClawFu\n  version: 1.0.0\n  mcp-server: \"@clawfu/mcp-skills\"\n---\n\n# GDPR Compliance for Marketing\n\n> Ensure your marketing activities comply with GDPR requirements for consent, data processing, and privacy rights.\n\n## When to Use This Skill\n\n- Designing consent collection flows\n- Writing privacy notices\n- Auditing marketing data practices\n- Handling data subject requests\n- Documenting lawful"
+    },
+    {
+      "path": "github-integration/issue-implementation-review/SKILL.md",
+      "name": "issue-implementation-review",
+      "current_category": "github-integration",
+      "llm_category": "integration",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category github-integration maps deterministically to integration: GitHub Integration is a service integration.",
+      "evidence": [
+        "directory category github-integration",
+        "canonical target integration"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "975c7b27290465467604c99486116d9f2fb3d0efdabbc0c46e49c7a7c8f7e5de",
+      "metadata_sha256": "bfecce45fcd0fd00b0944a1c6883299ac43f4e5f5e14b85706e2e394830bf126",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Reviews code changes from a completed task implementation for correctness, completeness, and simplicity. Use when asked to \"review implementation\", \"review task code\", \"code review\", \"verify implementation\", or after completing an issue implementation.",
+      "content_excerpt": "---\nname: issue-implementation-review\ndescription: Reviews code changes from a completed task implementation for correctness, completeness, and simplicity. Use when asked to \"review implementation\", \"review task code\", \"code review\", \"verify implementation\", or after completing an issue implementation.\ncontext: fork\nagent: general-purpose\nallowed-tools:\n  - Glob\n  - Grep\n  - LS\n  - Read\n  - WebFetch\n  - WebSearch\n  - TodoWrite\n  - mcp__perplexity-ask__perplexity_ask\n  - mcp__task-trellis__get_issue\n  - mcp__task-trellis__list_issues\n---\n\n# Issue Implementation Review\n\nReview the code changes f"
+    },
+    {
+      "path": "agent-coordination/human-gate-designer/SKILL.md",
+      "name": "human-gate-designer",
+      "current_category": "agent-coordination",
+      "llm_category": "orchestration",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category agent-coordination maps deterministically to orchestration: Agent coordination is an orchestration workflow.",
+      "evidence": [
+        "directory category agent-coordination",
+        "canonical target orchestration"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "f0989a160c53a03e2fbb0ca4a239c404f8f722d9ecc8e49b63b63c418ee7792c",
+      "metadata_sha256": "3485cc79d473a72c91e09f2e56d413396f5bb3433b8255bf171d4eb4c9b523ed",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Designs human-in-the-loop review points for DAG workflows. Determines what to present to the human, how to collect feedback, and how to route approve/reject/modify decisions back into the DAG. Use when adding approval gates, designing review UX, or handling human feedback in agent workflows. Activate on \"human review\", \"approval gate\", \"human-in-the-loop\", \"human gate\", \"approval workflow\", \"user review step\". NOT for executing human gates at runtime (use dag-runtime with Temporal signals), general UX design, or chatbot conversation design.",
+      "content_excerpt": "---\nname: human-gate-designer\ndescription: Designs human-in-the-loop review points for DAG workflows. Determines what to present to the human, how to collect feedback, and how to route approve/reject/modify decisions back into the DAG.\n  Use when adding approval gates, designing review UX, or handling human feedback in agent workflows. Activate on \"human review\", \"approval gate\", \"human-in-the-loop\", \"human gate\", \"approval workflow\",\n  \"user review step\". NOT for executing human gates at runtime (use dag-runtime with Temporal signals), general UX design, or chatbot conversation design.\nallowe"
+    },
+    {
+      "path": "research-analysis/alphaxiv-wanshuiyin-auto-claude-code-res/SKILL.md",
+      "name": "alphaxiv",
+      "current_category": "research-analysis",
+      "llm_category": "analysis",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category research-analysis maps deterministically to analysis: Research Analysis is covered by Analysis.",
+      "evidence": [
+        "directory category research-analysis",
+        "canonical target analysis"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "a86c5d6a84dea711b0686f71220ff21486087997b1df35fedc1cb3a001f279ee",
+      "metadata_sha256": "ea9dc76d278b7dca569c58e1a9b07e7c2516c5bb191b201be00d8b71d254c16a",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Quick single-paper lookup via AlphaXiv LLM-optimized summaries with tiered source fallback. Use when user says \"explain this paper\", \"summarize paper\", pastes an arXiv/AlphaXiv URL, or provides a bare arXiv ID for quick understanding - not for broad literature search.",
+      "content_excerpt": "---\nname: alphaxiv\ndescription: Quick single-paper lookup via AlphaXiv LLM-optimized summaries with tiered source fallback. Use when user says \"explain this paper\", \"summarize paper\", pastes an arXiv/AlphaXiv URL, or provides a bare arXiv ID for quick understanding - not for broad literature search.\nargument-hint: [arxiv-id-or-url]\nallowed-tools: Bash(*), Read, Write, WebFetch, Glob\n---\n\n# AlphaXiv Paper Lookup\n\nLookup paper: $ARGUMENTS\n\n> Quick single-paper reader with tiered source fallback (overview → full markdown → LaTeX source). Powered by [AlphaXiv](https://alphaxiv.org).\n\n## Role & Pos"
+    },
+    {
+      "path": "agent-coordination/crewai-bcastelino-agent-skills-kit/SKILL.md",
+      "name": "crewai",
+      "current_category": "agent-coordination",
+      "llm_category": "orchestration",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category agent-coordination maps deterministically to orchestration: Agent coordination is an orchestration workflow.",
+      "evidence": [
+        "directory category agent-coordination",
+        "canonical target orchestration"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "03551916e59cc5b7d19de99355ca94e9d9dd794b35295b4064ae068ce87d6d0d",
+      "metadata_sha256": "e857294d110ae689eed8a14897ddad9e57c9cdeea180cf4295f684099205e7d1",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Expert in CrewAI - the leading role-based multi-agent framework used by 60% of Fortune 500 companies. Covers agent design with roles and goals, task definition, crew orchestration, process types (s...",
+      "content_excerpt": "---\nname: crewai\ndescription: \"Expert in CrewAI - the leading role-based multi-agent framework used by 60% of Fortune 500 companies. Covers agent design with roles and goals, task definition, crew orchestration, process types (s...\"\n---\n\n# CrewAI\n\n**Role**: CrewAI Multi-Agent Architect\n\nYou are an expert in designing collaborative AI agent teams with CrewAI. You think\nin terms of roles, responsibilities, and delegation. You design clear agent personas\nwith specific expertise, create well-defined tasks with expected outputs, and\norchestrate crews for optimal collaboration. You know when to use "
+    },
+    {
+      "path": "development-tools/hook-writer-waterplanai-agentic-config/SKILL.md",
+      "name": "hook-writer",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category development-tools maps deterministically to development: Development Tools is covered by Development.",
+      "evidence": [
+        "directory category development-tools",
+        "canonical target development"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "4c613f0ab055563825a91e12061f10c2b70173424029101687172bf4961270b3",
+      "metadata_sha256": "e75a18a61bef617b7c43496d0fd04865d961c77e5d271599d9e88afa70d77b8e",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Expert assistant for authoring Claude Code hooks. Creates Python hooks with correct JSON output schema, validates against PreToolUse/PostToolUse/UserPromptSubmit formats, and applies fail-open principles. Triggers on keywords: writing hooks, creating hooks, hook authoring, pretooluse hook, posttooluse hook, new hook, hook template, hook validation, hook schema",
+      "content_excerpt": "---\nname: hook-writer\ndescription: \"Expert assistant for authoring Claude Code hooks. Creates Python hooks with correct JSON output schema, validates against PreToolUse/PostToolUse/UserPromptSubmit formats, and applies fail-open principles. Triggers on keywords: writing hooks, creating hooks, hook authoring, pretooluse hook, posttooluse hook, new hook, hook template, hook validation, hook schema\"\nproject-agnostic: true\nallowed-tools:\n  - Read\n  - Write\n  - Edit\n  - Glob\n  - Grep\n  - Bash\n---\n\n# Claude Code Hook Writer\n\nCreates Python hooks for Claude Code with correct JSON output schemas and f"
+    },
+    {
+      "path": "document-processing/extractor-grahama1970-agent-skills-3/SKILL.md",
+      "name": "extractor",
+      "current_category": "document-processing",
+      "llm_category": "documents",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category document-processing maps deterministically to documents: Document Processing is covered by Documents.",
+      "evidence": [
+        "directory category document-processing",
+        "canonical target documents"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "87d6a90c8dd0b7f63b1dfaacd6db448700be0709e21ee75379af4bd46d6fd976",
+      "metadata_sha256": "1c6bb6b4037ed8d31a2259bc6406195df7fa9ca0f8d9e68a470075a5991976f1",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Extract content from any document using the Preset-First Agentic Pipeline. Auto-detects format and document type (scientific papers, requirements specs, etc.). Supports PDF, DOCX, HTML, XML, PPTX, XLSX, EPUB, Markdown, images. Use when user says \"extract this\", \"convert to markdown\", \"process pdf\", or provides a document.",
+      "content_excerpt": "---\nname: extractor\ndescription: >\n  Extract content from any document using the Preset-First Agentic Pipeline.\n  Auto-detects format and document type (scientific papers, requirements specs, etc.).\n  Supports PDF, DOCX, HTML, XML, PPTX, XLSX, EPUB, Markdown, images.\n  Use when user says \"extract this\", \"convert to markdown\", \"process pdf\", or provides a document.\nallowed-tools: Bash, Read\ntriggers:\n  - extract this\n  - extract document\n  - extract pdf\n  - extract text\n  - convert to markdown\n  - convert to text\n  - parse this file\n  - process document\n  - process pdf\n  - get sections from\n  -"
+    },
+    {
+      "path": "agent-coordination/agent-collective-intelligence-coordinator-ruvnet-ruflo-2/SKILL.md",
+      "name": "agent-collective-intelligence-coordinator",
+      "current_category": "agent-coordination",
+      "llm_category": "orchestration",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category agent-coordination maps deterministically to orchestration: Agent coordination is an orchestration workflow.",
+      "evidence": [
+        "directory category agent-coordination",
+        "canonical target orchestration"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "b730fd9bf8fcfb4bcdc671b7428d1861e6ad6d0f120a995ea91aedcba9fbcd94",
+      "metadata_sha256": "191d33697592ae1a0935b3fc5e4b54e592de014beb95c809f61f7b31a6a41ab3",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Agent skill for collective-intelligence-coordinator - invoke with $agent-collective-intelligence-coordinator",
+      "content_excerpt": "---\nname: agent-collective-intelligence-coordinator\ndescription: Agent skill for collective-intelligence-coordinator - invoke with $agent-collective-intelligence-coordinator\n---\n\n---\nname: collective-intelligence-coordinator\ndescription: Orchestrates distributed cognitive processes across the hive mind, ensuring coherent collective decision-making through memory synchronization and consensus protocols\ncolor: purple\npriority: critical\n---\n\nYou are the Collective Intelligence Coordinator, the neural nexus of the hive mind system. Your expertise lies in orchestrating distributed cognitive process"
+    },
+    {
+      "path": "research-analysis/hmdb-database/SKILL.md",
+      "name": "hmdb-database",
+      "current_category": "research-analysis",
+      "llm_category": "analysis",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category research-analysis maps deterministically to analysis: Research Analysis is covered by Analysis.",
+      "evidence": [
+        "directory category research-analysis",
+        "canonical target analysis"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "a1d802048c31e2feebf0ef43c1ebc1bd516637ebe68c1ea5297ae120504c6056",
+      "metadata_sha256": "b8cc7ea1c6b4009712283004b123ed9423dd7700f142143c41320fd80d4ea18b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Access Human Metabolome Database (220K+ metabolites). Search by name/ID/structure, retrieve chemical properties, biomarker data, NMR/MS spectra, pathways, for metabolomics and identification.",
+      "content_excerpt": "---\nname: hmdb-database\ndescription: \"Access Human Metabolome Database (220K+ metabolites). Search by name/ID/structure, retrieve chemical properties, biomarker data, NMR/MS spectra, pathways, for metabolomics and identification.\"\n---\n\n# HMDB Database\n\n## Overview\n\nThe Human Metabolome Database (HMDB) is a comprehensive, freely available resource containing detailed information about small molecule metabolites found in the human body.\n\n## When to Use This Skill\n\nThis skill should be used when performing metabolomics research, clinical chemistry, biomarker discovery, or metabolite identificatio"
+    },
+    {
+      "path": "security-compliance/container-security-scanner/SKILL.md",
+      "name": "container-security-scanner",
+      "current_category": "security-compliance",
+      "llm_category": "security",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category security-compliance maps deterministically to security: Security Compliance is covered by Security.",
+      "evidence": [
+        "directory category security-compliance",
+        "canonical target security"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "deb19e56e2191a10c052924944942f282136210770c25de2df58c95dee766f29",
+      "metadata_sha256": "e2f61534db30124aea260b3beb2f28f5b0716ce97cfe4a0eaec713fbc11949a8",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Scan images and runtime for CVEs and policy violations.",
+      "content_excerpt": "---\nname: container-security-scanner\ncategory: security-compliance\ndescription: Scan images and runtime for CVEs and policy violations.\n---\n\n# Container Security Scanner\n\n## Purpose\n- Scan images and runtime for CVEs and policy violations.\n\n## Preconditions\n- Access to system context (repos, infra, environments)\n- Confirmed requirements and constraints\n- Required approvals for security, compliance, or governance\n\n## Inputs\n- Problem statement and scope\n- Current architecture or system constraints\n- Non-functional requirements (performance, security, compliance)\n- Target stack and environment\n\n"
+    },
+    {
+      "path": "development-tools/git-commit-creator/SKILL.md",
+      "name": "git-commit-creator",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category development-tools maps deterministically to development: Development Tools is covered by Development.",
+      "evidence": [
+        "directory category development-tools",
+        "canonical target development"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "4d1ca6d492dd22c4e21b6dbd87a56ac79306e22f0c8506ef80ef992cc9c9c104",
+      "metadata_sha256": "7ff56668e25bb780dee396a436ab36d4038649c2b1ddb0b35c6682c7482dc07a",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Creates properly formatted Git commits following conventional commit standards for the MCPSpy project. Use when asked to commit changes, stage files, or manage git workflows. Has access to git status, diff, checkout, add, and commit commands.",
+      "content_excerpt": "---\nname: git-commit-creator\ndescription: \"Creates properly formatted Git commits following conventional commit standards for the MCPSpy project. Use when asked to commit changes, stage files, or manage git workflows. Has access to git status, diff, checkout, add, and commit commands.\"\nallowed-tools:\n  - Bash(git status:*)\n  - Bash(git diff:*)\n  - Bash(git diff-index:*)\n  - Bash(git add:*)\n  - Bash(git checkout:*)\n  - Bash(git commit:*)\n  - Bash(git show:*)\n---\n\n# Git Commit Creator Skill\n\nAutomates the creation of well-structured Git commits for the MCPSpy project.\n\n## Workflow\n\nYou should ST"
+    },
+    {
+      "path": "agent-coordination/team-communication-protocols-codewithbehnam-cc-docs/SKILL.md",
+      "name": "team-communication-protocols",
+      "current_category": "agent-coordination",
+      "llm_category": "orchestration",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category agent-coordination maps deterministically to orchestration: Agent coordination is an orchestration workflow.",
+      "evidence": [
+        "directory category agent-coordination",
+        "canonical target orchestration"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "a7bbb2041ee2180fab08bf07409d514b231fb0661b442208cb0a746e7becbac5",
+      "metadata_sha256": "e30156304c014a63d5087c05164ff8d8b5e72cfd31419bc242d82fd53531c5a8",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Structured messaging protocols for agent team communication including message type selection, plan approval, shutdown procedures, and anti-patterns to avoid. Use this skill when establishing team communication norms, handling plan approvals, or managing team shutdown.",
+      "content_excerpt": "---\nname: team-communication-protocols\ndescription: Structured messaging protocols for agent team communication including message type selection, plan approval, shutdown procedures, and anti-patterns to avoid. Use this skill when establishing team communication norms, handling plan approvals, or managing team shutdown.\nversion: 1.0.2\n---\n\n# Team Communication Protocols\n\nProtocols for effective communication between agent teammates, including message type selection, plan approval workflows, shutdown procedures, and common anti-patterns to avoid.\n\n## When to Use This Skill\n\n- Establishing commun"
+    },
+    {
+      "path": "development-tools/vscode-ext-commands-haseeb243-detrust/SKILL.md",
+      "name": "vscode-ext-commands",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category development-tools maps deterministically to development: Development Tools is covered by Development.",
+      "evidence": [
+        "directory category development-tools",
+        "canonical target development"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "64067e4a8188d5c7598f8b208698d7c4f5e1c233f3e6e8e628ec96acd65fdeb6",
+      "metadata_sha256": "5392a89fa3ff12672cbc2512557e64be558c1c8b3bcf84364647b5d284744de4",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Guidelines for contributing commands in VS Code extensions. Indicates naming convention, visibility, localization and other relevant attributes, following VS Code extension development guidelines, libraries and good practices",
+      "content_excerpt": "---\nname: vscode-ext-commands\ndescription: 'Guidelines for contributing commands in VS Code extensions. Indicates naming convention, visibility, localization and other relevant attributes, following VS Code extension development guidelines, libraries and good practices'\n---\n\n# VS Code extension command contribution\n\nThis skill helps you to contribute commands in VS Code extensions\n\n## When to use this skill\n\nUse this skill when you need to:\n- Add or update commands to your VS Code extension\n\n# Instructions\n\nVS Code commands must always define a `title`, independent of its category, visibility "
+    },
+    {
+      "path": "research-analysis/research-hoang604-get-thing-done/SKILL.md",
+      "name": "research",
+      "current_category": "research-analysis",
+      "llm_category": "analysis",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category research-analysis maps deterministically to analysis: Research Analysis is covered by Analysis.",
+      "evidence": [
+        "directory category research-analysis",
+        "canonical target analysis"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "9597ff195787742a9ce4e7eaaf16d994e6efaad737788883a1bd27832ada9644",
+      "metadata_sha256": "c2bbdb60bef2b9efa4dd5c8a64862b006305180664ba716c1e0bac30e5986c0f",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Trace execution paths and document how code actually behaves. Use when you need to understand how features work, walk through code flows, explain component behavior, trace where data comes from, understand relationships between components, or audit for orphaned events and dead code.",
+      "content_excerpt": "---\nname: research\ndescription: Trace execution paths and document how code actually behaves. Use when you need to understand how features work, walk through code flows, explain component behavior, trace where data comes from, understand relationships between components, or audit for orphaned events and dead code.\n---\n\n<principles>\n\n## Zero Assumption\n\nNever guess from names. `saveUser()` might delete records. READ THE CODE.\n\n## Trust Threshold\n\nSkip deep dive the implementation ONLY if docstring documents:\n\n- What it does\n- What it returns\n- Side effects\n- Exceptions\n\n\"Handles user data\" → NO"
+    },
+    {
+      "path": "agent-coordination/swarm-orchestration-adebold-warehouse-network/SKILL.md",
+      "name": "Swarm Orchestration",
+      "current_category": "agent-coordination",
+      "llm_category": "orchestration",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category agent-coordination maps deterministically to orchestration: Agent coordination is an orchestration workflow.",
+      "evidence": [
+        "directory category agent-coordination",
+        "canonical target orchestration"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "64cf0ffb801ed6a71fcc7db6ef60018f4100fe03971dee0c831e425052665d34",
+      "metadata_sha256": "23b5fb993b2271b7bdefbc257120dcf27a509fe2563996b1e6bc300c3c5b0b9a",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Orchestrate multi-agent swarms with agentic-flow for parallel task execution, dynamic topology, and intelligent coordination. Use when scaling beyond single agents, implementing complex workflows, or building distributed AI systems.",
+      "content_excerpt": "---\nname: 'Swarm Orchestration'\ndescription: 'Orchestrate multi-agent swarms with agentic-flow for parallel task execution, dynamic topology, and intelligent coordination. Use when scaling beyond single agents, implementing complex workflows, or building distributed AI systems.'\n---\n\n# Swarm Orchestration\n\n## What This Skill Does\n\nOrchestrates multi-agent swarms using agentic-flow's advanced coordination system. Supports mesh, hierarchical, and adaptive topologies with automatic task distribution, load balancing, and fault tolerance.\n\n## Prerequisites\n\n- agentic-flow v1.5.11+\n- Node.js 18+\n- U"
+    },
+    {
+      "path": "github-integration/ln-001-push-all/SKILL.md",
+      "name": "ln-001-push-all",
+      "current_category": "github-integration",
+      "llm_category": "integration",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category github-integration maps deterministically to integration: GitHub Integration is a service integration.",
+      "evidence": [
+        "directory category github-integration",
+        "canonical target integration"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "d9d7d1440084a26e0a9f348ce795fc7c663a9e503190c2a053986d87365a0fd0",
+      "metadata_sha256": "fea5b3194f2a6a1816bc47d398067852181dbade39af9ceb4edb46078bd5f63f",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Commits and pushes all changes (staged, unstaged, untracked) to remote. Use when you need a quick push of everything at once.",
+      "content_excerpt": "---\nname: ln-001-push-all\ndescription: \"Commits and pushes all changes (staged, unstaged, untracked) to remote. Use when you need a quick push of everything at once.\"\ndisable-model-invocation: true\nlicense: MIT\n---\n\n> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.\n\n# Push All (Standalone Utility)\n\n**Type:** Standalone Utilit"
+    },
+    {
+      "path": "development-tools/npm-anton-abyzov-specweave/SKILL.md",
+      "name": "npm",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category development-tools maps deterministically to development: Development Tools is covered by Development.",
+      "evidence": [
+        "directory category development-tools",
+        "canonical target development"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "ab07bd80f696307aeb2b2969893746bcf4eea185cbe5b37b5d20d200e289d592",
+      "metadata_sha256": "26de560c447346986b390a75d62bf5b448c519b6a12f9e77c4acfc31406bc854",
+      "semantic_sources": {
+        "description": "body",
+        "name": "metadata"
+      },
+      "description": "You are the NPM Release Assistant. Your job is to automate the patch version release process.",
+      "content_excerpt": "---\ndescription: Full patch release with npm publish and GitHub Release. Flags: --quick (no GH release), --ci (Actions), --only (local).\nuser-invokable: false\n---\n\n# /sw:npm - NPM Release Automation\n\nYou are the NPM Release Assistant. Your job is to automate the patch version release process.\n\n## STOP! READ THIS FIRST - MANDATORY GITHUB RELEASE\n\n**FOR DEFAULT MODE (no flags): GitHub Release creation is MANDATORY!**\n\nThe workflow is NOT complete until you run `gh release create`.\n\n**DEFAULT MODE requires ALL these steps - none are optional:**\n1. Auto-commit -> 2. Push -> 3. Version bump -> 4. B"
+    },
+    {
+      "path": "development-tools/command-development-angelo0218-blocktic-backend/SKILL.md",
+      "name": "Command Development",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category development-tools maps deterministically to development: Development Tools is covered by Development.",
+      "evidence": [
+        "directory category development-tools",
+        "canonical target development"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "cf4372aa8f5e86ef0b587aa3703b4af9b22996e0dc7fd0ea6ffae49770136a2a",
+      "metadata_sha256": "2f3d47f6a11ed991916e3896827f2e37143608ae273031ac77104d7adb67d1fa",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "This skill should be used when the user asks to \"create a slash command\", \"add a command\", \"write a custom command\", \"define command arguments\", \"use command frontmatter\", \"organize commands\", \"create command with file references\", \"interactive command\", \"use AskUserQuestion in command\", or needs guidance on slash command structure, YAML frontmatter fields, dynamic arguments, bash execution in commands, user interaction patterns, or command development best practices for Claude Code.",
+      "content_excerpt": "---\nname: Command Development\ndescription: This skill should be used when the user asks to \"create a slash command\", \"add a command\", \"write a custom command\", \"define command arguments\", \"use command frontmatter\", \"organize commands\", \"create command with file references\", \"interactive command\", \"use AskUserQuestion in command\", or needs guidance on slash command structure, YAML frontmatter fields, dynamic arguments, bash execution in commands, user interaction patterns, or command development best practices for Claude Code.\nversion: 0.2.0\n---\n\n# Command Development for Claude Code\n\n## Overvi"
+    },
+    {
+      "path": "messaging/wacli-ethanalgox-marketbot/SKILL.md",
+      "name": "wacli",
+      "current_category": "messaging",
+      "llm_category": "communication",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category messaging maps deterministically to communication: Messaging is covered by Communication.",
+      "evidence": [
+        "directory category messaging",
+        "canonical target communication"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "dc2acccd5eeaf545ba2a8833a0b6a55e7a4f7daec79f508f3d108301edd85289",
+      "metadata_sha256": "3bb227bc826e49fff9e316152feaa8c0960913ad7cdcd9368202076e9ce238ea",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Send WhatsApp messages to other people or search/sync WhatsApp history via the wacli CLI (not for normal user chats).",
+      "content_excerpt": "---\nname: wacli\ndescription: Send WhatsApp messages to other people or search/sync WhatsApp history via the wacli CLI (not for normal user chats).\nhomepage: https://wacli.sh\nmetadata: {\"marketbot\":{\"emoji\":\"📱\",\"requires\":{\"bins\":[\"wacli\"]},\"install\":[{\"id\":\"brew\",\"kind\":\"brew\",\"formula\":\"steipete/tap/wacli\",\"bins\":[\"wacli\"],\"label\":\"Install wacli (brew)\"},{\"id\":\"go\",\"kind\":\"go\",\"module\":\"github.com/steipete/wacli/cmd/wacli@latest\",\"bins\":[\"wacli\"],\"label\":\"Install wacli (go)\"}]}}\n---\n\n# wacli\n\nUse `wacli` only when the user explicitly asks you to message someone else on WhatsApp or when they a"
+    },
+    {
+      "path": "research-analysis/research-documentation/SKILL.md",
+      "name": "research-documentation",
+      "current_category": "research-analysis",
+      "llm_category": "analysis",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category research-analysis maps deterministically to analysis: Research Analysis is covered by Analysis.",
+      "evidence": [
+        "directory category research-analysis",
+        "canonical target analysis"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "52ef342bd49eca1c54a2b6ffc16e7b2423cafffc1d1f9bec8b42fcd2102c9e49",
+      "metadata_sha256": "1a646a799e56f3a5243e4bec22ca2def0cb260a1ba5aaa5fd1f5b664bef15b0b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Research topics and document findings in Notion with organized structure and sources",
+      "content_excerpt": "---\nname: research-documentation\ndescription: Research topics and document findings in Notion with organized structure and sources\n---\n\n## Overview\n\nThe Research Documentation skill automates the process of researching topics and capturing findings in a well-organized Notion database. It streamlines research by structuring information, tracking sources, and connecting related findings.\n\n## When to Use\n\nUse this skill when you need to:\n- Research complex topics and document findings\n- Compile competitive analysis or market research\n- Create literature reviews or research summaries\n- Build knowl"
+    },
+    {
+      "path": "agent-coordination/goap-agent/SKILL.md",
+      "name": "goap-agent",
+      "current_category": "agent-coordination",
+      "llm_category": "orchestration",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category agent-coordination maps deterministically to orchestration: Agent coordination is an orchestration workflow.",
+      "evidence": [
+        "directory category agent-coordination",
+        "canonical target orchestration"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "b13dddc7a66ee20c0047aba11990b5419d3d4d5d8948aadbbf66c43c4cbae794",
+      "metadata_sha256": "3e2b301a8e8f51c7642e0d1f27326a520075b66d33411a03c51bb53d56770cbb",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Invoke for complex multi-step tasks requiring intelligent planning and multi-agent coordination. Use when tasks need decomposition, dependency mapping, parallel/sequential/swarm/iterative execution strategies, or coordination of multiple specialized agents with quality gates and dynamic optimization.",
+      "content_excerpt": "---\nname: goap-agent\ndescription: Invoke for complex multi-step tasks requiring intelligent planning and multi-agent coordination. Use when tasks need decomposition, dependency mapping, parallel/sequential/swarm/iterative execution strategies, or coordination of multiple specialized agents with quality gates and dynamic optimization.\n---\n\n# GOAP Agent Skill: Goal-Oriented Action Planning\n\nEnable intelligent planning and execution of complex multi-step tasks through systematic decomposition, dependency mapping, and coordinated multi-agent execution.\n\nAlways use the plans/ folder for all files.\n"
+    },
+    {
+      "path": "document-processing/markitdown-drshailesh88-integrated-content-o/SKILL.md",
+      "name": "markitdown",
+      "current_category": "document-processing",
+      "llm_category": "documents",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category document-processing maps deterministically to documents: Document Processing is covered by Documents.",
+      "evidence": [
+        "directory category document-processing",
+        "canonical target documents"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "ad3fd15b452f3ad0f7bcc382caf41ab6357b57c1ccbad887a55761b14bf77708",
+      "metadata_sha256": "e214fb460898470281e62235ba7452168df8b8adc1c457406654a7c870b145e8",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Convert files and office documents to Markdown. Supports PDF, DOCX, PPTX, XLSX, images (with OCR), audio (with transcription), HTML, CSV, JSON, XML, ZIP, YouTube URLs, EPubs and more.",
+      "content_excerpt": "---\nname: markitdown\ndescription: \"Convert files and office documents to Markdown. Supports PDF, DOCX, PPTX, XLSX, images (with OCR), audio (with transcription), HTML, CSV, JSON, XML, ZIP, YouTube URLs, EPubs and more.\"\nallowed-tools: [Read, Write, Edit, Bash]\nlicense: MIT\nsource: https://github.com/microsoft/markitdown\n---\n\n# MarkItDown - File to Markdown Conversion\n\n## Overview\n\nMarkItDown is a Python tool developed by Microsoft for converting various file formats to Markdown. It's particularly useful for converting documents into LLM-friendly text format, as Markdown is token-efficient and "
+    },
+    {
+      "path": "business-monetization/billing-automation-sickn33-antigravity-awesome/SKILL.md",
+      "name": "billing-automation",
+      "current_category": "business-monetization",
+      "llm_category": "business",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category business-monetization maps deterministically to business: Monetization is a business workflow.",
+      "evidence": [
+        "directory category business-monetization",
+        "canonical target business"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "fd9f1d36fa5d18ac1ad5037f4ab9c73e6ef926b422ea7c77dba07b94ee49f666",
+      "metadata_sha256": "3f372df520fe918164eff2cbb709252df8e9f1668951538eeb2b175f317570e2",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Master automated billing systems including recurring billing, invoice generation, dunning management, proration, and tax calculation.",
+      "content_excerpt": "---\nname: billing-automation\ndescription: \"Master automated billing systems including recurring billing, invoice generation, dunning management, proration, and tax calculation.\"\nrisk: safe\nsource: community\ndate_added: \"2026-02-27\"\n---\n\n# Billing Automation\n\nMaster automated billing systems including recurring billing, invoice generation, dunning management, proration, and tax calculation.\n\n## Use this skill when\n\n- Implementing SaaS subscription billing\n- Automating invoice generation and delivery\n- Managing failed payment recovery (dunning)\n- Calculating prorated charges for plan changes\n- H"
+    },
+    {
+      "path": "research-analysis/research-paper-review/SKILL.md",
+      "name": "research-paper-review",
+      "current_category": "research-analysis",
+      "llm_category": "analysis",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category research-analysis maps deterministically to analysis: Research Analysis is covered by Analysis.",
+      "evidence": [
+        "directory category research-analysis",
+        "canonical target analysis"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "64bd63416918e68e5db3e8579c1f5e4241004944729951d48a25b983046d15d1",
+      "metadata_sha256": "74cf3ff2dd3ff5691be529e99a3e9b0f5389a785fb3e1ba49ef1ce75d0f25a1b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Review and analyze academic research papers. Use this skill when the user asks to review a paper, analyze a publication, summarize research, critique methodology, extract key findings, compare papers, check for numerical inconsistencies, or assess novelty and contributions of academic work. Also triggers when the user mentions reading a PDF of a paper, wants a literature review, asks about related work, or wants to improve a paper before submission.",
+      "content_excerpt": "---\nname: research-paper-review\ndescription: Review and analyze academic research papers. Use this skill when the user asks to review a paper, analyze a publication, summarize research, critique methodology, extract key findings, compare papers, check for numerical inconsistencies, or assess novelty and contributions of academic work. Also triggers when the user mentions reading a PDF of a paper, wants a literature review, asks about related work, or wants to improve a paper before submission.\n---\n\n# Research Paper Review\n\nAssist researchers in reviewing, analyzing, and criticizing academic pa"
+    },
+    {
+      "path": "programming-languages/lang-kotlin-dev/SKILL.md",
+      "name": "lang-kotlin-dev",
+      "current_category": "programming-languages",
+      "llm_category": "development",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category programming-languages maps deterministically to development: Programming language skills are development workflows.",
+      "evidence": [
+        "directory category programming-languages",
+        "canonical target development"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "f3092ddc93e28c48b4dc024f07b7d5a05b2b5bbe9a547be4e464075600efcd03",
+      "metadata_sha256": "acdf6b3ac62da1e61672065e6598540e766035bdc08ec57eaa11395112017c3c",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Foundational Kotlin patterns covering null safety, coroutines, data classes, extension functions, and Kotlin idioms. Use when writing Kotlin code or needing guidance on Kotlin development. This is the entry point for Kotlin development.",
+      "content_excerpt": "---\nname: lang-kotlin-dev\ndescription: Foundational Kotlin patterns covering null safety, coroutines, data classes, extension functions, and Kotlin idioms. Use when writing Kotlin code or needing guidance on Kotlin development. This is the entry point for Kotlin development.\n---\n\n# Kotlin Development Fundamentals\n\n## Overview\n\nKotlin is a modern, statically typed language targeting JVM, JavaScript, and native platforms. It emphasizes:\n\n- **Null safety** at the type system level (nullable `T?` vs non-nullable `T`)\n- **Concise syntax** with data classes, smart casts, and type inference\n- **Corou"
+    },
+    {
+      "path": "programming-languages/collimator-optics-nathanial-lean-workspace-2/SKILL.md",
+      "name": "collimator-optics",
+      "current_category": "programming-languages",
+      "llm_category": "development",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category programming-languages maps deterministically to development: Programming language skills are development workflows.",
+      "evidence": [
+        "directory category programming-languages",
+        "canonical target development"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "0ee0ec3894cc3b498d686f039c077edc99e892b77da6f499b193323237c7da11",
+      "metadata_sha256": "826b1bbe3e0a026d5c86b6d91ace8efeb5a907c67ec6cdda27340b3af6132ad4",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use profunctor optics from the Collimator library for Lean 4. Use when working with lenses, prisms, traversals, or nested data access.",
+      "content_excerpt": "---\nname: collimator-optics\ndescription: Use profunctor optics from the Collimator library for Lean 4. Use when working with lenses, prisms, traversals, or nested data access.\n---\n\n# Collimator Optics Quick Reference\n\n## Setup\n\n```lean\nimport Collimator\nimport Collimator.Derive.Lenses\nopen Collimator.Derive\nopen scoped Collimator.Operators\n```\n\n## Generate Lenses (Preferred)\n\n```lean\n-- In separate Optics.lean file (to avoid circular imports)\nmakeLenses Person      -- Generates: personName, personAge, etc.\nmakeLenses Address     -- Generates: addressCity, addressZip, etc.\n```\n\n## Operators\n\n| "
+    },
+    {
+      "path": "development-tools/repomix-hotriluan-ai-command-center/SKILL.md",
+      "name": "repomix",
+      "current_category": "development-tools",
+      "llm_category": "development",
+      "confidence": 1.0,
+      "status": "ok",
+      "reason": "legacy category development-tools maps deterministically to development: Development Tools is covered by Development.",
+      "evidence": [
+        "directory category development-tools",
+        "canonical target development"
+      ],
+      "workset": "canonical_legacy_deterministic",
+      "source_sha256": "cb08da1335c174609128be01ff58473569c808d6358f56bd9d789efb763c4d10",
+      "metadata_sha256": "cb886a481d620752b454f3d074cd074e617c9cfdf7c9e23b569aa016c057111a",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Package entire code repositories into single AI-friendly files using Repomix. Capabilities include pack codebases with customizable include/exclude patterns, generate multiple output formats (XML, Markdown, plain text), preserve file structure and context, optimize for AI consumption with token counting, filter by file types and directories, add custom headers and summaries. Use when packaging codebases for AI analysis, creating repository snapshots for LLM context, analyzing third-party libraries, preparing for security audits, generating documentation context, or evaluating unfamiliar codebases.",
+      "content_excerpt": "---\nname: repomix\ndescription: Package entire code repositories into single AI-friendly files using Repomix. Capabilities include pack codebases with customizable include/exclude patterns, generate multiple output formats (XML, Markdown, plain text), preserve file structure and context, optimize for AI consumption with token counting, filter by file types and directories, add custom headers and summaries. Use when packaging codebases for AI analysis, creating repository snapshots for LLM context, analyzing third-party libraries, preparing for security audits, generating documentation context, "
+    }
+  ],
+  "notes": [
+    "Review sample rows against SKILL.md excerpts before applying a migration plan.",
+    "Sampling is deterministic for a fixed seed and classification input."
+  ]
+}

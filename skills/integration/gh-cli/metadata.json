@@ -1,0 +1,20 @@
+{
+  "name": "gh-cli",
+  "description": "",
+  "repo": "majiayu000/claude-skill-registry-data",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry-data",
+  "github_path": "data/gh-cli",
+  "github_branch": "main",
+  "dir_name": "gh-cli",
+  "downloaded_at": "2026-02-05T01:44:26.506140Z",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry-data/blob/main/data/gh-cli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/majiayu000/claude-skill-registry-data/blob/main/data/gh-cli/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

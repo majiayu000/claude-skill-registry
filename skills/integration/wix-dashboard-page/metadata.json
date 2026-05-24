@@ -1,0 +1,18 @@
+{
+  "name": "wix-dashboard-page",
+  "repo": "wix-incubator/wix-agentic-flows",
+  "path": "skills/wix-dashboard-page/SKILL.md",
+  "source": "github.com/wix-incubator/wix-agentic-flows",
+  "downloaded_at": "2026-01-20T01:16:50.570311Z",
+  "dir_name": "wix-dashboard-page",
+  "category": "integration",
+  "github_path": "skills/wix-dashboard-page",
+  "github_branch": "main",
+  "author": "wix-incubator",
+  "source_url": "https://github.com/wix-incubator/wix-agentic-flows/blob/main/skills/wix-dashboard-page/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wix-incubator/wix-agentic-flows/blob/main/skills/wix-dashboard-page/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

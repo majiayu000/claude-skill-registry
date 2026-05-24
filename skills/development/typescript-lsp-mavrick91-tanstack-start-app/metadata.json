@@ -1,0 +1,16 @@
+{
+  "name": "typescript-lsp",
+  "repo": "Mavrick91/tanstack-start-app",
+  "path": ".claude/skills/typescript-lsp/SKILL.md",
+  "source": "github.com/Mavrick91/tanstack-start-app",
+  "downloaded_at": "2026-01-29T08:19:04.384248Z",
+  "dir_name": "typescript-lsp-mavrick91-tanstack-start-app",
+  "category": "development",
+  "author": "Mavrick91",
+  "source_url": "https://github.com/Mavrick91/tanstack-start-app/blob/main/.claude/skills/typescript-lsp/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Mavrick91/tanstack-start-app/blob/main/.claude/skills/typescript-lsp/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

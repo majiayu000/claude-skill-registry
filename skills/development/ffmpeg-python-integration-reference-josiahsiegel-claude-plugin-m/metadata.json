@@ -1,0 +1,16 @@
+{
+  "name": "ffmpeg-python-integration-reference",
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/ffmpeg-master/skills/ffmpeg-python-integration-reference/skill.md",
+  "category": "development",
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "dir_name": "ffmpeg-python-integration-reference-josiahsiegel-claude-plugin-m",
+  "downloaded_at": "2026-02-22T05:14:34.138730Z",
+  "author": "JosiahSiegel",
+  "source_url": "https://github.com/JosiahSiegel/claude-plugin-marketplace/blob/main/plugins/ffmpeg-master/skills/ffmpeg-python-integration-reference/skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Josiah Siegel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

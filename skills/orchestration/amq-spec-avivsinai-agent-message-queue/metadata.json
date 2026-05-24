@@ -1,0 +1,17 @@
+{
+  "name": "amq-spec",
+  "repo": "avivsinai/agent-message-queue",
+  "path": ".codex/skills/amq-spec/SKILL.md",
+  "github_branch": "main",
+  "category": "orchestration",
+  "source": "github.com/avivsinai/agent-message-queue",
+  "dir_name": "amq-spec-avivsinai-agent-message-queue",
+  "downloaded_at": "2026-03-22T07:06:08.680373Z",
+  "author": "avivsinai",
+  "source_url": "https://github.com/avivsinai/agent-message-queue/blob/main/.codex/skills/amq-spec/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/avivsinai/agent-message-queue/blob/main/.codex/skills/amq-spec/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

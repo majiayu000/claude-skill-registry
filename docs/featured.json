@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-24T04:33:08.046354Z",
+  "updated_at": "2026-05-24T17:34:07.600350Z",
   "count": 100,
   "skills": [
     {
@@ -15,11 +15,11 @@
       "source": "github.com/facebook/react",
       "id": "ql-ypicldgtgls8xdts8odfwpkwoeqc0vsygwikv4wy",
       "owner": "facebook",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -37,11 +37,11 @@
       "source": "github.com/n8n-io/n8n",
       "id": "pzhoclcfbl9relg9u7ulffxtfy7wgrkk4ni5qq2py2u",
       "owner": "n8n-io",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -59,11 +59,11 @@
       "source": "github.com/n8n-io/n8n",
       "id": "pzhoclcfbl9relg9u7ulffxtfy7wgrkk4ni5qq2py2u",
       "owner": "n8n-io",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -81,11 +81,11 @@
       "source": "github.com/vercel/next.js",
       "id": "aywfypwy2u_5vzpg5j9slsvre_v2yyluis5dyazgpcu",
       "owner": "vercel",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -103,11 +103,11 @@
       "source": "github.com/langgenius/dify",
       "id": "gj3jugvkfyzwamizgx0agibocm_rmwam4uhutc3jkcy",
       "owner": "langgenius",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -125,11 +125,11 @@
       "source": "github.com/langgenius/dify",
       "id": "vb3da34zaxshlwoebxullnfips97cnzc7steez0hopa",
       "owner": "langgenius",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -147,11 +147,11 @@
       "source": "github.com/langgenius/dify",
       "id": "gj3jugvkfyzwamizgx0agibocm_rmwam4uhutc3jkcy",
       "owner": "langgenius",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -169,11 +169,11 @@
       "source": "github.com/langgenius/dify",
       "id": "vb3da34zaxshlwoebxullnfips97cnzc7steez0hopa",
       "owner": "langgenius",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -191,11 +191,11 @@
       "source": "github.com/electron/electron",
       "id": "pnlpit5elwqsrhjpqyjdxq6xw_a46yh0imizteorp_w",
       "owner": "electron",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -213,11 +213,11 @@
       "source": "github.com/pytorch/pytorch",
       "id": "x0sowij8klzeygkg-1nnq1dnoftxvzv11u5krzdo03c",
       "owner": "pytorch",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -238,10 +238,10 @@
       "id": "c0rrnxs28qr5oiaafk3kwu0d85fexbjq56d_c5mcbaa",
       "owner": "pytorch",
       "quality_grade": "S",
-      "quality_score": 86,
-      "security_status": "unknown",
+      "quality_score": 96,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -264,10 +264,10 @@
       "id": "o1ubr0viuvmjznzl6losm9o-pz2hgpkj5jvfgkyjb3e",
       "owner": "pytorch",
       "quality_grade": "S",
-      "quality_score": 90,
-      "security_status": "unknown",
+      "quality_score": 100,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -289,10 +289,10 @@
       "id": "wdbggxrowhsffyr1lekiqksqh0glomfgwvrhksngz1o",
       "owner": "pytorch",
       "quality_grade": "S",
-      "quality_score": 86,
-      "security_status": "unknown",
+      "quality_score": 96,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -315,10 +315,10 @@
       "id": "o1ubr0viuvmjznzl6losm9o-pz2hgpkj5jvfgkyjb3e",
       "owner": "pytorch",
       "quality_grade": "S",
-      "quality_score": 90,
-      "security_status": "unknown",
+      "quality_score": 100,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -340,10 +340,10 @@
       "id": "wdbggxrowhsffyr1lekiqksqh0glomfgwvrhksngz1o",
       "owner": "pytorch",
       "quality_grade": "S",
-      "quality_score": 86,
-      "security_status": "unknown",
+      "quality_score": 96,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -361,11 +361,11 @@
       "source": "github.com/home-assistant/core",
       "id": "wvavznpwxauysbkhbkdagrzxm6slgj-4wlbj-4r5neo",
       "owner": "home-assistant",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -383,11 +383,11 @@
       "source": "github.com/browser-use/browser-use",
       "id": "kki1bgqo4-ty6rsc0upjefvya_kosmqfbxduy3tknpi",
       "owner": "browser-use",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": []
     },
     {
@@ -403,11 +403,11 @@
       "source": "github.com/browser-use/browser-use",
       "id": "kki1bgqo4-ty6rsc0upjefvya_kosmqfbxduy3tknpi",
       "owner": "browser-use",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": []
     },
     {
@@ -423,11 +423,11 @@
       "source": "github.com/leonardomso/33-js-concepts",
       "id": "qns_vcaozntk0zqcaqx3wfnubfl0asc6hf02z26hiqk",
       "owner": "leonardomso",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -445,11 +445,11 @@
       "source": "github.com/leonardomso/33-js-concepts",
       "id": "vm5igsqds5kvnfmu5rj8fcvuh4r6hxcgtgm9bxp_pzi",
       "owner": "leonardomso",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -467,11 +467,11 @@
       "source": "github.com/leonardomso/33-js-concepts",
       "id": "aqvufxnex9pmxdb3hlvbsmepvfdxjpvd0lstryy1uoe",
       "owner": "leonardomso",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -489,11 +489,11 @@
       "source": "github.com/leonardomso/33-js-concepts",
       "id": "ydqw8zfs1bjiovehpaphv5nosjsuk_xaqk6zyehyhy8",
       "owner": "leonardomso",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -511,11 +511,11 @@
       "source": "github.com/leonardomso/33-js-concepts",
       "id": "7j9myi_smtaxq6lfva2q9cb3stvnvm7ajeczu7pjnju",
       "owner": "leonardomso",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -533,11 +533,11 @@
       "source": "github.com/anthropics/claude-code",
       "id": "jfnd3ci_mktnrssqxpfojjx65kgpmao9azozk1zt-tg",
       "owner": "anthropics",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -559,10 +559,10 @@
       "id": "2led0m9rbawo7iho17aczxhwrugjqejyqr9-o3coxyk",
       "owner": "openai",
       "quality_grade": "S",
-      "quality_score": 86,
-      "security_status": "unknown",
+      "quality_score": 96,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code",
         "Codex CLI"
@@ -582,10 +582,10 @@
       "id": "-mx0ph1h3hekpn751fmtwec0ashl7ithxqfdye5wt9s",
       "owner": "TryGhost",
       "quality_grade": "A",
-      "quality_score": 72,
-      "security_status": "unknown",
+      "quality_score": 82,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -603,11 +603,11 @@
       "source": "github.com/TryGhost/Ghost",
       "id": "t8nqcdknr9ayh-4c5fscbgtvzromewojr8asrp2q1fu",
       "owner": "TryGhost",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -625,11 +625,11 @@
       "source": "github.com/TryGhost/Ghost",
       "id": "t8nqcdknr9ayh-4c5fscbgtvzromewojr8asrp2q1fu",
       "owner": "TryGhost",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -651,10 +651,10 @@
       "id": "tgd-pouw1a1od652jwmfpfpdqcb3kucs_vhmxtxa3uq",
       "owner": "anthropics",
       "quality_grade": "S",
-      "quality_score": 86,
-      "security_status": "unknown",
+      "quality_score": 96,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -676,10 +676,10 @@
       "id": "tgd-pouw1a1od652jwmfpfpdqcb3kucs_vhmxtxa3uq",
       "owner": "anthropics",
       "quality_grade": "S",
-      "quality_score": 86,
-      "security_status": "unknown",
+      "quality_score": 96,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -697,11 +697,11 @@
       "source": "GitHub Code Search Results",
       "id": "4oa6gp75cpmlt9r4kvdd-ounq8dfp1j-7idivcraw24",
       "owner": "metabase",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -719,11 +719,11 @@
       "source": "GitHub Code Search Results",
       "id": "p0_4bd9tmrn_wxv2z_71c6ycqvexvwqif_bbdnx7nfa",
       "owner": "metabase",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -741,11 +741,11 @@
       "source": "GitHub Code Search Results",
       "id": "ysl6liu3nggv97uhl_mwk7mo9pumywrfh2kbnqx3vgu",
       "owner": "metabase",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -763,11 +763,11 @@
       "source": "github.com/metabase/metabase",
       "id": "a9bd9ahhlcl2dgfmyqzuuoqo_du4utfpajwgxji5sxa",
       "owner": "metabase",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -785,11 +785,11 @@
       "source": "GitHub Code Search Results",
       "id": "hkumu9d81hf7exfoykqj-izkbxpf8voirr26agdkelu",
       "owner": "metabase",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -807,11 +807,11 @@
       "source": "github.com/metabase/metabase",
       "id": "j6jidhftpjsifd7-hu4u_gy70xe0nuswd863hmm9xkq",
       "owner": "metabase",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -829,11 +829,11 @@
       "source": "GitHub Code Search Results",
       "id": "rbkqszm12kjurskfapnr7ctfyqjg_sylxo7en2yafms",
       "owner": "metabase",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -851,11 +851,11 @@
       "source": "github.com/tldraw/tldraw",
       "id": "ttl4kgypo6kdrrogcsyk_18ap4jmnkw8mddcdmvq-ow",
       "owner": "tldraw",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -873,11 +873,11 @@
       "source": "github.com/tldraw/tldraw",
       "id": "ttl4kgypo6kdrrogcsyk_18ap4jmnkw8mddcdmvq-ow",
       "owner": "tldraw",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -895,11 +895,11 @@
       "source": "github.com/tldraw/tldraw",
       "id": "jnwr5p8nl9ue39dac26ciffw2qgn08xeczfvqavr4vu",
       "owner": "tldraw",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -921,10 +921,10 @@
       "id": "_98mcyzbca2zclwgckc5zxoj7yd0-sqq0snka1bz9uu",
       "owner": "metabase",
       "quality_grade": "S",
-      "quality_score": 86,
-      "security_status": "unknown",
+      "quality_score": 96,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -946,10 +946,10 @@
       "id": "bfdivxjlcu8lm94mfgb3jfzgoakd1memdphujpc7xao",
       "owner": "metabase",
       "quality_grade": "S",
-      "quality_score": 86,
-      "security_status": "unknown",
+      "quality_score": 96,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -971,10 +971,10 @@
       "id": "ezmspam9imz4esqmppqzpgsibcuq35obzpent9yxmtw",
       "owner": "metabase",
       "quality_grade": "S",
-      "quality_score": 86,
-      "security_status": "unknown",
+      "quality_score": 96,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -996,10 +996,10 @@
       "id": "y8faq8jx4t433h-7dlz6bka4-h3timatjvz5mwevq_q",
       "owner": "metabase",
       "quality_grade": "S",
-      "quality_score": 86,
-      "security_status": "unknown",
+      "quality_score": 96,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1021,10 +1021,10 @@
       "id": "46am3tpbvy1txq2gyc89smsd-wtwyhimoht79k0o7k0",
       "owner": "metabase",
       "quality_grade": "S",
-      "quality_score": 86,
-      "security_status": "unknown",
+      "quality_score": 96,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1046,10 +1046,10 @@
       "id": "46am3tpbvy1txq2gyc89smsd-wtwyhimoht79k0o7k0",
       "owner": "metabase",
       "quality_grade": "S",
-      "quality_score": 86,
-      "security_status": "unknown",
+      "quality_score": 96,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1071,10 +1071,10 @@
       "id": "y8faq8jx4t433h-7dlz6bka4-h3timatjvz5mwevq_q",
       "owner": "metabase",
       "quality_grade": "S",
-      "quality_score": 86,
-      "security_status": "unknown",
+      "quality_score": 96,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1093,10 +1093,10 @@
       "id": "jm15mw9yqhngy-1opohwcdpio7l3auuzqzvuljbzzkw",
       "owner": "agno-agi",
       "quality_grade": "A",
-      "quality_score": 72,
-      "security_status": "unknown",
+      "quality_score": 82,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1115,10 +1115,10 @@
       "id": "jm15mw9yqhngy-1opohwcdpio7l3auuzqzvuljbzzkw",
       "owner": "agno-agi",
       "quality_grade": "A",
-      "quality_score": 72,
-      "security_status": "unknown",
+      "quality_score": 82,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1137,10 +1137,10 @@
       "id": "tp9dkxhpiecrto2ruqfi0shjb_156ixfk0fz9vic3dk",
       "owner": "obra",
       "quality_grade": "A",
-      "quality_score": 72,
-      "security_status": "unknown",
+      "quality_score": 82,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": []
     },
     {
@@ -1156,9 +1156,9 @@
       "source": "github.com/medusajs/medusa",
       "id": "5vdltzlq4_akd0l6ueaggy4-czrsc3zfgn-qv26bfmq",
       "owner": "medusajs",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "blocked",
+      "quality_score": 50,
+      "security_status": "failed",
       "install_status": "known_good",
       "trust_score": 85,
       "compatible_agents": [
@@ -1178,9 +1178,9 @@
       "source": "github.com/medusajs/medusa",
       "id": "awmkqbycbycokymgwvd0ysogvx5rskip4llqdrnpl1s",
       "owner": "medusajs",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "blocked",
+      "quality_score": 50,
+      "security_status": "failed",
       "install_status": "known_good",
       "trust_score": 85,
       "compatible_agents": [
@@ -1200,9 +1200,9 @@
       "source": "github.com/medusajs/medusa",
       "id": "5vdltzlq4_akd0l6ueaggy4-czrsc3zfgn-qv26bfmq",
       "owner": "medusajs",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "blocked",
+      "quality_score": 50,
+      "security_status": "failed",
       "install_status": "known_good",
       "trust_score": 85,
       "compatible_agents": [
@@ -1222,9 +1222,9 @@
       "source": "github.com/medusajs/medusa",
       "id": "awmkqbycbycokymgwvd0ysogvx5rskip4llqdrnpl1s",
       "owner": "medusajs",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "blocked",
+      "quality_score": 50,
+      "security_status": "failed",
       "install_status": "known_good",
       "trust_score": 85,
       "compatible_agents": [
@@ -1244,9 +1244,9 @@
       "source": "github.com/medusajs/medusa",
       "id": "nmx8ot7gcogpwrjjeuhu-bj7z3kq29dsiw0suzwx9lm",
       "owner": "medusajs",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "blocked",
+      "quality_score": 50,
+      "security_status": "failed",
       "install_status": "known_good",
       "trust_score": 85,
       "compatible_agents": [
@@ -1266,9 +1266,9 @@
       "source": "github.com/medusajs/medusa",
       "id": "1v1lo4pclvuy0guo5uaj17qugueijxdayijbzxyrhck",
       "owner": "medusajs",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "blocked",
+      "quality_score": 50,
+      "security_status": "failed",
       "install_status": "known_good",
       "trust_score": 85,
       "compatible_agents": [
@@ -1288,9 +1288,9 @@
       "source": "github.com/medusajs/medusa",
       "id": "fukdmufadluja6dn3s-pw8qeb5cdopw--haj2fel9sg",
       "owner": "medusajs",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "blocked",
+      "quality_score": 50,
+      "security_status": "failed",
       "install_status": "known_good",
       "trust_score": 85,
       "compatible_agents": [
@@ -1310,9 +1310,9 @@
       "source": "github.com/medusajs/medusa",
       "id": "s7ronku06fiozttfc6wld2lb8rxtcubopahwtschzm8",
       "owner": "medusajs",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "blocked",
+      "quality_score": 50,
+      "security_status": "failed",
       "install_status": "known_good",
       "trust_score": 85,
       "compatible_agents": [
@@ -1332,9 +1332,9 @@
       "source": "github.com/medusajs/medusa",
       "id": "gz1f7kvrbm4zri7p-nueiunp74l_nqugbn4tovpljny",
       "owner": "medusajs",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "blocked",
+      "quality_score": 50,
+      "security_status": "failed",
       "install_status": "known_good",
       "trust_score": 85,
       "compatible_agents": [
@@ -1354,11 +1354,11 @@
       "source": "github.com/cockroachdb/cockroach",
       "id": "hoges4lpfgswh6ffbsfzatrqtq3pjtf1eyofdaao-im",
       "owner": "cockroachdb",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1376,11 +1376,11 @@
       "source": "github.com/cockroachdb/cockroach",
       "id": "hoges4lpfgswh6ffbsfzatrqtq3pjtf1eyofdaao-im",
       "owner": "cockroachdb",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1398,11 +1398,11 @@
       "source": "github.com/anthropics/claude-cookbooks",
       "id": "tmy83rsrmroo5jffn-nags1ewgyh5_axywhpxtppaog",
       "owner": "anthropics",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1420,11 +1420,11 @@
       "source": "github.com/anthropics/claude-cookbooks",
       "id": "6qk5pdgeid_yrg8gvfkx9cftxkvkmqnbsfxk10eoidu",
       "owner": "anthropics",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1442,11 +1442,11 @@
       "source": "github.com/anthropics/claude-cookbooks",
       "id": "6qk5pdgeid_yrg8gvfkx9cftxkvkmqnbsfxk10eoidu",
       "owner": "anthropics",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1464,11 +1464,11 @@
       "source": "github.com/vercel/turborepo",
       "id": "zn-gxiejg94veltg9ywml1hhbriqtapxtunkw_zjhpi",
       "owner": "vercel",
-      "quality_grade": "B",
-      "quality_score": 64,
-      "security_status": "unknown",
+      "quality_grade": "A",
+      "quality_score": 74,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": []
     },
     {
@@ -1485,10 +1485,10 @@
       "id": "wneapfocdlmxlhvysmsw5qhvb-dajqpt1lncaqxy7jo",
       "owner": "remotion-dev",
       "quality_grade": "A",
-      "quality_score": 72,
-      "security_status": "unknown",
+      "quality_score": 82,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1506,11 +1506,11 @@
       "source": "github.com/remotion-dev/remotion",
       "id": "rw6uiqsmytg_5oz32glaqqv-h4a9b8b_m9r07demqta",
       "owner": "remotion-dev",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1528,11 +1528,11 @@
       "source": "GitHub Code Search Results",
       "id": "tiqh1hzjfgflyvrvdjgzlfuppwipff4ucjgb5jcfczm",
       "owner": "nrwl",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1554,10 +1554,10 @@
       "id": "pdyowegrwst6buitv_exujywasdmlipan9zp2374oy4",
       "owner": "nrwl",
       "quality_grade": "S",
-      "quality_score": 86,
-      "security_status": "unknown",
+      "quality_score": 96,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1575,11 +1575,11 @@
       "source": "github.com/wshobson/agents",
       "id": "wynvtnif6o1qrv4qfnynsq2q3ujc32bpp2bwhpsdboi",
       "owner": "wshobson",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1602,10 +1602,10 @@
       "id": "nhwggydimzkqhwfqlkk0eljmwvlp7nzyillhfbqz964",
       "owner": "labring",
       "quality_grade": "S",
-      "quality_score": 90,
-      "security_status": "unknown",
+      "quality_score": 100,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1628,10 +1628,10 @@
       "id": "nhwggydimzkqhwfqlkk0eljmwvlp7nzyillhfbqz964",
       "owner": "labring",
       "quality_grade": "S",
-      "quality_score": 90,
-      "security_status": "unknown",
+      "quality_score": 100,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1649,9 +1649,9 @@
       "source": "github.com/haizlin/fe-interview",
       "id": "2dhvdqfiplegkvlqas_iz7f245rn2tbl7kwltsux6om",
       "owner": "haizlin",
-      "quality_grade": "B",
-      "quality_score": 64,
-      "security_status": "unknown",
+      "quality_grade": "blocked",
+      "quality_score": 50,
+      "security_status": "failed",
       "install_status": "known_good",
       "trust_score": 85,
       "compatible_agents": []
@@ -1669,11 +1669,11 @@
       "source": "github.com/srbhr/Resume-Matcher",
       "id": "outmvyfcx3ewyxcuylbsfmnuttaezdxhfmmrhotcwem",
       "owner": "srbhr",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1691,11 +1691,11 @@
       "source": "github.com/ComposioHQ/awesome-claude-skills",
       "id": "hg1aszonbdx3hx0v-m1k367-hnzte0rn50dfa7mcjps",
       "owner": "ComposioHQ",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1713,11 +1713,11 @@
       "source": "github.com/affaan-m/everything-claude-code",
       "id": "6tlkrusc9cf_gmodcvbrcxxeozjc_zjnrtpqvygzl0q",
       "owner": "affaan-m",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1735,11 +1735,11 @@
       "source": "github.com/affaan-m/everything-claude-code",
       "id": "6tlkrusc9cf_gmodcvbrcxxeozjc_zjnrtpqvygzl0q",
       "owner": "affaan-m",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1757,11 +1757,11 @@
       "source": "github.com/affaan-m/everything-claude-code",
       "id": "g_t-kp01p8rz_cujxj2iknrbcatfuvlonugaznmar78",
       "owner": "affaan-m",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1779,11 +1779,11 @@
       "source": "github.com/affaan-m/everything-claude-code",
       "id": "xdhxmdvcsibgfpwbqs70djp-lutmndn039dq7rumeow",
       "owner": "affaan-m",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1801,11 +1801,11 @@
       "source": "github.com/affaan-m/everything-claude-code",
       "id": "3l2c7opcovjcprfvxr7imwtwxciepcggipk8p9ycrbk",
       "owner": "affaan-m",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1823,11 +1823,11 @@
       "source": "github.com/affaan-m/everything-claude-code",
       "id": "ksgj6xwcrf1eah9kgj2iq71vjmbrja0ftl3mjgqfsvc",
       "owner": "affaan-m",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1845,11 +1845,11 @@
       "source": "github.com/affaan-m/everything-claude-code",
       "id": "cois1m1bgti9ahxexhe533bxhdxhceqyfjnjjxhtbzi",
       "owner": "affaan-m",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1867,9 +1867,9 @@
       "source": "github.com/affaan-m/everything-claude-code",
       "id": "odxwdzudqorgxlchoe-g1kk_l5plbskpdjamjdpznhu",
       "owner": "affaan-m",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "blocked",
+      "quality_score": 50,
+      "security_status": "failed",
       "install_status": "known_good",
       "trust_score": 85,
       "compatible_agents": [
@@ -1889,9 +1889,9 @@
       "source": "github.com/affaan-m/everything-claude-code",
       "id": "hihulrvbliljsynxgq758rrftqqzn3fdfhekgoawnki",
       "owner": "affaan-m",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "blocked",
+      "quality_score": 50,
+      "security_status": "failed",
       "install_status": "known_good",
       "trust_score": 85,
       "compatible_agents": [
@@ -1911,11 +1911,11 @@
       "source": "github.com/affaan-m/everything-claude-code",
       "id": "_lf5z_f7h0mpxwj1ie35zduv2vfbidpwwowbhu5pama",
       "owner": "affaan-m",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1933,11 +1933,11 @@
       "source": "github.com/affaan-m/everything-claude-code",
       "id": "nohu5dhfurqnmk0m6k8riesmdxslw9s7twpqx2afav8",
       "owner": "affaan-m",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -1959,10 +1959,10 @@
       "id": "hkf1eajyj2nw8k800n3pum3d65eitqfmmxkoeq1ieds",
       "owner": "anthropics",
       "quality_grade": "S",
-      "quality_score": 86,
-      "security_status": "unknown",
+      "quality_score": 96,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": []
     },
     {
@@ -1982,10 +1982,10 @@
       "id": "hkf1eajyj2nw8k800n3pum3d65eitqfmmxkoeq1ieds",
       "owner": "anthropics",
       "quality_grade": "S",
-      "quality_score": 86,
-      "security_status": "unknown",
+      "quality_score": 96,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": []
     },
     {
@@ -2005,10 +2005,10 @@
       "id": "484erhznudvufrqwhskhgj7q8yjise4vkjwmubgltlq",
       "owner": "anthropics",
       "quality_grade": "S",
-      "quality_score": 86,
-      "security_status": "unknown",
+      "quality_score": 96,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": []
     },
     {
@@ -2028,10 +2028,10 @@
       "id": "484erhznudvufrqwhskhgj7q8yjise4vkjwmubgltlq",
       "owner": "anthropics",
       "quality_grade": "S",
-      "quality_score": 86,
-      "security_status": "unknown",
+      "quality_score": 96,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": []
     },
     {
@@ -2052,10 +2052,10 @@
       "id": "nb626fzrteuwlb7pxocxezxaernzjd7ylmj4g6ruwpy",
       "owner": "anthropics",
       "quality_grade": "S",
-      "quality_score": 90,
-      "security_status": "unknown",
+      "quality_score": 100,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -2078,10 +2078,10 @@
       "id": "nb626fzrteuwlb7pxocxezxaernzjd7ylmj4g6ruwpy",
       "owner": "anthropics",
       "quality_grade": "S",
-      "quality_score": 90,
-      "security_status": "unknown",
+      "quality_score": 100,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -2102,10 +2102,10 @@
       "id": "8awwjtnivdhk3b7vxjcn1hhhbl4m2izrn1cjgejhe4g",
       "owner": "anthropics",
       "quality_grade": "S",
-      "quality_score": 86,
-      "security_status": "unknown",
+      "quality_score": 96,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -2126,10 +2126,10 @@
       "id": "okcxnkqx-_ns9qlkunanovhytiafcj-oy8wvakjgo_4",
       "owner": "anthropics",
       "quality_grade": "S",
-      "quality_score": 86,
-      "security_status": "unknown",
+      "quality_score": 96,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -2150,10 +2150,10 @@
       "id": "okcxnkqx-_ns9qlkunanovhytiafcj-oy8wvakjgo_4",
       "owner": "anthropics",
       "quality_grade": "S",
-      "quality_score": 86,
-      "security_status": "unknown",
+      "quality_score": 96,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -2174,10 +2174,10 @@
       "id": "8awwjtnivdhk3b7vxjcn1hhhbl4m2izrn1cjgejhe4g",
       "owner": "anthropics",
       "quality_grade": "S",
-      "quality_score": 86,
-      "security_status": "unknown",
+      "quality_score": 96,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -2199,10 +2199,10 @@
       "id": "0uogss1djcxkk3yeodqtnte6-cambf4hialvpvz0ega",
       "owner": "anthropics",
       "quality_grade": "S",
-      "quality_score": 86,
-      "security_status": "unknown",
+      "quality_score": 96,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -2224,10 +2224,10 @@
       "id": "0uogss1djcxkk3yeodqtnte6-cambf4hialvpvz0ega",
       "owner": "anthropics",
       "quality_grade": "S",
-      "quality_score": 86,
-      "security_status": "unknown",
+      "quality_score": 96,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -2250,10 +2250,10 @@
       "id": "1-fwatcs6bpcjppq4o2e94mcffoclbqzixnrllof6tw",
       "owner": "mlflow",
       "quality_grade": "S",
-      "quality_score": 90,
-      "security_status": "unknown",
+      "quality_score": 100,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]
@@ -2271,11 +2271,11 @@
       "source": "github.com/jlowin/fastmcp",
       "id": "d0zktf5dupvp9typgyasevvk7hrtwz8zpkeqqapjl3y",
       "owner": "jlowin",
-      "quality_grade": "A",
-      "quality_score": 80,
-      "security_status": "unknown",
+      "quality_grade": "S",
+      "quality_score": 90,
+      "security_status": "passed",
       "install_status": "known_good",
-      "trust_score": 85,
+      "trust_score": 100,
       "compatible_agents": [
         "Claude Code"
       ]

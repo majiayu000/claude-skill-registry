@@ -1,0 +1,18 @@
+{
+  "name": "issue-progress-tracking",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/issue-progress-tracking/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-22T01:25:11.522192Z",
+  "dir_name": "issue-progress-tracking",
+  "category": "integration",
+  "github_path": "skills/issue-progress-tracking",
+  "github_branch": "main",
+  "author": "yonatangross",
+  "source_url": "https://github.com/yonatangross/skillforge-claude-plugin/blob/main/skills/issue-progress-tracking/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yonatangross/skillforge-claude-plugin/blob/main/skills/issue-progress-tracking/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

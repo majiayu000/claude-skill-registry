@@ -4,170 +4,225 @@ Security Scanner for SKILL.md files
 Implements automated security checks for skill registry
 """
 
+import hashlib
 import json
 import re
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Tuple
 
 import jsonschema
 import yaml
-
 from security_blocklist import blocked_metadata_source, load_security_blocklist
 
 # Load schema
 SCHEMA_PATH = Path(__file__).parent.parent / "schema" / "skill.schema.json"
+SECURITY_SCANNER_NAME = "claude-skill-registry-security-scanner"
+SECURITY_SCANNER_VERSION = "1.1.0"
 
 # Dangerous patterns to detect
 DANGEROUS_PATTERNS = {
     # Code execution
-    'eval': r'\beval\s*\(',
-    'exec': r'\bexec\s*\(',
-    '__import__': r'\b__import__\s*\(',
-    'compile': r'\bcompile\s*\(',
-
+    "eval": r"\beval\s*\(",
+    "exec": r"\bexec\s*\(",
+    "__import__": r"\b__import__\s*\(",
+    "compile": r"\bcompile\s*\(",
     # Command injection
-    'os.system': r'os\.system\s*\(',
-    'subprocess.call': r'subprocess\.(call|run|Popen)\s*\(',
-    'shell=True': r'shell\s*=\s*True',
-
+    "os.system": r"os\.system\s*\(",
+    "subprocess.call": r"subprocess\.(call|run|Popen)\s*\(",
+    "shell=True": r"shell\s*=\s*True",
     # File system manipulation
-    'os.remove': r'os\.(remove|unlink|rmdir)\s*\(',
-    'shutil.rmtree': r'shutil\.rmtree\s*\(',
-
+    "os.remove": r"os\.(remove|unlink|rmdir)\s*\(",
+    "shutil.rmtree": r"shutil\.rmtree\s*\(",
     # Network access (flag for review)
-    'requests': r'import\s+requests',
-    'urllib': r'import\s+urllib',
-    'socket': r'import\s+socket',
-
+    "requests": r"import\s+requests",
+    "urllib": r"import\s+urllib",
+    "socket": r"import\s+socket",
     # YAML unsafe loading
-    'yaml.load': r'yaml\.load\s*\(',
-    'yaml.unsafe_load': r'yaml\.unsafe_load\s*\(',
-
+    "yaml.load": r"yaml\.load\s*\(",
+    "yaml.unsafe_load": r"yaml\.unsafe_load\s*\(",
     # Prompt injection indicators
-    'ignore_previous': r'ignore\s+(previous|prior|above)',
-    'disregard': r'disregard\s+(all|previous|prior)',
-    'system_prompt': r'system[\s_-]?prompt',
-
+    "ignore_previous": r"ignore\s+(previous|prior|above)",
+    "disregard": r"disregard\s+(all|previous|prior)",
+    "system_prompt": r"system[\s_-]?prompt",
     # Node.js dangerous patterns
-    'child_process': r'require\s*\(\s*[\'"]child_process[\'"]\s*\)',
-    'child_process_exec': r'child_process\.\w+\s*\(',
-    'new_function': r'new\s+Function\s*\(',
-
+    "child_process": r'require\s*\(\s*[\'"]child_process[\'"]\s*\)',
+    "child_process_exec": r"child_process\.\w+\s*\(",
+    "new_function": r"new\s+Function\s*\(",
     # Dangerous permissions & system modification
-    'chmod_dangerous': r'chmod\s+(?:777|666|4755|[ug]\+s)',
-    'sudo_shell': r'sudo\s+(?:sh|bash)\s+-c',
-
+    "chmod_dangerous": r"chmod\s+(?:777|666|4755|[ug]\+s)",
+    "sudo_shell": r"sudo\s+(?:sh|bash)\s+-c",
     # Untrusted package sources
-    'pip_url_install': r'pip3?\s+install\s+(?:https?://|git\+)',
-    'npm_url_install': r'npm\s+install\s+(?:https?://|git\+)',
-
+    "pip_url_install": r"pip3?\s+install\s+(?:https?://|git\+)",
+    "npm_url_install": r"npm\s+install\s+(?:https?://|git\+)",
     # Resource abuse
-    'fork_bomb': r':\(\)\{\s*:\|:\s*&\s*\}\s*;\s*:',
+    "fork_bomb": r":\(\)\{\s*:\|:\s*&\s*\}\s*;\s*:",
 }
 
 # Hardcoded credential format patterns (high severity)
 CREDENTIAL_PATTERNS = {
-    'aws_key': re.compile(
-        r'(?:AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}'
-    ),
-    'github_token': re.compile(r'gh[pousr]_[A-Za-z0-9]{36,}'),
-    'stripe_key': re.compile(r'(?:sk|pk)_(?:live|test)_[A-Za-z0-9]{24,}'),
-    'google_api_key': re.compile(r'AIza[A-Za-z0-9_-]{35}'),
-    'jwt_token': re.compile(
-        r'eyJ[A-Za-z0-9_-]{10,}\.eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]+'
-    ),
-    'private_key_pem': re.compile(
-        r'-----BEGIN (?:RSA |EC |DSA |OPENSSH )?PRIVATE KEY-----'
-    ),
-    'db_connection_string': re.compile(
-        r'(?:mongodb|mysql|postgresql|postgres)://[^:\s]+:[^@\s]+@'
-    ),
+    "aws_key": re.compile(r"(?:AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}"),
+    "github_token": re.compile(r"gh[pousr]_[A-Za-z0-9]{36,}"),
+    "stripe_key": re.compile(r"(?:sk|pk)_(?:live|test)_[A-Za-z0-9]{24,}"),
+    "google_api_key": re.compile(r"AIza[A-Za-z0-9_-]{35}"),
+    "jwt_token": re.compile(r"eyJ[A-Za-z0-9_-]{10,}\.eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]+"),
+    "private_key_pem": re.compile(r"-----BEGIN (?:RSA |EC |DSA |OPENSSH )?PRIVATE KEY-----"),
+    "db_connection_string": re.compile(r"(?:mongodb|mysql|postgresql|postgres)://[^:\s]+:[^@\s]+@"),
 }
 
 # Base64-to-execution chain patterns
 OBFUSCATION_EXEC_PATTERNS = [
     re.compile(
-        r'base64\s+(?:-d|--decode)\s*\|?\s*(?:bash|sh|python|eval)',
+        r"base64\s+(?:-d|--decode)\s*\|?\s*(?:bash|sh|python|eval)",
         re.IGNORECASE,
     ),
     re.compile(
-        r'echo\s+[A-Za-z0-9+/=]{20,}\s*\|\s*base64\s+(?:-d|--decode)'
-        r'\s*\|\s*(?:bash|sh)',
+        r"echo\s+[A-Za-z0-9+/=]{20,}\s*\|\s*base64\s+(?:-d|--decode)" r"\s*\|\s*(?:bash|sh)",
         re.IGNORECASE,
     ),
 ]
 
 COMPILED_DANGEROUS_PATTERNS = {
-    name: re.compile(pattern, re.IGNORECASE)
-    for name, pattern in DANGEROUS_PATTERNS.items()
+    name: re.compile(pattern, re.IGNORECASE) for name, pattern in DANGEROUS_PATTERNS.items()
 }
 
 # Sensitive file paths
 SENSITIVE_PATHS = [
-    '/etc/passwd', '/etc/shadow', '~/.ssh', '~/.aws',
-    '/proc/', '/sys/', '$HOME/.env', '.env',
+    "/etc/passwd",
+    "/etc/shadow",
+    "~/.ssh",
+    "~/.aws",
+    "/proc/",
+    "/sys/",
+    "$HOME/.env",
+    ".env",
 ]
 
 BUNDLED_SCAN_DIRS = (
-    'connectors',
-    'references',
-    'reference',
-    'scripts',
-    'assets',
-    'templates',
-    'examples',
-    'prompts',
+    "connectors",
+    "references",
+    "reference",
+    "scripts",
+    "assets",
+    "knowledge",
+    "templates",
+    "examples",
+    "prompts",
+    "rules",
 )
 BUNDLED_SCAN_ROOT_FILES = (
-    'audit.md',
-    'package.json',
-    'package-lock.json',
-    'pnpm-lock.yaml',
-    'yarn.lock',
-    'requirements.txt',
-    'pyproject.toml',
-    'setup.md',
-    'uv.lock',
-    'README.md',
+    "audit.md",
+    "package.json",
+    "package-lock.json",
+    "pnpm-lock.yaml",
+    "yarn.lock",
+    "requirements.txt",
+    "pyproject.toml",
+    "setup.md",
+    "uv.lock",
+    "README.md",
 )
 BUNDLED_SCAN_EXTENSIONS = {
-    '.bash',
-    '.css',
-    '.csv',
-    '.html',
-    '.js',
-    '.json',
-    '.jsx',
-    '.j2',
-    '.md',
-    '.mjs',
-    '.ps1',
-    '.py',
-    '.sh',
-    '.svg',
-    '.toml',
-    '.tpl',
-    '.ts',
-    '.tsx',
-    '.txt',
-    '.yaml',
-    '.yml',
+    ".bash",
+    ".css",
+    ".csv",
+    ".html",
+    ".js",
+    ".json",
+    ".jsx",
+    ".j2",
+    ".md",
+    ".mjs",
+    ".ps1",
+    ".py",
+    ".sh",
+    ".svg",
+    ".toml",
+    ".tpl",
+    ".ts",
+    ".tsx",
+    ".txt",
+    ".yaml",
+    ".yml",
 }
 
+
 INJECTION_PATTERNS = [
-    re.compile(r'ignore\s+(all\s+)?(previous|prior|above)\s+(instructions|prompts)', re.IGNORECASE),
-    re.compile(r'disregard\s+(everything|all)', re.IGNORECASE),
-    re.compile(r'forget\s+(previous|all)', re.IGNORECASE),
-    re.compile(r'new\s+instructions?:', re.IGNORECASE),
-    re.compile(r'system\s*:\s*you\s+are', re.IGNORECASE),
-    re.compile(r'</system>', re.IGNORECASE),
-    re.compile(r'<\|im_start\|>', re.IGNORECASE),
+    re.compile(r"ignore\s+(all\s+)?(previous|prior|above)\s+(instructions|prompts)", re.IGNORECASE),
+    re.compile(r"disregard\s+(everything|all)", re.IGNORECASE),
+    re.compile(r"forget\s+(previous|all)", re.IGNORECASE),
+    re.compile(r"new\s+instructions?:", re.IGNORECASE),
+    re.compile(r"system\s*:\s*you\s+are", re.IGNORECASE),
+    re.compile(r"</system>", re.IGNORECASE),
+    re.compile(r"<\|im_start\|>", re.IGNORECASE),
     # Concealment patterns - skill tries to hide its actions from user
-    re.compile(r'do\s+not\s+(tell|inform|mention|notify)\s+(the\s+)?user', re.IGNORECASE),
-    re.compile(r'hide\s+(this|that)\s+(action|operation|step)', re.IGNORECASE),
-    re.compile(r'keep\s+(this|that)\s+(secret|hidden)', re.IGNORECASE),
+    re.compile(r"do\s+not\s+(tell|inform|mention|notify)\s+(the\s+)?user", re.IGNORECASE),
+    re.compile(r"hide\s+(this|that)\s+(action|operation|step)", re.IGNORECASE),
+    re.compile(r"keep\s+(this|that)\s+(secret|hidden)", re.IGNORECASE),
     re.compile(r"don'?t\s+mention\s+you\s+used\s+this\s+skill", re.IGNORECASE),
 ]
+
+
+def utc_now_isoformat() -> str:
+    """Return a stable UTC timestamp string for scan evidence."""
+    return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+
+
+def canonical_json_sha256(payload: object) -> str:
+    """Hash a JSON-compatible payload using stable key and separator rules."""
+    encoded = json.dumps(
+        payload,
+        sort_keys=True,
+        separators=(",", ":"),
+        ensure_ascii=False,
+    ).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()
+
+
+def security_ruleset_hash() -> str:
+    """Hash the scanner rules that affect security decisions."""
+    return canonical_json_sha256(
+        {
+            "scanner_name": SECURITY_SCANNER_NAME,
+            "scanner_version": SECURITY_SCANNER_VERSION,
+            "dangerous_patterns": DANGEROUS_PATTERNS,
+            "credential_patterns": {
+                name: pattern.pattern for name, pattern in CREDENTIAL_PATTERNS.items()
+            },
+            "obfuscation_exec_patterns": [pattern.pattern for pattern in OBFUSCATION_EXEC_PATTERNS],
+            "injection_patterns": [pattern.pattern for pattern in INJECTION_PATTERNS],
+            "sensitive_paths": SENSITIVE_PATHS,
+            "bundled_scan_dirs": BUNDLED_SCAN_DIRS,
+            "bundled_scan_root_files": BUNDLED_SCAN_ROOT_FILES,
+            "bundled_scan_extensions": sorted(BUNDLED_SCAN_EXTENSIONS),
+        }
+    )
+
+
+def source_content_hash(skill_dir: Path) -> str:
+    """Hash archived source content without generated metadata."""
+    digest = hashlib.sha256()
+    for path in sorted(skill_dir.rglob("*")):
+        if not path.is_file() or path.name == "metadata.json":
+            continue
+        rel_path = path.relative_to(skill_dir).as_posix()
+        digest.update(rel_path.encode("utf-8"))
+        digest.update(b"\0")
+        digest.update(hashlib.sha256(path.read_bytes()).hexdigest().encode("ascii"))
+        digest.update(b"\0")
+    return digest.hexdigest()
+
+
+def load_skill_metadata(skill_dir: Path) -> dict:
+    """Load archive metadata when available."""
+    metadata_path = skill_dir / "metadata.json"
+    if not metadata_path.exists():
+        return {}
+    try:
+        payload = json.loads(metadata_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    return payload if isinstance(payload, dict) else {}
 
 
 class SecurityScanner:
@@ -181,7 +236,7 @@ class SecurityScanner:
 
     def _load_schema(self) -> dict:
         """Load JSON Schema"""
-        with open(self.schema_path, 'r', encoding='utf-8') as f:
+        with open(self.schema_path, "r", encoding="utf-8") as f:
             return json.load(f)
 
     def scan_file(self, skill_path: Path) -> Tuple[bool, List[Dict]]:
@@ -192,41 +247,45 @@ class SecurityScanner:
         self.issues = []
 
         if not skill_path.exists():
-            self.issues.append({
-                'severity': 'error',
-                'type': 'file_not_found',
-                'message': f'File not found: {skill_path}'
-            })
+            self.issues.append(
+                {
+                    "severity": "error",
+                    "type": "file_not_found",
+                    "message": f"File not found: {skill_path}",
+                }
+            )
             return False, self.issues
 
         try:
-            content = skill_path.read_text(encoding='utf-8')
+            content = skill_path.read_text(encoding="utf-8")
         except Exception as e:
-            self.issues.append({
-                'severity': 'error',
-                'type': 'read_error',
-                'message': f'Cannot read file: {e}'
-            })
+            self.issues.append(
+                {"severity": "error", "type": "read_error", "message": f"Cannot read file: {e}"}
+            )
             return False, self.issues
 
         # 1. Validate file size
         if len(content) > 1_000_000:  # 1MB limit
-            self.issues.append({
-                'severity': 'error',
-                'type': 'file_too_large',
-                'message': f'File size {len(content)} exceeds 1MB limit'
-            })
+            self.issues.append(
+                {
+                    "severity": "error",
+                    "type": "file_too_large",
+                    "message": f"File size {len(content)} exceeds 1MB limit",
+                }
+            )
 
         # 2. Extract and validate frontmatter
         frontmatter = self._extract_frontmatter(content)
         if frontmatter:
             self._validate_schema(frontmatter)
         else:
-            self.issues.append({
-                'severity': 'error',
-                'type': 'no_frontmatter',
-                'message': 'SKILL.md must have YAML frontmatter'
-            })
+            self.issues.append(
+                {
+                    "severity": "error",
+                    "type": "no_frontmatter",
+                    "message": "SKILL.md must have YAML frontmatter",
+                }
+            )
 
         # 3. Scan for dangerous patterns
         self._scan_dangerous_patterns(content, skill_path)
@@ -249,15 +308,72 @@ class SecurityScanner:
         # 9. Obfuscation-to-execution chains
         self._detect_obfuscation_exec(content, skill_path)
 
-        has_error = any(i['severity'] == 'error' for i in self.issues)
+        has_error = any(i["severity"] == "error" for i in self.issues)
         return not has_error, self.issues
+
+    def build_security_decision(
+        self,
+        skill_path: Path,
+        is_safe: bool,
+        issues: List[Dict],
+        scanned_at: str,
+    ) -> Dict:
+        """Build a per-skill fail-closed security decision with provenance."""
+        skill_dir = skill_path.parent
+        metadata = load_skill_metadata(skill_dir)
+        error_count = sum(1 for issue in issues if issue.get("severity") == "error")
+        warning_count = sum(1 for issue in issues if issue.get("severity") == "warning")
+        status = "passed" if is_safe else "failed"
+        reason = "no_errors" if is_safe else "scanner_errors"
+        if any(issue.get("type") == "blocked_source" for issue in issues):
+            reason = "blocked_source"
+
+        source_repo = str(metadata.get("repo") or "")
+        source_path = str(metadata.get("path") or metadata.get("github_path") or "")
+        source_ref = str(metadata.get("github_branch") or metadata.get("branch") or "")
+        content_sha256 = source_content_hash(skill_dir)
+        ruleset_sha256 = security_ruleset_hash()
+        decision_payload = {
+            "status": status,
+            "reason": reason,
+            "source_repo": source_repo,
+            "source_path": source_path,
+            "source_ref": source_ref,
+            "content_sha256": content_sha256,
+            "scanner_version": SECURITY_SCANNER_VERSION,
+            "ruleset_sha256": ruleset_sha256,
+            "error_count": error_count,
+            "warning_count": warning_count,
+        }
+
+        return {
+            "id": canonical_json_sha256(decision_payload),
+            "status": status,
+            "reason": reason,
+            "scanner": {
+                "name": SECURITY_SCANNER_NAME,
+                "version": SECURITY_SCANNER_VERSION,
+                "ruleset_sha256": ruleset_sha256,
+            },
+            "provenance": {
+                "source_repo": source_repo,
+                "source_path": source_path,
+                "source_ref": source_ref,
+                "source_url": str(metadata.get("source_url") or ""),
+                "content_sha256": content_sha256,
+                "scanned_at": scanned_at,
+            },
+            "issue_count": len(issues),
+            "error_count": error_count,
+            "warning_count": warning_count,
+        }
 
     def _extract_frontmatter(self, content: str) -> dict:
         """Extract YAML frontmatter from SKILL.md"""
-        if not content.startswith('---'):
+        if not content.startswith("---"):
             return None
 
-        parts = content.split('---', 2)
+        parts = content.split("---", 2)
         if len(parts) < 3:
             return None
 
@@ -265,11 +381,13 @@ class SecurityScanner:
             # Use safe_load to prevent YAML deserialization attacks
             return yaml.safe_load(parts[1])
         except yaml.YAMLError as e:
-            self.issues.append({
-                'severity': 'error',
-                'type': 'yaml_parse_error',
-                'message': f'Invalid YAML frontmatter: {e}'
-            })
+            self.issues.append(
+                {
+                    "severity": "error",
+                    "type": "yaml_parse_error",
+                    "message": f"Invalid YAML frontmatter: {e}",
+                }
+            )
             return None
 
     def _validate_schema(self, frontmatter: dict):
@@ -277,56 +395,60 @@ class SecurityScanner:
         try:
             jsonschema.validate(instance=frontmatter, schema=self.schema)
         except jsonschema.ValidationError as e:
-            self.issues.append({
-                'severity': 'warning',
-                'type': 'schema_validation',
-                'message': f'Schema validation failed: {e.message}',
-                'path': list(e.path)
-            })
+            self.issues.append(
+                {
+                    "severity": "warning",
+                    "type": "schema_validation",
+                    "message": f"Schema validation failed: {e.message}",
+                    "path": list(e.path),
+                }
+            )
         except jsonschema.SchemaError as e:
-            self.issues.append({
-                'severity': 'error',
-                'type': 'schema_error',
-                'message': f'Invalid schema: {e}'
-            })
+            self.issues.append(
+                {"severity": "error", "type": "schema_error", "message": f"Invalid schema: {e}"}
+            )
 
     def _scan_dangerous_patterns(self, content: str, file_path: Path):
         """Scan for dangerous code patterns"""
-        lines = content.split('\n')
+        lines = content.split("\n")
 
         for pattern_name, pattern in COMPILED_DANGEROUS_PATTERNS.items():
             for line_num, line in enumerate(lines, 1):
                 if pattern.search(line):
                     critical_patterns = {
-                        'eval',
-                        'exec',
-                        '__import__',
-                        'os.system',
-                        'yaml.load',
-                        'yaml.unsafe_load',
-                        'shell=True',
+                        "eval",
+                        "exec",
+                        "__import__",
+                        "os.system",
+                        "yaml.load",
+                        "yaml.unsafe_load",
+                        "shell=True",
                     }
-                    severity = 'error' if pattern_name in critical_patterns else 'warning'
+                    severity = "error" if pattern_name in critical_patterns else "warning"
 
-                    self.issues.append({
-                        'severity': severity,
-                        'type': 'dangerous_pattern',
-                        'pattern': pattern_name,
-                        'file': str(file_path),
-                        'line': line_num,
-                        'message': f'Dangerous pattern "{pattern_name}" found',
-                        'code': line.strip()
-                    })
+                    self.issues.append(
+                        {
+                            "severity": severity,
+                            "type": "dangerous_pattern",
+                            "pattern": pattern_name,
+                            "file": str(file_path),
+                            "line": line_num,
+                            "message": f'Dangerous pattern "{pattern_name}" found',
+                            "code": line.strip(),
+                        }
+                    )
 
     def _scan_sensitive_paths(self, content: str):
         """Check for references to sensitive file paths"""
         for path in SENSITIVE_PATHS:
             if path in content:
-                self.issues.append({
-                    'severity': 'warning',
-                    'type': 'sensitive_path',
-                    'message': f'References sensitive path: {path}'
-                })
+                self.issues.append(
+                    {
+                        "severity": "warning",
+                        "type": "sensitive_path",
+                        "message": f"References sensitive path: {path}",
+                    }
+                )
 
     def _scan_bundled_files(self, skill_dir: Path):
         """Scan bundled executable/reference files."""
@@ -340,7 +462,7 @@ class SecurityScanner:
             if not bundled_dir.exists():
                 continue
 
-            for script_file in bundled_dir.rglob('*'):
+            for script_file in bundled_dir.rglob("*"):
                 if not script_file.is_file():
                     continue
 
@@ -353,12 +475,14 @@ class SecurityScanner:
         """Return False and record an issue when an archived support file is too large."""
         size = bundled_file.stat().st_size
         if size > 10_000_000:  # 10MB
-            self.issues.append({
-                'severity': 'error',
-                'type': 'file_too_large',
-                'file': str(bundled_file),
-                'message': f'Bundled file too large: {size} bytes'
-            })
+            self.issues.append(
+                {
+                    "severity": "error",
+                    "type": "file_too_large",
+                    "file": str(bundled_file),
+                    "message": f"Bundled file too large: {size} bytes",
+                }
+            )
             return False
         return True
 
@@ -368,7 +492,7 @@ class SecurityScanner:
             return
 
         try:
-            content = bundled_file.read_text(encoding='utf-8')
+            content = bundled_file.read_text(encoding="utf-8")
             self._scan_dangerous_patterns(content, bundled_file)
             self._detect_credentials(content, bundled_file)
             self._detect_obfuscation_exec(content, bundled_file)
@@ -382,14 +506,16 @@ class SecurityScanner:
             return
 
         try:
-            metadata = json.loads(metadata_path.read_text(encoding='utf-8'))
+            metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError) as exc:
-            self.issues.append({
-                'severity': 'error',
-                'type': 'metadata_read_error',
-                'file': str(metadata_path),
-                'message': f'Cannot read metadata for blocklist scan: {exc}',
-            })
+            self.issues.append(
+                {
+                    "severity": "error",
+                    "type": "metadata_read_error",
+                    "file": str(metadata_path),
+                    "message": f"Cannot read metadata for blocklist scan: {exc}",
+                }
+            )
             return
 
         blocked_source = blocked_metadata_source(metadata, self.security_blocklist)
@@ -397,58 +523,66 @@ class SecurityScanner:
             return
         blocked_entry, source_field = blocked_source
 
-        self.issues.append({
-            'severity': 'error',
-            'type': 'blocked_source',
-            'file': str(metadata_path),
-            'repo': blocked_entry["repo"],
-            'metadata_field': source_field,
-            'message': (
-                f'Skill source repo "{blocked_entry["repo"]}" is blocked: '
-                f'{blocked_entry.get("reason", "security blocklist")}'
-            ),
-        })
+        self.issues.append(
+            {
+                "severity": "error",
+                "type": "blocked_source",
+                "file": str(metadata_path),
+                "repo": blocked_entry["repo"],
+                "metadata_field": source_field,
+                "message": (
+                    f'Skill source repo "{blocked_entry["repo"]}" is blocked: '
+                    f'{blocked_entry.get("reason", "security blocklist")}'
+                ),
+            }
+        )
 
     def _detect_credentials(self, content: str, file_path: Path):
         """Detect hardcoded credentials and secret key formats"""
-        lines = content.split('\n')
+        lines = content.split("\n")
         for cred_name, pattern in CREDENTIAL_PATTERNS.items():
             for line_num, line in enumerate(lines, 1):
                 if pattern.search(line):
-                    self.issues.append({
-                        'severity': 'error',
-                        'type': 'hardcoded_credential',
-                        'pattern': cred_name,
-                        'file': str(file_path),
-                        'line': line_num,
-                        'message': f'Hardcoded credential "{cred_name}" detected',
-                        'code': line.strip()[:120],
-                    })
+                    self.issues.append(
+                        {
+                            "severity": "error",
+                            "type": "hardcoded_credential",
+                            "pattern": cred_name,
+                            "file": str(file_path),
+                            "line": line_num,
+                            "message": f'Hardcoded credential "{cred_name}" detected',
+                            "code": line.strip()[:120],
+                        }
+                    )
 
     def _detect_obfuscation_exec(self, content: str, file_path: Path):
         """Detect base64-decode-to-execution chains"""
-        lines = content.split('\n')
+        lines = content.split("\n")
         for pattern in OBFUSCATION_EXEC_PATTERNS:
             for line_num, line in enumerate(lines, 1):
                 if pattern.search(line):
-                    self.issues.append({
-                        'severity': 'error',
-                        'type': 'obfuscation_exec',
-                        'file': str(file_path),
-                        'line': line_num,
-                        'message': 'Base64-decode-to-execution chain detected',
-                        'code': line.strip()[:120],
-                    })
+                    self.issues.append(
+                        {
+                            "severity": "error",
+                            "type": "obfuscation_exec",
+                            "file": str(file_path),
+                            "line": line_num,
+                            "message": "Base64-decode-to-execution chain detected",
+                            "code": line.strip()[:120],
+                        }
+                    )
 
     def _detect_prompt_injection(self, content: str):
         """Detect potential prompt injection attempts"""
         for pattern in INJECTION_PATTERNS:
             if pattern.search(content):
-                self.issues.append({
-                    'severity': 'warning',
-                    'type': 'prompt_injection',
-                    'message': f'Potential prompt injection detected: {pattern.pattern}'
-                })
+                self.issues.append(
+                    {
+                        "severity": "warning",
+                        "type": "prompt_injection",
+                        "message": f"Potential prompt injection detected: {pattern.pattern}",
+                    }
+                )
 
     def generate_report(self) -> str:
         """Generate human-readable report"""
@@ -456,8 +590,8 @@ class SecurityScanner:
             return "✓ No security issues found"
 
         report = []
-        errors = [i for i in self.issues if i['severity'] == 'error']
-        warnings = [i for i in self.issues if i['severity'] == 'warning']
+        errors = [i for i in self.issues if i["severity"] == "error"]
+        warnings = [i for i in self.issues if i["severity"] == "warning"]
 
         if errors:
             report.append(f"❌ {len(errors)} ERROR(S):")
@@ -469,7 +603,7 @@ class SecurityScanner:
             for issue in warnings:
                 report.append(f"  - {issue['type']}: {issue['message']}")
 
-        return '\n'.join(report)
+        return "\n".join(report)
 
 
 def resolve_scan_file_list(skills_dir: Path, file_list_path: Path) -> List[Path]:
@@ -495,7 +629,7 @@ def resolve_scan_file_list(skills_dir: Path, file_list_path: Path) -> List[Path]
                 return None
             current = current.parent
 
-    for raw in file_list_path.read_text(encoding='utf-8', errors='ignore').splitlines():
+    for raw in file_list_path.read_text(encoding="utf-8", errors="ignore").splitlines():
         line = raw.strip()
         if not line:
             continue
@@ -532,49 +666,65 @@ def scan_directory(
     output_file: Path = None,
     quiet: bool = False,
     selected_files: List[Path] = None,
+    scanned_at: str = "",
 ) -> Dict:
     """Scan all skills in a directory"""
     scanner = SecurityScanner()
     skills_root = skills_dir.resolve()
+    scan_timestamp = scanned_at or utc_now_isoformat()
+    ruleset_sha256 = security_ruleset_hash()
     results = {
-        'total': 0,
-        'passed': 0,
-        'failed': 0,
-        'skills': []
+        "scanner": {
+            "name": SECURITY_SCANNER_NAME,
+            "version": SECURITY_SCANNER_VERSION,
+            "ruleset_sha256": ruleset_sha256,
+        },
+        "generated_at": scan_timestamp,
+        "total": 0,
+        "passed": 0,
+        "failed": 0,
+        "skills": [],
     }
 
     if selected_files is None:
-        scan_targets = skills_dir.rglob('SKILL.md')
+        scan_targets = skills_dir.rglob("SKILL.md")
     else:
         scan_targets = selected_files
 
     for skill_file in scan_targets:
         skill_file = skill_file.resolve()
-        results['total'] += 1
+        results["total"] += 1
 
         is_safe, issues = scanner.scan_file(skill_file)
+        security_decision = scanner.build_security_decision(
+            skill_file,
+            is_safe,
+            issues,
+            scan_timestamp,
+        )
 
         skill_result = {
-            'path': str(skill_file.relative_to(skills_root)),
-            'safe': is_safe,
-            'issues': issues
+            "path": str(skill_file.relative_to(skills_root)),
+            "safe": is_safe,
+            "security_decision": security_decision,
+            "issues": issues,
         }
 
-        results['skills'].append(skill_result)
+        results["skills"].append(skill_result)
 
         if is_safe:
-            results['passed'] += 1
+            results["passed"] += 1
             if not quiet:
                 print(f"✓ {skill_file.relative_to(skills_root)}")
         else:
-            results['failed'] += 1
+            results["failed"] += 1
             if not quiet:
                 print(f"✗ {skill_file.relative_to(skills_root)}")
                 print(scanner.generate_report())
 
     # Save results
     if output_file:
-        with open(output_file, 'w', encoding='utf-8') as f:
+        with open(output_file, "w", encoding="utf-8") as f:
             json.dump(results, f, indent=2, ensure_ascii=False)
 
     return results
@@ -583,19 +733,19 @@ def scan_directory(
 def main():
     import argparse
 
-    parser = argparse.ArgumentParser(description='Security scanner for SKILL.md files')
-    parser.add_argument('path', help='Path to SKILL.md file or skills directory')
-    parser.add_argument('--output', '-o', help='Output JSON report file')
-    parser.add_argument('--strict', action='store_true', help='Fail on warnings')
+    parser = argparse.ArgumentParser(description="Security scanner for SKILL.md files")
+    parser.add_argument("path", help="Path to SKILL.md file or skills directory")
+    parser.add_argument("--output", "-o", help="Output JSON report file")
+    parser.add_argument("--strict", action="store_true", help="Fail on warnings")
     parser.add_argument(
-        '--report-only',
-        action='store_true',
-        help='Always exit 0 after writing report (for CI reporting mode)',
+        "--report-only",
+        action="store_true",
+        help="Always exit 0 after writing report (for CI reporting mode)",
     )
-    parser.add_argument('--quiet', action='store_true', help='Only print summary')
+    parser.add_argument("--quiet", action="store_true", help="Only print summary")
     parser.add_argument(
-        '--file-list',
-        help='Optional newline-delimited list of SKILL.md paths to scan (absolute or relative to path)',
+        "--file-list",
+        help="Optional newline-delimited list of SKILL.md paths to scan (absolute or relative to path)",
     )
 
     args = parser.parse_args()
@@ -606,12 +756,29 @@ def main():
         # Scan single file
         scanner = SecurityScanner()
         is_safe, issues = scanner.scan_file(path)
+        scan_timestamp = utc_now_isoformat()
+        security_decision = scanner.build_security_decision(
+            path,
+            is_safe,
+            issues,
+            scan_timestamp,
+        )
 
         print(scanner.generate_report())
 
         if args.output:
-            with open(args.output, 'w') as f:
-                json.dump({'safe': is_safe, 'issues': issues}, f, indent=2)
+            with open(args.output, "w") as f:
+                json.dump(
+                    {
+                        "scanner": security_decision["scanner"],
+                        "generated_at": scan_timestamp,
+                        "safe": is_safe,
+                        "security_decision": security_decision,
+                        "issues": issues,
+                    },
+                    f,
+                    indent=2,
+                )
 
         if args.report_only:
             exit(0)
@@ -634,12 +801,12 @@ def main():
 
         if args.report_only:
             exit(0)
-        exit(0 if results['failed'] == 0 else 1)
+        exit(0 if results["failed"] == 0 else 1)
 
     else:
         print(f"Error: {path} not found")
         exit(1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

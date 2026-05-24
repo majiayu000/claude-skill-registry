@@ -28,8 +28,19 @@ class CategoryDefinition:
     keywords: tuple[str, ...]
     status: str = "active"
     description: str = ""
+    inclusion_rule: str = ""
+    exclusion_rule: str = ""
+    examples: tuple[str, ...] = ()
     parent: str = ""
     migrate_to: str = ""
+
+
+@dataclass(frozen=True)
+class LegacyCategoryMigration:
+    slug: str
+    target: str = ""
+    review_required: bool = True
+    reason: str = ""
 
 
 @dataclass(frozen=True)
@@ -38,21 +49,28 @@ class CategoryTaxonomy:
     default_category: str
     categories: dict[str, CategoryDefinition]
     aliases: dict[str, str]
+    legacy_migrations: dict[str, LegacyCategoryMigration]
 
-    def resolve(self, raw_category: str | None, *, allow_unknown: bool = False) -> str:
+    def resolve(
+        self,
+        raw_category: str | None,
+        *,
+        allow_unknown: bool = False,
+        allow_alias: bool = False,
+    ) -> str:
         slug = category_slug(raw_category or self.default_category)
         if not slug:
             return self.default_category
         if slug in self.categories:
             return slug
-        if slug in self.aliases:
+        if allow_alias and slug in self.aliases:
             return self.aliases[slug]
         if allow_unknown:
             return slug
         raise UnknownCategoryError(f"Unknown category: {raw_category!r}")
 
-    def code_for(self, raw_category: str | None) -> str:
-        slug = self.resolve(raw_category, allow_unknown=True)
+    def code_for(self, raw_category: str | None, *, allow_alias: bool = False) -> str:
+        slug = self.resolve(raw_category, allow_unknown=True, allow_alias=allow_alias)
         definition = self.categories.get(slug)
         return definition.code if definition else slug
 
@@ -64,6 +82,31 @@ class CategoryTaxonomy:
         slug = category_slug(raw_category or "")
         return self.aliases.get(slug)
 
+    def legacy_migration(self, raw_category: str | None) -> LegacyCategoryMigration | None:
+        slug = category_slug(raw_category or "")
+        return self.legacy_migrations.get(slug)
+
+    def publishable_categories(self) -> frozenset[str]:
+        return frozenset(
+            slug
+            for slug, definition in self.categories.items()
+            if definition.status == "active"
+        )
+
+    def is_publishable(self, raw_category: str | None) -> bool:
+        slug = self.resolve(raw_category, allow_unknown=True)
+        definition = self.categories.get(slug)
+        return bool(definition and definition.status == "active")
+
+    def category_status(self, raw_category: str | None) -> str:
+        slug = self.resolve(raw_category, allow_unknown=True)
+        definition = self.categories.get(slug)
+        if definition:
+            return definition.status
+        if slug in self.legacy_migrations:
+            return "legacy"
+        return "unknown"
+
     def keyword_map(self) -> dict[str, list[str]]:
         return {
             slug: list(definition.keywords)
@@ -74,9 +117,10 @@ class CategoryTaxonomy:
     def migration_target(self, raw_category: str | None) -> str | None:
         slug = self.resolve(raw_category, allow_unknown=True)
         definition = self.categories.get(slug)
-        if not definition:
-            return None
-        return definition.migrate_to or None
+        if definition:
+            return definition.migrate_to or None
+        migration = self.legacy_migrations.get(slug)
+        return migration.target if migration else None
 
 
 def category_slug(raw_category: str | None) -> str:
@@ -94,10 +138,26 @@ def _as_string_list(value: Any) -> tuple[str, ...]:
     return tuple(category_slug(item) for item in value if category_slug(item))
 
 
+def _as_plain_string_list(value: Any) -> tuple[str, ...]:
+    if value is None:
+        return ()
+    if not isinstance(value, list):
+        raise ValueError("taxonomy examples must be lists")
+    return tuple(str(item).strip() for item in value if str(item).strip())
+
+
 def _as_optional_slug(value: Any) -> str:
     if value is None:
         return ""
     return category_slug(value)
+
+
+def _as_bool(value: Any, *, default: bool) -> bool:
+    if value is None:
+        return default
+    if isinstance(value, bool):
+        return value
+    raise ValueError("taxonomy boolean fields must be true or false")
 
 
 def load_taxonomy(path: Path = DEFAULT_TAXONOMY_PATH) -> CategoryTaxonomy:
@@ -139,6 +199,9 @@ def load_taxonomy(path: Path = DEFAULT_TAXONOMY_PATH) -> CategoryTaxonomy:
                 f"taxonomy category {slug!r} has invalid status {status!r}"
             )
         description = str(entry.get("description") or "").strip()
+        inclusion_rule = str(entry.get("inclusion_rule") or "").strip()
+        exclusion_rule = str(entry.get("exclusion_rule") or "").strip()
+        examples = _as_plain_string_list(entry.get("examples"))
         parent = _as_optional_slug(entry.get("parent"))
         migrate_to = _as_optional_slug(entry.get("migrate_to"))
         categories[slug] = CategoryDefinition(
@@ -149,6 +212,9 @@ def load_taxonomy(path: Path = DEFAULT_TAXONOMY_PATH) -> CategoryTaxonomy:
             keywords=keywords,
             status=status,
             description=description,
+            inclusion_rule=inclusion_rule,
+            exclusion_rule=exclusion_rule,
+            examples=examples,
             parent=parent,
             migrate_to=migrate_to,
         )
@@ -162,8 +228,8 @@ def load_taxonomy(path: Path = DEFAULT_TAXONOMY_PATH) -> CategoryTaxonomy:
 
     if default_category not in categories:
         raise ValueError(f"default category {default_category!r} is not declared")
-    if categories[default_category].status == "deprecated":
-        raise ValueError("default category must not be deprecated")
+    if categories[default_category].status != "active":
+        raise ValueError("default category must be active")
 
     for slug, definition in categories.items():
         if definition.parent:
@@ -186,12 +252,10 @@ def load_taxonomy(path: Path = DEFAULT_TAXONOMY_PATH) -> CategoryTaxonomy:
                     f"{definition.migrate_to!r}"
                 )
             if definition.migrate_to == slug:
+                raise ValueError(f"taxonomy category {slug!r} must not migrate to itself")
+            if target.status != "active":
                 raise ValueError(
-                    f"taxonomy category {slug!r} must not migrate to itself"
-                )
-            if target.status == "deprecated":
-                raise ValueError(
-                    f"taxonomy category {slug!r} migrates to deprecated target "
+                    f"taxonomy category {slug!r} migrates to non-active target "
                     f"{definition.migrate_to!r}"
                 )
         if definition.status == "deprecated" and not definition.migrate_to:
@@ -199,11 +263,49 @@ def load_taxonomy(path: Path = DEFAULT_TAXONOMY_PATH) -> CategoryTaxonomy:
                 f"deprecated taxonomy category {slug!r} must declare migrate_to"
             )
 
+    legacy_migrations: dict[str, LegacyCategoryMigration] = {}
+    legacy_raw = payload.get("legacy_migrations") or []
+    if not isinstance(legacy_raw, list):
+        raise ValueError("taxonomy legacy_migrations must be a list")
+    for entry in legacy_raw:
+        if not isinstance(entry, dict):
+            raise ValueError("taxonomy legacy migration entries must be objects")
+        slug = category_slug(entry.get("slug"))
+        if not slug:
+            raise ValueError("taxonomy legacy migration missing slug")
+        if slug in categories:
+            raise ValueError(
+                f"legacy category migration {slug!r} conflicts with active category"
+            )
+        if slug in legacy_migrations:
+            raise ValueError(f"duplicate legacy category migration slug: {slug}")
+        target = _as_optional_slug(entry.get("target"))
+        if target:
+            target_definition = categories.get(target)
+            if target_definition is None:
+                raise ValueError(
+                    f"legacy category migration {slug!r} has unknown target {target!r}"
+                )
+            if target_definition.status != "active":
+                raise ValueError(
+                    f"legacy category migration {slug!r} targets non-active category {target!r}"
+                )
+            aliases[slug] = target
+        review_required = _as_bool(entry.get("review_required"), default=not bool(target))
+        reason = str(entry.get("reason") or "").strip()
+        legacy_migrations[slug] = LegacyCategoryMigration(
+            slug=slug,
+            target=target,
+            review_required=review_required,
+            reason=reason,
+        )
+
     return CategoryTaxonomy(
         schema_version=int(payload.get("schema_version", 1)),
         default_category=default_category,
         categories=categories,
         aliases=aliases,
+        legacy_migrations=legacy_migrations,
     )
 
 
@@ -220,12 +322,33 @@ def category_aliases() -> dict[str, str]:
     return dict(get_taxonomy().aliases)
 
 
-def resolve_category(raw_category: str | None, *, allow_unknown: bool = False) -> str:
-    return get_taxonomy().resolve(raw_category, allow_unknown=allow_unknown)
+def legacy_category_migrations() -> dict[str, LegacyCategoryMigration]:
+    return dict(get_taxonomy().legacy_migrations)
 
 
-def get_category_code(raw_category: str | None) -> str:
-    return get_taxonomy().code_for(raw_category)
+def publishable_categories() -> frozenset[str]:
+    return get_taxonomy().publishable_categories()
+
+
+def category_status(raw_category: str | None) -> str:
+    return get_taxonomy().category_status(raw_category)
+
+
+def resolve_category(
+    raw_category: str | None,
+    *,
+    allow_unknown: bool = False,
+    allow_alias: bool = False,
+) -> str:
+    return get_taxonomy().resolve(
+        raw_category,
+        allow_unknown=allow_unknown,
+        allow_alias=allow_alias,
+    )
+
+
+def get_category_code(raw_category: str | None, *, allow_alias: bool = False) -> str:
+    return get_taxonomy().code_for(raw_category, allow_alias=allow_alias)
 
 
 def category_keywords() -> dict[str, list[str]]:

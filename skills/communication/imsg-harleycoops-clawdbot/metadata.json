@@ -1,0 +1,20 @@
+{
+  "name": "imsg",
+  "description": "",
+  "repo": "HarleyCoops/CLAWDBOT",
+  "category": "communication",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": "skills/imsg",
+  "github_branch": "main",
+  "dir_name": "imsg-harleycoops-clawdbot",
+  "downloaded_at": "2026-02-05T01:45:37.118467Z",
+  "author": "HarleyCoops",
+  "source_url": "https://github.com/HarleyCoops/CLAWDBOT/blob/main/skills/imsg/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HarleyCoops/CLAWDBOT/blob/main/skills/imsg/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

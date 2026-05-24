@@ -1,0 +1,16 @@
+{
+  "name": "lea",
+  "repo": "mcclowes/lea",
+  "path": ".claude/skills/lea/SKILL.md",
+  "source": "github.com/mcclowes/lea",
+  "downloaded_at": "2026-02-02T02:36:35.140685Z",
+  "dir_name": "lea-mcclowes-lea",
+  "category": "development",
+  "author": "mcclowes",
+  "source_url": "https://github.com/mcclowes/lea/blob/main/.claude/skills/lea/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Max Clayton Clowes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

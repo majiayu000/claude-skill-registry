@@ -1,0 +1,18 @@
+{
+  "name": "github-multi-repo",
+  "repo": "bjpl/open_learn_co",
+  "path": ".claude/skills/github-multi-repo/SKILL.md",
+  "source": "github.com/bjpl/open_learn_co",
+  "downloaded_at": "2026-01-22T04:08:49.303928Z",
+  "dir_name": "github-multi-repo-bjpl-open-learn-co",
+  "category": "integration",
+  "github_path": ".claude/skills/github-multi-repo",
+  "github_branch": "main",
+  "author": "bjpl",
+  "source_url": "https://github.com/bjpl/open_learn_co/blob/main/.claude/skills/github-multi-repo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bjpl/open_learn_co/blob/main/.claude/skills/github-multi-repo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

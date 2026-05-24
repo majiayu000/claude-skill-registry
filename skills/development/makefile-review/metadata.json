@@ -3,16 +3,17 @@
   "repo": "athola/claude-night-market",
   "category": "development",
   "description": "Audit Makefiles for duplication, portability, and idiomatic GNU Make usage.Triggers: Makefile review, build system, GNU Make, portability, deduplication,pattern rules, automatic variables, dependency ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:48.538497Z",
+  "source": "github.com/athola/claude-night-market",
+  "downloaded_at": "2026-01-22T03:09:15.598551Z",
   "github_path": "plugins/pensive/skills/makefile-review",
   "github_branch": "main",
   "dir_name": "makefile-review",
   "author": "athola",
   "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/pensive/skills/makefile-review/SKILL.md",
   "license": "MIT",
-  "copyright": "Copyright (c) 2025 athola",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/athola/claude-night-market/blob/main/plugins/pensive/skills/makefile-review/SKILL.md",
   "permission_note": "Use according to upstream license terms and attribution requirements.",
   "distribution": "compatible",
-  "license_class": "compatible"
+  "license_class": "compatible",
+  "path": "plugins/pensive/skills/makefile-review/SKILL.md"
 }

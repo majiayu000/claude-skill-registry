@@ -10,5 +10,13 @@
   "stars": 0,
   "github_path": "skills/php-modernization",
   "github_branch": "main",
-  "dir_name": "php-modernization"
+  "dir_name": "php-modernization",
+  "path": "skills/php-modernization/SKILL.md",
+  "source_url": "https://github.com/netresearch/php-modernization-skill/blob/main/skills/php-modernization/SKILL.md",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/netresearch/php-modernization-skill/blob/main/skills/php-modernization/SKILL.md",
+  "author": "netresearch",
+  "license": "NOASSERTION",
+  "license_class": "restricted",
+  "distribution": "restricted",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse."
 }

@@ -1,0 +1,17 @@
+{
+  "name": "slack",
+  "repo": "diegosouzapw/awesome-omni-skill",
+  "path": "skills/communication/slack/SKILL.md",
+  "github_branch": "main",
+  "category": "communication",
+  "source": "github.com/diegosouzapw/awesome-omni-skill",
+  "dir_name": "slack-diegosouzapw-awesome-omni-skill",
+  "downloaded_at": "2026-03-01T07:27:51.836221Z",
+  "author": "diegosouzapw",
+  "source_url": "https://github.com/diegosouzapw/awesome-omni-skill/blob/main/skills/communication/slack/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/diegosouzapw/awesome-omni-skill/blob/main/skills/communication/slack/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

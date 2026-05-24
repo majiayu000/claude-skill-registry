@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-24T09:33:49.584427+00:00",
+  "skills_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-legacy-semantic-003",
+  "residual_report": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-legacy-semantic-003/migration-artifacts/2026-05-24-legacy-semantic-003/residual-report-min075.json",
+  "policy": {
+    "from_categories": [],
+    "require_metadata_identity": true,
+    "limit": null,
+    "apply_mode": "review-only"
+  },
+  "summary": {
+    "conflict_detail_count": 52,
+    "planned_remove_count": 0,
+    "skipped_reasons": {
+      "SKILL content differs": 31,
+      "metadata identity differs": 9,
+      "target path missing": 12
+    },
+    "source_category_counts": {},
+    "target_category_counts": {}
+  },
+  "removals": [],
+  "notes": [
+    "Default mode is review-only and does not modify files.",
+    "Apply mode re-verifies source and target SKILL hashes before removal.",
+    "Metadata identity must match by default; use --allow-metadata-identity-drift only after review."
+  ]
+}

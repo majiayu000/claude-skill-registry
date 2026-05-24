@@ -1,0 +1,16 @@
+{
+  "name": "eslint-checker",
+  "repo": "jmagly/ai-writing-guide",
+  "path": "agentic/code/frameworks/sdlc-complete/extensions/javascript/skills/eslint-checker/SKILL.md",
+  "source": "github.com/jmagly/ai-writing-guide",
+  "downloaded_at": "2026-01-27T02:20:14.888190Z",
+  "dir_name": "eslint-checker-jmagly-ai-writing-guide",
+  "category": "development",
+  "author": "jmagly",
+  "source_url": "https://github.com/jmagly/ai-writing-guide/blob/main/agentic/code/frameworks/sdlc-complete/extensions/javascript/skills/eslint-checker/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Joe Magly",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

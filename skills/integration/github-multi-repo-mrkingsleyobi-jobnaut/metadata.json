@@ -1,0 +1,20 @@
+{
+  "name": "github-multi-repo",
+  "description": "JobNaut is a comprehensive AI-powered job market navigator that helps job seekers discover opportunities and receive personalized career coaching through advanced AI technology",
+  "repo": "mrkingsleyobi/jobnaut",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".claude/skills/github-multi-repo",
+  "github_branch": "main",
+  "dir_name": "github-multi-repo-mrkingsleyobi-jobnaut",
+  "downloaded_at": "2026-02-05T01:45:47.168564Z",
+  "author": "mrkingsleyobi",
+  "source_url": "https://github.com/mrkingsleyobi/jobnaut/blob/main/.claude/skills/github-multi-repo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mrkingsleyobi/jobnaut/blob/main/.claude/skills/github-multi-repo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

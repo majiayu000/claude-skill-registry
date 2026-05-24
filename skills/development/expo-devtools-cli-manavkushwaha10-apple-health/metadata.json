@@ -1,0 +1,20 @@
+{
+  "name": "expo-devtools-cli",
+  "description": "",
+  "repo": "manavkushwaha10/apple-health",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/manavkushwaha10/apple-health",
+  "github_path": ".claude/skills/expo-devtools-cli",
+  "github_branch": "main",
+  "dir_name": "expo-devtools-cli-manavkushwaha10-apple-health",
+  "downloaded_at": "2026-02-05T01:44:57.021505Z",
+  "author": "manavkushwaha10",
+  "source_url": "https://github.com/manavkushwaha10/apple-health/blob/main/.claude/skills/expo-devtools-cli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/manavkushwaha10/apple-health/blob/main/.claude/skills/expo-devtools-cli/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

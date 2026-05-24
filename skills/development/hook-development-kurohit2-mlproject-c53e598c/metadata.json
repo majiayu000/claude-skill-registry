@@ -1,0 +1,20 @@
+{
+  "name": "hook-development",
+  "description": "",
+  "repo": "kurohit2/MlProject",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kurohit2/MlProject",
+  "github_path": ".claude/skills/hook-development",
+  "github_branch": "main",
+  "dir_name": "hook-development-kurohit2-mlproject-c53e598c",
+  "downloaded_at": "2026-02-05T05:39:12.252743Z",
+  "author": "kurohit2",
+  "source_url": "https://github.com/kurohit2/MlProject/blob/main/.claude/skills/hook-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kurohit2/MlProject/blob/main/.claude/skills/hook-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

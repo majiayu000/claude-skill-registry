@@ -1,0 +1,16 @@
+{
+  "name": "tooling",
+  "repo": "TheBeardedBearSAS/claude-craft",
+  "path": "Dev/i18n/es/Flutter/skills/tooling/SKILL.md",
+  "source": "github.com/TheBeardedBearSAS/claude-craft",
+  "downloaded_at": "2026-02-02T03:34:53.417316Z",
+  "dir_name": "tooling-thebeardedbearsas-claude-craft-dd557b5d",
+  "category": "development",
+  "author": "TheBeardedBearSAS",
+  "source_url": "https://github.com/TheBeardedBearSAS/claude-craft/blob/main/Dev/i18n/es/Flutter/skills/tooling/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2026 TheBeardedCTO",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

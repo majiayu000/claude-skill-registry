@@ -1,0 +1,20 @@
+{
+  "name": "parallel-task",
+  "description": "",
+  "repo": "am-will/codex-skills",
+  "category": "orchestration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/am-will/codex-skills",
+  "github_path": "skills/parallel-task",
+  "github_branch": "main",
+  "dir_name": "parallel-task",
+  "downloaded_at": "2026-02-05T01:44:56.918078Z",
+  "author": "am-will",
+  "source_url": "https://github.com/am-will/codex-skills/blob/main/skills/parallel-task/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/am-will/codex-skills/blob/main/skills/parallel-task/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

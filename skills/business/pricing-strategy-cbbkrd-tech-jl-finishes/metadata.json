@@ -1,0 +1,17 @@
+{
+  "name": "pricing-strategy",
+  "repo": "cbbkrd-tech/jl-finishes",
+  "path": ".claude/skills/pricing-strategy/SKILL.md",
+  "github_branch": "main",
+  "category": "business",
+  "source": "github.com/cbbkrd-tech/jl-finishes",
+  "dir_name": "pricing-strategy-cbbkrd-tech-jl-finishes",
+  "downloaded_at": "2026-03-22T07:25:40.866620Z",
+  "author": "cbbkrd-tech",
+  "source_url": "https://github.com/cbbkrd-tech/jl-finishes/blob/main/.claude/skills/pricing-strategy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cbbkrd-tech/jl-finishes/blob/main/.claude/skills/pricing-strategy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

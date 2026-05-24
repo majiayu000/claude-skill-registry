@@ -1,0 +1,18 @@
+{
+  "name": "sales-research",
+  "description": "Best practices for prospect research including company analysis, contact profiling, and signal detection. Triggers when researching companies, contacts, or preparing for sales calls.",
+  "repo": "jeffrschneider/OpenHarness",
+  "path": "examples/sales-call-prep/package/skills/sales-research",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeffrschneider/OpenHarness",
+  "dir_name": "sales-research-jeffrschneider-openharness-2",
+  "author": "jeffrschneider",
+  "source_url": "https://github.com/jeffrschneider/OpenHarness/blob/main/examples/sales-call-prep/package/skills/sales-research/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jeffrschneider/OpenHarness/blob/main/examples/sales-call-prep/package/skills/sales-research/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "typescript-dev",
+  "repo": "Cain96/dotfiles",
+  "path": "dot_config/claude/skills/typescript-dev/SKILL.md",
+  "source": "github.com/Cain96/dotfiles",
+  "downloaded_at": "2026-01-14T03:16:09.841636Z",
+  "dir_name": "typescript-dev-cain96-dotfiles",
+  "category": "development",
+  "github_path": "dot_config/claude/skills/typescript-dev",
+  "github_branch": "main",
+  "author": "Cain96",
+  "source_url": "https://github.com/Cain96/dotfiles/blob/main/dot_config/claude/skills/typescript-dev/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Cain96/dotfiles/blob/main/dot_config/claude/skills/typescript-dev/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "review-pr",
+  "description": "",
+  "repo": "mysticaltech/terraform-hcloud-kube-hetzner",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mysticaltech/terraform-hcloud-kube-hetzner",
+  "github_path": ".claude/skills/review-pr",
+  "github_branch": "master",
+  "dir_name": "review-pr-mysticaltech-terraform-hcloud-kub",
+  "downloaded_at": "2026-02-05T01:44:47.004296Z",
+  "author": "mysticaltech",
+  "source_url": "https://github.com/mysticaltech/terraform-hcloud-kube-hetzner/blob/master/.claude/skills/review-pr/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mysticaltech/terraform-hcloud-kube-hetzner/blob/master/.claude/skills/review-pr/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

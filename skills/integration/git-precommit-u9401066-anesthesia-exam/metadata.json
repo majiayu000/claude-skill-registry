@@ -1,0 +1,20 @@
+{
+  "name": "git-precommit",
+  "description": "",
+  "repo": "u9401066/anesthesia-exam",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/u9401066/anesthesia-exam",
+  "github_path": ".claude/skills/git-precommit",
+  "github_branch": "master",
+  "dir_name": "git-precommit-u9401066-anesthesia-exam",
+  "downloaded_at": "2026-02-05T01:44:30.957106Z",
+  "author": "u9401066",
+  "source_url": "https://github.com/u9401066/anesthesia-exam/blob/master/.claude/skills/git-precommit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/u9401066/anesthesia-exam/blob/master/.claude/skills/git-precommit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

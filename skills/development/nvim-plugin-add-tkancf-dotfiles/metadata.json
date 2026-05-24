@@ -1,0 +1,16 @@
+{
+  "name": "nvim-plugin-add",
+  "repo": "tkancf/dotfiles",
+  "path": ".codex/skills/nvim-plugin-add/SKILL.md",
+  "source": "github.com/tkancf/dotfiles",
+  "downloaded_at": "2026-01-27T02:56:36.588206Z",
+  "dir_name": "nvim-plugin-add-tkancf-dotfiles",
+  "category": "development",
+  "author": "tkancf",
+  "source_url": "https://github.com/tkancf/dotfiles/blob/main/.codex/skills/nvim-plugin-add/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tkancf/dotfiles/blob/main/.codex/skills/nvim-plugin-add/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

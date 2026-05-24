@@ -1,0 +1,16 @@
+{
+  "name": "claude-code-guide",
+  "repo": "alexanderop/workoutTracker",
+  "path": ".claude/skills/claude-code-guide/skill.md",
+  "source": "github.com/alexanderop/workoutTracker",
+  "downloaded_at": "2026-01-29T06:09:07.814288Z",
+  "dir_name": "claude-code-guide-alexanderop-workouttracker",
+  "category": "development",
+  "author": "alexanderop",
+  "source_url": "https://github.com/alexanderop/workoutTracker/blob/main/.claude/skills/claude-code-guide/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alexanderop/workoutTracker/blob/main/.claude/skills/claude-code-guide/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

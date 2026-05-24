@@ -1,0 +1,232 @@
+{
+  "summary": {
+    "skipped": 12,
+    "already_applied": 1,
+    "applied": 14
+  },
+  "by_decision": {
+    "manual_review": 12,
+    "refresh_target_from_upstream_remove_source": 8,
+    "move_source_as_distinct_and_keep_target": 5,
+    "replace_target_with_source_remove_source": 2
+  },
+  "results": [
+    {
+      "index": 1,
+      "decision": "manual_review",
+      "status": "skipped",
+      "reason": "all candidate upstream URLs missing or unavailable"
+    },
+    {
+      "index": 2,
+      "decision": "refresh_target_from_upstream_remove_source",
+      "status": "already_applied",
+      "target_path": "development/claude-code-plugin-development-dwmkerr-claude-toolkit-2",
+      "target_url": "https://raw.githubusercontent.com/dwmkerr/claude-toolkit/main/plugins/toolkit/skills/claude-code-plugin-development/SKILL.md",
+      "target_sha256_after": "23f7bc01c2a4823d0a4a86b752794ad04122603f42a678ebb3084862ac64ff04",
+      "removed_source": "development-tools/claude-code-plugin-development"
+    },
+    {
+      "index": 3,
+      "decision": "move_source_as_distinct_and_keep_target",
+      "status": "applied",
+      "source_url": "https://raw.githubusercontent.com/1ambda/dataops-platform/main/.copilot/skills/code-search/SKILL.md",
+      "target_url": "https://raw.githubusercontent.com/1ambda/dataops-platform/main/.claude/skills/code-search/SKILL.md",
+      "target_path": "development/code-search",
+      "moved_source_to": "development/code-search-1ambda-dataops-platform-3",
+      "source_sha256_after": "dc8fad2ef213be2a4f75cb75783bddf0cfc53469cdab00614292b24195575fe8",
+      "target_sha256_after": "dc8fad2ef213be2a4f75cb75783bddf0cfc53469cdab00614292b24195575fe8"
+    },
+    {
+      "index": 4,
+      "decision": "manual_review",
+      "status": "skipped",
+      "reason": "all candidate upstream URLs missing or unavailable"
+    },
+    {
+      "index": 5,
+      "decision": "manual_review",
+      "status": "skipped",
+      "reason": "all candidate upstream URLs missing or unavailable"
+    },
+    {
+      "index": 6,
+      "decision": "manual_review",
+      "status": "skipped",
+      "reason": "all candidate upstream URLs missing or unavailable"
+    },
+    {
+      "index": 7,
+      "decision": "manual_review",
+      "status": "skipped",
+      "reason": "all candidate upstream URLs missing or unavailable"
+    },
+    {
+      "index": 8,
+      "decision": "move_source_as_distinct_and_keep_target",
+      "status": "applied",
+      "source_url": "https://raw.githubusercontent.com/DNYoussef/context-cascade/main/skills/tooling/pilot-1-code-formatter/V1-SKILL.md",
+      "target_url": "https://raw.githubusercontent.com/DNYoussef/context-cascade/main/skills/tooling/pilot-1-code-formatter/SKILL.md",
+      "target_path": "development/pilot-1-code-formatter",
+      "moved_source_to": "development/pilot-1-code-formatter-dnyoussef-context-cascade",
+      "source_sha256_after": "65afb8e03802ad86231e2f97816ce56396bd5b93a6e3f1619c5efa50c3280528",
+      "target_sha256_after": "6c75c2e952e1ca4a459baf49e0d633c97704ba567a5c766162b7d47a01f0c921"
+    },
+    {
+      "index": 9,
+      "decision": "manual_review",
+      "status": "skipped",
+      "reason": "all candidate upstream URLs missing or unavailable"
+    },
+    {
+      "index": 10,
+      "decision": "move_source_as_distinct_and_keep_target",
+      "status": "applied",
+      "source_url": "https://raw.githubusercontent.com/JosiahSiegel/claude-plugin-marketplace/main/plugins/plugin-master/skills/plugin-master/SKILL.md",
+      "target_url": "https://raw.githubusercontent.com/JosiahSiegel/claude-plugin-marketplace/main/plugins/plugin-master/skills/advanced-features-2025/SKILL.md",
+      "target_path": "development/plugin-master",
+      "moved_source_to": "development/plugin-master-josiahsiegel-claude-plugin-market-2",
+      "source_sha256_after": "acc306565dbe4982f4aa8f3cc49785907bef6937b78c8f417d74e552d2bf5498",
+      "target_sha256_after": "1872041110ca17e040fc8a41869c82073039b997e1ce0de67de188fbaf57a7c2"
+    },
+    {
+      "index": 11,
+      "decision": "manual_review",
+      "status": "skipped",
+      "reason": "all candidate upstream URLs missing or unavailable"
+    },
+    {
+      "index": 12,
+      "decision": "replace_target_with_source_remove_source",
+      "status": "applied",
+      "target_path": "development/raw-tool-creator",
+      "target_url": "https://raw.githubusercontent.com/mpuig/raw/main/skills/raw-tool-creator/SKILL.md",
+      "target_sha256_after": "d633879196db910bb014d1f9b37d6b765fa977e4d993e2628611541d56d33670",
+      "removed_source": "development-tools/raw-tool-creator-mpuig-raw"
+    },
+    {
+      "index": 13,
+      "decision": "manual_review",
+      "status": "skipped",
+      "reason": "all candidate upstream URLs missing or unavailable"
+    },
+    {
+      "index": 14,
+      "decision": "move_source_as_distinct_and_keep_target",
+      "status": "applied",
+      "source_url": "https://raw.githubusercontent.com/TheBeardedBearSAS/claude-craft/main/Dev/i18n/pt/Flutter/skills/tooling/SKILL.md",
+      "target_url": "https://raw.githubusercontent.com/TheBeardedBearSAS/claude-craft/main/Dev/i18n/pt/Python/skills/tooling/SKILL.md",
+      "target_path": "development/tooling",
+      "moved_source_to": "development/tooling-thebeardedbearsas-claude-craft-11",
+      "source_sha256_after": "e4674789b8157919ae67aae82b07b5a5c47e75e1db82ed41e27dc27c69f2924d",
+      "target_sha256_after": "b675eea565a7b7c7042eadc80f436c7c15087e267594589a7b5b11dc2d7b82cd"
+    },
+    {
+      "index": 15,
+      "decision": "manual_review",
+      "status": "skipped",
+      "reason": "all candidate upstream URLs missing or unavailable"
+    },
+    {
+      "index": 16,
+      "decision": "manual_review",
+      "status": "skipped",
+      "reason": "all candidate upstream URLs missing or unavailable"
+    },
+    {
+      "index": 17,
+      "decision": "manual_review",
+      "status": "skipped",
+      "reason": "all candidate upstream URLs missing or unavailable"
+    },
+    {
+      "index": 18,
+      "decision": "refresh_target_from_upstream_remove_source",
+      "status": "applied",
+      "target_path": "development/golang-pro",
+      "target_url": "https://raw.githubusercontent.com/Jeffallan/claude-skills/main/skills/golang-pro/SKILL.md",
+      "target_sha256_after": "937bafb4bd14906e33420206500a8404a9de14705184ade02c77734221e748d6",
+      "removed_source": "programming-languages/golang-pro-jeffallan-claude-skills"
+    },
+    {
+      "index": 19,
+      "decision": "refresh_target_from_upstream_remove_source",
+      "status": "applied",
+      "target_path": "development/javascript-pro",
+      "target_url": "https://raw.githubusercontent.com/Jeffallan/claude-skills/main/skills/javascript-pro/SKILL.md",
+      "target_sha256_after": "fb73d05454525647884f3aae73ec831fad4efc3c128a1a584bf6d97e73b35e15",
+      "removed_source": "programming-languages/javascript-pro-jeffallan-claude-skills"
+    },
+    {
+      "index": 20,
+      "decision": "refresh_target_from_upstream_remove_source",
+      "status": "applied",
+      "target_path": "development/php-modernization",
+      "target_url": "https://raw.githubusercontent.com/netresearch/php-modernization-skill/main/skills/php-modernization/SKILL.md",
+      "target_sha256_after": "789a3436c34a602ed9e97793c2a02602b8506d6031542998a0fc7b94123fbc99",
+      "removed_source": "programming-languages/php-modernization"
+    },
+    {
+      "index": 21,
+      "decision": "refresh_target_from_upstream_remove_source",
+      "status": "applied",
+      "target_path": "development/php-pro",
+      "target_url": "https://raw.githubusercontent.com/Jeffallan/claude-skills/main/skills/php-pro/SKILL.md",
+      "target_sha256_after": "6aa71a7bd4129ab0bf1921a9402bcb441cd31513ffa10406f539b8959a525d10",
+      "removed_source": "programming-languages/php-pro-jeffallan-claude-skills"
+    },
+    {
+      "index": 22,
+      "decision": "refresh_target_from_upstream_remove_source",
+      "status": "applied",
+      "target_path": "development/rust-engineer",
+      "target_url": "https://raw.githubusercontent.com/Jeffallan/claude-skills/main/skills/rust-engineer/SKILL.md",
+      "target_sha256_after": "c8e11f71fa92c956b5750d1bdae1cbe27c89b12763b6f2d897ee6dce1fed6bda",
+      "removed_source": "programming-languages/rust-engineer"
+    },
+    {
+      "index": 23,
+      "decision": "move_source_as_distinct_and_keep_target",
+      "status": "applied",
+      "source_url": "https://raw.githubusercontent.com/rmyndharis/antigravity-skills/main/skills/rust-pro/SKILL.md",
+      "target_url": "https://raw.githubusercontent.com/rmyndharis/antigravity-skills/main/skills/systems-programming-rust-project/SKILL.md",
+      "target_path": "development/rust-pro-rmyndharis-antigravity-skills-2",
+      "moved_source_to": "development/rust-pro-rmyndharis-antigravity-skills",
+      "source_sha256_after": "8959d6271d69e1d942dc247277e8a88b3a7d4894ef8701fcf23b880d92c8b708",
+      "target_sha256_after": "3cc0f1bb7bce261e3842542e29bf0523fea3154ad0b422702f95a2622fb0b47e"
+    },
+    {
+      "index": 24,
+      "decision": "manual_review",
+      "status": "skipped",
+      "reason": "all candidate upstream URLs missing or unavailable"
+    },
+    {
+      "index": 25,
+      "decision": "replace_target_with_source_remove_source",
+      "status": "applied",
+      "target_path": "analysis/prove-majiayu000-claude-skill-registr-dc7985ac",
+      "target_url": "https://raw.githubusercontent.com/majiayu000/claude-skill-registry/main/skills/design/doc-research-improvements/SKILL.md",
+      "target_sha256_after": "3e9b619d5d83ff66f59cab335ec17186953aadf5dbb76afd1fec3c05690512d2",
+      "removed_source": "research-analysis/prove-majiayu000-claude-skill-registr-2"
+    },
+    {
+      "index": 26,
+      "decision": "refresh_target_from_upstream_remove_source",
+      "status": "applied",
+      "target_path": "security/iso27001-gap-analyzer",
+      "target_url": "https://raw.githubusercontent.com/jeremylongshore/claude-code-plugins-plus-skills/main/skills/04-security-advanced/iso27001-gap-analyzer/SKILL.md",
+      "target_sha256_after": "d990b32b11e5f6ba142a0f2071b013e876c6b9f22f2eaa5f7a3c2ab65c5c7683",
+      "removed_source": "security-compliance/iso27001-gap-analyzer"
+    },
+    {
+      "index": 27,
+      "decision": "refresh_target_from_upstream_remove_source",
+      "status": "applied",
+      "target_path": "security/license-compliance-scanner",
+      "target_url": "https://raw.githubusercontent.com/jeremylongshore/claude-code-plugins-plus-skills/main/skills/03-security-fundamentals/license-compliance-scanner/SKILL.md",
+      "target_sha256_after": "c5897cfae47fce3f8b2253f8ae2dda15b5d108aad583afb4b727100d0f3cfa8a",
+      "removed_source": "security-compliance/license-compliance-scanner"
+    }
+  ]
+}

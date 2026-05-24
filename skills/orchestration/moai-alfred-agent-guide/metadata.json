@@ -1,0 +1,18 @@
+{
+  "name": "moai-alfred-agent-guide",
+  "repo": "kivo360/quickhooks",
+  "path": ".claude/skills/moai-alfred-agent-guide/SKILL.md",
+  "source": "github.com/kivo360/quickhooks",
+  "downloaded_at": "2026-01-22T02:13:18.856864Z",
+  "dir_name": "moai-alfred-agent-guide",
+  "category": "orchestration",
+  "github_path": ".claude/skills/moai-alfred-agent-guide",
+  "github_branch": "main",
+  "author": "kivo360",
+  "source_url": "https://github.com/kivo360/quickhooks/blob/main/.claude/skills/moai-alfred-agent-guide/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kivo360/quickhooks/blob/main/.claude/skills/moai-alfred-agent-guide/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

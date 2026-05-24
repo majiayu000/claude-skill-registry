@@ -1,0 +1,20 @@
+{
+  "name": "last30days",
+  "description": "",
+  "repo": "majiayu000/claude-skill-registry-data",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/majiayu000/claude-skill-registry-data",
+  "github_path": "last30days",
+  "github_branch": "main",
+  "dir_name": "last30days",
+  "downloaded_at": "2026-02-05T01:44:26.355029Z",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry-data/blob/main/last30days/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/majiayu000/claude-skill-registry-data/blob/main/last30days/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

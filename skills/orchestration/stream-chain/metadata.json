@@ -1,0 +1,20 @@
+{
+  "name": "stream-chain",
+  "description": "",
+  "repo": "smith-horn/skillsmith",
+  "category": "orchestration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/smith-horn/skillsmith",
+  "github_path": ".claude/skills/stream-chain",
+  "github_branch": "main",
+  "dir_name": "stream-chain",
+  "downloaded_at": "2026-02-05T01:44:48.361180Z",
+  "author": "smith-horn",
+  "source_url": "https://github.com/smith-horn/skillsmith/blob/main/.claude/skills/stream-chain/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/smith-horn/skillsmith/blob/main/.claude/skills/stream-chain/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

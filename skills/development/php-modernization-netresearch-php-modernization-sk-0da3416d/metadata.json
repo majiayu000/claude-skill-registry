@@ -1,0 +1,16 @@
+{
+  "name": "php-modernization",
+  "repo": "netresearch/php-modernization-skill",
+  "path": "skills/php-modernization/SKILL.md",
+  "source": "github.com/netresearch/php-modernization-skill",
+  "downloaded_at": "2026-01-29T07:33:03.502800Z",
+  "dir_name": "php-modernization-netresearch-php-modernization-sk-0da3416d",
+  "category": "development",
+  "author": "netresearch",
+  "source_url": "https://github.com/netresearch/php-modernization-skill/blob/main/skills/php-modernization/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/netresearch/php-modernization-skill/blob/main/skills/php-modernization/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "multi-agent-composition",
+  "repo": "basher83/agent-auditor",
+  "path": "skills/multi-agent-composition/SKILL.md",
+  "category": "orchestration",
+  "source": "github.com/basher83/agent-auditor",
+  "dir_name": "multi-agent-composition",
+  "downloaded_at": "2026-02-22T06:29:19.197715Z",
+  "author": "basher83",
+  "source_url": "https://github.com/basher83/agent-auditor/blob/main/skills/multi-agent-composition/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/basher83/agent-auditor/blob/main/skills/multi-agent-composition/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

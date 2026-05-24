@@ -1,0 +1,17 @@
+{
+  "name": "clinical-decision-support",
+  "repo": "foryourhealth111-pixel/Vibe-Skills",
+  "path": "bundled/skills/clinical-decision-support/SKILL.md",
+  "github_branch": "main",
+  "category": "analysis",
+  "source": "github.com/foryourhealth111-pixel/Vibe-Skills",
+  "dir_name": "clinical-decision-support-foryourhealth111-pix-vibe-skills",
+  "downloaded_at": "2026-04-09T01:23:41.253313Z",
+  "author": "foryourhealth111-pixel",
+  "source_url": "https://github.com/foryourhealth111-pixel/Vibe-Skills/blob/main/bundled/skills/clinical-decision-support/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/foryourhealth111-pixel/Vibe-Skills/blob/main/bundled/skills/clinical-decision-support/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

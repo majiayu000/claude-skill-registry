@@ -1,0 +1,16 @@
+{
+  "name": "pubmed-fulltext-access",
+  "repo": "u9401066/pubmed-search-mcp",
+  "path": ".claude/skills/pubmed-fulltext-access/SKILL.md",
+  "source": "github.com/u9401066/pubmed-search-mcp",
+  "downloaded_at": "2026-01-29T05:56:18.958452Z",
+  "dir_name": "pubmed-fulltext-access-u9401066-pubmed-search-mcp-6acc7393",
+  "category": "analysis",
+  "author": "u9401066",
+  "source_url": "https://github.com/u9401066/pubmed-search-mcp/blob/main/.claude/skills/pubmed-fulltext-access/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/u9401066/pubmed-search-mcp/blob/main/.claude/skills/pubmed-fulltext-access/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

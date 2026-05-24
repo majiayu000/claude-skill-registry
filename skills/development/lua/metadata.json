@@ -1,0 +1,16 @@
+{
+  "name": "lua",
+  "repo": "Mindrally/skills",
+  "path": "lua/SKILL.md",
+  "source": "github.com/Mindrally/skills",
+  "downloaded_at": "2026-01-27T02:22:20.948365Z",
+  "dir_name": "lua",
+  "category": "development",
+  "author": "Mindrally",
+  "source_url": "https://github.com/Mindrally/skills/blob/main/lua/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Mindrally/skills/blob/main/lua/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

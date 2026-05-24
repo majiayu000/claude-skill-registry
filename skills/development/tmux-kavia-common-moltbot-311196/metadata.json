@@ -1,0 +1,20 @@
+{
+  "name": "tmux",
+  "description": "",
+  "repo": "kavia-common/moltbot-311196",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kavia-common/moltbot-311196",
+  "github_path": "skills/tmux",
+  "github_branch": "master",
+  "dir_name": "tmux-kavia-common-moltbot-311196",
+  "downloaded_at": "2026-02-05T01:44:16.507452Z",
+  "author": "kavia-common",
+  "source_url": "https://github.com/kavia-common/moltbot-311196/blob/master/skills/tmux/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kavia-common/moltbot-311196/blob/master/skills/tmux/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

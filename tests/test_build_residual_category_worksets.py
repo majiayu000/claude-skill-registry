@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import importlib
 import json
 import sys
@@ -106,6 +107,14 @@ def test_builds_gap_low_confidence_review_and_target_other_worksets(tmp_path):
     assert report["summary"]["scoped_existing_classification_count"] == 3
     assert report["worksets"]["classification_gap"][0]["path"] == "other/gap/SKILL.md"
     assert report["worksets"]["classification_gap"][0]["skill_dir"] == "other/gap"
+    assert (
+        report["worksets"]["classification_gap"][0]["source_sha256"]
+        == hashlib.sha256(
+            (skills_dir / "other" / "gap" / "SKILL.md").read_bytes()
+        ).hexdigest()
+    )
+    assert report["worksets"]["classification_gap"][0]["metadata_sha256"]
+    assert report["worksets"]["classification_gap"][0]["semantic_text_sha256"]
     assert report["worksets"]["low_confidence"][0]["previous_classification"] == {
         "llm_category": "development",
         "confidence": 0.5,

@@ -1,0 +1,18 @@
+{
+  "name": "worktree-coordination",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/worktree-coordination/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-22T01:25:11.692518Z",
+  "dir_name": "worktree-coordination",
+  "category": "orchestration",
+  "github_path": "skills/worktree-coordination",
+  "github_branch": "main",
+  "author": "yonatangross",
+  "source_url": "https://github.com/yonatangross/skillforge-claude-plugin/blob/main/skills/worktree-coordination/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yonatangross/skillforge-claude-plugin/blob/main/skills/worktree-coordination/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -10,8 +10,11 @@ These tests pin the behavior that path="" and path="." are equivalent to a
 real subdirectory path for scoring purposes whenever a repo is present.
 """
 
+import json
 import sys
 from pathlib import Path
+
+import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS_DIR = ROOT / "scripts"
@@ -19,6 +22,7 @@ if str(SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_DIR))
 
 from build_search_index import (  # noqa: E402
+    build_search_index,
     has_install_location,
     infer_install_status,
     is_root_mounted_path,
@@ -88,9 +92,7 @@ def test_quality_score_root_mounted_matches_subdir():
     root_skill = _skill(path="")
     subdir_skill = _skill(path="skills/foo")
 
-    root_status = infer_install_status(
-        root_skill["repo"], root_skill["path"], root_skill["repo"]
-    )
+    root_status = infer_install_status(root_skill["repo"], root_skill["path"], root_skill["repo"])
     subdir_status = infer_install_status(
         subdir_skill["repo"],
         subdir_skill["path"],
@@ -168,3 +170,141 @@ def test_trust_score_only_rewards_passed_security():
 
     assert passed == unknown + 15
     assert unknown == failed
+
+
+def test_build_search_index_consumes_security_decision_evidence(tmp_path):
+    output_dir = tmp_path / "docs"
+    output_dir.mkdir()
+    output_dir.joinpath("security-report.json").write_text(
+        json.dumps(
+            {
+                "scanner": {
+                    "name": "claude-skill-registry-security-scanner",
+                    "version": "1.1.0",
+                    "ruleset_sha256": "abc123",
+                },
+                "generated_at": "2026-05-24T00:00:00Z",
+                "total": 1,
+                "passed": 1,
+                "failed": 0,
+                "skills": [
+                    {
+                        "path": "development/demo/SKILL.md",
+                        "safe": True,
+                        "security_decision": {
+                            "id": "decision123",
+                            "status": "passed",
+                            "reason": "no_errors",
+                            "scanner": {
+                                "name": "claude-skill-registry-security-scanner",
+                                "version": "1.1.0",
+                                "ruleset_sha256": "abc123",
+                            },
+                            "provenance": {
+                                "content_sha256": "def456",
+                                "scanned_at": "2026-05-24T00:00:00Z",
+                            },
+                        },
+                        "issues": [],
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    build_search_index(
+        [
+            _skill(
+                path="skills/demo",
+                install="acme/example/skills/demo",
+                archive_path="development/demo/SKILL.md",
+            )
+        ],
+        output_dir,
+        require_security_evidence=True,
+    )
+
+    manifest = json.loads((output_dir / "security-index-manifest.json").read_text())
+    shard = json.loads((output_dir / manifest["shards"][0]["path"]).read_text())
+    record = shard["records"][0]
+    assert record["security_status"] == "passed"
+    assert record["security_decision"]["id"] == "decision123"
+
+
+def test_build_search_index_fails_when_required_security_report_is_missing(tmp_path):
+    with pytest.raises(FileNotFoundError, match="Required security evidence is missing"):
+        build_search_index(
+            [_skill(path="skills/demo", install="acme/example/skills/demo")],
+            tmp_path / "docs",
+            require_security_evidence=True,
+        )
+
+
+def test_build_search_index_skips_missing_security_decision_when_optional(tmp_path):
+    output_dir = tmp_path / "docs"
+    output_dir.mkdir()
+    output_dir.joinpath("security-report.json").write_text(
+        json.dumps(
+            {
+                "total": 1,
+                "passed": 1,
+                "failed": 0,
+                "skills": [
+                    {
+                        "path": "development/demo/SKILL.md",
+                        "safe": True,
+                        "issues": [],
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    build_search_index(
+        [
+            _skill(
+                path="skills/demo",
+                install="acme/example/skills/demo",
+                archive_path="development/demo/SKILL.md",
+            )
+        ],
+        output_dir,
+        require_security_evidence=False,
+    )
+
+    manifest = json.loads((output_dir / "security-index-manifest.json").read_text())
+    shard = json.loads((output_dir / manifest["shards"][0]["path"]).read_text())
+    record = shard["records"][0]
+    assert record["security_status"] == "unknown"
+    assert "security_decision" not in record
+
+
+def test_build_search_index_requires_security_decision_when_required(tmp_path):
+    output_dir = tmp_path / "docs"
+    output_dir.mkdir()
+    output_dir.joinpath("security-report.json").write_text(
+        json.dumps(
+            {
+                "total": 1,
+                "passed": 1,
+                "failed": 0,
+                "skills": [{"path": "development/demo/SKILL.md", "safe": True}],
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ValueError, match="Missing security_decision"):
+        build_search_index(
+            [
+                _skill(
+                    path="skills/demo",
+                    install="acme/example/skills/demo",
+                    archive_path="development/demo/SKILL.md",
+                )
+            ],
+            output_dir,
+            require_security_evidence=True,
+        )

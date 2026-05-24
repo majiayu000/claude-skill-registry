@@ -1,0 +1,18 @@
+{
+  "name": "pricing",
+  "repo": "pluginagentmarketplace/custom-plugin-product-manager",
+  "path": "skills/pricing/SKILL.md",
+  "source": "github.com/pluginagentmarketplace/custom-plugin-product-manager",
+  "downloaded_at": "2026-01-21T03:46:47.427852Z",
+  "dir_name": "pricing",
+  "category": "business",
+  "github_path": "skills/pricing",
+  "github_branch": "main",
+  "author": "pluginagentmarketplace",
+  "source_url": "https://github.com/pluginagentmarketplace/custom-plugin-product-manager/blob/main/skills/pricing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pluginagentmarketplace/custom-plugin-product-manager/blob/main/skills/pricing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

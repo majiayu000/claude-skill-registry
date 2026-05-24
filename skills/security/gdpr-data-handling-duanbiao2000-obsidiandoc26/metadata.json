@@ -1,0 +1,20 @@
+{
+  "name": "gdpr-data-handling",
+  "description": "",
+  "repo": "duanbiao2000/obsidianDoc26",
+  "category": "security",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/duanbiao2000/obsidianDoc26",
+  "github_path": "agents-main/plugins/hr-legal-compliance/skills/gdpr-data-handling",
+  "github_branch": "main",
+  "dir_name": "gdpr-data-handling-duanbiao2000-obsidiandoc26",
+  "downloaded_at": "2026-02-05T01:44:32.652014Z",
+  "author": "duanbiao2000",
+  "source_url": "https://github.com/duanbiao2000/obsidianDoc26/blob/main/agents-main/plugins/hr-legal-compliance/skills/gdpr-data-handling/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/duanbiao2000/obsidianDoc26/blob/main/agents-main/plugins/hr-legal-compliance/skills/gdpr-data-handling/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

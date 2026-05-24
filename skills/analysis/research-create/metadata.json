@@ -1,0 +1,16 @@
+{
+  "name": "research-create",
+  "repo": "kevinswiber/mmdflux",
+  "path": ".claude/skills/research-create/SKILL.md",
+  "source": "github.com/kevinswiber/mmdflux",
+  "downloaded_at": "2026-01-30T01:07:52.878203Z",
+  "dir_name": "research-create",
+  "category": "analysis",
+  "author": "kevinswiber",
+  "source_url": "https://github.com/kevinswiber/mmdflux/blob/main/.claude/skills/research-create/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kevinswiber/mmdflux/blob/main/.claude/skills/research-create/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

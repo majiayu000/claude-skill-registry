@@ -1,0 +1,18 @@
+{
+  "name": "skill-creator",
+  "description": "",
+  "category": "skills",
+  "repo": "enuno/claude-command-and-control",
+  "path": ".claude/skills/skill-creator/SKILL.md",
+  "stars": 6,
+  "source": "github.com/enuno/claude-command-and-control",
+  "downloaded_at": "2026-01-24T16:15:11.242817Z",
+  "dir_name": "skill-creator-enuno-claude-command-and-c-3",
+  "author": "enuno",
+  "source_url": "https://github.com/enuno/claude-command-and-control/blob/main/.claude/skills/skill-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/enuno/claude-command-and-control/blob/main/.claude/skills/skill-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

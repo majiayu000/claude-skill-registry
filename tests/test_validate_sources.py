@@ -134,7 +134,7 @@ def test_unknown_skill_catalog_uses_full_validation(vs, sources, capsys):
     assert rc == 1
     assert "E_NAME" in out
     assert "E_DESCRIPTION" in out
-    assert "W_CATEGORY_MISSING" in out
+    assert "E_CATEGORY_MISSING" in out
 
 
 # ---------------------------------------------------------------------------
@@ -315,11 +315,11 @@ def test_leading_slash_path_is_rejected(vs, sources, capsys):
 
 
 # ---------------------------------------------------------------------------
-# Warnings
+# Category errors and warnings
 # ---------------------------------------------------------------------------
 
 
-def test_unknown_category_is_warning_not_error(vs, sources, capsys):
+def test_unknown_category_is_error(vs, sources, capsys):
     _write(
         sources / "community.json",
         {
@@ -337,11 +337,11 @@ def test_unknown_category_is_warning_not_error(vs, sources, capsys):
     )
     rc = vs.main(["--sources-dir", str(sources)])
     out = capsys.readouterr().out
-    assert rc == 0
-    assert "W_CATEGORY_UNKNOWN" in out
+    assert rc == 1
+    assert "E_CATEGORY_UNKNOWN" in out
 
 
-def test_alias_category_is_warning_not_error(vs, sources, capsys):
+def test_legacy_category_is_error(vs, sources, capsys):
     _write(
         sources / "community.json",
         {
@@ -359,12 +359,12 @@ def test_alias_category_is_warning_not_error(vs, sources, capsys):
     )
     rc = vs.main(["--sources-dir", str(sources)])
     out = capsys.readouterr().out
-    assert rc == 0
-    assert "W_CATEGORY_ALIAS" in out
+    assert rc == 1
+    assert "E_CATEGORY_LEGACY" in out
     assert "development" in out
 
 
-def test_strict_promotes_warning_to_failure(vs, sources, capsys):
+def test_category_must_be_exact_slug(vs, sources, capsys):
     _write(
         sources / "community.json",
         {
@@ -375,7 +375,53 @@ def test_strict_promotes_warning_to_failure(vs, sources, capsys):
                     "name": "demo",
                     "repo": "owner/repo",
                     "description": "Long enough description here.",
-                    "category": "moonbase",
+                    "category": "Development",
+                }
+            ],
+        },
+    )
+    rc = vs.main(["--sources-dir", str(sources)])
+    out = capsys.readouterr().out
+    assert rc == 1
+    assert "E_CATEGORY_FORMAT" in out
+    assert "development" in out
+
+
+def test_category_slug_rejects_surrounding_whitespace(vs, sources, capsys):
+    _write(
+        sources / "community.json",
+        {
+            "name": "Community",
+            "description": "x",
+            "skills": [
+                {
+                    "name": "demo",
+                    "repo": "owner/repo",
+                    "description": "Long enough description here.",
+                    "category": "development ",
+                }
+            ],
+        },
+    )
+    rc = vs.main(["--sources-dir", str(sources)])
+    out = capsys.readouterr().out
+    assert rc == 1
+    assert "E_CATEGORY_FORMAT" in out
+
+
+def test_strict_promotes_non_category_warning_to_failure(vs, sources, capsys):
+    _write(
+        sources / "community.json",
+        {
+            "name": "Community",
+            "description": "x",
+            "skills": [
+                {
+                    "name": "demo",
+                    "repo": "owner/repo",
+                    "description": "Long enough description here.",
+                    "category": "development",
+                    "stars": "many",
                 }
             ],
         },
@@ -383,7 +429,7 @@ def test_strict_promotes_warning_to_failure(vs, sources, capsys):
     rc = vs.main(["--sources-dir", str(sources), "--strict"])
     captured = capsys.readouterr()
     assert rc == 2
-    assert "W_CATEGORY_UNKNOWN" in captured.out
+    assert "W_STARS_TYPE" in captured.out
 
 
 def test_duplicate_keys_across_files_warn(vs, sources, capsys):

@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 from collections import Counter, defaultdict
 from dataclasses import dataclass
@@ -34,6 +35,12 @@ class ClassificationRow:
     target_category: str
     confidence: float | None
     status: str
+    reason: str = ""
+    evidence: list[Any] | None = None
+    workset: str = ""
+    source_sha256: str = ""
+    metadata_sha256: str = ""
+    semantic_text_sha256: str = ""
 
 
 def load_classification_rows(path: Path) -> list[ClassificationRow]:
@@ -56,6 +63,12 @@ def load_classification_rows(path: Path) -> list[ClassificationRow]:
                     target_category=str(payload.get("llm_category") or ""),
                     confidence=parse_confidence(payload.get("confidence")),
                     status=str(payload.get("status") or ""),
+                    reason=str(payload.get("reason") or ""),
+                    evidence=payload.get("evidence") if isinstance(payload.get("evidence"), list) else [],
+                    workset=str(payload.get("workset") or ""),
+                    source_sha256=str(payload.get("source_sha256") or ""),
+                    metadata_sha256=str(payload.get("metadata_sha256") or ""),
+                    semantic_text_sha256=str(payload.get("semantic_text_sha256") or ""),
                 )
             )
     return rows
@@ -72,6 +85,24 @@ def parse_confidence(value: object) -> float | None:
     if isinstance(value, bool) or not isinstance(value, int | float):
         return None
     return float(value)
+
+
+def file_sha256(path: Path) -> str:
+    if not path.exists() or not path.is_file():
+        return ""
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def source_hash_mismatch(row: ClassificationRow, source_dir: Path) -> str:
+    if row.source_sha256:
+        actual = file_sha256(source_dir / "SKILL.md")
+        if actual != row.source_sha256:
+            return "source SKILL.md sha256 changed since classification"
+    if row.metadata_sha256:
+        actual = file_sha256(source_dir / "metadata.json")
+        if actual != row.metadata_sha256:
+            return "source metadata.json sha256 changed since classification"
+    return ""
 
 
 def category_state(skills_dir: Path) -> dict[str, dict[str, Any]]:
@@ -153,8 +184,7 @@ def row_is_eligible(
     if row.target_category == "other" and not allow_target_other:
         return False, "target category other requires --allow-target-other"
     taxonomy = get_taxonomy()
-    target_definition = taxonomy.categories.get(row.target_category)
-    target_status = target_definition.status if target_definition else "unknown"
+    target_status = taxonomy.category_status(row.target_category)
     if "any" not in target_statuses and target_status not in target_statuses:
         return False, f"target category status {target_status!r} excluded by filter"
     return True, "eligible"
@@ -210,6 +240,9 @@ def build_apply_plan(
         if not source_dir.exists():
             reject_reasons["source directory missing"] += 1
             continue
+        if reason := source_hash_mismatch(row, source_dir):
+            reject_reasons[reason] += 1
+            continue
         source_category = source_skill_rel.parts[0]
         target_category = taxonomy.resolve(row.target_category, allow_unknown=True)
         meta = load_metadata(source_dir)
@@ -235,9 +268,7 @@ def build_apply_plan(
             "source_category": source_category,
             "current_category": row.current_category,
             "target_category": target_category,
-            "target_status": taxonomy.categories[target_category].status
-            if target_category in taxonomy.categories
-            else "unknown",
+            "target_status": taxonomy.category_status(target_category),
             "target_path": str(target_dir_rel),
             "target_skill": str(target_dir_rel / "SKILL.md"),
             "name": name,
@@ -245,6 +276,9 @@ def build_apply_plan(
             "key": key,
             "repo": repo,
             "reason": operation_reason,
+            "source_sha256": row.source_sha256,
+            "metadata_sha256": row.metadata_sha256,
+            "semantic_text_sha256": row.semantic_text_sha256,
         }
         moves.append(move)
         target_counts[target_category] += 1
@@ -343,7 +377,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument(
         "--target-status",
         action="append",
-        choices=["active", "review", "deprecated", "unknown", "any"],
+        choices=["active", "legacy", "review", "deprecated", "unknown", "any"],
         default=["active"],
     )
     parser.add_argument("--allow-target-other", action="store_true")

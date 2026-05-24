@@ -1,0 +1,18 @@
+{
+  "name": "use-subagents-dispatch",
+  "repo": "mtthsnc/autonome",
+  "path": "skills/use-subagents-dispatch/SKILL.md",
+  "source": "github.com/mtthsnc/autonome",
+  "downloaded_at": "2026-01-17T03:44:09.377152Z",
+  "dir_name": "use-subagents-dispatch",
+  "category": "orchestration",
+  "github_path": "skills/use-subagents-dispatch",
+  "github_branch": "main",
+  "author": "mtthsnc",
+  "source_url": "https://github.com/mtthsnc/autonome/blob/main/skills/use-subagents-dispatch/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mtthsnc/autonome/blob/main/skills/use-subagents-dispatch/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

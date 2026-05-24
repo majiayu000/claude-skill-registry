@@ -1,0 +1,18 @@
+{
+  "name": "create-discount-code",
+  "repo": "adrianwedd/lemonsqueezy-claude-skills",
+  "path": "skills/create-discount-code/skill.md",
+  "source": "github.com/adrianwedd/lemonsqueezy-claude-skills",
+  "downloaded_at": "2026-01-22T02:06:14.408372Z",
+  "dir_name": "create-discount-code",
+  "category": "business",
+  "github_path": "skills/create-discount-code",
+  "github_branch": "main",
+  "author": "adrianwedd",
+  "source_url": "https://github.com/adrianwedd/lemonsqueezy-claude-skills/blob/main/skills/create-discount-code/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Adrian Wedd",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

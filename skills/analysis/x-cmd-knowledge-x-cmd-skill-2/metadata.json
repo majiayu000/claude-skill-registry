@@ -1,0 +1,18 @@
+{
+  "name": "x-cmd-knowledge",
+  "description": "This skill provides access to various knowledge search tools through x-cmd CLI, including Hacker News, Wikipedia, DuckDuckGo search, RFC documents, Project Gutenberg books, and Stack Exchange. This sk",
+  "repo": "x-cmd/skill",
+  "path": "data/x-cmd/x-cmd-knowledge",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/x-cmd/skill",
+  "dir_name": "x-cmd-knowledge-x-cmd-skill-2",
+  "author": "x-cmd",
+  "source_url": "https://github.com/x-cmd/skill/blob/main/data/x-cmd/x-cmd-knowledge/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/x-cmd/skill/blob/main/data/x-cmd/x-cmd-knowledge/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

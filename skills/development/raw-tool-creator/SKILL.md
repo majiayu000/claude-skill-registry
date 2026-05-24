@@ -266,93 +266,11 @@ User needs tool
     └─► Report success to user
 ```
 
-## Tool Types and Examples
+See [references/best_practices.md](references/best_practices.md) for input validation, error handling, and output patterns.
 
-### Data Fetcher
+See [references/examples.md](references/examples.md) for data fetcher, processor, and file generator examples.
 
-```python
-def fetch_stock(ticker: str, period: str = "1mo") -> dict:
-    """Fetch stock data from yfinance."""
-    import yfinance as yf
-
-    stock = yf.Ticker(ticker)
-    hist = stock.history(period=period)
-
-    return {
-        "ticker": ticker,
-        "dates": hist.index.strftime("%Y-%m-%d").tolist(),
-        "close": hist["Close"].tolist(),
-        "volume": hist["Volume"].tolist(),
-    }
-```
-
-### Data Processor
-
-```python
-def calculate_rsi(prices: list[float], period: int = 14) -> float:
-    """Calculate RSI indicator."""
-    import pandas as pd
-
-    series = pd.Series(prices)
-    delta = series.diff()
-    gain = delta.where(delta > 0, 0).rolling(period).mean()
-    loss = (-delta.where(delta < 0, 0)).rolling(period).mean()
-    rs = gain / loss
-    return float(100 - (100 / (1 + rs.iloc[-1])))
-```
-
-### File Generator
-
-```python
-def generate_pdf(title: str, content: str, output_path: str) -> str:
-    """Generate PDF report."""
-    from reportlab.lib.pagesizes import letter
-    from reportlab.pdfgen import canvas
-
-    c = canvas.Canvas(output_path, pagesize=letter)
-    c.drawString(100, 750, title)
-    c.drawString(100, 700, content)
-    c.save()
-
-    return output_path
-```
-
-## Best Practices
-
-### Input Validation
-```python
-def fetch_stock(ticker: str) -> dict:
-    if not ticker:
-        raise ValueError("Ticker cannot be empty")
-    if not ticker.isalpha():
-        raise ValueError(f"Invalid ticker format: {ticker}")
-    # Continue...
-```
-
-### Error Handling
-```python
-def fetch_api(url: str) -> dict:
-    try:
-        response = requests.get(url, timeout=30)
-        response.raise_for_status()
-        return {"success": True, "data": response.json()}
-    except requests.RequestException as e:
-        return {"success": False, "error": str(e)}
-```
-
-### JSON-Serializable Returns
-```python
-# Good - serializable
-return {
-    "dates": dates_list,      # list[str]
-    "values": values_list,    # list[float]
-}
-
-# Bad - not serializable
-return dataframe  # pd.DataFrame
-```
-
-## Validation Checklist
+## Validation checklist
 
 Before reporting success:
 - [ ] `tool.py` exists and runs standalone
@@ -401,28 +319,9 @@ If you cannot resolve an error after 2 attempts:
 2. Show the error and your attempted fixes
 3. Ask the user how they'd like to proceed
 
-## Common Pitfalls
+See [references/best_practices.md](references/best_practices.md) for common pitfalls and testing guidance.
 
-| Pitfall | Problem | Solution |
-|---------|---------|----------|
-| No input validation | Cryptic errors downstream | Validate all inputs at function start |
-| Returning non-serializable types | Can't be used in workflows | Return dicts/lists, not DataFrames |
-| Missing timeout | Hangs on unresponsive APIs | Always set `timeout=30` |
-| Catching all exceptions | Hides bugs | Catch specific exceptions only |
-| No docstring | Users don't know how to use it | Always include Args/Returns docs |
-| Side effects | Hard to test, unexpected behavior | Pure functions when possible |
-| Hyphenated names | Python can't import the module | Use underscores: `web_scraper` |
-| Missing __init__.py | Import fails in workflows | Export functions from __init__.py |
-
-### Testing Pitfalls
-
-| Pitfall | Solution |
-|---------|----------|
-| Testing with real APIs | Use mocks or fixtures |
-| No edge case tests | Test empty inputs, None, invalid values |
-| Tests depend on order | Each test should be independent |
-
-## Progress Communication
+## Progress communication
 
 Keep the user informed during tool creation:
 
@@ -464,36 +363,9 @@ Creating fetch_stock tool...
   Would you like me to add input validation?
 ```
 
-## Security Checklist
+## Security
 
-Before delivering any tool:
-
-- [ ] **No hardcoded secrets** - Use environment variables
-- [ ] **Input validation** - Check all parameters before use
-- [ ] **No arbitrary code execution** - Never use eval/exec on inputs
-- [ ] **Safe file operations** - Validate paths, prevent traversal
-- [ ] **Timeout on network calls** - Prevent indefinite hangs
-
-### Secure API Key Access
-```python
-import os
-
-def fetch_data(ticker: str) -> dict:
-    api_key = os.environ.get("API_KEY")
-    if not api_key:
-        raise ValueError("API_KEY not set in environment")
-    # Use api_key safely...
-```
-
-### Input Sanitization
-```python
-def process_file(filepath: str) -> dict:
-    # Prevent path traversal attacks
-    safe_path = Path(filepath).resolve()
-    if not safe_path.is_relative_to(Path.cwd()):
-        raise ValueError("Invalid file path")
-    return safe_path.read_text()
-```
+See [references/security.md](references/security.md) for security checklist and secure coding patterns.
 
 ## References
 

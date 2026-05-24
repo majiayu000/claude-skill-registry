@@ -1,0 +1,16 @@
+{
+  "name": "language-shell",
+  "repo": "CsHeng/dot-claude",
+  "path": "skills/language-shell/SKILL.md",
+  "category": "development",
+  "source": "github.com/CsHeng/dot-claude",
+  "dir_name": "language-shell",
+  "downloaded_at": "2026-02-15T04:58:31.787391Z",
+  "author": "CsHeng",
+  "source_url": "https://github.com/CsHeng/dot-claude/blob/main/skills/language-shell/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CsHeng/dot-claude/blob/main/skills/language-shell/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

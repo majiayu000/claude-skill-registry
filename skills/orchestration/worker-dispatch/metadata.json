@@ -1,0 +1,18 @@
+{
+  "name": "worker-dispatch",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/worker-dispatch/SKILL.md",
+  "source": "github.com/troykelly/codex-skills",
+  "downloaded_at": "2026-01-22T04:02:56.428084Z",
+  "dir_name": "worker-dispatch",
+  "category": "orchestration",
+  "github_path": "skills/worker-dispatch",
+  "github_branch": "main",
+  "author": "troykelly",
+  "source_url": "https://github.com/troykelly/codex-skills/blob/main/skills/worker-dispatch/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/troykelly/codex-skills/blob/main/skills/worker-dispatch/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

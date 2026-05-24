@@ -1,0 +1,17 @@
+{
+  "name": "typescript-lsp-plaited-development-skills",
+  "description": "REQUIRED for searching code in *.ts, *.tsx, *.js, *.jsx files. Use INSTEAD of Grep for TypeScript/JavaScript - provides type-aware symbol search that understands imports, exports, and relationships. A",
+  "repo": "plaited/plaited",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plaited/plaited",
+  "dir_name": "typescript-lsp-plaited-development-skills-plaited-plaited-fd48d8",
+  "author": "plaited",
+  "source_url": "https://github.com/plaited/plaited",
+  "license": "ISC",
+  "copyright": "Copyright (c) 2023 - present Edward Irby",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

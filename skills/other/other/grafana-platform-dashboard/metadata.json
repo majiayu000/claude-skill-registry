@@ -1,0 +1,17 @@
+{
+  "name": "grafana-platform-dashboard",
+  "repo": "boshu2/agentops",
+  "path": "skills/grafana-platform-dashboard/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/boshu2/agentops",
+  "dir_name": "grafana-platform-dashboard",
+  "downloaded_at": "2026-05-24T03:53:21.319233Z",
+  "author": "boshu2",
+  "source_url": "https://github.com/boshu2/agentops/blob/main/skills/grafana-platform-dashboard/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/boshu2/agentops/blob/main/skills/grafana-platform-dashboard/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

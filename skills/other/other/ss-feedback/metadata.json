@@ -1,0 +1,17 @@
+{
+  "name": "ss-feedback",
+  "repo": "bitjaru/styleseed",
+  "path": "engine/.claude/skills/ss-feedback/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/bitjaru/styleseed",
+  "dir_name": "ss-feedback",
+  "downloaded_at": "2026-05-24T03:52:38.388194Z",
+  "author": "bitjaru",
+  "source_url": "https://github.com/bitjaru/styleseed/blob/main/engine/.claude/skills/ss-feedback/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bitjaru/styleseed/blob/main/engine/.claude/skills/ss-feedback/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

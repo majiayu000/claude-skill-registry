@@ -1,0 +1,17 @@
+{
+  "name": "update-pr",
+  "repo": "tobihagemann/turbo",
+  "path": "codex/skills/update-pr/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/tobihagemann/turbo",
+  "dir_name": "update-pr",
+  "downloaded_at": "2026-05-24T04:11:55.975065Z",
+  "author": "tobihagemann",
+  "source_url": "https://github.com/tobihagemann/turbo/blob/main/codex/skills/update-pr/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tobihagemann/turbo/blob/main/codex/skills/update-pr/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

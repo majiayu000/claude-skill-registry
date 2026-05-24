@@ -1,0 +1,17 @@
+{
+  "name": "testing",
+  "repo": "CodelyTV/agentic_programming-course",
+  "path": "06-evolution/2-mcp_skills_subagents_documentation/2-skills/.agents/skills/testing/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/CodelyTV/agentic_programming-course",
+  "dir_name": "testing",
+  "downloaded_at": "2026-05-24T03:42:53.392207Z",
+  "author": "CodelyTV",
+  "source_url": "https://github.com/CodelyTV/agentic_programming-course/blob/main/06-evolution/2-mcp_skills_subagents_documentation/2-skills/.agents/skills/testing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CodelyTV/agentic_programming-course/blob/main/06-evolution/2-mcp_skills_subagents_documentation/2-skills/.agents/skills/testing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

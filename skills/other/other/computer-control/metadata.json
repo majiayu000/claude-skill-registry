@@ -1,0 +1,17 @@
+{
+  "name": "computer-control",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/phantom/skills/computer-control/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "computer-control",
+  "downloaded_at": "2026-05-24T03:52:15.841221Z",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/master/plugins/phantom/skills/computer-control/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/athola/claude-night-market/blob/master/plugins/phantom/skills/computer-control/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

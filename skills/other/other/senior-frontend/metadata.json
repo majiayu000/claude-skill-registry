@@ -1,0 +1,17 @@
+{
+  "name": "senior-frontend",
+  "repo": "ComposioHQ/awesome-claude-plugins",
+  "path": "senior-frontend/skills/senior-frontend/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/ComposioHQ/awesome-claude-plugins",
+  "dir_name": "senior-frontend",
+  "downloaded_at": "2026-05-24T03:42:56.653069Z",
+  "author": "ComposioHQ",
+  "source_url": "https://github.com/ComposioHQ/awesome-claude-plugins/blob/master/senior-frontend/skills/senior-frontend/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ComposioHQ/awesome-claude-plugins/blob/master/senior-frontend/skills/senior-frontend/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

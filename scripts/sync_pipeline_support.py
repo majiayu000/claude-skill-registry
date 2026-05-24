@@ -75,19 +75,24 @@ DEFAULT_LEARNING_PRIORS_PATH = ROOT_DIR / "sources" / "learning" / "discovery_pr
 GITHUB_API_BASE = "https://api.github.com"
 
 BUNDLED_DIR_ALLOWLIST = {
+    "connectors",
     "references",
+    "reference",
     "scripts",
     "assets",
     "templates",
     "examples",
+    "prompts",
 }
 BUNDLED_ROOT_FILE_ALLOWLIST = {
+    "audit.md",
     "package.json",
     "package-lock.json",
     "pnpm-lock.yaml",
     "yarn.lock",
     "requirements.txt",
     "pyproject.toml",
+    "setup.md",
     "uv.lock",
     "README.md",
     "LICENSE",

@@ -108,14 +108,25 @@ SENSITIVE_PATHS = [
     '/proc/', '/sys/', '$HOME/.env', '.env',
 ]
 
-BUNDLED_SCAN_DIRS = ('references', 'scripts', 'assets', 'templates', 'examples')
+BUNDLED_SCAN_DIRS = (
+    'connectors',
+    'references',
+    'reference',
+    'scripts',
+    'assets',
+    'templates',
+    'examples',
+    'prompts',
+)
 BUNDLED_SCAN_ROOT_FILES = (
+    'audit.md',
     'package.json',
     'package-lock.json',
     'pnpm-lock.yaml',
     'yarn.lock',
     'requirements.txt',
     'pyproject.toml',
+    'setup.md',
     'uv.lock',
     'README.md',
 )

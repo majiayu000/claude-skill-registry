@@ -1,0 +1,17 @@
+{
+  "name": "architecture-paradigms",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/archetypes/skills/architecture-paradigms/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "architecture-paradigms",
+  "downloaded_at": "2026-05-24T03:52:21.584926Z",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/master/plugins/archetypes/skills/architecture-paradigms/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/athola/claude-night-market/blob/master/plugins/archetypes/skills/architecture-paradigms/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

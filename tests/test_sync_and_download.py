@@ -631,10 +631,18 @@ def test_bundled_file_allowlist_is_scoped_and_size_limited():
     assert module.bundled_relative_path("skills/demo", "other/scripts/run.sh") == ""
     assert module.should_recurse_bundled_dir("scripts") is True
     assert module.should_recurse_bundled_dir("references/nested") is True
+    assert module.should_recurse_bundled_dir("reference") is True
+    assert module.should_recurse_bundled_dir("connectors") is True
+    assert module.should_recurse_bundled_dir("prompts") is True
     assert module.should_recurse_bundled_dir("docs") is False
     assert module.is_safe_bundled_file("references/helper.py", 1024) is True
+    assert module.is_safe_bundled_file("reference/environment.md", 1024) is True
+    assert module.is_safe_bundled_file("connectors/slack.md", 1024) is True
+    assert module.is_safe_bundled_file("prompts/audit-system-prompt.md", 1024) is True
     assert module.is_safe_bundled_file("scripts/listen.mjs", 1024) is True
     assert module.is_safe_bundled_file("package.json", 1024) is True
+    assert module.is_safe_bundled_file("setup.md", 1024) is True
+    assert module.is_safe_bundled_file("audit.md", 1024) is True
     assert module.is_safe_bundled_file("references/SKILL.md", 1024) is False
     assert module.is_safe_bundled_file("examples/SKILL.md", 1024) is False
     assert module.is_safe_bundled_file("docs/helper.py", 1024) is False

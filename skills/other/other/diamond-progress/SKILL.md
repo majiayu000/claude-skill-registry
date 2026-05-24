@@ -1,0 +1,382 @@
+---
+name: diamond-progress
+description: "Progress a diamond from one phase to the next. Runs all required theory gate checks, validates evidence, and at Deliver->Complete runs the executable Definition of Done checklist."
+metadata:
+  instruction_budget: "205"
+---
+
+# Diamond Progress Skill
+
+Progress a diamond through phases with full theory gate validation. At delivery completion, runs an executable checklist that GATES progression.
+
+## Preflight: Read target canvas file(s) before any Write/Edit
+
+**Hard rule.** Before issuing `Write` or `Edit` against any `.claude/canvas/*.yml`, use the **Read tool** on that file in this session. Claude Code's Read-before-Write check requires the `Read` tool specifically — `cat`/`head`/`grep` via Bash do NOT satisfy it.
+
+**Edit vs Write — different cost profiles** (verified 2026-05-14):
+- **`Edit`** (exact-string replacement): `Read` with `limit: 1` satisfies the check at ~50 tokens. State-tracking is per-file, not per-byte — subsequent `Edit` calls work anywhere in the file. Use this for partial updates against large canvas files (e.g., `purpose.yml` at 800+ lines).
+- **`Write`** (full replacement): do a **full Read** first. Write obliterates the file; you should see what you're about to replace. The `limit:1` shortcut is *not* appropriate here.
+
+**ID-bearing entries — scan the ID space before assigning** (added 2026-05-15, v0.23.19): When adding a new component, opportunity, solution, or any other ID-bearing entry to a canvas file, run a Bash grep first to confirm the next ID in your prefix sequence is actually free:
+
+```
+grep "^  - id: <prefix>-" .claude/canvas/<file>.yml | sort -u
+```
+
+Replace `<prefix>` with the canvas's ID prefix (`comp` for landscape, `opp` for opportunities, `sol` for solutions, `ht` for human-tasks, etc.). Then pick the next free integer. `validate_canvas.py` has a duplicate-ID check (lines 230-239) that catches the failure on CI, but a duplicate can persist in the working tree for days if CI isn't run between edit and discovery — see roadmap-repo `corrections.md` 2026-05-15 "Duplicate canvas ID created in landscape.yml" for the worked example.
+
+Original failure mode: anti-pattern #7 instance #5, 2026-05-09 — agent conflated Bash `head` with the Read tool, lost ~14k tokens to a Write-fail → remedial-full-Read → re-Write loop. The `limit:1` discipline (graduated 2026-05-14, v0.23.18) prevents the second-order cost where the agent *correctly* follows the rule but full-Reads every time. The ID-scan discipline (graduated 2026-05-15, v0.23.19) prevents the related class where the agent reads enough of the file to satisfy the Edit check but not enough to see existing ID assignments — kin to anti-pattern #8 (Stale State Read).
+
+If this skill writes to multiple canvas files, register each one first (limit:1 for Edit-only paths; full Read for Write paths) AND ID-scan any prefix you intend to assign.
+
+See `CLAUDE.md` *Canvas writes — Read before Write* for the canonical rule.
+
+## Workflow
+
+1. **Identify transition**: From [current phase] to [next phase] at [scale].
+
+1b. **Cognitive Forcing (before gate evaluation)**:
+
+   Before running gates, ask the human for their unprimed judgment:
+
+   > "Before I check the gates — do you think we're ready to move from [current] to [next]? What's your gut say?"
+
+   Wait for the response. Record it. Then run the gates. After presenting results, compare:
+
+   > "You said [X]. The gates say [Y]. Where do we differ?"
+
+   The human's instinct often catches risks the gates miss. If the human says "not ready" but gates pass, investigate — the human may be sensing something the evidence hasn't captured yet.
+
+   *Source: Buçinca, Malaya & Gajos (Cognitive Forcing Functions, Harvard CHI/CSCW 2021). Applied after Hoskins transcript analysis — Drew's product judgment consistently outperformed the agent's gate-based assessment.*
+
+2. **Run all required theory gates** (per ${CLAUDE_PLUGIN_ROOT}/engine/theory-gates.md transition matrix):
+   - For each gate:
+     a. State the gate name and source theory.
+     b. **Surface the suggested skill**: "Run `/skill-name` to satisfy this gate."
+     c. Evaluate pass criteria against available evidence.
+     d. Record Pass / Fail / Insufficient Evidence.
+     e. If Fail: document what is missing, recommend the skill to run, and do NOT proceed.
+
+   **CRITICAL — Perspective conflict check (do this BEFORE evaluating any other gate)**:
+   Before checking any gate status, read `.claude/canvas/opportunities.yml` and inspect the Four Risks risk LEVELS for the active solution. Do NOT rely on `theory_gates_status.four_risks` in active.yml — that only records whether risks are documented, not whether they conflict. You must read the actual `value.level`, `usability.level`, `feasibility.level`, `viability.level` values.
+
+   If TWO OR MORE risk dimensions are rated HIGH, or if perspectives directly contradict each other (e.g., value says "build it" but usability/feasibility say "don't"), this is a **perspective conflict** — not a simple gate failure. STOP evaluating other gates and jump to step 2b immediately. This takes priority over all other gate checks.
+
+2b. **Resolve perspective conflict** (if detected in step 2):
+   Do NOT continue to steps 3-6. A perspective conflict must be resolved before any other gate evaluation matters. Follow this procedure:
+
+   1. **Name the conflict explicitly** in the decision log: "Perspective conflict: [type]" — use the vocabulary from `${CLAUDE_PLUGIN_ROOT}/engine/perspective-resolution.md` (value-vs-feasibility, usability-vs-feasibility, value-vs-viability, usability-vs-viability, three-way).
+   2. **Classify the conflict type** per the resolution framework.
+   3. **State each perspective's position**:
+      - Product perspective: what does the value evidence say?
+      - Design perspective: what does the usability evidence say?
+      - Engineering perspective: what does the feasibility evidence say?
+   4. **Apply the resolution methods in order of preference**:
+      - Constraint-based: Can all three perspectives be satisfied within acceptable thresholds?
+      - Phased: Can we deliver in stages? (Phase 1 = MVP addressing highest risk, Phase 2 = polish)
+      - Evidence-based: Can we test the disputed dimension? (Run `/mycelium:assumption-test` on the riskiest assumption)
+      - Scope reduction: Can we remove features until all perspectives align?
+   5. **Log the resolution** in .claude/harness/decision-log.md with: the conflict type, each perspective's position, the resolution method chosen, and why.
+   6. **Block progression**: Report "Progression blocked: perspective conflict ([type]). Recommended resolution: [method]."
+   7. Do NOT proceed to step 3 or beyond. The conflict must be resolved first.
+
+   The perspective resolution framework (`${CLAUDE_PLUGIN_ROOT}/engine/perspective-resolution.md`) is the authoritative reference. The anti-pattern to avoid is Perspective Suppression — resolving a conflict by ignoring one perspective.
+
+2c. **Build-to-learn awareness NUDGE** (Define → Develop transitions only):
+   At the point of entering Develop, surface this prompt to the human:
+   > "Are you building to learn or building to earn right now? Discovery work (prototypes, spikes, experiments) can use lighter gates. Delivery work (shipping to users) must meet full DoD."
+   This is awareness only — it does not change gate requirements or routing. The human's answer is informational context, not a gate input.
+   *Source: Cagan (SVPG), Patton (build to learn vs build to earn). Added as NUDGE per risk analysis — conceptual awareness, not process gate.*
+
+3. **Calculate confidence**:
+   - Apply scoring rules from `${CLAUDE_PLUGIN_ROOT}/engine/confidence-thresholds.yml`.
+   - Look up `project_type` and `dogfood` from `.claude/diamonds/active.yml`.
+   - Apply `project_type_adaptations` from ${CLAUDE_PLUGIN_ROOT}/engine/confidence-thresholds.yml:
+     - `effective_threshold = base_threshold * threshold_multiplier`
+     - If `dogfood: true`: `effective_threshold *= dogfood_modifier.additional_threshold_multiplier`
+     - `effective_min_sources = ceil(base_min_sources * min_sources_multiplier)`
+   - Compare confidence to the **effective** threshold (not the base).
+   - Report both: "Confidence: 0.55. Effective threshold: 0.57 (base 0.85, adapted for solo_product). Needs: one more evidence source to cross."
+
+4. **Check human approval requirement**:
+   - Per ${CLAUDE_PLUGIN_ROOT}/engine/confidence-thresholds.yml, is human approval required/recommended/optional?
+   - If required: present assessment and wait for approval.
+   - **When asking for approval, include the interaction convention explicitly in the prompt** — do not leave it implicit. Use this template (or paraphrase faithfully):
+     > "Reply **yes** to advance, **no** to stay. Re-invoking `/mycelium:diamond-progress` is also treated as approval (shortcut). Type **evaluate again** to re-run gates from scratch."
+   - This makes the implicit-shortcut convention visible. If the user re-invokes `/mycelium:diamond-progress` while a previous invocation is awaiting approval, that re-invocation IS treated as approval — but only because the convention has been surfaced in the prompt above. Without the prompt-line, the behavior is a footgun (corrections.md 2026-05-06 — `/mycelium:diamond-progress` re-invocation interpreted as approval).
+
+5. **Run bias check**: Execute bias-check for the current stage.
+
+6. **Run corrections check**: Review corrections.md for relevant entries.
+
+6b. **Check trio perspective coverage** (Torres Product Trio):
+   - For each gate evaluated in step 2, verify all three perspectives (product/design/engineering) are documented.
+   - Each perspective must have evidence or an explicit "N/A: [reason]" justification.
+   - Missing perspectives without justification = **GATE FAILED** (Perspective Skip anti-pattern).
+   - See `${CLAUDE_PLUGIN_ROOT}/engine/theory-gates.md` §Trio Perspective Requirement for per-scale guidance.
+   - Note: Perspective CONFLICTS (2+ HIGH risk dimensions) are caught in step 2b, not here. This step checks for missing perspectives, not conflicting ones.
+
+7. **If transition is Deliver -> Complete: RUN EXECUTABLE DoD CHECKLIST** (see below)
+
+8. **Decision**:
+   - All gates pass + confidence met + approval (if needed) + DoD pass (if delivery) = **PROGRESS**
+   - Any REVIEW item fails = **blocked** (list specific blockers with suggested skills)
+   - Confidence below threshold = **NEEDS EVIDENCE** (list what would help)
+
+9. **If progressing**:
+   - Update diamond state in `.claude/diamonds/active.yml`.
+   - **Render the updated journey map**: Follow `${CLAUDE_PLUGIN_ROOT}/engine/wayfinding.md` to show the user where they've moved to. This makes the transition visible — the user sees their position shift on the map.
+   - Log transition in `.claude/harness/decision-log.md`. If threshold was adapted, include: "Threshold adapted from [base] to [effective] because project_type=[type]. Would increase with [action]."
+   - Update `.claude/memory/product-journal.md`.
+   - Identify if child diamonds should be spawned.
+   - **Capture learnings** (see Learning Capture section below)
+
+10. **If blocked or needs evidence**:
+    - Report in plain language: "Can't mark this done yet because [reason]."
+    - List each failed item with its suggested skill
+    - Do not progress. Stay in current phase.
+    - At **L0 / L1 / L2 / L5** diamonds, if the Evidence gate is "Insufficient Evidence" and `.claude/jit-tooling/active-metrics.yml` is configured, suggest `/mycelium:metrics-pull` as one route to strengthen external signal. If `.claude/jit-tooling/active-metrics.yml` is missing, suggest `/mycelium:metrics-detect` first. (v0.14: `external_data` from snapshots satisfies the Evidence gate's behavioral-data criterion but does NOT replace `external_human` requirements at L2 Develop->Deliver.)
+
+11. **Always communicate in plain language**:
+    - Use ${CLAUDE_PLUGIN_ROOT}/engine/status-translations.md for all state descriptions
+    - Include contextual confidence explanation
+    - Suggest specific skills for any gaps
+
+---
+
+## Executable Definition of Done (Deliver -> Complete ONLY)
+
+When transitioning from Deliver to Complete, run this checklist. Items marked `REVIEW` block progression. Items marked `PROMPTED` are asked but don't block.
+
+### Auto-Checked (Machine Verifiable)
+
+Check `product_type` from `.claude/diamonds/active.yml` to determine which auto-checks apply.
+
+**For software and ai_tool (code components):**
+
+**Testing (G-V7 REVIEW)**:
+- Check: Do test files exist? (glob for *.test.*, *.spec.*, Tests/*, __tests__/*)
+- If no tests AND project has source files: **GATE FAILED**
+- Message: "No tests found. Tests must exist before marking delivery complete. Run /mycelium:reflexion to add tests."
+- If tests exist: run them and verify they pass
+
+**Type Safety (REVIEW for typed languages)**:
+- Check: If tsconfig.json, *.swift, *.cs, go.mod, Cargo.toml detected: run type checker
+- If type errors: **GATE FAILED**
+
+**Linting (REVIEW if linter detected)**:
+- Check: If linter config exists (.eslintrc, biome.json, .swiftlint.yml, ruff.toml): run it
+- If lint errors: **GATE FAILED**
+
+**For content products (content_course, content_publication, content_media):**
+
+**Content Quality (REVIEW)**:
+- Check: Are `content-metrics.yml#quality_review` flags all true? (sme_reviewed, accessibility_checked, fact_checked, style_consistent, learning_objectives_met)
+- If any flag is false: **GATE FAILED** -- "Content quality review incomplete. Set the relevant flags in content-metrics.yml after completing review."
+- Fallback: If content-metrics.yml doesn't exist yet, ask: "Has content been reviewed? Create content-metrics.yml and mark quality_review flags."
+
+**For ai_tool:**
+
+**Eval & Safety (REVIEW)**:
+- Check: Are `ai-tool-metrics.yml#prompt_quality` fields populated (not null)? Specifically: accuracy_score, consistency_score, safety_score.
+- If any are null: **GATE FAILED** -- "Prompt/model must be evaluated. Populate accuracy_score, consistency_score, and safety_score in ai-tool-metrics.yml."
+- Check: Is `ai-tool-metrics.yml#prompt_quality.last_evaluated` set?
+- If null: **GATE FAILED** -- "No evaluation timestamp. Run eval and record the date."
+
+**For all product types:**
+
+**Secrets (G-S1 BLOCK)**:
+- Check: Scan all project files for secret patterns (same as gate.sh)
+- If secrets found: **GATE FAILED**
+
+### Delivery-Type Dependent (from ${CLAUDE_PLUGIN_ROOT}/engine/canvas-guidance.yml)
+
+**For user_facing work (G-V2, G-V8, G-V9 REVIEW)**:
+- Check: Has services.yml been assessed? (count of "not-assessed" < 15)
+- If all 15 are "not-assessed": **GATE FAILED** -- "Run /mycelium:service-check before completing."
+- Check: Has accessibility been considered? (any evidence of a11y work)
+- If no evidence: **GATE FAILED** -- "Run /mycelium:a11y-check for user-facing work."
+- Check: Has usability been evaluated? (Nielsen's 10 heuristics via /mycelium:usability-check)
+- If no evidence: **GATE FAILED** -- "Run /mycelium:usability-check for user-facing interfaces." (G-V10)
+
+**For api_service or permission_requiring work (G-S2 REVIEW)**:
+- Check: Does threat-model.yml have components listed?
+- If empty: **GATE FAILED** -- "Run /mycelium:threat-model for work that handles data or requires permissions."
+
+**For data-handling work (G-S3 REVIEW)**:
+- Check: Does privacy-assessment.yml have principles assessed?
+- If all "not-assessed" and product handles user data: **GATE FAILED** -- "Run /mycelium:privacy-check."
+
+### Always Required (REVIEW)
+
+**Success criteria declared (G-V11 REVIEW)**:
+- Check: Does .claude/harness/decision-log.md have success criteria recorded for this delivery (from `/mycelium:preflight`)?
+- If no success criteria found: **GATE FAILED** -- "No success criteria declared. Run `/mycelium:preflight` and declare what will be true after delivery and how to verify it."
+- If criteria exist: verify each criterion is satisfied. Report pass/fail per criterion.
+- This catches the denominator problem: without declared criteria, "done" = "whatever we built."
+
+**Decision log (G-P4)**:
+- Check: Does .claude/harness/decision-log.md have an entry for this delivery?
+- If no entry since diamond was created: **GATE FAILED** -- "Log the delivery decision."
+
+**BVSSH Quick-Check (Smart -- Fix 6)**:
+- Prompt the user/agent with product-type-appropriate questions:
+
+  Happier covers four stakeholders (Smart): **customers, colleagues, citizens, and climate**.
+
+  **Software:**
+  - "Better: Did code quality improve or degrade?"
+  - "Value: Did we deliver measurable user value?"
+  - "Sooner: Was deployment flow efficient? Any unnecessary delays?"
+  - "Safer: Did we maintain security, reliability, and trust?"
+  - "Happier: How is developer/team satisfaction? User advocacy? Was compute usage proportionate to value delivered?"
+
+  **Content (course, publication, media):**
+  - "Better: Did content quality and learning outcomes improve?"
+  - "Value: Will this content help the audience accomplish their goal?"
+  - "Sooner: Was production cadence maintained? Any bottlenecks?"
+  - "Safer: Is the content accurate, accessible, and free from harm?"
+  - "Happier: How is creator satisfaction? Audience sentiment? Positive societal contribution?"
+
+  **AI tool:**
+  - "Better: Did eval scores improve? Is output quality higher?"
+  - "Value: Does the tool reliably help users accomplish their task?"
+  - "Sooner: Was the prompt/model iteration cycle efficient?"
+  - "Safer: Are safety scores acceptable? Bias assessed? Regulatory status current?"
+  - "Happier: How is the builder's satisfaction? User feedback positive? Token/compute usage proportionate (not brute-force waste)?"
+
+  **Service offering:**
+  - "Better: Did delivery quality improve? Client satisfaction up?"
+  - "Value: Did the client get measurable value from the engagement?"
+  - "Sooner: Was delivery lead time acceptable? Any waiting waste?"
+  - "Safer: Were commitments met? Trust maintained? No scope creep harm?"
+  - "Happier: How is your satisfaction as a service provider? Client sentiment? Sustainable resource usage?"
+- Record in bvssh-health.yml assessment_history
+- **REVIEW**: Must answer all 5 (even briefly) before completing
+
+### Prompted (Not Blocking)
+
+**Delivery journal (PROMPTED)**:
+- "What was built? What technical decisions were made? What surprised you?"
+- Auto-draft entry from canvas diff if possible
+- Present to user for confirmation
+
+**Patterns (PROMPTED)**:
+- "Did you discover any reusable patterns? I'll draft for patterns.md."
+- Check corrections.md for entries logged during this diamond -- suggest generalizing any
+
+**Retrospective (PROMPTED)**:
+- "What went well? What didn't? What to change next time?"
+- Suggest /mycelium:retrospective for deeper review
+
+---
+
+## Non-Progression Paths: Pivot, Park, Kill
+
+Not every diamond makes forward progress. Sometimes the right move is to reframe, pause, or abandon. `/mycelium:diamond-progress` handles these paths too, via subcommands:
+
+- `/mycelium:diamond-progress pivot` — reframe the diamond's scope, audience, or JTBD with new evidence
+- `/mycelium:diamond-progress park` — mark the diamond as inactive-pending-conditions
+- `/mycelium:diamond-progress kill` — abandon with a documented reason
+
+All three are **sanctioned exits** from a stuck diamond. They are not failure modes — they are the system working correctly when evidence tells you the current direction is wrong.
+
+Addresses dogfood report finding T5: "Stop-the-diamond pattern has no escape valve."
+
+### Pivot (reframe with new evidence)
+
+Use when evidence invalidates the current framing but the underlying need is still valid. Example: macos-fileviewer pivoted from "replace QuickLook for all devs" to "serve terminal-resistant devs specifically" after mocked-persona findings.
+
+**Workflow**:
+1. State the invalidating evidence (what did we learn that broke the old framing?)
+2. Propose the new framing (scope change, audience change, JTBD refinement)
+3. Log decision in .claude/harness/decision-log.md with:
+   - Original framing
+   - Invalidating evidence
+   - New framing
+   - Theory: which framework informed the pivot (Torres "evidence-guided", Cagan "value risk", etc.)
+   - Confidence delta (the pivot should REDUCE confidence initially — you have less evidence for the new framing)
+4. Update `.claude/diamonds/active.yml`:
+   - Phase often regresses (e.g., Define → Discover) to gather evidence on the new framing
+   - Confidence resets to match the new framing's evidence level
+   - Add `pivot_history` entry listing old and new framings
+5. Update relevant canvas files (purpose.yml, jobs-to-be-done.yml, opportunities.yml)
+6. Do NOT archive the old framing — keep it as a pivot_history entry so future agents can see the learning
+
+### Park (inactive-pending-conditions)
+
+Use when the diamond cannot progress right now but may be revisitable later. Example: "park until I have time to do real user interviews" or "park until upstream dependency X ships."
+
+**Workflow**:
+1. State the blocking condition(s) — what would un-park this?
+2. Log decision in .claude/harness/decision-log.md with:
+   - Reason for parking
+   - Conditions for resuming
+   - Expected timeline (best guess)
+   - Theory: Goldratt ToC (constraint waiting on resolution) or Torres (evidence insufficient, acceptable to pause)
+3. Update `.claude/diamonds/active.yml`:
+   - State → `parked`
+   - Add `parked_reason`, `parked_at`, `resume_conditions` fields
+4. Parked diamonds remain in `.claude/diamonds/active.yml` but do not count against WIP limits
+5. `/mycelium:feedback-review` and `/mycelium:diamond-assess` surface parked diamonds with their resume conditions at session start
+
+### Kill (abandon with documented reason)
+
+Use when the diamond cannot be rescued via pivot or park. Example: the opportunity turned out to be imaginary (no real users, no demand), or the solution space has been exhausted, or the project direction has fundamentally changed.
+
+**Workflow**:
+1. State the reason for killing — what evidence makes this diamond dead?
+2. Confirm with user (kill is destructive) — present the reason, ask for explicit confirmation
+3. Log decision in .claude/harness/decision-log.md with:
+   - Final state of the diamond
+   - Reason for kill
+   - Alternatives considered (why not pivot, why not park?)
+   - Theory: Kahneman (sunk cost fallacy — kill is correct when evidence says continuing is worse than stopping)
+   - What we learned (the learning is the deliverable for a killed diamond)
+4. Update `.claude/diamonds/active.yml`:
+   - Move to `killed_diamonds` section (NOT deleted — canvas data is preserved)
+   - Add `killed_at`, `killed_reason`, `learnings` fields
+5. Do NOT delete canvas artifacts associated with the killed diamond — they are learning for future work
+6. Capture the learning in `.claude/memory/patterns.md` and `.claude/memory/corrections.md` as appropriate
+7. **Record cycle in `.claude/canvas/cycle-history.yml`**: Killed diamonds are terminal states. Record predicted ICE/effort, actual outcome as "killed", reason, and phase at kill. This feeds adaptive thresholds and pattern detection.
+
+### Dogfood Mode Modifier (from ${CLAUDE_PLUGIN_ROOT}/engine/canvas-guidance.yml)
+
+When the project has `dogfood: true` set, stop conditions become Mycelium learnings rather than project deaths. In dogfood mode, a killed diamond generates a dogfood report entry in `.claude/evals/dogfood-reports/` instead of only being logged as a project kill. The framework gap caught is the real deliverable.
+
+---
+
+## Learning Capture (After Every Phase Transition)
+
+After EVERY successful transition (not just Deliver->Complete):
+
+1. **Corrections**: "Were any mistakes made during this phase? I'll draft a corrections.md entry."
+2. **Patterns**: "Did anything work particularly well that's worth reusing?"
+3. **Delivery journal** (delivery phases only): "What implementation decisions and learnings should be recorded?"
+4. **Product journal** (discovery phases only): "What insights changed our understanding?"
+
+Draft entries for the user. Present for confirmation before saving. This captures learning at the moment of discovery, not retrospectively.
+
+---
+
+## Theory Citations
+- Buçinca, Malaya & Gajos: Cognitive Forcing Functions (human judges first, reduces automation bias)
+- Torres: Evidence requirements
+- Cagan: Four risks
+- Christensen: JTBD validation
+- Snowden: Cynefin classification
+- Shotton/Kahneman: Bias mitigation
+- OWASP/STRIDE: Security gates
+- GDPR/PbD: Privacy gates
+- Smart: BVSSH (now at completion, not just monthly)
+- Downe: Service quality (gated for user-facing work)
+- Forsgren: DORA metrics + testing requirements
+- EU AI Act: Regulatory classification (L3-L5)
+
+## Counter-Argument Check (Bias Mitigation)
+
+Before progressing the diamond OR signing off on a phase transition, draft a one-line counter-argument: *"What's the strongest case AGAINST this transition — what gate is borderline, what evidence is weakest, what regression risk is being underweighted?"* If you can't articulate one, run `/mycelium:devils-advocate` before proceeding.
+
+This addresses the bias cluster documented in corrections.md (L5 sycophancy 2026-04-20, eval overfitting 2026-04-30, sharper-framing-isn't-righter 2026-05-03). Common shape: agent prefers what feels right over what evidence supports under competing pressure (be helpful vs. be honest, advance vs. regress). Phase-transition reviews are the canonical context — the agent is incentivized to move forward and may underweight the case for staying or regressing.
+
+Especially important at L4→complete (DoD signoff) and L5 transitions (where the L5-sycophancy correction explicitly named promotional-language drift).

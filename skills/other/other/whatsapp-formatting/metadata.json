@@ -1,0 +1,17 @@
+{
+  "name": "whatsapp-formatting",
+  "repo": "nanocoai/nanoclaw",
+  "path": "container/skills/whatsapp-formatting/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/nanocoai/nanoclaw",
+  "dir_name": "whatsapp-formatting",
+  "downloaded_at": "2026-05-24T04:05:56.640916Z",
+  "author": "nanocoai",
+  "source_url": "https://github.com/nanocoai/nanoclaw/blob/main/container/skills/whatsapp-formatting/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nanocoai/nanoclaw/blob/main/container/skills/whatsapp-formatting/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

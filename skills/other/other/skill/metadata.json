@@ -1,0 +1,17 @@
+{
+  "name": "skill",
+  "repo": "TheStack-ai/pulser",
+  "path": "skill/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/TheStack-ai/pulser",
+  "dir_name": "skill",
+  "downloaded_at": "2026-05-24T03:48:10.107090Z",
+  "author": "TheStack-ai",
+  "source_url": "https://github.com/TheStack-ai/pulser/blob/main/skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TheStack-ai/pulser/blob/main/skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

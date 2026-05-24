@@ -1,0 +1,17 @@
+{
+  "name": "block-no-verify-hook",
+  "repo": "wshobson/agents",
+  "path": "plugins/block-no-verify/skills/block-no-verify-hook/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/wshobson/agents",
+  "dir_name": "block-no-verify-hook",
+  "downloaded_at": "2026-05-24T04:13:56.454702Z",
+  "author": "wshobson",
+  "source_url": "https://github.com/wshobson/agents/blob/main/plugins/block-no-verify/skills/block-no-verify-hook/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wshobson/agents/blob/main/plugins/block-no-verify/skills/block-no-verify-hook/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

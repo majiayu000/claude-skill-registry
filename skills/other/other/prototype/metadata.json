@@ -1,0 +1,17 @@
+{
+  "name": "prototype",
+  "repo": "joaquimscosta/arkhe-claude-plugins",
+  "path": "plugins/design-intent/skills/prototype/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/joaquimscosta/arkhe-claude-plugins",
+  "dir_name": "prototype",
+  "downloaded_at": "2026-05-24T04:00:55.533128Z",
+  "author": "joaquimscosta",
+  "source_url": "https://github.com/joaquimscosta/arkhe-claude-plugins/blob/main/plugins/design-intent/skills/prototype/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/joaquimscosta/arkhe-claude-plugins/blob/main/plugins/design-intent/skills/prototype/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

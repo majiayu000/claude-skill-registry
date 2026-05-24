@@ -1,0 +1,17 @@
+{
+  "name": "janitor-search",
+  "repo": "khendzel/skills-janitor",
+  "path": "skills/janitor-search/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/khendzel/skills-janitor",
+  "dir_name": "janitor-search",
+  "downloaded_at": "2026-05-24T04:01:40.046929Z",
+  "author": "khendzel",
+  "source_url": "https://github.com/khendzel/skills-janitor/blob/main/skills/janitor-search/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/khendzel/skills-janitor/blob/main/skills/janitor-search/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

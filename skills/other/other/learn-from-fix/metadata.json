@@ -1,0 +1,17 @@
+{
+  "name": "learn-from-fix",
+  "repo": "oliver-kriska/claude-elixir-phoenix",
+  "path": "plugins/elixir-phoenix/skills/learn-from-fix/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/oliver-kriska/claude-elixir-phoenix",
+  "dir_name": "learn-from-fix",
+  "downloaded_at": "2026-05-24T04:06:43.763924Z",
+  "author": "oliver-kriska",
+  "source_url": "https://github.com/oliver-kriska/claude-elixir-phoenix/blob/main/plugins/elixir-phoenix/skills/learn-from-fix/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oliver-kriska/claude-elixir-phoenix/blob/main/plugins/elixir-phoenix/skills/learn-from-fix/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

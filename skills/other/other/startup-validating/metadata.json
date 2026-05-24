@@ -1,0 +1,17 @@
+{
+  "name": "startup-validating",
+  "repo": "joaquimscosta/arkhe-claude-plugins",
+  "path": "plugins/startup/skills/startup-validating/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/joaquimscosta/arkhe-claude-plugins",
+  "dir_name": "startup-validating",
+  "downloaded_at": "2026-05-24T04:00:57.058770Z",
+  "author": "joaquimscosta",
+  "source_url": "https://github.com/joaquimscosta/arkhe-claude-plugins/blob/main/plugins/startup/skills/startup-validating/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/joaquimscosta/arkhe-claude-plugins/blob/main/plugins/startup/skills/startup-validating/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

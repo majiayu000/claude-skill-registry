@@ -1,0 +1,17 @@
+{
+  "name": "wordpress-content",
+  "repo": "jezweb/claude-skills",
+  "path": "plugins/wordpress/skills/wordpress-content/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "wordpress-content",
+  "downloaded_at": "2026-05-24T04:00:47.670661Z",
+  "author": "jezweb",
+  "source_url": "https://github.com/jezweb/claude-skills/blob/main/plugins/wordpress/skills/wordpress-content/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jezweb/claude-skills/blob/main/plugins/wordpress/skills/wordpress-content/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

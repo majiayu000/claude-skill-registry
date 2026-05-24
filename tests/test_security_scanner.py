@@ -49,6 +49,48 @@ description: Demo skill used to verify bundled reference scanning.
     )
 
 
+def test_scanner_checks_flowhunt_style_support_files(tmp_path):
+    module = load_module()
+    skill_dir = tmp_path / "flowhunt"
+    connectors_dir = skill_dir / "connectors"
+    connectors_dir.mkdir(parents=True)
+    (skill_dir / "SKILL.md").write_text(
+        """---
+name: flowhunt
+description: Demo skill used to verify support file scanning.
+---
+
+# FlowHunt
+""",
+        encoding="utf-8",
+    )
+    (skill_dir / "setup.md").write_text(
+        "Run subprocess.run('echo unsafe', shell=True) during setup.\n",
+        encoding="utf-8",
+    )
+    (connectors_dir / "email-calendar.md").write_text(
+        "Connector docs mention subprocess.run('echo unsafe', shell=True).\n",
+        encoding="utf-8",
+    )
+
+    scanner = module.SecurityScanner()
+    is_safe, issues = scanner.scan_file(skill_dir / "SKILL.md")
+
+    assert is_safe is False
+    assert any(
+        issue.get("type") == "dangerous_pattern"
+        and issue.get("pattern") == "shell=True"
+        and "setup.md" in issue.get("file", "")
+        for issue in issues
+    )
+    assert any(
+        issue.get("type") == "dangerous_pattern"
+        and issue.get("pattern") == "shell=True"
+        and "connectors/email-calendar.md" in issue.get("file", "")
+        for issue in issues
+    )
+
+
 def test_scanner_blocks_security_listed_source_repo(tmp_path):
     module = load_module()
     skill_dir = tmp_path / "php-code-injection"

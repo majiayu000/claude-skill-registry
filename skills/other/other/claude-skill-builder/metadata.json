@@ -1,0 +1,17 @@
+{
+  "name": "claude-skill-builder",
+  "repo": "ahundt/autorun",
+  "path": "plugins/autorun/skills/claude-skill-builder/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ahundt/autorun",
+  "dir_name": "claude-skill-builder",
+  "downloaded_at": "2026-05-24T03:50:16.368012Z",
+  "author": "ahundt",
+  "source_url": "https://github.com/ahundt/autorun/blob/main/plugins/autorun/skills/claude-skill-builder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ahundt/autorun/blob/main/plugins/autorun/skills/claude-skill-builder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

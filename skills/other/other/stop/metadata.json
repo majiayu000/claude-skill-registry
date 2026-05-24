@@ -1,0 +1,17 @@
+{
+  "name": "stop",
+  "repo": "malob/nix-config",
+  "path": "configs/claude/plugins/tts/skills/stop/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/malob/nix-config",
+  "dir_name": "stop",
+  "downloaded_at": "2026-05-24T04:03:33.204687Z",
+  "author": "malob",
+  "source_url": "https://github.com/malob/nix-config/blob/master/configs/claude/plugins/tts/skills/stop/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/malob/nix-config/blob/master/configs/claude/plugins/tts/skills/stop/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

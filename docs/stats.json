@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-05-25T02:58:30.887072Z",
-  "archive_skill_md_count_raw": 221521,
-  "archive_metadata_count_raw": 221521,
-  "indexed_skill_count_scan_shape": 221521,
-  "registry_skill_count_dedup": 156399,
+  "updated_at": "2026-05-25T05:09:39.118754Z",
+  "archive_skill_md_count_raw": 226559,
+  "archive_metadata_count_raw": 226559,
+  "indexed_skill_count_scan_shape": 226559,
+  "registry_skill_count_dedup": 156499,
   "total_plugins": 3,
   "categories": 42,
   "category_counts": [
@@ -65,12 +65,12 @@
     {
       "name": "data",
       "code": "dat",
-      "count": 48884
+      "count": 48885
     },
     {
       "name": "design",
       "code": "des",
-      "count": 13384
+      "count": 13385
     },
     {
       "name": "development",
@@ -140,7 +140,7 @@
     {
       "name": "other",
       "code": "oth",
-      "count": 53126
+      "count": 58160
     },
     {
       "name": "performance",
@@ -170,7 +170,7 @@
     {
       "name": "productivity",
       "code": "pro",
-      "count": 2953
+      "count": 2954
     },
     {
       "name": "quality",
@@ -195,7 +195,7 @@
     {
       "name": "testing",
       "code": "tst",
-      "count": 11130
+      "count": 11131
     },
     {
       "name": "travel",
@@ -218,7 +218,7 @@
       "count": 902
     }
   ],
-  "unique_repo_count": 9785,
+  "unique_repo_count": 9787,
   "official_skill_count": 0,
   "top_repositories": [
     {
@@ -231,11 +231,11 @@
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "count": 1753
+      "count": 1852
     },
     {
       "repo": "a5c-ai/babysitter",
-      "count": 1464
+      "count": 1545
     },
     {
       "repo": "plurigrid/asi",
@@ -243,11 +243,11 @@
     },
     {
       "repo": "aiskillstore/marketplace",
-      "count": 1057
+      "count": 1154
     },
     {
       "repo": "levnikolaevich/claude-code-skills",
-      "count": 1000
+      "count": 1100
     },
     {
       "repo": "melodic-software/claude-code-plugins",
@@ -266,15 +266,15 @@
   "index_size_bytes": 162,
   "index_size_gzip_bytes": 174,
   "search_shard_count": 6,
-  "search_largest_shard_bytes": 8388672,
-  "search_largest_shard_gzip_bytes": 2523755,
+  "search_largest_shard_bytes": 8388600,
+  "search_largest_shard_gzip_bytes": 2549738,
   "category_shard_count": 52,
-  "category_largest_part_bytes": 8388744,
-  "category_largest_part_gzip_bytes": 1739968,
-  "lite_index_count": 156965,
+  "category_largest_part_bytes": 8388679,
+  "category_largest_part_gzip_bytes": 1739851,
+  "lite_index_count": 157065,
   "lite_index_included_count": 5000,
   "lite_index_size_bytes": 3499776,
-  "lite_index_gzip_size_bytes": 683948,
+  "lite_index_gzip_size_bytes": 683950,
   "quality_index_size_bytes": 220,
   "quality_index_gzip_size_bytes": 213,
   "quality_shard_count": 6,
@@ -283,17 +283,17 @@
   "security_index_size_bytes": 223,
   "security_index_gzip_size_bytes": 214,
   "security_shard_count": 18,
-  "security_largest_shard_bytes": 8388697,
-  "security_largest_shard_gzip_bytes": 1637829,
+  "security_largest_shard_bytes": 8388684,
+  "security_largest_shard_gzip_bytes": 1637763,
   "ranking_index_size_bytes": 220,
   "ranking_index_gzip_size_bytes": 213,
   "ranking_shard_count": 5,
   "ranking_largest_shard_bytes": 8388672,
-  "ranking_largest_shard_gzip_bytes": 2221222,
-  "largest_generated_file_bytes": 8388744,
+  "ranking_largest_shard_gzip_bytes": 2219225,
+  "largest_generated_file_bytes": 8388684,
   "security_scan": {
-    "total": 221521,
-    "passed": 211203,
+    "total": 226559,
+    "passed": 216241,
     "failed": 10318
   }
 }

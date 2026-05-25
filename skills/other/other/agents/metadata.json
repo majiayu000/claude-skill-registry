@@ -1,0 +1,17 @@
+{
+  "name": "agents",
+  "repo": "claude-world/director-mode-lite",
+  "path": "skills/agents/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/claude-world/director-mode-lite",
+  "dir_name": "agents",
+  "downloaded_at": "2026-05-25T04:09:37.117094Z",
+  "author": "claude-world",
+  "source_url": "https://github.com/claude-world/director-mode-lite/blob/main/skills/agents/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/claude-world/director-mode-lite/blob/main/skills/agents/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

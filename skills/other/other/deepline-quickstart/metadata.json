@@ -1,0 +1,17 @@
+{
+  "name": "deepline-quickstart",
+  "repo": "getaero-io/gtm-eng-skills",
+  "path": "skills/deepline-quickstart/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/getaero-io/gtm-eng-skills",
+  "dir_name": "deepline-quickstart",
+  "downloaded_at": "2026-05-25T04:12:48.050228Z",
+  "author": "getaero-io",
+  "source_url": "https://github.com/getaero-io/gtm-eng-skills/blob/main/skills/deepline-quickstart/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/getaero-io/gtm-eng-skills/blob/main/skills/deepline-quickstart/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

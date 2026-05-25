@@ -1,0 +1,17 @@
+{
+  "name": "wireshark-analysis",
+  "repo": "zebbern/claude-code-guide",
+  "path": "skills/wireshark-analysis/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/zebbern/claude-code-guide",
+  "dir_name": "wireshark-analysis",
+  "downloaded_at": "2026-05-25T04:30:05.248681Z",
+  "author": "zebbern",
+  "source_url": "https://github.com/zebbern/claude-code-guide/blob/main/skills/wireshark-analysis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zebbern/claude-code-guide/blob/main/skills/wireshark-analysis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

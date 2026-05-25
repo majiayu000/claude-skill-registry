@@ -1,0 +1,17 @@
+{
+  "name": "oc-create-command",
+  "repo": "sequenzia/agent-alchemy",
+  "path": "claude/opencode-tools/skills/oc-create-command/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/sequenzia/agent-alchemy",
+  "dir_name": "oc-create-command",
+  "downloaded_at": "2026-05-25T04:25:09.676272Z",
+  "author": "sequenzia",
+  "source_url": "https://github.com/sequenzia/agent-alchemy/blob/main/claude/opencode-tools/skills/oc-create-command/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sequenzia/agent-alchemy/blob/main/claude/opencode-tools/skills/oc-create-command/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "21-dotnet-unit-testing",
+  "repo": "ronnythedev/dotnet-clean-architecture-skills",
+  "path": "skills/21-dotnet-unit-testing/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ronnythedev/dotnet-clean-architecture-skills",
+  "dir_name": "21-dotnet-unit-testing",
+  "downloaded_at": "2026-05-25T04:24:07.274962Z",
+  "author": "ronnythedev",
+  "source_url": "https://github.com/ronnythedev/dotnet-clean-architecture-skills/blob/main/skills/21-dotnet-unit-testing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ronnythedev/dotnet-clean-architecture-skills/blob/main/skills/21-dotnet-unit-testing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

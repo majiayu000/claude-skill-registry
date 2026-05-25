@@ -1,0 +1,17 @@
+{
+  "name": "implement-project",
+  "repo": "chrisallenlane/claude-swe-workflows",
+  "path": "skills/implement-project/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/chrisallenlane/claude-swe-workflows",
+  "dir_name": "implement-project",
+  "downloaded_at": "2026-05-25T04:09:30.884764Z",
+  "author": "chrisallenlane",
+  "source_url": "https://github.com/chrisallenlane/claude-swe-workflows/blob/master/skills/implement-project/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/chrisallenlane/claude-swe-workflows/blob/master/skills/implement-project/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

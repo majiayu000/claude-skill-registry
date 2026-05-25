@@ -1,0 +1,17 @@
+{
+  "name": "motherduck-build-dashboard",
+  "repo": "motherduckdb/agent-skills",
+  "path": "plugins/motherduck-skills/skills/motherduck-build-dashboard/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/motherduckdb/agent-skills",
+  "dir_name": "motherduck-build-dashboard-motherduckdb-agent-skills-2",
+  "downloaded_at": "2026-05-25T04:20:17.780960Z",
+  "author": "motherduckdb",
+  "source_url": "https://github.com/motherduckdb/agent-skills/blob/main/plugins/motherduck-skills/skills/motherduck-build-dashboard/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/motherduckdb/agent-skills/blob/main/plugins/motherduck-skills/skills/motherduck-build-dashboard/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

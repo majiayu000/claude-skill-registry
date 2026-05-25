@@ -1,0 +1,17 @@
+{
+  "name": "ism",
+  "repo": "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+  "path": "plugins/ism/skills/ism/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+  "dir_name": "ism",
+  "downloaded_at": "2026-05-25T04:03:19.787997Z",
+  "author": "Sushegaad",
+  "source_url": "https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/blob/main/plugins/ism/skills/ism/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/blob/main/plugins/ism/skills/ism/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

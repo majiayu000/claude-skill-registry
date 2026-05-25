@@ -1,0 +1,17 @@
+{
+  "name": "add-rtk",
+  "repo": "nanocoai/nanoclaw",
+  "path": ".claude/skills/add-rtk/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/nanocoai/nanoclaw",
+  "dir_name": "add-rtk",
+  "downloaded_at": "2026-05-25T04:21:02.872720Z",
+  "author": "nanocoai",
+  "source_url": "https://github.com/nanocoai/nanoclaw/blob/main/.claude/skills/add-rtk/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nanocoai/nanoclaw/blob/main/.claude/skills/add-rtk/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

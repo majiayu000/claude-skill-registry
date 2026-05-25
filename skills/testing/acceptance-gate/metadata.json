@@ -1,0 +1,17 @@
+{
+  "name": "acceptance-gate",
+  "repo": "ash1794/vibe-engineering",
+  "path": "skills/acceptance-gate/SKILL.md",
+  "github_branch": "master",
+  "category": "testing",
+  "source": "github.com/ash1794/vibe-engineering",
+  "dir_name": "acceptance-gate",
+  "downloaded_at": "2026-03-22T07:03:45.948779Z",
+  "author": "ash1794",
+  "source_url": "https://github.com/ash1794/vibe-engineering/blob/master/skills/acceptance-gate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ash1794/vibe-engineering/blob/master/skills/acceptance-gate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

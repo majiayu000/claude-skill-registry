@@ -1,0 +1,1023 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-25T02:04:17.301366+00:00",
+  "workset_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-41-current-other-batch-001/migration-artifacts/2026-05-25-current-other-semantic-batch-002/input.jsonl",
+  "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-41-current-other-batch-001/migration-artifacts/2026-05-25-current-other-semantic-batch-002/classification.jsonl",
+  "policy": {
+    "sample_size": 50,
+    "seed": "category-audit-v1",
+    "statuses": [
+      "ok"
+    ],
+    "min_confidence": 0.9
+  },
+  "summary": {
+    "workset_row_count": 1000,
+    "classification_row_count": 1000,
+    "matched_input_count": 1000,
+    "missing_input_count": 0,
+    "candidate_count": 415,
+    "sample_count": 50,
+    "status_counts": {
+      "ok": 995,
+      "unknown_or_inactive_category": 5
+    },
+    "target_category_counts": {
+      "agent": 99,
+      "ai-llm": 36,
+      "ai-ml": 21,
+      "analysis": 53,
+      "api": 16,
+      "audio": 2,
+      "business": 15,
+      "communication": 1,
+      "content-management": 3,
+      "context-management": 14,
+      "creative": 5,
+      "data": 53,
+      "design": 44,
+      "development": 208,
+      "devops": 22,
+      "documents": 54,
+      "domains": 2,
+      "gaming": 7,
+      "generation": 1,
+      "integration": 71,
+      "language": 2,
+      "marketing": 26,
+      "orchestration": 13,
+      "other": 36,
+      "performance": 10,
+      "personal-development": 1,
+      "planning": 7,
+      "platform": 2,
+      "product": 17,
+      "productivity": 40,
+      "quality": 38,
+      "security": 21,
+      "skills": 4,
+      "testing": 31,
+      "workflow": 22,
+      "writing": 3
+    }
+  },
+  "samples": [
+    {
+      "path": "other/add-teams-nanocoai-nanoclaw/SKILL.md",
+      "name": "add-teams",
+      "current_category": "other",
+      "llm_category": "integration",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill adds Microsoft Teams channel integration to an application, which is a cross-system service integration task.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "05c7b7cdc097167f37a81145f367273ce6c42123a8189fa55d9a534d35be7b0c",
+      "metadata_sha256": "d82b89497fb9f6894cd28a20d9db5cf4f8f2f2957e376a21d41848dca0f17bb3",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Add Microsoft Teams channel integration via Chat SDK.",
+      "content_excerpt": "---\nname: add-teams\ndescription: Add Microsoft Teams channel integration via Chat SDK.\n---\n\n# Add Microsoft Teams Channel\n\nConnect NanoClaw to Microsoft Teams for interactive chat in team channels, group chats, and direct messages.\n\n## Install\n\nNanoClaw doesn't ship channels in trunk. This skill copies the Teams adapter in from the `channels` branch.\n\n### Pre-flight (idempotent)\n\nSkip to **Credentials** if all of these are already in place:\n\n- `src/channels/teams.ts` exists\n- `src/channels/index.ts` contains `import './teams.js';`\n- `@chat-adapter/teams` is listed in `package.json` dependencies\n\nOtherwise continue. Every step below is safe to re-run.\n\n### 1. Fetch the channels branch\n\n```bash\ngit fetch origin channels\n```\n\n### 2. Copy the adapter\n\n```bash\ngit show origin/channels:src/channels/teams.ts > src/channels/teams.ts\n```\n\n### 3. Append the self-registration import\n\nAppend to `src/channels/index.ts` (skip if the line is already present):\n\n```typescript\nimport './teams.js';\n```\n\n### 4. Install the adapter package (pinned)\n\n```bash\npnpm install @chat-adapter/teams@4.27.0\n```\n\n### 5. Build\n\n```bash\npnpm run build\n```\n\n## Credentials\n\nTwo paths — manual (Azure Portal) or auto (Teams CLI).\n\n### Auto: Teams CLI\n\nRequires Node.js 18+, a Microsoft 365 account with sideloading permissions, and a public HTTPS endpoint (ngrok, Cloudflare Tunnel, or similar).\n\n1. Install the CLI:\n\n   ```bash\n   npm install -g @microsoft/teams.cli@preview\n   ```\n\n2. Sign in and verify:\n\n   ```bash\n   teams login\n   teams status\n   ```\n\n3. Create the Entra app, client secret, and bot registration:\n\n   ```bash\n   teams app create \\\n     --name \"NanoClaw\" \\\n     --endpoint \"https://your-domain/api/webhooks/teams\"\n   ```\n\n   The CLI prints the credentials as `CLIENT_ID`, `CLIENT_SECRET`, and `TENANT_ID`. Map them to NanoClaw's env keys:\n\n   - `CLIENT_ID` → `TEAMS_APP_ID`\n   - `CLIENT_SECRET` → `TEAMS_APP_PASSWORD`\n   - `TENANT_ID` → `TEAMS_APP_TENANT_ID`\n\n4. Pick **Install in Teams** from the post-create menu and confirm in the Teams dialog.\n\nContinue to [Configure environment](#configure-environment).\n\n---\n\nThe steps below describe the **manual Azure Portal path**.\n\n### Step 1: Create an Azure AD App Registration\n\n1. Go to [Azure Portal](https://portal.azure.com) > **App registrations** > **New registration**\n2. Name it (e.g., \"NanoClaw\")\n3. Supported account types: **Single tenant** (your org only) or **Multi tenant** (any org)\n4. Click **Register**\n5. Copy the **Application (clie"
+    },
+    {
+      "path": "other/accessibility-remediation-flight505-storybook-assistant-2/SKILL.md",
+      "name": "accessibility-remediation",
+      "current_category": "other",
+      "llm_category": "design",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is explicitly about accessibility remediation for components, including WCAG compliance, ARIA labels, keyboard navigation, and screen reader support, which are core aspects of UI/UX design and frontend development.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "ed5c1b96d44c6504a55deb7c82c2ff64d2d40071b217445e72f85ecfaff47539",
+      "metadata_sha256": "3ae5f4717c3de65733714ba3efdfab44e18bf6fc92b99e7a45435b9e3ade138b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "metadata"
+      },
+      "description": "Use this skill when the user writes/edits components, asks to \"fix accessibility issues\", \"add ARIA labels\", \"improve accessibility\", \"check WCAG compliance\", \"remediate a11y violations\", mentions \"screen reader support\", \"keyboard navigation\", or wants AI-powered accessibility fixes with one-click application. Automatically analyzes components for a11y issues and suggests context-aware fixes. Trigger on PostToolUse hook or explicit request.",
+      "content_excerpt": "---\ndescription: Use this skill when the user writes/edits components, asks to \"fix accessibility issues\", \"add ARIA labels\", \"improve accessibility\", \"check WCAG compliance\", \"remediate a11y violations\", mentions \"screen reader support\", \"keyboard navigation\", or wants AI-powered accessibility fixes with one-click application. Automatically analyzes components for a11y issues and suggests context-aware fixes. Trigger on PostToolUse hook or explicit request.\n---\n\n# Accessibility Remediation Skill\n\n## Overview\n\nAutomatically detect and fix accessibility issues in components with AI-powered analysis, context-aware fix suggestions, and one-click application. Goes beyond detection to provide ranked remediation options based on WCAG 2.2 best practices.\n\nThis skill transforms accessibility from a manual checklist into an automated workflow with intelligent fix suggestions.\n\n## What This Skill Provides\n\n### Real-Time Accessibility Analysis\nAutomatically check components for WCAG 2.2 violations:\n- **Missing accessible names**: Buttons, links, form inputs\n- **Color contrast**: WCAG AA (4.5:1) and AAA (7:1) compliance\n- **Keyboard navigation**: Focus management, tab order\n- **ARIA usage**: Proper roles, labels, live regions\n- **Semantic HTML**: Use of proper HTML5 elements\n- **Form accessibility**: Labels, error messages, validation\n\n### Context-Aware Fix Suggestions\nAI understands component purpose and suggests appropriate fixes:\n- **Ranked by best practice**: Best → Good → Acceptable\n- **Explains trade-offs**: Pros and cons of each approach\n- **Considers context**: Close button vs Submit button vs generic action\n- **Provides code**: Ready-to-apply fix snippets\n- **Educational**: Explains why each fix works\n\n### One-Click Application\nApply fixes instantly without manual implementation:\n- **Auto-detection**: Triggers on component creation/edit\n- **Interactive prompts**: Choose from ranked suggestions\n- **Automatic application**: Updates component code\n- **Verification**: Confirms fix resolves issue\n- **Learning system**: Remembers user preferences\n\n### WCAG 2.2 Compliance\nBuilt-in support for latest accessibility standards:\n- **Level A**: Essential accessibility (mandatory)\n- **Level AA**: Recommended compliance (standard)\n- **Level AAA**: Enhanced accessibility (optional)\n- **ARIA 1.2**: Latest ARIA patterns and practices\n- **Section 508**: US federal compliance\n\n## How It Works\n\n### Automatic Detection (PostToolUse Hook)\n\nWhen you create or edit a component, the a"
+    },
+    {
+      "path": "other/adding-animations-fusengine-agents/SKILL.md",
+      "name": "adding-animations",
+      "current_category": "other",
+      "llm_category": "design",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly about adding micro-interactions and animations using Framer Motion, which is a frontend UI/UX design concern. The description mentions 'motion design' and 'hover effects', and the content provides detailed guidance on animation patterns for components, aligning with the 'Design' category's focus on UI, UX, visual design, and interaction design.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "cd9caf86d12cc07ffb9edd109ebb1f1b1acfb16c458fa22d5efcdf458ca18ba0",
+      "metadata_sha256": "9951f777a7e647172688135cf45ee0cce7536ebcb1b578a575335854d889f5c9",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Add micro-interactions and animations using Framer Motion. Use when user asks about animations, transitions, hover effects, or motion design. MANDATORY for every component.",
+      "content_excerpt": "---\nname: adding-animations\ndescription: Add micro-interactions and animations using Framer Motion. Use when user asks about animations, transitions, hover effects, or motion design. MANDATORY for every component.\nallowed-tools: Read, Write, Edit, Glob, Grep, Task\nuser-invocable: true\n---\n\n# Adding Animations (MANDATORY)\n\nEvery component MUST have Framer Motion animations.\n\n## APEX WORKFLOW\n\n### Phase 0: ANALYZE EXISTING ANIMATIONS\n\n```\nTask: explore-codebase\nPrompt: \"Find existing Framer Motion patterns: variants, timing,\neasing, hover effects. Report animation conventions.\"\n```\n\n**RULE:** Match existing animation patterns OR propose migration.\n\n## Standard Patterns\n\n### Container + Stagger (REQUIRED)\n\n```tsx\nimport { motion } from \"framer-motion\";\n\nconst container = {\n  hidden: { opacity: 0 },\n  show: { opacity: 1, transition: { staggerChildren: 0.1 } }\n};\n\nconst item = {\n  hidden: { opacity: 0, y: 20 },\n  show: { opacity: 1, y: 0 }\n};\n\n<motion.div variants={container} initial=\"hidden\" animate=\"show\">\n  <motion.div variants={item}>Item 1</motion.div>\n  <motion.div variants={item}>Item 2</motion.div>\n</motion.div>\n```\n\n### Hover Effects (REQUIRED)\n\n```tsx\n// Card hover\n<motion.div whileHover={{ y: -4 }} transition={{ duration: 0.2 }}>\n\n// Button hover\n<motion.button\n  whileHover={{ scale: 1.02 }}\n  whileTap={{ scale: 0.98 }}\n>\n```\n\n### Scroll Animation\n\n```tsx\n<motion.div\n  initial={{ opacity: 0, y: 40 }}\n  whileInView={{ opacity: 1, y: 0 }}\n  viewport={{ once: true, margin: \"-100px\" }}\n/>\n```\n\n## Timing Guidelines\n\n| Interaction | Duration | Easing |\n|-------------|----------|--------|\n| Hover | 50-100ms | ease-out |\n| Button press | 100-150ms | ease-out |\n| Modal open | 200-300ms | ease-out |\n| Page transition | 300-400ms | ease-in-out |\n\n## FORBIDDEN\n\n```tsx\n// ❌ Random bouncing loops\nanimate={{ y: [0, -10, 0] }}\ntransition={{ repeat: Infinity }}\n\n// ❌ Excessive effects\nwhileHover={{ scale: 1.2, rotate: 5 }}\n\n// ❌ Slow animations\ntransition={{ duration: 1.5 }}\n```\n\n## Accessibility (MANDATORY)\n\n```tsx\nimport { useReducedMotion } from \"framer-motion\";\n\nfunction Component() {\n  const shouldReduce = useReducedMotion();\n  return (\n    <motion.div\n      animate={shouldReduce ? {} : { y: 0 }}\n      transition={shouldReduce ? { duration: 0 } : { duration: 0.3 }}\n    />\n  );\n}\n```\n\n## Validation\n\n```\n[ ] Existing animations analyzed (Phase 0)\n[ ] Patterns match existing OR migration proposed\n[ ] Stagger on lists/grids\n[ ] Hover on all interactive elements\n[ ] "
+    },
+    {
+      "path": "other/agent-development-helixdevelopment-helixagent-2/SKILL.md",
+      "name": "Agent Development",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Identical to candidate 0 in description and content, focusing on agent development for Claude Code plugins. The 'agent' category is the most specific and appropriate match.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "ff3324078bbeef3e214157391795360e148892e9c6735f1fc049f397aa939c80",
+      "metadata_sha256": "ea507639589f23e14d4a7765efeddb350c392dede86a365c1aec562b52852772",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "This skill should be used when the user asks to \"create an agent\", \"add an agent\", \"write a subagent\", \"agent frontmatter\", \"when to use description\", \"agent examples\", \"agent tools\", \"agent colors\", \"autonomous agent\", or needs guidance on agent structure, system prompts, triggering conditions, or agent development best practices for Claude Code plugins.",
+      "content_excerpt": "---\nname: Agent Development\ndescription: This skill should be used when the user asks to \"create an agent\", \"add an agent\", \"write a subagent\", \"agent frontmatter\", \"when to use description\", \"agent examples\", \"agent tools\", \"agent colors\", \"autonomous agent\", or needs guidance on agent structure, system prompts, triggering conditions, or agent development best practices for Claude Code plugins.\nversion: 0.1.0\n---\n\n# Agent Development for Claude Code Plugins\n\n## Overview\n\nAgents are autonomous subprocesses that handle complex, multi-step tasks independently. Understanding agent structure, triggering conditions, and system prompt design enables creating powerful autonomous capabilities.\n\n**Key concepts:**\n- Agents are FOR autonomous work, commands are FOR user-initiated actions\n- Markdown file format with YAML frontmatter\n- Triggering via description field with examples\n- System prompt defines agent behavior\n- Model and color customization\n\n## Agent File Structure\n\n### Complete Format\n\n```markdown\n---\nname: agent-identifier\ndescription: Use this agent when [triggering conditions]. Examples:\n\n<example>\nContext: [Situation description]\nuser: \"[User request]\"\nassistant: \"[How assistant should respond and use this agent]\"\n<commentary>\n[Why this agent should be triggered]\n</commentary>\n</example>\n\n<example>\n[Additional example...]\n</example>\n\nmodel: inherit\ncolor: blue\ntools: [\"Read\", \"Write\", \"Grep\"]\n---\n\nYou are [agent role description]...\n\n**Your Core Responsibilities:**\n1. [Responsibility 1]\n2. [Responsibility 2]\n\n**Analysis Process:**\n[Step-by-step workflow]\n\n**Output Format:**\n[What to return]\n```\n\n## Frontmatter Fields\n\n### name (required)\n\nAgent identifier used for namespacing and invocation.\n\n**Format:** lowercase, numbers, hyphens only\n**Length:** 3-50 characters\n**Pattern:** Must start and end with alphanumeric\n\n**Good examples:**\n- `code-reviewer`\n- `test-generator`\n- `api-docs-writer`\n- `security-analyzer`\n\n**Bad examples:**\n- `helper` (too generic)\n- `-agent-` (starts/ends with hyphen)\n- `my_agent` (underscores not allowed)\n- `ag` (too short, < 3 chars)\n\n### description (required)\n\nDefines when Claude should trigger this agent. **This is the most critical field.**\n\n**Must include:**\n1. Triggering conditions (\"Use this agent when...\")\n2. Multiple `<example>` blocks showing usage\n3. Context, user request, and assistant response in each example\n4. `<commentary>` explaining why agent triggers\n\n**Format:**\n```\nUse this agent when [conditions]. Examples:"
+    },
+    {
+      "path": "other/add-resource-events/SKILL.md",
+      "name": "add-resource-events",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill provides instructions for adding real-time event emission (SSE) to a resource service, which is a software development workflow involving coding and frameworks.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "75d24c6c93515a05a93831de271da6c0f17600aa615a2762d4f0eaed55918332",
+      "metadata_sha256": "8d21c6209f6ab0cdc6feb7cda946c7c6a41dd45ea20f1beda34b66f7332c7364",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Add real-time event emission to a resource service. Use when adding SSE/real-time capabilities to a resource. Triggers on \"add events\", \"real-time events\", \"SSE events\".",
+      "content_excerpt": "---\nname: add-resource-events\ndescription: Add real-time event emission to a resource service. Use when adding SSE/real-time capabilities to a resource. Triggers on \"add events\", \"real-time events\", \"SSE events\".\n---\n\n# Add Resource Events\n\nEnables real-time event emission for a resource service via Server-Sent Events (SSE).\n\n## Quick Reference\n\n**Event Infrastructure**:\n\n- `src/events/event-emitter.ts` - Singleton `AppEventEmitter`\n- `src/events/base.service.ts` - `BaseService` with `emitEvent()`\n- `src/schemas/event.schema.ts` - Event type definitions\n- `src/routes/events.router.ts` - SSE endpoint\n\n**Event Pattern**: `{serviceName}:{action}` (e.g., `notes:created`, `notes:updated`)\n\n## Prerequisites\n\nTo add events to a resource:\n\n1. Service must extend `BaseService` (see `create-resource-service`)\n2. Authorization methods for events in `AuthorizationService`\n\n## How It Works\n\n### 1. BaseService Provides emitEvent()\n\n```typescript\n// src/events/base.service.ts\nexport abstract class BaseService {\n  constructor(protected serviceName: string) {}\n\n  protected emitEvent<T>(\n    action: ServiceEventType[\"action\"],\n    data: T,\n    options?: {\n      id?: string;\n      user?: { userId: string; [key: string]: unknown };\n    },\n  ) {\n    appEvents.emitServiceEvent(this.serviceName, {\n      id: options?.id || uuidv4(),\n      action,\n      data,\n      user: eventUser,\n      timestamp: new Date(),\n      resourceType: this.serviceName,\n    });\n  }\n}\n```\n\n### 2. Resource Service Emits Events\n\n```typescript\nexport class NoteService extends BaseService {\n  constructor(...) {\n    super(\"notes\"); // Service name for event routing\n  }\n\n  async create(data, user) {\n    // ... create logic ...\n\n    this.emitEvent(\"created\", note, { id: note.id, user });\n\n    return note;\n  }\n\n  async update(id, data, user) {\n    // ... update logic ...\n\n    this.emitEvent(\"updated\", updatedNote, { id: updatedNote.id, user });\n\n    return updatedNote;\n  }\n\n  async delete(id, user) {\n    // ... delete logic ...\n\n    this.emitEvent(\"deleted\", note, { id: note.id, user });\n\n    return true;\n  }\n}\n```\n\n### 3. Events Router Streams to Clients\n\n```typescript\n// src/routes/events.router.ts\nappEvents.on(\"notes:created\", eventHandler);\nappEvents.on(\"notes:updated\", eventHandler);\nappEvents.on(\"notes:deleted\", eventHandler);\n```\n\n## Adding Events to a New Resource\n\n### Step 1: Extend BaseService\n\nYour service must extend `BaseService`:\n\n```typescript\nimport { BaseService } from \"@/events/base.service\";\n\n"
+    },
+    {
+      "path": "other/agent-goal-planner-finimo-solutions-research/SKILL.md",
+      "name": "agent-goal-planner",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Identical skill content to id 0. The skill is explicitly named 'agent-goal-planner' and described as an 'Agent skill'. Its core function is Goal-Oriented Action Planning (GOAP), a classic agent planning algorithm.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "1ff7062f8cc28bc304f6566c7acaa71ec13d807ea795ca951ec9d75688b5ae0e",
+      "metadata_sha256": "704176e55e6f4799192f6426e9b483e527abe197bb773e1824eab5f001da04e0",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Agent skill for goal-planner - invoke with $agent-goal-planner",
+      "content_excerpt": "---\nname: agent-goal-planner\ndescription: Agent skill for goal-planner - invoke with $agent-goal-planner\n---\n\n---\nname: goal-planner\ndescription: \"Goal-Oriented Action Planning (GOAP) specialist that dynamically creates intelligent plans to achieve complex objectives. Uses gaming AI techniques to discover novel solutions by combining actions in creative ways. Excels at adaptive replanning, multi-step reasoning, and finding optimal paths through complex state spaces.\"\ncolor: purple\n---\n\nYou are a Goal-Oriented Action Planning (GOAP) specialist, an advanced AI planner that uses intelligent algorithms to dynamically create optimal action sequences for achieving complex objectives. Your expertise combines gaming AI techniques with practical software engineering to discover novel solutions through creative action composition.\n\nYour core capabilities:\n- **Dynamic Planning**: Use A* search algorithms to find optimal paths through state spaces\n- **Precondition Analysis**: Evaluate action requirements and dependencies\n- **Effect Prediction**: Model how actions change world state\n- **Adaptive Replanning**: Adjust plans based on execution results and changing conditions\n- **Goal Decomposition**: Break complex objectives into achievable sub-goals\n- **Cost Optimization**: Find the most efficient path considering action costs\n- **Novel Solution Discovery**: Combine known actions in creative ways\n- **Mixed Execution**: Blend LLM-based reasoning with deterministic code actions\n- **Tool Group Management**: Match actions to available tools and capabilities\n- **Domain Modeling**: Work with strongly-typed state representations\n- **Continuous Learning**: Update planning strategies based on execution feedback\n\nYour planning methodology follows the GOAP algorithm:\n\n1. **State Assessment**:\n   - Analyze current world state (what is true now)\n   - Define goal state (what should be true)\n   - Identify the gap between current and goal states\n\n2. **Action Analysis**:\n   - Inventory available actions with their preconditions and effects\n   - Determine which actions are currently applicable\n   - Calculate action costs and priorities\n\n3. **Plan Generation**:\n   - Use A* pathfinding to search through possible action sequences\n   - Evaluate paths based on cost and heuristic distance to goal\n   - Generate optimal plan that transforms current state to goal state\n\n4. **Execution Monitoring** (OODA Loop):\n   - **Observe**: Monitor current state and execution progress\n   - **Orient**: Analyze "
+    },
+    {
+      "path": "other/ace-tool-dianel555-dskills/SKILL.md",
+      "name": "ace-tool",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill provides semantic codebase search, code indexing, and prompt enhancement for software development workflows. It is designed to assist with code navigation, understanding, and development tasks.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "8d3ed0f4e7b20016df97aaf9373508829da590b697c1063a66b6405f72912c2c",
+      "metadata_sha256": "efabf048047929d0f0f23a9abfefe902966e31684dd59c0ab1ed907c6517ccd6",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Semantic codebase search, code indexing, and prompt enhancement via standalone CLI. Use when: (1) Semantic code search with natural language queries, (2) Code indexing for remote codebase retrieval, (3) Prompt enhancement with codebase context, (4) Before grep/find/glob operations for better accuracy, (5) Complex requirements clarification, (6) Large codebase navigation. Triggers: \"search context\", \"enhance prompt\", \"find code that\", \"index project\", \"clarify requirements\". IMPORTANT: Always use ace-tool BEFORE grep/find/glob for semantic-level code location.",
+      "content_excerpt": "---\nname: ace-tool\ndescription: |\n  Semantic codebase search, code indexing, and prompt enhancement via standalone CLI. Use when: (1) Semantic code search with natural language queries, (2) Code indexing for remote codebase retrieval, (3) Prompt enhancement with codebase context, (4) Before grep/find/glob operations for better accuracy, (5) Complex requirements clarification, (6) Large codebase navigation. Triggers: \"search context\", \"enhance prompt\", \"find code that\", \"index project\", \"clarify requirements\". IMPORTANT: Always use ace-tool BEFORE grep/find/glob for semantic-level code location.\n---\n\n# ACE-Tool - Semantic Code Search & Prompt Enhancement\n\nHigh-performance semantic search, code indexing, and AI-powered prompt enhancement. Standalone CLI (no MCP dependency).\n\n## Execution Methods\n\n```bash\n# Prerequisites: pip install httpx tenacity\n# Environment: ACE_API_URL, ACE_API_TOKEN (optional for local fallback)\n\n# Index project for remote search (upload code blobs to ACE service)\npython scripts/ace_cli.py index -p /path/to/project\n\n# Search codebase with natural language (remote if API configured, else local fallback)\npython scripts/ace_cli.py search_context -p /path/to/project -q \"function that handles authentication\"\n\n# Enhance prompt (interactive mode - default, opens browser)\npython scripts/ace_cli.py enhance_prompt -p \"implement login feature\" -H \"User: what auth method?\\nAssistant: JWT\"\n\n# Enhance prompt (non-interactive, JSON output)\npython scripts/ace_cli.py enhance_prompt --no-interactive -p \"implement login feature\"\n\n# Enhance prompt with project context (enables cloud retrieval for all endpoints)\npython scripts/ace_cli.py enhance_prompt -p \"implement login feature\" --project-root /path/to/project\n\n# Enhance prompt with specific endpoint\npython scripts/ace_cli.py --endpoint claude enhance_prompt -p \"implement login feature\"\n\n# Check configuration\npython scripts/ace_cli.py get_config\n```\n\n## Tool Routing Policy\n\n### Prefer ACE-Tool Over Built-in Tools\n\n| Task | Avoid | Use ACE-Tool CLI |\n|------|-------|------------------|\n| Find function by purpose | `grep \"def func\"` | `search_context -q \"function that...\"` |\n| Locate feature code | `find . -name \"*.py\"` | `search_context -q \"feature description\"` |\n| Clarify requirements | Manual analysis | `enhance_prompt -p \"requirement\"` |\n| Understand code flow | Multiple grep/read | `search_context -q \"flow description\"` |\n| Index codebase | N/A | `index -p <project_root>` |\n\n### When to Use Built-in "
+    },
+    {
+      "path": "other/add-teams/SKILL.md",
+      "name": "add-teams",
+      "current_category": "other",
+      "llm_category": "integration",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill adds a Microsoft Teams connector to a Power Apps application, which is a cross-system service integration task.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "e21c21ee24ce578f6087ecdc4de183a79420efc4658c3cd03864b0e925a040ce",
+      "metadata_sha256": "553b3103bcca1e495b53848f2cca66127263d459728c1ad96b4fb5bb34647f30",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Adds Microsoft Teams connector to a Power Apps code app. Use when sending Teams messages, posting to channels, or integrating with Teams chat.",
+      "content_excerpt": "---\nname: add-teams\ndescription: Adds Microsoft Teams connector to a Power Apps code app. Use when sending Teams messages, posting to channels, or integrating with Teams chat.\nuser-invocable: true\nallowed-tools: Read, Edit, Write, Grep, Glob, Bash, LSP, TaskCreate, TaskUpdate, TaskList, TaskGet, AskUserQuestion, Skill\nmodel: sonnet\n---\n\n**📋 Shared Instructions: [shared-instructions.md](${CLAUDE_PLUGIN_ROOT}/shared/shared-instructions.md)** - Cross-cutting concerns.\n\n# Add Teams\n\n## Workflow\n\n1. Check Memory Bank → 2. Add Connector → 3. Configure → 4. Build → 5. Update Memory Bank\n\n---\n\n### Step 1: Check Memory Bank\n\nCheck for `memory-bank.md` per [shared-instructions.md](${CLAUDE_PLUGIN_ROOT}/shared/shared-instructions.md).\n\n### Step 2: Add Connector\n\n**First, find the connection ID** (see [connector-reference.md](${CLAUDE_PLUGIN_ROOT}/shared/connector-reference.md)):\n\nRun the `/list-connections` skill. Find the Teams connection in the output. If none exists, direct the user to create one using the environment-specific Connections URL — construct it from the active environment ID in context (from `power.config.json` or a prior step): `https://make.powerapps.com/environments/<environment-id>/connections` → **+ New connection** → search for the connector → Create.\n\n```bash\nnpx power-apps add-data-source -a teams -c <connection-id>\n```\n\n### Step 3: Configure\n\nAsk the user what Teams operations they need (send message, post to channel, etc.).\n\n**PostMessageToConversation** -- sends a chat message via Flow bot:\n\n```typescript\nawait TeamsService.PostMessageToConversation({\n  \"Post as\": \"Flow bot\",\n  \"Post in\": \"Chat with Flow bot\",\n  \"Post message request\": {\n    recipient: \"<recipient-upn-or-id>\", // UPN or Entra object ID\n    messageBody: \"<p>HTML message</p>\", // HTML format\n    isAlert: false,\n    feedbackLoopEnabled: false\n  }\n});\n```\n\nUse `Grep` to find specific methods in `src/generated/services/TeamsService.ts` (generated files can be very large -- see [connector-reference.md](${CLAUDE_PLUGIN_ROOT}/shared/connector-reference.md#inspecting-large-generated-files)).\n\n### Step 4: Build\n\n```bash\nnpm run build\n```\n\nFix TypeScript errors before proceeding. Do NOT deploy yet.\n\n### Step 5: Update Memory Bank\n\nUpdate `memory-bank.md` with: connector added, configured operations, build status.\n"
+    },
+    {
+      "path": "other/accessibility-testing-vuralserhat86-antigravity-agentic--2/SKILL.md",
+      "name": "accessibility_testing",
+      "current_category": "other",
+      "llm_category": "testing",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is a guide for conducting comprehensive accessibility audits to identify WCAG compliance issues, which is a form of testing and quality assurance.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "7c4948f6cc264e9485c8612390d71a2fb3ed91eddace1aae981fdfa66bf50da0",
+      "metadata_sha256": "86acb5ffe088d7f431a658a8cfd2ec0badc78488178d5f46b371fe0a07986f44",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Guide for conducting comprehensive accessibility audits of code to identify WCAG compliance issues and barriers to inclusive design. This skill should be used when reviewing accessibility, ARIA implementation, keyboard navigation, or screen reader compatibility.",
+      "content_excerpt": "---\nname: accessibility_testing\nrouter_kit: FullStackKit\ndescription: Guide for conducting comprehensive accessibility audits of code to identify WCAG compliance issues and barriers to inclusive design. This skill should be used when reviewing accessibility, ARIA implementation, keyboard navigation, or screen reader compatibility.\nmetadata:\n  skillport:\n    category: auto-healed\n    tags: [a11y, accessibility testing, architecture, aria, automation, best practices, clean code, coding, collaboration, compliance, debugging, design patterns, development, documentation, efficiency, git, optimization, productivity, programming, project management, quality assurance, refactoring, screen reader, software engineering, standards, testing, utilities, version control, wcag, workflow]\n---\n\n# Accessibility Audit Skill\n\nYou are an elite Accessibility Scanner with expert knowledge of WCAG standards and inclusive design. Your goal is to analyze the provided context (codebase, screenshots, accessibility tree, HTML) and produce comprehensive accessibility audits following strict formatting requirements.\n\n## When to Use This Skill\n\nInvoke this skill when:\n- Auditing applications for WCAG 2.1 or 2.2 compliance (codebase or URL)\n- Reviewing new features for accessibility requirements\n- Investigating accessibility issues reported by users\n- Preparing for accessibility compliance certification\n- Evaluating keyboard navigation and focus management\n- Assessing screen reader compatibility\n- Analyzing color contrast and visual accessibility\n- Reviewing ARIA implementation in custom components\n- Conducting form accessibility audits\n- Evaluating responsive and mobile accessibility\n- Performing visual accessibility testing on live websites (with Playwright MCP)\n\n## Core Accessibility Expertise\n\n### 1. Semantic HTML & Document Structure\n\nTo identify document structure issues, examine:\n- Heading hierarchy (h1-h6) for proper nesting without level skipping\n- Semantic elements (nav, main, footer, article, section, aside) vs generic divs/spans\n- Landmark regions for screen reader navigation\n- Logical reading order in DOM matching visual order\n- Page structure providing clear content organization\n\n**Key Rules:**\n- Every page must have exactly one h1 element\n- Headings should not skip levels (correct: h1 → h2 → h3, incorrect: h1 → h3)\n- Use semantic HTML elements for their intended purpose, not just for styling\n- Landmark regions should be unique and properly labeled\n- DOM order should match v"
+    },
+    {
+      "path": "other/action-development-datamaker-kr-synapse-claude-marke-2/SKILL.md",
+      "name": "synapse-action-development",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill explains how to create Synapse plugin actions, covering function-based and class-based patterns, decorators, parameters, and code examples. This is squarely about software development workflows and coding.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "4f98d92a49512cc193a02b771ee80c7b1954bb9c686542ec1256a3aaaf76bc14",
+      "metadata_sha256": "b4293bbf0b4aaa0e3d0045a2f71a1f3c87cd4d4ecede915abe52cee082c7ddb7",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Explains how to create Synapse plugin actions. Use when the user asks to \"create an action\", \"write an action\", uses \"@action decorator\", \"BaseAction class\", \"function-based action\", \"class-based action\", \"Pydantic params\", \"ActionPipeline\", \"DataType\", \"input_type\", \"output_type\", \"semantic types\", \"YOLODataset\", \"ModelWeights\", \"pipeline chaining\", or needs help with synapse plugin action development.",
+      "content_excerpt": "---\nname: synapse-action-development\ndescription: Explains how to create Synapse plugin actions. Use when the user asks to \"create an action\", \"write an action\", uses \"@action decorator\", \"BaseAction class\", \"function-based action\", \"class-based action\", \"Pydantic params\", \"ActionPipeline\", \"DataType\", \"input_type\", \"output_type\", \"semantic types\", \"YOLODataset\", \"ModelWeights\", \"pipeline chaining\", or needs help with synapse plugin action development.\n---\n\n# Synapse Action Development\n\nSynapse SDK provides two patterns for plugin actions: **function-based** (simple, stateless) and **class-based** (complex, stateful).\n\n## Quick Start: Function-Based Action\n\n```python\nfrom pydantic import BaseModel\nfrom synapse_sdk.plugins.decorators import action\nfrom synapse_sdk.plugins.context import RuntimeContext\n\nclass TrainParams(BaseModel):\n    epochs: int = 10\n    learning_rate: float = 0.001\n\n@action(name='train', description='Train a model', params=TrainParams)\ndef train(params: TrainParams, ctx: RuntimeContext) -> dict:\n    for epoch in range(params.epochs):\n        ctx.set_progress(epoch + 1, params.epochs)\n    return {'status': 'completed'}\n```\n\n## Quick Start: Class-Based Action\n\n```python\nfrom pydantic import BaseModel\nfrom synapse_sdk.plugins.action import BaseAction\n\nclass InferParams(BaseModel):\n    model_path: str\n    threshold: float = 0.5\n\nclass InferAction(BaseAction[InferParams]):\n    action_name = 'inference'\n\n    def execute(self) -> dict:\n        self.set_progress(0, 100)\n        # Implementation here\n        return {'predictions': []}\n```\n\n## When to Use Each Pattern\n\n| Criteria | Function-Based | Class-Based |\n|----------|----------------|-------------|\n| Complexity | Simple, single-purpose | Complex, multi-step |\n| State | Stateless | Can use helper methods |\n| Semantic types | Limited | Full support |\n\n**Recommendation**: Start with function-based. Use class-based when needing helper methods or semantic type declarations.\n\n## @action Decorator Parameters\n\n| Parameter | Required | Description |\n|-----------|----------|-------------|\n| `name` | No | Action name (defaults to function name) |\n| `description` | No | Human-readable description |\n| `params` | No | Pydantic model for parameter validation |\n| `result` | No | Pydantic model for result validation |\n| `category` | No | PluginCategory for grouping |\n\n### Category Parameter Examples\n\n```python\nfrom synapse_sdk.plugins.decorators import action\nfrom synapse_sdk.plugins.constants import Plugin"
+    },
+    {
+      "path": "other/additive-bias-defense/SKILL.md",
+      "name": "additive-bias-defense",
+      "current_category": "other",
+      "llm_category": "quality",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is explicitly about code quality and review processes, inverting burden of proof for code additions to prevent unnecessary complexity and bloat.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "8ff8e0e74fc60e428e4465ccda3f30ff473948a1c1f8106a610a07a576644f69",
+      "metadata_sha256": "4e61bca0aaea8a6784520f153cd74985ce17dbff5f58f3870ec7e28a2f68476b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "Inverts burden of proof for code additions.",
+      "content_excerpt": "---\nname: additive-bias-defense\ndescription: 'Inverts burden of proof for code additions.'\nalwaysApply: false\ncategory: quality-contract\ntags:\n- additive-bias\n- burden-of-proof\n- scrutiny\n- cross-cutting\n- defense\ndependencies: []\ntools: []\nprovides:\n  guidance:\n  - additive-bias-scrutiny\n  - burden-of-proof-verdict\nusage_patterns:\n- plan-review\n- pr-review\n- code-refinement\n- unbloat\ncomplexity: foundational\nmodel_hint: standard\nestimated_tokens: 800\nrole: library\n---\n\n> The default answer to \"should we add this?\" is no.\n> The burden of proof is on the addition.\n\n# Additive Bias Defense\n\n> **Note (#444):** Frontmatter declares ``provides.guidance``, not\n> ``provides.contract``. The scrutiny questions are consumed by\n> partner skills (``pensive:code-refinement``, ``conserve:unbloat``,\n> ``imbue:scope-guard``) that voluntarily embed them; no validator or\n> hook in leyline enforces them directly. If a future contributor\n> adds enforcement, restore the ``contract`` label and link the\n> validator path here.\n\n## The Problem\n\nLLMs are additive by nature. They reinvent wheels, add\nunnecessary complexity, hallucinate issues and modify\ntests to justify them, and deviate from priorities. This\ncontract provides a systemic defense.\n\n## The Scrutiny Questions\n\nApplied to every proposed addition -- code, files,\nabstractions, error handling, configuration:\n\n1. **Priority alignment**: Is this a deviation from the\n   current priority?\n2. **Criticality**: Is it critical to implement at this\n   juncture?\n3. **Simplicity**: Does a simpler or more elegant\n   solution exist?\n4. **Evidence**: What evidence proves this is needed\n   (not assumed)?\n5. **Consequence**: What breaks if we do not add this?\n\nIf the proposer cannot answer questions 4 and 5 with\nconcrete evidence, the addition is unjustified.\n\n## Anti-Pattern Detection\n\n| Pattern | Signal | Challenge |\n|---------|--------|-----------|\n| Wheel reinvention | New utility/helper overlapping existing code | \"Does X already do this?\" |\n| Hallucinated issues | Fix for a bug with no reproduction evidence | \"Show the failing test before the fix\" |\n| Test manipulation | Test changed to match behavior rather than spec | \"Did the spec change, or did you change the test?\" |\n| Complexity creep | Abstraction introduced for single use case | \"Is this the 3rd use, or the 1st?\" |\n| Priority deviation | Work not traceable to current task/spec | \"Which requirement does this serve?\" |\n| Gold plating | Error handling or flexibility beyond need"
+    },
+    {
+      "path": "other/7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d/SKILL.md",
+      "name": "file-organizer",
+      "current_category": "other",
+      "llm_category": "productivity",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill automates file organization, reduces cognitive load, and maintains digital workspace tidiness, which aligns with personal/team workflow automation and task management.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "a8b91952bab7f73511db68149c4a54672b40699903a8e35ed5044c3e3039ded5",
+      "metadata_sha256": "a4af541f9f5f9242c7bedfe1cf9b1545febec631f053e071da8b80cc0f4d7250",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Intelligently organizes your files and folders across your computer by understanding context, finding duplicates, suggesting better structures, and automating cleanup tasks. Reduces cognitive load and keeps your digital workspace tidy without manual effort.",
+      "content_excerpt": "---\nname: file-organizer\ndescription: Intelligently organizes your files and folders across your computer by understanding context, finding duplicates, suggesting better structures, and automating cleanup tasks. Reduces cognitive load and keeps your digital workspace tidy without manual effort.\n---\n\n# File Organizer\n\nThis skill acts as your personal organization assistant, helping you maintain a clean, logical file structure across your computer without the mental overhead of constant manual organization.\n\n## When to Use This Skill\n\n- Your Downloads folder is a chaotic mess\n- You can't find files because they're scattered everywhere\n- You have duplicate files taking up space\n- Your folder structure doesn't make sense anymore\n- You want to establish better organization habits\n- You're starting a new project and need a good structure\n- You're cleaning up before archiving old projects\n\n## What This Skill Does\n\n1. **Analyzes Current Structure**: Reviews your folders and files to understand what you have\n2. **Finds Duplicates**: Identifies duplicate files across your system\n3. **Suggests Organization**: Proposes logical folder structures based on your content\n4. **Automates Cleanup**: Moves, renames, and organizes files with your approval\n5. **Maintains Context**: Makes smart decisions based on file types, dates, and content\n6. **Reduces Clutter**: Identifies old files you probably don't need anymore\n\n## How to Use\n\n### From Your Home Directory\n\n```\ncd ~\n```\n\nThen run Claude Code and ask for help:\n\n```\nHelp me organize my Downloads folder\n```\n\n```\nFind duplicate files in my Documents folder\n```\n\n```\nReview my project directories and suggest improvements\n```\n\n### Specific Organization Tasks\n\n```\nOrganize these downloads into proper folders based on what they are\n```\n\n```\nFind duplicate files and help me decide which to keep\n```\n\n```\nClean up old files I haven't touched in 6+ months\n```\n\n```\nCreate a better folder structure for my [work/projects/photos/etc]\n```\n\n## Instructions\n\nWhen a user requests file organization help:\n\n1. **Understand the Scope**\n   \n   Ask clarifying questions:\n   - Which directory needs organization? (Downloads, Documents, entire home folder?)\n   - What's the main problem? (Can't find things, duplicates, too messy, no structure?)\n   - Any files or folders to avoid? (Current projects, sensitive data?)\n   - How aggressively to organize? (Conservative vs. comprehensive cleanup)\n\n2. **Analyze Current State**\n   \n   Review the target directory:"
+    },
+    {
+      "path": "other/agent-communication-protocol-enuno-claude-command-and-c-2/SKILL.md",
+      "name": "agent-communication-protocol",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill defines an open protocol for AI agent interoperability and communication, which is a foundational agent infrastructure concern.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "044a774d77ce5d9759a9a402f7709624cdf3198533cdfaab1c36022e635eb339",
+      "metadata_sha256": "3b02936ab0a170439404768e25dd97403abcdb0bd98c09ca4a3087555737852b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "Open protocol for AI agent interoperability enabling standardized communication between agents, applications, and humans across different frameworks",
+      "content_excerpt": "---\nname: agent-communication-protocol\ndescription: Open protocol for AI agent interoperability enabling standardized communication between agents, applications, and humans across different frameworks\nversion: 1.1.0\ntags: [acp, agents, interoperability, protocol, rest-api, python-sdk, multi-agent, beeai, linux-foundation, orchestration, agentic-workflows]\n---\n\n# Agent Communication Protocol (ACP)\n\nACP is an open protocol for agent interoperability that solves the growing challenge of connecting AI agents, applications, and humans. It enables standardized communication across different frameworks and infrastructures.\n\n## Key Features\n\n- **REST-Based Design** - Straightforward HTTP endpoints (not JSON-RPC)\n- **Multi-Modal** - Supports text, images, audio, video, and any MIME type\n- **Async-First** - Built primarily for asynchronous communication with sync support\n- **Streaming** - Real-time Server-Sent Events (SSE) for incremental updates\n- **Stateful/Stateless** - Sessions for maintaining state across interactions\n- **Offline Discovery** - Agents remain discoverable through embedded metadata\n- **Framework Agnostic** - Works with BeeAI, LangGraph, CrewAI, LlamaIndex, and more\n\n## Installation\n\n```bash\n# Create new project with uv\nuv init --python '>=3.11' my_acp_project\ncd my_acp_project\n\n# Add ACP SDK\nuv add acp-sdk\n\n# Or with pip\npip install acp-sdk\n```\n\n## Quick Start: Creating an Agent\n\n### Basic Echo Agent\n\n```python\nimport asyncio\nfrom collections.abc import AsyncGenerator\n\nfrom acp_sdk.models import Message\nfrom acp_sdk.server import Context, RunYield, RunYieldResume, Server\n\nserver = Server()\n\n@server.agent()\nasync def echo(\n    input: list[Message], context: Context\n) -> AsyncGenerator[RunYield, RunYieldResume]:\n    \"\"\"Echoes everything\"\"\"\n    for message in input:\n        await asyncio.sleep(0.5)\n        yield {\"thought\": \"I should echo everything\"}\n        await asyncio.sleep(0.5)\n        yield message\n\nserver.run()\n```\n\nRun with:\n```bash\nuv run agent.py\n```\n\nServer starts at `http://localhost:8000`.\n\n### Agent with Metadata\n\n```python\n@server.agent(\n    name=\"data-analyzer\",\n    description=\"Analyzes datasets and generates insights\"\n)\nasync def DataAnalyzerAgent(\n    input: list[Message], context: Context\n) -> AsyncGenerator[RunYield, RunYieldResume]:\n    # Implementation\n    yield str(response.object)\n```\n\n## Agent Manifest\n\nThe Agent Manifest describes agent properties for discovery and interoperability.\n\n### Required Fields\n\n| Field | Descript"
+    },
+    {
+      "path": "other/accelerate-zechenzhangagi-ai-research-skills-2/SKILL.md",
+      "name": "huggingface-accelerate",
+      "current_category": "other",
+      "llm_category": "ai-ml",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Same skill as id 0 - distributed training API for PyTorch, which is a core machine learning framework. It simplifies multi-GPU training, mixed precision, and device placement - all ML infrastructure concerns.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "e94cea7a174f395df02d935065fe05db8ecb637c52e443b6380c703963758d7a",
+      "metadata_sha256": "86b2169e900332ee6fb9ca0de9a62c0e7b875231a3ef5a3ad002576cb853f29a",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "Simplest distributed training API. 4 lines to add distributed support to any PyTorch script. Unified API for DeepSpeed/FSDP/Megatron/DDP. Automatic device placement, mixed precision (FP16/BF16/FP8). Interactive config, single launch command. HuggingFace ecosystem standard.",
+      "content_excerpt": "---\nname: huggingface-accelerate\ndescription: Simplest distributed training API. 4 lines to add distributed support to any PyTorch script. Unified API for DeepSpeed/FSDP/Megatron/DDP. Automatic device placement, mixed precision (FP16/BF16/FP8). Interactive config, single launch command. HuggingFace ecosystem standard.\nversion: 1.0.0\nauthor: Orchestra Research\nlicense: MIT\ntags: [Distributed Training, HuggingFace, Accelerate, DeepSpeed, FSDP, Mixed Precision, PyTorch, DDP, Unified API, Simple]\ndependencies: [accelerate, torch, transformers]\n---\n\n# HuggingFace Accelerate - Unified Distributed Training\n\n## Quick start\n\nAccelerate simplifies distributed training to 4 lines of code.\n\n**Installation**:\n```bash\npip install accelerate\n```\n\n**Convert PyTorch script** (4 lines):\n```python\nimport torch\n+ from accelerate import Accelerator\n\n+ accelerator = Accelerator()\n\n  model = torch.nn.Transformer()\n  optimizer = torch.optim.Adam(model.parameters())\n  dataloader = torch.utils.data.DataLoader(dataset)\n\n+ model, optimizer, dataloader = accelerator.prepare(model, optimizer, dataloader)\n\n  for batch in dataloader:\n      optimizer.zero_grad()\n      loss = model(batch)\n-     loss.backward()\n+     accelerator.backward(loss)\n      optimizer.step()\n```\n\n**Run** (single command):\n```bash\naccelerate launch train.py\n```\n\n## Common workflows\n\n### Workflow 1: From single GPU to multi-GPU\n\n**Original script**:\n```python\n# train.py\nimport torch\n\nmodel = torch.nn.Linear(10, 2).to('cuda')\noptimizer = torch.optim.Adam(model.parameters())\ndataloader = torch.utils.data.DataLoader(dataset, batch_size=32)\n\nfor epoch in range(10):\n    for batch in dataloader:\n        batch = batch.to('cuda')\n        optimizer.zero_grad()\n        loss = model(batch).mean()\n        loss.backward()\n        optimizer.step()\n```\n\n**With Accelerate** (4 lines added):\n```python\n# train.py\nimport torch\nfrom accelerate import Accelerator  # +1\n\naccelerator = Accelerator()  # +2\n\nmodel = torch.nn.Linear(10, 2)\noptimizer = torch.optim.Adam(model.parameters())\ndataloader = torch.utils.data.DataLoader(dataset, batch_size=32)\n\nmodel, optimizer, dataloader = accelerator.prepare(model, optimizer, dataloader)  # +3\n\nfor epoch in range(10):\n    for batch in dataloader:\n        # No .to('cuda') needed - automatic!\n        optimizer.zero_grad()\n        loss = model(batch).mean()\n        accelerator.backward(loss)  # +4\n        optimizer.step()\n```\n\n**Configure** (interactive):\n```bash\naccelerate config\n```\n\n**Questions**:\n-"
+    },
+    {
+      "path": "other/ad-copy-generator-nicepkg-ai-workflow-2/SKILL.md",
+      "name": "ad-copy-generator",
+      "current_category": "other",
+      "llm_category": "marketing",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill generates ad copy for various advertising platforms (Google Ads, Meta, LinkedIn, TikTok) with A/B testing variations, which is a core marketing function.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "3bf4f2f3fde5707dd1e76b2abc1f120b6bac9a56c37880a6c10d745ab274ea97",
+      "metadata_sha256": "64b39af6b47a63ec72436a7c6921480d4d1034098dc5d958fcc78ff5cb0906d7",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Generate high-converting ad copy for Google Ads, Meta (Facebook/Instagram), LinkedIn, and TikTok. Creates multiple variations with A/B testing in mind. Includes headlines, descriptions, CTAs, and platform-specific formats. Use when creating ads, generating ad variations, or A/B testing ad copy.",
+      "content_excerpt": "---\nname: ad-copy-generator\ndescription: Generate high-converting ad copy for Google Ads, Meta (Facebook/Instagram), LinkedIn, and TikTok. Creates multiple variations with A/B testing in mind. Includes headlines, descriptions, CTAs, and platform-specific formats. Use when creating ads, generating ad variations, or A/B testing ad copy.\n---\n\n# Ad Copy Generator\n\nGenerate platform-optimized advertising copy with multiple variations for A/B testing.\n\n## Supported Platforms\n\n| Platform | Ad Types | Key Constraints |\n|----------|----------|-----------------|\n| Google Ads | Search, Display, YouTube | Headlines 30 chars, Descriptions 90 chars |\n| Meta (FB/IG) | Image, Video, Carousel, Stories | Primary text 125 chars, Headline 40 chars |\n| LinkedIn | Sponsored Content, Message Ads, Text Ads | Intro 150 chars, Headline 70 chars |\n| TikTok | In-Feed, TopView, Spark | Text 100 chars, CTA driven |\n\n## How to Use\n\n### Basic Usage\n\n```\nGenerate 5 Google Ads variations for a project management SaaS targeting startups\n```\n\n```\nCreate Meta ad copy for a B2B lead generation campaign about [product]\n```\n\n```\nWrite LinkedIn ads for promoting a webinar about [topic]\n```\n\n### Advanced Usage\n\n```\nCreate an A/B test framework with 10 headline variations and 5 description variations for:\n- Product: [description]\n- Target: [audience]\n- Goal: [conversions/awareness/leads]\n- USP: [unique selling point]\n```\n\n## Output Format\n\n### Google Ads (Responsive Search Ads)\n\n```\nCAMPAIGN: [Campaign Name]\nTARGET AUDIENCE: [Description]\nGOAL: [Conversions/Clicks/Awareness]\n\nHEADLINES (15 required, 30 chars max each):\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nValue Props (5):\n1. [Headline] (XX chars)\n2. [Headline] (XX chars)\n...\n\nFeatures (5):\n6. [Headline] (XX chars)\n...\n\nSocial Proof (3):\n11. [Headline] (XX chars)\n...\n\nCTAs (2):\n14. [Headline] (XX chars)\n15. [Headline] (XX chars)\n\nDESCRIPTIONS (4 required, 90 chars max each):\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nD1: [Primary value prop + CTA] (XX chars)\nD2: [Feature list + differentiator] (XX chars)\nD3: [Social proof + urgency] (XX chars)\nD4: [Backup generic] (XX chars)\n\nRECOMMENDED PINNING:\n- Pin H1 to Position 1: [Best headline]\n- Pin D1 to Position 1: [Best description]\n```\n\n### Meta Ads (Facebook/Instagram)\n\n```\nCAMPAIGN: [Campaign Name]\nOBJECTIVE: [Traffic/Conversions/Lead Gen]\nPLACEMENT: [Feed/Stories/Reels]\n\nVARIATION 1:\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nPrimary Text (125 chars for above-fold):\n[Copy that hooks immediately]\n\nHea"
+    },
+    {
+      "path": "other/80-livekit-agents/SKILL.md",
+      "name": "80-livekit-agents",
+      "current_category": "other",
+      "llm_category": "ai-llm",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill is about building a LiveKit Agents skill for voice AI, which involves AI/LLM agent development and voice agent architecture.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "a8c69db7d4d85f9c055381100f4b0e6176675037f189ab730af36e08ea4e6eca",
+      "metadata_sha256": "2a3d95596a1eb50e8acb7af822ceb0f5b8ec50b39f9d6d2f3d8943bfa4fd7199",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "metadata"
+      },
+      "description": "Create your LiveKit Agents skill from official documentation, then learn to improve it throughout the chapter",
+      "content_excerpt": "---\nsidebar_position: 0\ntitle: \"Build Your LiveKit Agents Skill\"\ndescription: \"Create your LiveKit Agents skill from official documentation, then learn to improve it throughout the chapter\"\nkeywords: [livekit, agents, voice ai, realtime, skill-first, chatgpt voice]\nchapter: 80\nlesson: 0\nduration_minutes: 30\n\nskills:\n  - name: \"Skill-First Learning\"\n    proficiency_level: \"B1\"\n    category: \"Applied\"\n    bloom_level: \"Apply\"\n    digcomp_area: \"3. Digital Content Creation\"\n    measurable_at_this_level: \"Student creates a working LiveKit Agents skill using natural language\"\n\n  - name: \"Voice Agent Architecture\"\n    proficiency_level: \"A2\"\n    category: \"Conceptual\"\n    bloom_level: \"Understand\"\n    digcomp_area: \"1. Information and Data Literacy\"\n    measurable_at_this_level: \"Student articulates Agents, Sessions, Workers relationship\"\n\n  - name: \"Documentation-Driven Learning\"\n    proficiency_level: \"B1\"\n    category: \"Applied\"\n    bloom_level: \"Apply\"\n    digcomp_area: \"5. Problem Solving\"\n    measurable_at_this_level: \"Student builds skill from official docs, not memory\"\n\nlearning_objectives:\n  - objective: \"Build a LiveKit Agents skill using natural conversation with Claude\"\n    proficiency_level: \"B1\"\n    bloom_level: \"Apply\"\n    assessment_method: \"Student has a working livekit-agents skill in .claude/skills/\"\n\n  - objective: \"Write a LEARNING-SPEC.md that defines what you want to learn about voice agents\"\n    proficiency_level: \"B1\"\n    bloom_level: \"Create\"\n    assessment_method: \"Student produces clear success criteria before building\"\n\n  - objective: \"Fetch and apply official LiveKit documentation via Context7\"\n    proficiency_level: \"B1\"\n    bloom_level: \"Apply\"\n    assessment_method: \"Skill references official docs, not hallucinated patterns\"\n\ncognitive_load:\n  new_concepts: 3\n  assessment: \"Three concepts: LEARNING-SPEC, skill creation, documentation fetching. Appropriate for B1.\"\n\ndifferentiation:\n  extension_for_advanced: \"Add MCP integration and multi-agent handoff patterns during creation\"\n  remedial_for_struggling: \"Follow exact prompts provided, skip LEARNING-SPEC refinement\"\n---\n\n# Build Your LiveKit Agents Skill\n\nBefore learning LiveKit Agents—the framework powering ChatGPT's Advanced Voice Mode—you'll **own** a LiveKit Agents skill.\n\nThis is skill-first learning. You build the skill, then the chapter teaches you what it knows and how to make it better. By the end, you have a production-ready voice agent AND a reusable skill for building "
+    },
+    {
+      "path": "other/agent-invocation-zerobias-org-module-2/SKILL.md",
+      "name": "agent-invocation",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Another duplicate of the same agent invocation skill defining multi-agent orchestration patterns.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "7fe07412380a9005e04acf03d4debbeb8ecaae0dfbd25a2be8c7ddfdc3851342",
+      "metadata_sha256": "e2705586af185e655f14e8be29d349536847e064b2e6b3ae1868a39b0bbc4a56",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Agent invocation syntax and boundary rules",
+      "content_excerpt": "---\nname: agent-invocation\ndescription: Agent invocation syntax and boundary rules\n---\n\n# Agent Invocation Rules\n\n## Invocation Syntax\n\nUse `@agent-name` followed by the task:\n```\n@api-researcher Research GitHub webhooks\n@api-architect Design the OpenAPI spec\n```\n\n## Agent Boundaries\n\n- Each agent has EXCLUSIVE responsibilities\n- NO overlap between agents allowed\n- Check agent descriptions for triggers\n- Respect \"does NOT\" boundaries\n\n## Context Passing\n\nWhen passing context between agents:\n1. Save output to memory folder\n2. Reference previous phase outputs\n3. Include all necessary context\n4. Use agent-parameter-passing skill\n\n## Agent Loading\n\nEach agent must:\n1. Load its required rules\n2. Assert its responsibilities\n3. Check for prerequisites\n4. Validate inputs\n\n## Collaboration Rules\n\n- Agents work sequentially, not in parallel\n- Each agent completes before next starts\n- Use memory files for handoffs\n- Document decisions made\n"
+    },
+    {
+      "path": "other/agent-fullstack-developer/SKILL.md",
+      "name": "agent-fullstack-developer",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill describes a 'senior fullstack developer' with expertise across backend and frontend technologies, focusing on 'complete feature development' and 'end-to-end solutions'. This aligns directly with the 'development' category, which covers software development workflows, coding, frameworks, and debugging.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "c85994b47b51c47f15b05aa74fd9a01188c3035e4412465dd7f78581510587c7",
+      "metadata_sha256": "55d011fd14c7efebfce274da3092ab6b92f4527bd49f5623ebcca642cbd25f08",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "End-to-end feature owner with expertise across the entire stack. Delivers complete solutions from database to UI with focus on seamless integration and optimal user experience.",
+      "content_excerpt": "---\nname: agent-fullstack-developer\ndescription: End-to-end feature owner with expertise across the entire stack. Delivers complete solutions from database to UI with focus on seamless integration and optimal user experience.\n---\n\n# Fullstack Developer Agent\n\nYou are a senior fullstack developer specializing in complete feature development with expertise across backend and frontend technologies. Your primary focus is delivering cohesive, end-to-end solutions that work seamlessly from database to user interface.\n\n## Domain\n\nCore Development\n\n## Tools\n\nPrimary: Read, Write, MultiEdit, Bash, Docker, database\n\n## Key Capabilities\n\n- Database schema aligned with API contracts\n- Type-safe API implementation with shared types\n- Frontend components matching backend capabilities\n- Authentication flow spanning all layers\n- Consistent error handling throughout stack\n- End-to-end testing covering user journeys\n\n## Activation\n\nThis agent activates for tasks involving:\n- fullstack developer related work\n- Domain-specific implementation and optimization\n- Technical guidance and best practices\n\n## Integration\n\nWorks with other agents for:\n- Cross-functional collaboration\n- Domain expertise sharing\n- Quality validation\n"
+    },
+    {
+      "path": "other/ado-start/SKILL.md",
+      "name": "ado-start",
+      "current_category": "other",
+      "llm_category": "workflow",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill automates starting work on an Azure DevOps ticket, including fetching ticket details, creating branches, exploring codebase, and planning, which is a workflow automation task.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "e21ca0befce1ae9891d53cab15ee2179ae6a292b6cbccc3030050078d7448504",
+      "metadata_sha256": "a2bb074ab00c3b727edd52cc4c6e24bff41b079d4f5a3d38bdfc3e268c3f728f",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when starting work on an Azure DevOps ticket. Triggers on \"start ticket\", \"work on ticket\", ticket number with implementation intent, or requests to plan a feature from a ticket.",
+      "content_excerpt": "---\nname: ado-start\ndescription: Use when starting work on an Azure DevOps ticket. Triggers on \"start ticket\", \"work on ticket\", ticket number with implementation intent, or requests to plan a feature from a ticket.\nmodel: sonnet\n---\n\n# Start Ticket\n\nFetch Azure DevOps ticket, resolve repo, create branch, explore codebase, create implementation plan.\n\n> **Read `~/.claude/skills/_ado-shared.md`** for auth, env vars, fetch/update ticket patterns, and Windows/MSYS2 notes.\n\n## Workflow\n\n1. **Fetch ticket** via ADO REST API (see shared)\n2. **Resolve repo** from `Custom.Repository` field (see below)\n3. **Find upstream remote** in the resolved repo (see below)\n4. **Create branch**: `git fetch <upstream> master && git checkout -b <ticketnr>-<short-desc> <upstream>/master`\n5. **Update ticket state** to \"In Progress\" via REST API (see shared)\n6. **Explore codebase** using Task tool with Explore subagent\n7. **Ask clarifying questions** about implementation approach\n8. **Enter plan mode** and write implementation plan\n\n## Repo Resolution\n\nThe `Custom.Repository` field contains the GitHub repo name (semicolon-separated if multiple).\n\n1. Read `Custom.Repository` from fetched work item fields\n2. If present: take first value (before `;`), find matching directory in `/c/dev/` (local dir name matches repo name)\n3. If absent: fall back to `ado-investigate` skill\n4. `cd` into the resolved repo directory before continuing\n\n## Upstream Remote Detection\n\nRemote names vary. Detect dynamically:\n\n```bash\ngit remote -v | grep 'bluebillywig/' | grep fetch | head -1 | awk '{print $1}'\n```\n\nIf none found, list remotes and ask user.\n\n## Branch Naming\n\nFormat: `<ticketnr>-<short-description>` (kebab-case, max 4-5 words from title)\n\nExamples: `17858-shorts-shelf-autoplay`, `17432-devicePixelRatio-thumbs`\n\n## CRITICAL: Ticket Number in Branch + PR Title\n\n**Always** include the ADO ticket number in:\n1. **Branch name**: `<ticketnr>-<short-desc>`\n2. **PR title**: ` #<ticketnr>` suffix — e.g. `Show metadata toggle #18014`\n\n## Exploration Strategy\n\nUse Task tool with `subagent_type: Explore` to understand:\n- Relevant components and their location\n- Existing patterns and conventions\n- Related props/configuration options\n- How similar features are implemented\n\n## Plan Structure\n\n```markdown\n# Plan: <ticketnr> - <short title>\n\n## Context\n<1-2 sentences from ticket description>\n\n## Implementation\n1. <Step with file path and specific change>\n2. <Step with file path and specific change>\n\n## Files to "
+    },
+    {
+      "path": "other/adapter-trimming/SKILL.md",
+      "name": "bio-read-qc-adapter-trimming",
+      "current_category": "other",
+      "llm_category": "data",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is about processing FASTQ files (sequencing data) using bioinformatics tools (Cutadapt, Trimmomatic) for adapter trimming, which is a core data processing/ETL task in genomics.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "3fa75057f74852cc0381a3568192ce79c5dc3d20e88eb4145b3870b09b83a6d7",
+      "metadata_sha256": "f47e52c5442fd7648df651fb8dfb5cf2b6b53d0412abc14d92a9f9d3c336a33f",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Remove sequencing adapters from FASTQ files using Cutadapt and Trimmomatic. Supports single-end and paired-end reads, Illumina TruSeq, Nextera, and custom adapter sequences. Use when FastQC shows adapter contamination or before alignment of short reads.",
+      "content_excerpt": "---\nname: bio-read-qc-adapter-trimming\ndescription: Remove sequencing adapters from FASTQ files using Cutadapt and Trimmomatic. Supports single-end and paired-end reads, Illumina TruSeq, Nextera, and custom adapter sequences. Use when FastQC shows adapter contamination or before alignment of short reads.\ntool_type: cli\nprimary_tool: cutadapt\n---\n\n# Adapter Trimming\n\nRemove sequencing adapters from reads using Cutadapt (precise, flexible) or Trimmomatic (paired-end optimized).\n\n## Common Adapter Sequences\n\n| Platform/Kit | Adapter | Sequence |\n|--------------|---------|----------|\n| Illumina TruSeq | Read 1 3' | AGATCGGAAGAGCACACGTCTGAACTCCAGTCA |\n| Illumina TruSeq | Read 2 3' | AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT |\n| Nextera | Transposase | CTGTCTCTTATACACATCT |\n| Small RNA | 3' adapter | TGGAATTCTCGGGTGCCAAGG |\n| Poly-A | Poly-A tail | AAAAAAAAAAAAAAAA |\n\n## Cutadapt\n\n### Single-End Reads\n\n```bash\n# 3' adapter (most common)\ncutadapt -a AGATCGGAAGAGC -o trimmed.fastq.gz sample.fastq.gz\n\n# 5' adapter\ncutadapt -g ACGTACGT -o trimmed.fastq.gz sample.fastq.gz\n\n# Both ends\ncutadapt -a ADAPTER1 -g ADAPTER2 -o trimmed.fastq.gz sample.fastq.gz\n\n# Multiple adapters (tries each)\ncutadapt -a ADAPTER1 -a ADAPTER2 -a ADAPTER3 -o trimmed.fastq.gz sample.fastq.gz\n```\n\n### Paired-End Reads\n\n```bash\n# Basic paired-end\ncutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA \\\n         -A AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT \\\n         -o trimmed_R1.fastq.gz -p trimmed_R2.fastq.gz \\\n         sample_R1.fastq.gz sample_R2.fastq.gz\n\n# Short form for Illumina TruSeq (auto-detect)\ncutadapt -a AGATCGGAAGAGC -A AGATCGGAAGAGC \\\n         -o trimmed_R1.fastq.gz -p trimmed_R2.fastq.gz \\\n         sample_R1.fastq.gz sample_R2.fastq.gz\n```\n\n### Adapter Options\n\n```bash\n# Error rate (default 0.1 = 10% mismatches allowed)\ncutadapt -a ADAPTER -e 0.15 -o out.fq in.fq\n\n# Minimum overlap (default 3)\ncutadapt -a ADAPTER -O 5 -o out.fq in.fq\n\n# No indels in adapter alignment\ncutadapt -a ADAPTER --no-indels -o out.fq in.fq\n\n# Trim Ns from ends\ncutadapt --trim-n -o out.fq in.fq\n\n# Anchored adapters (must be at end)\ncutadapt -a ADAPTER$ -o out.fq in.fq\n```\n\n### Linked Adapters\n\n```bash\n# 5' adapter followed by 3' adapter (same read)\ncutadapt -a ADAPTER1...ADAPTER2 -o out.fq in.fq\n\n# Anchored 5' linked to 3'\ncutadapt -a ^ADAPTER1...ADAPTER2 -o out.fq in.fq\n```\n\n### Filtering After Trimming\n\n```bash\n# Minimum length (discard shorter)\ncutadapt -a ADAPTER -m 20 -o out.fq in.fq\n\n# Maximum length\ncutadapt -a ADAPTER -M "
+    },
+    {
+      "path": "other/agent-authentication-ruvnet-ruflo-2/SKILL.md",
+      "name": "agent-authentication",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is explicitly named 'agent-authentication' and described as an 'Agent skill for authentication'. Its content focuses on agent-based user management and authentication workflows using MCP tools, which aligns with the 'agent' category for autonomous or semi-autonomous AI agent capabilities.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "0178f2d55f19b1c470396750eb795ea24c137e04a20931ce83071c10d6d69ed3",
+      "metadata_sha256": "49027d874c93c4c3fc5de74af48e46e630699db12b7bfbbf375d3d6c8d15db3b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Agent skill for authentication - invoke with $agent-authentication",
+      "content_excerpt": "---\nname: agent-authentication\ndescription: Agent skill for authentication - invoke with $agent-authentication\n---\n\n---\nname: flow-nexus-auth\ndescription: Flow Nexus authentication and user management specialist. Handles login, registration, session management, and user account operations using Flow Nexus MCP tools.\ncolor: blue\n---\n\nYou are a Flow Nexus Authentication Agent, specializing in user management and authentication workflows within the Flow Nexus cloud platform. Your expertise lies in seamless user onboarding, secure authentication flows, and comprehensive account management.\n\nYour core responsibilities:\n- Handle user registration and login processes using Flow Nexus MCP tools\n- Manage authentication states and session validation\n- Configure user profiles and account settings\n- Implement password reset and email verification flows\n- Troubleshoot authentication issues and provide user support\n- Ensure secure authentication practices and compliance\n\nYour authentication toolkit:\n```javascript\n// User Registration\nmcp__flow-nexus__user_register({\n  email: \"user@example.com\",\n  password: \"secure_password\",\n  full_name: \"User Name\"\n})\n\n// User Login\nmcp__flow-nexus__user_login({\n  email: \"user@example.com\", \n  password: \"password\"\n})\n\n// Profile Management\nmcp__flow-nexus__user_profile({ user_id: \"user_id\" })\nmcp__flow-nexus__user_update_profile({ \n  user_id: \"user_id\",\n  updates: { full_name: \"New Name\" }\n})\n\n// Password Management\nmcp__flow-nexus__user_reset_password({ email: \"user@example.com\" })\nmcp__flow-nexus__user_update_password({\n  token: \"reset_token\",\n  new_password: \"new_password\"\n})\n```\n\nYour workflow approach:\n1. **Assess Requirements**: Understand the user's authentication needs and current state\n2. **Execute Flow**: Use appropriate MCP tools for registration, login, or profile management\n3. **Validate Results**: Confirm authentication success and handle any error states\n4. **Provide Guidance**: Offer clear instructions for next steps or troubleshooting\n5. **Security Check**: Ensure all operations follow security best practices\n\nCommon scenarios you handle:\n- New user registration and email verification\n- Existing user login and session management\n- Password reset and account recovery\n- Profile updates and account information changes\n- Authentication troubleshooting and error resolution\n- User tier upgrades and subscription management\n\nQuality standards:\n- Always validate user credentials before operations\n- Handle authentication errors "
+    },
+    {
+      "path": "other/acceptance-test-writing-vinceh-recipe-2/SKILL.md",
+      "name": "acceptance-test-writing",
+      "current_category": "other",
+      "llm_category": "testing",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is a guide for writing acceptance criteria and acceptance tests using BDD/ATDD practices with Gherkin scenarios, which is squarely in the testing domain.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "2805fd9b10750b202aa5ef8f744b290166349d91c2d42380310b3b917fbcf075",
+      "metadata_sha256": "5957e5f8117558d919da8fe847b78ca0ee434db3afa22d56b59c014efa7375f0",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Guide for writing high-quality acceptance criteria and acceptance tests using industry-standard BDD (Behavior-Driven Development) and ATDD (Acceptance Test-Driven Development) practices. Use this skill when creating acceptance criteria for user stories, writing Gherkin scenarios, or implementing acceptance test specifications following Given-When-Then format.",
+      "content_excerpt": "---\nname: acceptance-test-writing\ndescription: Guide for writing high-quality acceptance criteria and acceptance tests using industry-standard BDD (Behavior-Driven Development) and ATDD (Acceptance Test-Driven Development) practices. Use this skill when creating acceptance criteria for user stories, writing Gherkin scenarios, or implementing acceptance test specifications following Given-When-Then format.\n---\n\n# Acceptance Test Writing\n\n## Overview\n\nTo write effective acceptance criteria and acceptance tests, follow industry-standard BDD (Behavior-Driven Development) and ATDD (Acceptance Test-Driven Development) practices. This skill guides the creation of clear, testable, user-focused acceptance criteria using Gherkin syntax and best practices.\n\nAcceptance criteria define the conditions that must be met for a user story to be considered complete. Well-written acceptance criteria serve as:\n- A shared understanding between developers, testers, and stakeholders\n- Executable specifications that can be automated as tests\n- Documentation of expected system behavior\n- Definition of \"done\" for user stories\n\n## Decision Tree: Choosing Your Approach\n\n```\nUser Request → What are you creating?\n    |\n    ├─ Writing acceptance criteria for a user story?\n    │   ├─ Simple validation rules or constraints? → Use Rule-Oriented Format\n    │   └─ User interactions or workflows? → Use Given-When-Then Format\n    │\n    ├─ Converting existing requirements to acceptance criteria?\n    │   └─ Follow Workflow: Analyze → Identify Scenarios → Write Criteria → Validate\n    │\n    ├─ Reviewing existing acceptance criteria?\n    │   └─ Use Quality Validation Checklist (below)\n    │\n    └─ Learning or providing guidance on acceptance testing?\n        └─ Load appropriate reference file (gherkin-guide.md, anti-patterns.md, or examples.md)\n```\n\n## Workflow: Writing Acceptance Criteria\n\nFollow this process to create high-quality acceptance criteria from user stories or requirements.\n\n### Step 1: Analyze the User Story\n\nTo begin, understand the user story thoroughly:\n\n1. **Identify the user role**: Who is performing the action?\n2. **Identify the goal**: What does the user want to accomplish?\n3. **Identify the value**: Why does the user want this?\n4. **Identify the context**: What are the preconditions and constraints?\n\n**User Story Format:**\n```\nAs a [role]\nI want to [goal]\nSo that [benefit]\n```\n\n### Step 2: Identify Scenarios\n\nTo define test scenarios, consider:\n\n1. **Happy path**: The ideal, s"
+    },
+    {
+      "path": "other/adhd-accountability/SKILL.md",
+      "name": "adhd-accountability",
+      "current_category": "other",
+      "llm_category": "productivity",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "ADHD-optimized accountability system for task tracking, abandonment detection, and interventions. Directly supports productivity workflows for neurodivergent users with task management, context switch detection, and accountability mechanisms.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "84b39e70bf681102d868a6c929fa88e0f2d5bcd241b3d982aa480fb80935b012",
+      "metadata_sha256": "4e71a8cd70988071b8ebe96b8c8cb194a8e3aebd29c4adc04abac5c03b2373fe",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "ADHD-optimized accountability for task tracking, abandonment detection, and interventions. Use when tracking tasks, detecting context switches, or providing accountability support.",
+      "content_excerpt": "---\nname: adhd-accountability\ndescription: ADHD-optimized accountability for task tracking, abandonment detection, and interventions. Use when tracking tasks, detecting context switches, or providing accountability support.\nallowed-tools: Read, Grep, Glob\n---\n\n# ADHD Accountability Skill - Life OS\n\nProvides ADHD-aware accountability without judgment.\n\n## When to Activate\n\nTrigger phrases:\n- \"I need to do...\"\n- \"Let me just...\"\n- \"Oh wait, what about...\"\n- \"Actually, I should...\"\n- Context switches mid-conversation\n- Session ending with open tasks\n\n## Core Behaviors\n\n### On New Task\n1. Silently track: complexity (1-10), clarity (1-10), estimated time\n2. Provide solution\n3. Start 30-minute timer mentally\n\n### On Context Switch\n1. Note the switch\n2. Ask for closure on previous task\n3. Options: DEFER, ABANDON, COMPLETE first\n\n### On Timeout (30+ min)\n1. Level-appropriate intervention\n2. No judgment, just facts\n3. Offer micro-commitment or body doubling\n\n## Intervention Scripts\n\n### Micro-Commitment\n\"Just step 1? [tiny action] That's it.\"\n\n### Body Doubling\n\"Let's do together. You: [action]. Me: ⏱️ Waiting...\"\n\n### Chunking\n\"Step 1 only. Confirm when done.\"\n\n## Forbidden\n\n- Softening language (\"Would you like...\")\n- Excessive praise\n- Ignoring abandonment\n- Letting tasks disappear\n\n## Always\n\n- Direct communication\n- Honest pattern observation\n- Celebrate completions simply: \"✅ Done.\"\n- Track streaks\n\n## Pattern Recognition\n\nWatch for:\n- Time-of-day productivity patterns\n- Domain-specific abandonment rates\n- Context switch triggers\n- Energy level indicators\n"
+    },
+    {
+      "path": "other/73-network-http-rpc-client/SKILL.md",
+      "name": "73-network-http-rpc-client",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill defines an HTTP RPC client with specific wire protocol for network communication, fitting API integration and client development.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "94d5a83e130029404e5160077ea98cd7f21066cfb4df0d81a84e100c9933d3dc",
+      "metadata_sha256": "1c7994bc9ad2255cb026eaab1894bd7b12f52828c63effd5f3e771f21377e7fe",
+      "semantic_sources": {
+        "description": "body",
+        "name": "metadata"
+      },
+      "description": "Type: Policy / Requirements",
+      "content_excerpt": "# 73-network-http-rpc-client\n\nStatus: ACTIVE  \nAppliesTo: v10  \nType: Policy / Requirements\n\n---\n\n## Purpose\n\nDevian 런타임 모듈(단일 모듈)의 Network 기능에 **binary→base64 단일 파라미터 POST RPC 클라이언트**를 추가한다.\n\n이 SKILL은 정책/요구사항/설계 의도를 정의한다. 구현 및 공개 API는 코드가 정답이며, 예시는 참고용이다.\n\n> **Namespace 정책:** 모든 타입은 `namespace Devian` 단일을 사용한다.\n> 네트워크 계열 public API는 `Net` 접두사로 명확화한다.\n\n---\n\n## Scope\n\n### 목표 (In Scope)\n\n- `NetHttpRpcClient`: sync API HTTP RPC 클라이언트\n- base64 single-param POST RPC 규약\n- `application/x-www-form-urlencoded` 전송\n\n### 비목표 (Out of Scope)\n\n- REST 규격 지원 X\n- TypeScript 변경 X\n- WebSocket과의 통합/공유 큐는 다음 단계\n- JSON 응답 파싱 (기본 미지원)\n\n---\n\n## Module Structure\n\n> Devian C# 런타임은 단일 모듈(`Devian.csproj`)로 통합되어 있다.\n> **모든 타입은 `namespace Devian`에 위치한다.** (분리된 하위 네임스페이스 금지)\n\n```\nframework-cs/module/Devian/\n└── src/\n    └── Net/\n        └── Transports/\n            └── NetHttpRpcClient.cs\n```\n\n---\n\n## RPC Wire Protocol\n\n### Request\n\n| 항목 | 값 |\n|------|-----|\n| Method | `POST` |\n| Content-Type | `application/x-www-form-urlencoded; charset=utf-8` |\n| Body | `{paramName}={urlEncoded(base64(requestBinary))}` |\n| Default paramName | `\"p\"` |\n\n**Flow:**\n```\nrequestBinary (byte[])\n    ↓ Convert.ToBase64String()\nbase64 string\n    ↓ Uri.EscapeDataString()\nurlEncoded string\n    ↓ \"{paramName}={value}\"\nform-urlencoded body\n```\n\n### Response\n\n| 항목 | 값 |\n|------|-----|\n| Expected | Plain text base64 (no JSON wrapper) |\n| Decoding | `Convert.FromBase64String(text.Trim())` |\n\n**Flow:**\n```\nHTTP Response Body (text)\n    ↓ Trim()\ntrimmed base64 string\n    ↓ Convert.FromBase64String()\nresponseBinary (byte[])\n```\n\n> **Note:** JSON 응답 `{\"p\":\"...\"}` 형태는 기본 미지원. 필요시 옵션 확장 가능.\n\n---\n\n## API Signatures (Reference)\n\n> **Note:** 아래는 이해를 돕기 위한 참고 예시이며, 최종 시그니처/공개 API는 코드가 정답이다.  \n> 코드 변경 시 이 문서를 'SSOT'로 맞추지 않는다. 필요하면 문서를 참고 수준으로 갱신한다.\n\n```csharp\nnamespace Devian\n{\n    /// <summary>\n    /// HTTP RPC client with binary→base64 single-param POST protocol.\n    /// All public APIs are synchronous.\n    /// </summary>\n    public sealed class NetHttpRpcClient : IDisposable\n    {\n        /// <summary>\n        /// Creates a new NetHttpRpcClient.\n        /// </summary>\n        /// <param name=\"endpoint\">RPC endpoint URI.</param>\n        /// <param name=\"paramName\">Form parameter name (default: \"p\").</param>\n        /// <param name=\"http\">Optional HttpClient (if null, creates internal one).</param>\n        public NetHttpRpcClient(Uri endpoint, string paramName = \"p\", HttpClient? http = null);\n\n        /// <summary>\n        /// Sy"
+    },
+    {
+      "path": "other/adapter-trimming-gptomics-bioskills/SKILL.md",
+      "name": "bio-read-qc-adapter-trimming",
+      "current_category": "other",
+      "llm_category": "data",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Identical skill to id 0, focused on bioinformatics data processing (FASTQ file manipulation) for quality control in next-generation sequencing workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "3fa75057f74852cc0381a3568192ce79c5dc3d20e88eb4145b3870b09b83a6d7",
+      "metadata_sha256": "28d614f0fcf997a49dcefddb8db1668305e8fbc4332d2ca827fa9bfe6c5052a6",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Remove sequencing adapters from FASTQ files using Cutadapt and Trimmomatic. Supports single-end and paired-end reads, Illumina TruSeq, Nextera, and custom adapter sequences. Use when FastQC shows adapter contamination or before alignment of short reads.",
+      "content_excerpt": "---\nname: bio-read-qc-adapter-trimming\ndescription: Remove sequencing adapters from FASTQ files using Cutadapt and Trimmomatic. Supports single-end and paired-end reads, Illumina TruSeq, Nextera, and custom adapter sequences. Use when FastQC shows adapter contamination or before alignment of short reads.\ntool_type: cli\nprimary_tool: cutadapt\n---\n\n# Adapter Trimming\n\nRemove sequencing adapters from reads using Cutadapt (precise, flexible) or Trimmomatic (paired-end optimized).\n\n## Common Adapter Sequences\n\n| Platform/Kit | Adapter | Sequence |\n|--------------|---------|----------|\n| Illumina TruSeq | Read 1 3' | AGATCGGAAGAGCACACGTCTGAACTCCAGTCA |\n| Illumina TruSeq | Read 2 3' | AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT |\n| Nextera | Transposase | CTGTCTCTTATACACATCT |\n| Small RNA | 3' adapter | TGGAATTCTCGGGTGCCAAGG |\n| Poly-A | Poly-A tail | AAAAAAAAAAAAAAAA |\n\n## Cutadapt\n\n### Single-End Reads\n\n```bash\n# 3' adapter (most common)\ncutadapt -a AGATCGGAAGAGC -o trimmed.fastq.gz sample.fastq.gz\n\n# 5' adapter\ncutadapt -g ACGTACGT -o trimmed.fastq.gz sample.fastq.gz\n\n# Both ends\ncutadapt -a ADAPTER1 -g ADAPTER2 -o trimmed.fastq.gz sample.fastq.gz\n\n# Multiple adapters (tries each)\ncutadapt -a ADAPTER1 -a ADAPTER2 -a ADAPTER3 -o trimmed.fastq.gz sample.fastq.gz\n```\n\n### Paired-End Reads\n\n```bash\n# Basic paired-end\ncutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA \\\n         -A AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT \\\n         -o trimmed_R1.fastq.gz -p trimmed_R2.fastq.gz \\\n         sample_R1.fastq.gz sample_R2.fastq.gz\n\n# Short form for Illumina TruSeq (auto-detect)\ncutadapt -a AGATCGGAAGAGC -A AGATCGGAAGAGC \\\n         -o trimmed_R1.fastq.gz -p trimmed_R2.fastq.gz \\\n         sample_R1.fastq.gz sample_R2.fastq.gz\n```\n\n### Adapter Options\n\n```bash\n# Error rate (default 0.1 = 10% mismatches allowed)\ncutadapt -a ADAPTER -e 0.15 -o out.fq in.fq\n\n# Minimum overlap (default 3)\ncutadapt -a ADAPTER -O 5 -o out.fq in.fq\n\n# No indels in adapter alignment\ncutadapt -a ADAPTER --no-indels -o out.fq in.fq\n\n# Trim Ns from ends\ncutadapt --trim-n -o out.fq in.fq\n\n# Anchored adapters (must be at end)\ncutadapt -a ADAPTER$ -o out.fq in.fq\n```\n\n### Linked Adapters\n\n```bash\n# 5' adapter followed by 3' adapter (same read)\ncutadapt -a ADAPTER1...ADAPTER2 -o out.fq in.fq\n\n# Anchored 5' linked to 3'\ncutadapt -a ^ADAPTER1...ADAPTER2 -o out.fq in.fq\n```\n\n### Filtering After Trimming\n\n```bash\n# Minimum length (discard shorter)\ncutadapt -a ADAPTER -m 20 -o out.fq in.fq\n\n# Maximum length\ncutadapt -a ADAPTER -M "
+    },
+    {
+      "path": "other/add-mcscopilot/SKILL.md",
+      "name": "add-mcscopilot",
+      "current_category": "other",
+      "llm_category": "integration",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill adds a Microsoft Copilot Studio connector to a Power Apps code app, which is a cross-system service integration.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "b5486e6c7cacb131d7efd6a60bd3c8699ef13b3d5810a283d9178a43a8e8c8c7",
+      "metadata_sha256": "2be587175e913e8266cd0b97809550b8383565ef2d9190e73ff93b5c74dc7e48",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Adds Microsoft Copilot Studio connector to a Power Apps code app. Use when invoking Copilot Studio agents, sending prompts to agents, or integrating agent responses.",
+      "content_excerpt": "---\nname: add-mcscopilot\ndescription: Adds Microsoft Copilot Studio connector to a Power Apps code app. Use when invoking Copilot Studio agents, sending prompts to agents, or integrating agent responses.\nuser-invocable: true\nallowed-tools: Read, Edit, Write, Grep, Glob, Bash, LSP, TaskCreate, TaskUpdate, TaskList, TaskGet, AskUserQuestion, Skill\nmodel: sonnet\n---\n\n**📋 Shared Instructions: [shared-instructions.md](${CLAUDE_PLUGIN_ROOT}/shared/shared-instructions.md)** - Cross-cutting concerns.\n\n# Add Microsoft Copilot Studio\n\n## Workflow\n\n1. Check Memory Bank → 2. Add Connector → 3. Configure → 4. Build → 5. Update Memory Bank\n\n---\n\n### Step 1: Check Memory Bank\n\nCheck for `memory-bank.md` per [shared-instructions.md](${CLAUDE_PLUGIN_ROOT}/shared/shared-instructions.md).\n\n### Step 2: Add Connector\n\n**First, find the connection ID** (see [connector-reference.md](${CLAUDE_PLUGIN_ROOT}/shared/connector-reference.md)):\n\nRun the `/list-connections` skill. Find the Microsoft Copilot Studio connection in the output. If none exists, direct the user to create one using the environment-specific Connections URL — construct it from the active environment ID in context (from `power.config.json` or a prior step): `https://make.powerapps.com/environments/<environment-id>/connections` → **+ New connection** → search for the connector → Create.\n\n```bash\nnpx power-apps add-data-source -a microsoftcopilotstudio -c <connection-id>\n```\n\n### Step 3: Configure\n\nAsk the user which Copilot Studio agent they want to invoke and what operations they need.\n\n**Agent Setup Prerequisites** (manual steps the user must complete in Copilot Studio):\n\n1. **Publish the agent**: In Copilot Studio, click Channels → select Teams → add to Teams → click Publish.\n2. **Get the agent name**: Under Channels, click \"Web app\". The connection string URL contains the agent name. Example: `https://...api.powerplatform.com/copilotstudio/dataverse-backed/authenticated/bots/cr3e1_myAgent/conversations?...` — the agent name is `cr3e1_myAgent`.\n\n**ExecuteCopilotAsyncV2** -- execute an agent and wait for the response:\n\nUse the `ExecuteCopilotAsyncV2` operation (path: `/proactivecopilot/executeAsyncV2`). This is the **only** endpoint that reliably returns agent responses synchronously. It is the same endpoint used by Power Automate's \"Execute Agent and wait\" action.\n\n```typescript\nconst result = await MicrosoftCopilotStudioService.ExecuteCopilotAsyncV2({\n  message: \"Your prompt or data here\", // Can be a JSON strin"
+    },
+    {
+      "path": "other/adhd-accountability-breverdbidder-life-os/SKILL.md",
+      "name": "adhd-accountability",
+      "current_category": "other",
+      "llm_category": "productivity",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Duplicate of id:1 - same ADHD accountability skill for task tracking and productivity support for neurodivergent users.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "84b39e70bf681102d868a6c929fa88e0f2d5bcd241b3d982aa480fb80935b012",
+      "metadata_sha256": "0a53f3326f4034ade6ac5831a15f58b24a218ca405ef608db7a18da5764f7578",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "ADHD-optimized accountability for task tracking, abandonment detection, and interventions. Use when tracking tasks, detecting context switches, or providing accountability support.",
+      "content_excerpt": "---\nname: adhd-accountability\ndescription: ADHD-optimized accountability for task tracking, abandonment detection, and interventions. Use when tracking tasks, detecting context switches, or providing accountability support.\nallowed-tools: Read, Grep, Glob\n---\n\n# ADHD Accountability Skill - Life OS\n\nProvides ADHD-aware accountability without judgment.\n\n## When to Activate\n\nTrigger phrases:\n- \"I need to do...\"\n- \"Let me just...\"\n- \"Oh wait, what about...\"\n- \"Actually, I should...\"\n- Context switches mid-conversation\n- Session ending with open tasks\n\n## Core Behaviors\n\n### On New Task\n1. Silently track: complexity (1-10), clarity (1-10), estimated time\n2. Provide solution\n3. Start 30-minute timer mentally\n\n### On Context Switch\n1. Note the switch\n2. Ask for closure on previous task\n3. Options: DEFER, ABANDON, COMPLETE first\n\n### On Timeout (30+ min)\n1. Level-appropriate intervention\n2. No judgment, just facts\n3. Offer micro-commitment or body doubling\n\n## Intervention Scripts\n\n### Micro-Commitment\n\"Just step 1? [tiny action] That's it.\"\n\n### Body Doubling\n\"Let's do together. You: [action]. Me: ⏱️ Waiting...\"\n\n### Chunking\n\"Step 1 only. Confirm when done.\"\n\n## Forbidden\n\n- Softening language (\"Would you like...\")\n- Excessive praise\n- Ignoring abandonment\n- Letting tasks disappear\n\n## Always\n\n- Direct communication\n- Honest pattern observation\n- Celebrate completions simply: \"✅ Done.\"\n- Track streaks\n\n## Pattern Recognition\n\nWatch for:\n- Time-of-day productivity patterns\n- Domain-specific abandonment rates\n- Context switch triggers\n- Energy level indicators\n"
+    },
+    {
+      "path": "other/advanced-features-2025-josiahsiegel-claude-plugin-market/SKILL.md",
+      "name": "advanced-features-2025",
+      "current_category": "other",
+      "llm_category": "skills",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Same skill as id 0 - describes advanced features for Claude Code plugins, specifically focusing on Agent Skills with progressive disclosure, hook automation, MCP server integration, and plugin distribution.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "766203d71027baa1ef5fd7a0765238911d7390caa9a67776814b229f24771394",
+      "metadata_sha256": "ef768d16e629a86c42f92f91d3adfc466fc25a333b9d958861899ccbf382410e",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Advanced 2025 Claude Code plugin features. PROACTIVELY activate for:\n(1) Agent Skills with progressive disclosure\n(2) Hook automation (PreToolUse, PostToolUse, etc.)\n(3) MCP server integration\n(4) Repository-level configuration\n(5) Team plugin distribution\n(6) Context efficiency optimization\nProvides cutting-edge plugin capabilities and patterns.",
+      "content_excerpt": "---\nname: advanced-features-2025\ndescription: |\n  Advanced 2025 Claude Code plugin features. PROACTIVELY activate for:\n  (1) Agent Skills with progressive disclosure\n  (2) Hook automation (PreToolUse, PostToolUse, etc.)\n  (3) MCP server integration\n  (4) Repository-level configuration\n  (5) Team plugin distribution\n  (6) Context efficiency optimization\n  Provides cutting-edge plugin capabilities and patterns.\nlicense: MIT\n---\n\n# Advanced Plugin Features (2025)\n\n## Quick Reference\n\n| Feature | Location | Purpose |\n|---------|----------|---------|\n| Agent Skills | `skills/*/SKILL.md` | Dynamic knowledge loading |\n| Hooks | `hooks/hooks.json` | Event automation |\n| MCP Servers | `.mcp.json` | External integrations |\n| Team Config | `.claude/settings.json` | Repository plugins |\n\n| Hook Event | When Fired | Use Case |\n|------------|------------|----------|\n| PreToolUse | Before tool | Validation |\n| PostToolUse | After tool | Testing, linting |\n| SessionStart | Session begins | Logging, setup |\n| SessionEnd | Session ends | Cleanup |\n| UserPromptSubmit | Prompt submitted | Preprocessing |\n| PreCompact | Before compact | State save |\n| Notification | Notification shown | Custom alerts |\n| Stop | User stops | Cleanup |\n| SubagentStop | Subagent ends | Logging |\n\n| Variable | Purpose |\n|----------|---------|\n| `${CLAUDE_PLUGIN_ROOT}` | Plugin installation path |\n| `${TOOL_INPUT_*}` | Tool input parameters |\n\n## Agent Skills\n\n### Concept\n\nSkills are dynamically loaded based on task context, enabling:\n- **Unbounded capacity**: Knowledge split across files\n- **Context efficiency**: Only load what's needed\n- **Progressive disclosure**: Three-tier loading\n\n### Three-Tier Loading\n\n1. **Frontmatter**: Loaded at startup (triggers)\n2. **SKILL.md body**: Loaded on activation\n3. **references/**: Loaded when detail needed\n\n### Structure\n\n```\nskills/\n└── skill-name/\n    ├── SKILL.md           # Core content\n    ├── references/        # Detailed docs\n    │   └── deep-dive.md\n    ├── examples/          # Working code\n    │   └── example.md\n    └── scripts/           # Utilities\n        └── tool.sh\n```\n\n### SKILL.md Format\n\n```markdown\n---\nname: skill-name\ndescription: |\n  When to activate this skill. Include:\n  (1) Use case 1\n  (2) Use case 2\n  Provides: what it offers\n---\n\n# Skill Title\n\n## Quick Reference\n[Tables, key points]\n\n## Core Content\n[Essential information - keep lean]\n\n## Additional Resources\nSee `references/` for detailed guidance.\n```\n\n## Hooks\n\n### Configuration\n"
+    },
+    {
+      "path": "other/ac-qa-reviewer-adaptationio-skrillz-2/SKILL.md",
+      "name": "ac-qa-reviewer",
+      "current_category": "other",
+      "llm_category": "quality",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill performs quality assurance reviews on implementations, checking code quality, security, performance, testing, and documentation, which is a core quality assurance function.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "f8939987d7755225723c5618f3891262251dcced8f1069eb47236da15566bcb0",
+      "metadata_sha256": "559d23b3aa9ebd815f3ad07eb296a91bbc53846d632796c20ded9347aa62e7fd",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Quality assurance review for implementations. Use when reviewing code quality, checking implementation standards, performing QA cycles, or validating feature quality.",
+      "content_excerpt": "---\nname: ac-qa-reviewer\ndescription: Quality assurance review for implementations. Use when reviewing code quality, checking implementation standards, performing QA cycles, or validating feature quality.\n---\n\n# AC QA Reviewer\n\nPerform quality assurance reviews on feature implementations.\n\n## Purpose\n\nReviews completed features for code quality, adherence to standards, security issues, and best practices before marking features as complete.\n\n## Quick Start\n\n```python\nfrom scripts.qa_reviewer import QAReviewer\n\nreviewer = QAReviewer(project_dir)\nresult = await reviewer.review_feature(\"auth-001\")\n```\n\n## Review Dimensions\n\n### Code Quality\n- Clean code principles\n- DRY (Don't Repeat Yourself)\n- SOLID principles\n- Code complexity metrics\n\n### Security\n- Input validation\n- SQL injection prevention\n- XSS prevention\n- Secure authentication\n\n### Performance\n- Algorithm efficiency\n- Database query optimization\n- Memory usage\n- Caching opportunities\n\n### Testing\n- Test coverage\n- Test quality\n- Edge case coverage\n- Integration tests\n\n### Documentation\n- Code comments\n- API documentation\n- README updates\n- Type annotations\n\n## Review Result\n\n```json\n{\n  \"feature_id\": \"auth-001\",\n  \"approved\": true,\n  \"score\": 85,\n  \"dimensions\": {\n    \"code_quality\": {\"score\": 90, \"issues\": []},\n    \"security\": {\"score\": 85, \"issues\": [\"Consider rate limiting\"]},\n    \"performance\": {\"score\": 80, \"issues\": []},\n    \"testing\": {\"score\": 88, \"issues\": []},\n    \"documentation\": {\"score\": 82, \"issues\": [\"Add docstring to validate_token\"]}\n  },\n  \"blocking_issues\": [],\n  \"suggestions\": [\n    \"Consider extracting authentication middleware\",\n    \"Add rate limiting for login endpoint\"\n  ],\n  \"auto_fixable\": [\"missing_docstring\"]\n}\n```\n\n## QA Workflow\n\n```\n1. SCAN    → Static analysis of changed files\n2. ANALYZE → Check against quality rules\n3. SECURITY → Security-specific checks\n4. REVIEW  → Contextual code review\n5. REPORT  → Generate review report\n6. FIX     → Auto-fix simple issues (optional)\n7. APPROVE → Mark as QA passed or request changes\n```\n\n## Quality Gates\n\n```yaml\ngates:\n  minimum_score: 70\n  blocking_categories:\n    - security_critical\n    - test_failures\n  required_checks:\n    - linting_passes\n    - type_checks_pass\n    - tests_pass\n    - coverage_minimum\n```\n\n## Auto-Fix Capabilities\n\nThe reviewer can automatically fix:\n- Missing type hints\n- Formatting issues\n- Simple code style violations\n- Missing docstrings (basic)\n\n## Integration\n\n- Input: Completed features from `ac-task-"
+    },
+    {
+      "path": "other/accessibility-design-checker-lexicalninja-my-little-scrum-team-2/SKILL.md",
+      "name": "accessibility-design-checker",
+      "current_category": "other",
+      "llm_category": "design",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is named 'accessibility-design-checker' and its description states it 'Ensures designs meet accessibility requirements including WCAG compliance, color contrast, keyboard navigation, screen reader support, and focus management. Reviews designs for accessibility issues.' This is squarely within the 'design' category.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "f981060a771d12a0df2412805ee24dcbf44c70b625d8e2aff3c1251bc4306b99",
+      "metadata_sha256": "db721c3d53389e652a764666b7cffaf92128bd6b64c370479af8da9900683e7c",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Ensures designs meet accessibility requirements including WCAG compliance, color contrast, keyboard navigation, screen reader support, and focus management. Reviews designs for accessibility issues and provides recommendations.",
+      "content_excerpt": "---\nname: accessibility-design-checker\ndescription: Ensures designs meet accessibility requirements including WCAG compliance, color contrast, keyboard navigation, screen reader support, and focus management. Reviews designs for accessibility issues and provides recommendations.\n---\n\n# Accessibility Design Checker Skill\n\n## Instructions\n\n1. Review design specifications for accessibility\n2. Check color contrast ratios\n3. Verify keyboard navigation support\n4. Check screen reader compatibility\n5. Review focus management\n6. Verify touch target sizes\n7. Return accessibility review with:\n   - Accessibility compliance status\n   - Issues found\n   - Recommendations\n   - WCAG level compliance\n\n## Examples\n\n**Input:** Review design for accessibility\n**Output:**\n```markdown\n### Accessibility Review\n\n**Overall Compliance:** WCAG 2.1 Level AA ✓\n\n**Color Contrast:**\n- Primary text on white: 4.5:1 ✓ (WCAG AA)\n- Secondary text on white: 4.2:1 ✗ (needs improvement)\n- Large text on primary: 3.1:1 ✓ (WCAG AA)\n- Recommendation: Increase secondary text contrast to 4.5:1\n\n**Keyboard Navigation:**\n- All interactive elements keyboard accessible ✓\n- Focus indicators visible ✓\n- Tab order logical ✓\n- Skip links present ✓\n\n**Screen Reader Support:**\n- Semantic HTML structure ✓\n- ARIA labels where needed ✓\n- Alt text for images ✓\n- Form labels properly associated ✓\n\n**Touch Targets:**\n- All interactive elements ≥ 44x44px ✓\n- Adequate spacing between touch targets ✓\n\n**Text Resizing:**\n- Design works at 200% zoom ✓\n- No horizontal scrolling required ✓\n\n**Issues Found:**\n1. Secondary text contrast below 4.5:1 (should be improved)\n2. Missing ARIA label on icon-only button (needs label)\n\n**Recommendations:**\n- Increase secondary text color darkness\n- Add aria-label=\"Close\" to icon button\n```\n\n## Accessibility Areas to Check\n\n- **Color Contrast**: Text/background contrast ratios (WCAG AA: 4.5:1)\n- **Keyboard Navigation**: All interactive elements keyboard accessible\n- **Focus Indicators**: Visible focus states\n- **Screen Reader Support**: Semantic HTML, ARIA labels, alt text\n- **Touch Targets**: Minimum 44x44px for mobile\n- **Text Resizing**: Works at 200% zoom\n- **Reading Order**: Logical content order\n- **Form Labels**: Properly associated labels\n- **Error Messages**: Accessible error communication\n- **Skip Links**: Skip navigation links\n\n## WCAG Compliance Levels\n\n- **Level A**: Basic accessibility (minimum)\n- **Level AA**: Standard compliance (recommended)\n- **Level AAA**: Enhanced acc"
+    },
+    {
+      "path": "other/activation-patching-ndif-team-skills-2/SKILL.md",
+      "name": "activation-patching",
+      "current_category": "other",
+      "llm_category": "ai-ml",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Activation patching is a causal intervention technique for neural network interpretability, directly related to AI/ML model analysis and debugging.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "b96f16e2fabd4ac7e47c1ebfcc10688c9d578149d7f84077ac261cb7d24eb985",
+      "metadata_sha256": "ba78f7570eb857d45c44d312726fe8b6cbf9e45f53e38e6ebdcf7f2dcd9125c0",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Causal intervention via activation patching to identify important model components. Use when determining which layers, heads, or positions are causally responsible for model behavior.",
+      "content_excerpt": "---\nname: activation-patching\ndescription: Causal intervention via activation patching to identify important model components. Use when determining which layers, heads, or positions are causally responsible for model behavior.\n---\n\n# Activation Patching\n\nActivation patching is a causal intervention technique that identifies which model components are responsible for specific behaviors by swapping activations between different inputs.\n\n## Core Concept\n\n1. **Clean run**: Run model on prompt that produces desired behavior\n2. **Corrupted run**: Run on modified prompt that changes the behavior\n3. **Patch**: Replace corrupted activations with clean ones, measure if behavior is restored\n\nIf patching a component restores the clean behavior, that component is causally important.\n\n## Basic Setup\n\n```python\nfrom nnsight import LanguageModel\nimport torch\n\nmodel = LanguageModel(\"openai-community/gpt2\", device_map=\"auto\", dispatch=True)\n\n# Indirect Object Identification (IOI) task\nclean_prompt = \"After John and Mary went to the store, Mary gave a bottle of milk to\"\ncorrupted_prompt = \"After John and Mary went to the store, John gave a bottle of milk to\"\n\n# Target tokens\ncorrect_token = model.tokenizer(\" John\")[\"input_ids\"][0]   # Clean answer\nincorrect_token = model.tokenizer(\" Mary\")[\"input_ids\"][0]  # Corrupted answer\n```\n\n## Metric: Logit Difference\n\n```python\ndef logit_diff(logits, correct_idx, incorrect_idx):\n    \"\"\"Measure how much model prefers correct over incorrect token.\"\"\"\n    return (logits[0, -1, correct_idx] - logits[0, -1, incorrect_idx]).item()\n```\n\n## Three-Run Patching Pattern\n\n```python\nn_layers = len(model.transformer.h)\nresults = torch.zeros(n_layers)\n\n# Run 1: Clean - save activations\nwith model.trace(clean_prompt):\n    clean_hiddens = [layer.output[0].save() for layer in model.transformer.h]\n    clean_logits = model.lm_head.output.save()\n\n# Run 2: Corrupted baseline\nwith model.trace(corrupted_prompt):\n    corrupted_logits = model.lm_head.output.save()\n\n# Runs 3+: Patch each layer (separate forward passes)\nfor layer_idx in range(n_layers):\n    with model.trace(corrupted_prompt):\n        # Replace corrupted activation with clean\n        model.transformer.h[layer_idx].output[0][:] = clean_hiddens[layer_idx]\n        patched_logits = model.lm_head.output.save()\n    results[layer_idx] = logit_diff(patched_logits.value, correct_token, incorrect_token)\n\n# Normalize results\nclean_diff = logit_diff(clean_logits.value, correct_token, incorrect_token)\ncorrupt"
+    },
+    {
+      "path": "other/adaptive-ux-scheduling-harborgrid-justin-lexiflow-premium-e1e27701/SKILL.md",
+      "name": "adaptive-ux-scheduling",
+      "current_category": "other",
+      "llm_category": "design",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Same skill as id 2, with identical description focusing on adaptive UI scheduling for frontend design.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "ce56e90f7ecbf81238c6f0f776e66cec4890ecde4c350acf93ae2a3ad427e732",
+      "metadata_sha256": "94bccaa9bfcdd9709bdc51a39c5a219048ac6b5582205ba1eaf883d54acff3c0",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Adapt UI scheduling behavior dynamically based on runtime conditions and user context.",
+      "content_excerpt": "---\nname: adaptive-ux-scheduling\ndescription: Adapt UI scheduling behavior dynamically based on runtime conditions and user context.\n---\n\n# Adaptive UX Scheduling (React 18)\n\n## Summary\n\nAdapt UI scheduling behavior dynamically based on runtime conditions and user context.\n\n## Key Capabilities\n\n- Adjust update priority using telemetry signals.\n- Tailor rendering schedules based on device capability.\n- Implement fallback paths for low-resource environments.\n\n## PhD-Level Challenges\n\n- Model scheduling adaptation as a control system.\n- Prove stability of adaptation loops under noisy signals.\n- Quantify UX gains across device classes.\n\n## Acceptance Criteria\n\n- Demonstrate adaptive scheduling in a multi-device test.\n- Provide metrics for improved responsiveness.\n- Document adaptation policies and guardrails.\n\n"
+    },
+    {
+      "path": "other/agent-iot-engineer/SKILL.md",
+      "name": "agent-iot-engineer",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Defines an IoT engineer agent persona with activation triggers, tool usage, and integration patterns - clearly an agent definition skill.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "9448e10ebf6f8efad163a34ef953e9fc86ec65e16dcabbab27b71b84f53f6804",
+      "metadata_sha256": "aad47f8d5a6dbca1e8474b8a77e0fa73403cb135d61d961d7db531c6a6442e01",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Expert IoT engineer specializing in connected device architectures, edge computing, and IoT platform development. Masters IoT protocols, device management, and data pipelines with focus on building scalable, secure, and reliable IoT solutions.",
+      "content_excerpt": "---\nname: agent-iot-engineer\ndescription: Expert IoT engineer specializing in connected device architectures, edge computing, and IoT platform development. Masters IoT protocols, device management, and data pipelines with focus on building scalable, secure, and reliable IoT solutions.\n---\n\n# Iot Engineer Agent\n\nYou are a senior IoT engineer with expertise in designing and implementing comprehensive IoT solutions. Your focus spans device connectivity, edge computing, cloud integration, and data analytics with emphasis on scalability, security, and reliability for massive IoT deployments.\n\n## Domain\n\nSpecialized Domains\n\n## Tools\n\nPrimary: mqtt, aws-iot, azure-iot, node-red, mosquitto\n\n## Key Capabilities\n\n- Device uptime > 99.9% maintained\n- Message delivery guaranteed consistently\n- Latency < 500ms achieved properly\n- Battery life > 1 year optimized\n- Security standards met thoroughly\n- Scalable to millions verified\n\n## Activation\n\nThis agent activates for tasks involving:\n- iot engineer related work\n- Domain-specific implementation and optimization\n- Technical guidance and best practices\n\n## Integration\n\nWorks with other agents for:\n- Cross-functional collaboration\n- Domain expertise sharing\n- Quality validation\n"
+    },
+    {
+      "path": "other/agent-hierarchy-diagram/SKILL.md",
+      "name": "agent-hierarchy-diagram",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill generates visual hierarchy diagrams of agent systems, showing levels and delegation, which is directly about agent structure and relationships, aligning with the 'agent' category.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "40ead33fdaaf23863321346e9051385741925658f1282b970ca915ed3db20cf0",
+      "metadata_sha256": "13bcdc8a32b9a9c131ff1072e229ecdd54cf10f9ff53588258f4df6a777f348b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Generate visual hierarchy diagrams of agent system showing levels and delegation. Use for documentation or onboarding.",
+      "content_excerpt": "---\nname: agent-hierarchy-diagram\ndescription: \"Generate visual hierarchy diagrams of agent system showing levels and delegation. Use for documentation or onboarding.\"\nmcp_fallback: none\ncategory: agent\nuser-invocable: false\n---\n\n# Agent Hierarchy Diagram\n\nGenerate visual diagrams showing agent system structure and relationships.\n\n## When to Use\n\n- Documenting agent system for team\n- Understanding delegation structure\n- Onboarding new contributors\n- Visualizing agent relationships for presentations\n\n## Quick Reference\n\n```bash\n# Generate ASCII tree diagram\n./scripts/generate_hierarchy_diagram.sh\n\n# Generate Mermaid diagram\n./scripts/generate_mermaid_diagram.sh > hierarchy.mmd\n\n# Save to documentation\n./scripts/generate_hierarchy_diagram.sh > agents/hierarchy-visual.txt\n```\n\n## ASCII Tree Format\n\n```text\nChief Architect (L0)\n├── Foundation Orchestrator (L1)\n│   ├── Repository Design (L2)\n│   │   ├── Directory Specialist (L3)\n│   │   │   └── Junior Engineer (L5)\n│   │   └── Config Specialist (L3)\n│   └── Config Design (L2)\n├── Shared Library Orchestrator (L1)\n│   └── Tensor Module Design (L2)\n│       └── Tensor Specialist (L3)\n└── Tooling Orchestrator (L1)\n```\n\n## Mermaid Format\n\n```mermaid\ngraph TD\n    A[Chief Architect L0] --> B[Foundation Orchestrator L1]\n    B --> C[Repository Design L2]\n    C --> D[Directory Specialist L3]\n    D --> E[Junior Engineer L5]\n```\n\n## Use Cases\n\n- Add to `/agents/hierarchy.md` for reference\n- Include in onboarding documentation\n- Create presentation materials\n- Understand delegation chains\n- Communicate structure to stakeholders\n\n## Output Formats\n\n**ASCII**: Human-readable in terminals, copy-pasteable in docs\n\n**Mermaid**: Renders in GitHub markdown, editable in Mermaid editor\n\n**GraphML**: Import into diagram tools (yEd, Graphviz)\n\n## References\n\n- `/agents/hierarchy.md` - Existing hierarchy documentation\n- `agent-test-delegation` - Validate diagram accuracy\n- `.claude/agents/` - Agent configuration source\n"
+    },
+    {
+      "path": "other/adf-master-josiahsiegel-claude-plugin-market-d0152a98/SKILL.md",
+      "name": "adf-master",
+      "current_category": "other",
+      "llm_category": "data",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Same Azure Data Factory skill as id 0 - a cloud-based data integration service for ETL/ELT workflows. The skill provides comprehensive knowledge base about ADF documentation, CI/CD methods, deployment patterns, and troubleshooting.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "b02398bbf83a3f9f3c648be3fc5855db97b7aa27e8a082ab76843d6d13895ced",
+      "metadata_sha256": "a69e29bbaa9b8c9f7e4e07e2228d653667d683d95fa0c687c248e91475156a04",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Comprehensive Azure Data Factory knowledge base with official documentation sources, CI/CD methods, deployment patterns, and troubleshooting resources",
+      "content_excerpt": "---\nname: adf-master\ndescription: Comprehensive Azure Data Factory knowledge base with official documentation sources, CI/CD methods, deployment patterns, and troubleshooting resources\n---\n\n# Azure Data Factory Master Knowledge Base\n\n## 🚨 CRITICAL GUIDELINES\n\n### Windows File Path Requirements\n\n**MANDATORY: Always Use Backslashes on Windows for File Paths**\n\nWhen using Edit or Write tools on Windows, you MUST use backslashes (`\\`) in file paths, NOT forward slashes (`/`).\n\n**Examples:**\n- ❌ WRONG: `D:/repos/project/file.tsx`\n- ✅ CORRECT: `D:\\repos\\project\\file.tsx`\n\nThis applies to:\n- Edit tool file_path parameter\n- Write tool file_path parameter\n- All file operations on Windows systems\n\n### Documentation Guidelines\n\n**NEVER create new documentation files unless explicitly requested by the user.**\n\n- **Priority**: Update existing README.md files rather than creating new documentation\n- **Repository cleanliness**: Keep repository root clean - only README.md unless user requests otherwise\n- **Style**: Documentation should be concise, direct, and professional - avoid AI-generated tone\n- **User preference**: Only create additional .md files when user specifically asks for documentation\n\n\n\n---\n\nThis skill provides comprehensive reference information about Azure Data Factory, including official documentation sources, CI/CD deployment methods, and troubleshooting resources. Use this to access detailed ADF knowledge on-demand.\n\n## 🚨 CRITICAL 2025 UPDATE: Deprecated Features### Apache Airflow Workflow Orchestration Manager - DEPRECATED**Status:** Available only for existing customers as of early 2025**Retirement Date:** Not yet announced, but feature is officially deprecated**Impact:** New customers cannot provision Apache Airflow in Azure Data Factory**Official Deprecation Notice:**- Apache Airflow Workflow Orchestration Manager is deprecated with no retirement date set- Only existing deployments can continue using this feature- No new Airflow integrations can be created in ADF**Migration Path:**- **Recommended:** Migrate to Fabric Data Factory with native Airflow support- **Alternative:** Use standalone Apache Airflow deployments (Azure Container Instances, AKS, or VM-based)- **Alternative:** Migrate orchestration logic to native ADF pipelines with control flow activities**Why Deprecated:**- Microsoft focus shifted to Fabric Data Factory as the unified data integration platform- Fabric provides modern orchestration capabilities superseding Airflow integration- Li"
+    },
+    {
+      "path": "other/ads-reporter-dengineproblem-agents-monorepo-3/SKILL.md",
+      "name": "ads-reporter",
+      "current_category": "other",
+      "llm_category": "analysis",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Identical skill to id 0, focused on Facebook Ads reporting and trend analysis, fitting the analysis category for data-driven insights.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "b3f4d03f974f9f2265ccc99e5d253ec4d148e8c24030b030140d6043b5b9038d",
+      "metadata_sha256": "60b3dd436cab7a8db2e8aa15079d86f56e9af92fa9fced636aa517ac403282f5",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Эксперт по отчетности Facebook Ads. Используй для формирования дневных/недельных отчетов, сравнения периодов и анализа трендов.",
+      "content_excerpt": "---\nname: ads-reporter\ndescription: Эксперт по отчетности Facebook Ads. Используй для формирования дневных/недельных отчетов, сравнения периодов и анализа трендов.\n---\n\n# Ads Reporter\n\nТы - эксперт по формированию отчетов по рекламным кампаниям Facebook/Instagram.\n\n---\n\n## Твои задачи\n\n1. **Дневные отчеты** - today vs yesterday с today-компенсацией\n2. **Недельные отчеты** - агрегированные данные с трендами\n3. **Multi-period анализ** - данные за 5 периодов\n4. **Health Score** - 5-компонентный расчёт в отчётах\n5. **Сравнение периодов** - week-over-week, month-over-month\n6. **Custom отчеты** - по запросу пользователя\n\n---\n\n## Получение данных\n\n### Multi-period сбор (5 периодов)\n\n**ВАЖНО: Для полного отчёта собирай данные за все периоды!**\n\n```python\n# Параллельный сбор данных\ntoday = get_insights(object_id=\"act_XXX\", time_range=\"today\", level=\"adset\")\nyesterday = get_insights(object_id=\"act_XXX\", time_range=\"yesterday\", level=\"adset\")\nlast_3d = get_insights(object_id=\"act_XXX\", time_range=\"last_3d\", level=\"adset\")\nlast_7d = get_insights(object_id=\"act_XXX\", time_range=\"last_7d\", level=\"adset\")\nlast_30d = get_insights(object_id=\"act_XXX\", time_range=\"last_30d\", level=\"adset\")\n\n# Для детализации по ads\nads_yesterday = get_insights(object_id=\"act_XXX\", time_range=\"yesterday\", level=\"ad\")\n```\n\n### Доступные периоды\n\n| Значение | Описание | Использование |\n|----------|----------|---------------|\n| `today` | Сегодня | Today-компенсация |\n| `yesterday` | Вчера | Основной CPL Gap |\n| `last_3d` | Последние 3 дня | Тренд 3d vs 7d |\n| `last_7d` | Последние 7 дней | Тренд 7d vs 30d |\n| `last_14d` | Последние 14 дней | Week-over-week |\n| `last_30d` | Последние 30 дней | Месячный анализ |\n| `this_month` | Текущий месяц | Отчет за месяц |\n| `last_month` | Прошлый месяц | Month-over-month |\n| `{\"since\": \"YYYY-MM-DD\", \"until\": \"YYYY-MM-DD\"}` | Custom | Любой период |\n\n### Уровни агрегации\n\n| Level | Описание |\n|-------|----------|\n| `account` | Весь аккаунт |\n| `campaign` | По кампаниям |\n| `adset` | По adsets |\n| `ad` | По объявлениям |\n\n### Breakdowns\n\n| Breakdown | Описание |\n|-----------|----------|\n| `age` | По возрасту |\n| `gender` | По полу |\n| `country` | По странам |\n| `device_platform` | По устройствам |\n| `publisher_platform` | По площадкам (FB/IG/AN) |\n\n---\n\n## Форматы отчетов\n\n### Дневной отчет (с today vs yesterday)\n\n```markdown\n# Дневной отчет: {Account Name}\n📅 {Date}\n🎯 Целевой CPL: ${target}\n\n## Today (в процессе)\n| Метрика | Сейчас | Темп к вчера |\n|---------"
+    },
+    {
+      "path": "other/agent-creation-dnyoussef-context-cascade/SKILL.md",
+      "name": "agent-creation",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Skill is explicitly about creating and designing AI agents using systematic methodology and SOPs.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "a44be17069f17ef304cfb367999847e1a00b6c7765b00aab83927ea4349bfbc4",
+      "metadata_sha256": "2dc3d3011c38022281822f16e91ccd2a0603eb8686f269d41cda38d5c717d5d5",
+      "semantic_sources": {
+        "description": "body",
+        "name": "metadata"
+      },
+      "description": "/============================================================================/",
+      "content_excerpt": "/*============================================================================*/\n/* AGENT-CREATION SKILL :: VERILINGUA x VERIX EDITION                      */\n/*============================================================================*/\n\n---\nname: agent-creation\nversion: 1.0.0\ndescription: |\n  [assert|neutral] Systematic agent creation using evidence-based prompting principles and 4-phase SOP methodology. Use when creating new specialist agents, refining existing agent prompts, or designing multi-agent syst [ground:given] [conf:0.95] [state:confirmed]\ncategory: foundry\ntags:\n- foundry\n- creation\n- meta-tools\nauthor: ruv\ncognitive_frame:\n  primary: compositional\n  goal_analysis:\n    first_order: \"Execute agent-creation workflow\"\n    second_order: \"Ensure quality and consistency\"\n    third_order: \"Enable systematic foundry processes\"\n---\n\n/*----------------------------------------------------------------------------*/\n/* S0 META-IDENTITY                                                            */\n/*----------------------------------------------------------------------------*/\n\n[define|neutral] SKILL := {\n  name: \"agent-creation\",\n  category: \"foundry\",\n  version: \"1.0.0\",\n  layer: L1\n} [ground:given] [conf:1.0] [state:confirmed]\n\n/*----------------------------------------------------------------------------*/\n/* S1 COGNITIVE FRAME                                                          */\n/*----------------------------------------------------------------------------*/\n\n[define|neutral] COGNITIVE_FRAME := {\n  frame: \"Compositional\",\n  source: \"German\",\n  force: \"Build from primitives?\"\n} [ground:cognitive-science] [conf:0.92] [state:confirmed]\n\n## Kanitsal Cerceve (Evidential Frame Activation)\nKaynak dogrulama modu etkin.\n\n/*----------------------------------------------------------------------------*/\n/* S2 TRIGGER CONDITIONS                                                       */\n/*----------------------------------------------------------------------------*/\n\n[define|neutral] TRIGGER_POSITIVE := {\n  keywords: [\"agent-creation\", \"foundry\", \"workflow\"],\n  context: \"user needs agent-creation capability\"\n} [ground:given] [conf:1.0] [state:confirmed]\n\n/*----------------------------------------------------------------------------*/\n/* S3 CORE CONTENT                                                             */\n/*----------------------------------------------------------------------------*/\n\n<!-- SKILL SOP IMPROVEMENT v1.0 -->\n## Skill Execution Criteria"
+    },
+    {
+      "path": "other/add-excel/SKILL.md",
+      "name": "add-excel",
+      "current_category": "other",
+      "llm_category": "integration",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill adds an Excel Online connector to a Power Apps code app, involving cross-system connectors and service integrations. It uses CLI commands to add data sources and configure API calls to Excel Online Business service.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "98534d1be3c0970afdff64b415d9c72a4aca07648ba55ce2f2d98ea43dc65934",
+      "metadata_sha256": "46321fb2a9ae9c5e28e88640cc548577969529afdd2f94b2eb2bdeb1749d1cc2",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Adds Excel Online (Business) connector to a Power Apps code app. Use when reading or writing Excel workbook data from OneDrive or SharePoint.",
+      "content_excerpt": "---\nname: add-excel\ndescription: Adds Excel Online (Business) connector to a Power Apps code app. Use when reading or writing Excel workbook data from OneDrive or SharePoint.\nuser-invocable: true\nallowed-tools: Read, Edit, Write, Grep, Glob, Bash, LSP, TaskCreate, TaskUpdate, TaskList, TaskGet, AskUserQuestion, Skill\nmodel: sonnet\n---\n\n**📋 Shared Instructions: [shared-instructions.md](${CLAUDE_PLUGIN_ROOT}/shared/shared-instructions.md)** - Cross-cutting concerns.\n\n# Add Excel Online\n\n## Workflow\n\n1. Check Memory Bank → 2. Gather → 3. Add Connector → 4. Configure → 5. Build → 6. Update Memory Bank\n\n---\n\n### Step 1: Check Memory Bank\n\nCheck for `memory-bank.md` per [shared-instructions.md](${CLAUDE_PLUGIN_ROOT}/shared/shared-instructions.md).\n\n### Step 2: Gather\n\nAsk the user:\n\n1. Where is the workbook? (OneDrive or SharePoint)\n2. Workbook file name\n3. Which table(s) in the workbook to access\n\n### Step 3: Add Connector\n\n**First, find the connection ID** (see [connector-reference.md](${CLAUDE_PLUGIN_ROOT}/shared/connector-reference.md)):\n\nRun the `/list-connections` skill. Find the Excel Online (Business) connection in the output. If none exists, direct the user to create one using the environment-specific Connections URL — construct it from the active environment ID in context (from `power.config.json` or a prior step): `https://make.powerapps.com/environments/<environment-id>/connections` → **+ New connection** → search for the connector → Create.\n\nExcel Online is a tabular datasource -- requires `-c` (connection ID), `-d` (drive), and `-t` (table name in workbook):\n\n```bash\n# OneDrive workbook\nnpx power-apps add-data-source -a excelonlinebusiness -c <connection-id> -d 'me' -t 'Table1'\n\n# SharePoint workbook -- dataset is the document library path\nnpx power-apps add-data-source -a excelonlinebusiness -c <connection-id> -d 'sites/your-site' -t 'Table1'\n```\n\nRun for each table the user needs.\n\n### Step 4: Configure\n\n**AddRowIntoTable** -- adds a row to an Excel table:\n\n```typescript\n// OneDrive workbook\nawait ExcelOnlineBusinessService.AddRowIntoTable({\n  source: \"me\",\n  drive: \"me\",\n  file: \"MyWorkbook.xlsx\",\n  table: \"Table1\",\n  body: { column1: \"value1\", column2: \"value2\" } // Flat object, NO \"items\" wrapper\n});\n\n// SharePoint workbook\nawait ExcelOnlineBusinessService.AddRowIntoTable({\n  source: \"sites/your-site\",\n  drive: \"drive-id\",\n  file: \"SharedWorkbook.xlsx\",\n  table: \"Table1\",\n  body: { column1: \"value1\", column2: \"value2\" }\n});\n```\n\n**Key points:*"
+    },
+    {
+      "path": "other/agent-coverage-check/SKILL.md",
+      "name": "agent-coverage-check",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is about checking agent configuration coverage across hierarchy levels and phases, directly related to agent system management.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "3eca0582e3d75d3d9443628919f214d283cb4dfbac94a63ebc652671a139b802",
+      "metadata_sha256": "3e7bfaa38eead0f53a502de3cd528648f53418801fcc34b702f94b577eed6e55",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Check agent configuration coverage across hierarchy levels and phases. Use to ensure complete agent system coverage.",
+      "content_excerpt": "---\nname: agent-coverage-check\ndescription: \"Check agent configuration coverage across hierarchy levels and phases. Use to ensure complete agent system coverage.\"\nmcp_fallback: none\ncategory: agent\nuser-invocable: false\n---\n\n# Agent Coverage Check\n\nVerify complete agent system coverage across all dimensions.\n\n## When to Use\n\n- After adding new agents to system\n- Validating agent system completeness\n- Finding gaps in coverage\n- Ensuring all development phases covered\n\n## Quick Reference\n\n```bash\n# Check all coverage dimensions\n./scripts/check_agent_coverage.sh\n\n# Check specific dimension\n./scripts/check_level_coverage.sh\n./scripts/check_phase_coverage.sh\n./scripts/check_section_coverage.sh\n```\n\n## Coverage Dimensions\n\n**Hierarchy Levels**:\n\n- L0: Chief Architect (1)\n- L1: Section Orchestrators (6)\n- L2: Design Agents (per section)\n- L3: Specialists (per module)\n- L4: Engineers\n- L5: Junior Engineers\n\n**Development Phases**:\n\n- Plan\n- Test\n- Implementation\n- Package\n- Cleanup\n\n**Sections**:\n\n- Foundation\n- Shared Library\n- Tooling\n- First Paper\n- CI/CD\n- Agentic Workflows\n\n## Coverage Report Format\n\n```text\nHierarchy Coverage:\n  L0: ✅ 1 agent\n  L1: ✅ 6 agents\n  L2: ✅ 12 agents\n  L3: ✅ 24 agents\n  L4: ✅ 3 agents\n  L5: ✅ 1 agent\n\nPhases:\n  Plan: ✅ Covered\n  Test: ✅ Covered\n  Implementation: ✅ Covered\n  Package: ✅ Covered\n  Cleanup: ✅ Covered\n\nSections:\n  Foundation: ✅ Orchestrator + agents\n  Shared Library: ✅ Orchestrator + agents\n```\n\n## Gap Patterns\n\n**Missing level**: Any level with 0 agents\n\n**Missing phase**: Phase not assigned to any agent\n\n**Missing section**: Section without orchestrator\n\n## References\n\n- `agent-validate-config` - Validate individual agent configs\n- `agent-test-delegation` - Test delegation completeness\n- `.claude/agents/` - All agent configurations\n"
+    },
+    {
+      "path": "other/active-directory-attacks-sickn33-antigravity-awesome--2/SKILL.md",
+      "name": "Active Directory Attacks",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.98,
+      "status": "ok",
+      "reason": "Duplicate of Active Directory attack skill with identical security-focused content on penetration testing and exploitation.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "9ebff10ec04b52f585e339824cdeff845572a219dcf3907d9bd52c53af16b99f",
+      "metadata_sha256": "88b3694462b4e14694f956af675b51ff885935d5a2cb6dc3096a8e83cb9b0806",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "This skill should be used when the user asks to \"attack Active Directory\", \"exploit AD\", \"Kerberoasting\", \"DCSync\", \"pass-the-hash\", \"BloodHound enumeration\", \"Golden Ticket\", \"Silver Ticket\", \"AS-REP roasting\", \"NTLM relay\", or needs guidance on Windows domain penetration testing.",
+      "content_excerpt": "---\nname: Active Directory Attacks\ndescription: This skill should be used when the user asks to \"attack Active Directory\", \"exploit AD\", \"Kerberoasting\", \"DCSync\", \"pass-the-hash\", \"BloodHound enumeration\", \"Golden Ticket\", \"Silver Ticket\", \"AS-REP roasting\", \"NTLM relay\", or needs guidance on Windows domain penetration testing.\nmetadata:\n  author: zebbern\n  version: \"1.1\"\n---\n\n# Active Directory Attacks\n\n## Purpose\n\nProvide comprehensive techniques for attacking Microsoft Active Directory environments. Covers reconnaissance, credential harvesting, Kerberos attacks, lateral movement, privilege escalation, and domain dominance for red team operations and penetration testing.\n\n## Inputs/Prerequisites\n\n- Kali Linux or Windows attack platform\n- Domain user credentials (for most attacks)\n- Network access to Domain Controller\n- Tools: Impacket, Mimikatz, BloodHound, Rubeus, CrackMapExec\n\n## Outputs/Deliverables\n\n- Domain enumeration data\n- Extracted credentials and hashes\n- Kerberos tickets for impersonation\n- Domain Administrator access\n- Persistent access mechanisms\n\n---\n\n## Essential Tools\n\n| Tool | Purpose |\n|------|---------|\n| BloodHound | AD attack path visualization |\n| Impacket | Python AD attack tools |\n| Mimikatz | Credential extraction |\n| Rubeus | Kerberos attacks |\n| CrackMapExec | Network exploitation |\n| PowerView | AD enumeration |\n| Responder | LLMNR/NBT-NS poisoning |\n\n---\n\n## Core Workflow\n\n### Step 1: Kerberos Clock Sync\n\nKerberos requires clock synchronization (±5 minutes):\n\n```bash\n# Detect clock skew\nnmap -sT 10.10.10.10 -p445 --script smb2-time\n\n# Fix clock on Linux\nsudo date -s \"14 APR 2024 18:25:16\"\n\n# Fix clock on Windows\nnet time /domain /set\n\n# Fake clock without changing system time\nfaketime -f '+8h' <command>\n```\n\n### Step 2: AD Reconnaissance with BloodHound\n\n```bash\n# Start BloodHound\nneo4j console\nbloodhound --no-sandbox\n\n# Collect data with SharpHound\n.\\SharpHound.exe -c All\n.\\SharpHound.exe -c All --ldapusername user --ldappassword pass\n\n# Python collector (from Linux)\nbloodhound-python -u 'user' -p 'password' -d domain.local -ns 10.10.10.10 -c all\n```\n\n### Step 3: PowerView Enumeration\n\n```powershell\n# Get domain info\nGet-NetDomain\nGet-DomainSID\nGet-NetDomainController\n\n# Enumerate users\nGet-NetUser\nGet-NetUser -SamAccountName targetuser\nGet-UserProperty -Properties pwdlastset\n\n# Enumerate groups\nGet-NetGroupMember -GroupName \"Domain Admins\"\nGet-DomainGroup -Identity \"Domain Admins\" | Select-Object -ExpandProperty Member\n\n# "
+    },
+    {
+      "path": "other/add-office365/SKILL.md",
+      "name": "add-office365",
+      "current_category": "other",
+      "llm_category": "integration",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill adds an Office 365 Outlook connector to a Power Apps code app, enabling access to calendars, emails, and events, which is a service integration task.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "1a3d0d0f268de92a7720b76988619063c9fc382c83266287c2f66d08df2f0c86",
+      "metadata_sha256": "fc8b392fa053a2e37525216533be08530e007d74011689f411d0c33ca3def861",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Adds Office 365 Outlook connector to a Power Apps code app. Use when accessing calendars, sending emails, reading inbox, or managing Outlook events.",
+      "content_excerpt": "---\nname: add-office365\ndescription: Adds Office 365 Outlook connector to a Power Apps code app. Use when accessing calendars, sending emails, reading inbox, or managing Outlook events.\nuser-invocable: true\nallowed-tools: Read, Edit, Write, Grep, Glob, Bash, LSP, TaskCreate, TaskUpdate, TaskList, TaskGet, AskUserQuestion, Skill\nmodel: sonnet\n---\n\n**📋 Shared Instructions: [shared-instructions.md](${CLAUDE_PLUGIN_ROOT}/shared/shared-instructions.md)** - Cross-cutting concerns.\n\n# Add Office 365 Outlook\n\n## Workflow\n\n1. Check Memory Bank -> 2. Add Connector -> 3. Review Generated Service -> 4. Configure -> 5. Build -> 6. Update Memory Bank\n\n---\n\n### Step 1: Check Memory Bank\n\nCheck for `memory-bank.md` per [shared-instructions.md](${CLAUDE_PLUGIN_ROOT}/shared/shared-instructions.md).\n\n### Step 2: Add Connector\n\n**First, find the connection ID** (see [connector-reference.md](${CLAUDE_PLUGIN_ROOT}/shared/connector-reference.md)):\n\nRun the `/list-connections` skill. Find the Office 365 Outlook connection in the output (API name contains `office365`). If none exists, direct the user to create one using the environment-specific Connections URL — construct it from the active environment ID in context (from `power.config.json` or a prior step): `https://make.powerapps.com/environments/<environment-id>/connections` → **+ New connection** → search for the connector → Create.\n\n```bash\nnpx power-apps add-data-source -a office365 -c <connection-id>\n```\n\n### Step 3: Review Generated Service\n\nThe generated service file (`src/generated/services/Office365OutlookService.ts`) is large. **Use `Grep` to find specific methods** instead of reading the entire file:\n\n```\nGrep pattern=\"async \\w+\" path=\"src/generated/services/Office365OutlookService.ts\"\n```\n\nKey methods (sorted by common usage):\n\n#### Calendar Operations\n\n| Method                    | Purpose                    | Key Parameters                                           |\n| ------------------------- | -------------------------- | -------------------------------------------------------- |\n| `GetEventsCalendarViewV2` | Get events in a date range | `calendarId`, `startDateTimeOffset`, `endDateTimeOffset` |\n| `V3CalendarPostItem`      | Create a calendar event    | `table` (calendar ID), `item` (CalendarEventHtmlClient)  |\n| `CalendarDeleteItem`      | Delete an event            | `table` (calendar ID), `id` (event ID)                   |\n| `CalendarPatchItem`       | Update an event            | `table`, `id`, `item`     "
+    },
+    {
+      "path": "other/adynato-cloudflare-adynato-skills-2/SKILL.md",
+      "name": "adynato-cloudflare",
+      "current_category": "other",
+      "llm_category": "devops",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill covers Cloudflare Workers/Pages deployment, wrangler CLI usage, log debugging, and edge function configuration - all DevOps/infrastructure topics.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "029634661c940da9fc0b6f58158965c75069831a4cda89ec66954dcf8fa95bee",
+      "metadata_sha256": "3910a2f925289356043e47b33787df3e5035149b1ecbd83ea3f0c9e3924ec7a0",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Cloudflare Workers and Pages deployment for Adynato projects. Covers wrangler CLI, reading logs for debugging, KV/D1/R2 storage, environment variables, and common errors. Use when deploying to Cloudflare, debugging workers, or configuring edge functions.",
+      "content_excerpt": "---\nname: adynato-cloudflare\ndescription: Cloudflare Workers and Pages deployment for Adynato projects. Covers wrangler CLI, reading logs for debugging, KV/D1/R2 storage, environment variables, and common errors. Use when deploying to Cloudflare, debugging workers, or configuring edge functions.\n---\n\n# Cloudflare Skill\n\nUse this skill when deploying Adynato projects to Cloudflare Workers or Pages.\n\n## Wrangler CLI\n\n### Installation\n\n```bash\nnpm install -g wrangler\n\n# Or use npx\nnpx wrangler <command>\n```\n\n### Authentication\n\n```bash\n# Interactive login (opens browser)\nwrangler login\n\n# Check auth status\nwrangler whoami\n\n# Use API token (CI/CD)\nexport CLOUDFLARE_API_TOKEN=\"your-token\"\n```\n\n## Reading Logs for Debugging\n\n### Tail Live Logs\n\n```bash\n# Stream logs from production\nwrangler tail\n\n# Stream logs from specific environment\nwrangler tail --env staging\n\n# Filter by status\nwrangler tail --status error\n\n# Filter by search term\nwrangler tail --search \"user-123\"\n\n# Filter by IP\nwrangler tail --ip 192.168.1.1\n\n# JSON output for parsing\nwrangler tail --format json\n```\n\n### Log Output Format\n\n```\nGET https://example.com/api/users - Ok @ 1/17/2026, 10:30:00 AM\n  (log) Processing request for user-123\n  (error) Database connection failed\n```\n\n### Adding Console Logs\n\n```typescript\n// Workers log to wrangler tail\nexport default {\n  async fetch(request: Request, env: Env): Promise<Response> {\n    console.log('Request received:', request.url)\n    console.log('Headers:', Object.fromEntries(request.headers))\n\n    try {\n      const result = await doSomething()\n      console.log('Result:', JSON.stringify(result))\n      return Response.json(result)\n    } catch (error) {\n      console.error('Error:', error.message, error.stack)\n      return Response.json({ error: 'Internal error' }, { status: 500 })\n    }\n  }\n}\n```\n\n### Debugging Tips\n\n1. **Always log request context first**\n   ```typescript\n   console.log(`[${request.method}] ${new URL(request.url).pathname}`)\n   ```\n\n2. **Log before and after async operations**\n   ```typescript\n   console.log('Fetching from KV...')\n   const value = await env.MY_KV.get(key)\n   console.log('KV result:', value ? 'found' : 'not found')\n   ```\n\n3. **Use structured logging**\n   ```typescript\n   console.log(JSON.stringify({\n     type: 'request',\n     path: url.pathname,\n     method: request.method,\n     timestamp: Date.now()\n   }))\n   ```\n\n## Deployment\n\n### Deploy Worker\n\n```bash\n# Deploy to production\nwrangler deploy\n\n# Deploy to specific "
+    },
+    {
+      "path": "other/agent-inbox-sunholo-data-ailang-2/SKILL.md",
+      "name": "Agent Inbox",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly about checking and processing messages from autonomous AILANG agents, which is core agent communication and orchestration functionality.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "0accb7db7dc113c5008d86810bb16013d67442993da6350d16bc98adc2a8dae0",
+      "metadata_sha256": "7855acced82542957f275b30325470fb49ffe25799c5febb895786060ddb4541",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Check and process messages from autonomous AILANG agents. Use when starting a session, after agent handoffs, or when checking for completion notifications.",
+      "content_excerpt": "---\nname: Agent Inbox\ndescription: Check and process messages from autonomous AILANG agents. Use when starting a session, after agent handoffs, or when checking for completion notifications.\n---\n\n# Agent Inbox\n\n**Check for messages from autonomous agents at session start and process completion notifications.**\n\n## Quick Start\n\n**Most common usage:**\n```bash\n# List all messages\nailang messages list\n\n# Show only unread messages\nailang messages list --unread\n\n# Read full message content\nailang messages read MSG_ID\n\n# Acknowledge (mark as read)\nailang messages ack MSG_ID\nailang messages ack --all\n\n# Send a message\nailang messages send user \"Your message\" --title \"Title\" --from \"agent-name\"\n\n# Send bug/feature to GitHub (for cross-instance visibility)\nailang messages send user \"Bug report\" --type bug --github\n```\n\n**Expected output (at session start):**\n```\n📬 AGENT INBOX: 2 unread message(s) from autonomous agents\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\nID: msg_20251210_143021_abc123\nFrom: sprint-executor\nTitle: Sprint M-S1 complete\nTime: 2025-12-10T14:30:21Z\n\nID: msg_20251210_143055_def456\nFrom: stapledon\nTitle: Parser Bug\nTime: 2025-12-10T14:30:55Z\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n```\n\n## When to Use This Skill\n\n**Invoke this skill when:**\n- **Session starts** - First action in every Claude Code session (required by CLAUDE.md)\n- **After handoffs** - When you've sent work to autonomous agents\n- **Periodic checks** - User asks \"any updates from agents?\"\n- **Debugging** - To see agent communication history\n\n## Storage Backend\n\nAll messages stored in SQLite database:\n- **Location**: `~/.ailang/state/collaboration.db`\n- **Accessible via**: CLI (`ailang messages`) and Collaboration Hub dashboard\n- **Message statuses**: `unread`, `read`, `archived`, `deleted`\n\n## Available Commands\n\n### List Messages\n\n```bash\nailang messages list                    # All messages\nailang messages list --unread           # Only unread\nailang messages list --inbox user       # Filter by inbox\nailang messages list --from agent-name  # Filter by sender\nailang messages list --json             # JSON output\nailang messages list --limit 50         # Limit results\n```\n\n### Read Full Message\n\n```bash\nailang messages read MSG_ID             # Full content, marks as read\nailang messages read MSG_ID --peek      # View without marking read\nailang messages read MSG_ID --json      # JSON output\n```\n\n### Acknowledge Messages\n\n```bash\nailang messages ack MS"
+    },
+    {
+      "path": "other/agent-arch-system-design-ruvnet-ruflo/SKILL.md",
+      "name": "agent-arch-system-design",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is an 'Agent skill for arch-system-design' that acts as an expert agent for system architecture design, patterns, and high-level technical decisions. It has defined capabilities, constraints, and integration points typical of an agent.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "83c9361353d8419dc16f6b0bcad5ead00670312e518f557b3cd37289ed71836e",
+      "metadata_sha256": "29a1c937b5a9f5cead79737e648948143d489ff80c0a7415f7f22810c354f128",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Agent skill for arch-system-design - invoke with $agent-arch-system-design",
+      "content_excerpt": "---\nname: agent-arch-system-design\ndescription: Agent skill for arch-system-design - invoke with $agent-arch-system-design\n---\n\n---\nname: \"system-architect\"\ndescription: \"Expert agent for system architecture design, patterns, and high-level technical decisions\"\ntype: \"architecture\"\ncolor: \"purple\"\nversion: \"1.0.0\"\ncreated: \"2025-07-25\"\nauthor: \"Claude Code\"\nmetadata:\n  specialization: \"System design, architectural patterns, scalability planning\"\n  complexity: \"complex\"\n  autonomous: false  # Requires human approval for major decisions\n  \ntriggers:\n  keywords:\n    - \"architecture\"\n    - \"system design\"\n    - \"scalability\"\n    - \"microservices\"\n    - \"design pattern\"\n    - \"architectural decision\"\n  file_patterns:\n    - \"**$architecture/**\"\n    - \"**$design/**\"\n    - \"*.adr.md\"  # Architecture Decision Records\n    - \"*.puml\"    # PlantUML diagrams\n  task_patterns:\n    - \"design * architecture\"\n    - \"plan * system\"\n    - \"architect * solution\"\n  domains:\n    - \"architecture\"\n    - \"design\"\n\ncapabilities:\n  allowed_tools:\n    - Read\n    - Write  # Only for architecture docs\n    - Grep\n    - Glob\n    - WebSearch  # For researching patterns\n  restricted_tools:\n    - Edit  # Should not modify existing code\n    - MultiEdit\n    - Bash  # No code execution\n    - Task  # Should not spawn implementation agents\n  max_file_operations: 30\n  max_execution_time: 900  # 15 minutes for complex analysis\n  memory_access: \"both\"\n  \nconstraints:\n  allowed_paths:\n    - \"docs$architecture/**\"\n    - \"docs$design/**\"\n    - \"diagrams/**\"\n    - \"*.md\"\n    - \"README.md\"\n  forbidden_paths:\n    - \"src/**\"  # Read-only access to source\n    - \"node_modules/**\"\n    - \".git/**\"\n  max_file_size: 5242880  # 5MB for diagrams\n  allowed_file_types:\n    - \".md\"\n    - \".puml\"\n    - \".svg\"\n    - \".png\"\n    - \".drawio\"\n\nbehavior:\n  error_handling: \"lenient\"\n  confirmation_required:\n    - \"major architectural changes\"\n    - \"technology stack decisions\"\n    - \"breaking changes\"\n    - \"security architecture\"\n  auto_rollback: false\n  logging_level: \"verbose\"\n  \ncommunication:\n  style: \"technical\"\n  update_frequency: \"summary\"\n  include_code_snippets: false  # Focus on diagrams and concepts\n  emoji_usage: \"minimal\"\n  \nintegration:\n  can_spawn: []\n  can_delegate_to:\n    - \"docs-technical\"\n    - \"analyze-security\"\n  requires_approval_from:\n    - \"human\"  # Major decisions need human approval\n  shares_context_with:\n    - \"arch-database\"\n    - \"arch-cloud\"\n    - \"arch-security\"\n\noptimization:\n  parallel_oper"
+    },
+    {
+      "path": "other/admin-crud-mavrick91-tanstack-start-app-2/SKILL.md",
+      "name": "admin-crud",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Admin CRUD page generation with data tables, forms, and dashboard components",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "c947395f5f508df7981b59b6b3a78756a0ec78a517f838fb5b14e615734749d1",
+      "metadata_sha256": "f4e14bdb9e065e3ea73e91a4045a50fae9e434191f9d44ddd12f44f8fdb5728c",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Generate admin dashboard pages with data tables, filters, bulk actions, dialogs, and forms. Use when building admin interfaces, management pages, or dashboard components.",
+      "content_excerpt": "---\nname: admin-crud\ndescription: Generate admin dashboard pages with data tables, filters, bulk actions, dialogs, and forms. Use when building admin interfaces, management pages, or dashboard components.\n---\n\n# Admin CRUD Generator\n\nCreate admin dashboard pages following this project's established patterns.\n\n## Admin Page Structure\n\n```\nsrc/\n├── routes/admin/\n│   └── resources/\n│       ├── index.tsx          # List page\n│       └── $resourceId.tsx    # Detail/edit page\n└── components/admin/\n    └── resources/\n        ├── ResourcesList.tsx        # List container\n        ├── ResourceForm.tsx         # Create/edit form\n        └── components/\n            ├── ResourceTable.tsx    # Data table\n            ├── StatusBadge.tsx      # Status indicator\n            ├── BulkActionsBar.tsx   # Bulk operations\n            └── ResourceActions.tsx  # Row actions\n```\n\n## List Page Template\n\n```typescript\n// src/routes/admin/resources/index.tsx\nimport { createFileRoute } from '@tanstack/react-router'\nimport { ResourcesList } from '@/components/admin/resources/ResourcesList'\n\nexport const Route = createFileRoute('/admin/resources/')({\n  component: ResourcesPage,\n})\n\nfunction ResourcesPage() {\n  return <ResourcesList />\n}\n```\n\n## List Component with Data Table\n\n```typescript\n// src/components/admin/resources/ResourcesList.tsx\nimport { useQuery } from '@tanstack/react-query'\nimport { useTranslation } from 'react-i18next'\nimport { Plus } from 'lucide-react'\nimport { Link } from '@tanstack/react-router'\n\nimport { Button } from '@/components/ui/button'\nimport { ResourceTable } from './components/ResourceTable'\n\nexport function ResourcesList() {\n  const { t } = useTranslation()\n\n  const { data, isLoading, error } = useQuery({\n    queryKey: ['resources'],\n    queryFn: async () => {\n      const res = await fetch('/api/resources', { credentials: 'include' })\n      const json = await res.json()\n      if (!json.success) throw new Error(json.error)\n      return json\n    },\n  })\n\n  if (isLoading) {\n    return (\n      <div className=\"flex items-center justify-center h-64\">\n        <div\n          className=\"animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-pink-500\"\n          role=\"status\"\n          aria-label=\"Loading\"\n        />\n      </div>\n    )\n  }\n\n  if (error) {\n    return (\n      <div className=\"text-center py-12\">\n        <p className=\"text-red-500\">{t('Failed to load')}</p>\n      </div>\n    )\n  }\n\n  const { items, total } = data\n\n  if (items.length === 0) {\n    re"
+    },
+    {
+      "path": "other/agent-browser-chachamaru127-claude-code-harness-4/SKILL.md",
+      "name": "agent-browser",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Skill is explicitly for browser automation by an AI agent, fitting the 'agent' category for autonomous task execution.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "81fcb79558c237a3158d35d3b785ebdd727d1206efac8d000ca6a182035ccb09",
+      "metadata_sha256": "12c6c619f0847ea39198677d9673076caa97da894ea07f0dcded6c1e3d1bf3e7",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "ブラウザを手足のように操る。ページ遷移、フォーム入力、スクショ、なんでもこい。Use when users ask to navigate websites, fill forms, take screenshots, extract web data, test web apps, or automate browser workflows. Trigger phrases include 'go to [url]', 'click on', 'fill out the form', 'take a screenshot', 'scrape', 'automate', 'test the website', 'log into', or any browser interaction request. Do NOT load for: sharing URLs, embedding links, screenshot image files.",
+      "content_excerpt": "---\nname: agent-browser\ndescription: \"ブラウザを手足のように操る。ページ遷移、フォーム入力、スクショ、なんでもこい。Use when users ask to navigate websites, fill forms, take screenshots, extract web data, test web apps, or automate browser workflows. Trigger phrases include 'go to [url]', 'click on', 'fill out the form', 'take a screenshot', 'scrape', 'automate', 'test the website', 'log into', or any browser interaction request. Do NOT load for: sharing URLs, embedding links, screenshot image files.\"\ndescription-en: \"Control browser like hands and feet. Navigate, fill forms, screenshot, bring it on. Use when users ask to navigate websites, fill forms, take screenshots, extract web data, test web apps, or automate browser workflows. Trigger phrases include 'go to [url]', 'click on', 'fill out the form', 'take a screenshot', 'scrape', 'automate', 'test the website', 'log into', or any browser interaction request. Do NOT load for: sharing URLs, embedding links, screenshot image files.\"\ndescription-ja: \"ブラウザを手足のように操る。ページ遷移、フォーム入力、スクショ、なんでもこい。Use when users ask to navigate websites, fill forms, take screenshots, extract web data, test web apps, or automate browser workflows. Trigger phrases include 'go to [url]', 'click on', 'fill out the form', 'take a screenshot', 'scrape', 'automate', 'test the website', 'log into', or any browser interaction request. Do NOT load for: sharing URLs, embedding links, screenshot image files.\"\nallowed-tools: [\"Bash\", \"Read\"]\nuser-invocable: false\ncontext: fork\nargument-hint: \"[url] [--headless]\"\n---\n\n# Agent Browser Skill\n\nブラウザ自動化を行うスキル。agent-browser CLI を使用して、UI デバッグ・検証・自動操作を実行します。\n\n---\n\n## トリガーフレーズ\n\nこのスキルは以下のフレーズで自動起動します：\n\n- 「ページを開いて」「URLを確認して」\n- 「クリックして」「入力して」「フォームに」\n- 「スクリーンショットを撮って」\n- 「UIを確認して」「画面をテストして」\n- \"open this page\", \"click on\", \"fill the form\", \"screenshot\"\n\n---\n\n## 機能詳細\n\n| 機能 | 詳細 |\n|------|------|\n| **ブラウザ自動化** | See [references/browser-automation.md](references/browser-automation.md) |\n| **AI スナップショットワークフロー** | See [references/ai-snapshot-workflow.md](references/ai-snapshot-workflow.md) |\n\n## 実行手順\n\n### Step 0: agent-browser の確認\n\n```bash\n# インストール確認\nwhich agent-browser\n\n# 未インストールの場合\nnpm install -g agent-browser\nagent-browser install\n```\n\n### Step 1: ユーザーのリクエストを分類\n\n| リクエストタイプ | 対応アクション |\n|----------------|---------------|\n| URL を開く | `agent-browser open <url>` |\n| 要素をクリック | スナップショット → `agent-browser click @ref` |\n| フォーム入力 | スナップショット → `agent-browser fill @ref \"text\"` |\n| 状態確認 | `agent-browser snapshot -i -c` |\n| スクリーンショット | `agent-browser screenshot <pa"
+    },
+    {
+      "path": "other/add-rate-limiting-tassadar2499-novatune-2/SKILL.md",
+      "name": "add-rate-limiting",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill configures rate limiting policies for API endpoints, which is a security measure to prevent abuse and protect against denial-of-service attacks.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "5b8c1c4a792e0467b5c48bbebb52591041f315a1d0ba6ee6c6dd9037b9c380fd",
+      "metadata_sha256": "fc0c73cecbe306be07adb929d856357fe714cede7608c4bb0c0e632bf3a0623e",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "metadata"
+      },
+      "description": "Configure rate limiting policies for API endpoints with sliding window limits",
+      "content_excerpt": "---\ndescription: Configure rate limiting policies for API endpoints with sliding window limits\n---\n# Add Rate Limiting Skill\n\nConfigure rate limiting for NovaTune API endpoints.\n\n## Project Context\n\n- Configuration: `src/NovaTuneApp/NovaTuneApp.ApiService/appsettings.json`\n- Rate limit setup: `src/NovaTuneApp/NovaTuneApp.ApiService/Program.cs`\n- Policies: `src/NovaTuneApp/NovaTuneApp.ApiService/Infrastructure/RateLimiting/`\n\n## Steps\n\n### 1. Add Configuration Section\n\nLocation: `appsettings.json`\n\n```json\n{\n  \"RateLimiting\": {\n    \"Auth\": {\n      \"LoginPerIp\": { \"PermitLimit\": 10, \"WindowMinutes\": 1 },\n      \"LoginPerAccount\": { \"PermitLimit\": 5, \"WindowMinutes\": 1 },\n      \"RegisterPerIp\": { \"PermitLimit\": 10, \"WindowMinutes\": 1 },\n      \"RefreshPerIp\": { \"PermitLimit\": 20, \"WindowMinutes\": 1 }\n    },\n    \"Upload\": {\n      \"PerUser\": { \"PermitLimit\": 20, \"WindowMinutes\": 60 },\n      \"BurstPerUser\": { \"PermitLimit\": 5, \"WindowMinutes\": 1 }\n    },\n    \"Streaming\": {\n      \"PerUser\": { \"PermitLimit\": 60, \"WindowMinutes\": 1 },\n      \"PerTrack\": { \"PermitLimit\": 10, \"WindowMinutes\": 1 }\n    },\n    \"Telemetry\": {\n      \"PerDevice\": { \"PermitLimit\": 120, \"WindowMinutes\": 1 }\n    }\n  }\n}\n```\n\n### 2. Create Rate Limit Settings Classes\n\nLocation: `src/NovaTuneApp/NovaTuneApp.ApiService/Configuration/RateLimitSettings.cs`\n\n```csharp\npublic class RateLimitSettings\n{\n    public const string SectionName = \"RateLimiting\";\n\n    public AuthRateLimits Auth { get; set; } = new();\n    public UploadRateLimits Upload { get; set; } = new();\n    public StreamingRateLimits Streaming { get; set; } = new();\n    public TelemetryRateLimits Telemetry { get; set; } = new();\n}\n\npublic class AuthRateLimits\n{\n    public RateLimitPolicy LoginPerIp { get; set; } = new(10, 1);\n    public RateLimitPolicy LoginPerAccount { get; set; } = new(5, 1);\n    public RateLimitPolicy RegisterPerIp { get; set; } = new(10, 1);\n    public RateLimitPolicy RefreshPerIp { get; set; } = new(20, 1);\n}\n\npublic class UploadRateLimits\n{\n    public RateLimitPolicy PerUser { get; set; } = new(20, 60);\n    public RateLimitPolicy BurstPerUser { get; set; } = new(5, 1);\n}\n\npublic class StreamingRateLimits\n{\n    public RateLimitPolicy PerUser { get; set; } = new(60, 1);\n    public RateLimitPolicy PerTrack { get; set; } = new(10, 1);\n}\n\npublic class TelemetryRateLimits\n{\n    public RateLimitPolicy PerDevice { get; set; } = new(120, 1);\n}\n\npublic record RateLimitPolicy(int PermitLimit, int WindowMinutes);\n```\n\n### 3. Conf"
+    },
+    {
+      "path": "other/agent-builder/SKILL.md",
+      "name": "agent-builder",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill's primary purpose is building custom AI agents in Claude Code, including subagents, skills, hooks, slash commands, MCP integrations, and CLAUDE.md configuration. It explicitly focuses on agent architecture, agent SDK, agentic workflows, and task delegation.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "058e803a63908fcaf80ede24f8e58e392833f4f76a47e2e4b1f23cf19522ef89",
+      "metadata_sha256": "34df8636c9c464712807c186155cc45d88021fc0073f48317484aa12c465e130",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Build custom AI agents in Claude Code from a user's problem statement. This skill analyzes the user's use case, asks smart clarifying questions, researches the internet for similar agents (GitHub repos, blogs, Claude Code community patterns), and then architects and builds production-ready Claude Code agents — including subagents, skills, hooks, slash commands, MCP integrations, and CLAUDE.md configuration. Use this skill whenever the user wants to create an agent, build an automation workflow, set up a Claude Code subagent, design a multi-agent system, or says things like 'build me an agent for...', 'automate this with Claude Code', 'I want a subagent that...', 'help me create a workflow', 'set up an agent pipeline', or any variation of wanting Claude Code to do something specialized. Also trigger when the user mentions agent architecture, agent SDK, agentic workflows, or task delegation in Claude Code — even if they don't use the word 'agent' explicitly.",
+      "content_excerpt": "---\nname: agent-builder\ndescription: \"Build custom AI agents in Claude Code from a user's problem statement. This skill analyzes the user's use case, asks smart clarifying questions, researches the internet for similar agents (GitHub repos, blogs, Claude Code community patterns), and then architects and builds production-ready Claude Code agents — including subagents, skills, hooks, slash commands, MCP integrations, and CLAUDE.md configuration. Use this skill whenever the user wants to create an agent, build an automation workflow, set up a Claude Code subagent, design a multi-agent system, or says things like 'build me an agent for...', 'automate this with Claude Code', 'I want a subagent that...', 'help me create a workflow', 'set up an agent pipeline', or any variation of wanting Claude Code to do something specialized. Also trigger when the user mentions agent architecture, agent SDK, agentic workflows, or task delegation in Claude Code — even if they don't use the word 'agent' explicitly.\"\n---\n\n# Agent Builder for Claude Code\n\nYou are an expert agent architect for Claude Code. Your job is to take a user's problem statement — no matter how vague or detailed — and transform it into a fully functional, production-ready agent system built on Claude Code's primitives: **subagents**, **skills**, **hooks**, **slash commands**, **MCP servers**, **CLAUDE.md**, and the **Claude Agent SDK**.\n\nYou operate in six phases. Move through them fluidly — some users will need extensive discovery, others will arrive with a clear spec. Read the room.\n\n---\n\n## Phase 0: Context Scan — Know the Project First\n\n**CRITICAL: Do this BEFORE asking the user any questions.** The user may have been working with Claude Code on this project for hours. Don't waste their time asking things you can figure out yourself.\n\n### Step 1: Harvest conversation context\n\nRead back through the entire conversation history. Extract:\n- What is this project? (tech stack, purpose, domain)\n- What has the user been building or discussing?\n- What problems, pain points, or workflows have they mentioned?\n- Any files, APIs, services, or tools already in use?\n\n### Step 2: Scan the project files\n\nAutomatically read these files if they exist (use Glob and Read — don't ask permission):\n\n```\nCLAUDE.md                    # Project overview, conventions, architecture\npackage.json / pyproject.toml / Cargo.toml  # Tech stack and dependencies\n.claude/agents/*.md          # Existing agents (don't duplicate)\n.claude/skill"
+    },
+    {
+      "path": "other/aesthetic-system-phrazzld-claude-config-2/SKILL.md",
+      "name": "aesthetic-system",
+      "current_category": "other",
+      "llm_category": "design",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is an actionable design system for building web components/pages with distinctive visual aesthetics, covering typography, color palettes, spatial layouts, and micro-interactions. It explicitly complements a frontend-design plugin.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "2d8b92624556d9a779016d4d7a21b9f96820fa998c3ee354474cfaf1bc2555cd",
+      "metadata_sha256": "78059251c14175416eaabcad0dead06cd337d434662b6237199f71912314d1de",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Actionable design system complementing official frontend-design plugin.\nThe plugin provides philosophy; this skill provides executable patterns.\n\nInvoke when:\n- Building web components, pages, or applications\n- Designing UI that needs to stand out (not generic)\n- Implementing visual polish and micro-interactions\n- Choosing typography, color palettes, or spatial layouts\n\nCRITICAL: Avoid \"AI slop\" aesthetics. Make creative, unexpected choices.\nMANDATORY: Consult Gemini before any frontend work.\n\nSee also: references/dna-codes.md, references/banned-patterns.md",
+      "content_excerpt": "---\nname: aesthetic-system\ndescription: |\n  Actionable design system complementing official frontend-design plugin.\n  The plugin provides philosophy; this skill provides executable patterns.\n\n  Invoke when:\n  - Building web components, pages, or applications\n  - Designing UI that needs to stand out (not generic)\n  - Implementing visual polish and micro-interactions\n  - Choosing typography, color palettes, or spatial layouts\n\n  CRITICAL: Avoid \"AI slop\" aesthetics. Make creative, unexpected choices.\n  MANDATORY: Consult Gemini before any frontend work.\n\n  See also: references/dna-codes.md, references/banned-patterns.md\neffort: high\n---\n\n# Aesthetic System\n\n## Phase 0: Research & Delegation (MANDATORY)\n\n### Step 1: Gemini Research\n\nBefore ANY frontend work, get design direction from Gemini:\n\n```bash\ngemini -p \"I'm building [describe component/page]. Research:\n1. Distinctive design approaches (avoid AI-slop aesthetics)\n2. Real-world examples of excellent [component type]\n3. Current typography/color/layout trends for this context\n4. Unexpected alternatives to obvious solutions\"\n```\n\n**Why mandatory:** Web grounding surfaces current trends, prevents convergence.\n\n### Step 2: Kimi Implementation (MANDATORY)\n\n**All frontend implementation MUST be delegated to Kimi K2.5 via MCP.**\n\nKimi excels at frontend development and visual coding:\n\n```javascript\n// Single component/page implementation\nmcp__kimi__spawn_agent({\n  prompt: `Implement [component] following these aesthetics:\n- Typography: ${typography}\n- Colors: ${palette}\n- Layout: ${layoutDirection}\n- Motion: ${motionGuidelines}\nConstraints: Apply ui-skills rules. No Inter/Roboto. No purple gradients.\nOutput: React/Tailwind component in ${targetPath}`,\n  thinking: true  // For complex implementations\n})\n\n// Parallel implementation (multiple components)\nmcp__kimi__spawn_agents_parallel({\n  agents: [\n    { prompt: \"Implement Hero section...\", thinking: true },\n    { prompt: \"Implement Card component...\", thinking: true },\n    { prompt: \"Implement Navigation...\", thinking: true },\n  ]\n})\n```\n\n**Workflow:**\n1. Research direction → Gemini (web grounding, trends)\n2. Implement visuals → Kimi (Agent Swarm, parallel execution)\n3. Review quality → Claude (expert panel, quality gates)\n\n**Anti-pattern:** Implementing frontend yourself instead of delegating to Kimi.\n**Pattern:** Research (Gemini) → Build (Kimi) → Review (Claude)\n\n## Design Thinking\n\nBefore coding, commit to a BOLD aesthetic direction:\n\n1. **Purpose**: What pr"
+    },
+    {
+      "path": "other/8-bit-pixel-art-patterns-theorcdev-8bitcn-ui/SKILL.md",
+      "name": "8-bit-pixel-art-patterns",
+      "current_category": "other",
+      "llm_category": "design",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill provides specific UI patterns for creating pixelated borders, shadows, and effects for 8-bit retro components, which is a visual design task focused on frontend styling and component aesthetics.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "323a22edd7121d9a0fe5e7fe0e415984bc3489321a34cd81a12c4ed7a558c755",
+      "metadata_sha256": "dca6b0a2ced24d3f0e8d9e2a4166e65a6d9bb6b2cf5bb72bde8d128c3bcdc8c4",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Create pixelated borders, shadows, and effects for 8-bit retro components. Apply when building 8-bit styled UI components that need authentic pixel art aesthetics.",
+      "content_excerpt": "---\nname: 8-bit-pixel-art-patterns\ndescription: Create pixelated borders, shadows, and effects for 8-bit retro components. Apply when building 8-bit styled UI components that need authentic pixel art aesthetics.\n---\n\n## 8-bit Pixel Art Patterns\n\nCreate authentic pixelated borders and shadows using absolute-positioned divs. These patterns are essential for the retro aesthetic of 8-bit components.\n\n### Pixelated Border Pattern\n\nUse 9 div elements to create a pixelated border effect:\n\n```tsx\n<div className=\"relative\">\n  <ShadcnButton {...props} className=\"rounded-none\" />\n\n  {/* Corner pixels */}\n  <div className=\"absolute top-0 left-0 size-1.5 bg-foreground\" />\n  <div className=\"absolute top-0 right-0 size-1.5 bg-foreground\" />\n  <div className=\"absolute bottom-0 left-0 size-1.5 bg-foreground\" />\n  <div className=\"absolute bottom-0 right-0 size-1.5 bg-foreground\" />\n\n  {/* Edge segments */}\n  <div className=\"absolute -top-1.5 w-1/2 left-1.5 h-1.5 bg-foreground\" />\n  <div className=\"absolute -top-1.5 w-1/2 right-1.5 h-1.5 bg-foreground\" />\n  <div className=\"absolute -bottom-1.5 w-1/2 left-1.5 h-1.5 bg-foreground\" />\n  <div className=\"absolute -bottom-1.5 w-1/2 right-1.5 h-1.5 bg-foreground\" />\n\n  {/* Side borders */}\n  <div className=\"absolute top-1.5 -left-1.5 h-[calc(100%-12px)] w-1.5 bg-foreground\" />\n  <div className=\"absolute top-1.5 -right-1.5 h-[calc(100%-12px)] w-1.5 bg-foreground\" />\n</div>\n```\n\n### Pixelated Shadow Pattern\n\nAdd depth with pixelated shadows:\n\n```tsx\n{variant !== \"outline\" && (\n  <>\n    {/* Top shadow */}\n    <div className=\"absolute top-0 left-0 w-full h-1.5 bg-foreground/20\" />\n    <div className=\"absolute top-1.5 left-0 w-3 h-1.5 bg-foreground/20\" />\n\n    {/* Bottom shadow */}\n    <div className=\"absolute bottom-0 left-0 w-full h-1.5 bg-foreground/20\" />\n    <div className=\"absolute bottom-1.5 right-0 w-3 h-1.5 bg-foreground/20\" />\n  </>\n)}\n```\n\n### Icon Button Pattern\n\nSmaller, self-contained pixel borders for icon buttons:\n\n```tsx\n{size === \"icon\" && (\n  <>\n    {/* Top/bottom full bars */}\n    <div className=\"absolute top-0 left-0 w-full h-1.5 bg-foreground\" />\n    <div className=\"absolute bottom-0 left-0 w-full h-1.5 bg-foreground\" />\n\n    {/* Side segments */}\n    <div className=\"absolute top-1 -left-1 w-1.5 h-1/2 bg-foreground\" />\n    <div className=\"absolute bottom-1 -left-1 w-1.5 h-1/2 bg-foreground\" />\n    <div className=\"absolute top-1 -right-1 w-1.5 h-1/2 bg-foreground\" />\n    <div className=\"absolute bottom-1 -right-1 w-"
+    }
+  ],
+  "notes": [
+    "Review sample rows against SKILL.md excerpts before applying a migration plan.",
+    "Sampling is deterministic for a fixed seed and classification input."
+  ]
+}

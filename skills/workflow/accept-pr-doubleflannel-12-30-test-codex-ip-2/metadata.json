@@ -1,0 +1,18 @@
+{
+  "name": "accept-pr",
+  "description": "Land one PR end-to-end (changelog + thanks, lint, merge, back to main).",
+  "repo": "doubleflannel/12-30-test-codex-ip",
+  "path": "skills/accept-pr",
+  "category": "workflow",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/doubleflannel/12-30-test-codex-ip",
+  "dir_name": "accept-pr-doubleflannel-12-30-test-codex-ip-2",
+  "author": "doubleflannel",
+  "source_url": "https://github.com/doubleflannel/12-30-test-codex-ip/blob/main/skills/accept-pr/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/doubleflannel/12-30-test-codex-ip/blob/main/skills/accept-pr/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

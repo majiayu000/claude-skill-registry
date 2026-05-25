@@ -1,0 +1,16 @@
+{
+  "name": "abaqus-coupled-analysis",
+  "repo": "JaimeCernuda/abaqus-scripting",
+  "path": ".claude/skills/abaqus-coupled-analysis/SKILL.md",
+  "category": "analysis",
+  "source": "github.com/JaimeCernuda/abaqus-scripting",
+  "dir_name": "abaqus-coupled-analysis-jaimecernuda-abaqus-scripting-2",
+  "downloaded_at": "2026-02-22T05:11:41.985503Z",
+  "author": "JaimeCernuda",
+  "source_url": "https://github.com/JaimeCernuda/abaqus-scripting/blob/main/.claude/skills/abaqus-coupled-analysis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JaimeCernuda/abaqus-scripting/blob/main/.claude/skills/abaqus-coupled-analysis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

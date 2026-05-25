@@ -1,0 +1,888 @@
+{
+  "scanned": 176,
+  "missing_metadata": 0,
+  "errors": 0,
+  "warnings": 0,
+  "results": [
+    {
+      "path": "agent/acp-router/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-app-store/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-app-store-finimo-solutions-research/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-app-store-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-arch-system-design-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-architecture/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-architecture-finimo-solutions-research/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-architecture-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-authentication-ruvnet-ruflo-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-automation-smart-agent/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-automation-smart-agent-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-browser/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-browser-avibebuilder-claude-prime/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-browser-balkonsen-ha-ai-gen-workflow/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-browser-brianlovin-claude-config/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-browser-broedkrummen-openclaw-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-browser-camflan-dotfiles/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-browser-chachamaru127-claude-code-harness-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-browser-clawdbot/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-browser-codewithbehnam-cc-docs/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-browser-commontoolsinc-labs/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-browser-coralshades-acm-ai/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-browser-coralshades-acm-ai-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-browser-cosmin-microclaw/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-browser-countbot-ai-countbot/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-browser-countbot-ai-countbot-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-browser-davekilleen-dex/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-byzantine-coordinator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-byzantine-coordinator-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-code-review-swarm-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-coder-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-collective-intelligence-coordinator-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-commit/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-communication-protocol-enuno-claude-command-and-c-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-consensus-coordinator-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-cross-review-1ambda-dataops-platform-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-cross-review-1ambda-dataops-platform-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-debugging/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-debugging-onesmartguy-next-level-real-esta/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-error-coordinator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-error-coordinator-tony363-superclaude-68aa171f/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-eyes-edrouhardmicrosoft-agent-canvas-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-fintech-engineer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-flutter-expert/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-goal-planner/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-goal-planner-finimo-solutions-research/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-goal-planner-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-gossip-coordinator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-hierarchy-diagram-homericintelligence-projectodyssey/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-hierarchy-diagram-homericintelligence-projectodyssey-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-hierarchy-diagram-majiayu000-claude-skill-registr-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-identity-termix-official-cryptoclaw/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-inbox-sunholo-data-ailang-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-interaction/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-invocation-zerobias-org-module/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-iot-engineer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-manager-skill-sickn33-antigravity-awesome-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/80-livekit-agents/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/a-evolve/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/acestep-lyrics-transcription/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/acestep-lyrics-transcription-nidhibharani-ace-step-1-5-finetun/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/adversarial-spec/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/agent-bricks/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/agent-bricks-datasciencemonkey-claude-code-cli-bric/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/agent-bricks-datasciencemonkey-claude-code-cli-bric-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-ml/ab-test-framework-ml-dengineproblem-agents-monorepo-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-ml/ablation-planner/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/abaqus-coupled-analysis-jaimecernuda-abaqus-scripting-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/abaqus-dynamic-analysis/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/abaqus-fatigue-analysis/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/abaqus-odb-jaimecernuda-abaqus-scripting/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/ad-lead-quality-analyzer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/ads-reporter-dengineproblem-agents-monorepo-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/ads-reporter-dengineproblem-agents-monorepo-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/73-network-http-rpc-client/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/a-nach-b/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/activate-site/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/adaptyv/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "business/account-plan-mohitagw15856-pm-claude-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "business/advising-legal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "context-management/ac-handoff-creator-adaptationio-skrillz-628f0da6/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "context-management/agent-context-generator-tjmaynes-skills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "creative/aesthetic-critic-historian-cantagestudio-cosmicatlaspacker-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "creative/aesthetic-cultural-research-cantagestudio-cosmicatlaspacker-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "creative/agent-canvas-whq25-agent-canvas/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/accessibility-aggregation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/accessibility-aggregation-ammawla-encode-toolkit/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/adapter-trimming-gptomics-bioskills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/adapter-trimming-mdbabumiamssm-llms-universal-life-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/adf-master-josiahsiegel-claude-plugin-market/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/805bfa87-7c72-4dff-a193-2057070834d4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/8f9a0b1c-2d3e-4f5a-6b7c-8d9e0f1a2b3c/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/accessibility-wcag-doyajin174-myskills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/adaptive-ux-scheduling-harborgrid-justin-lexiflow-premium-e1e277/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/aaa-feature-wizard/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/abaqus-jaimecernuda-abaqus-scripting/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/abp-core/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/abp-microservice/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/add-api-endpoint-tassadar2499-novatune-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/add-api-route-whatifwedigdeeper-claude-template-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/add-atom-ariedam64-gemini/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/add-capacitor-android/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/add-capacitor-android-tassadar2499-novatune/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/add-capacitor-android-tassadar2499-novatune-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/add-custom-mob-ksoichiro-chronodawn/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/add-device/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/add-resource-events-madooei-backend-template/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/adding-new-ai-format/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/address-feedback-daemn256-workspace-repo-templ/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/advanced-features-maneeshanif-todo-spec-driven/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/advanced-memoization-strategies/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/af-cluesmith-codev/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/agent-implementer-sparc-coder/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/agent-implementer-sparc-coder-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/adding-benchmarks/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/af-ses-expertise/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/8bit-docs-patterns-theorcdev-8bitcn-ui/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/8bit-docs-patterns-theorcdev-8bitcn-ui-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/add-project/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/add-project-younwony-younwony-github-io-e13bce22/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/adr/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/adr-drafting/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/adr-log-doyajin174-myskills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/adr-log-doyajin174-myskills-57270629/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/agent-md-refactor-illogical-instructionlibrary/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/agent-md-refactor-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/agent-md-refactor-skill-alchimie-di-circe-extractor-desktop-ap/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "gaming/adaptive-music/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "generation/agent-generator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/aawp/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/add-discord-nanocoai-nanoclaw/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/add-gcal-tool-nanocoai-nanoclaw/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/add-gchat-nanocoai-nanoclaw/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/add-github-nanocoai-nanoclaw/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/add-gmail-tool-nanocoai-nanoclaw/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/add-linear-nanocoai-nanoclaw/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/add-matrix-nanocoai-nanoclaw/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/add-repository/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/add-resend-nanocoai-nanoclaw/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/add-teams-nanocoai-nanoclaw/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/add-telegram-nanocoai-nanoclaw/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/add-wechat-nanocoai-nanoclaw/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/add-whatsapp-cloud-nanocoai-nanoclaw/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/add-whatsapp-nanocoai-nanoclaw/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/ag-ui/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/agent-client-protocol-enuno-claude-command-and-c-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "marketing/ab-testing-gtmagents-gtm-agents-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/ac-master-controller-adaptationio-skrillz-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "performance/advanced-caching-strategies/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "performance/agent-benchmark-suite/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "planning/adding-milestones/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "planning/adding-phases/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "product/acquisition-channel-advisor/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "product/af-discover-scope/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "product/af-discovery-process/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "product/af-ideation-expertise/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "productivity/70-close-task-150/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "productivity/ab1c2d3e-4f5a-6b7c-8d9e-0f1a2b3c4d5e-onurkanbakirci-awesome-skil/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "productivity/adhd-accountability/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/a11y-check/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/additive-bias-defense/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/adr-check-spaarke-dev-spaarke-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/active-directory-attack/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/add-audit-logging-tassadar2499-novatune/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/add-rate-limiting-tassadar2499-novatune-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/advanced-redteam/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "skills/advanced-features-2025/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "skills/advanced-features-2025-josiahsiegel-claude-plugin-market/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "testing/acceptance-gate/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "testing/acp-conformance/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "testing/adb-uiautomator-rdmptv-adbautoplayer-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "workflow/accept-pr-doubleflannel-12-30-test-codex-ip-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "workflow/adb-workflow-orchestrator-rdmptv-adbautoplayer-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "workflow/ado-resolve/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "workflow/ado-start/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "writing/a-cv-that-lands-you-jobs-effortlessly/metadata.json",
+      "errors": [],
+      "warnings": []
+    }
+  ]
+}

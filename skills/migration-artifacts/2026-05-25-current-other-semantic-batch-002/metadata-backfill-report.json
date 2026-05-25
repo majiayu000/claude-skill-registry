@@ -1,0 +1,302 @@
+{
+  "updated_count": 9,
+  "updated": [
+    {
+      "path": "agent/agent-browser-camflan-dotfiles/metadata.json",
+      "changed": {
+        "author": {
+          "before": null,
+          "after": "camflan"
+        },
+        "source_url": {
+          "before": null,
+          "after": "https://github.com/camflan/dotfiles/blob/main/config/claude/skills/agent-browser/SKILL.md"
+        },
+        "license": {
+          "before": null,
+          "after": "NOASSERTION"
+        },
+        "copyright": {
+          "before": null,
+          "after": "Copyright belongs to upstream author(s); see https://github.com/camflan/dotfiles/blob/main/config/claude/skills/agent-browser/SKILL.md"
+        },
+        "permission_note": {
+          "before": null,
+          "after": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse."
+        },
+        "distribution": {
+          "before": null,
+          "after": "restricted"
+        },
+        "license_class": {
+          "before": null,
+          "after": "restricted"
+        }
+      }
+    },
+    {
+      "path": "agent/agent-browser-clawdbot/metadata.json",
+      "changed": {
+        "author": {
+          "before": null,
+          "after": "MaTriXy"
+        },
+        "source_url": {
+          "before": null,
+          "after": "https://github.com/MaTriXy/agent-browser-skill/blob/main/skills/agent-browser-clawdbot/SKILL.md"
+        },
+        "license": {
+          "before": null,
+          "after": "NOASSERTION"
+        },
+        "copyright": {
+          "before": null,
+          "after": "Copyright belongs to upstream author(s); see https://github.com/MaTriXy/agent-browser-skill/blob/main/skills/agent-browser-clawdbot/SKILL.md"
+        },
+        "permission_note": {
+          "before": null,
+          "after": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse."
+        },
+        "distribution": {
+          "before": null,
+          "after": "restricted"
+        },
+        "license_class": {
+          "before": null,
+          "after": "restricted"
+        }
+      }
+    },
+    {
+      "path": "agent/agent-hierarchy-diagram-homericintelligence-projectodyssey/metadata.json",
+      "changed": {
+        "author": {
+          "before": null,
+          "after": "HomericIntelligence"
+        },
+        "source_url": {
+          "before": null,
+          "after": "https://github.com/HomericIntelligence/ProjectOdyssey/blob/main/.claude/skills/agent-hierarchy-diagram/SKILL.md"
+        },
+        "license": {
+          "before": null,
+          "after": "NOASSERTION"
+        },
+        "copyright": {
+          "before": null,
+          "after": "Copyright belongs to upstream author(s); see https://github.com/HomericIntelligence/ProjectOdyssey/blob/main/.claude/skills/agent-hierarchy-diagram/SKILL.md"
+        },
+        "permission_note": {
+          "before": null,
+          "after": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse."
+        },
+        "distribution": {
+          "before": null,
+          "after": "restricted"
+        },
+        "license_class": {
+          "before": null,
+          "after": "restricted"
+        }
+      }
+    },
+    {
+      "path": "ai-llm/agent-bricks-datasciencemonkey-claude-code-cli-bric/metadata.json",
+      "changed": {
+        "author": {
+          "before": null,
+          "after": "datasciencemonkey"
+        },
+        "source_url": {
+          "before": null,
+          "after": "https://github.com/datasciencemonkey/claude-code-cli-bricks/blob/main/.claude/skills/agent-bricks/SKILL.md"
+        },
+        "license": {
+          "before": null,
+          "after": "NOASSERTION"
+        },
+        "copyright": {
+          "before": null,
+          "after": "Copyright belongs to upstream author(s); see https://github.com/datasciencemonkey/claude-code-cli-bricks/blob/main/.claude/skills/agent-bricks/SKILL.md"
+        },
+        "permission_note": {
+          "before": null,
+          "after": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse."
+        },
+        "distribution": {
+          "before": null,
+          "after": "restricted"
+        },
+        "license_class": {
+          "before": null,
+          "after": "restricted"
+        }
+      }
+    },
+    {
+      "path": "analysis/abaqus-dynamic-analysis/metadata.json",
+      "changed": {
+        "author": {
+          "before": null,
+          "after": "JaimeCernuda"
+        },
+        "source_url": {
+          "before": null,
+          "after": "https://github.com/JaimeCernuda/abaqus-scripting/blob/main/.claude/skills/abaqus-dynamic-analysis/SKILL.md"
+        },
+        "license": {
+          "before": null,
+          "after": "NOASSERTION"
+        },
+        "copyright": {
+          "before": null,
+          "after": "Copyright belongs to upstream author(s); see https://github.com/JaimeCernuda/abaqus-scripting/blob/main/.claude/skills/abaqus-dynamic-analysis/SKILL.md"
+        },
+        "permission_note": {
+          "before": null,
+          "after": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse."
+        },
+        "distribution": {
+          "before": null,
+          "after": "restricted"
+        },
+        "license_class": {
+          "before": null,
+          "after": "restricted"
+        }
+      }
+    },
+    {
+      "path": "analysis/abaqus-fatigue-analysis/metadata.json",
+      "changed": {
+        "author": {
+          "before": null,
+          "after": "JaimeCernuda"
+        },
+        "source_url": {
+          "before": null,
+          "after": "https://github.com/JaimeCernuda/abaqus-scripting/blob/main/.claude/skills/abaqus-fatigue-analysis/SKILL.md"
+        },
+        "license": {
+          "before": null,
+          "after": "NOASSERTION"
+        },
+        "copyright": {
+          "before": null,
+          "after": "Copyright belongs to upstream author(s); see https://github.com/JaimeCernuda/abaqus-scripting/blob/main/.claude/skills/abaqus-fatigue-analysis/SKILL.md"
+        },
+        "permission_note": {
+          "before": null,
+          "after": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse."
+        },
+        "distribution": {
+          "before": null,
+          "after": "restricted"
+        },
+        "license_class": {
+          "before": null,
+          "after": "restricted"
+        }
+      }
+    },
+    {
+      "path": "analysis/abaqus-odb-jaimecernuda-abaqus-scripting/metadata.json",
+      "changed": {
+        "author": {
+          "before": null,
+          "after": "JaimeCernuda"
+        },
+        "source_url": {
+          "before": null,
+          "after": "https://github.com/JaimeCernuda/abaqus-scripting/blob/main/.claude/skills/abaqus-odb/SKILL.md"
+        },
+        "license": {
+          "before": null,
+          "after": "NOASSERTION"
+        },
+        "copyright": {
+          "before": null,
+          "after": "Copyright belongs to upstream author(s); see https://github.com/JaimeCernuda/abaqus-scripting/blob/main/.claude/skills/abaqus-odb/SKILL.md"
+        },
+        "permission_note": {
+          "before": null,
+          "after": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse."
+        },
+        "distribution": {
+          "before": null,
+          "after": "restricted"
+        },
+        "license_class": {
+          "before": null,
+          "after": "restricted"
+        }
+      }
+    },
+    {
+      "path": "development/abaqus-jaimecernuda-abaqus-scripting/metadata.json",
+      "changed": {
+        "author": {
+          "before": null,
+          "after": "JaimeCernuda"
+        },
+        "source_url": {
+          "before": null,
+          "after": "https://github.com/JaimeCernuda/abaqus-scripting/blob/main/.claude/skills/abaqus/SKILL.md"
+        },
+        "license": {
+          "before": null,
+          "after": "NOASSERTION"
+        },
+        "copyright": {
+          "before": null,
+          "after": "Copyright belongs to upstream author(s); see https://github.com/JaimeCernuda/abaqus-scripting/blob/main/.claude/skills/abaqus/SKILL.md"
+        },
+        "permission_note": {
+          "before": null,
+          "after": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse."
+        },
+        "distribution": {
+          "before": null,
+          "after": "restricted"
+        },
+        "license_class": {
+          "before": null,
+          "after": "restricted"
+        }
+      }
+    },
+    {
+      "path": "documents/agent-md-refactor-skill/metadata.json",
+      "changed": {
+        "author": {
+          "before": null,
+          "after": "alchimie-di-circe"
+        },
+        "source_url": {
+          "before": null,
+          "after": "https://github.com/alchimie-di-circe/Extractor-desktop-app/blob/main/.codex/skills/agent-md-refactor-skill/SKILL.md"
+        },
+        "license": {
+          "before": null,
+          "after": "NOASSERTION"
+        },
+        "copyright": {
+          "before": null,
+          "after": "Copyright belongs to upstream author(s); see https://github.com/alchimie-di-circe/Extractor-desktop-app/blob/main/.codex/skills/agent-md-refactor-skill/SKILL.md"
+        },
+        "permission_note": {
+          "before": null,
+          "after": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse."
+        },
+        "distribution": {
+          "before": null,
+          "after": "restricted"
+        },
+        "license_class": {
+          "before": null,
+          "after": "restricted"
+        }
+      }
+    }
+  ]
+}

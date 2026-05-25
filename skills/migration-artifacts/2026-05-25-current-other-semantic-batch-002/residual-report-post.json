@@ -1,0 +1,1299 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-25T02:17:59.795492+00:00",
+  "skills_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-41-current-other-batch-001",
+  "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-41-current-other-batch-001/migration-artifacts/2026-05-25-current-other-semantic-batch-002/classification.jsonl",
+  "policy": {
+    "min_confidence": 0.9,
+    "from_categories": [
+      "other"
+    ],
+    "to_categories": [],
+    "target_statuses": [
+      "active"
+    ],
+    "allow_target_other": false,
+    "apply_mode": "report-only",
+    "example_limit_per_reason": 20,
+    "top_targets_per_reason": 20,
+    "conflict_detail_limit": 0
+  },
+  "summary": {
+    "classification_row_count": 1000,
+    "archive_skill_count": 221521,
+    "scoped_archive_skill_count": 53126,
+    "scoped_archive_classification_gap": 52302,
+    "classification_status_counts": {
+      "ok": 995,
+      "unknown_or_inactive_category": 5
+    },
+    "archive_category_counts": {
+      "agent": 1364,
+      "ai-llm": 2057,
+      "ai-ml": 2016,
+      "analysis": 3010,
+      "api": 802,
+      "bash": 179,
+      "business": 1034,
+      "c-level": 49,
+      "communication": 561,
+      "context-management": 1159,
+      "creative": 664,
+      "data": 48884,
+      "design": 13384,
+      "development": 36140,
+      "devops": 10220,
+      "documents": 6187,
+      "domains": 49,
+      "examples": 84,
+      "forensics": 56,
+      "gaming": 690,
+      "generation": 455,
+      "integration": 4605,
+      "language": 62,
+      "local-ai-infrastructure": 50,
+      "marketing": 2576,
+      "orchestration": 1844,
+      "other": 53126,
+      "performance": 850,
+      "personal-development": 285,
+      "planning": 1301,
+      "platform": 235,
+      "product": 2324,
+      "productivity": 2953,
+      "quality": 2647,
+      "security": 4938,
+      "skills": 1702,
+      "system": 17,
+      "testing": 11130,
+      "travel": 43,
+      "war-room": 4,
+      "workflow": 883,
+      "writing": 902
+    },
+    "source_state_counts": {
+      "exists": 824,
+      "missing": 176
+    },
+    "existing_source_category_counts": {
+      "other": 824
+    },
+    "scoped_source_category_counts": {
+      "other": 824
+    },
+    "scoped_existing_source_count": 824,
+    "candidate_move_count": 0,
+    "blocked_existing_key_count": 239,
+    "stable_key_conflict_detail_count": 0,
+    "stable_key_conflict_detail_summary": {},
+    "primary_reason_counts": {
+      "classification status is not ok": 5,
+      "confidence below threshold": 580,
+      "source directory missing": 176,
+      "target category already contains a skill with the same stable key": 239
+    },
+    "all_blocker_reason_counts": {
+      "classification status is not ok": 5,
+      "classification target matches current category": 36,
+      "confidence below threshold": 585,
+      "target category already contains a skill with the same stable key": 239,
+      "target category other requires --allow-target-other": 36,
+      "target category status 'unknown' excluded by filter": 5
+    },
+    "target_category_counts": {
+      "agent": 99,
+      "ai-llm": 36,
+      "ai-ml": 21,
+      "analysis": 53,
+      "api": 16,
+      "audio": 2,
+      "business": 15,
+      "communication": 1,
+      "content-management": 3,
+      "context-management": 14,
+      "creative": 5,
+      "data": 53,
+      "design": 44,
+      "development": 208,
+      "devops": 22,
+      "documents": 54,
+      "domains": 2,
+      "gaming": 7,
+      "generation": 1,
+      "integration": 71,
+      "language": 2,
+      "marketing": 26,
+      "orchestration": 13,
+      "other": 36,
+      "performance": 10,
+      "personal-development": 1,
+      "planning": 7,
+      "platform": 2,
+      "product": 17,
+      "productivity": 40,
+      "quality": 38,
+      "security": 21,
+      "skills": 4,
+      "testing": 31,
+      "workflow": 22,
+      "writing": 3
+    },
+    "target_status_counts": {
+      "active": 995,
+      "unknown": 5
+    },
+    "same_policy_plan_summary": {
+      "classification_row_count": 1000,
+      "classification_status_counts": {
+        "ok": 995,
+        "unknown_or_inactive_category": 5
+      },
+      "planned_move_count": 239,
+      "movable_count": 0,
+      "blocked_count": 239,
+      "operation_counts": {
+        "blocked_existing_key": 239
+      },
+      "reject_reasons": {
+        "classification status is not ok": 5,
+        "confidence below threshold": 580,
+        "source directory missing": 176
+      },
+      "source_category_counts": {
+        "other": 239
+      },
+      "target_category_counts": {
+        "agent": 32,
+        "ai-llm": 8,
+        "ai-ml": 10,
+        "analysis": 9,
+        "api": 5,
+        "business": 3,
+        "communication": 1,
+        "context-management": 6,
+        "data": 16,
+        "design": 27,
+        "development": 39,
+        "devops": 8,
+        "documents": 5,
+        "domains": 2,
+        "gaming": 2,
+        "integration": 19,
+        "language": 2,
+        "marketing": 11,
+        "orchestration": 1,
+        "productivity": 14,
+        "quality": 2,
+        "security": 4,
+        "skills": 2,
+        "testing": 11
+      }
+    }
+  },
+  "buckets": [
+    {
+      "reason": "confidence below threshold",
+      "count": 580,
+      "target_categories": [
+        {
+          "value": "development",
+          "count": 149
+        },
+        {
+          "value": "documents",
+          "count": 38
+        },
+        {
+          "value": "analysis",
+          "count": 37
+        },
+        {
+          "value": "other",
+          "count": 36
+        },
+        {
+          "value": "integration",
+          "count": 35
+        },
+        {
+          "value": "quality",
+          "count": 33
+        },
+        {
+          "value": "data",
+          "count": 32
+        },
+        {
+          "value": "productivity",
+          "count": 23
+        },
+        {
+          "value": "ai-llm",
+          "count": 20
+        },
+        {
+          "value": "workflow",
+          "count": 18
+        },
+        {
+          "value": "testing",
+          "count": 17
+        },
+        {
+          "value": "marketing",
+          "count": 14
+        },
+        {
+          "value": "design",
+          "count": 13
+        },
+        {
+          "value": "product",
+          "count": 13
+        },
+        {
+          "value": "security",
+          "count": 13
+        },
+        {
+          "value": "devops",
+          "count": 12
+        },
+        {
+          "value": "orchestration",
+          "count": 11
+        },
+        {
+          "value": "agent",
+          "count": 10
+        },
+        {
+          "value": "business",
+          "count": 10
+        },
+        {
+          "value": "ai-ml",
+          "count": 9
+        }
+      ],
+      "target_status_counts": {
+        "active": 580
+      },
+      "examples": [
+        {
+          "path": "other/7-replicates-incorporation-bisnake2001-chromskills/SKILL.md",
+          "name": "7.replicates-incorporation",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "data",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/7-replicates-incorporation-bisnake2001-chromskills-2/SKILL.md",
+          "name": "7.replicates-incorporation",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "data",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/70-close-task-150-mykhailodmytriakha-my-preacher-helper-3/SKILL.md",
+          "name": "70-close-task-150",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "productivity",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/702-technologies-wiremock/SKILL.md",
+          "name": "702-technologies-wiremock",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "testing",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/71-close-tidy-150/SKILL.md",
+          "name": "71-close-tidy-150",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "productivity",
+          "target_status": "active",
+          "confidence": 0.8,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/71-close-tidy-150-mykhailodmytriakha-my-preacher-helper/SKILL.md",
+          "name": "71-close-tidy-150",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/71-close-tidy-150-mykhailodmytriakha-my-preacher-helper-2/SKILL.md",
+          "name": "71-close-tidy-150",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/71-close-tidy-150-mykhailodmytriakha-my-preacher-helper-3/SKILL.md",
+          "name": "71-close-tidy-150",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/72-network-ws-client/SKILL.md",
+          "name": "72-network-ws-client",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.8,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/72714e33-102d-4c0a-8f9d-4790c1145f5f/SKILL.md",
+          "name": "json-canvas",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.75,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/72714e33-102d-4c0a-8f9d-4790c1145f5f-onurkanbakirci-awesome-skills/SKILL.md",
+          "name": "json-canvas",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "design",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/73-close-lessons-learn-150/SKILL.md",
+          "name": "73-close-lessons-learn-150",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "productivity",
+          "target_status": "active",
+          "confidence": 0.8,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/7bu/SKILL.md",
+          "name": "7bu",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "integration",
+          "target_status": "active",
+          "confidence": 0.8,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/7c8d9e0f-1a2b-3c4d-5e6f-7a8b9c0d1e2f-onurkanbakirci-awesome-skills-2/SKILL.md",
+          "name": "ios-simulator-skill",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "testing",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/8-bit-pixel-art-patterns/SKILL.md",
+          "name": "8-bit-pixel-art-patterns",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "design",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/8-differential-region-analysis-bisnake2001-chromskills-2/SKILL.md",
+          "name": "differential-region-analysis",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "analysis",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/8-monitor/SKILL.md",
+          "name": "monitor",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "devops",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/80-02-document-feature/SKILL.md",
+          "name": "80-02-document-feature",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.8,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/80-03-stale-trees/SKILL.md",
+          "name": "80-03-stale-trees",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/8b9c0d1e-2f3a-4b5c-6d7e-8f9a0b1c2d3e/SKILL.md",
+          "name": "image-enhancer",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "ai-ml",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        }
+      ]
+    },
+    {
+      "reason": "target category already contains a skill with the same stable key",
+      "count": 239,
+      "target_categories": [
+        {
+          "value": "development",
+          "count": 39
+        },
+        {
+          "value": "agent",
+          "count": 32
+        },
+        {
+          "value": "design",
+          "count": 27
+        },
+        {
+          "value": "integration",
+          "count": 19
+        },
+        {
+          "value": "data",
+          "count": 16
+        },
+        {
+          "value": "productivity",
+          "count": 14
+        },
+        {
+          "value": "marketing",
+          "count": 11
+        },
+        {
+          "value": "testing",
+          "count": 11
+        },
+        {
+          "value": "ai-ml",
+          "count": 10
+        },
+        {
+          "value": "analysis",
+          "count": 9
+        },
+        {
+          "value": "ai-llm",
+          "count": 8
+        },
+        {
+          "value": "devops",
+          "count": 8
+        },
+        {
+          "value": "context-management",
+          "count": 6
+        },
+        {
+          "value": "api",
+          "count": 5
+        },
+        {
+          "value": "documents",
+          "count": 5
+        },
+        {
+          "value": "security",
+          "count": 4
+        },
+        {
+          "value": "business",
+          "count": 3
+        },
+        {
+          "value": "domains",
+          "count": 2
+        },
+        {
+          "value": "gaming",
+          "count": 2
+        },
+        {
+          "value": "language",
+          "count": 2
+        }
+      ],
+      "target_status_counts": {
+        "active": 239
+      },
+      "examples": [
+        {
+          "path": "other/70-close-task-150-mykhailodmytriakha-my-preacher-helper/SKILL.md",
+          "name": "70-close-task-150",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "productivity",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "productivity/70-close-task-150/SKILL.md"
+        },
+        {
+          "path": "other/70-close-task-150-mykhailodmytriakha-my-preacher-helper-2/SKILL.md",
+          "name": "70-close-task-150",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "productivity",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "productivity/70-close-task-150/SKILL.md"
+        },
+        {
+          "path": "other/701-technologies-openapi/SKILL.md",
+          "name": "701-technologies-openapi",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "api/701-technologies-openapi/SKILL.md"
+        },
+        {
+          "path": "other/703-technologies-fuzzing-testing/SKILL.md",
+          "name": "703-technologies-fuzzing-testing",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "testing",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "testing/703-technologies-fuzzing-testing/SKILL.md"
+        },
+        {
+          "path": "other/79558c41-dc05-4b65-9154-25c89ba6e28f/SKILL.md",
+          "name": "brand-guidelines",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "design",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "design/79558c41-dc05-4b65-9154-25c89ba6e28f-onurkanbakirci-awesome-skil-onurkanbakirci-awesome-skills/SKILL.md"
+        },
+        {
+          "path": "other/79558c41-dc05-4b65-9154-25c89ba6e28f-onurkanbakirci-awesome-skills-2c3993d0/SKILL.md",
+          "name": "brand-guidelines",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "design",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "design/79558c41-dc05-4b65-9154-25c89ba6e28f-onurkanbakirci-awesome-skil-onurkanbakirci-awesome-skills/SKILL.md"
+        },
+        {
+          "path": "other/7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d/SKILL.md",
+          "name": "file-organizer",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "productivity",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "productivity/7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d-onurkanbakirci-awesome-skil/SKILL.md"
+        },
+        {
+          "path": "other/7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d-onurkanbakirci-awesome-skills-2/SKILL.md",
+          "name": "file-organizer",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "productivity",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "productivity/7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d-onurkanbakirci-awesome-skil/SKILL.md"
+        },
+        {
+          "path": "other/8-bit-pixel-art-patterns-theorcdev-8bitcn-ui/SKILL.md",
+          "name": "8-bit-pixel-art-patterns",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "design",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "design/8-bit-pixel-art-patterns-theorcdev-8bitcn-ui-3/SKILL.md"
+        },
+        {
+          "path": "other/8-bit-pixel-art-patterns-theorcdev-8bitcn-ui-a2acd9c1/SKILL.md",
+          "name": "8-bit-pixel-art-patterns",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "design",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "design/8-bit-pixel-art-patterns-theorcdev-8bitcn-ui-2/SKILL.md"
+        },
+        {
+          "path": "other/80-livekit-agents-panaversity-agentfactory/SKILL.md",
+          "name": "80-livekit-agents",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "ai-llm",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "ai-llm/80-livekit-agents-panaversity-agentfactory/SKILL.md"
+        },
+        {
+          "path": "other/805bfa87-7c72-4dff-a193-2057070834d4-onurkanbakirci-awesome-skills/SKILL.md",
+          "name": "theme-factory",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "design",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "design/805bfa87-7c72-4dff-a193-2057070834d4/SKILL.md"
+        },
+        {
+          "path": "other/8bit-docs-patterns-theorcdev-8bitcn-ui-2/SKILL.md",
+          "name": "8bit-docs-patterns",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "documents/8bit-docs-patterns-theorcdev-8bitcn-ui/SKILL.md"
+        },
+        {
+          "path": "other/8bit-docs-patterns-theorcdev-8bitcn-ui-9ffc3184/SKILL.md",
+          "name": "8bit-docs-patterns",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "documents/8bit-docs-patterns-theorcdev-8bitcn-ui-3/SKILL.md"
+        },
+        {
+          "path": "other/9-tf-differential-binding-bisnake2001-chromskills-2/SKILL.md",
+          "name": "TF-differential-binding",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "analysis",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "analysis/9-tf-differential-binding/SKILL.md"
+        },
+        {
+          "path": "other/a-nach-b-clawdbot-skills/SKILL.md",
+          "name": "anachb",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "api/a-nach-b/SKILL.md"
+        },
+        {
+          "path": "other/a3criticalthinking-robdtaylor-personal-ai-infrastr-2/SKILL.md",
+          "name": "A3CriticalThinking",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "analysis",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "analysis/a3criticalthinking/SKILL.md"
+        },
+        {
+          "path": "other/aasm-coder-majesticlabs-dev-majestic-marketplace-2/SKILL.md",
+          "name": "aasm-coder",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "development/aasm-coder/SKILL.md"
+        },
+        {
+          "path": "other/abaqus-dynamic-analysis-jaimecernuda-abaqus-scripting/SKILL.md",
+          "name": "abaqus-dynamic-analysis",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "analysis",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "analysis/abaqus-dynamic-analysis/SKILL.md"
+        },
+        {
+          "path": "other/abaqus-dynamic-analysis-jaimecernuda-abaqus-scripting-2/SKILL.md",
+          "name": "abaqus-dynamic-analysis",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "analysis",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "analysis/abaqus-dynamic-analysis/SKILL.md"
+        }
+      ]
+    },
+    {
+      "reason": "source directory missing",
+      "count": 176,
+      "target_categories": [
+        {
+          "value": "agent",
+          "count": 57
+        },
+        {
+          "value": "development",
+          "count": 20
+        },
+        {
+          "value": "integration",
+          "count": 17
+        },
+        {
+          "value": "documents",
+          "count": 11
+        },
+        {
+          "value": "ai-llm",
+          "count": 8
+        },
+        {
+          "value": "analysis",
+          "count": 7
+        },
+        {
+          "value": "data",
+          "count": 5
+        },
+        {
+          "value": "api",
+          "count": 4
+        },
+        {
+          "value": "design",
+          "count": 4
+        },
+        {
+          "value": "product",
+          "count": 4
+        },
+        {
+          "value": "security",
+          "count": 4
+        },
+        {
+          "value": "workflow",
+          "count": 4
+        },
+        {
+          "value": "creative",
+          "count": 3
+        },
+        {
+          "value": "productivity",
+          "count": 3
+        },
+        {
+          "value": "quality",
+          "count": 3
+        },
+        {
+          "value": "testing",
+          "count": 3
+        },
+        {
+          "value": "ai-ml",
+          "count": 2
+        },
+        {
+          "value": "business",
+          "count": 2
+        },
+        {
+          "value": "context-management",
+          "count": 2
+        },
+        {
+          "value": "devops",
+          "count": 2
+        }
+      ],
+      "target_status_counts": {
+        "active": 176
+      },
+      "examples": [
+        {
+          "path": "other/70-close-task-150/SKILL.md",
+          "name": "70-close-task-150",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "productivity",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/73-network-http-rpc-client/SKILL.md",
+          "name": "73-network-http-rpc-client",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/80-livekit-agents/SKILL.md",
+          "name": "80-livekit-agents",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "ai-llm",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/805bfa87-7c72-4dff-a193-2057070834d4/SKILL.md",
+          "name": "theme-factory",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "design",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/8bit-docs-patterns-theorcdev-8bitcn-ui/SKILL.md",
+          "name": "8bit-docs-patterns",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/8bit-docs-patterns-theorcdev-8bitcn-ui-3/SKILL.md",
+          "name": "8bit-docs-patterns",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/8f9a0b1c-2d3e-4f5a-6b7c-8d9e0f1a2b3c/SKILL.md",
+          "name": "canvas-design",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "design",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/a-cv-that-lands-you-jobs-effortlessly/SKILL.md",
+          "name": "a-cv-that-lands-you-jobs-effortlessly",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "writing",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/a-evolve/SKILL.md",
+          "name": "evolving-ai-agents",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "ai-llm",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/a-nach-b/SKILL.md",
+          "name": "anachb",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/a11y-check/SKILL.md",
+          "name": "a11y-check",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "quality",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/aaa-feature-wizard/SKILL.md",
+          "name": "meta:cli-feature-creator",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/aawp/SKILL.md",
+          "name": "aawp",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "integration",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/ab-test-framework-ml-dengineproblem-agents-monorepo-2/SKILL.md",
+          "name": "ab-test-framework-ml",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "ai-ml",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/ab-testing-gtmagents-gtm-agents-2/SKILL.md",
+          "name": "ab-testing",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "marketing",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/ab1c2d3e-4f5a-6b7c-8d9e-0f1a2b3c4d5e-onurkanbakirci-awesome-skills-2/SKILL.md",
+          "name": "planning-with-files",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "productivity",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/abaqus-coupled-analysis-jaimecernuda-abaqus-scripting-2/SKILL.md",
+          "name": "abaqus-coupled-analysis",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "analysis",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/abaqus-dynamic-analysis/SKILL.md",
+          "name": "abaqus-dynamic-analysis",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "analysis",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/abaqus-fatigue-analysis/SKILL.md",
+          "name": "abaqus-fatigue-analysis",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "analysis",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/abaqus-jaimecernuda-abaqus-scripting/SKILL.md",
+          "name": "abaqus",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        }
+      ]
+    },
+    {
+      "reason": "classification status is not ok",
+      "count": 5,
+      "target_categories": [
+        {
+          "value": "content-management",
+          "count": 3
+        },
+        {
+          "value": "audio",
+          "count": 2
+        }
+      ],
+      "target_status_counts": {
+        "unknown": 5
+      },
+      "examples": [
+        {
+          "path": "other/add-highlight/SKILL.md",
+          "name": "add-highlight",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "content-management",
+          "target_status": "unknown",
+          "confidence": 0.7,
+          "status": "unknown_or_inactive_category",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/add-highlight-unfinishablemap-unfinishablemap/SKILL.md",
+          "name": "add-highlight",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "content-management",
+          "target_status": "unknown",
+          "confidence": 0.7,
+          "status": "unknown_or_inactive_category",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/add-highlight-unfinishablemap-unfinishablemap-2/SKILL.md",
+          "name": "add-highlight",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "content-management",
+          "target_status": "unknown",
+          "confidence": 0.7,
+          "status": "unknown_or_inactive_category",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/agc-tuner-tobiaswooldridge-wavecap-sdr-3/SKILL.md",
+          "name": "agc-tuner",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "audio",
+          "target_status": "unknown",
+          "confidence": 0.85,
+          "status": "unknown_or_inactive_category",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/agc-tuner-tobiaswooldridge-wavecap-sdr-c0c431d7/SKILL.md",
+          "name": "agc-tuner",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "audio",
+          "target_status": "unknown",
+          "confidence": 0.85,
+          "status": "unknown_or_inactive_category",
+          "reason": "classification status is not ok"
+        }
+      ]
+    }
+  ],
+  "details": {
+    "stable_key_conflicts": []
+  },
+  "notes": [
+    "This report is read-only and never moves, deletes, or rewrites skills.",
+    "same_policy_plan_summary is generated by apply_category_migration.py with the same flags.",
+    "primary_reason_counts are mutually exclusive and explain the current archive state first.",
+    "all_blocker_reason_counts can exceed scoped_existing_source_count because one row may have multiple blockers.",
+    "source directory missing usually means the classification row points at a pre-migration path that has already moved.",
+    "scoped_archive_classification_gap is scoped_archive_skill_count minus scoped_existing_source_count; positive values indicate archive skills not covered by the classification file or duplicate classification coverage.",
+    "stable_key_conflicts detail is bounded by --conflict-detail-limit and includes content hashes so duplicate removal is not inferred from the stable key alone."
+  ]
+}

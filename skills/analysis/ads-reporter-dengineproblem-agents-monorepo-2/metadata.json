@@ -1,0 +1,18 @@
+{
+  "name": "ads-reporter",
+  "description": "Эксперт по отчетности Facebook Ads. Используй для формирования дневных/недельных отчетов, сравнения периодов и анализа трендов.",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/ads-reporter",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "dir_name": "ads-reporter-dengineproblem-agents-monorepo-2",
+  "author": "dengineproblem",
+  "source_url": "https://github.com/dengineproblem/agents-monorepo/blob/main/.claude/skills/ads-reporter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dengineproblem/agents-monorepo/blob/main/.claude/skills/ads-reporter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

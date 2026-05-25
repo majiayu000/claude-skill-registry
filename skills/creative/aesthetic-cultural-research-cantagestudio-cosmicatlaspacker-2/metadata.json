@@ -1,0 +1,18 @@
+{
+  "name": "aesthetic-cultural-research",
+  "description": "[Aesthetics] Maps aesthetic briefs to cultural references: art movements, photography, film, architecture, music, fashion. Outputs reference lists with visual language analysis. Organizes findings as ",
+  "repo": "CANTAGESTUDIO/CosmicAtlasPacker",
+  "path": ".claude/skills/aesthetic-cultural-research",
+  "category": "creative",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CANTAGESTUDIO/CosmicAtlasPacker",
+  "dir_name": "aesthetic-cultural-research-cantagestudio-cosmicatlaspacker-2",
+  "author": "CANTAGESTUDIO",
+  "source_url": "https://github.com/CANTAGESTUDIO/CosmicAtlasPacker/blob/main/.claude/skills/aesthetic-cultural-research/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CANTAGESTUDIO/CosmicAtlasPacker/blob/main/.claude/skills/aesthetic-cultural-research/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

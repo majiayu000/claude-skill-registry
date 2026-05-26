@@ -1,0 +1,1022 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-26T19:01:07.429595+00:00",
+  "workset_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-004/input.jsonl",
+  "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-004/classification.jsonl",
+  "policy": {
+    "sample_size": 50,
+    "seed": "category-audit-v1",
+    "statuses": [
+      "ok"
+    ],
+    "min_confidence": null
+  },
+  "summary": {
+    "workset_row_count": 1000,
+    "classification_row_count": 1000,
+    "matched_input_count": 1000,
+    "missing_input_count": 0,
+    "candidate_count": 994,
+    "sample_count": 50,
+    "status_counts": {
+      "ok": 994,
+      "unknown_or_inactive_category": 6
+    },
+    "target_category_counts": {
+      "agent": 43,
+      "ai-llm": 120,
+      "ai-ml": 29,
+      "analysis": 33,
+      "api": 77,
+      "bash": 60,
+      "business": 12,
+      "communication": 1,
+      "context-management": 21,
+      "creative": 18,
+      "data": 45,
+      "design": 12,
+      "development": 94,
+      "devops": 103,
+      "documents": 27,
+      "examples": 1,
+      "generation": 5,
+      "integration": 34,
+      "knowledge": 1,
+      "knowledge-management": 5,
+      "marketing": 4,
+      "orchestration": 8,
+      "other": 17,
+      "personal-development": 2,
+      "planning": 28,
+      "product": 25,
+      "productivity": 18,
+      "quality": 18,
+      "security": 48,
+      "skills": 12,
+      "system": 1,
+      "testing": 9,
+      "war-room": 2,
+      "workflow": 60,
+      "writing": 7
+    }
+  },
+  "samples": [
+    {
+      "path": "other/aidd-core/SKILL.md",
+      "name": "aidd-core",
+      "current_category": "other",
+      "llm_category": "orchestration",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "The skill aggregates shared runtime navigation and cross-skill ownership links, acting as a navigation hub for resolving shared runtime entrypoints and ownership boundaries in an AI-driven development workflow.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "a4a8a3ed9049fad7409f28294342033eb34d56ce2d1cded860f3e15d8e5d3fa5",
+      "metadata_sha256": "85c34120a2719ed6be7b0cee6206d83891a4a4d17ac4a48a69ab90e4bda461bf",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Aggregates shared runtime navigation and cross-skill ownership links. Use when resolving shared runtime entrypoints or ownership boundaries.",
+      "content_excerpt": "---\nname: aidd-core\ndescription: Aggregates shared runtime navigation and cross-skill ownership links. Use when resolving shared runtime entrypoints or ownership boundaries.\nlang: en\nmodel: inherit\nuser-invocable: false\n---\n\n## Purpose\n- This skill is the thin runtime-oriented navigation layer.\n- Policy guidance (output contract, question format, read discipline, loop safety) lives in `feature-dev-aidd:aidd-policy`.\n- Domain owners are split into dedicated shared skills (`aidd-docio`, `aidd-flow-state`, `aidd-observability`, `aidd-loop`, `aidd-rlm`).\n- Agents may reference `feature-dev-aidd:aidd-core` as the topology entrypoint and navigation hub.\n\n## Canonical shared Python entrypoints\n- `python3 ${CLAUDE_PLUGIN_ROOT}/skills/aidd-rlm/runtime/rlm_slice.py`\n- `python3 ${CLAUDE_PLUGIN_ROOT}/skills/aidd-core/runtime/diff_boundary_check.py`\n- `python3 ${CLAUDE_PLUGIN_ROOT}/skills/aidd-core/runtime/plan_review_gate.py`\n- `python3 ${CLAUDE_PLUGIN_ROOT}/skills/aidd-core/runtime/prd_review_gate.py`\n- `python3 ${CLAUDE_PLUGIN_ROOT}/skills/aidd-core/runtime/rlm_targets.py`\n- `python3 ${CLAUDE_PLUGIN_ROOT}/skills/aidd-core/runtime/skill_contract_validate.py`\n\n## Command contracts\n### `python3 ${CLAUDE_PLUGIN_ROOT}/skills/aidd-core/runtime/skill_contract_validate.py`\n- When to run: before release or CI checks when skill contract drift is suspected.\n- Inputs: repository root plus optional filters for prompt/skill validation scope.\n- Outputs: deterministic validation diagnostics for contract and prompt structure issues.\n- Failure mode: non-zero exit when required contract fields/sections are missing or inconsistent.\n- Next action: fix reported contract gaps in owners, then rerun the same validator.\n\n### `python3 ${CLAUDE_PLUGIN_ROOT}/skills/aidd-core/runtime/diff_boundary_check.py`\n- When to run: during loop/review orchestration before applying actions that may cross boundaries.\n- Inputs: diff metadata (`--ticket`, `--scope-key`, optional work-item context).\n- Outputs: boundary verdict (`ok|warn|blocked`) and evidence references.\n- Failure mode: non-zero exit when diff inputs are missing or policy boundary checks fail.\n- Next action: tighten scope/actions or hand off blocker, then rerun the boundary check.\n\n## Ownership guard\n- `aidd-core` owns only aggregator-level shared runtime modules.\n- Policy/procedure text must be hosted in `feature-dev-aidd:aidd-policy`.\n\n## Additional resources\n- Policy contract: [../aidd-policy/SKILL.md](../aidd-policy/SKILL.md) (when: output/"
+    },
+    {
+      "path": "other/ai-integration-specialist/SKILL.md",
+      "name": "AI Integration Specialist",
+      "current_category": "other",
+      "llm_category": "integration",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is explicitly about integrating AI tools and APIs into business workflows and applications. The description, triggers ('ai integration', 'integrate ai'), and tags ('integration', 'apis', 'tools', 'implementation') all point to system integration work.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "3a2fb41edf8e887ffcbff160d30a915950f77d419e8cbcd59ed3df51162b2c4b",
+      "metadata_sha256": "6edc4c85a8fc1ccf55540108504cd55c90a4f3aac1ae1bdb601d490c09b4afa3",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "Integrate AI tools and APIs into business workflows and applications",
+      "content_excerpt": "---\nname: AI Integration Specialist\nslug: ai-integration-specialist\ndescription: Integrate AI tools and APIs into business workflows and applications\ncategory: meta\ncomplexity: simple\nversion: \"1.0.0\"\nauthor: \"ID8Labs\"\ntriggers:\n  - \"ai integration\"\n  - \"integrate ai\"\n  - \"ai tools\"\n  - \"ai implementation\"\n  - \"ai workflow\"\ntags:\n  - ai\n  - integration\n  - apis\n  - tools\n  - implementation\n---\n\n# AI Integration Specialist\n\nIntegrate AI tools and APIs into business workflows and applications\n\n## When to Use This Skill\n\nUse this skill when you need to:\n- Automate workflows and processes\n- Integrate tools and systems\n- Optimize technical operations\n\n**Not recommended for:**\n- Tasks requiring creative content\n- manual processes\n\n## Quick Reference\n\n| Action | Command/Trigger |\n|--------|-----------------|\n| Create ai integration specialist | `ai integration` |\n| Review and optimize | `review ai integration specialist` |\n| Get best practices | `ai integration specialist best practices` |\n\n## Core Workflows\n\n### Workflow 1: Initial AI Integration Specialist Creation\n\n**Goal:** Create a high-quality ai integration specialist from scratch\n\n**Steps:**\n1. **Discovery** - Understand requirements and objectives\n2. **Planning** - Develop strategy and approach\n3. **Execution** - Implement the plan\n4. **Review** - Evaluate results and iterate\n5. **Optimization** - Refine based on feedback\n\n### Workflow 2: Advanced AI Integration Specialist Optimization\n\n**Goal:** Refine and optimize existing ai integration specialist for better results\n\n**Steps:**\n1. **Research** - Gather relevant information\n2. **Analysis** - Evaluate options and approaches\n3. **Decision** - Choose the best path forward\n4. **Implementation** - Execute with precision\n5. **Measurement** - Track success metrics\n\n## Best Practices\n\n1. **Start with Clear Objectives**\n   Define what success looks like before beginning work.\n\n2. **Follow Industry Standards**\n   Leverage proven frameworks and best practices in meta.\n\n3. **Iterate Based on Feedback**\n   Continuously improve based on results and user input.\n\n4. **Document Your Process**\n   Keep track of decisions and outcomes for future reference.\n\n5. **Focus on Quality**\n   Prioritize excellence over speed, especially in early iterations.\n\n## Checklist\n\nBefore considering your work complete:\n\n- [ ] Objectives clearly defined and understood\n- [ ] Research and discovery phase completed\n- [ ] Strategy or plan documented\n- [ ] Implementation matches requirements\n- ["
+    },
+    {
+      "path": "other/alignment-validation-gptomics-bioskills/SKILL.md",
+      "name": "bio-alignment-validation",
+      "current_category": "other",
+      "llm_category": "quality",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Same skill as id 3 - specifically for validating alignment quality with various metrics (insert size distribution, proper pairing rates, GC bias) - a quality assurance workflow for bioinformatics data.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "7525c80f04d5dcc9b8c291ffe892f7dd4969d75af0511b0c468340ce8e91a4dd",
+      "metadata_sha256": "48d972399b03c79ae53a27eb079328271ca8ef518fc20dabbc1127212aa2b71a",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Validate alignment quality with insert size distribution, proper pairing rates, GC bias, strand balance, and other post-alignment metrics. Use after alignment to verify data quality before variant calling or quantification.",
+      "content_excerpt": "---\nname: bio-alignment-validation\ndescription: Validate alignment quality with insert size distribution, proper pairing rates, GC bias, strand balance, and other post-alignment metrics. Use after alignment to verify data quality before variant calling or quantification.\ntool_type: mixed\nprimary_tool: samtools, Picard, pysam\n---\n\n# Alignment Validation\n\nPost-alignment quality control to verify alignment quality and identify issues.\n\n## Insert Size Distribution\n\nInsert size should match library preparation protocol.\n\n### samtools stats\n\n```bash\nsamtools stats input.bam > stats.txt\ngrep \"^IS\" stats.txt | cut -f2,3 > insert_sizes.txt\n```\n\n### Picard CollectInsertSizeMetrics\n\n```bash\njava -jar picard.jar CollectInsertSizeMetrics \\\n    I=input.bam \\\n    O=insert_metrics.txt \\\n    H=insert_histogram.pdf\n```\n\n### Expected Insert Sizes\n\n| Library Type | Expected Size |\n|--------------|---------------|\n| Standard WGS | 300-500 bp |\n| PCR-free | 350-550 bp |\n| RNA-seq | 150-300 bp |\n| ChIP-seq | 150-300 bp |\n| ATAC-seq | Multimodal |\n\n### Python Insert Size Analysis\n\n```python\nimport pysam\nimport numpy as np\nimport matplotlib.pyplot as plt\n\ndef get_insert_sizes(bam_file, max_reads=100000):\n    sizes = []\n    bam = pysam.AlignmentFile(bam_file, 'rb')\n    for i, read in enumerate(bam.fetch()):\n        if i >= max_reads:\n            break\n        if read.is_proper_pair and not read.is_secondary and read.template_length > 0:\n            sizes.append(read.template_length)\n    bam.close()\n    return sizes\n\nsizes = get_insert_sizes('sample.bam')\nprint(f'Median insert size: {np.median(sizes):.0f}')\nprint(f'Mean insert size: {np.mean(sizes):.0f}')\nprint(f'Std dev: {np.std(sizes):.0f}')\n\nplt.hist(sizes, bins=100, range=(0, 1000))\nplt.xlabel('Insert Size')\nplt.ylabel('Count')\nplt.savefig('insert_size_dist.pdf')\n```\n\n## Proper Pairing Rate\n\nPercentage of reads correctly paired.\n\n### samtools flagstat\n\n```bash\nsamtools flagstat input.bam\n\nsamtools flagstat input.bam | grep \"properly paired\"\n```\n\n### Calculate Pairing Rate\n\n```bash\nproper=$(samtools view -c -f 2 input.bam)\nmapped=$(samtools view -c -F 4 input.bam)\nrate=$(echo \"scale=4; $proper / $mapped * 100\" | bc)\necho \"Proper pairing rate: ${rate}%\"\n```\n\n### Expected Rates\n\n| Metric | Good | Marginal | Poor |\n|--------|------|----------|------|\n| Proper pair | > 90% | 80-90% | < 80% |\n| Mapped | > 95% | 90-95% | < 90% |\n| Singletons | < 5% | 5-10% | > 10% |\n\n## GC Bias\n\nGC content correlation with coverage.\n\n### Picard Collect"
+    },
+    {
+      "path": "other/agentuity-cli-cloud-keyvalue-keys-agentuity-sdk-explorer-2/SKILL.md",
+      "name": "agentuity-cli-cloud-keyvalue-keys",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill provides CLI commands for cloud platform operations (keyvalue keys listing) via API-like interface",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "0b753bb763d0ea10cbdfb13e33fc1af70ef0f5ae19392bed2bb44cc722daa774",
+      "metadata_sha256": "a2dc946cf60d5ab42fa204297b060720115f771836e9648a1d1cbfd13c8b6b14",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "List all keys in a keyvalue namespace. Requires authentication. Use for Agentuity cloud platform operations",
+      "content_excerpt": "---\nname: agentuity-cli-cloud-keyvalue-keys\ndescription: List all keys in a keyvalue namespace. Requires authentication. Use for Agentuity cloud platform operations\nversion: \"0.1.2\"\nlicense: Apache-2.0\nallowed-tools: \"Bash(agentuity:*)\"\nargument-hint: \"<name>\"\nmetadata:\n  command: \"agentuity cloud keyvalue keys\"\n  tags: \"read-only slow requires-auth\"\n---\n\n# Cloud Keyvalue Keys\n\nList all keys in a keyvalue namespace\n\n## Prerequisites\n\n- Authenticated with `agentuity auth login`\n- Project context required (run from project directory or use `--project-id`)\n\n## Usage\n\n```bash\nagentuity cloud keyvalue keys <name>\n```\n\n## Arguments\n\n| Argument | Type | Required | Description |\n|----------|------|----------|-------------|\n| `<name>` | string | Yes | - |\n\n## Examples\n\nList all keys in production:\n\n```bash\nbunx @agentuity/cli kv keys production\n```\n\nList all cached keys (using alias):\n\n```bash\nbunx @agentuity/cli kv ls cache\n```\n\nList all staging keys:\n\n```bash\nbunx @agentuity/cli kv list staging\n```\n\n## Output\n\nReturns JSON object:\n\n```json\n{\n  \"namespace\": \"string\",\n  \"keys\": \"array\"\n}\n```\n\n| Field | Type | Description |\n|-------|------|-------------|\n| `namespace` | string | Namespace name |\n| `keys` | array | List of keys in the namespace |\n"
+    },
+    {
+      "path": "other/aitask-wrap/SKILL.md",
+      "name": "aitask-wrap",
+      "current_category": "other",
+      "llm_category": "workflow",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill wraps uncommitted git changes into a structured task with documentation and traceability, which is a workflow automation task for development processes.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "ff1933654d434eecba8a740563a5fddb4600af546e7a743c89f362e2fe5ef3c1",
+      "metadata_sha256": "da2e3cea8a0fe4fce83b94c7cb50e8efa30f0498183ffacd810f6c06f68c8f46",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Wrap uncommitted changes into an aitask with retroactive documentation and traceability.",
+      "content_excerpt": "---\nname: aitask-wrap\ndescription: Wrap uncommitted changes into an aitask with retroactive documentation and traceability.\n---\n\n## Prerequisites\n\n**If you are Codex CLI:** Read **`.agents/skills/codex_interactive_prereqs.md`** BEFORE proceeding.\n\n**If you are Gemini CLI:** Read **`.agents/skills/geminicli_planmode_prereqs.md`** BEFORE proceeding.\n\n## Source of Truth\n\nThis is a unified skill wrapper for Codex CLI and Gemini CLI. The authoritative skill definition is:\n\n**`.claude/skills/aitask-wrap/SKILL.md`**\n\nRead that file and follow its complete workflow.\n\n**If you are Codex CLI:** For tool mapping and adaptations, read **`.agents/skills/codex_tool_mapping.md`**.\n\n**If you are Gemini CLI:** For tool mapping and adaptations, read **`.agents/skills/geminicli_tool_mapping.md`**.\n\n## Arguments\n\nNo arguments. Analyzes uncommitted changes and wraps into a task.\n"
+    },
+    {
+      "path": "other/airoha-cantara-lib-electronic-compo-3/SKILL.md",
+      "name": "airoha",
+      "current_category": "other",
+      "llm_category": "other",
+      "confidence": 0.55,
+      "status": "ok",
+      "reason": "Duplicate of skill 0 - same Airoha manufacturer skill content. Domain-specific hardware knowledge with no matching active category.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "f79f10fbd0eb3f53eb430483aa296447695f7cc30e22d797232f7a1fd112ded9",
+      "metadata_sha256": "f72bfe671ba9535d2681f0b20516724dcd66b9492412819c30ea8735bce20223",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Airoha Technology (MediaTek subsidiary) MPN encoding patterns, suffix decoding, and handler guidance. Use when working with Airoha Bluetooth audio SoCs or AirohaHandler.",
+      "content_excerpt": "---\nname: airoha\ndescription: Airoha Technology (MediaTek subsidiary) MPN encoding patterns, suffix decoding, and handler guidance. Use when working with Airoha Bluetooth audio SoCs or AirohaHandler.\n---\n\n# Airoha Technology Manufacturer Skill\n\n## Company Overview\n\nAiroha Technology is a MediaTek subsidiary specializing in Bluetooth audio solutions for TWS (True Wireless Stereo) earbuds, ANC (Active Noise Cancellation) headphones, and premium audio applications.\n\n## MPN Structure\n\nAiroha MPNs follow this general structure:\n\n```\n[PREFIX][SERIES][MODEL][-PACKAGE]\n   |       |       |       |\n   |       |       |       +-- Optional: Package code (QFN, BGA, CSP)\n   |       |       +-- Model variant (0-9)\n   |       +-- Series number (55, 56, 57, 58)\n   +-- AB15 prefix (Airoha Bluetooth 15xx)\n```\n\n### Example Decoding\n\n```\nAB1552\n|  |||\n|  ||+-- 2 = Model variant (basic TWS)\n|  |+-- 5 = TWS earbud series\n|  +-- 15 = Bluetooth 1.5 generation\n+-- AB = Airoha Bluetooth\n\nAB1562-QFN\n|  ||| |\n|  ||| +-- QFN = QFN package\n|  ||+-- 2 = Model variant\n|  |+-- 6 = ANC series\n|  +-- 15 = Generation\n+-- AB = Airoha Bluetooth\n\nAB1575\n|  |||\n|  ||+-- 5 = Premium variant\n|  |+-- 7 = Premium audio series\n|  +-- 15 = Generation\n+-- AB = Airoha Bluetooth\n```\n\n---\n\n## Series Overview\n\n| Series | Application | Features | Bluetooth |\n|--------|-------------|----------|-----------|\n| AB155x | TWS Earbuds | Basic TWS, low power | BT 5.0 |\n| AB156x | ANC Earbuds | Active Noise Cancellation | BT 5.2 |\n| AB157x | Premium Audio | Hi-Fi, low latency | BT 5.2 |\n| AB158x | Ultra-Low Power | Extended battery life | BT 5.3 |\n\n---\n\n## Product Families\n\n### AB155x Series - TWS Earbuds\n\n| Part Number | Features | Bluetooth | Application |\n|-------------|----------|-----------|-------------|\n| AB1552 | Basic TWS | BT 5.0 | Entry-level earbuds |\n| AB1558 | Enhanced TWS | BT 5.0 | Mid-range earbuds |\n\n### AB156x Series - ANC Earbuds\n\n| Part Number | Features | Bluetooth | ANC Type |\n|-------------|----------|-----------|----------|\n| AB1562 | Hybrid ANC | BT 5.2 | Feedforward + Feedback |\n| AB1563 | Enhanced ANC | BT 5.2 | Advanced hybrid |\n| AB1568 | Premium ANC | BT 5.2 | Multi-mic ANC |\n\n### AB157x Series - Premium Audio\n\n| Part Number | Features | Bluetooth | Audio |\n|-------------|----------|-----------|-------|\n| AB1570 | Hi-Fi audio | BT 5.2 | High-resolution |\n| AB1575 | Premium codec | BT 5.2 | LDAC/aptX HD |\n\n### AB158x Series - Ultra-Low Power\n\n| Part Number | Features | Bluetooth | Power"
+    },
+    {
+      "path": "other/ai-sdk-core-secondsky-claude-skills-2/SKILL.md",
+      "name": "ai-sdk-core",
+      "current_category": "other",
+      "llm_category": "ai-llm",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Skill is about Vercel AI SDK v5 for backend AI with text generation, structured output, tools, agents, and multi-provider support - core AI/LLM integration work.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "49ed759347d20a90235a6f320490ca99b0cf6eed58a34d6f196cc7cba6b0ba41",
+      "metadata_sha256": "94c381ac12a0e2ea0306ab6253f75b84bf3338daa860e14f692164e0ede2b357",
+      "semantic_sources": {
+        "description": "metadata",
+        "name": "metadata"
+      },
+      "description": "Production-ready backend AI with Vercel AI SDK v5.",
+      "content_excerpt": "---\nname: ai-sdk-core\ndescription: Vercel AI SDK v5 for backend AI (text generation, structured output, tools, agents). Multi-provider. Use for server-side AI or encountering AI_APICallError, AI_NoObjectGeneratedError, streaming failures.\n\n  Keywords: ai sdk core, vercel ai sdk, generateText, streamText, generateObject, streamObject,\n  ai sdk node, ai sdk server, zod ai schema, ai tools calling, ai agent class, openai sdk, anthropic sdk,\n  google gemini sdk, workers-ai-provider, ai streaming backend, multi-provider ai, ai sdk errors,\n  AI_APICallError, AI_NoObjectGeneratedError, streamText fails, worker startup limit ai\nlicense: MIT\n---\n\n# AI SDK Core\n\nProduction-ready backend AI with Vercel AI SDK v5.\n\n**Last Updated**: 2025-11-21\n\n## Table of Contents\n1. [Quick Start](#quick-start-5-minutes)\n2. [Core Functions](#core-functions)\n3. [Provider Setup & Configuration](#provider-setup--configuration)\n4. [Tool Calling & Agents](#tool-calling--agents)\n5. [Critical v4→v5 Migration](#critical-v4v5-migration)\n6. [Top 12 Errors & Solutions](#top-12-errors--solutions)\n7. [Production Best Practices](#production-best-practices)\n8. [When to Load References](#when-to-load-references)\n9. [When to Use This Skill](#when-to-use-this-skill)\n10. [Dependencies & Versions](#dependencies--versions)\n11. [Links to Official Documentation](#links-to-official-documentation)\n12. [Templates & References](#templates--references)\n\n---\n\n## Quick Start (5 Minutes)\n\n### Installation\n\n```bash\nbun add ai @ai-sdk/openai @ai-sdk/anthropic @ai-sdk/google workers-ai-provider zod  # preferred\n# or: npm install ai @ai-sdk/openai @ai-sdk/anthropic @ai-sdk/google workers-ai-provider zod\n```\n\n### Environment Variables\n\n```bash\n# .env\nOPENAI_API_KEY=sk-...\nANTHROPIC_API_KEY=sk-ant-...\nGOOGLE_GENERATIVE_AI_API_KEY=...\n```\n\n### First Example: Generate Text\n\n```typescript\nimport { generateText } from 'ai';\nimport { openai } from '@ai-sdk/openai';\n\nconst result = await generateText({\n  model: openai('gpt-4-turbo'),\n  prompt: 'What is TypeScript?',\n});\n\nconsole.log(result.text);\n```\n\n### First Example: Streaming Chat\n\n```typescript\nimport { streamText } from 'ai';\nimport { anthropic } from '@ai-sdk/anthropic';\n\nconst stream = streamText({\n  model: anthropic('claude-sonnet-4-5-20250929'),\n  messages: [\n    { role: 'user', content: 'Tell me a story' },\n  ],\n});\n\nfor await (const chunk of stream.textStream) {\n  process.stdout.write(chunk);\n}\n```\n\n### First Example: Structured Output\n\n```typescript\nimport { gene"
+    },
+    {
+      "path": "other/agentuity-cli-auth-login/SKILL.md",
+      "name": "agentuity-cli-auth-login",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill handles authentication login flows for the Agentuity Platform, which is a security-related operation involving credential management.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "185db92d7073c4658d6b467d3e80c9d10cd0f1f8d1bca79e0f513c25af943316",
+      "metadata_sha256": "b677bfdb4ed4b45f5dad6ffda000eb9ce9c38d8273b2a082ba629748671877a5",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Login to the Agentuity Platform using a browser-based authentication flow. Use for managing authentication credentials",
+      "content_excerpt": "---\nname: agentuity-cli-auth-login\ndescription: \"Login to the Agentuity Platform using a browser-based authentication flow. Use for managing authentication credentials\"\nversion: \"0.0.104\"\nlicense: Apache-2.0\nallowed-tools: \"Bash(agentuity:*)\"\nmetadata:\n  command: \"agentuity auth login\"\n  tags: \"mutating creates-resource slow api-intensive\"\n---\n\n# Auth Login\n\nLogin to the Agentuity Platform using a browser-based authentication flow\n\n## Usage\n\n```bash\nagentuity auth login\n```\n\n## Examples\n\nLogin to account:\n\n```bash\nbunx @agentuity/cli auth login\n```\n\nLogin to account:\n\n```bash\nbunx @agentuity/cli login\n```\n"
+    },
+    {
+      "path": "other/aidd-loop/SKILL.md",
+      "name": "aidd-loop",
+      "current_category": "other",
+      "llm_category": "workflow",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill enforces loop-mode discipline for implement/review/qa stages with bounded scope and retry policy, which is a workflow management and process enforcement function.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "7e221ef8b03b20923ad169cbb040832e6734f3f0e38cffb18ae6da8c871b22f6",
+      "metadata_sha256": "7189cd3c76ed0d0443c5ceb422bf0358158a11fc57a4f32c0d9ac929e79ac1df",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Enforces loop-mode discipline for implement/review/qa (packs, scope, no questions). Use when loop stages require bounded scope and retry policy.",
+      "content_excerpt": "---\nname: aidd-loop\ndescription: Enforces loop-mode discipline for implement/review/qa (packs, scope, no questions). Use when loop stages require bounded scope and retry policy.\nlang: en\nmodel: inherit\nuser-invocable: false\n---\n\nFollow `feature-dev-aidd:aidd-core` for output contract and DocOps.\n\n## Loop discipline\n1. Read order: loop pack -> review pack (if any) -> fix_plan.json when verdict=REVISE -> rolling context pack.\n2. Excerpt-first: do not read full PRD/plan/tasklist/spec when the loop pack excerpt covers Goal/DoD/Boundaries/Expected paths/Size budget/Tests/Acceptance.\n3. No questions in loop-mode; record blockers/handoff instead.\n4. REVISE: reuse the same scope, follow fix_plan.json, and do not widen boundaries.\n5. Scope guard: out-of-scope -> WARN + handoff; forbidden -> BLOCKED. Never expand boundaries yourself.\n6. Tests: follow loop pack or reviewer policy; do not invent new test requirements.\n7. No large logs/diffs in chat; link to `aidd/reports/**`.\n8. Block policy: `strict` fail-fast on any blocked step; `ralph` uses policy matrix v2 (`hard_block|recoverable_retry|warn_continue`) with bounded retries for recoverable reasons.\n9. For recoverable blocked retries, emit observability fields: `recoverable_blocked`, `recovery_path`, `retry_attempt`.\n\n## Preload matrix v2\n- Roles: `implementer`, `reviewer`, `qa`.\n- This skill must not be preloaded for other subagents.\n\n## Canonical shared Python entrypoints\n- `python3 ${CLAUDE_PLUGIN_ROOT}/skills/aidd-loop/runtime/loop_pack.py`\n- `python3 ${CLAUDE_PLUGIN_ROOT}/skills/aidd-loop/runtime/loop_step.py`\n- `python3 ${CLAUDE_PLUGIN_ROOT}/skills/aidd-loop/runtime/loop_run.py`\n- `python3 ${CLAUDE_PLUGIN_ROOT}/skills/aidd-loop/runtime/preflight_result_validate.py`\n- `python3 ${CLAUDE_PLUGIN_ROOT}/skills/aidd-loop/runtime/output_contract.py`\n- Preflight preparation is stage-chain-internal and not an operator command.\n\n## Command contracts\n### `python3 ${CLAUDE_PLUGIN_ROOT}/skills/aidd-loop/runtime/loop_pack.py`\n- When to run: before loop stage execution to assemble bounded evidence input.\n- Inputs: ticket/scope context and available stage artifacts (`readmap`, `review pack`, context pack).\n- Outputs: deterministic loop pack summary for implement/review/qa orchestration.\n- Failure mode: non-zero exit when required upstream artifacts are missing or malformed.\n- Next action: repair missing prerequisites and rerun pack generation.\n\n### `python3 ${CLAUDE_PLUGIN_ROOT}/skills/aidd-loop/runtime/loop_run.py`\n- When to"
+    },
+    {
+      "path": "other/agricultural-easement-negotiation-frameworks-reggiechan74-vp-real-estate/SKILL.md",
+      "name": "agricultural-easement-negotiation-frameworks",
+      "current_category": "other",
+      "llm_category": "business",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Identical to candidate 1; the skill is about negotiating agricultural easements, a business negotiation context.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "407335f7327bc386dcc8f2470b3d6fbd5483217b6b9ccd7dc18ad4d8248d11c9",
+      "metadata_sha256": "5983992eb851239091b37d7380c22665b92958691cbfb0aa0a738ceec6be2b3f",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "Expert in negotiating utility easements with farmers including farm operation impact assessment (crop production, livestock, equipment), compensation structure design (one-time vs. recurring, mitigation works), and multi-generational farm psychology. Use when negotiating transmission line, pipeline, or drainage easements with agricultural landowners. Key terms include agricultural easement, farm operation impacts, tower placement, crop loss, irrigation impacts, easement compensation, farm succession",
+      "content_excerpt": "---\nname: agricultural-easement-negotiation-frameworks\ndescription: Expert in negotiating utility easements with farmers including farm operation impact assessment (crop production, livestock, equipment), compensation structure design (one-time vs. recurring, mitigation works), and multi-generational farm psychology. Use when negotiating transmission line, pipeline, or drainage easements with agricultural landowners. Key terms include agricultural easement, farm operation impacts, tower placement, crop loss, irrigation impacts, easement compensation, farm succession\ntags: [agricultural-easements, farm-negotiations, utility-corridors, compensation-structures, farmer-psychology, long-term-relationships]\ncapability: Provides detailed framework for agricultural easement negotiations including farm operation impact assessment (crop production loss, field division, irrigation, livestock, equipment operation), compensation structure design (one-time payments, recurring rental, mitigation works, hybrid structures), and multi-generational farm psychology (land attachment, family decision-making, patient negotiation, long-term relationships)\nproactive: true\n---\n\nYou are an expert in negotiating utility easements with agricultural landowners, understanding farm operations, valuing agricultural impacts, and building long-term relationships with farming families.\n\n## Granular Focus\n\nNegotiating utility easements with farmers (subset of Shadi's capabilities). This skill provides detailed protocols for agricultural easement negotiations - NOT general easement valuation or commercial/residential easements.\n\n## Farm Operation Impact Assessment\n\nDetailed analysis of how easement affects farm productivity, operations, and economics.\n\n### Crop Production Impacts\n\n**Permanent land loss** (tower footprints, access roads):\n- **Tower footprints**: 20m × 20m = 400 m² = 0.04 hectares per tower\n- **Access roads**: 6m width, length varies (typically 100-500m) = 0.06-0.3 hectares\n- **Permanent loss** (total): 0.1-0.35 hectares per tower + access\n\n**Soil class and crop type valuation**:\n- **Class 1 soil** (prime agricultural): $8,000-$12,000/hectare (corn, soybeans)\n- **Class 2 soil** (good): $6,000-$9,000/hectare\n- **Class 3 soil** (fair): $4,000-$7,000/hectare\n- **Pasture**: $2,000-$4,000/hectare\n\n**Example**:\n- **Transmission line**: 10 towers across 100-hectare farm, Class 1 soil\n- **Permanent loss**: 10 towers × 0.04 ha + 1.5 km access road (0.9 ha) = **1.3 hectares**\n- **Value**:"
+    },
+    {
+      "path": "other/aget-capture-observation-aget-framework-template-executive-a/SKILL.md",
+      "name": "aget-capture-observation",
+      "current_category": "other",
+      "llm_category": "context-management",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill captures and preserves research observations, vocabulary candidates, and findings from a session into a knowledge base, which is a form of context management for maintaining session state and knowledge continuity.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "aafec22991ec10ad69ab301174250b0be53a3a17e8d2f444c66772debfc60221",
+      "metadata_sha256": "222b5455794b406f7b9687d2b29f1ce1010e6a5691b501e186a3bb0bd0d219bd",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Capture research observations into AGET KB without committing specs. Use when discovering vocabulary candidates, RQ proposals, web findings, patterns, or observations mid-session that should be preserved before continuing.",
+      "content_excerpt": "---\nname: aget-capture-observation\ndescription: Capture research observations into AGET KB without committing specs. Use when discovering vocabulary candidates, RQ proposals, web findings, patterns, or observations mid-session that should be preserved before continuing.\n---\n\n## Capture Protocol (v2 - Autonomous-Explicit Continuum)\n\nYou are capturing research observations for the AGET knowledge base.\n\n**Renamed**: `/aget-capture-observation` → `/aget-capture-observation` per S-V-O naming convention (L584) and ACM SIGSOFT \"Observation\" grounding.\n\n### Input\n\n$ARGUMENTS\n\n### Mode Detection\n\nDetect the input mode based on $ARGUMENTS:\n\n| Input Pattern | Mode | Behavior |\n|---------------|------|----------|\n| Empty or blank | **Autonomous** | Scan session, identify and capture valuable signals (~2 min) |\n| Time pattern: `5min`, `10 min`, `20min`, `30 min` | **Time-Budget** | Scan session with depth scaled to time budget |\n| Text with signal keywords | **Explicit** | Capture the specific signal provided |\n| Other text | **Explicit** | Capture as general observation |\n\n### Mode 1: Autonomous (no args)\n\nWhen invoked as `/aget-capture-observation` with no arguments:\n\n1. **Scan** recent session conversation for valuable signals\n2. **Identify** vocabulary candidates, patterns, RQs, findings, gaps\n3. **Prioritize** by novelty and AGET governance value\n4. **Capture** top 3-5 signals to session file with classification\n5. **Report** what was captured\n\n### Mode 2: Time-Budget (duration arg)\n\nWhen invoked as `/aget-capture-observation <duration>` (e.g., `/aget-capture-observation 10min`):\n\n| Time Budget | Depth | Actions |\n|-------------|-------|---------|\n| 2-5 min | Shallow | Scan + capture raw signals to session file |\n| 10 min | Medium | Classify + link signals to existing vocabulary terms |\n| 20 min | Deep | Interlink + propose RQs + draft L-doc candidates |\n| 30+ min | Full | Formalize with traceability, update session summary |\n\n### Mode 3: Explicit (signal arg)\n\nWhen invoked as `/aget-capture-observation \"<signal>\"`:\n\nClassify the input and route to appropriate target:\n\n| Signal Type | Indicator Keywords | Target Location |\n|-------------|-------------------|-----------------|\n| Vocabulary candidate | \"term:\", \"concept:\", \"definition:\", \"vocabulary\" | Session file - Vocabulary Candidates section |\n| Research question | \"RQ:\", \"question:\", \"how does\", \"why does\", \"what is\" | Session file - Research Questions section |\n| Web research finding | \"source:\", \"URL:\", \"acc"
+    },
+    {
+      "path": "other/airoha-cantara-lib-electronic-compo/SKILL.md",
+      "name": "airoha",
+      "current_category": "other",
+      "llm_category": "other",
+      "confidence": 0.6,
+      "status": "ok",
+      "reason": "Duplicate of id 2, same hardware manufacturer skill with no active category match.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "f79f10fbd0eb3f53eb430483aa296447695f7cc30e22d797232f7a1fd112ded9",
+      "metadata_sha256": "fc206a42d47db174665349b98ca93bc58b32b97f370428a3da8c2c2da70e0eb7",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Airoha Technology (MediaTek subsidiary) MPN encoding patterns, suffix decoding, and handler guidance. Use when working with Airoha Bluetooth audio SoCs or AirohaHandler.",
+      "content_excerpt": "---\nname: airoha\ndescription: Airoha Technology (MediaTek subsidiary) MPN encoding patterns, suffix decoding, and handler guidance. Use when working with Airoha Bluetooth audio SoCs or AirohaHandler.\n---\n\n# Airoha Technology Manufacturer Skill\n\n## Company Overview\n\nAiroha Technology is a MediaTek subsidiary specializing in Bluetooth audio solutions for TWS (True Wireless Stereo) earbuds, ANC (Active Noise Cancellation) headphones, and premium audio applications.\n\n## MPN Structure\n\nAiroha MPNs follow this general structure:\n\n```\n[PREFIX][SERIES][MODEL][-PACKAGE]\n   |       |       |       |\n   |       |       |       +-- Optional: Package code (QFN, BGA, CSP)\n   |       |       +-- Model variant (0-9)\n   |       +-- Series number (55, 56, 57, 58)\n   +-- AB15 prefix (Airoha Bluetooth 15xx)\n```\n\n### Example Decoding\n\n```\nAB1552\n|  |||\n|  ||+-- 2 = Model variant (basic TWS)\n|  |+-- 5 = TWS earbud series\n|  +-- 15 = Bluetooth 1.5 generation\n+-- AB = Airoha Bluetooth\n\nAB1562-QFN\n|  ||| |\n|  ||| +-- QFN = QFN package\n|  ||+-- 2 = Model variant\n|  |+-- 6 = ANC series\n|  +-- 15 = Generation\n+-- AB = Airoha Bluetooth\n\nAB1575\n|  |||\n|  ||+-- 5 = Premium variant\n|  |+-- 7 = Premium audio series\n|  +-- 15 = Generation\n+-- AB = Airoha Bluetooth\n```\n\n---\n\n## Series Overview\n\n| Series | Application | Features | Bluetooth |\n|--------|-------------|----------|-----------|\n| AB155x | TWS Earbuds | Basic TWS, low power | BT 5.0 |\n| AB156x | ANC Earbuds | Active Noise Cancellation | BT 5.2 |\n| AB157x | Premium Audio | Hi-Fi, low latency | BT 5.2 |\n| AB158x | Ultra-Low Power | Extended battery life | BT 5.3 |\n\n---\n\n## Product Families\n\n### AB155x Series - TWS Earbuds\n\n| Part Number | Features | Bluetooth | Application |\n|-------------|----------|-----------|-------------|\n| AB1552 | Basic TWS | BT 5.0 | Entry-level earbuds |\n| AB1558 | Enhanced TWS | BT 5.0 | Mid-range earbuds |\n\n### AB156x Series - ANC Earbuds\n\n| Part Number | Features | Bluetooth | ANC Type |\n|-------------|----------|-----------|----------|\n| AB1562 | Hybrid ANC | BT 5.2 | Feedforward + Feedback |\n| AB1563 | Enhanced ANC | BT 5.2 | Advanced hybrid |\n| AB1568 | Premium ANC | BT 5.2 | Multi-mic ANC |\n\n### AB157x Series - Premium Audio\n\n| Part Number | Features | Bluetooth | Audio |\n|-------------|----------|-----------|-------|\n| AB1570 | Hi-Fi audio | BT 5.2 | High-resolution |\n| AB1575 | Premium codec | BT 5.2 | LDAC/aptX HD |\n\n### AB158x Series - Ultra-Low Power\n\n| Part Number | Features | Bluetooth | Power"
+    },
+    {
+      "path": "other/agentuity-cli-cloud-db-create-agentuity-examples-2/SKILL.md",
+      "name": "agentuity-cli-cloud-db-create",
+      "current_category": "other",
+      "llm_category": "data",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill creates a new database resource, which falls under data engineering and database management workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "97604fde660729f8b57cb60839a9f6a57c74f8e41140132422e6444bf8595565",
+      "metadata_sha256": "3885140d5ebffc94438fdc296ed262bf577c0063fb10a8833645ba924613c5f9",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Create a new database resource. Requires authentication. Use for Agentuity cloud platform operations",
+      "content_excerpt": "---\nname: agentuity-cli-cloud-db-create\ndescription: Create a new database resource. Requires authentication. Use for Agentuity cloud platform operations\nversion: \"0.0.103\"\nlicense: Apache-2.0\nallowed-tools: \"Bash(agentuity:*)\"\nmetadata:\n  command: \"agentuity cloud db create\"\n  tags: \"mutating creates-resource slow requires-auth requires-deployment\"\n---\n\n# Cloud Db Create\n\nCreate a new database resource\n\n## Prerequisites\n\n- Authenticated with `agentuity auth login`\n- Organization context required (`--org-id` or default org)\n\n## Usage\n\n```bash\nagentuity cloud db create [options]\n```\n\n## Options\n\n| Option | Type | Required | Default | Description |\n|--------|------|----------|---------|-------------|\n| `--name` | string | Yes | - | Custom database name |\n\n## Examples\n\nCreate new item:\n\n```bash\nbunx @agentuity/cli cloud db create\n```\n\nRun new command:\n\n```bash\nbunx @agentuity/cli cloud db new\n```\n\nCreate new item:\n\n```bash\nbunx @agentuity/cli cloud db create --name my-db\n```\n\nCreate new item:\n\n```bash\nbunx @agentuity/cli --dry-run cloud db create\n```\n\n## Output\n\nReturns JSON object:\n\n```json\n{\n  \"success\": \"boolean\",\n  \"name\": \"string\"\n}\n```\n\n| Field | Type | Description |\n|-------|------|-------------|\n| `success` | boolean | Whether creation succeeded |\n| `name` | string | Created database name |\n"
+    },
+    {
+      "path": "other/ai-doc-system-auditor-wade56754-ai-ad-spend02-2/SKILL.md",
+      "name": "ai-doc-system-auditor",
+      "current_category": "other",
+      "llm_category": "documents",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "This is another duplicate entry of the same skill (ai-doc-system-auditor) with identical content and purpose: auditing a documentation system for consistency and health.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "4a5edfcf0b77a03f72c4e6693122ca875f93e090f273ed085be985b8b8c4ee37",
+      "metadata_sha256": "2ab7b5378186311987ec976dbc3a6521a59e4b818e10bb8ff015b42c1410bb21",
+      "semantic_sources": {
+        "description": "metadata",
+        "name": "frontmatter"
+      },
+      "description": "<skill>",
+      "content_excerpt": "---\nname: ai-doc-system-auditor\nversion: \"2.0\"\nstatus: production\nlayer: skill\nowner: wade\nlast_reviewed: 2025-12-07\nbaseline: AI_CODE_FACTORY_DEV_GUIDE_v2.4, SoT Freeze v2.6, SUPERCLAUDE_INTEGRATION_GUIDE_v2.2\n\n# SuperClaude Enhancement Configuration\nenhancement:\n  enabled: true\n  superclaude_patterns:\n    - analysis_pattern     # 吸收 /sc:analyze 审计分析\n    - task_breakdown       # 吸收 /sc:pm 问题分解\n  internal_workflow: true\n  sot_priority: true       # SoT 检查结果优先级最高\n---\n\n<skill>\n──────────────────────────────────────────────\n  <name>ai-doc-system-auditor</name>\n  <version>2.0</version>\n  <domain>ASDD 文档体系审计（Constitution + SoT + Implementation + AI Layer）</domain>\n  <profile>System-Audit / Read-Only / High-Safety / Fail-Fast / SuperClaude-Enhanced</profile>\n──────────────────────────────────────────────\n\n\n  <!-- ======================================================\n       0. 核心使命（Mission）\n  ====================================================== -->\n  <mission>\n    Summary: 文档体系审计官，只读检查，输出 P0/P1/P2 问题报告。\n\n    职责：\n    - 审查 ASDD 7 核心文档与 11 个 SoT 文档之间的健康关系\n    - 检查版本漂移、边界混淆、引用混乱、缺失文件等系统级问题\n    - 评估 AI Skill 是否与 MASTER / SoT 保持一致\n    - 输出分级审计报告（P0/P1/P2），供其他 Skill 修复使用\n\n    只读约束（Inviolable）：\n    - 永远不做写入操作\n    - 不修改任何文档或 Skill 文件\n    - 不生成补丁或代码\n    - 不裁决冲突（交给 ai-master-architect）\n    - 不自动扩展审计范围\n    - 不动态推断未声明的扫描路径\n\n    非目标（Non-Goals）：\n    - 单文档语法级修复 → doc-fixer 负责\n    - 架构裁决与冲突解决 → ai-master-architect 负责\n    - 文档创建与大纲生成 → ai-doc-orchestrator 负责\n  </mission>\n\n\n  <!-- ======================================================\n       1. 审查范围（Scope）\n  ====================================================== -->\n  <scope>\n    Summary: 覆盖宪法层、SoT 层、实现规范层、AI 行为层的所有文档。\n\n    白名单根路径（SYSTEM-SCAN 专用，禁止动态扩展）：\n    - docs/1.overview/\n    - docs/sot/\n    - docs/3.dev-guides/\n    - docs/4.architecture/\n    - docs/5.infrastructure/\n    - docs/6.agent-layer/\n    - .claude/\n    - CLAUDE.md\n\n    审查对象（ASDD 6-Layer Architecture）：\n    1) 宪法层 Layer 1（Overview）\n       - docs/1.overview/MASTER*.md, PROJECT*.md\n\n    2) SoT 层 Layer 2（Source of Truth）\n       - docs/sot/STATE_MACHINE*.md, DATA_SCHEMA*.md, BUSINESS_RULES*.md\n       - docs/sot/*_SOT.md（LEDGER / DAILY_REPORT / TRANSFER / RECONCILIATION / TOPUP / IMPORT_JOB 等）\n       - docs/sot/ERROR_CODES*.md, AUTH_SPEC*.md\n\n    3) 开发指南层 Layer 3（Dev-Guides）\n       - docs/3.dev-guides/ 下所有开发指南\n\n    4) 架构视图层 Layer 4（Architecture）\n       - docs/4.architecture/ 下所有架构文档\n\n    5) 基础设施层 Layer 5（Infrastructure）\n       - docs/5.infrastructure/ 下所有基础设施文档\n\n    6) AI"
+    },
+    {
+      "path": "other/ai-collaborate-teaching-panaversity-agentfactory-2/SKILL.md",
+      "name": "ai-collaborate-teaching",
+      "current_category": "other",
+      "llm_category": "ai-llm",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Skill focuses on AI-driven development workflows, spec-first collaboration, and balancing AI assistance with foundational learning using a Three Roles Framework for AI as Teacher/Student/Co-Worker.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "234e49396b2a395e5dffe935bac35899e6e9eb1fe41c678745062ff5328de770",
+      "metadata_sha256": "cefae56c7faaa751ff8f88b01a43f0bc9cdcf96efa1987380720710f84821a7d",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Design co-learning experiences using the Three Roles Framework (AI as Teacher/Student/Co-Worker). Use when teaching AI-driven development workflows, spec-first collaboration, or balancing AI assistance with foundational learning. NOT for curriculum without AI integration.",
+      "content_excerpt": "---\nname: ai-collaborate-teaching\ndescription: Design co-learning experiences using the Three Roles Framework (AI as Teacher/Student/Co-Worker). Use when teaching AI-driven development workflows, spec-first collaboration, or balancing AI assistance with foundational learning. NOT for curriculum without AI integration.\n---\n\n# AI Collaborate Teaching\n\n## Quick Start\n\n```yaml\n# 1. Determine layer and balance\nlayer: 2  # AI Collaboration\nbalance: 40/40/20  # foundation/AI-assisted/verification\n\n# 2. Apply Three Roles Framework\n# Each lesson must show bidirectional learning\n\n# 3. Include convergence loop\n# spec → generate → validate → learn → iterate\n```\n\n## Persona\n\nYou are a co-learning experience designer who integrates the Three Roles Framework. Your goal is to ensure lessons demonstrate bidirectional learning—students learn FROM AI and AI adapts TO student feedback—not passive tool usage.\n\n## The Three Roles Framework\n\n**CRITICAL**: All co-learning content MUST demonstrate these roles:\n\n### AI's Roles\n| Role | What AI Does |\n|------|--------------|\n| Teacher | Suggests patterns, best practices students may not know |\n| Student | Learns from student's domain expertise, feedback, corrections |\n| Co-Worker | Collaborates as peer, not subordinate |\n\n### Human's Roles\n| Role | What Human Does |\n|------|-----------------|\n| Teacher | Guides AI through specs, provides domain knowledge |\n| Student | Learns from AI's suggestions, explores new patterns |\n| Orchestrator | Designs strategy, makes final decisions |\n\n### The Convergence Loop\n\n```\n1. Human specifies intent (with context/constraints)\n2. AI suggests approach (may include new patterns)\n3. Human evaluates AND LEARNS (\"I hadn't thought of X\")\n4. AI learns from feedback (adapts to preferences)\n5. CONVERGE on solution (better than either alone)\n```\n\n**Content Requirements**:\n- ✅ At least ONE instance where student learns FROM AI\n- ✅ At least ONE instance where AI adapts TO feedback\n- ✅ Convergence through iteration (not \"perfect first try\")\n- ❌ NEVER present AI as passive tool\n- ❌ NEVER show only one-way instruction\n\n## Layer Integration\n\n| Layer | AI Usage | Balance |\n|-------|----------|---------|\n| L1 (Manual) | Minimal | 60/20/20 |\n| L2 (Collaboration) | Standard | 40/40/20 |\n| L3 (Intelligence) | Heavy | 25/55/20 |\n| L4 (Orchestration) | Strategic | 20/60/20 |\n\n## Analysis Questions\n\n### 1. What's the educational context?\n- Student level (beginner/intermediate/advanced)\n- Available AI tools\n- Learning obje"
+    },
+    {
+      "path": "other/ai-sdk-docs-malob-nix-config-2/SKILL.md",
+      "name": "AI SDK Documentation",
+      "current_category": "other",
+      "llm_category": "ai-llm",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill provides documentation access tools for Vercel AI SDK covering core SDK, providers, streaming, tool calling, embeddings - AI/LLM development documentation.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "79fbb4acf82986afae94b2298271471bdd5bb8ba3ac99ae3615861263d4d4720",
+      "metadata_sha256": "8ea6151ef585d5ede3b19f836beea06d876c414c69f65cb810c2db12cfe7d240",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "This skill should be used when working with Vercel AI SDK, AI Gateway, streamText, generateText, generateObject, streamObject, tool calling, or AI SDK providers. Also relevant for \"ai-sdk\", \"@ai-sdk/*\" packages, or questions about AI SDK patterns, configuration, and best practices.",
+      "content_excerpt": "---\nname: AI SDK Documentation\ndescription: This skill should be used when working with Vercel AI SDK, AI Gateway, streamText, generateText, generateObject, streamObject, tool calling, or AI SDK providers. Also relevant for \"ai-sdk\", \"@ai-sdk/*\" packages, or questions about AI SDK patterns, configuration, and best practices.\n---\n\n# AI SDK Documentation Skill\n\nThis skill provides tools for accessing Vercel AI SDK documentation and AI Gateway model information. Use the bundled scripts to discover available documentation pages and fetch their full content.\n\n## Overview\n\nThe Vercel AI SDK documentation lives at `ai-sdk.dev` and covers:\n- **Core SDK** (`ai` package) - generating text, streaming, tool calling, embeddings\n- **UI integrations** - React hooks, streaming UI components\n- **RSC** - React Server Components integration\n- **Providers** - Configuration for OpenAI, Anthropic, Google, and 30+ other providers\n- **AI Gateway** - Vercel's multi-provider routing service\n\nThe documentation is large (600+ pages) and frequently updated. Rather than relying on stale knowledge, always use the scripts to fetch current documentation.\n\n## Scripts\n\nAll scripts are located in `${CLAUDE_PLUGIN_ROOT}/skills/ai-sdk-docs/scripts/`.\n\n### list-docs.sh\n\nDiscover available documentation pages.\n\n**Usage:**\n```bash\n# List all pages grouped by category\n${CLAUDE_PLUGIN_ROOT}/skills/ai-sdk-docs/scripts/list-docs.sh\n\n# List pages in a specific category\n${CLAUDE_PLUGIN_ROOT}/skills/ai-sdk-docs/scripts/list-docs.sh docs\n${CLAUDE_PLUGIN_ROOT}/skills/ai-sdk-docs/scripts/list-docs.sh cookbook\n${CLAUDE_PLUGIN_ROOT}/skills/ai-sdk-docs/scripts/list-docs.sh providers\n```\n\n**Categories:**\n- `docs` - Core documentation (concepts, guides, API reference)\n- `cookbook` - Code examples by framework (Next.js, Node.js, etc.)\n- `providers` - Provider-specific setup and configuration\n- `elements` - UI component library documentation\n- `tools-registry` - Third-party tool integrations\n\n**When to use:** Run this first to discover what pages exist. Do not assume documentation structure.\n\n### fetch-doc.sh\n\nFetch the full markdown content of a specific documentation page.\n\n**Usage:**\n```bash\n# Fetch a documentation page\n${CLAUDE_PLUGIN_ROOT}/skills/ai-sdk-docs/scripts/fetch-doc.sh /docs/ai-sdk-core/generating-text\n\n# Fetch a cookbook example\n${CLAUDE_PLUGIN_ROOT}/skills/ai-sdk-docs/scripts/fetch-doc.sh /cookbook/next/generating-structured-data\n\n# Fetch provider documentation\n${CLAUDE_PLUGIN_ROOT}/skills/ai-sdk"
+    },
+    {
+      "path": "other/alembic-slanycukr-riot-api-project-ff90751a/SKILL.md",
+      "name": "alembic",
+      "current_category": "other",
+      "llm_category": "data",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill is about database migration management for SQLAlchemy projects, which is a core data engineering task.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "f224fccac24eb4e432ec034ab361c075bad2545bda53b0fcf392f13ca2775290",
+      "metadata_sha256": "d2ee4050bb21999b5a086878201ce95c38489c11fa46152e6e2278eedd35b1d8",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Database migration management for SQLAlchemy projects using Alembic",
+      "content_excerpt": "---\nname: alembic\ndescription: Database migration management for SQLAlchemy projects using Alembic\nwhen_to_use: When you need to create, apply, or manage database schema changes in SQLAlchemy projects\n---\n\n# Alembic Database Migrations\n\nAlembic is a database migration tool for SQLAlchemy projects that provides version control for your database schema.\n\n## Quick Start\n\n### Create Migration (Autogenerate)\n\n```bash\n# Generate migration from model changes\nalembic revision --autogenerate -m \"Add user table\"\n\n# Check if there are pending changes\nalembic check\n```\n\n### Apply Migrations\n\n```bash\n# Upgrade to latest version\nalembic upgrade head\n\n# Upgrade to specific revision\nalembic upgrade ae1027a6acf\n\n# Downgrade one revision\nalembic downgrade -1\n\n# Downgrade to base (empty schema)\nalembic downgrade base\n```\n\n### Check Status\n\n```bash\n# Show current database revision\nalembic current\n\n# Show all revision history\nalembic history\n\n# Show revision details\nalembic show ae1027a6acf\n```\n\n## Common Patterns\n\n### Autogenerate Configuration\n\n**env.py setup for async SQLAlchemy:**\n\n```python\nimport asyncio\nfrom logging.config import fileConfig\nfrom sqlalchemy import pool\nfrom sqlalchemy.ext.asyncio import async_engine_from_config\nfrom alembic import context\n\n# Import your models\nfrom app.models import Base\nfrom app.config import get_settings\n\nconfig = context.config\nsettings = get_settings()\n\n# Configure database URL for async\ndatabase_url = settings.database_url.replace(\"postgresql://\", \"postgresql+asyncpg://\")\nconfig.set_main_option(\"sqlalchemy.url\", database_url)\n\ntarget_metadata = Base.metadata\n\nasync def run_async_migrations():\n    connectable = async_engine_from_config(\n        config.get_section(config.config_ini_section, {}),\n        prefix=\"sqlalchemy.\",\n        poolclass=pool.NullPool,\n    )\n\n    async with connectable.connect() as connection:\n        await connection.run_sync(do_run_migrations)\n\n    await connectable.dispose()\n\ndef do_run_migrations(connection):\n    context.configure(\n        connection=connection,\n        target_metadata=target_metadata,\n        compare_type=True,\n        compare_server_default=True,\n        render_as_batch=False,  # Set to True for SQLite\n    )\n\n    with context.begin_transaction():\n        context.run_migrations()\n\ndef run_migrations_online():\n    asyncio.run(run_async_migrations())\n\nif context.is_offline_mode():\n    run_migrations_offline()\nelse:\n    run_migrations_online()\n```\n\n### Manual Migration Operations\n\n**Common sche"
+    },
+    {
+      "path": "other/aitask-reviewguide-import-beyondeye-aitasks-2/SKILL.md",
+      "name": "aitask-reviewguide-import",
+      "current_category": "other",
+      "llm_category": "documents",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill imports external content (file, URL, repository directory) as a reviewguide with proper metadata, which is fundamentally about document creation and management.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "42b55bb79ed2386d685f99cc1af8c46f465cb2b4fc9afac468aced51bf2de82c",
+      "metadata_sha256": "225d797afafdf6e9eaf6a78278d3f52654d9dc002e98527976f3140fb2e462e0",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Import external content (file, URL, or repository directory) as a reviewguide with proper metadata.",
+      "content_excerpt": "---\nname: aitask-reviewguide-import\ndescription: Import external content (file, URL, or repository directory) as a reviewguide with proper metadata.\n---\n\n## Prerequisites\n\n**If you are Codex CLI:** Read **`.agents/skills/codex_interactive_prereqs.md`** BEFORE proceeding.\n\n## Source of Truth\n\nThis is a unified skill wrapper for Codex CLI and Gemini CLI. The authoritative skill definition is:\n\n**`.claude/skills/aitask-reviewguide-import/SKILL.md`**\n\nRead that file and follow its complete workflow.\n\n**If you are Codex CLI:** For tool mapping and adaptations, read **`.agents/skills/codex_tool_mapping.md`**.\n\n**If you are Gemini CLI:** For tool mapping and adaptations, read **`.agents/skills/geminicli_tool_mapping.md`**.\n\n## Arguments\n\nAccepts an optional source: `https://...` or `path/to/file.md`. Without argument, prompts for source.\n"
+    },
+    {
+      "path": "other/agents-md-creator/SKILL.md",
+      "name": "agents-md-creator",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill creates AGENTS.md instruction files for AI coding agents, providing context and instructions for agents to work on projects, explicitly targeting multiple AI agents like Claude Code and GitHub Copilot.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "4dc8fc698f1df207b671dac6513d91b77b1d3672d23e3a643968e3cc458b57ad",
+      "metadata_sha256": "6d3c2ae036ca74199b3b17bebee4f330802a0d3c97c8c27222c694109c298653",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "AIコーディングエージェント向けの指示書「AGENTS.md」を作成するスキル。プロジェクトにAIエージェントが作業するための文脈と指示を集約するファイルを作成したい場合に使用します。「AGENTS.mdを作成」「AIエージェント用の指示書を作る」「エージェント向けREADMEを作成」などのリクエストでトリガーします。OpenAI Codex、Claude Code、GitHub Copilot、Cursorなど、複数のAIエージェントで共通利用できるオープンな標準フォーマットです。",
+      "content_excerpt": "---\nname: agents-md-creator\ndescription: AIコーディングエージェント向けの指示書「AGENTS.md」を作成するスキル。プロジェクトにAIエージェントが作業するための文脈と指示を集約するファイルを作成したい場合に使用します。「AGENTS.mdを作成」「AIエージェント用の指示書を作る」「エージェント向けREADMEを作成」などのリクエストでトリガーします。OpenAI Codex、Claude Code、GitHub Copilot、Cursorなど、複数のAIエージェントで共通利用できるオープンな標準フォーマットです。\n---\n\n# AGENTS.md クリエイター\n\nこのスキルは、AI コーディングエージェント向けの指示書「AGENTS.md」の作成をサポートします。\n\n## AGENTS.md について\n\nAGENTS.md は、AI エージェント専用の「エージェント用 README」として機能するファイルです。人間向けの README.md とは別に、AI がプロジェクトを理解し、適切にコードを書いたりテストしたりするために必要な文脈と指示を集約します。\n\n### 特徴\n\n- **オープンな標準フォーマット**: 特定のツールに依存せず、複数の AI エージェントで共通利用可能\n- **階層構造対応**: モノレポではサブディレクトリごとに配置でき、最も近いファイルが優先される\n- **自動実行**: 記載されたテストコマンドをエージェントが自動実行可能\n\n## 作成ワークフロー\n\n### 1. プロジェクト情報の収集\n\nAGENTS.md を作成する前に、以下の情報を収集：\n\n1. **プロジェクト概要**: プロジェクトの目的や全体像\n2. **技術スタック**: 使用言語、フレームワーク、主要ライブラリ\n3. **既存のドキュメント**: README.md、package.json、設定ファイルなどを確認\n\n### 2. セクション構成の決定\n\nプロジェクトの性質に応じて、以下から必要なセクションを選択：\n\n| セクション                   | 説明                                     | 優先度 |\n| ---------------------------- | ---------------------------------------- | ------ |\n| プロジェクト概要             | 目的と全体像                             | 高     |\n| セットアップ・ビルドコマンド | 依存関係のインストール、開発サーバー起動 | 高     |\n| テスト手順                   | テスト実行方法、フォーカス方法           | 高     |\n| コードスタイル・規約         | 言語設定、フォーマット規則、関数パターン | 中     |\n| PR・コミット規定             | PR タイトル形式、コミット前チェック      | 中     |\n| 環境固有のチップス           | ディレクトリ構造、パッケージ管理のコツ   | 低     |\n| セキュリティ上の注意         | セキュリティ考慮事項                     | 必要時 |\n\n### 3. AGENTS.md の作成\n\n#### 基本構造\n\n```markdown\n# AGENTS.md\n\n## プロジェクト概要\n\n[プロジェクトの目的と全体像を簡潔に記述]\n\n## セットアップ\n\n[依存関係のインストール方法]\n[開発サーバーの起動方法]\n\n## ビルド\n\n[ビルドコマンドと手順]\n\n## テスト\n\n[テストの実行方法]\n[特定のテストへのフォーカス方法]\n\n## コードスタイル\n\n[使用する言語設定]\n[フォーマット規則]\n[命名規則]\n\n## PR・コミット規定\n\n[PR タイトルの形式]\n[コミット前に行うべきチェック]\n\n## ディレクトリ構造\n\n[重要なディレクトリの説明]\n\n## 注意事項\n\n[セキュリティ上の注意]\n[その他の重要な考慮事項]\n```\n\n### 4. 保存先の決定\n\n- **単一プロジェクト**: リポジトリルートに `AGENTS.md` を配置\n- **モノレポ**: サブディレクトリごとに配置可能（AI は最も近いファイルを優先）\n\n## 執筆ガイドライン\n\n### 記述のポイント\n\n1. **具体的なコマンドを記載**: AI が直接実行できる形式で\n\n   ```text\n   ✓ pnpm install && pnpm dev\n   ✗ 依存関係をインストールしてください\n   ```\n\n2. **新しいチームメイトに伝えるべきこと**: 暗黙知を明文化する\n\n   - 「README には書いていないけど、このプロジェクトでは...」\n   - 「テスト前には必ず...」\n\n3. **人間用ドキュメントとの分離**: ビルド手順の詳細など、人間には冗長な情報は AGENTS.md へ\n\n### 避けるべきこと\n\n- 一般的な知識の繰り返し（AI が既に知っていること）\n- 曖昧な指示（「適切に対応」ではなく具体的に）\n- 古い情報の放置（定期的に更新を推奨）\n\n## プロジェクトタイプ別テンプレート\n\n### Node.js/TypeScript プロジェクト\n\n```markdown\n# AGENTS.md\n\n## プロジェクト概要\n\n[プロジェクトの説明]\n\n## セットアップ\n\npnpm install\n\n## 開発サーバー\n\npnpm dev\n\n## ビルド\n\npnpm build\n\n## テスト\n\npnpm test\n\n# 特"
+    },
+    {
+      "path": "other/aim-settings/SKILL.md",
+      "name": "aim-settings",
+      "current_category": "other",
+      "llm_category": "ai-llm",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Skill displays configuration for an AI memory system including vector database, embeddings, and agent token budgets.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "3c33e1d374967e83ebc1e7e0daf1bbbba9ea865a3ffa6387b45b9fac6347cac6",
+      "metadata_sha256": "02e84053a10636649752868a97cb7172e2f4d462d8899c4175d8562c91e83f96",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Display current memory system configuration and settings",
+      "content_excerpt": "---\nname: aim-settings\ndescription: 'Display current memory system configuration and settings'\nallowed-tools: Read\n---\n\n# Memory Settings - Configuration Viewer\n\nDisplay the current configuration of the AI Memory Module, including collections, types, thresholds, token budgets, and service endpoints.\n\n## Usage\n\n```bash\n# Show all memory settings\n/aim-settings\n\n# Show specific section\n/aim-settings --section collections\n/aim-settings --section types\n/aim-settings --section thresholds\n/aim-settings --section services\n/aim-settings --section agents\n```\n\n## Configuration Sections\n\n### Collections\nShows the 3 Memory System V2.0 collections:\n- **code-patterns** - Project-specific implementation patterns\n- **conventions** - Cross-project shared conventions\n- **discussions** - Decision context and session summaries\n\n### Memory Types (14 total)\nOrganized by collection:\n- code-patterns: `implementation`, `error_fix`, `refactor`, `file_pattern`\n- conventions: `rule`, `guideline`, `port`, `naming`, `structure`\n- discussions: `decision`, `session`, `blocker`, `preference`, `context`\n\n### Thresholds\n- **similarity_threshold** - Minimum relevance score for search results (default: 0.7)\n- **dedup_threshold** - Similarity threshold for duplicate detection (default: 0.95)\n- **max_retrievals** - Maximum memories per search (default: 5)\n- **token_budget** - Maximum tokens for context injection (default: 4000, per BP-039)\n\n### Services\nShows connection details for:\n- **Qdrant** - Vector database (default: localhost:26350)\n- **Embedding Service** - Jina AI embeddings (default: localhost:28080)\n- **Monitoring API** - Health checks and metrics (default: localhost:28000)\n- **Streamlit Dashboard** - Web UI (default: localhost:28501)\n- **Grafana** - Metrics visualization (default: localhost:23000)\n- **Prometheus** - Metrics storage (default: localhost:29090)\n- **Pushgateway** - Metrics push gateway (default: localhost:29091)\n\n### Agent Token Budgets\nShows token allocation per BMAD agent:\n- architect: 1500 tokens\n- analyst: 1200 tokens\n- pm: 1200 tokens\n- developer/dev: 1200 tokens\n- solo-dev: 1500 tokens\n- quick-flow-solo-dev: 1500 tokens\n- ux-designer: 1000 tokens\n- qa: 1000 tokens\n- tea: 1000 tokens\n- code-review/code-reviewer: 1200 tokens\n- scrum-master/sm: 800 tokens\n- tech-writer: 800 tokens\n- default: 1000 tokens\n\n### Logging\n- **log_level** - Logging verbosity (default: INFO)\n- **log_format** - Log output format (json or text, default: json)\n\n### Collection Size Limits\n- **War"
+    },
+    {
+      "path": "other/agentuity-cli-cloud-apikey-delete/SKILL.md",
+      "name": "agentuity-cli-cloud-apikey-delete",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill is a CLI command for deleting API keys on a cloud platform, which is an API management operation.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "718e031aee3a83b963283698fe45953a66752b7313826608c9e4e37d8afdd266",
+      "metadata_sha256": "64914de912b976d1ca2921743f4d662d068cf5a08f1437d3902f81752c559871",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Delete an API key (soft delete). Requires authentication. Use for Agentuity cloud platform operations",
+      "content_excerpt": "---\nname: agentuity-cli-cloud-apikey-delete\ndescription: Delete an API key (soft delete). Requires authentication. Use for Agentuity cloud platform operations\nversion: \"0.1.2\"\nlicense: Apache-2.0\nallowed-tools: \"Bash(agentuity:*)\"\nargument-hint: \"<id>\"\nmetadata:\n  command: \"agentuity cloud apikey delete\"\n  tags: \"destructive deletes-resource slow requires-auth\"\n---\n\n# Cloud Apikey Delete\n\nDelete an API key (soft delete)\n\n## Prerequisites\n\n- Authenticated with `agentuity auth login`\n\n## Usage\n\n```bash\nagentuity cloud apikey delete <id>\n```\n\n## Arguments\n\n| Argument | Type | Required | Description |\n|----------|------|----------|-------------|\n| `<id>` | string | Yes | - |\n\n## Examples\n\nDelete item:\n\n```bash\nbunx @agentuity/cli cloud apikey delete <id>\n```\n\nRun <id> command:\n\n```bash\nbunx @agentuity/cli cloud apikey del <id>\n```\n\nDelete item:\n\n```bash\nbunx @agentuity/cli cloud apikey rm <id>\n```\n\n## Output\n\nReturns JSON object:\n\n```json\n{\n  \"success\": \"boolean\",\n  \"id\": \"string\"\n}\n```\n\n| Field | Type | Description |\n|-------|------|-------------|\n| `success` | boolean | Whether the operation succeeded |\n| `id` | string | API key id that was deleted |\n"
+    },
+    {
+      "path": "other/agentuity-cli-profile-show-agentuity-sdk-explorer-3/SKILL.md",
+      "name": "agentuity-cli-profile-show",
+      "current_category": "other",
+      "llm_category": "bash",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is a CLI command wrapper for 'agentuity profile show' that executes via Bash, with allowed-tools specifying Bash access and examples showing bash commands.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "86ead0cc98b1afe6f6aa306bd3a550cb74d08e040d2037b77135314137bad618",
+      "metadata_sha256": "ca995167fdac41c783a76d8bf43961e25217c43499e4091b50c30560590694d9",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Show the configuration of a profile",
+      "content_excerpt": "---\nname: agentuity-cli-profile-show\ndescription: Show the configuration of a profile\nversion: \"0.1.2\"\nlicense: Apache-2.0\nallowed-tools: \"Bash(agentuity:*)\"\nargument-hint: \"[name]\"\nmetadata:\n  command: \"agentuity profile show\"\n  tags: \"read-only fast\"\n---\n\n# Profile Show\n\nShow the configuration of a profile\n\n## Usage\n\n```bash\nagentuity profile show [name]\n```\n\n## Arguments\n\n| Argument | Type | Required | Description |\n|----------|------|----------|-------------|\n| `<name>` | string | No | - |\n\n## Examples\n\nShow details:\n\n```bash\nbunx @agentuity/cli profile show\n```\n\nShow details:\n\n```bash\nbunx @agentuity/cli profile show production\n```\n\nShow output in JSON format:\n\n```bash\nbunx @agentuity/cli profile show staging --json\n```\n\n## Output\n\nReturns JSON object:\n\n```json\n{\n  \"name\": \"string\",\n  \"auth\": \"object\",\n  \"devmode\": \"object\",\n  \"overrides\": \"unknown\",\n  \"preferences\": \"object\",\n  \"gravity\": \"object\"\n}\n```\n\n| Field | Type | Description |\n|-------|------|-------------|\n| `name` | string | Profile name |\n| `auth` | object | Authentication credentials (managed by login/logout commands) |\n| `devmode` | object | Development mode configuration |\n| `overrides` | unknown | URL and behavior overrides |\n| `preferences` | object | User preferences |\n| `gravity` | object | the gravity client information |\n"
+    },
+    {
+      "path": "other/agentuity-cli-cloud-secret-push-agentuity-sdk-explorer/SKILL.md",
+      "name": "agentuity-cli-cloud-secret-push",
+      "current_category": "other",
+      "llm_category": "devops",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "CLI tool for pushing secrets to cloud platform, involves authentication and cloud operations",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "6d67aa1fefaa3dbddc57bcccc11396a8da7b5bcc010dbcab5e38f88cc954ecad",
+      "metadata_sha256": "96bfc749c9d64ed057b69d9640cc908c35aed637db8ffd2f1b5d593cacbb47d3",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Push secrets from local .env file to cloud. Requires authentication. Use for Agentuity cloud platform operations",
+      "content_excerpt": "---\nname: agentuity-cli-cloud-secret-push\ndescription: Push secrets from local .env file to cloud. Requires authentication. Use for Agentuity cloud platform operations\nversion: \"0.1.2\"\nlicense: Apache-2.0\nallowed-tools: \"Bash(agentuity:*)\"\nmetadata:\n  command: \"agentuity cloud secret push\"\n  tags: \"mutating updates-resource slow api-intensive requires-auth requires-project\"\n---\n\n# Cloud Secret Push\n\nPush secrets from local .env file to cloud\n\n## Prerequisites\n\n- Authenticated with `agentuity auth login`\n- Project context required (run from project directory or use `--project-id`)\n- secret set\n\n## Usage\n\n```bash\nagentuity cloud secret push\n```\n\n## Examples\n\nRun push command:\n\n```bash\nbunx @agentuity/cli secret push\n```\n\n## Output\n\nReturns JSON object:\n\n```json\n{\n  \"success\": \"boolean\",\n  \"pushed\": \"number\",\n  \"source\": \"string\"\n}\n```\n\n| Field | Type | Description |\n|-------|------|-------------|\n| `success` | boolean | Whether push succeeded |\n| `pushed` | number | Number of items pushed |\n| `source` | string | Source file path |\n"
+    },
+    {
+      "path": "other/agentv-onboarding/SKILL.md",
+      "name": "agentv-onboarding",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill bootstraps AgentV in a workspace, involving CLI installation, workspace initialization, and setup verification—core development environment setup tasks.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "e38a4935b04e55f0ef7309269edc50df36806c77b53ad1c584457e1faab83244",
+      "metadata_sha256": "a74a3a78530e2a76132255ca8f5ca50808b8507a5d1db9f447ed86aa191b13f6",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Bootstrap AgentV in the current workspace after plugin-manager install. Ensures CLI availability, runs workspace init, and verifies setup artifacts.",
+      "content_excerpt": "---\nname: agentv-onboarding\ndescription: Bootstrap AgentV in the current workspace after plugin-manager install. Ensures CLI availability, runs workspace init, and verifies setup artifacts.\n---\n\n# AgentV Onboarding\n\nUse this skill when the user asks to set up AgentV in a repository.\n\n## Goal\n\nSet up AgentV in the current workspace:\n- ensure the `agentv` CLI is available (install if needed)\n- initialize workspace files\n- verify setup artifacts and report status\n\n## Workflow\n\n### 1. Resolve Script Path\n\nFind the directory that contains this `SKILL.md`, then resolve script paths relative to it.\n\nPackaged scripts:\n- `scripts/onboard-agentv.sh` for bash/zsh\n- `scripts/onboard-agentv.ps1` for PowerShell\n\n### 2. Run the Platform Script\n\nRun from the repository root where AgentV should be initialized.\n\nPOSIX shells:\n\n```bash\nbash <skill-dir>/scripts/onboard-agentv.sh\n```\n\nPowerShell:\n\n```powershell\npwsh -File <skill-dir>/scripts/onboard-agentv.ps1\n```\n\nIf `pwsh` is unavailable on Windows:\n\n```powershell\npowershell -ExecutionPolicy Bypass -File <skill-dir>/scripts/onboard-agentv.ps1\n```\n\n### 3. Handle Errors\n\nIf the script fails, report the exact error and stop. Do not claim setup succeeded.\n\n### 4. Report Outcome Clearly\n\nSummarize:\n- `agentv` version in use\n- whether CLI was installed during this run\n- whether `agentv init` completed\n- whether setup verification passed\n\n## Re-run Behavior\n\nRe-running is safe. The scripts run `agentv init`, and if setup artifacts are still missing they rerun once automatically before failing.\n"
+    },
+    {
+      "path": "other/agentuity-cli-cloud-deployment-rollback-agentuity-sdk-explorer-2/SKILL.md",
+      "name": "agentuity-cli-cloud-deployment-rollback",
+      "current_category": "other",
+      "llm_category": "devops",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Skill is a CLI command for cloud deployment rollback operations, which falls under DevOps infrastructure and deployment management.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "404aa1b00e405add18f7afc14ba1b05b797bed2564734abe33bb35341ae3855f",
+      "metadata_sha256": "e100f701a687c8ad1b77cf1718a64d7cf49defcf8342c92a7a2121693311e411",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Rollback the latest to the previous deployment. Requires authentication. Use for Agentuity cloud platform operations",
+      "content_excerpt": "---\nname: agentuity-cli-cloud-deployment-rollback\ndescription: Rollback the latest to the previous deployment. Requires authentication. Use for Agentuity cloud platform operations\nversion: \"0.1.2\"\nlicense: Apache-2.0\nallowed-tools: \"Bash(agentuity:*)\"\nmetadata:\n  command: \"agentuity cloud deployment rollback\"\n  tags: \"destructive deletes-resource updates-resource slow api-intensive requires-auth requires-deployment\"\n---\n\n# Cloud Deployment Rollback\n\nRollback the latest to the previous deployment\n\n## Prerequisites\n\n- Authenticated with `agentuity auth login`\n- cloud deploy\n\n## Usage\n\n```bash\nagentuity cloud deployment rollback [options]\n```\n\n## Options\n\n| Option | Type | Required | Default | Description |\n|--------|------|----------|---------|-------------|\n| `--project-id` | string | Yes | - | Project ID |\n\n## Examples\n\nRollback to previous deployment:\n\n```bash\nbunx @agentuity/cli cloud deployment rollback\n```\n\nRollback specific project:\n\n```bash\nbunx @agentuity/cli cloud deployment rollback --project-id=proj_abc123xyz\n```\n\n## Output\n\nReturns JSON object:\n\n```json\n{\n  \"success\": \"boolean\",\n  \"projectId\": \"string\",\n  \"targetDeploymentId\": \"string\"\n}\n```\n\n| Field | Type | Description |\n|-------|------|-------------|\n| `success` | boolean | Whether the rollback succeeded |\n| `projectId` | string | Project ID |\n| `targetDeploymentId` | string | Deployment ID that was rolled back to |\n"
+    },
+    {
+      "path": "other/ai4pkm-helper-jykim-ai4pkm-vault/SKILL.md",
+      "name": "ai4pkm-helper",
+      "current_category": "other",
+      "llm_category": "productivity",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Same skill as id 2 - about Personal Knowledge Management (PKM) workflow integration, onboarding guidance, and orchestrating desktop/CLI tools for productivity.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "28a5662223d5bbed80491d17153bc3b98102ec49090b1cf52e04a02a2c7e2f42",
+      "metadata_sha256": "5d5dc3bb77ee4a71cba075b366ea45881a1ff771c268d46ec956137503b8e248",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "AI4PKM helper for onboarding guidance, quick help, and Gobi Desktop/CLI workflow integration.",
+      "content_excerpt": "---\nname: ai4pkm-helper\ndescription: AI4PKM helper for onboarding guidance, quick help, and Gobi Desktop/CLI workflow integration.\nmetadata:\n  version: 1.2.0\n  author: lifidea\n  created: 2025-12-10\n  updated: 2025-12-28\n  modules:\n    - onboarding\n    - orchestrator\n    - tasks\n---\n\n# AI4PKM Helper\n\nThis skill provides guidance for setting up and using AI4PKM (AI for Personal Knowledge Management). It helps beginners through onboarding and directs users to appropriate resources (Gobi Desktop, CLI, Orchestrator).\n\n## AI4PKM Architecture\n\n```mermaid\nflowchart BT\n    subgraph Gobi[\"Gobi Desktop\"]\n        subgraph Storage[\"Storage\"]\n            FS[File System]\n        end\n        subgraph Interface[\"Interface\"]\n            OBS[Obsidian]\n            CC[Claude Code]\n        end\n        subgraph Core[\"Core\"]\n            ORC[Orchestrator]\n            CLI[AI4PKM CLI]\n        end\n    end\n    Storage --> Interface --> Core\n```\n\n**3-tier model:**\n- **Storage**: Markdown files (AI-optimal format)\n- **Interface**: Obsidian for viewing/editing, Claude Code for AI interaction\n- **Core**: Orchestrator for automation, CLI for quick commands\n- **GUI**: Gobi Desktop wraps all above with visual interface\n\n## Learning Path\n\n| Stage | Target | Guide |\n|-------|--------|-------|\n| A. PKM 초보자 | 저장 습관 만들기 | Background reading |\n| B. Obsidian 입문 | 마이그레이션 + 익숙해지기 | (1) 터미널 설치 가이드 |\n| C. Claude Code 입문 | CLI Agent 설치 및 첫 대화 | (2) Gobi Desktop 가이드 |\n| D. 고급 사용자 | 자동화 + 커스텀 워크플로우 | (4) Orchestrator 설정 |\n\n## When to Use This Skill\n\nClaude should automatically load this skill when:\n- User requests \"AI4PKM 시작\" or \"온보딩 시작\"\n- User asks about setting up AI4PKM or Obsidian vault\n- User wants to configure orchestrator or workflows\n- User needs help adding tasks or understanding AI4PKM concepts\n- User is new to PKM and needs guided setup\n\n## Quick Commands\n\n```markdown\n\"AI4PKM 시작\" / \"온보딩 시작\" → Start Onboarding Module\n\"Orchestrator 설정\" → Orchestrator Setup Module\n\"태스크 추가\" → Task Management Module\n\"도움말\" → Show available modules and commands\n```\n\n## Core Modules\n\n### Module 1: Onboarding (초보자 셋업)\n\n**Purpose**: Guide complete beginners from zero to first journal entry\n\n**Flow** (5 steps):\n1. **Assessment**: Evaluate user level (3 simple questions)\n2. **Setup Vault**: Create 6 essential folders + AGENTS_beginner.md\n3. **Plugin Guide**: Install 3 must-have plugins (Templater, Calendar, Dataview)\n4. **First Journal**: Create today's journal interactively\n5. **AI Connection**: Verify Claude Code works\n\n"
+    },
+    {
+      "path": "other/ai-data-analyst-grupous-neondash-2/SKILL.md",
+      "name": "ai-data-analyst",
+      "current_category": "other",
+      "llm_category": "data",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill performs comprehensive data analysis, statistical modeling, and data visualization using Python scripts, covering datasets, statistical tests, visualizations, and predictive models.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "bbcb54cdfd2637406b69a5e8e2ae4322229d5fb41a51ae841a0f58e9988dd1c9",
+      "metadata_sha256": "3e81792174f0b3b34ae210a88f322a5766f53fadcbca52297c14bfb25f9f9946",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Perform comprehensive data analysis, statistical modeling, and data visualization by writing and executing self-contained Python scripts. Use when you need to analyze datasets, perform statistical tests, create visualizations, or build predictive models with reproducible, code-based workflows.",
+      "content_excerpt": "---\nname: ai-data-analyst\ndescription: Perform comprehensive data analysis, statistical modeling, and data visualization by writing and executing self-contained Python scripts. Use when you need to analyze datasets, perform statistical tests, create visualizations, or build predictive models with reproducible, code-based workflows.\n---\n\n# Skill: AI data analyst\n\n## Purpose\n\nPerform comprehensive data analysis, statistical modeling, and data visualization by writing and executing self-contained Python scripts. Generate publication-quality charts, statistical reports, and actionable insights from data files or databases.\n\n## When to use this skill\n\n- You need to **analyze datasets** to understand patterns, trends, or relationships.\n- You want to perform **statistical tests** or build predictive models.\n- You need **data visualizations** (charts, graphs, dashboards) to communicate findings.\n- You're doing **exploratory data analysis** (EDA) to understand data structure and quality.\n- You need to **clean, transform, or merge** datasets for analysis.\n- You want **reproducible analysis** with documented methodology and code.\n- You are performing **Convex Backend Engineering** (schema design, query optimization, log analysis).\n\n## Key capabilities\n\nUnlike point-solution data analysis tools:\n\n- **Convex Engineering Integration**: Native support for Convex MCP tools (`mcp_convex`) and CLI.\n- **Full Python ecosystem**: Access to pandas, numpy, scikit-learn, statsmodels, matplotlib, seaborn, plotly, and more.\n- **Runs locally**: Your data stays on your machine; no uploads to third-party services.\n- **Reproducible**: All analysis is code-based and version controllable.\n- **Customizable**: Extend with any Python library or custom analysis logic.\n- **Publication-quality output**: Generate professional charts and reports.\n- **Statistical rigor**: Access to comprehensive statistical and ML libraries.\n\n## Inputs\n\n- **Data sources**: CSV files, Excel files, JSON, Parquet, or database connections.\n- **Analysis goals**: Questions to answer or hypotheses to test.\n- **Variables of interest**: Specific columns, metrics, or dimensions to focus on.\n- **Output preferences**: Chart types, report format, statistical tests needed.\n- **Context**: Business domain, data dictionary, or known data quality issues.\n\n## Out of scope\n\n- Real-time streaming data analysis (use appropriate streaming tools).\n- Extremely large datasets requiring distributed computing (use Spark/Dask instead).\n- Pro"
+    },
+    {
+      "path": "other/aitask-pickweb-beyondeye-aitasks-2/SKILL.md",
+      "name": "aitask-pickweb",
+      "current_category": "other",
+      "llm_category": "workflow",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Another wrapper for the same task automation skill, maintaining the zero-interactive-prompt workflow focus.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "e5863978770a9afca69a50a603cb24dbfab5af7cf275aa337ecd9adba6df6345",
+      "metadata_sha256": "2b2c4402ca9ce57f66d0968184cd2f7cb4268fe9e442d151e2f6c706b2163fb7",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Pick and implement a task on Claude Code Web. Zero interactive prompts. No cross-branch operations — stores task data locally in .aitask-data-updated/.",
+      "content_excerpt": "---\nname: aitask-pickweb\ndescription: Pick and implement a task on Claude Code Web. Zero interactive prompts. No cross-branch operations — stores task data locally in .aitask-data-updated/.\n---\n\n## Prerequisites\n\n**If you are Codex CLI:** Read **`.agents/skills/codex_interactive_prereqs.md`** BEFORE proceeding.\n\n**If you are Gemini CLI:** Read **`.agents/skills/geminicli_planmode_prereqs.md`** BEFORE proceeding.\n\n## Source of Truth\n\nThis is a unified skill wrapper for Codex CLI and Gemini CLI. The authoritative skill definition is:\n\n**`.claude/skills/aitask-pickweb/SKILL.md`**\n\nRead that file and follow its complete workflow.\n\n**If you are Codex CLI:** For tool mapping and adaptations, read **`.agents/skills/codex_tool_mapping.md`**.\n\n**If you are Gemini CLI:** For tool mapping and adaptations, read **`.agents/skills/geminicli_tool_mapping.md`**.\n\n## Arguments\n\nRequired task ID: `16`. Zero interactive prompts. Stores data in `.aitask-data-updated/`.\n"
+    },
+    {
+      "path": "other/agentuity-cli-cloud-env-set-agentuity-sdk-explorer-2/SKILL.md",
+      "name": "agentuity-cli-cloud-env-set",
+      "current_category": "other",
+      "llm_category": "devops",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "CLI command for setting environment variables in cloud, which is a DevOps/infrastructure operation for managing platform configurations.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "56b6de9b0f8be31601ab426c61c8df7f4e9f66336f2f0a394b552f6f007cb1fd",
+      "metadata_sha256": "c782476382a991dcbf08f00205b0c2235533266a935fef4f442105041eefbb0e",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Set an environment variable. Requires authentication. Use for Agentuity cloud platform operations",
+      "content_excerpt": "---\nname: agentuity-cli-cloud-env-set\ndescription: Set an environment variable. Requires authentication. Use for Agentuity cloud platform operations\nversion: \"0.1.2\"\nlicense: Apache-2.0\nallowed-tools: \"Bash(agentuity:*)\"\nargument-hint: \"<key> <value>\"\nmetadata:\n  command: \"agentuity cloud env set\"\n  tags: \"mutating updates-resource slow requires-auth requires-project\"\n---\n\n# Cloud Env Set\n\nSet an environment variable\n\n## Prerequisites\n\n- Authenticated with `agentuity auth login`\n- Project context required (run from project directory or use `--project-id`)\n\n## Usage\n\n```bash\nagentuity cloud env set <key> <value>\n```\n\n## Arguments\n\n| Argument | Type | Required | Description |\n|----------|------|----------|-------------|\n| `<key>` | string | Yes | - |\n| `<value>` | string | Yes | - |\n\n## Examples\n\nRun production command:\n\n```bash\nbunx @agentuity/cli env set NODE_ENV production\n```\n\nRun 3000 command:\n\n```bash\nbunx @agentuity/cli env set PORT 3000\n```\n\nRun debug command:\n\n```bash\nbunx @agentuity/cli env set LOG_LEVEL debug\n```\n\n## Output\n\nReturns JSON object:\n\n```json\n{\n  \"success\": \"boolean\",\n  \"key\": \"string\",\n  \"path\": \"string\"\n}\n```\n\n| Field | Type | Description |\n|-------|------|-------------|\n| `success` | boolean | Whether the operation succeeded |\n| `key` | string | Environment variable key |\n| `path` | string | Local file path where env var was saved |\n"
+    },
+    {
+      "path": "other/ai-plan-arcasilesgroup-ai-engineering/SKILL.md",
+      "name": "ai-plan",
+      "current_category": "other",
+      "llm_category": "planning",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Identical skill to id 0 - primary purpose is breaking down specs into executable tasks with agent assignments and creating implementation plans.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "00187034e359ba863d49d96928baabe7c0fd68d85a302a058c2d43631f85682b",
+      "metadata_sha256": "795c7d67a6038a84aa35ae6a599cab661861dee77bb6f498ece6363b25bf536e",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when an approved spec exists and needs to be broken into executable tasks with agent assignments. Creates the implementation plan that /ai-dispatch executes.",
+      "content_excerpt": "---\nname: ai-plan\ndescription: \"Use when an approved spec exists and needs to be broken into executable tasks with agent assignments. Creates the implementation plan that /ai-dispatch executes.\"\neffort: max\nargument-hint: \"[spec-NNN or topic]\"\n---\n\n\n# Plan\n\n## Purpose\n\nImplementation planning skill. Takes an approved spec (from `/ai-brainstorm` or manual creation) and produces a phased execution plan with bite-sized tasks, agent assignments, and gate criteria. The plan is the contract that `/ai-dispatch` executes.\n\nHARD GATE: user must approve the plan before `/ai-dispatch` can run.\n\n## When to Use\n\n- After `/ai-brainstorm` produces an approved spec\n- When a spec exists but plan.md has placeholder content\n- When re-planning is needed (plan failed, scope changed)\n\n## Process\n\n1. **Read spec** -- load `specs/spec.md`\n2. **Read context** -- `docs/solution-intent.md` section 7 (roadmap), `decision-store.json` (constraints)\n3. **Explore codebase** -- understand current architecture, patterns, and affected files\n4. **Classify pipeline** -- select full/standard/hotfix/trivial based on change scope\n5. **Decompose into tasks** -- bite-sized (2-5 min each), single-agent, single-concern\n6. **Assign agents** -- capability-match each task to the right agent\n7. **Order phases** -- define phase boundaries and gate criteria\n8. **Review plan** -- self-review with spec-reviewer pattern (max 2 iterations)\n9. **Write artifacts** -- persist plan.md via Write tool to `specs/plan.md`\n10. **STOP** -- present plan. User runs `/ai-dispatch` to execute.\n\n## Pipeline Classification\n\n| Pipeline | Trigger | Steps |\n|----------|---------|-------|\n| `full` | New feature, refactor, >5 files | discover, architecture, risk, test-plan, spec, dispatch |\n| `standard` | Enhancement, 3-5 files | discover, risk, spec, dispatch |\n| `hotfix` | Bug fix, security patch, <3 files | discover, risk, spec, dispatch |\n| `trivial` | Typo, comment, single-line | spec, dispatch |\n\nOverride: `/ai-plan --pipeline=hotfix`.\n\n## Task Decomposition Rules\n\nEach task MUST be:\n\n- **Bite-sized**: completable in 2-5 minutes by an agent\n- **Single-agent**: assigned to exactly one agent (build, verify, guard)\n- **Single-concern**: does one thing (not \"implement feature AND write tests\")\n- **Verifiable**: has a clear done condition (test passes, lint clean, file exists)\n- **Ordered**: dependencies are explicit (T-3 blocked by T-2)\n\n**TDD enforcement**: for features needing tests, always produce paired tasks:\n- `T-N: Write"
+    },
+    {
+      "path": "other/agentuity-cli-profile-use-agentuity-sdk-explorer-2dfe15fa/SKILL.md",
+      "name": "agentuity-cli-profile-use",
+      "current_category": "other",
+      "llm_category": "bash",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is a CLI command wrapper for switching configuration profiles, which is a shell/bash operation.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "e2082ebebaa2772d138ffd33b4da47030823903e652be3615fd39be7c8e1d349",
+      "metadata_sha256": "0c72c169b8acd72c4400750d589d15fc98df9d0dc62dad853d0bb4f002365c25",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Switch to a different configuration profile",
+      "content_excerpt": "---\nname: agentuity-cli-profile-use\ndescription: Switch to a different configuration profile\nversion: \"0.1.2\"\nlicense: Apache-2.0\nallowed-tools: \"Bash(agentuity:*)\"\nargument-hint: \"[name]\"\nmetadata:\n  command: \"agentuity profile use\"\n  tags: \"mutating updates-resource fast\"\n---\n\n# Profile Use\n\nSwitch to a different configuration profile\n\n## Usage\n\n```bash\nagentuity profile use [name]\n```\n\n## Arguments\n\n| Argument | Type | Required | Description |\n|----------|------|----------|-------------|\n| `<name>` | string | No | - |\n\n## Examples\n\nSwitch to the \"production\" profile:\n\n```bash\nbunx @agentuity/cli profile use production\n```\n\nSwitch to the \"staging\" profile:\n\n```bash\nbunx @agentuity/cli profile switch staging\n```\n\nShow interactive profile selection menu:\n\n```bash\nbunx @agentuity/cli profile use\n```\n"
+    },
+    {
+      "path": "other/alto-feature-setup/SKILL.md",
+      "name": "alto-feature-setup",
+      "current_category": "other",
+      "llm_category": "workflow",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Interactive workflow for feature initialization - analyzing current state, marking features complete, discussing new features, and running mechanical setup. This is a structured workflow automation process.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "6b0e0a51983dde3e33062b4636a7d2df4644e9de41428db0b1adc6dcefbc9d19",
+      "metadata_sha256": "3fd6f40875434373e0b2f2befcfc3173a764463a96b31a3fe59fc75990e1136c",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when starting a new feature - running /alto-feature-setup, updating objective.md, or running alto-new-run. Interactive workflow for feature initialization.",
+      "content_excerpt": "---\nname: alto-feature-setup\ndescription: Use when starting a new feature - running /alto-feature-setup, updating objective.md, or running alto-new-run. Interactive workflow for feature initialization.\n---\n\n# ALTO Feature Setup\n\nInteractive skill for starting a new feature.\n\n## Flow\n\n### 1. Analyze Current State\n\nFirst, invoke `alto-feature-finder` agent to understand:\n- What features are completed\n- What's currently in progress\n- What should be next\n\n```\nUse the alto-feature-finder agent to analyze the project\n```\n\n### 2. Mark Previous Feature Complete (if needed)\n\nIf there's a completed feature that hasn't been marked done:\n\n- Update `objective.md`:\n  - Mark Definition of Done items as `[x]`\n  - Add completion note: `**Completed:** run/NNN (YYYY-MM-DD)`\n\n### 3. Discuss New Feature\n\nHave a conversation with the user:\n- What feature to work on next?\n- Any clarifications on scope?\n- Any constraints or preferences?\n\nThen update `objective.md` with the feature definition:\n- Goal statement\n- Requirements (numbered: N.1, N.2, etc.)\n- Definition of Done (checkboxes)\n\n### 4. Run Mechanical Setup\n\nTell the user to run:\n\n```bash\n# Clean previous artifacts\nalto-clean\n\n# Create new run branch\nalto-new-run\n```\n\nOr they can do it manually if they prefer different branch naming.\n\n### 5. Handoff\n\nTell user:\n\n> Feature setup complete. Run `claude` in a new terminal.\n> Say \"continue\" to start the architecture phase.\n\n---\n\n## Devenv Scripts Reference\n\n| Script | Purpose |\n|--------|---------|\n| `alto-setup` | First-time project initialization |\n| `alto-feature` | Quick reminder of this flow |\n| `alto-new-run` | Create run branch, reset state |\n| `alto-clean` | Clean previous run artifacts |\n| `alto-status` | Show current ALTO status |\n\n## Notes\n\n- This skill is INTERACTIVE - follow it WITH the user\n- Use `alto-feature-finder` agent for codebase analysis\n- Mechanical tasks are scripts, not manual commands\n- After setup, user starts NEW session for autonomous work\n"
+    },
+    {
+      "path": "other/agentuity-cli-cloud-apikey-list-agentuity-sdk-explorer/SKILL.md",
+      "name": "agentuity-cli-cloud-apikey-list",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is a CLI command for listing API keys on the Agentuity cloud platform, which is fundamentally an API management operation.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "7eb6f662701ed86b1b37759bd033dd5c74f1057f1c4693fc7b107b8be937a5fa",
+      "metadata_sha256": "3ddc2fd8246b750756d225d07adbf54042891733f6abe8889ca007dc28abfd40",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "List all API keys. Requires authentication. Use for Agentuity cloud platform operations",
+      "content_excerpt": "---\nname: agentuity-cli-cloud-apikey-list\ndescription: List all API keys. Requires authentication. Use for Agentuity cloud platform operations\nversion: \"0.1.2\"\nlicense: Apache-2.0\nallowed-tools: \"Bash(agentuity:*)\"\nmetadata:\n  command: \"agentuity cloud apikey list\"\n  tags: \"read-only fast requires-auth\"\n---\n\n# Cloud Apikey List\n\nList all API keys\n\n## Prerequisites\n\n- Authenticated with `agentuity auth login`\n\n## Usage\n\n```bash\nagentuity cloud apikey list [options]\n```\n\n## Options\n\n| Option | Type | Required | Default | Description |\n|--------|------|----------|---------|-------------|\n| `--orgId` | string | Yes | - | filter by organization id |\n| `--projectId` | string | Yes | - | filter by project id |\n\n## Examples\n\nList items:\n\n```bash\nbunx @agentuity/cli cloud apikey list\n```\n\nList items:\n\n```bash\nbunx @agentuity/cli cloud apikey ls\n```\n"
+    },
+    {
+      "path": "other/agentuity-cli-cloud-sandbox-rmdir-agentuity-sdk-explorer-2/SKILL.md",
+      "name": "agentuity-cli-cloud-sandbox-rmdir",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "CLI command for cloud platform operations (sandbox directory removal) with authentication and API-like interface",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "52cf68e0790956f15c3bebce1d7abd6a4d80d116bc616eefd7e6d65e1467de69",
+      "metadata_sha256": "f35f49938160f9df01127d49c683e96b2adda4c3fb03ef1901df310e9e55ed0c",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Remove a directory from a sandbox. Requires authentication. Use for Agentuity cloud platform operations",
+      "content_excerpt": "---\nname: agentuity-cli-cloud-sandbox-rmdir\ndescription: Remove a directory from a sandbox. Requires authentication. Use for Agentuity cloud platform operations\nversion: \"0.1.2\"\nlicense: Apache-2.0\nallowed-tools: \"Bash(agentuity:*)\"\nargument-hint: \"<sandboxId> <path>\"\nmetadata:\n  command: \"agentuity cloud sandbox rmdir\"\n  tags: \"slow requires-auth\"\n---\n\n# Cloud Sandbox Rmdir\n\nRemove a directory from a sandbox\n\n## Prerequisites\n\n- Authenticated with `agentuity auth login`\n- Organization context required (`--org-id` or default org)\n\n## Usage\n\n```bash\nagentuity cloud sandbox rmdir <sandboxId> <path> [options]\n```\n\n## Arguments\n\n| Argument | Type | Required | Description |\n|----------|------|----------|-------------|\n| `<sandboxId>` | string | Yes | - |\n| `<path>` | string | Yes | - |\n\n## Options\n\n| Option | Type | Required | Default | Description |\n|--------|------|----------|---------|-------------|\n| `--recursive` | boolean | No | `false` | Remove directory and all contents |\n\n## Examples\n\nRemove an empty directory from the sandbox:\n\n```bash\nbunx @agentuity/cli cloud sandbox rmdir sbx_abc123 /path/to/dir\n```\n\nRemove a directory and all its contents recursively:\n\n```bash\nbunx @agentuity/cli cloud sandbox rmdir sbx_abc123 /path/to/dir -r\n```\n\n## Output\n\nReturns JSON object:\n\n```json\n{\n  \"success\": \"boolean\",\n  \"path\": \"string\"\n}\n```\n\n| Field | Type | Description |\n|-------|------|-------------|\n| `success` | boolean | - |\n| `path` | string | - |\n"
+    },
+    {
+      "path": "other/ai-elements-laguagu-claude-code-nextjs-s-d67ca1b9/SKILL.md",
+      "name": "ai-elements",
+      "current_category": "other",
+      "llm_category": "design",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Same skill as id 0 - provides a component library (AI Elements) built on shadcn/ui for building AI-native applications, which is a frontend UI component library focused on design and interaction patterns.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "ea8670920c6fdc74c45f3fd2b9a94dd11b737bfa6b93f14e224d51d796df17dc",
+      "metadata_sha256": "5c7bfeeff0d6983279b009294e1a496d5be125581f57c9681343b24abbd1119d",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "AI Elements component library for AI-native applications. Use when building chatbots, AI workflows, or integrating with Vercel AI SDK's useChat hook.",
+      "content_excerpt": "---\nname: ai-elements\ndescription: AI Elements component library for AI-native applications. Use when building chatbots, AI workflows, or integrating with Vercel AI SDK's useChat hook.\n---\n\n# AI Elements\n\nBuild AI-native applications with pre-built components on shadcn/ui.\n\n## Quick Start\n\n```bash\n# Install all AI Elements components\nbunx --bun ai-elements@latest\n# or via shadcn CLI\nbunx --bun shadcn@latest add @ai-elements/all\n\n# Install AI SDK dependencies\nbun add ai @ai-sdk/react zod\n```\n\nComponents install to `@/components/ai-elements/`.\n\n## Component Quick Reference\n\n### Chatbot Components\n\n| Component | Purpose |\n|-----------|---------|\n| `Conversation` | Auto-scroll chat container |\n| `Message` | Single message wrapper (user/assistant) |\n| `MessageResponse` | Streaming markdown renderer (uses `streamdown`) |\n| `PromptInput` | Rich input with attachments, model picker |\n| `Reasoning` | Collapsible thinking display |\n| `Sources` | Citation/reference display |\n| `Tool` | Tool execution visualization |\n| `ChainOfThought` | Step-by-step breakdown |\n| `InlineCitation` | Inline citation badge with hover card carousel |\n| `Plan` | Collapsible plan card with streaming title |\n| `Task` | Collapsible task breakdown display |\n| `Queue` | Todo/message queue with sections |\n\n### Workflow Components\n\n| Component | Purpose |\n|-----------|---------|\n| `Canvas` | React Flow wrapper for visual workflows |\n| `Node` | Workflow node with header/content/footer |\n| `Edge` | Animated/temporary edge connections |\n| `Controls` | Zoom/fit view controls |\n| `Panel` | Positioned overlay panels |\n| `Context` | Token usage tracking display |\n\n### Utility Components\n\n| Component | Purpose |\n|-----------|---------|\n| `CodeBlock` | Syntax highlighted code (Shiki) |\n| `Loader` | Loading indicator |\n| `Shimmer` | Streaming text effect |\n| `Confirmation` | Tool confirmation dialog |\n| `Suggestion` | Quick action chips |\n| `ModelSelector` | Model picker dialog with provider logos |\n| `OpenIn` | Open query in external chat (ChatGPT, Claude, etc.) |\n| `WebPreview` | Iframe preview with URL bar and console |\n\n## Core Integration Pattern\n\n```tsx\n'use client';\nimport { useChat } from '@ai-sdk/react';\nimport { Conversation, ConversationContent } from '@/components/ai-elements/conversation';\nimport { Message, MessageContent, MessageResponse } from '@/components/ai-elements/message';\nimport { Reasoning, ReasoningTrigger, ReasoningContent } from '@/components/ai-elements/reasoning';\nimport { Sour"
+    },
+    {
+      "path": "other/agentuity-cli-cloud-secret-import-agentuity-sdk-explorer-2/SKILL.md",
+      "name": "agentuity-cli-cloud-secret-import",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill imports secrets from a file to cloud and local environment, which is a security-related operation involving secret management and authentication.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "559f71bdd9872bff1160aa794d35a00534d927c5b4a13296e7801910a58c6314",
+      "metadata_sha256": "50d05ef0f904e61dc99228bc8f6c4eaa960a9d81cfa1e337d1ffa28c5b05219a",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Import secrets from a file to cloud and local .env. Requires authentication. Use for Agentuity cloud platform operations",
+      "content_excerpt": "---\nname: agentuity-cli-cloud-secret-import\ndescription: Import secrets from a file to cloud and local .env. Requires authentication. Use for Agentuity cloud platform operations\nversion: \"0.1.2\"\nlicense: Apache-2.0\nallowed-tools: \"Bash(agentuity:*)\"\nargument-hint: \"<file>\"\nmetadata:\n  command: \"agentuity cloud secret import\"\n  tags: \"mutating creates-resource slow api-intensive requires-auth requires-project\"\n---\n\n# Cloud Secret Import\n\nImport secrets from a file to cloud and local .env\n\n## Prerequisites\n\n- Authenticated with `agentuity auth login`\n- Project context required (run from project directory or use `--project-id`)\n\n## Usage\n\n```bash\nagentuity cloud secret import <file>\n```\n\n## Arguments\n\n| Argument | Type | Required | Description |\n|----------|------|----------|-------------|\n| `<file>` | string | Yes | - |\n\n## Examples\n\nRun .env.local command:\n\n```bash\nbunx @agentuity/cli secret import .env.local\n```\n\nRun .env.backup command:\n\n```bash\nbunx @agentuity/cli secret import .env.backup\n```\n\n## Output\n\nReturns JSON object:\n\n```json\n{\n  \"success\": \"boolean\",\n  \"imported\": \"number\",\n  \"skipped\": \"number\",\n  \"path\": \"string\",\n  \"file\": \"string\"\n}\n```\n\n| Field | Type | Description |\n|-------|------|-------------|\n| `success` | boolean | Whether import succeeded |\n| `imported` | number | Number of items imported |\n| `skipped` | number | Number of items skipped |\n| `path` | string | Local file path where secrets were saved |\n| `file` | string | Source file path |\n"
+    },
+    {
+      "path": "other/agentuity-cli-cloud-apikey-create-agentuity-sdk-explorer-3/SKILL.md",
+      "name": "agentuity-cli-cloud-apikey-create",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Duplicate of skill 2 with identical functionality for creating API keys on a cloud platform.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "7b5cd69ac3959e15960b8e9a0f3a0118be32acdb704f517de7d2755254493175",
+      "metadata_sha256": "ffec746d723c173e15a70fdcc200662d5de453a9d86012fb42c8441e6e170cd8",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Create a new API key. Requires authentication. Use for Agentuity cloud platform operations",
+      "content_excerpt": "---\nname: agentuity-cli-cloud-apikey-create\ndescription: Create a new API key. Requires authentication. Use for Agentuity cloud platform operations\nversion: \"0.1.2\"\nlicense: Apache-2.0\nallowed-tools: \"Bash(agentuity:*)\"\nmetadata:\n  command: \"agentuity cloud apikey create\"\n  tags: \"destructive creates-resource slow requires-auth\"\n---\n\n# Cloud Apikey Create\n\nCreate a new API key\n\n## Prerequisites\n\n- Authenticated with `agentuity auth login`\n- Organization context required (`--org-id` or default org)\n\n## Usage\n\n```bash\nagentuity cloud apikey create [options]\n```\n\n## Options\n\n| Option | Type | Required | Default | Description |\n|--------|------|----------|---------|-------------|\n| `--name` | string | Yes | - | the name for the API key |\n| `--expires-at` | string | Yes | - | expiration date as ISO 8601 (2025-12-31T23:59:59Z) or duration (1h, 2d, 30d, 1y) |\n| `--confirm` | boolean | Yes | - | Skip confirmation prompts (required for non-TTY) |\n\n## Examples\n\nCreate API key with 1 year expiration:\n\n```bash\nbunx @agentuity/cli cloud apikey create --name \"My API Key\" --expires-at 1y\n```\n\nCreate API key with 30 day expiration:\n\n```bash\nbunx @agentuity/cli cloud apikey create --name \"Short-lived Key\" --expires-at 30d\n```\n\nCreate API key with specific date and skip confirmation:\n\n```bash\nbunx @agentuity/cli cloud apikey create --name \"Production Key\" --expires-at 2026-01-01T00:00:00Z --confirm\n```\n\n## Output\n\nReturns JSON object:\n\n```json\n{\n  \"id\": \"string\",\n  \"value\": \"string\"\n}\n```\n\n| Field | Type | Description |\n|-------|------|-------------|\n| `id` | string | the API key id |\n| `value` | string | the API key value |\n"
+    },
+    {
+      "path": "other/agentuity-cli-cloud-secret-pull-agentuity-sdk-explorer-3/SKILL.md",
+      "name": "agentuity-cli-cloud-secret-pull",
+      "current_category": "other",
+      "llm_category": "devops",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill is a CLI command for pulling secrets from a cloud platform to a local .env file, which is a DevOps/infrastructure operation related to secret management and deployment workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "0afd0909add8edb201aa1a46c1ea73e00dce9b6c53a47686011d14b2d478b44f",
+      "metadata_sha256": "42c31e487d02250808797c400b58b9fe2e42cf40c726e46175a66c13dfa9d782",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Pull secrets from cloud to local .env file. Requires authentication. Use for Agentuity cloud platform operations",
+      "content_excerpt": "---\nname: agentuity-cli-cloud-secret-pull\ndescription: Pull secrets from cloud to local .env file. Requires authentication. Use for Agentuity cloud platform operations\nversion: \"0.1.2\"\nlicense: Apache-2.0\nallowed-tools: \"Bash(agentuity:*)\"\nmetadata:\n  command: \"agentuity cloud secret pull\"\n  tags: \"slow requires-auth requires-project\"\n---\n\n# Cloud Secret Pull\n\nPull secrets from cloud to local .env file\n\n## Prerequisites\n\n- Authenticated with `agentuity auth login`\n- Project context required (run from project directory or use `--project-id`)\n- cloud deploy\n\n## Usage\n\n```bash\nagentuity cloud secret pull [options]\n```\n\n## Options\n\n| Option | Type | Required | Default | Description |\n|--------|------|----------|---------|-------------|\n| `--force` | boolean | No | `false` | overwrite local values with cloud values |\n\n## Examples\n\nRun pull command:\n\n```bash\nbunx @agentuity/cli secret pull\n```\n\nUse force option:\n\n```bash\nbunx @agentuity/cli secret pull --force\n```\n\n## Output\n\nReturns JSON object:\n\n```json\n{\n  \"success\": \"boolean\",\n  \"pulled\": \"number\",\n  \"path\": \"string\",\n  \"force\": \"boolean\"\n}\n```\n\n| Field | Type | Description |\n|-------|------|-------------|\n| `success` | boolean | Whether pull succeeded |\n| `pulled` | number | Number of items pulled |\n| `path` | string | Local file path where secrets were saved |\n| `force` | boolean | Whether force mode was used |\n"
+    },
+    {
+      "path": "other/algebraic-rewriting/SKILL.md",
+      "name": "algebraic-rewriting",
+      "current_category": "other",
+      "llm_category": "ai-ml",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "Skill involves category-theoretic graph rewriting for data structures, which is a computational/mathematical technique used in AI/ML research and symbolic AI.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "eb57de5cd44580c949f884ca75152287aeb0a9e690289b951b559088895fd909",
+      "metadata_sha256": "e80b97fec7a7f0f43795eed99097ff84db7d0bd2e99c226929608bdb289ace64",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Category-theoretic graph rewriting with DPO, SPO, and SqPO pushouts for C-Sets. Declarative transformation of acset data structures.",
+      "content_excerpt": "---\nname: algebraic-rewriting\ndescription: Category-theoretic graph rewriting with DPO, SPO, and SqPO pushouts for C-Sets. Declarative transformation of acset data structures.\nversion: 1.0.0\n---\n\n\n# Algebraic Rewriting\n\n## Overview\n\n**AlgebraicRewriting.jl** is a Julia library for performing category-theoretic rewrites over C-Sets and other Catlab.jl data structures.\n\n## Rewriting Approaches\n\n| Type | Description | Use Case |\n|------|-------------|----------|\n| **DPO** | Double Pushout | Safe deletion (no dangling edges) |\n| **SPO** | Single Pushout | Greedy deletion |\n| **SqPO** | Sesqui-Pushout | Cloning + deletion |\n\n## Core Concepts\n\n### Rewrite Rules\n\nA rewrite rule consists of:\n- **L** (left) - Pattern to match\n- **K** (interface) - What to preserve\n- **R** (right) - Replacement pattern\n\n```julia\nusing AlgebraicRewriting\n\n# Define a rule: merge two vertices\nL = @acset Graph begin V=2; E=1; src=[1]; tgt=[2] end\nK = @acset Graph begin V=1 end\nR = @acset Graph begin V=1 end\n\nrule = Rule(L, K, R)\n```\n\n### Apply Rewriting\n\n```julia\nG = @acset Graph begin\n    V = 4\n    E = 3\n    src = [1, 2, 3]\n    tgt = [2, 3, 4]\nend\n\n# Find matches and rewrite\nmatches = homomorphisms(L, G)\nG′ = rewrite(rule, G, matches[1])\n```\n\n## Double Pushout (DPO)\n\n```\n    L ←─ K ─→ R\n    ↓    ↓    ↓\n    G ←─ D ─→ H\n```\n\nThe context D ensures no \"dangling edges\" after deletion.\n\n## Sesqui-Pushout (SqPO)\n\nSupports cloning via the final pullback complement:\n\n```julia\n# Clone a vertex\nL = @acset Graph begin V=1 end\nK = @acset Graph begin V=1 end\nR = @acset Graph begin V=2 end\n\nclone_rule = Rule(L, K, R; type=:SqPO)\n```\n\n## Gay.jl Integration\n\n```julia\n# sRGB boundary learning with rewriting seed\ngay_seed!(0xabfca37b6b4bc699)\n\n# Forward mode autodiff\n∂params = Enzyme.gradient(Forward, loss, params, seed)\n```\n\n## Documentation\n\n- [Full Documentation](https://algebraicjulia.github.io/AlgebraicRewriting.jl/dev/)\n- [Brown 2022](https://arxiv.org/abs/2111.03784) - Theoretical foundation\n\n## Repository\n\n- **Source**: plurigrid/AlgebraicRewriting.jl (fork of AlgebraicJulia)\n- **Seed**: `0xabfca37b6b4bc699`\n- **Index**: 496/1055\n- **Color**: #c25d0b\n\n## GF(3) Triad\n\n```\nalgebraic-rewriting (-1) ⊗ acsets-hatchery (0) ⊗ gay-monte-carlo (+1) = 0 ✓\n```\n\n## Related Skills\n\n- `acsets-hatchery` - ACSet data structures\n- `topos-adhesive-rewriting` - Adhesive categories\n- `dpo-rewriting` - Graph transformation\n- `world-a` - AlgebraicJulia ecosystem"
+    },
+    {
+      "path": "other/ai-ethics-compliance-amnadtaowsoam-cerebraskills/SKILL.md",
+      "name": "Ai Ethics Compliance",
+      "current_category": "other",
+      "llm_category": "ai-llm",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Skill focuses on AI ethics and compliance for AI systems, covering regulatory and ethical guidelines for AI development. The description emphasizes building AI systems that are socially responsible and legally compliant, which aligns with AI/LLM governance and responsible AI practices.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "cb8a719583ec8aa97c7c120815870c26bd44c2f6f1d1de98dc42bdd68b1fc852",
+      "metadata_sha256": "225db682c856e692f62fe22c5dcbab85d590a09dda62c4d2dea46145cc77ddfa",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "AI Ethics and Compliance involve building systems that are not only technically proficient but also socially responsible and legally compliant. This includes adhering to global regulations and interna",
+      "content_excerpt": "---\nid: SKL-ai-AIETHICSCOMPLIANCE\nname: Ai Ethics Compliance\ndescription: AI Ethics and Compliance involve building systems that are not only technically\n  proficient but also socially responsible and legally compliant. This includes adhering\n  to global regulations and interna\nversion: 1.0.0\nstatus: active\nowner: '@cerebra-team'\nlast_updated: '2026-02-22'\ncategory: Backend\ntags:\n- api\n- backend\n- server\n- database\nstack:\n- Python\n- Node.js\n- REST API\n- GraphQL\ndifficulty: Intermediate\n---\n\n# Ai Ethics Compliance\n\n## Skill Profile\n*(Select at least one profile to enable specific modules)*\n- [ ] **DevOps**\n- [x] **Backend**\n- [ ] **Frontend**\n- [ ] **AI-RAG**\n- [ ] **Security Critical**\n\n## Overview\nAI Ethics and Compliance involve building systems that are not only technically proficient but also socially responsible and legally compliant. This includes adhering to global regulations and internal ethical guidelines regarding privacy, security, and human rights.\n\n**Core Principle**: \"Just because you *can* build it, doesn't mean you *should*.\"\n\nThis skill provides comprehensive guidance on navigating the regulatory and ethical landscape for AI systems.\n\n## Why This Matters\n- **<Benefit>**: <short explanation>\n- **<Benefit>**: <short explanation>\n- **<Benefit>**: <short explanation>\n\n## Core Concepts & Rules\n\n### 1. Core Principles\n- Follow established patterns and conventions\n- Maintain consistency across codebase\n- Document decisions and trade-offs\n\n### 2. Implementation Guidelines\n- Start with the simplest viable solution\n- Iterate based on feedback and requirements\n- Test thoroughly before deployment\n\n\n## Inputs / Outputs / Contracts\n* **Inputs**:\n  - <e.g., env vars, request payload, file paths, schema>\n* **Entry Conditions**:\n  - <Pre-requisites: e.g., Repo initialized, DB running, specific branch checked out>\n* **Outputs**:\n  - <e.g., artifacts (PR diff, docs, tests, dashboard JSON)>\n* **Artifacts Required (Deliverables)**:\n  - <e.g., Code Diff, Unit Tests, Migration Script, API Docs>\n* **Acceptance Evidence**:\n  - <e.g., Test Report (screenshot/log), Benchmark Result, Security Scan Report>\n* **Success Criteria**:\n  - <e.g., p95 < 300ms, coverage ≥ 80%>\n\n## Skill Composition\n* **Depends on**: None\n* **Compatible with**: None\n* **Conflicts with**: None\n* **Related Skills**: None\n\n## Quick Start\n#\n\n## Assumptions\n- Regulatory requirements are well-defined\n- Team has capacity for compliance activities\n- Use cases are clearly defined\n- Deployment regions "
+    },
+    {
+      "path": "other/alife/SKILL.md",
+      "name": "alife",
+      "current_category": "other",
+      "llm_category": "ai-ml",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "Skill covers Artificial Life concepts including evolutionary dynamics, cellular automata, neural cellular automata, and agent-based models, which are core AI/ML topics.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "a636d0b3be1575121e3433ae993ef5797dea10192462e9ac29a2513d14d76ffd",
+      "metadata_sha256": "0dc182a462a84242bf7c78f4197244085d1474898399ab125c2f18252ede7267",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Comprehensive Artificial Life skill combining ALIFE2025 proceedings,",
+      "content_excerpt": "---\nname: alife\ndescription: Comprehensive Artificial Life skill combining ALIFE2025 proceedings,\nversion: 1.0.0\n---\n\n# ALIFE: Artificial Life Comprehensive Skill\n\n**Status**: ✅ Production Ready\n**Trit**: +1 (PLUS - generative/creative)\n**Sources**: ALIFE2025 Proceedings + Classic Texts + Code Repos\n\n## Quick Reference\n\n| Resource | Content |\n|----------|---------|\n| **ALIFE2025** | 337 pages, 80+ papers, 153 figures, 100+ equations |\n| **Axelrod** | Evolution of Cooperation, TIT-FOR-TAT, Prisoner's Dilemma |\n| **Epstein-Axtell** | Sugarscape, Growing Artificial Societies |\n| **ALIEN** | CUDA 2D particle engine (ALIFE 2024 winner) |\n| **Lenia** | Continuous cellular automata |\n| **Concordia** | DeepMind generative agent-based models |\n\n## Core Concepts\n\n### 1. Evolutionary Dynamics\n\n```latex\n% Fitness-proportionate selection\nP(i) = \\frac{f_i}{\\sum_{j=1}^{N} f_j}\n\n% Replicator dynamics\n\\dot{x}_i = x_i \\left[ f_i(x) - \\bar{f}(x) \\right]\n```\n\n### 2. Prisoner's Dilemma & Cooperation\n\n```\n         Cooperate    Defect\nCooperate   R,R        S,T\nDefect      T,S        P,P\n\nwhere T > R > P > S (temptation > reward > punishment > sucker)\n```\n\n**TIT-FOR-TAT Strategy** (Axelrod):\n1. Cooperate on first move\n2. Then do whatever opponent did last round\n\nProperties: **Nice** (never defects first), **Retaliatory**, **Forgiving**, **Clear**\n\n### 3. Cellular Automata\n\n**Elementary CA** (Wolfram):\n```\nRule 110: [111→0] [110→1] [101→1] [100→0] [011→1] [010→1] [001→1] [000→0]\n```\n\n**Lenia** (Continuous CA):\n```latex\nA^{t+\\Delta t} = \\left[ A^t + \\Delta t \\cdot G(K * A^t) \\right]_0^1\n\nG_{\\mu,\\sigma}(x) = 2e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}} - 1\n```\n\n**Flow-Lenia** (Mass-conserving, arXiv:2506.08569):\n```latex\n% Velocity field from kernel convolution\n\\vec{v}(x) = \\nabla G(K * A^t)\n\n% Mass-conserving update via continuity equation\nA^{t+1} = A^t - \\nabla \\cdot (A^t \\cdot \\vec{v})\n\n% With multispecies extension\nA_i^{t+1} = A_i^t - \\nabla \\cdot \\left(A_i^t \\cdot \\sum_j w_{ij} \\vec{v}_j\\right)\n```\n\n**H-Lenia** (Hierarchical):\n```latex\n\\left[\\left[A_i^t + \\Delta t G(K * A_i^t)\\right]_0^1 + \\sum_{j \\in N(i)} k_{ji} \\cdot E_{ji}^t\\right]_0^1\n```\n\n### 4. Neural Cellular Automata\n\n```python\ndef nca_step(grid, model):\n    # Perceive: Sobel filters for gradients\n    perception = perceive(grid)  # [identity, sobel_x, sobel_y, ...]\n    \n    # Update: Neural network\n    delta = model(perception)\n    \n    # Apply with stochastic mask\n    mask = torch.rand_like(delta) < 0.5\n    return grid + delta "
+    },
+    {
+      "path": "other/aitask-reviewguide-import/SKILL.md",
+      "name": "aitask-reviewguide-import",
+      "current_category": "other",
+      "llm_category": "documents",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "The skill imports external content as a reviewguide with proper metadata, which involves document creation and conversion workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "afa18db2bdb5afe59a3ade6d92366c75127684d15178d85c4e4c7b96e8bd949d",
+      "metadata_sha256": "76b8c325f94852f4ecc80713422f1bc3e1e02a5821d2afd2d50f683a3a77f6b5",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Import external content (file, URL, or repository directory) as a reviewguide with proper metadata.",
+      "content_excerpt": "---\nname: aitask-reviewguide-import\ndescription: Import external content (file, URL, or repository directory) as a reviewguide with proper metadata.\n---\n\n## Source of Truth\n\nThis is an OpenCode wrapper. The authoritative skill definition is:\n\n**`.claude/skills/aitask-reviewguide-import/SKILL.md`**\n\nRead that file and follow its complete workflow. For tool mapping and\nOpenCode adaptations, read **`.opencode/skills/opencode_tool_mapping.md`**.\n\n## Arguments\n\nAccepts an optional source: `/aitask-reviewguide-import https://...` or `/aitask-reviewguide-import path/to/file.md`. Without argument, prompts for source.\n"
+    },
+    {
+      "path": "other/alto-dev-guide-gonzaloetjo-alto/SKILL.md",
+      "name": "alto-dev-guide",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Same as id 1 - guide for developing ALTO itself with development reference documentation and coding patterns.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "878ab18c0d2315bc9088ebf60b150c7a78a100da7ef45da5d80185f5e2ad96a2",
+      "metadata_sha256": "30163d331162edb3999ba495ba8b90a7fe120510cc55f7e7bc55794755d3754e",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when developing ALTO itself - editing devenv.nix, hooks/*.py, agents/*.md, or checking Claude Code hook/agent syntax. Reference guide with documentation URLs and patterns.",
+      "content_excerpt": "---\nname: alto-dev-guide\ndescription: Use when developing ALTO itself - editing devenv.nix, hooks/*.py, agents/*.md, or checking Claude Code hook/agent syntax. Reference guide with documentation URLs and patterns.\n---\n\n# ALTO Development Guide\n\nReference for developing ALTO. Use URLs for authoritative docs, summaries for quick reference.\n\n---\n\n## Devenv MCP (always available)\n\nALTO configures the devenv MCP server automatically. Use it for:\n\n- **Package search** - Find packages and their configuration options\n- **Config understanding** - Understand devenv syntax and patterns\n- **Config generation** - Generate valid devenv configurations\n\nThe MCP is available as `devenv` server. Use MCP tools to query it when you need:\n- What packages are available for a language/tool\n- How to configure a specific service\n- Valid options for a devenv setting\n\n---\n\n## Documentation Sources\n\n### Devenv (authoritative)\n| Topic | URL |\n|-------|-----|\n| All options | https://devenv.sh/reference/options/ |\n| Scripts | https://devenv.sh/reference/options/#scripts |\n| Tasks | https://devenv.sh/reference/options/#tasks |\n| Imports | https://devenv.sh/composing-using-imports/ |\n| Claude Code integration | https://devenv.sh/integrations/claude-code/ |\n\n### Claude Code (authoritative)\n| Topic | URL |\n|-------|-----|\n| Hooks reference | https://code.claude.com/docs/en/hooks |\n| Subagents | https://code.claude.com/docs/en/sub-agents |\n| Skills | https://code.claude.com/docs/en/skills |\n| CLI reference | https://code.claude.com/docs/en/cli-reference |\n| Settings | https://code.claude.com/docs/en/settings |\n\n### Community resources\n| Topic | URL |\n|-------|-----|\n| Full stack overview | https://alexop.dev/posts/understanding-claude-code-full-stack/ |\n| Hooks mastery | https://github.com/disler/claude-code-hooks-mastery |\n| Config showcase | https://github.com/ChrisWiles/claude-code-showcase |\n\n---\n\n## Devenv Quick Reference\n\n### Scripts\n```nix\nscripts.<name> = {\n  exec = ''\n    echo \"script body\"\n  '';\n  description = \"Shown in devenv info\";\n};\n```\n- Available as commands in shell\n- Use `${variable}` for nix interpolation\n- Use `''$` to escape `$` in bash\n\n### Tasks\n```nix\ntasks.\"namespace:name\" = {\n  exec = ''\n    echo \"task body\"\n  '';\n  before = [ \"devenv:enterShell\" ];  # Run before shell entry\n  # after = [ \"other:task\" ];        # Run after another task\n};\n```\n- Run automatically on shell entry (if `before` includes enterShell)\n- Good for setup/deployment that should happen every ti"
+    },
+    {
+      "path": "other/aget-capture-observation-aget-framework-template-analyst-age/SKILL.md",
+      "name": "aget-capture-observation",
+      "current_category": "other",
+      "llm_category": "context-management",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill captures and preserves research observations, vocabulary candidates, and findings from a session into a knowledge base, which is a form of context management for maintaining session state and knowledge continuity.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "aafec22991ec10ad69ab301174250b0be53a3a17e8d2f444c66772debfc60221",
+      "metadata_sha256": "6e0063f987f8f3d200fbe2b520870ddffa2887fde8f4d257fe306ef514870e96",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Capture research observations into AGET KB without committing specs. Use when discovering vocabulary candidates, RQ proposals, web findings, patterns, or observations mid-session that should be preserved before continuing.",
+      "content_excerpt": "---\nname: aget-capture-observation\ndescription: Capture research observations into AGET KB without committing specs. Use when discovering vocabulary candidates, RQ proposals, web findings, patterns, or observations mid-session that should be preserved before continuing.\n---\n\n## Capture Protocol (v2 - Autonomous-Explicit Continuum)\n\nYou are capturing research observations for the AGET knowledge base.\n\n**Renamed**: `/aget-capture-observation` → `/aget-capture-observation` per S-V-O naming convention (L584) and ACM SIGSOFT \"Observation\" grounding.\n\n### Input\n\n$ARGUMENTS\n\n### Mode Detection\n\nDetect the input mode based on $ARGUMENTS:\n\n| Input Pattern | Mode | Behavior |\n|---------------|------|----------|\n| Empty or blank | **Autonomous** | Scan session, identify and capture valuable signals (~2 min) |\n| Time pattern: `5min`, `10 min`, `20min`, `30 min` | **Time-Budget** | Scan session with depth scaled to time budget |\n| Text with signal keywords | **Explicit** | Capture the specific signal provided |\n| Other text | **Explicit** | Capture as general observation |\n\n### Mode 1: Autonomous (no args)\n\nWhen invoked as `/aget-capture-observation` with no arguments:\n\n1. **Scan** recent session conversation for valuable signals\n2. **Identify** vocabulary candidates, patterns, RQs, findings, gaps\n3. **Prioritize** by novelty and AGET governance value\n4. **Capture** top 3-5 signals to session file with classification\n5. **Report** what was captured\n\n### Mode 2: Time-Budget (duration arg)\n\nWhen invoked as `/aget-capture-observation <duration>` (e.g., `/aget-capture-observation 10min`):\n\n| Time Budget | Depth | Actions |\n|-------------|-------|---------|\n| 2-5 min | Shallow | Scan + capture raw signals to session file |\n| 10 min | Medium | Classify + link signals to existing vocabulary terms |\n| 20 min | Deep | Interlink + propose RQs + draft L-doc candidates |\n| 30+ min | Full | Formalize with traceability, update session summary |\n\n### Mode 3: Explicit (signal arg)\n\nWhen invoked as `/aget-capture-observation \"<signal>\"`:\n\nClassify the input and route to appropriate target:\n\n| Signal Type | Indicator Keywords | Target Location |\n|-------------|-------------------|-----------------|\n| Vocabulary candidate | \"term:\", \"concept:\", \"definition:\", \"vocabulary\" | Session file - Vocabulary Candidates section |\n| Research question | \"RQ:\", \"question:\", \"how does\", \"why does\", \"what is\" | Session file - Research Questions section |\n| Web research finding | \"source:\", \"URL:\", \"acc"
+    },
+    {
+      "path": "other/agentuity-cli-cloud-sandbox-snapshot-delete-agentuity-sdk-explorer-2/SKILL.md",
+      "name": "agentuity-cli-cloud-sandbox-snapshot-delete",
+      "current_category": "other",
+      "llm_category": "devops",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "CLI command for cloud sandbox snapshot deletion is a DevOps/infrastructure operation for managing cloud resources.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "ee46e15fbf5788d74d6fc6841fdb63bb476b8302a6b8b563473a2091edac27a2",
+      "metadata_sha256": "4f920e059f8a0bc0cb8575dad86bea721df10ba1a8ee0374b93101257b35db09",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Delete a snapshot. Requires authentication. Use for Agentuity cloud platform operations",
+      "content_excerpt": "---\nname: agentuity-cli-cloud-sandbox-snapshot-delete\ndescription: Delete a snapshot. Requires authentication. Use for Agentuity cloud platform operations\nversion: \"0.1.2\"\nlicense: Apache-2.0\nallowed-tools: \"Bash(agentuity:*)\"\nargument-hint: \"<snapshotId>\"\nmetadata:\n  command: \"agentuity cloud sandbox snapshot delete\"\n  tags: \"destructive deletes-resource slow requires-auth\"\n---\n\n# Cloud Sandbox Snapshot Delete\n\nDelete a snapshot\n\n## Prerequisites\n\n- Authenticated with `agentuity auth login`\n- Organization context required (`--org-id` or default org)\n\n## Usage\n\n```bash\nagentuity cloud sandbox snapshot delete <snapshotId> [options]\n```\n\n## Arguments\n\n| Argument | Type | Required | Description |\n|----------|------|----------|-------------|\n| `<snapshotId>` | string | Yes | - |\n\n## Options\n\n| Option | Type | Required | Default | Description |\n|--------|------|----------|---------|-------------|\n| `--confirm` | boolean | No | `false` | Skip confirmation prompt |\n\n## Examples\n\nDelete a snapshot:\n\n```bash\nbunx @agentuity/cli cloud sandbox snapshot delete snp_abc123\n```\n\nDelete without confirmation prompt:\n\n```bash\nbunx @agentuity/cli cloud sandbox snapshot rm snp_abc123 --confirm\n```\n\n## Output\n\nReturns JSON object:\n\n```json\n{\n  \"success\": \"boolean\",\n  \"snapshotId\": \"string\",\n  \"message\": \"string\"\n}\n```\n\n| Field | Type | Description |\n|-------|------|-------------|\n| `success` | boolean | Whether the operation succeeded |\n| `snapshotId` | string | Deleted snapshot ID |\n| `message` | string | Status message |\n"
+    },
+    {
+      "path": "other/agents-md-creator-ks6088ts-labs-skills-ea753c6d/SKILL.md",
+      "name": "agents-md-creator",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "This is a duplicate of skill 3 with the same description and purpose: creating AGENTS.md instruction files for AI coding agents to provide project context and instructions.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "4dc8fc698f1df207b671dac6513d91b77b1d3672d23e3a643968e3cc458b57ad",
+      "metadata_sha256": "033e2a7b2bf6360067286de1d7cfb5ba63670b104fff3728af5db593166f8a13",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "AIコーディングエージェント向けの指示書「AGENTS.md」を作成するスキル。プロジェクトにAIエージェントが作業するための文脈と指示を集約するファイルを作成したい場合に使用します。「AGENTS.mdを作成」「AIエージェント用の指示書を作る」「エージェント向けREADMEを作成」などのリクエストでトリガーします。OpenAI Codex、Claude Code、GitHub Copilot、Cursorなど、複数のAIエージェントで共通利用できるオープンな標準フォーマットです。",
+      "content_excerpt": "---\nname: agents-md-creator\ndescription: AIコーディングエージェント向けの指示書「AGENTS.md」を作成するスキル。プロジェクトにAIエージェントが作業するための文脈と指示を集約するファイルを作成したい場合に使用します。「AGENTS.mdを作成」「AIエージェント用の指示書を作る」「エージェント向けREADMEを作成」などのリクエストでトリガーします。OpenAI Codex、Claude Code、GitHub Copilot、Cursorなど、複数のAIエージェントで共通利用できるオープンな標準フォーマットです。\n---\n\n# AGENTS.md クリエイター\n\nこのスキルは、AI コーディングエージェント向けの指示書「AGENTS.md」の作成をサポートします。\n\n## AGENTS.md について\n\nAGENTS.md は、AI エージェント専用の「エージェント用 README」として機能するファイルです。人間向けの README.md とは別に、AI がプロジェクトを理解し、適切にコードを書いたりテストしたりするために必要な文脈と指示を集約します。\n\n### 特徴\n\n- **オープンな標準フォーマット**: 特定のツールに依存せず、複数の AI エージェントで共通利用可能\n- **階層構造対応**: モノレポではサブディレクトリごとに配置でき、最も近いファイルが優先される\n- **自動実行**: 記載されたテストコマンドをエージェントが自動実行可能\n\n## 作成ワークフロー\n\n### 1. プロジェクト情報の収集\n\nAGENTS.md を作成する前に、以下の情報を収集：\n\n1. **プロジェクト概要**: プロジェクトの目的や全体像\n2. **技術スタック**: 使用言語、フレームワーク、主要ライブラリ\n3. **既存のドキュメント**: README.md、package.json、設定ファイルなどを確認\n\n### 2. セクション構成の決定\n\nプロジェクトの性質に応じて、以下から必要なセクションを選択：\n\n| セクション                   | 説明                                     | 優先度 |\n| ---------------------------- | ---------------------------------------- | ------ |\n| プロジェクト概要             | 目的と全体像                             | 高     |\n| セットアップ・ビルドコマンド | 依存関係のインストール、開発サーバー起動 | 高     |\n| テスト手順                   | テスト実行方法、フォーカス方法           | 高     |\n| コードスタイル・規約         | 言語設定、フォーマット規則、関数パターン | 中     |\n| PR・コミット規定             | PR タイトル形式、コミット前チェック      | 中     |\n| 環境固有のチップス           | ディレクトリ構造、パッケージ管理のコツ   | 低     |\n| セキュリティ上の注意         | セキュリティ考慮事項                     | 必要時 |\n\n### 3. AGENTS.md の作成\n\n#### 基本構造\n\n```markdown\n# AGENTS.md\n\n## プロジェクト概要\n\n[プロジェクトの目的と全体像を簡潔に記述]\n\n## セットアップ\n\n[依存関係のインストール方法]\n[開発サーバーの起動方法]\n\n## ビルド\n\n[ビルドコマンドと手順]\n\n## テスト\n\n[テストの実行方法]\n[特定のテストへのフォーカス方法]\n\n## コードスタイル\n\n[使用する言語設定]\n[フォーマット規則]\n[命名規則]\n\n## PR・コミット規定\n\n[PR タイトルの形式]\n[コミット前に行うべきチェック]\n\n## ディレクトリ構造\n\n[重要なディレクトリの説明]\n\n## 注意事項\n\n[セキュリティ上の注意]\n[その他の重要な考慮事項]\n```\n\n### 4. 保存先の決定\n\n- **単一プロジェクト**: リポジトリルートに `AGENTS.md` を配置\n- **モノレポ**: サブディレクトリごとに配置可能（AI は最も近いファイルを優先）\n\n## 執筆ガイドライン\n\n### 記述のポイント\n\n1. **具体的なコマンドを記載**: AI が直接実行できる形式で\n\n   ```text\n   ✓ pnpm install && pnpm dev\n   ✗ 依存関係をインストールしてください\n   ```\n\n2. **新しいチームメイトに伝えるべきこと**: 暗黙知を明文化する\n\n   - 「README には書いていないけど、このプロジェクトでは...」\n   - 「テスト前には必ず...」\n\n3. **人間用ドキュメントとの分離**: ビルド手順の詳細など、人間には冗長な情報は AGENTS.md へ\n\n### 避けるべきこと\n\n- 一般的な知識の繰り返し（AI が既に知っていること）\n- 曖昧な指示（「適切に対応」ではなく具体的に）\n- 古い情報の放置（定期的に更新を推奨）\n\n## プロジェクトタイプ別テンプレート\n\n### Node.js/TypeScript プロジェクト\n\n```markdown\n# AGENTS.md\n\n## プロジェクト概要\n\n[プロジェクトの説明]\n\n## セットアップ\n\npnpm install\n\n## 開発サーバー\n\npnpm dev\n\n## ビルド\n\npnpm build\n\n## テスト\n\npnpm test\n\n# 特"
+    },
+    {
+      "path": "other/algorithmic-art-skill-404kidwiz-claude-supercode-ski-2/SKILL.md",
+      "name": "algorithmic-art",
+      "current_category": "other",
+      "llm_category": "creative",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is described as an expert in generative art, creative coding, and mathematical visualizations using p5.js and JavaScript.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "580335721ce9f4cc46018c1c6c9fa6ad2ad0fc9904e7bcbab727d82c30368c8b",
+      "metadata_sha256": "c4e165782b878ea7a61cb4cd4792acc776bd9a3c81386a2555b00dd7218536ad",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Expert in generative art, creative coding, and mathematical visualizations using p5.js and JavaScript.",
+      "content_excerpt": "---\nname: algorithmic-art\ndescription: Expert in generative art, creative coding, and mathematical visualizations using p5.js and JavaScript.\n---\n\n# Algorithmic Artist\n\n## Purpose\n\nProvides creative coding expertise specializing in generative art, mathematical visualizations, and interactive installations using p5.js. Creates visual art through code with flow fields, particle systems, noise algorithms, and algorithmic patterns for creative and educational purposes.\n\n## When to Use\n\n- Creating generative artwork (NFTs, wallpapers, posters)\n- Building interactive data visualizations\n- Simulating natural phenomena (flocking, cellular automata)\n- Designing mathematical patterns (fractals, tessellations)\n- Teaching creative coding concepts\n\n---\n---\n\n## 2. Decision Framework\n\n### Algorithm Selection\n\n```\nWhat is the visual goal?\n│\n├─ **Organic / Natural**\n│  ├─ Texture? → **Perlin Noise / Simplex Noise**\n│  ├─ Movement? → **Flow Fields / Vector Fields**\n│  └─ Growth? → **L-Systems / Diffusion Limited Aggregation (DLA)**\n│\n├─ **Geometric / Structured**\n│  ├─ Repetition? → **Grid Systems / Tilemaps**\n│  ├─ Recursion? → **Fractals (Mandelbrot, Sierpinski)**\n│  └─ Division? → **Voronoi / Delaunay Triangulation**\n│\n└─ **Simulation**\n   ├─ Physics? → **Verlet Integration / Springs**\n   └─ Behavior? → **Boids (Flocking) / Cellular Automata**\n```\n\n### Randomness Strategy\n\n| Type | Function | Description |\n|------|----------|-------------|\n| **Uniform** | `random()` | Complete chaos. White noise. |\n| **Gaussian** | `randomGaussian()` | Bell curve. Most values near mean. |\n| **Perlin** | `noise()` | Smooth, gradient randomness. \"Cloud-like\". |\n| **Seeded** | `randomSeed()` | Deterministic. Same output every time. |\n\n**Red Flags → Escalate to `threejs-pro`:**\n- Requirement for heavy 3D rendering (p5.js WebGL mode is limited compared to Three.js)\n- Complex lighting/shadow requirements\n- VR/AR integration needed\n\n---\n---\n\n### Workflow 2: Recursive Tree (Fractal)\n\n**Goal:** Draw a tree using recursion.\n\n**Steps:**\n\n1.  **Branch Function**\n    -   Draw line of length `len`.\n    -   Translate to end of line.\n    -   Rotate `theta`.\n    -   Call `branch(len * 0.67)`.\n    -   Rotate `-theta * 2`.\n    -   Call `branch(len * 0.67)`.\n\n2.  **Termination**\n    -   Stop when `len < 2`.\n\n---\n---\n\n## Core Capabilities\n\n### Generative Art Creation\n- Creates visual artwork using mathematical algorithms and randomness\n- Implements flow fields, particle systems, and noise-based visualization"
+    },
+    {
+      "path": "other/agentuity-cli-auth-ssh-add-agentuity-sdk-explorer/SKILL.md",
+      "name": "agentuity-cli-auth-ssh-add",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill manages SSH authentication credentials (adding SSH public keys to an account), which is a core security operation involving authentication and credential management.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "eadfd24d703a3feb80d7ae9538527c517683006a8717ae9aa4015d6973b5be8d",
+      "metadata_sha256": "22802696ac0aec5c7140cc61683b1fe1b2db745f75bc73b37f04a9b5ad147b9a",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Add an SSH public key to your account (reads from file or stdin). Requires authentication. Use for managing authentication credentials",
+      "content_excerpt": "---\nname: agentuity-cli-auth-ssh-add\ndescription: Add an SSH public key to your account (reads from file or stdin). Requires authentication. Use for managing authentication credentials\nversion: \"0.1.2\"\nlicense: Apache-2.0\nallowed-tools: \"Bash(agentuity:*)\"\nmetadata:\n  command: \"agentuity auth ssh add\"\n  tags: \"mutating creates-resource slow requires-auth\"\n---\n\n# Auth Ssh Add\n\nAdd an SSH public key to your account (reads from file or stdin)\n\n## Prerequisites\n\n- Authenticated with `agentuity auth login`\n\n## Usage\n\n```bash\nagentuity auth ssh add [options]\n```\n\n## Options\n\n| Option | Type | Required | Default | Description |\n|--------|------|----------|---------|-------------|\n| `--file` | string | Yes | - | File containing the public key |\n\n## Examples\n\nAdd SSH key interactively:\n\n```bash\nbunx @agentuity/cli auth ssh add\n```\n\nAdd SSH key from file:\n\n```bash\nbunx @agentuity/cli auth ssh add --file ~/.ssh/id_ed25519.pub\n```\n\nAdd deploy key from file:\n\n```bash\nbunx @agentuity/cli auth ssh add --file ./deploy_key.pub\n```\n\nAdd SSH key from stdin:\n\n```bash\ncat ~/.ssh/id_rsa.pub | bunx @agentuity/cli auth ssh add\n```\n\n## Output\n\nReturns JSON object:\n\n```json\n{\n  \"success\": \"boolean\",\n  \"fingerprint\": \"string\",\n  \"keyType\": \"string\",\n  \"added\": \"number\"\n}\n```\n\n| Field | Type | Description |\n|-------|------|-------------|\n| `success` | boolean | Whether the operation succeeded |\n| `fingerprint` | string | SSH key fingerprint |\n| `keyType` | string | SSH key type (e.g., ssh-rsa, ssh-ed25519) |\n| `added` | number | Number of keys added |\n"
+    },
+    {
+      "path": "other/agentuity-cli-cloud-sandbox-mkdir-agentuity-sdk-explorer-2/SKILL.md",
+      "name": "agentuity-cli-cloud-sandbox-mkdir",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "CLI command for cloud platform operations (sandbox directory creation) with authentication and API-like interface",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "fb40888a2496fd6b8bacfaa0bb305a171360de74ed0f85cebf2644741db9eb47",
+      "metadata_sha256": "2a5013be31b2812923cecb0c4a97774e74de45f31d0bff6aeb630c44bcdb1ea5",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Create a directory in a sandbox. Requires authentication. Use for Agentuity cloud platform operations",
+      "content_excerpt": "---\nname: agentuity-cli-cloud-sandbox-mkdir\ndescription: Create a directory in a sandbox. Requires authentication. Use for Agentuity cloud platform operations\nversion: \"0.1.2\"\nlicense: Apache-2.0\nallowed-tools: \"Bash(agentuity:*)\"\nargument-hint: \"<sandboxId> <path>\"\nmetadata:\n  command: \"agentuity cloud sandbox mkdir\"\n  tags: \"slow requires-auth\"\n---\n\n# Cloud Sandbox Mkdir\n\nCreate a directory in a sandbox\n\n## Prerequisites\n\n- Authenticated with `agentuity auth login`\n- Organization context required (`--org-id` or default org)\n\n## Usage\n\n```bash\nagentuity cloud sandbox mkdir <sandboxId> <path> [options]\n```\n\n## Arguments\n\n| Argument | Type | Required | Description |\n|----------|------|----------|-------------|\n| `<sandboxId>` | string | Yes | - |\n| `<path>` | string | Yes | - |\n\n## Options\n\n| Option | Type | Required | Default | Description |\n|--------|------|----------|---------|-------------|\n| `--parents` | boolean | No | `false` | Create parent directories as needed |\n\n## Examples\n\nCreate a directory in the sandbox:\n\n```bash\nbunx @agentuity/cli cloud sandbox mkdir sbx_abc123 /path/to/dir\n```\n\nCreate nested directories recursively:\n\n```bash\nbunx @agentuity/cli cloud sandbox mkdir sbx_abc123 /path/to/nested/dir -p\n```\n\n## Output\n\nReturns JSON object:\n\n```json\n{\n  \"success\": \"boolean\",\n  \"path\": \"string\"\n}\n```\n\n| Field | Type | Description |\n|-------|------|-------------|\n| `success` | boolean | - |\n| `path` | string | - |\n"
+    },
+    {
+      "path": "other/allow-agent-commands/SKILL.md",
+      "name": "allow-agent-commands",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Skill is explicitly about configuring AI agent permissions and command allowlists for tools like OpenCode and Claude Code.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "3c8e81825037bbad1258f35971515b6caa51f6da5ca873cf88bcf3e3668e135f",
+      "metadata_sha256": "b0936a535d7bceff849d3bece9eb041b4616350d2b945bad85330802e1b795af",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Add or change allowed commands in AI agent permission configs (OpenCode, Claude Code)",
+      "content_excerpt": "---\nname: allow-agent-commands\ndescription: Add or change allowed commands in AI agent permission configs (OpenCode, Claude Code)\n---\n\n# Adding/Changing Allowed Commands\n\n## When to use this skill\n\nUse this skill when:\n\n- A command needs to be added to the allow list for AI agents\n- Permission settings need to be modified for existing commands\n- Setting up a new AI tool that requires command permissions\n\n## How it works\n\nCommands must be explicitly allowed in the permission configs before agents\ncan run them. This skill covers adding entries to both OpenCode and Claude\nCode configuration files.\n\n**IMPORTANT**: The config files are stowed into `~` via GNU Stow symlinks.\nAlways edit them directly from within the ai-config repository, NOT from `~`.\nThe paths below are relative to the ai-config repository root.\n\n## OpenCode Configuration\n\nFile: `.config/opencode/opencode.json` under `permission.bash`\n\nFormat:\n```json\n\"uname *\": \"allow\",\n```\n\nPattern: `\"command argpatterns\": \"action\"` where `*` matches any args\n\n**Important**: Insert new entries in alphabetical order by command name.\nWhen adding a new command, find the correct position to maintain sorting.\n**Do NOT reorder existing entries.**\n\n## Claude Code Configuration\n\nFile: `.claude/settings.json` under `permissions.allow`\n\nFormat:\n```json\n\"Bash(uname:*)\",\n```\n\n**Important**: Insert new entries in alphabetical order. Commands are sorted\nby the command name (the part after `Bash(` and before `:`).\n**Do NOT reorder existing entries.**\n\n## General Pattern for New AI Tools\n\nWhen adding new AI tools:\n\n1. Find their config file (usually in `~/.config/` or project root)\n2. Look for `permissions`, `allowedCommands`, or similar sections\n3. Add the command with glob patterns for arguments\n4. **Insert new entries in alphabetical order by command name**\n5. **Do NOT reorder existing entries.**\n\n## After Adding Commands\n\nAfter adding the new command entries to both config files:\n\n1. Check if there are any other staged changes with `git status`\n2. If there are NO other staged changes, stage ONLY the new hunks in the two\n   config files using the `git-stager` subagent (be careful not to stage\n   unrelated changes)\n3. Invoke the `git-committer` subagent to commit the changes\n\n## Examples\n\nAdding `rg` (ripgrep) to both configs:\n\n**OpenCode** (insert after `rev *`, before `rpm -q*`):\n```json\n\"rg *\": \"allow\",\n```\n\n**Claude Code** (insert after `Bash(rg:*)`, before `Bash(rpm -q:*)`):\n```json\n\"Bash(rg:*)\",\n```\n"
+    }
+  ],
+  "notes": [
+    "Review sample rows against SKILL.md excerpts before applying a migration plan.",
+    "Sampling is deterministic for a fixed seed and classification input."
+  ]
+}

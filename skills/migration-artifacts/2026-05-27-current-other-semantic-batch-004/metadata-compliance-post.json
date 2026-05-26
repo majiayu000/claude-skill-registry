@@ -1,0 +1,983 @@
+{
+  "scanned": 195,
+  "missing_metadata": 0,
+  "errors": 0,
+  "warnings": 0,
+  "results": [
+    {
+      "path": "agent/aget-check-health/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/aget-check-health-aget-framework-template-analyst-age/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/aget-check-health-aget-framework-template-consultant/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/aget-check-health-aget-framework-template-executive-a/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/aget-check-health-aget-framework-template-operator-ag/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/aget-check-health-aget-framework-template-worker-aget/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/aget-wake-up-aget-framework-template-analyst-age/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/aget-wake-up-aget-framework-template-consultant/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/aget-wake-up-aget-framework-template-executive-a/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/aget-wake-up-aget-framework-template-operator-ag/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/aget-wind-down-aget-framework-template-operator-ag/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/aget-wind-down-aget-framework-template-worker-aget/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agile-v-core/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/ai-agent-orchestrator-dengineproblem-agents-monorepo-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/ai-agent-orchestrator-dengineproblem-agents-monorepo-512743fc/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/alex-hormozi/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/alfworld-open-receptacle/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/alfworld-receptacle-operator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/alfworld-tool-locator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/allow-agent-commands/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/ai-ad-code-searcher/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/ai-ad-code-searcher-wade56754-ai-ad-spend02-f3a6dbf6/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/ai-ad-code-verifier/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/ai-analyzer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/ai-analyzer-huifer-wellally-health/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/ai-coaching-dadbodgeoff-drift/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/ai-consultation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/ai-feature-template-applelamps-xpic2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/ai-handler-reeseastor-indie-kit/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/ai-integration-sylin-org-koan-framework/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/ai-integration-sylin-org-koan-framework-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/ai-jyasuu-cheat-sheet/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/ai-news-aggregator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/ai-sdk-agents-bjornmelin-dev-skills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/ai-setup/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/ai-town/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/aif-grounded/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/aif-grounded-batformat-sancrm-docs/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/aitask-refresh-code-models/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-ml/ai-annotation-workflow-dengineproblem-agents-monorepo-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-ml/ai-annotation-workflow-dengineproblem-agents-monorepo-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-ml/alibi-explainer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-ml/alphaear-sentiment-rkiding-awesome-finance-skil/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-ml/alphafold-database-ovachiever-droid-tings-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/aget-generate-report/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/aget-generate-report-aget-framework-template-analyst-age/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/ai-explain/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/alignment-statistics/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentskb-enuno-claude-command-and-c-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-agent-get-agentuity-sdk-explorer-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-agent-list-agentuity-sdk-explorer-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-apikey-create/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-apikey-create-agentuity-sdk-explorer-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-apikey-delete/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-apikey-delete-agentuity-examples/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-apikey-list-agentuity-sdk-explorer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-apikey-list-agentuity-sdk-explorer-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-db-delete-agentuity-sdk-explorer-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-db-get-agentuity-sdk-explorer-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-db-list-agentuity-sdk-explorer-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-db-logs-agentuity-sdk-explorer-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-db-sql-agentuity-sdk-explorer-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-keyvalue-delete-namespace-agentuity-discord-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-keyvalue-get-agentuity-sdk-explorer-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-keyvalue-keys-agentuity-sdk-explorer-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-keyvalue-list-namespaces-agentuity-sdk-explo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-keyvalue-repl-agentuity-examples-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-thread-delete-agentuity-sdk-explorer-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-thread-get-agentuity-sdk-explorer-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-thread-list-agentuity-sdk-explorer-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-vector-delete-agentuity-sdk-explorer-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-vector-delete-namespace-agentuity-sdk-explor/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-vector-get-agentuity-sdk-explorer-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-vector-list-namespaces-agentuity-sdk-explore/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-vector-search-agentuity-sdk-explorer-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-vector-stats-agentuity-sdk-explorer-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/agentuity-cli-cloud-vector-upsert-agentuity-sdk-explorer-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/alicloud-api-ref/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/alps/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/alps-asd-app-state-diagram-claude-skills-alps-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-auth-logout/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-auth-logout-agentuity-sdk-explorer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-auth-whoami-agentuity-sdk-explorer-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-cloud-secret-delete/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-cloud-secret-delete-agentuity-sdk-explorer-de08acf/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-cloud-secret-get/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-cloud-secret-get-agentuity-sdk-explorer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-cloud-storage-delete-agentuity-examples/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-cloud-storage-delete-agentuity-examples-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-cloud-storage-delete-agentuity-sdk-explorer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-cloud-storage-download-agentuity-sdk-explorer-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-profile-current-agentuity-sdk-explorer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-profile-current-agentuity-sdk-explorer-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-profile-delete/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-profile-delete-agentuity-examples/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-profile-delete-agentuity-examples-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-profile-delete-agentuity-sdk-explorer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-profile-list/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-profile-list-agentuity-examples/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-profile-list-agentuity-sdk-explorer-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-profile-show/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-profile-show-agentuity-sdk-explorer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-profile-use/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-profile-use-agentuity-examples/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-profile-use-agentuity-sdk-explorer-2dfe15fa/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-project-list/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-project-list-agentuity-examples/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-project-list-agentuity-sdk-explorer-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-project-show/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-project-show-agentuity-examples-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/agentuity-cli-project-show-agentuity-examples-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "business/ai-phill-aiskillstore-marketplace/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "context-management/aget-save-state/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "context-management/aget-save-state-aget-framework-template-analyst-age/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "context-management/aim-parzival-bootstrap/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "creative/ai-video-concept/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/airflow-workflows-timequity-vibe-coder-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/alma-scraper-acurioustractor-justicehub-platform/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/aldea-slidedeck-tdimino-claude-code-minoan/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/algorithmic-color-palette/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/agentuity-cli-project-create/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/agentuity-cli-project-create-agentuity-examples-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/agentv-onboarding/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/ai-ad-code-assembler-wade56754-ai-ad-spend02-c57ef3c0/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/ai-ad-code-factory/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/ai-ad-code-factory-wade56754-ai-ad-spend02/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/aico-backend-plan-yellinzero-aico-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/aico-backend-task-breakdown-yellinzero-aico-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/ajiu9/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/akka-best-practices/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/akka-hosting-actor-patterns/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/alacritty-terminal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/alacritty-terminal-johnlindquist-script-kit-next/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/aico-worktree/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/ai-ad-doc-orchestrator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/ai-ad-spec-governor-wade56754-ai-ad-spend02-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/aidd-docio/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/aippt/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/aippt-aiskillstore-marketplace-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "examples/alpha/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/agility-cms-automation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/airflow-adapter-astronomer-agents/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/aivoov-automation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/akhrot/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/ai-ad-spec-governor/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/ai-ad-spec-governor-wade56754-ai-ad-spend02/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "planning/agile-scrum-absolutelyskilled-absolutelyskilled/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "planning/ai-plan/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "planning/ai-plan-arcasilesgroup-ai-engineering/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "planning/alignfirst/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "planning/alignfirst-paleo-alignfirst/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "product/agile-e296e9c8/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "product/agile-methodology/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "product/ai-native-product-refounding/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "product/ai-product-canvas/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "product/ai-wrapper-product-claude-code-communit-claude-code-resource-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "product/aico-pm-competitor-analysis-yellinzero-aico-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/aget-review-artifact/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/aget-review-pr/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/agentuity-cli-auth-machine-setup/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/agentuity-cli-auth-ssh-add/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/agentuity-cli-auth-ssh-add-agentuity-examples/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/agentuity-cli-auth-ssh-add-agentuity-sdk-explorer-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/agentuity-cli-auth-ssh-delete/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/agentuity-cli-auth-ssh-delete-agentuity-examples/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/agentuity-cli-auth-ssh-delete-agentuity-examples-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/agentuity-cli-auth-ssh-delete-agentuity-sdk-explorer-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/agentuity-cli-auth-ssh-list/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/agentuity-cli-auth-ssh-list-agentuity-sdk-explorer-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/aiken-dex-security-audit-operator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/aiml-security-a5c-ai-babysitter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "skills/agentskill-expertise/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "skills/aget-create-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "skills/aget-create-skill-aget-framework-template-analyst-age/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "skills/aget-create-skill-aget-framework-template-consultant/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "skills/aget-create-skill-aget-framework-template-executive-a/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "skills/aget-create-skill-aget-framework-template-operator-ag/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "skills/aget-propose-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "skills/aget-propose-skill-aget-framework-template-analyst-age/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "skills/aget-propose-skill-aget-framework-template-consultant/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "skills/aget-propose-skill-aget-framework-template-executive-a/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "skills/aget-propose-skill-aget-framework-template-operator-ag/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "skills/aget-propose-skill-aget-framework-template-worker-aget/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "testing/ai-ad-api-automation-test-wade56754-ai-ad-spend02/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "testing/aico-frontend-implement-yellinzero-aico-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "war-room/aget-handle-incident-aget-framework-template-operator-ag/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "workflow/aidd-loop/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "workflow/aitask-pickrem/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "workflow/aitask-pickrem-beyondeye-aitasks/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "workflow/aitask-pickrem-beyondeye-aitasks-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "workflow/aitask-wrap-beyondeye-aitasks-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "workflow/alignment-workflow/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "workflow/alignment-workflow-arbgjr-satra/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "workflow/alignment-workflow-arbgjr-satra-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "workflow/alignment-workflow-arbgjr-smart-alarm/metadata.json",
+      "errors": [],
+      "warnings": []
+    }
+  ]
+}

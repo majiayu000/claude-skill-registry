@@ -1,0 +1,18 @@
+{
+  "name": "aico-backend-task-breakdown",
+  "description": "Break down PM story into independent backend task files following LAYERED ARCHITECTURE order: Types → Database → Repository → Service → API → Tests.\n\nUNIQUE VALUE: Creates independent task files (stor",
+  "repo": "yellinzero/aico",
+  "path": ".claude/skills/aico-backend-task-breakdown",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/yellinzero/aico",
+  "dir_name": "aico-backend-task-breakdown-yellinzero-aico-2",
+  "author": "yellinzero",
+  "source_url": "https://github.com/yellinzero/aico/blob/main/.claude/skills/aico-backend-task-breakdown/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yellinzero/aico/blob/main/.claude/skills/aico-backend-task-breakdown/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

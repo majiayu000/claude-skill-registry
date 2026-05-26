@@ -1,0 +1,18 @@
+{
+  "name": "ai-integration",
+  "description": "Chat endpoints, embeddings, RAG workflows, vector search",
+  "repo": "sylin-org/koan-framework",
+  "path": ".claude/skills/ai-integration",
+  "category": "ai-llm",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sylin-org/koan-framework",
+  "dir_name": "ai-integration-sylin-org-koan-framework-2",
+  "author": "sylin-org",
+  "source_url": "https://github.com/sylin-org/koan-framework/blob/main/.claude/skills/ai-integration/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sylin-org/koan-framework/blob/main/.claude/skills/ai-integration/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

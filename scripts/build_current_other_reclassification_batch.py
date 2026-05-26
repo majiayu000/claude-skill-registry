@@ -29,6 +29,10 @@ def build_manifest(
     limit: int | None,
     offset: int,
     content_chars: int,
+    exclude_input_jsonl: list[Path],
+    excluded_input_path_count: int,
+    excluded_live_match_count: int,
+    eligible_matching_count: int,
     selected: list[dict[str, Any]],
     matching_total_count: int,
     archive_counts: Counter[str],
@@ -55,11 +59,15 @@ def build_manifest(
             "limit": limit,
             "offset": offset,
             "content_chars": content_chars,
+            "exclude_input_jsonl": [str(path) for path in exclude_input_jsonl],
             "apply_mode": "review-only",
         },
         "summary": {
             "archive_category_counts": sorted_counter(archive_counts),
             "matching_category_skill_count": matching_total_count,
+            "excluded_input_path_count": excluded_input_path_count,
+            "excluded_live_match_count": excluded_live_match_count,
+            "eligible_matching_category_skill_count": eligible_matching_count,
             "selected_input_count": len(selected),
             "selected_category_counts": sorted_counter(
                 Counter(str(item.get("current_category") or "") for item in selected)
@@ -126,6 +134,22 @@ def build_manifest(
     }
 
 
+def load_excluded_paths(paths: list[Path] | None) -> set[str]:
+    excluded: set[str] = set()
+    for path in paths or []:
+        with path.open("r", encoding="utf-8") as handle:
+            for line_number, line in enumerate(handle, start=1):
+                if not line.strip():
+                    continue
+                payload = json.loads(line)
+                if not isinstance(payload, dict):
+                    raise ValueError(f"{path}:{line_number} must be a JSON object")
+                skill_path = str(payload.get("path") or "")
+                if skill_path:
+                    excluded.add(skill_path)
+    return excluded
+
+
 def build_batch(
     *,
     skills_dir: Path,
@@ -135,11 +159,16 @@ def build_batch(
     limit: int | None = None,
     offset: int = 0,
     content_chars: int = 1600,
+    exclude_input_jsonl: list[Path] | None = None,
 ) -> dict[str, Any]:
     from_categories = from_categories or {"other"}
+    exclude_input_jsonl = exclude_input_jsonl or []
+    excluded_paths = load_excluded_paths(exclude_input_jsonl)
     archive_counts: Counter[str] = Counter()
     selected: list[dict[str, Any]] = []
     matching_total_count = 0
+    excluded_live_match_count = 0
+    eligible_matching_count = 0
     safe_offset = max(offset, 0)
     max_items = max(limit, 0) if limit is not None else None
 
@@ -149,7 +178,11 @@ def build_batch(
         if category not in from_categories:
             continue
         matching_total_count += 1
-        if matching_total_count <= safe_offset:
+        if str(rel) in excluded_paths:
+            excluded_live_match_count += 1
+            continue
+        eligible_matching_count += 1
+        if eligible_matching_count <= safe_offset:
             continue
         if max_items is not None and len(selected) >= max_items:
             continue
@@ -179,6 +212,10 @@ def build_batch(
         limit=limit,
         offset=safe_offset,
         content_chars=content_chars,
+        exclude_input_jsonl=exclude_input_jsonl,
+        excluded_input_path_count=len(excluded_paths),
+        excluded_live_match_count=excluded_live_match_count,
+        eligible_matching_count=eligible_matching_count,
         selected=selected,
         matching_total_count=matching_total_count,
         archive_counts=archive_counts,
@@ -211,6 +248,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--limit", type=int)
     parser.add_argument("--offset", type=int, default=0)
     parser.add_argument("--content-chars", type=int, default=1600)
+    parser.add_argument("--exclude-input-jsonl", action="append", type=Path)
     parser.add_argument("--json", action="store_true")
     return parser.parse_args(argv)
 
@@ -227,6 +265,7 @@ def main(argv: list[str] | None = None) -> int:
         limit=args.limit,
         offset=args.offset,
         content_chars=args.content_chars,
+        exclude_input_jsonl=args.exclude_input_jsonl,
     )
     if args.json:
         print(json.dumps(manifest, indent=2, ensure_ascii=False))

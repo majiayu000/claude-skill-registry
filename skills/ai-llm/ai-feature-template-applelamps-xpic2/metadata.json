@@ -1,0 +1,16 @@
+{
+  "name": "ai-feature-template",
+  "repo": "AppleLamps/xpic2",
+  "path": ".claude/skills/ai-feature-template/SKILL.md",
+  "source": "github.com/AppleLamps/xpic2",
+  "downloaded_at": "2026-01-29T07:29:46.227043Z",
+  "dir_name": "ai-feature-template-applelamps-xpic2",
+  "category": "ai-llm",
+  "author": "AppleLamps",
+  "source_url": "https://github.com/AppleLamps/xpic2/blob/main/.claude/skills/ai-feature-template/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AppleLamps/xpic2/blob/main/.claude/skills/ai-feature-template/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

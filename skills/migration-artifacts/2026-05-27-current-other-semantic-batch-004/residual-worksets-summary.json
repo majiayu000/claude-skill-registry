@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-26T19:13:07.023051+00:00",
+  "source_report": "migration-artifacts/2026-05-27-current-other-semantic-batch-004/residual-worksets.json",
+  "policy": {
+    "from_categories": [
+      "other"
+    ],
+    "min_confidence": 0.9,
+    "content_chars": 1600,
+    "apply_mode": "report-only"
+  },
+  "summary": {
+    "classification_row_count": 1000,
+    "archive_category_counts": {
+      "agent": 1441,
+      "ai-llm": 2096,
+      "ai-ml": 2025,
+      "analysis": 3023,
+      "api": 842,
+      "bash": 210,
+      "business": 1036,
+      "c-level": 49,
+      "communication": 561,
+      "context-management": 1168,
+      "creative": 673,
+      "data": 48894,
+      "design": 13403,
+      "development": 36198,
+      "devops": 10233,
+      "documents": 6196,
+      "domains": 49,
+      "examples": 85,
+      "forensics": 56,
+      "gaming": 691,
+      "generation": 455,
+      "integration": 4612,
+      "language": 62,
+      "local-ai-infrastructure": 50,
+      "marketing": 2583,
+      "orchestration": 1854,
+      "other": 53191,
+      "performance": 852,
+      "personal-development": 285,
+      "planning": 1319,
+      "platform": 235,
+      "product": 2337,
+      "productivity": 2956,
+      "quality": 2657,
+      "security": 4973,
+      "skills": 1717,
+      "system": 17,
+      "testing": 11139,
+      "travel": 44,
+      "war-room": 5,
+      "workflow": 897,
+      "writing": 909
+    },
+    "scoped_existing_classification_count": 805,
+    "workset_counts": {
+      "classification_gap": 52386,
+      "low_confidence": 588,
+      "review_target": 0,
+      "target_other": 0
+    },
+    "conflict_detail_count": 217,
+    "conflict_clusters": {
+      "content_and_metadata_drift": 23,
+      "content_drift_metadata_equal": 8,
+      "content_equal_metadata_drift": 108,
+      "exact_duplicate": 78
+    },
+    "conflict_target_category_counts": {
+      "agent": 6,
+      "ai-llm": 38,
+      "ai-ml": 12,
+      "api": 6,
+      "bash": 24,
+      "business": 4,
+      "context-management": 1,
+      "creative": 16,
+      "data": 19,
+      "design": 2,
+      "development": 16,
+      "devops": 17,
+      "documents": 5,
+      "generation": 2,
+      "integration": 7,
+      "marketing": 2,
+      "orchestration": 3,
+      "personal-development": 2,
+      "planning": 2,
+      "product": 11,
+      "quality": 3,
+      "security": 12,
+      "testing": 4,
+      "workflow": 2,
+      "writing": 1
+    }
+  },
+  "committed_workset_files": {
+    "low_confidence": "migration-artifacts/2026-05-27-current-other-semantic-batch-004/residual-worksets/low_confidence.jsonl",
+    "review_target": "migration-artifacts/2026-05-27-current-other-semantic-batch-004/residual-worksets/review_target.jsonl",
+    "target_other": "migration-artifacts/2026-05-27-current-other-semantic-batch-004/residual-worksets/target_other.jsonl"
+  },
+  "omitted_workset_files": {
+    "classification_gap": {
+      "reason": "omitted from git because the full 52386-row workset with content excerpts exceeds GitHub file size limits; regenerate with the command recorded in manifest.json",
+      "count": 52386
+    }
+  },
+  "notes": [
+    "This report does not modify archive files.",
+    "classification_gap contains live archive paths absent from the classification JSONL.",
+    "low_confidence and review_target rows should be reclassified before apply.",
+    "conflict clusters are diagnostic; content drift conflicts must not be auto-deleted."
+  ]
+}

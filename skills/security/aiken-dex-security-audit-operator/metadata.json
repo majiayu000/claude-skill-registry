@@ -1,0 +1,20 @@
+{
+  "name": "aiken-dex-security-audit-operator",
+  "description": "",
+  "repo": "CharlesHoskinson/dancesWithClaws",
+  "category": "security",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CharlesHoskinson/dancesWithClaws",
+  "github_path": "workspace/skills/aiken-dex-security-audit-operator",
+  "github_branch": "master",
+  "dir_name": "aiken-dex-security-audit-operator",
+  "downloaded_at": "2026-02-05T01:45:06.314232Z",
+  "author": "CharlesHoskinson",
+  "source_url": "https://github.com/CharlesHoskinson/dancesWithClaws/blob/master/workspace/skills/aiken-dex-security-audit-operator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CharlesHoskinson/dancesWithClaws/blob/master/workspace/skills/aiken-dex-security-audit-operator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

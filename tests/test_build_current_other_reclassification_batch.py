@@ -72,3 +72,41 @@ def test_builds_current_other_input_and_manifest(tmp_path):
     assert "build_residual_category_worksets.py" in commands
     assert "residual_worksets_report" in saved_manifest["artifacts"]
     assert "residual_worksets_dir" in saved_manifest["artifacts"]
+
+
+def test_excludes_previous_input_paths_before_offset(tmp_path):
+    builder = _load_module()
+    skills_dir = tmp_path / "skills"
+    _write_skill(skills_dir, "other/alpha")
+    _write_skill(skills_dir, "other/beta")
+    _write_skill(skills_dir, "other/gamma")
+    previous = tmp_path / "previous.jsonl"
+    previous.write_text(
+        json.dumps({"path": "other/alpha/SKILL.md"}) + "\n",
+        encoding="utf-8",
+    )
+    output_dir = tmp_path / "batch"
+
+    manifest = builder.build_batch(
+        skills_dir=skills_dir,
+        output_dir=output_dir,
+        batch_id="other-002",
+        from_categories={"other"},
+        limit=1,
+        offset=1,
+        content_chars=120,
+        exclude_input_jsonl=[previous],
+    )
+
+    rows = [
+        json.loads(line)
+        for line in (output_dir / "input.jsonl").read_text(encoding="utf-8").splitlines()
+    ]
+
+    assert rows[0]["path"] == "other/gamma/SKILL.md"
+    assert manifest["policy"]["exclude_input_jsonl"] == [str(previous)]
+    assert manifest["summary"]["matching_category_skill_count"] == 3
+    assert manifest["summary"]["excluded_input_path_count"] == 1
+    assert manifest["summary"]["excluded_live_match_count"] == 1
+    assert manifest["summary"]["eligible_matching_category_skill_count"] == 2
+    assert manifest["summary"]["selected_input_count"] == 1

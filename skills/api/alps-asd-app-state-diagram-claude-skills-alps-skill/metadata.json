@@ -1,0 +1,17 @@
+{
+  "name": "alps-asd__app-state-diagram__claude__skills__alps__SKILL",
+  "description": "",
+  "repo": "mattnigh/skills_collection",
+  "category": "api",
+  "tags": [],
+  "stars": 0,
+  "source": "Unknown",
+  "dir_name": "alps-asd-app-state-diagram-claude-skills-alps-skill",
+  "author": "mattnigh",
+  "source_url": "https://github.com/mattnigh/skills_collection",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mattnigh/skills_collection",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

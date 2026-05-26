@@ -3,6 +3,8 @@ name: metrics-detect
 description: "Detect which external metric sources apply to this product (GitHub, Plausible, Stripe, etc.) and configure adapters. Retrofit entry point for projects that started before v0.14; also runnable to refresh source list when the product grows."
 metadata:
   instruction_budget: "19"
+  framework_dependency: "mycelium"
+  framework_dependency_note: "This skill is designed to run within the Mycelium framework (https://github.com/haabe/mycelium). Standalone use will skip the canvas state, theory gates, and harness behavior the skill assumes. Install: /plugin install mycelium@haabe/mycelium."
 ---
 
 # Metrics Detect Skill

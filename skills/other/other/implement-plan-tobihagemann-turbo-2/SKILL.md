@@ -1,6 +1,6 @@
 ---
 name: implement-plan
-description: "Execute an implementation plan file produced by /draft-plan, /turboplan, or /expand-shell. Runs pre-implementation prep, loads task-specific skills by matching plan content against available skill triggers, then runs /implement to execute the steps and finalize. Use when the user asks to \"implement plan\", \"implement the plan\", \"execute the plan\", \"run the plan\", \"implement plans/<slug>.md\", \"start implementing the plan\", or starts a fresh session to implement a previously drafted plan."
+description: "Execute an implementation plan file produced by /draft-plan, /turboplan, or /expand-shell. Runs pre-implementation prep, then runs /implement to execute the steps and finalize. Use when the user asks to \"implement plan\", \"implement the plan\", \"execute the plan\", \"run the plan\", \"implement plans/<slug>.md\", \"start implementing the plan\", or starts a fresh session to implement a previously drafted plan."
 ---
 
 # Implement Plan
@@ -13,9 +13,8 @@ At the start, use `TaskCreate` to create a task for each step:
 
 1. Resolve and read the plan file
 2. Read context files
-3. Load task-specific skills
-4. Run `/implement` skill
-5. Update plan status
+3. Run `/implement` skill
+4. Update plan status
 
 ## Step 1: Resolve and Read the Plan File
 
@@ -41,23 +40,17 @@ Read in full:
 - Files the user referenced in their original request (if any)
 - Every file path the plan references in the Context, Pattern Survey, and Implementation Steps sections
 
-## Step 3: Load Task-Specific Skills
-
-Scan the plan's **Implementation Steps** for work types that match available skills. For each unambiguous match, run the skill via the Skill tool. For example, if the plan includes "add a Drizzle migration" and a skill exists whose triggers reference Drizzle migrations, load it. If the plan mentions "run the test suite" but no testing-specific skill trigger matches, do not load a generic testing skill.
-
-If unsure, do not load. Do not load `/code-style` here.
-
-## Step 4: Run `/implement` Skill
+## Step 3: Run `/implement` Skill
 
 Run the `/implement` skill. The plan file, its file references, and its Verification section are already in conversation context from Step 1.
 
-## Step 5: Update Plan Status
+## Step 4: Update Plan Status
 
 After `/implement` completes, set the plan's frontmatter `status:` to `done`. If the plan is the legacy `.turbo/plan.md` without frontmatter, skip this step.
 
 ## Rules
 
 - The plan file is read-only during execution. If revisions are needed, run `/refine-plan` or `/draft-plan` separately.
-- Never skip Steps 2 or 3.
+- Never skip Step 2.
 - Never enumerate or execute the plan's Implementation Steps inline. The work runs through `/implement`. Restating steps as a turn-level narration counts as inline execution and bypasses the delegation.
-- If the plan's Implementation Steps or Verification include `git commit`, `git push`, or PR creation, halt before Step 4 and ask the user to remove them via `/refine-plan`.
+- If the plan's Implementation Steps or Verification include `git commit`, `git push`, or PR creation, halt before Step 3 and ask the user to remove them via `/refine-plan`.

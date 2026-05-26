@@ -3,6 +3,8 @@ name: eval-runner
 description: "Run eval scenarios to benchmark Mycelium effectiveness. Execute tasks using reflexion loop, validate against success criteria, record metrics."
 metadata:
   instruction_budget: "41"
+  framework_dependency: "mycelium"
+  framework_dependency_note: "This skill is designed to run within the Mycelium framework (https://github.com/haabe/mycelium). Standalone use will skip the canvas state, theory gates, and harness behavior the skill assumes. Install: /plugin install mycelium@haabe/mycelium."
 ---
 
 # Eval Runner

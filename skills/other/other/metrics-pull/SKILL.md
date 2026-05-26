@@ -3,6 +3,8 @@ name: metrics-pull
 description: "Pull snapshots from all configured metric sources, compute deltas against prior snapshots, flag unexplained signals, and draft evidence entries for canvas files. One entry point for all external product/market metrics."
 metadata:
   instruction_budget: "47"
+  framework_dependency: "mycelium"
+  framework_dependency_note: "This skill is designed to run within the Mycelium framework (https://github.com/haabe/mycelium). Standalone use will skip the canvas state, theory gates, and harness behavior the skill assumes. Install: /plugin install mycelium@haabe/mycelium."
 ---
 
 # Metrics Pull Skill
@@ -139,6 +141,44 @@ External metric data (referrer names, top paths, review text, support tickets) f
 ### Step 9: Update .claude/jit-tooling/active-metrics.yml
 
 For each source that pulled successfully, update `last_pulled_at` to the current timestamp. This is the only mutation `/mycelium:metrics-pull` makes to `.claude/jit-tooling/active-metrics.yml`.
+
+### Step 10: Anomaly → devils-advocate auto-chain (added v0.29.0)
+
+For each anomaly the report flagged in **Step 6 (Unexplained signals)** OR **Notable patterns** that included an *inferred explanation* — meaning the agent wrote prose like "Plausible drivers (Unverified):", "Possible explanations:", "Likely cause:", or any other phrasing that proposes a cause for the observed signal — automatically follow the **`/mycelium:devils-advocate` Technique 4 (Attribution-vs-Consistency Check)** workflow against each inferred explanation **before presenting the report to the user**.
+
+This closes the **AP#7 sub-class (g)** *implicit-causal-link* surface in real time. Without this step, anomaly explanations accumulate in canvas evidence as consistency-only inferences that the next session reads as established cause. The chain makes the inferential weakness visible at write-time, not weeks-later by user review.
+
+For each inferred explanation:
+
+1. **Restate the inference** in one sentence: "Anomaly X is driven by Y because Z."
+2. **Apply Technique 4**: label each piece of supporting evidence as `cleanly-attributed`, `consistency-only`, or `unrelated`. Be honest — most metric-anomaly explanations are consistency-only because the metric system cannot isolate causes (clones lack identity; views lack identity; referrer attribution is bundled at the source).
+3. **Compute `evidence_status`**:
+   - `verified` — all supporting evidence is cleanly-attributed
+   - `consistency_only` — ≥1 piece is consistency-only, none verified to isolation
+   - `unverified` — no supporting evidence beyond the inference itself
+4. **Generate contrarian reads**: at least one alternative explanation that fits the same data with equal or greater parsimony.
+
+**Output** the chain analysis as a sub-section in the combined report (per Step 7) under a new heading:
+
+```
+### Inference attribution check (per /mycelium:devils-advocate Technique 4)
+
+For each inferred explanation flagged above:
+
+#### Inference: "<one-sentence restate>"
+- Supporting evidence labels: [<evidence_1>: cleanly-attributed/consistency-only/unrelated, ...]
+- Evidence status: <verified|consistency_only|unverified>
+- Contrarian reads: [<alternative_1>, <alternative_2>, ...]
+- Recommendation: <accept-as-verified | downgrade-to-Unverified-in-canvas | escalate-to-further-investigation | discard-inference>
+```
+
+**Surface to user**: if any inference has `evidence_status: consistency_only` AND the user is about to append a candidate evidence entry (Step 8) referencing that inference, prompt explicitly: "Inference X is consistency-only per Technique 4. Append as `Unverified` in canvas, OR investigate further, OR drop from the evidence entry?" Do not append a consistency-only inference framed as established cause.
+
+**Track to cluster-instances**: if `.claude/memory/cluster-instances.md` contains a `consistency-as-evidence` cluster section (graduated 2026-05-09), append today's count of `consistency_only` inferences to the cluster's instance log automatically (one entry per inference downgraded). This automates the AP#7 sub-(g) instance accounting that today required manual logging.
+
+**Skip Step 10 cleanly** if the report flagged no anomalies OR if all flagged anomalies have no inferred explanation (raw "X happened, no idea why" is honest and doesn't need Technique 4 — Technique 4 challenges *explanations*, not *observations*).
+
+**Universal-product-model fit**: this chain serves any Mycelium adopter writing evidence to canvas from metrics. The AP#7 sub-(g) risk (anchoring on a single inference without contrarian examination) applies whether the product is SaaS, course, AI tool, or service. Not Mycelium-team-specific.
 
 ## Parallel dispatch
 

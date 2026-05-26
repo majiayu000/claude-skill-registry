@@ -3,6 +3,8 @@ name: interview
 description: "Use when onboarding a new product/project. Progressive interview to understand purpose, vision, north star, and competitive landscape."
 metadata:
   instruction_budget: "110"
+  framework_dependency: "mycelium"
+  framework_dependency_note: "This skill is designed to run within the Mycelium framework (https://github.com/haabe/mycelium). Standalone use will skip the canvas state, theory gates, and harness behavior the skill assumes. Install: /plugin install mycelium@haabe/mycelium."
 ---
 
 # Interview Skill

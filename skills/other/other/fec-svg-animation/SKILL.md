@@ -14,7 +14,7 @@ description: Use when implementing or reviewing SVG animation, path drawing, ico
 - 需要实现 SVG 图标、Logo、插画或路径描边动画。
 - 需要在 React/Vue 组件中接入 Framer Motion、GSAP 或 CSS 动画。
 - 需要根据 `prefers-reduced-motion` 提供动效降级。
-- 不用于复杂 3D/WebGL 场景；此类场景优先使用 `fec-canvas-threejs`。
+- 不用于复杂 3D/WebGL 场景；此类场景优先使用 Canvas / Three.js workflow。
 
 ## Procedure
 
@@ -135,8 +135,3 @@ export function LogoReveal() {
 ## Expected Output
 
 产出一个可复用的 SVG 动画组件或样式方案，包含选型理由、动效降级和可访问性处理。验证时检查动画流畅、无布局抖动、键盘与 reduced-motion 场景可用。
-
-## Related Agent
-
-- [fec-ui-checker](../../agents/fec-ui-checker.md) - 检查动画是否造成视觉错位、遮挡或设计还原问题。
-- [fec-performance-optimizer](../../agents/fec-performance-optimizer.md) - 分析动画带来的渲染、合成层和主线程开销。

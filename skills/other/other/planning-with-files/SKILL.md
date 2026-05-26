@@ -28,7 +28,7 @@ hooks:
         - type: command
           command: "RESOLVED=\"\"; SCOPE=\"\"; SLUG_RE='^[A-Za-z0-9_][A-Za-z0-9._-]*$'; if [ -n \"${PLAN_ID:-}\" ] && printf \"%s\" \"$PLAN_ID\" | grep -Eq \"$SLUG_RE\" && [ -d \".planning/${PLAN_ID}\" ]; then RESOLVED=\".planning/${PLAN_ID}\"; SCOPE=\"scoped\"; elif [ -f .planning/.active_plan ]; then AP=$(tr -d '\\r\\n[:space:]' < .planning/.active_plan 2>/dev/null); if [ -n \"$AP\" ] && printf \"%s\" \"$AP\" | grep -Eq \"$SLUG_RE\" && [ -d \".planning/${AP}\" ]; then RESOLVED=\".planning/${AP}\"; SCOPE=\"scoped\"; fi; fi; if [ -z \"$RESOLVED\" ] && [ -d .planning ]; then NEWEST=\"\"; NEWEST_MT=0; for d in .planning/*/; do d=\"${d%/}\"; n=$(basename \"$d\"); case \"$n\" in .*) continue;; esac; printf \"%s\" \"$n\" | grep -Eq \"$SLUG_RE\" || continue; [ -f \"$d/task_plan.md\" ] || continue; m=$(stat -c '%Y' \"$d\" 2>/dev/null || stat -f '%m' \"$d\" 2>/dev/null || date -r \"$d\" +%s 2>/dev/null || echo 0); if [ \"$m\" -gt \"$NEWEST_MT\" ] 2>/dev/null; then NEWEST_MT=\"$m\"; NEWEST=\"$d\"; fi; done; [ -n \"$NEWEST\" ] && { RESOLVED=\"$NEWEST\"; SCOPE=\"scoped\"; }; fi; if [ -z \"$RESOLVED\" ] && [ -f task_plan.md ]; then RESOLVED=\".\"; SCOPE=\"root\"; fi; [ -z \"$RESOLVED\" ] && exit 0; if [ \"$SCOPE\" = \"root\" ]; then PLAN_FILE=\"task_plan.md\"; PROGRESS_FILE=\"progress.md\"; ATTEST=\"\"; [ -f .plan-attestation ] && ATTEST=$(tr -d '\\r\\n[:space:]' < .plan-attestation 2>/dev/null); else PLAN_FILE=\"${RESOLVED}/task_plan.md\"; PROGRESS_FILE=\"${RESOLVED}/progress.md\"; ATTEST=\"\"; [ -f \"${RESOLVED}/.attestation\" ] && ATTEST=$(tr -d '\\r\\n[:space:]' < \"${RESOLVED}/.attestation\" 2>/dev/null); fi; [ -f \"$PLAN_FILE\" ] || exit 0; TAMPERED=0; ACTUAL=\"\"; if [ -n \"$ATTEST\" ]; then CD=\"${TMPDIR:-/tmp}/pwf-sha\"; mkdir -p \"$CD\" 2>/dev/null; KEY=$(printf \"%s\" \"$PLAN_FILE\" | { sha256sum 2>/dev/null || shasum -a 256 2>/dev/null; } | awk '{print $1}' | cut -c1-16); MT=$(stat -c '%Y' \"$PLAN_FILE\" 2>/dev/null || stat -f '%m' \"$PLAN_FILE\" 2>/dev/null || date -r \"$PLAN_FILE\" +%s 2>/dev/null || echo 0); CF=\"$CD/$KEY\"; CM=\"\"; CS=\"\"; if [ -f \"$CF\" ]; then CM=$(sed -n 1p \"$CF\" 2>/dev/null); CS=$(sed -n 2p \"$CF\" 2>/dev/null); fi; if [ -n \"$MT\" ] && [ \"$MT\" = \"$CM\" ] && [ -n \"$CS\" ]; then ACTUAL=\"$CS\"; else ACTUAL=$( (sha256sum \"$PLAN_FILE\" 2>/dev/null || shasum -a 256 \"$PLAN_FILE\" 2>/dev/null) | awk '{print $1}'); [ -n \"$ACTUAL\" ] && [ -n \"$MT\" ] && printf \"%s\\n%s\\n\" \"$MT\" \"$ACTUAL\" > \"$CF\" 2>/dev/null; fi; [ \"$ACTUAL\" != \"$ATTEST\" ] && TAMPERED=1; fi; echo '[planning-with-files] PreCompact: context compaction is about to occur.'; echo 'Before compaction completes: ensure progress.md captures recent actions and task_plan.md status reflects current phase.'; echo 'task_plan.md, findings.md, progress.md remain on disk and will be re-read after compaction.'; [ -n \"$ATTEST\" ] && echo \"Plan-SHA256 at compaction: $ATTEST\"; exit 0"
 metadata:
-  version: "2.41.0"
+  version: "2.42.0"
 ---
 
 # Planning with Files
@@ -247,6 +247,19 @@ Each session reads from its own isolated plan directory. Hooks resolve the corre
 
 Claude Code shipped three new turn-loop primitives in May 2026: `/loop` (v2.1.72), `/goal` (v2.1.139), and the `PreCompact` hook event. v2.38.0 wires the planning workflow into all three.
 
+### Install scope: plugin vs skill-only (v2.42.0 clarification)
+
+Not every install path ships every surface in this section. Two distinct install routes exist:
+
+| Install route | What you get | `/plan-goal`, `/plan-loop` available? |
+|---|---|---|
+| `/plugin marketplace add OthmanAdi/planning-with-files` then `/plugin install` | SKILL.md, scripts, templates, **plus `commands/` folder** | Yes, as `/plan-goal` and `/plan-loop` |
+| `npx skills add OthmanAdi/planning-with-files` (or ClawHub) | SKILL.md, scripts, templates only | No, follow the manual fallback below |
+
+The PreCompact hook is registered in the SKILL.md frontmatter and works for both routes. The `/plan-goal` and `/plan-loop` slash commands live in `commands/` at the repo root, which only the plugin route copies into `~/.claude/plugins/marketplaces/`. Skill-only installs land at `~/.claude/skills/planning-with-files/` and do not see `commands/`.
+
+Both slash commands also carry `disable-model-invocation: true`, which means the model will not auto-trigger them. You type them. Per known Claude Code behavior (anthropics/claude-code issues #26251, #41417), some sessions interpret `disable-model-invocation: true` as "I cannot use the Skill tool for this entry at all" and refuse to fire even when you type the slash. If that happens, the manual fallback below produces the same effect.
+
 ### PreCompact hook (auto)
 
 The skill registers a `PreCompact` hook with matcher `"*"`. It fires on both `/compact` (manual) and autoCompact (context-full). When `task_plan.md` is present, the hook:
@@ -279,6 +292,29 @@ Composes with Claude Code's `/loop`. Default 10-minute tick re-reads the plannin
 ```
 
 For a "babysit until done" workflow, combine `/plan-loop` (cadence) with `/plan-goal` (termination criterion).
+
+### Manual fallback when `/plan-goal` / `/plan-loop` are unavailable (v2.42.0)
+
+For skill-only installs (no `commands/` folder) or sessions where the slash command refuses to fire, the model can produce the same effect by executing the wrapper steps inline.
+
+**Manual `/plan-goal` procedure:**
+
+1. Resolve the active plan: prefer `${PLAN_ID}` env var, then `.planning/.active_plan`, then newest `.planning/<dir>/`, then legacy `./task_plan.md`.
+2. Read the resolved `task_plan.md`.
+3. Compose a goal condition. Default: `"all phases in task_plan.md report Status: complete and check-complete.sh reports ALL PHASES COMPLETE"`. If the user passed additional clauses, append them.
+4. Issue Claude Code's native `/goal <condition>` (CC primitive, always available).
+5. Confirm to the user: print the condition + active plan ID + remind that `/goal clear` cancels.
+6. Refuse if `task_plan.md` does not exist; direct the user to run init first.
+
+**Manual `/plan-loop` procedure:**
+
+1. Parse args: first arg matching `^\d+[smhd]$` is the interval (default `10m`), remaining args are an optional task prompt.
+2. Resolve the active plan as above.
+3. Compose the loop tick prompt. If user passed a task prompt, use it verbatim. Otherwise use the planning-aware default that re-reads `task_plan.md` and `progress.md`, runs `scripts/check-complete.sh`, and writes a `progress.md` entry if no progress was logged since the last tick.
+4. Issue Claude Code's native `/loop <interval> <prompt>` (CC primitive, always available).
+5. Confirm to the user: print interval + active plan ID + remind that bare `/loop` runs the built-in maintenance prompt.
+
+Both procedures match what the `commands/plan-goal.md` and `commands/plan-loop.md` files would have fed the model when invoked. The native `/loop` and `/goal` primitives are always available in Claude Code; only the planning-aware wrapper is plugin-scoped.
 
 ### `loop.md` template
 

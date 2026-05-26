@@ -3,6 +3,8 @@ name: corrections-audit
 description: "Use to analyze correction trends, surface recurring patterns, and graduate repeat corrections to guardrails or anti-patterns."
 metadata:
   instruction_budget: "40"
+  framework_dependency: "mycelium"
+  framework_dependency_note: "This skill is designed to run within the Mycelium framework (https://github.com/haabe/mycelium). Standalone use will skip the canvas state, theory gates, and harness behavior the skill assumes. Install: /plugin install mycelium@haabe/mycelium."
 ---
 
 # Corrections Audit Skill

@@ -1,8 +1,8 @@
 ---
 name: hunt-sqli
-description: Hunting skill for sqli vulnerabilities. Built from 8 public bug bounty reports. Use when hunting sqli on any target.
-sources: github, hackerone_public
-report_count: 8
+description: Hunting skill for sqli vulnerabilities. Built from 12 public bug bounty reports including modern NoSQL injection (Rocket.Chat CVE-2021-22911 MongoDB $regex, Mongoose ORM CVE-2024-53900 $where bypass), modern ORM raw-fragment SQLi (Django CVE-2024-42005, Sequelize GHSA-wrh9-cjv3-2hpw), second-order SOQL injection (HackerOne Salesforce), time-based blind SQLi in GraphQL resolvers, and SQLi on OIDC-proxy backends. Use when hunting SQLi / NoSQLi on any target.
+sources: github, hackerone_public, github_security_advisories, snyk_research, sonarsource_research
+report_count: 12
 ---
 
 ## Crown Jewel Targets
@@ -356,6 +356,36 @@ A company's marketing site ran WordPress with the Huge IT Video Gallery plugin. 
 
 **Scenario C — Authenticated Internal Tool Exposed Externally (Airflow pattern)**
 Apache Airflow's web interface, deployed for workflow orchestration and accessible to authenticated users, contained SQL injection in a filter/search parameter within the admin UI. Because Airflow often runs with database superuser credentials (it needs to manage its own metadata DB), exploitation by any authenticated user — including low-privilege accounts — could lead to full database read/write access and potentially OS-level command execution via `COPY TO/FROM` or similar DB features. The lesson: "authenticated-only" does not mean "safe" — internal tools have weak authorization models and often over-privileged DB connections.
+
+---
+
+## Disclosed Report Citations (Backfill +4 — 2021-2024)
+
+The following real, verified bug-bounty / CVE / coordinated-disclosure cases extend this skill with **modern** (2021-2024) examples emphasising NoSQL and ORM-bypass — the two SQLi families most under-represented in older bundles.
+
+9. **Rocket.Chat — Pre-auth blind NoSQL injection in `getPasswordPolicy` (CVE-2021-22911)** ([H1 #1130721](https://hackerone.com/reports/1130721) · [Sonar writeup](https://www.sonarsource.com/blog/nosql-injections-in-rocket-chat/))
+    - Subclass: NoSQL injection (MongoDB `$regex` operator) — pre-auth
+    - Payload (Meteor DDP method call): `{"msg":"method","method":"getPasswordPolicy","params":[{"token":{"$regex":"^a"}}]}` — brute-force password-reset token character-by-character via response-time/boolean side-channel, then chain to admin password reset → RCE via integrations
+    - Root cause: Meteor `methods` accepted raw object selectors; `getPasswordPolicy` did not validate that `token` was a string before passing it to Mongo `findOne`
+    - Year: 2021 — H1 private bounty paired with CVE-2021-22911
+
+10. **Mongoose ORM — `$where` injection via `populate({match})` (CVE-2024-53900 + CVE-2025-23061)** ([GHSA-m7xq-9374-9rvx](https://github.com/advisories/GHSA-m7xq-9374-9rvx))
+    - Subclass: NoSQL injection — ORM raw-operator bypass (Mongoose Node.js)
+    - Payload: `Model.find().populate({path:'author', match:{$where:"sleep(5000) || true"}})` — attacker-controlled JSON forwarded into `populate({match})` reached MongoDB `$where`, executing arbitrary server-side JavaScript → blind exfil + DoS
+    - Root cause: Mongoose < 8.8.3 did not strip `$where` inside `match` filters; developers assumed ORM-level safety
+    - Year: 2024 — reported via the Mongoose project / GitHub Security Lab IBB
+
+11. **Django — `QuerySet.values()` JSONField SQL Injection (CVE-2024-42005)** ([H1 #2646493](https://hackerone.com/reports/2646493) · [Commit](https://github.com/django/django/commit/c87bfaacf8fb84984243b5055dc70f97996cb115))
+    - Subclass: ORM raw-fragment SQLi (Django ORM — column-alias injection)
+    - Payload: `Item.objects.values('data__"); DROP TABLE x;--')` — a crafted JSON-path key (passed as `*args` from a request parameter) was used as a SQL column alias without escaping; `.values()` emitted `SELECT (data->>'…') AS "…"; DROP TABLE x;--"`
+    - Root cause: Django emitted unquoted column aliases derived from user-supplied JSONField key strings; assumed alias values were always developer-controlled
+    - Year: 2024 — CVSS 9.8, reported by Eyal Gabay (EyalSec) through Django's HackerOne program → IBB award
+
+12. **Mozilla — Boolean-based blind SQLi on `mozilla.social` invite endpoint** ([H1 #2209130](https://hackerone.com/reports/2209130))
+    - Subclass: boolean-based blind SQLi on an authentication-adjacent endpoint
+    - Payload: `POST /invite {"code":"abc' AND (SELECT COUNT(*) FROM information_schema.tables)>0--"}` — boolean differentiation between "invalid code" and "code accepted, redirect issued" allowed schema/table enumeration on the OIDC proxy Postgres backend
+    - Root cause: invite-code lookup built a raw SQL string against the proxy's Postgres DB; developers assumed the code was short/opaque and skipped parameter binding
+    - Year: 2023 — Mozilla H1 bounty (amount redacted in disclosure)
 
 ---
 

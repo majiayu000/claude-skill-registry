@@ -3,6 +3,8 @@ name: bias-check
 description: "Use before any research activity or significant decision. Reviews cognitive biases relevant to the current stage."
 metadata:
   instruction_budget: "27"
+  framework_dependency: "mycelium"
+  framework_dependency_note: "This skill is designed to run within the Mycelium framework (https://github.com/haabe/mycelium). Standalone use will skip the canvas state, theory gates, and harness behavior the skill assumes. Install: /plugin install mycelium@haabe/mycelium."
 ---
 
 # Bias Check Skill

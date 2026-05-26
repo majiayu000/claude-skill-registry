@@ -3,6 +3,8 @@ name: framework-health
 description: "Evaluate Mycelium's own process effectiveness. Measures cycle velocity, discard trends, confidence calibration, gate effectiveness, regression rate. Run quarterly or every 20 cycles."
 metadata:
   instruction_budget: "50"
+  framework_dependency: "mycelium"
+  framework_dependency_note: "This skill is designed to run within the Mycelium framework (https://github.com/haabe/mycelium). Standalone use will skip the canvas state, theory gates, and harness behavior the skill assumes. Install: /plugin install mycelium@haabe/mycelium."
 ---
 
 # Framework Health Check

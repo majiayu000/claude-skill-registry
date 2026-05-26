@@ -14,7 +14,7 @@ description: Use when optimizing or reviewing large lists, virtual scrolling, wi
 1. 先确认列表规模和瓶颈：500+ 项、滚动掉帧、DOM 节点过多或内存飙升才引入虚拟化。
 2. 固定高度列表用 `react-window`；动态高度、跨框架或高级场景用 TanStack Virtual；遗留项目可维护 `react-virtualized`。
 3. 明确 item size、overscan、容器高度、key、滚动容器和 resize 行为。
-4. 无限滚动时分离数据分页和 DOM 虚拟化；数据获取可联用 `fec-data-fetching`。
+4. 无限滚动时分离数据分页和 DOM 虚拟化；数据获取可联用数据获取 workflow。
 5. 验证 DOM 节点数、滚动 FPS、键盘/屏幕阅读器体验和 Ctrl+F/SEO 限制。
 
 ## Detailed References
@@ -32,13 +32,3 @@ Load [references/virtualization-patterns.md](references/virtualization-patterns.
 ## Expected Output
 
 10000+ 项列表滚动接近 60fps，DOM 节点数稳定在可视区域及缓冲区范围，内存从 O(n) 降至 O(visible)。
-
-## Related Skills / Boundary
-
-- `fec-data-fetching` — 无限列表的数据分页和缓存。
-- `fec-web-workers` — 列表项昂贵计算搬到后台线程。
-- `fec-accessibility-check` — 虚拟列表键盘和读屏体验深审。
-
-## Related Agent
-
-- [fec-performance-optimizer](../../agents/fec-performance-optimizer.md) — 性能分析与优化，可通过 Profiler 验证虚拟化效果

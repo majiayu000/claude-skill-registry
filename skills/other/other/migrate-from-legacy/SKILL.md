@@ -1,6 +1,9 @@
 ---
 name: migrate-from-legacy
 description: Migrate a Mycelium project from legacy install (npx-degit, framework files in .claude/) to plugin install (framework lives in plugin cache, .claude/ holds project state only). Detects current install form, walks the user through plugin installation, runs the migration script, and verifies project state survived. Idempotent — safe to invoke on already-migrated projects.
+metadata:
+  framework_dependency: "mycelium"
+  framework_dependency_note: "This skill is designed to run within the Mycelium framework (https://github.com/haabe/mycelium). Standalone use will skip the canvas state, theory gates, and harness behavior the skill assumes. Install: /plugin install mycelium@haabe/mycelium."
 ---
 
 # Migrate from legacy to plugin form

@@ -1,8 +1,8 @@
 ---
 name: hunt-business-logic
-description: Hunting skill for business logic vulnerabilities. Built from 7 public bug bounty reports. Use when hunting business logic on any target.
-sources: hackerone_public
-report_count: 7
+description: Hunting skill for business logic vulnerabilities. Built from 12 public bug bounty reports. Covers coupon-race-stacking (Instacart, Stripe, Reverb), negative-quantity-in-cart price tampering (Upserve, Eternal/Zomato), decimal/fraction price-field overflow (Shipt), client-side checkout amount trust on PayPal redirect (WordPress.org), price-per-unit mass-assignment (Krisp), and archived-price swap / cart-TOCTOU (Stripe). Use when hunting business logic — heavy emphasis on financial-impact-demonstrated cases.
+sources: hackerone_public, github
+report_count: 12
 ---
 
 ## Crown Jewel Targets
@@ -186,6 +186,42 @@ A payment flow passed order amount and currency through client-controlled parame
 
 **Scenario 3 — Email Verification Bypass for Unauthorized Monitoring (Mozilla-style)**
 A breach-monitoring service required email verification before enabling monitoring alerts for an address. The verification check was enforced in the UI flow but the underlying API accepted monitoring setup requests for any address using a valid session — skipping the verification step entirely. An attacker could set up monitoring for email addresses they don't own, receiving breach notification data (potentially including credential exposure status) for victim accounts. Impact: privacy violation; attacker gains intelligence on whether a target's email was in a breach without the target's knowledge or consent.
+
+---
+
+## Disclosed Report Citations (Backfill +5 — 2016-2023)
+
+The following real, verified bug-bounty / coordinated-disclosure cases extend this skill. All five share a measurable financial-impact angle (actual $ loss demonstrated or quantifiable platform-wide exposure).
+
+8. **Stripe — Fee discount race redemption** ([H1 #1849626](https://hackerone.com/reports/1849626))
+    - Subclass: coupon/discount race-multi-redemption + financial primitive
+    - Payload: Stripe Support applied a one-time $20,000 fee-credit. Researcher captured the "accept-discount" POST and replayed it 30× in parallel via Burp Turbo Intruder, each acceptance crediting the account anew
+    - Root cause: idempotency missing on discount-acceptance endpoint; no unique constraint on (account_id, discount_id)
+    - Year: 2023 — **$5,000**, $600,000 of fee-free transactions accrued before fix (~$18,000 real Stripe loss at 3% take rate)
+
+9. **Reverb.com — Gift-card race multi-redemption** ([H1 #759247](https://hackerone.com/reports/759247))
+    - Subclass: gift-card / store-credit race-redemption
+    - Payload: single valid gift card, parallel-POST to `/redeem` from 10 sockets via Turbo Intruder. Balance credits N× the face value
+    - Root cause: no row-level lock on gift_card table; balance debit and credit live in separate transactions
+    - Year: 2019 — **$1,500**
+
+10. **Upserve / OLO — Negative-quantity price manipulation** ([H1 #364843](https://hackerone.com/reports/364843))
+    - Subclass: negative-quantity-in-cart price tampering
+    - Payload: `POST /api/order {"items":[{"id":1,"qty":1,"price":50},{"id":2,"qty":-3,"price":50}]}` — order total computes to `-$100`, floors to ~$0 at payment capture, food still fulfills
+    - Root cause: server multiplies `qty * price` with no `qty >= 1` guard
+    - Year: 2018 — textbook citation for the subclass (acknowledged-only program)
+
+11. **Krisp — Pay-less-per-seat via PUT tampering** ([H1 #1446090](https://hackerone.com/reports/1446090))
+    - Subclass: price-per-unit mass-assignment / quantity-discount manipulation
+    - Payload: `PUT /v2/seats` body includes a server-trusted `price` field. Set `price=1` instead of $60. Subscription updates, billing engine charges $1/seat for 100 seats
+    - Root cause: server reads price from request body instead of looking it up by plan_id; classic mass-assignment
+    - Year: 2021 — Stripe-billed SaaS pricing exposure
+
+12. **Stripe — Pay using archived price via mid-flow swap** ([H1 #1328278](https://hackerone.com/reports/1328278))
+    - Subclass: cart-state TOCTOU / cancel-then-deliver (price-version race at checkout)
+    - Payload: merchant archives an old price (e.g., $5 instead of new $50). Buyer starts checkout via the new payment-link, then mid-flow swaps `price_id` back to the archived one. Stripe charges $5; subscription provisions at the new tier
+    - Root cause: payment-link validates "is active", price object validates "exists" — but the join "price.active AND price ∈ link.allowed_prices" is missing
+    - Year: 2021 — Stripe Medium (per-subscription recurring loss)
 
 ---
 

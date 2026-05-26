@@ -34,13 +34,3 @@ description: Use when adding or reviewing Progressive Web App capabilities such 
 
 产出可安装的 Web 应用、离线 fallback、可见更新提示和明确缓存策略。验证 Lighthouse PWA、DevTools Application 面板、离线模式、更新发布和移动端安装流程。
 
-## Related Skills / Boundary
-
-- `fec-data-fetching` — API 服务端状态、缓存失效和乐观更新，不负责 Service Worker。
-- `fec-browser-storage` — 客户端持久化与 IndexedDB/localStorage 选型，不负责 installability。
-- `fec-validation-fix` — PWA 改动后运行 build/Lighthouse/端到端验证。
-
-## Related Agent
-
-- [fec-frontend-architect](../../agents/fec-frontend-architect.md) — PWA 架构设计与 Service Worker 策略选型
-- [fec-performance-optimizer](../../agents/fec-performance-optimizer.md) — PWA 缓存策略性能验证

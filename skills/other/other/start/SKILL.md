@@ -1,6 +1,9 @@
 ---
 name: start
 description: One command from "plugin installed" to "running brief on your idea." Combines /mycelium:setup (project-state initialization) and /mycelium:interview (10-minute discovery brief) into a single flow. Run this immediately after installing the Mycelium plugin — it's the recommended entry point for first-time users.
+metadata:
+  framework_dependency: "mycelium"
+  framework_dependency_note: "This skill is designed to run within the Mycelium framework (https://github.com/haabe/mycelium). Standalone use will skip the canvas state, theory gates, and harness behavior the skill assumes. Install: /plugin install mycelium@haabe/mycelium."
 ---
 
 # /mycelium:start — combined first-time entry

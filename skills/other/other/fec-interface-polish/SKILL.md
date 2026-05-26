@@ -1,6 +1,6 @@
 ---
 name: fec-interface-polish
-description: Use when improving UI polish details such as spacing, typography, radius, shadows, borders, icon alignment, hit areas, text wrapping, tabular numbers, transitions, hover/active/focus states, or visual QA. Use fec-ui-design-direction first when the product design direction is unclear; Chinese triggers include UI 打磨, 界面微调, 视觉还原, 交互状态.
+description: Use when improving UI polish details such as spacing, typography, radius, shadows, borders, icon alignment, hit areas, text wrapping, tabular numbers, transitions, hover/active/focus states, or visual QA. For unclear product design direction, settle the visual direction before polishing details; Chinese triggers include UI 打磨, 界面微调, 视觉还原, 交互状态.
 ---
 
 # 界面质感打磨
@@ -48,9 +48,3 @@ description: Use when improving UI polish details such as spacing, typography, r
 ## Expected Output
 
 输出应说明修正了哪些 polish 维度，并给出文件、属性或组件状态。复核时界面应无文本溢出、无跳动布局、状态反馈完整，动效克制且可访问。
-
-## Related Skills / Boundary
-
-- `fec-ui-design-direction` — 产品语气、首屏结构、视觉方向不清时先使用。
-- `fec-accessibility-check` — 焦点管理、键盘交互和 ARIA 需要专项审查时使用。
-- `fec-frontend-code-review` — 当问题跨越架构、类型、渲染性能和样式时使用。

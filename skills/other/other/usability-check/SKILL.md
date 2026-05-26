@@ -3,6 +3,8 @@ name: usability-check
 description: "Evaluate user-facing interfaces against Nielsen's 10 Usability Heuristics. Complements /mycelium:service-check (Downe = service-level quality, Nielsen = interface-level quality)."
 metadata:
   instruction_budget: "45"
+  framework_dependency: "mycelium"
+  framework_dependency_note: "This skill is designed to run within the Mycelium framework (https://github.com/haabe/mycelium). Standalone use will skip the canvas state, theory gates, and harness behavior the skill assumes. Install: /plugin install mycelium@haabe/mycelium."
 ---
 
 # Usability Heuristic Evaluation

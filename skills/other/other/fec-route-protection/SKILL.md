@@ -131,7 +131,3 @@ router.beforeEach(async (to) => {
 
 产出一套路由守卫实现，覆盖 loading、未登录、权限不足、登录后回跳和会话过期。验证时直接访问私有 URL、刷新页面、切换角色、篡改 redirect 参数，确认行为稳定且 API 仍有服务端授权。
 
-## Related Agent
-
-- [fec-frontend-security-reviewer](../../agents/fec-frontend-security-reviewer.md) - 检查越权、open redirect、客户端权限伪造和认证态存储风险。
-- [fec-frontend-architect](../../agents/fec-frontend-architect.md) - 规划路由层级、权限模型和模块边界。

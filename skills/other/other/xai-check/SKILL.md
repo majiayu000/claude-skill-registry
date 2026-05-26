@@ -3,6 +3,8 @@ name: xai-check
 description: "Explainability (XAI) audit for products containing AI components. Five-stage tier-scaled check: risk classification, stakeholder×question matrix, fidelity audit, system card, recourse path. Honest about what was validated functionally vs what needs user testing."
 metadata:
   instruction_budget: "60"
+  framework_dependency: "mycelium"
+  framework_dependency_note: "This skill is designed to run within the Mycelium framework (https://github.com/haabe/mycelium). Standalone use will skip the canvas state, theory gates, and harness behavior the skill assumes. Install: /plugin install mycelium@haabe/mycelium."
 ---
 
 # XAI Check Skill

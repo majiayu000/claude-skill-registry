@@ -11,11 +11,11 @@ Review the current conversation to extract durable lessons and route each one to
 
 Available destinations:
 
-- **Project CLAUDE.md / AGENTS.md** — `.claude/CLAUDE.md` (may be a symlink to `../AGENTS.md` — resolve it)
+- **Project CLAUDE.md / AGENTS.md** — The root `.claude/CLAUDE.md` (may be a symlink to `../AGENTS.md` — resolve it), plus any nested `CLAUDE.md` / `AGENTS.md` files in subdirectories. Claude Code loads a subdirectory's file on demand when files in that subtree are accessed, so a lesson scoped to one subtree belongs in the nearest enclosing file, with the root reserved for project-wide rules.
 - **Auto memory** — The project-specific memory directory at `~/.claude/projects/<project-hash>/memory/`. Read `MEMORY.md` there if it exists.
 - **Skills** — Project skills at `skills/` or `.claude/skills/` (resolve symlinks)
 
-Read the project CLAUDE.md/AGENTS.md and MEMORY.md. List all skill directories but do not read them yet — Step 2 needs to run first so you know what to look for.
+Discover the project CLAUDE.md/AGENTS.md files (the root file and any nested ones in subdirectories) and read them, then read MEMORY.md. List all skill directories but do not read them yet — Step 2 needs to run first so you know what to look for.
 
 ### Turbo Skill Detection
 
@@ -63,7 +63,7 @@ Keep only lessons that are:
 - **Stable** — likely to remain true across future sessions
 - **Non-obvious** — Claude would not already know this
 - **Actionable** — can be expressed as a rule or instruction
-- **Not already documented** — absent from the files read in Step 1
+- **Not already documented** — absent from the files read in Step 1. A lesson documented only in an unrelated subtree's CLAUDE.md/AGENTS.md still counts as undocumented for the subtree it actually applies to.
 - **Still a concern** — the issue is not already fixed by changes made in this session. If a bug was found and fixed, or a missing feature was added, future sessions will see the corrected code — they don't need a reminder about the old problem. **Exception: successful workflows and procedures are not "resolved" — they're skill candidates precisely because they worked and will need to be repeated.**
 
 Discard anything session-specific, speculative, one-off, or already resolved by code changes in this session (but not successful workflows — see exception above). If no lessons survive filtering, tell the user and stop.
@@ -78,7 +78,7 @@ Assign each surviving lesson to exactly one destination.
 |---|---|
 | **Project improvements** | Actionable improvement to existing **code**: refactoring, performance, reliability, readability, testing, or DX. Not for documentation fixes — factual errors in CLAUDE.md belong in the **Project CLAUDE.md / AGENTS.md** row. Route to `.turbo/improvements.md` via the `/note-improvement` skill. |
 | **Auto memory** | Discovered knowledge with no skill home: API quirks, debugging workarounds, compiler gotchas, tool pitfalls, user preferences. Must not overlap with any existing skill's domain — if it does, route to the skill instead (see skill-first rule above). |
-| **Project CLAUDE.md / AGENTS.md** | Intentional project decisions: conventions, architecture, stack choices, build setup, module boundaries. Also factual corrections to CLAUDE.md content (wrong commands, outdated paths, incorrect conventions) — fix these directly, do not defer to Project improvements. |
+| **Project CLAUDE.md / AGENTS.md** | Intentional project decisions: conventions, architecture, stack choices, build setup, module boundaries. Also factual corrections to CLAUDE.md content (wrong commands, outdated paths, incorrect conventions) — fix these directly, do not defer to Project improvements. When the lesson applies only to one subtree, route it to the nearest enclosing CLAUDE.md/AGENTS.md; reserve the root file for project-wide decisions. |
 | **Existing user/project skill** | Lesson would improve a skill's instructions, supporting files, or reference materials, add a missing edge case, correct its workflow, or refine its trigger conditions. Route to any skill whose *domain* covers the lesson — not just the skill worked on in this session. Changes go to the skill file directly. No contribution flow. |
 | **New skill** | A cohesive body of knowledge emerged that deserves its own on-demand context. The test: would this knowledge be too large for a CLAUDE.md section, and should it only be loaded when relevant? See the skill categories table below. |
 | **Existing turbo skill** | Same criteria as **Existing user/project skill** above, but for turbo skills. **Before routing here, run `test -d ~/.turbo/repo/claude/skills/<name>`; if the directory does not exist, route to the Existing user/project skill destination instead.** Changes go to the installed copy at `~/.claude/skills/`. If `repoMode` is `"fork"` or `"source"`, flag for contribution (see Step 6). |
@@ -128,7 +128,7 @@ Apply approved changes in order:
 
 1. **Improvements** — For items routed to project improvements, run `/note-improvement` with the summary, location, and rationale for each.
 2. **Updates to auto memory** — Read the target, find the right section, append or update in place, following the memory system conventions from the system prompt.
-3. **Updates to CLAUDE.md / AGENTS.md** — Read the target, find the right section, append or update in place. Match the tone and format already present.
+3. **Updates to CLAUDE.md / AGENTS.md** — Read the target file selected in Step 4 (the root file or a nested subtree file), find the right section, append or update in place. Match the tone and format already present.
 4. **Updates to user/project skills** — Run `/create-skill` to apply changes to any file inside the skill directory (SKILL.md, references, scripts, assets).
 5. **New skills** — Run `/create-skill` for each new skill. Provide the trigger conditions and relevant context from the session.
 6. **Updates to turbo skills** — For each lesson routed to a turbo skill:

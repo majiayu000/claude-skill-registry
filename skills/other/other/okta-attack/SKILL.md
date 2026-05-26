@@ -1,8 +1,8 @@
 ---
 name: okta-attack
 description: Okta-as-IdP red-team attack chain — tenant discovery, user enumeration (multiple vectors), authentication flow analysis (factors enumeration, push-notification fatigue, SMS bypass), password spray with lockout discipline, Okta-specific phishing primitives (kits, FastPass abuse, OIDC redirect_uri tampering), MFA enumeration, post-compromise admin API surface. Many enterprise orgs use Okta instead of (or alongside) Entra ID. Distinct endpoints, distinct rate-limiting, distinct factor flows. Use when recon shows `<tenant>.okta.com`, `<tenant>.okta-emea.com`, `<tenant>.oktapreview.com`, or autodiscover-style records pointing at Okta IdP.
-sources: public-okta-docs, idp-redteam-knowledge
-report_count: 0
+sources: public-okta-docs, idp-redteam-knowledge, disclosed-incidents
+report_count: 8
 ---
 
 ## When to use this skill
@@ -318,6 +318,75 @@ Several techniques publicly documented through 2022 (e.g., `/api/v1/authn` diffe
 3. Comparing responses byte-by-byte and timing
 
 If responses are identical, the vector is hardened — pivot to OneDrive-equivalent or different approach.
+
+---
+
+## Disclosed cases / CVEs / coordinated-disclosure writeups
+
+These are the canonical public references that justify the techniques in this skill. Cite them in reports when applicable and use them as analog cases when scoping novel Okta attack chains.
+
+### 1. Okta + Sitel/Sykes — LAPSUS$ supply-chain breach (Jan 2022, disclosed Mar 2022)
+
+- Refs: <https://sec.okta.com/articles/2022/03/official-okta-statement-lapsus-claims/>, <https://www.okta.com/blog/company-and-culture/oktas-investigation-of-the-january-2022-compromise/>, <https://thehackernews.com/2022/03/new-report-on-okta-hack-reveals-entire.html>, <https://www.itpro.com/security/cyber-security/367236/leaked-mandiant-report-okta-breach-lapsus-operation>
+- Flow: LAPSUS$ compromised a support engineer's workstation at Sitel (third-party support sub-processor, acquired Sykes Enterprises). Via Mimikatz + GitHub-hosted tooling on a thin-client jump host, they reached Okta's internal "SuperUser" support tooling for ~25 minutes on Jan 21 2022. Final scope: 2 customer tenants accessed of 366 originally feared.
+- Root cause: Third-party support provider with persistent privileged access to customer tenants, weak segmentation, domain creds stored in spreadsheets, no MFA on the inbound VPN account, delayed reporting (Mandiant report Mar 17, public disclosure Mar 22 only after LAPSUS$ tweeted screenshots).
+- Year: 2022. Severity: Critical (industry-shaking — reset the trust model for IdP supply chains).
+
+### 2. Okta Customer Support HAR-file leak (Sep-Oct 2023)
+
+- Refs: <https://sec.okta.com/articles/2023/11/unauthorized-access-oktas-support-case-management-system-root-cause/>, <https://blog.cloudflare.com/how-cloudflare-mitigated-yet-another-okta-compromise/>, <https://www.beyondtrust.com/blog/entry/okta-support-unit-breach>, <https://www.bleepingcomputer.com/news/security/okta-breach-134-customers-exposed-in-october-support-system-hack/>
+- Flow: Okta support employee logged into a personal Google profile on a corp laptop; Chrome sync exfiltrated saved support-service-account creds to a compromised personal device. Threat actor used those creds to log into the support case-management portal Sep 28 - Oct 17 2023, downloaded HAR files that customers had uploaded for troubleshooting. HAR files contained live session cookies/tokens → session-replay against the customers' Okta tenants. 134 customers exposed, 5 had sessions hijacked (BeyondTrust, Cloudflare, 1Password publicly disclosed).
+- Root cause: Service-account creds reaching an unmanaged personal device via Chrome profile sync + HAR files containing un-sanitized session tokens accepted for replay (no IP/device binding on support tokens).
+- Year: 2023. Severity: Critical. BeyondTrust detected and reported to Okta on Oct 2 2023; Okta did not publicly acknowledge until Oct 19 2023.
+
+### 3. Scattered Spider / Octo Tempest / UNC3944 — Okta tenant social-engineering campaign (2022-2024, ongoing)
+
+- Refs: <https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-320a>, <https://sec.okta.com/articles/2023/08/cross-tenant-impersonation-prevention-and-detection/>, <https://www.darkreading.com/cyberattacks-data-breaches/how-the-okta-cross-tenant-impersonation-attacks-succeeded>, <https://attack.mitre.org/groups/G1015/>
+- Flow: Group calls IT help desk impersonating an employee (LinkedIn-profile-sourced identity), requests MFA reset + password reset, gains initial Okta foothold. Then elevates to Okta Super-Admin, configures a second IdP under attacker control, enables inbound federation + account-linking, modifies NameID on attacker-IdP to match the target user, and impersonates any Okta user across the tenant without their cred. Used in MGM and Caesars attacks (Sep 2023, $100M+ losses) and confirmed on 4+ Okta customers in the Jul-Aug 2023 campaign.
+- Root cause: Help-desk-as-trust-anchor with no out-of-band verification + Okta inbound federation feature allowing attacker-controlled IdP to issue arbitrary-NameID assertions accepted as authentic.
+- Year: 2023 onwards. Severity: Critical. Joint CISA/FBI advisory AA23-320A.
+
+### 4. Okta cross-origin authentication credential stuffing (Apr-May 2024)
+
+- Refs: <https://sec.okta.com/articles/2024/05/detecting-cross-origin-authentication-credential-stuffing-attacks/>, <https://thehackernews.com/2024/05/okta-warns-of-credential-stuffing.html>, <https://arcticwolf.com/resources/blog/okta-cross-origin-authentication-feature-customer-identity-cloud-targeted-credential-stuffing-attacks/>
+- Flow: Customer Identity Cloud (Auth0-derived) cross-origin auth endpoint silently accepted credential-stuffing from unregistered origins. Observed Apr 15 - May 2024. Tenant log signals: `fcoa` (failed cross-origin auth), `scoa` (successful cross-origin auth), `pwd_leak` (breached password match).
+- Root cause: Cross-origin auth permitted on all tenants by default with no origin allowlist enforced at the auth-API edge; credential-stuffing throttling applied per-endpoint not per-tenant.
+- Year: 2024. Severity: High (mass-scale ATO via reused creds).
+
+### 5. CVE-2024-0981 — Okta AD/LDAP DelAuth bcrypt cache-key auth bypass (Oct 2024)
+
+- Refs: <https://trust.okta.com/security-advisories/okta-ad-ldap-delegated-authentication-username/>, <https://www.theregister.com/2024/11/04/why_the_long_name_okta/>, <https://www.nodejs-security.com/blog/okta-bcrypt-security-incident-bun-nodejs>
+- Flow: Okta cached AD/LDAP DelAuth results keyed by `bcrypt(userId + username + password)`. Bcrypt silently truncates input at 72 bytes. When username length ≥ 52 chars, the password bytes fall past the 72-byte boundary → cache key collapses to be password-independent. If the user had a prior successful login (cache populated) AND the AD/LDAP agent was unreachable AND MFA was disabled → any password authenticated.
+- Root cause: Using bcrypt as a general-purpose hash without accounting for the algorithm's 72-byte input limit + cache fallback path inverted the security model (cache trusted over live auth).
+- Year: 2024. Severity: High. Bug introduced Jul 23 2024, internally found and fixed Oct 30 2024 (~3 months exposure window).
+
+### 6. Okta Verify iOS push-response bypass (CVE-2024-VERIFY, disclosed Apr 2024)
+
+- Refs: <https://sec.okta.com/articles/2024/04/okta-verify-vulnerability-disclosure-report-response-and-remediation/>
+- Flow: Okta Verify iOS 9.25.1-beta / 9.27.0 had a bug in the iOS ContextExtension push-action handler. From the lock screen long-press / drag-down banner / Apple Watch reply path, both the "Yes, it's me" and "No, it's not me" buttons returned the same accept-auth response. A push-fatigued user who explicitly tapped "No" still approved the auth.
+- Root cause: Two notification-response action handlers wired to the same backend confirmation path — UX-level Deny did not propagate as a backend rejection.
+- Year: 2024. Severity: High (silently defeats the user's last line of defence against push fatigue / Scattered-Spider-style push bombing).
+
+### 7. Varonis Threat Labs — "CrossTalk" + "Secret Agent" Okta abuse (Jan 2023)
+
+- Refs: <https://www.varonis.com/blog/okta-attack-vectors>
+- Flow: (a) CrossTalk: any Okta tenant admin (incl. free-developer tenant) could issue SMS / email templates that delivered to *any* email/phone — sent via legitimate Okta mailer infrastructure (passes SPF/DKIM/DMARC for okta.com). Used to stage cross-tenant phishing that arrives from a trusted sender. (b) Secret Agent: the SSWS token stored on the on-prem Okta AD-agent sync server was decryptable from disk; possessor could register a rogue AD agent that intercepted DelAuth plaintext credentials for the entire org.
+- Root cause: (a) Tenant-bounded sender identity not enforced on outbound notification API. (b) Agent SSWS bootstrap-secret stored recoverable on disk; new-agent enrollment did not require admin co-signature.
+- Year: 2023. Severity: High for both. Disclosed and patched by Okta.
+
+### 8. Okta admin-console session cookie theft via stealer malware (2022-2024, ongoing class)
+
+- Refs: <https://sec.okta.com/articles/2023/08/cross-tenant-impersonation-prevention-and-detection/>, <https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-320a>, <https://www.beyondtrust.com/blog/entry/okta-support-unit-breach>
+- Flow: Class of attack — stealer malware (Lumma, RedLine, Raccoon, StealC) on a corp endpoint exfiltrates `sid` cookie from `<tenant>.okta.com` and `<tenant>-admin.okta.com`. Without IP-binding or device-binding on the Okta session, the attacker replays the cookie from a residential proxy and obtains the user's full session (incl. admin if the victim was an admin) — bypasses MFA entirely (already-MFA-completed session). Underpinned both the Oct 2023 HAR-file incident and most Scattered Spider intrusions.
+- Root cause: Okta session cookies (until DPoP / Device Bound Session Cookies / asymmetric session keys are enforced) are bearer tokens — anyone holding the cookie is the user.
+- Year: 2022-2024 (ongoing class). Severity: Critical when admin sessions stolen.
+
+### Take-aways for hunters
+
+- The 2022 LAPSUS$, 2023 HAR-file, and 2023 Scattered Spider campaigns share a pattern: **the attack rarely hits Okta's product code — it hits the trust relationships around Okta** (third-party support, help-desk verification, customer-uploaded artifacts, federated IdPs). Recon should map these trust edges first.
+- CVE-2024-0981 (bcrypt 72-byte truncation) is the rare pure-product Okta CVE — most disclosed Okta bugs are configuration or operational.
+- Push fatigue is not just social engineering — the Okta Verify iOS bug shows the platform itself can silently approve a denied push. Treat any Okta push factor as bypassable in 2024+.
+- For red-team scoping: HAR-file replay, inbound-federation IdP injection, and stealer-cookie replay are the three highest-yield post-recon primitives observed in the wild.
 
 ---
 

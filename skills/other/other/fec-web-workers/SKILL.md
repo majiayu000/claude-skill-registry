@@ -34,12 +34,3 @@ description: Use when moving expensive browser work off the main thread with Web
 
 计算密集型操作在后台线程执行，主线程输入和滚动恢复流畅，错误与取消路径明确，Worker 在卸载时被终止且无内存泄漏。
 
-## Related Skills / Boundary
-
-- `fec-canvas-threejs` — 渲染和动画循环；只有复杂计算阻塞渲染时联用本 skill。
-- `fec-list-virtualization` — 大列表 DOM 渲染优化；不要用 Worker 代替虚拟滚动。
-- `fec-validation-fix` — Worker 改动后运行构建、类型检查和关键交互验证。
-
-## Related Agent
-
-- [fec-performance-optimizer](../../agents/fec-performance-optimizer.md) — 通过 Profiler 验证 Worker 效果，识别主线程阻塞

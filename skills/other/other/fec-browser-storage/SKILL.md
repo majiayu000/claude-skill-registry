@@ -33,8 +33,3 @@ Load [references/storage-patterns.md](references/storage-patterns.md) for storag
 
 产出统一的 storage/cookie/db 封装，key 有命名空间，数据有过期或清理策略，敏感数据只进入合适的安全边界。
 
-## Related Skills / Boundary
-
-- `fec-security-review` — token、隐私数据和 XSS 读取风险深审。
-- `fec-pwa-implementation` — Service Worker 离线缓存和 installability。
-- `fec-data-fetching` — server state 和 API 缓存，不负责浏览器持久化。

@@ -1,6 +1,9 @@
 ---
 name: setup
 description: First-run setup for the Mycelium plugin. Creates project-state directories (.claude/canvas, .claude/diamonds, .claude/memory, .claude/harness) and minimal starter files in the user's project. Idempotent — re-running on an initialized project is a no-op. Run this once after installing the Mycelium plugin and before invoking other skills.
+metadata:
+  framework_dependency: "mycelium"
+  framework_dependency_note: "This skill is designed to run within the Mycelium framework (https://github.com/haabe/mycelium). Standalone use will skip the canvas state, theory gates, and harness behavior the skill assumes. Install: /plugin install mycelium@haabe/mycelium."
 ---
 
 # Mycelium plugin setup

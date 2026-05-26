@@ -73,8 +73,3 @@ Load [references/advanced-form-patterns.md](references/advanced-form-patterns.md
 
 产出类型安全、可访问、提交状态明确的表单；复杂字段和文件上传有 schema 约束，输入过程无明显卡顿，服务端错误能回填到用户可理解的位置。
 
-## Related Skills / Boundary
-
-- `fec-component-testing` — 表单交互、校验错误和提交回调的组件测试。
-- `fec-data-fetching` — 提交后的 mutation、缓存失效和乐观更新。
-- `fec-accessibility-check` — 复杂表单的 label、错误提示和焦点顺序深审。

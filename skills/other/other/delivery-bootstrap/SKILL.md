@@ -3,6 +3,8 @@ name: delivery-bootstrap
 description: "Use when starting implementation on a new or unfamiliar codebase. Auto-detects tech stack and sets up development context."
 metadata:
   instruction_budget: "54"
+  framework_dependency: "mycelium"
+  framework_dependency_note: "This skill is designed to run within the Mycelium framework (https://github.com/haabe/mycelium). Standalone use will skip the canvas state, theory gates, and harness behavior the skill assumes. Install: /plugin install mycelium@haabe/mycelium."
 ---
 
 # Delivery Bootstrap Skill

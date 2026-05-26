@@ -50,13 +50,21 @@ The loop:
 4. Run the play on a tiny input or one row.
 5. Inspect the result, then add the next step.
 
+When the user gives you an existing or starter `*.play.ts`, run it before
+editing output getter paths. `tools describe` shows declared contracts and
+semantic getters; it does not prove what that play serialized at runtime. If
+the run output is empty, null, or shaped wrong, use the `top-level outputs:` or
+`inspect rows:` `deepline db query` command printed by the run, then edit from
+that stored row. Top-level `ctx.tools.execute` / `ctx.step` results are in
+`top-level outputs`; `ctx.map` stage results are in `inspect rows`.
+
 Use direct CLI calls for probes, schema inspection, and known prebuilt one-offs. Use a play as soon as the work has multiple provider calls, row fanout, a waterfall, intermediate filtering, or a final output schema the user may want to rerun.
 
 A play should accumulate known-good steps. It should not be a last-minute escape hatch after broad CLI probing, JSON parsing failures, or output truncation. If a `plays check` failure takes more than two edits to resolve, stop and re-anchor on current play-authoring patterns in `shared/plays-best-practices.md`.
 
 | Building block | What it is                                                                                                                                                                                                                                      | How to find one                           | How to invoke                                                                                                                   |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| **Tool**       | A single provider call. One tool ID per integration capability (e.g. an email-finder, a company-search, a job-search).                                                                                                                          | `deepline tools search <category> --json` | `deepline tools execute <id> --payload '{...}' --json` from the CLI, or `ctx.tools.execute(key, id, payload, { description })` from a play |
+| **Tool**       | A single provider call. One tool ID per integration capability (e.g. an email-finder, a company-search, a job-search).                                                                                                                          | `deepline tools search <category> --json` | `deepline tools execute <id> --payload '{...}' --json` from the CLI, or `ctx.tools.execute({ id, tool, input, description })` from a play |
 | **Play**       | A typed workflow that composes tools and other plays. Some plays are shipped by Deepline ("prebuilt") for canonical patterns like email waterfalls; others are written by you in a `*.play.ts` file ("custom"). Both kinds invoke the same way. | `deepline plays search <category> --json` | `deepline plays run <name-or-file> --input '{...}' --watch` from the CLI, or `ctx.runPlay(name, input)` from another play |
 
 
@@ -163,7 +171,7 @@ Set up a task-descriptive slug at step zero (e.g. `deepline/data/acme-email-wate
 WORKDIR="deepline/data/<descriptive-slug>" && mkdir -p "$WORKDIR" && echo "$WORKDIR"
 ```
 
-When authoring a custom `*.play.ts`, keep the play file in the current repo/worktree or another directory with the Deepline SDK dependencies available. After a run completes, export the final CSV to the user-requested output path with `deepline runs export <run-id> --out <path>`. The play source itself should not live in a dependency-free temp/eval directory.
+When authoring a custom `*.play.ts`, keep the play file in the current working directory when `node_modules/deepline` is available there; otherwise use a project directory with the Deepline SDK dependencies installed. Eval and scratch workspaces may provide those dependencies locally, and in that case the play source should stay inside the current workspace. Do not search parent repos or unrelated worktrees for old `*.play.ts` scratch files. After a run completes, export the final CSV to the user-requested output path with `deepline runs export <run-id> --out <path>`.
 
 ### `ctx.csv` returns a dataset, not an array
 

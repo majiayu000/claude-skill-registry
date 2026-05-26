@@ -3,6 +3,8 @@ name: user-needs-map
 description: "Map user needs independently of solutions using Allen's User Needs Mapping methodology. Identifies underserved needs that feed into the Opportunity Solution Tree."
 metadata:
   instruction_budget: "35"
+  framework_dependency: "mycelium"
+  framework_dependency_note: "This skill is designed to run within the Mycelium framework (https://github.com/haabe/mycelium). Standalone use will skip the canvas state, theory gates, and harness behavior the skill assumes. Install: /plugin install mycelium@haabe/mycelium."
 ---
 
 # User Needs Mapping

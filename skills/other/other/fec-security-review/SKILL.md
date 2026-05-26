@@ -33,13 +33,3 @@ description: Use when reviewing frontend security risks such as XSS, CSRF, sensi
 ## Expected Output
 
 输出 CRITICAL/HIGH/MEDIUM/LOW 分级安全审查报告，每个问题关联具体文件和行号，给出修复建议；报告保存为 `reports/security-review-YYYY-MM-DD-HHmmss.md`。
-
-## Related Skills / Boundary
-
-- `fec-frontend-code-review` — 综合代码质量、架构和可维护性评审。
-- `fec-accessibility-check` — 无障碍专项，不处理威胁建模。
-- `fec-browser-storage` — 存储方案选择；敏感数据泄露风险仍以本 skill 为准。
-
-## 与子代理的配合
-
-需要结合 `npm audit`、OWASP 清单、Grep 高危 DOM/API 模式时，可委托 `fec-frontend-security-reviewer` 子代理。

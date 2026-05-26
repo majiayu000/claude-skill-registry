@@ -45,9 +45,3 @@ description: Use when implementing new frontend behavior, fixing bugs, or refact
 - 实现保持最小范围，重构只在测试通过后进行。
 - 总结运行过的测试命令、覆盖的行为和未覆盖风险。
 
-## Related Skills / Boundary
-
-- `fec-component-testing` — 编写组件、hook、composable 和轻量集成测试。
-- `fec-e2e-testing` — 编写真实浏览器关键路径测试。
-- `fec-testing-strategy` — 需要先规划测试分层时使用。
-- `fec-validation-fix` — 已有验证命令失败后的修复流程。

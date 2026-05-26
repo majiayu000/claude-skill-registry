@@ -98,7 +98,7 @@ description: Use when planning or implementing an intentional migration from Jav
 
 - 每次迁移一个完整功能或页面
 - 从简单到复杂：静态页 → 列表页 → 表单页 → 复杂交互页
-- 迁移时提取可复用组件，遵循 `fec-react-project-standard` 或 `fec-vue3-project-standard` 的目录结构
+- 迁移时提取可复用组件，遵循目标 React 或 Vue 项目的目录结构
 - 每完成一个模块，补充单元测试和 E2E 关键路径
 
 ### 阶段 3：收尾
@@ -149,7 +149,7 @@ description: Use when planning or implementing an intentional migration from Jav
 - [ ] 可访问性：表单有 label、交互可键盘操作
 - [ ] 无 XSS 风险（用户输入已转义或使用安全 API）
 - [ ] 关键路径有测试覆盖
-- [ ] 符合目标框架的项目规范（参考 `fec-react-project-standard` / `fec-vue3-project-standard`）
+- [ ] 符合目标框架的项目规范（参考目标 React / Vue 项目约定）
 - [ ] 图片使用原项目资源，无内联 SVG；若原项目用 iconfont/IcoMoon 则继续使用
 - [ ] 样式参考原项目效果但不照搬 CSS，优先 flex 布局，无内联样式
 - [ ] 视觉与交互与原项目一致，代码更简洁易维护
@@ -178,10 +178,3 @@ Load [references/migration-report-template.md](references/migration-report-templ
 - 类型定义完整，无 `any` 滥用，API 调用统一且类型安全
 - 图片使用原项目资源，样式使用 flex 布局，无内联样式
 - 新代码文案已 i18n，关键路径有测试覆盖
-
-## 相关技能
-
-- `fec-legacy-web-standard` — 理解源项目（jQuery、MPA）的代码模式
-- `fec-react-project-standard` — 迁移至 React 时的目标结构规范
-- `fec-vue3-project-standard` — 迁移至 Vue 3 时的目标结构规范
-- `fec-frontend-architect` — 大型迁移的架构设计与风险评估

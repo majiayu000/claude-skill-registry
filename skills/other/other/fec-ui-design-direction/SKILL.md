@@ -1,6 +1,6 @@
 ---
 name: fec-ui-design-direction
-description: Use when building or improving frontend UI that needs product-specific design direction, visual hierarchy, layout tone, first-screen composition, or domain-appropriate interaction design. Use fec-implement-from-design when an external design file is authoritative; Chinese triggers include UI 设计方向, 视觉风格, 界面质感, 产品化界面.
+description: Use when building or improving frontend UI that needs product-specific design direction, visual hierarchy, layout tone, first-screen composition, or domain-appropriate interaction design. When an external design file is authoritative, implement from that source instead of inventing direction; Chinese triggers include UI 设计方向, 视觉风格, 界面质感, 产品化界面.
 ---
 
 # UI 设计方向
@@ -49,9 +49,3 @@ description: Use when building or improving frontend UI that needs product-speci
 ## Expected Output
 
 输出应包含明确的设计方向、组件/布局边界、状态覆盖、响应式策略和验证结果。实现后的 UI 应符合业务语境，首屏主体明确，视觉层级支持快速扫描。
-
-## Related Skills / Boundary
-
-- `fec-interface-polish` — 用于细化间距、圆角、阴影、动效、命中区域等微交互质感。
-- `fec-implement-from-design` — 当 Figma/Sketch/MasterGo/Pixso/墨刀/摹客设计稿是事实来源时优先使用。
-- `fec-accessibility-check` — 需要专项检查键盘、焦点、ARIA、语义结构时使用。

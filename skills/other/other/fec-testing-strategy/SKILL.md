@@ -31,19 +31,7 @@ description: Use when planning or reviewing a frontend testing strategy, selecti
 - 不把 E2E 当作单元/组件测试的替代品；不把组件测试当作真实浏览器兼容保证。
 - 不为小改动强制引入新框架；优先复用仓库已有工具和脚本。
 
-## Related Skills / Boundary
-
-- `fec-component-testing` — author/review unit, component, and light integration tests close to UI code.
-- `fec-e2e-testing` — author/review real-browser cross-page journeys and CI artifacts.
-- `fec-storybook-component-doc` — component state docs, interaction tests, and visual baselines.
-- `fec-validation-fix` — run existing lint/typecheck/test/build commands and fix failures.
-- `fec-accessibility-check` / `fec-security-review` — deep specialty quality reviews.
-- `fec-frontend-code-review` — general PR review when testing is only one dimension.
-
 ## Expected Output
 
 输出测试分层建议、风险到测试层的映射、优先级、建议命令、需新增或调整的测试文件范围，以及明确分流到哪些专项 skill 或 agent。
 
-## Related Agent
-
-- [fec-frontend-test-planner](../../agents/fec-frontend-test-planner.md) - 为功能、PR 或里程碑制定测试分层与覆盖矩阵。

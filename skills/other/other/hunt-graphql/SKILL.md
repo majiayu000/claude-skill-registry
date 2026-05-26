@@ -1,8 +1,8 @@
 ---
 name: hunt-graphql
-description: Hunting skill for graphql vulnerabilities. Built from 3 public bug bounty reports. Use when hunting graphql on any target.
-sources: hackerone_public
-report_count: 3
+description: Hunting skill for graphql vulnerabilities. Built from 12 public bug bounty reports across IDOR via node() / GID, mutation IDOR including AI/LLM features, cross-tenant IDOR, SSRF via argument, batching-DoS, query-cost-bypass, SQLi via argument, broken-object-level-authz, auth-bypass via unscoped mutations, and PII exposure from missing field-level authz. Use when hunting graphql on any target.
+sources: hackerone_public, github, gitlab_security
+report_count: 12
 ---
 
 ## Crown Jewel Targets
@@ -274,6 +274,66 @@ An attacker with admin access initiates a repository transfer to another organiz
 
 **Scenario C — Introspection as Reconnaissance Prerequisite (Shopify-pattern)**
 On a platform where introspection is intentionally enabled (per-program rules), a hunter maps the full schema and discovers undocumented mutations for `fulfillmentOrderMove` and `inventoryAdjust` that are not surfaced in public docs. These mutations accept merchant IDs as arguments with no scoping validation visible in the schema. This recon directly enables targeted IDOR testing against merchant-to-merchant data isolation — the introspection itself is zero-severity, but it is the entry point to critical findings.
+
+---
+
+## Disclosed Report Citations (Backfill +9 — 2019-2024)
+
+The following real, verified bug-bounty / coordinated-disclosure cases extend this skill beyond the original 3 internal references. Each is a distinct GraphQL subclass with a working PoC documented in the cited writeup.
+
+4. **HackerOne — Confidential user-data exposure via GraphQL `User` type** ([H1 #489146](https://hackerone.com/reports/489146))
+    - Subclass: broken field-level authorization (PII exposure)
+    - Payload: direct `user(id:...)` query returning `email`, `backup_codes_hash`, `facebook_user_id`, `account_recovery_phone_number_verified_at`, `totp_enabled`
+    - Root cause: backend migration introduced a GraphQL `User` type with no field-level authz; any authenticated user could enumerate PII of all users
+    - Year: 2019 — **$20,000**, 1,028 upvotes
+
+5. **HackerOne — `DestroyLlmConversation` mutation IDOR (Copilot pre-release)** ([H1 #2218334](https://hackerone.com/reports/2218334))
+    - Subclass: mutation IDOR on AI/LLM feature
+    - Payload: `mutation { destroyLlmConversation(input:{id:"<victim_conv_id>"}) { … } }`
+    - Root cause: new LLM-conversation mutation shipped without authorization decorator; any user could destroy any conversation
+    - Year: 2023 — caught pre-launch, no bounty (202 upvotes)
+
+6. **Shopify — `BillingDocumentDownload` cross-tenant IDOR** ([H1 #2207248](https://hackerone.com/reports/2207248))
+    - Subclass: IDOR on relay GID across tenants
+    - Payload: `query { billingDocumentDownload(id:"gid://shopify/BillingInvoice/<other_shop_id>") { url } }`
+    - Root cause: `BillingInvoice` resolver authorized the requester's shop but did not verify the invoice belonged to that shop
+    - Year: 2024 — **$5,000**, 175 upvotes
+
+7. **Shopify — Rate-limit bypass via negative cost** ([H1 #481518](https://hackerone.com/reports/481518))
+    - Subclass: query-cost-calc abuse (sibling pattern to alias batching)
+    - Payload: `query { products(first:-100) { … } }` — negative `first` produced a negative query-cost contribution, refilling the leaky-bucket each call
+    - Root cause: query-cost calculator did not floor at zero; negative values subtracted from the consumed budget
+    - Year: 2019 — **$1,000**
+
+8. **Stripe — Cross-tenant IDOR via `UpdateAtlasApplicationPerson`** ([H1 #1066203](https://hackerone.com/reports/1066203))
+    - Subclass: cross-tenant IDOR on mutation
+    - Payload: `mutation { updateAtlasApplicationPerson(input:{personId:"<victim_person_id>", …}) }` — adding/modifying a co-founder on another merchant's Stripe Atlas application
+    - Root cause: mutation scoped only to "is admin of some merchant," not "is admin of the merchant owning this person"
+    - Year: 2020 — bounty undisclosed (resolved)
+
+9. **EXNESS — SSRF in GraphQL `allTicks` query** ([H1 #1864188](https://hackerone.com/reports/1864188))
+    - Subclass: SSRF via GraphQL argument
+    - Payload: `query { allTicks(source:"http://169.254.169.254/latest/meta-data/") { … } }` — `source` arg fed into a server-side HTTP client
+    - Root cause: GraphQL field accepted a URL arg and dereferenced it without scheme/host allowlist
+    - Year: 2023 — **$3,000**, 249 upvotes
+
+10. **EXNESS — GraphQL attribute-batching DoS** ([H1 #2293642](https://hackerone.com/reports/2293642))
+    - Subclass: DoS via batching / deep-attribute amplification on unauth endpoint
+    - Payload: single HTTP request containing N batched operations, each requesting deeply nested attribute trees, sustained until origin OOM
+    - Root cause: no query-depth, query-complexity, or batch-size limits on unauthenticated `/graphql`
+    - Year: 2024 — bounty undisclosed (resolved)
+
+11. **GitLab — Malicious-runner attach via `runnerUpdate` (CVE-2023-2478)** ([Advisory](https://about.gitlab.com/releases/2023/05/05/critical-security-release-gitlab-15-11-2-released/))
+    - Subclass: auth bypass on mutation / project-scope missing
+    - Payload: `mutation { runnerUpdate(input:{id:"<attacker_runner_gid>", associatedProjects:["<victim_project_gid>"]}) }`
+    - Root cause: `runnerUpdate` did not check that the caller had Maintainer on the target project — any user could bind their malicious runner and intercept CI jobs (build secrets, code execution)
+    - Year: 2023 — Critical, CVSS 9.6 (H1 bounty undisclosed; GitLab Critical-tier typically $20k–$35k)
+
+12. **AS Watson — Auth bypass via unrestricted `createAdminUser` mutation** ([HackerOne blog](https://www.hackerone.com/blog/how-graphql-bug-resulted-authentication-bypass))
+    - Subclass: sensitive mutation reachable without authentication (introspection-aided discovery)
+    - Payload: `mutation { createAdminUser(input:{email:"x@x", role:"ADMIN", password:"…"}) { token } }` invoked unauthenticated after schema enumeration via introspection
+    - Root cause: schema lacked per-field authorization directives; `createAdminUser` exposed to public role
+    - Year: 2023 — "Best Bug" prize at HackerOne Ambassador World Cup
 
 ---
 

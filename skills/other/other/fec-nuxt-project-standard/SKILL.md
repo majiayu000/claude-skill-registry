@@ -1,6 +1,6 @@
 ---
 name: fec-nuxt-project-standard
-description: Use when creating or reviewing Nuxt 3 projects, file routes, pages, layouts, SSR/SSG/SPA behavior, Nuxt data fetching, route middleware, plugins, modules, server routes, or Nuxt-specific Vue 3 conventions. Use fec-vue3-project-standard for generic Vue component architecture; Chinese triggers include Nuxt, Nuxt 3.
+description: Use when creating or reviewing Nuxt 3 projects, file routes, pages, layouts, SSR/SSG/SPA behavior, Nuxt data fetching, route middleware, plugins, modules, server routes, or Nuxt-specific Vue 3 conventions. For generic Vue component architecture, apply the project's Vue conventions separately; Chinese triggers include Nuxt, Nuxt 3.
 ---
 
 # Nuxt 3 项目规范
@@ -16,8 +16,8 @@ description: Use when creating or reviewing Nuxt 3 projects, file routes, pages,
 1. 先识别目标属于 Nuxt pages/layouts、渲染模式、数据获取、route middleware、plugin/module 还是 server route。
 2. 明确 SSR / SSG / SPA 选择，避免服务端可执行代码依赖 `window` 或 `document`。
 3. 数据获取优先使用 Nuxt 的 `useFetch` / `useAsyncData`，并检查水合一致性。
-4. 路由鉴权、redirect 和权限问题与 `fec-route-protection` 对齐。
-5. 通用 Vue 组件架构问题分流到 `fec-vue3-project-standard`。
+4. 路由鉴权、redirect 和权限问题与路由保护 workflow 对齐。
+5. 通用 Vue 组件架构问题分流到 Vue 项目 workflow。
 
 ## 项目结构
 
@@ -113,12 +113,6 @@ export default defineNuxtConfig({
 - 使用 `useState` 共享状态时注意 SSR 序列化
 - 图片使用 `NuxtImg`，链接使用 `NuxtLink`
 - 避免在 `setup` 顶层使用 `await` 导致阻塞，优先用 `useAsyncData` / `useFetch`
-
-## Related Skills / Boundary
-
-- `fec-vue3-project-standard` — 通用 Vue 3 组件、Composables 与 Pinia 边界。
-- `fec-route-protection` — 登录态、权限路由、redirect 和 middleware 风险。
-- `fec-data-fetching` — 客户端 server state 或缓存模式；Nuxt `useFetch`/`useAsyncData` 仍以本 skill 为准。
 
 ## Expected Output
 

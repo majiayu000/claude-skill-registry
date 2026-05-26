@@ -78,8 +78,3 @@ export default defineConfig(({ mode }) => {
 
 输出应包含项目类型判断、关键配置变更、环境变量安全说明、构建/开发性能验证方式。完成后 Vite 配置应可类型检查、可构建、密钥不泄露，并能解释 dev 与 build 的差异。
 
-## Related Skills / Boundary
-
-- `fec-react-project-standard` / `fec-vue3-project-standard` — 组件架构、状态和目录结构。
-- `fec-monorepo-project-standard` — workspace、包边界和任务编排。
-- `fec-security-review` — 客户端密钥、CSP、依赖供应链和 XSS 深审。

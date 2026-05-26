@@ -3,6 +3,8 @@ name: log-evidence
 description: "Record findings from completed offline human tasks (interviews, observations, outreach) back into the canvas. The re-entry point after /mycelium:handoff."
 metadata:
   instruction_budget: "58"
+  framework_dependency: "mycelium"
+  framework_dependency_note: "This skill is designed to run within the Mycelium framework (https://github.com/haabe/mycelium). Standalone use will skip the canvas state, theory gates, and harness behavior the skill assumes. Install: /plugin install mycelium@haabe/mycelium."
 ---
 
 # Log Evidence Skill

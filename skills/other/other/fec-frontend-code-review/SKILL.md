@@ -9,13 +9,6 @@ description: Use when the user asks for general frontend code review, PR review,
 
 从架构、类型安全、可访问性、样式一致性、性能和可测试性等 8 个维度审查前端代码质量，输出分级评审报告。
 
-## Procedure
-
-1. 明确审查范围：git diff、指定文件、PR 或设计实现结果。
-2. 按架构、类型安全、渲染与状态、样式、可访问性、可维护性、测试和安全做横向扫描。
-3. 将安全、无障碍、E2E 或性能深水区分流到专项 skill。
-4. 按严重程度输出具体文件、行号、风险和修复建议；报告格式见 [references/report-template.md](references/report-template.md)。
-
 ## 评审维度
 
 1. 架构
@@ -93,17 +86,6 @@ description: Use when the user asks for general frontend code review, PR review,
 ## Detailed References
 
 Load [references/report-template.md](references/report-template.md) when writing the code review report. Findings must be specific and actionable; do not write vague advice such as "optimize performance" without identifying the concrete code pattern.
-
-## 与子代理的配合
-
-需要基于 **git diff**、按 **CRITICAL / HIGH / MEDIUM / LOW** 分级、合并同类问题并输出 **Review Summary 表** 时，可委托插件内置的 **`fec-frontend-code-reviewer`** 子代理；报告文件命名与本 Skill 相同（`code-review-YYYY-MM-DD-HHmmss.md`）。
-
-## Related Skills / Boundary
-
-- `fec-security-review` — XSS、CSRF、token、文件上传、第三方脚本、CSP 等安全深审。
-- `fec-accessibility-check` — WCAG、键盘、焦点、语义和 ARIA 深审。
-- `fec-e2e-testing` — 关键路径、flaky、trace、CI artifacts。
-- `fec-validation-fix` — 运行验证命令并修复失败。
 
 ## Expected Output
 

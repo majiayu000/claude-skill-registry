@@ -1,8 +1,8 @@
 ---
 name: hunt-cache-poison
-description: Hunting skill for cache poison vulnerabilities. Built from 4 public bug bounty reports. Use when hunting cache poison on any target.
-sources: github, hackerone_public
-report_count: 4
+description: Hunting skill for cache poison vulnerabilities. Built from 10 public bug bounty reports including X-Forwarded-Host poisoning, X-HTTP-Method-Override / GCS cache, reflected→stored XSS via cache, classic Omer-Gil Web Cache Deception, Cloudflare Cache Deception Armor bypass, session-token cache deception, Akamai hop-by-hop smuggling → server-side edge poisoning, and Kettle's 2024 path-normalization WCD against Cloudflare/Fastly/GCP. Use when hunting cache poisoning, Web Cache Deception, CDN-fronted apps.
+sources: github, hackerone_public, portswigger_research, omergil_research, youstin_research
+report_count: 10
 ---
 
 ## Crown Jewel Targets
@@ -241,6 +241,48 @@ On a platform serving authenticated account pages, an attacker crafted a URL lik
 
 **Scenario 3 — Affiliate Link Hijacking via URL Path Manipulation (Shopify Linkpop)**
 An attacker discovered that the Linkpop affiliate link service would cache responses based on URL path but reflected a manipulated product destination URL in the cached HTML. By visiting a specially crafted path before legitimate users, the attacker poisoned the cache to redirect affiliate clicks to an attacker-controlled domain instead of the legitimate Amazon product. Victims clicking what appeared to be valid merchant links were sent to attacker infrastructure, enabling credential phishing and loss of affiliate commission revenue for the legitimate merchant.
+
+---
+
+## Disclosed Report Citations (Backfill +6 — 2017-2024)
+
+The following real, verified bug-bounty / coordinated-disclosure cases extend this skill. Spans the two major families: cache **poisoning** (attacker influences a cached response served to victims) and cache **deception** (attacker tricks the cache into storing a victim's private response).
+
+5. **Shopify — Cache poisoning via X-Forwarded-Host** ([H1 #977851](https://hackerone.com/reports/977851))
+    - Subclass: X-Forwarded-Host header poisoning (unkeyed input → redirect/script-src corruption)
+    - Payload: `GET /any-path` with `X-Forwarded-Host: attacker.com` — single request persisted attacker host in cached response across `apps.shopify.com` and localized subdomains
+    - Root cause: X-Forwarded-Host influenced asset/redirect URL generation but was NOT part of the cache key
+    - Year: 2020 — **$1,300 → escalated to $6,300** (one-shot poison, multi-host blast radius)
+
+6. **HackerOne — Cache poisoning DoS via X-Forwarded-Port** ([H1 #409370](https://hackerone.com/reports/409370))
+    - Subclass: X-Forwarded-Host / X-Forwarded-Port DoS (poisoned redirect to invalid port)
+    - Payload: `GET /<redirect-path>` with `X-Forwarded-Port: 1` — cached 301 redirect pointed legitimate users at port 1, breaking access
+    - Root cause: trusted X-Forwarded-* headers in 301 redirect generation; cache stored the bad Location
+    - Year: 2018 — **$2,500** (foundational H1-on-H1 case)
+
+7. **GitLab — Cache poisoning DoS via X-HTTP-Method-Override** ([H1 #1160407](https://hackerone.com/reports/1160407))
+    - Subclass: method-cloaking / GCS cache-key bleed (HEAD response stored under GET key)
+    - Payload: `GET /assets/webpack/*.js` with `X-HTTP-Method-Override: HEAD` — GCS backend honored the override and returned an empty body; CDN cached it as the canonical GET response
+    - Root cause: CDN cache not method-aware; HEAD body (empty) overwrote GET entry for cached static assets
+    - Year: 2021 — **$2,500** (DoS normally OOS, paid for novelty)
+
+8. **PayPal — Web Cache Deception (Omer Gil original)** ([Blog](https://omergil.blogspot.com/2017/02/web-cache-deception-attack.html))
+    - Subclass: classic WCD via `.css`/`.jpg`/etc. path appending on authenticated routes
+    - Payload: `GET https://www.paypal.com/myaccount/home/foo.css` — origin served full authenticated account page; CDN cached it as "static .css" for ~5 hours
+    - Root cause: origin routed unknown path suffixes to the parent dynamic handler; CDN cached based purely on the static-looking file extension
+    - Year: 2017 — **$3,000** (PortSwigger Top-10 Web Hacking Technique of 2017, #2)
+
+9. **Cloudflare PBB — Cache Deception Armor bypass via `.avif`** ([H1 #1391635](https://hackerone.com/reports/1391635))
+    - Subclass: CDN-specific allowlist bypass (Cloudflare's WCD protection feature) using an obscure image extension
+    - Payload: `GET https://<protected-origin>/account/me.avif` — Cloudflare's Cache Deception Armor extension list omitted `.avif`, so the authenticated HTML response was cached
+    - Root cause: Cache Deception Armor used a static, incomplete extension allowlist that did not cover modern image MIME types
+    - Year: 2022 — Cloudflare PBB bounty (amount undisclosed)
+
+10. **Akamai (PayPal/Airbnb/Goldman Sachs) — Hop-by-hop header smuggling → server-side edge poisoning** ([Tediosi & Mariani writeup](https://medium.com/@jacopotediosi/worldwide-server-side-cache-poisoning-on-all-akamai-edge-nodes-50k-bounty-earned-f97d80f3922b))
+    - Subclass: CDN-specific request-smuggling that lands attacker responses in Akamai's edge cache for nearby IPs
+    - Payload: `Connection: Content-Length` + crafted request — Akamai's first proxy stripped Content-Length as hop-by-hop, second proxy treated body as a second request whose response was cached at the edge
+    - Root cause: inconsistent handling of hop-by-hop headers across Akamai proxy tiers caused desync; smuggled responses were server-side cached globally
+    - Year: 2022 — **>$50K total** across affected programs (PayPal $25,200 + Airbnb $14,875 + Goldman Sachs $100), PortSwigger Top-10 Web Hacking Techniques 2022 nominee
 
 ---
 

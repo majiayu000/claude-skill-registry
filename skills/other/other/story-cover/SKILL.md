@@ -11,6 +11,8 @@ metadata:
         - GPT_IMAGE_API_KEY
       bins:
         - curl
+        - jq
+        - base64
     primaryEnv: GPT_IMAGE_API_KEY
     source: https://github.com/worldwonderer/oh-story-claudecode
 ---
@@ -23,16 +25,18 @@ metadata:
 
 ---
 
-## API 配置
+## 环境变量
 
-```bash
-# 可通过 GPT_IMAGE_BASE_URL 环境变量覆盖默认地址（如使用代理服务）
-BASE_URL=${GPT_IMAGE_BASE_URL:-https://api.openai.com/v1}
-API_KEY=${GPT_IMAGE_API_KEY:?请设置 export GPT_IMAGE_API_KEY=你的key}
-MODEL=gpt-image-2
-SIZE=1024x1536
-FORMAT=b64_json
-```
+| 变量 | 必填 | 默认 | 说明 |
+|:-----|:----:|:-----|:-----|
+| `GPT_IMAGE_API_KEY` | ✅ | — | OpenAI 或兼容代理的 API Key |
+| `GPT_IMAGE_BASE_URL` | | `https://api.openai.com/v1` | 兼容代理时改这个 |
+| `GPT_IMAGE_MODEL` | | `gpt-image-2` | 仅在测试新模型时覆盖 |
+| `GPT_IMAGE_SIZE` | | `1024x1536` | gpt-image-2 要求两边为 16 倍数、比例 ≤ 3:1 |
+| `BOOK_DIR` | ✅ | — | 输出目录，建议 `./covers/<书名>` |
+| `REF_IMAGE` | | — | 参考图本地路径或 URL；设置后走 `images/edits` 图生图 |
+
+> 备注：`gpt-image-2` 始终返回 base64，请求体不要带 `response_format`（旧 DALL-E 参数，gpt-image 系列不支持）。
 
 ---
 
@@ -40,10 +44,18 @@ FORMAT=b64_json
 
 ### Step 1：收集信息
 
-必填：书名、作者名（笔名）、目标平台
-选填：参考图（路径或 URL）、风格偏好、尺寸（默认竖版 1024x1536）
+必填：书名、作者名（笔名）、目标平台、输出目录 `BOOK_DIR`（建议 `./covers/<书名>`，调用前 export）
+选填：参考图 `REF_IMAGE`（本地路径或 URL，设置后切换到图生图）、风格偏好、尺寸（默认竖版 1024x1536）
 
 **根据目标平台确定封面风格**，加载 [references/cover-styles.md](references/cover-styles.md) 获取详细平台和题材风格。
+
+### Step 1.5：题材判定
+
+扫描书名（必要时简介）中的关键词，对照 [references/cover-styles.md](references/cover-styles.md) 的「题材推断规则」表选定题材。
+
+- 单题材命中 → 直接采用
+- 多题材命中 → 按优先级取一：仙侠 > 西幻 > 古言 > 现言 > 都市 > 悬疑 > 科幻 > 历史 > 灵异 > 轻小说
+- 零命中 → 默认 `都市`
 
 ### Step 2：构建提示词
 
@@ -98,16 +110,7 @@ Author name '作者名' at bottom center in [作者名字体风格].
 
 #### 风格层：平台风格
 
-根据目标平台确定整体视觉风格：
-
-| 平台 | 风格特征 | 描述关键词 |
-|:-----|:---------|:-----------|
-| 番茄小说 | 鲜艳吸睛，人物突出，色彩饱和 | `vibrant saturated colors, eye-catching, bold contrast, popular mass-market style` |
-| 起点 | 精致大气，画面细腻，偏写实 | `polished refined style, detailed illustration, epic cinematic composition` |
-| 晋江 | 唯美梦幻，柔和色调，人物唯美 | `dreamy ethereal aesthetic, soft pastel tones, elegant romantic style` |
-| 知乎盐言 | 简约文艺，留白多，氛围感 | `minimalist literary style, subtle atmosphere, clean composition with negative space` |
-| 七猫 | 热烈夺目，冲击力强 | `striking high-impact, vivid dramatic colors, attention-grabbing` |
-| 刺猬猫 | 二次元/轻小说风 | `anime illustration style, vibrant colorful, detailed character art` |
+平台风格的描述关键词统一来自 [references/cover-styles.md](references/cover-styles.md) 的「平台风格」节，按目标平台直接取对应关键词串使用，不在本文件维护副本以免与参考文件漂移。
 
 #### 画面层：题材 + 构图
 
@@ -139,43 +142,123 @@ Professional book cover, high detail digital painting, portrait 2:3 ratio, no wa
 - 光效是指定光源方向 + 颜色（如 `dramatic golden light from above`）
 - 用 `digital painting style` 而非 `photo`，避免真人照片感
 
-### Step 3：调用 API
+### Step 3：调用 API 并保存
 
-#### 文生图
+`gpt-image-2` 始终返回 base64，请求体不要带 `response_format`。`$PROMPT` 为 Step 2 拼出的完整提示词。
+
+两种调用方式二选一：未设置 `REF_IMAGE` → 走「文生图」；设置了 → 走「图生图」。
+
+#### 文生图（默认）
 
 ```bash
-curl -s "${BASE_URL}/images/generations" \
-  -H "Authorization: Bearer ${API_KEY}" \
+set -euo pipefail
+: "${GPT_IMAGE_API_KEY:?请设置 export GPT_IMAGE_API_KEY=你的key}"
+: "${PROMPT:?请先 export PROMPT=Step 2 拼好的完整提示词}"
+BASE_URL="${GPT_IMAGE_BASE_URL:-https://api.openai.com/v1}"
+MODEL="${GPT_IMAGE_MODEL:-gpt-image-2}"
+SIZE="${GPT_IMAGE_SIZE:-1024x1536}"
+BOOK_DIR="${BOOK_DIR:?请先 export BOOK_DIR=./covers/<书名>}"
+
+mkdir -p "$BOOK_DIR/封面"
+
+# 自增版本号，避免覆盖之前生成的封面
+i=1
+while [ -f "$BOOK_DIR/封面/封面_v${i}.png" ]; do i=$((i+1)); done
+OUT="$BOOK_DIR/封面/封面_v${i}.png"
+RESP=$(mktemp)
+trap 'rm -f "$RESP"' EXIT
+
+# 用 jq 拼 JSON 体，避免 PROMPT 里的引号/换行/中文把 shell 字符串撑破
+BODY=$(jq -n \
+  --arg m "$MODEL" \
+  --arg p "$PROMPT" \
+  --arg s "$SIZE" \
+  '{model:$m, prompt:$p, size:$s}')
+
+curl -fsS --max-time 180 --retry 2 --retry-delay 5 \
+  "$BASE_URL/images/generations" \
+  -H "Authorization: Bearer $GPT_IMAGE_API_KEY" \
   -H "Content-Type: application/json" \
-  -d "{
-    \"model\": \"${MODEL}\",
-    \"prompt\": \"${PROMPT}\",
-    \"size\": \"${SIZE}\",
-    \"response_format\": \"${FORMAT}\"
-  }" > response.json
-# 若返回 "Unknown parameter: response_format"，去掉该参数重试（部分渠道不支持）
+  -d "$BODY" > "$RESP"
+
+# API 出错时早退，避免把 error JSON 当成 base64 写成损坏 PNG
+if jq -e '.error' "$RESP" >/dev/null 2>&1; then
+  echo "API error:" >&2
+  jq '.error' "$RESP" >&2
+  exit 1
+fi
+
+# `// empty` 让缺失字段输出空串而非 "null"，配合下面的 -s 检查避免写出 3 字节假 PNG
+jq -er '.data[0].b64_json // empty' "$RESP" | base64 --decode > "$OUT"
+[ -s "$OUT" ] || { echo "empty or malformed output: $OUT" >&2; head -c 300 "$RESP" >&2; exit 1; }
+
+# 落地提示词副本，方便迭代时基于上一次微调
+printf '%s\n' "$PROMPT" > "${OUT%.png}.prompt.txt"
+
+file "$OUT"
+ls -lt "$BOOK_DIR/封面/"
 ```
 
-#### 图生图（有参考图时）
+#### 图生图（提供参考图时）
+
+`/v1/images/edits` 走 `multipart/form-data`，**不能** 用 `Content-Type: application/json`。文本字段用 `--form-string`（避免 `@` 被误判为文件引用），图片字段用 `-F image=@path`。
 
 ```bash
-curl -s "${BASE_URL}/images/edits" \
-  -H "Authorization: Bearer ${API_KEY}" \
-  -H "Content-Type: application/json" \
-  -d "{
-    \"model\": \"${MODEL}\",
-    \"prompt\": \"${PROMPT}\",
-    \"image\": \"${IMAGE_URL}\",
-    \"size\": \"${SIZE}\",
-    \"response_format\": \"${FORMAT}\"
-  }" > response.json
-```
+set -euo pipefail
+: "${GPT_IMAGE_API_KEY:?请设置 export GPT_IMAGE_API_KEY=你的key}"
+: "${PROMPT:?请先 export PROMPT=Step 2 拼好的完整提示词}"
+BASE_URL="${GPT_IMAGE_BASE_URL:-https://api.openai.com/v1}"
+MODEL="${GPT_IMAGE_MODEL:-gpt-image-2}"
+SIZE="${GPT_IMAGE_SIZE:-1024x1536}"
+BOOK_DIR="${BOOK_DIR:?请先 export BOOK_DIR=./covers/<书名>}"
+REF_IMAGE="${REF_IMAGE:?请先 export REF_IMAGE=本地路径或 URL}"
 
-#### 保存图片
+mkdir -p "$BOOK_DIR/封面"
 
-```bash
-mkdir -p "${BOOK_DIR}/封面"
-jq -r '.data[0].b64_json' response.json | base64 --decode > "${BOOK_DIR}/封面/封面_v1.png"
+# 自增版本号
+i=1
+while [ -f "$BOOK_DIR/封面/封面_v${i}.png" ]; do i=$((i+1)); done
+OUT="$BOOK_DIR/封面/封面_v${i}.png"
+RESP=$(mktemp)
+REF_TMP=""
+trap '[ -n "$REF_TMP" ] && rm -f "$REF_TMP"; rm -f "$RESP"' EXIT
+
+# URL 先下载到临时文件，本地路径直接用。用裸 mktemp 以保证 macOS/Linux 行为一致。
+case "$REF_IMAGE" in
+  http://*|https://*)
+    REF_TMP=$(mktemp)
+    curl -fsSL --max-time 60 -o "$REF_TMP" "$REF_IMAGE"
+    REF_LOCAL="$REF_TMP"
+    ;;
+  *)
+    [ -f "$REF_IMAGE" ] || { echo "参考图不存在: $REF_IMAGE" >&2; exit 1; }
+    REF_LOCAL="$REF_IMAGE"
+    ;;
+esac
+
+curl -fsS --max-time 240 --retry 2 --retry-delay 5 \
+  "$BASE_URL/images/edits" \
+  -H "Authorization: Bearer $GPT_IMAGE_API_KEY" \
+  --form-string "model=$MODEL" \
+  --form-string "size=$SIZE" \
+  --form-string "prompt=$PROMPT" \
+  -F "image=@$REF_LOCAL" > "$RESP"
+
+if jq -e '.error' "$RESP" >/dev/null 2>&1; then
+  echo "API error:" >&2
+  jq '.error' "$RESP" >&2
+  exit 1
+fi
+
+# `// empty` 让缺失字段输出空串而非 "null"，配合 -s 检查避免写出 3 字节假 PNG
+jq -er '.data[0].b64_json // empty' "$RESP" | base64 --decode > "$OUT"
+[ -s "$OUT" ] || { echo "empty or malformed output: $OUT" >&2; head -c 300 "$RESP" >&2; exit 1; }
+
+printf '%s\n' "$PROMPT"    > "${OUT%.png}.prompt.txt"
+printf '%s\n' "$REF_IMAGE" > "${OUT%.png}.ref.txt"
+
+file "$OUT"
+ls -lt "$BOOK_DIR/封面/"
 ```
 
 ### Step 4：质量检查 + 迭代

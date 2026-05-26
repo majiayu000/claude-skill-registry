@@ -22,14 +22,6 @@ description: Use when designing or reviewing Vue 3 + TypeScript project structur
 
 Load [references/vue3-project-details.md](references/vue3-project-details.md) when the task needs concrete Vue 3 project structure, component patterns, Composables, slots, Provide/Inject, routing, Pinia, API layer, error handling, directives, styling, TypeScript, testing, performance, or review checklists.
 
-## Related Skills / Boundary
-
-- `fec-form-handling` — 如果 Vue 项目采用独立表单库，也只参考复杂表单边界与可访问性原则，库语法按项目现状调整。
-- `fec-data-fetching` — server state、缓存、mutation 和分页数据源。
-- `fec-component-testing` / `fec-e2e-testing` — Vue Test Utils 组件测试或跨页 E2E。
-- `fec-accessibility-check` / `fec-security-review` — 无障碍或安全专项深审。
-- `fec-list-virtualization` / `fec-svg-animation` / `fec-canvas-threejs` — 性能或视觉专项实现。
-
 ## Constraints
 
 - 使用 `<script setup lang="ts">`，禁止使用 Options API 新增组件

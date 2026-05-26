@@ -3,6 +3,8 @@ name: fan-out
 description: "Parallel agent orchestration for OST exploration. Fan-out multiple solution explorations, fan-in results to compare and select winners."
 metadata:
   instruction_budget: "22"
+  framework_dependency: "mycelium"
+  framework_dependency_note: "This skill is designed to run within the Mycelium framework (https://github.com/haabe/mycelium). Standalone use will skip the canvas state, theory gates, and harness behavior the skill assumes. Install: /plugin install mycelium@haabe/mycelium."
 ---
 
 # Fan-Out / Fan-In Orchestration

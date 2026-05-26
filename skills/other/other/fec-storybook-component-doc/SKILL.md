@@ -1,6 +1,6 @@
 ---
 name: fec-storybook-component-doc
-description: Use when setting up or reviewing Storybook component documentation, stories, addons, decorators, MDX docs, isolated component development, component-state interaction tests, visual baselines, Chromatic, or design system documentation. Use E2E for real-browser cross-page journeys and testing-strategy for broader coverage planning; Chinese triggers include Storybook, 组件文档, Design System, 视觉回归.
+description: Use when setting up or reviewing Storybook component documentation, stories, addons, decorators, MDX docs, isolated component development, component-state interaction tests, visual baselines, Chromatic, or design system documentation. For real-browser cross-page journeys or broader coverage planning, choose the matching testing workflow first; Chinese triggers include Storybook, 组件文档, Design System, 视觉回归.
 ---
 
 # Storybook 组件文档化
@@ -27,21 +27,9 @@ description: Use when setting up or reviewing Storybook component documentation,
 - Provider 依赖必须通过 decorator 补齐。
 - Storybook 构建产物 `storybook-static/` 不应提交到 Git。
 - Storybook 用于开发和组件文档，不替代生产页面 SEO。
-- Storybook 视觉基线用于组件状态；跨页面截图和真实路由流程分流到 `fec-e2e-testing`。
+- Storybook 视觉基线用于组件状态；跨页面截图和真实路由流程分流到 E2E workflow。
 - 大型组件库需控制 stories glob 和 addon 开销。
 
 ## Expected Output
 
 可交互的组件文档站点，每个组件状态都有可视化预览，Props 表格可生成，关键交互有可选 play 测试或视觉回归基线。
-
-## Related Skills / Boundary
-
-- `fec-testing-strategy` — decide whether a risk belongs in Storybook, component tests, E2E, or a specialty review.
-- `fec-component-testing` — unit, component, and light integration tests close to UI code.
-- `fec-e2e-testing` — real-browser cross-page journeys and page-level visual regression.
-- `fec-accessibility-check` — WCAG and keyboard/focus deep review.
-
-## Related Agent
-
-- [fec-frontend-architect](../../agents/fec-frontend-architect.md) — 组件拆分与 Design System 架构设计
-- [fec-figma-implementer](../../agents/fec-figma-implementer.md) — 从设计稿实现组件后，在 Storybook 中验证还原度

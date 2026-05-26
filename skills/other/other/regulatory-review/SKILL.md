@@ -3,6 +3,8 @@ name: regulatory-review
 description: "Use to assess regulatory applicability for products that may fall under AI regulation (EU AI Act, Article 50 transparency)."
 metadata:
   instruction_budget: "42"
+  framework_dependency: "mycelium"
+  framework_dependency_note: "This skill is designed to run within the Mycelium framework (https://github.com/haabe/mycelium). Standalone use will skip the canvas state, theory gates, and harness behavior the skill assumes. Install: /plugin install mycelium@haabe/mycelium."
 ---
 
 # Regulatory Review Skill

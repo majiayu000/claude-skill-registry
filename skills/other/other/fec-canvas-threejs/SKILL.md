@@ -53,19 +53,8 @@ Load [references/rendering-patterns.md](references/rendering-patterns.md) for Ca
 - WebGL 消耗 GPU，低端设备需限制像素比、面数和纹理大小。
 - Three.js 资源不会自动释放，遗漏 `dispose()` 会造成 GPU 内存泄漏。
 - Canvas 响应式必须同步 CSS 尺寸、绘图尺寸和相机/viewport。
-- 复杂布局/路径规划可联用 `fec-web-workers`，但渲染本身仍在主线程/渲染线程协调。
+- 复杂布局/路径规划可联用后台线程 workflow，但渲染本身仍在主线程/渲染线程协调。
 
 ## Expected Output
 
 2D/3D 场景清晰、响应式、可清理，关键设备上接近 60fps；用户能通过替代文本或键盘路径理解/操作核心内容。
-
-## Related Skills / Boundary
-
-- `fec-web-workers` — 图形任务中的昂贵计算搬到后台线程。
-- `fec-svg-animation` — 小型矢量图标、路径描边和 UI 微动效优先用 SVG。
-- `fec-accessibility-check` — 图形替代文本和键盘兜底深审。
-
-## Related Agent
-
-- [fec-performance-optimizer](../../agents/fec-performance-optimizer.md) — 3D 场景性能分析与优化
-- [fec-figma-implementer](../../agents/fec-figma-implementer.md) — 设计稿中的 Canvas 元素实现

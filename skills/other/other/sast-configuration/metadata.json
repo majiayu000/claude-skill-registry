@@ -6,7 +6,7 @@
   "category": "other",
   "source": "github.com/wshobson/agents",
   "dir_name": "sast-configuration",
-  "downloaded_at": "2026-05-25T04:29:07.400750Z",
+  "downloaded_at": "2026-05-26T04:14:06.901022Z",
   "author": "wshobson",
   "source_url": "https://github.com/wshobson/agents/blob/main/plugins/security-scanning/skills/sast-configuration/SKILL.md",
   "license": "NOASSERTION",

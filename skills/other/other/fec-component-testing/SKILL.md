@@ -1,6 +1,6 @@
 ---
 name: fec-component-testing
-description: Use when authoring or reviewing frontend unit, component, or light integration tests close to UI code, including React Testing Library, Vue Test Utils, hooks/composables, props/emits, callbacks, accessible queries, user-event interactions, mocks, loading/error/empty states, and regression coverage. Use testing-strategy for layer planning, E2E for real-browser cross-page journeys, and validation-fix for running/fixing existing checks; Chinese triggers include 组件测试, 组件单测, 单元测试, 轻量集成测试.
+description: Use when authoring or reviewing frontend unit, component, or light integration tests close to UI code, including React Testing Library, Vue Test Utils, hooks/composables, props/emits, callbacks, accessible queries, user-event interactions, mocks, loading/error/empty states, and regression coverage. For layer planning, real-browser journeys, or existing validation failures, choose the matching testing or validation workflow first; Chinese triggers include 组件测试, 组件单测, 单元测试, 轻量集成测试.
 ---
 
 # 组件测试
@@ -17,7 +17,7 @@ description: Use when authoring or reviewing frontend unit, component, or light 
 - 组件测试：props/emits、回调、用户交互、loading/error/empty、mock 边界。
 - 轻量集成测试：表单 + API mock + Router/Store/Provider 上下文。
 
-跨页面真实浏览器流程分流到 `fec-e2e-testing`；测试层选择不清楚时先用 `fec-testing-strategy`。
+跨页面真实浏览器流程分流到 E2E workflow；测试层选择不清楚时先做测试分层规划。
 
 ### 2. 优先按用户可感知行为测试
 
@@ -101,19 +101,6 @@ function setup() {
 - 测试名称应描述用户场景，而不是函数名。
 - 组件测试不能替代 E2E；路由、真实浏览器兼容和跨页流程仍需 E2E。
 
-## Related Skills / Boundary
-
-- `fec-testing-strategy` — 选择静态检查、单元、组件、集成、E2E、视觉和专项质量层级。
-- `fec-e2e-testing` — 跨页面关键路径、真实浏览器、登录态和 CI artifacts。
-- `fec-storybook-component-doc` — 组件用法文档、视觉状态枚举和 Storybook interaction tests。
-- `fec-accessibility-check` — 键盘、焦点和 ARIA 的专项审查。
-- `fec-validation-fix` — 运行已有验证命令并修复 lint/typecheck/test/build 失败。
-
 ## Expected Output
 
 产出与组件同目录或项目约定目录下的测试文件，覆盖核心交互、状态和回归场景。验证时运行项目现有 test 命令，确认失败信息能定位到用户行为或组件契约。
-
-## Related Agent
-
-- [fec-frontend-code-reviewer](../../agents/fec-frontend-code-reviewer.md) - 评审组件测试是否覆盖关键风险和避免脆弱断言。
-- [fec-frontend-e2e-runner](../../agents/fec-frontend-e2e-runner.md) - 将跨页面关键路径提升为 E2E 用例。

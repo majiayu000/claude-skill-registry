@@ -47,14 +47,6 @@ description: Use when designing or reviewing React + TypeScript project structur
 
 Load [references/react-project-details.md](references/react-project-details.md) when the task needs concrete React project structure, component patterns, Hooks, routing, state ownership, API layer shape, error handling, styling defaults, TypeScript conventions, or review checklists.
 
-## Related Skills / Boundary
-
-- `fec-form-handling` — React Hook Form、Zod、动态字段、文件上传和表单性能。
-- `fec-data-fetching` — TanStack Query、server state、query key、mutation 和缓存失效。
-- `fec-component-testing` / `fec-e2e-testing` — 组件契约测试或跨页用户路径测试。
-- `fec-accessibility-check` / `fec-security-review` — 无障碍或安全专项深审。
-- `fec-list-virtualization` / `fec-svg-animation` / `fec-canvas-threejs` — 性能或视觉专项实现。
-
 ## Constraints
 
 - 默认遵守仓库现有全局规则和 React rule

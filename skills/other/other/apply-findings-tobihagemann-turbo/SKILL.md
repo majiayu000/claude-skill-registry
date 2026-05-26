@@ -26,7 +26,7 @@ If a finding references code that has changed since it was generated (e.g., by a
 
 ## Step 3: Handle Escalated Findings
 
-For findings with Escalate verdict, use `AskUserQuestion` to present the trade-offs and let the user decide. Include your technical recommendation alongside the options. When options differ on both scope/intent adherence (what the task was scoped to do) and technical merit (what's engineering-wise better), state both axes explicitly — don't silently fold scope concerns into the technical recommendation.
+For findings with Escalate verdict, use `AskUserQuestion` to let the user decide. Recommend the genuinely best option: place it first and append `(Recommended)` to its label, judging "best" on technical merit alone (the soundest engineering outcome), independent of how closely the option conforms to the task's original scope. When the choice hinges on product intent or domain knowledge you lack and merit cannot settle it, say so instead of forcing a pick. Give each option a plain-language description that carries the trade-off: its concrete effect and what it costs. When the recommended option also widens the changeset's scope, name both its merit and that scope cost so the user can weigh them.
 
 - **Apply** — make the change
 - **Skip** — leave as-is
@@ -41,4 +41,4 @@ Then use the TaskList tool and proceed to any remaining task.
 ## Rules
 
 - Only edit files. Do not stage, build, or test.
-- If two Apply findings conflict (suggest opposite changes to the same code), surface the conflict with `AskUserQuestion` and let the user choose, rather than applying either.
+- If two Apply findings conflict (suggest opposite changes to the same code), surface the conflict with `AskUserQuestion`, recommend the genuinely best option on technical merit, and let the user choose, rather than applying either.

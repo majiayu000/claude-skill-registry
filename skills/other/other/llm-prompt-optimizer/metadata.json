@@ -1,0 +1,17 @@
+{
+  "name": "llm-prompt-optimizer",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/llm-prompt-optimizer/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "llm-prompt-optimizer",
+  "downloaded_at": "2026-05-26T04:10:27.369225Z",
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/llm-prompt-optimizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/llm-prompt-optimizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

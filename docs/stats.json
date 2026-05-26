@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-05-25T05:09:39.118754Z",
-  "archive_skill_md_count_raw": 226559,
-  "archive_metadata_count_raw": 226559,
-  "indexed_skill_count_scan_shape": 226559,
-  "registry_skill_count_dedup": 156499,
+  "updated_at": "2026-05-26T04:57:56.947128Z",
+  "archive_skill_md_count_raw": 226777,
+  "archive_metadata_count_raw": 226777,
+  "indexed_skill_count_scan_shape": 226777,
+  "registry_skill_count_dedup": 156527,
   "total_plugins": 3,
   "categories": 42,
   "category_counts": [
@@ -65,12 +65,12 @@
     {
       "name": "data",
       "code": "dat",
-      "count": 48885
+      "count": 48886
     },
     {
       "name": "design",
       "code": "des",
-      "count": 13385
+      "count": 13386
     },
     {
       "name": "development",
@@ -140,7 +140,7 @@
     {
       "name": "other",
       "code": "oth",
-      "count": 58160
+      "count": 58374
     },
     {
       "name": "performance",
@@ -170,7 +170,7 @@
     {
       "name": "productivity",
       "code": "pro",
-      "count": 2954
+      "count": 2955
     },
     {
       "name": "quality",
@@ -195,7 +195,7 @@
     {
       "name": "testing",
       "code": "tst",
-      "count": 11131
+      "count": 11132
     },
     {
       "name": "travel",
@@ -226,16 +226,16 @@
       "count": 3334
     },
     {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "count": 1939
+    },
+    {
       "repo": "majiayu000/claude-skill-registry",
       "count": 1919
     },
     {
-      "repo": "sickn33/antigravity-awesome-skills",
-      "count": 1852
-    },
-    {
       "repo": "a5c-ai/babysitter",
-      "count": 1545
+      "count": 1548
     },
     {
       "repo": "plurigrid/asi",
@@ -243,7 +243,7 @@
     },
     {
       "repo": "aiskillstore/marketplace",
-      "count": 1154
+      "count": 1160
     },
     {
       "repo": "levnikolaevich/claude-code-skills",
@@ -266,34 +266,34 @@
   "index_size_bytes": 162,
   "index_size_gzip_bytes": 174,
   "search_shard_count": 6,
-  "search_largest_shard_bytes": 8388600,
-  "search_largest_shard_gzip_bytes": 2549738,
+  "search_largest_shard_bytes": 8388654,
+  "search_largest_shard_gzip_bytes": 2564129,
   "category_shard_count": 52,
-  "category_largest_part_bytes": 8388679,
-  "category_largest_part_gzip_bytes": 1739851,
-  "lite_index_count": 157065,
+  "category_largest_part_bytes": 8388727,
+  "category_largest_part_gzip_bytes": 1739854,
+  "lite_index_count": 157093,
   "lite_index_included_count": 5000,
   "lite_index_size_bytes": 3499776,
-  "lite_index_gzip_size_bytes": 683950,
+  "lite_index_gzip_size_bytes": 683974,
   "quality_index_size_bytes": 220,
   "quality_index_gzip_size_bytes": 213,
   "quality_shard_count": 6,
   "quality_largest_shard_bytes": 8388657,
   "quality_largest_shard_gzip_bytes": 1756064,
   "security_index_size_bytes": 223,
-  "security_index_gzip_size_bytes": 214,
+  "security_index_gzip_size_bytes": 215,
   "security_shard_count": 18,
-  "security_largest_shard_bytes": 8388684,
-  "security_largest_shard_gzip_bytes": 1637763,
+  "security_largest_shard_bytes": 8388702,
+  "security_largest_shard_gzip_bytes": 1637802,
   "ranking_index_size_bytes": 220,
   "ranking_index_gzip_size_bytes": 213,
   "ranking_shard_count": 5,
   "ranking_largest_shard_bytes": 8388672,
-  "ranking_largest_shard_gzip_bytes": 2219225,
-  "largest_generated_file_bytes": 8388684,
+  "ranking_largest_shard_gzip_bytes": 2217904,
+  "largest_generated_file_bytes": 8388727,
   "security_scan": {
-    "total": 226559,
-    "passed": 216241,
+    "total": 226777,
+    "passed": 216459,
     "failed": 10318
   }
 }

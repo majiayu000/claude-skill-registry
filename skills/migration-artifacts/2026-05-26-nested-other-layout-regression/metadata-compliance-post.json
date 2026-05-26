@@ -1,0 +1,3473 @@
+{
+  "scanned": 693,
+  "missing_metadata": 0,
+  "errors": 0,
+  "warnings": 0,
+  "results": [
+    {
+      "path": "other/0-autoresearch-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/0-autoresearch-skill-orchestra-research-ai-research-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/003-agents-installation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/042-planning-openspec/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/12-dotnet-jwt-authentication/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/126-java-exception-handling/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/13-dotnet-permission-authorization/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/17-dotnet-health-checks/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/19-dotnet-dapper-query-builder/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/21-dotnet-unit-testing/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/22-dotnet-integration-testing/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/402-frameworks-quarkus-rest/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/412-frameworks-quarkus-panache/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/512-frameworks-micronaut-data/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/513-frameworks-micronaut-db-migrations-flyway/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/a-evolve/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/a11y-check/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/ablation-planner/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/about-bitwize-music-studio-claude-ai-music-skil-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/accessibility-aggregation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/accessibility-aggregation-ammawla-encode-toolkit/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/account-plan/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/acquisition-channel-advisor/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/activate-site/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/active-directory-attack/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/active-directory-attacks-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/ad-lead-quality-analyzer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/adaptyv/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/add-discord/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/add-gcal-tool/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/add-gchat/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/add-github/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/add-gmail-tool/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/add-linear/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/add-matrix/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/add-resend/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/add-teams-nanocoai-nanoclaw/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/add-telegram/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/add-wechat/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/add-whatsapp/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/add-whatsapp-cloud/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/additive-bias-defense/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/adr/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/adr-drafting/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/advanced-redteam/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/agent-browser/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/agent-browser-fcakyon-claude-codex-setting/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/agent-credit-aaronjmars-agent-credit-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/agentica-claude-proxy-parcadei-continuous-claude-v3-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/ai-seo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/aktenbestand-pflege-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/album-art-director-bitwize-music-studio-claude-ai-music-skil-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/album-conceptualizer-bitwize-music-studio-claude-ai-music-skil-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/album-ideas-bitwize-music-studio-claude-ai-music-skil-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/alert-manager-aaron-he-zhu-seo-geo-claude-skill-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/alphaxiv-wanshuiyin-auto-claude-code-res/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/analytics-product/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/angular-best-practices/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/api-design-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/apify-trend-analysis/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/app-builder/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/app-ui-design/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/apply-findings-tobihagemann-turbo-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/apply-findings-tobihagemann-turbo-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/arboreto-aiskillstore-marketplace/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/architecture-diagram-creator-mhattingpete-claude-skills-market-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/arm-cortex-expert-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/ask-opencli/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/assembling-components-ancoleman-ai-design-components-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/assumption-test-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/astro/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/astropy-k-dense-ai-scientific-agent-ski/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/async-python-patterns-wshobson-agents-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/audit-nowork-studio-notfair/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/audit-nowork-studio-notfair-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/audit-oliver-kriska-claude-elixir-phoeni-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/auth-security/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/authoring-stitch-prompts-joaquimscosta-arkhe-claude-plugins-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/auto-optimize/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/auto-review-loop-minimax-wanshuiyin-auto-claude-code-res/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/auto-review-loop-wanshuiyin-auto-claude-code-res-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/autodev-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/autoresearch-mxyhi-ok-skills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/aws-iam-best-practices/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/aws-mcp-setup-zxkane-aws-skills-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/azure-compute-batch-java/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/azure-cosmos-rust/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/azure-keyvault-py/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/azure-messaging-webpubsub-java/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/azure-mgmt-mongodbatlas-dotnet/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/azure-mgmt-weightsandbiases-dotnet/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/azure-search-documents-py/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/azure-servicebus-dotnet/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/azure-servicebus-py/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/azure-storage-blob-java/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/azure-storage-blob-rust/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/azure-usage-fcakyon-claude-codex-setting-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/backlink-analyzer-aaron-he-zhu-seo-geo-claude-skill-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/bad-skill-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/baoyu-article-illustrator-jimliu-baoyu-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/baoyu-comic-jimliu-baoyu-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/baoyu-cover-image-jimliu-baoyu-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/baoyu-electron-extract/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/baoyu-image-gen-jimliu-baoyu-skills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/baoyu-infographic-jimliu-baoyu-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/baoyu-markdown-to-html-jimliu-baoyu-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/baoyu-post-to-wechat-jimliu-baoyu-skills-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/baoyu-post-to-weibo-jimliu-baoyu-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/baoyu-post-to-x-jimliu-baoyu-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/baoyu-slide-deck-jimliu-baoyu-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/baoyu-xhs-images-jimliu-baoyu-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/bash-joaquimscosta-arkhe-claude-plugins-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/bats-testing-patterns-wshobson-agents/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/bea-versand-pruefen-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/betreuer-als-erbe-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/bias-check-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/billing-automation-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/blockrun/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/bootstrap-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/bootstrap-boshu2-agentops-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/brainstorm-boshu2-agentops-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/brainstorm-boshu2-agentops-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/braintrust-analyze-parcadei-continuous-claude-v3-6/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/brand-guidelines-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/brand-landingpage-wshobson-agents/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/brand-yml-posit-dev-skills-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/brevo-automation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/broken-link-checker-nowork-studio-notfair/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/brooks-lint/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/browser-act-browser-act-skills-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/browser-act-skill-forge-browser-act-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/browser-cdp-worldwonderer-oh-story-claudecode/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/building-ai-chat-ancoleman-ai-design-components-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/bullmq-specialist/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/bun-cloudflare-workers-secondsky-claude-skills-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/bvssh-check-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/c4-code-sickn33-antigravity-awesome--2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/canvas-health-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/canvas-sync-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/canvas-update-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/catchup-athola-claude-night-market-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/cc-skill-security-review/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/cdk-patterns/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/chaos-engineer-jeffallan-claude-skills-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/citation-audit-wanshuiyin-auto-claude-code-res/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/clash-doctor/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/clash-routes/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/claude-code-guide/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/claude-legal-skill-evolsb-claude-legal-skill-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/claude-mem/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/claude-monitor/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/cli-posit-dev-skills-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/cliproxy-deploy/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/cliproxy-newapi-stack/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/cloud-uploader-bitwize-music-studio-claude-ai-music-skil-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/coda-automation-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/code-format/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/code-gen/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/code-style-tobihagemann-turbo-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/code-transfer-mhattingpete-claude-skills-market-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/codebase-audit/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/codex-agent-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/codex-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/codex-team-boshu2-agentops-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/codex-team-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/compactness-parcadei-continuous-claude-v3-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/competitor-analysis-aaron-he-zhu-seo-geo-claude-skill-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/compile-boshu2-agentops-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/compile-boshu2-agentops-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/complexity-boshu2-agentops-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/component-doc-gen/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/conductor-validator-sickn33-antigravity-awesome--2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/configure-canvas-mcp-microsoft-power-platform-skill-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/configuring-firewalls-ancoleman-ai-design-components-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/content-collections-secondsky-claude-skills-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/content-planner-nowork-studio-notfair/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/content-writer-nowork-studio-notfair/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/contributor/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/conversation-analyzer-mhattingpete-claude-skills-market-6/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/copy-editing/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/copy-nowork-studio-notfair/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/corrections-audit-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/council-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/cran-extrachecks-posit-dev-skills-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/create-release-checklist-posit-dev-skills-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/cred-omega/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/css-debug/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/ctf-osint-ljagiello-ctf-skills-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/curate-boshu2-agentops-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/cynefin-classify-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/dashboard-creator-mhattingpete-claude-skills-market-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/data-engineering-data-driven-feature-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/data-quality-frameworks-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/database-lookup/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/database-patterns/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/dbt-transformation-patterns/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/decisive-action-athola-claude-night-market-6/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/deepline-sdk-getaero-io-gtm-eng-skills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/deepxiv-wanshuiyin-auto-claude-code-res/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/defi-protocol-templates-wshobson-agents-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/definition-of-done-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/deinstallieren/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/delivery-bootstrap-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/deps-boshu2-agentops-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/design-review-secondsky-claude-skills-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/design-to-code-ursazoo-lanhu-to-code/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/devils-advocate-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/devops-deploy/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/diagramming-joaquimscosta-arkhe-claude-plugins-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/diamond-assess-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/diamond-progress-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/discourse-athola-claude-night-market-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/discovery-boshu2-agentops-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/discovery-boshu2-agentops-6/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/disk-cleaner/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/displaying-timelines-ancoleman-ai-design-components-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/do-issue-athola-claude-night-market-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/doc-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/document-hunter-bitwize-music-studio-claude-ai-music-skil-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/dora-check-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/draft-plan-tobihagemann-turbo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/draft-spec-tobihagemann-turbo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/einstellungspruefung-klotzkette-claude-fuer-deutsche-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/ensemble-solving-mhattingpete-claude-skills-market-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/esg-greenwashing-csrd-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/eval-runner-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/evaluate-findings-tobihagemann-turbo-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/evaluate-findings-tobihagemann-turbo-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/evolve-kanevry-session-orchestrator-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/experiment-audit-wanshuiyin-auto-claude-code-res/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/explicit-checker-bitwize-music-studio-claude-ai-music-skil-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/expo-cicd-workflows/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/expo-ui-swift-ui/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/facebook-groups-scrape-posts/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/facebook-page-posts/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fan-out-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fec-browser-storage-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fec-canvas-threejs-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fec-component-testing-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fec-e2e-testing-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fec-form-handling-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fec-frontend-code-review-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fec-interface-polish-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fec-legacy-to-modern-migration-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fec-list-virtualization-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fec-nextjs-project-standard-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fec-nuxt-project-standard-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fec-pwa-implementation-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fec-react-project-standard-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fec-route-protection-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fec-security-review-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fec-storybook-component-doc-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fec-svg-animation-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fec-tdd-workflow-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fec-testing-strategy-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fec-ui-design-direction-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fec-validation-fix-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fec-vite-project-standard-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fec-vue3-project-standard-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fec-web-workers-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/feedback-review-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/figma-to-code/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/figma-to-react/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/file-operations-mhattingpete-claude-skills-market-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/file-organizer-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/finalize-tobihagemann-turbo-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/finalize-tobihagemann-turbo-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/first-order-odes-parcadei-continuous-claude-v3-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fixflow/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/flowchart-creator-mhattingpete-claude-skills-market-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fluidsim-k-dense-ai-scientific-agent-ski/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/flutter-expert-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/flywheel-boshu2-agentops-6/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fp-react/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fp-ts-pragmatic/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/framework-health-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/freshservice-automation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/fristenbuch-fuehren-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/frontend-design-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/full-output-enforcement-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/game-audio/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/gemini-nowork-studio-notfair/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/gemini-search-wanshuiyin-auto-claude-code-res-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/gemini-search-wanshuiyin-auto-claude-code-res-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/genesis-aiskillstore-marketplace-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/geo-optimizer-nowork-studio-notfair/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/geopandas-aiskillstore-marketplace/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/gist-plan-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/github-trending/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/goals-boshu2-agentops-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/golang-web/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/good-skill-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/google-analytics-automation-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/google-docs-automation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/google-search-serp/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/gpt-image2-ppt-skills-juneyaooo-gpt-image2-ppt-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/gpu-use/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/great-cto-avelikiy-great-cto-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/growth-engine/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/guiding-users-ancoleman-ai-design-components-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/handoff-haabe-mycelium-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/handoff-oprogramadorreal-optimus-claude/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/harmonyos-app/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/harvest-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/heal-skill-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/hig-components-menus/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/hook-authoring-athola-claude-night-market-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/hooks-authoring-boshu2-agentops-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/hugging-face-community-evals/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/humanize-chinese/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/humanizer-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/hunt-auth-bypass-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/hunt-business-logic-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/hunt-cache-poison-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/hunt-cloud-misconfig-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/hunt-csrf-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/hunt-dispatch-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/hunt-graphql-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/hunt-idor-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/hunt-misc-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/hunt-oauth-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/hunt-race-condition-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/hunt-sqli-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/hunt-ssrf-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/hunt-subdomain-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/ice-score-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/icon-lookup-malob-nix-config-6/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/idea-discovery-wanshuiyin-auto-claude-code-res-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/image-crop-rotate-instavm-coderunner-6/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/implement-plan-tobihagemann-turbo-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/implement-plan-tobihagemann-turbo-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/implement-tobihagemann-turbo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/implement-tobihagemann-turbo-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/implementing-navigation-ancoleman-ai-design-components-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/implementing-realtime-sync-ancoleman-ai-design-components-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/import-art-bitwize-music-studio-claude-ai-music-skil-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/import-audio-bitwize-music-studio-claude-ai-music-skil-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/import-track-bitwize-music-studio-claude-ai-music-skil-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/impressum-pflicht-klotzkette-claude-fuer-deutsche-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/infinite-gratitude/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/inject-boshu2-agentops/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/inject-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/instagram-hashtag-posts/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/instagram-place-posts/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/instagram-post-comments/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/instagram-profile-meta/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/instagram-profile-posts/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/intent-saadshahd-moo-md-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/internal-linking-optimizer-aaron-he-zhu-seo-geo-claude-skill-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/interview-cheatsheet-wanshuiyin-auto-claude-code-res/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/interview-haabe-mycelium-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/interview-haabe-mycelium-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/interview-haabe-mycelium-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/inventory-demand-planning/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/ios-simulator-skill-conorluddy-ios-simulator-skill-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/issues/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/ist-das-ein-problem-klotzkette-claude-fuer-deutsche-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/istio-traffic-management-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/jtbd-map-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/jveg-fahrtkosten/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/keyword-research-nowork-studio-notfair/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/ki-folgenabschaetzung/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/klageentwurf-amtsgericht-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/knowledge-activation-boshu2-agentops-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/kubernetes-architect/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/kuendigungs-pruefung-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/landing-nowork-studio-notfair/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/launch-tier-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/leann-search-parcadei-continuous-claude-v3-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/limits-parcadei-continuous-claude-v3-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/linear-automation-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/llm-app-patterns/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/llm-council-gcpdev-llm-council-skill-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/llm-prompt-optimizer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/log-evidence-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/m365-agents-dotnet/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/mahnbescheid-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/mahnwesen-honorar-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/make-automation-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/makefile-generation-athola-claude-night-market-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/makefile-review-athola-claude-night-market-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/makepad-font/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/manage-nowork-studio-notfair/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/manage-nowork-studio-notfair-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/managing-incidents-ancoleman-ai-design-components-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/managing-media-ancoleman-ai-design-components-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/mandat-triage-mietrecht-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/mastering-engineer-bitwize-music-studio-claude-ai-music-skil-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/maz-ui-secondsky-claude-skills-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/meta-tags-optimizer-nowork-studio-notfair/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/metrics-detect-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/metrics-pull-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/mietsenkungsverlangen-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/migrate-from-legacy-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/mind-memvid-claude-brain-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/minimalist-ui/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/mise-configurator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/mobile-design/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/mocked-persona-interview-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/molfeat-k-dense-ai-scientific-agent-ski/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/monorepo-management/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/mtls-configuration-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/multi-agent-patterns/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/multi-ai-research/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/multi-cloud-architecture/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/n8n-mcp-tools-expert/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/nda-abgleich-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/nerdzao-elite-gemini-high/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/nestjs-expert-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/networkx-aiskillstore-marketplace/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/neuheit-pruefen-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/new-album-bitwize-music-studio-claude-ai-music-skil-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/new-user-intake/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/nodejs-best-practices/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/notfair-cmo-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/notfair-upgrade-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/notion-automation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/notion-knowledge-capture-prat011-awesome-llm-skills-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/notion-template-business/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/novelty-check-wanshuiyin-auto-claude-code-res-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/nuxt-studio-secondsky-claude-skills-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/nuxt-ui-v4-secondsky-claude-skills-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/observability-sre/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/observe-before-editing-parcadei-continuous-claude-v3-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/obsidian-markdown-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/okta-attack-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/one-drive-automation-sickn33-antigravity-awesome--2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/open-interpreter-tdimino-claude-code-minoan-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/openai-docs-boshu2-agentops-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/openapi-spec-generation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/openclaw-deploy/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/opencli-usage-mxyhi-ok-skills-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/optflow/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/optimize-network/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/ost-builder-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pagerduty-automation-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/paper-claim-audit-wanshuiyin-auto-claude-code-res/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/paper-illustration-image2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/paper-poster-wanshuiyin-auto-claude-code-res-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/paper-write-wanshuiyin-auto-claude-code-res-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/performance-engineer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pgvector-semantic-search-timescale-pg-aiguide-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/ping-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pinia-colada-secondsky-claude-skills-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pinia-v3-secondsky-claude-skills-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/plan-flow/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/planning-with-files-ar-othmanadi-planning-with-files/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/planning-with-files-de-othmanadi-planning-with-files/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/planning-with-files-es-othmanadi-planning-with-files/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/planning-with-files-mxyhi-ok-skills-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/planning-with-files-othmanadi-planning-with-files-12/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/planning-with-files-othmanadi-planning-with-files-13/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/planning-with-files-othmanadi-planning-with-files-14/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/planning-with-files-othmanadi-planning-with-files-15/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/planning-with-files-othmanadi-planning-with-files-16/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/planning-with-files-othmanadi-planning-with-files-17/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/planning-with-files-othmanadi-planning-with-files-18/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/planning-with-files-othmanadi-planning-with-files-19/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/planning-with-files-zh-othmanadi-planning-with-files/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/planning-with-files-zht-othmanadi-planning-with-files/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/plugin-structure-aiskillstore-marketplace/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/polars-k-dense-ai-scientific-agent-ski/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/popup-cro/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/post-mortem-boshu2-agentops-6/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/post-mortem-boshu2-agentops-7/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/posteingang-ausgang-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/postgres-hybrid-text-search-timescale-pg-aiguide-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/postgresql-optimization-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pptx-official/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pr-implement-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pr-oprogramadorreal-optimus-claude-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pr-prep-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pr-research-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/prd-master/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/prd-taskmaster-anombyte93-prd-taskmaster-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pre-mortem-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pre-mortem-boshu2-agentops-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/preflight-haabe-mycelium-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/privacy-by-design/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/privacy-check-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/process-builder-a5c-ai-babysitter-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/product-analytics/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/product-boshu2-agentops/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/product-discovery/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/product-manager-toolkit-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/product-ux-expert/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/project-bootstrapper-mhattingpete-claude-skills-market-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/promo-director-bitwize-music-studio-claude-ai-music-skil-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/prompt-engineering-patterns/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/prompt-optimizer-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pronunciation-specialist-bitwize-music-studio-claude-ai-music-skil-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/proof-checker-wanshuiyin-auto-claude-code-res/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/provenance-boshu2-agentops-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/providing-feedback-ancoleman-ai-design-components-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/push-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pwdebug-aiskillstore-marketplace-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/pymoo-k-dense-ai-scientific-agent-ski/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/python-anti-patterns-wshobson-agents-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/python-background-jobs-wshobson-agents-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/python-error-handling/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/python-observability-wshobson-agents-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/python-project/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/qiskit-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/qlty-during-development-parcadei-continuous-claude-v3-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/quickstart-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/rdkit-k-dense-ai-scientific-agent-ski/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/react-best-practices-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/react-best-practices-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/react-flow-architect/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/react-hooks-best-practices/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/rebuttal-wanshuiyin-auto-claude-code-res-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/rebuttal-wanshuiyin-auto-claude-code-res-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/recallloom/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/recover-boshu2-agentops-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/red-team/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/refactor-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/reference-builder-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/reflexion-haabe-mycelium-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/regulatory-review-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/release-boshu2-agentops-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/release-director-bitwize-music-studio-claude-ai-music-skil-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/release-post-posit-dev-skills-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/requesting-code-review/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/research-lit-wanshuiyin-auto-claude-code-res-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/research-oliver-kriska-claude-elixir-phoeni-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/research-pipeline-wanshuiyin-auto-claude-code-res-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/research-refine-wanshuiyin-auto-claude-code-res-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/research-review-wanshuiyin-auto-claude-code-res-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/researchers-security-bitwize-music-studio-claude-ai-music-skil-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/researchers-tech-bitwize-music-studio-claude-ai-music-skil-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/resume-a5c-ai-babysitter-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/retro-boshu2-agentops-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/retrospective-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/reverse-engineer-rpi-boshu2-agentops-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/review-plan-tobihagemann-turbo-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/review-pr-tobihagemann-turbo-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/root-finding-parcadei-continuous-claude-v3-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/rudin-real-complex-analysis-parcadei-continuous-claude-v3-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/rust-best-practices/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/rust-pro/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/rust-project/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/rustdesk-doctor/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/satori-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/scaffold-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/schema-markup-generator-nowork-studio-notfair/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/scikit-learn-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/scope-boshu2-agentops-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/scope-boshu2-agentops-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/scroll-experience/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/seaborn-aiskillstore-marketplace/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/seaborn-k-dense-ai-scientific-agent-ski/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/second-order-odes-parcadei-continuous-claude-v3-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/security-auditor/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/security-boshu2-agentops-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/security-review-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/security-suite-boshu2-agentops/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/self-improve-tobihagemann-turbo-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/self-improve-tobihagemann-turbo-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/senior-fullstack/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/seo-aeo-content-cluster/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/seo-analysis-nowork-studio-notfair/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/seo-page-nowork-studio-notfair/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/seo-plan-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/server-deploy/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/server-security/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/service-check-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/session-bootstrap-boshu2-agentops-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/session-end-kanevry-session-orchestrator-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/session-management-a5c-ai-babysitter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/session-management-secondsky-claude-skills-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/session-plan-kanevry-session-orchestrator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/session-start-kanevry-session-orchestrator-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/setup-cms-nowork-studio-notfair/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/setup-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/setup-timescaledb-hypertables-timescale-pg-aiguide-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/shared-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/sheet-music-publisher-bitwize-music-studio-claude-ai-music-skil-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/skill-auditor-boshu2-agentops/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/skill-auditor-boshu2-agentops-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/skill-builder-boshu2-agentops-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/skill-creator-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/skill-creator-ms/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/skill-sentinel/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/skillforge-tripleyak-skillforge/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/slack-automation-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/slack-bot-builder/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/sleep-analyzer-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/slides-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/slides-polish-wanshuiyin-auto-claude-code-res/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/snapdom-aiskillstore-marketplace-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/snowflake-development/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/spec-kit-skill-feiskyer-claude-code-settings-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/specs-code-cleanup-giuseppe-trisciuogli-developer-kit-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/spring-boot-observability-joaquimscosta-arkhe-claude-plugins-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/sql-optimization-patterns/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/stability-ai/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/stage-commit-tobihagemann-turbo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/start-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/startup-competitors-ferdinandobons-startup-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/startup-design-ferdinandobons-startup-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/startup-pitch-ferdinandobons-startup-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/startup-positioning-ferdinandobons-startup-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/status-boshu2-agentops-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/stitch-loop-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/story-cover-worldwonderer-oh-story-claudecode/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/story-deslop-worldwonderer-oh-story-claudecode/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/story-import-worldwonderer-oh-story-claudecode-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/story-long-scan-worldwonderer-oh-story-claudecode-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/story-review-worldwonderer-oh-story-claudecode-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/story-setup-worldwonderer-oh-story-claudecode-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/strategic-compact/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/structured-logging/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/supabase-automation-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/supply-chain-attack-recon-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/swiftui-view-refactor/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/system-doctor/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/system-overview-parcadei-continuous-claude-v3-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/task-decomposition/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/tavily-usage-fcakyon-claude-codex-setting-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/tdd-oprogramadorreal-optimus-claude-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/team-shape-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/technical-spec-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/telegram-bot-builder/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/template-skill-prat011-awesome-llm-skills-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/terraform-skill-antonbabenko-terraform-skill-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/thesys-generative-ui-secondsky-claude-skills-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/threat-model-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/threejs-animation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/threejs-loaders/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/tiktok-hashtag-videos/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/tiktok-profile-videos/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/tiktok-search-videos/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/tiktok-video-detail/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/todoist-automation-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/tokenwise/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/trace-boshu2-agentops-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/transformers-js/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/trip-planner/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/turborepo-caching-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/tutorial-bitwize-music-studio-claude-ai-music-skil-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/twitter-automation-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/typescript-a5c-ai-babysitter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/typescript-project/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/ui-design-system/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/ui-ux-pro-max/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/umap-learn/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/understand-chat-lum1104-understand-anything-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/understand-diff-lum1104-understand-anything-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/understand-explain-lum1104-understand-anything-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/understand-lum1104-understand-anything-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/understand-onboard-lum1104-understand-anything-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/univer-cli-dream-num-skills-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/unslop/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/usability-check-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/usb-stack/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/user-interview-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/user-needs-map-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/using-gc/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/using-neon/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/ux-copy/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/vaex-k-dense-ai-scientific-agent-ski/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/vaf-feldinventar/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/validate-album-bitwize-music-studio-claude-ai-music-skil-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/validate-boshu2-agentops-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/validation-boshu2-agentops-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/vector-database-engineer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/verlagsredaktion-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/versand-vor-check-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/vexor-cli/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/vibeguard/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/vmware-vcenter-attack-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/voice-review-athola-claude-night-market-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/vollstreckung-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/wardley-map-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/wave-executor-kanevry-session-orchestrator-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/web-artifacts-builder-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/web-asset-generator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/web2-recon-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/weg-beschluss-anfechten-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/weihnachtskarten-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/weihnachtskarten-klotzkette-claude-fuer-deutsche-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/wiki-changelog-sickn33-antigravity-awesome--3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/wordpress/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/writing-rules-athola-claude-night-market-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/wuerfel-aufbauen-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/x-article-publisher-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/xai-check-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/xiaohongshu/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/yann-lecun-tecnico/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/youtube-transcript/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/zendesk-automation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/zig-project/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "other/zv-pfueb-bank/metadata.json",
+      "errors": [],
+      "warnings": []
+    }
+  ]
+}

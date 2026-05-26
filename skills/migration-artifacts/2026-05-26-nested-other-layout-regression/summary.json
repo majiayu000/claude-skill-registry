@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "issue": 48,
+  "generated_at": "2026-05-26",
+  "source": "normalize_skill_depth.py",
+  "before": {
+    "nested_other_skill_count": 5248,
+    "other_all_depth_skill_count": 58374
+  },
+  "applied": {
+    "planned_nonstandard_count": 5248,
+    "removed_duplicate_count": 4555,
+    "moved_count": 693,
+    "same_key_conflict_count": 4919,
+    "same_key_preserved_count": 364
+  },
+  "expected_after": {
+    "nested_other_skill_count": 0,
+    "other_all_depth_skill_count": 53819
+  }
+}

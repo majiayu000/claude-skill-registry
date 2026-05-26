@@ -1,0 +1,17 @@
+{
+  "name": "impressum-pflicht",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "produktrecht/skills/impressum-pflicht/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "impressum-pflicht-klotzkette-claude-fuer-deutsche-2",
+  "downloaded_at": "2026-05-26T03:42:51.412327Z",
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/produktrecht/skills/impressum-pflicht/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/produktrecht/skills/impressum-pflicht/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

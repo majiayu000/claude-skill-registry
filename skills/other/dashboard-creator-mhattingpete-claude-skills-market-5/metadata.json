@@ -1,0 +1,17 @@
+{
+  "name": "dashboard-creator",
+  "repo": "mhattingpete/claude-skills-marketplace",
+  "path": "visual-documentation-plugin/skills/dashboard-creator/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mhattingpete/claude-skills-marketplace",
+  "dir_name": "dashboard-creator-mhattingpete-claude-skills-market-5",
+  "downloaded_at": "2026-05-26T04:03:02.148607Z",
+  "author": "mhattingpete",
+  "source_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/visual-documentation-plugin/skills/dashboard-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mhattingpete/claude-skills-marketplace/blob/main/visual-documentation-plugin/skills/dashboard-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

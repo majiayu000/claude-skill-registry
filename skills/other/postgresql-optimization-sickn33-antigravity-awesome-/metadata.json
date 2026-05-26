@@ -1,0 +1,17 @@
+{
+  "name": "postgresql-optimization",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/postgresql-optimization/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "postgresql-optimization-sickn33-antigravity-awesome-",
+  "downloaded_at": "2026-05-26T04:10:28.370204Z",
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/postgresql-optimization/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/postgresql-optimization/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

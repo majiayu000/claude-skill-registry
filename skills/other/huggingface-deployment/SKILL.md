@@ -259,7 +259,7 @@ HUGGINGFACE_TOKEN="hf_xxxxxxxxxxxxxxxxxxxxx"  # Same as API key
 
 ```bash
 # MiniMax Audio API (TTS, Music, Voice Cloning)
-MINIMAX_API_KEY="sk-api-xxxxxxxxxxxxxxxxxxxxx"
+MINIMAX_API_KEY="<your-minimax-api-key>"
 MINIMAX_API_BASE_URL="https://api.minimaxi.chat"
 ```
 

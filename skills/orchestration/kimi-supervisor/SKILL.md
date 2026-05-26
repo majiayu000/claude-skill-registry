@@ -364,7 +364,7 @@ $env:ANTHROPIC_MODEL = "kimi-k2.5-thinking"
 
 # Or configure environment
 $env:ANTHROPIC_BASE_URL = "https://api.minimax.io/anthropic"
-$env:ANTHROPIC_API_KEY = "sk-cp-YOUR_KEY"
+$env:ANTHROPIC_API_KEY = "<your-minimax-api-key>"
 $env:ANTHROPIC_MODEL = "minimax:m2.1"
 ```
 

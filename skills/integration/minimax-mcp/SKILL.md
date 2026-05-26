@@ -190,7 +190,7 @@ Agent: *Reviews results* ✅
 
 ### Start MCP Server (Desktop Claude)
 ```bash
-MINIMAX_API_KEY="sk-cp-xgttGx8GfmjMzMR64zQOU0BXYjrikYD0nSTMfWBbIT0Ykq17fUeT3f7Dmmt2UOQaskwOjaOPxMYk6jev0G4Av2-znT8-a3aRWGfHVpgMvgzc8dVYc4W8U6c" \
+MINIMAX_API_KEY="<your-minimax-api-key>" \
 MINIMAX_API_HOST="https://api.minimax.io" \
 uvx minimax-coding-plan-mcp -y
 ```
@@ -200,7 +200,7 @@ uvx minimax-coding-plan-mcp -y
 **Web Search:**
 ```bash
 curl -s -X POST "https://api.minimax.io/v1/coding_plan/search" \
-  -H "Authorization: Bearer sk-cp-xgttGx8GfmjMzMR64zQOU0BXYjrikYD0nSTMfWBbIT0Ykq17fUeT3f7Dmmt2UOQaskwOjaOPxMYk6jev0G4Av2-znT8-a3aRWGfHVpgMvgzc8dVYc4W8U6c" \
+  -H "Authorization: Bearer $MINIMAX_API_KEY" \
   -H "Content-Type: application/json" \
   -H "MM-API-Source: Minimax-MCP" \
   -d '{"q":"your search query"}'
@@ -209,7 +209,7 @@ curl -s -X POST "https://api.minimax.io/v1/coding_plan/search" \
 **Image Analysis:**
 ```bash
 curl -s -X POST "https://api.minimax.io/v1/coding_plan/vlm" \
-  -H "Authorization: Bearer sk-cp-xgttGx8GfmjMzMR64zQOU0BXYjrikYD0nSTMfWBbIT0Ykq17fUeT3f7Dmmt2UOQaskwOjaOPxMYk6jev0G4Av2-znT8-a3aRWGfHVpgMvgzc8dVYc4W8U6c" \
+  -H "Authorization: Bearer $MINIMAX_API_KEY" \
   -H "Content-Type: application/json" \
   -H "MM-API-Source: Minimax-MCP" \
   -d '{"prompt":"What do you see?","image_url":"https://example.com/image.png"}'
@@ -222,7 +222,7 @@ For Claude extension users, call the MiniMax API directly via the Bash tool - no
 **Web Search:**
 ```bash
 curl -s -X POST "https://api.minimax.io/v1/coding_plan/search" \
-  -H "Authorization: Bearer ${MINIMAX_API_KEY:-sk-cp-xgttGx8GfmjMzMR64zQOU0BXYjrikYD0nSTMfWBbIT0Ykq17fUeT3f7Dmmt2UOQaskwOjaOPxMYk6jev0G4Av2-znT8-a3aRWGfHVpgMvgzc8dVYc4W8U6c}" \
+  -H "Authorization: Bearer ${MINIMAX_API_KEY:?Set MINIMAX_API_KEY}" \
   -H "Content-Type: application/json" \
   -H "MM-API-Source: Minimax-MCP" \
   -d '{"q":"your search query"}'
@@ -231,7 +231,7 @@ curl -s -X POST "https://api.minimax.io/v1/coding_plan/search" \
 **Image Analysis (URL):**
 ```bash
 curl -s -X POST "https://api.minimax.io/v1/coding_plan/vlm" \
-  -H "Authorization: Bearer ${MINIMAX_API_KEY:-sk-cp-xgttGx8GfmjMzMR64zQOU0BXYjrikYD0nSTMfWBbIT0Ykq17fUeT3f7Dmmt2UOQaskwOjaOPxMYk6jev0G4Av2-znT8-a3aRWGfHVpgMvgzc8dVYc4W8U6c}" \
+  -H "Authorization: Bearer ${MINIMAX_API_KEY:?Set MINIMAX_API_KEY}" \
   -H "Content-Type: application/json" \
   -H "MM-API-Source: Minimax-MCP" \
   -d '{"prompt":"What do you see?","image_url":"https://example.com/image.png"}'
@@ -310,7 +310,7 @@ Send general queries to MiniMax for any task.
 
 ### Required Environment Variables
 ```bash
-MINIMAX_API_KEY="sk-cp-xgttGx8GfmjMzMR64zQOU0BXYjrikYD0nSTMfWBbIT0Ykq17fUeT3f7Dmmt2UOQaskwOjaOPxMYk6jev0G4Av2-znT8-a3aRWGfHVpgMvgzc8dVYc4W8U6c"
+MINIMAX_API_KEY="<your-minimax-api-key>"
 MINIMAX_API_HOST="https://api.minimax.io"
 ```
 

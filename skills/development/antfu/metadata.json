@@ -1,0 +1,20 @@
+{
+  "name": "antfu",
+  "description": "",
+  "repo": "woody1234567/Nuxt_tech_blog",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/woody1234567/Nuxt_tech_blog",
+  "github_path": ".agent/skills/antfu",
+  "github_branch": "master",
+  "dir_name": "antfu",
+  "downloaded_at": "2026-02-05T05:32:51.452230Z",
+  "author": "Anthony Fu / woody1234567",
+  "source_url": "https://github.com/woody1234567/Nuxt_tech_blog/tree/master/.agent/skills/antfu",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); original source was archived from the upstream repository metadata.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

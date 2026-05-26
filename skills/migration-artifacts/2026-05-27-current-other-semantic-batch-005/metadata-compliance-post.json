@@ -1,0 +1,858 @@
+{
+  "scanned": 170,
+  "missing_metadata": 0,
+  "errors": 0,
+  "warnings": 0,
+  "results": [
+    {
+      "path": "agent/amq-cli-avivsinai-agent-message-queue-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/antigravity-agents-v2-py/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/architectural-forensics-dowwie-agent-framework-stud/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/anthropic-architect/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/antigravity-blockrun/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/antigravity-claude-code-guide-boisenoise-skills-collections-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/antigravity-conversation-memory-boisenoise-skills-collections-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-ml/anomaly-detector/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/ambiguity-resolver/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/analyse/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/analytics-learning-randysalars-dreamweaving/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/analyze-content-gaps/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/analyze-content-gaps-dandye-ai-runbooks/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/analyze-equations-homericintelligence-projectodyssey/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/analyze-equations-homericintelligence-projectodyssey-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/analyze-frame/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/analyze-frame-knowlet-pf-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/analyze-issue-gittower-git-flow-next-a94006a1/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/analyze-results/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/analyze-script-failures/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/analyze-session/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/analyze-trends-historical/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/analyze-us-bank-credit-deposit-decoupling/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/analyzer-composiohq-awesome-claude-plugi/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/analyzing-requirements/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/analyzing-requirements-jyasuu-cheat-sheet/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/analyzing-text-with-nlp/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/arboreto-k-dense-ai-scientific-agent-ski/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/arch-options-compare/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/architect-detective/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/amazon-best-selling-products-finder-api-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/amazon-buy-box-monitor-api-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/amazon-product-api-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/amazon-product-search-api-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/amazon-reviews-api-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-design-oribarilan-97/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-documenter-claude-code-communit-claude-code-resource-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-documenter-rmyndharis-antigravity-skills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-documenter-sickn33-antigravity-awesome/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-documenter-skill-404kidwiz-claude-supercode-ski-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-documenting/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-endpoint-create-cpa03-blueprintify-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-endpoint-generator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-envelope-pattern/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-error-handling/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-gateway-configuration-secondsky-claude-skills-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-gateway-itsmostafa-aws-agent-skills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-gateway-patterns-nickcrew-claude-cortex-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-gateway-rate-limiting/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-integrator-dredd-us-seashells-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-investigator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-investigator-drillan-note-mcp/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-key-auth-setup/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-key-auth-setup-brmbobo-web2podcast/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-mock/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-mock-generator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-mock-server/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-mocking-server/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-observability-axiom-pino-sentry/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-pagination-debugging/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-pattern-extractor/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-platform-crud-vilnacrm-org-user-service-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-platform-dto-resources/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-platform-filters/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-platform-resources/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-portal-design-melodic-software-claude-code-plugins/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-rate-limiting-aj-geddes-useful-ai-prompts-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-rate-limiting-secondsky-claude-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-request-validation-mumerrazzaq-fast-next-todo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-response-cacher/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-runtime/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-search-meilisearch/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-tier-architecture/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-triggered-campaigns/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-triggered-campaigns-clix-so-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/apifox-mock-script-gen/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "business/approve-orders/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "creative/animator-skill-rainlib-ai-storyboard-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "creative/anime-production/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/aminet-index/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/analytics-a5c-ai-babysitter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/analytics-ftc8569-ftcmetrics/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/analytics-ftc8569-ftcmetrics-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/antigravity-claimable-postgres/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/analyze-theme/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/anchoring-effect/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/android-ui-lib/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/android-ui-lib-klara-copilot-epost-agent-kit/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/antigravity-animejs-animation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/antigravity-shadcn/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/api-portal-design/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/ancplua-docs/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/android-restart-app-asnar00-miso/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/android-signing-config-hitoshura25-claude-devtools/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/angular-ui-patterns/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/angular-ui-patterns-sickn33-antigravity-awesome/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/answer-reviewer-questions/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/antfu/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/antfu-aiskillstore-marketplace/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/antigravity-architect-review/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/antigravity-i18n-localization-boisenoise-skills-collections/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/antigravity-remotion-best-practices/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/antigravity-wiki-qa/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/api-implementation-patterns/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/api-implementation-patterns-michsindlinger-agent-os-extended/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/api-implementer-lexicalninja-my-little-scrum-team-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/app-builder-congdon1207-agents-md-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/apple-ship/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/application-metrics/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/appstore-readiness/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/arch-erp-core-dev-eagles-claude-config/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/architecting-solutions/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/architecting-solutions-rysweet-azurehaymaker/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/antigravity-git-pushing-boisenoise-skills-collections-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/apache/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/api-gateway-configuration-secondsky-claude-skills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/apollo-incident-runbook-byteworthy-upstream/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/appimage-builder/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/api-docs-writer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/api-style-guide/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/applying-brand-guidelines-aisa-group-skill-inject/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/applying-brand-guidelines-alchimie-di-circe-extractor-desktop-ap/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/applying-brand-guidelines-alchimie-di-circe-extractor-desktop-ap-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "gaming/animation-blending/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "gaming/animation-rigging/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "gaming/animation-state-machines/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/amplemarket-org-chart/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/antigravity-azure-communication-chat-java/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/antigravity-azure-eventhub-ts/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/antigravity-box-automation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/antigravity-helpdesk-automation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/antigravity-upstash-qstash/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/antigravity-upstash-qstash-boisenoise-skills-collections/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/antigravity-whatsapp-automation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/antigravity-zapier-make-patterns/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/ap2-mcp-server/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/api-labz-automation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/apollo-mcp-server-apollographql-skills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/apple-shortcuts/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/apple-shortcuts-integration/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "marketing/antigravity-email-systems/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/alto-switch/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "performance/apm-dashboard-creator-intent-solutions-io-plugins-nixtla-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "planning/antigravity-writing-plans/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "product/antigravity-micro-saas-launcher-boisenoise-skills-collections-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "productivity/antigravity-file-organizer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "productivity/anylist/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "productivity/anylist-chatandbuild-chatchat-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/antigravity-uncle-bob-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/apply-findings/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/apply-findings-tobihagemann-turbo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/apply-findings-tobihagemann-turbo-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/arch-check-quyenvjp-pmtl-vn/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/annualreports/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/annualreports-danielmiessler-personal-ai-infrastr/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/annualreports-danielmiessler-personal-ai-infrastr-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/annualreports-danielmiessler-personal-ai-infrastr-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/antigravity-network-101/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/antigravity-varlock/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/aoa-approval-gate-check/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/aoa-sanitized-share/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/api-platform-security/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/api-security-best-practices-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/apk-redteam-pipeline/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "skills/anthropics-official-pack/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "testing/api-contract-validator-chaserbreitenbach-claude-skills-and-ag-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "testing/api-testing-observability-api-mock-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "workflow/aoc-orchestrator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "workflow/approval-gates/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "writing/apex-evolve/metadata.json",
+      "errors": [],
+      "warnings": []
+    }
+  ]
+}

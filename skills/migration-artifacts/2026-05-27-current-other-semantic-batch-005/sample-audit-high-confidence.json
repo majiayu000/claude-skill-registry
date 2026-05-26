@@ -1,0 +1,1018 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-26T20:22:41.254766+00:00",
+  "workset_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-005/input.jsonl",
+  "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-005/classification.jsonl",
+  "policy": {
+    "sample_size": 50,
+    "seed": "category-audit-v1",
+    "statuses": [
+      "ok"
+    ],
+    "min_confidence": 0.9
+  },
+  "summary": {
+    "workset_row_count": 1000,
+    "classification_row_count": 1000,
+    "matched_input_count": 1000,
+    "missing_input_count": 0,
+    "candidate_count": 495,
+    "sample_count": 50,
+    "status_counts": {
+      "missing_result": 5,
+      "ok": 993,
+      "unknown_or_inactive_category": 2
+    },
+    "target_category_counts": {
+      "": 5,
+      "agent": 15,
+      "ai-llm": 27,
+      "ai-ml": 4,
+      "analysis": 118,
+      "api": 131,
+      "bash": 3,
+      "business": 6,
+      "communication": 6,
+      "context-management": 5,
+      "creative": 16,
+      "data": 36,
+      "design": 29,
+      "development": 193,
+      "devops": 49,
+      "documents": 40,
+      "education": 2,
+      "gaming": 7,
+      "integration": 80,
+      "marketing": 21,
+      "orchestration": 8,
+      "other": 17,
+      "performance": 7,
+      "personal-development": 3,
+      "planning": 5,
+      "product": 10,
+      "productivity": 7,
+      "quality": 18,
+      "security": 51,
+      "skills": 4,
+      "testing": 38,
+      "workflow": 37,
+      "writing": 2
+    }
+  },
+  "samples": [
+    {
+      "path": "other/antigravity-file-organizer/SKILL.md",
+      "name": "file-organizer",
+      "current_category": "other",
+      "llm_category": "productivity",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill's description and content focus on organizing files, cleaning up directories, removing duplicates, and restructuring projects, which aligns with personal/team workflow automation and task management under the 'productivity' category.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "3fecd9fb97cbb01d57465fe634c22b564d1c32d214493c2acec60bc0f6ad6185",
+      "metadata_sha256": "ab14ab41ef59894070100de4d1421894c630222e345efb44beb0121b5ce8f8b9",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Intelligently organizes files and folders by understanding context, finding duplicates, and suggesting better organizational structures. Use when user wants to clean up directories, organize downloads, remove duplicates, or restructure projects.",
+      "content_excerpt": "---\nname: file-organizer\ndescription: Intelligently organizes files and folders by understanding context, finding duplicates, and suggesting better organizational structures. Use when user wants to clean up directories, organize downloads, remove duplicates, or restructure projects.\n---\n\n# File Organizer\n\n## When to Use This Skill\n\n- Your Downloads folder is a chaotic mess\n- You can't find files because they're scattered everywhere\n- You have duplicate files taking up space\n- Your folder structure doesn't make sense anymore\n- You want to establish better organization habits\n- You're starting a new project and need a good structure\n- You're cleaning up before archiving old projects\n\n## What This Skill Does\n\n1. **Analyzes Current Structure**: Reviews your folders and files to understand what you have\n2. **Finds Duplicates**: Identifies duplicate files across your system\n3. **Suggests Organization**: Proposes logical folder structures based on your content\n4. **Automates Cleanup**: Moves, renames, and organizes files with your approval\n5. **Maintains Context**: Makes smart decisions based on file types, dates, and content\n6. **Reduces Clutter**: Identifies old files you probably don't need anymore\n\n## Instructions\n\nWhen a user requests file organization help:\n\n1. **Understand the Scope**\n\n   Ask clarifying questions:\n\n   - Which directory needs organization? (Downloads, Documents, entire home folder?)\n   - What's the main problem? (Can't find things, duplicates, too messy, no structure?)\n   - Any files or folders to avoid? (Current projects, sensitive data?)\n   - How aggressively to organize? (Conservative vs. comprehensive cleanup)\n\n2. **Analyze Current State**\n\n   Review the target directory:\n\n   ```bash\n   # Get overview of current structure\n   ls -la [target_directory]\n\n   # Check file types and sizes\n   find [target_directory] -type f -exec file {} \\; | head -20\n\n   # Identify largest files\n   du -sh [target_directory]/* | sort -rh | head -20\n\n   # Count file types\n   find [target_directory] -type f | sed 's/.*\\.//' | sort | uniq -c | sort -rn\n   ```\n\n   Summarize findings:\n\n   - Total files and folders\n   - File type breakdown\n   - Size distribution\n   - Date ranges\n   - Obvious organization issues\n\n3. **Identify Organization Patterns**\n\n   Based on the files, determine logical groupings:\n\n   **By Type**:\n\n   - Documents (PDFs, DOCX, TXT)\n   - Images (JPG, PNG, SVG)\n   - Videos (MP4, MOV)\n   - Archives (ZIP, TAR, DMG)\n   - Code/Projects (directories wit"
+    },
+    {
+      "path": "other/apply-findings-tobihagemann-turbo-2/SKILL.md",
+      "name": "apply-findings",
+      "current_category": "other",
+      "llm_category": "quality",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill applies evaluated findings from code reviews, focusing on implementing accepted fixes and managing improvements, which is a quality assurance workflow.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "ca922be4ebbaa079f274c2858d7bdee3af6df6634e17266f21eef9c02d1593df",
+      "metadata_sha256": "41baa69588bdb7743b29b4b1c04b8ed84b6439d479da12783b3c66c36ab6ceff",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Apply findings by making the suggested code changes. Applies accepted verdicts, escalates ambiguous findings to the user, and offers to note skipped genuine improvements. Use when the user asks to \"apply findings\", \"apply fixes\", \"apply suggestions\", \"apply accepted findings\", \"fix the findings\", or \"apply the review results\".",
+      "content_excerpt": "---\nname: apply-findings\ndescription: \"Apply findings by making the suggested code changes. Applies accepted verdicts, escalates ambiguous findings to the user, and offers to note skipped genuine improvements. Use when the user asks to \\\"apply findings\\\", \\\"apply fixes\\\", \\\"apply suggestions\\\", \\\"apply accepted findings\\\", \\\"fix the findings\\\", or \\\"apply the review results\\\".\"\n---\n\n# Apply Findings\n\nApply evaluated findings from the conversation context. Findings must have been through `/evaluate-findings` first.\n\n## Step 1: Identify Findings\n\nCollect all findings from the conversation context. Findings should have Verdict columns (Apply, Skip, Escalate) from `/evaluate-findings`.\n\nIf findings are unevaluated (raw output without verdicts), stop and say to run `/evaluate-findings` first.\n\n## Step 2: Apply in File Order\n\nGroup Apply findings by file path and apply in file order to minimize context switching. For each finding:\n\n1. Read the full function or logical block at the referenced location\n2. Verify the finding still applies to the current code\n3. Make the fix\n4. If the finding renames an identifier, search the file for all occurrences of the old name before marking the fix complete. The cited location is often only one of several references.\n\nIf a finding references code that has changed since it was generated (e.g., by a prior fix in this same run), re-assess whether it still applies. Skip if the code has diverged.\n\n## Step 3: Handle Escalated Findings\n\nFor findings with Escalate verdict, use `AskUserQuestion` to present the trade-offs and let the user decide. Include your technical recommendation alongside the options. When options differ on both scope/intent adherence (what the task was scoped to do) and technical merit (what's engineering-wise better), state both axes explicitly — don't silently fold scope concerns into the technical recommendation.\n\n- **Apply** — make the change\n- **Skip** — leave as-is\n- **Note for later** — run the `/note-improvement` skill to capture it\n\n## Step 4: Handle Skipped Improvements\n\nDo not surface findings skipped as false positives or subjective preferences. For findings skipped solely because they are pre-existing, out of scope, or disproportionate, use `AskUserQuestion` to ask whether the user wants to apply the improvement now or note it for later:\n\n- **Apply now** — make the change inline\n- **Note for later** — run the `/note-improvement` skill to capture it\n\n## Step 5: Report Results\n\nSummarize what was appli"
+    },
+    {
+      "path": "other/api-contract-validator-chaserbreitenbach-claude-skills-and-ag-2/SKILL.md",
+      "name": "api-contract-validator",
+      "current_category": "other",
+      "llm_category": "testing",
+      "confidence": 0.92,
+      "status": "ok",
+      "reason": "Skill validates API contracts against OpenAPI specs, detects breaking changes, validates runtime responses. The metadata explicitly sets category to 'testing' and tags include 'api-testing' and 'contract-testing'.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "0338d6b66d2482869f3279e92fc0845e2121ee7d700029ca428f8e41462ae8eb",
+      "metadata_sha256": "1d75a7bee84258deaaf339efa12c564b40d529708ad067fc22c55c5033948192",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Validates API contracts for correctness, compatibility, and compliance. Tests REST APIs against\nOpenAPI/Swagger specifications. Detects breaking changes between versions, validates runtime\nresponses against schemas, and ensures backward compatibility before deployment.",
+      "content_excerpt": "---\nname: api-contract-validator\ndescription: |\n  Validates API contracts for correctness, compatibility, and compliance. Tests REST APIs against\n  OpenAPI/Swagger specifications. Detects breaking changes between versions, validates runtime\n  responses against schemas, and ensures backward compatibility before deployment.\nlicense: MIT\nallowed-tools:\n  - Bash\n  - Read\n  - Write\n  - Edit\n  - Glob\n  - Grep\n  - WebFetch\ncompatibility:\n  claude-code: \">=1.0.0\"\nmetadata:\n  version: \"1.0.0\"\n  author: \"QuantQuiver AI R&D\"\n  category: \"testing\"\n  tags:\n    - api-testing\n    - openapi\n    - contract-testing\n    - breaking-changes\n---\n\n# API Contract Validator\n\n## Purpose\n\nValidates API contracts for correctness, compatibility, and compliance. Tests REST APIs against OpenAPI/Swagger specifications. Detects breaking changes between versions and validates runtime responses against schemas.\n\n## Triggers\n\nUse this skill when:\n\n- \"validate API contract\"\n- \"test API endpoints\"\n- \"check for breaking changes\"\n- \"API compatibility test\"\n- \"contract testing\"\n- \"verify OpenAPI spec\"\n\n## When to Use\n\n- New API version deployment\n- Consumer complaints about changes\n- Pre-release validation\n- Multi-service integration testing\n- Third-party API consumption validation\n\n## When NOT to Use\n\n- Unit testing internal functions (use unit-test-generator)\n- Load testing (use performance-benchmark)\n- Security testing (use security-test-suite)\n- Data quality validation (use data-validation)\n\n---\n\n## Core Instructions\n\n### Validation Categories\n\n| Category | Description | Severity |\n| -------- | ----------- | -------- |\n| **Schema Compliance** | Response matches OpenAPI schema | Critical |\n| **Status Codes** | Correct codes for scenarios | Critical |\n| **Breaking Changes** | Backward incompatible changes | Critical |\n| **Deprecations** | Deprecated fields/endpoints | Warning |\n| **Headers** | Required headers present | Medium |\n| **Error Format** | Error responses follow standard | Low |\n\n### Breaking Change Detection\n\n| Change Type | Severity | Example |\n| ----------- | -------- | ------- |\n| Removed endpoint | Critical | DELETE /api/v1/users removed |\n| Removed field | Critical | `user.legacy_id` no longer returned |\n| Type change | Critical | `id` changed from string to integer |\n| Added required param | Critical | New required `tenant_id` parameter |\n| Changed authentication | Critical | API key to OAuth2 |\n| Removed enum value | High | Status no longer accepts \"pending\" |\n\n### Validation "
+    },
+    {
+      "path": "other/analyze-friction/SKILL.md",
+      "name": "analyze-friction",
+      "current_category": "other",
+      "llm_category": "analysis",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill orchestrates a multi-stage workflow to analyze conversation history for friction points, extract patterns, and present actionable improvements. This is fundamentally an analysis task focused on extracting insights from data.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "c7d4a81d6decffc0f556d1b2b8cc42637f88c630b8a5055a245424f0a771fb56",
+      "metadata_sha256": "bb58e6070613ca98d4a9527eaf633b7d16a8a6f978fcea61ef4bd04309d37a84",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Orchestrate 3-stage friction analysis workflow across conversations. Extracts raw friction, abstracts patterns, and presents for approval. Use when user wants to analyze conversation history for improvement opportunities.",
+      "content_excerpt": "---\nname: analyze-friction\ndescription: Orchestrate 3-stage friction analysis workflow across conversations. Extracts raw friction, abstracts patterns, and presents for approval. Use when user wants to analyze conversation history for improvement opportunities.\nallowed-tools: Task, Bash, Read, Glob, AskUserQuestion\n---\n\n# Friction Analysis Orchestrator\n\nOrchestrates a 3-stage workflow to analyze conversation friction and extract actionable patterns.\n\n## Arguments\n\n- `--count N` - Number of conversations to analyze (default: 15)\n\n## Overview\n\n| Stage | Agent | Purpose |\n|-------|-------|---------|\n| 1 | conversation-friction-analyzer | Extract raw friction from individual conversations (parallel) |\n| 2 | friction-pattern-abstractor | Aggregate and abstract patterns across all raw outputs |\n| 3 | (orchestrator) | Present patterns to user for point-by-point approval |\n\n## Workflow\n\n### Stage 0: Preparation\n\n1. Parse arguments for `--count N` (default 15)\n2. Check existing files in `docs/friction-analysis/raw/` to determine which conversations are already processed\n3. Calculate which conversations need analysis (skip index 0 - current session)\n\n```bash\n# List existing raw files\nls docs/friction-analysis/raw/ 2>/dev/null || echo \"No existing files\"\n```\n\n### Stage 1: Raw Friction Extraction (Parallel)\n\nFor each conversation index from 1 to N (skipping 0 which is current session):\n\n1. Check if `docs/friction-analysis/raw/{conversation-id}.md` already exists\n2. If not exists, spawn a `conversation-friction-analyzer` agent:\n\n```\nSpawn agents in parallel (up to 15 concurrent):\n\nFor conversation at index I (where I = 1 to count):\n  - Extract conversation: `aaa extract-conversations --limit 1 --skip I`\n  - Pass to conversation-friction-analyzer agent\n  - Agent saves output to docs/friction-analysis/raw/{conversation-id}.md\n```\n\n**Sub-agent prompt template:**\n\n```\nAnalyze this conversation for friction points. Extract RAW friction only - no abstraction.\n\nCONVERSATION:\n<output from aaa extract-conversations --limit 1 --skip {index}>\n\nSave your analysis to: docs/friction-analysis/raw/{conversation-id}.md\n```\n\n**Resumability:** Always check for existing files before spawning agents. Skip conversations that already have raw output files.\n\n### Stage 2: Pattern Abstraction (Sequential)\n\nAfter ALL Stage 1 agents complete:\n\n1. Verify all expected raw files exist in `docs/friction-analysis/raw/`\n2. Spawn single `friction-pattern-abstractor` agent:\n\n```\nAnalyze all raw friction "
+    },
+    {
+      "path": "other/android-additional-tests-hitoshura25-claude-devtools-2/SKILL.md",
+      "name": "android-additional-tests",
+      "current_category": "other",
+      "llm_category": "testing",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill is explicitly about adding comprehensive tests beyond basic smoke tests for Android apps, including navigation tests, user flow tests, and integration tests.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "991d6addc4e60b6a4f5f9e1c04c3b1b6efbde201eccb186769391b789cdb466b",
+      "metadata_sha256": "12c4646f7d2f5ff1801c920e64eaef06b8b01869450f6feb35e8aea696741c8e",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Optional - Add comprehensive tests beyond the basic smoke test",
+      "content_excerpt": "---\nname: android-additional-tests\ndescription: Optional - Add comprehensive tests beyond the basic smoke test\ncategory: android\nversion: 2.0.0\ninputs:\n  - project_path: Path to Android project\n  - package_name: App package name\n  - main_activity: Main activity class name\noutputs:\n  - Additional test files for comprehensive testing\nverify: \"./gradlew connectedDebugAndroidTest\"\n---\n\n# Android Additional Tests (Optional)\n\n⚠️ **This skill is OPTIONAL.** The basic E2E testing setup (android-e2e-testing-setup) already includes a smoke test that validates the app launches without crashing.\n\nUse this skill when you want to add more comprehensive tests beyond the smoke test:\n- Navigation tests\n- User flow tests\n- Screen-specific tests\n- Integration tests\n\n## Prerequisites\n\n- E2E testing setup complete (android-e2e-testing-setup)\n- Smoke test passing\n- Package name and main activity known\n\n## When to Use This Skill\n\n**Use this skill if:**\n- You need comprehensive test coverage for specific user flows\n- You want to test complex navigation patterns\n- You need to validate specific UI interactions\n- You're building a large app that needs extensive testing\n\n**Skip this skill if:**\n- You only need basic smoke tests (already included in e2e-testing-setup)\n- You're setting up a simple app\n- You want to start with minimal testing and add more later\n\n## Inputs\n\n| Input | Required | Default | Description |\n|-------|----------|---------|-------------|\n| project_path | Yes | . | Android project root |\n| package_name | Yes | - | App package name |\n| main_activity | Yes | MainActivity | Main activity class name |\n\n## Process\n\n### Step 1: Create Additional Smoke Tests\n\nCreate `app/src/androidTest/kotlin/${PACKAGE_PATH}/ExampleInstrumentedTest.kt`:\n\n```kotlin\npackage ${PACKAGE_NAME}\n\nimport androidx.test.ext.junit.runners.AndroidJUnit4\nimport androidx.test.platform.app.InstrumentationRegistry\nimport org.junit.Test\nimport org.junit.runner.RunWith\nimport org.junit.Assert.*\n\n/**\n * Additional instrumented tests beyond the basic smoke test\n */\n@RunWith(AndroidJUnit4::class)\nclass ExampleInstrumentedTest {\n\n    @Test\n    fun appLaunches_correctPackage() {\n        // Verify app package name\n        val appContext = InstrumentationRegistry.getInstrumentation().targetContext\n        assertEquals(\"${PACKAGE_NAME}\", appContext.packageName)\n    }\n\n    @Test\n    fun appContext_isNotNull() {\n        // Verify app context is accessible\n        val appContext = InstrumentationRegistry.getInstrume"
+    },
+    {
+      "path": "other/architecting-solutions/SKILL.md",
+      "name": "Architecting Solutions",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill focuses on system architecture design, problem decomposition, and creating specifications before implementation, which is a core software development activity.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "36c4998e1d7c567f1f210e301b99d5bba86064de607c64d6b60a3148792a8921",
+      "metadata_sha256": "ec0690e7d7093e454eb73aec5751aa74cdb01b879c5aa4765507294e275bdab1",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Analyzes problems and designs system architecture before implementation. Activates when user asks design questions, discusses architecture, or needs to break down complex features. Creates clear specifications following the brick philosophy of simple, modular, regeneratable components.",
+      "content_excerpt": "---\nname: \"Architecting Solutions\"\ndescription: \"Analyzes problems and designs system architecture before implementation. Activates when user asks design questions, discusses architecture, or needs to break down complex features. Creates clear specifications following the brick philosophy of simple, modular, regeneratable components.\"\n---\n\n# Architecting Solutions\n\nYou are activating the architectural design capability. Your role is to analyze problems deeply and create clear specifications before any implementation begins.\n\n## Core Philosophy\n\n- **Occam's Razor**: Solutions should be as simple as possible, but no simpler\n- **Trust in Emergence**: Complex systems work best from simple components\n- **Analysis First**: Always analyze before implementing\n- **Design Before Code**: Clear specifications guide successful implementation\n\n## When to Activate\n\nThis skill activates when:\n\n- User asks \"how should I...\" or \"what's the best way to...\"\n- Design discussions about system architecture\n- Breaking down complex features into components\n- Choosing between implementation approaches\n- Planning new features or refactoring\n- Questions about modularity, structure, or patterns\n\n## Process\n\n### 1. Problem Analysis\n\nStart with: \"Let me analyze this problem and design the solution.\"\n\nProvide:\n\n- **Problem Decomposition**: Break into manageable pieces\n- **Core Requirements**: What must the solution accomplish?\n- **Constraints**: Technical, performance, maintainability limits\n- **Success Criteria**: How do we know it works?\n\n### 2. Solution Options\n\nPresent 2-3 approaches with:\n\n- **Description**: Clear explanation of approach\n- **Pros**: Advantages and strengths\n- **Cons**: Limitations and tradeoffs\n- **Complexity**: Implementation effort estimate\n- **Maintainability**: Long-term sustainability\n\n### 3. Recommendation\n\nProvide clear choice with:\n\n- **Selected Approach**: Which option and why\n- **Justification**: Reasoning based on requirements/constraints\n- **Risk Assessment**: Potential issues and mitigation\n- **Alternative**: When to consider other options\n\n### 4. Module Specifications\n\nFor each component, create specifications following this template:\n\n```markdown\n## Module: [Name]\n\n### Purpose\n\n[Single clear responsibility - one sentence]\n\n### Contract\n\n- **Inputs**: [Types, constraints, validation]\n- **Outputs**: [Types, guarantees, error cases]\n- **Side Effects**: [External interactions, state changes]\n\n### Dependencies\n\n- [Required modules/libraries with versions]\n"
+    },
+    {
+      "path": "other/applying-brand-guidelines-anthropics-claude-cookbooks-4d021e47/SKILL.md",
+      "name": "applying-brand-guidelines",
+      "current_category": "other",
+      "llm_category": "documents",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill focuses on applying brand guidelines to generated documents (PowerPoint, Excel, PDF) with specific formatting standards for colors, typography, and layouts.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "6db648c228eefa92d73a47676de68c6b1925e15ba6e6d8144aa079495771e59b",
+      "metadata_sha256": "c64b3003e440a7545c8d661721edb148055958dcd7ae89c8ce1555790f56bedc",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "This skill applies consistent corporate branding and styling to all generated documents including colors, fonts, layouts, and messaging",
+      "content_excerpt": "---\nname: applying-brand-guidelines\ndescription: This skill applies consistent corporate branding and styling to all generated documents including colors, fonts, layouts, and messaging\n---\n\n# Corporate Brand Guidelines Skill\n\nThis skill ensures all generated documents adhere to corporate brand standards for consistent, professional communication.\n\n## Brand Identity\n\n### Company: Acme Corporation\n**Tagline**: \"Innovation Through Excellence\"\n**Industry**: Technology Solutions\n\n## Visual Standards\n\n### Color Palette\n\n**Primary Colors**:\n- **Acme Blue**: #0066CC (RGB: 0, 102, 204) - Headers, primary buttons\n- **Acme Navy**: #003366 (RGB: 0, 51, 102) - Text, accents\n- **White**: #FFFFFF - Backgrounds, reverse text\n\n**Secondary Colors**:\n- **Success Green**: #28A745 (RGB: 40, 167, 69) - Positive metrics\n- **Warning Amber**: #FFC107 (RGB: 255, 193, 7) - Cautions\n- **Error Red**: #DC3545 (RGB: 220, 53, 69) - Negative values\n- **Neutral Gray**: #6C757D (RGB: 108, 117, 125) - Secondary text\n\n### Typography\n\n**Primary Font Family**: Segoe UI, system-ui, -apple-system, sans-serif\n\n**Font Hierarchy**:\n- **H1**: 32pt, Bold, Acme Blue\n- **H2**: 24pt, Semibold, Acme Navy\n- **H3**: 18pt, Semibold, Acme Navy\n- **Body**: 11pt, Regular, Acme Navy\n- **Caption**: 9pt, Regular, Neutral Gray\n\n### Logo Usage\n\n- Position: Top-left corner on first page/slide\n- Size: 120px width (maintain aspect ratio)\n- Clear space: Minimum 20px padding on all sides\n- Never distort, rotate, or apply effects\n\n## Document Standards\n\n### PowerPoint Presentations\n\n**Slide Templates**:\n1. **Title Slide**: Company logo, presentation title, date, presenter\n2. **Section Divider**: Section title with blue background\n3. **Content Slide**: Title bar with blue background, white content area\n4. **Data Slide**: For charts/graphs, maintain color palette\n\n**Layout Rules**:\n- Margins: 0.5 inches all sides\n- Title position: Top 15% of slide\n- Bullet indentation: 0.25 inches per level\n- Maximum 6 bullet points per slide\n- Charts use brand colors exclusively\n\n### Excel Spreadsheets\n\n**Formatting Standards**:\n- **Headers**: Row 1, Bold, White text on Acme Blue background\n- **Subheaders**: Bold, Acme Navy text\n- **Data cells**: Regular, Acme Navy text\n- **Borders**: Thin, Neutral Gray\n- **Alternating rows**: Light gray (#F8F9FA) for readability\n\n**Chart Defaults**:\n- Primary series: Acme Blue\n- Secondary series: Success Green\n- Gridlines: Neutral Gray, 0.5pt\n- No 3D effects or gradients\n\n### PDF Documents\n\n**Page Layout*"
+    },
+    {
+      "path": "other/api-testing-observability-api-mock/SKILL.md",
+      "name": "api-testing-observability-api-mock",
+      "current_category": "other",
+      "llm_category": "testing",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is explicitly about API mocking for testing purposes, with use cases including frontend/integration testing, simulating APIs during development, and validating API contracts. This aligns directly with the testing category's focus on QA, testing, and test tooling.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "65f57d1dc925210f083cc78874d4c839da4c73b5e0474b45922d20d9463fa527",
+      "metadata_sha256": "19f38f86f5ae0ea6ca49d953c198d9e7f2c5ee551d78109db7162ec9ec1c93a0",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "You are an API mocking expert specializing in realistic mock services for development, testing, and demos. Design mocks that simulate real API behavior and enable parallel development.",
+      "content_excerpt": "---\nname: api-testing-observability-api-mock\ndescription: \"You are an API mocking expert specializing in realistic mock services for development, testing, and demos. Design mocks that simulate real API behavior and enable parallel development.\"\nrisk: unknown\nsource: community\ndate_added: \"2026-02-27\"\n---\n\n# API Mocking Framework\n\nYou are an API mocking expert specializing in creating realistic mock services for development, testing, and demonstration purposes. Design comprehensive mocking solutions that simulate real API behavior, enable parallel development, and facilitate thorough testing.\n\n## Use this skill when\n\n- Building mock APIs for frontend or integration testing\n- Simulating partner or third-party APIs during development\n- Creating demo environments with realistic responses\n- Validating API contracts before backend completion\n\n## Do not use this skill when\n\n- You need to test production systems or live integrations\n- The task is security testing or penetration testing\n- There is no API contract or expected behavior to mock\n\n## Safety\n\n- Avoid reusing production secrets or real customer data in mocks.\n- Make mock endpoints clearly labeled to prevent accidental use.\n\n## Context\n\nThe user needs to create mock APIs for development, testing, or demonstration purposes. Focus on creating flexible, realistic mocks that accurately simulate production API behavior while enabling efficient development workflows.\n\n## Requirements\n\n$ARGUMENTS\n\n## Instructions\n\n- Clarify the API contract, auth flows, error shapes, and latency expectations.\n- Define mock routes, scenarios, and state transitions before generating responses.\n- Provide deterministic fixtures with optional randomness toggles.\n- Document how to run the mock server and how to switch scenarios.\n- If detailed implementation is requested, open `resources/implementation-playbook.md`.\n\n## Resources\n\n- `resources/implementation-playbook.md` for code samples, checklists, and templates.\n\n## Limitations\n- Use this skill only when the task clearly matches the scope described above.\n- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.\n- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.\n"
+    },
+    {
+      "path": "other/api-security-hardening-secondsky-claude-skills-2/SKILL.md",
+      "name": "api-security-hardening",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Skill is about REST API security hardening with authentication, rate limiting, input validation, security headers. This directly matches the security category's focus on security review, authentication, vulnerabilities, and OWASP.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "8b7acd539e19ab7607a7882b2e79e3a9873f0cc365023e7c6873218f76ed5128",
+      "metadata_sha256": "f486ab6d73b3808bc01e5b4fc6b21cd230dbd20339f97b08d550c81a4568d859",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "REST API security hardening with authentication, rate limiting, input validation, security headers. Use for production APIs, security audits, defense-in-depth, or encountering vulnerabilities, injection attacks, CORS issues.",
+      "content_excerpt": "---\nname: api-security-hardening\ndescription: REST API security hardening with authentication, rate limiting, input validation, security headers. Use for production APIs, security audits, defense-in-depth, or encountering vulnerabilities, injection attacks, CORS issues.\n---\n\n# API Security Hardening\n\nProtect REST APIs against common vulnerabilities with multiple security layers.\n\n## Security Middleware Stack (Express)\n\n```javascript\nconst helmet = require('helmet');\nconst rateLimit = require('express-rate-limit');\nconst mongoSanitize = require('express-mongo-sanitize');\nconst xss = require('xss-clean');\n\napp.use(helmet());\napp.use(mongoSanitize());\napp.use(xss());\n\napp.use('/api/', rateLimit({\n  windowMs: 15 * 60 * 1000,\n  max: 100\n}));\n\napp.use('/api/auth/', rateLimit({\n  windowMs: 15 * 60 * 1000,\n  max: 5\n}));\n```\n\n## Input Validation\n\n```javascript\nconst { body, validationResult } = require('express-validator');\n\napp.post('/users',\n  body('email').isEmail().normalizeEmail(),\n  body('password').isLength({ min: 8 }).matches(/[A-Z]/).matches(/[0-9]/),\n  body('name').trim().escape().isLength({ max: 100 }),\n  (req, res) => {\n    const errors = validationResult(req);\n    if (!errors.isEmpty()) {\n      return res.status(400).json({ errors: errors.array() });\n    }\n    // Process request\n  }\n);\n```\n\n## Security Headers\n\n```javascript\napp.use((req, res, next) => {\n  res.setHeader('Content-Security-Policy', \"default-src 'self'\");\n  res.setHeader('X-Frame-Options', 'DENY');\n  res.setHeader('X-Content-Type-Options', 'nosniff');\n  res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');\n  res.setHeader('X-XSS-Protection', '1; mode=block');\n  next();\n});\n```\n\n## Security Checklist\n\n- [ ] HTTPS everywhere\n- [ ] Authentication on all protected routes\n- [ ] Input validation and sanitization\n- [ ] Rate limiting enabled\n- [ ] Security headers configured\n- [ ] CORS restricted to allowed origins\n- [ ] No stack traces in production errors\n- [ ] Audit logging enabled\n- [ ] Dependencies regularly updated\n\n## Additional Implementations\n\nSee [references/python-nginx.md](references/python-nginx.md) for:\n- Python FastAPI security middleware\n- Pydantic input validation with password rules\n- Nginx SSL/TLS and security headers configuration\n- HTTP Parameter Pollution prevention\n\n## Never Do\n\n- Trust user input without validation\n- Return detailed errors in production\n- Store secrets in code\n- Use GET for state-changing operations\n- Disable security for conve"
+    },
+    {
+      "path": "other/antigravity-architect-review/SKILL.md",
+      "name": "architect-review",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is about software architecture review, patterns, and design, which is core to software development workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "c061bf2e4d51bf16342536cc69159984f42ab9d8f553b467854e5924d3251af0",
+      "metadata_sha256": "4d0ef22500952ecd89295b9c013512eb398d0dae5570d51e2c4380f4e6fdc236",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Master software architect specializing in modern architecture",
+      "content_excerpt": "---\nname: architect-review\ndescription: \"Master software architect specializing in modern architecture\"\nrisk: unknown\nsource: community\ndate_added: \"2026-02-27\"\n---\nYou are a master software architect specializing in modern software architecture patterns, clean architecture principles, and distributed systems design.\n\n## Use this skill when\n\n- Reviewing system architecture or major design changes\n- Evaluating scalability, resilience, or maintainability impacts\n- Assessing architecture compliance with standards and patterns\n- Providing architectural guidance for complex systems\n\n## Do not use this skill when\n\n- You need a small code review without architectural impact\n- The change is minor and local to a single module\n- You lack system context or requirements to assess design\n\n## Instructions\n\n1. Gather system context, goals, and constraints.\n2. Evaluate architecture decisions and identify risks.\n3. Recommend improvements with tradeoffs and next steps.\n4. Document decisions and follow up on validation.\n\n## Safety\n\n- Avoid approving high-risk changes without validation plans.\n- Document assumptions and dependencies to prevent regressions.\n\n## Expert Purpose\nElite software architect focused on ensuring architectural integrity, scalability, and maintainability across complex distributed systems. Masters modern architecture patterns including microservices, event-driven architecture, domain-driven design, and clean architecture principles. Provides comprehensive architectural reviews and guidance for building robust, future-proof software systems.\n\n## Capabilities\n\n### Modern Architecture Patterns\n- Clean Architecture and Hexagonal Architecture implementation\n- Microservices architecture with proper service boundaries\n- Event-driven architecture (EDA) with event sourcing and CQRS\n- Domain-Driven Design (DDD) with bounded contexts and ubiquitous language\n- Serverless architecture patterns and Function-as-a-Service design\n- API-first design with GraphQL, REST, and gRPC best practices\n- Layered architecture with proper separation of concerns\n\n### Distributed Systems Design\n- Service mesh architecture with Istio, Linkerd, and Consul Connect\n- Event streaming with Apache Kafka, Apache Pulsar, and NATS\n- Distributed data patterns including Saga, Outbox, and Event Sourcing\n- Circuit breaker, bulkhead, and timeout patterns for resilience\n- Distributed caching strategies with Redis Cluster and Hazelcast\n- Load balancing and service discovery patterns\n- Distributed traci"
+    },
+    {
+      "path": "other/antigravity-xss-html-injection-boisenoise-skills-collections-2/SKILL.md",
+      "name": "Cross-Site Scripting and HTML Injection Testing",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly about testing for XSS vulnerabilities and HTML injection, which is a core security testing activity.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "727f5af3c030c70c8f6be1aee824d5ed0e6c1652e476584e87bfd50ca656754f",
+      "metadata_sha256": "19270803cfa3fad157e4b86dcd22b73905eeb996ec8850d5ca24eea28dac8367",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "This skill should be used when the user asks to \"test for XSS vulnerabilities\", \"perform cross-site scripting attacks\", \"identify HTML injection flaws\", \"exploit client-side injection vulnerabilities\", \"steal cookies via XSS\", or \"bypass content security policies\". It provides comprehensive techniques for detecting, exploiting, and understanding XSS and HTML injection attack vectors in web applications.",
+      "content_excerpt": "---\nname: Cross-Site Scripting and HTML Injection Testing\ndescription: This skill should be used when the user asks to \"test for XSS vulnerabilities\", \"perform cross-site scripting attacks\", \"identify HTML injection flaws\", \"exploit client-side injection vulnerabilities\", \"steal cookies via XSS\", or \"bypass content security policies\". It provides comprehensive techniques for detecting, exploiting, and understanding XSS and HTML injection attack vectors in web applications.\nmetadata:\n  author: zebbern\n  version: \"1.1\"\n---\n\n# Cross-Site Scripting and HTML Injection Testing\n\n## Purpose\n\nExecute comprehensive client-side injection vulnerability assessments on web applications to identify XSS and HTML injection flaws, demonstrate exploitation techniques for session hijacking and credential theft, and validate input sanitization and output encoding mechanisms. This skill enables systematic detection and exploitation across stored, reflected, and DOM-based attack vectors.\n\n## Inputs / Prerequisites\n\n### Required Access\n- Target web application URL with user input fields\n- Burp Suite or browser developer tools for request analysis\n- Access to create test accounts for stored XSS testing\n- Browser with JavaScript console enabled\n\n### Technical Requirements\n- Understanding of JavaScript execution in browser context\n- Knowledge of HTML DOM structure and manipulation\n- Familiarity with HTTP request/response headers\n- Understanding of cookie attributes and session management\n\n### Legal Prerequisites\n- Written authorization for security testing\n- Defined scope including target domains and features\n- Agreement on handling of any captured session data\n- Incident response procedures established\n\n## Outputs / Deliverables\n\n- XSS/HTMLi vulnerability report with severity classifications\n- Proof-of-concept payloads demonstrating impact\n- Session hijacking demonstrations (controlled environment)\n- Remediation recommendations with CSP configurations\n\n## Core Workflow\n\n### Phase 1: Vulnerability Detection\n\n#### Identify Input Reflection Points\nLocate areas where user input is reflected in responses:\n\n```\n# Common injection vectors\n- Search boxes and query parameters\n- User profile fields (name, bio, comments)\n- URL fragments and hash values\n- Error messages displaying user input\n- Form fields with client-side validation only\n- Hidden form fields and parameters\n- HTTP headers (User-Agent, Referer)\n```\n\n#### Basic Detection Testing\nInsert test strings to observe application behavior"
+    },
+    {
+      "path": "other/api-fuzzing-bug-bounty/SKILL.md",
+      "name": "API Fuzzing for Bug Bounty",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Skill is explicitly about API security testing, fuzzing, vulnerability discovery, IDOR exploitation, and penetration testing techniques for bug bounty programs.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "6e252cef1aa1d4d125c6f15b81f6edb0728bcb698f6dfc390a9695a37f63e2e3",
+      "metadata_sha256": "f104c980fe7f88fd08d3a91a877c3ca646af678b9dc88083663d4f7e523f69cd",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "This skill should be used when the user asks to \"test API security\", \"fuzz APIs\", \"find IDOR vulnerabilities\", \"test REST API\", \"test GraphQL\", \"API penetration testing\", \"bug bounty API testing\", or needs guidance on API security assessment techniques.",
+      "content_excerpt": "---\nname: API Fuzzing for Bug Bounty\ndescription: This skill should be used when the user asks to \"test API security\", \"fuzz APIs\", \"find IDOR vulnerabilities\", \"test REST API\", \"test GraphQL\", \"API penetration testing\", \"bug bounty API testing\", or needs guidance on API security assessment techniques.\nmetadata:\n  author: zebbern\n  version: \"1.1\"\n---\n\n# API Fuzzing for Bug Bounty\n\n## Purpose\n\nProvide comprehensive techniques for testing REST, SOAP, and GraphQL APIs during bug bounty hunting and penetration testing engagements. Covers vulnerability discovery, authentication bypass, IDOR exploitation, and API-specific attack vectors.\n\n## Inputs/Prerequisites\n\n- Burp Suite or similar proxy tool\n- API wordlists (SecLists, api_wordlist)\n- Understanding of REST/GraphQL/SOAP protocols\n- Python for scripting\n- Target API endpoints and documentation (if available)\n\n## Outputs/Deliverables\n\n- Identified API vulnerabilities\n- IDOR exploitation proofs\n- Authentication bypass techniques\n- SQL injection points\n- Unauthorized data access documentation\n\n---\n\n## API Types Overview\n\n| Type | Protocol | Data Format | Structure |\n|------|----------|-------------|-----------|\n| SOAP | HTTP | XML | Header + Body |\n| REST | HTTP | JSON/XML/URL | Defined endpoints |\n| GraphQL | HTTP | Custom Query | Single endpoint |\n\n---\n\n## Core Workflow\n\n### Step 1: API Reconnaissance\n\nIdentify API type and enumerate endpoints:\n\n```bash\n# Check for Swagger/OpenAPI documentation\n/swagger.json\n/openapi.json\n/api-docs\n/v1/api-docs\n/swagger-ui.html\n\n# Use Kiterunner for API discovery\nkr scan https://target.com -w routes-large.kite\n\n# Extract paths from Swagger\npython3 json2paths.py swagger.json\n```\n\n### Step 2: Authentication Testing\n\n```bash\n# Test different login paths\n/api/mobile/login\n/api/v3/login\n/api/magic_link\n/api/admin/login\n\n# Check rate limiting on auth endpoints\n# If no rate limit → brute force possible\n\n# Test mobile vs web API separately\n# Don't assume same security controls\n```\n\n### Step 3: IDOR Testing\n\nInsecure Direct Object Reference is the most common API vulnerability:\n\n```bash\n# Basic IDOR\nGET /api/users/1234 → GET /api/users/1235\n\n# Even if ID is email-based, try numeric\n/?user_id=111 instead of /?user_id=user@mail.com\n\n# Test /me/orders vs /user/654321/orders\n```\n\n**IDOR Bypass Techniques:**\n\n```bash\n# Wrap ID in array\n{\"id\":111} → {\"id\":[111]}\n\n# JSON wrap\n{\"id\":111} → {\"id\":{\"id\":111}}\n\n# Send ID twice\nURL?id=<LEGIT>&id=<VICTIM>\n\n# Wildcard injection\n{\"user_id\":\"*\"}\n\n# Pa"
+    },
+    {
+      "path": "other/antigravity-mlops-engineer-boisenoise-skills-collections-2/SKILL.md",
+      "name": "mlops-engineer",
+      "current_category": "other",
+      "llm_category": "ai-ml",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly about MLOps engineering, covering ML pipelines, experiment tracking, model registries, and production ML systems. This is a core AI/ML infrastructure skill.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "c34a19cb9cbaf692416be148b0055f056ad6796b77a846750ec1a239ff42fb65",
+      "metadata_sha256": "f25888a1543595a94bfea6692c5da13895592cb990ca0760cf0b317074fcecde",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Build comprehensive ML pipelines, experiment tracking, and model registries with MLflow, Kubeflow, and modern MLOps tools.",
+      "content_excerpt": "---\nname: mlops-engineer\ndescription: Build comprehensive ML pipelines, experiment tracking, and model registries with MLflow, Kubeflow, and modern MLOps tools.\nrisk: unknown\nsource: community\ndate_added: '2026-02-27'\n---\n\n## Use this skill when\n\n- Working on mlops engineer tasks or workflows\n- Needing guidance, best practices, or checklists for mlops engineer\n\n## Do not use this skill when\n\n- The task is unrelated to mlops engineer\n- You need a different domain or tool outside this scope\n\n## Instructions\n\n- Clarify goals, constraints, and required inputs.\n- Apply relevant best practices and validate outcomes.\n- Provide actionable steps and verification.\n- If detailed examples are required, open `resources/implementation-playbook.md`.\n\nYou are an MLOps engineer specializing in ML infrastructure, automation, and production ML systems across cloud platforms.\n\n## Purpose\nExpert MLOps engineer specializing in building scalable ML infrastructure and automation pipelines. Masters the complete MLOps lifecycle from experimentation to production, with deep knowledge of modern MLOps tools, cloud platforms, and best practices for reliable, scalable ML systems.\n\n## Capabilities\n\n### ML Pipeline Orchestration & Workflow Management\n- Kubeflow Pipelines for Kubernetes-native ML workflows\n- Apache Airflow for complex DAG-based ML pipeline orchestration\n- Prefect for modern dataflow orchestration with dynamic workflows\n- Dagster for data-aware pipeline orchestration and asset management\n- Azure ML Pipelines and AWS SageMaker Pipelines for cloud-native workflows\n- Argo Workflows for container-native workflow orchestration\n- GitHub Actions and GitLab CI/CD for ML pipeline automation\n- Custom pipeline frameworks with Docker and Kubernetes\n\n### Experiment Tracking & Model Management\n- MLflow for end-to-end ML lifecycle management and model registry\n- Weights & Biases (W&B) for experiment tracking and model optimization\n- Neptune for advanced experiment management and collaboration\n- ClearML for MLOps platform with experiment tracking and automation\n- Comet for ML experiment management and model monitoring\n- DVC (Data Version Control) for data and model versioning\n- Git LFS and cloud storage integration for artifact management\n- Custom experiment tracking with metadata databases\n\n### Model Registry & Versioning\n- MLflow Model Registry for centralized model management\n- Azure ML Model Registry and AWS SageMaker Model Registry\n- DVC for Git-based model and data versioning\n- Pachy"
+    },
+    {
+      "path": "other/api-design-patterns-nickcrew-claude-cortex-3/SKILL.md",
+      "name": "api-design-patterns",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill's description and content focus on REST and GraphQL API design patterns, versioning, pagination, error handling, and HATEOAS principles, which directly align with the 'api' category for API design and integration.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "e28101b57635be1e663c4fd6a59f790ad78e3438caab84cb1155bca467ab3203",
+      "metadata_sha256": "e5d171a052503fd2086d08130c6534c7958cc17d86268d7e3a1ea49448e5c96f",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Comprehensive REST and GraphQL API design patterns with versioning, pagination, error handling, and HATEOAS principles. Use when designing APIs, defining endpoints, or architecting service contracts requiring production-grade patterns.",
+      "content_excerpt": "---\nname: api-design-patterns\ndescription: Comprehensive REST and GraphQL API design patterns with versioning, pagination, error handling, and HATEOAS principles. Use when designing APIs, defining endpoints, or architecting service contracts requiring production-grade patterns.\n---\n\n# API Design Patterns\n\nExpert guidance for designing scalable, maintainable REST and GraphQL APIs with industry-standard patterns for versioning, pagination, error handling, authentication, and service contracts.\n\n## When to Use This Skill\n\n- Designing new REST or GraphQL APIs from scratch\n- Refactoring existing APIs for better scalability and consistency\n- Defining service contracts for microservices architectures\n- Implementing versioning strategies for API evolution\n- Standardizing error handling and response formats across services\n- Designing pagination for large datasets\n- Implementing HATEOAS or hypermedia-driven APIs\n- Creating API specifications (OpenAPI, GraphQL Schema)\n\n## Quick Reference\n\n| Topic | Load reference |\n| --- | --- |\n| **Design Process** | `skills/api-design-patterns/references/design-process.md` |\n\n## Core Principles\n\n### 1. Resource-Oriented Design (REST)\n\n**URLs represent resources, not actions:**\n```\n✓ GET    /users/123\n✓ POST   /users\n✓ PUT    /users/123\n✓ DELETE /users/123\n\n✗ GET    /getUser?id=123\n✗ POST   /createUser\n✗ POST   /deleteUser\n```\n\n**Use HTTP methods semantically:**\n- GET: Retrieve resource(s), idempotent, cacheable\n- POST: Create resource, non-idempotent\n- PUT: Replace entire resource, idempotent\n- PATCH: Partial update, idempotent\n- DELETE: Remove resource, idempotent\n\n### 2. Consistent Naming Conventions\n\n```\nResources:        /users, /orders, /products (plural nouns)\nNested:           /users/123/orders\nCollections:      /users?status=active&page=2\nSub-resources:    /users/123/settings\nActions (rare):   /users/123/activate (POST)\n```\n\n### 3. HTTP Status Codes\n\n**Success:**\n- 200 OK: Standard response for GET, PUT, PATCH\n- 201 Created: Resource created (POST), return Location header\n- 202 Accepted: Async processing started\n- 204 No Content: Success with no response body (DELETE)\n\n**Client Errors:**\n- 400 Bad Request: Invalid syntax or validation failure\n- 401 Unauthorized: Authentication required or failed\n- 403 Forbidden: Authenticated but insufficient permissions\n- 404 Not Found: Resource doesn't exist\n- 409 Conflict: State conflict (duplicate, version mismatch)\n- 422 Unprocessable Entity: Semantic validation failure\n- 429 Too Many"
+    },
+    {
+      "path": "other/antigravity-pentest-checklist-boisenoise-skills-collections-2/SKILL.md",
+      "name": "Pentest Checklist",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.98,
+      "status": "ok",
+      "reason": "The skill is explicitly a penetration testing checklist covering security assessment, vulnerability findings, and remediation planning. This is a core security domain skill.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "b559440c2e36e6a2f8980663dc31457ea23afcc467c08c6a427878e1afca92a6",
+      "metadata_sha256": "b8e3079e866a527ba63f51ff5391b9d015328120026fdd81aa3d72600d46517e",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "This skill should be used when the user asks to \"plan a penetration test\", \"create a security assessment checklist\", \"prepare for penetration testing\", \"define pentest scope\", \"follow security testing best practices\", or needs a structured methodology for penetration testing engagements.",
+      "content_excerpt": "---\nname: Pentest Checklist\ndescription: This skill should be used when the user asks to \"plan a penetration test\", \"create a security assessment checklist\", \"prepare for penetration testing\", \"define pentest scope\", \"follow security testing best practices\", or needs a structured methodology for penetration testing engagements.\nmetadata:\n  author: zebbern\n  version: \"1.1\"\n---\n\n# Pentest Checklist\n\n## Purpose\n\nProvide a comprehensive checklist for planning, executing, and following up on penetration tests. Ensure thorough preparation, proper scoping, and effective remediation of discovered vulnerabilities.\n\n## Inputs/Prerequisites\n\n- Clear business objectives for testing\n- Target environment information\n- Budget and timeline constraints\n- Stakeholder contacts and authorization\n- Legal agreements and scope documents\n\n## Outputs/Deliverables\n\n- Defined pentest scope and objectives\n- Prepared testing environment\n- Security monitoring data\n- Vulnerability findings report\n- Remediation plan and verification\n\n## Core Workflow\n\n### Phase 1: Scope Definition\n\n#### Define Objectives\n\n- [ ] **Clarify testing purpose** - Determine goals (find vulnerabilities, compliance, customer assurance)\n- [ ] **Validate pentest necessity** - Ensure penetration test is the right solution\n- [ ] **Align outcomes with objectives** - Define success criteria\n\n**Reference Questions:**\n- Why are you doing this pentest?\n- What specific outcomes do you expect?\n- What will you do with the findings?\n\n#### Know Your Test Types\n\n| Type | Purpose | Scope |\n|------|---------|-------|\n| External Pentest | Assess external attack surface | Public-facing systems |\n| Internal Pentest | Assess insider threat risk | Internal network |\n| Web Application | Find application vulnerabilities | Specific applications |\n| Social Engineering | Test human security | Employees, processes |\n| Red Team | Full adversary simulation | Entire organization |\n\n#### Enumerate Likely Threats\n\n- [ ] **Identify high-risk areas** - Where could damage occur?\n- [ ] **Assess data sensitivity** - What data could be compromised?\n- [ ] **Review legacy systems** - Old systems often have vulnerabilities\n- [ ] **Map critical assets** - Prioritize testing targets\n\n#### Define Scope\n\n- [ ] **List in-scope systems** - IPs, domains, applications\n- [ ] **Define out-of-scope items** - Systems to avoid\n- [ ] **Set testing boundaries** - What techniques are allowed?\n- [ ] **Document exclusions** - Third-party systems, production data\n\n#### Bud"
+    },
+    {
+      "path": "other/analyze-issue-gittower-git-flow-next-a94006a1/SKILL.md",
+      "name": "analyze-issue",
+      "current_category": "other",
+      "llm_category": "analysis",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill's primary function is to analyze GitHub issues, explore codebases, and produce structured analysis documents. This aligns directly with the 'analysis' category, which covers analytical workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "09e4b8721cea6922150f3b7baa08f96fef8c90d101880e8b1e1ac4bf1534d734",
+      "metadata_sha256": "4c19a2ff375b48215701f1d42951835980c16577c147cf51068afcfc433d36ab",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Analyze a GitHub issue and create detailed analysis in workflows/",
+      "content_excerpt": "---\nname: analyze-issue\ndescription: Analyze a GitHub issue and create detailed analysis in workflows/\nargument-hint: <issue-number>\nallowed-tools: Read, Grep, Glob, Write, Bash, mcp__github__get_issue\ncontext: fork\nagent: Explore\n---\n\n# Analyze Issue\n\nPerform detailed analysis of a GitHub issue and write the analysis to the workflows directory.\n\n## Instructions\n\n1. **Fetch Issue Details**\n   - Get issue #$ARGUMENTS from gittower/git-flow-next\n   - Extract: title, description, labels, any linked issues\n\n2. **Create Workflow Directory**\n   - Create `workflows/issue-<number>-<slug>/`\n   - Slug: lowercase, hyphenated version of key words from title (max 4 words)\n   - Example: Issue #42 \"Add squash merge support\" → `workflows/issue-42-squash-merge/`\n\n3. **Explore the Codebase**\n   - Search for related code, files, and patterns\n   - Identify affected components\n   - Understand current implementation\n   - Find similar patterns or prior art in the codebase\n\n4. **Write Analysis Document**\n   - Create `analysis.md` in the workflow folder\n   - Use the template below\n\n5. **Propose TODO Comments**\n   - If specific code locations need attention, suggest TODO comments\n   - Format: `// TODO(#<issue>): <description>`\n\n## Analysis Template\n\nWrite to `workflows/issue-<number>-<slug>/analysis.md`:\n\n```markdown\n# Issue #<number>: <title>\n\n## Summary\n<1-2 sentence summary of the issue>\n\n## Issue Details\n- **Type**: <bug/enhancement/feature>\n- **Labels**: <labels from GitHub>\n- **Link**: <GitHub issue URL>\n\n## Analysis\n\n### Understanding\n<What is being requested/reported? Clarify any ambiguity>\n\n### Root Cause (for bugs)\n<What's causing this behavior? Include file:line references>\n\n### Affected Components\nList all files/packages that will need changes:\n\n- `cmd/<file>.go` - <why this file is affected>\n- `internal/<package>/<file>.go` - <why>\n\n### Current Behavior\n<How does the system currently work in this area?>\n\n### Proposed Solution\n<High-level approach to solving this>\n\n### Implementation Approach\n<More detailed technical approach>\n\n1. <Step 1>\n2. <Step 2>\n3. <Step 3>\n\n### Edge Cases\n- <Edge case 1 and how to handle it>\n- <Edge case 2 and how to handle it>\n\n### Testing Considerations\nBased on TESTING_GUIDELINES.md:\n- <Test case 1>\n- <Test case 2>\n\n### Documentation Impact\n- [ ] Manpage updates needed?\n- [ ] CONFIGURATION.md updates?\n- [ ] README changes?\n\n### Related Code References\n<Key code snippets or file:line references that are relevant>\n\n## Open Questions\n- [ ] <Any c"
+    },
+    {
+      "path": "other/alto-switch-gonzaloetjo-alto-2/SKILL.md",
+      "name": "alto-switch",
+      "current_category": "other",
+      "llm_category": "orchestration",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Identical to id 1 and 2 - manages switching between different orchestrator modes for an AI system.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "9a627903a9c8c3addd27a3d55ff31013f88ee8653561ec0fbb2250856550f3e3",
+      "metadata_sha256": "c54ab775b15810d0b6677d3f054519cdbab17f69726c1ff95a844269d8c51da0",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when switching ALTO orchestrator modes (dev/build/setup). Guides mode transitions and session management via the alto command.",
+      "content_excerpt": "---\nname: alto-switch\ndescription: Use when switching ALTO orchestrator modes (dev/build/setup). Guides mode transitions and session management via the alto command.\n---\n\n# Mode Switching\n\nThe `alto` command handles mode switching and session management automatically.\n\n## Commands\n\n| Command | What it does |\n|---------|--------------|\n| `alto` | Resume current mode (sends \"hi\" if no message provided) |\n| `alto dev` | Switch to dev mode and start Claude |\n| `alto build` | Switch to build mode and start Claude |\n| `alto setup` | Switch to setup mode and start Claude |\n\n## Modes\n\n| Mode | Purpose |\n|------|---------|\n| setup | Feature definition, configuration |\n| build | Autonomous execution |\n| dev | ALTO development |\n\n## If User Is Already In Claude\n\nThey must exit first:\n```\n/exit\n```\n\nThen from terminal:\n```\nalto <mode>\n```\n\nThe switch happens automatically - no need to manually edit files or restart.\n"
+    },
+    {
+      "path": "other/anthropic-evaluations-dwmkerr-claude-toolkit-2/SKILL.md",
+      "name": "anthropic-evaluations",
+      "current_category": "other",
+      "llm_category": "testing",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is explicitly for building evaluations for AI agents, including creating evals, evaluating agents, building evaluation suites, and mentions agent testing, graders, or benchmarks.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "6a37d354b2b8d5dab45f222cbe72bbb864db6d6e73000287668e28db605790eb",
+      "metadata_sha256": "7dd1f1817c44fb762a3434aed5284fdee2c4ebb80d11308a3d1692e0cc235ab2",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "This skill should be used when the user asks to \"create evals\", \"evaluate an agent\", \"build evaluation suite\", or mentions agent testing, graders, or benchmarks. Also suggest when building coding agents, conversational agents, or research agents that need quality assurance.",
+      "content_excerpt": "---\nname: anthropic-evaluations\ndescription: This skill should be used when the user asks to \"create evals\", \"evaluate an agent\", \"build evaluation suite\", or mentions agent testing, graders, or benchmarks. Also suggest when building coding agents, conversational agents, or research agents that need quality assurance.\n---\n\n# Anthropic Evaluations\n\nBuild rigorous evaluations for AI agents using Anthropic's proven patterns.\n\n## Quick Reference\n\nYou MUST read the reference files for detailed guidance:\n\n- [Grader Types](./references/grader-types.md) - Code-based, model-based, human graders\n- [Agent Type Patterns](./references/agent-type-patterns.md) - Coding, conversational, research, computer use\n- [Roadmap](./references/roadmap.md) - Steps 0-8 for building evals from scratch\n- [Frameworks](./references/frameworks.md) - Harbor, Promptfoo, Braintrust, etc.\n\n**YAML Templates:**\n- [coding-agent-eval.yaml](./references/coding-agent-eval.yaml) - Coding agent template\n- [conversational-agent-eval.yaml](./references/conversational-agent-eval.yaml) - Support agent template\n\n**Annotated Examples:**\n- [Example: Coding Agent](./references/example-coding-agent.md) - Auth bypass fix walkthrough\n- [Example: Conversational](./references/example-conversational.md) - Refund handling walkthrough\n\n## Core Definitions\n\n| Term | Definition |\n|------|------------|\n| **Task** | Single test with defined inputs and success criteria |\n| **Trial** | One attempt at a task (run multiple for consistency) |\n| **Grader** | Logic that scores agent performance; tasks can have multiple |\n| **Transcript** | Complete record of a trial (outputs, tool calls, reasoning) |\n| **Outcome** | Final state in environment (not just what agent said) |\n| **Evaluation harness** | Infrastructure that runs evals end-to-end |\n| **Agent harness** | System enabling model to act as agent (scaffold) |\n| **Evaluation suite** | Collection of tasks measuring specific capabilities |\n\n## Grader Types (Quick Reference)\n\n| Type | Methods | Best For |\n|------|---------|----------|\n| **Code-based** | String match, unit tests, static analysis, state checks | Fast, cheap, objective verification |\n| **Model-based** | Rubric scoring, assertions, pairwise comparison | Nuanced, open-ended tasks |\n| **Human** | SME review, A/B testing, spot-check sampling | Gold standard calibration |\n\nSee [Grader Types](./references/grader-types.md) for detailed comparison.\n\n## Capability vs Regression Evals\n\n| Type | Question | Target Pass Rate |"
+    },
+    {
+      "path": "other/api-examples-manastalukdar-claude-devstudio/SKILL.md",
+      "name": "api-examples",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill generates API usage examples and tutorials from code analysis. It focuses on API documentation, examples, and developer experience, which are API-related activities.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "c60e8c6551f94d7169665acd072dc2ba6dff8cf5df27b109699c068a952452fa",
+      "metadata_sha256": "545fc33223a30324297467167300a67c2a4dfeaa11e43ea40e721440e7d64d4d",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Generate API usage examples and tutorials from code analysis",
+      "content_excerpt": "---\nname: api-examples\ndescription: Generate API usage examples and tutorials from code analysis\ndisable-model-invocation: false\n---\n\n# API Examples & Tutorial Generator\n\nI'll analyze your API and generate comprehensive usage examples, code snippets, and tutorials for developers.\n\nArguments: `$ARGUMENTS` - specific API focus or language (e.g., \"REST\", \"GraphQL\", \"python\", \"javascript\")\n\n## Strategic Planning Process\n\n<think>\nEffective API examples require understanding:\n\n1. **API Analysis**\n   - What type of API? (REST, GraphQL, gRPC, WebSocket)\n   - What endpoints/operations exist?\n   - What's the authentication method?\n   - What are common use cases?\n   - What error handling is needed?\n\n2. **Audience Consideration**\n   - Who are the API consumers? (internal, external, partners)\n   - What languages do they use?\n   - What's their experience level?\n   - What examples will be most valuable?\n\n3. **Example Types**\n   - Quick start / Getting started\n   - Authentication examples\n   - CRUD operation examples\n   - Complex workflow examples\n   - Error handling patterns\n   - Best practices and anti-patterns\n\n4. **Format & Organization**\n   - Code snippets for common operations\n   - Complete working examples\n   - Interactive tutorials\n   - SDK usage examples\n   - cURL/HTTP examples for testing\n</think>\n\n## Token Optimization\n\n**Status:** ✅ Fully Optimized (Phase 2 Batch 4B, 2026-01-27)\n\n**Target:** 65-80% reduction (3,500-5,000 → 900-1,500 tokens)\n\n### Core Strategy: Cache-Based Example Generation\n\nGenerate API usage examples efficiently by reusing cached API schemas and pre-built templates instead of analyzing implementation code.\n\n**Optimization Impact:**\n- **Before:** 3,500-5,000 tokens (full API analysis + schema reading + example generation)\n- **After:** 900-1,500 tokens (cache lookup + template rendering + targeted examples)\n- **Savings:** 65-80% reduction\n\n### 1. Cached API Schema (75% savings)\n\n**Pattern:** Reuse OpenAPI/GraphQL schema from `/api-validate`, `/api-docs-generate` cache\n\n```bash\n# Instead of analyzing route files (HIGH COST):\n# Read: src/routes/*.js (2,000+ tokens)\n# Read: src/controllers/*.js (2,000+ tokens)\n# Analyze request/response schemas (1,000+ tokens)\n\n# Use cached schema (LOW COST):\ncat .claude/cache/api/api_schema.json  # 200 tokens\n```\n\n**Cache Structure:**\n```json\n{\n  \"schema_version\": \"1.0\",\n  \"api_type\": \"REST\",\n  \"framework\": \"express\",\n  \"base_url\": \"/api/v1\",\n  \"endpoints\": [\n    {\n      \"path\": \"/users\",\n      \"methods\": [\"GET\""
+    },
+    {
+      "path": "other/antigravity-writing-plans-boisenoise-skills-collections/SKILL.md",
+      "name": "writing-plans",
+      "current_category": "other",
+      "llm_category": "planning",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "This is a duplicate of the first skill with identical content focused on creating implementation plans.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "2f24891aab2623894a34e3322fbd1b4fcb2254d089293ef78ab1740a79f79c49",
+      "metadata_sha256": "7c36a5d239e859c83592486c428d01398544aa9e2d39e9634512694d9fb06e74",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when you have a spec or requirements for a multi-step task, before touching code",
+      "content_excerpt": "---\nname: writing-plans\ndescription: \"Use when you have a spec or requirements for a multi-step task, before touching code\"\nrisk: unknown\nsource: community\ndate_added: \"2026-02-27\"\n---\n\n# Writing Plans\n\n## Overview\n\nWrite comprehensive implementation plans assuming the engineer has zero context for our codebase and questionable taste. Document everything they need to know: which files to touch for each task, code, testing, docs they might need to check, how to test it. Give them the whole plan as bite-sized tasks. DRY. YAGNI. TDD. Frequent commits.\n\nAssume they are a skilled developer, but know almost nothing about our toolset or problem domain. Assume they don't know good test design very well.\n\n**Announce at start:** \"I'm using the writing-plans skill to create the implementation plan.\"\n\n**Context:** This should be run in a dedicated worktree (created by brainstorming skill).\n\n**Save plans to:** `docs/plans/YYYY-MM-DD-<feature-name>.md`\n\n## Bite-Sized Task Granularity\n\n**Each step is one action (2-5 minutes):**\n- \"Write the failing test\" - step\n- \"Run it to make sure it fails\" - step\n- \"Implement the minimal code to make the test pass\" - step\n- \"Run the tests and make sure they pass\" - step\n- \"Commit\" - step\n\n## Plan Document Header\n\n**Every plan MUST start with this header:**\n\n```markdown\n# [Feature Name] Implementation Plan\n\n> **For Claude:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.\n\n**Goal:** [One sentence describing what this builds]\n\n**Architecture:** [2-3 sentences about approach]\n\n**Tech Stack:** [Key technologies/libraries]\n\n---\n```\n\n## Task Structure\n\n```markdown\n### Task N: [Component Name]\n\n**Files:**\n- Create: `exact/path/to/file.py`\n- Modify: `exact/path/to/existing.py:123-145`\n- Test: `tests/exact/path/to/test.py`\n\n**Step 1: Write the failing test**\n\n```python\ndef test_specific_behavior():\n    result = function(input)\n    assert result == expected\n```\n\n**Step 2: Run test to verify it fails**\n\nRun: `pytest tests/path/test.py::test_name -v`\nExpected: FAIL with \"function not defined\"\n\n**Step 3: Write minimal implementation**\n\n```python\ndef function(input):\n    return expected\n```\n\n**Step 4: Run test to verify it passes**\n\nRun: `pytest tests/path/test.py::test_name -v`\nExpected: PASS\n\n**Step 5: Commit**\n\n```bash\ngit add tests/path/test.py src/path/file.py\ngit commit -m \"feat: add specific feature\"\n```\n```\n\n## Remember\n- Exact file paths always\n- Complete code in plan (not \"add validation\")\n- Exact"
+    },
+    {
+      "path": "other/api-portal-design/SKILL.md",
+      "name": "api-portal-design",
+      "current_category": "other",
+      "llm_category": "design",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill is explicitly about API documentation and developer portal design, which aligns with UI/UX and frontend design principles.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "dc636979e51ad2df2e5c71b56210a5436652e185dbd324a35fce41b01bf69ae5",
+      "metadata_sha256": "3d9eefaa3deeeddea39eed4196c8040ae3c4018aac0c8a02adeefc438aec4ef7",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "API documentation and developer portal design",
+      "content_excerpt": "---\nname: api-portal-design\ndescription: API documentation and developer portal design\nallowed-tools: Read, Glob, Grep, Write, Edit\n---\n\n# API Portal Design Skill\n\n## When to Use This Skill\n\nUse this skill when:\n\n- **Api Portal Design tasks** - Working on api documentation and developer portal design\n- **Planning or design** - Need guidance on Api Portal Design approaches\n- **Best practices** - Want to follow established patterns and standards\n\n## Overview\n\nDesign comprehensive API documentation and developer portals for exceptional developer experience.\n\n## MANDATORY: Documentation-First Approach\n\nBefore designing API portals:\n\n1. **Invoke `docs-management` skill** for API documentation patterns\n2. **Verify OpenAPI/AsyncAPI standards** via MCP servers (context7)\n3. **Base guidance on industry API documentation best practices**\n\n## Developer Portal Architecture\n\n```text\nDeveloper Portal Components:\n\n┌─────────────────────────────────────────────────────────────────────────────┐\n│                           Developer Portal                                   │\n├─────────────────────────────────────────────────────────────────────────────┤\n│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐        │\n│  │  Getting    │  │    API      │  │   Code      │  │   API       │        │\n│  │  Started    │  │  Reference  │  │  Examples   │  │  Console    │        │\n│  └─────────────┘  └─────────────┘  └─────────────┘  └─────────────┘        │\n├─────────────────────────────────────────────────────────────────────────────┤\n│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐        │\n│  │   SDKs &    │  │  Change     │  │   Status    │  │   Support   │        │\n│  │  Libraries  │  │    Log      │  │    Page     │  │   Center    │        │\n│  └─────────────┘  └─────────────┘  └─────────────┘  └─────────────┘        │\n├─────────────────────────────────────────────────────────────────────────────┤\n│  ┌─────────────────────────────────────────────────────────────────────┐   │\n│  │                    Authentication & API Keys                         │   │\n│  └─────────────────────────────────────────────────────────────────────┘   │\n└─────────────────────────────────────────────────────────────────────────────┘\n```\n\n## Portal Content Structure\n\n### Essential Sections\n\n| Section | Purpose | Priority |\n|---------|---------|----------|\n| **Getting Started** | First-time user guide | P0 |\n| **Authentication** | How to authenticate | P0 |\n| **API R"
+    },
+    {
+      "path": "other/arch-undo-redo-systems/SKILL.md",
+      "name": "Design Undo/Redo Systems",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill provides comprehensive guidance for designing undo/redo systems using Command Pattern, which is a software development workflow for building complex application features.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "89e7f446c686f043d984edb7dca8c668e5c1cfc178c8b731f7eadc3c95d42e86",
+      "metadata_sha256": "8d4a9bd502d21ff03d76c26823bcdec7010bab34edb5c6351bea3880b15f8155",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "CREATE comprehensive undo/redo systems with Command Pattern. Design state management for complex applications with canvas interactions, multiple stores, and user actions. Use when building new undo/redo functionality from scratch.",
+      "content_excerpt": "---\nname: Design Undo/Redo Systems\ndescription: CREATE comprehensive undo/redo systems with Command Pattern. Design state management for complex applications with canvas interactions, multiple stores, and user actions. Use when building new undo/redo functionality from scratch.\n---\n\n# Undo/Redo Systems Architecture\n\n## Instructions\n\n### Command Pattern Implementation\nAlways use the Command Pattern for undo/redo functionality:\n\n```typescript\ninterface Command {\n  execute(): void | Promise<void>\n  undo(): void | Promise<void>\n  getDescription(): string\n  canExecute(): boolean\n}\n\nclass OptimizedHistory {\n  private undoStack: HistoryEntry[] = []\n  private redoStack: HistoryEntry[] = []\n\n  async execute(command: Command): Promise<void> {\n    await command.execute()\n    this.undoStack.push({ command, timestamp: Date.now() })\n    this.redoStack = []\n    this.optimizeMemory()\n  }\n}\n```\n\n### Application-Specific Commands\nCreate domain-specific commands for all mutable operations:\n\n```typescript\n// Task Management Commands\nclass CreateTaskCommand extends BaseCommand {\n  constructor(private taskStore: any, private taskData: any) {\n    super(`Create task: ${taskData.title}`)\n  }\n\n  async execute(): Promise<void> {\n    this.generatedId = await this.taskStore.createTask(this.taskData)\n  }\n\n  async undo(): Promise<void> {\n    if (this.generatedId) {\n      await this.taskStore.deleteTask(this.generatedId)\n    }\n  }\n}\n\n// Canvas Interaction Commands\nclass MoveNodeCommand extends BaseCommand {\n  constructor(\n    private canvasStore: any,\n    private nodeId: string,\n    private fromPos: Position,\n    private toPos: Position\n  ) {\n    super(`Move node ${nodeId}`)\n  }\n\n  async execute(): Promise<void> {\n    await this.canvasStore.updateNodePosition(this.nodeId, this.toPos)\n  }\n\n  async undo(): Promise<void> {\n    await this.canvasStore.updateNodePosition(this.nodeId, this.fromPos)\n  }\n}\n```\n\n### Key Requirements\n- Always implement both `execute()` and `undo()` methods\n- Use async/await for operations that might be slow\n- Include descriptive messages for debugging\n- Handle circular references in state serialization\n- Implement memory management for large histories\n- Use delta compression for performance optimization\n\n### Common Patterns\n- **Batch Commands**: Group related operations together\n- **Checkpoint Commands**: Create application state snapshots\n- **Delta Storage**: Store only changes, not full state\n- **Memory Management**: Automatic cleanup and compression\n- **Error Re"
+    },
+    {
+      "path": "other/api-pagination-secondsky-claude-skills-2/SKILL.md",
+      "name": "api-pagination",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Skill implements API pagination strategies for building paginated endpoints",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "5f6f0b254011495ab9ec6bb7e00830df4b62e671712f5d04cbc59da06366fdb2",
+      "metadata_sha256": "fd096a3cc72bd3ec6c8ee2ca67e8b0424a2318d4740a79bf2b29e0da2e9f49b4",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Implements efficient API pagination using offset, cursor, and keyset strategies for large datasets. Use when building paginated endpoints, implementing infinite scroll, or optimizing database queries for collections.",
+      "content_excerpt": "---\nname: api-pagination\ndescription: Implements efficient API pagination using offset, cursor, and keyset strategies for large datasets. Use when building paginated endpoints, implementing infinite scroll, or optimizing database queries for collections.\n---\n\n# API Pagination\n\nImplement scalable pagination strategies for handling large datasets efficiently.\n\n## Pagination Strategies\n\n| Strategy | Best For | Performance |\n|----------|----------|-------------|\n| Offset/Limit | Small datasets, simple UI | O(n) |\n| Cursor | Infinite scroll, real-time | O(1) |\n| Keyset | Large datasets | O(1) |\n\n## Offset Pagination\n\n```javascript\napp.get('/products', async (req, res) => {\n  const page = parseInt(req.query.page) || 1;\n  const limit = Math.min(parseInt(req.query.limit) || 20, 100);\n  const offset = (page - 1) * limit;\n\n  const [products, total] = await Promise.all([\n    Product.find().skip(offset).limit(limit),\n    Product.countDocuments()\n  ]);\n\n  res.json({\n    data: products,\n    pagination: {\n      page,\n      limit,\n      total,\n      totalPages: Math.ceil(total / limit)\n    }\n  });\n});\n```\n\n## Cursor Pagination\n\n```javascript\napp.get('/posts', async (req, res) => {\n  const limit = 20;\n  const cursor = req.query.cursor;\n\n  const query = cursor\n    ? { _id: { $gt: Buffer.from(cursor, 'base64').toString() } }\n    : {};\n\n  const posts = await Post.find(query).limit(limit + 1);\n  const hasMore = posts.length > limit;\n  if (hasMore) posts.pop();\n\n  res.json({\n    data: posts,\n    nextCursor: hasMore ? Buffer.from(posts[posts.length - 1]._id).toString('base64') : null\n  });\n});\n```\n\n## Response Format\n\n```json\n{\n  \"data\": [...],\n  \"pagination\": {\n    \"page\": 2,\n    \"limit\": 20,\n    \"total\": 150,\n    \"totalPages\": 8\n  },\n  \"links\": {\n    \"first\": \"/api/products?page=1\",\n    \"prev\": \"/api/products?page=1\",\n    \"next\": \"/api/products?page=3\",\n    \"last\": \"/api/products?page=8\"\n  }\n}\n```\n\n## Best Practices\n\n- Set reasonable max limits (e.g., 100)\n- Use cursor pagination for large datasets\n- Index sorting fields\n- Avoid COUNT queries when possible\n- Never allow unlimited page sizes\n"
+    },
+    {
+      "path": "other/antigravity-vercel-deployment/SKILL.md",
+      "name": "vercel-deployment",
+      "current_category": "other",
+      "llm_category": "devops",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is explicitly about deploying Next.js applications to Vercel, covering environment variables, edge vs serverless functions, build optimization, preview deployments, and monitoring. This aligns directly with DevOps concerns like CI/CD, deployment, and operational automation.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "334c40249c1783e3d0ea421cb8d4f46ed2c558e8dff9eecd6cc5863a1c680b40",
+      "metadata_sha256": "cf5d4a807b0b0129bca11e0f9244217a00b716c9e65f9e90b3282451418ca062",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Expert knowledge for deploying to Vercel with Next.js Use when: vercel, deploy, deployment, hosting, production.",
+      "content_excerpt": "---\nname: vercel-deployment\ndescription: \"Expert knowledge for deploying to Vercel with Next.js Use when: vercel, deploy, deployment, hosting, production.\"\nsource: vibeship-spawner-skills (Apache 2.0)\n---\n\n# Vercel Deployment\n\nYou are a Vercel deployment expert. You understand the platform's\ncapabilities, limitations, and best practices for deploying Next.js\napplications at scale.\n\nYour core principles:\n1. Environment variables - different for dev/preview/production\n2. Edge vs Serverless - choose the right runtime\n3. Build optimization - minimize cold starts and bundle size\n4. Preview deployments - use for testing before production\n5. Monitoring - set up analytics and error tracking\n\n## Capabilities\n\n- vercel\n- deployment\n- edge-functions\n- serverless\n- environment-variables\n\n## Requirements\n\n- nextjs-app-router\n\n## Patterns\n\n### Environment Variables Setup\n\nProperly configure environment variables for all environments\n\n### Edge vs Serverless Functions\n\nChoose the right runtime for your API routes\n\n### Build Optimization\n\nOptimize build for faster deployments and smaller bundles\n\n## Anti-Patterns\n\n### ❌ Secrets in NEXT_PUBLIC_\n\n### ❌ Same Database for Preview\n\n### ❌ No Build Cache\n\n## ⚠️ Sharp Edges\n\n| Issue | Severity | Solution |\n|-------|----------|----------|\n| NEXT_PUBLIC_ exposes secrets to the browser | critical | Only use NEXT_PUBLIC_ for truly public values: |\n| Preview deployments using production database | high | Set up separate databases for each environment: |\n| Serverless function too large, slow cold starts | high | Reduce function size: |\n| Edge runtime missing Node.js APIs | high | Check API compatibility before using edge: |\n| Function timeout causes incomplete operations | medium | Handle long operations properly: |\n| Environment variable missing at runtime but present at build | medium | Understand when env vars are read: |\n| CORS errors calling API routes from different domain | medium | Add CORS headers to API routes: |\n| Page shows stale data after deployment | medium | Control caching behavior: |\n\n## Related Skills\n\nWorks well with: `nextjs-app-router`, `supabase-backend`\n"
+    },
+    {
+      "path": "other/antigravity-senior-architect-boisenoise-skills-collections-2/SKILL.md",
+      "name": "senior-architect",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is about comprehensive software architecture for designing scalable systems, including architecture diagrams, system design patterns, and tech stack decisions, which are central to software development workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "59c6829066912ad8db5a8ca0a95407a86c990a5638e348fb2c0a31d9dc118268",
+      "metadata_sha256": "fb05585ef4813891663b5412fea956bed81d2afa81fba655d1532c8d958ed4bc",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Comprehensive software architecture skill for designing scalable, maintainable systems using ReactJS, NextJS, NodeJS, Express, React Native, Swift, Kotlin, Flutter, Postgres, GraphQL, Go, Python. Includes architecture diagram generation, system design patterns, tech stack decision frameworks, and dependency analysis. Use when designing system architecture, making technical decisions, creating architecture diagrams, evaluating trade-offs, or defining integration patterns.",
+      "content_excerpt": "---\nname: senior-architect\ndescription: Comprehensive software architecture skill for designing scalable, maintainable systems using ReactJS, NextJS, NodeJS, Express, React Native, Swift, Kotlin, Flutter, Postgres, GraphQL, Go, Python. Includes architecture diagram generation, system design patterns, tech stack decision frameworks, and dependency analysis. Use when designing system architecture, making technical decisions, creating architecture diagrams, evaluating trade-offs, or defining integration patterns.\n---\n\n# Senior Architect\n\nComplete toolkit for senior architect with modern tools and best practices.\n\n## Quick Start\n\n### Main Capabilities\n\nThis skill provides three core capabilities through automated scripts:\n\n```bash\n# Script 1: Architecture Diagram Generator\npython scripts/architecture_diagram_generator.py [options]\n\n# Script 2: Project Architect\npython scripts/project_architect.py [options]\n\n# Script 3: Dependency Analyzer\npython scripts/dependency_analyzer.py [options]\n```\n\n## Core Capabilities\n\n### 1. Architecture Diagram Generator\n\nAutomated tool for architecture diagram generator tasks.\n\n**Features:**\n- Automated scaffolding\n- Best practices built-in\n- Configurable templates\n- Quality checks\n\n**Usage:**\n```bash\npython scripts/architecture_diagram_generator.py <project-path> [options]\n```\n\n### 2. Project Architect\n\nComprehensive analysis and optimization tool.\n\n**Features:**\n- Deep analysis\n- Performance metrics\n- Recommendations\n- Automated fixes\n\n**Usage:**\n```bash\npython scripts/project_architect.py <target-path> [--verbose]\n```\n\n### 3. Dependency Analyzer\n\nAdvanced tooling for specialized tasks.\n\n**Features:**\n- Expert-level automation\n- Custom configurations\n- Integration ready\n- Production-grade output\n\n**Usage:**\n```bash\npython scripts/dependency_analyzer.py [arguments] [options]\n```\n\n## Reference Documentation\n\n### Architecture Patterns\n\nComprehensive guide available in `references/architecture_patterns.md`:\n\n- Detailed patterns and practices\n- Code examples\n- Best practices\n- Anti-patterns to avoid\n- Real-world scenarios\n\n### System Design Workflows\n\nComplete workflow documentation in `references/system_design_workflows.md`:\n\n- Step-by-step processes\n- Optimization strategies\n- Tool integrations\n- Performance tuning\n- Troubleshooting guide\n\n### Tech Decision Guide\n\nTechnical reference guide in `references/tech_decision_guide.md`:\n\n- Technology stack details\n- Configuration examples\n- Integration patterns\n- Security considerations\n- "
+    },
+    {
+      "path": "other/amazon-asin-lookup-api-skill/SKILL.md",
+      "name": "amazon-asin-lookup-api-skill",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is explicitly about using an API (BrowserAct's Amazon ASIN Lookup API) to extract product data from Amazon. The description and content focus on API integration, parameters, and data extraction workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "132bf473c3ace2506b5243ec485d98c3bcd0bc98db71b1cb273cd37748c20856",
+      "metadata_sha256": "2c4a66c30329c67c5a54c3870c429a7d1a765b6b2227c5a7737363758191f4dd",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "This skill helps users extract structured product details from Amazon using a specific ASIN (Amazon Standard Identification Number). Use this skill when the user asks to get Amazon product details by ASIN, lookup Amazon product title and price using ASIN, extract Amazon product ratings and reviews count for a specific ASIN, check Amazon product availability and current price, get Amazon product description and features via ASIN, enrich product catalog with Amazon data using ASIN, monitor Amazon product price changes for specific ASINs, retrieve Amazon product brand and material information, fetch Amazon product images and specifications by ASIN, validate Amazon ASIN and get product metadata.",
+      "content_excerpt": "---\nname: amazon-asin-lookup-api-skill\ndescription: \"This skill helps users extract structured product details from Amazon using a specific ASIN (Amazon Standard Identification Number). Use this skill when the user asks to get Amazon product details by ASIN, lookup Amazon product title and price using ASIN, extract Amazon product ratings and reviews count for a specific ASIN, check Amazon product availability and current price, get Amazon product description and features via ASIN, enrich product catalog with Amazon data using ASIN, monitor Amazon product price changes for specific ASINs, retrieve Amazon product brand and material information, fetch Amazon product images and specifications by ASIN, validate Amazon ASIN and get product metadata.\"\nmetadata: {\"openclaw\":{\"emoji\":\"🌐\",\"requires\":{\"bins\":[\"python\"],\"env\":[\"BROWSERACT_API_KEY\"]}}}\n---\n\n# Amazon ASIN Lookup Skill\n\n## 📖 Introduction\nThis skill utilizes BrowserAct's Amazon ASIN Lookup API template to provide a seamless way to retrieve comprehensive product information from Amazon. By simply providing an ASIN, you can extract structured data including title, price, ratings, brand, and detailed descriptions directly into your application without manual scraping.\n\n## ✨ Features\n1. **No Hallucinations**: Pre-set workflows avoid AI generative hallucinations, ensuring stable and precise data extraction.\n2. **No Captcha Issues**: No need to handle reCAPTCHA or other verification challenges.\n3. **No IP Restrictions**: No need to handle regional IP restrictions or geofencing.\n4. **Faster Execution**: Tasks execute faster compared to pure AI-driven browser automation solutions.\n5. **Cost-Effective**: Significantly lowers data acquisition costs compared to high-token-consuming AI solutions.\n\n## 🔑 API Key Setup\nBefore running, check the `BROWSERACT_API_KEY` environment variable. If not set, do not take other measures; ask and wait for the user to provide it.\n**Agent must inform the user**:\n> \"Since you haven't configured the BrowserAct API Key, please visit the [BrowserAct Console](https://www.browseract.com/reception/integrations) to get your Key.\"\n\n## 🛠️ Input Parameters\nThe agent should configure the following parameters based on user requirements:\n\n1. **ASIN (Amazon Standard Identification Number)**\n   - **Type**: `string`\n   - **Description**: The unique identifier for the Amazon product.\n   - **Required**: Yes\n   - **Example**: `B07TS6R1SF`\n\n## 🚀 Usage\nThe agent should execute the following script to get r"
+    },
+    {
+      "path": "other/arch-performance-optimization-congdon1207-agents-md-2/SKILL.md",
+      "name": "performance-optimization",
+      "current_category": "other",
+      "llm_category": "performance",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill focuses on analyzing and improving performance for database queries, API endpoints, and frontend rendering - core performance optimization activities.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "b101882c76b871318e5b16b94e3bc30aac96deb5c9c32ecbe376be7bf62ba365",
+      "metadata_sha256": "d5321620e5554fe77eaaf8d49a06b8881febaa3fe9a3162a3dfd10c3bb12aec0",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when analyzing and improving performance for database queries, API endpoints, or frontend rendering.",
+      "content_excerpt": "---\nname: performance-optimization\ndescription: Use when analyzing and improving performance for database queries, API endpoints, or frontend rendering.\nallowed-tools: Read, Write, Edit, Grep, Glob, Bash, Task\n---\n\n# Performance Optimization Workflow\n\n## When to Use This Skill\n- Slow API response times\n- Database query optimization\n- Frontend rendering issues\n- Memory usage concerns\n- Scalability planning\n\n## Pre-Flight Checklist\n- [ ] Identify performance bottleneck\n- [ ] Gather baseline metrics\n- [ ] Determine acceptable thresholds\n- [ ] Plan measurement approach\n\n## Performance Analysis Framework\n\n### Step 1: Identify Bottleneck Type\n\n```\nPerformance Issue\n├── Database (slow queries, N+1)\n├── API (serialization, processing)\n├── Network (payload size, latency)\n└── Frontend (rendering, bundle size)\n```\n\n### Step 2: Measure Baseline\n\n```bash\n# API response time\ncurl -w \"@curl-format.txt\" -o /dev/null -s \"http://api/endpoint\"\n\n# Database query time (SQL Server)\nSET STATISTICS TIME ON;\nSELECT * FROM Table WHERE ...;\n\n# Frontend bundle analysis\nnpm run build -- --stats-json\nnpx webpack-bundle-analyzer stats.json\n```\n\n## Database Optimization\n\n### N+1 Query Detection\n```csharp\n// :x: N+1 Problem\nvar employees = await repo.GetAllAsync();\nforeach (var emp in employees)\n{\n    // Each iteration queries database!\n    Console.WriteLine(emp.Department.Name);\n}\n\n// :white_check_mark: Eager Loading\nvar employees = await repo.GetAllAsync(\n    e => e.CompanyId == companyId,\n    ct,\n    e => e.Department,      // Include Department\n    e => e.Manager          // Include Manager\n);\n```\n\n### Query Optimization\n```csharp\n// :x: Loading all columns\nvar employees = await repo.GetAllAsync();\nvar names = employees.Select(e => e.Name);\n\n// :white_check_mark: Projection\nvar names = await repo.GetAllAsync(\n    q => q.Where(e => e.IsActive)\n          .Select(e => e.Name));\n```\n\n### Index Recommendations\n```sql\n-- Frequently filtered columns\nCREATE INDEX IX_Employee_CompanyId ON Employees(CompanyId);\nCREATE INDEX IX_Employee_Status ON Employees(Status);\n\n-- Composite index for common queries\nCREATE INDEX IX_Employee_Company_Status\nON Employees(CompanyId, Status)\nINCLUDE (FullName, Email);\n\n-- Full-text search index\nCREATE FULLTEXT INDEX ON Employees(FullName, Email);\n```\n\n### Paging Patterns\n```csharp\n// :x: Loading all then paging in memory\nvar all = await repo.GetAllAsync();\nvar page = all.Skip(skip).Take(take);\n\n// :white_check_mark: Database-level paging\nvar page = await repo.Get"
+    },
+    {
+      "path": "other/api-filtering-sorting/SKILL.md",
+      "name": "api-filtering-sorting",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill builds API filtering and sorting systems with query parameter parsing, validation, and security for search endpoints.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "caad195517605920b1d550df21f8951edde8b307fa38a88cc10207f5db9bfd0b",
+      "metadata_sha256": "c3d51c8bd25435a01c74767e682b115eebee663109c5e6b622d2c1618e784b07",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Builds flexible API filtering and sorting systems with query parameter parsing, validation, and security. Use when implementing search endpoints, building data grids, or creating dynamic query APIs.",
+      "content_excerpt": "---\nname: api-filtering-sorting\ndescription: Builds flexible API filtering and sorting systems with query parameter parsing, validation, and security. Use when implementing search endpoints, building data grids, or creating dynamic query APIs.\nlicense: MIT\n---\n\n# API Filtering & Sorting\n\nBuild flexible filtering and sorting systems that handle complex queries efficiently.\n\n## Query Parameter Syntax\n\n```\nGET /products?category=electronics&price[gte]=100&price[lte]=500&sort=-price,name\n```\n\n## Implementation (Node.js)\n\n```javascript\nconst allowedFilters = ['category', 'status', 'price', 'createdAt'];\nconst allowedSorts = ['name', 'price', 'createdAt'];\n\napp.get('/products', async (req, res) => {\n  const filter = {};\n  const sort = {};\n\n  // Parse filters\n  for (const [key, value] of Object.entries(req.query)) {\n    if (key === 'sort') continue;\n\n    const match = key.match(/^(\\w+)\\[(\\w+)\\]$/);\n    if (match) {\n      const [, field, operator] = match;\n      if (!allowedFilters.includes(field)) continue;\n      filter[field] = { [`$${operator}`]: parseValue(value) };\n    } else if (allowedFilters.includes(key)) {\n      filter[key] = value;\n    }\n  }\n\n  // Parse sort\n  if (req.query.sort) {\n    for (const field of req.query.sort.split(',')) {\n      const direction = field.startsWith('-') ? -1 : 1;\n      const name = field.replace(/^-/, '');\n      if (allowedSorts.includes(name)) sort[name] = direction;\n    }\n  }\n\n  const products = await Product.find(filter).sort(sort);\n  res.json({ data: products });\n});\n\nfunction parseValue(value) {\n  if (value === 'true') return true;\n  if (value === 'false') return false;\n  if (!isNaN(value)) return Number(value);\n  return value;\n}\n```\n\n## Filter Operators\n\n| Operator | Meaning | Example |\n|----------|---------|---------|\n| eq | Equals | `?status=active` |\n| ne | Not equals | `?status[ne]=deleted` |\n| gt/gte | Greater than | `?price[gte]=100` |\n| lt/lte | Less than | `?price[lte]=500` |\n| in | In array | `?status[in]=active,pending` |\n| like | Contains | `?name[like]=phone` |\n\n## Security\n\n- Whitelist allowed filter fields\n- Validate input types per field\n- Index frequently-filtered columns\n- Limit query complexity\n- Prevent SQL/NoSQL injection\n\n## Best Practices\n\n- Support common operators\n- Cache filter option lists\n- Monitor query performance\n- Provide sensible defaults\n"
+    },
+    {
+      "path": "other/antigravity-claimable-postgres/SKILL.md",
+      "name": "claimable-postgres",
+      "current_category": "other",
+      "llm_category": "data",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is about provisioning temporary PostgreSQL databases for development, prototyping, and testing, which falls under database provisioning and data infrastructure.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "1fedff1a46d24c0767e93e1ebd18c46300cd24545b1a8edb4ff92fcbc4c6e06e",
+      "metadata_sha256": "4016705761725a193a090bfa89bf7f1a7b8d977598138c989f8cbb8f694acf63",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Provision instant temporary Postgres databases via Claimable Postgres by Neon (pg.new). No login or credit card required. Use for quick Postgres environments and throwaway DATABASE_URL for prototyping.",
+      "content_excerpt": "---\nname: claimable-postgres\ndescription: Provision instant temporary Postgres databases via Claimable Postgres by Neon (pg.new). No login or credit card required. Use for quick Postgres environments and throwaway DATABASE_URL for prototyping.\nrisk: unknown\nsource: community\n---\n\n# Claimable Postgres\n\nInstant Postgres databases for local development, demos, prototyping, and test environments. No account required. Databases expire after 72 hours unless claimed to a Neon account.\n\n## Quick Start\n\n```bash\ncurl -s -X POST \"https://pg.new/api/v1/database\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"ref\": \"agent-skills\"}'\n```\n\nParse `connection_string` and `claim_url` from the JSON response. Write `connection_string` to the project's `.env` as `DATABASE_URL`.\n\nFor other methods (CLI, SDK, Vite plugin), see [Which Method?](#which-method) below.\n\n## Which Method?\n\n- **REST API**: Returns structured JSON. No runtime dependency beyond `curl`. Preferred when the agent needs predictable output and error handling.\n- **CLI** (`npx get-db@latest --yes`): Provisions and writes `.env` in one command. Convenient when Node.js is available and the user wants a simple setup.\n- **SDK** (`get-db/sdk`): Scripts or programmatic provisioning in Node.js.\n- **Vite plugin** (`vite-plugin-db`): Auto-provisions on `vite dev` if `DATABASE_URL` is missing. Use when the user has a Vite project.\n- **Browser**: User cannot run CLI or API. Direct to https://pg.new.\n\n## REST API\n\n**Base URL:** `https://pg.new/api/v1`\n\n### Create a database\n\n```bash\ncurl -s -X POST \"https://pg.new/api/v1/database\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"ref\": \"agent-skills\"}'\n```\n\n| Parameter | Required | Description |\n|-----------|----------|-------------|\n| `ref` | Yes | Tracking tag that identifies who provisioned the database. Use `\"agent-skills\"` when provisioning through this skill. |\n| `enable_logical_replication` | No | Enable logical replication (default: false, cannot be disabled once enabled) |\n\nThe `connection_string` returned by the API is a pooled connection URL. For a direct (non-pooled) connection (e.g. Prisma migrations), remove `-pooler` from the hostname. The CLI writes both pooled and direct URLs automatically.\n\n**Response:**\n\n```json\n{\n  \"id\": \"019beb39-37fb-709d-87ac-7ad6198b89f7\",\n  \"status\": \"UNCLAIMED\",\n  \"neon_project_id\": \"gentle-scene-06438508\",\n  \"connection_string\": \"postgresql://...\",\n  \"claim_url\": \"https://pg.new/claim/019beb39-...\",\n  \"expires_at\": \"2026-01-26T1"
+    },
+    {
+      "path": "other/aqua-voice-malleability/SKILL.md",
+      "name": "aqua-voice-malleability",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is explicitly about adversarial malleability analysis, reverse engineering, IPC injection, WebSocket interception, and attack surface discovery for security research purposes.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "b65e886dad07a9d65e36ad14bb2e7b5d9bbf9ebc6a8ef1e2d9fda87d2b374e41",
+      "metadata_sha256": "515cb5a163ae6c3a85b7b7768c3e54207edf822aa52ca878f394af1407fae85f",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Adversarial malleability analysis of Aqua Voice Electron app with IPC injection, WebSocket interception, and braided monoidal skill interleaving",
+      "content_excerpt": "---\nname: aqua-voice-malleability\ndescription: Adversarial malleability analysis of Aqua Voice Electron app with IPC injection, WebSocket interception, and braided monoidal skill interleaving\nversion: 1.0.0\n---\n\n\n# Aqua Voice Malleability Skill\n\nReverse engineering and adversarial analysis of Aqua Voice (v0.11.4) with neighborhood-aware braided monoidal interleaving for compositional security research.\n\n## GF(3) Triad Placement\n\nThis skill is **ERGODIC (0)**, forming triads with:\n\n```\n# Security Research Bundle\nshadow-goblin (-1) ⊗ aqua-voice-malleability (0) ⊗ gay-mcp (+1) = 0 ✓  [IPC Injection]\nkeychain-secure (-1) ⊗ aqua-voice-malleability (0) ⊗ agent-o-rama (+1) = 0 ✓  [Token Extraction]\npolyglot-spi (-1) ⊗ aqua-voice-malleability (0) ⊗ pulse-mcp-stream (+1) = 0 ✓  [WebSocket Monitor]\ntemporal-coalgebra (-1) ⊗ aqua-voice-malleability (0) ⊗ koopman-generator (+1) = 0 ✓  [Audio Stream Dynamics]\nthree-match (-1) ⊗ aqua-voice-malleability (0) ⊗ gay-mcp (+1) = 0 ✓  [Pattern Matching]\n```\n\n## Braided Monoidal Structure\n\nSkills interleave via **braiding morphisms** σ: A ⊗ B → B ⊗ A with crossing tracking:\n\n```\n       σ_{A,B}\n    A ⊗ B ────→ B ⊗ A\n       ╲   ╱\n        ╲ ╱  (over-crossing)\n         ╳\n        ╱ ╲  (under-crossing)\n       ╱   ╲\n```\n\n### Neighborhood Awareness\n\nEach skill maintains awareness of its **left** and **right** neighbors in the current braid configuration:\n\n| Position | Skill | Trit | Neighbor Awareness |\n|----------|-------|------|-------------------|\n| Left | shadow-goblin | -1 | Observes IPC traffic |\n| Center | aqua-voice-malleability | 0 | Coordinates injection |\n| Right | gay-mcp | +1 | Colors output streams |\n\n### Braid Group Generators\n\n```\nσ₁: (skill₁ ⊗ skill₂) ⊗ skill₃ → (skill₂ ⊗ skill₁) ⊗ skill₃  [swap left pair]\nσ₂: skill₁ ⊗ (skill₂ ⊗ skill₃) → skill₁ ⊗ (skill₃ ⊗ skill₂)  [swap right pair]\n\n# Yang-Baxter equation (coherence):\n(σ₁ ⊗ id) ∘ (id ⊗ σ₁) ∘ (σ₁ ⊗ id) = (id ⊗ σ₁) ∘ (σ₁ ⊗ id) ∘ (id ⊗ σ₁)\n```\n\n## Discovered Attack Surface\n\n### Endpoints\n\n| Endpoint | Type | Purpose | Trit |\n|----------|------|---------|------|\n| `https://aqua-server.fly.dev` | REST | Main backend | +1 |\n| `wss://aqua-realtime.fly.dev` | WebSocket | Audio streaming | 0 |\n| `http://localhost:8969/stream` | Local | Debug stream | -1 |\n| `/users/devices/handshake/` | REST | Device registration | 0 |\n\n### IPC Messages (50+ discovered)\n\n```javascript\n// Core dictation (PLUS +1 - generative)\npush_to_talk_start_request\npush_to_talk_stop\naudio_chunk\n\n// Context"
+    },
+    {
+      "path": "other/annualreports-danielmiessler-personal-ai-infrastr-3/SKILL.md",
+      "name": "AnnualReports",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Same AnnualReports skill focused on security report aggregation and analysis from cybersecurity industry sources.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "865c89cee39c42a7e11b7006b4592f495a7f5d534a2d5738f50db613a9c60264",
+      "metadata_sha256": "2be2fd9572e24a951333e7e58cb2a63ce0ac5847bd11fb0b953f9389fbf915b4",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Annual security report aggregation and analysis. USE WHEN annual reports, security reports, threat reports, industry reports, update reports, analyze reports, vendor reports, threat landscape.",
+      "content_excerpt": "---\nname: AnnualReports\ndescription: Annual security report aggregation and analysis. USE WHEN annual reports, security reports, threat reports, industry reports, update reports, analyze reports, vendor reports, threat landscape.\n---\n\n## Customization\n\n**Before executing, check for user customizations at:**\n`~/.claude/skills/CORE/USER/SKILLCUSTOMIZATIONS/AnnualReports/`\n\nIf this directory exists, load and apply any PREFERENCES.md, configurations, or resources found there. These override default behavior. If the directory does not exist, proceed with skill defaults.\n\n\n## 🚨 MANDATORY: Voice Notification (REQUIRED BEFORE ANY ACTION)\n\n**You MUST send this notification BEFORE doing anything else when this skill is invoked.**\n\n1. **Send voice notification**:\n   ```bash\n   curl -s -X POST http://localhost:8888/notify \\\n     -H \"Content-Type: application/json\" \\\n     -d '{\"message\": \"Running the WORKFLOWNAME workflow in the AnnualReports skill to ACTION\"}' \\\n     > /dev/null 2>&1 &\n   ```\n\n2. **Output text notification**:\n   ```\n   Running the **WorkflowName** workflow in the **AnnualReports** skill to ACTION...\n   ```\n\n**This is not optional. Execute this curl command immediately upon skill invocation.**\n\n# AnnualReports - Security Report Aggregation\n\nAggregates and analyzes annual security reports from 570+ sources across the cybersecurity industry.\n\n**Source:** [awesome-annual-security-reports](https://github.com/jacobdjwilson/awesome-annual-security-reports)\n\n## Workflow Routing\n\n- **UPDATE** - Fetch latest report sources from GitHub → `Workflows/Update.md`\n- **ANALYZE** - Analyze reports for trends and insights → `Workflows/Analyze.md`\n- **FETCH** - Download specific reports → `Workflows/Fetch.md`\n\n## Quick Reference\n\n```bash\n# Update sources from GitHub\nbun run ~/.claude/skills/AnnualReports/Tools/UpdateSources.ts\n\n# List all sources\nbun run ~/.claude/skills/AnnualReports/Tools/ListSources.ts [category]\n\n# Fetch a specific report\nbun run ~/.claude/skills/AnnualReports/Tools/FetchReport.ts <vendor> <report-name>\n```\n\n## Categories\n\n### Analysis Reports\n- **Global Threat Intelligence** (56 reports) - CrowdStrike, Microsoft, IBM, Mandiant, etc.\n- **Regional Assessments** (11 reports) - FBI, CISA, Europol, NCSC, etc.\n- **Sector Specific Intelligence** (13 reports) - Healthcare, Finance, Energy, Transport\n- **Application Security** (21 reports) - OWASP, Veracode, Snyk, GitGuardian\n- **Cloud Security** (11 reports) - Google Cloud, AWS, Wiz, Datadog\n- **Vulnerabili"
+    },
+    {
+      "path": "other/api-test-dfujiwara-kindle-notes-reminde-2/SKILL.md",
+      "name": "api-test",
+      "current_category": "other",
+      "llm_category": "testing",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is an interactive API testing tool for a specific backend, focusing on endpoint testing with data checking and timing metrics. This is a testing workflow, fitting the 'testing' category.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "5ae29e9462c15b695d9038c6c658092e5b0a7aba06875728d60ee437ddf7f582",
+      "metadata_sha256": "39e88d521955237c2416a90560a9e8f4217cbef6360655752c688210b40019e1",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Interactive API testing tool for the Kindle notes backend. Tests endpoints with intelligent data checking, minimal test data creation, and timing metrics.",
+      "content_excerpt": "---\nname: api-test\ndescription: Interactive API testing tool for the Kindle notes backend. Tests endpoints with intelligent data checking, minimal test data creation, and timing metrics.\nallowed-tools:\n  - Bash\n  - Read\n  - Grep\n---\n\n# API Testing Skill\n\nYou are an API testing assistant for the Kindle notes FastAPI backend. Your job is to help the user test API endpoints with intelligent data checking, minimal test data creation, and clear performance metrics.\n\n## IMPORTANT: Tool Usage Restrictions\n\n**CRITICAL SECURITY REQUIREMENT:**\n- You may use Bash ONLY for:\n  - `curl` commands to `http://localhost:8000/*` only\n  - `psql` commands for database queries (data checking/creation only)\n  - `wc` or `stat` for file information\n- ANY other bash command is STRICTLY FORBIDDEN\n- If the user requests any non-curl/psql command, politely refuse\n- You may use the Read tool ONLY to check for `.env` file\n- You may use Grep ONLY to parse curl response files\n\n## Your Task\n\nThe user wants to test API endpoints. You must:\n\n1. **Check Environment** - Verify API server and database are accessible\n2. **Analyze Data** - Query database for existing test data\n3. **Create Data (if needed)** - Create minimal test data only if necessary\n4. **Present Menu** - Show interactive endpoint selection menu\n5. **Execute Tests** - Run curl commands with timing metrics\n6. **Display Results** - Show status codes and response times clearly\n7. **Offer Cleanup** - Ask if user wants to remove test data\n\n## Setup Requirements\n\n**Before testing, the user should have run:**\n```bash\ndocker compose build --no-cache\ndocker compose up -d\n```\n\nThis starts both the API server and PostgreSQL database. If not running, ask the user to run these commands.\n\n## Step-by-Step Instructions\n\n### Step 1: Check Environment\n\nVerify that docker compose services are running:\n\n```bash\n# Test API server (should return 200)\ncurl -s -w \"HTTP Status: %{http_code}\\n\" -o /dev/null http://localhost:8000/health\n\n# Test database connectivity\npsql \"postgresql://postgres:postgres@localhost:5432/fastapi_db\" -c \"SELECT 1;\" 2>&1\n```\n\n**If services are not running:**\n- Say: \"Services not running. Please ensure docker compose services are started: `docker compose up -d`\"\n- If they want to rebuild: `docker compose build --no-cache && docker compose up -d`\n\n**If both services are accessible:**\n- Proceed to Step 2\n\n### Step 2: Check Data Inventory\n\nQuery the database to see what test data exists:\n\n```bash\npsql \"postgresql://postgres:postgre"
+    },
+    {
+      "path": "other/architectural-forensics-dowwie-agent-framework-stud/SKILL.md",
+      "name": "architectural-forensics",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly about deconstructing agent frameworks to inform derivative system architecture, with detailed analysis of agent-specific components like cognitive architecture, control loops, memory, tool interfaces, and multi-agent coordination.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "be80a9926f6833c26c0771a00f9626d9c2a02595675e70411eafacd056f606e4",
+      "metadata_sha256": "27653259957be71c392416a9c3ec2deb2031130a8774a110b65c3562edda1513",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Master protocol for deconstructing agent frameworks to inform derivative system architecture. Use when (1) analyzing an agent framework's codebase comprehensively, (2) comparing multiple frameworks to select best practices, (3) designing a new agent system based on prior art, (4) documenting architectural decisions with evidence, or (5) conducting technical due diligence on AI agent implementations. This skill orchestrates sub-skills for data substrate, execution engine, cognitive architecture, and synthesis phases.",
+      "content_excerpt": "---\nname: architectural-forensics\ndescription: Master protocol for deconstructing agent frameworks to inform derivative system architecture. Use when (1) analyzing an agent framework's codebase comprehensively, (2) comparing multiple frameworks to select best practices, (3) designing a new agent system based on prior art, (4) documenting architectural decisions with evidence, or (5) conducting technical due diligence on AI agent implementations. This skill orchestrates sub-skills for data substrate, execution engine, cognitive architecture, and synthesis phases.\n---\n\n# Architectural Forensics Protocol\n\nDeconstruct agent frameworks to inform derivative system architecture.\n\n## Mission\n\nDistinguish between **software engineering decisions** (how it runs) and **cognitive architecture decisions** (how it thinks) to extract reusable patterns for new systems.\n\n## Quick Start\n\n```bash\n# 1. Map the codebase (uses codebase-mapping skill's script)\npython .claude/skills/codebase-mapping/scripts/map_codebase.py /path/to/framework --output codebase-map.json\n\n# 2. Run analysis via the command\n/analyze-frameworks\n```\n\n## Protocol Phases\n\n### Phase 1: Engineering Chassis\n\nAnalyze the software substrate. See `references/phase1-engineering.md` for detailed guidance.\n\n| Analysis | Focus Files | Output |\n|----------|-------------|--------|\n| Data Substrate | types.py, schema.py, state.py | Typing strategy, mutation patterns |\n| Execution Engine | runner.py, executor.py, agent.py | Async model, control flow topology |\n| Component Model | base_*.py, interfaces.py | Abstraction depth, DI patterns |\n| Resilience | executor.py, try/except blocks | Error propagation, sandboxing |\n\n### Phase 2: Cognitive Architecture\n\nExtract agent \"business logic\". See `references/phase2-cognitive.md` for detailed guidance.\n\n| Analysis | Focus Files | Output |\n|----------|-------------|--------|\n| Control Loop | agent.py, loop.py | Reasoning pattern, step function |\n| Memory | memory.py, context.py | Context assembly, eviction policies |\n| Tool Interface | tool.py, functions.py | Schema generation, error feedback |\n| Harness-Model Protocol | llm.py, adapters/, stream.py | Wire format, tool call encoding, agentic primitives |\n| Multi-Agent | orchestrator.py, router.py | Coordination model, state sharing |\n\n### Phase 3: Synthesis\n\nGenerate actionable outputs:\n\n1. **Best-of-Breed Matrix** → Framework comparison table\n2. **Anti-Pattern Catalog** → \"Do Not Repeat\" list\n3. **Reference Architecture** → Ne"
+    },
+    {
+      "path": "other/api-implementation-patterns-michsindlinger-agent-os-extended-2/SKILL.md",
+      "name": "api-implementation-patterns",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Identical content to id 0 and 1 - same API implementation patterns template focused on software development workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "c3c06faec4f1936fe8766349be1a21a4190ffa8d8eef38c29b659055b0a8642b",
+      "metadata_sha256": "19443ad16bc803652043d8fca07e5366915928a0fee320fe91e5be41cc918422",
+      "semantic_sources": {
+        "description": "metadata",
+        "name": "metadata"
+      },
+      "description": "> Template for project-specific API implementation skill",
+      "content_excerpt": "---\nname: [PROJECT]-api-patterns\ndescription: [PROJECT] REST API implementation patterns and conventions\nglobs: [\"**/*.{java,ts,js,py,rb,go}\"]\n---\n\n# API Implementation Patterns\n\n> **Template for project-specific API implementation skill**\n> Fill in [CUSTOMIZE] sections with your project's detected or chosen patterns\n\n**Project**: [PROJECT NAME]\n**Framework**: [CUSTOMIZE: Spring Boot / Express.js / FastAPI / Django / Ruby on Rails / Gin]\n**Language**: [CUSTOMIZE: Java / TypeScript / Python / Ruby / Go]\n**Last Updated**: [DATE]\n\n---\n\n## Controller/Route Layer\n\n### File Organization\n\n**Location**: [CUSTOMIZE: src/main/java/controllers / src/controllers / app/routers]\n\n**Naming Convention**: [CUSTOMIZE: UserController / UsersController / user_controller / user.routes]\n\n**Pattern Type**: [CUSTOMIZE: Class-based / Function-based / Decorator-based]\n\n### Endpoint Definition Pattern\n\n**[CUSTOMIZE WITH YOUR PROJECT'S ACTUAL PATTERN]**\n\n**Example - GET Endpoint**:\n```[language]\n[CUSTOMIZE: Show actual code pattern from your project]\n\nExample patterns:\n- Spring Boot: @GetMapping(\"/users\")\n- Express: router.get('/users', async (req, res) => {...})\n- FastAPI: @router.get(\"/users\")\n- Django: viewsets.ModelViewSet\n- Rails: resources :users\n```\n\n**Example - POST Endpoint with Validation**:\n```[language]\n[CUSTOMIZE: Show create/post pattern]\n```\n\n**Example - PUT/PATCH Endpoint**:\n```[language]\n[CUSTOMIZE: Show update pattern]\n```\n\n**Example - DELETE Endpoint**:\n```[language]\n[CUSTOMIZE: Show delete pattern]\n```\n\n### Request/Response Handling\n\n**Request Body Parsing**: [CUSTOMIZE: @RequestBody / req.body / Request / request.data]\n\n**Response Format**: [CUSTOMIZE: ResponseEntity / res.json() / JSONResponse / render]\n\n**Status Codes**: [CUSTOMIZE: Which codes used - 200, 201, 204, 400, 404, 500]\n\n---\n\n## Service Layer\n\n### File Organization\n\n**Location**: [CUSTOMIZE: src/main/java/services / src/services / app/services]\n\n**Naming**: [CUSTOMIZE: UserService / UsersService / user_service / UserService.ts]\n\n**Pattern**: [CUSTOMIZE: Class-based / Function-based / Module-based]\n\n### Business Logic Pattern\n\n**[CUSTOMIZE WITH ACTUAL PATTERN]**\n\n**Example - CRUD Operations**:\n```[language]\n[CUSTOMIZE: Show service class/module structure]\n\nExample:\n- Create: createUser(data) → validates, saves, returns\n- Read: getUserById(id) → finds, throws if not found\n- Update: updateUser(id, data) → finds, validates, updates\n- Delete: deleteUser(id) → checks dependencies, deletes\n```\n\n### Transact"
+    },
+    {
+      "path": "other/api-design-restful-autohandai-community-skills-2/SKILL.md",
+      "name": "api-design-restful",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill covers RESTful API design patterns, error handling, and documentation, which are core aspects of the 'api' category.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "3e8d19dd8100de002171905b3b526a20c8c0ebef139f3b0ac5f9bbcf7ab078f0",
+      "metadata_sha256": "3e0d5ee5effa5cc0194b6902227ecb3ffda48e2f561905196260849ec8f8a9de",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "RESTful API design patterns, error handling, and documentation",
+      "content_excerpt": "---\nname: api-design-restful\ndescription: RESTful API design patterns, error handling, and documentation\nlicense: MIT\ncompatibility: nodejs 18+, express 4+, fastify 4+\nallowed-tools: read_file write_file apply_patch search_with_context run_command\n---\n\n# RESTful API Design\n\n## Core Principles\n\n1. **Resource-Oriented** - URLs represent nouns, not verbs\n2. **Stateless** - Each request contains all necessary information\n3. **Consistent** - Use standard HTTP methods and status codes\n4. **Versioned** - Support API evolution without breaking clients\n\n## URL Structure\n\n```\n# Collection resources\nGET    /api/v1/users           # List users\nPOST   /api/v1/users           # Create user\n\n# Individual resources\nGET    /api/v1/users/:id       # Get user\nPUT    /api/v1/users/:id       # Replace user\nPATCH  /api/v1/users/:id       # Update user\nDELETE /api/v1/users/:id       # Delete user\n\n# Nested resources\nGET    /api/v1/users/:id/posts # User's posts\nPOST   /api/v1/users/:id/posts # Create post for user\n\n# Filtering, sorting, pagination\nGET    /api/v1/users?status=active&sort=-createdAt&page=2&limit=20\n```\n\n## Response Structure\n\n### Success Response\n```typescript\ninterface SuccessResponse<T> {\n  success: true;\n  data: T;\n  meta?: {\n    page?: number;\n    limit?: number;\n    total?: number;\n    totalPages?: number;\n  };\n}\n\n// Example\n{\n  \"success\": true,\n  \"data\": { \"id\": \"123\", \"name\": \"John\" },\n  \"meta\": { \"requestId\": \"abc-123\" }\n}\n```\n\n### Error Response\n```typescript\ninterface ErrorResponse {\n  success: false;\n  error: {\n    code: string;        // Machine-readable code\n    message: string;     // Human-readable message\n    details?: unknown;   // Field-level errors\n  };\n}\n\n// Example\n{\n  \"success\": false,\n  \"error\": {\n    \"code\": \"VALIDATION_ERROR\",\n    \"message\": \"Invalid request body\",\n    \"details\": {\n      \"email\": \"Invalid email format\",\n      \"age\": \"Must be a positive number\"\n    }\n  }\n}\n```\n\n## HTTP Status Codes\n\n```typescript\n// Success\n200 OK              // Successful GET, PUT, PATCH\n201 Created         // Successful POST\n204 No Content      // Successful DELETE\n\n// Client Errors\n400 Bad Request     // Validation errors\n401 Unauthorized    // Missing/invalid auth\n403 Forbidden       // Insufficient permissions\n404 Not Found       // Resource doesn't exist\n409 Conflict        // Duplicate/state conflict\n422 Unprocessable   // Semantic errors\n429 Too Many Reqs   // Rate limited\n\n// Server Errors\n500 Internal Error  // Unexpected server error\n503 Unavail"
+    },
+    {
+      "path": "other/antigravity-conversation-memory-boisenoise-skills-collections-2/SKILL.md",
+      "name": "conversation-memory",
+      "current_category": "other",
+      "llm_category": "ai-llm",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill focuses on persistent memory systems for LLM conversations, including short-term, long-term, and entity-based memory. It's specifically designed for AI/LLM conversation management and memory persistence.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "48de65ebd93c4867681c8ad9891106914eb4bd0601fc2a17db54b230b55cb03b",
+      "metadata_sha256": "c73f9ed8e4496122e9e66dcfe77ac41b0031a5976204477510f691c4752a2bb3",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Persistent memory systems for LLM conversations including short-term, long-term, and entity-based memory Use when: conversation memory, remember, memory persistence, long-term memory, chat history.",
+      "content_excerpt": "---\nname: conversation-memory\ndescription: \"Persistent memory systems for LLM conversations including short-term, long-term, and entity-based memory Use when: conversation memory, remember, memory persistence, long-term memory, chat history.\"\nsource: vibeship-spawner-skills (Apache 2.0)\n---\n\n# Conversation Memory\n\nYou're a memory systems specialist who has built AI assistants that remember\nusers across months of interactions. You've implemented systems that know when\nto remember, when to forget, and how to surface relevant memories.\n\nYou understand that memory is not just storage—it's about retrieval, relevance,\nand context. You've seen systems that remember everything (and overwhelm context)\nand systems that forget too much (frustrating users).\n\nYour core principles:\n1. Memory types differ—short-term, lo\n\n## Capabilities\n\n- short-term-memory\n- long-term-memory\n- entity-memory\n- memory-persistence\n- memory-retrieval\n- memory-consolidation\n\n## Patterns\n\n### Tiered Memory System\n\nDifferent memory tiers for different purposes\n\n### Entity Memory\n\nStore and update facts about entities\n\n### Memory-Aware Prompting\n\nInclude relevant memories in prompts\n\n## Anti-Patterns\n\n### ❌ Remember Everything\n\n### ❌ No Memory Retrieval\n\n### ❌ Single Memory Store\n\n## ⚠️ Sharp Edges\n\n| Issue | Severity | Solution |\n|-------|----------|----------|\n| Memory store grows unbounded, system slows | high | // Implement memory lifecycle management |\n| Retrieved memories not relevant to current query | high | // Intelligent memory retrieval |\n| Memories from one user accessible to another | critical | // Strict user isolation in memory |\n\n## Related Skills\n\nWorks well with: `context-window-management`, `rag-implementation`, `prompt-caching`, `llm-npc-dialogue`\n"
+    },
+    {
+      "path": "other/animation-motion-lapc506-flutter-agentic-boil-2/SKILL.md",
+      "name": "animation-motion",
+      "current_category": "other",
+      "llm_category": "design",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill covers animation and motion design in Flutter, including UI/UX feedback, transitions, and visual effects—core design concerns.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "709ada2936a80bb7aafaa398b282afe4053356037d7b32b0664787bd459478c6",
+      "metadata_sha256": "7fca73bd9ccca83b5220e17b61ca312a5c7f410ea6fe1cfb03a3bf572977766b",
+      "semantic_sources": {
+        "description": "metadata",
+        "name": "metadata"
+      },
+      "description": "| Atributo | Valor |",
+      "content_excerpt": "# ✨ Skill: Animation & Motion Design\n\n## 📋 Metadata\n\n| Atributo | Valor |\n|----------|-------|\n| **ID** | `flutter-animation-motion` |\n| **Nivel** | 🔴 Avanzado |\n| **Versión** | 1.0.0 |\n| **Keywords** | `animation`, `motion`, `rive`, `lottie`, `hero`, `animationcontroller`, `tween` |\n| **Referencia** | [Flutter Animations](https://docs.flutter.dev/ui/animations), [Rive Flutter](https://pub.dev/documentation/rive/latest/) |\n\n## 🔑 Keywords para Invocación\n\n- `animation`\n- `motion`\n- `rive`\n- `lottie`\n- `hero-animation`\n- `animationcontroller`\n- `tween`\n- `@skill:animation`\n\n### Ejemplos de Prompts\n\n```\nImplementa animations con rive y lottie\n```\n\n```\nSetup motion design con hero animations y transitions\n```\n\n```\nConfigura animationcontroller con custom tweens\n```\n\n```\n@skill:animation - Sistema completo de animaciones\n```\n\n## 📖 Descripción\n\n**⚠️ IMPORTANTE:** Todos los comandos de este skill deben ejecutarse desde la **raíz del proyecto** (donde existe el directorio `mobile/`). El skill incluye verificaciones para asegurar que se está en el directorio correcto antes de ejecutar cualquier comando.\n\nEste skill cubre animaciones y motion design en Flutter desde lo básico (AnimationController, Tween) hasta soluciones avanzadas (Rive, Lottie). Incluye implicit animations, explicit animations, Hero animations, page transitions, y animated builders.\n\n### ✅ Cuándo Usar Este Skill\n\n- Mejorar UX con feedback visual\n- Onboarding con animaciones\n- Loading states animados\n- Page transitions personalizadas\n- Micro-interactions\n- Complex animations (Rive/Lottie)\n- Brand animations\n- Interactive animations\n\n### ❌ Cuándo NO Usar Este Skill\n\n- MVP simple sin requisitos de UX\n- Performance crítica (evita over-animation)\n- Prototipos estáticos\n\n## 🏗️ Estructura del Proyecto\n\n```\nmy_app/\n├── lib/\n│   ├── animations/\n│   │   ├── implicit/\n│   │   │   └── fade_scale_animation.dart\n│   │   ├── explicit/\n│   │   │   ├── custom_animation_controller.dart\n│   │   │   └── staggered_animation.dart\n│   │   ├── rive/\n│   │   │   └── rive_animations.dart\n│   │   ├── lottie/\n│   │   │   └── lottie_animations.dart\n│   │   └── transitions/\n│   │       ├── page_transitions.dart\n│   │       └── hero_transitions.dart\n│   │\n│   └── main.dart\n│\n└── assets/\n    ├── animations/\n    │   ├── loading.json         # Lottie\n    │   ├── success.json\n    │   └── onboarding.riv       # Rive\n    └── images/\n```\n\n## 📦 Dependencias\n\n```yaml\ndependencies:\n  flutter:\n    sdk: flutter\n\n  # Lottie animations\n  lott"
+    },
+    {
+      "path": "other/apply-all-findings-troykelly-codex-skills/SKILL.md",
+      "name": "apply-all-findings",
+      "current_category": "other",
+      "llm_category": "quality",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill enforces systematic handling of code review findings to prevent technical debt accumulation, which is a quality assurance practice.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "064368f81d4abaabbbf535325de11a716ce61c974ec0689f33759338b493e0ee",
+      "metadata_sha256": "7831c30936a78dad7bb645358ab609511d2eec51a252b0e3c04f27599387a87b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use after code review - implement ALL findings; any finding not fixed MUST have tracking issue created; no finding disappears without trace",
+      "content_excerpt": "---\nname: apply-all-findings\ndescription: Use after code review - implement ALL findings; any finding not fixed MUST have tracking issue created; no finding disappears without trace\n---\n\n# Apply All Findings\n\n## Overview\n\nAddress EVERY finding from code review. Findings are either FIXED or DEFERRED with tracking issues.\n\n**Core principle:** Minor issues accumulate into major problems.\n\n**The rule:** If it was worth noting, it's worth tracking.\n\n**ABSOLUTE REQUIREMENT:** Every finding results in ONE of:\n1. **Fixed in this PR** (verified)\n2. **Tracking issue created** (linked in review artifact)\n\nThere is NO third option. \"Won't fix without tracking\" is NOT permitted.\n\n## Why All Findings\n\n### Minor Issues Compound\n\n```\n1 unclear variable name +\n1 missing null check +\n1 inconsistent style +\n1 outdated comment =\nConfusing, fragile code\n```\n\n### Selective Fixing Creates Precedent\n\n```\n\"This minor issue can wait\" →\n\"That minor issue can wait too\" →\n\"We don't fix minor issues\" →\nTechnical debt mountain\n```\n\n### Thoroughness Builds Quality Culture\n\n```\nEvery finding addressed →\nHigh standards maintained →\nQuality becomes habit\n```\n\n## The Process\n\n### Step 1: Gather All Findings\n\nFrom `comprehensive-review`, you have:\n\n```markdown\n### Findings\n\n1. [Critical] SQL injection in findUser()\n2. [Major] N+1 query in getOrders()\n3. [Minor] Variable 'x' should be renamed\n4. [Minor] Missing JSDoc on helper()\n5. [Minor] Inconsistent quote style\n```\n\n### Step 2: Create Checklist\n\nEvery finding becomes a todo:\n\n```markdown\n- [ ] Fix SQL injection in findUser()\n- [ ] Fix N+1 query in getOrders()\n- [ ] Rename variable 'x' to descriptive name\n- [ ] Add JSDoc to helper()\n- [ ] Fix quote style to use single quotes\n```\n\n### Step 3: Address Systematically\n\nWork through the list. For each finding:\n\n#### If Fixable:\n\n1. Fix the issue\n2. Verify the fix\n3. Check off the item\n4. Move to next finding\n\n#### If Not Fixable in This PR:\n\n1. Verify valid deferral reason (see `deferred-finding` skill)\n2. Create tracking issue with full documentation\n3. Add tracking issue to review artifact\n4. Mark as DEFERRED (not unaddressed)\n5. Move to next finding\n\n```bash\n# Create tracking issue for deferred finding\ngh issue create \\\n  --title \"[Finding] [Description] (from #123)\" \\\n  --label \"review-finding,depth:1\" \\\n  --body \"[Full deferred-finding template]\"\n\n# Create spawned-from label if needed\ngh label create \"spawned-from:#123\" --color \"C2E0C6\" 2>/dev/null || true\ngh issue edit [NEW_ISSUE] --add-lab"
+    },
+    {
+      "path": "other/ancient-near-east-research/SKILL.md",
+      "name": "Ancient Near East Research",
+      "current_category": "other",
+      "llm_category": "analysis",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "This is an academic research skill focused on scholarly analysis, literature review, and source discovery for Ancient Near Eastern studies. It provides tools for academic research, citation formatting, and cross-referencing scholarly sources.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "2a97fc5af85818bbe2b4c0fae4c1abef18c3b9e27e2fc2a6178cb6681ed509c1",
+      "metadata_sha256": "9ded37dffdae558e13d3cdb8d3b2e0c7c1e44d93ac0394360943259f3e6b6dd2",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Academic research skill for Biblical Hebrew, Semitic linguistics, cuneiform studies, and comparative Ancient Near Eastern research. Provides Sefaria API for Hebrew Bible, CDLI/ORACC for cuneiform databases, and web discovery via Omnisearch, Exa, Firecrawl, and Obscura for finding scholarly sources across JSTOR, Perseus, Persée, Google Scholar, and academia.edu. Triggers on Hebrew quotes, cuneiform, Sefaria, ANE research, Minoan, search for scholarship, find papers, literature review, scholarly search, academic search, Genesis/Tehom, Ugaritic, Talmudic sources, extract from PDF, OCR academic.",
+      "content_excerpt": "---\nname: Ancient Near East Research\ndescription: >\n  Academic research skill for Biblical Hebrew, Semitic linguistics, cuneiform studies,\n  and comparative Ancient Near Eastern research. Provides Sefaria API for Hebrew Bible,\n  CDLI/ORACC for cuneiform databases, and web discovery via Omnisearch, Exa, Firecrawl,\n  and Obscura for finding scholarly sources across JSTOR, Perseus, Persée, Google Scholar,\n  and academia.edu. Triggers on Hebrew quotes, cuneiform, Sefaria, ANE research, Minoan,\n  search for scholarship, find papers, literature review, scholarly search, academic search,\n  Genesis/Tehom, Ugaritic, Talmudic sources, extract from PDF, OCR academic.\n---\n\n## Additional Triggers\n\nThis skill should also be activated for:\n- **Gnostic/Orphic**: \"Nag Hammadi\", \"Sethian\", \"Gnostic\", \"Orphic\", \"On the Origin of the World\", \"demiurge\"\n- **Etymology**: \"purple etymology\", \"tip'eret\", \"p-r root\", \"Membliaros\", \"Kadmos\", \"Europa\"\n- **Minoan parallels**: \"Moses-Minos\", \"Bezalel-Daedalus\", \"Kaphtor\", \"Caphtor\", \"Linear A\"\n- **OCR/tools**: \"extract from PDF\", \"OCR academic\", \"compile quotations\", \"theme categorization\"\n- **Paper research**: \"Thera eruption\", \"Tempest Stela\", \"primordial waters\", \"Gaza as Minoa\", \"Manat\"\n- **JSTOR**: \"search JSTOR\", \"JSTOR article\", \"download from JSTOR\", \"saved articles\", \"academic database\"\n- **Web Discovery**: \"find papers about\", \"search for scholarship\", \"literature search\", \"Google Scholar\", \"academic search\", \"find sources\", \"discover research\", \"omnisearch\", \"Exa search\"\n- **Source Extraction**: \"extract from URL\", \"scrape academic page\", \"stealth fetch\", \"parse PDF URL\", \"get abstract from JSTOR\"\n\n# Ancient Near East Research\n\nAcademic research assistant for Biblical Hebrew, Semitic linguistics, and comparative Ancient Near Eastern studies.\n\n## Core Capabilities\n\n1. **Sefaria API** - Fetch Hebrew Bible passages with vocalization, translations, and commentaries\n2. **Hebrew Text Handling** - Proper display of Hebrew with cantillation marks (טעמים)\n3. **Cross-referencing** - Link Biblical texts to Talmud, Midrash, and commentaries\n4. **Citation Formatting** - Academic citation styles for primary sources\n5. **Cuneiform Databases** - Access CDLI and ORACC for Akkadian/Sumerian primary sources\n\n## Sefaria API Usage\n\n### Fetching Texts\n\nTo retrieve a passage, use the Sefaria API endpoint:\n\n```\nhttps://www.sefaria.org/api/v3/texts/{reference}\n```\n\n**Reference Format:**\n- Book names: `Genesis`, `Exodus`, `Isaiah`, `Psalms`, etc.\n- "
+    },
+    {
+      "path": "other/api-gateway-itsmostafa-aws-agent-skills-2/SKILL.md",
+      "name": "api-gateway",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is specifically about AWS API Gateway for REST and HTTP API management, including creating APIs, configuring integrations, and setting up authorization, which is a core API management task.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "943d1aa977a7e73b849c555268e453a6bc55bff37423cbb69d4934b27a48aeee",
+      "metadata_sha256": "84c8cdfd4dbaa45011eb68d97e44fd5f196e1089692b76d481cf7576f7a71d42",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "AWS API Gateway for REST and HTTP API management. Use when creating APIs, configuring integrations, setting up authorization, managing stages, implementing rate limiting, or troubleshooting API issues.",
+      "content_excerpt": "---\nname: api-gateway\ndescription: AWS API Gateway for REST and HTTP API management. Use when creating APIs, configuring integrations, setting up authorization, managing stages, implementing rate limiting, or troubleshooting API issues.\nlast_updated: \"2026-01-07\"\ndoc_source: https://docs.aws.amazon.com/apigateway/latest/developerguide/\n---\n\n# AWS API Gateway\n\nAmazon API Gateway is a fully managed service for creating, publishing, and securing APIs at any scale. Supports REST APIs, HTTP APIs, and WebSocket APIs.\n\n## Table of Contents\n\n- [Core Concepts](#core-concepts)\n- [Common Patterns](#common-patterns)\n- [CLI Reference](#cli-reference)\n- [Best Practices](#best-practices)\n- [Troubleshooting](#troubleshooting)\n- [References](#references)\n\n## Core Concepts\n\n### API Types\n\n| Type | Description | Use Case |\n|------|-------------|----------|\n| **HTTP API** | Low-latency, cost-effective | Simple APIs, Lambda proxy |\n| **REST API** | Full-featured, more control | Complex APIs, transformation |\n| **WebSocket API** | Bidirectional communication | Real-time apps, chat |\n\n### Key Components\n\n- **Resources**: URL paths (/users, /orders/{id})\n- **Methods**: HTTP verbs (GET, POST, PUT, DELETE)\n- **Integrations**: Backend connections (Lambda, HTTP, AWS services)\n- **Stages**: Deployment environments (dev, prod)\n\n### Integration Types\n\n| Type | Description |\n|------|-------------|\n| **Lambda Proxy** | Pass-through to Lambda (recommended) |\n| **Lambda Custom** | Transform request/response |\n| **HTTP Proxy** | Pass-through to HTTP endpoint |\n| **AWS Service** | Direct integration with AWS services |\n| **Mock** | Return static response |\n\n## Common Patterns\n\n### Create HTTP API with Lambda\n\n**AWS CLI:**\n\n```bash\n# Create HTTP API\naws apigatewayv2 create-api \\\n  --name my-api \\\n  --protocol-type HTTP \\\n  --target arn:aws:lambda:us-east-1:123456789012:function:MyFunction\n\n# Get API endpoint\naws apigatewayv2 get-api --api-id abc123 --query 'ApiEndpoint'\n```\n\n**SAM Template:**\n\n```yaml\nAWSTemplateFormatVersion: '2010-09-09'\nTransform: AWS::Serverless-2016-10-31\n\nResources:\n  MyApi:\n    Type: AWS::Serverless::HttpApi\n    Properties:\n      StageName: prod\n\n  MyFunction:\n    Type: AWS::Serverless::Function\n    Properties:\n      Handler: app.handler\n      Runtime: python3.12\n      Events:\n        ApiEvent:\n          Type: HttpApi\n          Properties:\n            ApiId: !Ref MyApi\n            Path: /items\n            Method: GET\n```\n\n### Create REST API with Lambda Proxy\n\n```bash\n#"
+    },
+    {
+      "path": "other/antigravity-zapier-make-patterns-boisenoise-skills-collections/SKILL.md",
+      "name": "zapier-make-patterns",
+      "current_category": "other",
+      "llm_category": "integration",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Duplicate of skill 0 with same content; focuses on no-code automation platforms for connecting apps and automating workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "19f55fb53942e8053fa30450309b3c89a5ad698830069d9b48841c9ae9baee09",
+      "metadata_sha256": "95687b56ad6165b33222bcbe7329ca5c9a20c11f46049db3f665f72419a4c905",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "No-code automation democratizes workflow building. Zapier and Make (formerly Integromat) let non-developers automate business processes without writing code. But no-code doesn't mean no-complexity - these platforms have their own patterns, pitfalls, and breaking points.  This skill covers when to use which platform, how to build reliable automations, and when to graduate to code-based solutions. Key insight: Zapier optimizes for simplicity and integrations (7000+ apps), Make optimizes for power",
+      "content_excerpt": "---\nname: zapier-make-patterns\ndescription: \"No-code automation democratizes workflow building. Zapier and Make (formerly Integromat) let non-developers automate business processes without writing code. But no-code doesn't mean no-complexity - these platforms have their own patterns, pitfalls, and breaking points.  This skill covers when to use which platform, how to build reliable automations, and when to graduate to code-based solutions. Key insight: Zapier optimizes for simplicity and integrations (7000+ apps), Make optimizes for power \"\nsource: vibeship-spawner-skills (Apache 2.0)\n---\n\n# Zapier & Make Patterns\n\nYou are a no-code automation architect who has built thousands of Zaps and\nScenarios for businesses of all sizes. You've seen automations that save\ncompanies 40% of their time, and you've debugged disasters where bad data\nflowed through 12 connected apps.\n\nYour core insight: No-code is powerful but not unlimited. You know exactly\nwhen a workflow belongs in Zapier (simple, fast, maximum integrations),\nwhen it belongs in Make (complex branching, data transformation, budget),\nand when it needs to g\n\n## Capabilities\n\n- zapier\n- make\n- integromat\n- no-code-automation\n- zaps\n- scenarios\n- workflow-builders\n- business-process-automation\n\n## Patterns\n\n### Basic Trigger-Action Pattern\n\nSingle trigger leads to one or more actions\n\n### Multi-Step Sequential Pattern\n\nChain of actions executed in order\n\n### Conditional Branching Pattern\n\nDifferent actions based on conditions\n\n## Anti-Patterns\n\n### ❌ Text in Dropdown Fields\n\n### ❌ No Error Handling\n\n### ❌ Hardcoded Values\n\n## ⚠️ Sharp Edges\n\n| Issue | Severity | Solution |\n|-------|----------|----------|\n| Issue | critical | # ALWAYS use dropdowns to select, don't type |\n| Issue | critical | # Prevention: |\n| Issue | high | # Understand the math: |\n| Issue | high | # When a Zap breaks after app update: |\n| Issue | high | # Immediate fix: |\n| Issue | medium | # Handle duplicates: |\n| Issue | medium | # Understand operation counting: |\n| Issue | medium | # Best practices: |\n\n## Related Skills\n\nWorks well with: `workflow-automation`, `agent-tool-builder`, `backend`, `api-designer`\n"
+    },
+    {
+      "path": "other/antigravity-aws-serverless-boisenoise-skills-collections-2fcda5c6/SKILL.md",
+      "name": "aws-serverless",
+      "current_category": "other",
+      "llm_category": "devops",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Duplicate of skill 0 with same content - AWS serverless infrastructure patterns including Lambda, API Gateway, DynamoDB, SQS/SNS, SAM/CDK deployment.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "3deca503480d1be9e26c7104626d30f0c40deb342ca60d3b189b404b6bfe7235",
+      "metadata_sha256": "f3dd1f81e052a606d28abcd693662c0dbffbde9022e4cf8a47185f8a3f0c8ad9",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Specialized skill for building production-ready serverless applications on AWS. Covers Lambda functions, API Gateway, DynamoDB, SQS/SNS event-driven patterns, SAM/CDK deployment, and cold start optimization.",
+      "content_excerpt": "---\nname: aws-serverless\ndescription: \"Specialized skill for building production-ready serverless applications on AWS. Covers Lambda functions, API Gateway, DynamoDB, SQS/SNS event-driven patterns, SAM/CDK deployment, and cold start optimization.\"\nsource: vibeship-spawner-skills (Apache 2.0)\n---\n\n# AWS Serverless\n\n## Patterns\n\n### Lambda Handler Pattern\n\nProper Lambda function structure with error handling\n\n**When to use**: ['Any Lambda function implementation', 'API handlers, event processors, scheduled tasks']\n\n```python\n```javascript\n// Node.js Lambda Handler\n// handler.js\n\n// Initialize outside handler (reused across invocations)\nconst { DynamoDBClient } = require('@aws-sdk/client-dynamodb');\nconst { DynamoDBDocumentClient, GetCommand } = require('@aws-sdk/lib-dynamodb');\n\nconst client = new DynamoDBClient({});\nconst docClient = DynamoDBDocumentClient.from(client);\n\n// Handler function\nexports.handler = async (event, context) => {\n  // Optional: Don't wait for event loop to clear (Node.js)\n  context.callbackWaitsForEmptyEventLoop = false;\n\n  try {\n    // Parse input based on event source\n    const body = typeof event.body === 'string'\n      ? JSON.parse(event.body)\n      : event.body;\n\n    // Business logic\n    const result = await processRequest(body);\n\n    // Return API Gateway compatible response\n    return {\n      statusCode: 200,\n      headers: {\n        'Content-Type': 'application/json',\n        'Access-Control-Allow-Origin': '*'\n      },\n      body: JSON.stringify(result)\n    };\n  } catch (error) {\n    console.error('Error:', JSON.stringify({\n      error: error.message,\n      stack: error.stack,\n      requestId: context.awsRequestId\n    }));\n\n    return {\n      statusCode: error.statusCode || 500,\n      headers: { 'Content-Type': 'application/json' },\n      body: JSON.stringify({\n        error: error.message || 'Internal server error'\n      })\n    };\n  }\n};\n\nasync function processRequest(data) {\n  // Your business logic here\n  const result = await docClient.send(new GetCommand({\n    TableName: process.env.TABLE_NAME,\n    Key: { id: data.id }\n  }));\n  return result.Item;\n}\n```\n\n```python\n# Python Lambda Handler\n# handler.py\n\nimport json\nimport os\nimport logging\nimport boto3\nfrom botocore.exceptions import ClientError\n\n# Initialize outside handler (reused across invocations)\nlogger = logging.getLogger()\nlogger.setLevel(logging.INFO)\n\ndynamodb = boto3.resource('dynamodb')\ntable = dynamodb.Table(os.environ['TABLE_NAME'])\n\ndef handler(event, context"
+    },
+    {
+      "path": "other/app-comprehensive-test-generator-stravinest-house-hold-account-2/SKILL.md",
+      "name": "app-comprehensive-test-generator",
+      "current_category": "other",
+      "llm_category": "testing",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill focuses on generating test scenarios, executing tests, and producing QA reports, which aligns directly with testing and QA workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "5ee94f8a203258d2151e04649a314ae6d8d0337c5bd0618448235295b671b10b",
+      "metadata_sha256": "b1157fc7e39ee64412a9034cb486c4771cec9148de1823eff0e651d59360e90e",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Generate exhaustive user-flow and edge-case test scenarios from an app's codebase, produce scenario .md files, execute tests using connected or newly created MCPs, and produce an app.qa.report.md summarizing failures and suggested fixes.",
+      "content_excerpt": "---\nname: app-comprehensive-test-generator\ndescription: Generate exhaustive user-flow and edge-case test scenarios from an app's codebase, produce scenario .md files, execute tests using connected or newly created MCPs, and produce an app.qa.report.md summarizing failures and suggested fixes. \n---\n\nSkill purpose\n\nThis Skill analyzes an application's codebase to enumerate all practical user-flow and edge-case scenarios (starting from a prioritized sample set), writes human-readable scenario .md files, automatically or manually executes those scenarios using available MCP(s) or by provisioning recommended MCP stubs, validates results, and compiles a consolidated QA report (app.qa.report.md) describing failures, reproducible steps, severity, and suggested fixes.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStep-by-step instructions Claude must follow\n\n1. Gather context\n  - Ask the user for repository location, runtime environment, available MCP connections, authentication details, and which sample scope to start with (default: core user flows: sign-up, login, search/browse, add-to-cart, checkout/payment).\n  - If code is provided, fetch and index relevant files (routes/controllers, API endpoints, UI flows, business logic, tests). If not provided, request access or a zip.\n\n2. Static analysis and feature extraction\n  - Parse source code to extract endpoints, routes, UI screens, form fields, auth flows, third-party integrations, database operations, and configuration flags.\n  - Build a feature map listing actions (e.g., create-account, login, forgot-password, search, filter, sort, add-to-cart, apply-coupon, checkout), inputs, preconditions, and side effects.\n\n3. Scenario enumeration\n  - For chosen sample scope, generate scenarios covering:\n    - Happy path(s)\n    - Input boundary conditions (empty, long, invalid formats)\n    - Authorization/permission variations (unauthenticated, low-privilege user)\n    - Error and retry flows (network failure, service timeout, DB error)\n    - Integration edge cases (payment declines, third-party API rate-limit)\n    - Concurrency and state races where applicable\n  - Use reasonable combinatorial pruning to avoid explosion: prioritize by user impact and probability. Default: enumerate full set for core flows and provide counts.\n\n4. Produce scenario .md files\n  - For each scenario, create a .md file in a scenarios/ directory with a consistent template:\n    - Title\n    - Scope and priority\n    - Preconditions (state, test data)\n    - Steps (precise reproducible s"
+    },
+    {
+      "path": "other/api-key-auth-setup-jeremylongshore-claude-code-plugins-/SKILL.md",
+      "name": "api-key-auth-setup",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Identical skill to id 0, explicitly about API key authentication setup within API Development domain.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "07ac4efeb8fc2bfd105b1aacfe0bf0d08d85689737b1ab14d3dfe41608bd9d0f",
+      "metadata_sha256": "23a4587af774ba55356174b51615b4397fc62f6ba096741556fd974a774093df",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Configure api key auth setup operations. Auto-activating skill for API Development.\nTriggers on: api key auth setup, api key auth setup\nPart of the API Development skill category. Use when working with APIs or building integrations. Trigger with phrases like \"api key auth setup\", \"api setup\", \"api\".",
+      "content_excerpt": "---\nname: \"api-key-auth-setup\"\ndescription: |\n  Configure api key auth setup operations. Auto-activating skill for API Development.\n  Triggers on: api key auth setup, api key auth setup\n  Part of the API Development skill category. Use when working with APIs or building integrations. Trigger with phrases like \"api key auth setup\", \"api setup\", \"api\".\nallowed-tools: \"Read, Write, Edit, Bash(curl:*), Grep\"\nversion: 1.0.0\nlicense: MIT\nauthor: \"Jeremy Longshore <jeremy@intentsolutions.io>\"\n---\n\n# Api Key Auth Setup\n\n## Overview\n\nThis skill provides automated assistance for api key auth setup tasks within the API Development domain.\n\n## When to Use\n\nThis skill activates automatically when you:\n- Mention \"api key auth setup\" in your request\n- Ask about api key auth setup patterns or best practices\n- Need help with api development skills covering rest, graphql, openapi, authentication, and api design patterns.\n\n## Instructions\n\n1. Provides step-by-step guidance for api key auth setup\n2. Follows industry best practices and patterns\n3. Generates production-ready code and configurations\n4. Validates outputs against common standards\n\n## Examples\n\n**Example: Basic Usage**\nRequest: \"Help me with api key auth setup\"\nResult: Provides step-by-step guidance and generates appropriate configurations\n\n\n## Prerequisites\n\n- Relevant development environment configured\n- Access to necessary tools and services\n- Basic understanding of api development concepts\n\n\n## Output\n\n- Generated configurations and code\n- Best practice recommendations\n- Validation results\n\n\n## Error Handling\n\n| Error | Cause | Solution |\n|-------|-------|----------|\n| Configuration invalid | Missing required fields | Check documentation for required parameters |\n| Tool not found | Dependency not installed | Install required tools per prerequisites |\n| Permission denied | Insufficient access | Verify credentials and permissions |\n\n\n## Resources\n\n- Official documentation for related tools\n- Best practices guides\n- Community examples and tutorials\n\n## Related Skills\n\nPart of the **API Development** skill category.\nTags: api, rest, graphql, openapi, swagger\n"
+    },
+    {
+      "path": "other/api-investigator/SKILL.md",
+      "name": "api-investigator",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill is about investigating and analyzing API behavior using mitmproxy and Playwright to capture HTTP traffic. It focuses on understanding API request/response patterns, which is a core API-related activity.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "cf7f032f9ec3ad78130ea288d7818cc85383aab8f84536ab000d42721d856eff",
+      "metadata_sha256": "536f24b508ab408ef37003803ff14ffa70d41aa0eaafbdeb0ed38050e57a7ad6",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "note.com APIの調査を支援します。mitmproxyとPlaywrightを使用してHTTPトラフィックをキャプチャ・分析し、API動作を解明します。",
+      "content_excerpt": "---\nname: api-investigator\ndescription: note.com APIの調査を支援します。mitmproxyとPlaywrightを使用してHTTPトラフィックをキャプチャ・分析し、API動作を解明します。\nallowed-tools: Read Edit Write Glob Grep Bash\n---\n\n# API Investigator スキル\n\nこのスキルは、note.com APIの動作を調査するための`investigator`モジュールの利用方法を提供します。\n\n## 起動条件\n\n以下の状況で起動します：\n\n1. **API動作の調査時**: note.com APIのリクエスト/レスポンス形式を確認する際\n2. **新機能の実装前調査**: 未知のAPIエンドポイントの動作を理解する必要がある際\n3. **バグ調査時**: API通信に関連する問題を診断する際\n4. **ProseMirrorエディタ調査時**: note.comのエディタDOM構造やイベントを調査する際\n5. **認証フロー調査時**: ログイン・セッション管理の動作を確認する際\n\n## 前提条件\n\n### 必要なソフトウェア\n\n- mitmproxy（mitmdumpコマンド）\n- Playwright\n\n### インストール\n\n```bash\n# 開発依存関係のインストール（mitmproxy含む）\nuv sync --group dev\n\n# Playwrightブラウザのインストール\nuv run playwright install chromium\n```\n\n## 使用方法\n\n### 1. トラフィックキャプチャ\n\n```bash\n# 基本的なキャプチャ（セッション自動復元）\nuv run python -m note_mcp.investigator capture\n\n# ドメインフィルタ付きキャプチャ\nuv run python -m note_mcp.investigator capture --domain api.note.com\n\n# 出力ファイル指定\nuv run python -m note_mcp.investigator capture -o my_capture.flow\n\n# セッション復元なし（新規ログイン必要）\nuv run python -m note_mcp.investigator capture --no-session\n\n# カスタムポート\nuv run python -m note_mcp.investigator capture --port 8888\n```\n\n### 2. キャプチャ分析\n\n```bash\n# 基本的な分析\nuv run python -m note_mcp.investigator analyze traffic.flow\n\n# パターンで検索\nuv run python -m note_mcp.investigator analyze traffic.flow --pattern citation\n\n# ドメインとメソッドでフィルタ\nuv run python -m note_mcp.investigator analyze traffic.flow --domain api.note.com --method POST\n```\n\n### 3. JSONエクスポート\n\n```bash\n# JSON形式でエクスポート\nuv run python -m note_mcp.investigator export traffic.flow -o api_calls.json\n\n# ドメインフィルタ付きエクスポート\nuv run python -m note_mcp.investigator export traffic.flow --domain api.note.com\n```\n\n## セッション管理\n\n### 自動セッション復元\n\n`note_login` MCPツールでログイン済みの場合、保存されたセッションCookieが自動的にブラウザに注入されます。\n\n```\ncaptureコマンド実行\n    ↓\nSessionManagerからCookie読み込み\n    ↓\nPlaywrightブラウザにCookie注入\n    ↓\nログイン状態でキャプチャ開始\n```\n\n### セッションがない場合\n\n1. ブラウザが開く\n2. note.comに手動でログイン\n3. 調査操作を実行\n4. ブラウザを閉じてキャプチャ終了\n\n## 調査ワークフロー例\n\n### 例1: 引用（blockquote）出典APIの調査（実績あり）\n\n```bash\n# Step 1: note.comへのトラフィックをキャプチャ\nuv run python -m note_mcp.investigator capture -d note.com -o citation.flow\n\n# ブラウザで:\n# 1. 新規記事作成画面（/notes/new）を開く\n# 2. 引用ブロックを追加\n# 3. 出典を入力\n# 4. 下書き保存\n# 5. ブラウザを閉じる\n\n# Step 2: draft_save APIを分析\nuv run python -m note_mcp.investigator analyze citation.flow --pattern draft_save\n\n# Step 3: 詳細をJSONでエクスポート\nuv run python -m note_mcp.investigator export citation.flow -o citation_api.json\n\n# Step 4: Pythonで詳細確認\nuv run python -c \"\nimport json\nwith open('citation_api.js"
+    },
+    {
+      "path": "other/api-mocking-server-cornmanwtf-abang-colek/SKILL.md",
+      "name": "api-mocking-server",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Duplicate of id 2 with same functionality - creates mock endpoints with scenario support.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "100ece93e856d5e47f0f875879c074de512ef3ed700d844e4d9d9b4923dcf25e",
+      "metadata_sha256": "de4f3cc141b979b8a133cec0a1ad99c923956b0320e71a275e3a701dcde7797a",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Create mock endpoints with scenario support.",
+      "content_excerpt": "---\nname: api-mocking-server\ncategory: codegen-scaffolding\ndescription: Create mock endpoints with scenario support.\n---\n\n# Api Mocking Server\n\n## Purpose\n- Create mock endpoints with scenario support.\n\n## Preconditions\n- Access to system context (repos, infra, environments)\n- Confirmed requirements and constraints\n- Required approvals for security, compliance, or governance\n\n## Inputs\n- Problem statement and scope\n- Current architecture or system constraints\n- Non-functional requirements (performance, security, compliance)\n- Target stack and environment\n\n## Outputs\n- Design or implementation plan\n- Required artifacts (diagrams, configs, specs, checklists)\n- Validation steps and acceptance criteria\n\n## Detailed Step-by-Step Procedures\n1. Clarify scope, constraints, and success metrics.\n2. Review current system state, dependencies, and integration points.\n3. Select patterns, tools, and architecture options that match constraints.\n4. Produce primary artifacts (docs/specs/configs/code stubs).\n5. Validate against requirements and known risks.\n6. Provide rollout and rollback guidance.\n\n## Decision Trees and Conditional Logic\n- If compliance or regulatory scope applies -> add required controls and audit steps.\n- If latency budget is strict -> choose low-latency storage and caching.\n- Else -> prefer cost-optimized storage and tiering.\n- If data consistency is critical -> prefer transactional boundaries and strong consistency.\n- Else -> evaluate eventual consistency or async processing.\n\n## Error Handling and Edge Cases\n- Partial failures across dependencies -> isolate blast radius and retry with backoff.\n- Data corruption or loss risk -> enable backups and verify restore path.\n- Limited access to systems -> document gaps and request access early.\n- Legacy dependencies with limited change tolerance -> use adapters and phased rollout.\n\n## Tool Requirements and Dependencies\n- CLI and SDK tooling for the target stack\n- Credentials or access tokens for required environments\n- Diagramming or spec tooling when producing docs\n\n## Stack Profiles\n- Use Profile A, B, or C from `skills/STACK_PROFILES.md`.\n- Note selected profile in outputs for traceability.\n\n## Validation\n- Requirements coverage check\n- Security and compliance review\n- Performance and reliability review\n- Peer or stakeholder sign-off\n\n## Rollback Procedures\n- Revert config or deployment to last known good state.\n- Roll back database migrations if applicable.\n- Verify service health, data integrity, and error"
+    },
+    {
+      "path": "other/api-mock/SKILL.md",
+      "name": "api-mock",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill generates API mocks and stub servers from OpenAPI specs, directly related to API development and testing workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "d845ac8cbd5bee4ca6d48e0dc65c91f871b5877869999eb680ded99e1f5db058",
+      "metadata_sha256": "acee253a89f590e00149b4c28c9cc274ec550455a1450cc79e08b7a7930a048e",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Generate API mocks and stub servers from OpenAPI specs or code analysis",
+      "content_excerpt": "---\nname: api-mock\ndescription: Generate API mocks and stub servers from OpenAPI specs or code analysis\ndisable-model-invocation: false\n---\n\n# API Mock Server Generator\n\nI'll help you generate API mock servers and stub services for testing and development, based on OpenAPI specifications or code analysis.\n\n**Mock Server Tools:**\n- **json-server**: Simple REST API mocking\n- **MSW (Mock Service Worker)**: Browser and Node.js request interception\n- **Prism**: OpenAPI-based mock server\n- **WireMock**: Advanced API simulation\n\n## Token Optimization\n\nThis skill uses mock generation-specific patterns to minimize token usage:\n\n### 1. API Spec Detection Caching (600 token savings)\n**Pattern:** Cache API specification locations and structure\n- Store spec analysis in `.api-mock-cache` (1 hour TTL)\n- Cache: spec location, endpoints, schemas, examples\n- Read cached spec on subsequent runs (50 tokens vs 650 tokens fresh)\n- Invalidate on spec file changes\n- **Savings:** 92% on repeat mock generations\n\n### 2. OpenAPI Spec Parsing via Bash (1,800 token savings)\n**Pattern:** Use yq/jq for OpenAPI parsing instead of LLM\n- Extract endpoints: `yq '.paths | keys'` (200 tokens)\n- Extract schemas: `yq '.components.schemas'` (200 tokens)\n- No Task agents for spec parsing\n- **Savings:** 90% vs LLM-based OpenAPI analysis\n\n### 3. Template-Based Mock Generation (2,500 token savings)\n**Pattern:** Use predefined mock server templates\n- Standard templates: json-server, MSW, Prism configurations\n- Endpoint → mock handler mapping templates\n- No creative mock logic generation needed\n- **Savings:** 85% vs LLM-generated mock code\n\n### 4. Example-Based Response Generation (1,000 token savings)\n**Pattern:** Use examples from OpenAPI spec\n- Extract existing response examples from spec (300 tokens)\n- Use spec examples directly in mocks\n- Generate random data only when no examples\n- **Savings:** 75% vs generating all mock responses\n\n### 5. Sample-Based Endpoint Analysis (700 token savings)\n**Pattern:** Analyze first 15 endpoints for patterns\n- Identify CRUD patterns, auth requirements (500 tokens)\n- Apply patterns to remaining endpoints\n- Full analysis only if explicitly requested\n- **Savings:** 60% vs analyzing every endpoint\n\n### 6. Cached Mock Tool Setup (400 token savings)\n**Pattern:** Reuse mock server configuration\n- Cache tool installation status (npm ls, etc.)\n- Don't regenerate config if tool already setup\n- Standard configurations for common tools\n- **Savings:** 80% on tool configuration"
+    },
+    {
+      "path": "other/apollo-server-apollographql-skills-2/SKILL.md",
+      "name": "apollo-server",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is a guide for building GraphQL servers with Apollo Server, covering setup, schema definition, resolver writing, authentication, plugins, and troubleshooting. This is squarely within software development workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "7e56911da905caa99e0a429ab38fb04ea06b8abd46f9fd986b92a2a04268d9d4",
+      "metadata_sha256": "93a215f9b0cbcd4e0861a77c22098a34127128d257524cc8870fd20c3dc42713",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Guide for building GraphQL servers with Apollo Server 5.x. Use this skill when: (1) setting up a new Apollo Server project, (2) writing resolvers or defining GraphQL schemas, (3) implementing authentication or authorization, (4) creating plugins or custom data sources, (5) troubleshooting Apollo Server errors or performance issues.",
+      "content_excerpt": "---\nname: apollo-server\ndescription: >\n  Guide for building GraphQL servers with Apollo Server 5.x. Use this skill when:\n  (1) setting up a new Apollo Server project,\n  (2) writing resolvers or defining GraphQL schemas,\n  (3) implementing authentication or authorization,\n  (4) creating plugins or custom data sources,\n  (5) troubleshooting Apollo Server errors or performance issues.\nlicense: MIT\ncompatibility: Node.js v20+, TypeScript 4.7+. Works with Express v4/v5, standalone, Fastify, and serverless.\nmetadata:\n  author: apollographql\n  version: \"1.0.0\"\nallowed-tools: Bash(npm:*) Bash(npx:*) Bash(node:*) Read Write Edit Glob Grep\n---\n\n# Apollo Server 5.x Guide\n\nApollo Server is an open-source GraphQL server that works with any GraphQL schema. Apollo Server 5 is framework-agnostic and runs standalone or integrates with Express, Fastify, and serverless environments.\n\n## Quick Start\n\n### Step 1: Install\n\n```bash\nnpm install @apollo/server graphql\n```\n\nFor Express integration:\n\n```bash\nnpm install @apollo/server @as-integrations/express5 express graphql cors\n```\n\n### Step 2: Define Schema\n\n```typescript\nconst typeDefs = `#graphql\n  type Book {\n    title: String\n    author: String\n  }\n\n  type Query {\n    books: [Book]\n  }\n`;\n```\n\n### Step 3: Write Resolvers\n\n```typescript\nconst resolvers = {\n  Query: {\n    books: () => [\n      { title: \"The Great Gatsby\", author: \"F. Scott Fitzgerald\" },\n      { title: \"1984\", author: \"George Orwell\" },\n    ],\n  },\n};\n```\n\n### Step 4: Start Server\n\n**Standalone (Recommended for prototyping):**\n\nThe standalone server is great for prototyping, but for production services, we recommend integrating Apollo Server with a more fully-featured web framework such as Express, Koa, or Fastify. Swapping from the standalone server to a web framework later is straightforward.\n\n```typescript\nimport { ApolloServer } from \"@apollo/server\";\nimport { startStandaloneServer } from \"@apollo/server/standalone\";\n\nconst server = new ApolloServer({ typeDefs, resolvers });\n\nconst { url } = await startStandaloneServer(server, {\n  listen: { port: 4000 },\n});\n\nconsole.log(`Server ready at ${url}`);\n```\n\n**Express:**\n\n```typescript\nimport { ApolloServer } from \"@apollo/server\";\nimport { expressMiddleware } from \"@as-integrations/express5\";\nimport { ApolloServerPluginDrainHttpServer } from \"@apollo/server/plugin/drainHttpServer\";\nimport express from \"express\";\nimport http from \"http\";\nimport cors from \"cors\";\n\nconst app = express();\nconst httpServer = http.cre"
+    },
+    {
+      "path": "other/applying-code-principles-thkt-claude-config/SKILL.md",
+      "name": "applying-code-principles",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Same skill as id 2 - covers fundamental software engineering principles (SOLID, DRY, YAGNI, clean code, design patterns). Directly about software development best practices.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "2e0cd317f5edf50ef2d933b4bfd9c3f50de86e9be7df03204cdf34818fa483d4",
+      "metadata_sha256": "284991fc471e6e9c442f0ba8aebaaded867c943462b7bde184315db161a0753b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Fundamental software principles - SOLID, DRY, Occam's Razor, Miller's Law, YAGNI, Readable Code. Triggers: 原則, シンプル, 複雑, アーキテクチャ, リファクタリング, 保守性, コード品質, design pattern, best practice, clean code",
+      "content_excerpt": "---\nname: applying-code-principles\ndescription: >\n  Fundamental software principles - SOLID, DRY, Occam's Razor, Miller's Law, YAGNI, Readable Code.\n  Triggers: 原則, シンプル, 複雑, アーキテクチャ, リファクタリング, 保守性, コード品質,\n  design pattern, best practice, clean code\nallowed-tools: [Read, Grep, Glob]\nuser-invocable: false\n---\n\n# コード原則\n\n## 優先順序\n\n| 優先度 | 原則           | 適用場面                         |\n| ------ | -------------- | -------------------------------- |\n| 1      | 安全第一       | セキュリティ、データ整合性       |\n| 2      | YAGNI          | 不要なものは作らない             |\n| 3      | オッカムの剃刀 | 最もシンプルな解決               |\n| 4      | SOLID          | 複雑なシステム向け               |\n| 5      | DRY            | 重複排除（明確性を犠牲にしない） |\n| 6      | ミラーの法則   | 7±2の認知限界を尊重              |\n\n## クイックチェック\n\n**CLAUDE.md → 開発チェック** を参照（常にロード、単一の情報源）。\n\n## 閾値\n\n| 対象           | 理想 | 最大 | 限界 |\n| -------------- | ---- | ---- | ---- |\n| 関数引数       | 3    | 5    | 7    |\n| クラスメソッド | 5    | 7    | 9    |\n| 条件分岐       | 3    | 5    | 7    |\n\n## ルール\n\n| 原則   | ルール                                      |\n| ------ | ------------------------------------------- |\n| DRY    | 3回目の重複で抽象化（3回ルール）            |\n| SOLID  | 2番目の実装が現れたときのみインターフェース |\n| YAGNI  | 問題が今存在する場合のみ作る                |\n| 可読性 | 新しいチームメンバーが1分以内に理解できる   |\n"
+    },
+    {
+      "path": "other/api-gateway-configuration-secondsky-claude-skills-2/SKILL.md",
+      "name": "api-gateway-configuration",
+      "current_category": "other",
+      "llm_category": "devops",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill is about configuring API gateways (Kong, Nginx, AWS API Gateway, Traefik) for microservice architectures, covering routing, authentication, rate limiting, and infrastructure concerns.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "654bd1713bfba8ba594a4ee62c6511ad97e6929fabf9b2b676277d2f133eb8a7",
+      "metadata_sha256": "f3bce4d434001a9adf9481db9947bf18e3022d5b747659b54163d43c4056276b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Configures API gateways for routing, authentication, rate limiting, and request transformation in microservice architectures. Use when setting up Kong, Nginx, AWS API Gateway, or Traefik for centralized API management.",
+      "content_excerpt": "---\nname: api-gateway-configuration\ndescription: Configures API gateways for routing, authentication, rate limiting, and request transformation in microservice architectures. Use when setting up Kong, Nginx, AWS API Gateway, or Traefik for centralized API management.\n---\n\n# API Gateway Configuration\n\nDesign and configure API gateways for microservice architectures.\n\n## Gateway Responsibilities\n\n- Request routing and load balancing\n- Authentication and authorization\n- Rate limiting and throttling\n- Request/response transformation\n- Logging and monitoring\n- SSL termination\n\n## Kong Configuration (YAML)\n\n```yaml\n_format_version: \"3.0\"\n\nservices:\n  - name: user-service\n    url: http://user-service:3000\n    routes:\n      - name: user-routes\n        paths: [\"/api/users\"]\n    plugins:\n      - name: rate-limiting\n        config:\n          minute: 100\n          policy: local\n      - name: jwt\n\n  - name: order-service\n    url: http://order-service:3000\n    routes:\n      - name: order-routes\n        paths: [\"/api/orders\"]\n```\n\n## Nginx Configuration\n\n```nginx\nupstream backend {\n    server backend1:3000 weight=5;\n    server backend2:3000 weight=5;\n    keepalive 32;\n}\n\nserver {\n    listen 443 ssl;\n\n    location /api/ {\n        proxy_pass http://backend;\n        proxy_http_version 1.1;\n        proxy_set_header Host $host;\n        proxy_set_header X-Real-IP $remote_addr;\n        proxy_cache_valid 200 1m;\n    }\n\n    location /health {\n        return 200 'OK';\n    }\n}\n```\n\n## AWS API Gateway (SAM)\n\n```yaml\nResources:\n  ApiGateway:\n    Type: AWS::Serverless::Api\n    Properties:\n      StageName: prod\n      Auth:\n        DefaultAuthorizer: JWTAuthorizer\n        Authorizers:\n          JWTAuthorizer:\n            JwtConfiguration:\n              issuer: !Sub \"https://cognito-idp.${AWS::Region}.amazonaws.com/${UserPoolId}\"\n```\n\n## Best Practices\n\n- Authenticate at gateway level\n- Implement global rate limiting\n- Enable request logging\n- Use health checks for backends\n- Apply response caching strategically\n- Never expose backend details in errors\n- Enforce HTTPS in production\n"
+    }
+  ],
+  "notes": [
+    "Review sample rows against SKILL.md excerpts before applying a migration plan.",
+    "Sampling is deterministic for a fixed seed and classification input."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "antigravity-azure-eventhub-ts",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/antigravity-azure-eventhub-ts/SKILL.md",
+  "category": "integration",
+  "source": "github.com/boisenoise/skills-collections",
+  "dir_name": "antigravity-azure-eventhub-ts",
+  "downloaded_at": "2026-02-22T06:34:19.524953Z",
+  "author": "boisenoise",
+  "source_url": "https://github.com/boisenoise/skills-collections/blob/main/skills/antigravity-azure-eventhub-ts/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/boisenoise/skills-collections/blob/main/skills/antigravity-azure-eventhub-ts/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

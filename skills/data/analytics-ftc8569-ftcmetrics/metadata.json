@@ -1,0 +1,20 @@
+{
+  "name": "analytics",
+  "description": "",
+  "repo": "ftc8569/ftcmetrics",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ftc8569/ftcmetrics",
+  "github_path": ".claude/skills/analytics",
+  "github_branch": "main",
+  "dir_name": "analytics-ftc8569-ftcmetrics",
+  "downloaded_at": "2026-02-05T01:44:37.793854Z",
+  "author": "ftcmetrics",
+  "source_url": "https://github.com/ftc8569/ftcmetrics/tree/main/.claude/skills/analytics",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); original source was archived from the upstream repository metadata.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "analyze-content-gaps",
+  "description": "",
+  "repo": "dandye/ai-runbooks",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/dandye/ai-runbooks",
+  "github_path": "skills/analyze-content-gaps",
+  "github_branch": "main",
+  "dir_name": "analyze-content-gaps",
+  "downloaded_at": "2026-02-05T01:44:13.062888Z",
+  "author": "dandye",
+  "source_url": "https://github.com/dandye/ai-runbooks/tree/main/skills/analyze-content-gaps",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); original source was archived from the upstream repository metadata.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

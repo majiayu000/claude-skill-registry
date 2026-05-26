@@ -1,0 +1,16 @@
+{
+  "name": "api-envelope-pattern",
+  "repo": "planetaryescape/blah.chat",
+  "path": ".claude/skills/api-envelope-pattern/SKILL.md",
+  "source": "github.com/planetaryescape/blah.chat",
+  "downloaded_at": "2026-02-02T04:48:51.206351Z",
+  "dir_name": "api-envelope-pattern",
+  "category": "api",
+  "author": "planetaryescape",
+  "source_url": "https://github.com/planetaryescape/blah.chat/blob/main/.claude/skills/api-envelope-pattern/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (C) 2025 Bhekani Khumalo",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

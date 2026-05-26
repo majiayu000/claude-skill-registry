@@ -1,0 +1,20 @@
+{
+  "name": "annualreports",
+  "description": "",
+  "repo": "verrio1/vaughn-pai",
+  "category": "security",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/verrio1/vaughn-pai",
+  "github_path": "skills/AnnualReports",
+  "github_branch": "main",
+  "dir_name": "annualreports",
+  "downloaded_at": "2026-02-05T01:45:01.992019Z",
+  "author": "verrio1",
+  "source_url": "https://github.com/verrio1/vaughn-pai/tree/main/skills/AnnualReports",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); original source was archived from the upstream repository metadata.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

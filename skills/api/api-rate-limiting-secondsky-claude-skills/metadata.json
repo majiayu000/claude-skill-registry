@@ -1,0 +1,17 @@
+{
+  "name": "api-rate-limiting",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/api-rate-limiting/skills/api-rate-limiting/SKILL.md",
+  "github_branch": "main",
+  "category": "api",
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "api-rate-limiting-secondsky-claude-skills",
+  "downloaded_at": "2026-03-31T01:43:16.233836Z",
+  "author": "secondsky",
+  "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/api-rate-limiting/skills/api-rate-limiting/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/secondsky/claude-skills/blob/main/plugins/api-rate-limiting/skills/api-rate-limiting/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

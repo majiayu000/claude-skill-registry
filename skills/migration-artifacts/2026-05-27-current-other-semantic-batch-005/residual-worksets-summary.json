@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-26T20:31:53.410794+00:00",
+  "skills_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout",
+  "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-005/classification.jsonl",
+  "policy": {
+    "from_categories": [
+      "other"
+    ],
+    "min_confidence": 0.9,
+    "content_chars": 0,
+    "apply_mode": "report-only"
+  },
+  "summary": {
+    "classification_row_count": 1000,
+    "archive_category_counts": {
+      "agent": 1444,
+      "ai-llm": 2100,
+      "ai-ml": 2026,
+      "analysis": 3045,
+      "api": 888,
+      "bash": 210,
+      "business": 1037,
+      "c-level": 49,
+      "communication": 561,
+      "context-management": 1168,
+      "creative": 675,
+      "data": 48899,
+      "design": 13410,
+      "development": 36220,
+      "devops": 10238,
+      "documents": 6201,
+      "domains": 49,
+      "examples": 85,
+      "forensics": 56,
+      "gaming": 694,
+      "generation": 455,
+      "integration": 4626,
+      "language": 62,
+      "local-ai-infrastructure": 50,
+      "marketing": 2584,
+      "orchestration": 1855,
+      "other": 53021,
+      "performance": 853,
+      "personal-development": 285,
+      "planning": 1320,
+      "platform": 235,
+      "product": 2338,
+      "productivity": 2959,
+      "quality": 2662,
+      "security": 4984,
+      "skills": 1718,
+      "system": 17,
+      "testing": 11141,
+      "travel": 44,
+      "war-room": 5,
+      "workflow": 899,
+      "writing": 910
+    },
+    "scoped_existing_classification_count": 830,
+    "workset_counts": {
+      "classification_gap": 52191,
+      "low_confidence": 504,
+      "review_target": 0,
+      "target_other": 0
+    },
+    "conflict_detail_count": 0,
+    "conflict_clusters": {},
+    "conflict_target_category_counts": {}
+  },
+  "workset_files": {
+    "classification_gap": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-005/residual-worksets/classification_gap.jsonl",
+    "low_confidence": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-005/residual-worksets/low_confidence.jsonl",
+    "review_target": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-005/residual-worksets/review_target.jsonl",
+    "target_other": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-005/residual-worksets/target_other.jsonl"
+  },
+  "notes": [
+    "This report does not modify archive files.",
+    "classification_gap contains live archive paths absent from the classification JSONL.",
+    "low_confidence and review_target rows should be reclassified before apply.",
+    "conflict clusters are diagnostic; content drift conflicts must not be auto-deleted."
+  ],
+  "omitted_large_worksets": {
+    "classification_gap": "omitted from git because the live classification gap is too large; regenerate with the recorded build_residual_category_worksets.py command",
+    "residual_worksets_json": "omitted from git because it embeds the full classification_gap workset"
+  }
+}

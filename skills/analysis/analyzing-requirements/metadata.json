@@ -1,0 +1,18 @@
+{
+  "name": "analyzing-requirements",
+  "repo": "ryryo/dot-claude-dev",
+  "path": "docs/SAMPLE/dot-claude-dev/dotfiles/claude/skills/analyzing-requirements/SKILL.md",
+  "source": "github.com/ryryo/dot-claude-dev",
+  "downloaded_at": "2026-01-22T03:36:30.064507Z",
+  "dir_name": "analyzing-requirements",
+  "category": "analysis",
+  "github_path": "docs/SAMPLE/dot-claude-dev/dotfiles/claude/skills/analyzing-requirements",
+  "github_branch": "main",
+  "author": "ryryo",
+  "source_url": "https://github.com/ryryo/dot-claude-dev/blob/main/docs/SAMPLE/dot-claude-dev/dotfiles/claude/skills/analyzing-requirements/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ryryo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,698 @@
+ D other/alto-switch/SKILL.md
+ D other/alto-switch/metadata.json
+ D other/amazon-best-selling-products-finder-api-skill/SKILL.md
+ D other/amazon-best-selling-products-finder-api-skill/metadata.json
+ D other/amazon-buy-box-monitor-api-skill/SKILL.md
+ D other/amazon-buy-box-monitor-api-skill/metadata.json
+ D other/amazon-product-api-skill/SKILL.md
+ D other/amazon-product-api-skill/metadata.json
+ D other/amazon-product-search-api-skill/SKILL.md
+ D other/amazon-product-search-api-skill/metadata.json
+ D other/amazon-reviews-api-skill/SKILL.md
+ D other/amazon-reviews-api-skill/metadata.json
+ D other/ambiguity-resolver/SKILL.md
+ D other/ambiguity-resolver/metadata.json
+ D other/aminet-index/SKILL.md
+ D other/aminet-index/metadata.json
+ D other/amplemarket-org-chart/SKILL.md
+ D other/amplemarket-org-chart/metadata.json
+ D other/amq-cli-avivsinai-agent-message-queue-3/SKILL.md
+ D other/amq-cli-avivsinai-agent-message-queue-3/metadata.json
+ D other/analyse/SKILL.md
+ D other/analyse/metadata.json
+ D other/analytics-ftc8569-ftcmetrics-2/SKILL.md
+ D other/analytics-ftc8569-ftcmetrics-2/metadata.json
+ D other/analytics-ftc8569-ftcmetrics/SKILL.md
+ D other/analytics-ftc8569-ftcmetrics/metadata.json
+ D other/analytics-learning-randysalars-dreamweaving/SKILL.md
+ D other/analytics-learning-randysalars-dreamweaving/metadata.json
+ D other/analytics/SKILL.md
+ D other/analytics/metadata.json
+ D other/analyze-content-gaps-dandye-ai-runbooks/SKILL.md
+ D other/analyze-content-gaps-dandye-ai-runbooks/metadata.json
+ D other/analyze-content-gaps/SKILL.md
+ D other/analyze-content-gaps/metadata.json
+ D other/analyze-equations-homericintelligence-projectodyssey-2/SKILL.md
+ D other/analyze-equations-homericintelligence-projectodyssey-2/metadata.json
+ D other/analyze-equations-homericintelligence-projectodyssey/SKILL.md
+ D other/analyze-equations-homericintelligence-projectodyssey/metadata.json
+ D other/analyze-frame-knowlet-pf-skills/SKILL.md
+ D other/analyze-frame-knowlet-pf-skills/metadata.json
+ D other/analyze-frame/SKILL.md
+ D other/analyze-frame/metadata.json
+ D other/analyze-issue-gittower-git-flow-next-a94006a1/SKILL.md
+ D other/analyze-issue-gittower-git-flow-next-a94006a1/metadata.json
+ D other/analyze-results/SKILL.md
+ D other/analyze-results/metadata.json
+ D other/analyze-script-failures/SKILL.md
+ D other/analyze-script-failures/metadata.json
+ D other/analyze-session/SKILL.md
+ D other/analyze-session/metadata.json
+ D other/analyze-theme/SKILL.md
+ D other/analyze-theme/metadata.json
+ D other/analyze-trends-historical/SKILL.md
+ D other/analyze-trends-historical/metadata.json
+ D other/analyze-us-bank-credit-deposit-decoupling/SKILL.md
+ D other/analyze-us-bank-credit-deposit-decoupling/metadata.json
+ D other/analyzer/SKILL.md
+ D other/analyzer/metadata.json
+ D other/analyzing-requirements-jyasuu-cheat-sheet/SKILL.md
+ D other/analyzing-requirements-jyasuu-cheat-sheet/metadata.json
+ D other/analyzing-requirements/SKILL.md
+ D other/analyzing-requirements/metadata.json
+ D other/analyzing-text-with-nlp/SKILL.md
+ D other/analyzing-text-with-nlp/metadata.json
+ D other/anchoring-effect/SKILL.md
+ D other/anchoring-effect/metadata.json
+ D other/ancplua-docs/SKILL.md
+ D other/ancplua-docs/metadata.json
+ D other/android-restart-app-asnar00-miso/SKILL.md
+ D other/android-restart-app-asnar00-miso/metadata.json
+ D other/android-signing-config/SKILL.md
+ D other/android-signing-config/metadata.json
+ D other/android-ui-lib-klara-copilot-epost-agent-kit/SKILL.md
+ D other/android-ui-lib-klara-copilot-epost-agent-kit/metadata.json
+ D other/android-ui-lib/SKILL.md
+ D other/android-ui-lib/metadata.json
+ D other/angular-ui-patterns-sickn33-antigravity-awesome-/SKILL.md
+ D other/angular-ui-patterns-sickn33-antigravity-awesome-/metadata.json
+ D other/angular-ui-patterns/SKILL.md
+ D other/angular-ui-patterns/metadata.json
+ D other/animation-blending/SKILL.md
+ D other/animation-blending/metadata.json
+ D other/animation-rigging/SKILL.md
+ D other/animation-rigging/metadata.json
+ D other/animation-state-machines/SKILL.md
+ D other/animation-state-machines/metadata.json
+ D other/animator-skill-rainlib-ai-storyboard-2/SKILL.md
+ D other/animator-skill-rainlib-ai-storyboard-2/metadata.json
+ D other/anime-production/SKILL.md
+ D other/anime-production/metadata.json
+ D other/annualreports-danielmiessler-personal-ai-infrastr-2/SKILL.md
+ D other/annualreports-danielmiessler-personal-ai-infrastr-2/metadata.json
+ D other/annualreports-danielmiessler-personal-ai-infrastr-3/SKILL.md
+ D other/annualreports-danielmiessler-personal-ai-infrastr-3/metadata.json
+ D other/annualreports-danielmiessler-personal-ai-infrastr/SKILL.md
+ D other/annualreports-danielmiessler-personal-ai-infrastr/metadata.json
+ D other/annualreports/SKILL.md
+ D other/annualreports/metadata.json
+ D other/anomaly-detector/SKILL.md
+ D other/anomaly-detector/metadata.json
+ D other/answer-reviewer-questions/SKILL.md
+ D other/answer-reviewer-questions/metadata.json
+ D other/antfu-aiskillstore-marketplace/SKILL.md
+ D other/antfu-aiskillstore-marketplace/metadata.json
+ D other/antfu/SKILL.md
+ D other/antfu/metadata.json
+ D other/anthropic-architect/SKILL.md
+ D other/anthropic-architect/metadata.json
+ D other/anthropics-official-pack/SKILL.md
+ D other/anthropics-official-pack/metadata.json
+ D other/antigravity-agents-v2-py/SKILL.md
+ D other/antigravity-agents-v2-py/metadata.json
+ D other/antigravity-animejs-animation/SKILL.md
+ D other/antigravity-animejs-animation/metadata.json
+ D other/antigravity-architect-review/SKILL.md
+ D other/antigravity-architect-review/metadata.json
+ D other/antigravity-azure-communication-chat-java/SKILL.md
+ D other/antigravity-azure-communication-chat-java/metadata.json
+ D other/antigravity-azure-eventhub-ts/SKILL.md
+ D other/antigravity-azure-eventhub-ts/metadata.json
+ D other/antigravity-blockrun/SKILL.md
+ D other/antigravity-blockrun/metadata.json
+ D other/antigravity-box-automation/SKILL.md
+ D other/antigravity-box-automation/metadata.json
+ D other/antigravity-claimable-postgres/SKILL.md
+ D other/antigravity-claimable-postgres/metadata.json
+ D other/antigravity-claude-code-guide-boisenoise-skills-collections-2/SKILL.md
+ D other/antigravity-claude-code-guide-boisenoise-skills-collections-2/metadata.json
+ D other/antigravity-conversation-memory-boisenoise-skills-collections-2/SKILL.md
+ D other/antigravity-conversation-memory-boisenoise-skills-collections-2/metadata.json
+ D other/antigravity-email-systems/SKILL.md
+ D other/antigravity-email-systems/metadata.json
+ D other/antigravity-file-organizer/SKILL.md
+ D other/antigravity-file-organizer/metadata.json
+ D other/antigravity-git-pushing-boisenoise-skills-collections-2/SKILL.md
+ D other/antigravity-git-pushing-boisenoise-skills-collections-2/metadata.json
+ D other/antigravity-helpdesk-automation/SKILL.md
+ D other/antigravity-helpdesk-automation/metadata.json
+ D other/antigravity-i18n-localization-boisenoise-skills-collections/SKILL.md
+ D other/antigravity-i18n-localization-boisenoise-skills-collections/metadata.json
+ D other/antigravity-micro-saas-launcher-boisenoise-skills-collections-2/SKILL.md
+ D other/antigravity-micro-saas-launcher-boisenoise-skills-collections-2/metadata.json
+ D other/antigravity-network-101/SKILL.md
+ D other/antigravity-network-101/metadata.json
+ D other/antigravity-remotion-best-practices/SKILL.md
+ D other/antigravity-remotion-best-practices/metadata.json
+ D other/antigravity-shadcn/SKILL.md
+ D other/antigravity-shadcn/metadata.json
+ D other/antigravity-uncle-bob-craft/SKILL.md
+ D other/antigravity-uncle-bob-craft/metadata.json
+ D other/antigravity-upstash-qstash-boisenoise-skills-collections/SKILL.md
+ D other/antigravity-upstash-qstash-boisenoise-skills-collections/metadata.json
+ D other/antigravity-upstash-qstash/SKILL.md
+ D other/antigravity-upstash-qstash/metadata.json
+ D other/antigravity-varlock/SKILL.md
+ D other/antigravity-varlock/metadata.json
+ D other/antigravity-whatsapp-automation/SKILL.md
+ D other/antigravity-whatsapp-automation/metadata.json
+ D other/antigravity-wiki-qa/SKILL.md
+ D other/antigravity-wiki-qa/metadata.json
+ D other/antigravity-writing-plans/SKILL.md
+ D other/antigravity-writing-plans/metadata.json
+ D other/antigravity-zapier-make-patterns/SKILL.md
+ D other/antigravity-zapier-make-patterns/metadata.json
+ D other/anylist-chatandbuild-chatchat-skills/SKILL.md
+ D other/anylist-chatandbuild-chatchat-skills/metadata.json
+ D other/anylist/SKILL.md
+ D other/anylist/metadata.json
+ D other/aoa-approval-gate-check/SKILL.md
+ D other/aoa-approval-gate-check/metadata.json
+ D other/aoa-sanitized-share/SKILL.md
+ D other/aoa-sanitized-share/metadata.json
+ D other/aoc-orchestrator/SKILL.md
+ D other/aoc-orchestrator/metadata.json
+ D other/ap2-mcp-server/SKILL.md
+ D other/ap2-mcp-server/metadata.json
+ D other/apache/SKILL.md
+ D other/apache/metadata.json
+ D other/apex-evolve/SKILL.md
+ D other/apex-evolve/metadata.json
+ D other/api-contract-validator-chaserbreitenbach-claude-skills-and-ag-2/SKILL.md
+ D other/api-contract-validator-chaserbreitenbach-claude-skills-and-ag-2/metadata.json
+ D other/api-design-oribarilan-97/SKILL.md
+ D other/api-design-oribarilan-97/metadata.json
+ D other/api-docs-writer/SKILL.md
+ D other/api-docs-writer/metadata.json
+ D other/api-documenter-claude-code-communit-claude-code-resource-2/SKILL.md
+ D other/api-documenter-claude-code-communit-claude-code-resource-2/metadata.json
+ D other/api-documenter-rmyndharis-antigravity-skills-2/SKILL.md
+ D other/api-documenter-rmyndharis-antigravity-skills-2/metadata.json
+ D other/api-documenter-sickn33-antigravity-awesome-/SKILL.md
+ D other/api-documenter-sickn33-antigravity-awesome-/metadata.json
+ D other/api-documenter-skill-404kidwiz-claude-supercode-ski-2/SKILL.md
+ D other/api-documenter-skill-404kidwiz-claude-supercode-ski-2/metadata.json
+ D other/api-documenting/SKILL.md
+ D other/api-documenting/metadata.json
+ D other/api-endpoint-create-cpa03-blueprintify-2/SKILL.md
+ D other/api-endpoint-create-cpa03-blueprintify-2/metadata.json
+ D other/api-endpoint-generator/SKILL.md
+ D other/api-endpoint-generator/metadata.json
+ D other/api-envelope-pattern/SKILL.md
+ D other/api-envelope-pattern/metadata.json
+ D other/api-error-handling/SKILL.md
+ D other/api-error-handling/metadata.json
+ D other/api-gateway-configuration-secondsky-claude-skills-2/SKILL.md
+ D other/api-gateway-configuration-secondsky-claude-skills-2/metadata.json
+ D other/api-gateway-configuration-secondsky-claude-skills-3/SKILL.md
+ D other/api-gateway-configuration-secondsky-claude-skills-3/metadata.json
+ D other/api-gateway-itsmostafa-aws-agent-skills-2/SKILL.md
+ D other/api-gateway-itsmostafa-aws-agent-skills-2/metadata.json
+ D other/api-gateway-patterns-nickcrew-claude-cortex-2/SKILL.md
+ D other/api-gateway-patterns-nickcrew-claude-cortex-2/metadata.json
+ D other/api-gateway-rate-limiting/SKILL.md
+ D other/api-gateway-rate-limiting/metadata.json
+ D other/api-implementation-patterns-michsindlinger-agent-os-extended/SKILL.md
+ D other/api-implementation-patterns-michsindlinger-agent-os-extended/metadata.json
+ D other/api-implementation-patterns/SKILL.md
+ D other/api-implementation-patterns/metadata.json
+ D other/api-implementer-lexicalninja-my-little-scrum-team-2/SKILL.md
+ D other/api-implementer-lexicalninja-my-little-scrum-team-2/metadata.json
+ D other/api-integrator-dredd-us-seashells-2/SKILL.md
+ D other/api-integrator-dredd-us-seashells-2/metadata.json
+ D other/api-investigator-drillan-note-mcp/SKILL.md
+ D other/api-investigator-drillan-note-mcp/metadata.json
+ D other/api-investigator/SKILL.md
+ D other/api-investigator/metadata.json
+ D other/api-key-auth-setup-brmbobo-web2podcast/SKILL.md
+ D other/api-key-auth-setup-brmbobo-web2podcast/metadata.json
+ D other/api-key-auth-setup/SKILL.md
+ D other/api-key-auth-setup/metadata.json
+ D other/api-labz-automation/SKILL.md
+ D other/api-labz-automation/metadata.json
+ D other/api-mock-generator/SKILL.md
+ D other/api-mock-generator/metadata.json
+ D other/api-mock-server/SKILL.md
+ D other/api-mock-server/metadata.json
+ D other/api-mock/SKILL.md
+ D other/api-mock/metadata.json
+ D other/api-mocking-server/SKILL.md
+ D other/api-mocking-server/metadata.json
+ D other/api-observability-axiom-pino-sentry/SKILL.md
+ D other/api-observability-axiom-pino-sentry/metadata.json
+ D other/api-pagination-debugging/SKILL.md
+ D other/api-pagination-debugging/metadata.json
+ D other/api-pattern-extractor/SKILL.md
+ D other/api-pattern-extractor/metadata.json
+ D other/api-platform-crud-vilnacrm-org-user-service-2/SKILL.md
+ D other/api-platform-crud-vilnacrm-org-user-service-2/metadata.json
+ D other/api-platform-dto-resources/SKILL.md
+ D other/api-platform-dto-resources/metadata.json
+ D other/api-platform-filters/SKILL.md
+ D other/api-platform-filters/metadata.json
+ D other/api-platform-resources/SKILL.md
+ D other/api-platform-resources/metadata.json
+ D other/api-platform-security/SKILL.md
+ D other/api-platform-security/metadata.json
+ D other/api-portal-design-melodic-software-claude-code-plugins/SKILL.md
+ D other/api-portal-design-melodic-software-claude-code-plugins/metadata.json
+ D other/api-portal-design/SKILL.md
+ D other/api-portal-design/metadata.json
+ D other/api-rate-limiting-aj-geddes-useful-ai-prompts-2/SKILL.md
+ D other/api-rate-limiting-aj-geddes-useful-ai-prompts-2/metadata.json
+ D other/api-rate-limiting-secondsky-claude-skills/SKILL.md
+ D other/api-rate-limiting-secondsky-claude-skills/metadata.json
+ D other/api-request-validation-mumerrazzaq-fast-next-todo/SKILL.md
+ D other/api-request-validation-mumerrazzaq-fast-next-todo/metadata.json
+ D other/api-response-cacher/SKILL.md
+ D other/api-response-cacher/metadata.json
+ D other/api-runtime/SKILL.md
+ D other/api-runtime/metadata.json
+ D other/api-search-meilisearch/SKILL.md
+ D other/api-search-meilisearch/metadata.json
+ D other/api-security-best-practices/SKILL.md
+ D other/api-security-best-practices/metadata.json
+ D other/api-style-guide/SKILL.md
+ D other/api-style-guide/metadata.json
+ D other/api-testing-observability-api-mock/SKILL.md
+ D other/api-testing-observability-api-mock/metadata.json
+ D other/api-tier-architecture/SKILL.md
+ D other/api-tier-architecture/metadata.json
+ D other/api-triggered-campaigns-clix-so-skills/SKILL.md
+ D other/api-triggered-campaigns-clix-so-skills/metadata.json
+ D other/api-triggered-campaigns/SKILL.md
+ D other/api-triggered-campaigns/metadata.json
+ D other/apifox-mock-script-gen/SKILL.md
+ D other/apifox-mock-script-gen/metadata.json
+ D other/apk-redteam-pipeline/SKILL.md
+ D other/apk-redteam-pipeline/metadata.json
+ D other/apm-dashboard-creator-intent-solutions-io-plugins-nixtla-2/SKILL.md
+ D other/apm-dashboard-creator-intent-solutions-io-plugins-nixtla-2/metadata.json
+ D other/apollo-incident-runbook-byteworthy-upstream/SKILL.md
+ D other/apollo-incident-runbook-byteworthy-upstream/metadata.json
+ D other/apollo-mcp-server-apollographql-skills-2/SKILL.md
+ D other/apollo-mcp-server-apollographql-skills-2/metadata.json
+ D other/app-builder-congdon1207-agents-md-2/SKILL.md
+ D other/app-builder-congdon1207-agents-md-2/metadata.json
+ D other/appimage-builder/SKILL.md
+ D other/appimage-builder/metadata.json
+ D other/apple-ship/SKILL.md
+ D other/apple-ship/metadata.json
+ D other/apple-shortcuts-integration/SKILL.md
+ D other/apple-shortcuts-integration/metadata.json
+ D other/apple-shortcuts/SKILL.md
+ D other/apple-shortcuts/metadata.json
+ D other/application-metrics/SKILL.md
+ D other/application-metrics/metadata.json
+ D other/apply-findings-tobihagemann-turbo-2/SKILL.md
+ D other/apply-findings-tobihagemann-turbo-2/metadata.json
+ D other/apply-findings-tobihagemann-turbo/SKILL.md
+ D other/apply-findings-tobihagemann-turbo/metadata.json
+ D other/apply-findings/SKILL.md
+ D other/apply-findings/metadata.json
+ D other/applying-brand-guidelines-aisa-group-skill-inject/SKILL.md
+ D other/applying-brand-guidelines-aisa-group-skill-inject/metadata.json
+ D other/applying-brand-guidelines-alchimie-di-circe-extractor-desktop-ap-2/SKILL.md
+ D other/applying-brand-guidelines-alchimie-di-circe-extractor-desktop-ap-2/metadata.json
+ D other/applying-brand-guidelines-alchimie-di-circe-extractor-desktop-ap/SKILL.md
+ D other/applying-brand-guidelines-alchimie-di-circe-extractor-desktop-ap/metadata.json
+ D other/approval-gates/SKILL.md
+ D other/approval-gates/metadata.json
+ D other/approve-orders/SKILL.md
+ D other/approve-orders/metadata.json
+ D other/appstore-readiness/SKILL.md
+ D other/appstore-readiness/metadata.json
+ D other/arboreto/SKILL.md
+ D other/arboreto/metadata.json
+ D other/arch-check-quyenvjp-pmtl-vn/SKILL.md
+ D other/arch-check-quyenvjp-pmtl-vn/metadata.json
+ D other/arch-erp-core-dev-eagles-claude-config/SKILL.md
+ D other/arch-erp-core-dev-eagles-claude-config/metadata.json
+ D other/arch-options-compare/SKILL.md
+ D other/arch-options-compare/metadata.json
+ D other/architect-detective/SKILL.md
+ D other/architect-detective/metadata.json
+ D other/architecting-solutions-rysweet-azurehaymaker/SKILL.md
+ D other/architecting-solutions-rysweet-azurehaymaker/metadata.json
+ D other/architecting-solutions/SKILL.md
+ D other/architecting-solutions/metadata.json
+ D other/architectural-forensics-dowwie-agent-framework-stud/SKILL.md
+ D other/architectural-forensics-dowwie-agent-framework-stud/metadata.json
+?? agent/amq-cli-avivsinai-agent-message-queue-3/SKILL.md
+?? agent/amq-cli-avivsinai-agent-message-queue-3/metadata.json
+?? agent/antigravity-agents-v2-py/SKILL.md
+?? agent/antigravity-agents-v2-py/metadata.json
+?? agent/architectural-forensics-dowwie-agent-framework-stud/SKILL.md
+?? agent/architectural-forensics-dowwie-agent-framework-stud/metadata.json
+?? ai-llm/anthropic-architect/SKILL.md
+?? ai-llm/anthropic-architect/metadata.json
+?? ai-llm/antigravity-blockrun/SKILL.md
+?? ai-llm/antigravity-blockrun/metadata.json
+?? ai-llm/antigravity-claude-code-guide-boisenoise-skills-collections-2/SKILL.md
+?? ai-llm/antigravity-claude-code-guide-boisenoise-skills-collections-2/metadata.json
+?? ai-llm/antigravity-conversation-memory-boisenoise-skills-collections-2/SKILL.md
+?? ai-llm/antigravity-conversation-memory-boisenoise-skills-collections-2/metadata.json
+?? ai-ml/anomaly-detector/SKILL.md
+?? ai-ml/anomaly-detector/metadata.json
+?? analysis/ambiguity-resolver/SKILL.md
+?? analysis/ambiguity-resolver/metadata.json
+?? analysis/analyse/SKILL.md
+?? analysis/analyse/metadata.json
+?? analysis/analytics-learning-randysalars-dreamweaving/SKILL.md
+?? analysis/analytics-learning-randysalars-dreamweaving/metadata.json
+?? analysis/analyze-content-gaps-dandye-ai-runbooks/SKILL.md
+?? analysis/analyze-content-gaps-dandye-ai-runbooks/metadata.json
+?? analysis/analyze-content-gaps/SKILL.md
+?? analysis/analyze-content-gaps/metadata.json
+?? analysis/analyze-equations-homericintelligence-projectodyssey-2/SKILL.md
+?? analysis/analyze-equations-homericintelligence-projectodyssey-2/metadata.json
+?? analysis/analyze-equations-homericintelligence-projectodyssey/SKILL.md
+?? analysis/analyze-equations-homericintelligence-projectodyssey/metadata.json
+?? analysis/analyze-frame-knowlet-pf-skills/SKILL.md
+?? analysis/analyze-frame-knowlet-pf-skills/metadata.json
+?? analysis/analyze-frame/SKILL.md
+?? analysis/analyze-frame/metadata.json
+?? analysis/analyze-issue-gittower-git-flow-next-a94006a1/SKILL.md
+?? analysis/analyze-issue-gittower-git-flow-next-a94006a1/metadata.json
+?? analysis/analyze-results/SKILL.md
+?? analysis/analyze-results/metadata.json
+?? analysis/analyze-script-failures/SKILL.md
+?? analysis/analyze-script-failures/metadata.json
+?? analysis/analyze-session/SKILL.md
+?? analysis/analyze-session/metadata.json
+?? analysis/analyze-trends-historical/SKILL.md
+?? analysis/analyze-trends-historical/metadata.json
+?? analysis/analyze-us-bank-credit-deposit-decoupling/SKILL.md
+?? analysis/analyze-us-bank-credit-deposit-decoupling/metadata.json
+?? analysis/analyzer-composiohq-awesome-claude-plugi/SKILL.md
+?? analysis/analyzer-composiohq-awesome-claude-plugi/metadata.json
+?? analysis/analyzing-requirements-jyasuu-cheat-sheet/SKILL.md
+?? analysis/analyzing-requirements-jyasuu-cheat-sheet/metadata.json
+?? analysis/analyzing-requirements/SKILL.md
+?? analysis/analyzing-requirements/metadata.json
+?? analysis/analyzing-text-with-nlp/SKILL.md
+?? analysis/analyzing-text-with-nlp/metadata.json
+?? analysis/arboreto-k-dense-ai-scientific-agent-ski/SKILL.md
+?? analysis/arboreto-k-dense-ai-scientific-agent-ski/metadata.json
+?? analysis/arch-options-compare/SKILL.md
+?? analysis/arch-options-compare/metadata.json
+?? analysis/architect-detective/SKILL.md
+?? analysis/architect-detective/metadata.json
+?? api/amazon-best-selling-products-finder-api-skill/SKILL.md
+?? api/amazon-best-selling-products-finder-api-skill/metadata.json
+?? api/amazon-buy-box-monitor-api-skill/SKILL.md
+?? api/amazon-buy-box-monitor-api-skill/metadata.json
+?? api/amazon-product-api-skill/SKILL.md
+?? api/amazon-product-api-skill/metadata.json
+?? api/amazon-product-search-api-skill/SKILL.md
+?? api/amazon-product-search-api-skill/metadata.json
+?? api/amazon-reviews-api-skill/SKILL.md
+?? api/amazon-reviews-api-skill/metadata.json
+?? api/api-design-oribarilan-97/SKILL.md
+?? api/api-design-oribarilan-97/metadata.json
+?? api/api-documenter-claude-code-communit-claude-code-resource-2/SKILL.md
+?? api/api-documenter-claude-code-communit-claude-code-resource-2/metadata.json
+?? api/api-documenter-rmyndharis-antigravity-skills-2/SKILL.md
+?? api/api-documenter-rmyndharis-antigravity-skills-2/metadata.json
+?? api/api-documenter-sickn33-antigravity-awesome/SKILL.md
+?? api/api-documenter-sickn33-antigravity-awesome/metadata.json
+?? api/api-documenter-skill-404kidwiz-claude-supercode-ski-2/SKILL.md
+?? api/api-documenter-skill-404kidwiz-claude-supercode-ski-2/metadata.json
+?? api/api-documenting/SKILL.md
+?? api/api-documenting/metadata.json
+?? api/api-endpoint-create-cpa03-blueprintify-2/SKILL.md
+?? api/api-endpoint-create-cpa03-blueprintify-2/metadata.json
+?? api/api-endpoint-generator/SKILL.md
+?? api/api-endpoint-generator/metadata.json
+?? api/api-envelope-pattern/SKILL.md
+?? api/api-envelope-pattern/metadata.json
+?? api/api-error-handling/SKILL.md
+?? api/api-error-handling/metadata.json
+?? api/api-gateway-configuration-secondsky-claude-skills-3/SKILL.md
+?? api/api-gateway-configuration-secondsky-claude-skills-3/metadata.json
+?? api/api-gateway-itsmostafa-aws-agent-skills-2/SKILL.md
+?? api/api-gateway-itsmostafa-aws-agent-skills-2/metadata.json
+?? api/api-gateway-patterns-nickcrew-claude-cortex-2/SKILL.md
+?? api/api-gateway-patterns-nickcrew-claude-cortex-2/metadata.json
+?? api/api-gateway-rate-limiting/SKILL.md
+?? api/api-gateway-rate-limiting/metadata.json
+?? api/api-integrator-dredd-us-seashells-2/SKILL.md
+?? api/api-integrator-dredd-us-seashells-2/metadata.json
+?? api/api-investigator-drillan-note-mcp/SKILL.md
+?? api/api-investigator-drillan-note-mcp/metadata.json
+?? api/api-investigator/SKILL.md
+?? api/api-investigator/metadata.json
+?? api/api-key-auth-setup-brmbobo-web2podcast/SKILL.md
+?? api/api-key-auth-setup-brmbobo-web2podcast/metadata.json
+?? api/api-key-auth-setup/SKILL.md
+?? api/api-key-auth-setup/metadata.json
+?? api/api-mock-generator/SKILL.md
+?? api/api-mock-generator/metadata.json
+?? api/api-mock-server/SKILL.md
+?? api/api-mock-server/metadata.json
+?? api/api-mock/SKILL.md
+?? api/api-mock/metadata.json
+?? api/api-mocking-server/SKILL.md
+?? api/api-mocking-server/metadata.json
+?? api/api-observability-axiom-pino-sentry/SKILL.md
+?? api/api-observability-axiom-pino-sentry/metadata.json
+?? api/api-pagination-debugging/SKILL.md
+?? api/api-pagination-debugging/metadata.json
+?? api/api-pattern-extractor/SKILL.md
+?? api/api-pattern-extractor/metadata.json
+?? api/api-platform-crud-vilnacrm-org-user-service-2/SKILL.md
+?? api/api-platform-crud-vilnacrm-org-user-service-2/metadata.json
+?? api/api-platform-dto-resources/SKILL.md
+?? api/api-platform-dto-resources/metadata.json
+?? api/api-platform-filters/SKILL.md
+?? api/api-platform-filters/metadata.json
+?? api/api-platform-resources/SKILL.md
+?? api/api-platform-resources/metadata.json
+?? api/api-portal-design-melodic-software-claude-code-plugins/SKILL.md
+?? api/api-portal-design-melodic-software-claude-code-plugins/metadata.json
+?? api/api-rate-limiting-aj-geddes-useful-ai-prompts-2/SKILL.md
+?? api/api-rate-limiting-aj-geddes-useful-ai-prompts-2/metadata.json
+?? api/api-rate-limiting-secondsky-claude-skills/SKILL.md
+?? api/api-rate-limiting-secondsky-claude-skills/metadata.json
+?? api/api-request-validation-mumerrazzaq-fast-next-todo/SKILL.md
+?? api/api-request-validation-mumerrazzaq-fast-next-todo/metadata.json
+?? api/api-response-cacher/SKILL.md
+?? api/api-response-cacher/metadata.json
+?? api/api-runtime/SKILL.md
+?? api/api-runtime/metadata.json
+?? api/api-search-meilisearch/SKILL.md
+?? api/api-search-meilisearch/metadata.json
+?? api/api-tier-architecture/SKILL.md
+?? api/api-tier-architecture/metadata.json
+?? api/api-triggered-campaigns-clix-so-skills/SKILL.md
+?? api/api-triggered-campaigns-clix-so-skills/metadata.json
+?? api/api-triggered-campaigns/SKILL.md
+?? api/api-triggered-campaigns/metadata.json
+?? api/apifox-mock-script-gen/SKILL.md
+?? api/apifox-mock-script-gen/metadata.json
+?? business/approve-orders/SKILL.md
+?? business/approve-orders/metadata.json
+?? creative/animator-skill-rainlib-ai-storyboard-2/SKILL.md
+?? creative/animator-skill-rainlib-ai-storyboard-2/metadata.json
+?? creative/anime-production/SKILL.md
+?? creative/anime-production/metadata.json
+?? data/aminet-index/SKILL.md
+?? data/aminet-index/metadata.json
+?? data/analytics-a5c-ai-babysitter/SKILL.md
+?? data/analytics-a5c-ai-babysitter/metadata.json
+?? data/analytics-ftc8569-ftcmetrics-2/SKILL.md
+?? data/analytics-ftc8569-ftcmetrics-2/metadata.json
+?? data/analytics-ftc8569-ftcmetrics/SKILL.md
+?? data/analytics-ftc8569-ftcmetrics/metadata.json
+?? data/antigravity-claimable-postgres/SKILL.md
+?? data/antigravity-claimable-postgres/metadata.json
+?? design/analyze-theme/SKILL.md
+?? design/analyze-theme/metadata.json
+?? design/anchoring-effect/SKILL.md
+?? design/anchoring-effect/metadata.json
+?? design/android-ui-lib-klara-copilot-epost-agent-kit/SKILL.md
+?? design/android-ui-lib-klara-copilot-epost-agent-kit/metadata.json
+?? design/android-ui-lib/SKILL.md
+?? design/android-ui-lib/metadata.json
+?? design/antigravity-animejs-animation/SKILL.md
+?? design/antigravity-animejs-animation/metadata.json
+?? design/antigravity-shadcn/SKILL.md
+?? design/antigravity-shadcn/metadata.json
+?? design/api-portal-design/SKILL.md
+?? design/api-portal-design/metadata.json
+?? development/ancplua-docs/SKILL.md
+?? development/ancplua-docs/metadata.json
+?? development/android-restart-app-asnar00-miso/SKILL.md
+?? development/android-restart-app-asnar00-miso/metadata.json
+?? development/android-signing-config-hitoshura25-claude-devtools/SKILL.md
+?? development/android-signing-config-hitoshura25-claude-devtools/metadata.json
+?? development/angular-ui-patterns-sickn33-antigravity-awesome/SKILL.md
+?? development/angular-ui-patterns-sickn33-antigravity-awesome/metadata.json
+?? development/angular-ui-patterns/SKILL.md
+?? development/angular-ui-patterns/metadata.json
+?? development/answer-reviewer-questions/SKILL.md
+?? development/answer-reviewer-questions/metadata.json
+?? development/antfu-aiskillstore-marketplace/SKILL.md
+?? development/antfu-aiskillstore-marketplace/metadata.json
+?? development/antfu/SKILL.md
+?? development/antfu/metadata.json
+?? development/antigravity-architect-review/SKILL.md
+?? development/antigravity-architect-review/metadata.json
+?? development/antigravity-i18n-localization-boisenoise-skills-collections/SKILL.md
+?? development/antigravity-i18n-localization-boisenoise-skills-collections/metadata.json
+?? development/antigravity-remotion-best-practices/SKILL.md
+?? development/antigravity-remotion-best-practices/metadata.json
+?? development/antigravity-wiki-qa/SKILL.md
+?? development/antigravity-wiki-qa/metadata.json
+?? development/api-implementation-patterns-michsindlinger-agent-os-extended/SKILL.md
+?? development/api-implementation-patterns-michsindlinger-agent-os-extended/metadata.json
+?? development/api-implementation-patterns/SKILL.md
+?? development/api-implementation-patterns/metadata.json
+?? development/api-implementer-lexicalninja-my-little-scrum-team-2/SKILL.md
+?? development/api-implementer-lexicalninja-my-little-scrum-team-2/metadata.json
+?? development/app-builder-congdon1207-agents-md-2/SKILL.md
+?? development/app-builder-congdon1207-agents-md-2/metadata.json
+?? development/apple-ship/SKILL.md
+?? development/apple-ship/metadata.json
+?? development/application-metrics/SKILL.md
+?? development/application-metrics/metadata.json
+?? development/appstore-readiness/SKILL.md
+?? development/appstore-readiness/metadata.json
+?? development/arch-erp-core-dev-eagles-claude-config/SKILL.md
+?? development/arch-erp-core-dev-eagles-claude-config/metadata.json
+?? development/architecting-solutions-rysweet-azurehaymaker/SKILL.md
+?? development/architecting-solutions-rysweet-azurehaymaker/metadata.json
+?? development/architecting-solutions/SKILL.md
+?? development/architecting-solutions/metadata.json
+?? devops/antigravity-git-pushing-boisenoise-skills-collections-2/SKILL.md
+?? devops/antigravity-git-pushing-boisenoise-skills-collections-2/metadata.json
+?? devops/apache/SKILL.md
+?? devops/apache/metadata.json
+?? devops/api-gateway-configuration-secondsky-claude-skills-2/SKILL.md
+?? devops/api-gateway-configuration-secondsky-claude-skills-2/metadata.json
+?? devops/apollo-incident-runbook-byteworthy-upstream/SKILL.md
+?? devops/apollo-incident-runbook-byteworthy-upstream/metadata.json
+?? devops/appimage-builder/SKILL.md
+?? devops/appimage-builder/metadata.json
+?? documents/api-docs-writer/SKILL.md
+?? documents/api-docs-writer/metadata.json
+?? documents/api-style-guide/SKILL.md
+?? documents/api-style-guide/metadata.json
+?? documents/applying-brand-guidelines-aisa-group-skill-inject/SKILL.md
+?? documents/applying-brand-guidelines-aisa-group-skill-inject/metadata.json
+?? documents/applying-brand-guidelines-alchimie-di-circe-extractor-desktop-ap-2/SKILL.md
+?? documents/applying-brand-guidelines-alchimie-di-circe-extractor-desktop-ap-2/metadata.json
+?? documents/applying-brand-guidelines-alchimie-di-circe-extractor-desktop-ap/SKILL.md
+?? documents/applying-brand-guidelines-alchimie-di-circe-extractor-desktop-ap/metadata.json
+?? gaming/animation-blending/SKILL.md
+?? gaming/animation-blending/metadata.json
+?? gaming/animation-rigging/SKILL.md
+?? gaming/animation-rigging/metadata.json
+?? gaming/animation-state-machines/SKILL.md
+?? gaming/animation-state-machines/metadata.json
+?? integration/amplemarket-org-chart/SKILL.md
+?? integration/amplemarket-org-chart/metadata.json
+?? integration/antigravity-azure-communication-chat-java/SKILL.md
+?? integration/antigravity-azure-communication-chat-java/metadata.json
+?? integration/antigravity-azure-eventhub-ts/SKILL.md
+?? integration/antigravity-azure-eventhub-ts/metadata.json
+?? integration/antigravity-box-automation/SKILL.md
+?? integration/antigravity-box-automation/metadata.json
+?? integration/antigravity-helpdesk-automation/SKILL.md
+?? integration/antigravity-helpdesk-automation/metadata.json
+?? integration/antigravity-upstash-qstash-boisenoise-skills-collections/SKILL.md
+?? integration/antigravity-upstash-qstash-boisenoise-skills-collections/metadata.json
+?? integration/antigravity-upstash-qstash/SKILL.md
+?? integration/antigravity-upstash-qstash/metadata.json
+?? integration/antigravity-whatsapp-automation/SKILL.md
+?? integration/antigravity-whatsapp-automation/metadata.json
+?? integration/antigravity-zapier-make-patterns/SKILL.md
+?? integration/antigravity-zapier-make-patterns/metadata.json
+?? integration/ap2-mcp-server/SKILL.md
+?? integration/ap2-mcp-server/metadata.json
+?? integration/api-labz-automation/SKILL.md
+?? integration/api-labz-automation/metadata.json
+?? integration/apollo-mcp-server-apollographql-skills-2/SKILL.md
+?? integration/apollo-mcp-server-apollographql-skills-2/metadata.json
+?? integration/apple-shortcuts-integration/SKILL.md
+?? integration/apple-shortcuts-integration/metadata.json
+?? integration/apple-shortcuts/SKILL.md
+?? integration/apple-shortcuts/metadata.json
+?? marketing/antigravity-email-systems/SKILL.md
+?? marketing/antigravity-email-systems/metadata.json
+?? migration-artifacts/2026-05-27-current-other-semantic-batch-005/apply-plan.json
+?? migration-artifacts/2026-05-27-current-other-semantic-batch-005/category-quality-post.json
+?? migration-artifacts/2026-05-27-current-other-semantic-batch-005/changed-existing-metadata-files.txt
+?? migration-artifacts/2026-05-27-current-other-semantic-batch-005/changed-files.txt
+?? migration-artifacts/2026-05-27-current-other-semantic-batch-005/checkpoint.jsonl
+?? migration-artifacts/2026-05-27-current-other-semantic-batch-005/classification-report.json
+?? migration-artifacts/2026-05-27-current-other-semantic-batch-005/classification.jsonl
+?? migration-artifacts/2026-05-27-current-other-semantic-batch-005/input.jsonl
+?? migration-artifacts/2026-05-27-current-other-semantic-batch-005/manifest.json
+?? migration-artifacts/2026-05-27-current-other-semantic-batch-005/metadata-compliance-post.json
+?? migration-artifacts/2026-05-27-current-other-semantic-batch-005/post-depth-check.json
+?? migration-artifacts/2026-05-27-current-other-semantic-batch-005/residual-report-post.json
+?? migration-artifacts/2026-05-27-current-other-semantic-batch-005/residual-worksets-summary.json
+?? migration-artifacts/2026-05-27-current-other-semantic-batch-005/residual-worksets/low_confidence.jsonl
+?? migration-artifacts/2026-05-27-current-other-semantic-batch-005/residual-worksets/review_target.jsonl
+?? migration-artifacts/2026-05-27-current-other-semantic-batch-005/residual-worksets/target_other.jsonl
+?? migration-artifacts/2026-05-27-current-other-semantic-batch-005/sample-audit-high-confidence.json
+?? migration-artifacts/2026-05-27-current-other-semantic-batch-005/sample-audit.json
+?? orchestration/alto-switch/SKILL.md
+?? orchestration/alto-switch/metadata.json
+?? performance/apm-dashboard-creator-intent-solutions-io-plugins-nixtla-2/SKILL.md
+?? performance/apm-dashboard-creator-intent-solutions-io-plugins-nixtla-2/metadata.json
+?? planning/antigravity-writing-plans/SKILL.md
+?? planning/antigravity-writing-plans/metadata.json
+?? product/antigravity-micro-saas-launcher-boisenoise-skills-collections-2/SKILL.md
+?? product/antigravity-micro-saas-launcher-boisenoise-skills-collections-2/metadata.json
+?? productivity/antigravity-file-organizer/SKILL.md
+?? productivity/antigravity-file-organizer/metadata.json
+?? productivity/anylist-chatandbuild-chatchat-skills/SKILL.md
+?? productivity/anylist-chatandbuild-chatchat-skills/metadata.json
+?? productivity/anylist/SKILL.md
+?? productivity/anylist/metadata.json
+?? quality/antigravity-uncle-bob-craft/SKILL.md
+?? quality/antigravity-uncle-bob-craft/metadata.json
+?? quality/apply-findings-tobihagemann-turbo-2/SKILL.md
+?? quality/apply-findings-tobihagemann-turbo-2/metadata.json
+?? quality/apply-findings-tobihagemann-turbo/SKILL.md
+?? quality/apply-findings-tobihagemann-turbo/metadata.json
+?? quality/apply-findings/SKILL.md
+?? quality/apply-findings/metadata.json
+?? quality/arch-check-quyenvjp-pmtl-vn/SKILL.md
+?? quality/arch-check-quyenvjp-pmtl-vn/metadata.json
+?? security/annualreports-danielmiessler-personal-ai-infrastr-2/SKILL.md
+?? security/annualreports-danielmiessler-personal-ai-infrastr-2/metadata.json
+?? security/annualreports-danielmiessler-personal-ai-infrastr-3/SKILL.md
+?? security/annualreports-danielmiessler-personal-ai-infrastr-3/metadata.json
+?? security/annualreports-danielmiessler-personal-ai-infrastr/SKILL.md
+?? security/annualreports-danielmiessler-personal-ai-infrastr/metadata.json
+?? security/annualreports/SKILL.md
+?? security/annualreports/metadata.json
+?? security/antigravity-network-101/SKILL.md
+?? security/antigravity-network-101/metadata.json
+?? security/antigravity-varlock/SKILL.md
+?? security/antigravity-varlock/metadata.json
+?? security/aoa-approval-gate-check/SKILL.md
+?? security/aoa-approval-gate-check/metadata.json
+?? security/aoa-sanitized-share/SKILL.md
+?? security/aoa-sanitized-share/metadata.json
+?? security/api-platform-security/SKILL.md
+?? security/api-platform-security/metadata.json
+?? security/api-security-best-practices-sickn33-antigravity-awesome-/SKILL.md
+?? security/api-security-best-practices-sickn33-antigravity-awesome-/metadata.json
+?? security/apk-redteam-pipeline/SKILL.md
+?? security/apk-redteam-pipeline/metadata.json
+?? skills/anthropics-official-pack/SKILL.md
+?? skills/anthropics-official-pack/metadata.json
+?? testing/api-contract-validator-chaserbreitenbach-claude-skills-and-ag-2/SKILL.md
+?? testing/api-contract-validator-chaserbreitenbach-claude-skills-and-ag-2/metadata.json
+?? testing/api-testing-observability-api-mock-sickn33-antigravity-awesome-/SKILL.md
+?? testing/api-testing-observability-api-mock-sickn33-antigravity-awesome-/metadata.json
+?? workflow/aoc-orchestrator/SKILL.md
+?? workflow/aoc-orchestrator/metadata.json
+?? workflow/approval-gates/SKILL.md
+?? workflow/approval-gates/metadata.json
+?? writing/apex-evolve/SKILL.md
+?? writing/apex-evolve/metadata.json

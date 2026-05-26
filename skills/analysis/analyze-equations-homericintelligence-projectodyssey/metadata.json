@@ -1,0 +1,20 @@
+{
+  "name": "analyze-equations",
+  "description": "",
+  "repo": "HomericIntelligence/ProjectOdyssey",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HomericIntelligence/ProjectOdyssey",
+  "github_path": ".claude/skills/tier-2/analyze-equations",
+  "github_branch": "main",
+  "dir_name": "analyze-equations-homericintelligence-projectodyssey",
+  "downloaded_at": "2026-02-05T01:44:42.950772Z",
+  "author": "HomericIntelligence",
+  "source_url": "https://github.com/HomericIntelligence/ProjectOdyssey/tree/main/.claude/skills/tier-2/analyze-equations",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); original source was archived from the upstream repository metadata.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

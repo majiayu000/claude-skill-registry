@@ -1,0 +1,16 @@
+{
+  "name": "android-restart-app",
+  "repo": "asnar00/miso",
+  "path": ".claude/skills/android-restart-app/SKILL.md",
+  "source": "github.com/asnar00/miso",
+  "downloaded_at": "2026-01-29T05:37:23.375696Z",
+  "dir_name": "android-restart-app-asnar00-miso",
+  "category": "development",
+  "author": "asnar00",
+  "source_url": "https://github.com/asnar00/miso/blob/main/.claude/skills/android-restart-app/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/asnar00/miso/blob/main/.claude/skills/android-restart-app/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "api-pagination-debugging",
+  "repo": "ngpestelos/readwise-mcp-server",
+  "path": ".claude/skills/api-pagination-debugging/SKILL.md",
+  "source": "github.com/ngpestelos/readwise-mcp-server",
+  "downloaded_at": "2026-02-02T01:18:19.790357Z",
+  "dir_name": "api-pagination-debugging",
+  "category": "api",
+  "author": "ngpestelos",
+  "source_url": "https://github.com/ngpestelos/readwise-mcp-server/blob/main/.claude/skills/api-pagination-debugging/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 ngpestelos",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

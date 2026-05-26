@@ -1,0 +1,16 @@
+{
+  "name": "animation-state-machines",
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/game-development/skills/animation-state-machines/SKILL.md",
+  "category": "gaming",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "animation-state-machines",
+  "downloaded_at": "2026-02-18T01:16:56.721149Z",
+  "author": "a5c-ai",
+  "source_url": "https://github.com/a5c-ai/babysitter/blob/main/plugins/babysitter/skills/babysit/process/specializations/game-development/skills/animation-state-machines/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 A5C AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

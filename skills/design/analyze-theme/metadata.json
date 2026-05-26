@@ -1,0 +1,20 @@
+{
+  "name": "analyze-theme",
+  "description": "",
+  "repo": "gwpjp/Web3-Claude",
+  "category": "design",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gwpjp/Web3-Claude",
+  "github_path": ".claude/skills/analyze-theme",
+  "github_branch": "main",
+  "dir_name": "analyze-theme",
+  "downloaded_at": "2026-02-05T05:37:49.386269Z",
+  "author": "gwpjp",
+  "source_url": "https://github.com/gwpjp/Web3-Claude/tree/main/.claude/skills/analyze-theme",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); original source was archived from the upstream repository metadata.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

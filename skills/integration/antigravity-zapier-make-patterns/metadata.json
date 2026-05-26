@@ -1,0 +1,18 @@
+{
+  "name": "antigravity-zapier-make-patterns",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/antigravity-zapier-make-patterns/SKILL.md",
+  "source": "github.com/boisenoise/skills-collections",
+  "downloaded_at": "2026-01-21T03:48:20.754860Z",
+  "dir_name": "antigravity-zapier-make-patterns",
+  "category": "integration",
+  "github_path": "skills/antigravity-zapier-make-patterns",
+  "github_branch": "main",
+  "author": "boisenoise",
+  "source_url": "https://github.com/boisenoise/skills-collections/blob/main/skills/antigravity-zapier-make-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/boisenoise/skills-collections/blob/main/skills/antigravity-zapier-make-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

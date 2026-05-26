@@ -326,14 +326,19 @@ def test_build_skill_key_priority(utils):
     # Per implementation: repo+path > repo+name > repo+category > repo > category:name > "".
     assert utils.build_skill_key(repo="o/r", path="x/y") == "o/r:x/y"
     assert utils.build_skill_key(repo="o/r") == "o/r"
-    assert utils.build_skill_key(repo="o/r", path=".", name="foo") == "o/r:foo"
-    assert utils.build_skill_key(repo="o/r", path="SKILL.md", name="foo") == "o/r:foo"
-    assert utils.build_skill_key(repo="o/r", path="./SKILL.md", name="foo") == "o/r:foo"
+    assert utils.build_skill_key(repo="o/r", path=".", name="foo") == "o/r:name:foo"
+    assert utils.build_skill_key(repo="o/r", path="SKILL.md", name="foo") == "o/r:name:foo"
+    assert utils.build_skill_key(repo="o/r", path="./SKILL.md", name="foo") == "o/r:name:foo"
     assert utils.build_skill_key(repo="o/r", category="dev") == "o/r:dev"
     assert utils.build_skill_key(category="dev", name="foo") == "dev:foo"
     assert utils.build_skill_key() == ""
     # path alone is ignored once repo is missing — the category:name fallback wins.
     assert utils.build_skill_key(path="x/y", name="foo") == ":foo"
+    assert utils.build_skill_key(repo="o/r", path="foo") != utils.build_skill_key(
+        repo="o/r",
+        path="SKILL.md",
+        name="foo",
+    )
 
 
 def test_build_skill_key_coerces_non_string_repo_and_path(utils):
@@ -345,7 +350,7 @@ def test_build_skill_key_coerces_non_string_repo_and_path(utils):
 def test_build_skill_key_treats_boolean_repo_and_path_as_missing(utils):
     assert utils.build_skill_key(repo="o/r", path=False) == "o/r"
     assert utils.build_skill_key(repo="o/r", path=True) == "o/r"
-    assert utils.build_skill_key(repo="o/r", path=False, name="foo") == "o/r:foo"
+    assert utils.build_skill_key(repo="o/r", path=False, name="foo") == "o/r:name:foo"
     assert utils.build_skill_key(repo=False, path="x/y", category="dev", name="foo") == "dev:foo"
 
 

@@ -259,7 +259,7 @@ def build_skill_key(repo: str = "", path: str = "", name: str = "", category: st
     if repo and path:
         return f"{repo}:{path}"
     if repo and name:
-        return f"{repo}:{name}"
+        return f"{repo}:name:{name}"
     if repo and category:
         return f"{repo}:{category}"
     if repo:

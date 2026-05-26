@@ -1,0 +1,1453 @@
+{
+  "scanned": 289,
+  "missing_metadata": 0,
+  "errors": 0,
+  "warnings": 0,
+  "results": [
+    {
+      "path": "agent/agent-credit-aaronjmars-agent-credit-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-memory-systems-claude-code-communit-claude-code-resource-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-mesh-coordinator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-ops-interview/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-orchestration/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-orchestration-bbgnsurftech-claude-skills-collec-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-orchestration-frankxai-arcanea-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-orchestration-improve-agent-claude-code-communit-claude-co/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-orchestration-multi-agent-optimize-claude-code-communit-cl/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-orchestrator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-orchestrator-task-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-organizer-skill-404kidwiz-claude-supercode-ski-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-os-framework/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-patterns-helixdevelopment-helixagent-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-patterns-vasic-digital-superagent-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-queen-coordinator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-quorum-manager/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-raft-manager-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-run-faisalanjum-eventtrader/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-safla-neural/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-safla-neural-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-sandbox-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-selector-smith-happens-xlightsfpptester-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-skills-for-context-engineering-kalyanikhandare29-agent-ski/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-swarm-issue-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-swarm-memory-manager-ruvnet-ruflo-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-swarm-pr-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-swarm-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-teams/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-teams-rohitg00-pro-workflow/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-template/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-topology-optimizer-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-trading-predictor-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-user-tools-finimo-solutions-research/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agent-user-tools-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agentic-compass/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agentic-jujutsu-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agentic-jujutsu-ruvnet-ruflo-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agentic-layer-assessment-melodic-software-claude-code-plugins/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agentic-layer-audit/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agentic-layer-audit-melodic-software-claude-code-plugins-5382529/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agentic-workflow/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agentica-infrastructure-parcadei-continuous-claude-v3-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agentica-server/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agentica-server-parcadei-continuous-claude-v3-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agentica-spawn/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agentica-spawn-majiayu000-claude-skill-registr-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agentica-spawn-vibeeval-vibecosystem/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agentkit-seo-agentkit-seo-agentkit-seo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agentmail-novaai-innovation-infinite-agency/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agents-claude-world-director-mode-lite/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/agents-edheltzel-atlas-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/auto-review-loop-wanshuiyin-auto-claude-code-res-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/infinite-gratitude/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/multi-agent-patterns/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/quickstart-boshu2-agentops-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/session-bootstrap-boshu2-agentops-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/agent-prompt-behavior-hasnaincodehub-todo-evaluation-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/agent-sdk-aircrushin-promptminder/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/agent-sdk-development/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/agent-sdk-prorise-cool-prorisepromptminder-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/agent-tuning/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/agentdb-learning/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/agentdb-memory-patterns-dnyoussef-ai-chrome-extension/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/agentdb-memory-patterns-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/agentdb-memory-patterns-ruvnet-ruflo-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/agentdb-vector-search-dnyoussef-ai-chrome-extension-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/agentdb-vector-search-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/agentic-chat/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/claude-code-guide/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/gemini-nowork-studio-notfair/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/gemini-search-wanshuiyin-auto-claude-code-res-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/gemini-search-wanshuiyin-auto-claude-code-res-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/multi-ai-research/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/prompt-optimizer-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/stability-ai/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/tokenwise/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-ml/arboreto-aiskillstore-marketplace/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-ml/azure-mgmt-weightsandbiases-dotnet/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-ml/pgvector-semantic-search-timescale-pg-aiguide-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-ml/xai-check-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/agent-ops-article-verification-weholt-script-cast/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/agent-ops-git-story/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/braintrust-analyze-parcadei-continuous-claude-v3-6/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/catchup-athola-claude-night-market-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/codebase-audit/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/neuheit-pruefen-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/reverse-engineer-rpi-boshu2-agentops-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/seo-analysis-nowork-studio-notfair/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/seo-page-nowork-studio-notfair/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/api-design-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-compute-batch-java/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-cosmos-rust/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-keyvault-py/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-messaging-webpubsub-java/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-mgmt-mongodbatlas-dotnet/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-storage-blob-rust/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-usage-fcakyon-claude-codex-setting-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "business/impressum-pflicht-klotzkette-claude-fuer-deutsche-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "context-management/agent-skill-cep/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "context-management/agentkit-seo-agent-context-optimization/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "context-management/agentkit-seo-agent-context-optimization-agentkit-seo-agentkit-se/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "context-management/inject-boshu2-agentops-3-boshu2-agentops/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "context-management/recallloom/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "context-management/strategic-compact-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "creative/album-art-director-bitwize-music-studio-claude-ai-music-skil-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "creative/album-conceptualizer-bitwize-music-studio-claude-ai-music-skil-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "creative/baoyu-article-illustrator-jimliu-baoyu-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "creative/baoyu-comic-jimliu-baoyu-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "creative/baoyu-cover-image-jimliu-baoyu-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "creative/baoyu-infographic-jimliu-baoyu-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "creative/baoyu-xhs-images-jimliu-baoyu-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "creative/story-cover-worldwonderer-oh-story-claudecode/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/astropy-k-dense-ai-scientific-agent-ski/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/data-engineering-data-driven-feature-sickn33-antigravity-awesome/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/database-patterns-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/metrics-pull-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/postgresql-optimization-sickn33-antigravity-awesome/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/vector-database-engineer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/app-ui-design-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/building-ai-chat-ancoleman-ai-design-components-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/css-debug/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/fec-interface-polish-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/fec-ui-design-direction-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/figma-to-code-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/figma-to-react-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/frontend-design-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/minimalist-ui-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/product-ux-expert/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/providing-feedback-ancoleman-ai-design-components-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/ui-design-system-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/ui-ux-pro-max-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/usability-check-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/web-asset-generator-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/126-java-exception-handling/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/agent-ops-dependencies/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/agent-pr-manager-finimo-solutions-research/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/agent-pr-manager-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/agent-pr-reviewer-smith-happens-xlightsfpptester-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/agent-production-validator-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/agent-refinement/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/agent-refinement-finimo-solutions-research/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/agent-refinement-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/agent-sparc-coordinator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/agent-studio/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/angular-best-practices-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/brooks-lint/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/fec-form-handling-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/fec-legacy-to-modern-migration-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/fec-nextjs-project-standard-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/fec-nuxt-project-standard-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/fec-pwa-implementation-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/fec-react-project-standard-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/fixflow/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/flutter-expert-sickn33-antigravity-awesome/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/golang-web/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/harmonyos-app/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/implement-tobihagemann-turbo-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/nuxt-ui-v4-secondsky-claude-skills-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/pr-oprogramadorreal-optimus-claude-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/python-anti-patterns-wshobson-agents-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/python-project-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/react-best-practices-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/react-hooks-best-practices/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/rust-best-practices-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/rust-project/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/slack-bot-builder/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/specs-code-cleanup-giuseppe-trisciuogli-developer-kit-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/stitch-loop-sickn33-antigravity-awesome/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/typescript-a5c-ai-babysitter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/typescript-project/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/understand-chat-lum1104-understand-anything-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/understand-diff-lum1104-understand-anything-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/understand-explain-lum1104-understand-anything-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/understand-lum1104-understand-anything-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/univer-cli-dream-num-skills-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/web-artifacts-builder-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/wiki-changelog-sickn33-antigravity-awesome-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/zig-project/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/agent-release-swarm/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/agent-release-swarm-diegosouzapw-awesome-omni-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/agent-release-swarm-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/agent-workflow-automation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/chaos-engineer-jeffallan-claude-skills-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/cliproxy-deploy/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/cliproxy-newapi-stack/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/mise-configurator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/observability-sre/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/openclaw-deploy/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/pagerduty-automation-sickn33-antigravity-awesome/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/server-deploy/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/gpt-image2-ppt-skills-juneyaooo-gpt-image2-ppt-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/nda-abgleich-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/paper-poster-wanshuiyin-auto-claude-code-res-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/technical-spec-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "gaming/game-audio-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/configure-canvas-mcp-microsoft-power-platform-skill-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/deepline-sdk-getaero-io-gtm-eng-skills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/supabase-automation-sickn33-antigravity-awesome/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "marketing/ad-lead-quality-analyzer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "marketing/brevo-automation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "marketing/copy-nowork-studio-notfair/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "marketing/keyword-research-nowork-studio-notfair/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "marketing/landing-nowork-studio-notfair/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "marketing/manage-nowork-studio-notfair/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "marketing/manage-nowork-studio-notfair-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/agent-multi-repo-swarm/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/agentforge-research-orchestrator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/app-builder/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/discovery-boshu2-agentops-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/discovery-boshu2-agentops-6/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/fan-out-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/idea-discovery-wanshuiyin-auto-claude-code-res-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/session-end-kanevry-session-orchestrator-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "performance/performance-engineer-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "performance/system-doctor/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "planning/agent-migration-plan/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "planning/agent-migration-plan-finimo-solutions-research/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "planning/agent-migration-plan-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "planning/draft-plan-tobihagemann-turbo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "planning/draft-spec-tobihagemann-turbo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "planning/plan-flow/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "planning/planning-with-files-othmanadi-planning-with-files-12-othmanadi-planning-with-files/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "planning/planning-with-files-othmanadi-planning-with-files-14/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "planning/planning-with-files-othmanadi-planning-with-files-15/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "planning/planning-with-files-othmanadi-planning-with-files-19/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "planning/planning-with-files-zh-othmanadi-planning-with-files/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "planning/planning-with-files-zht-othmanadi-planning-with-files/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "planning/task-decomposition-a5c-ai-babysitter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "product/agentic-product-prototyping/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "product/prd-master/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "product/prd-taskmaster-anombyte93-prd-taskmaster-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "product/product-analytics-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "product/product-discovery-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "product/product-manager-toolkit-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "product/user-needs-map-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "productivity/handoff-oprogramadorreal-optimus-claude/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/codex-agent-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/fec-frontend-code-review-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/finalize-tobihagemann-turbo-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/finalize-tobihagemann-turbo-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/skill-auditor-boshu2-agentops/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/skill-auditor-boshu2-agentops-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/story-review-worldwonderer-oh-story-claudecode-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/validate-boshu2-agentops-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/auth-security-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/fec-security-review-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/hunt-auth-bypass-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/hunt-business-logic-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/hunt-cache-poison-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/hunt-cloud-misconfig-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/hunt-csrf-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/hunt-graphql-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/hunt-idor-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/hunt-misc-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/hunt-oauth-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/hunt-race-condition-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/hunt-sqli-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/hunt-ssrf-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/hunt-subdomain-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/okta-attack-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/privacy-check-haabe-mycelium/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/security-review-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/server-security/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/supply-chain-attack-recon-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/threat-model-haabe-mycelium-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/vmware-vcenter-attack-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/web2-recon-elementalsouls-claude-bughunter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "skills/agent-ops-create-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "skills/skill-creator-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "skills/skill-sentinel/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "testing/fec-component-testing-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "testing/fec-e2e-testing-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "testing/fec-tdd-workflow-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "testing/fec-testing-strategy-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "testing/fec-validation-fix-bovinphang-frontend-craft/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "travel/trip-planner-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "workflow/agent-workflow-automation-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "workflow/agent-workflow-playbook-aufrank-agent-skills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "workflow/agent-workflow-ruvnet-claude-flow/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "workflow/agent-workflow-ruvnet-ruflo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "workflow/do-issue-athola-claude-night-market-4/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "writing/content-writer-nowork-studio-notfair/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "writing/humanizer-majiayu000-claude-arsenal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "writing/release-post-posit-dev-skills-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "writing/story-import-worldwonderer-oh-story-claudecode-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "writing/unslop/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "writing/verlagsredaktion-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "writing/voice-review-athola-claude-night-market-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    }
+  ]
+}

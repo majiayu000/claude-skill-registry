@@ -1,0 +1,1312 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-26T16:23:06.192260+00:00",
+  "skills_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout",
+  "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-003/classification.jsonl",
+  "policy": {
+    "min_confidence": 0.9,
+    "from_categories": [
+      "other"
+    ],
+    "to_categories": [],
+    "target_statuses": [
+      "active"
+    ],
+    "allow_target_other": false,
+    "apply_mode": "report-only",
+    "example_limit_per_reason": 20,
+    "top_targets_per_reason": 20,
+    "conflict_detail_limit": 0
+  },
+  "summary": {
+    "classification_row_count": 1000,
+    "archive_skill_count": 222222,
+    "scoped_archive_skill_count": 53819,
+    "scoped_archive_classification_gap": 52819,
+    "classification_status_counts": {
+      "ok": 996,
+      "unknown_or_inactive_category": 4
+    },
+    "archive_category_counts": {
+      "agent": 1364,
+      "ai-llm": 2057,
+      "ai-ml": 2016,
+      "analysis": 3010,
+      "api": 802,
+      "bash": 179,
+      "business": 1034,
+      "c-level": 49,
+      "communication": 561,
+      "context-management": 1159,
+      "creative": 664,
+      "data": 48886,
+      "design": 13386,
+      "development": 36140,
+      "devops": 10220,
+      "documents": 6187,
+      "domains": 49,
+      "examples": 84,
+      "forensics": 56,
+      "gaming": 690,
+      "generation": 455,
+      "integration": 4605,
+      "language": 62,
+      "local-ai-infrastructure": 50,
+      "marketing": 2576,
+      "orchestration": 1844,
+      "other": 53819,
+      "performance": 850,
+      "personal-development": 285,
+      "planning": 1301,
+      "platform": 235,
+      "product": 2324,
+      "productivity": 2955,
+      "quality": 2647,
+      "security": 4938,
+      "skills": 1702,
+      "system": 17,
+      "testing": 11132,
+      "travel": 43,
+      "war-room": 4,
+      "workflow": 883,
+      "writing": 902
+    },
+    "source_state_counts": {
+      "exists": 1000
+    },
+    "existing_source_category_counts": {
+      "other": 1000
+    },
+    "scoped_source_category_counts": {
+      "other": 1000
+    },
+    "scoped_existing_source_count": 1000,
+    "candidate_move_count": 289,
+    "blocked_existing_key_count": 227,
+    "stable_key_conflict_detail_count": 0,
+    "stable_key_conflict_detail_summary": {},
+    "primary_reason_counts": {
+      "classification status is not ok": 4,
+      "confidence below threshold": 480,
+      "movable candidate under selected policy": 289,
+      "target category already contains a skill with the same stable key": 227
+    },
+    "all_blocker_reason_counts": {
+      "classification status is not ok": 4,
+      "classification target matches current category": 22,
+      "confidence below threshold": 481,
+      "target category already contains a skill with the same stable key": 227,
+      "target category other requires --allow-target-other": 22,
+      "target category status 'unknown' excluded by filter": 4
+    },
+    "target_category_counts": {
+      "agent": 105,
+      "ai-llm": 54,
+      "ai-ml": 19,
+      "analysis": 58,
+      "api": 11,
+      "bash": 1,
+      "business": 23,
+      "communication": 2,
+      "context-management": 14,
+      "creative": 17,
+      "data": 42,
+      "design": 33,
+      "development": 159,
+      "devops": 47,
+      "documents": 24,
+      "gaming": 1,
+      "generation": 1,
+      "integration": 58,
+      "knowledge": 1,
+      "marketing": 31,
+      "orchestration": 22,
+      "other": 22,
+      "performance": 12,
+      "personal-development": 1,
+      "planning": 32,
+      "platform": 2,
+      "product": 24,
+      "productivity": 21,
+      "quality": 44,
+      "research": 3,
+      "security": 51,
+      "skills": 8,
+      "testing": 18,
+      "travel": 1,
+      "workflow": 24,
+      "writing": 14
+    },
+    "target_status_counts": {
+      "active": 996,
+      "unknown": 4
+    },
+    "same_policy_plan_summary": {
+      "classification_row_count": 1000,
+      "classification_status_counts": {
+        "ok": 996,
+        "unknown_or_inactive_category": 4
+      },
+      "planned_move_count": 516,
+      "movable_count": 289,
+      "blocked_count": 227,
+      "operation_counts": {
+        "blocked_existing_key": 227,
+        "move": 289
+      },
+      "reject_reasons": {
+        "classification status is not ok": 4,
+        "confidence below threshold": 480
+      },
+      "source_category_counts": {
+        "other": 516
+      },
+      "target_category_counts": {
+        "agent": 87,
+        "ai-llm": 27,
+        "ai-ml": 15,
+        "analysis": 16,
+        "api": 10,
+        "bash": 1,
+        "business": 10,
+        "context-management": 7,
+        "creative": 8,
+        "data": 20,
+        "design": 22,
+        "development": 86,
+        "devops": 18,
+        "documents": 6,
+        "gaming": 1,
+        "integration": 25,
+        "marketing": 9,
+        "orchestration": 18,
+        "performance": 7,
+        "personal-development": 1,
+        "planning": 19,
+        "product": 9,
+        "productivity": 2,
+        "quality": 13,
+        "security": 41,
+        "skills": 8,
+        "testing": 13,
+        "travel": 1,
+        "workflow": 5,
+        "writing": 11
+      }
+    }
+  },
+  "buckets": [
+    {
+      "reason": "confidence below threshold",
+      "count": 480,
+      "target_categories": [
+        {
+          "value": "development",
+          "count": 73
+        },
+        {
+          "value": "analysis",
+          "count": 42
+        },
+        {
+          "value": "integration",
+          "count": 33
+        },
+        {
+          "value": "quality",
+          "count": 31
+        },
+        {
+          "value": "devops",
+          "count": 29
+        },
+        {
+          "value": "ai-llm",
+          "count": 27
+        },
+        {
+          "value": "data",
+          "count": 22
+        },
+        {
+          "value": "marketing",
+          "count": 22
+        },
+        {
+          "value": "other",
+          "count": 22
+        },
+        {
+          "value": "productivity",
+          "count": 19
+        },
+        {
+          "value": "workflow",
+          "count": 19
+        },
+        {
+          "value": "agent",
+          "count": 18
+        },
+        {
+          "value": "documents",
+          "count": 18
+        },
+        {
+          "value": "product",
+          "count": 15
+        },
+        {
+          "value": "business",
+          "count": 13
+        },
+        {
+          "value": "planning",
+          "count": 13
+        },
+        {
+          "value": "design",
+          "count": 11
+        },
+        {
+          "value": "security",
+          "count": 10
+        },
+        {
+          "value": "creative",
+          "count": 9
+        },
+        {
+          "value": "context-management",
+          "count": 7
+        }
+      ],
+      "target_status_counts": {
+        "active": 480
+      },
+      "examples": [
+        {
+          "path": "other/003-agents-installation/SKILL.md",
+          "name": "003-agents-installation",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/042-planning-openspec/SKILL.md",
+          "name": "042-planning-openspec",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "planning",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/17-dotnet-health-checks/SKILL.md",
+          "name": "dotnet-health-checks",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "devops",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/412-frameworks-quarkus-panache/SKILL.md",
+          "name": "412-frameworks-quarkus-panache",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "data",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/512-frameworks-micronaut-data/SKILL.md",
+          "name": "512-frameworks-micronaut-data",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "data",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/513-frameworks-micronaut-db-migrations-flyway/SKILL.md",
+          "name": "513-frameworks-micronaut-db-migrations-flyway",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "data",
+          "target_status": "active",
+          "confidence": 0.8,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/ablation-planner/SKILL.md",
+          "name": "ablation-planner",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "analysis",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/about-bitwize-music-studio-claude-ai-music-skil-5/SKILL.md",
+          "name": "about",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.6,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/activate-site/SKILL.md",
+          "name": "activate-site",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "integration",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/adaptyv/SKILL.md",
+          "name": "adaptyv",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/add-discord/SKILL.md",
+          "name": "add-discord",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "integration",
+          "target_status": "active",
+          "confidence": 0.8,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/add-gcal-tool/SKILL.md",
+          "name": "add-gcal-tool",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "integration",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/add-whatsapp/SKILL.md",
+          "name": "add-whatsapp",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "integration",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/adr-drafting/SKILL.md",
+          "name": "adr-drafting",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.8,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/adr/SKILL.md",
+          "name": "adr",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/agentica-claude-proxy-parcadei-continuous-claude-v3-4/SKILL.md",
+          "name": "agentica-claude-proxy",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "integration",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/aktenbestand-pflege-klotzkette-claude-fuer-deutsche/SKILL.md",
+          "name": "aktenbestand-pflege",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "business",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/album-ideas-bitwize-music-studio-claude-ai-music-skil-5/SKILL.md",
+          "name": "album-ideas",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "productivity",
+          "target_status": "active",
+          "confidence": 0.8,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/alert-manager-aaron-he-zhu-seo-geo-claude-skill-4/SKILL.md",
+          "name": "alert-manager",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "analysis",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/alphaxiv-wanshuiyin-auto-claude-code-res/SKILL.md",
+          "name": "alphaxiv",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "ai-llm",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        }
+      ]
+    },
+    {
+      "reason": "movable candidate under selected policy",
+      "count": 289,
+      "target_categories": [
+        {
+          "value": "agent",
+          "count": 57
+        },
+        {
+          "value": "development",
+          "count": 45
+        },
+        {
+          "value": "security",
+          "count": 23
+        },
+        {
+          "value": "ai-llm",
+          "count": 20
+        },
+        {
+          "value": "design",
+          "count": 15
+        },
+        {
+          "value": "planning",
+          "count": 13
+        },
+        {
+          "value": "devops",
+          "count": 12
+        },
+        {
+          "value": "analysis",
+          "count": 9
+        },
+        {
+          "value": "api",
+          "count": 8
+        },
+        {
+          "value": "creative",
+          "count": 8
+        },
+        {
+          "value": "orchestration",
+          "count": 8
+        },
+        {
+          "value": "quality",
+          "count": 8
+        },
+        {
+          "value": "marketing",
+          "count": 7
+        },
+        {
+          "value": "product",
+          "count": 7
+        },
+        {
+          "value": "writing",
+          "count": 7
+        },
+        {
+          "value": "context-management",
+          "count": 6
+        },
+        {
+          "value": "data",
+          "count": 6
+        },
+        {
+          "value": "testing",
+          "count": 5
+        },
+        {
+          "value": "workflow",
+          "count": 5
+        },
+        {
+          "value": "ai-ml",
+          "count": 4
+        }
+      ],
+      "target_status_counts": {
+        "active": 289
+      },
+      "examples": [
+        {
+          "path": "other/126-java-exception-handling/SKILL.md",
+          "name": "126-java-exception-handling",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "development/126-java-exception-handling/SKILL.md"
+        },
+        {
+          "path": "other/ad-lead-quality-analyzer/SKILL.md",
+          "name": "ad-lead-quality-analyzer",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "marketing",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "marketing/ad-lead-quality-analyzer/SKILL.md"
+        },
+        {
+          "path": "other/agent-credit-aaronjmars-agent-credit-3/SKILL.md",
+          "name": "agent-credit",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "agent",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "agent/agent-credit-aaronjmars-agent-credit-3/SKILL.md"
+        },
+        {
+          "path": "other/album-art-director-bitwize-music-studio-claude-ai-music-skil-5/SKILL.md",
+          "name": "album-art-director",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "creative",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "creative/album-art-director-bitwize-music-studio-claude-ai-music-skil-5/SKILL.md"
+        },
+        {
+          "path": "other/album-conceptualizer-bitwize-music-studio-claude-ai-music-skil-5/SKILL.md",
+          "name": "album-conceptualizer",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "creative",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "creative/album-conceptualizer-bitwize-music-studio-claude-ai-music-skil-5/SKILL.md"
+        },
+        {
+          "path": "other/angular-best-practices/SKILL.md",
+          "name": "angular-best-practices",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "development/angular-best-practices-sickn33-antigravity-awesome-/SKILL.md"
+        },
+        {
+          "path": "other/api-design-majiayu000-claude-arsenal/SKILL.md",
+          "name": "api-design",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "api/api-design-majiayu000-claude-arsenal/SKILL.md"
+        },
+        {
+          "path": "other/app-builder/SKILL.md",
+          "name": "app-builder",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "orchestration",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "orchestration/app-builder/SKILL.md"
+        },
+        {
+          "path": "other/app-ui-design/SKILL.md",
+          "name": "app-ui-design",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "design",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "design/app-ui-design-majiayu000-claude-arsenal/SKILL.md"
+        },
+        {
+          "path": "other/arboreto-aiskillstore-marketplace/SKILL.md",
+          "name": "arboreto",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "ai-ml",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "ai-ml/arboreto-aiskillstore-marketplace/SKILL.md"
+        },
+        {
+          "path": "other/astropy-k-dense-ai-scientific-agent-ski/SKILL.md",
+          "name": "astropy",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "data",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "data/astropy-k-dense-ai-scientific-agent-ski/SKILL.md"
+        },
+        {
+          "path": "other/auth-security/SKILL.md",
+          "name": "auth-security",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "security",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "security/auth-security-majiayu000-claude-arsenal/SKILL.md"
+        },
+        {
+          "path": "other/auto-review-loop-wanshuiyin-auto-claude-code-res-3/SKILL.md",
+          "name": "auto-review-loop",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "agent",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "agent/auto-review-loop-wanshuiyin-auto-claude-code-res-3/SKILL.md"
+        },
+        {
+          "path": "other/azure-compute-batch-java/SKILL.md",
+          "name": "azure-compute-batch-java",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "api/azure-compute-batch-java/SKILL.md"
+        },
+        {
+          "path": "other/azure-cosmos-rust/SKILL.md",
+          "name": "azure-cosmos-rust",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "api/azure-cosmos-rust/SKILL.md"
+        },
+        {
+          "path": "other/azure-keyvault-py/SKILL.md",
+          "name": "azure-keyvault-py",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "api/azure-keyvault-py/SKILL.md"
+        },
+        {
+          "path": "other/azure-messaging-webpubsub-java/SKILL.md",
+          "name": "azure-messaging-webpubsub-java",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "api/azure-messaging-webpubsub-java/SKILL.md"
+        },
+        {
+          "path": "other/azure-mgmt-mongodbatlas-dotnet/SKILL.md",
+          "name": "azure-mgmt-mongodbatlas-dotnet",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "api/azure-mgmt-mongodbatlas-dotnet/SKILL.md"
+        },
+        {
+          "path": "other/azure-mgmt-weightsandbiases-dotnet/SKILL.md",
+          "name": "azure-mgmt-weightsandbiases-dotnet",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "ai-ml",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "ai-ml/azure-mgmt-weightsandbiases-dotnet/SKILL.md"
+        },
+        {
+          "path": "other/azure-storage-blob-rust/SKILL.md",
+          "name": "azure-storage-blob-rust",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "api/azure-storage-blob-rust/SKILL.md"
+        }
+      ]
+    },
+    {
+      "reason": "target category already contains a skill with the same stable key",
+      "count": 227,
+      "target_categories": [
+        {
+          "value": "development",
+          "count": 41
+        },
+        {
+          "value": "agent",
+          "count": 30
+        },
+        {
+          "value": "integration",
+          "count": 22
+        },
+        {
+          "value": "security",
+          "count": 18
+        },
+        {
+          "value": "data",
+          "count": 14
+        },
+        {
+          "value": "ai-ml",
+          "count": 11
+        },
+        {
+          "value": "orchestration",
+          "count": 10
+        },
+        {
+          "value": "business",
+          "count": 9
+        },
+        {
+          "value": "testing",
+          "count": 8
+        },
+        {
+          "value": "ai-llm",
+          "count": 7
+        },
+        {
+          "value": "analysis",
+          "count": 7
+        },
+        {
+          "value": "design",
+          "count": 7
+        },
+        {
+          "value": "devops",
+          "count": 6
+        },
+        {
+          "value": "planning",
+          "count": 6
+        },
+        {
+          "value": "performance",
+          "count": 5
+        },
+        {
+          "value": "quality",
+          "count": 5
+        },
+        {
+          "value": "skills",
+          "count": 5
+        },
+        {
+          "value": "writing",
+          "count": 4
+        },
+        {
+          "value": "api",
+          "count": 2
+        },
+        {
+          "value": "documents",
+          "count": 2
+        }
+      ],
+      "target_status_counts": {
+        "active": 227
+      },
+      "examples": [
+        {
+          "path": "other/0-autoresearch-skill-orchestra-research-ai-research-skills/SKILL.md",
+          "name": "autoresearch",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "orchestration",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "orchestration/0-autoresearch-skill-orchestra-research-ai-research-skills/SKILL.md"
+        },
+        {
+          "path": "other/0-autoresearch-skill/SKILL.md",
+          "name": "autoresearch",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "orchestration",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "orchestration/0-autoresearch-skill/SKILL.md"
+        },
+        {
+          "path": "other/12-dotnet-jwt-authentication/SKILL.md",
+          "name": "dotnet-jwt-authentication",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "security",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "security/12-dotnet-jwt-authentication/SKILL.md"
+        },
+        {
+          "path": "other/13-dotnet-permission-authorization/SKILL.md",
+          "name": "dotnet-permission-authorization",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "security",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "security/13-dotnet-permission-authorization/SKILL.md"
+        },
+        {
+          "path": "other/19-dotnet-dapper-query-builder/SKILL.md",
+          "name": "dotnet-dapper-query-builder",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "data",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "data/19-dotnet-dapper-query-builder/SKILL.md"
+        },
+        {
+          "path": "other/21-dotnet-unit-testing/SKILL.md",
+          "name": "dotnet-unit-testing",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "testing",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "testing/21-dotnet-unit-testing/SKILL.md"
+        },
+        {
+          "path": "other/22-dotnet-integration-testing/SKILL.md",
+          "name": "dotnet-integration-testing",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "testing",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "testing/22-dotnet-integration-testing/SKILL.md"
+        },
+        {
+          "path": "other/402-frameworks-quarkus-rest/SKILL.md",
+          "name": "402-frameworks-quarkus-rest",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "api/402-frameworks-quarkus-rest/SKILL.md"
+        },
+        {
+          "path": "other/a-evolve/SKILL.md",
+          "name": "evolving-ai-agents",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "ai-llm",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "ai-llm/a-evolve/SKILL.md"
+        },
+        {
+          "path": "other/a11y-check/SKILL.md",
+          "name": "a11y-check",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "quality",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "quality/a11y-check/SKILL.md"
+        },
+        {
+          "path": "other/accessibility-aggregation-ammawla-encode-toolkit/SKILL.md",
+          "name": "accessibility-aggregation",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "data",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "data/accessibility-aggregation-ammawla-encode-toolkit/SKILL.md"
+        },
+        {
+          "path": "other/accessibility-aggregation/SKILL.md",
+          "name": "accessibility-aggregation",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "data",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "data/accessibility-aggregation/SKILL.md"
+        },
+        {
+          "path": "other/account-plan/SKILL.md",
+          "name": "account-plan",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "business",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "business/account-plan-mohitagw15856-pm-claude-skills/SKILL.md"
+        },
+        {
+          "path": "other/acquisition-channel-advisor/SKILL.md",
+          "name": "acquisition-channel-advisor",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "business",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "business/acquisition-channel-advisor/SKILL.md"
+        },
+        {
+          "path": "other/active-directory-attack/SKILL.md",
+          "name": "active-directory-attack",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "security",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "security/active-directory-attack/SKILL.md"
+        },
+        {
+          "path": "other/active-directory-attacks-sickn33-antigravity-awesome-/SKILL.md",
+          "name": "active-directory-attacks",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "security",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "security/active-directory-attacks-sickn33-antigravity-awesome-3/SKILL.md"
+        },
+        {
+          "path": "other/add-gchat/SKILL.md",
+          "name": "add-gchat",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "integration",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "integration/add-gchat-nanocoai-nanoclaw/SKILL.md"
+        },
+        {
+          "path": "other/add-github/SKILL.md",
+          "name": "add-github",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "integration",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "integration/add-github-nanocoai-nanoclaw/SKILL.md"
+        },
+        {
+          "path": "other/add-gmail-tool/SKILL.md",
+          "name": "add-gmail-tool",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "integration",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "integration/add-gmail-tool-nanocoai-nanoclaw/SKILL.md"
+        },
+        {
+          "path": "other/add-linear/SKILL.md",
+          "name": "add-linear",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "integration",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "integration/add-linear-nanocoai-nanoclaw/SKILL.md"
+        }
+      ]
+    },
+    {
+      "reason": "classification status is not ok",
+      "count": 4,
+      "target_categories": [
+        {
+          "value": "research",
+          "count": 3
+        },
+        {
+          "value": "knowledge",
+          "count": 1
+        }
+      ],
+      "target_status_counts": {
+        "unknown": 4
+      },
+      "examples": [
+        {
+          "path": "other/harvest-boshu2-agentops-3/SKILL.md",
+          "name": "harvest",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "knowledge",
+          "target_status": "unknown",
+          "confidence": 0.8,
+          "status": "unknown_or_inactive_category",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/research-pipeline-wanshuiyin-auto-claude-code-res-2/SKILL.md",
+          "name": "research-pipeline",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "research",
+          "target_status": "unknown",
+          "confidence": 0.95,
+          "status": "unknown_or_inactive_category",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/research-refine-wanshuiyin-auto-claude-code-res-2/SKILL.md",
+          "name": "research-refine",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "research",
+          "target_status": "unknown",
+          "confidence": 0.95,
+          "status": "unknown_or_inactive_category",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/research-review-wanshuiyin-auto-claude-code-res-3/SKILL.md",
+          "name": "research-review",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "research",
+          "target_status": "unknown",
+          "confidence": 0.95,
+          "status": "unknown_or_inactive_category",
+          "reason": "classification status is not ok"
+        }
+      ]
+    }
+  ],
+  "details": {
+    "stable_key_conflicts": []
+  },
+  "notes": [
+    "This report is read-only and never moves, deletes, or rewrites skills.",
+    "same_policy_plan_summary is generated by apply_category_migration.py with the same flags.",
+    "primary_reason_counts are mutually exclusive and explain the current archive state first.",
+    "all_blocker_reason_counts can exceed scoped_existing_source_count because one row may have multiple blockers.",
+    "source directory missing usually means the classification row points at a pre-migration path that has already moved.",
+    "scoped_archive_classification_gap is scoped_archive_skill_count minus scoped_existing_source_count; positive values indicate archive skills not covered by the classification file or duplicate classification coverage.",
+    "stable_key_conflicts detail is bounded by --conflict-detail-limit and includes content hashes so duplicate removal is not inferred from the stable key alone."
+  ]
+}

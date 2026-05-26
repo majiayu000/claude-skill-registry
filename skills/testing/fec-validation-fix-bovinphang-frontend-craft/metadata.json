@@ -1,0 +1,17 @@
+{
+  "name": "fec-validation-fix",
+  "repo": "bovinphang/frontend-craft",
+  "path": "skills/fec-validation-fix/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/bovinphang/frontend-craft",
+  "dir_name": "fec-validation-fix-bovinphang-frontend-craft",
+  "downloaded_at": "2026-05-26T03:51:52.957095Z",
+  "author": "bovinphang",
+  "source_url": "https://github.com/bovinphang/frontend-craft/blob/main/skills/fec-validation-fix/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bovinphang/frontend-craft/blob/main/skills/fec-validation-fix/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

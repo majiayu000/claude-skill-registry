@@ -1,0 +1,14 @@
+{
+  "name": "agent-studio",
+  "repo": "majiayu000/claude-skill-registry-data",
+  "category": "development",
+  "dir_name": "agent-studio",
+  "author": "Archived upstream author(s)",
+  "source": "local archive; upstream source metadata was not recorded",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry-data/tree/main/development/agent-studio",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); original source metadata was not recorded.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

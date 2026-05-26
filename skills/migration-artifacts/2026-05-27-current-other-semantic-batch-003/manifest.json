@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "batch_id": "current-other-semantic-batch-003",
+  "generated_at": "2026-05-26T16:06:44.020457+00:00",
+  "skills_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout",
+  "input_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-003/input.jsonl",
+  "selection_policy": {
+    "from_category": "other",
+    "limit": 1000,
+    "content_chars": 2500,
+    "priority_source": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-26-nested-other-layout-regression/depth-plan-applied.json",
+    "priority_move_count": 693,
+    "previous_current_other_inputs": [
+      "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-24-current-other-semantic-batch-001/input.jsonl",
+      "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-25-current-other-semantic-batch-002/input.jsonl"
+    ],
+    "previous_input_path_count": 1500,
+    "notes": [
+      "Select non-duplicate other paths created by #49 first.",
+      "Then select standard current other paths not already present in current-other batch 001/002 inputs.",
+      "Priority paths are allowed even if their path appeared in an earlier input, because #49 can reintroduce them from nested archive paths."
+    ]
+  },
+  "summary": {
+    "archive_category_counts": {
+      "agent": 1364,
+      "ai-llm": 2057,
+      "ai-ml": 2016,
+      "analysis": 3010,
+      "api": 802,
+      "bash": 179,
+      "business": 1034,
+      "c-level": 49,
+      "communication": 561,
+      "context-management": 1159,
+      "creative": 664,
+      "data": 48886,
+      "design": 13386,
+      "development": 36140,
+      "devops": 10220,
+      "documents": 6187,
+      "domains": 49,
+      "examples": 84,
+      "forensics": 56,
+      "gaming": 690,
+      "generation": 455,
+      "integration": 4605,
+      "language": 62,
+      "local-ai-infrastructure": 50,
+      "marketing": 2576,
+      "orchestration": 1844,
+      "other": 53819,
+      "performance": 850,
+      "personal-development": 285,
+      "planning": 1301,
+      "platform": 235,
+      "product": 2324,
+      "productivity": 2955,
+      "quality": 2647,
+      "security": 4938,
+      "skills": 1702,
+      "system": 17,
+      "testing": 11132,
+      "travel": 43,
+      "war-room": 4,
+      "workflow": 883,
+      "writing": 902
+    },
+    "matching_category_skill_count": 53819,
+    "selected_input_count": 1000,
+    "selected_reason_counts": {
+      "continuation: standard current other not covered by current-other batch 001/002": 307,
+      "priority: non-duplicate standard other created by nested-layout normalization": 693
+    },
+    "selected_category_counts": {
+      "other": 1000
+    }
+  },
+  "artifacts": {
+    "input_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-003/input.jsonl",
+    "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-003/classification.jsonl",
+    "classification_report": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-003/classification-report.json",
+    "checkpoint_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-003/checkpoint.jsonl",
+    "apply_plan": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-003/apply-plan.json",
+    "sample_audit": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-003/sample-audit.json",
+    "residual_report": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-003/residual-report.json"
+  },
+  "commands": [
+    "python scripts/classify_residual_workset_with_llm.py --workset-jsonl /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-003/input.jsonl --classification-output /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-003/classification.jsonl --output /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-003/classification-report.json --checkpoint-jsonl /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-003/checkpoint.jsonl --api-key-env MIMO_API_KEY --base-url https://token-plan-sgp.xiaomimimo.com/v1 --model mimo-v2.5-pro --temperature 0",
+    "python scripts/sample_category_classification_audit.py --workset-jsonl /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-003/input.jsonl --classification-jsonl /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-003/classification.jsonl --output /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-003/sample-audit.json",
+    "python scripts/apply_category_migration.py --skills-dir /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout --classification-jsonl /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-003/classification.jsonl --from-category other --min-confidence 0.9 --movable-only --output /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-003/apply-plan.json",
+    "python scripts/audit_category_residuals.py --skills-dir /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout --classification-jsonl /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-003/classification.jsonl --from-category other --min-confidence 0.9 --output /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-003/residual-report.json"
+  ],
+  "manifest_json": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-003/manifest.json"
+}

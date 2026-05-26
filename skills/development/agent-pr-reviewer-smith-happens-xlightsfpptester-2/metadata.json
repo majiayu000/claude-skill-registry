@@ -1,0 +1,18 @@
+{
+  "name": "agent-pr-reviewer",
+  "description": "Evaluates PRs containing agent changes using specialized agents to analyze\nquality, compliance, and improvement value. Provides turbobeest with a\nstructured recommendation to streamline human review.",
+  "repo": "Smith-Happens/xlightsfpptester",
+  "path": "skills/agent-pr-reviewer",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Smith-Happens/xlightsfpptester",
+  "dir_name": "agent-pr-reviewer-smith-happens-xlightsfpptester-2",
+  "author": "Smith-Happens",
+  "source_url": "https://github.com/Smith-Happens/xlightsfpptester/blob/main/skills/agent-pr-reviewer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 TurboBeest",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

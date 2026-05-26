@@ -1,0 +1,18 @@
+{
+  "name": "agent-workflow-playbook",
+  "description": "Guide plan → instrument → execute → validate with explicit checkpoints and questions. Use for ambiguous tasks or when enforcing a consistent agent workflow.",
+  "repo": "aufrank/agent-skills",
+  "path": "skills/agent-workflow-playbook",
+  "category": "workflow",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aufrank/agent-skills",
+  "dir_name": "agent-workflow-playbook-aufrank-agent-skills-2",
+  "author": "aufrank",
+  "source_url": "https://github.com/aufrank/agent-skills/blob/main/skills/agent-workflow-playbook/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aufrank/agent-skills/blob/main/skills/agent-workflow-playbook/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

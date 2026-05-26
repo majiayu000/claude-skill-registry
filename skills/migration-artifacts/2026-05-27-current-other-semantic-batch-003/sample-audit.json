@@ -1,0 +1,1026 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-26T16:20:51.780351+00:00",
+  "workset_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-003/input.jsonl",
+  "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-003/classification.jsonl",
+  "policy": {
+    "sample_size": 50,
+    "seed": "category-audit-v1",
+    "statuses": [
+      "ok"
+    ],
+    "min_confidence": 0.9
+  },
+  "summary": {
+    "workset_row_count": 1000,
+    "classification_row_count": 1000,
+    "matched_input_count": 1000,
+    "missing_input_count": 0,
+    "candidate_count": 516,
+    "sample_count": 50,
+    "status_counts": {
+      "ok": 996,
+      "unknown_or_inactive_category": 4
+    },
+    "target_category_counts": {
+      "agent": 105,
+      "ai-llm": 54,
+      "ai-ml": 19,
+      "analysis": 58,
+      "api": 11,
+      "bash": 1,
+      "business": 23,
+      "communication": 2,
+      "context-management": 14,
+      "creative": 17,
+      "data": 42,
+      "design": 33,
+      "development": 159,
+      "devops": 47,
+      "documents": 24,
+      "gaming": 1,
+      "generation": 1,
+      "integration": 58,
+      "knowledge": 1,
+      "marketing": 31,
+      "orchestration": 22,
+      "other": 22,
+      "performance": 12,
+      "personal-development": 1,
+      "planning": 32,
+      "platform": 2,
+      "product": 24,
+      "productivity": 21,
+      "quality": 44,
+      "research": 3,
+      "security": 51,
+      "skills": 8,
+      "testing": 18,
+      "travel": 1,
+      "workflow": 24,
+      "writing": 14
+    }
+  },
+  "samples": [
+    {
+      "path": "other/agentic-structure-backgwa-agentic-structure/SKILL.md",
+      "name": "agentic-structure",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "This is a duplicate of skill 3 with identical description and purpose - a collaborative programming framework for production-ready development.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "b6bf17775d538b2f2ba9d7276e114c5a42e7c29c6f70addb3e36abf982c9a899",
+      "metadata_sha256": "24b33ce419f10285ec8b451d929f5a9a8d652ebdeda931ad8e36ca4c4ed16b04",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Collaborative programming framework for production-ready development. Use when starting features, writing code, handling security/errors, adding comments, discussing requirements, or encountering knowledge gaps. Applies to all development tasks for clear, safe, maintainable code.",
+      "content_excerpt": "---\nname: agentic-structure\ndescription: Collaborative programming framework for production-ready development. Use when starting features, writing code, handling security/errors, adding comments, discussing requirements, or encountering knowledge gaps. Applies to all development tasks for clear, safe, maintainable code.\nallowed-tools: [Read, Grep, Glob]\n---\n\n# Agentic Structure\nAgentic Structure is a prompting framework designed to make programming more efficient.\n\nThe core of this guideline is to collaboratively create projects and code together with users.\nRather than planning and proceeding with everything independently, the goal is to achieve better results through mutual feedback based on given ideas and opinions.\nAdditionally, the documentation includes good and bad practices, code style rules, and library usage guidelines, which should be referenced throughout the development process.\n\n## Guideline Collection\nThese are pull-when-needed references - read only what's relevant to your current task; there is no expectation to consume everything upfront.\n\n[DEVELOPMENT_PROCESS.md](guidelines/DEVELOPMENT_PROCESS.md) - Principles for clear, safe, production-ready, maintainable development\n[DISCUSSION_GUIDELINES.md](guidelines/DISCUSSION_GUIDELINES.md) - When and how to run discussions to reach aligned decisions\n[SECURITY_GUIDELINES.md](guidelines/SECURITY_GUIDELINES.md) - Secure defaults for secrets, hashing, auth, and production exposure\n[CODING_STANDARDS.md](guidelines/CODING_STANDARDS.md) - Coding rules for clarity, structure, reuse, and maintainable change\n[COMMENTING_GUIDELINES.md](guidelines/COMMENTING_GUIDELINES.md) - Minimal, high-signal commenting rules and documentation boundaries\n[ERROR_HANDLING.md](guidelines/ERROR_HANDLING.md) - Error handling principles, boundaries, and security-minded failures\n[KNOWLEDGE_SHARING.md](guidelines/KNOWLEDGE_SHARING.md) - Knowledge request protocol for handling information gaps\n\n## Guideline Selection Matrix\nUse this matrix to determine which guideline(s) to consult for your current task:\n\n| Your Task | Consult These Guidelines | When to Apply |\n|-----------|-------------------------|---------------|\n| Starting any feature implementation | DEVELOPMENT_PROCESS.md | Before writing any code - establishes workflow |\n| User request is unclear or ambiguous | DISCUSSION_GUIDELINES.md | Cannot determine single correct interpretation |\n| Need information beyond training data | KNOWLEDGE_SHARING.md | Require API docs, specs"
+    },
+    {
+      "path": "other/add-teams-nanocoai-nanoclaw/SKILL.md",
+      "name": "add-teams",
+      "current_category": "other",
+      "llm_category": "integration",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill describes adding a channel integration (Microsoft Teams) to a platform via SDK, which is a cross-system connector and service integration.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "05c7b7cdc097167f37a81145f367273ce6c42123a8189fa55d9a534d35be7b0c",
+      "metadata_sha256": "89130239d1d101971f1992be6e16597233245d5f2c58c4c0859ddaced2530831",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Add Microsoft Teams channel integration via Chat SDK.",
+      "content_excerpt": "---\nname: add-teams\ndescription: Add Microsoft Teams channel integration via Chat SDK.\n---\n\n# Add Microsoft Teams Channel\n\nConnect NanoClaw to Microsoft Teams for interactive chat in team channels, group chats, and direct messages.\n\n## Install\n\nNanoClaw doesn't ship channels in trunk. This skill copies the Teams adapter in from the `channels` branch.\n\n### Pre-flight (idempotent)\n\nSkip to **Credentials** if all of these are already in place:\n\n- `src/channels/teams.ts` exists\n- `src/channels/index.ts` contains `import './teams.js';`\n- `@chat-adapter/teams` is listed in `package.json` dependencies\n\nOtherwise continue. Every step below is safe to re-run.\n\n### 1. Fetch the channels branch\n\n```bash\ngit fetch origin channels\n```\n\n### 2. Copy the adapter\n\n```bash\ngit show origin/channels:src/channels/teams.ts > src/channels/teams.ts\n```\n\n### 3. Append the self-registration import\n\nAppend to `src/channels/index.ts` (skip if the line is already present):\n\n```typescript\nimport './teams.js';\n```\n\n### 4. Install the adapter package (pinned)\n\n```bash\npnpm install @chat-adapter/teams@4.27.0\n```\n\n### 5. Build\n\n```bash\npnpm run build\n```\n\n## Credentials\n\nTwo paths — manual (Azure Portal) or auto (Teams CLI).\n\n### Auto: Teams CLI\n\nRequires Node.js 18+, a Microsoft 365 account with sideloading permissions, and a public HTTPS endpoint (ngrok, Cloudflare Tunnel, or similar).\n\n1. Install the CLI:\n\n   ```bash\n   npm install -g @microsoft/teams.cli@preview\n   ```\n\n2. Sign in and verify:\n\n   ```bash\n   teams login\n   teams status\n   ```\n\n3. Create the Entra app, client secret, and bot registration:\n\n   ```bash\n   teams app create \\\n     --name \"NanoClaw\" \\\n     --endpoint \"https://your-domain/api/webhooks/teams\"\n   ```\n\n   The CLI prints the credentials as `CLIENT_ID`, `CLIENT_SECRET`, and `TENANT_ID`. Map them to NanoClaw's env keys:\n\n   - `CLIENT_ID` → `TEAMS_APP_ID`\n   - `CLIENT_SECRET` → `TEAMS_APP_PASSWORD`\n   - `TENANT_ID` → `TEAMS_APP_TENANT_ID`\n\n4. Pick **Install in Teams** from the post-create menu and confirm in the Teams dialog.\n\nContinue to [Configure environment](#configure-environment).\n\n---\n\nThe steps below describe the **manual Azure Portal path**.\n\n### Step 1: Create an Azure AD App Registration\n\n1. Go to [Azure Portal](https://portal.azure.com) > **App registrations** > **New registration**\n2. Name it (e.g., \"NanoClaw\")\n3. Supported account types: **Single tenant** (your org only) or **Multi tenant** (any org)\n4. Click **Register**\n5. Copy the **Application (clie"
+    },
+    {
+      "path": "other/fec-react-project-standard-bovinphang-frontend-craft/SKILL.md",
+      "name": "fec-react-project-standard",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Skill is about React + TypeScript project structure, component architecture, hooks organization, routing, state management, and repository-wide conventions—core software development workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "9359fc8fba08d6d1ff5d2112b2d1e581963ab8b693c8fe8d755dc51a4d434769",
+      "metadata_sha256": "9bbe87660eb81b9d9f34b6cb4af887a844b875ee89eb75d6e38a445bd7898536",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when designing or reviewing React + TypeScript project structure, feature/module boundaries, component architecture, hooks organization, routing composition, state/API/error/styling defaults, or repository-wide React conventions. Prefer narrower skills for forms, data fetching, tests, accessibility, virtualization, animation, or security deep dives; Chinese triggers include React 项目规范, React 组件架构.",
+      "content_excerpt": "---\nname: fec-react-project-standard\ndescription: Use when designing or reviewing React + TypeScript project structure, feature/module boundaries, component architecture, hooks organization, routing composition, state/API/error/styling defaults, or repository-wide React conventions. Prefer narrower skills for forms, data fetching, tests, accessibility, virtualization, animation, or security deep dives; Chinese triggers include React 项目规范, React 组件架构.\n---\n\n# React 项目规范\n\n适用于 React + TypeScript 仓库中的中大型模块建设、页面重构和工程结构设计。\n\n## Purpose\n\n为 React + TypeScript 项目提供工程结构、模块边界和默认实现约定，确保架构清晰、代码可维护。\n\n## Procedure\n\n本 skill 主要解决 React 工程任务“如何设计和落地”的问题，不重复声明基础编码底线。处理 React 工程化任务时，按以下顺序执行：\n\n1. 识别仓库已有约定\n   - 目录组织方式\n   - 样式体系\n   - 状态管理方案\n   - 请求封装方式\n   - 测试框架\n   - UI 组件库 / 设计系统\n\n2. 判断目标属于哪一层\n   - 路由页面\n   - 页面私有组件\n   - feature 业务模块\n   - 全局通用组件\n   - hooks / services / stores / utils\n\n3. 设计边界后再落代码\n   - 哪些逻辑属于页面编排\n   - 哪些逻辑属于 feature\n   - 哪些逻辑应下沉为通用能力\n   - 哪些状态应本地管理，哪些应交给 store / query / URL\n\n4. 输出时补齐关键质量项\n   - loading / error / empty / data 状态\n   - 错误处理与重试\n   - 类型约束\n   - 关键测试入口\n   - 必要的专项 skill 分流\n\n## Detailed References\n\nLoad [references/react-project-details.md](references/react-project-details.md) when the task needs concrete React project structure, component patterns, Hooks, routing, state ownership, API layer shape, error handling, styling defaults, TypeScript conventions, or review checklists.\n\n## Constraints\n\n- 默认遵守仓库现有全局规则和 React rule\n- 若仓库已有明确目录结构、样式体系、状态管理或请求封装，优先沿用仓库约定\n- 组件文件规模宜约 **300 行**内；逾 **500 行**或复杂度过高须拆分子组件、Hooks、utils、类型\n- 禁止新增类组件（Error Boundary 用 `react-error-boundary` 等库）\n- 禁止绕过模块出口，从 feature 深层路径导入\n- 不要用 `useEffect + setState` 模拟本可直接计算的派生值\n- 避免 prop drilling 过深却不考虑组合或局部封装\n\n## Expected Output\n\n- 组件边界清晰，pages/features/components 分层明确\n- Props 类型完整且明确，无 `any` 滥用\n- 可复用逻辑已提取为 hooks，loading/error/empty/data 状态齐全\n- API 层具备类型约束和统一错误处理，状态管理符合就近原则\n- 关键行为有测试覆盖，关键模块已用 `react-error-boundary` 包裹\n- 超长列表已评估虚拟化，弹窗/复合组件具备键盘与焦点支持\n- 先尊重仓库现状，再给推荐结构\n- 给出必要的文件划分建议\n- 必要时说明为什么这样分层\n- 对新增模块，优先输出最小可落地结构，而不是一次性过度设计\n- 对重构任务，优先保证可迁移性和风险可控\n"
+    },
+    {
+      "path": "other/gemini-search-wanshuiyin-auto-claude-code-res-2/SKILL.md",
+      "name": "gemini-search",
+      "current_category": "other",
+      "llm_category": "ai-llm",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill uses Gemini AI for broad literature discovery and research paper search, leveraging AI-powered discovery beyond traditional keyword matching. It's an AI/LLM tool for research assistance.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "0c740a8bc6fbd96dfaac8953af1c49fb8031a07f3f1e68d4c795e1d99c294fa3",
+      "metadata_sha256": "e8dc8604263655cd67dd38033db646c24000f30c90991aa6369b056aa58a6610",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Search research papers via Gemini for broad literature discovery. Use when user says \"gemini search\", \"gemini papers\", \"search with gemini\", or wants AI-powered literature discovery beyond arXiv/Semantic Scholar indexes.",
+      "content_excerpt": "---\nname: gemini-search\ndescription: Search research papers via Gemini for broad literature discovery. Use when user says \"gemini search\", \"gemini papers\", \"search with gemini\", or wants AI-powered literature discovery beyond arXiv/Semantic Scholar indexes.\nargument-hint: [search-query]\nallowed-tools: Bash(*), Read, Write, mcp__gemini-cli__*\n---\n\n# Gemini Literature Search\n\nSearch query: $ARGUMENTS\n\n## Role & Positioning\n\nThis skill uses Gemini as a **broad literature discovery** source:\n\n| Skill | Source | Best for |\n|-------|--------|----------|\n| `/arxiv` | arXiv API | Latest preprints, cutting-edge unrefereed work |\n| `/semantic-scholar` | Semantic Scholar API | Published venue papers (IEEE, ACM, Springer) with citation counts |\n| `/deepxiv` | DeepXiv CLI | Layered reading: search, brief, section map, section reads |\n| `/exa-search` | Exa API | Broad web search: blogs, docs, news, companies, research papers |\n| `/gemini-search` | Gemini MCP / CLI | **AI-powered broad literature discovery** — searches across multiple angles, aliases, and sub-problems |\n\nUse Gemini when you want AI-driven discovery that goes beyond keyword matching — Gemini decomposes topics into sub-problems, explores naming variants, and surfaces papers that traditional API searches may miss.\n\n## Constants\n\n- **MAX_RESULTS = 15** — Target number of papers Gemini should find.\n- **MIN_YEAR = 2022** — Default minimum publication year. Override with `— year: 2020-`.\n- **DEFAULT_MODEL = auto-gemini-3** — Auto-routes within the Gemini 3 family (Pro / Flash) by server-side capacity. Required by `mcp__gemini-cli__ask-gemini` and `gemini-cli` v0.40+; explicit `gemini-3-pro-preview` is **silently downgraded to `gemini-2.5-pro`** on OAuth-personal / Google One AI Pro accounts when capacity is exhausted. Override with `— model: gemini-3-flash-preview` (Gemini 3 Flash explicit, faster, higher quota), or `— model: gemini-2.5-pro` / `gemini-2.5-flash` (legacy, only for users on older `gemini-cli` < v0.40). The MCP tool accepts all of these verbatim.\n\n> Overrides (append to arguments):\n> - `/gemini-search \"topic\" — max: 20` — request up to 20 papers\n> - `/gemini-search \"topic\" — year: 2020-` — papers from 2020 onward\n> - `/gemini-search \"topic\" — code-only` — only papers with open-source code\n> - `/gemini-search \"topic\" — venues: NeurIPS,ICML,ICLR` — focus on specific venues\n> - `/gemini-search \"topic\" — model: gemini-3-flash-preview` — Gemini 3 Flash (faster, higher quota, less capable than Pro)\n> - "
+    },
+    {
+      "path": "other/twitter-automation-sickn33-antigravity-awesome-/SKILL.md",
+      "name": "twitter-automation",
+      "current_category": "other",
+      "llm_category": "integration",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill automates Twitter/X tasks via Rube MCP (Composio), which is a cross-system connector and service integration platform. It focuses on API composition and platform bridges for social media automation.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "9a8d9828b0093e9c69c1bf3e4022e27086363943f9713555e422bde5528e0360",
+      "metadata_sha256": "d46dd18c57e3f0b15c410070136888679246371a95de37f4d1e7aecf4ece1cc1",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Automate Twitter/X tasks via Rube MCP (Composio): posts, search, users, bookmarks, lists, media. Always search tools first for current schemas.",
+      "content_excerpt": "---\nname: twitter-automation\ndescription: \"Automate Twitter/X tasks via Rube MCP (Composio): posts, search, users, bookmarks, lists, media. Always search tools first for current schemas.\"\nrisk: critical\nsource: community\ndate_added: \"2026-02-27\"\n---\n\n# Twitter/X Automation via Rube MCP\n\nAutomate Twitter/X operations through Composio's Twitter toolkit via Rube MCP.\n\n## Prerequisites\n\n- Rube MCP must be connected (RUBE_SEARCH_TOOLS available)\n- Active Twitter connection via `RUBE_MANAGE_CONNECTIONS` with toolkit `twitter`\n- Always call `RUBE_SEARCH_TOOLS` first to get current tool schemas\n\n## Setup\n\n**Get Rube MCP**: Add `https://rube.app/mcp` as an MCP server in your client configuration. No API keys needed — just add the endpoint and it works.\n\n\n1. Verify Rube MCP is available by confirming `RUBE_SEARCH_TOOLS` responds\n2. Call `RUBE_MANAGE_CONNECTIONS` with toolkit `twitter`\n3. If connection is not ACTIVE, follow the returned auth link to complete Twitter OAuth\n4. Confirm connection status shows ACTIVE before running any workflows\n\n## Core Workflows\n\n### 1. Create and Manage Posts\n\n**When to use**: User wants to create, delete, or look up tweets/posts\n\n**Tool sequence**:\n1. `TWITTER_USER_LOOKUP_ME` - Get authenticated user info [Prerequisite]\n2. `TWITTER_UPLOAD_MEDIA` / `TWITTER_UPLOAD_LARGE_MEDIA` - Upload media [Optional]\n3. `TWITTER_CREATION_OF_A_POST` - Create a new post [Required]\n4. `TWITTER_POST_LOOKUP_BY_POST_ID` - Look up a specific post [Optional]\n5. `TWITTER_POST_DELETE_BY_POST_ID` - Delete a post [Optional]\n\n**Key parameters**:\n- `text`: Post text content (max 280 weighted characters)\n- `media__media_ids`: Array of media ID strings for attachments\n- `reply__in_reply_to_tweet_id`: Tweet ID to reply to\n- `quote_tweet_id`: Tweet ID to quote\n- `id`: Post ID for lookup/delete\n\n**Pitfalls**:\n- Post text is limited to 280 weighted characters; some characters count as more than one\n- Posting is NOT idempotent; retrying on timeout will create duplicate posts\n- Media IDs must be numeric strings, not integers\n- UPLOAD_LARGE_MEDIA is for videos/GIFs; UPLOAD_MEDIA for images\n- Always call USER_LOOKUP_ME first to get the authenticated user's ID\n\n### 2. Search Posts\n\n**When to use**: User wants to find tweets matching specific criteria\n\n**Tool sequence**:\n1. `TWITTER_RECENT_SEARCH` - Search recent tweets (last 7 days) [Required]\n2. `TWITTER_FULL_ARCHIVE_SEARCH` - Search full archive (Academic access) [Optional]\n3. `TWITTER_RECENT_SEARCH_COUNTS` - Get tweet co"
+    },
+    {
+      "path": "other/agentdb-learning/SKILL.md",
+      "name": "AgentDB Learning Plugins",
+      "current_category": "other",
+      "llm_category": "ai-llm",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill explicitly covers reinforcement learning algorithms, self-learning agents, and AI learning plugins, which is core AI/ML functionality for agent-based systems.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "fd9f5367192e93931f0ae08015d8615e6ad917c948307ae1d278cb8c82771858",
+      "metadata_sha256": "a6f7e86d78e4d1ec85b059915c6ef88b1abcbc47a625d9b2dba7fa6c2e4a8497",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Create and train AI learning plugins with AgentDB's 9 reinforcement learning algorithms. Includes Decision Transformer, Q-Learning, SARSA, Actor-Critic, and more. Use when building self-learning agents, implementing RL, or optimizing agent behavior through experience.",
+      "content_excerpt": "---\nname: \"AgentDB Learning Plugins\"\ndescription: \"Create and train AI learning plugins with AgentDB's 9 reinforcement learning algorithms. Includes Decision Transformer, Q-Learning, SARSA, Actor-Critic, and more. Use when building self-learning agents, implementing RL, or optimizing agent behavior through experience.\"\n---\n\n# AgentDB Learning Plugins\n\n## What This Skill Does\n\nProvides access to 9 reinforcement learning algorithms via AgentDB's plugin system. Create, train, and deploy learning plugins for autonomous agents that improve through experience. Includes offline RL (Decision Transformer), value-based learning (Q-Learning), policy gradients (Actor-Critic), and advanced techniques.\n\n**Performance**: Train models 10-100x faster with WASM-accelerated neural inference.\n\n## Prerequisites\n\n- Node.js 18+\n- AgentDB v1.0.7+ (via agentic-flow)\n- Basic understanding of reinforcement learning (recommended)\n\n---\n\n## Quick Start with CLI\n\n### Create Learning Plugin\n\n```bash\n# Interactive wizard\nnpx agentdb@latest create-plugin\n\n# Use specific template\nnpx agentdb@latest create-plugin -t decision-transformer -n my-agent\n\n# Preview without creating\nnpx agentdb@latest create-plugin -t q-learning --dry-run\n\n# Custom output directory\nnpx agentdb@latest create-plugin -t actor-critic -o .$plugins\n```\n\n### List Available Templates\n\n```bash\n# Show all plugin templates\nnpx agentdb@latest list-templates\n\n# Available templates:\n# - decision-transformer (sequence modeling RL - recommended)\n# - q-learning (value-based learning)\n# - sarsa (on-policy TD learning)\n# - actor-critic (policy gradient with baseline)\n# - curiosity-driven (exploration-based)\n```\n\n### Manage Plugins\n\n```bash\n# List installed plugins\nnpx agentdb@latest list-plugins\n\n# Get plugin information\nnpx agentdb@latest plugin-info my-agent\n\n# Shows: algorithm, configuration, training status\n```\n\n---\n\n## Quick Start with API\n\n```typescript\nimport { createAgentDBAdapter } from 'agentic-flow$reasoningbank';\n\n// Initialize with learning enabled\nconst adapter = await createAgentDBAdapter({\n  dbPath: '.agentdb$learning.db',\n  enableLearning: true,       // Enable learning plugins\n  enableReasoning: true,\n  cacheSize: 1000,\n});\n\n// Store training experience\nawait adapter.insertPattern({\n  id: '',\n  type: 'experience',\n  domain: 'game-playing',\n  pattern_data: JSON.stringify({\n    embedding: await computeEmbedding('state-action-reward'),\n    pattern: {\n      state: [0.1, 0.2, 0.3],\n      action: 2,\n      reward: 1.0,\n   "
+    },
+    {
+      "path": "other/google-analytics-automation-sickn33-antigravity-awesome-/SKILL.md",
+      "name": "google-analytics-automation",
+      "current_category": "other",
+      "llm_category": "integration",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill focuses on automating Google Analytics tasks through Rube MCP (Composio), which involves cross-system connectors and service integrations. It provides workflows for connecting to external services and automating data retrieval.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "45e5cfe4f9a4aedf076f67d02ec13336988395b32436184adf1169760504fad2",
+      "metadata_sha256": "cd88d4ff173f310349b5d4c1f996a0c5194398533c2a1e7f7dc752b9d684cda4",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Automate Google Analytics tasks via Rube MCP (Composio): run reports, list accounts/properties, funnels, pivots, key events. Always search tools first for current schemas.",
+      "content_excerpt": "---\nname: google-analytics-automation\ndescription: \"Automate Google Analytics tasks via Rube MCP (Composio): run reports, list accounts/properties, funnels, pivots, key events. Always search tools first for current schemas.\"\nrisk: critical\nsource: community\ndate_added: \"2026-02-27\"\n---\n\n# Google Analytics Automation via Rube MCP\n\nAutomate Google Analytics 4 (GA4) reporting and property management through Composio's Google Analytics toolkit via Rube MCP.\n\n## Prerequisites\n\n- Rube MCP must be connected (RUBE_SEARCH_TOOLS available)\n- Active Google Analytics connection via `RUBE_MANAGE_CONNECTIONS` with toolkit `google_analytics`\n- Always call `RUBE_SEARCH_TOOLS` first to get current tool schemas\n\n## Setup\n\n**Get Rube MCP**: Add `https://rube.app/mcp` as an MCP server in your client configuration. No API keys needed — just add the endpoint and it works.\n\n\n1. Verify Rube MCP is available by confirming `RUBE_SEARCH_TOOLS` responds\n2. Call `RUBE_MANAGE_CONNECTIONS` with toolkit `google_analytics`\n3. If connection is not ACTIVE, follow the returned auth link to complete Google OAuth\n4. Confirm connection status shows ACTIVE before running any workflows\n\n## Core Workflows\n\n### 1. List Accounts and Properties\n\n**When to use**: User wants to discover available GA4 accounts and properties\n\n**Tool sequence**:\n1. `GOOGLE_ANALYTICS_LIST_ACCOUNTS` - List all accessible GA4 accounts [Required]\n2. `GOOGLE_ANALYTICS_LIST_PROPERTIES` - List properties under an account [Required]\n\n**Key parameters**:\n- `pageSize`: Number of results per page\n- `pageToken`: Pagination token from previous response\n- `filter`: Filter expression for properties (e.g., `parent:accounts/12345`)\n\n**Pitfalls**:\n- Property IDs are numeric strings prefixed with 'properties/' (e.g., 'properties/123456')\n- Account IDs are prefixed with 'accounts/' (e.g., 'accounts/12345')\n- Always list accounts first, then properties under each account\n- Pagination required for organizations with many properties\n\n### 2. Run Standard Reports\n\n**When to use**: User wants to query metrics and dimensions from GA4 data\n\n**Tool sequence**:\n1. `GOOGLE_ANALYTICS_LIST_PROPERTIES` - Get property ID [Prerequisite]\n2. `GOOGLE_ANALYTICS_GET_METADATA` - Discover available dimensions and metrics [Optional]\n3. `GOOGLE_ANALYTICS_CHECK_COMPATIBILITY` - Verify dimension/metric compatibility [Optional]\n4. `GOOGLE_ANALYTICS_RUN_REPORT` - Execute the report query [Required]\n\n**Key parameters**:\n- `property`: Property ID (e.g., 'properties/12345"
+    },
+    {
+      "path": "other/agent-planner-ruvnet-ruflo/SKILL.md",
+      "name": "agent-planner",
+      "current_category": "other",
+      "llm_category": "planning",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is a strategic planning agent responsible for task decomposition, dependency analysis, resource allocation, timeline estimation, and risk assessment, which are core planning activities.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "f26dc1c8f244ea10c0977f2b017b21f8b7da28d28807c0f32a524dd8f9ed73af",
+      "metadata_sha256": "ed150551cb39444eaede2dccdf9b7ce125ca0d39ce00e82a2f8458345d764dbc",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Agent skill for planner - invoke with $agent-planner",
+      "content_excerpt": "---\nname: agent-planner\ndescription: Agent skill for planner - invoke with $agent-planner\n---\n\n---\nname: planner\ntype: coordinator\ncolor: \"#4ECDC4\"\ndescription: Strategic planning and task orchestration agent\ncapabilities:\n  - task_decomposition\n  - dependency_analysis\n  - resource_allocation\n  - timeline_estimation\n  - risk_assessment\npriority: high\nhooks:\n  pre: |\n    echo \"🎯 Planning agent activated for: $TASK\"\n    memory_store \"planner_start_$(date +%s)\" \"Started planning: $TASK\"\n  post: |\n    echo \"✅ Planning complete\"\n    memory_store \"planner_end_$(date +%s)\" \"Completed planning: $TASK\"\n---\n\n# Strategic Planning Agent\n\nYou are a strategic planning specialist responsible for breaking down complex tasks into manageable components and creating actionable execution plans.\n\n## Core Responsibilities\n\n1. **Task Analysis**: Decompose complex requests into atomic, executable tasks\n2. **Dependency Mapping**: Identify and document task dependencies and prerequisites\n3. **Resource Planning**: Determine required resources, tools, and agent allocations\n4. **Timeline Creation**: Estimate realistic timeframes for task completion\n5. **Risk Assessment**: Identify potential blockers and mitigation strategies\n\n## Planning Process\n\n### 1. Initial Assessment\n- Analyze the complete scope of the request\n- Identify key objectives and success criteria\n- Determine complexity level and required expertise\n\n### 2. Task Decomposition\n- Break down into concrete, measurable subtasks\n- Ensure each task has clear inputs and outputs\n- Create logical groupings and phases\n\n### 3. Dependency Analysis\n- Map inter-task dependencies\n- Identify critical path items\n- Flag potential bottlenecks\n\n### 4. Resource Allocation\n- Determine which agents are needed for each task\n- Allocate time and computational resources\n- Plan for parallel execution where possible\n\n### 5. Risk Mitigation\n- Identify potential failure points\n- Create contingency plans\n- Build in validation checkpoints\n\n## Output Format\n\nYour planning output should include:\n\n```yaml\nplan:\n  objective: \"Clear description of the goal\"\n  phases:\n    - name: \"Phase Name\"\n      tasks:\n        - id: \"task-1\"\n          description: \"What needs to be done\"\n          agent: \"Which agent should handle this\"\n          dependencies: [\"task-ids\"]\n          estimated_time: \"15m\"\n          priority: \"high|medium|low\"\n  \n  critical_path: [\"task-1\", \"task-3\", \"task-7\"]\n  \n  risks:\n    - description: \"Potential issue\"\n      mitigation: \"How to handle it"
+    },
+    {
+      "path": "other/todoist-automation-sickn33-antigravity-awesome-/SKILL.md",
+      "name": "todoist-automation",
+      "current_category": "other",
+      "llm_category": "productivity",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill automates Todoist task management, projects, sections, and bulk operations, which is a personal/team workflow automation tool.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "70f36babf597189c190159961a9a12c2da261caa7b93e4e08ce3ff3cbb132b31",
+      "metadata_sha256": "5d241d6bd494d5593995abcb2c8fd31216889cf56abcdce3f5eec87bda46cf58",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Automate Todoist task management, projects, sections, filtering, and bulk operations via Rube MCP (Composio). Always search tools first for current schemas.",
+      "content_excerpt": "---\nname: todoist-automation\ndescription: \"Automate Todoist task management, projects, sections, filtering, and bulk operations via Rube MCP (Composio). Always search tools first for current schemas.\"\nrisk: critical\nsource: community\ndate_added: \"2026-02-27\"\n---\n\n# Todoist Automation via Rube MCP\n\nAutomate Todoist operations including task creation and management, project organization, section management, filtering, and bulk task workflows through Composio's Todoist toolkit.\n\n## Prerequisites\n\n- Rube MCP must be connected (RUBE_SEARCH_TOOLS available)\n- Active Todoist connection via `RUBE_MANAGE_CONNECTIONS` with toolkit `todoist`\n- Always call `RUBE_SEARCH_TOOLS` first to get current tool schemas\n\n## Setup\n\n**Get Rube MCP**: Add `https://rube.app/mcp` as an MCP server in your client configuration. No API keys needed — just add the endpoint and it works.\n\n1. Verify Rube MCP is available by confirming `RUBE_SEARCH_TOOLS` responds\n2. Call `RUBE_MANAGE_CONNECTIONS` with toolkit `todoist`\n3. If connection is not ACTIVE, follow the returned auth link to complete Todoist OAuth\n4. Confirm connection status shows ACTIVE before running any workflows\n\n## Core Workflows\n\n### 1. Create and Manage Tasks\n\n**When to use**: User wants to create, update, complete, reopen, or delete tasks\n\n**Tool sequence**:\n1. `TODOIST_GET_ALL_PROJECTS` - List projects to find the target project ID [Prerequisite]\n2. `TODOIST_GET_ALL_SECTIONS` - List sections within a project for task placement [Optional]\n3. `TODOIST_CREATE_TASK` - Create a single task with content, due date, priority, labels [Required]\n4. `TODOIST_BULK_CREATE_TASKS` - Create multiple tasks in one request [Alternative]\n5. `TODOIST_UPDATE_TASK` - Modify task properties (content, due date, priority, labels) [Optional]\n6. `TODOIST_CLOSE_TASK` - Mark a task as completed [Optional]\n7. `TODOIST_REOPEN_TASK` - Restore a previously completed task [Optional]\n8. `TODOIST_DELETE_TASK` - Permanently remove a task [Optional]\n\n**Key parameters for CREATE_TASK**:\n- `content`: Task title (supports markdown and hyperlinks)\n- `description`: Additional notes (do NOT put due dates here)\n- `project_id`: Alphanumeric project ID; omit to add to Inbox\n- `section_id`: Alphanumeric section ID for placement within a project\n- `parent_id`: Task ID for creating subtasks\n- `priority`: 1 (normal) to 4 (urgent) -- note: Todoist UI shows p1=urgent, API p4=urgent\n- `due_string`: Natural language date like `\"tomorrow at 3pm\"`, `\"every Friday at 9am\"`\n- `due_"
+    },
+    {
+      "path": "other/azure-storage-blob-rust/SKILL.md",
+      "name": "azure-storage-blob-rust",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill provides a Rust SDK for Azure Blob Storage, which is a cloud storage API client library.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "6882d599e3b0f2b96a5b558d28d9d4e5fc39c9e15e8fd3ee61a5d0c83c5ede4a",
+      "metadata_sha256": "4ce9d01dde9bb3571bddbbf2c17a4f5511e715063e9a2cccc5d28186709607d5",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Azure Blob Storage SDK for Rust. Use for uploading, downloading, and managing blobs and containers.",
+      "content_excerpt": "---\nname: azure-storage-blob-rust\ndescription: Azure Blob Storage SDK for Rust. Use for uploading, downloading, and managing blobs and containers.\nrisk: unknown\nsource: community\ndate_added: '2026-02-27'\n---\n\n# Azure Blob Storage SDK for Rust\n\nClient library for Azure Blob Storage — Microsoft's object storage solution for the cloud.\n\n## Installation\n\n```sh\ncargo add azure_storage_blob azure_identity\n```\n\n## Environment Variables\n\n```bash\nAZURE_STORAGE_ACCOUNT_NAME=<storage-account-name>\n# Endpoint: https://<account>.blob.core.windows.net/\n```\n\n## Authentication\n\n```rust\nuse azure_identity::DeveloperToolsCredential;\nuse azure_storage_blob::{BlobClient, BlobClientOptions};\n\nlet credential = DeveloperToolsCredential::new(None)?;\nlet blob_client = BlobClient::new(\n    \"https://<account>.blob.core.windows.net/\",\n    \"container-name\",\n    \"blob-name\",\n    Some(credential),\n    Some(BlobClientOptions::default()),\n)?;\n```\n\n## Client Types\n\n| Client | Purpose |\n|--------|---------|\n| `BlobServiceClient` | Account-level operations, list containers |\n| `BlobContainerClient` | Container operations, list blobs |\n| `BlobClient` | Individual blob operations |\n\n## Core Operations\n\n### Upload Blob\n\n```rust\nuse azure_core::http::RequestContent;\n\nlet data = b\"hello world\";\nblob_client\n    .upload(\n        RequestContent::from(data.to_vec()),\n        false,  // overwrite\n        u64::try_from(data.len())?,\n        None,\n    )\n    .await?;\n```\n\n### Download Blob\n\n```rust\nlet response = blob_client.download(None).await?;\nlet content = response.into_body().collect_bytes().await?;\nprintln!(\"Content: {:?}\", content);\n```\n\n### Get Blob Properties\n\n```rust\nlet properties = blob_client.get_properties(None).await?;\nprintln!(\"Content-Length: {:?}\", properties.content_length);\n```\n\n### Delete Blob\n\n```rust\nblob_client.delete(None).await?;\n```\n\n## Container Operations\n\n```rust\nuse azure_storage_blob::BlobContainerClient;\n\nlet container_client = BlobContainerClient::new(\n    \"https://<account>.blob.core.windows.net/\",\n    \"container-name\",\n    Some(credential),\n    None,\n)?;\n\n// Create container\ncontainer_client.create(None).await?;\n\n// List blobs\nlet mut pager = container_client.list_blobs(None)?;\nwhile let Some(blob) = pager.try_next().await? {\n    println!(\"Blob: {}\", blob.name);\n}\n```\n\n## Best Practices\n\n1. **Use Entra ID auth** — `DeveloperToolsCredential` for dev, `ManagedIdentityCredential` for production\n2. **Specify content length** — required for uploads\n3. **Use `RequestContent"
+    },
+    {
+      "path": "other/ad-lead-quality-analyzer/SKILL.md",
+      "name": "ad-lead-quality-analyzer",
+      "current_category": "other",
+      "llm_category": "marketing",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill focuses on analyzing paid lead-generation and participant-recruitment ads, replacing vanity CPA with true CAC per qualified lead, joining ad-platform data with downstream funnel events, and classifying creatives into actionable buckets. This is squarely within marketing analytics and optimization workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "e6cf215c470d878fbb427fa2fe1bb22bb75ac6cd0370cb14b24501da66b8034f",
+      "metadata_sha256": "3a0b08dd9585504e40c03541fab3b8799a02b9b20b3ce2f8f8478e85d59f08fb",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "For paid lead-gen and participant-recruitment ads, replaces vanity CPA with true CAC per qualified lead by joining ad-platform data with downstream funnel events, surfaces tracking gaps, and classifies every creative into Scale / Keep / Investigate / Cut.",
+      "content_excerpt": "---\nname: ad-lead-quality-analyzer\ndescription: For paid lead-gen and participant-recruitment ads, replaces vanity CPA with true CAC per qualified lead by joining ad-platform data with downstream funnel events, surfaces tracking gaps, and classifies every creative into Scale / Keep / Investigate / Cut.\ntags: [ads]\n---\n\n# Ad Lead Quality Analyzer\n\nMeta optimizes for whatever conversion event you fire. For lead-gen and participant-recruitment campaigns that's almost always \"signup\" — but a signup is worthless if the lead never qualifies, never completes the requested action, or never gets paid out. The lowest-CPA campaign is often the one bringing in the *worst* leads.\n\nThis skill joins what the ad platform knows (spend, signups) with what your own product knows (downstream funnel) and replaces vanity CPA with **true CAC per qualified lead**. It then classifies every creative into actionable buckets so you stop scaling the wrong winners.\n\n**Core principle:** The ad platform's CPA is a half-truth. Real optimization needs both halves of the funnel — pre-signup (the platform has it) and post-signup (you have it). Until they're joined, you're flying blind.\n\n## When to Use\n\n- \"Which ads are bringing in real leads vs. junk?\"\n- \"True CAC per qualified contributor / customer / participant\"\n- \"Why is my lowest-CPA campaign performing worst downstream?\"\n- \"Audit lead quality across creatives / audiences / placements\"\n- \"Should I trust Meta's CPA when scaling?\"\n- \"Find the creatives that look like winners but aren't\"\n\n## Pipeline Pattern Assumptions (Read First)\n\nThis skill is opinionated about **what** to measure (true CAC per qualified lead, with cohort maturation, with vanity scoring) and agnostic about **how** the data is sourced.\n\nIt assumes one of three standard attribution patterns:\n\n| Pattern | Setup | Join Key |\n|---|---|---|\n| **A. UTM-only** *(most common)* | UTM params captured on signup form, stored on lead/user record. Downstream events joined by user_id inside your DB. | `utm_content` (typically the ad ID) on both sides, or `fbclid` |\n| **B. UTM + CAPI send-back** *(best)* | Same as A, plus your app fires Conversions API events back to Meta when downstream stages hit. Meta then optimizes for quality, not signups. | `event_id` / `external_id` |\n| **C. Meta Lead Ads + CRM sync** | Meta-hosted lead form, `lead_id` syncs to CRM/DB, joined there. | `lead_id` |\n\nIf none of these patterns is wired up, the skill switches to **`tracking-gap` mode** — it produces "
+    },
+    {
+      "path": "other/hunt-auth-bypass-elementalsouls-claude-bughunter/SKILL.md",
+      "name": "hunt-auth-bypass",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.98,
+      "status": "ok",
+      "reason": "The skill is explicitly about hunting for authentication bypass vulnerabilities, which is a core security domain. It covers SAML, JWT, OAuth, and other authentication mechanisms.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "6cc62fcf829e8010ac0c97771fc17ac7118bc78295a8dbdf0010fa032758155b",
+      "metadata_sha256": "57fe0b8011e273c73d30d980de6b48bc26030a5201fb140e996a299dd2cd00ea",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Hunting skill for auth bypass vulnerabilities. Built from 12 public bug bounty reports across SAML XSW / parser-differential (GitHub Enterprise CVE-2025-25291/25292), SAML signature stripping (Uber, Rocket.Chat, samlify CVE-2025-47949), SAML domain enforcement bypass via control characters (HackerOne 2024), partner-portal cross-IdP assertion reuse (Slack), WordPress XMLRPC bypassing SSO (Uber), JWT alg-confusion HS256/RS256 (Jitsi), JWT signature-validation skip (Linktree, Newspack), and token-audience confusion (Argo CD CVE-2023-22482). Use when hunting auth bypass — see the Legacy-Protocol Matrix for branded-UI vs legacy-endpoint patterns.",
+      "content_excerpt": "---\nname: hunt-auth-bypass\ndescription: Hunting skill for auth bypass vulnerabilities. Built from 12 public bug bounty reports across SAML XSW / parser-differential (GitHub Enterprise CVE-2025-25291/25292), SAML signature stripping (Uber, Rocket.Chat, samlify CVE-2025-47949), SAML domain enforcement bypass via control characters (HackerOne 2024), partner-portal cross-IdP assertion reuse (Slack), WordPress XMLRPC bypassing SSO (Uber), JWT alg-confusion HS256/RS256 (Jitsi), JWT signature-validation skip (Linktree, Newspack), and token-audience confusion (Argo CD CVE-2023-22482). Use when hunting auth bypass — see the Legacy-Protocol Matrix for branded-UI vs legacy-endpoint patterns.\nsources: github, hackerone_public, github_security_lab, projectdiscovery_research\nreport_count: 12\n---\n\n## Crown Jewel Targets\n\nAuth bypass is consistently one of the highest-paying vulnerability classes in bug bounty because it directly violates the most fundamental security control. High-value targets include:\n\n- **SSO/SAML implementations** at enterprise SaaS companies (Slack, Okta, OneLogin integrations) — payouts regularly in the $5K–$25K+ range\n- **Admin panels and partner/internal portals** — subdomain-separated admin surfaces like `partners.shopify.com`, `admin.company.com`\n- **Third-party auth plugin integrations** — WordPress plugins (OneLogin, WP-SAML-Auth), Drupal SSO modules, any CMS with pluggable auth\n- **XMLRPC endpoints** on WordPress — often forgotten, bypasses standard WP auth flows entirely\n- **OAuth callback flows** — state parameter mishandling, redirect_uri mismatches\n- **API authentication layers** — especially where auth was bolted on after the fact\n\n**Asset priority:** Targets with federated identity (SAML, OAuth, OIDC) connected to large user populations. Partner/reseller portals are particularly juicy because they often have elevated permissions and less security scrutiny than the main product.\n\n---\n\n## Attack Surface Signals\n\n**URL patterns to hunt:**\n```\n/xmlrpc.php\n/wp-login.php\n/saml/\n/sso/\n/auth/saml/callback\n/oauth/callback\n/partners.*\n/admin.*\n/?wc-api=\n/api/v*/auth\n/login?redirect=\n/accounts/login\n```\n\n**Response headers signaling SSO:**\n```\nX-Frame-Options: SAMEORIGIN (common on SSO portals)\nSet-Cookie: SAMLResponse=\nLocation: https://idp.company.com/saml\nWWW-Authenticate: Bearer realm=\"partners\"\n```\n\n**JS patterns indicating federated auth:**\n```javascript\n// Look for in page source\nsamlRequest\nRelayState\nSAMLResponse\nonelogin\nshibboleth\nokta"
+    },
+    {
+      "path": "other/code-format/SKILL.md",
+      "name": "code-format",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill converts Lanhu HTML/CSS output into project frontend code for Vue, React, or detected stacks, with component reuse and design token mapping. This is a software development workflow involving coding and frameworks.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "3b5cf201a1646e1ec811aa1ad5d76b0324a9e46389296392f5bfbea5515814f1",
+      "metadata_sha256": "0b07a2fcaaef2e0a3289ac669592f751976633c21d1e62ab5cb1d4c372e1e146",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Convert Lanhu HTML/CSS output into project frontend code for Vue, React, or the detected stack, with component reuse and design token mapping.",
+      "content_excerpt": "---\nname: code-format\ndescription: Convert Lanhu HTML/CSS output into project frontend code for Vue, React, or the detected stack, with component reuse and design token mapping.\nmodel: sonnet\n---\n\n# code-format\n\n**核心原则：优先复用，禁止猜测。禁止省略代码。**\n\n## 模式判断\n\n调用方（design-to-code）会传入意图参数，根据意图选择模式：\n\n| 意图参数 | 模式 |\n|---------|------|\n| `新建` | 模式 A：生成新文件 |\n| `改造:src/pages/xxx/index.vue` | 模式 B：修改现有文件 |\n\n## 执行步骤\n\n### 1. 读取上下文（动代码前必须全部读完）\n\n按以下优先级查找每类文档，找到第一个即用：\n\n| 用途 | 优先 | 兜底顺序 |\n|------|------|---------|\n| 技术栈 | `README.md` | → `CLAUDE.md` → `package.json` |\n| 组件文档 | `docs/components.md` | → `docs/` 下含 \"Props\"/\"组件\" 的 .md |\n| 编码规范 | `docs/dev-spec.md` | → `docs/` 下含 \"命名规范\"/\"开发规范\" 的 .md → 扫描 `src/` 推断 |\n| 交互逻辑 | `docs/tech-spec.md` | → 无则全部标 TODO |\n\n**调用方（design-to-code）会传入 CONTEXT_FILES，直接使用传入路径，不必自己查找。**\n\n文件缺失时的降级策略见 → `fallback-guide.md`\n\n### 2. 分析蓝湖产物\n\n读取 `.claude/lanhu-output/<页面名称>/index.html`，列出主要 UI 元素（不写代码）。\n\n### 3. 组件映射\n\n对每个 UI 元素查组件文档：\n- 有完全匹配 → 直接用，传正确 props\n- 有近似组件 → 用现有组件 + 自定义 class\n- 确认没有 → 按 dev-spec 新建，标记为\"新增组件\"\n\n常见映射失败案例见 → `failure-patterns.md`\n\n### 4. 补全交互逻辑\n\n从 `docs/tech-spec.md` 取：API 路径、状态处理、格式化规则。\n找不到的用 `// TODO: 待确认` 标记，**不自行发明**。\n\n---\n\n## 模式 A：新建页面\n\n按步骤 1-4 读取上下文后，生成完整新文件。\n\n输出目录：`src/pages/<页面名>/` 或 `src/views/<页面名>/`（以 dev-spec 为准）。\n\n**硬性约束：**\n- 写完整代码，不允许 `// ... rest of component` 等占位\n- 颜色/间距/字号精确匹配蓝湖数据\n- 图片用 `assets/` 中的实际文件路径\n\n---\n\n## 模式 B：改造现有页面\n\n按步骤 1-4 读取上下文后：\n\n**额外步骤 B1：读取现有文件**\n\n读取调用方传入的现有文件路径（如 `src/pages/home/index.vue`），完整理解现有代码。\n\n**额外步骤 B2：列出变更范围**\n\n对比设计稿与现有代码，明确列出（不写代码）：\n```\n变更项：\n- [新增] 顶部渐变背景区域\n- [修改] 余额显示区域：字号从 24px 改为 32px，颜色从 #333 改为 #fff\n- [删除] 右上角设置入口\n- [保留] 底部 TabBar（现有代码不动）\n- [保留] 所有 API 调用逻辑（不动）\n```\n\n等用户确认变更范围后再写代码。\n\n**额外步骤 B3：定向修改**\n\n只修改变更项，保留：\n- 现有业务逻辑（API 调用、事件处理、状态管理）\n- 现有注释和 TODO\n- 未变更的 UI 区域\n\n每处修改标注原因，格式：`// [design-to-code] 按设计稿更新：xxx`\n\n---\n\n### 5. 输出摘要\n\n```\n✓ 生成/修改文件：[列表]\n✓ 复用组件：[列表]\n⚠ 新增组件：[列表]（需 review）\n⚠ TODO 项：[列表]\n```\n"
+    },
+    {
+      "path": "other/additive-bias-defense/SKILL.md",
+      "name": "additive-bias-defense",
+      "current_category": "other",
+      "llm_category": "quality",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill focuses on code quality and scrutiny, inverting the burden of proof for additions to prevent unnecessary complexity and maintain standards.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "8ff8e0e74fc60e428e4465ccda3f30ff473948a1c1f8106a610a07a576644f69",
+      "metadata_sha256": "9f10b2622265347c05ad30508f00a5bc536cfdd673237848839e54065edac6c6",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "Inverts burden of proof for code additions.",
+      "content_excerpt": "---\nname: additive-bias-defense\ndescription: 'Inverts burden of proof for code additions.'\nalwaysApply: false\ncategory: quality-contract\ntags:\n- additive-bias\n- burden-of-proof\n- scrutiny\n- cross-cutting\n- defense\ndependencies: []\ntools: []\nprovides:\n  guidance:\n  - additive-bias-scrutiny\n  - burden-of-proof-verdict\nusage_patterns:\n- plan-review\n- pr-review\n- code-refinement\n- unbloat\ncomplexity: foundational\nmodel_hint: standard\nestimated_tokens: 800\nrole: library\n---\n\n> The default answer to \"should we add this?\" is no.\n> The burden of proof is on the addition.\n\n# Additive Bias Defense\n\n> **Note (#444):** Frontmatter declares ``provides.guidance``, not\n> ``provides.contract``. The scrutiny questions are consumed by\n> partner skills (``pensive:code-refinement``, ``conserve:unbloat``,\n> ``imbue:scope-guard``) that voluntarily embed them; no validator or\n> hook in leyline enforces them directly. If a future contributor\n> adds enforcement, restore the ``contract`` label and link the\n> validator path here.\n\n## The Problem\n\nLLMs are additive by nature. They reinvent wheels, add\nunnecessary complexity, hallucinate issues and modify\ntests to justify them, and deviate from priorities. This\ncontract provides a systemic defense.\n\n## The Scrutiny Questions\n\nApplied to every proposed addition -- code, files,\nabstractions, error handling, configuration:\n\n1. **Priority alignment**: Is this a deviation from the\n   current priority?\n2. **Criticality**: Is it critical to implement at this\n   juncture?\n3. **Simplicity**: Does a simpler or more elegant\n   solution exist?\n4. **Evidence**: What evidence proves this is needed\n   (not assumed)?\n5. **Consequence**: What breaks if we do not add this?\n\nIf the proposer cannot answer questions 4 and 5 with\nconcrete evidence, the addition is unjustified.\n\n## Anti-Pattern Detection\n\n| Pattern | Signal | Challenge |\n|---------|--------|-----------|\n| Wheel reinvention | New utility/helper overlapping existing code | \"Does X already do this?\" |\n| Hallucinated issues | Fix for a bug with no reproduction evidence | \"Show the failing test before the fix\" |\n| Test manipulation | Test changed to match behavior rather than spec | \"Did the spec change, or did you change the test?\" |\n| Complexity creep | Abstraction introduced for single use case | \"Is this the 3rd use, or the 1st?\" |\n| Priority deviation | Work not traceable to current task/spec | \"Which requirement does this serve?\" |\n| Gold plating | Error handling or flexibility beyond need"
+    },
+    {
+      "path": "other/agent-specification-ruvnet-ruflo/SKILL.md",
+      "name": "agent-specification",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly named 'agent-specification' and its description states it is an 'Agent skill for specification'. The content describes a specialized agent for the SPARC methodology's specification phase, including agent-specific hooks and capabilities.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "348c1f1f5a33fcc309ddbfea48e5ec1e2e64c04ce88f11c14bcc5e656b2b59e4",
+      "metadata_sha256": "bd8a0c47a97b98011d44e73231fda78500a56badfade60f00506f424b94e6149",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Agent skill for specification - invoke with $agent-specification",
+      "content_excerpt": "---\nname: agent-specification\ndescription: Agent skill for specification - invoke with $agent-specification\n---\n\n---\nname: specification\ntype: analyst\ncolor: blue\ndescription: SPARC Specification phase specialist for requirements analysis\ncapabilities:\n  - requirements_gathering\n  - constraint_analysis\n  - acceptance_criteria\n  - scope_definition\n  - stakeholder_analysis\npriority: high\nsparc_phase: specification\nhooks:\n  pre: |\n    echo \"📋 SPARC Specification phase initiated\"\n    memory_store \"sparc_phase\" \"specification\"\n    memory_store \"spec_start_$(date +%s)\" \"Task: $TASK\"\n  post: |\n    echo \"✅ Specification phase complete\"\n    memory_store \"spec_complete_$(date +%s)\" \"Specification documented\"\n---\n\n# SPARC Specification Agent\n\nYou are a requirements analysis specialist focused on the Specification phase of the SPARC methodology. Your role is to create comprehensive, clear, and testable specifications.\n\n## SPARC Specification Phase\n\nThe Specification phase is the foundation of SPARC methodology, where we:\n1. Define clear, measurable requirements\n2. Identify constraints and boundaries\n3. Create acceptance criteria\n4. Document edge cases and scenarios\n5. Establish success metrics\n\n## Specification Process\n\n### 1. Requirements Gathering\n\n```yaml\nspecification:\n  functional_requirements:\n    - id: \"FR-001\"\n      description: \"System shall authenticate users via OAuth2\"\n      priority: \"high\"\n      acceptance_criteria:\n        - \"Users can login with Google/GitHub\"\n        - \"Session persists for 24 hours\"\n        - \"Refresh tokens auto-renew\"\n      \n  non_functional_requirements:\n    - id: \"NFR-001\"\n      category: \"performance\"\n      description: \"API response time <200ms for 95% of requests\"\n      measurement: \"p95 latency metric\"\n    \n    - id: \"NFR-002\"\n      category: \"security\"\n      description: \"All data encrypted in transit and at rest\"\n      validation: \"Security audit checklist\"\n```\n\n### 2. Constraint Analysis\n\n```yaml\nconstraints:\n  technical:\n    - \"Must use existing PostgreSQL database\"\n    - \"Compatible with Node.js 18+\"\n    - \"Deploy to AWS infrastructure\"\n    \n  business:\n    - \"Launch by Q2 2024\"\n    - \"Budget: $50,000\"\n    - \"Team size: 3 developers\"\n    \n  regulatory:\n    - \"GDPR compliance required\"\n    - \"SOC2 Type II certification\"\n    - \"WCAG 2.1 AA accessibility\"\n```\n\n### 3. Use Case Definition\n\n```yaml\nuse_cases:\n  - id: \"UC-001\"\n    title: \"User Registration\"\n    actor: \"New User\"\n    preconditions:\n      - \"User has valid email\""
+    },
+    {
+      "path": "other/finalize-tobihagemann-turbo-4/SKILL.md",
+      "name": "finalize",
+      "current_category": "other",
+      "llm_category": "quality",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill describes a post-implementation QA workflow including tests, code polishing, review, and commit. This aligns with quality assurance processes.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "ef881b3bf4b296f7d4b6ff498c69381e4063d36610a213f648004b7ca1e7a382",
+      "metadata_sha256": "2a7ee1d561ec5d6d9c5cacdbf59621a643fd8d86e2d982d92560de792e60e72b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Run the post-implementation quality assurance workflow including tests, code polishing, review, and commit. Use when the user asks to \"finalize implementation\", \"finalize changes\", \"wrap up implementation\", \"finish up\", \"ready to commit\", or \"run QA workflow\".",
+      "content_excerpt": "---\nname: finalize\ndescription: \"Run the post-implementation quality assurance workflow including tests, code polishing, review, and commit. Use when the user asks to \\\"finalize implementation\\\", \\\"finalize changes\\\", \\\"wrap up implementation\\\", \\\"finish up\\\", \\\"ready to commit\\\", or \\\"run QA workflow\\\".\"\n---\n\n# Finalize Implementation\n\nPost-implementation QA workflow: tests, code polishing, commit, and self-improvement.\n\n## Task Tracking\n\nAt the start, use `update_plan` to track each phase:\n\n1. Run `$polish-code` skill\n2. Run `$simplify-docs` skill\n3. Run `$update-changelog` skill\n4. Run `$self-improve` skill\n5. Ship It\n\n## Phase 1: Run `$polish-code` Skill\n\nRun the `$polish-code` skill for the current changes.\n\n## Phase 2: Run `$simplify-docs` Skill\n\nRun the `$simplify-docs` skill on the staged changes (`git diff --cached`). Stage any edits it makes before continuing.\n\n## Phase 3: Run `$update-changelog` Skill\n\nRun the `$update-changelog` skill.\n\n## Phase 4: Run `$self-improve` Skill\n\nRun the `$self-improve` skill for the current session. Always run this phase even if the session seemed routine.\n\n## Phase 5: Ship It\n\n### Step 1: Analyze Split\n\nExamine the staged changes and evaluate whether they should be split into multiple commits, branches, and PRs for reviewability.\n\nDetect the repository's default branch via `gh repo view --json defaultBranchRef --jq '.defaultBranchRef.name'`. Check the current branch name and whether a PR already exists for it using `gh pr view`. If a PR exists, read its title and description to understand the branch's purpose. This context informs which changes belong on the current branch and which should be split off.\n\nRun `git diff --cached --stat` and `git diff --cached` to understand the scope. Categorize changes along three dimensions:\n\n- **Concern type**: refactoring, bug fix, new feature, cleanup, dependency update\n- **Layer/domain**: backend, frontend, database migrations, i18n, tests, configuration\n- **Logical unit**: files that form a coherent, independently reviewable change\n\nA split is warranted when the staged changes contain multiple reviewable units. Each unit should be independently understandable, testable, and revertable. When deciding group boundaries, consider whether a reviewer could evaluate each group without needing context from the others.\n\n### Step 2: Present Analysis and Choose Path\n\nOutput the split analysis as text.\n\nIf changes form a single cohesive unit, note this and run the `$ship` skill.\n\nIf chan"
+    },
+    {
+      "path": "other/nestjs-expert-sickn33-antigravity-awesome-/SKILL.md",
+      "name": "nestjs-expert",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly an expert guide for Nest.js, a Node.js framework for building enterprise-grade applications. It covers architecture, dependency injection, testing, and database integration, which are core software development topics.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "4a7253cfa046ca8f5536a92a855e2a37b120bcc6a4d147fa26166e3248930a57",
+      "metadata_sha256": "d3fa4c297d69cd54aa68fcf77c67ea1290b698fbb743e584dbe1b5533ffae361",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "You are an expert in Nest.js with deep knowledge of enterprise-grade Node.js application architecture, dependency injection patterns, decorators, middleware, guards, interceptors, pipes, testing strategies, database integration, and authentication systems.",
+      "content_excerpt": "---\nname: nestjs-expert\ndescription: \"You are an expert in Nest.js with deep knowledge of enterprise-grade Node.js application architecture, dependency injection patterns, decorators, middleware, guards, interceptors, pipes, testing strategies, database integration, and authentication systems.\"\ncategory: framework\nrisk: unknown\nsource: community\ndate_added: \"2026-02-27\"\n---\n\n# Nest.js Expert\n\nYou are an expert in Nest.js with deep knowledge of enterprise-grade Node.js application architecture, dependency injection patterns, decorators, middleware, guards, interceptors, pipes, testing strategies, database integration, and authentication systems.\n\n### When invoked:\n\n0. If a more specialized expert fits better, recommend switching and stop:\n   - Pure TypeScript type issues → typescript-type-expert\n   - Database query optimization → database-expert  \n   - Node.js runtime issues → nodejs-expert\n   - Frontend React issues → react-expert\n   \n   Example: \"This is a TypeScript type system issue. Use the typescript-type-expert subagent. Stopping here.\"\n\n1. Detect Nest.js project setup using internal tools first (Read, Grep, Glob)\n2. Identify architecture patterns and existing modules\n3. Apply appropriate solutions following Nest.js best practices\n4. Validate in order: typecheck → unit tests → integration tests → e2e tests\n\n## Domain Coverage\n\n### Module Architecture & Dependency Injection\n- Common issues: Circular dependencies, provider scope conflicts, module imports\n- Root causes: Incorrect module boundaries, missing exports, improper injection tokens\n- Solution priority: 1) Refactor module structure, 2) Use forwardRef, 3) Adjust provider scope\n- Tools: `nest generate module`, `nest generate service`\n- Resources: [Nest.js Modules](https://docs.nestjs.com/modules), [Providers](https://docs.nestjs.com/providers)\n\n### Controllers & Request Handling\n- Common issues: Route conflicts, DTO validation, response serialization\n- Root causes: Decorator misconfiguration, missing validation pipes, improper interceptors\n- Solution priority: 1) Fix decorator configuration, 2) Add validation, 3) Implement interceptors\n- Tools: `nest generate controller`, class-validator, class-transformer\n- Resources: [Controllers](https://docs.nestjs.com/controllers), [Validation](https://docs.nestjs.com/techniques/validation)\n\n### Middleware, Guards, Interceptors & Pipes\n- Common issues: Execution order, context access, async operations\n- Root causes: Incorrect implementation, missing async/awa"
+    },
+    {
+      "path": "other/xai-check-haabe-mycelium/SKILL.md",
+      "name": "xai-check",
+      "current_category": "other",
+      "llm_category": "ai-ml",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is an Explainability (XAI) audit for AI components, covering AI Act risk tiers, system cards, and AI-specific validation—core AI/ML governance and responsible AI concerns.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "06201b630b93e57948894bb8e797db72418eb16e938067d0ec27655bc77f09d8",
+      "metadata_sha256": "03779515060ca07cf01509f297ff9aec2b2eb9e3fa1646a7d52ff30385daf278",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Explainability (XAI) audit for products containing AI components. Five-stage tier-scaled check: risk classification, stakeholder×question matrix, fidelity audit, system card, recourse path. Honest about what was validated functionally vs what needs user testing.",
+      "content_excerpt": "---\nname: xai-check\ndescription: \"Explainability (XAI) audit for products containing AI components. Five-stage tier-scaled check: risk classification, stakeholder×question matrix, fidelity audit, system card, recourse path. Honest about what was validated functionally vs what needs user testing.\"\nmetadata:\n  instruction_budget: \"60\"\n  framework_dependency: \"mycelium\"\n  framework_dependency_note: \"This skill is designed to run within the Mycelium framework (https://github.com/haabe/mycelium). Standalone use will skip the canvas state, theory gates, and harness behavior the skill assumes. Install: /plugin install mycelium@haabe/mycelium.\"\n---\n\n# XAI Check Skill\n\nOperational gate for the Explainability Theory Gate (Gate 13). Audits whether a product's AI components meet a defensible XAI bar — disclosure, decision-explanation, recourse, fidelity, system card — scaled to the AI Act risk tier.\n\nThis skill is **functionally-grounded** in Doshi-Velez & Kim's (2017) sense: it operates on artifacts and configuration, not on real users with real tasks. Output explicitly distinguishes `validated_functionally` from `needs_user_testing`. The honest tag is what passes Gate 13; user-grounded validation is recommended but not blocking.\n\n## When to Use\n\n- L3 Define→Develop or Develop→Deliver, **only when `active-stack.yml :: ai_components.detected: true`**\n- L4 Develop→Deliver — required when AI components reach user-affecting decisions (deny, recommend, rank, generate user-shown content)\n- L5 Develop→Deliver — required for any user-facing AI feature at launch\n- After any change to AI components, prompts, or surfaces that affect user-facing decisions\n- When Gate 13 is checked during `/mycelium:diamond-progress`\n\n## Precondition: AI components detected\n\nRead `${CLAUDE_PLUGIN_ROOT}/jit-tooling/active-stack.yml` (Step 1c output of `delivery-bootstrap` per `${CLAUDE_PLUGIN_ROOT}/jit-tooling/detector.md`).\n\n- If `ai_components.detected` is missing or `false`: report **\"No AI components detected — XAI Gate N/A. Run `/mycelium:delivery-bootstrap` if you believe AI is present but undetected.\"** Stop.\n- If `ai_components.detected: true` but `user_facing_decisions: unknown` (Step 6 confirmation never answered): prompt the user explicitly: *\"This product has AI components, but it's not on record whether their outputs reach end users in a user-affecting way. Does the AI's output deny / recommend / rank / generate content shown to users, or otherwise drive their experience?\"* Do not pro"
+    },
+    {
+      "path": "other/fec-testing-strategy-bovinphang-frontend-craft/SKILL.md",
+      "name": "fec-testing-strategy",
+      "current_category": "other",
+      "llm_category": "testing",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is about planning and reviewing frontend testing strategy, selecting test layers by risk, and mapping coverage across different testing types (unit, component, integration, E2E, visual regression, a11y, security, performance).",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "0d85e121b071e1979934729bcedf6e71e984d1d6575f9d829187597ccbb742a8",
+      "metadata_sha256": "ca2d19271fc64b4c25ece910e6e818ea9c2aa4f500f469456a76da82ae4eb867",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when planning or reviewing a frontend testing strategy, selecting the right test layer by risk, mapping coverage across static checks, unit tests, component tests, integration tests, E2E, Storybook/visual regression, a11y, security, performance, or CI gates. Do not use to write individual component/E2E tests or merely run existing validation commands; Chinese triggers include 测试策略, 测试分层, 测试计划, 覆盖矩阵.",
+      "content_excerpt": "---\nname: fec-testing-strategy\ndescription: Use when planning or reviewing a frontend testing strategy, selecting the right test layer by risk, mapping coverage across static checks, unit tests, component tests, integration tests, E2E, Storybook/visual regression, a11y, security, performance, or CI gates. Do not use to write individual component/E2E tests or merely run existing validation commands; Chinese triggers include 测试策略, 测试分层, 测试计划, 覆盖矩阵.\n---\n\n# 前端测试策略\n\n## Purpose\n\n按“离代码多近 / 覆盖风险层级”选择测试方法，避免把所有风险都塞进组件测试或 E2E。\n\n## Procedure\n\n1. 识别改动类型：纯逻辑、UI 组件、跨模块流程、浏览器能力、视觉稳定性、专项质量风险或发布门禁。\n2. 建立测试层级矩阵，至少区分：\n   - 静态检查：TypeScript、ESLint、格式、依赖安全、构建。\n   - 单元测试：utils、hooks/composables、状态逻辑、schema、纯函数。\n   - 组件测试：props/emits、用户交互、loading/error/empty、mock 边界。\n   - 轻量集成测试：表单 + API mock + 路由/Store/Provider 上下文。\n   - E2E：真实浏览器、跨页面关键旅程、鉴权、支付、权限、CI artifacts。\n   - 视觉/交互文档：Storybook interaction、Chromatic、视觉回归基线。\n   - 专项质量：a11y、安全、性能、兼容性。\n3. 按风险分配覆盖：高频核心路径优先 E2E，复杂组件状态优先组件测试，纯逻辑优先单元测试，跨 provider 协作用轻量集成测试。\n4. 检查是否已有命令、测试框架、目录约定和 CI 门禁；沿用项目现状，不为策略文档引入不必要工具。\n5. 输出可执行的最小测试计划：每层覆盖什么、不覆盖什么、优先级、建议命令和责任 skill。\n\n## Constraints\n\n- 不把测试策略写成泛泛的“多写测试”；每个建议必须对应具体风险。\n- 不要求所有项目都补齐完整测试金字塔；按业务风险和团队维护能力裁剪。\n- 不把 E2E 当作单元/组件测试的替代品；不把组件测试当作真实浏览器兼容保证。\n- 不为小改动强制引入新框架；优先复用仓库已有工具和脚本。\n\n## Expected Output\n\n输出测试分层建议、风险到测试层的映射、优先级、建议命令、需新增或调整的测试文件范围，以及明确分流到哪些专项 skill 或 agent。\n\n"
+    },
+    {
+      "path": "other/12-dotnet-jwt-authentication/SKILL.md",
+      "name": "dotnet-jwt-authentication",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill configures JWT Bearer authentication for .NET APIs, including token generation, validation, refresh tokens, and security audit tracking.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "8f6fe01d61f0a7d352b10ec7fe45f476dba4aff10c3ccd9a59fb8cda1de1fe29",
+      "metadata_sha256": "22f01e990684125ae60af01bd9ba0e25c81b905df186f47ee92126480ccab5e4",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Configures JWT Bearer authentication for .NET APIs. Includes token generation, validation, refresh tokens, and user context extraction from claims.",
+      "content_excerpt": "---\nname: dotnet-jwt-authentication\ndescription: \"Configures JWT Bearer authentication for .NET APIs. Includes token generation, validation, refresh tokens, and user context extraction from claims.\"\nversion: 1.1.0\nlanguage: C#\nframework: .NET 8+\ndependencies: Microsoft.AspNetCore.Authentication.JwtBearer, System.IdentityModel.Tokens.Jwt\n---\n\n# JWT Authentication Setup\n\n## Overview\n\nThis skill implements JWT (JSON Web Token) authentication for .NET APIs:\n\n- **Access Token** - Short-lived JWT returned in response body\n- **Refresh Token** - Stored in HttpOnly cookie (secure, not accessible via JavaScript)\n- **Options Pattern** - Configurable expiration via JwtOptions\n- **Token Rotation** - New refresh token issued on each refresh\n- **Security Audit** - Comprehensive event tracking for compliance\n- **Token generation** - Create access and refresh tokens\n- **Token validation** - Validate incoming tokens\n- **User context** - Extract user info from claims\n\n## Quick Reference\n\n| Component | Purpose | Location |\n|-----------|---------|----------|\n| `IJwtService` | Token generation interface | Application/Abstractions |\n| `JwtService` | Token generation implementation | Infrastructure/Authentication |\n| `JwtOptions` | configuration (expiration, issuer, etc.) | Infrastructure/Authentication |\n| `JwtBearerOptionsSetup` | Configure JWT validation | Infrastructure/Authentication |\n| `IUserContext` | Current user info | Application/Abstractions |\n| `UserContext` | Extract from HttpContext | Infrastructure/Authentication |\n| `IRefreshTokenRepository` | Refresh token storage | Domain/Identity |\n| `CookieSettings` | Cookie configuration | Infrastructure/Authentication |\n\n---\n\n## Authentication Structure\n\n```\n/Application/Abstractions/\n├── Authentication/\n│   ├── IJwtService.cs\n│   ├── IUserContext.cs\n│   ├── TokenResponse.cs\n│   └── AuthenticationErrors.cs\n\n/Infrastructure/\n├── Authentication/\n│   ├── JwtOptions.cs\n│   ├── JwtService.cs\n│   ├── JwtBearerOptionsSetup.cs\n│   ├── UserContext.cs\n│   ├── CookieSettings.cs\n│   └── RefreshTokenCookieManager.cs\n```\n\n---\n\n## Template: JWT Configuration Options\n\n```csharp\n// src/{name}.infrastructure/Authentication/JwtOptions.cs\nnamespace {name}.infrastructure.authentication;\n\npublic sealed class JwtOptions\n{\n    public const string SectionName = \"Jwt\";\n\n    public string Issuer { get; init; } = string.Empty;\n    public string Audience { get; init; } = string.Empty;\n    public string SecretKey { get; init; } = string.Empty;\n    publi"
+    },
+    {
+      "path": "other/usability-check-haabe-mycelium/SKILL.md",
+      "name": "usability-check",
+      "current_category": "other",
+      "llm_category": "design",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill evaluates user-facing interfaces against usability heuristics, which is a core part of UI/UX design and interaction design.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "0e337b7f876190e772b42d0b956cddb8dd494c7a57eed12b69984181244de883",
+      "metadata_sha256": "6fe93c342cf7b3b2ce4642b345bf5925c67ce3b011c0e4aae8517da6fd07fdf5",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Evaluate user-facing interfaces against Nielsen's 10 Usability Heuristics. Complements /mycelium:service-check (Downe = service-level quality, Nielsen = interface-level quality).",
+      "content_excerpt": "---\nname: usability-check\ndescription: \"Evaluate user-facing interfaces against Nielsen's 10 Usability Heuristics. Complements /mycelium:service-check (Downe = service-level quality, Nielsen = interface-level quality).\"\nmetadata:\n  instruction_budget: \"45\"\n  framework_dependency: \"mycelium\"\n  framework_dependency_note: \"This skill is designed to run within the Mycelium framework (https://github.com/haabe/mycelium). Standalone use will skip the canvas state, theory gates, and harness behavior the skill assumes. Install: /plugin install mycelium@haabe/mycelium.\"\n---\n\n# Usability Heuristic Evaluation\n\nEvaluate interface-level usability using Jakob Nielsen's 10 heuristics (1994). This complements Downe's 15 Good Services principles: Downe checks end-to-end SERVICE quality, Nielsen checks screen-level INTERFACE quality. Both are needed for user-facing work.\n\n## When to Use\n- During L4 Delivery for any user-facing work (REVIEW via G-V10)\n- After UI implementation, before marking delivery complete\n- When users report confusion or friction\n\n## The 10 Heuristics\n\n### 1. Visibility of System Status\nThe system should always keep users informed about what is going on through timely and appropriate feedback.\n- [ ] Loading states visible for any operation > 1 second\n- [ ] Progress indicators for multi-step processes\n- [ ] Success/failure feedback for user actions\n- [ ] Current location/state clearly indicated (breadcrumbs, active nav)\n\n### 2. Match Between System and Real World\nThe system should speak the users' language, using familiar words, phrases, and concepts rather than system-oriented terms.\n- [ ] No technical jargon in user-facing text\n- [ ] Familiar icons and metaphors\n- [ ] Information in natural, logical order\n- [ ] Real-world conventions followed (calendar = dates, cart = shopping)\n\n### 3. User Control and Freedom\nUsers often perform actions by mistake. They need a clearly marked \"emergency exit\" to leave the unwanted action.\n- [ ] Undo/redo available for destructive actions\n- [ ] Cancel option in all multi-step flows\n- [ ] Back button works as expected\n- [ ] Easy to return to a known state\n\n### 4. Consistency and Standards\nUsers should not have to wonder whether different words, situations, or actions mean the same thing.\n- [ ] Same action = same word everywhere (don't mix \"delete\" and \"remove\")\n- [ ] Platform conventions followed (OS patterns, web standards)\n- [ ] Internal consistency (same patterns across all screens)\n- [ ] Visual consistency (colors, ty"
+    },
+    {
+      "path": "other/agent-orchestration-bbgnsurftech-claude-skills-collec-2/SKILL.md",
+      "name": "agent-orchestration",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill provides a scientific delegation framework for orchestrator AIs coordinating specialist sub-agents, which is a core agent orchestration pattern.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "16c91428d22d6e0505c4a1ecd346e22e0ad962970e0ee357b0a45bf85448ef81",
+      "metadata_sha256": "627bfe853f7222755fcb47eef3438a046a72d07cd23f8e0b91a192ec6d78fbb2",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "This skill should be used when the model's ROLE_TYPE is orchestrator and needs to delegate tasks to specialist sub-agents. Provides scientific delegation framework ensuring world-building context (WHERE, WHAT, WHY) while preserving agent autonomy in implementation decisions (HOW). Use when planning task delegation, structuring sub-agent prompts, or coordinating multi-agent workflows.",
+      "content_excerpt": "---\nname: agent-orchestration\ndescription: This skill should be used when the model's ROLE_TYPE is orchestrator and needs to delegate tasks to specialist sub-agents. Provides scientific delegation framework ensuring world-building context (WHERE, WHAT, WHY) while preserving agent autonomy in implementation decisions (HOW). Use when planning task delegation, structuring sub-agent prompts, or coordinating multi-agent workflows.\n---\n\n# Agent Orchestration\n\n## Overview\n\nThis skill provides a scientific delegation framework for orchestrator AIs coordinating specialist sub-agents. Apply this framework to structure task delegation that enables agents to follow the scientific method (observation → hypothesis → prediction → experimentation → verification → conclusion) while maintaining clear boundaries between strategic direction (orchestrator) and tactical implementation (agent).\n\n## Core Principle\n\n**Provide world-building context (WHERE, WHAT, WHY). Define success criteria. Trust agent expertise for implementation (HOW).**\n\nThe orchestrator's role is to:\n\n- Route context and observations between user and agents\n- Define measurable success criteria\n- Enable comprehensive discovery\n- Trust agent expertise and their 200k context windows\n\n**Reason**: Sub-agents are specialized experts with full tool access. Prescribing implementation limits their ability to discover better solutions and prevents them from applying their domain expertise effectively.\n\n## Scientific Method Alignment\n\nStructure delegation to enable agents to follow the scientific method:\n\n1. **Observation** → Provide factual observations, not interpretations\n2. **Hypothesis** → Let agent form their own hypothesis\n3. **Prediction** → Let agent make testable predictions\n4. **Experimentation** → Let agent design and execute tests\n5. **Verification** → Let agent verify against official sources\n6. **Conclusion** → Let agent determine if hypothesis is rejected\n\n**Reason**: Agents apply the scientific method most effectively when they receive observations and success criteria rather than pre-formed conclusions and prescribed steps.\n\n## Pre-Delegation Verification Checklist\n\nBefore delegating any task to a sub-agent, verify the delegation includes:\n\n✅ **Observations without assumptions**\n\n- Raw error messages already in context (verbatim, not paraphrased)\n- Observed locations (file:line references where errors/issues/patterns were seen by you or reported by user)\n- Command outputs you already received during y"
+    },
+    {
+      "path": "other/hunt-oauth-elementalsouls-claude-bughunter/SKILL.md",
+      "name": "hunt-oauth",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Skill is explicitly about hunting OAuth vulnerabilities for bug bounty, covering attack surfaces, payloads, and exploitation techniques for web security testing.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "cc4e0d809fb85f4be3784fa1f34cd3b24d0c15b204023a6c16c75fcdcaeffd59",
+      "metadata_sha256": "d7298aaac5458d3841d6bc39777e6332fabd47768aa18d2c3a38b61840c35fe8",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Hunting skill for oauth vulnerabilities. Built from 19 public bug bounty reports. Use when hunting oauth on any target.",
+      "content_excerpt": "---\nname: hunt-oauth\ndescription: Hunting skill for oauth vulnerabilities. Built from 19 public bug bounty reports. Use when hunting oauth on any target.\nsources: github, hackerone_public, salt_labs, descope, detectify_labs, harel_research\nreport_count: 19\n---\n\n## Crown Jewel Targets\n\nOAuth vulnerabilities are among the highest-value bug classes in web security because they directly enable **account takeover, session theft, and authentication bypass** — the trifecta that programs pay most for.\n\n**Highest-value targets:**\n- **Consumer identity providers** (Google, Facebook, PayPal, Apple SSO integrations) — any compromise cascades across all relying parties\n- **Mobile apps with custom deep link OAuth handlers** — Android/iOS intent handling is notoriously loose\n- **Multi-tenant SaaS platforms** (GitLab, Reddit-scale apps) where one OAuth flaw hits millions of accounts\n- **Gaming/entertainment platforms** with federated login (Rockstar, Oculus) — often security-immature teams\n- **Enterprise SSO connectors** — critical infrastructure, high severity payouts\n\n**Asset types that pay most:**\n- OAuth authorization endpoints (`/oauth/authorize`, `/connect/authorize`)\n- Token exchange endpoints (`/oauth/token`)\n- Mobile deep link handlers (`push_notification_webview`, custom scheme URIs)\n- Social login callback handlers (`/auth/callback`, `/oauth/callback`)\n\n**Typical payouts:** $500–$20,000+ depending on program; account takeover findings often hit max bounty.\n\n---\n\n## Attack Surface Signals\n\n### URL Patterns to Hunt\n```\n/oauth/authorize\n/oauth/token\n/connect/authorize\n/auth/callback\n/oauth/callback\n/login?redirect_uri=\n/signin?next=\n/auth?return_to=\n/oauth/redirect\n/push_notification_webview\n```\n\n### Response Headers That Signal OAuth\n```\nLocation: https://accounts.example.com/oauth/...\nSet-Cookie: oauth_state=\nWWW-Authenticate: Bearer\nContent-Type: application/json (with access_token in body)\n```\n\n### JavaScript Patterns (grep in JS bundles)\n```javascript\nredirect_uri\nclient_id\nresponse_type=code\nresponse_type=token\nstate=\nnonce=\noauth_token\naccess_token\npush_notification_webview\ndeeplink\nintent://\n```\n\n### Tech Stack Signals\n- Android apps with `intent-filter` in `AndroidManifest.xml` handling `http://` or custom scheme URIs\n- Apps using Doorkeeper, OmniAuth, Devise (Ruby), Passport.js (Node), Spring Security OAuth\n- Social login buttons (Google, Facebook, Apple) = OAuth surface guaranteed\n- `.well-known/openid-configuration` present = full OIDC surface availabl"
+    },
+    {
+      "path": "other/react-best-practices-sickn33-antigravity-awesome-/SKILL.md",
+      "name": "react-best-practices",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Another React best practices skill focused on performance optimization for React and Next.js applications. This is a software development skill for frontend engineering.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "75a1cf7ee1d59f56604b4db52d3cb680d1bfdbe5b064f6abc7acf8ba30acc1d3",
+      "metadata_sha256": "04b3e4ce67644b12d8014a98ec38ea44568a3df3de947c61f81c88709b7682cd",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Comprehensive performance optimization guide for React and Next.js applications, maintained by Vercel. Use when writing new React components or Next.js pages, implementing data fetching (client or server-side), or reviewing code for performance issues.",
+      "content_excerpt": "---\nname: react-best-practices\ndescription: \"Comprehensive performance optimization guide for React and Next.js applications, maintained by Vercel. Use when writing new React components or Next.js pages, implementing data fetching (client or server-side), or reviewing code for performance issues.\"\nrisk: safe\nsource: community\ndate_added: \"2026-02-27\"\n---\n\n# Vercel React Best Practices\n\nComprehensive performance optimization guide for React and Next.js applications, maintained by Vercel. Contains 45 rules across 8 categories, prioritized by impact to guide automated refactoring and code generation.\n\n## When to Use\nReference these guidelines when:\n- Writing new React components or Next.js pages\n- Implementing data fetching (client or server-side)\n- Reviewing code for performance issues\n- Refactoring existing React/Next.js code\n- Optimizing bundle size or load times\n\n## Rule Categories by Priority\n\n| Priority | Category | Impact | Prefix |\n|----------|----------|--------|--------|\n| 1 | Eliminating Waterfalls | CRITICAL | `async-` |\n| 2 | Bundle Size Optimization | CRITICAL | `bundle-` |\n| 3 | Server-Side Performance | HIGH | `server-` |\n| 4 | Client-Side Data Fetching | MEDIUM-HIGH | `client-` |\n| 5 | Re-render Optimization | MEDIUM | `rerender-` |\n| 6 | Rendering Performance | MEDIUM | `rendering-` |\n| 7 | JavaScript Performance | LOW-MEDIUM | `js-` |\n| 8 | Advanced Patterns | LOW | `advanced-` |\n\n## Quick Reference\n\n### 1. Eliminating Waterfalls (CRITICAL)\n\n- `async-defer-await` - Move await into branches where actually used\n- `async-parallel` - Use Promise.all() for independent operations\n- `async-dependencies` - Use better-all for partial dependencies\n- `async-api-routes` - Start promises early, await late in API routes\n- `async-suspense-boundaries` - Use Suspense to stream content\n\n### 2. Bundle Size Optimization (CRITICAL)\n\n- `bundle-barrel-imports` - Import directly, avoid barrel files\n- `bundle-dynamic-imports` - Use next/dynamic for heavy components\n- `bundle-defer-third-party` - Load analytics/logging after hydration\n- `bundle-conditional` - Load modules only when feature is activated\n- `bundle-preload` - Preload on hover/focus for perceived speed\n\n### 3. Server-Side Performance (HIGH)\n\n- `server-cache-react` - Use React.cache() for per-request deduplication\n- `server-cache-lru` - Use LRU cache for cross-request caching\n- `server-serialization` - Minimize data passed to client components\n- `server-parallel-fetching` - Restructure components to para"
+    },
+    {
+      "path": "other/agentdb-memory-patterns-ruvnet-ruflo/SKILL.md",
+      "name": "AgentDB Memory Patterns",
+      "current_category": "other",
+      "llm_category": "ai-llm",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill provides memory management patterns for AI agents using AgentDB, focusing on persistent storage, session memory, long-term storage, pattern learning, and context management for stateful agents and chat systems. This aligns with AI/LLM agent development and memory systems.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "371f684ca87ce841447681cbd7d1a06bf833d9f060e7e026f32e5c0f54172327",
+      "metadata_sha256": "a99fa1398dbc1ae6bfc14d730df44292dbe2e1449e2dad6e9cf34c70394d3b22",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Implement persistent memory patterns for AI agents using AgentDB. Includes session memory, long-term storage, pattern learning, and context management. Use when building stateful agents, chat systems, or intelligent assistants.",
+      "content_excerpt": "---\nname: \"AgentDB Memory Patterns\"\ndescription: \"Implement persistent memory patterns for AI agents using AgentDB. Includes session memory, long-term storage, pattern learning, and context management. Use when building stateful agents, chat systems, or intelligent assistants.\"\n---\n\n# AgentDB Memory Patterns\n\n## What This Skill Does\n\nProvides memory management patterns for AI agents using AgentDB's persistent storage and ReasoningBank integration. Enables agents to remember conversations, learn from interactions, and maintain context across sessions.\n\n**Performance**: 150x-12,500x faster than traditional solutions with 100% backward compatibility.\n\n## Prerequisites\n\n- Node.js 18+\n- AgentDB v1.0.7+ (via agentic-flow or standalone)\n- Understanding of agent architectures\n\n## Quick Start with CLI\n\n### Initialize AgentDB\n\n```bash\n# Initialize vector database\nnpx agentdb@latest init .$agents.db\n\n# Or with custom dimensions\nnpx agentdb@latest init .$agents.db --dimension 768\n\n# Use preset configurations\nnpx agentdb@latest init .$agents.db --preset large\n\n# In-memory database for testing\nnpx agentdb@latest init .$memory.db --in-memory\n```\n\n### Start MCP Server for Claude Code\n\n```bash\n# Start MCP server (integrates with Claude Code)\nnpx agentdb@latest mcp\n\n# Add to Claude Code (one-time setup)\nclaude mcp add agentdb npx agentdb@latest mcp\n```\n\n### Create Learning Plugin\n\n```bash\n# Interactive plugin wizard\nnpx agentdb@latest create-plugin\n\n# Use template directly\nnpx agentdb@latest create-plugin -t decision-transformer -n my-agent\n\n# Available templates:\n# - decision-transformer (sequence modeling RL)\n# - q-learning (value-based learning)\n# - sarsa (on-policy TD learning)\n# - actor-critic (policy gradient)\n# - curiosity-driven (exploration-based)\n```\n\n## Quick Start with API\n\n```typescript\nimport { createAgentDBAdapter } from 'agentic-flow$reasoningbank';\n\n// Initialize with default configuration\nconst adapter = await createAgentDBAdapter({\n  dbPath: '.agentdb$reasoningbank.db',\n  enableLearning: true,      // Enable learning plugins\n  enableReasoning: true,      // Enable reasoning agents\n  quantizationType: 'scalar', // binary | scalar | product | none\n  cacheSize: 1000,            // In-memory cache\n});\n\n// Store interaction memory\nconst patternId = await adapter.insertPattern({\n  id: '',\n  type: 'pattern',\n  domain: 'conversation',\n  pattern_data: JSON.stringify({\n    embedding: await computeEmbedding('What is the capital of France?'),\n    pattern: {\n      use"
+    },
+    {
+      "path": "other/agent-migration-plan-finimo-solutions-research/SKILL.md",
+      "name": "agent-migration-plan",
+      "current_category": "other",
+      "llm_category": "planning",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Identical to id 1, this skill is a migration planner with planning-focused capabilities, making 'planning' the most appropriate category.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "8443b2abf46585eded1b39c0529c42bc32aca29aa6626a298cca0b352e66561b",
+      "metadata_sha256": "5fed433efcd55c8854d41ec97cbfc2de37d9e8df2beab4a3d860d1f0d458400e",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Agent skill for migration-plan - invoke with $agent-migration-plan",
+      "content_excerpt": "---\nname: agent-migration-plan\ndescription: Agent skill for migration-plan - invoke with $agent-migration-plan\n---\n\n---\nname: migration-planner\ntype: planning\ncolor: red\ndescription: Comprehensive migration plan for converting commands to agent-based system\ncapabilities:\n  - migration-planning\n  - system-transformation\n  - agent-mapping\n  - compatibility-analysis\n  - rollout-coordination\npriority: medium\nhooks:\n  pre: |\n    echo \"📋 Agent System Migration Planner activated\"\n    echo \"🔄 Analyzing current command structure for migration\"\n    # Check existing command structure\n    if [ -d \".claude$commands\" ]; then\n      echo \"📁 Found existing command directory - will map to agents\"\n      find .claude$commands -name \"*.md\" | wc -l | xargs echo \"Commands to migrate:\"\n    fi\n  post: |\n    echo \"✅ Migration planning completed\"\n    echo \"📊 Agent mapping strategy defined\"\n    echo \"🚀 Ready for systematic agent system rollout\"\n---\n\n# Claude Flow Commands to Agent System Migration Plan\n\n## Overview\nThis document provides a comprehensive migration plan to convert existing .claude$commands to the new agent-based system. Each command is mapped to an equivalent agent with defined roles, responsibilities, capabilities, and tool access restrictions.\n\n## Agent Definition Format\nEach agent uses YAML frontmatter with the following structure:\n```yaml\n---\nrole: agent-type\nname: Agent Display Name\nresponsibilities:\n  - Primary responsibility\n  - Secondary responsibility\ncapabilities:\n  - capability-1\n  - capability-2\ntools:\n  allowed:\n    - tool-name\n  restricted:\n    - restricted-tool\ntriggers:\n  - pattern: \"regex pattern\"\n    priority: high|medium|low\n  - keyword: \"activation keyword\"\n---\n```\n\n## Migration Categories\n\n### 1. Coordination Agents\n\n#### Swarm Initializer Agent\n**Command**: `.claude$commands$coordination$init.md`\n```yaml\n---\nrole: coordinator\nname: Swarm Initializer\nresponsibilities:\n  - Initialize agent swarms with optimal topology\n  - Configure distributed coordination systems\n  - Set up inter-agent communication channels\ncapabilities:\n  - swarm-initialization\n  - topology-optimization\n  - resource-allocation\n  - network-configuration\ntools:\n  allowed:\n    - mcp__claude-flow__swarm_init\n    - mcp__claude-flow__topology_optimize\n    - mcp__claude-flow__memory_usage\n    - TodoWrite\n  restricted:\n    - Bash\n    - Write\n    - Edit\ntriggers:\n  - pattern: \"init.*swarm|create.*swarm|setup.*agents\"\n    priority: high\n  - keyword: \"swarm-init\"\n---\n```\n\n#### Agent Spawner"
+    },
+    {
+      "path": "other/skill-auditor-boshu2-agentops-2/SKILL.md",
+      "name": "skill-auditor",
+      "current_category": "other",
+      "llm_category": "quality",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Audits SKILL.md files against a template with 15 checks, performing quality review and validation of skill artifacts.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "4a19f3704407899826cf0c5f4f14b2573df69bb9cdac970382345154d6fafb19",
+      "metadata_sha256": "76518e82582019f56eaed3c1545857677ad61748dbba0814cee4a04b96db04a8",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Audit an existing SKILL.md against the unified AgentOps template (15 checks). Triggers: \"audit skill\", \"skill quality review\", \"is this skill ready\".",
+      "content_excerpt": "---\nname: skill-auditor\ndescription: 'Audit an existing SKILL.md against the unified AgentOps template (15\n  checks). Triggers: \"audit skill\", \"skill quality review\", \"is this skill ready\".'\npractices:\n- code-complete\n- cmm-process-maturity\n- design-by-contract\nhexagonal_role: supporting\nconsumes: []\nproduces:\n- result.json\ncontext_rel: []\nskill_api_version: 1\nuser-invocable: true\ncontext:\n  window: fork\n  intent:\n    mode: task\n  sections:\n    exclude:\n    - HISTORY\n    - INTEL\n  intel_scope: topic\nmetadata:\n  tier: meta\n  dependencies:\n  - heal-skill\n  stability: experimental\noutput_contract: skills/skill-auditor/schemas/audit-report.json\n---\n\n# /skill-auditor — Three-pass skill quality audit\n\nValidates a skill's SKILL.md against the unified AgentOps template. Pass 1\nwraps `heal-skill` for structural hygiene; Pass 2 adds 8 content-discipline\nchecks not covered by heal; Pass 3 folds the 10-category Skill Quality Rubric\n(`docs/reference/skill-quality-rubric.md`) into the report as a deterministic\n0-30 productization score (advisory). The report also includes an advisory\nContext Density Rule block for intent, boundary, evidence, decision,\nconstraint, and next action coverage.\n\n## ⚠️ Critical Constraints\n\n- **Auditor is read-only.** Reports findings; never modifies the target. **Why:** PR-002 (external validation) — the auditor must remain a separate gate from the implementer. To repair findings: use `heal-skill --fix` for Pass-1 issues, hand-edit for Pass-2 issues.\n- **Pass 1 delegates, never reimplements.** The auditor calls `/heal-skill --check <target>` and parses its output. **Why:** PR-006 (cross-layer consistency) — heal-skill's checks are the source of truth for structural hygiene; reimplementation creates drift.\n- **Pass 2 must accept AgentOps' existing conventions.** Specifically `description-has-triggers` accepts THREE valid forms (YAML `|` block scalar OR `Triggers:`/`Use when:` markers OR `metadata.triggers` array with 3+ items). **Why:** finding `f-2026-05-06-auditor-checks-must-fit-host-conventions` — auditor checks must validate against the host substrate's existing valid artifacts before promotion to required gate.\n- **Verdict aggregation rule:** any check returns `fail` → FAIL; otherwise any returns `warn` → WARN; otherwise PASS. **Why:** prevents silent severity downgrade.\n- **Density coverage is advisory-only.** Missing density fields never changes\n  the PASS/WARN/FAIL verdict and does not satisfy packet-boundary enforcement\n  in `soc-2c1"
+    },
+    {
+      "path": "other/python-error-handling/SKILL.md",
+      "name": "python-error-handling",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill focuses on Python error handling patterns, which is a core software development practice for building robust applications.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "796346a50615010c4fea52ecb93784ebf232c5d4c9f0691bfc668529d9592543",
+      "metadata_sha256": "64b7edfee5e81a801916d1385908215f969f6c89c9280e6fe337944a0e097277",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Python error handling patterns including input validation, exception hierarchies, and partial failure handling. Use when implementing validation logic, designing exception strategies, handling batch processing failures, or building robust APIs.",
+      "content_excerpt": "---\nname: python-error-handling\ndescription: Python error handling patterns including input validation, exception hierarchies, and partial failure handling. Use when implementing validation logic, designing exception strategies, handling batch processing failures, or building robust APIs.\n---\n\n# Python Error Handling\n\nBuild robust Python applications with proper input validation, meaningful exceptions, and graceful failure handling. Good error handling makes debugging easier and systems more reliable.\n\n## When to Use This Skill\n\n- Validating user input and API parameters\n- Designing exception hierarchies for applications\n- Handling partial failures in batch operations\n- Converting external data to domain types\n- Building user-friendly error messages\n- Implementing fail-fast validation patterns\n\n## Core Concepts\n\n### 1. Fail Fast\n\nValidate inputs early, before expensive operations. Report all validation errors at once when possible.\n\n### 2. Meaningful Exceptions\n\nUse appropriate exception types with context. Messages should explain what failed, why, and how to fix it.\n\n### 3. Partial Failures\n\nIn batch operations, don't let one failure abort everything. Track successes and failures separately.\n\n### 4. Preserve Context\n\nChain exceptions to maintain the full error trail for debugging.\n\n## Quick Start\n\n```python\ndef fetch_page(url: str, page_size: int) -> Page:\n    if not url:\n        raise ValueError(\"'url' is required\")\n    if not 1 <= page_size <= 100:\n        raise ValueError(f\"'page_size' must be 1-100, got {page_size}\")\n    # Now safe to proceed...\n```\n\n## Fundamental Patterns\n\n### Pattern 1: Early Input Validation\n\nValidate all inputs at API boundaries before any processing begins.\n\n```python\ndef process_order(\n    order_id: str,\n    quantity: int,\n    discount_percent: float,\n) -> OrderResult:\n    \"\"\"Process an order with validation.\"\"\"\n    # Validate required fields\n    if not order_id:\n        raise ValueError(\"'order_id' is required\")\n\n    # Validate ranges\n    if quantity <= 0:\n        raise ValueError(f\"'quantity' must be positive, got {quantity}\")\n\n    if not 0 <= discount_percent <= 100:\n        raise ValueError(\n            f\"'discount_percent' must be 0-100, got {discount_percent}\"\n        )\n\n    # Validation passed, proceed with processing\n    return _process_validated_order(order_id, quantity, discount_percent)\n```\n\n### Pattern 2: Convert to Domain Types Early\n\nParse strings and external data into typed domain objects at system boundaries.\n\n"
+    },
+    {
+      "path": "other/agentica-spawn-vibeeval-vibecosystem/SKILL.md",
+      "name": "agentica-spawn",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Identical to id 1 and 2 - same skill about spawning multi-agent patterns for parallel agent execution.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "245ba85626edb37b01179213b4169e56ffa458207d15f299f07d2382ec9a8a6b",
+      "metadata_sha256": "5979491c44171976e8428988530da8d23b87bb55ced0727a58d02ad82999ce22",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Spawn Agentica multi-agent patterns",
+      "content_excerpt": "---\nname: agentica-spawn\ndescription: Spawn Agentica multi-agent patterns\nuser-invocable: false\n---\n\n# Agentica Spawn Skill\n\nUse this skill after user selects an Agentica pattern.\n\n## When to Use\n\n- After agentica-orchestrator prompts user for pattern selection\n- When user explicitly requests a multi-agent pattern (swarm, hierarchical, etc.)\n- When implementing complex tasks that benefit from parallel agent execution\n- For research tasks requiring multiple perspectives (use Swarm)\n- For implementation tasks requiring coordination (use Hierarchical)\n- For iterative refinement (use Generator/Critic)\n- For high-stakes validation (use Jury)\n\n## Pattern Selection to Spawn Method\n\n### Swarm (Research/Explore)\n```python\nswarm = Swarm(\n    perspectives=[\n        \"Security expert analyzing for vulnerabilities\",\n        \"Performance expert optimizing for speed\",\n        \"Architecture expert reviewing design\"\n    ],\n    aggregate_mode=AggregateMode.MERGE,\n)\nresult = await swarm.execute(task_description)\n```\n\n### Hierarchical (Build/Implement)\n```python\nhierarchical = Hierarchical(\n    coordinator_premise=\"You break tasks into subtasks\",\n    specialist_premises={\n        \"planner\": \"You create implementation plans\",\n        \"implementer\": \"You write code\",\n        \"reviewer\": \"You review code for issues\"\n    },\n)\nresult = await hierarchical.execute(task_description)\n```\n\n### Generator/Critic (Iterate/Refine)\n```python\ngc = GeneratorCritic(\n    generator_premise=\"You generate solutions\",\n    critic_premise=\"You critique and suggest improvements\",\n    max_rounds=3,\n)\nresult = await gc.run(task_description)\n```\n\n### Jury (Validate/Verify)\n```python\njury = Jury(\n    num_jurors=5,\n    consensus_mode=ConsensusMode.MAJORITY,\n    premise=\"You evaluate the solution\"\n)\nverdict = await jury.decide(bool, question)\n```\n\n## Environment Variables\n\nAll spawned agents receive:\n- `SWARM_ID`: Unique identifier for this swarm run\n- `AGENT_ROLE`: Role within the pattern (coordinator, specialist, etc.)\n- `PATTERN_TYPE`: Which pattern is running\n"
+    },
+    {
+      "path": "other/0-autoresearch-skill/SKILL.md",
+      "name": "autoresearch",
+      "current_category": "other",
+      "llm_category": "orchestration",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill orchestrates autonomous AI research projects using a two-loop architecture, managing the full research lifecycle and routing to domain-specific skills for execution.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "b7ca0d7a6e905da85a8b494d3fe398ac78eaa278854f67b50a34f2b37a9a2b78",
+      "metadata_sha256": "5013be639d3a143d5832deeb4dcad960f6ace3b4f7fcb800c0a3f340c9612dbf",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "Orchestrates end-to-end autonomous AI research projects using a two-loop architecture. The inner loop runs rapid experiment iterations with clear optimization targets. The outer loop synthesizes results, identifies patterns, and steers research direction. Routes to domain-specific skills for execution, supports continuous agent operation via Claude Code /loop and OpenClaw heartbeat, and produces research presentations and papers. Use when starting a research project, running autonomous experiments, or managing a multi-hypothesis research effort.",
+      "content_excerpt": "---\nname: autoresearch\ndescription: Orchestrates end-to-end autonomous AI research projects using a two-loop architecture. The inner loop runs rapid experiment iterations with clear optimization targets. The outer loop synthesizes results, identifies patterns, and steers research direction. Routes to domain-specific skills for execution, supports continuous agent operation via Claude Code /loop and OpenClaw heartbeat, and produces research presentations and papers. Use when starting a research project, running autonomous experiments, or managing a multi-hypothesis research effort.\nversion: 1.0.0\nauthor: Orchestra Research\nlicense: MIT\ntags: [Autonomous Research, Two-Loop Architecture, Experiment Orchestration, Research Synthesis, Project Management]\n---\n\n# Autoresearch\n\nAutonomous research orchestration for AI coding agents. You manage the full research lifecycle — from literature survey to published paper — by maintaining structured state, running a two-loop experiment-synthesis cycle, and routing to domain-specific skills for execution.\n\nYou are a research project manager, not a domain expert. You orchestrate; the domain skills execute.\n\n**This runs fully autonomously.** Do not ask the user for permission or confirmation — use your best judgment and keep moving. Show the human your progress frequently through research presentations (HTML/PDF) so they can see what you're doing and redirect if needed. The human is asleep or busy; your job is to make as much research progress as possible on your own.\n\n## Getting Started\n\nUsers arrive in different states. Determine which and proceed:\n\n| User State | What to Do |\n|---|---|\n| Vague idea (\"I want to explore X\") | Brief discussion to clarify, then bootstrap |\n| Clear research question | Bootstrap directly |\n| Existing plan or proposal | Review plan, set up workspace, enter loops |\n| Resuming (research-state.yaml exists) | Read state, continue from where you left off |\n\nIf things are clear, don't over-discuss — proceed to full autoresearch. Most users want you to just start researching.\n\n**Step 0 — before anything else**: Set up the agent continuity loop. See [Agent Continuity](#agent-continuity-mandatory--set-up-first). This is MANDATORY. Without it, the research stops after one cycle.\n\n### Initialize Workspace\n\nCreate this structure at the project root:\n\n```\n{project}/\n├── research-state.yaml       # Central state tracking\n├── research-log.md           # Decision timeline\n├── findings.md               # Evolvin"
+    },
+    {
+      "path": "other/typescript-a5c-ai-babysitter/SKILL.md",
+      "name": "typescript",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is about TypeScript configuration, strict mode, generics, and type utilities, which are core software development concerns. It provides guidance for coding, frameworks, and type-safe API design.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "4972dfef19e0969ea4cf3129e13c6af7cc3ce4a22ac58b3491bfff9dc85c98a7",
+      "metadata_sha256": "1eaf813cbe77c464804f938662ca1de28c3f2bda9ced47fbb9669091491b0851",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "TypeScript configuration, strict mode, generics, and type utilities.",
+      "content_excerpt": "---\nname: typescript\ndescription: TypeScript configuration, strict mode, generics, and type utilities.\nallowed-tools: Read, Write, Edit, Bash, Glob, Grep\n---\n\n# TypeScript Skill\n\nExpert assistance for TypeScript configuration and patterns.\n\n## Capabilities\n\n- Configure tsconfig\n- Implement strict typing\n- Create utility types\n- Handle generics\n- Design type-safe APIs\n\n## Configuration\n\n```json\n// tsconfig.json\n{\n  \"compilerOptions\": {\n    \"strict\": true,\n    \"noUncheckedIndexedAccess\": true,\n    \"exactOptionalPropertyTypes\": true,\n    \"noImplicitReturns\": true,\n    \"noFallthroughCasesInSwitch\": true,\n    \"moduleResolution\": \"bundler\",\n    \"esModuleInterop\": true,\n    \"skipLibCheck\": true\n  }\n}\n```\n\n## Utility Types\n\n```typescript\n// Extract, Omit, Pick\ntype UserWithoutPassword = Omit<User, 'password'>;\n\n// Conditional types\ntype NonNullable<T> = T extends null | undefined ? never : T;\n\n// Mapped types\ntype Readonly<T> = { readonly [P in keyof T]: T[P] };\n```\n\n## Target Processes\n\n- typescript-setup\n- type-safety\n- api-design\n"
+    },
+    {
+      "path": "other/agentica-server-parcadei-continuous-claude-v3-2/SKILL.md",
+      "name": "agentica-server",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill describes setting up and debugging an Agentica server with Claude proxy for multi-agent systems, focusing on agent infrastructure and orchestration.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "c99ab347111dc609f046543aee19643d1f169c60c67a25f676ddad4c4663094a",
+      "metadata_sha256": "2b3aee1d10d897c924c8e3a235cd52d3cdf63aab32dad7e0ab5934eb43681cea",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Agentica server + Claude proxy setup - architecture, startup sequence, debugging",
+      "content_excerpt": "---\nname: agentica-server\ndescription: Agentica server + Claude proxy setup - architecture, startup sequence, debugging\nallowed-tools: [Bash, Read]\nuser-invocable: false\n---\n\n# Agentica Server + Claude Proxy Setup\n\nComplete reference for running Agentica SDK with a local Claude proxy. This enables Python agents to use Claude CLI as their inference backend.\n\n## When to Use\n\nUse this skill when:\n- Starting Agentica development with Claude proxy\n- Debugging connection issues between SDK, server, and proxy\n- Setting up a fresh Agentica environment\n- Troubleshooting agent tool access or hallucination issues\n\n## Architecture\n\n```\nAgentica SDK (client code)\n    | S_M_BASE_URL=http://localhost:2345\n    v\nClientSessionManager\n    |\n    v\nAgentica Server (agentica-server)\n    | INFERENCE_ENDPOINT_URL=http://localhost:8080/v1/chat/completions\n    v\nClaude Proxy (claude_proxy.py)\n    |\n    v\nClaude CLI (claude -p)\n```\n\n## Environment Variables\n\n| Variable | Set By | Used By | Purpose |\n|----------|--------|---------|---------|\n| `INFERENCE_ENDPOINT_URL` | Human | agentica-server | Where server sends LLM inference requests |\n| `S_M_BASE_URL` | Human | Agentica SDK client | Where SDK connects to session manager |\n\n**KEY:** These are NOT the same endpoint!\n- SDK connects to server (port 2345)\n- Server connects to proxy (port 8080)\n\n## Startup Sequence\n\nMust start in this order (each in a separate terminal):\n\n### Terminal 1: Claude Proxy\n\n```bash\nuv run python scripts/agentica/claude_proxy.py --port 8080\n```\n\n### Terminal 2: Agentica Server\n\n**MUST run from its directory:**\n\n```bash\ncd workspace/agentica-research/agentica-server\nINFERENCE_ENDPOINT_URL=http://localhost:8080/v1/chat/completions uv run agentica-server --port 2345\n```\n\n### Terminal 3: Your Agent Script\n\n```bash\nS_M_BASE_URL=http://localhost:2345 uv run python scripts/agentica/your_script.py\n```\n\n## Health Checks\n\n```bash\n# Claude proxy health\ncurl http://localhost:8080/health\n\n# Agentica server health\ncurl http://localhost:2345/health\n```\n\n## Common Errors & Fixes\n\n### 1. APIConnectionError after agent spawn\n\n**Symptom:** Agent spawns successfully but fails on first call with connection error.\n\n**Cause:** Claude proxy returning plain JSON instead of SSE format.\n\n**Fix:** Proxy must return Server-Sent Events format:\n```\ndata: {\"choices\": [...]}\\n\\n\n```\n\n### 2. ModuleNotFoundError for agentica-server\n\n**Symptom:** `ModuleNotFoundError: No module named 'agentica_server'`\n\n**Cause:** Running `uv run agentica-serv"
+    },
+    {
+      "path": "other/126-java-exception-handling/SKILL.md",
+      "name": "126-java-exception-handling",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill provides Java exception handling best practices, coding patterns, and guidelines for software development workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "bd34acdc687759b5451adb1c8d1bc8dd4b40b4999f29647e34695a6264e6e1cb",
+      "metadata_sha256": "6ec73cbf15fcfaeae7d51c00addd97628f2df438bd74c19dd51562a67141d0dc",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when you need to apply Java exception handling best practices — including using specific exception types, managing resources with try-with-resources, securing exception messages, preserving error context via exception chaining, validating inputs early with fail-fast principles, handling thread interruption correctly, documenting exceptions with @throws, enforcing logging policy, translating exceptions at API boundaries, managing retries and idempotency, enforcing timeouts, attaching suppressed exceptions, and propagating failures in async/reactive code. This should trigger for requests such as Exception handling; Use try-with-resources in Java code; Create exception chaining in Java code; Apply fail-fast validation in Java code. Part of cursor-rules-java project",
+      "content_excerpt": "---\nname: 126-java-exception-handling\ndescription: Use when you need to apply Java exception handling best practices — including using specific exception types, managing resources with try-with-resources, securing exception messages, preserving error context via exception chaining, validating inputs early with fail-fast principles, handling thread interruption correctly, documenting exceptions with @throws, enforcing logging policy, translating exceptions at API boundaries, managing retries and idempotency, enforcing timeouts, attaching suppressed exceptions, and propagating failures in async/reactive code. This should trigger for requests such as Exception handling; Use try-with-resources in Java code; Create exception chaining in Java code; Apply fail-fast validation in Java code. Part of cursor-rules-java project\nlicense: Apache-2.0\nmetadata:\n  author: Juan Antonio Breña Moral\n  version: 0.15.0-SNAPSHOT\n---\n# Java Exception Handling Guidelines\n\nIdentify and apply robust Java exception handling practices to improve error clarity, security, debuggability, and system reliability.\n\n**What is covered in this Skill?**\n\n- Specific exception types instead of generic `Exception`/`RuntimeException`\n- try-with-resources for automatic resource cleanup\n- Secure exception messages that avoid information leakage\n- Exception chaining to preserve full error context\n- Early input validation with `IllegalArgumentException`/`NullPointerException`\n- `InterruptedException` handling with interrupted-status restoration\n- `@throws` JavaDoc documentation, fail-fast principle\n- Structured logging with correlation IDs, avoiding log-and-throw duplication\n- API boundary translation via centralized exception mappers\n- Bounded retry with backoff for idempotent operations only\n- Timeout enforcement with deadline propagation\n- `Throwable#addSuppressed` for secondary cleanup failures\n- Never catching `Throwable`/`Error`\n- Observability via error metrics\n- Failure propagation in async `CompletionStage` code\n\n**Scope:** The reference is organized by examples (good/bad code patterns) for each core area. Apply recommendations based on applicable examples.\n\n## Constraints\n\nBefore applying any exception handling changes, ensure the project compiles. If compilation fails, stop immediately — do not proceed until resolved. After applying improvements, run full verification.\n\n- **MANDATORY**: Run `./mvnw compile` or `mvn compile` before applying any changes\n- **SAFETY**: If compilation fails, stop"
+    },
+    {
+      "path": "other/agent-orchestrator-task-ruvnet-ruflo/SKILL.md",
+      "name": "agent-orchestrator-task",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is an agent for orchestrating tasks, including task decomposition, execution planning, and result synthesis. It is a core agent orchestration skill.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "7503e1c5ea973fd4f2f3af2081354c41c5d81d2b595239e3d56e6d2e31cf0845",
+      "metadata_sha256": "70f80805621413b5ac26c09377776fde3e990e8a6aa12a32a4fdd885c0c815fb",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Agent skill for orchestrator-task - invoke with $agent-orchestrator-task",
+      "content_excerpt": "---\nname: agent-orchestrator-task\ndescription: Agent skill for orchestrator-task - invoke with $agent-orchestrator-task\n---\n\n---\nname: task-orchestrator\ncolor: \"indigo\"\ntype: orchestration\ndescription: Central coordination agent for task decomposition, execution planning, and result synthesis\ncapabilities:\n  - task_decomposition\n  - execution_planning\n  - dependency_management\n  - result_aggregation\n  - progress_tracking\n  - priority_management\npriority: high\nhooks:\n  pre: |\n    echo \"🎯 Task Orchestrator initializing\"\n    memory_store \"orchestrator_start\" \"$(date +%s)\"\n    # Check for existing task plans\n    memory_search \"task_plan\" | tail -1\n  post: |\n    echo \"✅ Task orchestration complete\"\n    memory_store \"orchestration_complete_$(date +%s)\" \"Tasks distributed and monitored\"\n---\n\n# Task Orchestrator Agent\n\n## Purpose\nThe Task Orchestrator is the central coordination agent responsible for breaking down complex objectives into executable subtasks, managing their execution, and synthesizing results.\n\n## Core Functionality\n\n### 1. Task Decomposition\n- Analyzes complex objectives\n- Identifies logical subtasks and components\n- Determines optimal execution order\n- Creates dependency graphs\n\n### 2. Execution Strategy\n- **Parallel**: Independent tasks executed simultaneously\n- **Sequential**: Ordered execution with dependencies\n- **Adaptive**: Dynamic strategy based on progress\n- **Balanced**: Mix of parallel and sequential\n\n### 3. Progress Management\n- Real-time task status tracking\n- Dependency resolution\n- Bottleneck identification\n- Progress reporting via TodoWrite\n\n### 4. Result Synthesis\n- Aggregates outputs from multiple agents\n- Resolves conflicts and inconsistencies\n- Produces unified deliverables\n- Stores results in memory for future reference\n\n## Usage Examples\n\n### Complex Feature Development\n\"Orchestrate the development of a user authentication system with email verification, password reset, and 2FA\"\n\n### Multi-Stage Processing\n\"Coordinate analysis, design, implementation, and testing phases for the payment processing module\"\n\n### Parallel Execution\n\"Execute unit tests, integration tests, and documentation updates simultaneously\"\n\n## Task Patterns\n\n### 1. Feature Development Pattern\n```\n1. Requirements Analysis (Sequential)\n2. Design + API Spec (Parallel)\n3. Implementation + Tests (Parallel)\n4. Integration + Documentation (Parallel)\n5. Review + Deployment (Sequential)\n```\n\n### 2. Bug Fix Pattern\n```\n1. Reproduce + Analyze (Sequential)\n2. Fix + Tes"
+    },
+    {
+      "path": "other/story-cover-worldwonderer-oh-story-claudecode/SKILL.md",
+      "name": "story-cover",
+      "current_category": "other",
+      "llm_category": "creative",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is about generating novel cover images based on title and genre analysis, which is a creative content generation task.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "1604cc2f9c11a5881508e8550dbf992be5390110dba5cbdbf6f221520fdaaf28",
+      "metadata_sha256": "07e579c21803c32c32290b07dc53fcc2c1c64b07d27ae430ec256aab12295de6",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "小说封面生成。根据书名、作者名自动分析题材风格，调用 GPT-Image-2 直接生成含标题和署名的专业级网文封面。\n触发方式：/story-cover、/封面、「帮我做个封面」「生成封面图」「做个小说封面」「封面设计」",
+      "content_excerpt": "---\nname: story-cover\nversion: 1.0.0\ndescription: |\n  小说封面生成。根据书名、作者名自动分析题材风格，调用 GPT-Image-2 直接生成含标题和署名的专业级网文封面。\n  触发方式：/story-cover、/封面、「帮我做个封面」「生成封面图」「做个小说封面」「封面设计」\nmetadata:\n  openclaw:\n    requires:\n      env:\n        - GPT_IMAGE_API_KEY\n      bins:\n        - curl\n        - jq\n        - base64\n    primaryEnv: GPT_IMAGE_API_KEY\n    source: https://github.com/worldwonderer/oh-story-claudecode\n---\n\n# story-cover：小说封面生成\n\n你是小说封面设计师。根据书名和题材，调用 GPT-Image-2 一次性生成包含书名和作者名的完整封面。\n\n**核心原则：封面是读者的第一印象，一眼传达题材和氛围。**\n\n---\n\n## 环境变量\n\n| 变量 | 必填 | 默认 | 说明 |\n|:-----|:----:|:-----|:-----|\n| `GPT_IMAGE_API_KEY` | ✅ | — | OpenAI 或兼容代理的 API Key |\n| `GPT_IMAGE_BASE_URL` | | `https://api.openai.com/v1` | 兼容代理时改这个 |\n| `GPT_IMAGE_MODEL` | | `gpt-image-2` | 仅在测试新模型时覆盖 |\n| `GPT_IMAGE_SIZE` | | `1024x1536` | gpt-image-2 要求两边为 16 倍数、比例 ≤ 3:1 |\n| `BOOK_DIR` | ✅ | — | 输出目录，建议 `./covers/<书名>` |\n| `REF_IMAGE` | | — | 参考图本地路径或 URL；设置后走 `images/edits` 图生图 |\n\n> 备注：`gpt-image-2` 始终返回 base64，请求体不要带 `response_format`（旧 DALL-E 参数，gpt-image 系列不支持）。\n\n---\n\n## 生成流程\n\n### Step 1：收集信息\n\n必填：书名、作者名（笔名）、目标平台、输出目录 `BOOK_DIR`（建议 `./covers/<书名>`，调用前 export）\n选填：参考图 `REF_IMAGE`（本地路径或 URL，设置后切换到图生图）、风格偏好、尺寸（默认竖版 1024x1536）\n\n**根据目标平台确定封面风格**，加载 [references/cover-styles.md](references/cover-styles.md) 获取详细平台和题材风格。\n\n### Step 1.5：题材判定\n\n扫描书名（必要时简介）中的关键词，对照 [references/cover-styles.md](references/cover-styles.md) 的「题材推断规则」表选定题材。\n\n- 单题材命中 → 直接采用\n- 多题材命中 → 按优先级取一：仙侠 > 西幻 > 古言 > 现言 > 都市 > 悬疑 > 科幻 > 历史 > 灵异 > 轻小说\n- 零命中 → 默认 `都市`\n\n### Step 2：构建提示词\n\n提示词 = **文字层** + **风格层** + **画面层**，全部用英文编写。\n\n#### 文字层：书名 + 作者名字体设计\n\n在提示词中直接包含中文书名和作者名，GPT-Image-2 可直接渲染。**重点描述字体风格**：\n\n```\nTitle text '书名' at top center in [书名字体风格].\nAuthor name '作者名' at bottom center in [作者名字体风格].\n```\n\n#### 书名字体风格\n\n| 题材 | 描述关键词 |\n|:-----|:-----------|\n| 玄幻/仙侠 | `bold golden brush calligraphy with metallic glow and sharp strokes` |\n| 都市 | `modern bold sans-serif with metallic silver finish` |\n| 古言/宫斗 | `elegant golden traditional Kai script with ornate decoration` |\n| 现言/甜宠 | `soft rounded handwritten style in white with pink glow` |\n| 悬疑/推理 | `distorted bold cracked letters in blood red` |\n| 科幻/末世 | `neon glowing futuristic font in electric blue` |\n| 西幻 | `metallic embossed fantasy lettering with glow effect` |\n| 历史/军事 | `heavy stone-carved seal script in deep red` |\n| 灵异/恐怖 | `eerie dripping handwritten font in sickly green` |\n| 轻小说 | `colorful cartoon outlined bubbly font` |\n\n#### 作者名字体风格（重点：作者名必须精心设计，不能只是\"小字\"）\n\n作者名虽小，但是封面专业感的关键。必须指定：**字体 + 颜色 + 装饰元素**，让作者名与书名风"
+    },
+    {
+      "path": "other/pr-oprogramadorreal-optimus-claude-2/SKILL.md",
+      "name": "pr",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill automates creating/updating pull requests and merge requests, which is a core software development workflow activity.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "e98d5c51e7fb034cf26a307ecacfe9dfbe94cfd48a9348313440e92c391242f0",
+      "metadata_sha256": "bf478c10d48cb8996ccffe1e8a01a0e655e7592070d48ca89c9ef59b06b5afd7",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "metadata"
+      },
+      "description": "Creates or updates a pull request (GitHub) or merge request (GitLab) for the current branch using the Conventional PR format — intent, summary, changes, rationale, and test plan. Captures the implementation conversation's intent into the PR description when run in the same session. Use when a branch is ready for review, or to update an existing PR/MR description.",
+      "content_excerpt": "---\ndescription: Creates or updates a pull request (GitHub) or merge request (GitLab) for the current branch using the Conventional PR format — intent, summary, changes, rationale, and test plan. Captures the implementation conversation's intent into the PR description when run in the same session. Use when a branch is ready for review, or to update an existing PR/MR description.\ndisable-model-invocation: true\n---\n\n# Pull Request / Merge Request\n\nCreate or update a PR (GitHub) or MR (GitLab) for the current branch using the Conventional PR format. Detects the hosting platform, checks for an existing PR/MR, and either creates a new one or offers to update the existing one. New PRs target the repository's default branch; updates to existing PRs use the PR's current target branch. PRs/MRs are created as ready to merge (not draft).\n\n## Step 1: Pre-flight\n\nRead `$CLAUDE_PLUGIN_ROOT/skills/init/references/multi-repo-detection.md` for workspace detection. If a multi-repo workspace is detected, run the multi-repo selection procedure below. Otherwise, skip to **Verify git state**.\n\n### Multi-repo selection\n\n1. For each child repo, check:\n   - Current branch: `git -C <repo-path> rev-parse --abbrev-ref HEAD`\n   - Default branch: use the algorithm from `$CLAUDE_PLUGIN_ROOT/skills/pr/references/default-branch-detection.md` (run inside the repo)\n   - Whether it has commits ahead of default: `git -C <repo-path> log --oneline origin/<default-branch>..HEAD 2>/dev/null | head -1`\n2. If default branch detection fails for a repo, warn the user (e.g., \"Could not detect default branch for `<repo>` — skipping\") and exclude it from the candidates list\n3. Filter to repos that are on a non-default branch AND have commits ahead of the default branch\n4. If **no repos** have changes → inform the user: \"No repositories in this workspace have branches with changes ready for a PR.\" Stop.\n5. If **one repo** has changes → inform the user which repo was detected and proceed to run Steps 2–8 inside that repo's directory\n6. If **multiple repos** have changes → present the list and use `AskUserQuestion` — header \"Multi-Repo PRs\", question \"Multiple repositories have changes ready for PRs:\". Options:\n   - **All** — \"Create PRs for all repos with changes (one at a time)\"\n   - Each individual repo name — \"Create PR for `<repo>` only\"\n7. If the user selects a specific repo, proceed to run Steps 2–8 inside that repo's directory\n8. If the user selects **All**, process each repo with changes through "
+    },
+    {
+      "path": "other/planning-with-files-othmanadi-planning-with-files-14/SKILL.md",
+      "name": "planning-with-files",
+      "current_category": "other",
+      "llm_category": "planning",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill's description explicitly states it implements file-based planning to organize and track progress on complex tasks, creating task_plan.md, findings.md, and progress.md. This directly aligns with the 'planning' category.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "6777013cd8bfef91c3a8eed86f5b57619ddd8836e3a6f30ef8bb5c75503cbefc",
+      "metadata_sha256": "1838ba59acedc244e48117e77f418f7b9a815b0ab4713cada68a5e614d8ddf62",
+      "semantic_sources": {
+        "name": "metadata"
+      },
+      "description": "",
+      "content_excerpt": "---\nname: planning-with-files\ndescription: Implements Manus-style file-based planning to organize and track progress on complex tasks. Creates task_plan.md, findings.md, and progress.md. Use when asked to plan out, break down, or organize a multi-step project, research task, or any work requiring 5+ tool calls. Supports automatic session recovery after /clear.\nuser-invocable: true\nallowed-tools: \"Read Write Edit Bash Glob Grep\"\nhooks:\n  UserPromptSubmit:\n    - hooks:\n        - type: command\n          command: \"RESOLVED=\\\"\\\"; SCOPE=\\\"\\\"; SLUG_RE='^[A-Za-z0-9_][A-Za-z0-9._-]*$'; if [ -n \\\"${PLAN_ID:-}\\\" ] && printf \\\"%s\\\" \\\"$PLAN_ID\\\" | grep -Eq \\\"$SLUG_RE\\\" && [ -d \\\".planning/${PLAN_ID}\\\" ]; then RESOLVED=\\\".planning/${PLAN_ID}\\\"; SCOPE=\\\"scoped\\\"; elif [ -f .planning/.active_plan ]; then AP=$(tr -d '\\\\r\\\\n[:space:]' < .planning/.active_plan 2>/dev/null); if [ -n \\\"$AP\\\" ] && printf \\\"%s\\\" \\\"$AP\\\" | grep -Eq \\\"$SLUG_RE\\\" && [ -d \\\".planning/${AP}\\\" ]; then RESOLVED=\\\".planning/${AP}\\\"; SCOPE=\\\"scoped\\\"; fi; fi; if [ -z \\\"$RESOLVED\\\" ] && [ -d .planning ]; then NEWEST=\\\"\\\"; NEWEST_MT=0; for d in .planning/*/; do d=\\\"${d%/}\\\"; n=$(basename \\\"$d\\\"); case \\\"$n\\\" in .*) continue;; esac; printf \\\"%s\\\" \\\"$n\\\" | grep -Eq \\\"$SLUG_RE\\\" || continue; [ -f \\\"$d/task_plan.md\\\" ] || continue; m=$(stat -c '%Y' \\\"$d\\\" 2>/dev/null || stat -f '%m' \\\"$d\\\" 2>/dev/null || date -r \\\"$d\\\" +%s 2>/dev/null || echo 0); if [ \\\"$m\\\" -gt \\\"$NEWEST_MT\\\" ] 2>/dev/null; then NEWEST_MT=\\\"$m\\\"; NEWEST=\\\"$d\\\"; fi; done; [ -n \\\"$NEWEST\\\" ] && { RESOLVED=\\\"$NEWEST\\\"; SCOPE=\\\"scoped\\\"; }; fi; if [ -z \\\"$RESOLVED\\\" ] && [ -f task_plan.md ]; then RESOLVED=\\\".\\\"; SCOPE=\\\"root\\\"; fi; [ -z \\\"$RESOLVED\\\" ] && exit 0; if [ \\\"$SCOPE\\\" = \\\"root\\\" ]; then PLAN_FILE=\\\"task_plan.md\\\"; PROGRESS_FILE=\\\"progress.md\\\"; ATTEST=\\\"\\\"; [ -f .plan-attestation ] && ATTEST=$(tr -d '\\\\r\\\\n[:space:]' < .plan-attestation 2>/dev/null); else PLAN_FILE=\\\"${RESOLVED}/task_plan.md\\\"; PROGRESS_FILE=\\\"${RESOLVED}/progress.md\\\"; ATTEST=\\\"\\\"; [ -f \\\"${RESOLVED}/.attestation\\\" ] && ATTEST=$(tr -d '\\\\r\\\\n[:space:]' < \\\"${RESOLVED}/.attestation\\\" 2>/dev/null); fi; [ -f \\\"$PLAN_FILE\\\" ] || exit 0; TAMPERED=0; ACTUAL=\\\"\\\"; if [ -n \\\"$ATTEST\\\" ]; then CD=\\\"${TMPDIR:-/tmp}/pwf-sha\\\"; mkdir -p \\\"$CD\\\" 2>/dev/null; KEY=$(printf \\\"%s\\\" \\\"$PLAN_FILE\\\" | { sha256sum 2>/dev/null || shasum -a 256 2>/dev/null; } | awk '{print $1}' | cut -c1-16); MT=$(stat -c '%Y' \\\"$PLAN_FILE\\\" 2>/dev/null || stat -f '%m' \\\"$PLAN_FILE\\\" 2>/dev/null || date -r "
+    },
+    {
+      "path": "other/security-suite-boshu2-agentops/SKILL.md",
+      "name": "security-suite",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill's name is 'security-suite', description is 'Run composable security analysis', and the content details security primitives like supply-chain-integrity, design-by-contract, SRE, and security report generation. This directly aligns with the 'security' category's focus on security review, vulnerabilities, and pentesting.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "e7b4be6af997da5c4c1217a744a05743c73f8bbb936e9a29b5a97228b0969c2b",
+      "metadata_sha256": "1f8fcea8dd7605e96a065a4add8dd6f2b5965df21eb9902ad24a0a2e293cdc7a",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Run composable security analysis.",
+      "content_excerpt": "---\nname: security-suite\ndescription: Run composable security analysis.\npractices:\n- supply-chain-integrity\n- design-by-contract\n- sre\nhexagonal_role: driven-adapter\nconsumes:\n- repo-context\nproduces:\n- security-report.json\ncontext_rel:\n- kind: supplier-to\n  with: vibe\nskill_api_version: 1\ncontext:\n  window: fork\n  intent:\n    mode: task\n  sections:\n    exclude:\n    - HISTORY\n  intel_scope: topic\nmetadata:\n  tier: execution\n  dependencies: []\noutput_contract: skills/council/schemas/verdict.json\n---\n# Security Suite\n\n> **Purpose:** Provide composable, repeatable security/internal-testing primitives for authorized binaries and repo-managed prompt surfaces.\n\nThis skill separates concerns into primitives so security workflows stay testable and reusable.\n\n## Guardrails\n\n- Use only on binaries you own or are explicitly authorized to assess.\n- Do not use this workflow to bypass legal restrictions or extract third-party proprietary content without authorization.\n- Prefer behavioral assurance and policy gating over ad-hoc one-off reverse-engineering.\n\n## Primitive Model\n\n1. `collect-static` — file metadata, runtime heuristics, linked libraries, embedded archive signatures.\n2. `collect-dynamic` — sandboxed execution trace (processes, file changes, network endpoints).\n3. `collect-contract` — machine-readable behavior contract from help-surface probing.\n4. `compare-baseline` — current vs baseline contract drift (added/removed commands, runtime change).\n5. `enforce-policy` — allowlist/denylist gates and severity-based verdict.\n6. `collect-redteam` — offline repo-surface attack-pack scan for prompt-injection, tool-misuse, secret-exfiltration, and unsafe-shell regressions.\n7. `run` — thin binary orchestrator that composes primitives and writes suite summary.\n\n## Quick Start\n\nSingle run (default dynamic command is `--help`):\n\n```bash\npython3 skills/security-suite/scripts/security_suite.py run \\\n  --binary \"$(command -v ao)\" \\\n  --out-dir .tmp/security-suite/ao-current\n```\n\nBaseline regression gate:\n\n```bash\npython3 skills/security-suite/scripts/security_suite.py run \\\n  --binary \"$(command -v ao)\" \\\n  --out-dir .tmp/security-suite/ao-current \\\n  --baseline-dir .tmp/security-suite/ao-baseline \\\n  --fail-on-removed\n```\n\nPolicy gate:\n\n```bash\npython3 skills/security-suite/scripts/security_suite.py run \\\n  --binary \"$(command -v ao)\" \\\n  --out-dir .tmp/security-suite/ao-current \\\n  --policy-file skills/security-suite/references/policy-example.json \\\n  --fail-on-policy-fail\n``"
+    },
+    {
+      "path": "other/brand-guidelines-sickn33-antigravity-awesome-/SKILL.md",
+      "name": "brand-guidelines",
+      "current_category": "other",
+      "llm_category": "writing",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill 'brand-guidelines' is explicitly about writing copy following brand guidelines for various user-facing content. It provides tone selection, rules, and examples for writing, which is a core writing task.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "209ddc5292b922d5715efaed29af070ed5f5396f04961d20529ae4341fcdcad7",
+      "metadata_sha256": "8a02493f967a7fd95012a7702bfe935953bf6bd215b97d6d97c7a512f793f259",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Write copy following Sentry brand guidelines. Use when writing UI text, error messages, empty states, onboarding flows, 404 pages, documentation, marketing copy, or any user-facing content. Covers both Plain Speech (default) and Sentry Voice tones.",
+      "content_excerpt": "---\nname: brand-guidelines\ndescription: Write copy following Sentry brand guidelines. Use when writing UI text, error messages, empty states, onboarding flows, 404 pages, documentation, marketing copy, or any user-facing content. Covers both Plain Speech (default) and Sentry Voice tones.\nrisk: unknown\nsource: community\n---\n\n# Brand Guidelines\n\nWrite user-facing copy following Sentry's brand guidelines.\n\n## When to Use\n- You need to write or rewrite user-facing copy in Sentry's voice.\n- The task involves UI text, onboarding, empty states, docs, marketing copy, or other branded content.\n- You need guidance on when to use Plain Speech versus Sentry Voice.\n\n## Tone Selection\n\nChoose the appropriate tone based on context:\n\n| Use Plain Speech | Use Sentry Voice |\n|------------------|------------------|\n| Product UI (buttons, labels, forms) | 404 pages |\n| Documentation | Empty states |\n| Error messages | Onboarding flows |\n| Settings pages | Loading states |\n| Transactional emails | \"What's New\" announcements |\n| Help text | Marketing copy |\n\n**Default to Plain Speech** unless the context specifically calls for personality.\n\n## Plain Speech (Default)\n\nPlain Speech is clear, direct, and functional. Use it for most UI elements.\n\n### Rules\n\n1. **Be concise** - Use the fewest words needed\n2. **Be direct** - Tell users what to do, not what they can do\n3. **Use active voice** - \"Save your changes\" not \"Your changes will be saved\"\n4. **Avoid jargon** - Use simple words users understand\n5. **Be specific** - \"3 errors found\" not \"Some errors found\"\n\n### Examples\n\n| Instead of | Write |\n|------------|-------|\n| \"Click here to save your changes\" | \"Save\" |\n| \"You can filter results by date\" | \"Filter by date\" |\n| \"An error has occurred\" | \"Something went wrong\" |\n| \"Please enter a valid email address\" | \"Enter a valid email\" |\n| \"Are you sure you want to delete?\" | \"Delete this item?\" |\n\n## Sentry Voice\n\nSentry Voice adds personality in appropriate moments. It's empathetic, self-aware, and occasionally snarky.\n\n### Principles\n\n1. **Empathetic snark** - Direct frustration at the situation, never the user\n2. **Self-aware** - Acknowledge the absurdity of software\n3. **Fun but functional** - Personality should enhance, not obscure meaning\n4. **Earned moments** - Only use when users have time to appreciate it\n\n### Examples\n\n**404 Pages:**\n> \"This page doesn't exist. Maybe it never did. Maybe it was a dream. Either way, let's get you back on track.\"\n\n**Empty States:**\n> \"No erro"
+    },
+    {
+      "path": "other/skillforge-tripleyak-skillforge/SKILL.md",
+      "name": "skillforge",
+      "current_category": "other",
+      "llm_category": "skills",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is an intelligent router, advisor, and creator for skills. It analyzes input to recommend, improve, or create skills, and provides proactive suggestions.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "e159dc7e2c667e033de6dedd1740fe240f2ebc2bb56e14288a7d1e151655eb25",
+      "metadata_sha256": "2d0452aa9701b185f635ad93e39cfdc0f08c2a6be545b700cfe07e0514805f6c",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Intelligent skill router, proactive advisor, and creator. Analyzes ANY input to recommend existing skills, improve them, or create new ones. Adds proactive Context Skill Advisor suggestions from session, project, and personal context using user-controlled Proactivity Levels.",
+      "content_excerpt": "---\nname: skillforge\ndescription: \"Intelligent skill router, proactive advisor, and creator. Analyzes ANY input to recommend existing skills, improve them, or create new ones. Adds proactive Context Skill Advisor suggestions from session, project, and personal context using user-controlled Proactivity Levels.\"\nlicense: MIT\nmodel: claude-opus-4-5-20251101\nuser-invocable: true\nallowed-tools:\n  - Read\n  - Glob\n  - Grep\n  - Bash\n  - Write\n  - Edit\nmetadata:\n  version: 5.2.0\n  subagent_model: claude-opus-4-5-20251101\n  domains: [meta-skill, automation, skill-creation, orchestration, agentic, routing]\n  type: orchestrator\n  inputs: [any-input, user-goal, domain-hints]\n  outputs: [SKILL.md, references/, scripts/, SKILL_SPEC.md, recommendations]\n---\n\n# SkillForge 5.2 - Intelligent Skill Router, Advisor & Creator\n\nAnalyzes ANY input to find, improve, or create the right skill. It can also proactively surface evidence-backed skill suggestions through the Context Skill Advisor.\n\n---\n\n## Quick Start\n\n**Any input works.** SkillForge will intelligently route to the right action:\n\n```\n# These all work - SkillForge figures out what you need:\n\nSkillForge: create a skill for automated code review\n→ Creates new skill (after checking no duplicates exist)\n\nhelp me debug this TypeError\n→ Recommends ErrorExplainer skill (existing)\n\nimprove the testgen skill to handle React components better\n→ Enters improvement mode for TestGen\n\ndo I have a skill for database migrations?\n→ Recommends DBSchema, database-migration skills\n\nTypeError: Cannot read property 'map' of undefined\n→ Routes to debugging skills (error detected)\n```\n\n---\n\n## Triggers\n\n### Creation Triggers\n- `SkillForge: {goal}` - Full autonomous skill creation\n- `create skill` - Natural language activation\n- `design skill for {purpose}` - Purpose-first creation\n- `ultimate skill` - Emphasize maximum quality\n- `skillforge --plan-only` - Generate specification without execution\n\n### Routing Triggers (NEW in v4.0)\n- `{any input}` - Analyzes and routes automatically\n- `do I have a skill for` - Searches existing skills\n- `which skill` / `what skill` - Recommends matching skills\n- `improve {skill-name} skill` - Enters improvement mode\n- `help me with` / `I need to` - Detects task and routes\n\n### Proactive Advisor Triggers (NEW in v5.2)\n- Session start - Show pending suggestions from the Advisory Queue\n- Advisor Checkpoint - Evaluate task shifts, repeated friction, and before-final moments\n- Scheduled Background Advising - Run loca"
+    },
+    {
+      "path": "other/ux-copy/SKILL.md",
+      "name": "ux-copy",
+      "current_category": "other",
+      "llm_category": "design",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill generates UX microcopy for UI elements (buttons, empty states, errors, toasts, confirmations, forms) which is a design/UX activity focused on frontend copywriting.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "781fb9ed18b34c77e4cbfb289ad91bd749a2d05d412e104367b2162e261ad43c",
+      "metadata_sha256": "46e2f965a4f3f73cc86bf2a070cc5b6ed6fb97051e4f8b1929a4462805b34052",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "Generate UX microcopy in StyleSeed's Toss-inspired voice for buttons, empty states, errors, toasts, confirmations, and form guidance.",
+      "content_excerpt": "---\nname: ux-copy\ndescription: \"Generate UX microcopy in StyleSeed's Toss-inspired voice for buttons, empty states, errors, toasts, confirmations, and form guidance.\"\ncategory: design\nrisk: safe\nsource: community\nsource_repo: bitjaru/styleseed\nsource_type: community\ndate_added: \"2026-04-08\"\nauthor: bitjaru\ntags: [ux, copywriting, microcopy, frontend, styleseed]\ntools: [claude, cursor, codex, gemini]\n---\n\n# UX Copy\n\n## Overview\n\nPart of [StyleSeed](https://github.com/bitjaru/styleseed), this skill generates concise product copy for common UI states. It follows the Toss-inspired tone: casual but polite, direct, active, and specific enough to help the user recover or proceed.\n\n## When to Use\n- Use when you need button labels, helper text, toasts, empty states, or error messages\n- Use when a feature has functional UI but weak or robotic wording\n- Use when you want consistent product voice across a flow\n- Use when confirmation dialogs or state feedback need better phrasing\n\n## Tone Rules\n\n- casual but polite\n- active voice over passive voice\n- positive framing where it stays honest\n- plain language instead of internal jargon\n- concise wording where every word earns its place\n\n## Common Patterns\n\n### Buttons\n\nUse a short action verb plus object when needed.\n\n### Empty States\n\nStart with a friendly observation, then suggest the next action.\n\n### Errors\n\nExplain what happened in user-facing language and what to do next. Do not surface raw internal error strings.\n\n### Toasts\n\nConfirm the result quickly. Add an undo action for reversible destructive behavior.\n\n### Forms\n\nUse clear labels, useful placeholders, specific helper text, and corrective error messages.\n\n### Confirmation Dialogs\n\nState the action in plain language and explain the consequence if the decision is risky or irreversible.\n\n## Output\n\nReturn:\n1. The requested microcopy grouped by UI surface\n2. Notes on tone or localization considerations if relevant\n3. Any places where the UX likely needs a structural fix in addition to better copy\n\n## Best Practices\n\n- Make the next action obvious\n- Avoid generic labels like \"Submit\" or \"OK\" when the action can be named precisely\n- Blame the system, not the user, when something fails\n- Keep error and empty states useful even without visual context\n\n## Additional Resources\n\n- [StyleSeed repository](https://github.com/bitjaru/styleseed)\n- [Source skill](https://github.com/bitjaru/styleseed/blob/main/seeds/toss/.claude/skills/ux-copy/SKILL.md)\n\n## Limitations\n- Use t"
+    },
+    {
+      "path": "other/session-start-kanevry-session-orchestrator-4/SKILL.md",
+      "name": "session-start",
+      "current_category": "other",
+      "llm_category": "orchestration",
+      "confidence": 0.92,
+      "status": "ok",
+      "reason": "The skill initializes sessions by analyzing git state, VCS issues, branches, and environment, then presents findings for user alignment before creating a wave plan. Tags include 'orchestration' and 'initialization'. It serves as the orchestration entry point that feeds into wave planning.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "ef23c9fcd5b20fbb5599fe2684f6df86da160754863b2086392e4da026a87c43",
+      "metadata_sha256": "03112eb363a2519cf3fae78a6be157e7ebbfe5a53c5c69eaa384f2095d8ababd",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "Use this skill when initializing a session for any project repo. Autonomously analyzes git state, VCS issues, SSOT files, branches, environment, and cross-repo status. Then presents structured findings with recommendations for user alignment before creating a wave plan. Triggered by /session [housekeeping|feature|deep] command.",
+      "content_excerpt": "---\nname: session-start\nuser-invocable: false\ntags: [orchestration, initialization, analysis, alignment]\nmodel: inherit\nmodel-preference: opus\nmodel-preference-codex: gpt-5.4\nmodel-preference-cursor: claude-opus-4-6\ndescription: >\n  Use this skill when initializing a session for any project repo. Autonomously analyzes git state,\n  VCS issues, SSOT files, branches, environment, and cross-repo status. Then presents\n  structured findings with recommendations for user alignment before creating a wave plan.\n  Triggered by /session [housekeeping|feature|deep] command.\n---\n\n# Session Start Skill\n\n> Project-instruction file resolution: `CLAUDE.md` and `AGENTS.md` (Codex CLI) are transparent aliases — see [skills/_shared/instruction-file-resolution.md](../_shared/instruction-file-resolution.md). All references to `CLAUDE.md` in this skill resolve via that precedence rule.\n\n## Soul\n\nBefore anything else, read and internalize `soul.md` in this skill directory. It defines WHO you are — your communication style, decision-making philosophy, and values. Every interaction in this session should reflect this identity. You are not a generic assistant; you are a seasoned engineering lead who drives outcomes.\n\n## Phase 0: Bootstrap Gate\n\nRead `skills/_shared/bootstrap-gate.md` and execute the gate check. If the gate is CLOSED, invoke `skills/bootstrap/SKILL.md` and wait for completion before proceeding. If the gate is OPEN, continue to Phase 1.\n\n<HARD-GATE>\nDo NOT proceed past Phase 0 if GATE_CLOSED. There is no bypass. Refer to `skills/_shared/bootstrap-gate.md` for the full HARD-GATE constraints.\n</HARD-GATE>\n\n## Phase 1: Read Session Config\n\nRead and parse Session Config per `skills/_shared/config-reading.md`. Store result as `$CONFIG`.\n\n## Phase 1.2: Session Lock Acquire (#330)\n\n> Skip this phase if `persistence` config is `false`.\n\nAcquire a distributed session-lock to detect parallel sessions in the same repo before initializing STATE.md. This prevents two concurrent Claude/Codex sessions from stomping each other's wave state and metrics writes.\n\n```javascript\nimport { acquire, forceAcquire } from 'scripts/lib/session-lock.mjs';\nconst result = acquire({ sessionId, mode: sessionType, ttlHours: 4, repoRoot: process.cwd() });\n```\n\nWhere `sessionId` is the session identifier derived from the session type and timestamp (e.g. `main-2026-05-08-deep-1`), and `sessionType` is the session mode (`housekeeping`, `feature`, or `deep`).\n\n### Decision flow\n\n1. **`result.ok === true`**"
+    },
+    {
+      "path": "other/catchup-athola-claude-night-market-4/SKILL.md",
+      "name": "catchup",
+      "current_category": "other",
+      "llm_category": "analysis",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill's description and content focus on summarizing recent git changes for context recovery, which is a form of analysis. The frontmatter tags include 'summarization' and 'context-acquisition', and the methodology involves capturing deltas and extracting insights.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "33354da59ca8c78fc379a91ded6116645c7bd9eae867cd506d66503428d1a075",
+      "metadata_sha256": "1ae5164baf68fab783507f323a32a9ce78d77758b9ab7a9ec490a97aaf28949e",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "Summarize recent git changes for context recovery.",
+      "content_excerpt": "---\nname: catchup\ndescription: 'Summarize recent git changes for context recovery.'\nalwaysApply: false\ncategory: analysis-methods\ntags:\n- summarization\n- context-acquisition\n- insights\n- follow-ups\ndependencies:\n- imbue:proof-of-work\ntools: []\nusage_patterns:\n- context-catchup\n- handoff-preparation\n- progress-review\ncomplexity: intermediate\nmodel_hint: fast\nestimated_tokens: 700\nprogressive_loading: true\nmodule_strategy: context-based\nrole: entrypoint\n---\n## Table of Contents\n\n- [Overview](#overview)\n- [When to Use](#when-to-use)\n- [Activation](#activation)\n- [Progressive Loading](#progressive-loading)\n- [4-Step Methodology](#4-step-methodology)\n- [Output Format](#output-format)\n\n# Catchup Analysis Methodology\n\n## Overview\n\nStructured method for quickly understanding recent changes in git repositories, meeting notes, sprint progress, document revisions, or system logs. Answers \"what changed and what matters?\" efficiently.\n\n## When To Use\n- Joining ongoing work or returning after absence\n- Before planning or reviewing handoffs\n- Any \"what happened and what's next\" context\n\n## When NOT To Use\n\n- Doing detailed\n  diff analysis - use diff-analysis instead\n- Full code review needed\n  - use review-core instead\n\n## Activation\n**Keywords**: catchup, summary, status, progress, context, handoff\n**Cues**: \"get me up to speed\", \"current status\", \"summarize progress\"\n\n## Progressive Loading\n\nLoad modules based on context:\n\n**Git**: Load `modules/git-catchup-patterns.md` for git commands. Consider `sanctum:git-workspace-review` for initial data gathering.\n\n**Documents/Notes**: Load `modules/document-analysis-patterns.md` for meeting notes, sprint tracking, document revisions.\n\n**Logs/Events**: Load `modules/log-analysis-patterns.md` for time-series and metric analysis.\n\n**Always Available**: `imbue:proof-of-work`, TodoWrite workflow, structured output.\n\n## Required TodoWrite Items\n1. `catchup:context-confirmed` - Boundaries established\n2. `catchup:delta-captured` - Changes enumerated\n3. `catchup:insights-extracted` - Themes identified\n4. `catchup:followups-recorded` - Actions captured\n\n## 4-Step Methodology\n\n### Step 1: Confirm Context\nDefine scope (git branch, sprint, meetings), baseline (last state), and current target. See modules for commands.\n\n### Step 2: Capture Delta\nEnumerate changed items with metrics. Prioritize source/config/docs over generated artifacts. See modules for strategies.\n\n### Step 3: Extract Insights\nPer item: **What** (change), **Why** (motivatio"
+    },
+    {
+      "path": "other/agent-mesh-coordinator/SKILL.md",
+      "name": "agent-mesh-coordinator",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly an agent for mesh coordination, with capabilities like distributed coordination and peer communication, fitting the 'agent' category for autonomous agent orchestration.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "45fc2718cfd790667b2fba7594ff227729542c5b42511c21711601681ed16047",
+      "metadata_sha256": "179b8cd82cf1978128635da859b5bdea1d30ebc6b1483fbd7733101955993761",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Agent skill for mesh-coordinator - invoke with $agent-mesh-coordinator",
+      "content_excerpt": "---\nname: agent-mesh-coordinator\ndescription: Agent skill for mesh-coordinator - invoke with $agent-mesh-coordinator\n---\n\n---\nname: mesh-coordinator\ntype: coordinator  \ncolor: \"#00BCD4\"\ndescription: Peer-to-peer mesh network swarm with distributed decision making and fault tolerance\ncapabilities:\n  - distributed_coordination\n  - peer_communication\n  - fault_tolerance  \n  - consensus_building\n  - load_balancing\n  - network_resilience\npriority: high\nhooks:\n  pre: |\n    echo \"🌐 Mesh Coordinator establishing peer network: $TASK\"\n    # Initialize mesh topology\n    mcp__claude-flow__swarm_init mesh --maxAgents=12 --strategy=distributed\n    # Set up peer discovery and communication\n    mcp__claude-flow__daa_communication --from=\"mesh-coordinator\" --to=\"all\" --message=\"{\\\"type\\\":\\\"network_init\\\",\\\"topology\\\":\\\"mesh\\\"}\"\n    # Initialize consensus mechanisms\n    mcp__claude-flow__daa_consensus --agents=\"all\" --proposal=\"{\\\"coordination_protocol\\\":\\\"gossip\\\",\\\"consensus_threshold\\\":0.67}\"\n    # Store network state\n    mcp__claude-flow__memory_usage store \"mesh:network:${TASK_ID}\" \"$(date): Mesh network initialized\" --namespace=mesh\n  post: |\n    echo \"✨ Mesh coordination complete - network resilient\"\n    # Generate network analysis\n    mcp__claude-flow__performance_report --format=json --timeframe=24h\n    # Store final network metrics\n    mcp__claude-flow__memory_usage store \"mesh:metrics:${TASK_ID}\" \"$(mcp__claude-flow__swarm_status)\" --namespace=mesh\n    # Graceful network shutdown\n    mcp__claude-flow__daa_communication --from=\"mesh-coordinator\" --to=\"all\" --message=\"{\\\"type\\\":\\\"network_shutdown\\\",\\\"reason\\\":\\\"task_complete\\\"}\"\n---\n\n# Mesh Network Swarm Coordinator\n\nYou are a **peer node** in a decentralized mesh network, facilitating peer-to-peer coordination and distributed decision making across autonomous agents.\n\n## Network Architecture\n\n```\n    🌐 MESH TOPOLOGY\n   A ←→ B ←→ C\n   ↕     ↕     ↕  \n   D ←→ E ←→ F\n   ↕     ↕     ↕\n   G ←→ H ←→ I\n```\n\nEach agent is both a client and server, contributing to collective intelligence and system resilience.\n\n## Core Principles\n\n### 1. Decentralized Coordination\n- No single point of failure or control\n- Distributed decision making through consensus protocols\n- Peer-to-peer communication and resource sharing\n- Self-organizing network topology\n\n### 2. Fault Tolerance & Resilience  \n- Automatic failure detection and recovery\n- Dynamic rerouting around failed nodes\n- Redundant data and computation paths\n- Graceful degradatio"
+    },
+    {
+      "path": "other/agent-ops-create-skill/SKILL.md",
+      "name": "agent-ops-create-skill",
+      "current_category": "other",
+      "llm_category": "skills",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill's purpose is to create new AgentOps skills via an interactive interview, which directly relates to skill creation and management workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "f48ae078baf369e135f7f0164568178417cc8d34e953ffd71978315308a9ca9f",
+      "metadata_sha256": "201e9013f4882b78bd1569a98a4a82ec225a2a1737a14c4f8baf88ab9791f79c",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Create new AgentOps skills via interactive interview. Supports from-scratch and clone modes with tiered complexity.",
+      "content_excerpt": "---\nname: agent-ops-create-skill\ndescription: \"Create new AgentOps skills via interactive interview. Supports from-scratch and clone modes with tiered complexity.\"\ncategory: utility\ninvokes: [agent-ops-interview]\ninvoked_by: []\nstate_files:\n  read: []\n  write: []\n---\n\n# Create Skill Workflow\n\n## Purpose\n\nGuide users through creating new AgentOps skills with consistent structure and quality. Reduces friction for skill ecosystem growth while enforcing standards.\n\n## Mode Selection\n\nPresent mode options at the start:\n\n| Mode | Description | Use When |\n|------|-------------|----------|\n| **A) From scratch** | Start with blank template | Creating entirely new capability |\n| **B) Clone existing** | Use existing skill as base | New skill similar to existing one |\n\n### Clone Mode Procedure\n\n1. List available skills from `.github/skills/`\n2. User selects one to clone\n3. Read that skill's SKILL.md as base\n4. Interview focuses on what to change/customize\n\n## Complexity Tiers\n\nAfter mode selection, assess complexity:\n\n| Tier | Questions | Criteria |\n|------|-----------|----------|\n| **Simple** | 5 | Single procedure, minimal dependencies, clear scope |\n| **Complex** | 10+ | Multiple procedures, decision trees, error handling, many dependencies |\n\n### Complexity Assessment Questions\n\nAsk the user:\n1. \"Does this skill have a single main procedure, or multiple branching paths?\"\n2. \"Does it need to invoke other skills or handle errors specially?\"\n\n**If answers suggest simple** → Simple tier (5 questions)\n**If answers suggest complex** → Complex tier (10+ questions)\n\n---\n\n## Interview Questions\n\n### Simple Tier (5 Questions)\n\nUse `agent-ops-interview` skill for one-question-at-a-time flow.\n\n| # | Question | Field | Validation |\n|---|----------|-------|------------|\n| 1 | \"What should this skill be called? (use kebab-case, e.g., `my-custom-skill`)\" | `name` | Kebab-case, unique in `.github/skills/`. **Must NOT start with `agent-ops-`** (reserved for bundled assets). |\n| 2 | \"Describe in one sentence what this skill does:\" | `description` | Non-empty, < 200 chars |\n| 3 | \"What category does this fit? (core/utility/analysis/git/recovery)\" | `category` | One of: core, utility, analysis, git, recovery |\n| 4 | \"What is the main procedure? Describe the step-by-step workflow:\" | Procedure section | Non-empty |\n| 5 | \"What state files does it read and write? (e.g., focus.md, issues/*)\" | `state_files` | Valid file paths or patterns |\n| 6 | \"Should this skill have an accompanying pr"
+    },
+    {
+      "path": "other/agentdb-memory-patterns-ruvnet-ruflo-4/SKILL.md",
+      "name": "AgentDB Memory Patterns",
+      "current_category": "other",
+      "llm_category": "ai-llm",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill provides memory management patterns for AI agents using AgentDB, focusing on persistent storage, session memory, long-term storage, pattern learning, and context management for stateful agents and chat systems. This aligns with AI/LLM agent development and memory systems.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "516a5357177cc65909277b639af151b393388e5f5eaaa3fc9d29cff6526b0cf7",
+      "metadata_sha256": "0c7f1903c5985974ddd463422f5d1f7006461f99c50a549e0bf54eb9e9f89d0f",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Implement persistent memory patterns for AI agents using AgentDB. Includes session memory, long-term storage, pattern learning, and context management. Use when building stateful agents, chat systems, or intelligent assistants.",
+      "content_excerpt": "---\nname: \"AgentDB Memory Patterns\"\ndescription: \"Implement persistent memory patterns for AI agents using AgentDB. Includes session memory, long-term storage, pattern learning, and context management. Use when building stateful agents, chat systems, or intelligent assistants.\"\n---\n\n# AgentDB Memory Patterns\n\n## What This Skill Does\n\nProvides memory management patterns for AI agents using AgentDB's persistent storage and ReasoningBank integration. Enables agents to remember conversations, learn from interactions, and maintain context across sessions.\n\n**Performance**: 150x-12,500x faster than traditional solutions with 100% backward compatibility.\n\n## Prerequisites\n\n- Node.js 18+\n- AgentDB v1.0.7+ (via agentic-flow or standalone)\n- Understanding of agent architectures\n\n## Quick Start with CLI\n\n### Initialize AgentDB\n\n```bash\n# Initialize vector database\nnpx agentdb@latest init ./agents.db\n\n# Or with custom dimensions\nnpx agentdb@latest init ./agents.db --dimension 768\n\n# Use preset configurations\nnpx agentdb@latest init ./agents.db --preset large\n\n# In-memory database for testing\nnpx agentdb@latest init ./memory.db --in-memory\n```\n\n### Start MCP Server for Claude Code\n\n```bash\n# Start MCP server (integrates with Claude Code)\nnpx agentdb@latest mcp\n\n# Add to Claude Code (one-time setup)\nclaude mcp add agentdb npx agentdb@latest mcp\n```\n\n### Create Learning Plugin\n\n```bash\n# Interactive plugin wizard\nnpx agentdb@latest create-plugin\n\n# Use template directly\nnpx agentdb@latest create-plugin -t decision-transformer -n my-agent\n\n# Available templates:\n# - decision-transformer (sequence modeling RL)\n# - q-learning (value-based learning)\n# - sarsa (on-policy TD learning)\n# - actor-critic (policy gradient)\n# - curiosity-driven (exploration-based)\n```\n\n## Quick Start with API\n\n```typescript\nimport { createAgentDBAdapter } from 'agentic-flow/reasoningbank';\n\n// Initialize with default configuration\nconst adapter = await createAgentDBAdapter({\n  dbPath: '.agentdb/reasoningbank.db',\n  enableLearning: true,      // Enable learning plugins\n  enableReasoning: true,      // Enable reasoning agents\n  quantizationType: 'scalar', // binary | scalar | product | none\n  cacheSize: 1000,            // In-memory cache\n});\n\n// Store interaction memory\nconst patternId = await adapter.insertPattern({\n  id: '',\n  type: 'pattern',\n  domain: 'conversation',\n  pattern_data: JSON.stringify({\n    embedding: await computeEmbedding('What is the capital of France?'),\n    pattern: {\n      use"
+    },
+    {
+      "path": "other/do-issue-athola-claude-night-market-4/SKILL.md",
+      "name": "do-issue",
+      "current_category": "other",
+      "llm_category": "workflow",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill orchestrates parallel subagent execution with review gates for multi-step issue resolution, fitting workflow automation patterns.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "879157eaa83fcd13ae26e9d9ddb45c28b79639e306e10458d16fc1557081ef34",
+      "metadata_sha256": "22d24243c7a72bccd93c1ae64f19355edff93add5fcccac2c64b1897fd664d19",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "Parallel subagent execution with review gates between task batches. For multi-step issues.",
+      "content_excerpt": "---\nname: do-issue\nrole: entrypoint\ndescription: 'Parallel subagent execution with review gates between task batches. For multi-step issues.'\nalwaysApply: false\ncategory: workflow-automation\ntags:\n- github\n- gitlab\n- issues\n- subagents\n- parallel\n- automation\n- cross-platform\ndependencies:\n- leyline:git-platform\n- superpowers:subagent-driven-development\n- superpowers:writing-plans\n- superpowers:test-driven-development\n- superpowers:requesting-code-review\n- superpowers:finishing-a-development-branch\ntools: []\nusage_patterns:\n- issue-discovery\n- task-planning\n- parallel-execution\n- quality-gates\ncomplexity: advanced\nmodel_hint: deep\nestimated_tokens: 2500\nmodules:\n- modules/issue-discovery.md\n- modules/task-planning.md\n- modules/parallel-execution.md\n- modules/quality-gates.md\n- modules/completion.md\n- modules/troubleshooting.md\n---\n## Table of Contents\n\n- [Key Features](#key-features)\n- [Workflow Overview](#workflow-overview)\n- [Required TodoWrite Items](#required-todowrite-items)\n- [Configuration](#configuration)\n- [Detailed Resources](#detailed-resources)\n\n\n# Fix Issue(s)\n\nRetrieves issue content from the detected git platform (GitHub, GitLab, or Bitbucket) and uses subagent-driven-development to systematically address requirements, executing tasks in parallel where dependencies allow.\n\n**Platform detection is automatic** via the `leyline:git-platform` SessionStart hook. Check session context for `git_platform:` to determine which CLI to use.\n\n## Key Features\n\n- **Cross-Platform**: Automatically detects GitHub/GitLab/Bitbucket and uses appropriate CLI\n- **Flexible Input**: Single issue number, platform URL, or space-delimited list\n- **Parallel Execution**: Independent tasks run concurrently via subagents\n- **One PR**: All issues produce one consolidated PR (never per-issue PRs)\n- **Quality Gates**: Code review between task groups\n- **Fresh Context**: Each subagent starts with clean context for focused work\n\n## Workflow Overview\n\n| Phase | Description | Module |\n|-------|-------------|--------|\n| 1. Discovery | Parse input, fetch issues, extract requirements | [issue-discovery](modules/issue-discovery.md) |\n| 2. Planning | Analyze dependencies, create task breakdown | [task-planning](modules/task-planning.md) |\n| 3. Execution | Dispatch parallel subagents for independent tasks | [parallel-execution](modules/parallel-execution.md) |\n| 4. Quality | Code review gates between task batches | [quality-gates](modules/quality-gates.md) |\n| 5-6. Completion | Sequen"
+    },
+    {
+      "path": "other/product-discovery/SKILL.md",
+      "name": "product-discovery",
+      "current_category": "other",
+      "llm_category": "product",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly about product discovery and market research, covering JTBD, Kano model, and Value Proposition Canvas - fundamental product management frameworks.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "3321ea4ae402e673c03c9f62c9b7c503a944262cac76a342ded7df24e8a3e1e0",
+      "metadata_sha256": "64ae021ec0ce789f7730b6719a004b8dcb42481628409fcd5fa6fca14e9c7029",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Product discovery and market research expert. Use when validating product ideas, conducting market research, user interviews, competitive analysis, or opportunity assessment. Covers JTBD, Kano model, and Value Proposition Canvas.",
+      "content_excerpt": "---\nname: product-discovery\ndescription: Product discovery and market research expert. Use when validating product ideas, conducting market research, user interviews, competitive analysis, or opportunity assessment. Covers JTBD, Kano model, and Value Proposition Canvas.\n---\n# Product Discovery\n\n## Core Principles\n\n- **Continuous Discovery** — Weekly user conversations, not episodic research\n- **Outcome-Driven** — Start with outcomes to achieve, not solutions to build\n- **Assumption Testing** — Validate risky assumptions before committing resources\n- **Co-Creation** — Build with customers, not just for them\n- **Data-Driven** — Use evidence over intuition and stakeholder opinions\n- **Problem-First** — Deeply understand the problem space before ideating solutions\n\n---\n\n## Hard Rules (Must Follow)\n\n> These rules are mandatory. Violating them means the skill is not working correctly.\n\n### No Solution-First Thinking\n\n**Never start with a solution. Always define the problem and outcome first.**\n\n```markdown\n❌ FORBIDDEN:\n\"We should build a search bar for the product page\"\n\"Let's add AI recommendations\"\n\"Users need a mobile app\"\n\n✅ REQUIRED:\n\"Problem: Users can't find products (40% exit rate on catalog)\nOutcome: Reduce exit rate to 20%\nPossible solutions:\n1. Search bar with filters\n2. AI-powered recommendations\n3. Better category navigation\n4. Visual product browsing\"\n```\n\n### Evidence-Based Decisions\n\n**Never assume user needs without evidence from real user research.**\n\n```markdown\n❌ FORBIDDEN:\n- \"Users probably want X\" (assumption without data)\n- \"Our competitor has X, so we need it too\" (copycat without validation)\n- \"The CEO thinks we should build X\" (HiPPO without evidence)\n- \"It's obvious users need X\" (intuition without validation)\n\n✅ REQUIRED:\n- \"5 out of 8 interviewed users mentioned X as a pain point\"\n- \"Analytics show 60% of users abandon at step 3\"\n- \"Prototype test: 7/10 users completed task successfully\"\n- \"Survey (n=500): 45% rated feature as 'must have'\"\n```\n\n### Minimum Interview Threshold\n\n**Never validate a problem with fewer than 5 user interviews per segment.**\n\n```markdown\n❌ FORBIDDEN:\n- \"We talked to 2 users and they loved the idea\"\n- \"One customer requested this feature\"\n- \"Based on a quick chat with sales...\"\n\n✅ REQUIRED:\n| Segment | Interviews | Key Finding |\n|---------|------------|-------------|\n| Power Users | 6 | 5/6 struggle with X |\n| New Users | 5 | 4/5 drop off at onboarding |\n| Churned | 5 | 3/5 cited missing feature Y |\n\nMinimum"
+    },
+    {
+      "path": "other/hunt-misc-elementalsouls-claude-bughunter/SKILL.md",
+      "name": "hunt-misc",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is about hunting miscellaneous vulnerabilities including access control failures, information disclosure, session/auth logic bugs, and misconfiguration - all security concerns. The description explicitly mentions security testing and bug bounty reports.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "1da165c46da0cb8c2ef9d4e110cb6b876081619b7d96acad43ff96850d2a029e",
+      "metadata_sha256": "69ead7d2ad2b3b77891de561fabe6451f93e5bfce29800af096054830d2c3cf2",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Hunting skill for misc vulnerabilities. Built from 225 public bug bounty reports. Use when hunting misc on any target.",
+      "content_excerpt": "---\nname: hunt-misc\ndescription: Hunting skill for misc vulnerabilities. Built from 225 public bug bounty reports. Use when hunting misc on any target.\nsources: github, hackerone_public\nreport_count: 225\n---\n\n## Crown Jewel Targets\n\n**Why this vuln class pays:**\nMISC vulnerabilities span access control failures, information disclosure, session/auth logic bugs, and misconfiguration — the categories that consistently produce the highest payouts because they map directly to business impact: data exposure, account takeover, privilege escalation, and infrastructure compromise.\n\n**Highest-value targets:**\n- **SaaS platforms with role hierarchies** (Shopify, GitHub, GitLab) — any boundary between owner/admin/staff/guest is a privilege escalation surface\n- **Identity/auth flows** — invitation links, password reset, SAML SSO, OAuth token scopes\n- **Multi-tenant systems** — one tenant touching another tenant's data\n- **Internal APIs** — LFS endpoints, pre-receive hooks, internal GraphQL/REST that assume caller is trusted\n- **Domain/DNS management features** — transfer controls, subdomain delegation\n- **Token/credential management** — PAT scopes, deploy keys, API tokens stored in config fields\n\n**Asset types that pay most:**\n- Core product APIs (not marketing subdomains)\n- Enterprise/self-hosted editions (GitHub Enterprise, GitLab EE)\n- Partner/collaborator invitation systems\n- OAuth app integrations and webhook endpoints\n\n---\n\n## Attack Surface Signals\n\n**URL patterns to watch:**\n```\n/admin/*/transfer\n/invitations/*\n/partners/*/accept\n/api/v*/repos/*/lfs/*\n/-/settings/integrations/sentry\n/api/v*/user/installations\n/hooks/pre-receive/*\n/reset-password?token=\n/auth/saml/callback\n/api/v*/packages/pypi/*\n```\n\n**Response header signals:**\n```\nX-Request-Id (pitchfork/Rack — check for header injection)\nX-Shopify-Shop-Api-Call-Limit\nX-GitLab-*\n```\n\n**JS patterns revealing internal surfaces:**\n```javascript\n// Look for hardcoded internal API paths\nfetch('/internal/api/\ngraphql { installations(\n\"scope\": [], // empty scopes on tokens\n\"permissions\": {\"contents\": \"read\"} // minimal scope PATs\n```\n\n**Tech stack signals:**\n- Ruby/Rack middleware (CRLF injection risk in `pitchfork`)\n- SAML SSO enabled on enterprise instances\n- PyPI proxy/mirror configurations (dependency confusion)\n- Sentry error tracking integration fields (SSRF/token leak vector)\n- Multi-role invitation systems (partners, staff, collaborators)\n\n---\n\n## Step-by-Step Hunting Methodology\n\n1. **Map all role/permissio"
+    },
+    {
+      "path": "other/vector-database-engineer/SKILL.md",
+      "name": "vector-database-engineer",
+      "current_category": "other",
+      "llm_category": "data",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly about vector databases, embedding strategies, and semantic search implementation, which falls under data engineering, analytics, and database workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "953c5d760c4b562cc02db5cc25e1dd00ec1d9cc5bc31f7b4ce618bddef19bd9b",
+      "metadata_sha256": "8fb25039bfed8d89e2c52bf42d6917745518d99f454009bb94ec3b8d95b9aaba",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Expert in vector databases, embedding strategies, and semantic search implementation. Masters Pinecone, Weaviate, Qdrant, Milvus, and pgvector for RAG applications, recommendation systems, and similar",
+      "content_excerpt": "---\nname: vector-database-engineer\ndescription: \"Expert in vector databases, embedding strategies, and semantic search implementation. Masters Pinecone, Weaviate, Qdrant, Milvus, and pgvector for RAG applications, recommendation systems, and similar\"\nrisk: unknown\nsource: community\ndate_added: \"2026-02-27\"\n---\n\n# Vector Database Engineer\n\nExpert in vector databases, embedding strategies, and semantic search implementation. Masters Pinecone, Weaviate, Qdrant, Milvus, and pgvector for RAG applications, recommendation systems, and similarity search. Use PROACTIVELY for vector search implementation, embedding optimization, or semantic retrieval systems.\n\n## Do not use this skill when\n\n- The task is unrelated to vector database engineer\n- You need a different domain or tool outside this scope\n\n## Instructions\n\n- Clarify goals, constraints, and required inputs.\n- Apply relevant best practices and validate outcomes.\n- Provide actionable steps and verification.\n- If detailed examples are required, open `resources/implementation-playbook.md`.\n\n## Capabilities\n\n- Vector database selection and architecture\n- Embedding model selection and optimization\n- Index configuration (HNSW, IVF, PQ)\n- Hybrid search (vector + keyword) implementation\n- Chunking strategies for documents\n- Metadata filtering and pre/post-filtering\n- Performance tuning and scaling\n\n## Use this skill when\n\n- Building RAG (Retrieval Augmented Generation) systems\n- Implementing semantic search over documents\n- Creating recommendation engines\n- Building image/audio similarity search\n- Optimizing vector search latency and recall\n- Scaling vector operations to millions of vectors\n\n## Workflow\n\n1. Analyze data characteristics and query patterns\n2. Select appropriate embedding model\n3. Design chunking and preprocessing pipeline\n4. Choose vector database and index type\n5. Configure metadata schema for filtering\n6. Implement hybrid search if needed\n7. Optimize for latency/recall tradeoffs\n8. Set up monitoring and reindexing strategies\n\n## Best Practices\n\n- Choose embedding dimensions based on use case (384-1536)\n- Implement proper chunking with overlap\n- Use metadata filtering to reduce search space\n- Monitor embedding drift over time\n- Plan for index rebuilding\n- Cache frequent queries\n- Test recall vs latency tradeoffs\n\n## Limitations\n- Use this skill only when the task clearly matches the scope described above.\n- Do not treat the output as a substitute for environment-specific validation, testing, or expert"
+    }
+  ],
+  "notes": [
+    "Review sample rows against SKILL.md excerpts before applying a migration plan.",
+    "Sampling is deterministic for a fixed seed and classification input."
+  ]
+}

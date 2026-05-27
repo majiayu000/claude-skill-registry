@@ -1,0 +1,41 @@
+{
+  "name": "before-you-build",
+  "description": "Pre-build product and feature risk review for AI coding agents, helping teams validate demand, distribution, and failure patterns before implementation.",
+  "repo": "bin1874/before-you-build-skill",
+  "path": "SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "tags": [
+    "ai-coding",
+    "product-risk",
+    "validation",
+    "indie-hackers",
+    "codex",
+    "claude-code",
+    "cursor"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "before-you-build",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "LICENSE",
+    "README.md",
+    "examples/feature-change.md",
+    "examples/launched-project.md",
+    "examples/new-product-idea.md",
+    "examples/real-case-dripfit.md",
+    "examples/real-case-gummysearch.md",
+    "examples/real-case-ledger-cloud-reminders.md",
+    "references/case-memory-api.md",
+    "references/evidence-check.md",
+    "references/failure-patterns.md"
+  ],
+  "author": "bin1874",
+  "source_url": "https://github.com/bin1874/before-you-build-skill/blob/main/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bin1874/before-you-build-skill/blob/main/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

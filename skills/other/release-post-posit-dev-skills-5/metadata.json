@@ -1,0 +1,17 @@
+{
+  "name": "release-post",
+  "repo": "posit-dev/skills",
+  "path": "open-source/release-post/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/posit-dev/skills",
+  "dir_name": "release-post-posit-dev-skills-5",
+  "downloaded_at": "2026-05-27T04:25:46.567203Z",
+  "author": "posit-dev",
+  "source_url": "https://github.com/posit-dev/skills/blob/main/open-source/release-post/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/posit-dev/skills/blob/main/open-source/release-post/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

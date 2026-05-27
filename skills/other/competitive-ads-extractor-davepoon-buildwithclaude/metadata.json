@@ -1,0 +1,17 @@
+{
+  "name": "competitive-ads-extractor",
+  "repo": "davepoon/buildwithclaude",
+  "path": "plugins/all-skills/skills/competitive-ads-extractor/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/davepoon/buildwithclaude",
+  "dir_name": "competitive-ads-extractor-davepoon-buildwithclaude",
+  "downloaded_at": "2026-05-27T04:12:33.077947Z",
+  "author": "davepoon",
+  "source_url": "https://github.com/davepoon/buildwithclaude/blob/main/plugins/all-skills/skills/competitive-ads-extractor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/davepoon/buildwithclaude/blob/main/plugins/all-skills/skills/competitive-ads-extractor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

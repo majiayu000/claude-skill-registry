@@ -1,0 +1,17 @@
+{
+  "name": "bash",
+  "repo": "joaquimscosta/arkhe-claude-plugins",
+  "path": "plugins/lang/skills/bash/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/joaquimscosta/arkhe-claude-plugins",
+  "dir_name": "bash-joaquimscosta-arkhe-claude-plugins-3",
+  "downloaded_at": "2026-05-27T04:18:27.237213Z",
+  "author": "joaquimscosta",
+  "source_url": "https://github.com/joaquimscosta/arkhe-claude-plugins/blob/main/plugins/lang/skills/bash/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/joaquimscosta/arkhe-claude-plugins/blob/main/plugins/lang/skills/bash/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

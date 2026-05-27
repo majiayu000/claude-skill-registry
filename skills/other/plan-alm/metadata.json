@@ -1,0 +1,17 @@
+{
+  "name": "plan-alm",
+  "repo": "microsoft/power-platform-skills",
+  "path": "plugins/power-pages/skills/plan-alm/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/microsoft/power-platform-skills",
+  "dir_name": "plan-alm",
+  "downloaded_at": "2026-05-27T04:21:41.392496Z",
+  "author": "microsoft",
+  "source_url": "https://github.com/microsoft/power-platform-skills/blob/main/plugins/power-pages/skills/plan-alm/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/microsoft/power-platform-skills/blob/main/plugins/power-pages/skills/plan-alm/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

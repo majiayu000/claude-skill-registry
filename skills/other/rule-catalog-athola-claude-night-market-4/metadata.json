@@ -1,0 +1,17 @@
+{
+  "name": "rule-catalog",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/hookify/skills/rule-catalog/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "rule-catalog-athola-claude-night-market-4",
+  "downloaded_at": "2026-05-27T04:08:39.736350Z",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/master/plugins/hookify/skills/rule-catalog/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/athola/claude-night-market/blob/master/plugins/hookify/skills/rule-catalog/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "react-flow-implementation",
+  "repo": "existential-birds/beagle",
+  "path": "plugins/beagle-react/skills/react-flow-implementation/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/existential-birds/beagle",
+  "dir_name": "react-flow-implementation",
+  "downloaded_at": "2026-05-27T04:13:57.648819Z",
+  "author": "existential-birds",
+  "source_url": "https://github.com/existential-birds/beagle/blob/main/plugins/beagle-react/skills/react-flow-implementation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/existential-birds/beagle/blob/main/plugins/beagle-react/skills/react-flow-implementation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

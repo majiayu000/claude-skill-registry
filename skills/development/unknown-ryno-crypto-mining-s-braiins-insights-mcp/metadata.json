@@ -1,0 +1,21 @@
+{
+  "name": "unknown",
+  "description": "Connect your AI coding assistant (Claude Desktop, Cursor, GitHub Copilot) to real-time Bitcoin network analytics through the Braiins Insights Dashboard API. Access hashrate statistics, mining profitability calculations, network difficulty trends, and 14 additional data sources via standardized Model Context Protocol (MCP) tools.",
+  "repo": "Ryno-Crypto-Mining-Services/braiins-insights-mcp-server",
+  "path": ".claude/skills/skill-creator/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-ryno-crypto-mining-s-braiins-insights-mcp",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "Ryno-Crypto-Mining-Services",
+  "source_url": "https://github.com/Ryno-Crypto-Mining-Services/braiins-insights-mcp-server/blob/main/.claude/skills/skill-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Ryno-Crypto-Mining-Services/braiins-insights-mcp-server/blob/main/.claude/skills/skill-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

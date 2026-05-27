@@ -1,0 +1,17 @@
+{
+  "name": "portfolio-status",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "prozessrecht/skills/portfolio-status/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "portfolio-status-klotzkette-claude-fuer-deutsche-2",
+  "downloaded_at": "2026-05-27T04:00:36.665890Z",
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/prozessrecht/skills/portfolio-status/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/prozessrecht/skills/portfolio-status/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

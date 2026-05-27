@@ -1,0 +1,17 @@
+{
+  "name": "project-bootstrapper",
+  "repo": "mhattingpete/claude-skills-marketplace",
+  "path": "productivity-skills-plugin/skills/project-bootstrapper/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mhattingpete/claude-skills-marketplace",
+  "dir_name": "project-bootstrapper-mhattingpete-claude-skills-market-4",
+  "downloaded_at": "2026-05-27T04:21:35.913854Z",
+  "author": "mhattingpete",
+  "source_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/productivity-skills-plugin/skills/project-bootstrapper/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mhattingpete/claude-skills-marketplace/blob/main/productivity-skills-plugin/skills/project-bootstrapper/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

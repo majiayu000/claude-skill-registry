@@ -1,0 +1,17 @@
+{
+  "name": "error-patterns",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/leyline/skills/error-patterns/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "error-patterns-athola-claude-night-market-2",
+  "downloaded_at": "2026-05-27T04:08:33.323826Z",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/master/plugins/leyline/skills/error-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/athola/claude-night-market/blob/master/plugins/leyline/skills/error-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

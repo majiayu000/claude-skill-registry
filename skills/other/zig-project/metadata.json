@@ -1,0 +1,17 @@
+{
+  "name": "zig-project",
+  "repo": "majiayu000/claude-arsenal",
+  "path": "skills/zig-project/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/majiayu000/claude-arsenal",
+  "dir_name": "zig-project",
+  "downloaded_at": "2026-05-27T04:20:34.788877Z",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-arsenal/blob/main/skills/zig-project/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/majiayu000/claude-arsenal/blob/main/skills/zig-project/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

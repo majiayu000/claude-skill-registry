@@ -1,0 +1,17 @@
+{
+  "name": "azure-usage",
+  "repo": "fcakyon/claude-codex-settings",
+  "path": "plugins/azure-tools/skills/azure-usage/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/fcakyon/claude-codex-settings",
+  "dir_name": "azure-usage-fcakyon-claude-codex-setting-5",
+  "downloaded_at": "2026-05-27T04:14:08.564280Z",
+  "author": "fcakyon",
+  "source_url": "https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/azure-tools/skills/azure-usage/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/azure-tools/skills/azure-usage/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

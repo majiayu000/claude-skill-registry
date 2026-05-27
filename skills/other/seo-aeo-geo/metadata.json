@@ -1,0 +1,17 @@
+{
+  "name": "seo-aeo-geo",
+  "repo": "rampstackco/claude-skills",
+  "path": "skills/seo-aeo-geo/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/rampstackco/claude-skills",
+  "dir_name": "seo-aeo-geo",
+  "downloaded_at": "2026-05-27T04:26:04.239433Z",
+  "author": "rampstackco",
+  "source_url": "https://github.com/rampstackco/claude-skills/blob/main/skills/seo-aeo-geo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rampstackco/claude-skills/blob/main/skills/seo-aeo-geo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

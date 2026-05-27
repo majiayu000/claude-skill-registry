@@ -62,6 +62,32 @@ the result review-only.
 - Model output is accepted only when it names an active canonical category.
 - Legacy categories may appear in reports, but they are not valid publish targets.
 
+## Model-Facing Classification Contract
+
+The residual classifier prompt treats the taxonomy file as the model's category
+rulebook, not just a list of names. Its payload must include every active
+category's slug, display name, inclusion rule, exclusion rule, examples, and
+keywords. The model must use those boundaries before choosing a category.
+
+The only valid model output category is a slug present in the active
+`allowed_categories` payload. Broad natural labels that are not canonical
+categories are invalid even when they look useful. Current blocked labels and
+their canonical routing hints are:
+
+- `automation`: route by outcome to `workflow`, `productivity`, `devops`,
+  `orchestration`, `integration`, or `platform`.
+- `research`: route by method or domain to `analysis`, `domains`, `product`, or
+  `ai-ml`.
+- `education`: route by artifact or learning outcome to
+  `personal-development`, `documents`, or `domains`.
+- `content`: route by content job to `writing`, `marketing`, `generation`, or
+  `documents`.
+
+If none of the canonical targets is defensible, the model may choose `other`
+only as a last-resort fallback with confidence `<= 0.65`. The apply step still
+rejects `other` by default, so this preserves fail-closed behavior instead of
+turning uncertainty into a migration.
+
 ## Migration Plan Contract
 
 `scripts/plan_category_migration.py` emits JSON with:
@@ -102,6 +128,10 @@ Defaults:
 The allowed category payload contains only active canonical categories. Unknown,
 inactive, malformed, or missing model outputs are kept as non-`ok` rows so
 downstream migration stays fail-closed.
+
+For residual classification, the allowed category payload also includes
+inclusion rules, exclusion rules, examples, keywords, and blocked-label guidance
+so MiMo is choosing from the same current category contract operators review.
 
 Secrets must not be written to files or committed. Reports record the
 environment variable name, never the API key value.
@@ -242,5 +272,7 @@ Category artifact gate:
   categories.
 - Publish target validation fails on unknown or legacy categories.
 - Model review accepts only active canonical categories.
+- Residual model classification prompts include taxonomy inclusion/exclusion
+  boundaries and blocked-label guidance for common noncanonical proposals.
 - Migration planning still produces audited review queues for unknown and legacy
   inputs.

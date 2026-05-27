@@ -1,0 +1,19 @@
+{
+  "name": "axiom-privacy-ux",
+  "description": "",
+  "repo": "tuliopc23/flying-dutchman-app",
+  "category": "security",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tuliopc23/flying-dutchman-app",
+  "github_path": ".claude/skills/axiom-privacy-ux",
+  "github_branch": "main",
+  "dir_name": "axiom-privacy-ux",
+  "downloaded_at": "2026-02-05T01:44:46.590558Z",
+  "author": "tuliopc23",
+  "source_url": "https://github.com/tuliopc23/flying-dutchman-app/blob/main/.claude/skills/axiom-privacy-ux/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tuliopc23/flying-dutchman-app/blob/main/.claude/skills/axiom-privacy-ux/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted"
+}

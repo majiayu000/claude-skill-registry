@@ -292,6 +292,41 @@ def test_batch_classification_can_match_by_path_or_position(tmp_path):
     ]
 
 
+def test_prompt_payload_includes_taxonomy_boundaries_and_blocked_labels():
+    classifier = _load_module()
+
+    messages = classifier.build_messages([{**_work_item("other/automation"), "_batch_id": "0"}])
+    prompt_payload = json.loads(messages[1]["content"])
+
+    categories = {item["slug"]: item for item in prompt_payload["allowed_categories"]}
+    assert "automation" not in categories
+    assert categories["development"]["inclusion_rule"]
+    assert categories["development"]["exclusion_rule"]
+    assert categories["development"]["examples"]
+    assert categories["development"]["keywords"]
+
+    contract = prompt_payload["taxonomy_contract"]
+    assert contract["source"] == "taxonomy/categories.yaml active categories only"
+    assert "allowed_categories" in contract["valid_category_rule"]
+    assert "last-resort" in contract["other_rule"]
+    blocked_slugs = {item["blocked_slug"] for item in contract["noncanonical_category_guidance"]}
+    assert blocked_slugs == {"automation", "research", "education", "content"}
+    automation_guidance = next(
+        item
+        for item in contract["noncanonical_category_guidance"]
+        if item["blocked_slug"] == "automation"
+    )
+    assert {target["slug"] for target in automation_guidance["active_targets"]} >= {
+        "workflow",
+        "productivity",
+        "devops",
+        "orchestration",
+        "integration",
+        "platform",
+    }
+    assert "non-canonical category labels" in messages[0]["content"]
+
+
 def test_invalid_model_category_fails_closed(tmp_path):
     classifier = _load_module()
     workset = tmp_path / "workset.jsonl"
@@ -325,6 +360,41 @@ def test_invalid_model_category_fails_closed(tmp_path):
 
     assert report["summary"]["status_counts"] == {"unknown_or_inactive_category": 1}
     assert report["rows"][0]["llm_category"] == "not-a-real-category"
+
+
+def test_blocked_natural_label_from_model_fails_closed(tmp_path):
+    classifier = _load_module()
+    workset = tmp_path / "workset.jsonl"
+    _write_workset(workset, [_work_item("other/automation")])
+    client = FakeClient(
+        [
+            json.dumps(
+                [
+                    {
+                        "id": "0",
+                        "category": "automation",
+                        "confidence": 0.99,
+                        "reason": "broad label",
+                        "evidence": [],
+                    }
+                ]
+            )
+        ]
+    )
+
+    report = classifier.run_classification(
+        workset_jsonl=workset,
+        client=client,
+        checkpoint_jsonl=None,
+        resume=False,
+        limit=None,
+        batch_size=1,
+        workers=1,
+        sleep_seconds=0,
+    )
+
+    assert report["summary"]["status_counts"] == {"unknown_or_inactive_category": 1}
+    assert report["rows"][0]["llm_category"] == "automation"
 
 
 def test_api_errors_are_retried_before_fail_closed(tmp_path):

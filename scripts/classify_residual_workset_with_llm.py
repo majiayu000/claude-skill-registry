@@ -15,7 +15,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from category_taxonomy import get_taxonomy
+from category_taxonomy import category_slug, get_taxonomy
 from review_category_plan_with_llm import (
     DEFAULT_API_KEY_ENV,
     DEFAULT_BASE_URL,
@@ -29,18 +29,127 @@ from review_category_plan_with_llm import (
 
 CHECKPOINT_SCHEMA_VERSION = 1
 
+NONCANONICAL_CATEGORY_GUIDANCE: tuple[dict[str, Any], ...] = (
+    {
+        "blocked_slug": "automation",
+        "instruction": (
+            "Do not output automation. Pick the active category that describes "
+            "the outcome being automated."
+        ),
+        "active_targets": (
+            {
+                "slug": "workflow",
+                "when": "repeatable procedures, SOPs, pipelines, or task flows",
+            },
+            {
+                "slug": "productivity",
+                "when": "personal or team task management and office automation",
+            },
+            {
+                "slug": "devops",
+                "when": "CI, deployment, release, infrastructure, or ops automation",
+            },
+            {
+                "slug": "orchestration",
+                "when": "coordinating agents, tools, or multi-step execution control",
+            },
+            {
+                "slug": "integration",
+                "when": "connecting external systems, APIs, webhooks, or services",
+            },
+            {
+                "slug": "platform",
+                "when": "platform setup, package management, or runtime plumbing",
+            },
+        ),
+    },
+    {
+        "blocked_slug": "research",
+        "instruction": (
+            "Do not output research. Pick the active category that describes the "
+            "research method or domain."
+        ),
+        "active_targets": (
+            {"slug": "analysis", "when": "comparative study, evaluation, or synthesis"},
+            {"slug": "domains", "when": "industry or subject-matter research"},
+            {"slug": "product", "when": "market, user, product, or roadmap research"},
+            {"slug": "ai-ml", "when": "model, prompt, eval, or AI system research"},
+        ),
+    },
+    {
+        "blocked_slug": "education",
+        "instruction": (
+            "Do not output education. Pick the active category that describes the "
+            "learning artifact or coaching outcome."
+        ),
+        "active_targets": (
+            {
+                "slug": "personal-development",
+                "when": "learning plans, coaching, career growth, or self-improvement",
+            },
+            {
+                "slug": "documents",
+                "when": "courses, lesson materials, guides, or educational documents",
+            },
+            {"slug": "domains", "when": "teaching a specific subject matter domain"},
+        ),
+    },
+    {
+        "blocked_slug": "content",
+        "instruction": (
+            "Do not output content. Pick the active category that describes the "
+            "content job being done."
+        ),
+        "active_targets": (
+            {"slug": "writing", "when": "drafting, editing, copy, or long-form prose"},
+            {"slug": "marketing", "when": "campaign, growth, social, or audience content"},
+            {"slug": "generation", "when": "creating media or generated assets"},
+            {"slug": "documents", "when": "structured document production or conversion"},
+        ),
+    },
+)
 
-def active_category_payload() -> list[dict[str, str]]:
+
+def active_category_payload() -> list[dict[str, Any]]:
     taxonomy = get_taxonomy()
     return [
         {
             "slug": definition.slug,
             "display_name": definition.display_name,
-            "description": definition.description,
+            "description": definition.description or definition.inclusion_rule,
+            "inclusion_rule": definition.inclusion_rule,
+            "exclusion_rule": definition.exclusion_rule,
+            "examples": list(definition.examples),
+            "keywords": list(definition.keywords),
         }
         for definition in sorted(taxonomy.categories.values(), key=lambda item: item.slug)
         if definition.status == "active"
     ]
+
+
+def noncanonical_category_guidance() -> list[dict[str, Any]]:
+    taxonomy = get_taxonomy()
+    guidance: list[dict[str, Any]] = []
+    for entry in NONCANONICAL_CATEGORY_GUIDANCE:
+        blocked_slug = category_slug(entry["blocked_slug"])
+        if taxonomy.is_publishable(blocked_slug):
+            raise ValueError(f"noncanonical guidance blocks active category {blocked_slug!r}")
+        targets: list[dict[str, str]] = []
+        for target in entry["active_targets"]:
+            target_slug = category_slug(target["slug"])
+            if not taxonomy.is_publishable(target_slug):
+                raise ValueError(
+                    f"noncanonical guidance target {target_slug!r} is not an active category"
+                )
+            targets.append({"slug": target_slug, "when": str(target["when"])})
+        guidance.append(
+            {
+                "blocked_slug": blocked_slug,
+                "instruction": str(entry["instruction"]),
+                "active_targets": targets,
+            }
+        )
+    return guidance
 
 
 def load_work_items(path: Path, *, limit: int | None = None) -> list[dict[str, Any]]:
@@ -144,13 +253,26 @@ def build_messages(items: list[dict[str, Any]]) -> list[dict[str, str]]:
     system_prompt = (
         "You are classifying reusable AI skills into a registry taxonomy. "
         "Use SKILL.md frontmatter/body semantics first, then metadata and path. "
-        "Choose one category slug from allowed_categories. Prefer a concrete active "
-        "category over 'other'. Use 'other' only when no active category is defensible, "
-        "and then set confidence <= 0.65. Do not choose review or deprecated categories. "
+        "Allowed category slugs are the only valid outputs; do not invent, translate, "
+        "abbreviate, or return non-canonical category labels. Apply each allowed "
+        "category's inclusion_rule, exclusion_rule, examples, and keywords before "
+        "choosing. Use taxonomy_contract.noncanonical_category_guidance when a broad "
+        "label such as automation, research, education, or content seems tempting. "
+        "Prefer a concrete active category over 'other'. Use 'other' only when no "
+        "active category is defensible, and then set confidence <= 0.65. Do not "
+        "choose review or deprecated categories. "
         "Return only valid compact JSON: an array of objects with keys "
         "id, category, confidence, reason, evidence. confidence must be 0..1."
     )
     payload = {
+        "taxonomy_contract": {
+            "source": "taxonomy/categories.yaml active categories only",
+            "valid_category_rule": (
+                "category must be exactly one slug present in allowed_categories"
+            ),
+            "other_rule": ("other is a last-resort fallback and requires confidence <= 0.65"),
+            "noncanonical_category_guidance": noncanonical_category_guidance(),
+        },
         "allowed_categories": categories,
         "candidates": [compact_candidate(item) for item in items],
     }
@@ -281,9 +403,7 @@ def classify_batch(
             if retry_sleep_seconds > 0:
                 time.sleep(retry_sleep_seconds * (attempt + 1))
     parsed_items = parsed or []
-    payload_by_id = {
-        str(payload.get("id")): payload for payload in parsed_items if "id" in payload
-    }
+    payload_by_id = {str(payload.get("id")): payload for payload in parsed_items if "id" in payload}
     payload_by_path = {
         str(payload.get("path")): payload
         for payload in parsed_items

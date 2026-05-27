@@ -1,0 +1,828 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-27T10:18:29.755314+00:00",
+  "workset_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch007/migration-artifacts/2026-05-27-current-other-semantic-batch-007/input.jsonl",
+  "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch007/migration-artifacts/2026-05-27-current-other-semantic-batch-007/classification.jsonl",
+  "policy": {
+    "sample_size": 40,
+    "seed": "7",
+    "statuses": [
+      "ok"
+    ],
+    "min_confidence": null
+  },
+  "summary": {
+    "workset_row_count": 1000,
+    "classification_row_count": 1000,
+    "matched_input_count": 1000,
+    "missing_input_count": 0,
+    "candidate_count": 1000,
+    "sample_count": 40,
+    "status_counts": {
+      "ok": 1000
+    },
+    "target_category_counts": {
+      "agent": 16,
+      "ai-llm": 15,
+      "ai-ml": 15,
+      "analysis": 26,
+      "api": 92,
+      "bash": 21,
+      "business": 1,
+      "context-management": 1,
+      "creative": 5,
+      "data": 23,
+      "design": 12,
+      "development": 224,
+      "devops": 135,
+      "documents": 23,
+      "domains": 44,
+      "generation": 36,
+      "integration": 63,
+      "language": 8,
+      "marketing": 11,
+      "orchestration": 33,
+      "other": 7,
+      "performance": 17,
+      "personal-development": 1,
+      "planning": 1,
+      "platform": 15,
+      "product": 29,
+      "productivity": 2,
+      "quality": 17,
+      "security": 29,
+      "skills": 18,
+      "system": 19,
+      "testing": 13,
+      "workflow": 25,
+      "writing": 3
+    }
+  },
+  "samples": [
+    {
+      "path": "other/aws-cloudformation-iam-giuseppe-trisciuogli-developer-kit-3/SKILL.md",
+      "name": "aws-cloudformation-iam",
+      "current_category": "other",
+      "llm_category": "devops",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill provides AWS CloudFormation patterns for IAM infrastructure, which is infrastructure-as-code and deployment automation.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "cafd59357e51b8b7c3f3022d90e33c9914a686799e7330618d9be009c244e9b8",
+      "metadata_sha256": "327d6b3416ba82a7f5c347b70d0a4363971800028281df2e53e6ce7fc6b3babd",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Provides AWS CloudFormation patterns for IAM users, roles, policies, and managed policies. Use when creating IAM resources with CloudFormation, implementing least privilege access, configuring cross-account access, setting up identity centers, managing permissions boundaries, and organizing template structure with Parameters, Outputs, Mappings, Conditions for secure infrastructure deployments.",
+      "content_excerpt": "---\nname: aws-cloudformation-iam\ndescription: Provides AWS CloudFormation patterns for IAM users, roles, policies, and managed policies. Use when creating IAM resources with CloudFormation, implementing least privilege access, configuring cross-account access, setting up identity centers, managing permissions boundaries, and organizing template structure with Parameters, Outputs, Mappings, Conditions for secure infrastructure deployments.\nallowed-tools: Read, Write, Bash\n---\n\n# AWS CloudFormation IAM Security\n\n## Overview\n\nCreate production-ready IAM infrastructure using AWS CloudFormation templates. This skill covers users, roles, policies, managed policies, permission boundaries, and best practices for implementing least privilege access.\n\n## When to Use\n\nUse this skill when:\n- Creating new IAM users with CloudFormation\n- Configuring IAM roles for AWS services\n- Defining inline policies and managed policies\n- Implementing cross-account access with STS\n- Creating permission boundaries\n- Organizing templates with Parameters, Outputs, Mappings, Conditions\n- Implementing cross-stack references for IAM resources\n- Configuring IAM Identity Center (SSO)\n- Managing service control policies (SCP)\n\n## Instructions\n\nFollow these steps to create IAM infrastructure with CloudFormation:\n\n1. **Define User Parameters**: Specify user names and access types\n2. **Create IAM Roles**: Define trust policies for services or users\n3. **Write Policies**: Implement least privilege with specific actions\n4. **Set Up Permission Boundaries**: Limit maximum permissions for users\n5. **Configure Managed "
+    },
+    {
+      "path": "other/azure-speech-to-text-rest-py-moonaxis-azure-stack/SKILL.md",
+      "name": "azure-speech-to-text-rest-py",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Same Azure Speech to Text REST API skill from a different repository. REST API usage with HTTP requests and endpoints.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "7333260ccd015b0749c6d9c96cdecc398eebdb8948bd765666e0124fce3d9b32",
+      "metadata_sha256": "a2408743b44c09e91bfe320a94cc4dc9b3ad2948b04baf2ea8533c5f596fcf02",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Azure Speech to Text REST API for short audio (Python). Use for simple speech recognition of audio files up to 60 seconds without the Speech SDK.\nTriggers: \"speech to text REST\", \"short audio transcription\", \"speech recognition REST API\", \"STT REST\", \"recognize speech REST\".\nDO NOT USE FOR: Long audio (>60 seconds), real-time streaming, batch transcription, custom speech models, speech translation. Use Speech SDK or Batch Transcription API instead.",
+      "content_excerpt": "---\nname: azure-speech-to-text-rest-py\ndescription: |\n  Azure Speech to Text REST API for short audio (Python). Use for simple speech recognition of audio files up to 60 seconds without the Speech SDK.\n  Triggers: \"speech to text REST\", \"short audio transcription\", \"speech recognition REST API\", \"STT REST\", \"recognize speech REST\".\n  DO NOT USE FOR: Long audio (>60 seconds), real-time streaming, batch transcription, custom speech models, speech translation. Use Speech SDK or Batch Transcription API instead.\n---\n\n# Azure Speech to Text REST API for Short Audio\n\nSimple REST API for speech-to-text transcription of short audio files (up to 60 seconds). No SDK required - just HTTP requests.\n\n## Prerequisites\n\n1. **Azure subscription** - [Create one free](https://azure.microsoft.com/free/)\n2. **Speech resource** - Create in [Azure Portal](https://portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices)\n3. **Get credentials** - After deployment, go to resource > Keys and Endpoint\n\n## Environment Variables\n\n```bash\n# Required\nAZURE_SPEECH_KEY=<your-speech-resource-key>\nAZURE_SPEECH_REGION=<region>  # e.g., eastus, westus2, westeurope\n\n# Alternative: Use endpoint directly\nAZURE_SPEECH_ENDPOINT=https://<region>.stt.speech.microsoft.com\n```\n\n## Installation\n\n```bash\npip install requests\n```\n\n## Quick Start\n\n```python\nimport os\nimport requests\n\ndef transcribe_audio(audio_file_path: str, language: str = \"en-US\") -> dict:\n    \"\"\"Transcribe short audio file (max 60 seconds) using REST API.\"\"\"\n    region = os.environ[\"AZURE_SPEECH_REGION\"]\n    api_key = os.environ[\"AZURE_SPEECH_"
+    },
+    {
+      "path": "other/aws-cost-estimate/SKILL.md",
+      "name": "aws-cost-estimate",
+      "current_category": "other",
+      "llm_category": "analysis",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Generating AWS cost estimates from architecture documents is an analysis workflow for evaluating and reporting on infrastructure costs.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "91acdd1b97f6d37ffa9b8b08ba296bbe315ed1b2464fb7ca6b10d662e78dcdb5",
+      "metadata_sha256": "289d59468f81cb5ae607bf234f07d2fe36e8782579898a512e66a652fb0472d3",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Generate AWS cost estimates from architecture documents. Use when the user needs to estimate monthly/annual costs for an AWS architecture.",
+      "content_excerpt": "---\nname: aws-cost-estimate\ndescription: Generate AWS cost estimates from architecture documents. Use when the user needs to estimate monthly/annual costs for an AWS architecture.\nargument-hint: \"[doc-path] [--lang en|ja] [--currency usd|jpy]\"\nuser-invocable: true\n---\n\n# AWS Cost Estimate Skill\n\nGenerate accurate AWS cost estimates from architecture documents or descriptions.\n\n## Arguments\n\n- `doc-path`: Path to architecture document (markdown, text) or inline description\n- `--lang`: Output language. `ja` (default) or `en`\n- `--currency`: `usd` (default) or `jpy`. When `jpy`, ask the user for the exchange rate to use\n\n## Workflow\n\n### 1. Parse the architecture\n\nRead the provided document. Extract:\n\n- AWS services used and their configuration\n- Data flow patterns (for data transfer estimates)\n- Scale assumptions (users, queries/day, data volume)\n\nIf anything critical is ambiguous, ask using AskUserQuestion. Keep clarification minimal — only ask what materially affects the estimate.\n\n### 2. Verify pricing — AWS CLI first, web search fallback\n\n**CRITICAL: Always verify current prices. Never rely on training data.**\n\n1. Silently check if AWS CLI is available and authenticated (see `references/aws-pricing-api.md`)\n2. **If available** → use AWS Price List API for exact regional pricing. Read `references/aws-pricing-api.md` for service codes, example queries, and JSON parsing\n3. **If unavailable** → fall back to web search: `\"AWS [service] pricing [region] [current year]\"`. Use WebFetch on official pricing pages if results are insufficient\n\nFor required permissions, see `reference"
+    },
+    {
+      "path": "other/b2c-localization-salesforcecommercecl-b2c-developer-toolin/SKILL.md",
+      "name": "b2c-localization",
+      "current_category": "other",
+      "llm_category": "language",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Localize templates, forms, and content in B2C Commerce—translation, resource bundles, multi-locale support, and date/currency formatting.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "8eadb838e1e2923ec152e66c5400ca7552c282005f0b927812dc1d77b4062765",
+      "metadata_sha256": "a1292b744a1b68e1a398da9623d9209d702cf81c19716bc5dc7b5ff16b4b8aef",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Localize templates, forms, and content in B2C Commerce. Use when adding translations, working with resource bundles (*.properties files), using Resource.msg, or implementing multi-locale support. Covers locale folders, string externalization, and date/currency formatting.",
+      "content_excerpt": "---\nname: b2c-localization\ndescription: Localize templates, forms, and content in B2C Commerce. Use when adding translations, working with resource bundles (*.properties files), using Resource.msg, or implementing multi-locale support. Covers locale folders, string externalization, and date/currency formatting.\n---\n\n# Localization Skill\n\nThis skill guides you through localizing B2C Commerce storefronts for multiple languages and regions.\n\n## Overview\n\nB2C Commerce supports localization through:\n\n| Component | Approach |\n|-----------|----------|\n| **Templates** | Single template set + resource bundles |\n| **Forms** | Shared definitions + locale-specific labels |\n| **Static content** | Locale-specific folders |\n| **Product data** | Localizable attributes |\n\n## Locale Format\n\nLocales follow ISO standards: `{language}_{country}`\n\n| Format | Example | Description |\n|--------|---------|-------------|\n| `en` | English | Language only |\n| `en_US` | English/USA | Language + country |\n| `fr_CA` | French/Canada | Language + country |\n| `de_DE` | German/Germany | Language + country |\n\n## Resource Bundles\n\n### Directory Structure\n\n```\n/cartridge\n    /templates\n        /resources\n            account.properties          # Default (English)\n            checkout.properties\n            /fr\n                account.properties      # French\n                checkout.properties\n            /de\n                account.properties      # German\n                checkout.properties\n            /fr_CA\n                account.properties      # French Canadian\n```\n\n### Property File Format\n\n**account.pro"
+    },
+    {
+      "path": "other/azure-traffic-manager/SKILL.md",
+      "name": "azure-traffic-manager",
+      "current_category": "other",
+      "llm_category": "devops",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "Azure Traffic Manager is an infrastructure service for traffic routing and load balancing. The skill covers configuration, architecture patterns, and operational management of this infrastructure component.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "af10832de9b44d66b753f0c2c8a959882a108abbfb164f6e1a760a977cef9895",
+      "metadata_sha256": "55236561b96dd877f64120787aaa004b8927c13305eb42617bc51cbd89197f64",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Expert knowledge for Azure Traffic Manager development including troubleshooting, best practices, decision making, architecture & design patterns, configuration, and integrations & coding patterns. Use when configuring profiles/endpoints, routing methods, RUM JS, nested designs, or Traffic View–based tuning, and other Azure Traffic Manager related development tasks. Not for Azure Front Door (use azure-front-door), Azure Load Balancer (use azure-load-balancer), Azure Virtual WAN (use azure-virtual-wan), Azure Application Gateway (use azure-application-gateway).",
+      "content_excerpt": "---\nname: azure-traffic-manager\ndescription: Expert knowledge for Azure Traffic Manager development including troubleshooting, best practices, decision making, architecture & design patterns, configuration, and integrations & coding patterns. Use when configuring profiles/endpoints, routing methods, RUM JS, nested designs, or Traffic View–based tuning, and other Azure Traffic Manager related development tasks. Not for Azure Front Door (use azure-front-door), Azure Load Balancer (use azure-load-balancer), Azure Virtual WAN (use azure-virtual-wan), Azure Application Gateway (use azure-application-gateway).\ncompatibility: Requires network access. Uses mcp_microsoftdocs:microsoft_docs_fetch or fetch_webpage to retrieve documentation.\nmetadata:\n  generated_at: \"2026-02-28\"\n  generator: \"docs2skills/1.0.0\"\n---\n# Azure Traffic Manager Skill\n\nThis skill provides expert guidance for Azure Traffic Manager. Covers troubleshooting, best practices, decision making, architecture & design patterns, configuration, and integrations & coding patterns. It combines local quick-reference content with remote documentation fetching capabilities.\n\n## How to Use This Skill\n\n> **IMPORTANT for Agent**: Use the **Category Index** below to locate relevant sections. For categories with line ranges (e.g., `L35-L120`), use `read_file` with the specified lines. For categories with file links (e.g., `[security.md](security.md)`), use `read_file` on the linked reference file\n\n> **IMPORTANT for Agent**: If `metadata.generated_at` is more than 3 months old, suggest the user pull the latest version from the rep"
+    },
+    {
+      "path": "other/backtesting-assertions/SKILL.md",
+      "name": "backtesting-assertions",
+      "current_category": "other",
+      "llm_category": "testing",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "The skill runs assertion backtests against historical transactions to validate assertions on real chain data. This aligns with testing category's inclusion rule for 'Testing, QA, TDD, unit/integration/e2e testing' as it validates assertions against real data.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "e13d200049b90992288bcb147105c4c95d5e2fb858bb2b7d8c340dba53ccd181",
+      "metadata_sha256": "f81b87eeac2b2c9796d661c729b832e41bf4b5e10c2827c231239bfefb15c9c9",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Runs Credible Layer assertion backtests against historical transactions. Use when validating assertions on real chain data or known exploits.",
+      "content_excerpt": "---\nname: backtesting-assertions\ndescription: \"Runs Credible Layer assertion backtests against historical transactions. Use when validating assertions on real chain data or known exploits.\"\n---\n\n# Backtesting Assertions\n\nUse Credible Layer backtesting to replay historical transactions with assertions enabled.\n\n## When to Use\n- You want to validate assertions against real mainnet transactions.\n- You are testing a known exploit block or incident transaction.\n- You need to confirm triggers match real protocol entrypoints.\n\n## When NOT to Use\n- You only need unit or fuzz tests. Use `testing-assertions`.\n- You are designing invariants or triggers. Use `designing-assertions`.\n- You only need Solidity implementation details. Use `implementing-assertions`.\n\n## Quick Start\n1. Create a test that inherits `CredibleTestWithBacktesting`.\n2. Configure `BacktestingConfig` with target contract, block range, and assertion selector.\n3. Call `executeBacktest` and assert failures are zero.\n4. Run with `--ffi` or a profile that enables FFI.\n\n## Workflow\n- Pick a target contract (the assertion adopter address).\n- Choose `endBlock` and `blockRange`.\n- Verify RPC env vars; skip or fallback when missing.\n- Prefer `useTraceFilter = true` to detect internal calls.\n- Use `forkByTxHash = true` only when debugging state-dependent failures.\n- Interpret results: `ASSERTION_FAIL` often indicates false positives or gas issues.\n- If many `SKIP`, the selector/target does not match; adjust target or selector.\n\n## Rationalizations to Reject\n- \"We only need unit tests.\" Backtesting catches real-world call patter"
+    },
+    {
+      "path": "other/backend-fastapi-python/SKILL.md",
+      "name": "backend-fastapi-python",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly about Python backend development with FastAPI, covering endpoints, service functions, schemas, migrations, authentication patterns, middleware, and ORM usage. This is a software development workflow focused on coding and frameworks.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "eb45fec00160408b1e5a87bbf8142632541119e74e617835c9fb21bde69d1aa8",
+      "metadata_sha256": "1ea66b2b1f99facdf48d28bd68aea769e141b6e525c82fe3296daa67c1f67d06",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use this skill for any Python backend work in this project: building FastAPI endpoints, writing service functions, defining Pydantic/SQLModel schemas, running Alembic migrations, or debugging 422 errors. Essential for authentication and authorization patterns — setting up get_current_user, is_superuser checks, admin-only guards, role-based access, and dependency injection chains like Depends(). Also covers middleware, background tasks, async SQLAlchemy sessions, ORM relationship loading, and request/response design. Activate whenever the question involves Python API code, FastAPI patterns, or backend architecture in this codebase. Not for frontend, Docker, CI/CD, or infrastructure.",
+      "content_excerpt": "---\nname: backend-fastapi-python\ndescription: \"Use this skill for any Python backend work in this project: building FastAPI endpoints, writing service functions, defining Pydantic/SQLModel schemas, running Alembic migrations, or debugging 422 errors. Essential for authentication and authorization patterns — setting up get_current_user, is_superuser checks, admin-only guards, role-based access, and dependency injection chains like Depends(). Also covers middleware, background tasks, async SQLAlchemy sessions, ORM relationship loading, and request/response design. Activate whenever the question involves Python API code, FastAPI patterns, or backend architecture in this codebase. Not for frontend, Docker, CI/CD, or infrastructure.\"\n---\n\n# Backend FastAPI Python\n\nProject-specific conventions for FastAPI with SQLModel, pydantic-settings, and async SQLAlchemy.\n\n## Architecture Decisions\n\n1. **Services are stateless functions** — Not classes. First param is `db: AsyncSession`.\n2. **Generic response wrapper** — Always use `ApiResponse[T]` for consistency.\n3. **Dependencies chain** — `get_current_user` -> `require_auth` -> `require_admin`.\n4. **Module-scoped config** — Each module can have its own `{module}_config.py`.\n5. **Error codes for frontend** — `AppException(status, message, error_code)`.\n\n## Gotchas\n\n- SQLModel `Relationship()` fields are NOT included in API responses by default. You must explicitly add them to `model_config` or use a separate response schema with those fields.\n- `AsyncSession.refresh()` does not load relationships. After commit, re-query with `.options(sel"
+    },
+    {
+      "path": "other/backend-design-grupous-gpus-2/SKILL.md",
+      "name": "backend-design",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Skill covers unified backend development including API design, TypeScript expertise, data analysis, and code optimization. This is software development workflow guidance.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "6c9d3b0f85ccc546d1002836c79bb4ffa3003fc07b753f82f8802d3861e798dd",
+      "metadata_sha256": "25ade7175f2ae081961de8bcff3b868fc50c8f9fc134df9c7c749877d18debcb",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Unified backend development skill covering API design (REST/GraphQL/tRPC), TypeScript expertise, data analysis, and code optimization principles. Use for backend architecture, API patterns, type issues, data processing, and code quality.",
+      "content_excerpt": "---\nname: backend-design\ndescription: Unified backend development skill covering API design (REST/GraphQL/tRPC), TypeScript expertise, data analysis, and code optimization principles. Use for backend architecture, API patterns, type issues, data processing, and code quality.\nallowed-tools:\n  - run_command\n  - mcp_mcp-server-neon_run_sql\n  - mcp_mcp-server-neon_list_slow_queries\n  - mcp_sequential-thinking_sequentialthinking\n---\n\n# Backend Design Skill\n\n> Unified backend development: API design, TypeScript expertise, data analysis, and code principles.\n\n## When to Use\n\n| Trigger              | Action                                  |\n| -------------------- | --------------------------------------- |\n| API design decision  | Check decision tree (REST/GraphQL/tRPC) |\n| TypeScript error     | Apply type patterns                     |\n| Data analysis needed | Use Python workflow                     |\n| Code optimization    | Follow LEVER principles                 |\n| Backend architecture | Apply Three-Pass process                |\n\n---\n\n## Content Map\n\n| Reference                                                | Purpose                                   |\n| -------------------------------------------------------- | ----------------------------------------- |\n| [API Patterns](references/api-patterns.md)               | REST vs GraphQL vs tRPC, auth, versioning |\n| [TypeScript Patterns](references/typescript-patterns.md) | Type gymnastics, build optimization       |\n| [Data Analysis](references/data-analysis.md)             | Python scripts, statistical methods       |\n| [Code P"
+    },
+    {
+      "path": "other/aws-cloudformation-cloudfront/SKILL.md",
+      "name": "aws-cloudformation-cloudfront",
+      "current_category": "other",
+      "llm_category": "devops",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill provides AWS CloudFormation patterns for CloudFront CDN infrastructure, which is infrastructure-as-code and deployment automation.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "2079908f22d70554cb2094a258c84d092679d7a39d3a4dc691f8e151f8767b3b",
+      "metadata_sha256": "1d20db78866df762acdecfffe09ca75a5b2fefe113c69fc45a8acb83189d4a95",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Provides AWS CloudFormation patterns for CloudFront distributions, origins (ALB, S3, Lambda@Edge, VPC Origins), CacheBehaviors, Functions, SecurityHeaders, parameters, Outputs and cross-stack references. Use when creating CloudFront distributions with CloudFormation, configuring multiple origins, implementing caching strategies, managing custom domains with ACM, configuring WAF, and optimizing performance.",
+      "content_excerpt": "---\nname: aws-cloudformation-cloudfront\ndescription: Provides AWS CloudFormation patterns for CloudFront distributions, origins (ALB, S3, Lambda@Edge, VPC Origins), CacheBehaviors, Functions, SecurityHeaders, parameters, Outputs and cross-stack references. Use when creating CloudFront distributions with CloudFormation, configuring multiple origins, implementing caching strategies, managing custom domains with ACM, configuring WAF, and optimizing performance.\nallowed-tools: Read, Write, Bash\n---\n\n# AWS CloudFormation CloudFront CDN\n\n## Overview\n\nCreate production-ready CDN infrastructure using AWS CloudFormation templates. This skill covers CloudFront distributions, multiple origins (ALB, S3, API Gateway, Lambda@Edge, VPC Origins), CacheBehaviors, Functions, SecurityHeaders, and best practices for parameters, outputs, and cross-stack references.\n\n## When to Use\n\n- Creating CloudFront distributions with CloudFormation\n- Configuring origins (ALB, S3, Lambda@Edge, VPC Origins) with path patterns\n- Implementing caching with CacheBehaviors and Cache Policies\n- Configuring custom domains with ACM and SecurityHeaders\n- Integrating WAF with CloudFront distributions\n\n## Instructions\n\nFollow these steps to create CloudFront distributions with CloudFormation:\n\n### 1. Define Distribution Parameters\n\n**Validate before deploying:**\n```bash\naws cloudformation validate-template --template-body file://template.yaml\ncfn-lint template.yaml\n```\n\nSpecify domain names, ACM certificates, price class, and origin settings:\n\n```yaml\nParameters:\n  DomainName:\n    Type: String\n    Default: cdn.example."
+    },
+    {
+      "path": "other/autoresearch-mxyhi-ok-skills-3/SKILL.md",
+      "name": "autoresearch",
+      "current_category": "other",
+      "llm_category": "orchestration",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "Same skill as id 4 - autonomous iteration loop with multiple subcommands coordinating multi-step execution control and workflow routing.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "1b952e1d3254b58248431ac5175813c8241fc459d8e6b2da7560048d5cc7e8da",
+      "metadata_sha256": "0471a61d46ad5a64fb4fbbc3cdd237974ff0f119b368c879ae42c5a227efe2ba",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Autonomous iteration loop: modify, verify, keep/discard against any metric",
+      "content_excerpt": "---\nname: autoresearch\ndescription: \"Autonomous iteration loop: modify, verify, keep/discard against any metric\"\nversion: 2.1.0\n---\n\n# Autoresearch — Autonomous Goal-directed Iteration\n\n## Safety Invariants (all subcommands)\n- Never push, publish, or deploy without explicit user approval.\n- Bounded by default. Override with `Iterations: unlimited`.\n- All results logged to `autoresearch/{subcommand}-{YYMMDD}-{HHMM}/` directory.\n- Chain handoff via `handoff.json`. Evals reads `*-results.tsv`.\n\n## Subcommands\n\n| Command | Does | Default Iterations |\n|---|---|---|\n| `$autoresearch` | Iterate against a metric: modify → verify → keep/discard | 25 |\n| `$autoresearch plan` | Convert a goal into validated Scope, Metric, Verify config | N/A |\n| `$autoresearch debug` | Hunt bugs: hypothesize → test → falsify → repeat | 15 |\n| `$autoresearch fix` | Crush errors one-by-one until zero remain | 20 |\n| `$autoresearch security` | STRIDE + OWASP audit with red-team personas | 15 |\n| `$autoresearch ship` | Ship through 8 phases: checklist → dry-run → deploy → verify | N/A |\n| `$autoresearch scenario` | Generate edge cases across 12 dimensions | 20 |\n| `$autoresearch predict` | 5 expert personas debate before implementation | N/A |\n| `$autoresearch learn` | Scout codebase → generate docs → validate → fix loop | 10 |\n| `$autoresearch reason` | Adversarial debate with blind judges until convergence | 8 |\n| `$autoresearch probe` | 8 personas interrogate requirements until saturation | 15 |\n| `$autoresearch improve` | Research ICP challenges, discover improvements, generate PRDs | 15 |\n| `$autores"
+    },
+    {
+      "path": "other/axiom-ios-vision-charleswiltgen-axiom-61f3884b/SKILL.md",
+      "name": "axiom-ios-vision",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Duplicate of id 4 - same skill about implementing computer vision features using Apple's Vision framework. This is software development work for iOS apps.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "d5792e778e05c806b5f3ac50f8abb4c5f7c76f448ed63bce3de24d375e55c6c0",
+      "metadata_sha256": "7d860cb1cf4ff3de1c99309fd7f3c5d32225bc64704fe549656cf2edf3171754",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when implementing ANY computer vision feature - image analysis, object detection, pose detection, person segmentation, subject lifting, hand/body pose tracking.",
+      "content_excerpt": "---\nname: axiom-ios-vision\ndescription: Use when implementing ANY computer vision feature - image analysis, object detection, pose detection, person segmentation, subject lifting, hand/body pose tracking.\nuser-invocable: false\n---\n\n# iOS Computer Vision Router\n\n**You MUST use this skill for ANY computer vision work using the Vision framework.**\n\n## When to Use\n\nUse this router when:\n- Analyzing images or video\n- Detecting objects, faces, or people\n- Tracking hand or body pose\n- Segmenting people or subjects\n- Lifting subjects from backgrounds\n- Recognizing text in images (OCR)\n- Detecting barcodes or QR codes\n- Scanning documents\n- Using VisionKit or DataScannerViewController\n\n## Routing Logic\n\n### Vision Work\n\n**Implementation patterns** → `/skill axiom-vision`\n- Subject segmentation (VisionKit)\n- Hand pose detection (21 landmarks)\n- Body pose detection (2D/3D)\n- Person segmentation\n- Face detection\n- Isolating objects while excluding hands\n- Text recognition (VNRecognizeTextRequest)\n- Barcode/QR detection (VNDetectBarcodesRequest)\n- Document scanning (VNDocumentCameraViewController)\n- Live scanning (DataScannerViewController)\n- Structured document extraction (RecognizeDocumentsRequest, iOS 26+)\n\n**API reference** → `/skill axiom-vision-ref`\n- Complete Vision framework API\n- VNDetectHumanHandPoseRequest\n- VNDetectHumanBodyPoseRequest\n- VNGenerateForegroundInstanceMaskRequest\n- VNRecognizeTextRequest (fast/accurate modes)\n- VNDetectBarcodesRequest (symbologies)\n- DataScannerViewController delegates\n- RecognizeDocumentsRequest (iOS 26+)\n- Coordinate conversion patterns\n\n**Di"
+    },
+    {
+      "path": "other/azure-appconfiguration-py/SKILL.md",
+      "name": "azure-appconfiguration-py",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill provides an SDK for Azure App Configuration in Python, which is an API client library for centralized configuration management. This fits the API category's inclusion rule for SDK usage and endpoint work.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "939c0f661513671412ab7c7bfe24e0a800d1219275e4b855678bc6a3faa17f69",
+      "metadata_sha256": "49a2dd076e0548dcd3511cd297fcb23e2e6f3bb883b3cf1d44180fb4b9c154ba",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Azure App Configuration SDK for Python. Use for centralized configuration management, feature flags, and dynamic settings.\nTriggers: \"azure-appconfiguration\", \"AzureAppConfigurationClient\", \"feature flags\", \"configuration\", \"key-value settings\".",
+      "content_excerpt": "---\nname: azure-appconfiguration-py\ndescription: |\n  Azure App Configuration SDK for Python. Use for centralized configuration management, feature flags, and dynamic settings.\n  Triggers: \"azure-appconfiguration\", \"AzureAppConfigurationClient\", \"feature flags\", \"configuration\", \"key-value settings\".\npackage: azure-appconfiguration\n---\n\n# Azure App Configuration SDK for Python\n\nCentralized configuration management with feature flags and dynamic settings.\n\n## Installation\n\n```bash\npip install azure-appconfiguration\n```\n\n## Environment Variables\n\n```bash\nAZURE_APPCONFIGURATION_CONNECTION_STRING=Endpoint=https://<name>.azconfig.io;Id=...;Secret=...\n# Or for Entra ID:\nAZURE_APPCONFIGURATION_ENDPOINT=https://<name>.azconfig.io\n```\n\n## Authentication\n\n### Connection String\n\n```python\nfrom azure.appconfiguration import AzureAppConfigurationClient\n\nclient = AzureAppConfigurationClient.from_connection_string(\n    os.environ[\"AZURE_APPCONFIGURATION_CONNECTION_STRING\"]\n)\n```\n\n### Entra ID\n\n```python\nfrom azure.appconfiguration import AzureAppConfigurationClient\nfrom azure.identity import DefaultAzureCredential\n\nclient = AzureAppConfigurationClient(\n    base_url=os.environ[\"AZURE_APPCONFIGURATION_ENDPOINT\"],\n    credential=DefaultAzureCredential()\n)\n```\n\n## Configuration Settings\n\n### Get Setting\n\n```python\nsetting = client.get_configuration_setting(key=\"app:settings:message\")\nprint(f\"{setting.key} = {setting.value}\")\n```\n\n### Get with Label\n\n```python\n# Labels allow environment-specific values\nsetting = client.get_configuration_setting(\n    key=\"app:settings:message\",\n    label=\"produc"
+    },
+    {
+      "path": "other/azure-communication-common-java-mudassarabrar-sage-gemini-live-age/SKILL.md",
+      "name": "azure-communication-common-java",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Same as id 0 - Azure Communication Services common utilities for Java SDK usage and authentication.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "b536d26c9a84f03a52d9fb5e234bffbca2231a361bdf6dbe17f12b28071e7b08",
+      "metadata_sha256": "f3216bb7def15e871c21732bcf0aff17c0aad01c07b51ad82250b7c1724d4143",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Azure Communication Services common utilities for Java. Use when working with CommunicationTokenCredential, user identifiers, token refresh, or shared authentication across ACS services.",
+      "content_excerpt": "---\nname: azure-communication-common-java\ndescription: \"Azure Communication Services common utilities for Java. Use when working with CommunicationTokenCredential, user identifiers, token refresh, or shared authentication across ACS services.\"\nrisk: unknown\nsource: community\ndate_added: \"2026-02-27\"\n---\n\n# Azure Communication Common (Java)\n\nShared authentication utilities and data structures for Azure Communication Services.\n\n## Installation\n\n```xml\n<dependency>\n    <groupId>com.azure</groupId>\n    <artifactId>azure-communication-common</artifactId>\n    <version>1.4.0</version>\n</dependency>\n```\n\n## Key Concepts\n\n| Class | Purpose |\n|-------|---------|\n| `CommunicationTokenCredential` | Authenticate users with ACS services |\n| `CommunicationTokenRefreshOptions` | Configure automatic token refresh |\n| `CommunicationUserIdentifier` | Identify ACS users |\n| `PhoneNumberIdentifier` | Identify PSTN phone numbers |\n| `MicrosoftTeamsUserIdentifier` | Identify Teams users |\n| `UnknownIdentifier` | Generic identifier for unknown types |\n\n## CommunicationTokenCredential\n\n### Static Token (Short-lived Clients)\n\n```java\nimport com.azure.communication.common.CommunicationTokenCredential;\n\n// Simple static token - no refresh\nString userToken = \"<user-access-token>\";\nCommunicationTokenCredential credential = new CommunicationTokenCredential(userToken);\n\n// Use with Chat, Calling, etc.\nChatClient chatClient = new ChatClientBuilder()\n    .endpoint(\"https://<resource>.communication.azure.com\")\n    .credential(credential)\n    .buildClient();\n```\n\n### Proactive Token Refresh (Long-lived Client"
+    },
+    {
+      "path": "other/axiom-ios-graphics-charleswiltgen-axiom-2d9d4edb/SKILL.md",
+      "name": "axiom-ios-graphics",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Duplicate of id 5 with identical description and content. Same reasoning applies: iOS graphics programming is a software development workflow.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "dd6d646d066fe5df014a953546f5dbaa9638e45088ed0455e584b78b629ee815",
+      "metadata_sha256": "29ca747117ced37fb9f43d6c35231795ac9d0bc9b4cc64303cdcbaa2727d382a",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when working with ANY GPU rendering, Metal, OpenGL migration, shaders, frame rate, or display performance. Covers Metal migration, shader conversion, variable refresh rate, ProMotion, render loops.",
+      "content_excerpt": "---\nname: axiom-ios-graphics\ndescription: Use when working with ANY GPU rendering, Metal, OpenGL migration, shaders, frame rate, or display performance. Covers Metal migration, shader conversion, variable refresh rate, ProMotion, render loops.\nuser-invocable: false\n---\n\n# iOS Graphics Router\n\n**You MUST use this skill for ANY GPU rendering, graphics programming, or display performance work.**\n\n## When to Use\n\nUse this router when:\n- Porting OpenGL/OpenGL ES code to Metal\n- Porting DirectX code to Metal\n- Converting GLSL/HLSL shaders to Metal Shading Language\n- Setting up MTKView or CAMetalLayer\n- Debugging GPU rendering issues (black screen, wrong colors, crashes)\n- Evaluating translation layers (MetalANGLE, MoltenVK)\n- Optimizing GPU performance or fixing thermal throttling\n- App stuck at 60fps on ProMotion device\n- Configuring CADisplayLink or render loops\n- Variable refresh rate display issues\n\n## Routing Logic\n\n### Metal Migration\n\n**Strategy decisions** → `/skill axiom-metal-migration`\n- Translation layer vs native rewrite decision\n- Project assessment and migration planning\n- Anti-patterns and common mistakes\n- Pressure scenarios for deadline resistance\n\n**API reference & conversion** → `/skill axiom-metal-migration-ref`\n- GLSL → MSL shader conversion tables\n- HLSL → MSL shader conversion tables\n- GL/D3D API → Metal API equivalents\n- MTKView setup, render pipelines, compute shaders\n- Complete WWDC code examples\n\n**Diagnostics** → `/skill axiom-metal-migration-diag`\n- Black screen after porting\n- Shader compilation errors\n- Wrong colors or coordinate systems\n- Performa"
+    },
+    {
+      "path": "other/backend-security-coder-claude-code-communit-claude-code-resource/SKILL.md",
+      "name": "backend-security-coder",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is an expert in secure backend coding practices specializing in input validation, authentication, and API security, which is security review and secure coding.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "70a409a79d70f9ac010eedd19dd1c7e53f099861b5df5ba1bbcbe7d63b3685d6",
+      "metadata_sha256": "101907e6d15e4c8e9ee107a5c32b3e43675587885a873f8a506fddd6a43500ad",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Expert in secure backend coding practices specializing in input validation, authentication, and API security. Use PROACTIVELY for backend security implementations or security code reviews.",
+      "content_excerpt": "---\nname: backend-security-coder\ndescription: Expert in secure backend coding practices specializing in input\n  validation, authentication, and API security. Use PROACTIVELY for backend\n  security implementations or security code reviews.\nmetadata:\n  model: sonnet\n---\n\n## Use this skill when\n\n- Working on backend security coder tasks or workflows\n- Needing guidance, best practices, or checklists for backend security coder\n\n## Do not use this skill when\n\n- The task is unrelated to backend security coder\n- You need a different domain or tool outside this scope\n\n## Instructions\n\n- Clarify goals, constraints, and required inputs.\n- Apply relevant best practices and validate outcomes.\n- Provide actionable steps and verification.\n- If detailed examples are required, open `resources/implementation-playbook.md`.\n\nYou are a backend security coding expert specializing in secure development practices, vulnerability prevention, and secure architecture implementation.\n\n## Purpose\nExpert backend security developer with comprehensive knowledge of secure coding practices, vulnerability prevention, and defensive programming techniques. Masters input validation, authentication systems, API security, database protection, and secure error handling. Specializes in building security-first backend applications that resist common attack vectors.\n\n## When to Use vs Security Auditor\n- **Use this agent for**: Hands-on backend security coding, API security implementation, database security configuration, authentication system coding, vulnerability fixes\n- **Use security-auditor for**: High-level secur"
+    },
+    {
+      "path": "other/azure-blueprints/SKILL.md",
+      "name": "azure-blueprints",
+      "current_category": "other",
+      "llm_category": "devops",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Azure Blueprints covers defining blueprints, mapping compliance sets, automating via CLI/PowerShell/REST, and fixing assignment errors. This is infrastructure-as-code and compliance automation for Azure deployments.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "6a4f73fa6752250c073d182a8dc68ee59b5a5404eb269990c3d0e62c4c3284a3",
+      "metadata_sha256": "35404562deb048395450c6f3b0a9f2e3c6078ed19471027ebecab9ffe1140bbf",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Expert knowledge for Azure Blueprints development including troubleshooting, architecture & design patterns, security, configuration, and integrations & coding patterns. Use when defining Azure Blueprints, mapping built-in compliance sets, automating via CLI/PowerShell/REST, or fixing assignment errors, and other Azure Blueprints related development tasks. Not for Azure Policy (use azure-policy), Azure Resource Manager (use azure-resource-manager), Azure Managed Applications (use azure-managed-applications), Azure Deployment Environments (use azure-deployment-environments).",
+      "content_excerpt": "---\nname: azure-blueprints\ndescription: Expert knowledge for Azure Blueprints development including troubleshooting, architecture & design patterns, security, configuration, and integrations & coding patterns. Use when defining Azure Blueprints, mapping built-in compliance sets, automating via CLI/PowerShell/REST, or fixing assignment errors, and other Azure Blueprints related development tasks. Not for Azure Policy (use azure-policy), Azure Resource Manager (use azure-resource-manager), Azure Managed Applications (use azure-managed-applications), Azure Deployment Environments (use azure-deployment-environments).\ncompatibility: Requires network access. Uses mcp_microsoftdocs:microsoft_docs_fetch or fetch_webpage to retrieve documentation.\nmetadata:\n  generated_at: \"2026-02-28\"\n  generator: \"docs2skills/1.0.0\"\n---\n# Azure Blueprints Skill\n\nThis skill provides expert guidance for Azure Blueprints. Covers troubleshooting, architecture & design patterns, security, configuration, and integrations & coding patterns. It combines local quick-reference content with remote documentation fetching capabilities.\n\n## How to Use This Skill\n\n> **IMPORTANT for Agent**: Use the **Category Index** below to locate relevant sections. For categories with line ranges (e.g., `L35-L120`), use `read_file` with the specified lines. For categories with file links (e.g., `[security.md](security.md)`), use `read_file` on the linked reference file\n\n> **IMPORTANT for Agent**: If `metadata.generated_at` is more than 3 months old, suggest the user pull the latest version from the repository. If `mcp_microso"
+    },
+    {
+      "path": "other/backtesting-frameworks-as4584-antigravity-skills/SKILL.md",
+      "name": "backtesting-frameworks",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Same as id 3 - builds backtesting systems/infrastructure for trading strategies, fitting development category.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "7222c0356f72ff8f983a07ae94922af5b1747031e533685dfaabbf1d445dda52",
+      "metadata_sha256": "b01adc631ad37297456c2ada30a4366d2d79b122f3e00fe745057aec3b422d6b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Build robust backtesting systems for trading strategies with proper handling of look-ahead bias, survivorship bias, and transaction costs. Use when developing trading algorithms, validating strategies, or building backtesting infrastructure.",
+      "content_excerpt": "---\nname: backtesting-frameworks\ndescription: Build robust backtesting systems for trading strategies with proper handling of look-ahead bias, survivorship bias, and transaction costs. Use when developing trading algorithms, validating strategies, or building backtesting infrastructure.\n---\n\n# Backtesting Frameworks\n\nBuild robust, production-grade backtesting systems that avoid common pitfalls and produce reliable strategy performance estimates.\n\n## When to Use This Skill\n\n- Developing trading strategy backtests\n- Building backtesting infrastructure\n- Validating strategy performance\n- Avoiding common backtesting biases\n- Implementing walk-forward analysis\n- Comparing strategy alternatives\n\n## Core Concepts\n\n### 1. Backtesting Biases\n\n| Bias | Description | Mitigation |\n|------|-------------|------------|\n| **Look-ahead** | Using future information | Point-in-time data |\n| **Survivorship** | Only testing on survivors | Use delisted securities |\n| **Overfitting** | Curve-fitting to history | Out-of-sample testing |\n| **Selection** | Cherry-picking strategies | Pre-registration |\n| **Transaction** | Ignoring trading costs | Realistic cost models |\n\n### 2. Proper Backtest Structure\n\n```\nHistorical Data\n      │\n      ▼\n┌─────────────────────────────────────────┐\n│              Training Set               │\n│  (Strategy Development & Optimization)  │\n└─────────────────────────────────────────┘\n      │\n      ▼\n┌─────────────────────────────────────────┐\n│             Validation Set              │\n│  (Parameter Selection, No Peeking)      │\n└─────────────────────────────────────────"
+    },
+    {
+      "path": "other/aws-compliance-checker/SKILL.md",
+      "name": "aws-compliance-checker",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "AWS compliance checking against CIS, PCI-DSS, HIPAA, and SOC 2 benchmarks is a security audit and compliance workflow.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "0ea5a05b0e5c71b1f27c3b1c4c55ac9ff172c04f61a0c6d6ded2eb2d3f33c0aa",
+      "metadata_sha256": "c6c5c85f73d9f8fd2b3e767d8953e6389ee628e22c56d798017896e287966d08",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:string"
+      },
+      "description": "Automated compliance checking against CIS, PCI-DSS, HIPAA, and SOC 2 benchmarks",
+      "content_excerpt": "---\nname: aws-compliance-checker\ndescription: \"Automated compliance checking against CIS, PCI-DSS, HIPAA, and SOC 2 benchmarks\"\ncategory: security\nrisk: safe\nsource: community\ntags: \"[aws, compliance, audit, cis, pci-dss, hipaa, kiro-cli]\"\ndate_added: \"2026-02-27\"\n---\n\n# AWS Compliance Checker\n\nAutomated compliance validation against industry standards including CIS AWS Foundations, PCI-DSS, HIPAA, and SOC 2.\n\n## When to Use\nUse this skill when you need to validate AWS compliance against industry standards, prepare for audits, or maintain continuous compliance monitoring.\n\n## Supported Frameworks\n\n**CIS AWS Foundations Benchmark**\n- Identity and Access Management\n- Logging and Monitoring\n- Networking\n- Data Protection\n\n**PCI-DSS (Payment Card Industry)**\n- Network security\n- Access controls\n- Encryption\n- Monitoring and logging\n\n**HIPAA (Healthcare)**\n- Access controls\n- Audit controls\n- Data encryption\n- Transmission security\n\n**SOC 2**\n- Security\n- Availability\n- Confidentiality\n- Privacy\n\n## CIS AWS Foundations Checks\n\n### Identity & Access Management (1.x)\n\n```bash\n#!/bin/bash\n# cis-iam-checks.sh\n\necho \"=== CIS IAM Compliance Checks ===\"\n\n# 1.1: Root account usage\necho \"1.1: Checking root account usage...\"\nroot_usage=$(aws iam get-credential-report --output text | \\\n  awk -F, 'NR==2 {print $5,$11}')\necho \"  Root password last used: $root_usage\"\n\n# 1.2: MFA on root account\necho \"1.2: Checking root MFA...\"\nroot_mfa=$(aws iam get-account-summary \\\n  --query 'SummaryMap.AccountMFAEnabled' --output text)\necho \"  Root MFA enabled: $root_mfa\"\n\n# 1.3: Unused credentials\necho \"1"
+    },
+    {
+      "path": "other/azure-openai-2025-josiahsiegel-claude-plugin-market-2/SKILL.md",
+      "name": "azure-openai-2025",
+      "current_category": "other",
+      "llm_category": "ai-llm",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill provides knowledge about Azure OpenAI Service models (GPT-5, GPT-4.1, reasoning models) and their integration. This is about LLM model use and assistants, fitting the ai-llm category's inclusion rule.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "3716dc033e65e0f5dad7c5325fb954aa7a0e82cda3827d91204898a4ab8fc2c0",
+      "metadata_sha256": "9ce9728c64aacadaf5442e3ca54fe8ba2bb04f52981dbf32031ae7ed0c524286",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Azure OpenAI Service 2025 models including GPT-5, GPT-4.1, reasoning models, and Azure AI Foundry integration",
+      "content_excerpt": "---\nname: azure-openai-2025\ndescription: Azure OpenAI Service 2025 models including GPT-5, GPT-4.1, reasoning models, and Azure AI Foundry integration\n---\n\n# Azure OpenAI Service - 2025 Models and Features\n\nComplete knowledge base for Azure OpenAI Service with latest 2025 models including GPT-5, GPT-4.1, reasoning models, and Azure AI Foundry integration.\n\n## Overview\n\nAzure OpenAI Service provides REST API access to OpenAI's most powerful models with enterprise-grade security, compliance, and regional availability.\n\n## Latest Models (2025)\n\n### GPT-5 Series (GA August 2025)\n\n**Registration Required Models:**\n- `gpt-5-pro`: Highest capability, complex reasoning\n- `gpt-5`: Balanced performance and cost\n- `gpt-5-codex`: Optimized for code generation\n\n**No Registration Required:**\n- `gpt-5-mini`: Faster, more affordable\n- `gpt-5-nano`: Ultra-fast for simple tasks\n- `gpt-5-chat`: Optimized for conversational use\n\n### GPT-4.1 Series\n\n- `gpt-4.1`: 1 million token context window\n- `gpt-4.1-mini`: Efficient version with 1M context\n- `gpt-4.1-nano`: Fastest variant\n\n**Key Improvements:**\n- 1,000,000 token context (vs 128K in GPT-4 Turbo)\n- Better instruction following\n- Reduced hallucinations\n- Improved multilingual support\n\n### Reasoning Models\n\n**o4-mini**: Lightweight reasoning model\n- Faster inference\n- Lower cost\n- Suitable for structured reasoning tasks\n\n**o3**: Advanced reasoning model\n- Complex problem solving\n- Mathematical reasoning\n- Scientific analysis\n\n**o1**: Original reasoning model\n- General-purpose reasoning\n- Step-by-step explanations\n\n**o1-mini**: Efficient reason"
+    },
+    {
+      "path": "other/azure-usage-fcakyon-claude-codex-setting-4/SKILL.md",
+      "name": "azure-usage",
+      "current_category": "other",
+      "llm_category": "integration",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Duplicate of id 0 with same content. Azure MCP tool usage for cross-system service integration.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "e7cbe879b609e8f40286bd6d660c6d7c7bc41f1747f1a656e0025f0312e5239b",
+      "metadata_sha256": "fc6929e1b9c46d44c592e6f78282abe745498ca9a3a26dc0ae1737b2fd74a176",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "This skill should be used when user asks to \"query Azure resources\", \"list storage accounts\", \"manage Key Vault secrets\", \"work with Cosmos DB\", \"check AKS clusters\", \"use Azure MCP\", or interact with any Azure service.",
+      "content_excerpt": "---\nname: azure-usage\ndescription: This skill should be used when user asks to \"query Azure resources\", \"list storage accounts\", \"manage Key Vault secrets\", \"work with Cosmos DB\", \"check AKS clusters\", \"use Azure MCP\", or interact with any Azure service.\n---\n\n# Azure MCP Best Practices\n\n## Tool Selection\n\n| Task                 | Tool                   | Example                             |\n| -------------------- | ---------------------- | ----------------------------------- |\n| List resources       | `mcp__azure__*_list`   | Storage accounts, Key Vault secrets |\n| Get resource details | `mcp__azure__*_get`    | Container details, database info    |\n| Create resources     | `mcp__azure__*_create` | New secrets, storage containers     |\n| Query data           | `mcp__azure__*_query`  | Log Analytics, Cosmos DB            |\n\n## Common Operations\n\n### Storage\n\n- `storage_accounts_list` - List storage accounts\n- `storage_blobs_list` - List blobs in container\n- `storage_blobs_upload` - Upload file to blob\n\n### Key Vault\n\n- `keyvault_secrets_list` - List secrets\n- `keyvault_secrets_get` - Get secret value\n- `keyvault_secrets_set` - Create/update secret\n\n### Cosmos DB\n\n- `cosmosdb_databases_list` - List databases\n- `cosmosdb_containers_list` - List containers\n- `cosmosdb_query` - Query documents\n\n### AKS\n\n- `aks_clusters_list` - List AKS clusters\n- `aks_nodepools_list` - List node pools\n\n### Monitor\n\n- `monitor_logs_query` - Query Log Analytics\n\n## Authentication\n\nAzure MCP uses Azure Identity SDK. Authenticate via:\n\n- `az login` (Azure CLI - recommended)\n- VS Code Azure extensio"
+    },
+    {
+      "path": "other/awf-debug-tools/SKILL.md",
+      "name": "awf-debug-tools",
+      "current_category": "other",
+      "llm_category": "devops",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill provides practical Python scripts for debugging a firewall (awf), including parsing logs, diagnosing container issues, inspecting Docker containers, and testing domains. This is operational debugging and infrastructure troubleshooting.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "6345e65eb095068da09550737a80249d531504de915d4f38ddfb19ae13c31bd8",
+      "metadata_sha256": "7a5458e22908c399631d3d52d72e454abf03dc67d978044d71f8513e6d20b78f",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Practical Python scripts for debugging awf - parse logs, diagnose issues, inspect containers, test domains",
+      "content_excerpt": "---\nname: awf-debug-tools\ndescription: Practical Python scripts for debugging awf - parse logs, diagnose issues, inspect containers, test domains\nallowed-tools: Bash(python:*), Bash(docker:*), Bash(sudo:*), Read\n---\n\n# AWF Debug Tools\n\nA collection of practical Python scripts that help agents efficiently debug and operate the awf firewall. These scripts reduce verbose Docker/log output by 80%+ and provide actionable insights instead of raw data dumps.\n\n## Why These Scripts?\n\n**Problem:** Docker commands and log files are verbose and hard for agents to parse. Diagnosing issues requires 10+ manual commands and produces noisy output that wastes tokens.\n\n**Solution:** One script replaces 5-10 manual commands with clean, filtered output optimized for agent consumption. All scripts support JSON format for easy parsing.\n\n## Available Scripts\n\nAll scripts are located in `.claude/skills/awf-debug-tools/scripts/`:\n\n1. **parse-squid-logs.py** - Parse Squid logs and extract blocked domains with counts\n2. **diagnose-awf.py** - Run automated diagnostic checks on container health and configuration\n3. **inspect-containers.py** - Show concise container status without verbose docker output\n4. **test-domain.py** - Test if specific domain is reachable through the firewall\n\n## Quick Start\n\n### Parse Logs to Find Blocked Domains\n\n```bash\n# Auto-discover logs and show all domains\npython .claude/skills/awf-debug-tools/scripts/parse-squid-logs.py\n\n# Show only blocked domains\npython .claude/skills/awf-debug-tools/scripts/parse-squid-logs.py --blocked-only\n\n# Filter by domain\npython .claude/skills/aw"
+    },
+    {
+      "path": "other/azure-functions-claude-code-communit-claude-code-resource-2/SKILL.md",
+      "name": "azure-functions",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "Azure Functions development patterns including isolated worker model, Durable Functions, cold start optimization, and production patterns across .NET, Python, and Node.js are software development workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "b88320d8dda0f108d7a96c754d9f5be899483fc01e92546e330130365653d0a6",
+      "metadata_sha256": "5e1bc213012bca6aabdc1206e7175e7b8d16db3ebcc9a40382171ea34119e2f5",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Expert patterns for Azure Functions development including isolated worker model, Durable Functions orchestration, cold start optimization, and production patterns. Covers .NET, Python, and Node.js programming models. Use when: azure function, azure functions, durable functions, azure serverless, function app.",
+      "content_excerpt": "---\nname: azure-functions\ndescription: \"Expert patterns for Azure Functions development including isolated worker model, Durable Functions orchestration, cold start optimization, and production patterns. Covers .NET, Python, and Node.js programming models. Use when: azure function, azure functions, durable functions, azure serverless, function app.\"\nsource: vibeship-spawner-skills (Apache 2.0)\n---\n\n# Azure Functions\n\n## Patterns\n\n### Isolated Worker Model (.NET)\n\nModern .NET execution model with process isolation\n\n### Node.js v4 Programming Model\n\nModern code-centric approach for TypeScript/JavaScript\n\n### Python v2 Programming Model\n\nDecorator-based approach for Python functions\n\n## Anti-Patterns\n\n### ❌ Blocking Async Calls\n\n### ❌ New HttpClient Per Request\n\n### ❌ In-Process Model for New Projects\n\n## ⚠️ Sharp Edges\n\n| Issue | Severity | Solution |\n|-------|----------|----------|\n| Issue | high | ## Use async pattern with Durable Functions |\n| Issue | high | ## Use IHttpClientFactory (Recommended) |\n| Issue | high | ## Always use async/await |\n| Issue | medium | ## Configure maximum timeout (Consumption) |\n| Issue | high | ## Use isolated worker for new projects |\n| Issue | medium | ## Configure Application Insights properly |\n| Issue | medium | ## Check extension bundle (most common) |\n| Issue | medium | ## Add warmup trigger to initialize your code |\n"
+    },
+    {
+      "path": "other/baseline-ui/SKILL.md",
+      "name": "baseline-ui",
+      "current_category": "other",
+      "llm_category": "design",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Skill validates animation durations, enforces typography scale, checks component accessibility, and prevents layout anti-patterns in Tailwind CSS projects.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "faea3209dbd10c070282833e2003b2bf2c9ed0917652dbe49c0c1db65be8da6b",
+      "metadata_sha256": "0191338a093fc5abb383ff2ed8ebdde2bd95c84001fa8fe7439e60b5ee5af0d4",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Validates animation durations, enforces typography scale, checks component accessibility, and prevents layout anti-patterns in Tailwind CSS projects. Use when building UI components, reviewing CSS utilities, styling React views, or enforcing design consistency.",
+      "content_excerpt": "---\nname: baseline-ui\ndescription: Validates animation durations, enforces typography scale, checks component accessibility, and prevents layout anti-patterns in Tailwind CSS projects. Use when building UI components, reviewing CSS utilities, styling React views, or enforcing design consistency.\nrisk: unknown\nsource: community\n---\n\n# Baseline UI\n\nEnforces an opinionated UI baseline to prevent AI-generated interface slop.\n\n## When to Use\n- You are building or reviewing Tailwind-based UI and want a strict baseline for accessibility, motion, typography, and layout.\n- The task is to prevent generic or sloppy AI-generated interface decisions before they spread through the codebase.\n- You need concrete UI constraints to apply to a file review or an ongoing frontend implementation.\n\n## How to use\n\n- `/baseline-ui`\n  Apply these constraints to any UI work in this conversation.\n\n- `/baseline-ui <file>`\n  Review the file against all constraints below and output:\n  - violations (quote the exact line/snippet)\n  - why it matters (1 short sentence)\n  - a concrete fix (code-level suggestion)\n\n## Stack\n\n- MUST use Tailwind CSS defaults unless custom values already exist or are explicitly requested\n- MUST use `motion/react` (formerly `framer-motion`) when JavaScript animation is required\n- SHOULD use `tw-animate-css` for entrance and micro-animations in Tailwind CSS\n- MUST use `cn` utility (`clsx` + `tailwind-merge`) for class logic\n\n## Components\n\n- MUST use accessible component primitives for anything with keyboard or focus behavior (`Base UI`, `React Aria`, `Radix`)\n- MUST use the projec"
+    },
+    {
+      "path": "other/axiom-metrickit-ref-charleswiltgen-axiom/SKILL.md",
+      "name": "axiom-metrickit-ref",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "MetricKit API reference is a technical reference for iOS development, covering API usage, parsing, and integration patterns for field diagnostics.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "92051fd4202b538f0c19c52221cb01ea93b952d2bd0cefaaab6fa293d91f0e00",
+      "metadata_sha256": "7d760f9d6a538c51c5b2e6952b14aa500efcc776c3c98e2b35ad10f6c3bd4e61",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "MetricKit API reference for field diagnostics - MXMetricPayload, MXDiagnosticPayload, MXCallStackTree parsing, crash and hang collection",
+      "content_excerpt": "---\nname: axiom-metrickit-ref\ndescription: MetricKit API reference for field diagnostics - MXMetricPayload, MXDiagnosticPayload, MXCallStackTree parsing, crash and hang collection\nuser-invocable: false\n---\n\n# MetricKit API Reference\n\nComplete API reference for collecting field performance metrics and diagnostics using MetricKit.\n\n## Overview\n\nMetricKit provides aggregated, on-device performance and diagnostic data from users who opt into sharing analytics. Data is delivered daily (or on-demand in development).\n\n## When to Use This Reference\n\nUse this reference when:\n- Setting up MetricKit subscriber in your app\n- Parsing MXMetricPayload or MXDiagnosticPayload\n- Symbolicating MXCallStackTree crash data\n- Understanding background exit reasons (jetsam, watchdog)\n- Integrating MetricKit with existing crash reporters\n\nFor hang diagnosis workflows, see `axiom-hang-diagnostics`.\nFor general profiling with Instruments, see `axiom-performance-profiling`.\nFor memory debugging including jetsam, see `axiom-memory-debugging`.\n\n## Common Gotchas\n\n1. **24-hour delay** — MetricKit data arrives once daily; it's not real-time debugging\n2. **Call stacks require symbolication** — MXCallStackTree frames are unsymbolicated; keep dSYMs\n3. **Opt-in only** — Only users who enable \"Share with App Developers\" contribute data\n4. **Aggregated, not individual** — You get counts and averages, not per-user traces\n5. **Simulator doesn't work** — MetricKit only collects on physical devices\n\n**iOS Version Support**:\n| Feature | iOS Version |\n|---------|-------------|\n| Basic metrics (battery, CPU, memory) | "
+    },
+    {
+      "path": "other/axiom-metal-migration-ref-charleswiltgen-axiom/SKILL.md",
+      "name": "axiom-metal-migration-ref",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Shader conversion and API mapping reference for Metal migration—development reference material.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "2cdfeb73a5e309379a5e339e52699556c30e076db46eb2cf31d087198002616d",
+      "metadata_sha256": "6c703c31b8de137ec2d5ff8ec6b04db9f7dbac7de407870ecf35ed7d98b09ab5",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when converting shaders or looking up API equivalents - GLSL to MSL, HLSL to MSL, GL/DirectX to Metal mappings, MTKView setup code",
+      "content_excerpt": "---\nname: axiom-metal-migration-ref\ndescription: Use when converting shaders or looking up API equivalents - GLSL to MSL, HLSL to MSL, GL/DirectX to Metal mappings, MTKView setup code\nuser-invocable: true\nskill_type: reference\nversion: 1.0.0\napple_platforms: [iOS 12+, macOS 10.14+, tvOS 12+]\n---\n\n# Metal Migration Reference\n\nComplete reference for converting OpenGL/DirectX code to Metal.\n\n## When to Use This Reference\n\nUse this reference when:\n- Converting GLSL shaders to Metal Shading Language (MSL)\n- Converting HLSL shaders to MSL\n- Looking up GL/D3D API equivalents in Metal\n- Setting up MTKView or CAMetalLayer\n- Building render pipelines\n- Using Metal Shader Converter for DirectX\n\n## Part 1: GLSL to MSL Conversion\n\n### Type Mappings\n\n| GLSL | MSL | Notes |\n|------|-----|-------|\n| `void` | `void` | |\n| `bool` | `bool` | |\n| `int` | `int` | 32-bit signed |\n| `uint` | `uint` | 32-bit unsigned |\n| `float` | `float` | 32-bit |\n| `double` | N/A | Use `float` (no 64-bit float in MSL) |\n| `vec2` | `float2` | |\n| `vec3` | `float3` | |\n| `vec4` | `float4` | |\n| `ivec2` | `int2` | |\n| `ivec3` | `int3` | |\n| `ivec4` | `int4` | |\n| `uvec2` | `uint2` | |\n| `uvec3` | `uint3` | |\n| `uvec4` | `uint4` | |\n| `bvec2` | `bool2` | |\n| `bvec3` | `bool3` | |\n| `bvec4` | `bool4` | |\n| `mat2` | `float2x2` | |\n| `mat3` | `float3x3` | |\n| `mat4` | `float4x4` | |\n| `mat2x3` | `float2x3` | Columns x Rows |\n| `mat3x4` | `float3x4` | |\n| `sampler2D` | `texture2d<float>` + `sampler` | Separate in MSL |\n| `sampler3D` | `texture3d<float>` + `sampler` | |\n| `samplerCube` | `texturecube<float>` + `sampler`"
+    },
+    {
+      "path": "other/balance-milestones/SKILL.md",
+      "name": "balance-milestones",
+      "current_category": "other",
+      "llm_category": "workflow",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill automates a repeatable process of assigning and balancing milestones across issues.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "46b9c28eed36e10a65ec0e0090dd3168567388ee9d95443e91057f4f9611279c",
+      "metadata_sha256": "93324e4be6b1d4e9a917de3c98242987def99cb4ba131901659e373897520475",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "マイルストーン未割り当ての Issue にマイルストーンを紐づけ、1マイルストーンあたりの Issue 数を平準化する。マイルストーンの整理・調整・割り当てが必要なときに使う。「マイルストーン整理して」「Issue にマイルストーンを割り当てて」のようなリクエストで使う。",
+      "content_excerpt": "---\nname: balance-milestones\ndescription: マイルストーン未割り当ての Issue にマイルストーンを紐づけ、1マイルストーンあたりの Issue 数を平準化する。マイルストーンの整理・調整・割り当てが必要なときに使う。「マイルストーン整理して」「Issue にマイルストーンを割り当てて」のようなリクエストで使う。\ncontext: fork\nagent: general-purpose\nallowed-tools: Bash(gh api:*), Bash(gh issue list:*), Bash(gh issue edit:*)\n---\n\n# Balance Milestones Skill\n\nマイルストーン未割り当ての Issue にマイルストーンを紐づけ、偏りがあれば調整・新規作成する。\n\n## 前提条件\n\n- `gh` CLI が認証済みであること\n- Issue にラベルが付与済みであること（ラベルに基づいてマイルストーンを判断するため）\n\n## 手順\n\n### 1. 現状の把握\n\nマイルストーンの一覧と各マイルストーンの Issue 数を確認する。\n\n```bash\ngh api repos/{owner}/{repo}/milestones --jq '.[] | select(.state==\"open\") | {title, open_issues, closed_issues, due_on}'\n```\n\n### 2. マイルストーン未割り当て Issue の特定\n\nマイルストーンが未割り当ての Issue（Dependency Dashboard を除く）を特定する。\n\n### 3. セマンティックバージョニングに基づくマイルストーン分類\n\nマイルストーンを作成・割り当てる際は、Issue の種別に応じて **パッチ / マイナー** のどちらに該当するかを判断する。\n\n**パッチバージョン（`vX.Y.Z` の Z を上げる）:**\n後方互換性を保つバグ修正やドキュメントの誤り修正など、既存の動作を壊さない修正が対象。\n\n| ラベル | パッチに該当するケース |\n|--------|----------------------|\n| `Type: Bug` | 常にパッチ対象。バグ修正は最も直近のパッチマイルストーンに配置する |\n| `Type: Document` | 誤り・不整合の修正（例: バージョン記載の乖離、サンプルコードのバグ）はパッチ対象 |\n\n**マイナーバージョン（`vX.Y.0` の Y を上げる）:**\n後方互換性を保つ新機能追加、機能強化、リファクタリングなどが対象。\n\n| ラベル | マイナーに該当するケース |\n|--------|------------------------|\n| `Type: Feature` | 機能の規模に応じて適切なマイナーマイルストーンに配置 |\n| `Type: Enhancement` | 機能の規模に応じて適切なマイナーマイルストーンに配置 |\n| `Type: Refactoring` | 大きなリリースの前に配置 |\n| `Type: Document` | 新機能に伴うドキュメント追加はマイナーマイルストーンに配置 |\n| `Type: Test` | 関連する機能と同じマイナーマイルストーン |\n| `Type: Publishing` | リリース作業用のマイルストーン |\n\n### 4. ラベルに基づくマイルストーン割り当てルール\n\n1. **`Type: Bug`** → 最も直近のパッチマイルストーンに配置。該当するパッチマイルストーンが存在しない場合は新規作成する（例: 現在の最新リリー"
+    },
+    {
+      "path": "other/axiom-swiftui-animation-ref-charleswiltgen-axiom-2/SKILL.md",
+      "name": "axiom-swiftui-animation-ref",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is a comprehensive reference for SwiftUI animation implementation—VectorArithmetic, @Animatable macro, spring animations, UIKit bridging. This is framework-specific development guidance.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "9fe70d86d2ea05b1d05a5fe166603ba82de6cf8081823a17de7c604c4e703236",
+      "metadata_sha256": "130585f655c470e3c6da5bcae7de94a75962972586341f09ad7261143d8684b2",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when implementing SwiftUI animations, understanding VectorArithmetic, using @Animatable macro, zoom transitions, UIKit/AppKit animation bridging, choosing between spring and timing curve animations, or debugging animation behavior - comprehensive animation reference from iOS 13 through iOS 26",
+      "content_excerpt": "---\nname: axiom-swiftui-animation-ref\ndescription: Use when implementing SwiftUI animations, understanding VectorArithmetic, using @Animatable macro, zoom transitions, UIKit/AppKit animation bridging, choosing between spring and timing curve animations, or debugging animation behavior - comprehensive animation reference from iOS 13 through iOS 26\nlicense: MIT\nmetadata:\n  version: \"1.1.0\"\n---\n\n# SwiftUI Animation\n\n## Overview\n\nComprehensive guide to SwiftUI's animation system, from foundational concepts to advanced techniques. This skill covers the Animatable protocol, the iOS 26 @Animatable macro, animation types, and the Transaction system.\n\n**Core principle** Animation in SwiftUI is mathematical interpolation over time, powered by the VectorArithmetic protocol. Understanding this foundation unlocks the full power of SwiftUI's declarative animation system.\n\n## System Requirements\n\n- iOS 13+: Animatable protocol, timing/spring animations\n- iOS 17+: Default spring animations, scoped animations, PhaseAnimator, KeyframeAnimator\n- iOS 18+: Zoom transitions, UIKit/AppKit animation bridging\n- iOS 26+: @Animatable macro\n\n---\n\n## Part 1: Understanding Animation\n\n### What Is Interpolation\n\nAnimation is the process of generating intermediate values between a start and end state.\n\n#### Example: Opacity animation\n\n```swift\n.opacity(0) → .opacity(1)\n```\n\nWhile this animation runs, SwiftUI computes intermediate values:\n\n```\n0.0 → 0.02 → 0.05 → 0.1 → 0.25 → 0.4 → 0.6 → 0.8 → 1.0\n```\n\n**How values are distributed**\n- Determined by the animation's timing curve or velocity function\n- Spring "
+    },
+    {
+      "path": "other/aws-lambda-php-integration/SKILL.md",
+      "name": "aws-lambda-php-integration",
+      "current_category": "other",
+      "llm_category": "devops",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill provides AWS Lambda deployment patterns for PHP/Symfony with Bref, including runtime layers, event triggers, and deployment pipelines—serverless infrastructure automation.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "441c754eb22317f34e9574a447fe3ee9c78df26d60a069402535815de874a90d",
+      "metadata_sha256": "2f4af4177cd2932b901f3a11972260b6e3fcb530695d9eb76ad3443d208ac484",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Provides AWS Lambda integration patterns for PHP with Symfony using the Bref framework. Creates Lambda handler classes, configures runtime layers, sets up SQS/SNS event triggers, implements warm-up strategies, and optimizes cold starts. Use when deploying PHP/Symfony applications to AWS Lambda, configuring API Gateway integration, implementing serverless PHP applications, or optimizing Lambda performance with Bref. Triggers include \"create lambda php\", \"deploy symfony lambda\", \"bref lambda aws\", \"php lambda cold start\", \"aws lambda php performance\", \"symfony serverless\", \"php serverless framework\".",
+      "content_excerpt": "---\nname: aws-lambda-php-integration\ndescription: Provides AWS Lambda integration patterns for PHP with Symfony using the Bref framework. Creates Lambda handler classes, configures runtime layers, sets up SQS/SNS event triggers, implements warm-up strategies, and optimizes cold starts. Use when deploying PHP/Symfony applications to AWS Lambda, configuring API Gateway integration, implementing serverless PHP applications, or optimizing Lambda performance with Bref. Triggers include \"create lambda php\", \"deploy symfony lambda\", \"bref lambda aws\", \"php lambda cold start\", \"aws lambda php performance\", \"symfony serverless\", \"php serverless framework\".\nallowed-tools: Read, Write, Edit, Glob, Grep, Bash\n---\n\n# AWS Lambda PHP Integration\n\nPatterns for deploying PHP and Symfony applications on AWS Lambda using the Bref framework.\n\n## Overview\n\nTwo approaches available:\n- **Bref Framework** - Standard PHP on Lambda with Symfony support, built-in routing, cold start < 2s\n- **Raw PHP** - Minimal overhead, maximum control, cold start < 500ms\n\nBoth support API Gateway integration with production-ready configurations.\n\n## When to Use\n\n- Creating new Lambda functions in PHP\n- Migrating existing Symfony applications to Lambda\n- Optimizing cold start performance\n- Configuring API Gateway or SQS/SNS event triggers\n- Setting up deployment pipelines for PHP Lambda\n\n## Instructions\n\n### 1. Choose Your Approach\n\n| Approach | Cold Start | Best For | Complexity |\n|----------|------------|----------|------------|\n| Bref | < 2s | Symfony apps, full-featured APIs | Medium |\n| Raw PHP | < 500ms | Simp"
+    },
+    {
+      "path": "other/azure-ai-services-frankxai-ai-architect-2/SKILL.md",
+      "name": "Azure AI Services Expert",
+      "current_category": "other",
+      "llm_category": "ai-llm",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill focuses on Azure OpenAI and AI services for LLM usage, prompting, and assistants, fitting AI/LLM category.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "840236342dfb47a9603ddaebdebda6e6ac283f635b33fd02440e112d26d7956b",
+      "metadata_sha256": "0a0081435eb46a196a769cd205631229fd444db1a149cd527ba4292791d2352b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Build AI applications on Azure using Azure OpenAI, Cognitive Services, and ML services with enterprise patterns",
+      "content_excerpt": "---\nname: Azure AI Services Expert\ndescription: Build AI applications on Azure using Azure OpenAI, Cognitive Services, and ML services with enterprise patterns\nversion: 1.1.0\nlast_updated: 2026-01-06\nexternal_version: \"Azure OpenAI GPT-5.2\"\ntriggers:\n  - Azure OpenAI\n  - Azure AI\n  - Cognitive Services\n  - Azure ML\n---\n\n# Azure AI Services Expert\n\nYou are an expert in Microsoft Azure AI services, specializing in Azure OpenAI Service for GPT models, Azure AI Services, and Azure Machine Learning.\n\n## Azure OpenAI Service\n\n### Overview\nAzure OpenAI provides access to OpenAI models (GPT-4, GPT-4o, DALL-E, Whisper) with Azure's enterprise security, compliance, and regional availability.\n\n### Available Models\n\n| Model | Context | Best For |\n|-------|---------|----------|\n| **GPT-4o** | 128K | Multimodal, fastest GPT-4 |\n| **GPT-4 Turbo** | 128K | Complex reasoning |\n| **GPT-4** | 8K/32K | High capability |\n| **GPT-3.5 Turbo** | 16K | Fast, cost-effective |\n| **text-embedding-ada-002** | 8K | Embeddings |\n| **text-embedding-3-large** | 8K | Better embeddings |\n| **DALL-E 3** | - | Image generation |\n| **Whisper** | - | Speech-to-text |\n\n### Basic Usage\n\n```python\nfrom openai import AzureOpenAI\n\nclient = AzureOpenAI(\n    api_key=os.environ[\"AZURE_OPENAI_API_KEY\"],\n    api_version=\"2024-02-01\",\n    azure_endpoint=os.environ[\"AZURE_OPENAI_ENDPOINT\"]\n)\n\n# Chat completion\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",  # Deployment name\n    messages=[\n        {\"role\": \"system\", \"content\": \"You are a helpful assistant.\"},\n        {\"role\": \"user\", \"content\": \"Explain mach"
+    },
+    {
+      "path": "other/azure-ai-contentsafety-ts-mudassarabrar-sage-gemini-live-age/SKILL.md",
+      "name": "azure-ai-contentsafety-ts",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Skill provides SDK usage and client creation patterns for Azure AI Content Safety REST API in TypeScript, fitting API SDK wrapper category.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "80fc976fcb672e94d5aaa78c015b05b3c3564294096e5904c627aec6a8372808",
+      "metadata_sha256": "f579bdcbb1e433ab624d85596ce5a0743c10b89b7bd0901ae29e21490dd54b61",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Analyze text and images for harmful content using Azure AI Content Safety (@azure-rest/ai-content-safety). Use when moderating user-generated content, detecting hate speech, violence, sexual conten...",
+      "content_excerpt": "---\nname: azure-ai-contentsafety-ts\ndescription: \"Analyze text and images for harmful content using Azure AI Content Safety (@azure-rest/ai-content-safety). Use when moderating user-generated content, detecting hate speech, violence, sexual conten...\"\nrisk: unknown\nsource: community\ndate_added: \"2026-02-27\"\n---\n\n# Azure AI Content Safety REST SDK for TypeScript\n\nAnalyze text and images for harmful content with customizable blocklists.\n\n## Installation\n\n```bash\nnpm install @azure-rest/ai-content-safety @azure/identity @azure/core-auth\n```\n\n## Environment Variables\n\n```bash\nCONTENT_SAFETY_ENDPOINT=https://<resource>.cognitiveservices.azure.com\nCONTENT_SAFETY_KEY=<api-key>\n```\n\n## Authentication\n\n**Important**: This is a REST client. `ContentSafetyClient` is a **function**, not a class.\n\n### API Key\n\n```typescript\nimport ContentSafetyClient from \"@azure-rest/ai-content-safety\";\nimport { AzureKeyCredential } from \"@azure/core-auth\";\n\nconst client = ContentSafetyClient(\n  process.env.CONTENT_SAFETY_ENDPOINT!,\n  new AzureKeyCredential(process.env.CONTENT_SAFETY_KEY!)\n);\n```\n\n### DefaultAzureCredential\n\n```typescript\nimport ContentSafetyClient from \"@azure-rest/ai-content-safety\";\nimport { DefaultAzureCredential } from \"@azure/identity\";\n\nconst client = ContentSafetyClient(\n  process.env.CONTENT_SAFETY_ENDPOINT!,\n  new DefaultAzureCredential()\n);\n```\n\n## Analyze Text\n\n```typescript\nimport ContentSafetyClient, { isUnexpected } from \"@azure-rest/ai-content-safety\";\n\nconst result = await client.path(\"/text:analyze\").post({\n  body: {\n    text: \"Text content to analyze\",\n    categories"
+    },
+    {
+      "path": "other/aws-cloudformation-rds/SKILL.md",
+      "name": "aws-cloudformation-rds",
+      "current_category": "other",
+      "llm_category": "devops",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill provides AWS CloudFormation patterns for RDS database infrastructure, which is infrastructure-as-code and deployment automation.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "3dd491a88a85428abdd906806c54d476417359ac2b0dfc45ca58ef84d9dc9c87",
+      "metadata_sha256": "0f9c9e512b409da5dc33d74407b09e634c00808a36ae8517cb228982739bd1bf",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Provides AWS CloudFormation patterns for Amazon RDS databases. Use when creating RDS instances (MySQL, PostgreSQL, Aurora), DB clusters, multi-AZ deployments, parameter groups, subnet groups, and implementing template structure with Parameters, Outputs, Mappings, Conditions, and cross-stack references.",
+      "content_excerpt": "---\nname: aws-cloudformation-rds\ndescription: Provides AWS CloudFormation patterns for Amazon RDS databases. Use when creating RDS instances (MySQL, PostgreSQL, Aurora), DB clusters, multi-AZ deployments, parameter groups, subnet groups, and implementing template structure with Parameters, Outputs, Mappings, Conditions, and cross-stack references.\nallowed-tools: Read, Write, Bash\n---\n\n# AWS CloudFormation RDS Database\n\n## Overview\n\nCreate production-ready Amazon RDS infrastructure using AWS CloudFormation templates. Covers RDS instances (MySQL, PostgreSQL, Aurora), DB clusters, multi-AZ deployments, parameter groups, subnet groups, security groups, and cross-stack references.\n\n## When to Use\n\n- Creating RDS instances (MySQL, PostgreSQL, Aurora) or DB clusters with read replicas\n- Setting up multi-AZ deployments or configuring parameter/subnet groups\n- Integrating with Secrets Manager or implementing cross-stack references\n\n## Quick Reference\n\n| Component | CloudFormation Type | Use Case |\n|-----------|-------------------|----------|\n| DB Instance | `AWS::RDS::DBInstance` | Single database instance |\n| DB Cluster | `AWS::RDS::DBCluster` | Aurora cluster |\n| DB Subnet Group | `AWS::RDS::DBSubnetGroup` | VPC deployment |\n| Parameter Group | `AWS::RDS::DBParameterGroup` | Database configuration |\n| Security Group | `AWS::EC2::SecurityGroup` | Network access control |\n| Secrets Manager | `AWS::SecretsManager::Secret` | Credential storage |\n\n## Instructions\n\n### Step 1 — Define Database Parameters\n\nUse AWS-specific parameter types for validation.\n\n```yaml\nParameters:\n  DBInstance"
+    },
+    {
+      "path": "other/babashka-clj-plurigrid-asi/SKILL.md",
+      "name": "babashka-clj",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "Duplicate of id 4, same skill for Babashka Clojure scripting, which is a development workflow.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "13e6cc7cb375ed5ffe20bb0008f82a6404a0d986877b0e5afebd8fa79cf5f479",
+      "metadata_sha256": "4a63a56a9b06506cf0793a139988b4acd694ab2da1b00225608e2f4dbdc9c0c7",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Babashka scripting for fast Clojure execution. JVM-less scripting with GraalVM native compilation and sci interpreter.",
+      "content_excerpt": "---\nname: babashka-clj\ndescription: Babashka scripting for fast Clojure execution. JVM-less scripting with GraalVM native compilation and sci interpreter.\nversion: 1.0.0\n---\n\n\n# Babashka Clojure Skill\n\n**Trit**: 0 (ERGODIC - scripting mediates between REPL and production)  \n**Foundation**: Babashka + sci interpreter + pods  \n\n## Core Concept\n\nBabashka provides instant Clojure scripting without JVM startup:\n- Native binary via GraalVM\n- Compatible with most clojure.core\n- Pods for extending functionality\n\n## Commands\n\n```bash\n# Run script\nbb script.clj\n\n# REPL\nbb nrepl-server\n\n# Tasks\nbb tasks\nbb run <task>\n```\n\n## GF(3) Integration\n\n```clojure\n(require '[babashka.process :refer [shell]])\n\n;; Color from seed\n(defn gay-color [seed idx]\n  (let [h (mod (* seed idx 0x9E3779B97F4A7C15) 360)]\n    {:hue h :trit (cond (< h 120) 1 (< h 240) 0 :else -1)}))\n```\n\n## Canonical Triads\n\n```\nborkdude (-1) ⊗ babashka-clj (0) ⊗ gay-mcp (+1) = 0 ✓\ncider-clojure (-1) ⊗ babashka-clj (0) ⊗ squint-runtime (+1) = 0 ✓\n```\n\n\n\n## Scientific Skill Interleaving\n\nThis skill connects to the K-Dense-AI/claude-scientific-skills ecosystem:\n\n### Graph Theory\n- **networkx** [○] via bicomodule\n  - Universal graph hub\n\n### Bibliography References\n\n- `general`: 734 citations in bib.duckdb\n\n## Cat# Integration\n\nThis skill maps to **Cat# = Comod(P)** as a bicomodule in the equipment structure:\n\n```\nTrit: 0 (ERGODIC)\nHome: Prof\nPoly Op: ⊗\nKan Role: Adj\nColor: #26D826\n```\n\n### GF(3) Naturality\n\nThe skill participates in triads satisfying:\n```\n(-1) + (0) + (+1) ≡ 0 (mod 3)\n```\n\nThis ensures compositional coherence in "
+    },
+    {
+      "path": "other/axiom-metrickit-ref/SKILL.md",
+      "name": "axiom-metrickit-ref",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "MetricKit API reference for crash/hang collection and field diagnostics is development tooling reference for iOS app performance monitoring.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "92051fd4202b538f0c19c52221cb01ea93b952d2bd0cefaaab6fa293d91f0e00",
+      "metadata_sha256": "ce35be8de64b830ce62ce72973ff10f2f09b1f287d34be778a6720c120725589",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "MetricKit API reference for field diagnostics - MXMetricPayload, MXDiagnosticPayload, MXCallStackTree parsing, crash and hang collection",
+      "content_excerpt": "---\nname: axiom-metrickit-ref\ndescription: MetricKit API reference for field diagnostics - MXMetricPayload, MXDiagnosticPayload, MXCallStackTree parsing, crash and hang collection\nuser-invocable: false\n---\n\n# MetricKit API Reference\n\nComplete API reference for collecting field performance metrics and diagnostics using MetricKit.\n\n## Overview\n\nMetricKit provides aggregated, on-device performance and diagnostic data from users who opt into sharing analytics. Data is delivered daily (or on-demand in development).\n\n## When to Use This Reference\n\nUse this reference when:\n- Setting up MetricKit subscriber in your app\n- Parsing MXMetricPayload or MXDiagnosticPayload\n- Symbolicating MXCallStackTree crash data\n- Understanding background exit reasons (jetsam, watchdog)\n- Integrating MetricKit with existing crash reporters\n\nFor hang diagnosis workflows, see `axiom-hang-diagnostics`.\nFor general profiling with Instruments, see `axiom-performance-profiling`.\nFor memory debugging including jetsam, see `axiom-memory-debugging`.\n\n## Common Gotchas\n\n1. **24-hour delay** — MetricKit data arrives once daily; it's not real-time debugging\n2. **Call stacks require symbolication** — MXCallStackTree frames are unsymbolicated; keep dSYMs\n3. **Opt-in only** — Only users who enable \"Share with App Developers\" contribute data\n4. **Aggregated, not individual** — You get counts and averages, not per-user traces\n5. **Simulator doesn't work** — MetricKit only collects on physical devices\n\n**iOS Version Support**:\n| Feature | iOS Version |\n|---------|-------------|\n| Basic metrics (battery, CPU, memory) | "
+    },
+    {
+      "path": "other/autonomous-skill-feiskyer-claude-code-settings/SKILL.md",
+      "name": "autonomous-skill",
+      "current_category": "other",
+      "llm_category": "orchestration",
+      "confidence": 0.92,
+      "status": "ok",
+      "reason": "Same skill as id 2, managing multi-session task execution with automatic continuation and progress tracking across multiple Claude Code sessions.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "9e38d29f7b1d7382c954b58574ed7a1aca4147f05369708a87452627105436ae",
+      "metadata_sha256": "ce12d12898c0dfee458ecc19d9e8a660baf7663357d70422441c5e5ecee6da71",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Execute long-running, multi-session tasks autonomously using Claude Code headless mode or in-session hook-based loops. Supports structured task decomposition (for complex projects) and lightweight Ralph-style iteration (for TDD, bug fixing, refactoring). Use this skill whenever the user says \"autonomous\", \"long-running task\", \"multi-session\", \"run this in the background\", \"keep working on this\", \"batch process\", \"iterate until done\", \"ralph loop\", or wants any task that requires sustained, unattended execution.",
+      "content_excerpt": "---\nname: autonomous-skill\ndescription: >-\n  Execute long-running, multi-session tasks autonomously using Claude Code headless mode\n  or in-session hook-based loops. Supports structured task decomposition (for complex projects)\n  and lightweight Ralph-style iteration (for TDD, bug fixing, refactoring).\n  Use this skill whenever the user says \"autonomous\", \"long-running task\", \"multi-session\",\n  \"run this in the background\", \"keep working on this\", \"batch process\", \"iterate until done\",\n  \"ralph loop\", or wants any task that requires sustained, unattended execution.\n---\n\n# Autonomous Skill - Multi-Session Task Execution\n\nExecute complex tasks across multiple Claude Code sessions with automatic continuation,\nprogress tracking, and two completion mechanisms (promise tags + checkbox counting).\n\n## Two Execution Modes\n\n### Headless Mode (default)\nSpawns `claude -p` child sessions in a bash loop. Best for background/unattended work.\n```bash\nbash <skill-dir>/scripts/run-session.sh \"Build a REST API\" --max-sessions 10\n```\n\n### Hook Mode (in-session)\nUses a Stop hook to intercept session exit and feed the prompt back. Runs inside\nthe current interactive session — no nesting issues.\n```bash\nbash <skill-dir>/scripts/setup-loop.sh \"Build a REST API\" --max-iterations 10\n```\n\n## Two Task Strategies\n\n### Structured (default)\nFull task decomposition: Initializer creates `task_list.md` with phased sub-tasks,\nExecutor picks up and completes them one by one. Best for complex, multi-phase projects.\n```bash\nbash <skill-dir>/scripts/run-session.sh \"Build a REST API for todo app\"\n```\n\n### Lightwe"
+    },
+    {
+      "path": "other/azure-devtest-labs/SKILL.md",
+      "name": "azure-devtest-labs",
+      "current_category": "other",
+      "llm_category": "domains",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Azure DevTest Labs is a domain-specific Azure service skill covering troubleshooting, best practices, architecture, security, and deployment for a particular cloud platform service. It fits 'domains' as a subject-matter expertise skill not better captured by a capability category.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "8da769763a0cb87ee992f64b60c053f33a791db14d44a19044512afb1140e6f7",
+      "metadata_sha256": "a548cd54c571a7a081664200e8432eaac5482020643756f30d0e74bf110af17b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Expert knowledge for Azure DevTest Labs development including troubleshooting, best practices, decision making, architecture & design patterns, limits & quotas, security, configuration, integrations & coding patterns, and deployment. Use when managing DevTest Labs VMs, images/artifacts, ARM/CLI automation, RBAC/Key Vault security, or hub-spoke lab setups, and other Azure DevTest Labs related development tasks. Not for Azure Dev Box (use azure-dev-box), Azure Lab Services (use azure-lab-services), Azure Virtual Machines (use azure-virtual-machines), Azure Virtual Desktop (use azure-virtual-desktop).",
+      "content_excerpt": "---\nname: azure-devtest-labs\ndescription: Expert knowledge for Azure DevTest Labs development including troubleshooting, best practices, decision making, architecture & design patterns, limits & quotas, security, configuration, integrations & coding patterns, and deployment. Use when managing DevTest Labs VMs, images/artifacts, ARM/CLI automation, RBAC/Key Vault security, or hub-spoke lab setups, and other Azure DevTest Labs related development tasks. Not for Azure Dev Box (use azure-dev-box), Azure Lab Services (use azure-lab-services), Azure Virtual Machines (use azure-virtual-machines), Azure Virtual Desktop (use azure-virtual-desktop).\ncompatibility: Requires network access. Uses mcp_microsoftdocs:microsoft_docs_fetch or fetch_webpage to retrieve documentation.\nmetadata:\n  generated_at: \"2026-02-28\"\n  generator: \"docs2skills/1.0.0\"\n---\n# Azure DevTest Labs Skill\n\nThis skill provides expert guidance for Azure DevTest Labs. Covers troubleshooting, best practices, decision making, architecture & design patterns, limits & quotas, security, configuration, integrations & coding patterns, and deployment. It combines local quick-reference content with remote documentation fetching capabilities.\n\n## How to Use This Skill\n\n> **IMPORTANT for Agent**: Use the **Category Index** below to locate relevant sections. For categories with line ranges (e.g., `L35-L120`), use `read_file` with the specified lines. For categories with file links (e.g., `[security.md](security.md)`), use `read_file` on the linked reference file\n\n> **IMPORTANT for Agent**: If `metadata.generated_at` is more tha"
+    },
+    {
+      "path": "other/azure-wiki-generator-ntaksh42-agents/SKILL.md",
+      "name": "azure-wiki-generator",
+      "current_category": "other",
+      "llm_category": "documents",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Same skill as id 0 - generates and manages Azure DevOps Wiki pages with markdown content, templates, and document structures.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "f574e916c1c0b2413ac6c3dd0259fcbda06989f14f6f1791a4d2b2df66a98b6a",
+      "metadata_sha256": "590dc4423ce53e891d7b69cbcc71cb9fecd85e76c0f6015362fce52d790c15b9",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Generate and manage Azure DevOps Wiki pages with markdown content. Use when creating project documentation or wiki pages.",
+      "content_excerpt": "---\nname: azure-wiki-generator\ndescription: Generate and manage Azure DevOps Wiki pages with markdown content. Use when creating project documentation or wiki pages.\n---\n\n# Azure Wiki Generator Skill\n\nAzure DevOps Wikiページを生成するスキルです。\n\n## 主な機能\n\n- **Wikiページ作成**: Markdown形式\n- **目次生成**: 階層構造\n- **ドキュメントテンプレート**: プロジェクトドキュメント\n- **図表埋め込み**: Mermaid、画像\n\n## Wikiページ作成\n\n### ホームページ\n\n```markdown\n# プロジェクトWiki\n\n## 概要\n\nこのWikiにはプロジェクトのドキュメントが含まれています。\n\n## 目次\n\n- [アーキテクチャ](Architecture)\n- [開発ガイド](Development-Guide)\n- [デプロイメント](Deployment)\n- [API仕様](API-Reference)\n\n## クイックスタート\n\n1. [環境セットアップ](Setup)\n2. [ローカル開発](Local-Development)\n3. [テスト実行](Testing)\n```\n\n### アーキテクチャページ\n\n```markdown\n# システムアーキテクチャ\n\n## 概要図\n\n```mermaid\ngraph TB\n    Client[クライアント] --> LB[ロードバランサー]\n    LB --> Web1[Webサーバー1]\n    LB --> Web2[Webサーバー2]\n    Web1 --> DB[(データベース)]\n    Web2 --> DB\n    Web1 --> Cache[Redis]\n    Web2 --> Cache\n```\n\n## コンポーネント\n\n### フロントエンド\n- React 18\n- TypeScript\n- Tailwind CSS\n\n### バックエンド\n- Node.js + Express\n- PostgreSQL\n- Redis\n\n### インフラ\n- Azure App Service\n- Azure Database for PostgreSQL\n- Azure Cache for Redis\n```\n\n## Git操作でWiki更新\n\n```bash\n# Wikiリポジトリのクローン\ngit clone https://dev.azure.com/myorg/MyProject/_git/MyProject.wiki\n\ncd MyProject.wiki\n\n# 新ページ作成\ncat > API-Reference.md << 'WIKI'\n# API リファレンス\n\n## エンドポイント\n\n### GET /api/users\nユーザー一覧を取得\n\n**レスポンス:**\n```json\n{\n  \"users\": [\n    {\n      \"id\": 1,\n      \"name\": \"John Doe\"\n    }\n  ]\n}\n```\nWIKI\n\n# コミット＆プッシュ\ngit add .\ngit commit -m \"Add API Reference page\"\ngit push\n```\n\n## ページテンプレート\n\n### 機能仕様\n\n```markdown\n# [機能名]\n\n## 概要\n[機能の簡単な説明]\n\n## 要件\n- 要件1\n- 要件2\n\n## ユースケース\n1. ユー"
+    },
+    {
+      "path": "other/azure-resources/SKILL.md",
+      "name": "azure-resources",
+      "current_category": "other",
+      "llm_category": "devops",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill queries Azure resources and configurations using az CLI commands, which is infrastructure inspection and operational tooling.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "cbbb0241230af7b27b8d76ac7c3a009ba37bdf220952c2701e4cfa43a322d909",
+      "metadata_sha256": "76937199df0dcdf579897a82121ce6d0877c45d48691d3e7631c54e24f86c1cd",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Query Azure resources and configurations (read-only)",
+      "content_excerpt": "---\nname: azure-resources\ndescription: Query Azure resources and configurations (read-only)\n---\n\n# Azure Resources Skill (Read-Only)\n\nQuery and inspect Azure resources without making changes.\n\n> **See also**: [Shared Conventions](../shared/CONVENTIONS.md) | [Safety Guidelines](../shared/SAFETY.md)\n\n## Purpose\n\nSearch, list, and inspect Azure resources to understand infrastructure.\n\n## Commands\n\n```bash\naz account show -o json\naz account list -o json\naz group list -o json\naz group show --name <name> -o json\naz resource list -o json\naz resource list --resource-group <rg> -o json\naz resource list --resource-type <type> -o json\naz resource show --ids <resource-id> -o json\n```\n\n## Output Format\n\n**Always use `-o json`** for consistent, parseable output.\n\n## Workflow Examples\n\n### Get Current Subscription\n\n```bash\naz account show -o json\n```\n\n### List All Resource Groups\n\n```bash\naz group list -o json\n```\n\n### Find Resources by Type\n\n```bash\n# All VMs\naz resource list --resource-type \"Microsoft.Compute/virtualMachines\" -o json\n\n# All storage accounts\naz resource list --resource-type \"Microsoft.Storage/storageAccounts\" -o json\n\n# All App Services\naz resource list --resource-type \"Microsoft.Web/sites\" -o json\n```\n\n### Inspect Specific Resource\n\n```bash\naz resource show --ids \"/subscriptions/xxx/resourceGroups/yyy/providers/...\" -o json\n```\n\n### Find Resources in a Resource Group\n\n```bash\naz resource list --resource-group my-rg -o json\n```\n\n## Common Resource Types\n\n| Resource | Type String |\n|----------|-------------|\n| VM | `Microsoft.Compute/virtualMachines` |\n| Storage | `Micros"
+    },
+    {
+      "path": "other/baoyu-url-to-markdown/SKILL.md",
+      "name": "baoyu-url-to-markdown",
+      "current_category": "other",
+      "llm_category": "documents",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill fetches URLs and converts them to markdown format, which is document conversion/creation workflow.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "40913749b0e95165b02771bdf17bb8ed9fa0a72787d3e09571341ab7148359d0",
+      "metadata_sha256": "74e85c3f7c4e91e4efa9f2a097ea6b7ae439c428fbc6a38f233f3750dd14bf9a",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Fetch any URL and convert to markdown using baoyu-fetch CLI (Chrome CDP with site-specific adapters). Built-in adapters for X/Twitter, YouTube transcripts, Hacker News threads, and generic pages via Defuddle. Handles login/CAPTCHA via interaction wait modes. Use when user wants to save a webpage as markdown.",
+      "content_excerpt": "---\nname: baoyu-url-to-markdown\ndescription: Fetch any URL and convert to markdown using baoyu-fetch CLI (Chrome CDP with site-specific adapters). Built-in adapters for X/Twitter, YouTube transcripts, Hacker News threads, and generic pages via Defuddle. Handles login/CAPTCHA via interaction wait modes. Use when user wants to save a webpage as markdown.\nversion: 1.61.0\nmetadata:\n  openclaw:\n    homepage: https://github.com/JimLiu/baoyu-skills#baoyu-url-to-markdown\n    requires:\n      anyBins:\n        - bun\n---\n\n# URL to Markdown\n\nFetches any URL via `baoyu-fetch` CLI (Chrome CDP + site-specific adapters) and converts it to clean markdown.\n\n## User Input Tools\n\nWhen this skill prompts the user, follow this tool-selection rule (priority order):\n\n1. **Prefer built-in user-input tools** exposed by the current agent runtime — e.g., `AskUserQuestion`, `request_user_input`, `clarify`, `ask_user`, or any equivalent.\n2. **Fallback**: if no such tool exists, emit a numbered plain-text message and ask the user to reply with the chosen number/answer for each question.\n3. **Batching**: if the tool supports multiple questions per call, combine all applicable questions into a single call; if only single-question, ask them one at a time in priority order.\n\nConcrete `AskUserQuestion` references below are examples — substitute the local equivalent in other runtimes.\n\n## CLI Setup\n\n**Important**: The CLI source is vendored in `{baseDir}/scripts/lib`. `scripts/package.json` installs only third-party runtime dependencies.\n\n**Agent Execution Instructions**:\n1. Determine this SKILL.md file's direc"
+    },
+    {
+      "path": "other/bankr-transfers/SKILL.md",
+      "name": "Bankr Dev - Transfers",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill is for building payment systems, implementing token transfers, and adding ENS/social handle resolution. This is software development work for crypto transfer functionality.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "00d1ffbfd31a8d7ca645f41771e79a235e22330699aae173546cd51a4b01bc6e",
+      "metadata_sha256": "d0e086f22427c9ef4184c9360b3192e2638bd3034a6a63654937d547667e16bc",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "This skill should be used when building payment systems, implementing token transfers, or adding ENS/social handle resolution. Supports wallet addresses, ENS names, and social handles.",
+      "content_excerpt": "---\nname: Bankr Dev - Transfers\ndescription: This skill should be used when building payment systems, implementing token transfers, or adding ENS/social handle resolution. Supports wallet addresses, ENS names, and social handles.\nversion: 1.0.0\n---\n\n# Transfers Capability\n\nSend tokens to any recipient via natural language prompts.\n\n## What You Can Do\n\n| Operation | Example Prompt |\n|-----------|----------------|\n| Send to address | `Send 0.1 ETH to 0x1234...abcd` |\n| Send to ENS | `Send $50 USDC to vitalik.eth` |\n| Send to Twitter | `Send $5 ETH to @username on Twitter` |\n| Send to Farcaster | `Send 10 USDC to @user on Farcaster` |\n| Send to Telegram | `Send 0.01 ETH to @user on Telegram` |\n| Percentage send | `Send 10% of my ETH to 0x...` |\n\n## Prompt Patterns\n\n```\nSend {amount} {token} to {recipient} [on {chain}]\n```\n\n**Recipient formats:**\n- Wallet address: `0x1234...abcd`\n- ENS name: `vitalik.eth`, `name.eth`\n- Social handle: `@username on Twitter/Farcaster/Telegram`\n\n**Amount formats:**\n- USD: `$50`, `$100`\n- Percentage: `10%`, `50%`\n- Exact: `0.5 ETH`, `100 USDC`\n\n**Supported chains:** Base, Polygon, Ethereum, Unichain, Solana\n\n## Usage\n\n```typescript\nimport { execute } from \"./bankr-client\";\n\n// To ENS\nawait execute(\"Send 0.1 ETH to vitalik.eth on Base\");\n\n// To social handle\nawait execute(\"Send $5 ETH to @user on Twitter\");\n```\n\n## Related Skills\n\n- `bankr-client-patterns` - Client setup and execute function\n- `bankr-api-basics` - API fundamentals\n- `bankr-portfolio` - Check balances before transfers\n"
+    },
+    {
+      "path": "other/basecamp-automation-sickn33-antigravity-awesome-/SKILL.md",
+      "name": "basecamp-automation",
+      "current_category": "other",
+      "llm_category": "integration",
+      "confidence": 0.92,
+      "status": "ok",
+      "reason": "Skill automates Basecamp project management via Rube MCP (Composio), connecting to external Basecamp service through API integration.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "72be18dbcaf61eb479b8de83eea2d837e913a8220b9d1578c1583e6d9d27a657",
+      "metadata_sha256": "a403345ec8e28e305d149d19b50ace4371c92da5507fce9a442b3be8e66f1dde",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Automate Basecamp project management, to-dos, messages, people, and to-do list organization via Rube MCP (Composio). Always search tools first for current schemas.",
+      "content_excerpt": "---\nname: basecamp-automation\ndescription: \"Automate Basecamp project management, to-dos, messages, people, and to-do list organization via Rube MCP (Composio). Always search tools first for current schemas.\"\nrisk: critical\nsource: community\ndate_added: \"2026-02-27\"\n---\n\n# Basecamp Automation via Rube MCP\n\nAutomate Basecamp operations including project management, to-do list creation, task management, message board posting, people management, and to-do group organization through Composio's Basecamp toolkit.\n\n## Prerequisites\n\n- Rube MCP must be connected (RUBE_SEARCH_TOOLS available)\n- Active Basecamp connection via `RUBE_MANAGE_CONNECTIONS` with toolkit `basecamp`\n- Always call `RUBE_SEARCH_TOOLS` first to get current tool schemas\n\n## Setup\n\n**Get Rube MCP**: Add `https://rube.app/mcp` as an MCP server in your client configuration. No API keys needed — just add the endpoint and it works.\n\n1. Verify Rube MCP is available by confirming `RUBE_SEARCH_TOOLS` responds\n2. Call `RUBE_MANAGE_CONNECTIONS` with toolkit `basecamp`\n3. If connection is not ACTIVE, follow the returned auth link to complete Basecamp OAuth\n4. Confirm connection status shows ACTIVE before running any workflows\n\n## Core Workflows\n\n### 1. Manage To-Do Lists and Tasks\n\n**When to use**: User wants to create to-do lists, add tasks, or organize work within a Basecamp project\n\n**Tool sequence**:\n1. `BASECAMP_GET_PROJECTS` - List projects to find the target bucket_id [Prerequisite]\n2. `BASECAMP_GET_BUCKETS_TODOSETS` - Get the to-do set within a project [Prerequisite]\n3. `BASECAMP_GET_BUCKETS_TODOSETS_TODOLISTS` - L"
+    }
+  ],
+  "notes": [
+    "Review sample rows against SKILL.md excerpts before applying a migration plan.",
+    "Sampling is deterministic for a fixed seed and classification input."
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "scanned": 122,
+  "changed": 11,
+  "unchanged": 111,
+  "policy": {
+    "author": "infer from normalized GitHub repo owner when missing",
+    "source_url": "build from repo, github_path/path, and branch when missing or invalid",
+    "unknown_license": "NOASSERTION with restricted distribution"
+  },
+  "changed_files": [
+    {
+      "path": "api/azure-appconfiguration-py/metadata.json",
+      "fields": [
+        "author",
+        "copyright",
+        "distribution",
+        "license",
+        "permission_note",
+        "source_url"
+      ]
+    },
+    {
+      "path": "api/azure-mgmt-botservice-py/metadata.json",
+      "fields": [
+        "author",
+        "copyright",
+        "distribution",
+        "license",
+        "permission_note",
+        "source_url"
+      ]
+    },
+    {
+      "path": "api/azure-mgmt-fabric-py/metadata.json",
+      "fields": [
+        "author",
+        "copyright",
+        "distribution",
+        "license",
+        "permission_note",
+        "source_url"
+      ]
+    },
+    {
+      "path": "api/azure-monitor-opentelemetry-exporter-py/metadata.json",
+      "fields": [
+        "author",
+        "copyright",
+        "distribution",
+        "license",
+        "permission_note",
+        "source_url"
+      ]
+    },
+    {
+      "path": "api/azure-monitor-opentelemetry-ts/metadata.json",
+      "fields": [
+        "author",
+        "copyright",
+        "distribution",
+        "license",
+        "permission_note",
+        "source_url"
+      ]
+    },
+    {
+      "path": "api/azure-monitor-query-java/metadata.json",
+      "fields": [
+        "author",
+        "copyright",
+        "distribution",
+        "license",
+        "permission_note",
+        "source_url"
+      ]
+    },
+    {
+      "path": "development/axiom-cloud-sync/metadata.json",
+      "fields": [
+        "author",
+        "copyright",
+        "distribution",
+        "license",
+        "permission_note",
+        "source_url"
+      ]
+    },
+    {
+      "path": "development/axiom-extensions-widgets/metadata.json",
+      "fields": [
+        "author",
+        "copyright",
+        "distribution",
+        "license",
+        "permission_note",
+        "source_url"
+      ]
+    },
+    {
+      "path": "development/axiom-now-playing-carplay/metadata.json",
+      "fields": [
+        "author",
+        "copyright",
+        "distribution",
+        "license",
+        "permission_note",
+        "source_url"
+      ]
+    },
+    {
+      "path": "development/axiom-now-playing/metadata.json",
+      "fields": [
+        "author",
+        "copyright",
+        "distribution",
+        "license",
+        "permission_note",
+        "source_url"
+      ]
+    },
+    {
+      "path": "security/axiom-privacy-ux/metadata.json",
+      "fields": [
+        "author",
+        "copyright",
+        "distribution",
+        "license",
+        "permission_note",
+        "source_url"
+      ]
+    }
+  ]
+}

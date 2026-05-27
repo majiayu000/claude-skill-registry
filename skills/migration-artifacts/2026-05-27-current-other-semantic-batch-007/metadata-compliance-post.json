@@ -1,0 +1,618 @@
+{
+  "scanned": 122,
+  "missing_metadata": 0,
+  "errors": 0,
+  "warnings": 0,
+  "results": [
+    {
+      "path": "ai-llm/axiom-foundation-models-ref-charleswiltgen-axiom-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-llm/axiom-mode/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-ml/ai-ethics-review/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-ml/axolotl/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/after-action-report/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/artifact-analysis/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/bases-aiskillstore-marketplace-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/batch-analysis/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/batch-analysis-ammawla-encode-toolkit/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/aws-sigv4-req-builder-discretetom-aws-sigv4-req-builde-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/axiom-core-location-ref-charleswiltgen-axiom-a3416e85/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/axiom-core-spotlight-ref-charleswiltgen-axiom/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/axiom-storekit-ref-charleswiltgen-axiom-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/axiom-vision-ref-charleswiltgen-axiom/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-ai-voicelive-java/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-ai-voicelive-py/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-appconfiguration-java/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-appconfiguration-py/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-appconfiguration-py-moonaxis-azure-stack/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-appconfiguration-py-sickn33-antigravity-awesome/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-maps/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-metrics-advisor/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-mgmt-applicationinsights-dotnet/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-mgmt-botservice-dotnet/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-mgmt-botservice-py/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-mgmt-botservice-py-moonaxis-azure-stack/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-mgmt-fabric-dotnet/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-mgmt-fabric-py/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-mgmt-fabric-py-moonaxis-azure-stack/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-mgmt-fabric-py-sickn33-antigravity-awesome/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-monitor-ingestion-py/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-monitor-opentelemetry-exporter-py/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-monitor-opentelemetry-exporter-py-moonaxis-azure-stack/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-monitor-opentelemetry-exporter-py-sickn33-antigravity-awes/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-monitor-opentelemetry-py/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-monitor-opentelemetry-py-zidong-ia-biblioteca/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-monitor-opentelemetry-ts/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-monitor-query-java/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-monitor-query-java-dexsdevelopers-site-financeiro/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/azure-monitor-query-java-diegosouzapw-awesome-omni-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/backend-endpoint-dkyazzentwatwa-supernavigator-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/backward-compat-rules/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "bash/background-process-run-command-sync/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "creative/art-direction/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/base-zidong-ia-biblioteca/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/axiom-cloud-sync/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/axiom-extensions-widgets/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/axiom-haptics-charleswiltgen-axiom/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/axiom-now-playing/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/axiom-now-playing-carplay/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/axiom-testflight-triage-charleswiltgen-axiom-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/bankr-portfolio/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/bankr-project-templates/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/bankr-token-trading/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/bankr-transfers/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/aws-altrupets-monorepo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/aws-amplify-a5c-ai-babysitter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/aws-aurora/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/aws-aurora-alinaqi-claude-bootstrap-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/aws-boto3-patterns-expeor-aws-automation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/aws-cloud-a5c-ai-babysitter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/azure-resources/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/bare-metal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/azure-wiki-generator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/azure-wiki-generator-ntaksh42-agents/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "domains/arbeitnehmer-status-klotzkette-claude-fuer-deutsche/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "domains/avv-pruefung/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "domains/banking-expert-personamanagmentlaye-pcl-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "domains/basecalling-gptomics-bioskills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "generation/ai-studio-image/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "generation/baidu-wenku-aippt-personal/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "generation/banner-creator-resciencelab-opc-skills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/axonaut-automation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/axonaut-automation-diegosouzapw-awesome-omni-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/ayrshare-automation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/ayrshare-automation-lunartech-x-superpowers/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/baidu-drive/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/baidu-netdisk/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/baoyu-post-to-wechat/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/baoyu-post-to-wechat-chengyihua-nanobot-ts/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/baoyu-post-to-wechat-ecnu-icalk-autoskill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/baoyu-post-to-wechat-jimliu-baoyu-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/baoyu-post-to-weibo/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/bases/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/bases-aiskillstore-marketplace-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "language/axiom-localization-charleswiltgen-axiom/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "language/azure-ai-translation-document-py/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "marketing/ads-creative-development/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "marketing/backlink-analyzer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "marketing/backlink-analyzer-1203992808-chatgptcaricature/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/autonomous-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/autonomous-skill-feiskyer-claude-code-settings/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/autonomous-skill-feiskyer-codex-settings-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/autonomous-skill-feiskyer-codex-settings-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/autopilot-yeachan-heo-oh-my-claudecode-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/autopilot-yeachan-heo-oh-my-claudecode-65b12d18/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/ba-orchestration-prorise-cool-claude-code-multi-ag-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/babysit-a5c-ai-babysitter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/babysit-a5c-ai-babysitter-2-a5c-ai-babysitter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/babysit-a5c-ai-babysitter-5/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/babysit-a5c-ai-babysitter-6/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/babysit-a5c-ai-babysitter-7/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/backend-development-feature-development-claude-code-communit-cla/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/backend-implementation-shaul1991-shaul-agents-plugin-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "performance/axiom-build-performance-charleswiltgen-axiom-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "product/backlog-md-oriolrius-pki-manager-web-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "product/backlog-workflow-yebot-rad-cc-plugins-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "product/badger-triage-autumnsgrove-lattice/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/accessibility-audit-rampstackco-claude-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/api-review-athola-claude-night-market/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/axiom-accessibility-diag-charleswiltgen-axiom-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/basic-design-reviewer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/api-security-testing-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/aws-compliance-checker-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/axiom-privacy-ux/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/axiom-privacy-ux-charleswiltgen-axiom/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/azure-security-keyvault-secrets-java-sickn33-antigravity-awesome-/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "skills/axiom-using-axiom-charleswiltgen-axiom-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "skills/bacoco-evolveskill-claude-skills-synapse/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "skills/baseproject-update/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "system/axiom-xcode-debugging-charleswiltgen-axiom-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "workflow/autonomous-pr/metadata.json",
+      "errors": [],
+      "warnings": []
+    }
+  ]
+}

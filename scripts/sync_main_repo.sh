@@ -66,14 +66,18 @@ if [[ "$rebuild" -eq 1 ]]; then
     --compat-manifest-pointer
   python "$main_dir/scripts/build_registry_summary.py" --registry "$main_dir/registry.json" --plugins "$main_dir/sources/plugins.json" --output "$main_dir/registry_summary.json"
   echo "Generating required security evidence..."
+  security_report_path="$(mktemp)"
   mkdir -p "$main_dir/docs"
   python "$main_dir/scripts/security_scanner.py" \
     "$main_dir/skills" \
     --quiet \
     --report-only \
-    --output "$main_dir/docs/security-report.json"
-  python "$main_dir/scripts/build_search_index.py" --skills-dir "$main_dir/skills" --output "$main_dir/docs"
-  rm -f "$main_dir/docs/security-report.json"
+    --output "$security_report_path"
+  python "$main_dir/scripts/build_search_index.py" \
+    --skills-dir "$main_dir/skills" \
+    --output "$main_dir/docs" \
+    --security-report "$security_report_path"
+  rm -f "$security_report_path"
   python "$main_dir/scripts/check_canonical_categories.py" \
     --skills-dir "$main_dir/skills" \
     --registry-shards "$main_dir/registry-shards" \

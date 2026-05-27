@@ -232,6 +232,56 @@ def test_build_search_index_consumes_security_decision_evidence(tmp_path):
     assert record["security_decision"]["id"] == "decision123"
 
 
+def test_build_search_index_consumes_external_security_report_without_publishing_raw(tmp_path):
+    output_dir = tmp_path / "docs"
+    output_dir.mkdir()
+    security_report_path = tmp_path / "security-report.json"
+    security_report_path.write_text(
+        json.dumps(
+            {
+                "total": 1,
+                "passed": 1,
+                "failed": 0,
+                "skills": [
+                    {
+                        "path": "development/demo/SKILL.md",
+                        "security_decision": {
+                            "status": "passed",
+                            "scanner": {
+                                "name": "claude-skill-registry-security-scanner",
+                                "version": "1.1.0",
+                                "ruleset_sha256": "abc123",
+                            },
+                            "provenance": {
+                                "content_sha256": "def456",
+                                "scanned_at": "2026-05-24T00:00:00Z",
+                            },
+                        },
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    build_search_index(
+        [
+            _skill(
+                path="skills/demo",
+                install="acme/example/skills/demo",
+                archive_path="development/demo/SKILL.md",
+            )
+        ],
+        output_dir,
+        require_security_evidence=True,
+        security_report_path=security_report_path,
+    )
+
+    stats = json.loads((output_dir / "stats.json").read_text())
+    assert stats["security_scan"] == {"total": 1, "passed": 1, "failed": 0}
+    assert not output_dir.joinpath("security-report.json").exists()
+
+
 def test_build_search_index_fails_when_required_security_report_is_missing(tmp_path):
     with pytest.raises(FileNotFoundError, match="Required security evidence is missing"):
         build_search_index(

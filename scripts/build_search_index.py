@@ -120,11 +120,10 @@ def validate_security_decision(decision: Any, context: str) -> Dict[str, Any]:
 
 
 def load_security_report_decisions(
-    output_dir: Path,
+    report_path: Path,
     require_security_evidence: bool,
 ) -> tuple[Dict[str, Dict[str, Any]], Dict[str, Any]]:
-    """Load per-skill security decisions from docs/security-report.json."""
-    report_path = output_dir / "security-report.json"
+    """Load per-skill security decisions from the required security report."""
     if not report_path.exists():
         if require_security_evidence:
             raise FileNotFoundError(f"Required security evidence is missing: {report_path}")
@@ -372,11 +371,13 @@ def build_search_index(
     archive_metadata_count_raw: Optional[int] = None,
     registry_skill_count_dedup: Optional[int] = None,
     require_security_evidence: bool = False,
+    security_report_path: Optional[Path] = None,
 ) -> Dict[str, Any]:
     """Build the lightweight search index."""
     logger.info(f"Building index from {len(skills)} {source_name}...")
+    resolved_security_report_path = security_report_path or (output_dir / "security-report.json")
     security_decisions_by_path, _security_report = load_security_report_decisions(
-        output_dir,
+        resolved_security_report_path,
         require_security_evidence,
     )
 
@@ -764,10 +765,9 @@ def build_search_index(
         ),
     }
     # Attach latest security scan summary if available
-    security_report_path = output_dir / "security-report.json"
-    if security_report_path.exists():
+    if resolved_security_report_path.exists():
         try:
-            with open(security_report_path, "r", encoding="utf-8") as f:
+            with open(resolved_security_report_path, "r", encoding="utf-8") as f:
                 security_report = json.load(f)
             stats["security_scan"] = {
                 "total": security_report.get("total"),
@@ -877,12 +877,21 @@ def main():
         action="store_true",
         help="Allow trust-sensitive outputs to mark security evidence unknown",
     )
+    parser.add_argument(
+        "--security-report",
+        default=None,
+        help=(
+            "Path to scanner output used as security evidence. Defaults to "
+            "<output>/security-report.json for local compatibility."
+        ),
+    )
 
     args = parser.parse_args()
 
     skills_dir = Path(args.skills_dir)
     registry_path = Path(args.registry)
     output_dir = Path(args.output)
+    security_report_path = Path(args.security_report) if args.security_report else None
 
     archive_skill_md_count_raw: Optional[int] = None
     archive_metadata_count_raw: Optional[int] = None
@@ -934,6 +943,7 @@ def main():
         archive_metadata_count_raw=archive_metadata_count_raw,
         registry_skill_count_dedup=registry_skill_count_dedup,
         require_security_evidence=not args.allow_missing_security_evidence,
+        security_report_path=security_report_path,
     )
 
 

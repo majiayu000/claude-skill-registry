@@ -97,13 +97,16 @@ def test_publish_sync_runs_generated_size_guard_after_rebuild():
 
     security_pos = sync_script.index("scripts/security_scanner.py")
     rebuild_pos = sync_script.index("scripts/build_search_index.py")
-    cleanup_pos = sync_script.index("rm -f \"$main_dir/docs/security-report.json\"")
+    cleanup_pos = sync_script.index("rm -f \"$security_report_path\"")
     canonical_pos = sync_script.index("scripts/check_canonical_categories.py")
     guard_pos = sync_script.index("scripts/check_generated_file_sizes.py")
     category_guard_pos = sync_script.index("scripts/check_category_artifacts.py")
 
     assert category_guard_pos > guard_pos > canonical_pos > cleanup_pos > rebuild_pos > security_pos
-    assert "--output \"$main_dir/docs/security-report.json\"" in sync_script
+    assert 'security_report_path="$(mktemp)"' in sync_script
+    assert "--output \"$security_report_path\"" in sync_script
+    assert "--security-report \"$security_report_path\"" in sync_script
+    assert "--output \"$main_dir/docs/security-report.json\"" not in sync_script
     assert "--report-only" in sync_script[sync_script.index("scripts/security_scanner.py") : rebuild_pos]
     assert "--allow-missing-security-evidence" not in sync_script
     assert "--include registry.json" in sync_script
@@ -123,14 +126,24 @@ def test_publish_sync_metadata_compliance_is_advisory_for_historical_notices():
     assert "--strict" not in notices_block
 
 
-def test_build_index_fails_closed_when_security_report_is_missing():
+def test_build_index_generates_security_report_for_checked_out_data():
     workflow = read_repo_file(".github/workflows/build-index.yml")
+    build_steps = workflow[workflow.index("Generate security report for checked-out data") :]
 
-    assert "allow_missing_security_report" in workflow
-    assert "core.setFailed(message)" in workflow
-    assert "security-report-missing.allowed" in workflow
-    assert "unzip -o security-report.zip -d docs || true" not in workflow
-    assert "test -f docs/security-report.json" in workflow
+    security_pos = build_steps.index("scripts/security_scanner.py")
+    build_pos = build_steps.index("scripts/build_search_index.py")
+
+    assert security_pos < build_pos
+    assert "--output \"$RUNNER_TEMP/security-report.json\"" in build_steps
+    assert "--security-report \"$RUNNER_TEMP/security-report.json\"" in build_steps
+    assert "--output docs/security-report.json" not in build_steps
+    assert "unzip -o security-report.zip -d docs || true" not in build_steps
+    assert "test -f \"$RUNNER_TEMP/security-report.json\"" in build_steps
+    assert "--allow-missing-security-evidence" not in build_steps
+    assert "'scripts/security_scanner.py'" in workflow
+    assert "'scripts/security_blocklist.py'" in workflow
+    assert "'sources/security_blocklist.json'" in workflow
+    assert "'schema/skill.schema.json'" in workflow
 
 
 def test_build_index_runs_generated_size_guard_before_pages_upload():

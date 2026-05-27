@@ -1,0 +1,13 @@
+{
+  "name": "cli",
+  "description": "python clients for plyr.fm",
+  "repo": "zzstoatzz/plyr-python-client",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": "packages/plyrfm-mcp/skills/cli",
+  "github_branch": "main",
+  "dir_name": "cli",
+  "downloaded_at": "2026-02-05T01:45:36.961910Z"
+}

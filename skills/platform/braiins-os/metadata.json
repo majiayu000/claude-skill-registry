@@ -1,0 +1,16 @@
+{
+  "name": "braiins-os",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills/braiins-os/SKILL.md",
+  "source": "github.com/enuno/claude-command-and-control",
+  "downloaded_at": "2026-02-02T02:43:35.851224Z",
+  "dir_name": "braiins-os",
+  "category": "platform",
+  "author": "enuno",
+  "source_url": "https://github.com/enuno/claude-command-and-control/blob/main/skills/braiins-os/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/enuno/claude-command-and-control/blob/main/skills/braiins-os/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "charger",
+  "repo": "moltbot/skills",
+  "path": "skills/borahm/charger/SKILL.md",
+  "source": "github.com/moltbot/skills",
+  "downloaded_at": "2026-01-29T05:14:26.393097Z",
+  "dir_name": "charger",
+  "category": "integration",
+  "author": "moltbot",
+  "source_url": "https://github.com/moltbot/skills/blob/main/skills/borahm/charger/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 clawdbot",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

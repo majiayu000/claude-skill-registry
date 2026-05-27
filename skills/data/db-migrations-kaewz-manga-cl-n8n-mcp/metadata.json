@@ -1,0 +1,13 @@
+{
+  "name": "db-migrations",
+  "description": "",
+  "repo": "kaewz-manga/cl-n8n-mcp",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kaewz-manga/cl-n8n-mcp",
+  "github_path": ".claude/skills/db-migrations",
+  "github_branch": "main",
+  "dir_name": "db-migrations-kaewz-manga-cl-n8n-mcp",
+  "downloaded_at": "2026-02-05T01:44:46.086824Z"
+}

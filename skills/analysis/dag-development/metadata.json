@@ -1,0 +1,16 @@
+{
+  "name": "dag-development",
+  "repo": "nealcaren/social-data-analysis",
+  "path": "plugins/dag-development/skills/dag-development/SKILL.md",
+  "source": "github.com/nealcaren/social-data-analysis",
+  "downloaded_at": "2026-02-02T04:31:23.686600Z",
+  "dir_name": "dag-development",
+  "category": "analysis",
+  "author": "nealcaren",
+  "source_url": "https://github.com/nealcaren/social-data-analysis/blob/main/plugins/dag-development/skills/dag-development/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Neal Caren",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

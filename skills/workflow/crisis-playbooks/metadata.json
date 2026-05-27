@@ -1,0 +1,16 @@
+{
+  "name": "crisis-playbooks",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/pr-communications/skills/crisis-playbooks/SKILL.md",
+  "source": "github.com/gtmagents/gtm-agents",
+  "downloaded_at": "2026-02-02T02:59:23.071501Z",
+  "dir_name": "crisis-playbooks",
+  "category": "workflow",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/pr-communications/skills/crisis-playbooks/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gtmagents/gtm-agents/blob/main/plugins/pr-communications/skills/crisis-playbooks/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

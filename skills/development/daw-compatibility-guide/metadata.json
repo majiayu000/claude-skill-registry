@@ -1,0 +1,18 @@
+{
+  "name": "daw-compatibility-guide",
+  "repo": "yebot/rad-cc-plugins",
+  "path": "plugins/juce-dev-team/skills/daw-compatibility-guide/SKILL.md",
+  "source": "github.com/yebot/rad-cc-plugins",
+  "downloaded_at": "2026-01-22T02:38:38.611232Z",
+  "dir_name": "daw-compatibility-guide",
+  "category": "development",
+  "github_path": "plugins/juce-dev-team/skills/daw-compatibility-guide",
+  "github_branch": "main",
+  "author": "yebot",
+  "source_url": "https://github.com/yebot/rad-cc-plugins/blob/main/plugins/juce-dev-team/skills/daw-compatibility-guide/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yebot/rad-cc-plugins/blob/main/plugins/juce-dev-team/skills/daw-compatibility-guide/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

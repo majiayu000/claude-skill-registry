@@ -1,0 +1,16 @@
+{
+  "name": "capability-graph-builder",
+  "repo": "daffy0208/ai-dev-standards",
+  "path": "skills/capability-graph-builder/SKILL.md",
+  "source": "github.com/daffy0208/ai-dev-standards",
+  "downloaded_at": "2026-01-28T03:33:36.135776Z",
+  "dir_name": "capability-graph-builder",
+  "category": "orchestration",
+  "author": "daffy0208",
+  "source_url": "https://github.com/daffy0208/ai-dev-standards/blob/main/skills/capability-graph-builder/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AI Dev Standards Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

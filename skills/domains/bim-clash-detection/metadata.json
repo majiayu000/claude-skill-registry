@@ -1,0 +1,16 @@
+{
+  "name": "bim-clash-detection",
+  "repo": "datadrivenconstruction/DDC_Skills_for_AI_Agents_in_Construction",
+  "path": "1_DDC_Toolkit/BIM-Analysis/bim-clash-detection/SKILL.md",
+  "source": "github.com/datadrivenconstruction/DDC_Skills_for_AI_Agents_in_Construction",
+  "downloaded_at": "2026-02-02T02:56:30.266181Z",
+  "dir_name": "bim-clash-detection",
+  "category": "domains",
+  "author": "datadrivenconstruction",
+  "source_url": "https://github.com/datadrivenconstruction/DDC_Skills_for_AI_Agents_in_Construction/blob/main/1_DDC_Toolkit/BIM-Analysis/bim-clash-detection/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 DataDrivenConstruction",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

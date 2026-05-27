@@ -1,0 +1,18 @@
+{
+  "name": "code-formatter",
+  "description": "Execute automatically formats and validates code files using Prettier and other formatting tools.\nUse when users mention \"format my code\", \"fix formatting\", \"apply code style\",\n\"check formatting\", \"ma",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/examples/formatter/code-formatter",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "code-formatter-vasic-digital-superagent-2",
+  "author": "vasic-digital",
+  "source_url": "https://github.com/vasic-digital/SuperAgent/blob/main/skills/plugins/examples/formatter/code-formatter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vasic-digital/SuperAgent/blob/main/skills/plugins/examples/formatter/code-formatter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

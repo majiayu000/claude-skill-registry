@@ -1,0 +1,16 @@
+{
+  "name": "context7-usage",
+  "repo": "motoki317/dotfiles",
+  "path": ".claude/skills/context7-usage/SKILL.md",
+  "source": "github.com/motoki317/dotfiles",
+  "downloaded_at": "2026-02-02T04:59:42.344799Z",
+  "dir_name": "context7-usage-motoki317-dotfiles-2a27e25d",
+  "category": "development",
+  "author": "motoki317",
+  "source_url": "https://github.com/motoki317/dotfiles/blob/main/.claude/skills/context7-usage/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 motoki317",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

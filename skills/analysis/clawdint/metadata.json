@@ -1,0 +1,17 @@
+{
+  "name": "clawdint",
+  "repo": "LJT-520/openClaw-backup",
+  "path": "skills/lknik/clawdint/skill.md",
+  "github_branch": "master",
+  "category": "analysis",
+  "source": "github.com/LJT-520/openClaw-backup",
+  "dir_name": "clawdint",
+  "downloaded_at": "2026-03-22T05:40:49.095287Z",
+  "author": "LJT-520",
+  "source_url": "https://github.com/LJT-520/openClaw-backup/blob/master/skills/lknik/clawdint/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/LJT-520/openClaw-backup/blob/master/skills/lknik/clawdint/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

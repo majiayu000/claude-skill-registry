@@ -1,0 +1,17 @@
+{
+  "name": "change-request-analysis",
+  "repo": "dsivov/ai_development_team",
+  "path": ".claude/skills/change-request-analysis/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/dsivov/ai_development_team",
+  "dir_name": "change-request-analysis",
+  "downloaded_at": "2026-03-22T07:49:57.012859Z",
+  "author": "dsivov",
+  "source_url": "https://github.com/dsivov/ai_development_team/blob/main/.claude/skills/change-request-analysis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dsivov/ai_development_team/blob/main/.claude/skills/change-request-analysis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

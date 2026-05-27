@@ -1,0 +1,16 @@
+{
+  "name": "device-prober",
+  "repo": "TobiasWooldridge/WaveCap-SDR",
+  "path": ".claude/skills/device-prober/SKILL.md",
+  "source": "github.com/TobiasWooldridge/WaveCap-SDR",
+  "downloaded_at": "2026-01-29T05:15:24.420480Z",
+  "dir_name": "device-prober-tobiaswooldridge-wavecap-sdr",
+  "category": "system",
+  "author": "TobiasWooldridge",
+  "source_url": "https://github.com/TobiasWooldridge/WaveCap-SDR/blob/main/.claude/skills/device-prober/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TobiasWooldridge/WaveCap-SDR/blob/main/.claude/skills/device-prober/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

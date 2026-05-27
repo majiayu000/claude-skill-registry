@@ -1,0 +1,13 @@
+{
+  "name": "claude-code-marketplace",
+  "description": "",
+  "repo": "ruan-cat/monorepo",
+  "category": "skills",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ruan-cat/monorepo",
+  "github_path": ".claude/skills/claude-code-marketplace",
+  "github_branch": "main",
+  "dir_name": "claude-code-marketplace",
+  "downloaded_at": "2026-02-05T01:44:49.725347Z"
+}

@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "batch_id": "current-other-semantic-batch-008-large",
+  "generated_at": "2026-05-27T14:43:09.591446+00:00",
+  "skills_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008",
+  "input_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/input.jsonl",
+  "policy": {
+    "from_categories": [
+      "other"
+    ],
+    "limit": 10000,
+    "offset": 0,
+    "content_chars": 1200,
+    "exclude_input_jsonl": [
+      "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-24-current-other-semantic-batch-001/input.jsonl",
+      "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-24-legacy-deterministic-001/input.jsonl",
+      "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-24-legacy-semantic-003/input.jsonl",
+      "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-25-current-other-semantic-batch-002/input.jsonl",
+      "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-003/input.jsonl",
+      "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-004/input.jsonl",
+      "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-005/input.jsonl",
+      "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-007/input.jsonl",
+      "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/input.jsonl"
+    ],
+    "apply_mode": "review-only"
+  },
+  "summary": {
+    "archive_category_counts": {
+      "agent": 1450,
+      "ai-llm": 2102,
+      "ai-ml": 2029,
+      "analysis": 3056,
+      "api": 923,
+      "bash": 211,
+      "business": 1038,
+      "c-level": 49,
+      "communication": 562,
+      "context-management": 1171,
+      "creative": 679,
+      "data": 48906,
+      "design": 13418,
+      "development": 36296,
+      "devops": 10250,
+      "documents": 6212,
+      "domains": 53,
+      "examples": 85,
+      "forensics": 56,
+      "gaming": 696,
+      "generation": 461,
+      "integration": 4648,
+      "language": 64,
+      "local-ai-infrastructure": 50,
+      "marketing": 2589,
+      "orchestration": 1870,
+      "other": 53741,
+      "performance": 854,
+      "personal-development": 285,
+      "planning": 1320,
+      "platform": 235,
+      "product": 2343,
+      "productivity": 2965,
+      "quality": 2674,
+      "security": 4990,
+      "skills": 1721,
+      "system": 18,
+      "testing": 11145,
+      "travel": 44,
+      "war-room": 5,
+      "workflow": 903,
+      "writing": 915
+    },
+    "matching_category_skill_count": 53741,
+    "excluded_input_path_count": 14659,
+    "excluded_live_match_count": 5442,
+    "eligible_matching_category_skill_count": 48299,
+    "selected_input_count": 10000,
+    "selected_category_counts": {
+      "other": 10000
+    }
+  },
+  "artifacts": {
+    "input_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/input.jsonl",
+    "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/classification.jsonl",
+    "classification_report": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/classification-report.json",
+    "checkpoint_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/checkpoint.jsonl",
+    "apply_plan": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/apply-plan.json",
+    "sample_audit": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/sample-audit.json",
+    "residual_report": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/residual-report.json",
+    "residual_worksets_report": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/residual-worksets.json",
+    "residual_worksets_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/residual-worksets"
+  },
+  "commands": [
+    "python scripts/classify_residual_workset_with_llm.py --workset-jsonl /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/input.jsonl --classification-output /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/classification.jsonl --output /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/classification-report.json --checkpoint-jsonl /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/checkpoint.jsonl --api-key-env MIMO_API_KEY --base-url https://token-plan-sgp.xiaomimimo.com/v1 --model mimo-v2.5-pro --temperature 0",
+    "python scripts/sample_category_classification_audit.py --workset-jsonl /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/input.jsonl --classification-jsonl /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/classification.jsonl --output /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/sample-audit.json",
+    "python scripts/apply_category_migration.py --skills-dir /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008 --classification-jsonl /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/classification.jsonl --from-category other --min-confidence 0.9 --movable-only --output /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/apply-plan.json",
+    "python scripts/audit_category_residuals.py --skills-dir /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008 --classification-jsonl /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/classification.jsonl --from-category other --min-confidence 0.9 --output /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/residual-report.json",
+    "python scripts/build_residual_category_worksets.py --skills-dir /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008 --classification-jsonl /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/classification.jsonl --from-category other --min-confidence 0.9 --output /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/residual-worksets.json --workset-output-dir /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/residual-worksets"
+  ],
+  "notes": [
+    "This manifest and its input JSONL do not modify archive files.",
+    "Each input row carries SKILL.md and metadata SHA-256 provenance.",
+    "Run the sample audit before applying any generated move plan.",
+    "The apply step refuses inactive categories and changed source hashes.",
+    "Residual worksets explain classification gaps, low-confidence rows, target-other rows, and inactive targets before the next batch."
+  ],
+  "manifest_json": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/manifest.json"
+}

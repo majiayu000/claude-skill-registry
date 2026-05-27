@@ -1,0 +1,16 @@
+{
+  "name": "collab-clear",
+  "repo": "ben-mad-jlp/claude-mermaid-collab",
+  "path": "skills/collab-clear/skill.md",
+  "source": "github.com/ben-mad-jlp/claude-mermaid-collab",
+  "downloaded_at": "2026-01-28T02:43:54.074255Z",
+  "dir_name": "collab-clear",
+  "category": "context-management",
+  "author": "ben-mad-jlp",
+  "source_url": "https://github.com/ben-mad-jlp/claude-mermaid-collab/blob/main/skills/collab-clear/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ben-mad-jlp/claude-mermaid-collab/blob/main/skills/collab-clear/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

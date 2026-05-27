@@ -1,0 +1,20 @@
+{
+  "name": "create-ticket",
+  "description": "",
+  "repo": "adamrdrew/ushabti",
+  "category": "productivity",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adamrdrew/ushabti",
+  "github_path": "skills/create-ticket",
+  "github_branch": "master",
+  "dir_name": "create-ticket-adamrdrew-ushabti",
+  "downloaded_at": "2026-02-05T05:43:12.560970Z",
+  "author": "adamrdrew",
+  "source_url": "https://github.com/adamrdrew/ushabti/blob/master/skills/create-ticket/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

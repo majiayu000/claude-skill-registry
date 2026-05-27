@@ -1,0 +1,17 @@
+{
+  "name": "data-journalism",
+  "repo": "jamditis/claude-skills-journalism",
+  "path": "data-journalism/SKILL.md",
+  "github_branch": "master",
+  "category": "analysis",
+  "source": "github.com/jamditis/claude-skills-journalism",
+  "dir_name": "data-journalism",
+  "downloaded_at": "2026-03-28T01:28:18.046489Z",
+  "author": "jamditis",
+  "source_url": "https://github.com/jamditis/claude-skills-journalism/blob/master/data-journalism/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jamditis/claude-skills-journalism/blob/master/data-journalism/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

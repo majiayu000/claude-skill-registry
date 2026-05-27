@@ -1,0 +1,16 @@
+{
+  "name": "claude-optimised",
+  "repo": "aAAaqwq/AGI-Super-Skills",
+  "path": "skills/misc/claude-optimised/SKILL.md",
+  "category": "skills",
+  "source": "github.com/aAAaqwq/AGI-Super-Skills",
+  "dir_name": "claude-optimised",
+  "downloaded_at": "2026-02-15T06:02:51.712271Z",
+  "author": "aAAaqwq",
+  "source_url": "https://github.com/aAAaqwq/AGI-Super-Skills/blob/main/skills/misc/claude-optimised/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 AGI Super Team Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

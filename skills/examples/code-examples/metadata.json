@@ -1,0 +1,18 @@
+{
+  "name": "code-examples",
+  "repo": "rockyflux/xf-blog",
+  "path": ".claude/skills/code-examples/SKILL.md",
+  "source": "github.com/rockyflux/xf-blog",
+  "downloaded_at": "2026-01-21T02:46:04.674201Z",
+  "dir_name": "code-examples",
+  "category": "examples",
+  "github_path": ".claude/skills/code-examples",
+  "github_branch": "main",
+  "author": "rockyflux",
+  "source_url": "https://github.com/rockyflux/xf-blog/blob/main/.claude/skills/code-examples/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rockyflux/xf-blog/blob/main/.claude/skills/code-examples/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

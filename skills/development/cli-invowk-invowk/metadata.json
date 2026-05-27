@@ -1,0 +1,13 @@
+{
+  "name": "cli",
+  "description": "",
+  "repo": "invowk/invowk",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/invowk/invowk",
+  "github_path": ".claude/skills/cli",
+  "github_branch": "main",
+  "dir_name": "cli-invowk-invowk",
+  "downloaded_at": "2026-02-05T05:39:11.999128Z"
+}

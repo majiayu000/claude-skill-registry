@@ -1,0 +1,17 @@
+{
+  "name": "docs",
+  "repo": "akiomik/smt1-note",
+  "path": "src/content/docs/skill.md",
+  "github_branch": "main",
+  "category": "domains",
+  "source": "github.com/akiomik/smt1-note",
+  "dir_name": "docs-akiomik-smt1-note-2",
+  "downloaded_at": "2026-03-22T06:48:01.557129Z",
+  "author": "akiomik",
+  "source_url": "https://github.com/akiomik/smt1-note/blob/main/src/content/docs/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/akiomik/smt1-note/blob/main/src/content/docs/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

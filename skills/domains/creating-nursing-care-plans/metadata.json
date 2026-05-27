@@ -1,0 +1,17 @@
+{
+  "name": "creating-nursing-care-plans",
+  "repo": "CaseMark/skills",
+  "path": "skills/med/creating-nursing-care-plans/SKILL.md",
+  "github_branch": "main",
+  "category": "domains",
+  "source": "github.com/CaseMark/skills",
+  "dir_name": "creating-nursing-care-plans",
+  "downloaded_at": "2026-03-22T05:04:28.185466Z",
+  "author": "CaseMark",
+  "source_url": "https://github.com/CaseMark/skills/blob/main/skills/med/creating-nursing-care-plans/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CaseMark/skills/blob/main/skills/med/creating-nursing-care-plans/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

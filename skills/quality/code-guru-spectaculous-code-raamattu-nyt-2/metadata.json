@@ -1,0 +1,18 @@
+{
+  "name": "code-guru",
+  "description": "Senior principal engineer for Raamattu Nyt codebase. Use when:\n(1) Implementing features with architectural implications (Cinema Reader, search UX, audio)\n(2) Refactoring prototypes into production-gr",
+  "repo": "Spectaculous-Code/raamattu-nyt",
+  "path": ".claude/skills/code-guru",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Spectaculous-Code/raamattu-nyt",
+  "dir_name": "code-guru-spectaculous-code-raamattu-nyt-2",
+  "author": "Spectaculous-Code",
+  "source_url": "https://github.com/Spectaculous-Code/raamattu-nyt/blob/main/.claude/skills/code-guru/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Spectaculous-Code/raamattu-nyt/blob/main/.claude/skills/code-guru/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

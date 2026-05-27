@@ -1,0 +1,18 @@
+{
+  "name": "cloudflare-manager",
+  "description": "Comprehensive Cloudflare account management for deploying Workers, KV Storage, R2, Pages, DNS, and Routes. Use when deploying cloudflare services, managing worker containers, configuring KV/R2 storage",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/cloudflare-manager/skills/cloudflare-manager",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "cloudflare-manager-secondsky-claude-skills-2",
+  "author": "secondsky",
+  "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/cloudflare-manager/skills/cloudflare-manager/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Skills Maintainers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

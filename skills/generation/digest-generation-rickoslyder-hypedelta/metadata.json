@@ -1,0 +1,18 @@
+{
+  "name": "digest-generation",
+  "repo": "rickoslyder/HypeDelta",
+  "path": ".claude/skills/digest-generation/SKILL.md",
+  "source": "github.com/rickoslyder/HypeDelta",
+  "downloaded_at": "2026-01-22T03:53:17.151376Z",
+  "dir_name": "digest-generation-rickoslyder-hypedelta",
+  "category": "generation",
+  "github_path": ".claude/skills/digest-generation",
+  "github_branch": "main",
+  "author": "rickoslyder",
+  "source_url": "https://github.com/rickoslyder/HypeDelta/blob/main/.claude/skills/digest-generation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rickoslyder/HypeDelta/blob/main/.claude/skills/digest-generation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

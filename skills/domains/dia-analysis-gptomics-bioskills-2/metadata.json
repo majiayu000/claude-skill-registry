@@ -1,0 +1,18 @@
+{
+  "name": "dia-analysis",
+  "description": "Data-independent acquisition (DIA) proteomics analysis with DIA-NN and other tools. Covers library-free and library-based workflows for deep proteome profiling.",
+  "repo": "GPTomics/bioSkills",
+  "path": "proteomics/dia-analysis",
+  "category": "domains",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "dia-analysis-gptomics-bioskills-2",
+  "author": "GPTomics",
+  "source_url": "https://github.com/GPTomics/bioSkills/blob/main/proteomics/dia-analysis/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 GPTomics",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

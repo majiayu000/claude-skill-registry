@@ -1,0 +1,16 @@
+{
+  "name": "behavioral-core",
+  "repo": "plaited/plaited",
+  "path": ".claude/skills/behavioral-core/SKILL.md",
+  "source": "github.com/plaited/plaited",
+  "downloaded_at": "2026-01-29T05:35:11.366432Z",
+  "dir_name": "behavioral-core-plaited-plaited",
+  "category": "development",
+  "author": "plaited",
+  "source_url": "https://github.com/plaited/plaited/blob/main/.claude/skills/behavioral-core/SKILL.md",
+  "license": "ISC",
+  "copyright": "Copyright (c) 2023 - present Edward Irby",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

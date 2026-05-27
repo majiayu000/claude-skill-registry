@@ -1,0 +1,18 @@
+{
+  "name": "daily-summary-alice-personal",
+  "repo": "ZachBeta/claude-as-coach",
+  "path": "examples/alice-the-athlete/skills/daily-summary-alice-personal/SKILL.md",
+  "source": "github.com/ZachBeta/claude-as-coach",
+  "downloaded_at": "2026-01-21T01:12:44.836401Z",
+  "dir_name": "daily-summary-alice-personal-zachbeta-claude-as-coach",
+  "category": "personal-development",
+  "github_path": "examples/alice-the-athlete/skills/daily-summary-alice-personal",
+  "github_branch": "main",
+  "author": "ZachBeta",
+  "source_url": "https://github.com/ZachBeta/claude-as-coach/blob/main/examples/alice-the-athlete/skills/daily-summary-alice-personal/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Zach Morek",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

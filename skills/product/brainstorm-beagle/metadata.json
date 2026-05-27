@@ -1,0 +1,17 @@
+{
+  "name": "brainstorm-beagle",
+  "repo": "existential-birds/beagle",
+  "path": "plugins/beagle-analysis/skills/brainstorm-beagle/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/existential-birds/beagle",
+  "dir_name": "brainstorm-beagle",
+  "downloaded_at": "2026-05-27T04:13:36.712202Z",
+  "author": "existential-birds",
+  "source_url": "https://github.com/existential-birds/beagle/blob/main/plugins/beagle-analysis/skills/brainstorm-beagle/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/existential-birds/beagle/blob/main/plugins/beagle-analysis/skills/brainstorm-beagle/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

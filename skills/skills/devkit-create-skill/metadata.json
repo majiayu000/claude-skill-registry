@@ -1,0 +1,17 @@
+{
+  "name": "devkit-create-skill",
+  "description": "",
+  "repo": "jmagly/ai-writing-guide",
+  "category": "skills",
+  "tags": [],
+  "stars": 0,
+  "source": "Unknown",
+  "dir_name": "devkit-create-skill",
+  "author": "jmagly",
+  "source_url": "https://github.com/jmagly/ai-writing-guide",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Joe Magly",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

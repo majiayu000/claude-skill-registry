@@ -1,0 +1,17 @@
+{
+  "name": "denario",
+  "repo": "ChatAndBuild/chatchat-skills",
+  "path": "skills/denario/SKILL.md",
+  "github_branch": "main",
+  "category": "orchestration",
+  "source": "github.com/ChatAndBuild/chatchat-skills",
+  "dir_name": "denario-chatandbuild-chatchat-skills",
+  "downloaded_at": "2026-03-01T05:03:09.062399Z",
+  "author": "ChatAndBuild",
+  "source_url": "https://github.com/ChatAndBuild/chatchat-skills/blob/main/skills/denario/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ChatAndBuild/chatchat-skills/blob/main/skills/denario/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

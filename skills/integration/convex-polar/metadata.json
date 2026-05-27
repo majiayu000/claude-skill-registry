@@ -1,0 +1,16 @@
+{
+  "name": "convex-polar",
+  "repo": "udecode/better-convex",
+  "path": ".claude/skills/convex-polar/SKILL.md",
+  "source": "github.com/udecode/better-convex",
+  "downloaded_at": "2026-02-02T04:08:05.772262Z",
+  "dir_name": "convex-polar",
+  "category": "integration",
+  "author": "udecode",
+  "source_url": "https://github.com/udecode/better-convex/blob/main/.claude/skills/convex-polar/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/udecode/better-convex/blob/main/.claude/skills/convex-polar/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

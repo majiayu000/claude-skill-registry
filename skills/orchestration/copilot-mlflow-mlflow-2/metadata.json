@@ -1,0 +1,18 @@
+{
+  "name": "copilot",
+  "description": "Hand off a task to GitHub Copilot.",
+  "repo": "mlflow/mlflow",
+  "path": ".claude/skills/copilot",
+  "category": "orchestration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mlflow/mlflow",
+  "dir_name": "copilot-mlflow-mlflow-2",
+  "author": "mlflow",
+  "source_url": "https://github.com/mlflow/mlflow/blob/main/.claude/skills/copilot/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2018 Databricks, Inc.  All rights reserved.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

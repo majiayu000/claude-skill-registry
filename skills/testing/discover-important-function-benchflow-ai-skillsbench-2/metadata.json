@@ -1,0 +1,18 @@
+{
+  "name": "discover-important-function",
+  "description": "When given a project codebase, this skill observes the important functions in the codebase for future action.",
+  "repo": "benchflow-ai/skillsbench",
+  "path": "tasks/setup-fuzzing-py/environment/skills/discover-important-function",
+  "category": "testing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/benchflow-ai/skillsbench",
+  "dir_name": "discover-important-function-benchflow-ai-skillsbench-2",
+  "author": "benchflow-ai",
+  "source_url": "https://github.com/benchflow-ai/skillsbench/blob/main/tasks/setup-fuzzing-py/environment/skills/discover-important-function/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/benchflow-ai/skillsbench/blob/main/tasks/setup-fuzzing-py/environment/skills/discover-important-function/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "building-github-index",
+  "description": "Generate progressive disclosure indexes for GitHub repositories to use as Claude project knowledge. Use when setting up projects referencing external documentation, creating searchable indexes of tech",
+  "repo": "oaustegard/claude-skills",
+  "path": "building-github-index",
+  "category": "documents",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/oaustegard/claude-skills",
+  "dir_name": "building-github-index-oaustegard-claude-skills-2",
+  "author": "oaustegard",
+  "source_url": "https://github.com/oaustegard/claude-skills/blob/main/building-github-index/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Oskar Austegard",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

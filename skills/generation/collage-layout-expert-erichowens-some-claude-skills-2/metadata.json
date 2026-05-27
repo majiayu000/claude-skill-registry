@@ -1,0 +1,18 @@
+{
+  "name": "collage-layout-expert",
+  "description": "Expert in ALL computational collage composition: photo mosaics, grid layouts, scrapbook/journal styles, magazine editorial, vision boards, mood boards, social media collages, memory walls, abstract/ge",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/collage-layout-expert",
+  "category": "generation",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "collage-layout-expert-erichowens-some-claude-skills-2",
+  "author": "erichowens",
+  "source_url": "https://github.com/erichowens/some_claude_skills/blob/main/.claude/skills/collage-layout-expert/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Erich Owens",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

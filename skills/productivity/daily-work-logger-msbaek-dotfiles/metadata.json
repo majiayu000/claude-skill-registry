@@ -1,0 +1,16 @@
+{
+  "name": "daily-work-logger",
+  "repo": "msbaek/dotfiles",
+  "path": ".claude/skills/daily-work-logger/SKILL.md",
+  "source": "github.com/msbaek/dotfiles",
+  "downloaded_at": "2026-01-29T05:59:54.193809Z",
+  "dir_name": "daily-work-logger-msbaek-dotfiles",
+  "category": "productivity",
+  "author": "msbaek",
+  "source_url": "https://github.com/msbaek/dotfiles/blob/main/.claude/skills/daily-work-logger/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/msbaek/dotfiles/blob/main/.claude/skills/daily-work-logger/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

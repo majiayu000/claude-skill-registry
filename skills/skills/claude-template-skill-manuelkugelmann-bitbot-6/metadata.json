@@ -1,0 +1,17 @@
+{
+  "name": "claude-template-skill",
+  "repo": "ManuelKugelmann/BitBot",
+  "path": "container/templates/bitbot-work/.claude/skills/claude-template-skill/SKILL.md",
+  "github_branch": "master",
+  "category": "skills",
+  "source": "github.com/ManuelKugelmann/BitBot",
+  "dir_name": "claude-template-skill-manuelkugelmann-bitbot-6",
+  "downloaded_at": "2026-03-22T05:48:00.689922Z",
+  "author": "ManuelKugelmann",
+  "source_url": "https://github.com/ManuelKugelmann/BitBot/blob/master/container/templates/bitbot-work/.claude/skills/claude-template-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ManuelKugelmann/BitBot/blob/master/container/templates/bitbot-work/.claude/skills/claude-template-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

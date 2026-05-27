@@ -1,0 +1,18 @@
+{
+  "name": "database-navigator",
+  "repo": "Acurioustractor/empathy-ledger-v2",
+  "path": ".claude/skills/local/database-navigator/skill.md",
+  "source": "github.com/Acurioustractor/empathy-ledger-v2",
+  "downloaded_at": "2026-01-21T02:30:18.502768Z",
+  "dir_name": "database-navigator-acurioustractor-empathy-ledger-v2",
+  "category": "data",
+  "github_path": ".claude/skills/local/database-navigator",
+  "github_branch": "main",
+  "author": "Acurioustractor",
+  "source_url": "https://github.com/Acurioustractor/empathy-ledger-v2/blob/main/.claude/skills/local/database-navigator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Acurioustractor/empathy-ledger-v2/blob/main/.claude/skills/local/database-navigator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

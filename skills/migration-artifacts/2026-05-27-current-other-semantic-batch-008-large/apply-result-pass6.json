@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-27T15:26:52.921156+00:00",
+  "skills_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008",
+  "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/classification.jsonl",
+  "policy": {
+    "min_confidence": 0.85,
+    "from_categories": [
+      "other"
+    ],
+    "to_categories": [],
+    "target_statuses": [
+      "active"
+    ],
+    "allow_target_other": false,
+    "movable_only": true,
+    "limit": null,
+    "apply_mode": "apply"
+  },
+  "summary": {
+    "classification_row_count": 10000,
+    "classification_status_counts": {
+      "ok": 10000
+    },
+    "planned_move_count": 1,
+    "movable_count": 1,
+    "blocked_count": 0,
+    "operation_counts": {
+      "move": 1
+    },
+    "reject_reasons": {
+      "confidence below threshold": 2953,
+      "source directory missing": 3332,
+      "target category already contains a skill with the same stable key": 3714
+    },
+    "source_category_counts": {
+      "other": 1
+    },
+    "target_category_counts": {
+      "domains": 1
+    }
+  },
+  "moves": [
+    {
+      "operation": "move",
+      "source_path": "other/claude-legal-skill-evolsb-claude-legal-skill-6",
+      "source_skill": "other/claude-legal-skill-evolsb-claude-legal-skill-6/SKILL.md",
+      "source_category": "other",
+      "current_category": "other",
+      "target_category": "domains",
+      "target_status": "active",
+      "target_path": "domains/claude-legal-skill-evolsb-claude-legal-skill-6",
+      "target_skill": "domains/claude-legal-skill-evolsb-claude-legal-skill-6/SKILL.md",
+      "name": "contract-review",
+      "confidence": 0.9,
+      "key": "evolsb/claude-legal-skill:name:contract-review",
+      "repo": "evolsb/claude-legal-skill",
+      "reason": "classification target passed filters",
+      "source_sha256": "82e890a13fe0219d0852b2815a778d906ee3c197c3db277337802dce625be5ea",
+      "metadata_sha256": "9450f95e9d64636989c1a1e4c2748a372d58d1c389b1946a42ab1e02daeef946",
+      "semantic_text_sha256": "f89632d0ab0152b1785058db2cd130ce9781b10272449e7054d2dcc294ee14a0"
+    }
+  ],
+  "notes": [
+    "Default mode is review-only and does not modify files.",
+    "Only --apply moves directories and updates metadata.json.",
+    "Blocked moves are never applied automatically."
+  ],
+  "applied_at": "2026-05-27T15:26:52.951998+00:00"
+}

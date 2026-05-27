@@ -1,0 +1,18 @@
+{
+  "name": "chromium-docs",
+  "repo": "chromium/chromium",
+  "path": ".claude/skills/chromium-docs/SKILL.md",
+  "source": "github.com/chromium/chromium",
+  "downloaded_at": "2026-01-22T01:30:50.972665Z",
+  "dir_name": "chromium-docs",
+  "category": "documents",
+  "github_path": ".claude/skills/chromium-docs",
+  "github_branch": "main",
+  "author": "chromium",
+  "source_url": "https://github.com/chromium/chromium/blob/main/.claude/skills/chromium-docs/SKILL.md",
+  "license": "BSD-3-Clause",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/chromium/chromium/blob/main/.claude/skills/chromium-docs/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

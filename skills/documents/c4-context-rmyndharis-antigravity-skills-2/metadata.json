@@ -1,0 +1,18 @@
+{
+  "name": "c4-context",
+  "description": "Expert C4 Context-level documentation specialist. Creates high-level system context diagrams, documents personas, user journeys, system features, and external dependencies. Synthesizes container and c",
+  "repo": "rmyndharis/antigravity-skills",
+  "path": "skills/c4-context",
+  "category": "documents",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rmyndharis/antigravity-skills",
+  "dir_name": "c4-context-rmyndharis-antigravity-skills-2",
+  "author": "rmyndharis",
+  "source_url": "https://github.com/rmyndharis/antigravity-skills/blob/main/skills/c4-context/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Yudhi Armyndharis",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

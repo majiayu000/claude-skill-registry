@@ -1,0 +1,17 @@
+{
+  "name": "clip-extraction",
+  "repo": "WalkerHi11/mediabuy-plugins",
+  "path": ".claude/skills/clip-extraction/SKILL.md",
+  "github_branch": "main",
+  "category": "generation",
+  "source": "github.com/WalkerHi11/mediabuy-plugins",
+  "dir_name": "clip-extraction-walkerhi11-mediabuy-plugins-3",
+  "downloaded_at": "2026-03-22T06:29:53.879731Z",
+  "author": "WalkerHi11",
+  "source_url": "https://github.com/WalkerHi11/mediabuy-plugins/blob/main/.claude/skills/clip-extraction/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/WalkerHi11/mediabuy-plugins/blob/main/.claude/skills/clip-extraction/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

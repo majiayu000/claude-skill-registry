@@ -1,0 +1,18 @@
+{
+  "name": "defillama-api",
+  "repo": "plurigrid/asi",
+  "path": "skills/defillama-api/SKILL.md",
+  "source": "github.com/plurigrid/asi",
+  "downloaded_at": "2026-01-14T02:29:09.015150Z",
+  "dir_name": "defillama-api",
+  "category": "api",
+  "github_path": "skills/defillama-api",
+  "github_branch": "main",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/defillama-api/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "beta-test-cycles",
+  "repo": "wildcard/caro",
+  "path": ".claude/skills/beta-test-cycles/SKILL.md",
+  "source": "github.com/wildcard/caro",
+  "downloaded_at": "2026-01-29T06:00:31.674669Z",
+  "dir_name": "beta-test-cycles-wildcard-caro",
+  "category": "testing",
+  "author": "wildcard",
+  "source_url": "https://github.com/wildcard/caro/blob/main/.claude/skills/beta-test-cycles/SKILL.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

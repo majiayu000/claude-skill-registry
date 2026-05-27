@@ -1,0 +1,17 @@
+{
+  "name": "community-pulse",
+  "repo": "fusengine/agents",
+  "path": "plugins/changelog-watcher/skills/community-pulse/SKILL.md",
+  "github_branch": "main",
+  "category": "analysis",
+  "source": "github.com/fusengine/agents",
+  "dir_name": "community-pulse",
+  "downloaded_at": "2026-03-01T07:47:52.828925Z",
+  "author": "fusengine",
+  "source_url": "https://github.com/fusengine/agents/blob/main/plugins/changelog-watcher/skills/community-pulse/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fusengine/agents/blob/main/plugins/changelog-watcher/skills/community-pulse/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

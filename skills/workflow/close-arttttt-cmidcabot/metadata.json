@@ -1,0 +1,16 @@
+{
+  "name": "close",
+  "repo": "arttttt/CMIDCABot",
+  "path": ".codex/skills/close/SKILL.md",
+  "source": "github.com/arttttt/CMIDCABot",
+  "downloaded_at": "2026-01-29T08:14:05.405146Z",
+  "dir_name": "close-arttttt-cmidcabot",
+  "category": "workflow",
+  "author": "arttttt",
+  "source_url": "https://github.com/arttttt/CMIDCABot/blob/main/.codex/skills/close/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/arttttt/CMIDCABot/blob/main/.codex/skills/close/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

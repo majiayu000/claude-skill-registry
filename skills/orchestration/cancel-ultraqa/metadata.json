@@ -1,0 +1,18 @@
+{
+  "name": "cancel-ultraqa",
+  "repo": "Yeachan-Heo/oh-my-claudecode",
+  "path": "skills/cancel-ultraqa/SKILL.md",
+  "source": "github.com/Yeachan-Heo/oh-my-claudecode",
+  "downloaded_at": "2026-01-22T01:23:00.532029Z",
+  "dir_name": "cancel-ultraqa",
+  "category": "orchestration",
+  "github_path": "skills/cancel-ultraqa",
+  "github_branch": "main",
+  "author": "Yeachan-Heo",
+  "source_url": "https://github.com/Yeachan-Heo/oh-my-claudecode/blob/main/skills/cancel-ultraqa/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Yeachan Heo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

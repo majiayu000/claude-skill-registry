@@ -1,0 +1,16 @@
+{
+  "name": "battle",
+  "repo": "grahama1970/agent-skills",
+  "path": "skills/battle/SKILL.md",
+  "source": "github.com/grahama1970/agent-skills",
+  "downloaded_at": "2026-02-02T01:19:51.353628Z",
+  "dir_name": "battle",
+  "category": "security",
+  "author": "grahama1970",
+  "source_url": "https://github.com/grahama1970/agent-skills/blob/main/skills/battle/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/grahama1970/agent-skills/blob/main/skills/battle/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

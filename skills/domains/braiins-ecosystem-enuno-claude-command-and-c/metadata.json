@@ -1,0 +1,16 @@
+{
+  "name": "braiins-ecosystem",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills/braiins-ecosystem/SKILL.md",
+  "source": "github.com/enuno/claude-command-and-control",
+  "downloaded_at": "2026-01-29T05:46:58.988614Z",
+  "dir_name": "braiins-ecosystem-enuno-claude-command-and-c",
+  "category": "domains",
+  "author": "enuno",
+  "source_url": "https://github.com/enuno/claude-command-and-control/blob/main/skills/braiins-ecosystem/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/enuno/claude-command-and-control/blob/main/skills/braiins-ecosystem/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

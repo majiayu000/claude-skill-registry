@@ -1,0 +1,16 @@
+{
+  "name": "decision-support",
+  "repo": "jmagly/ai-writing-guide",
+  "path": ".factory/skills/decision-support/SKILL.md",
+  "source": "github.com/jmagly/ai-writing-guide",
+  "downloaded_at": "2026-01-27T02:20:11.648431Z",
+  "dir_name": "decision-support",
+  "category": "analysis",
+  "author": "jmagly",
+  "source_url": "https://github.com/jmagly/ai-writing-guide/blob/main/.factory/skills/decision-support/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Joe Magly",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

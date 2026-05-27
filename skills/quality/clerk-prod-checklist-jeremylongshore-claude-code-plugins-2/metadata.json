@@ -1,0 +1,18 @@
+{
+  "name": "clerk-prod-checklist",
+  "description": "Production readiness checklist for Clerk deployment.\nUse when preparing to deploy, reviewing production configuration,\nor auditing Clerk implementation before launch.\nTrigger with phrases like \"clerk ",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/clerk-pack/skills/clerk-prod-checklist",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "clerk-prod-checklist-jeremylongshore-claude-code-plugins-2",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/saas-packs/clerk-pack/skills/clerk-prod-checklist/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

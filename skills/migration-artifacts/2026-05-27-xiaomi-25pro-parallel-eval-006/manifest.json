@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "batch_id": "xiaomi-25pro-parallel-eval-006",
+  "generated_at": "2026-05-27T03:23:45.708208+00:00",
+  "skills_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout",
+  "input_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/input.jsonl",
+  "policy": {
+    "from_categories": [
+      "other"
+    ],
+    "limit": 1000,
+    "offset": 0,
+    "content_chars": 2500,
+    "exclude_input_jsonl": [
+      "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-24-current-other-semantic-batch-001/input.jsonl",
+      "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-25-current-other-semantic-batch-002/input.jsonl",
+      "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-003/input.jsonl",
+      "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-004/input.jsonl",
+      "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-current-other-semantic-batch-005/input.jsonl"
+    ],
+    "apply_mode": "applied"
+  },
+  "summary": {
+    "archive_category_counts": {
+      "agent": 1444,
+      "ai-llm": 2100,
+      "ai-ml": 2026,
+      "analysis": 3045,
+      "api": 888,
+      "bash": 210,
+      "business": 1037,
+      "c-level": 49,
+      "communication": 561,
+      "context-management": 1168,
+      "creative": 675,
+      "data": 48899,
+      "design": 13410,
+      "development": 36220,
+      "devops": 10238,
+      "documents": 6201,
+      "domains": 49,
+      "examples": 85,
+      "forensics": 56,
+      "gaming": 694,
+      "generation": 455,
+      "integration": 4626,
+      "language": 62,
+      "local-ai-infrastructure": 50,
+      "marketing": 2584,
+      "orchestration": 1855,
+      "other": 53021,
+      "performance": 853,
+      "personal-development": 285,
+      "planning": 1320,
+      "platform": 235,
+      "product": 2338,
+      "productivity": 2959,
+      "quality": 2662,
+      "security": 4984,
+      "skills": 1718,
+      "system": 17,
+      "testing": 11141,
+      "travel": 44,
+      "war-room": 5,
+      "workflow": 899,
+      "writing": 910
+    },
+    "matching_category_skill_count": 53021,
+    "excluded_input_path_count": 4457,
+    "excluded_live_match_count": 3449,
+    "eligible_matching_category_skill_count": 49572,
+    "selected_input_count": 1000,
+    "selected_category_counts": {
+      "other": 1000
+    }
+  },
+  "artifacts": {
+    "input_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/input.jsonl",
+    "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/classification.jsonl",
+    "classification_report": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/classification-report.json",
+    "checkpoint_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/checkpoint.jsonl",
+    "apply_plan": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/apply-plan.json",
+    "sample_audit": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/sample-audit.json",
+    "sample_audit_high_confidence": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/sample-audit-high-confidence.json",
+    "changed_existing_metadata_files": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/changed-existing-metadata-files.txt",
+    "changed_files": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/changed-files.txt",
+    "metadata_compliance_post": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/metadata-compliance-post.json",
+    "category_quality_post": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/category-quality-post.json",
+    "post_depth_check": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/post-depth-check.json",
+    "residual_report_post": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/residual-report-post.json",
+    "residual_worksets_summary": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/residual-worksets-summary.json",
+    "residual_worksets_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/residual-worksets"
+  },
+  "commands": [
+    "python scripts/classify_residual_workset_with_llm.py --workset-jsonl /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/input.jsonl --classification-output /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/classification.jsonl --output /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/classification-report.json --checkpoint-jsonl /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/checkpoint.jsonl --api-key-env MIMO_API_KEY --base-url https://token-plan-sgp.xiaomimimo.com/v1 --model mimo-v2.5-pro --workers 8 --batch-size 5 --timeout 120 --max-completion-tokens 2048 --retries 3 --temperature 0",
+    "python scripts/sample_category_classification_audit.py --workset-jsonl /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/input.jsonl --classification-jsonl /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/classification.jsonl --output /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/sample-audit.json",
+    "python scripts/apply_category_migration.py --skills-dir /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout --classification-jsonl /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/classification.jsonl --from-category other --min-confidence 0.9 --movable-only --apply --write-changed-metadata /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/changed-existing-metadata-files.txt --output /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/apply-plan.json",
+    "python scripts/audit_category_residuals.py --skills-dir /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout --classification-jsonl /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/classification.jsonl --from-category other --min-confidence 0.9 --output /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/residual-report-post.json",
+    "python scripts/build_residual_category_worksets.py --skills-dir /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout --classification-jsonl /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/classification.jsonl --from-category other --min-confidence 0.9 --content-chars 0 --output /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/residual-worksets.json --workset-output-dir /Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/residual-worksets"
+  ],
+  "notes": [
+    "This manifest and its input JSONL do not modify archive files.",
+    "Each input row carries SKILL.md and metadata SHA-256 provenance.",
+    "Run the sample audit before applying any generated move plan.",
+    "The apply step refuses inactive categories and changed source hashes.",
+    "Applied only high-confidence movable rows: 127 archive skills moved out of other.",
+    "Residual worksets explain classification gaps, low-confidence rows, target-other rows, and inactive targets before the next batch.",
+    "Full residual-worksets.json and residual-worksets/classification_gap.jsonl were generated for audit but omitted from git because they are large derived files; residual-worksets-summary.json preserves counts and reproducibility context.",
+    "Data issue: https://github.com/majiayu000/claude-skill-registry-data/issues/59",
+    "Residual governance issue: https://github.com/majiayu000/claude-skill-registry-data/issues/58"
+  ],
+  "manifest_json": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/manifest.json"
+}

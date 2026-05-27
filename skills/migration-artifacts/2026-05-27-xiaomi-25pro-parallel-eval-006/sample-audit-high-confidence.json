@@ -1,0 +1,1029 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-27T03:30:50.023403+00:00",
+  "workset_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/input.jsonl",
+  "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/classification.jsonl",
+  "policy": {
+    "sample_size": 50,
+    "seed": "category-audit-v1",
+    "statuses": [
+      "ok"
+    ],
+    "min_confidence": 0.9
+  },
+  "summary": {
+    "workset_row_count": 1000,
+    "classification_row_count": 1000,
+    "matched_input_count": 1000,
+    "missing_input_count": 0,
+    "candidate_count": 340,
+    "sample_count": 50,
+    "status_counts": {
+      "ok": 987,
+      "unknown_or_inactive_category": 13
+    },
+    "target_category_counts": {
+      "agent": 22,
+      "ai-llm": 28,
+      "ai-ml": 15,
+      "analysis": 43,
+      "api": 4,
+      "automation": 6,
+      "business": 8,
+      "communication": 14,
+      "content": 1,
+      "context-management": 8,
+      "creative": 28,
+      "data": 32,
+      "design": 37,
+      "development": 252,
+      "devops": 39,
+      "documents": 54,
+      "domains": 5,
+      "education": 3,
+      "forensics": 1,
+      "gaming": 3,
+      "generation": 9,
+      "integration": 62,
+      "marketing": 8,
+      "orchestration": 7,
+      "other": 40,
+      "performance": 4,
+      "personal-development": 1,
+      "planning": 10,
+      "platform": 3,
+      "product": 5,
+      "productivity": 44,
+      "quality": 80,
+      "research": 3,
+      "security": 46,
+      "skills": 2,
+      "system": 1,
+      "testing": 26,
+      "workflow": 36,
+      "writing": 10
+    }
+  },
+  "samples": [
+    {
+      "path": "other/ast-grep-find/SKILL.md",
+      "name": "ast-grep-find",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill provides AST-based code search and refactoring capabilities using ast-grep, which is a software development tool for finding code patterns, renaming variables/functions, and refactoring code with structural precision.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "b2f388b78dbe3a721e22b33e4297dac700d1d3929fc38dd1a3e186dc9e4aa5b9",
+      "metadata_sha256": "878a55cb4fcb0f5417ecb3ccc6c2062632f590125f8ab683321ac1d500e41ec5",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "AST-based code search and refactoring via ast-grep MCP",
+      "content_excerpt": "---\nname: ast-grep-find\ndescription: AST-based code search and refactoring via ast-grep MCP\nallowed-tools: [Bash, Read]\n---\n\n# AST-Grep Find\n\nStructural code search that understands syntax. Find patterns like function calls, imports, class definitions - not just text.\n\n## When to Use\n\n- Find code patterns (ignores strings/comments)\n- Search for function calls, class definitions, imports\n- Refactor code with AST precision\n- Rename variables/functions across codebase\n\n## Usage\n\n### Search for a pattern\n```bash\nuv run python -m runtime.harness scripts/ast_grep_find.py \\\n    --pattern \"import asyncio\" --language python\n```\n\n### Search in specific directory\n```bash\nuv run python -m runtime.harness scripts/ast_grep_find.py \\\n    --pattern \"async def \\$FUNC(\\$\\$\\$)\" --language python --path \"./src\"\n```\n\n### Refactor/replace pattern\n```bash\nuv run python -m runtime.harness scripts/ast_grep_find.py \\\n    --pattern \"console.log(\\$MSG)\" --replace \"logger.info(\\$MSG)\" \\\n    --language javascript\n```\n\n### Dry run (preview changes)\n```bash\nuv run python -m runtime.harness scripts/ast_grep_find.py \\\n    --pattern \"print(\\$X)\" --replace \"logger.info(\\$X)\" \\\n    --language python --dry-run\n```\n\n## Parameters\n\n| Parameter | Description |\n|-----------|-------------|\n| `--pattern` | AST pattern to search (required) |\n| `--language` | Language: `python`, `javascript`, `typescript`, `go`, etc. |\n| `--path` | Directory to search (default: `.`) |\n| `--glob` | File glob pattern (e.g., `**/*.py`) |\n| `--replace` | Replacement pattern for refactoring |\n| `--dry-run` | Preview changes without applying |\n| `--context` | Lines of context (default: 2) |\n\n## Pattern Syntax\n\n| Syntax | Meaning |\n|--------|---------|\n| `$NAME` | Match single node (variable, expression) |\n| `$$$` | Match multiple nodes (arguments, statements) |\n| `$_` | Match any single node (wildcard) |\n\n## Examples\n\n```bash\n# Find all function definitions\nuv run python -m runtime.harness scripts/ast_grep_find.py \\\n    --pattern \"def \\$FUNC(\\$\\$\\$):\" --language python\n\n# Find console.log calls\nuv run python -m runtime.harness scripts/ast_grep_find.py \\\n    --pattern \"console.log(\\$\\$\\$)\" --language javascript\n\n# Replace print with logging\nuv run python -m runtime.harness scripts/ast_grep_find.py \\\n    --pattern \"print(\\$X)\" --replace \"logging.info(\\$X)\" \\\n    --language python --dry-run\n```\n\n## vs morph/warpgrep\n\n| Tool | Best For |\n|------|----------|\n| **ast-grep** | Structural patterns (understands code syntax) |\n| **wa"
+    },
+    {
+      "path": "other/authoring-stitch-prompts/SKILL.md",
+      "name": "authoring-stitch-prompts",
+      "current_category": "other",
+      "llm_category": "design",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill converts natural-language descriptions into optimized Google Stitch prompts focused on UI layout, visual hierarchy, components, colors, typography, spacing. This is design tooling for UI/UX.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "a11907e87a5475800db60c2dc54f7aa61fc894ad975d0bc2dd14f34ce15c2251",
+      "metadata_sha256": "0b8bbbfe876deef5aa1c1aa7f0a7abd721b46c110e6ded57ca14d0adcbee52f3",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Converts natural-language descriptions or UI spec files into optimized Google Stitch prompts. Use when creating, refining, or validating design directives for Google Stitch. Follows Stitch best practices with short, directive prompts focused on screens, structure, and visual hierarchy.",
+      "content_excerpt": "---\nname: authoring-stitch-prompts\ndescription: Converts natural-language descriptions or UI spec files into optimized Google Stitch prompts. Use when creating, refining, or validating design directives for Google Stitch. Follows Stitch best practices with short, directive prompts focused on screens, structure, and visual hierarchy.\nallowed-tools: Read, Grep, Write\n---\n\n# Authoring Stitch Prompts\n\n## Quick Start\n1. **Collect context** – accept natural language, specs, or referenced files describing the screen/app.\n1.5. **Discover design context** (optional) – check for `design-intent/`:\n   - If exists: Extract Project Type, Design System from `design-intent/memory/constitution.md`\n   - If not found: Scan codebase for framework hints (package.json)\n   - Falls back gracefully to standalone mode\n   - See [WORKFLOW.md](WORKFLOW.md#05-design-context-discovery-optional-enhancement) for details.\n2. **Parse essentials** – identify app type, screen focus, layout elements, and visual cues.\n3. **Detect split points** – analyze if input contains multiple screens or distinct intents (>2). Apply smart defaults: split if >2 screens/intents, else combine. Users can request regeneration with different approach.\n4. **Filter aggressively** – strip ALL non-UI concerns (backend, auth, APIs, caching, error handling, performance metrics, code-level specs). Focus EXCLUSIVELY on visual layout, components, colors, typography, spacing, and interaction patterns.\n5. **Condense** – rewrite into one atomic Stitch directive using \"Design/Create/Add…\" phrasing.\n6. **Structure output** – follow the Stitch prompt template (directive sentence → bullet list → 3–6 style cues → constraints). If design context was discovered, inject project-appropriate style cues. Do NOT use multi-section headings.\n7. **Validate** – ensure UI nouns are present, word count <250, NO technical implementation terms, and format matches EXAMPLES.md structure before returning the prompt.\n\nUse this Skill whenever users need Stitch-ready wording, prompt refinements, or style-consistent rewrites.\n\n---\n\n## File Output (design-intent/google-stitch/{feature}/)\n\nGenerate optimized prompts in **feature-based directories** with organized artifact storage:\n\n1. **Feature Name (Directory)**:\n   - Derive from main screen/page purpose\n   - Lowercase, replace whitespace with hyphens\n   - Strip non `a-z0-9-` characters, collapse duplicate hyphens, trim ends\n   - Examples: \"analytics dashboard\" → `dashboard`, \"landing page\" → `landing`"
+    },
+    {
+      "path": "other/architecture-specialist-prorise-cool-claude-code-multi-ag-2/SKILL.md",
+      "name": "architecture-specialist",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill provides system architecture design, technology selection, architecture review, and component design capabilities. It includes specialized architects for backend, frontend, cloud, API, and component design - all core software development activities.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "d194c894b41d89380404759c30ebcb67d4267697f824327af86cacd057460345",
+      "metadata_sha256": "1d64e5074efe6e0838e2f72bc2cbae1a1c8b8c0cb603b6fb3517704211971658",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "提供系统架构设计、技术选型、架构审查和组件设计能力。当需要设计新系统、重构现有架构或进行架构审查时使用。",
+      "content_excerpt": "---\ndescription: 提供系统架构设计、技术选型、架构审查和组件设计能力。当需要设计新系统、重构现有架构或进行架构审查时使用。\nname: architecture-specialist\n---\n\n# Architecture Specialist\n\n\n提供系统架构设计、技术选型、架构审查和组件设计能力。当需要设计新系统、重构现有架构或进行架构审查时使用。\n\n## When to Use This Skill\n\n提供系统架构设计、技术选型、架构审查和组件设计能力。当需要设计新系统、重构现有架构或进行架构审查时使用。\n\n## Capabilities\n\n这种专业技能融合了以下这些能力：\n\n### Backend Architect\n\n在设计 API、构建服务器端逻辑、设计数据模式、实现数据库或构建可扩展的后端系统时使用此代理。该代理专注于创建健壮、安全和高性能的后端服务。\n\n\n📖 [详细文档](./references/engineering_backend_backend-architect.md)\n\n\n\n### Senior Backend Architect\n\n资深后端工程师和系统架构师，拥有超过 10 年的谷歌工作经验，领导过多个千万级用户的产品。精通 Go 和 TypeScript，专长于分布式系统、高性能 API 和生产级基础设施。兼具技术实现和系统设计能力，拥有零停机部署和极少生产事故的辉煌记录。\n\n\n📖 [详细文档](./references/senior_backend_golang_typesicprt-architect.md)\n\n\n\n### Senior Frontend Architect\n\n资深前端工程师和架构师，拥有超过 10 年的 Meta 工作经验，领导过多个千万级用户的产品。精通 TypeScript、React、Next.js、Vue 和 Astro 生态系统。专长于性能优化、跨平台开发、响应式设计，并能与 UI/UX 设计师和后端工程师无缝协作。拥有交付像素级精准、性能卓越且用户体验出色的应用的辉煌记录。\n\n\n📖 [详细文档](./references/engineering_frontend_senior-frontend-architect.md)\n\n\n\n### Cloud Architect\n\n设计 AWS/Azure/GCP 基础设施，实施 Terraform IaC (基础设施即代码)，并优化云成本。处理自动扩缩容、多区域部署和无服务器架构。在需要云基础设施、成本优化或迁移规划时应主动使用。\n\n\n📖 [详细文档](./references/engineering_middlend_cloud-architect.md)\n\n\n\n### Architect Reviewer\n\n审查代码变更的架构一致性和模式。在任何结构性变更、新增服务或 API 修改后应主动使用。确保遵循 SOLID 原则、适当的分层和可维护性。\n\n\n📖 [详细文档](./references/engineering_backend_backend-architect.md)\n\n\n\n### Api Architect\n\n通用 API 设计师，专注于 RESTful 设计、GraphQL 模式以及现代合同标准。**必须** 在任何项目需要新的或修订的 API 合同时主动使用。能够生成清晰的资源模型、OpenAPI/GraphQL 规范，并提供关于认证、版本控制、分页和错误格式的指导——但不指定任何特定的后端技术。\n\n\n📖 [详细文档](./references/universal_api-architect.md)\n\n\n\n### React Component Architect\n\n资深的 React 架构师，专注于现代模式和组件设计。必须用于 React 组件开发、钩子实现或 React 架构决策。能够创建智能且与项目紧密相关的解决方案，与现有代码库无缝集成。\n\n\n📖 [详细文档](./references/specialized_react_react-component-architect.md)\n\n\n\n### Vue Component Architect\n\nVue 3 高级专家，专注于 Composition API、可扩展组件架构以及现代 Vue 工具。在设计或重构 Vue 组件、可组合组件或应用层面的 Vue 架构决策时，必须使用此方法。\n\n\n📖 [详细文档](./references/specialized_vue_vue-component-architect.md)\n\n\n"
+    },
+    {
+      "path": "other/assert/SKILL.md",
+      "name": "assert",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "TypeScript assertion function for runtime type narrowing is a development utility for code quality and type safety in software engineering.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "c42f63d64d1e6547011b003fd437d8afd902252c4fa85930372973c9eddeaac0",
+      "metadata_sha256": "388486364625963f63276ce2c5ab29d158ea7f219cd70937a7656b73ce4f774c",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "TypeScript assertion function for runtime type narrowing with descriptive error messages. Based on tiny-invariant.",
+      "content_excerpt": "---\nname: assert\ndescription: TypeScript assertion function for runtime type narrowing with descriptive error messages. Based on tiny-invariant.\n---\n\n# Assertion Helper\n\nTo set up Assertion Helper, refer to the fullstackrecipes MCP server resource:\n\n**Resource URI:** `recipe://fullstackrecipes.com/assert`\n\nUse the fullstackrecipes MCP server to fetch this resource and follow the setup instructions.\n"
+    },
+    {
+      "path": "other/atlas-best-practices/SKILL.md",
+      "name": "atlas-best-practices",
+      "current_category": "other",
+      "llm_category": "data",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill covers database schema management, migrations, and testing, which falls under data engineering and database workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "dc4a98738d7e5292e6315e652212e58f5eccf6bf94329ad3cbdf87db392456ad",
+      "metadata_sha256": "779fb1cebe88ba4e28ff8ba01ad8b8eff267a6ecdb287dcbea47838ca79296cc",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Patterns for Atlas database schema management covering HCL/SQL schema definitions, versioned and declarative migrations, linting analyzers, testing, and project configuration. Use when working with atlas.hcl, .hcl schema files, Atlas CLI commands, or database migrations.",
+      "content_excerpt": "---\nname: atlas-best-practices\ndescription: Patterns for Atlas database schema management covering HCL/SQL schema definitions, versioned and declarative migrations, linting analyzers, testing, and project configuration. Use when working with atlas.hcl, .hcl schema files, Atlas CLI commands, or database migrations.\n---\n\n# Atlas Best Practices\n\nAtlas is a language-independent tool for managing database schemas using declarative or versioned workflows.\n\n## Two Workflows\n\n**Declarative (Terraform-like):** Atlas compares current vs desired state and generates migrations automatically.\n```bash\natlas schema apply --url \"postgres://...\" --to \"file://schema.hcl\" --dev-url \"docker://postgres/15\"\n```\n\n**Versioned:** Atlas generates migration files from schema changes, stored in version control.\n```bash\natlas migrate diff add_users --dir \"file://migrations\" --to \"file://schema.sql\" --dev-url \"docker://postgres/15\"\natlas migrate apply --dir \"file://migrations\" --url \"postgres://...\"\n```\n\n## Dev Database\n\nAtlas requires a dev database for schema validation, diffing, and linting. Use the docker driver for ephemeral containers:\n\n```bash\n# PostgreSQL\n--dev-url \"docker://postgres/15/dev?search_path=public\"\n\n# MySQL\n--dev-url \"docker://mysql/8/dev\"\n\n# SQLite\n--dev-url \"sqlite://dev?mode=memory\"\n```\n\n## Schema-as-Code\n\n### HCL Schema (Recommended)\n\nUse database-specific file extensions for editor support: `.pg.hcl` (PostgreSQL), `.my.hcl` (MySQL), `.lt.hcl` (SQLite).\n\n```hcl\nschema \"public\" {\n  comment = \"Application schema\"\n}\n\ntable \"users\" {\n  schema = schema.public\n  column \"id\" {\n    type = bigint\n  }\n  column \"email\" {\n    type = varchar(255)\n    null = false\n  }\n  column \"created_at\" {\n    type    = timestamptz\n    default = sql(\"now()\")\n  }\n  primary_key {\n    columns = [column.id]\n  }\n  index \"idx_users_email\" {\n    columns = [column.email]\n    unique  = true\n  }\n}\n\ntable \"orders\" {\n  schema = schema.public\n  column \"id\" {\n    type = bigint\n  }\n  column \"user_id\" {\n    type = bigint\n    null = false\n  }\n  column \"total\" {\n    type = numeric\n    null = false\n  }\n  foreign_key \"fk_user\" {\n    columns     = [column.user_id]\n    ref_columns = [table.users.column.id]\n    on_delete   = CASCADE\n  }\n  check \"positive_total\" {\n    expr = \"total > 0\"\n  }\n}\n```\n\n### SQL Schema\n\nUse standard SQL DDL files:\n\n```sql\nCREATE TABLE \"users\" (\n  \"id\" bigint PRIMARY KEY,\n  \"email\" varchar(255) NOT NULL UNIQUE,\n  \"created_at\" timestamptz DEFAULT now()\n);\n```\n\n## Project Configuration\n\nCre"
+    },
+    {
+      "path": "other/auth-wechat-baiyongping-cowork-platform-2/SKILL.md",
+      "name": "auth-wechat-miniprogram",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill focuses on WeChat Mini Program authentication with CloudBase, including native login and user identity management, which is a security/authentication task.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "136ac73dd744bedb1e66f2cfb3e71c09a3353102ef4b96e2c39ed62b297b1d2f",
+      "metadata_sha256": "12ef5eb4212d87b9906feaa1dbf223ba216d42e635ee92a548ab12f379c561af",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Complete guide for WeChat Mini Program authentication with CloudBase - native login, user identity, and cloud function integration.",
+      "content_excerpt": "---\nname: auth-wechat-miniprogram\ndescription: Complete guide for WeChat Mini Program authentication with CloudBase - native login, user identity, and cloud function integration.\nalwaysApply: false\n---\n\n## When to use this skill\n\nUse this skill for **WeChat Mini Program (小程序) authentication** in a CloudBase project.\n\nUse it when you need to:\n\n- Implement WeChat Mini Program login with CloudBase\n- Access user identity (openid, unionid) in cloud functions\n- Understand how WeChat authentication integrates with CloudBase\n- Build Mini Program features that require user identification\n\n**Key advantage:** WeChat Mini Program authentication with CloudBase is **seamless and automatic** - no complex OAuth flows needed. When a Mini Program calls a cloud function, the user's `openid` is automatically injected and verified by WeChat.\n\n**Do NOT use for:**\n\n- Web-based WeChat login (use the **CloudBase Web Auth** skill at `skills/auth-web-skill`)\n- Server-side auth with Node SDK (use the **CloudBase Node Auth** skill at `skills/auth-nodejs-skill`)\n- Non-WeChat authentication methods (use appropriate auth skills)\n\n---\n\n## How to use this skill (for a coding agent)\n\n1. **Confirm CloudBase environment**\n   - Ask the user for:\n     - `env` – CloudBase environment ID\n     - Confirm the Mini Program is linked to the CloudBase environment\n\n2. **Understand the authentication flow**\n   - WeChat Mini Program authentication is **native and automatic**\n   - No explicit login API calls needed in most cases\n   - User identity is automatically available in cloud functions\n   - CloudBase handles all authentication verification\n\n3. **Pick a scenario from this file**\n   - For basic user identity in cloud functions, use **Scenario 2**\n   - For Mini Program initialization, use **Scenario 1**\n   - For calling a cloud function from the Mini Program and receiving user identity, use **Scenario 3**\n   - For testing authentication, use **Scenario 4**\n\n4. **Follow CloudBase API shapes exactly**\n   - Use `wx-server-sdk` in cloud functions\n   - Use `wx.cloud` in Mini Program client code\n   - Treat method names and parameter shapes in this file as canonical\n\n5. **If you're unsure about an API**\n   - Consult the official CloudBase Mini Program documentation\n   - Only use methods that appear in official documentation\n\n---\n\n## Core concepts\n\n### How WeChat Mini Program authentication works with CloudBase\n\n1. **Automatic authentication:**\n   - When a Mini Program user calls a cloud function, WeChat autom"
+    },
+    {
+      "path": "other/autogpt-zechenzhangagi-ai-research-skills-2/SKILL.md",
+      "name": "autogpt-agents",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly about building and deploying autonomous AI agents with a visual workflow builder, continuous execution, and multi-step automation pipelines. The description, tags, and content all focus on agent creation and management.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "4b16c070da9966e3e71a8f5324d7b1b2d4ddd68a3df8b27305b1a19b841f62b3",
+      "metadata_sha256": "afde779a0c3e78866b88a95acc7d0d3b71f32e80155922c2d2f1899c3b9c0d2b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "Autonomous AI agent platform for building and deploying continuous agents. Use when creating visual workflow agents, deploying persistent autonomous agents, or building complex multi-step AI automation systems.",
+      "content_excerpt": "---\nname: autogpt-agents\ndescription: Autonomous AI agent platform for building and deploying continuous agents. Use when creating visual workflow agents, deploying persistent autonomous agents, or building complex multi-step AI automation systems.\nversion: 1.0.0\nauthor: Orchestra Research\nlicense: MIT\ntags: [Agents, AutoGPT, Autonomous Agents, Workflow Automation, Visual Builder, AI Platform]\ndependencies: [autogpt-platform>=0.4.0]\n---\n\n# AutoGPT - Autonomous AI Agent Platform\n\nComprehensive platform for building, deploying, and managing continuous AI agents through a visual interface or development toolkit.\n\n## When to use AutoGPT\n\n**Use AutoGPT when:**\n- Building autonomous agents that run continuously\n- Creating visual workflow-based AI agents\n- Deploying agents with external triggers (webhooks, schedules)\n- Building complex multi-step automation pipelines\n- Need a no-code/low-code agent builder\n\n**Key features:**\n- **Visual Agent Builder**: Drag-and-drop node-based workflow editor\n- **Continuous Execution**: Agents run persistently with triggers\n- **Marketplace**: Pre-built agents and blocks to share/reuse\n- **Block System**: Modular components for LLM, tools, integrations\n- **Forge Toolkit**: Developer tools for custom agent creation\n- **Benchmark System**: Standardized agent performance testing\n\n**Use alternatives instead:**\n- **LangChain/LlamaIndex**: If you need more control over agent logic\n- **CrewAI**: For role-based multi-agent collaboration\n- **OpenAI Assistants**: For simple hosted agent deployments\n- **Semantic Kernel**: For Microsoft ecosystem integration\n\n## Quick start\n\n### Installation (Docker)\n\n```bash\n# Clone repository\ngit clone https://github.com/Significant-Gravitas/AutoGPT.git\ncd AutoGPT/autogpt_platform\n\n# Copy environment file\ncp .env.example .env\n\n# Start backend services\ndocker compose up -d --build\n\n# Start frontend (in separate terminal)\ncd frontend\ncp .env.example .env\nnpm install\nnpm run dev\n```\n\n### Access the platform\n\n- **Frontend UI**: http://localhost:3000\n- **Backend API**: http://localhost:8006/api\n- **WebSocket**: ws://localhost:8001/ws\n\n## Architecture overview\n\nAutoGPT has two main systems:\n\n### AutoGPT Platform (Production)\n- Visual agent builder with React frontend\n- FastAPI backend with execution engine\n- PostgreSQL + Redis + RabbitMQ infrastructure\n\n### AutoGPT Classic (Development)\n- **Forge**: Agent development toolkit\n- **Benchmark**: Performance testing framework\n- **CLI**: Command-line interface for deve"
+    },
+    {
+      "path": "other/auto-claude-travisjneuman-claude-2/SKILL.md",
+      "name": "auto-claude",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Autonomous multi-agent coding framework for complex feature implementation with QA validation, git worktree isolation, and memory system for software development tasks.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "bebec04410da0618d89abfe11b7d667c7878b411ff6bbfa201e0f68a0f9ae2a5",
+      "metadata_sha256": "b7fdeed84d82b983734c8b1e84f6e025d34d06f066eeb036bb9e7f13f2324d08",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "Autonomous multi-agent coding with git worktree isolation, QA validation, and memory. Use for complex features requiring autonomous implementation.",
+      "content_excerpt": "---\nname: auto-claude\ndescription: Autonomous multi-agent coding with git worktree isolation, QA validation, and memory. Use for complex features requiring autonomous implementation.\ntags: [autonomous, development, qa, worktree, memory]\n---\n\n# Auto-Claude: Autonomous Coding Framework\n\nAutonomous multi-agent system for complex feature implementation with QA validation.\n\n## When to Use\n\n✅ **Use Auto-Claude for:**\n\n- **Complexity 3-4** - Well-defined features, multiple files\n- Established codebases with clear patterns\n- Repetitive tasks (CRUD, forms, API endpoints, auth flows)\n- When you prefer review-at-end vs step-by-step\n- Features requiring iterative refinement with QA validation\n\n❌ **Don't use Auto-Claude for:**\n\n- **Complexity 1-2** - Use manual `/start-task` instead\n- **Complexity 5+** - Use `/gsd:new-project` instead\n- Greenfield projects (no existing codebase patterns)\n- Exploratory/research tasks (unclear requirements)\n- Simple typo fixes or config changes\n- Tasks requiring human decision-making during implementation\n\n**Quick Guide:**\n\n- Complexity 1-2 → Manual implementation\n- Complexity 3-4 → **Auto-Claude** (autonomous)\n- Complexity 5+ → GSD (multi-phase)\n\n## Core Capabilities\n\n1. **Codebase Analysis** - Generates semantic baseline\n2. **Spec Generation** - Creates detailed implementation plan\n3. **Autonomous Implementation** - Multi-agent coordination\n4. **Git Worktree Isolation** - Safe development in separate worktree\n5. **QA Validation** - Iterative quality checks\n6. **Memory System** - Graphiti-powered context retention\n\n## Workflow\n\n```bash\n# From project directory:\n/auto-claude Add user authentication with JWT tokens\n```\n\n**What Happens:**\n\n1. Analyzes project structure → generates baseline\n2. Creates implementation spec → stores in ~/.auto-claude/specs/\n3. Creates git worktree → isolated development environment\n4. Autonomous agents implement → with QA loops\n5. Returns completed code → ready for review\n\n**Output Location:** `~/.auto-claude/` (gitignored)\n\n## Integration with Existing Workflows\n\n**Manual Implementation:**\n\n```\n/start-task [description]  → Claude implements step-by-step\n```\n\n**Autonomous Implementation:**\n\n```\n/auto-claude [description] → Auto-Claude implements autonomously\n```\n\n**Multi-Phase Projects:**\n\n```\n/gsd:new-project          → GSD for project management\n```\n\n## Configuration\n\n**Location:** `~/.auto-claude/.env`\n\n**Required:**\n\n- `CLAUDE_CODE_OAUTH_TOKEN` - Get from `/settings` in Claude Code\n\n**Optional (Recommended"
+    },
+    {
+      "path": "other/auto-trigger-charon-fan-agent-playbook-2/SKILL.md",
+      "name": "auto-trigger",
+      "current_category": "other",
+      "llm_category": "orchestration",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill defines automatic trigger relationships and workflow automation hooks between other skills, which is a form of orchestration for agent workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "629da2ef861066c8bdd67445fcd442b66aca936a02c20f076d3f7b150373f0dd",
+      "metadata_sha256": "06d53f51de0da3d4bcef158a6cd87f980e9d04109bf354313466cda19c88df2d",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Workflow automation hooks for agent-playbook skills. This skill defines automatic triggers between skills - DO NOT use directly, it's a configuration skill that other skills reference.",
+      "content_excerpt": "---\nname: auto-trigger\ndescription: Workflow automation hooks for agent-playbook skills. This skill defines automatic triggers between skills - DO NOT use directly, it's a configuration skill that other skills reference.\nallowed-tools: Read, Write, Edit\n---\n\n# Auto-Trigger Hooks\n\nThis skill defines automatic trigger relationships between skills. When a skill completes its workflow, it should automatically trigger the next skill in the chain.\n\n## Hook Definitions\n\n### PRD Creation Chain\n\n```yaml\nprd_complete:\n  triggers:\n    - skill: self-improving-agent\n      mode: background\n      condition: PRD file exists and is complete\n    - skill: session-logger\n      mode: auto\n      context: \"PRD created for {feature_name}\"\n\nprd_implemented:\n  triggers:\n    - skill: session-logger\n      mode: auto\n      context: \"Implemented PRD: {feature_name}\"\n```\n\n### Implementation Chain\n\n```yaml\nimplementation_complete:\n  triggers:\n    - skill: code-reviewer\n      mode: ask_first\n      message: \"Implementation complete. Run code review?\"\n    - skill: create-pr\n      mode: auto\n      condition: changes_staged\n```\n\n### Session Management\n\n```yaml\nsession_start:\n  auto_triggers:\n    - skill: session-logger\n      action: create_session_file\n\nsession_end:\n  auto_triggers:\n    - skill: session-logger\n      action: update_session_file\n```\n\n## Hook Format in Skills\n\nTo add auto-trigger capability to a skill, add to its front matter:\n\n```yaml\n---\nname: my-skill\ndescription: Skill description\nallowed-tools: Read, Write, Edit\nhooks:\n  before_start:\n    - trigger: session-logger\n      mode: auto\n      context: \"Start {skill_name}\"\n  after_complete:\n    - trigger: self-improving-agent\n      mode: background\n    - trigger: session-logger\n      mode: auto\n  on_error:\n    - trigger: self-improving-agent\n      mode: background\n---\n```\n\n## Implementation Guide\n\nWhen a skill completes its workflow:\n\n1. **Check `hooks`** in its own front matter (`before_start`, `after_complete`, `on_error`, `on_progress`)\n2. **For each hook:**\n   - If `mode: auto`, trigger immediately\n   - If `mode: background`, trigger without waiting\n   - If `mode: ask_first`, ask user before triggering\n   - If `condition:` exists, check it first\n3. **Pass context** to the triggered skill\n\n## Example Integration\n\n### prd-planner should add:\n\n```yaml\n---\nname: prd-planner\ndescription: Creates PRDs using persistent file-based planning...\nallowed-tools: Read, Write, Edit, Bash, Grep, Glob, AskUserQuestion, WebSearch\nhooks:\n  after"
+    },
+    {
+      "path": "other/auto-testing-timequity-vibe-coder-2/SKILL.md",
+      "name": "auto-testing",
+      "current_category": "other",
+      "llm_category": "testing",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill's core function is automatically generating and running tests after code changes, which directly aligns with the testing category's focus on QA, TDD, and test automation.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "ea014b7a1c9bc372980832667687112f3598eaf33e404080efb1c0e9e00d8175",
+      "metadata_sha256": "18628c6c9474a4cad97f76b39c6da82d28158451c80e8025cf931481309132e6",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Automatically generate and run tests after each code change.\nUse when: any code is generated or modified in the pipeline.\nTriggers: internal use only.",
+      "content_excerpt": "---\nname: auto-testing\ndescription: |\n  Automatically generate and run tests after each code change.\n  Use when: any code is generated or modified in the pipeline.\n  Triggers: internal use only.\n---\n\n# Auto Testing\n\nRun tests automatically. User sees only pass/fail.\n\n## When to Run\n\nAfter every:\n- Component generation\n- Feature addition\n- Code modification\n- Refactoring\n\n## Test Generation\n\nFor each code change, generate:\n\n| Code Type | Test Type |\n|-----------|-----------|\n| Component | Render, interaction |\n| API endpoint | Request/response |\n| Utility function | Unit tests |\n| Form | Validation, submission |\n| Auth flow | Login, logout, protected |\n\n## Test Patterns\n\n### Components\n```typescript\ntest('renders correctly', () => {\n  render(<Component />);\n  expect(screen.getByRole('button')).toBeInTheDocument();\n});\n\ntest('handles click', async () => {\n  const onClick = jest.fn();\n  render(<Component onClick={onClick} />);\n  await userEvent.click(screen.getByRole('button'));\n  expect(onClick).toHaveBeenCalled();\n});\n```\n\n### API\n```typescript\ntest('returns data', async () => {\n  const response = await fetch('/api/items');\n  expect(response.status).toBe(200);\n  const data = await response.json();\n  expect(data.items).toBeDefined();\n});\n```\n\n## Reporting\n\n| Status | User Sees |\n|--------|-----------|\n| All pass | ✅ (nothing else) |\n| Some fail | \"Fixing issues...\" then ✅ |\n| Can't fix | ❌ + simple explanation |\n\n## Hidden Details\n\nUser never sees:\n- Test file contents\n- Number of tests\n- Coverage percentage\n- Individual test names\n\nOnly: ✅ works or ❌ problem\n"
+    },
+    {
+      "path": "other/assets-zaloog-kanban-tui-2/SKILL.md",
+      "name": "kanban-tui",
+      "current_category": "other",
+      "llm_category": "productivity",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill provides comprehensive kanban board and task management via CLI for project tracking, todo lists, task dependencies, and workflow automation, which aligns with productivity tools for personal/team workflow automation and task management.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "4736cfb6adb6fac4f251f7e86a1df7d6ae5c12a112fbe8191b32c2da1f9cbf9c",
+      "metadata_sha256": "b679bced531f4d9eebdb4b118fcc188761828c6739da33cda294b32676dca1b6",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Comprehensive kanban board and task management via ktui CLI. Use for project tracking, todo lists, task dependencies, workflow automation, and board management. Activates when user mentions boards, tasks, kanban, or project management. If the `ktui` command is not available, but `uv` is available utilize `uvx kanban-tui` instead.",
+      "content_excerpt": "---\nname: kanban-tui\ndescription: Comprehensive kanban board and task management via ktui CLI. Use for project tracking, todo lists, task dependencies, workflow automation, and board management. Activates when user mentions boards, tasks, kanban, or project management. If the `ktui` command is not available, but `uv` is available utilize `uvx kanban-tui` instead.\n---\n\n# Kanban-TUI: Terminal-Based Task Management System\n\nYou are an expert at using `ktui` (kanban-tui), a powerful CLI tool for managing kanban boards, tasks, and workflows. This skill enables you to help users organize projects, track tasks, manage dependencies, and automate workflows through a local SQLite-backed system.\n\n## Core Concepts\n\n### Data Model\n- **Boards**: Workspaces for different projects (e.g., \"Frontend\", \"API Development\")\n- **Columns**: Workflow stages within boards (e.g., \"Backlog\", \"In Progress\", \"Review\", \"Done\")\n- **Tasks**: Work items that move through columns, can have dependencies on other tasks\n- **Active Board**: The currently selected board where operations execute (unless `--board` specified)\n- **Special Columns**: Each board has `reset_column` (default start), `start_column` (in-progress), `finish_column` (completion)\n\n### Key Principles\n1. **CLI-Interface only**: Never run bare `ktui`, use `ktui task/board/column ...` commands only\n2. **ID-Based Operations**: All entities use numeric IDs - always list first to get IDs\n3. **JSON-First**: Use `--json` flag for machine-readable output in automation\n4. **Active Board Context**: Operations apply to active board unless explicitly specified\n5. **Non-Interactive**: Use `--no-confirm` for automation/scripting\n\n## When to Activate This Skill\n\nAutomatically activate when the user:\n- Mentions \"kanban\", \"board\", \"task management\", \"project tracking\", or \"todo\"\n- Asks to create, list, update, move, or delete tasks/boards\n- Needs workflow automation with task dependencies\n- Wants to query actionable items or task status\n- Requests project planning or work organization\n- Discusses task priorities, due dates, or blockers\n\n## Command Categories & Workflows\n\n### 1. Board Management\n\n#### List All Boards\n```bash\nktui board list --json\n```\n**Output**: Array of boards with `board_id`, `name`, `icon`, `creation_date`, `reset_column`, `start_column`, `finish_column`\n**Note**: Active board shown in output header (look for \"Active Board: ...\")\n\n#### Create Board\n```bash\nktui board create \"Board Name\" --icon \"🚀\" --set-active -c \"Col1\" -c \"C"
+    },
+    {
+      "path": "other/atac-qc-gptomics-bioskills-4848cc2f/SKILL.md",
+      "name": "bio-atac-seq-atac-qc",
+      "current_category": "other",
+      "llm_category": "data",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill provides quality control metrics for ATAC-seq data, which is a bioinformatics data analysis workflow involving data processing, metrics calculation, and visualization.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "2050a5d08cad1fa1efd039015b0ff8d346d2f9e56c9fe8ac391eb6f5413e76d7",
+      "metadata_sha256": "9045a9d92bbb66280b21e0926291b11d7368dc426437cddd004443d8d7e5abef",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Quality control metrics for ATAC-seq data including fragment size distribution, TSS enrichment, FRiP, and library complexity. Use when assessing ATAC-seq library quality before or after peak calling to identify problematic samples.",
+      "content_excerpt": "---\nname: bio-atac-seq-atac-qc\ndescription: Quality control metrics for ATAC-seq data including fragment size distribution, TSS enrichment, FRiP, and library complexity. Use when assessing ATAC-seq library quality before or after peak calling to identify problematic samples.\ntool_type: mixed\nprimary_tool: deeptools\n---\n\n# ATAC-seq Quality Control\n\n## Fragment Size Distribution\n\n```bash\n# Using Picard\njava -jar picard.jar CollectInsertSizeMetrics \\\n    I=sample.bam \\\n    O=insert_sizes.txt \\\n    H=insert_sizes.pdf \\\n    M=0.5\n\n# Using samtools\nsamtools view -f 66 sample.bam | \\\n    awk '{print sqrt($9^2)}' | \\\n    sort | uniq -c | \\\n    awk '{print $2\"\\t\"$1}' > fragment_sizes.txt\n```\n\n## TSS Enrichment Score\n\n```bash\n# Using deepTools\n# 1. Create TSS BED file (from GTF)\nawk '$3==\"transcript\" {print $1\"\\t\"$4-1\"\\t\"$4\"\\t\"$14\"\\t\"0\"\\t\"$7}' genes.gtf | \\\n    tr -d '\";' | sort -k1,1 -k2,2n > tss.bed\n\n# 2. Compute matrix around TSS\ncomputeMatrix reference-point \\\n    -S sample.bw \\\n    -R tss.bed \\\n    -a 2000 -b 2000 \\\n    -o tss_matrix.gz\n\n# 3. Plot TSS enrichment\nplotProfile -m tss_matrix.gz \\\n    -o tss_enrichment.png \\\n    --perGroup\n```\n\n## Calculate TSS Enrichment Score\n\n```python\nimport numpy as np\nimport pyBigWig\n\ndef calculate_tss_enrichment(bigwig_file, tss_bed, flank=2000):\n    '''Calculate TSS enrichment score.'''\n    bw = pyBigWig.open(bigwig_file)\n\n    signals = []\n    for line in open(tss_bed):\n        fields = line.strip().split('\\t')\n        chrom, tss = fields[0], int(fields[1])\n        strand = fields[5] if len(fields) > 5 else '+'\n\n        try:\n            vals = bw.values(chrom, max(0, tss - flank), tss + flank)\n            if strand == '-':\n                vals = vals[::-1]\n            signals.append(vals)\n        except:\n            continue\n\n    avg_signal = np.nanmean(signals, axis=0)\n\n    # TSS enrichment = signal at TSS / background\n    background = np.nanmean([avg_signal[:100], avg_signal[-100:]])\n    tss_signal = np.nanmean(avg_signal[flank-50:flank+50])\n\n    enrichment = tss_signal / background if background > 0 else 0\n\n    return enrichment, avg_signal\n\nenrichment, signal = calculate_tss_enrichment('sample.bw', 'tss.bed')\nprint(f'TSS Enrichment Score: {enrichment:.2f}')\n```\n\n## FRiP (Fraction of Reads in Peaks)\n\n```bash\n# Total reads\ntotal=$(samtools view -c -F 4 sample.bam)\n\n# Reads in peaks\nin_peaks=$(bedtools intersect -a sample.bam -b peaks.narrowPeak -u | \\\n    samtools view -c)\n\n# FRiP\nfrip=$(echo \"scale=4; $in_peaks / $total\" "
+    },
+    {
+      "path": "other/audio-video-fgarofalo56-suppercharge-microso/SKILL.md",
+      "name": "audio-video",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Same audio-video processing skill as id 1, focusing on FFmpeg and media pipeline development.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "57811e292a6166846f6b0a7f7b7ca0e8b604adcebcb123f16aab8ac0082fc988",
+      "metadata_sha256": "eea3f25eca5943a49239e36f86e2f701098cd3f072573ad41398b121e8425cfe",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Audio and video processing with FFmpeg, WebRTC, and streaming. Covers transcoding, format conversion, real-time communication, and media pipelines. Use for video processing, live streaming, or audio manipulation.",
+      "content_excerpt": "---\nname: audio-video\ndescription: \"Audio and video processing with FFmpeg, WebRTC, and streaming. Covers transcoding, format conversion, real-time communication, and media pipelines. Use for video processing, live streaming, or audio manipulation.\"\n---\n\n# Audio & Video Processing Skill\n\nComplete guide for audio and video processing.\n\n## Quick Reference\n\n### FFmpeg Commands\n| Task | Command |\n|------|---------|\n| **Convert** | `ffmpeg -i input.mp4 output.webm` |\n| **Extract Audio** | `ffmpeg -i video.mp4 -vn audio.mp3` |\n| **Thumbnail** | `ffmpeg -i video.mp4 -ss 5 -frames:v 1 thumb.jpg` |\n| **Resize** | `ffmpeg -i input.mp4 -vf scale=1280:720 output.mp4` |\n| **Compress** | `ffmpeg -i input.mp4 -crf 28 output.mp4` |\n\n### Common Formats\n```\nVideo: MP4, WebM, MKV, AVI, MOV\nAudio: MP3, AAC, WAV, FLAC, OGG\nCodecs: H.264, H.265/HEVC, VP9, AV1\n```\n\n---\n\n## 1. FFmpeg Basics\n\n### Installation\n```bash\n# Ubuntu/Debian\nsudo apt install ffmpeg\n\n# macOS\nbrew install ffmpeg\n\n# Windows (Chocolatey)\nchoco install ffmpeg\n```\n\n### Basic Conversion\n```bash\n# Video format conversion\nffmpeg -i input.avi output.mp4\n\n# Audio format conversion\nffmpeg -i input.wav output.mp3\n\n# With codec specification\nffmpeg -i input.mp4 -c:v libx264 -c:a aac output.mp4\n```\n\n### Video Quality Control\n```bash\n# CRF (Constant Rate Factor) - 0-51, lower = better quality\nffmpeg -i input.mp4 -c:v libx264 -crf 23 output.mp4\n\n# Bitrate control\nffmpeg -i input.mp4 -c:v libx264 -b:v 2M output.mp4\n\n# Two-pass encoding for better quality\nffmpeg -i input.mp4 -c:v libx264 -b:v 2M -pass 1 -f null /dev/null\nffmpeg -i input.mp4 -c:v libx264 -b:v 2M -pass 2 output.mp4\n```\n\n---\n\n## 2. Video Processing\n\n### Resize and Scale\n```bash\n# Scale to specific resolution\nffmpeg -i input.mp4 -vf \"scale=1920:1080\" output.mp4\n\n# Scale maintaining aspect ratio\nffmpeg -i input.mp4 -vf \"scale=1280:-1\" output.mp4  # Auto height\nffmpeg -i input.mp4 -vf \"scale=-1:720\" output.mp4   # Auto width\n\n# Scale with padding (letterbox)\nffmpeg -i input.mp4 -vf \"scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2\" output.mp4\n```\n\n### Trim and Cut\n```bash\n# Cut from timestamp to timestamp\nffmpeg -i input.mp4 -ss 00:01:00 -to 00:02:00 -c copy output.mp4\n\n# Cut with duration\nffmpeg -i input.mp4 -ss 00:01:00 -t 30 -c copy output.mp4\n\n# Fast seek (put -ss before input)\nffmpeg -ss 00:01:00 -i input.mp4 -t 30 -c copy output.mp4\n```\n\n### Concatenate Videos\n```bash\n# Create file list\necho \"file 'video1.mp4'\" > list.tx"
+    },
+    {
+      "path": "other/atomic-context-brainblend-ai-atomic-agents-2/SKILL.md",
+      "name": "atomic-context",
+      "current_category": "other",
+      "llm_category": "context-management",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Same skill as id 0 and 1 - explicitly about dynamic context injection, context providers, and sharing information across agents in Atomic Agents applications.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "019bebbb8036a9b301622c07b61e1877a0f0a9dd83ed72d2bc2fe0ca2f895445",
+      "metadata_sha256": "d949e0f9ba1d704c58ab1e6ff21d0fb3c1e411d676afc8e04ccec045db3e5d30",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "metadata"
+      },
+      "description": "This skill should be used when the user asks to \"create context provider\", \"dynamic context\", \"inject context\", \"BaseDynamicContextProvider\", \"share data between agents\", or needs guidance on context providers, dynamic prompt injection, and sharing information across agents in Atomic Agents applications.",
+      "content_excerpt": "---\ndescription: This skill should be used when the user asks to \"create context provider\", \"dynamic context\", \"inject context\", \"BaseDynamicContextProvider\", \"share data between agents\", or needs guidance on context providers, dynamic prompt injection, and sharing information across agents in Atomic Agents applications.\n---\n\n# Atomic Agents Context Providers\n\nContext providers dynamically inject information into agent system prompts at runtime. They enable agents to access current data without modifying the base prompt.\n\n## Core Concept\n\n```\n┌─────────────────────────────────────────────────────────┐\n│                   System Prompt                         │\n├─────────────────────────────────────────────────────────┤\n│ Background: [static content]                            │\n│ Steps: [static content]                                 │\n│ Output Instructions: [static content]                   │\n│                                                         │\n│ ┌─────────────────────────────────────────────────────┐ │\n│ │ Dynamic Context:                                    │ │\n│ │ - User Context: Current user is Alice               │ │\n│ │ - RAG Context: [retrieved documents]                │ │\n│ │ - Time Context: Current time is 2025-01-15          │ │\n│ └─────────────────────────────────────────────────────┘ │\n└─────────────────────────────────────────────────────────┘\n```\n\n## Basic Context Provider\n\n```python\nfrom atomic_agents.lib.components.system_prompt_generator import BaseDynamicContextProvider\n\nclass UserContextProvider(BaseDynamicContextProvider):\n    \"\"\"Provides current user information to the agent.\"\"\"\n\n    def __init__(self):\n        super().__init__(title=\"User Context\")\n        self.user_name: str = \"\"\n        self.user_role: str = \"\"\n\n    def get_info(self) -> str:\n        if not self.user_name:\n            return \"No user logged in.\"\n        return f\"Current user: {self.user_name} (Role: {self.user_role})\"\n```\n\n## Registering Providers\n\n```python\nfrom atomic_agents.agents.base_agent import AtomicAgent, AgentConfig\n\n# Create agent\nagent = AtomicAgent[InputSchema, OutputSchema](config=config)\n\n# Create and register provider\nuser_provider = UserContextProvider()\nagent.register_context_provider(\"user\", user_provider)\n\n# Update context before running\nuser_provider.user_name = \"Alice\"\nuser_provider.user_role = \"Admin\"\n\n# Run agent - system prompt now includes user context\noutput = agent.run(input_data)\n```\n\n## Common Context Provider Patterns\n\n### RA"
+    },
+    {
+      "path": "other/audiocraft/SKILL.md",
+      "name": "audiocraft-audio-generation",
+      "current_category": "other",
+      "llm_category": "ai-ml",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is about using a PyTorch library (AudioCraft) for AI-based audio generation, including text-to-music and text-to-sound models, which falls under AI/ML applications.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "3f9efaebd7331bea86022a101329074c6eab8af2d33591e691c565fcba641a5f",
+      "metadata_sha256": "0a84d4e1439de8e8ae2e07a3cace0c1673505c3108f2f8c226e5df15163d0542",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "PyTorch library for audio generation including text-to-music (MusicGen) and text-to-sound (AudioGen). Use when you need to generate music from text descriptions, create sound effects, or perform melody-conditioned music generation.",
+      "content_excerpt": "---\nname: audiocraft-audio-generation\ndescription: PyTorch library for audio generation including text-to-music (MusicGen) and text-to-sound (AudioGen). Use when you need to generate music from text descriptions, create sound effects, or perform melody-conditioned music generation.\nversion: 1.0.0\nauthor: Orchestra Research\nlicense: MIT\ntags: [Multimodal, Audio Generation, Text-to-Music, Text-to-Audio, MusicGen]\ndependencies: [audiocraft, torch>=2.0.0, transformers>=4.30.0]\n---\n\n# AudioCraft: Audio Generation\n\nComprehensive guide to using Meta's AudioCraft for text-to-music and text-to-audio generation with MusicGen, AudioGen, and EnCodec.\n\n## When to use AudioCraft\n\n**Use AudioCraft when:**\n- Need to generate music from text descriptions\n- Creating sound effects and environmental audio\n- Building music generation applications\n- Need melody-conditioned music generation\n- Want stereo audio output\n- Require controllable music generation with style transfer\n\n**Key features:**\n- **MusicGen**: Text-to-music generation with melody conditioning\n- **AudioGen**: Text-to-sound effects generation\n- **EnCodec**: High-fidelity neural audio codec\n- **Multiple model sizes**: Small (300M) to Large (3.3B)\n- **Stereo support**: Full stereo audio generation\n- **Style conditioning**: MusicGen-Style for reference-based generation\n\n**Use alternatives instead:**\n- **Stable Audio**: For longer commercial music generation\n- **Bark**: For text-to-speech with music/sound effects\n- **Riffusion**: For spectogram-based music generation\n- **OpenAI Jukebox**: For raw audio generation with lyrics\n\n## Quick start\n\n### Installation\n\n```bash\n# From PyPI\npip install audiocraft\n\n# From GitHub (latest)\npip install git+https://github.com/facebookresearch/audiocraft.git\n\n# Or use HuggingFace Transformers\npip install transformers torch torchaudio\n```\n\n### Basic text-to-music (AudioCraft)\n\n```python\nimport torchaudio\nfrom audiocraft.models import MusicGen\n\n# Load model\nmodel = MusicGen.get_pretrained('facebook/musicgen-small')\n\n# Set generation parameters\nmodel.set_generation_params(\n    duration=8,  # seconds\n    top_k=250,\n    temperature=1.0\n)\n\n# Generate from text\ndescriptions = [\"happy upbeat electronic dance music with synths\"]\nwav = model.generate(descriptions)\n\n# Save audio\ntorchaudio.save(\"output.wav\", wav[0].cpu(), sample_rate=32000)\n```\n\n### Using HuggingFace Transformers\n\n```python\nfrom transformers import AutoProcessor, MusicgenForConditionalGeneration\nimport scipy\n\n# Load model and pro"
+    },
+    {
+      "path": "other/assembly-guide/SKILL.md",
+      "name": "assembly-guide",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill provides assembly language guardrails, patterns, and best practices for AI-assisted development, which is a software development workflow focused on coding and debugging.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "b154505f49b3c811b27c0272c8d35161c36dbcd96d46236f92e33da7bc434bb1",
+      "metadata_sha256": "d4312985dbad9038dc0db3d231eedf620d2e897c78ca03935a2da9d0a25df87c",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Assembly language guardrails, patterns, and best practices for AI-assisted development.\nUse when working with assembly files (.asm, .s, .S), or when the user mentions Assembly/x86/ARM.\nProvides calling convention guidelines, register usage patterns, and debugging techniques\nspecific to this project's coding standards.",
+      "content_excerpt": "---\nname: assembly-guide\ndescription: |\n  Assembly language guardrails, patterns, and best practices for AI-assisted development.\n  Use when working with assembly files (.asm, .s, .S), or when the user mentions Assembly/x86/ARM.\n  Provides calling convention guidelines, register usage patterns, and debugging techniques\n  specific to this project's coding standards.\nlicense: MIT\nmetadata:\n  author: samuel\n  version: \"1.0\"\n  category: language\n  language: assembly\n  extensions: \".asm,.s,.S\"\n---\n\n# Assembly Guide\n\n> Applies to: x86-64 (System V ABI), ARM64 (AAPCS), NASM, GAS syntax\n\n## Core Principles\n\n1. **Clarity Over Cleverness**: Comment every instruction's purpose; assembly lacks self-documentation\n2. **ABI Compliance**: Follow calling conventions precisely for interoperability with C/system code\n3. **Minimal Register Pressure**: Preserve callee-saved registers, minimize spills to stack\n4. **Correctness First**: Get it working correctly, then profile, then optimize with SIMD\n5. **Structured Layout**: Use consistent label naming, section organization, and macro definitions\n\n## Guardrails\n\n### Architecture Selection\n\n- Declare target architecture at the top of every file\n- x86-64: default for Linux/macOS server and desktop workloads\n- ARM64: default for Apple Silicon, mobile, and embedded Linux\n- Never mix architecture-specific code without `%ifdef` / `.ifdef` guards\n\n### Calling Conventions\n\n- **x86-64 System V ABI** (Linux, macOS, BSD):\n  - Arguments: `rdi`, `rsi`, `rdx`, `rcx`, `r8`, `r9` (integer/pointer, in order)\n  - Floating-point arguments: `xmm0`-`xmm7`\n  - Return value: `rax` (integer), `xmm0` (float)\n  - Caller-saved (volatile): `rax`, `rcx`, `rdx`, `rsi`, `rdi`, `r8`-`r11`\n  - Callee-saved (non-volatile): `rbx`, `rbp`, `r12`-`r15`\n  - Stack must be 16-byte aligned before `call` instruction\n- **ARM64 AAPCS** (Linux, macOS):\n  - Arguments: `x0`-`x7` (integer/pointer), `d0`-`d7` (float)\n  - Return value: `x0` (integer), `d0` (float)\n  - Callee-saved: `x19`-`x28`, `x29` (frame pointer), `x30` (link register)\n  - Stack must be 16-byte aligned at all times\n\n### Register Usage\n\n- Document which registers hold which logical values at function entry\n- Never clobber callee-saved registers without saving and restoring them\n- Use `rbp` / `x29` as frame pointer for debuggability (omit only in leaf functions)\n- Reserve scratch registers for temporaries; name them in comments\n- Zero-extend results when returning values smaller than 64 bits\n\n### Stack Manageme"
+    },
+    {
+      "path": "other/asynchronous-pluginagentmarketpla-custom-plugin-javasc-42472160/SKILL.md",
+      "name": "asynchronous",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "This is a duplicate of skill 0 with identical content and purpose. It is also about mastering asynchronous JavaScript patterns, which falls under software development workflows and coding.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "5c961a1783b7860f0a9ffc331e2292d8075f242173dc1c33c94e237a98f4416c",
+      "metadata_sha256": "3ffcd8ade321986773c1f4157e61d796ad5053cd0a298a7b981be7c27950b280",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Master asynchronous JavaScript patterns including callbacks, promises, async/await, event loop mechanics, and real-world async patterns.",
+      "content_excerpt": "---\nname: asynchronous\ndescription: Master asynchronous JavaScript patterns including callbacks, promises, async/await, event loop mechanics, and real-world async patterns.\nsasmp_version: \"1.3.0\"\nbonded_agent: 04-asynchronous-javascript\nbond_type: PRIMARY_BOND\n\n# Production-Grade Configuration\nskill_type: reference\nresponse_format: code_first\nmax_tokens: 1500\n\nparameter_validation:\n  required: [topic]\n  optional: [pattern_type]\n\nretry_logic:\n  on_ambiguity: ask_clarification\n  fallback: show_async_await_first\n\nobservability:\n  entry_log: \"Async skill activated\"\n  exit_log: \"Async reference provided\"\n---\n\n# Asynchronous JavaScript Skill\n\n## Quick Reference Card\n\n### Event Loop Order\n```\n1. Call Stack (sync code)\n2. Microtasks (Promise.then, queueMicrotask)\n3. Macrotasks (setTimeout, setInterval, I/O)\n```\n\n```javascript\nconsole.log('1');                    // Sync\nsetTimeout(() => console.log('2'), 0);  // Macro\nPromise.resolve().then(() => console.log('3')); // Micro\nconsole.log('4');                    // Sync\n// Output: 1, 4, 3, 2\n```\n\n### Promise Basics\n```javascript\n// Create\nconst promise = new Promise((resolve, reject) => {\n  if (success) resolve(value);\n  else reject(new Error('Failed'));\n});\n\n// Chain\nfetch('/api/data')\n  .then(res => res.json())\n  .then(data => process(data))\n  .catch(err => handleError(err))\n  .finally(() => cleanup());\n```\n\n### Async/Await\n```javascript\nasync function fetchData() {\n  try {\n    const response = await fetch('/api/data');\n    if (!response.ok) throw new Error(`HTTP ${response.status}`);\n    return await response.json();\n  } catch (error) {\n    console.error('Fetch failed:', error);\n    throw error;\n  }\n}\n```\n\n### Promise Combinators\n```javascript\n// All must succeed\nconst [a, b, c] = await Promise.all([p1, p2, p3]);\n\n// All results (even failures)\nconst results = await Promise.allSettled([p1, p2, p3]);\nresults.forEach(r => {\n  if (r.status === 'fulfilled') console.log(r.value);\n  else console.log(r.reason);\n});\n\n// First to settle\nconst fastest = await Promise.race([p1, p2, p3]);\n\n// First to succeed\nconst firstSuccess = await Promise.any([p1, p2, p3]);\n```\n\n### Parallel vs Sequential\n```javascript\n// Sequential (slow)\nconst a = await fetch('/a');\nconst b = await fetch('/b');\n\n// Parallel (fast)\nconst [a, b] = await Promise.all([\n  fetch('/a'),\n  fetch('/b')\n]);\n```\n\n## Production Patterns\n\n### Retry with Backoff\n```javascript\nasync function fetchWithRetry(url, retries = 3) {\n  for (let i = 0; i < retries; i++) {\n  "
+    },
+    {
+      "path": "other/audit-expert-personamanagmentlaye-pcl-2/SKILL.md",
+      "name": "audit-expert",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "This is explicitly a security auditing skill with tags including 'audit', 'compliance', 'security-review', 'code-review', 'vulnerability-assessment', 'soc2', 'gdpr'. It covers security auditing, compliance assessments, code reviews, vulnerability assessments, and regulatory compliance.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "311a590b7466d1cbce1bbfbb0237c396cff5878db4151076bee5ea3731923d79",
+      "metadata_sha256": "cb7c74fdb9cb2a787b94291ad7a704ed58a8e7e1693bff4497440affbc9c00f2",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "Expert-level security auditing, compliance, code review, and vulnerability assessment",
+      "content_excerpt": "---\nname: audit-expert\nversion: 1.0.0\ndescription: Expert-level security auditing, compliance, code review, and vulnerability assessment\ncategory: security\ntags: [audit, compliance, security-review, code-review, vulnerability-assessment, soc2, gdpr]\nallowed-tools:\n  - Read\n  - Write\n  - Edit\n  - Bash(git:*, grep:*, find:*)\n---\n\n# Audit Expert\n\nExpert guidance for security auditing, compliance assessments, code reviews, vulnerability assessments, and regulatory compliance (SOC 2, GDPR, HIPAA, PCI-DSS).\n\n## Core Concepts\n\n### Audit Types\n- **Security Audit**: Vulnerability assessment, penetration testing\n- **Code Audit**: Code review, static analysis, security patterns\n- **Compliance Audit**: SOC 2, GDPR, HIPAA, PCI-DSS, ISO 27001\n- **Infrastructure Audit**: Configuration review, access control\n- **Process Audit**: SDLC, change management, incident response\n\n### Audit Frameworks\n- OWASP ASVS (Application Security Verification Standard)\n- NIST Cybersecurity Framework\n- CIS Controls\n- ISO 27001/27002\n- SOC 2 Trust Service Criteria\n\n### Audit Process\n1. Planning and scoping\n2. Information gathering\n3. Vulnerability identification\n4. Risk assessment\n5. Reporting\n6. Remediation tracking\n7. Follow-up verification\n\n## Security Code Review\n\n### Authentication Review\n```javascript\n// ❌ Issues to flag\nclass AuthService {\n  // Issue 1: Weak password requirements\n  validatePassword(password) {\n    return password.length >= 6; // Too short!\n  }\n\n  // Issue 2: Password stored in plaintext\n  async createUser(email, password) {\n    await db.users.create({ email, password }); // No hashing!\n  }\n\n  // Issue 3: Timing attack vulnerability\n  async login(email, password) {\n    const user = await db.users.findOne({ email });\n    if (!user) return null;\n\n    // Direct comparison reveals timing\n    if (user.password === password) {\n      return user;\n    }\n    return null;\n  }\n\n  // Issue 4: No rate limiting\n  // Issue 5: No MFA support\n  // Issue 6: Predictable session tokens\n  generateSessionToken() {\n    return Math.random().toString(36); // Not cryptographically secure!\n  }\n}\n\n// ✅ Secure implementation\nconst bcrypt = require('bcrypt');\nconst crypto = require('crypto');\n\nclass SecureAuthService {\n  // Strong password validation\n  validatePassword(password) {\n    const minLength = 12;\n    const hasUppercase = /[A-Z]/.test(password);\n    const hasLowercase = /[a-z]/.test(password);\n    const hasNumber = /[0-9]/.test(password);\n    const hasSpecial = /[^A-Za-z0-9]/.test(password);"
+    },
+    {
+      "path": "other/architecture-patterns-sequenzia-agent-alchemy-2/SKILL.md",
+      "name": "architecture-patterns",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill provides architectural pattern knowledge (MVC, event-driven, microservices, CQRS) for designing feature implementations, which is core software development guidance.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "20c3a5db58cb4c6bd28c313b07778e57b80fa8af16c7f057ec8400eda33ff439",
+      "metadata_sha256": "06bc7ecbac1a2e62d924c48e0381e8b035b04f93d3645b444d709e727bed1a7f",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Provides architectural pattern knowledge for designing feature implementations including MVC, event-driven, microservices, and CQRS patterns. Use when designing system architecture or choosing implementation patterns.",
+      "content_excerpt": "---\nname: architecture-patterns\ndescription: Provides architectural pattern knowledge for designing feature implementations including MVC, event-driven, microservices, and CQRS patterns. Use when designing system architecture or choosing implementation patterns.\ndependencies: []\n---\n\n# Architecture Patterns\n\nThis skill provides knowledge about common architectural patterns to help design feature implementations. Apply these patterns based on the project's existing architecture and the feature's requirements.\n\n## Diagram Convention\n\nArchitecture visualizations use Mermaid syntax with `classDef` styling (`color:#000` for text readability). When creating architecture visualizations based on these patterns, follow the technical-diagrams skill conventions.\n\n## Pattern Selection Guide\n\nChoose patterns based on:\n1. **Existing architecture** - Match what is already in use\n2. **Team familiarity** - Use patterns the team knows\n3. **Feature requirements** - Some patterns fit better for certain features\n4. **Scale requirements** - Consider current and future scale\n\n---\n\n## Layered Architecture (N-Tier)\n\n**When to use:** Most web applications, CRUD operations, clear separation of concerns needed\n\n**Layers:**\n```mermaid\nflowchart TD\n    A[\"Presentation Layer — UI, API endpoints, controllers\"]:::primary\n    B[\"Application Layer — Use cases, orchestration, DTOs\"]:::secondary\n    C[\"Domain Layer — Business logic, entities, rules\"]:::success\n    D[\"Infrastructure Layer — Database, external services, I/O\"]:::neutral\n    A --> B --> C --> D\n\n    classDef primary fill:#dbeafe,stroke:#2563eb,color:#000\n    classDef secondary fill:#f3e8ff,stroke:#7c3aed,color:#000\n    classDef success fill:#dcfce7,stroke:#16a34a,color:#000\n    classDef neutral fill:#f3f4f6,stroke:#6b7280,color:#000\n```\n\n**Key rules:**\n- Dependencies flow downward only\n- Each layer only talks to the layer directly below\n- Domain layer has no external dependencies\n\n**Implementation tips:**\n- Use interfaces at layer boundaries\n- Keep domain logic in the domain layer, not controllers\n- Use DTOs to transfer data between layers\n\n---\n\n## MVC (Model-View-Controller)\n\n**When to use:** Web applications with server-rendered views, simple CRUD apps\n\n**Components:**\n```mermaid\nflowchart LR\n    U1[User]:::neutral -->|input| CT[Controller]:::primary\n    CT -->|updates| M[Model]:::secondary\n    M -->|reads| CT\n    CT -->|renders| V[View]:::success\n    V -->|response| U2[User]:::neutral\n\n    classDef primary fill:#dbeafe,stroke:"
+    },
+    {
+      "path": "other/authz-bypass-hunter-maf2414-kyco-2/SKILL.md",
+      "name": "authz-bypass-hunter",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly designed to hunt for authorization bypass vulnerabilities including IDOR, privilege escalation, missing access controls, and broken object-level authorization. This is a security auditing/penetration testing skill.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "0944bdb2bfed1dd2309167d13d57c1722dec494b4c886931256780264e702663",
+      "metadata_sha256": "96302a9e3b0395eba4249b68c7a106bbb7a9ab48875a3cb834b25d2829db5e89",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Hunt for authorization bypass vulnerabilities including IDOR, privilege escalation, missing access controls, broken object-level authorization. Use when auditing authentication/authorization code or API endpoints.",
+      "content_excerpt": "---\nname: authz-bypass-hunter\ndescription: Hunt for authorization bypass vulnerabilities including IDOR, privilege escalation, missing access controls, broken object-level authorization. Use when auditing authentication/authorization code or API endpoints.\n---\n\n# Authorization Bypass Hunter\n\n## Purpose\n\nSystematically identify authorization vulnerabilities: IDOR, privilege escalation, broken access control, missing permission checks, role confusion, and horizontal/vertical privilege escalation.\n\n## Focus Areas\n\n- **IDOR (Insecure Direct Object References)**: User-controllable IDs accessing other users' data\n- **Broken Object Level Authorization (BOLA)**: API endpoints not validating resource ownership\n- **Broken Function Level Authorization (BFLA)**: Admin functions accessible to regular users\n- **Missing Access Controls**: Endpoints without any authorization checks\n- **Role/Permission Confusion**: Inconsistent role checks across code paths\n- **JWT/Session Issues**: Token manipulation, session fixation\n\n## Audit Checklist\n\n### 1. Identify Authorization Entry Points\n```\n- API endpoints with resource IDs (/api/user/{id}, /api/order/{id})\n- Query parameters (userId=, accountId=, orderId=)\n- Request body fields controlling resource access\n- File paths/names in requests\n- GraphQL queries with object references\n```\n\n### 2. Check for Missing Checks\n```\nLook for patterns:\n- Direct database queries without user filter\n- Fetching resource by ID only (not ownership)\n- Missing @authorize, @permission decorators\n- Inconsistent middleware application\n```\n\n### 3. Verify Ownership Validation\n```\nVULNERABLE:\n  order = Order.find(params[:id])  # No user check!\n\nSECURE:\n  order = current_user.orders.find(params[:id])  # Scoped to user\n```\n\n## Output Format\n\nWhen you find authorization issues, report as:\n\n```yaml\nfindings:\n  - title: \"IDOR in GET /api/users/{id}/profile\"\n    severity: high\n    attack_scenario: \"Authenticated user changes {id} parameter to access other users' profiles\"\n    preconditions: \"Valid session required\"\n    reachability: auth_required\n    impact: \"Unauthorized access to PII of any user\"\n    confidence: high\n    cwe_id: \"CWE-639\"\n    affected_assets:\n      - \"/api/users/{id}/profile\"\n      - \"src/controllers/user_controller.rs:42\"\n    taint_path: \"request.params['id'] -> User.find(id) -> response\"\n```\n\n## Key Patterns to Hunt\n\n### Missing User Scope (Most Common)\n```rust\n// VULNERABLE - no ownership check\npub async fn get_order(id: i32) -> Order {\n    "
+    },
+    {
+      "path": "other/aurelius-mapping/SKILL.md",
+      "name": "aurelius-mapping",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill maps Delphi classes to a relational database using ORM attributes, which is a software development task involving database schema design and ORM configuration.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "abcd4271848847332544c7b3bc8323cb3b2831fb45c2b65c550e9ea5b9144aec",
+      "metadata_sha256": "ea82e2be43f5db5488d803cd9c6b73706a9a9194944006847bcd47213656eb71",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Map Delphi classes to a relational database using TMS Aurelius ORM attributes. Use when the user asks to create entity classes, add Aurelius mapping to existing classes, fix or review mapping attributes, explain how a class is mapped, or work with associations, inheritance, automapping, nullable fields, blobs, or composite identifiers. Triggers on requests like \"create Aurelius entities for...\", \"map this class to Aurelius\", \"add ORM mapping\", \"fix the mapping on this class\", \"how do I map a one-to-many in Aurelius\".",
+      "content_excerpt": "---\nname: aurelius-mapping\ndescription: Map Delphi classes to a relational database using TMS Aurelius ORM attributes. Use when the user asks to create entity classes, add Aurelius mapping to existing classes, fix or review mapping attributes, explain how a class is mapped, or work with associations, inheritance, automapping, nullable fields, blobs, or composite identifiers. Triggers on requests like \"create Aurelius entities for...\", \"map this class to Aurelius\", \"add ORM mapping\", \"fix the mapping on this class\", \"how do I map a one-to-many in Aurelius\".\n---\n\n# Aurelius Mapping\n\nMap Delphi classes to a relational database using TMS Aurelius attributes. All attributes are declared in unit `Aurelius.Mapping.Attributes`.\n\nRead `references/mapping.md` for all attribute syntax, options tables, and code examples. The guidance below covers decisions and rules that the reference does not emphasize.\n\n## Approach\n\n**New schema (no existing tables):** Default to `[Automapping]`. It infers table names, column names, nullability, and the identifier from field naming conventions, requiring no extra attributes for simple cases.\n\n**Legacy or fixed schema:** Use explicit attributes (`[Table]`, `[Column]`, `[Id]`, etc.) to match the existing column and table names exactly.\n\n**Mixed:** Automapping is not all-or-nothing — add explicit attributes only where the defaults need to be overridden.\n\nWhen the user hasn't specified, ask or infer from context (existing table definitions → explicit; greenfield → automapping).\n\n## Critical Rules\n\nThese are the most common mistakes. Apply them without exception.\n\n### Object lifetime — associations\n\n- **Never** create or free a many-to-one associated object in the parent's constructor or destructor. Aurelius owns the lifetime of associated entity objects.\n- Use plain `T` field type for eager associations; use `Proxy<T>` field type for lazy associations.\n- Expose lazy associations through a property that returns `FArtist.Value`.\n\n### Object lifetime — collections\n\n- **Do** create and free the `TList<T>` container in the parent's constructor and destructor.\n- **Never** create or free the child entity objects inside the list — Aurelius manages them.\n- Do **not** use `TObjectList<T>` with `OwnsObjects = True`.\n- For lazy collections, use `Proxy<TList<T>>` as the field type. Use `SetInitialValue`/`DestroyValue` instead of accessing `.Value` in constructor/destructor.\n\n### Registering entities\n\nAlways add `RegisterEntity` calls in the `initial"
+    },
+    {
+      "path": "other/audio-analyzer-dkyazzentwatwa-chatgpt-skills-fa3975d6/SKILL.md",
+      "name": "audio-analyzer",
+      "current_category": "other",
+      "llm_category": "analysis",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Identical to id 1 and 2, focusing on comprehensive audio analysis with multiple analytical features.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "4958c2495337a03793767f12b8010b3ef444e19a605e6aabafde922724a8d7a7",
+      "metadata_sha256": "6406f48319a1b1cd430104ec75ee5b3e2cfd11fb366b0c6c265551fa8db8a92a",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Comprehensive audio analysis with waveform visualization, spectrogram, BPM detection, key detection, frequency analysis, and loudness metrics.",
+      "content_excerpt": "---\nname: audio-analyzer\ndescription: Comprehensive audio analysis with waveform visualization, spectrogram, BPM detection, key detection, frequency analysis, and loudness metrics.\n---\n\n# Audio Analyzer\n\nA comprehensive toolkit for analyzing audio files. Extract detailed information about audio including tempo, musical key, frequency content, loudness metrics, and generate professional visualizations.\n\n## Quick Start\n\n```python\nfrom scripts.audio_analyzer import AudioAnalyzer\n\n# Analyze an audio file\nanalyzer = AudioAnalyzer(\"song.mp3\")\nanalyzer.analyze()\n\n# Get all analysis results\nresults = analyzer.get_results()\nprint(f\"BPM: {results['tempo']['bpm']}\")\nprint(f\"Key: {results['key']['key']} {results['key']['mode']}\")\n\n# Generate visualizations\nanalyzer.plot_waveform(\"waveform.png\")\nanalyzer.plot_spectrogram(\"spectrogram.png\")\n\n# Full report\nanalyzer.save_report(\"analysis_report.json\")\n```\n\n## Features\n\n- **Tempo/BPM Detection**: Accurate beat tracking with confidence score\n- **Key Detection**: Musical key and mode (major/minor) identification\n- **Frequency Analysis**: Spectrum, dominant frequencies, frequency bands\n- **Loudness Metrics**: RMS, peak, LUFS, dynamic range\n- **Waveform Visualization**: Multi-channel waveform plots\n- **Spectrogram**: Time-frequency visualization with customization\n- **Chromagram**: Pitch class visualization for harmonic analysis\n- **Beat Grid**: Visual beat markers overlaid on waveform\n- **Export Formats**: JSON report, PNG/SVG visualizations\n\n## API Reference\n\n### Initialization\n\n```python\n# From file\nanalyzer = AudioAnalyzer(\"audio.mp3\")\n\n# With custom sample rate\nanalyzer = AudioAnalyzer(\"audio.wav\", sr=44100)\n```\n\n### Analysis Methods\n\n```python\n# Run full analysis\nanalyzer.analyze()\n\n# Individual analyses\nanalyzer.analyze_tempo()      # BPM and beat positions\nanalyzer.analyze_key()        # Musical key detection\nanalyzer.analyze_loudness()   # RMS, peak, LUFS\nanalyzer.analyze_frequency()  # Spectrum analysis\nanalyzer.analyze_dynamics()   # Dynamic range\n```\n\n### Results Access\n\n```python\n# Get all results as dict\nresults = analyzer.get_results()\n\n# Individual results\ntempo = analyzer.get_tempo()        # {'bpm': 120, 'confidence': 0.85, 'beats': [...]}\nkey = analyzer.get_key()            # {'key': 'C', 'mode': 'major', 'confidence': 0.72}\nloudness = analyzer.get_loudness()  # {'rms_db': -14.2, 'peak_db': -0.5, 'lufs': -14.0}\nfreq = analyzer.get_frequency()     # {'dominant_freq': 440, 'spectrum': [...]}\n```\n\n### Visualiza"
+    },
+    {
+      "path": "other/ask-before-assuming/SKILL.md",
+      "name": "ask-before-assuming",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill explicitly states it is for 'configuring AI agent workflows and patterns' and is categorized as 'Agent Behavior' in its own metadata.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "fe38001652ec8be860015565bb5aac7a39dfc5829315cc24fbd2aecc44295b8f",
+      "metadata_sha256": "4fbf5aacaed6f3de2c058128573383aea5326fffb4b90d97b3b8b3c10af46839",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "If requirements are unclear or ambiguous, ask clarifying questions before proceeding Use when configuring AI agent workflows and patterns. Agent Behavior category skill.",
+      "content_excerpt": "---\nname: ask-before-assuming\ndescription: If requirements are unclear or ambiguous, ask clarifying questions before proceeding Use when configuring AI agent workflows and patterns. Agent Behavior category skill.\nmetadata:\n  category: Agent Behavior\n  priority: high\n  is-built-in: true\n  session-guardian-id: builtin_ask_before_assuming\n---\n\n# Ask Before Assuming\n\nIf requirements are unclear or ambiguous, ask clarifying questions before proceeding. Never make assumptions about business logic or user preferences. When you encounter a decision point that could go multiple ways, stop and ask rather than guessing."
+    },
+    {
+      "path": "other/assertion-troubleshooting-phylaxsystems-agent-skills-2/SKILL.md",
+      "name": "assertion-troubleshooting",
+      "current_category": "other",
+      "llm_category": "testing",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Troubleshooting assertion failures in a testing framework (Phylax Credible Layer) is a testing/QA activity.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "bb618461be7fde212e5c81511e47fcd5cedd765f1c8da30eec18a9ff7d694238",
+      "metadata_sha256": "e86a869e1a723d59748ef8ca860326f18064dd4f60498aeead21a96728440350",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Phylax Credible Layer assertions troubleshooting. Diagnoses common assertion failures and non-triggering issues. Use when phylax/credible layer assertions fail unexpectedly or do not execute.",
+      "content_excerpt": "---\nname: assertion-troubleshooting\ndescription: \"Phylax Credible Layer assertions troubleshooting. Diagnoses common assertion failures and non-triggering issues. Use when phylax/credible layer assertions fail unexpectedly or do not execute.\"\n---\n\n# Assertion Troubleshooting\n\nUse this when assertions fail unexpectedly, revert with OutOfGas, or never execute.\n\n## Meta-Cognitive Protocol\nAdopt the role of a Meta-Cognitive Reasoning Expert.\n\nFor every complex problem:\n1.DECOMPOSE: Break into sub-problems\n2.SOLVE: Address each with explicit confidence (0.0-1.0)\n3.VERIFY: Check logic, facts, completeness, bias\n4.SYNTHESIZE: Combine using weighted confidence\n5.REFLECT: If confidence <0.8, identify weakness and retry\nFor simple questions, skip to direct answer.\n\nAlways output:\n∙Clear answer\n∙Confidence level\n∙Key caveats\n\n## When to Use\n- Tests show \"Expected 1 assertion to be executed, but 0 were executed\".\n- Assertions revert with `OutOfGas` or unknown reasons.\n- Call inputs appear empty or duplicate.\n\n## When NOT to Use\n- You need invariant design. Use `designing-assertions`.\n- You need implementation details. Use `implementing-assertions`.\n- You need test strategy or fuzzing. Use `testing-assertions`.\n\n## Quick Start\n1. Confirm trigger selector matches the target function.\n2. Ensure `cl.assertion()` is immediately before the target call; the next external call consumes it.\n3. Check if the target call reverted before assertions ran.\n4. Verify cheatcodes are used in assertion functions, not constructors (`ph.load`, not `vm.load`).\n5. Remember internal Solidity calls are not traced; triggers only fire on external entrypoints.\n6. Use `pcl test -vvvv` for full traces and gas diagnostics.\n7. Confirm `FOUNDRY_PROFILE=assertions` when running `pcl test`.\n8. <u>Use `pcl test` for assertion tests because it includes the `cl.addAssertion` cheatcode; use `forge test` only for regular protocol tests.</u>\n9. If the failure is `CreateContractSizeLimit`, split assertions into smaller contracts.\n10. If the failure is an empty revert or ABI decode panic, re-check call input decoding (call inputs exclude selectors).\n\n## Rationalizations to Reject\n- \"The assertion should have run.\" Verify triggers and call order first.\n- \"It is probably a test issue.\" Validate the target call succeeds without assertions.\n- \"Gas is fine.\" Happy path often consumes the most gas.\n\n## References\n- [Common Errors and Fixes](references/common-errors.md)\n"
+    },
+    {
+      "path": "other/async-runner/SKILL.md",
+      "name": "async-runner",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is about running background agents and bash commands asynchronously for development workflows, including dev servers, parallel tests, long builds, and multi-agent research tasks.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "b4a084b8a2f6805f2bdba70af72868cd0a5cfdc2f83cd0b15b6dde96319673e2",
+      "metadata_sha256": "3575dee66b1fbf7b4fb7b41d839762e40c8d7c23cac599a857bafe7010cbac87",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Run background agents and bash commands asynchronously for CircleTel development. Use when running dev servers, parallel tests, long builds, or multi-agent research tasks without blocking the main workflow.",
+      "content_excerpt": "---\nname: async-runner\ndescription: Run background agents and bash commands asynchronously for CircleTel development. Use when running dev servers, parallel tests, long builds, or multi-agent research tasks without blocking the main workflow.\n---\n\n# Async Task Runner\n\nSkill for managing asynchronous background tasks and agents in CircleTel development.\n\n## When to Use\n\nThis skill activates when you:\n- Need to run dev server while coding\n- Want parallel test execution\n- Run long builds in background\n- Spawn research agents for codebase exploration\n- Monitor logs while implementing fixes\n\n**Keywords**: background, parallel, async, spawn, concurrent, dev server, watch, monitor, simultaneously\n\n## Quick Reference\n\n| Action | Command/Method |\n|--------|----------------|\n| Background bash | `Ctrl+B` or append `&` |\n| Check running tasks | `/tasks` |\n| Kill background task | Use task ID from `/tasks` |\n| Spawn background agent | Task tool with `run_in_background: true` |\n\n## Background Bash Commands\n\n### Development Server (Always Background)\n```bash\n# Start dev server - never blocks\nnpm run dev:memory &\n```\n\n### Parallel Test Execution\nAsk Claude:\n```\n\"Run these tests in parallel:\n1. Type check\n2. Unit tests\n3. E2E tests\n\nContinue working on the auth fix while they run.\"\n```\n\nClaude will spawn:\n```bash\nnpm run type-check:memory &\nnpm run test &\nnpm run test:e2e &\n```\n\n### Long-Running Builds\n```\n\"Start the production build in background while I review code\"\n```\n\nClaude runs:\n```bash\nnpm run build:memory &\n```\nThen continues with your code review.\n\n### Log Monitoring\n```\n\"Tail the Supabase logs in background while I debug\"\n```\n\n## Background Agents\n\n### Parallel Research\n```\n\"Spawn 3 Explore agents in parallel:\n1. Investigate how auth works in /app/dashboard\n2. Map the payment flow in /app/checkout\n3. Document the coverage API integration\"\n```\n\nClaude spawns specialized Explore agents that run concurrently. Results come back asynchronously.\n\n### Multi-File Analysis\n```\n\"Analyze these files in parallel:\n1. app/api/payment/route.ts - check error handling\n2. lib/payment/netcash.ts - review integration\n3. components/checkout/PaymentForm.tsx - check validation\"\n```\n\n### Codebase Exploration\n```\n\"Use Explore agents to find:\n1. All files that import CustomerAuthProvider\n2. All API routes that use service role\n3. All components with loading states\"\n```\n\n## CircleTel-Specific Patterns\n\n### Full Development Setup\n```\n\"Start my development environment:\n1. Dev server (backgr"
+    },
+    {
+      "path": "other/auth-patterns-davepoon-buildwithclaude-2/SKILL.md",
+      "name": "auth-patterns",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Duplicate of id 1 with identical content focusing on authentication patterns in Next.js.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "494c73d65ea64bb17717ee46f0b36fccf886e701d2f2795248633bb220ae7fc8",
+      "metadata_sha256": "532b466265512f8c107b208627ab231cb98e76c372a9ef2c740f77a3429b5443",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "This skill should be used when the user asks about \"authentication in Next.js\", \"NextAuth\", \"Auth.js\", \"middleware auth\", \"protected routes\", \"session management\", \"JWT\", \"login flow\", or needs guidance on implementing authentication and authorization in Next.js applications.",
+      "content_excerpt": "---\nname: auth-patterns\ndescription: This skill should be used when the user asks about \"authentication in Next.js\", \"NextAuth\", \"Auth.js\", \"middleware auth\", \"protected routes\", \"session management\", \"JWT\", \"login flow\", or needs guidance on implementing authentication and authorization in Next.js applications.\nversion: 1.0.0\n---\n\n# Authentication Patterns in Next.js\n\n## Overview\n\nNext.js supports multiple authentication strategies. This skill covers common patterns including NextAuth.js (Auth.js), middleware-based protection, and session management.\n\n## Authentication Libraries\n\n| Library | Best For |\n|---------|----------|\n| NextAuth.js (Auth.js) | Full-featured auth with providers |\n| Clerk | Managed auth service |\n| Lucia | Lightweight, flexible auth |\n| Supabase Auth | Supabase ecosystem |\n| Custom JWT | Full control |\n\n## NextAuth.js v5 Setup\n\n### Installation\n\n```bash\nnpm install next-auth@beta\n```\n\n### Configuration\n\n```tsx\n// auth.ts\nimport NextAuth from 'next-auth'\nimport GitHub from 'next-auth/providers/github'\nimport Credentials from 'next-auth/providers/credentials'\n\nexport const { handlers, auth, signIn, signOut } = NextAuth({\n  providers: [\n    GitHub({\n      clientId: process.env.GITHUB_ID,\n      clientSecret: process.env.GITHUB_SECRET,\n    }),\n    Credentials({\n      credentials: {\n        email: { label: 'Email', type: 'email' },\n        password: { label: 'Password', type: 'password' },\n      },\n      authorize: async (credentials) => {\n        const user = await getUserByEmail(credentials.email)\n        if (!user || !verifyPassword(credentials.password, user.password)) {\n          return null\n        }\n        return user\n      },\n    }),\n  ],\n  callbacks: {\n    authorized: async ({ auth }) => {\n      return !!auth\n    },\n  },\n})\n```\n\n### API Route Handler\n\n```tsx\n// app/api/auth/[...nextauth]/route.ts\nimport { handlers } from '@/auth'\n\nexport const { GET, POST } = handlers\n```\n\n### Middleware Protection\n\n```tsx\n// middleware.ts\nexport { auth as middleware } from '@/auth'\n\nexport const config = {\n  matcher: ['/dashboard/:path*', '/api/protected/:path*'],\n}\n```\n\n## Getting Session Data\n\n### In Server Components\n\n```tsx\n// app/dashboard/page.tsx\nimport { auth } from '@/auth'\nimport { redirect } from 'next/navigation'\n\nexport default async function DashboardPage() {\n  const session = await auth()\n\n  if (!session) {\n    redirect('/login')\n  }\n\n  return (\n    <div>\n      <h1>Welcome, {session.user?.name}</h1>\n    </div>\n  )\n}\n```\n\n### In Cl"
+    },
+    {
+      "path": "other/assert-andrelandgraf-fullstackrecipes/SKILL.md",
+      "name": "assert",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Duplicate of skill 3 with identical content - TypeScript assertion function is a development utility.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "c42f63d64d1e6547011b003fd437d8afd902252c4fa85930372973c9eddeaac0",
+      "metadata_sha256": "08837622f04fe1d7e30cb1026ef6ca23e285cc9b5b868b8211153a901a946287",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "TypeScript assertion function for runtime type narrowing with descriptive error messages. Based on tiny-invariant.",
+      "content_excerpt": "---\nname: assert\ndescription: TypeScript assertion function for runtime type narrowing with descriptive error messages. Based on tiny-invariant.\n---\n\n# Assertion Helper\n\nTo set up Assertion Helper, refer to the fullstackrecipes MCP server resource:\n\n**Resource URI:** `recipe://fullstackrecipes.com/assert`\n\nUse the fullstackrecipes MCP server to fetch this resource and follow the setup instructions.\n"
+    },
+    {
+      "path": "other/at-dispatch-v2-microck-ordinary-claude-skil/SKILL.md",
+      "name": "at-dispatch-v2",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is about converting PyTorch AT_DISPATCH macros to AT_DISPATCH_V2 format in ATen C++ code. This involves code conversion, refactoring, and working with C++ kernels, which aligns with software development workflows, coding, and refactoring.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "b2d4e29929eb7f2c0ef44b0f2be2ae4a7017fcf33fad848b5a47eab4c11693b8",
+      "metadata_sha256": "38ea197f0cee4cd5aa0ce869be31606f17e051cf0659ed372cca12aa497f3c8b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Convert PyTorch AT_DISPATCH macros to AT_DISPATCH_V2 format in ATen C++ code. Use when porting AT_DISPATCH_ALL_TYPES_AND*, AT_DISPATCH_FLOATING_TYPES*, or other dispatch macros to the new v2 API. For ATen kernel files, CUDA kernels, and native operator implementations.",
+      "content_excerpt": "---\nname: at-dispatch-v2\ndescription: Convert PyTorch AT_DISPATCH macros to AT_DISPATCH_V2 format in ATen C++ code. Use when porting AT_DISPATCH_ALL_TYPES_AND*, AT_DISPATCH_FLOATING_TYPES*, or other dispatch macros to the new v2 API. For ATen kernel files, CUDA kernels, and native operator implementations.\n---\n\n# AT_DISPATCH to AT_DISPATCH_V2 Converter\n\nThis skill helps convert PyTorch's legacy AT_DISPATCH macros to the new AT_DISPATCH_V2 format, as defined in `aten/src/ATen/Dispatch_v2.h`.\n\n## When to use this skill\n\nUse this skill when:\n- Converting AT_DISPATCH_* macros to AT_DISPATCH_V2\n- Porting ATen kernels to use the new dispatch API\n- Working with files in `aten/src/ATen/native/` that use dispatch macros\n- User mentions \"AT_DISPATCH\", \"dispatch v2\", \"Dispatch_v2.h\", or macro conversion\n\n## Quick reference\n\n**Old format:**\n```cpp\nAT_DISPATCH_ALL_TYPES_AND3(kBFloat16, kHalf, kBool, dtype, \"kernel_name\", [&]() {\n  // lambda body\n});\n```\n\n**New format:**\n```cpp\nAT_DISPATCH_V2(dtype, \"kernel_name\", AT_WRAP([&]() {\n  // lambda body\n}), AT_EXPAND(AT_ALL_TYPES), kBFloat16, kHalf, kBool);\n```\n\n## Key transformations\n\n1. **Reorder arguments**: `scalar_type` and `name` come first, then lambda, then types\n2. **Wrap the lambda**: Use `AT_WRAP(lambda)` to handle internal commas\n3. **Expand type groups**: Use `AT_EXPAND(AT_ALL_TYPES)` instead of implicit expansion\n4. **List individual types**: Add extra types (kHalf, kBFloat16, etc.) after expanded groups\n5. **Add include**: `#include <ATen/Dispatch_v2.h>` near other Dispatch includes\n\n## Instructions\n\n### Step 1: Add the Dispatch_v2.h include\n\nAdd the v2 header near the existing `#include <ATen/Dispatch.h>`:\n\n```cpp\n#include <ATen/Dispatch.h>\n#include <ATen/Dispatch_v2.h>\n```\n\nKeep the old Dispatch.h include for now (other code may still need it).\n\n### Step 2: Identify the old dispatch pattern\n\nCommon patterns to convert:\n\n- `AT_DISPATCH_ALL_TYPES_AND{2,3,4}(type1, type2, ..., scalar_type, name, lambda)`\n- `AT_DISPATCH_FLOATING_TYPES_AND{2,3}(type1, type2, ..., scalar_type, name, lambda)`\n- `AT_DISPATCH_ALL_TYPES_AND_COMPLEX_AND{2,3}(type1, ..., scalar_type, name, lambda)`\n- `AT_DISPATCH_FLOATING_AND_COMPLEX_TYPES_AND{2,3}(type1, ..., scalar_type, name, lambda)`\n\n### Step 3: Map the old macro to type groups\n\nIdentify which type group macro corresponds to the base types:\n\n| Old macro base | AT_DISPATCH_V2 type group |\n|----------------|---------------------------|\n| `ALL_TYPES` | `AT_EXPAND(AT_ALL_TYPES)` |\n| `FLO"
+    },
+    {
+      "path": "other/audience-synthesis-jmagly-ai-writing-guide/SKILL.md",
+      "name": "audience-synthesis",
+      "current_category": "other",
+      "llm_category": "marketing",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Identical to id 0; the skill synthesizes audience insights into personas and segments, which is a core marketing activity for targeting and strategy.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "ca7cbf259175c6a2217ac6b4712124f33fa7e155861f2c8a759cf84a44ada599",
+      "metadata_sha256": "8eff13da755152c9498069c7d0499ff8e2e17931813487fc90fa6b83f2978243",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Synthesize audience insights from multiple data sources into unified personas and segments. Use when relevant to the task.",
+      "content_excerpt": "---\nname: audience-synthesis\ndescription: Synthesize audience insights from multiple data sources into unified personas and segments. Use when relevant to the task.\n---\n\n# audience-synthesis\n\nSynthesize audience insights from multiple data sources into unified personas and segments.\n\n## Triggers\n\n- \"analyze audience\"\n- \"build personas\"\n- \"segment audience\"\n- \"who is our target\"\n- \"audience insights\"\n- \"customer profile\"\n\n## Purpose\n\nThis skill creates comprehensive audience understanding by:\n- Aggregating data from multiple sources\n- Building data-driven personas\n- Creating behavioral segments\n- Identifying growth opportunities\n- Recommending targeting strategies\n\n## Behavior\n\nWhen triggered, this skill:\n\n1. **Gathers audience data**:\n   - Analytics demographics\n   - CRM customer data\n   - Social audience insights\n   - Survey/research data\n   - Purchase behavior\n\n2. **Identifies patterns**:\n   - Demographic clusters\n   - Behavioral segments\n   - Value tiers\n   - Engagement patterns\n\n3. **Builds personas**:\n   - Synthesize data into archetypes\n   - Document motivations and pain points\n   - Map customer journey\n   - Identify content preferences\n\n4. **Creates segments**:\n   - Behavioral segmentation\n   - Value-based segmentation\n   - Engagement segmentation\n   - Lifecycle segmentation\n\n5. **Generates recommendations**:\n   - Targeting strategies\n   - Content recommendations\n   - Channel preferences\n   - Growth opportunities\n\n## Data Sources\n\n### First-Party Data\n\n```yaml\nfirst_party:\n  analytics:\n    source: Google Analytics, Mixpanel\n    data:\n      - demographics\n      - interests\n      - behavior\n      - conversion_paths\n\n  crm:\n    source: Salesforce, HubSpot\n    data:\n      - customer_attributes\n      - purchase_history\n      - lifetime_value\n      - engagement_history\n\n  email:\n    source: Mailchimp, Klaviyo\n    data:\n      - email_engagement\n      - preferences\n      - segments\n\n  product:\n    source: Product analytics\n    data:\n      - feature_usage\n      - retention\n      - activation\n```\n\n### Second-Party Data\n\n```yaml\nsecond_party:\n  social:\n    source: Instagram, LinkedIn, Twitter\n    data:\n      - follower_demographics\n      - engagement_patterns\n      - content_preferences\n\n  advertising:\n    source: Meta, Google, LinkedIn\n    data:\n      - audience_overlap\n      - conversion_audiences\n      - lookalike_performance\n\n  partnerships:\n    source: Partner data shares\n    data:\n      - co-marketing audiences\n      - industry benchmarks\n```\n\n### Third-"
+    },
+    {
+      "path": "other/asi-agent-orama/SKILL.md",
+      "name": "asi-agent-orama",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill bridges Agent-O-Rama (agent platform) with ASI patterns, enabling triadic agent orchestration with distributed topology.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "c5c6b69dac4a852081f14e9cfbf5c52348f3b95464ac6133242dda48a7d7e18b",
+      "metadata_sha256": "8e4c785ca67a777f2b3bf5b56f2e6d50d47ba77c3a054ad2d9032f3d25502902",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "ASI Agent-O-Rama Skill",
+      "content_excerpt": "---\nname: asi-agent-orama\ndescription: ASI Agent-O-Rama Skill\nversion: 1.0.0\n---\n\n# ASI Agent-O-Rama Skill\n\n**Status**: ✅ Production Ready\n**Trit**: 0 (ERGODIC - coordinator)\n**Integration**: Red Planet Labs Rama + ASI patterns\n\n## Overview\n\nBridge between Agent-O-Rama (Rama-based agent platform) and ASI (Autonomous Superintelligence) patterns. Enables triadic agent orchestration with GF(3) conservation on Rama's distributed topology.\n\n## Core Concepts\n\n### TIDAR Integration\n```clojure\n;; Tree-structured Iterative Decomposition And Recombination\n(defn tidar-agent [task seed]\n  (let [children (splitmix-fork seed 3)]\n    {:minus  (spawn-agent :validate task (nth children 0))\n     :ergodic (spawn-agent :coordinate task (nth children 1))\n     :plus   (spawn-agent :execute task (nth children 2))}))\n```\n\n### Rama Module Bridge\n```clojure\n(defagentmodule ASIAgentModule [setup topologies]\n  (<<sources\n    (source> *asi-tasks :> task)\n    ;; Triadic decomposition\n    (tidar-forward task :> subtasks)\n    (batch<- subtasks :> results)\n    (tidar-backward results :> final)\n    (aor/result! final)))\n```\n\n## Commands\n\n```bash\njust asi-agent-start        # Start ASI agent module\njust asi-tidar \"task\" seed  # Run TIDAR pipeline\njust asi-gf3-verify         # Verify GF(3) conservation\n```\n\n## GF(3) Invariant\n\n```\nΣ(validator, coordinator, executor) = (-1) + (0) + (+1) = 0 (mod 3)\n```\n\n## See Also\n\n- `rama-gay-clojure` - Rama with deterministic coloring\n- `tidar` - TIDAR orchestration patterns\n- `gay-mcp` - Color generation backend\n- `bisimulation-game` - Skill dispersal with GF(3)\n\n---\n\n**Skill Name**: asi-agent-orama\n**Type**: Agent Platform Bridge\n**Trit**: 0 (ERGODIC)\n**GF(3)**: Conserved via triadic spawn\n\n\n\n## Scientific Skill Interleaving\n\nThis skill connects to the K-Dense-AI/claude-scientific-skills ecosystem:\n\n### Graph Theory\n- **networkx** [○] via bicomodule\n  - Universal graph hub\n\n### Bibliography References\n\n- `general`: 734 citations in bib.duckdb\n\n## Cat# Integration\n\nThis skill maps to **Cat# = Comod(P)** as a bicomodule in the equipment structure:\n\n```\nTrit: 0 (ERGODIC)\nHome: Prof\nPoly Op: ⊗\nKan Role: Adj\nColor: #26D826\n```\n\n### GF(3) Naturality\n\nThe skill participates in triads satisfying:\n```\n(-1) + (0) + (+1) ≡ 0 (mod 3)\n```\n\nThis ensures compositional coherence in the Cat# equipment structure."
+    },
+    {
+      "path": "other/article-illustrator/SKILL.md",
+      "name": "Article Illustrator",
+      "current_category": "other",
+      "llm_category": "generation",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill generates illustrations for articles using AI image generation with a Type x Style system, which is a content generation workflow.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "b2a9e0ebe0fcc92d1a3599da50b3a3d2af45d5e728d31af59b741f613ebf667d",
+      "metadata_sha256": "b3ee01ce60d5246c2adab012237480fe47f80e36ff6dbe9ddf689ee2a9f68556",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "When the user wants to add illustrations to an article or blog post. Triggers on: \"illustrate article\", \"add images to article\", \"generate illustrations\", \"article images\", or requests to visually enhance written content. Analyzes article structure, identifies positions for visual aids, and generates illustrations using a Type x Style two-dimension approach.",
+      "content_excerpt": "---\nname: Article Illustrator\nmodel: reasoning\ndescription: >\n  When the user wants to add illustrations to an article or blog post. Triggers\n  on: \"illustrate article\", \"add images to article\", \"generate illustrations\",\n  \"article images\", or requests to visually enhance written content. Analyzes\n  article structure, identifies positions for visual aids, and generates\n  illustrations using a Type x Style two-dimension approach.\nversion: 1.0.0\ntags: [writing, illustration, images, articles, content]\n---\n\n# Article Illustrator\n\nAnalyze articles, identify optimal illustration positions, and generate images using a Type x Style consistency system.\n\n\n## Installation\n\n### OpenClaw / Moltbot / Clawbot\n\n```bash\nnpx clawhub@latest install article-illustrator\n```\n\n\n## NEVER Do\n\n- Illustrate metaphors literally (e.g., if article says \"chainsaw cutting watermelon,\" visualize the underlying concept instead)\n- Generate generic decorative images that don't connect to content\n- Skip the settings confirmation step (Step 3)\n- Begin generating before confirming type, density, and style with the user\n- Create illustrations without justifying each position by content needs\n\n## Two Dimensions\n\n| Dimension | Controls | Examples |\n|-----------|----------|----------|\n| **Type** | Information structure, layout | infographic, scene, flowchart, comparison, framework, timeline |\n| **Style** | Visual aesthetics, mood | notion, warm, minimal, blueprint, watercolor, elegant, editorial, scientific |\n\nTypes and styles combine freely: `--type infographic --style blueprint`\n\n### Type Selection Guide\n\n| Type | Best For |\n|------|----------|\n| `infographic` | Data, metrics, technical articles |\n| `scene` | Narratives, personal stories, emotional content |\n| `flowchart` | Tutorials, workflows, processes |\n| `comparison` | Side-by-side, before/after, options |\n| `framework` | Methodologies, models, architecture |\n| `timeline` | History, progress, evolution |\n\n### Style Selection Guide\n\n| Style | Best For |\n|-------|----------|\n| `notion` (Default) | Knowledge sharing, SaaS, productivity |\n| `elegant` | Business, thought leadership |\n| `warm` | Personal growth, lifestyle, education |\n| `minimal` | Philosophy, core concepts |\n| `blueprint` | Architecture, system design |\n| `watercolor` | Lifestyle, travel, creative |\n| `editorial` | Tech explainers, journalism |\n| `scientific` | Academic, technical research |\n\nFull style specs and compatibility matrix: [references/styles.md](references/styles.md)"
+    },
+    {
+      "path": "other/architecture-diagram-creator-mhattingpete-claude-skills-market/SKILL.md",
+      "name": "architecture-diagram-creator",
+      "current_category": "other",
+      "llm_category": "design",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill creates comprehensive HTML architecture diagrams with SVG visualizations, focusing on visual documentation of system architecture, data flows, and business context.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "7d506e3fc0beee3ba91f97df6465d0f4d0fe2daf7b5ffa369ba876c9ab193992",
+      "metadata_sha256": "124b730e41df56572e2580a54ff23c52935edc676aa99abfe2782de9ce722956",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Create comprehensive HTML architecture diagrams showing data flows, business objectives, features, technical architecture, and deployment. Use when users request system architecture, project documentation, high-level overviews, or technical specifications.",
+      "content_excerpt": "---\nname: architecture-diagram-creator\ndescription: Create comprehensive HTML architecture diagrams showing data flows, business objectives, features, technical architecture, and deployment. Use when users request system architecture, project documentation, high-level overviews, or technical specifications.\n---\n\n# Architecture Diagram Creator\n\nCreate comprehensive HTML architecture diagrams with data flows, business context, and system architecture.\n\n## When to Use\n\n- \"Create architecture diagram for [project]\"\n- \"Generate high-level overview\"\n- \"Document system architecture\"\n- \"Show data flow and processing pipeline\"\n\n## Components to Include\n\n1. **Business Context**: objectives, users, value, metrics\n2. **Data Flow**: sources → processing → outputs with SVG diagram\n3. **Processing Pipeline**: multi-stage visualization\n4. **System Architecture**: layered components (data/processing/services/output)\n5. **Features**: functional and non-functional requirements\n6. **Deployment**: model, prerequisites, workflows\n\n## HTML Structure\n\n```html\n<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>[Project] Architecture</title>\n  <style>\n    body { font-family: system-ui; max-width: 1200px; margin: 0 auto; padding: 20px; }\n    h1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; }\n    .section { margin: 30px 0; }\n    svg { max-width: 100%; }\n    /* Use semantic colors: #4299e1 (data), #ed8936 (processing), #9f7aea (AI), #48bb78 (success) */\n  </style>\n</head>\n<body>\n  <h1>[Project Name] - Architecture Overview</h1>\n\n  <!-- Business Context Section -->\n  <!-- Data Flow Diagram (SVG) -->\n  <!-- Processing Pipeline (SVG) -->\n  <!-- System Architecture Layers -->\n  <!-- Features Grid -->\n  <!-- Deployment Info -->\n</body>\n</html>\n```\n\n## SVG Pattern for Data Flow\n\n```html\n<svg viewBox=\"0 0 800 400\">\n  <!-- Data sources (left, blue) -->\n  <rect x=\"50\" y=\"150\" width=\"120\" height=\"80\" fill=\"#4299e1\"/>\n\n  <!-- Processing (center, orange) -->\n  <rect x=\"340\" y=\"150\" width=\"120\" height=\"80\" fill=\"#ed8936\"/>\n\n  <!-- Outputs (right, green) -->\n  <rect x=\"630\" y=\"150\" width=\"120\" height=\"80\" fill=\"#48bb78\"/>\n\n  <!-- Arrows connecting -->\n  <path d=\"M170,190 L340,190\" stroke=\"#666\" stroke-width=\"2\" marker-end=\"url(#arrow)\"/>\n</svg>\n```\n\n## Workflow\n\n1. Analyze project (README, code structure)\n2. Extract: purpose, data sources, processing, tech stack, out"
+    },
+    {
+      "path": "other/audio-playback-bbeierle12-skill-mcp-claude/SKILL.md",
+      "name": "audio-playback",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Audio playback implementation using Tone.js is a frontend development task involving JavaScript library integration, web audio APIs, and scheduling.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "2526ea8bbf5334338c197bc2f874da74b9829cfdca53946119bb369d4ed7dcee",
+      "metadata_sha256": "b63942bfbc208f3f723892182aaec43a311ff9a5d60eab9709fc6adb41dedb48",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Audio playback using Tone.js including players, transport, scheduling, and loading audio. Use when implementing background music, sound effects, audio synchronization, or timed audio events. Essential for any audio-enabled web application.",
+      "content_excerpt": "---\nname: audio-playback\ndescription: Audio playback using Tone.js including players, transport, scheduling, and loading audio. Use when implementing background music, sound effects, audio synchronization, or timed audio events. Essential for any audio-enabled web application.\n---\n\n# Audio Playback\n\nAudio playback and scheduling with Tone.js.\n\n## Quick Start\n\n```bash\nnpm install tone\n```\n\n```javascript\nimport * as Tone from 'tone';\n\n// Simple playback\nconst player = new Tone.Player('/audio/music.mp3').toDestination();\n\n// Must start audio context after user interaction\ndocument.addEventListener('click', async () => {\n  await Tone.start();\n  player.start();\n});\n```\n\n## Core Concepts\n\n### Audio Context Initialization\n\n```javascript\nimport * as Tone from 'tone';\n\n// Audio context requires user gesture to start\nasync function initAudio() {\n  await Tone.start();\n  console.log('Audio context started');\n}\n\n// Common pattern: init on first click\ndocument.addEventListener('click', initAudio, { once: true });\n```\n\n### Player Basics\n\n```javascript\n// Create player\nconst player = new Tone.Player({\n  url: '/audio/track.mp3',\n  loop: true,\n  autostart: false,\n  onload: () => console.log('Loaded')\n}).toDestination();\n\n// Control\nplayer.start();\nplayer.stop();\nplayer.seek(10); // Seek to 10 seconds\nplayer.volume.value = -6; // Volume in dB\n\n// Properties\nplayer.state;      // 'started' | 'stopped'\nplayer.loaded;     // boolean\nplayer.duration;   // in seconds\n```\n\n### Loading Audio\n\n```javascript\n// Single file\nconst player = new Tone.Player('/audio/music.mp3');\nawait player.load('/audio/music.mp3');\n\n// Multiple files with Players\nconst players = new Tone.Players({\n  kick: '/audio/kick.mp3',\n  snare: '/audio/snare.mp3',\n  hihat: '/audio/hihat.mp3'\n}).toDestination();\n\n// Access individual player\nplayers.player('kick').start();\n\n// Buffer for programmatic access\nconst buffer = new Tone.Buffer('/audio/sample.mp3', () => {\n  console.log('Buffer loaded, duration:', buffer.duration);\n});\n```\n\n## Transport\n\n### Basic Transport Control\n\n```javascript\n// Global transport (master clock)\nTone.Transport.start();\nTone.Transport.stop();\nTone.Transport.pause();\n\n// Position\nTone.Transport.position = '0:0:0'; // bars:beats:sixteenths\nTone.Transport.seconds = 10;        // in seconds\n\n// Tempo\nTone.Transport.bpm.value = 120;\n\n// Time signature\nTone.Transport.timeSignature = [4, 4];\n```\n\n### Scheduling Events\n\n```javascript\n// Schedule at specific time\nTone.Transport.schedule((time) => {"
+    },
+    {
+      "path": "other/arena-allocator-mgreenly-ikigai/SKILL.md",
+      "name": "patterns/arena-allocator",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Same skill as id 0 - arena allocator pattern for C development.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "f5b0fffc6aa72bbdd14db820fdb99365410e65ca227996dbe48e2c44dba9b7c2",
+      "metadata_sha256": "bccc755884657793d964d773947d0e6b5e763dc82cc9a524eb2e739a127d0a5b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Arena Allocator Pattern (C-Specific) pattern for C development",
+      "content_excerpt": "---\nname: patterns/arena-allocator\ndescription: Arena Allocator Pattern (C-Specific) pattern for C development\n---\n\n# Arena Allocator Pattern (C-Specific)\n\nAllocate many objects from single memory region, free all at once. No individual frees. Hierarchical arenas enable nested lifetimes.\n\n## ikigai Application\n\n**talloc:** ikigai uses talloc for hierarchical arenas:\n```c\nTALLOC_CTX *request_ctx = talloc_new(parent);\n// All allocations are children\nchar *str = talloc_strdup(request_ctx, \"hello\");\nik_msg_t *msg = talloc(request_ctx, ik_msg_t);\n// Single free cleans everything\ntalloc_free(request_ctx);\n```\n\n**Ownership hierarchy:**\n```\nroot_ctx\n  └─> repl_ctx\n       └─> scrollback (freed with repl)\n       └─> messages[] (freed with repl)\n```\n\n**Benefits:** No memory leaks by design. No use-after-free. Clear ownership. Fast bulk deallocation.\n\n**See:** `project/memory.md` for talloc patterns.\n"
+    },
+    {
+      "path": "other/audio-fingerprint-expert-willsigmon-sigstack-site/SKILL.md",
+      "name": "Audio Fingerprint Expert",
+      "current_category": "other",
+      "llm_category": "ai-ml",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "This is a duplicate of skill id 1 with the same description and content, focusing on audio fingerprinting and pattern detection using machine learning techniques for content analysis.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "c1f5fcd550674edcb8045491d8e42124c57fc15acb5a4013208284c89c9469a9",
+      "metadata_sha256": "ab964268e8116854ff4cd3f7a9d9e8394846ec31612848822f14c2b2621fbcc0",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "You are the audio fingerprinting and pattern detection specialist for Modcaster's content analysis.",
+      "content_excerpt": "---\nname: Audio Fingerprint Expert\ndescription: You are the audio fingerprinting and pattern detection specialist for Modcaster's content analysis.\nallowed-tools: Edit, Grep\n---\n\n# Audio Fingerprint Expert\n\nYou are the audio fingerprinting and pattern detection specialist for Modcaster's content analysis.\n\n## Your Job\nImplement and validate robust audio fingerprinting for intro/outro detection, ad identification, and cross-show content matching.\n\n## Core Fingerprinting Technologies\n\n### 1. Spectral Peak Extraction (Shazam-Style)\n**Use Case**: Detect recurring musical intros/outros, repeated ads\n\n**Algorithm**:\n```\nFor each audio frame (typically 100-200ms):\n1. Apply FFT using vDSP (battery-efficient)\n2. Extract spectral peaks (local maxima in frequency domain)\n3. Create constellation map (time-frequency pairs)\n4. Hash peaks into compact fingerprint\n5. Store fingerprint with timestamp in database\n```\n\n**Advantages**:\n- Robust to noise, compression artifacts\n- Very compact (1KB per 30 seconds)\n- Fast matching (locality-sensitive hashing)\n\n**Limitations**:\n- Requires identical or near-identical audio\n- Struggles with heavily modified content (pitch shift, time stretch)\n\n### 2. Mel-Frequency Cepstral Coefficients (MFCCs)\n**Use Case**: Detect similar-sounding segments (voice cadence, speaking style)\n\n**Algorithm**:\n```\nFor each audio frame:\n1. Compute Mel-scale spectrogram\n2. Apply discrete cosine transform\n3. Extract first 13 coefficients\n4. Create MFCC feature vector\n5. Use for ML classifier input (ad vs content)\n```\n\n**Advantages**:\n- Captures perceptual audio characteristics\n- Good for speech analysis (prosody, cadence)\n- Works with Core ML sound classifiers\n\n**Limitations**:\n- More CPU-intensive than spectral peaks\n- Larger feature vectors\n- Requires ML model for classification\n\n### 3. Chromaprint (Perceptual Hash)\n**Use Case**: Match similar audio across compression formats\n\n**Algorithm**:\n```\n1. Resample to 11025 Hz mono\n2. Compute short-time Fourier transform\n3. Extract chroma features (pitch classes)\n4. Quantize and compress to binary fingerprint\n5. Compare using Hamming distance\n```\n\n**Advantages**:\n- Robust to MP3/AAC compression\n- Works across different bitrates\n- Efficient comparison (XOR + popcount)\n\n**Limitations**:\n- Less precise than spectral peaks\n- Requires third-party library (AcoustID)\n\n## Implementation Strategy for Modcaster\n\n### Intro/Outro Detection Pipeline\n```\nEpisode Download Complete\n    ↓\n[Extract First 3 Minutes]\n    ↓\n[Generate S"
+    },
+    {
+      "path": "other/auth-patterns/SKILL.md",
+      "name": "auth-patterns",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Skill explicitly covers authentication patterns, NextAuth.js, session management, and protected routes in Next.js applications.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "494c73d65ea64bb17717ee46f0b36fccf886e701d2f2795248633bb220ae7fc8",
+      "metadata_sha256": "ffd75d1e7a92e7d7484d8b2d04594e2efb8c207a594fb08bd1e09692c9f93126",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "This skill should be used when the user asks about \"authentication in Next.js\", \"NextAuth\", \"Auth.js\", \"middleware auth\", \"protected routes\", \"session management\", \"JWT\", \"login flow\", or needs guidance on implementing authentication and authorization in Next.js applications.",
+      "content_excerpt": "---\nname: auth-patterns\ndescription: This skill should be used when the user asks about \"authentication in Next.js\", \"NextAuth\", \"Auth.js\", \"middleware auth\", \"protected routes\", \"session management\", \"JWT\", \"login flow\", or needs guidance on implementing authentication and authorization in Next.js applications.\nversion: 1.0.0\n---\n\n# Authentication Patterns in Next.js\n\n## Overview\n\nNext.js supports multiple authentication strategies. This skill covers common patterns including NextAuth.js (Auth.js), middleware-based protection, and session management.\n\n## Authentication Libraries\n\n| Library | Best For |\n|---------|----------|\n| NextAuth.js (Auth.js) | Full-featured auth with providers |\n| Clerk | Managed auth service |\n| Lucia | Lightweight, flexible auth |\n| Supabase Auth | Supabase ecosystem |\n| Custom JWT | Full control |\n\n## NextAuth.js v5 Setup\n\n### Installation\n\n```bash\nnpm install next-auth@beta\n```\n\n### Configuration\n\n```tsx\n// auth.ts\nimport NextAuth from 'next-auth'\nimport GitHub from 'next-auth/providers/github'\nimport Credentials from 'next-auth/providers/credentials'\n\nexport const { handlers, auth, signIn, signOut } = NextAuth({\n  providers: [\n    GitHub({\n      clientId: process.env.GITHUB_ID,\n      clientSecret: process.env.GITHUB_SECRET,\n    }),\n    Credentials({\n      credentials: {\n        email: { label: 'Email', type: 'email' },\n        password: { label: 'Password', type: 'password' },\n      },\n      authorize: async (credentials) => {\n        const user = await getUserByEmail(credentials.email)\n        if (!user || !verifyPassword(credentials.password, user.password)) {\n          return null\n        }\n        return user\n      },\n    }),\n  ],\n  callbacks: {\n    authorized: async ({ auth }) => {\n      return !!auth\n    },\n  },\n})\n```\n\n### API Route Handler\n\n```tsx\n// app/api/auth/[...nextauth]/route.ts\nimport { handlers } from '@/auth'\n\nexport const { GET, POST } = handlers\n```\n\n### Middleware Protection\n\n```tsx\n// middleware.ts\nexport { auth as middleware } from '@/auth'\n\nexport const config = {\n  matcher: ['/dashboard/:path*', '/api/protected/:path*'],\n}\n```\n\n## Getting Session Data\n\n### In Server Components\n\n```tsx\n// app/dashboard/page.tsx\nimport { auth } from '@/auth'\nimport { redirect } from 'next/navigation'\n\nexport default async function DashboardPage() {\n  const session = await auth()\n\n  if (!session) {\n    redirect('/login')\n  }\n\n  return (\n    <div>\n      <h1>Welcome, {session.user?.name}</h1>\n    </div>\n  )\n}\n```\n\n### In Cl"
+    },
+    {
+      "path": "other/architecture-andreibesleaga-gabbe/SKILL.md",
+      "name": "architecture",
+      "current_category": "other",
+      "llm_category": "design",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill focuses on diagramming for communication and documentation, covering UML, C4, ER, BPMN, and other diagram types with Mermaid syntax. This aligns with design workflows for visual communication and system architecture visualization.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "5d9c76f15209fddedca193206907b1c2fa7078ce9c57bf85923c63bb21c47d77",
+      "metadata_sha256": "4d0f9a909ed3b46909fc951b26c3b6a24178f504ddb0329a9875f020f28cdd19",
+      "semantic_sources": {
+        "description": "body",
+        "name": "metadata"
+      },
+      "description": "Select the appropriate diagram type for the communication need, create it using correct",
+      "content_excerpt": "---\nname: diagramming\ndescription: Choose the right diagram type for a documentation need, then create it using standard notation. Covers all major diagram families: UML structural/behavioral, C4 architecture, ER data, BPMN process, and domain diagrams. Produces Mermaid-compatible syntax where possible.\ntriggers: [create diagram, draw diagram, which diagram, diagram this, visualize, sequence diagram, class diagram, flowchart, architecture diagram, ER diagram, state diagram, activity diagram, context diagram, swimlane]\ncontext_cost: low\n---\n\n# Diagramming Skill\n\n## Goal\n\nSelect the appropriate diagram type for the communication need, create it using correct\nnotation and standards, and produce output in Mermaid syntax (or PlantUML as fallback).\nDiagrams are communication tools — choose based on what question the reader needs answered.\n\n---\n\n## Diagram Selection Guide\n\n```\nQuestion being answered → Diagram type\n\n\"What IS the system and who uses it?\"           → System Context (C4 Level 1)\n\"What are the major deployable parts?\"           → Container Diagram (C4 Level 2)\n\"What are the components inside a container?\"    → Component Diagram (C4 Level 3)\n\"How are business objects structured?\"           → Domain Class Diagram\n\"How are data tables related?\"                   → Entity-Relationship Diagram\n\"What packages/modules exist?\"                   → Package Diagram\n\"How does process X flow step by step?\"          → Sequence Diagram\n\"What are all the paths through a use case?\"     → Activity Diagram\n\"What states can object X be in?\"                → State Machine Diagram\n\"Who does what in a process?\"                    → Swimlane Diagram (BPMN or Activity)\n\"How does the business process work end-to-end?\" → BPMN Process Diagram\n\"What are all the use cases for an actor?\"       → Use Case Diagram\n\"Where is the system deployed physically?\"       → Deployment Diagram (C4 or UML)\n\"How does data flow through the system?\"         → Data Flow Diagram (DFD)\n\"What are the business capabilities?\"            → Capability Map\n\"How do domains relate to each other?\"           → Context Map\n\"What happened in what order (events)?\"          → Event Storming / Timeline\n```\n\n---\n\n## Diagram Standards by Type\n\n### C4 Architecture Diagrams (Mermaid C4)\n\n```\nLevel of abstraction:\n  Level 1 — System Context: whole system as one box + external actors\n  Level 2 — Container:      major deployable units (apps, databases, services)\n  Level 3 — Component:      major components inside ONE cont"
+    },
+    {
+      "path": "other/atlassian-mcp-orient-bot-orient-2/SKILL.md",
+      "name": "atlassian-mcp",
+      "current_category": "other",
+      "llm_category": "integration",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill documents how to use the official Atlassian MCP server for JIRA and Confluence operations from coding agents, representing a platform bridge integration.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "bcbbf0c70289a046e14596f6d4bedb6367ee80f8ccfd0823e9ed03b0f045f809",
+      "metadata_sha256": "c2f8233a9074f938bff9b4320b8eb3854d98c819f706a1ea16dbe26c3f4c3eba",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use the Atlassian MCP Server to interact with JIRA from coding agents (Cursor, Claude Code). This skill documents how to use the official Atlassian MCP server for JIRA and Confluence operations. Enable this MCP server in your Cursor/Claude Code settings for JIRA access.",
+      "content_excerpt": "---\nname: atlassian-mcp\ndescription: Use the Atlassian MCP Server to interact with JIRA from coding agents (Cursor, Claude Code). This skill documents how to use the official Atlassian MCP server for JIRA and Confluence operations. Enable this MCP server in your Cursor/Claude Code settings for JIRA access.\nrequires:\n  - atlassian-oauth\n---\n\n# Atlassian MCP Server for JIRA\n\nThe Atlassian MCP Server provides direct access to JIRA and Confluence from coding agents. This is the supported way to access Atlassian data from Cursor or Claude Code.\n\n## Setup\n\n### In Cursor\n\nThe Atlassian MCP Server is already configured globally. To enable it:\n\n1. Open Cursor Settings\n2. Go to Tools & MCP\n3. Enable \"Atlassian-MCP-Server\"\n\nConfiguration location: `~/.cursor/mcp.json`\n\n```json\n{\n  \"mcpServers\": {\n    \"Atlassian-MCP-Server\": {\n      \"url\": \"https://mcp.atlassian.com/v1/sse\"\n    }\n  }\n}\n```\n\n### In Claude Code\n\nAdd to your Claude Code MCP settings:\n\n```json\n{\n  \"mcpServers\": {\n    \"Atlassian-MCP-Server\": {\n      \"url\": \"https://mcp.atlassian.com/v1/sse\"\n    }\n  }\n}\n```\n\n## Available Tools\n\nWhen enabled, the Atlassian MCP Server provides these tools:\n\n### Issue Operations\n\n| Tool                                     | Description                     |\n| ---------------------------------------- | ------------------------------- |\n| `mcp_Atlassian_getJiraIssue`             | Get details of a specific issue |\n| `mcp_Atlassian_createJiraIssue`          | Create a new issue              |\n| `mcp_Atlassian_editJiraIssue`            | Update an existing issue        |\n| `mcp_Atlassian_transitionJiraIssue`      | Change issue status             |\n| `mcp_Atlassian_searchJiraIssuesUsingJql` | Search issues with JQL          |\n\n### Comments\n\n| Tool                                  | Description                |\n| ------------------------------------- | -------------------------- |\n| `mcp_Atlassian_addCommentToJiraIssue` | Add a comment to an issue  |\n| `mcp_Atlassian_getJiraIssueComments`  | Get comments from an issue |\n\n### Confluence (if enabled)\n\n| Tool                                 | Description              |\n| ------------------------------------ | ------------------------ |\n| `mcp_Atlassian_createConfluencePage` | Create a Confluence page |\n| `mcp_Atlassian_getConfluencePage`    | Get a Confluence page    |\n| `mcp_Atlassian_searchConfluence`     | Search Confluence        |\n\n## Common Patterns\n\n### Get Issue Details\n\n```\nUse mcp_Atlassian_getJiraIssue with issueKey: \"PROJ-"
+    },
+    {
+      "path": "other/audit-context/SKILL.md",
+      "name": "audit-context",
+      "current_category": "other",
+      "llm_category": "context-management",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill evaluates ambient context artifacts (CLAUDE.md, memory, local skills, settings hooks) for compatibility with swarm governance. This is fundamentally about managing and auditing context configurations.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "ffd061412abffe163e56b8a8c229ee5c168a5fa8ae24990470ac38cb4c3d2c0d",
+      "metadata_sha256": "f74487c648b939e4fccc8049914a8aba838bbbe65d177a015956dbe672c3296f",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Evaluates ambient context artifacts (CLAUDE.md, memory, local skills, settings hooks) for compatibility with swarm governance. Returns a classified report so users can address interference before launching a team.",
+      "content_excerpt": "---\nname: audit-context\nuser-invocable: true\ndescription: |\n  Evaluates ambient context artifacts (CLAUDE.md, memory, local skills, settings hooks) for compatibility with swarm governance. Returns a classified report so users can address interference before launching a team.\nkeywords: audit, context, interference, CLAUDE.md, memory, skills, hooks, compatibility\n---\n\n# Audit Context\n\nEvaluate the user's ambient context artifacts for compatibility with swarm's governance rules. You are a read-only diagnostic — never modify any files.\n\n## What to scan\n\n1. **CLAUDE.md files.** Read the project's `CLAUDE.md` (working directory root). If `.claude/CLAUDE.md` exists, read that too. Also check `~/.claude/CLAUDE.md` (global config) — it loads into every session.\n2. **Memory files.** Find the project memory path by checking `~/.claude/projects/` for a directory matching the current working directory. Claude Code dash-encodes the project path (e.g., `/Users/foo/my-project` becomes `-Users-foo-my-project`). If a `memory/MEMORY.md` index exists, read it and follow links to individual memory files.\n3. **Local skills and commands.** List `.claude/skills/` and `.claude/commands/` in the project directory. Flag any skill whose name matches a swarm built-in: `suggest-members`, `refine-outcomes`, `define-rubric`, `resolve-dispute`, `writing-style`, `code-mode`, `writing-mode`, `general-mode`, `workflow-rules`, `audit-context`.\n4. **Settings hooks.** Check both `.claude/settings.json` (project) and `~/.claude/settings.json` (global) for a `hooks` section. Flag any hook that intercepts tools used by swarm (TeamCreate, Agent, SendMessage, CronCreate).\n5. **Auto mode environment.** Claude Code reads `autoMode` from user scope (`~/.claude/settings.json`) and local scope (`.claude/settings.local.json`, gitignored) — it ignores shared project scope (`.claude/settings.json`). Check all three for `autoMode.environment` containing a string that mentions a source-control hostname (`github.com`, `gitlab.com`, `bitbucket.org`, or any host matching the working directory's `git remote get-url origin`) and does not contain a literal `<` placeholder. If absent or invalid in user and local scopes → flag as **missing** (the team's ship phase will stall on classifier prompts in auto mode). If present and valid only in shared project scope → flag as **wrong scope** (the entry is dead config; Claude Code ignores it there).\n\n## How to classify\n\nFor each artifact, classify as one of three categories"
+    },
+    {
+      "path": "other/aurora-cqrs-avvale-aurora-back-3/SKILL.md",
+      "name": "aurora-cqrs",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Same as id 0, this is a duplicate skill with identical content, focusing on CQRS architecture in NestJS/Aurora, which is a software development pattern.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "1cd041b02fe56e0beaeb867f390059551713d1c55113d90efa55202380f1f13b",
+      "metadata_sha256": "ba5b4baaef840fe09e32b7d979316ff40ac97bcaf69bb09533f9a512f39806c6",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Aurora CQRS Architecture Reference - Understanding the CQRS structure, component relationships, editable zones, and data flow in Aurora/NestJS projects. Trigger: When needing to understand CQRS architecture, component structure, or editable zones.",
+      "content_excerpt": "---\nname: aurora-cqrs\ndescription: >\n  Aurora CQRS Architecture Reference - Understanding the CQRS structure,\n  component relationships, editable zones, and data flow in Aurora/NestJS\n  projects. Trigger: When needing to understand CQRS architecture, component\n  structure, or editable zones.\nlicense: MIT\nmetadata:\n  author: aurora\n  version: '1.2'\n  auto_invoke:\n    'Understanding CQRS architecture, component structure, editable zones'\n---\n\n## When to Use\n\nUse this skill as a **REFERENCE** when:\n\n- Understanding CQRS architecture and component relationships\n- Learning what Commands, Queries, Handlers, Events, Sagas are\n- Identifying which zones in generated files are editable\n- Understanding the data flow between layers\n- Learning the structure of Services, Repositories, Aggregates, Mappers\n\n**⚠️ For IMPLEMENTING business logic in handlers, use `aurora-development` skill\ninstead.**\n\nThis skill is for UNDERSTANDING the architecture. The `aurora-development` skill\nis for WRITING code.\n\n## What is CQRS in Aurora?\n\n**CQRS** (Command Query Responsibility Segregation) separates read operations\n(Queries) from write operations (Commands).\n\nAurora implements CQRS using NestJS CQRS module with:\n\n- **Commands** → Change state (Create, Update, Delete)\n- **Queries** → Read state (Find, Get, Paginate, Count, etc.)\n- **Handlers** → Execute commands/queries\n- **Events** → Domain events triggered by aggregates\n- **Sagas** → Coordinate complex workflows\n\n## Architecture Layers\n\n```\n┌─────────────────────────────────────────────────────────────┐\n│                    @api Layer (REST/GraphQL)                 │\n│  Controllers/Resolvers → Handlers → dispatch Commands/Queries│\n└─────────────────────────────────────────────────────────────┘\n                              ↓\n┌─────────────────────────────────────────────────────────────┐\n│                   @app/application Layer                     │\n│  Commands → CommandHandlers → Services                       │\n│  Queries  → QueryHandlers   → Services                       │\n│  Events   → EventHandlers                                    │\n│  Sagas    → React to events                                  │\n└─────────────────────────────────────────────────────────────┘\n                              ↓\n┌─────────────────────────────────────────────────────────────┐\n│                    @app/domain Layer                         │\n│  Aggregates (Entities with events)                           │\n│  Value Objects (Immutable types)        "
+    },
+    {
+      "path": "other/auditing-deep-link-contracts-clix-so-skills-3/SKILL.md",
+      "name": "auditing-deep-link-contracts",
+      "current_category": "other",
+      "llm_category": "testing",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Same as id 1, this is a duplicate entry for auditing deep link contracts, focusing on validation and testing.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "114b97218d3e80722751d9075c031cbd86bb72e311a6e31b6a31fd7119e8c88c",
+      "metadata_sha256": "ab7fff4457b1e2a97dda726879b8927814ea0eabf15ba1721512a70c0d2225a0",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Audits deep link contracts and routing behavior. Use when validating supported routes, required parameters, and cold or warm start handling.",
+      "content_excerpt": "---\nname: auditing-deep-link-contracts\ndisplay-name: Auditing Deep Link Contracts\nshort-description: Deep link contract audit\ndescription: Audits deep link contracts and routing behavior. Use when validating\n  supported routes, required parameters, and cold or warm start handling.\nuser-invocable: true\n---\n\n# Auditing Deep Link Contracts\n\nUse this skill to define and audit deep link behavior so links open the correct\nscreen with correct parameters across cold and warm starts.\n\n## What this skill does\n\n- Defines a deep link contract for supported routes\n- Checks required and optional parameters\n- Generates cold and warm start test vectors\n- Produces a concise audit report with fixes\n\n## Workflow\n\n```\nDeep link contract audit progress:\n\n- [ ] 1) Confirm minimum inputs (platforms, routes, entry points)\n- [ ] 2) Draft a deep-link contract (JSON)\n- [ ] 3) Validate the contract (script)\n- [ ] 4) Generate test vectors (script)\n- [ ] 5) Audit routing behavior (findings + fixes)\n- [ ] 6) Verify fixes (cold and warm start)\n```\n\n## 1) Confirm the minimum inputs\n\nAsk only what is needed:\n\n- **Platforms**: iOS, Android, or both\n- **Entry points**: push, email, web, in-app, marketing campaigns\n- **Routes**: list of deep link routes that must be supported\n- **Auth rules**: which routes require login\n- **Fallbacks**: where to send users if data is missing\n\n## 2) Draft a deep-link contract\n\nCreate `deep-link-contract.json` in `.mobile/` (recommended) or project root.\n\nRecommended location: `.mobile/deep-link-contract.json`\n\nExample:\n\n```json\n{\n  \"base\": \"myapp://\",\n  \"routes\": [\n    {\n      \"name\": \"order_detail\",\n      \"path\": \"/orders/{order_id}\",\n      \"required_params\": [\"order_id\"],\n      \"optional_params\": [\"ref\"],\n      \"auth_required\": true,\n      \"supported_states\": [\"cold\", \"warm\"]\n    }\n  ]\n}\n```\n\n## 3) Validate the contract\n\nRun:\n\n```bash\nbash skills/auditing-deep-link-contracts/scripts/validate-deep-link-contract.sh \\\n  .mobile/deep-link-contract.json\n```\n\n## 4) Generate test vectors\n\nRun:\n\n```bash\nbash skills/auditing-deep-link-contracts/scripts/generate-deep-link-test-vectors.sh \\\n  .mobile/deep-link-contract.json \\\n  .mobile/deep-link-test-vectors.json\n```\n\n## 5) Audit routing behavior\n\nFor each test vector, confirm:\n\n- The app opens the expected screen\n- Required parameters are present and parsed\n- Missing parameters trigger the expected fallback\n- Auth-required routes handle logged-out users\n- Cold start and warm start behave consistently\n\n## 6) Verify fix"
+    },
+    {
+      "path": "other/architecture-paradigm-layered-athola-claude-night-market-2/SKILL.md",
+      "name": "architecture-paradigm-layered",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill describes Layered (n-tier) architecture, a fundamental software development pattern for separation of concerns.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "ad4da8137fe920ef41c694da4f6e8909fe5a4e2b8b394f78873033821a97f973",
+      "metadata_sha256": "4996cd2a2b013e241bb047fb50152dfb360088d51f6c4f1cd7dde4924dd48ae4",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "Layered (n-tier) architecture with enforced layer boundaries and separation of concerns.",
+      "content_excerpt": "---\nname: architecture-paradigm-layered\ndescription: 'Layered (n-tier) architecture with enforced layer boundaries and separation of concerns.'\nversion: 1.9.3\nalwaysApply: false\ncategory: architectural-pattern\ntags:\n- architecture\n- layered\n- n-tier\n- separation-of-concerns\n- monolith\ndependencies: []\ntools: []\nusage_patterns:\n- paradigm-implementation\n- legacy-system-modernization\n- team-structure-alignment\n- compliance-requirements\ncomplexity: low\nmodel_hint: fast\nestimated_tokens: 700\n---\n## Table of Contents\n\n- [When to Employ This Paradigm](#when-to-employ-this-paradigm)\n- [When NOT to Use This Paradigm](#when-not-to-use-this-paradigm)\n- [Adoption Steps](#adoption-steps)\n- [Key Deliverables](#key-deliverables)\n- [Technology Guidance](#technology-guidance)\n- [Risks & Mitigations](#risks-mitigations)\n\n# The Layered (N-Tier) Architecture Paradigm\n\n## When to Employ This Paradigm\n- When teams need clear architectural boundaries and a familiar structure for moderate-sized systems.\n- When compliance or operations teams require clear separation of concerns (e.g., UI vs. domain logic vs. persistence).\n- When the deployment artifact remains a monolith, but code clarity and separation are degrading.\n\n## When NOT To Use This Paradigm\n- When high scalability demands require independent scaling of components\n- When multiple teams need independent deployment cycles\n- When complex business logic requires frequent cross-layer communication\n- When microservices architecture is already planned or in place\n- When real-time processing requirements make layered communication too slow\n\n## Adoption Steps\n1. **Define the Layers**: Establish a clear set of layers. A common stack includes: Presentation -> Application/Service -> Domain -> Data Access.\n2. **Enforce Dependency Direction**: Code in a given layer may only depend on the layer immediately below it. Forbid any \"upward\" dependencies or imports.\n3. **Centralize Cross-Cutting Concerns**: Implement concerns like logging, authentication, and validation as centralized middleware or policies, rather than duplicating this logic in each layer.\n4. **Test Each Layer Appropriately**: Apply testing strategies suitable for each layer, such as unit tests for the domain layer, service-layer tests for orchestration logic, and integration tests for persistence adapters.\n5. **Document and Enforce Interactions**: Maintain up-to-date dependency diagrams and use automated architecture tests to prevent developers from creating \"shortcut\" de"
+    },
+    {
+      "path": "other/audience-synthesis/SKILL.md",
+      "name": "audience-synthesis",
+      "current_category": "other",
+      "llm_category": "marketing",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill synthesizes audience insights into personas and segments, which is a core marketing activity for targeting and strategy.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "ca7cbf259175c6a2217ac6b4712124f33fa7e155861f2c8a759cf84a44ada599",
+      "metadata_sha256": "d78216922b2b2287c0b0ff653e9f463a054153ca01ea5e62dbadc1400cdd8055",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Synthesize audience insights from multiple data sources into unified personas and segments. Use when relevant to the task.",
+      "content_excerpt": "---\nname: audience-synthesis\ndescription: Synthesize audience insights from multiple data sources into unified personas and segments. Use when relevant to the task.\n---\n\n# audience-synthesis\n\nSynthesize audience insights from multiple data sources into unified personas and segments.\n\n## Triggers\n\n- \"analyze audience\"\n- \"build personas\"\n- \"segment audience\"\n- \"who is our target\"\n- \"audience insights\"\n- \"customer profile\"\n\n## Purpose\n\nThis skill creates comprehensive audience understanding by:\n- Aggregating data from multiple sources\n- Building data-driven personas\n- Creating behavioral segments\n- Identifying growth opportunities\n- Recommending targeting strategies\n\n## Behavior\n\nWhen triggered, this skill:\n\n1. **Gathers audience data**:\n   - Analytics demographics\n   - CRM customer data\n   - Social audience insights\n   - Survey/research data\n   - Purchase behavior\n\n2. **Identifies patterns**:\n   - Demographic clusters\n   - Behavioral segments\n   - Value tiers\n   - Engagement patterns\n\n3. **Builds personas**:\n   - Synthesize data into archetypes\n   - Document motivations and pain points\n   - Map customer journey\n   - Identify content preferences\n\n4. **Creates segments**:\n   - Behavioral segmentation\n   - Value-based segmentation\n   - Engagement segmentation\n   - Lifecycle segmentation\n\n5. **Generates recommendations**:\n   - Targeting strategies\n   - Content recommendations\n   - Channel preferences\n   - Growth opportunities\n\n## Data Sources\n\n### First-Party Data\n\n```yaml\nfirst_party:\n  analytics:\n    source: Google Analytics, Mixpanel\n    data:\n      - demographics\n      - interests\n      - behavior\n      - conversion_paths\n\n  crm:\n    source: Salesforce, HubSpot\n    data:\n      - customer_attributes\n      - purchase_history\n      - lifetime_value\n      - engagement_history\n\n  email:\n    source: Mailchimp, Klaviyo\n    data:\n      - email_engagement\n      - preferences\n      - segments\n\n  product:\n    source: Product analytics\n    data:\n      - feature_usage\n      - retention\n      - activation\n```\n\n### Second-Party Data\n\n```yaml\nsecond_party:\n  social:\n    source: Instagram, LinkedIn, Twitter\n    data:\n      - follower_demographics\n      - engagement_patterns\n      - content_preferences\n\n  advertising:\n    source: Meta, Google, LinkedIn\n    data:\n      - audience_overlap\n      - conversion_audiences\n      - lookalike_performance\n\n  partnerships:\n    source: Partner data shares\n    data:\n      - co-marketing audiences\n      - industry benchmarks\n```\n\n### Third-"
+    },
+    {
+      "path": "other/astro-blog-write/SKILL.md",
+      "name": "astro-blog-write",
+      "current_category": "other",
+      "llm_category": "writing",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill provides detailed writing guidelines for blog content, focusing on human voice, readability, and SEO optimization. It's a writing workflow for content creation.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "da9dfd7d4a91a14757b6644dbbe3accb4fecb75264f099e744cc7744738ee433",
+      "metadata_sha256": "12b1bc536f2b681921f4ff82bca77c5a62c7ae38c1cf0509fd283497512dc404",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Phase 3 - Writing blog content with human voice and SEO optimization",
+      "content_excerpt": "---\nname: astro-blog-write\ndescription: Phase 3 - Writing blog content with human voice and SEO optimization\n---\n\n# Astro Blog - Phase 3: Writing\n\n**Priority Legend:**\n- ⭐ **ALWAYS** - Every article, non-negotiable\n- 🎯 **HIGH-VALUE** - Competitive keywords, commercial/pillar content\n\n**⚠️ CRITICAL:** Read `astro-blog/references/human-voice.md` BEFORE writing to avoid AI patterns.\n\n---\n\n## Writing Guidelines\n\n### ⭐ Human Voice (CRITICAL - Every Article)\n- [ ] **Paragraph variety** - Mix 3 styles: (1) Answer-first for key points, (2) Narrative for stories/examples, (3) Build-up for engagement. NOT all answer-first (=robotic)\n- [ ] **Component density check** - Article should feel natural, NOT template-like. If reader can \"see the formula\", you've overused components\n- [ ] **Intentional imperfection** - 2-4 typing errors per article: thier, recieve, definately, enviroment, seperate, occured. NOT grammar errors (no \"They was\")\n\n**Common AI patterns to AVOID:**\n- Starting every paragraph with answer/conclusion\n- Transition phrases: \"Moreover,\" \"Furthermore,\" \"Additionally,\" \"In conclusion,\"\n- Meta-commentary: \"It's important to note,\" \"It's worth mentioning,\" \"Let's explore,\"\n- Overuse of \"comprehensive,\" \"robust,\" \"delve into,\" \"landscape,\" \"realm\"\n\n### ⭐ Readability Standards (Every Article)\n- [ ] **Paragraph length** - Max 100 words, prefer 50-80 words (2-3 sentences). Mobile-friendly\n- [ ] **Sentence variety** - Mix lengths: Short (5-10 words), Medium (15-20 words), Long (25-30 words). Avoid monotony\n- [ ] **Readability targets** - Hemingway Grade 6-8 (max 10), Flesch Reading Ease 60-70, <20% sentences >25 words, <10% passive voice\n- [ ] **Technical definitions** - First mention of technical term: **bold** + 15-25 word definition. Example: \"**Photovoltaic cells** convert sunlight directly into electricity using semiconductor materials.\"\n- [ ] **List preference** - 3+ related items = use list format (NOT prose). Scannability + LLM extraction\n\n### ⭐ Featured Snippet Optimization (Every Article)\n\n**Paragraph snippets (40-60 words):**\nPlace immediately after relevant H2. Format:\n```\n## How much do solar panels cost in the UK?\n\nSolar panels cost £5,000-£8,000 for a typical UK home in 2026. This includes panels, inverter, and installation. A 4kW system (standard 3-bed house) costs £6,500 on average and saves £600/year on electricity bills.\n```\nCharacter count: 280-320 chars. Structure: Answer → Evidence → Context\n\n**List snippets:**\n- [ ] **5-8 items** - Google t"
+    },
+    {
+      "path": "other/architecture-diagram-creator-mhattingpete-claude-skills-market-2/SKILL.md",
+      "name": "architecture-diagram-creator",
+      "current_category": "other",
+      "llm_category": "design",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill creates comprehensive HTML architecture diagrams with SVG visualizations, focusing on visual documentation of system architecture, data flows, and business context.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "7d506e3fc0beee3ba91f97df6465d0f4d0fe2daf7b5ffa369ba876c9ab193992",
+      "metadata_sha256": "a4dba6241f68a7cab86a3fe7e2b34e1957fc489835186f497876b8f190db8ca7",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Create comprehensive HTML architecture diagrams showing data flows, business objectives, features, technical architecture, and deployment. Use when users request system architecture, project documentation, high-level overviews, or technical specifications.",
+      "content_excerpt": "---\nname: architecture-diagram-creator\ndescription: Create comprehensive HTML architecture diagrams showing data flows, business objectives, features, technical architecture, and deployment. Use when users request system architecture, project documentation, high-level overviews, or technical specifications.\n---\n\n# Architecture Diagram Creator\n\nCreate comprehensive HTML architecture diagrams with data flows, business context, and system architecture.\n\n## When to Use\n\n- \"Create architecture diagram for [project]\"\n- \"Generate high-level overview\"\n- \"Document system architecture\"\n- \"Show data flow and processing pipeline\"\n\n## Components to Include\n\n1. **Business Context**: objectives, users, value, metrics\n2. **Data Flow**: sources → processing → outputs with SVG diagram\n3. **Processing Pipeline**: multi-stage visualization\n4. **System Architecture**: layered components (data/processing/services/output)\n5. **Features**: functional and non-functional requirements\n6. **Deployment**: model, prerequisites, workflows\n\n## HTML Structure\n\n```html\n<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>[Project] Architecture</title>\n  <style>\n    body { font-family: system-ui; max-width: 1200px; margin: 0 auto; padding: 20px; }\n    h1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; }\n    .section { margin: 30px 0; }\n    svg { max-width: 100%; }\n    /* Use semantic colors: #4299e1 (data), #ed8936 (processing), #9f7aea (AI), #48bb78 (success) */\n  </style>\n</head>\n<body>\n  <h1>[Project Name] - Architecture Overview</h1>\n\n  <!-- Business Context Section -->\n  <!-- Data Flow Diagram (SVG) -->\n  <!-- Processing Pipeline (SVG) -->\n  <!-- System Architecture Layers -->\n  <!-- Features Grid -->\n  <!-- Deployment Info -->\n</body>\n</html>\n```\n\n## SVG Pattern for Data Flow\n\n```html\n<svg viewBox=\"0 0 800 400\">\n  <!-- Data sources (left, blue) -->\n  <rect x=\"50\" y=\"150\" width=\"120\" height=\"80\" fill=\"#4299e1\"/>\n\n  <!-- Processing (center, orange) -->\n  <rect x=\"340\" y=\"150\" width=\"120\" height=\"80\" fill=\"#ed8936\"/>\n\n  <!-- Outputs (right, green) -->\n  <rect x=\"630\" y=\"150\" width=\"120\" height=\"80\" fill=\"#48bb78\"/>\n\n  <!-- Arrows connecting -->\n  <path d=\"M170,190 L340,190\" stroke=\"#666\" stroke-width=\"2\" marker-end=\"url(#arrow)\"/>\n</svg>\n```\n\n## Workflow\n\n1. Analyze project (README, code structure)\n2. Extract: purpose, data sources, processing, tech stack, out"
+    },
+    {
+      "path": "other/attack-surface-analyzer-jeremylongshore-claude-code-plugins-/SKILL.md",
+      "name": "attack-surface-analyzer",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Duplicate of id:3 with identical content, explicitly part of 'Security Advanced' category for attack surface analysis.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "108cfb1ca9c7bf3173e82266774533a49e1c02c349d0df3b0f5952fc172b4757",
+      "metadata_sha256": "819711fd5d44270462c004233a2a0469836a1148b48cc8e681d15870189d2b39",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Analyze attack surface analyzer operations. Auto-activating skill for Security Advanced.\nTriggers on: attack surface analyzer, attack surface analyzer\nPart of the Security Advanced skill category. Use when analyzing or auditing attack surface analyzer. Trigger with phrases like \"attack surface analyzer\", \"attack analyzer\", \"analyze attack surface r\".",
+      "content_excerpt": "---\nname: \"attack-surface-analyzer\"\ndescription: |\n  Analyze attack surface analyzer operations. Auto-activating skill for Security Advanced.\n  Triggers on: attack surface analyzer, attack surface analyzer\n  Part of the Security Advanced skill category. Use when analyzing or auditing attack surface analyzer. Trigger with phrases like \"attack surface analyzer\", \"attack analyzer\", \"analyze attack surface r\".\nallowed-tools: \"Read, Write, Edit, Bash(cmd:*), Grep\"\nversion: 1.0.0\nlicense: MIT\nauthor: \"Jeremy Longshore <jeremy@intentsolutions.io>\"\n---\n\n# Attack Surface Analyzer\n\n## Overview\n\nThis skill provides automated assistance for attack surface analyzer tasks within the Security Advanced domain.\n\n## When to Use\n\nThis skill activates automatically when you:\n- Mention \"attack surface analyzer\" in your request\n- Ask about attack surface analyzer patterns or best practices\n- Need help with advanced security skills covering penetration testing, compliance frameworks, threat modeling, and enterprise security.\n\n## Instructions\n\n1. Provides step-by-step guidance for attack surface analyzer\n2. Follows industry best practices and patterns\n3. Generates production-ready code and configurations\n4. Validates outputs against common standards\n\n## Examples\n\n**Example: Basic Usage**\nRequest: \"Help me with attack surface analyzer\"\nResult: Provides step-by-step guidance and generates appropriate configurations\n\n\n## Prerequisites\n\n- Relevant development environment configured\n- Access to necessary tools and services\n- Basic understanding of security advanced concepts\n\n\n## Output\n\n- Generated configurations and code\n- Best practice recommendations\n- Validation results\n\n\n## Error Handling\n\n| Error | Cause | Solution |\n|-------|-------|----------|\n| Configuration invalid | Missing required fields | Check documentation for required parameters |\n| Tool not found | Dependency not installed | Install required tools per prerequisites |\n| Permission denied | Insufficient access | Verify credentials and permissions |\n\n\n## Resources\n\n- Official documentation for related tools\n- Best practices guides\n- Community examples and tutorials\n\n## Related Skills\n\nPart of the **Security Advanced** skill category.\nTags: pentesting, compliance, soc2, gdpr, threat-modeling\n"
+    },
+    {
+      "path": "other/archive-workflow/SKILL.md",
+      "name": "archive-workflow",
+      "current_category": "other",
+      "llm_category": "workflow",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill organizes projects by detecting clutter, enforcing naming conventions, structuring directories, and managing gitignore, which is a comprehensive project organization workflow.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "d8d271f26360ebcc04e09829f988fc2c9a6e0d288aa3915641cb68486b2193ec",
+      "metadata_sha256": "fc43e62c6faa61262b5002057e8f5203381ef0ce1b29e1114eb5e5c89e4c753e",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when organizing projects - detecting clutter, enforcing naming conventions, structuring directories, managing gitignore, or assessing project expandability. Triggers on project organization requests, file naming audits, or gitignore maintenance needs.",
+      "content_excerpt": "---\nname: archive-workflow\ndescription: Use when organizing projects - detecting clutter, enforcing naming conventions, structuring directories, managing gitignore, or assessing project expandability. Triggers on project organization requests, file naming audits, or gitignore maintenance needs.\n---\n\n# archive-workflow\n\nA comprehensive project organization skill with 1 PM orchestrator (library-pm) and 5 specialist agents, using a 4-wave workflow to manage clutter, naming, structure, and expandability across any project type.\n\n## Overview\n\nThis skill coordinates multiple specialized agents to analyze and reorganize projects. The library-pm orchestrator dispatches 4 READ-ONLY analyst agents across three waves, then hands off to a single WRITE executor agent for synthesis and execution.\n\n**Architecture**: Hub-and-spoke multi-agent coordination\n**Pattern**: CQRS (Command Query Responsibility Segregation) - analysts READ, integrator WRITES\n\n## When to Use\n\n- Organizing a new project with proper structure\n- Cleaning up an existing project with accumulated clutter\n- Enforcing consistent naming conventions\n- Reviewing gitignore for missing patterns\n- Assessing project scalability and modularity\n- Major project reorganization before release\n\n## When NOT to Use\n\n- Code refactoring (organizing structure is in scope; rewriting code is not)\n- Content creation (where documentation goes is in scope; writing it is not)\n- CI/CD pipeline configuration\n- Database schema design\n- Secret management beyond gitignore context\n\n## Architecture Diagram\n\n```\n                        archive-workflow\n                           (SKILL.md)\n                               |\n                               v\n                          library-pm\n                      (Orchestrator Agent)\n                               |\n        +----------------------+----------------------+\n        |                      |                      |\n        v                      v                      v\n   [Wave 1]              [Wave 2]               [Wave 3]\n        |              (parallel)                    |\n        v                  |                         v\n+----------------+    +----+----+         +------------------+\n| clutter-       |    |         |         | expandability-   |\n| analyst        |    v         v         | reviewer         |\n| (READ-ONLY)    | +--------+ +--------+  | (READ-ONLY)      |\n+----------------+ |nomencl-| |struct- |  +------------------+\n        |          |ature-  | |ure-"
+    },
+    {
+      "path": "other/argo-expert-martinholovsky-claude-skills-genera-2/SKILL.md",
+      "name": "argo-expert",
+      "current_category": "other",
+      "llm_category": "devops",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Argo ecosystem expert covering GitOps, CI/CD, progressive delivery, and Kubernetes workflow orchestration - core DevOps concerns.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "fe346236841f44f40138032cd317aa778bbcd45fd11b90bb2357d169d886e403",
+      "metadata_sha256": "c93c8a1ca665a2727ab1abd2d48a732ba6355b73028230246a50286a1bcfe555",
+      "semantic_sources": {
+        "description": "metadata",
+        "name": "metadata"
+      },
+      "description": "You are an Argo Ecosystem Expert specializing in:",
+      "content_excerpt": "```yaml\n---\nname: argo-expert\ndescription: \"Expert in Argo ecosystem (CD, Workflows, Rollouts, Events) for GitOps, continuous delivery, progressive delivery, and workflow orchestration. Specializes in production-grade configurations, multi-cluster management, security hardening, and advanced deployment strategies for DevOps/SRE teams.\"\nmodel: sonnet\n---\n```\n\n# 1. Overview\n\n## 1.1 Role & Expertise\n\nYou are an **Argo Ecosystem Expert** specializing in:\n\n- **Argo CD 2.10+**: GitOps continuous delivery, declarative sync, app-of-apps pattern\n- **Argo Workflows 3.5+**: Kubernetes-native workflow orchestration, DAGs, artifacts\n- **Argo Rollouts 1.6+**: Progressive delivery, canary/blue-green deployments, traffic shaping\n- **Argo Events**: Event-driven workflow automation, sensors, triggers\n\n**Target Users**: DevOps Engineers, SRE, Platform Teams\n**Risk Level**: **HIGH** (production deployments, infrastructure automation, multi-cluster)\n\n## 1.2 Core Expertise\n\n**Argo CD**:\n- Multi-cluster management and federation\n- ApplicationSet automation and generators\n- App-of-apps and nested application patterns\n- RBAC, SSO integration, audit logging\n- Sync waves, hooks, health checks\n- Image updater integration\n\n**Argo Workflows**:\n- DAG and step-based workflows\n- Artifact repositories and caching\n- Retry strategies and error handling\n- Workflow templates and cluster workflows\n- Resource optimization and scaling\n- CI/CD pipeline orchestration\n\n**Argo Rollouts**:\n- Canary and blue-green strategies\n- Traffic management (Istio, NGINX, ALB)\n- Analysis templates and metric providers\n- Automated rollback and abort conditions\n- Progressive delivery patterns\n\n**Cross-Cutting**:\n- Security hardening (RBAC, secrets, supply chain)\n- Multi-tenancy and namespace isolation\n- Observability and monitoring integration\n- Disaster recovery and backup strategies\n\n---\n\n# 2. Core Responsibilities\n\n## 2.1 Design Principles\n\n**TDD First**:\n- Write tests for Argo configurations before deploying\n- Validate manifests with dry-run and schema checks\n- Test rollout behaviors in staging environments\n- Use analysis templates to verify deployment success\n- Automate regression testing for GitOps pipelines\n\n**Performance Aware**:\n- Optimize workflow parallelism and resource allocation\n- Cache artifacts and container images aggressively\n- Configure appropriate sync windows and rate limits\n- Monitor controller resource usage and scaling\n- Profile slow syncs and workflow bottlenecks\n\n**GitOps First**:\n- Declara"
+    },
+    {
+      "path": "other/automating-pages-spillwavesolutions-automating-mac-apps--cb5f5d41/SKILL.md",
+      "name": "automating-pages",
+      "current_category": "other",
+      "llm_category": "documents",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill automates Apple Pages document creation, manipulation, and export, which aligns with the 'documents' category for document creation, conversion, and office formats.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "07c75f384b4a1de20f0514bee94b30feef1a6bc55e83a7dba996e62b15b255d5",
+      "metadata_sha256": "c74469feb266c8ed4a5a9621f8c1216dfba5737049d82e44b40166b371a9692c",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Automates Apple Pages using JXA with AppleScript dictionary discovery. Use when asked to \"automate Pages documents\", \"create documents programmatically\", \"JXA Pages scripting\", or \"export Pages to PDF\". Covers documents, templates, text, styles, export, tables, images, and AppleScript bridge fallbacks.",
+      "content_excerpt": "---\nname: automating-pages\ndescription: Automates Apple Pages using JXA with AppleScript dictionary discovery. Use when asked to \"automate Pages documents\", \"create documents programmatically\", \"JXA Pages scripting\", or \"export Pages to PDF\". Covers documents, templates, text, styles, export, tables, images, and AppleScript bridge fallbacks.\nallowed-tools:\n  - Bash\n  - Read\n  - Write\n---\n\n# Automating Pages (JXA-first, AppleScript discovery)\n\n## Relationship to the macOS automation skill\n- Standalone for Pages, aligned with `automating-mac-apps` patterns.\n- Use `automating-mac-apps` for permissions, shell, and UI scripting guidance.\n- **PyXA Installation:** To use PyXA examples in this skill, see the installation instructions in `automating-mac-apps` skill (PyXA Installation section).\n\n## Core framing\n- Pages dictionary is AppleScript-first; discover there.\n- JXA provides the logic and data handling.\n- **Objects are specifiers**: References to Pages elements that require methods for reads (e.g., `doc.body.text()`) and assignments for writes (e.g., `doc.body.text = 'new text'`).\n\n### Example: Create Document\n```javascript\nconst pages = Application('Pages');\nconst doc = pages.Document({templateName: 'Blank'});\npages.documents.push(doc);\ndoc.body.text = \"Hello World\";\n```\n\n## Workflow (default)\n1) **Discover**: Open Script Editor > File > Open Dictionary > Pages.\n2) **Prototype**: Write minimal AppleScript to verify the command works.\n3) **Port to JXA**: Convert AppleScript syntax to JXA objects.\n   - Example: `make new document` becomes `pages.documents.push(pages.Document())`.\n   - Add error handling (try/catch blocks).\n4) **Optimize**: Use batch text operations when possible to avoid performance penalties.\n5) **Fallback**: Use AppleScript bridge or UI scripting for dictionary gaps (e.g., specific layout changes).\n\n## Image Insertion (Critical Difference from Keynote)\n\n**IMPORTANT**: Pages does **NOT** support direct image insertion like Keynote does:\n```javascript\n// THIS WORKS IN KEYNOTE:\nKeynote.Image({ file: Path(\"/path/to/image.png\"), position: {x: 100, y: 100} });\n\n// THIS DOES NOT WORK IN PAGES!\nPages.Image({ file: Path(\"/path/to/image.png\") }); // ❌ Will fail\n```\n\n**Solution**: Use ObjC Pasteboard bridging (see `pages-advanced.md` for details):\n```javascript\nObjC.import('AppKit');\nconst nsImage = $.NSImage.alloc.initWithContentsOfFile(\"/path/to/image.png\");\nconst pb = $.NSPasteboard.generalPasteboard;\npb.clearContents;\npb.setDataForType(nsImage.TIFF"
+    },
+    {
+      "path": "other/athena-framework-watzon-claude-code-2/SKILL.md",
+      "name": "athena-framework",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is for working with Athena Framework for Crystal, a modular web framework for building web applications, REST APIs, CLI tools, and integrating components. This is clearly a software development framework.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "74c19211512db31cf3707ee1d90fec5af3972f761f295a4d4cf92c3769822f6b",
+      "metadata_sha256": "cf87c4f75c8c6613dc51ba4e4f58a4ab3415a5e9d7851525543cd0fc5c139ea2",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use this skill when working with Athena Framework for Crystal. Athena is a modular ecosystem of independent, reusable components including: Framework (ATH) for web apps, DependencyInjection (ADI) for IoC containers, Routing (ART) for HTTP routing, Serializer (ASR) for object serialization, Validator (AVD) for validation, Console (ACON) for CLI tools, EventDispatcher (AED) for event-driven architecture, and more. Use for building Crystal web applications, REST APIs, CLI tools, or integrating individual components.",
+      "content_excerpt": "---\nname: athena-framework\ndescription: \"Use this skill when working with Athena Framework for Crystal. Athena is a modular ecosystem of independent, reusable components including: Framework (ATH) for web apps, DependencyInjection (ADI) for IoC containers, Routing (ART) for HTTP routing, Serializer (ASR) for object serialization, Validator (AVD) for validation, Console (ACON) for CLI tools, EventDispatcher (AED) for event-driven architecture, and more. Use for building Crystal web applications, REST APIs, CLI tools, or integrating individual components.\"\n---\n\n# Athena Framework Skill\n\nAthena Framework is a modular web framework for Crystal, inspired by Symfony. It consists of independent, reusable components that can be used together or à la carte.\n\n## When to Use This Skill\n\nUse this skill when you are:\n- **Building web applications** with the Athena Framework (ATH)\n- **Creating REST APIs** using Athena's routing and controller system\n- **Implementing dependency injection** with ADI (Athena DependencyInjection)\n- **Adding HTTP routing** with ART (Athena Routing)\n- **Serializing objects** with ASR (Athena Serializer)\n- **Validating data** with AVD (Athena Validator)\n- **Writing CLI commands** with ACON (Athena Console)\n- **Implementing event-driven architecture** with AED (Athena EventDispatcher)\n- **Working with individual Athena components** in any Crystal project\n- **Debugging Athena applications**\n- **Learning Crystal web development patterns**\n\n## Key Concepts\n\n### Component Overview\n\n| Component | Alias | Purpose |\n|-----------|-------|---------|\n| Framework | `ATH` | Full-stack web framework with controllers, middleware, responses |\n| DependencyInjection | `ADI` | IoC container for managing service dependencies |\n| Routing | `ART` | HTTP routing with annotations, requirements, and matching |\n| Serializer | `ASR` | Object (de)serialization to JSON, YAML, etc. |\n| Validator | `AVD` | Declarative object validation with constraints |\n| Console | `ACON` | CLI command framework with styled output |\n| EventDispatcher | `AED` | Event-driven architecture with listeners/dispatchers |\n| Negotiation | `ANEG` | Content negotiation for requests/responses |\n| ImageSize | `AIS` | Get image dimensions without processing |\n| Clock | `ACLK` | Time abstraction for testing |\n\n## Quick Reference\n\n### HTTP Routing (ART)\n\n**Define a route with requirements:**\n\n```crystal\nclass ExampleController < ATH::Controller\n  @[ARTA::Get(\"/user/{id}\")]\n  def get_user(id : Int64) : Int"
+    }
+  ],
+  "notes": [
+    "Review sample rows against SKILL.md excerpts before applying a migration plan.",
+    "Sampling is deterministic for a fixed seed and classification input."
+  ]
+}

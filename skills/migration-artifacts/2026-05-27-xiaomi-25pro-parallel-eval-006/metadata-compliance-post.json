@@ -1,0 +1,643 @@
+{
+  "scanned": 127,
+  "missing_metadata": 0,
+  "errors": 0,
+  "warnings": 0,
+  "results": [
+    {
+      "path": "agent/asi-agent-orama/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/ask-before-assuming/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/ask-before-assuming-omniaffix-dave-sessionguardian/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/atomic-tools/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/audit-trails-for-agents/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "agent/auto-djnsty23-claude-auto-dev/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "ai-ml/audio-fingerprint-expert/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/ask-nammdev-goads-coss/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/ask-nammdev-goads-coss-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/ask-nhile-team-webs-nedu/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/attribution-analysis-modeling-liangdabiao-claude-data-analysis-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/audio-analysis-bbeierle12-skill-mcp-claude-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "analysis/audit-coverage/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/architecture-andreibesleaga-gabbe-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "api/audit-api-consistency/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "business/assess-kazukinagata-shinkoku/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "communication/ask-yota-k-dotfiles/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "context-management/atomic-context/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "context-management/audit-context/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "context-management/auto-masharratt-claude-flow-novice-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "creative/art-prompt/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "creative/audio-engineering/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "creative/audio-engineering-patterns/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/architecture-andreibesleaga-gabbe-8/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/architecture-paradigm-pipeline-athola-claude-night-market/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/aria-identity-architecture/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/atac-qc-gptomics-bioskills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "data/atproto-ingest-plurigrid-asi-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/architecture-andreibesleaga-gabbe/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/architecture-diagram-creator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/audio-design-matthewharwood-fantasy-phonics-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/auto-animate-brendadeeznuts1111-tier-1380-omega/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/auto-animate-dennislee928-smart-zone/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/auto-animate-jezweb-claude-skills-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "design/auto-animate-mgd34msu-goodvibes-plugin/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/aria/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/artifacts-builder/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/artifacts-builder-bbgnsurftech-claude-skills-collec-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/artifacts-builder-davepoon-buildwithclaude/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/artifacts-builder-prat011-awesome-llm-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/artifacts-builder-shajith003-awesome-claude-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/ask-question-if-underspecified/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/ask-questions-if-underspecified-1203992808-chatgptcaricature/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/ask-questions-if-underspecified-majiayu000-claude-skill-registr/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/aspire-configuration/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/aspire-configuration-aaronontheweb-dotnet-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/aspire-service-defaults/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/assembly-guide/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/assert/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/assistant-ui/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/assistant-ui-bjornslib-cobuilder-harness/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/assistant-ui-outlinedriven-odin-codex-plugin/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/astrowind/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/async-io-model/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/async-runner/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/atlan-app-scaffold-standard/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/atlan-app-scaffold-standard-atlanhq-atlan-sample-apps/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/atomic-component/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/atomic-schemas-brainblend-ai-atomic-agents/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/audio-playback/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/audio-video/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/audio-video-housegarofalo-claude-code-base/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/auto-claude-travisjneuman-claude-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/auto-coder-enzannometsuke-lynyx-claude-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/auto-import-rules/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/auto-import-rules-thanhhuong0209-dlt-normalization/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/auto-loop/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/autodev/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/autodev-boshu2-agentops/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/automated-review-addressing/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "development/automation-dev/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/asc-notarization/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/astro-ljt-520-openclaw-backup/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/atomic-commit-and-push/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "devops/auto-updater-broedkrummen-openclaw-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/atlas-documentation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/audit-correct/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/audit-crossrefs/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/authentication-docs/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/automating-pages-spillwavesolutions-automating-mac-apps/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/automating-pages-spillwavesolutions-automating-mac-apps-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/automating-powerpoint/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/automating-word/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "documents/automating-word-spillwavesolutions-automating-mac-apps/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "gaming/astar/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "gaming/astar-a5c-ai-babysitter/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "generation/article-illustrator/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "generation/article-images/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "generation/austn-tools/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/archon/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/archon-activer007-ordinary-claude-skil/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/archon-jlh425-ottomator-agents/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/aryn-automation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/assimilate-a5c-ai-babysitter-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/assimilate-a5c-ai-babysitter-3/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/async-interview-automation/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/atlassian-cli-jira/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "integration/atlassian-cli-leweii-atlassian-cli/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "marketing/audit-nowork-studio-toprank/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "marketing/audit-nowork-studio-toprank-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "orchestration/auto-trigger-charon-fan-agent-playbook-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "product/assumption-mapper/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "productivity/artifact-tracking/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "productivity/artifact-tracking-miethe-deal-brain/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "productivity/async-task-queue/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "productivity/auto-summary/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "productivity/auto-tag/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/architecture-reviewer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/audit-agentsmd/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/audit-banbury-inc-banbury/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/audit-cygnusfear-claude-stuff-d8af9e06/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/audit-documentation-jasonmichaelbell78-c-sonash-v0-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/audit-project/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/audit-tercel-spec-forge/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "quality/automated-code-fixer/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "security/audit-log-generator-dengineproblem-agents-monorepo-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "testing/arguments-test-skill/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "testing/auditing-deep-link-contracts/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "testing/auditing-deep-link-contracts-clix-so-skills/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "workflow/archive-ticket/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "workflow/archive-workflow/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "workflow/automate-whatsapp/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "writing/astro-blog-write/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "writing/auto-article-poster/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "writing/auto-paper-improvement-loop/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "writing/auto-paper-improvement-loop-wanshuiyin-auto-claude-code-res/metadata.json",
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "writing/auto-paper-improvement-loop-wanshuiyin-auto-claude-code-res-2/metadata.json",
+      "errors": [],
+      "warnings": []
+    }
+  ]
+}

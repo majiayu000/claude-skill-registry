@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-27T03:43:13.560362+00:00",
+  "skills_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout",
+  "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/classification.jsonl",
+  "policy": {
+    "from_categories": [
+      "other"
+    ],
+    "min_confidence": 0.9,
+    "content_chars": 0,
+    "apply_mode": "report-only"
+  },
+  "summary": {
+    "classification_row_count": 1000,
+    "archive_category_counts": {
+      "agent": 1450,
+      "ai-llm": 2100,
+      "ai-ml": 2027,
+      "analysis": 3051,
+      "api": 890,
+      "bash": 210,
+      "business": 1038,
+      "c-level": 49,
+      "communication": 562,
+      "context-management": 1171,
+      "creative": 678,
+      "data": 48904,
+      "design": 13417,
+      "development": 36256,
+      "devops": 10242,
+      "documents": 6210,
+      "domains": 49,
+      "examples": 85,
+      "forensics": 56,
+      "gaming": 696,
+      "generation": 458,
+      "integration": 4635,
+      "language": 62,
+      "local-ai-infrastructure": 50,
+      "marketing": 2586,
+      "orchestration": 1856,
+      "other": 52894,
+      "performance": 853,
+      "personal-development": 285,
+      "planning": 1320,
+      "platform": 235,
+      "product": 2339,
+      "productivity": 2964,
+      "quality": 2670,
+      "security": 4985,
+      "skills": 1718,
+      "system": 17,
+      "testing": 11144,
+      "travel": 44,
+      "war-room": 5,
+      "workflow": 902,
+      "writing": 915
+    },
+    "scoped_existing_classification_count": 873,
+    "workset_counts": {
+      "classification_gap": 52021,
+      "low_confidence": 656,
+      "review_target": 0,
+      "target_other": 0
+    },
+    "conflict_detail_count": 0,
+    "conflict_clusters": {},
+    "conflict_target_category_counts": {}
+  },
+  "workset_files": {
+    "low_confidence": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/residual-worksets/low_confidence.jsonl",
+    "review_target": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/residual-worksets/review_target.jsonl",
+    "target_other": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/residual-worksets/target_other.jsonl"
+  },
+  "omitted_large_worksets": {
+    "classification_gap": {
+      "original_workset_file": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-issue-48-nested-other-layout/migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/residual-worksets/classification_gap.jsonl",
+      "omitted_reason": "Full classification-gap workset is intentionally not committed because it is a large generated file. Regenerate from this manifest and residual report when needed."
+    }
+  },
+  "notes": [
+    "This report does not modify archive files.",
+    "classification_gap contains live archive paths absent from the classification JSONL.",
+    "low_confidence and review_target rows should be reclassified before apply.",
+    "conflict clusters are diagnostic; content drift conflicts must not be auto-deleted.",
+    "Full residual-worksets.json and residual-worksets/classification_gap.jsonl were omitted from git because they are large generated files; residual-worksets-summary.json preserves counts, policy, and reproducibility context."
+  ]
+}

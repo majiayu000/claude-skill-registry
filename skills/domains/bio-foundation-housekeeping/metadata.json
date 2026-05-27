@@ -1,0 +1,20 @@
+{
+  "name": "bio-foundation-housekeeping",
+  "description": "",
+  "repo": "fmschulz/omics-skills",
+  "category": "domains",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/fmschulz/omics-skills",
+  "github_path": "skills/bio-foundation-housekeeping",
+  "github_branch": "main",
+  "dir_name": "bio-foundation-housekeeping",
+  "downloaded_at": "2026-02-05T01:44:22.858046Z",
+  "author": "fmschulz",
+  "source_url": "https://github.com/fmschulz/omics-skills/blob/main/skills/bio-foundation-housekeeping/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Frederik Schulz",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

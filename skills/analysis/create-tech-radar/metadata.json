@@ -1,0 +1,16 @@
+{
+  "name": "create-tech-radar",
+  "repo": "pwarnock/pwarnock.github.io",
+  "path": ".claude/skills/create-tech-radar/SKILL.md",
+  "source": "github.com/pwarnock/pwarnock.github.io",
+  "downloaded_at": "2026-02-02T02:56:14.126533Z",
+  "dir_name": "create-tech-radar",
+  "category": "analysis",
+  "author": "pwarnock",
+  "source_url": "https://github.com/pwarnock/pwarnock.github.io/blob/main/.claude/skills/create-tech-radar/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pwarnock/pwarnock.github.io/blob/main/.claude/skills/create-tech-radar/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

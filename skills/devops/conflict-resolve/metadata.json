@@ -1,0 +1,16 @@
+{
+  "name": "conflict-resolve",
+  "repo": "manastalukdar/claude-devstudio",
+  "path": "skills/conflict-resolve/SKILL.md",
+  "source": "github.com/manastalukdar/claude-devstudio",
+  "downloaded_at": "2026-02-02T03:11:54.885224Z",
+  "dir_name": "conflict-resolve",
+  "category": "devops",
+  "author": "manastalukdar",
+  "source_url": "https://github.com/manastalukdar/claude-devstudio/blob/main/skills/conflict-resolve/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Brenner Cruvinel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

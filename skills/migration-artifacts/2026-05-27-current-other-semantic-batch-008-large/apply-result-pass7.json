@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-27T15:27:44.750271+00:00",
+  "skills_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008",
+  "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008/migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/classification.jsonl",
+  "policy": {
+    "min_confidence": 0.85,
+    "from_categories": [
+      "other"
+    ],
+    "to_categories": [],
+    "target_statuses": [
+      "active"
+    ],
+    "allow_target_other": false,
+    "movable_only": true,
+    "limit": null,
+    "apply_mode": "apply"
+  },
+  "summary": {
+    "classification_row_count": 10000,
+    "classification_status_counts": {
+      "ok": 10000
+    },
+    "planned_move_count": 0,
+    "movable_count": 0,
+    "blocked_count": 0,
+    "operation_counts": {},
+    "reject_reasons": {
+      "confidence below threshold": 2953,
+      "source directory missing": 3333,
+      "target category already contains a skill with the same stable key": 3714
+    },
+    "source_category_counts": {},
+    "target_category_counts": {}
+  },
+  "moves": [],
+  "notes": [
+    "Default mode is review-only and does not modify files.",
+    "Only --apply moves directories and updates metadata.json.",
+    "Blocked moves are never applied automatically."
+  ],
+  "applied_at": "2026-05-27T15:27:44.780365+00:00"
+}

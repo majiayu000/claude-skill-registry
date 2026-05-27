@@ -1,0 +1,17 @@
+{
+  "name": "create-demo-model-from-ivp-file",
+  "repo": "datagrok-ai/public",
+  "path": "packages/DiffStudio/.claude/skills/create-demo-model-from-ivp-file/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
+  "source": "github.com/datagrok-ai/public",
+  "dir_name": "create-demo-model-from-ivp-file",
+  "downloaded_at": "2026-03-22T07:40:11.323024Z",
+  "author": "datagrok-ai",
+  "source_url": "https://github.com/datagrok-ai/public/blob/master/packages/DiffStudio/.claude/skills/create-demo-model-from-ivp-file/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/datagrok-ai/public/blob/master/packages/DiffStudio/.claude/skills/create-demo-model-from-ivp-file/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

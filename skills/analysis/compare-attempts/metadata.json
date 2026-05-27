@@ -1,0 +1,16 @@
+{
+  "name": "compare-attempts",
+  "repo": "brazil-bench/pourpoise",
+  "path": "skills/compare-attempts/SKILL.md",
+  "category": "analysis",
+  "source": "github.com/brazil-bench/pourpoise",
+  "dir_name": "compare-attempts",
+  "downloaded_at": "2026-02-22T06:35:34.023419Z",
+  "author": "brazil-bench",
+  "source_url": "https://github.com/brazil-bench/pourpoise/blob/main/skills/compare-attempts/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/brazil-bench/pourpoise/blob/main/skills/compare-attempts/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

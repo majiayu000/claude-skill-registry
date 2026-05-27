@@ -1,0 +1,17 @@
+{
+  "name": "create-proposal",
+  "repo": "Harmeet10000/skills",
+  "path": "skills/writing-docs/create-proposal/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/Harmeet10000/skills",
+  "dir_name": "create-proposal",
+  "downloaded_at": "2026-03-22T05:27:11.868318Z",
+  "author": "Harmeet10000",
+  "source_url": "https://github.com/Harmeet10000/skills/blob/main/skills/writing-docs/create-proposal/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Harmeet10000/skills/blob/main/skills/writing-docs/create-proposal/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

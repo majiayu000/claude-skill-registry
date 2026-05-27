@@ -1,0 +1,16 @@
+{
+  "name": "build-task-graph",
+  "repo": "ben-mad-jlp/claude-mermaid-collab",
+  "path": "skills/build-task-graph/SKILL.md",
+  "source": "github.com/ben-mad-jlp/claude-mermaid-collab",
+  "downloaded_at": "2026-01-28T02:43:54.988395Z",
+  "dir_name": "build-task-graph",
+  "category": "planning",
+  "author": "ben-mad-jlp",
+  "source_url": "https://github.com/ben-mad-jlp/claude-mermaid-collab/blob/main/skills/build-task-graph/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ben-mad-jlp/claude-mermaid-collab/blob/main/skills/build-task-graph/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

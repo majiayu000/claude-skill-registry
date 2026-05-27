@@ -1,0 +1,18 @@
+{
+  "name": "context-driven-development",
+  "description": "Use this skill when working with Conductor's context-driven development methodology, managing project context artifacts, or understanding the relationship between product.md, tech-stack.md, and workfl",
+  "repo": "pelan05/vscode_agents_folder",
+  "path": "skills/context-driven-development",
+  "category": "workflow",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pelan05/vscode_agents_folder",
+  "dir_name": "context-driven-development-pelan05-vscode-agents-folder-2",
+  "author": "pelan05",
+  "source_url": "https://github.com/pelan05/vscode_agents_folder/blob/main/skills/context-driven-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pelan05/vscode_agents_folder/blob/main/skills/context-driven-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

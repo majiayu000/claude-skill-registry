@@ -1,0 +1,16 @@
+{
+  "name": "configuring",
+  "repo": "oaustegard/claude-skills",
+  "path": "configuring/SKILL.md",
+  "source": "github.com/oaustegard/claude-skills",
+  "downloaded_at": "2026-02-02T02:42:51.231239Z",
+  "dir_name": "configuring",
+  "category": "platform",
+  "author": "oaustegard",
+  "source_url": "https://github.com/oaustegard/claude-skills/blob/main/configuring/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Oskar Austegard",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

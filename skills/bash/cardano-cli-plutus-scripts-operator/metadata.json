@@ -1,0 +1,13 @@
+{
+  "name": "cardano-cli-plutus-scripts-operator",
+  "description": "",
+  "repo": "CharlesHoskinson/dancesWithClaws",
+  "category": "bash",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CharlesHoskinson/dancesWithClaws",
+  "github_path": "workspace/skills/cardano-cli-plutus-scripts-operator",
+  "github_branch": "master",
+  "dir_name": "cardano-cli-plutus-scripts-operator",
+  "downloaded_at": "2026-02-05T01:45:06.411786Z"
+}

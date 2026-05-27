@@ -1,0 +1,16 @@
+{
+  "name": "check-concurrency",
+  "repo": "pwittchen/varun.surf",
+  "path": ".claude/skills/check-concurrency/SKILL.md",
+  "source": "github.com/pwittchen/varun.surf",
+  "downloaded_at": "2026-02-02T04:32:05.858501Z",
+  "dir_name": "check-concurrency",
+  "category": "security",
+  "author": "pwittchen",
+  "source_url": "https://github.com/pwittchen/varun.surf/blob/main/.claude/skills/check-concurrency/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

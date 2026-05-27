@@ -1,0 +1,17 @@
+{
+  "name": "conference-networking-prep",
+  "repo": "amplemarket/skills",
+  "path": "skills/conference-networking-prep/SKILL.md",
+  "github_branch": "master",
+  "category": "marketing",
+  "source": "github.com/amplemarket/skills",
+  "dir_name": "conference-networking-prep",
+  "downloaded_at": "2026-03-22T06:54:15.994948Z",
+  "author": "amplemarket",
+  "source_url": "https://github.com/amplemarket/skills/blob/master/skills/conference-networking-prep/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/amplemarket/skills/blob/master/skills/conference-networking-prep/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

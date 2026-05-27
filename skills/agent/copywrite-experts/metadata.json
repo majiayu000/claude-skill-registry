@@ -1,0 +1,16 @@
+{
+  "name": "copywrite-experts",
+  "repo": "blicktz/knowledge_base_repo",
+  "path": ".claude/skills/copywrite-experts/SKILL.md",
+  "source": "github.com/blicktz/knowledge_base_repo",
+  "downloaded_at": "2026-02-02T04:18:08.806927Z",
+  "dir_name": "copywrite-experts",
+  "category": "agent",
+  "author": "blicktz",
+  "source_url": "https://github.com/blicktz/knowledge_base_repo/blob/main/.claude/skills/copywrite-experts/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/blicktz/knowledge_base_repo/blob/main/.claude/skills/copywrite-experts/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

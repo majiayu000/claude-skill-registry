@@ -1,0 +1,17 @@
+{
+  "name": "cost-optimization-analyzer",
+  "repo": "ChunkyTortoise/EnterpriseHub",
+  "path": ".claude/skills/cost-optimization/cost-optimization-analyzer/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/ChunkyTortoise/EnterpriseHub",
+  "dir_name": "cost-optimization-analyzer-chunkytortoise-enterprisehub",
+  "downloaded_at": "2026-03-01T05:03:47.449953Z",
+  "author": "ChunkyTortoise",
+  "source_url": "https://github.com/ChunkyTortoise/EnterpriseHub/blob/main/.claude/skills/cost-optimization/cost-optimization-analyzer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ChunkyTortoise/EnterpriseHub/blob/main/.claude/skills/cost-optimization/cost-optimization-analyzer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

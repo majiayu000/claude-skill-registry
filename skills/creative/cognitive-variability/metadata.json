@@ -1,0 +1,16 @@
+{
+  "name": "cognitive-variability",
+  "repo": "agentgptsmith/MonadFramework",
+  "path": ".claude/skills/cognitive-variability/SKILL.md",
+  "source": "github.com/agentgptsmith/MonadFramework",
+  "downloaded_at": "2026-02-02T01:17:53.239057Z",
+  "dir_name": "cognitive-variability",
+  "category": "creative",
+  "author": "agentgptsmith",
+  "source_url": "https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/cognitive-variability/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/cognitive-variability/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

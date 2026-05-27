@@ -1,0 +1,18 @@
+{
+  "name": "bifurcation",
+  "description": "Hopf bifurcation detection for dynamical system state transitions with GF(3) phase portraits",
+  "repo": "plurigrid/asi",
+  "path": "skills/bifurcation-generator",
+  "category": "generation",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "bifurcation-plurigrid-asi-2",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/bifurcation-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

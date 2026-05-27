@@ -1,0 +1,16 @@
+{
+  "name": "changelog-format",
+  "repo": "sequenzia/claude-alchemy",
+  "path": "claude-tools/dev-tools/skills/changelog-format/SKILL.md",
+  "source": "github.com/sequenzia/claude-alchemy",
+  "downloaded_at": "2026-01-29T07:31:44.687708Z",
+  "dir_name": "changelog-format-sequenzia-claude-alchemy",
+  "category": "documents",
+  "author": "sequenzia",
+  "source_url": "https://github.com/sequenzia/claude-alchemy/blob/main/claude-tools/dev-tools/skills/changelog-format/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Stephen Sequenzia",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

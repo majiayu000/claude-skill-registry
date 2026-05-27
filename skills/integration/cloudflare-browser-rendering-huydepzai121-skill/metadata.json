@@ -1,0 +1,16 @@
+{
+  "name": "cloudflare-browser-rendering",
+  "repo": "huydepzai121/skill",
+  "path": ".claude/skills/cloudflare-browser-rendering/SKILL.md",
+  "category": "integration",
+  "source": "github.com/huydepzai121/skill",
+  "dir_name": "cloudflare-browser-rendering-huydepzai121-skill",
+  "downloaded_at": "2026-02-15T07:33:03.337095Z",
+  "author": "huydepzai121",
+  "source_url": "https://github.com/huydepzai121/skill/blob/main/.claude/skills/cloudflare-browser-rendering/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/huydepzai121/skill/blob/main/.claude/skills/cloudflare-browser-rendering/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

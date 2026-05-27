@@ -1,0 +1,16 @@
+{
+  "name": "design-doc-creator",
+  "repo": "sunholo-data/ailang",
+  "path": ".claude/skills/design-doc-creator/SKILL.md",
+  "source": "github.com/sunholo-data/ailang",
+  "downloaded_at": "2026-01-29T06:03:46.732924Z",
+  "dir_name": "design-doc-creator-sunholo-data-ailang-81d74030",
+  "category": "documents",
+  "author": "sunholo-data",
+  "source_url": "https://github.com/sunholo-data/ailang/blob/main/.claude/skills/design-doc-creator/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sunholo-data/ailang/blob/main/.claude/skills/design-doc-creator/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "create-script",
+  "repo": "ai-service-incubator/celebrities-shorts-video",
+  "path": ".claude/skills/create-script/SKILL.md",
+  "source": "github.com/ai-service-incubator/celebrities-shorts-video",
+  "downloaded_at": "2026-01-31T01:36:46.302181Z",
+  "dir_name": "create-script",
+  "category": "writing",
+  "author": "ai-service-incubator",
+  "source_url": "https://github.com/ai-service-incubator/celebrities-shorts-video/blob/main/.claude/skills/create-script/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ai-service-incubator/celebrities-shorts-video/blob/main/.claude/skills/create-script/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

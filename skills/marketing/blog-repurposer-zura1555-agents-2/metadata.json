@@ -1,0 +1,18 @@
+{
+  "name": "blog-repurposer",
+  "description": "Repurpose blog content into multiple formats (X threads, newsletters, summaries). USE WHEN user says 'create thread from post', 'repurpose blog', 'newsletter version', 'multi-format output', OR wants ",
+  "repo": "Zura1555/agents",
+  "path": ".claude/skills/blog-repurposer",
+  "category": "marketing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Zura1555/agents",
+  "dir_name": "blog-repurposer-zura1555-agents-2",
+  "author": "Zura1555",
+  "source_url": "https://github.com/Zura1555/agents/blob/main/.claude/skills/blog-repurposer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Zura1555/agents/blob/main/.claude/skills/blog-repurposer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

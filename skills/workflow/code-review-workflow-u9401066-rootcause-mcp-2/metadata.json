@@ -1,0 +1,18 @@
+{
+  "name": "code-review-workflow",
+  "description": "完整的 PR/MR 審查流程，整合自動化檢查和多維度審查。",
+  "repo": "u9401066/rootcause-mcp",
+  "path": ".claude/skills/code-review-workflow",
+  "category": "workflow",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/u9401066/rootcause-mcp",
+  "dir_name": "code-review-workflow-u9401066-rootcause-mcp-2",
+  "author": "u9401066",
+  "source_url": "https://github.com/u9401066/rootcause-mcp/blob/main/.claude/skills/code-review-workflow/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 [Your Name or Organization]",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

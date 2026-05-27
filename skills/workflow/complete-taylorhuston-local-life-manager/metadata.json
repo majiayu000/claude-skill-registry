@@ -1,0 +1,16 @@
+{
+  "name": "complete",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/complete/SKILL.md",
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "downloaded_at": "2026-01-29T08:41:16.267619Z",
+  "dir_name": "complete-taylorhuston-local-life-manager",
+  "category": "workflow",
+  "author": "TaylorHuston",
+  "source_url": "https://github.com/TaylorHuston/local-life-manager/blob/main/.claude/skills/complete/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TaylorHuston/local-life-manager/blob/main/.claude/skills/complete/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

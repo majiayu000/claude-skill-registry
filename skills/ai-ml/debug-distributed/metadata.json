@@ -1,0 +1,16 @@
+{
+  "name": "debug-distributed",
+  "repo": "inclusionAI/AReaL",
+  "path": ".claude/skills/debug-distributed/SKILL.md",
+  "source": "github.com/inclusionAI/AReaL",
+  "downloaded_at": "2026-02-02T04:41:17.695099Z",
+  "dir_name": "debug-distributed",
+  "category": "ai-ml",
+  "author": "inclusionAI",
+  "source_url": "https://github.com/inclusionAI/AReaL/blob/main/.claude/skills/debug-distributed/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/inclusionAI/AReaL/blob/main/.claude/skills/debug-distributed/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

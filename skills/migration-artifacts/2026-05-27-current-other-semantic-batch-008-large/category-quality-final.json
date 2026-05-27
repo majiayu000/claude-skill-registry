@@ -1,0 +1,1828 @@
+{
+  "generated_at": "2026-05-27T15:42:07.744648+00:00",
+  "skills_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch008",
+  "total_skills": 223082,
+  "standard_layout_skill_count": 223082,
+  "layout_issue_count": 0,
+  "layout_issues": [],
+  "category_count": 42,
+  "category_counts": {
+    "agent": 1506,
+    "ai-llm": 2172,
+    "ai-ml": 2065,
+    "analysis": 3273,
+    "api": 973,
+    "bash": 226,
+    "business": 1094,
+    "c-level": 58,
+    "communication": 574,
+    "context-management": 1211,
+    "creative": 711,
+    "data": 48969,
+    "design": 13502,
+    "development": 36645,
+    "devops": 10345,
+    "documents": 6415,
+    "domains": 350,
+    "examples": 99,
+    "forensics": 63,
+    "gaming": 726,
+    "generation": 548,
+    "integration": 4866,
+    "language": 68,
+    "local-ai-infrastructure": 50,
+    "marketing": 2658,
+    "orchestration": 1967,
+    "other": 50408,
+    "performance": 885,
+    "personal-development": 328,
+    "planning": 1365,
+    "platform": 302,
+    "product": 2437,
+    "productivity": 2993,
+    "quality": 2905,
+    "security": 5042,
+    "skills": 1917,
+    "system": 44,
+    "testing": 11184,
+    "travel": 45,
+    "war-room": 6,
+    "workflow": 1143,
+    "writing": 944
+  },
+  "large_categories": [
+    {
+      "category": "other",
+      "count": 50408
+    },
+    {
+      "category": "data",
+      "count": 48969
+    },
+    {
+      "category": "development",
+      "count": 36645
+    },
+    {
+      "category": "design",
+      "count": 13502
+    },
+    {
+      "category": "testing",
+      "count": 11184
+    },
+    {
+      "category": "devops",
+      "count": 10345
+    },
+    {
+      "category": "documents",
+      "count": 6415
+    },
+    {
+      "category": "security",
+      "count": 5042
+    },
+    {
+      "category": "integration",
+      "count": 4866
+    },
+    {
+      "category": "analysis",
+      "count": 3273
+    }
+  ],
+  "small_categories": [
+    {
+      "category": "war-room",
+      "count": 6
+    }
+  ],
+  "unknown_categories": [],
+  "alias_usages": [],
+  "alias_usage_count": 0,
+  "category_conflicts": [],
+  "category_conflict_count": 0,
+  "candidate_reclassifications": [
+    {
+      "path": "data/infra-engineer/SKILL.md",
+      "name": "infra-engineer",
+      "current_category": "data",
+      "suggested_category": "devops",
+      "score": 8,
+      "current_score": 1,
+      "signals": [
+        "devops",
+        "ci",
+        "cd",
+        "docker",
+        "kubernetes",
+        "deploy",
+        "infra",
+        "infrastructure"
+      ],
+      "reason": "matched 8 devops keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/testing-engineering/SKILL.md",
+      "name": "testing-engineering",
+      "current_category": "data",
+      "suggested_category": "testing",
+      "score": 8,
+      "current_score": 1,
+      "signals": [
+        "test",
+        "tdd",
+        "jest",
+        "pytest",
+        "integration",
+        "e2e",
+        "playwright",
+        "cypress"
+      ],
+      "reason": "matched 8 testing keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/convert-to-markdown/SKILL.md",
+      "name": "convert-to-markdown",
+      "current_category": "data",
+      "suggested_category": "documents",
+      "score": 7,
+      "current_score": 1,
+      "signals": [
+        "pdf",
+        "word",
+        "excel",
+        "pptx",
+        "xlsx",
+        "docx",
+        "markdown"
+      ],
+      "reason": "matched 7 documents keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/design-style/SKILL.md",
+      "name": "design-style",
+      "current_category": "data",
+      "suggested_category": "design",
+      "score": 7,
+      "current_score": 1,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "css",
+        "frontend",
+        "component",
+        "tailwind"
+      ],
+      "reason": "matched 7 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/kramme-markdown-converter-abildtoft-kramme-cc-workflow/SKILL.md",
+      "name": "kramme:markdown-converter",
+      "current_category": "data",
+      "suggested_category": "documents",
+      "score": 7,
+      "current_score": 1,
+      "signals": [
+        "pdf",
+        "word",
+        "excel",
+        "pptx",
+        "xlsx",
+        "docx",
+        "markdown"
+      ],
+      "reason": "matched 7 documents keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/kramme-markdown-converter/SKILL.md",
+      "name": "kramme:markdown-converter",
+      "current_category": "data",
+      "suggested_category": "documents",
+      "score": 7,
+      "current_score": 1,
+      "signals": [
+        "pdf",
+        "word",
+        "excel",
+        "pptx",
+        "xlsx",
+        "docx",
+        "markdown"
+      ],
+      "reason": "matched 7 documents keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/markdown-converter/SKILL.md",
+      "name": "markdown-converter",
+      "current_category": "data",
+      "suggested_category": "documents",
+      "score": 7,
+      "current_score": 1,
+      "signals": [
+        "pdf",
+        "word",
+        "excel",
+        "pptx",
+        "xlsx",
+        "docx",
+        "markdown"
+      ],
+      "reason": "matched 7 documents keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/markdown-tools/SKILL.md",
+      "name": "markdown-tools",
+      "current_category": "data",
+      "suggested_category": "documents",
+      "score": 7,
+      "current_score": 1,
+      "signals": [
+        "doc",
+        "docs",
+        "pdf",
+        "word",
+        "pptx",
+        "docx",
+        "markdown"
+      ],
+      "reason": "matched 7 documents keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/shadcn-tailwind-congdon1207-agents-md/SKILL.md",
+      "name": "shadcn-tailwind",
+      "current_category": "data",
+      "suggested_category": "design",
+      "score": 7,
+      "current_score": 1,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "css",
+        "frontend",
+        "component",
+        "tailwind"
+      ],
+      "reason": "matched 7 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/shadcn-tailwind/SKILL.md",
+      "name": "shadcn-tailwind",
+      "current_category": "data",
+      "suggested_category": "design",
+      "score": 7,
+      "current_score": 1,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "css",
+        "frontend",
+        "component",
+        "tailwind"
+      ],
+      "reason": "matched 7 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/ultimate-frontend/SKILL.md",
+      "name": "ultimate-frontend",
+      "current_category": "data",
+      "suggested_category": "design",
+      "score": 7,
+      "current_score": 1,
+      "signals": [
+        "design",
+        "ui",
+        "css",
+        "frontend",
+        "component",
+        "tailwind",
+        "animation"
+      ],
+      "reason": "matched 7 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "development/frontend-dev-ops/SKILL.md",
+      "name": "frontend-dev-ops",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 7,
+      "current_score": 2,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "css",
+        "frontend",
+        "component",
+        "tailwind"
+      ],
+      "reason": "matched 7 design keyword(s) versus 2 current-category keyword(s)"
+    },
+    {
+      "path": "other/ultimate-frontend-laurenj3250-debug-vethub2-0-2/SKILL.md",
+      "name": "ultimate-frontend",
+      "current_category": "other",
+      "suggested_category": "design",
+      "score": 7,
+      "current_score": 0,
+      "signals": [
+        "design",
+        "ui",
+        "css",
+        "frontend",
+        "component",
+        "tailwind",
+        "animation"
+      ],
+      "reason": "matched 7 design keyword(s)"
+    },
+    {
+      "path": "ai-llm/gemini-forge/SKILL.md",
+      "name": "gemini-forge",
+      "current_category": "ai-llm",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 2,
+      "signals": [
+        "design",
+        "ui",
+        "css",
+        "frontend",
+        "component",
+        "animation"
+      ],
+      "reason": "matched 6 design keyword(s) versus 2 current-category keyword(s)"
+    },
+    {
+      "path": "data/0-ui-ux-pro-max/SKILL.md",
+      "name": "ui-ux-pro-max",
+      "current_category": "data",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "component",
+        "tailwind",
+        "animation"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/antigravity-ui-ux-pro-max/SKILL.md",
+      "name": "ui-ux-pro-max",
+      "current_category": "data",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "component",
+        "tailwind",
+        "animation"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/context-infrastructure/SKILL.md",
+      "name": "context-infrastructure",
+      "current_category": "data",
+      "suggested_category": "devops",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "devops",
+        "ci",
+        "cd",
+        "docker",
+        "infra",
+        "infrastructure"
+      ],
+      "reason": "matched 6 devops keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/deployment-cicd/SKILL.md",
+      "name": "deployment-cicd",
+      "current_category": "data",
+      "suggested_category": "devops",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "devops",
+        "ci",
+        "cd",
+        "docker",
+        "deploy",
+        "infrastructure"
+      ],
+      "reason": "matched 6 devops keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/design-principles-brixtonpham-claude-config/SKILL.md",
+      "name": "design-principles",
+      "current_category": "data",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "css",
+        "component",
+        "tailwind"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/devops-anhxuanpham-astro-chart/SKILL.md",
+      "name": "devops",
+      "current_category": "data",
+      "suggested_category": "devops",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "devops",
+        "ci",
+        "cd",
+        "docker",
+        "deploy",
+        "infrastructure"
+      ],
+      "reason": "matched 6 devops keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/devops-architect/SKILL.md",
+      "name": "devops-architect",
+      "current_category": "data",
+      "suggested_category": "devops",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "devops",
+        "ci",
+        "cd",
+        "docker",
+        "kubernetes",
+        "infrastructure"
+      ],
+      "reason": "matched 6 devops keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/devops-automator/SKILL.md",
+      "name": "devops-automator",
+      "current_category": "data",
+      "suggested_category": "devops",
+      "score": 6,
+      "current_score": 3,
+      "signals": [
+        "devops",
+        "ci",
+        "cd",
+        "docker",
+        "kubernetes",
+        "infrastructure"
+      ],
+      "reason": "matched 6 devops keyword(s) versus 3 current-category keyword(s)"
+    },
+    {
+      "path": "data/devops-cicd/SKILL.md",
+      "name": "devops-cicd",
+      "current_category": "data",
+      "suggested_category": "devops",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "devops",
+        "ci",
+        "cd",
+        "docker",
+        "kubernetes",
+        "infrastructure"
+      ],
+      "reason": "matched 6 devops keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/devops-engineering/SKILL.md",
+      "name": "devops-engineering",
+      "current_category": "data",
+      "suggested_category": "devops",
+      "score": 6,
+      "current_score": 3,
+      "signals": [
+        "devops",
+        "ci",
+        "cd",
+        "docker",
+        "kubernetes",
+        "infrastructure"
+      ],
+      "reason": "matched 6 devops keyword(s) versus 3 current-category keyword(s)"
+    },
+    {
+      "path": "data/devops-mrgoonie/SKILL.md",
+      "name": "devops",
+      "current_category": "data",
+      "suggested_category": "devops",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "devops",
+        "ci",
+        "cd",
+        "docker",
+        "deploy",
+        "infrastructure"
+      ],
+      "reason": "matched 6 devops keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/devops-patterns/SKILL.md",
+      "name": "devops-patterns",
+      "current_category": "data",
+      "suggested_category": "devops",
+      "score": 6,
+      "current_score": 2,
+      "signals": [
+        "devops",
+        "ci",
+        "cd",
+        "docker",
+        "kubernetes",
+        "infrastructure"
+      ],
+      "reason": "matched 6 devops keyword(s) versus 2 current-category keyword(s)"
+    },
+    {
+      "path": "data/devops/SKILL.md",
+      "name": "devops",
+      "current_category": "data",
+      "suggested_category": "devops",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "devops",
+        "ci",
+        "cd",
+        "docker",
+        "kubernetes",
+        "deploy"
+      ],
+      "reason": "matched 6 devops keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/doc-writing/SKILL.md",
+      "name": "doc-writing",
+      "current_category": "data",
+      "suggested_category": "documents",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "doc",
+        "pdf",
+        "pptx",
+        "xlsx",
+        "docx",
+        "documentation"
+      ],
+      "reason": "matched 6 documents keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/frontend-builder/SKILL.md",
+      "name": "Frontend Builder",
+      "current_category": "data",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "ui",
+        "ux",
+        "css",
+        "frontend",
+        "component",
+        "tailwind"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/frontend-css-spaceplushy-portfolio/SKILL.md",
+      "name": "Frontend CSS",
+      "current_category": "data",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "design",
+        "css",
+        "frontend",
+        "component",
+        "tailwind",
+        "animation"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/frontend-design-review/SKILL.md",
+      "name": "frontend-design-review",
+      "current_category": "data",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "frontend",
+        "component",
+        "figma"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/frontend-testing-fgarofalo56-suppercharge-microso/SKILL.md",
+      "name": "frontend-testing",
+      "current_category": "data",
+      "suggested_category": "testing",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "test",
+        "jest",
+        "integration",
+        "e2e",
+        "playwright",
+        "cypress"
+      ],
+      "reason": "matched 6 testing keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/office-dennislee928-smart-zone/SKILL.md",
+      "name": "office",
+      "current_category": "data",
+      "suggested_category": "documents",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "pdf",
+        "word",
+        "excel",
+        "pptx",
+        "xlsx",
+        "docx"
+      ],
+      "reason": "matched 6 documents keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/office/SKILL.md",
+      "name": "office",
+      "current_category": "data",
+      "suggested_category": "documents",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "pdf",
+        "word",
+        "excel",
+        "pptx",
+        "xlsx",
+        "docx"
+      ],
+      "reason": "matched 6 documents keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/qa-lead/SKILL.md",
+      "name": "qa-lead",
+      "current_category": "data",
+      "suggested_category": "testing",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "test",
+        "qa",
+        "jest",
+        "integration",
+        "e2e",
+        "playwright"
+      ],
+      "reason": "matched 6 testing keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/rails-devops/SKILL.md",
+      "name": "rails-devops",
+      "current_category": "data",
+      "suggested_category": "devops",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "devops",
+        "ci",
+        "cd",
+        "docker",
+        "kubernetes",
+        "infrastructure"
+      ],
+      "reason": "matched 6 devops keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/senior-frontend-nimeshgurung-artifact-hub-collect/SKILL.md",
+      "name": "senior-frontend",
+      "current_category": "data",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "ui",
+        "ux",
+        "css",
+        "frontend",
+        "component",
+        "tailwind"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/senior-frontend/SKILL.md",
+      "name": "senior-frontend",
+      "current_category": "data",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "ui",
+        "ux",
+        "css",
+        "frontend",
+        "component",
+        "tailwind"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/testing-skill/SKILL.md",
+      "name": "testing",
+      "current_category": "data",
+      "suggested_category": "testing",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "test",
+        "tdd",
+        "jest",
+        "pytest",
+        "integration",
+        "e2e"
+      ],
+      "reason": "matched 6 testing keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/ui-analyzer/SKILL.md",
+      "name": "ui-analyzer",
+      "current_category": "data",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "design",
+        "ui",
+        "css",
+        "component",
+        "tailwind",
+        "figma"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/ui-ux-designer-jkkn-institutions-kenavo/SKILL.md",
+      "name": "ui-ux-designer",
+      "current_category": "data",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "css",
+        "component",
+        "tailwind"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/ui-ux-pro-max-axelmrak-ai/SKILL.md",
+      "name": "ui-ux-pro-max",
+      "current_category": "data",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "component",
+        "tailwind",
+        "animation"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "data/ui-ux-pro-max/SKILL.md",
+      "name": "ui-ux-pro-max",
+      "current_category": "data",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "frontend",
+        "tailwind",
+        "animation"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "development/devops-architect-ljchg12-hue-windows-dotfiles/SKILL.md",
+      "name": "devops-architect",
+      "current_category": "development",
+      "suggested_category": "devops",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "devops",
+        "ci",
+        "cd",
+        "docker",
+        "kubernetes",
+        "infrastructure"
+      ],
+      "reason": "matched 6 devops keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "development/devops-architect/SKILL.md",
+      "name": "devops-architect",
+      "current_category": "development",
+      "suggested_category": "devops",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "devops",
+        "ci",
+        "cd",
+        "docker",
+        "kubernetes",
+        "infrastructure"
+      ],
+      "reason": "matched 6 devops keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "development/frontend-builder/SKILL.md",
+      "name": "Frontend Builder",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "ui",
+        "ux",
+        "css",
+        "frontend",
+        "component",
+        "tailwind"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "development/frontend-testing/SKILL.md",
+      "name": "frontend-testing",
+      "current_category": "development",
+      "suggested_category": "testing",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "test",
+        "jest",
+        "integration",
+        "e2e",
+        "playwright",
+        "cypress"
+      ],
+      "reason": "matched 6 testing keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "development/modern-web-creator/SKILL.md",
+      "name": "modern-web-creator",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 0,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "css",
+        "frontend",
+        "tailwind"
+      ],
+      "reason": "matched 6 design keyword(s)"
+    },
+    {
+      "path": "development/senior-frontend-afmdev-portfolio-2/SKILL.md",
+      "name": "senior-frontend",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "ui",
+        "ux",
+        "css",
+        "frontend",
+        "component",
+        "tailwind"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "development/senior-frontend-afmdev-portfolio/SKILL.md",
+      "name": "senior-frontend",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "ui",
+        "ux",
+        "css",
+        "frontend",
+        "component",
+        "tailwind"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "development/senior-frontend-algusaem-algusaem-portfolio/SKILL.md",
+      "name": "senior-frontend",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "ui",
+        "ux",
+        "css",
+        "frontend",
+        "component",
+        "tailwind"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "development/senior-frontend-davila7-claude-code-template/SKILL.md",
+      "name": "senior-frontend",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "ui",
+        "ux",
+        "css",
+        "frontend",
+        "component",
+        "tailwind"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "development/senior-frontend-jfespanolito-jfespanolito-dev/SKILL.md",
+      "name": "senior-frontend",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 2,
+      "signals": [
+        "ui",
+        "ux",
+        "css",
+        "frontend",
+        "component",
+        "tailwind"
+      ],
+      "reason": "matched 6 design keyword(s) versus 2 current-category keyword(s)"
+    },
+    {
+      "path": "development/senior-frontend-jfespanolito-template-frontend-as/SKILL.md",
+      "name": "senior-frontend",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "ui",
+        "ux",
+        "css",
+        "frontend",
+        "component",
+        "tailwind"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "development/senior-frontend-jfespanolito-template-frontend-ne/SKILL.md",
+      "name": "senior-frontend",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "ui",
+        "ux",
+        "css",
+        "frontend",
+        "component",
+        "tailwind"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "development/senior-frontend-johnmarkcapones-aralify-2/SKILL.md",
+      "name": "senior-frontend",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "ui",
+        "ux",
+        "css",
+        "frontend",
+        "component",
+        "tailwind"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "development/senior-frontend-johnmarkcapones-aralify-3/SKILL.md",
+      "name": "senior-frontend",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "ui",
+        "ux",
+        "css",
+        "frontend",
+        "component",
+        "tailwind"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "development/senior-frontend-johnmarkcapones-aralify/SKILL.md",
+      "name": "senior-frontend",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "ui",
+        "ux",
+        "css",
+        "frontend",
+        "component",
+        "tailwind"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "development/senior-frontend-lryuchi-tahzan-archive/SKILL.md",
+      "name": "senior-frontend",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "ui",
+        "ux",
+        "css",
+        "frontend",
+        "component",
+        "tailwind"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "development/senior-frontend-mfang0126-language-arts/SKILL.md",
+      "name": "senior-frontend",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "ui",
+        "ux",
+        "css",
+        "frontend",
+        "component",
+        "tailwind"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "development/senior-frontend-nimeshgurung-artifact-hub-collect/SKILL.md",
+      "name": "senior-frontend",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "ui",
+        "ux",
+        "css",
+        "frontend",
+        "component",
+        "tailwind"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "development/senior-frontend-ripkdr-steps-to-recovery/SKILL.md",
+      "name": "senior-frontend",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "ui",
+        "ux",
+        "css",
+        "frontend",
+        "component",
+        "tailwind"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "development/senior-frontend/SKILL.md",
+      "name": "senior-frontend",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 1,
+      "signals": [
+        "ui",
+        "ux",
+        "css",
+        "frontend",
+        "component",
+        "tailwind"
+      ],
+      "reason": "matched 6 design keyword(s) versus 1 current-category keyword(s)"
+    },
+    {
+      "path": "development/ui-ux-pro-max-binjuhor-shadcn-lar/SKILL.md",
+      "name": "ui-ux-pro-max",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 3,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "frontend",
+        "tailwind",
+        "animation"
+      ],
+      "reason": "matched 6 design keyword(s) versus 3 current-category keyword(s)"
+    },
+    {
+      "path": "development/ui-ux-pro-max-grupous-neondash/SKILL.md",
+      "name": "ui-ux-pro-max",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 3,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "component",
+        "tailwind",
+        "animation"
+      ],
+      "reason": "matched 6 design keyword(s) versus 3 current-category keyword(s)"
+    },
+    {
+      "path": "development/ui-ux-pro-max-nextlevelbuilder-ui-ux-pro-max/SKILL.md",
+      "name": "ui-ux-pro-max",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 3,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "component",
+        "tailwind",
+        "animation"
+      ],
+      "reason": "matched 6 design keyword(s) versus 3 current-category keyword(s)"
+    },
+    {
+      "path": "development/ui-ux-pro-max-sickn33-antigravity-awesome-sk/SKILL.md",
+      "name": "ui-ux-pro-max",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 3,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "component",
+        "tailwind",
+        "animation"
+      ],
+      "reason": "matched 6 design keyword(s) versus 3 current-category keyword(s)"
+    },
+    {
+      "path": "development/unknown-anhxuanpham-astro-chart/SKILL.md",
+      "name": "ui-ux-pro-max",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 3,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "frontend",
+        "tailwind",
+        "animation"
+      ],
+      "reason": "matched 6 design keyword(s) versus 3 current-category keyword(s)"
+    },
+    {
+      "path": "development/unknown-beatther-ohmyskills/SKILL.md",
+      "name": "ui-ux-pro-max",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 3,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "component",
+        "tailwind",
+        "animation"
+      ],
+      "reason": "matched 6 design keyword(s) versus 3 current-category keyword(s)"
+    },
+    {
+      "path": "development/unknown-hookvibe-hookcode/SKILL.md",
+      "name": "ui-ux-pro-max",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 3,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "component",
+        "tailwind",
+        "animation"
+      ],
+      "reason": "matched 6 design keyword(s) versus 3 current-category keyword(s)"
+    },
+    {
+      "path": "development/unknown-jabez4jc-simplifyed/SKILL.md",
+      "name": "ui-ux-pro-max",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 3,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "component",
+        "tailwind",
+        "animation"
+      ],
+      "reason": "matched 6 design keyword(s) versus 3 current-category keyword(s)"
+    },
+    {
+      "path": "development/unknown-kantrun-klelite-web/SKILL.md",
+      "name": "ui-ux-pro-max",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 3,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "frontend",
+        "tailwind",
+        "animation"
+      ],
+      "reason": "matched 6 design keyword(s) versus 3 current-category keyword(s)"
+    },
+    {
+      "path": "development/unknown-lee-becky-adsgo/SKILL.md",
+      "name": "ui-ux-pro-max",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 3,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "component",
+        "tailwind",
+        "animation"
+      ],
+      "reason": "matched 6 design keyword(s) versus 3 current-category keyword(s)"
+    },
+    {
+      "path": "development/unknown-monichre-digital-mischief-gro-2/SKILL.md",
+      "name": "ui-ux-pro-max",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 3,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "component",
+        "tailwind",
+        "animation"
+      ],
+      "reason": "matched 6 design keyword(s) versus 3 current-category keyword(s)"
+    },
+    {
+      "path": "development/unknown-monichre-digital-mischief-gro/SKILL.md",
+      "name": "ui-ux-pro-max",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 3,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "component",
+        "tailwind",
+        "animation"
+      ],
+      "reason": "matched 6 design keyword(s) versus 3 current-category keyword(s)"
+    },
+    {
+      "path": "development/unknown-nam0101-video-speed/SKILL.md",
+      "name": "ui-ux-pro-max",
+      "current_category": "development",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 3,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "component",
+        "tailwind",
+        "animation"
+      ],
+      "reason": "matched 6 design keyword(s) versus 3 current-category keyword(s)"
+    },
+    {
+      "path": "development/utilities-diegosouzapw-awesome-omni-skill/SKILL.md",
+      "name": "Utilities",
+      "current_category": "development",
+      "suggested_category": "documents",
+      "score": 6,
+      "current_score": 2,
+      "signals": [
+        "pdf",
+        "word",
+        "excel",
+        "pptx",
+        "xlsx",
+        "docx"
+      ],
+      "reason": "matched 6 documents keyword(s) versus 2 current-category keyword(s)"
+    },
+    {
+      "path": "other/baseline-ui/SKILL.md",
+      "name": "baseline-ui",
+      "current_category": "other",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 0,
+      "signals": [
+        "design",
+        "ui",
+        "css",
+        "component",
+        "tailwind",
+        "animation"
+      ],
+      "reason": "matched 6 design keyword(s)"
+    },
+    {
+      "path": "other/devops-automator-erichowens-some-claude-skills-2/SKILL.md",
+      "name": "devops-automator",
+      "current_category": "other",
+      "suggested_category": "devops",
+      "score": 6,
+      "current_score": 0,
+      "signals": [
+        "devops",
+        "ci",
+        "cd",
+        "docker",
+        "kubernetes",
+        "infrastructure"
+      ],
+      "reason": "matched 6 devops keyword(s)"
+    },
+    {
+      "path": "other/devops-binjuhor-shadcn-lar-2/SKILL.md",
+      "name": "devops",
+      "current_category": "other",
+      "suggested_category": "devops",
+      "score": 6,
+      "current_score": 0,
+      "signals": [
+        "devops",
+        "ci",
+        "cd",
+        "docker",
+        "deploy",
+        "infrastructure"
+      ],
+      "reason": "matched 6 devops keyword(s)"
+    },
+    {
+      "path": "other/devops-engineer-nahisaho-codegraphmcpserver-2/SKILL.md",
+      "name": "devops-engineer",
+      "current_category": "other",
+      "suggested_category": "devops",
+      "score": 6,
+      "current_score": 0,
+      "signals": [
+        "devops",
+        "ci",
+        "cd",
+        "docker",
+        "kubernetes",
+        "infrastructure"
+      ],
+      "reason": "matched 6 devops keyword(s)"
+    },
+    {
+      "path": "other/devops-engineer/SKILL.md",
+      "name": "devops-engineer",
+      "current_category": "other",
+      "suggested_category": "devops",
+      "score": 6,
+      "current_score": 0,
+      "signals": [
+        "devops",
+        "ci",
+        "cd",
+        "docker",
+        "kubernetes",
+        "infrastructure"
+      ],
+      "reason": "matched 6 devops keyword(s)"
+    },
+    {
+      "path": "other/doc-writing-vidyfoo-antigravity-skill-en-2/SKILL.md",
+      "name": "doc-writing",
+      "current_category": "other",
+      "suggested_category": "documents",
+      "score": 6,
+      "current_score": 0,
+      "signals": [
+        "doc",
+        "pdf",
+        "pptx",
+        "xlsx",
+        "docx",
+        "documentation"
+      ],
+      "reason": "matched 6 documents keyword(s)"
+    },
+    {
+      "path": "other/doc-writing-vidyfoo-antigravity-skill-en-3/SKILL.md",
+      "name": "doc-writing",
+      "current_category": "other",
+      "suggested_category": "documents",
+      "score": 6,
+      "current_score": 0,
+      "signals": [
+        "doc",
+        "pdf",
+        "pptx",
+        "xlsx",
+        "docx",
+        "documentation"
+      ],
+      "reason": "matched 6 documents keyword(s)"
+    },
+    {
+      "path": "other/document-skills-travisjneuman-claude-2/SKILL.md",
+      "name": "document-skills",
+      "current_category": "other",
+      "suggested_category": "documents",
+      "score": 6,
+      "current_score": 0,
+      "signals": [
+        "pdf",
+        "word",
+        "excel",
+        "pptx",
+        "xlsx",
+        "docx"
+      ],
+      "reason": "matched 6 documents keyword(s)"
+    },
+    {
+      "path": "other/frontend-css-spaceplushy-portfolio-2/SKILL.md",
+      "name": "Frontend CSS",
+      "current_category": "other",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 0,
+      "signals": [
+        "design",
+        "css",
+        "frontend",
+        "component",
+        "tailwind",
+        "animation"
+      ],
+      "reason": "matched 6 design keyword(s)"
+    },
+    {
+      "path": "other/frontend-design-review-dauquangthanh-hanoi-rainbow-2/SKILL.md",
+      "name": "frontend-design-review",
+      "current_category": "other",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 0,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "frontend",
+        "component",
+        "figma"
+      ],
+      "reason": "matched 6 design keyword(s)"
+    },
+    {
+      "path": "other/gemini-forge-tdimino-claude-code-minoan/SKILL.md",
+      "name": "gemini-forge",
+      "current_category": "other",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 0,
+      "signals": [
+        "design",
+        "ui",
+        "css",
+        "frontend",
+        "component",
+        "animation"
+      ],
+      "reason": "matched 6 design keyword(s)"
+    },
+    {
+      "path": "other/gemini-forge/SKILL.md",
+      "name": "gemini-forge",
+      "current_category": "other",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 0,
+      "signals": [
+        "design",
+        "ui",
+        "css",
+        "frontend",
+        "component",
+        "animation"
+      ],
+      "reason": "matched 6 design keyword(s)"
+    },
+    {
+      "path": "other/lambdatest-agent-skills/SKILL.md",
+      "name": "lambdatest-agent-skills",
+      "current_category": "other",
+      "suggested_category": "testing",
+      "score": 6,
+      "current_score": 0,
+      "signals": [
+        "test",
+        "jest",
+        "pytest",
+        "e2e",
+        "playwright",
+        "cypress"
+      ],
+      "reason": "matched 6 testing keyword(s)"
+    },
+    {
+      "path": "other/markitdown-hxk622-tokendance-2/SKILL.md",
+      "name": "markitdown",
+      "current_category": "other",
+      "suggested_category": "documents",
+      "score": 6,
+      "current_score": 0,
+      "signals": [
+        "pdf",
+        "pptx",
+        "xlsx",
+        "docx",
+        "markdown",
+        "documentation"
+      ],
+      "reason": "matched 6 documents keyword(s)"
+    },
+    {
+      "path": "other/office-dennislee928-smart-zone-2/SKILL.md",
+      "name": "office",
+      "current_category": "other",
+      "suggested_category": "documents",
+      "score": 6,
+      "current_score": 0,
+      "signals": [
+        "pdf",
+        "word",
+        "excel",
+        "pptx",
+        "xlsx",
+        "docx"
+      ],
+      "reason": "matched 6 documents keyword(s)"
+    },
+    {
+      "path": "other/office-jezweb-claude-skills-2/SKILL.md",
+      "name": "office",
+      "current_category": "other",
+      "suggested_category": "documents",
+      "score": 6,
+      "current_score": 0,
+      "signals": [
+        "pdf",
+        "word",
+        "excel",
+        "pptx",
+        "xlsx",
+        "docx"
+      ],
+      "reason": "matched 6 documents keyword(s)"
+    },
+    {
+      "path": "other/testing-skill-scientiacapital-skills-2/SKILL.md",
+      "name": "testing",
+      "current_category": "other",
+      "suggested_category": "testing",
+      "score": 6,
+      "current_score": 0,
+      "signals": [
+        "test",
+        "tdd",
+        "jest",
+        "pytest",
+        "integration",
+        "e2e"
+      ],
+      "reason": "matched 6 testing keyword(s)"
+    },
+    {
+      "path": "other/ui-ux-pro-max-binjuhor-shadcn-lar-2/SKILL.md",
+      "name": "ui-ux-pro-max",
+      "current_category": "other",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 0,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "frontend",
+        "tailwind",
+        "animation"
+      ],
+      "reason": "matched 6 design keyword(s)"
+    },
+    {
+      "path": "other/ui-ux-pro-max-ninehills-skills-2/SKILL.md",
+      "name": "ui-ux-pro-max",
+      "current_category": "other",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 0,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "component",
+        "tailwind",
+        "animation"
+      ],
+      "reason": "matched 6 design keyword(s)"
+    },
+    {
+      "path": "other/ui-ux-pro-max/SKILL.md",
+      "name": "ui-ux-pro-max",
+      "current_category": "other",
+      "suggested_category": "design",
+      "score": 6,
+      "current_score": 0,
+      "signals": [
+        "design",
+        "ui",
+        "ux",
+        "component",
+        "tailwind",
+        "animation"
+      ],
+      "reason": "matched 6 design keyword(s)"
+    },
+    {
+      "path": "agent/agentic-workflows-housegarofalo-claude-code-base/SKILL.md",
+      "name": "agentic-workflows",
+      "current_category": "agent",
+      "suggested_category": "productivity",
+      "score": 5,
+      "current_score": 0,
+      "signals": [
+        "automation",
+        "workflow",
+        "task",
+        "planning",
+        "memory"
+      ],
+      "reason": "matched 5 productivity keyword(s)"
+    },
+    {
+      "path": "agent/agentic-workflows/SKILL.md",
+      "name": "agentic-workflows",
+      "current_category": "agent",
+      "suggested_category": "productivity",
+      "score": 5,
+      "current_score": 0,
+      "signals": [
+        "automation",
+        "workflow",
+        "task",
+        "planning",
+        "memory"
+      ],
+      "reason": "matched 5 productivity keyword(s)"
+    },
+    {
+      "path": "data/03-developer-artifactsbuilder/SKILL.md",
+      "name": "artifacts-builder",
+      "current_category": "data",
+      "suggested_category": "design",
+      "score": 5,
+      "current_score": 1,
+      "signals": [
+        "ui",
+        "css",
+        "frontend",
+        "component",
+        "tailwind"
+      ],
+      "reason": "matched 5 design keyword(s) versus 1 current-category keyword(s)"
+    }
+  ],
+  "candidate_reclassification_count": 15710,
+  "notes": [
+    "Candidates are heuristic review targets, not automatic migrations.",
+    "The audit scores every category, including non-other categories.",
+    "Semantic scoring reads SKILL.md frontmatter before metadata.json.",
+    "Pass --include-frontmatter to audit frontmatter category sources; pass --content-chars for deeper body scans.",
+    "Layout issues catch nested paths such as category/category/skill/SKILL.md."
+  ]
+}

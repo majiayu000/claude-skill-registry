@@ -1,0 +1,18 @@
+{
+  "name": "comprehensive-research-agent",
+  "description": "Ensure thorough validation, error recovery, and transparent reasoning in research tasks with multiple tool calls",
+  "repo": "muratcankoylan/Agent-Skills-for-Context-Engineering",
+  "path": "examples/interleaved_thinking/generated_skills/comprehensive-research-agent",
+  "category": "ai-llm",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
+  "dir_name": "comprehensive-research-agent-muratcankoylan-agent-skills-for-con",
+  "author": "muratcankoylan",
+  "source_url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/blob/main/examples/interleaved_thinking/generated_skills/comprehensive-research-agent/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Context Engineering Agent Skills Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

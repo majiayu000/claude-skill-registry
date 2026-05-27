@@ -1,0 +1,16 @@
+{
+  "name": "config-validator",
+  "repo": "Sahib-Sawhney-WH/sahibs-claude-plugin-marketplace",
+  "path": "plugins/dapr/skills/config-validator/SKILL.md",
+  "source": "github.com/Sahib-Sawhney-WH/sahibs-claude-plugin-marketplace",
+  "downloaded_at": "2026-01-29T08:58:27.982731Z",
+  "dir_name": "config-validator-sahib-sawhney-wh-sahibs-claude-plugin",
+  "category": "quality",
+  "author": "Sahib-Sawhney-WH",
+  "source_url": "https://github.com/Sahib-Sawhney-WH/sahibs-claude-plugin-marketplace/blob/main/plugins/dapr/skills/config-validator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sahib",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

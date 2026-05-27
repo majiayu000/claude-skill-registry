@@ -1,0 +1,17 @@
+{
+  "name": "challenge",
+  "repo": "thoughtbot/rails-consultant",
+  "path": "skills/challenge/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/thoughtbot/rails-consultant",
+  "dir_name": "challenge-thoughtbot-rails-consultant",
+  "downloaded_at": "2026-05-23T03:31:56.500559Z",
+  "author": "thoughtbot",
+  "source_url": "https://github.com/thoughtbot/rails-consultant/blob/main/skills/challenge/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/thoughtbot/rails-consultant/blob/main/skills/challenge/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

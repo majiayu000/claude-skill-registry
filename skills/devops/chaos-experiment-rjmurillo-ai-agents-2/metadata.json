@@ -1,0 +1,18 @@
+{
+  "name": "chaos-experiment",
+  "description": "Design and document chaos engineering experiments. Guide steady state baseline, hypothesis formation, failure injection plans, and results analysis. Use for resilience testing, game days, failure inje",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/chaos-experiment",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rjmurillo/ai-agents",
+  "dir_name": "chaos-experiment-rjmurillo-ai-agents-2",
+  "author": "rjmurillo",
+  "source_url": "https://github.com/rjmurillo/ai-agents/blob/main/.claude/skills/chaos-experiment/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "codex-issue-plan-execute",
+  "repo": "catlog22/Claude-Code-Workflow",
+  "path": ".codex/skills/codex-issue-plan-execute/SKILL.md",
+  "source": "github.com/catlog22/Claude-Code-Workflow",
+  "downloaded_at": "2026-02-02T05:01:37.693227Z",
+  "dir_name": "codex-issue-plan-execute",
+  "category": "workflow",
+  "author": "catlog22",
+  "source_url": "https://github.com/catlog22/Claude-Code-Workflow/blob/main/.codex/skills/codex-issue-plan-execute/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Claude Development Guidelines",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

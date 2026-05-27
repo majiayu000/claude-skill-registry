@@ -1,0 +1,16 @@
+{
+  "name": "codex",
+  "repo": "interactive-inc/open-stack-app",
+  "path": ".claude/skills/.codex/SKILL.md",
+  "category": "ai-llm",
+  "source": "github.com/interactive-inc/open-stack-app",
+  "dir_name": "codex-interactive-inc-open-stack-app",
+  "downloaded_at": "2026-02-22T07:32:13.955879Z",
+  "author": "interactive-inc",
+  "source_url": "https://github.com/interactive-inc/open-stack-app/blob/main/.claude/skills/.codex/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/interactive-inc/open-stack-app/blob/main/.claude/skills/.codex/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

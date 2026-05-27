@@ -1,0 +1,13 @@
+{
+  "name": "bk-monitor-dev-server",
+  "description": "",
+  "repo": "TencentBlueKing/bk-bcs",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TencentBlueKing/bk-bcs",
+  "github_path": "bcs-services/bcs-project-manager/.cursor/skills/bk-monitor-dev-server",
+  "github_branch": "master",
+  "dir_name": "bk-monitor-dev-server",
+  "downloaded_at": "2026-02-05T01:44:34.669344Z"
+}

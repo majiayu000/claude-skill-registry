@@ -1,0 +1,16 @@
+{
+  "name": "creative-learnings",
+  "repo": "WalkerHi11/mediabuy-plugins",
+  "path": ".claude/skills/creative-learnings/SKILL.md",
+  "source": "github.com/WalkerHi11/mediabuy-plugins",
+  "downloaded_at": "2026-02-02T03:39:53.934775Z",
+  "dir_name": "creative-learnings",
+  "category": "analysis",
+  "author": "WalkerHi11",
+  "source_url": "https://github.com/WalkerHi11/mediabuy-plugins/blob/main/.claude/skills/creative-learnings/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Media Buying Team",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

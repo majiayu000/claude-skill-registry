@@ -1,20 +1,20 @@
 {
   "schema_version": 1,
   "status": "passed",
-  "generated_at": "2026-05-27T13:53:19Z",
+  "generated_at": "2026-05-27T17:22:25Z",
   "core_repo": "majiayu000/claude-skill-registry-core",
   "core_sha": "b5706410bd748e212e72f0bd10c586e375fda786",
   "data_repo": "majiayu000/claude-skill-registry-data",
-  "data_sha": "370d10cd5200813297f5debdef2a4102c775924c",
-  "github_run_id": "26513184011",
-  "github_run_attempt": "1",
-  "github_run_url": "https://github.com/majiayu000/claude-skill-registry/actions/runs/26513184011",
+  "data_sha": "9ef5fa9f9f3c17f51ca9d27cd4f0fd3a73c75842",
+  "github_run_id": "local-manual-publish-20260527",
+  "github_run_attempt": null,
+  "github_run_url": null,
   "promotion_gate": {
     "mode": "pre-commit canary validation",
     "result": "allowed"
   },
   "rollback_contract": {
-    "strategy": "rerun this workflow with a previous known-good provenance tuple",
+    "strategy": "rerun publish-from-core with a previous known-good provenance tuple",
     "source_of_truth": "provenance/merge-source.json from the previous good main commit",
     "required_inputs": [
       "core_sha",
@@ -25,7 +25,7 @@
     {
       "name": "provenance refs",
       "status": "passed",
-      "detail": "pinned refs match workflow inputs"
+      "detail": "pinned refs match publish inputs"
     },
     {
       "name": "registry pointer and manifest",
@@ -55,12 +55,12 @@
     {
       "name": "category index and other manifest",
       "status": "passed",
-      "detail": "docs/categories/other/manifest.json: 5 shards, 53741 records"
+      "detail": "docs/categories/other/manifest.json: 5 shards, 50408 records"
     },
     {
       "name": "stats shard summary",
       "status": "passed",
-      "detail": "largest_generated_file_bytes=8388669"
+      "detail": "largest_generated_file_bytes=8388735"
     },
     {
       "name": "skills mirror count and gitignore",

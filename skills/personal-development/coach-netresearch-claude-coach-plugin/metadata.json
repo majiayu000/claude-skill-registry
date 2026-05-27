@@ -1,0 +1,16 @@
+{
+  "name": "coach",
+  "repo": "netresearch/claude-coach-plugin",
+  "path": "skills/coach/SKILL.md",
+  "source": "github.com/netresearch/claude-coach-plugin",
+  "downloaded_at": "2026-01-29T06:47:46.854500Z",
+  "dir_name": "coach-netresearch-claude-coach-plugin",
+  "category": "personal-development",
+  "author": "netresearch",
+  "source_url": "https://github.com/netresearch/claude-coach-plugin/blob/main/skills/coach/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025-2026 Netresearch DTT GmbH",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

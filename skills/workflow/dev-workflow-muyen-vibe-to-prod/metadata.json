@@ -1,0 +1,16 @@
+{
+  "name": "dev-workflow",
+  "repo": "muyen/vibe-to-prod",
+  "path": ".claude/skills/dev-workflow/SKILL.md",
+  "source": "github.com/muyen/vibe-to-prod",
+  "downloaded_at": "2026-01-29T07:57:01.932584Z",
+  "dir_name": "dev-workflow-muyen-vibe-to-prod",
+  "category": "workflow",
+  "author": "muyen",
+  "source_url": "https://github.com/muyen/vibe-to-prod/blob/main/.claude/skills/dev-workflow/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 From Vibe to Production",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

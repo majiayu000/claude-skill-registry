@@ -1,0 +1,11 @@
+{
+  "name": "command-plan-workflow",
+  "repo": "omerlefaruk/CasareRPA",
+  "path": ".agent/skills/command-plan-workflow/SKILL.md",
+  "source": "github.com/omerlefaruk/CasareRPA",
+  "downloaded_at": "2026-01-22T04:12:06.786692Z",
+  "dir_name": "command-plan-workflow",
+  "category": "workflow",
+  "github_path": ".agent/skills/command-plan-workflow",
+  "github_branch": "main"
+}

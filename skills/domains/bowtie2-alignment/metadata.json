@@ -1,0 +1,20 @@
+{
+  "name": "bowtie2-alignment",
+  "description": "",
+  "repo": "mdbabumiamssm/LLMs-Universal-Life-Science-and-Clinical-Skills-",
+  "category": "domains",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mdbabumiamssm/LLMs-Universal-Life-Science-and-Clinical-Skills-",
+  "github_path": "Skills/NGS_QC/read-alignment/bowtie2-alignment",
+  "github_branch": "main",
+  "dir_name": "bowtie2-alignment",
+  "downloaded_at": "2026-02-05T01:44:38.810123Z",
+  "author": "mdbabumiamssm",
+  "source_url": "https://github.com/mdbabumiamssm/LLMs-Universal-Life-Science-and-Clinical-Skills-/blob/main/Skills/NGS_QC/read-alignment/bowtie2-alignment/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 MD BABU MIA , PHD",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

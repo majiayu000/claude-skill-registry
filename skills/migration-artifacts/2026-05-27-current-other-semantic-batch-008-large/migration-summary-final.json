@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "issue": "https://github.com/majiayu000/claude-skill-registry-data/issues/63",
+  "batch": "2026-05-27-current-other-semantic-batch-008-large",
+  "model": "mimo-v2.5-pro",
+  "policy": {
+    "source_category": "other",
+    "input_limit": 10000,
+    "min_confidence": 0.85,
+    "target_other_allowed": false,
+    "stable_key_conflicts_blocked": true
+  },
+  "results": {
+    "archive_total_skills": 223082,
+    "category_count": 42,
+    "other_before": 53741,
+    "other_after": 50408,
+    "other_delta": 3333,
+    "classification_input_count": 10000,
+    "classification_ok_count": 10000,
+    "moved_total": 3333,
+    "candidate_moves_after_apply": 0
+  },
+  "residual": {
+    "scoped_other_remaining": 50408,
+    "classification_gap": 43741,
+    "primary_reason_counts": {
+      "confidence below threshold": 2953,
+      "source directory missing": 3333,
+      "target category already contains a skill with the same stable key": 3714
+    },
+    "all_blocker_reason_counts": {
+      "classification target matches current category": 83,
+      "confidence below threshold": 2953,
+      "target category already contains a skill with the same stable key": 3714,
+      "target category other requires --allow-target-other": 83
+    }
+  },
+  "verification": {
+    "canonical_category_errors": 0,
+    "depth_move_count": 0,
+    "depth_duplicate_count": 0,
+    "depth_same_key_conflict_count": 0,
+    "unknown_categories": [],
+    "layout_issue_count": 0,
+    "category_conflict_count": 0,
+    "metadata_scanned": 3333,
+    "metadata_missing": 0,
+    "metadata_errors_existing_quality": 1266,
+    "metadata_warnings_existing_quality": 211,
+    "sample_audit_status": "ok",
+    "sample_audit_sample_count": 120
+  },
+  "notes": [
+    "metadata errors are pre-existing archive attribution/source quality issues in moved records; this batch preserves skill metadata and does not rewrite authorship/source fields.",
+    "candidate_moves_after_apply is zero under the same confidence and stable-key safety policy; the next work should target low-confidence reclassification, stable-key conflict governance, and the unprocessed classification gap."
+  ]
+}

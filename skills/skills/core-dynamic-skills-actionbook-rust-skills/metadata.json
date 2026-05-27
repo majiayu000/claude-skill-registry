@@ -1,0 +1,16 @@
+{
+  "name": "core-dynamic-skills",
+  "repo": "actionbook/rust-skills",
+  "path": "skills/core-dynamic-skills/SKILL.md",
+  "source": "github.com/actionbook/rust-skills",
+  "downloaded_at": "2026-02-02T03:31:03.642503Z",
+  "dir_name": "core-dynamic-skills-actionbook-rust-skills",
+  "category": "skills",
+  "author": "actionbook",
+  "source_url": "https://github.com/actionbook/rust-skills/blob/main/skills/core-dynamic-skills/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/actionbook/rust-skills/blob/main/skills/core-dynamic-skills/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

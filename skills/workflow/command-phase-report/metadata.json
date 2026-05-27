@@ -1,0 +1,11 @@
+{
+  "name": "command-phase-report",
+  "repo": "omerlefaruk/CasareRPA",
+  "path": ".agent/skills/command-phase-report/SKILL.md",
+  "source": "github.com/omerlefaruk/CasareRPA",
+  "downloaded_at": "2026-01-22T04:12:06.652832Z",
+  "dir_name": "command-phase-report",
+  "category": "workflow",
+  "github_path": ".agent/skills/command-phase-report",
+  "github_branch": "main"
+}

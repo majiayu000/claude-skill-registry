@@ -1,0 +1,18 @@
+{
+  "name": "core-development",
+  "description": "Master core development paths - Frontend, Backend, Full Stack, DevOps. Atomic skill for learning sequences and technology stack recommendations.",
+  "repo": "pluginagentmarketplace/custom-plugin-cloudflare",
+  "path": "skills/core-development",
+  "category": "personal-development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pluginagentmarketplace/custom-plugin-cloudflare",
+  "dir_name": "core-development-pluginagentmarketpla-custom-plugin-cloudf-2",
+  "author": "pluginagentmarketplace",
+  "source_url": "https://github.com/pluginagentmarketplace/custom-plugin-cloudflare/blob/main/skills/core-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Dr. Umit Kacar & Muhsin Elcicek",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

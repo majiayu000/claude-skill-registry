@@ -1,0 +1,13 @@
+{
+  "name": "core-dynamic-skills",
+  "description": "Claude Code Setting",
+  "repo": "lywa1998/self-host-claude-marketplace",
+  "category": "skills",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": "plugins/rust-skills/skills/core-dynamic-skills",
+  "github_branch": "main",
+  "dir_name": "core-dynamic-skills",
+  "downloaded_at": "2026-02-05T01:45:47.139090Z"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "code-review-fix",
+  "repo": "davepoon/buildwithclaude",
+  "path": "plugins/gsd/skills/code-review-fix/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/davepoon/buildwithclaude",
+  "dir_name": "code-review-fix",
+  "downloaded_at": "2026-05-22T03:58:50.709672Z",
+  "author": "davepoon",
+  "source_url": "https://github.com/davepoon/buildwithclaude/blob/main/plugins/gsd/skills/code-review-fix/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/davepoon/buildwithclaude/blob/main/plugins/gsd/skills/code-review-fix/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

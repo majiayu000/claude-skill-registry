@@ -1,0 +1,17 @@
+{
+  "name": "create-file-viewer",
+  "repo": "datagrok-ai/public",
+  "path": ".claude/skills/create-file-viewer/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
+  "source": "github.com/datagrok-ai/public",
+  "dir_name": "create-file-viewer",
+  "downloaded_at": "2026-03-22T07:40:08.283484Z",
+  "author": "datagrok-ai",
+  "source_url": "https://github.com/datagrok-ai/public/blob/master/.claude/skills/create-file-viewer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/datagrok-ai/public/blob/master/.claude/skills/create-file-viewer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

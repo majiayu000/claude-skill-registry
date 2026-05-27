@@ -1,0 +1,20 @@
+{
+  "name": "bio-protein-clustering-pangenome",
+  "description": "",
+  "repo": "fmschulz/omics-skills",
+  "category": "domains",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/fmschulz/omics-skills",
+  "github_path": "skills/bio-protein-clustering-pangenome",
+  "github_branch": "main",
+  "dir_name": "bio-protein-clustering-pangenome",
+  "downloaded_at": "2026-02-05T01:44:22.862497Z",
+  "author": "fmschulz",
+  "source_url": "https://github.com/fmschulz/omics-skills/blob/main/skills/bio-protein-clustering-pangenome/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Frederik Schulz",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

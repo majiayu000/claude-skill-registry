@@ -1,0 +1,16 @@
+{
+  "name": "context7-usage",
+  "repo": "alfredolopez80/multi-agent-ralph-loop",
+  "path": ".claude/skills/context7-usage/skill.md",
+  "source": "github.com/alfredolopez80/multi-agent-ralph-loop",
+  "downloaded_at": "2026-01-29T08:47:47.524960Z",
+  "dir_name": "context7-usage-alfredolopez80-multi-agent-ralph-lo",
+  "category": "development",
+  "author": "alfredolopez80",
+  "source_url": "https://github.com/alfredolopez80/multi-agent-ralph-loop/blob/main/.claude/skills/context7-usage/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alfredolopez80/multi-agent-ralph-loop/blob/main/.claude/skills/context7-usage/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

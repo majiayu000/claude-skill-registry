@@ -1,0 +1,16 @@
+{
+  "name": "docker-claude-skill",
+  "repo": "wrsmith108/docker-claude-skill",
+  "path": "SKILL.md",
+  "source": "github.com/wrsmith108/docker-claude-skill",
+  "downloaded_at": "2026-01-29T08:45:37.802235Z",
+  "dir_name": "docker-claude-skill-wrsmith108-docker-claude-skill",
+  "category": "devops",
+  "author": "wrsmith108",
+  "source_url": "https://github.com/wrsmith108/docker-claude-skill/blob/main/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 William Smith",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "constitution-generator",
+  "repo": "aaronbassett/paneful",
+  "path": ".claude/skills/constitution-generator/SKILL.md",
+  "github_branch": "main",
+  "category": "planning",
+  "source": "github.com/aaronbassett/paneful",
+  "dir_name": "constitution-generator-aaronbassett-paneful",
+  "downloaded_at": "2026-03-01T06:25:01.173048Z",
+  "author": "aaronbassett",
+  "source_url": "https://github.com/aaronbassett/paneful/blob/main/.claude/skills/constitution-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaronbassett/paneful/blob/main/.claude/skills/constitution-generator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

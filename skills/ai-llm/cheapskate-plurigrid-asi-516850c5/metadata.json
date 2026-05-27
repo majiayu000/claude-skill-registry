@@ -1,0 +1,18 @@
+{
+  "name": "cheapskate",
+  "repo": "plurigrid/asi",
+  "path": "skills/cheapskate/SKILL.md",
+  "source": "github.com/plurigrid/asi",
+  "downloaded_at": "2026-01-14T02:29:14.889012Z",
+  "dir_name": "cheapskate-plurigrid-asi-516850c5",
+  "category": "ai-llm",
+  "github_path": "skills/cheapskate",
+  "github_branch": "main",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/cheapskate/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

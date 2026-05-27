@@ -1,0 +1,18 @@
+{
+  "name": "claudish-usage",
+  "repo": "involvex/involvex-claude-marketplace",
+  "path": "plugins/code-analysis/skills/claudish-usage/SKILL.md",
+  "source": "github.com/involvex/involvex-claude-marketplace",
+  "downloaded_at": "2026-01-22T03:51:33.816387Z",
+  "dir_name": "claudish-usage",
+  "category": "orchestration",
+  "github_path": "plugins/frontend/skills/claudish-usage",
+  "github_branch": "main",
+  "author": "involvex",
+  "source_url": "https://github.com/involvex/involvex-claude-marketplace/blob/main/plugins/frontend/skills/claudish-usage/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/involvex/involvex-claude-marketplace/blob/main/plugins/frontend/skills/claudish-usage/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

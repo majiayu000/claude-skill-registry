@@ -1,0 +1,18 @@
+{
+  "name": "_TEMPLATE",
+  "repo": "daffy0208/ai-dev-standards",
+  "path": "skills/_TEMPLATE/SKILL.md",
+  "source": "github.com/daffy0208/ai-dev-standards",
+  "downloaded_at": "2026-01-14T03:33:08.681672Z",
+  "dir_name": "template-daffy0208-ai-dev-standards",
+  "category": "skills",
+  "github_path": "skills/_TEMPLATE",
+  "github_branch": "main",
+  "author": "daffy0208",
+  "source_url": "https://github.com/daffy0208/ai-dev-standards/blob/main/skills/_TEMPLATE/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AI Dev Standards Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

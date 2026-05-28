@@ -1,0 +1,18 @@
+{
+  "name": "synthetic-data-generator",
+  "description": "テスト用の合成データ生成スキル。リアルなユーザーデータ、トランザクション、ログ、APIレスポンス等を生成。GDPR準拠、フェイカー連携、スキーマベース生成、時系列データ、異常データ生成に対応。",
+  "repo": "ntaksh42/agents",
+  "path": ".claude/skills/synthetic-data-generator",
+  "category": "generation",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ntaksh42/agents",
+  "dir_name": "synthetic-data-generator-ntaksh42-agents-2",
+  "author": "ntaksh42",
+  "source_url": "https://github.com/ntaksh42/agents/blob/main/.claude/skills/synthetic-data-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ntaksh42/agents/blob/main/.claude/skills/synthetic-data-generator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

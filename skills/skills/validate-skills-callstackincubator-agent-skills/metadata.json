@@ -1,0 +1,16 @@
+{
+  "name": "validate-skills",
+  "repo": "callstackincubator/agent-skills",
+  "path": ".claude/skills/validate-skills/SKILL.md",
+  "category": "skills",
+  "source": "github.com/callstackincubator/agent-skills",
+  "dir_name": "validate-skills-callstackincubator-agent-skills",
+  "downloaded_at": "2026-02-15T06:40:33.315772Z",
+  "author": "callstackincubator",
+  "source_url": "https://github.com/callstackincubator/agent-skills/blob/main/.claude/skills/validate-skills/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/callstackincubator/agent-skills/blob/main/.claude/skills/validate-skills/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

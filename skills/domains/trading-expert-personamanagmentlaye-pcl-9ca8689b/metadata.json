@@ -1,0 +1,16 @@
+{
+  "name": "trading-expert",
+  "repo": "personamanagmentlayer/pcl",
+  "path": "stdlib/domains/trading-expert/SKILL.md",
+  "source": "github.com/personamanagmentlayer/pcl",
+  "downloaded_at": "2026-01-29T06:01:54.115782Z",
+  "dir_name": "trading-expert-personamanagmentlaye-pcl-9ca8689b",
+  "category": "domains",
+  "author": "personamanagmentlayer",
+  "source_url": "https://github.com/personamanagmentlayer/pcl/blob/main/stdlib/domains/trading-expert/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/personamanagmentlayer/pcl/blob/main/stdlib/domains/trading-expert/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

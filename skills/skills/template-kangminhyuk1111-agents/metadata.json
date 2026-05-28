@@ -1,0 +1,16 @@
+{
+  "name": "template",
+  "repo": "kangminhyuk1111/agents",
+  "path": "template/SKILL.md",
+  "category": "skills",
+  "source": "github.com/kangminhyuk1111/agents",
+  "dir_name": "template-kangminhyuk1111-agents",
+  "downloaded_at": "2026-02-15T07:49:55.741847Z",
+  "author": "kangminhyuk1111",
+  "source_url": "https://github.com/kangminhyuk1111/agents/blob/main/template/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kangminhyuk1111/agents/blob/main/template/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

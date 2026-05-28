@@ -1,0 +1,18 @@
+{
+  "name": "tooluniverse",
+  "description": "Use this skill when working with scientific research tools and workflows across bioinformatics, cheminformatics, genomics, structural biology, proteomics, and drug discovery. This skill provides acces",
+  "repo": "ovachiever/droid-tings",
+  "path": "skills/tooluniverse",
+  "category": "domains",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ovachiever/droid-tings",
+  "dir_name": "tooluniverse-ovachiever-droid-tings-2",
+  "author": "ovachiever",
+  "source_url": "https://github.com/ovachiever/droid-tings/blob/main/skills/tooluniverse/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025 Claude Skills Collection Contributors",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

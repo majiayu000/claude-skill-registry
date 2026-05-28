@@ -1,0 +1,17 @@
+{
+  "name": "template",
+  "repo": "ooooooooooooooooooop/skills",
+  "path": "_template/SKILL.md",
+  "github_branch": "main",
+  "category": "skills",
+  "source": "github.com/ooooooooooooooooooop/skills",
+  "dir_name": "template-ooooooooooooooooooop-skills",
+  "downloaded_at": "2026-03-07T01:27:26.380677Z",
+  "author": "ooooooooooooooooooop",
+  "source_url": "https://github.com/ooooooooooooooooooop/skills/blob/main/_template/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ooooooooooooooooooop/skills/blob/main/_template/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

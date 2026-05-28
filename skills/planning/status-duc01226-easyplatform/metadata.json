@@ -1,0 +1,17 @@
+{
+  "name": "status",
+  "repo": "duc01226/EasyPlatform",
+  "path": ".claude/skills/status/SKILL.md",
+  "github_branch": "main",
+  "category": "planning",
+  "source": "github.com/duc01226/EasyPlatform",
+  "dir_name": "status-duc01226-easyplatform",
+  "downloaded_at": "2026-03-22T07:50:04.069591Z",
+  "author": "duc01226",
+  "source_url": "https://github.com/duc01226/EasyPlatform/blob/main/.claude/skills/status/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/duc01226/EasyPlatform/blob/main/.claude/skills/status/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

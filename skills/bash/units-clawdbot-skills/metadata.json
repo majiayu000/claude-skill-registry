@@ -1,0 +1,18 @@
+{
+  "name": "units",
+  "repo": "clawdbot/skills",
+  "path": "skills/asleep123/units/SKILL.md",
+  "source": "github.com/clawdbot/skills",
+  "downloaded_at": "2026-01-22T02:30:26.979198Z",
+  "dir_name": "units-clawdbot-skills",
+  "category": "bash",
+  "github_path": "skills/asleep123/units",
+  "github_branch": "main",
+  "author": "clawdbot",
+  "source_url": "https://github.com/clawdbot/skills/blob/main/skills/asleep123/units/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 clawdbot",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

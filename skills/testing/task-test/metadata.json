@@ -1,0 +1,16 @@
+{
+  "name": "task-test",
+  "repo": "martinemde/skillet",
+  "path": ".claude/skills/task-test/SKILL.md",
+  "source": "github.com/martinemde/skillet",
+  "downloaded_at": "2026-02-02T04:58:01.835422Z",
+  "dir_name": "task-test",
+  "category": "testing",
+  "author": "martinemde",
+  "source_url": "https://github.com/martinemde/skillet/blob/main/.claude/skills/task-test/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Martin Emde",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

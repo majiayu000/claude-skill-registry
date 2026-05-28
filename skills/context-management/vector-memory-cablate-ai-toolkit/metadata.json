@@ -1,0 +1,17 @@
+{
+  "name": "vector-memory",
+  "repo": "cablate/ai-toolkit",
+  "path": "skills/vector-memory/SKILL.md",
+  "github_branch": "master",
+  "category": "context-management",
+  "source": "github.com/cablate/ai-toolkit",
+  "dir_name": "vector-memory-cablate-ai-toolkit",
+  "downloaded_at": "2026-05-23T03:13:35.618287Z",
+  "author": "cablate",
+  "source_url": "https://github.com/cablate/ai-toolkit/blob/master/skills/vector-memory/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cablate/ai-toolkit/blob/master/skills/vector-memory/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

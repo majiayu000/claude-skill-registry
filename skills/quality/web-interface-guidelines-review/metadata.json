@@ -1,0 +1,17 @@
+{
+  "name": "web-interface-guidelines-review",
+  "repo": "besoeasy/open-skills",
+  "path": "skills/web-interface-guidelines-review/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/besoeasy/open-skills",
+  "dir_name": "web-interface-guidelines-review",
+  "downloaded_at": "2026-03-22T07:14:01.262305Z",
+  "author": "besoeasy",
+  "source_url": "https://github.com/besoeasy/open-skills/blob/main/skills/web-interface-guidelines-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/besoeasy/open-skills/blob/main/skills/web-interface-guidelines-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

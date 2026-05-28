@@ -1,0 +1,13 @@
+{
+  "name": "template-skill",
+  "description": "",
+  "repo": "vumichien/bi-agent",
+  "category": "skills",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vumichien/bi-agent",
+  "github_path": ".claude/skills/template-skill",
+  "github_branch": "main",
+  "dir_name": "template-skill",
+  "downloaded_at": "2026-02-05T01:44:53.823139Z"
+}

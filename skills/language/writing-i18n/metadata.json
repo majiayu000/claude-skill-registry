@@ -1,0 +1,17 @@
+{
+  "name": "writing-i18n",
+  "repo": "commercetools/nimbus",
+  "path": ".claude/skills/writing-i18n/SKILL.md",
+  "github_branch": "main",
+  "category": "language",
+  "source": "github.com/commercetools/nimbus",
+  "dir_name": "writing-i18n",
+  "downloaded_at": "2026-03-22T07:32:35.141471Z",
+  "author": "commercetools",
+  "source_url": "https://github.com/commercetools/nimbus/blob/main/.claude/skills/writing-i18n/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/commercetools/nimbus/blob/main/.claude/skills/writing-i18n/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

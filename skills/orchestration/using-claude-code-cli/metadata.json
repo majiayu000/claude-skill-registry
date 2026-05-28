@@ -1,0 +1,16 @@
+{
+  "name": "using-claude-code-cli",
+  "repo": "SpillwaveSolutions/code_agent_context_hooks",
+  "path": ".opencode/skill/using-claude-code-cli/SKILL.md",
+  "source": "github.com/SpillwaveSolutions/code_agent_context_hooks",
+  "downloaded_at": "2026-02-01T04:27:05.272746Z",
+  "dir_name": "using-claude-code-cli",
+  "category": "orchestration",
+  "author": "SpillwaveSolutions",
+  "source_url": "https://github.com/SpillwaveSolutions/code_agent_context_hooks/blob/main/.opencode/skill/using-claude-code-cli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SpillwaveSolutions/code_agent_context_hooks/blob/main/.opencode/skill/using-claude-code-cli/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

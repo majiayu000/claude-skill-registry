@@ -1,0 +1,17 @@
+{
+  "name": "validate-chalk",
+  "repo": "GeneralJerel/chalk-skills",
+  "path": "skills/validate-chalk/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/GeneralJerel/chalk-skills",
+  "dir_name": "validate-chalk",
+  "downloaded_at": "2026-03-22T05:24:02.893228Z",
+  "author": "GeneralJerel",
+  "source_url": "https://github.com/GeneralJerel/chalk-skills/blob/main/skills/validate-chalk/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/GeneralJerel/chalk-skills/blob/main/skills/validate-chalk/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

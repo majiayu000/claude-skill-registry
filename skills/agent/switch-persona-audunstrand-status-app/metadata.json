@@ -1,0 +1,18 @@
+{
+  "name": "switch-persona",
+  "repo": "audunstrand/status-app",
+  "path": ".github/skills/switch-persona/SKILL.md",
+  "source": "github.com/audunstrand/status-app",
+  "downloaded_at": "2026-01-14T01:52:02.730751Z",
+  "dir_name": "switch-persona-audunstrand-status-app",
+  "category": "agent",
+  "github_path": ".github/skills/switch-persona",
+  "github_branch": "main",
+  "author": "audunstrand",
+  "source_url": "https://github.com/audunstrand/status-app/blob/main/.github/skills/switch-persona/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/audunstrand/status-app/blob/main/.github/skills/switch-persona/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

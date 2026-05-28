@@ -1,0 +1,17 @@
+{
+  "name": "template-skill",
+  "repo": "alex-tgk/saasquatch",
+  "path": ".claude/skills/template-skill/SKILL.md",
+  "github_branch": "main",
+  "category": "skills",
+  "source": "github.com/alex-tgk/saasquatch",
+  "dir_name": "template-skill-alex-tgk-saasquatch",
+  "downloaded_at": "2026-03-22T06:49:01.507414Z",
+  "author": "alex-tgk",
+  "source_url": "https://github.com/alex-tgk/saasquatch/blob/main/.claude/skills/template-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alex-tgk/saasquatch/blob/main/.claude/skills/template-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

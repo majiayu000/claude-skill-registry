@@ -1,0 +1,18 @@
+{
+  "name": "when-using-flow-nexus-platform-use-flow-nexus-platform",
+  "repo": "DNYoussef/ai-chrome-extension",
+  "path": ".claude/skills/platform/when-using-flow-nexus-platform-use-flow-nexus-platform/SKILL.md",
+  "source": "github.com/DNYoussef/ai-chrome-extension",
+  "downloaded_at": "2026-01-22T01:39:02.097161Z",
+  "dir_name": "when-using-flow-nexus-platform-use-flow-nexus-platform",
+  "category": "platform",
+  "github_path": ".claude/skills/platform/when-using-flow-nexus-platform-use-flow-nexus-platform",
+  "github_branch": "main",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/ai-chrome-extension/blob/main/.claude/skills/platform/when-using-flow-nexus-platform-use-flow-nexus-platform/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ReadFlow Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

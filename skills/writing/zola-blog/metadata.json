@@ -1,0 +1,16 @@
+{
+  "name": "zola-blog",
+  "repo": "nguyendinhquocx/code-ai",
+  "path": "skills/zola-blog/SKILL.md",
+  "source": "github.com/nguyendinhquocx/code-ai",
+  "downloaded_at": "2026-02-01T04:32:08.126448Z",
+  "dir_name": "zola-blog",
+  "category": "writing",
+  "author": "nguyendinhquocx",
+  "source_url": "https://github.com/nguyendinhquocx/code-ai/blob/main/skills/zola-blog/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nguyendinhquocx/code-ai/blob/main/skills/zola-blog/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

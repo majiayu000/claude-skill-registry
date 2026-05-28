@@ -1,0 +1,17 @@
+{
+  "name": "what-context-needed",
+  "repo": "github/awesome-copilot",
+  "path": "skills/what-context-needed/SKILL.md",
+  "github_branch": "main",
+  "category": "context-management",
+  "source": "github.com/github/awesome-copilot",
+  "dir_name": "what-context-needed",
+  "downloaded_at": "2026-03-01T07:54:04.583604Z",
+  "author": "github",
+  "source_url": "https://github.com/github/awesome-copilot/blob/main/skills/what-context-needed/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/github/awesome-copilot/blob/main/skills/what-context-needed/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

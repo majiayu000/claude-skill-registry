@@ -1,0 +1,17 @@
+{
+  "name": "vitals-and-labs",
+  "repo": "alvinhenrick/fhir-synth",
+  "path": "src/fhir_synth/skills/builtin/vitals-and-labs/SKILL.md",
+  "github_branch": "main",
+  "category": "domains",
+  "source": "github.com/alvinhenrick/fhir-synth",
+  "dir_name": "vitals-and-labs",
+  "downloaded_at": "2026-03-22T06:53:28.819617Z",
+  "author": "alvinhenrick",
+  "source_url": "https://github.com/alvinhenrick/fhir-synth/blob/main/src/fhir_synth/skills/builtin/vitals-and-labs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alvinhenrick/fhir-synth/blob/main/src/fhir_synth/skills/builtin/vitals-and-labs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

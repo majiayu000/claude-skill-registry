@@ -1,0 +1,16 @@
+{
+  "name": "top-processes",
+  "repo": "gpad1234/skills-imaginary-guide-agent",
+  "path": ".claude/skills/top-processes/SKILL.md",
+  "category": "system",
+  "source": "github.com/gpad1234/skills-imaginary-guide-agent",
+  "dir_name": "top-processes",
+  "downloaded_at": "2026-02-15T07:22:33.897208Z",
+  "author": "gpad1234",
+  "source_url": "https://github.com/gpad1234/skills-imaginary-guide-agent/blob/main/.claude/skills/top-processes/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gpad1234/skills-imaginary-guide-agent/blob/main/.claude/skills/top-processes/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

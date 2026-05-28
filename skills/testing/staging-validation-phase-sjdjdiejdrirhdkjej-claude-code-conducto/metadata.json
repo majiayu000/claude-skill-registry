@@ -1,0 +1,18 @@
+{
+  "name": "staging-validation-phase",
+  "description": "Guides manual staging validation before production deployment through smoke tests, critical user flow testing, data migration verification, and rollback capability checks. Use when validating staging ",
+  "repo": "Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "path": ".claude/skills/staging-validation-phase",
+  "category": "testing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor",
+  "dir_name": "staging-validation-phase-sjdjdiejdrirhdkjej-claude-code-conducto",
+  "author": "Sjdjdiejdrirhdkjej",
+  "source_url": "https://github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor/blob/main/.claude/skills/staging-validation-phase/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Sjdjdiejdrirhdkjej/Claude-code-conductor/blob/main/.claude/skills/staging-validation-phase/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

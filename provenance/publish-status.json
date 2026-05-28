@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "status": "passed",
-  "generated_at": "2026-05-28T20:30:42Z",
+  "generated_at": "2026-05-28T23:08:00Z",
   "core_repo": "majiayu000/claude-skill-registry-core",
   "core_sha": "23e52324bc65008dcf15a4b4db13b93d3a90a01f",
   "data_repo": "majiayu000/claude-skill-registry-data",
-  "data_sha": "ec5804fb44edaae38d37d83eaac85f048f164bfd",
-  "github_run_id": "26598530854",
+  "data_sha": "3d564120ca3c0bb649b60a9cdde322ac5ee1acad",
+  "github_run_id": "26605891891",
   "github_run_attempt": "1",
-  "github_run_url": "https://github.com/majiayu000/claude-skill-registry/actions/runs/26598530854",
+  "github_run_url": "https://github.com/majiayu000/claude-skill-registry/actions/runs/26605891891",
   "promotion_gate": {
     "mode": "pre-commit canary validation",
     "result": "allowed"
@@ -35,7 +35,7 @@
     {
       "name": "search pointer and manifest",
       "status": "passed",
-      "detail": "docs/search-index.json -> search-index-manifest.json; docs/search-index-manifest.json: 6 shards, 223513 records"
+      "detail": "docs/search-index.json -> search-index-manifest.json; docs/search-index-manifest.json: 6 shards, 222941 records"
     },
     {
       "name": "quality signal pointer and manifest",
@@ -55,7 +55,7 @@
     {
       "name": "category index and other manifest",
       "status": "passed",
-      "detail": "docs/categories/other/manifest.json: 4 shards, 46558 records"
+      "detail": "docs/categories/other/manifest.json: 4 shards, 44761 records"
     },
     {
       "name": "stats shard summary",
@@ -65,7 +65,7 @@
     {
       "name": "skills mirror count and gitignore",
       "status": "passed",
-      "detail": "223513 SKILL.md and 223513 metadata files match stats and are not ignored"
+      "detail": "222941 SKILL.md and 222941 metadata files match stats and are not ignored"
     }
   ]
 }

@@ -1,0 +1,16 @@
+{
+  "name": "team-refine",
+  "repo": "duc01226/EasyPlatform",
+  "path": ".claude/skills/team-refine/SKILL.md",
+  "category": "product",
+  "source": "github.com/duc01226/EasyPlatform",
+  "dir_name": "team-refine",
+  "downloaded_at": "2026-02-22T06:58:40.111142Z",
+  "author": "duc01226",
+  "source_url": "https://github.com/duc01226/EasyPlatform/blob/main/.claude/skills/team-refine/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2021 Dang Phuoc Duc",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "ticket-intake",
+  "repo": "christian-byrne/ticket-to-pr-pipeline",
+  "path": "skills/ticket-intake/SKILL.md",
+  "source": "github.com/christian-byrne/ticket-to-pr-pipeline",
+  "downloaded_at": "2026-02-01T01:12:22.989056Z",
+  "dir_name": "ticket-intake",
+  "category": "integration",
+  "author": "christian-byrne",
+  "source_url": "https://github.com/christian-byrne/ticket-to-pr-pipeline/blob/main/skills/ticket-intake/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/christian-byrne/ticket-to-pr-pipeline/blob/main/skills/ticket-intake/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

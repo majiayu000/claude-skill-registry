@@ -1,0 +1,18 @@
+{
+  "name": "testing-quality-standards",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/leyline/skills/testing-quality-standards/SKILL.md",
+  "source": "github.com/athola/claude-night-market",
+  "downloaded_at": "2026-01-19T02:11:27.349099Z",
+  "dir_name": "testing-quality-standards",
+  "category": "quality",
+  "github_path": "plugins/leyline/skills/testing-quality-standards",
+  "github_branch": "main",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/leyline/skills/testing-quality-standards/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 athola",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

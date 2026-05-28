@@ -1,0 +1,17 @@
+{
+  "name": "what-if-oracle",
+  "repo": "K-Dense-AI/claude-scientific-skills",
+  "path": "scientific-skills/what-if-oracle/SKILL.md",
+  "github_branch": "main",
+  "category": "analysis",
+  "source": "github.com/K-Dense-AI/claude-scientific-skills",
+  "dir_name": "what-if-oracle",
+  "downloaded_at": "2026-04-09T01:11:14.906220Z",
+  "author": "K-Dense-AI",
+  "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/scientific-skills/what-if-oracle/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/scientific-skills/what-if-oracle/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

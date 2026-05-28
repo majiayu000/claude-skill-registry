@@ -1,0 +1,18 @@
+{
+  "name": "plot-workflow",
+  "description": "Orchestrate and coordinate one-click generation workflow for major plot points and detailed plot points. Suitable for structured analysis of long stories, complex tasks requiring modular agent collabo",
+  "repo": "VanGongwanxiaowan/screen-creative-skills",
+  "path": "category/workflow/plot-workflow",
+  "category": "orchestration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/VanGongwanxiaowan/screen-creative-skills",
+  "dir_name": "plot-workflow-vangongwanxiaowan-screen-creative-skil-2",
+  "author": "VanGongwanxiaowan",
+  "source_url": "https://github.com/VanGongwanxiaowan/screen-creative-skills/blob/main/category/workflow/plot-workflow/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 宫凡",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

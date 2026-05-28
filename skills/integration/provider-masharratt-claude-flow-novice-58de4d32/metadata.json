@@ -1,0 +1,16 @@
+{
+  "name": "provider",
+  "repo": "masharratt/claude-flow-novice",
+  "path": ".claude/skills/cfn-routing-config/lib/provider/SKILL.md",
+  "source": "github.com/masharratt/claude-flow-novice",
+  "downloaded_at": "2026-01-29T06:48:07.624784Z",
+  "dir_name": "provider-masharratt-claude-flow-novice-58de4d32",
+  "category": "integration",
+  "author": "masharratt",
+  "source_url": "https://github.com/masharratt/claude-flow-novice/blob/main/.claude/skills/cfn-routing-config/lib/provider/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/masharratt/claude-flow-novice/blob/main/.claude/skills/cfn-routing-config/lib/provider/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

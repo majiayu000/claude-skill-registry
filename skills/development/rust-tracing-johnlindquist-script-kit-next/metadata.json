@@ -1,0 +1,20 @@
+{
+  "name": "rust-tracing",
+  "description": "",
+  "repo": "johnlindquist/script-kit-next",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/johnlindquist/script-kit-next",
+  "github_path": ".opencode/skill/rust-tracing",
+  "github_branch": "main",
+  "dir_name": "rust-tracing-johnlindquist-script-kit-next",
+  "downloaded_at": "2026-02-05T01:44:28.453964Z",
+  "author": "johnlindquist",
+  "source_url": "https://github.com/johnlindquist/script-kit-next/blob/main/.opencode/skill/rust-tracing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/johnlindquist/script-kit-next/blob/main/.opencode/skill/rust-tracing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

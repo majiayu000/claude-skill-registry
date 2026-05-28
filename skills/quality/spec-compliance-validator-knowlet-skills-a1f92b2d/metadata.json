@@ -1,0 +1,16 @@
+{
+  "name": "spec-compliance-validator",
+  "repo": "knowlet/skills",
+  "path": "skills/spec-compliance-validator/SKILL.md",
+  "source": "github.com/knowlet/skills",
+  "downloaded_at": "2026-01-29T07:06:41.769296Z",
+  "dir_name": "spec-compliance-validator-knowlet-skills-a1f92b2d",
+  "category": "quality",
+  "author": "knowlet",
+  "source_url": "https://github.com/knowlet/skills/blob/main/skills/spec-compliance-validator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/knowlet/skills/blob/main/skills/spec-compliance-validator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

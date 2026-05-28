@@ -1,0 +1,16 @@
+{
+  "name": "podcast-production",
+  "repo": "cdeistopened/skill-stack",
+  "path": ".claude/skills/podcast-production/SKILL.md",
+  "source": "github.com/cdeistopened/skill-stack",
+  "downloaded_at": "2026-02-02T02:02:44.788354Z",
+  "dir_name": "podcast-production",
+  "category": "marketing",
+  "author": "cdeistopened",
+  "source_url": "https://github.com/cdeistopened/skill-stack/blob/main/.claude/skills/podcast-production/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Wayne Sutton",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

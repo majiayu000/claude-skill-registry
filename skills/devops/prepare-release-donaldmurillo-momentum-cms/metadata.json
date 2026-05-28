@@ -1,0 +1,17 @@
+{
+  "name": "prepare-release",
+  "repo": "DonaldMurillo/momentum-cms",
+  "path": ".claude/skills/prepare-release/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/DonaldMurillo/momentum-cms",
+  "dir_name": "prepare-release-donaldmurillo-momentum-cms",
+  "downloaded_at": "2026-03-01T05:12:28.874560Z",
+  "author": "DonaldMurillo",
+  "source_url": "https://github.com/DonaldMurillo/momentum-cms/blob/main/.claude/skills/prepare-release/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DonaldMurillo/momentum-cms/blob/main/.claude/skills/prepare-release/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

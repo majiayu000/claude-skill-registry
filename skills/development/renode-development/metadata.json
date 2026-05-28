@@ -1,0 +1,16 @@
+{
+  "name": "renode-development",
+  "repo": "creatifcoding/gbg",
+  "path": "packages/tmnl/.claude/skills/renode-development/SKILL.md",
+  "source": "github.com/creatifcoding/gbg",
+  "downloaded_at": "2026-02-02T04:25:58.852054Z",
+  "dir_name": "renode-development",
+  "category": "development",
+  "author": "creatifcoding",
+  "source_url": "https://github.com/creatifcoding/gbg/blob/main/packages/tmnl/.claude/skills/renode-development/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/creatifcoding/gbg/blob/main/packages/tmnl/.claude/skills/renode-development/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

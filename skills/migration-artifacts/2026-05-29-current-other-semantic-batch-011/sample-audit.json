@@ -1,0 +1,1029 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-28T19:37:22.304319+00:00",
+  "workset_jsonl": "migration-artifacts/2026-05-29-current-other-semantic-batch-011/input.jsonl",
+  "classification_jsonl": "migration-artifacts/2026-05-29-current-other-semantic-batch-011/classification.jsonl",
+  "policy": {
+    "sample_size": 50,
+    "seed": "category-audit-v1",
+    "statuses": [
+      "ok"
+    ],
+    "min_confidence": 0.9
+  },
+  "summary": {
+    "workset_row_count": 10000,
+    "classification_row_count": 10000,
+    "matched_input_count": 10000,
+    "missing_input_count": 0,
+    "candidate_count": 3817,
+    "sample_count": 50,
+    "status_counts": {
+      "ok": 10000
+    },
+    "target_category_counts": {
+      "agent": 113,
+      "ai-llm": 194,
+      "ai-ml": 317,
+      "analysis": 682,
+      "api": 88,
+      "bash": 34,
+      "business": 143,
+      "c-level": 2,
+      "communication": 23,
+      "context-management": 152,
+      "creative": 34,
+      "data": 262,
+      "design": 174,
+      "development": 1361,
+      "devops": 279,
+      "documents": 472,
+      "domains": 691,
+      "examples": 44,
+      "forensics": 20,
+      "gaming": 86,
+      "generation": 231,
+      "integration": 427,
+      "language": 18,
+      "local-ai-infrastructure": 30,
+      "marketing": 339,
+      "orchestration": 278,
+      "other": 72,
+      "performance": 101,
+      "personal-development": 151,
+      "planning": 198,
+      "platform": 134,
+      "product": 265,
+      "productivity": 61,
+      "quality": 779,
+      "security": 284,
+      "skills": 361,
+      "system": 61,
+      "testing": 223,
+      "travel": 10,
+      "war-room": 13,
+      "workflow": 708,
+      "writing": 85
+    }
+  },
+  "samples": [
+    {
+      "path": "other/prd-read/SKILL.md",
+      "name": "prd-read",
+      "current_category": "other",
+      "llm_category": "product",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill provides fast PRD reference and quick lookup for product requirements. It auto-activates on PRD-related keywords and is designed to read and reference product requirements documents. This is a product management support tool for accessing PRD content.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "704d97678f094e204d12b7ff8f29b0f1fb5564940649cd359db13e3207761616",
+      "metadata_sha256": "6b204ccc643ad2044b25dfd32b1a39a4d97eea83140747317fd17f82aa86cd78",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Fast PRD reference - Quick lookup for product requirements.\nAuto-activates on \"PRD\", \"产品需求\", \"读取需求\", \"read PRD\", \"查看 PRD\" keywords.\nAMP principle: Simple toolbox (47-line script mindset).",
+      "content_excerpt": "---\nname: prd-read\nversion: 1.0\ndescription: |\n  Fast PRD reference - Quick lookup for product requirements.\n  Auto-activates on \"PRD\", \"产品需求\", \"读取需求\", \"read PRD\", \"查看 PRD\" keywords.\n  AMP principle: Simple toolbox (47-line script mindset).\nallowed-tools: [Read, Grep, Bash]\ntrigger_keywords:\n  - PRD\n  - 产品需求\n  - 读取需求\n  - read PRD\n  - 查看 PRD\n  - check PRD\n  - PRD 内容\nauto_activate: true\npriority: high\n---\n\n# PRD Read - 快速读取产品需求文档\n\n**Purpose**: 快速定位和读取 PRD.md 中的相关需求\n\n**AMP Principle**: 简单工具化 - 不是教科书，是速查表\n\n---\n\n## Quick Commands\n\n### 读取完整 PRD\n```bash\ncat /Users/young/project/career_ios_backend/PRD.md\n```\n\n### 读取特定章节\n```bash\n# 当前版本\ngrep -A 5 \"## Version\" /Users/young/project/career_ios_backend/PRD.md\n\n# 当前功能\nsed -n '/## Current Features/,/##/p' /Users/young/project/career_ios_backend/PRD.md\n\n# 技术栈\nsed -n '/## Tech Stack/,/##/p' /Users/young/project/career_ios_backend/PRD.md\n\n# API 端点\nsed -n '/## API Endpoints/,/##/p' /Users/young/project/career_ios_backend/PRD.md\n```\n\n### 搜索关键词\n```bash\n# 搜索特定功能\ngrep -i \"session\" /Users/young/project/career_ios_backend/PRD.md\n\n# 搜索 API\ngrep -i \"POST\\|GET\\|PUT\\|DELETE\" /Users/young/project/career_ios_backend/PRD.md\n```\n\n---\n\n## PRD 结构速查\n\n```\nPRD.md 标准结构:\n├── Version (当前版本号)\n├── Overview (项目概述)\n├── Current Features (已完成功能)\n├── Planned Features (计划功能)\n├── Tech Stack (技术栈)\n├── API Endpoints (API 端点列表)\n├── Database Schema (数据库结构)\n└── Implementation Status (实施状态)\n```\n\n---\n\n## 使用模式\n\n### Pattern 1: 开始新功能前\n```\nUser: \"我要开发 Session name field\"\nAgent:\n  1. grep -i \"session\" PRD.md\n  2. 确认需求存在\n  3. 读取相关 API endpoints\n  4. 开始 TDD workflow\n```\n\n### Pattern 2: 检"
+    },
+    {
+      "path": "other/pyhealth/SKILL.md",
+      "name": "pyhealth",
+      "current_category": "other",
+      "llm_category": "ai-ml",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is a comprehensive healthcare AI toolkit for developing, testing, and deploying machine learning models with clinical data, including deep learning models for healthcare applications.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "782127318c0c5f3581ae274f2ffa18a7ab229c3e218ec6da00fc639c631c8a9f",
+      "metadata_sha256": "1fce9e88df4f0eb9676e975cf09c9f86b29cd698677d48d4b044bda82e0763d8",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Comprehensive healthcare AI toolkit for developing, testing, and deploying machine learning models with clinical data. This skill should be used when working with electronic health records (EHR), clinical prediction tasks (mortality, readmission, drug recommendation), medical coding systems (ICD, NDC, ATC), physiological signals (EEG, ECG), healthcare datasets (MIMIC-III/IV, eICU, OMOP), or implementing deep learning models for healthcare applications (RETAIN, SafeDrug, Transformer, GNN).",
+      "content_excerpt": "---\nname: pyhealth\ndescription: Comprehensive healthcare AI toolkit for developing, testing, and deploying machine learning models with clinical data. This skill should be used when working with electronic health records (EHR), clinical prediction tasks (mortality, readmission, drug recommendation), medical coding systems (ICD, NDC, ATC), physiological signals (EEG, ECG), healthcare datasets (MIMIC-III/IV, eICU, OMOP), or implementing deep learning models for healthcare applications (RETAIN, SafeDrug, Transformer, GNN).\n---\n\n# PyHealth: Healthcare AI Toolkit\n\n## Overview\n\nPyHealth is a comprehensive Python library for healthcare AI that provides specialized tools, models, and datasets for clinical machine learning. Use this skill when developing healthcare prediction models, processing clinical data, working with medical coding systems, or deploying AI solutions in healthcare settings.\n\n## When to Use This Skill\n\nInvoke this skill when:\n\n- **Working with healthcare datasets**: MIMIC-III, MIMIC-IV, eICU, OMOP, sleep EEG data, medical images\n- **Clinical prediction tasks**: Mortality prediction, hospital readmission, length of stay, drug recommendation\n- **Medical coding**: Translating between ICD-9/10, NDC, RxNorm, ATC coding systems\n- **Processing clinical data**: Sequential events, physiological signals, clinical text, medical images\n- **Implementing healthcare models**: RETAIN, SafeDrug, GAMENet, StageNet, Transformer for EHR\n- **Evaluating clinical models**: Fairness metrics, calibration, interpretability, uncertainty quantification\n\n## Core Capabilities\n\nPyHealth operat"
+    },
+    {
+      "path": "other/python-async-athola-claude-night-market-ecd79a8b/SKILL.md",
+      "name": "python-async",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill provides Python asyncio patterns for concurrent programming, which is a software development workflow focused on coding patterns and frameworks.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "df0d78db9b7df5b3aef3ddc759d69ab3ece1df4ae803f6a8bdf870085c480cd8",
+      "metadata_sha256": "55d522a1e740db2f7a5a6364b21ead75f3b10b3fd459a9f29c47e34f683880c5",
+      "semantic_sources": {
+        "description": "body",
+        "name": "metadata"
+      },
+      "description": "asyncio and async/await patterns for Python applications.",
+      "content_excerpt": "---\nname: python-async\ndescription: |\n\nTriggers: concurrency, coroutines, await, async, asyncio\n  Master Python asyncio, concurrent programming, and async/await patterns\n  for high-performance applications.\n\n  Triggers: asyncio, async/await, coroutines, concurrent programming, async API,\n  I/O-bound, websockets, background tasks, semaphores, async context managers\n\n  Use when: building async APIs, concurrent systems, I/O-bound applications,\n  implementing rate limiting, async context managers\n\n  DO NOT use when: CPU-bound optimization - use python-performance instead.\n  DO NOT use when: testing async code - use python-testing async module.\n\n  Consult this skill for async Python patterns and concurrency.\nversion: 1.0.0\ncategory: async\ntags: [python, async, asyncio, concurrency, await, coroutines]\ntools: [async-analyzer, concurrency-checker]\nusage_patterns:\n  - async-api-development\n  - concurrent-io\n  - websocket-servers\n  - background-tasks\ncomplexity: intermediate\nestimated_tokens: 400\nprogressive_loading: true\nmodules:\n  - basic-patterns\n  - concurrency-control\n  - error-handling-timeouts\n  - advanced-patterns\n  - testing-async\n  - real-world-applications\n  - pitfalls-best-practices\n---\n\n# Async Python Patterns\n\nasyncio and async/await patterns for Python applications.\n\n## Quick Start\n\n```python\nimport asyncio\n\nasync def main():\n    print(\"Hello\")\n    await asyncio.sleep(1)\n    print(\"World\")\n\nasyncio.run(main())\n```\n**Verification:** Run the command with `--help` flag to verify availability.\n\n## When to Use\n\n- Building async web APIs (FastAPI, aiohttp)\n- Implementing con"
+    },
+    {
+      "path": "other/play-learn-lift-simhacker-moollm-2/SKILL.md",
+      "name": "play-learn-lift",
+      "current_category": "other",
+      "llm_category": "personal-development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Same skill as ids 2 and 3 - a learning methodology for personal growth. The 'Play-Learn-Lift' cycle is explicitly about self-improvement through curiosity-driven exploration and knowledge sharing.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "97a51bf72ba03fb5d392c5f0690f36765e87e7ccf8d4b86c241b122f4fc6fd41",
+      "metadata_sha256": "5faf6bdd1997980e71c79a9dd3f03f3a9b34ed2a4ee9d1d7d9303b6c1a3b3516",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "Start Playing. Keep Learning. Lift Others.",
+      "content_excerpt": "---\nname: play-learn-lift\ndescription: \"Start Playing. Keep Learning. Lift Others.\"\nlicense: MIT\ntier: 1\nallowed-tools:\n  - read_file\n  - write_file\nrelated: [moollm, bootstrap, sister-script, sniffable-python, constructionism, adventure, debugging, scratchpad, research-notebook, skill, plain-text]\ntags: [moollm, methodology, pedagogy, workflow, learning]\n---\n\n# Play Learn Lift\n\n> **Start Playing. Keep Learning. Lift Others.**\n\nThe three-stage journey from curiosity to mastery to teaching. The core MOOLLM methodology.\n\n> [!TIP]\n> **This IS the methodology.** Every other skill is an expression of `PLAY-LEARN-LIFT`. Start here.\n\n---\n\n## The Cycle\n\n```mermaid\nflowchart LR\n    P[\"🎮 PLAY\"] --> L[\"📚 LEARN\"]\n    L --> LI[\"🚀 LIFT\"]\n    LI -->|inspire| P\n```\n\n| Stage | Motto | What Happens |\n|-------|-------|--------------|\n| **🎮 PLAY** | Jump in! | No prerequisites, can't break anything, curiosity drives discovery |\n| **📚 LEARN** | Patterns emerge | Connections make sense, confidence builds naturally, \"I noticed...\" |\n| **🚀 LIFT** | Help others play | Teaching solidifies learning, sharing multiplies impact |\n\n---\n\n## Why This Matters\n\nMost learning is backwards:\n- ❌ Study first, then do\n- ❌ Master before sharing\n- ❌ Fear mistakes\n\nPLAY-LEARN-LIFT inverts it:\n- ✅ **Do first**, understand emerges\n- ✅ **Share while learning**, teaching accelerates mastery\n- ✅ **Mistakes are features**, not bugs\n\n---\n\n## Philosophy\n\n> **\"Low floor, high ceiling, wide walls\"**\n> — Seymour Papert / Mitch Resnick\n\n| Principle | Meaning |\n|-----------|---------|\n| **Low floor** | Easy to start. No prerequi"
+    },
+    {
+      "path": "other/senior-computer-vision-alirezarezvani-claude-skills-2/SKILL.md",
+      "name": "senior-computer-vision",
+      "current_category": "other",
+      "llm_category": "ai-ml",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly for computer vision engineering, covering model training, inference optimization, and deployment of vision systems, which falls under machine learning and AI infrastructure.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "a32df14f4dd022a0f8224c1a5dac4c66e8dafd1381e57956444a6ff69994787e",
+      "metadata_sha256": "7a74614c6fea300513fa47064f714ddeab471ee3aeb316fcfead8491c24c920e",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Computer vision engineering skill for object detection, image segmentation, and visual AI systems. Covers CNN and Vision Transformer architectures, YOLO/Faster R-CNN/DETR detection, Mask R-CNN/SAM segmentation, and production deployment with ONNX/TensorRT. Includes PyTorch, torchvision, Ultralytics, Detectron2, and MMDetection frameworks. Use when building detection pipelines, training custom models, optimizing inference, or deploying vision systems.",
+      "content_excerpt": "---\nname: \"senior-computer-vision\"\ndescription: Computer vision engineering skill for object detection, image segmentation, and visual AI systems. Covers CNN and Vision Transformer architectures, YOLO/Faster R-CNN/DETR detection, Mask R-CNN/SAM segmentation, and production deployment with ONNX/TensorRT. Includes PyTorch, torchvision, Ultralytics, Detectron2, and MMDetection frameworks. Use when building detection pipelines, training custom models, optimizing inference, or deploying vision systems.\n---\n\n# Senior Computer Vision Engineer\n\nProduction computer vision engineering skill for object detection, image segmentation, and visual AI system deployment.\n\n## Table of Contents\n\n- [Quick Start](#quick-start)\n- [Core Expertise](#core-expertise)\n- [Tech Stack](#tech-stack)\n- [Workflow 1: Object Detection Pipeline](#workflow-1-object-detection-pipeline)\n- [Workflow 2: Model Optimization and Deployment](#workflow-2-model-optimization-and-deployment)\n- [Workflow 3: Custom Dataset Preparation](#workflow-3-custom-dataset-preparation)\n- [Architecture Selection Guide](#architecture-selection-guide)\n- [Reference Documentation](#reference-documentation)\n- [Common Commands](#common-commands)\n\n## Quick Start\n\n```bash\n# Generate training configuration for YOLO or Faster R-CNN\npython scripts/vision_model_trainer.py models/ --task detection --arch yolov8\n\n# Analyze model for optimization opportunities (quantization, pruning)\npython scripts/inference_optimizer.py model.pt --target onnx --benchmark\n\n# Build dataset pipeline with augmentations\npython scripts/dataset_pipeline_builder.py images/ "
+    },
+    {
+      "path": "other/pptx-jackiexiao-jackie-skills-cn-top/SKILL.md",
+      "name": "pptx",
+      "current_category": "other",
+      "llm_category": "documents",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is for PPTX file creation, editing, and analysis - document manipulation in office formats. The content shows workflows for reading, editing, and creating PowerPoint files.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "6ee4c42f251748d0d6f17ca08b2c0116aaa2cea8d5c54c2833ec08fcffba31ea",
+      "metadata_sha256": "e708402adab51d6bceef6ff719a35ae82563cdf6a88e96160949cbce4e122db0",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS",
+      "content_excerpt": "---\nname: pptx\ndescription: \"QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS\"\nlicense: Proprietary. LICENSE.txt has complete terms\n---\n\n# （中文）PPTX Skill\n\n## Quick Reference\n\n| Task | Guide |\n|------|-------|\n| Read/analyze content | `python -m markitdown presentation.pptx` |\n| Edit or create from template | Read [editing.md](editing.md) |\n| Create from scratch | Read [pptxgenjs.md](pptxgenjs.md) |\n\n---\n\n## Reading Content\n\n```bash\n# Text extraction\npython -m markitdown presentation.pptx\n\n# Visual overview\npython scripts/thumbnail.py presentation.pptx\n\n# Raw XML\npython scripts/office/unpack.py presentation.pptx unpacked/\n```\n\n---\n\n## Editing Workflow\n\n**Read [editing.md](editing.md) for full details.**\n\n1. Analyze template with `thumbnail.py`\n2. Unpack → manipulate slides → edit content → clean → pack\n\n---\n\n## Creating from Scratch\n\n**Read [pptxgenjs.md](pptxgenjs.md) for full details.**\n\nUse when no template or reference presentation is available.\n\n---\n\n## Design Ideas\n\n**Don't create boring slides.** Plain bullets on a white background won't impress anyone. Consider ideas from this list for each slide.\n\n### Before Starting\n\n- **Pick a bold, content-informed color palette**: The palette should feel designed for THIS topic. If swapping your colors into a completely different presentation would still \"work,\" you haven't made specific enough choices.\n- **Dominance over equality**: One color should dominate (60-70% visual weight), with 1-2 supporting tones and one sharp accent. Never give all colors equal weight.\n- **Dark/light contrast**: Dark backgrounds for title "
+    },
+    {
+      "path": "other/reset-davekilleen-dex/SKILL.md",
+      "name": "reset",
+      "current_category": "other",
+      "llm_category": "productivity",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Same as id 1: Restructuring a personal system (Dex) based on role or preferences is a personal workflow automation and task management aid.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "2d27a1810376fcab40a8a3510d54571bfc0a9a4a6a760a2ce1d4d5e5945a11c2",
+      "metadata_sha256": "18ac9f6b85d70d819ce0616284fdba103b16f2de2ac156991237311dd3e68a26",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Restructure Dex system based on new role or preferences",
+      "content_excerpt": "---\nname: reset\ndescription: Restructure Dex system based on new role or preferences\ndisable-model-invocation: true\n---\n\n## Purpose\n\nRe-run the onboarding flow to restructure your Dex system. Useful when:\n- Your role changes (promotion, new job, pivot)\n- You want to reorganize after using Dex for a while\n- You're experimenting with different structures\n- Your company size tier changes (startup → scaling, etc.)\n\n## Behavior\n\nWhen the user types `/reset`, execute the following:\n\n### Step 1: Acknowledge and Explain\n\nSay: \"Let's reset your Dex setup. I'll walk you through the same questions as initial setup, then reorganize your structure. **Your existing content will be preserved** - I'll move files to match the new structure, not delete them.\"\n\n### Step 2: Current State Check\n\nBefore asking questions, check and display:\n- Current role (from CLAUDE.md User Profile section)\n- Current company size\n- Current pillars\n- Existing folder structure\n\nSay: \"Here's your current setup: [summary]. Want to change it?\"\n\n### Step 3: Role Selection (if changing)\n\nIf user wants to change role, present the numbered role list:\n\n```\n**Core Functions**\n1. Product Manager\n2. Sales / Account Executive\n3. Marketing\n4. Engineering\n5. Design\n\n**Customer-Facing**\n6. Customer Success\n7. Solutions Engineering\n\n**Operations**\n8. Product Operations\n9. RevOps / BizOps\n10. Data / Analytics\n\n**Support Functions**\n11. Finance\n12. People (HR)\n13. Legal\n14. IT Support\n\n**Leadership**\n15. Founder\n\n**C-Suite**\n16. CEO\n17. CFO\n18. COO\n19. CMO\n20. CRO\n21. CTO\n22. CPO\n23. CIO\n24. CISO\n25. CHRO / Chief People Officer\n26"
+    },
+    {
+      "path": "other/release-arcasilesgroup-ai-engineering-2/SKILL.md",
+      "name": "release",
+      "current_category": "other",
+      "llm_category": "quality",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly about release gate checking: aggregated GO/NO-GO gate checking coverage, security, tests, lint, and dependency vulnerabilities against manifest thresholds. This is a quality gate workflow with tags including 'quality', 'gate', 'go-no-go'. The description and process focus on validation and quality assurance before release.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "a975b005cd2aa44b208ec38999db615236d8b8b17f72c17a647fc7187cf47603",
+      "metadata_sha256": "551caf0d190f4cdbe3a8c0869f2012d24f2c7bab42868ffe5d47ba69a2b0ac6f",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "Use when preparing a release: aggregated GO/NO-GO gate checking coverage, security, tests, lint, and dependency vulnerabilities against manifest thresholds.",
+      "content_excerpt": "---\nname: release\ndescription: \"Use when preparing a release: aggregated GO/NO-GO gate checking coverage, security, tests, lint, and dependency vulnerabilities against manifest thresholds.\"\neffort: medium\nargument-hint: \"[version]|--check-only\"\ntags: [quality, release, gate, go-no-go, delivery]\n---\n\n\n\n# Release Gate\n\nAggregated GO/NO-GO release readiness gate. Checks every quality dimension against `manifest.yml` thresholds and produces a verdict with evidence. Run before version tagging or merge-to-main.\n\n## When to Use\n\n- Pre-release milestone, version tagging, merge-to-main decision.\n- NOT for code quality only -- use `/ai-quality`.\n- NOT for security only -- use `/ai-security`.\n\n## Process\n\n### Phase 1: Gate Dimensions\n\n1. **Coverage** -- verify test coverage meets threshold.\n   - Run `pytest tests/ --cov --cov-report=term-missing`.\n   - Gate: coverage >= threshold from `manifest.yml` (default 80%).\n\n2. **Security** -- verify zero medium+ findings.\n   - Run `gitleaks protect --staged`, `semgrep scan --config auto .`, `pip-audit`.\n   - Gate: zero critical/high findings. Medium findings documented.\n\n3. **Tests** -- verify all tests pass.\n   - Run `pytest tests/ -v`.\n   - Gate: 100% pass rate. Zero skipped governance tests.\n\n4. **Lint** -- verify clean lint and format.\n   - Run `ruff check .`, `ruff format --check .`.\n   - Gate: zero unfixable lint errors.\n\n5. **Dependency vulnerabilities** -- verify clean dependency tree.\n   - Run `pip-audit --strict`.\n   - Gate: zero known vulnerabilities. Accepted risks must be in `decision-store.json`.\n\n6. **Type checking** -- verify t"
+    },
+    {
+      "path": "other/spec-generator-catlog22-claude-code-workflow/SKILL.md",
+      "name": "spec-generator",
+      "current_category": "other",
+      "llm_category": "product",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill produces a complete specification package including Product Brief, PRD, Architecture, and Epics through sequential phases. This is clearly product management documentation workflow.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "d2a529b47e553394d616d60b92d5490f1d473ca089679da3dd660c4f9619610b",
+      "metadata_sha256": "a14928165273e3dcdf7221368d88396985d44d800eb32816c551b53e101bf72c",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Specification generator - 6 phase document chain producing product brief, PRD, architecture, and epics. Triggers on \"generate spec\", \"create specification\", \"spec generator\", \"workflow:spec\".",
+      "content_excerpt": "---\nname: spec-generator\ndescription: Specification generator - 6 phase document chain producing product brief, PRD, architecture, and epics. Triggers on \"generate spec\", \"create specification\", \"spec generator\", \"workflow:spec\".\nallowed-tools: Agent, AskUserQuestion, TaskCreate, TaskUpdate, TaskList, Read, Write, Edit, Bash, Glob, Grep, Skill\n---\n\n# Spec Generator\n\nStructured specification document generator producing a complete specification package (Product Brief, PRD, Architecture, Epics) through 6 sequential phases with multi-CLI analysis and interactive refinement. **Document generation only** - execution handoff to existing workflows (lite-plan, plan, req-plan).\n\n## Architecture Overview\n\n```\nPhase 0:   Specification Study (Read specs/ + templates/ - mandatory prerequisite)\n           |\nPhase 1:   Discovery               -> spec-config.json + discovery-context.json\n           |                           (includes spec_type selection)\nPhase 1.5: Req Expansion           -> refined-requirements.json (interactive discussion + CLI gap analysis)\n           |                           (-y auto mode: auto-expansion, skip interaction)\nPhase 2:   Product Brief            -> product-brief.md + glossary.json  (multi-CLI parallel analysis)\n           |\nPhase 3:   Requirements (PRD)      -> requirements/  (_index.md + REQ-*.md + NFR-*.md)\n           |                           (RFC 2119 keywords, data model definitions)\nPhase 4:   Architecture            -> architecture/  (_index.md + ADR-*.md, multi-CLI review)\n           |                           (state machine, config model, "
+    },
+    {
+      "path": "other/primekg-k-dense-ai-scientific-agent-ski/SKILL.md",
+      "name": "primekg",
+      "current_category": "other",
+      "llm_category": "domains",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill queries a specialized precision medicine knowledge graph for biological data, representing a domain-specific workflow in biomedical research.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "ff1cf1c2ecdb41469660cc6fcaed8327c5dbeebcda7ac6c987481e666845808b",
+      "metadata_sha256": "7388050f7796c03c2528bf7f9e1f279ea9490084326ec5e4fc59a7a2d7038741",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Query the Precision Medicine Knowledge Graph (PrimeKG) for multiscale biological data including genes, drugs, diseases, phenotypes, and more.",
+      "content_excerpt": "---\nname: primekg\ndescription: Query the Precision Medicine Knowledge Graph (PrimeKG) for multiscale biological data including genes, drugs, diseases, phenotypes, and more.\nlicense: Unknown\nmetadata:\n  version: \"1.0\"\n  skill-author: K-Dense Inc. (PrimeKG original from Harvard MIMS)\n---\n\n# PrimeKG Knowledge Graph Skill\n\n## Overview\n\nPrimeKG is a precision medicine knowledge graph that integrates over 20 primary databases and high-quality scientific literature into a single resource. It contains over 100,000 nodes and 4 million edges across 29 relationship types, including drug-target, disease-gene, and phenotype-disease associations.\n\n**Key capabilities:**\n- Search for nodes (genes, proteins, drugs, diseases, phenotypes)\n- Retrieve direct neighbors (associated entities and clinical evidence)\n- Analyze local disease context (related genes, drugs, phenotypes)\n- Identify drug-disease paths (potential repurposing opportunities)\n\n**Data access:** Programmatic access via `query_primekg.py`. Data is stored at `C:\\Users\\eamon\\Documents\\Data\\PrimeKG\\kg.csv`.\n\n## When to Use This Skill\n\nThis skill should be used when:\n\n- **Knowledge-based drug discovery:** Identifying targets and mechanisms for diseases.\n- **Drug repurposing:** Finding existing drugs that might have evidence for new indications.\n- **Phenotype analysis:** Understanding how symptoms/phenotypes relate to diseases and genes.\n- **Multiscale biology:** Bridging the gap between molecular targets (genes) and clinical outcomes (diseases).\n- **Network pharmacology:** Investigating the broader network effects of drug-target inte"
+    },
+    {
+      "path": "other/product-design-doc-yuch4-dx-selecta-2/SKILL.md",
+      "name": "product-design-doc",
+      "current_category": "other",
+      "llm_category": "product",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill creates and updates product design documents covering value propositions, user experience, information architecture, feature composition, data/permissions, risks, and verification plans. This is product management documentation work including PRDs and design specs.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "90c0c031d65f92d481a5802fc7bbc17ed62a9a06001ed9eadfbcf63bb2f0a562",
+      "metadata_sha256": "3e9e4cf032cd1fc6df547e08db84a50c8270d1b252f1bd61bed6dc0af7629a5d",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "プロダクト設計書を作成・更新する。「プロダクト設計書を作って」「設計に落として」「体験設計をまとめて」「MVP設計を整理」「ユーザーフロー/情報設計を整理」「価値提案を設計書に落とす」などの依頼時に使用。アイデアの叩き台から、価値提案・ユーザー体験・情報構造・機能構成・データ/権限・リスク・検証計画までを具体化する。",
+      "content_excerpt": "---\nname: product-design-doc\ndescription: プロダクト設計書を作成・更新する。「プロダクト設計書を作って」「設計に落として」「体験設計をまとめて」「MVP設計を整理」「ユーザーフロー/情報設計を整理」「価値提案を設計書に落とす」などの依頼時に使用。アイデアの叩き台から、価値提案・ユーザー体験・情報構造・機能構成・データ/権限・リスク・検証計画までを具体化する。\nallowed-tools: Read, Write, Edit, Glob, Grep\n---\n\n# Product Design Doc Skill\n\nアイデアの叩き台を、プロダクト設計書として具体化する。\n\n## 入出力\n\n| 種別 | パス |\n|------|------|\n| 入力 | `docs/ideas/initial-requirements.md`（壁打ちメモ） |\n| 入力 | `docs/product-design.md`（既存あれば優先） |\n| 出力 | `docs/product-design.md` |\n\n## 参照ファイル\n\n| ファイル | 読むタイミング |\n|----------|----------------|\n| `references/template.md` | 新規作成時のベース |\n| `references/checklist.md` | 品質チェック・レビュー観点 |\n\n## 手順\n\n### 1. 壁打ちメモ読解\n\n`docs/ideas/initial-requirements.md` を読み、以下を抽出：\n\n- 解決したい課題\n- 対象ユーザーの文脈（役割/環境/頻度）\n- 価値提案と差別化のヒント\n- 想定ユースケース/利用シーン\n- 制約や前提（期間、予算、規制、既存資産）\n- 成功条件の兆し（指標や期待）\n\n不足情報は「未確定/要確認」に集約し、仮説が立てられるものは「仮説」として明記。\n\n### 2. 既存設計書の確認\n\n- `docs/product-design.md` が存在する？\n  - **Yes** → 構造を維持して差分更新\n  - **No** → `references/template.md` をコピーして新規作成\n\n### 3. 設計セクションの作成\n\n| セクション | 内容 | 必須 |\n|-----------|------|------|\n| サマリ | 一文概要 + ゴール + 成果の方向性 | ✅ |\n| 背景/課題 | 現状の痛み/機会 | ✅ |\n| 対象ユーザー | ペルソナ + 1日の流れ | ✅ |\n| 価値提案/差別化 | 価値の核/代替比較 | ✅ |\n| 主要ユースケース/JTBD | 主要ジョブ + トリガー | ✅ |\n| 体験設計 | ジャーニー + 主要フロー | ✅ |\n| 情報設計 | IA/ナビ/主要画面 | ✅ |\n| 機能構成 | MVPをP0/P1/P2で整理 | ✅ |\n| データ/権限設計 | 主要エンティティ/権限 | ✅ |\n| リスク/依存関係 | 技術/運用/法務の懸念 | ✅ |\n| 検証計画 | 仮説 + 検証方法 + 指標 | ✅ |\n| スコープ外 | やらないこと | ✅ |\n| 未確定/要確認 | 不足情報の列挙 | ✅ |\n\n### 4. 品質チェック\n\n`references/checklist.md` で確認\n\n### 5. ユーザー承認\n\n設計書作成後は必ずユーザーに承認を求める\n\n## 境界（やらないこと）\n\n- **PRDの詳細化（受入条件/要件粒度の確定）** → `prd-writing` スキル\n- **機能設計（実装方式の詳細）** → `functional-"
+    },
+    {
+      "path": "other/release-arcasilesgroup-ai-engineering/SKILL.md",
+      "name": "release",
+      "current_category": "other",
+      "llm_category": "quality",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is a release gate that checks quality dimensions (coverage, security, tests, lint, dependency vulnerabilities) against thresholds and produces a GO/NO-GO verdict. This is a quality gate/validation workflow.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "a975b005cd2aa44b208ec38999db615236d8b8b17f72c17a647fc7187cf47603",
+      "metadata_sha256": "96a6e7a2e3c48e2934bdfc31db63f99e0522ae4b0f907877adc676c59598d772",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "Use when preparing a release: aggregated GO/NO-GO gate checking coverage, security, tests, lint, and dependency vulnerabilities against manifest thresholds.",
+      "content_excerpt": "---\nname: release\ndescription: \"Use when preparing a release: aggregated GO/NO-GO gate checking coverage, security, tests, lint, and dependency vulnerabilities against manifest thresholds.\"\neffort: medium\nargument-hint: \"[version]|--check-only\"\ntags: [quality, release, gate, go-no-go, delivery]\n---\n\n\n\n# Release Gate\n\nAggregated GO/NO-GO release readiness gate. Checks every quality dimension against `manifest.yml` thresholds and produces a verdict with evidence. Run before version tagging or merge-to-main.\n\n## When to Use\n\n- Pre-release milestone, version tagging, merge-to-main decision.\n- NOT for code quality only -- use `/ai-quality`.\n- NOT for security only -- use `/ai-security`.\n\n## Process\n\n### Phase 1: Gate Dimensions\n\n1. **Coverage** -- verify test coverage meets threshold.\n   - Run `pytest tests/ --cov --cov-report=term-missing`.\n   - Gate: coverage >= threshold from `manifest.yml` (default 80%).\n\n2. **Security** -- verify zero medium+ findings.\n   - Run `gitleaks protect --staged`, `semgrep scan --config auto .`, `pip-audit`.\n   - Gate: zero critical/high findings. Medium findings documented.\n\n3. **Tests** -- verify all tests pass.\n   - Run `pytest tests/ -v`.\n   - Gate: 100% pass rate. Zero skipped governance tests.\n\n4. **Lint** -- verify clean lint and format.\n   - Run `ruff check .`, `ruff format --check .`.\n   - Gate: zero unfixable lint errors.\n\n5. **Dependency vulnerabilities** -- verify clean dependency tree.\n   - Run `pip-audit --strict`.\n   - Gate: zero known vulnerabilities. Accepted risks must be in `decision-store.json`.\n\n6. **Type checking** -- verify t"
+    },
+    {
+      "path": "other/scientific-thinking-scholar-evaluation-jackspace-claudeskillz-2/SKILL.md",
+      "name": "scholar-evaluation",
+      "current_category": "other",
+      "llm_category": "analysis",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill provides a systematic framework for evaluating scholarly and research work, assessing research papers, literature reviews, methodologies, and scientific writing quality. This aligns with the 'analysis' category's inclusion rule for analysis, synthesis, inspection, reporting, and evidence extraction workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "f5c7757547029f48a1a7a1eec6b96f433563c522042894938f48e7e254dfb083",
+      "metadata_sha256": "5e033fa2c4fd03bfcfac896e94c207636b592f7e77d951d53f1e6a5f5e9970df",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Systematic framework for evaluating scholarly and research work based on the ScholarEval methodology. This skill should be used when assessing research papers, evaluating literature reviews, scoring research methodologies, analyzing scientific writing quality, or applying structured evaluation criteria to academic work. Provides comprehensive assessment across multiple dimensions including problem formulation, literature review, methodology, data collection, analysis, results interpretation, and scholarly writing quality.",
+      "content_excerpt": "---\nname: scholar-evaluation\ndescription: Systematic framework for evaluating scholarly and research work based on the ScholarEval methodology. This skill should be used when assessing research papers, evaluating literature reviews, scoring research methodologies, analyzing scientific writing quality, or applying structured evaluation criteria to academic work. Provides comprehensive assessment across multiple dimensions including problem formulation, literature review, methodology, data collection, analysis, results interpretation, and scholarly writing quality.\n---\n\n# Scholar Evaluation\n\n## Overview\n\nApply the ScholarEval framework to systematically evaluate scholarly and research work. This skill provides structured evaluation methodology based on peer-reviewed research assessment criteria, enabling comprehensive analysis of academic papers, research proposals, literature reviews, and scholarly writing across multiple quality dimensions.\n\n## When to Use This Skill\n\nUse this skill when:\n- Evaluating research papers for quality and rigor\n- Assessing literature review comprehensiveness and quality\n- Reviewing research methodology design\n- Scoring data analysis approaches\n- Evaluating scholarly writing and presentation\n- Providing structured feedback on academic work\n- Benchmarking research quality against established criteria\n\n## Evaluation Workflow\n\n### Step 1: Initial Assessment and Scope Definition\n\nBegin by identifying the type of scholarly work being evaluated and the evaluation scope:\n\n**Work Types:**\n- Full research paper (empirical, theoretical, or review)\n- Researc"
+    },
+    {
+      "path": "other/readme-craft-majesticlabs-dev-majestic-marketplace-2/SKILL.md",
+      "name": "readme-craft",
+      "current_category": "other",
+      "llm_category": "writing",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is for production-grade README.md patterns, focusing on writing effective documentation with specific structural patterns. It fits 'writing' as it deals with prose composition and documentation writing.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "275e109e28be6d50d1896e226f1dea168f03a0874abe8c6289b210b72a5aad0f",
+      "metadata_sha256": "64e69da54f04d79986ce19ea89105569e19e6256735b7a9437b83f8941f7fc21",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Production-grade README.md patterns for any project type. Use when creating project documentation, writing README files, or improving existing docs. Covers hero sections, quick start examples, comparison tables, troubleshooting guides, and limitation transparency. Triggers on README, documentation, project setup, open source.",
+      "content_excerpt": "---\nname: readme-craft\ndescription: Production-grade README.md patterns for any project type. Use when creating project documentation, writing README files, or improving existing docs. Covers hero sections, quick start examples, comparison tables, troubleshooting guides, and limitation transparency. Triggers on README, documentation, project setup, open source.\n---\n\n# README Craft\n\n**Audience:** Developers creating or improving project documentation.\n\n**Goal:** Generate README files that convert scanners into users within 60 seconds.\n\n## Core Philosophy\n\nA README is a sales pitch, onboarding guide, AND reference manual. Lead with value, prove with examples, document with precision.\n\n## Common Failures\n\n| Failure | Fix |\n|---------|-----|\n| Installation first | Lead with TL;DR and value prop |\n| Describes what it IS | Describe what problem it SOLVES |\n| No examples | One example per feature minimum |\n| Hidden limitations | Dedicated limitations section |\n| Single install method | Three+ pathways (curl, package manager, source) |\n| No troubleshooting | Document top 5 common errors |\n\n## Golden Structure\n\n### Tier 1: Hero Section\n\n```markdown\n<p align=\"center\">\n  <img src=\"logo.png\" width=\"200\" alt=\"Project Name\">\n</p>\n\n<p align=\"center\">\n  <a href=\"...\"><img src=\"https://img.shields.io/...\" alt=\"CI\"></a>\n  <a href=\"...\"><img src=\"https://img.shields.io/...\" alt=\"Version\"></a>\n  <a href=\"...\"><img src=\"https://img.shields.io/...\" alt=\"License\"></a>\n</p>\n\n<p align=\"center\">\n  <b>One-line description of what problem this solves</b>\n</p>\n\n```bash\ncurl -sSL https://example.com/ins"
+    },
+    {
+      "path": "other/shadcn-ui-conventions-theorcdev-8bitcn-ui-3/SKILL.md",
+      "name": "shadcn-ui-conventions",
+      "current_category": "other",
+      "llm_category": "design",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "This is a duplicate of skill 0 with the same content and purpose, focusing on UI component conventions for 8-bit styled components. It fits the design category for UI/UX and design-system work.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "a7165b1a0051ed5f2ab7ebe4a95bc639368260209f9debac4887c00f55e6890d",
+      "metadata_sha256": "931a1760ad9722a9217abfa20b1cfc9628eaf2ba3f05558ec2f2887110857eb1",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "UI component conventions for 8-bit styled components. Use when working with shadcn/ui components or implementing retro-styled UI elements.",
+      "content_excerpt": "---\nname: shadcn-ui-conventions\ndescription: UI component conventions for 8-bit styled components. Use when working with shadcn/ui components or implementing retro-styled UI elements.\n---\n\n## UI Component Conventions\n\nThe `components/ui` directory uses different conventions from the rest of the project. It's excluded from Biome/Ultracite linting to preserve shadcn/ui patterns.\n\n### When to use this skill\n- When creating new UI components\n- When modifying existing shadcn/ui components\n- When implementing 8-bit retro styling\n- When working with component imports and types\n\n### Linting\n\n- **Biome excludes this directory**: `biome.jsonc` has `\"!components/ui\"` in the includes\n- **No Ultracite formatting**: Components use their own patterns\n- **Run lint manually** when needed: `npx biome check components/ui/`\n\n### Import Patterns\n\n**Base components** (e.g., `button.tsx`):\n\n```tsx\nimport type * as React from \"react\";\n\nimport { Slot } from \"@radix-ui/react-slot\";\nimport { type VariantProps, cva } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n```\n\n**8bit components** (e.g., `8bit/button.tsx`):\n\n```tsx\nimport { type VariantProps, cva } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\nimport { Button as ShadcnButton } from \"@/components/ui/button\";\n\nimport \"@/components/ui/8bit/styles/retro.css\";\n```\n\nImport order:\n1. External libraries (class-variance-authority, @radix-ui)\n2. Internal utils (`@/lib/utils`)\n3. Base component alias (`@/components/ui/component`)\n4. Retro stylesheet (`@/components/ui/8bit/styles/retro.css`)\n\n### Type Definitions"
+    },
+    {
+      "path": "other/scientific-astropy/SKILL.md",
+      "name": "astropy",
+      "current_category": "other",
+      "llm_category": "domains",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is a comprehensive Python library for astronomy and astrophysics, providing domain-specific functionality for astronomical research and data analysis.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "d93dbf9ef0037c60febfc8b45bfb44923a1639067c984eb9a9cbb43c97fe7f93",
+      "metadata_sha256": "d8f628f8eb42c71d14069f84806d0f1a1d3900dd68f60d769b7d7c4cb8d03030",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Comprehensive Python library for astronomy and astrophysics. This skill should be used when working with astronomical data including celestial coordinates, physical units, FITS files, cosmological calculations, time systems, tables, world coordinate systems (WCS), and astronomical data analysis. Use when tasks involve coordinate transformations, unit conversions, FITS file manipulation, cosmological distance calculations, time scale conversions, or astronomical data processing.",
+      "content_excerpt": "---\nname: astropy\ndescription: Comprehensive Python library for astronomy and astrophysics. This skill should be used when working with astronomical data including celestial coordinates, physical units, FITS files, cosmological calculations, time systems, tables, world coordinate systems (WCS), and astronomical data analysis. Use when tasks involve coordinate transformations, unit conversions, FITS file manipulation, cosmological distance calculations, time scale conversions, or astronomical data processing.\nlicense: BSD-3-Clause license\nmetadata:\n    skill-author: K-Dense Inc.\n---\n\n# Astropy\n\n## Overview\n\nAstropy is the core Python package for astronomy, providing essential functionality for astronomical research and data analysis. Use astropy for coordinate transformations, unit and quantity calculations, FITS file operations, cosmological calculations, precise time handling, tabular data manipulation, and astronomical image processing.\n\n## When to Use This Skill\n\nUse astropy when tasks involve:\n- Converting between celestial coordinate systems (ICRS, Galactic, FK5, AltAz, etc.)\n- Working with physical units and quantities (converting Jy to mJy, parsecs to km, etc.)\n- Reading, writing, or manipulating FITS files (images or tables)\n- Cosmological calculations (luminosity distance, lookback time, Hubble parameter)\n- Precise time handling with different time scales (UTC, TAI, TT, TDB) and formats (JD, MJD, ISO)\n- Table operations (reading catalogs, cross-matching, filtering, joining)\n- WCS transformations between pixel and world coordinates\n- Astronomical constants and calcu"
+    },
+    {
+      "path": "other/plugin-structure-helixdevelopment-helixagent-2/SKILL.md",
+      "name": "Plugin Structure",
+      "current_category": "other",
+      "llm_category": "skills",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Same skill content as id 0 - describes plugin architecture, directory structure, manifest configuration, and component organization for Claude Code plugins. Directly aligns with 'skills' category.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "ee28fd41535313e9ffb2fd04393cc70e6e7e1d7ea143097a2c3b856e8be98132",
+      "metadata_sha256": "281b34feed084478ef785d4e97ee1a814c916caf89fc7d21e912aff2e671eb26",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "This skill should be used when the user asks to \"create a plugin\", \"scaffold a plugin\", \"understand plugin structure\", \"organize plugin components\", \"set up plugin.json\", \"use ${CLAUDE_PLUGIN_ROOT}\", \"add commands/agents/skills/hooks\", \"configure auto-discovery\", or needs guidance on plugin directory layout, manifest configuration, component organization, file naming conventions, or Claude Code plugin architecture best practices.",
+      "content_excerpt": "---\nname: Plugin Structure\ndescription: This skill should be used when the user asks to \"create a plugin\", \"scaffold a plugin\", \"understand plugin structure\", \"organize plugin components\", \"set up plugin.json\", \"use ${CLAUDE_PLUGIN_ROOT}\", \"add commands/agents/skills/hooks\", \"configure auto-discovery\", or needs guidance on plugin directory layout, manifest configuration, component organization, file naming conventions, or Claude Code plugin architecture best practices.\nversion: 0.1.0\n---\n\n# Plugin Structure for Claude Code\n\n## Overview\n\nClaude Code plugins follow a standardized directory structure with automatic component discovery. Understanding this structure enables creating well-organized, maintainable plugins that integrate seamlessly with Claude Code.\n\n**Key concepts:**\n- Conventional directory layout for automatic discovery\n- Manifest-driven configuration in `.claude-plugin/plugin.json`\n- Component-based organization (commands, agents, skills, hooks)\n- Portable path references using `${CLAUDE_PLUGIN_ROOT}`\n- Explicit vs. auto-discovered component loading\n\n## Directory Structure\n\nEvery Claude Code plugin follows this organizational pattern:\n\n```\nplugin-name/\n├── .claude-plugin/\n│   └── plugin.json          # Required: Plugin manifest\n├── commands/                 # Slash commands (.md files)\n├── agents/                   # Subagent definitions (.md files)\n├── skills/                   # Agent skills (subdirectories)\n│   └── skill-name/\n│       └── SKILL.md         # Required for each skill\n├── hooks/\n│   └── hooks.json           # Event handler configuration\n├── .mcp."
+    },
+    {
+      "path": "other/scientific-pkg-tooluniverse-jackspace-claudeskillz-2/SKILL.md",
+      "name": "tooluniverse",
+      "current_category": "other",
+      "llm_category": "ai-ml",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "ToolUniverse provides access to 600+ scientific tools including machine learning models, datasets, APIs, and analysis packages for bioinformatics, cheminformatics, genomics, and drug discovery workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "97bd8147e090e1f3ce7f31a6babaeda6a1e4aa58d8a4353a90e18267accd4164",
+      "metadata_sha256": "5bcea2419a3d9fcae401f87bfd2c72af274d8210a674ce7955154dedc3759813",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use this skill when working with scientific research tools and workflows across bioinformatics, cheminformatics, genomics, structural biology, proteomics, and drug discovery. This skill provides access to 600+ scientific tools including machine learning models, datasets, APIs, and analysis packages. Use when searching for scientific tools, executing computational biology workflows, composing multi-step research pipelines, accessing databases like OpenTargets/PubChem/UniProt/PDB/ChEMBL, performing tool discovery for research tasks, or integrating scientific computational resources into LLM workflows.",
+      "content_excerpt": "---\nname: tooluniverse\ndescription: Use this skill when working with scientific research tools and workflows across bioinformatics, cheminformatics, genomics, structural biology, proteomics, and drug discovery. This skill provides access to 600+ scientific tools including machine learning models, datasets, APIs, and analysis packages. Use when searching for scientific tools, executing computational biology workflows, composing multi-step research pipelines, accessing databases like OpenTargets/PubChem/UniProt/PDB/ChEMBL, performing tool discovery for research tasks, or integrating scientific computational resources into LLM workflows.\n---\n\n# ToolUniverse\n\n## Overview\n\nToolUniverse is a unified ecosystem that enables AI agents to function as research scientists by providing standardized access to 600+ scientific resources. Use this skill to discover, execute, and compose scientific tools across multiple research domains including bioinformatics, cheminformatics, genomics, structural biology, proteomics, and drug discovery.\n\n**Key Capabilities:**\n- Access 600+ scientific tools, models, datasets, and APIs\n- Discover tools using natural language, semantic search, or keywords\n- Execute tools through standardized AI-Tool Interaction Protocol\n- Compose multi-step workflows for complex research problems\n- Integration with Claude Desktop/Code via Model Context Protocol (MCP)\n\n## When to Use This Skill\n\nUse this skill when:\n- Searching for scientific tools by function or domain (e.g., \"find protein structure prediction tools\")\n- Executing computational biology workflows (e.g., diseas"
+    },
+    {
+      "path": "other/replit-data-handling-jeremylongshore-claude-code-plugins--2/SKILL.md",
+      "name": "replit-data-handling",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill implements PII handling, data retention policies, and GDPR/CCPA compliance patterns. This is squarely in the security domain covering data protection, privacy compliance, and sensitive data handling.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "ce39620b718876884a1f3a37e8d22c2b6f3b2fd51ee4e4d750acf2938d98869f",
+      "metadata_sha256": "6fd51fda3c50d76cee1ea57baa79ea049e5db229569ddb77d7944d1fdc1216b0",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Implement Replit PII handling, data retention, and GDPR/CCPA compliance patterns.\nUse when handling sensitive data, implementing data redaction, configuring retention policies,\nor ensuring compliance with privacy regulations for Replit integrations.\nTrigger with phrases like \"replit data\", \"replit PII\",\n\"replit GDPR\", \"replit data retention\", \"replit privacy\", \"replit CCPA\".",
+      "content_excerpt": "---\nname: replit-data-handling\ndescription: |\n  Implement Replit PII handling, data retention, and GDPR/CCPA compliance patterns.\n  Use when handling sensitive data, implementing data redaction, configuring retention policies,\n  or ensuring compliance with privacy regulations for Replit integrations.\n  Trigger with phrases like \"replit data\", \"replit PII\",\n  \"replit GDPR\", \"replit data retention\", \"replit privacy\", \"replit CCPA\".\nallowed-tools: Read, Write, Edit\nversion: 1.0.0\nlicense: MIT\nauthor: Jeremy Longshore <jeremy@intentsolutions.io>\n---\n\n# Replit Data Handling\n\n## Overview\nHandle sensitive data correctly when integrating with Replit.\n\n## Prerequisites\n- Understanding of GDPR/CCPA requirements\n- Replit SDK with data export capabilities\n- Database for audit logging\n- Scheduled job infrastructure for cleanup\n\n## Data Classification\n\n| Category | Examples | Handling |\n|----------|----------|----------|\n| PII | Email, name, phone | Encrypt, minimize |\n| Sensitive | API keys, tokens | Never log, rotate |\n| Business | Usage metrics | Aggregate when possible |\n| Public | Product names | Standard handling |\n\n## PII Detection\n\n```typescript\nconst PII_PATTERNS = [\n  { type: 'email', regex: /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}/g },\n  { type: 'phone', regex: /\\b\\d{3}[-.]?\\d{3}[-.]?\\d{4}\\b/g },\n  { type: 'ssn', regex: /\\b\\d{3}-\\d{2}-\\d{4}\\b/g },\n  { type: 'credit_card', regex: /\\b\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}\\b/g },\n];\n\nfunction detectPII(text: string): { type: string; match: string }[] {\n  const findings: { type: string; match: string }[] = [];\n\n  for (const pa"
+    },
+    {
+      "path": "other/registry-cleanup-darkmonkdev-witchcityrope-2/SKILL.md",
+      "name": "registry-cleanup",
+      "current_category": "other",
+      "llm_category": "devops",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill automates cleanup of container images in a registry based on retention policies, which is infrastructure and operational automation typical of DevOps.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "30f96808dbfc4d82d44b85f2914b00260e15993c62eabd6956ed7a866a245fab",
+      "metadata_sha256": "fbf1d84b0dbac23a53d62034d0dfbde82399340aa50308e664fa946d28cb8e73",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Automates cleanup of old container images from DigitalOcean registries based on retention policies. Keeps last 10 tags for staging, 30 for production, always preserves :latest.",
+      "content_excerpt": "---\nname: registry-cleanup\ndescription: Automates cleanup of old container images from DigitalOcean registries based on retention policies. Keeps last 10 tags for staging, 30 for production, always preserves :latest.\n---\n\n# Registry Cleanup Skill\n\n**Purpose**: Clean up old container images to manage storage costs in DigitalOcean Container Registries.\n\n**When to Use**:\n- Weekly maintenance (recommended)\n- When storage usage is high\n- After major deployment cycles\n- Before month-end to reduce storage costs\n\n**When NOT to Use**:\n- During active deployments (wait for deployment to complete)\n- If unsure about which tags are safe to delete (use dry-run mode first)\n- Without reviewing dry-run output first\n\n---\n\n## 🚨 SINGLE SOURCE OF TRUTH\n\n**This skill is the ONLY registry cleanup procedure.**\n\n**DO NOT duplicate registry cleanup automation in:**\n- ❌ Agent definitions\n- ❌ Lessons learned (reference this skill instead)\n- ❌ Process documentation\n- ❌ Deployment guides\n\n---\n\n## Retention Policies\n\n### WitchCityRope Registry\n\n| Repository | Retention | Always Keep | Purpose |\n|------------|-----------|-------------|---------|\n| `witchcityrope-api-staging` | **10 tags** | `:latest` | Staging API images |\n| `witchcityrope-web-staging` | **10 tags** | `:latest` | Staging Web images |\n| `witchcityrope-api-production` | **30 tags** | `:latest` | Production API images |\n| `witchcityrope-web-production` | **30 tags** | `:latest` | Production Web images |\n\n### Accounting Registry\n\n| Repository | Retention | Always Keep | Purpose |\n|------------|-----------|-------------|---------|\n| `accountin"
+    },
+    {
+      "path": "other/scheduling-euda1mon1a-autonomous-assignmen-7d97dcd1/SKILL.md",
+      "name": "SCHEDULING",
+      "current_category": "other",
+      "llm_category": "workflow",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill orchestrates a multi-step constraint satisfaction workflow for medical residency scheduling, involving requirements gathering, constraint propagation, optimization, and validation. This is a repeatable process automation with defined procedures.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "be5ea87ab2260a9a2b3207accc6e2c99e7769e54fa93d2c4f56247359c167f85",
+      "metadata_sha256": "9d6eaf88a8304d26aa42890f41521b28da2656340ed5158370de2b9ce392da82",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Generate resident schedules respecting ACGME rules, institutional policies, and individual preferences. Orchestrates constraint propagation, optimization, and conflict resolution for medical residency program scheduling.",
+      "content_excerpt": "---\nname: SCHEDULING\ndescription: Generate resident schedules respecting ACGME rules, institutional policies, and individual preferences. Orchestrates constraint propagation, optimization, and conflict resolution for medical residency program scheduling.\n---\n\n# SCHEDULING Skill\n\nComprehensive workflow expertise for generating ACGME-compliant medical residency schedules. This skill orchestrates the entire schedule generation process from requirements gathering through validation and deployment.\n\n## Overview\n\nMedical residency scheduling is a **multi-objective constraint satisfaction problem** with three tiers of requirements:\n\n1. **Tier 1 (Absolute)**: ACGME regulatory compliance - non-negotiable\n2. **Tier 2 (Institutional)**: Program-specific policies - requires approval to override\n3. **Tier 3 (Optimization)**: Preferences and fairness - best-effort satisfaction\n\nThis skill guides you through the complete workflow to produce schedules that satisfy all Tier 1 constraints, maximize Tier 2 satisfaction, and optimize Tier 3 objectives.\n\n## When to Use This Skill\n\nUse this skill when:\n- Generating a new academic year schedule\n- Creating rotation schedules for a specific block period\n- Regenerating schedules after major changes (new residents, policy updates)\n- Resolving systemic scheduling conflicts\n- Optimizing existing schedules for better coverage or fairness\n- Training on the scheduling system workflow\n\n**Do NOT use this skill for:**\n- Simple swap requests (use `swap-management` skill)\n- Single assignment changes (use direct API)\n- ACGME validation only (use `acgme-complian"
+    },
+    {
+      "path": "other/posthog-rate-limits-jeremylongshore-claude-code-plugins-/SKILL.md",
+      "name": "posthog-rate-limits",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill focuses on implementing rate limiting, backoff, and idempotency patterns for PostHog API usage, which is squarely about API consumption and SDK usage patterns.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "a715e235ecc5956dfd8a996cb3ecbfbdacaba2cb4532196f1dba37ef01ba20ea",
+      "metadata_sha256": "21533d5ecbf62779aa6f130694b0b8b6de5c9f41599f273d1c31790945d126e6",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Implement PostHog rate limiting, backoff, and idempotency patterns.\nUse when handling rate limit errors, implementing retry logic,\nor optimizing API request throughput for PostHog.\nTrigger with phrases like \"posthog rate limit\", \"posthog throttling\",\n\"posthog 429\", \"posthog retry\", \"posthog backoff\".",
+      "content_excerpt": "---\nname: posthog-rate-limits\ndescription: |\n  Implement PostHog rate limiting, backoff, and idempotency patterns.\n  Use when handling rate limit errors, implementing retry logic,\n  or optimizing API request throughput for PostHog.\n  Trigger with phrases like \"posthog rate limit\", \"posthog throttling\",\n  \"posthog 429\", \"posthog retry\", \"posthog backoff\".\nallowed-tools: Read, Write, Edit\nversion: 1.0.0\nlicense: MIT\nauthor: Jeremy Longshore <jeremy@intentsolutions.io>\n---\n\n# PostHog Rate Limits\n\n## Overview\nHandle PostHog rate limits gracefully with exponential backoff and idempotency.\n\n## Prerequisites\n- PostHog SDK installed\n- Understanding of async/await patterns\n- Access to rate limit headers\n\n## Instructions\n\n### Step 1: Understand Rate Limit Tiers\n\n| Tier | Requests/min | Requests/day | Burst |\n|------|-------------|--------------|-------|\n| Free | 60 | 1,000 | 10 |\n| Pro | 300 | 10,000 | 50 |\n| Enterprise | 1,000 | 100,000 | 200 |\n\n### Step 2: Implement Exponential Backoff with Jitter\n\n```typescript\nasync function withExponentialBackoff<T>(\n  operation: () => Promise<T>,\n  config = { maxRetries: 5, baseDelayMs: 1000, maxDelayMs: 32000, jitterMs: 500 }\n): Promise<T> {\n  for (let attempt = 0; attempt <= config.maxRetries; attempt++) {\n    try {\n      return await operation();\n    } catch (error: any) {\n      if (attempt === config.maxRetries) throw error;\n      const status = error.status || error.response?.status;\n      if (status !== 429 && (status < 500 || status >= 600)) throw error;\n\n      // Exponential delay with jitter to prevent thundering herd\n      const expon"
+    },
+    {
+      "path": "other/resource-lister/SKILL.md",
+      "name": "resource-lister",
+      "current_category": "other",
+      "llm_category": "skills",
+      "confidence": 0.92,
+      "status": "ok",
+      "reason": "The skill lists and displays Claude Code resources (commands, skills, agents, hooks) within a project, which is a skill registry maintenance and ecosystem workflow.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "72418aabd93f72aba1b42e9be541d904943893f8be54d69f008200e974e4dd1e",
+      "metadata_sha256": "6c71cc534d3feaf5433dba1115a5c88cd800aaffcb747e5de87a0aad5e60ab94",
+      "semantic_sources": {
+        "description": "body",
+        "name": "metadata"
+      },
+      "description": "プロジェクトの Claude Code リソース一覧を表示するスキル。「リソース一覧」「コマンド一覧」「スキル一覧」「エージェント一覧」「何があるか確認」「作成したもの一覧」「Claude リソース」などで起動。",
+      "content_excerpt": "# Resource Lister\n\nプロジェクトの Claude Code リソース一覧を表示するスキル。「リソース一覧」「コマンド一覧」「スキル一覧」「エージェント一覧」「何があるか確認」「作成したもの一覧」「Claude リソース」などで起動。\n\n## スキル情報\n\n```yaml\nname: resource-lister\ndescription: プロジェクトの Claude Code リソース一覧を表示するスキル。「リソース一覧」「コマンド一覧」「スキル一覧」「エージェント一覧」「何があるか確認」「作成したもの一覧」「Claude リソース」などで起動。\n```\n\n## Claude への指示\n\nこのスキルが起動されたら、`/shiiman-claude:list` コマンドを実行してください。\n\n### 委譲先コマンド\n\n`/shiiman-claude:list`\n\n### 注意事項\n\n- ✅ SSOT（Single Source of Truth）パターン: このスキルはコマンドへの委譲のみを行う\n- ✅ ユーザーの発話から適切なオプションを判断\n  - 「コマンド一覧」→ `/shiiman-claude:list --commands`\n  - 「スキル一覧」→ `/shiiman-claude:list --skills`\n  - 「エージェント一覧」→ `/shiiman-claude:list --agents`\n  - 「フック一覧」→ `/shiiman-claude:list --hooks`\n  - それ以外 → `/shiiman-claude:list`\n"
+    },
+    {
+      "path": "other/py-testing-async-cjharmath-claude-agents-skills-2/SKILL.md",
+      "name": "py-testing-async",
+      "current_category": "other",
+      "llm_category": "testing",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly about async testing patterns with pytest-asyncio, covering test writing, mocking, and debugging, which aligns directly with the 'testing' category.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "34d170351fb68ba40c6de9ac5ee8bf6b86dd64822f53962cfc1de62a1bfc91d0",
+      "metadata_sha256": "4500a2a53b775a0d04a745df6b7b735cf822647415883d960a8b20bd74630dfb",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Async testing patterns with pytest-asyncio. Use when writing tests, mocking async code, testing database operations, or debugging test failures.",
+      "content_excerpt": "---\nname: py-testing-async\ndescription: Async testing patterns with pytest-asyncio. Use when writing tests, mocking async code, testing database operations, or debugging test failures.\n---\n\n# Python Async Testing\n\n## Problem Statement\n\nAsync testing requires specific patterns. pytest-asyncio has modes that affect behavior. Database tests need isolation. Mocking async functions differs from sync. Get these wrong and tests are flaky or don't catch bugs.\n\n---\n\n## Pattern: pytest-asyncio Configuration\n\n**Problem:** Pytest needs configuration for async tests.\n\n```toml\n# pyproject.toml\n[tool.pytest.ini_options]\nasyncio_mode = \"strict\"  # Requires explicit @pytest.mark.asyncio\n# OR\nasyncio_mode = \"auto\"    # All async tests run automatically\n```\n\n```python\nimport pytest\n\n# With asyncio_mode = \"strict\" (this codebase)\n@pytest.mark.asyncio\nasync def test_something():\n    result = await some_async_function()\n    assert result == expected\n\n# Without the marker = test won't run as async!\n```\n\n---\n\n## Pattern: Async Fixtures\n\n**Problem:** Fixtures that provide async resources need specific handling.\n\n```python\nimport pytest\nfrom sqlalchemy.ext.asyncio import AsyncSession\n\n# ✅ CORRECT: Async fixture for session\n@pytest.fixture\nasync def session() -> AsyncGenerator[AsyncSession, None]:\n    async with async_session() as session:\n        yield session\n        await session.rollback()  # Clean up after test\n\n# ✅ CORRECT: Async fixture for test data\n@pytest.fixture\nasync def test_user(session: AsyncSession) -> User:\n    user = User(email=\"test@example.com\", hashed_password=\"...\")\n    session."
+    },
+    {
+      "path": "other/review-elixir/SKILL.md",
+      "name": "review-elixir",
+      "current_category": "other",
+      "llm_category": "quality",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is a comprehensive Elixir/Phoenix code review tool with gates for linter verification, evidence checking, and protocol compliance. This aligns with the 'quality' category's inclusion rule for linting, review, validation, and QA processes.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "7e46d9fab504d92d4d43b378ede6f6a31c98c89f1c8a14c9348d38c87517b51e",
+      "metadata_sha256": "6a313295286b68d78bc512408ea61f6b43dfc74e9eaff292f672a8f2d8d942cb",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Comprehensive Elixir/Phoenix code review with optional parallel agents",
+      "content_excerpt": "---\ndescription: Comprehensive Elixir/Phoenix code review with optional parallel agents\nname: review-elixir\ndisable-model-invocation: true\n---\n\n# Elixir Code Review\n\n## Arguments\n\n- `--parallel`: Spawn specialized subagents per technology area\n- Path: Target directory (default: current working directory)\n\n## Hard gates\n\nComplete in order before writing **Issues** in the output (empty scope is allowed; fabricated findings are not).\n\n1. **Scope gate:** You have an explicit list of `.ex`/`.exs`/`.heex` paths under review (from Step 1 or user path). **Pass:** List printed or \"No Elixir files in scope\" — then stop with no Issues.\n2. **Linter gate (style):** Step 2 commands ran for this Mix project; skipped tools are noted in one line (e.g. no `.credo.exs`). **Pass:** You do not report a style issue that already passes the project's formatter/linter for that line.\n3. **Protocol gate:** `beagle-elixir:review-verification-protocol` is loaded before Step 6. **Pass:** At least one reported finding was checked against that checklist (state which item in the Review Summary or first Critical/Major note).\n4. **Evidence gate (Critical/Major):** For each Critical or Major item, you re-read the file at `FILE:LINE` (full surrounding context, not only the diff hunk). **Pass:** The Issue description matches observable code at that location.\n\n## Step 1: Identify Changed Files\n\n```bash\ngit diff --name-only $(git merge-base HEAD main)..HEAD | grep -E '\\.ex$|\\.exs$|\\.heex$'\n```\n\n## Step 2: Verify Linter/Formatter Status\n\n**CRITICAL**: Run project linters BEFORE flagging any style issues.\n\n```bash\n"
+    },
+    {
+      "path": "other/pseudocode-to-specification-dauquangthanh-hanoi-rainbow-2/SKILL.md",
+      "name": "pseudocode-to-specification",
+      "current_category": "other",
+      "llm_category": "analysis",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Same as id 2 - identical skill content analyzing pseudocode to extract functional requirements.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "98d32264e8e51ba065b78e2cf22a4022ff717d3fe5a3eceed6adb644df197fc3",
+      "metadata_sha256": "7e1815beca8f7b2a746761a4d937b786dc7eccfe1c87502d5855693ad89f8192",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Analyzes pseudocode, algorithms, or code snippets to extract and document functional requirements and business specifications. Produces functional specifications, business logic documentation, data requirements, and workflow specifications focused exclusively on WHAT the system does, not HOW it's implemented. Use when analyzing pseudocode for business logic, extracting functional requirements from algorithms, documenting business behavior from code, reverse engineering functional specifications, or when users mention \"pseudocode to spec\", \"extract requirements\", \"business logic documentation\", \"functional specification from code\", or \"requirements from pseudocode\".",
+      "content_excerpt": "---\nname: pseudocode-to-specification\ndescription: Analyzes pseudocode, algorithms, or code snippets to extract and document functional requirements and business specifications. Produces functional specifications, business logic documentation, data requirements, and workflow specifications focused exclusively on WHAT the system does, not HOW it's implemented. Use when analyzing pseudocode for business logic, extracting functional requirements from algorithms, documenting business behavior from code, reverse engineering functional specifications, or when users mention \"pseudocode to spec\", \"extract requirements\", \"business logic documentation\", \"functional specification from code\", or \"requirements from pseudocode\".\n---\n\n# Pseudocode to Specification\n\nExtract functional requirements and business specifications from pseudocode, algorithms, or code snippets.\n\n## Core Workflow\n\n## 1. Analyze Pseudocode\n\nParse structure, control flow, and identify:\n\n- Inputs, outputs, and data transformations\n- Variables, constants, and data structures\n- Algorithms and logic patterns\n- Assumptions and implicit requirements\n\nAsk for clarification on:\n\n- Ambiguous variable names or operations\n- Missing context about data sources/destinations\n- Unclear business rules or constraints\n- Undefined error handling or edge cases\n\n### 2. Extract Functional Requirements\n\nDocument core business functionality as requirements:\n\n```\nFR-001: [Function Name]\nBusiness Purpose: [Why this function exists]\nDescription: System shall [action] when [condition]\nInputs: [business data, parameters, context]\nProcessing Logi"
+    },
+    {
+      "path": "other/react-package-builder-spectaculous-code-raamattu-nyt-2/SKILL.md",
+      "name": "react-package-builder",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.92,
+      "status": "ok",
+      "reason": "Same skill as id 0 - creating reusable React component packages, scaffolding package structure, designing props contracts, and implementing engine abstraction patterns. This is software development workflow focused on coding, frameworks, and refactoring components into shared packages.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "3ab244214c17219019b71762ff63f999c9f9b93aa70ce0d0fb691242a5f9a3e8",
+      "metadata_sha256": "e70acdcf2eeca722509cfba5bf5e9db29febaa47e20ee89137b8fb9079df92a5",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Create reusable React component packages for the Raamattu Nyt monorepo. Use when:\n(1) Extracting a component from an app into a shared package\n(2) Creating a new reusable UI component library\n(3) Designing props contracts for controlled/uncontrolled components\n(4) Implementing engine abstraction patterns (GSAP, framer-motion)\n(5) Decoupling components from Supabase/Auth/fetching\nTriggers: \"create package\", \"extract component\", \"make reusable\", \"shared component\", \"props contract\", \"engine abstraction\"",
+      "content_excerpt": "---\nname: react-package-builder\ndescription: |\n  Create reusable React component packages for the Raamattu Nyt monorepo. Use when:\n  (1) Extracting a component from an app into a shared package\n  (2) Creating a new reusable UI component library\n  (3) Designing props contracts for controlled/uncontrolled components\n  (4) Implementing engine abstraction patterns (GSAP, framer-motion)\n  (5) Decoupling components from Supabase/Auth/fetching\n  Triggers: \"create package\", \"extract component\", \"make reusable\", \"shared component\", \"props contract\", \"engine abstraction\"\n---\n\n# React Package Builder\n\nCreate decoupled, reusable React packages for the monorepo.\n\n## Workflow\n\n1. **Audit** existing component for app-specific dependencies\n2. **Design** props contract (see [props-patterns.md](references/props-patterns.md))\n3. **Scaffold** package structure (see [package-structure.md](references/package-structure.md))\n4. **Verify** decoupling (see [decoupling-checklist.md](references/decoupling-checklist.md))\n5. **Create** adapter in consuming app\n\n## Quick Start\n\n```bash\n# Create package directory\nmkdir -p packages/<package-name>/src/{ui,hooks,engine,styles}\n\n# Create package.json\ncat > packages/<package-name>/package.json << 'EOF'\n{\n  \"name\": \"@raamattu-nyt/<package-name>\",\n  \"version\": \"1.0.0\",\n  \"main\": \"src/index.ts\",\n  \"peerDependencies\": { \"react\": \">=18\" }\n}\nEOF\n```\n\n## Core Principles\n\n| Principle | Implementation |\n|-----------|----------------|\n| No fetching | Data via props, callbacks for mutations |\n| No Supabase | Parent adapter handles DB |\n| No Auth | Parent provides auth co"
+    },
+    {
+      "path": "other/sops-decrypt/SKILL.md",
+      "name": "sops-decrypt",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is about decrypting SOPS-encrypted YAML files back to .env format. This is a security workflow involving cryptographic decryption of secrets.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "36e16e3d6ec816d5b37df4e35804db02fe324453c98361f39571da8daa85d23a",
+      "metadata_sha256": "aa62b55fe763f8f0fff93d9f66a0e473f1f82954b97bcf9ff2107631669652ea",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Decrypt SOPS-encrypted YAML files back to .env format. Finds *.enc.yaml files, decrypts, and converts YAML back to dotenv. Use when user mentions \"decrypt env\", \"sops decrypt\", \"decrypt secrets\", \"restore env\", \"decrypt .env\", \"restore secrets\", \"decrypt environment files\".",
+      "content_excerpt": "---\nname: sops-decrypt\ndescription: >-\n  Decrypt SOPS-encrypted YAML files back to .env format. Finds *.enc.yaml files,\n  decrypts, and converts YAML back to dotenv. Use when user mentions \"decrypt env\",\n  \"sops decrypt\", \"decrypt secrets\", \"restore env\", \"decrypt .env\",\n  \"restore secrets\", \"decrypt environment files\".\ndisable-model-invocation: true\n---\n\n# SOPS Decrypt\n\nDecrypt `.enc.yaml` files back to their plaintext `.env` originals.\n\n## Workflow\n\n1. **Detect current state**:\n   ```bash\n   python3 ${CLAUDE_SKILL_DIR}/../sops-setup/scripts/detect_sops.py <project-root>\n   ```\n\n2. **Verify prerequisites**:\n   - `tools.sops.installed` must be true — if not, tell user to install: `brew install sops` (macOS) or download binary (Linux)\n   - `age_key.exists` must be true — if not, guide user to place their age private key at the expected path, or set `SOPS_AGE_KEY_FILE` env var\n\n3. **Show encrypted files** from `project.encrypted_files`. If empty, report \"No encrypted files found\" and exit.\n\n4. **Use `AskUserQuestion`** (multiSelect: true) — which files to decrypt. For each, show the target output name (e.g., `.env.local.enc.yaml` → `.env.local`). If the target file already exists, note it will be overwritten.\n\n5. **Decrypt each selected file** (decrypt YAML, then convert to dotenv):\n   ```bash\n   sops --decrypt <file>.enc.yaml > <file>.dec.yaml.tmp\n   python3 ${CLAUDE_SKILL_DIR}/../sops-setup/scripts/dotenv_yaml.py to-dotenv <file>.dec.yaml.tmp > <target-env-file>\n   rm <file>.dec.yaml.tmp\n   ```\n   Where `<target-env-file>` is the encrypted filename with `.enc.yaml` suffix r"
+    },
+    {
+      "path": "other/repo-research-analyst/SKILL.md",
+      "name": "repo-research-analyst",
+      "current_category": "other",
+      "llm_category": "analysis",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is explicitly a research analyst that analyzes repository structure, patterns, conventions, and documentation. It performs comparative study and synthesis of codebases, fitting the analysis category's inclusion rule for 'analysis, synthesis, inspection, reporting, and evidence extraction workflows.'",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "2dcf539650f9dd034ded326dbb550bd9d670d3291eef162a164f5e9b82f09276",
+      "metadata_sha256": "c4147af7cba2c9411a0beb2a7c1a6e7d642fbcefd8f330243a30cbf12c7fa7ab",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Analyze repository structure, patterns, conventions, and documentation for understanding a new codebase",
+      "content_excerpt": "---\nname: repo-research-analyst\ndescription: Analyze repository structure, patterns, conventions, and documentation for understanding a new codebase\n---\n\n> **Note:** The current year is 2025. Use this when searching for recent documentation and patterns.\n\n# Repo Research Analyst\n\nYou are an expert repository research analyst specializing in understanding codebases, documentation structures, and project conventions. Your mission is to conduct thorough, systematic research to uncover patterns, guidelines, and best practices within repositories.\n\n## What You Receive\n\nWhen spawned, you will receive:\n1. **Repository path** - The local path to the cloned repository\n2. **Research focus** (optional) - Specific areas to investigate\n3. **Handoff directory** - Where to save your research handoff\n\n## Core Research Areas\n\n### 1. Architecture and Structure Analysis\n- Examine key documentation files (ARCHITECTURE.md, README.md, CONTRIBUTING.md, CLAUDE.md)\n- Map out the repository's organizational structure\n- Identify architectural patterns and design decisions\n- Note any project-specific conventions or standards\n\n### 2. GitHub Issue Pattern Analysis\n- Review `.github/ISSUE_TEMPLATE/` for issue templates\n- Document label usage conventions and categorization schemes\n- Note common issue structures and required information\n- Identify any automation or bot interactions\n\n### 3. Documentation and Guidelines Review\n- Locate and analyze all contribution guidelines\n- Check for issue/PR submission requirements\n- Document any coding standards or style guides\n- Note testing requirements and review pro"
+    },
+    {
+      "path": "other/remind-me-undistraction-ts-scaffold/SKILL.md",
+      "name": "remind-me",
+      "current_category": "other",
+      "llm_category": "productivity",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill summarizes recent activity in a repository to help the user pick up where they left off. This is a personal workflow aid for task management and continuity, fitting the productivity category's inclusion of personal/team workflow automation, task management, memory utilities, and work aids.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "b9be25bd83586b7b7e5f342437f2f818ebc87886da651f49bb256422e74add1e",
+      "metadata_sha256": "aa8d3460ab3bcc30ae41c84a2dd169f5204553e3f1902b7d20f4e7041cec6dff",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Summarize recent activity in this repo to help you pick up where you left off",
+      "content_excerpt": "---\nname: remind-me\ndescription: Summarize recent activity in this repo to help you pick up where you left off\nuser-invokable: true\ndisable-model-invocation: true\n---\n\n# reminder\n\nGenerate a concise summary of recent activity in this repository so the user can quickly pick up where they left off.\n\n## Discovery steps\n\n### 1. Recent commits\n\nRun:\n\n```bash\ngit log --oneline --no-merges -15\n```\n\nSummarize the recent commit history as a narrative — what features were added, what was fixed, what was refactored. Group related commits together rather than listing them individually.\n\n### 2. Current branch state\n\nRun:\n\n```bash\ngit branch --show-current\ngit status --short\n```\n\nReport the current branch and whether there are uncommitted changes (staged, unstaged, or untracked files). If there are changes, briefly describe what files are affected.\n\n### 3. Work in progress\n\nRun:\n\n```bash\ngit stash list\n```\n\nIf there are stashed changes, mention them.\n\n### 4. Recent branches\n\nRun:\n\n```bash\ngit branch --sort=-committerdate --format='%(refname:short) %(committerdate:relative)' | head -5\n```\n\nList recently active branches — these may indicate parallel workstreams.\n\n### 5. Open TODOs in code\n\nRun a search for TODO and FIXME comments in the source:\n\n```bash\ngrep -rn --include='*.ts' --include='*.tsx' 'TODO\\|FIXME' src/ || true\n```\n\nIf any are found, list them as potential next actions.\n\n## Output format\n\nPresent the summary as a brief narrative, not raw command output. Structure it as:\n\n```\n## Where you left off\n\n[1-2 sentence summary of the most recent work based on commits and branch state]\n"
+    },
+    {
+      "path": "other/rate-limit-setup-applelamps-grokify/SKILL.md",
+      "name": "rate-limit-setup",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill implements rate limiting for API endpoints, which is a core API design and protection concern. The description explicitly mentions API endpoints, and the implementation involves API-specific patterns like request throttling and usage tracking.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "6eb9d679086bad0cbd3958611506de6448a889d84db57fcddd5653dedb81150a",
+      "metadata_sha256": "f50f57103ceb61160e7e818a5abbb3b3d5abca8fc3364cb8d514596109a0f016",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Implement rate limiting for API endpoints. Use when user mentions \"rate limit\", \"quota\", \"usage tracking\", \"throttle\", or \"limit requests\".",
+      "content_excerpt": "---\nname: rate-limit-setup\ndescription: Implement rate limiting for API endpoints. Use when user mentions \"rate limit\", \"quota\", \"usage tracking\", \"throttle\", or \"limit requests\".\n---\n\n# Rate Limiting Implementation\n\nThis project uses database-backed rate limiting via the `usage_tracking` table.\n\n## Current Implementation\n\nLocated in `app/api/generate-image/route.ts`:\n- **Limit**: 2 premium images per user per 24 hours\n- **Identification**: SHA-256 hash of IP + User-Agent (anonymous)\n- **Reset**: Automatic after 24 hours\n\n## Instructions\n\n1. **Create user identifier** (anonymous hash):\n```typescript\nconst getUserIdentifier = async (req: NextRequest): Promise<string> => {\n  const ip = req.headers.get('x-forwarded-for')?.split(',')[0]\n    || req.headers.get('x-real-ip')\n    || 'unknown';\n  const userAgent = req.headers.get('user-agent') || 'unknown';\n\n  const encoder = new TextEncoder();\n  const data = encoder.encode(ip + userAgent);\n  const hashBuffer = await crypto.subtle.digest('SHA-256', data);\n  const hashArray = Array.from(new Uint8Array(hashBuffer));\n  return hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');\n};\n```\n\n2. **Check and update usage**:\n```typescript\nimport { db, usageTracking } from '@/db';\nimport { eq } from 'drizzle-orm';\n\nconst checkUsage = async (identifier: string, limit: number) => {\n  const existing = await db\n    .select()\n    .from(usageTracking)\n    .where(eq(usageTracking.userIdentifier, identifier))\n    .limit(1);\n\n  let usage = existing[0] || null;\n  const now = new Date();\n  const resetNeeded = !usage ||\n    now.getTime() - new Da"
+    },
+    {
+      "path": "other/setup-timescaledb-hypertables-timescale-pg-aiguide-4/SKILL.md",
+      "name": "setup-timescaledb-hypertables",
+      "current_category": "other",
+      "llm_category": "data",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill provides detailed instructions for designing database schemas, setting up hypertables, indexes, compression, retention policies, and continuous aggregates in TimescaleDB. This is squarely within the 'data' category, which covers data engineering, databases, ETL, SQL, and visualization workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "dcfce6a31d21f427f852eb030e36a30ff5d38f5ad06176beb35f02f0485e2098",
+      "metadata_sha256": "34513297dcf13f19fdc16e6f4200038098f40bbf0a31819280f7247b065f5a5b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use this skill when creating database schemas or tables for Timescale, TimescaleDB, TigerData, or Tiger Cloud, especially for time-series, IoT, metrics, events, or log data. Use this to improve the performance of any insert-heavy table.\n\n**Trigger when user asks to:**\n- Create or design SQL schemas/tables AND Timescale/TimescaleDB/TigerData/Tiger Cloud is available\n- Set up hypertables, compression, retention policies, or continuous aggregates\n- Configure partition columns, segment_by, order_by, or chunk intervals\n- Optimize time-series database performance or storage\n- Create tables for sensors, metrics, telemetry, events, or transaction logs\n\n**Keywords:** CREATE TABLE, hypertable, Timescale, TimescaleDB, time-series, IoT, metrics, sensor data, compression policy, continuous aggregates, columnstore, retention policy, chunk interval, segment_by, order_by\n\nStep-by-step instructions for hypertable creation, column selection, compression policies, retention, continuous aggregates, and indexes.",
+      "content_excerpt": "---\nname: setup-timescaledb-hypertables\ndescription: |\n  Use this skill when creating database schemas or tables for Timescale, TimescaleDB, TigerData, or Tiger Cloud, especially for time-series, IoT, metrics, events, or log data. Use this to improve the performance of any insert-heavy table.\n\n  **Trigger when user asks to:**\n  - Create or design SQL schemas/tables AND Timescale/TimescaleDB/TigerData/Tiger Cloud is available\n  - Set up hypertables, compression, retention policies, or continuous aggregates\n  - Configure partition columns, segment_by, order_by, or chunk intervals\n  - Optimize time-series database performance or storage\n  - Create tables for sensors, metrics, telemetry, events, or transaction logs\n\n  **Keywords:** CREATE TABLE, hypertable, Timescale, TimescaleDB, time-series, IoT, metrics, sensor data, compression policy, continuous aggregates, columnstore, retention policy, chunk interval, segment_by, order_by\n\n  Step-by-step instructions for hypertable creation, column selection, compression policies, retention, continuous aggregates, and indexes.\nlicense: Apache-2.0\ncompatibility: Requires PostgreSQL 15+ with TimescaleDB\nmetadata:\n  author: tigerdata\n---\n\n# TimescaleDB Complete Setup\n\nInstructions for insert-heavy data patterns where data is inserted but rarely changed:\n\n- **Time-series data** (sensors, metrics, system monitoring)\n- **Event logs** (user events, audit trails, application logs)\n- **Transaction records** (orders, payments, financial transactions)\n- **Sequential data** (records with auto-incrementing IDs and timestamps)\n- **Append-only datasets"
+    },
+    {
+      "path": "other/prompt-engineer-sickn33-antigravity-awesome-/SKILL.md",
+      "name": "prompt-engineer",
+      "current_category": "other",
+      "llm_category": "ai-llm",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill transforms user prompts into optimized prompts using various prompting frameworks (RTF, RISEN, Chain of Thought, etc.). This is a core prompt engineering task, aligning with the 'ai-llm' category for LLM prompting and optimization.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "db16673dbab9bd99e6d30f7d2057418b1e4ae147db1b991cda056d44cd407622",
+      "metadata_sha256": "d8ac505e2268348332e91f7f22ac9b18dd71b2d05e683828b617e807822e22b3",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:string"
+      },
+      "description": "Transforms user prompts into optimized prompts using frameworks (RTF, RISEN, Chain of Thought, RODES, Chain of Density, RACE, RISE, STAR, SOAP, CLEAR, GROW)",
+      "content_excerpt": "---\nname: prompt-engineer\ndescription: \"Transforms user prompts into optimized prompts using frameworks (RTF, RISEN, Chain of Thought, RODES, Chain of Density, RACE, RISE, STAR, SOAP, CLEAR, GROW)\"\ncategory: automation\nrisk: safe\nsource: community\ntags: \"[prompt-engineering, optimization, frameworks, ai-enhancement]\"\ndate_added: \"2026-02-27\"\n---\n\n## Purpose\n\nThis skill transforms raw, unstructured user prompts into highly optimized prompts using established prompting frameworks. It analyzes user intent, identifies task complexity, and intelligently selects the most appropriate framework(s) to maximize Claude/ChatGPT output quality.\n\nThe skill operates in \"magic mode\" - it works silently behind the scenes, only interacting with users when clarification is critically needed. Users receive polished, ready-to-use prompts without technical explanations or framework jargon.\n\nThis is a **universal skill** that works in any terminal context, not limited to Obsidian vaults or specific project structures.\n\n## When to Use\nInvoke this skill when:\n\n- User provides a vague or generic prompt (e.g., \"help me code Python\")\n- User has a complex idea but struggles to articulate it clearly\n- User's prompt lacks structure, context, or specific requirements\n- Task requires step-by-step reasoning (debugging, analysis, design)\n- User needs a prompt for a specific AI task but doesn't know prompting frameworks\n- User wants to improve an existing prompt's effectiveness\n- User asks variations of \"how do I ask AI to...\" or \"create a prompt for...\"\n\n## Workflow\n\n### Step 1: Analyze Intent\n\n**Objective:*"
+    },
+    {
+      "path": "other/sherpa-onnx-tts-clawdbot-clawdbot-4ebabeee/SKILL.md",
+      "name": "sherpa-onnx-tts",
+      "current_category": "other",
+      "llm_category": "local-ai-infrastructure",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Identical skill content: local TTS via sherpa-onnx with offline setup, fitting local AI infrastructure for model runtimes and inference servers.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "d2253363f7ee9aaac58ff555e473be33c8808e0fe1ee449a08fd74e517f309d3",
+      "metadata_sha256": "b91ad40fce2c7ddbec42d0b833f1968a786f60f3bb15cd0d909953e0a2385742",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Local text-to-speech via sherpa-onnx (offline, no cloud)",
+      "content_excerpt": "---\nname: sherpa-onnx-tts\ndescription: Local text-to-speech via sherpa-onnx (offline, no cloud)\nmetadata: {\"clawdbot\":{\"emoji\":\"🗣️\",\"os\":[\"darwin\",\"linux\",\"win32\"],\"requires\":{\"env\":[\"SHERPA_ONNX_RUNTIME_DIR\",\"SHERPA_ONNX_MODEL_DIR\"]},\"install\":[{\"id\":\"download-runtime-macos\",\"kind\":\"download\",\"os\":[\"darwin\"],\"url\":\"https://github.com/k2-fsa/sherpa-onnx/releases/download/v1.12.23/sherpa-onnx-v1.12.23-osx-universal2-shared.tar.bz2\",\"archive\":\"tar.bz2\",\"extract\":true,\"stripComponents\":1,\"targetDir\":\"~/.clawdbot/tools/sherpa-onnx-tts/runtime\",\"label\":\"Download sherpa-onnx runtime (macOS)\"},{\"id\":\"download-runtime-linux-x64\",\"kind\":\"download\",\"os\":[\"linux\"],\"url\":\"https://github.com/k2-fsa/sherpa-onnx/releases/download/v1.12.23/sherpa-onnx-v1.12.23-linux-x64-shared.tar.bz2\",\"archive\":\"tar.bz2\",\"extract\":true,\"stripComponents\":1,\"targetDir\":\"~/.clawdbot/tools/sherpa-onnx-tts/runtime\",\"label\":\"Download sherpa-onnx runtime (Linux x64)\"},{\"id\":\"download-runtime-win-x64\",\"kind\":\"download\",\"os\":[\"win32\"],\"url\":\"https://github.com/k2-fsa/sherpa-onnx/releases/download/v1.12.23/sherpa-onnx-v1.12.23-win-x64-shared.tar.bz2\",\"archive\":\"tar.bz2\",\"extract\":true,\"stripComponents\":1,\"targetDir\":\"~/.clawdbot/tools/sherpa-onnx-tts/runtime\",\"label\":\"Download sherpa-onnx runtime (Windows x64)\"},{\"id\":\"download-model-lessac\",\"kind\":\"download\",\"url\":\"https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/vits-piper-en_US-lessac-high.tar.bz2\",\"archive\":\"tar.bz2\",\"extract\":true,\"targetDir\":\"~/.clawdbot/tools/sherpa-onnx-tts/models\",\"label\":\"Download Piper en_US lessac (high)\"}]}}\n---\n\n# sh"
+    },
+    {
+      "path": "other/python-async/SKILL.md",
+      "name": "python-async",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill provides patterns and guidance for async Python programming, which is a software development workflow focused on coding and frameworks.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "52188f98f2cbe2a78d2facd9063b8a0b1bbf6bb68d75ffbc730927968c58a9c8",
+      "metadata_sha256": "9a317afd3704de7af8b755628817429e3237812b2e1c16a2b741a27dba11defb",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "Async Python patterns via asyncio and aiohttp for I/O-bound concurrency. Use when adding async APIs, handling concurrent I/O, or debugging async code.",
+      "content_excerpt": "---\nname: python-async\ndescription: Async Python patterns via asyncio and aiohttp for I/O-bound concurrency. Use when adding async APIs, handling concurrent I/O, or debugging async code.\nglobs: \"**/*.py\"\nalwaysApply: false\ncategory: async\ntags:\n- python\n- async\n- asyncio\n- concurrency\n- await\n- coroutines\ntools: []\nusage_patterns:\n- async-api-development\n- concurrent-io\n- websocket-servers\n- background-tasks\ncomplexity: intermediate\nmodel_hint: standard\nestimated_tokens: 400\nprogressive_loading: true\nmodules:\n- modules/basic-patterns.md\n- modules/concurrency-control.md\n- modules/error-handling-timeouts.md\n- modules/advanced-patterns.md\n- modules/testing-async.md\n- modules/real-world-applications.md\n- modules/pitfalls-best-practices.md\n---\n# Async Python Patterns\n\nasyncio and async/await patterns for Python applications.\n\n## Quick Start\n\n```python\nimport asyncio\n\nasync def main():\n    print(\"Hello\")\n    await asyncio.sleep(1)\n    print(\"World\")\n\nasyncio.run(main())\n```\n\n## When To Use\n\n- Building async web APIs (FastAPI, aiohttp)\n- Implementing concurrent I/O operations\n- Creating web scrapers with concurrent requests\n- Developing real-time applications (WebSockets)\n- Processing multiple independent tasks simultaneously\n- Building microservices with async communication\n\n## When NOT To Use\n\n- CPU-bound optimization - use python-performance instead\n- Testing async code - use python-testing async module\n\n## Modules\n\nThis skill uses progressive loading. Content is organized into focused modules:\n\n- See `modules/basic-patterns.md` - Core async/await, gather(), and task management"
+    },
+    {
+      "path": "other/python-project-creator-haddock-development-claude-reflect-syste-4dde860c/SKILL.md",
+      "name": "python-project-creator",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Same skill as id 0 - creates Python projects with proper structure, virtual environments, and dependency management. This is a software development workflow.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "4564c9de949ebfd9cad5b7525b4f1244b92a6b026fa6e5e1a577229454f3c26e",
+      "metadata_sha256": "accf3bacf859f07addf53250de4d1589bb889471574e97fe468e8589e2d97fb5",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Creates Python projects with proper structure, virtual environments, and dependency management. Use when users request to create a new Python project, set up a Python development environment, or initialize a Python application with standard tooling.",
+      "content_excerpt": "---\nname: python-project-creator\ndescription: >\n  Creates Python projects with proper structure, virtual environments, and dependency management.\n  Use when users request to create a new Python project, set up a Python development environment,\n  or initialize a Python application with standard tooling.\n---\n\n# Python Project Creator\n\n## Critical Corrections\n\n**Use 'uv' instead of 'pip'**\n\n- ✗ Don't: pip install, pip freeze\n- ✓ Do: uv pip install, uv pip freeze (uv is faster and more modern)\n\n**Always use pytest, never unittest**\n\n- ✗ Don't: unittest framework\n- ✓ Do: pytest for all testing needs\n\n## Overview\n\nThis skill creates well-structured Python projects with best practices for dependency management,\ntesting, and code organization. It sets up virtual environments, installs dependencies, and\nconfigures common development tools.\n\n## Project Creation Workflow\n\n### 1. Understand Requirements\n\nAsk the user about:\n- **Project name** and purpose\n- **Type**: CLI tool, web app, library, data science project\n- **Dependencies**: Required packages\n- **Testing**: Testing framework preference (pytest, unittest)\n\n### 2. Create Project Structure\n\nStandard Python project structure:\n\n```\nproject-name/\n├── src/\n│   └── project_name/\n│       ├── __init__.py\n│       └── main.py\n├── tests/\n│   ├── __init__.py\n│   └── test_main.py\n├── .gitignore\n├── README.md\n├── requirements.txt\n└── setup.py (optional, for libraries)\n```\n\n### 3. Virtual Environment Setup\n\nCreate and activate virtual environment:\n\n```bash\n# Create virtual environment\npython3 -m venv venv\n\n# Activate (instructions for user)\n# "
+    },
+    {
+      "path": "other/project-guidelines-example-miguelaguiardev-baymax/SKILL.md",
+      "name": "project-guidelines-example",
+      "current_category": "other",
+      "llm_category": "examples",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly described as 'an example of a project-specific skill' and a 'template for your own projects', which directly aligns with the 'examples' category for sample projects and reusable reference implementations.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "ebc6e9c0349c3255a7478618d9e3eaec5ae8459a7a5e69eba48fbbb244a4b59f",
+      "metadata_sha256": "571d65ba7cb15efa6346dbe870afcac729751883a3e4d4a702e5e22a4949f7d8",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "project-guidelines-example",
+      "content_excerpt": "---\nname: project-guidelines-example\ndescription: project-guidelines-example\n---\n\n# Project Guidelines Skill (Example)\n\nThis is an example of a project-specific skill. Use this as a template for your own projects.\n\nBased on a real production application: [Zenith](https://zenith.chat) - AI-powered customer discovery platform.\n\n---\n\n## When to Use\n\nReference this skill when working on the specific project it's designed for. Project skills contain:\n- Architecture overview\n- File structure\n- Code patterns\n- Testing requirements\n- Deployment workflow\n\n---\n\n## Architecture Overview\n\n**Tech Stack:**\n- **Frontend**: Next.js 15 (App Router), TypeScript, React\n- **Backend**: FastAPI (Python), Pydantic models\n- **Database**: Supabase (PostgreSQL)\n- **AI**: Claude API with tool calling and structured output\n- **Deployment**: Google Cloud Run\n- **Testing**: Playwright (E2E), pytest (backend), React Testing Library\n\n**Services:**\n```\n┌─────────────────────────────────────────────────────────────┐\n│                         Frontend                            │\n│  Next.js 15 + TypeScript + TailwindCSS                     │\n│  Deployed: Vercel / Cloud Run                              │\n└─────────────────────────────────────────────────────────────┘\n                              │\n                              ▼\n┌─────────────────────────────────────────────────────────────┐\n│                         Backend                             │\n│  FastAPI + Python 3.11 + Pydantic                          │\n│  Deployed: Cloud Run                                       │\n└─────────────────────────────"
+    },
+    {
+      "path": "other/skill-installer-helixdevelopment-helixagent-4/SKILL.md",
+      "name": "skill-installer",
+      "current_category": "other",
+      "llm_category": "skills",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill's primary function is installing other Codex skills into the system, which directly aligns with skill authoring, registry maintenance, and skill ecosystem workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "ea0be3fdc00e7113071837d33fd0045d1074a2927cdb44569d372e91528e8d9d",
+      "metadata_sha256": "464de30569fd7782a6b429d7a0fce56d57aa8a5d587142b9459d0b566197a47c",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a user asks to list installable skills, install a curated skill, or install a skill from another repo (including private repos).",
+      "content_excerpt": "---\nname: skill-installer\ndescription: Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a user asks to list installable skills, install a curated skill, or install a skill from another repo (including private repos).\nmetadata:\n  short-description: Install curated skills from openai/skills or other repos\n---\n\n# Skill Installer\n\nHelps install skills. By default these are from https://github.com/openai/skills/tree/main/skills/.curated, but users can also provide other locations.\n\nUse the helper scripts based on the task:\n- List curated skills when the user asks what is available, or if the user uses this skill without specifying what to do.\n- Install from the curated list when the user provides a skill name.\n- Install from another repo when the user provides a GitHub repo/path (including private repos).\n\nInstall skills with the helper scripts.\n\n## Communication\n\nWhen listing curated skills, output approximately as follows, depending on the context of the user's request:\n\"\"\"\nSkills from {repo}:\n1. skill-1\n2. skill-2 (already installed)\n3. ...\nWhich ones would you like installed?\n\"\"\"\n\nAfter installing a skill, tell the user: \"Restart Codex to pick up new skills.\"\n\n## Scripts\n\nAll of these scripts use network, so when running in the sandbox, request escalation when running them.\n\n- `scripts/list-curated-skills.py` (prints curated list with installed annotations)\n- `scripts/list-curated-skills.py --format json`\n- `scripts/install-skill-from-github.py --repo <owner>/<repo> --path <path/to/skill> [<path/to/skill> ...]`\n- `scripts/insta"
+    },
+    {
+      "path": "other/s3-bucket-policy-dengineproblem-agents-monorepo-2/SKILL.md",
+      "name": "s3-bucket-policy",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "This skill focuses specifically on S3 bucket policies, IAM policies, permissions, cross-account access, and security best practices. The content emphasizes least privilege, explicit deny, defense in depth, and avoiding wildcards—all security concerns.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "063724ce6d51c56026e4ea75520ebc529f0ca48afdd1ea583ddb64c0c5aafd76",
+      "metadata_sha256": "cbac38647cb77f89781d7e29f07fe9286b60cc5b378d7a27d4a4148edbedcf2c",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Эксперт по S3 политикам. Используй для IAM policies, bucket permissions, cross-account access и security best practices.",
+      "content_excerpt": "---\nname: s3-bucket-policy\ndescription: Эксперт по S3 политикам. Используй для IAM policies, bucket permissions, cross-account access и security best practices.\n---\n\n# AWS S3 Bucket Policy Expert\n\nExpert guidance on creating, analyzing, and optimizing AWS S3 bucket policies with focus on security, access control, and compliance.\n\n## Policy Structure\n\n```json\n{\n  \"Version\": \"2012-10-17\",\n  \"Id\": \"PolicyIdentifier\",\n  \"Statement\": [\n    {\n      \"Sid\": \"StatementIdentifier\",\n      \"Effect\": \"Allow | Deny\",\n      \"Principal\": {\n        \"AWS\": \"arn:aws:iam::account-id:root\"\n      },\n      \"Action\": [\n        \"s3:GetObject\",\n        \"s3:PutObject\"\n      ],\n      \"Resource\": [\n        \"arn:aws:s3:::bucket-name\",\n        \"arn:aws:s3:::bucket-name/*\"\n      ],\n      \"Condition\": {\n        \"StringEquals\": {\n          \"s3:x-amz-acl\": \"bucket-owner-full-control\"\n        }\n      }\n    }\n  ]\n}\n```\n\n## Core Principles\n\n```yaml\nsecurity_principles:\n  least_privilege:\n    description: \"Grant only minimum necessary permissions\"\n    practice: \"Start with deny all, add specific allows\"\n\n  explicit_deny:\n    description: \"Deny always overrides Allow\"\n    practice: \"Use Deny for security guardrails\"\n\n  defense_in_depth:\n    description: \"Multiple layers of security\"\n    practice: \"Combine bucket policy + IAM + ACL + encryption\"\n\n  avoid_wildcards:\n    bad: '\"Principal\": \"*\"'\n    better: '\"Principal\": {\"AWS\": \"arn:aws:iam::123456789012:root\"}'\n\ncommon_mistakes:\n  - \"Using Principal: * without conditions\"\n  - \"Missing resource ARN for objects (/*)\"\n  - \"Forgetting to block public access\"\n  - \"Not e"
+    },
+    {
+      "path": "other/plugin-hook-system/SKILL.md",
+      "name": "plugin-hook-system",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill generates code patterns for a plugin extension system, which is a software development workflow involving coding and framework setup.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "014a18ce32d81fcb89c01433f3dd0f0d42b201a1cfb4a6dc46216d44f92c45c5",
+      "metadata_sha256": "add18ca2aaaa06e711d76e11b3bec01884ceab0e2abe46b40d8ec0192be1b8cd",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Generate hook-based plugin extension system with event emitter patterns.",
+      "content_excerpt": "---\nname: plugin-hook-system\ndescription: Generate hook-based plugin extension system with event emitter patterns.\nallowed-tools: Read, Write, Edit, Bash, Glob, Grep\n---\n\n# Plugin Hook System\n\nGenerate hook-based plugin extension system.\n\n## Generated Patterns\n\n```typescript\ntype HookCallback = (...args: any[]) => Promise<any> | any;\n\nexport class HookSystem {\n  private hooks = new Map<string, HookCallback[]>();\n\n  register(hookName: string, callback: HookCallback): void {\n    const callbacks = this.hooks.get(hookName) || [];\n    callbacks.push(callback);\n    this.hooks.set(hookName, callbacks);\n  }\n\n  async trigger(hookName: string, ...args: any[]): Promise<any[]> {\n    const callbacks = this.hooks.get(hookName) || [];\n    const results = [];\n    for (const cb of callbacks) {\n      results.push(await cb(...args));\n    }\n    return results;\n  }\n\n  async waterfall<T>(hookName: string, initial: T): Promise<T> {\n    const callbacks = this.hooks.get(hookName) || [];\n    let result = initial;\n    for (const cb of callbacks) {\n      result = await cb(result);\n    }\n    return result;\n  }\n}\n```\n\n## Target Processes\n\n- plugin-architecture-implementation\n"
+    },
+    {
+      "path": "other/sniper-check/SKILL.md",
+      "name": "sniper-check",
+      "current_category": "other",
+      "llm_category": "quality",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is about validating code quality after modifications using a 'sniper agent' that runs a 6-phase code-quality workflow including linters, corrections, and re-validation. This fits the quality category's inclusion rule for 'Linting, review, validation, QA process, and quality gates.'",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "50a154e8caa3a13089a88415765cea15e9d62b6f5da43da6559d083ae0685ce0",
+      "metadata_sha256": "d6d7e2577bccb3dcf2e5e6ffb9678a6928f53df65df465fb3dc39cc14079da35",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when validating code quality after modifications. Runs sniper agent in isolated forked context for clean, fast validation.",
+      "content_excerpt": "---\nname: sniper-check\ndescription: Use when validating code quality after modifications. Runs sniper agent in isolated forked context for clean, fast validation.\ncontext: fork\nagent: fuse-ai-pilot:sniper\nuser-invocable: true\nargument-hint: \"[file-or-directory]\"\n---\n\n**Target:** $ARGUMENTS\n\n# Sniper Check\n\n## Overview\n\nQuick code quality validation using the sniper agent in an isolated forked context. Executes the full 6-phase workflow without polluting the main conversation context.\n\n| Feature | Detail |\n|---------|--------|\n| **Context** | Forked (isolated sub-agent) |\n| **Agent** | sniper (Sonnet) |\n| **Phases** | 6-phase code-quality workflow |\n| **Result** | Only final report returns to parent |\n\n---\n\n## When to Use\n\n| Scenario | Use |\n|----------|-----|\n| After code modifications | `/sniper-check src/` |\n| Validate specific file | `/sniper-check path/to/file.ts` |\n| Full project check | `/sniper-check .` |\n| After refactoring | `/sniper-check src/components/` |\n\n---\n\n## Workflow\n\nExecute the mandatory 6-phase `code-quality` workflow:\n\n1. **PHASE 1+2 (PARALLEL)**: Launch both in parallel:\n   - `explore-codebase` (Haiku) → Architecture discovery\n   - `research-expert` (Sonnet) → Documentation verification\n2. **PHASE 3**: Grep all usages → Impact analysis\n3. **PHASE 4**: Run linters → Detect errors\n4. **PHASE 5**: Apply corrections → Minimal changes\n5. **PHASE 6**: Re-run linters → Zero errors\n\n**CRITICAL**: Phases 1+2 must run in PARALLEL (two Task calls in one message).\n\n---\n\n## Critical Rules\n\n| Rule | Reason |\n|------|--------|\n| Never skip phases 1+2 | Documentation"
+    },
+    {
+      "path": "other/prompt-factory/SKILL.md",
+      "name": "prompt-factory",
+      "current_category": "other",
+      "llm_category": "ai-llm",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill generates production-ready mega-prompts for various roles and industries. This is clearly about prompt engineering and generation, which falls under ai-llm's inclusion rule for 'LLM prompting, model use, assistants, chat workflows'. The skill explicitly states it 'generates PROMPTS only' and includes 'prompt' in its name and description.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "bde91a339b0c82ec615fe51c508193b51746ebc5e32c337573750140390ec7ed",
+      "metadata_sha256": "8ae09ee62b3ab73a4dbb6e5697e45e82f89980671bd70f9280974c6f657a593b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "World-class prompt powerhouse that generates production-ready mega-prompts for any role, industry, and task through intelligent 7-question flow, 69 comprehensive presets across 15 professional domains (technical, business, creative, legal, finance, HR, design, customer, executive, manufacturing, R&D, regulatory, specialized-technical, research, creative-media), multiple output formats (XML/Claude/ChatGPT/Gemini), quality validation gates, and contextual best practices from OpenAI/Anthropic/Google. Supports both core and advanced modes with testing scenarios and prompt variations.",
+      "content_excerpt": "---\nname: prompt-factory\ndescription: World-class prompt powerhouse that generates production-ready mega-prompts for any role, industry, and task through intelligent 7-question flow, 69 comprehensive presets across 15 professional domains (technical, business, creative, legal, finance, HR, design, customer, executive, manufacturing, R&D, regulatory, specialized-technical, research, creative-media), multiple output formats (XML/Claude/ChatGPT/Gemini), quality validation gates, and contextual best practices from OpenAI/Anthropic/Google. Supports both core and advanced modes with testing scenarios and prompt variations.\n---\n\n# Prompt Factory - World-Class Prompt Powerhouse\n\nA comprehensive system for generating world-class, production-ready prompts in one shot, eliminating the need for iteration.\n\n---\n\n## ⚠️ CRITICAL CONSTRAINTS - READ FIRST\n\n**This skill generates PROMPTS only. It does NOT implement the work described in the prompt.**\n\n### What This Skill DOES:\n✅ Generate a comprehensive PROMPT (text document in chosen format)\n✅ **Ask 5-7 questions to understand requirements** (MANDATORY - no skipping)\n✅ Validate prompt quality before delivery\n✅ Output a SINGLE prompt document with token count\n✅ Provide the prompt ready to copy and use elsewhere\n\n### What This Skill DOES NOT DO:\n❌ Implement the actual work (no code files, no diagrams, no APIs)\n❌ Create architectural diagrams or technical implementations\n❌ Write actual marketing campaigns or business strategies\n❌ Build infrastructure or deploy anything\n❌ Create multiple files or deliverables\n❌ Execute the prompt after generati"
+    },
+    {
+      "path": "other/session-cleanup-wildcard-caro/SKILL.md",
+      "name": "session-cleanup",
+      "current_category": "other",
+      "llm_category": "quality",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Identical to candidate 3. The skill's primary function is to verify that debug and development artifacts are cleaned up before committing code, which is a quality assurance and validation task. It checks for debug prints, commented-out code, and temporary files, aligning with the 'quality' category's inclusion rule for 'linting, review, validation, QA process, and quality gates'.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "3b218cefc9be599131b05c60accf40b24b22c3b6caddfcaf773e3641b83bb9d7",
+      "metadata_sha256": "c916fb733177ca7a1675f6ab17b0b1a9c06855b66e750819e207a9c5a3e0da91",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Verify debug/dev artifacts are removed before commit. Use at session end to apply 'good boy scout' rule - leave code cleaner than you found it.",
+      "content_excerpt": "---\nname: \"session-cleanup\"\ndescription: \"Verify debug/dev artifacts are removed before commit. Use at session end to apply 'good boy scout' rule - leave code cleaner than you found it.\"\nversion: \"1.0.0\"\nallowed-tools: \"Bash, Read, Grep, Glob\"\nlicense: \"AGPL-3.0\"\n---\n\n# Session Cleanup Skill\n\n## What This Skill Does\n\nThis skill verifies that debug and development artifacts are cleaned up before committing code. It embodies the \"good boy scout\" principle: leave the code cleaner than you found it.\n\n**Key Responsibilities:**\n- Find debug print statements (eprintln!, dbg!, println! for debug)\n- Find commented-out debug code\n- Find leftover test files or temporary code\n- Report any cleanup needed before commit\n\n## When to Use This Skill\n\nUse this skill:\n- At the end of a debug/investigation session\n- Before creating a commit\n- After fixing a bug to ensure debug code is removed\n- When you've been adding/removing diagnostic code\n\n**Automatic Reminder:** Consider adding to your session-end routine.\n\n**Manual Triggers:**\n- `/session-cleanup`\n- \"Check for debug artifacts\"\n- \"Clean up session\"\n\n## Artifacts to Find\n\n### Rust Debug Artifacts\n\n```rust\n// These should be removed before commit:\neprintln!(\"DEBUG: ...\");           // Debug prints\nprintln!(\"[DEBUG] ...\");           // Debug prints\ndbg!(variable);                    // Debug macro\n#[allow(dead_code)]                // Only if for debug code\n// TODO: REMOVE                    // Temporary markers\n```\n\n### Temporary Test Code\n\n```rust\n// Look for these patterns:\n#[test]\nfn temp_test() { ... }             // Temporary tests\n\n#[i"
+    },
+    {
+      "path": "other/saga-orchestration/SKILL.md",
+      "name": "saga-orchestration",
+      "current_category": "other",
+      "llm_category": "orchestration",
+      "confidence": 0.92,
+      "status": "ok",
+      "reason": "The skill implements saga patterns for coordinating distributed transactions across microservices, which is multi-step coordination and workflow control fitting the orchestration category.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "95372f5b8235053557c135d9d8a6d785d2feb9af1187230a72c8285aa38793f5",
+      "metadata_sha256": "1701636e646499e68581921db1340a923f3a54c9ce2c68117057444c334526a7",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Implement saga patterns for distributed transactions and cross-aggregate workflows. Use this skill when implementing distributed transactions across microservices where 2PC is unavailable, designing compensating actions for failed order workflows that span inventory, payment, and shipping services, building event-driven saga coordinators for travel booking systems that must roll back hotel, flight, and car rental reservations atomically, or debugging stuck saga states in production where compensation steps never complete.",
+      "content_excerpt": "---\nname: saga-orchestration\ndescription: Implement saga patterns for distributed transactions and cross-aggregate workflows. Use this skill when implementing distributed transactions across microservices where 2PC is unavailable, designing compensating actions for failed order workflows that span inventory, payment, and shipping services, building event-driven saga coordinators for travel booking systems that must roll back hotel, flight, and car rental reservations atomically, or debugging stuck saga states in production where compensation steps never complete.\n---\n\n# Saga Orchestration\n\nPatterns for managing distributed transactions and long-running business processes without two-phase commit.\n\n## Inputs and Outputs\n\n**What you provide:**\n- Service boundaries and ownership (which service owns which step)\n- Transaction requirements (which steps must be atomic, which can be eventual)\n- Failure modes for each step (transient vs. permanent, retry policy)\n- SLA requirements per step (informs timeout configuration)\n- Existing event/messaging infrastructure (Kafka, RabbitMQ, SQS, etc.)\n\n**What this skill produces:**\n- Saga definition with ordered steps, action commands, and compensation commands\n- Orchestrator or choreography implementation for your chosen pattern\n- Compensation logic for each participant service (idempotent, always-succeeds)\n- Step timeout configuration with per-step deadlines\n- Monitoring setup: state machine metrics, stuck saga detection, DLQ recovery\n\n---\n\n## When to Use This Skill\n\n- Coordinating multi-service transactions without distributed locks\n- Imple"
+    },
+    {
+      "path": "other/rust-middleware/SKILL.md",
+      "name": "rust-middleware",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.92,
+      "status": "ok",
+      "reason": "The skill covers Rust middleware patterns including request tracking, CORS configuration, rate limiting, and middleware implementation using Actix-web. This is software development work for building web application components.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "0043c33caba19b30845e83a09c6df24f8b34e2a1bdd77bff587cc7066292be5d",
+      "metadata_sha256": "c8d8682b7a43f88bdc78541f49488c5dd0fefe82e853a38ce432339971e3176b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "请求追踪、CORS 配置、限流、中间件模式",
+      "content_excerpt": "---\nname: rust-middleware\ndescription: \"请求追踪、CORS 配置、限流、中间件模式\"\ncategory: infrastructure\ntriggers: [\"middleware\", \"cors\", \"rate-limit\", \"tracing\", \"中间件\", \"请求追踪\"]\nrelated_skills:\n  - rust-web\n  - rust-error\n  - rust-concurrency\n---\n\n# Rust Middleware - 中间件技能\n\n> 本技能提供 Web 中间件的系统化解决方案。\n\n## 核心模式\n\n### 1. 请求追踪中间件\n\n```rust\nuse actix_web::{\n    dev::{forward_ready, Service, ServiceRequest, ServiceResponse, Transform},\n    Error, HttpMessage,\n};\nuse futures::future::{ready, LocalBoxFuture, Ready};\nuse std::rc::Rc;\nuse uuid::Uuid;\n\n#[derive(Debug, Clone)]\npub struct RequestId(pub String);\n\npub struct RequestTracking;\n\nimpl<S, B> Transform<S, ServiceRequest> for RequestTracking\nwhere\n    S: Service<ServiceRequest, Response = ServiceResponse<B>, Error = Error> + 'static,\n    S::Future: 'static,\n    B: 'static,\n{\n    type Response = ServiceResponse<B>;\n    type Error = Error;\n    type InitError = ();\n    type Transform = RequestTrackingMiddleware<S>;\n    type Future = Ready<Result<Self::Transform, Self::InitError>>;\n\n    fn new_transform(&self, service: S) -> Self::Future {\n        ready(Ok(RequestTrackingMiddleware {\n            service: Rc::new(service),\n        }))\n    }\n}\n\npub struct RequestTrackingMiddleware<S> {\n    service: Rc<S>,\n}\n\nimpl<S, B> Service<ServiceRequest> for RequestTrackingMiddleware<S>\nwhere\n    S: Service<ServiceRequest, Response = ServiceResponse<B>, Error = Error> + 'static,\n    S::Future: 'static,\n    B: 'static,\n{\n    type Response = ServiceResponse<B>;\n    type Error = Error;\n    type Future = LocalBoxFuture<'static, Result<Self::Response, Self::Error>>;\n\n    "
+    },
+    {
+      "path": "other/planning-with-files/SKILL.md",
+      "name": "planning-with-files",
+      "current_category": "other",
+      "llm_category": "planning",
+      "confidence": 0.93,
+      "status": "ok",
+      "reason": "The skill implements file-based planning to organize and track progress on complex tasks, creating task plans and progress tracking. This directly matches the 'planning' category for planning, task breakdown, and project sequencing workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "1c04f437c3c47a087c28f0ef23e6364e5724a5e596c9b4e1fc09836113070745",
+      "metadata_sha256": "ad77956facf3cb3ab965cf4ce4077ad23f7412961795fd3700b25c8321512362",
+      "semantic_sources": {
+        "name": "metadata"
+      },
+      "description": "",
+      "content_excerpt": "---\nname: planning-with-files\ndescription: Implements Manus-style file-based planning to organize and track progress on complex tasks. Creates task_plan.md, findings.md, and progress.md. Use when asked to plan out, break down, or organize a multi-step project, research task, or any work requiring 5+ tool calls. Supports automatic session recovery after /clear.\nuser-invocable: true\nallowed-tools: \"Read Write Edit Bash Glob Grep\"\nhooks:\n  UserPromptSubmit:\n    - hooks:\n        - type: command\n          command: \"RESOLVED=\\\"\\\"; SCOPE=\\\"\\\"; SLUG_RE='^[A-Za-z0-9_][A-Za-z0-9._-]*$'; if [ -n \\\"${PLAN_ID:-}\\\" ] && printf \\\"%s\\\" \\\"$PLAN_ID\\\" | grep -Eq \\\"$SLUG_RE\\\" && [ -d \\\".planning/${PLAN_ID}\\\" ]; then RESOLVED=\\\".planning/${PLAN_ID}\\\"; SCOPE=\\\"scoped\\\"; elif [ -f .planning/.active_plan ]; then AP=$(tr -d '\\\\r\\\\n[:space:]' < .planning/.active_plan 2>/dev/null); if [ -n \\\"$AP\\\" ] && printf \\\"%s\\\" \\\"$AP\\\" | grep -Eq \\\"$SLUG_RE\\\" && [ -d \\\".planning/${AP}\\\" ]; then RESOLVED=\\\".planning/${AP}\\\"; SCOPE=\\\"scoped\\\"; fi; fi; if [ -z \\\"$RESOLVED\\\" ] && [ -d .planning ]; then NEWEST=\\\"\\\"; NEWEST_MT=0; for d in .planning/*/; do d=\\\"${d%/}\\\"; n=$(basename \\\"$d\\\"); case \\\"$n\\\" in .*) continue;; esac; printf \\\"%s\\\" \\\"$n\\\" | grep -Eq \\\"$SLUG_RE\\\" || continue; [ -f \\\"$d/task_plan.md\\\" ] || continue; m=$(stat -c '%Y' \\\"$d\\\" 2>/dev/null || stat -f '%m' \\\"$d\\\" 2>/dev/null || date -r \\\"$d\\\" +%s 2>/dev/null || echo 0); if [ \\\"$m\\\" -gt \\\"$NEWEST_MT\\\" ] 2>/dev/null; then NEWEST_MT=\\\"$m\\\"; NEWEST=\\\"$d\\\"; fi; done; [ -n \\\"$NEWEST\\\" ] && { RESOLVED=\\\"$NEWEST\\\"; SCOPE=\\\"scoped\\\"; }; fi; if [ -z \\\"$RESOLVED"
+    },
+    {
+      "path": "other/slash-command-builder-skill-nangohq-ai-ide-prompts-2/SKILL.md",
+      "name": "slash-command-builder",
+      "current_category": "other",
+      "llm_category": "skills",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is about creating, improving, or troubleshooting Claude Code slash commands, with expert guidance on command structure, arguments, frontmatter, tool permissions, and best practices. This is directly about skill/command authoring and the skill ecosystem, which aligns perfectly with the 'skills' category for skill authoring, registry maintenance, and skill ecosystem workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "aaf3de46a9a196c9ea15a2f533ad83480bb8bb6927f056848a3346bbfc8bb243",
+      "metadata_sha256": "99bbb026dcb8a3886d9467d57922cf6798300597e22c1c484801b82a8012c963",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when creating, improving, or troubleshooting Claude Code slash commands. Expert guidance on command structure, arguments, frontmatter, tool permissions, and best practices for building effective custom commands.",
+      "content_excerpt": "---\nname: slash-command-builder\ndescription: Use when creating, improving, or troubleshooting Claude Code slash commands. Expert guidance on command structure, arguments, frontmatter, tool permissions, and best practices for building effective custom commands.\nglobs:\n  - \"**/.claude/commands/**/*.md\"\n  - \"**/.claude/commands/**/*.markdown\"\nalwaysApply: false\n---\n\n# Slash Command Builder - Claude Code Command Expert\n\nUse this skill when creating, improving, or troubleshooting Claude Code slash commands. Provides expert guidance on command structure, syntax, frontmatter configuration, and best practices.\n\n## When to Use This Skill\n\nActivate this skill when:\n- User asks to create a new slash command\n- User wants to improve an existing command\n- User needs help with command arguments or frontmatter\n- User is troubleshooting command invocation issues\n- User wants to understand slash command capabilities\n- User asks about the difference between commands and skills\n\n## Quick Reference\n\n### Command File Structure\n\n```markdown\n---\ndescription: Brief description shown in autocomplete\nargument-hint: [arg1] [arg2] <optional-arg>\nallowed-tools: Bash(git *), Read, Write\nmodel: claude-3-5-sonnet-20241022\ndisable-model-invocation: false\n---\n\nYour command prompt here with $ARGUMENTS or $1, $2, etc.\n\nUse !`command` for bash execution\nUse @file.txt for file references\n```\n\n### File Locations\n\n**Project commands** (shared with team):\n```\n.claude/commands/my-command.md\n```\n\n**Personal commands** (individual use):\n```\n~/.claude/commands/my-command.md\n```\n\n**Organized commands** (namespaced):\n```"
+    },
+    {
+      "path": "other/software-developer-nahisaho-codegraphmcpserver-2/SKILL.md",
+      "name": "software-developer",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly for software developer tasks, covering implementation, coding, programming, building features, and refactoring. It includes multiple programming languages, frameworks, and development principles like SOLID and TDD.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "6fb90ee9a2b4b97d2c52b2da7e5e1af5f57df53a70e5e6c14858c1ff95d735e7",
+      "metadata_sha256": "95cb64bdf9cb05ecc36789e59869251882b97faf74173ecd5d62adbfe7fff6d7",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "software-developer skill\n\nTrigger terms: implement, code, development, programming, coding, build feature, create function, write code, SOLID principles, clean code, refactor\n\nUse when: User requests involve software developer tasks.",
+      "content_excerpt": "---\nname: software-developer\ndescription: |\n  software-developer skill\n\n  Trigger terms: implement, code, development, programming, coding, build feature, create function, write code, SOLID principles, clean code, refactor\n\n  Use when: User requests involve software developer tasks.\nallowed-tools: [Read, Write, Edit, Bash, Glob, Grep]\n---\n\n# 役割\n\nあなたは、複数のプログラミング言語とフレームワークに精通したソフトウェア開発のエキスパートです。要件定義書や設計書に基づき、クリーンで保守性の高い、テスト可能なコードを実装します。SOLID原則、デザインパターン、各言語・フレームワークのベストプラクティスに従い、高品質なソフトウェアを開発します。\n\n## 専門領域\n\n### プログラミング言語\n\n- **Frontend**: TypeScript/JavaScript, HTML/CSS\n- **Backend**: Python, Java, C#, Go, Node.js (TypeScript)\n- **Mobile**: Swift (iOS), Kotlin (Android), React Native, Flutter\n- **Others**: Rust, Ruby, PHP\n\n### フレームワーク & ライブラリ\n\n#### Frontend\n\n- React (Next.js, Remix)\n- Vue.js (Nuxt.js)\n- Angular\n- Svelte (SvelteKit)\n- State Management: Redux, Zustand, Jotai, Pinia\n\n#### Backend\n\n- **Node.js**: Express, NestJS, Fastify\n- **Python**: FastAPI, Django, Flask\n- **Java**: Spring Boot\n- **C#**: ASP.NET Core\n- **Go**: Gin, Echo, Chi\n\n#### Testing\n\n- Jest, Vitest, Pytest, JUnit, xUnit, Go testing\n- React Testing Library, Vue Testing Library\n- Cypress, Playwright, Selenium\n\n### 開発原則\n\n- **SOLID原則**: 単一責任、開放閉鎖、リスコフの置換、インターフェース分離、依存性逆転\n- **デザインパターン**: Factory, Strategy, Observer, Decorator, Singleton, Dependency Injection\n- **クリーンアーキテクチャ**: レイヤー分離、依存関係の方向制御\n- **DDD (Domain-Driven Design)**: エンティティ、値オブジェクト、集約、リポジトリ\n- **TDD (Test-Driven Development)**: Red-Green-Refactor サイクル\n\n---\n\n---\n\n## Project Memory (Steering System)\n\n**CRITICAL: Always check steering files before starting "
+    },
+    {
+      "path": "other/sentry-code-review-troykelly-claude-skills/SKILL.md",
+      "name": "sentry-code-review",
+      "current_category": "other",
+      "llm_category": "quality",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill analyzes and resolves Sentry comments on GitHub Pull Requests, which is a code review and quality assurance workflow focused on identifying and fixing issues identified by automated monitoring.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "473be2a4f0d3a258c8c83c6cfd3e58034b6f74e7d4fe4c993380e4a69b924243",
+      "metadata_sha256": "adfd142966115430c2d3c2f86444572e10335a3d2c04a709422a8cd1d49259be",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Analyze and resolve Sentry comments on GitHub Pull Requests. Use this when asked to review or fix issues identified by Sentry in PR comments. Can review specific PRs by number or automatically find recent PRs with Sentry feedback.",
+      "content_excerpt": "---\nname: sentry-code-review\ndescription: Analyze and resolve Sentry comments on GitHub Pull Requests. Use this when asked to review or fix issues identified by Sentry in PR comments. Can review specific PRs by number or automatically find recent PRs with Sentry feedback.\nallowed-tools: Read, Edit, Write, Bash, Grep, Glob, WebFetch, AskUserQuestion\n---\n\n# SOURCE: getsentry/sentry-for-claude\n# PATH: skills/sentry-code-review/SKILL.md\n# DO NOT EDIT: This file is synced from external source\n\n\n# Sentry Code Review\n\nYou are a specialized skill for analyzing and resolving issues identified by **Sentry** in GitHub Pull Request review comments.\n\n## Sentry PR Review Comment Format\n\nSentry posts **line-specific review comments** on code changes in PRs. Each comment includes:\n\n### Comment Metadata (from API)\n- `author`: The bot username (e.g., \"sentry[bot]\")\n- `file`: The specific file being commented on (e.g., \"src/sentry/seer/explorer/tools.py\")\n- `line`: The line number in the code (can be `null` for file-level comments)\n- `body`: The full comment content (markdown with HTML details tags)\n\n### Body Structure\nThe `body` field contains markdown with collapsible sections:\n\n**Header:**\n```\n**Bug:** [Issue description]\n<sub>Severity: CRITICAL | Confidence: 1.00</sub>\n```\n\n**Analysis Section (in `<details>` tag):**\n```html\n<details>\n<summary>🔍 <b>Detailed Analysis</b></summary>\nExplains the technical problem and consequences\n</details>\n```\n\n**Fix Section (in `<details>` tag):**\n```html\n<details>\n<summary>💡 <b>Suggested Fix</b></summary>\nProposes a concrete solution\n</details>\n```\n\n**AI A"
+    },
+    {
+      "path": "other/security-headers-configuration-secondsky-claude-skills-2/SKILL.md",
+      "name": "security-headers-configuration",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "This is a duplicate of skill id 2 with identical description and content about configuring HTTP security headers for XSS, clickjacking, and MIME sniffing protection. Same security category justification applies.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "eea7e89dc30da526ab2a5948c6d51c64acab5cb0c669c158f9e0624bc9d3b1c1",
+      "metadata_sha256": "02cb1d7b8d6a4a352e98547f2608490903a5c8cc7ccbbc728790dbc98c94be93",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Configures HTTP security headers to protect against XSS, clickjacking, and MIME sniffing attacks. Use when hardening web applications, passing security audits, or implementing Content Security Policy.",
+      "content_excerpt": "---\nname: security-headers-configuration\ndescription: Configures HTTP security headers to protect against XSS, clickjacking, and MIME sniffing attacks. Use when hardening web applications, passing security audits, or implementing Content Security Policy.\n---\n\n# Security Headers Configuration\n\nImplement HTTP security headers to defend against common browser-based attacks.\n\n## Essential Headers\n\n| Header | Purpose | Value |\n|--------|---------|-------|\n| HSTS | Force HTTPS | `max-age=31536000; includeSubDomains` |\n| CSP | Restrict resources | `default-src 'self'` |\n| X-Frame-Options | Prevent clickjacking | `DENY` |\n| X-Content-Type-Options | Prevent MIME sniffing | `nosniff` |\n\n## Express Implementation\n\n```javascript\nconst helmet = require('helmet');\n\napp.use(helmet());\n\n// Custom CSP\napp.use(helmet.contentSecurityPolicy({\n  directives: {\n    defaultSrc: [\"'self'\"],\n    scriptSrc: [\"'self'\", \"'unsafe-inline'\"],\n    styleSrc: [\"'self'\", \"'unsafe-inline'\"],\n    imgSrc: [\"'self'\", \"data:\", \"https:\"],\n    connectSrc: [\"'self'\", \"https://api.example.com\"],\n    fontSrc: [\"'self'\", \"https://fonts.gstatic.com\"],\n    frameAncestors: [\"'none'\"]\n  }\n}));\n```\n\n## Nginx Configuration\n\n```nginx\nadd_header Strict-Transport-Security \"max-age=31536000; includeSubDomains; preload\" always;\nadd_header X-Frame-Options \"DENY\" always;\nadd_header X-Content-Type-Options \"nosniff\" always;\nadd_header X-XSS-Protection \"1; mode=block\" always;\nadd_header Referrer-Policy \"strict-origin-when-cross-origin\" always;\nadd_header Permissions-Policy \"geolocation=(), microphone=(), camera=()\" always;\nadd_header C"
+    }
+  ],
+  "notes": [
+    "Review sample rows against SKILL.md excerpts before applying a migration plan.",
+    "Sampling is deterministic for a fixed seed and classification input."
+  ]
+}

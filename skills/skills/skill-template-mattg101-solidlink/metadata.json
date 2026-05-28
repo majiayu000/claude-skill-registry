@@ -1,0 +1,16 @@
+{
+  "name": "skill-template",
+  "repo": "mattg101/SolidLink",
+  "path": "docs/dev/.agent/skills/skill-deploy-update/assets/skill-template/SKILL.md",
+  "source": "github.com/mattg101/SolidLink",
+  "downloaded_at": "2026-01-29T08:15:50.913076Z",
+  "dir_name": "skill-template-mattg101-solidlink",
+  "category": "skills",
+  "author": "mattg101",
+  "source_url": "https://github.com/mattg101/SolidLink/blob/main/docs/dev/.agent/skills/skill-deploy-update/assets/skill-template/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 mattg101",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

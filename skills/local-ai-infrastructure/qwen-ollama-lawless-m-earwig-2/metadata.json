@@ -1,0 +1,18 @@
+{
+  "name": "Qwen-Ollama",
+  "description": "Using Qwen 2.5 models via Ollama for local LLM inference, text analysis, and AI-powered automation",
+  "repo": "lawless-m/Earwig",
+  "path": ".claude/skills/Qwen-Ollama",
+  "category": "local-ai-infrastructure",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lawless-m/Earwig",
+  "dir_name": "qwen-ollama-lawless-m-earwig-2",
+  "author": "lawless-m",
+  "source_url": "https://github.com/lawless-m/Earwig/blob/main/.claude/skills/Qwen-Ollama/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/lawless-m/Earwig/blob/main/.claude/skills/Qwen-Ollama/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

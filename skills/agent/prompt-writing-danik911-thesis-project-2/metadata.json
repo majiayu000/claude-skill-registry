@@ -1,0 +1,18 @@
+{
+  "name": "prompt-writing",
+  "description": "Creates effective prompts for AI coding agents and subagent delegation. Use PROACTIVELY when writing prompts for Task tool delegation, creating agent instructions, or designing multi-step workflows. M",
+  "repo": "Danik911/thesis_project",
+  "path": ".claude/skills/prompt-writing",
+  "category": "agent",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Danik911/thesis_project",
+  "dir_name": "prompt-writing-danik911-thesis-project-2",
+  "author": "Danik911",
+  "source_url": "https://github.com/Danik911/thesis_project/blob/main/.claude/skills/prompt-writing/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Danik911/thesis_project/blob/main/.claude/skills/prompt-writing/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "protein-qc",
+  "repo": "adaptyvbio/protein-design-skills",
+  "path": "skills/protein-qc/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/adaptyvbio/protein-design-skills",
+  "dir_name": "protein-qc-adaptyvbio-protein-design-skill-3",
+  "downloaded_at": "2026-03-22T06:40:35.385612Z",
+  "author": "adaptyvbio",
+  "source_url": "https://github.com/adaptyvbio/protein-design-skills/blob/main/skills/protein-qc/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/adaptyvbio/protein-design-skills/blob/main/skills/protein-qc/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

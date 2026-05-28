@@ -1,0 +1,16 @@
+{
+  "name": "role-software-engineer",
+  "repo": "Anveio/conveaux",
+  "path": ".claude/skills/role-software-engineer/SKILL.md",
+  "source": "github.com/Anveio/conveaux",
+  "downloaded_at": "2026-02-02T03:36:26.273810Z",
+  "dir_name": "role-software-engineer",
+  "category": "agent",
+  "author": "Anveio",
+  "source_url": "https://github.com/Anveio/conveaux/blob/main/.claude/skills/role-software-engineer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Anveio/conveaux/blob/main/.claude/skills/role-software-engineer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

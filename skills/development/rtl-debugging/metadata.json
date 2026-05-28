@@ -1,0 +1,16 @@
+{
+  "name": "rtl-debugging",
+  "repo": "MameMame777/AXIUART_RV32I",
+  "path": ".github/skills/rtl-debugging/SKILL.md",
+  "source": "github.com/MameMame777/AXIUART_RV32I",
+  "downloaded_at": "2026-02-01T04:42:45.402385Z",
+  "dir_name": "rtl-debugging",
+  "category": "development",
+  "author": "MameMame777",
+  "source_url": "https://github.com/MameMame777/AXIUART_RV32I/blob/main/.github/skills/rtl-debugging/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AXIUART_ Project Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

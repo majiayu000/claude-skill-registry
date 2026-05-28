@@ -1,0 +1,16 @@
+{
+  "name": "screenshot",
+  "repo": "chengyihua/nanobot-ts",
+  "path": "skills/screenshot/SKILL.md",
+  "category": "system",
+  "source": "github.com/chengyihua/nanobot-ts",
+  "dir_name": "screenshot-chengyihua-nanobot-ts",
+  "downloaded_at": "2026-02-15T06:43:45.206650Z",
+  "author": "chengyihua",
+  "source_url": "https://github.com/chengyihua/nanobot-ts/blob/main/skills/screenshot/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/chengyihua/nanobot-ts/blob/main/skills/screenshot/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

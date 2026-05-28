@@ -1,0 +1,17 @@
+{
+  "name": "similarweb-digitalrank-api-automation",
+  "repo": "ComposioHQ/awesome-claude-skills",
+  "path": "composio-skills/similarweb-digitalrank-api-automation/SKILL.md",
+  "github_branch": "master",
+  "category": "integration",
+  "source": "github.com/ComposioHQ/awesome-claude-skills",
+  "dir_name": "similarweb-digitalrank-api-automation",
+  "downloaded_at": "2026-03-22T05:08:53.474120Z",
+  "author": "ComposioHQ",
+  "source_url": "https://github.com/ComposioHQ/awesome-claude-skills/blob/master/composio-skills/similarweb-digitalrank-api-automation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ComposioHQ/awesome-claude-skills/blob/master/composio-skills/similarweb-digitalrank-api-automation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

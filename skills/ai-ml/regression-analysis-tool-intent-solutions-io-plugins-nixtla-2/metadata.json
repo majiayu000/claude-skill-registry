@@ -1,0 +1,18 @@
+{
+  "name": "regression-analysis-tool",
+  "description": "This skill empowers Claude to perform regression analysis and modeling using the regression-analysis-tool plugin. It analyzes datasets, generates appropriate regression models (linear, polynomial, etc",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "010-archive/backups-20251108/skill-structure-cleanup-20251108-073936/plugins/ai-ml/regression-analysis-tool/skills/regression-analysis-tool",
+  "category": "ai-ml",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "dir_name": "regression-analysis-tool-intent-solutions-io-plugins-nixtla-2",
+  "author": "intent-solutions-io",
+  "source_url": "https://github.com/intent-solutions-io/plugins-nixtla/blob/main/010-archive/backups-20251108/skill-structure-cleanup-20251108-073936/plugins/ai-ml/regression-analysis-tool/skills/regression-analysis-tool/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025-2026 Jeremy Longshore",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

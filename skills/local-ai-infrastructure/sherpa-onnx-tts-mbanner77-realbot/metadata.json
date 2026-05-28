@@ -1,0 +1,13 @@
+{
+  "name": "sherpa-onnx-tts",
+  "description": "",
+  "repo": "mbanner77/realbot",
+  "category": "local-ai-infrastructure",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mbanner77/realbot",
+  "github_path": "skills/sherpa-onnx-tts",
+  "github_branch": "main",
+  "dir_name": "sherpa-onnx-tts-mbanner77-realbot",
+  "downloaded_at": "2026-02-05T05:14:18.352472Z"
+}

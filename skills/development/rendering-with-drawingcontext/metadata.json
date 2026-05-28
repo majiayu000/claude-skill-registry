@@ -1,0 +1,18 @@
+{
+  "name": "rendering-with-drawingcontext",
+  "repo": "christian289/dotnet-with-claudecode",
+  "path": "wpf-dev-pack/skills/rendering-with-drawingcontext/SKILL.md",
+  "source": "github.com/christian289/dotnet-with-claudecode",
+  "downloaded_at": "2026-01-22T02:11:41.658038Z",
+  "dir_name": "rendering-with-drawingcontext",
+  "category": "development",
+  "github_path": "wpf-dev-pack/skills/rendering-with-drawingcontext",
+  "github_branch": "main",
+  "author": "christian289",
+  "source_url": "https://github.com/christian289/dotnet-with-claudecode/blob/main/wpf-dev-pack/skills/rendering-with-drawingcontext/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 christian289",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

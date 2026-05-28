@@ -1,0 +1,20 @@
+{
+  "name": "review-django-commands",
+  "description": "",
+  "repo": "jpoutrin/product-forge",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jpoutrin/product-forge",
+  "github_path": "plugins/python-experts/skills/review-django-commands",
+  "github_branch": "main",
+  "dir_name": "review-django-commands",
+  "downloaded_at": "2026-02-05T01:44:46.701314Z",
+  "author": "jpoutrin",
+  "source_url": "https://github.com/jpoutrin/product-forge/blob/main/plugins/python-experts/skills/review-django-commands/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 jpoutrin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

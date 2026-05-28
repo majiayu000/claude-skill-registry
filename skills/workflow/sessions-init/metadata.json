@@ -1,0 +1,16 @@
+{
+  "name": "sessions-init",
+  "repo": "manastalukdar/claude-devstudio",
+  "path": "skills/sessions-init/SKILL.md",
+  "source": "github.com/manastalukdar/claude-devstudio",
+  "downloaded_at": "2026-02-02T03:11:47.219555Z",
+  "dir_name": "sessions-init",
+  "category": "workflow",
+  "author": "manastalukdar",
+  "source_url": "https://github.com/manastalukdar/claude-devstudio/blob/main/skills/sessions-init/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Brenner Cruvinel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

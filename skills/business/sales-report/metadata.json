@@ -1,0 +1,17 @@
+{
+  "name": "sales-report",
+  "repo": "Jocko-Fuel/cowork-plugins",
+  "path": "jf-market-intel/skills/sales-report/SKILL.md",
+  "github_branch": "main",
+  "category": "business",
+  "source": "github.com/Jocko-Fuel/cowork-plugins",
+  "dir_name": "sales-report",
+  "downloaded_at": "2026-03-01T05:30:04.265406Z",
+  "author": "Jocko-Fuel",
+  "source_url": "https://github.com/Jocko-Fuel/cowork-plugins/blob/main/jf-market-intel/skills/sales-report/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Jocko-Fuel/cowork-plugins/blob/main/jf-market-intel/skills/sales-report/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

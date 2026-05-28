@@ -1,0 +1,18 @@
+{
+  "name": "seo-keyword-cluster-builder",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/seo-keyword-cluster-builder/skills/seo-keyword-cluster-builder/SKILL.md",
+  "source": "github.com/secondsky/claude-skills",
+  "downloaded_at": "2026-01-17T03:58:39.967438Z",
+  "dir_name": "seo-keyword-cluster-builder-secondsky-claude-skills",
+  "category": "marketing",
+  "github_path": "plugins/seo-keyword-cluster-builder/skills/seo-keyword-cluster-builder",
+  "github_branch": "main",
+  "author": "secondsky",
+  "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/seo-keyword-cluster-builder/skills/seo-keyword-cluster-builder/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Skills Maintainers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "project-tooling",
+  "repo": "alinaqi/claude-bootstrap",
+  "path": "skills/project-tooling/SKILL.md",
+  "source": "github.com/alinaqi/claude-bootstrap",
+  "downloaded_at": "2026-01-22T03:20:51.548969Z",
+  "dir_name": "project-tooling",
+  "category": "platform",
+  "github_path": "skills/project-tooling",
+  "github_branch": "main",
+  "author": "alinaqi",
+  "source_url": "https://github.com/alinaqi/claude-bootstrap/blob/main/skills/project-tooling/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ali Naqi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

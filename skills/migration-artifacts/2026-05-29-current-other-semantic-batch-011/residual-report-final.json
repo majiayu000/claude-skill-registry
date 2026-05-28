@@ -1,0 +1,1240 @@
+{
+  "buckets": [
+    {
+      "count": 6183,
+      "examples": [
+        {
+          "classification_current_category": "other",
+          "confidence": 0.88,
+          "name": "planning-quality-gates",
+          "path": "other/planning-quality-gates-shredbx-demo-3d-model-2/SKILL.md",
+          "reason": "confidence below threshold",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "quality",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.85,
+          "name": "plans-kanban",
+          "path": "other/plans-kanban-duc01226-easyplatform-2/SKILL.md",
+          "reason": "confidence below threshold",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "planning",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.85,
+          "name": "plans-kanban",
+          "path": "other/plans-kanban-hotriluan-alkana-kpi-2/SKILL.md",
+          "reason": "confidence below threshold",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "planning",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.8,
+          "name": "gsd:plant-seed",
+          "path": "other/plant-seed/SKILL.md",
+          "reason": "confidence below threshold",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "planning",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.85,
+          "name": "Plantcapability",
+          "path": "other/plantcapability-robdtaylor-personal-ai-infrastr/SKILL.md",
+          "reason": "confidence below threshold",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "domains",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.85,
+          "name": "Plantcapability",
+          "path": "other/plantcapability-robdtaylor-personal-ai-infrastr-2/SKILL.md",
+          "reason": "confidence below threshold",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "domains",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.85,
+          "name": "PlantCapability",
+          "path": "other/plantcapability-robdtaylor-personal-ai-infrastr-989e44f9/SKILL.md",
+          "reason": "confidence below threshold",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "domains",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.8,
+          "name": "plantuml-ascii",
+          "path": "other/plantuml-ascii/SKILL.md",
+          "reason": "confidence below threshold",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "generation",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.8,
+          "name": "plantuml-ascii",
+          "path": "other/plantuml-ascii-beel-collab-presets/SKILL.md",
+          "reason": "confidence below threshold",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "generation",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.85,
+          "name": "plantuml-ascii",
+          "path": "other/plantuml-ascii-beel-collab-presets-dev/SKILL.md",
+          "reason": "confidence below threshold",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "generation",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.85,
+          "name": "plantuml-ascii",
+          "path": "other/plantuml-ascii-dhaim-svg-githuboverview/SKILL.md",
+          "reason": "confidence below threshold",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "generation",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.85,
+          "name": "plantuml-ascii",
+          "path": "other/plantuml-ascii-github-awesome-copilot/SKILL.md",
+          "reason": "confidence below threshold",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "generation",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.85,
+          "name": "plantuml-ascii",
+          "path": "other/plantuml-ascii-haseeb243-detrust/SKILL.md",
+          "reason": "confidence below threshold",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "generation",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.85,
+          "name": "plantuml-diagram",
+          "path": "other/plantuml-diagram/SKILL.md",
+          "reason": "confidence below threshold",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "generation",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.85,
+          "name": "plantuml-diagram",
+          "path": "other/plantuml-diagram-ntaksh42-agents/SKILL.md",
+          "reason": "confidence below threshold",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "generation",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.85,
+          "name": "plantuml-renderer",
+          "path": "other/plantuml-renderer/SKILL.md",
+          "reason": "confidence below threshold",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "generation",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.85,
+          "name": "plantuml-renderer",
+          "path": "other/plantuml-renderer-a5c-ai-babysitter/SKILL.md",
+          "reason": "confidence below threshold",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "generation",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.7,
+          "name": "plasma-mind",
+          "path": "other/plasma-mind/SKILL.md",
+          "reason": "confidence below threshold",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "ai-ml",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.85,
+          "name": "platform-architecture",
+          "path": "other/platform-architecture/SKILL.md",
+          "reason": "confidence below threshold",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "domains",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.88,
+          "name": "platform-channels",
+          "path": "other/platform-channels/SKILL.md",
+          "reason": "confidence below threshold",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "integration",
+          "target_status": "active"
+        }
+      ],
+      "reason": "confidence below threshold",
+      "target_categories": [
+        {
+          "count": 841,
+          "value": "development"
+        },
+        {
+          "count": 576,
+          "value": "domains"
+        },
+        {
+          "count": 573,
+          "value": "workflow"
+        },
+        {
+          "count": 544,
+          "value": "analysis"
+        },
+        {
+          "count": 442,
+          "value": "quality"
+        },
+        {
+          "count": 360,
+          "value": "documents"
+        },
+        {
+          "count": 343,
+          "value": "integration"
+        },
+        {
+          "count": 186,
+          "value": "generation"
+        },
+        {
+          "count": 183,
+          "value": "ai-ml"
+        },
+        {
+          "count": 177,
+          "value": "data"
+        },
+        {
+          "count": 170,
+          "value": "orchestration"
+        },
+        {
+          "count": 139,
+          "value": "devops"
+        },
+        {
+          "count": 134,
+          "value": "marketing"
+        },
+        {
+          "count": 123,
+          "value": "platform"
+        },
+        {
+          "count": 122,
+          "value": "ai-llm"
+        },
+        {
+          "count": 115,
+          "value": "product"
+        },
+        {
+          "count": 112,
+          "value": "personal-development"
+        },
+        {
+          "count": 106,
+          "value": "business"
+        },
+        {
+          "count": 102,
+          "value": "planning"
+        },
+        {
+          "count": 101,
+          "value": "context-management"
+        }
+      ],
+      "target_status_counts": {
+        "active": 6183
+      }
+    },
+    {
+      "count": 2387,
+      "examples": [
+        {
+          "classification_current_category": "other",
+          "confidence": 0.95,
+          "name": "planning-phase",
+          "path": "other/planning-phase-sjdjdiejdrirhdkjej-claude-code-conducto-4f8347ea/SKILL.md",
+          "reason": "target category already contains a skill with the same stable key",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "planning",
+          "target_path": "planning/planning-phase-sjdjdiejdrirhdkjej-claude-code-conducto-3/SKILL.md",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.92,
+          "name": "planning-prompts",
+          "path": "other/planning-prompts-skill-scientiacapital-skills-2/SKILL.md",
+          "reason": "target category already contains a skill with the same stable key",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "planning",
+          "target_path": "planning/planning-prompts-skill/SKILL.md",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.9,
+          "name": "planning-sprints",
+          "path": "other/planning-sprints-0xhoneyjar-rm-lurker-2/SKILL.md",
+          "reason": "target category already contains a skill with the same stable key",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "planning",
+          "target_path": "planning/planning-sprints/SKILL.md",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.93,
+          "name": "planning-with-files",
+          "path": "other/planning-with-files/SKILL.md",
+          "reason": "target category already contains a skill with the same stable key",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "planning",
+          "target_path": "planning/planning-with-files-othmanadi-planning-with-files-12-othmanadi-planning-with-files/SKILL.md",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.95,
+          "name": "planning-with-files-ar",
+          "path": "other/planning-with-files-ar-othmanadi-planning-with-files-2/SKILL.md",
+          "reason": "target category already contains a skill with the same stable key",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "planning",
+          "target_path": "planning/planning-with-files-ar/SKILL.md",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.95,
+          "name": "planning-with-files-ar",
+          "path": "other/planning-with-files-ar-othmanadi-planning-with-files-3/SKILL.md",
+          "reason": "target category already contains a skill with the same stable key",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "planning",
+          "target_path": "planning/planning-with-files-ar/SKILL.md",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.95,
+          "name": "planning-with-files-de",
+          "path": "other/planning-with-files-de-othmanadi-planning-with-files-2/SKILL.md",
+          "reason": "target category already contains a skill with the same stable key",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "planning",
+          "target_path": "planning/planning-with-files-de/SKILL.md",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.95,
+          "name": "planning-with-files-de",
+          "path": "other/planning-with-files-de-othmanadi-planning-with-files-3/SKILL.md",
+          "reason": "target category already contains a skill with the same stable key",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "planning",
+          "target_path": "planning/planning-with-files-de/SKILL.md",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.95,
+          "name": "planning-with-files-es",
+          "path": "other/planning-with-files-es-othmanadi-planning-with-files-2/SKILL.md",
+          "reason": "target category already contains a skill with the same stable key",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "planning",
+          "target_path": "planning/planning-with-files-es/SKILL.md",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.95,
+          "name": "planning-with-files-es",
+          "path": "other/planning-with-files-es-othmanadi-planning-with-files-3/SKILL.md",
+          "reason": "target category already contains a skill with the same stable key",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "planning",
+          "target_path": "planning/planning-with-files-es/SKILL.md",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.95,
+          "name": "planning-with-files",
+          "path": "other/planning-with-files-evan-evanfang0054-cc-system-creator-sc-2/SKILL.md",
+          "reason": "target category already contains a skill with the same stable key",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "planning",
+          "target_path": "planning/planning-with-files-evan/SKILL.md",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.95,
+          "name": "planning-with-files",
+          "path": "other/planning-with-files-mxyhi-ok-skills/SKILL.md",
+          "reason": "target category already contains a skill with the same stable key",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "planning",
+          "target_path": "planning/planning-with-files-mxyhi-ok-skills/SKILL.md",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.95,
+          "name": "planning-with-files",
+          "path": "other/planning-with-files-mxyhi-ok-skills-2/SKILL.md",
+          "reason": "target category already contains a skill with the same stable key",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "planning",
+          "target_path": "planning/planning-with-files-mxyhi-ok-skills/SKILL.md",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.95,
+          "name": "planning-with-files",
+          "path": "other/planning-with-files-mxyhi-ok-skills-4/SKILL.md",
+          "reason": "target category already contains a skill with the same stable key",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "planning",
+          "target_path": "planning/planning-with-files-mxyhi-ok-skills/SKILL.md",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.95,
+          "name": "planning-with-files",
+          "path": "other/planning-with-files-mxyhi-ok-skills-5/SKILL.md",
+          "reason": "target category already contains a skill with the same stable key",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "planning",
+          "target_path": "planning/planning-with-files-mxyhi-ok-skills/SKILL.md",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.95,
+          "name": "planning-with-files",
+          "path": "other/planning-with-files-othmanadi-planning-with-files/SKILL.md",
+          "reason": "target category already contains a skill with the same stable key",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "planning",
+          "target_path": "planning/planning-with-files-othmanadi-planning-with-files-5/SKILL.md",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.95,
+          "name": "planning-with-files",
+          "path": "other/planning-with-files-othmanadi-planning-with-files-10/SKILL.md",
+          "reason": "target category already contains a skill with the same stable key",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "planning",
+          "target_path": "planning/planning-with-files-othmanadi-planning-with-files-10/SKILL.md",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.95,
+          "name": "planning-with-files",
+          "path": "other/planning-with-files-othmanadi-planning-with-files-11/SKILL.md",
+          "reason": "target category already contains a skill with the same stable key",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "planning",
+          "target_path": "planning/planning-with-files-othmanadi-planning-with-files-19/SKILL.md",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.95,
+          "name": "planning-with-files",
+          "path": "other/planning-with-files-othmanadi-planning-with-files-2/SKILL.md",
+          "reason": "target category already contains a skill with the same stable key",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "planning",
+          "target_path": "planning/planning-with-files-othmanadi-planning-with-files-4/SKILL.md",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.95,
+          "name": "planning-with-files",
+          "path": "other/planning-with-files-othmanadi-planning-with-files-20/SKILL.md",
+          "reason": "target category already contains a skill with the same stable key",
+          "source_category": "other",
+          "source_exists": true,
+          "status": "ok",
+          "target_category": "planning",
+          "target_path": "planning/planning-with-files-othmanadi-planning-with-files-15/SKILL.md",
+          "target_status": "active"
+        }
+      ],
+      "reason": "target category already contains a skill with the same stable key",
+      "target_categories": [
+        {
+          "count": 393,
+          "value": "development"
+        },
+        {
+          "count": 211,
+          "value": "security"
+        },
+        {
+          "count": 183,
+          "value": "quality"
+        },
+        {
+          "count": 163,
+          "value": "skills"
+        },
+        {
+          "count": 150,
+          "value": "testing"
+        },
+        {
+          "count": 120,
+          "value": "marketing"
+        },
+        {
+          "count": 99,
+          "value": "devops"
+        },
+        {
+          "count": 97,
+          "value": "product"
+        },
+        {
+          "count": 87,
+          "value": "ai-ml"
+        },
+        {
+          "count": 83,
+          "value": "analysis"
+        },
+        {
+          "count": 78,
+          "value": "design"
+        },
+        {
+          "count": 67,
+          "value": "data"
+        },
+        {
+          "count": 67,
+          "value": "documents"
+        },
+        {
+          "count": 65,
+          "value": "planning"
+        },
+        {
+          "count": 59,
+          "value": "ai-llm"
+        },
+        {
+          "count": 55,
+          "value": "orchestration"
+        },
+        {
+          "count": 51,
+          "value": "workflow"
+        },
+        {
+          "count": 48,
+          "value": "gaming"
+        },
+        {
+          "count": 43,
+          "value": "context-management"
+        },
+        {
+          "count": 35,
+          "value": "integration"
+        }
+      ],
+      "target_status_counts": {
+        "active": 2387
+      }
+    },
+    {
+      "count": 1430,
+      "examples": [
+        {
+          "classification_current_category": "other",
+          "confidence": 0.95,
+          "name": "planning-with-files-ar",
+          "path": "other/planning-with-files-ar/SKILL.md",
+          "reason": "source directory missing",
+          "source_category": "other",
+          "source_exists": false,
+          "status": "ok",
+          "target_category": "planning",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.95,
+          "name": "planning-with-files-de",
+          "path": "other/planning-with-files-de/SKILL.md",
+          "reason": "source directory missing",
+          "source_category": "other",
+          "source_exists": false,
+          "status": "ok",
+          "target_category": "planning",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.95,
+          "name": "planning-with-files-es",
+          "path": "other/planning-with-files-es/SKILL.md",
+          "reason": "source directory missing",
+          "source_category": "other",
+          "source_exists": false,
+          "status": "ok",
+          "target_category": "planning",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.9,
+          "name": "planogram-optimization",
+          "path": "other/planogram-optimization/SKILL.md",
+          "reason": "source directory missing",
+          "source_category": "other",
+          "source_exists": false,
+          "status": "ok",
+          "target_category": "domains",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.9,
+          "name": "PlantCapability",
+          "path": "other/plantcapability/SKILL.md",
+          "reason": "source directory missing",
+          "source_category": "other",
+          "source_exists": false,
+          "status": "ok",
+          "target_category": "domains",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.9,
+          "name": "plantuml",
+          "path": "other/plantuml-spillwavesolutions-agent-rulez/SKILL.md",
+          "reason": "source directory missing",
+          "source_category": "other",
+          "source_exists": false,
+          "status": "ok",
+          "target_category": "generation",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.92,
+          "name": "Nethercore ZX Platform Assets",
+          "path": "other/platform-assets/SKILL.md",
+          "reason": "source directory missing",
+          "source_category": "other",
+          "source_exists": false,
+          "status": "ok",
+          "target_category": "marketing",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.9,
+          "name": "platform-detection",
+          "path": "other/platform-detection/SKILL.md",
+          "reason": "source directory missing",
+          "source_category": "other",
+          "source_exists": false,
+          "status": "ok",
+          "target_category": "platform",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.9,
+          "name": "platform-strategist",
+          "path": "other/platform-strategist/SKILL.md",
+          "reason": "source directory missing",
+          "source_category": "other",
+          "source_exists": false,
+          "status": "ok",
+          "target_category": "business",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.9,
+          "name": "platform-strategy",
+          "path": "other/platform-strategy/SKILL.md",
+          "reason": "source directory missing",
+          "source_category": "other",
+          "source_exists": false,
+          "status": "ok",
+          "target_category": "business",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.9,
+          "name": "platform-strategy",
+          "path": "other/platform-strategy-refoundai-lenny-skills/SKILL.md",
+          "reason": "source directory missing",
+          "source_category": "other",
+          "source_exists": false,
+          "status": "ok",
+          "target_category": "business",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.9,
+          "name": "platform-strategy",
+          "path": "other/platform-strategy-refoundai-lenny-skills-2/SKILL.md",
+          "reason": "source directory missing",
+          "source_category": "other",
+          "source_exists": false,
+          "status": "ok",
+          "target_category": "business",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.95,
+          "name": "agent-platforms",
+          "path": "other/platforms/SKILL.md",
+          "reason": "source directory missing",
+          "source_category": "other",
+          "source_exists": false,
+          "status": "ok",
+          "target_category": "skills",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.9,
+          "name": "platxa-skill-generator",
+          "path": "other/platxa-skill-generator/SKILL.md",
+          "reason": "source directory missing",
+          "source_category": "other",
+          "source_exists": false,
+          "status": "ok",
+          "target_category": "skills",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.9,
+          "name": "play-learn-lift",
+          "path": "other/play-learn-lift/SKILL.md",
+          "reason": "source directory missing",
+          "source_category": "other",
+          "source_exists": false,
+          "status": "ok",
+          "target_category": "personal-development",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.9,
+          "name": "playbook-architect",
+          "path": "other/playbook-architect/SKILL.md",
+          "reason": "source directory missing",
+          "source_category": "other",
+          "source_exists": false,
+          "status": "ok",
+          "target_category": "orchestration",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.95,
+          "name": "playtest-report",
+          "path": "other/playtest-report/SKILL.md",
+          "reason": "source directory missing",
+          "source_category": "other",
+          "source_exists": false,
+          "status": "ok",
+          "target_category": "gaming",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.95,
+          "name": "playtesting",
+          "path": "other/playtesting-ai-original-steak-sa-v2-heras-garden-2/SKILL.md",
+          "reason": "source directory missing",
+          "source_category": "other",
+          "source_exists": false,
+          "status": "ok",
+          "target_category": "gaming",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.95,
+          "name": "playtesting",
+          "path": "other/playtesting-opensourcesam-v2-heras-garden/SKILL.md",
+          "reason": "source directory missing",
+          "source_category": "other",
+          "source_exists": false,
+          "status": "ok",
+          "target_category": "gaming",
+          "target_status": "active"
+        },
+        {
+          "classification_current_category": "other",
+          "confidence": 0.9,
+          "name": "playwright-dev",
+          "path": "other/playwright-dev/SKILL.md",
+          "reason": "source directory missing",
+          "source_category": "other",
+          "source_exists": false,
+          "status": "ok",
+          "target_category": "development",
+          "target_status": "active"
+        }
+      ],
+      "reason": "source directory missing",
+      "target_categories": [
+        {
+          "count": 154,
+          "value": "quality"
+        },
+        {
+          "count": 128,
+          "value": "skills"
+        },
+        {
+          "count": 127,
+          "value": "development"
+        },
+        {
+          "count": 85,
+          "value": "marketing"
+        },
+        {
+          "count": 84,
+          "value": "workflow"
+        },
+        {
+          "count": 83,
+          "value": "domains"
+        },
+        {
+          "count": 55,
+          "value": "analysis"
+        },
+        {
+          "count": 53,
+          "value": "orchestration"
+        },
+        {
+          "count": 53,
+          "value": "product"
+        },
+        {
+          "count": 49,
+          "value": "integration"
+        },
+        {
+          "count": 47,
+          "value": "ai-ml"
+        },
+        {
+          "count": 45,
+          "value": "documents"
+        },
+        {
+          "count": 41,
+          "value": "devops"
+        },
+        {
+          "count": 37,
+          "value": "agent"
+        },
+        {
+          "count": 31,
+          "value": "generation"
+        },
+        {
+          "count": 31,
+          "value": "planning"
+        },
+        {
+          "count": 26,
+          "value": "performance"
+        },
+        {
+          "count": 26,
+          "value": "security"
+        },
+        {
+          "count": 25,
+          "value": "personal-development"
+        },
+        {
+          "count": 24,
+          "value": "gaming"
+        }
+      ],
+      "target_status_counts": {
+        "active": 1430
+      }
+    }
+  ],
+  "classification_jsonl": "migration-artifacts/2026-05-29-current-other-semantic-batch-011/classification.jsonl",
+  "detail_counts_omitted_from_committed_artifact": {
+    "stable_key_conflicts": 2387
+  },
+  "details": {
+    "stable_key_conflicts": []
+  },
+  "generated_at": "2026-05-28T19:41:11.077281+00:00",
+  "notes": [
+    "This report is read-only and never moves, deletes, or rewrites skills.",
+    "same_policy_plan_summary is generated by apply_category_migration.py with the same flags.",
+    "primary_reason_counts are mutually exclusive and explain the current archive state first.",
+    "all_blocker_reason_counts can exceed scoped_existing_source_count because one row may have multiple blockers.",
+    "source directory missing usually means the classification row points at a pre-migration path that has already moved.",
+    "scoped_archive_classification_gap is scoped_archive_skill_count minus scoped_existing_source_count; positive values indicate archive skills not covered by the classification file or duplicate classification coverage.",
+    "stable_key_conflicts detail is bounded by --conflict-detail-limit and includes content hashes so duplicate removal is not inferred from the stable key alone."
+  ],
+  "policy": {
+    "allow_target_other": false,
+    "apply_mode": "report-only",
+    "conflict_detail_limit": 5000,
+    "example_limit_per_reason": 20,
+    "from_categories": [
+      "other"
+    ],
+    "min_confidence": 0.9,
+    "target_statuses": [
+      "active"
+    ],
+    "to_categories": [],
+    "top_targets_per_reason": 20
+  },
+  "schema_version": 1,
+  "skills_dir": ".",
+  "summary": {
+    "all_blocker_reason_counts": {
+      "classification target matches current category": 72,
+      "confidence below threshold": 6183,
+      "target category already contains a skill with the same stable key": 2387,
+      "target category other requires --allow-target-other": 72
+    },
+    "archive_category_counts": {
+      "agent": 1597,
+      "ai-llm": 2240,
+      "ai-ml": 2160,
+      "analysis": 3428,
+      "api": 1089,
+      "bash": 249,
+      "business": 1134,
+      "c-level": 70,
+      "communication": 592,
+      "context-management": 1248,
+      "creative": 721,
+      "data": 49023,
+      "design": 13597,
+      "development": 37008,
+      "devops": 10482,
+      "documents": 6566,
+      "domains": 754,
+      "examples": 139,
+      "forensics": 79,
+      "gaming": 813,
+      "generation": 711,
+      "integration": 5146,
+      "language": 122,
+      "local-ai-infrastructure": 79,
+      "marketing": 2793,
+      "orchestration": 2187,
+      "other": 47219,
+      "performance": 953,
+      "personal-development": 382,
+      "planning": 1441,
+      "platform": 345,
+      "product": 2562,
+      "productivity": 3007,
+      "quality": 3190,
+      "security": 5128,
+      "skills": 2150,
+      "system": 90,
+      "testing": 11222,
+      "travel": 50,
+      "war-room": 26,
+      "workflow": 1390,
+      "writing": 992
+    },
+    "archive_skill_count": 224174,
+    "blocked_existing_key_count": 2387,
+    "candidate_move_count": 0,
+    "classification_row_count": 10000,
+    "classification_status_counts": {
+      "ok": 10000
+    },
+    "existing_source_category_counts": {
+      "other": 8570
+    },
+    "primary_reason_counts": {
+      "confidence below threshold": 6183,
+      "source directory missing": 1430,
+      "target category already contains a skill with the same stable key": 2387
+    },
+    "same_policy_plan_summary": {
+      "blocked_count": 2387,
+      "classification_row_count": 10000,
+      "classification_status_counts": {
+        "ok": 10000
+      },
+      "movable_count": 0,
+      "operation_counts": {
+        "blocked_existing_key": 2387
+      },
+      "planned_move_count": 2387,
+      "reject_reasons": {
+        "confidence below threshold": 6183,
+        "source directory missing": 1430
+      },
+      "source_category_counts": {
+        "other": 2387
+      },
+      "target_category_counts": {
+        "agent": 25,
+        "ai-llm": 59,
+        "ai-ml": 87,
+        "analysis": 83,
+        "api": 17,
+        "bash": 14,
+        "business": 22,
+        "communication": 8,
+        "context-management": 43,
+        "creative": 2,
+        "data": 67,
+        "design": 78,
+        "development": 393,
+        "devops": 99,
+        "documents": 67,
+        "domains": 32,
+        "examples": 6,
+        "forensics": 2,
+        "gaming": 48,
+        "generation": 14,
+        "integration": 35,
+        "local-ai-infrastructure": 4,
+        "marketing": 120,
+        "orchestration": 55,
+        "performance": 26,
+        "personal-development": 14,
+        "planning": 65,
+        "platform": 2,
+        "product": 97,
+        "productivity": 3,
+        "quality": 183,
+        "security": 211,
+        "skills": 163,
+        "system": 6,
+        "testing": 150,
+        "travel": 7,
+        "war-room": 2,
+        "workflow": 51,
+        "writing": 27
+      }
+    },
+    "scoped_archive_classification_gap": 38649,
+    "scoped_archive_skill_count": 47219,
+    "scoped_existing_source_count": 8570,
+    "scoped_source_category_counts": {
+      "other": 8570
+    },
+    "source_state_counts": {
+      "exists": 8570,
+      "missing": 1430
+    },
+    "stable_key_conflict_detail_count": 2387,
+    "stable_key_conflict_detail_summary": {
+      "metadata_identity_equal": 884,
+      "skill_content_equal": 1795
+    },
+    "target_category_counts": {
+      "agent": 113,
+      "ai-llm": 194,
+      "ai-ml": 317,
+      "analysis": 682,
+      "api": 88,
+      "bash": 34,
+      "business": 143,
+      "c-level": 2,
+      "communication": 23,
+      "context-management": 152,
+      "creative": 34,
+      "data": 262,
+      "design": 174,
+      "development": 1361,
+      "devops": 279,
+      "documents": 472,
+      "domains": 691,
+      "examples": 44,
+      "forensics": 20,
+      "gaming": 86,
+      "generation": 231,
+      "integration": 427,
+      "language": 18,
+      "local-ai-infrastructure": 30,
+      "marketing": 339,
+      "orchestration": 278,
+      "other": 72,
+      "performance": 101,
+      "personal-development": 151,
+      "planning": 198,
+      "platform": 134,
+      "product": 265,
+      "productivity": 61,
+      "quality": 779,
+      "security": 284,
+      "skills": 361,
+      "system": 61,
+      "testing": 223,
+      "travel": 10,
+      "war-room": 13,
+      "workflow": 708,
+      "writing": 85
+    },
+    "target_status_counts": {
+      "active": 10000
+    }
+  }
+}

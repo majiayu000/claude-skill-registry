@@ -1,0 +1,18 @@
+{
+  "name": "pm-plan",
+  "description": "プロジェクトマネジメント計画書を作成する。PM計画、統合計画、プロジェクト計画の策定時に使う。",
+  "repo": "HaRu-LLC/ai-pm_system_notebooklmuse",
+  "path": ".agent/skills/pm/planning/pm-plan",
+  "category": "planning",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HaRu-LLC/ai-pm_system_notebooklmuse",
+  "dir_name": "pm-plan-haru-llc-ai-pm-system-noteboo-2",
+  "author": "HaRu-LLC",
+  "source_url": "https://github.com/HaRu-LLC/ai-pm_system_notebooklmuse/blob/main/.agent/skills/pm/planning/pm-plan/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HaRu-LLC/ai-pm_system_notebooklmuse/blob/main/.agent/skills/pm/planning/pm-plan/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

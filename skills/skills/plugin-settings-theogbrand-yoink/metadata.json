@@ -1,0 +1,17 @@
+{
+  "name": "plugin-settings",
+  "repo": "theogbrand/yoink",
+  "path": ".agents/skills/plugin-settings/SKILL.md",
+  "github_branch": "main",
+  "category": "skills",
+  "source": "github.com/theogbrand/yoink",
+  "dir_name": "plugin-settings-theogbrand-yoink",
+  "downloaded_at": "2026-05-23T03:31:54.472616Z",
+  "author": "theogbrand",
+  "source_url": "https://github.com/theogbrand/yoink/blob/main/.agents/skills/plugin-settings/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/theogbrand/yoink/blob/main/.agents/skills/plugin-settings/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

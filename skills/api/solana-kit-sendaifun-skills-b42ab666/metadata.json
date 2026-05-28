@@ -1,0 +1,16 @@
+{
+  "name": "solana-kit",
+  "repo": "sendaifun/skills",
+  "path": "skills/solana-kit/SKILL.md",
+  "source": "github.com/sendaifun/skills",
+  "downloaded_at": "2026-01-29T06:57:34.976085Z",
+  "dir_name": "solana-kit-sendaifun-skills-b42ab666",
+  "category": "api",
+  "author": "sendaifun",
+  "source_url": "https://github.com/sendaifun/skills/blob/main/skills/solana-kit/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2024 SendAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

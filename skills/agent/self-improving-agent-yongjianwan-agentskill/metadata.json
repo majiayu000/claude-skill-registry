@@ -1,0 +1,17 @@
+{
+  "name": "self-improving-agent",
+  "repo": "YongjianWan/--agentskill",
+  "path": "skill/self-improving-agent/SKILL.md",
+  "github_branch": "main",
+  "category": "agent",
+  "source": "github.com/YongjianWan/--agentskill",
+  "dir_name": "self-improving-agent-yongjianwan-agentskill",
+  "downloaded_at": "2026-03-22T06:34:03.466498Z",
+  "author": "YongjianWan",
+  "source_url": "https://github.com/YongjianWan/--agentskill/blob/main/skill/self-improving-agent/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/YongjianWan/--agentskill/blob/main/skill/self-improving-agent/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

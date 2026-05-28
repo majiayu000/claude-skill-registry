@@ -1,0 +1,18 @@
+{
+  "name": "prd-validator",
+  "repo": "turbobeest/cursor-dev-system",
+  "path": "skills/prd-validator/SKILL.md",
+  "source": "github.com/turbobeest/cursor-dev-system",
+  "downloaded_at": "2026-01-22T02:41:40.644300Z",
+  "dir_name": "prd-validator-turbobeest-cursor-dev-system",
+  "category": "quality",
+  "github_path": "skills/prd-validator",
+  "github_branch": "main",
+  "author": "turbobeest",
+  "source_url": "https://github.com/turbobeest/cursor-dev-system/blob/main/skills/prd-validator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/turbobeest/cursor-dev-system/blob/main/skills/prd-validator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

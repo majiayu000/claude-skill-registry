@@ -1,0 +1,17 @@
+{
+  "name": "skills",
+  "repo": "bergside/typeui",
+  "path": "skills/skill.md",
+  "github_branch": "main",
+  "category": "skills",
+  "source": "github.com/bergside/typeui",
+  "dir_name": "skills-bergside-typeui",
+  "downloaded_at": "2026-03-22T07:13:26.343096Z",
+  "author": "bergside",
+  "source_url": "https://github.com/bergside/typeui/blob/main/skills/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bergside/typeui/blob/main/skills/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

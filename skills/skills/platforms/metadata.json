@@ -1,0 +1,18 @@
+{
+  "name": "platforms",
+  "repo": "gmh5225/awesome-skills",
+  "path": ".claude/skills/platforms/SKILL.md",
+  "source": "github.com/gmh5225/awesome-skills",
+  "downloaded_at": "2026-01-22T01:46:14.641930Z",
+  "dir_name": "platforms",
+  "category": "skills",
+  "github_path": ".claude/skills/platforms",
+  "github_branch": "main",
+  "author": "gmh5225",
+  "source_url": "https://github.com/gmh5225/awesome-skills/blob/main/.claude/skills/platforms/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 gmh5225.eth",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

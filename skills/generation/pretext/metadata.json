@@ -1,0 +1,17 @@
+{
+  "name": "pretext",
+  "repo": "tdimino/claude-code-minoan",
+  "path": "skills/design-media/pretext/SKILL.md",
+  "github_branch": "main",
+  "category": "generation",
+  "source": "github.com/tdimino/claude-code-minoan",
+  "dir_name": "pretext",
+  "downloaded_at": "2026-05-23T03:31:26.740620Z",
+  "author": "tdimino",
+  "source_url": "https://github.com/tdimino/claude-code-minoan/blob/main/skills/design-media/pretext/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tdimino/claude-code-minoan/blob/main/skills/design-media/pretext/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "refactor-claude-md",
+  "repo": "cxxxr/.claude",
+  "path": "skills/refactor-claude-md/SKILL.md",
+  "source": "github.com/cxxxr/.claude",
+  "downloaded_at": "2026-01-22T03:14:22.299925Z",
+  "dir_name": "refactor-claude-md",
+  "category": "skills",
+  "github_path": "skills/refactor-claude-md",
+  "github_branch": "main",
+  "author": "cxxxr",
+  "source_url": "https://github.com/cxxxr/.claude/blob/main/skills/refactor-claude-md/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cxxxr/.claude/blob/main/skills/refactor-claude-md/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

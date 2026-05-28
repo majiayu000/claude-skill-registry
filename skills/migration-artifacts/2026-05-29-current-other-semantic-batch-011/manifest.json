@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "batch_id": "current-other-semantic-batch-011",
+  "generated_at": "2026-05-28T17:37:03.209747+00:00",
+  "skills_dir": ".",
+  "input_jsonl": "migration-artifacts/2026-05-29-current-other-semantic-batch-011/input.jsonl",
+  "policy": {
+    "from_categories": [
+      "other"
+    ],
+    "limit": 10000,
+    "offset": 0,
+    "content_chars": 1600,
+    "exclude_input_jsonl": [
+      "migration-artifacts/2026-05-24-current-other-semantic-batch-001/input.jsonl",
+      "migration-artifacts/2026-05-24-legacy-deterministic-001/input.jsonl",
+      "migration-artifacts/2026-05-24-legacy-semantic-003/input.jsonl",
+      "migration-artifacts/2026-05-25-current-other-semantic-batch-002/input.jsonl",
+      "migration-artifacts/2026-05-27-current-other-semantic-batch-003/input.jsonl",
+      "migration-artifacts/2026-05-27-current-other-semantic-batch-004/input.jsonl",
+      "migration-artifacts/2026-05-27-current-other-semantic-batch-005/input.jsonl",
+      "migration-artifacts/2026-05-27-current-other-semantic-batch-007/input.jsonl",
+      "migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/input.jsonl",
+      "migration-artifacts/2026-05-27-xiaomi-25pro-parallel-eval-006/input.jsonl",
+      "migration-artifacts/2026-05-28-current-other-semantic-batch-009/input.jsonl",
+      "migration-artifacts/2026-05-28-current-other-semantic-batch-010/input.jsonl"
+    ],
+    "apply_mode": "review-only"
+  },
+  "summary": {
+    "archive_category_counts": {
+      "agent": 1560,
+      "ai-llm": 2227,
+      "ai-ml": 2113,
+      "analysis": 3373,
+      "api": 1066,
+      "bash": 240,
+      "business": 1119,
+      "c-level": 69,
+      "communication": 587,
+      "context-management": 1240,
+      "creative": 720,
+      "data": 49005,
+      "design": 13579,
+      "development": 36881,
+      "devops": 10441,
+      "documents": 6521,
+      "domains": 671,
+      "examples": 120,
+      "forensics": 76,
+      "gaming": 789,
+      "generation": 680,
+      "integration": 5097,
+      "language": 118,
+      "local-ai-infrastructure": 57,
+      "marketing": 2708,
+      "orchestration": 2134,
+      "other": 48649,
+      "performance": 927,
+      "personal-development": 357,
+      "planning": 1410,
+      "platform": 336,
+      "product": 2509,
+      "productivity": 3001,
+      "quality": 3036,
+      "security": 5102,
+      "skills": 2022,
+      "system": 78,
+      "testing": 11206,
+      "travel": 47,
+      "war-room": 21,
+      "workflow": 1306,
+      "writing": 976
+    },
+    "matching_category_skill_count": 48649,
+    "excluded_input_path_count": 44659,
+    "excluded_live_match_count": 29638,
+    "eligible_matching_category_skill_count": 19011,
+    "selected_input_count": 10000,
+    "selected_category_counts": {
+      "other": 10000
+    }
+  },
+  "artifacts": {
+    "input_jsonl": "migration-artifacts/2026-05-29-current-other-semantic-batch-011/input.jsonl",
+    "classification_jsonl": "migration-artifacts/2026-05-29-current-other-semantic-batch-011/classification.jsonl",
+    "classification_report": "migration-artifacts/2026-05-29-current-other-semantic-batch-011/classification-report.json",
+    "checkpoint_jsonl": "migration-artifacts/2026-05-29-current-other-semantic-batch-011/checkpoint.jsonl",
+    "apply_plan": "migration-artifacts/2026-05-29-current-other-semantic-batch-011/apply-plan.json",
+    "sample_audit": "migration-artifacts/2026-05-29-current-other-semantic-batch-011/sample-audit.json",
+    "residual_report": "migration-artifacts/2026-05-29-current-other-semantic-batch-011/residual-report.json",
+    "residual_worksets_report": "migration-artifacts/2026-05-29-current-other-semantic-batch-011/residual-worksets.json",
+    "residual_worksets_dir": "migration-artifacts/2026-05-29-current-other-semantic-batch-011/residual-worksets"
+  },
+  "commands": [
+    "python scripts/classify_residual_workset_with_llm.py --workset-jsonl migration-artifacts/2026-05-29-current-other-semantic-batch-011/input.jsonl --classification-output migration-artifacts/2026-05-29-current-other-semantic-batch-011/classification.jsonl --output migration-artifacts/2026-05-29-current-other-semantic-batch-011/classification-report.json --checkpoint-jsonl migration-artifacts/2026-05-29-current-other-semantic-batch-011/checkpoint.jsonl --api-key-env MIMO_API_KEY --base-url https://token-plan-sgp.xiaomimimo.com/v1 --model mimo-v2.5-pro --temperature 0",
+    "python scripts/sample_category_classification_audit.py --workset-jsonl migration-artifacts/2026-05-29-current-other-semantic-batch-011/input.jsonl --classification-jsonl migration-artifacts/2026-05-29-current-other-semantic-batch-011/classification.jsonl --output migration-artifacts/2026-05-29-current-other-semantic-batch-011/sample-audit.json",
+    "python scripts/apply_category_migration.py --skills-dir . --classification-jsonl migration-artifacts/2026-05-29-current-other-semantic-batch-011/classification.jsonl --from-category other --min-confidence 0.9 --movable-only --output migration-artifacts/2026-05-29-current-other-semantic-batch-011/apply-plan.json",
+    "python scripts/audit_category_residuals.py --skills-dir . --classification-jsonl migration-artifacts/2026-05-29-current-other-semantic-batch-011/classification.jsonl --from-category other --min-confidence 0.9 --output migration-artifacts/2026-05-29-current-other-semantic-batch-011/residual-report.json",
+    "python scripts/build_residual_category_worksets.py --skills-dir . --classification-jsonl migration-artifacts/2026-05-29-current-other-semantic-batch-011/classification.jsonl --from-category other --min-confidence 0.9 --output migration-artifacts/2026-05-29-current-other-semantic-batch-011/residual-worksets.json --workset-output-dir migration-artifacts/2026-05-29-current-other-semantic-batch-011/residual-worksets"
+  ],
+  "notes": [
+    "This manifest and its input JSONL do not modify archive files.",
+    "Each input row carries SKILL.md and metadata SHA-256 provenance.",
+    "Run the sample audit before applying any generated move plan.",
+    "The apply step refuses inactive categories and changed source hashes.",
+    "Residual worksets explain classification gaps, low-confidence rows, target-other rows, and inactive targets before the next batch."
+  ],
+  "manifest_json": "migration-artifacts/2026-05-29-current-other-semantic-batch-011/manifest.json"
+}

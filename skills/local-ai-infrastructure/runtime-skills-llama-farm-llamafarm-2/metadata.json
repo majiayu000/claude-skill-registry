@@ -1,0 +1,18 @@
+{
+  "name": "runtime-skills",
+  "description": "Universal Runtime best practices for PyTorch inference, Transformers models, and FastAPI serving. Covers device management, model loading, memory optimization, and performance tuning.",
+  "repo": "llama-farm/llamafarm",
+  "path": ".claude/skills/runtime-skills",
+  "category": "local-ai-infrastructure",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/llama-farm/llamafarm",
+  "dir_name": "runtime-skills-llama-farm-llamafarm-2",
+  "author": "llama-farm",
+  "source_url": "https://github.com/llama-farm/llamafarm/blob/main/.claude/skills/runtime-skills/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/llama-farm/llamafarm/blob/main/.claude/skills/runtime-skills/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

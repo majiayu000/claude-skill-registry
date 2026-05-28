@@ -1,0 +1,18 @@
+{
+  "name": "society-of-mind",
+  "repo": "SimHacker/moollm",
+  "path": "skills/society-of-mind/SKILL.md",
+  "source": "github.com/SimHacker/moollm",
+  "downloaded_at": "2026-01-22T01:07:13.507660Z",
+  "dir_name": "society-of-mind",
+  "category": "agent",
+  "github_path": "skills/society-of-mind",
+  "github_branch": "main",
+  "author": "SimHacker",
+  "source_url": "https://github.com/SimHacker/moollm/blob/main/skills/society-of-mind/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Don Hopkins, Leela AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "requesting-code-review",
+  "description": "",
+  "repo": "jarredkenny/agency-ai",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jarredkenny/agency-ai",
+  "github_path": "roles/orchestrator/skills/requesting-code-review",
+  "github_branch": "main",
+  "dir_name": "requesting-code-review-jarredkenny-agency-ai",
+  "downloaded_at": "2026-02-05T01:45:07.786921Z"
+}

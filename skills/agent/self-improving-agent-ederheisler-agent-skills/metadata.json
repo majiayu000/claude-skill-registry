@@ -1,0 +1,11 @@
+{
+  "name": "self-improving-agent",
+  "repo": "ederheisler/agent-skills",
+  "path": ".claude/skills/self-improving-agent/SKILL.md",
+  "source": "github.com/ederheisler/agent-skills",
+  "downloaded_at": "2026-01-22T02:36:33.563514Z",
+  "dir_name": "self-improving-agent-ederheisler-agent-skills",
+  "category": "agent",
+  "github_path": ".claude/skills/self-improving-agent",
+  "github_branch": "main"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "scm",
+  "repo": "mgreenly/ikigai",
+  "path": ".claude/library/scm/SKILL.md",
+  "source": "github.com/mgreenly/ikigai",
+  "downloaded_at": "2026-01-19T04:08:20.203888Z",
+  "dir_name": "scm",
+  "category": "workflow",
+  "github_path": ".claude/library/scm",
+  "github_branch": "main",
+  "author": "mgreenly",
+  "source_url": "https://github.com/mgreenly/ikigai/blob/main/.claude/library/scm/SKILL.md",
+  "license": "MIT-0",
+  "copyright": "Copyright (c) 2025 Michael Greenly",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

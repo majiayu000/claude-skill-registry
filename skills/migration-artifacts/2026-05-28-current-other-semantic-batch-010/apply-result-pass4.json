@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-28T15:59:35.410781+00:00",
+  "skills_dir": ".",
+  "classification_jsonl": "migration-artifacts/2026-05-28-current-other-semantic-batch-010/classification.jsonl",
+  "policy": {
+    "min_confidence": 0.9,
+    "from_categories": [
+      "other"
+    ],
+    "to_categories": [],
+    "target_statuses": [
+      "active"
+    ],
+    "allow_target_other": false,
+    "movable_only": true,
+    "limit": null,
+    "apply_mode": "apply"
+  },
+  "summary": {
+    "classification_row_count": 10000,
+    "classification_status_counts": {
+      "ok": 10000
+    },
+    "planned_move_count": 1,
+    "movable_count": 1,
+    "blocked_count": 0,
+    "operation_counts": {
+      "move": 1
+    },
+    "reject_reasons": {
+      "confidence below threshold": 6450,
+      "source directory missing": 1374,
+      "target category already contains a skill with the same stable key": 2175
+    },
+    "source_category_counts": {
+      "other": 1
+    },
+    "target_category_counts": {
+      "documents": 1
+    }
+  },
+  "moves": [
+    {
+      "operation": "move",
+      "source_path": "other/md-exporter-bowenliang123-md-exporter-4587e8ff-2",
+      "source_skill": "other/md-exporter-bowenliang123-md-exporter-4587e8ff-2/SKILL.md",
+      "source_category": "other",
+      "current_category": "other",
+      "target_category": "documents",
+      "target_status": "active",
+      "target_path": "documents/md-exporter-bowenliang123-md-exporter-4587e8ff-2",
+      "target_skill": "documents/md-exporter-bowenliang123-md-exporter-4587e8ff-2/SKILL.md",
+      "name": "markdown-exporter",
+      "confidence": 0.95,
+      "key": "bowenliang123/md_exporter:name:markdown-exporter",
+      "repo": "bowenliang123/md_exporter",
+      "reason": "classification target passed filters",
+      "source_sha256": "914b42960969f731e0418f54da839820a0a29913efdb17260b227baf674bd50b",
+      "metadata_sha256": "73764aa86423bfa7c7aa4ea4da1bccab3e07853504cb2105936e55ce0e60b5dc",
+      "semantic_text_sha256": "ea414c5352a9db47905d981837daa0f137f1004ba31c6d61450dd36380ba9c45"
+    }
+  ],
+  "notes": [
+    "Default mode is review-only and does not modify files.",
+    "Only --apply moves directories and updates metadata.json.",
+    "Blocked moves are never applied automatically."
+  ],
+  "applied_at": "2026-05-28T15:59:35.442782+00:00"
+}

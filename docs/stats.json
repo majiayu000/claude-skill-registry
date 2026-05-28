@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-28T09:33:34.391590Z",
+  "updated_at": "2026-05-28T17:13:37.156130Z",
   "archive_skill_md_count_raw": 224174,
   "archive_metadata_count_raw": 224174,
   "indexed_skill_count_scan_shape": 224174,
@@ -10,212 +10,212 @@
     {
       "name": "agent",
       "code": "agent",
-      "count": 1524
+      "count": 1560
     },
     {
       "name": "ai-llm",
       "code": "ai-llm",
-      "count": 2195
+      "count": 2227
     },
     {
       "name": "ai-ml",
       "code": "ai-ml",
-      "count": 2090
+      "count": 2113
     },
     {
       "name": "analysis",
       "code": "analysis",
-      "count": 3330
+      "count": 3373
     },
     {
       "name": "api",
       "code": "api",
-      "count": 1031
+      "count": 1066
     },
     {
       "name": "bash",
       "code": "bash",
-      "count": 236
+      "count": 240
     },
     {
       "name": "business",
       "code": "business",
-      "count": 1112
+      "count": 1119
     },
     {
       "name": "c-level",
       "code": "c-level",
-      "count": 68
+      "count": 69
     },
     {
       "name": "communication",
       "code": "communication",
-      "count": 582
+      "count": 587
     },
     {
       "name": "context-management",
       "code": "context-management",
-      "count": 1217
+      "count": 1240
     },
     {
       "name": "creative",
       "code": "creative",
-      "count": 714
+      "count": 720
     },
     {
       "name": "data",
       "code": "dat",
-      "count": 48991
+      "count": 49005
     },
     {
       "name": "design",
       "code": "des",
-      "count": 13551
+      "count": 13579
     },
     {
       "name": "development",
       "code": "dev",
-      "count": 36767
+      "count": 36881
     },
     {
       "name": "devops",
       "code": "ops",
-      "count": 10402
+      "count": 10441
     },
     {
       "name": "documents",
       "code": "doc",
-      "count": 6461
+      "count": 6521
     },
     {
       "name": "domains",
       "code": "domains",
-      "count": 502
+      "count": 671
     },
     {
       "name": "examples",
       "code": "examples",
-      "count": 117
+      "count": 120
     },
     {
       "name": "forensics",
       "code": "forensics",
-      "count": 71
+      "count": 76
     },
     {
       "name": "gaming",
       "code": "gaming",
-      "count": 774
+      "count": 789
     },
     {
       "name": "generation",
       "code": "generation",
-      "count": 633
+      "count": 680
     },
     {
       "name": "integration",
       "code": "integration",
-      "count": 4983
+      "count": 5097
     },
     {
       "name": "language",
       "code": "language",
-      "count": 97
+      "count": 118
     },
     {
       "name": "local-ai-infrastructure",
       "code": "local-ai-infrastructure",
-      "count": 53
+      "count": 57
     },
     {
       "name": "marketing",
       "code": "mkt",
-      "count": 2681
+      "count": 2708
     },
     {
       "name": "orchestration",
       "code": "orchestration",
-      "count": 2041
+      "count": 2134
     },
     {
       "name": "other",
       "code": "oth",
-      "count": 50025
+      "count": 48649
     },
     {
       "name": "performance",
       "code": "performance",
-      "count": 905
+      "count": 927
     },
     {
       "name": "personal-development",
       "code": "personal-development",
-      "count": 344
+      "count": 357
     },
     {
       "name": "planning",
       "code": "planning",
-      "count": 1384
+      "count": 1410
     },
     {
       "name": "platform",
       "code": "platform",
-      "count": 309
+      "count": 336
     },
     {
       "name": "product",
       "code": "prd",
-      "count": 2479
+      "count": 2509
     },
     {
       "name": "productivity",
       "code": "pro",
-      "count": 2995
+      "count": 3001
     },
     {
       "name": "quality",
       "code": "quality",
-      "count": 2965
+      "count": 3036
     },
     {
       "name": "security",
       "code": "sec",
-      "count": 5077
+      "count": 5102
     },
     {
       "name": "skills",
       "code": "skills",
-      "count": 1955
+      "count": 2022
     },
     {
       "name": "system",
       "code": "system",
-      "count": 52
+      "count": 78
     },
     {
       "name": "testing",
       "code": "tst",
-      "count": 11197
+      "count": 11206
     },
     {
       "name": "travel",
       "code": "travel",
-      "count": 45
+      "count": 47
     },
     {
       "name": "war-room",
       "code": "war-room",
-      "count": 17
+      "count": 21
     },
     {
       "name": "workflow",
       "code": "workflow",
-      "count": 1241
+      "count": 1306
     },
     {
       "name": "writing",
       "code": "writing",
-      "count": 961
+      "count": 976
     }
   ],
   "unique_repo_count": 9791,
@@ -266,31 +266,31 @@
   "index_size_bytes": 162,
   "index_size_gzip_bytes": 175,
   "search_shard_count": 6,
-  "search_largest_shard_bytes": 8388631,
-  "search_largest_shard_gzip_bytes": 2500705,
-  "category_shard_count": 53,
-  "category_largest_part_bytes": 8388622,
+  "search_largest_shard_bytes": 8388673,
+  "search_largest_shard_gzip_bytes": 2571649,
+  "category_shard_count": 52,
+  "category_largest_part_bytes": 8388723,
   "category_largest_part_gzip_bytes": 1737621,
   "lite_index_count": 157548,
   "lite_index_included_count": 5000,
-  "lite_index_size_bytes": 3499749,
-  "lite_index_gzip_size_bytes": 684007,
+  "lite_index_size_bytes": 3503306,
+  "lite_index_gzip_size_bytes": 687683,
   "quality_index_size_bytes": 220,
   "quality_index_gzip_size_bytes": 213,
   "quality_shard_count": 6,
-  "quality_largest_shard_bytes": 8388702,
-  "quality_largest_shard_gzip_bytes": 1752170,
+  "quality_largest_shard_bytes": 8388598,
+  "quality_largest_shard_gzip_bytes": 1748903,
   "security_index_size_bytes": 223,
   "security_index_gzip_size_bytes": 215,
   "security_shard_count": 18,
-  "security_largest_shard_bytes": 8388715,
-  "security_largest_shard_gzip_bytes": 1638053,
+  "security_largest_shard_bytes": 8388684,
+  "security_largest_shard_gzip_bytes": 1638656,
   "ranking_index_size_bytes": 220,
-  "ranking_index_gzip_size_bytes": 214,
+  "ranking_index_gzip_size_bytes": 213,
   "ranking_shard_count": 5,
-  "ranking_largest_shard_bytes": 8388674,
-  "ranking_largest_shard_gzip_bytes": 2213461,
-  "largest_generated_file_bytes": 8388715,
+  "ranking_largest_shard_bytes": 8388710,
+  "ranking_largest_shard_gzip_bytes": 2206103,
+  "largest_generated_file_bytes": 8388723,
   "security_scan": {
     "total": 224174,
     "passed": 213856,

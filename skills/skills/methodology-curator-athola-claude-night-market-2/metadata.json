@@ -1,0 +1,18 @@
+{
+  "name": "methodology-curator",
+  "description": "Surfaces expert frameworks and proven methodologies before creating OR evaluating\nskills, hooks, agents, or commands. Helps select approaches from domain masters.\n\nTriggers: methodology, framework, ex",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/abstract/skills/methodology-curator",
+  "category": "skills",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "methodology-curator-athola-claude-night-market-2",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/abstract/skills/methodology-curator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 athola",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

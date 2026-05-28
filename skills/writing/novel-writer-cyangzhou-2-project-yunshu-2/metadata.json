@@ -1,0 +1,18 @@
+{
+  "name": "novel_writer",
+  "description": "专为长篇网文创作设计的智能助手，支持从设定生成到正文撰写的全流程管理，包含智能质控与状态同步。(Yunshu Optimized)",
+  "repo": "CyangZhou/-2--Project-Yunshu-",
+  "path": "skills/novel_writer",
+  "category": "writing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CyangZhou/-2--Project-Yunshu-",
+  "dir_name": "novel-writer-cyangzhou-2-project-yunshu-2",
+  "author": "CyangZhou",
+  "source_url": "https://github.com/CyangZhou/-2--Project-Yunshu-/blob/main/skills/novel_writer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CyangZhou/-2--Project-Yunshu-/blob/main/skills/novel_writer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "market-research",
+  "description": "Deep market analysis for iOS/macOS apps including market sizing (TAM/SAM/SOM), growth trends, market maturity, entry barriers, distribution channels, and revenue potential. Use when user asks for mark",
+  "repo": "rshankras/claude-code-apple-skills",
+  "path": "skills/product/market-research",
+  "category": "product",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rshankras/claude-code-apple-skills",
+  "dir_name": "market-research-rshankras-claude-code-apple-sk-2",
+  "author": "rshankras",
+  "source_url": "https://github.com/rshankras/claude-code-apple-skills/blob/main/skills/product/market-research/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ravishankar",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

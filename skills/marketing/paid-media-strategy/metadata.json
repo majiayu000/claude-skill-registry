@@ -1,0 +1,17 @@
+{
+  "name": "paid-media-strategy",
+  "repo": "rampstackco/claude-skills",
+  "path": "skills/paid-media-strategy/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/rampstackco/claude-skills",
+  "dir_name": "paid-media-strategy",
+  "downloaded_at": "2026-05-27T04:26:13.777441Z",
+  "author": "rampstackco",
+  "source_url": "https://github.com/rampstackco/claude-skills/blob/main/skills/paid-media-strategy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rampstackco/claude-skills/blob/main/skills/paid-media-strategy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

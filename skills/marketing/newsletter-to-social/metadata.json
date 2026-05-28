@@ -1,0 +1,16 @@
+{
+  "name": "newsletter-to-social",
+  "repo": "cdeistopened/OpenEd-Vault",
+  "path": ".claude/skills/newsletter-to-social/SKILL.md",
+  "category": "marketing",
+  "source": "github.com/cdeistopened/OpenEd-Vault",
+  "dir_name": "newsletter-to-social",
+  "downloaded_at": "2026-02-15T06:42:34.355796Z",
+  "author": "cdeistopened",
+  "source_url": "https://github.com/cdeistopened/OpenEd-Vault/blob/main/.claude/skills/newsletter-to-social/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cdeistopened/OpenEd-Vault/blob/main/.claude/skills/newsletter-to-social/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

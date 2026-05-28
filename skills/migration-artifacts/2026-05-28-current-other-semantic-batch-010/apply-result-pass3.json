@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-28T15:58:50.447606+00:00",
+  "skills_dir": ".",
+  "classification_jsonl": "migration-artifacts/2026-05-28-current-other-semantic-batch-010/classification.jsonl",
+  "policy": {
+    "min_confidence": 0.9,
+    "from_categories": [
+      "other"
+    ],
+    "to_categories": [],
+    "target_statuses": [
+      "active"
+    ],
+    "allow_target_other": false,
+    "movable_only": true,
+    "limit": null,
+    "apply_mode": "apply"
+  },
+  "summary": {
+    "classification_row_count": 10000,
+    "classification_status_counts": {
+      "ok": 10000
+    },
+    "planned_move_count": 2,
+    "movable_count": 2,
+    "blocked_count": 0,
+    "operation_counts": {
+      "move": 2
+    },
+    "reject_reasons": {
+      "confidence below threshold": 6450,
+      "source directory missing": 1372,
+      "target category already contains a skill with the same stable key": 2176
+    },
+    "source_category_counts": {
+      "other": 2
+    },
+    "target_category_counts": {
+      "documents": 1,
+      "orchestration": 1
+    }
+  },
+  "moves": [
+    {
+      "operation": "move",
+      "source_path": "other/llm-council-skill-shuntacurosu-llm-council-skill-d99d1ae2",
+      "source_skill": "other/llm-council-skill-shuntacurosu-llm-council-skill-d99d1ae2/SKILL.md",
+      "source_category": "other",
+      "current_category": "other",
+      "target_category": "orchestration",
+      "target_status": "active",
+      "target_path": "orchestration/llm-council-skill-shuntacurosu-llm-council-skill-d99d1ae2",
+      "target_skill": "orchestration/llm-council-skill-shuntacurosu-llm-council-skill-d99d1ae2/SKILL.md",
+      "name": "LLM Council",
+      "confidence": 0.95,
+      "key": "shuntacurosu/llm_council_skill:name:llm-council",
+      "repo": "shuntacurosu/llm_council_skill",
+      "reason": "classification target passed filters",
+      "source_sha256": "fcf028a95e1a9f5f0e7fbabfb7fbad34bb16f7ffcc6a1c02874a80af0c30aff4",
+      "metadata_sha256": "ec148052adec8e2c1b7ff675e8f5a041eb6c825f441fd845d05010973c093262",
+      "semantic_text_sha256": "3935d19e733bb1c5022b986b2bac27bb80f2b961543825c0e11898dd2fa5b637"
+    },
+    {
+      "operation": "move",
+      "source_path": "other/md-exporter-bowenliang123-md-exporter-4587e8ff",
+      "source_skill": "other/md-exporter-bowenliang123-md-exporter-4587e8ff/SKILL.md",
+      "source_category": "other",
+      "current_category": "other",
+      "target_category": "documents",
+      "target_status": "active",
+      "target_path": "documents/md-exporter-bowenliang123-md-exporter-4587e8ff",
+      "target_skill": "documents/md-exporter-bowenliang123-md-exporter-4587e8ff/SKILL.md",
+      "name": "markdown-exporter",
+      "confidence": 0.95,
+      "key": "bowenliang123/md_exporter:name:markdown-exporter",
+      "repo": "bowenliang123/md_exporter",
+      "reason": "classification target passed filters",
+      "source_sha256": "3295e523d46f16fadf3a198bcf498b4f8e1b61732cc50b0d849bb04235d41aea",
+      "metadata_sha256": "2f5257e6c9419d0ba4368795120f91e7f47e05dfdf3150a7ae713afc05802494",
+      "semantic_text_sha256": "efcbe918624733a4912ff689c6eeebcfca69a5e2f6e468bcd95c226145688de9"
+    }
+  ],
+  "notes": [
+    "Default mode is review-only and does not modify files.",
+    "Only --apply moves directories and updates metadata.json.",
+    "Blocked moves are never applied automatically."
+  ],
+  "applied_at": "2026-05-28T15:58:50.479704+00:00"
+}

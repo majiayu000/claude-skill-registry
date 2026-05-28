@@ -1,0 +1,16 @@
+{
+  "name": "loom-workspace",
+  "repo": "z3z1ma/vibe-pipe",
+  "path": ".opencode/skills/loom-workspace/SKILL.md",
+  "source": "github.com/z3z1ma/vibe-pipe",
+  "downloaded_at": "2026-02-02T04:52:14.455078Z",
+  "dir_name": "loom-workspace",
+  "category": "workflow",
+  "author": "z3z1ma",
+  "source_url": "https://github.com/z3z1ma/vibe-pipe/blob/main/.opencode/skills/loom-workspace/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Alexander Butler",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "paired-end-fastq",
+  "repo": "GPTomics/bioSkills",
+  "path": "sequence-io/paired-end-fastq/SKILL.md",
+  "source": "github.com/GPTomics/bioSkills",
+  "downloaded_at": "2026-01-22T02:30:47.487716Z",
+  "dir_name": "paired-end-fastq-gptomics-bioskills",
+  "category": "data",
+  "github_path": "sequence-io/paired-end-fastq",
+  "github_branch": "main",
+  "author": "GPTomics",
+  "source_url": "https://github.com/GPTomics/bioSkills/blob/main/sequence-io/paired-end-fastq/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 GPTomics",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "onboarding-wizard-design",
+  "repo": "rampstackco/claude-skills",
+  "path": "skills/onboarding-wizard-design/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/rampstackco/claude-skills",
+  "dir_name": "onboarding-wizard-design",
+  "downloaded_at": "2026-05-27T04:26:05.032274Z",
+  "author": "rampstackco",
+  "source_url": "https://github.com/rampstackco/claude-skills/blob/main/skills/onboarding-wizard-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rampstackco/claude-skills/blob/main/skills/onboarding-wizard-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

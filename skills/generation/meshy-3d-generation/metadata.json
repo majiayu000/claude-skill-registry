@@ -1,0 +1,17 @@
+{
+  "name": "meshy-3d-generation",
+  "repo": "meshy-dev/meshy-3d-agent",
+  "path": "skills/meshy-3d-generation/SKILL.md",
+  "github_branch": "main",
+  "category": "generation",
+  "source": "github.com/meshy-dev/meshy-3d-agent",
+  "dir_name": "meshy-3d-generation",
+  "downloaded_at": "2026-05-20T04:02:49.826922Z",
+  "author": "meshy-dev",
+  "source_url": "https://github.com/meshy-dev/meshy-3d-agent/blob/main/skills/meshy-3d-generation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/meshy-dev/meshy-3d-agent/blob/main/skills/meshy-3d-generation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "parse-error-logs",
+  "description": "",
+  "repo": "maslennikov-ig/BuhBot",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/maslennikov-ig/BuhBot",
+  "github_path": ".claude/skills/parse-error-logs",
+  "github_branch": "main",
+  "dir_name": "parse-error-logs",
+  "downloaded_at": "2026-02-05T05:09:19.293267Z",
+  "author": "maslennikov-ig",
+  "source_url": "https://github.com/maslennikov-ig/BuhBot/blob/main/.claude/skills/parse-error-logs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Igor Maslennikov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

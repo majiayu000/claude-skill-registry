@@ -1,0 +1,17 @@
+{
+  "name": "ln-600-docs-auditor",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "ln-600-docs-auditor/SKILL.md",
+  "github_branch": "master",
+  "category": "quality",
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-600-docs-auditor-levnikolaevich-claude-code-skills-3",
+  "downloaded_at": "2026-03-01T01:35:30.905353Z",
+  "author": "levnikolaevich",
+  "source_url": "https://github.com/levnikolaevich/claude-code-skills/blob/master/ln-600-docs-auditor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/levnikolaevich/claude-code-skills/blob/master/ln-600-docs-auditor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

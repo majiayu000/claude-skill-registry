@@ -1,0 +1,16 @@
+{
+  "name": "new-cask",
+  "repo": "malob/nix-config",
+  "path": "configs/claude/skills/new-cask/SKILL.md",
+  "source": "github.com/malob/nix-config",
+  "downloaded_at": "2026-02-02T02:22:31.996919Z",
+  "dir_name": "new-cask",
+  "category": "platform",
+  "author": "malob",
+  "source_url": "https://github.com/malob/nix-config/blob/main/configs/claude/skills/new-cask/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2020 Malo Bourgon",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "language-learning-strategies",
+  "repo": "Tibsfox/gsd-skill-creator",
+  "path": "examples/skills/languages/language-learning-strategies/SKILL.md",
+  "github_branch": "main",
+  "category": "personal-development",
+  "source": "github.com/Tibsfox/gsd-skill-creator",
+  "dir_name": "language-learning-strategies",
+  "downloaded_at": "2026-04-26T01:34:57.283284Z",
+  "author": "Tibsfox",
+  "source_url": "https://github.com/Tibsfox/gsd-skill-creator/blob/main/examples/skills/languages/language-learning-strategies/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tibsfox/gsd-skill-creator/blob/main/examples/skills/languages/language-learning-strategies/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

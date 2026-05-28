@@ -1,0 +1,17 @@
+{
+  "name": "microsoft-extensions-dependency-injection",
+  "repo": "Aaronontheweb/dotnet-skills",
+  "path": "skills/microsoft-extensions-dependency-injection/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
+  "source": "github.com/Aaronontheweb/dotnet-skills",
+  "dir_name": "microsoft-extensions-dependency-injection",
+  "downloaded_at": "2026-03-01T04:45:19.327369Z",
+  "author": "Aaronontheweb",
+  "source_url": "https://github.com/Aaronontheweb/dotnet-skills/blob/master/skills/microsoft-extensions-dependency-injection/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Aaronontheweb/dotnet-skills/blob/master/skills/microsoft-extensions-dependency-injection/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

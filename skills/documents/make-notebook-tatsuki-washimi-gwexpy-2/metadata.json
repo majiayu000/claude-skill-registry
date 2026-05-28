@@ -1,0 +1,18 @@
+{
+  "name": "make_notebook",
+  "description": "機能やテーマについて解説付きのJupyter Notebook (.ipynb) を生成する",
+  "repo": "tatsuki-washimi/gwexpy",
+  "path": ".agent/skills/make_notebook",
+  "category": "documents",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tatsuki-washimi/gwexpy",
+  "dir_name": "make-notebook-tatsuki-washimi-gwexpy-2",
+  "author": "tatsuki-washimi",
+  "source_url": "https://github.com/tatsuki-washimi/gwexpy/blob/main/.agent/skills/make_notebook/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Tatsuki Washimi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

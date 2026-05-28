@@ -1,0 +1,18 @@
+{
+  "name": "pitch-deck",
+  "description": "Generate professional PowerPoint pitch decks for startups and businesses. Use this skill when users request help creating investor pitch decks, sales presentations, or business pitch presentations. Th",
+  "repo": "merllinsbeard/ai-claude-skills-collection",
+  "path": "content/pitch-deck",
+  "category": "generation",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/merllinsbeard/ai-claude-skills-collection",
+  "dir_name": "pitch-deck-merllinsbeard-ai-claude-skills-col-2",
+  "author": "merllinsbeard",
+  "source_url": "https://github.com/merllinsbeard/ai-claude-skills-collection/blob/main/content/pitch-deck/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/merllinsbeard/ai-claude-skills-collection/blob/main/content/pitch-deck/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

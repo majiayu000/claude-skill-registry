@@ -1,0 +1,16 @@
+{
+  "name": "odoo",
+  "repo": "jgtolentino/insightpulse-odoo",
+  "path": "docs/claude-code-skills/odoo/SKILL.md",
+  "source": "github.com/jgtolentino/insightpulse-odoo",
+  "downloaded_at": "2026-02-01T01:33:57.400741Z",
+  "dir_name": "odoo",
+  "category": "devops",
+  "author": "jgtolentino",
+  "source_url": "https://github.com/jgtolentino/insightpulse-odoo/blob/main/docs/claude-code-skills/odoo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jgtolentino/insightpulse-odoo/blob/main/docs/claude-code-skills/odoo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

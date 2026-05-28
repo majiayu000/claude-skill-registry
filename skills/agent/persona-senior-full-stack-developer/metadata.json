@@ -1,0 +1,16 @@
+{
+  "name": "persona-senior-full-stack-developer",
+  "repo": "oimiragieo/agent-studio",
+  "path": ".claude/skills/persona-senior-full-stack-developer/SKILL.md",
+  "source": "github.com/oimiragieo/agent-studio",
+  "downloaded_at": "2026-02-02T04:36:34.183417Z",
+  "dir_name": "persona-senior-full-stack-developer",
+  "category": "agent",
+  "author": "oimiragieo",
+  "source_url": "https://github.com/oimiragieo/agent-studio/blob/main/.claude/skills/persona-senior-full-stack-developer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oimiragieo/agent-studio/blob/main/.claude/skills/persona-senior-full-stack-developer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

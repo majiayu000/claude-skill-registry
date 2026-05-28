@@ -1,0 +1,20 @@
+{
+  "name": "luminor-wisdom",
+  "description": "Open source agents, skills, and lore for AI-powered creative work. Transform your AI assistant into a creative companion.",
+  "repo": "frankxai/arcanea",
+  "category": "creative",
+  "tags": [],
+  "stars": 1,
+  "source": "",
+  "github_path": ".claude/skills/arcanea/luminor-wisdom",
+  "github_branch": "main",
+  "dir_name": "luminor-wisdom",
+  "downloaded_at": "2026-02-05T01:45:33.004558Z",
+  "author": "frankxai",
+  "source_url": "https://github.com/frankxai/arcanea/blob/main/.claude/skills/arcanea/luminor-wisdom/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2026 FrankX",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

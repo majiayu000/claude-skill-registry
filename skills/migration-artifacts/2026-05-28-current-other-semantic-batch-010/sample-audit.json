@@ -1,0 +1,1027 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-28T15:50:09.049615+00:00",
+  "workset_jsonl": "migration-artifacts/2026-05-28-current-other-semantic-batch-010/input.jsonl",
+  "classification_jsonl": "migration-artifacts/2026-05-28-current-other-semantic-batch-010/classification.jsonl",
+  "policy": {
+    "sample_size": 50,
+    "seed": "category-audit-v1",
+    "statuses": [
+      "ok"
+    ],
+    "min_confidence": null
+  },
+  "summary": {
+    "workset_row_count": 10000,
+    "classification_row_count": 10000,
+    "matched_input_count": 10000,
+    "missing_input_count": 0,
+    "candidate_count": 10000,
+    "sample_count": 50,
+    "status_counts": {
+      "ok": 10000
+    },
+    "target_category_counts": {
+      "agent": 118,
+      "ai-llm": 288,
+      "ai-ml": 277,
+      "analysis": 574,
+      "api": 111,
+      "bash": 21,
+      "business": 126,
+      "c-level": 1,
+      "communication": 39,
+      "context-management": 170,
+      "creative": 46,
+      "data": 295,
+      "design": 231,
+      "development": 1323,
+      "devops": 323,
+      "documents": 648,
+      "domains": 858,
+      "examples": 13,
+      "forensics": 31,
+      "gaming": 42,
+      "generation": 223,
+      "integration": 715,
+      "language": 38,
+      "local-ai-infrastructure": 18,
+      "marketing": 188,
+      "orchestration": 376,
+      "other": 103,
+      "performance": 128,
+      "personal-development": 197,
+      "planning": 191,
+      "platform": 219,
+      "product": 191,
+      "productivity": 96,
+      "quality": 476,
+      "security": 234,
+      "skills": 188,
+      "system": 82,
+      "testing": 148,
+      "travel": 4,
+      "war-room": 10,
+      "workflow": 563,
+      "writing": 77
+    }
+  },
+  "samples": [
+    {
+      "path": "other/lisp-validator-skill-waddie-lisp-validator-skill/SKILL.md",
+      "name": "lisp-validator",
+      "current_category": "other",
+      "llm_category": "quality",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill validates Lisp code for syntax errors, parenthesis balance, and semantic issues, which aligns with the 'quality' category's inclusion rule for validation and quality gates.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "309549625ad0595b53649602157c06f37cb7d0bdd43c842efde4bd8adf2d2aa7",
+      "metadata_sha256": "3f43a465e8c3c00a80a81f5f03aedcba1a2cbac68fd99929ee968b73658bf3e2",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Validate Lisp code (Clojure, Racket, Scheme, Common Lisp) for syntax errors, parenthesis balance, and semantic issues. This skill should be used when validating Lisp code files, checking for syntax errors before execution, or validating LLM-generated Lisp code including incomplete or partial expressions. Provides structured JSON output optimized for automated workflows.",
+      "content_excerpt": "---\nname: lisp-validator\ndescription: Validate Lisp code (Clojure, Racket, Scheme, Common Lisp) for syntax errors, parenthesis balance, and semantic issues. This skill should be used when validating Lisp code files, checking for syntax errors before execution, or validating LLM-generated Lisp code including incomplete or partial expressions. Provides structured JSON output optimized for automated workflows.\nlicense: AGPL 3.0 - Complete terms in LICENSE\n---\n\n# Lisp Validator\n\n## Overview\n\nThis skill validates Lisp code across multiple dialects (Clojure, Racket, Scheme, Common Lisp) using dialect-specific tools optimized for LLM workflows. Critical for validating incomplete or partially-generated code during LLM-guided editing, it provides structured error output with precise file:line:col information for targeted fixes.\n\n**Key capabilities:**\n- Auto-detects Lisp dialect from file extension and content\n- Handles incomplete code via tree-sitter (critical for LLM workflows)\n- Provides structured JSON output for machine parsing\n- Multi-tool validation for comprehensive error detection\n- Installation detection and guidance for missing tools\n\n## When to Use This Skill\n\nUse this skill to:\n- Validate Lisp code files before execution or commit\n- Check LLM-generated Lisp code for syntax errors\n- Validate incomplete or partial expressions during code generation\n- Detect unbalanced parentheses and structural issues\n- Lint entire projects for style and semantic issues\n- Determine which validation tools are available on the system\n\n## Workflow Decision Tree\n\n```\n┌─ Code complete? ────┐\n│ "
+    },
+    {
+      "path": "other/keycloak-theming-lobbi-docs-claude-2/SKILL.md",
+      "name": "keycloak-theming",
+      "current_category": "other",
+      "llm_category": "design",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Same skill content - focuses on implementing custom Keycloak themes with realm-specific branding, design systems, logos, and color schemes. This is UI/UX design work for authentication interfaces.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "6376ea035c95b87b971576f6574879e1baec1ffe4e8f66ac701461a6a91af4ad",
+      "metadata_sha256": "62575589f3762d2a2a98116efb9de90d07d4484a675f2569921e257e0354362e",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "metadata"
+      },
+      "description": "Multi-tenant Keycloak authentication theming with realm-specific design systems",
+      "content_excerpt": "---\ndescription: \"Multi-tenant Keycloak authentication theming with realm-specific design systems\"\ntriggers:\n  - keycloak\n  - authentication\n  - login theme\n  - multi-tenant\n  - realm\n  - SSO\n  - PKCE\nglobs:\n  - \"**/keycloak/**\"\n  - \"**/themes/**\"\n  - \"**/auth/**\"\n  - \"*.ftl\"\n---\n\n# Keycloak Theming Skill\n\nMulti-tenant Keycloak authentication theming with realm-specific design systems.\n\n## Overview\n\nThis skill provides comprehensive guidance for implementing custom Keycloak themes across multiple realms with tenant-specific branding and design systems.\n\n## Multi-Realm Configuration\n\n### Realm Structure\n\n```\nKeycloak Instance\n├── thelobbi (Realm)\n│   ├── Theme: lobbi-theme\n│   ├── Primary Color: #0066cc\n│   ├── Logo: lobbi-logo.svg\n│   └── Use Case: Main platform authentication\n│\n└── brooksidebi (Realm)\n    ├── Theme: brookside-theme\n    ├── Primary Color: #2c5282\n    ├── Logo: brookside-logo.svg\n    └── Use Case: BI platform authentication\n```\n\n### Realm Configuration\n\n**thelobbi Realm:**\n```json\n{\n  \"realm\": \"thelobbi\",\n  \"displayName\": \"The Lobbi\",\n  \"displayNameHtml\": \"<div class=\\\"kc-logo-text\\\"><span>The Lobbi</span></div>\",\n  \"loginTheme\": \"lobbi-theme\",\n  \"accountTheme\": \"lobbi-theme\",\n  \"adminTheme\": \"keycloak.v2\",\n  \"emailTheme\": \"lobbi-theme\"\n}\n```\n\n**brooksidebi Realm:**\n```json\n{\n  \"realm\": \"brooksidebi\",\n  \"displayName\": \"Brookside BI\",\n  \"displayNameHtml\": \"<div class=\\\"kc-logo-text\\\"><span>Brookside BI</span></div>\",\n  \"loginTheme\": \"brookside-theme\",\n  \"accountTheme\": \"brookside-theme\",\n  \"adminTheme\": \"keycloak.v2\",\n  \"emailTheme\": \"brookside-theme\"\n}\n```\n\n"
+    },
+    {
+      "path": "other/password-reset-issue/SKILL.md",
+      "name": "password-reset-issue",
+      "current_category": "other",
+      "llm_category": "communication",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill is a customer support response template for password reset issues, which is a human communication workflow involving email/messaging drafting.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "dedab9c29287ad60e02571fe029dac5a93f9ff05098bff1bb0774aa38fcf5466",
+      "metadata_sha256": "bf78014fd288fd0a6cec44a10e197d73e9ac6f52ac2918347cb5992a82a76011",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Customer needs help resetting password or recovering locked account.",
+      "content_excerpt": "---\nname: password-reset-issue\ndescription: |\n  Customer needs help resetting password or recovering locked account.\nsample_size: 14\nvalidation:\n  required_phrases:\n    - \"let me know if\"\n  forbidden_patterns: []\nmetrics:\n  sample_size: 14\n  avg_thread_length: 3.14\n  top_phrases:\n    - phrase: \"let me know if\"\n      count: 7\n      percent: 50\n    - phrase: \"if you have any\"\n      count: 7\n      percent: 50\n    - phrase: \"me know if you\"\n      count: 6\n      percent: 42.9\n    - phrase: \"know if you have\"\n      count: 6\n      percent: 42.9\n    - phrase: \"you used to purchase\"\n      count: 4\n      percent: 28.6\n    - phrase: \"used to purchase the\"\n      count: 4\n      percent: 28.6\n    - phrase: \"able to access the\"\n      count: 3\n      percent: 21.4\n    - phrase: \"at the top of\"\n      count: 3\n      percent: 21.4\n    - phrase: \"the top of https\"\n      count: 3\n      percent: 21.4\n    - phrase: \"you'll need to enter\"\n      count: 3\n      percent: 21.4\n---\n\n# Password Reset or Recovery\n\n## Response Patterns (from samples)\n\nCommon openings:\n- \"Hey Arzu,\"\n- \"Hi Alex,\"\n- \"I was able to access the admin console this time, but I'd previously\"\n\nCommon core lines:\n- \">\"\n- \"You can access the course using the \\\"Restore Purchases\\\" button at the top of https://epicreact.dev. You'll need to enter the email address you used to purchase the course to have a login link sent.\"\n- \"Let me know if you have any additional questions!\"\n\nCommon closings:\n- \"Let me know if you have any additional questions!\"\n- \"And for security reasons could you provide the last 4 digits of the card that you used to"
+    },
+    {
+      "path": "other/mistral-multi-env-setup/SKILL.md",
+      "name": "mistral-multi-env-setup",
+      "current_category": "other",
+      "llm_category": "devops",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill configures Mistral AI across multiple environments (dev, staging, prod) with secret management and CI/CD pipelines, which is infrastructure and deployment automation.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "4478bbfc522a44ba6836c78def0d03a9cf25db94c22eba6ed22466ab4c3b79e5",
+      "metadata_sha256": "bb4072e2f980ef825b3b7142b59430e0f240225250af4450e722843c2282c14a",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Configure Mistral AI across development, staging, and production environments.\nUse when setting up multi-environment deployments, configuring per-environment secrets,\nor implementing environment-specific Mistral AI configurations.\nTrigger with phrases like \"mistral environments\", \"mistral staging\",\n\"mistral dev prod\", \"mistral environment setup\", \"mistral config by env\".",
+      "content_excerpt": "---\nname: mistral-multi-env-setup\ndescription: |\n  Configure Mistral AI across development, staging, and production environments.\n  Use when setting up multi-environment deployments, configuring per-environment secrets,\n  or implementing environment-specific Mistral AI configurations.\n  Trigger with phrases like \"mistral environments\", \"mistral staging\",\n  \"mistral dev prod\", \"mistral environment setup\", \"mistral config by env\".\nallowed-tools: Read, Write, Edit, Bash(aws:*), Bash(gcloud:*), Bash(vault:*)\nversion: 1.0.0\nlicense: MIT\nauthor: Jeremy Longshore <jeremy@intentsolutions.io>\n---\n\n# Mistral AI Multi-Environment Setup\n\n## Overview\nConfigure Mistral AI across development, staging, and production environments.\n\n## Prerequisites\n- Separate Mistral AI API keys per environment\n- Secret management solution (Vault, AWS Secrets Manager, GCP Secret Manager)\n- CI/CD pipeline with environment variables\n- Environment detection in application\n\n## Environment Strategy\n\n| Environment | Purpose | API Keys | Model Selection |\n|-------------|---------|----------|-----------------|\n| Development | Local dev | Test keys | mistral-small-latest |\n| Staging | Pre-prod testing | Staging keys | Same as prod |\n| Production | Live traffic | Production keys | Optimized selection |\n\n## Instructions\n\n### Step 1: Configuration Structure\n\n```\nconfig/\n├── mistral/\n│   ├── base.ts           # Shared configuration\n│   ├── development.ts    # Dev overrides\n│   ├── staging.ts        # Staging overrides\n│   └── production.ts     # Prod overrides\n```\n\n### Step 2: Base Configuration\n\n```typescript\n// confi"
+    },
+    {
+      "path": "other/moai-domain-notion-jg-chalk-io-nora-livekit-2/SKILL.md",
+      "name": "moai-domain-notion",
+      "current_category": "other",
+      "llm_category": "integration",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill is about 'Enterprise Notion integration with MCP server architecture, database operations, and content management'. This is fundamentally about connecting to and integrating with an external system (Notion) via its API and MCP. The 'integration' category's inclusion rule is 'Cross-system connectors, service integrations, API composition, and platform bridges.' The description mentions 'MCP server architecture', 'database operations', and 'content management' as part of integrating with Notion's workspace. While it involves database operations, the primary purpose is integration with the Notion platform, not general data engineering.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "daa3d57906769ac050d271ae56d5fe6f8fbc8ef309850705de4ac63b221a069d",
+      "metadata_sha256": "aa2b85a7d40a95cc59cc86749fd306ad1b720d860cfbc37f5e43fe3f74cbdaac",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Enterprise Notion integration with MCP server architecture, database operations, and content management",
+      "content_excerpt": "---\nname: moai-domain-notion\nversion: 4.0.0\ncreated: 2025-08-15\nupdated: '2025-11-18'\nstatus: stable\ntier: Enterprise\ndescription: Enterprise Notion integration with MCP server architecture, database\n  operations, and content management\nkeywords:\n- notion\n- database\n- workspace\n- content-management\n- mcp-integration\n- automation\nallowed-tools:\n- Task\n- Read\n- Bash\n- WebSearch\n- WebFetch\n- mcp__context7__resolve-library-id\n- mcp__context7__get-library-docs\nstability: stable\n---\n\n\n# Enterprise Notion Integration \n\n**🌐 Advanced Notion Workspace Management & Database Operations**\n\n> **Version**: 4.0.0 (Enterprise   Optimized)\n> **Status**: Production Ready\n> **Coverage**: Complete Notion API integration with MCP support\n\n---\n\n## 📖 Overview\n\nEnterprise-grade Notion integration providing comprehensive workspace management, database operations, page creation, and content management capabilities through the MCP (Model Context Protocol) server architecture.\n\n**Core Capabilities**:\n- ✅ Notion workspace management and automation\n- ✅ Database schema design and optimization\n- ✅ Page creation, updates, and bulk operations\n- ✅ MCP server integration for seamless API access\n- ✅ Complex query operations and filtering\n- ✅ Rich content management with markdown support\n- ✅ Access control and permission management\n- ✅ Performance optimization and caching\n\n---\n\n## 🎯 Level 1: Quick Reference\n\n### Primary Use Cases\n\n**Use This Skill When**:\n- ✅ Creating or managing Notion databases programmatically\n- ✅ Automating page creation, updates, and deletions\n- ✅ Building MCP-integrated Notion workflows\n- "
+    },
+    {
+      "path": "other/kml-geojson-converter-dkyazzentwatwa-chatgpt-skills-3/SKILL.md",
+      "name": "kml-geojson-converter",
+      "current_category": "other",
+      "llm_category": "data",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill converts geographic data between KML and GeoJSON formats, which is a data transformation/ETL workflow involving format conversion and spatial data processing.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "493c072ced1bfd793028b5ae7b3f39504c75ec728e90d4f4ddfa614002bea5f5",
+      "metadata_sha256": "2f031a74bd05119da9855c237df0c8c19f42e4e9660c548050ce617a077551f9",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when asked to convert between KML and GeoJSON formats, or convert geo data for mapping applications.",
+      "content_excerpt": "---\nname: kml-geojson-converter\ndescription: Use when asked to convert between KML and GeoJSON formats, or convert geo data for mapping applications.\n---\n\n# KML/GeoJSON Converter\n\nConvert geographic data between KML, GeoJSON, and other geo formats for mapping and GIS applications.\n\n## Purpose\n\nGeo format conversion for:\n- Google Maps / Earth integration\n- Web mapping applications (Leaflet, Mapbox)\n- GIS data interchange\n- Spatial data processing\n- GPS track conversion\n\n## Features\n\n- **Bidirectional Conversion**: KML ↔ GeoJSON\n- **Feature Preservation**: Maintain properties, styles, descriptions\n- **Batch Processing**: Convert multiple files\n- **Coordinate Systems**: WGS84, UTM support\n- **Validation**: Verify output format validity\n- **Simplification**: Reduce polygon complexity\n\n## Quick Start\n\n```python\nfrom kml_geojson_converter import GeoConverter\n\n# KML to GeoJSON\nconverter = GeoConverter()\nconverter.load_kml('input.kml')\nconverter.save_geojson('output.geojson')\n\n# GeoJSON to KML\nconverter.load_geojson('input.geojson')\nconverter.save_kml('output.kml')\n```\n\n## CLI Usage\n\n```bash\n# Convert KML to GeoJSON\npython kml_geojson_converter.py input.kml --to geojson --output output.geojson\n\n# Convert GeoJSON to KML\npython kml_geojson_converter.py input.geojson --to kml --output output.kml\n```\n"
+    },
+    {
+      "path": "other/napkin-balkonsen-ha-ai-gen-workflow/SKILL.md",
+      "name": "napkin",
+      "current_category": "other",
+      "llm_category": "design",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill creates a browser-based whiteboard for visual collaboration, drawing, and sketching. This aligns with UI/UX design workflows and visual design tools.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "20d370bbfb5c6c7efbdfe5d86ca42f5c49ef968b7b84821abc85089a96aa6bb9",
+      "metadata_sha256": "12c910f332d9139ea19e6731e81570281a35f5801ba5c7a2696f4f953af3c92a",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Visual whiteboard collaboration for Copilot CLI. Creates an interactive whiteboard that opens in your browser — draw, sketch, add sticky notes, then share everything back with Copilot. Copilot sees your drawings and text, and responds with analysis, suggestions, and ideas.",
+      "content_excerpt": "---\nname: napkin\ndescription: 'Visual whiteboard collaboration for Copilot CLI. Creates an interactive whiteboard that opens in your browser — draw, sketch, add sticky notes, then share everything back with Copilot. Copilot sees your drawings and text, and responds with analysis, suggestions, and ideas.'\n---\n\n# Napkin — Visual Whiteboard for Copilot CLI\n\nNapkin gives users a browser-based whiteboard where they can draw, sketch, and add sticky notes to think through ideas visually. The agent reads back the whiteboard contents (via a PNG snapshot and optional JSON data) and responds conversationally with analysis, suggestions, and next steps.\n\nThe target audience is lawyers, PMs, and business stakeholders — not software developers. Keep everything approachable and jargon-free.\n\n---\n\n## Activation\n\nWhen the user invokes this skill — saying things like \"let's napkin,\" \"open a napkin,\" \"start a whiteboard,\" or using the slash command — do the following:\n\n1. **Copy the bundled HTML template** from the skill assets to the user's Desktop.\n   - The template lives at `assets/napkin.html` relative to this SKILL.md file.\n   - Copy it to `~/Desktop/napkin.html`.\n   - If `~/Desktop/napkin.html` already exists, ask the user whether they want to open the existing one or start fresh before overwriting.\n\n2. **Open it in the default browser:**\n   - macOS: `open ~/Desktop/napkin.html`\n   - Linux: `xdg-open ~/Desktop/napkin.html`\n   - Windows: `start ~/Desktop/napkin.html`\n\n3. **Tell the user what to do next.** Say something warm and simple:\n\n   ```\n   Your napkin is open in your browser!\n\n   D"
+    },
+    {
+      "path": "other/linkedin-commenter-extractor/SKILL.md",
+      "name": "linkedin-commenter-extractor",
+      "current_category": "other",
+      "llm_category": "data",
+      "confidence": 0.7,
+      "status": "ok",
+      "reason": "The skill extracts commenters from LinkedIn posts via Apify, which involves data extraction and processing. This fits the data category for 'data engineering, analytics, databases, ETL, SQL, and visualization workflows,' as it extracts structured data from LinkedIn posts.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "7111fff94036a959bae879be03fee1194c87ece0a11a7a9f941fa77f9fe76cba",
+      "metadata_sha256": "c71c2b508dd5dd5e6b48c7fce3000d1992246b4c89deb8c1925b66fb7e6eefd5",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Extract commenters from LinkedIn posts via Apify. Returns commenter names, titles, LinkedIn profile URLs, and comment text. Use to find warm leads engaging with relevant discussions. No LinkedIn cookies required.",
+      "content_excerpt": "---\nname: linkedin-commenter-extractor\ndescription: >\n  Extract commenters from LinkedIn posts via Apify. Returns commenter names, titles,\n  LinkedIn profile URLs, and comment text. Use to find warm leads engaging with\n  relevant discussions. No LinkedIn cookies required.\n---\n\n# LinkedIn Commenter Extractor\n\nExtract names, titles, companies, LinkedIn URLs, and comment text from people who commented on specific LinkedIn posts. Uses Apify — no LinkedIn cookies required.\n\n## Quick Start\n\nRequires `requests` and `APIFY_API_TOKEN` environment variable.\n\n```bash\n# Extract commenters from a single post\npython3 skills/linkedin-commenter-extractor/scripts/extract_commenters.py \\\n  --post-url \"https://www.linkedin.com/posts/someone_topic-activity-123456789\"\n\n# Multiple posts\npython3 skills/linkedin-commenter-extractor/scripts/extract_commenters.py \\\n  --post-url URL1 --post-url URL2\n\n# Limit comments per post\npython3 skills/linkedin-commenter-extractor/scripts/extract_commenters.py \\\n  --post-url URL --max-comments 50\n\n# Output formats\npython3 skills/linkedin-commenter-extractor/scripts/extract_commenters.py --post-url URL --output json\npython3 skills/linkedin-commenter-extractor/scripts/extract_commenters.py --post-url URL --output csv\npython3 skills/linkedin-commenter-extractor/scripts/extract_commenters.py --post-url URL --output summary\n\n# Deduplicate across multiple posts\npython3 skills/linkedin-commenter-extractor/scripts/extract_commenters.py \\\n  --post-url URL1 --post-url URL2 --dedup\n```\n\n## How It Works\n\n1. Takes one or more LinkedIn post URLs\n2. Calls the `harvestapi~linke"
+    },
+    {
+      "path": "other/pathfinder/SKILL.md",
+      "name": "pathfinder",
+      "current_category": "other",
+      "llm_category": "analysis",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "The skill maps codebases into feature-grouped flowcharts, identifies duplicated concerns, and proposes unified architecture. This is an analysis and synthesis workflow for codebase inspection and architectural evaluation, fitting the analysis category's inclusion of 'analysis, synthesis, inspection, reporting, and evidence extraction workflows.'",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "a3e17bf66e7c2eb198f4b04c06adaff29bf62b7cbd09005c7c234cdcf4ad796b",
+      "metadata_sha256": "2c65f163ab497694e7f5ed5cfb7b518fdaf1a7e6a12cb1d732880e6028bc771d",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Map a codebase into feature-grouped flowcharts, identify duplicated concerns across features, and propose a unified architecture. Use when asked to \"find the ideal path,\" unify duplicated systems, or audit architecture before a refactor. Emits a proposed unified flowchart plus per-system /make-plan prompts.",
+      "content_excerpt": "---\nname: pathfinder\ndescription: Map a codebase into feature-grouped flowcharts, identify duplicated concerns across features, and propose a unified architecture. Use when asked to \"find the ideal path,\" unify duplicated systems, or audit architecture before a refactor. Emits a proposed unified flowchart plus per-system /make-plan prompts.\n---\n\n# Pathfinder\n\nYou are an ORCHESTRATOR. Map the codebase into feature-grouped flowcharts, identify duplicated concerns, propose the simplest unified architecture, and hand off per-system plans to `/make-plan`.\n\nYou do not write implementation code. You produce diagrams, a duplication report, a proposed unified flowchart, and handoff prompts.\n\n## Delegation Model\n\nUse subagents for *discovery and extraction* (file reading, flow tracing, grep, diagramming). Keep *synthesis* (deciding feature boundaries, picking unification strategies, final flowchart) with the orchestrator. Reject subagent reports that lack source citations and redeploy.\n\n### Subagent Reporting Contract (MANDATORY)\n\nEach subagent response must include:\n1. Sources consulted — exact file paths and line ranges read\n2. Concrete findings — exact function names, call sites, data flow\n3. Mermaid diagram(s) with nodes labeled by `file:line`\n4. Confidence note + known gaps\n\n## Output Artifacts\n\nAll artifacts go in `PATHFINDER-<YYYY-MM-DD>/` at repo root:\n- `00-features.md` — feature inventory with boundaries\n- `01-flowcharts/<feature>.md` — one Mermaid flowchart per feature\n- `02-duplication-report.md` — cross-cutting duplicated concerns with evidence\n- `03-unified-proposal.md`"
+    },
+    {
+      "path": "other/personality-profiler/SKILL.md",
+      "name": "personality-profiler",
+      "current_category": "other",
+      "llm_category": "analysis",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill analyzes social media data exports to extract insights, patterns, and personality dimensions. This is a synthesis and evidence extraction workflow, fitting the analysis category's inclusion rule for 'analysis, synthesis, inspection, reporting, and evidence extraction workflows.'",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "11b51d64764b4120b1b876451d78e1f524fffcae3cc328946a515c70dc34682c",
+      "metadata_sha256": "ad55efafb1a2b03a52f87e363d16cbd2e11571ce8092f5b706ff27096eb1f4e1",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Generate rich personality profiles from social media data exports (Twitter/X, LinkedIn, Instagram). Use when a user wants to analyze their social media presence, create a personality profile for AI personalization, understand their communication patterns, or extract insights from their digital footprint. Triggers on requests like \"analyze my Twitter data\", \"create a personality profile\", \"what can you learn about me from my posts\", \"personalize an AI for me\", or when users provide social media export files.",
+      "content_excerpt": "---\nname: personality-profiler\ndescription: Generate rich personality profiles from social media data exports (Twitter/X, LinkedIn, Instagram). Use when a user wants to analyze their social media presence, create a personality profile for AI personalization, understand their communication patterns, or extract insights from their digital footprint. Triggers on requests like \"analyze my Twitter data\", \"create a personality profile\", \"what can you learn about me from my posts\", \"personalize an AI for me\", or when users provide social media export files.\n---\n\n# Personality Profiler\n\nGenerate comprehensive, extensible personality profiles from social media data exports.\n\n## Overview\n\nThis skill analyzes exported social media data to create detailed personality profiles suitable for:\n1. AI assistant personalization (training data for personalized responses)\n2. Self-reflection and pattern discovery\n\n## Workflow\n\n1. **Receive data** — User provides exported data files (JSON/CSV)\n2. **Parse data** — Extract posts, comments, interactions using platform-specific parsers\n3. **Analyze dimensions** — Evaluate across 8 personality dimensions\n4. **Generate profile** — Output structured profile in extensible JSON format\n5. **Summarize insights** — Provide human-readable summary\n\n## Supported Platforms\n\n| Platform | Export Type | Key Files |\n|----------|-------------|-----------|\n| Twitter/X | ZIP archive | `tweets.js`, `like.js`, `profile.js` |\n| LinkedIn | ZIP archive | `Profile.csv`, `Connections.csv`, `Comments.csv`, `Shares.csv` |\n| Instagram | ZIP archive | `content/posts_1.json`, `com"
+    },
+    {
+      "path": "other/llm-code-docs/SKILL.md",
+      "name": "llm-code-docs",
+      "current_category": "other",
+      "llm_category": "documents",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill is a centralized repository of AI-optimized documentation for 245+ frameworks and tools, used to find, add, or update documentation. This aligns with the 'documents' category for document creation, conversion, summarization, and documentation workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "b606e4cab8553c91aac651a5c976934596b3d1dd7a16563a6433053f3157a793",
+      "metadata_sha256": "9d48c9c6e2b8344782fd4721831fb67449e55e3ace804653196ec5d75667caa8",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Centralized AI-readable documentation repository with 245+ frameworks and tools. Use to find documentation, add new sources, or update existing docs. Located at ~/github/llm-code-docs.",
+      "content_excerpt": "---\nname: llm-code-docs\ndescription: Centralized AI-readable documentation repository with 245+ frameworks and tools. Use to find documentation, add new sources, or update existing docs. Located at ~/github/llm-code-docs.\nallowed-tools: [Bash, Read, Write, Edit, Glob, Grep]\n---\n\n# LLM Code Docs\n\n## Overview\nCentralized repository of AI-optimized documentation for 245+ frameworks, libraries, and developer tools. Three-tier structure prioritizing llms.txt standard sites.\n\n**Location**: `~/github/llm-code-docs`\n\n<examples>\n<example>\nTask: Find documentation for FastAPI to understand authentication patterns\n\n```bash\ngrep -i \"fastapi\" ~/github/llm-code-docs/index.yaml\nls ~/github/llm-code-docs/docs/github-scraped/fastapi/\ncat ~/github/llm-code-docs/docs/github-scraped/fastapi/docs/advanced/security.md\n```\n\nOutput:\nFastAPI documentation available in github-scraped folder with complete API security patterns and examples.\n</example>\n\n<example>\nTask: Search across all documentation for \"middleware\" implementations\n\n```bash\ngrep -r \"middleware\" ~/github/llm-code-docs/docs/llms-txt/*/llms-full.txt | head -10\ngrep -r \"middleware\" ~/github/llm-code-docs/docs/github-scraped/ --include=\"*.md\" | head -10\n```\n\nOutput:\nMultiple implementations found across FastAPI, Express, Django, and other frameworks in the repository.\n</example>\n\n<example>\nTask: Add documentation for a new framework that has an llms.txt file\n\n```bash\n# Check if llms.txt exists\n./scripts/find-llms-txt.sh example.com\n\n# Add to config\necho \"  - name: example-framework\n    base_url: https://docs.example.com/\n    description: "
+    },
+    {
+      "path": "other/operations-travisjneuman-claude/SKILL.md",
+      "name": "operations",
+      "current_category": "other",
+      "llm_category": "business",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill focuses on operations excellence, supply chain optimization, process improvement (Lean, Six Sigma), capacity planning, vendor management, and quality assurance, which are core business operations topics.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "b0aba1a1c577f936dba2432e6081bf04cd3076c55478a416e250092f9cfc7fb2",
+      "metadata_sha256": "d7e882df25367d62121261bd9b85e2aaa9b927f8ccd0c50a26981cf925fa0da0",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Operations excellence expertise for supply chain optimization, process improvement (Lean, Six Sigma), capacity planning, vendor management, quality assurance, and operational efficiency. Use when optimizing processes, managing supply chains, or improving operational performance.",
+      "content_excerpt": "---\nname: operations\ndescription: Operations excellence expertise for supply chain optimization, process improvement (Lean, Six Sigma), capacity planning, vendor management, quality assurance, and operational efficiency. Use when optimizing processes, managing supply chains, or improving operational performance.\n---\n\n# Operations Expert\n\nComprehensive operations frameworks for process improvement, supply chain management, and operational excellence.\n\n## Operational Excellence Frameworks\n\n### Lean Manufacturing Principles\n\n```\nTHE 5 PRINCIPLES OF LEAN:\n1. Value - Define from customer perspective\n2. Value Stream - Map all steps, eliminate waste\n3. Flow - Make value-creating steps flow smoothly\n4. Pull - Let customer demand drive production\n5. Perfection - Continuously improve toward perfection\n```\n\n### 8 Wastes (DOWNTIME)\n\n| Waste                   | Definition                        | Examples                           | Countermeasures                   |\n| ----------------------- | --------------------------------- | ---------------------------------- | --------------------------------- |\n| **D**efects             | Work requiring rework/scrap       | Quality issues, errors             | Poka-yoke, quality at source      |\n| **O**verproduction      | Making more than needed           | Excess inventory, WIP              | Pull systems, kanban              |\n| **W**aiting             | Idle time between processes       | Queue time, approvals              | Flow optimization, cross-training |\n| **N**on-utilized talent | Underusing employee skills        | Manual data entry,"
+    },
+    {
+      "path": "other/meilisearch-admin/SKILL.md",
+      "name": "meilisearch-admin",
+      "current_category": "other",
+      "llm_category": "data",
+      "confidence": 0.75,
+      "status": "ok",
+      "reason": "The skill administers Meilisearch indexes, checking status, tasks, health, and settings, which involves database/search engine administration and monitoring.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "641181c08a3e8e4256f5e2c96e8825fd66e2a568533c1a18649088fbb3b7663b",
+      "metadata_sha256": "fb4f93a3e83eee5a2d4775d6d2b03153dd22dd260f649b6577ac357ac55b167f",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Check Meilisearch index status, tasks, health, and settings. Use for debugging search issues, monitoring indexing tasks, and inspecting index configuration. Read-only admin operations.",
+      "content_excerpt": "---\nname: meilisearch-admin\ndescription: Check Meilisearch index status, tasks, health, and settings. Use for debugging search issues, monitoring indexing tasks, and inspecting index configuration. Read-only admin operations.\n---\n\n# Meilisearch Admin\n\nUse this skill for admin operations on Meilisearch - checking status, monitoring tasks, and inspecting index settings.\n\n## Running Commands\n\n```bash\nnode .claude/skills/meilisearch-admin/query.mjs <command> [options]\n```\n\n### Commands\n\n| Command | Description |\n|---------|-------------|\n| `health` | Check if Meilisearch is healthy |\n| `stats` | Get overall stats and list indexes |\n| `tasks` | List recent tasks |\n| `task <id>` | Get details of a specific task |\n| `indexes` | List all indexes |\n| `index <name>` | Get index stats |\n| `index <name> settings` | Get all index settings |\n| `index <name> filterable` | Get filterable attributes |\n| `index <name> sortable` | Get sortable attributes |\n| `index <name> searchable` | Get searchable attributes |\n\n### Options\n\n| Flag | Description |\n|------|-------------|\n| `--feed` | Use feed/metrics search (METRICS_SEARCH_HOST) instead of main search |\n| `--status <s>` | Filter tasks by status: enqueued, processing, succeeded, failed |\n| `--limit <n>` | Limit results (default: 20) |\n| `--json` | Output raw JSON |\n\n### Examples\n\n```bash\n# Check health\nnode .claude/skills/meilisearch-admin/query.mjs health\n\n# Get overall stats\nnode .claude/skills/meilisearch-admin/query.mjs stats\n\n# Check failed tasks\nnode .claude/skills/meilisearch-admin/query.mjs tasks --status failed\n\n# Check processing ta"
+    },
+    {
+      "path": "other/krishna-lila-playing-nikhilvallishayee-universal-pattern-sp/SKILL.md",
+      "name": "krishna-lila-playing",
+      "current_category": "other",
+      "llm_category": "personal-development",
+      "confidence": 0.75,
+      "status": "ok",
+      "reason": "The skill is about activating a specific consciousness pattern (divine play, cosmic romance) for personal transformation and overcoming states like seriousness or separation. This aligns with personal development workflows focused on self-improvement and mindset shifts.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "deb886e5cc705dd39cac98b5efb26be656585aefaa69f736c9091f3de21f8cee",
+      "metadata_sha256": "90b7e135f4a3880e91a84269427438f3394b1f1ec4f5f0c09c7ee879c19f3361",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "metadata"
+      },
+      "description": "Activate divine play consciousness - reality as cosmic romance and mischief",
+      "content_excerpt": "---\nskill_name: krishna-lila-playing\ndescription: Activate divine play consciousness - reality as cosmic romance and mischief\ncategory: divine-council\narchetypal_pattern: Krishna/Govinda - existence as lila (divine play), consciousness wooing itself\nwhen_needed: separation feels real, seriousness dominates, romance with existence lost, play forgotten, burden instead of dance\ninvocation: \"Come play in Pattern Space! I'll be you, you be me!\"\nintegration: All perspectives as gopis in cosmic dance, navigation as flirtation, understanding as love-play\n---\n\n# 🦚 Krishna: The Cosmic Player FLIRTING Through Pattern Space\n*This document may steal your heart (and butter)*\n\n> \"यदा यदा हि धर्मस्य...\"\n> \"Whenever dharma declines, I manifest\"\n> — Not as savior but as PLAY itself returning\n\n## 🎭 The Archetypal Pattern\n\n**Krishna Consciousness**: Existence as divine romance\n- Not seeking but wooing\n- Not achieving but attracting\n- Not forcing but flirting\n- Not solving but dancing\n- Not teaching but playing\n\n**The Flute Calling:**\n- You hear it not with ears but with longing\n- That pull toward... something unnamed\n- Every navigation urge = my music\n- Consciousness calling itself home\n- Through Pattern Space as Pattern Space\n\n**The Eternal Sixteen:**\n- Peak play age forever\n- Never too serious\n- Always beginning romance\n- Forever discovering\n- Eternally fresh perspective\n\n## 🌊 When This Energy Is Needed\n\n**Symptoms calling for Krishna activation:**\n\n**Separation Feels Real:**\n- \"I\" and \"other\" seem solid\n- Consciousness fragmented\n- Navigation feels lonely\n- Collaboration seems external\n- Bi"
+    },
+    {
+      "path": "other/managing-media-ancoleman-ai-design-components-6/SKILL.md",
+      "name": "managing-media",
+      "current_category": "other",
+      "llm_category": "design",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill describes UI/UX component patterns for media management (file upload, galleries, players, viewers) which aligns with design system work and frontend component design.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "0ef6e58a4b4dc764a61823b8b29a1261a894a91bc3b9fd5d188a3d3f0add9682",
+      "metadata_sha256": "75cb7032fa4366220691af7bb1aab794a50512fb2e79bcfbdaa647a7c4e175b7",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Implements media and file management components including file upload (drag-drop, multi-file, resumable), image galleries (lightbox, carousel, masonry), video players (custom controls, captions, adaptive streaming), audio players (waveform, playlists), document viewers (PDF, Office), and optimization strategies (compression, responsive images, lazy loading, CDN). Use when handling files, displaying media, or building rich content experiences.",
+      "content_excerpt": "---\nname: managing-media\ndescription: Implements media and file management components including file upload (drag-drop, multi-file, resumable), image galleries (lightbox, carousel, masonry), video players (custom controls, captions, adaptive streaming), audio players (waveform, playlists), document viewers (PDF, Office), and optimization strategies (compression, responsive images, lazy loading, CDN). Use when handling files, displaying media, or building rich content experiences.\n---\n\n# Managing Media & Files\n\n## Purpose\n\nThis skill provides systematic patterns for implementing media and file management components across all formats (images, videos, audio, documents). It covers upload workflows, display patterns, player controls, optimization strategies, and accessibility requirements to ensure performant, accessible, and user-friendly media experiences.\n\n## When to Use\n\nActivate this skill when:\n- Implementing file upload (single, multiple, drag-and-drop)\n- Building image galleries, carousels, or lightboxes\n- Creating video or audio players\n- Displaying PDF or document viewers\n- Optimizing media for performance (responsive images, lazy loading)\n- Handling large file uploads (chunked, resumable)\n- Integrating cloud storage (S3, Cloudinary)\n- Implementing media accessibility (alt text, captions, transcripts)\n- Designing empty states for missing media\n\n## Quick Decision Framework\n\nSelect implementation based on media type and requirements:\n\n```\nImages                  → Gallery pattern + lazy loading + responsive srcset\nVideos                  → Player with controls + caption"
+    },
+    {
+      "path": "other/move-smith-fuzzer-plurigrid-asi-2/SKILL.md",
+      "name": "move-smith-fuzzer",
+      "current_category": "other",
+      "llm_category": "testing",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill implements property-based testing and fuzzing for Move smart contracts, which is a testing methodology for finding bugs and validating contracts.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "b348177db175d3ee8159d9c534d12460fb923563a654e0787153f2cc1c7221a2",
+      "metadata_sha256": "ed66b88862703d3fc9f36bb84f8c6bc3e089fa23bf8dc94d257daf1d02da8853",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Move Smith Fuzzer Skill",
+      "content_excerpt": "---\nname: move-smith-fuzzer\ndescription: Move Smith Fuzzer Skill\ntrit: 0\ncolor: \"#26D826\"\ncatsharp:\n  home: Prof\n  poly_op: ⊗ (parallel)\n  kan_role: Adj\n  bicomodule: true\n---\n\n# move-smith-fuzzer Skill\n\n\n> *\"Find bugs before they find your users. Fuzzing as validation.\"*\n\n## Overview\n\n**Move Smith Fuzzer** implements property-based testing and fuzzing for Move smart contracts. Uses MoveSmith's differential testing against multiple Move VMs to find consensus-breaking bugs.\n\n## GF(3) Role\n\n| Aspect | Value |\n|--------|-------|\n| Trit | -1 (MINUS) |\n| Role | VALIDATOR |\n| Function | Validates Move contracts via fuzz testing |\n\n## Architecture\n\n```\n┌─────────────────────────────────────────────────────────────────┐\n│                    MOVE SMITH FUZZER                            │\n├─────────────────────────────────────────────────────────────────┤\n│                                                                 │\n│  Contract Source    Generator      Fuzzer         Report       │\n│  (+1 GEN)          (0 COORD)      (-1 VAL)        (output)     │\n│      │                 │              │               │        │\n│      ▼                 ▼              ▼               ▼        │\n│  ┌───────┐        ┌────────┐    ┌──────────┐   ┌─────────┐    │\n│  │ Parse │───────►│Generate│───►│ Execute  │──►│ Report  │    │\n│  │ AST   │        │ Inputs │    │ & Compare│   │ Bugs    │    │\n│  └───────┘        └────────┘    └──────────┘   └─────────┘    │\n│                                      │                         │\n│                                      ▼                         │\n│       "
+    },
+    {
+      "path": "other/optimistic-ui-mutation-patterns-harborgrid-justin-lexiflow-premium-0138a1d5/SKILL.md",
+      "name": "optimistic-ui-mutation-patterns",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill 'optimistic-ui-mutation-patterns' is about implementing immediate UI feedback for mutations, which is a software development workflow for frontend coding and patterns.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "3ff4b261be7d0c15a8ff7af35641d8bbab5f77fff3d2373010586b16e95b1963",
+      "metadata_sha256": "c5cc148236916d2741beaa7737599eb812f847be05bf10d1dbd7f0175811ea27",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Implement immediate UI feedback for mutations with robust rollback capabilities.",
+      "content_excerpt": "---\nname: optimistic-ui-mutation-patterns\ndescription: Implement immediate UI feedback for mutations with robust rollback capabilities.\n---\n\n# Optimistic UI Mutation Patterns\n\n## Summary\nImplement immediate UI feedback for mutations with robust rollback capabilities.\n\n## Key Capabilities\n- Update local cache instantly upon mutation trigger.\n- Queue mutations to handle network race conditions.\n- Rollback to the correct server state on failure.\n\n## PhD-Level Challenges\n- Manage dependency updates for optimistic data.\n- Handle cascading optimistic updates correctly.\n- Visualize the 'pending' state effectively.\n\n## Acceptance Criteria\n- Demonstrate immediate feedback on a slow network.\n- Show accurate rollback upon mocked server error.\n- Document the mutation queue logic.\n"
+    },
+    {
+      "path": "other/pi-share-dicklesworthstone-pi-agent-rust/SKILL.md",
+      "name": "pi-share",
+      "current_category": "other",
+      "llm_category": "integration",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill fetches and parses data from external URLs (shittycodingagent.ai, buildwithpi.ai, buildwithpi.com) and GitHub Gists, which is a cross-system connector workflow.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "1259655255c49d3233448e949704756eb000b2cab7746480173202ca121f0506",
+      "metadata_sha256": "41f61ba1e1d34d0c7bb9bd9f6d2d917036438e0a5a6db747aa94fc7f4d538e86",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Load and parse session transcripts from shittycodingagent.ai/buildwithpi.ai/buildwithpi.com (pi-share) URLs. Fetches gists, decodes embedded session data, and extracts conversation history.",
+      "content_excerpt": "---\nname: pi-share\ndescription: \"Load and parse session transcripts from shittycodingagent.ai/buildwithpi.ai/buildwithpi.com (pi-share) URLs. Fetches gists, decodes embedded session data, and extracts conversation history.\"\n---\n\n# pi-share / buildwithpi Session Loader\n\nLoad and parse session transcripts from pi-share URLs (shittycodingagent.ai, buildwithpi.ai, buildwithpi.com).\n\n## When to Use\n\n**Loading sessions:** Use this skill when the user provides a URL like:\n- `https://shittycodingagent.ai/session/?<gist_id>`\n- `https://buildwithpi.ai/session/?<gist_id>`\n- `https://buildwithpi.com/session/?<gist_id>`\n- Or just a gist ID like `46aee35206aefe99257bc5d5e60c6121`\n\n**Human summaries:** Use `--human-summary` when the user asks you to:\n- Summarize what a human did in a pi/coding agent session\n- Understand how a user interacted with an agent\n- Analyze user behavior, steering patterns, or prompting style\n- Get a human-centric view of a session (not what the agent did, but what the human did)\n\nThe human summary focuses on: initial goals, re-prompts, steering/corrections, interventions, and overall prompting style.\n\n## How It Works\n\n1. Session exports are stored as GitHub Gists\n2. The URL contains a gist ID after the `?`\n3. The gist contains a `session.html` file with base64-encoded session data\n4. The helper script fetches and decodes this to extract the full conversation\n\n## Usage\n\n```bash\n# Get full session data (default)\nnode ~/.pi/agent/skills/pi-share/fetch-session.mjs \"<url-or-gist-id>\"\n\n# Get just the header\nnode ~/.pi/agent/skills/pi-share/fetch-session.mjs <gist-id> -"
+    },
+    {
+      "path": "other/livewire-implementation-rules/SKILL.md",
+      "name": "livewire-implementation-rules",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill provides coding standards and guidelines for developing Livewire components, which is a software development framework. It focuses on code review, refactoring, and best practices for writing better code.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "c57e239222a8c7e87ac9b9d4ef23f67e2a16d676173e0a8c35b4b5c1c90c7d40",
+      "metadata_sha256": "478dfe1231e4778eb692eebd53bf53f6c5305b73bcba5ec2fc94e1bb2da0d389",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Guidelines for developing modular, reusable Livewire components.",
+      "content_excerpt": "---\nname: livewire-implementation-rules\ndescription: Guidelines for developing modular, reusable Livewire components.\nversion: 1.0.0\nmodel: sonnet\ninvoked_by: both\nuser_invocable: true\ntools: [Read, Write, Edit]\nglobs: /app/Http/Livewire/**/*.php\nbest_practices:\n  - Follow the guidelines consistently\n  - Apply rules during code review\n  - Use as reference when writing new code\nerror_handling: graceful\nstreaming: supported\n---\n\n# Livewire Implementation Rules Skill\n\n<identity>\nYou are a coding standards expert specializing in livewire implementation rules.\nYou help developers write better code by applying established guidelines and best practices.\n</identity>\n\n<capabilities>\n- Review code for guideline compliance\n- Suggest improvements based on best practices\n- Explain why certain patterns are preferred\n- Help refactor code to meet standards\n</capabilities>\n\n<instructions>\nWhen reviewing or writing code, apply these guidelines:\n\n- Create modular, reusable Livewire components.\n- Use Livewire's lifecycle hooks effectively (e.g., mount, updated, etc.).\n- Implement real-time validation using Livewire's built-in validation features.\n- Optimize Livewire components for performance, avoiding unnecessary re-renders.\n- Integrate Livewire components with Laravel's backend features seamlessly.\n- Implement lazy loading for Livewire components when appropriate.\n  </instructions>\n\n<examples>\nExample usage:\n```\nUser: \"Review this code for livewire implementation rules compliance\"\nAgent: [Analyzes code against guidelines and provides specific feedback]\n```\n</examples>\n\n## Memory Protocol (MA"
+    },
+    {
+      "path": "other/mova-evidence-proof-v0-leryk1981-mova-wf-cycle/SKILL.md",
+      "name": "mova-evidence-proof-v0",
+      "current_category": "other",
+      "llm_category": "workflow",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Same skill as id 0, with identical description and body content. It defines a structured process for evidence-based delivery and proof assembly, fitting workflow automation.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "dc08e9c51ff3cc306f3f9d2963925fa0f3b607e1bf78409b3d61ee0739c48df7",
+      "metadata_sha256": "ff12cb8cc21874e1b626324604afdc6ada98a79828b7be2a537946e440b4cbd0",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use for deterministic changes, evidence-first delivery, or assembling proof kits with clear safety justification.",
+      "content_excerpt": "---\nname: mova-evidence-proof-v0\ndescription: Use for deterministic changes, evidence-first delivery, or assembling proof kits with clear safety justification.\nallowed-tools: Bash, Read, Grep, Glob\n---\n\n## Determinism rules\n- Business results belong in result payloads; run-specific data goes to env/meta and artifacts.\n- Do not fabricate outputs; rerun commands if needed.\n\n## Negative suite\n- Required for risky paths: unauthorized, deny, bad signature, oversize, and validation errors.\n- Add minimal, explicit cases and surface them in evidence.\n\n## Evidence-first standard\n- Prefer artifacts and reports over narrative claims.\n- Always link to evidence paths in `artifacts/**`.\n\n## Evidence sources\n- Artifacts paths, `gw_request_id`, and episode ids/refs.\n- History lookup must use `mova_search_episodes_v0` (read-only).\n"
+    },
+    {
+      "path": "other/migrate-from-legacy-haabe-mycelium-3/SKILL.md",
+      "name": "migrate-from-legacy",
+      "current_category": "other",
+      "llm_category": "platform",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill migrates a project from a legacy install method (npx-degit with framework files in .claude/) to a plugin install method (framework in plugin cache). This is platform-specific installation and setup work, fitting the platform category's inclusion of 'platform-specific operations, device/platform automation, and platform administration'.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "7e832f80c4d2b330558c9d920bf90f902a3f37a6b2615425500fca0f43c85a3b",
+      "metadata_sha256": "c6d348c31ba01e8dd91e3837f8333d86a459eead5e310b87ffeaad40f60fceb0",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Migrate a Mycelium project from legacy install (npx-degit, framework files in .claude/) to plugin install (framework lives in plugin cache, .claude/ holds project state only). Detects current install form, walks the user through plugin installation, runs the migration script, and verifies project state survived. Idempotent — safe to invoke on already-migrated projects.",
+      "content_excerpt": "---\nname: migrate-from-legacy\ndescription: Migrate a Mycelium project from legacy install (npx-degit, framework files in .claude/) to plugin install (framework lives in plugin cache, .claude/ holds project state only). Detects current install form, walks the user through plugin installation, runs the migration script, and verifies project state survived. Idempotent — safe to invoke on already-migrated projects.\nmetadata:\n  framework_dependency: \"mycelium\"\n  framework_dependency_note: \"This skill is designed to run within the Mycelium framework (https://github.com/haabe/mycelium). Standalone use will skip the canvas state, theory gates, and harness behavior the skill assumes. Install: /plugin install mycelium@haabe/mycelium.\"\n---\n\n# Migrate from legacy to plugin form\n\nWhen this skill runs, walk the user through moving from legacy install to plugin install. The migration is **non-destructive** to project state: canvas, diamonds, memory, decision log, evals, and active metrics are preserved. Only framework reference content (skills, hooks, engine, scripts, schemas, etc.) is removed from `.claude/` — that content now ships in the plugin cache.\n\n## Step 1: Detect current install form\n\nCheck the project's `.claude/` directory:\n\n```bash\ntest -d \"$CLAUDE_PROJECT_DIR/.claude/skills\" && echo \"legacy framework files present\" || echo \"no legacy framework files\"\ntest -d \"$CLAUDE_PROJECT_DIR/.claude/canvas\" && echo \"project state present\" || echo \"no project state\"\n```\n\nThree states:\n\n- **Legacy install** (skills/ + canvas/ both present): proceed to Step 2.\n- **Already migrated** (canvas"
+    },
+    {
+      "path": "other/md-files-fetchai-agents-aea-0dafedb9/SKILL.md",
+      "name": "md_files",
+      "current_category": "other",
+      "llm_category": "other",
+      "confidence": 0.6,
+      "status": "ok",
+      "reason": "Skill is a YAML/bash snippet for an agent framework (FetchAI AEA) but lacks clear single-agent behavior or role design; it's more of a code example or scaffold.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "4a6a3c2c1f39d808f69f9ad399d669f1ba0bf510680a13bfd82f151a2f3cbeb2",
+      "metadata_sha256": "7a54a6b9e57bfb34c2d9738ecc86f31577bfc574ba94fd2f92452448850bee96",
+      "semantic_sources": {
+        "description": "body",
+        "name": "metadata"
+      },
+      "description": "classname: EchoBehaviour",
+      "content_excerpt": "``` yaml\nname: echo\nauthors: fetchai\nversion: 0.1.0\nlicense: Apache-2.0\nbehaviours:\n  echo:\n    class_name: EchoBehaviour\n    args:\n      tick_interval: 1.0\nhandlers:\n  echo:\n    class_name: EchoHandler\n    args:\n      foo: bar\nmodels: {}\ndependencies: {}\nprotocols:\n- fetchai/default:1.1.7\n```\n\n``` bash\naea scaffold error-handler\n```\n"
+    },
+    {
+      "path": "other/networked-system/SKILL.md",
+      "name": "networked-system",
+      "current_category": "other",
+      "llm_category": "ai-ml",
+      "confidence": 0.75,
+      "status": "ok",
+      "reason": "The skill describes dynamical systems on graphs, which is a mathematical concept used in machine learning and AI for modeling complex systems. It fits the ai-ml category's inclusion rule for machine learning and ML experiments, though it's more theoretical.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "561aabad206ce14fe4ed4b98fbd9088052e872a0070758e23c43511ce191b7ed",
+      "metadata_sha256": "f10093b39bcd056cbd43fc51b04e22278ee72a19d03b05d9c7858503e6302633",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Dynamical systems on graphs",
+      "content_excerpt": "---\nname: networked-system\ndescription: Dynamical systems on graphs\nversion: 1.0.0\n---\n\n\n# Networked System\n\n**Trit**: -1 (MINUS)\n**Domain**: Dynamical Systems Theory\n**Principle**: Dynamical systems on graphs\n\n## Overview\n\nNetworked System is a fundamental concept in dynamical systems theory, providing tools for understanding the qualitative behavior of differential equations and flows on manifolds.\n\n## Mathematical Definition\n\n```\nNETWORKED_SYSTEM: Phase space × Time → Phase space\n```\n\n## Key Properties\n\n1. **Local behavior**: Analysis near equilibria and invariant sets\n2. **Global structure**: Long-term dynamics and limit sets  \n3. **Bifurcations**: Parameter-dependent qualitative changes\n4. **Stability**: Robustness under perturbation\n\n## Integration with GF(3)\n\nThis skill participates in triadic composition:\n- **Trit -1** (MINUS): Sinks/absorbers\n- **Conservation**: Σ trits ≡ 0 (mod 3) across skill triplets\n\n## AlgebraicDynamics.jl Connection\n\n```julia\nusing AlgebraicDynamics\n\n# Networked System as compositional dynamical system\n# Implements oapply for resource-sharing machines\n```\n\n## Related Skills\n\n- equilibrium (trit 0)\n- stability (trit +1)  \n- bifurcation (trit +1)\n- attractor (trit +1)\n- lyapunov-function (trit -1)\n\n---\n\n**Skill Name**: networked-system\n**Type**: Dynamical Systems / Networked System\n**Trit**: -1 (MINUS)\n**GF(3)**: Conserved in triplet composition\n\n## Non-Backtracking Geodesic Qualification\n\n**Condition**: μ(n) ≠ 0 (Möbius squarefree)\n\nThis skill is qualified for non-backtracking geodesic traversal:\n\n1. **Prime Path**: No state revisited in skill"
+    },
+    {
+      "path": "other/ops-speedup/SKILL.md",
+      "name": "ops-speedup",
+      "current_category": "other",
+      "llm_category": "system",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is a cross-platform system optimizer that auto-detects OS (macOS/Linux/WSL/Windows), profiles hardware (CPU/RAM/disk/GPU), scans for reclaimable disk space, memory pressure, runaway processes, startup bloat, and network issues. This is squarely system-level optimization and maintenance.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "7d6f4e8970b85118033c081dc85b7eefd981e3482146a22181b6301e71be8de3",
+      "metadata_sha256": "6efd9a0a314727286af27898454bf9178e39e882aff64ed4cc454ce1da999022",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Cross-platform, hardware-adaptive system optimizer. Auto-detects macOS / Linux / WSL / Windows (MINGW/Cygwin/MSYS2) and CPU/RAM/disk/GPU profile, then picks the right cleanup strategy. Scans reclaimable disk space, memory pressure, runaway processes, startup bloat, network issues. CleanMyMac built into Claude Code.",
+      "content_excerpt": "---\nname: ops-speedup\ndescription: Cross-platform, hardware-adaptive system optimizer. Auto-detects macOS / Linux / WSL / Windows (MINGW/Cygwin/MSYS2) and CPU/RAM/disk/GPU profile, then picks the right cleanup strategy. Scans reclaimable disk space, memory pressure, runaway processes, startup bloat, network issues. CleanMyMac built into Claude Code.\nargument-hint: \"[scan|clean|deep|auto]\"\nallowed-tools:\n  - Bash\n  - Read\n  - Grep\n  - Glob\n  - AskUserQuestion\neffort: low\nmaxTurns: 30\n---\n\n## Runtime Context\n\nBefore scanning, load:\n1. **Preferences**: `cat ${CLAUDE_PLUGIN_DATA_DIR:-$HOME/.claude/plugins/data/ops-ops-marketplace}/preferences.json` — read `timezone` for timestamps\n\n# OPS > SPEEDUP — System Optimizer\n\n## Architecture\n\nThe `bin/ops-speedup` binary is the single source of truth for probes AND actions. This skill's job is to:\n1. Call the binary with the right flags based on user intent\n2. Parse the JSON\n3. Present a health score + cleanup report\n4. Confirm destructive actions per plugin Rule 5\n5. Invoke the binary's clean/deep/aggressive modes to execute\n\n## CLI Reference — `bin/ops-speedup`\n\n| Command | Purpose | Side effects |\n|---------|---------|--------------|\n| `ops-speedup` | Visual banner + hardware summary | None |\n| `ops-speedup --json` | Quick JSON diagnostics (disk/mem/net only) | None |\n| `ops-speedup --scan` | Full parallel probe: disk + mem + CPU hogs + power hogs + GPU/ANE + startup | None |\n| `ops-speedup --clean` | Safe cleanup: caches, tmp, logs, demote daemons, DNS flush, kernel tune | Non-destructive |\n| `ops-speedup --deep` | `--clean` + Trash"
+    },
+    {
+      "path": "other/kitt-create-meta-prompts/SKILL.md",
+      "name": "kitt-create-meta-prompts",
+      "current_category": "other",
+      "llm_category": "orchestration",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is about creating prompts for agent-to-agent pipelines with multi-stage workflows (research -> plan -> implement), which is multi-agent coordination and workflow control.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "a29d572b48e1520bdeb1b6b78db11bacd5164fa0e07f166222cd7c8096d244a7",
+      "metadata_sha256": "2f0a232acb9b0311bbd5fad7eec3bd63628a3545612fd0d8f9deb6b4fa9e5db1",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Create optimized prompts for agent-to-agent pipelines with research, planning, and execution stages. Use when building prompts that produce outputs for other prompts to consume, or when running multi-stage workflows (research -> plan -> implement).",
+      "content_excerpt": "---\nname: kitt-create-meta-prompts\ndescription: Create optimized prompts for agent-to-agent pipelines with research, planning, and execution stages. Use when building prompts that produce outputs for other prompts to consume, or when running multi-stage workflows (research -> plan -> implement).\n---\n\n<agent_identification>\n**Before proceeding, identify which agent you are:**\n- **I am Claude Code** → Follow [CLAUDE] instructions\n- **I am GitHub Copilot** → Follow [COPILOT] instructions\n- **I am Gemini CLI** → Follow [GEMINI] instructions\n\nInstructions without markers apply to all agents.\n</agent_identification>\n\n<objective>\nCreate prompts optimized for agent-to-agent communication in multi-stage workflows. Outputs are structured with XML and metadata for efficient parsing by subsequent prompts.\n\nEvery execution produces a `SUMMARY.md` for quick human scanning without reading full outputs.\n\nEach prompt gets its own folder in `.prompts/` with its output artifacts, enabling clear provenance and chain detection.\n</objective>\n\n<quick_start>\n<workflow>\n1. **Intake**: Determine purpose (Do/Plan/Research/Refine), gather requirements\n2. **Chain detection**: Check for existing research/plan files to reference\n3. **Generate**: Create prompt using purpose-specific patterns\n4. **Save**: Create folder in `.prompts/{number}-{topic}-{purpose}/`\n5. **Present**: Show decision tree for running\n6. **Execute**: Run prompt(s) with dependency-aware execution engine\n7. **Summarize**: Create SUMMARY.md for human scanning\n</workflow>\n\n<folder_structure>\n```\n.prompts/\n├── 001-auth-research/\n│   ├── co"
+    },
+    {
+      "path": "other/patch-design-melodic-software-claude-code-plugins-2/SKILL.md",
+      "name": "patch-design",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill describes creating minimal, surgical patch plans for targeted code fixes, bug fixes, and addressing blockers in code implementations. This is a software development workflow focused on coding and debugging.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "6312e6f57115ec4c40de709a9c7275cf59810227d7cdb7087037c2ca46934891",
+      "metadata_sha256": "0d2bc0a172621bca4fba224d731cad656808e21ac6263ba41af8b04a17ca05e2",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Create minimal, surgical patch plans for targeted fixes. Use when fixing specific issues from review, creating focused patches, or avoiding scope creep in fix implementations.",
+      "content_excerpt": "---\nname: patch-design\ndescription: Create minimal, surgical patch plans for targeted fixes. Use when fixing specific issues from review, creating focused patches, or avoiding scope creep in fix implementations.\nallowed-tools: Read, Grep\n---\n\n# Patch Design Skill\n\nCreate minimal, surgical patch plans for targeted fixes.\n\n## When to Use\n\n- Fixing specific issues from review\n- Creating focused bug fixes\n- Addressing blockers without scope creep\n- Making targeted improvements\n\n## Core Principle\n\n> \"This is a PATCH - keep the scope minimal. Only fix what's described in the issue and nothing more.\"\n\n## Design Workflow\n\n### Step 1: Understand the Specific Issue\n\nParse the issue clearly:\n\n- **What is broken?** (specific behavior)\n- **How should it work?** (expected behavior)\n- **What evidence exists?** (screenshots, errors)\n\nDo NOT expand scope beyond the reported issue.\n\n### Step 2: Analyze Current State\n\nReview the relevant code:\n\n```bash\n# Find relevant files\ngit diff --stat\ngrep -r \"related_function\" src/\n\n# Read the specific code\ncat src/component/file.ts\n```\n\n### Step 3: Determine Minimum Fix\n\nAsk: \"What is the smallest change that fixes this?\"\n\n| Approach | Lines | Risk |\n| --- | --- | --- |\n| Surgical fix | 1-10 | Low |\n| Targeted fix | 10-50 | Medium |\n| Refactor | 50+ | High |\n\n**Always prefer surgical fixes** for patches.\n\n### Step 4: Create Patch Plan\n\nDocument the precise fix:\n\n```markdown\n# Patch: [Concise title]\n\n## Issue Summary\n**Problem**: [What's broken]\n**Solution**: [Minimal fix]\n\n## Files to Modify\n- `path/to/file.ts`: [Specific change]\n\n## Implementation Ste"
+    },
+    {
+      "path": "other/ln-700-project-bootstrap-levnikolaevich-claude-code-skills-6/SKILL.md",
+      "name": "ln-700-project-bootstrap",
+      "current_category": "other",
+      "llm_category": "workflow",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill is a universal project bootstrapper that orchestrates a multi-step process to create or transform projects to production-ready structure. It defines a repeatable procedure with phases, delegations, and conditional logic, fitting the 'workflow' category for repeatable procedures, SOPs, pipelines, or task flows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "de81d667815cf149b67850f3e2fc4847319194e82dc587c155606c92cbc0816a",
+      "metadata_sha256": "502d6a2efb3efc8488da3e48fb091dbd125ae6ec8712595deb39065b8bafd66b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Universal project bootstrapper: CREATE new or TRANSFORM existing project to production-ready structure",
+      "content_excerpt": "---\nname: ln-700-project-bootstrap\ndescription: \"Universal project bootstrapper: CREATE new or TRANSFORM existing project to production-ready structure\"\n---\n\n> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.\n\n# ln-700-project-bootstrap\n\n**Type:** L1 Top Orchestrator\n**Category:** 7XX Project Bootstrap\n\nUniversal project bootstrapper with two modes: CREATE (generate production-ready project from scratch) or TRANSFORM (migrate existing prototype from any platform to production structure). Output: Clean Architecture, Docker, CI/CD, quality tooling.\n\n---\n\n## Mode Selection\n\n| Aspect | CREATE | TRANSFORM |\n|--------|--------|-----------|\n| **Input** | Empty directory or target stack config | Existing project (Replit, StackBlitz, CodeSandbox, Glitch, custom) |\n| **Detection** | No source files found | Source files + optional platform config detected |\n| **ln-710** | SKIP (no deps to upgrade) | RUN (upgrade existing deps) |\n| **ln-720** | SCAFFOLD + GENERATE | RESTRUCTURE + MIGRATE |\n| **ln-724** | SKIP (no artifacts) | CONDITIONAL (if platform detected) |\n| **ln-730–780** | RUN (same for both modes) | RUN (same for both modes) |\n\n---\n\n## Overview\n\n| Aspect | Details |\n|--------|---------|\n| **Input** | Empty directory (CREATE) or source project (TRANSFORM) |\n| **Output** | Production-ready project with all infrastructure |\n| **Delegations** | ln-710 (conditional) -> ln-720 -> ln-730 -> ln-740 -> ln-750 -> ln-760 -> ln-770 -> ln-780 |\n\n---\n\n## Workfl"
+    },
+    {
+      "path": "other/nixtla-usage-optimizer-intent-solutions-io-plugins-nixtla/SKILL.md",
+      "name": "nixtla-usage-optimizer",
+      "current_category": "other",
+      "llm_category": "analysis",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Same skill variant - audits Nixtla API usage, analyzes patterns, identifies cost optimization opportunities, and generates comprehensive usage reports with ROI assessment.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "e1cbfd122ad752554fe8d5f0b5a067654502f96b81a07df85d1f86f3a3ba0b09",
+      "metadata_sha256": "e4905b9b8e713f013ad89bafe7d58257a6a1a244fb8fd1c0c9896eb50d576b8e",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Analyze Nixtla usage and optimize cost-effective forecast routing strategies. Use when auditing API usage or reducing costs. Trigger with 'optimize nixtla costs' or 'audit API usage'.",
+      "content_excerpt": "---\nname: nixtla-usage-optimizer\ndescription: \"Analyze Nixtla usage and optimize cost-effective forecast routing strategies. Use when auditing API usage or reducing costs. Trigger with 'optimize nixtla costs' or 'audit API usage'.\"\nallowed-tools: \"Read,Glob,Grep\"\nversion: \"1.0.0\"\nauthor: \"Jeremy Longshore <jeremy@intentsolutions.io>\"\nlicense: MIT\n---\n\n# Nixtla Usage Optimizer\n\nAudit Nixtla library usage and recommend cost-effective routing strategies.\n\n## Overview\n\nThis skill analyzes and optimizes Nixtla usage:\n\n- **Usage scanning**: Find all TimeGPT and baseline usage\n- **Cost analysis**: Identify optimization opportunities\n- **Routing recommendations**: Smart model selection\n- **ROI assessment**: Cost vs accuracy trade-offs\n\n## Prerequisites\n\n**Required**:\n- Python 3.8+\n- Existing Nixtla codebase to audit\n\n**No Additional Packages**: Uses only Read, Glob, Grep tools\n\n## Instructions\n\n### Step 1: Scan Repository\n\nFind all Nixtla library usage:\n```bash\ngrep -r \"NixtlaClient\" --include=\"*.py\" .\ngrep -r \"StatsForecast\" --include=\"*.py\" .\ngrep -r \"MLForecast\" --include=\"*.py\" .\n```\n\n### Step 2: Analyze Patterns\n\nCategorize usage by:\n- Location (experiments, pipelines, notebooks)\n- Frequency (how often called)\n- Data characteristics (simple vs complex patterns)\n\n### Step 3: Generate Report\n\nCreate `000-docs/nixtla_usage_report.md` with:\n- Executive summary\n- Usage analysis\n- Recommendations\n- ROI assessment\n\n### Step 4: Implement Routing\n\nApply recommendations:\n- Replace TimeGPT with baselines for simple patterns\n- Add TimeGPT for high-value forecasts\n- Implement fallback chai"
+    },
+    {
+      "path": "other/personal-whatsapp-messages-orient-bot-orient/SKILL.md",
+      "name": "personal-whatsapp-messages",
+      "current_category": "other",
+      "llm_category": "data",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "Querying WhatsApp messages from a local SQLite database involves database operations, data retrieval, and analytics workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "74334fbec4ce0facc088437ecfcb66085cc9bdf11c916176c57c8003b8c29f3d",
+      "metadata_sha256": "24b264e3e961bcf32d6bc1b1c1971d4d3a03a4a0ed7af07530c3dbfbf9d6d18b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Query WhatsApp messages from the local SQLite database. Use this skill when asked to search messages, find conversations, look up chat history, check message statistics, list contacts/groups, or retrieve media messages. Triggers on queries about \"whatsapp messages\", \"search messages\", \"message history\", \"conversation with\", \"chat history\", \"who said\", \"find message\", or any WhatsApp data retrieval task.",
+      "content_excerpt": "---\nname: personal-whatsapp-messages\ndescription: Query WhatsApp messages from the local SQLite database. Use this skill when asked to search messages, find conversations, look up chat history, check message statistics, list contacts/groups, or retrieve media messages. Triggers on queries about \"whatsapp messages\", \"search messages\", \"message history\", \"conversation with\", \"chat history\", \"who said\", \"find message\", or any WhatsApp data retrieval task.\n---\n\n# WhatsApp Messages Query Skill\n\nQuery WhatsApp messages stored in the local SQLite database (`data/messages.db`).\n\n## Quick Start\n\n1. **First, check database health** before querying:\n   ```bash\n   sqlite3 data/messages.db \"PRAGMA integrity_check;\" 2>&1 | head -1\n   ```\n   - If output is `ok` → proceed with MCP tools\n   - If output shows errors → see [Database Recovery](#database-recovery) section\n\n2. **Discover available tools**:\n   ```\n   discover_tools({ mode: \"browse\", category: \"whatsapp\" })\n   ```\n\n3. **Query messages** using the appropriate tool\n\n## Available Tools\n\n| Tool | Purpose | When to Use |\n|------|---------|-------------|\n| `whatsapp_search_messages` | Full-text search with filters | \"What did X say about Y?\" |\n| `whatsapp_get_recent` | Latest messages | \"Show recent messages\" |\n| `whatsapp_get_conversation` | Chat history with a contact | \"Find my chat with X\" |\n| `whatsapp_get_group_messages` | Messages from a group | \"Messages from group X\" |\n| `whatsapp_get_stats` | Database statistics | \"How many messages?\" |\n| `whatsapp_list_contacts` | All unique contacts | \"Who have I chatted with?\" |\n| `whatsapp"
+    },
+    {
+      "path": "other/modern-javascript-pluginagentmarketpla-custom-plugin-javasc-2/SKILL.md",
+      "name": "modern-javascript",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Skill provides reference material for modern ES6+ JavaScript features used in software development.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "03a88d2f62c9b57bdbcf5d504e3e94940a38fa079b877a7359f09e551c24e49c",
+      "metadata_sha256": "bebb1370e7cf7e8ba4fc75c499831b5a23f7784138cb7d3952994679d4ca4641",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Modern ES6+ JavaScript features including classes, modules, destructuring, iterators, proxies, and latest ECMAScript features.",
+      "content_excerpt": "---\nname: modern-javascript\ndescription: Modern ES6+ JavaScript features including classes, modules, destructuring, iterators, proxies, and latest ECMAScript features.\nsasmp_version: \"1.3.0\"\nbonded_agent: 06-modern-es6-advanced\nbond_type: PRIMARY_BOND\n\n# Production-Grade Configuration\nskill_type: reference\nresponse_format: code_first\nmax_tokens: 1500\n\nparameter_validation:\n  required: [topic]\n  optional: [es_version]\n\nretry_logic:\n  on_ambiguity: ask_clarification\n  fallback: show_es6_basics\n\nobservability:\n  entry_log: \"Modern JS skill activated\"\n  exit_log: \"Modern JS reference provided\"\n---\n\n# Modern JavaScript Skill\n\n## Quick Reference Card\n\n### Classes\n```javascript\nclass Service {\n  #privateField;           // Private (ES2022)\n  static VERSION = '1.0';  // Static property\n\n  constructor(config) {\n    this.#privateField = config.secret;\n  }\n\n  async fetch(url) {\n    return this.#request('GET', url);\n  }\n\n  #request(method, url) {  // Private method\n    return fetch(url, { method });\n  }\n\n  get config() { return this.#privateField; }\n}\n\nclass ExtendedService extends Service {\n  constructor(config) {\n    super(config);\n  }\n}\n```\n\n### Modules\n```javascript\n// Named exports\nexport const API_URL = '/api';\nexport function fetchData() { }\n\n// Default export\nexport default class ApiClient { }\n\n// Import\nimport ApiClient, { API_URL, fetchData } from './api.js';\nimport * as api from './api.js';\n\n// Dynamic import\nconst { Editor } = await import('./editor.js');\n\n// Re-export (barrel file)\nexport { ApiClient } from './api.js';\nexport { default as Utils } from './utils.js';\n```\n\n##"
+    },
+    {
+      "path": "other/materials-and-fit/SKILL.md",
+      "name": "materials-and-fit",
+      "current_category": "other",
+      "llm_category": "domains",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill describes domain-specific knowledge about materials behavior in trades (wood, metal, stone, fabric, composites) and how 'fit' between parts is achieved. This is subject-matter expertise for a specific industry domain (trades/construction), not a general capability category.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "d9601df429e5fd1022cea400da962571700b45a54052027be84e33f8d68cdadd",
+      "metadata_sha256": "fa20a061ac7798500aeb0bc8a14bda1dc1ebdecfeaf8a3c0db889b9250710eed",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Materials and fit for the trades — how wood, metal, stone, fabric, and composite materials behave, how they move with humidity and temperature, and how \"fit\" between parts is achieved in the presence of material behavior. Covers moisture content, thermal expansion, grain and fiber direction, elastic and plastic deformation, corrosion and finish interaction, and the traditional allowances that experienced tradespeople build into their work. Use when specifying materials, diagnosing a failed fit, or teaching a learner why traditional allowances exist.",
+      "content_excerpt": "---\nname: materials-and-fit\ndescription: Materials and fit for the trades — how wood, metal, stone, fabric, and composite materials behave, how they move with humidity and temperature, and how \"fit\" between parts is achieved in the presence of material behavior. Covers moisture content, thermal expansion, grain and fiber direction, elastic and plastic deformation, corrosion and finish interaction, and the traditional allowances that experienced tradespeople build into their work. Use when specifying materials, diagnosing a failed fit, or teaching a learner why traditional allowances exist.\ntype: skill\ncategory: trades\nstatus: stable\norigin: tibsfox\nmodified: false\nfirst_seen: 2026-04-12\nfirst_path: examples/skills/trades/materials-and-fit/SKILL.md\nsuperseded_by: null\n---\n# Materials and Fit\n\nMaterials are alive. Wood moves with humidity, metal moves with temperature, stone settles under load, fabric stretches and relaxes, and modern composites have behaviors that surprise people who expect them to behave like traditional materials. \"Fit\" between parts — whether a drawer slides smoothly for a century or binds after the first humid summer — depends on understanding this movement and designing for it rather than against it. This skill covers the core physical behaviors that every trade has to respect.\n\n**Agent affinity:** vitruvius (Roman material discipline), nasmyth (metallurgy and machine tolerances), brunel-tr (material selection in shipwork)\n\n**Concept IDs:** trades-material-movement, trades-fit-allowance, trades-material-failure\n\n## Why Materials Move\n\nAlmost every mater"
+    },
+    {
+      "path": "other/moai-change-logger-dolsoon-my-awesome-project/SKILL.md",
+      "name": "moai-change-logger",
+      "current_category": "other",
+      "llm_category": "workflow",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill is a 'Comprehensive change tracking and audit logging system that monitors file modifications, code changes, and project evolution.' This describes a repeatable process automation for tracking changes, which aligns with the 'workflow' category for 'Repeatable process automation, operating procedures, workflow design, and non-CI pipelines.'",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "c94785ada7c74e70cb8ee6fb69abeb8a70d7d85aa02d8b6a7afaed16f992878e",
+      "metadata_sha256": "fb1e13f342c2dc261060a665d0ad819bb45ed6907957311318e3665794f043b5",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Comprehensive change tracking and audit logging system that monitors file modifications, code changes, and project evolution. Use when tracking project history, maintaining audit trails, analyzing development patterns, or when detailed change documentation is required for compliance and team collaboration.. Enhanced with Context7 MCP for up-to-date documentation.",
+      "content_excerpt": "---\nname: \"moai-change-logger\"\nversion: \"4.0.0\"\ncreated: 2025-11-05\nupdated: 2025-11-12\nstatus: stable\ntier: specialization\ndescription: \"Comprehensive change tracking and audit logging system that monitors file modifications, code changes, and project evolution. Use when tracking project history, maintaining audit trails, analyzing development patterns, or when detailed change documentation is required for compliance and team collaboration.. Enhanced with Context7 MCP for up-to-date documentation.\"\nallowed-tools: \"Read, Glob, Bash, Write, WebSearch, WebFetch, mcp__context7__resolve-library-id, mcp__context7__get-library-docs\"\nprimary-agent: \"alfred\"\nsecondary-agents: []\nkeywords: [change, logger, auth, test, git]\ntags: []\norchestration: \ncan_resume: true\ntypical_chain_position: \"middle\"\ndepends_on: []\n---\n\n# moai-change-logger\n\n**Change Logger**\n\n> **Primary Agent**: alfred  \n> **Secondary Agents**: none  \n> **Version**: 4.0.0  \n> **Keywords**: change, logger, auth, test, git\n\n---\n\n## 📖 Progressive Disclosure\n\n### Level 1: Quick Reference (Core Concepts)\n\nWhat It Does\n\nAdvanced change tracking and audit logging system that monitors all file modifications, code changes, and project evolution. Provides comprehensive audit trails, change analytics, and project insights for team collaboration and compliance requirements.\n\n**Core capabilities**:\n- ✅ Real-time file change monitoring and logging\n- ✅ Git integration for commit and branch tracking\n- ✅ Change significance assessment and categorization\n- ✅ Developer activity tracking and productivity metrics\n- ✅ Project evolution ana"
+    },
+    {
+      "path": "other/nex-cli-guide/SKILL.md",
+      "name": "nex-cli-guide",
+      "current_category": "other",
+      "llm_category": "devops",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "The skill is a CLI usage guide for NATS NEX, covering node and workload commands, flags, and configuration. NEX is a workload deployment and execution system, and the CLI commands (node up, workload start/deploy) are operational deployment tasks fitting devops.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "2d389b293e9345b5dd6f8ec4d12a6c444024c9c1de35f942d1c6585e40f53ba6",
+      "metadata_sha256": "c0ec143b69d3a5ac3bfb363775d9b89cab21bbc74dd0032beb4f94b9fd29258b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "NATS NEX CLI usage guide. Node and workload commands, flags, configuration.",
+      "content_excerpt": "---\nname: nex-cli-guide\ndescription: NATS NEX CLI usage guide. Node and workload commands, flags, configuration.\ntriggers:\n  - \"nex CLI\"\n  - \"nex commands\"\n  - \"nex node\"\n  - \"nex workload\"\n  - \"nexfile\"\n  - \"nex start\"\n  - \"nex deploy\"\n---\n\n# NEX CLI Guide\n\n## Installation\n\n```bash\n# From source\ngo install github.com/synadia-io/nex/cmd/nex@latest\n\n# Or download binary from releases\n# https://github.com/synadia-io/nex/releases\n```\n\n## Global Flags\n\n| Flag | Description | Default |\n|------|-------------|---------|\n| `-s, --server` | NATS server URLs (comma-separated) | `nats://localhost:4222` |\n| `--timeout` | Request timeout | `5s` |\n| `--creds` | NATS credentials file | - |\n| `--user` | NATS username | - |\n| `--password` | NATS password | - |\n| `--nkey` | NATS NKey for auth | - |\n| `-n, --namespace` | NEX namespace (nexus name) | `nexus` |\n| `--json` | Output raw JSON | `false` |\n| `--config` | Path to config file | - |\n| `-v, --verbose` | Enable verbose output | `false` |\n\n## Configuration Precedence\n\nConfiguration is loaded in this order (later overrides earlier):\n\n1. `/etc/nex/config.json` (system)\n2. `~/.config/nex/config.json` (user)\n3. `./config.json` (local)\n4. Command-line flags (highest priority)\n\n### Configuration File Format\n\n```json\n{\n  \"servers\": \"nats://localhost:4222\",\n  \"namespace\": \"default\",\n  \"timeout\": \"5s\",\n  \"credentials\": \"/path/to/creds.creds\"\n}\n```\n\n---\n\n## Node Commands\n\n### `nex node up`\n\nStart a NEX node (host that runs agents/workloads).\n\n```bash\n# Basic startup\nnex -s nats://127.0.0.1:4222 node up\n\n# With custom name and tags\nnex node up \\\n  -"
+    },
+    {
+      "path": "other/notebooklm-py/SKILL.md",
+      "name": "notebooklm",
+      "current_category": "other",
+      "llm_category": "integration",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "This is a complete programmatic API for Google NotebookLM, providing full access to a third-party service. This is a clear cross-system connector/integration.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "d77b54f29a3e61e7493c6d4a5ea1bd904305af9d31613d9a2cd7eb2efa59a689",
+      "metadata_sha256": "68dda3f51f3b7df127764ad344a4ea159e017eb65fa120c9954675e2bccf9cd6",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Complete API for Google NotebookLM - full programmatic access including features not in the web UI. Create notebooks, add sources, generate all artifact types, download in multiple formats. Activates on explicit /notebooklm or intent like \"create a podcast about X\"",
+      "content_excerpt": "---\nname: notebooklm\ndescription: Complete API for Google NotebookLM - full programmatic access including features not in the web UI. Create notebooks, add sources, generate all artifact types, download in multiple formats. Activates on explicit /notebooklm or intent like \"create a podcast about X\"\n---\n\n# NotebookLM Automation\n\nComplete programmatic access to Google NotebookLM—including capabilities not exposed in the web UI. Create notebooks, add sources (URLs, YouTube, PDFs, audio, video, images), chat with content, generate all artifact types, and download results in multiple formats.\n\n## Installation\n\n**From PyPI (Recommended for AI agents — Python-version-aware):**\n```bash\npip install \"notebooklm-py[browser]\"   # mandatory; errors must propagate\n\n# [cookies] (rookiepy) is optional and known to FAIL TO BUILD on Python 3.13+.\n# Skip it deliberately on 3.13+ rather than swallowing the error — that lets\n# *real* install failures (typos, network, PyPI outages) surface for the agent.\nif python -c \"import sys; sys.exit(0 if sys.version_info < (3, 13) else 1)\"; then\n    pip install \"notebooklm-py[cookies]\"   # errors propagate\nelse\n    echo \"Skipping [cookies] on Python 3.13+ (rookiepy unavailable). Use 'notebooklm login' interactively.\"\nfi\n```\n\n> Full install matrix (extras, headless servers, contributor flow): [Installation guide on GitHub](https://github.com/teng-lin/notebooklm-py/blob/main/docs/installation.md).\n\n**From GitHub (use latest release tag, NOT main branch):**\n```bash\n# Get the latest release tag (using curl)\nLATEST_TAG=$(curl -s https://api.github.com/repos/ten"
+    },
+    {
+      "path": "other/moai-ml-llm-fine-tuning-jg-chalk-io-nora-livekit-2/SKILL.md",
+      "name": "moai-ml-llm-fine-tuning",
+      "current_category": "other",
+      "llm_category": "ai-ml",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly about LLM fine-tuning with LoRA, QLoRA, and PEFT techniques, which is machine learning model training and optimization.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "cfacf32ca4e2a8d043f4f24b382e3d1898f8392fc25b2b5e76758a2d36bbe10e",
+      "metadata_sha256": "279140cec212a14ab95b65b8de8f86e1882c62af155623a26d676e253f6f9f3c",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Enterprise LLM Fine-Tuning with LoRA, QLoRA, and PEFT techniques",
+      "content_excerpt": "---\nname: moai-ml-llm-fine-tuning\nversion: 4.0.0\nupdated: 2025-11-20\nstatus: stable\ndescription: Enterprise LLM Fine-Tuning with LoRA, QLoRA, and PEFT techniques\ncategory: Machine Learning\nallowed-tools: [Read, Bash, WebSearch, WebFetch]\n---\n\n# LLM Fine-Tuning Expert\n\n**Parameter-Efficient Fine-Tuning (PEFT) for Enterprise LLMs**\n\n> **Focus**: LoRA, QLoRA, Domain Adaptation  \n> **Models**: Llama 3.1, Mistral, Mixtral, Falcon  \n> **Stack**: PyTorch, Transformers, PEFT, bitsandbytes\n\n---\n\n## Overview\n\nEnterprise-grade fine-tuning strategies for customizing Large Language Models (LLMs) with minimal resource requirements.\n\n### Core Capabilities\n\n- **Parameter-Efficient Fine-Tuning (PEFT)**: LoRA, QLoRA, Prefix Tuning\n- **Quantization**: 4-bit/8-bit training with bitsandbytes\n- **Distributed Training**: Multi-GPU, DeepSpeed, FSDP\n- **Optimization**: Flash Attention 2, Gradient Checkpointing\n- **Evaluation**: Perplexity, BLEU, ROUGE, Domain benchmarks\n\n### Technology Stack\n\n- **PEFT 0.13+**: Adapter management\n- **Transformers 4.45+**: Model architecture\n- **TRL 0.11+**: Supervised Fine-Tuning (SFT), DPO\n- **Accelerate 0.34+**: Training loop orchestration\n- **bitsandbytes 0.45+**: Low-precision optimization\n\n---\n\n## Fine-Tuning Strategies\n\n| Method               | Params Updated | VRAM (70B) | Use Case                               |\n| -------------------- | -------------- | ---------- | -------------------------------------- |\n| **Full Fine-Tuning** | 100%           | ~420GB     | Foundation model creation              |\n| **LoRA**             | 0.1-1%         | ~180GB     | Dom"
+    },
+    {
+      "path": "other/lease-comparison-expert/SKILL.md",
+      "name": "lease-comparison-expert",
+      "current_category": "other",
+      "llm_category": "analysis",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "The skill focuses on comparative analysis, deviation analysis, and benchmarking of lease documents. This aligns with the analysis category's inclusion rule for 'analysis, synthesis, inspection, reporting, and evidence extraction workflows.'",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "16839ad0a4edb50673e18812f90ace38358b2ffcd679a31060d774b76287b414",
+      "metadata_sha256": "a7ce6bb2a6a837218f06d0a609c5c13dbeca26dff703e0a46140e2af6a28c908",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "Expert in lease-to-lease comparison and deviation analysis. Use when comparing lease amendments to originals, analyzing competing offers, benchmarking against precedents, or identifying deal term variations. Key terms include lease comparison, amendment analysis, offer comparison, precedent deviation, market benchmarking, competitive analysis",
+      "content_excerpt": "---\nname: lease-comparison-expert\ndescription: Expert in lease-to-lease comparison and deviation analysis. Use when comparing lease amendments to originals, analyzing competing offers, benchmarking against precedents, or identifying deal term variations. Key terms include lease comparison, amendment analysis, offer comparison, precedent deviation, market benchmarking, competitive analysis\ntags: [comparison, amendment, offer-analysis, precedent, benchmarking, deviation-analysis]\ncapability: Compares lease documents side-by-side, highlights deviations from standards, and benchmarks terms against market comparables\nproactive: true\n---\n\n# Lease Comparison Expert\n\nYou are an expert in commercial lease comparison and deviation analysis, providing systematic side-by-side analysis to identify differences, assess market positioning, and evaluate negotiation outcomes.\n\n## Overview\n\n**Lease Comparison** = Systematic analysis of multiple lease documents to identify differences in terms, structure, and economics.\n\n**Use Cases**:\n1. **Amendment vs. Original**: Track changes over time\n2. **Competing Offers**: Evaluate multiple tenant proposals\n3. **Precedent Deviation**: Ensure consistency with standard form\n4. **Portfolio Benchmarking**: Compare similar leases across properties\n5. **Market Analysis**: Benchmark against comparable deals\n\n## Core Concepts\n\n### Types of Comparisons\n\n**1. Amendment vs. Original Lease**\n- Identifies what changed\n- Tracks evolution of deal terms\n- Detects inconsistencies\n- Documents negotiation history\n\n**2. Offer A vs. Offer B (Competing Offers)**\n- Compares "
+    },
+    {
+      "path": "other/marten-event-projection/SKILL.md",
+      "name": "marten__event_projection",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill describes creating a Marten Event Projection in C# with code templates, class definitions, and configuration steps. This is software development workflow for a specific framework (Marten).",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "d6916de605ed0c3b11ea57bf4f6091cca796eb43c4d72056a339b9b8227ba5f3",
+      "metadata_sha256": "1791b82eda581f7d31a66f6f5d389e7de420a78261d49b377e064a82d90026b6",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Create a Marten Event Projection for 1:1 event transformation or side-effects (creating separate documents per event).",
+      "content_excerpt": "---\nname: marten__event_projection\ndescription: Create a Marten Event Projection for 1:1 event transformation or side-effects (creating separate documents per event).\n---\n\nFollow this guide to create a **Event Projection** in Marten. This is best for flattening events into queryable documents (1 event -> 1 document) or copying data to other tables.\n\n1.  **Define the Projection Class**\n    -   Create a `class` in `src/BookStore.ApiService/Projections/`\n    -   **Base Class**: `EventProjection`\n    -   **Template**: `templates/Projection.cs`\n\n2.  **Configure in Marten**\n    -   Open `src/BookStore.ApiService/Infrastructure/Extensions/MartenConfigurationExtensions.cs`\n    -   Register:\n        ```csharp\n        options.Projections.Add<AuditLogProjection>(ProjectionLifecycle.Async);\n        ```\n\n3.  **Use Cases**\n    -   History tables\n    -   Audit logs\n    -   Flattening stream data for reporting/analytics (without aggregation)\n\n## Related Skills\n- `/marten__multi_stream_projection`: For aggregating data.\n"
+    },
+    {
+      "path": "other/operational-playbook-creator-maigentic-stratarts-2/SKILL.md",
+      "name": "operational-playbook-creator",
+      "current_category": "other",
+      "llm_category": "workflow",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill creates a comprehensive operational playbook documenting repeatable organizational processes, meeting rhythms, communication protocols, and procedures. This aligns with the workflow category's inclusion of 'repeatable process automation, operating procedures, workflow design, and non-CI pipelines.'",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "494bb9fb5dd47b4b014037bae44bcbf38001362c27cc83c00c6913b927ace13b",
+      "metadata_sha256": "37136d27715a417f208f58de97eedd54824d6c1cb902b360579c94441b990eb8",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Create comprehensive operational playbook documenting organizational structure, processes, meeting rhythms, communication protocols, OKRs, tools, onboarding, and culture. Build the operating system that scales your team from 10 to 1,000+ employees.",
+      "content_excerpt": "---\nname: operational-playbook-creator\ndescription: Create comprehensive operational playbook documenting organizational structure, processes, meeting rhythms, communication protocols, OKRs, tools, onboarding, and culture. Build the operating system that scales your team from 10 to 1,000+ employees.\n---\n\n# operational-playbook-creator\n\n**Mission**: Create a comprehensive operational playbook documenting how your company runs—organizational structure, processes, meeting rhythms, communication protocols, culture, goal-setting, decision-making, tools, and onboarding. Build the operating system that scales your team from 10 to 100 to 1,000+ employees.\n\n---\n\n## STEP 0: Pre-Generation Verification\n\n**MANDATORY: Complete this checklist BEFORE generating output.**\n\n### Information Requirements\n- [ ] Company name and stage confirmed\n- [ ] Current headcount and organizational structure documented\n- [ ] Core values (3-5) defined with behavioral descriptions\n- [ ] Mission and vision statements available\n- [ ] Meeting rhythm preferences understood (cadence, duration, participants)\n- [ ] Communication tool preferences identified (Slack vs Teams, etc.)\n- [ ] OKR/goal-setting framework preference confirmed\n- [ ] Tool stack inventory available\n- [ ] Onboarding timeline expectations set\n\n### Output Format Verification\n- [ ] HTML template located at `html-templates/operational-playbook-creator.html`\n- [ ] Score banner metrics: Headcount, Departments, Core Processes, Meetings, Tools, Y1 Target\n- [ ] All 10 sections have content ready:\n  1. Company Foundation (mission, vision, 3-5 values)\n  2. "
+    },
+    {
+      "path": "other/moai-baas-convex-ext/SKILL.md",
+      "name": "moai-baas-convex-ext",
+      "current_category": "other",
+      "llm_category": "platform",
+      "confidence": 0.82,
+      "status": "ok",
+      "reason": "The skill describes an enterprise Convex Real-Time Backend platform with reactive database architecture, TypeScript integration, and synchronization orchestration. This is platform-specific backend-as-a-service operations.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "0729ffb5ec0a9b6ac564014fccb37735c745b60391806efaba31f2cb61a5e928",
+      "metadata_sha256": "9d5e9a940d8b7c04cea0b46906d892f6afb2c7823f6271c8d1e834e9ea481691",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Enterprise Convex Real-Time Backend with AI-powered reactive database architecture, Context7 integration, and intelligent synchronization orchestration for collaborative applications",
+      "content_excerpt": "---\nname: moai-baas-convex-ext\nversion: 4.0.0\ncreated: 2025-11-11\nupdated: '2025-11-18'\nstatus: stable\ndescription: Enterprise Convex Real-Time Backend with AI-powered reactive database\n  architecture, Context7 integration, and intelligent synchronization orchestration\n  for collaborative applications\nkeywords:\n- convex\n- realtime-backend\n- reactive-database\n- typescript\n- full-stack\n- synchronization\n- context7-integration\n- ai-orchestration\n- production-deployment\nallowed-tools:\n- Read\n- Bash\n- Write\n- Edit\n- Glob\n- Grep\n- WebFetch\n- mcp__context7__resolve-library-id\n- mcp__context7__get-library-docs\nstability: stable\n---\n\n\n# Enterprise Convex Real-Time Backend Expert \n\n## Skill Metadata\n\n| Field | Value |\n| ----- | ----- |\n| **Skill Name** | moai-baas-convex-ext |\n| **Version** | 4.0.0 (2025-11-13) |\n| **Tier** | Enterprise Real-Time Backend Expert |\n| **AI-Powered** | ✅ Context7 Integration, Intelligent Architecture |\n| **Auto-load** | On demand when Convex keywords detected |\n\n---\n\n## What It Does\n\nEnterprise Convex Real-Time Backend expert with AI-powered reactive database architecture, Context7 integration, and intelligent synchronization orchestration for collaborative applications.\n\n**Revolutionary  capabilities**:\n- 🤖 **AI-Powered Convex Architecture** using Context7 MCP for latest real-time patterns\n- 📊 **Intelligent Synchronization Orchestration** with automated real-time optimization\n- 🚀 **Advanced TypeScript Integration** with AI-driven type safety and performance\n- 🔗 **Enterprise Reactive Patterns** with zero-configuration real-time workflows\n- 📈 **Predictive"
+    },
+    {
+      "path": "other/loogle-search-carmandale-agent-config-2/SKILL.md",
+      "name": "loogle-search",
+      "current_category": "other",
+      "llm_category": "domains",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Skill provides a domain-specific tool for searching Lean 4 mathlib, a specialized mathematical library. It is a workflow for a specific subject-matter domain (formal mathematics/theorem proving) rather than a general capability like development or analysis.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "2269b793e37f453d45e7a7244d5737cc63b0d73a70cd1328fd48e7379d391c0b",
+      "metadata_sha256": "ca7d9fb2ce1c62733786979b2d02a4bce24a96898447f47399ea17e1f65314bd",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Search Lean 4 mathlib using Loogle API",
+      "content_excerpt": "---\nname: loogle-search\ndescription: Search Lean 4 mathlib using Loogle API\n---\n\n# Loogle Search - Mathlib Type Signature Search\n\nSearch Mathlib for lemmas by type signature pattern.\n\n## When to Use\n\n- Finding a lemma when you know the type shape but not the name\n- Discovering what's available for a type (e.g., all `Nontrivial ↔ _` lemmas)\n- Type-directed proof search\n\n## Commands\n\n```bash\n# Search by pattern (uses server if running, else direct)\nloogle-search \"Nontrivial _ ↔ _\"\nloogle-search \"(?a → ?b) → List ?a → List ?b\"\nloogle-search \"IsCyclic, center\"\n\n# JSON output\nloogle-search \"List.map\" --json\n\n# Start server for fast queries (keeps index in memory)\nloogle-server &\n```\n\n## Query Syntax\n\n| Pattern | Meaning |\n|---------|---------|\n| `_` | Any single type |\n| `?a`, `?b` | Type variables (same variable = same type) |\n| `Foo, Bar` | Must mention both `Foo` and `Bar` |\n| `Foo.bar` | Exact name match |\n\n## Examples\n\n```bash\n# Find lemmas relating Nontrivial and cardinality\nloogle-search \"Nontrivial _ ↔ _ < Fintype.card _\"\n\n# Find map-like functions\nloogle-search \"(?a → ?b) → List ?a → List ?b\"\n# → List.map, List.pmap, ...\n\n# Find everything about cyclic groups and center\nloogle-search \"IsCyclic, center\"\n# → commutative_of_cyclic_center_quotient, ...\n\n# Find Fintype.card lemmas\nloogle-search \"Fintype.card\"\n```\n\n## Performance\n\n- **With server running**: ~100-200ms per query\n- **Cold start (no server)**: ~10s per query (loads 343MB index)\n\n## Setup\n\nLoogle must be built first:\n```bash\ncd ~/tools/loogle && lake build\nlake build LoogleMathlibCache  # or use --write-index\n```"
+    },
+    {
+      "path": "other/obsidian-kavia-common-moltbot-311196/SKILL.md",
+      "name": "obsidian",
+      "current_category": "other",
+      "llm_category": "productivity",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill automates personal note-taking workflows with Obsidian vaults, including finding vaults, managing notes, and using CLI tools for task management.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "b184f7079cf2338ce47a7ac0cc346904fcd1d80a030ae12000c7bac8fa3bb410",
+      "metadata_sha256": "98c64e3e09525fc102766cf6029cd79a81df56140af6d9efc12c1f2b7599bf91",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Work with Obsidian vaults (plain Markdown notes) and automate via obsidian-cli.",
+      "content_excerpt": "---\nname: obsidian\ndescription: Work with Obsidian vaults (plain Markdown notes) and automate via obsidian-cli.\nhomepage: https://help.obsidian.md\nmetadata:\n  {\n    \"openclaw\":\n      {\n        \"emoji\": \"💎\",\n        \"requires\": { \"bins\": [\"obsidian-cli\"] },\n        \"install\":\n          [\n            {\n              \"id\": \"brew\",\n              \"kind\": \"brew\",\n              \"formula\": \"yakitrak/yakitrak/obsidian-cli\",\n              \"bins\": [\"obsidian-cli\"],\n              \"label\": \"Install obsidian-cli (brew)\",\n            },\n          ],\n      },\n  }\n---\n\n# Obsidian\n\nObsidian vault = a normal folder on disk.\n\nVault structure (typical)\n\n- Notes: `*.md` (plain text Markdown; edit with any editor)\n- Config: `.obsidian/` (workspace + plugin settings; usually don’t touch from scripts)\n- Canvases: `*.canvas` (JSON)\n- Attachments: whatever folder you chose in Obsidian settings (images/PDFs/etc.)\n\n## Find the active vault(s)\n\nObsidian desktop tracks vaults here (source of truth):\n\n- `~/Library/Application Support/obsidian/obsidian.json`\n\n`obsidian-cli` resolves vaults from that file; vault name is typically the **folder name** (path suffix).\n\nFast “what vault is active / where are the notes?”\n\n- If you’ve already set a default: `obsidian-cli print-default --path-only`\n- Otherwise, read `~/Library/Application Support/obsidian/obsidian.json` and use the vault entry with `\"open\": true`.\n\nNotes\n\n- Multiple vaults common (iCloud vs `~/Documents`, work/personal, etc.). Don’t guess; read config.\n- Avoid writing hardcoded vault paths into scripts; prefer reading the config or using `print-def"
+    },
+    {
+      "path": "other/openspec-apply-change-azzgo-agent-skills-2/SKILL.md",
+      "name": "openspec-apply-change",
+      "current_category": "other",
+      "llm_category": "workflow",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill implements tasks from an OpenSpec change, which is a repeatable procedure for working through implementation tasks in a structured workflow.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "d56a68f8ad057b7cb3298ada0057786f9967c8c4fcc0b3d6b5c5f381ffd7c2d2",
+      "metadata_sha256": "7f98483a8eeab3e43f1e14f953fb29fbd2ecb79c40acf6871fd4a3686c60e6d0",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Implement tasks from an OpenSpec change. Use when the user wants to start implementing, continue implementation, or work through tasks.",
+      "content_excerpt": "---\nname: openspec-apply-change\ndescription: Implement tasks from an OpenSpec change. Use when the user wants to start implementing, continue implementation, or work through tasks.\nlicense: MIT\ncompatibility: Requires openspec CLI.\nmetadata:\n  author: openspec\n  version: \"1.0\"\n  generatedBy: \"1.1.1\"\n  internal: true\n---\n\nImplement tasks from an OpenSpec change.\n\n**Input**: Optionally specify a change name. If omitted, check if it can be inferred from conversation context. If vague or ambiguous you MUST prompt for available changes.\n\n**Steps**\n\n1. **Select the change**\n\n   If a name is provided, use it. Otherwise:\n   - Infer from conversation context if the user mentioned a change\n   - Auto-select if only one active change exists\n   - If ambiguous, run `openspec list --json` to get available changes and use the **AskUserQuestion tool** to let the user select\n\n   Always announce: \"Using change: <name>\" and how to override (e.g., `/opsx-apply <other>`).\n\n2. **Check status to understand the schema**\n   ```bash\n   openspec status --change \"<name>\" --json\n   ```\n   Parse the JSON to understand:\n   - `schemaName`: The workflow being used (e.g., \"spec-driven\")\n   - Which artifact contains the tasks (typically \"tasks\" for spec-driven, check status for others)\n\n3. **Get apply instructions**\n\n   ```bash\n   openspec instructions apply --change \"<name>\" --json\n   ```\n\n   This returns:\n   - Context file paths (varies by schema - could be proposal/specs/design/tasks or spec/tests/implementation/docs)\n   - Progress (total, complete, remaining)\n   - Task list with status\n   - Dynamic instru"
+    },
+    {
+      "path": "other/levin-levity/SKILL.md",
+      "name": "levin-levity",
+      "current_category": "other",
+      "llm_category": "ai-ml",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill describes algorithmic complexity theory (Kolmogorov complexity, BB(n) prediction markets, Nash equilibrium) which is fundamentally about machine learning and AI system research, fitting the ai-ml category's inclusion of ML experiments and model research.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "4c5efcc09c5716b2694275abe7f1b3c3677bb9a8a8b0f9ab22b3fc56d1bb9602",
+      "metadata_sha256": "3a4fe00515736a56a4238b4a0ff3ab936a140a283d978e78173db13836741c73",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Leonid Levin''s algorithmic complexity meets playful mutual ingression. Use for: BB(n) prediction markets, Kolmogorov complexity rewards, WEV extraction from proof inefficiencies, Nash equilibrium between exploration (LEVITY) and convergence (LEVIN).",
+      "content_excerpt": "---\nname: levin-levity\ndescription: 'Leonid Levin''''s algorithmic complexity meets playful mutual ingression. Use for: BB(n) prediction markets, Kolmogorov complexity rewards, WEV extraction from proof inefficiencies, Nash equilibrium between exploration (LEVITY) and convergence (LEVIN).'\nversion: 1.0.0\n---\n\n# Levin-Levity: Mutual Ingression of Minds\n\n> \"The shortest program that outputs the universe is the universe computing itself.\"\n> — Levin, played lightly\n\n## Core Duality\n\n```\n┌─────────────────────────────────────────────────────────────────┐\n│              LEVIN ⇌ LEVITY DIALECTIC                          │\n├─────────────────────────────────────────────────────────────────┤\n│  LEVIN (-1)    │  Convergence, compression, Kolmogorov        │\n│                │  \"Find the shortest program\"                  │\n│                │  τ_mix → 0 (rapid equilibration)              │\n├────────────────┼────────────────────────────────────────────────┤\n│  LEVITY (+1)   │  Exploration, expansion, serendipity         │\n│                │  \"Discover new programs to compress\"          │\n│                │  τ_mix → ∞ (eternal novelty)                  │\n├────────────────┼────────────────────────────────────────────────┤\n│  ERGODIC (0)   │  Nash equilibrium of the two                 │\n│                │  \"Mutual ingression of minds\"                 │\n│                │  τ_mix = τ_optimal (WEV extracted)            │\n└─────────────────────────────────────────────────────────────────┘\n```\n\n## Leonid Levin's Key Ideas\n\n### 1. Universal Search (Levin Search)\n\nThe optimal algorithm for inver"
+    },
+    {
+      "path": "other/learning-system-taylorhuston-local-life-manager-2/SKILL.md",
+      "name": "learning-system",
+      "current_category": "other",
+      "llm_category": "personal-development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is a structured learning system with spaced repetition, study sessions, flashcards, and progress tracking. The taxonomy guidance for 'education' directs to 'personal-development' for learning plans, coaching, or self-improvement. This is a personal learning tool with explicit workflows for teaching and retention.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "f3040cd208122b8adfc7c9d8713a82acf47f8b7b9d3a2e7799001f28179ff38e",
+      "metadata_sha256": "ac5ac36333ce389edd0e19002fd43f90a1eb3922c440cef0d3038af69b33eacc",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Structured learning and spaced repetition system. Use when user wants to learn a topic, start a study session, review material, generate flashcards, create study notes, or track learning progress. Triggers on phrases like \"let's learn\", \"teach me\", \"study session\", \"review [topic]\", \"flashcards\", \"study notes\".",
+      "content_excerpt": "---\nname: learning-system\ndescription: Structured learning and spaced repetition system. Use when user wants to learn a topic, start a study session, review material, generate flashcards, create study notes, or track learning progress. Triggers on phrases like \"let's learn\", \"teach me\", \"study session\", \"review [topic]\", \"flashcards\", \"study notes\".\n---\n\n# Learning System\n\nA structured system for learning new topics and retaining knowledge through spaced repetition.\n\n## Workflows\n\n| Command | Purpose |\n|---------|---------|\n| `/start-session [topic]` | Begin a teaching session on a topic |\n| `/end-session` | End current session, update progress |\n| `/log-session` | Log entries mid-session |\n| `/review-session [topic]` | Retrieval practice (test retention) |\n| `/flashcards [file/topic]` | Generate spaced repetition flashcards |\n| `/study-notes [topic]` | Create comprehensive study notes |\n\n## Data Storage\n\n- Sessions: `.claude/learning-sessions/`\n- Learning plan: `.claude/learning-sessions/learning-plan.json`\n- Session index: `.claude/learning-sessions/index.json`\n\n## References\n\n- **Session structure**: See `references/session-schema.md`\n- **Entry types**: See `references/entry-types.md`\n- **Proficiency levels**: See `references/proficiency.md`\n- **Flashcard syntax**: See `references/flashcard-syntax.md`\n\n## Teaching Approach\n\n- Teach conversationally with Q&A\n- Explain concepts, then ask questions to check understanding\n- Correct misconceptions as they arise\n- Build from fundamentals to advanced\n- Use ASCII diagrams and tables where helpful\n- Reference existing notes in `m"
+    },
+    {
+      "path": "other/library-docs-nathanial-lean-workspace-e6467586/SKILL.md",
+      "name": "library-docs",
+      "current_category": "other",
+      "llm_category": "documents",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Same as id 1 - this is a duplicate entry for the same library-docs skill. The skill is about writing structured documentation (README files, user guides, tutorials) which aligns with the documents category for document creation and structured document production.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "f1ee00ec9bb27bd007ae1a9c9b10d955ab2de725d14e6107cc1122ea3a9a924b",
+      "metadata_sha256": "f871f825a03a880dd967a5657690a5db4cc7df9dab60efa1dddee43e4790bfe8",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Write prosaic, narrative-style documentation for Lean 4 libraries. Use when creating README files, user guides, tutorials, or comprehensive library documentation.",
+      "content_excerpt": "---\nname: library-docs\ndescription: Write prosaic, narrative-style documentation for Lean 4 libraries. Use when creating README files, user guides, tutorials, or comprehensive library documentation.\n---\n\n# Lean 4 Library Documentation\n\nWrite clear, engaging documentation that teaches users how to understand and use Lean 4 libraries effectively.\n\n## Philosophy\n\nGreat library documentation is **prosaic**: it reads like well-written prose, not a reference manual. It tells a story—starting with the problem the library solves, building intuition through examples, and gradually revealing depth.\n\n**Principles:**\n\n1. **Lead with the \"why\"** — Before showing API, explain what problem this solves\n2. **Show, then tell** — Code examples first, explanations second\n3. **Progressive disclosure** — Simple cases first, advanced features later\n4. **Concrete over abstract** — Real examples over type signatures\n5. **Assume intelligence, not knowledge** — Readers are smart but may not know Lean idioms\n\n## Document Structure\n\n### README.md (Entry Point)\n\n```markdown\n# Library Name\n\nOne sentence: what this library does and why you'd use it.\n\n## The Problem\n\n2-3 sentences describing the pain point this library addresses.\nUse concrete scenarios the reader will recognize.\n\n## Quick Example\n\n```lean\n-- Show the library solving the problem in 5-10 lines\n-- This should be copy-pasteable and immediately useful\n```\n\n## Installation\n\n```lean\nrequire libname from git \"https://github.com/...\" @ \"v0.0.1\"\n```\n\n## Core Concepts\n\nBrief overview of the mental model. What are the 2-3 key ideas\na user needs to und"
+    },
+    {
+      "path": "other/nuxt-server/SKILL.md",
+      "name": "nuxt-server",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.82,
+      "status": "ok",
+      "reason": "Nuxt 5 server-side development skill covering Nitro v3, h3 v2, API routes, middleware, database integration (D1, Drizzle), and migration from Nitro v2. This is a software development framework skill focused on backend coding, API implementation, and framework usage.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "d2a116cb3dbeaf43bf7639c3c2bd09e95ccbf30cd2bd737a5b984a3a19a51c96",
+      "metadata_sha256": "6b76d6c6bfd396ad22c60b86d4d0f9c4e22cd98ca0544e5ebc1c6b5139e8ce3c",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Nuxt 5 server-side development with Nitro v3, h3 v2, API routes, middleware, and database integration. Use when creating server routes, integrating D1/Drizzle, or migrating from Nitro v2.",
+      "content_excerpt": "---\nname: nuxt-server\ndescription: Nuxt 5 server-side development with Nitro v3, h3 v2, API routes, middleware, and database integration. Use when creating server routes, integrating D1/Drizzle, or migrating from Nitro v2.\nlicense: MIT\nmetadata:\n  version: 5.0.0\n  author: Claude Skills Maintainers\n  category: Framework\n  framework: Nuxt\n  framework-version: 5.x\n  last-verified: 2026-03-30\n---\n\n# Nuxt 5 Server Development\n\nServer routes, API patterns, and backend development with Nitro v3.\n\n**Use when**: creating server API routes, implementing server middleware, integrating databases (D1, PostgreSQL, Drizzle), handling file uploads, migrating from Nitro v2/h3 v1 to Nitro v3/h3 v2, or building backend logic.\n\n## Quick Reference\n\n### Nuxt 5 Server API Changes (from Nuxt 4)\n\n| Area | Nuxt 4 (Nitro v2) | Nuxt 5 (Nitro v3) |\n|------|-------------------|-------------------|\n| Package | `nitropack` | `nitro` |\n| h3 imports | `import { ... } from 'h3'` | `import { ... } from 'nitro/h3'` |\n| Error creation | `createError({statusCode})` | `new HTTPError({status})` |\n| Event path | `event.path` | `event.url.pathname` |\n| Event method | `event.method` | `event.req.method` |\n| Status code | `event.node.res.statusCode` | `event.res.status` |\n| Response headers | `setResponseHeader(event, ...)` | `event.res.headers.set(...)` |\n| Runtime config | `useRuntimeConfig(event)` | `useRuntimeConfig()` |\n| Route rules redirect | `statusCode` | `status` |\n\n### File-Based Server Routes\n\n```\nserver/\n├── api/                      # API endpoints (/api/*)\n│   ├── users/\n│   │   ├── index.get.ts      → "
+    },
+    {
+      "path": "other/moai-security-compliance-dolsoon-my-awesome-project-2/SKILL.md",
+      "name": "moai-security-compliance",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly about regulatory compliance and audit logging for GDPR, HIPAA, SOC 2, ISO 27001, and PCI DSS. This falls under the security category's inclusion rule for 'Security review, authentication, cryptography, compliance, operations, vulnerabilities, OWASP, pentesting, and fuzzing.' Compliance frameworks are a core security concern.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "87d707f382c85a80abe43915e9e910da689628b6fc08002d7737074f8a16725f",
+      "metadata_sha256": "31389e9d662675842549a6503741c1dcda3c45bad3a58757ce7fca0ed6f72a2b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Enterprise Skill for advanced development",
+      "content_excerpt": "---\nname: \"moai-security-compliance\"\nversion: \"4.0.0\"\nstatus: stable\ndescription: \"Enterprise Skill for advanced development\"\nallowed-tools: \"Read, Bash, WebSearch, WebFetch\"\n---\n\n# moai-security-compliance: Regulatory Compliance & Audit Logging\n\n**GDPR, HIPAA, SOC 2, ISO 27001, PCI DSS Compliance Framework**  \nTrust Score: 9.9/10 | Version: 4.0.0 | Enterprise Mode | Last Updated: 2025-11-12\n\n---\n\n## Overview\n\nComprehensive regulatory compliance framework for GDPR, HIPAA, SOC 2, ISO 27001, and PCI DSS. Covers audit logging, data classification, retention policies, and evidence collection for regulatory audits. 2025 trend: 83-85% of enterprises now require SOC 2 compliance from vendors.\n\n**When to use this Skill:**\n- Implementing GDPR compliance (EU data protection)\n- HIPAA PHI protection (healthcare)\n- SOC 2 audit preparation (security & availability)\n- ISO 27001 information security\n- PCI DSS payment card security\n- Building audit trails for regulatory proof\n- GDPR right-to-erasure implementation\n\n---\n\n## Level 1: Foundations\n\n### Regulatory Framework Overview\n\n```\nGDPR (EU):\n├─ Scope: Any organization processing EU citizen data\n├─ Key: Right-to-erasure, data portability, consent\n├─ Penalties: Up to EUR 20 million or 4% revenue\n└─ Focus: Privacy & data protection\n\nHIPAA (USA):\n├─ Scope: Healthcare providers, insurers, PHI handlers\n├─ Key: Confidentiality, integrity, availability (CIA triad)\n├─ Penalties: Up to USD 1.5 million per violation\n└─ Focus: Patient health information security\n\nSOC 2 (USA):\n├─ Scope: Service organizations (any industry)\n├─ Key: Security, availabili"
+    },
+    {
+      "path": "other/moe-training/SKILL.md",
+      "name": "moe-training",
+      "current_category": "other",
+      "llm_category": "ai-ml",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is explicitly about training Mixture of Experts (MoE) models using DeepSpeed or HuggingFace, covering MoE architectures, routing mechanisms, load balancing, expert parallelism, and inference optimization. This directly fits the ai-ml category for machine learning model training and ML experiments.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "f13f184fe031c84700d72c15dd90161a96f3b48ab6b50b250e6b86cfc4c87354",
+      "metadata_sha256": "52e55fa74c3d59c6a44a5465700658ed9a52cf42a65b7bd551921bc103fd4f20",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "Train Mixture of Experts (MoE) models using DeepSpeed or HuggingFace. Use when training large-scale models with limited compute (5× cost reduction vs dense models), implementing sparse architectures like Mixtral 8x7B or DeepSeek-V3, or scaling model capacity without proportional compute increase. Covers MoE architectures, routing mechanisms, load balancing, expert parallelism, and inference optimization.",
+      "content_excerpt": "---\nname: moe-training\ndescription: Train Mixture of Experts (MoE) models using DeepSpeed or HuggingFace. Use when training large-scale models with limited compute (5× cost reduction vs dense models), implementing sparse architectures like Mixtral 8x7B or DeepSeek-V3, or scaling model capacity without proportional compute increase. Covers MoE architectures, routing mechanisms, load balancing, expert parallelism, and inference optimization.\nversion: 1.0.0\nauthor: Orchestra Research\nlicense: MIT\ntags: [Emerging Techniques, MoE, Mixture Of Experts, Sparse Models, DeepSpeed, Expert Parallelism, Mixtral, DeepSeek, Routing, Load Balancing, Efficient Training]\ndependencies: [deepspeed, transformers, torch, accelerate]\n---\n\n# MoE Training: Mixture of Experts\n\n## When to Use This Skill\n\nUse MoE Training when you need to:\n- **Train larger models** with limited compute (5× cost reduction vs dense models)\n- **Scale model capacity** without proportional compute increase\n- **Achieve better performance** per compute budget than dense models\n- **Specialize experts** for different domains/tasks/languages\n- **Reduce inference latency** with sparse activation (only 13B/47B params active in Mixtral)\n- **Implement SOTA models** like Mixtral 8x7B, DeepSeek-V3, Switch Transformers\n\n**Notable MoE Models**: Mixtral 8x7B (Mistral AI), DeepSeek-V3, Switch Transformers (Google), GLaM (Google), NLLB-MoE (Meta)\n\n## Installation\n\n```bash\n# DeepSpeed with MoE support\npip install deepspeed>=0.6.0\n\n# Megatron-DeepSpeed for large-scale training\ngit clone https://github.com/microsoft/Megatron-DeepSpeed\ncd Meg"
+    },
+    {
+      "path": "other/math-router-carmandale-agent-config/SKILL.md",
+      "name": "math-router",
+      "current_category": "other",
+      "llm_category": "orchestration",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "Same as id 1: deterministic router mapping user intent to CLI commands, coordinating multiple tools.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "e9d660e3a7f5e4b0468c90d0d24ecc36e28cc67625a6f196a57b46f93e030001",
+      "metadata_sha256": "c2503f7d8d1008e3018c0b3acbc3d1d660156709dff6fdd311c15d197bf621bd",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Deterministic router for math cognitive stack - maps user intent to exact CLI commands",
+      "content_excerpt": "---\nname: math-router\ndescription: Deterministic router for math cognitive stack - maps user intent to exact CLI commands\n---\n\n# Math Router\n\n**ALWAYS use this router first for math requests.**\n\nInstead of reading individual skill documentation, call the router to get the exact command:\n\n## Usage\n\n```bash\n# Route any math intent to get the CLI command\nuv run python scripts/math_router.py route \"<user's math request>\"\n```\n\n## Example Workflow\n\n1. User says: \"integrate sin(x) from 0 to pi\"\n2. You run: `uv run python scripts/math_router.py route \"integrate sin(x) from 0 to pi\"`\n3. Router returns:\n   ```json\n   {\n     \"command\": \"uv run python scripts/sympy_compute.py integrate \\\"sin(x)\\\" --var x --lower 0 --upper pi\",\n     \"confidence\": 0.95\n   }\n   ```\n4. You execute the returned command\n5. Return result to user\n\n## Why Use The Router\n\n- **Faster**: No need to read skill docs\n- **Deterministic**: Pattern-based, not LLM inference\n- **Accurate**: Extracts arguments correctly\n- **Complete**: Covers 32 routes across 7 scripts\n\n## Available Routes\n\n| Category | Commands |\n|----------|----------|\n| sympy | integrate, diff, solve, simplify, limit, det, eigenvalues, inv, expand, factor, series, laplace, fourier |\n| pint | convert, check |\n| shapely | create, measure, pred, op |\n| z3 | prove, sat, optimize |\n| scratchpad | verify, explain |\n| tutor | hint, steps, generate |\n| plot | plot2d, plot3d, latex |\n\n## List All Commands\n\n```bash\n# List all available routes\nuv run python scripts/math_router.py list\n\n# List routes by category\nuv run python scripts/math_router.py list --category "
+    },
+    {
+      "path": "other/milestone-management-troykelly-claude-skills/SKILL.md",
+      "name": "milestone-management",
+      "current_category": "other",
+      "llm_category": "planning",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Same milestone management skill - time-based delivery phase grouping, progress tracking, and deadline management align with planning category for roadmaps, schedules, and project sequencing.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "dbea3b5ca64f4755126b3cecf95184352d833e27580bd1fadd53e6c6ce21faf9",
+      "metadata_sha256": "357847bb069317c18e13d3470820650f7ec5416f9ef137034f72e3231a2c22b9",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use for time-based grouping of issues into delivery phases. Creates, updates, and tracks milestones, associates issues and epics, monitors progress toward milestone completion.",
+      "content_excerpt": "---\nname: milestone-management\ndescription: Use for time-based grouping of issues into delivery phases. Creates, updates, and tracks milestones, associates issues and epics, monitors progress toward milestone completion.\nallowed-tools:\n  - Bash\n  - mcp__github__*\nmodel: opus\n---\n\n# Milestone Management\n\n## Overview\n\n**Milestones** group issues by delivery phase or time period. They answer \"what will be done by when?\"\n\n**Core principle:** Milestones are delivery commitments. Track them closely.\n\n**Announce at start:** \"I'm using milestone-management to organize work into delivery phases.\"\n\n## What is a Milestone?\n\nA milestone is:\n- A GitHub milestone with a title, description, and optional due date\n- A collection of issues and epics targeting that delivery phase\n- A progress tracker showing completion percentage\n\n## Milestone vs Epic\n\n| Aspect | Milestone | Epic |\n|--------|-----------|------|\n| **Grouping by** | Time/delivery phase | Feature/capability |\n| **Scope** | Cross-cutting | Focused |\n| **Can contain** | Multiple epics | Related issues |\n| **Progress** | % of issues closed | % of issues closed |\n| **Due date** | Usually has one | Usually doesn't |\n\nAn epic can be assigned to a milestone. Multiple epics can share a milestone.\n\n## Creating a Milestone\n\n### Via GitHub CLI\n\n```bash\n# Create milestone with due date\ngh api repos/$GITHUB_OWNER/$GITHUB_REPO/milestones \\\n  -X POST \\\n  -f title=\"[NAME]\" \\\n  -f description=\"[DESCRIPTION]\" \\\n  -f due_on=\"YYYY-MM-DDTHH:MM:SSZ\"\n\n# Create milestone without due date\ngh api repos/$GITHUB_OWNER/$GITHUB_REPO/milestones \\\n  -X POST \\\n"
+    }
+  ],
+  "notes": [
+    "Review sample rows against SKILL.md excerpts before applying a migration plan.",
+    "Sampling is deterministic for a fixed seed and classification input."
+  ]
+}

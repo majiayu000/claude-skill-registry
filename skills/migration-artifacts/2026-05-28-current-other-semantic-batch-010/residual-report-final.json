@@ -1,0 +1,1235 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-28T16:03:38.625287+00:00",
+  "skills_dir": ".",
+  "classification_jsonl": "migration-artifacts/2026-05-28-current-other-semantic-batch-010/classification.jsonl",
+  "policy": {
+    "min_confidence": 0.9,
+    "from_categories": [
+      "other"
+    ],
+    "to_categories": [],
+    "target_statuses": [
+      "active"
+    ],
+    "allow_target_other": false,
+    "apply_mode": "report-only",
+    "example_limit_per_reason": 20,
+    "top_targets_per_reason": 20,
+    "conflict_detail_limit": 0
+  },
+  "summary": {
+    "classification_row_count": 10000,
+    "archive_skill_count": 224174,
+    "scoped_archive_skill_count": 48649,
+    "scoped_archive_classification_gap": 40025,
+    "classification_status_counts": {
+      "ok": 10000
+    },
+    "archive_category_counts": {
+      "agent": 1560,
+      "ai-llm": 2227,
+      "ai-ml": 2113,
+      "analysis": 3373,
+      "api": 1066,
+      "bash": 240,
+      "business": 1119,
+      "c-level": 69,
+      "communication": 587,
+      "context-management": 1240,
+      "creative": 720,
+      "data": 49005,
+      "design": 13579,
+      "development": 36881,
+      "devops": 10441,
+      "documents": 6521,
+      "domains": 671,
+      "examples": 120,
+      "forensics": 76,
+      "gaming": 789,
+      "generation": 680,
+      "integration": 5097,
+      "language": 118,
+      "local-ai-infrastructure": 57,
+      "marketing": 2708,
+      "orchestration": 2134,
+      "other": 48649,
+      "performance": 927,
+      "personal-development": 357,
+      "planning": 1410,
+      "platform": 336,
+      "product": 2509,
+      "productivity": 3001,
+      "quality": 3036,
+      "security": 5102,
+      "skills": 2022,
+      "system": 78,
+      "testing": 11206,
+      "travel": 47,
+      "war-room": 21,
+      "workflow": 1306,
+      "writing": 976
+    },
+    "source_state_counts": {
+      "exists": 8624,
+      "missing": 1376
+    },
+    "existing_source_category_counts": {
+      "other": 8624
+    },
+    "scoped_source_category_counts": {
+      "other": 8624
+    },
+    "scoped_existing_source_count": 8624,
+    "candidate_move_count": 0,
+    "blocked_existing_key_count": 2174,
+    "stable_key_conflict_detail_count": 0,
+    "stable_key_conflict_detail_summary": {},
+    "primary_reason_counts": {
+      "confidence below threshold": 6450,
+      "source directory missing": 1376,
+      "target category already contains a skill with the same stable key": 2174
+    },
+    "all_blocker_reason_counts": {
+      "classification target matches current category": 103,
+      "confidence below threshold": 6450,
+      "target category already contains a skill with the same stable key": 2174,
+      "target category other requires --allow-target-other": 103
+    },
+    "target_category_counts": {
+      "agent": 118,
+      "ai-llm": 288,
+      "ai-ml": 277,
+      "analysis": 574,
+      "api": 111,
+      "bash": 21,
+      "business": 126,
+      "c-level": 1,
+      "communication": 39,
+      "context-management": 170,
+      "creative": 46,
+      "data": 295,
+      "design": 231,
+      "development": 1323,
+      "devops": 323,
+      "documents": 648,
+      "domains": 858,
+      "examples": 13,
+      "forensics": 31,
+      "gaming": 42,
+      "generation": 223,
+      "integration": 715,
+      "language": 38,
+      "local-ai-infrastructure": 18,
+      "marketing": 188,
+      "orchestration": 376,
+      "other": 103,
+      "performance": 128,
+      "personal-development": 197,
+      "planning": 191,
+      "platform": 219,
+      "product": 191,
+      "productivity": 96,
+      "quality": 476,
+      "security": 234,
+      "skills": 188,
+      "system": 82,
+      "testing": 148,
+      "travel": 4,
+      "war-room": 10,
+      "workflow": 563,
+      "writing": 77
+    },
+    "target_status_counts": {
+      "active": 10000
+    },
+    "same_policy_plan_summary": {
+      "classification_row_count": 10000,
+      "classification_status_counts": {
+        "ok": 10000
+      },
+      "planned_move_count": 2174,
+      "movable_count": 0,
+      "blocked_count": 2174,
+      "operation_counts": {
+        "blocked_existing_key": 2174
+      },
+      "reject_reasons": {
+        "confidence below threshold": 6450,
+        "source directory missing": 1376
+      },
+      "source_category_counts": {
+        "other": 2174
+      },
+      "target_category_counts": {
+        "agent": 25,
+        "ai-llm": 81,
+        "ai-ml": 106,
+        "analysis": 35,
+        "api": 41,
+        "bash": 3,
+        "business": 10,
+        "communication": 5,
+        "context-management": 48,
+        "creative": 9,
+        "data": 90,
+        "design": 90,
+        "development": 386,
+        "devops": 146,
+        "documents": 135,
+        "domains": 53,
+        "examples": 2,
+        "forensics": 9,
+        "gaming": 14,
+        "generation": 14,
+        "integration": 74,
+        "language": 13,
+        "local-ai-infrastructure": 7,
+        "marketing": 79,
+        "orchestration": 112,
+        "performance": 59,
+        "personal-development": 14,
+        "planning": 40,
+        "platform": 5,
+        "product": 17,
+        "productivity": 8,
+        "quality": 85,
+        "security": 123,
+        "skills": 67,
+        "system": 9,
+        "testing": 103,
+        "travel": 2,
+        "war-room": 3,
+        "workflow": 33,
+        "writing": 19
+      }
+    }
+  },
+  "buckets": [
+    {
+      "reason": "confidence below threshold",
+      "count": 6450,
+      "target_categories": [
+        {
+          "value": "development",
+          "count": 823
+        },
+        {
+          "value": "domains",
+          "count": 636
+        },
+        {
+          "value": "integration",
+          "count": 527
+        },
+        {
+          "value": "analysis",
+          "count": 496
+        },
+        {
+          "value": "workflow",
+          "count": 465
+        },
+        {
+          "value": "documents",
+          "count": 453
+        },
+        {
+          "value": "quality",
+          "count": 320
+        },
+        {
+          "value": "data",
+          "count": 191
+        },
+        {
+          "value": "platform",
+          "count": 187
+        },
+        {
+          "value": "ai-llm",
+          "count": 175
+        },
+        {
+          "value": "orchestration",
+          "count": 171
+        },
+        {
+          "value": "personal-development",
+          "count": 170
+        },
+        {
+          "value": "generation",
+          "count": 162
+        },
+        {
+          "value": "ai-ml",
+          "count": 148
+        },
+        {
+          "value": "product",
+          "count": 144
+        },
+        {
+          "value": "devops",
+          "count": 138
+        },
+        {
+          "value": "planning",
+          "count": 125
+        },
+        {
+          "value": "design",
+          "count": 113
+        },
+        {
+          "value": "business",
+          "count": 109
+        },
+        {
+          "value": "other",
+          "count": 103
+        }
+      ],
+      "target_status_counts": {
+        "active": 6450
+      },
+      "examples": [
+        {
+          "path": "other/julia-scientific-plurigrid-asi-2/SKILL.md",
+          "name": "julia-scientific",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "domains",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/jump-trading/SKILL.md",
+          "name": "jump-trading-fpga-hft",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "performance",
+          "target_status": "active",
+          "confidence": 0.8,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/jupyter-educational-notebook-ddttom-allaboutv2-2/SKILL.md",
+          "name": "jupyter-educational-notebook",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/jupyter-notebook-testing-ddttom-allaboutv2-2/SKILL.md",
+          "name": "jupyter-notebook-testing",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "testing",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/jupytext/SKILL.md",
+          "name": "jupytext",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.8,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/jupytext-edwinhu-workflows/SKILL.md",
+          "name": "jupytext",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.8,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/jura-ofl/SKILL.md",
+          "name": "jura_ofl",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/jura-ofl-bitwikiorg-skills-md/SKILL.md",
+          "name": "jura_ofl",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/jura-ofl-bitwikiorg-skills-md-2/SKILL.md",
+          "name": "jura_ofl",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/jura-ofl-bitwikiorg-skills-md-ca19b8b8/SKILL.md",
+          "name": "jura_ofl",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/jurastudium-anpassen/SKILL.md",
+          "name": "jurastudium-anpassen",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "personal-development",
+          "target_status": "active",
+          "confidence": 0.8,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/jurastudium-anpassen-klotzkette-claude-fuer-deutsche/SKILL.md",
+          "name": "jurastudium-anpassen",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "personal-development",
+          "target_status": "active",
+          "confidence": 0.8,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/jurisdictions/SKILL.md",
+          "name": "jurisdictions",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "domains",
+          "target_status": "active",
+          "confidence": 0.75,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/just/SKILL.md",
+          "name": "just",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "workflow",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/just-enuno-claude-command-and-c/SKILL.md",
+          "name": "just",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "workflow",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/just-pro/SKILL.md",
+          "name": "just-pro",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/just-pro-rbergman-dark-matter-marketpl/SKILL.md",
+          "name": "just-pro",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/justice-matrix-feature/SKILL.md",
+          "name": "justice-matrix-feature",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "writing",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/justice-matrix-feature-acurioustractor-justicehub-platform/SKILL.md",
+          "name": "justice-matrix-feature",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "writing",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/justice-matrix-feature-acurioustractor-justicehub-platform-2/SKILL.md",
+          "name": "justice-matrix-feature",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "writing",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        }
+      ]
+    },
+    {
+      "reason": "target category already contains a skill with the same stable key",
+      "count": 2174,
+      "target_categories": [
+        {
+          "value": "development",
+          "count": 386
+        },
+        {
+          "value": "devops",
+          "count": 146
+        },
+        {
+          "value": "documents",
+          "count": 135
+        },
+        {
+          "value": "security",
+          "count": 123
+        },
+        {
+          "value": "orchestration",
+          "count": 112
+        },
+        {
+          "value": "ai-ml",
+          "count": 106
+        },
+        {
+          "value": "testing",
+          "count": 103
+        },
+        {
+          "value": "data",
+          "count": 90
+        },
+        {
+          "value": "design",
+          "count": 90
+        },
+        {
+          "value": "quality",
+          "count": 85
+        },
+        {
+          "value": "ai-llm",
+          "count": 81
+        },
+        {
+          "value": "marketing",
+          "count": 79
+        },
+        {
+          "value": "integration",
+          "count": 74
+        },
+        {
+          "value": "skills",
+          "count": 67
+        },
+        {
+          "value": "performance",
+          "count": 59
+        },
+        {
+          "value": "domains",
+          "count": 53
+        },
+        {
+          "value": "context-management",
+          "count": 48
+        },
+        {
+          "value": "api",
+          "count": 41
+        },
+        {
+          "value": "planning",
+          "count": 40
+        },
+        {
+          "value": "analysis",
+          "count": 35
+        }
+      ],
+      "target_status_counts": {
+        "active": 2174
+      },
+      "examples": [
+        {
+          "path": "other/junit-core-cuioss-plan-marshall-2/SKILL.md",
+          "name": "junit-core",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "testing",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "testing/junit-core/SKILL.md"
+        },
+        {
+          "path": "other/junit-integration-cuioss-plan-marshall-2/SKILL.md",
+          "name": "junit-integration",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "testing",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "testing/junit-integration/SKILL.md"
+        },
+        {
+          "path": "other/jupyter-anntnzrb-agents-2/SKILL.md",
+          "name": "jupyter",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "development/jupyter-anntnzrb-agents/SKILL.md"
+        },
+        {
+          "path": "other/justicehub-brand-alignment/SKILL.md",
+          "name": "justicehub-brand-alignment",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "design",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "design/justicehub-brand-alignment-acurioustractor-justicehub-platform-2/SKILL.md"
+        },
+        {
+          "path": "other/justicehub-brand-alignment-acurioustractor-justicehub-platform/SKILL.md",
+          "name": "justicehub-brand-alignment",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "design",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "design/justicehub-brand-alignment-acurioustractor-justicehub-platform-3/SKILL.md"
+        },
+        {
+          "path": "other/justicehub-brand-alignment-acurioustractor-justicehub-platform-9b24f79a/SKILL.md",
+          "name": "justicehub-brand-alignment",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "design",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "design/justicehub-brand-alignment-acurioustractor-justicehub-platform-2/SKILL.md"
+        },
+        {
+          "path": "other/jveg-vorschuss-klotzkette-claude-fuer-deutsche/SKILL.md",
+          "name": "jveg-vorschuss",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "domains",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "domains/jveg-vorschuss/SKILL.md"
+        },
+        {
+          "path": "other/jwt-attack-surface-maf2414-kyco-2/SKILL.md",
+          "name": "jwt-attack-surface",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "security",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "security/jwt-attack-surface/SKILL.md"
+        },
+        {
+          "path": "other/jwt-auth-aiskillstore-marketplace-2/SKILL.md",
+          "name": "api-jwt-authenticator",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "security",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "security/jwt-auth-aiskillstore-marketplace/SKILL.md"
+        },
+        {
+          "path": "other/jwt-handler-a5c-ai-babysitter/SKILL.md",
+          "name": "jwt-handler",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "security",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "security/jwt-handler/SKILL.md"
+        },
+        {
+          "path": "other/jwt-handler-a5c-ai-babysitter-2/SKILL.md",
+          "name": "jwt-handler",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "security",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "security/jwt-handler/SKILL.md"
+        },
+        {
+          "path": "other/k-create-skill-falkicon-mechanic-3/SKILL.md",
+          "name": "k-create-skill",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "skills",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "skills/k-create-skill/SKILL.md"
+        },
+        {
+          "path": "other/k-docs-falkicon-mechanic-b129a52d/SKILL.md",
+          "name": "k-docs",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "documents/k-docs-falkicon-mechanic-2/SKILL.md"
+        },
+        {
+          "path": "other/k8s-gitops-kcns008-cluster-code/SKILL.md",
+          "name": "k8s-gitops",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "devops",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "devops/k8s-gitops/SKILL.md"
+        },
+        {
+          "path": "other/k8s-gitops-kcns008-cluster-code-3fc5852d/SKILL.md",
+          "name": "k8s-gitops",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "devops",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "devops/k8s-gitops/SKILL.md"
+        },
+        {
+          "path": "other/k8s-manifests-kcns008-cluster-code/SKILL.md",
+          "name": "k8s-manifests",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "devops",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "devops/k8s-manifests/SKILL.md"
+        },
+        {
+          "path": "other/k8s-manifests-kcns008-cluster-code-c28b0949/SKILL.md",
+          "name": "k8s-manifests",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "devops",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "devops/k8s-manifests/SKILL.md"
+        },
+        {
+          "path": "other/k8s-operations-kcns008-cluster-code/SKILL.md",
+          "name": "k8s-operations",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "devops",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "devops/k8s-operations/SKILL.md"
+        },
+        {
+          "path": "other/k8s-operations-kcns008-cluster-code-19bb0862/SKILL.md",
+          "name": "k8s-operations",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "devops",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "devops/k8s-operations/SKILL.md"
+        },
+        {
+          "path": "other/k8s-security-policies/SKILL.md",
+          "name": "k8s-security-policies",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "security",
+          "target_status": "active",
+          "confidence": 0.92,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "security/k8s-security-policies-sickn33-antigravity-awesome/SKILL.md"
+        }
+      ]
+    },
+    {
+      "reason": "source directory missing",
+      "count": 1376,
+      "target_categories": [
+        {
+          "value": "domains",
+          "count": 169
+        },
+        {
+          "value": "development",
+          "count": 114
+        },
+        {
+          "value": "integration",
+          "count": 114
+        },
+        {
+          "value": "orchestration",
+          "count": 93
+        },
+        {
+          "value": "quality",
+          "count": 71
+        },
+        {
+          "value": "skills",
+          "count": 67
+        },
+        {
+          "value": "workflow",
+          "count": 65
+        },
+        {
+          "value": "documents",
+          "count": 60
+        },
+        {
+          "value": "generation",
+          "count": 47
+        },
+        {
+          "value": "analysis",
+          "count": 43
+        },
+        {
+          "value": "devops",
+          "count": 39
+        },
+        {
+          "value": "agent",
+          "count": 36
+        },
+        {
+          "value": "api",
+          "count": 35
+        },
+        {
+          "value": "ai-llm",
+          "count": 32
+        },
+        {
+          "value": "product",
+          "count": 30
+        },
+        {
+          "value": "design",
+          "count": 28
+        },
+        {
+          "value": "marketing",
+          "count": 27
+        },
+        {
+          "value": "platform",
+          "count": 27
+        },
+        {
+          "value": "planning",
+          "count": 26
+        },
+        {
+          "value": "system",
+          "count": 26
+        }
+      ],
+      "target_status_counts": {
+        "active": 1376
+      },
+      "examples": [
+        {
+          "path": "other/juristisches-schreiben/SKILL.md",
+          "name": "juristisches-schreiben",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "writing",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/just-fucking-cancel/SKILL.md",
+          "name": "just-fucking-cancel",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "productivity",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/just-mpm-lideraai-claude-skills-nextjs-pwa-skill/SKILL.md",
+          "name": "nextjs-pwa",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/justdoit/SKILL.md",
+          "name": "justdoit",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "productivity",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/jveg-fristen-erloeschen/SKILL.md",
+          "name": "jveg-fristen-erloeschen",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "domains",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/jveg-sachverstaendigenrechnung/SKILL.md",
+          "name": "jveg-sachverstaendigenrechnung",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "domains",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/jveg-vorschuss/SKILL.md",
+          "name": "jveg-vorschuss",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "domains",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/k-fenui-falkicon-mechanic-3/SKILL.md",
+          "name": "k-fenui",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "gaming",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/k6-load-test-dengineproblem-agents-monorepo-2/SKILL.md",
+          "name": "k6-load-test",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "performance",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/kafka-cli-tools/SKILL.md",
+          "name": "kafka-cli-tools",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/kafka-development-practices/SKILL.md",
+          "name": "kafka-development-practices",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/kagenti-operator/SKILL.md",
+          "name": "kagenti:operator",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "devops",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/kakiyo/SKILL.md",
+          "name": "kakiyo",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "integration",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/kalshi-api-integration/SKILL.md",
+          "name": "kalshi-api-integration",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "integration",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/kanban-lobbi-docs-claude/SKILL.md",
+          "name": "kanban",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "workflow",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/kanban-lobbi-docs-claude-60917408/SKILL.md",
+          "name": "kanban",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "workflow",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/kanban-management/SKILL.md",
+          "name": "kanban-management",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "workflow",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/kanban-management-forrestthewoods-anubis/SKILL.md",
+          "name": "kanban-management",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "workflow",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/kano-agent-backlog-skill-dorgonman-kano-agent-backlog-s/SKILL.md",
+          "name": "kano-agent-backlog-skill",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "planning",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/kanzlei-allgemein-automationen/SKILL.md",
+          "name": "kanzlei-allgemein-automationen",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "workflow",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        }
+      ]
+    }
+  ],
+  "details": {
+    "stable_key_conflicts": []
+  },
+  "notes": [
+    "This report is read-only and never moves, deletes, or rewrites skills.",
+    "same_policy_plan_summary is generated by apply_category_migration.py with the same flags.",
+    "primary_reason_counts are mutually exclusive and explain the current archive state first.",
+    "all_blocker_reason_counts can exceed scoped_existing_source_count because one row may have multiple blockers.",
+    "source directory missing usually means the classification row points at a pre-migration path that has already moved.",
+    "scoped_archive_classification_gap is scoped_archive_skill_count minus scoped_existing_source_count; positive values indicate archive skills not covered by the classification file or duplicate classification coverage.",
+    "stable_key_conflicts detail is bounded by --conflict-detail-limit and includes content hashes so duplicate removal is not inferred from the stable key alone."
+  ]
+}

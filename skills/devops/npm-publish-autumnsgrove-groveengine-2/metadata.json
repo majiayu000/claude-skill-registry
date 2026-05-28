@@ -1,0 +1,18 @@
+{
+  "name": "npm-publish",
+  "description": "Publish @autumnsgrove/groveengine to npm with proper registry swap workflow. Use when releasing a new version of the engine package to npm.",
+  "repo": "AutumnsGrove/GroveEngine",
+  "path": ".claude/skills/npm-publish",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AutumnsGrove/GroveEngine",
+  "dir_name": "npm-publish-autumnsgrove-groveengine-2",
+  "author": "AutumnsGrove",
+  "source_url": "https://github.com/AutumnsGrove/GroveEngine/blob/main/.claude/skills/npm-publish/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

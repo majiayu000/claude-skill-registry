@@ -1,0 +1,18 @@
+{
+  "name": "mac-maintenance-cleanup",
+  "repo": "evanfang0054/cc-system-creator-scripts",
+  "path": "skills/mac-maintenance-cleanup/SKILL.md",
+  "source": "github.com/evanfang0054/cc-system-creator-scripts",
+  "downloaded_at": "2026-01-22T02:03:19.307557Z",
+  "dir_name": "mac-maintenance-cleanup",
+  "category": "system",
+  "github_path": "skills/mac-maintenance-cleanup",
+  "github_branch": "main",
+  "author": "evanfang0054",
+  "source_url": "https://github.com/evanfang0054/cc-system-creator-scripts/blob/main/skills/mac-maintenance-cleanup/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Evan Fang",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

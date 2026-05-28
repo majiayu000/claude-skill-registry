@@ -1,0 +1,18 @@
+{
+  "name": "natural-language-generation",
+  "repo": "flight505/storybook-assistant",
+  "path": "skills/natural-language-generation/SKILL.md",
+  "source": "github.com/flight505/storybook-assistant",
+  "downloaded_at": "2026-01-19T03:34:51.967982Z",
+  "dir_name": "natural-language-generation-flight505-storybook-assistant",
+  "category": "generation",
+  "github_path": "skills/natural-language-generation",
+  "github_branch": "main",
+  "author": "flight505",
+  "source_url": "https://github.com/flight505/storybook-assistant/blob/main/skills/natural-language-generation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Jesper Vang",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

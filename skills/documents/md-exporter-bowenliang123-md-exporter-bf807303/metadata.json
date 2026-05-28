@@ -1,0 +1,10 @@
+{
+  "name": "md-exporter",
+  "description": "Markdown exporter for transform Markdown text to DOCX, PPTX, XLSX, PDF, PNG, HTML, MD, CSV, JSON, JSONL, XML, Mermaid files, and extract code blocks in Markdown to Python, Bash,JS and etc files. Also ",
+  "repo": "bowenliang123/md_exporter",
+  "category": "documents",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/bowenliang123/md_exporter",
+  "dir_name": "md-exporter-bowenliang123-md-exporter-bf807303"
+}

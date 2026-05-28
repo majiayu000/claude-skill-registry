@@ -1,0 +1,20 @@
+{
+  "name": "markdowntown-cli",
+  "description": "markdowntown scan CLI",
+  "repo": "joelklabo/markdowntown-cli",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".codex/skills/markdowntown-cli",
+  "github_branch": "main",
+  "dir_name": "markdowntown-cli-joelklabo-markdowntown-cli-47e36634",
+  "downloaded_at": "2026-02-05T01:45:42.510587Z",
+  "author": "joelklabo",
+  "source_url": "https://github.com/joelklabo/markdowntown-cli/blob/main/.codex/skills/markdowntown-cli/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Markdowntown Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

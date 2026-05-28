@@ -1,0 +1,16 @@
+{
+  "name": "load-pickle-persona",
+  "repo": "galz10/pickle-rick-extension",
+  "path": "skills/load-pickle-persona/SKILL.md",
+  "category": "agent",
+  "source": "github.com/galz10/pickle-rick-extension",
+  "dir_name": "load-pickle-persona",
+  "downloaded_at": "2026-02-15T07:17:09.015120Z",
+  "author": "galz10",
+  "source_url": "https://github.com/galz10/pickle-rick-extension/blob/main/skills/load-pickle-persona/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/galz10/pickle-rick-extension/blob/main/skills/load-pickle-persona/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

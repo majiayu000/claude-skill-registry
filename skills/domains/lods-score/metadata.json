@@ -1,0 +1,18 @@
+{
+  "name": "lods-score",
+  "repo": "hannesill/m4",
+  "path": "src/m4/skills/lods-score/SKILL.md",
+  "source": "github.com/hannesill/m4",
+  "downloaded_at": "2026-01-22T01:18:40.350698Z",
+  "dir_name": "lods-score",
+  "category": "domains",
+  "github_path": "src/m4/skills/lods-score",
+  "github_branch": "main",
+  "author": "hannesill",
+  "source_url": "https://github.com/hannesill/m4/blob/main/src/m4/skills/lods-score/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Hannes Ill",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

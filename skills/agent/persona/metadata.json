@@ -1,0 +1,18 @@
+{
+  "name": "persona",
+  "repo": "SimHacker/moollm",
+  "path": "skills/persona/SKILL.md",
+  "source": "github.com/SimHacker/moollm",
+  "downloaded_at": "2026-01-22T01:07:15.463484Z",
+  "dir_name": "persona",
+  "category": "agent",
+  "github_path": "skills/persona",
+  "github_branch": "main",
+  "author": "SimHacker",
+  "source_url": "https://github.com/SimHacker/moollm/blob/main/skills/persona/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Don Hopkins, Leela AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

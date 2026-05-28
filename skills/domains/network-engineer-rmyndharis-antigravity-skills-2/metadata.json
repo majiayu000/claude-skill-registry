@@ -1,0 +1,18 @@
+{
+  "name": "network-engineer",
+  "description": "Expert network engineer specializing in modern cloud networking, security architectures, and performance optimization. Masters multi-cloud connectivity, service mesh, zero-trust networking, SSL/TLS, g",
+  "repo": "rmyndharis/antigravity-skills",
+  "path": "skills/network-engineer",
+  "category": "domains",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rmyndharis/antigravity-skills",
+  "dir_name": "network-engineer-rmyndharis-antigravity-skills-2",
+  "author": "rmyndharis",
+  "source_url": "https://github.com/rmyndharis/antigravity-skills/blob/main/skills/network-engineer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Yudhi Armyndharis",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

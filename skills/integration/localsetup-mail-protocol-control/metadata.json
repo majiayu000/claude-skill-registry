@@ -1,0 +1,17 @@
+{
+  "name": "localsetup-mail-protocol-control",
+  "repo": "cptnfren/localsetup",
+  "path": "_localsetup/skills/localsetup-mail-protocol-control/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/cptnfren/localsetup",
+  "dir_name": "localsetup-mail-protocol-control",
+  "downloaded_at": "2026-03-22T07:35:04.018815Z",
+  "author": "cptnfren",
+  "source_url": "https://github.com/cptnfren/localsetup/blob/main/_localsetup/skills/localsetup-mail-protocol-control/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cptnfren/localsetup/blob/main/_localsetup/skills/localsetup-mail-protocol-control/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

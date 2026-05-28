@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-28T15:55:22.700885+00:00",
+  "skills_dir": ".",
+  "classification_jsonl": "migration-artifacts/2026-05-28-current-other-semantic-batch-010/classification.jsonl",
+  "policy": {
+    "min_confidence": 0.9,
+    "from_categories": [
+      "other"
+    ],
+    "to_categories": [],
+    "target_statuses": [
+      "active"
+    ],
+    "allow_target_other": false,
+    "movable_only": true,
+    "limit": null,
+    "apply_mode": "apply"
+  },
+  "summary": {
+    "classification_row_count": 10000,
+    "classification_status_counts": {
+      "ok": 10000
+    },
+    "planned_move_count": 3,
+    "movable_count": 3,
+    "blocked_count": 0,
+    "operation_counts": {
+      "move": 3
+    },
+    "reject_reasons": {
+      "confidence below threshold": 6450,
+      "source directory missing": 1369,
+      "target category already contains a skill with the same stable key": 2178
+    },
+    "source_category_counts": {
+      "other": 3
+    },
+    "target_category_counts": {
+      "development": 1,
+      "documents": 1,
+      "orchestration": 1
+    }
+  },
+  "moves": [
+    {
+      "operation": "move",
+      "source_path": "other/llm-council-skill-shuntacurosu-llm-council-skill-5d43e235-2",
+      "source_skill": "other/llm-council-skill-shuntacurosu-llm-council-skill-5d43e235-2/SKILL.md",
+      "source_category": "other",
+      "current_category": "other",
+      "target_category": "orchestration",
+      "target_status": "active",
+      "target_path": "orchestration/llm-council-skill-shuntacurosu-llm-council-skill-5d43e235-2",
+      "target_skill": "orchestration/llm-council-skill-shuntacurosu-llm-council-skill-5d43e235-2/SKILL.md",
+      "name": "LLM Council",
+      "confidence": 0.95,
+      "key": "shuntacurosu/llm_council_skill:name:llm-council",
+      "repo": "shuntacurosu/llm_council_skill",
+      "reason": "classification target passed filters",
+      "source_sha256": "fcf028a95e1a9f5f0e7fbabfb7fbad34bb16f7ffcc6a1c02874a80af0c30aff4",
+      "metadata_sha256": "0bc81bfe8f00f8e85721089464182d7fb06d0fe8d083bbc84438715f9b7adf90",
+      "semantic_text_sha256": "9e2717c4b1d59ab2bdb51424ee98b2aa7703d4a1e0e6626c627e1fd9b75881c3"
+    },
+    {
+      "operation": "move",
+      "source_path": "other/md-exporter-bowenliang123-md-exporter-2",
+      "source_skill": "other/md-exporter-bowenliang123-md-exporter-2/SKILL.md",
+      "source_category": "other",
+      "current_category": "other",
+      "target_category": "documents",
+      "target_status": "active",
+      "target_path": "documents/md-exporter-bowenliang123-md-exporter-2",
+      "target_skill": "documents/md-exporter-bowenliang123-md-exporter-2/SKILL.md",
+      "name": "markdown-exporter",
+      "confidence": 0.95,
+      "key": "bowenliang123/md_exporter:name:markdown-exporter",
+      "repo": "bowenliang123/md_exporter",
+      "reason": "classification target passed filters",
+      "source_sha256": "95cf7107575ca66defae28a34f063d3966307af734134f4cd8b756094cf7a222",
+      "metadata_sha256": "df70c00020d5e3eae0fc37bccf483916b27bf51ec5c7263d03702c054404daa0",
+      "semantic_text_sha256": "beea2e53a44bc6293678bd8074b2b9677db2198e783c28f569dde722bf421528"
+    },
+    {
+      "operation": "move",
+      "source_path": "other/nextjs-skill-cleanexpo-nodejs-starter-v1",
+      "source_skill": "other/nextjs-skill-cleanexpo-nodejs-starter-v1/SKILL.md",
+      "source_category": "other",
+      "current_category": "other",
+      "target_category": "development",
+      "target_status": "active",
+      "target_path": "development/nextjs-skill-cleanexpo-nodejs-starter-v1",
+      "target_skill": "development/nextjs-skill-cleanexpo-nodejs-starter-v1/SKILL.md",
+      "name": "nextjs",
+      "confidence": 0.92,
+      "key": "CleanExpo/NodeJS-Starter-V1:name:nextjs",
+      "repo": "CleanExpo/NodeJS-Starter-V1",
+      "reason": "classification target passed filters",
+      "source_sha256": "989e21bafcd21fcead8dbe463391cd454bafa780beecebe23b8f034e17a6691f",
+      "metadata_sha256": "2e59088bcf2b9642118bb8184b6d9d46f611d1b9ed1048b4ba4c4d88eb9233b3",
+      "semantic_text_sha256": "42530aef4a2d0b80020649fea5b98022995adb5f75dffba2f7f6eb01a2db0bef"
+    }
+  ],
+  "notes": [
+    "Default mode is review-only and does not modify files.",
+    "Only --apply moves directories and updates metadata.json.",
+    "Blocked moves are never applied automatically."
+  ],
+  "applied_at": "2026-05-28T15:55:22.734812+00:00"
+}

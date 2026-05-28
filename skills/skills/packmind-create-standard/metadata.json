@@ -1,0 +1,16 @@
+{
+  "name": "packmind-create-standard",
+  "repo": "PackmindHub/packmind",
+  "path": ".github/skills/packmind-create-standard/SKILL.md",
+  "source": "github.com/PackmindHub/packmind",
+  "downloaded_at": "2026-02-02T01:32:56.900823Z",
+  "dir_name": "packmind-create-standard",
+  "category": "skills",
+  "author": "PackmindHub",
+  "source_url": "https://github.com/PackmindHub/packmind/blob/main/.github/skills/packmind-create-standard/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PackmindHub/packmind/blob/main/.github/skills/packmind-create-standard/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

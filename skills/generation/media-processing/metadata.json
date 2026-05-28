@@ -1,0 +1,13 @@
+{
+  "name": "media-processing",
+  "description": "",
+  "repo": "vumichien/bi-agent",
+  "category": "generation",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vumichien/bi-agent",
+  "github_path": ".claude/skills/media-processing",
+  "github_branch": "main",
+  "dir_name": "media-processing",
+  "downloaded_at": "2026-02-05T01:44:53.818112Z"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "linear-adr",
+  "repo": "LSDIPPOLLC/ai-orchestration",
+  "path": ".claude/skills/linear-adr/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/LSDIPPOLLC/ai-orchestration",
+  "dir_name": "linear-adr",
+  "downloaded_at": "2026-03-22T05:41:23.713455Z",
+  "author": "LSDIPPOLLC",
+  "source_url": "https://github.com/LSDIPPOLLC/ai-orchestration/blob/main/.claude/skills/linear-adr/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/LSDIPPOLLC/ai-orchestration/blob/main/.claude/skills/linear-adr/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

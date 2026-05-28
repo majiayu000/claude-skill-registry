@@ -1,0 +1,17 @@
+{
+  "name": "labor-markets",
+  "repo": "brainbytes-dev/everything-claude-finance",
+  "path": "skills/economics/labor-markets/SKILL.md",
+  "github_branch": "main",
+  "category": "domains",
+  "source": "github.com/brainbytes-dev/everything-claude-finance",
+  "dir_name": "labor-markets",
+  "downloaded_at": "2026-03-22T07:19:14.360342Z",
+  "author": "brainbytes-dev",
+  "source_url": "https://github.com/brainbytes-dev/everything-claude-finance/blob/main/skills/economics/labor-markets/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/brainbytes-dev/everything-claude-finance/blob/main/skills/economics/labor-markets/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

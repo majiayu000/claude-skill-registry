@@ -1,0 +1,17 @@
+{
+  "name": "list-subs",
+  "repo": "ComposioHQ/awesome-claude-plugins",
+  "path": "skill-bus/skills/list-subs/SKILL.md",
+  "github_branch": "master",
+  "category": "skills",
+  "source": "github.com/ComposioHQ/awesome-claude-plugins",
+  "dir_name": "list-subs",
+  "downloaded_at": "2026-05-20T03:41:17.798442Z",
+  "author": "ComposioHQ",
+  "source_url": "https://github.com/ComposioHQ/awesome-claude-plugins/blob/master/skill-bus/skills/list-subs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ComposioHQ/awesome-claude-plugins/blob/master/skill-bus/skills/list-subs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

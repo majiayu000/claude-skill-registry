@@ -1,0 +1,18 @@
+{
+  "name": "operational-playbook-creator",
+  "repo": "maigentic/stratarts",
+  "path": "skills/fundraising-operations/operational-playbook-creator/SKILL.md",
+  "source": "github.com/maigentic/stratarts",
+  "downloaded_at": "2026-01-22T04:05:42.652967Z",
+  "dir_name": "operational-playbook-creator",
+  "category": "workflow",
+  "github_path": "skills/fundraising-operations/operational-playbook-creator",
+  "github_branch": "main",
+  "author": "maigentic",
+  "source_url": "https://github.com/maigentic/stratarts/blob/main/skills/fundraising-operations/operational-playbook-creator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 maigentic",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

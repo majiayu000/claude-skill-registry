@@ -1,0 +1,13 @@
+{
+  "name": "notion-knowledge-capture",
+  "description": "",
+  "repo": "platxa/platxa-skill-generator",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/platxa/platxa-skill-generator",
+  "github_path": "skills/notion-knowledge-capture",
+  "github_branch": "main",
+  "dir_name": "notion-knowledge-capture",
+  "downloaded_at": "2026-02-05T01:45:09.493185Z"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "nextjs-server-side-error-debugging",
+  "description": "Debug getServerSideProps and getStaticProps errors in Next.js. Use when: \n(1) Page shows generic error but browser console is empty, (2) API routes \nreturn 500 with no details, (3) Server-side code fa",
+  "repo": "Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "path": ".claude/skills/claudeception/examples/nextjs-server-side-error-debugging",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Wania-Kazmi/claude-code-autonomous-agent-workflow",
+  "dir_name": "nextjs-server-side-error-debugging-wania-kazmi-claude-code-auton",
+  "author": "Wania-Kazmi",
+  "source_url": "https://github.com/Wania-Kazmi/claude-code-autonomous-agent-workflow/blob/main/.claude/skills/claudeception/examples/nextjs-server-side-error-debugging/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Wania-Kazmi/claude-code-autonomous-agent-workflow/blob/main/.claude/skills/claudeception/examples/nextjs-server-side-error-debugging/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

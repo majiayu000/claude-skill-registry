@@ -1,0 +1,11 @@
+{
+  "name": "factory-build",
+  "repo": "SylvainChabaud/spec-to-code-factory",
+  "path": ".claude/skills/factory-build/SKILL.md",
+  "source": "github.com/SylvainChabaud/spec-to-code-factory",
+  "downloaded_at": "2026-01-22T01:48:27.070082Z",
+  "dir_name": "factory-build-sylvainchabaud-spec-to-code-factory",
+  "category": "orchestration",
+  "github_path": ".claude/skills/factory-build",
+  "github_branch": "main"
+}

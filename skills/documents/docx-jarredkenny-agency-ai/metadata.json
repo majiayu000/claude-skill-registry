@@ -1,0 +1,13 @@
+{
+  "name": "docx",
+  "description": "",
+  "repo": "jarredkenny/agency-ai",
+  "category": "documents",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jarredkenny/agency-ai",
+  "github_path": "roles/orchestrator/skills/docx",
+  "github_branch": "main",
+  "dir_name": "docx-jarredkenny-agency-ai",
+  "downloaded_at": "2026-02-05T01:45:07.669900Z"
+}

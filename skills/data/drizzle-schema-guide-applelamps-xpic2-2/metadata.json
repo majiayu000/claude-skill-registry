@@ -1,0 +1,18 @@
+{
+  "name": "drizzle-schema-guide",
+  "description": "Modify Drizzle ORM database schema safely. Use when user mentions \"add table\", \"new column\", \"database schema\", \"migration\", or \"drizzle\".",
+  "repo": "AppleLamps/xpic2",
+  "path": ".claude/skills/drizzle-schema-guide",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AppleLamps/xpic2",
+  "dir_name": "drizzle-schema-guide-applelamps-xpic2-2",
+  "author": "AppleLamps",
+  "source_url": "https://github.com/AppleLamps/xpic2/blob/main/.claude/skills/drizzle-schema-guide/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AppleLamps/xpic2/blob/main/.claude/skills/drizzle-schema-guide/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

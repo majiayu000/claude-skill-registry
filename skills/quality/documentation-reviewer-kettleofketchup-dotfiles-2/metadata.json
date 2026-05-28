@@ -1,0 +1,18 @@
+{
+  "name": "documentation-reviewer",
+  "description": "Review and update MkDocs documentation when code changes. This skill should be used when completing feature implementation, after making code changes that affect user-facing functionality, when review",
+  "repo": "kettleofketchup/dotfiles",
+  "path": ".claude/skills/documentation-reviewer",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kettleofketchup/dotfiles",
+  "dir_name": "documentation-reviewer-kettleofketchup-dotfiles-2",
+  "author": "kettleofketchup",
+  "source_url": "https://github.com/kettleofketchup/dotfiles/blob/main/.claude/skills/documentation-reviewer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kettleofketchup/dotfiles/blob/main/.claude/skills/documentation-reviewer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

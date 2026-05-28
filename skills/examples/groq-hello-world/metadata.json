@@ -1,0 +1,18 @@
+{
+  "name": "groq-hello-world",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/groq-pack/groq-hello-world/SKILL.md",
+  "source": "github.com/vasic-digital/SuperAgent",
+  "downloaded_at": "2026-01-22T03:16:20.108193Z",
+  "dir_name": "groq-hello-world",
+  "category": "examples",
+  "github_path": "skills/plugins/saas-packs/groq-pack/groq-hello-world",
+  "github_branch": "main",
+  "author": "vasic-digital",
+  "source_url": "https://github.com/vasic-digital/SuperAgent/blob/main/skills/plugins/saas-packs/groq-pack/groq-hello-world/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vasic-digital/SuperAgent/blob/main/skills/plugins/saas-packs/groq-pack/groq-hello-world/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

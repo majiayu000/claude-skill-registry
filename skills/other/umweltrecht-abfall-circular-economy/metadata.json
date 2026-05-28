@@ -1,0 +1,17 @@
+{
+  "name": "umweltrecht-abfall-circular-economy",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "umweltrecht/skills/umweltrecht-abfall-circular-economy/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "umweltrecht-abfall-circular-economy",
+  "downloaded_at": "2026-05-28T03:46:31.287480Z",
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/umweltrecht/skills/umweltrecht-abfall-circular-economy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/umweltrecht/skills/umweltrecht-abfall-circular-economy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

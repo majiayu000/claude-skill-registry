@@ -1,0 +1,11 @@
+{
+  "name": "gobby-workflows",
+  "repo": "GobbyAI/gobby",
+  "path": "src/gobby/install/claude/skills/gobby-workflows/SKILL.md",
+  "source": "github.com/GobbyAI/gobby",
+  "downloaded_at": "2026-01-17T01:37:11.721818Z",
+  "dir_name": "gobby-workflows",
+  "category": "workflow",
+  "github_path": ".claude/skills/gobby-workflows",
+  "github_branch": "main"
+}

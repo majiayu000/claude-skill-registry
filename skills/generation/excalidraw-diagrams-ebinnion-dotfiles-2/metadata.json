@@ -1,0 +1,18 @@
+{
+  "name": "excalidraw-diagrams",
+  "description": "Generate architecture diagrams as .excalidraw files from codebase analysis. Use when the user asks to create architecture diagrams, system diagrams, visualize codebase structure, or generate excalidra",
+  "repo": "ebinnion/dotfiles",
+  "path": "skills/excalidraw-diagrams",
+  "category": "generation",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ebinnion/dotfiles",
+  "dir_name": "excalidraw-diagrams-ebinnion-dotfiles-2",
+  "author": "ebinnion",
+  "source_url": "https://github.com/ebinnion/dotfiles/blob/main/skills/excalidraw-diagrams/SKILL.md",
+  "license": "GPL-2.0",
+  "copyright": "Copyright (C) 1989, 1991 Free Software Foundation, Inc.,",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "ios-background-processing",
+  "repo": "derKlinke/codex-config",
+  "path": "skills/ios-background-processing/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/derKlinke/codex-config",
+  "dir_name": "ios-background-processing",
+  "downloaded_at": "2026-03-22T07:43:54.377495Z",
+  "author": "derKlinke",
+  "source_url": "https://github.com/derKlinke/codex-config/blob/main/skills/ios-background-processing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/derKlinke/codex-config/blob/main/skills/ios-background-processing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

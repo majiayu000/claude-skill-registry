@@ -1,0 +1,17 @@
+{
+  "name": "project-execution",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/attune/skills/project-execution/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "project-execution-athola-claude-night-market-4",
+  "downloaded_at": "2026-05-28T03:53:58.907932Z",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/master/plugins/attune/skills/project-execution/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/athola/claude-night-market/blob/master/plugins/attune/skills/project-execution/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

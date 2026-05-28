@@ -1,0 +1,18 @@
+{
+  "name": "frontend-design-patterns",
+  "description": "Enterprise React architecture combining DDD and FSD patterns. Use when (1) designing or structuring React applications, (2) implementing Index/Types/Styles component pattern, (3) setting up Service/Ho",
+  "repo": "Mineru98/skills-store",
+  "path": ".claude/skills/frontend-design-patterns",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Mineru98/skills-store",
+  "dir_name": "frontend-design-patterns-mineru98-skills-store-2",
+  "author": "Mineru98",
+  "source_url": "https://github.com/Mineru98/skills-store/blob/main/.claude/skills/frontend-design-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 skills-store contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

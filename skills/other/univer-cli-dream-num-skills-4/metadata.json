@@ -1,0 +1,17 @@
+{
+  "name": "univer-cli",
+  "repo": "dream-num/skills",
+  "path": "skills/univer-cli/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/dream-num/skills",
+  "dir_name": "univer-cli-dream-num-skills-4",
+  "downloaded_at": "2026-05-28T03:58:01.400570Z",
+  "author": "dream-num",
+  "source_url": "https://github.com/dream-num/skills/blob/main/skills/univer-cli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dream-num/skills/blob/main/skills/univer-cli/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

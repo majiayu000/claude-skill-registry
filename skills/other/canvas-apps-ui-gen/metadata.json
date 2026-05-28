@@ -1,0 +1,17 @@
+{
+  "name": "canvas-apps-ui-gen",
+  "repo": "ToluVictor/canvas-apps-tools",
+  "path": "skills/canvas-apps-ui-gen/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ToluVictor/canvas-apps-tools",
+  "dir_name": "canvas-apps-ui-gen",
+  "downloaded_at": "2026-05-28T03:49:34.494857Z",
+  "author": "ToluVictor",
+  "source_url": "https://github.com/ToluVictor/canvas-apps-tools/blob/main/skills/canvas-apps-ui-gen/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ToluVictor/canvas-apps-tools/blob/main/skills/canvas-apps-ui-gen/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

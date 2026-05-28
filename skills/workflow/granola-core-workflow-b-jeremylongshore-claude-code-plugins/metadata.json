@@ -1,0 +1,16 @@
+{
+  "name": "granola-core-workflow-b",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/granola-pack/skills/granola-core-workflow-b/SKILL.md",
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "downloaded_at": "2026-01-29T06:20:40.138925Z",
+  "dir_name": "granola-core-workflow-b-jeremylongshore-claude-code-plugins",
+  "category": "workflow",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/saas-packs/granola-pack/skills/granola-core-workflow-b/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

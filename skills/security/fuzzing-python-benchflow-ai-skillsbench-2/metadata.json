@@ -1,0 +1,18 @@
+{
+  "name": "fuzzing-python",
+  "description": "Creating fuzz driver for Python libraries using LibFuzzer. This skill is useful when agent needs to work with creating fuzz drivers / fuzz targets for Python project and libraries.",
+  "repo": "benchflow-ai/skillsbench",
+  "path": "tasks/setup-fuzzing-py/environment/skills/fuzzing-python",
+  "category": "security",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/benchflow-ai/skillsbench",
+  "dir_name": "fuzzing-python-benchflow-ai-skillsbench-2",
+  "author": "benchflow-ai",
+  "source_url": "https://github.com/benchflow-ai/skillsbench/blob/main/tasks/setup-fuzzing-py/environment/skills/fuzzing-python/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/benchflow-ai/skillsbench/blob/main/tasks/setup-fuzzing-py/environment/skills/fuzzing-python/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

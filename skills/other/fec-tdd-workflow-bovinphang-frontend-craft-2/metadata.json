@@ -1,0 +1,17 @@
+{
+  "name": "fec-tdd-workflow",
+  "repo": "bovinphang/frontend-craft",
+  "path": "skills/fec-tdd-workflow/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/bovinphang/frontend-craft",
+  "dir_name": "fec-tdd-workflow-bovinphang-frontend-craft-2",
+  "downloaded_at": "2026-05-28T03:54:51.889148Z",
+  "author": "bovinphang",
+  "source_url": "https://github.com/bovinphang/frontend-craft/blob/main/skills/fec-tdd-workflow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bovinphang/frontend-craft/blob/main/skills/fec-tdd-workflow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

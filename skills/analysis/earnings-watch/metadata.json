@@ -1,0 +1,17 @@
+{
+  "name": "earnings-watch",
+  "repo": "luiseiman/dotforge",
+  "path": "stacks/trading/skills/earnings-watch/SKILL.md",
+  "github_branch": "main",
+  "category": "analysis",
+  "source": "github.com/luiseiman/dotforge",
+  "dir_name": "earnings-watch",
+  "downloaded_at": "2026-04-16T01:46:59.649889Z",
+  "author": "luiseiman",
+  "source_url": "https://github.com/luiseiman/dotforge/blob/main/stacks/trading/skills/earnings-watch/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/luiseiman/dotforge/blob/main/stacks/trading/skills/earnings-watch/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

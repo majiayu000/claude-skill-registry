@@ -1,0 +1,11 @@
+{
+  "name": "ghm-gate-check",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": ".claude/skills/ghm-gate-check/SKILL.md",
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "downloaded_at": "2026-01-22T02:02:06.033324Z",
+  "dir_name": "ghm-gate-check-mattgierhart-prd-driven-context-e",
+  "category": "product",
+  "github_path": ".claude/skills/ghm-gate-check",
+  "github_branch": "main"
+}

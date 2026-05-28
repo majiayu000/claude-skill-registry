@@ -1,4 +1,5 @@
 import importlib.util
+import io
 import json
 import sys
 from pathlib import Path
@@ -58,6 +59,35 @@ description: Demo skill used to verify security decision evidence.
     assert decision["provenance"]["source_ref"] == "main"
     assert decision["provenance"]["content_sha256"]
     assert decision["provenance"]["scanned_at"] == "2026-05-24T00:00:00Z"
+
+
+def test_scan_directory_progress_interval_reports_counts(tmp_path):
+    module = load_module()
+    for index in range(2):
+        skill_dir = tmp_path / "skills" / "development" / f"demo-{index}"
+        skill_dir.mkdir(parents=True)
+        (skill_dir / "SKILL.md").write_text(
+            f"""---
+name: demo-{index}
+description: Demo skill used to verify security scan progress.
+---
+
+# Demo {index}
+""",
+            encoding="utf-8",
+        )
+
+    progress = io.StringIO()
+    report = module.scan_directory(
+        tmp_path / "skills",
+        quiet=True,
+        progress_interval=1,
+        progress_stream=progress,
+    )
+
+    assert report["total"] == 2
+    assert "Security scan progress: 1 scanned" in progress.getvalue()
+    assert "Security scan progress: 2 scanned" in progress.getvalue()
 
 
 def test_scanner_checks_reference_implementations(tmp_path):

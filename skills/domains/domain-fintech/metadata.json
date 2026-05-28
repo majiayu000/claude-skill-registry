@@ -1,0 +1,18 @@
+{
+  "name": "domain-fintech",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/domain-fintech/SKILL.md",
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "downloaded_at": "2026-01-22T03:56:40.200387Z",
+  "dir_name": "domain-fintech",
+  "category": "domains",
+  "github_path": "skills/other/domain-fintech",
+  "github_branch": "main",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/other/domain-fintech/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

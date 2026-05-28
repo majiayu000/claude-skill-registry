@@ -1,0 +1,18 @@
+{
+  "name": "executive-coo",
+  "description": "Executive COO Agent. 운영 효율화, 프로세스 개선, 리소스 관리를 담당합니다.",
+  "repo": "shaul1991/shaul-agents-plugin",
+  "path": "skills/executive-coo",
+  "category": "business",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shaul1991/shaul-agents-plugin",
+  "dir_name": "executive-coo-shaul1991-shaul-agents-plugin-2",
+  "author": "shaul1991",
+  "source_url": "https://github.com/shaul1991/shaul-agents-plugin/blob/main/skills/executive-coo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shaul1991/shaul-agents-plugin/blob/main/skills/executive-coo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

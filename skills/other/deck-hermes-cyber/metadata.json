@@ -1,0 +1,17 @@
+{
+  "name": "deck-hermes-cyber",
+  "repo": "nexu-io/html-anything",
+  "path": "next/src/lib/templates/skills/deck-hermes-cyber/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/nexu-io/html-anything",
+  "dir_name": "deck-hermes-cyber",
+  "downloaded_at": "2026-05-28T04:08:49.334145Z",
+  "author": "nexu-io",
+  "source_url": "https://github.com/nexu-io/html-anything/blob/main/next/src/lib/templates/skills/deck-hermes-cyber/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nexu-io/html-anything/blob/main/next/src/lib/templates/skills/deck-hermes-cyber/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

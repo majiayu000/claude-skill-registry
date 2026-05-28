@@ -1,0 +1,16 @@
+{
+  "name": "dojo-debug",
+  "repo": "dojoengine/dojo.js",
+  "path": ".claude/skills/dojo-debug/SKILL.md",
+  "source": "github.com/dojoengine/dojo.js",
+  "downloaded_at": "2026-01-29T08:01:08.978312Z",
+  "dir_name": "dojo-debug-dojoengine-dojo-js",
+  "category": "development",
+  "author": "dojoengine",
+  "source_url": "https://github.com/dojoengine/dojo.js/blob/main/.claude/skills/dojo-debug/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022-present",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

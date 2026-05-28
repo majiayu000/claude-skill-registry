@@ -1,0 +1,17 @@
+{
+  "name": "documenting-dbt-models",
+  "repo": "AltimateAI/data-engineering-skills",
+  "path": "skills/dbt/documenting-dbt-models/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/AltimateAI/data-engineering-skills",
+  "dir_name": "documenting-dbt-models-altimateai-data-engineering-ski-2",
+  "downloaded_at": "2026-03-22T04:50:20.677675Z",
+  "author": "AltimateAI",
+  "source_url": "https://github.com/AltimateAI/data-engineering-skills/blob/main/skills/dbt/documenting-dbt-models/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AltimateAI/data-engineering-skills/blob/main/skills/dbt/documenting-dbt-models/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

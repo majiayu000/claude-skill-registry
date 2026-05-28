@@ -1,0 +1,18 @@
+{
+  "name": "event-briefs",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/event-marketing/skills/event-briefs/SKILL.md",
+  "source": "github.com/gtmagents/gtm-agents",
+  "downloaded_at": "2026-01-22T03:37:40.636922Z",
+  "dir_name": "event-briefs",
+  "category": "marketing",
+  "github_path": "plugins/event-marketing/skills/event-briefs",
+  "github_branch": "main",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/event-marketing/skills/event-briefs/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gtmagents/gtm-agents/blob/main/plugins/event-marketing/skills/event-briefs/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

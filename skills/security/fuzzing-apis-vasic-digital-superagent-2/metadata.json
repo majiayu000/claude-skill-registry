@@ -1,0 +1,18 @@
+{
+  "name": "fuzzing-apis",
+  "description": "Configure perform API fuzzing to discover edge cases, crashes, and security vulnerabilities.\nUse when performing specialized testing.\nTrigger with phrases like \"fuzz the API\", \"run fuzzing tests\", or ",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/testing/api-fuzzer/fuzzing-apis",
+  "category": "security",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "fuzzing-apis-vasic-digital-superagent-2",
+  "author": "vasic-digital",
+  "source_url": "https://github.com/vasic-digital/SuperAgent/blob/main/skills/plugins/testing/api-fuzzer/fuzzing-apis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vasic-digital/SuperAgent/blob/main/skills/plugins/testing/api-fuzzer/fuzzing-apis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

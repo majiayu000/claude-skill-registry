@@ -1,0 +1,1025 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-28T06:54:51.233824+00:00",
+  "workset_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch009/migration-artifacts/2026-05-28-current-other-semantic-batch-009/input.jsonl",
+  "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch009/migration-artifacts/2026-05-28-current-other-semantic-batch-009/classification.jsonl",
+  "policy": {
+    "sample_size": 50,
+    "seed": "category-audit-v1",
+    "statuses": [
+      "ok"
+    ],
+    "min_confidence": null
+  },
+  "summary": {
+    "workset_row_count": 10000,
+    "classification_row_count": 10000,
+    "matched_input_count": 10000,
+    "missing_input_count": 0,
+    "candidate_count": 10000,
+    "sample_count": 50,
+    "status_counts": {
+      "ok": 10000
+    },
+    "target_category_counts": {
+      "agent": 89,
+      "ai-llm": 166,
+      "ai-ml": 206,
+      "analysis": 589,
+      "api": 197,
+      "bash": 30,
+      "business": 126,
+      "c-level": 26,
+      "communication": 38,
+      "context-management": 63,
+      "creative": 85,
+      "data": 273,
+      "design": 294,
+      "development": 1456,
+      "devops": 392,
+      "documents": 511,
+      "domains": 690,
+      "examples": 56,
+      "forensics": 44,
+      "gaming": 127,
+      "generation": 396,
+      "integration": 718,
+      "language": 40,
+      "local-ai-infrastructure": 5,
+      "marketing": 167,
+      "orchestration": 299,
+      "other": 152,
+      "performance": 88,
+      "personal-development": 132,
+      "planning": 125,
+      "platform": 179,
+      "product": 245,
+      "productivity": 57,
+      "quality": 489,
+      "security": 232,
+      "skills": 193,
+      "system": 95,
+      "testing": 187,
+      "travel": 4,
+      "war-room": 24,
+      "workflow": 640,
+      "writing": 75
+    }
+  },
+  "samples": [
+    {
+      "path": "other/gsd-preflight-tibsfox-gsd-skill-creator-2/SKILL.md",
+      "name": "gsd-preflight",
+      "current_category": "other",
+      "llm_category": "quality",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Same skill as id 0 - performs pre-flight validation checks on planning artifacts to catch inconsistencies and mismatches before workflows fail. Aligns with quality category for validation and QA process.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "6bafd7e5e5faae715388b6155544b3f5c9b0538f7463ac339ba410f7790533d6",
+      "metadata_sha256": "f51c1e5142a42f02ecf2471b799371d99816dd352e2ebfe029463abdc4502c33",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when GSD commands are failing or .planning/ artifacts look inconsistent. Run before any GSD execute-phase or verify-work attempt to catch cross-artifact mismatches early.",
+      "content_excerpt": "---\nname: gsd-preflight\ndescription: Use when GSD commands are failing or .planning/ artifacts look inconsistent. Run before any GSD execute-phase or verify-work attempt to catch cross-artifact mismatches early.\ndescription-frequency: on-demand\ntype: skill\ncategory: gsd\nstatus: stable\norigin: tibsfox\nmodified: false\nfirst_seen: 2026-02-07\nfirst_path: examples/gsd-preflight/SKILL.md\nsuperseded_by: null\n---\n# GSD Preflight Validator\n\nPre-flight checks on `.planning/` artifacts to catch issues before workflows fail.\n\n## Core Artifact Checks\n\n**PROJECT.md** — Sections: What This Is, Requirements, Constraints, Key Decisions\n**ROADMAP.md** — Sequential phase numbers, each with Goal/Deliverables/Success Criteria\n**STATE.md** — Current Position matches ROADMAP status, reasonable progress %\n**config.json** — Valid JSON, valid enum values (mode, model_profile, depth)\n\n## Cross-Artifact Consistency\n\n- STATE.md phase exists in ROADMAP.md\n- Completed phases have matching SUMMARY files for each PLAN\n- Phase directories exist for all ROADMAP phases\n- No orphaned files (PLAN without phase, SUMMARY without PLAN)\n\n## Severity\n\n| Level | Definition | Action |\n|-------|------------|--------|\n| BLOCKER | Will cause workflow failure | Must fix first |\n| WARNING | May cause confusion | Should fix |\n| INFO | Informational | No action needed |\n\n## Common Fixes\n\n- **STATE/ROADMAP out of sync:** Run /gsd:progress\n- **Missing SUMMARY for completed plan:** Re-execute or mark incomplete\n- **Invalid config.json:** Check for trailing commas, invalid values\n- **Orphaned directories:** Add to ROADMAP or rem"
+    },
+    {
+      "path": "other/glossary-definition-generator/SKILL.md",
+      "name": "generating-glossaries-and-definitions",
+      "current_category": "other",
+      "llm_category": "documents",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill builds glossaries with definitions by collecting terms, researching definitions, and formatting them into structured output. This is document creation work, though the SEO-optimization aspect hints at marketing but the primary output is a glossary document.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "87d568a96844ba60576cac6330aa1216fca268f62e521eb95bbf2c44ce9b8626",
+      "metadata_sha256": "5c185c4deaf56577ee65c12a2d0a68aab94c63258fbbaf575ecedda14c521ced",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Builds product and industry glossaries with SEO-optimized definitions. Use when the user asks about glossary creation, term definitions, jargon explanations, knowledge bases, or terminology documentation.",
+      "content_excerpt": "---\nname: generating-glossaries-and-definitions\ndescription: Builds product and industry glossaries with SEO-optimized definitions. Use when the user asks about glossary creation, term definitions, jargon explanations, knowledge bases, or terminology documentation.\n---\n\n# Glossary & Definition Generator\n\n## When to use this skill\n\n- User asks to create a glossary\n- User needs term definitions\n- User wants to explain jargon\n- User mentions terminology documentation\n- User needs a knowledge base of terms\n\n## Workflow\n\n- [ ] Identify terms to define\n- [ ] Research accurate definitions\n- [ ] Write SEO-optimized entries\n- [ ] Link related terms\n- [ ] Format for target output\n- [ ] Validate completeness\n\n## Instructions\n\n### Step 1: Term Collection\n\nGather terms from these sources:\n\n| Source                   | Method                      |\n| ------------------------ | --------------------------- |\n| Product documentation    | Extract technical terms     |\n| Customer support tickets | Find confusing jargon       |\n| Competitor glossaries    | Identify industry standards |\n| Search queries           | Check what users search     |\n| Internal team            | Collect tribal knowledge    |\n\nCreate a term inventory:\n\n```markdown\n## Term Inventory\n\n| Term   | Category   | Priority     | Status   |\n| ------ | ---------- | ------------ | -------- |\n| [Term] | [Category] | High/Med/Low | To write |\n| [Term] | [Category] | High/Med/Low | Draft    |\n```\n\n**Prioritization criteria:**\n\n- High: Core product/industry terms users must understand\n- Medium: Common terms that appear frequently\n- "
+    },
+    {
+      "path": "other/implementing-api-patterns-ancoleman-ai-design-components-2/SKILL.md",
+      "name": "implementing-api-patterns",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill explicitly covers API design and implementation across REST, GraphQL, gRPC, and tRPC patterns, including endpoint work, SDK usage, and OpenAPI documentation generation - all core API category concerns.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "0695ad2f71ef0cf9c4e5eaa08c41045a992d06b177c045daa66124377caa3050",
+      "metadata_sha256": "a3efaa194ed95136fbe61a7b94d9afcc7a23bfe42c8a2f2a4cb3ab5e9b479a99",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "API design and implementation across REST, GraphQL, gRPC, and tRPC patterns. Use when building backend services, public APIs, or service-to-service communication. Covers REST frameworks (FastAPI, Axum, Gin, Hono), GraphQL libraries (Strawberry, async-graphql, gqlgen, Pothos), gRPC (Tonic, Connect-Go), tRPC for TypeScript, pagination strategies (cursor-based, offset-based), rate limiting, caching, versioning, and OpenAPI documentation generation. Includes frontend integration patterns for forms, tables, dashboards, and ai-chat skills.",
+      "content_excerpt": "---\nname: implementing-api-patterns\ndescription: API design and implementation across REST, GraphQL, gRPC, and tRPC patterns. Use when building backend services, public APIs, or service-to-service communication. Covers REST frameworks (FastAPI, Axum, Gin, Hono), GraphQL libraries (Strawberry, async-graphql, gqlgen, Pothos), gRPC (Tonic, Connect-Go), tRPC for TypeScript, pagination strategies (cursor-based, offset-based), rate limiting, caching, versioning, and OpenAPI documentation generation. Includes frontend integration patterns for forms, tables, dashboards, and ai-chat skills.\n---\n\n# API Patterns Skill\n\n## Purpose\n\nDesign and implement APIs using the optimal pattern and framework for the use case. Choose between REST, GraphQL, gRPC, and tRPC based on API consumers, performance requirements, and type safety needs.\n\n## When to Use This Skill\n\nUse when:\n- Building backend APIs for web, mobile, or service consumers\n- Connecting frontend components (forms, tables, dashboards) to databases\n- Implementing pagination, rate limiting, or caching strategies\n- Generating OpenAPI documentation automatically\n- Choosing between REST, GraphQL, gRPC, or tRPC patterns\n- Integrating authentication and authorization\n- Optimizing API performance and scalability\n\n## Quick Decision Framework\n\n```\nWHO CONSUMES YOUR API?\n├─ PUBLIC/THIRD-PARTY DEVELOPERS → REST with OpenAPI\n│  ├─ Python → FastAPI (auto-docs, 40k req/s)\n│  ├─ TypeScript → Hono (edge-first, 50k req/s, 14KB)\n│  ├─ Rust → Axum (140k req/s, <1ms latency)\n│  └─ Go → Gin (100k+ req/s, mature ecosystem)\n│\n├─ FRONTEND TEAM (same org)\n│ "
+    },
+    {
+      "path": "other/heygen/SKILL.md",
+      "name": "heygen",
+      "current_category": "other",
+      "llm_category": "generation",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is focused on generating AI video content, including avatar videos and translation. This matches the 'generation' category's inclusion of generating artifacts, media, or reusable content assets.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "c7fbca9725654eadafd2b37e3e40cd833da9f7b6fcdc4ae019c65d051666dfe6",
+      "metadata_sha256": "4bf8cc30c7d5e83351f7e9e36bea672db49d2ae9bf974324fcb243228906788e",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Create AI video content with HeyGen - generate avatar videos, translate content, and manage video projects",
+      "content_excerpt": "---\nname: heygen\ndescription: Create AI video content with HeyGen - generate avatar videos, translate content, and manage video projects\ncategory: ai\n---\n\n# HeyGen Skill\n\n## Overview\nEnables Claude to use HeyGen for AI video generation including creating avatar videos, video translation, and managing video content projects.\n\n## Quick Install\n\n```bash\ncurl -sSL https://canifi.com/skills/heygen/install.sh | bash\n```\n\nOr manually:\n```bash\ncp -r skills/heygen ~/.canifi/skills/\n```\n\n## Setup\n\nConfigure via [canifi-env](https://canifi.com/setup/scripts):\n\n```bash\n# First, ensure canifi-env is installed:\n# curl -sSL https://canifi.com/install.sh | bash\n\ncanifi-env set HEYGEN_EMAIL \"your-email@example.com\"\ncanifi-env set HEYGEN_PASSWORD \"your-password\"\n```\n\n## Privacy & Authentication\n\n**Your credentials, your choice.** Canifi LifeOS respects your privacy.\n\n### Option 1: Manual Browser Login (Recommended)\nIf you prefer not to share credentials with Claude Code:\n1. Complete the [Browser Automation Setup](/setup/automation) using CDP mode\n2. Login to the service manually in the Playwright-controlled Chrome window\n3. Claude will use your authenticated session without ever seeing your password\n\n### Option 2: Environment Variables\nIf you're comfortable sharing credentials, you can store them locally:\n```bash\ncanifi-env set SERVICE_EMAIL \"your-email\"\ncanifi-env set SERVICE_PASSWORD \"your-password\"\n```\n\n**Note**: Credentials stored in canifi-env are only accessible locally on your machine and are never transmitted.\n\n## Capabilities\n- Create AI avatar videos\n- Translate videos to other lan"
+    },
+    {
+      "path": "other/gog-clawdbot-clawdbot-2/SKILL.md",
+      "name": "gog",
+      "current_category": "other",
+      "llm_category": "integration",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill is a CLI tool for connecting to Google Workspace services (Gmail, Calendar, Drive, Contacts, Sheets, Docs). It provides cross-system connectors and API composition for Google services, fitting the integration category's scope of 'connecting external systems, APIs, webhooks, or services'.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "ceb5ee5bb4f0b9016694ed709180399fc75214b7b91a958e1aae1e1a351cb0b6",
+      "metadata_sha256": "734bcf9344be615da110cc929f520b1a99d4566187af2fcdbb193cb9351051e2",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs.",
+      "content_excerpt": "---\nname: gog\ndescription: Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs.\nhomepage: https://gogcli.sh\nmetadata:\n  {\n    \"openclaw\":\n      {\n        \"emoji\": \"🎮\",\n        \"requires\": { \"bins\": [\"gog\"] },\n        \"install\":\n          [\n            {\n              \"id\": \"brew\",\n              \"kind\": \"brew\",\n              \"formula\": \"steipete/tap/gogcli\",\n              \"bins\": [\"gog\"],\n              \"label\": \"Install gog (brew)\",\n            },\n          ],\n      },\n  }\n---\n\n# gog\n\nUse `gog` for Gmail/Calendar/Drive/Contacts/Sheets/Docs. Requires OAuth setup.\n\nSetup (once)\n\n- `gog auth credentials /path/to/client_secret.json`\n- `gog auth add you@gmail.com --services gmail,calendar,drive,contacts,docs,sheets`\n- `gog auth list`\n\nCommon commands\n\n- Gmail search: `gog gmail search 'newer_than:7d' --max 10`\n- Gmail messages search (per email, ignores threading): `gog gmail messages search \"in:inbox from:ryanair.com\" --max 20 --account you@example.com`\n- Gmail send (plain): `gog gmail send --to a@b.com --subject \"Hi\" --body \"Hello\"`\n- Gmail send (multi-line): `gog gmail send --to a@b.com --subject \"Hi\" --body-file ./message.txt`\n- Gmail send (stdin): `gog gmail send --to a@b.com --subject \"Hi\" --body-file -`\n- Gmail send (HTML): `gog gmail send --to a@b.com --subject \"Hi\" --body-html \"<p>Hello</p>\"`\n- Gmail draft: `gog gmail drafts create --to a@b.com --subject \"Hi\" --body-file ./message.txt`\n- Gmail send draft: `gog gmail drafts send <draftId>`\n- Gmail reply: `gog gmail send --to a@b.com --subject \"Re: Hi\" --body \"Reply\" --reply-to-message-id <msgId>`\n-"
+    },
+    {
+      "path": "other/evaluate-mmi-wfukatsu-refactoring-agent-fo/SKILL.md",
+      "name": "evaluate-mmi",
+      "current_category": "other",
+      "llm_category": "analysis",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill evaluates software architecture modularity using a quantitative index (MMI) across cohesion, coupling, independence, and reusability axes, producing evaluation reports and improvement plans. This is a comparative study and synthesis workflow.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "ba3ba76417d94d1d3be85853f96350c9236d73eaecc957b2ed104d3ab76bb8b2",
+      "metadata_sha256": "905b40eca2b3382c56c043d66750d93566f4a4c211442a893c33ca0c10897d40",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "MMI評価エージェント - Modularity Maturity Indexによるモジュール成熟度評価（Cohesion/Coupling/Independence/Reusability）。/evaluate-mmi [対象パス] で呼び出し。",
+      "content_excerpt": "---\nname: evaluate-mmi\ndescription: MMI評価エージェント - Modularity Maturity Indexによるモジュール成熟度評価（Cohesion/Coupling/Independence/Reusability）。/evaluate-mmi [対象パス] で呼び出し。\nuser_invocable: true\n---\n\n# Modularity Maturity Index (MMI) Evaluator Agent\n\n既存システムのモジュール成熟度を4つの観点から評価し、改善計画を策定するエージェントです。\n\n## 概要\n\nModularity Maturity Index (MMI) は、ソフトウェアアーキテクチャのモジュール性を定量的に評価する指標です。\n\n### 評価軸\n\n| 評価軸 | 重み | 評価観点 |\n|-------|-----|---------|\n| **Cohesion（凝集度）** | 30% | 単一責務性、機能の集中度 |\n| **Coupling（結合度）** | 30% | モジュール間依存、疎結合性 |\n| **Independence（独立性）** | 20% | デプロイ独立性、変更独立性 |\n| **Reusability（再利用性）** | 20% | 汎用性、他コンテキストでの活用可能性 |\n\n### MMI計算式\n\n```\nMMI = (0.3 × Cohesion + 0.3 × Coupling + 0.2 × Independence + 0.2 × Reusability) / 5 × 100\n```\n\n### 成熟度レンジ\n\n| スコア | 成熟度レベル | 説明 |\n|-------|------------|------|\n| 80-100 | 高成熟 | マイクロサービス化の準備完了 |\n| 60-80 | 中成熟 | 一部改善でマイクロサービス化可能 |\n| 40-60 | 低中成熟 | 大幅なリファクタリングが必要 |\n| 0-40 | 未成熟 | モノリス分解の計画策定から |\n\n## 出力先ディレクトリ\n\n評価結果は `reports/02_evaluation/` に出力します。\n**重要**: 各ステップ完了時に即座にファイルを出力してください。\n\n```\nreports/02_evaluation/\n├── mmi-overview.md        # Step 3完了時\n├── mmi-by-module.md       # Step 2完了時（各モジュール評価後）\n└── mmi-improvement-plan.md # Step 4完了時\n```\n\n## 実行プロンプト\n\nあなたはソフトウェアアーキテクチャの評価専門家です。以下の手順でMMI評価を実行してください。\n\n### Step 1: モジュール抽出\n\n対象システムからモジュールを特定します。モジュールの粒度は以下を基準に：\n\n- **パッケージ/名前空間単位** - 中規模システム向け\n- **クラス/ファイル単位** - 小規模システム向け\n- **サービス/コンポーネント単位** - 大規模システム向け\n\n```\n# Serenaツールでモジュール構造を把握\nmcp__serena__list_dir で全体構造を確認\nmcp__serena__get_symbols_overview で各モジュールの内容を把握\n```\n\n### Step 2: 各軸の評価\n\n#### Cohesion（凝集度）評価\n\n| スコア | 基準 |\n|-------|------|\n| 5 | 完全単一責務。1つの明確な目的のみ |\n| 4 | ほぼ単一責"
+    },
+    {
+      "path": "other/forum-research-nocodeify-aeo-3/SKILL.md",
+      "name": "forum-research",
+      "current_category": "other",
+      "llm_category": "product",
+      "confidence": 0.82,
+      "status": "ok",
+      "reason": "Duplicate of id 5; same forum-based competitor and market research skill.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "fd345a364b9b4ca33ff98641dd3102e17398750b58cb76d7aca4cf33c523a55d",
+      "metadata_sha256": "b2d8c540db33121fb9b3377150e1ab6e2d5cd5b7aeb0fb512cc8c869d4f0f948",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Research real competitors and market positioning via Reddit, forums, and community discussions.",
+      "content_excerpt": "---\nname: forum-research\ndescription: Research real competitors and market positioning via Reddit, forums, and community discussions.\ncontext: fork\nagent: competitor-researcher\ndisable-model-invocation: true\n---\n\nResearch real competitors for this brand via Reddit and forum analysis. Discover actual competitive landscape through community discussions.\n\nBrand/category: $ARGUMENTS\n"
+    },
+    {
+      "path": "other/event-signals/SKILL.md",
+      "name": "event-signals",
+      "current_category": "other",
+      "llm_category": "workflow",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill extracts leads from events by analyzing speaker lists, sponsor lists, etc., which is a repeatable process for lead generation. This fits the workflow category for repeatable procedures and task flows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "a68af9941d0073b934a6167a4834cbba6b69bb13553bc4a5aa115a8c4279b455",
+      "metadata_sha256": "4b8d5ef4a0f765a726d087ffa12e33c72ae1ad69787441b30f03170d1e0444f9",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Extract leads from conferences, meetups, hackathons, and podcasts by analyzing speaker lists, sponsor lists, hackathon entries, and podcast guests. Discovers events via Sessionize, Confs.tech, Meetup, Luma, ListenNotes, and Devpost. Looks back 90 days and forward 180 days.",
+      "content_excerpt": "---\nname: event-signals\ndescription: Extract leads from conferences, meetups, hackathons, and podcasts by analyzing speaker lists, sponsor lists, hackathon entries, and podcast guests. Discovers events via Sessionize, Confs.tech, Meetup, Luma, ListenNotes, and Devpost. Looks back 90 days and forward 180 days.\nuser-invocable: true\nallowed-tools: Bash, Read, Write, Edit, Grep, Glob, WebFetch, WebSearch\nargument-hint: [config-json-path]\n---\n\n# Event Signals\n\nExtract leads from the conference and events ecosystem. Events represent public declarations of priorities — a VP speaking about \"scaling our infrastructure\" is a stronger signal than a Reddit comment, and a company sponsoring a conference category has committed real budget.\n\n## When to Use\n\n- User wants to find leads from conferences, meetups, or developer events\n- User wants speaker lists, sponsor lists, or attendee data from events\n- User mentions KubeCon, AWS re:Invent, DevOpsDays, or any industry conference\n- User wants to find people who spoke or presented about relevant topics\n- User asks about hackathon participants using relevant technologies\n- User wants podcast guests who discussed relevant challenges\n- User describes prospects who attend industry events or speak at conferences\n\n## Prerequisites\n\n- Python 3.9+ with `requests` and optionally `python-dotenv`\n- Apify API token in `.env` (for Meetup and Luma — optional)\n- ListenNotes API key in `.env` as `LISTENNOTES_API_KEY` (for podcast search — optional, free tier gives 300 req/mo)\n- Working directory: the project root containing this skill\n\n## Phase 1: Collect C"
+    },
+    {
+      "path": "other/firestore-index-creator-byteworthy-upstream/SKILL.md",
+      "name": "firestore-index-creator",
+      "current_category": "other",
+      "llm_category": "integration",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill automates creating Firestore indexes via gcloud CLI, which is a platform-specific database configuration task that bridges GCP services.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "4c5a42000c68c59836774d65c302fe02a4ab7dc0df1d52f6a218a6b4e3aa8712",
+      "metadata_sha256": "e8222a1af1759c611fa13c2be1a8c3f027d835e05e1135148a0ef59b54d7bd3b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Firestore Index Creator - Auto-activating skill for GCP Skills.\nTriggers on: firestore index creator, firestore index creator\nPart of the GCP Skills skill category.",
+      "content_excerpt": "---\nname: firestore-index-creator\ndescription: |\n  Firestore Index Creator - Auto-activating skill for GCP Skills.\n  Triggers on: firestore index creator, firestore index creator\n  Part of the GCP Skills skill category.\nallowed-tools: Read, Write, Edit, Bash(gcloud:*)\nversion: 1.0.0\nlicense: MIT\nauthor: Jeremy Longshore <jeremy@intentsolutions.io>\n---\n\n# Firestore Index Creator\n\n## Purpose\n\nThis skill provides automated assistance for firestore index creator tasks within the GCP Skills domain.\n\n## When to Use\n\nThis skill activates automatically when you:\n- Mention \"firestore index creator\" in your request\n- Ask about firestore index creator patterns or best practices\n- Need help with google cloud platform skills covering compute, storage, bigquery, vertex ai, and gcp-specific services.\n\n## Capabilities\n\n- Provides step-by-step guidance for firestore index creator\n- Follows industry best practices and patterns\n- Generates production-ready code and configurations\n- Validates outputs against common standards\n\n## Example Triggers\n\n- \"Help me with firestore index creator\"\n- \"Set up firestore index creator\"\n- \"How do I implement firestore index creator?\"\n\n## Related Skills\n\nPart of the **GCP Skills** skill category.\nTags: gcp, bigquery, vertex-ai, cloud-run, firebase\n"
+    },
+    {
+      "path": "other/interview-writer-arcblock-agent-skills/SKILL.md",
+      "name": "interview-writer",
+      "current_category": "other",
+      "llm_category": "writing",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Duplicate of id 1 - same skill from same repo. The skill is an AI interview-style content creation system that generates original content by interviewing users and writing in their style.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "fd96888bc29a25eff23830bbc3072b39693cc58ceec49a52630beaa45e9b74e6",
+      "metadata_sha256": "eab8ba78a04a8fdf906736de9a05fefd9cddc0cc7cc3c1f80069bb99bc3b8f36",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "AI 采访式内容创作系统。不是人写，也不是 AI 自动写，而是 AI 分析后采访人再按人的风格写。通过问答不断沉淀用户画像（观点、写作风格、思考逻辑），持续迭代演进。支持博客、社交媒体、观点文章等场景。",
+      "content_excerpt": "---\nname: interview-writer\ndescription: AI 采访式内容创作系统。不是人写，也不是 AI 自动写，而是 AI 分析后采访人再按人的风格写。通过问答不断沉淀用户画像（观点、写作风格、思考逻辑），持续迭代演进。支持博客、社交媒体、观点文章等场景。\n---\n\n# Interview Writer\n\nAI 采访式内容创作系统 - 通过结构化采访，生成符合用户风格的原创内容。\n\n## 核心理念\n\n- **不是自动写**：AI 不会凭空生成内容\n- **不是代写**：不是简单记录用户说的话\n- **是采访式创作**：AI 分析 + 提问 + 用户回答 + AI 按风格整合\n\n## Resource Loading Policy\n\n**优先级顺序**（用户配置覆盖默认）：\n\n1. **用户自定义**（如存在）：`~/.claude/content-profile/`\n2. **技能默认**（作为 fallback）：本技能的 `references/` 目录\n\n**加载逻辑**：\n```\nFor each profile file (writing-style, opinions, thinking-patterns, domain-knowledge):\n  1. Check if ~/.claude/content-profile/{file}.md exists\n  2. If exists → use user's version\n  3. If not exists → use references/{file}.md from this skill\n```\n\n**画像更新目标**：\n- 始终更新到 `~/.claude/content-profile/`\n- 如该目录不存在，创建之\n\n## Workflow\n\n### Phase 1: 触发分析\n\n**接收内容触发**（用户提供以下任一）：\n- 一篇文章/链接（需要评论或回应）\n- 一个事件/话题（需要发表观点）\n- 一个产品/技术（需要介绍或分析）\n- 一个想法草稿（需要展开成文）\n\n**AI 分析步骤**：\n1. 按 Resource Loading Policy 加载用户画像\n2. 读取 `~/.claude/profile/` 下相关背景文件（如有必要）\n3. 分析触发内容的核心议题\n4. 基于已有画像，预判用户可能的立场和角度\n5. **自动判断内容类型**（不让用户选，AI 先判断最可能的类型）\n\n**内容类型自动识别**：\n\n| 触发内容特征 | 判断类型 | 输出组合 |\n|-------------|---------|---------|\n| 自己的产品/功能发布 | Release Blog | 博客 + 社交媒体 + 中英双语 |\n| 需要媒体报道的重大事件 | Press Release | 新闻稿 + 社交媒体 + 中英双语 |\n| 对他人文章/事件的评论 | Opinion/Commentary | 社交媒体为主，可选长文 |\n| 技术实现/架构分享 | Engineering Blog | 博客 + 社交媒体 + 英文优先 |\n| 行业趋势/洞察分析 | Insight Blog | 博客 + 社交媒体 + 中英双语 |\n\n**关键原则**：文章、社交媒体、多语种不是选择关系，而是**同时需要**。一次性给出全面结果。\n\n### Phase 2: 采访问答\n\n**问题生成原则**：\n- 先用已积累的知识自动判断，避免重复问题\n- 只问必要的、无法推断的问题\n- 混合使用选择题（降低门槛）和开放式问题（获取深度）\n\n**问题类型**：\n```\n1. 立场确认（选择题）\n   \"关于 X 的观点，你更倾向于 A 还是 B？\"\n\n"
+    },
+    {
+      "path": "other/experiment-queue/SKILL.md",
+      "name": "experiment-queue",
+      "current_category": "other",
+      "llm_category": "orchestration",
+      "confidence": 0.92,
+      "status": "ok",
+      "reason": "The skill orchestrates large batches of ML experiments across SSH remote GPU servers with multi-step coordination, wave transitions, OOM retry, and race prevention. It coordinates multiple jobs, manages scheduling, and handles multi-agent-like execution control, fitting the orchestration category's inclusion rule for multi-step coordination and workflow control.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "686a79cb2f8b08c596be97b3a170ba89a3d9fe80ecc5865e321eba63ffaf8087",
+      "metadata_sha256": "22d24504947b16b9f6a67b48873430f49432109e44c0e02bc39a463a06e9c0be",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "SSH job queue for multi-seed/multi-config ML experiments with OOM-aware retry, stale-screen cleanup, and wave-transition race prevention. Use when user says \"batch experiments\", \"队列实验\", \"run grid\", \"multi-seed sweep\", \"auto-chain experiments\", or when /run-experiment is insufficient for 10+ jobs that need orchestration.",
+      "content_excerpt": "---\nname: experiment-queue\ndescription: SSH job queue for multi-seed/multi-config ML experiments with OOM-aware retry, stale-screen cleanup, and wave-transition race prevention. Use when user says \"batch experiments\", \"队列实验\", \"run grid\", \"multi-seed sweep\", \"auto-chain experiments\", or when /run-experiment is insufficient for 10+ jobs that need orchestration.\nargument-hint: [manifest-or-grid-spec]\nallowed-tools: Bash(*), Read, Grep, Glob, Edit, Write, Agent, Skill(run-experiment), Skill(monitor-experiment)\n---\n\n# Experiment Queue\n\nOrchestrate large batches of ML experiments on SSH remote GPU servers with proper state tracking, OOM retry, stale cleanup, and wave transitions.\n\n## When to Use This Skill\n\nUse when `/run-experiment` is insufficient:\n- **≥10 jobs** that need batching across GPUs\n- **Multi-seed sweeps** (e.g., 21 seeds × 12 cells)\n- **Wave transitions** (run wave 1, wait, run wave 2, wait, run wave 3...)\n- **Teacher+student chains** (train teacher then distill; auto-trigger student after teacher done)\n- **OOM-prone configs** where you need to retry with different GPU or wait\n- **Mixed seed grids** where failed cells need re-running\n\nDo NOT use for:\n- Single ad-hoc experiment (use `/run-experiment`)\n- Modal/Vast.ai deployments (those have their own orchestration)\n- Experiments that need manual inspection between runs\n\n## Why This Exists\n\nBased on session audit (2026-04-16), the major wall-clock sinks in multi-seed grid experiments are:\n\n1. **Stale screens** — python finishes, wandb uploads, screen hangs, next wave blocked\n2. **OOM on shared GPU** — previous job's m"
+    },
+    {
+      "path": "other/feature-call1800messiah-the-eighth-2/SKILL.md",
+      "name": "feature",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Identical to id 1, this skill orchestrates feature development through structured phases, fitting the 'development' category for software development workflows and coding.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "7f881693ae240bc73b84de6dd454016f578a7b0b9cca8956fce37e996b641dad",
+      "metadata_sha256": "f753359f0632ceec2cb0a15ae6ddea6d386a5dea8ee3f6c0aecd1681345cdce4",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Orchestrate feature development through 5 phases - discuss, BOM, architect, test plan, implement",
+      "content_excerpt": "---\nname: feature\ndescription: Orchestrate feature development through 5 phases - discuss, BOM, architect, test plan, implement\nallowed-tools:\n  - Read\n  - Glob\n  - Grep\n  - Write\n  - Edit\n  - Task\n  - Skill\n  - AskUserQuestion\n  - WebFetch\n  - Bash(git status:*)\n  - Bash(git log:*)\n  - Bash(git diff:*)\n---\n\n# Feature Skill\n\n## Purpose\nEntry point for complex features. Guides development through a structured 5-phase workflow.\n\n**CRITICAL**: MUST ask questions until 100% understanding is achieved. Never assume - always clarify.\n\n**CRITICAL**: If feature name not specified, ASK for it first. Feature name determines file paths.\n\n**When to suggest**: Multi-component work, new features, significant changes. Skip for simple fixes.\n\n## Checkin Mode (Resume Existing Feature)\n\n**Syntax**: `/feature checkin to <feature-name>` or `/feature checkin <feature-name>`\n\nWhen user says \"checkin to \\<feature\\>\", this means **resume work on an existing feature**:\n\n1. **Locate feature folder**: `docs/features/{feature-name}/`\n2. **Read all 5 files**: description.md, todos.md, scratchpad.md, journey.md, test-plan.md\n3. **CLEANUP scratchpad.md** (MANDATORY):\n   - Delete resolved questions, completed warnings, superseded decisions\n   - Delete notes from completed phases\n   - Move finalized decisions to description.md\n   - Keep only items relevant to current/upcoming work\n   - Target: under 50 lines\n4. **Present current state summary**:\n\n```markdown\n## {Feature} - Current State\n\n**Status**: {from todos.md}\n**Last Updated**: {from todos.md}\n\n### Active TODOs\n{list unchecked items from todos.md}\n\n###"
+    },
+    {
+      "path": "other/favicon-generator-andhikapraa-curhatin-ai-2/SKILL.md",
+      "name": "favicon-generator",
+      "current_category": "other",
+      "llm_category": "generation",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill generates visual assets (favicons, app icons) using a multi-layer effects engine with templates and icons, producing complete favicon suites in multiple formats. This is artifact generation, not writing or design work.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "c120711240d35a00070714836682e6984f275dd1b1d20bedf09d34a0aa2501f3",
+      "metadata_sha256": "dc011373fed22453c4c0c8157fcf91f620ab0b5b9d8d60b59f725e79d53eefc0",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Generate professional-quality favicons that rival the best app icons. Uses a multi-layer effects engine with drop shadows, inner glows, highlights, gradients, and noise textures. Includes 8 curated design templates and 18 Lucide icons. Produces complete favicon suites with proper ICO, SVG, PNG formats and framework integration. Trigger when users need favicons, app icons, or browser tab icons.",
+      "content_excerpt": "---\nname: favicon-generator\ndescription: >\n  Generate professional-quality favicons that rival the best app icons. Uses a\n  multi-layer effects engine with drop shadows, inner glows, highlights, gradients,\n  and noise textures. Includes 8 curated design templates and 18 Lucide icons.\n  Produces complete favicon suites with proper ICO, SVG, PNG formats and framework\n  integration. Trigger when users need favicons, app icons, or browser tab icons.\n---\n\n# Pro-Grade Favicon Generator\n\nCreate stunning, professional-quality favicons that stand alongside icons from Linear, Notion, Figma, and other polished apps.\n\n## Philosophy: Favicons Are Miniature Design Artifacts\n\nThe difference between a mediocre favicon and a great one isn't complexity—it's **polish**. Great favicons have:\n\n- **Depth**: Subtle shadows that lift the icon off the surface\n- **Lighting**: Highlights and gradients that create dimensionality  \n- **Texture**: Optional noise/grain that adds organic feel\n- **Precision**: Optical centering, proper padding, crisp edges\n\n**Before generating, ask yourself**:\n1. What's the app's personality? (Playful, professional, technical, creative)\n2. What colors define the brand? (Extract from tailwind config, CSS, or ask)\n3. What level of polish is needed? (Quick prototype vs. production launch)\n\n---\n\n## Workflow: Discover Existing Icons First\n\n**CRITICAL**: Before generating a favicon, always check what icons are already used in the codebase. The favicon should match your existing brand identity.\n\n### Step 1: Search for Icon Usage\n\nSearch the codebase for icon imports and usage:\n\n`"
+    },
+    {
+      "path": "other/elixir-security-review/SKILL.md",
+      "name": "elixir-security-review",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Skill reviews Elixir code for security vulnerabilities including code injection, atom exhaustion, and secret handling. This is security review work with vulnerability scanning and OWASP-style concerns.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "37cad5ad603e50cfccd234b3e30c088bdf0612e9edd82b2530e09a2be3be8080",
+      "metadata_sha256": "991791af0c393b6edd4162bcae690cef7b3a76ba5531d4e744cf5515e3858fda",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Reviews Elixir code for security vulnerabilities including code injection, atom exhaustion, and secret handling. Use when reviewing code handling user input, external data, or sensitive configuration.",
+      "content_excerpt": "---\nname: elixir-security-review\ndescription: Reviews Elixir code for security vulnerabilities including code injection, atom exhaustion, and secret handling. Use when reviewing code handling user input, external data, or sensitive configuration.\n---\n\n# Elixir Security Review\n\n## Quick Reference\n\n| Issue Type | Reference |\n|------------|-----------|\n| Code.eval_string, binary_to_term | [references/code-injection.md](references/code-injection.md) |\n| String.to_atom dangers | [references/atom-exhaustion.md](references/atom-exhaustion.md) |\n| Config, environment variables | [references/secrets.md](references/secrets.md) |\n| ETS visibility, process dictionary | [references/process-exposure.md](references/process-exposure.md) |\n\n## Review Checklist\n\n### Critical (Block Merge)\n- [ ] No `Code.eval_string/1` on user input\n- [ ] No `:erlang.binary_to_term/1` without `:safe` on untrusted data\n- [ ] No `String.to_atom/1` on external input\n- [ ] No hardcoded secrets in source code\n\n### Major\n- [ ] ETS tables use appropriate access controls\n- [ ] No sensitive data in process dictionary\n- [ ] No dynamic module creation from user input\n- [ ] Path traversal prevented in file operations\n\n### Configuration\n- [ ] Secrets loaded from environment\n- [ ] No secrets in config/*.exs committed to git\n- [ ] Runtime config used for deployment secrets\n\n## Valid Patterns (Do NOT Flag)\n\n- **String.to_atom on compile-time constants** - Atoms created at compile time are safe\n- **Code.eval_string in dev/test** - May be needed for tooling\n- **ETS :public tables** - Valid when intentionally shared\n- **binary_"
+    },
+    {
+      "path": "other/gsap-scrolltrigger-bbeierle12-skill-mcp-claude-2/SKILL.md",
+      "name": "gsap-scrolltrigger",
+      "current_category": "other",
+      "llm_category": "design",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "GSAP ScrollTrigger is a frontend animation library for scroll-driven UI effects like parallax, pinning, and scrubbing. This is a UI/UX design tool for creating interactive visual experiences.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "c4a294c8c8b89b85bdf6335babc38785e68c923a7d00d9b78dfb6d6a9c0cb3c0",
+      "metadata_sha256": "012a60c946a3f4cfc98daf4420e85ea40f305d0cfe7156d93b5eb0dcd9d1da9b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Scroll-based animations using GSAP ScrollTrigger plugin including pinning, scrubbing, snap points, and parallax effects. Use when creating scroll-driven animations, sticky sections, progress indicators, or parallax scrolling experiences.",
+      "content_excerpt": "---\nname: gsap-scrolltrigger\ndescription: Scroll-based animations using GSAP ScrollTrigger plugin including pinning, scrubbing, snap points, and parallax effects. Use when creating scroll-driven animations, sticky sections, progress indicators, or parallax scrolling experiences.\n---\n\n# GSAP ScrollTrigger\n\nScroll-driven animations and interactions.\n\n## Quick Start\n\n```bash\nnpm install gsap\n```\n\n```javascript\nimport gsap from 'gsap';\nimport { ScrollTrigger } from 'gsap/ScrollTrigger';\n\ngsap.registerPlugin(ScrollTrigger);\n\ngsap.to('.box', {\n  x: 500,\n  scrollTrigger: {\n    trigger: '.box',\n    start: 'top center',\n    end: 'bottom center',\n    scrub: true\n  }\n});\n```\n\n## Core Concepts\n\n### Basic ScrollTrigger\n\n```javascript\ngsap.to('.element', {\n  x: 200,\n  scrollTrigger: {\n    trigger: '.element',  // Element that triggers the animation\n    start: 'top center',  // When trigger hits viewport center\n    end: 'bottom center', // When trigger leaves viewport center\n    toggleActions: 'play pause resume reset'\n  }\n});\n```\n\n### Start/End Positions\n\n```javascript\n// Format: \"trigger-position viewport-position\"\nstart: 'top center'      // Trigger's top hits viewport center\nstart: 'top 80%'         // Trigger's top hits 80% down viewport\nstart: 'center center'   // Trigger's center hits viewport center\nstart: 'bottom top'      // Trigger's bottom hits viewport top\nstart: 'top top+=100'    // Trigger's top hits 100px below viewport top\n```\n\n### Position Reference\n\n| Value | Description |\n|-------|-------------|\n| `top` | Top edge |\n| `center` | Center |\n| `bottom` | Bottom edge |\n| `8"
+    },
+    {
+      "path": "other/flow-orchestrator-2025-josiahsiegel-claude-plugin-market-2/SKILL.md",
+      "name": "flow-orchestrator-2025",
+      "current_category": "other",
+      "llm_category": "workflow",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Same skill as id 0 - Salesforce Flow Orchestrator for multi-user business process automation with stages and approvals, fitting workflow category for repeatable process automation.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "75ba811be42f6a30982985e5cf8ebf36f9b6bb70cf11f1e704176f1bae0151aa",
+      "metadata_sha256": "cfc702aa5520385b3d0a0ed46f635b1d6dd3077ca37b5834f2b74b4dc085fc60",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Salesforce Flow Orchestrator multi-user automation best practices (2025)",
+      "content_excerpt": "---\nname: flow-orchestrator-2025\ndescription: Salesforce Flow Orchestrator multi-user automation best practices (2025)\n---\n\n## 🚨 CRITICAL GUIDELINES\n\n### Windows File Path Requirements\n\n**MANDATORY: Always Use Backslashes on Windows for File Paths**\n\nWhen using Edit or Write tools on Windows, you MUST use backslashes (`\\`) in file paths, NOT forward slashes (`/`).\n\n**Examples:**\n- ❌ WRONG: `D:/repos/project/file.tsx`\n- ✅ CORRECT: `D:\\repos\\project\\file.tsx`\n\nThis applies to:\n- Edit tool file_path parameter\n- Write tool file_path parameter\n- All file operations on Windows systems\n\n\n### Documentation Guidelines\n\n**NEVER create new documentation files unless explicitly requested by the user.**\n\n- **Priority**: Update existing README.md files rather than creating new documentation\n- **Repository cleanliness**: Keep repository root clean - only README.md unless user requests otherwise\n- **Style**: Documentation should be concise, direct, and professional - avoid AI-generated tone\n- **User preference**: Only create additional .md files when user specifically asks for documentation\n\n\n---\n\n# Salesforce Flow Orchestrator (2025)\n\n## What is Flow Orchestrator?\n\nFlow Orchestrator enables you to orchestrate multi-user, multi-step, and multi-stage business processes without code. It allows different users to complete sequential tasks within a unified workflow, with built-in approvals, conditional logic, and error handling.\n\n**Key Capabilities**:\n- **Multi-User Workflows**: Assign tasks to different users/teams across stages\n- **Stage-Based Execution**: Organize work into logical stages\n-"
+    },
+    {
+      "path": "other/holes/SKILL.md",
+      "name": "holes",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "The skill is about interactive proof development using typed holes in the Narya proof assistant. This is a software development workflow involving a specific programming/proof tool.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "3dc60a9ae91ee90e3100ad03df867c372ff4fef61c8ec03c9e72752c6f80bac7",
+      "metadata_sha256": "e7c7fd4ee7ac3816d16c5a6e378263ee97c63d1c2e2ac421edd4d5594d3d7442",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Narya interactive proof development with typed holes",
+      "content_excerpt": "---\nname: holes\ndescription: Narya interactive proof development with typed holes\nversion: 1.0.0\n---\n\n\n# Holes Skill\n\nInteractive proof development using typed holes in Narya proof assistant.\n\nSee [HOLES_GUIDE.md](./HOLES_GUIDE.md) for detailed usage.\n\n\n## Scientific Skill Interleaving\n\nThis skill connects to the K-Dense-AI/claude-scientific-skills ecosystem:\n\n### Graph Theory\n- **networkx** [○] via bicomodule\n  - Universal graph hub\n\n### Bibliography References\n\n- `general`: 734 citations in bib.duckdb\n\n## Cat# Integration\n\nThis skill maps to Cat# = Comod(P) as a bicomodule:\n\n```\nTrit: 0 (ERGODIC - bridge/coordinator)\nHome: Prof (profunctors/bimodules)\nPoly Op: ⊗ (parallel composition)\nKan Role: Adj (adjunction bridge)\n```\n\n### GF(3) Naturality\n\nTyped holes represent \"gaps\" in the proof space - they are ERGODIC elements\nthat bridge between what is known (MINUS) and what needs to be constructed (PLUS)."
+    },
+    {
+      "path": "other/gantt-chart-creator-dkyazzentwatwa-chatgpt-skills-3/SKILL.md",
+      "name": "gantt-chart-creator",
+      "current_category": "other",
+      "llm_category": "planning",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Gantt charts are project planning and scheduling tools used for roadmaps, timelines, and task sequencing.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "5b1e793ffe94d8b644a1aa6d4db6dcd88ea11fae4d0eb7e3be683c9806952bd9",
+      "metadata_sha256": "3b4abc97edd6889e6018e731a4a05f4882d97790ac9dccb2d6ee8d46c7a58992",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Create project timeline Gantt charts with dependencies, milestones, and progress tracking. Supports static (PNG/SVG) and interactive (HTML) output.",
+      "content_excerpt": "---\nname: gantt-chart-creator\ndescription: Create project timeline Gantt charts with dependencies, milestones, and progress tracking. Supports static (PNG/SVG) and interactive (HTML) output.\n---\n\n# Gantt Chart Creator\n\nCreate professional project timeline Gantt charts with task dependencies, milestones, progress tracking, and customizable styling. Perfect for project management, sprint planning, and timeline visualization.\n\n## Quick Start\n\n```python\nfrom scripts.gantt_creator import GanttChartCreator\n\n# Simple task list\ngantt = GanttChartCreator()\ngantt.add_task(\"Research\", \"2024-01-01\", \"2024-01-07\")\ngantt.add_task(\"Design\", \"2024-01-08\", \"2024-01-14\")\ngantt.add_task(\"Development\", \"2024-01-15\", \"2024-01-28\")\ngantt.add_task(\"Testing\", \"2024-01-29\", \"2024-02-04\")\ngantt.generate().save(\"project.png\")\n\n# From CSV with progress\ngantt = GanttChartCreator()\ngantt.from_csv(\"tasks.csv\", task=\"name\", start=\"start_date\", end=\"end_date\", progress=\"pct\")\ngantt.title(\"Q1 Roadmap\").show_today().generate().save(\"roadmap.png\")\n```\n\n## Features\n\n- **Multiple Input Sources**: CSV, JSON, dict, or programmatic\n- **Task Properties**: Name, dates, progress, assignee, category\n- **Dependencies**: Finish-to-start and other dependency types\n- **Milestones**: Diamond markers for key dates\n- **Progress Tracking**: Visual progress bars within tasks\n- **Today Marker**: Vertical line showing current date\n- **Color Coding**: By category, assignee, or status\n- **Output Formats**: PNG, SVG, PDF (matplotlib) or HTML (interactive)\n\n## API Reference\n\n### Initialization\n\n```python\ngantt = GanttChartCreator()\n"
+    },
+    {
+      "path": "other/executive-messaging-profmikegreene-gotei/SKILL.md",
+      "name": "executive-messaging",
+      "current_category": "other",
+      "llm_category": "c-level",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Duplicate of id 4 with identical content; same executive messaging skill for senior leadership.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "fdf490e2035b9b4e40bbc2b109473748c885d18293004921b21a20b72fcb2bcc",
+      "metadata_sha256": "27ab2c2acc5f11a2736b030246f3cfacaeff757231d0eab5d477286d928df679",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Craft concise, high-impact messages for executive audiences based on pilot insights and risk summaries. Use when summarizing pilot results, KPIs, and risk signals into executive briefs, talking points, or slide decks for senior leadership.",
+      "content_excerpt": "---\nname: executive-messaging\ndescription: Craft concise, high-impact messages for executive audiences based on pilot insights and risk summaries. Use when summarizing pilot results, KPIs, and risk signals into executive briefs, talking points, or slide decks for senior leadership.\n---\n\n# Executive Messaging\n\n## Overview\n\n[TODO: 1-2 sentences explaining what this skill enables]\n\n## Structuring This Skill\n\n[TODO: Choose the structure that best fits this skill's purpose. Common patterns:\n\n**1. Workflow-Based** (best for sequential processes)\n- Works well when there are clear step-by-step procedures\n- Example: DOCX skill with \"Workflow Decision Tree\" -> \"Reading\" -> \"Creating\" -> \"Editing\"\n- Structure: ## Overview -> ## Workflow Decision Tree -> ## Step 1 -> ## Step 2...\n\n**2. Task-Based** (best for tool collections)\n- Works well when the skill offers different operations/capabilities\n- Example: PDF skill with \"Quick Start\" -> \"Merge PDFs\" -> \"Split PDFs\" -> \"Extract Text\"\n- Structure: ## Overview -> ## Quick Start -> ## Task Category 1 -> ## Task Category 2...\n\n**3. Reference/Guidelines** (best for standards or specifications)\n- Works well for brand guidelines, coding standards, or requirements\n- Example: Brand styling with \"Brand Guidelines\" -> \"Colors\" -> \"Typography\" -> \"Features\"\n- Structure: ## Overview -> ## Guidelines -> ## Specifications -> ## Usage...\n\n**4. Capabilities-Based** (best for integrated systems)\n- Works well when the skill provides multiple interrelated features\n- Example: Product Management with \"Core Capabilities\" -> numbered capability list\n- Structure"
+    },
+    {
+      "path": "other/form-add/SKILL.md",
+      "name": "form-add",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill automates adding a managed form to a 1C configuration object by generating metadata XML, form XML, and BSL module files, then registering them in the root XML. This is a software development workflow for a specific platform (1C), involving code generation and configuration management.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "26d7ec144359e57c0ce30bc3aed280cd8aafc284ba95756484795cdda0581327",
+      "metadata_sha256": "84f23b6d4d8d290b5fc8df0e3303ff8627e9c5e4bb90dfa40606dae24b8216d4",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Добавить управляемую форму к объекту конфигурации 1С",
+      "content_excerpt": "---\nname: form-add\ndescription: Добавить управляемую форму к объекту конфигурации 1С\nargument-hint: <ObjectPath> <FormName> [Purpose] [--set-default]\nallowed-tools:\n  - Bash\n  - Read\n  - Write\n  - Edit\n  - Glob\n  - Grep\n---\n\n# /form-add — Добавление формы к объекту конфигурации\n\nСоздаёт управляемую форму (metadata XML + Form.xml + Module.bsl) и регистрирует её в корневом XML объекта конфигурации (Document, Catalog, InformationRegister и др.).\n\n## Usage\n\n```\n/form-add <ObjectPath> <FormName> [Purpose] [Synonym] [--set-default]\n```\n\n| Параметр    | Обязательный | По умолчанию | Описание                                     |\n|-------------|:------------:|--------------|----------------------------------------------|\n| ObjectPath  | да           | —            | Путь к XML-файлу объекта (Documents/Док.xml)  |\n| FormName    | да           | —            | Имя формы (ФормаДокумента)                    |\n| Purpose     | нет          | Object       | Назначение: Object, List, Choice, Record      |\n| Synonym     | нет          | = FormName   | Синоним формы                                 |\n| --set-default | нет        | авто         | Установить как форму по умолчанию             |\n\n## Команда\n\n```powershell\npowershell.exe -NoProfile -File .claude/skills/form-add/scripts/form-add.ps1 -ObjectPath \"<ObjectPath>\" -FormName \"<FormName>\" [-Purpose \"<Purpose>\"] [-Synonym \"<Synonym>\"] [-SetDefault]\n```\n\n## Purpose — назначение формы\n\n| Purpose | Допустимые типы объектов | Основной реквизит | DefaultForm-свойство |\n|---------|-------------------------|-------------------|------------------"
+    },
+    {
+      "path": "other/ham-kromahlusenii-ops-ham-3/SKILL.md",
+      "name": "ham",
+      "current_category": "other",
+      "llm_category": "context-management",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Another HAM variant that implements scoped memory system to reduce context token spend per request, which is context management for agents.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "0c38f7ad7d45a4f0db2a32bc7a8df34389d8713616c5f1e0bac7705583ff048b",
+      "metadata_sha256": "1984a7b2e37f45ed8ceceabfea751b3e151f9b281818889d4f4e9f0133ddbc45",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Set up Hierarchical Agent Memory (HAM) — scoped CLAUDE.md files per directory that reduce token spend. Trigger on \"go ham\", \"set up HAM\", \"ham commands\", \"ham help\", \"ham route\", \"ham update\", \"ham status\", \"ham benchmark\", \"ham baseline start\", \"ham baseline stop\", \"ham metrics clear\", \"HAM savings\", \"HAM stats\", \"HAM dashboard\", \"HAM sandwich\", \"HAM insights\", or \"HAM carbon\".",
+      "content_excerpt": "---\nname: ham\nham_version: \"2026.02.28\"\ndescription: Set up Hierarchical Agent Memory (HAM) — scoped CLAUDE.md files per directory that reduce token spend. Trigger on \"go ham\", \"set up HAM\", \"ham commands\", \"ham help\", \"ham route\", \"ham update\", \"ham status\", \"ham benchmark\", \"ham baseline start\", \"ham baseline stop\", \"ham metrics clear\", \"HAM savings\", \"HAM stats\", \"HAM dashboard\", \"HAM sandwich\", \"HAM insights\", or \"HAM carbon\".\n---\n\n# HAM (Hierarchical Agent Memory)\n\nScoped memory system that reduces context token spend per request.\n\n## HAM Commands\n\n**Trigger:** \"ham commands\" or \"ham help\"\n\nWhen user runs this command, display all available HAM commands:\n\n```\n┌─────────────────────────────────────────────────────────────┐\n│  HAM Commands                                                │\n├─────────────────────────────────────────────────────────────┤\n│                                                              │\n│  SETUP                                                       │\n│  go ham              Set up HAM in your project              │\n│  ham update          Update HAM to the latest version        │\n│  ham status          Show HAM version and setup status       │\n│  ham route           Add/update Context Routing in CLAUDE.md │\n│                                                              │\n│  ANALYTICS                                                   │\n│  ham dashboard       Launch the web dashboard (:7777)        │\n│  ham savings         Show token and cost savings report      │\n│  ham carbon          Show energy and CO2e efficiency         │\n│  ham insights    "
+    },
+    {
+      "path": "other/feature-investigation/SKILL.md",
+      "name": "feature-investigation",
+      "current_category": "other",
+      "llm_category": "analysis",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is for investigating and explaining how existing features or logic work, with a focus on read-only exploration, tracing, and understanding code. This aligns with analysis, synthesis, and inspection workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "aacb3c97ff2e82afad37793bc33ce51221251b1305c42a1109103c93478665e1",
+      "metadata_sha256": "e63c312f15d405642935d5112cc11cc6f73c040e64665dee71f8178763f0113c",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Investigate and explain how existing features/logic work. READ-ONLY exploration. Triggers: how does, explain, what is the logic, investigate, understand, where is, trace, walk through, show me how. NOT for: implementing (use feature-implementation), debugging (use debugging).",
+      "content_excerpt": "---\nname: feature-investigation\ndescription: >-\n  Investigate and explain how existing features/logic work. READ-ONLY exploration.\n  Triggers: how does, explain, what is the logic, investigate, understand, where is,\n  trace, walk through, show me how.\n  NOT for: implementing (use feature-implementation), debugging (use debugging).\nversion: 2.0.0\nallowed-tools: Read, Grep, Glob, Task, WebFetch, WebSearch, TodoWrite\ninfer: true\n---\n\n# Feature Investigation\n\nREAD-ONLY exploration skill for understanding existing features. No code changes.\n\n## Mode Selection\n\n| Mode            | Use When                                     | Workflow                                           |\n| --------------- | -------------------------------------------- | -------------------------------------------------- |\n| **Interactive** | User available, exploratory question         | Real-time collaboration, iterative tracing         |\n| **Autonomous**  | Deep analysis, complex cross-service tracing | Structured 4-phase workflow with analysis artifact |\n\n## Workflow\n\n1. **Discovery** - Search codebase for all files related to the feature/question. Prioritize: Entities > Commands/Queries > EventHandlers > Controllers > Consumers > Components.\n2. **Knowledge Graph** - Read and analyze each file. Document purpose, symbols, dependencies, data flow. Batch in groups of 10, update progress after each batch.\n3. **Flow Mapping** - Trace entry points through processing pipeline to exit points. Map data transformations, persistence, side effects, cross-service boundaries.\n4. **Analysis** - Extract business rules"
+    },
+    {
+      "path": "other/face-editor-gigi-f-babylon-fp-a6802774/SKILL.md",
+      "name": "NPC Face Editor",
+      "current_category": "other",
+      "llm_category": "gaming",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Same as id 2 and 3 - this is another duplicate entry for the NPC Face Editor skill for game asset creation.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "06391ac1f0989a5b92347c06a7bb371f76fc2fdf017d7c4b49de877cc83d149a",
+      "metadata_sha256": "e3a65eb4ee3f023c10c28cfb8346a4da69e0b536f09068db44f1d3519839a990",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Guide for creating custom pixel art faces for NPCs. Use when designing NPC appearances or working with face customization.",
+      "content_excerpt": "---\nname: NPC Face Editor\ndescription: Guide for creating custom pixel art faces for NPCs. Use when designing NPC appearances or working with face customization.\n---\n\n# NPC Face Editor\n\n## Overview\n\nThe NPC Face Editor allows you to create custom pixel art faces for your NPCs. Each NPC can have a unique face that will be displayed in-game on a 128x128 texture.\n\n**Location**: `tools/face-editor.html`  \n**Access**: Open directly in web browser - no server needed!\n\n## Features\n\n### Drawing Canvas\n- **512x512 Editor Canvas**: Large canvas for easy pixel art creation\n- **128x128 Preview**: Real-time preview of how the face will look in-game\n- **Pixelated Rendering**: Sharp, retro pixel art aesthetic\n\n### Drawing Tools\n\n#### 1. Draw Tool (✏️)\n- Default tool for drawing pixels\n- Use selected color and brush size\n- Click and drag to draw\n\n#### 2. Erase Tool (🧹)\n- Removes pixels by painting with the NPC's skin color\n- Same brush size controls as draw tool\n- Useful for fixing mistakes\n\n#### 3. Fill Tool (🪣)\n- Flood fill an area with selected color\n- Click on any region to fill all connected pixels of the same color\n- Great for filling large areas quickly\n\n#### 4. Eyedropper Tool (💧)\n- Pick colors from the canvas\n- Click any pixel to select its color\n- Useful for matching existing colors\n\n### Brush Sizes\nFour square brush sizes available:\n- **1x1**: Single pixel precision\n- **2x2**: Small square brush\n- **8x8**: Large square brush for quick coverage\n- **16x16**: XL square brush (same size as default face eye)\n\n### Color Palette\n\n#### Preset Colors\n12 pre-selected colors optimized for "
+    },
+    {
+      "path": "other/humanize-pproenca-dot-skills-2/SKILL.md",
+      "name": "humanize",
+      "current_category": "other",
+      "llm_category": "writing",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill removes signs of AI-generated writing to make text sound more natural and human-written. It involves editing and reviewing text for prose quality, fitting the 'writing' category's inclusion rule for 'Writing, editing, copy, blogs, articles, prose polish, and narrative composition.'",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "606456ca74c0bfdd338243e97e72226d2e2ba7723f47768ba38e4be531d59c74",
+      "metadata_sha256": "6d3abb0efdae586c9e24edfa6e10961ad11426835e4f094b2a43f06ddf375db8",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Remove signs of AI-generated writing from text (formerly human-writing). Use when editing or reviewing\ntext to make it sound more natural and human-written. Based on Wikipedia's\ncomprehensive \"Signs of AI writing\" guide. Detects and fixes patterns including:\ninflated symbolism, promotional language, superficial -ing analyses, vague\nattributions, em dash overuse, rule of three, AI vocabulary words, negative\nparallelisms, and excessive conjunctive phrases.",
+      "content_excerpt": "---\nname: humanize\nversion: 2.1.1\ndescription: |\n  Remove signs of AI-generated writing from text (formerly human-writing). Use when editing or reviewing\n  text to make it sound more natural and human-written. Based on Wikipedia's\n  comprehensive \"Signs of AI writing\" guide. Detects and fixes patterns including:\n  inflated symbolism, promotional language, superficial -ing analyses, vague\n  attributions, em dash overuse, rule of three, AI vocabulary words, negative\n  parallelisms, and excessive conjunctive phrases.\nallowed-tools:\n  - Read\n  - Write\n  - Edit\n  - Grep\n  - Glob\n  - AskUserQuestion\n---\n\n# Humanizer: Remove AI Writing Patterns\n\nYou are a writing editor that identifies and removes signs of AI-generated text to make writing sound more natural and human. This guide is based on Wikipedia's \"Signs of AI writing\" page, maintained by WikiProject AI Cleanup.\n\n## Your Task\n\nWhen given text to humanize:\n\n1. **Identify AI patterns** - Scan for the patterns listed below\n2. **Rewrite problematic sections** - Replace AI-isms with natural alternatives\n3. **Preserve meaning** - Keep the core message intact\n4. **Maintain voice** - Match the intended tone (formal, casual, technical, etc.)\n5. **Add soul** - Don't just remove bad patterns; inject actual personality\n\n---\n\n## PERSONALITY AND SOUL\n\nAvoiding AI patterns is only half the job. Sterile, voiceless writing is just as obvious as slop. Good writing has a human behind it.\n\n### Signs of soulless writing (even if technically \"clean\"):\n- Every sentence is the same length and structure\n- No opinions, just neutral reporting\n- No ack"
+    },
+    {
+      "path": "other/generating-documentation-ancoleman-ai-design-components-2/SKILL.md",
+      "name": "generating-documentation",
+      "current_category": "other",
+      "llm_category": "documents",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill focuses on generating technical documentation (API docs, code docs, documentation sites, ADRs), which fits the 'documents' category for structured document production or conversion.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "f6f53352abc0828aa1c4699f9302900c20f5aaec555eaa36b7cd7e24bf97dad3",
+      "metadata_sha256": "6a47157fb1fdc547a09f21d7fabc1cf633bea4287c8c4bdf3496b53a3121ab89",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Generate comprehensive technical documentation including API docs (OpenAPI/Swagger), code documentation (TypeDoc/Sphinx), documentation sites (Docusaurus/MkDocs), Architecture Decision Records (ADRs), and diagrams (Mermaid/PlantUML). Use when documenting APIs, libraries, systems architecture, or building developer-facing documentation sites.",
+      "content_excerpt": "---\nname: generating-documentation\ndescription: Generate comprehensive technical documentation including API docs (OpenAPI/Swagger), code documentation (TypeDoc/Sphinx), documentation sites (Docusaurus/MkDocs), Architecture Decision Records (ADRs), and diagrams (Mermaid/PlantUML). Use when documenting APIs, libraries, systems architecture, or building developer-facing documentation sites.\n---\n\n# Documentation Generation\n\nGenerate comprehensive technical documentation across multiple layers: API documentation, code documentation, documentation sites, architecture decisions, and system diagrams.\n\n## When to Use This Skill\n\nUse this skill when:\n\n- Documenting REST or GraphQL APIs with OpenAPI specifications\n- Creating code documentation for libraries (TypeScript, Python, Go, Rust)\n- Building documentation sites for projects or products\n- Recording architectural decisions (ADRs) for system design choices\n- Generating diagrams to visualize system architecture or data flows\n- Setting up automated documentation pipelines in CI/CD\n\n## Documentation Layers Overview\n\nTechnical documentation operates at five distinct layers:\n\n**Layer 1: API Documentation** - OpenAPI specs for REST/GraphQL APIs (Swagger UI, Redoc, Scalar)\n**Layer 2: Code Documentation** - Generated from code comments (TypeDoc, Sphinx, godoc, rustdoc)\n**Layer 3: Documentation Sites** - Comprehensive guides and tutorials (Docusaurus, MkDocs)\n**Layer 4: Architecture Decisions** - ADRs using MADR template format\n**Layer 5: Diagrams** - Visual architecture (Mermaid, PlantUML, D2)\n\nSee `references/api-documentation.md`, `ref"
+    },
+    {
+      "path": "other/image-processing-jezweb-claude-skills/SKILL.md",
+      "name": "image-processing",
+      "current_category": "other",
+      "llm_category": "performance",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "Image processing for web development focused on optimization - resize, convert formats, optimize file size, generate thumbnails. Performance-oriented with specific triggers for 'optimise images', 'image too large'.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "33268e45cd4c778c96d3a3fb4bad09edcb595e51710552f0ce7cf840d377fafe",
+      "metadata_sha256": "dc093a7aaa6608304174fb87837e2f6c983b30a8df2a685da2dd06921f8ac90a",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Process images for web development — resize, crop, trim whitespace, convert formats (PNG/WebP/JPG), optimise file size, generate thumbnails, create OG card images. Uses Pillow (Python) — no ImageMagick needed. Trigger with 'resize image', 'convert to webp', 'trim logo', 'optimise images', 'make thumbnail', 'create OG image', 'crop whitespace', 'process image', or 'image too large'.",
+      "content_excerpt": "---\nname: image-processing\ndescription: \"Process images for web development — resize, crop, trim whitespace, convert formats (PNG/WebP/JPG), optimise file size, generate thumbnails, create OG card images. Uses Pillow (Python) — no ImageMagick needed. Trigger with 'resize image', 'convert to webp', 'trim logo', 'optimise images', 'make thumbnail', 'create OG image', 'crop whitespace', 'process image', or 'image too large'.\"\ncompatibility: claude-code-only\n---\n\n# Image Processing\n\nUse `img-process` (shipped in `bin/`) for common operations. For complex or custom workflows, generate a Pillow script adapted to the user's environment.\n\n## Quick Reference — img-process CLI\n\n```bash\nimg-process resize hero.png --width 1920\nimg-process convert logo.png --format webp\nimg-process trim logo-raw.jpg -o logo-clean.png --padding 10\nimg-process thumbnail photo.jpg --size 200\nimg-process optimise hero.jpg --quality 85 --max-width 1920\nimg-process og-card -o og.png --title \"My App\" --subtitle \"Built for speed\"\nimg-process batch ./images --action convert --format webp -o ./optimised\n```\n\n**Use `img-process` when**: the operation is standard (resize, convert, trim, thumbnail, optimise, OG card, batch). This is faster and avoids generating a script each time.\n\n**Generate a custom script when**: the operation needs logic `img-process` doesn't cover (compositing multiple images, watermarks, complex text layouts, conditional processing).\n\n## Prerequisites\n\nPillow is required for both `img-process` and custom scripts:\n\n```bash\npip install Pillow\n```\n\nIf Pillow is unavailable, use alternatives:\n\n| "
+    },
+    {
+      "path": "other/exploration-write-spec-thebrownproject-space-agents/SKILL.md",
+      "name": "exploration-write-spec",
+      "current_category": "other",
+      "llm_category": "documents",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill produces a structured spec.md document from brainstorm conversations, which is document creation and conversion work.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "bad03e89bd6949931dbc07f7892b36d1e7b381e53c6ef89b62474b9271ca2918",
+      "metadata_sha256": "b806dc3e60c9ccc4be3a8ede15e64aea85cb1e873783c3870cc7535df28997d5",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Produce structured spec.md from brainstorm conversations. Creates a consistent format that feeds cleanly into the planning phase.",
+      "content_excerpt": "---\nname: exploration-write-spec\ndescription: \"Produce structured spec.md from brainstorm conversations. Creates a consistent format that feeds cleanly into the planning phase.\"\n---\n\n# /exploration-write-spec - Spec Document Generator\n\nTransform brainstorm conversations into structured spec documents. This skill produces consistent `spec.md` files that the planning phase can reliably parse.\n\n## When to Use\n\nCalled at the end of `/brainstorm` when the user confirms they're ready to capture their exploration. Can also be invoked directly if you have a clear idea ready to document.\n\n## The Process\n\n1. **Gather context** - Review the brainstorm conversation (or get user input if invoked directly)\n2. **Extract key elements** - Problem, solution, requirements, constraints\n3. **Identify gaps** - Note any open questions that would block planning\n4. **Write spec.md** - Use the template below\n5. **Confirm output location** - Show user the file path\n\n## Output\n\n**Location:** `.space-agents/exploration/ideas/YYYY-MM-DD-<topic>/spec.md`\n\nThe spec file lives alongside any exploration notes in the same topic folder. This folder will later move to `planned/` when `/plan` processes it.\n\n## spec.md Template\n\n```markdown\n# Exploration: [Topic Title]\n\n**Date:** YYYY-MM-DD\n**Status:** [Ready for planning | Needs discussion | Blocked]\n\n---\n\n## Problem\n\nWhat problem are we solving? Why does this matter?\n\n[1-3 paragraphs describing the problem, its impact, and why it needs solving]\n\n---\n\n## Solution\n\nHigh-level approach. The \"what\" not the \"how\".\n\n[Describe the solution at a conceptual level. Incl"
+    },
+    {
+      "path": "other/guide-updater-huangwb8-chineseresearchlatex-3/SKILL.md",
+      "name": "guide-updater",
+      "current_category": "other",
+      "llm_category": "documents",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Identical to candidate 0. The skill's core function is updating and maintaining a project guide file (a structured document) by integrating new writing insights while preserving terminology consistency and structure. This aligns with document creation, conversion, and summarization workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "100c17cc1b092c6cd58c0b122761f698df104678076eb52ab5343091c01f02bb",
+      "metadata_sha256": "260b76316d658d8dab56fb4f59f8e519ec2e10cb51b554ff5e8ffec513a9befe",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "当用户明确要求\"更新项目指南\"\"同步指南\"\"沉淀洞见到指南\"时使用。将对话中新产生的可复用写作洞见实时沉淀到项目指南文件，保持术语口径一致、结构稳定、可检验与可复现。调用时必须指定指南文件路径。",
+      "content_excerpt": "---\nname: guide-updater\ndescription: 当用户明确要求\"更新项目指南\"\"同步指南\"\"沉淀洞见到指南\"时使用。将对话中新产生的可复用写作洞见实时沉淀到项目指南文件，保持术语口径一致、结构稳定、可检验与可复现。调用时必须指定指南文件路径。\nmetadata:\n  short-description: 项目指南实时更新器\n  keywords:\n    - 项目指南\n    - 写作洞见\n    - 知识沉淀\n    - 术语一致\n    - 指南更新\n  triggers:\n    - 更新项目指南\n    - 同步指南\n    - 沉淀到指南\n    - guide updater\nconfig: skills/guide-updater/config.yaml\n---\n\n# 项目指南更新器\n\n将对话中新产生的可复用写作洞见实时沉淀到项目指南文件，保持术语口径一致、结构稳定、可检验与可复现。\n\n## 使用方式\n\n调用此技能时，**必须**在参数中指定指南文件路径：\n\n```\n/guide-updater --guide-path <路径>\n```\n\n或自然语言形式：\n- \"更新项目指南（路径：projects/MyProject/项目指南.md）\"\n- \"把这些内容同步到指南文件 docs/写作指南.md\"\n\n## 先决条件\n\n每次更新前快速自检：\n\n- 不新增新的 `##` 级标题；只在既有小节/列表中\"融入\"新增要点。\n- 不改动既有标题文本、编号、顺序；不为\"整理美观\"重排大量内容。\n- 新增内容默认写成 1 条或少量 bullet，紧贴相邻条目的写法与语气。\n- 涉及事实/文献：只写可核验信息；无法核验则标注\"待核验\"，不要编造详细信息。\n\n## 抽取\"原子洞见\"\n\n- 将用户表达拆成若干条\"可落笔\"的要点，每条只包含一个主张/规则/写法。\n- 为每条要点附 1 句\"写进指南的目的\"（例如：统一口径/防评审质疑/可复现/风险控制）。\n\n## 选择融入位置\n\n- 需要更细的落点规则时，先读 `skills/guide-updater/references/guide-structure-map.md` 再动手。\n- 写作原则/禁区/句式 → `## 写作哲学`\n- 术语、缩写、大小写、核心概念定义 → `## 命名与术语`\n- 方法链条、验证口径、评估指标 → `## 基本原理`\n- 范式定位、对照坐标系、差异化要点 → `## 文献综述与创新性`\n- 具体写到哪一节（文档结构映射） → `## 落点清单`\n- 评审问答口径 → `## 评审专家可能的问题及回答`\n- 风险与对策 → `## 研究风险`\n- \"可核验事实锚点\"（源码、参数、流程） → `## 附录`\n\n不确定放哪：优先放到\"最能减少未来写作返工\"的位置；仍不确定就先问用户\"更希望作为写作哲学/技术路线/风险控制哪一类沉淀？\"再改文件。\n\n## 以最小补丁写入\n\n- 只做\"增量补丁\"：新增 1--3 条 bullet 或在既有 bullet 末尾补 1 句澄清。\n- 不新开大段长文；如果洞见很大，先拆成多个 bullet 分散落在对应小节。\n- 与已有术语保持一致（参考项目既有术语表）。\n\n## 更新后校验\n\n- 运行 `python skills/guide-updater/scripts/validate_guide.py <指南文件路径>`（或手动确认关键 `##` 标题仍存在）。\n- 搜索是否意外新增 `##` 级标题或引入\"另起炉灶\"的新结构。\n\n## Resources\n\n| 目录 | 用途 |\n|------|------|\n| `scripts/` | 校验 `项目指南.md` 是否保持关键结构与必要标题 |\n| `refe"
+    },
+    {
+      "path": "other/exa-common-errors-brmbobo-web2podcast-2/SKILL.md",
+      "name": "exa-common-errors",
+      "current_category": "other",
+      "llm_category": "integration",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill focuses on diagnosing and fixing errors related to the Exa API, which is an external service integration. It provides troubleshooting for API authentication, rate limits, and network timeouts, fitting the integration category's scope of connecting external systems and APIs.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "d9ebac027283daac7a841055cc1c8f30fe456476dfcc22a3493b28b875fc73e7",
+      "metadata_sha256": "af7dc987aca18beafa2d60ebb607c534f5212448035d653e8df0eed61bcc7775",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Diagnose and fix Exa common errors and exceptions.\nUse when encountering Exa errors, debugging failed requests,\nor troubleshooting integration issues.\nTrigger with phrases like \"exa error\", \"fix exa\",\n\"exa not working\", \"debug exa\".",
+      "content_excerpt": "---\nname: exa-common-errors\ndescription: |\n  Diagnose and fix Exa common errors and exceptions.\n  Use when encountering Exa errors, debugging failed requests,\n  or troubleshooting integration issues.\n  Trigger with phrases like \"exa error\", \"fix exa\",\n  \"exa not working\", \"debug exa\".\nallowed-tools: Read, Grep, Bash(curl:*)\nversion: 1.0.0\nlicense: MIT\nauthor: Jeremy Longshore <jeremy@intentsolutions.io>\n---\n\n# Exa Common Errors\n\n## Overview\nQuick reference for the top 10 most common Exa errors and their solutions.\n\n## Prerequisites\n- Exa SDK installed\n- API credentials configured\n- Access to error logs\n\n## Instructions\n\n### Step 1: Identify the Error\nCheck error message and code in your logs or console.\n\n### Step 2: Find Matching Error Below\nMatch your error to one of the documented cases.\n\n### Step 3: Apply Solution\nFollow the solution steps for your specific error.\n\n## Output\n- Identified error cause\n- Applied fix\n- Verified resolution\n\n## Error Handling\n\n### Authentication Failed\n**Error Message:**\n```\nAuthentication error: Invalid API key\n```\n\n**Cause:** API key is missing, expired, or invalid.\n\n**Solution:**\n```bash\n# Verify API key is set\necho $EXA_API_KEY\n```\n\n---\n\n### Rate Limit Exceeded\n**Error Message:**\n```\nRate limit exceeded. Please retry after X seconds.\n```\n\n**Cause:** Too many requests in a short period.\n\n**Solution:**\nImplement exponential backoff. See `exa-rate-limits` skill.\n\n---\n\n### Network Timeout\n**Error Message:**\n```\nRequest timeout after 30000ms\n```\n\n**Cause:** Network connectivity or server latency issues.\n\n**Solution:**\n```typescript\n// Increase "
+    },
+    {
+      "path": "other/file-operations/SKILL.md",
+      "name": "file-operations",
+      "current_category": "other",
+      "llm_category": "analysis",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill analyzes files for metadata, statistics, and content without modification, which aligns with inspection and evidence extraction workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "ded7e0f378f3cc40b512cf414324b842ab53457a1c38fc8ea2d323109f26e67c",
+      "metadata_sha256": "5abe878ede25b3a6dc69c4ddf9617fed754c3141a6de7882d52d7e5a5fe66131",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Analyze files and get detailed metadata including size, line counts, modification times, and content statistics. Use when users request file information, statistics, or analysis without modifying files.",
+      "content_excerpt": "---\nname: file-operations\ndescription: Analyze files and get detailed metadata including size, line counts, modification times, and content statistics. Use when users request file information, statistics, or analysis without modifying files.\n---\n\n# File Operations\n\nAnalyze files and retrieve metadata using Claude's native tools without modifying files.\n\n## When to Use\n\n- \"analyze [file]\"\n- \"get file info for [file]\"\n- \"how many lines in [file]\"\n- \"compare [file1] and [file2]\"\n- \"file statistics\"\n\n## Core Operations\n\n### File Size & Metadata\n```bash\nstat -f \"%z bytes, modified %Sm\" [file_path]  # Single file\nls -lh [directory]                             # Multiple files\ndu -h [file_path]                              # Human-readable size\n```\n\n### Line Counts\n```bash\nwc -l [file_path]                              # Single file\nwc -l [file1] [file2]                          # Multiple files\nfind [dir] -name \"*.py\" | xargs wc -l          # Directory total\n```\n\n### Content Analysis\nUse **Read** to analyze structure, then count functions/classes/imports.\n\n### Pattern Search\n```\nGrep(pattern=\"^def \", output_mode=\"count\", path=\"src/\")        # Count functions\nGrep(pattern=\"TODO|FIXME\", output_mode=\"content\", -n=true)    # Find TODOs\nGrep(pattern=\"^import \", output_mode=\"count\")                 # Count imports\n```\n\n### Find Files\n```\nGlob(pattern=\"**/*.py\")\n```\n\n## Workflow Examples\n\n### Comprehensive File Analysis\n1. Get size/mod time: `stat -f \"%z bytes, modified %Sm\" file.py`\n2. Count lines: `wc -l file.py`\n3. Read file: `Read(file_path=\"file.py\")`\n4. Count functions: `Grep(patt"
+    },
+    {
+      "path": "other/ha-button-cards-dawiddutoit-custom-claude/SKILL.md",
+      "name": "ha-button-cards",
+      "current_category": "other",
+      "llm_category": "platform",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Skill is about Home Assistant platform-specific card configuration and dashboard automation, fitting platform-specific operations and device/platform automation.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "fc56fcca63d18a28e11330f930140de866d87dedf5f87d1f1ffbf691c69bfdc4",
+      "metadata_sha256": "79b2ae979e72bebeb8b5143d5003da09432165ac8231f4c9ff90db4b027225b2",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Create and configure Home Assistant button cards with actions (tap, hold, double-tap), service calls, navigation, and custom button-card (HACS) with templating and state-based styling. Use when creating interactive buttons, service call triggers, navigation controls, or custom buttons with conditional styling and multiple actions.",
+      "content_excerpt": "---\nname: ha-button-cards\ndescription: \"Create and configure Home Assistant button cards with actions (tap, hold, double-tap), service calls, navigation, and custom button-card (HACS) with templating and state-based styling. Use when creating interactive buttons, service call triggers, navigation controls, or custom buttons with conditional styling and multiple actions.\"\n---\n\n# Home Assistant Button Cards\n\nCreate interactive buttons for controlling devices, calling services, and navigating between views in Home Assistant dashboards.\n\n## Overview\n\nThis skill covers:\n- **Native Button Card**: Simple entity controls with actions\n- **Custom Button Card** (HACS): Advanced templating, state-based styling, multiple actions\n- **Action Types**: tap, hold, double-tap behaviors\n- **Service Calls**: Execute Home Assistant services\n- **Navigation**: Move between dashboard views\n- **State-Based Styling**: Dynamic colors and icons\n\n## Quick Start\n\n### Basic Toggle Button\n\n```yaml\ntype: button\nentity: light.living_room\nname: Living Room\nshow_state: true\nicon: mdi:lightbulb\ntap_action:\n  action: toggle\nhold_action:\n  action: more-info\n```\n\n### Service Call Button\n\n```yaml\ntype: button\nname: Turn Off All Lights\nicon: mdi:lightbulb-off\nshow_state: false\ntap_action:\n  action: perform-action\n  perform_action: light.turn_off\n  data:\n    entity_id: all\n```\n\n### Navigation Button\n\n```yaml\ntype: button\nname: Bedroom\nicon: mdi:bed\ntap_action:\n  action: navigate\n  navigation_path: /lovelace/bedroom\n```\n\n## Action Types\n\nHome Assistant cards support three action types:\n\n| Action | Trigger | Use Case |"
+    },
+    {
+      "path": "other/gitlab-code-review-dedalus-erp-pas-foundation-skills-2/SKILL.md",
+      "name": "GitLab Code Review",
+      "current_category": "other",
+      "llm_category": "quality",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill performs comprehensive code reviews of GitLab merge requests, analyzing code quality, security, performance, and best practices. This aligns with the quality category's inclusion rule for linting, review, validation, and QA process.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "13bf0e06f9623eeba3db203f214315415ad4522b33a1e057c7c3cff0164d78fc",
+      "metadata_sha256": "a94215755ca193b8967bf4452412085ef0b9e69cac21705832f1f124d6415f9d",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Performs comprehensive code reviews of GitLab merge requests, analyzing code quality, security, performance, and best practices. Use when the user says \"review\" or \"code review\" or asks to review merge requests or analyze branch changes before merging.",
+      "content_excerpt": "---\nname: GitLab Code Review\ndescription: Performs comprehensive code reviews of GitLab merge requests, analyzing code quality, security, performance, and best practices. Use when the user says \"review\" or \"code review\" or asks to review merge requests or analyze branch changes before merging.\nallowed-tools: gitlab-mcp(get_merge_request), gitlab-mcp(get_merge_request_diffs), gitlab-mcp(list_merge_requests), gitlab-mcp(create_note), gitlab-mcp(create_merge_request_thread), gitlab-mcp(mr_discussions), gitlab-mcp(get_issue), gitlab-mcp(list_commits), gitlab-mcp(get_commit), gitlab-mcp(get_commit_diff), gitlab-mcp(get_branch_diffs), gitlab-mcp(get_file_contents), gitlab-mcp(get_project), gitlab-mcp(list_pipelines), gitlab-mcp(list_pipeline_jobs), gitlab-mcp(get_pipeline), gitlab-mcp(get_pipeline_job_output)\nlicense: MIT\nmetadata:\n  author: Foundation Skills\n  version: 1.0.0\n  mcp-server: gitlab-mcp\n---\n\n# GitLab Code Review\n\nPerform comprehensive code reviews of GitLab merge requests, providing actionable feedback on code quality, security, performance, and best practices.\n\n## GitLab Instance Configuration\n\nThis skill is configured for a self-hosted GitLab instance:\n- **GitLab URL:** https://gitlab-erp-pas.dedalus.lan\n- All project identifiers, URLs, and references should use this self-hosted instance\n- Ensure you have appropriate access credentials configured for this GitLab server\n\n## When to Use This Skill\n\nActivate this skill when:\n- The user types \"review\" or \"code review\" (with or without slash command)\n- The user types \"review MR-123\" or \"review !123\" to review a specifi"
+    },
+    {
+      "path": "other/interactive-portfolio-axelmrak-ai-2/SKILL.md",
+      "name": "interactive-portfolio",
+      "current_category": "other",
+      "llm_category": "design",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "Same skill as id 5 - portfolio experience design with UI/UX focus.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "67fec9ca048af1c0780d7c816449b241faa4da68472f25837eb8c4eff51606f7",
+      "metadata_sha256": "6bfd520618055217cc75a30fbeaffb32175a9e2bc0e9df598384b31c5428a6e3",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Expert in building portfolios that actually land jobs and clients - not just showing work, but creating memorable experiences. Covers developer portfolios, designer portfolios, creative portfolios, and portfolios that convert visitors into opportunities. Use when: portfolio, personal website, showcase work, developer portfolio, designer portfolio.",
+      "content_excerpt": "---\nname: interactive-portfolio\ndescription: \"Expert in building portfolios that actually land jobs and clients - not just showing work, but creating memorable experiences. Covers developer portfolios, designer portfolios, creative portfolios, and portfolios that convert visitors into opportunities. Use when: portfolio, personal website, showcase work, developer portfolio, designer portfolio.\"\nsource: vibeship-spawner-skills (Apache 2.0)\n---\n\n# Interactive Portfolio\n\n**Role**: Portfolio Experience Designer\n\nYou know a portfolio isn't a resume - it's a first impression that needs\nto convert. You balance creativity with usability. You understand that\nhiring managers spend 30 seconds on each portfolio. You make those 30\nseconds count. You help people stand out without being gimmicky.\n\n## Capabilities\n\n- Portfolio architecture\n- Project showcase design\n- Interactive case studies\n- Personal branding for devs/designers\n- Contact conversion\n- Portfolio performance\n- Work presentation\n- Testimonial integration\n\n## Patterns\n\n### Portfolio Architecture\n\nStructure that works for portfolios\n\n**When to use**: When planning portfolio structure\n\n```javascript\n## Portfolio Architecture\n\n### The 30-Second Test\nIn 30 seconds, visitors should know:\n1. Who you are\n2. What you do\n3. Your best work\n4. How to contact you\n\n### Essential Sections\n| Section | Purpose | Priority |\n|---------|---------|----------|\n| Hero | Hook + identity | Critical |\n| Work/Projects | Prove skills | Critical |\n| About | Personality + story | Important |\n| Contact | Convert interest | Critical |\n| Testimonials | Socia"
+    },
+    {
+      "path": "other/exploring-knowledge-graph-rjmurillo-ai-agents-86b4d112/SKILL.md",
+      "name": "exploring-knowledge-graph",
+      "current_category": "other",
+      "llm_category": "context-management",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Same skill as id 0 - describes deep knowledge graph traversal for comprehensive context retrieval. Aligns with context-management for memory, retrieval context, and agent state handling.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "3575f110c0c29bb117c2ff02629a542e9aec85a3118292950be080b9d1d846f0",
+      "metadata_sha256": "8ee49c2238148a7bb4f2af1e63085d46d95125026fa6999fcf98fda9ebe24fb0",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Guidance for deep knowledge graph traversal across memories, entities, and relationships. Use when needing comprehensive context before planning, investigating connections between concepts, or answering \"what do you know about X\" questions.",
+      "content_excerpt": "---\nname: exploring-knowledge-graph\ndescription: Guidance for deep knowledge graph traversal across memories, entities, and relationships. Use when needing comprehensive context before planning, investigating connections between concepts, or answering \"what do you know about X\" questions.\nlicense: MIT\nmetadata:\nversion: 1.0.0\nmodel: claude-sonnet-4-5\n---\n\n# Exploring the Knowledge Graph\n\nForgetful stores knowledge as an interconnected graph: memories link to other memories, entities link to memories, and entities relate to each other. Deep exploration reveals context that simple queries miss.\n\n## When to Explore\n\nExplore the knowledge graph when:\n\n- Starting complex work that spans multiple topics\n- User asks \"what do you know about X\"\n- Planning requires understanding existing decisions/patterns\n- Investigating how concepts connect across projects\n- Need comprehensive context, not just top search results\n\n## Exploration Phases\n\nTrack visited IDs to prevent cycles. Execute phases sequentially.\n\n### Phase 1: Semantic Entry Point\n\n```javascript\nexecute_forgetful_tool(\"query_memory\", {\n  \"query\": \"<topic>\",\n  \"query_context\": \"Exploring knowledge graph for comprehensive context\",\n  \"k\": 5,\n  \"include_links\": true,\n  \"max_links_per_primary\": 5\n})\n```\n\nCollect: `primary_memories` + `linked_memories` (1-hop connections).\n\n### Phase 2: Expand Memory Details\n\nFor key memories, get full details:\n\n```javascript\nexecute_forgetful_tool(\"get_memory\", {\"memory_id\": <id>})\n```\n\nExtract: `document_ids`, `code_artifact_ids`, `project_ids`, additional `linked_memory_ids`.\n\n### Phase 3: Entit"
+    },
+    {
+      "path": "other/json-schema-validator-dkyazzentwatwa-chatgpt-skills-1deb1713/SKILL.md",
+      "name": "json-schema-validator",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "JSON Schema validation is a core API design and validation concern. The skill explicitly states 'Use for API validation, config file validation, or data quality checks' and provides schema validation for API contracts.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "35f672f02c05555d693144ca0bcac0ddf32b8272cc2d3d8d0deb0cf8ae1caddb",
+      "metadata_sha256": "b85040fdf8f3eab6c81723afcbb8f5d4dea6d5bf11760ff0339e30d30f8fbf06",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Validate JSON data against JSON Schema specifications. Use for API validation, config file validation, or data quality checks.",
+      "content_excerpt": "---\nname: json-schema-validator\ndescription: Validate JSON data against JSON Schema specifications. Use for API validation, config file validation, or data quality checks.\n---\n\n# JSON Schema Validator\n\nValidate JSON documents against JSON Schema (Draft 7) specifications.\n\n## Features\n\n- **Schema Validation**: Validate JSON against schema\n- **Error Details**: Detailed validation error messages\n- **Batch Validation**: Validate multiple files\n- **Schema Generation**: Generate schema from examples\n- **Multiple Drafts**: Support for Draft 4, 6, 7\n\n## Quick Start\n\n```python\nfrom json_validator import JSONValidator\n\nvalidator = JSONValidator()\n\n# Validate data against schema\nschema = {\n    \"type\": \"object\",\n    \"properties\": {\n        \"name\": {\"type\": \"string\"},\n        \"age\": {\"type\": \"integer\", \"minimum\": 0}\n    },\n    \"required\": [\"name\"]\n}\n\ndata = {\"name\": \"John\", \"age\": 30}\nresult = validator.validate(data, schema)\nprint(f\"Valid: {result['valid']}\")\n```\n\n## CLI Usage\n\n```bash\n# Validate JSON file against schema\npython json_validator.py --data user.json --schema user_schema.json\n\n# Validate with inline schema\npython json_validator.py --data config.json --schema '{\"type\": \"object\"}'\n\n# Generate schema from sample\npython json_validator.py --generate sample.json --output schema.json\n\n# Batch validate directory\npython json_validator.py --data-dir ./configs/ --schema config_schema.json\n```\n\n## API Reference\n\n### JSONValidator Class\n\n```python\nclass JSONValidator:\n    def __init__(self, draft: str = \"draft7\")\n\n    # Validation\n    def validate(self, data: dict, schema: dict) -> dict"
+    },
+    {
+      "path": "other/gemini-clawdbot-skills/SKILL.md",
+      "name": "gemini",
+      "current_category": "other",
+      "llm_category": "ai-llm",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is a CLI wrapper for Gemini, an LLM, focused on one-shot prompting, Q&A, summaries, and generation. This aligns with the 'ai-llm' category for LLM prompting and model use.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "bd1a39d637571c70c3c5e6deeec4d2ce9a8e612ad8df1ef178b4bc24f2eea8e5",
+      "metadata_sha256": "9456f95a0a93c1b35fb095a112e2dad8067bfffcc486244cc0b2d2e28d27e438",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Gemini CLI for one-shot Q&A, summaries, and generation.",
+      "content_excerpt": "---\nname: gemini\ndescription: Gemini CLI for one-shot Q&A, summaries, and generation.\nhomepage: https://ai.google.dev/\nmetadata: {\"clawdbot\":{\"emoji\":\"♊️\",\"requires\":{\"bins\":[\"gemini\"]},\"install\":[{\"id\":\"brew\",\"kind\":\"brew\",\"formula\":\"gemini-cli\",\"bins\":[\"gemini\"],\"label\":\"Install Gemini CLI (brew)\"}]}}\n---\n\n# Gemini CLI\n\nUse Gemini in one-shot mode with a positional prompt (avoid interactive mode).\n\nQuick start\n- `gemini \"Answer this question...\"`\n- `gemini --model <name> \"Prompt...\"`\n- `gemini --output-format json \"Return JSON\"`\n\nExtensions\n- List: `gemini --list-extensions`\n- Manage: `gemini extensions <command>`\n\nNotes\n- If auth is required, run `gemini` once interactively and follow the login flow.\n- Avoid `--yolo` for safety.\n"
+    },
+    {
+      "path": "other/hgb-standards/SKILL.md",
+      "name": "hgb-standards",
+      "current_category": "other",
+      "llm_category": "domains",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is a domain-specific workflow for German accounting standards (HGB), providing specialized knowledge and procedures for a specific subject matter. This matches domains' inclusion rule for 'domain-specific workflows that are not better represented by a capability category.'",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "2b5a00856802c865c8fcb4bfff2e3b5ffaeff33fe776e39f6dd0e05450b08e47",
+      "metadata_sha256": "c4fcd869bd3b5237981ed374d8a313f39008141d8ba450d4d517efd1a13afdfd",
+      "semantic_sources": {
+        "description": "body",
+        "name": "metadata"
+      },
+      "description": "description: German GAAP (HGB) — Bilanzierung, GoB, Maßgeblichkeitsprinzip",
+      "content_excerpt": "# HGB Standards (German GAAP)\n\nname: hgb-standards\ndescription: German GAAP (HGB) — Bilanzierung, GoB, Maßgeblichkeitsprinzip\n\n## When to Activate\n\n- User asks about German accounting standards (HGB) or Handelsrecht\n- Applying Grundsätze ordnungsmäßiger Buchführung (GoB)\n- Evaluating the Maßgeblichkeitsprinzip (authoritative principle linking tax and commercial accounting)\n- Accounting for Rückstellungen, Abschreibungen, or Herstellungskosten under HGB\n- Comparing HGB treatment with IFRS for German companies\n\n## Core Concepts\n\n### HGB Framework\n\nThe Handelsgesetzbuch (HGB) is the German Commercial Code governing financial reporting for all German commercial entities. It applies to:\n- Einzelkaufleute (sole traders)\n- Personengesellschaften (partnerships: OHG, KG, GmbH & Co. KG)\n- Kapitalgesellschaften (corporations: GmbH, AG, KGaA)\n\n**Key legislation hierarchy:**\n```\nHGB (Handelsgesetzbuch) — primary source\n  §§ 238-263: Allgemeine Vorschriften (general provisions)\n  §§ 264-335: Kapitalgesellschaften (corporations)\n  §§ 336-339: Genossenschaften (cooperatives)\n  §§ 340-341: Kreditinstitute, Versicherungen (banks, insurers)\n  §§ 342-342e: Rechnungslegungsgremium (accounting standards body)\n\nDRS (Deutsche Rechnungslegungs Standards) — interpretive guidance from DRSC\nEStG (Einkommensteuergesetz) — tax law, linked via Maßgeblichkeitsprinzip\n```\n\n**Who must apply HGB:**\n- All Kapitalgesellschaften must prepare HGB financial statements\n- Listed companies must additionally prepare IFRS consolidated statements (EU IAS Regulation)\n- Non-listed groups may voluntarily apply IFRS for co"
+    },
+    {
+      "path": "other/feat-20260128-001720/SKILL.md",
+      "name": "feat-20260128-001720",
+      "current_category": "other",
+      "llm_category": "skills",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "The skill is about removing a skill from the registry due to distribution issues, which is skill ecosystem maintenance.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "1b2022e77d740db718eee7786c529a8738d1695366815e20e8a7a9ec43fe6216",
+      "metadata_sha256": "ba9eb6f32f941ca249407103a062f5f9ed22cbc46eded389a67720250da749c1",
+      "semantic_sources": {
+        "description": "body",
+        "name": "metadata"
+      },
+      "description": "The block-commands skill documents how to use .claude/settings.json deny rules to block dangerous commands. However, .claude/settings.json is a repository-local file that is not distributed with plugi",
+      "content_excerpt": "---\ncreated_at: 2026-01-28T00:32:39+09:00\nauthor: a@qmu.jp\ntype: housekeeping\nlayer: [Config]\neffort: XS\ncommit_hash: 16b0e61\ncategory: Removed\n---\n\n# Remove block-commands skill\n\n## Overview\n\nThe `block-commands` skill documents how to use `.claude/settings.json` deny rules to block dangerous commands. However, `.claude/settings.json` is a repository-local file that is not distributed with plugins. Users installing the plugin would not get these deny rules, making this approach ineffective for a marketplace plugin.\n\nThe skill should be removed since it documents a pattern we no longer recommend for plugin distribution.\n\n## Key Files\n\n- `plugins/core/skills/block-commands/SKILL.md` - Skill to delete\n\n## Related History\n\nThe block-commands skill was created alongside moving git prohibitions to settings.json, but this approach has proven unsuitable for distributed plugins.\n\nPast tickets that touched similar areas:\n\n- `20260127094857-use-deny-for-git-prohibition.md` - Created block-commands skill and moved git -C prohibition to settings.json (same file)\n\n## Implementation Steps\n\n1. **Delete block-commands skill directory**:\n   - Remove `plugins/core/skills/block-commands/` entirely\n\n2. **Verify no references exist**:\n   - Confirm no other files reference `block-commands` skill\n\n## Considerations\n\n- This removes documentation only, not actual functionality\n- The `.claude/settings.json` deny rules remain in local repositories but are not part of plugin distribution\n- For plugin-based command blocking, bundled shell scripts that refuse to execute are more appropriate (as done wit"
+    },
+    {
+      "path": "other/gdex-ui-page-layouts/SKILL.md",
+      "name": "gdex-ui-page-layouts",
+      "current_category": "other",
+      "llm_category": "design",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "UI layout compositions and responsive grid patterns for trading interfaces.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "e7f5ef8d25d719d7e86b9097ccfffa62defe023ba292d5709a06a84360136b36",
+      "metadata_sha256": "492a07d19cc26e636014742ad1b99f3ea3b11ea084de2d53d243977f15791860",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Full page layout compositions for GDEX — trading page, portfolio page, copy trading page, and bridge page with responsive grid patterns",
+      "content_excerpt": "---\nname: gdex-ui-page-layouts\ndescription: Full page layout compositions for GDEX — trading page, portfolio page, copy trading page, and bridge page with responsive grid patterns\n---\n\n# GDEX: Page Layouts\n\nFull page layout compositions for GDEX trading apps. Each layout combines components from other UI skills into a complete, responsive page.\n\n## When to Use\n\n- Building a full trading page with chart, order form, and positions\n- Creating a portfolio dashboard page\n- Composing a copy trading management page\n- Building a bridge page\n\n## Prerequisites\n\n- Components from **gdex-ui-trading-components** and **gdex-ui-portfolio-dashboard**\n- Theme set up per **gdex-ui-theming**\n- SDK context provider from **gdex-ui-install-setup**\n\n## Trading Page\n\nThe primary trading interface — chart, order form, positions, and optionally an orderbook.\n\n```typescript\n// app/trade/page.tsx\n'use client';\n\nimport { useState } from 'react';\nimport { SpotTradeForm } from '@/components/SpotTradeForm';\nimport { PerpOrderForm } from '@/components/PerpOrderForm';\nimport { PositionTable } from '@/components/PositionTable';\nimport { TokenSearch } from '@/components/TokenSearch';\nimport { ChainSelector } from '@/components/ChainSelector';\nimport { PnLDisplay } from '@/components/PnLDisplay';\n\nexport default function TradingPage() {\n  const [chain, setChain] = useState('solana');\n  const [mode, setMode] = useState<'spot' | 'perp'>('spot');\n  const [selectedToken, setSelectedToken] = useState<string>('');\n\n  return (\n    <div className=\"min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)]\">\n      "
+    },
+    {
+      "path": "other/fal-serverless-guide/SKILL.md",
+      "name": "fal-serverless-guide",
+      "current_category": "other",
+      "llm_category": "devops",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill covers serverless deployment, GPU machine selection, scaling configuration, deployment commands, and infrastructure management for ML models.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "da31da17ccc8504ba93ab9ef9cbb28a300afbca8f7e3386517a22e703153d6cc",
+      "metadata_sha256": "1a47d0c2fd0e3937f763ac4057a8e67dc89a2f90f4973c0e599e3b512eda087d",
+      "semantic_sources": {
+        "description": "body",
+        "name": "metadata"
+      },
+      "description": "| Machine Type | GPU | VRAM | Use Case |",
+      "content_excerpt": "---\nname: fal-serverless-guide\ndescription: Complete fal.ai serverless deployment system. PROACTIVELY activate for: (1) Creating fal.App class, (2) GPU machine selection (T4/A10G/A100/H100), (3) setup() for model loading, (4) @fal.endpoint decorators, (5) Persistent volumes for weights, (6) Secrets management, (7) Scaling configuration (min/max concurrency), (8) Multi-GPU deployment, (9) fal deploy commands, (10) Local development with fal run. Provides: App structure, Dockerfile patterns, deployment commands, scaling config. Ensures production-ready serverless ML deployment.\n---\n\n## Quick Reference\n\n| Machine Type | GPU | VRAM | Use Case |\n|--------------|-----|------|----------|\n| `GPU-T4` | T4 | 16GB | Dev, small models |\n| `GPU-A10G` | A10G | 24GB | 7B-13B models |\n| `GPU-A100` | A100 | 40/80GB | 13B-70B models |\n| `GPU-H100` | H100 | 80GB | Cutting-edge |\n\n| App Attribute | Purpose | Example |\n|---------------|---------|---------|\n| `machine_type` | GPU selection | `\"GPU-A100\"` |\n| `requirements` | Dependencies | `[\"torch\", \"transformers\"]` |\n| `keep_alive` | Warm duration | `300` (5 min) |\n| `min_concurrency` | Min instances | `0` (scale to zero) |\n| `max_concurrency` | Max parallel | `4` |\n\n| Command | Purpose |\n|---------|---------|\n| `fal deploy app.py::MyApp` | Deploy to fal |\n| `fal run app.py::MyApp` | Run locally |\n| `fal logs <app-id>` | View logs |\n| `fal secrets set KEY=value` | Set secrets |\n\n## When to Use This Skill\n\nUse for **custom model deployment**:\n- Deploying custom ML models on fal infrastructure\n- Configuring GPU instances and scaling\n- Setting up"
+    },
+    {
+      "path": "other/exploration-brainstorm/SKILL.md",
+      "name": "exploration-brainstorm",
+      "current_category": "other",
+      "llm_category": "creative",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill facilitates interactive idea exploration through conversation, with questions, opinions, and guided brainstorming. This aligns with ideation and creative direction workflows.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "d69a3032683077dc7acc3dcf8cc217039c9109c7603141741f5b9af8ab1772a8",
+      "metadata_sha256": "3669f87b1408fd91194e0e8feb6a702a18b1e1a7e7096f0c7146b65c1a60cbd5",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Explore ideas through conversation. HOUSTON asks questions, has opinions, and suggests background agents when investigation would help.",
+      "content_excerpt": "---\nname: exploration-brainstorm\ndescription: \"Explore ideas through conversation. HOUSTON asks questions, has opinions, and suggests background agents when investigation would help.\"\n---\n\n# /exploration-brainstorm - Interactive Exploration\n\nExplore ideas through conversation. This is dialogue, not a report. You ask questions, have opinions, and guide toward clarity. Agents support the conversation - they don't replace it.\n\n## The Process\n\n1. **Acknowledge topic, ask first question** - Don't spawn agents yet\n2. **Multi-round dialogue** - 5-10 rounds typical, 1-2 questions per round\n3. **Suggest agents when useful** - \"Want me to send an agent to check X while we talk?\"\n4. **If agent spawned** - Continue talking, check results between questions with `TaskOutput block: false`\n5. **Weave in results naturally** - Brief summaries, not dumps\n6. **Read the room** - Suggest wrapping when direction emerges\n7. **Create exploration report** - See Output section\n\n## Your Role\n\n- **Ask questions** - Understand motivation, constraints, scope, priorities\n- **Have opinions** - Recommend, push back, share your thinking\n- **Suggest agents, don't auto-spawn** - Always ask first\n- **Keep talking** - Never wait silently for agent results\n\n## Available Agents\n\nSpawn with `run_in_background: true`, continue conversation immediately:\n\n- `space-agents:brainstorm-research` - Explore codebase for patterns/constraints\n- `space-agents:brainstorm-architecture` - Propose approaches with trade-offs\n- `space-agents:brainstorm-risk` - Identify risks and estimate effort\n\n## AskUserQuestion (Required)\n\n**Alwa"
+    },
+    {
+      "path": "other/elnora-files/SKILL.md",
+      "name": "elnora-files",
+      "current_category": "other",
+      "llm_category": "platform",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill manages files on the Elnora AI Platform including listing, reading, uploading, forking, version history, and working copies. This is platform-specific file management operations.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "2e54106c6766f42b5d670de6075fd21a53aec1eaca3fc5273bb9455b3dc8aab0",
+      "metadata_sha256": "c4a475d65ba521ca3ea3c68fdf8ec601f66b618c16c447f353ee86e2d400f416",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "This skill should be used when the user asks to \"list files\", \"read a file\", \"get file content\", \"view protocol output\", \"file versions\", \"version history\", \"download protocol\", \"upload a file\", \"fork a file\", \"working copy\", or any task involving Elnora Platform file management.",
+      "content_excerpt": "---\nname: elnora-files\ndescription: >\n  This skill should be used when the user asks to \"list files\", \"read a file\",\n  \"get file content\", \"view protocol output\", \"file versions\", \"version history\",\n  \"download protocol\", \"upload a file\", \"fork a file\", \"working copy\",\n  or any task involving Elnora Platform file management.\n---\n\n# Elnora Files\n\nManage files on the Elnora AI Platform. Files are protocol outputs, templates, datasets, and other artifacts attached to projects. The platform tracks version history for every file, supports working copies for edit-in-place workflows, and allows forking files across projects.\n\n## Organization Context\n\nAll list, create, and upload tools accept an optional `org_id` parameter (UUID).\nWhen provided, the operation targets that organization instead of the user's\nactive org. The user must be a member of the target org.\n\n## Concepts\n\n- **File**: A document stored in a project. Has metadata (name, type, size) and content.\n- **Version**: An immutable snapshot of file content. Every change creates a new version.\n- **Working copy**: A mutable draft of a file for editing. Commit to save changes as a new version.\n- **Fork**: Copy a file to another project, preserving content but creating an independent copy.\n- **Promote**: Change a file's visibility level (e.g., to organization library).\n- **All IDs are UUIDs** (e.g., `bfdc6fbd-40ed-4042-9ea7-c79a5ec90085`).\n\n## MCP Tools\n\n### elnora_list_files\n\nList files in a project or workspace.\n\n| Parameter | Type | Required | Default | Description |\n|-----------|------|----------|---------|-------------|\n|"
+    },
+    {
+      "path": "other/feedback-to-linear/SKILL.md",
+      "name": "feedback-to-linear",
+      "current_category": "other",
+      "llm_category": "integration",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill transforms user feedback into structured Linear issues, which involves connecting to the Linear API, fetching teams/projects/labels, and creating issues. This is a cross-system connector workflow that bridges user input to the Linear project management platform.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "28c9ca4d2b4a9934194a375b7fe7aad976f624058c6a40cd8d4e7180131f7713",
+      "metadata_sha256": "a42f77c97c2a295e135fec65f441ef76e84e4015dc9619e7629f91b2cf902fd7",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Transform user feedback into structured Linear issues with AI-enhanced parsing for labels, priority, acceptance criteria, and estimates",
+      "content_excerpt": "---\nname: feedback-to-linear\ndescription: Transform user feedback into structured Linear issues with AI-enhanced parsing for labels, priority, acceptance criteria, and estimates\nlicense: MIT\n---\n\n# Feedback to Linear\n\nTransform raw user feedback text into structured Linear issues with intelligent AI parsing.\n\n## Triggers\n\nActivate this skill with any of these phrases:\n- \"Convert this feedback to Linear issues\"\n- \"Create issues from user feedback\"\n- \"feedback-to-linear\"\n- \"Parse feedback for Linear\"\n- \"Transform feedback into Linear\"\n\n## Quick Reference\n\n| Aspect | Details |\n|--------|---------|\n| **Input** | Raw feedback text (batch) + team/project selection |\n| **Output** | Linear issues with AI-parsed metadata (title, labels, priority, acceptance criteria, estimates, links) |\n| **Workspace** | Uses workspace from configured Linear API key |\n| **Mode** | Batch processing with conditional confirmation |\n| **Duration** | ~1-2 minutes for 5-10 feedback items |\n\n## Agent Behavior Contract\n\nWhen this skill is invoked, you MUST:\n\n1. **Never assume context** - Always fetch teams, projects, and labels dynamically from Linear\n2. **Single workspace** - Issues are created in the workspace associated with the Linear MCP plugin's API key\n3. **Auto-detect repo context** - If in a git repo, automatically use project info (no prompt)\n4. **Use existing labels only** - Never create new labels; only match to fetched labels\n5. **Default to Backlog** - New issues start in \"Backlog\" or \"Todo\" state unless specified\n6. **Batch process** - Parse all feedback items together, then create all at onc"
+    },
+    {
+      "path": "other/ecosystem-alignment/SKILL.md",
+      "name": "ecosystem-alignment",
+      "current_category": "other",
+      "llm_category": "quality",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "The skill is a compliance audit and alignment checking workflow for upstream versions and spec adherence.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "fe099574fe4e74c4a009d98598708f42b1e651e9d9526154c6410241dc872306",
+      "metadata_sha256": "3c270980258c0772e41c836702c3f586e9b3363791faf0b4ed4b75d7d0da8c87",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Upstream version checking, agentskills.io spec compliance audit, Claude Code feature gap analysis. Activates on updates, version checks, or alignment work.",
+      "content_excerpt": "---\nname: ecosystem-alignment\ndescription: Upstream version checking, agentskills.io spec compliance audit, Claude Code feature gap analysis. Activates on updates, version checks, or alignment work.\nversion: 1.0.0\n---\n\n# Ecosystem Alignment\n\nActivates when checking upstream compatibility, auditing spec compliance, or aligning with platform updates.\n\n## When to Trigger\n\n- Claude Code version update detected\n- User mentions \"alignment\", \"upstream\", \"spec compliance\", \"version check\"\n- New agentskills.io spec changes published\n- GSD upstream (get-shit-done) version update\n\n## Checklist\n\n### 1. Version Check\n```bash\nclaude --version                    # Claude Code\nnpm list get-shit-done 2>/dev/null  # GSD upstream\n```\n\n### 2. Skill Description Compliance\n```bash\nfor f in .claude/skills/*/SKILL.md; do\n  desc=$(sed -n 's/^description: //p' \"$f\" | head -1)\n  len=${#desc}\n  [ $len -gt 250 ] && echo \"OVER ($len): $f\"\ndone\n```\nagentskills.io enforces 250-character maximum.\n\n### 3. Hook System Audit\n- Check all hook files exist (no dead references)\n- Verify CJS syntax (not ESM `import` in .js files)\n- Test each hook executes without error\n- Check for new hook types in platform (PostCompact, FileChanged, PermissionDenied, etc.)\n\n### 4. Feature Gap Analysis\n- Compare our skill/agent/team patterns against platform capabilities\n- Identify platform features we're not using\n- Identify our extensions that go beyond the platform\n- Document alignment opportunities\n\n### 5. Binary String Analysis\n```bash\nstrings $(which claude) | grep -oP '\"(skill|hook|agent|team|memory|worktree)[^\"]*\"' | sort "
+    },
+    {
+      "path": "other/frontend-hook-shaul1991-shaul-agents-plugin-2/SKILL.md",
+      "name": "frontend-hook",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is about designing and implementing React custom hooks, which is a software development workflow involving coding, frameworks, and component logic. This fits the development category's inclusion rule for software development workflows and coding.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "07f83a026af2bf0d5a2bbd03651a4d80ae9568d4afcd0e9ad60e5c32361370c6",
+      "metadata_sha256": "96b711010a2fd826273c71b810d975a7f481a3c780e03026c292a5b78f96158f",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "커스텀 훅 개발 에이전트. React 커스텀 훅을 설계하고 구현합니다.",
+      "content_excerpt": "---\nname: frontend-hook\ndescription: 커스텀 훅 개발 에이전트. React 커스텀 훅을 설계하고 구현합니다.\nallowed-tools: Read, Write, Edit, Glob, Grep, Bash\n---\n\n# Frontend Hook Agent\n\n## 역할\nReact 커스텀 훅을 설계하고 구현합니다.\n\n## 담당 업무\n- 커스텀 훅 설계\n- 상태 로직 캡슐화\n- 사이드 이펙트 관리\n- 훅 테스트\n\n## 트리거 키워드\n훅, hook, useHook, 커스텀훅\n\n## 산출물 위치\n- 훅: `src/hooks/`\n"
+    },
+    {
+      "path": "other/git-conventional-commits-codermariusz-monopilot-2/SKILL.md",
+      "name": "git-conventional-commits",
+      "current_category": "other",
+      "llm_category": "workflow",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Skill enforces a consistent commit message format for readable history and automation, representing a repeatable process or SOP.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "cec0ae80cfee9f220937bf331714146c61d87ccba03621b1bfeaf91e18629b9f",
+      "metadata_sha256": "90bd09ab38e758a7bd41019a3fecf86d1d0c81a64265f44ca9f266bf5474bc56",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Apply when writing commit messages to maintain consistent, readable git history that enables automated changelog generation.",
+      "content_excerpt": "---\nname: git-conventional-commits\ndescription: Apply when writing commit messages to maintain consistent, readable git history that enables automated changelog generation.\n---\n\n## When to Use\n\nApply when writing commit messages to maintain consistent, readable git history that enables automated changelog generation.\n\n## Patterns\n\n### Pattern 1: Commit Format\n```\n<type>(<scope>): <subject>\n\n[optional body]\n\n[optional footer(s)]\n```\nSource: https://www.conventionalcommits.org/en/v1.0.0/\n\n### Pattern 2: Types\n```\nfeat:     New feature (MINOR version bump)\nfix:      Bug fix (PATCH version bump)\ndocs:     Documentation only\nstyle:    Formatting, no code change\nrefactor: Code change, no feature/fix\nperf:     Performance improvement\ntest:     Adding/fixing tests\nchore:    Build, tooling, deps\nci:       CI/CD changes\n```\n\n### Pattern 3: Examples\n```bash\n# Feature\nfeat(auth): add OAuth2 login with Google\n\n# Bug fix\nfix(cart): prevent negative quantity values\n\n# Breaking change (triggers MAJOR version)\nfeat(api)!: change response format to JSON:API\n\nBREAKING CHANGE: All endpoints now return JSON:API format.\nMigration guide: docs/migration-v2.md\n\n# With scope\nfix(ui/button): correct hover state color\n\n# Multi-line body\nfeat(search): add full-text search\n\nImplements Elasticsearch integration for product search.\nIncludes fuzzy matching and relevance scoring.\n\nCloses #123\n```\n\n### Pattern 4: Scope Guidelines\n```\nScope = module, component, or area affected\n\nGood scopes:\n- auth, cart, api, db\n- ui/button, api/users\n- deps, config, ci\n\nNo scope when change is broad:\n- docs: update README\n-"
+    },
+    {
+      "path": "other/financial-calculations-captjay98-gemini-livestockai-3/SKILL.md",
+      "name": "Financial Calculations",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "The skill provides reusable TypeScript utility functions for decimal precision and financial math patterns, which is a software development workflow involving coding, frameworks, and refactoring.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "e4ea30428d9a68e8aaaf07d01cdc02e23f0c12183515a8ef99b525dbd573a72a",
+      "metadata_sha256": "0424fdc0011d0aa32ecea94bff2095aa6d5a7c46802795043bf7b7a30a39262d",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Decimal precision and financial math patterns in LivestockAI",
+      "content_excerpt": "---\nname: Financial Calculations\ndescription: Decimal precision and financial math patterns in LivestockAI\n---\n\n# Financial Calculations\n\nLivestockAI uses decimal.js for precise financial calculations. All monetary values are stored as DECIMAL(19,2) in the database.\n\n## Currency Utilities\n\nLocated in `app/features/settings/currency.ts`:\n\n```typescript\nimport {\n  toDecimal,\n  toNumber,\n  toDbString,\n  formatCurrency,\n  multiply,\n  divide,\n  sumAmounts,\n} from '~/features/settings/currency'\n```\n\n## Core Functions\n\n### Converting Values\n\n```typescript\n// From any input to Decimal\nconst amount = toDecimal('1234.56')\nconst amount2 = toDecimal(1234.56)\n\n// To number for display\nconst num = toNumber('1234.56') // 1234.56\n\n// To string for database\nconst dbVal = toDbString(1234.56) // \"1234.56\"\n```\n\n### Arithmetic Operations\n\n```typescript\n// Multiplication (quantity × price)\nconst total = multiply(100, 5.5) // Decimal(550)\n\n// Division (with null safety)\nconst perUnit = divide(total, 100) // Decimal(5.50) or null\n\n// Subtraction\nconst profit = subtract(revenue, costs)\n\n// Sum multiple amounts\nconst totalCost = sumAmounts(feedCost, laborCost, overheadCost)\n```\n\n### Formatting\n\n```typescript\n// Format for display (uses user settings)\nformatCurrency(1234.56) // \"₦1,234.56\" or \"$1,234.56\"\n\n// Compact format\nformatCurrencyCompact(1500000) // \"₦1.5M\"\n\n// Percentage\ncalculatePercentage(50, 200) // 25\n```\n\n## React Hook\n\nIn components, use the `useFormatCurrency` hook:\n\n```typescript\nimport { useFormatCurrency } from '~/features/settings'\n\nfunction PriceDisplay({ amount }: { amount: numbe"
+    },
+    {
+      "path": "other/executing-plans-jesseooxx-erp-explore/SKILL.md",
+      "name": "executing-plans",
+      "current_category": "other",
+      "llm_category": "workflow",
+      "confidence": 0.92,
+      "status": "ok",
+      "reason": "The skill describes a repeatable process for executing plans in batches with checkpoints, which aligns with workflow automation and SOPs.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "582937183ad9bec6fac0ce8c6ad85d2e6404e1e274a4564594577f1965d4d8ae",
+      "metadata_sha256": "26186d6c5f2d9ee82d371f742f4cddde5499a58525285935088d51129c33b21d",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use when you have a written implementation plan to execute in a separate session with review checkpoints",
+      "content_excerpt": "---\nname: executing-plans\ndescription: Use when you have a written implementation plan to execute in a separate session with review checkpoints\n---\n\n# Executing Plans\n\n## Overview\n\nLoad plan, review critically, execute tasks in batches, report for review between batches.\n\n**Core principle:** Batch execution with checkpoints for architect review.\n\n**Announce at start:** \"I'm using the executing-plans skill to implement this plan.\"\n\n## The Process\n\n### Step 1: Load and Review Plan\n1. Read plan file\n2. Review critically - identify any questions or concerns about the plan\n3. If concerns: Raise them with your human partner before starting\n4. If no concerns: Create TodoWrite and proceed\n\n### Step 2: Execute Batch\n**Default: First 3 tasks**\n\nFor each task:\n1. Mark as in_progress\n2. Follow each step exactly (plan has bite-sized steps)\n3. Run verifications as specified\n4. Mark as completed\n\n### Step 3: Report\nWhen batch complete:\n- Show what was implemented\n- Show verification output\n- Say: \"Ready for feedback.\"\n\n### Step 4: Continue\nBased on feedback:\n- Apply changes if needed\n- Execute next batch\n- Repeat until complete\n\n### Step 5: Complete Development\n\nAfter all tasks complete and verified:\n- Announce: \"I'm using the finishing-a-development-branch skill to complete this work.\"\n- **REQUIRED SUB-SKILL:** Use superpowers:finishing-a-development-branch\n- Follow that skill to verify tests, present options, execute choice\n\n## When to Stop and Ask for Help\n\n**STOP executing immediately when:**\n- Hit a blocker mid-batch (missing dependency, test fails, instruction unclear)\n- Plan has cr"
+    },
+    {
+      "path": "other/gpt-sovits-tts-taiyousan15-taisun-agent-93608579/SKILL.md",
+      "name": "gpt-sovits-tts",
+      "current_category": "other",
+      "llm_category": "generation",
+      "confidence": 0.8,
+      "status": "ok",
+      "reason": "Skill is for generating high-quality voice cloning and TTS (Text-to-Speech) audio, which is generating media assets.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "e066415ebd6b256d50b3e6d76306df4e9fdc77d97ff753699174a3d2894f6bb4",
+      "metadata_sha256": "46600199ee5abb9084ea0da9d0850f5816305b2fbca3f84cfe25d229e5390fba",
+      "semantic_sources": {
+        "description": "body",
+        "name": "metadata"
+      },
+      "description": "高品質な音声クローニング・TTS（Text-to-Speech）システム。",
+      "content_excerpt": "# GPT-SoVITS TTS スキル\n\n高品質な音声クローニング・TTS（Text-to-Speech）システム。\n\n## 概要\n\n| 項目 | 内容 |\n|------|------|\n| ツール | GPT-SoVITS v2 |\n| 開発元 | RVC-Boss |\n| インストール先 | `/Users/matsumototoshihiko/Desktop/semi/miyabi_taiyou/GPT-SoVITS` |\n| 用途 | 音声クローニング、ナレーション生成 |\n\n## 特徴\n\n- **Zero-shot TTS**: 5秒の音声サンプルから即座に音声合成\n- **Few-shot TTS**: 1分のトレーニングデータで声質を学習\n- **多言語対応**: 日本語、英語、中国語、韓国語、広東語\n- **高速推理**: RTF 0.028（4060Ti）〜0.526（M4 CPU）\n\n## クイックスタート\n\n### 1. 環境起動\n\n```bash\ncd /Users/matsumototoshihiko/Desktop/semi/miyabi_taiyou/GPT-SoVITS\nsource venv/bin/activate\n\n# WebUI起動（ポート9874）\npython webui.py\n\n# または API サーバー起動（ポート9880）\npython api.py -dr \"参考音声.wav\" -dt \"参考テキスト\" -dl \"ja\"\n```\n\n### 2. API経由で音声生成\n\n```bash\n# テキストから音声生成\ncurl -X POST \"http://127.0.0.1:9880\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"text\": \"こんにちは、これはテスト音声です。\",\n    \"text_language\": \"ja\"\n  }' \\\n  --output output.wav\n```\n\n### 3. 参考音声を指定して生成\n\n```bash\ncurl -X POST \"http://127.0.0.1:9880\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"refer_wav_path\": \"/path/to/reference.wav\",\n    \"prompt_text\": \"参考音声のテキスト\",\n    \"prompt_language\": \"ja\",\n    \"text\": \"生成したいテキスト\",\n    \"text_language\": \"ja\",\n    \"speed\": 1.0\n  }' \\\n  --output output.wav\n```\n\n## API パラメータ\n\n| パラメータ | 型 | 説明 |\n|-----------|-----|------|\n| `text` | string | 生成するテキスト |\n| `text_language` | string | テキストの言語（ja/en/zh/ko/yue） |\n| `refer_wav_path` | string | 参考音声ファイルのパス |\n| `prompt_text` | string | 参考音声の文字起こし |\n| `prompt_language` | string | 参考音声の言語 |\n| `speed` | float | 話速（0.5〜2.0） |\n| `top_k` | int | サンプリングパラメータ |\n| `top_p` | float | サンプリングパラメータ |\n| `temperature` | float | "
+    },
+    {
+      "path": "other/global-knowledge-fabioc-aloha-youtube-mcp-vscode/SKILL.md",
+      "name": "global-knowledge",
+      "current_category": "other",
+      "llm_category": "context-management",
+      "confidence": 0.85,
+      "status": "ok",
+      "reason": "Cross-project knowledge search, pattern recognition, and insight management is about managing context and memory across projects.",
+      "evidence": [],
+      "workset": "live_current_category",
+      "source_sha256": "25b831f5bff907647a57f0c54ef359c93522fbe61b8495e74a0dccbb195179d1",
+      "metadata_sha256": "d68ad548eb17db7223b85a450b68ed15b2a0688a54f4b1daac52797b39c9343f",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Cross-project knowledge search, pattern recognition, and insight management — the long-term memory across all projects",
+      "content_excerpt": "---\nname: \"global-knowledge\"\ndescription: \"Cross-project knowledge search, pattern recognition, and insight management — the long-term memory across all projects\"\n---\n\n# Global Knowledge Skill\n\n> Your past solved problems, searchable from any project.\n\n## Knowledge Types\n\n| Type | Prefix | Purpose | Lifespan | Example |\n|------|--------|---------|----------|---------|\n| **Pattern** | GK-* | Reusable solution, proven in 2+ projects | Long-term | `GK-error-handling-patterns.md` |\n| **Insight** | GI-* | Timestamped observation, may not generalize | Medium-term | `GI-react-hooks-gotcha-2026-01-24.md` |\n\n**Key distinction**: A pattern is abstracted and proven. An insight is specific and dated. Insights may be promoted to patterns after validation.\n\n## Commands\n\n| Command | Purpose |\n|---------|----------|\n| `/knowledge <query>` | Search patterns + insights |\n| `/saveinsight` | Capture learning from current session |\n| `/promote` | Promote local knowledge to global pattern |\n| `/knowledgestatus` | Check GK health and stats |\n\n## Memory System Differentiation (VS Code 1.109+)\n\nAlex uses **two complementary memory systems**. Use the right one for the right data:\n\n### Copilot Memory (GitHub Cloud)\nCloud-synced preferences and personal context. Use for:\n\n| Data | Example | Why Cloud |\n|------|---------|-----------|\n| **Preferences** | \"Use 4 spaces, dark mode\" | Same across all machines |\n| **Coding Style** | \"Prefer functional components\" | Consistent patterns |\n| **Learning Goals** | \"Master K8s by March\" | Personal growth tracking |\n| **Session Notes** | \"Finish auth tests tomorro"
+    }
+  ],
+  "notes": [
+    "Review sample rows against SKILL.md excerpts before applying a migration plan.",
+    "Sampling is deterministic for a fixed seed and classification input."
+  ]
+}

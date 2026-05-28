@@ -13,6 +13,11 @@
   "stars": 0,
   "source": "Community Skills",
   "dir_name": "professional-business-writing-b33kman-professional-busines-4",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "LICENSE",
+    "README.md"
+  ],
   "author": "b33kman",
   "source_url": "https://github.com/b33kman/professional-business-writing-skill/blob/main/SKILL.md",
   "license": "NOASSERTION",

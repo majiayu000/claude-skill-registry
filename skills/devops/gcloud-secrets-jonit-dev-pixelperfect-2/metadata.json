@@ -1,0 +1,18 @@
+{
+  "name": "gcloud-secrets",
+  "description": "Manage Google Cloud Secret Manager for storing and fetching environment secrets. Use when working with deployment, secrets, or gcloud commands.",
+  "repo": "jonit-dev/pixelperfect",
+  "path": ".claude/skills/gcloud-secrets",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jonit-dev/pixelperfect",
+  "dir_name": "gcloud-secrets-jonit-dev-pixelperfect-2",
+  "author": "jonit-dev",
+  "source_url": "https://github.com/jonit-dev/pixelperfect/blob/main/.claude/skills/gcloud-secrets/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jonit-dev/pixelperfect/blob/main/.claude/skills/gcloud-secrets/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

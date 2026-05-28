@@ -1,0 +1,18 @@
+{
+  "name": "fm-residency-scheduling",
+  "repo": "Euda1mon1a/Autonomous-Assignment-Program-Manager",
+  "path": ".claude/skills/fm-residency-scheduling/SKILL.md",
+  "source": "github.com/Euda1mon1a/Autonomous-Assignment-Program-Manager",
+  "downloaded_at": "2026-01-22T04:09:55.235024Z",
+  "dir_name": "fm-residency-scheduling",
+  "category": "workflow",
+  "github_path": ".claude/skills/fm-residency-scheduling",
+  "github_branch": "main",
+  "author": "Euda1mon1a",
+  "source_url": "https://github.com/Euda1mon1a/Autonomous-Assignment-Program-Manager/blob/main/.claude/skills/fm-residency-scheduling/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Euda1mon1a/Autonomous-Assignment-Program-Manager/blob/main/.claude/skills/fm-residency-scheduling/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

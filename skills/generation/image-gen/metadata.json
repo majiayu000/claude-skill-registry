@@ -1,0 +1,18 @@
+{
+  "name": "image-gen",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/image-gen/SKILL.md",
+  "source": "github.com/jezweb/claude-skills",
+  "downloaded_at": "2026-01-22T01:30:23.236344Z",
+  "dir_name": "image-gen",
+  "category": "generation",
+  "github_path": "skills/image-gen",
+  "github_branch": "main",
+  "author": "jezweb",
+  "source_url": "https://github.com/jezweb/claude-skills/blob/main/skills/image-gen/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Dawes (Jezweb)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

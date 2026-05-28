@@ -1,0 +1,17 @@
+{
+  "name": "speckit-orchestrator",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/spec-kit/skills/speckit-orchestrator/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "speckit-orchestrator-athola-claude-night-market-2",
+  "downloaded_at": "2026-05-28T03:53:55.997371Z",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/master/plugins/spec-kit/skills/speckit-orchestrator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/athola/claude-night-market/blob/master/plugins/spec-kit/skills/speckit-orchestrator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

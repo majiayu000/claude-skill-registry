@@ -1,0 +1,18 @@
+{
+  "name": "email-drafter",
+  "description": "Generates professional emails from bullet points or conversation summaries.\nUse when you need to draft emails quickly with consistent style and tone.\nSupports multiple tones: formal, casual, technical",
+  "repo": "rysweet/AzureHayMaker",
+  "path": ".claude/skills/email-drafter",
+  "category": "writing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/AzureHayMaker",
+  "dir_name": "email-drafter-rysweet-azurehaymaker-2",
+  "author": "rysweet",
+  "source_url": "https://github.com/rysweet/AzureHayMaker/blob/main/.claude/skills/email-drafter/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ryan Sweet / Microsoft",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

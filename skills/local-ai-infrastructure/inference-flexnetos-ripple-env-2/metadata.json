@@ -1,0 +1,18 @@
+{
+  "name": "inference",
+  "description": "AI model inference and serving. Activate when: (1) Setting up LocalAI or vLLM, (2) Configuring model serving, (3) Working with GGUF/GGML models, (4) Implementing inference pipelines, or (5) Optimizing",
+  "repo": "FlexNetOS/ripple-env",
+  "path": ".claude/skills/inference",
+  "category": "local-ai-infrastructure",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/FlexNetOS/ripple-env",
+  "dir_name": "inference-flexnetos-ripple-env-2",
+  "author": "FlexNetOS",
+  "source_url": "https://github.com/FlexNetOS/ripple-env/blob/main/.claude/skills/inference/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Gustavo Widman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

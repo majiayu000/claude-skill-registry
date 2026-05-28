@@ -1,0 +1,17 @@
+{
+  "name": "agentische-datenbank-recherche",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "patentrecherche/skills/agentische-datenbank-recherche/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "agentische-datenbank-recherche",
+  "downloaded_at": "2026-05-28T03:46:30.216596Z",
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/patentrecherche/skills/agentische-datenbank-recherche/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/patentrecherche/skills/agentische-datenbank-recherche/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

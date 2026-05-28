@@ -1,0 +1,18 @@
+{
+  "name": "feature-development",
+  "description": "完整的功能開發流程，從規劃到部署，編排多個 Skills 協同工作。",
+  "repo": "u9401066/rootcause-mcp",
+  "path": ".claude/skills/feature-development",
+  "category": "workflow",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/u9401066/rootcause-mcp",
+  "dir_name": "feature-development-u9401066-rootcause-mcp-2",
+  "author": "u9401066",
+  "source_url": "https://github.com/u9401066/rootcause-mcp/blob/main/.claude/skills/feature-development/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 [Your Name or Organization]",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

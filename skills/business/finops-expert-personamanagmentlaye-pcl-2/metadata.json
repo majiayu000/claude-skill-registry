@@ -1,0 +1,18 @@
+{
+  "name": "finops-expert",
+  "description": "Expert-level cloud financial operations, cost optimization, and cloud economics",
+  "repo": "personamanagmentlayer/pcl",
+  "path": "stdlib/professional/finops-expert",
+  "category": "business",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/personamanagmentlayer/pcl",
+  "dir_name": "finops-expert-personamanagmentlaye-pcl-2",
+  "author": "personamanagmentlayer",
+  "source_url": "https://github.com/personamanagmentlayer/pcl/blob/main/stdlib/professional/finops-expert/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/personamanagmentlayer/pcl/blob/main/stdlib/professional/finops-expert/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

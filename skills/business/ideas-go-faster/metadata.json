@@ -1,0 +1,16 @@
+{
+  "name": "ideas-go-faster",
+  "repo": "PeterCowling/base-shop",
+  "path": ".claude/skills/ideas-go-faster/SKILL.md.pre-cabinet",
+  "category": "business",
+  "source": "github.com/PeterCowling/base-shop",
+  "dir_name": "ideas-go-faster",
+  "downloaded_at": "2026-02-15T05:37:22.191690Z",
+  "author": "PeterCowling",
+  "source_url": "https://github.com/PeterCowling/base-shop/blob/main/.claude/skills/ideas-go-faster/SKILL.md.pre-cabinet/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PeterCowling/base-shop/blob/main/.claude/skills/ideas-go-faster/SKILL.md.pre-cabinet/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

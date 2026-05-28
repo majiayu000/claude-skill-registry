@@ -1,0 +1,18 @@
+{
+  "name": "fine-tuning-expert",
+  "description": "Use when fine-tuning LLMs, training custom models, or optimizing model performance for specific tasks. Invoke for parameter-efficient methods, dataset preparation, or model adaptation.",
+  "repo": "Jeffallan/claude-skills",
+  "path": "skills/fine-tuning-expert",
+  "category": "ai-ml",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Jeffallan/claude-skills",
+  "dir_name": "fine-tuning-expert-jeffallan-claude-skills-2",
+  "author": "Jeffallan",
+  "source_url": "https://github.com/Jeffallan/claude-skills/blob/main/skills/fine-tuning-expert/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

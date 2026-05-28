@@ -1,0 +1,18 @@
+{
+  "name": "instrumentation-spec",
+  "repo": "product-on-purpose/pm-skills",
+  "path": "skills/measure/instrumentation-spec/SKILL.md",
+  "source": "github.com/product-on-purpose/pm-skills",
+  "downloaded_at": "2026-01-22T02:42:46.295115Z",
+  "dir_name": "instrumentation-spec",
+  "category": "product",
+  "github_path": "skills/measure/instrumentation-spec",
+  "github_branch": "main",
+  "author": "product-on-purpose",
+  "source_url": "https://github.com/product-on-purpose/pm-skills/blob/main/skills/measure/instrumentation-spec/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2026 Jonathan",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

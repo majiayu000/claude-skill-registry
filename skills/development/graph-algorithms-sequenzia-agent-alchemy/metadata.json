@@ -1,0 +1,17 @@
+{
+  "name": "graph-algorithms",
+  "repo": "sequenzia/agent-alchemy",
+  "path": "claude/cs-tools/skills/graph-algorithms/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/sequenzia/agent-alchemy",
+  "dir_name": "graph-algorithms-sequenzia-agent-alchemy",
+  "downloaded_at": "2026-03-07T01:29:44.701736Z",
+  "author": "sequenzia",
+  "source_url": "https://github.com/sequenzia/agent-alchemy/blob/main/claude/cs-tools/skills/graph-algorithms/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sequenzia/agent-alchemy/blob/main/claude/cs-tools/skills/graph-algorithms/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

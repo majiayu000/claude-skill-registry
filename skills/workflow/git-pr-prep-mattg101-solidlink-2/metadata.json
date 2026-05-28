@@ -1,0 +1,18 @@
+{
+  "name": "git-pr-prep",
+  "description": "Prepares a Pull Request by staging changes, verifying against acceptance criteria, and creating the PR via GH CLI. Use this skill when a feature is complete and ready for review.",
+  "repo": "mattg101/SolidLink",
+  "path": "docs/dev/.agent/skills/git-pr-prep",
+  "category": "workflow",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattg101/SolidLink",
+  "dir_name": "git-pr-prep-mattg101-solidlink-2",
+  "author": "mattg101",
+  "source_url": "https://github.com/mattg101/SolidLink/blob/main/docs/dev/.agent/skills/git-pr-prep/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 mattg101",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

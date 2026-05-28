@@ -1,0 +1,16 @@
+{
+  "name": "json-config-helper",
+  "repo": "jackspace/ClaudeSkillz",
+  "path": "skills/json-config-helper/SKILL.md",
+  "source": "github.com/jackspace/ClaudeSkillz",
+  "downloaded_at": "2026-02-02T01:20:36.339238Z",
+  "dir_name": "json-config-helper-jackspace-claudeskillz",
+  "category": "development",
+  "author": "jackspace",
+  "source_url": "https://github.com/jackspace/ClaudeSkillz/blob/main/skills/json-config-helper/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ClaudeSkillz Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

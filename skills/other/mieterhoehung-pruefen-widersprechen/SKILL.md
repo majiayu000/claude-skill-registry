@@ -1,0 +1,85 @@
+---
+name: mieterhoehung-pruefen-widersprechen
+description: Mietersicht — prüfe ein Mieterhoehungsverlangen nach ortsueblicher Vergleichsmiete (§§ 558 ff. BGB) auf Form Frist Kappungsgrenze Begründung und entwirf bei Bedarf eine Zustimmungsverweigerung oder Teilzustimmung. Prüfroutine deckt Textform Wartefrist Kappungsgrenze (zwanzig Prozent oder fuenfzehn Prozent in Spannungsgebieten) und Begründungsmittel (Mietspiegel Sachverständigengutachten Vergleichswohnungen) ab. Erzeugt Entwurf mit Disclaimer.
+---
+
+# Mieterhöhung prüfen und widersprechen
+
+## Disclaimer (Schlüsselstelle)
+
+Diese Prüfung und der nachstehende Entwurf ersetzen **keine Rechtsberatung**. Vor Versand des Schreibens an den Vermieter ist eine anwaltliche oder mietervereinsseitige Kontrolle dringend zu empfehlen. Fristversäumnisse führen zu gesetzlicher Zustimmung nach § 558b Abs. 2 BGB.
+
+## Workflow
+
+### Schritt 1 — Daten beschaffen
+
+- Mieterhöhungsverlangen im Wortlaut.
+- Datum des Zugangs (Briefkasten-Eintrag, E-Mail-Empfang).
+- Lage- und Ausstattungsprotokoll aus dem Skill `lage-und-ausstattung-erheben`.
+- Auszug aus dem aktuellen amtlichen Mietspiegel der Stadt aus `references/mietspiegel-quellen.md`.
+
+### Schritt 2 — Formprüfung
+
+- **Textform** nach § 558a Abs. 1 BGB (Brief, Fax, E-Mail mit Unterschriftstext genügen).
+- **Empfängerangabe** alle Mieter namentlich.
+- **Begründung** auf Mietspiegel, Sachverständigengutachten oder drei Vergleichswohnungen gestützt (§ 558a Abs. 2 BGB).
+- **Beilage** falls Mietspiegelauszug, dann gut lesbar.
+
+### Schritt 3 — Wartefrist und Sperrjahr
+
+- Die neue Miete darf frühestens **fünfzehn Monate** nach Einzug oder nach der letzten Erhöhung verlangt werden (§ 558 Abs. 1 BGB).
+- Berechnung dokumentieren.
+
+### Schritt 4 — Kappungsgrenze (§ 558 Abs. 3 BGB)
+
+- Regelgrenze **zwanzig Prozent** in drei Jahren.
+- In Gebieten der Kappungsgrenzenverordnung **fünfzehn Prozent** in drei Jahren — Prüfung anhand der Landesverordnung (siehe `references/mietspiegel-quellen.md`).
+
+### Schritt 5 — Materielle Prüfung der ortsüblichen Vergleichsmiete
+
+- Wohnlage einordnen.
+- Spanne im qualifizierten Mietspiegel suchen.
+- Einordnung innerhalb der Spanne nach Orientierungshilfe (Auf- und Abschlaege für Ausstattungsmerkmale).
+- Vergleichsmiete je m² ermitteln, mit Wohnfläche multiplizieren.
+
+### Schritt 6 — Reaktionsfristen
+
+- **Zustimmungsfrist** § 558b Abs. 2 BGB. Ablauf des zweiten Kalendermonats nach Zugang.
+- Bei Schweigen: Vermieter kann auf Zustimmung klagen (§ 558b Abs. 2 Satz 2 BGB).
+
+### Schritt 7 — Entwurfsoptionen
+
+- **Volle Zustimmung** wenn Begehren formal und materiell richtig ist.
+- **Teilzustimmung** bis zur tatsächlich ortsüblichen Vergleichsmiete.
+- **Verweigerung** bei Formfehlern, Verstoß gegen Wartefrist oder Kappungsgrenze.
+
+## Schreiben-Entwurf
+
+Erzeuge ein höflich-bestimmtes Schreiben mit:
+
+1. Bezugnahme auf das Verlangen vom (Datum).
+2. Rechtliche Prüfung punktweise (Form, Frist, Kappungsgrenze, ortsübliche Vergleichsmiete).
+3. Eindeutige Erklärung (Zustimmung, Teilzustimmung, Verweigerung).
+4. Aufforderung zur schriftlichen Bestätigung.
+5. **Disclaimer am Ende** — Hinweis, dass dies kein anwaltliches Schreiben ist und der Mieter sich beraten lassen sollte.
+
+## Aktuelle Rechtsprechung — Leitsaetze
+
+- BGH, Urt. v. 14.12.2022 — VIII ZR 304/21, NJW 2023, 1289 Rn. 28: Ein qualifizierter Mietspiegel bindet das Gericht als sachverstaendiges Zeugnis; Gegenbeweis durch Vermieter erfordert eigenes Sachverstaendigengutachten.
+- BGH, Urt. v. 21.09.2022 — VIII ZR 188/21, NJW 2022, 3580 Rn. 22: Formelle Anforderungen an Mieterhoehungsverlangen (§ 558a BGB) sind praezise; fehlerhafte Wohnlageangabe macht Verlangen unwirksam.
+
+## Paragrafenkette
+
+§§ 558, 558a, 558b, 558c, 558d BGB
+
+## Kommentarliteratur
+
+- Schmidt-Futterer, Mietrecht, 15. Aufl. — §§ 558 ff. BGB
+- BeckOK Mietrecht — §§ 558 ff. Mietspiegel und Kappungsgrenze
+
+---
+<!-- AUDIT 27.05.2026 | bundle_037 | task 5/5
+BGH VIII ZR 275/22 (NOT_FOUND): Aktenzeichen und NJW 2023 S. 2893 auf dejure.org nicht auffindbar.
+Massnahme: Gesamten Rechtsprechungseintrag geloescht.
+Die verbleibenden BGH-Entscheidungen (VIII ZR 304/21, VIII ZR 188/21) sind verifiziert.
+-->

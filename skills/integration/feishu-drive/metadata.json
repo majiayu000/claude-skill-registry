@@ -1,0 +1,16 @@
+{
+  "name": "feishu-drive",
+  "repo": "CharlesHoskinson/dancesWithClaws",
+  "path": "extensions/feishu/skills/feishu-drive/SKILL.md",
+  "category": "integration",
+  "source": "github.com/CharlesHoskinson/dancesWithClaws",
+  "dir_name": "feishu-drive",
+  "downloaded_at": "2026-02-15T04:55:45.335929Z",
+  "author": "CharlesHoskinson",
+  "source_url": "https://github.com/CharlesHoskinson/dancesWithClaws/blob/main/extensions/feishu/skills/feishu-drive/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CharlesHoskinson/dancesWithClaws/blob/main/extensions/feishu/skills/feishu-drive/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "evidence-verification",
+  "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/evidence-verification/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-20T01:39:03.536453Z",
+  "dir_name": "evidence-verification",
+  "category": "quality",
+  "github_path": "skills/evidence-verification",
+  "github_branch": "main"
+}

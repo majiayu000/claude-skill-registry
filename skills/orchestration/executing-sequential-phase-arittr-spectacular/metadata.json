@@ -1,0 +1,16 @@
+{
+  "name": "executing-sequential-phase",
+  "repo": "arittr/spectacular",
+  "path": "skills/executing-sequential-phase/SKILL.md",
+  "source": "github.com/arittr/spectacular",
+  "downloaded_at": "2026-01-29T07:40:29.066741Z",
+  "dir_name": "executing-sequential-phase-arittr-spectacular",
+  "category": "orchestration",
+  "author": "arittr",
+  "source_url": "https://github.com/arittr/spectacular/blob/main/skills/executing-sequential-phase/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Drew Ritter",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "haplotype-phasing",
+  "repo": "GPTomics/bioSkills",
+  "path": "phasing-imputation/haplotype-phasing/SKILL.md",
+  "source": "github.com/GPTomics/bioSkills",
+  "downloaded_at": "2026-02-02T04:43:48.740370Z",
+  "dir_name": "haplotype-phasing",
+  "category": "domains",
+  "author": "GPTomics",
+  "source_url": "https://github.com/GPTomics/bioSkills/blob/main/phasing-imputation/haplotype-phasing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 GPTomics",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

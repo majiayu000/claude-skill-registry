@@ -1,0 +1,16 @@
+{
+  "name": "epic-caching",
+  "repo": "epicweb-dev/epic-stack",
+  "path": "docs/skills/epic-caching/SKILL.md",
+  "source": "github.com/epicweb-dev/epic-stack",
+  "downloaded_at": "2026-01-31T02:41:57.882766Z",
+  "dir_name": "epic-caching",
+  "category": "performance",
+  "author": "epicweb-dev",
+  "source_url": "https://github.com/epicweb-dev/epic-stack/blob/main/docs/skills/epic-caching/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright © 2023 Kent C. Dodds",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

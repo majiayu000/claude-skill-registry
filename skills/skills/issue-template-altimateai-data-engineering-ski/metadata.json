@@ -1,0 +1,16 @@
+{
+  "name": "ISSUE_TEMPLATE",
+  "repo": "AltimateAI/data-engineering-skills",
+  "path": ".github/ISSUE_TEMPLATE/new_skill.md",
+  "source": "github.com/AltimateAI/data-engineering-skills",
+  "downloaded_at": "2026-02-02T03:47:49.545277Z",
+  "dir_name": "issue-template-altimateai-data-engineering-ski",
+  "category": "skills",
+  "author": "AltimateAI",
+  "source_url": "https://github.com/AltimateAI/data-engineering-skills/blob/main/.github/ISSUE_TEMPLATE/new_skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 AltimateAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

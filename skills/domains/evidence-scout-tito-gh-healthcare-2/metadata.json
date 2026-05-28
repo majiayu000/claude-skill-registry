@@ -1,0 +1,18 @@
+{
+  "name": "evidence-scout",
+  "description": "指定薬剤・適応・国・データベース特性に基づき、PubMed/Web検索で先行RWD研究・RCT・ガイドラインを調査し、\nエビデンスランドスケープを要約する。JMDC/MDV等クレームDBとの差別化観点を必ず含める。\n",
+  "repo": "tito-gh/healthcare",
+  "path": ".claude/skills/evidence-scout",
+  "category": "domains",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tito-gh/healthcare",
+  "dir_name": "evidence-scout-tito-gh-healthcare-2",
+  "author": "tito-gh",
+  "source_url": "https://github.com/tito-gh/healthcare/blob/main/.claude/skills/evidence-scout/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tito-gh/healthcare/blob/main/.claude/skills/evidence-scout/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

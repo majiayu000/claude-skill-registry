@@ -1,0 +1,16 @@
+{
+  "name": "jira-orchestration",
+  "repo": "Lobbi-Docs/claude",
+  "path": ".claude/plugins/jira-orchestrator/skills/jira-orchestration/SKILL.md",
+  "source": "github.com/Lobbi-Docs/claude",
+  "downloaded_at": "2026-01-29T05:47:09.795321Z",
+  "dir_name": "jira-orchestration-lobbi-docs-claude",
+  "category": "orchestration",
+  "author": "Lobbi-Docs",
+  "source_url": "https://github.com/Lobbi-Docs/claude/blob/main/.claude/plugins/jira-orchestrator/skills/jira-orchestration/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Golden Armada Team",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

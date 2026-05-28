@@ -1,0 +1,18 @@
+{
+  "name": "housing-copywriter",
+  "repo": "MisterClean/claude-plugins",
+  "path": "skills/housing-copywriter/SKILL.md",
+  "source": "github.com/MisterClean/claude-plugins",
+  "downloaded_at": "2026-01-22T03:54:06.938378Z",
+  "dir_name": "housing-copywriter",
+  "category": "marketing",
+  "github_path": "skills/housing-copywriter",
+  "github_branch": "main",
+  "author": "MisterClean",
+  "source_url": "https://github.com/MisterClean/claude-plugins/blob/main/skills/housing-copywriter/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Michael McLean",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "hugging-face-tool-builder",
+  "description": "",
+  "repo": "platxa/platxa-skill-generator",
+  "category": "api",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/platxa/platxa-skill-generator",
+  "github_path": "skills/hugging-face-tool-builder",
+  "github_branch": "main",
+  "dir_name": "hugging-face-tool-builder",
+  "downloaded_at": "2026-02-05T01:45:09.491352Z"
+}

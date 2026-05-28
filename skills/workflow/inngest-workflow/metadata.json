@@ -1,0 +1,18 @@
+{
+  "name": "inngest-workflow",
+  "repo": "skillrecordings/support",
+  "path": ".claude/skills/inngest-workflow/SKILL.md",
+  "source": "github.com/skillrecordings/support",
+  "downloaded_at": "2026-01-22T03:15:14.094589Z",
+  "dir_name": "inngest-workflow",
+  "category": "workflow",
+  "github_path": ".claude/skills/inngest-workflow",
+  "github_branch": "main",
+  "author": "skillrecordings",
+  "source_url": "https://github.com/skillrecordings/support/blob/main/.claude/skills/inngest-workflow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/skillrecordings/support/blob/main/.claude/skills/inngest-workflow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

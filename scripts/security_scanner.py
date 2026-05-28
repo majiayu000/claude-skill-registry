@@ -7,9 +7,10 @@ Implements automated security checks for skill registry
 import hashlib
 import json
 import re
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, List, TextIO, Tuple
 
 import jsonschema
 import yaml
@@ -667,6 +668,8 @@ def scan_directory(
     quiet: bool = False,
     selected_files: List[Path] = None,
     scanned_at: str = "",
+    progress_interval: int = 0,
+    progress_stream: TextIO | None = None,
 ) -> Dict:
     """Scan all skills in a directory"""
     scanner = SecurityScanner()
@@ -690,6 +693,11 @@ def scan_directory(
         scan_targets = skills_dir.rglob("SKILL.md")
     else:
         scan_targets = selected_files
+
+    if progress_interval < 0:
+        raise ValueError("progress_interval must be non-negative")
+    if progress_interval and progress_stream is None:
+        progress_stream = sys.stderr
 
     for skill_file in scan_targets:
         skill_file = skill_file.resolve()
@@ -722,6 +730,16 @@ def scan_directory(
                 print(f"✗ {skill_file.relative_to(skills_root)}")
                 print(scanner.generate_report())
 
+        if progress_interval and results["total"] % progress_interval == 0:
+            print(
+                "Security scan progress: "
+                f"{results['total']} scanned, "
+                f"{results['passed']} passed, "
+                f"{results['failed']} failed",
+                file=progress_stream,
+                flush=True,
+            )
+
     # Save results
     if output_file:
         with open(output_file, "w", encoding="utf-8") as f:
@@ -743,6 +761,12 @@ def main():
         help="Always exit 0 after writing report (for CI reporting mode)",
     )
     parser.add_argument("--quiet", action="store_true", help="Only print summary")
+    parser.add_argument(
+        "--progress-interval",
+        type=int,
+        default=0,
+        help="Print directory scan progress every N skills to stderr (0 disables progress)",
+    )
     parser.add_argument(
         "--file-list",
         help="Optional newline-delimited list of SKILL.md paths to scan (absolute or relative to path)",
@@ -792,7 +816,13 @@ def main():
             if not args.quiet:
                 print(f"Using file list: {len(selected_files)} file(s)")
 
-        results = scan_directory(path, args.output, quiet=args.quiet, selected_files=selected_files)
+        results = scan_directory(
+            path,
+            args.output,
+            quiet=args.quiet,
+            selected_files=selected_files,
+            progress_interval=args.progress_interval,
+        )
 
         print(f"\n{'='*60}")
         print(f"Total: {results['total']}")

@@ -1,0 +1,18 @@
+{
+  "name": "elixir-ecto-patterns",
+  "repo": "TheBushidoCollective/han",
+  "path": "jutsu/jutsu-elixir/skills/elixir-ecto-patterns/SKILL.md",
+  "source": "github.com/TheBushidoCollective/han",
+  "downloaded_at": "2026-01-22T03:51:17.206044Z",
+  "dir_name": "elixir-ecto-patterns",
+  "category": "development",
+  "github_path": "jutsu/jutsu-elixir/skills/elixir-ecto-patterns",
+  "github_branch": "main",
+  "author": "TheBushidoCollective",
+  "source_url": "https://github.com/TheBushidoCollective/han/blob/main/jutsu/jutsu-elixir/skills/elixir-ecto-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 The Bushido Collective",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

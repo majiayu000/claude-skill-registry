@@ -1,0 +1,17 @@
+{
+  "name": "evo-review-edge-case-hunter",
+  "repo": "EvolutionAPI/aula-meu-dinheiro",
+  "path": "_evo/core/tasks/evo-review-edge-case-hunter/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/EvolutionAPI/aula-meu-dinheiro",
+  "dir_name": "evo-review-edge-case-hunter-evolutionapi-aula-meu-dinheiro-2",
+  "downloaded_at": "2026-03-22T05:20:05.569292Z",
+  "author": "EvolutionAPI",
+  "source_url": "https://github.com/EvolutionAPI/aula-meu-dinheiro/blob/main/_evo/core/tasks/evo-review-edge-case-hunter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/EvolutionAPI/aula-meu-dinheiro/blob/main/_evo/core/tasks/evo-review-edge-case-hunter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

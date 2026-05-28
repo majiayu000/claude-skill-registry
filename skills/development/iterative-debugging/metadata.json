@@ -1,0 +1,20 @@
+{
+  "name": "iterative-debugging",
+  "description": "",
+  "repo": "pentaxis93/beadsmith",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pentaxis93/beadsmith",
+  "github_path": ".opencode/skill/iterative-debugging",
+  "github_branch": "main",
+  "dir_name": "iterative-debugging",
+  "downloaded_at": "2026-02-05T05:40:33.223302Z",
+  "author": "pentaxis93",
+  "source_url": "https://github.com/pentaxis93/beadsmith/blob/main/.opencode/skill/iterative-debugging/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pentaxis93/beadsmith/blob/main/.opencode/skill/iterative-debugging/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

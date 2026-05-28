@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-28T07:01:44.690873+00:00",
+  "skills_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch009",
+  "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch009/migration-artifacts/2026-05-28-current-other-semantic-batch-009/classification.jsonl",
+  "policy": {
+    "min_confidence": 0.9,
+    "from_categories": [
+      "other"
+    ],
+    "to_categories": [],
+    "target_statuses": [
+      "active"
+    ],
+    "allow_target_other": false,
+    "movable_only": true,
+    "limit": null,
+    "apply_mode": "apply"
+  },
+  "summary": {
+    "classification_row_count": 10000,
+    "classification_status_counts": {
+      "ok": 10000
+    },
+    "planned_move_count": 2,
+    "movable_count": 2,
+    "blocked_count": 0,
+    "operation_counts": {
+      "move": 2
+    },
+    "reject_reasons": {
+      "confidence below threshold": 6454,
+      "source directory missing": 1469,
+      "target category already contains a skill with the same stable key": 2075
+    },
+    "source_category_counts": {
+      "other": 2
+    },
+    "target_category_counts": {
+      "development": 1,
+      "generation": 1
+    }
+  },
+  "moves": [
+    {
+      "operation": "move",
+      "source_path": "other/flutter-bloc-clean-architecture-skill-abdelhakrazi-flutter-bloc-clean-a-2",
+      "source_skill": "other/flutter-bloc-clean-architecture-skill-abdelhakrazi-flutter-bloc-clean-a-2/SKILL.md",
+      "source_category": "other",
+      "current_category": "other",
+      "target_category": "development",
+      "target_status": "active",
+      "target_path": "development/flutter-bloc-clean-architecture-skill-abdelhakrazi-flutter-bloc--abdelhakrazi-flutter-bloc-clean-a",
+      "target_skill": "development/flutter-bloc-clean-architecture-skill-abdelhakrazi-flutter-bloc--abdelhakrazi-flutter-bloc-clean-a/SKILL.md",
+      "name": "flutter-bloc-development",
+      "confidence": 0.95,
+      "key": "AbdelhakRazi/flutter-bloc-clean-architecture-skill:name:flutter-bloc-development",
+      "repo": "AbdelhakRazi/flutter-bloc-clean-architecture-skill",
+      "reason": "classification target passed filters",
+      "source_sha256": "1739e23cca46bcb9d020d296f11fa9f727fb8c49f8345fd96e66dd2cb3bdc34d",
+      "metadata_sha256": "1bf2fc8d8a23be71ef6a8c971ae3abbca73f0149da8886604b9f9f8f4eaa5016",
+      "semantic_text_sha256": "32f0422c7e6739f2514658bd5e102da464e112f1d591d4aa014222b998ad65bd"
+    },
+    {
+      "operation": "move",
+      "source_path": "other/gpt-image2-ppt-skills-juneyaooo-gpt-image2-ppt-skill-2",
+      "source_skill": "other/gpt-image2-ppt-skills-juneyaooo-gpt-image2-ppt-skill-2/SKILL.md",
+      "source_category": "other",
+      "current_category": "other",
+      "target_category": "generation",
+      "target_status": "active",
+      "target_path": "generation/gpt-image2-ppt-skills-juneyaooo-gpt-image2-ppt-skill-2",
+      "target_skill": "generation/gpt-image2-ppt-skills-juneyaooo-gpt-image2-ppt-skill-2/SKILL.md",
+      "name": "gpt-image2-ppt",
+      "confidence": 0.92,
+      "key": "JuneYaooo/gpt-image2-ppt-skills:name:gpt-image2-ppt",
+      "repo": "JuneYaooo/gpt-image2-ppt-skills",
+      "reason": "classification target passed filters",
+      "source_sha256": "7db9898680a6c1351f2b6912b1d563d5350ebc7286dab4bc34a7ae764fed7ad6",
+      "metadata_sha256": "a69080f53ad39409cc1c51e34cda571ad4d8397bb353050b5defb00b5ce7abce",
+      "semantic_text_sha256": "5117d4d9a42dafa92dad8ffdccb627818877a32f9a032038326f2413c6e0f168"
+    }
+  ],
+  "notes": [
+    "Default mode is review-only and does not modify files.",
+    "Only --apply moves directories and updates metadata.json.",
+    "Blocked moves are never applied automatically."
+  ],
+  "applied_at": "2026-05-28T07:01:44.720660+00:00"
+}

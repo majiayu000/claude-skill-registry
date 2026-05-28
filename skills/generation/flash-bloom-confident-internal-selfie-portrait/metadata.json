@@ -1,0 +1,17 @@
+{
+  "name": "flash-bloom-confident-internal-selfie-portrait",
+  "repo": "BetterPromptme/skills",
+  "path": "skills/flash-bloom-confident-internal-selfie-portrait/SKILL.md",
+  "github_branch": "main",
+  "category": "generation",
+  "source": "github.com/BetterPromptme/skills",
+  "dir_name": "flash-bloom-confident-internal-selfie-portrait",
+  "downloaded_at": "2026-03-22T05:00:02.190192Z",
+  "author": "BetterPromptme",
+  "source_url": "https://github.com/BetterPromptme/skills/blob/main/skills/flash-bloom-confident-internal-selfie-portrait/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BetterPromptme/skills/blob/main/skills/flash-bloom-confident-internal-selfie-portrait/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

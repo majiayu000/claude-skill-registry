@@ -1,0 +1,17 @@
+{
+  "name": "judge",
+  "repo": "JHostalek/dotclaude",
+  "path": "skills/judge/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/JHostalek/dotclaude",
+  "dir_name": "judge-jhostalek-dotclaude",
+  "downloaded_at": "2026-05-04T01:49:42.176535Z",
+  "author": "JHostalek",
+  "source_url": "https://github.com/JHostalek/dotclaude/blob/main/skills/judge/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JHostalek/dotclaude/blob/main/skills/judge/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

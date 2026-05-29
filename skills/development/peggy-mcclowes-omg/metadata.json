@@ -1,0 +1,16 @@
+{
+  "name": "peggy",
+  "repo": "mcclowes/omg",
+  "path": ".claude/skills/peggy/SKILL.md",
+  "source": "github.com/mcclowes/omg",
+  "downloaded_at": "2026-02-02T01:43:15.916367Z",
+  "dir_name": "peggy-mcclowes-omg",
+  "category": "development",
+  "author": "mcclowes",
+  "source_url": "https://github.com/mcclowes/omg/blob/main/.claude/skills/peggy/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 mcclowes",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

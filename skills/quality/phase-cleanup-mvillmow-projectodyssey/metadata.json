@@ -1,0 +1,18 @@
+{
+  "name": "phase-cleanup",
+  "repo": "mvillmow/ProjectOdyssey",
+  "path": ".claude/skills/phase-cleanup/SKILL.md",
+  "source": "github.com/mvillmow/ProjectOdyssey",
+  "downloaded_at": "2026-01-22T02:46:14.257584Z",
+  "dir_name": "phase-cleanup-mvillmow-projectodyssey",
+  "category": "quality",
+  "github_path": ".claude/skills/phase-cleanup",
+  "github_branch": "main",
+  "author": "mvillmow",
+  "source_url": "https://github.com/mvillmow/ProjectOdyssey/blob/main/.claude/skills/phase-cleanup/SKILL.md",
+  "license": "BSD-3-Clause",
+  "copyright": "Copyright (c) 2025, ML Odyssey Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

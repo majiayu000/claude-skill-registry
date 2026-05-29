@@ -1,0 +1,18 @@
+{
+  "name": "sullins",
+  "description": "Sullins Connector Solutions MPN encoding patterns, series decoding, and handler guidance. Use when working with Sullins connectors or SullinsHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/sullins",
+  "category": "domains",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "sullins-cantara-lib-electronic-compo-2",
+  "author": "Cantara",
+  "source_url": "https://github.com/Cantara/lib-electronic-components/blob/main/.claude/skills/manufacturers/sullins/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Cantara/lib-electronic-components/blob/main/.claude/skills/manufacturers/sullins/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

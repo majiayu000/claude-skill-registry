@@ -1,0 +1,17 @@
+{
+  "name": "tool-skill",
+  "description": "",
+  "repo": "trailofbits/skills",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "Unknown",
+  "dir_name": "tool-skill",
+  "author": "trailofbits",
+  "source_url": "https://github.com/trailofbits/skills",
+  "license": "CC-BY-SA-4.0",
+  "copyright": "copyright and certain other rights. Our licenses are",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

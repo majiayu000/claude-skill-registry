@@ -1,0 +1,13 @@
+{
+  "name": "resolve-task-parallel",
+  "description": "",
+  "repo": "mattjefferson/agents",
+  "category": "orchestration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mattjefferson/agents",
+  "github_path": "skills/resolve_task_parallel",
+  "github_branch": "main",
+  "dir_name": "resolve-task-parallel",
+  "downloaded_at": "2026-02-05T05:43:57.390196Z"
+}

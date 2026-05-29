@@ -1,0 +1,18 @@
+{
+  "name": "semantic-search-setup",
+  "repo": "vamseeachanta/workspace-hub",
+  "path": ".claude/skills/document-handling/semantic-search-setup/SKILL.md",
+  "source": "github.com/vamseeachanta/workspace-hub",
+  "downloaded_at": "2026-01-22T03:44:01.395009Z",
+  "dir_name": "semantic-search-setup",
+  "category": "ai-ml",
+  "github_path": ".claude/skills/document-handling/semantic-search-setup",
+  "github_branch": "main",
+  "author": "vamseeachanta",
+  "source_url": "https://github.com/vamseeachanta/workspace-hub/blob/main/.claude/skills/document-handling/semantic-search-setup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vamseeachanta/workspace-hub/blob/main/.claude/skills/document-handling/semantic-search-setup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

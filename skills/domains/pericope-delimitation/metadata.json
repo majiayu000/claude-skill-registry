@@ -1,0 +1,17 @@
+{
+  "name": "pericope-delimitation",
+  "repo": "davebream/claude-of-alexandria",
+  "path": "plugins/claude-of-alexandria/skills/pericope-delimitation/SKILL.md",
+  "github_branch": "main",
+  "category": "domains",
+  "source": "github.com/davebream/claude-of-alexandria",
+  "dir_name": "pericope-delimitation",
+  "downloaded_at": "2026-03-22T07:40:30.832849Z",
+  "author": "davebream",
+  "source_url": "https://github.com/davebream/claude-of-alexandria/blob/main/plugins/claude-of-alexandria/skills/pericope-delimitation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/davebream/claude-of-alexandria/blob/main/plugins/claude-of-alexandria/skills/pericope-delimitation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

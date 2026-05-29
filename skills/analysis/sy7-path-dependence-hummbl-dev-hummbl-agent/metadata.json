@@ -1,0 +1,16 @@
+{
+  "name": "sy7-path-dependence",
+  "repo": "hummbl-dev/hummbl-agent",
+  "path": "skills/SY-systems/sy7-path-dependence/SKILL.md",
+  "source": "github.com/hummbl-dev/hummbl-agent",
+  "downloaded_at": "2026-01-29T06:10:04.817481Z",
+  "dir_name": "sy7-path-dependence-hummbl-dev-hummbl-agent",
+  "category": "analysis",
+  "author": "hummbl-dev",
+  "source_url": "https://github.com/hummbl-dev/hummbl-agent/blob/main/skills/SY-systems/sy7-path-dependence/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2026 Reuben Bowlby and Daniel Matha. All rights reserved.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "rerender-memo",
+  "description": "Extract expensive work into memoized components with React.memo. Apply when components perform expensive computations that can be skipped when props haven't changed.",
+  "repo": "TheOrcDev/8bitcn-ui",
+  "path": ".claude/skills/rerender-memo",
+  "category": "performance",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TheOrcDev/8bitcn-ui",
+  "dir_name": "rerender-memo-theorcdev-8bitcn-ui-2",
+  "author": "TheOrcDev",
+  "source_url": "https://github.com/TheOrcDev/8bitcn-ui/blob/main/.claude/skills/rerender-memo/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 8bitcn",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

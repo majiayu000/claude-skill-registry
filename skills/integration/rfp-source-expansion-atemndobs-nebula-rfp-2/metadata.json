@@ -1,0 +1,18 @@
+{
+  "name": "rfp-source-expansion",
+  "description": "Guidelines for integrating additional RFP data sources beyond RFPMart",
+  "repo": "Atemndobs/nebula-rfp",
+  "path": ".gemini/skills/rfp-source-expansion",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Atemndobs/nebula-rfp",
+  "dir_name": "rfp-source-expansion-atemndobs-nebula-rfp-2",
+  "author": "Atemndobs",
+  "source_url": "https://github.com/Atemndobs/nebula-rfp/blob/main/.gemini/skills/rfp-source-expansion/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Atemndobs/nebula-rfp/blob/main/.gemini/skills/rfp-source-expansion/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

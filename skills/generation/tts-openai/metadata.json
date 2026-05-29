@@ -1,0 +1,13 @@
+{
+  "name": "tts-openai",
+  "description": "",
+  "repo": "az9713/whatsapp-claude-old",
+  "category": "generation",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/az9713/whatsapp-claude-old",
+  "github_path": ".claude/skills/tts-openai",
+  "github_branch": "main",
+  "dir_name": "tts-openai",
+  "downloaded_at": "2026-02-05T01:44:37.784483Z"
+}

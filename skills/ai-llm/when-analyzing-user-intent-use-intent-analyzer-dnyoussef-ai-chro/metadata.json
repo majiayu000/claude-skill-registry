@@ -1,0 +1,16 @@
+{
+  "name": "when-analyzing-user-intent-use-intent-analyzer",
+  "repo": "DNYoussef/ai-chrome-extension",
+  "path": ".claude/skills/utilities/when-analyzing-user-intent-use-intent-analyzer/SKILL.md",
+  "source": "github.com/DNYoussef/ai-chrome-extension",
+  "downloaded_at": "2026-01-29T08:56:03.761931Z",
+  "dir_name": "when-analyzing-user-intent-use-intent-analyzer-dnyoussef-ai-chro",
+  "category": "ai-llm",
+  "author": "DNYoussef",
+  "source_url": "https://github.com/DNYoussef/ai-chrome-extension/blob/main/.claude/skills/utilities/when-analyzing-user-intent-use-intent-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ReadFlow Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

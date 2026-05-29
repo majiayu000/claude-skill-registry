@@ -1,0 +1,16 @@
+{
+  "name": "pr-prep",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/sanctum/skills/pr-prep/SKILL.md",
+  "source": "github.com/athola/claude-night-market",
+  "downloaded_at": "2026-01-29T05:25:02.540830Z",
+  "dir_name": "pr-prep-athola-claude-night-market-3e62b21a",
+  "category": "quality",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/sanctum/skills/pr-prep/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 athola",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

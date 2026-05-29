@@ -1,0 +1,13 @@
+{
+  "name": "search-fallback",
+  "description": "",
+  "repo": "Khamel83/oneshot",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Khamel83/oneshot",
+  "github_path": ".claude/skills/search-fallback",
+  "github_branch": "master",
+  "dir_name": "search-fallback",
+  "downloaded_at": "2026-02-05T01:44:38.042855Z"
+}

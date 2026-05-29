@@ -1,0 +1,18 @@
+{
+  "name": "use-algokit-cli",
+  "repo": "gabrielkuettel/vibegallery",
+  "path": ".claude/skills/use-algokit-cli/SKILL.md",
+  "source": "github.com/gabrielkuettel/vibegallery",
+  "downloaded_at": "2026-01-21T01:19:52.540729Z",
+  "dir_name": "use-algokit-cli-gabrielkuettel-vibegallery",
+  "category": "devops",
+  "github_path": ".claude/skills/use-algokit-cli",
+  "github_branch": "main",
+  "author": "gabrielkuettel",
+  "source_url": "https://github.com/gabrielkuettel/vibegallery/blob/main/.claude/skills/use-algokit-cli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gabrielkuettel/vibegallery/blob/main/.claude/skills/use-algokit-cli/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

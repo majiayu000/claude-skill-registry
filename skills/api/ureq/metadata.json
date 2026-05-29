@@ -1,0 +1,20 @@
+{
+  "name": "ureq",
+  "description": "",
+  "repo": "johnlindquist/script-kit-next",
+  "category": "api",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/johnlindquist/script-kit-next",
+  "github_path": ".opencode/skill/ureq",
+  "github_branch": "main",
+  "dir_name": "ureq",
+  "downloaded_at": "2026-02-05T01:44:28.390736Z",
+  "author": "johnlindquist",
+  "source_url": "https://github.com/johnlindquist/script-kit-next/blob/main/.opencode/skill/ureq/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/johnlindquist/script-kit-next/blob/main/.opencode/skill/ureq/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "tdd-migrate",
+  "description": "TDD workflow for migrations - orchestrate agents, zero main context growth",
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/tdd-migrate",
+  "category": "orchestration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "dir_name": "tdd-migrate-parcadei-continuous-claude-v3-2",
+  "author": "parcadei",
+  "source_url": "https://github.com/parcadei/Continuous-Claude-v3/blob/main/.claude/skills/tdd-migrate/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Cosimo Streppone",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

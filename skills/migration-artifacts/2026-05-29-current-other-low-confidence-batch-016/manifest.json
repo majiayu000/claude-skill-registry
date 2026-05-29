@@ -1,0 +1,27 @@
+{
+  "batch_id": "current-other-low-confidence-batch-016",
+  "migration_policy": {
+    "fail_closed": true,
+    "min_confidence": 0.9,
+    "movable_only": true
+  },
+  "parent_issue": "https://github.com/majiayu000/claude-skill-registry-data/issues/81",
+  "schema_version": 1,
+  "selection_policy": {
+    "exclude_input_jsonl": [
+      "migration-artifacts/2026-05-29-current-other-low-confidence-batch-014/input.jsonl",
+      "migration-artifacts/2026-05-29-current-other-low-confidence-batch-015/input.jsonl"
+    ],
+    "limit": 10000,
+    "order": "post-batch015 residual low_confidence iteration order",
+    "workset": "low_confidence"
+  },
+  "source_combined_classification_jsonl": "migration-artifacts/2026-05-29-current-other-low-confidence-batch-016/post-batch015-combined-classification.jsonl",
+  "source_residual_worksets_json": "residual-worksets.json",
+  "summary": {
+    "excluded_live_low_confidence_matches": 12028,
+    "excluded_prior_batch_paths": 20000,
+    "low_confidence_total": 25356,
+    "selected_input_count": 10000
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "unity-headless",
+  "description": "Install Unity Hub/Editor, activate licenses, run headless builds and tests",
+  "repo": "BreakerOfStems/claude-skills",
+  "path": "skills/unity-headless",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/BreakerOfStems/claude-skills",
+  "dir_name": "unity-headless-breakerofstems-claude-skills-2",
+  "author": "BreakerOfStems",
+  "source_url": "https://github.com/BreakerOfStems/claude-skills/blob/main/skills/unity-headless/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BreakerOfStems/claude-skills/blob/main/skills/unity-headless/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

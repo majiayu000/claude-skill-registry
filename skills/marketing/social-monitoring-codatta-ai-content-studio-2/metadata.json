@@ -1,0 +1,18 @@
+{
+  "name": "social-monitoring",
+  "description": "Monitor Twitter accounts (151 tracked), detect mentions, analyze engagement, and identify interaction opportunities. Use when tracking Twitter activity, monitoring mentions, analyzing social metrics, ",
+  "repo": "codatta/ai-content-studio",
+  "path": "skills/social-monitoring",
+  "category": "marketing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/codatta/ai-content-studio",
+  "dir_name": "social-monitoring-codatta-ai-content-studio-2",
+  "author": "codatta",
+  "source_url": "https://github.com/codatta/ai-content-studio/blob/main/skills/social-monitoring/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Jessie Bot Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "quant-resource-patterns",
+  "description": "Follow these patterns when implementing quant domain resources like Dataset, Signal, Alpha, Portfolio, Strategy, Universe, Backtest, or MonitoringRun in OptAIC. Use for creating DB models, DTOs, servi",
+  "repo": "colingwuyu/optaic-trading",
+  "path": ".claude/skills/quant-resource-patterns",
+  "category": "domains",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/colingwuyu/optaic-trading",
+  "dir_name": "quant-resource-patterns-colingwuyu-optaic-trading-2",
+  "author": "colingwuyu",
+  "source_url": "https://github.com/colingwuyu/optaic-trading/blob/main/.claude/skills/quant-resource-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/colingwuyu/optaic-trading/blob/main/.claude/skills/quant-resource-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

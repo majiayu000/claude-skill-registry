@@ -1,0 +1,20 @@
+{
+  "name": "qpcr-primers",
+  "description": "",
+  "repo": "mdbabumiamssm/LLMs-Universal-Life-Science-and-Clinical-Skills-",
+  "category": "domains",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mdbabumiamssm/LLMs-Universal-Life-Science-and-Clinical-Skills-",
+  "github_path": "Skills/Sequence_Analysis/primer-design/qpcr-primers",
+  "github_branch": "main",
+  "dir_name": "qpcr-primers",
+  "downloaded_at": "2026-02-05T01:44:38.823576Z",
+  "author": "mdbabumiamssm",
+  "source_url": "https://github.com/mdbabumiamssm/LLMs-Universal-Life-Science-and-Clinical-Skills-/blob/main/Skills/Sequence_Analysis/primer-design/qpcr-primers/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 MD BABU MIA , PHD",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

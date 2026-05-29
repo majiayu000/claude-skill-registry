@@ -1,0 +1,20 @@
+{
+  "name": "sla-compliance-monitor",
+  "description": "",
+  "repo": "zjunlp/SkillNet",
+  "category": "workflow",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zjunlp/SkillNet",
+  "github_path": "skills/benchmark_skills/toolathlon/sla-compliance-monitor",
+  "github_branch": "main",
+  "dir_name": "sla-compliance-monitor",
+  "downloaded_at": "2026-02-05T01:44:59.138905Z",
+  "author": "zjunlp",
+  "source_url": "https://github.com/zjunlp/SkillNet/blob/main/skills/benchmark_skills/toolathlon/sla-compliance-monitor/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 ZJUNLP",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

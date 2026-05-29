@@ -1,0 +1,18 @@
+{
+  "name": "prolific",
+  "description": "Prolific Technology MPN encoding patterns, variant identification, and handler guidance. Use when working with USB interface ICs or ProlificHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/prolific",
+  "category": "domains",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "prolific-cantara-lib-electronic-compo-2",
+  "author": "Cantara",
+  "source_url": "https://github.com/Cantara/lib-electronic-components/blob/main/.claude/skills/manufacturers/prolific/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Cantara/lib-electronic-components/blob/main/.claude/skills/manufacturers/prolific/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

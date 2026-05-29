@@ -1,0 +1,18 @@
+{
+  "name": "poka-yoke-patterns",
+  "repo": "seanchatmangpt/ggen",
+  "path": ".claude/skills/poka-yoke-patterns/SKILL.md",
+  "source": "github.com/seanchatmangpt/ggen",
+  "downloaded_at": "2026-01-22T03:08:32.885466Z",
+  "dir_name": "poka-yoke-patterns",
+  "category": "quality",
+  "github_path": ".claude/skills/poka-yoke-patterns",
+  "github_branch": "main",
+  "author": "seanchatmangpt",
+  "source_url": "https://github.com/seanchatmangpt/ggen/blob/main/.claude/skills/poka-yoke-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sean Chatman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "top-crashers",
+  "repo": "brave-experiments/brave-core-bot",
+  "path": ".claude/skills/top-crashers/SKILL.md",
+  "category": "analysis",
+  "source": "github.com/brave-experiments/brave-core-bot",
+  "dir_name": "top-crashers",
+  "downloaded_at": "2026-02-22T06:35:30.482192Z",
+  "author": "brave-experiments",
+  "source_url": "https://github.com/brave-experiments/brave-core-bot/blob/main/.claude/skills/top-crashers/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/brave-experiments/brave-core-bot/blob/main/.claude/skills/top-crashers/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

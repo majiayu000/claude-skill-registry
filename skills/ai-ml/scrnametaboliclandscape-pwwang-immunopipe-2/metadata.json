@@ -1,0 +1,18 @@
+{
+  "name": "scrnametaboliclandscape",
+  "description": "Comprehensive metabolic landscape analysis pipeline for scRNA-seq data. This is an all-in-one process group performing complete metabolic pathway analysis including expression imputation, feature sele",
+  "repo": "pwwang/immunopipe",
+  "path": "skills/scrnametaboliclandscape",
+  "category": "ai-ml",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/pwwang/immunopipe",
+  "dir_name": "scrnametaboliclandscape-pwwang-immunopipe-2",
+  "author": "pwwang",
+  "source_url": "https://github.com/pwwang/immunopipe/blob/main/skills/scrnametaboliclandscape/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

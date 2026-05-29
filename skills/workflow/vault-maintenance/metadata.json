@@ -1,0 +1,17 @@
+{
+  "name": "vault-maintenance",
+  "repo": "D0miH/claudsidian",
+  "path": ".claude/skills/vault_maintenance/SKILL.md",
+  "github_branch": "main",
+  "category": "workflow",
+  "source": "github.com/D0miH/claudsidian",
+  "dir_name": "vault-maintenance",
+  "downloaded_at": "2026-03-22T05:10:38.077293Z",
+  "author": "D0miH",
+  "source_url": "https://github.com/D0miH/claudsidian/blob/main/.claude/skills/vault_maintenance/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/D0miH/claudsidian/blob/main/.claude/skills/vault_maintenance/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

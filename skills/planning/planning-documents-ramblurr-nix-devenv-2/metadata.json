@@ -1,0 +1,18 @@
+{
+  "name": "planning-documents",
+  "description": "Naming conventions for planning documents in prompts/. Use when creating plans, PRDs, research reports, idea capture or other workflow documents. Triggers on (1) creating new planning documents, (2) n",
+  "repo": "Ramblurr/nix-devenv",
+  "path": "prompts/skills/planning-documents",
+  "category": "planning",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Ramblurr/nix-devenv",
+  "dir_name": "planning-documents-ramblurr-nix-devenv-2",
+  "author": "Ramblurr",
+  "source_url": "https://github.com/Ramblurr/nix-devenv/blob/main/prompts/skills/planning-documents/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Ramblurr/nix-devenv/blob/main/prompts/skills/planning-documents/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

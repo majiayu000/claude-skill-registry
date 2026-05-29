@@ -1,0 +1,18 @@
+{
+  "base_data_sha": "516c8587ebb39109e1490c9262d0ba529cd7257d",
+  "batch": "017",
+  "input_count": 3328,
+  "issue": "https://github.com/majiayu000/claude-skill-registry-data/issues/83",
+  "note": "Rebased after repair PR #85; classification input paths revalidated on repaired main.",
+  "policy": {
+    "apply_mode": "fail-closed high-confidence moves only",
+    "classification_base_url": "https://token-plan-sgp.xiaomimimo.com/v1",
+    "classification_model": "mimo-v2.5-pro",
+    "from_category": "other",
+    "min_confidence": 0.9
+  },
+  "preclassification_checkpoint_status_counts": {
+    "api_error": 35,
+    "ok": 660
+  }
+}

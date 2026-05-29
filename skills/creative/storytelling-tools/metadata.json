@@ -1,0 +1,18 @@
+{
+  "name": "storytelling-tools",
+  "repo": "SimHacker/moollm",
+  "path": "skills/storytelling-tools/SKILL.md",
+  "source": "github.com/SimHacker/moollm",
+  "downloaded_at": "2026-01-22T01:07:14.028841Z",
+  "dir_name": "storytelling-tools",
+  "category": "creative",
+  "github_path": "skills/storytelling-tools",
+  "github_branch": "main",
+  "author": "SimHacker",
+  "source_url": "https://github.com/SimHacker/moollm/blob/main/skills/storytelling-tools/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Don Hopkins, Leela AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

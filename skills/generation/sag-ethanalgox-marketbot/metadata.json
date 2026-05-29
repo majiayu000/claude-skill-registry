@@ -1,0 +1,16 @@
+{
+  "name": "sag",
+  "repo": "EthanAlgoX/MarketBot",
+  "path": "skills/sag/SKILL.md",
+  "category": "generation",
+  "source": "github.com/EthanAlgoX/MarketBot",
+  "dir_name": "sag-ethanalgox-marketbot",
+  "downloaded_at": "2026-02-22T05:01:01.293554Z",
+  "author": "EthanAlgoX",
+  "source_url": "https://github.com/EthanAlgoX/MarketBot/blob/main/skills/sag/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 marketbot contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

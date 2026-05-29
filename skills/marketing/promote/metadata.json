@@ -1,0 +1,13 @@
+{
+  "name": "promote",
+  "description": "Personal Claude Code plugin marketplace",
+  "repo": "ourines/sidekick",
+  "category": "marketing",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": "plugins/oss-promoter/skills/promote",
+  "github_branch": "main",
+  "dir_name": "promote",
+  "downloaded_at": "2026-02-05T01:45:35.482551Z"
+}

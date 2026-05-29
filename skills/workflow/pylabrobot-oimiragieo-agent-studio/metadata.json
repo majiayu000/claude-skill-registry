@@ -1,0 +1,16 @@
+{
+  "name": "pylabrobot",
+  "repo": "oimiragieo/agent-studio",
+  "path": ".claude/skills/scientific-skills/skills/pylabrobot/SKILL.md",
+  "source": "github.com/oimiragieo/agent-studio",
+  "downloaded_at": "2026-02-02T04:36:35.610563Z",
+  "dir_name": "pylabrobot-oimiragieo-agent-studio",
+  "category": "workflow",
+  "author": "oimiragieo",
+  "source_url": "https://github.com/oimiragieo/agent-studio/blob/main/.claude/skills/scientific-skills/skills/pylabrobot/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oimiragieo/agent-studio/blob/main/.claude/skills/scientific-skills/skills/pylabrobot/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

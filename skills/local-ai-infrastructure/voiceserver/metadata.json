@@ -1,0 +1,13 @@
+{
+  "name": "voiceserver",
+  "description": "",
+  "repo": "verrio1/vaughn-pai",
+  "category": "local-ai-infrastructure",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/verrio1/vaughn-pai",
+  "github_path": "skills/VoiceServer",
+  "github_branch": "main",
+  "dir_name": "voiceserver",
+  "downloaded_at": "2026-02-05T01:45:01.895880Z"
+}

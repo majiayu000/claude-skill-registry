@@ -1,0 +1,20 @@
+{
+  "name": "proposal-review",
+  "description": "",
+  "repo": "petekp/claude-code-setup",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/petekp/claude-code-setup",
+  "github_path": "skills/proposal-review",
+  "github_branch": "main",
+  "dir_name": "proposal-review",
+  "downloaded_at": "2026-02-05T01:45:09.765423Z",
+  "author": "petekp",
+  "source_url": "https://github.com/petekp/claude-code-setup/blob/main/skills/proposal-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Pete Petrash",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

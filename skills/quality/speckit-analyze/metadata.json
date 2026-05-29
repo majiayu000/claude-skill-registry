@@ -1,0 +1,13 @@
+{
+  "name": "speckit-analyze",
+  "description": "",
+  "repo": "invowk/invowk",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/invowk/invowk",
+  "github_path": ".claude/skills/speckit.analyze",
+  "github_branch": "main",
+  "dir_name": "speckit-analyze",
+  "downloaded_at": "2026-02-05T05:39:12.032981Z"
+}

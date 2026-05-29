@@ -1,0 +1,16 @@
+{
+  "name": "usage-to-value-map",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/b2b-saas/skills/usage-to-value-map/SKILL.md",
+  "source": "github.com/gtmagents/gtm-agents",
+  "downloaded_at": "2026-01-29T08:28:42.348327Z",
+  "dir_name": "usage-to-value-map-gtmagents-gtm-agents-61650be7",
+  "category": "product",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/b2b-saas/skills/usage-to-value-map/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gtmagents/gtm-agents/blob/main/plugins/b2b-saas/skills/usage-to-value-map/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

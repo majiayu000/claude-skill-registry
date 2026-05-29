@@ -1,0 +1,66 @@
+{
+  "generated_at": "2026-05-29T05:46:29.578802+00:00",
+  "notes": [
+    "This report does not modify archive files.",
+    "Rows with status ok are compatible with apply_category_migration.py classification input.",
+    "API credentials are read from the selected environment variable and are not written to output."
+  ],
+  "rows_omitted": {
+    "count": 3328,
+    "reason": "classification rows are stored compactly in classification.jsonl"
+  },
+  "schema_version": 1,
+  "summary": {
+    "category_counts": {
+      "agent": 26,
+      "ai-llm": 75,
+      "ai-ml": 69,
+      "analysis": 189,
+      "api": 26,
+      "bash": 7,
+      "business": 27,
+      "communication": 15,
+      "context-management": 18,
+      "creative": 27,
+      "data": 107,
+      "design": 89,
+      "development": 441,
+      "devops": 66,
+      "documents": 214,
+      "domains": 223,
+      "examples": 16,
+      "forensics": 13,
+      "gaming": 16,
+      "generation": 217,
+      "integration": 380,
+      "language": 15,
+      "local-ai-infrastructure": 9,
+      "marketing": 83,
+      "orchestration": 61,
+      "other": 30,
+      "performance": 10,
+      "personal-development": 33,
+      "planning": 49,
+      "platform": 68,
+      "product": 49,
+      "productivity": 34,
+      "quality": 191,
+      "security": 22,
+      "skills": 28,
+      "system": 45,
+      "testing": 29,
+      "workflow": 285,
+      "writing": 26
+    },
+    "ignored_checkpoint_row_count": 35,
+    "input_count": 3328,
+    "malformed_checkpoint_row_count": 0,
+    "new_review_count": 2668,
+    "reviewed_count": 3328,
+    "skipped_checkpoint_count": 660,
+    "status_counts": {
+      "ok": 3328
+    }
+  },
+  "workset_jsonl": "migration-artifacts/2026-05-29-current-other-low-confidence-batch-017/input.jsonl"
+}

@@ -1,0 +1,74 @@
+{
+  "applied_at": "2026-05-29T05:15:16.362746+00:00",
+  "classification_jsonl": "migration-artifacts/2026-05-29-current-other-low-confidence-batch-016/classification.jsonl",
+  "generated_at": "2026-05-29T05:15:16.335942+00:00",
+  "move_examples": [
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "key": "EmZod/speak:name:speak-tts",
+      "metadata_sha256": "7f95c82663157952ae33d813eaf7791848382ca49dc637322d00efd598bc484a",
+      "name": "speak-tts",
+      "operation": "move",
+      "reason": "classification target passed filters",
+      "repo": "EmZod/speak",
+      "semantic_text_sha256": "e60d34b099d4ae640c26a6deaf2a5b9e95377ab08e1e578e30414fe96cdce32f",
+      "source_category": "other",
+      "source_path": "other/speak-emzod-speak",
+      "source_sha256": "db79e4562e9af18de806bea599fb03dbec9a076312bceccb7e7ebbaee1fe7d3d",
+      "source_skill": "other/speak-emzod-speak/SKILL.md",
+      "target_category": "generation",
+      "target_path": "generation/speak-emzod-speak",
+      "target_skill": "generation/speak-emzod-speak/SKILL.md",
+      "target_status": "active"
+    }
+  ],
+  "moves_omitted": {
+    "count": 0,
+    "reason": "full list omitted to keep audit artifact reviewable"
+  },
+  "notes": [
+    "Default mode is review-only and does not modify files.",
+    "Only --apply moves directories and updates metadata.json.",
+    "Blocked moves are never applied automatically."
+  ],
+  "policy": {
+    "allow_target_other": false,
+    "apply_mode": "apply",
+    "from_categories": [
+      "other"
+    ],
+    "limit": null,
+    "min_confidence": 0.9,
+    "movable_only": true,
+    "target_statuses": [
+      "active"
+    ],
+    "to_categories": []
+  },
+  "schema_version": 1,
+  "skills_dir": ".",
+  "summary": {
+    "blocked_count": 0,
+    "classification_row_count": 10000,
+    "classification_status_counts": {
+      "ok": 10000
+    },
+    "movable_count": 1,
+    "operation_counts": {
+      "move": 1
+    },
+    "planned_move_count": 1,
+    "reject_reasons": {
+      "confidence below threshold": 6585,
+      "source directory missing": 1890,
+      "target category already contains a skill with the same stable key": 1524
+    },
+    "source_category_counts": {
+      "other": 1
+    },
+    "target_category_counts": {
+      "generation": 1
+    }
+  }
+}

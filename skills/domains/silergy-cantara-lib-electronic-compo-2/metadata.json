@@ -1,0 +1,18 @@
+{
+  "name": "silergy",
+  "description": "Silergy Corp MPN encoding patterns, suffix decoding, and handler guidance. Use when working with Silergy power management ICs.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/silergy",
+  "category": "domains",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "silergy-cantara-lib-electronic-compo-2",
+  "author": "Cantara",
+  "source_url": "https://github.com/Cantara/lib-electronic-components/blob/main/.claude/skills/manufacturers/silergy/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Cantara/lib-electronic-components/blob/main/.claude/skills/manufacturers/silergy/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

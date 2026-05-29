@@ -1,0 +1,16 @@
+{
+  "name": "wellally-tech",
+  "repo": "huifer/WellAlly-health",
+  "path": "skills/wellally-tech/SKILL.md",
+  "category": "integration",
+  "source": "github.com/huifer/WellAlly-health",
+  "dir_name": "wellally-tech-huifer-wellally-health-2",
+  "downloaded_at": "2026-02-15T07:32:04.350040Z",
+  "author": "huifer",
+  "source_url": "https://github.com/huifer/WellAlly-health/blob/main/skills/wellally-tech/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 WellAlly Tech",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

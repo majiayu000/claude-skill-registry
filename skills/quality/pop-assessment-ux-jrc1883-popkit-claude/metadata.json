@@ -1,0 +1,18 @@
+{
+  "name": "pop-assessment-ux",
+  "repo": "jrc1883/popkit-claude",
+  "path": "packages/popkit-ops/skills/pop-assessment-ux/SKILL.md",
+  "source": "github.com/jrc1883/popkit-claude",
+  "downloaded_at": "2026-01-14T02:05:40.394268Z",
+  "dir_name": "pop-assessment-ux-jrc1883-popkit-claude",
+  "category": "quality",
+  "github_path": "packages/popkit-ops/skills/pop-assessment-ux",
+  "github_branch": "main",
+  "author": "jrc1883",
+  "source_url": "https://github.com/jrc1883/popkit-claude/blob/main/packages/popkit-ops/skills/pop-assessment-ux/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jrc1883/popkit-claude/blob/main/packages/popkit-ops/skills/pop-assessment-ux/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

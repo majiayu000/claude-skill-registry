@@ -1,0 +1,18 @@
+{
+  "name": "remember",
+  "description": "Reloads critical instructions when behavior degrades. Use when forgetting tools, not delegating, or missing safety rules. Refreshes orchestration mode, tool awareness, and safety constraints.",
+  "repo": "RustyLindquist/EnhancedHR",
+  "path": ".claude/skills/remember",
+  "category": "agent",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RustyLindquist/EnhancedHR",
+  "dir_name": "remember-rustylindquist-enhancedhr-2",
+  "author": "RustyLindquist",
+  "source_url": "https://github.com/RustyLindquist/EnhancedHR/blob/main/.claude/skills/remember/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/RustyLindquist/EnhancedHR/blob/main/.claude/skills/remember/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

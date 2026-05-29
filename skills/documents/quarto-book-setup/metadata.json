@@ -1,0 +1,17 @@
+{
+  "name": "quarto-book-setup",
+  "repo": "MusserLab/lab-claude-skills",
+  "path": "skills/quarto-book-setup/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/MusserLab/lab-claude-skills",
+  "dir_name": "quarto-book-setup",
+  "downloaded_at": "2026-03-01T05:44:55.285401Z",
+  "author": "MusserLab",
+  "source_url": "https://github.com/MusserLab/lab-claude-skills/blob/main/skills/quarto-book-setup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MusserLab/lab-claude-skills/blob/main/skills/quarto-book-setup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

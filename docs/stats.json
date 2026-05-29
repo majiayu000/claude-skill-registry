@@ -1,201 +1,201 @@
 {
-  "updated_at": "2026-05-29T04:59:23.349107Z",
-  "archive_skill_md_count_raw": 222133,
-  "archive_metadata_count_raw": 222133,
-  "indexed_skill_count_scan_shape": 222133,
-  "registry_skill_count_dedup": 157216,
+  "updated_at": "2026-05-29T06:46:56.438419Z",
+  "archive_skill_md_count_raw": 209585,
+  "archive_metadata_count_raw": 209585,
+  "indexed_skill_count_scan_shape": 209585,
+  "registry_skill_count_dedup": 156979,
   "total_plugins": 3,
   "categories": 42,
   "category_counts": [
     {
       "name": "agent",
       "code": "agent",
-      "count": 1688
+      "count": 1703
     },
     {
       "name": "ai-llm",
       "code": "ai-llm",
-      "count": 2327
+      "count": 2366
     },
     {
       "name": "ai-ml",
       "code": "ai-ml",
-      "count": 2231
+      "count": 2271
     },
     {
       "name": "analysis",
       "code": "analysis",
-      "count": 3716
+      "count": 3879
     },
     {
       "name": "api",
       "code": "api",
-      "count": 1226
+      "count": 1252
     },
     {
       "name": "bash",
       "code": "bash",
-      "count": 279
+      "count": 283
     },
     {
       "name": "business",
       "code": "business",
-      "count": 1169
+      "count": 1202
     },
     {
       "name": "c-level",
       "code": "c-level",
-      "count": 74
+      "count": 76
     },
     {
       "name": "communication",
       "code": "communication",
-      "count": 613
+      "count": 628
     },
     {
       "name": "context-management",
       "code": "context-management",
-      "count": 1322
+      "count": 1362
     },
     {
       "name": "creative",
       "code": "creative",
-      "count": 741
+      "count": 753
     },
     {
       "name": "data",
       "code": "dat",
-      "count": 49080
+      "count": 49102
     },
     {
       "name": "design",
       "code": "des",
-      "count": 13705
+      "count": 13747
     },
     {
       "name": "development",
       "code": "dev",
-      "count": 37541
+      "count": 37803
     },
     {
       "name": "devops",
       "code": "ops",
-      "count": 10614
+      "count": 10670
     },
     {
       "name": "documents",
       "code": "doc",
-      "count": 6803
+      "count": 6948
     },
     {
       "name": "domains",
       "code": "domains",
-      "count": 1250
+      "count": 1535
     },
     {
       "name": "examples",
       "code": "examples",
-      "count": 159
+      "count": 162
     },
     {
       "name": "forensics",
       "code": "forensics",
-      "count": 100
+      "count": 102
     },
     {
       "name": "gaming",
       "code": "gaming",
-      "count": 861
+      "count": 877
     },
     {
       "name": "generation",
       "code": "generation",
-      "count": 847
+      "count": 919
     },
     {
       "name": "integration",
       "code": "integration",
-      "count": 5551
+      "count": 5790
     },
     {
       "name": "language",
       "code": "language",
-      "count": 149
+      "count": 160
     },
     {
       "name": "local-ai-infrastructure",
       "code": "local-ai-infrastructure",
-      "count": 87
+      "count": 96
     },
     {
       "name": "marketing",
       "code": "mkt",
-      "count": 2901
+      "count": 2958
     },
     {
       "name": "orchestration",
       "code": "orchestration",
-      "count": 2385
+      "count": 2473
     },
     {
       "name": "other",
       "code": "oth",
-      "count": 40125
+      "count": 25128
     },
     {
       "name": "performance",
       "code": "performance",
-      "count": 998
+      "count": 1029
     },
     {
       "name": "personal-development",
       "code": "personal-development",
-      "count": 471
+      "count": 501
     },
     {
       "name": "planning",
       "code": "planning",
-      "count": 1509
+      "count": 1546
     },
     {
       "name": "platform",
       "code": "platform",
-      "count": 500
+      "count": 560
     },
     {
       "name": "product",
       "code": "prd",
-      "count": 2649
+      "count": 2690
     },
     {
       "name": "productivity",
       "code": "pro",
-      "count": 3047
+      "count": 3063
     },
     {
       "name": "quality",
       "code": "quality",
-      "count": 3499
+      "count": 3682
     },
     {
       "name": "security",
       "code": "sec",
-      "count": 5195
+      "count": 5210
     },
     {
       "name": "skills",
       "code": "skills",
-      "count": 2364
+      "count": 2425
     },
     {
       "name": "system",
       "code": "system",
-      "count": 155
+      "count": 182
     },
     {
       "name": "testing",
       "code": "tst",
-      "count": 11274
+      "count": 11294
     },
     {
       "name": "travel",
@@ -205,17 +205,17 @@
     {
       "name": "war-room",
       "code": "war-room",
-      "count": 33
+      "count": 34
     },
     {
       "name": "workflow",
       "code": "workflow",
-      "count": 1809
+      "count": 2027
     },
     {
       "name": "writing",
       "code": "writing",
-      "count": 1034
+      "count": 1045
     }
   ],
   "unique_repo_count": 9794,
@@ -223,77 +223,77 @@
   "top_repositories": [
     {
       "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-      "count": 3300
+      "count": 3207
     },
     {
       "repo": "majiayu000/claude-skill-registry",
-      "count": 1918
+      "count": 1891
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "count": 1867
-    },
-    {
-      "repo": "a5c-ai/babysitter",
-      "count": 1469
+      "count": 1735
     },
     {
       "repo": "plurigrid/asi",
-      "count": 1395
+      "count": 1385
     },
     {
-      "repo": "aiskillstore/marketplace",
-      "count": 1048
-    },
-    {
-      "repo": "levnikolaevich/claude-code-skills",
-      "count": 1030
-    },
-    {
-      "repo": "melodic-software/claude-code-plugins",
-      "count": 964
+      "repo": "a5c-ai/babysitter",
+      "count": 1297
     },
     {
       "repo": "TheBushidoCollective/han",
       "count": 955
     },
     {
+      "repo": "levnikolaevich/claude-code-skills",
+      "count": 952
+    },
+    {
+      "repo": "aiskillstore/marketplace",
+      "count": 941
+    },
+    {
+      "repo": "melodic-software/claude-code-plugins",
+      "count": 924
+    },
+    {
       "repo": "boisenoise/skills-collections",
-      "count": 942
+      "count": 883
     }
   ],
   "featured_count": 100,
   "index_size_bytes": 162,
   "index_size_gzip_bytes": 174,
   "search_shard_count": 6,
-  "search_largest_shard_bytes": 8388620,
-  "search_largest_shard_gzip_bytes": 2529912,
-  "category_shard_count": 52,
-  "category_largest_part_bytes": 8388686,
-  "category_largest_part_gzip_bytes": 1736549,
-  "lite_index_count": 157782,
+  "search_largest_shard_bytes": 8388674,
+  "search_largest_shard_gzip_bytes": 2499066,
+  "category_shard_count": 51,
+  "category_largest_part_bytes": 8388738,
+  "category_largest_part_gzip_bytes": 1736720,
+  "lite_index_count": 157467,
   "lite_index_included_count": 5000,
   "lite_index_size_bytes": 3503306,
-  "lite_index_gzip_size_bytes": 687718,
+  "lite_index_gzip_size_bytes": 687792,
   "quality_index_size_bytes": 220,
   "quality_index_gzip_size_bytes": 213,
   "quality_shard_count": 6,
-  "quality_largest_shard_bytes": 8388643,
-  "quality_largest_shard_gzip_bytes": 1748641,
+  "quality_largest_shard_bytes": 8388672,
+  "quality_largest_shard_gzip_bytes": 1748986,
   "security_index_size_bytes": 223,
   "security_index_gzip_size_bytes": 215,
   "security_shard_count": 18,
-  "security_largest_shard_bytes": 8388708,
-  "security_largest_shard_gzip_bytes": 1638715,
+  "security_largest_shard_bytes": 8388700,
+  "security_largest_shard_gzip_bytes": 1638525,
   "ranking_index_size_bytes": 220,
   "ranking_index_gzip_size_bytes": 213,
   "ranking_shard_count": 5,
-  "ranking_largest_shard_bytes": 8388673,
-  "ranking_largest_shard_gzip_bytes": 2207756,
-  "largest_generated_file_bytes": 8388708,
+  "ranking_largest_shard_bytes": 8388708,
+  "ranking_largest_shard_gzip_bytes": 2207722,
+  "largest_generated_file_bytes": 8388738,
   "security_scan": {
-    "total": 222133,
-    "passed": 212028,
-    "failed": 10105
+    "total": 209585,
+    "passed": 200009,
+    "failed": 9576
   }
 }

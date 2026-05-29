@@ -1,0 +1,18 @@
+{
+  "name": "viv-analysis",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/viv-analysis/SKILL.md",
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "downloaded_at": "2026-01-22T03:25:20.186898Z",
+  "dir_name": "viv-analysis-vamseeachanta-digitalmodel",
+  "category": "domains",
+  "github_path": ".claude/skills/viv-analysis",
+  "github_branch": "main",
+  "author": "vamseeachanta",
+  "source_url": "https://github.com/vamseeachanta/digitalmodel/blob/main/.claude/skills/viv-analysis/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 Vamsee Achanta",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

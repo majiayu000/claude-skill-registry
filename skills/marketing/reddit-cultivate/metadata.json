@@ -1,0 +1,17 @@
+{
+  "name": "reddit-cultivate",
+  "repo": "PHY041/claude-skill-reddit",
+  "path": ".claude/skills/reddit-cultivate/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/PHY041/claude-skill-reddit",
+  "dir_name": "reddit-cultivate",
+  "downloaded_at": "2026-03-22T06:03:33.821059Z",
+  "author": "PHY041",
+  "source_url": "https://github.com/PHY041/claude-skill-reddit/blob/main/.claude/skills/reddit-cultivate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/PHY041/claude-skill-reddit/blob/main/.claude/skills/reddit-cultivate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

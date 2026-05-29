@@ -1,0 +1,17 @@
+{
+  "name": "project-conventions",
+  "repo": "BSchafer01/PanelNester",
+  "path": ".squad/templates/skills/project-conventions/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/BSchafer01/PanelNester",
+  "dir_name": "project-conventions-bschafer01-panelnester-2",
+  "downloaded_at": "2026-03-22T04:57:17.557883Z",
+  "author": "BSchafer01",
+  "source_url": "https://github.com/BSchafer01/PanelNester/blob/main/.squad/templates/skills/project-conventions/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BSchafer01/PanelNester/blob/main/.squad/templates/skills/project-conventions/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,1433 @@
+{
+  "classification_jsonl": "migration-artifacts/2026-05-29-current-other-low-confidence-batch-017/classification.jsonl",
+  "generated_at": "2026-05-29T06:02:07.158859+00:00",
+  "notes": [
+    "Review sample rows against SKILL.md excerpts before applying a migration plan.",
+    "Sampling is deterministic for a fixed seed and classification input."
+  ],
+  "policy": {
+    "min_confidence": 0.9,
+    "sample_size": 80,
+    "seed": "category-audit-v1",
+    "statuses": [
+      "ok"
+    ]
+  },
+  "samples": [
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "analysis",
+      "metadata_sha256": "99926fb236eaceb663166dbfd02a77b21c306cf62df33d9aa271bc148347d66a",
+      "name": "ultrathink_templates",
+      "path": "other/ultrathink-templates/SKILL.md",
+      "reason": "Same as id 2 and 3: analysis and decision templates. Fits 'analysis' category for analysis, synthesis, and evidence extraction workflows.",
+      "semantic_sources": {
+        "description": "body",
+        "name": "metadata"
+      },
+      "source_sha256": "bd70eebf97c7297107942c180d9d10741d97101484d4fb5404141225d240202c",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "domains",
+      "metadata_sha256": "590a5872400cc8f1e4de1d0d7850dea58af5eed2a080b907fbe1fa6d65a70903",
+      "name": "urdf-sdf-model",
+      "path": "other/urdf-sdf-model/SKILL.md",
+      "reason": "Same as id 4, this skill is an expert skill for robot model creation and validation in URDF and SDF formats. It is a domain-specific workflow for robotics simulation.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "ac483e761e62272b5b4fa0b914ab91c5d51662fdf23a02f6e490c355a425ad73",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "workflow",
+      "metadata_sha256": "405ee59ff01c6a8fa47d48afe08869f98aee5b7c6afc616dae258edcbf26d521",
+      "name": "upload-prepare",
+      "path": "other/upload-prepare-smoreg-bilanggen-a993b6e2/SKILL.md",
+      "reason": "Same skill as id 0, describing a repeatable preparation and validation workflow for YouTube uploads with multiple sequential steps and checklist generation.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "b157b988cbf8b35432a98ed6676feac83899ef02273dbba839c8e95fe2f2ddda",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "development",
+      "metadata_sha256": "d6de41b6188b6d96532f1706ed91684dadea34ec2e936e288c6891e7e0e280c9",
+      "name": "symfony:twig-components",
+      "path": "other/twig-components/SKILL.md",
+      "reason": "The skill is for using Symfony Twig components, which is a software development framework task involving coding and framework usage.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "92ecc2d48bd3be1a32df294944b328ccea8e06c32e86d862dcf533c737faf0f2",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "integration",
+      "metadata_sha256": "03652235993ff91b2698908e2c97fc74e14938c1320935f099b1648702fc8e0a",
+      "name": "using-brap-adapter",
+      "path": "other/using-brap-adapter/SKILL.md",
+      "reason": "The skill describes using the BRAP adapter/client for cross-chain quotes and swaps in Wayfinder Paths. This is a cross-system connector for interacting with external blockchain protocols and APIs, fitting integration's inclusion rule for cross-system connectors, service integrations, and platform bridges.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "e9ebb064b2e1d2e8fdc1ce29b21c6580ea730d33e9b556c8406cccfd0af5a479",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "product",
+      "metadata_sha256": "cc2c378d6cbb0d2cf170ef47815ed0addb0a451ce93d21b57b416c823bc94158",
+      "name": "velocity-tracker",
+      "path": "other/velocity-tracker-mehdic-bazinga/SKILL.md",
+      "reason": "The skill is explicitly designed to track development velocity, cycle times, and identify trends for PM (Product Manager) decision-making. It analyzes historical project data to provide quantitative metrics that inform product planning and iteration.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "9c09ba66ff4986a8e0d64342d9a9227bd8d93153560468553d9eb94bdd5216c0",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "integration",
+      "metadata_sha256": "a63e1c75bb7f4e2717e75820addc318db27415a15c9177aa4e27106f726bbc4e",
+      "name": "vercel-blob",
+      "path": "other/vercel-blob-dennislee928-smart-zone/SKILL.md",
+      "reason": "The skill integrates Vercel Blob for file uploads and CDN-delivered assets in Next.js. This is a platform integration for storage services.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "8535fc37c07da4de158e64c288e668447891b40618b0e98cb293fd24bfad3b76",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "development",
+      "metadata_sha256": "660d9c99e5370472f181628d7ef43d2c47d678c142645aee680b2ff4e83f6edd",
+      "name": "umbraco-user-profile-app",
+      "path": "other/umbraco-user-profile-app-umbraco-umbraco-cms-backoffi-2/SKILL.md",
+      "reason": "The skill is about implementing user profile apps in Umbraco backoffice, which involves coding, framework usage, and software development workflows.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "1bc7f190328b58a8819db05180d56df4f913b4c6e64c156bea4c967b448f26f0",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "workflow",
+      "metadata_sha256": "fefc4ef93bf564b08c482412dca3353101d04c117784931f1c36f3c05e20aceb",
+      "name": "worktree",
+      "path": "other/worktree/SKILL.md",
+      "reason": "The skill describes a repeatable process for creating and managing git worktrees for isolated parallel development, fitting the workflow category.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "metadata"
+      },
+      "source_sha256": "a1a707c57ee9607056ede9c6e93899de58e5349256d481e258ad6de06274c143",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "documents",
+      "metadata_sha256": "42968503a4de4fa1a9f2e70925904cdedb9ec69e7b5c084d846a7e3ceb3965e7",
+      "name": "Wheels Documentation Generator",
+      "path": "other/wheels-documentation-generator-wheels-dev-wheels/SKILL.md",
+      "reason": "Skill generates documentation comments, README files, and API documentation, which falls under document creation and conversion.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "c0369a57289f02c3a30dae134c2d11b979f74763f0b13d250cc45eb683a7c028",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "ai-ml",
+      "metadata_sha256": "3f733919e8d5b4c41db4547d9eae88a22af59bcb214ca06314cee41d3b976a32",
+      "name": "ui-detector",
+      "path": "other/ui-detector/SKILL.md",
+      "reason": "The skill manages a YOLO-based UI element detection system with model training, annotation, and inference workflows. This is machine learning project management for custom object detection models.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "e649180bf738e916455a46bbeb3087a5cf286ca5ef741b9dce57d9fbccddc69b",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "analysis",
+      "metadata_sha256": "d0ad54100458425c7ec6d99e7c0bba0a6cdc2a73073d2bb479368b8bfdc1c8ea",
+      "name": "using-unwind",
+      "path": "other/using-unwind/SKILL.md",
+      "reason": "Skill provides structured reverse engineering and codebase analysis workflows, fitting the analysis category's inclusion rule for analysis, synthesis, and evidence extraction workflows.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "3a891c89a8d4254776a9d9712b4a15815b1f67c2873e2d0981295758d0e9fc25",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "personal-development",
+      "metadata_sha256": "d149713c61c733e07bb6f1f1e8ba9c953ffea7cfdbd227b830316ebbf06c7d4f",
+      "name": "When Stuck - Problem-Solving Dispatch",
+      "path": "other/when-stuck-aia-11-hn-mib-mib-mockinterviewaib-2/SKILL.md",
+      "reason": "The skill is a meta-skill for problem-solving when stuck. It provides techniques for self-improvement and overcoming personal workflow blocks, which aligns with the personal-development category for coaching and self-improvement.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "3f5dd9d0dee4703d7f65e565a751d6a6336b9a99aeda5af15bbba8e9c6561c4a",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "domains",
+      "metadata_sha256": "fc70dc1b05b47f114bb9421aa4d68114bed33801df63a67239429daac0d5281b",
+      "name": "vasopressor-equivalents",
+      "path": "other/vasopressor-equivalents/SKILL.md",
+      "reason": "Skill calculates vasopressor equivalents for clinical research using MIMIC-IV, a domain-specific clinical informatics workflow.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "ffde2946ec71218004dda25333da45dbbf52f0e3ac9fc98aa8acf2348bc07aee",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "devops",
+      "metadata_sha256": "af6e73d68280732357d7a21382ccaa06bd36ca8bcdf8ca46eec6fe5a5dfefff8",
+      "name": "toolchains-platforms-deployment-netlify",
+      "path": "other/toolchains-platforms-deployment-netlify/SKILL.md",
+      "reason": "The skill describes Netlify platform deployment, CDN, CI/CD, serverless functions, and infrastructure automation, which aligns with the devops category for CI/CD, deployment, infrastructure, and operational automation.",
+      "semantic_sources": {
+        "description": "body",
+        "name": "metadata"
+      },
+      "source_sha256": "44f4f0e09650bcd856eb4db35e7390287696db4bf108c11dad80c2421b29374b",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.95,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "quality",
+      "metadata_sha256": "54a7064fb84d72fe8e0406af4989c031b1ba8948aa8d0974ac964d4a5bd849f3",
+      "name": "validate-docs",
+      "path": "other/validate-docs-jskjw157-fanpulse/SKILL.md",
+      "reason": "The skill validates consistency between planning documents (screen definitions, DB definitions, project planning, API contracts). This is a validation and review workflow, fitting the quality category's inclusion rule for 'Linting, review, validation, QA process, and quality gates'.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "9bec817e4b97a9cc9ee56cc210586fe13fab9f8a9d380ed38e15d94d21fc32bc",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "workflow",
+      "metadata_sha256": "14a5ef1d657e4be9d1d65fade7e3b101edb2304f7ec0c31b8d3ac7206b4d48e9",
+      "name": "upload-prepare",
+      "path": "other/upload-prepare-smoreg-bilanggen/SKILL.md",
+      "reason": "Same skill as id 0, describing a repeatable preparation and validation workflow for YouTube uploads with multiple sequential steps and checklist generation.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "b157b988cbf8b35432a98ed6676feac83899ef02273dbba839c8e95fe2f2ddda",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "quality",
+      "metadata_sha256": "cfa8e0bac1b5b10dff3a6572f68edf98ba8c470a0de709bede48582fac1acc41",
+      "name": "widgetkit-code-review",
+      "path": "other/widgetkit-code-review-existential-birds-beagle-2/SKILL.md",
+      "reason": "The skill reviews WidgetKit code against a checklist of best practices, performance guidelines, and correctness rules. This is a code review and validation workflow, which aligns with the 'quality' category's inclusion rule for linting, review, validation, and QA processes.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "113c927fb01c10fe0ee7d0bd6228dd5883ade5a0dc3b027be970f33bc9f40d15",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "quality",
+      "metadata_sha256": "63002970bb3d52282eff463aa27f6da7d4d76a9a2e2ec97898e2c61b54a3073e",
+      "name": "validate-idea",
+      "path": "other/validate-idea-taylorhuston-local-life-manager-3d832ec7/SKILL.md",
+      "reason": "Same skill as id 6, duplicate entry. Validates idea/project structure, documentation completeness, and readiness for next phase. This is a validation and quality assurance workflow for project readiness, which aligns with the quality category's inclusion rule for 'validation, QA process, and quality gates'.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "2d4df712600e8e78820a3b5204d2109726832853118aad3790151e0bd78d9c32",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "integration",
+      "metadata_sha256": "6e45baf0ccadf2aeff14f5f9cdfcb0ae0161f85d6bfbac4b6e8640685286d875",
+      "name": "wyze",
+      "path": "other/wyze-andrejones92-canifi-life-os/SKILL.md",
+      "reason": "The skill enables Claude to interact with Wyze smart home devices via API — controlling cameras, bulbs, plugs, and locks. This is a cross-system connector bridging an AI agent to an external smart home platform.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "287c45cf2383474cf872a89a421cba1788537cbe50a3c378b4a1999c7149ba56",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "data",
+      "metadata_sha256": "dc9e7c3c342d8a22f40b539a23dd44692c5aa161a0ce88052f3d436d4d8077a4",
+      "name": "koan-vector-migration",
+      "path": "other/vector-migration/SKILL.md",
+      "reason": "Same as id 4 - this is a duplicate skill with identical description and content about vector export/import and provider migration, fitting the 'data' category.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "2de2f13d68c66434fc4bbb802d5f555877ab59f0b74f5b076ce8b5a17ebea313",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "design",
+      "metadata_sha256": "9ff0172b4a32cfb674739891c05990aa27fb2e383107018d6a63e161d230694a",
+      "name": "zeigarnik-effect",
+      "path": "other/zeigarnik-effect-vjrivmon-handwriting-ocr/SKILL.md",
+      "reason": "Duplicate of id 6, same skill about applying the Zeigarnik effect to UI/UX design.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "1ec5c2853b9b658e5e008863112a1ad73c54ec4de9c885b1cd20c08642970409",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "documents",
+      "metadata_sha256": "43ead1900901c435fd1bd8f6cb3e5c593698d00ce7909d9c85a49e716b2ec5f2",
+      "name": "unpack",
+      "path": "other/unpack-bitwikiorg-skills-md/SKILL.md",
+      "reason": "The skill unpacks and formats XML contents of Office files (.docx, .pptx, .xlsx), which is document conversion and processing.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "aed90b88f79c6bfb2e1f66086911f101a9edb341e1ee8ffa9ca589dc2ead3311",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "skills",
+      "metadata_sha256": "bafdd5269560f2d41aa21b5587dd03adb7ee5575fc34bd5854245050accdb1e6",
+      "name": "Writing Hookify Rules",
+      "path": "other/writing-rules-dicklesworthstone-pi-agent-rust/SKILL.md",
+      "reason": "This skill is about writing Hookify rules, which is a skill authoring task. The description and content are identical to other Hookify rule-writing skills, fitting the 'skills' category.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "cf7a6a0b92092f44c6532bd9af7189748a9c3b4d044005418230b08cc99ac55c",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "writing",
+      "metadata_sha256": "14c88aaf4528bba62e165bf0c84b84d58d24dc776f21001a78e0b7e5aaad67ae",
+      "name": "write-speaker-notes",
+      "path": "other/write-speaker-notes/SKILL.md",
+      "reason": "The skill generates speaker notes/presentation scripts - this is a writing task focused on creating prose content for presentations.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "3987bd1267c61bfd5a481213a700d9b8d53a14c9a3680ff3738b3140439c0ad3",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "development",
+      "metadata_sha256": "4013b1757eaee41508dd198ea3b12278410aec40e56de940eb71c88118a45105",
+      "name": "umbraco-current-user-action",
+      "path": "other/umbraco-current-user-action/SKILL.md",
+      "reason": "The skill is about implementing current user actions in Umbraco backoffice using official docs, which involves coding, framework setup, and software development workflows.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "490cb9a957e589fc9ee482aa9e57a23fd53fa178385db74e2a8ddb0de5ef943f",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "integration",
+      "metadata_sha256": "e973c01f0c2813136b08665ebaf7248aefa19c3d3002e7050a0ad99fa60040bb",
+      "name": "watch-connectivity",
+      "path": "other/watch-connectivity-maduixa-glasstic/SKILL.md",
+      "reason": "Skill describes WatchConnectivity patterns for syncing data between iOS and watchOS devices, which is a cross-system connector workflow.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "cbc5f7814ffa666eb34c159ad31d663b16692afff8a38611368b4331983b90d4",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "orchestration",
+      "metadata_sha256": "4132bfe56c3a3ebd4910cef59cb80fa7c24402e9a7e799a1349b42e6a97c9513",
+      "name": "validation",
+      "path": "other/validation-boshu2-agentops-3/SKILL.md",
+      "reason": "Same orchestrator skill - coordinates multiple sub-skills via strict delegation contract with DAG execution.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "1a87f9feb955129dba70c6a36e992803c84603cabafd64ca59c182654d8e4507",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "documents",
+      "metadata_sha256": "45feb68df1936495fb513d3ed7537eab0fa49c066b19dbb28f9bb621b4fb89ac",
+      "name": "treatment-plans",
+      "path": "other/treatment-plans-k-dense-ai-scientific-agent-ski/SKILL.md",
+      "reason": "Identical to id 1 - generates structured medical treatment plans in LaTeX/PDF format with professional formatting and regulatory compliance. This is document creation and conversion work.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "05c0ef142635101c20953ba3fe234a2b9576e6f09c576540b8dc29dacf4cb07e",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "api",
+      "metadata_sha256": "6934638cb258d65f5415bb03292ada60d19d9f47c0179de30b6ade277179d275",
+      "name": "typespec-create-api-plugin",
+      "path": "other/typespec-create-api-plugin/SKILL.md",
+      "reason": "The skill generates TypeSpec API plugins with REST operations, authentication, and schema definitions for Microsoft 365 Copilot, which aligns with API design and endpoint work.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "5bba05b03eb49ee2fe0d8faaa0a25c979bd54ba0edde45b031ddc60cc9b05e8b",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "documents",
+      "metadata_sha256": "4d391be0a8d1333b82a35d8dfa09e89aa9ea400f4d7abcd47bedfa71d90f5b88",
+      "name": "write-rfc",
+      "path": "other/write-rfc-stacklok-toolhive-rfcs-2/SKILL.md",
+      "reason": "The skill is about writing RFCs (Request for Comments) which are structured design documents/proposals. This fits the 'documents' category for structured document production.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "2f7c52bbc5f05bc117c14892aa05ad235ff55ea37bc7d842ab1b4fa0375c419f",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "integration",
+      "metadata_sha256": "24c43137b3c771abb5cc366227a490e471be5f1411c8e439f79debba84747ee1",
+      "name": "using-avantis-adapter",
+      "path": "other/using-avantis-adapter/SKILL.md",
+      "reason": "Skill teaches how to use the Avantis adapter for an ERC-4626 vault, covering market reads, position snapshots, and deposit/redeem execution with an external DeFi protocol.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "61d0612bbfa402ef8f5b5591e432ff8bd405d1f23dd6642172bb6c6e82247653",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "domains",
+      "metadata_sha256": "c32ed1ae02aaf4b3a1c6ba5320e9ecce62133e17ca1d2c6e74de8a7cbe9637ed",
+      "name": "bio-variant-annotation",
+      "path": "other/variant-annotation/SKILL.md",
+      "reason": "Skill is domain-specific to bioinformatics, providing comprehensive variant annotation using tools like bcftools, VEP, SnpEff, and ANNOVAR.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "205bd21bc44894e78b37894f99251809fbd71e274c15556aba57307bfe29a9d1",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "development",
+      "metadata_sha256": "540a1180b1864322fbec36f6065a2585243ed40d00680405b2c080f032b8177f",
+      "name": "Useful Commits",
+      "path": "other/useful-commits-aaronbassett-paneful/SKILL.md",
+      "reason": "Skill guides Git commit message formatting following Conventional Commits specification, which is a development workflow.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "749daa97652a661db68c408c2b67ac237421d93e9c72572f63c0e97bcc597f66",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "workflow",
+      "metadata_sha256": "a4bd21d7a02a8a1ef7d8280c1d1f6a93d16093ec2582762f98fd5628fc1f325c",
+      "name": "web-monitor-bot",
+      "path": "other/web-monitor-bot-tianqiye-tockstalk-bot-2/SKILL.md",
+      "reason": "The skill creates automated website monitoring systems with cron scheduling, analytics dashboards, and notifications. This is a repeatable process automation with defined procedures (setup, configure, monitor, alert), fitting the workflow category for SOPs and task flows.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "7fb6ef301270d40fb416f5df8d108d3f5af2c951cf5016d38b1a21551d685c14",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "workflow",
+      "metadata_sha256": "70a60333d4d9017c246ebf23677349bd30675e48effa3082cb875b3e21cdc331",
+      "name": "web-monitor-bot",
+      "path": "other/web-monitor-bot-tianqiye-tockstalk-bot/SKILL.md",
+      "reason": "Duplicate of id 4 — same web-monitor-bot skill with identical description and purpose for automated website monitoring with cron scheduling and analytics.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "7fb6ef301270d40fb416f5df8d108d3f5af2c951cf5016d38b1a21551d685c14",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "marketing",
+      "metadata_sha256": "bcc5eda107c54bbb367a7adf8af6f440a70549049a1c138d65d0dff98e44624f",
+      "name": "viral-video-platform-algorithms",
+      "path": "other/viral-video-platform-algorithms-josiahsiegel-claude-plugin-market-3/SKILL.md",
+      "reason": "Skill focuses on platform algorithm optimization, engagement signals, hashtag strategy, posting schedules, and cross-platform distribution—marketing growth and audience-building workflows.",
+      "semantic_sources": {
+        "description": "body",
+        "name": "metadata"
+      },
+      "source_sha256": "3451137ed26b8516c8c99b84f111c3fc0d8fdc60e3807039f2edfa97cbea3bb3",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "integration",
+      "metadata_sha256": "9fac7d0f44567919777364ac9480d4b2d644343c27aea1bd75517124e5855970",
+      "name": "zhihu-search-api-skill",
+      "path": "other/zhihu-search-api-skill-browser-act-skills/SKILL.md",
+      "reason": "The skill extracts structured article data from Zhihu via the BrowserAct API, connecting to an external platform for data extraction. This is a cross-system connector workflow for integrating with the Zhihu social platform.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "c7beeb61b51febfec1ccfe6f0fd284735742f2212ae8f75e908c1e431245aeed",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "generation",
+      "metadata_sha256": "b572a73b00eaba8f1f4fc746993a594fd24f92adf3a9117571ea687932a706a8",
+      "name": "walkthrough-video",
+      "path": "other/walkthrough-video/SKILL.md",
+      "reason": "Generates professional walkthrough videos from screenshots using Remotion, producing MP4 videos with transitions, zoom effects, and text overlays. This is media/asset generation.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "33f243eacd9d225f06d7496bb56596b3b83c60ba71add3c4a10b4fd01237eca4",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.95,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "productivity",
+      "metadata_sha256": "6b1877796852adc8027e21d8eceeacc52e83940d76fdc7e97cd5d95b4e92441b",
+      "name": "tracking-time-with-rize",
+      "path": "other/tracking-time-with-rize-asafdafna-rize-io-mcp-2/SKILL.md",
+      "reason": "The skill is for tracking time, managing clients/projects/tasks, and analyzing productivity using Rize.io. This is a personal/team workflow automation and task management tool, fitting the productivity category.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "e8509b5bc94450a46c95189ca87b41d5cc00be824b02d5bac88d552e812e7b03",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "marketing",
+      "metadata_sha256": "5289c1d5d5438f6bd8c619a2bd00ec6c2f4c509b7365b84b65b6610387efcc8a",
+      "name": "xiaohongshu-recruiter",
+      "path": "other/xiaohongshu-recruiter-iofficeai-aionui/SKILL.md",
+      "reason": "The skill is specifically for creating and publishing recruitment posts on Xiaohongshu (a social media platform), which involves campaign content, social media posting, and audience engagement—core marketing activities.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "ebef65b36318d23fd22aadec4e23a7b08b59f9b712b01ed8043aa4f213cfd9eb",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "design",
+      "metadata_sha256": "c6e5473c6fe1e4aba4a91564fe3d04e05ad123af2971a2e3ebed38f10e2e01be",
+      "name": "web-wave-designer",
+      "path": "other/web-wave-designer/SKILL.md",
+      "reason": "Skill creates visual effects (SVG filters, CSS animations) for web UI—visual design and frontend styling work.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "source_sha256": "fa63a39c6f36ec205e5c244d3c2bcb89f35dabe34a7ed614b3cff078219b40c4",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "data",
+      "metadata_sha256": "2ed235ff8f5a27f463ab438771dfe0ca6e2e3b1ed46d6433dbc9bba15bd7525e",
+      "name": "twscrape",
+      "path": "other/twscrape-aiskillstore-marketplace-3/SKILL.md",
+      "reason": "The skill is a Python library for scraping Twitter/X data using GraphQL API, which is data extraction and collection work.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "e8042662ac224a7832425c2c7079de8e860a8fb22876b578630c889f8e67e513",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "design",
+      "metadata_sha256": "e5ce16792f4e5569c7a16f60ae43fddabddd018281c8ee541ede10eac7661782",
+      "name": "weber-fechner-law",
+      "path": "other/weber-fechner-law-vjrivmon-handwriting-ocr/SKILL.md",
+      "reason": "Same as id 1: the skill is a design principle (Weber-Fechner law) for UI/UX applications, including pricing, progress indicators, and visual design. It matches the design category's inclusion rule for UI, UX, visual design, and interaction design.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "f581c3e7c7a1fb6903778838d9d532f7db2bb893f49fdf35aa270ce8e7661941",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "documents",
+      "metadata_sha256": "97fbceb18006fcf636aa1a649892defc5d37ab71b9434e9816b50dd2d2fe1668",
+      "name": "unpack",
+      "path": "other/unpack/SKILL.md",
+      "reason": "The skill unpacks and formats XML contents of Office files (.docx, .pptx, .xlsx), which is document conversion and processing.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "aed90b88f79c6bfb2e1f66086911f101a9edb341e1ee8ffa9ca589dc2ead3311",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "documents",
+      "metadata_sha256": "fc3a577236f05c865995b6f893616d7b32b4a70f44e8805ea248adde210b1622",
+      "name": "user-file-ops",
+      "path": "other/user-file-ops-activer007-ordinary-claude-skil-c97e4ada/SKILL.md",
+      "reason": "Identical to id 3. The skill performs simple operations on text files including summarization and basic statistics. This is document processing and summarization, fitting the 'documents' category.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "14b5e479daa0e2fad6999b0d7eab75c67ad86c57084d739d951326a0251bf79a",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "agent",
+      "metadata_sha256": "8f60f09f5bf59c7984cbd1e3dc577af40963f817c0711d508922f9d2a65a5e5a",
+      "name": "vibe-agents",
+      "path": "other/vibe-agents/SKILL.md",
+      "reason": "Same skill generating AGENTS.md and AI configuration files for agent instructions and AI assistant setup. Fits 'agent' category for agent instructions and runtime helpers.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "553d29e637d447cb3a204c64c0a7394caf273fe65286f50efe0fbe74f3419eae",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "gaming",
+      "metadata_sha256": "cc415947840ce24e3894fdf417925f93f341cd9e2a5204330e7e5299864e622e",
+      "name": "vr-ar",
+      "path": "other/vr-ar-congdon1207-agents-md-c4923ff9/SKILL.md",
+      "reason": "VR/AR development principles for immersive experiences, game platforms, and interaction design fit the gaming category's inclusion of game design and gameplay systems.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "59ddbdecc4fa17e74c4747f5f02bd69edb8bffcd1cdc2866dd6a053e19bc139e",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "platform",
+      "metadata_sha256": "f15ca56a1b24ccfa1dd8503f3d302a9058fe0be4a7d7d2ce2689d06e1acb91d0",
+      "name": "toprank-upgrade",
+      "path": "other/toprank-upgrade-skill/SKILL.md",
+      "reason": "The skill upgrades a plugin by updating a marketplace repo, installing to a plugin cache, and updating installed_plugins.json. This is platform-specific operations and platform administration.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "1a409174ce543ba36e5b9ed5070b6e4a805d5c8f125532953ef5ebfd4f753f55",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "productivity",
+      "metadata_sha256": "58b2824c9a1a7c4504303baa5f9576bb9da92dca5d4e91b33345f2d33d5a1cdc",
+      "name": "whats-next",
+      "path": "other/whats-next/SKILL.md",
+      "reason": "Skill helps decide what to work on next by checking learning plans, journals, and project status - a personal task prioritization and workflow aid.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "f276bc6b2348f4b3022c5290fac66995e94d8907b2b806a66a58ec8aace21472",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "devops",
+      "metadata_sha256": "2c4b3e09f78a93f09704d720eb5742c81a43e8358ae9f4cd36995a5e6f5f966d",
+      "name": "update-buttercut",
+      "path": "other/update-buttercut/SKILL.md",
+      "reason": "The skill automatically downloads and installs the latest version from GitHub while preserving libraries, which is operational automation for software deployment.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "aa6f0a3f9424aef8563ef35071b10e8c0c8eb89a93be66aa92009c2d50033263",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "workflow",
+      "metadata_sha256": "5195f3a7a1cd2c4f0d4b135c5cb636a98d424b15ad021172b0a291fd4f87337e",
+      "name": "web-monitor-bot",
+      "path": "other/web-monitor-bot-tianqiye-tockstalk-bot-d17de38c/SKILL.md",
+      "reason": "Duplicate of id 4 — same web-monitor-bot skill with identical description and purpose for automated website monitoring with cron scheduling and analytics.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "7fb6ef301270d40fb416f5df8d108d3f5af2c951cf5016d38b1a21551d685c14",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.92,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "workflow",
+      "metadata_sha256": "61411b5ac9ceb69983f751ea10fb4c01a49f4e8de1935d22605b02ca6b2bc9e4",
+      "name": "track-management",
+      "path": "other/track-management-wshobson-agents/SKILL.md",
+      "reason": "Same skill content as id 0; managing Conductor tracks as repeatable process units with lifecycle operations fits workflow category.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "cd33d9687f5903283b167950261f559946d891399197a5edc9fa5e18282e8bac",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "analysis",
+      "metadata_sha256": "4fb1537c010262056eb94fc8079fe4a3b3df9bdca7cf37873cde2624e9e6300a",
+      "name": "value-stream-mapping",
+      "path": "other/value-stream-mapping-prorise-cool-claude-code-multi-ag-259775c3/SKILL.md",
+      "reason": "Value stream mapping is a Lean analysis methodology for identifying waste and optimization opportunities through comparative study and synthesis of process flows.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "8c96735d1ba8d20225f673f3e29103059a56c8fcd5f0ef2867d83104706fbf7c",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "planning",
+      "metadata_sha256": "58287ef22aeccce27943c818e0d2ab07258078f8912a9625383151cb005c8343",
+      "name": "update-implementation-plan",
+      "path": "other/update-implementation-plan/SKILL.md",
+      "reason": "Updating an implementation plan with new requirements, features, refactoring, or upgrades is a planning workflow involving roadmaps and task breakdown.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "c17678844cb22b72e55b3f6ee093f59f731cc7bca8962b4fa46098f2ffc50351",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "analysis",
+      "metadata_sha256": "ad90e5ced83753a364bb9e497b84082a3a71d87eebdc2622ea42e3a783a1db24",
+      "name": "workflow-optimizer",
+      "path": "other/workflow-optimizer/SKILL.md",
+      "reason": "The skill analyzes workflow patterns using workflow intelligence API, producing prioritized optimization recommendations with quantified impact. This is analysis and synthesis fitting the analysis category's inclusion rule for 'analysis, synthesis, inspection, reporting, and evidence extraction workflows'.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "metadata"
+      },
+      "source_sha256": "68317be8383ad10ef57ca5d30432f40a99daa0e3fdca7b6170714b4a6f11656a",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "integration",
+      "metadata_sha256": "7b49dc631567af266045d3c1070eeb99aff5d11daf996c2df753f9dbd875a018",
+      "name": "using-ccxt-adapter",
+      "path": "other/using-ccxt-adapter/SKILL.md",
+      "reason": "The skill describes using the CCXT adapter as a multi-exchange factory for CEX trading. This is a cross-system connector for interacting with multiple external exchange APIs, fitting integration's inclusion rule for cross-system connectors, service integrations, and platform bridges.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "b028ce9839a627f7b314d1d929d67430277759734647f2f99c081987a2f82c73",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "domains",
+      "metadata_sha256": "0befc1a25df7af02f4024ae8d69d1933d8d9b32f2ff475ae0c7a12c44f514936",
+      "name": "urdf-sdf-model",
+      "path": "other/urdf-sdf-model-a5c-ai-babysitter/SKILL.md",
+      "reason": "The skill is an expert skill for robot model creation and validation in URDF and SDF formats, including generating URDF files, creating Xacro macros, calculating inertial properties, configuring joint types, and validating models. This is a domain-specific workflow for robotics simulation.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "ac483e761e62272b5b4fa0b914ab91c5d51662fdf23a02f6e490c355a425ad73",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "workflow",
+      "metadata_sha256": "198fcb3e4ac2c9ae4d27518a060b211c45a8452e3877133a648b7ad59b2e87f4",
+      "name": "dagu-webui",
+      "path": "other/webui/SKILL.md",
+      "reason": "The skill is a guide for using the Dagu Web UI to monitor workflow executions, manage DAGs, and troubleshoot workflow issues. This directly aligns with the 'workflow' category for repeatable process automation and workflow design.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "07d2632ec469d4f688593e2fc016735ea28ab728baf124b6a8b31c8a45f1b203",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "documents",
+      "metadata_sha256": "3b048744d3832ba555a49ac96ae800f48633820a7d056a3c40604473a0d431d3",
+      "name": "workthrough",
+      "path": "other/workthrough/SKILL.md",
+      "reason": "Identical to id 0 - generates structured workthrough documentation for development work. The skill is about creating comprehensive documentation in a specific format.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "26da738525c2cc8bfaf3eed07940b0a2cd809dc7e3b0f8039505740eb6deb371",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "development",
+      "metadata_sha256": "3a2539724136315ccd23976edbc72efe2b990cc129e415fbb3edde6353d260fa",
+      "name": "ucp-discount",
+      "path": "other/ucp-discount/SKILL.md",
+      "reason": "The skill provides implementation guidance for a UCP Discount extension — discount code application, validation, allocation tracking, and error handling. This is software development work involving schema design, error codes, and checkout logic implementation.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "c92688ad11c36d7827fb09896fd2fbe9064c3079d381c1c12ddb97907b8c0bdf",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.92,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "development",
+      "metadata_sha256": "b1f6449b8f0f3f79761cda9ddaa24f6ce816c3c66be4bea04fee067d689bf347",
+      "name": "compact-core:typescript-integration",
+      "path": "other/typescript-integration/SKILL.md",
+      "reason": "The skill is about implementing witness functions in TypeScript, mapping types, deploying contracts, and building DApps with a JavaScript SDK. This is clearly software development work involving coding, frameworks, and SDK usage.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "83ccd8a6d85f39f5464331758e61d991d3d54d962f901ce2042cf3b611bed979",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "workflow",
+      "metadata_sha256": "6134b39816be68642fdde8ddac8d2204d3a1233ed154a2353f9f36e14b79c13b",
+      "name": "worktree-workflow",
+      "path": "other/worktree-workflow-takemo101-compose-workflow/SKILL.md",
+      "reason": "The skill defines a repeatable process for using git worktrees in parallel development, which is a workflow automation pattern.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "3bc6e06558007219c5693eb14cf7c308fc02804e76443a94feac00898bcfb141",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "development",
+      "metadata_sha256": "f3435e20b908234bd39b53edd8eedb771cc6a1321109e5728506d12a89ebc470",
+      "name": "transactional-ui-updates",
+      "path": "other/transactional-ui-updates-harborgrid-justin-lexiflow-premium/SKILL.md",
+      "reason": "Same skill content as id 0 - implementing transactional UI updates with rollback semantics in React 18 is a software development workflow.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "f36c38f1e0d90034daac52f70f98fdad63ec41cef20d4b586314a4938756ccc7",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "development",
+      "metadata_sha256": "77696a010f042682c1522014a16f2f4e0b304c8b22150741b319bf73f5049233",
+      "name": "use-dom",
+      "path": "other/use-dom/SKILL.md",
+      "reason": "Same as id 0: The skill describes using Expo DOM components to run web code in a webview on native and as-is on web, which is a software development workflow for migrating web code to native incrementally.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "7041bb26db02e24c45eb6c4c4879138a0f52786dd928eefd66c90a35b0e3197d",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "documents",
+      "metadata_sha256": "7a9c63c6dc9d733bbe356ad43c1fafcffc43ddff3b7c4f2d39ae0f8c40c57856",
+      "name": "web-to-markdown",
+      "path": "other/web-to-markdown-bear2u-my-skills-2/SKILL.md",
+      "reason": "Skill converts webpages to Markdown format for archiving or organization, which is document conversion and creation.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "e8690071c35000f07339d8ce8004a86f6f77135b8ba289ee1dd03eeaed146d96",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "ai-ml",
+      "metadata_sha256": "7b509c675f503799a21e3419a658e734ca1666d4595bca1374033e2ffb41f696",
+      "name": "unified-memory",
+      "path": "other/unified-memory-a5c-ai-babysitter-2/SKILL.md",
+      "reason": "The skill is for CUDA Unified Memory and memory prefetching optimization, which is GPU memory management for machine learning workloads. This fits the ai-ml category for machine learning, model training, inference infrastructure, datasets, and ML experiments.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "5ad9b2a7977dbb675027ca35762427f01acd630b9fce835adb8b98b2a5dfa7f5",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "quality",
+      "metadata_sha256": "3b90371c9d9899dbacad75d9d77c1eeb12c2397162577fccd441f4c15ec1fb9d",
+      "name": "agnosticv:validator",
+      "path": "other/validator/SKILL.md",
+      "reason": "The skill validates AgnosticV catalog configurations against best practices and deployment requirements, checking UUID format, YAML syntax, dependencies, and compliance - a clear validation/QA workflow.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "6f75d3d27062fb79fe4869303883e66b11f38ff485e31346eae317faaab51346",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "domains",
+      "metadata_sha256": "3110a3802b17e803fb13911b0d56f9b03501e5e5dbef46f44cabc38ba6f3203f",
+      "name": "toshiba",
+      "path": "other/toshiba-cantara-lib-electronic-compo-3/SKILL.md",
+      "reason": "The skill provides domain-specific knowledge about Toshiba semiconductor MPN encoding patterns, package codes, and handler guidance for electronic components. This is specialized subject-matter knowledge for the electronics/hardware domain, fitting the 'domains' category which covers industry or subject-matter research and domain-specific workflows.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "63a2cca2ed6c4efb2544800969ec4b3953fc4c4ea670bb1dd828a614fc67589c",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "product",
+      "metadata_sha256": "1bede2a183b3cc1745c7b47bcb539e447f125e2ac57afb3759492c0bf2ff6c85",
+      "name": "usecase-description",
+      "path": "other/usecase-description/SKILL.md",
+      "reason": "Skill expands user stories into detailed use case descriptions with business rules, which is core product management work.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "c9fd02f38258283559cb6f602538d5caa02c94161997bba4182a32575e0352e6",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "development",
+      "metadata_sha256": "4aa3deb90a562f3bbfc158af86280d15e3c41d3dd401ab0c95093f77822f459a",
+      "name": "next-upgrade",
+      "path": "other/upgrade/SKILL.md",
+      "reason": "Next.js version migration using codemods and dependency updates is a software development workflow involving framework upgrades.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "b974a476704cad887b8feccf33179c674ad0bdf29d550a3fb9279c0864b712ee",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "documents",
+      "metadata_sha256": "c76a5bbf8f58319e7acb2bf084d742260ef261b77d8ceb196e4d83eeab787195",
+      "name": "update-changelog",
+      "path": "other/update-changelog-dicklesworthstone-pi-agent-rust/SKILL.md",
+      "reason": "The skill is about updating a changelog file (CHANGELOG.md), which is a document creation and maintenance task. It involves reading existing documents, analyzing changes, and writing updates to a structured document format.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "68f67516baaa881bb304ed29d1e407f6e88e90952f0126f9fa6d9941cad80522",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "creative",
+      "metadata_sha256": "4f6c6c567dd4733fbcefa58dfddc13c7d223824061413a31a4fe56993f6795f6",
+      "name": "walking-through-the-grove",
+      "path": "other/walking-through-the-grove-autumnsgrove-grovescout/SKILL.md",
+      "reason": "Duplicate of id 3 - same skill, same naming ritual for Grove ecosystem. Creative direction and ideation workflow.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "fbe20eaf52789640faef8b9cc3158a77dd458695ecfadaa0b34f154ab0b15285",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "marketing",
+      "metadata_sha256": "d0f7de6492d321ae5e957c1301d6e3299a466e3a8ff6cd8dee9363f9abeba97e",
+      "name": "x-announcement",
+      "path": "other/x-announcement-sjdjdiejdrirhdkjej-claude-code-conducto/SKILL.md",
+      "reason": "Same skill as id 6 — automates posting release announcements to X (Twitter) with automated GitHub link replies. Social media campaign/content distribution workflow.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "metadata"
+      },
+      "source_sha256": "b5bec6cd181a5612b80aebdb24334bdef3ee0160c2af4090d2ed5e7fecb6f9be",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "development",
+      "metadata_sha256": "d65d2f02452ad16322fdb06bab88ec5b4fb1bc1d9ce783d939c1f15a8c16d8f1",
+      "name": "write-tenant-isolated-queries",
+      "path": "other/write-tenant-isolated-queries/SKILL.md",
+      "reason": "The skill transforms database queries to include tenant isolation - this is a software development task involving code transformation and database query patterns.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "fc4337a930d0e32b0567039aed9209c1df5672f0f9b7bf1daeaeb6350305e998",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "design",
+      "metadata_sha256": "e01b4eb699f93283725fd6f03d5a8aac44e06b2979424df525ccd97c6f5e99dd",
+      "name": "yfiles-nodestyle-basic",
+      "path": "other/yfiles-nodestyle-basic/SKILL.md",
+      "reason": "The skill creates basic custom node styles by extending NodeStyleBase and implementing createVisual/updateVisual methods. This is UI/UX and visual design work for custom node visualizations.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "8ba73135797bcb95ca487eed63cca01a17226dc15a3309d3daa0c2428b969ccd",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "marketing",
+      "metadata_sha256": "acd06cd893f012fafdb90bc3b19d46cd6e098363fb119a46fd7b099f673a2a6c",
+      "name": "x-article-converter",
+      "path": "other/x-article-converter/SKILL.md",
+      "reason": "Skill converts blog posts/newsletters into X/Twitter content with handles and posting strategy for promotion and audience engagement.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "4da057e65cf281612967cfac4fccffb7a358d129b79de15887f52aef4202f6f7",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "domains",
+      "metadata_sha256": "f90e448f556ee0641dec1648b9bdbce000f8346c8ff44cb030f2e4413c179ef6",
+      "name": "toshiba",
+      "path": "other/toshiba-cantara-lib-electronic-compo-2/SKILL.md",
+      "reason": "Domain-specific knowledge about Toshiba Semiconductor MPN encoding patterns, package codes, and component families (MOSFETs, optocouplers, transistors, motor drivers). This is specialized electronics/hardware subject-matter expertise.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "63a2cca2ed6c4efb2544800969ec4b3953fc4c4ea670bb1dd828a614fc67589c",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "analysis",
+      "metadata_sha256": "507605855afbefd4da31dada7ecde1a34b94d765498f960ee1a818d7c9b4b1f6",
+      "name": "value-stream-mapping",
+      "path": "other/value-stream-mapping-prorise-cool-claude-code-multi-ag-2/SKILL.md",
+      "reason": "Value stream mapping is a Lean analysis methodology for identifying waste and optimization opportunities through comparative study and synthesis of process flows.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "8c96735d1ba8d20225f673f3e29103059a56c8fcd5f0ef2867d83104706fbf7c",
+      "status": "ok",
+      "workset": "low_confidence"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "evidence": [],
+      "llm_category": "gaming",
+      "metadata_sha256": "e84996d85b5432d01fc749de5df288b4b1ff5de37888b13782e372bd94f76e93",
+      "name": "using-simulation-tactics",
+      "path": "other/using-simulation-tactics/SKILL.md",
+      "reason": "The skill is explicitly about simulation tactics for game development, routing to 10 core simulation skills for game systems. It's a meta-skill for game simulation architecture and decision-making.",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "source_sha256": "ebbc013e334690628c2d29da1479720a408803a78b9f31c6538d3b7d41e63942",
+      "status": "ok",
+      "workset": "low_confidence"
+    }
+  ],
+  "schema_version": 1,
+  "summary": {
+    "candidate_count": 1096,
+    "classification_row_count": 3328,
+    "matched_input_count": 3328,
+    "missing_input_count": 0,
+    "sample_count": 80,
+    "status_counts": {
+      "ok": 3328
+    },
+    "target_category_counts": {
+      "agent": 26,
+      "ai-llm": 75,
+      "ai-ml": 69,
+      "analysis": 189,
+      "api": 26,
+      "bash": 7,
+      "business": 27,
+      "communication": 15,
+      "context-management": 18,
+      "creative": 27,
+      "data": 107,
+      "design": 89,
+      "development": 441,
+      "devops": 66,
+      "documents": 214,
+      "domains": 223,
+      "examples": 16,
+      "forensics": 13,
+      "gaming": 16,
+      "generation": 217,
+      "integration": 380,
+      "language": 15,
+      "local-ai-infrastructure": 9,
+      "marketing": 83,
+      "orchestration": 61,
+      "other": 30,
+      "performance": 10,
+      "personal-development": 33,
+      "planning": 49,
+      "platform": 68,
+      "product": 49,
+      "productivity": 34,
+      "quality": 191,
+      "security": 22,
+      "skills": 28,
+      "system": 45,
+      "testing": 29,
+      "workflow": 285,
+      "writing": 26
+    },
+    "workset_row_count": 3328
+  },
+  "workset_jsonl": "migration-artifacts/2026-05-29-current-other-low-confidence-batch-017/input.jsonl"
+}

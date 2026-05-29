@@ -1,0 +1,18 @@
+{
+  "name": "series-analyzer",
+  "description": "Analyze aired series, including information retrieval, scene-by-scene analysis, five elements analysis, and web search. Suitable for deep analysis of series creation techniques, learning plot design",
+  "repo": "VanGongwanxiaowan/screen-creative-skills",
+  "path": "category/series-analysis/series-analyzer",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/VanGongwanxiaowan/screen-creative-skills",
+  "dir_name": "series-analyzer-vangongwanxiaowan-screen-creative-skil-2",
+  "author": "VanGongwanxiaowan",
+  "source_url": "https://github.com/VanGongwanxiaowan/screen-creative-skills/blob/main/category/series-analysis/series-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 宫凡",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

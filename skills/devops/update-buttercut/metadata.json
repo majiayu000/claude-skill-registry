@@ -1,0 +1,16 @@
+{
+  "name": "update-buttercut",
+  "repo": "barefootford/buttercut",
+  "path": ".claude/skills/update-buttercut/SKILL.md",
+  "category": "devops",
+  "source": "github.com/barefootford/buttercut",
+  "dir_name": "update-buttercut",
+  "downloaded_at": "2026-02-15T06:30:59.085687Z",
+  "author": "barefootford",
+  "source_url": "https://github.com/barefootford/buttercut/blob/main/.claude/skills/update-buttercut/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Andrew Ford",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

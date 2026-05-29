@@ -1,0 +1,18 @@
+{
+  "name": "orcaflex-extreme-analysis",
+  "description": "Extract extreme response values with linked statistics from OrcaFlex simulations. Use for design load identification, max/min extraction with associated values, and extreme event characterization.",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/orcaflex-extreme-analysis",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "dir_name": "orcaflex-extreme-analysis-vamseeachanta-digitalmodel-2",
+  "author": "vamseeachanta",
+  "source_url": "https://github.com/vamseeachanta/digitalmodel/blob/main/.claude/skills/orcaflex-extreme-analysis/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 Vamsee Achanta",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

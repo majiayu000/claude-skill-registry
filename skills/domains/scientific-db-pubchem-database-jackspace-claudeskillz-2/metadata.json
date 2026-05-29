@@ -1,0 +1,18 @@
+{
+  "name": "scientific-db-pubchem-database",
+  "description": "Query PubChem via PUG-REST API/PubChemPy (110M+ compounds). Search by name/CID/SMILES, retrieve properties, similarity/substructure searches, bioactivity, for cheminformatics.",
+  "repo": "jackspace/ClaudeSkillz",
+  "path": "skills/scientific-db-pubchem-database",
+  "category": "domains",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jackspace/ClaudeSkillz",
+  "dir_name": "scientific-db-pubchem-database-jackspace-claudeskillz-2",
+  "author": "jackspace",
+  "source_url": "https://github.com/jackspace/ClaudeSkillz/blob/main/skills/scientific-db-pubchem-database/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ClaudeSkillz Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

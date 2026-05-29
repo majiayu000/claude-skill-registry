@@ -1,0 +1,48 @@
+{
+  "applied_at": "2026-05-29T06:06:54.702593+00:00",
+  "classification_jsonl": "migration-artifacts/2026-05-29-current-other-low-confidence-batch-017/classification.jsonl",
+  "generated_at": "2026-05-29T06:06:54.676162+00:00",
+  "move_examples": [],
+  "moves_omitted": {
+    "count": 0,
+    "reason": "full list omitted to keep audit artifact reviewable"
+  },
+  "notes": [
+    "Default mode is review-only and does not modify files.",
+    "Only --apply moves directories and updates metadata.json.",
+    "Blocked moves are never applied automatically."
+  ],
+  "policy": {
+    "allow_target_other": false,
+    "apply_mode": "apply",
+    "from_categories": [
+      "other"
+    ],
+    "limit": null,
+    "min_confidence": 0.9,
+    "movable_only": true,
+    "target_statuses": [
+      "active"
+    ],
+    "to_categories": []
+  },
+  "schema_version": 1,
+  "skills_dir": ".",
+  "summary": {
+    "blocked_count": 0,
+    "classification_row_count": 3328,
+    "classification_status_counts": {
+      "ok": 3328
+    },
+    "movable_count": 0,
+    "operation_counts": {},
+    "planned_move_count": 0,
+    "reject_reasons": {
+      "confidence below threshold": 2232,
+      "source directory missing": 1019,
+      "target category already contains a skill with the same stable key": 77
+    },
+    "source_category_counts": {},
+    "target_category_counts": {}
+  }
+}

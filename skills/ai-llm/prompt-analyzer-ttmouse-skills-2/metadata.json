@@ -1,0 +1,18 @@
+{
+  "name": "prompt-analyzer",
+  "description": "提示词分析与洞察 - 查看Prompt详情、对比差异、推荐相似提示词、元素库统计",
+  "repo": "ttmouse/skills",
+  "path": "prompt-analyzer",
+  "category": "ai-llm",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ttmouse/skills",
+  "dir_name": "prompt-analyzer-ttmouse-skills-2",
+  "author": "ttmouse",
+  "source_url": "https://github.com/ttmouse/skills/blob/main/prompt-analyzer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ttmouse/skills/blob/main/prompt-analyzer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

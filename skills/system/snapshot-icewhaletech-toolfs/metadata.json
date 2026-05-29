@@ -1,0 +1,16 @@
+{
+  "name": "snapshot",
+  "repo": "IceWhaleTech/ToolFS",
+  "path": "skills/snapshot/SKILL.md",
+  "category": "system",
+  "source": "github.com/IceWhaleTech/ToolFS",
+  "dir_name": "snapshot-icewhaletech-toolfs",
+  "downloaded_at": "2026-02-15T05:14:18.237180Z",
+  "author": "IceWhaleTech",
+  "source_url": "https://github.com/IceWhaleTech/ToolFS/blob/main/skills/snapshot/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/IceWhaleTech/ToolFS/blob/main/skills/snapshot/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

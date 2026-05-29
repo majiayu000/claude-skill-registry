@@ -1,0 +1,17 @@
+{
+  "name": "up-to-date",
+  "repo": "LeonMelamud/claude-code-security-review",
+  "path": ".github/skills/up-to-date/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/LeonMelamud/claude-code-security-review",
+  "dir_name": "up-to-date-leonmelamud-claude-code-security",
+  "downloaded_at": "2026-03-22T05:41:56.281101Z",
+  "author": "LeonMelamud",
+  "source_url": "https://github.com/LeonMelamud/claude-code-security-review/blob/main/.github/skills/up-to-date/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/LeonMelamud/claude-code-security-review/blob/main/.github/skills/up-to-date/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

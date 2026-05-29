@@ -1,0 +1,13 @@
+{
+  "name": "server",
+  "description": "",
+  "repo": "invowk/invowk",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/invowk/invowk",
+  "github_path": ".claude/skills/server",
+  "github_branch": "main",
+  "dir_name": "server",
+  "downloaded_at": "2026-02-05T05:39:11.987488Z"
+}

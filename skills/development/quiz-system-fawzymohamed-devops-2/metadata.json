@@ -1,0 +1,18 @@
+{
+  "name": "quiz-system",
+  "description": "Knowledge for implementing the LMS quiz system with Nuxt UI. Activate when working with quiz components, question types, scoring, or quiz-related composables.",
+  "repo": "fawzymohamed/devops",
+  "path": ".claude/skills/quiz-system",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/fawzymohamed/devops",
+  "dir_name": "quiz-system-fawzymohamed-devops-2",
+  "author": "fawzymohamed",
+  "source_url": "https://github.com/fawzymohamed/devops/blob/main/.claude/skills/quiz-system/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nuxt UI Templates",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

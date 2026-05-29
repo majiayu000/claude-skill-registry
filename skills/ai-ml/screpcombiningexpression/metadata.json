@@ -1,0 +1,16 @@
+{
+  "name": "screpcombiningexpression",
+  "repo": "pwwang/immunopipe",
+  "path": "skills/screpcombiningexpression/SKILL.md",
+  "source": "github.com/pwwang/immunopipe",
+  "downloaded_at": "2026-02-02T03:33:41.814228Z",
+  "dir_name": "screpcombiningexpression",
+  "category": "ai-ml",
+  "author": "pwwang",
+  "source_url": "https://github.com/pwwang/immunopipe/blob/main/skills/screpcombiningexpression/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

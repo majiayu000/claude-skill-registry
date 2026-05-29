@@ -1,0 +1,16 @@
+{
+  "name": "prototype",
+  "repo": "SimHacker/moollm",
+  "path": "skills/prototype/SKILL.md",
+  "source": "github.com/SimHacker/moollm",
+  "downloaded_at": "2026-02-02T04:06:50.157789Z",
+  "dir_name": "prototype-simhacker-moollm-b0304f3a",
+  "category": "development",
+  "author": "SimHacker",
+  "source_url": "https://github.com/SimHacker/moollm/blob/main/skills/prototype/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Don Hopkins, Leela AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

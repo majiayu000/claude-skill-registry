@@ -1,0 +1,17 @@
+{
+  "name": "segment-cdp",
+  "repo": "AristidesAI/VisionEmoji",
+  "path": ".claude/skills/segment-cdp/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/AristidesAI/VisionEmoji",
+  "dir_name": "segment-cdp-aristidesai-visionemoji",
+  "downloaded_at": "2026-03-22T04:53:08.241662Z",
+  "author": "AristidesAI",
+  "source_url": "https://github.com/AristidesAI/VisionEmoji/blob/main/.claude/skills/segment-cdp/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AristidesAI/VisionEmoji/blob/main/.claude/skills/segment-cdp/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

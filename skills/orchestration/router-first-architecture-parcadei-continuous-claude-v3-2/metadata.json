@@ -1,0 +1,18 @@
+{
+  "name": "router-first-architecture",
+  "description": "Router-First Architecture",
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/router-first-architecture",
+  "category": "orchestration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "dir_name": "router-first-architecture-parcadei-continuous-claude-v3-2",
+  "author": "parcadei",
+  "source_url": "https://github.com/parcadei/Continuous-Claude-v3/blob/main/.claude/skills/router-first-architecture/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Cosimo Streppone",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

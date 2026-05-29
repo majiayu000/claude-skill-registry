@@ -1,0 +1,13 @@
+{
+  "name": "skill-a",
+  "description": "",
+  "repo": "0xHoneyJar/loa-beauvoir",
+  "category": "examples",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/0xHoneyJar/loa-beauvoir",
+  "github_path": "tests/fixtures/registry/packs/test-pack/skills/skill-a",
+  "github_branch": "main",
+  "dir_name": "skill-a-0xhoneyjar-loa-beauvoir",
+  "downloaded_at": "2026-02-05T05:04:21.993265Z"
+}

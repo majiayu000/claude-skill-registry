@@ -1,0 +1,16 @@
+{
+  "name": "phase-plan-generate",
+  "repo": "HomericIntelligence/ProjectOdyssey",
+  "path": ".claude/skills/phase-plan-generate/SKILL.md",
+  "category": "documents",
+  "source": "github.com/HomericIntelligence/ProjectOdyssey",
+  "dir_name": "phase-plan-generate-homericintelligence-projectodyssey-2",
+  "downloaded_at": "2026-02-22T05:09:20.299504Z",
+  "author": "HomericIntelligence",
+  "source_url": "https://github.com/HomericIntelligence/ProjectOdyssey/blob/main/.claude/skills/phase-plan-generate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HomericIntelligence/ProjectOdyssey/blob/main/.claude/skills/phase-plan-generate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

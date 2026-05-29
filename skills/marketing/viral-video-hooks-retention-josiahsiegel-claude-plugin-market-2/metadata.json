@@ -1,0 +1,18 @@
+{
+  "name": "viral-video-hooks-retention",
+  "description": "MANDATORY: Always Use Backslashes on Windows for File Paths",
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/viral-video-master/skills/viral-video-hooks-retention",
+  "category": "marketing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "dir_name": "viral-video-hooks-retention-josiahsiegel-claude-plugin-market-2",
+  "author": "JosiahSiegel",
+  "source_url": "https://github.com/JosiahSiegel/claude-plugin-marketplace/blob/main/plugins/viral-video-master/skills/viral-video-hooks-retention/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Josiah Siegel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

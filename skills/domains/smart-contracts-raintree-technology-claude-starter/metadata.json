@@ -1,0 +1,16 @@
+{
+  "name": "smart-contracts",
+  "repo": "raintree-technology/claude-starter",
+  "path": "templates/.claude/skills/aptos/shelby/smart-contracts/skill.md",
+  "source": "github.com/raintree-technology/claude-starter",
+  "downloaded_at": "2026-01-29T08:58:04.210313Z",
+  "dir_name": "smart-contracts-raintree-technology-claude-starter",
+  "category": "domains",
+  "author": "raintree-technology",
+  "source_url": "https://github.com/raintree-technology/claude-starter/blob/main/templates/.claude/skills/aptos/shelby/smart-contracts/skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Raintree Technology",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

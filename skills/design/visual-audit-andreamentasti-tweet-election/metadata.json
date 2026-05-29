@@ -1,0 +1,17 @@
+{
+  "name": "visual-audit",
+  "repo": "AndreaMentasti/tweet-election",
+  "path": ".claude/skills/visual-audit/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/AndreaMentasti/tweet-election",
+  "dir_name": "visual-audit-andreamentasti-tweet-election",
+  "downloaded_at": "2026-03-22T04:51:13.634241Z",
+  "author": "AndreaMentasti",
+  "source_url": "https://github.com/AndreaMentasti/tweet-election/blob/main/.claude/skills/visual-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AndreaMentasti/tweet-election/blob/main/.claude/skills/visual-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

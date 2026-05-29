@@ -1,0 +1,18 @@
+{
+  "name": "search",
+  "description": "Search functionality is a critical component of modern applications, enabling users to find relevant content quickly. This skill covers Elasticsearch fundamentals, full-text search patterns, indexing ",
+  "repo": "cosmix/loom",
+  "path": "skills/search",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cosmix/loom",
+  "dir_name": "search-cosmix-loom-2",
+  "author": "cosmix",
+  "source_url": "https://github.com/cosmix/loom/blob/main/skills/search/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cosmix/loom/blob/main/skills/search/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

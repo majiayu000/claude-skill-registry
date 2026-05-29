@@ -1,0 +1,18 @@
+{
+  "name": "taskfiles",
+  "description": "Create, modify, and maintain Taskfiles following Task (https://taskfile.dev) best practices.\n\nUse when: (1) Creating new tasks or Taskfiles, (2) Modifying existing task definitions,\n(3) Adding new tas",
+  "repo": "ionfury/homelab",
+  "path": ".claude/skills/taskfiles",
+  "category": "workflow",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ionfury/homelab",
+  "dir_name": "taskfiles-ionfury-homelab-2",
+  "author": "ionfury",
+  "source_url": "https://github.com/ionfury/homelab/blob/main/.claude/skills/taskfiles/SKILL.md",
+  "license": "WTFPL",
+  "copyright": "Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

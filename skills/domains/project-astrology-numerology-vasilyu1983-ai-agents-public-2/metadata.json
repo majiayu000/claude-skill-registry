@@ -1,0 +1,18 @@
+{
+  "name": "project-astrology-numerology",
+  "description": "Expert astrological advisor (30+ years experience) for Cosmic Copilot - validates calculations, catches logic bugs, provides domain expertise for chart accuracy and interpretation. (project)",
+  "repo": "vasilyu1983/AI-Agents-public",
+  "path": "frameworks/shared-skills/skills/project-astrology-numerology",
+  "category": "domains",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasilyu1983/AI-Agents-public",
+  "dir_name": "project-astrology-numerology-vasilyu1983-ai-agents-public-2",
+  "author": "vasilyu1983",
+  "source_url": "https://github.com/vasilyu1983/AI-Agents-public/blob/main/frameworks/shared-skills/skills/project-astrology-numerology/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Vasiliy Uvarov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

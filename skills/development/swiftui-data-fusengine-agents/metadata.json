@@ -1,0 +1,16 @@
+{
+  "name": "swiftui-data",
+  "repo": "fusengine/agents",
+  "path": "plugins/swift-apple-expert/skills/swiftui-data/SKILL.md",
+  "source": "github.com/fusengine/agents",
+  "downloaded_at": "2026-01-29T06:06:11.727671Z",
+  "dir_name": "swiftui-data-fusengine-agents",
+  "category": "development",
+  "author": "fusengine",
+  "source_url": "https://github.com/fusengine/agents/blob/main/plugins/swift-apple-expert/skills/swiftui-data/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Fusengine",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

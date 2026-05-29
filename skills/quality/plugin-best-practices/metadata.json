@@ -1,0 +1,16 @@
+{
+  "name": "plugin-best-practices",
+  "repo": "FradSer/dotclaude",
+  "path": "plugin-optimizer/skills/plugin-best-practices/SKILL.md",
+  "source": "github.com/FradSer/dotclaude",
+  "downloaded_at": "2026-02-02T04:42:10.495069Z",
+  "dir_name": "plugin-best-practices",
+  "category": "quality",
+  "author": "FradSer",
+  "source_url": "https://github.com/FradSer/dotclaude/blob/main/plugin-optimizer/skills/plugin-best-practices/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/FradSer/dotclaude/blob/main/plugin-optimizer/skills/plugin-best-practices/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

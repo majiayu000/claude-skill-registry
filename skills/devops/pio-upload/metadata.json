@@ -1,0 +1,17 @@
+{
+  "name": "pio-upload",
+  "repo": "SensorsIot/Universal-ESP32-Workbench",
+  "path": ".claude/skills/pio-upload/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/SensorsIot/Universal-ESP32-Workbench",
+  "dir_name": "pio-upload",
+  "downloaded_at": "2026-03-01T06:04:47.781831Z",
+  "author": "SensorsIot",
+  "source_url": "https://github.com/SensorsIot/Universal-ESP32-Workbench/blob/main/.claude/skills/pio-upload/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SensorsIot/Universal-ESP32-Workbench/blob/main/.claude/skills/pio-upload/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

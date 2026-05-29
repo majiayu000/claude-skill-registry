@@ -1,0 +1,16 @@
+{
+  "name": "resource-management",
+  "repo": "andrueandersoncs/claude-skill-effect-ts",
+  "path": "skills/resource-management/SKILL.md",
+  "source": "github.com/andrueandersoncs/claude-skill-effect-ts",
+  "downloaded_at": "2026-01-29T08:40:16.834518Z",
+  "dir_name": "resource-management-andrueandersoncs-claude-skill-effect",
+  "category": "development",
+  "author": "andrueandersoncs",
+  "source_url": "https://github.com/andrueandersoncs/claude-skill-effect-ts/blob/main/skills/resource-management/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Andrue Anderson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

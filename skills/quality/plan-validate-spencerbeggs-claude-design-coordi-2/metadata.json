@@ -1,0 +1,18 @@
+{
+  "name": "plan-validate",
+  "description": "Validate plan document structure and frontmatter. Use when checking plans for compliance, ensuring proper formatting, or verifying metadata before commits.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/plan-validate",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "plan-validate-spencerbeggs-claude-design-coordi-2",
+  "author": "spencerbeggs",
+  "source_url": "https://github.com/spencerbeggs/claude-design-coordinator/blob/main/.claude/skills/plan-validate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/spencerbeggs/claude-design-coordinator/blob/main/.claude/skills/plan-validate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

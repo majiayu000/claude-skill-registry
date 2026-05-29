@@ -1,0 +1,16 @@
+{
+  "name": "trim",
+  "repo": "gsa9/cc-abc-skills",
+  "path": "skills/trim/skill.md",
+  "category": "documents",
+  "source": "github.com/gsa9/cc-abc-skills",
+  "dir_name": "trim-gsa9-cc-abc-skills",
+  "downloaded_at": "2026-02-15T07:24:35.534859Z",
+  "author": "gsa9",
+  "source_url": "https://github.com/gsa9/cc-abc-skills/blob/main/skills/trim/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gsa9/cc-abc-skills/blob/main/skills/trim/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

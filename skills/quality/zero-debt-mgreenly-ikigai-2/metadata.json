@@ -1,0 +1,18 @@
+{
+  "name": "zero-debt",
+  "description": "Zero Technical Debt skill for the ikigai project",
+  "repo": "mgreenly/ikigai",
+  "path": ".claude/library/zero-debt",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mgreenly/ikigai",
+  "dir_name": "zero-debt-mgreenly-ikigai-2",
+  "author": "mgreenly",
+  "source_url": "https://github.com/mgreenly/ikigai/blob/main/.claude/library/zero-debt/SKILL.md",
+  "license": "MIT-0",
+  "copyright": "Copyright (c) 2025 Michael Greenly",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

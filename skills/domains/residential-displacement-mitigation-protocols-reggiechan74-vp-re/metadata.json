@@ -1,0 +1,18 @@
+{
+  "name": "residential-displacement-mitigation-protocols",
+  "description": "Expert in managing homeowner impacts in infrastructure projects including vulnerability assessment, mitigation strategies (enhanced compensation, relocation assistance, buyback options), and sensitive",
+  "repo": "reggiechan74/vp-real-estate",
+  "path": ".claude/skills/residential-displacement-mitigation-protocols",
+  "category": "domains",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/reggiechan74/vp-real-estate",
+  "dir_name": "residential-displacement-mitigation-protocols-reggiechan74-vp-re",
+  "author": "reggiechan74",
+  "source_url": "https://github.com/reggiechan74/vp-real-estate/blob/main/.claude/skills/residential-displacement-mitigation-protocols/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/reggiechan74/vp-real-estate/blob/main/.claude/skills/residential-displacement-mitigation-protocols/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

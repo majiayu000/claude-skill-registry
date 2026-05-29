@@ -1,0 +1,16 @@
+{
+  "name": "single-cellphone-db",
+  "repo": "Starlitnightly/omicverse",
+  "path": ".claude/skills/single-cellphone-db/SKILL.md",
+  "source": "github.com/Starlitnightly/omicverse",
+  "downloaded_at": "2026-01-29T01:56:16.960603Z",
+  "dir_name": "single-cellphone-db",
+  "category": "ai-ml",
+  "author": "Starlitnightly",
+  "source_url": "https://github.com/Starlitnightly/omicverse/blob/main/.claude/skills/single-cellphone-db/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "parzival-save-handoff",
+  "repo": "Hidden-History/ai-memory",
+  "path": "_ai-memory/skills/parzival-save-handoff/SKILL.md",
+  "github_branch": "main",
+  "category": "context-management",
+  "source": "github.com/Hidden-History/ai-memory",
+  "dir_name": "parzival-save-handoff-hidden-history-ai-memory",
+  "downloaded_at": "2026-03-22T05:28:12.497292Z",
+  "author": "Hidden-History",
+  "source_url": "https://github.com/Hidden-History/ai-memory/blob/main/_ai-memory/skills/parzival-save-handoff/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Hidden-History/ai-memory/blob/main/_ai-memory/skills/parzival-save-handoff/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

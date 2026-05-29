@@ -1,0 +1,16 @@
+{
+  "name": "value-stream-mapping",
+  "repo": "Prorise-cool/Claude-Code-Multi-Agent",
+  "path": ".claude/skills/business-analysis/value-stream-mapping/SKILL.md",
+  "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
+  "downloaded_at": "2026-01-29T08:30:42.594038Z",
+  "dir_name": "value-stream-mapping-prorise-cool-claude-code-multi-ag-259775c3",
+  "category": "analysis",
+  "author": "Prorise-cool",
+  "source_url": "https://github.com/Prorise-cool/Claude-Code-Multi-Agent/blob/main/.claude/skills/business-analysis/value-stream-mapping/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Prorise-cool/Claude-Code-Multi-Agent/blob/main/.claude/skills/business-analysis/value-stream-mapping/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

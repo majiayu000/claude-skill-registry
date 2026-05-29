@@ -1,0 +1,11 @@
+{
+  "name": "wt-cleanup",
+  "repo": "michael-menard/monorepo",
+  "path": ".claude/skills/wt-cleanup/SKILL.md",
+  "source": "github.com/michael-menard/monorepo",
+  "downloaded_at": "2026-01-22T03:44:04.822390Z",
+  "dir_name": "wt-cleanup-michael-menard-monorepo",
+  "category": "development",
+  "github_path": ".claude/skills/wt-cleanup",
+  "github_branch": "main"
+}

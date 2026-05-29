@@ -1,0 +1,18 @@
+{
+  "name": "project-board-enforcement",
+  "description": "MANDATORY for all work - the project board is THE source of truth. This skill provides verification functions and gates that other skills MUST call. No work proceeds without project board compliance.",
+  "repo": "troykelly/codex-skills",
+  "path": "skills/project-board-enforcement",
+  "category": "workflow",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/troykelly/codex-skills",
+  "dir_name": "project-board-enforcement-troykelly-codex-skills-2",
+  "author": "troykelly",
+  "source_url": "https://github.com/troykelly/codex-skills/blob/main/skills/project-board-enforcement/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/troykelly/codex-skills/blob/main/skills/project-board-enforcement/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

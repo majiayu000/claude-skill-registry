@@ -1,0 +1,17 @@
+{
+  "name": "orthogonal-lead-enrichment",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/capabilities/orthogonal-lead-enrichment/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "orthogonal-lead-enrichment",
+  "downloaded_at": "2026-04-26T01:44:20.711977Z",
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/capabilities/orthogonal-lead-enrichment/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/capabilities/orthogonal-lead-enrichment/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

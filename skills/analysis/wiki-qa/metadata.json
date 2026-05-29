@@ -1,0 +1,16 @@
+{
+  "name": "wiki-qa",
+  "repo": "AristidesAI/VisionEmoji",
+  "path": ".claude/skills/wiki-qa/SKILL.md",
+  "category": "analysis",
+  "source": "github.com/AristidesAI/VisionEmoji",
+  "dir_name": "wiki-qa",
+  "downloaded_at": "2026-02-22T04:41:57.125531Z",
+  "author": "AristidesAI",
+  "source_url": "https://github.com/AristidesAI/VisionEmoji/blob/main/.claude/skills/wiki-qa/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AristidesAI/VisionEmoji/blob/main/.claude/skills/wiki-qa/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

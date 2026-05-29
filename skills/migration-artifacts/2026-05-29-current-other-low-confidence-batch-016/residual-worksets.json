@@ -1,0 +1,89 @@
+{
+  "classification_jsonl": "migration-artifacts/2026-05-29-current-other-low-confidence-batch-016/post-batch015-combined-classification.jsonl",
+  "generated_at": "2026-05-29T03:34:46.945465+00:00",
+  "notes": [
+    "This report does not modify archive files.",
+    "classification_gap contains live archive paths absent from the classification JSONL.",
+    "low_confidence and review_target rows should be reclassified before apply.",
+    "conflict clusters are diagnostic; content drift conflicts must not be auto-deleted."
+  ],
+  "policy": {
+    "apply_mode": "report-only",
+    "content_chars": 1600,
+    "from_categories": [
+      "other"
+    ],
+    "min_confidence": 0.9
+  },
+  "schema_version": 1,
+  "skills_dir": ".",
+  "summary": {
+    "archive_category_counts": {
+      "agent": 1688,
+      "ai-llm": 2327,
+      "ai-ml": 2231,
+      "analysis": 3716,
+      "api": 1226,
+      "bash": 279,
+      "business": 1169,
+      "c-level": 74,
+      "communication": 613,
+      "context-management": 1322,
+      "creative": 741,
+      "data": 49079,
+      "design": 13704,
+      "development": 37541,
+      "devops": 10614,
+      "documents": 6803,
+      "domains": 1250,
+      "examples": 159,
+      "forensics": 100,
+      "gaming": 861,
+      "generation": 847,
+      "integration": 5551,
+      "language": 149,
+      "local-ai-infrastructure": 87,
+      "marketing": 2901,
+      "orchestration": 2385,
+      "other": 36756,
+      "performance": 998,
+      "personal-development": 471,
+      "planning": 1509,
+      "platform": 500,
+      "product": 2649,
+      "productivity": 3046,
+      "quality": 3499,
+      "security": 5195,
+      "skills": 2364,
+      "system": 155,
+      "testing": 11273,
+      "travel": 52,
+      "war-room": 33,
+      "workflow": 1809,
+      "writing": 1034
+    },
+    "classification_row_count": 55357,
+    "conflict_clusters": {},
+    "conflict_detail_count": 0,
+    "conflict_target_category_counts": {},
+    "scoped_existing_classification_count": 36756,
+    "workset_counts": {
+      "classification_gap": 0,
+      "low_confidence": 25356,
+      "review_target": 0,
+      "target_other": 0
+    }
+  },
+  "workset_files": {
+    "classification_gap": "migration-artifacts/2026-05-29-current-other-low-confidence-batch-016/worksets/classification_gap.jsonl",
+    "low_confidence": "migration-artifacts/2026-05-29-current-other-low-confidence-batch-016/worksets/low_confidence.jsonl",
+    "review_target": "migration-artifacts/2026-05-29-current-other-low-confidence-batch-016/worksets/review_target.jsonl",
+    "target_other": "migration-artifacts/2026-05-29-current-other-low-confidence-batch-016/worksets/target_other.jsonl"
+  },
+  "worksets_omitted": {
+    "classification_gap": 0,
+    "low_confidence": 25356,
+    "review_target": 0,
+    "target_other": 0
+  }
+}

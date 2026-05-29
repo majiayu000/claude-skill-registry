@@ -1,0 +1,20 @@
+{
+  "name": "size-guard",
+  "description": "",
+  "repo": "CheekyCodexConjurer/aera-chart-engine",
+  "category": "context-management",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".codex/skills/size_guard",
+  "github_branch": "main",
+  "dir_name": "size-guard-cheekycodexconjurer-aera-chart-engine",
+  "downloaded_at": "2026-02-05T05:48:26.873616Z",
+  "author": "CheekyCodexConjurer",
+  "source_url": "https://github.com/CheekyCodexConjurer/aera-chart-engine/blob/main/.codex/skills/size_guard/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CheekyCodexConjurer",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

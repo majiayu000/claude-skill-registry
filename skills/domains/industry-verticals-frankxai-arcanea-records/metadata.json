@@ -1,0 +1,17 @@
+{
+  "name": "industry-verticals",
+  "repo": "frankxai/arcanea-records",
+  "path": ".claude/skills/premium/industry-verticals/SKILL.md",
+  "github_branch": "main",
+  "category": "domains",
+  "source": "github.com/frankxai/arcanea-records",
+  "dir_name": "industry-verticals-frankxai-arcanea-records",
+  "downloaded_at": "2026-03-01T07:47:01.180235Z",
+  "author": "frankxai",
+  "source_url": "https://github.com/frankxai/arcanea-records/blob/main/.claude/skills/premium/industry-verticals/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/frankxai/arcanea-records/blob/main/.claude/skills/premium/industry-verticals/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

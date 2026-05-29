@@ -1,0 +1,18 @@
+{
+  "name": "musical-dna",
+  "description": "Extract descriptive musical characteristics from any artist or band without using their name, building a vocabulary of sonic qualities for AI music generation, music description, or creative recombina",
+  "repo": "jwynia/agent-skills",
+  "path": "skills/creative/music/musical-dna",
+  "category": "creative",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jwynia/agent-skills",
+  "dir_name": "musical-dna-jwynia-agent-skills-2",
+  "author": "jwynia",
+  "source_url": "https://github.com/jwynia/agent-skills/blob/main/skills/creative/music/musical-dna/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jwynia/agent-skills/blob/main/skills/creative/music/musical-dna/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

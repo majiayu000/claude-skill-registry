@@ -1,0 +1,17 @@
+{
+  "name": "kanban",
+  "repo": "NammDev/goads-coss",
+  "path": ".claude/skills/kanban/SKILL.md",
+  "github_branch": "main",
+  "category": "orchestration",
+  "source": "github.com/NammDev/goads-coss",
+  "dir_name": "kanban-nammdev-goads-coss",
+  "downloaded_at": "2026-03-01T05:46:03.514124Z",
+  "author": "NammDev",
+  "source_url": "https://github.com/NammDev/goads-coss/blob/main/.claude/skills/kanban/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/NammDev/goads-coss/blob/main/.claude/skills/kanban/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

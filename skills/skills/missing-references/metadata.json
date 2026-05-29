@@ -1,0 +1,18 @@
+{
+  "name": "missing-references",
+  "repo": "pproenca/dot-skills",
+  "path": "tests/fixtures/missing-references/SKILL.md",
+  "source": "github.com/pproenca/dot-skills",
+  "downloaded_at": "2026-01-22T02:36:29.633910Z",
+  "dir_name": "missing-references",
+  "category": "skills",
+  "github_path": "tests/fixtures/missing-references",
+  "github_branch": "main",
+  "author": "pproenca",
+  "source_url": "https://github.com/pproenca/dot-skills/blob/main/tests/fixtures/missing-references/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

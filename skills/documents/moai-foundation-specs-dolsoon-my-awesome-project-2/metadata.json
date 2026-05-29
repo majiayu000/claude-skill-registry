@@ -1,0 +1,17 @@
+{
+  "name": "moai-foundation-specs",
+  "repo": "dolsoon/my-awesome-project",
+  "path": ".claude/skills/moai-foundation-specs/SKILL.md",
+  "github_branch": "master",
+  "category": "documents",
+  "source": "github.com/dolsoon/my-awesome-project",
+  "dir_name": "moai-foundation-specs-dolsoon-my-awesome-project-2",
+  "downloaded_at": "2026-03-01T07:29:14.164705Z",
+  "author": "dolsoon",
+  "source_url": "https://github.com/dolsoon/my-awesome-project/blob/master/.claude/skills/moai-foundation-specs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dolsoon/my-awesome-project/blob/master/.claude/skills/moai-foundation-specs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

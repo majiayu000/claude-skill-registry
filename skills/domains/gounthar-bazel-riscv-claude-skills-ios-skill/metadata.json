@@ -1,0 +1,17 @@
+{
+  "name": "gounthar__bazel-riscv__claude__skills__ios__skill",
+  "description": "",
+  "repo": "mattnigh/skills_collection",
+  "category": "domains",
+  "tags": [],
+  "stars": 0,
+  "source": "Unknown",
+  "dir_name": "gounthar-bazel-riscv-claude-skills-ios-skill",
+  "author": "mattnigh",
+  "source_url": "https://github.com/mattnigh/skills_collection",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mattnigh/skills_collection",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

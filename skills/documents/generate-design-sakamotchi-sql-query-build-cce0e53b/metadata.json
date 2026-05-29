@@ -1,0 +1,18 @@
+{
+  "name": "generate-design",
+  "repo": "sakamotchi/sql-query-build",
+  "path": ".claude/skills/generate-design/SKILL.md",
+  "source": "github.com/sakamotchi/sql-query-build",
+  "downloaded_at": "2026-01-22T01:31:30.356977Z",
+  "dir_name": "generate-design-sakamotchi-sql-query-build-cce0e53b",
+  "category": "documents",
+  "github_path": ".claude/skills/generate-design",
+  "github_branch": "main",
+  "author": "sakamotchi",
+  "source_url": "https://github.com/sakamotchi/sql-query-build/blob/main/.claude/skills/generate-design/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Yoshitaka Sakamoto",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

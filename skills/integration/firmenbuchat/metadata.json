@@ -1,0 +1,16 @@
+{
+  "name": "firmenbuchat",
+  "repo": "moltbot/skills",
+  "path": "skills/pasogott/firmenbuchat/skill.md",
+  "source": "github.com/moltbot/skills",
+  "downloaded_at": "2026-01-29T05:14:21.698079Z",
+  "dir_name": "firmenbuchat",
+  "category": "integration",
+  "author": "moltbot",
+  "source_url": "https://github.com/moltbot/skills/blob/main/skills/pasogott/firmenbuchat/skill.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 clawdbot",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

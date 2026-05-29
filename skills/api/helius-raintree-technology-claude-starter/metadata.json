@@ -1,0 +1,16 @@
+{
+  "name": "helius",
+  "repo": "raintree-technology/claude-starter",
+  "path": ".claude/skills/helius/SKILL.md",
+  "source": "github.com/raintree-technology/claude-starter",
+  "downloaded_at": "2026-01-29T08:58:03.323529Z",
+  "dir_name": "helius-raintree-technology-claude-starter",
+  "category": "api",
+  "author": "raintree-technology",
+  "source_url": "https://github.com/raintree-technology/claude-starter/blob/main/.claude/skills/helius/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Raintree Technology",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

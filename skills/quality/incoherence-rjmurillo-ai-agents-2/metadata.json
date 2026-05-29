@@ -1,0 +1,18 @@
+{
+  "name": "incoherence",
+  "description": "Detect and resolve incoherence in documentation, code, specs vs implementation. Includes reconciliation phase for applying user-provided resolutions.",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/incoherence",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rjmurillo/ai-agents",
+  "dir_name": "incoherence-rjmurillo-ai-agents-2",
+  "author": "rjmurillo",
+  "source_url": "https://github.com/rjmurillo/ai-agents/blob/main/.claude/skills/incoherence/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

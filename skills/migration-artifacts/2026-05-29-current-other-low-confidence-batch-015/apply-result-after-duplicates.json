@@ -1,0 +1,71 @@
+{
+  "applied_at": "2026-05-29T03:22:45.123399+00:00",
+  "classification_jsonl": "migration-artifacts/2026-05-29-current-other-low-confidence-batch-015/classification.jsonl",
+  "generated_at": "2026-05-29T03:22:45.093938+00:00",
+  "move_count": 1,
+  "move_examples": [
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "key": "mattnigh/skills_collection:name:symbols",
+      "metadata_sha256": "ddc7f79e2334b8034bc350f534fb0ae29889debcbf107995e69944b568103d1c",
+      "name": "symbols",
+      "operation": "move",
+      "reason": "classification target passed filters",
+      "repo": "mattnigh/skills_collection",
+      "semantic_text_sha256": "80471cc58a16fd99471a8a12f1c8d9aa533d0987a7048a979f4b9e4aa0ece2ea",
+      "source_category": "other",
+      "source_path": "other/miethe-skillmeat-claude-skills-symbols-skill",
+      "source_sha256": "9430ed882818e87b88f4b5905e8470ef9b105d1876f900fbef134675459529bc",
+      "source_skill": "other/miethe-skillmeat-claude-skills-symbols-skill/SKILL.md",
+      "target_category": "development",
+      "target_path": "development/miethe-skillmeat-claude-skills-symbols-skill",
+      "target_skill": "development/miethe-skillmeat-claude-skills-symbols-skill/SKILL.md",
+      "target_status": "active"
+    }
+  ],
+  "notes": [
+    "Default mode is review-only and does not modify files.",
+    "Only --apply moves directories and updates metadata.json.",
+    "Blocked moves are never applied automatically."
+  ],
+  "policy": {
+    "allow_target_other": false,
+    "apply_mode": "apply",
+    "from_categories": [
+      "other"
+    ],
+    "limit": null,
+    "min_confidence": 0.9,
+    "movable_only": true,
+    "target_statuses": [
+      "active"
+    ],
+    "to_categories": []
+  },
+  "schema_version": 1,
+  "skills_dir": ".",
+  "summary": {
+    "blocked_count": 0,
+    "classification_row_count": 10000,
+    "classification_status_counts": {
+      "ok": 10000
+    },
+    "movable_count": 1,
+    "operation_counts": {
+      "move": 1
+    },
+    "planned_move_count": 1,
+    "reject_reasons": {
+      "confidence below threshold": 6262,
+      "source directory missing": 2658,
+      "target category already contains a skill with the same stable key": 1079
+    },
+    "source_category_counts": {
+      "other": 1
+    },
+    "target_category_counts": {
+      "development": 1
+    }
+  }
+}

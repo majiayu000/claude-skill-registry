@@ -1,0 +1,16 @@
+{
+  "name": "multi-query",
+  "repo": "juanre/llmemory",
+  "path": "skills/multi-query/SKILL.md",
+  "category": "ai-llm",
+  "source": "github.com/juanre/llmemory",
+  "dir_name": "multi-query",
+  "downloaded_at": "2026-02-22T07:44:53.089069Z",
+  "author": "juanre",
+  "source_url": "https://github.com/juanre/llmemory/blob/main/skills/multi-query/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Juan Reyero",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

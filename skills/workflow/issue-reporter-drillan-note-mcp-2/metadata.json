@@ -1,0 +1,18 @@
+{
+  "name": "issue-reporter",
+  "description": "作業進捗をGitHub issueに自動報告します。計画立案時、知見獲得時、問題発覚時にブランチ名からissue番号を抽出し、構造化されたコメントを投稿します。",
+  "repo": "drillan/note-mcp",
+  "path": ".claude/skills/issue-reporter",
+  "category": "workflow",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/drillan/note-mcp",
+  "dir_name": "issue-reporter-drillan-note-mcp-2",
+  "author": "drillan",
+  "source_url": "https://github.com/drillan/note-mcp/blob/main/.claude/skills/issue-reporter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/drillan/note-mcp/blob/main/.claude/skills/issue-reporter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

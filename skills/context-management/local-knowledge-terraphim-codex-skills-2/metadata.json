@@ -1,0 +1,18 @@
+{
+  "name": "local-knowledge",
+  "description": "Leverage personal notes and documentation through Terraphim's role-based search.\nAI agents can search developer's local knowledge organized by domain (Rust, frontend, architecture)\nusing the terraphim",
+  "repo": "terraphim/codex-skills",
+  "path": "skills/local-knowledge",
+  "category": "context-management",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/terraphim/codex-skills",
+  "dir_name": "local-knowledge-terraphim-codex-skills-2",
+  "author": "terraphim",
+  "source_url": "https://github.com/terraphim/codex-skills/blob/main/skills/local-knowledge/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/terraphim/codex-skills/blob/main/skills/local-knowledge/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

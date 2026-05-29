@@ -1,0 +1,16 @@
+{
+  "name": "libsupervision",
+  "repo": "copilot-ld/copilot-ld",
+  "path": "packages/libsupervision/SKILL.md",
+  "category": "system",
+  "source": "github.com/copilot-ld/copilot-ld",
+  "dir_name": "libsupervision-copilot-ld-copilot-ld-2",
+  "downloaded_at": "2026-02-15T06:48:53.353354Z",
+  "author": "copilot-ld",
+  "source_url": "https://github.com/copilot-ld/copilot-ld/blob/main/packages/libsupervision/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/copilot-ld/copilot-ld/blob/main/packages/libsupervision/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

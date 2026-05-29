@@ -1,0 +1,17 @@
+{
+  "name": "journey-validator",
+  "repo": "H2OSLabs/SynnovatorZero",
+  "path": ".claude/skills/journey-validator/skill.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/H2OSLabs/SynnovatorZero",
+  "dir_name": "journey-validator",
+  "downloaded_at": "2026-03-22T05:25:58.639407Z",
+  "author": "H2OSLabs",
+  "source_url": "https://github.com/H2OSLabs/SynnovatorZero/blob/main/.claude/skills/journey-validator/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/H2OSLabs/SynnovatorZero/blob/main/.claude/skills/journey-validator/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

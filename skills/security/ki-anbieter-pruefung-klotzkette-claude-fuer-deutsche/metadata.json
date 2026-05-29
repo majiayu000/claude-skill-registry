@@ -1,0 +1,17 @@
+{
+  "name": "ki-anbieter-pruefung",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "ki-governance/skills/ki-anbieter-pruefung/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "ki-anbieter-pruefung-klotzkette-claude-fuer-deutsche",
+  "downloaded_at": "2026-05-27T04:00:50.015083Z",
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/ki-governance/skills/ki-anbieter-pruefung/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/ki-governance/skills/ki-anbieter-pruefung/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

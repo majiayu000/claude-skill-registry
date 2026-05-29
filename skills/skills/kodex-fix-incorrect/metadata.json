@@ -1,0 +1,16 @@
+{
+  "name": "kodex-fix-incorrect",
+  "repo": "ben-mad-jlp/claude-mermaid-collab",
+  "path": "skills/kodex-fix-incorrect/SKILL.md",
+  "source": "github.com/ben-mad-jlp/claude-mermaid-collab",
+  "downloaded_at": "2026-01-28T02:44:03.942843Z",
+  "dir_name": "kodex-fix-incorrect",
+  "category": "skills",
+  "author": "ben-mad-jlp",
+  "source_url": "https://github.com/ben-mad-jlp/claude-mermaid-collab/blob/main/skills/kodex-fix-incorrect/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ben-mad-jlp/claude-mermaid-collab/blob/main/skills/kodex-fix-incorrect/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

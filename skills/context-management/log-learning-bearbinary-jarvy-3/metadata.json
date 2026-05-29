@@ -1,0 +1,16 @@
+{
+  "name": "log-learning",
+  "repo": "bearbinary/Jarvy",
+  "path": ".claude/skills/log-learning/SKILL.md",
+  "category": "context-management",
+  "source": "github.com/bearbinary/Jarvy",
+  "dir_name": "log-learning-bearbinary-jarvy-3",
+  "downloaded_at": "2026-02-22T06:30:15.577648Z",
+  "author": "bearbinary",
+  "source_url": "https://github.com/bearbinary/Jarvy/blob/main/.claude/skills/log-learning/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Zac Clifton",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

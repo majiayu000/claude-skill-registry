@@ -1,0 +1,18 @@
+{
+  "name": "gh-issue-fixer",
+  "description": "GitHub Issue を修正するスキル。\n以下の状況で使用:\n(1) ユーザーが「Issue #XX を修正して」と依頼した時\n(2) ユーザーが明示的に「/gh-issue-fixer」を実行した時\n(3) GitHub Issue の対応を求められた時",
+  "repo": "goldeneggg/dotfiles",
+  "path": "claude-linux/.claude/skills/gh-issue-fixer",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/goldeneggg/dotfiles",
+  "dir_name": "gh-issue-fixer-goldeneggg-dotfiles-2",
+  "author": "goldeneggg",
+  "source_url": "https://github.com/goldeneggg/dotfiles/blob/main/claude-linux/.claude/skills/gh-issue-fixer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/goldeneggg/dotfiles/blob/main/claude-linux/.claude/skills/gh-issue-fixer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

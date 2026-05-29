@@ -1,0 +1,17 @@
+{
+  "name": "nexus-mapper",
+  "repo": "Haaaiawd/Nexus-skills",
+  "path": "skills/nexus-mapper/SKILL.md",
+  "github_branch": "master",
+  "category": "analysis",
+  "source": "github.com/Haaaiawd/Nexus-skills",
+  "dir_name": "nexus-mapper",
+  "downloaded_at": "2026-04-15T01:22:19.093577Z",
+  "author": "Haaaiawd",
+  "source_url": "https://github.com/Haaaiawd/Nexus-skills/blob/master/skills/nexus-mapper/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Haaaiawd/Nexus-skills/blob/master/skills/nexus-mapper/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

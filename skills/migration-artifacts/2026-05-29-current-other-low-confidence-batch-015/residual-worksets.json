@@ -1,0 +1,90 @@
+{
+  "classification_jsonl": "migration-artifacts/2026-05-29-current-other-low-confidence-batch-015/post-batch014-combined-classification.jsonl",
+  "generated_at": "2026-05-29T01:12:33.825313+00:00",
+  "notes": [
+    "This report does not modify archive files.",
+    "classification_gap contains live archive paths absent from the classification JSONL.",
+    "low_confidence and review_target rows should be reclassified before apply.",
+    "conflict clusters are diagnostic; content drift conflicts must not be auto-deleted."
+  ],
+  "policy": {
+    "apply_mode": "report-only",
+    "content_chars": 1600,
+    "from_categories": [
+      "other"
+    ],
+    "min_confidence": 0.9
+  },
+  "schema_version": 1,
+  "skills_dir": ".",
+  "summary": {
+    "archive_category_counts": {
+      "agent": 1662,
+      "ai-llm": 2296,
+      "ai-ml": 2193,
+      "analysis": 3580,
+      "api": 1191,
+      "bash": 265,
+      "business": 1156,
+      "c-level": 73,
+      "communication": 609,
+      "context-management": 1283,
+      "creative": 732,
+      "data": 49061,
+      "design": 13662,
+      "development": 37308,
+      "devops": 10561,
+      "documents": 6701,
+      "domains": 999,
+      "examples": 149,
+      "forensics": 92,
+      "gaming": 849,
+      "generation": 771,
+      "integration": 5362,
+      "language": 147,
+      "local-ai-infrastructure": 85,
+      "marketing": 2870,
+      "orchestration": 2313,
+      "other": 39415,
+      "performance": 984,
+      "personal-development": 412,
+      "planning": 1488,
+      "platform": 436,
+      "product": 2618,
+      "productivity": 3033,
+      "quality": 3359,
+      "security": 5168,
+      "skills": 2323,
+      "system": 133,
+      "testing": 11267,
+      "travel": 52,
+      "war-room": 30,
+      "workflow": 1640,
+      "writing": 1021
+    },
+    "classification_row_count": 55357,
+    "conflict_clusters": {},
+    "conflict_detail_count": 0,
+    "conflict_target_category_counts": {},
+    "scoped_existing_classification_count": 39415,
+    "workset_counts": {
+      "classification_gap": 0,
+      "low_confidence": 29094,
+      "review_target": 0,
+      "target_other": 0
+    }
+  },
+  "workset_counts_detail": {
+    "classification_gap": 0,
+    "low_confidence": 29094,
+    "review_target": 0,
+    "target_other": 0
+  },
+  "workset_files": {
+    "classification_gap": "migration-artifacts/2026-05-29-current-other-low-confidence-batch-015/worksets/classification_gap.jsonl",
+    "low_confidence": "migration-artifacts/2026-05-29-current-other-low-confidence-batch-015/worksets/low_confidence.jsonl",
+    "review_target": "migration-artifacts/2026-05-29-current-other-low-confidence-batch-015/worksets/review_target.jsonl",
+    "target_other": "migration-artifacts/2026-05-29-current-other-low-confidence-batch-015/worksets/target_other.jsonl"
+  },
+  "worksets_omitted": "row-level selected workset is stored in input.jsonl; full workset files were omitted from the compact audit artifact"
+}

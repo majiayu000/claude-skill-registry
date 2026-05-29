@@ -1,0 +1,16 @@
+{
+  "name": "m4-api",
+  "repo": "hannesill/m4",
+  "path": "src/m4/skills/m4-api/SKILL.md",
+  "source": "github.com/hannesill/m4",
+  "downloaded_at": "2026-01-27T01:43:06.226932Z",
+  "dir_name": "m4-api-hannesill-m4",
+  "category": "api",
+  "author": "hannesill",
+  "source_url": "https://github.com/hannesill/m4/blob/main/src/m4/skills/m4-api/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Hannes Ill",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

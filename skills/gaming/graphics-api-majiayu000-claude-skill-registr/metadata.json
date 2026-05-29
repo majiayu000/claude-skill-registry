@@ -1,0 +1,18 @@
+{
+  "name": "graphics-api",
+  "repo": "majiayu000/claude-skill-registry",
+  "path": "skills/data/graphics-api/SKILL.md",
+  "source": "github.com/majiayu000/claude-skill-registry",
+  "downloaded_at": "2026-01-19T02:08:14.986590Z",
+  "dir_name": "graphics-api-majiayu000-claude-skill-registr",
+  "category": "gaming",
+  "github_path": "skills/other/graphics-api",
+  "github_branch": "main",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/other/graphics-api/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

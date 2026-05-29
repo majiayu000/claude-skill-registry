@@ -1,0 +1,16 @@
+{
+  "name": "integration-theory",
+  "repo": "scooter-lacroix/Maestro",
+  "path": "maestro/skills/math/math/measure-theory/integration-theory/SKILL.md",
+  "source": "github.com/scooter-lacroix/Maestro",
+  "downloaded_at": "2026-02-02T01:10:50.894689Z",
+  "dir_name": "integration-theory",
+  "category": "domains",
+  "author": "scooter-lacroix",
+  "source_url": "https://github.com/scooter-lacroix/Maestro/blob/main/maestro/skills/math/math/measure-theory/integration-theory/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 scooter-lacroix (stankc@scooterlacroix.com)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

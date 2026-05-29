@@ -1,0 +1,18 @@
+{
+  "name": "groq-common-errors",
+  "description": "Diagnose and fix Groq common errors and exceptions.\nUse when encountering Groq errors, debugging failed requests,\nor troubleshooting integration issues.\nTrigger with phrases like \"groq error\", \"fix gr",
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/groq-pack/groq-common-errors",
+  "category": "ai-llm",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vasic-digital/SuperAgent",
+  "dir_name": "groq-common-errors-vasic-digital-superagent-2",
+  "author": "vasic-digital",
+  "source_url": "https://github.com/vasic-digital/SuperAgent/blob/main/skills/plugins/saas-packs/groq-pack/groq-common-errors/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vasic-digital/SuperAgent/blob/main/skills/plugins/saas-packs/groq-pack/groq-common-errors/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

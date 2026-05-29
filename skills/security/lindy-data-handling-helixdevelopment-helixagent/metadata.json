@@ -1,0 +1,20 @@
+{
+  "name": "lindy-data-handling",
+  "description": "LLMs Agent",
+  "repo": "HelixDevelopment/HelixAgent",
+  "category": "security",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": "skills/plugins/saas-packs/lindy-pack/lindy-data-handling",
+  "github_branch": "main",
+  "dir_name": "lindy-data-handling-helixdevelopment-helixagent",
+  "downloaded_at": "2026-02-05T05:48:56.294028Z",
+  "author": "HelixDevelopment",
+  "source_url": "https://github.com/HelixDevelopment/HelixAgent/blob/main/skills/plugins/saas-packs/lindy-pack/lindy-data-handling/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Milos Vasic",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "framework-retarget-doc-sync",
+  "repo": "BSchafer01/PanelNester",
+  "path": ".squad/skills/framework-retarget-doc-sync/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/BSchafer01/PanelNester",
+  "dir_name": "framework-retarget-doc-sync",
+  "downloaded_at": "2026-03-22T04:57:18.896400Z",
+  "author": "BSchafer01",
+  "source_url": "https://github.com/BSchafer01/PanelNester/blob/main/.squad/skills/framework-retarget-doc-sync/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BSchafer01/PanelNester/blob/main/.squad/skills/framework-retarget-doc-sync/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

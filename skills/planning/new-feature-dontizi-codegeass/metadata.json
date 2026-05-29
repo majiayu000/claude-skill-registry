@@ -1,0 +1,16 @@
+{
+  "name": "new-feature",
+  "repo": "DonTizi/CodeGeass",
+  "path": ".claude/skills/new-feature/SKILL.md",
+  "source": "github.com/DonTizi/CodeGeass",
+  "downloaded_at": "2026-02-02T01:33:02.193170Z",
+  "dir_name": "new-feature-dontizi-codegeass",
+  "category": "planning",
+  "author": "DonTizi",
+  "source_url": "https://github.com/DonTizi/CodeGeass/blob/main/.claude/skills/new-feature/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2025 DonTizi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

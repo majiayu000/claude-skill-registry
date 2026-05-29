@@ -1,0 +1,16 @@
+{
+  "name": "file-hasher",
+  "repo": "AIDotNet/MoYuCode",
+  "path": "skills/tools/file-hasher/SKILL.md",
+  "source": "github.com/AIDotNet/MoYuCode",
+  "downloaded_at": "2026-01-29T08:25:26.706532Z",
+  "dir_name": "file-hasher-aidotnet-moyucode",
+  "category": "security",
+  "author": "AIDotNet",
+  "source_url": "https://github.com/AIDotNet/MoYuCode/blob/main/skills/tools/file-hasher/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 AIDotNet",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

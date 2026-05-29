@@ -1,0 +1,17 @@
+{
+  "name": "idea-new",
+  "repo": "GrinRus/ai_driven_dev",
+  "path": "skills/idea-new/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/GrinRus/ai_driven_dev",
+  "dir_name": "idea-new",
+  "downloaded_at": "2026-03-01T05:21:43.611786Z",
+  "author": "GrinRus",
+  "source_url": "https://github.com/GrinRus/ai_driven_dev/blob/main/skills/idea-new/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/GrinRus/ai_driven_dev/blob/main/skills/idea-new/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

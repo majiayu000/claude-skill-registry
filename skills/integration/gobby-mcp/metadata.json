@@ -1,0 +1,11 @@
+{
+  "name": "gobby-mcp",
+  "repo": "GobbyAI/gobby",
+  "path": "src/gobby/install/claude/skills/gobby-mcp/SKILL.md",
+  "source": "github.com/GobbyAI/gobby",
+  "downloaded_at": "2026-01-17T01:37:09.112250Z",
+  "dir_name": "gobby-mcp",
+  "category": "integration",
+  "github_path": ".claude/skills/gobby-mcp",
+  "github_branch": "main"
+}

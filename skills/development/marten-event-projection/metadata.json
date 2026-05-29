@@ -1,0 +1,17 @@
+{
+  "name": "marten-event-projection",
+  "repo": "aalmada/BookStore",
+  "path": ".claude/skills/marten__event_projection/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/aalmada/BookStore",
+  "dir_name": "marten-event-projection",
+  "downloaded_at": "2026-03-01T06:24:26.778315Z",
+  "author": "aalmada",
+  "source_url": "https://github.com/aalmada/BookStore/blob/main/.claude/skills/marten__event_projection/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aalmada/BookStore/blob/main/.claude/skills/marten__event_projection/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

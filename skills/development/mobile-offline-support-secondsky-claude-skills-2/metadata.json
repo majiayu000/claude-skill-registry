@@ -1,0 +1,18 @@
+{
+  "name": "mobile-offline-support",
+  "description": "Offline-first mobile apps with local storage, sync queues, conflict resolution. Use for offline functionality, data sync, connectivity handling, or encountering sync conflicts, queue management, stora",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/mobile-offline-support/skills/mobile-offline-support",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/secondsky/claude-skills",
+  "dir_name": "mobile-offline-support-secondsky-claude-skills-2",
+  "author": "secondsky",
+  "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/mobile-offline-support/skills/mobile-offline-support/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Skills Maintainers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

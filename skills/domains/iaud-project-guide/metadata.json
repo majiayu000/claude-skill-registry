@@ -1,0 +1,16 @@
+{
+  "name": "iaud-project-guide",
+  "repo": "AUD-DEV-TEAM/i-AUD-Developer-Kit",
+  "path": ".claude/skills/iaud-project-guide/SKILL.md",
+  "category": "domains",
+  "source": "github.com/AUD-DEV-TEAM/i-AUD-Developer-Kit",
+  "dir_name": "iaud-project-guide",
+  "downloaded_at": "2026-02-15T04:41:44.994062Z",
+  "author": "AUD-DEV-TEAM",
+  "source_url": "https://github.com/AUD-DEV-TEAM/i-AUD-Developer-Kit/blob/main/.claude/skills/iaud-project-guide/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AUD-DEV-TEAM/i-AUD-Developer-Kit/blob/main/.claude/skills/iaud-project-guide/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

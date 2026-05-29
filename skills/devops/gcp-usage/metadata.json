@@ -1,0 +1,13 @@
+{
+  "name": "gcp-usage",
+  "description": "",
+  "repo": "kubony/openclaw-gcp-setup",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kubony/openclaw-gcp-setup",
+  "github_path": ".claude/skills/gcp-usage",
+  "github_branch": "main",
+  "dir_name": "gcp-usage",
+  "downloaded_at": "2026-02-05T01:45:01.739186Z"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "git-conventional-commits",
+  "description": "Apply when writing commit messages to maintain consistent, readable git history that enables automated changelog generation.",
+  "repo": "CoderMariusz/MonoPilot",
+  "path": ".claude/skills/git-conventional-commits",
+  "category": "workflow",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CoderMariusz/MonoPilot",
+  "dir_name": "git-conventional-commits-codermariusz-monopilot-2",
+  "author": "CoderMariusz",
+  "source_url": "https://github.com/CoderMariusz/MonoPilot/blob/main/.claude/skills/git-conventional-commits/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CoderMariusz/MonoPilot/blob/main/.claude/skills/git-conventional-commits/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "imagemagick",
+  "repo": "brixtonpham/claude-config",
+  "path": "skills/imagemagick/SKILL.md",
+  "source": "github.com/brixtonpham/claude-config",
+  "downloaded_at": "2026-01-29T08:50:37.099078Z",
+  "dir_name": "imagemagick-brixtonpham-claude-config",
+  "category": "bash",
+  "author": "brixtonpham",
+  "source_url": "https://github.com/brixtonpham/claude-config/blob/main/skills/imagemagick/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/brixtonpham/claude-config/blob/main/skills/imagemagick/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

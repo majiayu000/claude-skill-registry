@@ -1,0 +1,16 @@
+{
+  "name": "kapso-ops",
+  "repo": "gokapso/agent-skills",
+  "path": "skills/kapso-ops/SKILL.md",
+  "source": "github.com/gokapso/agent-skills",
+  "downloaded_at": "2026-01-28T01:38:33.373947Z",
+  "dir_name": "kapso-ops",
+  "category": "integration",
+  "author": "gokapso",
+  "source_url": "https://github.com/gokapso/agent-skills/blob/main/skills/kapso-ops/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gokapso/agent-skills/blob/main/skills/kapso-ops/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

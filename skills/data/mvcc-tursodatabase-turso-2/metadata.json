@@ -1,0 +1,18 @@
+{
+  "name": "mvcc",
+  "description": "Overview of Experimental MVCC feature - snapshot isolation, versioning, limitations",
+  "repo": "tursodatabase/turso",
+  "path": ".claude/skills/mvcc",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tursodatabase/turso",
+  "dir_name": "mvcc-tursodatabase-turso-2",
+  "author": "tursodatabase",
+  "source_url": "https://github.com/tursodatabase/turso/blob/main/.claude/skills/mvcc/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright 2024 the Turso authors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

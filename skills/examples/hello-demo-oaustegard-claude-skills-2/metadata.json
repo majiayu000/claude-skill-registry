@@ -1,0 +1,18 @@
+{
+  "name": "hello-demo",
+  "description": "Delivers a static Hello World HTML demo page with bookmarklet. Use when user requests the hello demo, hello world demo, or demo page.",
+  "repo": "oaustegard/claude-skills",
+  "path": "hello-demo",
+  "category": "examples",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/oaustegard/claude-skills",
+  "dir_name": "hello-demo-oaustegard-claude-skills-2",
+  "author": "oaustegard",
+  "source_url": "https://github.com/oaustegard/claude-skills/blob/main/hello-demo/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Oskar Austegard",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "hevy",
+  "description": "Query workout data from Hevy including workouts, routines, exercises, and history. Use when user asks about their workouts, gym sessions, exercise progress, or fitness routines.",
+  "repo": "clawdbot/skills",
+  "path": "skills/mjrussell/hevy",
+  "category": "personal-development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/clawdbot/skills",
+  "dir_name": "hevy-clawdbot-skills-2",
+  "author": "clawdbot",
+  "source_url": "https://github.com/clawdbot/skills/blob/main/skills/mjrussell/hevy/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 clawdbot",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

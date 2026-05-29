@@ -1,0 +1,17 @@
+{
+  "name": "ios-animation-code-review",
+  "repo": "existential-birds/beagle",
+  "path": "plugins/beagle-ios/skills/ios-animation-code-review/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/existential-birds/beagle",
+  "dir_name": "ios-animation-code-review",
+  "downloaded_at": "2026-05-27T04:13:39.783215Z",
+  "author": "existential-birds",
+  "source_url": "https://github.com/existential-birds/beagle/blob/main/plugins/beagle-ios/skills/ios-animation-code-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/existential-birds/beagle/blob/main/plugins/beagle-ios/skills/ios-animation-code-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

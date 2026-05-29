@@ -1,0 +1,18 @@
+{
+  "name": "gemini-session-management",
+  "description": "Central authority for Gemini CLI session management. Covers session resume, retention policies, session browser, and cleanup. Use when resuming Gemini sessions, configuring retention, browsing past se",
+  "repo": "melodic-software/claude-code-plugins",
+  "path": "plugins/google-ecosystem/skills/gemini-session-management",
+  "category": "platform",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/melodic-software/claude-code-plugins",
+  "dir_name": "gemini-session-management-melodic-software-claude-code-plugins-2",
+  "author": "melodic-software",
+  "source_url": "https://github.com/melodic-software/claude-code-plugins/blob/main/plugins/google-ecosystem/skills/gemini-session-management/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Melodic Software",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

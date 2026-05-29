@@ -1,0 +1,18 @@
+{
+  "name": "goodark",
+  "description": "Good-Ark Semiconductor MPN encoding patterns, suffix decoding, and handler guidance. Use when working with Good-Ark diodes, transistors, or GoodArkHandler.",
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/goodark",
+  "category": "domains",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Cantara/lib-electronic-components",
+  "dir_name": "goodark-cantara-lib-electronic-compo-2",
+  "author": "Cantara",
+  "source_url": "https://github.com/Cantara/lib-electronic-components/blob/main/.claude/skills/manufacturers/goodark/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Cantara/lib-electronic-components/blob/main/.claude/skills/manufacturers/goodark/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

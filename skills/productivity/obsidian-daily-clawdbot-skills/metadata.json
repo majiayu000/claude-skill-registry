@@ -1,0 +1,20 @@
+{
+  "name": "obsidian-daily",
+  "description": "All versions of all skills that are on clawdhub.com archived",
+  "repo": "clawdbot/skills",
+  "category": "productivity",
+  "tags": [],
+  "stars": 11,
+  "source": "",
+  "github_path": "skills/bastos/obsidian-daily",
+  "github_branch": "main",
+  "dir_name": "obsidian-daily-clawdbot-skills",
+  "downloaded_at": "2026-02-05T01:45:28.257467Z",
+  "author": "clawdbot",
+  "source_url": "https://github.com/clawdbot/skills/blob/main/skills/bastos/obsidian-daily/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 clawdbot",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

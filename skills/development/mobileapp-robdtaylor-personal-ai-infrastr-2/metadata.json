@@ -1,0 +1,18 @@
+{
+  "name": "MobileApp",
+  "description": "PAI Mobile App - Unified mobile interface for Claude Code chat, file browsing, and Obsidian knowledge base access.\n\nA self-hosted web application accessible from iPhone/iPad via Tailscale.\n\n## Quick S",
+  "repo": "robdtaylor/personal-ai-infrastructure",
+  "path": "skills/MobileApp",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/robdtaylor/personal-ai-infrastructure",
+  "dir_name": "mobileapp-robdtaylor-personal-ai-infrastr-2",
+  "author": "robdtaylor",
+  "source_url": "https://github.com/robdtaylor/personal-ai-infrastructure/blob/main/skills/MobileApp/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/robdtaylor/personal-ai-infrastructure/blob/main/skills/MobileApp/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

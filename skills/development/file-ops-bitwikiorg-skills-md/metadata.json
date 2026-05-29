@@ -1,0 +1,18 @@
+{
+  "name": "file_ops",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/langchain/file_ops/SKILL.md",
+  "source": "github.com/bitwikiorg/skills.md",
+  "downloaded_at": "2026-01-22T01:15:02.281167Z",
+  "dir_name": "file-ops-bitwikiorg-skills-md",
+  "category": "development",
+  "github_path": "sources/langchain/file_ops",
+  "github_branch": "main",
+  "author": "bitwikiorg",
+  "source_url": "https://github.com/bitwikiorg/skills.md/blob/main/sources/langchain/file_ops/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 BITwiki",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

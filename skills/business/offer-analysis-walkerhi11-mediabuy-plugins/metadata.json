@@ -1,0 +1,16 @@
+{
+  "name": "offer-analysis",
+  "repo": "WalkerHi11/mediabuy-plugins",
+  "path": ".claude/skills/offer-analysis/SKILL.md",
+  "source": "github.com/WalkerHi11/mediabuy-plugins",
+  "downloaded_at": "2026-01-29T08:26:30.471573Z",
+  "dir_name": "offer-analysis-walkerhi11-mediabuy-plugins",
+  "category": "business",
+  "author": "WalkerHi11",
+  "source_url": "https://github.com/WalkerHi11/mediabuy-plugins/blob/main/.claude/skills/offer-analysis/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Media Buying Team",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

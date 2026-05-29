@@ -1,0 +1,18 @@
+{
+  "name": "kiss-principle",
+  "description": "Keep It Simple, Stupid - evita complejidad innecesaria. Use cuando diseñe interfaces, arquitectura, o tome decisiones que afecten la simplicidad del sistema.",
+  "repo": "vjrivmon/handwriting-ocr",
+  "path": ".claude/skills/ux-ui/design-principles/kiss-principle",
+  "category": "design",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vjrivmon/handwriting-ocr",
+  "dir_name": "kiss-principle-vjrivmon-handwriting-ocr-2",
+  "author": "vjrivmon",
+  "source_url": "https://github.com/vjrivmon/handwriting-ocr/blob/main/.claude/skills/ux-ui/design-principles/kiss-principle/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vjrivmon/handwriting-ocr/blob/main/.claude/skills/ux-ui/design-principles/kiss-principle/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

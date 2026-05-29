@@ -1,0 +1,17 @@
+{
+  "name": "magento-catalog",
+  "repo": "OrcaQubits/agentic-commerce-claude-plugins",
+  "path": "magento2-commerce/skills/magento-catalog/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/OrcaQubits/agentic-commerce-claude-plugins",
+  "dir_name": "magento-catalog",
+  "downloaded_at": "2026-03-25T01:14:35.281355Z",
+  "author": "OrcaQubits",
+  "source_url": "https://github.com/OrcaQubits/agentic-commerce-claude-plugins/blob/main/magento2-commerce/skills/magento-catalog/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OrcaQubits/agentic-commerce-claude-plugins/blob/main/magento2-commerce/skills/magento-catalog/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

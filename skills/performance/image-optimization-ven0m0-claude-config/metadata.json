@@ -1,0 +1,16 @@
+{
+  "name": "image-optimization",
+  "repo": "Ven0m0/claude-config",
+  "path": "claude/skills/image-optimization/SKILL.md",
+  "source": "github.com/Ven0m0/claude-config",
+  "downloaded_at": "2026-02-02T04:09:55.869198Z",
+  "dir_name": "image-optimization-ven0m0-claude-config",
+  "category": "performance",
+  "author": "Ven0m0",
+  "source_url": "https://github.com/Ven0m0/claude-config/blob/main/claude/skills/image-optimization/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

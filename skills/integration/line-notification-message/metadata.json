@@ -1,0 +1,17 @@
+{
+  "name": "line-notification-message",
+  "repo": "abgne/line-dev",
+  "path": "skills/line-notification-message/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/abgne/line-dev",
+  "dir_name": "line-notification-message",
+  "downloaded_at": "2026-03-22T06:38:35.031967Z",
+  "author": "abgne",
+  "source_url": "https://github.com/abgne/line-dev/blob/main/skills/line-notification-message/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/abgne/line-dev/blob/main/skills/line-notification-message/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

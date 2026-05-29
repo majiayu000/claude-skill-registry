@@ -1,0 +1,16 @@
+{
+  "name": "limitless",
+  "repo": "TechNickAI/ai-coding-config",
+  "path": "plugins/core/skills/limitless/SKILL.md",
+  "source": "github.com/TechNickAI/ai-coding-config",
+  "downloaded_at": "2026-02-02T02:48:42.621296Z",
+  "dir_name": "limitless",
+  "category": "context-management",
+  "author": "TechNickAI",
+  "source_url": "https://github.com/TechNickAI/ai-coding-config/blob/main/plugins/core/skills/limitless/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Nick",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

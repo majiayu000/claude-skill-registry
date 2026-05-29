@@ -1,0 +1,16 @@
+{
+  "name": "legendary-items",
+  "repo": "bivex/loreSystem",
+  "path": ".claude/skills/legendary-items/SKILL.md",
+  "category": "domains",
+  "source": "github.com/bivex/loreSystem",
+  "dir_name": "legendary-items",
+  "downloaded_at": "2026-02-22T06:33:14.033906Z",
+  "author": "bivex",
+  "source_url": "https://github.com/bivex/loreSystem/blob/main/.claude/skills/legendary-items/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bivex/loreSystem/blob/main/.claude/skills/legendary-items/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

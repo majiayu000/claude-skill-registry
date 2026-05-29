@@ -1,0 +1,16 @@
+{
+  "name": "firecrawl-api",
+  "repo": "s-hiraoku/vscode-sidebar-terminal",
+  "path": ".claude/skills/firecrawl-api/SKILL.md",
+  "source": "github.com/s-hiraoku/vscode-sidebar-terminal",
+  "downloaded_at": "2026-01-29T06:30:57.034055Z",
+  "dir_name": "firecrawl-api-s-hiraoku-vscode-sidebar-termi",
+  "category": "integration",
+  "author": "s-hiraoku",
+  "source_url": "https://github.com/s-hiraoku/vscode-sidebar-terminal/blob/main/.claude/skills/firecrawl-api/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2025 s-hiraoku",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

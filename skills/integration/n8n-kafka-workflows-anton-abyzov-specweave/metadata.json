@@ -1,0 +1,16 @@
+{
+  "name": "n8n-kafka-workflows",
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave-n8n/skills/n8n-kafka-workflows/SKILL.md",
+  "source": "github.com/anton-abyzov/specweave",
+  "downloaded_at": "2026-01-29T05:36:41.685277Z",
+  "dir_name": "n8n-kafka-workflows-anton-abyzov-specweave",
+  "category": "integration",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave-n8n/skills/n8n-kafka-workflows/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

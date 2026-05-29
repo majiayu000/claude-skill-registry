@@ -1,0 +1,13 @@
+{
+  "name": "failure-recovery",
+  "description": "",
+  "repo": "Khamel83/oneshot",
+  "category": "agent",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Khamel83/oneshot",
+  "github_path": ".claude/skills/failure-recovery",
+  "github_branch": "master",
+  "dir_name": "failure-recovery",
+  "downloaded_at": "2026-02-05T01:44:38.032902Z"
+}

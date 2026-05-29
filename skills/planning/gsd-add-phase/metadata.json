@@ -1,0 +1,16 @@
+{
+  "name": "gsd-add-phase",
+  "repo": "shoootyou/get-shit-done-multi",
+  "path": ".claude/skills/gsd-add-phase/SKILL.md",
+  "source": "github.com/shoootyou/get-shit-done-multi",
+  "downloaded_at": "2026-02-02T05:11:25.996273Z",
+  "dir_name": "gsd-add-phase",
+  "category": "planning",
+  "author": "shoootyou",
+  "source_url": "https://github.com/shoootyou/get-shit-done-multi/blob/main/.claude/skills/gsd-add-phase/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Lex Christopherson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

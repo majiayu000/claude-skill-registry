@@ -1,0 +1,16 @@
+{
+  "name": "investigate",
+  "repo": "TokenRollAI/cc-plugin",
+  "path": "skills/investigate/SKILL.md",
+  "category": "analysis",
+  "source": "github.com/TokenRollAI/cc-plugin",
+  "dir_name": "investigate-tokenrollai-cc-plugin-2",
+  "downloaded_at": "2026-02-15T05:54:09.428993Z",
+  "author": "TokenRollAI",
+  "source_url": "https://github.com/TokenRollAI/cc-plugin/blob/main/skills/investigate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TokenRollAI/cc-plugin/blob/main/skills/investigate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

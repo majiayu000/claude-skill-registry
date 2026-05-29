@@ -1,0 +1,18 @@
+{
+  "name": "gemini-rlm-min",
+  "repo": "starwreckntx/IRP__METHODOLOGIES-",
+  "path": "skills/gemini-rlm-min/SKILL.md",
+  "source": "github.com/starwreckntx/IRP__METHODOLOGIES-",
+  "downloaded_at": "2026-01-22T01:18:44.119513Z",
+  "dir_name": "gemini-rlm-min-starwreckntx-irp-methodologies-090bd879",
+  "category": "ai-llm",
+  "github_path": "skills/gemini-rlm-min",
+  "github_branch": "main",
+  "author": "starwreckntx",
+  "source_url": "https://github.com/starwreckntx/IRP__METHODOLOGIES-/blob/main/skills/gemini-rlm-min/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/starwreckntx/IRP__METHODOLOGIES-/blob/main/skills/gemini-rlm-min/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

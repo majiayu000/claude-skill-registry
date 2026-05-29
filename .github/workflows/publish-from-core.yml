@@ -67,6 +67,28 @@ jobs:
           echo "data_repo=$data_repo" >> "$GITHUB_OUTPUT"
           echo "data_sha=$data_sha" >> "$GITHUB_OUTPUT"
 
+      - name: Free runner disk for large publish
+        run: |
+          set -euo pipefail
+          echo "Disk before cleanup:"
+          df -h
+
+          sudo rm -rf \
+            /usr/local/lib/android \
+            /usr/share/dotnet \
+            /usr/share/swift \
+            /usr/local/.ghcup \
+            /opt/ghc \
+            /opt/hostedtoolcache/CodeQL \
+            /opt/hostedtoolcache/Ruby \
+            /opt/hostedtoolcache/go \
+            /opt/hostedtoolcache/node || true
+
+          docker system prune -af || true
+
+          echo "Disk after cleanup:"
+          df -h
+
       - name: Checkout main
         uses: actions/checkout@v6
         with:

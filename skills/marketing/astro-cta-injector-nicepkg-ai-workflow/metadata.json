@@ -1,0 +1,16 @@
+{
+  "name": "astro-cta-injector",
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/content-creator-workflow/.claude/skills/astro-cta-injector/SKILL.md",
+  "source": "github.com/nicepkg/ai-workflow",
+  "downloaded_at": "2026-01-29T05:19:47.910813Z",
+  "dir_name": "astro-cta-injector-nicepkg-ai-workflow",
+  "category": "marketing",
+  "author": "nicepkg",
+  "source_url": "https://github.com/nicepkg/ai-workflow/blob/main/workflows/content-creator-workflow/.claude/skills/astro-cta-injector/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 nicepkg",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

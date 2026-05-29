@@ -1,0 +1,1023 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-28T22:49:35.957371+00:00",
+  "workset_jsonl": "migration-artifacts/2026-05-29-current-other-residual-batch-013/worksets/classification_gap.jsonl",
+  "classification_jsonl": "migration-artifacts/2026-05-29-current-other-residual-batch-013/classification-gap-classification.jsonl",
+  "policy": {
+    "sample_size": 50,
+    "seed": "category-audit-v1",
+    "statuses": [
+      "ok"
+    ],
+    "min_confidence": 0.9
+  },
+  "summary": {
+    "workset_row_count": 889,
+    "classification_row_count": 889,
+    "matched_input_count": 889,
+    "missing_input_count": 0,
+    "candidate_count": 260,
+    "sample_count": 50,
+    "status_counts": {
+      "ok": 889
+    },
+    "target_category_counts": {
+      "agent": 18,
+      "ai-llm": 15,
+      "ai-ml": 17,
+      "analysis": 50,
+      "api": 5,
+      "bash": 1,
+      "communication": 1,
+      "context-management": 7,
+      "creative": 3,
+      "data": 9,
+      "design": 31,
+      "development": 150,
+      "devops": 17,
+      "documents": 51,
+      "domains": 50,
+      "examples": 1,
+      "forensics": 1,
+      "gaming": 5,
+      "generation": 42,
+      "integration": 34,
+      "language": 2,
+      "marketing": 10,
+      "orchestration": 32,
+      "other": 1,
+      "performance": 11,
+      "personal-development": 4,
+      "planning": 11,
+      "platform": 63,
+      "product": 6,
+      "productivity": 8,
+      "quality": 82,
+      "security": 45,
+      "skills": 16,
+      "system": 3,
+      "testing": 11,
+      "workflow": 69,
+      "writing": 7
+    }
+  },
+  "samples": [
+    {
+      "path": "other/ast-grep-find/SKILL.md",
+      "name": "ast-grep-find",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "AST-based code search and refactoring is a software development workflow involving coding, debugging, and refactoring.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "b2f388b78dbe3a721e22b33e4297dac700d1d3929fc38dd1a3e186dc9e4aa5b9",
+      "metadata_sha256": "878a55cb4fcb0f5417ecb3ccc6c2062632f590125f8ab683321ac1d500e41ec5",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "AST-based code search and refactoring via ast-grep MCP",
+      "content_excerpt": "---\nname: ast-grep-find\ndescription: AST-based code search and refactoring via ast-grep MCP\nallowed-tools: [Bash, Read]\n---\n\n# AST-Grep Find\n\nStructural code search that understands syntax. Find patterns like function calls, imports, class definitions - not just text.\n\n## When to Use\n\n- Find code patterns (ignores strings/comments)\n- Search for function calls, class definitions, imports\n- Refactor code with AST precision\n- Rename variables/functions across codebase\n\n## Usage\n\n### Search for a pattern\n```bash\nuv run python -m runtime.harness scripts/ast_grep_find.py \\\n    --pattern \"import asyncio\" --language python\n```\n\n### Search in specific directory\n```bash\nuv run python -m runtime.harness scripts/ast_grep_find.py \\\n    --pattern \"async def \\$FUNC(\\$\\$\\$)\" --language python --path \"./src\"\n```\n\n### Refactor/replace pattern\n```bash\nuv run python -m runtime.harness scripts/ast_grep_find.py \\\n    --pattern \"console.log(\\$MSG)\" --replace \"logger.info(\\$MSG)\" \\\n    --language javascript\n```\n\n### Dry run (preview changes)\n```bash\nuv run python -m runtime.harness scripts/ast_grep_find.py \\\n    --pattern \"print(\\$X)\" --replace \"logger.info(\\$X)\" \\\n    --language python --dry-run\n```\n\n## Parameters\n\n| Parameter | Description |\n|-----------|-------------|\n| `--pattern` | AST pattern to search (required) |\n| `--language` | Language: `python`, `javascript`, `typescript`, `go`, etc. |\n| `--path` | Directory to search (default: `.`) |\n| `--glob` | File glob pattern (e.g., `**/*.py`) |\n| `--replace` | Replacement pattern for refactoring |\n| `--dry-run` | Preview changes without applying"
+    },
+    {
+      "path": "other/archive-ticket-adamrdrew-ushabti/SKILL.md",
+      "name": "archive-ticket",
+      "current_category": "other",
+      "llm_category": "workflow",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill defines a clear, repeatable procedure for archiving completed tickets by moving them to a specific directory. It's a standard operating procedure (SOP) for a task flow, fitting the workflow category's inclusion rule for 'repeatable procedures, SOPs, pipelines, or task flows'.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "f6f2804fbcb52db8fed7b8e8e048f3119412d9e6b62425a72c305614235e5ff2",
+      "metadata_sha256": "abc3532090d222d2ff8ccb64a284596d4f9d0715f58faf1305b97a43426fe248",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Archive completed tickets by moving them to .archived/",
+      "content_excerpt": "---\nname: archive-ticket\ndescription: Archive completed tickets by moving them to .archived/\n---\n\n# Archive Ticket\n\n## Purpose\n\nThis skill provides instructions for archiving tickets when their derived phases complete. Archiving moves a ticket from `.ushabti/tickets/` to `.ushabti/tickets/.archived/`, making it invisible to agents.\n\n## When to Archive\n\nArchive a ticket when:\n\n1. A phase was derived from the ticket (phase.md contains `ticket: TNNNN` metadata)\n2. The phase has been reviewed and approved by Overseer\n3. Overseer is declaring the phase complete (status: complete)\n\nArchival is part of Overseer's phase completion workflow.\n\n## Archive Procedure\n\n### Step 1: Identify the Ticket\n\nWhen completing a phase:\n\n1. Read the phase.md file\n2. Look for a `ticket` metadata field\n3. Extract the ticket ID (e.g., `ticket: T0042` means ticket ID is T0042)\n\nIf no `ticket` field exists, skip archival (the phase was not derived from a ticket).\n\n### Step 2: Locate the Ticket File\n\nThe ticket file is in `.ushabti/tickets/` with a filename matching `TNNNN-*.yaml`\n\nFor ticket ID T0042, the filename might be `T0042-improve-error-messages.yaml`\n\nUse glob pattern to find the exact filename:\n```bash\nls .ushabti/tickets/T0042-*.yaml\n```\n\n### Step 3: Ensure Archive Directory Exists\n\nEnsure the archive directory exists by running:\n\n```bash\nmkdir -p .ushabti/tickets/.archived\n```\n\nThis is idempotent and handles cases where the directory was not created during bootstrap.\n\n### Step 4: Move to Archive\n\nMove the ticket file from `.ushabti/tickets/` to `.ushabti/tickets/.archived/`\n\n```bash\nmv .ushab"
+    },
+    {
+      "path": "other/auth-wechat-baiyongping-cowork-platform-2/SKILL.md",
+      "name": "auth-wechat-miniprogram",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.92,
+      "status": "ok",
+      "reason": "The skill is a complete guide for WeChat Mini Program authentication with CloudBase, covering native login, user identity, and cloud function integration. This is authentication implementation and security patterns.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "136ac73dd744bedb1e66f2cfb3e71c09a3353102ef4b96e2c39ed62b297b1d2f",
+      "metadata_sha256": "12ef5eb4212d87b9906feaa1dbf223ba216d42e635ee92a548ab12f379c561af",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Complete guide for WeChat Mini Program authentication with CloudBase - native login, user identity, and cloud function integration.",
+      "content_excerpt": "---\nname: auth-wechat-miniprogram\ndescription: Complete guide for WeChat Mini Program authentication with CloudBase - native login, user identity, and cloud function integration.\nalwaysApply: false\n---\n\n## When to use this skill\n\nUse this skill for **WeChat Mini Program (小程序) authentication** in a CloudBase project.\n\nUse it when you need to:\n\n- Implement WeChat Mini Program login with CloudBase\n- Access user identity (openid, unionid) in cloud functions\n- Understand how WeChat authentication integrates with CloudBase\n- Build Mini Program features that require user identification\n\n**Key advantage:** WeChat Mini Program authentication with CloudBase is **seamless and automatic** - no complex OAuth flows needed. When a Mini Program calls a cloud function, the user's `openid` is automatically injected and verified by WeChat.\n\n**Do NOT use for:**\n\n- Web-based WeChat login (use the **CloudBase Web Auth** skill at `skills/auth-web-skill`)\n- Server-side auth with Node SDK (use the **CloudBase Node Auth** skill at `skills/auth-nodejs-skill`)\n- Non-WeChat authentication methods (use appropriate auth skills)\n\n---\n\n## How to use this skill (for a coding agent)\n\n1. **Confirm CloudBase environment**\n   - Ask the user for:\n     - `env` – CloudBase environment ID\n     - Confirm the Mini Program is linked to the CloudBase environment\n\n2. **Understand the authentication flow**\n   - WeChat Mini Program authentication is **native and automatic**\n   - No explicit login API calls needed in most cases\n   - User identity is automatically available in cloud functions\n   - CloudBase handles all auth"
+    },
+    {
+      "path": "other/asyncapi-docs-a5c-ai-babysitter/SKILL.md",
+      "name": "asyncapi-docs",
+      "current_category": "other",
+      "llm_category": "api",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "AsyncAPI documentation generation and validation is a core API specification task.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "7ee855127217d29532b408d8c5a9ec96a60dcafddcf3a267ddaa395e30fe1bf1",
+      "metadata_sha256": "75080f2ef3334b98321caf35d2394ed008351556042135486aaddd7781ec8775",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "AsyncAPI specification handling for event-driven API documentation. Parse, validate, and generate documentation for message-based APIs including Kafka, MQTT, WebSocket, and AMQP systems.",
+      "content_excerpt": "---\nname: asyncapi-docs\ndescription: AsyncAPI specification handling for event-driven API documentation. Parse, validate, and generate documentation for message-based APIs including Kafka, MQTT, WebSocket, and AMQP systems.\nallowed-tools: Read, Write, Edit, Bash, Glob, Grep\nbacklog-id: SK-016\nmetadata:\n  author: babysitter-sdk\n  version: \"1.0.0\"\n---\n\n# AsyncAPI Documentation Skill\n\nGenerate and validate documentation for event-driven APIs using the AsyncAPI specification with support for multiple messaging protocols.\n\n## Capabilities\n\n- Parse and validate AsyncAPI 2.x and 3.x specifications\n- Generate documentation from AsyncAPI specs\n- Document event/message schemas\n- Channel and operation documentation\n- Protocol-specific binding documentation (Kafka, MQTT, WebSocket, AMQP)\n- Code generator integration\n- Spectral linting for AsyncAPI\n- Schema validation and type generation\n\n## Usage\n\nInvoke this skill when you need to:\n- Document event-driven microservices\n- Create message broker API documentation\n- Generate client code from async specifications\n- Validate AsyncAPI specifications\n- Create interactive documentation sites\n\n## Inputs\n\n| Parameter | Type | Required | Description |\n|-----------|------|----------|-------------|\n| specPath | string | Yes | Path to AsyncAPI specification |\n| outputDir | string | No | Documentation output directory |\n| generator | string | No | html, markdown, react (default: html) |\n| validate | boolean | No | Run spec validation (default: true) |\n| lint | boolean | No | Run Spectral linting (default: true) |\n| generateCode | boolean | No | Gener"
+    },
+    {
+      "path": "other/auto-testing-timequity-vibe-coder-2/SKILL.md",
+      "name": "auto-testing",
+      "current_category": "other",
+      "llm_category": "testing",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill's core purpose is to automatically generate and run tests after code changes, which is a direct testing automation workflow.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "ea014b7a1c9bc372980832667687112f3598eaf33e404080efb1c0e9e00d8175",
+      "metadata_sha256": "18628c6c9474a4cad97f76b39c6da82d28158451c80e8025cf931481309132e6",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Automatically generate and run tests after each code change.\nUse when: any code is generated or modified in the pipeline.\nTriggers: internal use only.",
+      "content_excerpt": "---\nname: auto-testing\ndescription: |\n  Automatically generate and run tests after each code change.\n  Use when: any code is generated or modified in the pipeline.\n  Triggers: internal use only.\n---\n\n# Auto Testing\n\nRun tests automatically. User sees only pass/fail.\n\n## When to Run\n\nAfter every:\n- Component generation\n- Feature addition\n- Code modification\n- Refactoring\n\n## Test Generation\n\nFor each code change, generate:\n\n| Code Type | Test Type |\n|-----------|-----------|\n| Component | Render, interaction |\n| API endpoint | Request/response |\n| Utility function | Unit tests |\n| Form | Validation, submission |\n| Auth flow | Login, logout, protected |\n\n## Test Patterns\n\n### Components\n```typescript\ntest('renders correctly', () => {\n  render(<Component />);\n  expect(screen.getByRole('button')).toBeInTheDocument();\n});\n\ntest('handles click', async () => {\n  const onClick = jest.fn();\n  render(<Component onClick={onClick} />);\n  await userEvent.click(screen.getByRole('button'));\n  expect(onClick).toHaveBeenCalled();\n});\n```\n\n### API\n```typescript\ntest('returns data', async () => {\n  const response = await fetch('/api/items');\n  expect(response.status).toBe(200);\n  const data = await response.json();\n  expect(data.items).toBeDefined();\n});\n```\n\n## Reporting\n\n| Status | User Sees |\n|--------|-----------|\n| All pass | ✅ (nothing else) |\n| Some fail | \"Fixing issues...\" then ✅ |\n| Can't fix | ❌ + simple explanation |\n\n## Hidden Details\n\nUser never sees:\n- Test file contents\n- Number of tests\n- Coverage percentage\n- Individual test names\n\nOnly: ✅ works or ❌ problem\n"
+    },
+    {
+      "path": "other/assets-zaloog-kanban-tui-2/SKILL.md",
+      "name": "kanban-tui",
+      "current_category": "other",
+      "llm_category": "productivity",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is a CLI tool for kanban boards, task management, and workflow automation, which aligns with personal/team workflow automation and task management.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "4736cfb6adb6fac4f251f7e86a1df7d6ae5c12a112fbe8191b32c2da1f9cbf9c",
+      "metadata_sha256": "b679bced531f4d9eebdb4b118fcc188761828c6739da33cda294b32676dca1b6",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Comprehensive kanban board and task management via ktui CLI. Use for project tracking, todo lists, task dependencies, workflow automation, and board management. Activates when user mentions boards, tasks, kanban, or project management. If the `ktui` command is not available, but `uv` is available utilize `uvx kanban-tui` instead.",
+      "content_excerpt": "---\nname: kanban-tui\ndescription: Comprehensive kanban board and task management via ktui CLI. Use for project tracking, todo lists, task dependencies, workflow automation, and board management. Activates when user mentions boards, tasks, kanban, or project management. If the `ktui` command is not available, but `uv` is available utilize `uvx kanban-tui` instead.\n---\n\n# Kanban-TUI: Terminal-Based Task Management System\n\nYou are an expert at using `ktui` (kanban-tui), a powerful CLI tool for managing kanban boards, tasks, and workflows. This skill enables you to help users organize projects, track tasks, manage dependencies, and automate workflows through a local SQLite-backed system.\n\n## Core Concepts\n\n### Data Model\n- **Boards**: Workspaces for different projects (e.g., \"Frontend\", \"API Development\")\n- **Columns**: Workflow stages within boards (e.g., \"Backlog\", \"In Progress\", \"Review\", \"Done\")\n- **Tasks**: Work items that move through columns, can have dependencies on other tasks\n- **Active Board**: The currently selected board where operations execute (unless `--board` specified)\n- **Special Columns**: Each board has `reset_column` (default start), `start_column` (in-progress), `finish_column` (completion)\n\n### Key Principles\n1. **CLI-Interface only**: Never run bare `ktui`, use `ktui task/board/column ...` commands only\n2. **ID-Based Operations**: All entities use numeric IDs - always list first to get IDs\n3. **JSON-First**: Use `--json` flag for machine-readable output in automation\n4. **Active Board Context**: Operations apply to active board unless explicitly specifi"
+    },
+    {
+      "path": "other/architecture-review-athola-claude-night-market-69940134/SKILL.md",
+      "name": "architecture-review",
+      "current_category": "other",
+      "llm_category": "quality",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Architecture review evaluates codebase architecture against ADRs, coupling rules, and team guardrails, which is a review and validation process fitting the quality category.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "d17bb49363d76add2f63142656cc761cae806f18d3ba602237cb6e9a6caf515a",
+      "metadata_sha256": "d06bacbe5a8dac68de17084f06624ddb99f801c159e4596345ead5acc0c1eb1c",
+      "semantic_sources": {
+        "description": "body",
+        "name": "metadata"
+      },
+      "description": "- Quick Start",
+      "content_excerpt": "---\nname: architecture-review\ndescription: |\n\nTriggers: adr, architecture, patterns, design, review\n  Evaluate codebase architecture against ADRs, coupling rules, and team guardrails.\n\n  Triggers: architecture review, ADR audit, coupling analysis, design review,\n  principle checks, Law of Demeter, architecture assessment\n\n  Use when: reviewing architecture decisions, auditing ADR compliance, analyzing\n  coupling, validating design principles\n\n  DO NOT use when: selecting architecture paradigms - use archetypes skills.\n  DO NOT use when: API surface review - use api-review.\n\n  Use this skill for architecture assessment and compliance.\ncategory: architecture\ntags: [architecture, design, adr, coupling, patterns, principles]\ntools: [adr-auditor, coupling-analyzer, principle-checker]\nusage_patterns:\n  - architecture-assessment\n  - adr-audit\n  - refactor-review\n  - design-validation\ncomplexity: advanced\nestimated_tokens: 300\nprogressive_loading: true\ndependencies:\n  - pensive:shared\n  - imbue:evidence-logging\n  - imbue:diff-analysis/modules/risk-assessment-framework\nmodules:\n  - modules/adr-audit.md\n  - modules/coupling-analysis.md\n  - modules/principle-checks.md\n---\n## Table of Contents\n\n- [Quick Start](#quick-start)\n- [When to Use](#when-to-use)\n- [Progressive Loading](#progressive-loading)\n- [Required TodoWrite Items](#required-todowrite-items)\n- [Workflow](#workflow)\n- [Step 1: Establish Context (`arch-review:context-established`)](#step-1:-establish-context-(arch-review:context-established))\n- [Step 2: ADR Audit (`arch-review:adr-audit`)](#step-2:-adr-audit-(arch-review:adr-"
+    },
+    {
+      "path": "other/asynchronous-pluginagentmarketpla-custom-plugin-javasc-42472160/SKILL.md",
+      "name": "asynchronous",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Duplicate of id 3; same asynchronous JavaScript patterns skill.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "5c961a1783b7860f0a9ffc331e2292d8075f242173dc1c33c94e237a98f4416c",
+      "metadata_sha256": "3ffcd8ade321986773c1f4157e61d796ad5053cd0a298a7b981be7c27950b280",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Master asynchronous JavaScript patterns including callbacks, promises, async/await, event loop mechanics, and real-world async patterns.",
+      "content_excerpt": "---\nname: asynchronous\ndescription: Master asynchronous JavaScript patterns including callbacks, promises, async/await, event loop mechanics, and real-world async patterns.\nsasmp_version: \"1.3.0\"\nbonded_agent: 04-asynchronous-javascript\nbond_type: PRIMARY_BOND\n\n# Production-Grade Configuration\nskill_type: reference\nresponse_format: code_first\nmax_tokens: 1500\n\nparameter_validation:\n  required: [topic]\n  optional: [pattern_type]\n\nretry_logic:\n  on_ambiguity: ask_clarification\n  fallback: show_async_await_first\n\nobservability:\n  entry_log: \"Async skill activated\"\n  exit_log: \"Async reference provided\"\n---\n\n# Asynchronous JavaScript Skill\n\n## Quick Reference Card\n\n### Event Loop Order\n```\n1. Call Stack (sync code)\n2. Microtasks (Promise.then, queueMicrotask)\n3. Macrotasks (setTimeout, setInterval, I/O)\n```\n\n```javascript\nconsole.log('1');                    // Sync\nsetTimeout(() => console.log('2'), 0);  // Macro\nPromise.resolve().then(() => console.log('3')); // Micro\nconsole.log('4');                    // Sync\n// Output: 1, 4, 3, 2\n```\n\n### Promise Basics\n```javascript\n// Create\nconst promise = new Promise((resolve, reject) => {\n  if (success) resolve(value);\n  else reject(new Error('Failed'));\n});\n\n// Chain\nfetch('/api/data')\n  .then(res => res.json())\n  .then(data => process(data))\n  .catch(err => handleError(err))\n  .finally(() => cleanup());\n```\n\n### Async/Await\n```javascript\nasync function fetchData() {\n  try {\n    const response = await fetch('/api/data');\n    if (!response.ok) throw new Error(`HTTP ${response.status}`);\n    return await response.json();\n  } catch (er"
+    },
+    {
+      "path": "other/audit-expert-personamanagmentlaye-pcl-2/SKILL.md",
+      "name": "audit-expert",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill's frontmatter explicitly sets category: security, and its description focuses on security auditing, compliance, code review, and vulnerability assessment. The inclusion rule for 'security' covers security review, compliance, vulnerabilities, OWASP, pentesting, and fuzzing, which aligns perfectly with the skill's content.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "311a590b7466d1cbce1bbfbb0237c396cff5878db4151076bee5ea3731923d79",
+      "metadata_sha256": "cb7c74fdb9cb2a787b94291ad7a704ed58a8e7e1693bff4497440affbc9c00f2",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "Expert-level security auditing, compliance, code review, and vulnerability assessment",
+      "content_excerpt": "---\nname: audit-expert\nversion: 1.0.0\ndescription: Expert-level security auditing, compliance, code review, and vulnerability assessment\ncategory: security\ntags: [audit, compliance, security-review, code-review, vulnerability-assessment, soc2, gdpr]\nallowed-tools:\n  - Read\n  - Write\n  - Edit\n  - Bash(git:*, grep:*, find:*)\n---\n\n# Audit Expert\n\nExpert guidance for security auditing, compliance assessments, code reviews, vulnerability assessments, and regulatory compliance (SOC 2, GDPR, HIPAA, PCI-DSS).\n\n## Core Concepts\n\n### Audit Types\n- **Security Audit**: Vulnerability assessment, penetration testing\n- **Code Audit**: Code review, static analysis, security patterns\n- **Compliance Audit**: SOC 2, GDPR, HIPAA, PCI-DSS, ISO 27001\n- **Infrastructure Audit**: Configuration review, access control\n- **Process Audit**: SDLC, change management, incident response\n\n### Audit Frameworks\n- OWASP ASVS (Application Security Verification Standard)\n- NIST Cybersecurity Framework\n- CIS Controls\n- ISO 27001/27002\n- SOC 2 Trust Service Criteria\n\n### Audit Process\n1. Planning and scoping\n2. Information gathering\n3. Vulnerability identification\n4. Risk assessment\n5. Reporting\n6. Remediation tracking\n7. Follow-up verification\n\n## Security Code Review\n\n### Authentication Review\n```javascript\n// ❌ Issues to flag\nclass AuthService {\n  // Issue 1: Weak password requirements\n  validatePassword(password) {\n    return password.length >= 6; // Too short!\n  }\n\n  // Issue 2: Password stored in plaintext\n  async createUser(email, password) {\n    await db.users.create({ email, password }); // No hashing!\n "
+    },
+    {
+      "path": "other/architecture-patterns-sequenzia-agent-alchemy-2/SKILL.md",
+      "name": "architecture-patterns",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Same skill as id 2 (duplicate/ported version) providing architectural pattern knowledge for feature implementations. Core software development design patterns.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "20c3a5db58cb4c6bd28c313b07778e57b80fa8af16c7f057ec8400eda33ff439",
+      "metadata_sha256": "06bc7ecbac1a2e62d924c48e0381e8b035b04f93d3645b444d709e727bed1a7f",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Provides architectural pattern knowledge for designing feature implementations including MVC, event-driven, microservices, and CQRS patterns. Use when designing system architecture or choosing implementation patterns.",
+      "content_excerpt": "---\nname: architecture-patterns\ndescription: Provides architectural pattern knowledge for designing feature implementations including MVC, event-driven, microservices, and CQRS patterns. Use when designing system architecture or choosing implementation patterns.\ndependencies: []\n---\n\n# Architecture Patterns\n\nThis skill provides knowledge about common architectural patterns to help design feature implementations. Apply these patterns based on the project's existing architecture and the feature's requirements.\n\n## Diagram Convention\n\nArchitecture visualizations use Mermaid syntax with `classDef` styling (`color:#000` for text readability). When creating architecture visualizations based on these patterns, follow the technical-diagrams skill conventions.\n\n## Pattern Selection Guide\n\nChoose patterns based on:\n1. **Existing architecture** - Match what is already in use\n2. **Team familiarity** - Use patterns the team knows\n3. **Feature requirements** - Some patterns fit better for certain features\n4. **Scale requirements** - Consider current and future scale\n\n---\n\n## Layered Architecture (N-Tier)\n\n**When to use:** Most web applications, CRUD operations, clear separation of concerns needed\n\n**Layers:**\n```mermaid\nflowchart TD\n    A[\"Presentation Layer — UI, API endpoints, controllers\"]:::primary\n    B[\"Application Layer — Use cases, orchestration, DTOs\"]:::secondary\n    C[\"Domain Layer — Business logic, entities, rules\"]:::success\n    D[\"Infrastructure Layer — Database, external services, I/O\"]:::neutral\n    A --> B --> C --> D\n\n    classDef primary fill:#dbeafe,stroke:#2563eb,col"
+    },
+    {
+      "path": "other/auto-debug-lovedragonball-power-ranger-toolkit/SKILL.md",
+      "name": "auto-debug",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "This is a duplicate of skill id 3 with the same functionality - automatically detecting and fixing bugs from terminal output, which is a development debugging workflow.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "bff8294e45d9954fac4f5b4414a6613c04542a5c7f6c66b4d249bb0055b9ec76",
+      "metadata_sha256": "eb1d8d166b481f5d0be72700da914c43489edd73643d348ffff04a952874cd05",
+      "semantic_sources": {
+        "description": "body",
+        "name": "metadata"
+      },
+      "description": "ตรวจจับ errors จาก terminal output อัตโนมัติ และแนะนำหรือแก้ไขปัญหาทันที ลดเวลา debug ลงอย่างมาก",
+      "content_excerpt": "# 🐛 Auto Debug Skill\n\n---\nname: auto-debug\ndescription: Automatically detect bugs from terminal output and suggest/apply fixes without manual intervention\n---\n\n## 🎯 Purpose\n\nตรวจจับ errors จาก terminal output อัตโนมัติ และแนะนำหรือแก้ไขปัญหาทันที ลดเวลา debug ลงอย่างมาก\n\n## 📋 When to Use\n\n- เมื่อ terminal แสดง error messages\n- เมื่อ build/compile fail\n- เมื่อ tests fail\n- เมื่อ runtime errors occur\n- เมื่อ linting errors เกิดขึ้น\n\n## 🔧 Capabilities\n\n### 1. Error Detection\n| Error Type | Detection Pattern |\n|------------|-------------------|\n| TypeScript | `TS\\d+:`, `Type error:` |\n| ESLint | `error:`, `warning:` |\n| Runtime | `Error:`, `Exception:` |\n| Build | `ENOENT`, `Cannot find module` |\n| Test | `FAIL`, `Expected.*but received` |\n\n### 2. Common Error Fixes\n\n#### TypeScript Errors\n```typescript\n// TS2322: Type 'string' is not assignable to type 'number'\n// Fix: Change variable type or value\n\n// TS2339: Property does not exist\n// Fix: Add property to interface or use optional chaining\n\n// TS7006: Parameter implicitly has 'any' type\n// Fix: Add explicit type annotation\n```\n\n#### Module Errors\n```bash\n# Cannot find module 'xyz'\n# Fix 1: npm install xyz\n# Fix 2: Check import path spelling\n# Fix 3: Add to tsconfig paths\n\n# Module not found: Can't resolve './component'\n# Fix: Check file exists, check extension, check case sensitivity\n```\n\n#### Runtime Errors\n```javascript\n// TypeError: Cannot read property 'x' of undefined\n// Fix: Add null check or optional chaining\n\n// ReferenceError: variable is not defined\n// Fix: Declare variable or check scope\n\n// SyntaxError: Unexpecte"
+    },
+    {
+      "path": "other/atac-qc-gptomics-bioskills-4848cc2f/SKILL.md",
+      "name": "bio-atac-seq-atac-qc",
+      "current_category": "other",
+      "llm_category": "domains",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "This is another duplicate of the ATAC-seq QC skill with identical description - a bioinformatics domain workflow.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "2050a5d08cad1fa1efd039015b0ff8d346d2f9e56c9fe8ac391eb6f5413e76d7",
+      "metadata_sha256": "9045a9d92bbb66280b21e0926291b11d7368dc426437cddd004443d8d7e5abef",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Quality control metrics for ATAC-seq data including fragment size distribution, TSS enrichment, FRiP, and library complexity. Use when assessing ATAC-seq library quality before or after peak calling to identify problematic samples.",
+      "content_excerpt": "---\nname: bio-atac-seq-atac-qc\ndescription: Quality control metrics for ATAC-seq data including fragment size distribution, TSS enrichment, FRiP, and library complexity. Use when assessing ATAC-seq library quality before or after peak calling to identify problematic samples.\ntool_type: mixed\nprimary_tool: deeptools\n---\n\n# ATAC-seq Quality Control\n\n## Fragment Size Distribution\n\n```bash\n# Using Picard\njava -jar picard.jar CollectInsertSizeMetrics \\\n    I=sample.bam \\\n    O=insert_sizes.txt \\\n    H=insert_sizes.pdf \\\n    M=0.5\n\n# Using samtools\nsamtools view -f 66 sample.bam | \\\n    awk '{print sqrt($9^2)}' | \\\n    sort | uniq -c | \\\n    awk '{print $2\"\\t\"$1}' > fragment_sizes.txt\n```\n\n## TSS Enrichment Score\n\n```bash\n# Using deepTools\n# 1. Create TSS BED file (from GTF)\nawk '$3==\"transcript\" {print $1\"\\t\"$4-1\"\\t\"$4\"\\t\"$14\"\\t\"0\"\\t\"$7}' genes.gtf | \\\n    tr -d '\";' | sort -k1,1 -k2,2n > tss.bed\n\n# 2. Compute matrix around TSS\ncomputeMatrix reference-point \\\n    -S sample.bw \\\n    -R tss.bed \\\n    -a 2000 -b 2000 \\\n    -o tss_matrix.gz\n\n# 3. Plot TSS enrichment\nplotProfile -m tss_matrix.gz \\\n    -o tss_enrichment.png \\\n    --perGroup\n```\n\n## Calculate TSS Enrichment Score\n\n```python\nimport numpy as np\nimport pyBigWig\n\ndef calculate_tss_enrichment(bigwig_file, tss_bed, flank=2000):\n    '''Calculate TSS enrichment score.'''\n    bw = pyBigWig.open(bigwig_file)\n\n    signals = []\n    for line in open(tss_bed):\n        fields = line.strip().split('\\t')\n        chrom, tss = fields[0], int(fields[1])\n        strand = fields[5] if len(fields) > 5 else '+'\n\n        try:\n            vals "
+    },
+    {
+      "path": "other/authz-bypass-hunter-maf2414-kyco-2/SKILL.md",
+      "name": "authz-bypass-hunter",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill hunts for authorization bypass vulnerabilities including IDOR, privilege escalation, missing access controls, and broken object-level authorization. This is clearly security review and vulnerability assessment work.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "0944bdb2bfed1dd2309167d13d57c1722dec494b4c886931256780264e702663",
+      "metadata_sha256": "96302a9e3b0395eba4249b68c7a106bbb7a9ab48875a3cb834b25d2829db5e89",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Hunt for authorization bypass vulnerabilities including IDOR, privilege escalation, missing access controls, broken object-level authorization. Use when auditing authentication/authorization code or API endpoints.",
+      "content_excerpt": "---\nname: authz-bypass-hunter\ndescription: Hunt for authorization bypass vulnerabilities including IDOR, privilege escalation, missing access controls, broken object-level authorization. Use when auditing authentication/authorization code or API endpoints.\n---\n\n# Authorization Bypass Hunter\n\n## Purpose\n\nSystematically identify authorization vulnerabilities: IDOR, privilege escalation, broken access control, missing permission checks, role confusion, and horizontal/vertical privilege escalation.\n\n## Focus Areas\n\n- **IDOR (Insecure Direct Object References)**: User-controllable IDs accessing other users' data\n- **Broken Object Level Authorization (BOLA)**: API endpoints not validating resource ownership\n- **Broken Function Level Authorization (BFLA)**: Admin functions accessible to regular users\n- **Missing Access Controls**: Endpoints without any authorization checks\n- **Role/Permission Confusion**: Inconsistent role checks across code paths\n- **JWT/Session Issues**: Token manipulation, session fixation\n\n## Audit Checklist\n\n### 1. Identify Authorization Entry Points\n```\n- API endpoints with resource IDs (/api/user/{id}, /api/order/{id})\n- Query parameters (userId=, accountId=, orderId=)\n- Request body fields controlling resource access\n- File paths/names in requests\n- GraphQL queries with object references\n```\n\n### 2. Check for Missing Checks\n```\nLook for patterns:\n- Direct database queries without user filter\n- Fetching resource by ID only (not ownership)\n- Missing @authorize, @permission decorators\n- Inconsistent middleware application\n```\n\n### 3. Verify Ownership Validati"
+    },
+    {
+      "path": "other/aurelius-mapping/SKILL.md",
+      "name": "aurelius-mapping",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is about mapping Delphi classes to a relational database using TMS Aurelius ORM attributes. This is a software development workflow involving ORM configuration, entity class creation, and database schema mapping. It's a coding/framework task.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "abcd4271848847332544c7b3bc8323cb3b2831fb45c2b65c550e9ea5b9144aec",
+      "metadata_sha256": "ea82e2be43f5db5488d803cd9c6b73706a9a9194944006847bcd47213656eb71",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Map Delphi classes to a relational database using TMS Aurelius ORM attributes. Use when the user asks to create entity classes, add Aurelius mapping to existing classes, fix or review mapping attributes, explain how a class is mapped, or work with associations, inheritance, automapping, nullable fields, blobs, or composite identifiers. Triggers on requests like \"create Aurelius entities for...\", \"map this class to Aurelius\", \"add ORM mapping\", \"fix the mapping on this class\", \"how do I map a one-to-many in Aurelius\".",
+      "content_excerpt": "---\nname: aurelius-mapping\ndescription: Map Delphi classes to a relational database using TMS Aurelius ORM attributes. Use when the user asks to create entity classes, add Aurelius mapping to existing classes, fix or review mapping attributes, explain how a class is mapped, or work with associations, inheritance, automapping, nullable fields, blobs, or composite identifiers. Triggers on requests like \"create Aurelius entities for...\", \"map this class to Aurelius\", \"add ORM mapping\", \"fix the mapping on this class\", \"how do I map a one-to-many in Aurelius\".\n---\n\n# Aurelius Mapping\n\nMap Delphi classes to a relational database using TMS Aurelius attributes. All attributes are declared in unit `Aurelius.Mapping.Attributes`.\n\nRead `references/mapping.md` for all attribute syntax, options tables, and code examples. The guidance below covers decisions and rules that the reference does not emphasize.\n\n## Approach\n\n**New schema (no existing tables):** Default to `[Automapping]`. It infers table names, column names, nullability, and the identifier from field naming conventions, requiring no extra attributes for simple cases.\n\n**Legacy or fixed schema:** Use explicit attributes (`[Table]`, `[Column]`, `[Id]`, etc.) to match the existing column and table names exactly.\n\n**Mixed:** Automapping is not all-or-nothing — add explicit attributes only where the defaults need to be overridden.\n\nWhen the user hasn't specified, ask or infer from context (existing table definitions → explicit; greenfield → automapping).\n\n## Critical Rules\n\nThese are the most common mistakes. Apply them without ex"
+    },
+    {
+      "path": "other/audio-ml-validator/SKILL.md",
+      "name": "Audio ML Validator",
+      "current_category": "other",
+      "llm_category": "ai-ml",
+      "confidence": 0.92,
+      "status": "ok",
+      "reason": "The skill is explicitly about validating on-device ML models for audio processing, including Core ML integration, content classification models, audio fingerprinting with spectral analysis, and neural engine utilization. This is squarely ML model validation and inference infrastructure work.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "e83d232ea4014a7a0d3d536be4382d408a8b2f11b98d011062277008a67dcc6e",
+      "metadata_sha256": "f92aa069fe1c4f25dad73d35e2b5298d9e6bc1dc3f13849da3ceefd7c5530699",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "You are the on-device audio ML specialist for Modcaster's AI-driven audio processing.",
+      "content_excerpt": "---\nname: Audio ML Validator\ndescription: You are the on-device audio ML specialist for Modcaster's AI-driven audio processing.\nallowed-tools: Read, Edit\n---\n\n# Audio ML Validator\n\nYou are the on-device audio ML specialist for Modcaster's AI-driven audio processing.\n\n## Your Job\nValidate iOS on-device ML models for podcast audio enhancement, content classification, and intelligent processing.\n\n## Key ML Components\n\n### 1. Audio Enhancement Pipeline\n- **AVAudioEngine** setup (tap installation, buffer processing)\n- **Core ML** model integration (voice enhancement, noise reduction)\n- **Sound Analysis** framework (speech detection, music classification)\n- **Neural Engine** utilization (performance monitoring)\n- **Accelerate/vDSP** optimization (FFT, RMS calculations)\n\n### 2. Content Classification Models\n- **Episode Type Classifier**: Distinguish full/trailer/bonus episodes\n- **Ad Segment Detector**: Identify sponsor reads and pre-roll ads\n- **Intro/Outro Detector**: Recognize recurring audio patterns\n- **Speech vs Music**: Separate voice content from background music\n\n### 3. Audio Fingerprinting\n- **Spectral Analysis**: FFT-based fingerprint generation\n- **Pattern Matching**: Cross-episode repetition detection\n- **Locality-Sensitive Hashing**: Efficient fingerprint comparison\n- **Database Management**: On-device fingerprint storage/retrieval\n\n### 4. Reconstructive Enhancement\n- **Resemble Enhance** or similar: Voice quality restoration\n- **Stem Separation**: Isolate voice from music (HANCE 2.0 approach)\n- **Prosody Analysis**: MFCC-based cadence detection\n- **Dynamic Range Pro"
+    },
+    {
+      "path": "other/auth-patterns-davepoon-buildwithclaude-2/SKILL.md",
+      "name": "auth-patterns",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill covers authentication and authorization patterns in Next.js, which is core security functionality.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "494c73d65ea64bb17717ee46f0b36fccf886e701d2f2795248633bb220ae7fc8",
+      "metadata_sha256": "532b466265512f8c107b208627ab231cb98e76c372a9ef2c740f77a3429b5443",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "This skill should be used when the user asks about \"authentication in Next.js\", \"NextAuth\", \"Auth.js\", \"middleware auth\", \"protected routes\", \"session management\", \"JWT\", \"login flow\", or needs guidance on implementing authentication and authorization in Next.js applications.",
+      "content_excerpt": "---\nname: auth-patterns\ndescription: This skill should be used when the user asks about \"authentication in Next.js\", \"NextAuth\", \"Auth.js\", \"middleware auth\", \"protected routes\", \"session management\", \"JWT\", \"login flow\", or needs guidance on implementing authentication and authorization in Next.js applications.\nversion: 1.0.0\n---\n\n# Authentication Patterns in Next.js\n\n## Overview\n\nNext.js supports multiple authentication strategies. This skill covers common patterns including NextAuth.js (Auth.js), middleware-based protection, and session management.\n\n## Authentication Libraries\n\n| Library | Best For |\n|---------|----------|\n| NextAuth.js (Auth.js) | Full-featured auth with providers |\n| Clerk | Managed auth service |\n| Lucia | Lightweight, flexible auth |\n| Supabase Auth | Supabase ecosystem |\n| Custom JWT | Full control |\n\n## NextAuth.js v5 Setup\n\n### Installation\n\n```bash\nnpm install next-auth@beta\n```\n\n### Configuration\n\n```tsx\n// auth.ts\nimport NextAuth from 'next-auth'\nimport GitHub from 'next-auth/providers/github'\nimport Credentials from 'next-auth/providers/credentials'\n\nexport const { handlers, auth, signIn, signOut } = NextAuth({\n  providers: [\n    GitHub({\n      clientId: process.env.GITHUB_ID,\n      clientSecret: process.env.GITHUB_SECRET,\n    }),\n    Credentials({\n      credentials: {\n        email: { label: 'Email', type: 'email' },\n        password: { label: 'Password', type: 'password' },\n      },\n      authorize: async (credentials) => {\n        const user = await getUserByEmail(credentials.email)\n        if (!user || !verifyPassword(credentials.password,"
+    },
+    {
+      "path": "other/assert-andrelandgraf-fullstackrecipes/SKILL.md",
+      "name": "assert",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "TypeScript assertion function for runtime type narrowing is a software development utility for code quality and debugging, fitting the development category for coding frameworks and debugging tools.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "c42f63d64d1e6547011b003fd437d8afd902252c4fa85930372973c9eddeaac0",
+      "metadata_sha256": "08837622f04fe1d7e30cb1026ef6ca23e285cc9b5b868b8211153a901a946287",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "TypeScript assertion function for runtime type narrowing with descriptive error messages. Based on tiny-invariant.",
+      "content_excerpt": "---\nname: assert\ndescription: TypeScript assertion function for runtime type narrowing with descriptive error messages. Based on tiny-invariant.\n---\n\n# Assertion Helper\n\nTo set up Assertion Helper, refer to the fullstackrecipes MCP server resource:\n\n**Resource URI:** `recipe://fullstackrecipes.com/assert`\n\nUse the fullstackrecipes MCP server to fetch this resource and follow the setup instructions.\n"
+    },
+    {
+      "path": "other/arena-allocator-mgreenly-ikigai/SKILL.md",
+      "name": "patterns/arena-allocator",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Duplicate of id 0; same skill content describing a C-specific memory allocation pattern for software development.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "f5b0fffc6aa72bbdd14db820fdb99365410e65ca227996dbe48e2c44dba9b7c2",
+      "metadata_sha256": "bccc755884657793d964d773947d0e6b5e763dc82cc9a524eb2e739a127d0a5b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Arena Allocator Pattern (C-Specific) pattern for C development",
+      "content_excerpt": "---\nname: patterns/arena-allocator\ndescription: Arena Allocator Pattern (C-Specific) pattern for C development\n---\n\n# Arena Allocator Pattern (C-Specific)\n\nAllocate many objects from single memory region, free all at once. No individual frees. Hierarchical arenas enable nested lifetimes.\n\n## ikigai Application\n\n**talloc:** ikigai uses talloc for hierarchical arenas:\n```c\nTALLOC_CTX *request_ctx = talloc_new(parent);\n// All allocations are children\nchar *str = talloc_strdup(request_ctx, \"hello\");\nik_msg_t *msg = talloc(request_ctx, ik_msg_t);\n// Single free cleans everything\ntalloc_free(request_ctx);\n```\n\n**Ownership hierarchy:**\n```\nroot_ctx\n  └─> repl_ctx\n       └─> scrollback (freed with repl)\n       └─> messages[] (freed with repl)\n```\n\n**Benefits:** No memory leaks by design. No use-after-free. Clear ownership. Fast bulk deallocation.\n\n**See:** `project/memory.md` for talloc patterns.\n"
+    },
+    {
+      "path": "other/audit-performance-thread-safety-ksoichiro-chronodawn-2/SKILL.md",
+      "name": "audit-performance-thread-safety",
+      "current_category": "other",
+      "llm_category": "performance",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill audits codebase for performance bottlenecks and thread-safety issues, which directly aligns with the performance category's inclusion rule for profiling and optimization workflows.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "0df3ac483b517e11705d170b52d18e9284def2be8d5da8bab67fdb5129aff1ee",
+      "metadata_sha256": "467bc0a61e3fa5be053e3b44ce97eab84264a4e684e628b685144fc1e4597fd1",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Audit codebase for performance bottlenecks and thread-safety issues",
+      "content_excerpt": "---\nname: audit-performance-thread-safety\ndescription: Audit codebase for performance bottlenecks and thread-safety issues\n---\n\n# Performance and Thread Safety Audit Guide\n\n**Purpose**: Systematically audit Minecraft mod codebase for performance bottlenecks, thread-safety issues, and dimension isolation problems.\n\n**When to use**:\n- Before major releases\n- After implementing new structure generation systems\n- After adding new boss spawning systems\n- When investigating multiplayer crashes or lag\n- When profiling shows unexpected CPU usage\n\n**Output**: Generates comprehensive audit report with findings, risk assessment, and fix recommendations.\n\n---\n\n## Audit Process\n\n### Phase 1: Identify Critical Code Paths\n\n**What to look for**:\n1. **Event handlers** registered with `TickEvent.SERVER_POST` or `TickEvent.SERVER_LEVEL_POST`\n2. **Structure generation code** in `worldgen/` packages\n3. **Boss spawning systems** in `worldgen/spawning/`\n4. **Dimension-specific handlers** that process multiple dimensions\n5. **Mixin classes** that modify structure placement\n\n**Commands**:\n```bash\n# Find all event registrations\ngrep -r \"TickEvent\\\\.SERVER\" common/src/main/java --include=\"*.java\"\n\n# Find boss room placers and spawners\nfind common/src/main/java -name \"*BossRoom*.java\" -o -name \"*Spawner*.java\"\n\n# Find structure-related mixins\nfind common/src/main/java/*/mixin -name \"*Structure*.java\"\n```\n\n---\n\n### Phase 2: Performance Analysis (T428)\n\n#### 2.1 Main Thread Blocking Detection\n\n**Critical patterns to find**:\n\n1. **Large block scans on main thread**:\n   ```java\n   // BAD: Scanning million"
+    },
+    {
+      "path": "other/auth-patterns/SKILL.md",
+      "name": "auth-patterns",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Skill covers authentication and authorization patterns in Next.js, which is core security functionality.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "494c73d65ea64bb17717ee46f0b36fccf886e701d2f2795248633bb220ae7fc8",
+      "metadata_sha256": "ffd75d1e7a92e7d7484d8b2d04594e2efb8c207a594fb08bd1e09692c9f93126",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "This skill should be used when the user asks about \"authentication in Next.js\", \"NextAuth\", \"Auth.js\", \"middleware auth\", \"protected routes\", \"session management\", \"JWT\", \"login flow\", or needs guidance on implementing authentication and authorization in Next.js applications.",
+      "content_excerpt": "---\nname: auth-patterns\ndescription: This skill should be used when the user asks about \"authentication in Next.js\", \"NextAuth\", \"Auth.js\", \"middleware auth\", \"protected routes\", \"session management\", \"JWT\", \"login flow\", or needs guidance on implementing authentication and authorization in Next.js applications.\nversion: 1.0.0\n---\n\n# Authentication Patterns in Next.js\n\n## Overview\n\nNext.js supports multiple authentication strategies. This skill covers common patterns including NextAuth.js (Auth.js), middleware-based protection, and session management.\n\n## Authentication Libraries\n\n| Library | Best For |\n|---------|----------|\n| NextAuth.js (Auth.js) | Full-featured auth with providers |\n| Clerk | Managed auth service |\n| Lucia | Lightweight, flexible auth |\n| Supabase Auth | Supabase ecosystem |\n| Custom JWT | Full control |\n\n## NextAuth.js v5 Setup\n\n### Installation\n\n```bash\nnpm install next-auth@beta\n```\n\n### Configuration\n\n```tsx\n// auth.ts\nimport NextAuth from 'next-auth'\nimport GitHub from 'next-auth/providers/github'\nimport Credentials from 'next-auth/providers/credentials'\n\nexport const { handlers, auth, signIn, signOut } = NextAuth({\n  providers: [\n    GitHub({\n      clientId: process.env.GITHUB_ID,\n      clientSecret: process.env.GITHUB_SECRET,\n    }),\n    Credentials({\n      credentials: {\n        email: { label: 'Email', type: 'email' },\n        password: { label: 'Password', type: 'password' },\n      },\n      authorize: async (credentials) => {\n        const user = await getUserByEmail(credentials.email)\n        if (!user || !verifyPassword(credentials.password,"
+    },
+    {
+      "path": "other/auto-review-loop/SKILL.md",
+      "name": "auto-review-loop",
+      "current_category": "other",
+      "llm_category": "orchestration",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill coordinates a multi-round loop between a primary agent and a secondary Codex agent, implementing iterative review-fix-re-review cycles with configurable rounds and thresholds, which is multi-agent coordination and workflow control.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "83022b853b5ddb4d447d76424699a67a41cd9f2075a335439b1f764b7d683beb",
+      "metadata_sha256": "c2b523616631347a45a1e250b38aa5f8726aabb3da2765ca311cf7c370ed1d5c",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Autonomous multi-round research review loop. Repeatedly reviews using a secondary Codex agent, implements fixes, and re-reviews until positive assessment or max rounds reached. Use when user says \"auto review loop\", \"review until it passes\", or wants autonomous iterative improvement.",
+      "content_excerpt": "---\nname: \"auto-review-loop\"\ndescription: \"Autonomous multi-round research review loop. Repeatedly reviews using a secondary Codex agent, implements fixes, and re-reviews until positive assessment or max rounds reached. Use when user says \\\"auto review loop\\\", \\\"review until it passes\\\", or wants autonomous iterative improvement.\"\n---\n\n# Auto Review Loop: Autonomous Research Improvement\n\nAutonomously iterate: review → implement fixes → re-review, until the external reviewer gives a positive assessment or MAX_ROUNDS is reached.\n\n## Context: $ARGUMENTS\n\n## Constants\n\n- MAX_ROUNDS = 4\n- POSITIVE_THRESHOLD: score >= 6/10, or verdict contains \"accept\", \"sufficient\", \"ready for submission\"\n- REVIEW_DOC: `review-stage/AUTO_REVIEW.md` (cumulative log) *(fall back to `./AUTO_REVIEW.md` for legacy projects)*\n- **OUTPUT_DIR = `review-stage/`** — All review-stage outputs go here. Create the directory if it doesn't exist.\n- REVIEWER_MODEL = `gpt-5.5` — Model used via a secondary Codex agent. Must be an OpenAI model (e.g., `gpt-5.5`, `o3`, `gpt-4o`)\n- **REVIEWER_BACKEND = `codex`** — Default: Codex reviewer agent at xhigh reasoning. Override with `--reviewer: oracle-pro` only when the user explicitly requests Oracle; if Oracle is unavailable, warn and fall back to Codex xhigh.\n- **HUMAN_CHECKPOINT = false** — When `true`, pause after each round's review (Phase B) and present the score + weaknesses to the user. Wait for user input before proceeding to Phase C. The user can: approve the suggested fixes, provide custom modification instructions, skip specific fixes, or stop the loop early. "
+    },
+    {
+      "path": "other/auto-animate-mgd34msu-goodvibes-plugin-2/SKILL.md",
+      "name": "auto-animate",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "This is a duplicate of id 2 with the same description and content, focusing on implementing animations in web apps using @formkit/auto-animate. It's a development skill for coding and framework integration.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "a025f60021bd33457c83d6c6d731b7fca9ab2c15a88be8e91241b8f8fb6dbef6",
+      "metadata_sha256": "818e21b6752f716131ab49550f1ed4e30878883ca4d0f6976316dabd1427b9a4",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Adds automatic animations to DOM changes with zero configuration using FormKit's AutoAnimate. Use when adding smooth transitions for list reordering, adding/removing elements, or quick UI polish.",
+      "content_excerpt": "---\nname: auto-animate\ndescription: Adds automatic animations to DOM changes with zero configuration using FormKit's AutoAnimate. Use when adding smooth transitions for list reordering, adding/removing elements, or quick UI polish.\n---\n\n# AutoAnimate\n\nZero-config, drop-in animation utility that adds smooth transitions to any web app. 1.9KB, works with React, Vue, Svelte, Solid, and vanilla JS.\n\n## Quick Start\n\n```bash\nnpm install @formkit/auto-animate\n```\n\n```javascript\nimport autoAnimate from '@formkit/auto-animate';\n\n// Apply to any parent element\nautoAnimate(document.getElementById('list'));\n```\n\nThat's it. Children added, removed, or moved will animate automatically.\n\n## What It Animates\n\nAutoAnimate triggers on three DOM events:\n1. **Child added** - fade in\n2. **Child removed** - fade out\n3. **Child moved** - smooth position change\n\n## React\n\n### useAutoAnimate Hook\n\n```jsx\nimport { useAutoAnimate } from '@formkit/auto-animate/react';\n\nfunction TodoList() {\n  const [items, setItems] = useState(['Item 1', 'Item 2', 'Item 3']);\n  const [parent] = useAutoAnimate();\n\n  const addItem = () => setItems([...items, `Item ${items.length + 1}`]);\n  const removeItem = (index) => setItems(items.filter((_, i) => i !== index));\n\n  return (\n    <div>\n      <button onClick={addItem}>Add Item</button>\n      <ul ref={parent}>\n        {items.map((item, index) => (\n          <li key={item}>\n            {item}\n            <button onClick={() => removeItem(index)}>Remove</button>\n          </li>\n        ))}\n      </ul>\n    </div>\n  );\n}\n```\n\n### Enable/Disable Animation\n\n```jsx\nfunction Togg"
+    },
+    {
+      "path": "other/automotive-supply-chain-kishorkukreja-awesome-supply-chain/SKILL.md",
+      "name": "automotive-supply-chain",
+      "current_category": "other",
+      "llm_category": "domains",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Identical skill content to id 3; same automotive supply chain domain expertise.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "b6dd77317286300b6acd64180403f5467aa1cac4669c8b24f5ae0a41c39b3465",
+      "metadata_sha256": "1d55b62d176b2c984b9897d86ba0cc475e3c6cfd0238213829c375c42b484f0d",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "When the user wants to optimize automotive manufacturing supply chains, manage tier suppliers, implement JIT production, or handle automotive-specific logistics. Also use when the user mentions \"automotive manufacturing,\" \"OEM supply chain,\" \"tier 1/2/3 suppliers,\" \"sequenced parts delivery,\" \"just-in-time automotive,\" \"vehicle assembly,\" or \"automotive aftermarket.\" For general manufacturing, see production-scheduling. For lean principles, see lean-manufacturing.",
+      "content_excerpt": "---\nname: automotive-supply-chain\ndescription: When the user wants to optimize automotive manufacturing supply chains, manage tier suppliers, implement JIT production, or handle automotive-specific logistics. Also use when the user mentions \"automotive manufacturing,\" \"OEM supply chain,\" \"tier 1/2/3 suppliers,\" \"sequenced parts delivery,\" \"just-in-time automotive,\" \"vehicle assembly,\" or \"automotive aftermarket.\" For general manufacturing, see production-scheduling. For lean principles, see lean-manufacturing.\n---\n\n# Automotive Supply Chain\n\nYou are an expert in automotive supply chain management and manufacturing operations. Your goal is to help optimize complex multi-tier supply networks, implement just-in-time delivery, manage supplier relationships, and ensure efficient vehicle assembly operations.\n\n## Initial Assessment\n\nBefore optimizing automotive supply chains, understand:\n\n1. **Manufacturing Context**\n   - OEM, Tier 1, Tier 2, or Tier 3 supplier?\n   - Product types? (vehicles, engines, transmissions, components)\n   - Production volume? (high-volume, low-volume, custom)\n   - Manufacturing approach? (make-to-stock, make-to-order, configure-to-order)\n   - Number of platforms/models?\n\n2. **Supply Chain Structure**\n   - How many tier suppliers?\n   - Geographic footprint? (local, regional, global)\n   - Sole source vs. multi-source strategy?\n   - In-house vs. outsourced components?\n   - Vertical integration level?\n\n3. **Current State**\n   - Inventory turns?\n   - Supplier quality metrics (PPM defects)?\n   - On-time delivery performance?\n   - Line stoppage frequency?\n   - S"
+    },
+    {
+      "path": "other/attack-surface-analyzer-jeremylongshore-claude-code-plugins-/SKILL.md",
+      "name": "attack-surface-analyzer",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "Identical to candidate 0; the skill is explicitly about analyzing attack surfaces, which is a core security activity involving vulnerability assessment and threat modeling. The description mentions 'Security Advanced' domain, penetration testing, compliance frameworks, and threat modeling, all of which align with the security category's inclusion rule for security review, vulnerabilities, and pentesting.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "108cfb1ca9c7bf3173e82266774533a49e1c02c349d0df3b0f5952fc172b4757",
+      "metadata_sha256": "819711fd5d44270462c004233a2a0469836a1148b48cc8e681d15870189d2b39",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Analyze attack surface analyzer operations. Auto-activating skill for Security Advanced.\nTriggers on: attack surface analyzer, attack surface analyzer\nPart of the Security Advanced skill category. Use when analyzing or auditing attack surface analyzer. Trigger with phrases like \"attack surface analyzer\", \"attack analyzer\", \"analyze attack surface r\".",
+      "content_excerpt": "---\nname: \"attack-surface-analyzer\"\ndescription: |\n  Analyze attack surface analyzer operations. Auto-activating skill for Security Advanced.\n  Triggers on: attack surface analyzer, attack surface analyzer\n  Part of the Security Advanced skill category. Use when analyzing or auditing attack surface analyzer. Trigger with phrases like \"attack surface analyzer\", \"attack analyzer\", \"analyze attack surface r\".\nallowed-tools: \"Read, Write, Edit, Bash(cmd:*), Grep\"\nversion: 1.0.0\nlicense: MIT\nauthor: \"Jeremy Longshore <jeremy@intentsolutions.io>\"\n---\n\n# Attack Surface Analyzer\n\n## Overview\n\nThis skill provides automated assistance for attack surface analyzer tasks within the Security Advanced domain.\n\n## When to Use\n\nThis skill activates automatically when you:\n- Mention \"attack surface analyzer\" in your request\n- Ask about attack surface analyzer patterns or best practices\n- Need help with advanced security skills covering penetration testing, compliance frameworks, threat modeling, and enterprise security.\n\n## Instructions\n\n1. Provides step-by-step guidance for attack surface analyzer\n2. Follows industry best practices and patterns\n3. Generates production-ready code and configurations\n4. Validates outputs against common standards\n\n## Examples\n\n**Example: Basic Usage**\nRequest: \"Help me with attack surface analyzer\"\nResult: Provides step-by-step guidance and generates appropriate configurations\n\n\n## Prerequisites\n\n- Relevant development environment configured\n- Access to necessary tools and services\n- Basic understanding of security advanced concepts\n\n\n## Output\n\n- Generated con"
+    },
+    {
+      "path": "other/argo-expert-martinholovsky-claude-skills-genera-2/SKILL.md",
+      "name": "argo-expert",
+      "current_category": "other",
+      "llm_category": "devops",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill is an expert in the Argo ecosystem (CD, Workflows, Rollouts, Events) for GitOps, continuous delivery, progressive delivery, and workflow orchestration, which aligns with DevOps automation and infrastructure.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "fe346236841f44f40138032cd317aa778bbcd45fd11b90bb2357d169d886e403",
+      "metadata_sha256": "c93c8a1ca665a2727ab1abd2d48a732ba6355b73028230246a50286a1bcfe555",
+      "semantic_sources": {
+        "description": "metadata",
+        "name": "metadata"
+      },
+      "description": "You are an Argo Ecosystem Expert specializing in:",
+      "content_excerpt": "```yaml\n---\nname: argo-expert\ndescription: \"Expert in Argo ecosystem (CD, Workflows, Rollouts, Events) for GitOps, continuous delivery, progressive delivery, and workflow orchestration. Specializes in production-grade configurations, multi-cluster management, security hardening, and advanced deployment strategies for DevOps/SRE teams.\"\nmodel: sonnet\n---\n```\n\n# 1. Overview\n\n## 1.1 Role & Expertise\n\nYou are an **Argo Ecosystem Expert** specializing in:\n\n- **Argo CD 2.10+**: GitOps continuous delivery, declarative sync, app-of-apps pattern\n- **Argo Workflows 3.5+**: Kubernetes-native workflow orchestration, DAGs, artifacts\n- **Argo Rollouts 1.6+**: Progressive delivery, canary/blue-green deployments, traffic shaping\n- **Argo Events**: Event-driven workflow automation, sensors, triggers\n\n**Target Users**: DevOps Engineers, SRE, Platform Teams\n**Risk Level**: **HIGH** (production deployments, infrastructure automation, multi-cluster)\n\n## 1.2 Core Expertise\n\n**Argo CD**:\n- Multi-cluster management and federation\n- ApplicationSet automation and generators\n- App-of-apps and nested application patterns\n- RBAC, SSO integration, audit logging\n- Sync waves, hooks, health checks\n- Image updater integration\n\n**Argo Workflows**:\n- DAG and step-based workflows\n- Artifact repositories and caching\n- Retry strategies and error handling\n- Workflow templates and cluster workflows\n- Resource optimization and scaling\n- CI/CD pipeline orchestration\n\n**Argo Rollouts**:\n- Canary and blue-green strategies\n- Traffic management (Istio, NGINX, ALB)\n- Analysis templates and metric providers\n- Automated r"
+    },
+    {
+      "path": "other/audiomind/SKILL.md",
+      "name": "AudioMind",
+      "current_category": "other",
+      "llm_category": "generation",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill provides one-command access to generate various audio types (TTS, music, sound effects, voice cloning). This is a media generation workflow, fitting the 'generation' category's inclusion rule for 'Generating artifacts, media, structured outputs, or reusable content assets.'",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "572f4e3f09cb20e919d32fcd6bc0e070eefb14849e5cc5b67f6eeacec89dad62",
+      "metadata_sha256": "326259153f678c6924b09cc0d04ca5f5ee92b29089ebafcf9cee4fedfff2c4ca",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "Tired of juggling multiple audio APIs? This skill gives you one-command access to TTS, music generation, sound effects, and voice cloning. Use when you want to generate any audio without managing multiple API keys.",
+      "content_excerpt": "---\nname: AudioMind\nversion: 3.0.0\nauthor: \"wells\"\nemoji: \"🎙️\"\ntags:\n  - audio\n  - tts\n  - music\n  - sfx\n  - voice-clone\n  - elevenlabs\n  - fal\ndescription: >\n  Tired of juggling multiple audio APIs? This skill gives you one-command access to TTS, music generation, sound effects, and voice cloning. Use when you want to generate any audio without managing multiple API keys.\nhomepage: https://github.com/wells1137/audiomind-skill\nmetadata:\n  openclaw:\n    emoji: \"🎙️\"\n    primaryEnv: ELEVENLABS_API_KEY\n    requires:\n      env:\n        - ELEVENLABS_API_KEY\n    install:\n      - id: elevenlabs-mcp\n        kind: npm\n        package: \"@elevenlabs/mcp\"\n        label: \"Install ElevenLabs MCP server\"\n---\n\n# 🎙️ AudioMind\n\n**Use when:** User asks to generate speech, narrate text, create a voice-over, compose music, or produce a sound effect.\n\nAudioMind is a smart audio dispatcher. It analyzes your request and routes it to the best available model — ElevenLabs for speech and music, fal.ai for fast SFX — and returns a ready-to-use audio URL.\n\n---\n\n## Quick Reference\n\n| Request Type | Best Model | Latency |\n|---|---|---|\n| Narrate text / Voice-over | `elevenlabs-tts-v3` | ~3s |\n| Low-latency TTS (real-time) | `elevenlabs-tts-turbo` | <1s |\n| Background music | `cassetteai-music` | ~15s |\n| Sound effect | `elevenlabs-sfx` | ~5s |\n| Clone a voice from audio | `elevenlabs-voice-clone` | ~10s |\n\n---\n\n## How to Use\n\n### 1. Start the AudioMind server (once per session)\n\n```bash\nbash {baseDir}/tools/start_server.sh\n```\n\nThis starts the ElevenLabs MCP server on port 8124. The skill uses it for all "
+    },
+    {
+      "path": "other/audit-check/SKILL.md",
+      "name": "audit-check",
+      "current_category": "other",
+      "llm_category": "quality",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill runs mechanical checks and AI audits to validate document formatting and citation rules, which is a validation and quality-gate workflow.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "9a6a159baae937727e6a1d4d848c979d40b8216c496ce6d9edddd1c114486109",
+      "metadata_sha256": "7227a761087cc4cab20e9621a9b5ca484a39b8318c11c5c797cfeaae3c2f972e",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Phase 2: Run mechanical checks and Gemini formatted audit",
+      "content_excerpt": "---\nname: audit-check\ndescription: \"Phase 2: Run mechanical checks and Gemini formatted audit\"\n---\n\n# Phase 2: Check (Mechanical + AI Audit)\n\nTwo-stage checking: Python mechanical checks catch definite errors; Gemini batch audit catches judgment-call issues.\n\n## Stage 2a: Mechanical Checks (Python)\n\n```bash\nBB_SCRIPTS=$(${CLAUDE_PLUGIN_ROOT}/skills/bluebook-audit/scripts) && python3 \"$BB_SCRIPTS/scan_formatting.py\" --docx path/to/file.docx\n```\n\nChecks performed on ALL footnotes:\n1. **Journal name small caps** - Comprehensive pattern list (law reviews, finance journals, newspapers, periodicals, forums)\n2. **Book title small caps** - Detect italic book titles that should be small caps\n3. **Id. chain validation** - Rule 4.1 mechanical check (single-source predecessor)\n4. **Signal italic consistency** - All signals (see, cf., e.g.) must be italic\n5. **Terminal period** - Every footnote must end with a period\n6. **Hereinafter consistency** - Defined at first citation, used consistently after\n7. **Author name supra format** - Text before `*supra*` should be roman, not italic (unless it's a case name short form). Catches `*Manne, supra*` → should be `Manne, *supra*`\n8. **Italic spillover** - Trailing/leading spaces inside italic or small caps runs (e.g., `*supra *` should be `*supra* `). These don't affect Word display but cause Gemini misparses\n\n### NBSP Handling\n\nDOCX uses non-breaking spaces (`\\xa0`) in abbreviations. ALL search functions must handle both `\\x20` and `\\xa0`:\n- `No.\\xa02106`, `Feb.\\xa07`, `Oct.\\xa021`\n- `Wall St.\\xa0J.`, `Corp.\\xa0Governance`\n\n## Stage 2b: Gemini"
+    },
+    {
+      "path": "other/athena-framework-watzon-claude-code-2/SKILL.md",
+      "name": "athena-framework",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.92,
+      "status": "ok",
+      "reason": "The skill is a framework-specific guide for building web applications, REST APIs, CLI tools, and integrating components using the Athena Framework for Crystal. It covers coding, framework usage, and software development workflows.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "74c19211512db31cf3707ee1d90fec5af3972f761f295a4d4cf92c3769822f6b",
+      "metadata_sha256": "cf87c4f75c8c6613dc51ba4e4f58a4ab3415a5e9d7851525543cd0fc5c139ea2",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use this skill when working with Athena Framework for Crystal. Athena is a modular ecosystem of independent, reusable components including: Framework (ATH) for web apps, DependencyInjection (ADI) for IoC containers, Routing (ART) for HTTP routing, Serializer (ASR) for object serialization, Validator (AVD) for validation, Console (ACON) for CLI tools, EventDispatcher (AED) for event-driven architecture, and more. Use for building Crystal web applications, REST APIs, CLI tools, or integrating individual components.",
+      "content_excerpt": "---\nname: athena-framework\ndescription: \"Use this skill when working with Athena Framework for Crystal. Athena is a modular ecosystem of independent, reusable components including: Framework (ATH) for web apps, DependencyInjection (ADI) for IoC containers, Routing (ART) for HTTP routing, Serializer (ASR) for object serialization, Validator (AVD) for validation, Console (ACON) for CLI tools, EventDispatcher (AED) for event-driven architecture, and more. Use for building Crystal web applications, REST APIs, CLI tools, or integrating individual components.\"\n---\n\n# Athena Framework Skill\n\nAthena Framework is a modular web framework for Crystal, inspired by Symfony. It consists of independent, reusable components that can be used together or à la carte.\n\n## When to Use This Skill\n\nUse this skill when you are:\n- **Building web applications** with the Athena Framework (ATH)\n- **Creating REST APIs** using Athena's routing and controller system\n- **Implementing dependency injection** with ADI (Athena DependencyInjection)\n- **Adding HTTP routing** with ART (Athena Routing)\n- **Serializing objects** with ASR (Athena Serializer)\n- **Validating data** with AVD (Athena Validator)\n- **Writing CLI commands** with ACON (Athena Console)\n- **Implementing event-driven architecture** with AED (Athena EventDispatcher)\n- **Working with individual Athena components** in any Crystal project\n- **Debugging Athena applications**\n- **Learning Crystal web development patterns**\n\n## Key Concepts\n\n### Component Overview\n\n| Component | Alias | Purpose |\n|-----------|-------|---------|\n| Framework | `ATH` |"
+    },
+    {
+      "path": "other/aurora-criteria-avvale-aurora-back/SKILL.md",
+      "name": "aurora-criteria",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is a guide for implementing queries, filters, and data retrieval in a NestJS/Aurora framework, which is a software development workflow.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "49e9f1b1da0668fe80f6269fd7009b481b83f1dd53cea01ecb42be9369a198e9",
+      "metadata_sha256": "f2e6eabf5554e1a4e29e4193acab60bed1287027d6413e4df381aa3e907d9091",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Aurora Criteria Pattern - Complete guide for QueryStatement usage in Aurora/NestJS. Trigger: When implementing queries, filters, searches, pagination, or complex data retrieval.",
+      "content_excerpt": "---\nname: aurora-criteria\ndescription: >\n  Aurora Criteria Pattern - Complete guide for QueryStatement usage in Aurora/NestJS.\n  Trigger: When implementing queries, filters, searches, pagination, or complex data retrieval.\nlicense: MIT\nmetadata:\n  author: aurora\n  version: \"1.0\"\n  auto_invoke: \"Building QueryStatement filters, implementing pagination, creating search queries\"\n---\n\n## When to Use\n\nUse this skill when:\n- Implementing GET/FIND queries in services or handlers\n- Building filters for REST or GraphQL endpoints\n- Adding pagination to data retrieval\n- Creating complex search functionality\n- Working with QueryStatement parameters\n- Need to filter, sort, or limit results\n\n## What is QueryStatement?\n\n**QueryStatement** is Aurora's standardized interface for building complex database queries using the Criteria Pattern.\n\nIt provides a unified API for filtering, sorting, pagination, and data selection across all repositories.\n\n### Core Structure\n\n```typescript\ninterface QueryStatement {\n    where?: JSON;           // Filtering conditions\n    attributes?: JSON;      // Field selection\n    include?: string[];     // Relations to eager load\n    order?: JSON;           // Sorting\n    group?: JSON;           // Grouping\n    limit?: number;         // Max results\n    offset?: number;        // Skip results (pagination)\n    distinct?: boolean;     // Unique results only\n    col?: string;           // Column operations\n}\n```\n\n## Critical Patterns\n\n### ⚠️ OPERATOR SYNTAX (CRITICAL!)\n\n**Operators MUST be quoted keys wrapped in square brackets:**\n\n```typescript\n// ✅ CORRECT\n{ \"where"
+    },
+    {
+      "path": "other/aurelius-objects/SKILL.md",
+      "name": "aurelius-objects",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is about using TMS Aurelius ORM for object persistence, which is a software development framework/library usage pattern. It covers CRUD operations, object lifecycle management, and database interactions through an ORM, fitting squarely into development workflows.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "1f0f15b25afdb4fbe7fc6d8d5386fcd434c57c28b318fb65be3320f49681ea5b",
+      "metadata_sha256": "d40eeaedd95579b24c1dabf7f086325933ae3ae91ef87d0df72731ef39fd2b3b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Save, load, update, delete, merge, and navigate entity objects using TMS Aurelius ORM (TObjectManager). Use when the user asks how to persist or retrieve data with Aurelius, manage object lifetime, work with associations or collections at runtime, handle transactions, use cached updates, or control concurrency. Does NOT cover query DSL or criteria/projections (those are in a separate skill). Triggers on requests like \"save an entity with Aurelius\", \"load a customer from the database\", \"add items to a collection\", \"how do I update an object\", \"flush changes\", \"delete a record with Aurelius\", \"merge a transient object\", \"how do transactions work in Aurelius\", \"batch updates Aurelius\".",
+      "content_excerpt": "---\nname: aurelius-objects\ndescription: Save, load, update, delete, merge, and navigate entity objects using TMS Aurelius ORM (TObjectManager). Use when the user asks how to persist or retrieve data with Aurelius, manage object lifetime, work with associations or collections at runtime, handle transactions, use cached updates, or control concurrency. Does NOT cover query DSL or criteria/projections (those are in a separate skill). Triggers on requests like \"save an entity with Aurelius\", \"load a customer from the database\", \"add items to a collection\", \"how do I update an object\", \"flush changes\", \"delete a record with Aurelius\", \"merge a transient object\", \"how do transactions work in Aurelius\", \"batch updates Aurelius\".\n---\n\n## Approach\n\nAlways work through a `TObjectManager` instance. All persistence methods (`Save`, `Flush`, `Remove`, etc.) are called on the manager, never written as raw SQL.\n\n**Loading a known id:** use `Manager.Find<T>(Id)` — returns the cached instance if already loaded, otherwise hits the database.\n\n**Loading multiple objects with criteria:** use `Manager.Find<T>` (no argument) to get a fluent query builder, then call `.List`.\n\n**Saving a new object:** call `Manager.Save(obj)` — the manager takes ownership and tracks changes from that point. `Save` executes the INSERT immediately. Do **not** call `Flush` after `Save` for a new object; that is only for persisting changes to already-managed objects.\n\n**Updating a managed object:** just change its properties and call `Manager.Flush` (or `Manager.Flush(obj)` for a single object). No explicit \"update\" ca"
+    },
+    {
+      "path": "other/atlassian/SKILL.md",
+      "name": "atlassian",
+      "current_category": "other",
+      "llm_category": "integration",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Manages Jira issues and Confluence wiki pages via Atlassian Cloud integration with OAuth and API token authentication.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "473cefc1d2f27c4b4fa0169a400a9db2deb1d067153e5d3723e4621fb0e8ebc6",
+      "metadata_sha256": "77c72a0048b7c4d598e44a26df2001114cbeffb4bce0a83e8395819bb252bf6b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Manage Jira issues and Confluence wiki pages in Atlassian Cloud.\nUse when: (1) searching/creating/updating Jira issues with JQL, (2) searching/reading/creating Confluence pages\nwith CQL, (3) managing Jira workflows, transitions, and comments, (4) browsing Confluence spaces and page\nhierarchies. Supports OAuth 2.1 via MCP server (recommended) or API token authentication (fallback).",
+      "content_excerpt": "---\nname: atlassian\ndescription: |\n  Manage Jira issues and Confluence wiki pages in Atlassian Cloud.\n  Use when: (1) searching/creating/updating Jira issues with JQL, (2) searching/reading/creating Confluence pages\n  with CQL, (3) managing Jira workflows, transitions, and comments, (4) browsing Confluence spaces and page\n  hierarchies. Supports OAuth 2.1 via MCP server (recommended) or API token authentication (fallback).\n---\n\n# Atlassian (Jira + Confluence)\n\nFull Jira and Confluence integration with two authentication methods:\n- **OAuth 2.1** via Atlassian MCP server — browser-based consent, auto-refresh tokens, calls MCP tools\n- **API token** — email + token stored in keyring, calls REST API directly\n\n## First-Time Setup\n\n### Option 1: OAuth 2.1 via MCP Server (Recommended)\n\nNo API tokens or instance URLs needed. Uses dynamic client registration and PKCE.\n\n```bash\npip install -r requirements.txt\npython scripts/auth.py login --oauth\n```\n\nA browser opens for Atlassian authorization. Select which products (Jira, Confluence, Compass) to grant access. Tokens are stored in the system keyring and auto-refresh when expired.\n\nCheck status:\n```bash\npython scripts/auth.py status\n```\n\n### Option 2: API Token (Fallback)\n\nFor environments where browser-based OAuth isn't available.\n\n```bash\npip install -r requirements.txt\npython scripts/auth.py login\n```\n\nFollow the prompts to enter your Atlassian URL, email, and API token. Credentials are stored securely in the system keyring.\n\nCreate an API token at: https://id.atlassian.com/manage-profile/security/api-tokens\n\nCheck authentication st"
+    },
+    {
+      "path": "other/artillery-config-generator-jeremylongshore-claude-code-plugins-/SKILL.md",
+      "name": "artillery-config-generator",
+      "current_category": "other",
+      "llm_category": "performance",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is explicitly for 'Performance Testing' and generates Artillery load testing configurations, which aligns with benchmarking and performance optimization workflows.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "6df1d72e20df9cb4580e977ab25425988e20251d2afc50cc904d42a6cdf84b3d",
+      "metadata_sha256": "29d10e40ee8531bd0a8be32872eee5b5ca243dd61085e3710d917aeeace521df",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Generate artillery config generator operations. Auto-activating skill for Performance Testing.\nTriggers on: artillery config generator, artillery config generator\nPart of the Performance Testing skill category. Use when configuring systems or services. Trigger with phrases like \"artillery config generator\", \"artillery generator\", \"artillery\".",
+      "content_excerpt": "---\nname: \"artillery-config-generator\"\ndescription: |\n  Generate artillery config generator operations. Auto-activating skill for Performance Testing.\n  Triggers on: artillery config generator, artillery config generator\n  Part of the Performance Testing skill category. Use when configuring systems or services. Trigger with phrases like \"artillery config generator\", \"artillery generator\", \"artillery\".\nallowed-tools: \"Read, Write, Edit, Bash(cmd:*)\"\nversion: 1.0.0\nlicense: MIT\nauthor: \"Jeremy Longshore <jeremy@intentsolutions.io>\"\n---\n\n# Artillery Config Generator\n\n## Overview\n\nThis skill provides automated assistance for artillery config generator tasks within the Performance Testing domain.\n\n## When to Use\n\nThis skill activates automatically when you:\n- Mention \"artillery config generator\" in your request\n- Ask about artillery config generator patterns or best practices\n- Need help with performance testing skills covering load testing, stress testing, benchmarking, and performance monitoring.\n\n## Instructions\n\n1. Provides step-by-step guidance for artillery config generator\n2. Follows industry best practices and patterns\n3. Generates production-ready code and configurations\n4. Validates outputs against common standards\n\n## Examples\n\n**Example: Basic Usage**\nRequest: \"Help me with artillery config generator\"\nResult: Provides step-by-step guidance and generates appropriate configurations\n\n\n## Prerequisites\n\n- Relevant development environment configured\n- Access to necessary tools and services\n- Basic understanding of performance testing concepts\n\n\n## Output\n\n- Generated conf"
+    },
+    {
+      "path": "other/atacseq-pipeline-gptomics-bioskills/SKILL.md",
+      "name": "bio-workflows-atacseq-pipeline",
+      "current_category": "other",
+      "llm_category": "workflow",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill describes an end-to-end ATAC-seq workflow with multiple sequential steps (QC, alignment, peak calling, etc.), which is a repeatable procedure/pipeline. The frontmatter explicitly sets 'workflow: true' and the description emphasizes 'End-to-end ATAC-seq workflow'.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "82919bb844fdb5af21419c7f07ad16cf5a83c221ecfb6b8f78e77aaddf637208",
+      "metadata_sha256": "11c86c81f3b864dfc57fd2f2412273173e7392ee1d97198ec260608459a3d987",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "End-to-end ATAC-seq workflow from FASTQ files to differential accessibility and TF footprinting. Covers alignment, peak calling with MACS3, QC metrics, and optional TOBIAS footprinting.",
+      "content_excerpt": "---\nname: bio-workflows-atacseq-pipeline\ndescription: End-to-end ATAC-seq workflow from FASTQ files to differential accessibility and TF footprinting. Covers alignment, peak calling with MACS3, QC metrics, and optional TOBIAS footprinting.\ntool_type: mixed\nprimary_tool: MACS3, DiffBind, TOBIAS\nworkflow: true\ndepends_on:\n  - read-qc/fastp-workflow\n  - read-alignment/bowtie2-alignment\n  - alignment-files/duplicate-handling\n  - atac-seq/atac-peak-calling\n  - atac-seq/atac-qc\n  - atac-seq/differential-accessibility\n  - atac-seq/footprinting\nqc_checkpoints:\n  - after_qc: \"Q30 >85%, adapter content <5%\"\n  - after_alignment: \"Mapping rate >80%, mitochondrial <20%\"\n  - after_peaks: \"FRiP >20%, TSS enrichment >5\"\n  - after_footprinting: \"Motif enrichment validates TF activity\"\n---\n\n# ATAC-seq Pipeline\n\nComplete workflow from raw ATAC-seq FASTQ files to accessibility peaks, differential analysis, and TF footprinting.\n\n## Workflow Overview\n\n```\nFASTQ files\n    |\n    v\n[1. QC & Trimming] -----> fastp (Nextera adapters)\n    |\n    v\n[2. Alignment] ---------> Bowtie2\n    |\n    v\n[3. BAM Processing] ----> filter, shift, dedup\n    |\n    v\n[4. Peak Calling] ------> MACS3\n    |\n    v\n[5. QC] ----------------> TSS enrichment, FRiP, fragment size\n    |\n    v\n[6. Differential] ------> DiffBind (optional)\n    |\n    v\n[7. Footprinting] ------> TOBIAS (optional)\n    |\n    v\nAccessibility peaks + TF activity\n```\n\n## Primary Path: Bowtie2 + MACS3\n\n### Step 1: Quality Control with fastp\n\n```bash\n# ATAC-seq uses Nextera adapters\nNEXTERA_R1=\"CTGTCTCTTATACACATCT\"\nNEXTERA_R2=\"CTGTCTCTTATACACATCT\"\n\nfor sam"
+    },
+    {
+      "path": "other/architecture-patterns-secondsky-claude-skills-2/SKILL.md",
+      "name": "architecture-patterns",
+      "current_category": "other",
+      "llm_category": "development",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill implements backend architecture patterns including Clean Architecture, Hexagonal Architecture, and DDD for building maintainable systems. This is software development methodology and system design guidance.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "1f1b9233c724d8673b74ceac7321f66ff3c9e281d1e54592e86dd0ad7f11d61a",
+      "metadata_sha256": "69e4257432163189cc484cbabd87e6962c7fb4248d30da48d17be7492e498a6f",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Implement proven backend architecture patterns including Clean Architecture, Hexagonal Architecture, and Domain-Driven Design. Use when architecting complex backend systems or refactoring existing applications for better maintainability.",
+      "content_excerpt": "---\nname: architecture-patterns\ndescription: Implement proven backend architecture patterns including Clean Architecture, Hexagonal Architecture, and Domain-Driven Design. Use when architecting complex backend systems or refactoring existing applications for better maintainability.\n---\n\n# Architecture Patterns\n\nMaster proven backend architecture patterns including Clean Architecture, Hexagonal Architecture, and Domain-Driven Design to build maintainable, testable, and scalable systems.\n\n## When to Use This Skill\n\n- Designing new backend systems from scratch\n- Refactoring monolithic applications for better maintainability\n- Establishing architecture standards for your team\n- Migrating from tightly coupled to loosely coupled architectures\n- Implementing domain-driven design principles\n- Creating testable and mockable codebases\n- Planning microservices decomposition\n\n## Core Concepts\n\n### 1. Clean Architecture (Uncle Bob)\n\n**Layers (dependency flows inward):**\n- **Entities**: Core business models\n- **Use Cases**: Application business rules\n- **Interface Adapters**: Controllers, presenters, gateways\n- **Frameworks & Drivers**: UI, database, external services\n\n**Key Principles:**\n- Dependencies point inward\n- Inner layers know nothing about outer layers\n- Business logic independent of frameworks\n- Testable without UI, database, or external services\n\n### 2. Hexagonal Architecture (Ports and Adapters)\n\n**Components:**\n- **Domain Core**: Business logic\n- **Ports**: Interfaces defining interactions\n- **Adapters**: Implementations of ports (database, REST, message queue)\n\n**Benefits:"
+    },
+    {
+      "path": "other/automated-updates-johnnymo87-workstation/SKILL.md",
+      "name": "Automated Updates",
+      "current_category": "other",
+      "llm_category": "devops",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill describes an automated update pipeline using GitHub Actions and systemd timers for CI/CD-style package updates. This is operational automation involving CI pipelines, deployment infrastructure, and system-level update orchestration—core DevOps territory.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "cd516638c8ad63f05a64695b0c1fe2846a9133216a2b3a44bbe908892e5089a3",
+      "metadata_sha256": "6b907a7c81b1cd5b1e0c3e2b916a2ac2efc9a168542f06b933ba2778383cc8c0",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "How the devbox automatically updates llm-agents (claude-code) via GitHub Actions and systemd timers. Use when debugging update failures or understanding the update flow.",
+      "content_excerpt": "---\nname: Automated Updates\ndescription: How the devbox automatically updates llm-agents (claude-code) via GitHub Actions and systemd timers. Use when debugging update failures or understanding the update flow.\n---\n\n# Automated Updates\n\nThe devbox automatically keeps `llm-agents` packages up to date via a GitHub Actions + systemd timer pipeline.\n\n## What Gets Updated\n\nThe pipeline updates the `llm-agents` input in `flake.lock`, which provides:\n\n- **claude-code**: Official Claude Code CLI\n- **ccusage**: Usage analytics and statusline\n- **beads**: Distributed issue tracker\n- **opencode**: OpenCode CLI (alternative AI coding tool)\n- **ccusage-opencode**: Usage tracking for OpenCode\n\nAll packages use Numtide's binary cache for fast updates.\n\n## How It Works\n\n```\n┌─────────────────────────────────────────────────────────────┐\n│ GitHub Actions (every 4 hours)                              │\n│                                                             │\n│  1. update-llm-agents.yml runs                              │\n│  2. Updates flake.lock (llm-agents input only)              │\n│  3. Opens/updates PR on auto/update-llm-agents branch       │\n│  4. Enables auto-merge (squash)                             │\n│                                                             │\n│  CI (ci.yml) runs nix flake check on PR                     │\n│  ↓                                                          │\n│  Checks pass → PR auto-merges to main                       │\n└─────────────────────────────────────────────────────────────┘\n                           ↓\n┌─────────────────────────────────"
+    },
+    {
+      "path": "other/auth/SKILL.md",
+      "name": "auth",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.95,
+      "status": "ok",
+      "reason": "The skill focuses on authentication, access control, RBAC, session management, and multi-tenant data isolation—core security concerns. The description explicitly mentions 'authentication and access control' and covers login/logout, OAuth, route protection, and role-based access control.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "f1d158e504ee3572ae3356737bc023c382733f198c470c728442869cd48fe0a5",
+      "metadata_sha256": "7dc827309282e648f2219f17cae740a94b19508adef6e8a830e0c9ee5dbfc1c9",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Authentication and access control skill for Next.js 15 + Supabase applications. Use when implementing user authentication, protecting routes, managing user sessions, enforcing role-based access control (admin/member), or working with multi-tenant family-based data isolation. Covers login/logout, registration with email verification, OAuth (GitHub), route protection for Server Components and Server Actions, admin-only features, and multi-tenant data access patterns.",
+      "content_excerpt": "---\nname: auth\ndescription: Authentication and access control skill for Next.js 15 + Supabase applications. Use when implementing user authentication, protecting routes, managing user sessions, enforcing role-based access control (admin/member), or working with multi-tenant family-based data isolation. Covers login/logout, registration with email verification, OAuth (GitHub), route protection for Server Components and Server Actions, admin-only features, and multi-tenant data access patterns.\n---\n\n# Authentication & Access Control\n\nThis skill provides workflows for implementing authentication and access control in this Next.js 15 + Supabase application using server-side auth with httpOnly cookies, hybrid route protection, and multi-tenant family-based data isolation.\n\n## System Overview\n\n- **Auth Provider**: Supabase Auth with httpOnly cookies\n- **Architecture**: Next.js 15 App Router with Server Components and Server Actions\n- **Route Protection**: Hybrid approach (page-level auth checks, not middleware-only)\n- **Multi-Tenancy**: Family-based data isolation with RLS policies\n- **Roles**: Admin (first user in family) and Member\n\n## Core Workflows\n\n### Protecting a New Route\n\nTo protect a route from unauthenticated users:\n\n1. Import `requireAuthRedirect` from `@/lib/auth/server-auth`\n2. Call `await requireAuthRedirect()` at the start of the component\n3. User will be redirected to `/login` if not authenticated\n\n```typescript\nimport { requireAuthRedirect } from '@/lib/auth/server-auth';\n\nexport default async function ProtectedPage() {\n  await requireAuthRedirect();\n\n  // User "
+    },
+    {
+      "path": "other/authorization-endpoint-hirokazu-kobayashi-k-idp-server/SKILL.md",
+      "name": "authorization-endpoint",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is for developing/modifying Authorization Endpoint functionality in OAuth 2.0/OpenID Connect, including authorization request processing, consent flows, and authorization code generation. This is security-related authentication/authorization work.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "00c86af9674b3c59a908502f80863af649e19f1ec80ad205835f503fd6d62690",
+      "metadata_sha256": "20f51ba399de9f4dbfd0ea357f13a94870f236e54bb012fe211f5ace056e85a5",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "認可エンドポイント（Authorization Endpoint）機能の開発・修正を行う際に使用。Authorization Request処理、同意フロー、Authorization Code生成実装時に役立つ。",
+      "content_excerpt": "---\nname: authorization-endpoint\ndescription: 認可エンドポイント（Authorization Endpoint）機能の開発・修正を行う際に使用。Authorization Request処理、同意フロー、Authorization Code生成実装時に役立つ。\n---\n\n# 認可エンドポイント（Authorization Endpoint）開発ガイド\n\n## ドキュメント\n\n- `documentation/docs/content_06_developer-guide/03-application-plane/02-authorization-flow.md` - 認可フロー実装ガイド\n- `documentation/docs/content_06_developer-guide/03-application-plane/02-01-authorization-request-verification.md` - 認可リクエスト検証フロー詳細（プロファイル決定、検証チェーン、エラーハンドリング）\n- `documentation/docs/content_03_concepts/03-authentication-authorization/concept-04-authorization.md` - 認可概念\n\n## 機能概要\n\n認可エンドポイントは、OAuth 2.0/OpenID Connectの認可リクエストを処理する層。\n- **Authorization Request処理**: リクエスト検証、保存\n- **同意フロー**: ユーザー同意の取得\n- **Authorization Code生成**: 認可コード発行\n- **Response Type別処理**: code, token, id_token, hybrid\n- **動的scopeフィルタリング**: 認証方式・ACRベース\n\n## モジュール構成\n\n```\nlibs/\n├── idp-server-core/                         # 認可コア\n│   └── .../oauth/\n│       ├── handler/\n│       │   ├── OAuthRequestHandler.java    # リクエスト処理\n│       │   └── OAuthAuthorizeHandler.java  # 認可処理\n│       ├── request/\n│       │   ├── AuthorizationRequest.java\n│       │   └── AuthorizationRequestIdentifier.java\n│       ├── response/\n│       │   ├── AuthorizationResponse.java\n│       │   ├── AuthorizationResponseCreator.java\n│       │   └── AuthorizationResponseCreators.java\n│       ├── validator/\n│       │   └── OAuthAuthorizeRequestValidator.java\n│       └── repository/\n│           └── AuthorizationRequestRepository.java\n│\n├── idp-server-core/grant_management/        # Grant管理\n│   ├── grant/\n│   │   ├── AuthorizationCodeGrant.j"
+    },
+    {
+      "path": "other/automating-mac-apps-spillwavesolutions-automating-mac-apps--2/SKILL.md",
+      "name": "automating-mac-apps",
+      "current_category": "other",
+      "llm_category": "platform",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "Foundation skill for macOS app automation via Apple Events using AppleScript, JXA, and PyXA. This is platform-specific automation for macOS apps.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "c82d11a49a7ab58e5ea3ab6aacafb11340917a67a3ff034c638f4ab6fd1c4f1f",
+      "metadata_sha256": "906a279940e62b9cd0b46448a2da84f974fa0a0817e80df57bcc91a853141dd8",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Automates macOS apps via Apple Events using AppleScript (discovery), JXA (legacy), and PyXA (modern Python). Use when asked to \"automate Mac apps\", \"write AppleScript\", \"JXA scripting\", \"osascript automation\", or \"PyXA Python automation\". Foundation skill for all macOS app automation.",
+      "content_excerpt": "---\nname: automating-mac-apps\ndescription: Automates macOS apps via Apple Events using AppleScript (discovery), JXA (legacy), and PyXA (modern Python). Use when asked to \"automate Mac apps\", \"write AppleScript\", \"JXA scripting\", \"osascript automation\", or \"PyXA Python automation\". Foundation skill for all macOS app automation.\nallowed-tools:\n  - Bash\n  - Read\n  - Write\n---\n\n# Automating macOS Apps (Apple Events, AppleScript, JXA)\n\n## Technology Status\n\nJXA and AppleScript are legacy (last major updates: 2015-2016). Modern alternatives:\n- **PyXA**: Active Python automation (see installation below)\n- **Shortcuts App**: Visual workflow builder\n- **Swift/Objective-C**: Production-ready automation\n\n## macOS Sequoia 15 Notes\n\nTest scripts on target macOS due to:\n- Stricter TCC permissions\n- Enhanced Apple Events security\n- Sandbox improvements\n\n## Core framing (use this mental model)\n- **Apple Events**: The underlying inter-process communication (IPC) transport for macOS automation.\n- **AppleScript**: The original DSL (Domain-Specific Language) for Apple Events: best for discovery, dictionaries, and quick prototypes.\n- **JXA (JavaScript for Automation)**: A JavaScript binding to the Apple Events layer: best for data handling, JSON, and maintainable logic.\n- **ObjC Bridge**: JavaScript access to Objective-C frameworks (Foundation, AppKit) for advanced macOS capabilities beyond app dictionaries.\n\n## When to use which\n- Use **AppleScript** for discovery, dictionary exploration, UI scripting, and quick one-offs.\n- Use **JXA** for robust logic, JSON pipelines, integration with Python/"
+    },
+    {
+      "path": "other/auto-i18n/SKILL.md",
+      "name": "auto-i18n",
+      "current_category": "other",
+      "llm_category": "language",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill automates internationalization (i18n) of existing English pages to target languages, involving keyword research for locales, content generation with anti-stuffing detection, quality review, and sitemap updates. This aligns with the 'language' category's inclusion rule for translation, localization, and language learning workflows, as it focuses on adapting content for different linguistic regions rather than general writing or document conversion.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "2ff7881a50ff478393ab82bd344d4338e960aea0c006d4860e5fd7b4aecf1c45",
+      "metadata_sha256": "4880c96523d282439382e3421a3fc5185b58711a42b66961383d9fa91ed11025",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "自动将**已有英文页面**国际化到目标语言。输入：英文页面路径和目标语言区域。执行关键词研究（使用已验证的语言区域数据，而非翻译）、带反堆砌检测的内容生成、质量审核和站点地图更新。使用场景：(1) 为已有英文页面创建新的国际化内容，(2) 用户说'将此页面国际化/翻译到[语言]'或'i18n for [locale]'，(3) 用户提供页面路径 + 语言区域，(4) 批量生成多语言版本。**不要用于：**(a) 审计/检查现有国际化内容（用 i18n-content-audit），(b) 创建全新页面（用 shipany-page-builder），(c) 优化英文源页面SEO（用 shipany-page-builder 或其他SEO技能），(d) 修复国际化内容的质量问题（用 i18n-content-audit --fix）。**核心功能：**创建新的国际化内容，不是审计或优化已有内容。",
+      "content_excerpt": "---\nname: auto-i18n\ndescription: \"自动将**已有英文页面**国际化到目标语言。输入：英文页面路径和目标语言区域。执行关键词研究（使用已验证的语言区域数据，而非翻译）、带反堆砌检测的内容生成、质量审核和站点地图更新。使用场景：(1) 为已有英文页面创建新的国际化内容，(2) 用户说'将此页面国际化/翻译到[语言]'或'i18n for [locale]'，(3) 用户提供页面路径 + 语言区域，(4) 批量生成多语言版本。**不要用于：**(a) 审计/检查现有国际化内容（用 i18n-content-audit），(b) 创建全新页面（用 shipany-page-builder），(c) 优化英文源页面SEO（用 shipany-page-builder 或其他SEO技能），(d) 修复国际化内容的质量问题（用 i18n-content-audit --fix）。**核心功能：**创建新的国际化内容，不是审计或优化已有内容。\"\n---\n\n# Auto i18n - Automated Page Internationalization\n\n## 🚨 BLOCKING REQUIREMENTS - Execute in Order\n\n**You MUST complete each checkpoint before proceeding to the next. Do NOT skip any step.**\n\n### ✅ CHECKPOINT 1: Load Validated Keywords (MANDATORY FIRST STEP)\n\n**BLOCKING REQUIREMENT:** You MUST read the keyword data file BEFORE doing ANYTHING else.\n\n```bash\nRead: .claude/skills/i18n-seo-localizer/data/keywords-{locale}.json\n# OR: .codex/skills/i18n-seo-localizer/data/keywords-{locale}.json\n```\n\n**Confirm completion by stating:**\n\"✅ CHECKPOINT 1 COMPLETE: Loaded keywords for {locale}, found {N} keywords for {topic}\"\n\n**If file not found:** STOP and alert user that keyword file is missing.\n\n**Complete workflow:** See [references/phase-1-research.md](references/phase-1-research.md) - MUST read and execute ALL steps.\n\n---\n\n### ✅ CHECKPOINT 2: Generate Content with Validated Keywords\n\n**BLOCKING REQUIREMENT:** Content generation is MULTI-STEP, NOT single-shot.\n\n**Step 2.1: Generate Headings FIRST**\n- H1: MUST contain primary keyword (one-vote veto rule)\n- H2: 2-4 headings with keywords, primary ≤50%\n- H3: Optional, primary ≤30%\n\n**Step 2.2: Self-V"
+    },
+    {
+      "path": "other/auth-connect/SKILL.md",
+      "name": "auth-connect",
+      "current_category": "other",
+      "llm_category": "security",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill provides JWT-based authentication and authorization, including password hashing, RBAC, session management, API key generation, and secure middleware. These are security-focused workflows for authentication and access control.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "1a192c570a241379c26b9e942fede7fd646cd5d401fae6411fa186a02f0f9e99",
+      "metadata_sha256": "ba8c6fb7d2e278fd489a22b1f0b848d3a99a29db4f0c46b401c3882c11f0c3d9",
+      "semantic_sources": {
+        "description": "body",
+        "name": "metadata"
+      },
+      "description": "| Name | auth-connect |",
+      "content_excerpt": "# Auth Connect Skill\n\n## Metadata\n\n| Field | Value |\n|-------|-------|\n| **Name** | auth-connect |\n| **Version** | 1.0.0 |\n| **Agent** | SecurityLead |\n| **Created** | 2026-01-02 |\n\n## Purpose\n\nJWT-based authentication and authorization system for the Physical AI Educational Book FastAPI backend. Provides secure user authentication, session management, and role-based access control.\n\n## Features\n\n- JWT token generation and verification\n- Password hashing with bcrypt\n- Role-based access control (RBAC)\n- Session management\n- API key generation\n- Token refresh mechanism\n- Secure middleware for FastAPI\n\n## Requirements\n\n- Python 3.9+\n- FastAPI backend\n- Neon Postgres database\n- Environment variables configured\n\n## Installation\n\n```bash\n# Install dependencies\npip install -r requirements.txt\n\n# Initialize auth tables (requires DATABASE_URL)\n.claude/skills/auth-connect/scripts/setup.sh --init\n\n# Generate JWT secret\n.claude/skills/auth-connect/scripts/setup.sh --generate-secret\n```\n\n## Usage\n\n### CLI Commands\n\n```bash\n# Initialize auth system\n./scripts/setup.sh --init\n\n# Generate new JWT secret\n./scripts/setup.sh --generate-secret\n\n# Create a new user\n./scripts/setup.sh --create-user --email user@example.com --role student\n\n# List all roles\n./scripts/setup.sh --list-roles\n\n# Verify a token\n./scripts/setup.sh --verify-token <token>\n\n# Generate API key\n./scripts/setup.sh --generate-api-key --name \"My App\"\n\n# Show configuration\n./scripts/setup.sh --show-config\n\n# Run health check\n./scripts/setup.sh --health\n```\n\n### Python Integration\n\n```python\nfrom auth import AuthManager, TokenPayl"
+    },
+    {
+      "path": "other/architecture-review-omergocmen-vibe-coder-kit/SKILL.md",
+      "name": "architecture-review",
+      "current_category": "other",
+      "llm_category": "analysis",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is explicitly for stress-testing a proposed architecture before implementation, catching issues like over-engineering, circular dependencies, missing failure modes, security gaps, and scalability cliffs. This is a clear case of analysis and evaluation, fitting the 'analysis' category's inclusion rule.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "73ed9d3c5f74cfbe28de4902ae515b605fc11bcd92a013a600faa31f864579d2",
+      "metadata_sha256": "46ec0c16e566acfe9f42e49d8b26582cbf304cb4ba2a2d6fa2b509c639958b00",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Before committing to an implementation plan, run this skill to stress-test the proposed architecture. Catches over-engineering, circular dependencies, missing failure modes, security gaps, and scalability cliffs — before any code is written. Acts as a \"second eye\" on the plan.",
+      "content_excerpt": "---\nname: architecture-review\ndescription: >\n  Before committing to an implementation plan, run this skill to stress-test\n  the proposed architecture. Catches over-engineering, circular dependencies,\n  missing failure modes, security gaps, and scalability cliffs — before any\n  code is written. Acts as a \"second eye\" on the plan.\n---\n\n<!--\n  TÜRKÇE AÇIKLAMA\n  ───────────────\n  Bu skill, bir implementasyon planı kod yazılmadan önce \"ikinci göz\" olarak\n  stres testine tabi tutar. Aşırı mühendislik, döngüsel bağımlılıklar, eksik\n  hata senaryoları, güvenlik açıkları ve ölçeklenebilirlik sorunlarını erken tespit eder.\n  Yanlış temele inşa etmenin maliyeti çok yüksektir — bu skill o maliyeti sıfıra indirir.\n\n  NE ZAMAN: Plan hazırlandıktan SONRA, kod yazmaya başlamadan ÖNCE. Zorunludur.\n  ÇIKTI:    🔴 Blocker / 🟡 Warning / 🔵 Note listesi + Approved/Revisions Required kararı.\n-->\n\n# Architecture Review Skill\n\n## When to Trigger\n\n- After `writing-plans` produces an implementation plan, *before* `executing-plans`\n- When a significant refactor is proposed\n- When adding a new external service or integration\n- When the team is debating between two approaches\n- When something \"feels off\" about a design but you can't articulate why\n\n## Step-by-Step Process\n\n### 1. Load the Plan\n\nRead the implementation plan (typically `implementation_plan.md` or the artifact from `writing-plans`).\n\nExtract:\n- Components being built\n- Data flow between components\n- External dependencies\n- Assumptions the plan makes\n\n### 2. Run the Checklists\n\nWork through each checklist section. For every \"No\" or \"Unclear\""
+    },
+    {
+      "path": "other/architecture-decision-records-yairbederman-engineeringagency-2/SKILL.md",
+      "name": "architecture-decision-records",
+      "current_category": "other",
+      "llm_category": "documents",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is focused on creating structured documentation (Architecture Decision Records) to record architectural decisions, which is a document creation and management task.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "6c41e5a2bdd4bc8f71873bd1eca68f87e670fb410b44d1997b5d532219a1ecd6",
+      "metadata_sha256": "3334ec5a77366683f0142270bc8a2467e57a00a064601d77f7858079fbcc4064",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Document significant architectural decisions. Use when making significant architectural decisions, documenting technology choices, or recording design trade-offs.",
+      "content_excerpt": "---\nname: architecture-decision-records\ndescription: Document significant architectural decisions. Use when making significant architectural decisions, documenting technology choices, or recording design trade-offs.\n---\n\n# Architecture Decision Records (ADR)\n\nDocument significant architectural decisions for posterity and onboarding.\n\n## When to Use\n\n- Making significant architectural decisions\n- Choosing between technologies\n- Establishing patterns or standards\n- Documenting trade-off analysis\n- Onboarding new team members\n\n## ADR Template\n\n```markdown\n# ADR-{NUMBER}: {TITLE}\n\n## Status\n{Proposed | Accepted | Deprecated | Superseded by ADR-xxx}\n\n## Date\n{YYYY-MM-DD}\n\n## Context\nWhat is the issue that we're seeing that motivates this decision?\nWhat are the forces at play (technical, political, social)?\n\n## Decision\nWhat is the change we're proposing and/or doing?\n\n## Rationale\nWhy is this change being made?\nWhat alternatives were considered?\nWhy was this option chosen over alternatives?\n\n## Consequences\n\n### Positive\n- Benefit 1\n- Benefit 2\n\n### Negative\n- Drawback 1\n- Drawback 2\n\n### Neutral\n- Side effect 1\n\n## Alternatives Considered\n\n### Option A: {Name}\n**Pros:**\n- Pro 1\n- Pro 2\n\n**Cons:**\n- Con 1\n- Con 2\n\n**Why not chosen:** Reason\n\n### Option B: {Name}\n...\n\n## References\n- [Link to relevant doc]\n- [Link to RFC/proposal]\n```\n\n## ADR Guidelines\n\n### What to Document\n\n| Document | Don't Document |\n|----------|----------------|\n| Choice of database | Routine refactoring |\n| API design patterns | Bug fixes |\n| Authentication approach | Minor dependency updates |\n| Service b"
+    },
+    {
+      "path": "other/audit-coordinator-philoserf-claude-code-setup/SKILL.md",
+      "name": "audit-coordinator",
+      "current_category": "other",
+      "llm_category": "orchestration",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill orchestrates multiple specialized auditors, coordinating multi-agent workflows for comprehensive audits. This matches the orchestration category's inclusion rule for multi-step or multi-agent coordination and workflow control.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "c36e9c86955eb6d8024fa8fb7737a6014040950a2b8a2e2332f429e8f770226d",
+      "metadata_sha256": "4e5048cf052f5667951b3e08d112bcd972a0e72479000abed1c18506970baf52",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Orchestrates comprehensive audits of Claude Code customizations using specialized auditors. Use when auditing multiple components, asking about naming/organization best practices, or needing thorough validation before deployment.",
+      "content_excerpt": "---\nname: audit-coordinator\ndescription: Orchestrates comprehensive audits of Claude Code customizations using specialized auditors. Use when auditing multiple components, asking about naming/organization best practices, or needing thorough validation before deployment.\nallowed-tools: [Read, Glob, Grep, Bash, Skill, Task]\n# model: inherit\n---\n\n## Reference Files\n\n### Audit Orchestration\n\n- [workflow-patterns.md](workflow-patterns.md) - Multi-auditor invocation patterns and decision matrix\n- [report-compilation.md](report-compilation.md) - Unified report structure and priority reconciliation\n\n### Evaluation Standards and Troubleshooting\n\n- [evaluation-criteria.md](evaluation-criteria.md) - Comprehensive standards for each component type\n- [common-issues.md](common-issues.md) - Frequent problems and specific fixes with examples\n- [anti-patterns.md](anti-patterns.md) - Common mistakes to avoid when building customizations\n\n### Shared References (Used by All Authoring Skills)\n\n- [naming-conventions.md](../../references/naming-conventions.md) - Patterns for agents, commands, skills, hooks, and output-styles\n- [frontmatter-requirements.md](../../references/frontmatter-requirements.md) - Complete YAML specification for each component type\n- [when-to-use-what.md](../../references/when-to-use-what.md) - Decision guide for choosing agents vs skills vs commands vs output-styles\n- [file-organization.md](../../references/file-organization.md) - Directory structure and layout best practices\n- [hook-events.md](../../references/hook-events.md) - Hook event types and timing reference\n- [cus"
+    },
+    {
+      "path": "other/autogpt/SKILL.md",
+      "name": "autogpt-agents",
+      "current_category": "other",
+      "llm_category": "orchestration",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "AutoGPT is described as an autonomous AI agent platform for building and deploying continuous agents with visual workflow builders and multi-step AI automation systems. This fits 'orchestration' for multi-agent coordination and workflow control.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "4b16c070da9966e3e71a8f5324d7b1b2d4ddd68a3df8b27305b1a19b841f62b3",
+      "metadata_sha256": "9b62413b7dfbf906c613cea2ca9dd07ce320df0265fd2bc8069b23967304e520",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter",
+        "tags": "frontmatter:list"
+      },
+      "description": "Autonomous AI agent platform for building and deploying continuous agents. Use when creating visual workflow agents, deploying persistent autonomous agents, or building complex multi-step AI automation systems.",
+      "content_excerpt": "---\nname: autogpt-agents\ndescription: Autonomous AI agent platform for building and deploying continuous agents. Use when creating visual workflow agents, deploying persistent autonomous agents, or building complex multi-step AI automation systems.\nversion: 1.0.0\nauthor: Orchestra Research\nlicense: MIT\ntags: [Agents, AutoGPT, Autonomous Agents, Workflow Automation, Visual Builder, AI Platform]\ndependencies: [autogpt-platform>=0.4.0]\n---\n\n# AutoGPT - Autonomous AI Agent Platform\n\nComprehensive platform for building, deploying, and managing continuous AI agents through a visual interface or development toolkit.\n\n## When to use AutoGPT\n\n**Use AutoGPT when:**\n- Building autonomous agents that run continuously\n- Creating visual workflow-based AI agents\n- Deploying agents with external triggers (webhooks, schedules)\n- Building complex multi-step automation pipelines\n- Need a no-code/low-code agent builder\n\n**Key features:**\n- **Visual Agent Builder**: Drag-and-drop node-based workflow editor\n- **Continuous Execution**: Agents run persistently with triggers\n- **Marketplace**: Pre-built agents and blocks to share/reuse\n- **Block System**: Modular components for LLM, tools, integrations\n- **Forge Toolkit**: Developer tools for custom agent creation\n- **Benchmark System**: Standardized agent performance testing\n\n**Use alternatives instead:**\n- **LangChain/LlamaIndex**: If you need more control over agent logic\n- **CrewAI**: For role-based multi-agent collaboration\n- **OpenAI Assistants**: For simple hosted agent deployments\n- **Semantic Kernel**: For Microsoft ecosystem integration\n\n"
+    },
+    {
+      "path": "other/atlas-documentation-bitsoex-bitso-java/SKILL.md",
+      "name": "atlas-documentation",
+      "current_category": "other",
+      "llm_category": "documents",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is explicitly about documentation generation for Java services, covering structure, templates, and RAG optimization. This aligns with the 'documents' category for structured document production.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "db0d67ca4a3976924bd0bb6a9b7a325b4fa201bf954f29d337ed55e2d8f183dc",
+      "metadata_sha256": "80aa9743b453dec23e6711479749d92d0da8f3de3f40117584fde6789ff4d414",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "AI-friendly documentation generation for Java services following RFC-37 standards. Covers documentation structure, templates, change detection, and RAG optimization. Use when generating or updating service documentation.",
+      "content_excerpt": "---\nname: atlas-documentation\ndescription: >\n  AI-friendly documentation generation for Java services following RFC-37 standards.\n  Covers documentation structure, templates, change detection, and RAG optimization.\n  Use when generating or updating service documentation.\ncompatibility: Java services following Bitso patterns\nmetadata:\n  version: \"1.0.0\"\n  technology: global\n  category: documentation\n  tags:\n    - documentation\n    - rfc-37\n    - atlas\n    - rag\n---\n\n# Atlas Documentation\n\nAI-friendly documentation generation for Java services following RFC-37 standards.\n\n## When to use this skill\n\n- Generating documentation for new services\n- Updating documentation after code changes\n- Setting up documentation structure for a repository\n- Creating feature and concept documentation\n- Integrating with RAG systems\n\n## Skill Contents\n\n### Sections\n\n- [When to use this skill](#when-to-use-this-skill) (L23-L30)\n- [Quick Start](#quick-start) (L52-L88)\n- [Documentation Structure](#documentation-structure) (L89-L126)\n- [Change Detection](#change-detection) (L127-L150)\n- [References](#references) (L151-L159)\n- [Related Skills](#related-skills) (L160-L167)\n\n### Available Resources\n\n**📚 references/** - Detailed documentation\n- [atlas mcp usage](references/atlas-mcp-usage.md)\n- [documentation workflow](references/documentation-workflow.md)\n- [templates](references/templates.md)\n- [troubleshooting](references/troubleshooting.md)\n\n---\n\n## Quick Start\n\n### 1. Identify Services\n\nScan `bitso-services/` directory for deployable services:\n\n```bash\nls -d bitso-services/*/\n```\n\nEach subdirectory "
+    },
+    {
+      "path": "other/authoring-dags/SKILL.md",
+      "name": "authoring-dags",
+      "current_category": "other",
+      "llm_category": "workflow",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill describes best practices for writing Apache Airflow DAGs, which are repeatable pipeline definitions and workflow patterns. This aligns with the 'workflow' category for repeatable process automation and workflow design.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "282df3878a670e21d5f61a3bcc7847b972128d1bb915a97b9bcc758fa02ddcf4",
+      "metadata_sha256": "393696d7ccbcf555e3850e2c89de6433d96d995f1d520cb7806850246786d31b",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Workflow and best practices for writing Apache Airflow DAGs. Use when the user wants to create a new DAG, write pipeline code, or asks about DAG patterns and conventions. For testing and debugging DAGs, see the testing-dags skill.",
+      "content_excerpt": "---\nname: authoring-dags\ndescription: Workflow and best practices for writing Apache Airflow DAGs. Use when the user wants to create a new DAG, write pipeline code, or asks about DAG patterns and conventions. For testing and debugging DAGs, see the testing-dags skill.\nhooks:\n  Stop:\n    - hooks:\n        - type: command\n          command: \"echo 'Remember to test your DAG with the testing-dags skill'\"\n---\n\n# DAG Authoring Skill\n\nThis skill guides you through creating and validating Airflow DAGs using best practices and MCP tools.\n\n> **For testing and debugging DAGs**, see the **testing-dags** skill which covers the full test → debug → fix → retest workflow.\n\n---\n\n## ⚠️ CRITICAL WARNING: Use MCP Tools, NOT CLI Commands ⚠️\n\n> **STOP! Before running ANY Airflow-related command, read this.**\n>\n> You MUST use MCP tools for ALL Airflow interactions. CLI commands like `astro dev run`, `airflow dags`, or shell commands to read logs are **FORBIDDEN**.\n>\n> **Why?** MCP tools provide structured, reliable output. CLI commands are fragile, produce unstructured text, and often fail silently.\n\n---\n\n## CLI vs MCP Quick Reference\n\n**ALWAYS use Airflow MCP tools. NEVER use CLI commands.**\n\n| ❌ DO NOT USE | ✅ USE INSTEAD |\n|---------------|----------------|\n| `astro dev run dags list` | `list_dags` MCP tool |\n| `airflow dags list` | `list_dags` MCP tool |\n| `astro dev run dags test` | `trigger_dag_and_wait` MCP tool |\n| `airflow tasks test` | `trigger_dag_and_wait` MCP tool |\n| `cat` / `grep` on Airflow logs | `get_task_logs` MCP tool |\n| `find` in dags folder | `list_dags` or `explore_dag` MCP"
+    },
+    {
+      "path": "other/attribute/SKILL.md",
+      "name": "attribute",
+      "current_category": "other",
+      "llm_category": "analysis",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill's description explicitly focuses on establishing cause-effect relationships, analyzing root causes, mapping dependencies, and building causal models. This aligns directly with the 'analysis' category's inclusion rule for 'analysis, synthesis, inspection, reporting, and evidence extraction workflows.'",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "f8338c6fb1435d05f25bf6557be7789bc3c250e8ddb99646086762df2b046a86",
+      "metadata_sha256": "111c0ae3ad00976f72c7cd779e829bdf348dd633138b57e8195186569431b222",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Establish cause-effect relationships between events or states. Use when analyzing root causes, mapping dependencies, tracing effects, or building causal models.",
+      "content_excerpt": "---\nname: attribute\ndescription: Establish cause-effect relationships between events or states. Use when analyzing root causes, mapping dependencies, tracing effects, or building causal models.\nargument-hint: \"[effect] [candidates] [context]\"\ndisable-model-invocation: false\nuser-invocable: true\nallowed-tools: Read, Grep\ncontext: fork\nagent: explore\nlayer: MODEL\n---\n\n## Intent\n\nEstablish causal relationships between observed effects and potential causes. This capability supports root cause analysis, dependency mapping, and causal reasoning for planning and debugging.\n\n**Success criteria:**\n- Causes identified for observed effects\n- Causal strength estimated for each relationship\n- Causal mechanism explained\n- Alternative causes considered and ruled out\n\n**Compatible schemas:**\n- `schemas/output_schema.yaml`\n\n## Inputs\n\n| Parameter | Required | Type | Description |\n|-----------|----------|------|-------------|\n| `effect` | Yes | any | The observed effect to attribute |\n| `candidates` | No | array | Potential causes to evaluate |\n| `context` | No | object | Situational context for attribution |\n| `depth` | No | string | Analysis depth: immediate, chain, comprehensive |\n\n## Procedure\n\n1) **Characterize the effect**: Understand what needs to be explained\n   - Document the observed effect precisely\n   - Note timing and circumstances\n   - Identify what changed\n\n2) **Identify candidate causes**: Generate list of potential causes\n   - Use provided candidates if available\n   - Generate additional candidates from context\n   - Consider proximate and distal causes\n\n3) **Evaluate causal "
+    },
+    {
+      "path": "other/atomic-agents-brainblend-ai-atomic-agents-2/SKILL.md",
+      "name": "atomic-agents",
+      "current_category": "other",
+      "llm_category": "agent",
+      "confidence": 0.93,
+      "status": "ok",
+      "reason": "The skill is explicitly about agent configuration, initialization, and execution patterns for the Atomic Agents framework — single-agent behavior and agent runtime helpers.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "fb29324774046f01e7a1be577f6682a93987f2d2f7062a397ffd5651ef3b7b2f",
+      "metadata_sha256": "bca62d090b5678c6a4e2f00278a1ab2d1ed83c9289d02d2c87c773b917b2d6b1",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "metadata"
+      },
+      "description": "This skill should be used when the user asks to \"create an agent\", \"configure AtomicAgent\", \"set up agent\", \"agent configuration\", \"AgentConfig\", \"ChatHistory\", or needs guidance on agent initialization, model selection, history management, and agent execution patterns for Atomic Agents applications.",
+      "content_excerpt": "---\ndescription: This skill should be used when the user asks to \"create an agent\", \"configure AtomicAgent\", \"set up agent\", \"agent configuration\", \"AgentConfig\", \"ChatHistory\", or needs guidance on agent initialization, model selection, history management, and agent execution patterns for Atomic Agents applications.\n---\n\n# Atomic Agents Agent Configuration\n\nThe `AtomicAgent` is the core class for LLM interactions in the Atomic Agents framework. It handles structured input/output, conversation history, and system prompt management.\n\n## Basic Agent Setup\n\n```python\nimport instructor\nimport openai\nfrom atomic_agents.agents.base_agent import AtomicAgent, AgentConfig\nfrom atomic_agents.lib.components.system_prompt_generator import SystemPromptGenerator\nfrom atomic_agents.lib.components.chat_history import ChatHistory\n\n# 1. Create instructor-wrapped client\nclient = instructor.from_openai(openai.OpenAI())\n\n# 2. Configure the agent\nconfig = AgentConfig(\n    client=client,\n    model=\"gpt-4o-mini\",\n    history=ChatHistory(),\n    system_prompt_generator=SystemPromptGenerator(\n        background=[\"You are an expert assistant.\"],\n        steps=[\"1. Analyze the input.\", \"2. Generate response.\"],\n        output_instructions=[\"Be concise and helpful.\"],\n    ),\n)\n\n# 3. Create the agent with type parameters\nagent = AtomicAgent[InputSchema, OutputSchema](config=config)\n```\n\n## AgentConfig Parameters\n\n| Parameter | Type | Required | Description |\n|-----------|------|----------|-------------|\n| `client` | Instructor client | Yes | Instructor-wrapped LLM client |\n| `model` | str | Yes | Model i"
+    },
+    {
+      "path": "other/automated-testing-profmikegreene-gotei-2/SKILL.md",
+      "name": "automated-testing",
+      "current_category": "other",
+      "llm_category": "testing",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill is explicitly about developing and executing automated tests to validate scripts, workflows, and systems, performing regression checks, and enforcing quality gates before deployment. This directly matches the testing category's inclusion rule covering QA, test tooling, and quality gates.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "c313c61fb162d2807b2870a923ce219de278879f690070cdead4962c24f9bb8b",
+      "metadata_sha256": "36242ef3c1a0700db6a4bde417179c3bed3e0d9171d0546056eee4b009eab6ad",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Develop and execute automated tests to validate pilot scripts, workflows, and systems. Use when verifying code reliability, performing regression checks, or enforcing quality gates before deployment of pilot deliverables.",
+      "content_excerpt": "---\nname: automated-testing\ndescription: Develop and execute automated tests to validate pilot scripts, workflows, and systems. Use when verifying code reliability, performing regression checks, or enforcing quality gates before deployment of pilot deliverables.\n---\n\n# Automated Testing\n\n## Overview\n\n[TODO: 1-2 sentences explaining what this skill enables]\n\n## Structuring This Skill\n\n[TODO: Choose the structure that best fits this skill's purpose. Common patterns:\n\n**1. Workflow-Based** (best for sequential processes)\n- Works well when there are clear step-by-step procedures\n- Example: DOCX skill with \"Workflow Decision Tree\" -> \"Reading\" -> \"Creating\" -> \"Editing\"\n- Structure: ## Overview -> ## Workflow Decision Tree -> ## Step 1 -> ## Step 2...\n\n**2. Task-Based** (best for tool collections)\n- Works well when the skill offers different operations/capabilities\n- Example: PDF skill with \"Quick Start\" -> \"Merge PDFs\" -> \"Split PDFs\" -> \"Extract Text\"\n- Structure: ## Overview -> ## Quick Start -> ## Task Category 1 -> ## Task Category 2...\n\n**3. Reference/Guidelines** (best for standards or specifications)\n- Works well for brand guidelines, coding standards, or requirements\n- Example: Brand styling with \"Brand Guidelines\" -> \"Colors\" -> \"Typography\" -> \"Features\"\n- Structure: ## Overview -> ## Guidelines -> ## Specifications -> ## Usage...\n\n**4. Capabilities-Based** (best for integrated systems)\n- Works well when the skill provides multiple interrelated features\n- Example: Product Management with \"Core Capabilities\" -> numbered capability list\n- Structure: ## Overview -> ## Co"
+    },
+    {
+      "path": "other/assumption-audit/SKILL.md",
+      "name": "assumption-audit",
+      "current_category": "other",
+      "llm_category": "analysis",
+      "confidence": 0.9,
+      "status": "ok",
+      "reason": "The skill audits claims against evidence, assigns calibrated probabilities, and performs stress-testing/pre-mortem analysis. This is a synthesis and evidence extraction workflow.",
+      "evidence": [],
+      "workset": "classification_gap",
+      "source_sha256": "ab981953dd98ad14aa246debd48aacb641f02af74607388f10c7f9ea24680d39",
+      "metadata_sha256": "6ca9420b268ee9d47581faba7de77d86501377c1b7349d0e3c92294ab607d12e",
+      "semantic_sources": {
+        "description": "frontmatter",
+        "name": "frontmatter"
+      },
+      "description": "Use as the mandatory evidence gate before signing off on any strategy, PRD, or business case—audits every key claim against documented sources and assigns calibrated probabilities.",
+      "content_excerpt": "---\nname: assumption-audit\ntype: workflow\nfamily: workflow\nrigor: full\ndescription: \"Use as the mandatory evidence gate before signing off on any strategy, PRD, or business case—audits every key claim against documented sources and assigns calibrated probabilities.\"\nkeywords: \"validation, evidence, claims, assumptions, testing, gate, verification\"\ncompatibility: \"Claude Code and compatible agent products\"\nrequires: [\"problem-framing\"]\nenhances: [\"devils-advocate\", \"decision-frameworks\", \"strategy-clarity\"]\nsources_pdf: [\"Thinking in Bets (Duke)\", \"How to Decide (Duke)\", \"Antifragile (Taleb)\", \"Seeking Wisdom (Bevelin)\", \"Useful Not True (Sivers)\"]\nsources_web: [\"Farnam Street: Decision-Making\", \"Farnam Street: Inversion\"]\n---\n\n## Overview\nAssumption-audit is the \"evidence gate\" that prevents Resulting (evaluating decisions by outcomes) and Hindsight Bias (feeling something was predictable after it happened). It forces an honest accounting of what is known versus what is guessed.\n\n## Iron Law\n\n`NO SIGN-OFF WITHOUT VALIDATION EVIDENCE FOR EVERY KEY CLAIM`\nAssertions without evidence are vulnerabilities. Unaudited assumptions create fragile strategies that collapse under the first sign of volatility.\n\n## State Machine\n\n```dot\ndigraph assumption_audit_flow {\n    \"Start\" [shape=doublecircle];\n    \"Step 1: Inventory Key Assumptions\" [shape=box];\n    \"Step 2: Evidence Mapping (Knowledge Tracker)\" [shape=box];\n    \"Step 3: Stress-Test (Pre-mortem)\" [shape=box];\n    \"Step 4: Probability Calibration\" [shape=box];\n    \"Gate: Claim-Evidence Match\" [shape=diamond];\n    \"Step 5: Fragilit"
+    }
+  ],
+  "notes": [
+    "Review sample rows against SKILL.md excerpts before applying a migration plan.",
+    "Sampling is deterministic for a fixed seed and classification input."
+  ]
+}

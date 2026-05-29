@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-05-28T23:02:37.600951Z",
-  "archive_skill_md_count_raw": 222941,
-  "archive_metadata_count_raw": 222941,
-  "indexed_skill_count_scan_shape": 222941,
+  "updated_at": "2026-05-29T00:35:45.708065Z",
+  "archive_skill_md_count_raw": 220395,
+  "archive_metadata_count_raw": 220395,
+  "indexed_skill_count_scan_shape": 220395,
   "registry_skill_count_dedup": 156981,
   "total_plugins": 3,
   "categories": 42,
@@ -15,17 +15,17 @@
     {
       "name": "ai-llm",
       "code": "ai-llm",
-      "count": 2251
+      "count": 2252
     },
     {
       "name": "ai-ml",
       "code": "ai-ml",
-      "count": 2172
+      "count": 2173
     },
     {
       "name": "analysis",
       "code": "analysis",
-      "count": 3487
+      "count": 3495
     },
     {
       "name": "api",
@@ -65,32 +65,32 @@
     {
       "name": "data",
       "code": "dat",
-      "count": 49032
+      "count": 49033
     },
     {
       "name": "design",
       "code": "des",
-      "count": 13634
+      "count": 13641
     },
     {
       "name": "development",
       "code": "dev",
-      "count": 37112
+      "count": 37123
     },
     {
       "name": "devops",
       "code": "ops",
-      "count": 10512
+      "count": 10513
     },
     {
       "name": "documents",
       "code": "doc",
-      "count": 6606
+      "count": 6608
     },
     {
       "name": "domains",
       "code": "domains",
-      "count": 857
+      "count": 870
     },
     {
       "name": "examples",
@@ -105,22 +105,22 @@
     {
       "name": "gaming",
       "code": "gaming",
-      "count": 837
+      "count": 840
     },
     {
       "name": "generation",
       "code": "generation",
-      "count": 747
+      "count": 752
     },
     {
       "name": "integration",
       "code": "integration",
-      "count": 5220
+      "count": 5222
     },
     {
       "name": "language",
       "code": "language",
-      "count": 137
+      "count": 138
     },
     {
       "name": "local-ai-infrastructure",
@@ -130,27 +130,27 @@
     {
       "name": "marketing",
       "code": "mkt",
-      "count": 2821
+      "count": 2824
     },
     {
       "name": "orchestration",
       "code": "orchestration",
-      "count": 2262
+      "count": 2273
     },
     {
       "name": "other",
       "code": "oth",
-      "count": 44761
+      "count": 42117
     },
     {
       "name": "performance",
       "code": "performance",
-      "count": 965
+      "count": 968
     },
     {
       "name": "personal-development",
       "code": "personal-development",
-      "count": 391
+      "count": 392
     },
     {
       "name": "planning",
@@ -160,7 +160,7 @@
     {
       "name": "platform",
       "code": "platform",
-      "count": 357
+      "count": 359
     },
     {
       "name": "product",
@@ -175,17 +175,17 @@
     {
       "name": "quality",
       "code": "quality",
-      "count": 3261
+      "count": 3266
     },
     {
       "name": "security",
       "code": "sec",
-      "count": 5140
+      "count": 5143
     },
     {
       "name": "skills",
       "code": "skills",
-      "count": 2281
+      "count": 2290
     },
     {
       "name": "system",
@@ -210,7 +210,7 @@
     {
       "name": "workflow",
       "code": "workflow",
-      "count": 1479
+      "count": 1484
     },
     {
       "name": "writing",
@@ -223,77 +223,77 @@
   "top_repositories": [
     {
       "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-      "count": 3328
+      "count": 3311
     },
     {
       "repo": "majiayu000/claude-skill-registry",
-      "count": 1945
+      "count": 1934
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "count": 1904
+      "count": 1814
     },
     {
       "repo": "a5c-ai/babysitter",
-      "count": 1468
+      "count": 1429
     },
     {
       "repo": "plurigrid/asi",
-      "count": 1416
+      "count": 1405
     },
     {
       "repo": "aiskillstore/marketplace",
-      "count": 1056
-    },
-    {
-      "repo": "levnikolaevich/claude-code-skills",
       "count": 1000
     },
     {
+      "repo": "levnikolaevich/claude-code-skills",
+      "count": 972
+    },
+    {
       "repo": "melodic-software/claude-code-plugins",
-      "count": 980
+      "count": 971
     },
     {
       "repo": "TheBushidoCollective/han",
-      "count": 964
+      "count": 962
     },
     {
       "repo": "boisenoise/skills-collections",
-      "count": 957
+      "count": 951
     }
   ],
   "featured_count": 100,
   "index_size_bytes": 162,
   "index_size_gzip_bytes": 174,
   "search_shard_count": 6,
-  "search_largest_shard_bytes": 8388675,
-  "search_largest_shard_gzip_bytes": 2568907,
+  "search_largest_shard_bytes": 8388620,
+  "search_largest_shard_gzip_bytes": 2552765,
   "category_shard_count": 52,
-  "category_largest_part_bytes": 8388723,
-  "category_largest_part_gzip_bytes": 1737621,
+  "category_largest_part_bytes": 8388622,
+  "category_largest_part_gzip_bytes": 1737539,
   "lite_index_count": 157547,
   "lite_index_included_count": 5000,
   "lite_index_size_bytes": 3503306,
-  "lite_index_gzip_size_bytes": 687719,
+  "lite_index_gzip_size_bytes": 687731,
   "quality_index_size_bytes": 220,
   "quality_index_gzip_size_bytes": 213,
   "quality_shard_count": 6,
-  "quality_largest_shard_bytes": 8388699,
-  "quality_largest_shard_gzip_bytes": 1748903,
+  "quality_largest_shard_bytes": 8388661,
+  "quality_largest_shard_gzip_bytes": 1748388,
   "security_index_size_bytes": 223,
-  "security_index_gzip_size_bytes": 215,
+  "security_index_gzip_size_bytes": 214,
   "security_shard_count": 18,
-  "security_largest_shard_bytes": 8388611,
-  "security_largest_shard_gzip_bytes": 1638594,
+  "security_largest_shard_bytes": 8388613,
+  "security_largest_shard_gzip_bytes": 1638265,
   "ranking_index_size_bytes": 220,
-  "ranking_index_gzip_size_bytes": 213,
+  "ranking_index_gzip_size_bytes": 214,
   "ranking_shard_count": 5,
-  "ranking_largest_shard_bytes": 8388708,
-  "ranking_largest_shard_gzip_bytes": 2206630,
-  "largest_generated_file_bytes": 8388723,
+  "ranking_largest_shard_bytes": 8388660,
+  "ranking_largest_shard_gzip_bytes": 2207504,
+  "largest_generated_file_bytes": 8388661,
   "security_scan": {
-    "total": 222941,
-    "passed": 212688,
-    "failed": 10253
+    "total": 220395,
+    "passed": 210226,
+    "failed": 10169
   }
 }

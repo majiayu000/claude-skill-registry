@@ -1,0 +1,25 @@
+{
+  "batch_id": "current-other-residual-batch-013",
+  "combined_row_count": 54468,
+  "parent_issue": "https://github.com/majiayu000/claude-skill-registry-data/issues/75",
+  "policy": {
+    "exact_duplicate_cleanup_only": true,
+    "from_category": "other",
+    "latest_per_path": true,
+    "min_confidence": 0.9
+  },
+  "schema_version": 1,
+  "source_classification_artifacts": [
+    "migration-artifacts/2026-05-24-current-other-semantic-batch-001/classification.jsonl",
+    "migration-artifacts/2026-05-25-current-other-semantic-batch-002/classification.jsonl",
+    "migration-artifacts/2026-05-27-current-other-semantic-batch-003/classification.jsonl",
+    "migration-artifacts/2026-05-27-current-other-semantic-batch-004/classification.jsonl",
+    "migration-artifacts/2026-05-27-current-other-semantic-batch-005/classification.jsonl",
+    "migration-artifacts/2026-05-27-current-other-semantic-batch-007/classification.jsonl",
+    "migration-artifacts/2026-05-27-current-other-semantic-batch-008-large/classification.jsonl",
+    "migration-artifacts/2026-05-28-current-other-semantic-batch-009/classification.jsonl",
+    "migration-artifacts/2026-05-28-current-other-semantic-batch-010/classification.jsonl",
+    "migration-artifacts/2026-05-29-current-other-semantic-batch-011/classification.jsonl",
+    "migration-artifacts/2026-05-29-current-other-semantic-batch-012/classification.jsonl"
+  ]
+}

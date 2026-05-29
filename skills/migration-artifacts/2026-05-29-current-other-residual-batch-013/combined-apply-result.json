@@ -1,0 +1,175 @@
+{
+  "applied_at": "2026-05-28T22:39:37.068161+00:00",
+  "classification_jsonl": "migration-artifacts/2026-05-29-current-other-residual-batch-013/combined-current-other-classification.jsonl",
+  "generated_at": "2026-05-28T22:39:37.034226+00:00",
+  "moves": [],
+  "moves_count_omitted_from_committed_artifact": 6,
+  "moves_examples": [
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "key": "K-Dense-AI/scientific-agent-skills:skills/bids/SKILL.md",
+      "metadata_sha256": "",
+      "name": "bids",
+      "operation": "move",
+      "reason": "classification target passed filters",
+      "repo": "K-Dense-AI/scientific-agent-skills",
+      "semantic_text_sha256": "",
+      "source_category": "other",
+      "source_path": "other/bids",
+      "source_sha256": "",
+      "source_skill": "other/bids/SKILL.md",
+      "target_category": "data",
+      "target_path": "data/bids-k-dense-ai-scientific-agent-ski",
+      "target_skill": "data/bids-k-dense-ai-scientific-agent-ski/SKILL.md",
+      "target_status": "active"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "key": "K-Dense-AI/scientific-agent-skills:skills/clinical-reports/SKILL.md",
+      "metadata_sha256": "",
+      "name": "clinical-reports",
+      "operation": "move",
+      "reason": "classification target passed filters",
+      "repo": "K-Dense-AI/scientific-agent-skills",
+      "semantic_text_sha256": "",
+      "source_category": "other",
+      "source_path": "other/clinical-reports",
+      "source_sha256": "",
+      "source_skill": "other/clinical-reports/SKILL.md",
+      "target_category": "documents",
+      "target_path": "documents/clinical-reports-k-dense-ai-scientific-agent-ski-2",
+      "target_skill": "documents/clinical-reports-k-dense-ai-scientific-agent-ski-2/SKILL.md",
+      "target_status": "active"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "key": "K-Dense-AI/scientific-agent-skills:skills/deeptools/SKILL.md",
+      "metadata_sha256": "",
+      "name": "deeptools",
+      "operation": "move",
+      "reason": "classification target passed filters",
+      "repo": "K-Dense-AI/scientific-agent-skills",
+      "semantic_text_sha256": "",
+      "source_category": "other",
+      "source_path": "other/deeptools",
+      "source_sha256": "",
+      "source_skill": "other/deeptools/SKILL.md",
+      "target_category": "domains",
+      "target_path": "domains/deeptools-k-dense-ai-scientific-agent-ski",
+      "target_skill": "domains/deeptools-k-dense-ai-scientific-agent-ski/SKILL.md",
+      "target_status": "active"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "key": "K-Dense-AI/scientific-agent-skills:skills/depmap/SKILL.md",
+      "metadata_sha256": "",
+      "name": "depmap",
+      "operation": "move",
+      "reason": "classification target passed filters",
+      "repo": "K-Dense-AI/scientific-agent-skills",
+      "semantic_text_sha256": "",
+      "source_category": "other",
+      "source_path": "other/depmap",
+      "source_sha256": "",
+      "source_skill": "other/depmap/SKILL.md",
+      "target_category": "domains",
+      "target_path": "domains/depmap-k-dense-ai-scientific-agent-ski",
+      "target_skill": "domains/depmap-k-dense-ai-scientific-agent-ski/SKILL.md",
+      "target_status": "active"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "key": "DrZoot/flowbite-skill:name:flowbite-skill",
+      "metadata_sha256": "",
+      "name": "flowbite-skill",
+      "operation": "move",
+      "reason": "classification target passed filters",
+      "repo": "DrZoot/flowbite-skill",
+      "semantic_text_sha256": "",
+      "source_category": "other",
+      "source_path": "other/flowbite-skill",
+      "source_sha256": "",
+      "source_skill": "other/flowbite-skill/SKILL.md",
+      "target_category": "design",
+      "target_path": "design/flowbite-skill",
+      "target_skill": "design/flowbite-skill/SKILL.md",
+      "target_status": "active"
+    },
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "key": "existential-birds/beagle:plugins/beagle-rust/skills/rust-best-practices/SKILL.md",
+      "metadata_sha256": "",
+      "name": "rust-best-practices",
+      "operation": "move",
+      "reason": "classification target passed filters",
+      "repo": "existential-birds/beagle",
+      "semantic_text_sha256": "",
+      "source_category": "other",
+      "source_path": "other/rust-best-practices",
+      "source_sha256": "",
+      "source_skill": "other/rust-best-practices/SKILL.md",
+      "target_category": "development",
+      "target_path": "development/rust-best-practices-existential-birds-beagle",
+      "target_skill": "development/rust-best-practices-existential-birds-beagle/SKILL.md",
+      "target_status": "active"
+    }
+  ],
+  "moves_omitted_from_committed_artifact": true,
+  "notes": [
+    "Default mode is review-only and does not modify files.",
+    "Only --apply moves directories and updates metadata.json.",
+    "Blocked moves are never applied automatically."
+  ],
+  "policy": {
+    "allow_target_other": false,
+    "apply_mode": "apply",
+    "from_categories": [
+      "other"
+    ],
+    "limit": null,
+    "min_confidence": 0.9,
+    "movable_only": true,
+    "target_statuses": [
+      "active"
+    ],
+    "to_categories": []
+  },
+  "schema_version": 1,
+  "skills_dir": ".",
+  "summary": {
+    "blocked_count": 0,
+    "classification_row_count": 54468,
+    "classification_status_counts": {
+      "missing_result": 5,
+      "ok": 54446,
+      "unknown_or_inactive_category": 17
+    },
+    "movable_count": 6,
+    "operation_counts": {
+      "move": 6
+    },
+    "planned_move_count": 6,
+    "reject_reasons": {
+      "classification status is not ok": 22,
+      "confidence below threshold": 34842,
+      "source directory missing": 8435,
+      "target category already contains a skill with the same stable key": 11163
+    },
+    "source_category_counts": {
+      "other": 6
+    },
+    "target_category_counts": {
+      "data": 1,
+      "design": 1,
+      "development": 1,
+      "documents": 1,
+      "domains": 2
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "aurora-criteria",
+  "description": "Aurora Criteria Pattern - Complete guide for QueryStatement usage in Aurora/NestJS. Trigger: When implementing queries, filters, searches, pagination, or complex data retrieval.\n",
+  "repo": "avvale/aurora-back",
+  "path": ".claude/skills/aurora-criteria",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/avvale/aurora-back",
+  "dir_name": "aurora-criteria-avvale-aurora-back-2",
+  "author": "avvale",
+  "source_url": "https://github.com/avvale/aurora-back/blob/main/.claude/skills/aurora-criteria/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/avvale/aurora-back/blob/main/.claude/skills/aurora-criteria/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

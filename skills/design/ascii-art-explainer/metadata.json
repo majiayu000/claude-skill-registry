@@ -1,0 +1,18 @@
+{
+  "name": "ascii-art-explainer",
+  "repo": "mahidalhan/claude-hacks",
+  "path": "skills/ascii-art-explainer/skills/ascii-art-explainer/SKILL.md",
+  "source": "github.com/mahidalhan/claude-hacks",
+  "downloaded_at": "2026-01-14T01:59:28.363109Z",
+  "dir_name": "ascii-art-explainer",
+  "category": "design",
+  "github_path": "skills/ascii-art-explainer/skills/ascii-art-explainer",
+  "github_branch": "main",
+  "author": "mahidalhan",
+  "source_url": "https://github.com/mahidalhan/claude-hacks/blob/main/skills/ascii-art-explainer/skills/ascii-art-explainer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Skilled Spec Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

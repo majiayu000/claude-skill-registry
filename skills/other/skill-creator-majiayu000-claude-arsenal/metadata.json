@@ -1,0 +1,17 @@
+{
+  "name": "skill-creator",
+  "repo": "majiayu000/claude-arsenal",
+  "path": "skills/skill-creator/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/majiayu000/claude-arsenal",
+  "dir_name": "skill-creator-majiayu000-claude-arsenal",
+  "downloaded_at": "2026-05-29T04:04:45.715203Z",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-arsenal/blob/main/skills/skill-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/majiayu000/claude-arsenal/blob/main/skills/skill-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "amazon-reviews-api-skill",
+  "repo": "browser-act/skills",
+  "path": "solutions/ecommerce/amazon-reviews-api-skill/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/browser-act/skills",
+  "dir_name": "amazon-reviews-api-skill",
+  "downloaded_at": "2026-05-29T03:54:40.810531Z",
+  "author": "browser-act",
+  "source_url": "https://github.com/browser-act/skills/blob/main/solutions/ecommerce/amazon-reviews-api-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/browser-act/skills/blob/main/solutions/ecommerce/amazon-reviews-api-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

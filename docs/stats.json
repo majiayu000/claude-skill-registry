@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-05-29T04:06:53.747846Z",
-  "archive_skill_md_count_raw": 218760,
-  "archive_metadata_count_raw": 218760,
-  "indexed_skill_count_scan_shape": 218760,
-  "registry_skill_count_dedup": 156981,
+  "updated_at": "2026-05-29T04:59:23.349107Z",
+  "archive_skill_md_count_raw": 222133,
+  "archive_metadata_count_raw": 222133,
+  "indexed_skill_count_scan_shape": 222133,
+  "registry_skill_count_dedup": 157216,
   "total_plugins": 3,
   "categories": 42,
   "category_counts": [
@@ -65,12 +65,12 @@
     {
       "name": "data",
       "code": "dat",
-      "count": 49079
+      "count": 49080
     },
     {
       "name": "design",
       "code": "des",
-      "count": 13704
+      "count": 13705
     },
     {
       "name": "development",
@@ -140,7 +140,7 @@
     {
       "name": "other",
       "code": "oth",
-      "count": 36756
+      "count": 40125
     },
     {
       "name": "performance",
@@ -170,7 +170,7 @@
     {
       "name": "productivity",
       "code": "pro",
-      "count": 3046
+      "count": 3047
     },
     {
       "name": "quality",
@@ -195,7 +195,7 @@
     {
       "name": "testing",
       "code": "tst",
-      "count": 11273
+      "count": 11274
     },
     {
       "name": "travel",
@@ -218,7 +218,7 @@
       "count": 1034
     }
   ],
-  "unique_repo_count": 9792,
+  "unique_repo_count": 9794,
   "official_skill_count": 0,
   "top_repositories": [
     {
@@ -231,11 +231,11 @@
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "count": 1788
+      "count": 1867
     },
     {
       "repo": "a5c-ai/babysitter",
-      "count": 1407
+      "count": 1469
     },
     {
       "repo": "plurigrid/asi",
@@ -243,15 +243,15 @@
     },
     {
       "repo": "aiskillstore/marketplace",
-      "count": 980
+      "count": 1048
+    },
+    {
+      "repo": "levnikolaevich/claude-code-skills",
+      "count": 1030
     },
     {
       "repo": "melodic-software/claude-code-plugins",
       "count": 964
-    },
-    {
-      "repo": "levnikolaevich/claude-code-skills",
-      "count": 957
     },
     {
       "repo": "TheBushidoCollective/han",
@@ -264,36 +264,36 @@
   ],
   "featured_count": 100,
   "index_size_bytes": 162,
-  "index_size_gzip_bytes": 175,
+  "index_size_gzip_bytes": 174,
   "search_shard_count": 6,
-  "search_largest_shard_bytes": 8388656,
-  "search_largest_shard_gzip_bytes": 2483257,
-  "category_shard_count": 51,
+  "search_largest_shard_bytes": 8388620,
+  "search_largest_shard_gzip_bytes": 2529912,
+  "category_shard_count": 52,
   "category_largest_part_bytes": 8388686,
-  "category_largest_part_gzip_bytes": 1736722,
-  "lite_index_count": 157547,
+  "category_largest_part_gzip_bytes": 1736549,
+  "lite_index_count": 157782,
   "lite_index_included_count": 5000,
   "lite_index_size_bytes": 3503306,
-  "lite_index_gzip_size_bytes": 687720,
+  "lite_index_gzip_size_bytes": 687718,
   "quality_index_size_bytes": 220,
   "quality_index_gzip_size_bytes": 213,
   "quality_shard_count": 6,
-  "quality_largest_shard_bytes": 8388683,
-  "quality_largest_shard_gzip_bytes": 1748640,
+  "quality_largest_shard_bytes": 8388643,
+  "quality_largest_shard_gzip_bytes": 1748641,
   "security_index_size_bytes": 223,
   "security_index_gzip_size_bytes": 215,
   "security_shard_count": 18,
-  "security_largest_shard_bytes": 8388711,
-  "security_largest_shard_gzip_bytes": 1638169,
+  "security_largest_shard_bytes": 8388708,
+  "security_largest_shard_gzip_bytes": 1638715,
   "ranking_index_size_bytes": 220,
   "ranking_index_gzip_size_bytes": 213,
   "ranking_shard_count": 5,
-  "ranking_largest_shard_bytes": 8388591,
-  "ranking_largest_shard_gzip_bytes": 2207493,
-  "largest_generated_file_bytes": 8388711,
+  "ranking_largest_shard_bytes": 8388673,
+  "ranking_largest_shard_gzip_bytes": 2207756,
+  "largest_generated_file_bytes": 8388708,
   "security_scan": {
-    "total": 218760,
-    "passed": 208655,
+    "total": 222133,
+    "passed": 212028,
     "failed": 10105
   }
 }

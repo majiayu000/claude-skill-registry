@@ -1,0 +1,17 @@
+{
+  "name": "create-release-checklist",
+  "repo": "posit-dev/skills",
+  "path": "open-source/create-release-checklist/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/posit-dev/skills",
+  "dir_name": "create-release-checklist-posit-dev-skills-7",
+  "downloaded_at": "2026-05-29T04:08:53.533927Z",
+  "author": "posit-dev",
+  "source_url": "https://github.com/posit-dev/skills/blob/main/open-source/create-release-checklist/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/posit-dev/skills/blob/main/open-source/create-release-checklist/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

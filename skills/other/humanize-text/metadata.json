@@ -1,0 +1,17 @@
+{
+  "name": "humanize-text",
+  "repo": "alexander-danilenko/cortex-ai-skills",
+  "path": "skills/humanize-text/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/alexander-danilenko/cortex-ai-skills",
+  "dir_name": "humanize-text",
+  "downloaded_at": "2026-05-29T03:52:06.491841Z",
+  "author": "alexander-danilenko",
+  "source_url": "https://github.com/alexander-danilenko/cortex-ai-skills/blob/main/skills/humanize-text/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alexander-danilenko/cortex-ai-skills/blob/main/skills/humanize-text/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

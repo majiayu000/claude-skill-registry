@@ -1,0 +1,17 @@
+{
+  "name": "fec-legacy-to-modern-migration",
+  "repo": "bovinphang/frontend-craft",
+  "path": "skills/fec-legacy-to-modern-migration/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/bovinphang/frontend-craft",
+  "dir_name": "fec-legacy-to-modern-migration-bovinphang-frontend-craft-3",
+  "downloaded_at": "2026-05-29T03:54:32.914871Z",
+  "author": "bovinphang",
+  "source_url": "https://github.com/bovinphang/frontend-craft/blob/main/skills/fec-legacy-to-modern-migration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bovinphang/frontend-craft/blob/main/skills/fec-legacy-to-modern-migration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

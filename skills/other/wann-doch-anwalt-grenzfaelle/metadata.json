@@ -1,0 +1,17 @@
+{
+  "name": "wann-doch-anwalt-grenzfaelle",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "selbstvertreter-amtsgericht/skills/wann-doch-anwalt-grenzfaelle/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "wann-doch-anwalt-grenzfaelle",
+  "downloaded_at": "2026-05-29T03:46:20.273218Z",
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/selbstvertreter-amtsgericht/skills/wann-doch-anwalt-grenzfaelle/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/selbstvertreter-amtsgericht/skills/wann-doch-anwalt-grenzfaelle/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

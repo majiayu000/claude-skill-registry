@@ -1,0 +1,17 @@
+{
+  "name": "gaokao-science-tutor",
+  "repo": "flysheep-ai/education-skills",
+  "path": "gaokao-science-tutor/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/flysheep-ai/education-skills",
+  "dir_name": "gaokao-science-tutor",
+  "downloaded_at": "2026-05-29T03:58:29.125947Z",
+  "author": "flysheep-ai",
+  "source_url": "https://github.com/flysheep-ai/education-skills/blob/main/gaokao-science-tutor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/flysheep-ai/education-skills/blob/main/gaokao-science-tutor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

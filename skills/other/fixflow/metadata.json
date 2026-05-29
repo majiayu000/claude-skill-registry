@@ -1,0 +1,17 @@
+{
+  "name": "fixflow",
+  "repo": "majiayu000/claude-arsenal",
+  "path": "skills/fixflow/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/majiayu000/claude-arsenal",
+  "dir_name": "fixflow",
+  "downloaded_at": "2026-05-29T04:04:44.373026Z",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-arsenal/blob/main/skills/fixflow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/majiayu000/claude-arsenal/blob/main/skills/fixflow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

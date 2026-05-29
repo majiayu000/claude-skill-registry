@@ -1,0 +1,17 @@
+{
+  "name": "workflow-router",
+  "repo": "vibeeval/vibecosystem",
+  "path": "skills/workflow-router/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/vibeeval/vibecosystem",
+  "dir_name": "workflow-router",
+  "downloaded_at": "2026-05-29T04:14:03.996414Z",
+  "author": "vibeeval",
+  "source_url": "https://github.com/vibeeval/vibecosystem/blob/main/skills/workflow-router/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vibeeval/vibecosystem/blob/main/skills/workflow-router/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

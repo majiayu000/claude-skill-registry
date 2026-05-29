@@ -1,0 +1,17 @@
+{
+  "name": "richtlinien-neufassung",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "regulatorisches-recht/skills/richtlinien-neufassung/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "richtlinien-neufassung-klotzkette-claude-fuer-deutsche",
+  "downloaded_at": "2026-05-29T03:46:12.335400Z",
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/regulatorisches-recht/skills/richtlinien-neufassung/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/regulatorisches-recht/skills/richtlinien-neufassung/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

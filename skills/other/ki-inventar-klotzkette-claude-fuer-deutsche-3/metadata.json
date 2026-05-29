@@ -1,0 +1,17 @@
+{
+  "name": "ki-inventar",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "ki-governance/skills/ki-inventar/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "ki-inventar-klotzkette-claude-fuer-deutsche-3",
+  "downloaded_at": "2026-05-29T03:46:11.258785Z",
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/ki-governance/skills/ki-inventar/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/ki-governance/skills/ki-inventar/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

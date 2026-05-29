@@ -1,0 +1,17 @@
+{
+  "name": "referentenentwurf-bauen",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "legistik-werkstatt/skills/referentenentwurf-bauen/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "referentenentwurf-bauen-klotzkette-claude-fuer-deutsche",
+  "downloaded_at": "2026-05-29T03:46:12.245683Z",
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/legistik-werkstatt/skills/referentenentwurf-bauen/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/legistik-werkstatt/skills/referentenentwurf-bauen/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

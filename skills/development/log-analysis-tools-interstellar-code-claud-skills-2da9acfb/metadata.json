@@ -1,0 +1,18 @@
+{
+  "name": "log-analysis-tools",
+  "repo": "Interstellar-code/claud-skills",
+  "path": "generic-claude-framework/skills/log-analysis-tools/skill.md",
+  "source": "github.com/Interstellar-code/claud-skills",
+  "downloaded_at": "2026-01-22T01:05:05.169847Z",
+  "dir_name": "log-analysis-tools-interstellar-code-claud-skills-2da9acfb",
+  "category": "development",
+  "github_path": "generic-claude-framework/skills/log-analysis-tools",
+  "github_branch": "main",
+  "author": "Interstellar-code",
+  "source_url": "https://github.com/Interstellar-code/claud-skills/blob/main/generic-claude-framework/skills/log-analysis-tools/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Interstellar-code/claud-skills/blob/main/generic-claude-framework/skills/log-analysis-tools/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

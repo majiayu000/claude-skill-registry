@@ -2,8 +2,16 @@
   "name": "ln-772-error-handler-setup",
   "repo": "levnikolaevich/claude-code-skills",
   "path": "ln-772-error-handler-setup/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
   "source": "github.com/levnikolaevich/claude-code-skills",
-  "downloaded_at": "2026-02-02T04:17:41.813043Z",
   "dir_name": "ln-772-error-handler-setup",
-  "category": "development"
+  "downloaded_at": "2026-03-23T01:32:39.142991Z",
+  "author": "levnikolaevich",
+  "source_url": "https://github.com/levnikolaevich/claude-code-skills/blob/master/ln-772-error-handler-setup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/levnikolaevich/claude-code-skills/blob/master/ln-772-error-handler-setup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

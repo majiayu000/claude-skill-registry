@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-29T13:37:58.033467+00:00",
+  "skills_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch018",
+  "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch018/migration-artifacts/2026-05-29-current-other-full-rerun-batch-018/classification.jsonl",
+  "policy": {
+    "min_confidence": 0.7,
+    "from_categories": [
+      "other"
+    ],
+    "to_categories": [],
+    "target_statuses": [
+      "active"
+    ],
+    "allow_target_other": false,
+    "movable_only": true,
+    "limit": null,
+    "apply_mode": "apply"
+  },
+  "summary": {
+    "classification_row_count": 25128,
+    "classification_status_counts": {
+      "missing_result": 2,
+      "ok": 25126
+    },
+    "planned_move_count": 6,
+    "movable_count": 6,
+    "blocked_count": 0,
+    "operation_counts": {
+      "move": 6
+    },
+    "reject_reasons": {
+      "classification status is not ok": 2,
+      "confidence below threshold": 520,
+      "source directory missing": 24597,
+      "target category already contains a skill with the same stable key": 3
+    },
+    "source_category_counts": {
+      "other": 6
+    },
+    "target_category_counts": {
+      "data": 1,
+      "development": 1,
+      "documents": 1,
+      "generation": 1,
+      "integration": 1,
+      "testing": 1
+    }
+  },
+  "moves": [
+    {
+      "operation": "move",
+      "source_path": "other/code-feeder-skill-ecrypted-data-code-feeder-skill",
+      "source_skill": "other/code-feeder-skill-ecrypted-data-code-feeder-skill/SKILL.md",
+      "source_category": "other",
+      "current_category": "other",
+      "target_category": "documents",
+      "target_status": "active",
+      "target_path": "documents/code-feeder-skill-ecrypted-data-code-feeder-skill",
+      "target_skill": "documents/code-feeder-skill-ecrypted-data-code-feeder-skill/SKILL.md",
+      "name": "code-feeder",
+      "confidence": 0.75,
+      "key": "Ecrypted-Data/Code_Feeder_Skill:name:code-feeder",
+      "repo": "Ecrypted-Data/Code_Feeder_Skill",
+      "reason": "classification target passed filters",
+      "source_sha256": "05c9fac2efde2c3d5c8663fbc037acf30bdbac2c14c666e1953db6b5731f3541",
+      "metadata_sha256": "c2425e256c2c7ac800f19891143ff804638f4f077d1f533b13af938f02786b20",
+      "semantic_text_sha256": "63439e5289db7c1afd8c9218266af87a595627cdcfaeb9a9a918ed7945829925"
+    },
+    {
+      "operation": "move",
+      "source_path": "other/error-handling-skill-cleanexpo-nodejs-starter-v1",
+      "source_skill": "other/error-handling-skill-cleanexpo-nodejs-starter-v1/SKILL.md",
+      "source_category": "other",
+      "current_category": "other",
+      "target_category": "development",
+      "target_status": "active",
+      "target_path": "development/error-handling-skill-cleanexpo-nodejs-starter-v1",
+      "target_skill": "development/error-handling-skill-cleanexpo-nodejs-starter-v1/SKILL.md",
+      "name": "error-handling",
+      "confidence": 0.88,
+      "key": "CleanExpo/NodeJS-Starter-V1:name:error-handling",
+      "repo": "CleanExpo/NodeJS-Starter-V1",
+      "reason": "classification target passed filters",
+      "source_sha256": "32e75e7fb5d96d07ba7c2b10d7ca21fd34cf86894833b25d77312a9ab33821ea",
+      "metadata_sha256": "405e87835566262f2e9022f40c45595c8759af1efab9e65132ce57182b3d93dd",
+      "semantic_text_sha256": "96ec34ba4ef5de078800e8b899652b241ca608e47ee736dd807d27914b15da30"
+    },
+    {
+      "operation": "move",
+      "source_path": "other/ios-stop-app-tmp-9eab0af2-tmp-4821060d",
+      "source_skill": "other/ios-stop-app-tmp-9eab0af2-tmp-4821060d/SKILL.md",
+      "source_category": "other",
+      "current_category": "other",
+      "target_category": "testing",
+      "target_status": "active",
+      "target_path": "testing/ios-stop-app-tmp-9eab0af2-tmp-4821060d",
+      "target_skill": "testing/ios-stop-app-tmp-9eab0af2-tmp-4821060d/SKILL.md",
+      "name": "ios-stop-app",
+      "confidence": 0.85,
+      "key": "testing:ios-stop-app",
+      "repo": "",
+      "reason": "classification target passed filters",
+      "source_sha256": "9d110fd024c9e2d8e8133ce2a8ff802377766eb403b17b67db83d612171f8de4",
+      "metadata_sha256": "0bdf40bae0dffa4ca0d0784b6940bed4661091d2d59c4bd2579ce5c891c3fa26",
+      "semantic_text_sha256": "16f38364842973d0615a68c7c9b8b9a3e06503bff259b0ae87e811dd8d4a1cac"
+    },
+    {
+      "operation": "move",
+      "source_path": "other/linear-claude-skill-wrsmith108-linear-claude-skill",
+      "source_skill": "other/linear-claude-skill-wrsmith108-linear-claude-skill/SKILL.md",
+      "source_category": "other",
+      "current_category": "other",
+      "target_category": "integration",
+      "target_status": "active",
+      "target_path": "integration/linear-claude-skill-wrsmith108-linear-claude-skill-2",
+      "target_skill": "integration/linear-claude-skill-wrsmith108-linear-claude-skill-2/SKILL.md",
+      "name": "Linear",
+      "confidence": 0.92,
+      "key": "wrsmith108/linear-claude-skill:name:linear",
+      "repo": "wrsmith108/linear-claude-skill",
+      "reason": "classification target passed filters",
+      "source_sha256": "c8fe437763b2238aa342667998169c7523493a3cf333ba9d66ad95412834a9ba",
+      "metadata_sha256": "52653f536f37870da19f598eb5093e0d3a03edee49e47e168d4ddc6ef3ad42f5",
+      "semantic_text_sha256": "9700d8ef55a96c258842e141fe20c8ca16e704325a880e9aeedb6bc918b08044"
+    },
+    {
+      "operation": "move",
+      "source_path": "other/video-to-gif-skill-texmeijin-video-to-gif-skill-2",
+      "source_skill": "other/video-to-gif-skill-texmeijin-video-to-gif-skill-2/SKILL.md",
+      "source_category": "other",
+      "current_category": "other",
+      "target_category": "generation",
+      "target_status": "active",
+      "target_path": "generation/video-to-gif-skill-texmeijin-video-to-gif-skill-2",
+      "target_skill": "generation/video-to-gif-skill-texmeijin-video-to-gif-skill-2/SKILL.md",
+      "name": "video-to-gif",
+      "confidence": 0.85,
+      "key": "TeXmeijin/video-to-gif-skill:name:video-to-gif",
+      "repo": "TeXmeijin/video-to-gif-skill",
+      "reason": "classification target passed filters",
+      "source_sha256": "591fb511e4a0bc0c2e858827b3d0d5855ca9f1df744fb399dd141a503a8e1bda",
+      "metadata_sha256": "7da880957244ac5180ef7a107612d6a9f6e9d7f4c30a859a4cf117ed0ab3c6b6",
+      "semantic_text_sha256": "8579a9bd22edaf7cb3a12a37bfb2fa10c32d933bcb14f60553ba2f47e2fdffa8"
+    },
+    {
+      "operation": "move",
+      "source_path": "other/web-scraper-yfe404-web-scraper",
+      "source_skill": "other/web-scraper-yfe404-web-scraper/SKILL.md",
+      "source_category": "other",
+      "current_category": "other",
+      "target_category": "data",
+      "target_status": "active",
+      "target_path": "data/web-scraper-yfe404-web-scraper-2",
+      "target_skill": "data/web-scraper-yfe404-web-scraper-2/SKILL.md",
+      "name": "web-scraping",
+      "confidence": 0.85,
+      "key": "yfe404/web-scraper:name:web-scraping",
+      "repo": "yfe404/web-scraper",
+      "reason": "classification target passed filters",
+      "source_sha256": "438303cf8a56ad2260474e1ed8a9993e0dd1804a0b4d02abe3a4c37c9255ce39",
+      "metadata_sha256": "8a784e95fec352130e075ba77b61946334e992d17783fd47837bf1589f052ec5",
+      "semantic_text_sha256": "5a4db0d9714007583e3a650783c52afed6745519d9984466a75300c8374fa822"
+    }
+  ],
+  "notes": [
+    "Default mode is review-only and does not modify files.",
+    "Only --apply moves directories and updates metadata.json.",
+    "Blocked moves are never applied automatically."
+  ],
+  "applied_at": "2026-05-29T13:37:58.075986+00:00"
+}

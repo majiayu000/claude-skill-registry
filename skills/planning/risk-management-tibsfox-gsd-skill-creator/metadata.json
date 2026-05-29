@@ -1,0 +1,17 @@
+{
+  "name": "risk-management",
+  "repo": "Tibsfox/gsd-skill-creator",
+  "path": "examples/skills/project-management/risk-management/SKILL.md",
+  "github_branch": "main",
+  "category": "planning",
+  "source": "github.com/Tibsfox/gsd-skill-creator",
+  "dir_name": "risk-management-tibsfox-gsd-skill-creator",
+  "downloaded_at": "2026-04-18T01:22:08.604421Z",
+  "author": "Tibsfox",
+  "source_url": "https://github.com/Tibsfox/gsd-skill-creator/blob/main/examples/skills/project-management/risk-management/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tibsfox/gsd-skill-creator/blob/main/examples/skills/project-management/risk-management/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

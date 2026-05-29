@@ -1,0 +1,20 @@
+{
+  "name": "rss-subscribe",
+  "description": "",
+  "repo": "glwlg/X-bot",
+  "category": "workflow",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/glwlg/X-bot",
+  "github_path": "skills/builtin/rss_subscribe",
+  "github_branch": "master",
+  "dir_name": "rss-subscribe",
+  "downloaded_at": "2026-02-05T05:41:55.490149Z",
+  "author": "glwlg",
+  "source_url": "https://github.com/glwlg/X-bot/blob/master/skills/builtin/rss_subscribe/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/glwlg/X-bot/blob/master/skills/builtin/rss_subscribe/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "confetti",
+  "repo": "IvanCampos/agents",
+  "path": "skills/confetti/SKILL.md",
+  "github_branch": "main",
+  "category": "platform",
+  "source": "github.com/IvanCampos/agents",
+  "dir_name": "confetti",
+  "downloaded_at": "2026-03-22T05:30:44.132224Z",
+  "author": "IvanCampos",
+  "source_url": "https://github.com/IvanCampos/agents/blob/main/skills/confetti/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/IvanCampos/agents/blob/main/skills/confetti/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -54,9 +54,9 @@ Brief description of the application.
 
 ## Requirements
 
-- Wheels 3.0+
+- CFWheels 3.0+
 - Lucee 5.x / Adobe ColdFusion 2018+
-- Database (MySQL, PostgreSQL, SQL Server, Oracle, SQLite)
+- Database (MySQL, PostgreSQL, SQL Server)
 
 ## Installation
 

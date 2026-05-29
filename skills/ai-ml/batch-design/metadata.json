@@ -1,0 +1,16 @@
+{
+  "name": "batch-design",
+  "repo": "GPTomics/bioSkills",
+  "path": "experimental-design/batch-design/SKILL.md",
+  "source": "github.com/GPTomics/bioSkills",
+  "downloaded_at": "2026-02-02T04:43:46.578785Z",
+  "dir_name": "batch-design",
+  "category": "ai-ml",
+  "author": "GPTomics",
+  "source_url": "https://github.com/GPTomics/bioSkills/blob/main/experimental-design/batch-design/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 GPTomics",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

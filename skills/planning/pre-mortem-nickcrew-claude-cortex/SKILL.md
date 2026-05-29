@@ -2,7 +2,6 @@
 name: pre-mortem
 description: Imagine failure first to surface guardrails and feature mitigations.
 license: MIT
-command: /ctx:pre-mortem
 ---
 
 # `/collaboration:pre-mortem`

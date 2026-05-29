@@ -1,12 +1,9 @@
 ---
 name: database-sharding
 description: Database sharding for PostgreSQL/MySQL with hash/range/directory strategies. Use for horizontal scaling, multi-tenant isolation, billions of records, or encountering wrong shard keys, hotspots, cross-shard transactions, rebalancing issues.
-keywords: database sharding, horizontal partitioning, shard key, consistent hashing,
-  hash sharding, range sharding, directory sharding, cross-shard queries, shard rebalancing,
-  scatter-gather pattern, multi-tenant sharding, shard router, distributed database,
-  database scalability, shard migration, hotspot shards, shard key selection,
-  cross-shard aggregation, two-phase commit, saga pattern, virtual shards
 license: MIT
+metadata:
+  keywords: "database sharding, horizontal partitioning, shard key, consistent hashing, hash sharding, range sharding, directory sharding, cross-shard queries, shard rebalancing, scatter-gather pattern, multi-tenant sharding, shard router, distributed database, database scalability, shard migration, hotspot shards, shard key selection, cross-shard aggregation, two-phase commit, saga pattern, virtual shards"
 ---
 
 # database-sharding

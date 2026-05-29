@@ -105,3 +105,8 @@ Build and maintain Rayden UI components and screens directly in Figma using the 
 
 - `rayden-code` — Generate React code with Rayden UI components (included in the same package)
 - `rayden-compose` — Dedicated subagent for composing full-page Figma screens (included in this skill package)
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

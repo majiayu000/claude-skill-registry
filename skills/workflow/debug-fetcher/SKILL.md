@@ -13,8 +13,16 @@ triggers:
   - analyze fetch failure
   - retry fetch
   - resilient fetch
+  - extraction failure
+  - empty extracted text
+  - result.text contains HTML
+  - content extraction bug
 metadata:
   short-description: Failure-to-recovery automation for URL fetching
+
+provides:
+  - debug-fetcher
+composes: [, task-monitor]
 ---
 
 # Debug-Fetcher Skill
@@ -115,6 +123,69 @@ Each learned strategy stores:
 | `recall <domain>` | Show learned strategies for domain |
 | `export-learnings` | Export all strategies to JSON |
 
+### fetch-batch Options
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| `--concurrency` | 4 | Max concurrent fetches |
+| `--no-memory` | false | Disable memory integration |
+| `--output` | - | Output JSON file |
+| `--json-stream` | false | Output NDJSON per URL (streaming progress) |
+| `--task-monitor/--no-task-monitor` | true | Enable/disable task-monitor integration |
+
+## Task-Monitor Integration
+
+debug-fetcher integrates with the centralized task-monitor for live progress tracking:
+
+```bash
+# Run batch fetch with task-monitor (enabled by default)
+./run.sh fetch-batch urls.txt
+
+# View progress in task-monitor TUI
+cd ~/.pi/skills/task-monitor
+uv run python monitor.py tui --filter debug-fetcher
+
+# Or check state file directly
+cat /path/to/debug-fetcher/debug_fetcher_task_state.json | jq
+```
+
+State file schema:
+```json
+{
+  "completed": 50,
+  "total": 100,
+  "progress_pct": 50.0,
+  "strategies": {
+    "direct": {"attempts": 30, "successes": 25, "rate": 0.833},
+    "playwright": {"attempts": 20, "successes": 18, "rate": 0.9}
+  },
+  "stats": {
+    "success_count": 45,
+    "failure_count": 5,
+    "success_rate": 0.9,
+    "learned_count": 12
+  },
+  "failures": [...],
+  "status": "running"
+}
+```
+
+## NDJSON Streaming Output
+
+For long-running batch jobs, use `--json-stream` to output one JSON object per line:
+
+```bash
+./run.sh fetch-batch urls.txt --json-stream | tee results.jsonl
+
+# Each line:
+# {"url": "https://...", "success": true, "winning_strategy": "playwright", "attempts": 2, "timing_ms": 1234}
+```
+
+This enables:
+- Real-time progress monitoring via `tail -f results.jsonl | jq`
+- Integration with streaming parsers
+- Resume from partial runs
+
 ## Environment Variables
 
 | Variable | Description |
@@ -202,6 +273,58 @@ summary = get_failure_summary(results)
 # }
 ```
 
+## Fetch Failure vs Extraction Failure
+
+**Critical distinction**: "Empty content" can mean two different things:
+
+| Symptom | Fetch Failure | Extraction Failure |
+|---------|---------------|-------------------|
+| HTTP status | Non-200 | 200 |
+| `downloads/` content | Empty or error page | Full HTML present |
+| `extracted_text/` | Empty | Empty (BUG) or HTML (BUG) |
+| Root cause | Network/auth/JS rendering | `evaluate_result_content()` bug |
+| Fix | Add to SPA_FALLBACK_DOMAINS, proxy, etc. | Fix extraction code |
+
+### Diagnosing the Difference
+
+```bash
+# Step 1: Check HTTP status
+jq '.items[0].status' consumer_summary.json
+# 200 = fetch succeeded, issue is extraction
+# 403/401/etc = fetch failed, try other strategies
+
+# Step 2: Check raw download
+head -c 500 downloads/*.html
+# If contains real content → extraction bug
+# If contains JS shell only → needs Playwright
+# If contains error page → fetch failed
+
+# Step 3: Check extracted text
+head -c 500 extracted_text/*.txt
+# If contains "<!DOCTYPE html>" → extraction returned HTML (BUG)
+# If contains clean text → working correctly
+# If empty → extraction failed
+
+# Step 4: Verify method used
+jq '.items[0].method' consumer_summary.json
+# "aiohttp" = direct fetch
+# "playwright" = JS rendering used
+```
+
+### Real-World Example (Fixed 2026-02-04)
+
+**Bug**: `result.text` contained raw HTML instead of extracted text.
+
+**Evidence**:
+```
+downloads/abc.html     → <!DOCTYPE html>...(full HTML)
+extracted_text/abc.txt → <!DOCTYPE html>...(same HTML - BUG!)
+```
+
+**Fix**: `evaluate_result_content()` now replaces `result.text` with `assessment.text` (trafilatura output).
+
+**Lesson**: Always compare `downloads/` vs `extracted_text/` - they should be different formats.
+
 ## Recovery Actions
 
 When human provides help via interview:
@@ -218,7 +341,7 @@ When human provides help via interview:
 ## Files
 
 ```
-.agents/skills/debug-fetcher/
+.pi/skills/debug-fetcher/
 ├── SKILL.md           # This file
 ├── run.sh             # Entry point
 ├── pyproject.toml     # Dependencies

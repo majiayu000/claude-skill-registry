@@ -1,9 +1,9 @@
 {
-  "name": "natural-language-postgres",
+  "name": "natural-language-postgres-presentation",
   "repo": "rebyteai-template/rebyte-skills",
-  "path": "natural-language-postgres/SKILL.md",
+  "path": "natural-language-postgres-presentation/SKILL.md",
   "source": "github.com/rebyteai-template/rebyte-skills",
-  "downloaded_at": "2026-01-22T01:19:07.343314Z",
+  "downloaded_at": "2026-01-22T01:19:07.570377Z",
   "dir_name": "natural-language-postgres-rebyteai-template-rebyte-skills",
   "category": "data",
   "github_path": "natural-language-postgres-presentation",

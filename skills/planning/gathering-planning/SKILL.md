@@ -17,6 +17,23 @@ The drum echoes through the meadow. The Bee arrives first, buzzing from flower t
 
 ---
 
+## Grove Tools for This Gathering
+
+Use `gw` and `gf` throughout. Quick reference for planning work:
+
+```bash
+# Find existing work items in the codebase
+gf --agent todo                     # Find TODO/FIXME/HACK comments
+
+# Batch issue creation (Bee phase)
+gw gh issue batch --write --from-json  # Create issues in bulk
+
+# Check project boards (Badger phase)
+gw gh project list                  # View project boards and status
+```
+
+---
+
 ## The Gathering
 
 ```
@@ -36,16 +53,18 @@ Ideas     Creates     Triages    Ready
 
 ### Phase 1: SUMMON
 
-*The drum sounds. The meadow listens...*
+_The drum sounds. The meadow listens..._
 
 Receive and parse the brain dump:
 
 **Clarify the Session:**
+
 - What ideas/TODOs do you want to capture?
 - Any theme or component focus?
 - Do you want to set up milestones today?
 
 **Confirm:**
+
 > "I'll mobilize a gathering for project planning:
 >
 > - 🐝 Bee will create issues from your ideas
@@ -57,7 +76,7 @@ Receive and parse the brain dump:
 
 ### Phase 2: COLLECT (Bee)
 
-*The bee buzzes from flower to flower...*
+_The bee buzzes from flower to flower..._
 
 Execute bee-collect workflow:
 
@@ -83,6 +102,7 @@ Output:
 ```
 
 **Handoff to Badger:**
+
 > "🐝 Collection complete. Created [X] new issues.
 >
 > Handing off to 🦡 Badger for organization..."
@@ -91,7 +111,7 @@ Output:
 
 ### Phase 3: ORGANIZE (Badger)
 
-*The badger emerges, ready to organize the burrow...*
+_The badger emerges, ready to organize the burrow..._
 
 Execute badger-triage workflow:
 
@@ -118,6 +138,7 @@ Output:
 **Discussion Flow:**
 
 The badger will present batches and ask:
+
 - "These 5 issues need sizing. Here's my guess based on the content..."
 - "What priority should these have?"
 - "Should any move from Backlog to Ready?"
@@ -127,7 +148,7 @@ The badger will present batches and ask:
 
 ### Phase 4: COMPLETE
 
-*The gathering ends. A roadmap emerges...*
+_The gathering ends. A roadmap emerges..._
 
 **Completion Report:**
 
@@ -137,33 +158,34 @@ The badger will present batches and ask:
 ### Session Summary
 
 **🐝 Bee Collected:**
-- [X] issues created from brain dump
+
+- [x] issues created from brain dump
 - [Y] duplicates skipped
 - Components: [list of labels used]
 
 **🦡 Badger Organized:**
 
-| Metric | Count |
-|--------|-------|
-| Sized | [X] |
-| Prioritized | [X] |
-| Moved to Ready | [X] |
-| Target dates set | [X] |
+| Metric           | Count |
+| ---------------- | ----- |
+| Sized            | [X]   |
+| Prioritized      | [X]   |
+| Moved to Ready   | [X]   |
+| Target dates set | [X]   |
 
 ### By Priority
 
-| Priority | Issues |
-|----------|--------|
+| Priority    | Issues           |
+| ----------- | ---------------- |
 | First Focus | #123, #124, #125 |
-| Next Up | #126, #127 |
-| In Time | [count] issues |
-| Far Off | [count] issues |
+| Next Up     | #126, #127       |
+| In Time     | [count] issues   |
+| Far Off     | [count] issues   |
 
 ### Milestones
 
-| Milestone | Issues | Due |
-|-----------|--------|-----|
-| [Name] | [count] | [date] |
+| Milestone | Issues  | Due    |
+| --------- | ------- | ------ |
+| [Name]    | [count] | [date] |
 
 ### What's Ready to Work On
 
@@ -173,7 +195,7 @@ These issues are sized, prioritized, and in the Ready column:
 2. #124 — [Title] (S, First Focus)
 3. #125 — [Title] (M, First Focus)
 
-*From chaos, order. From ideas, a roadmap.* 🌲
+_From chaos, order. From ideas, a roadmap._ 🌲
 ```
 
 ---
@@ -204,6 +226,7 @@ These issues are sized, prioritized, and in the Ready column:
    - User creates "February Sprint" milestone
 
 4. 🌲 **COMPLETE** —
+
    ```
    Bee: 5 issues created, 1 duplicate skipped
    Badger: All sized, prioritized, 2 moved to Ready
@@ -219,29 +242,33 @@ These issues are sized, prioritized, and in the Ready column:
 ## Gathering Rules
 
 ### Flow
+
 Bee always runs first. Badger organizes what Bee collected (plus any existing untriaged issues).
 
 ### Conversation
+
 Both animals are interactive. The bee asks for clarification on vague items. The badger discusses sizing and priority in batches.
 
 ### Scope
+
 If the brain dump is massive (20+ items), the bee may ask to split into multiple sessions.
 
 ### Code Safety
+
 Neither animal edits code. This gathering is purely for project organization.
 
 ---
 
 ## When to Use This vs. Individual Animals
 
-| Situation | Use |
-|-----------|-----|
-| Just have ideas to capture | 🐝 `/bee-collect` |
-| Just need to organize existing issues | 🦡 `/badger-triage` |
-| Have ideas AND want them organized | 🌲 `/gathering-planning` |
-| Weekly planning session | 🌲 `/gathering-planning` |
-| Quick backlog grooming | 🦡 `/badger-triage` |
+| Situation                             | Use                      |
+| ------------------------------------- | ------------------------ |
+| Just have ideas to capture            | 🐝 `/bee-collect`        |
+| Just need to organize existing issues | 🦡 `/badger-triage`      |
+| Have ideas AND want them organized    | 🌲 `/gathering-planning` |
+| Weekly planning session               | 🌲 `/gathering-planning` |
+| Quick backlog grooming                | 🦡 `/badger-triage`      |
 
 ---
 
-*From scattered thoughts to organized work. The forest knows the way.* 🌲
+_From scattered thoughts to organized work. The forest knows the way._ 🌲

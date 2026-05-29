@@ -1,0 +1,16 @@
+{
+  "name": "broken-link-404-error",
+  "repo": "skillrecordings/support",
+  "path": "skills/broken-link-404-error/SKILL.md",
+  "source": "github.com/skillrecordings/support",
+  "downloaded_at": "2026-02-02T01:25:02.147626Z",
+  "dir_name": "broken-link-404-error",
+  "category": "communication",
+  "author": "skillrecordings",
+  "source_url": "https://github.com/skillrecordings/support/blob/main/skills/broken-link-404-error/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/skillrecordings/support/blob/main/skills/broken-link-404-error/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

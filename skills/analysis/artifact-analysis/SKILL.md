@@ -21,7 +21,7 @@ The deliverable is always on disk: a written scan plan the caller can audit, one
 - Web research. Use `web-research`.
 - Comparative evaluation of two implementations or source credibility adjudication. Use `llm-judge`.
 - Rewriting or editing the scanned documents. Use `humanize-beagle` or the file tools.
-- PDF / image OCR / format conversion. First version reads plain text and markdown only. `beagle-core:docling` is the future path.
+- PDF / image OCR / format conversion. First version reads plain text and markdown only.
 - Paywalled or authentication-gated remote sources. This is a local-filesystem primitive.
 - Coaching, challenge, or reshaping of the caller's question. That belongs to the caller.
 
@@ -216,7 +216,7 @@ If the caller is a coaching skill (`prfaq-beagle`, `brainstorm-beagle`), the coa
 - LLM-as-judge evaluation of document quality or claim credibility. Use `llm-judge`.
 - Coaching, challenge, or opinionated reshaping of the intent.
 - Rewriting or editing the scanned documents. Read-only by design.
-- Binary / image OCR, PDF text extraction, or format conversion. First version reads plain text and markdown only; `beagle-core:docling` is the future path.
+- Binary / image OCR, PDF text extraction, or format conversion. First version reads plain text and markdown only.
 - Multi-language analysis. English-only today.
 - Caching or re-use of prior findings across invocations.
 - Long-running or scheduled scans.

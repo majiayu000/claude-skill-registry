@@ -1,10 +1,11 @@
 ---
 name: ln-627-observability-auditor
-description: Observability audit worker (L3). Checks structured logging, health check endpoints, metrics collection, request tracing, log levels. Returns findings with severity, location, effort, recommendations.
+description: "Checks structured logging, health checks, metrics collection, request tracing, log levels. Use when auditing observability."
 allowed-tools: Read, Grep, Glob, Bash
+license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Observability Auditor (L3 Worker)
 
@@ -19,16 +20,25 @@ Specialized worker auditing logging, monitoring, and observability.
 
 ## Inputs (from Coordinator)
 
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
+
 Receives `contextStore` with tech stack, framework, codebase root, output_dir.
 
 ## Workflow
 
+**MANDATORY READ:** Load `shared/references/two_layer_detection.md` for detection methodology.
+
 1) Parse context + output_dir
-2) Check observability patterns
-3) Collect findings
-4) Calculate score
-5) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/627-observability.md` in single Write call
-6) **Return Summary:** Return minimal summary to coordinator
+2) **Determine project type (Layer 2 pre-check):** Is this a web service (all checks apply), CLI tool (health/probes not applicable), or library (most checks optional)? Adjust applicable checks accordingly.
+3) Check observability patterns (Layer 1: grep)
+4) Analyze context per candidate (Layer 2):
+   - Structured logging: is this a library (no logging OK) or a service (logging required)?
+   - Health endpoints: web service → required. CLI/library → skip
+   - Request tracing: monolith → less needed. Microservice → critical
+5) Collect confirmed findings
+6) Calculate score
+7) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/627-observability.md` in single Write call
+8) **Return Summary:** Return minimal summary to coordinator
 
 ## Audit Rules
 
@@ -95,11 +105,11 @@ Receives `contextStore` with tech stack, framework, codebase root, output_dir.
 
 ## Scoring Algorithm
 
-**MANDATORY READ:** Load `shared/references/audit_scoring.md` for unified scoring formula.
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/references/audit_scoring.md`.
 
 ## Output Format
 
-**MANDATORY READ:** Load `shared/templates/audit_worker_report_template.md` for file format.
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
 Write report to `{output_dir}/627-observability.md` with `category: "Observability"` and checks: structured_logging, health_endpoints, metrics_collection, request_tracing, log_levels.
 
@@ -111,11 +121,11 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 
 ## Reference Files
 
-- **Worker report template:** `shared/templates/audit_worker_report_template.md`
-- **Audit scoring formula:** `shared/references/audit_scoring.md`
 - **Audit output schema:** `shared/references/audit_output_schema.md`
 
 ## Critical Rules
+
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
 - **Do not auto-fix:** Report only, never inject logging or endpoints
 - **Framework-aware detection:** Adapt patterns to project's tech stack (winston/pino for Node, logrus/zap for Go, etc.)
@@ -125,12 +135,14 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 
 ## Definition of Done
 
-- contextStore parsed (tech stack, framework, output_dir)
-- All 5 checks completed (structured logging, health endpoints, metrics, request tracing, log levels)
-- Findings collected with severity, location, effort, recommendation
-- Score calculated per `shared/references/audit_scoring.md`
-- Report written to `{output_dir}/627-observability.md` (atomic single Write call)
-- Summary returned to coordinator
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
+
+- [ ] contextStore parsed (tech stack, framework, output_dir)
+- [ ] All 5 checks completed (structured logging, health endpoints, metrics, request tracing, log levels)
+- [ ] Findings collected with severity, location, effort, recommendation
+- [ ] Score calculated per `shared/references/audit_scoring.md`
+- [ ] Report written to `{output_dir}/627-observability.md` (atomic single Write call)
+- [ ] Summary returned to coordinator
 
 ---
 **Version:** 3.0.0

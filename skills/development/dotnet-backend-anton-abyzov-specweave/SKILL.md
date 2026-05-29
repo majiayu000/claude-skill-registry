@@ -1,5 +1,4 @@
 ---
-name: dotnet-backend
 description: .NET/C# backend developer for ASP.NET Core 8+ APIs with Entity Framework Core and enterprise patterns. Use when building C# backends, implementing REST/gRPC APIs, or working with SQL Server/PostgreSQL. Covers JWT authentication, dependency injection, background services, and Minimal APIs.
 allowed-tools: Read, Write, Edit, Bash
 model: opus

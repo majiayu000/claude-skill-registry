@@ -1,6 +1,6 @@
 ---
 name: firecrawl
-description: Firecrawl produces cleaner markdown than WebFetch, handles JavaScript-heavy pages, and avoids content truncation. This skill should be used when fetching URLs, scraping web pages, converting URLs to markdown, extracting web content, searching the web, crawling sites, mapping URLs, LLM-powered extraction, autonomous data gathering with the Agent API, or fetching AI-generated documentation for GitHub repos via DeepWiki. Provides complete coverage of Firecrawl v2.8.0 API endpoints including parallel agents, spark-1-fast model, and sitemap-only crawling.
+description: Scrape web pages to clean markdown using Firecrawl v2 — handles JS-heavy pages, site crawls, URL mapping, document parsing (PDF/DOCX/XLSX), LLM-powered extraction, autonomous agent scraping, and post-scrape browser interaction (Interact API). Prefer over WebFetch for quality and completeness. Triggers on scrape URL, fetch page, crawl site, extract content, parse document, web to markdown, DeepWiki, Firecrawl.
 ---
 
 # Firecrawl & Jina Web Scraping
@@ -71,6 +71,7 @@ firecrawl scrape URL --only-main-content | \
 ### Other Token-Saving Patterns
 
 - **Use `--only-main-content`** to strip navigation and footer boilerplate, reducing token consumption. Omit only when nav/footer content is specifically needed.
+- **Use `--only-clean-content`** (Python API script) for aggressive cleaning—strips nav, ads, and cookie banners. Stronger than `--only-main-content`; use when the page is still noisy after main-content filtering.
 - **Use `firecrawl map URL --search "topic"` first** to find relevant subpages before scraping
 - **Use `--format links` first** to get URL list, evaluate, then scrape selectively
 - **Use `--max-chars`** with `exa_contents.py` to cap extraction length
@@ -123,9 +124,12 @@ fc-save URL
 | `batch-scrape` | Multiple URLs concurrently | `firecrawl_api.py batch-scrape URL1 URL2 URL3` |
 | `crawl` | Website crawling | `firecrawl_api.py crawl URL --limit 20` |
 | `map` | URL discovery | `firecrawl_api.py map URL --search "query"` |
+| `parse` | Parse local documents (PDF, DOCX, XLSX) | `firecrawl_api.py parse report.pdf` |
 | `extract` | LLM-powered structured extraction | `firecrawl_api.py extract URL --prompt "Find pricing"` |
 | `agent` | Autonomous extraction (no URLs needed) | `firecrawl_api.py agent "Find YC W24 AI startups"` |
 | `parallel-agent` | Bulk agent queries (v2.8.0+) | `firecrawl_api.py parallel-agent "Q1" "Q2" "Q3"` |
+| `interact` | Post-scrape browser interaction | `firecrawl_api.py interact SCRAPE_ID --prompt "Click pricing"` |
+| `interact-stop` | Stop an interact session | `firecrawl_api.py interact-stop SCRAPE_ID` |
 
 **Agent models:** `spark-1-fast` (10 credits, simple), `spark-1-mini` (default), `spark-1-pro` (thorough)
 
@@ -170,6 +174,7 @@ jina https://x.com/username/status/123456
 | Single page → markdown | `firecrawl scrape --only-main-content` | Cleanest output |
 | Search + scrape in one shot | `firecrawl search --scrape` | Combined operation |
 | Crawl entire site | `firecrawl crawl --wait --progress` | Link following + progress |
+| Local file → markdown | `firecrawl_api.py parse FILE` | Direct upload, no URL needed |
 | Autonomous data finding | `firecrawl_api.py agent` | No URLs needed |
 | Semantic/neural search | Exa `exa_search.py` | AI-powered relevance |
 | Find research papers | Exa `--category "research paper"` | Academic index |
@@ -182,6 +187,12 @@ jina https://x.com/username/status/123456
 | Element-level extraction | `scrapling` + CSS selectors | Precision targeting, adaptive tracking |
 | No API key scraping | `scrapling` HTTP fetch | 100% local, no credentials |
 | Site redesign resilience | `scrapling` adaptive mode | SQLite similarity matching |
+| Budget JS-rendered scrape | `cf_browser.py markdown URL` | CF free tier: 10 min/day, $0.09/hr paid |
+| Free static page fetch | `cf_browser.py markdown URL --no-render` | FREE during beta (no JS) |
+| Budget multi-page crawl | `cf_browser.py crawl URL` | 5 free crawls/day, 100 pages each |
+| Incremental re-crawl | `cf_browser.py crawl --modified-since` | Built-in, Firecrawl lacks this |
+| Page screenshot/PDF | `cf_browser.py screenshot/pdf URL` | Built-in CF endpoints, cheaper |
+| AI structured extraction | `cf_browser.py json URL --prompt "..."` | Workers AI included free |
 
 ---
 
@@ -206,13 +217,127 @@ firecrawl crawl https://docs.example.com --include-paths /api,/guides --wait --p
 firecrawl search "machine learning best practices 2026" --scrape --scrape-formats markdown
 ```
 
+### Document Parsing (Local Files)
+
+Parse local documents into clean Markdown. Use `parse` for local or non-public files; use `scrape` for public URLs pointing to documents—both use the same Rust-based parser.
+
+```bash
+# PDF to markdown
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py parse report.pdf
+
+# Excel spreadsheet with main content only
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py parse data.xlsx --only-main-content
+
+# Word doc with zero data retention, save to file
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py parse contract.docx --zero-data-retention -o contract.md
+
+# Raw JSON output for programmatic use
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py parse invoice.pdf --json
+```
+
+Supported formats: PDF, DOCX, DOC, XLSX, XLS, HTML, HTM, ODT, RTF (up to 50 MB).
+
+### PDF Parsing (Fire-PDF v2.9)
+
+Fire-PDF is now the default parsing pipeline for all PDF scrapes. Three modes:
+
+```bash
+# Auto mode (default) — detects text layer vs scanned, chooses best method
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py scrape "https://example.com/report.pdf"
+
+# Fast mode — text layer only, skip OCR (use for PDFs with selectable text)
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py scrape URL --pdf-mode fast
+
+# OCR mode — force full OCR (use for scanned docs or image-only PDFs)
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py scrape URL --pdf-mode ocr
+
+# Limit pages parsed (large documents)
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py parse report.pdf --pdf-mode auto --pdf-max-pages 20
+```
+
+| Flag | Values | Notes |
+|------|--------|-------|
+| `--pdf-mode` | `fast`, `auto`, `ocr` | Default: `auto`. `fast` = text layer only; `ocr` = force OCR |
+| `--pdf-max-pages` | integer | Caps pages parsed; useful for budget control on large PDFs |
+
+Both flags work on `scrape` (for PDF URLs) and `parse` (for local files).
+
 ### Agent-Powered Research (No URLs Needed)
 ```bash
 python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py agent \
   "Compare pricing tiers for Firecrawl, Apify, and ScrapingBee"
 ```
 
+### Interact Workflows (Post-Scrape Browser Interaction)
+
+Scrape a page, then take actions on it—click buttons, fill forms, extract dynamic content. Two modes: AI prompts (natural language) and code execution (Node.js/Python/Bash).
+
+#### When to Use Interact vs. Actions
+
+| Need | Use | Why |
+|------|-----|-----|
+| Click/wait before a single scrape | `--actions` on scrape | Fire-and-forget, no session overhead |
+| Multiple interactions with same page | `interact` | Persistent session, back-and-forth |
+| Fill forms, log in, navigate | `interact` | Stateful, multi-step |
+| Simple "wait for JS to load" | `--actions` with `wait` | Cheaper, no session |
+
+#### Basic Interact (AI Prompt Mode)
+```bash
+# Step 1: Scrape and note the Scrape ID from output
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py scrape "https://example.com/pricing"
+
+# Step 2: Interact using natural language
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py interact SCRAPE_ID \
+  --prompt "Click the Enterprise pricing tab"
+
+# Step 3: More interactions on same session
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py interact SCRAPE_ID \
+  --prompt "What is the monthly price for the Enterprise plan?"
+
+# Step 4: Stop when done
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py interact-stop SCRAPE_ID
+```
+
+#### Code Execution Mode (Cheaper)
+```bash
+# Execute Playwright code directly (2 credits/min vs 7 for prompts)
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py interact SCRAPE_ID \
+  --code "const text = await page.locator('.pricing-table').textContent(); console.log(text);"
+
+# Python mode
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py interact SCRAPE_ID \
+  --code "text = await page.locator('.content').text_content(); print(text)" \
+  --language python
+```
+
+#### Persistent Profile (Login Sessions)
+```bash
+# Scrape with a named profile — browser state persists across sessions
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py scrape "https://app.example.com/login" \
+  --profile my-app --json
+
+# Interact to log in
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py interact SCRAPE_ID \
+  --code "await page.fill('#email', 'user@example.com'); await page.fill('#password', 'pass'); await page.click('button[type=submit]');"
+
+# Later: scrape another page with same profile — cookies restored
+python3 ~/.claude/skills/firecrawl/scripts/firecrawl_api.py scrape "https://app.example.com/dashboard" \
+  --profile my-app
+```
+
+**Important:** Interact does NOT return page markdown. To get updated content after interaction, use code mode to extract specific elements, or issue a follow-up scrape.
+
+**Full interact reference:** `references/interact-reference.md`
+
 ---
+
+## Billing Notes
+
+- **Credit/token unification (v2.9):** Credits and tokens are now unified—15 tokens = 1 credit. All pricing is expressed in credits.
+- **Default cache TTL:** Results are cached for 2 days. Use `--max-age 0` (or `maxAge: 0` in API) to force a fresh scrape regardless of cache.
+- **`query` format:** Pass `formats=["query"]` (Python API) to get a direct answer (`data.answer`) instead of full markdown. Use for factual lookups where you don't need the full page content.
+- **`audio` format:** `formats=["audio"]` returns an MP3 of the page read aloud. Useful for accessibility pipelines or voice interfaces.
+- **`wikimedia` engine:** Pass `engine="wikimedia"` in search options to route queries through Wikimedia. Useful for encyclopedic lookups.
 
 ## Troubleshooting
 
@@ -242,6 +367,7 @@ echo $FIRECRAWL_API_KEY
 | `references/firecrawl-api.md` | Firecrawl Search API reference |
 | `references/firecrawl-agent-api.md` | Agent API (spark models, parallel agents, webhooks) |
 | `references/actions-reference.md` | Page actions for dynamic content (click, write, wait, scroll) |
+| `references/interact-reference.md` | Interact API: post-scrape browser interaction (prompt, code, profiles) |
 | `references/branding-format.md` | Brand identity extraction (colors, fonts, UI) |
 
 ## Test Suite

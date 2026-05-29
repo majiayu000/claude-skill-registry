@@ -1,6 +1,8 @@
 ---
-name: cad-to-data
-description: "Convert CAD/BIM files to structured data. Extract element data from Revit, IFC, DWG, DGN files"
+name: "cad-to-data"
+description: "Convert CAD/BIM files to structured data. Extract element data from Revit, IFC, DWG, DGN files."
+homepage: "https://datadrivenconstruction.io"
+metadata: {"openclaw":{"emoji":"🗂️","os":["darwin","linux","win32"],"homepage":"https://datadrivenconstruction.io","requires":{"bins":["python3"]}}}
 ---
 
 # CAD To Data

@@ -1,0 +1,20 @@
+{
+  "name": "anki-card-generator",
+  "description": "",
+  "repo": "zhu-jl18/fish-claude",
+  "category": "personal-development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zhu-jl18/fish-claude",
+  "github_path": "skills/anki-card-generator",
+  "github_branch": "main",
+  "dir_name": "anki-card-generator",
+  "downloaded_at": "2026-02-05T05:36:35.910035Z",
+  "author": "zhu-jl18",
+  "source_url": "https://github.com/zhu-jl18/fish-claude/blob/main/skills/anki-card-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 makoMakoGo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

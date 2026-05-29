@@ -16,11 +16,13 @@ Apply the SY7 Path Dependence transformation to acknowledge how early decisions 
 ## When to Use SY7
 
 ### Ideal Situations
+
 - Understand system-wide interactions and feedback loops
 - Detect patterns that emerge across components
 - Optimize for long-term system behavior, not just local gains
 
 ### Trigger Questions
+
 - "How can we use Path Dependence here?"
 - "What changes if we apply SY7 to this analyzing coordination patterns across teams?"
 - "Which assumptions does SY7 help us surface?"
@@ -28,18 +30,21 @@ Apply the SY7 Path Dependence transformation to acknowledge how early decisions 
 ## The SY7 Process
 
 ### Step 1: Define the focus
+
 ```typescript
 // Using SY7 (Path Dependence) - Establish the focus
 const focus = "Acknowledge how early decisions constrain future options through accumulated consequences";
 ```
 
 ### Step 2: Apply the model
+
 ```typescript
 // Using SY7 (Path Dependence) - Apply the transformation
 const output = applyModel("SY7", focus);
 ```
 
 ### Step 3: Synthesize outcomes
+
 ```typescript
 // Using SY7 (Path Dependence) - Capture insights and decisions
 const insights = summarize(output);
@@ -86,6 +91,7 @@ const result = applyModel("SY7", "Acknowledge how early decisions constrain futu
 ## Installation and Usage
 
 ### Nix Installation
+
 ```nix
 {
   programs.moltbot.plugins = [
@@ -95,11 +101,13 @@ const result = applyModel("SY7", "Acknowledge how early decisions constrain futu
 ```
 
 ### Manual Installation
+
 ```bash
 moltbot-registry install hummbl-agent/sy7-path-dependence
 ```
 
 ### Usage with Commands
+
 ```bash
 /apply-transformation SY7 "Acknowledge how early decisions constrain future options through accumulated consequences"
 ```

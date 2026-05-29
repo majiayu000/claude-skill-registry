@@ -3,6 +3,8 @@ name: ln-743-test-infrastructure
 description: Creates test infrastructure with Vitest, xUnit, and pytest
 ---
 
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+
 # ln-743-test-infrastructure
 
 **Type:** L3 Worker

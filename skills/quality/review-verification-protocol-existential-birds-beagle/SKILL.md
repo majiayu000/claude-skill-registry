@@ -1,11 +1,33 @@
 ---
 name: review-verification-protocol
 description: Mandatory verification steps for all code reviews to reduce false positives. Load this skill before reporting ANY code review findings.
+user-invocable: false
 ---
 
 # Review Verification Protocol
 
 This protocol MUST be followed before reporting any code review finding. Skipping these steps leads to false positives that waste developer time and erode trust in reviews.
+
+## Hard gates (sequenced)
+
+Run these **in order**. Do not move to the next gate until its **pass** condition is met (objective evidence, not internal certainty).
+
+1. **Read** — Open the file and read the **full** enclosing function, method, property, or type (not only the diff hunk).
+   **Pass:** You can name the symbol and cite at least one line **outside** the changed lines that shows control flow, scope, or use relevant to the finding.
+
+2. **Reference** (required before any “unused”, “dead code”, or “never called” claim) — Search the workspace for the identifier and for imports/`@objc`/`#selector`/SPM symbols that could reference it.
+   **Pass:** Recorded outcome: match count or list, or explicit “zero matches in repo” *before* asserting unused.
+
+3. **Upstream** (required before “missing validation” or “missing error handling”) — Inspect the immediate caller, parent `View` / coordinator / `ViewModel`, app or scene delegate pipeline, or documented framework behavior that might already enforce the rule.
+   **Pass:** One sentence naming where responsibility lives, or “checked caller + framework path; still missing” with which layer you checked.
+
+4. **Severity** — Before assigning Critical or Major, map the issue to [Severity Calibration](#severity-calibration) and exclude style-only or [Informational](#informational-no-action-required) items.
+   **Pass:** Chosen label matches a bullet under that severity; otherwise downgrade, reclassify as Informational, or omit.
+
+5. **Submit** — Each retained finding uses `[FILE:LINE]` plus a one-line proof; complete [Before Submitting Review](#before-submitting-review) steps 1–7 for this review.
+   **Pass:** Every step satisfied or the finding was removed or downgraded.
+
+The checklist below expands these gates by issue type; use both.
 
 ## Pre-Report Verification Checklist
 
@@ -14,7 +36,7 @@ Before flagging ANY issue, verify:
 - [ ] **I read the actual code** - Not just the diff context, but the full function/class
 - [ ] **I searched for usages** - Before claiming "unused", searched all references
 - [ ] **I checked surrounding code** - The issue may be handled elsewhere (guards, earlier checks)
-- [ ] **I verified syntax against current docs** - Framework syntax evolves (Tailwind v4, TS 5.x, React 19)
+- [ ] **I verified syntax against current docs** - Apple APIs evolve (Swift concurrency, SwiftUI lifecycle, new SDKs); when syntax may have changed, confirm against current Apple documentation
 - [ ] **I distinguished "wrong" from "different style"** - Both approaches may be valid
 - [ ] **I considered intentional design** - Checked comments, CLAUDE.md, architectural context
 
@@ -23,34 +45,34 @@ Before flagging ANY issue, verify:
 ### "Unused Variable/Function"
 
 **Before flagging**, you MUST:
-1. Search for ALL references in the codebase (grep/find)
-2. Check if it's exported and used by external consumers
-3. Check if it's used via reflection, decorators, or dynamic dispatch
-4. Verify it's not a callback passed to a framework
+1. Search for ALL references in the codebase (grep/ripgrep or IDE references)
+2. Check if it's `public`/`open` and used by other modules or targets (SPM, app extensions)
+3. Check if it's used via Objective-C runtime, `#selector`, key paths, or dynamic dispatch
+4. Verify it's not a delegate/callback the framework invokes by contract
 
 **Common false positives:**
-- State setters in React (may trigger re-renders even if value appears unused)
-- Variables used in templates/JSX
-- Exports used by consuming packages
+- SwiftUI state (`@State`, `@Binding`, `@Observable`) that drives updates even when the binding looks “unused” in one branch
+- Symbols referenced from Interface Builder, asset catalogs, `#Preview`, tests, or other targets
+- `@objc`, `#selector`, or dynamic dispatch to a symbol search may not show as plain call sites
 
 ### "Missing Validation/Error Handling"
 
 **Before flagging**, you MUST:
-1. Check if validation exists at a higher level (caller, middleware, route handler)
-2. Check if the framework provides validation (Pydantic, Zod, TypeScript)
-3. Verify the "missing" check isn't present in a different form
+1. Check if validation exists at a higher level (caller, parent `ViewModel`, coordinator, app/scene delegate)
+2. Check if the framework or type already enforces invariants (`Codable`, property wrappers, `URLSession` APIs)
+3. Verify the "missing" check isn't present in a different form (e.g. `Result`, async error path, user-facing alert elsewhere)
 
 **Common false positives:**
-- Framework already validates (FastAPI + Pydantic, React Hook Form)
-- Parent component validates before passing props
-- Error boundary catches at higher level
+- Parent or router validates before this layer runs
+- Errors surface via delegate, Combine pipeline, or unified logging — not every call needs local `do/catch`
+- User-visible failure is handled in a single choke point (e.g. one alert coordinator)
 
 ### "Type Assertion/Unsafe Cast"
 
 **Before flagging**, you MUST:
 1. Confirm it's actually an assertion, not an annotation
 2. Check if the type is narrowed by runtime checks before the point
-3. Verify if framework guarantees the type (loader data, form data)
+3. Verify if framework or prior step guarantees the type (parsed JSON, Core Data fetch, async loader result)
 
 **Valid patterns often flagged incorrectly:**
 ```swift
@@ -66,26 +88,26 @@ if let user = data as? User {
 ### "Potential Memory Leak/Race Condition"
 
 **Before flagging**, you MUST:
-1. Verify cleanup function is actually missing (not just in a different location)
-2. Check if AbortController signal is checked after awaits
-3. Confirm the component can actually unmount during the async operation
+1. Verify cleanup is actually missing (not `deinit`, `onDisappear`, `cancel()`, or `store` teardown elsewhere)
+2. Check if `Task` cancellation, `AsyncSequence` termination, or Combine subscription disposal is handled after awaits
+3. Confirm the view or object can actually deallocate or invalidate during the async operation
 
 **Common false positives:**
-- Cleanup exists in useEffect return
-- Signal is checked (code reviewer missed it)
-- Operation completes before unmount is possible
+- `[weak self]` or `[unowned self]` already used where needed
+- `Task` is cancelled when the view disappears (reviewer missed the link)
+- Operation finishes before lifetime issues are possible
 
 ### "Performance Issue"
 
 **Before flagging**, you MUST:
-1. Confirm the code runs frequently enough to matter (render vs click handler)
-2. Verify the optimization would have measurable impact
-3. Check if the framework already optimizes this (React compiler, memoization)
+1. Confirm the code runs frequently enough to matter (SwiftUI body / layout vs one-off action)
+2. Verify the optimization would have measurable impact (Instruments or clear hot path)
+3. Check if the framework already mitigates this (SwiftUI diffing, lazy containers, `@Observable` granularity)
 
 **Do NOT flag:**
-- Functions created in click handlers (runs once per click)
-- Array methods on small arrays (< 100 items)
-- Object creation in event handlers
+- Allocations in infrequent actions (sheet presentation, button tap)
+- Linear work on small collections without evidence of scale
+- Short-lived value types in event handlers when profiling doesn’t justify change
 
 ## Severity Calibration
 
@@ -129,7 +151,7 @@ if let user = data as? User {
 - Style preferences where both approaches are valid
 - Optimizations with no measurable benefit
 - Test code not meeting production standards (intentionally simpler)
-- Library/framework internal code (shadcn components, generated code)
+- Library/framework internal code (generated Swift, SPM vendored sources, Xcode-generated)
 - Hypothetical issues that require unlikely conditions
 
 ## Valid Patterns (Do NOT Flag)

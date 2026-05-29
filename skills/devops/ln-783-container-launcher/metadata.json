@@ -2,8 +2,16 @@
   "name": "ln-783-container-launcher",
   "repo": "levnikolaevich/claude-code-skills",
   "path": "ln-783-container-launcher/SKILL.md",
+  "github_branch": "master",
+  "category": "devops",
   "source": "github.com/levnikolaevich/claude-code-skills",
-  "downloaded_at": "2026-02-02T04:17:40.227703Z",
   "dir_name": "ln-783-container-launcher",
-  "category": "devops"
+  "downloaded_at": "2026-03-23T01:32:34.717596Z",
+  "author": "levnikolaevich",
+  "source_url": "https://github.com/levnikolaevich/claude-code-skills/blob/master/ln-783-container-launcher/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/levnikolaevich/claude-code-skills/blob/master/ln-783-container-launcher/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

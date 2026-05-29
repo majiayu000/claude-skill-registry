@@ -1,0 +1,16 @@
+{
+  "name": "sync-sonarcloud-debt",
+  "repo": "jasonmichaelbell78-creator/sonash-v0",
+  "path": ".claude/skills/sync-sonarcloud-debt/SKILL.md",
+  "source": "github.com/jasonmichaelbell78-creator/sonash-v0",
+  "downloaded_at": "2026-02-02T02:00:32.942483Z",
+  "dir_name": "sync-sonarcloud-debt",
+  "category": "integration",
+  "author": "jasonmichaelbell78-creator",
+  "source_url": "https://github.com/jasonmichaelbell78-creator/sonash-v0/blob/main/.claude/skills/sync-sonarcloud-debt/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jasonmichaelbell78-creator/sonash-v0/blob/main/.claude/skills/sync-sonarcloud-debt/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

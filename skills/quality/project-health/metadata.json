@@ -1,0 +1,16 @@
+{
+  "name": "project-health",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/project-health/SKILL.md",
+  "source": "github.com/jezweb/claude-skills",
+  "downloaded_at": "2026-02-02T04:08:54.717377Z",
+  "dir_name": "project-health",
+  "category": "quality",
+  "author": "jezweb",
+  "source_url": "https://github.com/jezweb/claude-skills/blob/main/skills/project-health/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Dawes (Jezweb)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

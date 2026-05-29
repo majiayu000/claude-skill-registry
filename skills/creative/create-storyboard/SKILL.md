@@ -15,6 +15,15 @@ triggers:
   - visualize the script
 metadata:
   short-description: Collaborative screenplay-to-animatic with AI cinematographer
+
+provides:
+  - create-storyboard
+composes:
+  - create-score
+  - create-cast
+  - create-story
+  - memory
+  - task-monitor
 ---
 
 # create-storyboard
@@ -172,7 +181,7 @@ Run a demo with sample screenplay showing the collaboration loop.
 | ----------- | -------------------------------------------- | -------------------------- |
 | `sketch`    | Composition guides with shot codes           | Fast                       |
 | `reference` | Stick figure placeholders                    | Medium                     |
-| `generated` | AI-generated images (requires /create-image) | Slow (not yet implemented) |
+| `generated` | AI-generated images (requires /create-image) | Slow (raises NotImplementedError) |
 
 ## Integration Points
 

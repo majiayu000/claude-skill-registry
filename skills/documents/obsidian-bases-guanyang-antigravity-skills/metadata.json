@@ -1,0 +1,20 @@
+{
+  "name": "obsidian-bases",
+  "description": "",
+  "repo": "guanyang/antigravity-skills",
+  "category": "documents",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/guanyang/antigravity-skills",
+  "github_path": "skills/obsidian-bases",
+  "github_branch": "main",
+  "dir_name": "obsidian-bases-guanyang-antigravity-skills",
+  "downloaded_at": "2026-02-05T01:44:19.590133Z",
+  "author": "guanyang",
+  "source_url": "https://github.com/guanyang/antigravity-skills/blob/main/skills/obsidian-bases/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 guanyang",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

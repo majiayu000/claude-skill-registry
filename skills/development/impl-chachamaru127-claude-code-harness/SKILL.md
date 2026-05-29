@@ -1,7 +1,10 @@
 ---
 name: impl
-description: "Implements features and writes code based on Plans.md tasks. Use when user mentions implementation, adding features, writing code, or creating new functions. Do not use for review or build verification."
+description: "Plans.mdのタスクに基づいて機能を実装しコードを書く。Use when user mentions implementation, adding features, writing code, or creating new functions. Do not use for review or build verification."
+description-en: "Implements features and writes code based on Plans.md tasks. Use when user mentions implementation, adding features, writing code, or creating new functions. Do not use for review or build verification."
+description-ja: "Plans.mdのタスクに基づいて機能を実装しコードを書く。Use when user mentions implementation, adding features, writing code, or creating new functions. Do not use for review or build verification."
 allowed-tools: ["Read", "Write", "Edit", "Grep", "Glob", "Bash"]
+user-invocable: false
 ---
 
 # Implementation Skills
@@ -62,11 +65,53 @@ def slugify(text: str) -> str:
 
 ## 実行手順
 
-1. **品質判定ゲート**（Step 0）
-2. ユーザーのリクエストを分類
-3. **（Claude-mem 有効時）過去の実装パターンを検索**
-4. 上記の「機能詳細」から適切な参照ファイルを読む
-5. その内容に従って実装
+1. **Plans.md 登録確認**（Step -1）← **必須**
+2. **品質判定ゲート**（Step 0）
+3. ユーザーのリクエストを分類
+4. **（Claude-mem 有効時）過去の実装パターンを検索**
+5. 上記の「機能詳細」から適切な参照ファイルを読む
+6. その内容に従って実装
+
+### Step -1: Plans.md 登録確認（最優先・必須）
+
+> ⚠️ **実装前に必ず Plans.md にタスクを登録する**
+
+```
+ユーザーの依頼を受信
+    ↓
+Plans.md を読み込み
+    ↓
+┌─────────────────────────────────────────────────────────────┐
+│ 依頼内容が Plans.md に存在するか？                          │
+├─────────────────────────────────────────────────────────────┤
+│  YES → そのまま実装へ進む                                   │
+│  NO  → Plans.md に追加してから実装へ進む                    │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**追加時のフォーマット**:
+
+```markdown
+## 🟡 未着手のタスク
+
+- [ ] {タスク名} `cc:WIP`
+  - 依頼内容: {ユーザーの依頼を要約}
+  - 追加日時: YYYY-MM-DD HH:MM
+```
+
+**表示メッセージ**:
+
+```markdown
+📝 Plans.md にタスクを追加しました
+
+| タスク | ステータス |
+|--------|-----------|
+| {タスク名} | `cc:WIP` |
+
+実装を開始します...
+```
+
+> **なぜ必須か**: 全ての作業を追跡可能にし、進捗管理・レビュー・ハンドオフを確実にするため。
 
 ### Step 0: 品質判定ゲート（最初に実行）
 

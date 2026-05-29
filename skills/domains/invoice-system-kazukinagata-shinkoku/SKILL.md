@@ -64,7 +64,7 @@ description: >
 |-------------|-------------|
 | 適格請求書の記載事項・種類・端数処理 | `references/qualified-invoice-requirements.md` |
 | 経過措置のスケジュール・控除率・期限 | `references/transitional-measures-timeline.md` |
-| 仕入税額控除の要件・例外・保存ルール | `references/input-tax-credit-rules.md` |
+| 仕入税額控除の要件・例外・保存ルール | /tax-invoice-credit-context を実行する |
 | 登録すべきか・計算方法の選択 | `references/decision-flowchart.md` |
 | 実務上のよくある間違い・注意点 | `references/common-pitfalls.md` |
 | 登録申請・取消手続き・基準期間 | `references/registration-procedures.md` |

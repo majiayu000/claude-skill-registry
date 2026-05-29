@@ -1,5 +1,4 @@
----
-name: core-python-best-practices
+---name: core-python-best-practices
 description: Essential guidelines for writing modern, type-safe, and idiomatic Python 3 code.
 license: MIT
 metadata:
@@ -12,7 +11,13 @@ allowed-tools:
   - read_file
   - replace
   - write_file
----
+
+keywords:
+  - core-python-best-practices
+  - automation
+  - biomedical
+measurable_outcome: execute task with >95% success rate.
+---"
 
 # Core Python Best Practices
 
@@ -47,7 +52,7 @@ This skill defines the coding standards for Python development within the projec
 2.  Generates:
     ```python
     from dataclasses import dataclass
-    
+
     @dataclass
     class User:
         id: int

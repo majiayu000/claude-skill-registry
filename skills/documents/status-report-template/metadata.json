@@ -1,0 +1,16 @@
+{
+  "name": "status-report-template",
+  "repo": "dengineproblem/agents-monorepo",
+  "path": ".claude/skills/status-report-template/SKILL.md",
+  "source": "github.com/dengineproblem/agents-monorepo",
+  "downloaded_at": "2026-02-02T02:28:05.656987Z",
+  "dir_name": "status-report-template",
+  "category": "documents",
+  "author": "dengineproblem",
+  "source_url": "https://github.com/dengineproblem/agents-monorepo/blob/main/.claude/skills/status-report-template/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dengineproblem/agents-monorepo/blob/main/.claude/skills/status-report-template/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

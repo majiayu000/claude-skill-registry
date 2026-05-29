@@ -1,13 +1,93 @@
 ---
 name: qa-testing-strategy
-description: Test strategy, QA patterns, and automation practices across unit, integration, E2E, performance, BDD, and security testing with modern frameworks (Jest, Vitest, Playwright, k6, Cucumber).
+description: Risk-based quality engineering test strategy across unit, integration, contract, E2E, performance, and security testing with shift-left gates, flake control, CI economics, and observability-first debugging.
 ---
 
-# Software Testing & Automation Skill — Quick Reference
+# QA Testing Strategy (Dec 2025) — Quick Reference
 
-Use this skill when the primary focus is how to test software effectively rather than how to implement features. This skill provides execution-ready patterns for building reliable, maintainable test suites across all testing layers.
+Use this skill when the primary focus is how to test software effectively (risk-first, automation-first, observable systems) rather than how to implement features.
 
 ---
+
+Core references: SLO/error budgets and troubleshooting patterns from the Google SRE Book ([Service Level Objectives](https://sre.google/sre-book/service-level-objectives/), [Effective Troubleshooting](https://sre.google/sre-book/effective-troubleshooting/)); contract-driven API documentation via OpenAPI ([OAS](https://spec.openapis.org/oas/latest.html)); and E2E ergonomics/practices via Playwright docs ([Best Practices](https://playwright.dev/docs/best-practices)).
+
+## Core QA (Default)
+
+### Outcomes (Definition of Done)
+
+- Strategy is risk-based: critical user journeys + likely failure modes are explicit.
+- Test portfolio is layered: fastest checks catch most defects; slow checks are minimal and high-signal.
+- CI is economical: fast pre-merge gates; heavy suites are scheduled or scoped.
+- Failures are diagnosable: every failure yields actionable artifacts (logs/trace/screenshots/crash reports).
+- Flakes are managed as reliability debt with an SLO and a deflake runbook.
+
+### Quality Model: Risk, Journeys, Failure Modes
+
+- Model risk as `impact x likelihood x detectability` per journey.
+- Write failure modes per journey: auth/session, permissions, data integrity, dependency failure, latency, offline/degraded UX, concurrency/races.
+- Define oracles per test: business rule oracle, contract/schema oracle, security oracle, accessibility oracle, performance oracle.
+
+### Test Portfolio (Modern Equivalent of the Pyramid)
+
+- Prefer unit + component + contract + integration as the default safety net; keep E2E for thin, critical journeys.
+- Add exploratory testing for discovery and usability; convert findings into automated checks when ROI is positive.
+- Use the smallest scope that detects the bug class:
+  - Bug in business logic: unit/property-based.
+  - Bug in service wiring/data: integration/contract.
+  - Bug in cross-service compatibility: contract + a small number of integration scenarios.
+  - Bug in user journey: E2E (critical path only).
+
+### Shift-Left Gates (Pre-Merge by Default)
+
+- Contracts: OpenAPI/AsyncAPI/JSON Schema validation where applicable ([OpenAPI](https://spec.openapis.org/oas/latest.html), [AsyncAPI](https://www.asyncapi.com/docs/reference/specification/v3.0.0), [JSON Schema](https://json-schema.org/)).
+- Static checks: lint, typecheck, dependency scanning, secret scanning.
+- Fast tests: unit + key integration checks; avoid full E2E as a PR gate unless the product is E2E-only.
+
+### Coverage Model (Explicitly Separate)
+
+- Code coverage answers: “What code executed?” (useful as a smoke signal).
+- Risk coverage answers: “What user/business risk is reduced?” (the real target).
+- REQUIRED: every critical journey has at least one automated check at the lowest effective layer.
+
+### CI Economics (Budgets and Levers)
+
+- Budgets [Inference]:
+  - PR gate: p50 <= 10 min, p95 <= 20 min.
+  - Mainline health: >= 99% green builds per day.
+- Levers:
+  - Parallelize by layer and shard long-running suites (Playwright supports sharding in CI: [Sharding](https://playwright.dev/docs/test-sharding)).
+  - Cache dependencies and test artifacts where your CI supports it.
+  - Run “full regression” on schedule (nightly) and “risk-scoped regression” on PRs.
+
+### Flake Management (SLO + Runbook)
+
+- Define flake: test fails without product change and passes on rerun.
+- Track flake rate as: `rerun_pass / (rerun_pass + rerun_fail)` for a suite.
+- SLO examples [Inference]:
+  - Suite flake rate <= 1% weekly.
+  - Time-to-deflake: p50 <= 2 business days, p95 <= 7 business days.
+- REQUIRED: quarantine policy and deflake playbook: `templates/runbooks/template-flaky-test-triage-deflake-runbook.md`.
+- For rate-limited endpoints, run serially, reuse tokens, and add backoff for 429s; isolate 429 tests to avoid poisoning other suites.
+
+### Debugging Ergonomics (Make Failures Cheap)
+
+- Always capture first failure context: request IDs, trace IDs, build URL, seed, test data IDs.
+- Standardize artifacts per layer:
+  - Unit/integration: structured logs + minimal repro input.
+  - E2E: trace + screenshot/video on failure (Playwright tooling: [Trace Viewer](https://playwright.dev/docs/trace-viewer)).
+  - Mobile: `xcresult` bundles + screenshots + device logs.
+
+### Do / Avoid
+
+Do:
+- Write tests against stable contracts and user-visible behavior.
+- Treat flaky tests as P1 reliability work; quarantine only with an owner and expiry.
+- Make “how to debug this failure” part of every suite’s definition of done.
+
+Avoid:
+- “Everything E2E” as a default (slow, expensive, low-signal).
+- Sleeps/time-based waits (prefer assertions and event-based waits).
+- Using coverage % as the primary quality KPI (use risk coverage + defect escape rate).
 
 ## When to Use This Skill
 
@@ -335,29 +415,22 @@ jobs:
 
 ---
 
-## AI-Assisted Testing (2025 Trend)
+## Optional: AI / Automation
 
-72% of teams are exploring AI-driven testing workflows. Key patterns:
+Use AI assistance only as an accelerator for low-risk work; validate outputs with objective checks and evidence.
 
-| Tool | Use Case | Example |
-|------|----------|---------|
-| **GitHub Copilot** | Generate unit tests | "Write tests for this function" in editor |
-| **Playwright + MCP** | AI-generated E2E | Model Context Protocol enables AI agents to create/execute tests |
-| **Visual AI** | Smart visual regression | Applitools, Percy AI ignore irrelevant changes |
-| **Test Generation** | Edge case discovery | AI analyzes code paths for missing coverage |
+Do:
+- Generate scaffolding (test file skeletons, fixtures) and then harden manually.
+- Use AI to propose edge cases, then select based on your risk model and add explicit oracles.
+- Use AI to summarize flaky-test clusters, but base actions on logs/traces and rerun evidence.
 
-**When to use AI testing:**
+Avoid:
+- Accepting generated assertions without validating the oracle (risk: confident nonsense).
+- Letting AI “heal” tests by weakening assertions (risk: silent regressions).
 
-- Generating boilerplate test scaffolding
-- Suggesting edge cases from code analysis
-- Visual regression with intelligent diffing
-- Test data generation from schemas
-
-**When NOT to use AI testing:**
-
-- Critical business logic (review manually)
-- Security-sensitive assertions
-- Performance benchmarks (needs human baseline)
+Safety references (optional):
+- OWASP Top 10 for LLM Applications: https://owasp.org/www-project-top-10-for-large-language-model-applications/
+- NIST AI Risk Management Framework: https://www.nist.gov/itl/ai-risk-management-framework
 
 ---
 
@@ -373,7 +446,9 @@ jobs:
 
 ### Templates
 
-- [templates/test-strategy-template.md](templates/test-strategy-template.md) — Test strategy starter
+- [templates/test-strategy-template.md](templates/test-strategy-template.md) — Risk-based test strategy one-pager
+- [templates/template-test-case-design.md](templates/template-test-case-design.md) — Test case design (Given/When/Then + oracles)
+- [templates/runbooks/template-flaky-test-triage-deflake-runbook.md](templates/runbooks/template-flaky-test-triage-deflake-runbook.md) — Flake triage + deflake runbook
 - [templates/automation-pipeline-template.md](templates/automation-pipeline-template.md) — CI/CD automation pattern
 - [templates/unit/template-jest-vitest.md](templates/unit/template-jest-vitest.md) — Unit testing
 - [templates/integration/template-api-integration.md](templates/integration/template-api-integration.md) — Integration/API testing

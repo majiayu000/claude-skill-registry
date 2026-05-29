@@ -1,0 +1,16 @@
+{
+  "name": "perplexity-sec",
+  "repo": "faisalanjum/EventTrader",
+  "path": ".claude/skills/perplexity-sec/SKILL.md",
+  "source": "github.com/faisalanjum/EventTrader",
+  "downloaded_at": "2026-02-02T01:25:51.508215Z",
+  "dir_name": "perplexity-sec",
+  "category": "ai-llm",
+  "author": "faisalanjum",
+  "source_url": "https://github.com/faisalanjum/EventTrader/blob/main/.claude/skills/perplexity-sec/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/faisalanjum/EventTrader/blob/main/.claude/skills/perplexity-sec/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -18,6 +18,7 @@ description: Build and refactor UI in this repo using Chakra UI v2 + Emotion and
 - Prefer `colors.brand.*` for brand colors (navy/pink/green/yellow).
 - Use responsive props or Chakra breakpoint helpers; keep portrait/landscape styling in `sx` only when needed.
 - Use `useReducedMotion()` for motion-heavy UI and provide a non-animated fallback.
+- **NEVER modify a shared semantic token in `theme.ts` to style a specific component.** Semantic tokens are app-wide. For component-specific dark-mode overrides, use `_dark={{ color: '...' }}` or `useColorModeValue()` directly on that component. See `references/theme-and-tokens.md` for details.
 
 ## Documentation sources (don’t paste full docs)
 
@@ -30,4 +31,3 @@ description: Build and refactor UI in this repo using Chakra UI v2 + Emotion and
 - For tokens, variants, and how to name colors: read `references/theme-and-tokens.md`.
 - For component composition patterns used in this repo: read `references/component-patterns.md`.
 - For starter templates: copy from `assets/`.
-

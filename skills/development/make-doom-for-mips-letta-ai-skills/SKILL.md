@@ -1,188 +1,249 @@
 ---
 name: make-doom-for-mips
-description: Guide for cross-compiling complex C programs (like DOOM) for embedded MIPS environments with custom VM runtimes. This skill applies when building software that targets MIPS architecture with limited stdlib support, custom syscall interfaces, or JavaScript-based VM execution environments. Use when cross-compiling games, applications, or any C code for constrained MIPS targets.
+description: Guidance for cross-compiling complex C programs (like Doom) to run on custom MIPS virtual machines or emulators. This skill should be used when tasked with building software for non-standard MIPS targets that use custom syscall interfaces, require freestanding compilation (-nostdlib), or involve running binaries in JavaScript/custom VM environments.
 ---
 
-# Cross-Compiling C Programs for MIPS VM Environments
+# Cross-Compiling Complex C Programs for Custom MIPS VMs
 
 ## Overview
 
-This skill provides guidance for cross-compiling complex C programs to run on MIPS-based virtual machines with custom runtime environments. The primary challenge involves creating freestanding executables that work without standard system libraries, implementing custom syscall interfaces, and ensuring the compiled binary actually produces expected output in the target VM.
+This skill provides guidance for cross-compiling complex C codebases (such as Doom) to run on custom MIPS virtual machines or emulators. The primary challenge is bridging the gap between standard C library expectations and a custom runtime environment with its own syscall interface, memory layout, and instruction support.
 
-## Critical Success Criteria
+## Critical First Steps: Understanding the Target Environment
 
-Before declaring any task complete, verify the **actual acceptance criteria** are met:
+Before writing any code, thoroughly analyze the target VM to understand its requirements:
 
-1. Identify what output the VM expects (e.g., frame files, console output, specific exit codes)
-2. Run the compiled binary in the VM and confirm expected artifacts are created
-3. Never accept "the program runs some instructions" as success - verify end-to-end functionality
+### 1. Analyze the VM's Syscall Interface
 
-## Approach
+Read the VM source code to extract the exact syscall interface:
+- Identify syscall numbers (e.g., SYS_read=0, SYS_write=1, etc.)
+- Understand the calling convention (which registers hold arguments and return values)
+- Document all supported syscalls and their signatures
+- Note any custom syscalls specific to the VM
 
-### Phase 1: Environment Analysis
+### 2. Determine Endianness and ABI
 
-Before writing any code, thoroughly analyze the target environment:
+Verify the target architecture details by examining the VM source:
+- Endianness (little-endian vs big-endian MIPS)
+- Floating-point support (hardware vs soft-float)
+- Word size (32-bit vs 64-bit)
+- ABI variant (o32, n32, n64)
 
-1. **Read the VM implementation completely** - Understand:
-   - Available syscalls and their exact signatures
-   - File system abstractions and path handling
-   - Memory layout expectations
-   - How the VM handles program termination
-   - Any special requirements for input/output
+### 3. Understand Memory Layout
 
-2. **Analyze the source program's dependencies**:
-   - List all required standard library functions
-   - Identify file I/O patterns (WAD files, config files, output files)
-   - Understand the main loop structure and when output occurs
-   - Map out initialization sequence and failure points
+From the VM source, extract:
+- Expected entry point address
+- Stack location and size
+- Heap boundaries
+- Text/data segment placement
+- Any memory-mapped I/O regions
 
-3. **Document the interface contract**:
-   - What syscall numbers map to what operations
-   - Expected calling conventions
-   - Return value semantics and error handling
+### 4. Identify Supported Instructions
 
-### Phase 2: Systematic Stdlib Implementation
+Check for instruction limitations:
+- Floating-point instruction support
+- Privileged instructions
+- Branch delay slot handling
+- Any unimplemented instructions that will cause VM termination
 
-Create custom standard library implementations methodically:
+## Systematic Approach to Freestanding Compilation
 
-1. **Audit all required functions upfront** - Do not add functions one-by-one as errors appear. Instead:
-   - Grep for all function calls in the source
-   - Create a complete list before starting implementation
-   - Group by category: string ops, memory ops, I/O, math
+### Phase 1: Comprehensive Header Analysis
 
-2. **Implement complete functionality for critical functions**:
-   - `printf`, `sprintf`, `snprintf` - Implement actual formatting, not stubs returning 0
-   - `sscanf` - Implement actual parsing if the program uses it
-   - File operations - Ensure paths resolve correctly in the VM
+Before compiling, scan all source files to identify required headers:
 
-3. **Create comprehensive stub headers** - For each system header:
-   - Define only what the program actually uses
-   - Avoid pulling in real system headers that conflict
+```bash
+# Find all included headers
+grep -rh '#include' src/ | sort -u
+```
 
-### Phase 3: Cross-Compilation Setup
+Create stub headers for ALL identified system headers upfront rather than reactively fixing one error at a time. Common headers needed for complex C programs:
+- `<stdio.h>`, `<stdlib.h>`, `<string.h>`, `<stdint.h>`
+- `<limits.h>`, `<stddef.h>`, `<stdarg.h>`
+- `<ctype.h>`, `<math.h>`, `<time.h>`
+- `<errno.h>`, `<assert.h>`, `<fcntl.h>`
+- `<unistd.h>`, `<sys/types.h>`, `<sys/stat.h>`
 
-Configure the toolchain correctly:
+### Phase 2: Standard Library Implementation
 
-1. **Compiler flags**:
-   - Use `-ffreestanding` to avoid system library assumptions
-   - Use `-nostdlib` to prevent linking against host libraries
-   - Use `-msoft-float` if the VM lacks FPU support
-   - Address ABI warnings (hard-float vs soft-float) - these cause runtime failures
+Create a comprehensive stdlib replacement with COMPLETE implementations:
 
-2. **Linker configuration**:
-   - Provide appropriate linker script if needed
-   - Ensure entry point is correctly specified
-   - Verify symbol resolution for all custom implementations
+**Critical functions that must work correctly (not return 0 or stub):**
+- `printf`, `fprintf`, `sprintf`, `snprintf` - Used for debug output and parsing
+- `sscanf`, `fscanf` - Used for configuration parsing
+- `malloc`, `free`, `realloc` - Memory management
+- `memcpy`, `memset`, `memmove`, `strlen`, `strcmp`, `strcpy` - String/memory operations
+- `atoi`, `atol`, `strtol` - Number parsing
+- `fopen`, `fread`, `fwrite`, `fclose`, `fseek`, `ftell` - File I/O
 
-### Phase 4: Iterative Testing with Verification
+**Warning signs of incomplete implementations:**
+- Functions returning 0 unconditionally
+- Empty function bodies
+- "TODO" or stub comments
+- Missing format specifier handling in printf-family functions
 
-Test against actual success criteria at each step:
+### Phase 3: Linker Script Configuration
 
-1. **After first successful compilation**:
-   - Run in VM immediately
-   - Check if expected output files are created
-   - If program terminates early, investigate why
-
-2. **When program terminates unexpectedly**:
-   - Examine the termination address
-   - Add debug output at key checkpoints
-   - Verify resource loading (WAD files, data files)
-   - Check if required command-line arguments are provided
-
-3. **Trace program flow**:
-   - Understand when the expected output should be generated
-   - If output depends on game loop iterations, verify the loop runs
-   - Check tick counters or frame counters if output is periodic
+Create a linker script that matches the VM's expectations:
+- Entry point symbol must match what the VM looks for
+- Section addresses must align with VM memory layout
+- Stack initialization must be included in startup code
+- Verify `.text`, `.data`, `.bss`, `.rodata` placement
 
 ## Verification Strategies
 
-### Pre-Completion Checklist
+### 1. Syscall Verification
 
-Before declaring the task complete:
+After implementing syscalls, verify each one works:
+```c
+// Test write syscall
+const char *msg = "Syscall test\n";
+write(1, msg, strlen(msg));
 
-- [ ] VM implementation has been read and understood
-- [ ] All syscalls used by custom stdlib match VM's implementation
-- [ ] Critical functions (printf, file I/O) have working implementations, not stubs
-- [ ] Resource files (WAD, data) are accessible via VM's file system
-- [ ] Program runs to the point where expected output should be generated
-- [ ] Expected output files actually exist after VM execution
-- [ ] Program executes a reasonable number of instructions (not early termination)
+// Test read syscall
+char buf[100];
+int n = read(0, buf, sizeof(buf));
 
-### Debugging Early Termination
+// Test file operations
+int fd = open("/path/to/file", O_RDONLY);
+// etc.
+```
 
-When a program terminates prematurely:
+### 2. Entry Point Verification
 
-1. Check the program counter at termination - what function/code is at that address?
-2. Add print statements at initialization milestones
-3. Verify file open operations succeed (check return values)
-4. Ensure required arguments are passed to main()
-5. Check if errno or error handlers are being triggered
+Confirm the entry point matches:
+```bash
+# Check the ELF entry point
+mips-*-readelf -h output.elf | grep Entry
 
-### Validating Output Generation
+# Verify symbol is at expected address
+mips-*-nm output.elf | grep __start
+```
 
-For frame-based output (like DOOM):
+### 3. Map File Analysis for Debugging
 
-1. Understand when frames are written (e.g., every N ticks)
-2. Verify the game loop executes enough iterations
-3. Check file write syscalls are being called
-4. Confirm output path is writable in VM environment
+Generate and use map files to debug crashes:
+```bash
+# Generate map file during linking
+-Wl,-Map=output.map
 
-## Common Pitfalls
+# When program terminates at specific PC, find the function:
+grep "0x40b7b0" output.map
+```
 
-### Stub Functions That Break Programs
+### 4. Incremental Testing
 
-**Problem**: Implementing `printf`/`sprintf` as stubs returning 0 breaks programs that depend on formatted output for initialization or configuration parsing.
+Test components in isolation before full integration:
+1. Minimal "hello world" to verify basic execution
+2. Memory allocation test program
+3. File I/O test program
+4. Individual library function tests
+5. Finally, the full application
 
-**Solution**: Implement actual formatting logic or at minimum ensure the output buffer receives expected content.
+## Common Pitfalls and Solutions
 
-### Ignoring Linker Warnings
+### Pitfall 1: ABI Mismatch Warnings
 
-**Problem**: ABI mismatch warnings (hard-float vs soft-float) are dismissed but cause runtime failures when floating-point operations execute.
+**Problem:** Linking soft-float compiled code with hard-float libgcc produces warnings:
+```
+warning: linking soft-float module with hard-float module
+```
 
-**Solution**: Ensure consistent floating-point ABI across all compiled objects and the VM's expectations.
+**Impact:** Can cause runtime crashes when floating-point values are passed/returned.
 
-### Premature Success Declaration
+**Solution:** Ensure consistent ABI across all compilation units:
+```bash
+-msoft-float -mfloat-abi=soft
+```
+Or provide soft-float libgcc, or implement soft-float routines.
 
-**Problem**: Seeing "program executed N instructions" and concluding success without verifying actual output.
+### Pitfall 2: Incomplete printf/scanf Implementation
 
-**Solution**: Always verify the specific acceptance criteria (file creation, correct output content) before marking complete.
+**Problem:** Returning 0 or doing nothing in printf-family functions.
 
-### Missing Resource Files
+**Impact:** Configuration parsing fails silently; debug output disappears.
 
-**Problem**: DOOM and similar programs require data files (WAD) that must be accessible via the VM's file system abstraction.
+**Solution:** Implement at least these format specifiers:
+- `%d`, `%i`, `%u`, `%x`, `%X` - integers
+- `%s` - strings
+- `%c` - characters
+- `%p` - pointers
+- Width and precision modifiers
 
-**Solution**: Verify the binary can locate and open required resources. Check if paths need adjustment for VM environment.
+### Pitfall 3: Missing Function Implementations
 
-### Incomplete Dependency Analysis
+**Problem:** Compiler warnings about implicit function declarations.
 
-**Problem**: Adding functions one-by-one as compilation errors appear leads to incomplete implementations and missed dependencies.
+**Impact:** Undefined behavior at runtime; usually crashes.
 
-**Solution**: Systematically audit all function calls in the source code before starting implementation.
+**Solution:** Treat ALL implicit declaration warnings as errors:
+```bash
+-Werror=implicit-function-declaration
+```
 
-## Decision Framework
+### Pitfall 4: Incorrect Syscall Numbers
 
-### When to Add Debug Output
+**Problem:** Using standard Linux syscall numbers when VM uses different numbers.
 
-Add debug output when:
-- Program terminates after fewer instructions than expected
-- Expected output files are not created
-- Unsure if initialization completes successfully
+**Impact:** Wrong operations executed; silent corruption or crashes.
 
-### When to Re-examine VM Implementation
+**Solution:** Extract exact syscall numbers from VM source before implementation.
 
-Re-read the VM code when:
-- Syscalls return unexpected values
-- File operations fail silently
-- Program behavior differs from expectations
+### Pitfall 5: Premature Termination Without Investigation
 
-### When to Implement vs Stub a Function
+**Problem:** Program terminates early; assuming it's due to missing data files.
 
-Implement fully when:
-- Function output is used by the program (printf formatting, string operations)
-- Function affects control flow (file open success/failure)
-- Function result is checked by caller
+**Impact:** Real bugs (unimplemented instructions, invalid memory access, failed syscalls) go undiagnosed.
 
-Stub with caution when:
-- Function is called but result is ignored
-- Function is for features not needed in VM context
-- Must document why stub is safe
+**Solution:** Always investigate termination:
+1. Check the PC address in the map file
+2. Examine the VM's termination handling code
+3. Add instrumentation to log syscalls and critical operations
+4. Verify data files are accessible at expected paths
+
+### Pitfall 6: Reactive Header Creation
+
+**Problem:** Creating stub headers one-by-one as compilation errors appear.
+
+**Impact:** Slow iteration; easy to miss dependencies.
+
+**Solution:** Analyze all includes upfront and create comprehensive stubs before first compile attempt.
+
+## Debugging Strategies
+
+### When the Binary Terminates Early
+
+1. **Get the termination address** from VM output
+2. **Look up address in map file** to identify the function
+3. **Check for unimplemented instructions** at that location
+4. **Verify syscall was valid** if termination is in syscall handler
+5. **Check memory access** if termination is in memory operation
+
+### When Output is Missing/Incorrect
+
+1. **Verify write syscall** reaches the correct output
+2. **Check file descriptors** are mapped correctly
+3. **Trace printf calls** to ensure they reach write syscall
+4. **Verify buffer handling** in I/O functions
+
+### When the Program Crashes Silently
+
+1. **Add diagnostic output** at key checkpoints
+2. **Implement signal handlers** if VM supports them
+3. **Check stack overflow** - increase stack size
+4. **Verify heap operations** - add malloc/free tracing
+
+## Compilation Flags Reference
+
+Essential flags for freestanding MIPS compilation:
+```bash
+-nostdlib              # No standard library
+-ffreestanding         # Freestanding environment
+-mips32                # MIPS32 instruction set (or appropriate variant)
+-EL                    # Little-endian (or -EB for big-endian)
+-msoft-float           # Software floating-point
+-mno-abicalls          # No PIC/GOT (if VM doesn't support)
+-fno-pic               # No position-independent code
+-static                # Static linking
+-Wl,-Map=output.map    # Generate map file for debugging
+```

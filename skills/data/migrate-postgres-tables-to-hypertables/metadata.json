@@ -2,15 +2,16 @@
   "name": "migrate-postgres-tables-to-hypertables",
   "repo": "timescale/pg-aiguide",
   "path": "skills/migrate-postgres-tables-to-hypertables/SKILL.md",
-  "source": "github.com/timescale/pg-aiguide",
-  "downloaded_at": "2026-02-04T05:24:06.515246Z",
-  "dir_name": "migrate-postgres-tables-to-hypertables",
+  "github_branch": "main",
   "category": "data",
+  "source": "github.com/timescale/pg-aiguide",
+  "dir_name": "migrate-postgres-tables-to-hypertables",
+  "downloaded_at": "2026-05-23T03:32:26.508588Z",
   "author": "timescale",
   "source_url": "https://github.com/timescale/pg-aiguide/blob/main/skills/migrate-postgres-tables-to-hypertables/SKILL.md",
-  "license": "Apache-2.0",
+  "license": "NOASSERTION",
   "copyright": "Copyright belongs to upstream author(s); see https://github.com/timescale/pg-aiguide/blob/main/skills/migrate-postgres-tables-to-hypertables/SKILL.md",
-  "permission_note": "Use according to upstream license terms and attribution requirements.",
-  "distribution": "compatible",
-  "license_class": "compatible"
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

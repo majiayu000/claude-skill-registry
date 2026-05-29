@@ -1,0 +1,18 @@
+{
+  "name": "suspense-streaming",
+  "repo": "RomualdP/hoki",
+  "path": ".claude/skills/suspense-streaming/SKILL.md",
+  "source": "github.com/RomualdP/hoki",
+  "downloaded_at": "2026-01-22T03:05:06.312200Z",
+  "dir_name": "suspense-streaming",
+  "category": "development",
+  "github_path": ".claude/skills/suspense-streaming",
+  "github_branch": "main",
+  "author": "RomualdP",
+  "source_url": "https://github.com/RomualdP/hoki/blob/main/.claude/skills/suspense-streaming/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/RomualdP/hoki/blob/main/.claude/skills/suspense-streaming/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

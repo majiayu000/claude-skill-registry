@@ -1,19 +1,41 @@
 ---
-name: gmail-star
-description: Gmail のメッセージをスター化/解除する。「スターを付けて」「スター化」「星を付ける」「スター解除」「星を外す」「Gmail スター」「スターを消す」などで起動。`/shiiman-google:gmail-star` を実行してスター化/解除する。
+name: gmail-starred
+description: Gmail のスター付きメッセージ一覧を取得する。「スター付きメール」「スター一覧」「Gmail スター付き」「星付きメール」「スターを見たい」などで起動。
 allowed-tools: [Read, Bash]
 ---
 
-# Gmail Star
+# Gmail Starred
 
-Gmail のメッセージをスター化/解除します。
+Gmail のスター付きメッセージ一覧を取得します。
 
-## ワークフロー
+## 実行方法
 
-### 1. コマンド実行
+### アクティブプロファイルのスター付き一覧
 
-`/shiiman-google:gmail-star` を SlashCommand ツールで実行（実装は Commands に委譲）。
+```bash
+python plugins/shiiman-google/skills/gmail-starred/scripts/google_gmail.py starred
+```
 
-## コマンド連携
+### 最大件数を指定
 
-実際の処理は `/shiiman-google:gmail-star` に委譲します（SSOT として扱う）。
+```bash
+python plugins/shiiman-google/skills/gmail-starred/scripts/google_gmail.py starred --max 50
+```
+
+### JSON 形式で出力
+
+```bash
+python plugins/shiiman-google/skills/gmail-starred/scripts/google_gmail.py --format json starred
+```
+
+## 出力項目
+
+- id: メッセージID
+- subject: 件名
+- from: 送信者
+- date: 受信日時
+
+## 関連操作
+
+- 本文を読む: メッセージID を指定して `gmail-read` を実行
+- スターを外す: `gmail-star --remove` を実行

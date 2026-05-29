@@ -1,117 +1,153 @@
 ---
 name: cobol-modernization
-description: Guidance for converting COBOL programs to modern languages (Python, Java, etc.) while preserving exact behavior and data format compatibility. This skill should be used when modernizing legacy COBOL applications, converting COBOL business logic to modern languages, or ensuring byte-for-byte output compatibility between COBOL and its replacement.
+description: This skill provides guidance for translating COBOL programs to modern languages (Python, Java, etc.) while preserving exact behavior. It should be used when tasks involve COBOL-to-modern-language migration, legacy code translation, fixed-width file format handling, or ensuring byte-level compatibility between source and target implementations.
 ---
 
 # COBOL Modernization
 
 ## Overview
 
-This skill provides a systematic approach for converting COBOL programs to modern languages while ensuring exact behavioral equivalence. The key challenge in COBOL modernization is not just translating logic, but preserving precise data formats, fixed-width record structures, and byte-level output compatibility.
+This skill guides the translation of COBOL programs to modern languages while ensuring functional equivalence. COBOL modernization requires meticulous attention to data formats, file handling semantics, and numeric precision to achieve byte-for-byte output compatibility.
 
-## Workflow
+## Core Principles
 
-### Phase 1: Analysis and Documentation
+### Complete Source Understanding First
 
-Before writing any code, thoroughly analyze the COBOL source and data files:
+Before writing any translation code:
 
-1. **Read the complete COBOL source code** - Understand the program structure including:
-   - WORKING-STORAGE SECTION for variable definitions and sizes
-   - FILE SECTION for record layouts and field definitions
-   - PROCEDURE DIVISION for business logic
+1. **Read the entire COBOL source** - Never work from truncated views. If output is truncated, request the complete file in chunks or use multiple reads with offsets.
+2. **Map all data structures** - Identify every WORKING-STORAGE, FILE SECTION, and LINKAGE SECTION variable with exact PICTURE clauses.
+3. **Document file formats** - Create explicit specifications for every file's record layout including field positions, lengths, and data types.
+4. **Identify all I/O operations** - Note READ, WRITE, REWRITE, DELETE operations and their conditions.
 
-2. **Document all data formats explicitly** - Create a specification for each file:
-   - Record length (total bytes per record)
-   - Field positions (starting byte, length)
-   - Field types (numeric with COMP-3, alphanumeric, packed decimal)
-   - Padding and alignment requirements
+### Fixed-Width Record Handling
 
-3. **Resolve format discrepancies before implementation** - If input files don't match expected formats (e.g., file is 15 bytes but COBOL expects 22 bytes), investigate and document how the COBOL program actually handles this before proceeding.
+COBOL programs typically use fixed-width record formats. Critical considerations:
 
-### Phase 2: Testing Harness Setup
+- **Record length calculation** - Sum all field lengths from the FD (File Description) or record definitions
+- **Padding behavior** - COBOL pads strings with spaces and numbers with zeros
+- **Numeric formatting** - PICTURE clauses like `9(10)` mean 10-digit zero-padded numbers
+- **Sign handling** - Signed numbers may use trailing sign conventions
 
-Create reusable testing infrastructure before implementing the conversion:
+### Verification Strategy
 
-1. **Create a state reset script** - Automate restoring original data files:
-   ```bash
-   # Example: reset_state.sh
-   cp data/ACCOUNTS.DAT.orig data/ACCOUNTS.DAT
-   cp data/BOOKS.DAT.orig data/BOOKS.DAT
-   cp data/TRANSACTIONS.DAT.orig data/TRANSACTIONS.DAT
+Implement a systematic comparison approach:
+
+1. **Create baseline outputs** - Run the original COBOL program to establish expected outputs
+2. **Test incrementally** - Verify each logical section before moving to the next
+3. **Byte-level comparison** - Use `diff` or `cmp` to verify exact output match, not just logical equivalence
+4. **Preserve test artifacts** - Keep backup copies of all data files until verification is complete
+
+## Translation Workflow
+
+### Phase 1: Analysis
+
+1. Read and document all COBOL source files completely
+2. Map every data structure with exact field specifications:
    ```
-
-2. **Create a comparison script** - Automate output comparison:
-   ```bash
-   # Example: compare_outputs.sh
-   diff data/ACCOUNTS_PYTHON.DAT data/ACCOUNTS_COBOL.DAT
-   diff data/BOOKS_PYTHON.DAT data/BOOKS_COBOL.DAT
-   diff data/TRANSACTIONS_PYTHON.DAT data/TRANSACTIONS_COBOL.DAT
+   Field Name | PICTURE | Length | Position | Type
+   ACCOUNT-ID | X(5)    | 5      | 1-5      | Alphanumeric
+   BALANCE    | 9(10)   | 10     | 6-15     | Numeric
    ```
+3. Document all file record layouts with byte positions
+4. Identify validation logic and business rules
+5. Note any COBOL-specific behaviors (REWRITE semantics, file status codes)
 
-3. **Preserve original COBOL outputs** - Run the COBOL program first and save outputs as reference baselines before any conversion work.
+### Phase 2: Implementation
 
-### Phase 3: Implementation
+1. Implement data parsing functions that match exact COBOL field positions
+2. Use string slicing based on documented positions, not assumptions
+3. Implement numeric formatting to match PICTURE clauses exactly
+4. Handle file operations with equivalent semantics (especially REWRITE vs WRITE)
 
-When writing the modern language equivalent:
+### Phase 3: Verification
 
-1. **Match COBOL data handling exactly**:
-   - Use fixed-width string formatting, not variable-length
-   - Implement proper padding (spaces for alphanumeric, zeros for numeric)
-   - Handle COBOL's implicit decimal points in numeric fields
-   - Match COBOL's truncation behavior for oversized values
-
-2. **Verify file writes immediately** - After writing code files, read them back to confirm complete content was saved correctly before testing.
-
-3. **Use consistent naming** - Avoid creating excessive temporary files. Use a clear naming scheme:
-   - `*_COBOL.DAT` for COBOL program outputs
-   - `*_PYTHON.DAT` for Python program outputs
-   - Clean up between test iterations
-
-### Phase 4: Systematic Testing
-
-Test all code paths, not just the happy path:
-
-1. **Create a test matrix** covering all validation scenarios:
-   - Valid transactions (success case)
-   - Non-existent primary entities (buyer, seller, book, etc.)
-   - Ownership/permission validation failures
-   - Insufficient balance/resource conditions
-   - Boundary conditions (zero balance, maximum values)
-
-2. **Test each scenario independently**:
-   - Reset state before each test
-   - Run both COBOL and modern implementation
-   - Compare outputs byte-for-byte using `diff`
-
-3. **Document test results** - Track which scenarios passed and any discrepancies found.
+1. Back up all original data files before any testing
+2. Run COBOL program and capture outputs
+3. Restore data files to original state
+4. Run translated program and capture outputs
+5. Compare outputs byte-by-byte
+6. Test multiple scenarios including:
+   - Happy path (valid transactions)
+   - Invalid inputs (missing records, bad references)
+   - Edge cases (zero values, maximum lengths)
+   - Boundary conditions (empty files, single records)
 
 ## Common Pitfalls
 
-### Data Format Issues
+### Incomplete Source Reading
 
-- **Fixed-width fields**: COBOL uses fixed-width fields padded with spaces or zeros. Modern languages default to variable-length strings.
-- **Numeric formatting**: COBOL's PIC 9(4)V99 means 4 digits, implied decimal, 2 decimal places - stored as 6 characters with no decimal point.
-- **Record terminators**: COBOL fixed-length records may not use line terminators. Verify whether newlines are expected.
+**Problem**: Working from truncated code views leads to missing logic.
+**Prevention**: Always verify the complete source is available. If truncated, use offset reading or request full file.
 
-### Testing Mistakes
+### Record Length Mismatch
 
-- **Incomplete edge case coverage**: Testing only success and one failure case leaves validation paths untested.
-- **Not verifying written code**: Tool responses may be truncated. Always read back written files to confirm completeness.
-- **State pollution**: Running tests without resetting state causes cascading failures.
+**Problem**: Input files don't match expected record lengths.
+**Prevention**: Calculate expected length from COBOL definitions. If files differ, investigate whether COBOL handles short records with padding.
 
-### Process Inefficiencies
+### Numeric Field Formatting
 
-- **Repeating commands**: Create shell scripts for operations performed more than twice.
-- **Cluttered workspace**: Create a consistent file naming scheme and clean up temporary files.
-- **Unresolved discrepancies**: If data formats don't match expectations, investigate fully before proceeding.
+**Problem**: Python's default number-to-string conversion doesn't match COBOL's zero-padded format.
+**Prevention**: Use explicit formatting: `f"{value:010d}"` for `PIC 9(10)`.
+
+### REWRITE vs WRITE Semantics
+
+**Problem**: COBOL's REWRITE updates a record in place; Python file operations differ.
+**Prevention**: For indexed files, read entire file, modify in memory, write complete file. Track record positions explicitly.
+
+### Premature Cleanup
+
+**Problem**: Removing backup files before confirming task completion.
+**Prevention**: Keep all backups until explicit final verification succeeds.
+
+### Assuming Input Validity
+
+**Problem**: Not testing with malformed or edge-case inputs.
+**Prevention**: Create explicit test cases for invalid inputs, boundary values, and empty files.
 
 ## Verification Checklist
 
-Before declaring the modernization complete:
+Before declaring translation complete:
 
-- [ ] All required output files are generated
-- [ ] All data files match COBOL output byte-for-byte (`diff` returns no output)
-- [ ] All validation paths have been tested (success + each failure type)
-- [ ] Boundary conditions have been verified
-- [ ] No temporary or debug files remain
-- [ ] Code has been read back to verify complete and correct content
+- [ ] Complete COBOL source has been read (no truncation)
+- [ ] All data structures documented with exact field positions
+- [ ] All file formats documented with record layouts
+- [ ] Translated code has been read back and verified complete
+- [ ] COBOL baseline outputs captured for comparison
+- [ ] Translated outputs match byte-for-byte
+- [ ] Multiple test scenarios executed (valid, invalid, edge cases)
+- [ ] Backup files preserved until final verification
+
+## Testing Script Pattern
+
+Create a reusable comparison workflow:
+
+```bash
+# Backup original data
+for f in *.DAT; do cp "$f" "${f}.orig"; done
+
+# Run COBOL version
+./run_cobol.sh
+for f in *.DAT; do cp "$f" "${f%.DAT}_COBOL.DAT"; done
+
+# Restore and run Python version
+for f in *.DAT.orig; do cp "$f" "${f%.orig}"; done
+python program.py
+for f in *.DAT; do [[ ! "$f" =~ (COBOL|orig) ]] && cp "$f" "${f%.DAT}_PYTHON.DAT"; done
+
+# Compare outputs
+for f in *_COBOL.DAT; do
+    base="${f%_COBOL.DAT}"
+    diff -q "${base}_COBOL.DAT" "${base}_PYTHON.DAT" || echo "MISMATCH: $base"
+done
+```
+
+## Edge Cases to Test
+
+1. **Insufficient balance** - Buyer lacks funds for transaction
+2. **Empty data files** - How do both programs handle empty inputs?
+3. **Malformed input** - Non-numeric values, wrong field lengths
+4. **Self-referential transactions** - Buyer equals seller
+5. **Multiple transactions** - Batch processing if supported
+6. **Maximum values** - Largest values that fit in PICTURE clauses
+7. **Missing references** - Referenced records that don't exist

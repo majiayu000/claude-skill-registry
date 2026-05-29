@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "batch_id": "current-other-full-rerun-batch-018",
+  "data_issue": "https://github.com/majiayu000/claude-skill-registry-data/issues/87",
+  "core_issue": "https://github.com/majiayu000/claude-skill-registry-core/issues/196",
+  "generated_at": "2026-05-29T13:50:23Z",
+  "policy": {
+    "from_categories": [
+      "other"
+    ],
+    "content_chars": 4000,
+    "classification_model": "mimo-v2.5-pro",
+    "classification_base_url": "https://token-plan-sgp.xiaomimimo.com/v1",
+    "min_confidence": 0.7,
+    "target_statuses": [
+      "active"
+    ],
+    "allow_target_other": false,
+    "stable_key_conflict_strategy": "prefer-newer-downloaded-at-or-keep-target",
+    "apply_mode": "reviewed apply"
+  },
+  "summary": {
+    "input_other_count": 25128,
+    "classification_row_count": 25128,
+    "classification_status_counts": {
+      "ok": 25126,
+      "missing_result": 2
+    },
+    "direct_move_count": 12620,
+    "stable_key_conflict_resolved_count": 11889,
+    "final_pass_move_count": 9,
+    "final_other_count": 522,
+    "remaining_other_reasons": {
+      "confidence_below_threshold": 520,
+      "classification_status_not_ok": 2
+    },
+    "final_skill_count": 197608,
+    "metadata_missing_count": 0,
+    "metadata_invalid_count": 0,
+    "metadata_category_mismatch_count": 0,
+    "canonical_category_errors": 0,
+    "skill_depth_moves_needed": 0,
+    "case_conflicts": 0
+  },
+  "artifacts": {
+    "input_jsonl_gz": "input.jsonl.gz",
+    "classification_jsonl": "classification.jsonl",
+    "classification_report": "classification-report.json",
+    "direct_apply_plan": "apply-plan-min070.json",
+    "direct_apply_result": "apply-result-min070.json",
+    "stable_key_residual_report": "residual-report-after-min070-moves-replan.json",
+    "stable_key_resolution_plan": "stable-key-conflict-resolution-plan-after-min070-moves-replan.json",
+    "stable_key_resolution_result": "stable-key-conflict-resolution-result-after-min070-moves-replan.json",
+    "final_pass_1_plan": "apply-plan-final-pass-min070.json",
+    "final_pass_1_result": "apply-result-final-pass-min070.json",
+    "final_pass_2_result": "apply-result-final-pass-2-min070.json",
+    "final_residual_report": "residual-report-final-min070.json",
+    "final_metadata_category_scan": "metadata-category-scan-final.json",
+    "final_canonical_category_check": "canonical-categories-check-final.json",
+    "final_skill_depth_check": "normalize-skill-depth-report-final.json",
+    "final_sample_audit": "sample-audit-final-min070.json"
+  },
+  "notes": [
+    "The raw input workset is gzip-compressed to avoid GitHub's 100 MB single-file limit.",
+    "The classifier used SKILL.md frontmatter and body semantics before metadata/path hints.",
+    "Direct moves required source hash verification and refused target category `other`.",
+    "Stable-key conflict cleanup was applied from an audited plan and re-verified source/target hashes before removing duplicates or replacing stale targets.",
+    "The remaining 522 `other` skills are intentionally left by the selected policy: 520 are below the 0.70 confidence threshold and 2 have missing classification results."
+  ]
+}

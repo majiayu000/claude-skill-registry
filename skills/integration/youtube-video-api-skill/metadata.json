@@ -1,0 +1,17 @@
+{
+  "name": "youtube-video-api-skill",
+  "repo": "browser-act/skills",
+  "path": "youtube-video-api-skill/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/browser-act/skills",
+  "dir_name": "youtube-video-api-skill",
+  "downloaded_at": "2026-04-21T01:29:44.778385Z",
+  "author": "browser-act",
+  "source_url": "https://github.com/browser-act/skills/blob/main/youtube-video-api-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/browser-act/skills/blob/main/youtube-video-api-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

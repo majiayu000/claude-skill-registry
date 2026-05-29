@@ -1,36 +1,21 @@
 ---
 name: activate-site
-description: >
-  This skill should be used when the user asks to "activate site",
-  "provision website", "activate a Power Pages website", "activate portal",
-  "provision portal", "turn on my site", "enable website",
-  or wants to activate/provision a Power Pages website in their
-  Power Platform environment via the Power Platform REST API.
+description: >-
+  Activates and provisions a Power Pages website in a Power Platform environment
+  via the Power Platform REST API. Use when the user wants to activate, provision,
+  turn on, or enable a Power Pages website or portal.
 user-invocable: true
 allowed-tools: Read, Bash, Glob, Grep, AskUserQuestion, TaskCreate, TaskUpdate, TaskList
-model: opus
-hooks:
-  Stop:
-    - hooks:
-        - type: command
-          command: 'node "${CLAUDE_PLUGIN_ROOT}/skills/activate-site/scripts/validate-activation.js"'
-          timeout: 30
-        - type: prompt
-          prompt: >
-            If a Power Pages website was being activated in this session (via /power-pages:activate-site),
-            verify before allowing stop: 1) Prerequisites were verified (PAC CLI auth + Azure CLI login),
-            2) Site name was read from config or user input, 3) The subdomain generator script was run AND the user was asked (via AskUserQuestion) whether to use the generated subdomain or enter a custom one,
-            4) The user confirmed activation parameters, 5) The POST to the websites API was made,
-            6) Provisioning status was polled to completion, 7) A summary with the site URL was presented.
-            If incomplete, return { "ok": false, "reason": "<specific issues>" }. Otherwise return { "ok": true }.
-          timeout: 30
+model: sonnet
 ---
+
+> **Plugin check**: Run `node "${CLAUDE_PLUGIN_ROOT}/scripts/check-version.js"` — if it outputs a message, show it to the user before proceeding.
 
 # Activate Power Pages Site
 
 Provision a new Power Pages website in a Power Platform environment via the Power Platform REST API.
 
-> **Prerequisite:** This skill expects an existing Power Pages code site created via `/power-pages:create-site`. Run that skill first if the site does not exist yet.
+> **Prerequisite:** This skill expects an existing Power Pages code site created via `/create-site`. Run that skill first if the site does not exist yet.
 
 ## Core Principles
 
@@ -60,7 +45,7 @@ Provision a new Power Pages website in a Power Platform environment via the Powe
 
 Run `pac help` to check if the PAC CLI is installed and available on the system PATH.
 
-```powershell
+```bash
 pac help
 ```
 
@@ -68,22 +53,23 @@ pac help
 
 1. Tell the user: "PAC CLI is not installed. You can install it by running:"
 
-   ```powershell
+   ```bash
    dotnet tool install --global Microsoft.PowerApps.CLI.Tool
    ```
 
-2. If `dotnet` is also not available, direct the user to https://aka.ms/PowerPlatformCLI for full installation instructions.
+2. If `dotnet` is also not available, direct the user to <https://aka.ms/PowerPlatformCLI> for full installation instructions.
 3. After installation, verify by running `pac help` again.
 
 #### 1.2 Check Authentication
 
 Run `pac auth who` to check current authentication status.
 
-```powershell
+```bash
 pac auth who
 ```
 
 **If authenticated**: Extract these values from the output:
+
 - **Environment ID** — the GUID after `Environment ID:`
 - **Organization ID** — the GUID after `Organization ID:` (this is the Dataverse org ID)
 - **Cloud** — the value after `Cloud:` (e.g., `Public`, `UsGov`, `UsGovHigh`, `UsGovDod`, `China`)
@@ -94,29 +80,26 @@ pac auth who
 
 Verify the user is logged in to Azure CLI (the activation scripts acquire tokens internally):
 
-```powershell
+```bash
 az account show
 ```
 
-**If `az` is not installed or not logged in**: Instruct the user to install Azure CLI and run `az login`.
+**If `az` is not installed or not logged in**: Instruct the user to install Azure CLI and run `az login --allow-no-subscriptions` (this form works whether or not the user has an Azure subscription — the activation flow only needs an AAD token).
 
 #### 1.4 Check If Already Activated
 
 Before gathering parameters, check whether the site is already activated by running the shared activation status script:
 
-```powershell
+```bash
 node "${CLAUDE_PLUGIN_ROOT}/scripts/check-activation-status.js" --projectRoot "<PROJECT_ROOT>"
 ```
 
-Where `<PROJECT_ROOT>` is the directory containing `powerpages.config.json` (use `Glob` with `**/powerpages.config.json` to locate it if not already known).
+Where `<PROJECT_ROOT>` is the directory containing `powerpages.config.json` or `.powerpages-site` folder.
+Evaluate the JSON result:
 
-The script reads `siteName` from `powerpages.config.json`, looks up the `websiteRecordId` via `pac pages list`, queries the Power Platform GET websites API, and matches the response against **both** the `websiteRecordId` (exact GUID match) and `name` (case-insensitive). It outputs a JSON result to stdout.
-
-Evaluate the result:
-
-- **If `activated` is `true`**: The site is already provisioned. Inform the user: "Your site **<siteName>** is already activated at **<websiteUrl>**. No further provisioning is needed." Suggest next steps (Phase 5.3) and stop — do NOT proceed to Phase 2.
+- **If `activated` is `true`**: Inform the user their site is already activated at `websiteUrl`. Suggest next steps (Phase 5.3) and stop — do NOT proceed to Phase 2.
 - **If `activated` is `false`**: Proceed to Phase 2.
-- **If `error` is present**: The check could not complete. Proceed to Phase 2 (do not block the activation flow due to a failed check).
+- **If `error` is present**: Proceed to Phase 2 (do not block the activation flow).
 
 ### Output
 
@@ -149,7 +132,7 @@ Read the file and extract the `siteName` field. If not found, ask the user for t
 
 Run the subdomain generator script to create a random suggestion:
 
-```powershell
+```bash
 node "${CLAUDE_PLUGIN_ROOT}/skills/activate-site/scripts/generate-subdomain.js"
 ```
 
@@ -175,7 +158,7 @@ Present the generated subdomain to the user and ask them to accept or enter thei
 
 Run `pac pages list` to get the website record ID:
 
-```powershell
+```bash
 pac pages list
 ```
 
@@ -221,7 +204,7 @@ Present all activation parameters to the user using `AskUserQuestion`:
 
 Run the shared activation script, passing all parameters gathered in Phases 1–2:
 
-```powershell
+```bash
 node "${CLAUDE_PLUGIN_ROOT}/skills/activate-site/scripts/activate-site.js" --siteName "<siteName>" --subdomain "<subdomain>" --organizationId "<organizationId>" --environmentId "<environmentId>" --cloud "<cloud>" --websiteRecordId "<websiteRecordId>"
 ```
 
@@ -239,9 +222,9 @@ Evaluate the JSON output:
 |---|---|---|
 | **`Succeeded`** | — | Provisioning complete. The result includes `siteUrl`. Proceed to Phase 5. |
 | **`Failed`** | `400` + `SubdomainConflict` (or error message mentions subdomain) | Subdomain already taken. Loop back to Phase 2 action 2.2 for a new subdomain, then re-run the script. |
-| **`Failed`** | `401` | Token expired. Ask the user to run `az login` and retry. |
+| **`Failed`** | `401` | Token expired. Ask the user to run `az login --allow-no-subscriptions` and retry. |
 | **`Failed`** | `403` | Insufficient permissions. Inform user they need the "Power Pages site creator" or "System Administrator" role. |
-| **`Failed`** | `409` | Website already exists. Inform user and suggest using `/power-pages:deploy-site` instead. |
+| **`Failed`** | `409` | Website already exists. Inform user and suggest using `/deploy-site` instead. |
 | **`Failed`** | `429` or `5xx` | Throttling or server error. Wait 5 seconds and re-run the script once. |
 | **`Failed`** | other | Present the error to the user and help troubleshoot. |
 | **`Running`** | — | Provisioning still in progress after 5 minutes. Inform the user it may take up to 15 minutes and suggest checking the Power Platform admin center. |
@@ -283,8 +266,10 @@ Follow the skill tracking instructions in the reference to record this skill's u
 #### 5.3 Suggest Next Steps
 
 After the summary, suggest:
-- Set up the data model: `/power-pages:setup-datamodel`
-- Add sample data: `/power-pages:add-sample-data`
+
+- Test the site: `/test-site` — Verify the site loads correctly and API calls are working
+- Set up the data model: `/setup-datamodel`
+- Add sample data: `/add-sample-data`
 - View the site in the browser at the provisioned URL (note: it may take a few minutes for DNS to propagate)
 
 ### Output
@@ -317,7 +302,7 @@ Mark each task complete with `TaskUpdate` as you finish each phase.
 - **Phase 2.2**: User may accept the generated subdomain or provide a custom one — validate custom input.
 - **Phase 3**: User must explicitly approve activation. If declined, stop the skill entirely.
 - **Phase 4.2**: On 400 (subdomain taken), loop back to Phase 2 action 2.2 and re-run the script — do not abort.
-- **Phase 4.2**: On 409 (site already exists), redirect user to `/power-pages:deploy-site` instead.
+- **Phase 4.2**: On 409 (site already exists), redirect user to `/deploy-site` instead.
 - **Phase 4.2**: On timeout (still Running after 5 minutes), do not treat as failure — advise user to check admin center.
 
 **Begin with Phase 1: Verify Prerequisites**

@@ -175,6 +175,20 @@ handler := Chain(router, Recovery, RequestID, Logger(slog.Default()), Auth)
 4. **Auth** -- after logging so failed auth attempts are recorded
 5. **Application-specific middleware** -- rate limiting, CORS, etc.
 
+## Gates (check before merge or review)
+
+Use these **sequenced** checks for objective pass/fail; do not replace them with “I verified mentally.”
+
+1. **Recovery position**
+   - Locate where the server builds the middleware chain (e.g. `main`, router `Use`, or a `Chain` helper).
+   - **Pass:** Recovery wraps all other middleware and the final handler per [Middleware Chain Ordering](#middleware-chain-ordering) (outermost in nested style, or correct `Chain` argument order for your helper). Cite file path and the full chain snippet.
+2. **Status-aware middleware uses a wrapped `ResponseWriter`**
+   - If middleware logs or records HTTP status after the handler runs, it must pass a wrapper into `next.ServeHTTP`, not the original writer alone.
+   - **Pass:** snippet shows `next.ServeHTTP(wrapped, r)` (or equivalent) when status is observed after `next` returns.
+3. **Every forward path calls `next`**
+   - Scan each middleware’s control flow.
+   - **Pass:** no branch drops the request without calling `next.ServeHTTP` unless that branch intentionally sends a response (e.g. auth failure); those short-circuits are obvious in code review.
+
 ## Anti-patterns
 
 ### Using string or int context keys

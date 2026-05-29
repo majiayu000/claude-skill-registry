@@ -1,9 +1,9 @@
 {
-  "name": "53-data-engineering",
+  "name": "dbt-patterns",
   "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
-  "path": "53-data-engineering/SKILL.md",
+  "path": "53-data-engineering/dbt-patterns/SKILL.md",
   "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
-  "downloaded_at": "2026-01-17T03:41:33.963263Z",
+  "downloaded_at": "2026-01-17T03:41:56.433165Z",
   "dir_name": "53-data-engineering",
   "category": "data",
   "github_path": "53-data-engineering/dbt-patterns",

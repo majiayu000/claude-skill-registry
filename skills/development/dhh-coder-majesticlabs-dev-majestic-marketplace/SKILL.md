@@ -256,13 +256,9 @@ Broadcasting is model responsibility:
 def broadcast_create
   broadcast_append_to room, :messages, target: "messages"
 end
-
-# In controller
-@message.broadcast_replace_to @room, :messages,
-  target: [ @message, :presentation ],
-  partial: "messages/presentation",
-  attributes: { maintain_scroll: true }
 ```
+
+**For detailed Hotwire patterns, use `hotwire-coder` skill.**
 
 ### Error Handling
 Rescue specific exceptions, fail fast with bang methods:
@@ -367,10 +363,13 @@ For comprehensive patterns and examples, see:
 ### Rails Components
 - `references/activerecord-tips.md` - ActiveRecord query patterns, validations, associations
 - `references/controllers-tips.md` - Controller patterns, routing, rate limiting, form objects
-- `references/hotwire-tips.md` - Turbo Frames, Turbo Streams, Stimulus, ViewComponents
-- `references/turbo-morphing.md` - Turbo 8 page refresh with morphing patterns
 - `references/activestorage-tips.md` - File uploads, attachments, blob handling
+
+### Hotwire
+- `references/hotwire-tips.md` - Turbo Frames, Turbo Streams, ViewComponents
+- `references/turbo-morphing.md` - Turbo 8 page refresh with morphing patterns
 - `references/stimulus-catalog.md` - Copy-paste-ready Stimulus controllers (clipboard, dialog, hotkey, etc.)
+- **Also see:** `hotwire-coder`, `stimulus-coder`, `viewcomponent-coder` skills for detailed patterns
 
 ### Frontend
 - `references/css-architecture.md` - Native CSS patterns (layers, OKLCH, nesting, dark mode)

@@ -1,0 +1,16 @@
+{
+  "name": "bilibili-subtitle-fetcher-skill_suyuan2022",
+  "repo": "jackspace/ClaudeSkillz",
+  "path": "skills/bilibili-subtitle-fetcher-skill_suyuan2022/SKILL.md",
+  "source": "github.com/jackspace/ClaudeSkillz",
+  "downloaded_at": "2026-01-29T02:09:04.373566Z",
+  "dir_name": "bilibili-subtitle-fetcher-skill-suyuan2022",
+  "category": "integration",
+  "author": "jackspace",
+  "source_url": "https://github.com/jackspace/ClaudeSkillz/blob/main/skills/bilibili-subtitle-fetcher-skill_suyuan2022/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ClaudeSkillz Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

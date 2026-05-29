@@ -1,0 +1,18 @@
+{
+  "name": "label-management",
+  "description": "Create, edit, delete, and organize GitHub Issue labels and milestones. Use for label operations, milestone management, or organizing issue taxonomy.",
+  "repo": "terrylica/claude-code-skills-github-issues",
+  "path": "skills/github-issues/label-management",
+  "category": "workflow",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/terrylica/claude-code-skills-github-issues",
+  "dir_name": "label-management-terrylica-claude-code-skills-g-2",
+  "author": "terrylica",
+  "source_url": "https://github.com/terrylica/claude-code-skills-github-issues/blob/main/skills/github-issues/label-management/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Terry Li",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

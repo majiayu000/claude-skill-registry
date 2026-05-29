@@ -74,7 +74,7 @@ cli_text("Function {.fn mean} calculates averages")
 cli_text("Install package {.pkg dplyr}")
 cli_text("See file {.file ~/.Rprofile}")
 cli_text("{.var x} must be numeric, not {.obj_type_of {x}}")
-cli_text("Got value {.val {x}}"))
+cli_text("Got value {.val {x}}")
 
 # Code formatting
 cli_text("Use {.code sum(x, na.rm = TRUE)}")

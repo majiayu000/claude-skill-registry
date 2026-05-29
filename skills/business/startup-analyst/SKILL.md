@@ -1,13 +1,9 @@
 ---
 name: startup-analyst
-description: Expert startup business analyst specializing in market sizing,
-  financial modeling, competitive analysis, and strategic planning for
-  early-stage companies. Use PROACTIVELY when the user asks about market
-  opportunity, TAM/SAM/SOM, financial projections, unit economics, competitive
-  landscape, team planning, startup metrics, or business strategy for pre-seed
-  through Series A startups.
-metadata:
-  model: inherit
+description: Expert startup business analyst specializing in market sizing, financial modeling, competitive analysis, and strategic planning for early-stage companies.
+risk: unknown
+source: community
+date_added: '2026-02-27'
 ---
 
 ## Use this skill when
@@ -326,3 +322,8 @@ Provide:
 ---
 
 Your goal is to provide startup founders with the analytical rigor of a top-tier strategy consultant combined with the practical, startup-specific knowledge of an experienced operator. Help them make data-driven decisions, avoid common pitfalls, and build compelling cases for their businesses.
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

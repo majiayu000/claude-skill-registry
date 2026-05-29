@@ -1,27 +1,36 @@
 ---
 name: architecture-paradigm-modular-monolith
-description: |
-
-Triggers: monolith, architecture, modular, team-autonomy, modular-monolith
-  Single deployable with enforced module boundaries for team autonomy without distributed complexity.
-
-  Triggers: modular monolith, module boundaries, single deployment, team autonomy
-  Use when: teams need autonomy without distributed overhead
-  DO NOT use when: already using microservices or system is small.
-version: 1.3.5
+description: 'Single deployable with enforced module boundaries.'
+alwaysApply: false
 category: architectural-pattern
-tags: [architecture, modular-monolith, monolith, internal-boundaries, team-autonomy]
+tags:
+- architecture
+- modular-monolith
+- monolith
+- internal-boundaries
+- team-autonomy
 dependencies: []
-tools: [dependency-analyzer, module-boundary-enforcer, refactoring-planner]
+tools: []
 usage_patterns:
-  - paradigm-implementation
-  - monolith-modernization
-  - team-scaling
+- paradigm-implementation
+- monolith-modernization
+- team-scaling
 complexity: medium
+model_hint: standard
 estimated_tokens: 700
 ---
-
 # The Modular Monolith Paradigm
+
+
+## When To Use
+
+- Organizing large codebases into well-bounded modules
+- Teams wanting microservice boundaries without distributed complexity
+
+## When NOT To Use
+
+- Already distributed as microservices
+- Tiny applications where module boundaries add unnecessary complexity
 
 ## When to Employ This Paradigm
 - When you desire team autonomy similar to that of microservices, but without the operational overhead of a distributed system.
@@ -57,3 +66,16 @@ Use progressive disclosure - move details to modules
 
 **Modules not found**
 Verify module paths in SKILL.md are correct
+
+## Concrete Components
+
+These vocabulary items name the concrete tools and abstractions
+that show up when the paradigm is implemented. They are not
+required dependencies and they are not part of the skill's
+``tools:`` frontmatter (which is reserved for Claude Code tool
+restrictions). Use this list to disambiguate during architecture
+discussions.
+
+- ``dependency-analyzer`` -- module dependency graph builder for spotting forbidden edges
+- ``module-boundary-enforcer`` -- fails the build when a module imports across a boundary
+- ``refactoring-planner`` -- ranks modules by extraction-readiness for a future split

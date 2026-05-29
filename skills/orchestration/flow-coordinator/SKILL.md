@@ -1,37 +1,58 @@
 ---
 name: flow-coordinator
-description: Template-driven workflow coordinator with minimal state tracking. Executes command chains from workflow templates with slash-command execution (mainprocess/async). Triggers on "flow-coordinator", "workflow template", "orchestrate".
+description: Template-driven workflow coordinator with minimal state tracking. Executes command chains from workflow templates OR unified PromptTemplate workflows. Supports slash-command and DAG-based execution. Triggers on "flow-coordinator", "workflow template", "orchestrate".
 allowed-tools: Task, AskUserQuestion, Read, Write, Bash, Glob, Grep
 ---
 
 # Flow Coordinator
 
-Lightweight workflow coordinator that executes command chains from predefined templates, supporting slash-command execution with mainprocess (blocking) and async (background) modes.
+Lightweight workflow coordinator supporting two workflow formats:
+1. **Legacy Templates**: Command chains with slash-command execution
+2. **Unified Workflows**: DAG-based PromptTemplate nodes (spec: `spec/unified-workflow-spec.md`)
+
+## Specification Reference
+
+- **Unified Workflow Spec**: @spec/unified-workflow-spec.md
+- **Demo Workflow**: `ccw/data/flows/demo-unified-workflow.json`
 
 ## Architecture
 
 ```
-User Task → Select Template → status.json Init → Execute Steps → Complete
-     ↑                                                │
-     └──────────────── Resume (from status.json) ─────┘
+User Task → Detect Format → Select Workflow → Init Status → Execute → Complete
+                │                                              │
+                ├─ Legacy Template                             │
+                │   └─ Sequential cmd execution                │
+                │                                              │
+                └─ Unified Workflow                            │
+                    └─ DAG traversal with contextRefs          │
+                                                               │
+     └──────────────── Resume (from status.json) ──────────────┘
 
-Step Execution:
-  execution mode?
-    ├─ mainprocess  → SlashCommand (blocking, main process)
-    └─ async        → ccw cli --tool claude --mode write (background)
+Execution Modes:
+  ├─ analysis     → Read-only, CLI --mode analysis
+  ├─ write        → File changes, CLI --mode write
+  ├─ mainprocess  → Blocking, synchronous
+  └─ async        → Background, ccw cli
 ```
 
 ## Core Concepts
 
-**Template-Driven**: Workflows defined as JSON templates in `templates/`, decoupled from coordinator logic.
+**Dual Format Support**:
+- Legacy: `templates/*.json` with `cmd`, `args`, `execution`
+- Unified: `ccw/data/flows/*.json` with `nodes`, `edges`, `contextRefs`
 
-**Execution Type**: `slash-command` only
-- ALL workflow commands (`/workflow:*`) use `slash-command` type
-- Two execution modes:
-  - `mainprocess`: SlashCommand (blocking, main process)
-  - `async`: CLI background (ccw cli with claude tool)
+**Unified PromptTemplate Model**: All workflow steps are natural language instructions with:
+- `instruction`: What to execute (natural language)
+- `slashCommand`: Optional slash command name (e.g., "workflow:plan")
+- `slashArgs`: Optional arguments for slash command (supports {{variable}})
+- `outputName`: Name for output reference
+- `contextRefs`: References to previous step outputs
+- `tool`: Optional CLI tool (gemini/qwen/codex/claude)
+- `mode`: Execution mode (analysis/write/mainprocess/async)
 
-**Dynamic Discovery**: Templates discovered at runtime via Glob, not hardcoded.
+**DAG Execution**: Unified workflows execute as directed acyclic graphs with parallel branches and conditional edges.
+
+**Dynamic Discovery**: Both formats discovered at runtime via Glob.
 
 ---
 
@@ -83,7 +104,165 @@ async function executeSteps(status, statusPath) {
 
 ---
 
-## Template Discovery
+## Unified Workflow Execution
+
+For workflows using the unified PromptTemplate format (`ccw/data/flows/*.json`):
+
+```javascript
+async function executeUnifiedWorkflow(workflow, task) {
+  // 1. Initialize execution state
+  const sessionId = `ufc-${timestamp()}`;
+  const statusPath = `.workflow/.flow-coordinator/${sessionId}/status.json`;
+  const state = {
+    id: sessionId,
+    workflow: workflow.id,
+    goal: task,
+    nodeStates: {},  // nodeId -> { status, result, error }
+    outputs: {},     // outputName -> result
+    complete: false
+  };
+
+  // 2. Topological sort for execution order
+  const executionOrder = topologicalSort(workflow.nodes, workflow.edges);
+
+  // 3. Execute nodes respecting DAG dependencies
+  await executeDAG(workflow, executionOrder, state, statusPath);
+}
+
+async function executeDAG(workflow, order, state, statusPath) {
+  for (const nodeId of order) {
+    const node = workflow.nodes.find(n => n.id === nodeId);
+    const data = node.data;
+
+    // Check if all dependencies are satisfied
+    if (!areDependenciesSatisfied(nodeId, workflow.edges, state)) {
+      continue; // Will be executed when dependencies complete
+    }
+
+    // Build instruction from slashCommand or raw instruction
+    let instruction = buildNodeInstruction(data, state.outputs);
+
+    // Execute based on mode
+    state.nodeStates[nodeId] = { status: 'running' };
+    write(statusPath, JSON.stringify(state, null, 2));
+
+    const result = await executeNode(instruction, data.tool, data.mode);
+
+    // Store output for downstream nodes
+    state.nodeStates[nodeId] = { status: 'completed', result };
+    if (data.outputName) {
+      state.outputs[data.outputName] = result;
+    }
+    write(statusPath, JSON.stringify(state, null, 2));
+  }
+
+  state.complete = true;
+  write(statusPath, JSON.stringify(state, null, 2));
+}
+
+/**
+ * Build node instruction from slashCommand or raw instruction
+ * Handles slashCommand/slashArgs fields from frontend orchestrator
+ */
+function buildNodeInstruction(data, outputs) {
+  const refs = data.contextRefs || [];
+
+  // If slashCommand is set, construct instruction from it
+  if (data.slashCommand) {
+    // Resolve variables in slashArgs
+    const args = data.slashArgs
+      ? resolveContextRefs(data.slashArgs, refs, outputs)
+      : '';
+
+    // Build slash command instruction
+    let instruction = `/${data.slashCommand}${args ? ' ' + args : ''}`;
+
+    // Append additional instruction if provided
+    if (data.instruction) {
+      const additionalInstruction = resolveContextRefs(data.instruction, refs, outputs);
+      instruction = `${instruction}\n\n${additionalInstruction}`;
+    }
+
+    return instruction;
+  }
+
+  // Fallback: use raw instruction with context refs resolved
+  return resolveContextRefs(data.instruction || '', refs, outputs);
+}
+
+function resolveContextRefs(instruction, refs, outputs) {
+  let resolved = instruction;
+  for (const ref of refs) {
+    const value = outputs[ref];
+    const placeholder = `{{${ref}}}`;
+    resolved = resolved.replace(new RegExp(placeholder, 'g'),
+      typeof value === 'object' ? JSON.stringify(value) : String(value));
+  }
+  return resolved;
+}
+
+async function executeNode(instruction, tool, mode) {
+  // Build CLI command based on tool and mode
+  const cliTool = tool || 'gemini';
+  const cliMode = mode === 'write' ? 'write' : 'analysis';
+
+  if (mode === 'async') {
+    // Background execution
+    return Bash(
+      `ccw cli -p "${escapePrompt(instruction)}" --tool ${cliTool} --mode ${cliMode}`,
+      { run_in_background: true }
+    );
+  } else {
+    // Synchronous execution
+    return Bash(
+      `ccw cli -p "${escapePrompt(instruction)}" --tool ${cliTool} --mode ${cliMode}`
+    );
+  }
+}
+```
+
+### Unified Workflow Discovery
+
+```javascript
+async function discoverUnifiedWorkflows() {
+  const files = Glob('*.json', { path: 'ccw/data/flows/' });
+
+  const workflows = [];
+  for (const file of files) {
+    const content = JSON.parse(Read(file));
+    // Detect unified format by checking for 'nodes' array
+    if (content.nodes && Array.isArray(content.nodes)) {
+      workflows.push({
+        id: content.id,
+        name: content.name,
+        description: content.description,
+        nodeCount: content.nodes.length,
+        format: 'unified',
+        file: file
+      });
+    }
+  }
+  return workflows;
+}
+```
+
+### Format Detection
+
+```javascript
+function detectWorkflowFormat(content) {
+  if (content.nodes && content.edges) {
+    return 'unified';  // PromptTemplate DAG format
+  }
+  if (content.steps && content.steps[0]?.cmd) {
+    return 'legacy';   // Command chain format
+  }
+  throw new Error('Unknown workflow format');
+}
+```
+
+---
+
+## Legacy Template Discovery
 
 **Dynamic query** - never hardcode template list:
 
@@ -391,4 +570,14 @@ Templates discovered from `templates/*.json`:
 
 | Document | Purpose |
 |----------|---------|
-| templates/*.json | Workflow templates (dynamic discovery) |
+| spec/unified-workflow-spec.md | Unified PromptTemplate workflow specification |
+| ccw/data/flows/*.json | Unified workflows (DAG format, dynamic discovery) |
+| templates/*.json | Legacy workflow templates (command chain format) |
+
+### Demo Workflows (Unified Format)
+
+| File | Description | Nodes |
+|------|-------------|-------|
+| `demo-unified-workflow.json` | Auth implementation | 7 nodes: Analyze → Plan → Implement → Review → Tests → Report |
+| `parallel-ci-workflow.json` | CI/CD pipeline | 8 nodes: Parallel checks → Merge → Conditional notify |
+| `simple-analysis-workflow.json` | Analysis pipeline | 3 nodes: Explore → Analyze → Report |

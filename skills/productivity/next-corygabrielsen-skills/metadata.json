@@ -1,0 +1,17 @@
+{
+  "name": "next",
+  "repo": "corygabrielsen/skills",
+  "path": "next/SKILL.md",
+  "github_branch": "master",
+  "category": "productivity",
+  "source": "github.com/corygabrielsen/skills",
+  "dir_name": "next-corygabrielsen-skills",
+  "downloaded_at": "2026-03-01T07:17:31.170977Z",
+  "author": "corygabrielsen",
+  "source_url": "https://github.com/corygabrielsen/skills/blob/master/next/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/corygabrielsen/skills/blob/master/next/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

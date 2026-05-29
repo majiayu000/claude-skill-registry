@@ -1,0 +1,16 @@
+{
+  "name": "forecast-sector-relative-return-from-yield-spread",
+  "repo": "fatfingererr/macro-skills",
+  "path": "skills/forecast-sector-relative-return-from-yield-spread/SKILL.md",
+  "source": "github.com/fatfingererr/macro-skills",
+  "downloaded_at": "2026-01-27T01:02:14.015827Z",
+  "dir_name": "forecast-sector-relative-return-from-yield-spread",
+  "category": "analysis",
+  "author": "fatfingererr",
+  "source_url": "https://github.com/fatfingererr/macro-skills/blob/main/skills/forecast-sector-relative-return-from-yield-spread/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Ruei-Ci Wang",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

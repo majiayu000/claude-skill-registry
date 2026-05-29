@@ -141,3 +141,7 @@ Output a summary:
 | Tests fail | Code has errors | Fix failing tests before retrying |
 | Push rejected | Remote has new commits | Pull and rebase, then retry |
 | No changes to commit | Working tree is clean | Make changes first |
+
+## Reference Documents
+
+- [references/push.feature](references/push.feature) — Executable spec: detect project type, run tests first, block push on failure, commit+push on green (soc-qk4b)

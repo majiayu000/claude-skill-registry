@@ -1,0 +1,16 @@
+{
+  "name": "json-schema-validation",
+  "repo": "hirokazu-kobayashi-koba-hiro/idp-server",
+  "path": ".claude/skills/json-schema-validation/skill.md",
+  "source": "github.com/hirokazu-kobayashi-koba-hiro/idp-server",
+  "downloaded_at": "2026-02-02T03:59:54.823302Z",
+  "dir_name": "json-schema-validation",
+  "category": "api",
+  "author": "hirokazu-kobayashi-koba-hiro",
+  "source_url": "https://github.com/hirokazu-kobayashi-koba-hiro/idp-server/blob/main/.claude/skills/json-schema-validation/skill.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hirokazu-kobayashi-koba-hiro/idp-server/blob/main/.claude/skills/json-schema-validation/skill.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

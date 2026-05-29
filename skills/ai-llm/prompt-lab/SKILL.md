@@ -20,6 +20,17 @@ triggers:
   - citation grounding
 metadata:
   short-description: Iterate and evaluate LLM prompts with self-correction
+provides:
+  - skill-creation
+composes:
+  - scillm
+  - memory
+  - task-monitor
+
+taxonomy:
+  - creation
+  - iteration
+  - self-improvement
 ---
 
 # Prompt Lab
@@ -41,6 +52,9 @@ This gives the model a chance to self-correct rather than silently failing.
 
 ```bash
 cd /home/graham/workspace/experiments/pi-mono/.pi/skills/prompt-lab
+
+# Find the smallest model that works (NEW!)
+./run.sh find-minimum --ground-truth queryspec.json --threshold 0.80
 
 # Run evaluation with self-correction enabled (default)
 ./run.sh eval --prompt taxonomy_v1 --model deepseek
@@ -88,6 +102,38 @@ cd /home/graham/workspace/experiments/pi-mono/.pi/skills/prompt-lab
 
 ## Commands
 
+### find-minimum - Find Smallest Accurate Model (NEW!)
+
+Automatically test models from smallest to largest, stopping at the first model that meets your accuracy threshold. Supports both Chutes API and local Ollama.
+
+```bash
+# Find smallest model for QuerySpec with 80% accuracy threshold
+./run.sh find-minimum --ground-truth queryspec.json --threshold 0.80
+
+# Prefer local Ollama models (default)
+./run.sh find-minimum -g queryspec.json -t 0.80 --prefer-local
+
+# Test Chutes API models instead
+./run.sh find-minimum -g queryspec.json -t 0.80 --no-prefer-local
+
+# Options:
+#   --ground-truth, -g   Ground truth JSON file (required)
+#   --threshold, -t      Minimum accuracy threshold (default: 0.80)
+#   --prompt, -p         Optional prompt file
+#   --prefer-local       Prefer local Ollama (default: true)
+#   --max-models         Max models to test (default: 10)
+#   --verbose, -v        Show per-case details
+```
+
+**Model Sources:**
+- **Ollama (local)**: qwen3:1.7b, qwen2.5-coder:7b, qwen3:8b
+- **Chutes (API)**: Qwen2.5-Coder-32B, Qwen3-32B, DeepSeek-V3, etc.
+
+**Output:**
+- Sorted table of all tested models with JSON% and Action%
+- Recommended model with size and provider
+- Results saved to `results/find_minimum_*.json`
+
 ### eval - Run Evaluation
 
 ```bash
@@ -131,8 +177,65 @@ cd /home/graham/workspace/experiments/pi-mono/.pi/skills/prompt-lab
 
 ### test-sparta Options
 
-- `--phase <0|1>`: 0=Relationships (Technique->Control), 1=Simple Control QRA
-- `--threshold <float>`: Citation grounding threshold (default: 0.85)
+| Option | Default | Description |
+|--------|---------|-------------|
+| `--phase <0\|1>` | 0 | 0=Relationships (Technique->Control), 1=Simple Control QRA |
+| `--threshold <float>` | 0.85 | Citation grounding threshold |
+| `--min-anchoring` | 0.995 | Entity anchoring threshold (99.5% for LLM non-determinism) |
+| `--min-ambiguity` | 0.995 | Ambiguity gate threshold (99.5% for LLM non-determinism) |
+| `--min-grounding` | 0.90 | Citation grounding threshold |
+| `--json` | false | Output structured JSON summary |
+| `--json-stream` | false | Output NDJSON per case (streaming progress) |
+| `--task-monitor/--no-task-monitor` | true | Enable/disable task-monitor integration |
+| `--converge` | false | Enable iterative convergence mode |
+
+### Task-Monitor Integration
+
+prompt-lab integrates with the centralized task-monitor for live progress tracking:
+
+```bash
+# Run test with task-monitor (enabled by default)
+./run.sh test-sparta --cases 100
+
+# View progress in task-monitor TUI
+cd ~/.pi/skills/task-monitor
+uv run python monitor.py tui --filter prompt-lab
+
+# Or check state file directly
+cat /path/to/prompt-lab/prompt_lab_task_state.json | jq
+```
+
+State file schema:
+```json
+{
+  "completed": 50,
+  "total": 100,
+  "progress_pct": 50.0,
+  "gates": {
+    "ambiguity": {"passed": 50, "failed": 0, "rate": 1.0},
+    "anchoring": {"passed": 49, "failed": 1, "rate": 0.98},
+    "grounding": {"passed": 48, "failed": 2, "rate": 0.96}
+  },
+  "failures": [...],
+  "status": "running"
+}
+```
+
+### NDJSON Streaming Output
+
+For long-running tests, use `--json-stream` to output one JSON object per line:
+
+```bash
+./run.sh test-sparta --cases 500 --json-stream | tee results.jsonl
+
+# Each line:
+# {"case_id": "control_T1110", "status": "pass", "qra_count": 5, "metrics": {...}, "latency_ms": 1234.5}
+```
+
+This enables:
+- Real-time progress monitoring via `tail -f results.jsonl | jq`
+- Integration with streaming parsers
+- Resume from partial runs
 
 ### Validation Features
 

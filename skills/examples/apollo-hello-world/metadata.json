@@ -1,0 +1,18 @@
+{
+  "name": "apollo-hello-world",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/apollo-pack/skills/apollo-hello-world/SKILL.md",
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "downloaded_at": "2026-01-14T02:49:09.273274Z",
+  "dir_name": "apollo-hello-world",
+  "category": "examples",
+  "github_path": "plugins/saas-packs/apollo-pack/skills/apollo-hello-world",
+  "github_branch": "main",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/saas-packs/apollo-pack/skills/apollo-hello-world/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

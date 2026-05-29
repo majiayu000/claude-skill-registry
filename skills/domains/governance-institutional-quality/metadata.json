@@ -1,0 +1,17 @@
+{
+  "name": "governance-institutional-quality",
+  "repo": "AgentPMT/agent-skills",
+  "path": "skills/governance-institutional-quality/SKILL.md",
+  "github_branch": "main",
+  "category": "domains",
+  "source": "github.com/AgentPMT/agent-skills",
+  "dir_name": "governance-institutional-quality",
+  "downloaded_at": "2026-03-22T04:48:05.053253Z",
+  "author": "AgentPMT",
+  "source_url": "https://github.com/AgentPMT/agent-skills/blob/main/skills/governance-institutional-quality/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AgentPMT/agent-skills/blob/main/skills/governance-institutional-quality/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

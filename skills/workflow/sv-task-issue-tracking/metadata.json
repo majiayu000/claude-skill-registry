@@ -1,0 +1,16 @@
+{
+  "name": "sv-task-issue-tracking",
+  "repo": "mbtz/agent-skills",
+  "path": "skills/sv-task-issue-tracking/SKILL.md",
+  "source": "github.com/mbtz/agent-skills",
+  "downloaded_at": "2026-01-28T02:00:47.146180Z",
+  "dir_name": "sv-task-issue-tracking",
+  "category": "workflow",
+  "author": "mbtz",
+  "source_url": "https://github.com/mbtz/agent-skills/blob/main/skills/sv-task-issue-tracking/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Marius Holter Berntzen, https://github.com/mbtz",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

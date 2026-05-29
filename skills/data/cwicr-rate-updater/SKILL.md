@@ -1,5 +1,6 @@
 ---
-name: cwicr-rate-updater
+slug: "cwicr-rate-updater"
+display_name: "CWICR Rate Updater"
 description: "Update CWICR resource rates with current market prices. Integrate external price data, apply inflation adjustments, and maintain rate history."
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: tasks-documentation
 version: 1.0.0
-description: Autonomous subagent variant of documentation. Use when creating or updating technical documentation, API documentation, or inline code documentation.
+description: "[Docs] Autonomous subagent variant of documentation. Use when creating or updating technical documentation, API documentation, or inline code documentation."
 infer: false
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash
 ---
@@ -9,6 +9,20 @@ allowed-tools: Read, Write, Edit, Grep, Glob, Bash
 > **Skill Variant:** Use this skill for **autonomous documentation generation** with structured templates. For interactive documentation tasks with user feedback, use `documentation` instead.
 
 # Documentation Workflow
+
+## Summary
+
+**Goal:** Autonomously generate or update code documentation (XML docs, JSDoc, API docs, architecture docs) following platform conventions.
+
+- **Code Comments:** XML docs for C# public APIs, JSDoc for TypeScript, inline for complex logic
+- **API Documentation:** Endpoint descriptions, request/response schemas, error codes
+- **Architecture Documentation:** Component diagrams, data flow, integration guides
+- **Comment Types:** `/// <summary>` for APIs, `// TODO:` for planned work, `// HACK:` for workarounds
+
+**Key Principles:**
+- Explain "why" not "what" -- never state the obvious
+- Keep documentation close to code, update when code changes
+- Use this skill for autonomous generation; use `documentation` for interactive tasks
 
 ## When to Use This Skill
 

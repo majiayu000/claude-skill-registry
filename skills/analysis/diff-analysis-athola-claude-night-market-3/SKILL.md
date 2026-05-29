@@ -1,6 +1,6 @@
 ---
 name: diff-analysis
-description: 'Analyze changesets with risk scoring, categorization by type/impact, and release note preparation.'
+description: Analyzes changesets with risk scoring, categorization by type and impact, and release note preparation. Use when extracting insights from raw change data.
 alwaysApply: false
 category: analysis-methods
 tags:

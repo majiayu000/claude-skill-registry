@@ -1,0 +1,17 @@
+{
+  "name": "scientific-etetoolkit",
+  "repo": "Blurjp/ImagePrepMCP",
+  "path": ".claude/skills/scientific-etetoolkit/SKILL.md",
+  "github_branch": "main",
+  "category": "domains",
+  "source": "github.com/Blurjp/ImagePrepMCP",
+  "dir_name": "scientific-etetoolkit-blurjp-imageprepmcp-2",
+  "downloaded_at": "2026-03-01T04:59:04.212755Z",
+  "author": "Blurjp",
+  "source_url": "https://github.com/Blurjp/ImagePrepMCP/blob/main/.claude/skills/scientific-etetoolkit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Blurjp/ImagePrepMCP/blob/main/.claude/skills/scientific-etetoolkit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

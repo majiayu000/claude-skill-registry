@@ -1,6 +1,6 @@
 ---
 name: file-analysis
-description: 'Map file structure and organization.'
+description: Maps file structure and module organization of a codebase. Use before architecture reviews, refactoring planning, or migration scope estimation.
 alwaysApply: false
 category: workspace-ops
 tags:

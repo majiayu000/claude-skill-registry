@@ -120,7 +120,7 @@ After updating any importing patterns, **you MUST verify they compile and deploy
 # For each pattern that imports the changed pattern, test deployment
 # Example: if page-creator.tsx imports hotel-membership-extractor.tsx
 
-cd ../labs && deno task ct charm new \
+cd ../labs && deno task ct piece new \
   --api-url http://localhost:8000 \
   --identity ../labs/claude.key \
   --space testing \
@@ -194,10 +194,10 @@ One-line description of what this pattern does.
 ```bash
 # From community-patterns directory, test that a pattern compiles
 # Note: Command must be on ONE LINE (multi-line breaks argument parsing)
-cd ../labs && deno task ct charm new --identity ../labs/claude.key --api-url http://localhost:8000 --space test-compile ../community-patterns/patterns/$GITHUB_USER/my-pattern.tsx
+cd ../labs && deno task ct piece new --identity ../labs/claude.key --api-url http://localhost:8000 --space test-compile ../community-patterns/patterns/$GITHUB_USER/my-pattern.tsx
 ```
 
-**If compilation succeeds:** You'll see a charm ID like `baedrei...`
+**If compilation succeeds:** You'll see a piece ID like `baedrei...`
 
 **If compilation fails:** You'll see a `CompilerError` with the exact file and line:
 ```

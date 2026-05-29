@@ -1,6 +1,6 @@
 ---
 name: ui-ux-principles
-description: Modern UI/UX design principles for minimalist, efficient, and elegant interfaces. Covers keyboard-driven design, command palettes, component architecture, accessibility, and performance. Based on analysis of Linear, Raycast, Arc, and other top-tier developer tools in 2025. Use when designing UI components, planning features, or reviewing interface design decisions.
+description: Modern UI/UX: minimalist, keyboard-driven, accessible
 allowed-tools: Read, Grep, Write, Edit
 ---
 

@@ -1,0 +1,17 @@
+{
+  "name": "validate-bib",
+  "repo": "AndreaMentasti/tweet-election",
+  "path": ".claude/skills/validate-bib/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/AndreaMentasti/tweet-election",
+  "dir_name": "validate-bib",
+  "downloaded_at": "2026-03-22T04:51:15.570980Z",
+  "author": "AndreaMentasti",
+  "source_url": "https://github.com/AndreaMentasti/tweet-election/blob/main/.claude/skills/validate-bib/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AndreaMentasti/tweet-election/blob/main/.claude/skills/validate-bib/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

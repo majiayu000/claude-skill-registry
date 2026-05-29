@@ -1,9 +1,9 @@
 {
-  "name": "umbraco-menu",
+  "name": "umbraco-menu-items",
   "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
-  "path": "plugins/umbraco-backoffice-skills/skills/umbraco-menu/SKILL.md",
+  "path": "plugins/umbraco-backoffice-skills/skills/umbraco-menu-items/SKILL.md",
   "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills",
-  "downloaded_at": "2026-01-20T01:19:14.945883Z",
+  "downloaded_at": "2026-01-20T01:19:19.188535Z",
   "dir_name": "umbraco-menu",
   "category": "development",
   "github_path": "plugins/umbraco-backoffice-skills/skills/umbraco-menu-items",

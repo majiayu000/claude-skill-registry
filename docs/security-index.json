@@ -1,1 +1,1 @@
-{"schema_version":1,"updated_at":"2026-05-29T06:46:24.277965Z","count":157467,"deprecated_full_payload":true,"manifest":"security-index-manifest.json","message":"Full security-index payload moved to security-shards/*.json"}
+{"schema_version":1,"updated_at":"2026-05-29T14:57:39.239335Z","count":157418,"deprecated_full_payload":true,"manifest":"security-index-manifest.json","message":"Full security-index payload moved to security-shards/*.json"}

@@ -1,8 +1,9 @@
 ---
 name: ml-pipeline-automation
 description: Automate ML workflows with Airflow, Kubeflow, MLflow. Use for reproducible pipelines, retraining schedules, MLOps, or encountering task failures, dependency errors, experiment tracking issues.
-keywords: ML pipeline, Airflow, Kubeflow, MLflow, MLOps, workflow orchestration, data pipeline, model training automation, experiment tracking, model registry, Airflow DAG, task dependencies, pipeline monitoring, data quality, drift detection, hyperparameter tuning, model versioning, artifact management, Kubeflow Pipelines, pipeline automation, retries, sensors
 license: MIT
+metadata:
+  keywords: "ML pipeline, Airflow, Kubeflow, MLflow, MLOps, workflow orchestration, data pipeline, model training automation, experiment tracking, model registry, Airflow DAG, task dependencies, pipeline monitoring, data quality, drift detection, hyperparameter tuning, model versioning, artifact management, Kubeflow Pipelines, pipeline automation, retries, sensors"
 ---
 
 # ML Pipeline Automation

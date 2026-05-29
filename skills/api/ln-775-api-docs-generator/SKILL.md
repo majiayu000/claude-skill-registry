@@ -1,6 +1,7 @@
 ---
 name: ln-775-api-docs-generator
-description: Configures Swagger/OpenAPI documentation
+description: "Configures Swagger/OpenAPI documentation for backend APIs. Use when adding interactive API docs to a project."
+license: MIT
 ---
 
 # ln-775-api-docs-generator
@@ -242,6 +243,26 @@ security = HTTPBearer()
 - [Swashbuckle.AspNetCore](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)
 - [FastAPI OpenAPI](https://fastapi.tiangolo.com/tutorial/metadata/)
 - [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+
+---
+
+## Critical Rules
+
+- **Use MCP ref for current Swashbuckle/FastAPI API** — do not hardcode configuration from memory
+- **Auto-detect auth scheme** — scan for JWT, OAuth2, or API Key and configure security definition accordingly
+- **Enable XML documentation in .NET** — update csproj with `GenerateDocumentationFile` and suppress warning 1591
+- **FastAPI: customize, not replace** — built-in OpenAPI works by default, only add custom schema/security
+- **Idempotent** — if `AddSwaggerGen`/`UseSwagger` exists, return `status: "skipped"`
+
+## Definition of Done
+
+- [ ] Context Store received (stack, project root)
+- [ ] API structure analyzed (controllers/routers, auth method, versioning)
+- [ ] Documentation standards researched via MCP tools
+- [ ] Swagger/OpenAPI configuration generated with API info and security scheme
+- [ ] XML comments enabled (.NET) or custom OpenAPI schema configured (Python)
+- [ ] Syntax validated (`dotnet build` or `py_compile`)
+- [ ] Structured JSON response returned to ln-770 coordinator
 
 ---
 

@@ -1,6 +1,7 @@
 ---
 name: llm-artifacts-detection
 description: Detects common LLM coding agent artifacts in codebases. Identifies test quality issues, dead code, over-abstraction, and verbose LLM style patterns. Use when cleaning up AI-generated code or reviewing for agent-introduced cruft.
+user-invocable: false
 ---
 
 # LLM Artifacts Detection
@@ -123,12 +124,20 @@ Check for verbose LLM-style patterns that reduce code clarity:
 For each issue found, report: [FILE:LINE] ISSUE_TITLE
 ```
 
+## Gates (reporting)
+
+Run these in order so findings are evidence-bound, not inferred:
+
+1. **Anchor** — Set `FILE` and `LINE` from an opened buffer, `read_file`, or equivalent; do not rely only on stale search snippets. **Pass:** `LINE` is in range for `FILE`, and the described issue is visible on that line or its immediate neighbors.
+2. **Title** — `ISSUE_TITLE` states the defect in plain language (about one short sentence), not a proposed fix. **Pass:** someone opening `FILE` at `LINE` can see why the title applies.
+3. **Dedup** — Before final output, merge rows that share the same `FILE:LINE` and root cause. **Pass:** at most one `[FILE:LINE] ISSUE_TITLE` per distinct defect at that anchor.
+
 ## Usage
 
 1. Load this skill when reviewing AI-generated code
 2. Spawn agents for specific detection categories as needed
 3. Use reference files for detailed criteria and examples
-4. Report issues in format: `[FILE:LINE] ISSUE_TITLE`
+4. Apply **Gates (reporting)** above, then emit findings as `[FILE:LINE] ISSUE_TITLE`
 
 ## When to Apply
 

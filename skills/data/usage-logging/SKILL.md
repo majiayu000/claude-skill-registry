@@ -1,36 +1,40 @@
 ---
 name: usage-logging
-description: |
-
-Triggers: usage, metrics, logging, analytics, sessions
-  Session-aware usage logging for audit trails, cost tracking, and analytics with JSONL format.
-
-  Triggers: usage logging, audit trails, cost tracking, session logging, analytics, structured logging, JSONL
-
-  Use when: implementing audit trails, tracking costs, collecting usage analytics, managing session logging
-
-  DO NOT use when: simple operations without logging needs.
-
-  Consult this skill when implementing usage logging and audit trails.
+description: Consult this skill when implementing usage logging and audit trails.
+alwaysApply: false
+  Use when implementing audit trails, tracking costs, collecting usage analytics,
+  managing session logging. Do not use when simple operations without logging needs.
 category: infrastructure
-tags: [logging, usage, audit, metrics, sessions, analytics]
+tags:
+- logging
+- usage
+- audit
+- metrics
+- sessions
+- analytics
 dependencies: []
-tools: [usage-logger]
+tools: []
 provides:
-  infrastructure: [usage-logging, session-management, audit-trails]
-  patterns: [structured-logging, metrics-collection, cost-tracking]
-usage_patterns:
-  - audit-logging
-  - cost-tracking
-  - usage-analytics
+  infrastructure:
+  - usage-logging
   - session-management
+  - audit-trails
+  patterns:
+  - structured-logging
+  - metrics-collection
+  - cost-tracking
+usage_patterns:
+- audit-logging
+- cost-tracking
+- usage-analytics
+- session-management
 complexity: beginner
+model_hint: fast
 estimated_tokens: 450
 progressive_loading: true
 modules:
-  - modules/session-patterns.md
-  - modules/log-formats.md
-version: 1.3.7
+- modules/session-patterns.md
+- modules/log-formats.md
 ---
 ## Table of Contents
 
@@ -55,12 +59,16 @@ version: 1.3.7
 
 Session-aware logging infrastructure for tracking operations across plugins. Provides structured JSONL logging with automatic session management for audit trails and analytics.
 
-## When to Use
+## When To Use
 
 - Need audit trails for operations
 - Tracking costs across sessions
 - Building usage analytics
 - Debugging with operation history
+
+## When NOT To Use
+
+- Simple operations without logging needs
 
 ## Core Concepts
 
@@ -160,15 +168,3 @@ grep "2025-12-05" ~/.claude/leyline/usage/my-service.jsonl
 - Operation logged with all required fields
 - Session tracked for grouping
 - Logs queryable for analytics
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

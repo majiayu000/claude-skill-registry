@@ -9,6 +9,8 @@ agent: general-purpose
 
 # Dynamic Skills Manager
 
+> **Version:** 2.1.0 | **Last Updated:** 2025-01-27
+
 Orchestrates on-demand generation of crate-specific skills based on project dependencies.
 
 ## Concept
@@ -37,7 +39,20 @@ When entering a directory with Cargo.toml:
 - `/clean-crate-skills [crate]` - Remove skills
 - `/update-crate-skill <crate>` - Update specific skill
 
-## Architecture
+## Execution Mode Detection
+
+**CRITICAL: Check if agent and command infrastructure is available.**
+
+Try to read: `../../agents/` directory
+Check if `/create-llms-for-skills` and `/create-skills-via-llms` commands work.
+
+---
+
+## Agent Mode (Plugin Install)
+
+**When full plugin infrastructure is available:**
+
+### Architecture
 
 ```
 Cargo.toml
@@ -51,6 +66,120 @@ For each crate:
   │     └─ Not found: /create-llms-for-skills first
   └─ Load skill
 ```
+
+### Workflow Priority
+
+1. **actionbook MCP** - Check for pre-generated llms.txt
+2. **/create-llms-for-skills** - Generate llms.txt from docs.rs
+3. **/create-skills-via-llms** - Create skills from llms.txt
+
+### Sync Command
+
+```bash
+/sync-crate-skills [--force]
+```
+
+1. Parse Cargo.toml for dependencies
+2. For each dependency:
+   - Check if skill exists at `~/.claude/skills/{crate}/`
+   - If missing (or --force): generate skill
+3. Report results
+
+---
+
+## Inline Mode (Skills-only Install)
+
+**When agent/command infrastructure is NOT available, execute manually:**
+
+### Step 1: Parse Cargo.toml
+
+```bash
+# Read dependencies
+cat Cargo.toml | grep -A 100 '\[dependencies\]' | grep -E '^[a-zA-Z]'
+```
+
+Or use Read tool to parse Cargo.toml and extract:
+- `[dependencies]` section
+- `[dev-dependencies]` section (optional)
+- Workspace members (if workspace project)
+
+### Step 2: Check Existing Skills
+
+```bash
+# List existing skills
+ls ~/.claude/skills/
+```
+
+Compare with dependencies to find missing skills.
+
+### Step 3: Generate Missing Skills
+
+For each missing crate:
+
+```bash
+# 1. Fetch crate documentation
+agent-browser open "https://docs.rs/{crate}/latest/{crate}/"
+agent-browser get text ".docblock"
+# Save content
+
+# 2. Create skill directory
+mkdir -p ~/.claude/skills/{crate}
+mkdir -p ~/.claude/skills/{crate}/references
+
+# 3. Create SKILL.md
+# Use template from rust-skill-creator inline mode
+
+# 4. Create reference files for key modules
+agent-browser open "https://docs.rs/{crate}/latest/{crate}/{module}/"
+agent-browser get text ".docblock"
+# Save to ~/.claude/skills/{crate}/references/{module}.md
+
+agent-browser close
+```
+
+**WebFetch fallback:**
+```
+WebFetch("https://docs.rs/{crate}/latest/{crate}/", "Extract API documentation overview, key types, and usage examples")
+```
+
+### Step 4: Workspace Support
+
+For Cargo workspace projects:
+
+```bash
+# 1. Parse root Cargo.toml for workspace members
+cat Cargo.toml | grep -A 10 '\[workspace\]'
+
+# 2. For each member, parse their Cargo.toml
+for member in members; do
+  cat ${member}/Cargo.toml | grep -A 100 '\[dependencies\]'
+done
+
+# 3. Aggregate and deduplicate dependencies
+# 4. Generate skills for missing crates
+```
+
+### Clean Command (Inline)
+
+```bash
+# Clean specific crate
+rm -rf ~/.claude/skills/{crate_name}
+
+# Clean all generated skills
+rm -rf ~/.claude/skills/*
+```
+
+### Update Command (Inline)
+
+```bash
+# Remove old skill
+rm -rf ~/.claude/skills/{crate_name}
+
+# Re-generate (same as sync for single crate)
+# Follow Step 3 above for the specific crate
+```
+
+---
 
 ## Local Skills Directory
 
@@ -67,24 +196,21 @@ For each crate:
     └── references/
 ```
 
-## Workflow Priority
-
-1. **actionbook MCP** - Check for pre-generated llms.txt
-2. **/create-llms-for-skills** - Generate llms.txt from docs.rs
-3. **/create-skills-via-llms** - Create skills from llms.txt
-
-## Workspace Support
-
-For Cargo workspace projects:
-1. Parse root Cargo.toml for `[workspace] members`
-2. Collect all member Cargo.toml paths
-3. Aggregate all dependencies
-4. Deduplicate before skill generation
+---
 
 ## Related Commands
 
 - `/sync-crate-skills` - Main sync command
 - `/clean-crate-skills` - Cleanup command
 - `/update-crate-skill` - Update command
-- `/create-llms-for-skills` - Generate llms.txt
-- `/create-skills-via-llms` - Create skills from llms.txt
+- `/create-llms-for-skills` - Generate llms.txt (Agent Mode only)
+- `/create-skills-via-llms` - Create skills from llms.txt (Agent Mode only)
+
+## Error Handling
+
+| Error | Cause | Solution |
+|-------|-------|----------|
+| Commands not found | Skills-only install | Use inline mode |
+| Cargo.toml not found | Not in Rust project | Navigate to project root |
+| docs.rs unavailable | Network issue | Retry or skip crate |
+| Permission denied | Directory issue | Check ~/.claude/skills/ permissions |

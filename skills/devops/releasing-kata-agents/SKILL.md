@@ -21,6 +21,7 @@ Guide the release process for the Kata Agents Electron desktop application.
 ## Step 1: Pre-Release Verification
 
 Our workflow is PR-driven:
+
 - **Development** happens on feature branches
 - **Releases** happen on release branches created from main
 
@@ -29,11 +30,13 @@ Our workflow is PR-driven:
 Before creating a release branch, verify:
 
 1. **Check current branch**: Must be on `main` (not a feature branch)
+
    ```bash
    git branch --show-current
    ```
 
 2. **If on a feature branch**: The PR must pass CI and be merged first
+
    ```bash
    # Check PR status
    gh pr status
@@ -66,6 +69,14 @@ cd apps/electron && bun run dist:mac
 
 # Check for uncommitted changes
 git status
+```
+
+Ask the user if they want to run e2e tests (optional but recommended):
+
+```bash
+# From monorepo root (recommended)
+bun run test:e2e           # Mock tests
+bun run test:e2e:live      # Live tests with real credentials
 ```
 
 **Stop if tests fail.** Fix issues before proceeding.
@@ -106,16 +117,20 @@ Add entry to `CHANGELOG.md` following Keep a Changelog format:
 ## [X.Y.Z] - YYYY-MM-DD
 
 ### Added
+
 - New feature descriptions
 
 ### Fixed
+
 - Bug fix descriptions
 
 ### Changed
+
 - Modification descriptions
 ```
 
 **Guidelines:**
+
 - Use today's date
 - Group changes by type (Added, Fixed, Changed, Removed)
 - Write user-facing descriptions (what changed, not how)
@@ -159,6 +174,7 @@ gh pr create --title "Release vX.Y.Z" --body "## Release vX.Y.Z
 - [ ] Tests passing
 - [ ] Local production build tested"
 ```
+
 ## Step 7a: Monitor PR Status Checks
 
 - PR cannot be merged unless `validate` GitHub Actions CI workflow passes
@@ -176,6 +192,7 @@ gh run watch  # Watch the latest run
 ```
 
 **CI Pipeline:**
+
 1. `release.yml` triggers on push to main
 2. Detects version change (compares package.json to existing tags)
 3. Builds for macOS (arm64 + x64), Windows (x64), Linux (x64)
@@ -197,6 +214,7 @@ gh release view vX.Y.Z --json assets --jq '.assets[].name'
 ```
 
 Expected artifacts:
+
 - `Kata-Agents-arm64.dmg` (macOS Apple Silicon)
 - `Kata-Agents-x64.dmg` (macOS Intel)
 - `Kata-Agents-arm64.zip` / `Kata-Agents-x64.zip`
@@ -223,6 +241,7 @@ open /tmp/Kata-Agents-arm64.dmg
 ```
 
 **Verify:**
+
 - App launches without errors
 - Sessions load and display correctly
 - Agent execution works
@@ -247,6 +266,7 @@ cd apps/electron && bun run dist:win          # Windows
 Output: `apps/electron/release/Kata-Agents-{arch}.dmg`
 
 **Testing the local build:**
+
 ```bash
 # Clear stale window state first
 rm ~/.kata-agents/window-state.json
@@ -258,6 +278,7 @@ open "apps/electron/release/mac-arm64/Kata Agents.app"
 ## Troubleshooting
 
 See `./release-troubleshooting.md` for common issues:
+
 - CI workflow failures
 - Build path errors (must run from `apps/electron`)
 - Code signing issues
@@ -266,6 +287,7 @@ See `./release-troubleshooting.md` for common issues:
 ## Acceptance Criteria
 
 **Pre-release:**
+
 - [ ] package.json version updated
 - [ ] apps/electron/package.json version updated (matches root)
 - [ ] CHANGELOG.md has entry for new version
@@ -273,10 +295,12 @@ See `./release-troubleshooting.md` for common issues:
 - [ ] Local production build works (`cd apps/electron && bun run dist:mac`)
 
 **Release:**
+
 - [ ] PR merged to main
 - [ ] GitHub Release created with correct tag (`gh release view vX.Y.Z`)
 
 **Post-release verification:**
+
 - [ ] GitHub Release created with tag (`gh release view vX.Y.Z`)
 - [ ] All platform artifacts attached to release
 - [ ] Manual app test passes (download, launch, verify sessions)

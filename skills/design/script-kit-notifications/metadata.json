@@ -1,0 +1,20 @@
+{
+  "name": "script-kit-notifications",
+  "description": "",
+  "repo": "johnlindquist/script-kit-next",
+  "category": "design",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/johnlindquist/script-kit-next",
+  "github_path": ".opencode/skill/script-kit-notifications",
+  "github_branch": "main",
+  "dir_name": "script-kit-notifications",
+  "downloaded_at": "2026-02-05T01:44:28.663961Z",
+  "author": "johnlindquist",
+  "source_url": "https://github.com/johnlindquist/script-kit-next/blob/main/.opencode/skill/script-kit-notifications/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/johnlindquist/script-kit-next/blob/main/.opencode/skill/script-kit-notifications/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

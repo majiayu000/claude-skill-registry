@@ -8,9 +8,9 @@ allowed-tools: Task, Read, Write, Edit, Bash, Grep, Glob, TodoWrite, AskUserQues
 
 ## Overview
 
-Performs post-review cosmetic cleanup to make code production-ready. This is the final workflow step after `/developer-kit-specs:specs.task-review` approval.
+Performs post-review cosmetic cleanup to make code production-ready. This workflow is now integrated as Phase T-7 of `/developer-kit-specs:specs.task-implementation`. It can also be invoked manually using `--action=cleanup`.
 
-**Input**: `docs/specs/[id]/tasks/TASK-XXX.md` (reviewed status)  
+**Input**: `docs/specs/[id]/tasks/TASK-XXX.md` (reviewed status)
 **Output**: Cleaned code, task marked `completed`
 
 ## When to Use
@@ -26,6 +26,7 @@ Performs post-review cosmetic cleanup to make code production-ready. This is the
 |----------|----------|-------------|
 | `--lang` | No | `java`, `spring`, `typescript`, `nestjs`, `react`, `python`, `general` |
 | `--task` | Yes | Path to task file |
+| `--action`| No | Set to `cleanup` for manual invocation |
 
 ## Best Practices
 
@@ -45,11 +46,11 @@ See `references/language-patterns.md` for language-specific formatter commands, 
    - `--lang` (optional): Target language/framework
    - `--task` (required): Task ID or file path
    - `--spec` (optional): Spec folder path (used with task ID)
-   
+
    **Support two formats**:
    - Format 1 (direct path): `--task=docs/specs/001-feature/tasks/TASK-001.md`
    - Format 2 (spec+task): `--spec=docs/specs/001-feature --task=TASK-001`
-   
+
    If Format 2 is used, construct the task file path as: `{spec}/tasks/{task}.md`
 
 2. Read the task file. Verify:
@@ -106,7 +107,7 @@ Review context for each finding. Remove confirmed debt and document what was rem
    - Add a `## Cleanup Summary` section to the task file
    - Check any remaining boxes in the DoD section
    - Hooks automatically update status to `completed` and set `completed_date` + `cleanup_date`
-   
+
 2. Append `## Cleanup Summary` to task file with:
    - Files cleaned
    - Changes made
@@ -118,7 +119,7 @@ Review context for each finding. Remove confirmed debt and document what was rem
 ### Spring Boot Cleanup
 
 ```bash
-/developer-kit-specs:specs-code-cleanup --lang=spring --task="docs/specs/001-user-auth/tasks/TASK-001.md"
+/developer-kit-specs:specs.task-implementation --lang=spring --task="docs/specs/001-user-auth/tasks/TASK-001.md" --action=cleanup
 ```
 
 Actions:
@@ -132,7 +133,7 @@ Actions:
 ### TypeScript Cleanup
 
 ```bash
-/developer-kit-specs:specs-code-cleanup --lang=typescript --task="docs/specs/002-dashboard/tasks/TASK-003.md"
+/developer-kit-specs:specs.task-implementation --lang=typescript --task="docs/specs/002-dashboard/tasks/TASK-003.md" --action=cleanup
 ```
 
 Actions:

@@ -7,7 +7,7 @@ description: Technical writing patterns for README files, API documentation, arc
 
 This skill provides execution-ready patterns for writing clear, maintainable technical documentation. Claude should apply these patterns when users need README files, API docs, ADRs, changelogs, or any technical writing.
 
-**Modern Best Practices (2025)**: Docs-as-code workflows, Markdown standardization, automated changelog generation, ADR (Architecture Decision Records), interactive API docs (OpenAPI 3.2+), documentation testing, accessibility standards (WCAG 2.2), AI-assisted writing (Mintlify, Copilot Docs), video tutorials (Loom, Tango), and docs in version control with CI/CD.
+**Modern Best Practices (2025)**: Docs-as-code workflows, Markdown standardization, automated changelog generation, ADRs, interactive API docs (OpenAPI 3.2+), documentation testing, accessibility standards (WCAG 2.2), and docs in version control with CI/CD.
 
 ---
 
@@ -270,7 +270,41 @@ Complete copy-paste ready templates organized by domain:
 - **Changelog Template**: [templates/project-management/changelog-template.md](templates/project-management/changelog-template.md) - Keep a Changelog format with semantic versioning
 - **Contributing Guide**: [templates/project-management/contributing-template.md](templates/project-management/contributing-template.md) - Contribution workflow, code standards, commit guidelines
 
+### Docs-as-Code
+
+- **Docs Structure Template**: [templates/docs-as-code/docs-structure-template.md](templates/docs-as-code/docs-structure-template.md) - IA, folder structure, freshness metadata
+- **Docs Ownership Model**: [templates/docs-as-code/ownership-model.md](templates/docs-as-code/ownership-model.md) - Owners, review cadence, enforcement
+
 ---
+
+## Do / Avoid (Dec 2025)
+
+### Do
+
+- Assign owners and review cadences to docs that matter (runbooks, onboarding, APIs).
+- Add CI checks for links, style, and stale docs where feasible.
+- Prefer small, task-oriented docs over “big wiki pages”.
+
+### Avoid
+
+- Docs without owners (guaranteed to rot).
+- Stale runbooks (dangerous during incidents).
+- Copy/paste docs that drift from code and config.
+
+## What Good Looks Like
+
+- Ownership: every critical doc has an owner and review cadence (runbooks, onboarding, APIs).
+- Structure: consistent information architecture (tutorial/how-to/reference/explanation) and clear navigation.
+- Quality gates: CI runs link checks and linting; stale docs are flagged.
+- Decision capture: ADRs exist for major choices and are referenced from code and runbooks.
+- Onboarding: a new engineer can get to a first PR within a defined target time (tracked and improved).
+
+## Optional: AI / Automation
+
+Use only when explicitly requested and policy-compliant.
+
+- Draft and summarize docs changes; humans review before publishing.
+- Generate doc diffs in PRs; do not auto-merge.
 
 ## External Resources
 
@@ -293,6 +327,98 @@ See [data/sources.json](data/sources.json) for:
 - **Testing**: [../qa-testing-strategy/SKILL.md](../qa-testing-strategy/SKILL.md) - Test documentation patterns, test plan templates
 - **Git Workflow**: [../git-workflow/SKILL.md](../git-workflow/SKILL.md) - Commit message standards (Conventional Commits), changelog automation
 - **PRD Development**: [../docs-ai-prd/SKILL.md](../docs-ai-prd/SKILL.md) - PRD templates, tech specs, story mapping for new features
+
+---
+
+## Navigation: Production Gotchas Documentation
+
+**Purpose**: Document platform-specific issues, silent failures, and hard-to-debug problems to prevent repeated mistakes.
+
+**When to Use**: After discovering a production issue that:
+- Took significant time to debug
+- Was caused by external service configuration (not your code)
+- Could affect other developers on the team
+- Has a non-obvious solution
+
+### Gotcha Documentation Structure
+
+```markdown
+## Production Gotchas
+
+### [Provider/Feature Name]
+
+- **The Trap**: What looks correct but actually fails
+- **Symptom**: How the issue manifests (error messages, behavior)
+- **Root Cause**: Why it happens (the underlying reason)
+- **Fix**: Step-by-step solution
+- **Prevention**: How to avoid this in the future
+```
+
+### Example Gotchas (Real-World)
+
+```markdown
+## Production Gotchas
+
+### Vercel Cron Jobs Require Pro Plan
+
+- **The Trap**: Cron configuration in vercel.json looks valid, jobs never run
+- **Symptom**: Scheduled tasks (notifications, data cleanup) never execute; no errors in logs
+- **Root Cause**: Vercel Free tier doesn't support cron jobs; requires Pro plan ($20/month)
+- **Fix**: Upgrade to Vercel Pro, verify cron jobs in Vercel dashboard under "Cron Jobs" tab
+- **Prevention**: Check Vercel plan requirements before implementing scheduled features
+
+### Supabase Site URL Misconfiguration
+
+- **The Trap**: OAuth redirects users to localhost instead of production domain
+- **Symptom**: Users click "Sign in with Google" → redirected to localhost:3000 → broken auth
+- **Root Cause**: Site URL in Supabase Dashboard → Authentication → URL Configuration still set to localhost
+- **Fix**: Set Site URL to `https://your-production-domain.com` (no trailing slash)
+- **Prevention**: Add Site URL configuration to deployment checklist
+
+### Apple OAuth Secret Expiration
+
+- **The Trap**: Apple Sign-In stops working after 6 months with no warning
+- **Symptom**: "Invalid client secret" error on Apple OAuth flow
+- **Root Cause**: Apple's client secret JWT expires in 180 days (not documented clearly)
+- **Fix**: Regenerate client secret using .p8 key: `npm run generate-apple-secret`
+- **Prevention**: Set calendar reminder 7 days before expiration; consider automation
+
+### Next.js API Route JSON Parsing
+
+- **The Trap**: API returns 500 error when client sends malformed JSON
+- **Symptom**: `SyntaxError: Unexpected token` in server logs; client sees generic 500
+- **Root Cause**: `await request.json()` throws if body isn't valid JSON
+- **Fix**: Wrap in try-catch, return 400 with helpful message
+- **Prevention**: Create reusable `parseRequestBody` utility (see software-backend skill)
+```
+
+### Where to Document Gotchas
+
+| Project Type | Location | Format |
+|-------------|----------|--------|
+| Claude Code projects | `CLAUDE.md` | Markdown section |
+| Standard projects | `docs/gotchas.md` or `TROUBLESHOOTING.md` | Dedicated file |
+| Wiki/Notion | Dedicated page | Searchable knowledge base |
+| README | Bottom section | Brief summaries with links |
+
+### Gotcha Documentation Checklist
+
+```
+[ ] Gotcha has clear, searchable title
+[ ] Symptom describes what user sees (error messages, behavior)
+[ ] Root cause explains WHY (not just WHAT)
+[ ] Fix has step-by-step instructions
+[ ] Prevention explains how to avoid in future
+[ ] Added to project documentation
+[ ] Shared with team (Slack, standup, PR comment)
+```
+
+### Anti-Patterns
+
+- **Too vague**: "Sometimes auth breaks" → Add specific error messages and conditions
+- **Missing root cause**: "Set Site URL to production" → Explain WHY this matters
+- **No prevention**: Fix alone isn't enough → How to avoid this next time?
+- **Buried in code comments**: Gotchas should be discoverable, not hidden in code
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: vorlageanordnung
-description: "Triage einer gerichtlichen oder behördlichen Beweisanordnung — Klassifizierung, Umfangs- und Beschlagnahmeschutzanalyse, Portfolioquerverweis und Erstellung eines Einwendungsgerüsts, Mitwirkungsplans und Fristenkalenders. Lädt, wenn der Nutzer eine Vorladung, Zeugenladung, Vorlageanordnung, Durchsuchungsanordnung oder behördliche Anforderung erhalten hat und deren Reaktionsstrategie klären möchte."
+description: "Vorlageanordnung nach § 142 ZPO beantragen: Vorlage von Urkunden durch Gegner oder Dritte. Normen: §§ 142 143 ZPO. Prüfraster: urkundliche Beweise, Pflicht zur Vorlage, Sanktionen bei Weigerung. Output: Antrag auf Urkundenvorlageanordnung. Abgrenzung: nicht Beweissicherungsverfahren §§ 485 ff. ZPO."
 ---
 
 # Triage Gerichtliche und Behördliche Beweisanordnungen
@@ -47,8 +47,6 @@ Hinweis: Ein direktes Pendant zur US-amerikanischen „Subpoena" existiert im de
 - **BGH, Beschl. v. 10.07.2019 – StB 23/19, NStZ 2019, 687 Rn. 14 ff.** — Reichweite des Beschlagnahmeverbots § 97 StPO bei Kanzleidurchsuchung; Verteidiger-Mandant-Gewahrsam; Beweismittelbeschlagnahme nur bei nicht-verteidigungsrelevanten Gegenständen.
 - **BGH, Beschl. v. 07.11.2018 – XII ZB 2/16, NJW 2019, 374 Rn. 18 ff.** — § 142 ZPO Urkundenvorlage; richterliche Ermessensgrenzen; Verweigerung wegen anwaltlicher Verschwiegenheit wirksam.
 - **EuGH, Urt. v. 08.12.2022 – C-694/20 (Orde van Vlaamse Balies u.a.), NJW 2023, 197** — Schutz anwaltlicher Kommunikation im EU-Recht; Meldepflichten aus DAC6-Richtlinie verletzen bei Rechtsanwälten den Schutz vertraulicher Kommunikation; maßgeblich für alle grenzüberschreitenden Sachverhalte mit EU-Bezug.
-- **BVerwG, Urt. v. 15.02.2018 – 1 A 2/17, NVwZ 2018, 825 Rn. 20** — Auskunftsverweigerungsrecht nach § 99 VwGO; behördliches Geheimhaltungsinteresse vs. Beibringungspflicht; Abwägungsmaßstab.
-
 ### Kommentarliteratur
 
 - `Meyer-Goßner/Schmitt, StPO, 67. Aufl. 2024, § 97 Rn. 5 ff.` — Beschlagnahmeverbot; Gewahrsam; Treuhandverhältnis; Durchsuchungsschutz in Kanzleiräumen.
@@ -302,3 +300,11 @@ Ohne ausdrückliche Bestätigung keine Weiterleitung. Triage, Scoping und intern
 - Kommentare: Meyer-Goßner/Schmitt, StPO, 67. Aufl. 2024, § 97; Zöller/Greger, ZPO, 35. Aufl. 2024, § 142; Kopp/Schenke, VwGO, 29. Aufl. 2023, § 99
 
 Hinweis: Dieser Skill ersetzt keine anwaltliche Beratung im konkreten Einzelfall.
+
+<!-- AUDIT 27.05.2026
+AZ BVerwG 1 A 2/17 entfernt: Entscheidung vom 22.08.2017 existiert (bverwg.de bestaetigt),
+behandelt aber Abschiebungsanordnung nach § 58a AufenthG gegen algerischen Islamisten (WRONG_TOPIC),
+nicht das behauptete Thema "Auskunftsverweigerungsrecht § 99 VwGO / behoerdliches
+Geheimhaltungsinteresse". Das im Skill genannte Datum 15.02.2018 existiert auf dejure.org
+ebenfalls nicht. Halluzinierte Referenz geloescht. Keine Ersatzquelle ergaenzt.
+-->

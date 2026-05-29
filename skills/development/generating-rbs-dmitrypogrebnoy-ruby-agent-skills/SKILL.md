@@ -52,7 +52,7 @@ Always perform this step.
   - See [rbs_by_example.md](reference/rbs_by_example.md) for short list of RBS signatures examples
   - See [core](reference/rbs_examples/core/STRUCTURE.md) for RBS signatures of Ruby core library
   - See [stdlib](reference/rbs_examples/stdlib/STRUCTURE.md) for RBS signatures of Ruby standard library
-  - Pay extra attention to `Data` and `Struct` types. See [data_and_struct.md](reference/data_and_struct.md) for handling guide
+  - Pay extra attention to `Data` and `Struct` types. See [data_and_struct.md](https://github.com/ruby/rbs/blob/master/docs/data_and_struct.md) for handling guide
   - See [gem_rbs_collection](https://github.com/ruby/gem_rbs_collection/tree/main/gems) for RBS signature examples of different Ruby libraries. This link contains only RBS files, Ruby sources are not included.
 
 ## 3. Eliminate `untyped` types in generated signatures
@@ -61,7 +61,7 @@ Always perform this step.
 
 - Go through all generated signatures and replace `untyped` with the proper type.
 - Use assumptions and calls examples in Ruby code and tests to infer the proper type.
-- If you cannot infer the proper type, leave it as `untyped`. 
+- If you cannot infer the proper type, leave it as `untyped`.
   - It is a last resort, use it only when there is no other option.
 
 ## 4. Review and refine RBS signatures
@@ -94,4 +94,4 @@ Perform this step ONLY if the project Gemfile includes `steep` gem AND the proje
 - [rbs_by_example.md](reference/rbs_by_example.md) - Short list of RBS signatures examples
 - [core](reference/rbs_examples/core/STRUCTURE.md) - RBS signatures of Ruby core library
 - [stdlib](reference/rbs_examples/stdlib/STRUCTURE.md) - RBS signatures of Ruby standard library
-- [data_and_struct.md](reference/data_and_struct.md) - Explanation on `Data` and `Struct` types handling
+- [data_and_struct.md](https://github.com/ruby/rbs/blob/master/docs/data_and_struct.md) - Explanation on `Data` and `Struct` types handling

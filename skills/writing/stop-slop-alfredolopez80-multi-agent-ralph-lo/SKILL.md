@@ -1,11 +1,18 @@
 ---
-# VERSION: 2.43.0
+# VERSION: 2.88.0
 name: stop-slop
 description: "A skill for removing AI-generated writing patterns ('slop') from prose. Eliminates telltale signs of AI writing like filler phrases, excessive hedging, overly formal language, and mechanical sentence structures. Use when: writing content that should sound human and natural, editing AI-generated drafts, cleaning up prose for publication, or any content that needs to sound authentic rather than AI-generated. Triggers: 'stop-slop', 'remove AI tells', 'clean up prose', 'make it sound human', 'edit AI writing'."
 allowed-tools: Read,Edit,Write,Bash,Glob
 ---
 
 # Stop Slop
+
+## v2.88 Key Changes (MODEL-AGNOSTIC)
+
+- **Model-agnostic**: Uses model configured in `~/.claude/settings.json` or CLI/env vars
+- **No flags required**: Works with the configured default model
+- **Flexible**: Works with GLM-5, Claude, Minimax, or any configured model
+- **Settings-driven**: Model selection via `ANTHROPIC_DEFAULT_*_MODEL` env vars
 
 A skill for removing AI tells from prose. AI writing has patterns—predictable phrases, structures, and rhythms. Once you notice them, you see them everywhere.
 

@@ -99,29 +99,29 @@ type-inference-analysis → type-guard-design → generic-type-patterns → disc
 
 ### references/（詳細知識）
 
-| リソース | パス | 読込条件 |
-| --- | --- | --- |
-| Level1 基礎 | [references/Level1_basics.md](references/Level1_basics.md) | 初回整理時 |
-| Level2 実務 | [references/Level2_intermediate.md](references/Level2_intermediate.md) | 型設計時 |
-| Level3 応用 | [references/Level3_advanced.md](references/Level3_advanced.md) | 詳細分析時 |
-| Level4 専門 | [references/Level4_expert.md](references/Level4_expert.md) | 改善ループ時 |
-| strictモード設定 | [references/strict-mode-guide.md](references/strict-mode-guide.md) | 初期設定時 |
-| 型ガードパターン | [references/type-guard-patterns.md](references/type-guard-patterns.md) | 型ナローイング設計時 |
-| ジェネリックパターン | [references/generics-patterns.md](references/generics-patterns.md) | 汎用型設計時 |
-| 識別可能ユニオン | [references/discriminated-union-patterns.md](references/discriminated-union-patterns.md) | 網羅性チェック設計時 |
+| リソース             | パス                                                                                     | 読込条件             |
+| -------------------- | ---------------------------------------------------------------------------------------- | -------------------- |
+| Level1 基礎          | [references/Level1_basics.md](references/Level1_basics.md)                               | 初回整理時           |
+| Level2 実務          | [references/Level2_intermediate.md](references/Level2_intermediate.md)                   | 型設計時             |
+| Level3 応用          | [references/Level3_advanced.md](references/Level3_advanced.md)                           | 詳細分析時           |
+| Level4 専門          | [references/Level4_expert.md](references/Level4_expert.md)                               | 改善ループ時         |
+| strictモード設定     | [references/strict-mode-guide.md](references/strict-mode-guide.md)                       | 初期設定時           |
+| 型ガードパターン     | [references/type-guard-patterns.md](references/type-guard-patterns.md)                   | 型ナローイング設計時 |
+| ジェネリックパターン | [references/generics-patterns.md](references/generics-patterns.md)                       | 汎用型設計時         |
+| 識別可能ユニオン     | [references/discriminated-union-patterns.md](references/discriminated-union-patterns.md) | 網羅性チェック設計時 |
 
 ### scripts/（決定論的処理）
 
-| スクリプト | 機能 |
-| --- | --- |
-| `scripts/check-type-safety.mjs` | 型安全性チェック |
-| `scripts/log_usage.mjs` | 使用記録と評価メトリクス更新 |
-| `scripts/validate-skill.mjs` | スキル構造の検証 |
+| スクリプト                      | 機能                         |
+| ------------------------------- | ---------------------------- |
+| `scripts/check-type-safety.mjs` | 型安全性チェック             |
+| `scripts/log_usage.mjs`         | 使用記録と評価メトリクス更新 |
+| `scripts/validate-skill.mjs`    | スキル構造の検証             |
 
 ### assets/（テンプレート・素材）
 
-| アセット | 用途 |
-| --- | --- |
+| アセット                       | 用途                       |
+| ------------------------------ | -------------------------- |
 | `assets/type-safe-patterns.ts` | 型安全パターンテンプレート |
 
 ## 変更履歴

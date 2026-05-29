@@ -1,0 +1,16 @@
+{
+  "name": "dialogue-help",
+  "repo": "pidster/project-2501",
+  "path": "claude-plugin-evo/skills/dialogue-help/SKILL.md",
+  "source": "github.com/pidster/project-2501",
+  "downloaded_at": "2026-01-29T08:02:20.866556Z",
+  "dir_name": "dialogue-help-pidster-project-2501",
+  "category": "documents",
+  "author": "pidster",
+  "source_url": "https://github.com/pidster/project-2501/blob/main/claude-plugin-evo/skills/dialogue-help/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pidster/project-2501/blob/main/claude-plugin-evo/skills/dialogue-help/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

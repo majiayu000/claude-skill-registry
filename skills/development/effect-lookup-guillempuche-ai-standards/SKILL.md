@@ -1,11 +1,21 @@
 ---
 name: effect-lookup
+version: 1.0.0
 description: Quick lookup for Effect TypeScript library APIs, patterns, and source code. Use when you need to find Effect functions, understand Effect patterns, or look up implementation details.
 ---
 
 # Effect Library Lookup
 
-Quick reference for finding and understanding Effect TypeScript library APIs from the local git subtree at `docs/effect/`.
+Quick reference for finding and understanding Effect TypeScript library APIs from local source code.
+
+## Source Code Access
+
+Source code is available locally and on GitHub. Check local first, fall back to GitHub if not available.
+
+| Repo           | Local path                                            | GitHub                                       |
+| -------------- | ----------------------------------------------------- | -------------------------------------------- |
+| Effect         | `opensrc/repos/github.com/effect-ts/effect/`          | https://github.com/effect-ts/effect          |
+| EffectPatterns | `opensrc/repos/github.com/PaulJPhilp/EffectPatterns/` | https://github.com/PaulJPhilp/EffectPatterns |
 
 ## When to Use This Skill
 
@@ -28,26 +38,26 @@ mcp__effect-docs__effect_docs_search: Search for Effect concepts
 mcp__effect-docs__get_effect_doc: Get specific documentation by ID
 ```
 
-### 2. Search the Git Subtree Source
+### 2. Search the Local Source
 
-For implementation details, search the local source at `docs/effect/`:
+For implementation details, search the local source at `opensrc/repos/github.com/effect-ts/effect/`:
 
 ```bash
 # Find a specific function
-grep -r "export const myFunction" docs/effect/packages/effect/src/
+grep -r "export const myFunction" opensrc/repos/github.com/effect-ts/effect/packages/effect/src/
 
 # Find usage patterns
-grep -rn "Effect.gen" docs/effect/packages/effect/src/
+grep -rn "Effect.gen" opensrc/repos/github.com/effect-ts/effect/packages/effect/src/
 
 # Find type definitions
-grep -rn "interface MyType" docs/effect/packages/effect/src/
+grep -rn "interface MyType" opensrc/repos/github.com/effect-ts/effect/packages/effect/src/
 ```
 
 ### 3. Read Source Files Directly
 
-Core modules are at: `docs/effect/packages/effect/src/<Module>.ts`
+Core modules are at: `opensrc/repos/github.com/effect-ts/effect/packages/effect/src/<Module>.ts`
 
-Example: To understand `Effect.map`, read `docs/effect/packages/effect/src/Effect.ts`
+Example: To understand `Effect.map`, read `opensrc/repos/github.com/effect-ts/effect/packages/effect/src/Effect.ts`
 
 ## Quick Reference
 
@@ -59,7 +69,7 @@ Example: To understand `Effect.map`, read `docs/effect/packages/effect/src/Effec
 ## Package Structure
 
 ```text
-docs/effect/
+opensrc/repos/github.com/effect-ts/effect/
 ├── packages/
 │   ├── effect/               # Core Effect library
 │   │   └── src/              # Source files (Effect.ts, Layer.ts, etc.)
@@ -149,32 +159,49 @@ docs/effect/
 
 ```bash
 # In Effect.ts, functions are well-documented with JSDoc
-grep -A 20 "export const map" docs/effect/packages/effect/src/Effect.ts
+grep -A 20 "export const map" opensrc/repos/github.com/effect-ts/effect/packages/effect/src/Effect.ts
 ```
 
 ### Find Type Definition
 
 ```bash
 # Look for interface or type alias
-grep -n "interface Effect<" docs/effect/packages/effect/src/Effect.ts
+grep -n "interface Effect<" opensrc/repos/github.com/effect-ts/effect/packages/effect/src/Effect.ts
 ```
 
 ### Find Examples in Tests
 
 ```bash
 # Tests often have practical examples
-grep -rn "Effect.gen" docs/effect/packages/effect/test/
+grep -rn "Effect.gen" opensrc/repos/github.com/effect-ts/effect/packages/effect/test/
 ```
 
 ### Check Platform APIs
 
 ```bash
 # HTTP client/server
-ls docs/effect/packages/platform/src/Http*.ts
+ls opensrc/repos/github.com/effect-ts/effect/packages/platform/src/Http*.ts
 
 # FileSystem
-cat docs/effect/packages/platform/src/FileSystem.ts
+cat opensrc/repos/github.com/effect-ts/effect/packages/platform/src/FileSystem.ts
 ```
+
+## EffectPatterns Knowledge Base
+
+Community-driven patterns and architectural guides at `opensrc/repos/github.com/PaulJPhilp/EffectPatterns/`.
+
+```bash
+# Browse pattern categories
+ls opensrc/repos/github.com/PaulJPhilp/EffectPatterns/content/
+
+# Search for a specific pattern
+grep -rn "Layer" opensrc/repos/github.com/PaulJPhilp/EffectPatterns/content/
+
+# Read docs
+ls opensrc/repos/github.com/PaulJPhilp/EffectPatterns/docs/
+```
+
+Covers: getting started, core concepts, error management, resource management, concurrency, streams, scheduling, domain modeling, schema, platform, HTTP APIs, data pipelines, testing, and observability.
 
 ## External References
 
@@ -189,3 +216,4 @@ cat docs/effect/packages/platform/src/FileSystem.ts
 1. **Check tests for examples** - Test files show real usage patterns
 1. **Use module tables above** - Quickly navigate to the right source file
 1. **Platform packages** - HTTP, FileSystem, etc. are in `@effect/platform`
+1. **EffectPatterns** - Use for architectural patterns and best practices

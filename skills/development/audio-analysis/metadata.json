@@ -1,0 +1,18 @@
+{
+  "name": "audio-analysis",
+  "repo": "Bbeierle12/Skill-MCP-Claude",
+  "path": "skills/audio-analysis/SKILL.md",
+  "source": "github.com/Bbeierle12/Skill-MCP-Claude",
+  "downloaded_at": "2026-01-19T03:25:05.079290Z",
+  "dir_name": "audio-analysis",
+  "category": "development",
+  "github_path": "skills/audio-analysis",
+  "github_branch": "main",
+  "author": "Bbeierle12",
+  "source_url": "https://github.com/Bbeierle12/Skill-MCP-Claude/blob/main/skills/audio-analysis/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Bbeierle12",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -3,6 +3,8 @@ name: ln-610-code-comments-auditor
 description: Audit code comments and docstrings quality across 6 categories (WHY-not-WHAT, Density, Forbidden Content, Docstrings, Actuality, Legacy). Use when code needs comment review, after major refactoring, or as part of ln-100-documents-pipeline. Outputs Compliance Score X/10 per category + Findings + Recommended Actions.
 ---
 
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+
 # Code Comments Auditor
 
 Audit code comments and docstrings quality. Universal for any tech stack.
@@ -27,7 +29,8 @@ Audit code comments and docstrings quality. Universal for any tech stack.
 2. **Extract:** Parse inline comments + docstrings/JSDoc
 3. **Audit:** Run 6 category checks (see Audit Categories below)
 4. **Score:** Calculate X/10 per category
-5. **Report:** Output findings and recommended actions
+5. **Context Validation:** Post-filter findings (see below)
+6. **Report:** Output findings and recommended actions
 
 ## Audit Categories
 
@@ -39,6 +42,33 @@ Audit code comments and docstrings quality. Universal for any tech stack.
 | 4 | **Docstrings Quality** | Match function signatures; parameters documented; return types accurate |
 | 5 | **Actuality** | Comments match code behavior; no stale references; examples runnable |
 | 6 | **Legacy Cleanup** | No TODO without context; no commented-out code; no deprecated notes |
+
+### Context Validation (Post-Filter)
+
+**MANDATORY READ:** Load `shared/references/context_validation.md`
+
+Apply Rule 1 + comment-specific inline filters:
+```
+FOR EACH finding WHERE severity IN (HIGH, MEDIUM):
+  # Rule 1: ADR/Planned Override
+  IF finding matches ADR → advisory "[Planned: ADR-XXX]"
+
+  # Comment-specific: Per-category density targets
+  IF Cat 2 (Density) finding:
+    Classify file by path:
+    - test/ or tests/           → target density 2-10%
+    - infra/ or config/ or ci/  → target density 5-15%
+    - business/domain/services  → target density 15-25%
+    Recalculate with per-category target instead of fixed 15-20%.
+    If >50% comments are docstrings → calculate inline density separately.
+
+  # Comment-specific: Complexity context for WHY-not-WHAT
+  IF Cat 1 (WHY not WHAT) finding:
+    - If file McCabe complexity > 15 → WHAT comments acceptable (complex logic)
+    - If file in domain/ or business/ → explanatory comments OK (domain knowledge)
+
+Downgraded findings → separate "Advisory" note in report.
+```
 
 ## Output Format
 
@@ -69,19 +99,33 @@ Audit code comments and docstrings quality. Universal for any tech stack.
 | Medium | Update stale docstring | lib/Y:120 | Actuality |
 ```
 
-## Scoring Rules
+## Scoring Algorithm
 
-| Score | Meaning |
-|-------|---------|
-| 10/10 | No issues |
-| 8-9/10 | Minor issues (small density deviation, few obvious comments) |
-| 6-7/10 | Moderate issues (stale docstrings, some forbidden content) |
-| 4-5/10 | Significant issues (major density problems, outdated comments) |
-| 1-3/10 | Critical issues (author names, commented-out code blocks, broken docstrings) |
+**MANDATORY READ:** Load `shared/references/audit_scoring.md` for unified scoring formula.
+
+**Severity mapping:**
+
+| Issue Type | Severity |
+|------------|----------|
+| Author names, dates in comments | CRITICAL |
+| Commented-out code blocks | HIGH |
+| Stale/outdated comments | HIGH |
+| Obvious WHAT comments | MEDIUM |
+| Density deviation >5% | MEDIUM |
+| Minor density deviation | LOW |
 
 ## Reference Files
 
 - Comment rules and patterns: [references/comments_rules.md](references/comments_rules.md)
+
+## Definition of Done
+
+- All source files scanned (tech stack auto-detected)
+- Inline comments and docstrings/JSDoc extracted and parsed
+- All 6 categories audited with score X/10 each (WHY-not-WHAT, Density, Forbidden, Docstrings, Actuality, Legacy)
+- Comment-to-code density ratio calculated and compared against 15-20% target
+- Critical Findings listed with file:line, category, and fix suggestion
+- Recommended Actions table generated with priority, action, location, category
 
 ## Critical Notes
 

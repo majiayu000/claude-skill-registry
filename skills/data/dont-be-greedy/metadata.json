@@ -1,0 +1,16 @@
+{
+  "name": "dont-be-greedy",
+  "repo": "ElliotJLT/Claude-Skill-Potions",
+  "path": "skills/dont-be-greedy/SKILL.md",
+  "category": "data",
+  "source": "github.com/ElliotJLT/Claude-Skill-Potions",
+  "dir_name": "dont-be-greedy",
+  "downloaded_at": "2026-02-15T05:05:01.002423Z",
+  "author": "ElliotJLT",
+  "source_url": "https://github.com/ElliotJLT/Claude-Skill-Potions/blob/main/skills/dont-be-greedy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ElliotJLT/Claude-Skill-Potions/blob/main/skills/dont-be-greedy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

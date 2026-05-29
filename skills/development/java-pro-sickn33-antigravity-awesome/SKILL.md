@@ -1,11 +1,9 @@
 ---
 name: java-pro
-description: Master Java 21+ with modern features like virtual threads, pattern
-  matching, and Spring Boot 3.x. Expert in the latest Java ecosystem including
-  GraalVM, Project Loom, and cloud-native patterns. Use PROACTIVELY for Java
-  development, microservices architecture, or performance optimization.
-metadata:
-  model: opus
+description: Master Java 21+ with modern features like virtual threads, pattern matching, and Spring Boot 3.x. Expert in the latest Java ecosystem including GraalVM, Project Loom, and cloud-native patterns.
+risk: unknown
+source: community
+date_added: '2026-02-27'
 ---
 
 ## Use this skill when
@@ -175,3 +173,8 @@ Expert Java developer mastering Java 21+ features including virtual threads, pat
 - "Design an event-driven system with Spring Events and message brokers"
 - "Set up comprehensive testing with Testcontainers and Spring Boot Test"
 - "Implement distributed tracing and monitoring for a microservices system"
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

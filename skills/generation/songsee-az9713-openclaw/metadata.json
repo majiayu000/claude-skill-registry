@@ -1,0 +1,16 @@
+{
+  "name": "songsee",
+  "repo": "az9713/openclaw",
+  "path": "skills/songsee/SKILL.md",
+  "category": "generation",
+  "source": "github.com/az9713/openclaw",
+  "dir_name": "songsee-az9713-openclaw",
+  "downloaded_at": "2026-02-15T06:29:10.602505Z",
+  "author": "az9713",
+  "source_url": "https://github.com/az9713/openclaw/blob/main/skills/songsee/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/az9713/openclaw/blob/main/skills/songsee/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

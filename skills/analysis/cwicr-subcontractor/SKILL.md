@@ -1,5 +1,6 @@
 ---
-name: cwicr-subcontractor
+slug: "cwicr-subcontractor"
+display_name: "CWICR Subcontractor"
 description: "Analyze and compare subcontractor bids against CWICR benchmarks. Evaluate pricing, identify outliers, and support negotiation."
 ---
 

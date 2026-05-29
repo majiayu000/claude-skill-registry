@@ -1,9 +1,9 @@
 {
-  "name": "prompt-generator",
+  "name": "intelligent-prompt-generator",
   "repo": "ttmouse/skills",
-  "path": "prompt-generator/skill.md",
+  "path": "intelligent-prompt-generator/SKILL.md",
   "source": "github.com/ttmouse/skills",
-  "downloaded_at": "2026-01-22T03:40:39.843592Z",
+  "downloaded_at": "2026-01-22T03:40:40.352608Z",
   "dir_name": "prompt-generator",
   "category": "ai-llm",
   "github_path": "intelligent-prompt-generator",

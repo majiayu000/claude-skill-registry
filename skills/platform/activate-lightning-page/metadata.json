@@ -1,0 +1,18 @@
+{
+  "name": "activate-lightning-page",
+  "repo": "MenachemShanowitz/LubavitchRV",
+  "path": ".claude/skills/activate-lightning-page/SKILL.md",
+  "source": "github.com/MenachemShanowitz/LubavitchRV",
+  "downloaded_at": "2026-01-22T01:11:47.767156Z",
+  "dir_name": "activate-lightning-page",
+  "category": "platform",
+  "github_path": ".claude/skills/activate-lightning-page",
+  "github_branch": "main",
+  "author": "MenachemShanowitz",
+  "source_url": "https://github.com/MenachemShanowitz/LubavitchRV/blob/main/.claude/skills/activate-lightning-page/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MenachemShanowitz/LubavitchRV/blob/main/.claude/skills/activate-lightning-page/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

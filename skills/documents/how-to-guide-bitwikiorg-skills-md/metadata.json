@@ -1,0 +1,16 @@
+{
+  "name": "how_to_guide",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/openai/how_to_guide/SKILL.md",
+  "source": "github.com/bitwikiorg/skills.md",
+  "downloaded_at": "2026-01-27T01:51:45.950593Z",
+  "dir_name": "how-to-guide-bitwikiorg-skills-md",
+  "category": "documents",
+  "author": "bitwikiorg",
+  "source_url": "https://github.com/bitwikiorg/skills.md/blob/main/sources/openai/how_to_guide/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 BITwiki",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

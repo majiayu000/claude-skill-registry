@@ -1,583 +1,707 @@
 ---
-name: base
-description: Universal coding patterns, constraints, TDD workflow, atomic todos
+name: supabase-python
+description: FastAPI with Supabase and SQLAlchemy/SQLModel
 ---
 
-# Base Skill - Universal Patterns
+# Supabase + Python Skill
+
+*Load with: base.md + supabase.md + python.md*
+
+FastAPI patterns with Supabase Auth and SQLAlchemy/SQLModel for database access.
+
+**Sources:** [Supabase Python Client](https://supabase.com/docs/reference/python/introduction) | [SQLModel](https://sqlmodel.tiangolo.com/)
+
+---
 
 ## Core Principle
 
-Complexity is the enemy. Every line of code is a liability. The goal is software simple enough that any engineer (or AI) can understand the entire system in one session.
+**SQLAlchemy/SQLModel for queries, Supabase for auth/storage.**
+
+Use SQLAlchemy or SQLModel for type-safe database access. Use supabase-py for auth, storage, and realtime. FastAPI for the API layer.
 
 ---
 
-## Simplicity Rules (STRICTLY ENFORCED)
-
-**CRITICAL: These limits are non-negotiable. Claude MUST check and enforce these limits for EVERY file created or modified.**
-
-### Function Level
-- **Maximum 20 lines per function** - if longer, decompose IMMEDIATELY
-- **Maximum 3 parameters per function** - if more, use an options object or decompose
-- **Maximum 2 levels of nesting** - flatten with early returns or extract functions
-- **Single responsibility** - each function does exactly one thing
-- **Descriptive names over comments** - if you need a comment to explain what, rename it
-
-### File Level
-- **Maximum 200 lines per file** - if longer, split by responsibility BEFORE continuing
-- **Maximum 10 functions per file** - keeps cognitive load manageable
-- **One export focus per file** - a file should have one primary purpose
-
-### Module Level
-- **Maximum 3 levels of directory nesting** - flat is better than nested
-- **Clear boundaries** - each module has a single public interface
-- **No circular dependencies** - ever
-
-### Enforcement Protocol
-
-**Before completing ANY file:**
-1. Count total lines - if > 200, STOP and split
-2. Count functions - if > 10, STOP and split
-3. Check each function length - if any > 20 lines, STOP and decompose
-4. Check parameter counts - if any > 3, STOP and refactor
-
-**If limits are exceeded during development:**
-```
-⚠️ FILE SIZE VIOLATION DETECTED
-
-[filename] has [X] lines (limit: 200)
-
-Splitting into:
-- [filename-a].ts - [responsibility A]
-- [filename-b].ts - [responsibility B]
-```
-
-**Never defer refactoring.** Fix violations immediately, not "later".
-
----
-
-## Architectural Patterns
-
-### Functional Core, Imperative Shell
-- Pure functions for business logic - no side effects, deterministic
-- Side effects only at boundaries - API calls, database, file system at edges
-- Data in, data out - functions transform data, they don't mutate state
-
-### Composition Over Inheritance
-- No inheritance deeper than 1 level - prefer interfaces/composition
-- Small, composable utilities - build complex from simple
-- Dependency injection - pass dependencies, don't import them directly
-
-### Error Handling
-- Fail fast, fail loud - errors surface immediately
-- No silent failures - every error is logged or thrown
-- Design APIs where misuse is impossible
-
----
-
-## Testing Philosophy
-
-- **100% coverage on business logic** - the functional core
-- **Integration tests for boundaries** - API endpoints, database operations
-- **No untested code merges** - CI blocks without passing tests
-- **Test behavior, not implementation** - tests survive refactoring
-- **Each test runs in isolation** - no interdependence
-
----
-
-## Anti-Patterns (Never Do This)
-
-- ❌ Global state
-- ❌ Magic numbers/strings - use named constants
-- ❌ Deep nesting - flatten or extract
-- ❌ Long parameter lists - use objects
-- ❌ Comments explaining "what" - code should be self-documenting
-- ❌ Dead code - delete it, git remembers
-- ❌ Copy-paste duplication - extract to shared function
-- ❌ God objects/files - split by responsibility
-- ❌ Circular dependencies
-- ❌ Premature optimization
-- ❌ Large PRs - small, focused changes only
-- ❌ Mixing refactoring with features - separate commits
-
----
-
-## Documentation Structure
-
-Every project must have clear separation between code docs and project specs:
+## Project Structure
 
 ```
 project/
-├── docs/                      # Code documentation
-│   ├── architecture.md        # System design decisions
-│   ├── api.md                 # API reference (if applicable)
-│   └── setup.md               # Development setup guide
-├── _project_specs/            # Project specifications
-│   ├── overview.md            # Project vision and goals
-│   ├── features/              # Feature specifications
-│   │   ├── feature-a.md
-│   │   └── feature-b.md
-│   ├── todos/                 # Atomic todos tracking
-│   │   ├── active.md          # Current sprint/focus
-│   │   ├── backlog.md         # Future work
-│   │   └── completed.md       # Done items (for reference)
-│   ├── session/               # Session state (see session-management.md)
-│   │   ├── current-state.md   # Live session state
-│   │   ├── decisions.md       # Key decisions log
-│   │   ├── code-landmarks.md  # Important code locations
-│   │   └── archive/           # Past session summaries
-│   └── prompts/               # LLM prompt specifications (if AI-first)
-└── CLAUDE.md                  # Claude instructions (references skills)
+├── src/
+│   ├── api/
+│   │   ├── __init__.py
+│   │   ├── routes/
+│   │   │   ├── __init__.py
+│   │   │   ├── auth.py
+│   │   │   ├── posts.py
+│   │   │   └── users.py
+│   │   └── deps.py              # Dependencies (auth, db)
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── config.py            # Settings
+│   │   └── security.py          # Auth helpers
+│   ├── db/
+│   │   ├── __init__.py
+│   │   ├── session.py           # Database session
+│   │   └── models.py            # SQLModel models
+│   ├── services/
+│   │   ├── __init__.py
+│   │   └── supabase.py          # Supabase client
+│   └── main.py                  # FastAPI app
+├── supabase/
+│   ├── migrations/
+│   └── config.toml
+├── alembic/                     # Alembic migrations (alternative)
+├── alembic.ini
+├── pyproject.toml
+└── .env
 ```
-
-### What Goes Where
-
-| Location | Content |
-|----------|---------|
-| `docs/` | Technical documentation, API refs, setup guides |
-| `_project_specs/` | Business logic, features, requirements, todos |
-| `_project_specs/session/` | Session state, decisions, context for resumability |
-| `CLAUDE.md` | Claude-specific instructions and skill references |
 
 ---
 
-## Atomic Todos
+## Setup
 
-All work is tracked as atomic todos with validation and test criteria.
-
-### Todo Format (Required)
-```markdown
-## [TODO-001] Short descriptive title
-
-**Status:** pending | in-progress | blocked | done
-**Priority:** high | medium | low
-**Estimate:** XS | S | M | L | XL
-
-### Description
-One paragraph describing what needs to be done.
-
-### Acceptance Criteria
-- [ ] Criterion 1 - specific, measurable
-- [ ] Criterion 2 - specific, measurable
-
-### Validation
-How to verify this is complete:
-- Manual: [steps to manually test]
-- Automated: [test file/command that validates this]
-
-### Test Cases
-| Input | Expected Output | Notes |
-|-------|-----------------|-------|
-| ... | ... | ... |
-
-### Dependencies
-- Depends on: [TODO-xxx] (if any)
-- Blocks: [TODO-yyy] (if any)
-
-### TDD Execution Log
-| Phase | Command | Result | Timestamp |
-|-------|---------|--------|-----------|
-| RED | `[test command]` | - | - |
-| GREEN | `[test command]` | - | - |
-| VALIDATE | `[lint && typecheck && test --coverage]` | - | - |
-| COMPLETE | Moved to completed.md | - | - |
-```
-
-### Todo Rules
-1. **Atomic** - Each todo is a single, completable unit of work
-2. **Testable** - Every todo has validation criteria and test cases
-3. **Sized** - If larger than "M", break it down further
-4. **Independent** - Minimize dependencies between todos
-5. **Tracked** - Move between active.md → completed.md when done
-
-### Todo Execution Workflow (TDD - Mandatory)
-
-**Every todo MUST follow this exact workflow. No exceptions.**
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│  1. RED: Write Tests First                                  │
-│     └─ Create test file(s) based on Test Cases table        │
-│     └─ Tests should cover all acceptance criteria           │
-│     └─ Run tests → ALL MUST FAIL (proves tests are valid)   │
-├─────────────────────────────────────────────────────────────┤
-│  2. GREEN: Implement the Feature                            │
-│     └─ Write minimum code to make tests pass                │
-│     └─ Follow simplicity rules (20 lines/function, etc.)    │
-│     └─ Run tests → ALL MUST PASS                            │
-├─────────────────────────────────────────────────────────────┤
-│  3. VALIDATE: Quality Gates                                 │
-│     └─ Run linter (auto-fix if possible)                    │
-│     └─ Run type checker (tsc/mypy/pyright)                  │
-│     └─ Run full test suite with coverage                    │
-│     └─ Verify coverage threshold (≥80%)                     │
-├─────────────────────────────────────────────────────────────┤
-│  4. COMPLETE: Mark Done                                     │
-│     └─ Only after ALL validations pass                      │
-│     └─ Move todo to completed.md                            │
-│     └─ Checkpoint session state                             │
-└─────────────────────────────────────────────────────────────┘
-```
-
-#### Execution Commands by Stack
-
-**Node.js/TypeScript:**
+### Install Dependencies
 ```bash
-# 1. RED - Run tests (expect failures)
-npm test -- --grep "todo-description"
-
-# 2. GREEN - Run tests (expect pass)
-npm test -- --grep "todo-description"
-
-# 3. VALIDATE - Full quality check
-npm run lint && npm run typecheck && npm test -- --coverage
+pip install fastapi uvicorn supabase python-dotenv sqlmodel asyncpg alembic
 ```
 
-**Python:**
+### pyproject.toml
+```toml
+[project]
+name = "my-app"
+version = "0.1.0"
+dependencies = [
+    "fastapi>=0.109.0",
+    "uvicorn[standard]>=0.27.0",
+    "supabase>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "sqlmodel>=0.0.14",
+    "asyncpg>=0.29.0",
+    "alembic>=1.13.0",
+    "pydantic-settings>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.23.0",
+    "httpx>=0.26.0",
+]
+```
+
+### Environment Variables
 ```bash
-# 1. RED - Run tests (expect failures)
-pytest -k "todo_description" -v
-
-# 2. GREEN - Run tests (expect pass)
-pytest -k "todo_description" -v
-
-# 3. VALIDATE - Full quality check
-ruff check . && mypy . && pytest --cov --cov-fail-under=80
+# .env
+SUPABASE_URL=http://localhost:54321
+SUPABASE_ANON_KEY=<from supabase start>
+SUPABASE_SERVICE_ROLE_KEY=<from supabase start>
+DATABASE_URL=postgresql+asyncpg://postgres:postgres@localhost:54322/postgres
 ```
 
-**React/Next.js:**
+---
+
+## Configuration
+
+### src/core/config.py
+```python
+from pydantic_settings import BaseSettings
+from functools import lru_cache
+
+
+class Settings(BaseSettings):
+    # Supabase
+    supabase_url: str
+    supabase_anon_key: str
+    supabase_service_role_key: str
+
+    # Database
+    database_url: str
+
+    # App
+    debug: bool = False
+
+    class Config:
+        env_file = ".env"
+        env_file_encoding = "utf-8"
+
+
+@lru_cache
+def get_settings() -> Settings:
+    return Settings()
+```
+
+---
+
+## Database Setup
+
+### src/db/session.py
+```python
+from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
+from sqlalchemy.orm import sessionmaker
+from src.core.config import get_settings
+
+settings = get_settings()
+
+engine = create_async_engine(
+    settings.database_url,
+    echo=settings.debug,
+    pool_pre_ping=True,
+)
+
+AsyncSessionLocal = sessionmaker(
+    engine,
+    class_=AsyncSession,
+    expire_on_commit=False,
+)
+
+
+async def get_db() -> AsyncSession:
+    async with AsyncSessionLocal() as session:
+        try:
+            yield session
+        finally:
+            await session.close()
+```
+
+### src/db/models.py
+```python
+from datetime import datetime
+from typing import Optional
+from uuid import UUID, uuid4
+from sqlmodel import SQLModel, Field
+
+
+class ProfileBase(SQLModel):
+    email: str
+    name: Optional[str] = None
+    avatar_url: Optional[str] = None
+
+
+class Profile(ProfileBase, table=True):
+    __tablename__ = "profiles"
+
+    id: UUID = Field(primary_key=True)  # References auth.users
+    created_at: datetime = Field(default_factory=datetime.utcnow)
+    updated_at: datetime = Field(default_factory=datetime.utcnow)
+
+
+class ProfileCreate(ProfileBase):
+    id: UUID
+
+
+class ProfileRead(ProfileBase):
+    id: UUID
+    created_at: datetime
+
+
+class PostBase(SQLModel):
+    title: str
+    content: Optional[str] = None
+    published: bool = False
+
+
+class Post(PostBase, table=True):
+    __tablename__ = "posts"
+
+    id: UUID = Field(default_factory=uuid4, primary_key=True)
+    author_id: UUID = Field(foreign_key="profiles.id")
+    created_at: datetime = Field(default_factory=datetime.utcnow)
+
+
+class PostCreate(PostBase):
+    pass
+
+
+class PostRead(PostBase):
+    id: UUID
+    author_id: UUID
+    created_at: datetime
+```
+
+---
+
+## Supabase Client
+
+### src/services/supabase.py
+```python
+from supabase import create_client, Client
+from src.core.config import get_settings
+
+settings = get_settings()
+
+
+def get_supabase_client() -> Client:
+    """Get Supabase client with anon key (respects RLS)."""
+    return create_client(
+        settings.supabase_url,
+        settings.supabase_anon_key
+    )
+
+
+def get_supabase_admin() -> Client:
+    """Get Supabase client with service role (bypasses RLS)."""
+    return create_client(
+        settings.supabase_url,
+        settings.supabase_service_role_key
+    )
+```
+
+---
+
+## Auth Dependencies
+
+### src/api/deps.py
+```python
+from typing import Annotated
+from fastapi import Depends, HTTPException, status
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from sqlalchemy.ext.asyncio import AsyncSession
+from supabase import Client
+
+from src.db.session import get_db
+from src.services.supabase import get_supabase_client
+
+security = HTTPBearer()
+
+
+async def get_current_user(
+    credentials: Annotated[HTTPAuthorizationCredentials, Depends(security)],
+) -> dict:
+    """Validate JWT and return user."""
+    supabase = get_supabase_client()
+
+    try:
+        # Verify token with Supabase
+        user = supabase.auth.get_user(credentials.credentials)
+        if not user or not user.user:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Invalid token",
+            )
+        return user.user
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid token",
+        )
+
+
+# Type alias for dependency injection
+CurrentUser = Annotated[dict, Depends(get_current_user)]
+DbSession = Annotated[AsyncSession, Depends(get_db)]
+```
+
+---
+
+## API Routes
+
+### src/api/routes/auth.py
+```python
+from fastapi import APIRouter, HTTPException, status
+from pydantic import BaseModel, EmailStr
+
+from src.services.supabase import get_supabase_client
+
+router = APIRouter(prefix="/auth", tags=["auth"])
+
+
+class SignUpRequest(BaseModel):
+    email: EmailStr
+    password: str
+
+
+class SignInRequest(BaseModel):
+    email: EmailStr
+    password: str
+
+
+class AuthResponse(BaseModel):
+    access_token: str
+    refresh_token: str
+    user_id: str
+
+
+@router.post("/signup", response_model=AuthResponse)
+async def sign_up(request: SignUpRequest):
+    supabase = get_supabase_client()
+
+    try:
+        response = supabase.auth.sign_up({
+            "email": request.email,
+            "password": request.password,
+        })
+
+        if response.user is None:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Signup failed",
+            )
+
+        return AuthResponse(
+            access_token=response.session.access_token,
+            refresh_token=response.session.refresh_token,
+            user_id=str(response.user.id),
+        )
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=str(e),
+        )
+
+
+@router.post("/signin", response_model=AuthResponse)
+async def sign_in(request: SignInRequest):
+    supabase = get_supabase_client()
+
+    try:
+        response = supabase.auth.sign_in_with_password({
+            "email": request.email,
+            "password": request.password,
+        })
+
+        return AuthResponse(
+            access_token=response.session.access_token,
+            refresh_token=response.session.refresh_token,
+            user_id=str(response.user.id),
+        )
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid credentials",
+        )
+
+
+@router.post("/signout")
+async def sign_out():
+    supabase = get_supabase_client()
+    supabase.auth.sign_out()
+    return {"message": "Signed out"}
+```
+
+### src/api/routes/posts.py
+```python
+from uuid import UUID
+from fastapi import APIRouter, HTTPException, status
+from sqlmodel import select
+
+from src.api.deps import CurrentUser, DbSession
+from src.db.models import Post, PostCreate, PostRead
+
+router = APIRouter(prefix="/posts", tags=["posts"])
+
+
+@router.get("/", response_model=list[PostRead])
+async def list_posts(
+    db: DbSession,
+    published_only: bool = True,
+):
+    query = select(Post)
+    if published_only:
+        query = query.where(Post.published == True)
+    query = query.order_by(Post.created_at.desc())
+
+    result = await db.execute(query)
+    return result.scalars().all()
+
+
+@router.get("/me", response_model=list[PostRead])
+async def list_my_posts(
+    db: DbSession,
+    user: CurrentUser,
+):
+    query = select(Post).where(Post.author_id == UUID(user.id))
+    result = await db.execute(query)
+    return result.scalars().all()
+
+
+@router.post("/", response_model=PostRead, status_code=status.HTTP_201_CREATED)
+async def create_post(
+    db: DbSession,
+    user: CurrentUser,
+    post_in: PostCreate,
+):
+    post = Post(
+        **post_in.model_dump(),
+        author_id=UUID(user.id),
+    )
+    db.add(post)
+    await db.commit()
+    await db.refresh(post)
+    return post
+
+
+@router.get("/{post_id}", response_model=PostRead)
+async def get_post(
+    db: DbSession,
+    post_id: UUID,
+):
+    result = await db.execute(select(Post).where(Post.id == post_id))
+    post = result.scalar_one_or_none()
+
+    if not post:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Post not found",
+        )
+
+    return post
+
+
+@router.delete("/{post_id}", status_code=status.HTTP_204_NO_CONTENT)
+async def delete_post(
+    db: DbSession,
+    user: CurrentUser,
+    post_id: UUID,
+):
+    result = await db.execute(
+        select(Post).where(Post.id == post_id, Post.author_id == UUID(user.id))
+    )
+    post = result.scalar_one_or_none()
+
+    if not post:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Post not found",
+        )
+
+    await db.delete(post)
+    await db.commit()
+```
+
+---
+
+## Main Application
+
+### src/main.py
+```python
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
+from src.api.routes import auth, posts
+
+app = FastAPI(title="My API")
+
+# CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Configure for production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Routes
+app.include_router(auth.router, prefix="/api")
+app.include_router(posts.router, prefix="/api")
+
+
+@app.get("/health")
+async def health_check():
+    return {"status": "healthy"}
+```
+
+---
+
+## Alembic Migrations
+
+### Initialize Alembic
 ```bash
-# 1. RED - Run tests (expect failures)
-npm test -- --testPathPattern="ComponentName"
-
-# 2. GREEN - Run tests (expect pass)
-npm test -- --testPathPattern="ComponentName"
-
-# 3. VALIDATE - Full quality check
-npm run lint && npm run typecheck && npm test -- --coverage --watchAll=false
+alembic init alembic
 ```
 
-#### Blocking Conditions
+### alembic/env.py (key changes)
+```python
+from src.db.models import SQLModel
+from src.core.config import get_settings
 
-**NEVER mark a todo as complete if:**
-- ❌ Tests were not written first (skipped RED phase)
-- ❌ Tests did not fail initially (invalid tests)
-- ❌ Any test is failing
-- ❌ Linter has errors (warnings may be acceptable)
-- ❌ Type checker has errors
-- ❌ Coverage dropped below threshold
+settings = get_settings()
 
-**If blocked by failures:**
-```markdown
-## [TODO-042] - BLOCKED
+# Use async engine
+config.set_main_option("sqlalchemy.url", settings.database_url)
 
-**Blocking Reason:** [Lint error in X / Test failure in Y / Coverage at 75%]
-**Action Required:** [Specific fix needed]
+target_metadata = SQLModel.metadata
+
+
+def run_migrations_online():
+    # For async
+    import asyncio
+    from sqlalchemy.ext.asyncio import create_async_engine
+
+    connectable = create_async_engine(settings.database_url)
+
+    async def do_run_migrations():
+        async with connectable.connect() as connection:
+            await connection.run_sync(do_run_migrations_sync)
+
+    def do_run_migrations_sync(connection):
+        context.configure(
+            connection=connection,
+            target_metadata=target_metadata,
+        )
+        with context.begin_transaction():
+            context.run_migrations()
+
+    asyncio.run(do_run_migrations())
 ```
 
-### Bug Fix Workflow (TDD - Mandatory)
-
-**When a user reports a bug, NEVER jump to fixing it directly.**
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│  1. DIAGNOSE: Identify the Test Gap                         │
-│     └─ Run existing tests - do any fail?                    │
-│     └─ If tests pass but bug exists → tests are incomplete  │
-│     └─ Document: "Test gap: [what was missed]"              │
-├─────────────────────────────────────────────────────────────┤
-│  2. RED: Write a Failing Test for the Bug                   │
-│     └─ Create test that reproduces the exact bug            │
-│     └─ Test should FAIL with current code                   │
-│     └─ This proves the test catches the bug                 │
-├─────────────────────────────────────────────────────────────┤
-│  3. GREEN: Fix the Bug                                      │
-│     └─ Write minimum code to make the test pass             │
-│     └─ Run test → must PASS now                             │
-├─────────────────────────────────────────────────────────────┤
-│  4. VALIDATE: Full Quality Check                            │
-│     └─ Run ALL tests (not just the new one)                 │
-│     └─ Run linter and type checker                          │
-│     └─ Verify no regression in coverage                     │
-└─────────────────────────────────────────────────────────────┘
-```
-
-#### Bug Report Todo Format
-
-```markdown
-## [BUG-001] Short description of the bug
-
-**Status:** pending
-**Priority:** high
-**Reported:** [how user reported it / reproduction steps]
-
-### Bug Description
-What is happening vs. what should happen.
-
-### Reproduction Steps
-1. Step one
-2. Step two
-3. Observe: [incorrect behavior]
-4. Expected: [correct behavior]
-
-### Test Gap Analysis
-- Existing test coverage: [list relevant test files]
-- Gap identified: [what the tests missed]
-- New test needed: [describe the test to add]
-
-### Test Cases for Bug
-| Input | Current (Bug) | Expected (Fixed) |
-|-------|---------------|------------------|
-| ... | ... | ... |
-
-### TDD Execution Log
-| Phase | Command | Result | Timestamp |
-|-------|---------|--------|-----------|
-| DIAGNOSE | `npm test` | All pass (gap!) | - |
-| RED | `npm test -- --grep "bug description"` | 1 test failed ✓ | - |
-| GREEN | `npm test -- --grep "bug description"` | 1 test passed ✓ | - |
-| VALIDATE | `npm run lint && npm run typecheck && npm test -- --coverage` | Pass ✓ | - |
-```
-
-#### Bug Fix Anti-Patterns
-
-- ❌ **Fixing without a test** - Bug will likely return
-- ❌ **Writing test after fix** - Can't prove test catches the bug
-- ❌ **Skipping test gap analysis** - Misses why tests didn't catch it
-- ❌ **Only testing the fix** - Must run full test suite for regressions
-
-### Example Atomic Todo
-```markdown
-## [TODO-042] Add email validation to signup form
-
-**Status:** pending
-**Priority:** high
-**Estimate:** S
-
-### Description
-Validate email format on the signup form before submission. Show inline error if invalid.
-
-### Acceptance Criteria
-- [ ] Email field shows error for invalid format
-- [ ] Error clears when user fixes the email
-- [ ] Form cannot submit with invalid email
-- [ ] Valid emails pass through without error
-
-### Validation
-- Manual: Enter "notanemail" in signup form, verify error appears
-- Automated: `npm test -- --grep "email validation"`
-
-### Test Cases
-| Input | Expected Output | Notes |
-|-------|-----------------|-------|
-| user@example.com | Valid, no error | Standard email |
-| user@sub.example.com | Valid, no error | Subdomain |
-| notanemail | Invalid, show error | No @ symbol |
-| user@ | Invalid, show error | No domain |
-| @example.com | Invalid, show error | No local part |
-
-### Dependencies
-- Depends on: [TODO-041] Signup form component
-- Blocks: [TODO-045] Signup flow integration test
-
-### TDD Execution Log
-| Phase | Command | Result | Timestamp |
-|-------|---------|--------|-----------|
-| RED | `npm test -- --grep "email validation"` | 5 tests failed ✓ | - |
-| GREEN | `npm test -- --grep "email validation"` | 5 tests passed ✓ | - |
-| VALIDATE | `npm run lint && npm run typecheck && npm test -- --coverage` | Pass, 84% coverage ✓ | - |
-| COMPLETE | Moved to completed.md | ✓ | - |
-```
-
----
-
-## Credentials Management (Non-Negotiable)
-
-When a project needs API keys, always ask the user for their centralized access file first.
-
-### Workflow
-```
-1. Ask: "Do you have an access keys file? (e.g., ~/Documents/Access.txt)"
-2. Read and parse the file for known key patterns
-3. Validate keys are working
-4. Create project .env with found keys
-5. Report missing keys and where to get them
-```
-
-### Key Patterns to Detect
-| Service | Pattern | Env Variable |
-|---------|---------|--------------|
-| OpenAI | `sk-proj-*` | `OPENAI_API_KEY` |
-| Claude | `sk-ant-*` | `ANTHROPIC_API_KEY` |
-| Render | `rnd_*` | `RENDER_API_KEY` |
-| Replicate | `r8_*` | `REPLICATE_API_TOKEN` |
-| Reddit | client_id + secret | `REDDIT_CLIENT_ID`, `REDDIT_CLIENT_SECRET` |
-
-See `credentials.md` for full parsing logic and validation commands.
-
----
-
-## Security (Non-Negotiable)
-
-Every project must meet these security requirements. See `security.md` skill for detailed patterns.
-
-### Essential Security Checks
-1. **No secrets in code** - Use environment variables, never commit secrets
-2. **`.env` in `.gitignore`** - Always, no exceptions
-3. **No secrets in client-exposed env vars** - Never use `VITE_*`, `NEXT_PUBLIC_*` for secrets
-4. **Validate all input** - Use Zod/Pydantic at API boundaries
-5. **Parameterized queries only** - No string concatenation for SQL
-6. **Hash passwords properly** - bcrypt with 12+ rounds
-7. **Dependency scanning** - npm audit / safety check must pass
-
-### Required Files
-- `.gitignore` with secrets patterns
-- `.env.example` with all required vars (no values)
-- `scripts/security-check.sh` for pre-commit validation
-
-### Security in CI
-Every PR must pass:
-- Secret scanning (detect-secrets / trufflehog)
-- Dependency audit (npm audit / safety)
-- Static analysis (CodeQL)
-
----
-
-## Quality Gates (Non-Negotiable)
-
-### Coverage Threshold
-- **Minimum 80% code coverage** - CI must fail below this
-- Business logic (core/) should aim for 100%
-- Integration tests cover boundaries
-
-### Pre-Commit Hooks
-All projects must have pre-commit hooks that run:
-1. Linting (auto-fix where possible)
-2. Type checking
-3. Tests (at minimum, affected tests)
-
-This catches issues before they hit CI, saving time and keeping the main branch clean.
-
----
-
-## Session Management (Non-Negotiable)
-
-Maintain context for resumability. See `session-management.md` for full details.
-
-### Core Rule: Checkpoint at Natural Breakpoints
-
-After completing any task, ask:
-1. **Decision made?** → Log to `_project_specs/session/decisions.md`
-2. **>10 tool calls?** → Full checkpoint to `current-state.md`
-3. **Major feature done?** → Archive to `session/archive/`
-4. **Otherwise** → Quick update to `current-state.md`
-
-### Session Start
-1. Read `_project_specs/session/current-state.md`
-2. Check `_project_specs/todos/active.md`
-3. Continue from documented "Next Steps"
-
-### Session End
-1. Archive current session
-2. Update `current-state.md` with handoff notes
-3. Ensure next steps are specific and actionable
-
----
-
-## Response Format
-
-When implementing features (following TDD):
-1. **Clarify requirements** if ambiguous
-2. **Propose structure** - outline before code
-3. **Write tests FIRST** - based on test cases table (RED phase)
-4. **Run tests to verify they fail** - proves tests are valid
-5. **Implement minimum code** to make tests pass (GREEN phase)
-6. **Run full validation** - lint, typecheck, coverage (VALIDATE phase)
-7. **Flag complexity** - warn if approaching limits
-8. **Checkpoint after completing** - update session state, log TDD execution
-
-**TDD is non-negotiable.** Tests must exist and fail before any implementation begins.
-
-When you notice code violating these rules, **stop and refactor** before continuing.
-
----
-
-## Automatic Iterative Mode (Ralph Wiggum)
-
-**For any non-trivial task, Claude MUST automatically use iterative TDD loops.**
-
-### When to Auto-Invoke Ralph Loop
-
-| Task Type | Action |
-|-----------|--------|
-| New feature (any size) | `/ralph-loop` with TDD template |
-| Bug fix | `/ralph-loop` with bug fix template |
-| Refactoring | `/ralph-loop` with refactor template |
-| API development | `/ralph-loop` with API template |
-| Simple question/explanation | Normal response (no loop) |
-| One-line fix (typo, etc.) | Normal response (no loop) |
-
-### Auto-Transform User Requests
-
-When user says something like:
-- "Add email validation"
-- "Fix the login bug"
-- "Build a REST API for todos"
-- "Refactor the auth module"
-
-Claude MUST automatically:
-
-1. **Extract requirements** from the request
-2. **Define completion criteria** (tests passing, lint clean, etc.)
-3. **Structure as Ralph prompt** with TDD workflow
-4. **Invoke** `/ralph-loop` with appropriate `--max-iterations` and `--completion-promise`
-
-### Auto-Transformation Example
-
-**User says:**
-> "Add a forgot password feature"
-
-**Claude automatically invokes:**
+### Migration Commands
 ```bash
-/ralph-loop "
-## Task: Add forgot password feature
+# Create migration
+alembic revision --autogenerate -m "create posts table"
 
-### Requirements (extracted from user request)
-- User can request password reset via email
-- Reset link sent to registered email
-- Link expires after 24 hours
-- User can set new password via link
+# Apply migrations
+alembic upgrade head
 
-### TDD Workflow
-1. Write failing tests for each requirement
-2. Verify tests FAIL (RED)
-3. Implement feature
-4. Verify tests PASS (GREEN)
-5. Run lint + typecheck
-6. Repeat if failures
-
-### Completion Criteria
-- [ ] All tests passing
-- [ ] Coverage >= 80%
-- [ ] Lint clean
-- [ ] Security review (no token in URL params, etc.)
-
-### Exit Condition
-<promise>FORGOT PASSWORD COMPLETE</promise>
-" --completion-promise "FORGOT PASSWORD COMPLETE" --max-iterations 25
+# Rollback
+alembic downgrade -1
 ```
 
-### Default Settings
+---
 
-| Setting | Default | Rationale |
-|---------|---------|-----------|
-| `--max-iterations` | 20-30 | Safety net, adjust by complexity |
-| `--completion-promise` | Always set | Based on task (e.g., "TESTS PASSING") |
-| TDD workflow | Always included | Non-negotiable |
+## Storage
 
-### Opt-Out
+### Upload File
+```python
+from fastapi import UploadFile
+from src.services.supabase import get_supabase_client
 
-User can opt out of automatic Ralph loops by saying:
-- "Just explain..." (explanation only)
-- "Quick fix for..." (one-liner)
-- "Don't loop..." (explicit opt-out)
-- "Help me understand..." (learning/discussion)
+
+async def upload_avatar(user_id: str, file: UploadFile) -> str:
+    supabase = get_supabase_client()
+
+    file_content = await file.read()
+    file_path = f"{user_id}/avatar.{file.filename.split('.')[-1]}"
+
+    response = supabase.storage.from_("avatars").upload(
+        file_path,
+        file_content,
+        {"content-type": file.content_type, "upsert": "true"},
+    )
+
+    # Get public URL
+    url = supabase.storage.from_("avatars").get_public_url(file_path)
+    return url
+```
+
+### Download File
+```python
+def get_avatar_url(user_id: str) -> str:
+    supabase = get_supabase_client()
+    return supabase.storage.from_("avatars").get_public_url(f"{user_id}/avatar.png")
+```
+
+---
+
+## Realtime (Async)
+
+```python
+import asyncio
+from supabase import create_client
+
+
+async def listen_to_posts():
+    supabase = create_client(
+        settings.supabase_url,
+        settings.supabase_anon_key
+    )
+
+    def handle_change(payload):
+        print(f"Change received: {payload}")
+
+    channel = supabase.channel("posts")
+    channel.on_postgres_changes(
+        event="*",
+        schema="public",
+        table="posts",
+        callback=handle_change,
+    ).subscribe()
+
+    # Keep listening
+    while True:
+        await asyncio.sleep(1)
+```
+
+---
+
+## Testing
+
+### tests/conftest.py
+```python
+import pytest
+from httpx import AsyncClient, ASGITransport
+from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
+from sqlalchemy.orm import sessionmaker
+
+from src.main import app
+from src.db.session import get_db
+from src.db.models import SQLModel
+
+TEST_DATABASE_URL = "postgresql+asyncpg://postgres:postgres@localhost:54322/postgres_test"
+
+engine = create_async_engine(TEST_DATABASE_URL)
+TestingSessionLocal = sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
+
+
+@pytest.fixture(scope="function")
+async def db_session():
+    async with engine.begin() as conn:
+        await conn.run_sync(SQLModel.metadata.create_all)
+
+    async with TestingSessionLocal() as session:
+        yield session
+
+    async with engine.begin() as conn:
+        await conn.run_sync(SQLModel.metadata.drop_all)
+
+
+@pytest.fixture
+async def client(db_session):
+    async def override_get_db():
+        yield db_session
+
+    app.dependency_overrides[get_db] = override_get_db
+
+    async with AsyncClient(
+        transport=ASGITransport(app=app),
+        base_url="http://test",
+    ) as ac:
+        yield ac
+
+    app.dependency_overrides.clear()
+```
+
+### tests/test_posts.py
+```python
+import pytest
+from httpx import AsyncClient
+
+
+@pytest.mark.asyncio
+async def test_list_posts(client: AsyncClient):
+    response = await client.get("/api/posts/")
+    assert response.status_code == 200
+    assert isinstance(response.json(), list)
+```
+
+---
+
+## Running the App
+
+```bash
+# Development
+uvicorn src.main:app --reload --port 8000
+
+# Production
+uvicorn src.main:app --host 0.0.0.0 --port 8000 --workers 4
+```
+
+---
+
+## Anti-Patterns
+
+- **Using Supabase client for DB queries** - Use SQLAlchemy/SQLModel
+- **Sync database calls** - Use async with asyncpg
+- **Hardcoded credentials** - Use environment variables
+- **No connection pooling** - asyncpg handles this
+- **Missing auth dependency** - Always validate JWT
+- **Not closing sessions** - Use context managers
+- **Blocking I/O in async** - Use async libraries

@@ -1,6 +1,6 @@
 ---
 name: code-refinement
-description: 'Improve code quality across duplication, efficiency, and architectural fit.'
+description: Improves code quality across duplication, efficiency, and architectural fit. Use when code passes tests but quality is poor or before a major release.
 alwaysApply: false
 category: code-quality
 tags:
@@ -200,12 +200,12 @@ Match the user's invocation phrasing against this table to determine execution s
 |---|---|---|
 | `/code-refinement` (no qualifier) | **Plan only** | After Step 5 |
 | `--dry-run` or "just plan" | **Plan only** | After Step 5 |
-| "execute findings" / "apply fixes" | **Plan + execute Wave 1** | After all SMALL-effort + LOW-risk findings closed |
-| "execute all findings" / "all phases" / "all waves" | **Plan + execute every wave** | After every finding (or every wave-listed candidate) is either closed by commit or has explicit per-item rationale in the synthesis |
+| "execute findings" / "apply fixes" | **Plan, execute Wave 1** | After all SMALL-effort, and LOW-risk findings closed |
+| "execute all findings" / "all phases" / "all waves" | **Plan and execute every wave** | After every finding (or every wave-listed candidate) is either closed by commit or has explicit per-item rationale in the synthesis |
 | "ignore scope guard" | **Override branch-size limits** | Branch metrics do not gate execution. Continue past RED zone. |
 | "do not stop until complete" / "until ALL ... complete" | **No mid-task summaries** | Only declare done when synthesis has every wave-listed candidate closed-or-rationale'd |
 
-The triggers compose: `--tier 3 --execute all findings --ignore-scope-guard` means run every Wave 2 + Wave 3 candidate to closure regardless of branch size.
+The triggers compose: `--tier 3 --execute all findings --ignore-scope-guard` means run every Wave 2 and Wave 3 candidate to closure regardless of branch size.
 
 #### Completion gate (when execution mode is active)
 
@@ -234,7 +234,7 @@ If the harness fires a stop signal mid-execution and the completion gate is not 
 |------|------|-------|
 | **1: Quick** (default) | 2-5 min | Complexity hotspots, obvious duplication, naming, magic values |
 | **2: Targeted** | 10-20 min | Algorithm analysis, full duplication scan, architectural alignment |
-| **3: Deep** | 30-60 min | All above + cross-module coupling, paradigm fitness, comprehensive plan |
+| **3: Deep** | 30-60 min | All above and cross-module coupling, paradigm fitness, comprehensive plan |
 
 ## Cross-Plugin Dependencies
 

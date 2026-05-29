@@ -1,0 +1,18 @@
+{
+  "name": "orcaflex-visualization",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/orcaflex-visualization/SKILL.md",
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "downloaded_at": "2026-01-22T03:25:26.856587Z",
+  "dir_name": "orcaflex-visualization",
+  "category": "generation",
+  "github_path": ".claude/skills/orcaflex-visualization",
+  "github_branch": "main",
+  "author": "vamseeachanta",
+  "source_url": "https://github.com/vamseeachanta/digitalmodel/blob/main/.claude/skills/orcaflex-visualization/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 Vamsee Achanta",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

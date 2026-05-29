@@ -1,0 +1,20 @@
+{
+  "name": "notification-persistence",
+  "description": "",
+  "repo": "SOFIA-ASIF/TaskFlow-ToDo-APP",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SOFIA-ASIF/TaskFlow-ToDo-APP",
+  "github_path": ".claude/skills/notification-persistence",
+  "github_branch": "main",
+  "dir_name": "notification-persistence-sofia-asif-taskflow-todo-app",
+  "downloaded_at": "2026-02-05T01:44:22.937601Z",
+  "author": "SOFIA-ASIF",
+  "source_url": "https://github.com/SOFIA-ASIF/TaskFlow-ToDo-APP/blob/main/.claude/skills/notification-persistence/SKILL.md",
+  "license": "ISC",
+  "copyright": "Copyright (c) 2026 AMAN SHAHID <shahidamaan2019@gmail.com>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

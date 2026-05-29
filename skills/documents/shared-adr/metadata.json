@@ -1,0 +1,17 @@
+{
+  "name": "shared-adr",
+  "repo": "edfenton/claude-skills",
+  "path": "shared/shared-adr/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/edfenton/claude-skills",
+  "dir_name": "shared-adr",
+  "downloaded_at": "2026-03-22T07:53:06.304312Z",
+  "author": "edfenton",
+  "source_url": "https://github.com/edfenton/claude-skills/blob/main/shared/shared-adr/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/edfenton/claude-skills/blob/main/shared/shared-adr/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -120,7 +120,7 @@ spawn_agent:
     - Details: what specifically was found
 
     Overall verdict: PASS | WARN | FAIL
-    
+
     Be thorough. Read every eval script line by line.
 ```
 
@@ -202,7 +202,7 @@ Also write `EXPERIMENT_AUDIT.json` for machine consumption:
   Scope:               ⚠️ WARN — 2 scenes, paper says "comprehensive"
 
   Overall: ⚠️ WARN
-  
+
   See EXPERIMENT_AUDIT.md for details.
 ```
 
@@ -259,4 +259,4 @@ Motivated by community-reported integrity issues (#57, #131) where executor agen
 
 ## Review Tracing
 
-After each reviewer agent call, save the trace following `shared-references/review-tracing.md`. Use `tools/save_trace.sh` or write files directly to `.aris/traces/<skill>/<date>_run<NN>/`. Respect the `--- trace:` parameter (default: `full`).
+After each reviewer agent call, save the trace following `shared-references/review-tracing.md` (Policy C — forensic; never silently skip). Use `save_trace.sh` (resolved per the chain in `shared-references/integration-contract.md` §2) or write files directly to `.aris/traces/<skill>/<date>_run<NN>/`. Respect the `--- trace:` parameter (default: `full`).

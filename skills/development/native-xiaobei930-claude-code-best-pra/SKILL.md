@@ -1,6 +1,6 @@
 ---
 name: native
-description: "Native app development strategies including iOS/macOS (Apple platforms). Use when developing native mobile or desktop applications. Future: android."
+description: "Native app development strategies including iOS/macOS (Apple platforms), Tauri desktop apps. Use when developing native mobile or desktop applications."
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob
 ---
 
@@ -13,6 +13,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob
 - [ios.md](ios.md) - iOS/macOS 开发指南
 - [swift-concurrency.md](swift-concurrency.md) - Swift 并发编程
 - [swiftui-performance.md](swiftui-performance.md) - SwiftUI 性能优化
+- [tauri.md](tauri.md) - Tauri 跨平台桌面应用开发
 
 ## 原生 vs 跨平台
 

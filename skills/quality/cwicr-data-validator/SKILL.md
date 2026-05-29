@@ -1,8 +1,9 @@
 ---
-name: cwicr-data-validator
+name: "cwicr-data-validator"
 description: "Validate CWICR data quality and estimate inputs. Check for errors, inconsistencies, outliers, and missing data."
+homepage: "https://datadrivenconstruction.io"
+metadata: {"openclaw": {"emoji": "🗄️", "os": ["darwin", "linux", "win32"], "homepage": "https://datadrivenconstruction.io", "requires": {"bins": ["python3"]}}}
 ---
-
 # CWICR Data Validator
 
 ## Business Case

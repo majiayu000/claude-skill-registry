@@ -1,0 +1,18 @@
+{
+  "name": "settings-viewer",
+  "repo": "shiiman/claude-code-plugins",
+  "path": "plugins/shiiman-claude/skills/settings-viewer/SKILL.md",
+  "source": "github.com/shiiman/claude-code-plugins",
+  "downloaded_at": "2026-01-14T01:33:41.770304Z",
+  "dir_name": "settings-viewer-shiiman-claude-code-plugins",
+  "category": "platform",
+  "github_path": "plugins/shiiman-claude/skills/settings-viewer",
+  "github_branch": "main",
+  "author": "shiiman",
+  "source_url": "https://github.com/shiiman/claude-code-plugins/blob/main/plugins/shiiman-claude/skills/settings-viewer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shiiman/claude-code-plugins/blob/main/plugins/shiiman-claude/skills/settings-viewer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

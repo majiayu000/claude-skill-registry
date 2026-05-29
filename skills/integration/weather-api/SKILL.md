@@ -1,5 +1,6 @@
 ---
-name: weather-api
+slug: "weather-api"
+display_name: "Weather API"
 description: "Fetch weather data for construction scheduling. Historical data, forecasts, and risk assessment for outdoor work."
 ---
 

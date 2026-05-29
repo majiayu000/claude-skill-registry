@@ -1,6 +1,6 @@
 ---
 name: image-forge
-description: Precision image editing using ImageMagick 7, sips, rembg, and Pillow with intelligent routing to AI semantic editing (Gemini/nano-banana-pro) for content-aware operations. This skill should be used when performing any image manipulation task including cropping, resizing, compositing, annotating, format conversion, color adjustment, batch processing, montage creation, or when combining deterministic edits with AI-powered semantic edits.
+description: Edit images with precision using ImageMagick 7, sips, transparent-background, and Pillow — with intelligent routing to AI semantic editing (Gemini/nano-banana-pro) for content-aware operations. Covers cropping, resizing, compositing, annotating, format conversion, color adjustment, background removal, batch processing, and montage creation. Triggers on image editing, crop, resize, composite, annotate, remove background, format conversion.
 ---
 
 # Image Forge
@@ -11,7 +11,7 @@ Pixel-precise image editing with three-tier routing: deterministic CLI tools for
 
 **Use AI when the edit requires understanding what is in the image. Use ImageMagick when the edit requires knowing exactly what to do to the pixels.**
 
-### Tier 1: Deterministic (magick, sips, rembg)
+### Tier 1: Deterministic (magick, sips, transparent-background)
 
 Use for operations with exact, numeric parameters:
 
@@ -34,7 +34,8 @@ Use for operations with exact, numeric parameters:
 | Sepia | magick | `magick in.jpg -sepia-tone 80% out.jpg` |
 | Blur | magick | `magick in.jpg -blur 0x3 out.jpg` |
 | Sharpen | magick | `magick in.jpg -sharpen 0x1 out.jpg` |
-| Remove background | rembg | `rembg i in.jpg out.png` |
+| Remove background (AI) | transparent-background | See **Background Removal** section below |
+| Remove background (simple) | magick | `magick in.jpg -fuzz 15% -transparent white -trim +repage out.png` |
 | Strip metadata | magick | `magick in.jpg -strip out.jpg` |
 | Set DPI | magick | `magick in.jpg -density 300 out.jpg` |
 | Batch resize | `batch_ops.py` | `python3 scripts/batch_ops.py *.jpg --op resize --width 800 --output resized/` |
@@ -53,6 +54,10 @@ Delegate to the `nano-banana-pro` skill when the edit requires understanding ima
 - Generate new image from scratch
 - Content-aware fill after object removal
 
+**Nano Banana regenerates, it does not edit.** Every call re-rolls the entire frame, even when the prompt asks to preserve regions verbatim. Expect ~40% of pixels to drift outside the target area — measured empirically, not hypothesized. For surgical regional edits (change the face, keep everything else identical), use the hybrid pattern in `references/compositing.md` § Surgical Regional Edits: let NB produce a drifted reference, then composite only the target region onto the pristine original with a feathered alpha mask.
+
+Nano Banana also supports only discrete aspect ratios (1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9). For inputs at other ratios (e.g. 3:1 panoramics), see `references/recipes.md` § Aspect Ratio Padding for the pad-generate-crop recipe.
+
 ### Tier 3: Vision Analysis (Claude Read tool)
 
 Use the Read tool to inspect images before/after edits:
@@ -61,6 +66,49 @@ Use the Read tool to inspect images before/after edits:
 - Describe image contents
 - Check composition and framing
 - Identify colors, objects, text in image
+
+## Background Removal
+
+Use `transparent-background` (InSPyReNet model) for AI background removal. It produces clean alpha mattes with smooth anti-aliased edges — far superior to ImageMagick's `-transparent`/`-fuzz` approach, which leaves white fringing in concave regions and jagged edges.
+
+**When to use each:**
+
+| Method | When | Quality |
+|--------|------|---------|
+| `transparent-background` | Any photo/render with complex foreground (hair, translucent edges, concave regions) | Smooth alpha, no fringing |
+| `magick -transparent white -fuzz N%` | Simple shapes on pure white, quick-and-dirty | Fast but aliased edges, misses interior white |
+| `magick floodfill` | Remove background from corners only, preserve interior white | Only hits connected regions |
+
+**Python API (recommended):**
+
+```python
+from transparent_background import Remover
+from PIL import Image
+
+remover = Remover()
+img = Image.open("input.jpg").convert("RGB")
+out = remover.process(img, type="rgba")
+out.save("output.png")
+```
+
+**With trim (most common workflow):**
+
+```bash
+python3 -c "
+from transparent_background import Remover
+from PIL import Image
+remover = Remover()
+img = Image.open('input.jpg').convert('RGB')
+remover.process(img, type='rgba').save('/tmp/nobg.png')
+"
+magick /tmp/nobg.png -trim +repage output.png
+```
+
+**Install:** `uv pip install --system transparent-background`
+
+**Performance:** ~2-3s per image on Apple Silicon (MPS). First run downloads the InSPyReNet model (~170MB).
+
+**Note:** `rembg` is an alternative but has a broken `gradio` dependency as of May 2026. `transparent-background` is the more reliable option.
 
 ## Scripts
 
@@ -253,6 +301,7 @@ magick in.jpg -resize '800x600>' out.jpg
 6. **`-alpha off` is permanent in IM7** — Use `-alpha deactivate`/`-alpha activate` for temporary toggle
 7. **Inspect before editing** — Run `image_info.py` first to know dimensions, format, alpha state
 8. **Pipeline for multi-step** — Use `image_pipeline.py` instead of chaining shell commands
+9. **Nano Banana drifts the whole frame** — Never trust NB to leave regions unchanged. For regional edits, use the surgical composite pattern (see `compositing.md` § Surgical Regional Edits). Verify with `magick compare -metric AE -fuzz 5% before after diff.png` — low AE means clean, ~40%+ means full regeneration.
 
 ## References
 

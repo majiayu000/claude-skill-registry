@@ -25,6 +25,18 @@ description: Architectural guidance for building node-based UIs with React Flow.
 - 3D visualizations (use Three.js, react-three-fiber)
 - Graph analysis with 10k+ nodes (use WebGL-based solutions like Sigma.js)
 
+### Decision workflow (gates)
+
+Run this sequence before locking the stack or sprinting implementation. Skip only for throwaway prototypes.
+
+1. **Name the interactions** — List the top user actions (e.g. drag, connect, delete, group). **Pass:** Each action maps to a concrete React Flow callback you will implement (`onNodesChange`, `onConnect`, …).
+
+2. **Classify scale** — Estimate peak nodes (visible canvas or document total). **Pass:** Your range matches a row in [Node Count Guidelines](#node-count-guidelines) and you accept the listed strategy (e.g. `onlyRenderVisibleElements` when that row implies it).
+
+3. **Place state** — Choose local hooks, an external store, or Redux/other. **Pass:** One sentence states where persistence, undo, or cross-surface sync will live, or explicitly “not needed yet.”
+
+4. **Re-check alternatives** — If the use case matches [Consider Alternatives](#consider-alternatives), **Pass:** One sentence explains why React Flow still fits or which listed alternative you chose instead.
+
 ## Architecture Patterns
 
 ### Package Structure (xyflow)

@@ -1,0 +1,18 @@
+{
+  "name": "plan-validate-structure",
+  "repo": "mvillmow/ProjectOdyssey",
+  "path": ".claude/skills/plan-validate-structure/SKILL.md",
+  "source": "github.com/mvillmow/ProjectOdyssey",
+  "downloaded_at": "2026-01-22T02:46:11.823853Z",
+  "dir_name": "plan-validate-structure-mvillmow-projectodyssey",
+  "category": "planning",
+  "github_path": ".claude/skills/plan-validate-structure",
+  "github_branch": "main",
+  "author": "mvillmow",
+  "source_url": "https://github.com/mvillmow/ProjectOdyssey/blob/main/.claude/skills/plan-validate-structure/SKILL.md",
+  "license": "BSD-3-Clause",
+  "copyright": "Copyright (c) 2025, ML Odyssey Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

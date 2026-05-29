@@ -1,549 +1,300 @@
 ---
 name: analysis-diagnose
-description: "Perform systematic root cause investigation. Use when you encounter bugs, test failures, or unexpected behavior. Not for trivial or obvious fixes, creative experimentation, or learning new systems."
+agent: explore
+context: fork
+description: "Perform systematic root cause investigation through 4-phase process. Use when encountering bugs, test failures, or unexpected behavior. Includes evidence gathering, hypothesis formation, testing protocols, and solution justification. Not for trivial fixes, creative experimentation, learning new systems, or implementing solutions."
 ---
-
-# Systematic Analysis & Diagnosis
 
 <mission_control>
-<objective>Perform systematic root cause investigation with evidence gathering before any fixes</objective>
-<success_criteria>Root cause identified with documented evidence, minimal fix applied and verified</success_criteria>
+<objective>Perform systematic root cause investigation through evidence gathering, hypothesis formation, testing, and solution justification.</objective>
+<success_criteria>
+- Symptom documented with exact error messages and reproduction steps
+- Evidence gathered: logs, git history, environment data, diagnostics
+- Single hypothesis formed based on evidence (not assumptions)
+- Minimal reproduction test created to verify hypothesis
+- Root cause identified with file:line evidence
+- Fix strategy documented with verification approach
+</success_criteria>
+<semantic_anchors>
+- **Single Hypothesis**: Test one theory at a time for clear verification
+- **5 Whys**: Iterative "why" questioning to reach actionable root cause
+- **Pattern Recognition**: 3+ failures indicate systemic vs isolated issue
+- **Evidence-Based**: All claims require file reads or diagnostic output
+</semantic_anchors>
 </mission_control>
 
-## Overview
+## Quick Start
 
-Systematic root cause investigation framework for debugging bugs, test failures, and unexpected behavior. Implements the 4-phase Iron Law with evidence gathering protocols and psychological pressure resistance.
+Bug encountered → Document symptom → Gather evidence → Form single hypothesis → Test with minimal reproduction → Identify root cause → Implement fix
 
-**Core principle:** NO FIXES WITHOUT ROOT CAUSE INVESTIGATION FIRST
+## Navigation
 
-**The Iron Law:** Root Cause → Pattern Analysis → Hypothesis → Implementation (never skip phases)
+| If you need... | Read this section... |
+| :--- | :--- |
+| Run diagnosis | ## Quick Start |
+| 4-phase process | ## Diagnostic Flow |
+| Semantic anchors | ## Semantic Anchors |
+| Troubleshooting | ## Troubleshooting |
+| Validation | ## Validation Checklist |
 
-<interaction_schema>
-symptom → evidence → hypothesis → test → implementation → verify
-</interaction_schema>
+## Semantic Anchors
 
-## Investigation Format
+### Single Hypothesis Protocol
 
-<investigation_format>
-<investigation>
-<symptom>
-<description>[What is the observable problem?]</description>
-<error_messages>[Complete error text, stack traces]</error_messages>
-<reproduction_steps>[Exact steps to reproduce]</reproduction_steps>
-<frequency>[Always/Sometimes/Once]</frequency>
-</symptom>
+Test one theory at a time for clear verification. Multiple simultaneous hypotheses create uncertainty about which fix worked.
 
-<evidence>
-<logs>[Relevant log output]</logs>
-<recent_changes>[Git diff, recent commits, config changes]</recent_changes>
-<environment_data>[OS, versions, dependencies]</environment_data>
-<diagnostic_output>[Output from diagnostic commands]</diagnostic_output>
-</evidence>
+**Process:**
+1. Form hypothesis based on evidence (not assumptions)
+2. Create minimal reproduction test
+3. Confirm or reject
+4. Only then move to next hypothesis
 
-<hypothesis>
-<root_cause>[What is the likely root cause?]</root_cause>
-<reasoning>[Why does this cause the symptom?]</reasoning>
-<confidence>[High/Medium/Low - based on evidence]</confidence>
-</hypothesis>
-
-<test>
-<minimal_reproduction>[Smallest test to confirm hypothesis]</minimal_reproduction>
-<expected_result>[What should happen if hypothesis is correct]</expected_result>
-<actual_result>[What actually happened]</actual_result>
-<conclusion>[Confirmed/Rejected - hypothesis status]</conclusion>
-</test>
-</investigation>
-</investigation_format>
-
----
-
-## The Iron Law
-
-<absolute_constraint>
-**NO FIXES WITHOUT ROOT CAUSE INVESTIGATION FIRST**
-
-If you haven't completed Phase 1, you CANNOT propose fixes.
-
-This is not a suggestion. This is a law of debugging.
-</absolute_constraint>
-
-## When to Use
-
-**Use when:**
-
-- Any bug or test failure occurs
-- Unexpected behavior observed
-- Regression testing fails
-- Debugging session extends beyond 15 minutes
-- Multiple failed fix attempts
-- Architecture-level issues suspected
-
-**Don't use when:**
-
-- Issue is trivial and obvious (typo, missing import)
-- Creative/experimental debugging
-- Learning new systems (use exploratory approach)
-
-## The Four-Phase Investigation
-
-### Phase 1: Root Cause Investigation
-
-**MANDATORY FIRST STEP** - Never skip to fixing
-
-#### Evidence Gathering Protocol
-
-```bash
-# Multi-component diagnostic instrumentation
-diagnostic_check() {
-  echo "=== System State ==="
-  uname -a
-  node --version 2>&1 || echo "Node not found"
-  npm --version 2>&1 || echo "npm not found"
-
-  echo -e "\n=== Error Context ==="
-  tail -50 error.log 2>/dev/null || echo "No error.log"
-
-  echo -e "\n=== Recent Changes ==="
-  git log --oneline -10
-
-  echo -e "\n=== Test Output ==="
-  npm test 2>&1 | tail -100
-
-  echo -e "\n=== Build Status ==="
-  npm run build 2>&1 || echo "Build failed"
-}
+**Example:**
+```
+Hypothesis: "Request size exceeds limit"
+Test: Send request with 151 items, expect 500 error
+Result: Confirmed
+Next: Implement maxItems validation
 ```
 
-#### Root Cause Discovery Techniques
+### 5 Whys Technique
 
-**1. Temporal Analysis**
+Iterative questioning to reach actionable root cause. Each "why" drills deeper from symptom to cause.
 
-- When did this first occur?
-- What changed between working and broken?
-- Commit history analysis
-- Time-based correlation
-
-**2. Backward Tracing**
-
-- Start from error symptom
-- Trace call stack backward
-- Identify failure point
-- Find root cause upstream
-
-**3. Architecture Awareness**
-
-- 3+ failures = architectural problem, not code issue
-- Systemic patterns vs isolated bugs
-- Integration points as failure sources
-- State management issues
-
-**4. 5 Whys Technique**
-
-For complex problems, use iterative "why" questioning to drill down:
-
+**Process:**
 ```
-**Problem**: [Observable symptom]
+Problem: [Observable symptom]
 
-**Why 1**: [First-level cause]
+Why 1: [First-level cause]
 → Because [explanation]
 
-**Why 2**: [Second-level cause]
+Why 2: [Second-level cause]
 → Because [explanation]
 
-**Why 3**: [Third-level cause]
+Why 3: [Third-level cause]
 → Because [explanation]
 
-**Why 4**: [Fourth-level cause]
+Why 4: [Fourth-level cause]
 → Because [explanation]
 
-**Why 5**: [Root cause]
+Why 5: [Root cause]
 → Because [explanation]
 
-**Root Cause**: [The fundamental issue]
-**Action**: [What to fix to prevent recurrence]
+Root Cause: [The fundamental issue]
+Action: [What to fix to prevent recurrence]
 ```
 
-**Guidelines**:
+**Guidelines:**
+- Be specific — each answer factual and verifiable
+- Avoid blame — focus on systems and processes
+- Check logic — ensure each answer explains the previous level
+- Stop at actionable — when you reach something you can fix
 
-- Be specific - each answer should be factual and verifiable
-- Avoid blame - focus on systems and processes
-- Check logic - ensure each answer explains the previous level
-- Stop at root cause - when you reach something actionable
+### Pattern Recognition
 
-#### Evidence Documentation
+Distinguish isolated bugs from architectural problems.
 
-Document ALL findings:
-
-```markdown
-## Root Cause Analysis
-
-**Symptom:** [Exact error message or behavior]
-
-**Evidence:**
-
-1. [Source file:line] - What happened
-2. [Source file:line] - Why it failed
-3. [Source file:line] - Root cause
-
-**Pattern:** [Isolated issue or systemic problem?]
-```
-
-### Phase 2: Pattern Analysis
-
-**Question:** Is this isolated or systemic?
-
-#### Pattern Recognition
-
-**Isolated Patterns:**
-
+**Isolated Issue:**
 - Single component affected
 - Reproducible with specific input
 - No cascade effects
 - Local fix sufficient
 
-**Systemic Patterns:**
-
+**Systemic Problem:**
 - Multiple components affected
 - Architecture-level issue
 - State management problem
 - Integration failure
 
-#### Decision Tree
+**Decision rule:** 3+ similar failures = systemic problem requiring architectural review, not localized patches.
 
-```mermaid
-graph TD
-    A[Pattern Identified] --> B{Recurring Issue?}
-    B -->|Yes| C[Systemic Problem]
-    B -->|No| D[Isolated Issue]
-    C --> E[Architecture Review Required]
-    D --> F[Local Fix Sufficient]
-```
+### Evidence-Based Investigation
 
-### Phase 3: Hypothesis Formation
+Every claim requires verification:
+- File reads for code analysis
+- Diagnostic output for system state
+- Git history for recent changes
+- No assumptions about what's "obvious"
 
-**MANDATORY:** Single hypothesis, minimal testing
+## Diagnostic Flow
 
-#### Hypothesis Criteria
+### Phase 1: State the Problem
 
-**Good Hypotheses:**
+Document symptom before investigating:
+- Exact error messages
+- Stack traces
+- Reproduction steps
+- Frequency (Always/Sometimes/Once)
 
-- Based on evidence from Phase 1
+### Phase 2: Gather Evidence
+
+Collect proof, don't assume:
+- **Logs**: Error output, console logs
+- **Recent changes**: `git log --oneline -10`
+- **Environment**: OS, versions, dependencies
+- **Diagnostics**: Test output, build status
+
+**Temporal analysis:** When did this first occur? What changed between working and broken?
+
+**Backward tracing:** Start from error, trace call stack to failure point, find root cause upstream.
+
+### Phase 3: Form Hypothesis
+
+Single hypothesis based on evidence.
+
+**Good hypothesis:**
+- Based on evidence from Phase 2
 - Falsifiable (can be proven wrong)
 - Specific (predicts exact behavior)
 - Actionable (suggests concrete fix)
 
-**Bad Hypotheses:**
-
-- Multiple competing hypotheses
+**Bad hypothesis:**
+- Multiple competing theories
 - Based on assumptions, not evidence
 - Too vague to test
-- Confirmed without testing
 
-#### Hypothesis Template
+### Phase 4: Test & Conclude
 
-```markdown
-## Hypothesis
+Minimal reproduction test before full fix.
 
-**Based on:** [Evidence from Phase 1]
+**Process:**
+1. Create smallest test that confirms hypothesis
+2. Verify expected vs actual result
+3. If confirmed: implement fix
+4. If rejected: return to Phase 3 with new hypothesis
+5. After fix: verify no regressions
 
-**Predicts:** [Specific behavior if hypothesis is true]
+## Investigation Format
 
-**Test:** [Minimal test to verify/falsify]
+```xml
+<investigation>
+  <symptom>
+    <description>[Observable problem]</description>
+    <error_messages>[Complete error text]</error_messages>
+    <reproduction_steps>[Exact steps]</reproduction_steps>
+    <frequency>[Always/Sometimes/Once]</frequency>
+  </symptom>
 
-**Expected Result:** [What we should see]
+  <evidence>
+    <logs>[Relevant log output]</logs>
+    <recent_changes>[Git diff, commits]</recent_changes>
+    <environment_data>[OS, versions]</environment_data>
+    <diagnostic_output>[Diagnostic commands]</diagnostic_output>
+  </evidence>
+
+  <hypothesis>
+    <root_cause>[Likely root cause]</root_cause>
+    <reasoning>[Why this causes symptom]</reasoning>
+    <confidence>[High/Medium/Low]</confidence>
+  </hypothesis>
+
+  <test>
+    <minimal_reproduction>[Smallest test]</minimal_reproduction>
+    <expected_result>[What should happen]</expected_result>
+    <actual_result>[What actually happened]</actual_result>
+    <conclusion>[Confirmed/Rejected]</conclusion>
+  </test>
+</investigation>
 ```
 
-### Phase 4: Implementation
+## Troubleshooting
 
-**Only after Phases 1-3 complete**
-
-#### Implementation Protocol
-
-1. **Implement fix** based on verified hypothesis
-2. **Test fix** with minimal test case
-3. **Verify no regressions** with broader test suite
-4. **Document root cause** for future reference
-
-#### Fix Validation
-
-```bash
-# Minimal test to verify fix
-test_fix() {
-  echo "Running minimal fix verification..."
-  node -e "[test code]"
-  if [ $? -eq 0 ]; then
-    echo "✅ Fix verified"
-  else
-    echo "❌ Fix failed - re-examine hypothesis"
-  fi
-}
-```
-
-## Red Flags - STOP
-
-### Investigation Violations
-
-- Skipping Phase 1 (root cause) and jumping to fixes
-- Multiple competing hypotheses (choose ONE)
-- Fixing without evidence-based hypothesis
-- Assuming instead of testing
-- Pattern denial (ignoring systemic issues)
-- **Starting to code before completing Phase 3**
-
-### Rationalization Prevention
-
-| Excuse                  | Reality                             |
-| ----------------------- | ----------------------------------- |
-| "This should work"      | TEST it first                       |
-| "Looks correct"         | Evidence needed                     |
-| "Probably just a typo"  | Verify root cause                   |
-| "I've seen this before" | This case may differ                |
-| "Time pressure"         | Fixes without root cause waste time |
-| "Probably nothing"      | Thorough investigation needed       |
-| "Just restart"          | Restarts don't fix root causes      |
-
-### Stop Patterns
-
-If you catch yourself:
-
-- ✅ Fixing without root cause analysis
-- ✅ Making multiple hypothesis at once
-- ✅ Ignoring evidence that contradicts assumptions
-- ✅ Rushing to implementation
-- ✅ Denying systemic patterns
-
-STOP and return to Phase 1.
+| Symptom | Solution |
+| :--- | :--- |
+| Tests pass locally, fail in CI | Check environment differences, timeouts, race conditions |
+| Flaky tests | Look for async timing issues, mock dependencies properly |
+| Bug recurs after fix | Root cause wasn't truly fixed — re-run 5 Whys analysis |
+| Multiple hypotheses conflicting | Test ONE at a time with minimal reproduction |
+| Cannot determine isolated/systemic | Count affected components: 3+ = systemic |
+| Investigation stalls after 3+ hypotheses | Question the pattern, not individual bugs |
 
 ## Pressure Resistance
 
-### Common Pressure Scenarios
+Systematic investigation prevents shortcuts that create technical debt.
 
-**Time Pressure:**
+**Time pressure responses:**
+- "Need to deploy soon" → Root cause prevents future issues
+- "User waiting for fix" → Rushed fixes create more problems
 
-- "Need to deploy soon"
-- "User waiting for fix"
-- "Demo in 30 minutes"
+**Sunk cost responses:**
+- "Already spent 2 hours" → Wrong approach wastes more time
+- "Almost there" → Return to root cause with fresh perspective
 
-**Response:** Root cause investigation prevents future issues. Fixes without root cause create technical debt.
+**Obvious fix responses:**
+- "It's obviously just X" → Obvious ≠ Correct, verify with evidence
 
-**Sunk Cost:**
+**Protocol:** Acknowledge pressure → Return to systematic approach → Brief justification → Continue investigation
 
-- "Already spent 2 hours debugging"
-- "Almost there with current approach"
-- "Can't abandon this fix attempt"
+## Best Practices
 
-**Response:** Sunk cost fallacy. Return to root cause with fresh perspective.
+**DO:**
+- Gather concrete evidence before forming conclusions
+- Test one hypothesis at a time
+- Use 5 Whys to reach root cause
+- Document root cause for future reference
+- Verify with minimal reproduction before full fix
 
-**Obvious Fix Temptation:**
+**DON'T:**
+- Apply fixes without root cause investigation
+- Test multiple hypotheses simultaneously
+- Assume obvious = correct
+- Ignore patterns (3+ failures = systemic)
+- Fall for sunk cost rationalization
 
-- "It's obviously just a missing semicolon"
-- "Clearly the API is down"
-- "Just need to restart"
+## Validation Checklist
 
-**Response:** Verify with evidence. Obvious ≠ Correct.
+Before claiming diagnosis complete:
 
-### Pressure Response Protocol
+**Problem Statement:**
+- [ ] Symptom documented with exact error messages
+- [ ] Reproduction steps verified
+- [ ] Frequency and conditions identified
 
-1. **Acknowledge pressure**
-2. **Return to systematic approach**
-3. **Brief justification**: "Root cause prevents recurrence"
-4. **Continue investigation**
+**Evidence Gathering:**
+- [ ] Logs and error output collected
+- [ ] Recent changes reviewed (git history)
+- [ ] Environment data documented
 
-## Evidence Gathering Templates
+**Hypothesis Formation:**
+- [ ] Single hypothesis based on evidence
+- [ ] Hypothesis is falsifiable
+- [ ] Confidence level assigned
 
-### Bug Report Template
+**Test & Conclude:**
+- [ ] Minimal reproduction test created
+- [ ] Hypothesis confirmed or rejected
+- [ ] Root cause identified with file:line evidence
+- [ ] Fix strategy documented
 
-```markdown
-## Bug Analysis Report
-
-### Symptom
-
-[Exact error message or behavior]
-
-### Reproducibility
-
-- [ ] Always
-- [ ] Sometimes
-- [ ] Specific conditions: [list]
-
-### Environment
-
-- OS: [uname -a]
-- Node: [node --version]
-- Dependencies: [npm list]
-
-### Timeline
-
-- First observed: [date/time]
-- Last working: [date/time]
-- Changes since: [git log]
-
-### Evidence
-
-1. [Source:line] - [description]
-2. [Source:line] - [description]
-
-### Root Cause
-
-[Single sentence: What actually failed?]
-
-### Pattern
-
-- [ ] Isolated issue
-- [ ] Systemic problem
-
-### Hypothesis
-
-[Based on evidence, what causes this?]
-
-### Test
-
-[How to verify hypothesis?]
-
-### Fix
-
-[What changes resolve the issue?]
-```
-
-### Test Failure Analysis
-
-```markdown
-## Test Failure Analysis
-
-### Failure Message
-```
-
-[Exact test output]
-
-```
-
-### Stack Trace
-```
-
-[Full stack trace]
-
-````
-
-### Test Code
-```javascript
-[Relevant test code]
-````
-
-### Implementation
-
-```javascript
-[Relevant implementation]
-```
-
-### Root Cause
-
-[What actually failed?]
-
-### Fix Strategy
-
-[How to resolve?]
-
-```
-
-## Systematic vs Heuristic Debugging
-
-### When to Use Systematic
-
-- **Complex failures** - Multiple components
-- **Recurring issues** - Happened before
-- **Production bugs** - High stakes
-- **Architectural problems** - 3+ failures
-- **Time pressure** - Prevent future issues
-
-### When Heuristic is OK
-
-- **Learning new code** - Exploratory
-- **Prototyping** - Experimentation
-- **Trivial issues** - Obvious typos
-- **Time extreme** - Emergency hotfix
-
-**Rule:** If systematic takes >30 minutes on obvious issue, switch to heuristic. But document root cause afterward.
-
-## Key Principles
-
-1. **Evidence-based investigation** - Gather proof, don't assume
-2. **Single hypothesis focus** - Test one thing at a time
-3. **Pattern recognition** - Distinguish isolated vs systemic
-4. **Architecture awareness** - 3+ failures = systemic
-5. **Pressure resistance** - Systematic beats intuition under stress
-
-**Remember:** Fixing without root cause investigation is like putting tape on a water pipe without finding the crack.
-
----
-
-## References
-
-For related diagnostic capabilities:
-- **Use the skill `quality-standards`** - Unified quality validation and three-way audit
+**Pattern Recognition:**
+- [ ] Isolated vs systemic determined
+- [ ] 3+ failures = architectural flag raised
 
 ---
 
 ## Genetic Code
 
-This component carries essential Seed System principles for context: fork isolation:
-
 <critical_constraint>
-MANDATORY: All components MUST be self-contained (zero .claude/rules dependency)
-MANDATORY: Achieve 80-95% autonomy (0-5 AskUserQuestion rounds per session)
-MANDATORY: Description MUST use What-When-Not format in third person
-MANDATORY: No component references another component by name in description
-MANDATORY: Progressive disclosure - references/ for detailed content
-MANDATORY: Use XML for control (mission_control, critical_constraint), Markdown for data
-No exceptions. Portability invariant must be maintained.
-</critical_constraint>
+**Portability Invariant: Zero External Dependencies**
+
+This component must work in a project with ZERO external rules access (no CLAUDE.md, CLAUDE.local.md, or .claude/rules/ dependencies).
+All necessary philosophy is embedded within this skill.
+
+**Evidence Requirements**
+
+Complete evidence gathering before proposing fixes.
+Document symptoms, evidence, hypothesis before implementing.
+Test hypothesis with minimal reproduction before full fix.
+
+**Single Hypothesis Protocol**
+
+Form single hypothesis based on evidence.
+Test with minimal reproduction.
+Confirm or reject before next hypothesis.
+
+**Architecture Pattern Recognition**
+
+Three or more similar failures indicate architectural problems requiring broader solutions than localized patches.
 
 **Delta Standard**: Good Component = Expert Knowledge − What Claude Already Knows
-
-**Recognition Questions**:
-- "Would Claude know this without being told?" → Delete (zero delta)
-- "Can this work standalone?" → Fix if no (non-self-sufficient)
-- "Did I read the actual file, or just see it in grep?" → Verify before claiming
-
----
-
-## Absolute Constraints (Non-Negotiable)
-
-<critical_constraint>
-**THE IRON LAW: NO FIXES WITHOUT ROOT CAUSE INVESTIGATION**
-
-- Complete Phase 1 (Root Cause Investigation) BEFORE proposing ANY fix
-- Document symptoms, evidence, hypothesis BEFORE implementing
-- Test hypothesis with minimal reproduction BEFORE full fix
-- NEVER skip to Phase 4 without completing Phases 1-3
-
-**MANDATORY: Use `<investigation>` format**
-
-- Symptom: What is the observable problem?
-- Evidence: Error messages, logs, recent changes, environment
-- Hypothesis: What is the likely root cause and why?
-- Test: Minimal reproduction to confirm hypothesis
-
-**MANDATORY: One hypothesis at a time**
-
-- Form single hypothesis based on evidence
-- Test with minimal reproduction
-- Confirm or reject before next hypothesis
-- NEVER try multiple fixes simultaneously
-
-**MANDATORY: Verification before claiming completion**
-
-- Test confirms fix resolves issue
-- No regressions introduced
-- Edge cases considered
-- Root cause documented
-
-**MANDATORY: Question architecture after 3+ failed hypotheses**
-
-- If 3+ hypotheses fail: STOP fixing
-- Question the pattern/architecture
-- Discuss with human partner
-- Wrong pattern cannot be fixed by more patches
-
-**No exceptions. Symptom patches are failure. Evidence-based investigation is mandatory.**
 </critical_constraint>
-```

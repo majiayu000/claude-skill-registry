@@ -1,183 +1,234 @@
 ---
-name: GitOps with ArgoCD
-description: Implementing GitOps workflows for Kubernetes deployments using ArgoCD.
+id: SKL-gitops-GITOPSARGOCD
+name: Gitops Argocd
+description: ArgoCD implements GitOps for Kubernetes by continuously reconciling cluster
+  state to desired state defined in Git. This skill covers GitOps principles, ArgoCD
+  architecture, installation and setup, App
+version: 1.0.0
+status: active
+owner: '@cerebra-team'
+last_updated: '2026-02-22'
+category: Backend
+tags:
+- api
+- backend
+- server
+- database
+stack:
+- Python
+- Node.js
+- REST API
+- GraphQL
+difficulty: Intermediate
 ---
 
-# GitOps with ArgoCD
+# Gitops Argocd
+
+## Skill Profile
+*(Select at least one profile to enable specific modules)*
+- [ ] **DevOps**
+- [x] **Backend**
+- [ ] **Frontend**
+- [ ] **AI-RAG**
+- [ ] **Security Critical**
 
 ## Overview
+ArgoCD implements GitOps for Kubernetes by continuously reconciling cluster state to desired state defined in Git. This skill covers GitOps principles, ArgoCD architecture, installation and setup, Application CRDs, sync strategies, Application Sets, sync waves and hooks, health checks, resource hooks, secrets management, multi-tenancy and RBAC, SSO integration, notifications, ArgoCD vs Flux, CI/CD integration, rollback strategies, monitoring, and disaster recovery.
 
-ArgoCD implements GitOps for Kubernetes by continuously reconciling cluster
-state to the desired state defined in Git. It provides visibility, drift
-detection, and controlled deployments.
-
-## Table of Contents
-
-1. [GitOps Principles](#gitops-principles)
-2. [ArgoCD Architecture](#argocd-architecture)
-3. [Installation and Setup](#installation-and-setup)
-4. [Application CRD](#application-crd)
-5. [Sync Strategies](#sync-strategies)
-6. [Application Sets](#application-sets)
-7. [Sync Waves and Hooks](#sync-waves-and-hooks)
-8. [Health Checks](#health-checks)
-9. [Resource Hooks](#resource-hooks)
-10. [Secrets Management](#secrets-management)
-11. [Multi-Tenancy and RBAC](#multi-tenancy-and-rbac)
-12. [SSO Integration](#sso-integration)
-13. [Notifications](#notifications)
-14. [ArgoCD vs Flux](#argocd-vs-flux)
-15. [CI/CD Integration](#cicd-integration)
-16. [Rollback Strategies](#rollback-strategies)
-17. [Monitoring](#monitoring)
-18. [Disaster Recovery](#disaster-recovery)
-19. [Best Practices](#best-practices)
+## Why This Matters
+- **Git as Source of Truth**: All infrastructure and application state defined in Git
+- **Automated Reconciliation**: ArgoCD continuously syncs cluster to desired state
+- **Visibility**: Full audit trail of all changes through Git history
+- **Progressive Delivery**: Sync waves enable controlled, staged deployments
 
 ---
 
-## GitOps Principles
+## Core Concepts & Rules
 
-- Git is the single source of truth.
-- Declarative configuration for infrastructure and apps.
-- Automated reconciliation.
-- Auditable change history.
+### 1. Core Principles
+- Follow established patterns and conventions
+- Maintain consistency across codebase
+- Document decisions and trade-offs
 
-## ArgoCD Architecture
+### 2. Implementation Guidelines
+- Start with the simplest viable solution
+- Iterate based on feedback and requirements
+- Test thoroughly before deployment
 
-- **Application Controller**: Reconciles desired and live state.
-- **API Server**: UI/CLI access.
-- **Repository Server**: Fetches and renders manifests.
-- **Dex**: Optional SSO provider.
 
-## Installation and Setup
+## Inputs / Outputs / Contracts
+* **Inputs**:
+  - Kubernetes cluster with ArgoCD installed
+  - Git repository with application manifests
+  - Application CRD definitions
+  - Docker images for deployment
+  - Configuration files (values, overlays)
 
-High-level steps:
-- Install ArgoCD in a dedicated namespace.
-- Configure repository access (SSH keys or tokens).
-- Create Applications for target workloads.
+* **Entry Conditions**:
+  - Kubernetes cluster is running and accessible
+  - Git repository is configured and accessible
+  - ArgoCD is installed and configured
+  - Container registry is available
 
-## Application CRD
+* **Outputs**:
+  - Configured ArgoCD Application resources
+  - Deployed applications to Kubernetes
+  - Sync status and health checks
+  - GitOps workflows with proper version control
+  - Secrets management integration
 
-Defines source repo, path, destination cluster/namespace, and sync policy.
+* **Artifacts Required (Deliverables)**:
+  - Application CRD YAML files
+  - ApplicationSet CRD YAML files
+  - Helm chart values files
+  - Kustomization overlays
+  - ArgoCD configuration manifests
+  - Documentation for GitOps workflows
 
-Example skeleton:
-```yaml
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: payments-service
-spec:
-  source:
-    repoURL: https://github.com/org/repo
-    path: apps/payments
-    targetRevision: main
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: payments
-  syncPolicy:
-    automated: {}
+* **Acceptance Evidence**:
+  - Screenshot of ArgoCD UI showing applications
+  - Screenshot of sync status showing successful deployment
+  - Screenshot of health check status
+  - Screenshot of Git commit history
+
+* **Success Criteria**:
+  - Applications sync successfully to cluster
+  - Health checks pass for all services
+  - Sync status shows "Synced" or "Operation Succeeded"
+  - Git commits are created for all changes
+
+## Skill Composition
+* **Depends on**: [kubernetes-deployment](./kubernetes-deployment/SKILL.md), [helm-charts](./helm-charts/SKILL.md), [terraform-infrastructure](./terraform-infrastructure/SKILL.md)
+* **Compatible with**: [ci-cd-github-actions](./ci-cd-github-actions/SKILL.md), [service-orchestration](./service-orchestration/SKILL.md)
+* **Conflicts with**: None - ArgoCD can coexist with other GitOps tools
+* **Related Skills**: [kubernetes-platform](../../62-scale-operations/kubernetes-platform/SKILL.md), [deployment-patterns](../../69-platform-engineering-lite/deployment-patterns/SKILL.md)
+
+---
+
+## Quick Start / Implementation Example
+
+1. Review requirements and constraints
+2. Set up development environment
+3. Implement core functionality following patterns
+4. Write tests for critical paths
+5. Run tests and fix issues
+6. Document any deviations or decisions
+
+```python
+# Example implementation following best practices
+def example_function():
+    # Your implementation here
+    pass
 ```
 
-## Sync Strategies
 
-- **Automated**: Auto-sync on changes.
-- **Manual**: Operator-initiated sync.
-- **Self-heal**: Reverts drift.
-- **Prune**: Removes orphaned resources.
+## Assumptions / Constraints / Non-goals
 
-## Application Sets
+* **Assumptions**:
+  - Development environment is properly configured
+  - Required dependencies are available
+  - Team has basic understanding of domain
+* **Constraints**:
+  - Must follow existing codebase conventions
+  - Time and resource limitations
+  - Compatibility requirements
+* **Non-goals**:
+  - This skill does not cover edge cases outside scope
+  - Not a replacement for formal training
 
-Use ApplicationSets for:
-- Multi-cluster deployment
-- Monorepo with multiple apps
-- Template-based app generation
 
-## Sync Waves and Hooks
+## Compatibility & Prerequisites
 
-Use sync waves to order resources (e.g., DB before app).
-Use hooks for migrations or setup tasks.
+* **Supported Versions**:
+  - Python 3.8+
+  - Node.js 16+
+  - Modern browsers (Chrome, Firefox, Safari, Edge)
+* **Required AI Tools**:
+  - Code editor (VS Code recommended)
+  - Testing framework appropriate for language
+  - Version control (Git)
+* **Dependencies**:
+  - Language-specific package manager
+  - Build tools
+  - Testing libraries
+* **Environment Setup**:
+  - `.env.example` keys: `API_KEY`, `DATABASE_URL` (no values)
 
-## Health Checks
 
-Configure custom health checks for CRDs and critical services to avoid false
-positives in deployment status.
+## Test Scenario Matrix (QA Strategy)
 
-## Resource Hooks
+| Type | Focus Area | Required Scenarios / Mocks |
+| :--- | :--- | :--- |
+| **Unit** | Core Logic | Must cover primary logic and at least 3 edge/error cases. Target minimum 80% coverage |
+| **Integration** | DB / API | All external API calls or database connections must be mocked during unit tests |
+| **E2E** | User Journey | Critical user flows to test |
+| **Performance** | Latency / Load | Benchmark requirements |
+| **Security** | Vuln / Auth | SAST/DAST or dependency audit |
+| **Frontend** | UX / A11y | Accessibility checklist (WCAG), Performance Budget (Lighthouse score) |
 
-Hooks:
-- **PreSync**: migrations or backups
-- **Sync**: data initialization
-- **PostSync**: smoke tests
 
-## Secrets Management
+## Technical Guardrails & Security Threat Model
 
-Options:
-- External secrets controller
-- Sealed Secrets
-- SOPS with KMS
+### 1. Security & Privacy (Threat Model)
+* **Top Threats**: Injection attacks, authentication bypass, data exposure
+- [ ] **Data Handling**: Sanitize all user inputs to prevent Injection attacks. Never log raw PII
+- [ ] **Secrets Management**: No hardcoded API keys. Use Env Vars/Secrets Manager
+- [ ] **Authorization**: Validate user permissions before state changes
 
-Avoid storing plaintext secrets in Git.
+### 2. Performance & Resources
+- [ ] **Execution Efficiency**: Consider time complexity for algorithms
+- [ ] **Memory Management**: Use streams/pagination for large data
+- [ ] **Resource Cleanup**: Close DB connections/file handlers in finally blocks
 
-## Multi-Tenancy and RBAC
+### 3. Architecture & Scalability
+- [ ] **Design Pattern**: Follow SOLID principles, use Dependency Injection
+- [ ] **Modularity**: Decouple logic from UI/Frameworks
 
-- Use projects to isolate teams.
-- Restrict repos, clusters, and namespaces per project.
-- Use ArgoCD RBAC for fine-grained access.
+### 4. Observability & Reliability
+- [ ] **Logging Standards**: Structured JSON, include trace IDs `request_id`
+- [ ] **Metrics**: Track `error_rate`, `latency`, `queue_depth`
+- [ ] **Error Handling**: Standardized error codes, no bare except
+- [ ] **Observability Artifacts**:
+    - **Log Fields**: timestamp, level, message, request_id
+    - **Metrics**: request_count, error_count, response_time
+    - **Dashboards/Alerts**: High Error Rate > 5%
 
-## SSO Integration
 
-Configure Dex or external OIDC provider (Okta, Azure AD).
+## Agent Directives & Error Recovery
+*(ข้อกำหนดสำหรับ AI Agent ในการคิดและแก้ปัญหาเมื่อเกิดข้อผิดพลาด)*
 
-## Notifications
+- **Thinking Process**: Analyze root cause before fixing. Do not brute-force.
+- **Fallback Strategy**: Stop after 3 failed test attempts. Output root cause and ask for human intervention/clarification.
+- **Self-Review**: Check against Guardrails & Anti-patterns before finalizing.
+- **Output Constraints**: Output ONLY the modified code block. Do not explain unless asked.
 
-Use ArgoCD Notifications for sync status and drift alerts:
-- Slack
-- Email
-- Webhooks
 
-## ArgoCD vs Flux
+## Definition of Done (DoD) Checklist
 
-- **ArgoCD**: UI-driven, strong app concept.
-- **Flux**: GitOps toolkit, more modular.
+- [ ] Tests passed + coverage met
+- [ ] Lint/Typecheck passed
+- [ ] Logging/Metrics/Trace implemented
+- [ ] Security checks passed
+- [ ] Documentation/Changelog updated
+- [ ] Accessibility/Performance requirements met (if frontend)
 
-Pick based on operator preferences and ecosystem fit.
 
-## CI/CD Integration
+## Anti-patterns / Pitfalls
 
-Common pattern:
-- CI builds artifacts and updates Git (image tags).
-- ArgoCD pulls changes.
-- Promotion via PRs and branch policies.
+* ⛔ **Don't**: Log PII, catch-all exception, N+1 queries
+* ⚠️ **Watch out for**: Common symptoms and quick fixes
+* 💡 **Instead**: Use proper error handling, pagination, and logging
 
-## Rollback Strategies
 
-- Roll back Git commit.
-- Use previous image tags.
-- Pause automated sync for investigation.
+## Reference Links & Examples
 
-## Monitoring
+* Internal documentation and examples
+* Official documentation and best practices
+* Community resources and discussions
 
-- Monitor ArgoCD controller health.
-- Track sync status and drift.
-- Alert on repeated sync failures.
 
-## Disaster Recovery
+## Versioning & Changelog
 
-Backup:
-- Application CRDs
-- Projects and RBAC
-- Repository credentials
-
-Restore ArgoCD in a clean cluster and reapply configs.
-
-## Best Practices
-
-- Keep manifests small and composable.
-- Use separate repos or directories per environment.
-- Enforce review on Git changes.
-- Restrict write access to production branches.
-
-## Related Skills
-- `15-devops-infrastructure/kubernetes-helm`
-- `15-devops-infrastructure/github-actions`
-- `15-devops-infrastructure/terraform-iac`
+* **Version**: 1.0.0
+* **Changelog**:
+  - 2026-02-22: Initial version with complete template structure

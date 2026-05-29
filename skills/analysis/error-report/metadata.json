@@ -1,0 +1,17 @@
+{
+  "name": "error-report",
+  "repo": "fulviomanente/IQRight_Local",
+  "path": ".claude/skills/error-report/SKILL.md",
+  "github_branch": "master",
+  "category": "analysis",
+  "source": "github.com/fulviomanente/IQRight_Local",
+  "dir_name": "error-report",
+  "downloaded_at": "2026-03-01T07:47:45.124557Z",
+  "author": "fulviomanente",
+  "source_url": "https://github.com/fulviomanente/IQRight_Local/blob/master/.claude/skills/error-report/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fulviomanente/IQRight_Local/blob/master/.claude/skills/error-report/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

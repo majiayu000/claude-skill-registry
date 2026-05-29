@@ -3,6 +3,8 @@ name: reflexion
 description: "Use for self-correcting implementation. Implements the reflexion loop: implement, validate, self-critique, retry (max 3 iterations)."
 metadata:
   instruction_budget: "52"
+  framework_dependency: "mycelium"
+  framework_dependency_note: "This skill is designed to run within the Mycelium framework (https://github.com/haabe/mycelium). Standalone use will skip the canvas state, theory gates, and harness behavior the skill assumes. Install: /plugin install mycelium@haabe/mycelium."
 ---
 
 # Reflexion Skill
@@ -83,6 +85,7 @@ The validate step in the reflexion loop should use the appropriate verification 
 - If the same issue recurs across iterations, investigate root cause rather than patching symptoms.
 - Never skip the self-critique step, even if tests pass.
 - Log the reflexion loop outcome in delivery-journal.md.
+- **NUDGE-AT-FAILURE** (4-layer JIT composition): if the failure being reflexed on is a class a standard tool (linter, SAST, secrets scanner, dep audit) would have caught automatically, append a single-line nudge to the reflexion output: *"This class of failure is what `{tool}` catches automatically — want help wiring it up now?"* Never auto-install. Per `feedback-jit-nudge-not-push` (founder principle, 2026-05-26).
 
 ## Theory Citations
 - Reflexion pattern (Shinn et al.)

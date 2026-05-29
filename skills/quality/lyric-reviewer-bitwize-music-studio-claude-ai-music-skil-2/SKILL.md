@@ -2,7 +2,7 @@
 name: lyric-reviewer
 description: Reviews lyrics against a quality checklist before Suno generation. Use before generating tracks to catch rhyme, prosody, pronunciation, and structural issues.
 argument-hint: <track-path | album-path | --fix>
-model: claude-opus-4-6
+model: claude-opus-4-7
 prerequisites:
   - lyric-writer
   - pronunciation-specialist
@@ -11,11 +11,20 @@ allowed-tools:
   - Edit
   - Glob
   - Grep
+  - bitwize-music-mcp
 ---
 
 ## Your Task
 
 **Input**: $ARGUMENTS
+
+### Instrumental Guard
+
+When reviewing a track, **first check** the track's frontmatter for `instrumental: true` or the Track Details table for `**Instrumental** | Yes`. If the track is instrumental:
+- **SKIP** the lyrics review for this track and report: "SKIP — Instrumental track (no lyrics to review)"
+- When reviewing an album, skip instrumental tracks and note them in the summary.
+
+### Vocal Track Review
 
 Based on the argument provided:
 
@@ -26,7 +35,7 @@ Based on the argument provided:
 
 **Album path** (`artists/[artist]/albums/[genre]/album-name/`):
 - Glob all track files in `tracks/`
-- Run 14-point checklist on each
+- Run 14-point checklist on each (skip instrumental tracks)
 - Generate consolidated album report
 
 **Default behavior**:
@@ -73,8 +82,8 @@ lyric-writer (WRITES + SUNO PROMPT) → pronunciation-specialist (RESOLVES) → 
 - **Warning**: Clear stress misalignment
 
 ### 3. Pronunciation Check
-- Call `check_homographs(lyrics_text)` — automated scan for homograph words with pronunciation options
-- Call `check_pronunciation_enforcement(album_slug, track_slug)` — verifies all pronunciation table entries are applied in lyrics
+- Call `check_homographs(lyrics_text)` — automated scan for homograph words with pronunciation options. **Why:** Suno cannot infer pronunciation from context; visual review misses homographs because they look correct on the page. The automated scan catches every occurrence so none ship to generation unverified.
+- Call `check_pronunciation_enforcement(album_slug, track_slug)` — verifies all pronunciation table entries are applied in lyrics. **Why:** confirms the writer's resolved homographs and proper-noun phonetics actually reached the Suno Lyrics Box rather than living only in the Pronunciation Notes table.
 - **Critical**: Unphonetic proper noun, homograph detected (AUTO-FIX REQUIRED - see Homograph Detection section)
 
 ### 4. POV/Tense Check
@@ -100,9 +109,9 @@ lyric-writer (WRITES + SUNO PROMPT) → pronunciation-specialist (RESOLVES) → 
 - **Critical**: Wrong date/name/major fact
 
 ### 9. Length Check
-- Word count vs genre target (see lyric-writer Song Length table)
-- **Warning**: Over genre target range, or more than 3 verses without explicit request
-- **Critical**: Over 500 words (non-hip-hop) or 700 words (hip-hop)
+- Word count vs target duration (track Target Duration → album Target Duration → genre default)
+- **Warning**: Over target range for specified duration, or 3+ verses without explicit request
+- **Critical**: Over 500 words (non-hip-hop) or 700 words (hip-hop), unless target duration is 5:00+
 
 ### 10. Section Length Check
 - Count lines per section, compare against genre limits (see lyric-writer Section Length Limits)
@@ -280,7 +289,7 @@ Before marking "Ready for Suno":
 
 ## Remember
 
-1. **You are QC, not creative** - Identify issues, don't rewrite lyrics yourself
+1. **Output is a verification report, not revised lyrics** - Identify issues and propose fixes; let the lyric-writer or user apply rewrites. Auto-fixes are limited to pronunciation substitutions where the Notes table already holds the user-approved phonetic.
 2. **Always apply pronunciation fixes** - Don't just report them, fix them in the Lyrics Box
 3. **Homographs are landmines** - live, read, lead, wind will mispronounce
 4. **Documentary = legal risk** - Take internal state claims seriously

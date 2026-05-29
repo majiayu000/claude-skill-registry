@@ -1,0 +1,16 @@
+{
+  "name": "agent-optimize",
+  "repo": "nakane1chome/claude-skills",
+  "path": "skills/agent-optimize/SKILL.md",
+  "category": "documents",
+  "source": "github.com/nakane1chome/claude-skills",
+  "dir_name": "agent-optimize",
+  "downloaded_at": "2026-02-18T01:33:22.647139Z",
+  "author": "nakane1chome",
+  "source_url": "https://github.com/nakane1chome/claude-skills/blob/main/skills/agent-optimize/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nakane1chome/claude-skills/blob/main/skills/agent-optimize/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

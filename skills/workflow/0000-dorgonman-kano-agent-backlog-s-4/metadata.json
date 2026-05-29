@@ -1,0 +1,17 @@
+{
+  "name": "0000",
+  "repo": "dorgonman/kano-agent-backlog-skill-demo",
+  "path": "_kano/backlog/products/kano-agent-backlog-skill/items/userstory/0000/KABSD-USR-0004_bootstrap-backlog-scaffold-and-tools-from-the-skill.md",
+  "github_branch": "main",
+  "category": "workflow",
+  "source": "github.com/dorgonman/kano-agent-backlog-skill-demo",
+  "dir_name": "0000-dorgonman-kano-agent-backlog-s-4",
+  "downloaded_at": "2026-03-01T07:29:47.866170Z",
+  "author": "dorgonman",
+  "source_url": "https://github.com/dorgonman/kano-agent-backlog-skill-demo/blob/main/_kano/backlog/products/kano-agent-backlog-skill/items/userstory/0000/KABSD-USR-0004_bootstrap-backlog-scaffold-and-tools-from-the-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dorgonman/kano-agent-backlog-skill-demo/blob/main/_kano/backlog/products/kano-agent-backlog-skill/items/userstory/0000/KABSD-USR-0004_bootstrap-backlog-scaffold-and-tools-from-the-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

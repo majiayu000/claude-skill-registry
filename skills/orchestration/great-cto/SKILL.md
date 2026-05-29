@@ -25,7 +25,6 @@ pipeline gets bypassed.
 | `auth/`, OAuth/SAML/JWT, login flow, password reset | `security-officer` |
 | Payment endpoints, `stripe.`, webhooks, refund flow, PCI scope | `pci-reviewer` |
 | Prompts in `prompts/`, RAG, tool definitions, LLM-facing strings | `ai-security-reviewer` |
-| LLM runtime governance: budget caps, audit log, kill switch, HITL gates, `Firewall.wrap`, `.leash/policy.yaml`, `ANTHROPIC_BASE_URL`/`OPENAI_BASE_URL` proxy | `ai-leash-reviewer` |
 | Eval suites, golden-citation tests, prompt regression | `ai-eval-engineer` |
 | Play Store / App Store / iOS / Android release | `mobile-store-reviewer` |
 | API contract: OpenAPI, GraphQL schema, webhook signatures | `api-platform-reviewer` |

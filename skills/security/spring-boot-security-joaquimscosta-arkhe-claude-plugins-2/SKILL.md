@@ -1,6 +1,7 @@
 ---
 name: spring-boot-security
 description: Spring Security 7 implementation for Spring Boot 4. Use when configuring authentication, authorization, OAuth2/JWT resource servers, method security, or CORS/CSRF. Covers the mandatory Lambda DSL migration, SecurityFilterChain patterns, @PreAuthorize, and password encoding. For testing secured endpoints, see spring-boot-testing skill.
+spring-boot-version: "4.0"
 ---
 
 # Spring Security 7 for Spring Boot 4
@@ -19,11 +20,9 @@ Implements authentication and authorization with Spring Security 7's mandatory L
 
 ## Core Workflow
 
-1. **Create SecurityFilterChain bean** → Configure with Lambda DSL
-2. **Define authorization rules** → `authorizeHttpRequests()` with `requestMatchers()`
-3. **Configure authentication** → Form login, HTTP Basic, or OAuth2
-4. **Add method security** → `@EnableMethodSecurity` + `@PreAuthorize`
-5. **Handle CORS/CSRF** → Configure for REST APIs
+1. Create SecurityFilterChain → 2. Define authorization → 3. Configure authentication → 4. Add method security → 5. Handle CORS/CSRF
+
+See [WORKFLOW.md](WORKFLOW.md) for detailed step-by-step instructions with code examples.
 
 ## Quick Patterns
 
@@ -43,11 +42,20 @@ See [EXAMPLES.md](EXAMPLES.md) for complete working examples including:
 
 ## Detailed References
 
+- **Workflow**: See [WORKFLOW.md](WORKFLOW.md) for detailed step-by-step security configuration
 - **Examples**: See [EXAMPLES.md](EXAMPLES.md) for complete working code examples
 - **Troubleshooting**: See [TROUBLESHOOTING.md](TROUBLESHOOTING.md) for common issues and Boot 4 migration
 - **Security Configuration**: See [references/SECURITY-CONFIG.md](references/SECURITY-CONFIG.md) for complete SecurityFilterChain patterns
 - **Authentication**: See [references/AUTHENTICATION.md](references/AUTHENTICATION.md) for UserDetailsService, password encoding
 - **JWT/OAuth2**: See [references/JWT-OAUTH2.md](references/JWT-OAUTH2.md) for resource server, token validation
+
+## Related Skills
+
+| Need | Skill |
+|------|-------|
+| Testing secured endpoints | `spring-boot-testing` |
+| Actuator endpoint security | `spring-boot-observability` |
+| Dependency verification | `spring-boot-verify` |
 
 ## Anti-Pattern Checklist
 

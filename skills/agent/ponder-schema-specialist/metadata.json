@@ -1,0 +1,13 @@
+{
+  "name": "ponder-schema-specialist",
+  "description": "",
+  "repo": "gwpjp/Web3-Claude",
+  "category": "agent",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gwpjp/Web3-Claude",
+  "github_path": ".claude/skills/ponder-schema-specialist",
+  "github_branch": "main",
+  "dir_name": "ponder-schema-specialist",
+  "downloaded_at": "2026-02-05T05:37:49.375511Z"
+}

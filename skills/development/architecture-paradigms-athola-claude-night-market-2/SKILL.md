@@ -1,15 +1,7 @@
 ---
 name: architecture-paradigms
-description: Interactive selector and router for architecture paradigms. Use when
-version: 1.9.0
+description: Selects and routes to the right architecture paradigm. Use when choosing patterns for a new system or comparing trade-offs before making architecture decisions.
 alwaysApply: false
-  selecting architecture patterns for new systems, comparing paradigm trade-offs,
-  creating architecture decision records, evaluating architecture fit for team size
-  and domain complexity, planning implementation roadmaps. Do not use when implementing
-  a specific known paradigm - use the specific architecture-paradigm-* skill (hexagonal,
-  layered, microservices, etc.) instead. reviewing existing architecture - use architecture-review
-  instead. Use this skill BEFORE making architecture decisions. Check even if unsure
-  about needs.
 category: architecture-decision
 tags:
 - architecture
@@ -31,10 +23,7 @@ dependencies:
 - architecture-paradigm-pipeline
 - architecture-paradigm-serverless
 - architecture-paradigm-client-server
-tools:
-- paradigm-selector
-- implementation-planner
-- compatibility-checker
+tools: []
 usage_patterns:
 - paradigm-selection
 - architecture-review
@@ -69,7 +58,7 @@ Match your needs to the recommended paradigm:
 | **Cloud-native/bursty workloads** | Serverless | `architecture-paradigm-serverless` |
 | **ETL/data processing pipeline** | Pipeline Architecture | `architecture-paradigm-pipeline` |
 | **Simple CRUD app** | Layered Architecture | `architecture-paradigm-layered` |
-| **Command/query separation** | CQRS + Event Sourcing | `architecture-paradigm-cqrs-es` |
+| **Command/query separation** | CQRS and Event Sourcing | `architecture-paradigm-cqrs-es` |
 
 ## 3-Step Selection Workflow
 
@@ -140,7 +129,7 @@ The individual paradigm skill provides:
 | **Modular Monolith** | Medium | Medium-Large | Evolving systems | `architecture-paradigm-modular-monolith` |
 | **Microservices** | High | Large | Complex domains | `architecture-paradigm-microservices` |
 | **Event-Driven** | High | Medium-Large | Real-time processing | `architecture-paradigm-event-driven` |
-| **CQRS + ES** | High | Medium-Large | Audit trails | `architecture-paradigm-cqrs-es` |
+| **CQRS and ES** | High | Medium-Large | Audit trails | `architecture-paradigm-cqrs-es` |
 | **Service-Based** | Medium | Medium | Coarse-grained services | `architecture-paradigm-service-based` |
 | **Serverless** | Medium | Small-Medium | Cloud-native/bursty | `architecture-paradigm-serverless` |
 | **Microkernel** | Medium | Small-Medium | Plugin systems | `architecture-paradigm-microkernel` |

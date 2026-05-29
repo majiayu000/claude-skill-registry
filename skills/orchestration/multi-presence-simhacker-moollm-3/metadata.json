@@ -1,0 +1,17 @@
+{
+  "name": "multi-presence",
+  "repo": "SimHacker/moollm",
+  "path": "skills/multi-presence/SKILL.md",
+  "github_branch": "main",
+  "category": "orchestration",
+  "source": "github.com/SimHacker/moollm",
+  "dir_name": "multi-presence-simhacker-moollm-3",
+  "downloaded_at": "2026-03-22T06:16:12.731853Z",
+  "author": "SimHacker",
+  "source_url": "https://github.com/SimHacker/moollm/blob/main/skills/multi-presence/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SimHacker/moollm/blob/main/skills/multi-presence/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

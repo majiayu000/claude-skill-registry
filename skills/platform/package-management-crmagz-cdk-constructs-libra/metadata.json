@@ -1,0 +1,18 @@
+{
+  "name": "package-management",
+  "repo": "crmagz/cdk-constructs-library",
+  "path": ".claude/skills/package-management/SKILL.md",
+  "source": "github.com/crmagz/cdk-constructs-library",
+  "downloaded_at": "2026-01-22T03:33:16.615128Z",
+  "dir_name": "package-management-crmagz-cdk-constructs-libra",
+  "category": "platform",
+  "github_path": ".claude/skills/package-management",
+  "github_branch": "main",
+  "author": "crmagz",
+  "source_url": "https://github.com/crmagz/cdk-constructs-library/blob/main/.claude/skills/package-management/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2026 Cristian Magana",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

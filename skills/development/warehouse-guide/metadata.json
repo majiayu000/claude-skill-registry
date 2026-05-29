@@ -1,0 +1,16 @@
+{
+  "name": "warehouse-guide",
+  "repo": "milosptr/pos-system",
+  "path": ".claude/skills/warehouse-guide/SKILL.md",
+  "source": "github.com/milosptr/pos-system",
+  "downloaded_at": "2026-02-02T04:52:44.569376Z",
+  "dir_name": "warehouse-guide",
+  "category": "development",
+  "author": "milosptr",
+  "source_url": "https://github.com/milosptr/pos-system/blob/main/.claude/skills/warehouse-guide/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/milosptr/pos-system/blob/main/.claude/skills/warehouse-guide/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

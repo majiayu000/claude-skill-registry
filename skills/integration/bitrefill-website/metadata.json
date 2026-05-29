@@ -1,0 +1,17 @@
+{
+  "name": "bitrefill-website",
+  "repo": "bitrefill/agents",
+  "path": "skills/bitrefill-website/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/bitrefill/agents",
+  "dir_name": "bitrefill-website",
+  "downloaded_at": "2026-03-22T07:15:21.685733Z",
+  "author": "bitrefill",
+  "source_url": "https://github.com/bitrefill/agents/blob/main/skills/bitrefill-website/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bitrefill/agents/blob/main/skills/bitrefill-website/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

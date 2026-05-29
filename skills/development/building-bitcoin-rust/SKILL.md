@@ -13,7 +13,7 @@ This skill is built from the authoritative technical guide:
 
 **"Building Bitcoin in Rust"**
 - **Pages**: 419 pages of in-depth technical content
-- **File**: `docs/building.bitcoin.in.rust.pdf`
+- **File**: `docs/technical-documents/bitcoin.development/building.bitcoin.in.rust.pdf`
 - **Focus**: Hands-on Bitcoin protocol implementation
 - **Language**: Rust programming language
 - **Level**: Advanced - assumes programming knowledge

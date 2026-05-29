@@ -1,7 +1,10 @@
 ---
 name: ln-112-project-core-creator
-description: Creates 4 core project docs (requirements.md, architecture.md, tech_stack.md, patterns_catalog.md). L3 Worker invoked by ln-110-project-docs-coordinator. ALWAYS created.
+description: "Creates core project docs (requirements, architecture, tech stack, patterns catalog). Use for any project regardless of type."
+license: MIT
 ---
+
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Project Core Documentation Creator
 
@@ -136,13 +139,14 @@ Documents describe **contracts and decisions**, NOT implementations:
 Tables > Mermaid/ASCII diagrams > Lists > Text
 
 ## Definition of Done
-- Context Store received and validated
-- 4 core documents created (or skipped if exist)
-- C4 diagrams generated (Context, Container, Component)
-- ADR links populated
-- Patterns auto-detected and added to catalog
-- Self-validation passed (SCOPE, sections, format)
-- Status returned to coordinator
+- [ ] Context Store received and validated
+- [ ] 4 core documents created (or skipped if exist)
+- [ ] C4 diagrams generated (Context, Container, Component)
+- [ ] ADR links populated
+- [ ] Patterns auto-detected and added to catalog
+- [ ] Self-validation passed (SCOPE, sections, format)
+- [ ] **Actuality verified:** all document facts match current code (paths, functions, APIs, configs exist and are accurate)
+- [ ] Status returned to coordinator
 
 ## Reference Files
 - Templates: `references/templates/requirements_template.md`, `architecture_template.md`, `tech_stack_template.md`
@@ -150,5 +154,5 @@ Tables > Mermaid/ASCII diagrams > Lists > Text
 - Questions: `references/questions_core.md` (Q23-Q38)
 
 ---
-**Version:** 2.2.0 (Added Stack Adaptation and Format Priority rules)
+**Version:** 2.2.0
 **Last Updated:** 2025-01-12

@@ -1,0 +1,18 @@
+{
+  "name": "ha-error-checking",
+  "repo": "dawiddutoit/custom-claude",
+  "path": "skills/ha-error-checking/SKILL.md",
+  "source": "github.com/dawiddutoit/custom-claude",
+  "downloaded_at": "2026-01-22T03:15:43.924809Z",
+  "dir_name": "ha-error-checking",
+  "category": "platform",
+  "github_path": "skills/ha-error-checking",
+  "github_branch": "main",
+  "author": "dawiddutoit",
+  "source_url": "https://github.com/dawiddutoit/custom-claude/blob/main/skills/ha-error-checking/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dawiddutoit/custom-claude/blob/main/skills/ha-error-checking/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

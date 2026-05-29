@@ -84,6 +84,28 @@ function Dashboard() {
 **Use loader**: Data before render, server-side fetch, automatic revalidation
 **Use useEffect**: Client-only data, user-interaction dependent, subscriptions
 
+## Gates (decision sequencing)
+
+Answer **in order**. **Pass** means the condition is true; pick the API on the same line and **stop**.
+
+### `<Form>` vs `useFetcher`
+
+1. **Must the URL or history stack change** (bookmark/share, back returns to prior screen)?
+   - **Pass →** `<Form>` / route `action` (or `useSubmit` + navigation). **Stop.**
+   - **Fail →** Step 2.
+2. **Mutation stays on the same route** (inline edit, modal, list row, no address change)?
+   - **Pass →** `useFetcher()`. **Stop.**
+   - **Fail →** Re-check step 1; you may need a dedicated action route or POST to the current URL.
+
+### `loader` vs `useEffect`
+
+1. **Is data needed for correct first render** (or your intended `<Suspense>` boundary) for this route?
+   - **Pass →** `loader` (Framework: `clientLoader` when appropriate). **Stop.**
+   - **Fail →** Step 2.
+2. **Fetch only after mount** from user action, timer, or subscription (not route entry)?
+   - **Pass →** `useEffect` / event handlers. **Stop.**
+   - **Fail →** Prefer loader + revalidation over an effect that mirrors navigation.
+
 ## Additional Documentation
 
 - **Data Loading**: See [references/loaders.md](references/loaders.md) for loader patterns, parallel loading, search params

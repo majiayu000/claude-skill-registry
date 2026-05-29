@@ -1,0 +1,17 @@
+{
+  "name": "ticket-comment",
+  "repo": "daemn256/_workspace-repo-template",
+  "path": ".claude/skills/ticket-comment/SKILL.md",
+  "github_branch": "main",
+  "category": "communication",
+  "source": "github.com/daemn256/_workspace-repo-template",
+  "dir_name": "ticket-comment",
+  "downloaded_at": "2026-03-22T07:38:08.487274Z",
+  "author": "daemn256",
+  "source_url": "https://github.com/daemn256/_workspace-repo-template/blob/main/.claude/skills/ticket-comment/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/daemn256/_workspace-repo-template/blob/main/.claude/skills/ticket-comment/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

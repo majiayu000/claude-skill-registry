@@ -1,6 +1,6 @@
 ---
 name: codex-skill
-description: 'Leverage OpenAI Codex/GPT models for autonomous code implementation. Triggers: "codex", "use gpt", "gpt-5", "gpt-5.2", "let openai", "full-auto", "用codex", "让gpt实现".'
+description: 'Leverage OpenAI Codex/GPT models for autonomous code implementation. Triggers: "codex", "use gpt", "gpt-5", "let openai", "full-auto", "用codex", "让gpt实现". Use this skill whenever the user wants to delegate coding tasks to OpenAI models, run code reviews via codex, or execute tasks in a sandboxed environment.'
 allowed-tools: Read, Write, Glob, Grep, Task, Bash(cat:*), Bash(ls:*), Bash(tree:*), Bash(codex:*), Bash(codex *), Bash(which:*), Bash(npm:*), Bash(brew:*)
 ---
 
@@ -45,7 +45,6 @@ Codex uses sandbox policies to control what operations are permitted:
 - Analyze code, search files, read documentation
 - Provide insights, recommendations, and execution plans
 - No modifications to the codebase
-- Safe for exploration and analysis tasks
 - **This is the default mode when running `codex exec`**
 
 **Workspace-Write Mode (Recommended for Programming)**
@@ -64,20 +63,20 @@ Codex uses sandbox policies to control what operations are permitted:
 - System-level operations outside workspace
 - Access to all files on the system
 - **Use only when explicitly requested and necessary**
-- Use flag: `-s danger-full-access` or `--sandbox danger-full-access`
+- Use flag: `-s danger-full-access`
 
 ## Codex CLI Commands
 
-**Note**: The following commands include both documented features from the Codex exec documentation and additional flags available in the CLI (verified via `codex exec --help`).
-
 ### Model Selection
 
-Specify which model to use with `-m` or `--model` when asked from user (use default model without -m/--model when not):
+Codex uses the model configured in `~/.codex/config.toml` by default. Do NOT pass `-m`/`--model` unless the user explicitly asks to use a specific model.
 
 ```bash
-codex exec -m gpt-5.2 "refactor the payment processing module"
-codex exec -m gpt-5.2-codex "implement the user authentication feature"
-codex exec -m gpt-5.2-codex-max "analyze the codebase architecture"
+# Default: uses model from config.toml (recommended)
+codex exec --full-auto "refactor the payment processing module"
+
+# Only when user specifies a model explicitly:
+codex exec -m gpt-5.2 --full-auto "implement the user authentication feature"
 ```
 
 ### Sandbox Modes
@@ -87,8 +86,8 @@ Control execution permissions with `-s` or `--sandbox` (possible values: read-on
 #### Read-Only Mode
 
 ```bash
-codex exec -s read-only "analyze the codebase structure and count lines of code"
-codex exec --sandbox read-only "review code quality and suggest improvements"
+codex exec "analyze the codebase structure and count lines of code"
+codex exec -s read-only "review code quality and suggest improvements"
 ```
 
 Analyze code without making any modifications.
@@ -97,7 +96,7 @@ Analyze code without making any modifications.
 
 ```bash
 codex exec -s workspace-write "implement the user authentication feature"
-codex exec --sandbox workspace-write "fix the bug in login flow"
+codex exec --full-auto "fix the bug in login flow"
 ```
 
 Read and write files within the workspace. **Must be explicitly enabled (not the default). Use this for most programming tasks.**
@@ -106,7 +105,6 @@ Read and write files within the workspace. **Must be explicitly enabled (not the
 
 ```bash
 codex exec -s danger-full-access "install dependencies and update the API integration"
-codex exec --sandbox danger-full-access "setup development environment with npm packages"
 ```
 
 Network access and system-level operations. Use only when necessary.
@@ -120,9 +118,68 @@ codex exec --full-auto "implement the user authentication feature"
 **Convenience alias for**: `-s workspace-write` (enables file editing).
 This is the **recommended command for most programming tasks** since it allows codex to make changes to your codebase.
 
+### Config Overrides
+
+Override any `config.toml` value inline with `-c` or `--config`:
+
+```bash
+# Override model for a single run
+codex exec -c model="o3" --full-auto "implement the feature"
+
+# Override sandbox permissions
+codex exec -c 'sandbox_permissions=["disk-full-read-access"]' "analyze all files"
+
+# Override nested config values using dotted paths
+codex exec -c shell_environment_policy.inherit=all --full-auto "run build"
+```
+
+### Feature Toggles
+
+Enable or disable features with `--enable` and `--disable`:
+
+```bash
+codex exec --enable multi_agent --full-auto "implement feature across multiple files"
+codex exec --disable plan_tool --full-auto "quick fix for typo"
+```
+
+Equivalent to `-c features.<name>=true` or `-c features.<name>=false`.
+
+### Image Attachments
+
+Attach images to the prompt with `-i` or `--image`:
+
+```bash
+codex exec -i screenshot.png "implement the UI shown in this screenshot"
+codex exec -i mockup.png -i spec.png --full-auto "build this component matching the design"
+```
+
+### Code Review
+
+Run code reviews with `codex exec review`:
+
+```bash
+# Review uncommitted changes (staged, unstaged, and untracked)
+codex exec review --uncommitted
+
+# Review changes against a base branch
+codex exec review --base main
+
+# Review a specific commit
+codex exec review --commit abc1234
+
+# Custom review instructions
+codex exec review --base main "focus on security vulnerabilities and error handling"
+
+# Review with a title for the summary
+codex exec review --base main --title "Auth feature review"
+
+# Output review as JSON
+codex exec review --uncommitted --json -o review.json
+```
+
 ### Configuration Profiles
 
-Use saved profiles from `~/.codex/config.toml` with `-p` or `--profile` (if supported in your version):
+Use saved profiles from `~/.codex/config.toml` with `-p` or `--profile`:
 
 ```bash
 codex exec -p production "deploy the latest changes"
@@ -130,29 +187,23 @@ codex exec --profile development "run integration tests"
 ```
 
 Profiles can specify default model, sandbox mode, and other options.
-*Verify availability with `codex exec --help`*
 
 ### Working Directory
 
-Specify a different working directory with `-C` or `--cd` (if supported in your version):
+Specify a different working directory with `-C` or `--cd`:
 
 ```bash
-codex exec -C /path/to/project "implement the feature"
-codex exec --cd ~/projects/myapp "run tests and fix failures"
+codex exec -C /path/to/project --full-auto "implement the feature"
+codex exec --cd ~/projects/myapp --full-auto "run tests and fix failures"
 ```
-
-*Verify availability with `codex exec --help`*
 
 ### Additional Writable Directories
 
-Allow writing to additional directories outside the main workspace with `--add-dir` (if supported in your version):
+Allow writing to additional directories outside the main workspace with `--add-dir`:
 
 ```bash
-codex exec --add-dir /tmp/output --add-dir ~/shared "generate reports in multiple locations"
+codex exec --full-auto --add-dir /tmp/output --add-dir ~/shared "generate reports in multiple locations"
 ```
-
-Useful when the task needs to write to specific external directories.
-*Verify availability with `codex exec --help`*
 
 ### JSON Output
 
@@ -163,6 +214,14 @@ codex exec --json -s read-only "analyze security vulnerabilities"
 
 Outputs structured JSON Lines format with reasoning, commands, file changes, and metrics.
 
+### Structured Output Schema
+
+Constrain the model's final response to match a JSON schema:
+
+```bash
+codex exec --output-schema schema.json "analyze the codebase and report findings"
+```
+
 ### Save Output to File
 
 ```bash
@@ -171,6 +230,14 @@ codex exec -o results.json --json "run performance benchmarks"
 ```
 
 Writes the final message to a file instead of stdout.
+
+### Ephemeral Mode
+
+Run without persisting session files to disk:
+
+```bash
+codex exec --ephemeral --full-auto "quick one-off fix"
+```
 
 ### Skip Git Repository Check
 
@@ -183,36 +250,43 @@ Bypasses the requirement for the directory to be a git repository.
 ### Resume Previous Session
 
 ```bash
+# Resume the most recent session
 codex exec resume --last "now implement the next feature"
+
+# Resume a specific session by ID
+codex exec resume <session-id> "continue working on the API"
+
+# Show all sessions (not filtered by current directory)
+codex exec resume --all
 ```
 
-Resumes the last session and continues with a new task.
+### Open-Source / Local Models
 
-### Bypass Approvals and Sandbox (If Available)
+Use open-source models via local providers:
 
-**⚠️ WARNING: Verify this flag exists before using ⚠️**
+```bash
+codex exec --oss "analyze this code"
+codex exec --oss --local-provider ollama "refactor this function"
+codex exec --oss --local-provider lmstudio "implement the feature"
+```
 
-Some versions of Codex may support `--dangerously-bypass-approvals-and-sandbox`:
+### Bypass Approvals and Sandbox
+
+**EXTREMELY DANGEROUS — only use in externally sandboxed environments (containers, VMs)**
 
 ```bash
 codex exec --dangerously-bypass-approvals-and-sandbox "perform the task"
 ```
 
-**If this flag is available**:
-- Skips ALL confirmation prompts
-- Executes commands WITHOUT sandboxing
-- Should ONLY be used in externally sandboxed environments (containers, VMs)
-- **EXTREMELY DANGEROUS - NEVER use on your development machine**
-
-**Verify availability first**: Run `codex exec --help` to check if this flag is supported in your version.
+Skips ALL confirmation prompts and executes commands WITHOUT sandboxing.
 
 ### Combined Examples
 
 Combine multiple flags for complex scenarios:
 
 ```bash
-# Use specific model with workspace write and JSON output
-codex exec -m gpt-5.1-codex -s workspace-write --json "implement authentication and output results"
+# Workspace write with JSON output
+codex exec -s workspace-write --json "implement authentication and output results"
 
 # Use profile with custom working directory
 codex exec -p production -C /var/www/app "deploy updates"
@@ -220,8 +294,14 @@ codex exec -p production -C /var/www/app "deploy updates"
 # Full-auto with additional directories and output file
 codex exec --full-auto --add-dir /tmp/logs -o summary.txt "refactor and log changes"
 
-# Skip git check with specific model in different directory
-codex exec -m gpt-5.1-codex -C ~/non-git-project --skip-git-repo-check "analyze and improve code"
+# Image-driven implementation with full-auto
+codex exec -i design.png --full-auto "implement the UI matching this design"
+
+# Config override with ephemeral mode
+codex exec -c model_reasoning_effort="high" --ephemeral --full-auto "solve this complex bug"
+
+# Code review with JSON output saved to file
+codex exec review --base main --json -o review-report.json
 ```
 
 ## Execution Workflow
@@ -293,122 +373,66 @@ Next steps (if applicable):
 ### Code Analysis (Read-Only)
 
 **User**: "Count the lines of code in this project by language"
-**Mode**: Read-only
-**Command**:
 
 ```bash
-codex exec -s read-only "count the total number of lines of code in this project, broken down by language"
+codex exec "count the total number of lines of code in this project, broken down by language"
 ```
-
-**Action**: Search all files, categorize by extension, count lines, report totals
 
 ### Bug Fixing (Workspace-Write)
 
-**User**: "Use gpt-5 to fix the authentication bug in the login flow"
-**Mode**: Workspace-write
-**Command**:
+**User**: "Fix the authentication bug in the login flow"
 
 ```bash
-codex exec -m gpt-5 --full-auto "fix the authentication bug in the login flow"
+codex exec --full-auto "fix the authentication bug in the login flow"
 ```
-
-**Action**: Find the bug, implement fix, run tests, commit changes
 
 ### Feature Implementation (Workspace-Write)
 
 **User**: "Let codex implement dark mode support for the UI"
-**Mode**: Workspace-write
-**Command**:
 
 ```bash
 codex exec --full-auto "add dark mode support to the UI with theme context and style updates"
 ```
 
-**Action**: Identify components, add theme context, update styles, test in both modes
+### Code Review
 
-### Batch Operations (Workspace-Write)
-
-**User**: "Have gpt-5.1 update all imports from old-lib to new-lib"
-**Mode**: Workspace-write
-**Command**:
+**User**: "Review my changes before I push"
 
 ```bash
-codex exec -m gpt-5.1 -s workspace-write "update all imports from old-lib to new-lib across the entire codebase"
+codex exec review --uncommitted
 ```
 
-**Action**: Find all imports, perform replacements, verify syntax, run tests
+### Image-Based Implementation
 
-### Generate Report with JSON Output (Read-Only)
-
-**User**: "Analyze security vulnerabilities and output as JSON"
-**Mode**: Read-only
-**Command**:
+**User**: "Build the UI from this mockup"
 
 ```bash
-codex exec -s read-only --json "analyze the codebase for security vulnerabilities and provide a detailed report"
+codex exec -i mockup.png --full-auto "implement the UI component matching this design"
 ```
-
-**Action**: Scan code, identify issues, output structured JSON with findings
 
 ### Install Dependencies and Integrate API (Danger-Full-Access)
 
 **User**: "Install the new payment SDK and integrate it"
-**Mode**: Danger-Full-Access
-**Command**:
 
 ```bash
 codex exec -s danger-full-access "install the payment SDK dependencies and integrate the API"
 ```
 
-**Action**: Install packages, update code, add integration points, test functionality
-
 ### Multi-Project Work (Custom Directory)
 
-**User**: "Use codex to implement the API in the backend project"
-**Mode**: Workspace-write
-**Command**:
+**User**: "Implement the API in the backend project"
 
 ```bash
 codex exec -C ~/projects/backend --full-auto "implement the REST API endpoints for user management"
 ```
 
-**Action**: Switch to backend directory, implement API endpoints, write tests
-
-### Refactoring with Logging (Additional Directories)
-
-**User**: "Refactor the database layer and log changes"
-**Mode**: Workspace-write
-**Command**:
-
-```bash
-codex exec --full-auto --add-dir /tmp/refactor-logs "refactor the database layer for better performance and log all changes"
-```
-
-**Action**: Refactor code, write logs to external directory, run tests
-
-### Production Deployment (Using Profile)
-
-**User**: "Deploy using the production profile"
-**Mode**: Profile-based
-**Command**:
-
-```bash
-codex exec -p production "deploy the latest changes to production environment"
-```
-
-**Action**: Use production config, deploy code, verify deployment
-
 ### Non-Git Project Analysis
 
 **User**: "Analyze this legacy codebase that's not in git"
-**Mode**: Read-only
-**Command**:
 
 ```bash
-codex exec -s read-only --skip-git-repo-check "analyze the architecture and suggest modernization approach"
+codex exec --skip-git-repo-check "analyze the architecture and suggest modernization approach"
 ```
-
-**Action**: Analyze code structure, provide modernization recommendations
 
 ## Error Handling
 

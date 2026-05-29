@@ -1,0 +1,16 @@
+{
+  "name": "list-china-today-macro-news",
+  "repo": "fatfingererr/macro-skills",
+  "path": "skills/list-china-today-macro-news/SKILL.md",
+  "source": "github.com/fatfingererr/macro-skills",
+  "downloaded_at": "2026-01-27T01:02:10.487726Z",
+  "dir_name": "list-china-today-macro-news",
+  "category": "analysis",
+  "author": "fatfingererr",
+  "source_url": "https://github.com/fatfingererr/macro-skills/blob/main/skills/list-china-today-macro-news/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Ruei-Ci Wang",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

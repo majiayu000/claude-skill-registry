@@ -1,8 +1,11 @@
 ---
 name: ln-622-build-auditor
-description: Build health audit worker (L3). Checks compiler/linter errors, deprecation warnings, type errors, failed tests, build configuration issues. Returns findings with severity (Critical/High/Medium/Low), location, effort, and recommendations.
+description: "Checks compiler/linter errors, deprecation warnings, type errors, failed tests, build config issues. Use when auditing build health."
 allowed-tools: Read, Grep, Glob, Bash
+license: MIT
 ---
+
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Build Health Auditor (L3 Worker)
 
@@ -10,7 +13,7 @@ Specialized worker auditing build health and code quality tooling.
 
 ## Purpose & Scope
 
-- **Worker in ln-620 coordinator pipeline** - invoked by ln-620-codebase-auditor
+- **Worker in codebase audit pipeline**
 - Audit codebase for **build health issues** (Category 2: Critical Priority)
 - Check compiler/linter errors, deprecation warnings, type errors, failed tests, build config
 - Return structured findings to coordinator with severity, location, effort, recommendations
@@ -18,49 +21,33 @@ Specialized worker auditing build health and code quality tooling.
 
 ## Inputs (from Coordinator)
 
-Receives `contextStore` as JSON string:
-```json
-{
-  "tech_stack": {
-    "language": "TypeScript",
-    "build_tool": "Webpack",
-    "test_framework": "Jest",
-    ...
-  },
-  "best_practices": {...},
-  "principles": {...},
-  "codebase_root": "/path/to/project"
-}
-```
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
+
+Receives `contextStore` with: `tech_stack` (including build_tool, test_framework), `best_practices`, `principles`, `codebase_root`, `output_dir`.
 
 ## Workflow
 
-1) **Parse Context:** Extract tech stack, build tools, test framework from contextStore
-2) **Run Build Checks:** Execute compiler, linter, type checker, tests (see Audit Rules below)
-3) **Collect Findings:** Record each violation with severity, location, effort, recommendation
-4) **Calculate Score:** Count violations by severity, calculate compliance score (X/10)
-5) **Return Results:** Return JSON with category, score, findings to coordinator
+**MANDATORY READ:** Load `shared/references/two_layer_detection.md` for detection methodology.
+
+1) **Parse Context:** Extract tech stack, build tools, test framework, output_dir from contextStore
+2) **Run Build Checks (Layer 1):** Execute compiler, linter, type checker, tests (see Audit Rules below)
+3) **Analyze Output Context (Layer 2):** For deprecation warnings — read notice to determine if removal is imminent or distant. For config issues — check if dev-only or production config.
+4) **Collect Findings:** Record each violation with severity, location, effort, recommendation
+5) **Calculate Score:** Count violations by severity, calculate compliance score (X/10)
+6) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/622-build.md` in single Write call
+7) **Trend Tracking:** Append build_health metric to results_log per `shared/references/results_log_pattern.md`. Metric: `build_health | 0-10 | penalty formula`. Calculate delta and status (improving/stable/declining) vs previous run.
+8) **Return Summary:** Return minimal summary to coordinator (see Output Format)
 
 ## Audit Rules (Priority: CRITICAL)
+
+**MANDATORY READ:** Load `shared/references/ci_tool_detection.md` for build commands, linter commands, type checker commands, and test framework commands per ecosystem.
 
 ### 1. Compiler/Linter Errors
 **What:** Syntax errors, compilation failures, linter rule violations
 
-**Detection by Stack:**
+**Detection:** Use ci_tool_detection.md Command Registry (Build + Linters sections). Check exit code, parse stderr for errors. Use JSON output flags where available.
 
-| Stack | Command | Error Detection |
-|-------|---------|-----------------|
-| Node.js/TypeScript | `npm run build` or `tsc --noEmit` | Check exit code, parse stderr for errors |
-| Python | `python -m py_compile *.py` | Check exit code, parse stderr |
-| Go | `go build ./...` | Check exit code, parse stderr |
-| Rust | `cargo build` | Check exit code, parse stderr |
-| Java | `mvn compile` | Check exit code, parse build log |
-
-**Linters:**
-- ESLint (JS/TS): `npx eslint . --format json` → parse JSON for errors
-- Pylint (Python): `pylint **/*.py --output-format=json`
-- RuboCop (Ruby): `rubocop --format json`
-- golangci-lint (Go): `golangci-lint run --out-format json`
+**Linters:** Use ci_tool_detection.md Linters table. Use `--format json` / `--output-format json` for structured output.
 
 **Severity:**
 - **CRITICAL:** Compilation fails, cannot build project
@@ -93,15 +80,7 @@ Receives `contextStore` as JSON string:
 ### 3. Type Errors
 **What:** Type mismatches, missing type annotations, type checker failures
 
-**Detection by Stack:**
-
-| Stack | Tool | Command |
-|-------|------|---------|
-| TypeScript | tsc | `tsc --noEmit --strict` |
-| Python | mypy | `mypy . --strict` |
-| Python | pyright | `pyright --warnings` |
-| Go | go vet | `go vet ./...` |
-| Rust | cargo | `cargo check` (type checks only) |
+**Detection:** Use ci_tool_detection.md Command Registry (Type Checkers section).
 
 **Severity:**
 - **CRITICAL:** Type error prevents compilation (`tsc` fails, `cargo check` fails)
@@ -116,15 +95,7 @@ Receives `contextStore` as JSON string:
 ### 4. Failed or Skipped Tests
 **What:** Test suite failures, skipped tests, missing test coverage
 
-**Detection by Stack:**
-
-| Stack | Framework | Command |
-|-------|-----------|---------|
-| Node.js | Jest | `npm test -- --json --outputFile=test-results.json` |
-| Node.js | Mocha | `mocha --reporter json > test-results.json` |
-| Python | Pytest | `pytest --json-report --json-report-file=test-results.json` |
-| Go | go test | `go test ./... -json` |
-| Rust | cargo test | `cargo test --no-fail-fast` |
+**Detection:** Use ci_tool_detection.md Command Registry (Test Frameworks section). Use JSON output flags for structured parsing.
 
 **Severity:**
 - **CRITICAL:** Test failures in CI/production code
@@ -157,54 +128,23 @@ Receives `contextStore` as JSON string:
 
 ## Scoring Algorithm
 
-```
-violations = {critical: N, high: M, medium: K, low: L}
-
-penalty = (critical * 2.0) + (high * 1.0) + (medium * 0.5) + (low * 0.2)
-
-score = max(0, 10 - penalty)
-```
-
-**Examples:**
-- 0 violations → 10/10
-- 1 critical (build fails) → 8/10
-- 2 critical, 5 high → 3/10
-- 10 high, 20 medium → 0/10
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/references/audit_scoring.md`.
 
 ## Output Format
 
-Return JSON to coordinator:
-```json
-{
-  "category": "Build Health",
-  "score": 7,
-  "total_issues": 5,
-  "critical": 1,
-  "high": 2,
-  "medium": 2,
-  "low": 0,
-  "findings": [
-    {
-      "severity": "CRITICAL",
-      "location": "src/utils/helper.ts:45",
-      "issue": "TypeScript error: Type 'string' is not assignable to type 'number'",
-      "principle": "Type Safety",
-      "recommendation": "Fix type mismatch: change 'id: string' to 'id: number' or update usage",
-      "effort": "S"
-    },
-    {
-      "severity": "HIGH",
-      "location": "tests/api.test.ts:112",
-      "issue": "Test failed: Expected 200, received 404",
-      "principle": "Test Quality",
-      "recommendation": "Update API endpoint or fix test assertion",
-      "effort": "M"
-    }
-  ]
-}
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
+
+Write report to `{output_dir}/622-build.md` with `category: "Build Health"` and checks: compilation_errors, linter_warnings, type_errors, test_failures, build_config.
+
+Return summary to coordinator:
+```
+Report written: docs/project/.audit/ln-620/{YYYY-MM-DD}/622-build.md
+Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
 ## Critical Rules
+
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
 - **Do not auto-fix:** Report violations only; coordinator creates task for user to fix
 - **Tech stack aware:** Use contextStore to run appropriate build commands (npm vs cargo vs gradle)
@@ -214,14 +154,21 @@ Return JSON to coordinator:
 
 ## Definition of Done
 
-- contextStore parsed successfully
-- All 5 build checks completed (compiler, linter, type checker, tests, config)
-- Findings collected with severity, location, effort, recommendation
-- Score calculated using penalty algorithm
-- JSON result returned to coordinator
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
+
+- [ ] contextStore parsed successfully (including output_dir)
+- [ ] All 5 build checks completed (compiler, linter, type checker, tests, config)
+- [ ] Findings collected with severity, location, effort, recommendation
+- [ ] Score calculated using penalty algorithm
+- [ ] Report written to `{output_dir}/622-build.md` (atomic single Write call)
+- [ ] build_health metric appended to results_log with trend status
+- [ ] Summary returned to coordinator
 
 ## Reference Files
 
+- **Audit output schema:** `shared/references/audit_output_schema.md`
+- **CI tool detection:** `shared/references/ci_tool_detection.md`
+- **Results log pattern:** `shared/references/results_log_pattern.md`
 - Build audit rules: [references/build_rules.md](references/build_rules.md)
 
 ---

@@ -68,6 +68,14 @@ description: Reviews Elixir code for idiomatic patterns, OTP basics, and documen
 - Reviewing GenServer/Supervisor code → otp-basics.md
 - Reviewing @doc/@moduledoc → documentation.md
 
+## Gates — before reporting
+
+Do these **in order** for the review batch. Do not publish findings until each step passes.
+
+1. **Protocol loaded** — Read [review-verification-protocol](../review-verification-protocol/SKILL.md) and apply its checks for each finding category you use (unused, validation, security, performance, etc.). **Pass:** For every substantive finding, you can name which protocol subsection you satisfied or state **N/A** with reason (pure style).
+2. **Anchored evidence** — **Pass:** Each finding includes a concrete locator: `path:line` (or line range), or `Module.function/arity` plus a short quoted snippet from the file.
+3. **Claims backed by artifacts** — For assertions like unused code, missing validation, or security risk, **Pass:** You attach the supporting artifact (e.g. search results, file read scope) or downgrade the item to an explicit **question** / **uncertain** with what you did not verify.
+
 ## Before Submitting Findings
 
-Load and follow [review-verification-protocol](../review-verification-protocol/SKILL.md) before reporting any issue.
+Complete **Gates — before reporting** (section above) first; the verification protocol is mandatory input to those gates.

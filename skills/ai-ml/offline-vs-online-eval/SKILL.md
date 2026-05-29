@@ -1,706 +1,229 @@
 ---
-name: Offline vs Online Evaluation
-description: Comprehensive guide to offline and online evaluation strategies including A/B testing, shadow mode, canary deployments, and bridging offline-online metrics
+id: SKL-offline-OFFLINEVSONLINEEVAL
+name: Offline Vs Online Eval
+description: '* **Depends on**: None * **Compatible with**: None * **Conflicts with**:
+  None * **Related Skills**: None # Overview Comprehensive guide to offline and online
+  evaluation strategies for AI/ML models, in'
+version: 1.0.0
+status: active
+owner: '@cerebra-team'
+last_updated: '2026-02-22'
+category: Backend
+tags:
+- api
+- backend
+- server
+- database
+stack:
+- Python
+- Node.js
+- REST API
+- GraphQL
+difficulty: Intermediate
 ---
 
-# Offline vs Online Evaluation
+# Offline Vs Online Eval
 
-## Definitions
+## Skill Profile
+*(Select at least one profile to enable specific modules)*
+- [ ] **DevOps**
+- [x] **Backend**
+- [ ] **Frontend**
+- [ ] **AI-RAG**
+- [ ] **Security Critical**
 
-### Offline Evaluation
-**Test on static dataset before deployment**
-```
-Dataset: Ground truth test set (fixed)
-When: During development
-Metrics: Accuracy, F1, BLEU, RAG metrics
-Environment: Development/staging
-```
+## Overview
+This skill provides comprehensive guidance and best practices for implementation. It enables teams to achieve reliable, maintainable, and scalable solutions.
 
-### Online Evaluation
-**Measure in production with real users**
-```
-Dataset: Live traffic (dynamic)
-When: In production
-Metrics: User satisfaction, task success, engagement
-Environment: Production
-```
+### When to use / When NOT to use
+* ✅ **Use when**: Implementing this capability in your project
+* ✅ **Use when**: Need to follow established patterns and conventions
+* ❌ **Avoid when**: The requirements don't match this skill's scope
+* ❌ **Avoid when**: Simpler alternatives would suffice
 
----
 
-## Why Both Matter
+## Why This Matters
+- **Reduces Technical Debt**: Following established patterns prevents costly rework
+- **Increases System Stability**: Proper implementation reduces bugs and downtime
+- **Improves Team Velocity**: Clear guidance helps teams work more efficiently
+- **Reduces Maintenance Costs**: Well-structured code is easier to maintain
+- **Ensures Investment Confidence**: Following standards gives confidence in technical decisions
 
-### Offline: Fast Iteration, Controlled Testing
-```
-Pros:
-- Fast (minutes to hours)
-- Reproducible (same dataset)
-- Safe (no user impact)
-- Cheap (no production traffic)
 
-Use for:
-- Rapid development
-- Comparing models
-- Regression testing
-```
+## Core Concepts & Rules
 
-### Online: Real-World Performance, Actual User Impact
-```
-Pros:
-- Real performance (actual users)
-- Actual impact (business metrics)
-- Catches issues offline can't (latency, UX)
+### 1. Core Principles
+- Follow established patterns and conventions
+- Maintain consistency across codebase
+- Document decisions and trade-offs
 
-Use for:
-- Final validation
-- Measuring business impact
-- Continuous monitoring
-```
+### 2. Implementation Guidelines
+- Start with the simplest viable solution
+- Iterate based on feedback and requirements
+- Test thoroughly before deployment
 
-### Need Both for Complete Picture
-```
-Offline: "Model A is 5% more accurate"
-Online: "Model A increases user satisfaction by 10%"
 
-Both needed to make informed decisions
-```
+## Inputs / Outputs / Contracts
 
----
+* **Inputs**:
+  - Requirements and specifications
+  - Existing codebase and architecture
+  - Team context and constraints
+* **Entry Conditions**:
+  - Project repository initialized
+  - Development environment set up
+  - Required dependencies installed
+* **Outputs**:
+  - Implementation code and documentation
+  - Test cases and test results
+  - Deployment artifacts
+* **Artifacts Required (Deliverables)**:
+  - Source code changes
+  - Updated documentation
+  - Test coverage reports
+* **Acceptance Evidence**:
+  - All tests passing
+  - Code review approved
+  - Documentation updated
+* **Success Criteria**:
+  - Meets all functional requirements
+  - Follows established patterns
+  - Test coverage ≥ 80%
 
-## Offline Evaluation
 
-### When
-During development, before deployment
+## Skill Composition
+* **Depends on**: None
+* **Compatible with**: None
+* **Conflicts with**: None
+* **Related Skills**: None
 
-### Dataset
-Ground truth test set (500-5000 examples)
+# Overview
+Comprehensive guide to offline and online evaluation strategies for AI/ML models, including metrics, A/B testing, and production monitoring
 
-### Metrics
-- **Accuracy:** % correct
-- **F1 Score:** Precision + recall
-- **BLEU/ROUGE:** Generation quality
-- **RAG Metrics:** Faithfulness, relevance
+## Quick Start / Implementation Example
 
-### Pros
-- **Fast:** Evaluate 1000 examples in minutes
-- **Reproducible:** Same dataset → same results
-- **Safe:** No user impact
-- **Cheap:** No production costs
+1. Review requirements and constraints
+2. Set up development environment
+3. Implement core functionality following patterns
+4. Write tests for critical paths
+5. Run tests and fix issues
+6. Document any deviations or decisions
 
-### Cons
-- **May not reflect real performance:** Test set ≠ production
-- **Missing context:** No user behavior, latency, UX
-- **Dataset drift:** Production changes over time
-
-### Process
-```
-1. Create evaluation dataset (ground truth)
-2. Run model on dataset
-3. Compute metrics
-4. Compare to baseline
-5. Iterate until metrics improve
-6. Deploy to production
-```
-
----
-
-## Online Evaluation
-
-### When
-In production with real users
-
-### Dataset
-Live traffic (actual user queries)
-
-### Metrics
-- **User satisfaction:** Thumbs up/down, ratings
-- **Task success:** Did user achieve goal?
-- **Engagement:** Click-through rate, time on page
-- **Efficiency:** Time to complete, steps needed
-- **Safety:** Violations, flags, escalations
-
-### Pros
-- **Real performance:** Actual users, actual queries
-- **Actual impact:** Business metrics (revenue, retention)
-- **Catches real issues:** Latency, UX, edge cases
-
-### Cons
-- **Slower:** Need traffic, statistical significance
-- **Risky:** Bad model affects real users
-- **Requires traffic:** Can't test without users
-
-### Methods
-- A/B testing
-- Shadow mode
-- Canary deployment
-- Interleaving
-
----
-
-## Online Evaluation Methods
-
-### A/B Testing (Two Variants)
-
-**Setup:**
-```
-Control (A): Current model (50% of users)
-Treatment (B): New model (50% of users)
-
-Random assignment of users
-Measure metrics for both
-Statistical significance test
-Ship winner
-```
-
-**Example:**
 ```python
-import random
-
-def assign_variant(user_id):
-    if hash(user_id) % 2 == 0:
-        return "A"  # Control
-    else:
-        return "B"  # Treatment
-
-# Serve model based on variant
-variant = assign_variant(user_id)
-if variant == "A":
-    answer = model_a.predict(question)
-else:
-    answer = model_b.predict(question)
-
-# Log result
-log_result(user_id, variant, question, answer, user_feedback)
-```
-
-**Statistical Significance:**
-```python
-from scipy.stats import ttest_ind
-
-satisfaction_a = [4, 5, 3, 4, 5, ...]  # User ratings for A
-satisfaction_b = [5, 5, 4, 5, 4, ...]  # User ratings for B
-
-t_stat, p_value = ttest_ind(satisfaction_a, satisfaction_b)
-
-if p_value < 0.05:
-    print("Statistically significant difference!")
-    if mean(satisfaction_b) > mean(satisfaction_a):
-        print("Ship variant B")
-else:
-    print("No significant difference")
-```
-
-### Shadow Mode (Log but Don't Serve)
-
-**Setup:**
-```
-Production: Serve model A (current)
-Shadow: Run model B in background (don't serve)
-Compare: Model B predictions vs model A predictions
-No user impact: Users only see model A
-```
-
-**Example:**
-```python
-# Serve current model
-answer_a = model_a.predict(question)
-serve_to_user(answer_a)
-
-# Run new model in shadow mode (async)
-async def shadow_predict():
-    answer_b = model_b.predict(question)
-    log_shadow_result(question, answer_a, answer_b)
-    
-    # Compare
-    if answer_a != answer_b:
-        log_difference(question, answer_a, answer_b)
-
-asyncio.create_task(shadow_predict())
-```
-
-**Benefits:**
-- No user impact (safe)
-- Real production traffic
-- Can compare models directly
-
-### Canary Deployment (Small % of Traffic)
-
-**Setup:**
-```
-1. Deploy new model to 1% of traffic
-2. Monitor closely (errors, latency, satisfaction)
-3. If good, increase to 5%
-4. Gradually increase to 100%
-5. Rollback if issues
-```
-
-**Example:**
-```python
-def get_model(user_id):
-    # Canary: 5% of users get new model
-    if hash(user_id) % 100 < 5:
-        return model_b  # New model (canary)
-    else:
-        return model_a  # Current model
-
-model = get_model(user_id)
-answer = model.predict(question)
-
-# Monitor metrics
-monitor_metrics(model_version=model.version, user_id=user_id)
-```
-
-**Rollback:**
-```python
-# If error rate > 5% for canary
-if canary_error_rate > 0.05:
-    rollback_to_previous_version()
-    alert_team("Canary deployment failed")
-```
-
-### Interleaving (Mix Results)
-
-**Setup:**
-```
-Show results from both models, interleaved
-Track which results users click
-Infer which model is better
-```
-
-**Example (Search Ranking):**
-```
-Model A results: [R1_A, R2_A, R3_A, R4_A]
-Model B results: [R1_B, R2_B, R3_B, R4_B]
-
-Interleaved: [R1_A, R1_B, R2_A, R2_B, R3_A, R3_B]
-
-User clicks: R1_B, R2_A
-→ Model B: 1 click, Model A: 1 click
-```
-
----
-
-## Online Metrics
-
-### Engagement
-- **Click-through rate (CTR):** % of users who click
-- **Time on page:** How long users stay
-- **Pages per session:** How many pages viewed
-- **Bounce rate:** % who leave immediately
-
-### Satisfaction
-- **Thumbs up/down:** Explicit feedback
-- **Star ratings:** 1-5 scale
-- **NPS (Net Promoter Score):** "Would you recommend?"
-- **CSAT (Customer Satisfaction):** "How satisfied are you?"
-
-### Task Success
-- **Completion rate:** % who complete task
-- **Success rate:** % who achieve goal
-- **Retry rate:** % who retry query
-- **Abandonment rate:** % who give up
-
-### Efficiency
-- **Time to complete:** How long to finish task
-- **Steps needed:** How many interactions
-- **Query reformulations:** How many retries
-
-### Safety
-- **Violation rate:** % of harmful outputs
-- **Flag rate:** % of flagged responses
-- **Escalation rate:** % requiring human intervention
-
----
-
-## Implicit Signals
-
-### Did User Click Result? (Relevance)
-```
-User clicks result → Likely relevant
-User doesn't click → Likely not relevant
-```
-
-### Did User Reformulate Query? (Dissatisfaction)
-```
-User reformulates → Dissatisfied with answer
-User doesn't reformulate → Satisfied
-```
-
-### Did User Abandon? (Failure)
-```
-User abandons → Failed to help
-User continues → Successful
-```
-
-### Session Length (Engagement)
-```
-Long session → Engaged
-Short session → Not engaged (or very efficient)
-```
-
----
-
-## Explicit Feedback
-
-### Thumbs Up/Down
-```python
-feedback = {
-    "question": "What is the capital of France?",
-    "answer": "Paris",
-    "feedback": "thumbs_up",  # or "thumbs_down"
-    "timestamp": "2024-01-15T10:00:00Z"
-}
-
-# Aggregate
-thumbs_up_rate = thumbs_up / (thumbs_up + thumbs_down)
-```
-
-### Star Ratings (1-5)
-```python
-rating = {
-    "question": "What is the capital of France?",
-    "answer": "Paris",
-    "rating": 5,  # 1-5 scale
-    "timestamp": "2024-01-15T10:00:00Z"
-}
-
-# Aggregate
-avg_rating = sum(ratings) / len(ratings)
-```
-
-### Written Feedback
-```python
-feedback = {
-    "question": "What is the capital of France?",
-    "answer": "Paris",
-    "feedback_text": "Perfect answer, very helpful!",
-    "timestamp": "2024-01-15T10:00:00Z"
-}
-
-# Analyze sentiment
-sentiment = analyze_sentiment(feedback_text)
-```
-
-### Bug Reports
-```python
-bug_report = {
-    "question": "What is the capital of France?",
-    "answer": "Lyon",  # Incorrect
-    "issue": "Incorrect answer",
-    "timestamp": "2024-01-15T10:00:00Z"
-}
-
-# Track and fix
-add_to_ground_truth(question, correct_answer="Paris")
-```
-
----
-
-## Bridging Offline and Online
-
-### Offline Metrics Should Correlate with Online
-```
-Hypothesis: Higher offline accuracy → Higher online satisfaction
-
-Test:
-- Model A: 85% offline accuracy → 75% thumbs up
-- Model B: 90% offline accuracy → 80% thumbs up
-
-Correlation: ✓ Offline predicts online
-```
-
-### Validate Offline Improvements Lead to Online Gains
-```
-Process:
-1. Improve offline metric (85% → 90% accuracy)
-2. Deploy to production (A/B test)
-3. Measure online metric (75% → 80% thumbs up)
-4. If online improves → Offline metric is good proxy
-5. If online doesn't improve → Offline metric is misleading
-```
-
-### Offline for Filtering, Online for Final Decision
-```
-Workflow:
-1. Offline: Test 10 model variants
-2. Filter: Keep top 3 (based on offline metrics)
-3. Online: A/B test top 3
-4. Ship: Best performer online
-```
-
----
-
-## When Offline and Online Disagree
-
-### Example
-```
-Offline: Model A is better (90% vs 85% accuracy)
-Online: Model B performs better (80% vs 75% thumbs up)
-```
-
-### Possible Reasons
-
-**Dataset Not Representative:**
-```
-Test set: Simple questions
-Production: Complex, ambiguous questions
-→ Test set doesn't match reality
-```
-
-**Metric Doesn't Capture What Matters:**
-```
-Offline: Accuracy (correct answer)
-Online: Helpfulness (useful answer)
-→ Correct ≠ helpful
-```
-
-**User Behavior Differs from Test Set:**
-```
-Test set: Factual questions
-Production: Conversational queries
-→ Different use cases
-```
-
-### Trust Online (But Investigate Why)
-```
-Online metrics = actual user impact
-→ Trust online
-
-But investigate:
-- Why did offline mislead?
-- Update offline dataset/metrics
-- Improve offline-online correlation
-```
-
----
-
-## Continuous Evaluation
-
-### Log All Predictions + Outcomes
-```python
-log_entry = {
-    "timestamp": "2024-01-15T10:00:00Z",
-    "question": "What is the capital of France?",
-    "answer": "Paris",
-    "model_version": "v1.2.0",
-    "latency_ms": 250,
-    "user_feedback": "thumbs_up",
-    "user_id": "user123"
-}
-
-db.logs.insert(log_entry)
-```
-
-### Offline Eval on Recent Data
-```python
-# Weekly: Evaluate on last week's data
-recent_data = db.logs.find({
-    "timestamp": {"$gte": one_week_ago}
-}).limit(1000)
-
-# Evaluate
-results = evaluate_model(recent_data)
-
-# Compare to baseline
-if results["accuracy"] < baseline_accuracy - 0.05:
-    alert("Model performance degraded!")
-```
-
-### Online Eval via A/B Tests
-```
-Monthly: A/B test new model variant
-Measure: User satisfaction, task success
-Ship: If statistically significant improvement
-```
-
-### Monitor Metrics Dashboard
-```
-Dashboard:
-- Offline metrics (accuracy, F1)
-- Online metrics (thumbs up rate, task success)
-- Latency (P50, P95, P99)
-- Error rate
-- Traffic volume
-
-Alerts:
-- Accuracy drops >5%
-- Thumbs up rate drops >10%
-- Latency P95 >1s
-- Error rate >1%
-```
-
----
-
-## Guardrails for Online Eval
-
-### Automated Rollback (If Metrics Drop)
-```python
-def monitor_canary():
-    while True:
-        metrics = get_canary_metrics()
-        
-        if metrics["error_rate"] > 0.05:
-            rollback()
-            alert("High error rate, rolled back")
-        
-        if metrics["thumbs_down_rate"] > 0.3:
-            rollback()
-            alert("High dissatisfaction, rolled back")
-        
-        time.sleep(60)  # Check every minute
-```
-
-### Manual Review (Before Wide Rollout)
-```
-Process:
-1. Canary to 1% (automated)
-2. Monitor for 24 hours
-3. Manual review (check logs, user feedback)
-4. If good, increase to 10%
-5. Repeat until 100%
-```
-
-### Sampling (Don't Test on All Traffic)
-```
-Start small:
-- 1% canary (low risk)
-- Monitor closely
-- Gradually increase
-- Never test unproven model on 100% traffic
-```
-
-### Reversibility (Easy to Revert)
-```
-Feature flags:
-- Easy to turn off new model
-- Instant rollback
-- No code deployment needed
+# Example implementation following best practices
+def example_function():
+    # Your implementation here
+    pass
 ```
 
----
 
-## Offline-to-Online Workflow
-
-### 1. Develop: Offline Eval on Test Set
-```
-Iterate on model
-Evaluate on test set (1000 examples)
-Improve until offline metrics good
-```
+## Assumptions / Constraints / Non-goals
 
-### 2. Validate: Shadow Mode (Offline on Live Traffic)
-```
-Run in shadow mode (1 week)
-Evaluate on live traffic (offline metrics)
-Compare to current model
-```
+* **Assumptions**:
+  - Development environment is properly configured
+  - Required dependencies are available
+  - Team has basic understanding of domain
+* **Constraints**:
+  - Must follow existing codebase conventions
+  - Time and resource limitations
+  - Compatibility requirements
+* **Non-goals**:
+  - This skill does not cover edge cases outside scope
+  - Not a replacement for formal training
 
-### 3. Test: Canary to 1% (Online, Minimal Risk)
-```
-Deploy to 1% of users
-Monitor online metrics (24 hours)
-If good, proceed
-```
 
-### 4. Expand: Gradual Rollout to 100%
-```
-1% → 5% → 10% → 25% → 50% → 100%
-Monitor at each step
-Rollback if issues
-```
+## Compatibility & Prerequisites
 
-### 5. Monitor: Continuous Online Evaluation
-```
-Track metrics in production
-Detect regressions
-A/B test improvements
-```
+* **Supported Versions**:
+  - Python 3.8+
+  - Node.js 16+
+  - Modern browsers (Chrome, Firefox, Safari, Edge)
+* **Required AI Tools**:
+  - Code editor (VS Code recommended)
+  - Testing framework appropriate for language
+  - Version control (Git)
+* **Dependencies**:
+  - Language-specific package manager
+  - Build tools
+  - Testing libraries
+* **Environment Setup**:
+  - `.env.example` keys: `API_KEY`, `DATABASE_URL` (no values)
 
----
 
-## Real-World Examples
+## Test Scenario Matrix (QA Strategy)
 
-### Search Ranking
-```
-Offline: NDCG@10 (ranking quality)
-Online: Click-through rate (CTR)
+| Type | Focus Area | Required Scenarios / Mocks |
+| :--- | :--- | :--- |
+| **Unit** | Core Logic | Must cover primary logic and at least 3 edge/error cases. Target minimum 80% coverage |
+| **Integration** | DB / API | All external API calls or database connections must be mocked during unit tests |
+| **E2E** | User Journey | Critical user flows to test |
+| **Performance** | Latency / Load | Benchmark requirements |
+| **Security** | Vuln / Auth | SAST/DAST or dependency audit |
+| **Frontend** | UX / A11y | Accessibility checklist (WCAG), Performance Budget (Lighthouse score) |
 
-Correlation: High NDCG → High CTR
-```
 
-### Recommendation
-```
-Offline: Precision@k, recall@k
-Online: Engagement (clicks, watch time)
+## Technical Guardrails & Security Threat Model
 
-Correlation: High precision → High engagement
-```
+### 1. Security & Privacy (Threat Model)
+* **Top Threats**: Injection attacks, authentication bypass, data exposure
+- [ ] **Data Handling**: Sanitize all user inputs to prevent Injection attacks. Never log raw PII
+- [ ] **Secrets Management**: No hardcoded API keys. Use Env Vars/Secrets Manager
+- [ ] **Authorization**: Validate user permissions before state changes
 
-### RAG
-```
-Offline: Faithfulness, relevance
-Online: Thumbs up rate, task success
+### 2. Performance & Resources
+- [ ] **Execution Efficiency**: Consider time complexity for algorithms
+- [ ] **Memory Management**: Use streams/pagination for large data
+- [ ] **Resource Cleanup**: Close DB connections/file handlers in finally blocks
 
-Correlation: High faithfulness → High thumbs up
-```
+### 3. Architecture & Scalability
+- [ ] **Design Pattern**: Follow SOLID principles, use Dependency Injection
+- [ ] **Modularity**: Decouple logic from UI/Frameworks
 
----
+### 4. Observability & Reliability
+- [ ] **Logging Standards**: Structured JSON, include trace IDs `request_id`
+- [ ] **Metrics**: Track `error_rate`, `latency`, `queue_depth`
+- [ ] **Error Handling**: Standardized error codes, no bare except
+- [ ] **Observability Artifacts**:
+    - **Log Fields**: timestamp, level, message, request_id
+    - **Metrics**: request_count, error_count, response_time
+    - **Dashboards/Alerts**: High Error Rate > 5%
 
-## Tools
 
-### Offline
-- Custom scripts
-- Evaluation frameworks (RAGAS, DeepEval)
-- Jupyter notebooks
+## Agent Directives & Error Recovery
+*(ข้อกำหนดสำหรับ AI Agent ในการคิดและแก้ปัญหาเมื่อเกิดข้อผิดพลาด)*
 
-### Online
-- Experimentation platforms (Optimizely, LaunchDarkly)
-- Analytics (Google Analytics, Mixpanel)
-- APM (Datadog, New Relic)
+- **Thinking Process**: Analyze root cause before fixing. Do not brute-force.
+- **Fallback Strategy**: Stop after 3 failed test attempts. Output root cause and ask for human intervention/clarification.
+- **Self-Review**: Check against Guardrails & Anti-patterns before finalizing.
+- **Output Constraints**: Output ONLY the modified code block. Do not explain unless asked.
 
-### Both
-- MLOps platforms (MLflow, Weights & Biases)
-- Feature flags (LaunchDarkly, Split)
-- Monitoring (Prometheus, Grafana)
 
----
+## Definition of Done (DoD) Checklist
 
-## Summary
+- [ ] Tests passed + coverage met
+- [ ] Lint/Typecheck passed
+- [ ] Logging/Metrics/Trace implemented
+- [ ] Security checks passed
+- [ ] Documentation/Changelog updated
+- [ ] Accessibility/Performance requirements met (if frontend)
 
-**Offline:** Test on static dataset (fast, safe, reproducible)
-**Online:** Test in production (real performance, actual impact)
 
-**Need Both:**
-- Offline for rapid iteration
-- Online for final validation
+## Anti-patterns / Pitfalls
 
-**Offline Pros:**
-- Fast, safe, cheap, reproducible
+* ⛔ **Don't**: Log PII, catch-all exception, N+1 queries
+* ⚠️ **Watch out for**: Common symptoms and quick fixes
+* 💡 **Instead**: Use proper error handling, pagination, and logging
 
-**Online Pros:**
-- Real performance, actual impact
 
-**Online Methods:**
-- A/B testing (compare variants)
-- Shadow mode (no user impact)
-- Canary (gradual rollout)
+## Reference Links & Examples
 
-**Online Metrics:**
-- Engagement, satisfaction, task success, efficiency, safety
+* Internal documentation and examples
+* Official documentation and best practices
+* Community resources and discussions
 
-**Bridging:**
-- Offline should correlate with online
-- Validate improvements
-- Offline for filtering, online for decision
 
-**Workflow:**
-1. Develop (offline)
-2. Validate (shadow mode)
-3. Test (canary 1%)
-4. Expand (gradual rollout)
-5. Monitor (continuous)
+## Versioning & Changelog
 
-**Guardrails:**
-- Automated rollback
-- Manual review
-- Sampling
-- Reversibility
+* **Version**: 1.0.0
+* **Changelog**:
+  - 2026-02-22: Initial version with complete template structure

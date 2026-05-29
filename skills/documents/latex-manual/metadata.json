@@ -1,9 +1,9 @@
 {
-  "name": "latex-manual",
+  "name": "latex-manual-2025-12-31-210638",
   "repo": "enuno/claude-command-and-control",
-  "path": "skills-templates/documentation/latex-manual/SKILL.md",
+  "path": "INTEGRATION/processed/latex-manual-2025-12-31-210638/SKILL.md",
   "source": "github.com/enuno/claude-command-and-control",
-  "downloaded_at": "2026-01-22T02:47:03.556778Z",
+  "downloaded_at": "2026-01-22T02:47:06.645512Z",
   "dir_name": "latex-manual",
   "category": "documents",
   "github_path": "INTEGRATION/processed/latex-manual-2025-12-31-210638",

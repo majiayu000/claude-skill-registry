@@ -2,8 +2,16 @@
   "name": "pinme",
   "repo": "glitternetwork/pinme",
   "path": ".claude/skills/pinme/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
   "source": "github.com/glitternetwork/pinme",
-  "downloaded_at": "2026-01-29T05:55:11.712659Z",
   "dir_name": "pinme-glitternetwork-pinme-8adb920f",
-  "category": "devops"
+  "downloaded_at": "2026-03-31T01:33:08.793508Z",
+  "author": "glitternetwork",
+  "source_url": "https://github.com/glitternetwork/pinme/blob/main/.claude/skills/pinme/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/glitternetwork/pinme/blob/main/.claude/skills/pinme/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

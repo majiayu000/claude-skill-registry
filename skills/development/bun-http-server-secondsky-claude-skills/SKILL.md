@@ -1,7 +1,9 @@
 ---
-name: Bun HTTP Server
+name: bun-http-server
 description: Use when building HTTP servers with Bun.serve, handling requests/responses, implementing routing, creating REST APIs, or configuring fetch handlers.
-version: 1.0.0
+metadata:
+  version: "1.0.0"
+license: MIT
 ---
 
 # Bun HTTP Server

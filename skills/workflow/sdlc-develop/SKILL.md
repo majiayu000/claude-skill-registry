@@ -1,6 +1,6 @@
 ---
 name: sdlc-develop
-description: Orchestrates 6-phase SDLC pipeline for feature development. Use when user runs /develop command, requests guided feature development, wants to create implementation plans, or mentions "develop", "feature", "implement", "plan feature", "SDLC", "spec-driven development". Supports plan persistence, resume mode, and autonomous execution.
+description: Orchestrates 6-phase SDLC pipeline (discovery, requirements, architecture, workstreams, implementation, summary) for guided feature development. Use when user runs /core:develop command, requests spec-driven development, wants to create implementation plans with architecture decisions, or mentions "SDLC", "spec-driven", "plan feature", "development pipeline". Supports plan persistence, wave-based resume, autonomous mode, and architecture/implementation verification.
 ---
 
 # ⚠️ CRITICAL EXECUTION PROTOCOL
@@ -34,17 +34,29 @@ Lightweight orchestrator for 6-phase software development lifecycle with progres
 - **Phase 0 is MANDATORY** - Always analyze existing implementations before designing new ones
 - **Search first, load on demand** - Use Grep to find relevant sections before loading files
 - **Ask clarifying questions early** - Identify ambiguities before designing, not after
-- **Use TodoWrite** - Track all progress throughout every phase
+- **Use TaskCreate/TaskUpdate** - Track all progress throughout every phase
 - **Load phases progressively** - Only read phase files when entering that phase
+- **Two-stage review** - Spec compliance first, then code quality (wave-level or per-task with `--subagent`)
+- **Evidence-based gates** - Fresh command output required for every quality gate check
+- **Patterns drive Phase 4** - Backpressure (quality gates over prescription), Confession (builder records uncertainties), Critic-Actor (per-wave targeted review), Fresh Context (re-read from disk each wave)
 
 ## Quick Start
 
 ```bash
-/develop add user authentication         # Full 6-phase pipeline
-/develop add logout button --auto        # Autonomous mode
-/develop create plan for dashboard --plan-only  # Plan only
-/develop @arkhe/specs/01-user-auth/      # Resume existing plan
+/core:develop add user authentication         # Full 6-phase pipeline
+/core:develop add logout button --auto        # Autonomous mode
+/core:develop create plan for dashboard --plan-only  # Plan only
+/core:develop @arkhe/specs/001-user-auth/     # Resume existing plan
+/core:develop add dashboard page with charts  # UI work → triggers Stitch workflow
 ```
+
+### UI Features with Stitch Integration
+
+When a feature involves UI work (detected keywords: `UI`, `page`, `screen`, `component`, `button`, `form`, etc.), the skill offers Stitch integration:
+
+1. **Phase 1**: Detects UI keywords → offers to generate Stitch prompts
+2. **Phase 2**: Offers to generate screens from prompts via MCP
+3. **Phase 4**: For each UI task, offers `stitch-to-react` conversion
 
 ## Arguments
 
@@ -53,10 +65,11 @@ Parse from `$ARGUMENTS`:
 | Flag | Effect |
 |------|--------|
 | `--plan-only` | Stop after Phase 2 (save plan, don't implement) |
-| `--validate` | Enable deep validation with opus agent in Phase 4 |
+| `--validate` | Upgrade wave reviewers from sonnet to opus in Phase 4 |
 | `--phase=N` | Execute specific phase only |
 | `--auto` | Autonomous mode (no checkpoints) |
 | `@path/to/spec` | Resume existing plan or run verification from path |
+| `--subagent` | Subagent-per-task mode in Phase 4 (fresh subagent per task with two-stage review) |
 | `--verify-arch` | Verify implementation matches plan.md architecture |
 | `--verify-impl` | Verify implementation meets spec.md requirements |
 
@@ -74,8 +87,10 @@ Parse from `$ARGUMENTS`:
 
 **RESUME_MODE** - If `@path` reference found AND plan.md exists (no verify flags):
 - Read existing plan from path
-- Ask user which phase to continue from
-- Skip to that phase, load only that phase file
+- Auto-detect wave progress via `wave-*-context.md` files and `tasks.md` Status fields
+- If wave context found: offer to continue next wave, re-review, or restart from a phase
+- If no wave context: ask user which phase to continue from (existing behavior)
+- Skip to selected phase, load only that phase file
 
 **PLAN_MODE** - If keywords "create plan", "plan for", "draft plan" OR `--plan-only`:
 - Execute Phases 0-2 only
@@ -109,7 +124,9 @@ Load phase files **only when entering that phase**:
 | 2 | sonnet/opus | Architecture design |
 | 3 | haiku | Task breakdown |
 | 4 (implement) | sonnet | Code writing |
-| 4 (validate) | opus | Deep review (if `--validate`) |
+| 4 (spec reviewer) | sonnet | Spec compliance review (opus if `--validate`) |
+| 4 (quality reviewer) | sonnet | Code quality review (opus if `--validate`) |
+| 4 (implementer, `--subagent`) | haiku/sonnet/opus | Task complexity dependent |
 | 5 | - | Summary (no agent) |
 
 ## Spec Directory Structure
@@ -118,15 +135,33 @@ Plans are persisted to `{specs_dir}/` with auto-incrementing prefixes:
 
 ```
 {specs_dir}/
-├── 01-user-auth/
-│   ├── spec.md       # Requirements
-│   ├── plan.md       # Architecture
-│   └── tasks.md      # Task breakdown
-├── 02-dashboard/
+├── 001-user-auth/
+│   ├── spec.md              # Requirements
+│   ├── plan.md              # Architecture
+│   ├── tasks.md             # Task breakdown (with Status field)
+│   ├── wave-1-context.md    # Wave 1 handoff (generated at checkpoint)
+│   ├── wave-2-context.md    # Wave 2 handoff (generated at checkpoint)
+│   └── ...
+├── 002-dashboard/
 └── ...
 ```
 
 **Note:** `{specs_dir}` references the configured value from `.arkhe.yaml` (default: `arkhe/specs`).
+
+## Progressive Persistence
+
+Artifacts are saved incrementally at each phase checkpoint to prevent data loss:
+
+| Phase | Artifact Saved | Trigger |
+|-------|----------------|---------|
+| 0 | spec directory + initial spec.md, plan.md | After mode detection (FULL/PLAN modes) |
+| 1 | spec.md (with requirements) | After requirements gathering |
+| 2 | plan.md (with architecture) | After architecture decision |
+| 3 | tasks.md (with task breakdown) | After task breakdown |
+| 4 | tasks.md (Status updates) + wave-{N}-context.md | After each wave checkpoint |
+| 5 | tasks.md (checkbox sync) | Before completion summary |
+
+**Crash Recovery:** If session ends mid-phase, resume with `/core:develop @{spec_path}/` and artifacts from completed phases are preserved.
 
 ## Templates
 
@@ -139,7 +174,13 @@ Plans are persisted to `{specs_dir}/` with auto-incrementing prefixes:
 | [api-contract.md.template](templates/api-contract.md.template) | 2 | When API endpoints involved |
 | [data-models.md.template](templates/data-models.md.template) | 2 | When database changes involved |
 | [tasks.md.template](templates/tasks.md.template) | 3 | Always (task breakdown) |
+| [wave-context.md.template](templates/wave-context.md.template) | 4 | At each wave checkpoint (context handoff) |
 | [verification-report.md.template](templates/verification-report.md.template) | verify | When `--verify-arch` or `--verify-impl` used |
+| [REVIEW-SPEC.md](reviews/REVIEW-SPEC.md) | 4 | Two-stage review: spec compliance prompt |
+| [REVIEW-QUALITY.md](reviews/REVIEW-QUALITY.md) | 4 | Two-stage review: code quality prompt |
+| [implementer-prompt.md](reviews/implementer-prompt.md) | 4 | Implementer subagent prompt (`--subagent` mode) |
+| [EVIDENCE-GATES.md](EVIDENCE-GATES.md) | 4 | Rationalization prevention guide for quality gates |
+| [SUBAGENT-MODE.md](SUBAGENT-MODE.md) | 4 | Per-task execution protocol (`--subagent` mode) |
 
 ## Configuration
 
@@ -151,7 +192,7 @@ Plans are persisted to `{specs_dir}/` with auto-incrementing prefixes:
 ```yaml
 develop:
   specs_dir: arkhe/specs  # Customize this path
-  numbering: true         # NN- prefix
+  numbering: true         # NNN- prefix (3-digit, e.g., 001-)
   ticket_format: full     # full | simple
 ```
 
@@ -161,84 +202,23 @@ First run without config prompts for preferences.
 
 ## Execution Flow
 
-```
-START
-  │
-  ├─ Parse arguments (flags, path references)
-  ├─ Detect mode (RESUME/PLAN/FULL)
-  │
-  ├─ [RESUME] Load plan.md → Ask which phase → Jump to phase
-  │
-  ├─ [PLAN/FULL] Read PHASE-0-DISCOVERY.md
-  │   └─ Execute Phase 0 → Checkpoint
-  │
-  ├─ Read PHASE-1-REQUIREMENTS.md
-  │   └─ Execute Phase 1 → Checkpoint
-  │
-  ├─ Read PHASE-2-ARCHITECTURE.md
-  │   └─ Execute Phase 2 → Save plan → [PLAN stops here]
-  │
-  ├─ [FULL] Read PHASE-3-WORKSTREAMS.md
-  │   └─ Execute Phase 3 → Checkpoint
-  │
-  ├─ Read PHASE-4-IMPLEMENTATION.md
-  │   └─ Execute Phase 4 → Validation
-  │
-  └─ Read PHASE-5-SUMMARY.md
-      └─ Execute Phase 5 → Complete
-```
+Parse arguments and detect mode (RESUME/PLAN/FULL), then execute phases sequentially.
+RESUME loads existing plan and offers wave continuation. PLAN stops after Phase 2.
+FULL executes all 6 phases with checkpoints between each.
 
-## Checkpoints (unless `--auto`)
+See [WORKFLOW.md](WORKFLOW.md) for the detailed execution flow diagram.
 
-User approval required at:
-- End of Phase 0 (existing system findings)
-- End of Phase 1 (requirements summary)
-- Phase 2c (architecture decision)
-- End of Phase 3 (task breakdown)
-- Phase 4d (quality review findings)
+## Checkpoints
 
-## Checkpoint Protocol (CRITICAL)
-
-**At every AskUserQuestion checkpoint:**
-
-1. **STOP** - Halt all execution immediately
-2. **PRESENT** - Use `AskUserQuestion` tool with the options specified
-3. **WAIT** - Do not take any further action until user responds
-4. **RESPOND** - Act based on user's choice:
-   - **APPROVE** - Proceed to next phase/step
-   - **REVIEW** - Show requested details, then re-present prompt
-   - **MODIFY/FIX** - Make changes, then re-present prompt
-   - **CANCEL** - Stop the pipeline entirely
-
-### Tier 1 Checkpoints (⛔ CANNOT SKIP)
-
-These checkpoints block execution regardless of flags:
+Two mandatory Tier 1 gates (cannot skip, even with `--auto`):
 - **Phase 2c**: Architecture Decision
-- **Phase 4e**: Completion Gate
+- **Step 4.2**: Quality & Completion Gate (RULE ZERO + wave review aggregation)
 
-**YOU MUST STOP AND WAIT.** Even with `--auto`, do not proceed until user explicitly responds.
+All other checkpoints are Tier 2 (skippable with `--auto`), including the Domain Research gate (Phase 2a-res) and the Two-Stage Wave Review (Step 4.1e).
+Conditional escalation to Tier 1 if: DB schema changes, security work, or breaking API changes.
+Conditional RFC creation offered at Phase 2d when escalation triggers are detected.
 
-### Tier 2 Checkpoints (⚠️ RECOMMENDED)
-
-**Without `--auto`:** STOP and WAIT for user response.
-**With `--auto`:** Auto-approve and proceed, logging the decision.
-
-## Gates (HITL Tiers)
-
-Three-tier Human-in-the-Loop framework based on risk level:
-
-| Tier | Checkpoints | Behavior |
-|------|-------------|----------|
-| ⛔ Tier 1 | Phase 2c (architecture), Phase 4→5 (completion) | MANDATORY - blocks until approved |
-| ⚠️ Tier 2 | Phase 0→1, 1→2, 3→4 | RECOMMENDED - skippable with `--auto` |
-| ✅ Tier 3 | Phase 2→3 (plan saved) | AUTOMATED - proceeds, logs for review |
-
-**Conditional Escalation**: Any phase auto-elevates to Tier 1 if:
-- Database schema changes detected
-- Security implementation involved
-- Breaking API changes proposed
-
-See [GATES.md](GATES.md) for decision criteria and prompt patterns.
+See [GATES.md](GATES.md) for full checkpoint protocol, decision criteria, and prompt patterns.
 
 ## Examples
 

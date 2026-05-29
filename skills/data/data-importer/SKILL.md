@@ -45,7 +45,7 @@ python cli.py import \
 
 Data must be imported following foreign key dependencies:
 
-1. **Phase 1**: user, category, rule (independent types)
+1. **Phase 1**: user, event, rule (independent types)
 2. **Phase 2**: group, post, resource (depend on user)
 3. **Phase 3**: interaction (depends on user and targets)
 4. **Phase 4**: All relations (depend on content types)

@@ -1,7 +1,10 @@
 ---
 name: ln-230-story-prioritizer
-description: RICE prioritization per Story with market research. Generates consolidated prioritization table in docs/market/[epic-slug]/prioritization.md. L2 worker called after ln-220.
+description: "RICE-scores Stories with market research and generates prioritization table. Use when Stories need business priority ranking for sprint planning."
+license: MIT
 ---
+
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Story Prioritizer
 
@@ -29,8 +32,8 @@ Evaluate Stories using RICE scoring with market research. Generate consolidated 
 - Prioritization already exists in docs/market/
 
 **Who calls this skill:**
-- **User (manual)** - after ln-220-story-coordinator
-- **Future:** ln-200-scope-decomposer (optional Phase)
+- **ln-200-scope-decomposer** Phase 4 (optional, sequential per Epic)
+- **User (manual)** - standalone after ln-220-story-coordinator
 
 ---
 
@@ -64,13 +67,28 @@ docs/market/[epic-slug]/
 
 ---
 
+## Inputs
+
+| Input | Required | Source | Description |
+|-------|----------|--------|-------------|
+| `epicId` | Yes | args, kanban, user | Epic to process |
+
+**Resolution:** Epic Resolution Chain.
+**Status filter:** Active (planned/started)
+
+## Tools Config
+
+**MANDATORY READ:** Load `shared/references/tools_config_guide.md`, `shared/references/storage_mode_detection.md`, `shared/references/input_resolution_pattern.md`
+
+Extract: `task_provider` = Task Management → Provider
+
 ## Research Tools
 
 | Tool | Purpose | Example Query |
 |------|---------|---------------|
-| **WebSearch** | Market size, competitors | "[domain] market size 2025" |
+| **WebSearch** | Market size, competitors | "[domain] market size {current_year}" |
 | **mcp__Ref** | Industry reports | "[domain] market analysis report" |
-| **Linear** | Load Stories | list_issues(project=Epic.id) |
+| **Task provider** | Load Stories | IF linear: list_issues / ELSE: Glob story.md |
 | **Glob** | Check existing | "docs/market/[epic]/*" |
 
 ---
@@ -83,23 +101,25 @@ docs/market/[epic-slug]/
 
 **Process:**
 
-1. **Parse Epic input:**
-   - Accept: Epic ID, "Epic N", or Linear Project URL
-   - Query: `get_project(query=epic)`
+1. **Resolve epicId:** Run Epic Resolution Chain per guide.
+
+2. **Load Epic details:**
+   - **IF task_provider == "linear":** `get_project(query=epicId)`
+   - **ELSE:** `Read("docs/tasks/epics/epic-{N}-*/epic.md")`
    - Extract: Epic ID, title, description
 
-2. **Auto-discover configuration:**
+3. **Auto-discover configuration:**
    - Read `docs/tasks/kanban_board.md` for Team ID
    - Slugify Epic title for output path
 
-3. **Check existing prioritization:**
+4. **Check existing prioritization:**
    ```
    Glob: docs/market/[epic-slug]/prioritization.md
    ```
    - If exists: Ask "Update existing or create new?"
    - If new: Continue
 
-4. **Create output directory:**
+5. **Create output directory:**
    ```bash
    mkdir -p docs/market/[epic-slug]/
    ```
@@ -115,8 +135,13 @@ docs/market/[epic-slug]/
 **Process:**
 
 1. **Query Stories from Epic:**
+   **IF task_provider == "linear":**
    ```
    list_issues(project=Epic.id, label="user-story")
+   ```
+   **ELSE (file mode):**
+   ```
+   Glob("docs/tasks/epics/epic-{N}-*/stories/*/story.md")
    ```
 
 2. **Extract metadata only:**
@@ -145,8 +170,14 @@ docs/market/[epic-slug]/
 
 ##### Step 3.1: Load Story Description
 
+**IF task_provider == "linear":**
 ```
 get_issue(id=storyId, includeRelations=false)
+```
+
+**ELSE (file mode):**
+```
+Read("docs/tasks/epics/epic-{N}-*/stories/us{NNN}-*/story.md")
 ```
 
 **Extract from Story:**
@@ -159,7 +190,7 @@ get_issue(id=storyId, includeRelations=false)
 
 **WebSearch queries (based on depth):**
 ```
-"[customer problem domain] market size TAM 2025"
+"[customer problem domain] market size TAM {current_year}"
 "[feature type] industry market forecast"
 ```
 
@@ -182,7 +213,7 @@ get_issue(id=storyId, includeRelations=false)
 
 **WebSearch queries:**
 ```
-"[feature] competitors alternatives 2025"
+"[feature] competitors alternatives {current_year}"
 "[solution approach] market leaders"
 ```
 
@@ -221,6 +252,18 @@ RICE = (Reach x Impact x Confidence) / Effort
 | 3.0 | Massive | Strategic differentiator |
 
 **Confidence (0.5-1.0):** Data quality (from Step 3.2)
+
+**Data Confidence Assessment:**
+
+For each RICE factor, assess data confidence level:
+
+| Confidence | Criteria | Score Modifier |
+|------------|----------|----------------|
+| HIGH | Multiple authoritative sources (Gartner, Statista, SEC filings) | Factor used as-is |
+| MEDIUM | 1-2 sources, mixed quality (blog + report) | Factor ±25% range shown |
+| LOW | No sources, team estimate only | Factor ±50% range shown |
+
+**Output:** Show confidence per factor in prioritization table + RICE range (optimistic/pessimistic) to make uncertainty explicit.
 
 **Effort (1-10):** Person-months
 | Score | Time | Story Indicators |
@@ -349,7 +392,7 @@ ln-300 (Story → Tasks)
 
 **Dependencies:**
 - WebSearch, mcp__Ref (market research)
-- Linear MCP (load Epic, Stories)
+- Task provider: Linear MCP or file mode (load Epic, Stories)
 - Glob, Write, Bash (file operations)
 
 **Downstream usage:**
@@ -362,7 +405,7 @@ ln-300 (Story → Tasks)
 ## Critical Rules
 
 1. **Source all data** - Every Market number needs source + date
-2. **Prefer recent data** - 2024-2025, warn if older
+2. **Prefer recent data** - last 2 years, warn if older
 3. **Cross-reference** - 2+ sources for Market size (reduce error)
 4. **Time-box strictly** - Skip depth for speed if needed
 5. **Confidence levels** - Mark High/Medium/Low for estimates
@@ -374,7 +417,7 @@ ln-300 (Story → Tasks)
 
 ## Definition of Done
 
-- [ ] Epic validated in Linear
+- [ ] Epic validated (Linear or file mode)
 - [ ] All Stories loaded (metadata, then descriptions per-Story)
 - [ ] Market research completed (2+ sources per Story)
 - [ ] RICE score calculated for each Story
@@ -414,7 +457,17 @@ ln-230-story-prioritizer epic="Epic 7" stories="US001,US002,US003"
 
 ---
 
+## Phase 6: Meta-Analysis
+
+**MANDATORY READ:** Load `shared/references/meta_analysis_protocol.md`
+
+Skill type: `planning-coordinator`. Run after all phases complete. Output to chat using the `planning-coordinator` format.
+
 ## Reference Files
+
+- **MANDATORY READ:** `shared/references/tools_config_guide.md`
+- **MANDATORY READ:** `shared/references/storage_mode_detection.md`
+- **MANDATORY READ:** `shared/references/research_tool_fallback.md`
 
 | File | Purpose |
 |------|---------|

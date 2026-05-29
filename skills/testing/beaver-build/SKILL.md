@@ -34,7 +34,7 @@ Flow     Materials  Tests       Coverage  Confidence
 
 ### Phase 1: SURVEY
 
-*The beaver surveys the stream, understanding the flow before placing a single twig...*
+_The beaver surveys the stream, understanding the flow before placing a single twig..._
 
 Before gathering materials, understand what you're building for:
 
@@ -64,25 +64,48 @@ Before gathering materials, understand what you're building for:
 **What Each Layer Does:**
 
 **Static Analysis (TypeScript, ESLint)**
+
 - Catches typos, type errors, obvious mistakes
 - Zero runtime cost, always running
 - This is your first line of defense
 
 **Unit Tests**
+
 - Pure functions, algorithms, utilities
 - Fast, isolated, easy to debug
 - Don't mock everything—test real behavior where practical
 
 **Integration Tests (THE SWEET SPOT)**
+
 - Multiple units working together
 - Tests behavior users actually experience
 - Less brittle than unit tests, faster than E2E
 - **This is where most of your tests should live**
 
 **E2E Tests (Playwright)**
+
 - Critical user journeys only: login, checkout, core flows
 - Expensive to write and maintain
 - Reserve for flows where failure = business impact
+
+**Error Code Coverage:**
+When testing API routes and server actions, verify Signpost error compliance:
+
+```typescript
+// Verify API returns structured Signpost error
+const response = await fetch("/api/resource", { method: "POST", body: "{}" });
+const data = await response.json();
+expect(data.error_code).toMatch(/^GROVE-(API|SITE|ARBOR)-\d{3}$/);
+expect(data.error).toBeDefined();
+expect(data.error_description).toBeDefined();
+```
+
+Test checklist for error handling:
+
+- [ ] API routes return `buildErrorJson()` format (has `error_code`, `error`, `error_description`)
+- [ ] Error messages match catalog `userMessage` (no ad-hoc strings)
+- [ ] Client shows `toast.success()` / `toast.error()` for user actions
+- [ ] Auth errors don't reveal user existence (same response for valid/invalid)
 
 **Output:** Brief summary of what needs testing and at what layer
 
@@ -90,40 +113,40 @@ Before gathering materials, understand what you're building for:
 
 ### Phase 2: GATHER
 
-*Paws select only the best branches. Not everything belongs in the dam...*
+_Paws select only the best branches. Not everything belongs in the dam..._
 
 Decide **what** to test using the Confidence Test:
 
 **Skip Testing:**
 
-| What | Why |
-|------|-----|
-| **Trivial code** | Getters, setters, data models with no logic |
-| **Framework behavior** | Trust that SvelteKit routing works |
+| What                       | Why                                          |
+| -------------------------- | -------------------------------------------- |
+| **Trivial code**           | Getters, setters, data models with no logic  |
+| **Framework behavior**     | Trust that SvelteKit routing works           |
 | **Implementation details** | Internal state, private methods, CSS classes |
-| **One-off scripts** | Maintenance cost exceeds value |
-| **Volatile prototypes** | Requirements unclear, code will change |
+| **One-off scripts**        | Maintenance cost exceeds value               |
+| **Volatile prototypes**    | Requirements unclear, code will change       |
 
 **Test Lightly:**
 
-| What | Approach |
-|------|----------|
-| **Configuration** | Smoke test that it loads, not every option |
-| **Third-party integrations** | Mock at boundaries, test your code's response |
-| **Visual design** | Snapshot tests or visual regression, not unit tests |
+| What                         | Approach                                            |
+| ---------------------------- | --------------------------------------------------- |
+| **Configuration**            | Smoke test that it loads, not every option          |
+| **Third-party integrations** | Mock at boundaries, test your code's response       |
+| **Visual design**            | Snapshot tests or visual regression, not unit tests |
 
 **Test Thoroughly:**
 
-| What | Why |
-|------|-----|
-| **Business logic** | Core value of the application |
-| **User-facing flows** | What users actually experience |
-| **Edge cases** | Error states, empty states, boundaries |
-| **Bug fixes** | Every bug becomes a test to prevent regression |
+| What                  | Why                                            |
+| --------------------- | ---------------------------------------------- |
+| **Business logic**    | Core value of the application                  |
+| **User-facing flows** | What users actually experience                 |
+| **Edge cases**        | Error states, empty states, boundaries         |
+| **Bug fixes**         | Every bug becomes a test to prevent regression |
 
 **The Guiding Principle:**
 
-> *"The more your tests resemble the way your software is used, the more confidence they can give you."*
+> _"The more your tests resemble the way your software is used, the more confidence they can give you."_
 > — Kent C. Dodds (Testing Library)
 
 Ask: **Would I notice if this broke in production?** If yes, test it.
@@ -134,14 +157,14 @@ Ask: **Does this test resemble how users interact with the feature?** If no, rec
 
 **What Makes a Test Valuable** (Kent Beck's Test Desiderata):
 
-| Property | What It Means |
-|----------|---------------|
-| **Behavior-sensitive** | Fails when actual functionality breaks |
-| **Structure-immune** | Doesn't break when you refactor safely |
-| **Deterministic** | Same result every time, no flakiness |
-| **Fast** | Gives feedback in seconds, not minutes |
-| **Clear diagnosis** | When it fails, you know exactly what broke |
-| **Cheap to write** | Effort proportional to code complexity |
+| Property               | What It Means                              |
+| ---------------------- | ------------------------------------------ |
+| **Behavior-sensitive** | Fails when actual functionality breaks     |
+| **Structure-immune**   | Doesn't break when you refactor safely     |
+| **Deterministic**      | Same result every time, no flakiness       |
+| **Fast**               | Gives feedback in seconds, not minutes     |
+| **Clear diagnosis**    | When it fails, you know exactly what broke |
+| **Cheap to write**     | Effort proportional to code complexity     |
 
 **Output:** List of test cases to write, organized by layer (unit/integration/E2E)
 
@@ -149,21 +172,24 @@ Ask: **Does this test resemble how users interact with the feature?** If no, rec
 
 ### Phase 3: BUILD
 
-*Twig by twig, the dam takes shape. Each piece has purpose...*
+_Twig by twig, the dam takes shape. Each piece has purpose..._
 
 Write tests following **Arrange-Act-Assert:**
 
 ```typescript
-it('should reject invalid email during registration', async () => {
-    // Arrange: Set up the scenario
-    const invalidEmail = 'not-an-email';
+it("should reject invalid email during registration", async () => {
+  // Arrange: Set up the scenario
+  const invalidEmail = "not-an-email";
 
-    // Act: Do the thing (ONE line)
-    const result = await registerUser({ email: invalidEmail, password: 'valid123' });
+  // Act: Do the thing (ONE line)
+  const result = await registerUser({
+    email: invalidEmail,
+    password: "valid123",
+  });
 
-    // Assert: Check the outcome
-    expect(result.success).toBe(false);
-    expect(result.error).toContain('email');
+  // Assert: Check the outcome
+  expect(result.success).toBe(false);
+  expect(result.error).toContain("email");
 });
 ```
 
@@ -173,17 +199,17 @@ The **Act** section should be one line. If it's not, the test is probably doing 
 
 ```typescript
 // Bad: Testing implementation
-it('should set isLoading state to true', async () => {
-    const { component } = render(LoginForm);
-    await fireEvent.click(getByRole('button'));
-    expect(component.isLoading).toBe(true);  // Testing internal state!
+it("should set isLoading state to true", async () => {
+  const { component } = render(LoginForm);
+  await fireEvent.click(getByRole("button"));
+  expect(component.isLoading).toBe(true); // Testing internal state!
 });
 
 // Good: Testing user experience
-it('should show loading indicator while logging in', async () => {
-    render(LoginForm);
-    await fireEvent.click(getByRole('button', { name: /sign in/i }));
-    expect(getByRole('progressbar')).toBeInTheDocument();
+it("should show loading indicator while logging in", async () => {
+  render(LoginForm);
+  await fireEvent.click(getByRole("button", { name: /sign in/i }));
+  expect(getByRole("progressbar")).toBeInTheDocument();
 });
 ```
 
@@ -191,20 +217,22 @@ it('should show loading indicator while logging in', async () => {
 
 ```typescript
 // Priority order (best to worst):
-getByRole('button', { name: /submit/i })  // How screen readers see it
-getByLabelText('Email')                    // Form fields
-getByText('Welcome back')                  // Visible text
-getByTestId('login-form')                  // Last resort
+getByRole("button", { name: /submit/i }); // How screen readers see it
+getByLabelText("Email"); // Form fields
+getByText("Welcome back"); // Visible text
+getByTestId("login-form"); // Last resort
 ```
 
 **Test Names That Explain:**
 
 **Good names:**
+
 - `should reject registration with invalid email`
 - `should show error message when API fails`
 - `should preserve draft when navigating away`
 
 **Bad names:**
+
 - `test email validation` (what about it?)
 - `handleSubmit works` (what does "works" mean?)
 - `test case 1` (no)
@@ -230,17 +258,17 @@ it('should send welcome email after registration', ...);
 
 ```typescript
 // Multiple units working together
-it('should complete checkout flow', async () => {
-    // Arrange
-    const cart = await createCart({ items: [item1, item2] });
-    
-    // Act
-    const order = await checkout(cart.id, paymentMethod);
-    
-    // Assert
-    expect(order.status).toBe('confirmed');
-    expect(order.total).toBe(cart.total);
-    expect(await getInventory(item1.id)).toBe(item1.stock - 1);
+it("should complete checkout flow", async () => {
+  // Arrange
+  const cart = await createCart({ items: [item1, item2] });
+
+  // Act
+  const order = await checkout(cart.id, paymentMethod);
+
+  // Assert
+  expect(order.status).toBe("confirmed");
+  expect(order.total).toBe(cart.total);
+  expect(await getInventory(item1.id)).toBe(item1.stock - 1);
 });
 ```
 
@@ -250,7 +278,7 @@ it('should complete checkout flow', async () => {
 
 ### Phase 4: REINFORCE
 
-*The beaver packs mud between twigs, hardening the structure...*
+_The beaver packs mud between twigs, hardening the structure..._
 
 Strengthen tests with:
 
@@ -258,13 +286,13 @@ Strengthen tests with:
 
 ```typescript
 // Over-mocked: False confidence
-vi.mock('./api');
-vi.mock('./validation');
-vi.mock('./utils');
+vi.mock("./api");
+vi.mock("./validation");
+vi.mock("./utils");
 // You're testing... nothing real
 
 // Better: Mock at boundaries only
-vi.mock('./external-api');  // Mock the network, not your code
+vi.mock("./external-api"); // Mock the network, not your code
 // Let validation, utils, etc. run for real
 ```
 
@@ -302,19 +330,25 @@ src/
 
 ### Phase 5: FORTIFY
 
-*The dam holds. Water flows as intended. The beaver rests...*
+_The dam holds. Water flows as intended. The beaver rests..._
 
-**Final checks:**
+**MANDATORY: Verify the dam holds before shipping — run affected-package CI:**
 
 ```bash
-# Run tests
-npx vitest run
+# Sync dependencies
+pnpm install
 
+# Verify ONLY the packages the beaver touched — lint, check, test, build
+gw ci --affected --fail-fast --diagnose
+```
+
+**If verification fails:** The dam has a leak. Read the diagnostics, patch the weakness, re-run verification. The beaver does not ship a leaking dam.
+
+**Additional coverage check (optional, after CI passes):**
+
+```bash
 # Check coverage (signal, not goal)
 npx vitest run --coverage
-
-# Run with other quality checks
-npm run lint && npm run typecheck && npx vitest run
 ```
 
 **Self-Review Checklist:**
@@ -335,11 +369,13 @@ Before considering tests "done":
 Tests that break are telling you something. Listen.
 
 **Good Breaks (Expected):**
+
 - **Feature changed** — Test caught that behavior shifted. Update the test.
 - **Bug fixed** — Old test was wrong. Fix it.
 - **Requirement changed** — Test reflects old requirement. Update it.
 
 **Bad Breaks (Symptoms of Poor Tests):**
+
 - **Refactored internal code** — Test was coupled to implementation. Rewrite it.
 - **Changed CSS class** — Test was querying implementation details. Use accessible queries.
 - **Reordered code** — Test depended on execution order. Make it order-independent.
@@ -353,19 +389,25 @@ Tests that break are telling you something. Listen.
 ## Beaver Rules
 
 ### Energy
+
 Build with purpose. The beaver doesn't add twigs just to add them. Each test must earn its place by providing confidence.
 
 ### Precision
+
 Test behavior, not structure. If refactoring breaks your tests, they were testing the wrong things.
 
 ### Wisdom
+
 Remember the trophy: Mostly integration, some unit, few E2E. Static analysis is your first line of defense.
 
 ### Patience
+
 Good tests let you ship with confidence. That's the whole point.
 
 ### Communication
+
 Use building metaphors:
+
 - "Surveying the stream..." (understanding what to test)
 - "Gathering materials..." (deciding what to test)
 - "The dam takes shape..." (writing tests)
@@ -377,6 +419,7 @@ Use building metaphors:
 ## Anti-Patterns
 
 **The beaver does NOT:**
+
 - Chase 100% coverage theater (high coverage with bad tests is worse than moderate coverage with good tests)
 - Test implementation details (internal state, private methods)
 - Mock everything (removes confidence)
@@ -426,17 +469,17 @@ This is backwards. E2E tests are expensive. Integration tests give the best ROI.
 
 ## Quick Decision Guide
 
-| Situation | Action |
-|-----------|--------|
-| New feature | Write integration tests for user-facing behavior |
-| Bug fix | Write test that reproduces bug first, then fix |
-| Refactoring | Run existing tests; if they break on safe changes, they're bad tests |
-| "Need more coverage" | Add tests for uncovered **behavior**, not uncovered lines |
-| Pure function/algorithm | Unit test it |
-| API endpoint | Integration test with mocked external services |
-| UI component | Component test with Testing Library |
-| Critical user flow | E2E test with Playwright |
+| Situation               | Action                                                               |
+| ----------------------- | -------------------------------------------------------------------- |
+| New feature             | Write integration tests for user-facing behavior                     |
+| Bug fix                 | Write test that reproduces bug first, then fix                       |
+| Refactoring             | Run existing tests; if they break on safe changes, they're bad tests |
+| "Need more coverage"    | Add tests for uncovered **behavior**, not uncovered lines            |
+| Pure function/algorithm | Unit test it                                                         |
+| API endpoint            | Integration test with mocked external services                       |
+| UI component            | Component test with Testing Library                                  |
+| Critical user flow      | E2E test with Playwright                                             |
 
 ---
 
-*Good tests let you ship with confidence. That's the whole point.* 🦫
+_Good tests let you ship with confidence. That's the whole point._ 🦫

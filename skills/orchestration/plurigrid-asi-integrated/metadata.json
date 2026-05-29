@@ -1,0 +1,16 @@
+{
+  "name": "plurigrid-asi-integrated",
+  "repo": "plurigrid/asi",
+  "path": "skills/plurigrid-asi-integrated/SKILL.md",
+  "source": "github.com/plurigrid/asi",
+  "downloaded_at": "2026-01-27T03:48:10.329074Z",
+  "dir_name": "plurigrid-asi-integrated",
+  "category": "orchestration",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/plurigrid-asi-integrated/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

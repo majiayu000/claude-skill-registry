@@ -1,14 +1,6 @@
 ---
 name: modern-javascript
-description: |
-  Modern JavaScript (ES6-ES2025) patterns and best practices. Triggers on: JavaScript, ES6, ES2020,
-  ES2022, ES2024, modern JS, refactor legacy, array methods, async/await, optional chaining, nullish
-  coalescing, destructuring, spread, rest, template literals, arrow functions, toSorted, toReversed,
-  at, groupBy, Promise, functional programming.
-
-  Use when: writing new JavaScript code, refactoring legacy code, modernizing codebases, implementing
-  functional patterns, or reviewing JS for performance and readability. Proactively apply when creating
-  web applications, Node.js services, or any JavaScript project.
+description: Proactively apply when creating web applications, Node.js services, or any JavaScript project. Triggers on JavaScript, ES6, ES2020, ES2022, ES2024, modern JS, refactor legacy, array methods, async/await, optional chaining, nullish coalescing, destructuring, spread, rest, template literals, arrow functions, toSorted, toReversed, at, groupBy, Promise, functional programming. Use when writing new JavaScript code, refactoring legacy code, modernizing codebases, implementing functional patterns, or reviewing JS for performance and readability. Modern JavaScript (ES6-ES2025) patterns and best practices.
 ---
 
 # Modern JavaScript (ES6-ES2025)

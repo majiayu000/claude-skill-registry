@@ -1,0 +1,18 @@
+{
+  "name": "duck-time-travel",
+  "repo": "plurigrid/asi",
+  "path": "ies/music-topos/.agents/skills/duck-time-travel/SKILL.md",
+  "source": "github.com/plurigrid/asi",
+  "downloaded_at": "2026-01-22T02:09:14.067584Z",
+  "dir_name": "duck-time-travel-plurigrid-asi",
+  "category": "data",
+  "github_path": "ies/music-topos/.agents/skills/duck-time-travel",
+  "github_branch": "main",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/ies/music-topos/.agents/skills/duck-time-travel/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

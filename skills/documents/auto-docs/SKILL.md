@@ -16,12 +16,12 @@ Analyzes codebase and generates/updates comprehensive documentation automaticall
 
 ## Arguments
 
-| Argument | Description |
-|----------|-------------|
-| (target) | Documentation to generate: `readme`, `api`, `migration`, `examples`, `all` (default: readme) |
-| `--output=<path>` | Custom output path |
-| `--json` | Output results as JSON |
-| `--verbose` | Show detailed generation process |
+| Argument          | Description                                                                                  |
+| ----------------- | -------------------------------------------------------------------------------------------- |
+| (target)          | Documentation to generate: `readme`, `api`, `migration`, `examples`, `all` (default: readme) |
+| `--output=<path>` | Custom output path                                                                           |
+| `--json`          | Output results as JSON                                                                       |
+| `--verbose`       | Show detailed generation process                                                             |
 
 ## Process
 
@@ -338,6 +338,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md)
 Description...
 
 **Arguments:**
+
 - arg1: Description
 - arg2: Description
 
@@ -420,6 +421,7 @@ Invoked by `/popkit:plugin docs --generate [target]`
 ### Dependencies
 
 **Required utilities**:
+
 - `popkit_shared.utils.plugin_validator`
 - `popkit_shared.utils.skill_validator`
 - `popkit_shared.utils.agent_router_test`

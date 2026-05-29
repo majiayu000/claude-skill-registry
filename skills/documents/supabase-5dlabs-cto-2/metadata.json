@@ -1,0 +1,19 @@
+{
+  "name": "supabase",
+  "description": "Fetch LLM-optimized documentation for Supabase, the open-source Firebase alternative.",
+  "repo": "5dlabs/cto",
+  "path": "templates/skills/llm-docs/supabase",
+  "github_branch": "main",
+  "category": "documents",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/5dlabs/cto",
+  "dir_name": "supabase-5dlabs-cto-2",
+  "author": "5dlabs",
+  "source_url": "https://github.com/5dlabs/cto/blob/main/templates/skills/llm-docs/supabase/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/5dlabs/cto/blob/main/templates/skills/llm-docs/supabase/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

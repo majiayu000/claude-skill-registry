@@ -42,7 +42,7 @@ air format .
 ## Coding
 
 * Always run `air format .` after generating code.
-* Use the base pipe operator (`|>`) not the magrittr pipe (`%>`).
+* Use the base pipe operator (`|>`) not the magrittr pipe (`%>%`).
 * Use `\() ...` for single-line anonymous functions. For all other cases, use `function() {...}`.
 
 ## Testing

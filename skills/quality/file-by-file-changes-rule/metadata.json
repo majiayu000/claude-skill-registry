@@ -1,0 +1,16 @@
+{
+  "name": "file-by-file-changes-rule",
+  "repo": "oimiragieo/agent-studio",
+  "path": ".claude/skills/file-by-file-changes-rule/SKILL.md",
+  "source": "github.com/oimiragieo/agent-studio",
+  "downloaded_at": "2026-02-01T02:18:53.250807Z",
+  "dir_name": "file-by-file-changes-rule",
+  "category": "quality",
+  "author": "oimiragieo",
+  "source_url": "https://github.com/oimiragieo/agent-studio/blob/main/.claude/skills/file-by-file-changes-rule/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oimiragieo/agent-studio/blob/main/.claude/skills/file-by-file-changes-rule/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

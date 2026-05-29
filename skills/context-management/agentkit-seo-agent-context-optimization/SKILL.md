@@ -19,6 +19,12 @@ Use this skill before any cross-platform optimization pass that depends on a sta
 
 Normalize the user's facts before writing any LinkedIn, CV, GitHub, web portfolio, or X/Twitter output.
 
+## Wiki context
+
+- Read [wiki/index.md](wiki/index.md) when the task asks what an agent-context-file is, how it should be structured, how source-of-truth behavior works, how validation and `VERIFIED FACTS` work, or how to handle context-file failure modes.
+- Read [wiki/knowledge.md](wiki/knowledge.md) only after [wiki/index.md](wiki/index.md) routes the current task there.
+- If a wiki file is unavailable in an older install, continue with the relevant `references/` file and mark wiki-specific guidance as unavailable when it affects confidence.
+
 ## Token discipline
 
 - Do not load all references by default.
@@ -78,4 +84,6 @@ Return:
 5. conflicts, gaps, or claims needing evidence
 6. the next platform skill to use, if any
 
-For audits or validation passes, use concise labels such as `Verified`, `In context`, `From source`, `Inference`, and `Needs evidence` when a claim could otherwise be ambiguous. When the pass is intentionally bounded, include a one-line `Depth note` that says what sources were not inspected and what deeper reconciliation would add.
+For audits or validation passes, use concise labels such as `Verified`, `From context`, `From source`, `Inference`, and `Needs evidence` when a claim could otherwise be ambiguous. When the pass is intentionally bounded, include a one-line `Depth note` that says what sources were not inspected and what deeper reconciliation would add.
+
+Human playbook: [hub/agent-context-optimization/README.md](../../../hub/agent-context-optimization/README.md).

@@ -1,27 +1,40 @@
 ---
 name: architecture-paradigm-service-based
-description: |
-
-Triggers: service-based, architecture, based, modular, service
-  Coarse-grained service architecture for deployment independence without microservices complexity.
-
-  Triggers: service-based, SOA, coarse-grained services, domain services
-  Use when: teams need deployment independence without microservices complexity
-  DO NOT use when: fine-grained scaling needed - use microservices.
-version: 1.3.5
+description: 'Design coarse-grained service architecture for deployment independence without microservices complexity and overhead.'
+version: 1.9.0
+alwaysApply: false
 category: architectural-pattern
-tags: [architecture, service-based, soa, modular, shared-database]
+tags:
+- architecture
+- service-based
+- soa
+- modular
+- shared-database
 dependencies: []
-tools: [api-gateway, service-registry, schema-management]
+tools:
+- api-gateway
+- service-registry
+- schema-management
 usage_patterns:
-  - paradigm-implementation
-  - monolith-refactoring
-  - deployment-independence
+- paradigm-implementation
+- monolith-refactoring
+- deployment-independence
 complexity: medium
+model_hint: standard
 estimated_tokens: 700
 ---
-
 # The Service-Based Architecture Paradigm
+
+
+## When To Use
+
+- Multi-team organizations with domain-aligned services
+- Systems requiring independent deployment of components
+
+## When NOT To Use
+
+- Single-team projects small enough for a monolith
+- Latency-sensitive systems where inter-service calls are prohibitive
 
 ## When to Employ This Paradigm
 - When teams require a degree of deployment independence but are not yet prepared for the complexity of managing numerous microservices.
@@ -45,15 +58,3 @@ estimated_tokens: 700
   - **Mitigation**: Changes to a shared database can have cascading effects across services. Mitigate this by using database views, replication, or a formal schema deprecation schedule to manage change.
 - **Architectural Degradation**:
   - **Mitigation**: Without strong governance, this architecture can degrade into a "distributed monolith"—a monolith with the added complexity of network hops. Track coupling metrics closely and enforce strict ownership of services and data to prevent this.
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

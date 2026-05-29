@@ -467,17 +467,262 @@ await db.documents.insert({
 
 ---
 
+## Flat PDF Overlay at Scale (Government Forms)
+
+Many government court forms are **flat PDFs** (no fillable fields). You MUST overlay text at precise X,Y coordinates. Never generate forms from scratch - courts will reject them.
+
+### The Three-Tier Strategy
+
+```
+1. FILLABLE PDF → Use form.getTextField().setText() (best)
+2. FLAT PDF + COORDINATES → Draw text overlays at X,Y positions (this section)
+3. NO TEMPLATE EXISTS → Emergency fallback with warning banner (worst)
+```
+
+### Anti-Pattern 6: Generating Forms from Scratch
+
+**Novice thinking**: "The PDF doesn't have form fields, I'll just create a new PDF"
+
+**Problem**: Courts reject non-official forms. Your custom layout won't match official documents.
+
+**Wrong approach**:
+```typescript
+// ❌ NEVER DO THIS - courts reject custom forms
+const pdfDoc = await PDFDocument.create();
+const page = pdfDoc.addPage([612, 792]);
+
+page.drawText('IN THE CIRCUIT COURT OF...', { x: 200, y: 720 });
+page.drawText(`Defendant: ${data.name}`, { x: 100, y: 600 });
+// Result: Court clerk says "This isn't our form" and rejects filing
+```
+
+**Correct approach**: Draw on top of official template
+```typescript
+// ✅ Load official form, draw text in blank spaces
+const templateBytes = await fs.readFile('public/forms/OR-set-aside-motion.pdf');
+const pdfDoc = await PDFDocument.load(templateBytes);
+const page = pdfDoc.getPage(3); // Page 4 is the form
+const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+
+// Draw in blank spaces at measured coordinates
+page.drawText(data.county.toUpperCase(), { x: 310, y: 700, size: 11, font });
+page.drawText(data.caseNumber, { x: 432, y: 655, size: 10, font });
+page.drawText(data.fullName, { x: 72, y: 568, size: 11, font });
+```
+
+---
+
+### Measuring Coordinates at Scale
+
+**Problem**: Manually measuring X,Y for 50 states × 10+ forms = impossible.
+
+**Solution 1: Visual Coordinate Picker Tool**
+
+Use [pdf-coordinates](https://github.com/jol333/pdf-coordinates) - click on PDF to capture X,Y:
+- Upload PDF, click on blank fields
+- Select coordinate system: **Bottom-Left** (PDF standard)
+- Export annotated PDF with coordinate labels
+- Works offline, no data upload
+
+**Solution 2: JSON Configuration (Zerodha Pattern)**
+
+Define coordinates in JSON config, not code:
+```typescript
+// field-mappings/oregon-set-aside.json
+{
+  "templatePath": "/forms/or/OR-criminal-set-aside.pdf",
+  "pageIndex": 3,
+  "fields": [
+    {
+      "name": "county",
+      "x": 310,
+      "y": 700,
+      "fontSize": 11,
+      "maxWidth": 120,
+      "transform": "uppercase"
+    },
+    {
+      "name": "caseNumber",
+      "x": 432,
+      "y": 655,
+      "fontSize": 10,
+      "maxWidth": 100,
+      "maxChars": 12
+    },
+    {
+      "name": "fullName",
+      "x": 72,
+      "y": 568,
+      "fontSize": 11,
+      "maxWidth": 250,
+      "shrinkToFit": true
+    }
+  ]
+}
+```
+
+**Solution 3: Debug Grid Overlay**
+
+Add temporary grid during development:
+```typescript
+async function drawDebugGrid(page: PDFPage, font: PDFFont) {
+  const { width, height } = page.getSize();
+
+  // Draw grid every 50 points
+  for (let x = 0; x <= width; x += 50) {
+    page.drawLine({
+      start: { x, y: 0 },
+      end: { x, y: height },
+      thickness: 0.2,
+      color: rgb(0.9, 0.9, 0.9),
+    });
+    if (x % 100 === 0) {
+      page.drawText(String(x), { x: x + 2, y: 5, size: 6, font });
+    }
+  }
+  // Same for horizontal lines...
+}
+```
+
+---
+
+### Text Overflow Handling
+
+**Problem**: Long names overflow into adjacent fields or get cut off.
+
+**Three overflow strategies**:
+
+```typescript
+// 1. Truncate with ellipsis
+function truncate(text: string, maxChars: number): string {
+  if (text.length <= maxChars) return text;
+  return text.slice(0, maxChars - 2) + '..';
+}
+
+// 2. Shrink font to fit (min 7pt for readability)
+function shrinkToFit(text: string, maxWidthPts: number, startSize: number): number {
+  let fontSize = startSize;
+  const charWidth = (size: number) => size * 0.52; // Helvetica avg
+
+  while (fontSize > 7 && text.length * charWidth(fontSize) > maxWidthPts) {
+    fontSize -= 0.5;
+  }
+  return fontSize;
+}
+
+// 3. Multi-line wrap (for addresses)
+page.drawText(longAddress, {
+  x: 100,
+  y: 500,
+  size: 9,
+  font,
+  maxWidth: 200, // pdf-lib auto-wraps at this width
+  lineHeight: 12,
+});
+```
+
+**Field input constraints** - Prevent overflow at data collection:
+```typescript
+export const FIELD_CONSTRAINTS = {
+  fullName: { maxLength: 35 },
+  county: { maxLength: 12 },
+  caseNumber: { maxLength: 12 },
+  agency: { maxLength: 28 },
+  charges: { maxLength: 45 },
+} as const;
+```
+
+---
+
+### Production Workflow for Multi-State Forms
+
+```
+1. DOWNLOAD official forms
+   └─ Store in /public/forms/{state}/ with metadata.json
+
+2. INSPECT each form
+   └─ Run pdf-lib inspection to check: fillable? how many fields?
+
+3. CATEGORIZE forms
+   ├─ Fillable → Map field names in field-mappings/{state}.ts
+   └─ Flat → Measure coordinates with pdf-coordinates tool
+
+4. CREATE JSON config for flat PDFs
+   └─ One JSON file per form with all X,Y coordinates
+
+5. TEST with debug grid
+   └─ Generate test PDF with colored text + coordinate labels
+
+6. QA visual verification
+   └─ Compare filled PDF against original blank form
+
+7. DOCUMENT constraints
+   └─ Export maxLength/maxWidth limits for form inputs
+```
+
+---
+
+### Legal Filing Requirements
+
+**Court e-filing systems require**:
+- ✅ Flattened forms (no interactive fields)
+- ✅ No digital signature metadata (DocuSign breaks e-filing)
+- ✅ Standard fonts embedded (Helvetica, Times)
+- ✅ File under 10MB
+- ✅ Exact match to official form layout
+
+**Flattening for courts**:
+```typescript
+// If form had fields, flatten them
+const form = pdfDoc.getForm();
+if (form.getFields().length > 0) {
+  form.flatten(); // Converts to static text
+}
+
+// For overlay text, it's already static - no flattening needed
+const pdfBytes = await pdfDoc.save();
+```
+
+---
+
+### Coordinate System Reference
+
+```
+PDF coordinate system (pdf-lib default):
+- Origin: Bottom-left corner (0, 0)
+- X increases: Left → Right
+- Y increases: Bottom → Top
+- Units: Points (72 points = 1 inch)
+- Letter size: 612 x 792 points (8.5" x 11")
+
+To convert from top-left origin (e.g., Adobe Acrobat display):
+  y_pdf = 792 - y_topLeft
+
+Common positions (Letter size):
+- Top margin: y = 720-750
+- Header area: y = 700-750
+- Body start: y = 650-700
+- Left margin: x = 50-72
+- Right edge: x = 540-560
+- Bottom margin: y = 50-72
+```
+
+---
+
 ## References
 
 - `/references/pdf-lib-guide.md` - Form filling, field types, flattening, encryption
 - `/references/puppeteer-templates.md` - HTML templates, page breaks, styling for print
 - `/references/document-assembly.md` - Merging PDFs, packet creation, watermarks
+- [pdf-coordinates](https://github.com/jol333/pdf-coordinates) - Visual X,Y coordinate picker
+- [Zerodha pdf_text_overlay](https://github.com/zerodha/pdf_text_overlay) - JSON config pattern
 
 ## Scripts
 
 - `scripts/form_filler.ts` - Fill PDF forms from JSON data, batch processing
 - `scripts/document_assembler.ts` - Merge multiple PDFs, add cover pages, watermarks
+- `scripts/generate-test-overlay-pdf.ts` - Test overlay coordinates with debug grid
 
 ---
 
-**This skill guides**: PDF generation | Form filling | Document automation | Digital signatures | pdf-lib | Puppeteer | LaTeX | DocuSign
+**This skill guides**: PDF generation | Form filling | Document automation | Digital signatures | pdf-lib | Puppeteer | LaTeX | DocuSign | **Flat PDF overlay** | **Coordinate mapping**

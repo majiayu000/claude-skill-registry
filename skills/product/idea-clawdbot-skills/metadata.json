@@ -1,0 +1,18 @@
+{
+  "name": "idea",
+  "repo": "clawdbot/skills",
+  "path": "skills/andrewjiang/idea/SKILL.md",
+  "source": "github.com/clawdbot/skills",
+  "downloaded_at": "2026-01-22T02:30:28.678092Z",
+  "dir_name": "idea-clawdbot-skills",
+  "category": "product",
+  "github_path": "skills/jchopard69/marketing-skills/references/marketing-ideas",
+  "github_branch": "main",
+  "author": "clawdbot",
+  "source_url": "https://github.com/clawdbot/skills/blob/main/skills/jchopard69/marketing-skills/references/marketing-ideas/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 clawdbot",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

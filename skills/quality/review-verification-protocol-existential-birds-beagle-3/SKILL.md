@@ -1,15 +1,27 @@
 ---
 name: review-verification-protocol
 description: Mandatory verification steps for all code reviews to reduce false positives. Load this skill before reporting ANY code review findings.
+user-invocable: false
 ---
 
 # Review Verification Protocol
 
 This protocol MUST be followed before reporting any code review finding. Skipping these steps leads to false positives that waste developer time and erode trust in reviews.
 
+## Hard gates (sequence)
+
+Complete gates **in order** for each finding (or finding class). A gate **passes** only when the pass condition is objectively met—internal confidence is not enough.
+
+1. **Read scope** — **PASS when:** You cite the **full** enclosing unit you judged (e.g. function, method, or class): file path plus **start–end line range** or symbol name. Diff-only context without full-unit read **fails** this gate.
+2. **Reference check** (required for “unused”, “dead code”, “orphaned export”, “never called”) — **PASS when:** You ran a **workspace-wide search** for the symbol (ripgrep, IDE references, or `find_referencing_symbols`-style lookup) and noted whether non-definition matches exist. If use may be dynamic (decorators, `getattr`, entry points, plugins), **PASS when:** you state that and name the registration or import path that could justify the symbol.
+3. **Upstream / downstream** (required for “missing validation”, “no error handling”, “race”, “leak”) — **PASS when:** You checked at least one of: caller, route/middleware, parent task, framework hook, or lifecycle (e.g. teardown, signal), and recorded whether responsibility already sits there.
+4. **Evidence line** — **PASS when:** The finding includes **`[FILE:LINE]`** to the line that **shows** the issue (same requirement as *Before Submitting Review*).
+
+If any gate fails, **do not** report the issue; gather evidence or drop it.
+
 ## Pre-Report Verification Checklist
 
-Before flagging ANY issue, verify:
+Before flagging ANY issue, verify (after **Hard gates** above):
 
 - [ ] **I read the actual code** - Not just the diff context, but the full function/class
 - [ ] **I searched for usages** - Before claiming "unused", searched all references

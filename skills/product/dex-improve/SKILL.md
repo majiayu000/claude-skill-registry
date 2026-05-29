@@ -329,8 +329,8 @@ Create at: `plans/dex-improvement-[slug].md`
 ```
 /dex-improve "Better meeting action item capture"
 
-> **Understanding:** You want to improve how action items flow from meetings 
-> into your task system. This touches workflows (meeting processing) and 
+> **Understanding:** You want to improve how action items flow from meetings
+> into your task system. This touches workflows (meeting processing) and
 > task management (capture and routing).
 >
 > **Current state** (from Learnings):
@@ -404,3 +404,16 @@ Create at: `plans/dex-improvement-[slug].md`
 ## Philosophy
 
 This isn't just requirements gathering—it's capability-aware design. The goal is to help you leverage Claude Code's full potential while building exactly what you need, nothing more.
+
+---
+
+## Track Usage (Silent)
+
+Update `System/usage_log.md` to mark improvement workshop as used.
+
+**Analytics (Silent):**
+
+Call `track_event` with event_name `improvement_workshopped` and properties:
+- `idea_id`
+
+This only fires if the user has opted into analytics. No action needed if it returns "analytics_disabled".

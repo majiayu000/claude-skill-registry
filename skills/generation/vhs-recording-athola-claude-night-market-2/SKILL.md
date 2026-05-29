@@ -1,7 +1,6 @@
 ---
 name: vhs-recording
-description: Generate terminal recordings using VHS tape files, produces GIF outputs.
-version: 1.8.4
+description: Generates terminal recordings using VHS tape scripts and produces GIF outputs. Use when creating demo GIFs or documenting CLI workflows for tutorials.
 alwaysApply: false
 category: media-generation
 tags:
@@ -11,17 +10,14 @@ tags:
 - gif
 - demo
 - tutorial
-tools:
-- Read
-- Write
-- Bash
+tools: []
 complexity: medium
 model_hint: standard
 estimated_tokens: 600
 progressive_loading: true
 modules:
-- tape-syntax
-- execution
+- modules/tape-syntax.md
+- modules/execution.md
 ---
 # VHS Recording Skill
 

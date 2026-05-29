@@ -1,0 +1,17 @@
+{
+  "name": "skd-edit",
+  "repo": "Nikolay-Shirokov/cc-1c-skills",
+  "path": ".claude/skills/skd-edit/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/Nikolay-Shirokov/cc-1c-skills",
+  "dir_name": "skd-edit",
+  "downloaded_at": "2026-03-22T05:56:49.048280Z",
+  "author": "Nikolay-Shirokov",
+  "source_url": "https://github.com/Nikolay-Shirokov/cc-1c-skills/blob/main/.claude/skills/skd-edit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Nikolay-Shirokov/cc-1c-skills/blob/main/.claude/skills/skd-edit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

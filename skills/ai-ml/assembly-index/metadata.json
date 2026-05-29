@@ -1,0 +1,16 @@
+{
+  "name": "assembly-index",
+  "repo": "plurigrid/asi",
+  "path": "skills/assembly-index/SKILL.md",
+  "source": "github.com/plurigrid/asi",
+  "downloaded_at": "2026-02-02T02:39:58.605533Z",
+  "dir_name": "assembly-index",
+  "category": "ai-ml",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/assembly-index/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

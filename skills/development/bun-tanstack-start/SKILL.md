@@ -1,6 +1,7 @@
 ---
-name: Bun TanStack Start
+name: bun-tanstack-start
 description: TanStack Start full-stack React framework with Bun runtime. Use for TanStack Router, server functions, vinxi, or encountering SSR, build, preset errors.
+license: MIT
 ---
 
 # Bun TanStack Start
@@ -26,6 +27,16 @@ bun run build
 # Preview
 bun run start
 ```
+
+## Secure Installation
+
+Scaffolding tools like `bunx create-tanstack-start` download and execute remote code. Before running, follow supply chain security best practices:
+
+- **Block post-install scripts** — Bun disables them by default; allow specific packages via `trustedDependencies` in `package.json`
+- **Cooldown period** — Configure `minimumReleaseAge` in `bunfig.toml` to wait 7 days for new versions
+- **Audit before installing** — Run `socket package score npm <pkg>` or use `socket npm install <pkg>` to check packages
+
+Load the `dependency-upgrade` skill for full security configuration including Socket CLI integration, cooldown setup, lockfile validation, and CI enforcement.
 
 ## Project Setup
 

@@ -1,0 +1,17 @@
+{
+  "name": "google-search-serp",
+  "repo": "browser-act/skills",
+  "path": "solutions/search-research/google-search-serp/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/browser-act/skills",
+  "dir_name": "google-search-serp",
+  "downloaded_at": "2026-05-26T03:51:59.570930Z",
+  "author": "browser-act",
+  "source_url": "https://github.com/browser-act/skills/blob/main/solutions/search-research/google-search-serp/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/browser-act/skills/blob/main/solutions/search-research/google-search-serp/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

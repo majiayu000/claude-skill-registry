@@ -1,0 +1,17 @@
+{
+  "name": "claude-code-conversation-search-skill",
+  "description": "",
+  "repo": "alexanderop/second-brain-nuxt",
+  "category": "productivity",
+  "tags": [],
+  "stars": 0,
+  "source": "Unknown",
+  "dir_name": "claude-code-conversation-search-skill",
+  "author": "alexanderop",
+  "source_url": "https://github.com/alexanderop/second-brain-nuxt",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alexanderop/second-brain-nuxt",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

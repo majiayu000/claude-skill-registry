@@ -1,0 +1,13 @@
+{
+  "name": "bk-monitor-tapd-summary",
+  "description": "",
+  "repo": "TencentBlueKing/bk-bcs",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TencentBlueKing/bk-bcs",
+  "github_path": "bcs-services/bcs-project-manager/.cursor/skills/bk-monitor-tapd-summary",
+  "github_branch": "master",
+  "dir_name": "bk-monitor-tapd-summary",
+  "downloaded_at": "2026-02-05T01:44:34.633094Z"
+}

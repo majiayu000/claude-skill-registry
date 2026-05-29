@@ -13,6 +13,22 @@ triggers:
   - research paper
 metadata:
   short-description: Interview-driven academic paper generation from code
+provides:
+  - paper-generation
+  - research-synthesis
+composes:
+  - assess
+  - dogpile
+  - arxiv
+  - review-code
+  - interview
+  - scillm
+  - memory
+  - task-monitor
+taxonomy:
+  - precision
+  - resilience
+  - validation
 ---
 
 # Paper Writer Skill

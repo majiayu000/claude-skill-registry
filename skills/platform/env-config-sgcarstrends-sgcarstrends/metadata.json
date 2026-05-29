@@ -1,0 +1,18 @@
+{
+  "name": "env-config",
+  "repo": "sgcarstrends/sgcarstrends",
+  "path": ".claude/skills/env-config/SKILL.md",
+  "source": "github.com/sgcarstrends/sgcarstrends",
+  "downloaded_at": "2026-01-22T02:24:53.813507Z",
+  "dir_name": "env-config-sgcarstrends-sgcarstrends",
+  "category": "platform",
+  "github_path": ".claude/skills/env-config",
+  "github_branch": "main",
+  "author": "sgcarstrends",
+  "source_url": "https://github.com/sgcarstrends/sgcarstrends/blob/main/.claude/skills/env-config/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SG Cars Trends",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

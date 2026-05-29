@@ -1,0 +1,17 @@
+{
+  "name": "update-dashboard",
+  "repo": "Gen-AI4/Personal-AI-Employee",
+  "path": ".claude/skills/update-dashboard/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/Gen-AI4/Personal-AI-Employee",
+  "dir_name": "update-dashboard",
+  "downloaded_at": "2026-03-01T05:19:37.034865Z",
+  "author": "Gen-AI4",
+  "source_url": "https://github.com/Gen-AI4/Personal-AI-Employee/blob/main/.claude/skills/update-dashboard/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Gen-AI4/Personal-AI-Employee/blob/main/.claude/skills/update-dashboard/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

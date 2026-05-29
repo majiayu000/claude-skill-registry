@@ -11,6 +11,10 @@ triggers:
   - pdf visual check
   - screenshot page
   - capture pdf region
+
+provides:
+  - pdf-screenshot
+composes: [, task-monitor]
 ---
 
 # PDF Screenshot

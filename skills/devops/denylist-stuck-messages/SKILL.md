@@ -10,7 +10,6 @@ Add message IDs to the relayer denylist configuration, create a PR, and deploy.
 ## When to Use
 
 1. **After investigation:**
-
    - User ran `/investigate-stuck-messages` and wants to denylist the found messages
    - User says "denylist these" or "add these to blacklist"
 

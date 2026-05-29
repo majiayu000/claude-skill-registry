@@ -588,10 +588,10 @@ app.Run();
 
 ## Related Skills
 
-- `cqrs-command-generator` - Generate Commands with handlers
-- `cqrs-query-generator` - Generate Queries with handlers
-- `domain-entity-generator` - Generate Domain entities
-- `repository-pattern` - Generate Repositories
-- `ef-core-configuration` - Generate EF configurations
-- `result-pattern` - Implement Result pattern
-- `pipeline-behaviors` - Create MediatR behaviors
+- `dotnet-cqrs-command-generator` - Generate Commands with handlers
+- `dotnet-cqrs-query-generator` - Generate Queries with handlers
+- `dotnet-domain-entity-generator` - Generate Domain entities
+- `dotnet-repository-pattern` - Generate Repositories
+- `dotnet-ef-core-configuration` - Generate EF configurations
+- `dotnet-result-pattern` - Implement Result pattern
+- `dotnet-pipeline-behaviors` - Create MediatR behaviors

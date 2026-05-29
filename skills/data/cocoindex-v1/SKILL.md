@@ -118,33 +118,42 @@ if __name__ == "__main__":
 
 ### 2. Processing Components
 
-A **processing component** groups an item's processing with its target states. Mount components using `coco.mount()`:
+A **processing component** groups an item's processing with its target states.
+
+**Mount independent components** with `coco_aio.mount_each()` (preferred) or `coco_aio.mount()`:
 
 ```python
-for file in files:
-    coco.mount(
-        coco.component_subpath("file", str(file.file_path.path)),
-        process_file,
-        file,
-        outdir,
-    )
+# Preferred: mount one component per item (async, keyed iterable)
+await coco_aio.mount_each(process_file, files.items(), target_table)
+
+# Equivalent async manual loop
+for key, f in files.items():
+    await coco_aio.mount(coco.component_subpath(key), process_file, f, target_table)
+
+# Sync mount — only for CPU-intensive leaf components (no I/O)
+coco.mount(coco.component_subpath(str(f.file_path.path)), process_file, f, target_table)
 ```
 
-For operations that return values, use `coco.mount_run()` to wait for the result:
+**Mount dependent components** with `use_mount()` when you need the return value:
 
 ```python
-table = coco.mount_run(
-    coco.component_subpath("setup", "table"),
-    db.declare_table_target,
+result = await coco_aio.use_mount(subpath, fn, *args)
+```
+
+**Mount targets** using connector convenience methods (async, subpath is automatic):
+
+```python
+target_table = await target_db.mount_table_target(
     table_name="my_table",
-    table_schema=schema,
-).result()
+    table_schema=await postgres.TableSchema.from_class(MyRecord, primary_key=["id"]),
+)
 ```
 
 **Key points**:
 
 - Each component runs independently
-- Use `mount()` for parallel processing, `mount_run()` when you need the result immediately
+- **Async-first**: prefer `coco_aio.mount_each()` / `coco_aio.mount()` for all components; use sync `coco.mount()` only for CPU-intensive leaf work (no I/O)
+- Use `use_mount()` when you need the return value of a child component
 - Use stable paths for proper memoization
 - Component path determines target state ownership
 
@@ -224,19 +233,22 @@ Use `generate_id(dep)` when same content should yield same ID. Use `IdGenerator`
 Transform files from input to output directory:
 
 ```python
+import pathlib
 import cocoindex as coco
+import cocoindex.asyncio as coco_aio
 from cocoindex.connectors import localfs
 from cocoindex.resources.file import PatternFilePathMatcher
 
 @coco.function(memo=True)
 def process_file(file, outdir):
+    # CPU-bound transform — sync is fine here at the leaf
     content = file.read_text()
     transformed = transform_content(content)  # Your logic
     outname = file.file_path.path.stem + ".out"
     localfs.declare_file(outdir / outname, transformed, create_parent_dirs=True)
 
 @coco.function
-def app_main(sourcedir, outdir):
+async def app_main(sourcedir, outdir):
     files = localfs.walk_dir(
         sourcedir,
         recursive=True,
@@ -245,10 +257,9 @@ def app_main(sourcedir, outdir):
             excluded_patterns=[".*/**"],
         ),
     )
-    for f in files:
-        coco.mount(coco.component_subpath("file", str(f.file_path.path)), process_file, f, outdir)
+    await coco_aio.mount_each(process_file, files.items(), outdir)
 
-app = coco.App(coco.AppConfig(name="Transform"), app_main, sourcedir=Path("./data"), outdir=Path("./out"))
+app = coco_aio.App(coco_aio.AppConfig(name="Transform"), app_main, sourcedir=pathlib.Path("./data"), outdir=pathlib.Path("./out"))
 ```
 
 ### Pattern 2: Vector Embedding Pipeline
@@ -256,7 +267,7 @@ app = coco.App(coco.AppConfig(name="Transform"), app_main, sourcedir=Path("./dat
 Chunk and embed documents for semantic search:
 
 ```python
-import asyncio
+import pathlib
 from dataclasses import dataclass
 from typing import Annotated, AsyncIterator
 import cocoindex as coco
@@ -264,6 +275,8 @@ import cocoindex.asyncio as coco_aio
 from cocoindex.connectors import localfs, postgres
 from cocoindex.ops.text import RecursiveSplitter
 from cocoindex.ops.sentence_transformers import SentenceTransformerEmbedder
+from cocoindex.resources.chunk import Chunk
+from cocoindex.resources.file import FileLike, PatternFilePathMatcher
 from cocoindex.resources.id import IdGenerator
 from numpy.typing import NDArray
 
@@ -272,13 +285,13 @@ _embedder = SentenceTransformerEmbedder("sentence-transformers/all-MiniLM-L6-v2"
 _splitter = RecursiveSplitter()
 
 @dataclass
-class Embedding:
+class DocEmbedding:
     id: int  # Generated stable ID
     filename: str
     text: str
     embedding: Annotated[NDArray, _embedder]  # Auto-infer dimensions
-    start_line: int
-    end_line: int
+    chunk_start: int
+    chunk_end: int
 
 @coco_aio.lifespan
 async def coco_lifespan(builder: coco_aio.EnvironmentBuilder) -> AsyncIterator[None]:
@@ -286,42 +299,38 @@ async def coco_lifespan(builder: coco_aio.EnvironmentBuilder) -> AsyncIterator[N
         builder.provide(PG_DB, postgres.register_db("embedding_db", pool))
         yield
 
-@coco.function(memo=True)
-async def process_chunk(chunk_id, filename, chunk, table):
+@coco.function
+async def process_chunk(chunk: Chunk, filename: pathlib.PurePath, id_gen: IdGenerator, table):
     table.declare_row(
-        row=Embedding(
-            id=chunk_id,
+        row=DocEmbedding(
+            id=await id_gen.next_id(chunk.text),
             filename=str(filename),
             text=chunk.text,
-            embedding=await _embedder.embed_async(chunk.text),
-            start_line=chunk.start.line,
-            end_line=chunk.end.line,
+            embedding=await _embedder.embed(chunk.text),
+            chunk_start=chunk.start.char_offset,
+            chunk_end=chunk.end.char_offset,
         ),
     )
 
 @coco.function(memo=True)
-async def process_file(file, table):
+async def process_file(file: FileLike, table):
     text = file.read_text()
-    chunks = _splitter.split(text, chunk_size=1000, min_chunk_size=300, chunk_overlap=200)
-    id_gen = IdGenerator()  # Generate stable IDs for each chunk
-    await asyncio.gather(*(
-        process_chunk(id_gen.next_id(chunk.text), file.file_path.path, chunk, table)
-        for chunk in chunks
-    ))
+    chunks = _splitter.split(text, chunk_size=1000, chunk_overlap=200)
+    id_gen = IdGenerator()
+    await coco_aio.map(process_chunk, chunks, file.file_path.path, id_gen, table)
 
 @coco.function
-def app_main(sourcedir):
+async def app_main(sourcedir: pathlib.Path):
     target_db = coco.use_context(PG_DB)
-    target_table = coco.mount_run(
-        coco.component_subpath("setup", "table"),
-        target_db.declare_table_target,
+    target_table = await target_db.mount_table_target(
         table_name="embeddings",
-        table_schema=postgres.TableSchema(Embedding, primary_key=["id"]),
-    ).result()
+        table_schema=await postgres.TableSchema.from_class(
+            DocEmbedding, primary_key=["id"],
+        ),
+    )
 
     files = localfs.walk_dir(sourcedir, recursive=True)
-    for file in files:
-        coco.mount(coco.component_subpath("file", str(file.file_path.path)), process_file, file, target_table)
+    await coco_aio.mount_each(process_file, files.items(), target_table)
 
 app = coco_aio.App(coco_aio.AppConfig(name="Embedding"), app_main, sourcedir=Path("./data"))
 ```
@@ -485,16 +494,48 @@ class Record:
 record = {"id": 1, "name": "example", "vector": [...]}
 ```
 
-### 5. Organize with Setup Phase
+### 5. Use Convenience APIs for Targets and Iteration
 
 ```python
-with coco.component_subpath("setup"):
-    table = coco.mount_run(...).result()
+# Target setup — subpath is automatic
+table = await target_db.mount_table_target(
+    table_name="my_table",
+    table_schema=await postgres.TableSchema.from_class(MyRecord, primary_key=["id"]),
+)
 
-with coco.component_subpath("processing"):
-    for item in items:
-        coco.mount(coco.component_subpath(item.id), ...)
+# Iterate with mount_each — keys become component subpaths
+await coco_aio.mount_each(process_item, items.items(), table)
 ```
+
+### 6. Prefer Async Mount
+
+```python
+# ✅ Default: async mount for I/O-bound or general-purpose components
+@coco.function
+async def app_main(sourcedir):
+    await coco_aio.mount_each(process_file, files.items(), table)  # list of items
+    await coco_aio.mount(coco.component_subpath("setup"), setup_fn)  # single component
+
+# ✅ Sync mount only when the leaf function is CPU-intensive (no I/O)
+@coco.function(memo=True)
+def cpu_heavy_leaf(data: str) -> Result:
+    return expensive_computation(data)  # Pure CPU work, no async needed
+
+# ❌ Don't use sync mount inside async app_main for general components
+@coco.function
+async def app_main(sourcedir):
+    for key, f in files.items():
+        coco.mount(coco.component_subpath(key), process_file, f)  # Use await coco_aio.mount() instead
+```
+
+## Migration from Old API
+
+| Before | After |
+|--------|-------|
+| `await mount_run(subpath, fn, *args).result()` | `await use_mount(subpath, fn, *args)` |
+| `for key, item in items: mount(subpath(key), fn, item, *args)` | `mount_each(fn, items, *args)` |
+| `with component_subpath("setup"): await mount_run(...)` | `await mount_target(target)` or `await db.mount_table_target(...)` |
+| `await asyncio.gather(*(fn(item) for item in items))` | `await map(fn, items)` |
 
 ## Troubleshooting
 

@@ -21,6 +21,20 @@ description: Go concurrency patterns for high-throughput web applications includ
 4. **Use mutexes for state protection** — when goroutines share mutable state, protect it with `sync.Mutex`, `sync.RWMutex`, or `sync/atomic`.
 5. **Never spawn raw goroutines in HTTP handlers** — use worker pools, `errgroup`, or other bounded concurrency primitives.
 
+## Gates (check before merge or review)
+
+Use these **sequenced** checks for objective pass/fail; do not replace them with “I verified mentally.”
+
+1. **Race detector**
+   - Run `go test -race ./...` on packages that changed concurrent code, or `go build -race` for binaries under test.
+   - **Pass:** exit code `0`. If you report “no races,” attach or cite CI output / saved terminal transcript—do not assert cleanliness without that artifact.
+2. **Bounded background work from HTTP**
+   - Inspect handlers and middleware that start work beyond the request goroutine.
+   - **Pass:** every such path uses a bounded primitive (worker pool, buffered channel with documented capacity, `errgroup` with an explicit concurrency cap)—not unbounded `go` per incoming request.
+3. **Graceful teardown**
+   - For processes that start long-lived goroutines, trace from shutdown signal (or test `defer`) to `Wait()` / channel close / `context` cancel for each goroutine family.
+   - **Pass:** you can point to the call chain or a test that proves shutdown completes without hang (no orphan goroutines).
+
 ## Worker Pool Pattern
 
 Use worker pools for background tasks dispatched from HTTP handlers. This bounds concurrency and provides graceful shutdown.

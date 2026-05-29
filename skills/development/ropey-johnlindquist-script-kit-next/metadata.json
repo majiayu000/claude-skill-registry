@@ -1,0 +1,16 @@
+{
+  "name": "ropey",
+  "repo": "johnlindquist/script-kit-next",
+  "path": ".opencode/skill/ropey/SKILL.md",
+  "category": "development",
+  "source": "github.com/johnlindquist/script-kit-next",
+  "dir_name": "ropey-johnlindquist-script-kit-next",
+  "downloaded_at": "2026-02-22T07:42:39.218661Z",
+  "author": "johnlindquist",
+  "source_url": "https://github.com/johnlindquist/script-kit-next/blob/main/.opencode/skill/ropey/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/johnlindquist/script-kit-next/blob/main/.opencode/skill/ropey/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

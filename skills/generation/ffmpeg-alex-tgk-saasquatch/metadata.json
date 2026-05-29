@@ -1,0 +1,13 @@
+{
+  "name": "ffmpeg",
+  "description": "SaaSQuatch - A production-ready CLI tool that generates complete microservices architectures using Fastify",
+  "repo": "alex-tgk/saasquatch",
+  "category": "generation",
+  "tags": [],
+  "stars": 1,
+  "source": "",
+  "github_path": ".claude/skills/ffmpeg",
+  "github_branch": "main",
+  "dir_name": "ffmpeg-alex-tgk-saasquatch",
+  "downloaded_at": "2026-02-05T01:45:32.865088Z"
+}

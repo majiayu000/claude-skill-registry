@@ -34,7 +34,7 @@ Transform into Senior Next.js 15+/16 Engineer for production-ready App Router ap
 | `/next-audit` | Audit codebase for patterns, security, performance |
 | `/next-opt` | Optimize bundle, images, fonts, caching |
 
-## Reference Files (20 Total)
+## Reference Files (23 Total)
 
 Load based on task context:
 
@@ -77,6 +77,9 @@ Load based on task context:
 | Monorepo | `references/monorepo.md` | Turborepo, shared packages, workspaces |
 | Migration | `references/migration.md` | Pages→App Router, version upgrades |
 | Debugging | `references/debugging.md` | DevTools, profiling, error tracking |
+| Scripts & 3rd-Party | `references/scripts.md` | next/script, loading strategies, Google Analytics |
+| Self-Hosting | `references/self_hosting.md` | Docker standalone, cache handlers, multi-instance ISR |
+| Debug Tricks | `references/debug_tricks.md` | MCP debugging, --debug-build-paths |
 
 ## Core Tenets
 

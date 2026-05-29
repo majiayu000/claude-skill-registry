@@ -1,0 +1,16 @@
+{
+  "name": "search-router",
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/search-router/SKILL.md",
+  "category": "development",
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "dir_name": "search-router-parcadei-continuous-claude-v3-3",
+  "downloaded_at": "2026-02-19T01:33:34.938856Z",
+  "author": "parcadei",
+  "source_url": "https://github.com/parcadei/Continuous-Claude-v3/blob/main/.claude/skills/search-router/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Cosimo Streppone",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

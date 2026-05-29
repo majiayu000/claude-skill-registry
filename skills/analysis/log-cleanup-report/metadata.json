@@ -1,0 +1,17 @@
+{
+  "name": "log-cleanup-report",
+  "repo": "fulviomanente/IQRight_Local",
+  "path": ".claude/skills/log-cleanup-report/SKILL.md",
+  "github_branch": "master",
+  "category": "analysis",
+  "source": "github.com/fulviomanente/IQRight_Local",
+  "dir_name": "log-cleanup-report",
+  "downloaded_at": "2026-03-01T07:47:45.973351Z",
+  "author": "fulviomanente",
+  "source_url": "https://github.com/fulviomanente/IQRight_Local/blob/master/.claude/skills/log-cleanup-report/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fulviomanente/IQRight_Local/blob/master/.claude/skills/log-cleanup-report/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

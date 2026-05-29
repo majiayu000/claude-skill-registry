@@ -1,0 +1,20 @@
+{
+  "name": "ai-rules-adapter-builder",
+  "description": "",
+  "repo": "lbb00/ai-rules-sync",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lbb00/ai-rules-sync",
+  "github_path": ".claude/skills/ai-rules-adapter-builder",
+  "github_branch": "main",
+  "dir_name": "ai-rules-adapter-builder",
+  "downloaded_at": "2026-02-05T01:44:21.370069Z",
+  "author": "lbb00",
+  "source_url": "https://github.com/lbb00/ai-rules-sync/blob/main/.claude/skills/ai-rules-adapter-builder/SKILL.md",
+  "license": "Unlicense",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/lbb00/ai-rules-sync/blob/main/.claude/skills/ai-rules-adapter-builder/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

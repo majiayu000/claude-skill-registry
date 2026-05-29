@@ -1,11 +1,23 @@
 ---
 name: ln-310-story-validator
-description: This skill should be used to validate and auto-fix Stories/Tasks against 2025 standards. Penalty Points system (goal = 0), delegates to ln-002 for documentation, Plan Mode support. Auto-discovers team/config.
+description: Validates Stories/Tasks with GO/NO-GO verdict, Readiness Score (1-10), Penalty Points, and Anti-Hallucination verification. Auto-fixes to reach 0 points, delegates to ln-002 for docs. Use when reviewing Stories before execution or when user requests validation.
+license: MIT
 ---
+
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
 
 # Story Verification Skill
 
-Validate and auto-fix Stories and Tasks against 2025 standards before execution.
+Validate Stories/Tasks with explicit GO/NO-GO verdict, Readiness Score, and Anti-Hallucination verification.
+
+## Inputs
+
+| Input | Required | Source | Description |
+|-------|----------|--------|-------------|
+| `storyId` | Yes | args, git branch, kanban, user | Story to process |
+
+**Resolution:** Per `shared/references/input_resolution_pattern.md` — Story Resolution Chain.
+**Status filter:** Backlog
 
 ## Purpose & Scope
 
@@ -34,7 +46,7 @@ Validate and auto-fix Stories and Tasks against 2025 standards before execution.
 | LOW | 1 | Structural/cosmetic issues |
 
 **Workflow:**
-1. Audit: Calculate penalty points for all 17 criteria
+1. Audit: Calculate penalty points for all 22 criteria
 2. Fix: Auto-fix and zero out points
 3. Report: Total Before -> 0 After
 
@@ -45,50 +57,98 @@ Detect operating mode at startup:
 **Plan Mode Active:**
 - Phase 1-2: Full audit (discovery + research + penalty calculation)
 - Phase 3: Show results + fix plan -> WAIT for user approval
-- Phase 4-5: After approval -> execute fixes
+- Phase 4-6: After approval -> execute fixes
 
 **Normal Mode:**
-- Phase 1-5: Standard workflow without stopping
+- Phase 1-6: Standard workflow without stopping
 - Automatically fix and approve
 
-## Workflow Overview
+## Plan Mode: Progress Tracking with TodoWrite
+
+When operating in any mode, skill MUST create detailed todo checklist tracking ALL phases and steps.
+
+**Rules:**
+1. Create todos IMMEDIATELY before Phase 1
+2. Each phase step = separate todo item
+3. Mark `in_progress` before starting step, `completed` after finishing
+
+**Todo Template (~21 items):**
+
+```
+Phase 1: Discovery & Loading
+  - Auto-discover configuration (Team ID, docs)
+  - Load Story metadata (ID, title, status, labels)
+  - Load Tasks metadata (1-8 implementation tasks)
+
+Phase 2: Research & Audit
+  - Extract technical domains from Story/Tasks
+  - Delegate documentation creation to ln-002
+  - Research via MCP Ref (RFC, OWASP, library versions)
+  - Verify technical claims (Anti-Hallucination)
+  - Calculate Penalty Points (22 criteria)
+
+Phase 3: Audit Results & Fix Plan
+  - Display Penalty Points table and fix plan
+  - Wait for user approval (Plan Mode only)
+
+Phase 4: Auto-Fix (8 groups)
+  - Fix Structural violations (#1-#4)
+  - Fix Standards violations (#5)
+  - Fix Solution violations (#6, #21)
+  - Fix Workflow violations (#7-#13)
+  - Fix Quality violations (#14-#15)
+  - Fix Dependencies violations (#18-#19/#19b)
+  - Fix Risk violations (#20)
+  - Fix Traceability violations (#16-#17)
+
+Phase 5: Agent Review (MANDATORY — delegated to ln-311)
+  - [MANDATORY] Invoke ln-311-agent-reviewer with story_ref + tasks_ref
+  - [MANDATORY] Process and apply accepted suggestions to Story/Tasks
+
+Phase 6: Approve & Notify
+  - Set Story/Tasks to Todo status in Linear
+  - Update kanban_board.md with APPROVED marker
+  - Add Linear comment with validation summary
+  - Display tabular output to terminal
+```
+
+## Workflow
+
+### Phase 0: Tools Config
+
+**MANDATORY READ:** Load `shared/references/tools_config_guide.md`, `shared/references/storage_mode_detection.md`, and `shared/references/input_resolution_pattern.md`
+
+Read `docs/tools_config.md` (bootstrap if missing per tools_config_guide.md).
+Extract: `task_provider` = Task Management → Provider (`linear` | `file`).
+
+All subsequent phases use `task_provider` to select operations per storage_mode_detection.md.
 
 ### Phase 1: Discovery & Loading
 
-**Step 1: Configuration & Metadata Loading**
+**Step 1: Resolve storyId** (per input_resolution_pattern.md):
+- IF args provided → use args
+- ELSE IF git branch matches `feature/{id}-*` → extract id
+- ELSE IF kanban has exactly 1 Story in [Backlog] → suggest
+- ELSE → AskUserQuestion: show Stories from kanban filtered by [Backlog]
+
+**Step 2: Configuration & Metadata Loading**
 - Auto-discover configuration: Team ID (`docs/tasks/kanban_board.md`), project docs (`CLAUDE.md`), epic from Story.project
 - Load metadata only: Story ID/title/status/labels, child Task IDs/titles/status/labels
-- Expect 3-8 implementation tasks; record parentId for filtering
+  - IF `task_provider` = `linear`: `get_issue(storyId)` + `list_issues(parentId=storyId)`
+  - IF `task_provider` = `file`: `Read story.md` + `Glob("docs/tasks/epics/*/stories/*/tasks/*.md")`
+- Expect 1-8 implementation tasks; record parentId for filtering
 - Rationale: keep loading light; full descriptions arrive in Phase 2
 
 ### Phase 2: Research & Audit
 
+**MANDATORY READ:** Load `references/phase2_research_audit.md` for complete research and audit procedure:
+- Domain extraction from Story/Tasks
+- Documentation delegation to ln-002 (guides/manuals/ADRs)
+- MCP research (RFC/OWASP/library versions via Ref + Context7)
+- Anti-Hallucination verification (evidence-based claims)
+- Penalty Points calculation (22 criteria, see Auto-Fix Actions Reference in same file)
+
 **Always execute for every Story - no exceptions.**
-
-**Step 1: Domain Extraction**
-- Extract technical domains from Story title + Technical Notes + Implementation Tasks
-- Load pattern registry from `references/domain_patterns.md`
-- Scan Story content for pattern matches via keyword detection
-- Build list of detected domains requiring documentation
-
-**Step 2: Documentation Delegation**
-- For EACH detected pattern, delegate to ln-002:
-  ```
-  Skill(skill="ln-002-best-practices-researcher",
-        args="doc_type=[guide|manual|adr] topic='[pattern]'")
-  ```
-- Receive file paths to created documentation (`docs/guides/`, `docs/manuals/`, `docs/adrs/`, `docs/research/`)
-
-**Step 3: Research via MCP**
-- Query MCP Ref for industry standards: `ref_search_documentation(query="[topic] RFC OWASP best practices 2025")`
-- Query Context7 for library versions: `resolve-library-id` + `query-docs`
-- Extract: standards (RFC numbers, OWASP rules), library versions, patterns
-
-**Step 4: Penalty Points Calculation**
-- Evaluate all 17 criteria against Story/Tasks
-- Assign penalty points per violation (CRITICAL=10, HIGH=5, MEDIUM=3, LOW=1)
-- Calculate total penalty points
-- Build fix plan for each violation
 
 ### Phase 3: Audit Results & Fix Plan
 
@@ -103,114 +163,130 @@ Detect operating mode at startup:
 
 ### Phase 4: Auto-Fix
 
-**Execute fixes for ALL 17 criteria on the spot.**
+**Execute fixes for ALL 22 criteria on the spot.**
 
-- Execution order (6 groups):
-  1. **Structural (#1-#4)** — Story/Tasks template compliance
+- Execution order (8 groups):
+  1. **Structural (#1-#4)** — Story/Tasks template compliance + AC completeness/specificity
   2. **Standards (#5)** — RFC/OWASP compliance FIRST (before YAGNI/KISS!)
-  3. **Solution (#6)** — Library versions
+  3. **Solution (#6, #21)** — Library versions, alternative solutions
   4. **Workflow (#7-#13)** — Test strategy, docs integration, size, cleanup, YAGNI, KISS, task order
   5. **Quality (#14-#15)** — Documentation complete, hardcoded values
-  6. **Traceability (#16-#17)** — Story-Task alignment, AC coverage (LAST, after all fixes)
+  6. **Dependencies (#18-#19/#19b)** — Story/Task independence (no forward deps), parallel group validity
+  7. **Risk (#20)** — Implementation risk analysis (after dependencies resolved, before traceability)
+  8. **Verification (#22)** — AC verify methods exist for all task ACs (test/command/inspect)
+  9. **Traceability (#16-#17)** — Story-Task alignment, AC coverage quality (LAST, after all fixes)
 - Use Auto-Fix Actions table below as authoritative checklist
 - Zero out penalty points as fixes applied
 - Test Strategy section must exist but remain empty (testing handled separately)
 
-### Phase 5: Approve & Notify
+### Phase 5: Agent Review (MANDATORY — DO NOT SKIP)
 
-- Set Story + all Tasks to Todo (Linear); update `kanban_board.md` with APPROVED marker
-- **Add Linear comment** with full validation summary:
-  - Penalty Points table (Before -> After = 0)
-  - Auto-Fixes Applied table
-  - Documentation Created table (docs created via ln-002)
-  - Standards Compliance Evidence table
+> **MANDATORY STEP:** This phase MUST execute regardless of Phase 4 results. Skipping agent review is a workflow violation. If agents unavailable, ln-311 returns SKIPPED — acceptable. But invocation MUST happen.
+
+Invoke `Skill(skill="ln-311-agent-reviewer", args="{storyId}")`.
+- ln-311 gets Story/Task references from Linear, builds prompt with references, runs agents in parallel, persists prompts and results in `.agent-review/{agent}/`.
+- If verdict = `SUGGESTIONS` → apply ACCEPTED suggestions to Story/Tasks text.
+- If verdict = `SKIPPED` (no agents or all failed) → proceed to Phase 6 unchanged.
+- **Display:** agent stats from ln-311 output: `"Agent Review: {agent_stats summary}"`
+
+### Phase 6: Approve & Notify
+
+- Set Story + all Tasks to Todo; update `kanban_board.md` with APPROVED marker
+  - IF `task_provider` = `linear`: `save_issue({id, state: "Todo"})` for Story + each Task
+  - IF `task_provider` = `file`: `Edit` `**Status:**` line to `Todo` in story.md + each task file
+- **Add validation summary comment:**
+  - IF `task_provider` = `linear`: `create_comment({issueId, body})` on Story
+  - IF `task_provider` = `file`: `Write` comment to `docs/tasks/epics/.../comments/{ISO-timestamp}.md`
+  - Content: Penalty Points table (Before -> After = 0), Auto-Fixes Applied, Documentation Created (via ln-002), Standards Compliance Evidence
 - **Display tabular output** (Unicode box-drawing) to terminal
 - Final: Total Penalty Points = 0
-- **Optional:** If `--execute` flag provided, delegate to ln-400-story-executor to start execution immediately after approval
+- **Recommended next step:** `ln-400-story-executor` to start Story execution
 
 ## Auto-Fix Actions Reference
 
-### Structural (#1-#4)
+**MANDATORY READ:** Load `references/phase2_research_audit.md` for complete 21-criteria table with:
+- Structural (#1-#4): Story/Task template compliance
+- Standards (#5): RFC/OWASP compliance
+- Solution (#6, #21): Library versions, alternatives
+- Workflow (#7-#13): Test strategy, docs, size, YAGNI/KISS, task order
+- Quality (#14-#15): Documentation, hardcoded values
+- Traceability (#16-#17): Story-Task alignment, AC coverage
+- Dependencies (#18-#19/#19b): No forward dependencies
+- Risk (#20): Implementation risk analysis
 
-| # | Criterion | What it checks | Penalty | Auto-fix actions |
-|---|-----------|----------------|---------|------------------|
-| 1 | Story Structure | 8 sections per template | LOW (1) | Add/reorder sections with TODO placeholders; update Linear |
-| 2 | Tasks Structure | Each Task has 7 sections | LOW (1) | Load each Task; add/reorder sections; update Linear |
-| 3 | Story Statement | As a/I want/So that clarity | LOW (1) | Rewrite using persona/capability/value; update Linear |
-| 4 | Acceptance Criteria | Given/When/Then, 3-5 items | MEDIUM (3) | Normalize to G/W/T; add edge cases; update Linear |
+**Maximum Penalty:** 88 points (sum of all 22 criteria; #20 capped at 15)
 
-### Standards (#5)
+## Final Assessment Model
 
-| # | Criterion | What it checks | Penalty | Auto-fix actions |
-|---|-----------|----------------|---------|------------------|
-| 5 | Standards Compliance | RFC, OWASP, REST, Security | CRITICAL (10) | Query MCP Ref; update Technical Notes with compliant approach |
+**Outputs after all fixes applied:**
 
-### Solution (#6)
+| Metric | Value | Meaning |
+|--------|-------|---------|
+| **Gate** | GO / NO-GO | Final verdict for execution readiness |
+| **Readiness Score** | 1-10 | Quality confidence level |
+| **Penalty Points** | 0 (after fixes) | Validation completeness |
+| **Anti-Hallucination** | VERIFIED / FLAGGED | Technical claims verified |
+| **AC Coverage** | 100% (N/N) | All ACs mapped to Tasks |
 
-| # | Criterion | What it checks | Penalty | Auto-fix actions |
-|---|-----------|----------------|---------|------------------|
-| 6 | Library & Version | Libraries are latest stable | HIGH (5) | Query Context7; update to recommended versions |
+### Readiness Score Calculation
 
-### Workflow (#7-#13)
+```
+Readiness Score = 10 - (Penalty Points / 5)
+```
 
-| # | Criterion | What it checks | Penalty | Auto-fix actions |
-|---|-----------|----------------|---------|------------------|
-| 7 | Test Strategy | Section exists but empty | LOW (1) | Ensure section present; leave empty (testing handled separately) |
-| 8 | Documentation Integration | No standalone doc tasks | MEDIUM (3) | Remove doc-only tasks; fold into implementation DoD |
-| 9 | Story Size | 3-8 tasks; 3-5h each | MEDIUM (3) | If <3 or >8, add TODO; flag task size issues |
-| 10 | Test Task Cleanup | No premature test tasks | MEDIUM (3) | Remove test tasks before final; testing appears later |
-| 11 | YAGNI | No premature features | MEDIUM (3) | Move speculative items to Out of Scope unless standards require |
-| 12 | KISS | Simplest solution | MEDIUM (3) | Simplify unless standards require complexity |
-| 13 | Task Order | DB→Service→API→UI | MEDIUM (3) | Reorder Tasks foundation-first |
+**Before/After diagnostic:** Phase 3 calculates initial Penalty Points and Readiness Score (Before). Phase 4 auto-fixes reduce penalties to 0, yielding Readiness Score = 10 (After). Both values reported in Final Assessment for transparency.
 
-### Quality (#14-#15)
+| Gate | Condition |
+|------|-----------|
+| GO | Penalty Points = 0 after Phase 4 (Readiness Score = 10) |
+| NO-GO | Any criterion FLAGGED as unfixable (see Critical Rules) |
 
-| # | Criterion | What it checks | Penalty | Auto-fix actions |
-|---|-----------|----------------|---------|------------------|
-| 14 | Documentation Complete | Pattern docs exist + referenced | HIGH (5) | Delegate to ln-002; add all doc links to Technical Notes |
-| 15 | Code Quality Basics | No hardcoded values | MEDIUM (3) | Add TODOs for constants/config/env |
+### Anti-Hallucination Verification
 
-### Traceability (#16-#17)
+Verify technical claims have evidence:
 
-| # | Criterion | What it checks | Penalty | Auto-fix actions |
-|---|-----------|----------------|---------|------------------|
-| 16 | Story-Task Alignment | Tasks implement Story statement | MEDIUM (3) | Add TODO to misaligned Tasks; warn user |
-| 17 | AC-Task Coverage | Each AC has implementing Task | MEDIUM (3) | Add TODO for uncovered ACs; suggest missing Tasks |
+| Claim Type | Verification |
+|------------|--------------|
+| RFC/Standard reference | MCP Ref search confirms existence |
+| Library version | Context7 query confirms version |
+| Security requirement | OWASP/CWE reference exists |
+| Performance claim | Benchmark/doc reference |
 
-**Maximum Penalty:** 50 points
+**Status:** VERIFIED (all claims sourced) or FLAGGED (unverified claims listed)
+
+### Task-AC Coverage Matrix
+
+Output explicit mapping:
+
+```
+| AC | Task(s) | Coverage |
+|----|---------|----------|
+| AC1: Given/When/Then | T-001, T-002 | ✅ |
+| AC2: Given/When/Then | T-003 | ✅ |
+| AC3: Given/When/Then | — | ❌ UNCOVERED |
+```
+
+**Coverage:** `{covered}/{total} ACs` (target: 100%)
 
 ## Self-Audit Protocol (Mandatory)
 
-Before marking any criterion as complete, provide concrete evidence (doc path, MCP result, Linear update).
+Verify all 22 criteria (#1-#22) from Auto-Fix Actions pass with concrete evidence (doc path, MCP result, Linear update) before proceeding to Phase 6.
 
-| # | Self-Audit Question | Required Evidence |
-|---|---------------------|-------------------|
-| 1 | Validated all 8 Story sections? | Section list |
-| 2 | Loaded full description for each Task? | Task validation count |
-| 3 | Statement in As a/I want/So that? | Quoted statement |
-| 4 | AC are G/W/T and testable? | AC count and format |
-| 5 | Verified RFC/OWASP/REST compliance? | Standards list + MCP result |
-| 6 | Checked library versions via Context7? | Context7 result |
-| 7 | Test Strategy kept empty? | Note that testing deferred |
-| 8 | Docs integrated, no standalone tasks? | Integration evidence |
-| 9 | Task count 3-8 and 3-5h? | Task count/sizes |
-| 10 | No premature test tasks? | Search result |
-| 11 | Only current-scope features (YAGNI)? | Scope review |
-| 12 | Simplest approach within standards (KISS)? | Simplicity justification |
-| 13 | Tasks ordered Foundation-First? | Task order list |
-| 14 | All pattern docs exist and referenced? | Doc paths from ln-002 |
-| 15 | Hardcoded values handled? | TODO/config evidence |
-| 16 | Each Task aligns with Story statement? | Alignment check result |
-| 17 | Each AC has implementing Task? | Coverage matrix |
+## Critical Rules
+- All 22 criteria MUST be verified with concrete evidence (doc path, MCP result, Linear update) before Phase 6 (Self-Audit Protocol)
+- Fix execution order is strict: Structural -> Standards -> Solution -> Workflow -> Quality -> Dependencies -> Risk -> Traceability (standards before YAGNI/KISS)
+- Never approve with Penalty Points > 0; all violations must be auto-fixed to zero. If auto-fix is impossible for a criterion (e.g., MCP Ref unavailable, external dependency), mark as FLAGGED with reason — penalty stays, Gate = NO-GO, user must resolve manually
+- Test Strategy section must exist but remain empty (testing handled separately by other skills)
+- In Plan Mode, MUST stop after Phase 3 and wait for user approval before applying any fixes
 
 ## Definition of Done
 
-- **Phase 1:** Auto-discovery done; Story + Tasks metadata loaded; task count checked
-- **Phase 2:** Domain extraction complete; ln-002 delegated for docs; MCP research done; Penalty Points calculated
-- **Phase 3:** Audit results shown; IF Plan Mode: user approved
-- **Phase 4:** All 17 criteria auto-fixed; Penalty Points = 0; Test Strategy empty; test tasks removed
-- **Phase 5:** Story/Tasks set to Todo; `kanban_board.md` updated; Linear comment added; tabular output displayed
-- **Optional:** If `--execute` flag, ln-400-story-executor invoked after approval
+- Phases 1-6 completed: metadata loaded, research done, penalties calculated, fixes applied, agent review done, Story approved.
+- Penalty Points = 0 (all 22 criteria fixed). Readiness Score ≥ 5.
+- Anti-Hallucination: VERIFIED (all claims sourced via MCP).
+- AC Coverage: 100% (each AC mapped to ≥1 Task).
+- Agent Review: ln-311 invoked; suggestions aggregated, validated, accepted applied (or SKIPPED if no agents).
+- Story/Tasks set to Todo; kanban updated; Linear comment with Final Assessment posted.
 
 ## Example Workflow
 
@@ -232,7 +308,8 @@ Before marking any criterion as complete, provide concrete evidence (doc path, M
    - Fix #13: Add Guide-05, Guide-06 references
    - Fix #17: Docs already created by ln-002
    - All fixes applied, Penalty Points = 0
-5. **Phase 5:** Story -> Todo, tabular report
+5. **Phase 5:** Agent review (delegated to ln-311-agent-reviewer → apply accepted suggestions)
+6. **Phase 6:** Story -> Todo, tabular report
 
 ## Template Loading
 
@@ -255,20 +332,28 @@ Before marking any criterion as complete, provide concrete evidence (doc path, M
 
 ## Reference Files
 
+- **Tools config:** `shared/references/tools_config_guide.md`
+- **Storage mode operations:** `shared/references/storage_mode_detection.md`
+- **AC validation rules:** `shared/references/ac_validation_rules.md`
+- **Plan mode behavior:** `shared/references/plan_mode_pattern.md`
+- **Final Assessment:** `references/readiness_scoring.md` (GO/NO-GO rules, Readiness Score calculation)
 - **Templates (centralized):** `shared/templates/story_template.md`, `shared/templates/task_template_implementation.md`
 - **Local copies:** `docs/templates/` (in target project)
 - **Validation Checklists (Progressive Disclosure):**
-  - `references/verification_checklist_template.md` (overview of 6 categories)
   - `references/structural_validation.md` (criteria #1-#4)
   - `references/standards_validation.md` (criterion #5)
   - `references/solution_validation.md` (criterion #6)
   - `references/workflow_validation.md` (criteria #7-#13)
   - `references/quality_validation.md` (criteria #14-#15)
+  - `references/dependency_validation.md` (criteria #18-#19/#19b)
+  - `references/risk_validation.md` (criterion #20)
   - `references/traceability_validation.md` (criteria #16-#17)
   - `references/domain_patterns.md` (pattern registry for ln-002 delegation)
   - `references/penalty_points.md` (penalty system details)
+- **Prevention checklist:** `shared/references/creation_quality_checklist.md` (creator-facing mapping of 22 criteria)
 - **Linear integration:** `../shared/templates/linear_integration.md`
+- **MANDATORY READ:** `shared/references/research_tool_fallback.md`
 
 ---
-**Version:** 5.0.0
-**Last Updated:** 2025-01-07
+**Version:** 7.0.0
+**Last Updated:** 2026-02-03

@@ -1,0 +1,18 @@
+{
+  "name": "ducklake-walk",
+  "repo": "plurigrid/asi",
+  "path": "skills/ducklake-walk/SKILL.md",
+  "source": "github.com/plurigrid/asi",
+  "downloaded_at": "2026-01-17T03:34:51.170759Z",
+  "dir_name": "ducklake-walk-plurigrid-asi",
+  "category": "data",
+  "github_path": "skills/ducklake-walk",
+  "github_branch": "main",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/ducklake-walk/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

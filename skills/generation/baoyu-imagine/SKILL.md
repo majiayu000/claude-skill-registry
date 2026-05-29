@@ -52,6 +52,16 @@ Legacy compatibility: if `.baoyu-skills/baoyu-image-gen/EXTEND.md` exists and th
 
 Minimum working examples — see `references/usage-examples.md` for the full set including per-provider invocations and batch mode.
 
+### Identity-preserving reference prompts
+
+When the user wants a real person/character/object preserved from reference images, do **not** replace the reference with a long generic description. Prefer short, hard identity-preservation language:
+
+- "Use the person/object in the reference image(s) as the same identity. Do not redesign it or create a similar-looking new subject."
+- "Only change scene, clothing, pose, lighting, rendering style, and composition. Keep the face/proportions/hair/key accessories/overall identity from the references."
+- If using multiple references, state that they are the same subject and should jointly define identity.
+
+Pitfall: long descriptions like "young East Asian woman, oval face, clear eyes..." can cause the model to synthesize a new person matching the description instead of preserving the referenced person.
+
 ```bash
 # Basic
 ${BUN_X} {baseDir}/scripts/main.ts --prompt "A cat" --image cat.png
@@ -74,6 +84,16 @@ ${BUN_X} {baseDir}/scripts/main.ts --prompt "A cat" --image out.png --provider o
 # Batch mode
 ${BUN_X} {baseDir}/scripts/main.ts --batchfile batch.json --jobs 4
 ```
+
+## Reference-Image Identity Preservation
+
+When the user wants a person/object preserved from reference images:
+
+- Prefer a small curated set of existing source references (usually 2–4) over many images; large multi-megabyte refs can destabilize streaming providers.
+- Make the prompt say the references are the same subject and the output must use that identity. Avoid long generic facial-feature descriptions that can cause the model to synthesize a new similar-looking person.
+- Do not use newly generated outputs as references unless the user explicitly asks; generated refs compound drift.
+- If results become too polished or influencer-like, reduce stylized refs and add explicit anti-beautification constraints (no face slimming, eye enlargement, heavy makeup, commercial travel shoot, over-smoothing).
+- If the subject should look younger/older, preserve the face and express age through clothing, posture, scene, and styling; do not ask the model to change facial identity.
 
 ## Options
 
@@ -121,6 +141,18 @@ ${BUN_X} {baseDir}/scripts/main.ts --batchfile batch.json --jobs 4
 | `BAOYU_IMAGE_GEN_<PROVIDER>_START_INTERVAL_MS` | Per-provider start-gap |
 
 **Load priority**: CLI args > EXTEND.md > env vars > `<cwd>/.baoyu-skills/.env` > `~/.baoyu-skills/.env`
+
+### Codex/ChatGPT OAuth is not an OpenAI API key
+
+`--provider openai --model gpt-image-2` uses the standard OpenAI Images API (`/v1/images/generations` or `/v1/images/edits`) and requires `OPENAI_API_KEY`. A Codex or ChatGPT desktop login is a different entitlement and is not a drop-in replacement for `OPENAI_API_KEY`; do not paste a Codex OAuth token into `OPENAI_API_KEY` or only set `OPENAI_BASE_URL` to a Codex backend.
+
+If the user wants to use their Codex subscription / GPT Image 2 entitlement without an OpenAI API key, route through a Codex-native backend instead of this skill's `openai` provider:
+
+- In Codex runtime: use the native `imagegen` skill/tool.
+- In non-Codex runtimes with `codex` CLI installed and logged in: use the repo-level `scripts/codex-imagegen.sh` wrapper when the calling skill supports it (for example `baoyu-cover-image`). Resolve it from the plugin/repo root and pass absolute prompt/output/reference paths.
+- In Hermes runtimes with a native `image_generate` tool: use that tool as a fallback, and state whether reference images were passed directly or reconstructed from extracted traits.
+
+Do not modify the existing `openai` provider to silently consume Codex OAuth. If first-class Codex OAuth support is added to `baoyu-imagine`, implement it as a distinct provider (for example `openai-codex`) with its own auth, route, request shape, docs, and tests. See `references/codex-oauth-vs-openai-api-key.md`.
 
 ## Model Resolution
 
@@ -219,11 +251,17 @@ Rule of thumb: once prompt files are saved and the task is "generate all of thes
 - Invalid aspect ratio → warning, proceed with default
 - Reference images with unsupported provider/model → error with fix hint
 
+### Codex image2 fallback
+
+If `--provider openai --model gpt-image-2` fails because `OPENAI_API_KEY` is missing but the current runtime has a native image-generation backend or the repo-level `codex-imagegen` wrapper is available, use that path rather than leaving the user waiting. Be explicit about whether the fallback is true reference-image generation or only a text-prompt reconstruction from extracted visual traits. See `references/codex-image2-fallback.md`.
+
 ## References
 
 | File | Content |
 |------|---------|
 | `references/usage-examples.md` | Extended CLI examples across providers and batch mode |
+| `references/codex-oauth-vs-openai-api-key.md` | Why Codex/ChatGPT OAuth image2 entitlement is not usable through baoyu-imagine's standard OpenAI API-key provider |
+| `references/codex-image2-fallback.md` | Practical fallback behavior when OpenAI API credentials are absent but Codex/native image generation is available |
 | `references/providers/dashscope.md` | DashScope families, sizes, limits |
 | `references/providers/zai.md` | Z.AI GLM-image / cogview-4 |
 | `references/providers/minimax.md` | MiniMax image-01 + subject reference |

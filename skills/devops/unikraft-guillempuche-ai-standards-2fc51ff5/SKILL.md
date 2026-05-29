@@ -1,5 +1,6 @@
 ---
 name: unikraft
+version: 1.0.0
 description: Kraft CLI commands for building and deploying Unikraft unikernels. Use when working with Kraftfiles, deploying to Unikraft Cloud, or managing unikernel instances.
 ---
 

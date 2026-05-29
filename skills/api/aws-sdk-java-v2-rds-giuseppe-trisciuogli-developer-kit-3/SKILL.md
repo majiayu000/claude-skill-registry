@@ -10,19 +10,13 @@ allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 
 This skill provides comprehensive guidance for working with Amazon RDS (Relational Database Service) using the AWS SDK for Java 2.x, covering database instance management, snapshots, parameter groups, and RDS operations.
 
-## When to Use This Skill
+## When to Use
 
-Use this skill when:
-- Creating and managing RDS database instances (PostgreSQL, MySQL, Aurora, etc.)
-- Taking and restoring database snapshots
-- Managing DB parameter groups and configurations
-- Querying RDS instance metadata and status
-- Setting up Multi-AZ deployments
-- Configuring automated backups
-- Managing security groups for RDS
+- Creating, modifying, or deleting RDS database instances
+- Managing DB snapshots, parameter groups, and configurations
+- Setting up Multi-AZ deployments and automated backups
 - Connecting Lambda functions to RDS databases
-- Implementing RDS IAM authentication
-- Monitoring RDS instances and metrics
+- Monitoring instance status and performance
 
 ## Instructions
 
@@ -76,27 +70,10 @@ RdsClient rdsClient = RdsClient.builder()
 
 ### Describing DB Instances
 
-Retrieve information about existing RDS instances.
-
-**List All DB Instances:**
 ```java
-public static void describeInstances(RdsClient rdsClient) {
-    try {
-        DescribeDbInstancesResponse response = rdsClient.describeDBInstances();
-        List<DBInstance> instanceList = response.dbInstances();
-
-        for (DBInstance instance : instanceList) {
-            System.out.println("Instance ARN: " + instance.dbInstanceArn());
-            System.out.println("Engine: " + instance.engine());
-            System.out.println("Status: " + instance.dbInstanceStatus());
-            System.out.println("Endpoint: " + instance.endpoint().address());
-            System.out.println("Port: " + instance.endpoint().port());
-            System.out.println("---");
-        }
-    } catch (RdsException e) {
-        System.err.println(e.getMessage());
-        System.exit(1);
-    }
+DescribeDbInstancesResponse response = rdsClient.describeDBInstances();
+for (DBInstance instance : response.dbInstances()) {
+    System.out.println(instance.dbInstanceArn() + " - " + instance.dbInstanceStatus());
 }
 ```
 
@@ -104,88 +81,47 @@ public static void describeInstances(RdsClient rdsClient) {
 
 ### Creating DB Instances
 
-Create new RDS database instances with various configurations.
-
-**Create Basic DB Instance:**
 ```java
-public static String createDBInstance(RdsClient rdsClient,
-                                     String dbInstanceIdentifier,
-                                     String dbName,
-                                     String masterUsername,
-                                     String masterPassword) {
-    try {
-        CreateDbInstanceRequest request = CreateDbInstanceRequest.builder()
-            .dbInstanceIdentifier(dbInstanceIdentifier)
-            .dbName(dbName)
-            .engine("postgres")
-            .engineVersion("14.7")
-            .dbInstanceClass("db.t3.micro")
-            .allocatedStorage(20)
-            .masterUsername(masterUsername)
-            .masterUserPassword(masterPassword)
-            .publiclyAccessible(false)
-            .build();
+CreateDbInstanceRequest request = CreateDbInstanceRequest.builder()
+    .dbInstanceIdentifier(dbInstanceIdentifier)
+    .dbName(dbName)
+    .engine("postgres")
+    .engineVersion("15.4")
+    .dbInstanceClass("db.t3.micro")
+    .allocatedStorage(20)
+    .masterUsername(masterUsername)
+    .masterUserPassword(masterPassword)
+    .publiclyAccessible(false)
+    .build();
 
-        CreateDbInstanceResponse response = rdsClient.createDBInstance(request);
-        System.out.println("Creating DB instance: " + response.dbInstance().dbInstanceArn());
+CreateDbInstanceResponse response = rdsClient.createDBInstance(request);
 
-        return response.dbInstance().dbInstanceArn();
-    } catch (RdsException e) {
-        System.err.println("Error creating instance: " + e.getMessage());
-        throw e;
-    }
-}
+// VALIDATION CHECKPOINT: Wait for instance to be available
+rdsClient.waiter().waitUntilDBInstanceAvailable(
+    DescribeDbInstancesRequest.builder().dbInstanceIdentifier(dbInstanceIdentifier).build()
+);
+System.out.println("Instance " + dbInstanceIdentifier + " is available!");
 ```
 
 ### Managing DB Parameter Groups
 
-Create and manage custom parameter groups for database configuration.
-
-**Create DB Parameter Group:**
 ```java
-public static void createDBParameterGroup(RdsClient rdsClient,
-                                         String groupName,
-                                         String description) {
-    try {
-        CreateDbParameterGroupRequest request = CreateDbParameterGroupRequest.builder()
-            .dbParameterGroupName(groupName)
-            .dbParameterGroupFamily("postgres15")
-            .description(description)
-            .build();
-
-        CreateDbParameterGroupResponse response = rdsClient.createDBParameterGroup(request);
-        System.out.println("Created parameter group: " + response.dbParameterGroup().dbParameterGroupName());
-    } catch (RdsException e) {
-        System.err.println("Error creating parameter group: " + e.getMessage());
-        throw e;
-    }
-}
+CreateDbParameterGroupRequest request = CreateDbParameterGroupRequest.builder()
+    .dbParameterGroupName(groupName)
+    .dbParameterGroupFamily("postgres15")
+    .description(description)
+    .build();
+rdsClient.createDBParameterGroup(request);
 ```
 
 ### Managing DB Snapshots
 
-Create, restore, and manage database snapshots.
-
-**Create DB Snapshot:**
 ```java
-public static String createDBSnapshot(RdsClient rdsClient,
-                                     String dbInstanceIdentifier,
-                                     String snapshotIdentifier) {
-    try {
-        CreateDbSnapshotRequest request = CreateDbSnapshotRequest.builder()
-            .dbInstanceIdentifier(dbInstanceIdentifier)
-            .dbSnapshotIdentifier(snapshotIdentifier)
-            .build();
-
-        CreateDbSnapshotResponse response = rdsClient.createDBSnapshot(request);
-        System.out.println("Creating snapshot: " + response.dbSnapshot().dbSnapshotIdentifier());
-
-        return response.dbSnapshot().dbSnapshotArn();
-    } catch (RdsException e) {
-        System.err.println("Error creating snapshot: " + e.getMessage());
-        throw e;
-    }
-}
+CreateDbSnapshotRequest request = CreateDbSnapshotRequest.builder()
+    .dbInstanceIdentifier(dbInstanceIdentifier)
+    .dbSnapshotIdentifier(snapshotIdentifier)
+    .build();
+CreateDbSnapshotResponse response = rdsClient.createDBSnapshot(request);
 ```
 
 ## Integration Patterns
@@ -215,56 +151,36 @@ Refer to [references/lambda-integration.md](references/lambda-integration.md) fo
 
 ### Modifying DB Instances
 
-Update existing RDS instances.
-
 ```java
-public static void modifyDBInstance(RdsClient rdsClient,
-                                   String dbInstanceIdentifier,
-                                   String newInstanceClass) {
-    try {
-        ModifyDbInstanceRequest request = ModifyDbInstanceRequest.builder()
-            .dbInstanceIdentifier(dbInstanceIdentifier)
-            .dbInstanceClass(newInstanceClass)
-            .applyImmediately(false) // Apply during maintenance window
-            .build();
-
-        ModifyDbInstanceResponse response = rdsClient.modifyDBInstance(request);
-        System.out.println("Modified instance: " + response.dbInstance().dbInstanceIdentifier());
-        System.out.println("New class: " + response.dbInstance().dbInstanceClass());
-    } catch (RdsException e) {
-        System.err.println("Error modifying instance: " + e.getMessage());
-        throw e;
-    }
-}
+ModifyDbInstanceRequest request = ModifyDbInstanceRequest.builder()
+    .dbInstanceIdentifier(dbInstanceIdentifier)
+    .dbInstanceClass(newInstanceClass)
+    .applyImmediately(false)
+    .build();
+rdsClient.modifyDBInstance(request);
 ```
 
 ### Deleting DB Instances
 
-Delete RDS instances with optional final snapshot.
-
 ```java
-public static void deleteDBInstanceWithSnapshot(RdsClient rdsClient,
-                                               String dbInstanceIdentifier,
-                                               String finalSnapshotIdentifier) {
-    try {
-        DeleteDbInstanceRequest request = DeleteDbInstanceRequest.builder()
-            .dbInstanceIdentifier(dbInstanceIdentifier)
-            .skipFinalSnapshot(false)
-            .finalDBSnapshotIdentifier(finalSnapshotIdentifier)
-            .build();
+// VALIDATION CHECKPOINT: Verify instance exists and check status
+DBInstance instance = rdsClient.describeDBInstances(
+    DescribeDbInstancesRequest.builder().dbInstanceIdentifier(dbInstanceIdentifier).build()
+).dbInstances().get(0);
 
-        DeleteDbInstanceResponse response = rdsClient.deleteDBInstance(request);
-        System.out.println("Deleting instance: " + response.dbInstance().dbInstanceIdentifier());
-    } catch (RdsException e) {
-        System.err.println("Error deleting instance: " + e.getMessage());
-        throw e;
-    }
+if ("available".equals(instance.dbInstanceStatus())) {
+    DeleteDbInstanceRequest request = DeleteDbInstanceRequest.builder()
+        .dbInstanceIdentifier(dbInstanceIdentifier)
+        .skipFinalSnapshot(false)
+        .finalDBSnapshotIdentifier(snapshotId)
+        .build();
+    rdsClient.deleteDBInstance(request);
 }
 ```
 
 ## Examples
 
-### Example 1: Complete RDS Instance Creation with All Security Settings
+### Complete RDS Instance Creation with Validation
 
 ```java
 public String createSecurePostgreSQLInstance(RdsClient rdsClient,
@@ -273,6 +189,7 @@ public String createSecurePostgreSQLInstance(RdsClient rdsClient,
                                             String masterUsername,
                                             String masterPassword,
                                             String vpcSecurityGroupId) {
+    // Create instance with security settings
     CreateDbInstanceRequest request = CreateDbInstanceRequest.builder()
         .dbInstanceIdentifier(instanceIdentifier)
         .dbName(dbName)
@@ -283,193 +200,54 @@ public String createSecurePostgreSQLInstance(RdsClient rdsClient,
         .dbInstanceClass("db.t3.micro")
         .allocatedStorage(20)
         .storageEncrypted(true)
-        .storageType(StorageType.GP2)
         .vpcSecurityGroupIds(vpcSecurityGroupId)
         .publiclyAccessible(false)
         .multiAZ(true)
         .backupRetentionPeriod(7)
-        .preferredBackupWindow("03:00-04:00")
-        .preferredMaintenanceWindow("sun:04:00-sun:05:00")
         .deletionProtection(true)
-        .enableCloudwatchLogsExports("postgresql", "upgrade")
         .build();
 
-    CreateDbInstanceResponse response = rdsClient.createDBInstance(request);
-    return response.dbInstance().dbInstanceArn();
-}
-```
+    rdsClient.createDBInstance(request);
 
-### Example 2: Spring Boot Service for RDS Management
-
-```java
-@Service
-@RequiredArgsConstructor
-public class RdsManagementService {
-
-    private final RdsClient rdsClient;
-
-    public List<DBInstance> listAllInstances() {
-        DescribeDbInstancesResponse response = rdsClient.describeDBInstances();
-        return response.dbInstances();
-    }
-
-    public DBInstance getInstanceById(String instanceId) {
-        DescribeDbInstancesResponse response = rdsClient.describeDBInstances(
-            DescribeDbInstancesRequest.builder()
-                .dbInstanceIdentifier(instanceId)
-                .build()
-        );
-        return response.dbInstances().get(0);
-    }
-
-    public String createSnapshot(String instanceId, String snapshotId) {
-        CreateDbSnapshotResponse response = rdsClient.createDBSnapshot(
-            CreateDbSnapshotRequest.builder()
-                .dbInstanceIdentifier(instanceId)
-                .dbSnapshotIdentifier(snapshotId)
-                .build()
-        );
-        return response.dbSnapshot().dbSnapshotArn();
-    }
-}
-```
-
-### Example 3: Wait for Instance to Be Available
-
-```java
-public void waitForInstanceAvailable(RdsClient rdsClient, String instanceId) {
-    DescribeDbInstancesRequest request = DescribeDbInstancesRequest.builder()
-        .dbInstanceIdentifier(instanceId)
-        .build();
-
-    waiter = rdsClient.waiter();
-    waiter.waitUntilDBInstanceAvailable(request);
-
-    System.out.println("Instance " + instanceId + " is now available!");
+    // VALIDATION: Wait for instance availability
+    rdsClient.waiter().waitUntilDBInstanceAvailable(
+        DescribeDbInstancesRequest.builder().dbInstanceIdentifier(instanceIdentifier).build()
+    );
+    System.out.println("Instance " + instanceIdentifier + " is available!");
+    return instanceIdentifier;
 }
 ```
 
 ## Best Practices
 
-### Security
+**Security**: Enable encryption (`storageEncrypted=true`), use VPC security groups, disable public access.
 
-**Always use encryption:**
+**High Availability**: Enable Multi-AZ for production workloads.
+
+**Backups**: Configure automated backups with 7+ day retention.
+
+**Deletion Protection**: Enable `deletionProtection(true)` for production databases.
+
+**Resource Management**: Always close clients with try-with-resources:
 ```java
-CreateDbInstanceRequest request = CreateDbInstanceRequest.builder()
-    .storageEncrypted(true)
-    .kmsKeyId("arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012")
-    .build();
-```
-
-**Use VPC security groups:**
-```java
-CreateDbInstanceRequest request = CreateDbInstanceRequest.builder()
-    .vpcSecurityGroupIds("sg-12345678")
-    .publiclyAccessible(false)
-    .build();
-```
-
-### High Availability
-
-**Enable Multi-AZ for production:**
-```java
-CreateDbInstanceRequest request = CreateDbInstanceRequest.builder()
-    .multiAZ(true)
-    .build();
-```
-
-### Backups
-
-**Configure automated backups:**
-```java
-CreateDbInstanceRequest request = CreateDbInstanceRequest.builder()
-    .backupRetentionPeriod(7)
-    .preferredBackupWindow("03:00-04:00")
-    .build();
-```
-
-### Monitoring
-
-**Enable CloudWatch logs:**
-```java
-CreateDbInstanceRequest request = CreateDbInstanceRequest.builder()
-    .enableCloudwatchLogsExports("postgresql", "upgrade")
-    .build();
-```
-
-### Cost Optimization
-
-**Use appropriate instance class:**
-```java
-// Development
-.dbInstanceClass("db.t3.micro")
-
-// Production
-.dbInstanceClass("db.r5.large")
-```
-
-### Deletion Protection
-
-**Enable for production databases:**
-```java
-CreateDbInstanceRequest request = CreateDbInstanceRequest.builder()
-    .deletionProtection(true)
-    .build();
-```
-
-### Resource Management
-
-**Always close clients:**
-```java
-try (RdsClient rdsClient = RdsClient.builder()
-    .region(Region.US_EAST_1)
-    .build()) {
+try (RdsClient rdsClient = RdsClient.builder().region(Region.US_EAST_1).build()) {
     // Use client
-} // Automatically closed
+}
 ```
 
 ## Dependencies
 
-### Maven Dependencies
-
 ```xml
-<dependencies>
-    <!-- AWS SDK for RDS -->
-    <dependency>
-        <groupId>software.amazon.awssdk</groupId>
-        <artifactId>rds</artifactId>
-        <version>2.20.0</version> // Use the latest version available
-    </dependency>
-
-    <!-- PostgreSQL Driver -->
-    <dependency>
-        <groupId>org.postgresql</groupId>
-        <artifactId>postgresql</artifactId>
-        <version>42.6.0</version> // Use the correct version available
-    </dependency>
-
-    <!-- MySQL Driver -->
-    <dependency>
-        <groupId>mysql</groupId>
-        <artifactId>mysql-connector-java</artifactId>
-        <version>8.0.33</version>
-    </dependency>
-</dependencies>
-```
-
-### Gradle Dependencies
-
-```gradle
-dependencies {
-    // AWS SDK for RDS
-    implementation 'software.amazon.awssdk:rds:2.20.0'
-
-    // PostgreSQL Driver
-    implementation 'org.postgresql:postgresql:42.6.0'
-
-    // MySQL Driver
-    implementation 'mysql:mysql-connector-java:8.0.33'
-}
+<dependency>
+    <groupId>software.amazon.awssdk</groupId>
+    <artifactId>rds</artifactId>
+    <version>2.20.0</version>
+</dependency>
+<dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>42.6.0</version>
+</dependency>
 ```
 
 ## Reference Documentation
@@ -483,30 +261,10 @@ For detailed API reference, see:
 
 See [API Reference](references/api-reference.md#error-handling) for comprehensive error handling patterns including common exceptions, error response structure, and pagination support.
 
-## Performance Considerations
-
-- Use connection pooling for multiple database operations
-- Implement retry logic for transient failures
-- Monitor CloudWatch metrics for performance optimization
-- Use appropriate instance types for workload requirements
-- Enable Performance Insights for database optimization
-
-## Support
-
-For support with AWS RDS operations using AWS SDK for Java 2.x:
-- AWS Documentation: [Amazon RDS User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)
-- AWS SDK Documentation: [AWS SDK for Java 2.x](https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/home.html)
-- AWS Support: [AWS Support Center](https://aws.amazon.com/premiumsupport/)
-
 ## Constraints and Warnings
 
-- **Instance Limits**: AWS accounts have limits on number of DB instances per region
-- **Storage Limits**: Maximum storage varies by engine and instance class
-- **Connection Limits**: Each instance type has maximum connection limits
-- **Backup Storage**: Automated backup storage incurs additional costs
-- **Multi-AZ Costs**: Multi-AZ deployments approximately double compute costs
-- **Maintenance Windows**: Instances may be unavailable during maintenance
-- **Snapshot Costs**: Manual snapshots are billed based on storage used
-- **Engine Version**: Older engine versions may not support all features
-- **Port Requirements**: Security groups must allow database port access
-- **IAM Authentication**: Not all database engines support IAM authentication
+- **Instance Limits**: Account limits on DB instances per region
+- **Multi-AZ Costs**: Approximately doubles compute costs
+- **Snapshot Costs**: Manual snapshots billed per storage used
+- **Deletion Protection**: Cannot delete instances with protection enabled
+- **Maintenance Windows**: Instances may be unavailable during updates

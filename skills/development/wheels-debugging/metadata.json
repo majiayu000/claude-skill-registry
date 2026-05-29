@@ -1,11 +1,11 @@
 {
   "name": "wheels-debugging",
   "repo": "wheels-dev/wheels",
+  "path": "examples/tweet/.claude/skills/wheels-debugging/SKILL.md",
+  "source": "github.com/wheels-dev/wheels",
+  "downloaded_at": "2026-01-22T02:34:45.422935Z",
+  "dir_name": "wheels-debugging",
   "category": "development",
-  "description": "Troubleshoot common Wheels errors and provide debugging guidance. Use when encountering errors, exceptions, or unexpected behavior. Provides error analysis, common solutions, and debugging strategies ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:28.380578Z",
   "github_path": ".claude/skills/wheels-debugging",
-  "github_branch": "main",
-  "dir_name": "wheels-debugging"
+  "github_branch": "main"
 }

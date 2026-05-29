@@ -1,9 +1,15 @@
 ---
 name: ln-222-story-replanner
-description: Replans Stories when Epic requirements change. Compares IDEAL vs existing, categorizes operations (KEEP/UPDATE/OBSOLETE/CREATE), executes in Linear.
+description: "Replans Stories by comparing IDEAL vs existing (KEEP/UPDATE/OBSOLETE/CREATE). Use when Epic requirements changed and Stories need realignment."
+license: MIT
 ---
 
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
+
 # Story Replanner
+
+## Purpose
+Replans existing Stories when Epic requirements change. Compares IDEAL plan vs existing Stories, categorizes operations (KEEP/UPDATE/OBSOLETE/CREATE), and executes changes in Linear. Invoked by ln-220-story-coordinator.
 
 Universal replanner worker for updating Stories in Epic when requirements change. Invoked by ln-220-story-coordinator (count ≥ 1).
 
@@ -12,7 +18,7 @@ Universal replanner worker for updating Stories in Epic when requirements change
 **ln-220-story-coordinator REPLAN MODE (Phase 5b):**
 - Epic has existing Stories (Linear query count ≥ 1)
 - IDEAL plan generated (Phase 3)
-- Standards Research completed by ln-001 (Phase 2, may be updated)
+- Standards Research completed by ln-220 inline (Phase 2, may be updated)
 - Epic requirements changed (AC modified, features added/removed, standards updated)
 - Parameters: `epicData`, `idealPlan`, `standardsResearch`, `existingStoryIds`, `teamId`, `autoApprove`
 
@@ -31,30 +37,58 @@ Universal replanner worker for updating Stories in Epic when requirements change
 }
 ```
 
+## Inputs
+
+| Input | Required | Source | Description |
+|-------|----------|--------|-------------|
+| `epicId` | Yes | args, kanban, user | Epic to process |
+
+**Resolution:** Epic Resolution Chain.
+**Status filter:** Active (planned/started)
+
+## Tools Config
+
+**MANDATORY READ:** Load `shared/references/tools_config_guide.md`, `shared/references/storage_mode_detection.md`, `shared/references/input_resolution_pattern.md`
+
+Extract: `task_provider` = Task Management → Provider
+
 ## Workflow
 
 ### Phase 1: Load Existing Stories
+
+**Step 0: Resolve epicId** (standalone only — skip if epicData provided by ln-220 orchestrator):
+Run Epic Resolution Chain per guide.
 
 **Progressive Loading for token efficiency:**
 
 **Step 1:** Orchestrator provides Story metadata (ID, title, status)
 
 **Step 2:** Load FULL descriptions ONE BY ONE
+
+**IF task_provider == "linear":**
 ```javascript
 for each story_id:
   get_issue(id=story_id)  // ~5,000 tokens per Story
 ```
 
+**ELSE (file mode):**
+```javascript
+for each story_id:
+  Read("docs/tasks/epics/epic-{N}-*/stories/us{NNN}-*/story.md")  // ~5,000 tokens per Story
+```
+
 **Token Rationale:** 10 Stories × 5,000 = 50,000 tokens. Load sequentially to manage context.
 
-**Step 3:** Parse 8 sections for each Story
+**Step 3:** Parse 9 sections for each Story
 - Story Statement (persona, capability, value)
 - Context
 - Acceptance Criteria (3-5 GWT)
+- Implementation Tasks
 - Test Strategy
 - Technical Notes (**Standards Research** in Library Research subsection)
 - Definition of Done
 - Dependencies
+- Assumptions
 
 **Step 4:** Extract metadata
 - ID, number, title, status
@@ -66,7 +100,7 @@ for each story_id:
 
 ### Phase 2: Compare IDEAL vs Existing
 
-**Algorithm:** See [replan_algorithm_stories.md](references/replan_algorithm_stories.md)
+**MANDATORY READ:** Load [replan_algorithm_stories.md](references/replan_algorithm_stories.md) for replan algorithm.
 
 **Match by goal, persona, capability:**
 
@@ -155,17 +189,22 @@ Type "confirm" to execute.
 **UPDATE operations:**
 1. Generate new Story document (load via Template Loading logic)
 2. Validate INVEST (same as ln-221-story-creator Phase 2)
-3. `update_issue(id, description=new_description)`
-4. Add comment: "Story updated: AC changed (AC5 added), Standards Research updated (RFC 7636)"
+3. **IF task_provider == "linear":** `save_issue({id, description: new_description})`
+   **ELSE:** `Edit("docs/tasks/epics/.../stories/us{NNN}-*/story.md")` with new content
+4. **IF task_provider == "linear":** `create_comment({issueId, body: "Story updated: ..."})`
+   **ELSE:** `Write(".../stories/us{NNN}-*/comments/{ISO-timestamp}.md")` with update note
 
 **OBSOLETE operations:**
-1. `update_issue(id, state="Canceled")`
-2. Add comment: "Story canceled: Feature removed from Epic Scope In. Reason: [details]"
+1. **IF task_provider == "linear":** `save_issue({id, state: "Canceled"})`
+   **ELSE:** `Edit` `**Status:**` line to `**Status:** Canceled` in story.md
+2. **IF task_provider == "linear":** `create_comment({issueId, body: "Story canceled: ..."})`
+   **ELSE:** `Write(".../comments/{ISO-timestamp}.md")` with cancellation note
 
 **CREATE operations:**
 1. Generate Story document (same as ln-221-story-creator Phase 1)
 2. Validate INVEST
-3. `create_issue({title, description, project=Epic, team, labels=["user-story"], state="Backlog"})`
+3. **IF task_provider == "linear":** `save_issue({title, description, project: Epic.id, team: teamId, labels: ["user-story"], state: "Backlog"})`
+   **ELSE:** `mkdir -p .../stories/us{NNN}-{slug}/tasks/` + `Write story.md` with file headers
 
 **Update kanban_board.md:**
 
@@ -196,7 +235,7 @@ WARNINGS: US005 (Todo) AC changed
 
 NEXT STEPS:
 1. Review warnings
-2. Run ln-310-story-validator on updated/created Stories
+2. Run ln-310-multi-agent-validator on updated/created Stories
 3. Use ln-300-task-coordinator to create/replan tasks
 ```
 
@@ -215,9 +254,9 @@ NEXT STEPS:
 ## Definition of Done
 
 **✅ Phase 1:**
-- [ ] Existing Story IDs queried
+- [ ] Existing Story IDs queried (Linear or file mode)
 - [ ] FULL descriptions fetched ONE BY ONE
-- [ ] 8 sections parsed
+- [ ] 9 sections parsed
 - [ ] Metadata extracted (persona, capability, AC, Standards Research)
 
 **✅ Phase 2:**
@@ -240,24 +279,18 @@ NEXT STEPS:
 
 ## Template Loading
 
+**MANDATORY READ:** Load `shared/references/template_loading_pattern.md` for template copy workflow.
+
 **Template:** `story_template.md`
-
-**Loading Logic:**
-1. Check if `docs/templates/story_template.md` exists in target project
-2. IF NOT EXISTS:
-   a. Create `docs/templates/` directory if missing
-   b. Copy `shared/templates/story_template.md` → `docs/templates/story_template.md`
-   c. Replace placeholders in the LOCAL copy:
-      - `{{TEAM_ID}}` → from `docs/tasks/kanban_board.md`
-      - `{{DOCS_PATH}}` → "docs" (standard)
-3. Use LOCAL copy (`docs/templates/story_template.md`) for all operations
-
-**Rationale:** Templates are copied to target project on first use, ensuring:
-- Project independence (no dependency on skills repository)
-- Customization possible (project can modify local templates)
-- Placeholder replacement happens once at copy time
+**Local copy:** `docs/templates/story_template.md` (in target project)
 
 ## Reference Files
+
+- **MANDATORY READ:** `shared/references/tools_config_guide.md`
+- **MANDATORY READ:** `shared/references/storage_mode_detection.md`
+- **Template loading:** `shared/references/template_loading_pattern.md`
+- **Linear creation workflow:** `shared/references/linear_creation_workflow.md`
+- **Replan algorithm:** `shared/references/replan_algorithm.md`
 
 ### replan_algorithm_stories.md
 
@@ -270,7 +303,7 @@ NEXT STEPS:
 
 **Location:** `shared/templates/story_template.md` (centralized)
 **Local Copy:** `docs/templates/story_template.md` (in target project)
-**Purpose:** Universal Story template (8 sections)
+**Purpose:** Universal Story template (9 sections)
 **Usage:** Load via Template Loading logic when generating updated Story documents for UPDATE/CREATE operations
 
 ## Integration

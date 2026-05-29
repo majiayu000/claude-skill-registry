@@ -1,5 +1,6 @@
 ---
-name: defect-detection-ai
+slug: "defect-detection-ai"
+display_name: "Defect Detection AI"
 description: "AI-powered construction defect detection using computer vision. Identify cracks, spalling, corrosion, and other defects in concrete, steel, and building components from images and video."
 ---
 

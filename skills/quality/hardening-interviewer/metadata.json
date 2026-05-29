@@ -1,0 +1,16 @@
+{
+  "name": "hardening-interviewer",
+  "repo": "vjrivmon/Setup-Software-IA",
+  "path": ".claude/skills/hardening-interviewer/SKILL.md",
+  "source": "github.com/vjrivmon/Setup-Software-IA",
+  "downloaded_at": "2026-02-01T01:50:16.312109Z",
+  "dir_name": "hardening-interviewer",
+  "category": "quality",
+  "author": "vjrivmon",
+  "source_url": "https://github.com/vjrivmon/Setup-Software-IA/blob/main/.claude/skills/hardening-interviewer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Vicente Rivas Monferrer",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

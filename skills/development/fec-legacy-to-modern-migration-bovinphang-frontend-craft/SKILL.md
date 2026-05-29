@@ -123,7 +123,7 @@ description: Use when planning or implementing an intentional migration from Jav
 
 - 新栈代码（React / Vue 等）中的用户可见文案须走项目 i18n，不在新代码里硬编码中/英文案
 - 遗留 HTML/JS 中**不要新增**用户可见硬编码文案，除非纯静态且仓库尚无可用 i18n 接入点；改动文案前先查 locales 是否已有条目，并同步主要语言文件
-- key 按页面/模块/语义组织，复用既有 key；仅当旧 key 为对外契约时才做映射过渡，详见项目规则中的 **国际化 (i18n)**（`templates/rules/i18n.md` 内「遗留代码与迁移场景」）
+- key 按页面/模块/语义组织，复用既有 key；仅当旧 key 为对外契约时才做映射过渡，详见项目规则中的 **国际化 (i18n)**（`templates/shared/rules/fec-i18n.md` 内「遗留代码与迁移场景」）
 
 ### 样式
 

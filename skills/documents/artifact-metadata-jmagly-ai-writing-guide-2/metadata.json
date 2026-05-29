@@ -1,0 +1,18 @@
+{
+  "name": "artifact-metadata",
+  "description": "Manage artifact metadata, versioning, ownership, and history tracking. Use when relevant to the task.",
+  "repo": "jmagly/ai-writing-guide",
+  "path": "plugins/utils/skills/artifact-metadata",
+  "category": "documents",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jmagly/ai-writing-guide",
+  "dir_name": "artifact-metadata-jmagly-ai-writing-guide-2",
+  "author": "jmagly",
+  "source_url": "https://github.com/jmagly/ai-writing-guide/blob/main/plugins/utils/skills/artifact-metadata/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Joe Magly",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

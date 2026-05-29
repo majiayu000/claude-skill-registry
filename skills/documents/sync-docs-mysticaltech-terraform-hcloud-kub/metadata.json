@@ -1,0 +1,13 @@
+{
+  "name": "sync-docs",
+  "description": "",
+  "repo": "mysticaltech/terraform-hcloud-kube-hetzner",
+  "category": "documents",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mysticaltech/terraform-hcloud-kube-hetzner",
+  "github_path": ".claude/skills/sync-docs",
+  "github_branch": "master",
+  "dir_name": "sync-docs-mysticaltech-terraform-hcloud-kub",
+  "downloaded_at": "2026-02-05T01:44:47.059394Z"
+}

@@ -1,6 +1,6 @@
 ---
 name: ctf-reverse
-description: Reverse engineering techniques for CTF challenges. Use when analyzing binaries, game clients, obfuscated code, esoteric languages, custom VMs, anti-debugging, WASM, .NET, APK, Python bytecode, Ghidra, GDB, radare2, or extracting flags from compiled executables.
+description: Provides reverse engineering techniques for CTF challenges. Use when the main job is to understand how a compiled, obfuscated, packed, or virtualized target works before exploiting or solving it, including binaries, APKs, WASM, firmware, custom VMs, bytecode, game clients, malware-like loaders, and anti-debug or anti-analysis logic. Do not use it when the vulnerability is already understood and the remaining task is exploitation; use pwn instead. Do not use it for pure web workflows, log or disk forensics, or standalone crypto problems unless reversing the implementation is the real blocker.
 license: MIT
 compatibility: Requires filesystem-based agent (Claude Code or similar) with bash, Python 3, and internet access for tool installation.
 allowed-tools: Bash Read Write Edit Glob Grep Task WebFetch WebSearch
@@ -12,21 +12,76 @@ metadata:
 
 Quick reference for RE challenges. For detailed techniques, see supporting files.
 
+## Prerequisites
+
+**Python packages (all platforms):**
+```bash
+pip install frida-tools angr qiling uncompyle6 capstone lief z3-solver
+# For Python 3.9+ bytecode: build pycdc from source
+git clone https://github.com/zrax/pycdc && cd pycdc && cmake . && make
+```
+
+**Linux (apt):**
+```bash
+apt install gdb radare2 binutils strace ltrace apktool upx
+```
+
+**macOS (Homebrew):**
+```bash
+brew install gdb radare2 binutils apktool upx ghidra
+```
+
+**radare2 plugins:**
+```bash
+r2pm -ci r2ghidra   # Native Ghidra decompiler for radare2
+```
+
+**Manual install:**
+- pwndbg — Linux: [GitHub](https://github.com/pwndbg/pwndbg), macOS: `brew install pwndbg/tap/pwndbg-gdb`
+
 ## Additional Resources
 
-- [tools.md](tools.md) - Tool-specific commands (GDB, Ghidra, radare2, IDA)
-- [patterns.md](patterns.md) - Core binary patterns: custom VMs, anti-debugging, nanomites, self-modifying code, XOR ciphers, mixed-mode stagers, LLVM obfuscation, S-box/keystream, SECCOMP/BPF, exception handlers, memory dumps, byte-wise transforms, x86-64 gotchas, hidden emulator opcodes, LD_PRELOAD key extraction, SPN static extraction, image XOR smoothness, byte-at-a-time cipher
-- [languages.md](languages.md) - Language/platform-specific: Python bytecode & opcode remapping, Python version-specific bytecode, DOS stubs, Unity IL2CPP, Brainfuck/esolangs, UEFI, transpilation to C, code coverage side-channel, OPAL functional reversing, non-bijective substitution
+- [tools.md](tools.md) - Static analysis tools (GDB, Ghidra, radare2, IDA, Binary Ninja, dogbolt.org, RISC-V with Capstone, Unicorn emulation, Python bytecode, WASM, Android APK, .NET, packed binaries)
+- [tools-dynamic.md](tools-dynamic.md) - Dynamic analysis tools: Frida (hooking, anti-debug bypass, memory scanning, Android/iOS), angr symbolic execution (path exploration, constraints, CFG), lldb (macOS/LLVM debugger), x64dbg (Windows)
+- [tools-emulation.md](tools-emulation.md) - Emulation frameworks and side-channel tooling: Qiling (cross-platform OS-level emulation), Triton (DSE), Intel Pin instruction-counting + genetic algorithm side channel, opcode-only trace reconstruction, LD_PRELOAD time freeze and memcmp side-channel for byte-by-byte bruteforce
+- [tools-advanced.md](tools-advanced.md) - Advanced tools (Part 1): VMProtect/Themida analysis, binary diffing (BinDiff, Diaphora), deobfuscation frameworks (D-810, GOOMBA, Miasm), Qiling framework, Triton DSE, Manticore, Rizin/Cutter, RetDec, custom VM bytecode lifting to LLVM IR
+- [tools-advanced-2.md](tools-advanced-2.md) - Advanced tools (Part 2): advanced GDB (Python scripting, brute-force, conditional breakpoints, watchpoints, reverse debugging with rr, pwndbg/GEF), advanced Ghidra scripting, patching (Binary Ninja API, LIEF), GDB constraint extraction + ILP solver (BackdoorCTF 2017), GDB position-encoded input zero flag monitoring (EKOPARTY 2017), LD_PRELOAD execute-only binary dump (BackdoorCTF 2017), PEDA current_inst bit-by-bit flag scraper (CONFidence CTF 2019 Teaser)
+- [anti-analysis.md](anti-analysis.md) - Anti-analysis taxonomy: Linux anti-debug (ptrace, /proc, timing, signals, direct syscalls), Windows anti-debug (PEB, NtQueryInformationProcess, heap flags, TLS callbacks, HW/SW breakpoint detection, exception-based, thread hiding), anti-VM/sandbox (CPUID, MAC, timing, artifacts, resources), anti-DBI (Frida detection/bypass), code integrity/self-hashing, anti-disassembly (opaque predicates, junk bytes), MBA identification/simplification, comprehensive bypass strategies
+- [anti-analysis-ctf.md](anti-analysis-ctf.md) - CTF writeup techniques: SIGILL handler for execution mode switching (Hack.lu 2015), SIGFPE signal handler side-channel via strace counting (PlaidCTF 2017), instruction trace inversion with Keystone and Unicorn (MeePwn 2017), call-less function chaining via stack frame manipulation (THC 2018), parent-patched child binary dump via `process_vm_writev` (Google CTF Quals 2018)
+- [patterns.md](patterns.md) - Foundational binary patterns: custom VMs, anti-debugging, nanomites, self-modifying code, XOR ciphers, mixed-mode stagers, LLVM obfuscation, S-box/keystream, SECCOMP/BPF, exception handlers, memory dumps, byte-wise transforms, x86-64 gotchas, custom mangle reversing, position-based transforms, hex-encoded string comparison, signal-based binary exploration
+- [patterns-runtime.md](patterns-runtime.md) - Runtime patching and oracle techniques: malware anti-analysis bypass, multi-stage shellcode loaders, timing side-channel attacks, multi-thread anti-debug with decoy + signal handler MBA (ApoorvCTF 2026), INT3 patch + coredump brute-force oracle (Pwn2Win 2016), signal handler chain + LD_PRELOAD oracle (Nuit du Hack 2016), printf format string VM decompilation to Z3 (SECCON 2017), quadtree recursive image format parser (Google CTF Quals 2018)
+- [patterns-ctf.md](patterns-ctf.md) - Competition-specific patterns (Part 1): hidden emulator opcodes, LD_PRELOAD key extraction, SPN static extraction, image XOR smoothness, byte-at-a-time cipher, mathematical convergence bitmap, Windows PE XOR bitmap OCR, two-stage RC4+VM loaders, GBA ROM meet-in-the-middle, Sprague-Grundy game theory, kernel module maze solving, multi-threaded VM channels, backdoored shared library detection via string diffing, custom binfmt kernel module with RC4 flat binaries, hash-resolved imports / no-import ransomware, ELF section header corruption for anti-analysis
+- [patterns-ctf-2.md](patterns-ctf-2.md) - Competition-specific patterns (Part 2): multi-layer self-decrypting brute-force, embedded ZIP+XOR license, stack string deobfuscation, prefix hash brute-force, CVP/LLL lattice for integer validation, decision tree function obfuscation, GF(2^8) Gaussian elimination, ROP chain obfuscation analysis (ROPfuscation)
+- [patterns-ctf-3.md](patterns-ctf-3.md) - Competition-specific patterns (Part 3): Z3 single-line Python circuit, sliding window popcount, keyboard LED Morse code via ioctl, C++ destructor-hidden validation, syscall side-effect memory corruption, MFC dialog event handlers, VM sequential key-chain brute-force, Burrows-Wheeler transform inversion, OpenType font ligature exploitation, GLSL shader VM with self-modifying code, instruction counter as cryptographic state, batch crackme automation via objdump, fork+pipe+dead branch anti-analysis, TensorFlow DNN inversion via sigmoid layer inversion, BPF filter analysis via kernel JIT to x64 assembly
+- [languages.md](languages.md) - Language-specific: Python bytecode & opcode remapping, Python version-specific bytecode, Pyarmor static unpack, DOS stubs, Unity IL2CPP, HarmonyOS HAP/ABC, Brainfuck/esolangs (+ BF character-by-character static analysis, BF side-channel read count oracle, BF comparison idiom detection), UEFI, transpilation to C, code coverage side-channel, OPAL functional reversing, non-bijective substitution, FRACTRAN program inversion
+- [languages-platforms.md](languages-platforms.md) - Platform/framework-specific: Roblox place file analysis, Godot game asset extraction, Rust serde_json schema recovery, Android JNI RegisterNatives obfuscation, Android DEX runtime bytecode patching via /proc/self/maps, Android native .so loading bypass via new project, Frida Firebase Cloud Functions bypass, Verilog/hardware RE, prefix-by-prefix hash reversal, Ruby/Perl polyglot constraint satisfaction, Electron ASAR extraction + native binary analysis, Node.js npm runtime introspection
+- [languages-compiled.md](languages-compiled.md) - Go binary reversing (GoReSym, goroutines, memory layout, channel ops, embed.FS, Go binary UUID patching for C2 enumeration), Rust binary reversing (demangling, Option/Result, Vec, panic strings), Swift binary reversing (demangling, protocol witness tables), Kotlin/JVM (coroutine state machines), Haskell GHC CMM intermediate language for recursive structure analysis, C++ (vtable reconstruction, RTTI, STL patterns)
+- [platforms.md](platforms.md) - Platform-specific RE: macOS/iOS (Mach-O, code signing, Objective-C runtime, Swift, dyld, jailbreak bypass), embedded/IoT firmware (binwalk, UART/JTAG/SPI extraction, ARM/MIPS, RTOS), kernel drivers (Linux .ko, eBPF, Windows .sys), game engines (Unreal Engine, Unity, anti-cheat, Lua), automotive CAN bus
+- [platforms-hardware.md](platforms-hardware.md) - Hardware and advanced architecture RE: HD44780 LCD controller GPIO reconstruction, RISC-V advanced (custom extensions, privileged modes, debugging), ARM64/AArch64 reversing and exploitation (calling convention, ROP gadgets, qemu-aarch64-static emulation)
+- [field-notes.md](field-notes.md) - Quick reference notes: binary types, anti-debugging bypass, specialized patterns, CTF case notes
 
 ---
+
+## When to Pivot
+
+- If you already understand the binary and now need heap, ROP, or kernel exploitation, switch to `/ctf-pwn`.
+- If the challenge is really about recovering deleted files, PCAP data, or disk artifacts, switch to `/ctf-forensics`.
+- If the target is a web app and you are only reversing a small client-side helper script, switch to `/ctf-web`.
+- If the binary implements a machine learning model and the challenge is about model attacks or adversarial inputs, switch to `/ctf-ai-ml`.
+- If the reversed binary's core logic is a cryptographic algorithm or math problem, switch to `/ctf-crypto`.
+- If the binary is a real malware sample with C2, packing, or evasion behavior, switch to `/ctf-malware`.
+- If the challenge is a toy VM, encoding puzzle, or pyjail rather than a real binary, switch to `/ctf-misc`.
 
 ## Problem-Solving Workflow
 
 1. **Start with strings extraction** - many easy challenges have plaintext flags
 2. **Try ltrace/strace** - dynamic analysis often reveals flags without reversing
-3. **Map control flow** before modifying execution
-4. **Automate manual processes** via scripting (r2pipe, Python)
-5. **Validate assumptions** by comparing decompiler outputs
+3. **Try Frida hooking** - hook strcmp/memcmp to capture expected values without reversing
+4. **Try angr** - symbolic execution solves many flag-checkers automatically
+5. **Try Qiling** - emulate foreign-arch binaries or bypass heavy anti-debug without artifacts
+6. **Map control flow** before modifying execution
+7. **Automate manual processes** via scripting (r2pipe, Frida, angr, Python)
+8. **Validate assumptions** by comparing decompiler outputs (dogbolt.org for side-by-side)
 
 ## Quick Wins (Try First!)
 
@@ -58,28 +113,11 @@ chmod +x binary       # Make executable
 
 ## Memory Dumping Strategy
 
-**Key insight:** Let the program compute the answer, then dump it.
-
-```bash
-gdb ./binary
-start
-b *main+0x198           # Break at final comparison
-run
-# Enter any input of correct length
-x/s $rsi                # Dump computed flag
-x/38c $rsi              # As characters
-```
+**Key insight:** Let the program compute the answer, then dump it. Break at final comparison (`b *main+OFFSET`), enter any input of correct length, then `x/s $rsi` to dump computed flag.
 
 ## Decoy Flag Detection
 
-**Pattern:** Multiple fake targets before real check.
-
-**Identification:**
-1. Look for multiple comparison targets in sequence
-2. Check for different success messages
-3. Trace which comparison is checked LAST
-
-**Solution:** Set breakpoint at FINAL comparison, not earlier ones.
+**Pattern:** Multiple fake targets before real check. Look for multiple comparison targets in sequence with different success messages. Set breakpoint at FINAL comparison, not earlier ones.
 
 ## GDB PIE Debugging
 
@@ -93,11 +131,7 @@ run
 
 ## Comparison Direction (Critical!)
 
-**Two patterns:**
-1. `transform(flag) == stored_target` - Reverse the transform
-2. `transform(stored_target) == flag` - Flag IS the transformed data!
-
-**Pattern 2 solution:** Don't reverse - just apply transform to stored target.
+Two patterns: (1) `transform(flag) == stored_target` — reverse the transform. (2) `transform(stored_target) == flag` — flag IS the transformed data, just apply transform to stored target.
 
 ## Common Encryption Patterns
 
@@ -123,182 +157,11 @@ analyzeHeadless project/ tmp -import binary -postScript script.py
 ida64 binary       # Open in IDA64
 ```
 
-## Binary Types
+## Deep-Dive Notes
 
-### Python .pyc
-```python
-import marshal, dis
-with open('file.pyc', 'rb') as f:
-    # Header size varies by Python version:
-    # 8 bytes (2.x), 12 (3.0-3.6), 16 (3.7+)
-    f.read(16)  # 16 for Python 3.7+; adjust for older versions
-    code = marshal.load(f)
-    dis.dis(code)
-```
+Use [field-notes.md](field-notes.md) after the first round of triage when you know what kind of target you have.
 
-### WASM
-```bash
-wasm2c checker.wasm -o checker.c
-gcc -O3 checker.c wasm-rt-impl.c -o checker
-
-# WASM patching (game challenges):
-wasm2wat main.wasm -o main.wat    # Binary → text
-# Edit WAT: flip comparisons, change constants
-wat2wasm main.wat -o patched.wasm # Text → binary
-```
-
-**WASM game patching (Tac Tic Toe, Pragyan 2026):** If proof generation is independent of move quality, patch minimax (flip `i64.lt_s` → `i64.gt_s`, change bestScore sign) to make AI play badly while proofs remain valid. See [ctf-misc games-and-vms.md](../ctf-misc/games-and-vms.md) for full pattern.
-
-### Android APK
-```bash
-apktool d app.apk -o decoded/   # Best - decodes resources
-jadx app.apk                     # Decompile to Java
-grep -r "flag" decoded/res/values/strings.xml
-```
-
-### .NET
-- dnSpy - debugging + decompilation
-- ILSpy - decompiler
-
-### Packed (UPX)
-```bash
-upx -d packed -o unpacked
-```
-
-## Anti-Debugging Bypass
-
-Common checks:
-- `IsDebuggerPresent()` (Windows)
-- `ptrace(PTRACE_TRACEME)` (Linux)
-- `/proc/self/status` TracerPid
-- Timing checks
-
-Bypass: Set breakpoint at check, modify register to bypass conditional.
-
-## S-Box / Keystream Patterns
-
-**Xorshift32:** Shifts 13, 17, 5
-**Xorshift64:** Shifts 12, 25, 27
-**Magic constants:** `0x2545f4914f6cdd1d`, `0x9e3779b97f4a7c15`
-
-## Custom VM Analysis
-
-1. Identify structure: registers, memory, IP
-2. Reverse `executeIns` for opcode meanings
-3. Write disassembler mapping opcodes to mnemonics
-4. Often easier to bruteforce than fully reverse
-5. Look for the bytecode file loaded via command-line arg
-
-See [patterns.md](patterns.md#custom-vm-reversing) for VM workflow, opcode tables, and state machine BFS.
-
-## Python Bytecode Reversing
-
-XOR flag checkers with interleaved even/odd tables are common. See [languages.md](languages.md#python-bytecode-reversing-disdis-output) for bytecode analysis tips and reversing patterns.
-
-## Signal-Based Binary Exploration
-
-Binary uses UNIX signals as binary tree navigation; hook `sigaction` via `LD_PRELOAD`, DFS by sending signals. See [patterns.md](patterns.md#signal-based-binary-exploration).
-
-## Malware Anti-Analysis Bypass via Patching
-
-Flip `JNZ`/`JZ` (0x75/0x74), change sleep values, patch environment checks in Ghidra (`Ctrl+Shift+G`). See [patterns.md](patterns.md#malware-anti-analysis-bypass-via-patching).
-
-## Expected Values Tables
-
-**Locating:**
-```bash
-objdump -s -j .rodata binary | less
-# Look near comparison instructions
-# Size matches flag length
-```
-
-## x86-64 Gotchas
-
-Sign extension and 32-bit truncation pitfalls. See [patterns.md](patterns.md#x86-64-gotchas) for details and code examples.
-
-## Iterative Solver Pattern
-
-```python
-for pos in range(flag_length):
-    for c in range(256):
-        computed = compute_output(c, current_state)
-        if computed == EXPECTED[pos]:
-            flag.append(c)
-            update_state(c, computed)
-            break
-```
-
-**Uniform transform shortcut:** if changing one input byte only changes one output byte,
-build a 0..255 mapping by repeating a single byte across the whole input, then invert.
-
-## Unicorn Emulation (Complex State)
-
-```python
-from unicorn import *
-from unicorn.x86_const import *
-
-mu = Uc(UC_ARCH_X86, UC_MODE_64)
-# Map segments, set up stack
-# Hook to trace register changes
-mu.emu_start(start_addr, end_addr)
-```
-
-**Mixed-mode pitfall:** if a 64-bit stub jumps into 32-bit code via `retf/retfq`, you must
-switch to a UC_MODE_32 emulator and copy **GPRs, EFLAGS, and XMM regs**; missing XMM state
-will corrupt SSE-based transforms.
-
-## Multi-Stage Shellcode Loaders
-
-Nested shellcode with XOR decode loops; break at `call rax`, bypass ptrace with `set $rax=0`, extract flag from `mov` instructions. See [patterns.md](patterns.md#multi-stage-shellcode-loaders).
-
-## Timing Side-Channel Attack
-
-Validation time varies per correct character; measure elapsed time per candidate to recover flag byte-by-byte. See [patterns.md](patterns.md#timing-side-channel-attack).
-
-## Godot Game Asset Extraction
-
-Use KeyDot to extract encryption key from executable, then gdsdecomp to extract .pck package. See [languages.md](languages.md#godot-game-asset-extraction).
-
-## Roblox Place File Analysis
-
-Query Asset Delivery API for version history; parse `.rbxlbin` chunks (INST/PROP/PRNT) to diff script sources across versions. See [languages.md](languages.md#roblox-place-file-analysis).
-
-## Unstripped Binary Information Leaks
-
-**Pattern (Bad Opsec):** Debug info and file paths leak author identity.
-
-**Quick checks:**
-```bash
-strings binary | grep "/home/"    # Home directory paths
-strings binary | grep "/Users/"   # macOS paths
-file binary                       # Check if stripped
-readelf -S binary | grep debug    # Debug sections present?
-```
-
-## Custom Mangle Function Reversing
-
-Binary mangles input 2 bytes at a time with running state; extract target from `.rodata`, write inverse function. See [patterns.md](patterns.md#custom-mangle-function-reversing).
-
-## Rust serde_json Schema Recovery
-
-Disassemble serde `Visitor` implementations to recover expected JSON schema; field names in order reveal flag. See [languages.md](languages.md#rust-serde_json-schema-recovery).
-
-## Position-Based Transformation Reversing
-
-Binary adds/subtracts position index; reverse by undoing per-index offset. See [patterns.md](patterns.md#position-based-transformation-reversing).
-
-## Hex-Encoded String Comparison
-
-Input converted to hex, compared against constant. Decode with `xxd -r -p`. See [patterns.md](patterns.md#hex-encoded-string-comparison).
-
-## Embedded ZIP + XOR License Decryption
-
-Binary with named symbols (`EMBEDDED_ZIP`, `ENCRYPTED_MESSAGE`) in `.rodata` → extract ZIP containing license, XOR encrypted message with license bytes to recover flag. No execution needed. See [patterns.md](patterns.md#embedded-zip--xor-license-decryption-metactf-2026).
-
-## Stack String Deobfuscation (.rodata XOR Blob)
-
-Binary mmaps `.rodata` blob, XOR-deobfuscates, uses it to validate input. Reimplement verification loop with pyelftools to extract blob. Look for `0x9E3779B9`, `0x85EBCA6B` constants and `rol32()`. See [patterns.md](patterns.md#stack-string-deobfuscation-from-rodata-xor-blob-nullcon-2026).
-
-## Prefix Hash Brute-Force
-
-Binary hashes every prefix independently. Recover one character at a time by matching prefix hashes. See [patterns.md](patterns.md#prefix-hash-brute-force-nullcon-2026).
+- Target formats: Python bytecode, WASM, Android, Flutter, .NET, UPX, Tauri
+- Technique notes: anti-debug bypass, VM analysis, x86-64 gotchas, iterative solvers, Unicorn, timing side channels
+- Platform notes: Godot, Roblox, macOS/iOS, embedded firmware, kernel drivers, game engines, Swift, Kotlin, Go, Rust, D
+- Case notes: modern CTF-specific reversing patterns and older classic challenge patterns

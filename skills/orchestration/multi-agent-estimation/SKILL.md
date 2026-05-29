@@ -1,8 +1,9 @@
 ---
-name: multi-agent-estimation
+name: "multi-agent-estimation"
 description: "Build multi-agent AI systems for construction estimation. Use CrewAI/LangGraph to orchestrate specialized agents: QTO agent, pricing agent, validation agent. Automate complex estimation workflows."
+homepage: "https://datadrivenconstruction.io"
+metadata: {"openclaw": {"emoji": "🤖", "os": ["darwin", "linux", "win32"], "homepage": "https://datadrivenconstruction.io", "requires": {"bins": ["python3"], "anyBins": ["ifcopenshell"], "env": ["OPENAI_API_KEY", "QDRANT_URL"]}, "primaryEnv": "OPENAI_API_KEY"}}
 ---
-
 # Multi-Agent Estimation System
 
 ## Overview

@@ -1,6 +1,6 @@
 ---
 name: dig
-description: 'Refine research results by searching deeper into a subtopic.'
+description: Refines an active research session by drilling deeper into a subtopic. Use after tome:research to narrow results to a specific channel or angle.
 alwaysApply: false
 category: research
 tags:

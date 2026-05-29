@@ -1,0 +1,17 @@
+{
+  "name": "onboard",
+  "repo": "mxyhi/ok-skills",
+  "path": "impeccable/onboard/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/mxyhi/ok-skills",
+  "dir_name": "onboard-mxyhi-ok-skills",
+  "downloaded_at": "2026-04-11T01:37:17.637512Z",
+  "author": "mxyhi",
+  "source_url": "https://github.com/mxyhi/ok-skills/blob/main/impeccable/onboard/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mxyhi/ok-skills/blob/main/impeccable/onboard/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

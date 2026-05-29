@@ -16,6 +16,22 @@ triggers:
 metadata:
   short-description: Red vs Blue team security competition
   requires: docker
+provides:
+  - competitive-selection
+  - docker-isolation
+composes:
+  - hack
+  - anvil
+  - memory
+  - treesitter
+  - taxonomy
+  - task-monitor
+  - ops-docker
+
+taxonomy:
+  - competition
+  - selection
+  - resilience
 ---
 
 # Battle Skill
@@ -248,6 +264,45 @@ After battle completion, generates:
 - **Attack Evolution**: How Red team adapted over rounds
 - **Defense Timeline**: Blue team improvements over time
 - **Recommendations**: Prioritized security improvements
+
+## Memory + Taxonomy Integration
+
+The skill integrates with the shared memory and taxonomy systems via
+`memory_integration.py` for cross-battle learning:
+
+- **Pre-hook (`recall_prior_battles`)**: Before starting a battle, recalls prior
+  battle findings for the same target or technique. Enables teams to build on
+  accumulated security knowledge across battles.
+- **Post-hook (`learn_battle`)**: After battle completes, stores the full outcome
+  (target, red findings, blue defenses, winner, scores, TDSR) to memory with
+  taxonomy bridge tags.
+- **Bridge keywords**: Precision, Resilience, Fragility, Corruption, Loyalty, Stealth
+  (tuned to security/exploitation domain).
+- **Tags**: `["battle", "security"] + bridges`
+
+Gracefully degrades if `common.memory_client` or `taxonomy/taxonomy.py` are unavailable.
+
+## File Structure
+
+```
+battle/
+  SKILL.md                   # This file
+  run.sh                     # Shell entry point
+  battle.py                  # Typer CLI entry point
+  memory_integration.py      # Memory + Taxonomy hooks
+  orchestrator.py            # Game loop orchestrator
+  config.py                  # Constants and paths
+  state.py                   # Data classes and BattleState
+  memory.py                  # Team-isolated memory system
+  scoring.py                 # AIxCC-style scoring
+  digital_twin.py            # Git worktree, Docker, QEMU isolation
+  red_team.py                # Red Team attack agent
+  blue_team.py               # Blue Team defense agent
+  report.py                  # Report generation
+  qemu_support.py            # QEMU emulator support
+  qemu_peripherals.py        # QEMU peripheral emulation
+  pyproject.toml             # Dependencies
+```
 
 ## Leveraged Skills
 

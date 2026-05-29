@@ -1,0 +1,16 @@
+{
+  "name": "nexus-elements-overview",
+  "repo": "availproject/nexus-elements",
+  "path": "skills/nexus-elements-overview/SKILL.md",
+  "category": "integration",
+  "source": "github.com/availproject/nexus-elements",
+  "dir_name": "nexus-elements-overview-availproject-nexus-elements",
+  "downloaded_at": "2026-02-15T06:27:51.925252Z",
+  "author": "availproject",
+  "source_url": "https://github.com/availproject/nexus-elements/blob/main/skills/nexus-elements-overview/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/availproject/nexus-elements/blob/main/skills/nexus-elements-overview/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

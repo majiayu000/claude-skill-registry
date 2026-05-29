@@ -1,0 +1,16 @@
+{
+  "name": "ordercli",
+  "repo": "az9713/openclaw",
+  "path": "skills/ordercli/SKILL.md",
+  "category": "platform",
+  "source": "github.com/az9713/openclaw",
+  "dir_name": "ordercli-az9713-openclaw",
+  "downloaded_at": "2026-02-15T06:29:11.384949Z",
+  "author": "az9713",
+  "source_url": "https://github.com/az9713/openclaw/blob/main/skills/ordercli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/az9713/openclaw/blob/main/skills/ordercli/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

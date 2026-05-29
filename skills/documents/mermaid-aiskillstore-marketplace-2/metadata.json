@@ -1,0 +1,18 @@
+{
+  "name": "mermaid",
+  "description": "Guide for creating beautiful Mermaid diagrams with proper styling for GitHub markdown (dark/light mode compatible, no icons).",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/46ki75/mermaid-flowchart",
+  "category": "documents",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/aiskillstore/marketplace",
+  "dir_name": "mermaid-aiskillstore-marketplace-2",
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/46ki75/mermaid-flowchart/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/46ki75/mermaid-flowchart/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

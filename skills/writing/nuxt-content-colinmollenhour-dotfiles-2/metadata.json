@@ -1,0 +1,18 @@
+{
+  "name": "nuxt-content",
+  "description": "Author Markdown content files for Nuxt Content using MDC syntax. Use when creating or editing .md files in content/ directories, writing documentation, blog posts, or any content that uses Vue compone",
+  "repo": "colinmollenhour/dotfiles",
+  "path": ".claude/skills/nuxt-content",
+  "category": "writing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/colinmollenhour/dotfiles",
+  "dir_name": "nuxt-content-colinmollenhour-dotfiles-2",
+  "author": "colinmollenhour",
+  "source_url": "https://github.com/colinmollenhour/dotfiles/blob/main/.claude/skills/nuxt-content/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/colinmollenhour/dotfiles/blob/main/.claude/skills/nuxt-content/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

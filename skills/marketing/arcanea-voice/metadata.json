@@ -1,0 +1,18 @@
+{
+  "name": "arcanea-voice",
+  "repo": "frankxai/arcanea",
+  "path": "arcanea-skills-opensource/skills/arcanea/arcanea-voice/SKILL.md",
+  "source": "github.com/frankxai/arcanea",
+  "downloaded_at": "2026-01-22T04:16:14.133683Z",
+  "dir_name": "arcanea-voice",
+  "category": "marketing",
+  "github_path": ".claude/skills/arcanea/arcanea-voice",
+  "github_branch": "main",
+  "author": "frankxai",
+  "source_url": "https://github.com/frankxai/arcanea/blob/main/.claude/skills/arcanea/arcanea-voice/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2026 FrankX",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

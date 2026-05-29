@@ -3,7 +3,7 @@ name: agent-init
 description: Initialize or improve AGENTS.md files that define how coding agents operate in a repo. Use when asked to set up or replace an agent init command (Codex, Claude), standardize multi-agent behavior, or audit an existing AGENTS.md for clarity, commands, boundaries, and repo-specific context. For Claude Code, also create CLAUDE.md as a symlink to AGENTS.md.
 ---
 
-# Agents.md Guide
+# AGENTS.md Guide
 
 ## Overview
 
@@ -117,6 +117,7 @@ Include, at minimum:
 - Do not assume tool-specific directories; only update AGENTS.md unless the user asks otherwise.
 - When showing examples, label tool-specific details as optional (not required).
 - If Claude Code is in scope, add a CLAUDE.md symlink to AGENTS.md.
+- If GitHub Copilot coding agent is in scope, consider adding `.github/copilot-instructions.md` and keep it minimal (ideally pointing to AGENTS.md as the source of truth).
 
 ## References
 

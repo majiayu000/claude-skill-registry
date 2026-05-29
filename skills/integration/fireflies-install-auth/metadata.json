@@ -1,0 +1,16 @@
+{
+  "name": "fireflies-install-auth",
+  "repo": "byteworthy/Upstream",
+  "path": ".agents/skills/fireflies-install-auth/SKILL.md",
+  "source": "github.com/byteworthy/Upstream",
+  "downloaded_at": "2026-01-30T04:24:27.660864Z",
+  "dir_name": "fireflies-install-auth",
+  "category": "integration",
+  "author": "byteworthy",
+  "source_url": "https://github.com/byteworthy/Upstream/blob/main/.agents/skills/fireflies-install-auth/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2024-2026 ByteWorthy LLC. All rights reserved.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

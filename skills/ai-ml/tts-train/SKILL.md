@@ -17,6 +17,10 @@ triggers:
   - tts fine tune
 metadata:
   short-description: End-to-end TTS dataset prep + training workflow for Qwen3-TTS
+
+provides:
+  - tts-train
+composes: [, task-monitor]
 ---
 
 # TTS Train Workflow
@@ -194,18 +198,10 @@ Qwen3-TTS provides better quality and more natural speech. Requires proper audio
 
 **Audio Codes Format**: Qwen3-TTS tokenizer returns `audio_codes` as `List[torch.LongTensor]` with shape `[time_steps, 16_quantizers]`. Extract with `enc.audio_codes[0].cpu().tolist()`.
 
-## Training (Legacy XTTS-v2)
+## TTS Architecture
 
-**Note**: XTTS-v2 support has been deprecated in favor of Qwen3-TTS, which provides superior voice quality and more natural speech patterns. The skill infrastructure for XTTS remains for backward compatibility but is no longer actively maintained.
-
-For new voice training projects, please use the Qwen3-TTS workflow documented above.
-
-## Inference
-
-```bash
-# Qwen3-TTS inference example
-uv run python run/tts/server.py
-```
+- **PersonaPlex** for live dialog (real-time conversation)
+- **Qwen3-TTS 1.7B** for recorded dialog (narration, audiobooks)
 
 ## TensorBoard (Auto)
 

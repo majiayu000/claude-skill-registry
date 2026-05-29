@@ -1,38 +1,34 @@
 ---
 name: makefile-review
-description: |
-
-Triggers: makefile, make, automation, portability, review
-  Audit Makefiles for duplication, portability, and idiomatic GNU Make usage.
-
-  Triggers: Makefile review, build system, GNU Make, portability, deduplication,
-  pattern rules, automatic variables, dependency graph
-
-  Use when: auditing Makefiles, reviewing build system, checking portability,
-  eliminating recipe duplication
-
-  DO NOT use when: creating new Makefiles - use abstract:make-dogfood.
-  DO NOT use when: architecture review - use architecture-review.
-
-  Use this skill for Makefile audit and optimization.
+description: 'Audit Makefiles for build correctness and recipe duplication.'
+globs: "**/Makefile"
+alwaysApply: false
 category: build
-tags: [makefile, build, make, portability, automation]
-tools: [dependency-mapper, dedup-finder, portability-checker]
+tags:
+- makefile
+- build
+- make
+- portability
+- automation
+tools: []
 usage_patterns:
-  - makefile-audit
-  - build-optimization
-  - portability-review
-  - deduplication
+- makefile-audit
+- build-optimization
+- portability-review
+- deduplication
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 150
 progressive_loading: true
-dependencies: [pensive:shared, imbue:evidence-logging]
+dependencies:
+- pensive:shared
+- imbue:proof-of-work
 modules:
-  - dependency-graph
-  - deduplication-patterns
-  - portability-checks
-  - best-practices
-version: 1.3.5
+- modules/dependency-graph.md
+- modules/deduplication-patterns.md
+- modules/portability-checks.md
+- modules/best-practices.md
+- modules/plugin-dogfood-checks.md
 ---
 ## Table of Contents
 
@@ -48,15 +44,11 @@ version: 1.3.5
 - [Progressive Loading](#progressive-loading)
 - [Output Format](#output-format)
 - [Summary](#summary)
-- [Context](#context)
-- [Dependency Analysis](#dependency-analysis)
-- [Duplication Candidates](#duplication-candidates)
-- [[D1] Repeated command](#[d1]-repeated-command)
-- [Portability Issues](#portability-issues)
-- [Missing Targets](#missing-targets)
-- [Recommendation](#recommendation)
-- [Exit Criteria](#exit-criteria)
+- [Testing](#testing)
 
+## Testing
+
+Run `pytest plugins/pensive/tests/skills/test_makefile_review.py` to verify review logic.
 
 # Makefile Review Workflow
 
@@ -67,15 +59,19 @@ Audit Makefiles for best practices, deduplication, and portability.
 ```bash
 /makefile-review
 ```
-**Verification:** Run the command with `--help` flag to verify availability.
 
-## When to Use
+## When To Use
 
 - Makefile changes or additions
 - Build system optimization
 - Portability improvements
 - CI/CD pipeline updates
 - Developer experience improvements
+
+## When NOT To Use
+
+- Creating new Makefiles - use abstract:make-dogfood
+- Architecture review - use architecture-review
 
 ## Required TodoWrite Items
 
@@ -100,7 +96,6 @@ Find Make-related files:
 rg -n "^include" -g'Makefile*'
 rg --files -g '*.mk'
 ```
-**Verification:** Run the command with `--help` flag to verify availability.
 
 Document changed targets, project goals, and tooling requirements.
 
@@ -118,7 +113,7 @@ Document changed targets, project goals, and tooling requirements.
 
 ### Step 5: Evidence Log (`makefile-review:evidence-logged`)
 
-Use `imbue:evidence-logging` to record command outputs with file:line references.
+Use `imbue:proof-of-work` to record command outputs with file:line references.
 
 Summarize findings:
 - Severity (critical, major, minor)
@@ -131,6 +126,8 @@ Summarize findings:
 Load additional context as needed:
 
 **Best Practices & Examples**: `@include modules/best-practices.md`
+
+**Plugin Dogfood Checks**: `@include modules/plugin-dogfood-checks.md` - Makefile completeness analysis, target generation, and dogfooding validation.
 
 ## Output Format
 
@@ -161,7 +158,6 @@ Makefile review findings
 ## Recommendation
 Approve / Approve with actions / Block
 ```
-**Verification:** Run the command with `--help` flag to verify availability.
 
 ## Exit Criteria
 
@@ -174,11 +170,8 @@ Approve / Approve with actions / Block
 
 ### Common Issues
 
-**Command not found**
-Ensure all dependencies are installed and in PATH
+**No Makefile found**
+Ensure `Makefile` or `*.mk` files exist in the project root or specify paths explicitly.
 
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag
+**Include directives not resolved**
+Run `rg -n "^include" -g'Makefile*'` to trace include chains manually.

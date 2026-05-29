@@ -1,7 +1,5 @@
 ---
-name: docs-applying-diataxis-framework
 description: Diátaxis documentation framework for organizing content into four categories - tutorials (learning-oriented), how-to guides (problem-solving), reference (technical specifications), and explanation (conceptual understanding). Essential for creating and organizing documentation in docs/ directory.
-allowed-tools: [Read, Write, Edit, Glob, Grep]
 ---
 
 # Applying Diátaxis Framework
@@ -161,12 +159,12 @@ The explanation directory has special subdirectories:
 
 ## References
 
-**Primary Convention**: [Diátaxis Framework Convention](../../../docs/explanation/rules/conventions/meta/ex-ru-co-me__diataxis-framework.md)
+**Primary Convention**: [Diátaxis Framework Convention](../../../../governance/conventions/meta/diataxis-framework.md)
 
 **Related Conventions**:
 
-- [Content Quality Principles](../../../docs/explanation/rules/conventions/content/ex-ru-co-co__quality.md) - Universal content standards
-- [File Naming Convention](../../../docs/explanation/rules/conventions/meta/ex-ru-co-me__file-naming.md) - Naming documentation files
+- [Content Quality Principles](../../../../governance/conventions/content/quality.md) - Universal content standards
+- [File Naming Convention](../../../../governance/conventions/meta/file-naming.md) - Naming documentation files
 
 **Related Skills**:
 

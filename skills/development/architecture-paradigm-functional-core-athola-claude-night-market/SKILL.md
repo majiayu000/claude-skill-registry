@@ -1,28 +1,42 @@
 ---
 name: architecture-paradigm-functional-core
-description: |
-
-Triggers: functional-core, imperative-shell, side-effects, functional, architecture
-  Functional Core, Imperative Shell: isolate deterministic logic from side effects for testability.
-
-  Triggers: functional core, imperative shell, pure functions, testability
-  Use when: business logic is entangled with I/O or tests are brittle
-  DO NOT use when: simple scripting without complex logic.
-version: 1.3.5
+description: 'Functional Core, Imperative Shell: isolate deterministic logic from side effects for testability.'
+version: 1.9.0
+alwaysApply: false
 category: architectural-pattern
-tags: [architecture, functional-core, imperative-shell, testability, business-logic, side-effects]
+tags:
+- architecture
+- functional-core
+- imperative-shell
+- testability
+- business-logic
+- side-effects
 dependencies: []
-tools: [boundary-validator, core-test-generator, shell-adapter-generator]
+tools:
+- boundary-validator
+- core-test-generator
+- shell-adapter-generator
 usage_patterns:
-  - paradigm-implementation
-  - refactoring-guidance
-  - adr-support
-  - testability-improvement
+- paradigm-implementation
+- refactoring-guidance
+- adr-support
+- testability-improvement
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 1200
 ---
-
 # The Functional Core, Imperative Shell Paradigm
+
+
+## When To Use
+
+- Separating pure business logic from side effects
+- Improving testability through immutable domain models
+
+## When NOT To Use
+
+- Performance-critical hot paths where immutability overhead matters
+- Purely imperative codebases with no plans to adopt functional patterns
 
 ## When to Employ This Paradigm
 - When business logic is entangled with I/O operations (e.g., database calls, HTTP requests), making tests brittle and slow.
@@ -49,15 +63,3 @@ estimated_tokens: 1200
   - **Mitigation**: The imperative shell may still need to interact with framework-specific lifecycle hooks. Before committing to a large rewrite, build small proof-of-concept adapters to validate the integration strategy.
 - **Team Unfamiliarity with the Pattern**:
   - **Mitigation**: Introduce the pattern using pair programming and internal "brown-bag" learning sessions. Document common anti-patterns that are discovered during the pilot phase to guide future development.
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

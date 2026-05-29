@@ -1,6 +1,6 @@
 ---
 name: rigorous-reasoning
-description: 'Anti-sycophancy reasoning checklist.'
+description: Applies anti-sycophancy checklist to override agreement bias. Use when analyzing contested claims or avoiding socially convenient but inaccurate conclusions.
 alwaysApply: false
 category: workflow-methodology
 tags:

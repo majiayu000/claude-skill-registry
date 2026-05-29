@@ -148,7 +148,7 @@ When DOCS.md is absent:
 ⊘ DOCS.md not found (skipped)
 ```
 
-For the complete update context files workflow with verification strategies, diff examples, and edge cases, refer to `references/update-context.md`.
+For the complete update context files workflow with verification strategies, diff examples, and edge cases, refer to `./references/update-agents.md`.
 
 ## Update README
 
@@ -247,7 +247,7 @@ Display summary:
   - Added badges for license and version
 ```
 
-For the complete update README workflow with section templates, metadata extraction strategies, and formatting examples, refer to `references/update-readme.md`.
+For the complete update README workflow with section templates, metadata extraction strategies, and formatting examples, refer to `./references/update-readme.md`.
 
 ## Initialize Context
 
@@ -328,7 +328,7 @@ Display summary:
   - Added testing section for Jest
 ```
 
-For the complete initialize context workflow with language-specific templates, detection strategies, and customization options, refer to `references/init-context.md`.
+For the complete initialize context workflow with language-specific templates, detection strategies, and customization options, refer to `./references/init-agents.md`.
 
 ### DOCS.md Initialization
 
@@ -476,8 +476,8 @@ Parse JSON or TOML appropriately to extract values. Never hardcode or guess meta
 
 For detailed workflows, examples, and implementation guidance, refer to these reference documents:
 
-- **`references/update-context.md`** - Complete context file update workflow including verification strategies, diff generation, and discrepancy detection
-- **`references/update-readme.md`** - Complete README update workflow including section templates, metadata extraction, and formatting conventions
-- **`references/init-context.md`** - Complete context initialization workflow including language-specific templates, detection strategies, and customization options
+- **`./references/update-agents.md`** - Complete context file update workflow including verification strategies, diff generation, and discrepancy detection
+- **`./references/update-readme.md`** - Complete README update workflow including section templates, metadata extraction, and formatting conventions
+- **`./references/init-agents.md`** - Complete context initialization workflow including language-specific templates, detection strategies, and customization options
 
 These references provide implementation details, code examples, and troubleshooting guidance for each workflow type.

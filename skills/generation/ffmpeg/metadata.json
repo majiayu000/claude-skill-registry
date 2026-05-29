@@ -1,0 +1,13 @@
+{
+  "name": "ffmpeg",
+  "description": "",
+  "repo": "huydepzai121/skill",
+  "category": "generation",
+  "tags": [],
+  "stars": 3,
+  "source": "",
+  "github_path": ".claude/skills/ffmpeg",
+  "github_branch": "master",
+  "dir_name": "ffmpeg",
+  "downloaded_at": "2026-02-05T01:45:31.538992Z"
+}

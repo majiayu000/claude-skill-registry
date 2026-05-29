@@ -1,6 +1,7 @@
 ---
 name: ln-772-error-handler-setup
-description: Configures global exception handling middleware
+description: "Configures global exception handling middleware. Use when adding centralized error handling to .NET or Python backends."
+license: MIT
 ---
 
 # ln-772-error-handler-setup
@@ -200,6 +201,26 @@ app.add_exception_handler(RequestValidationError, validation_exception_handler)
 - [ASP.NET Core Error Handling](https://learn.microsoft.com/aspnet/core/web-api/handle-errors)
 - [FastAPI Handling Errors](https://fastapi.tiangolo.com/tutorial/handling-errors/)
 - [RFC 7807 Problem Details](https://tools.ietf.org/html/rfc7807)
+
+---
+
+## Critical Rules
+
+- **Use ProblemDetails (RFC 7807) by default** — standardized error response format
+- **Hide stack traces in Production** — environment-aware detail level is mandatory
+- **Use MCP ref for current patterns** — do not hardcode middleware from memory
+- **Idempotent** — if `GlobalExceptionMiddleware` or `exception_handlers.py` exists, return `status: "skipped"`
+- **Map all custom exceptions to HTTP status codes** — no unhandled exception types reaching the client
+
+## Definition of Done
+
+- [ ] Context Store received (stack, framework, environment)
+- [ ] Error handling patterns researched via MCP tools
+- [ ] GlobalExceptionMiddleware generated (.NET) or exception handlers generated (Python)
+- [ ] Custom exception classes created (AppException, ValidationException, NotFoundException)
+- [ ] Error response model created (ProblemDetails format)
+- [ ] Syntax validated (`dotnet build` or `py_compile`)
+- [ ] Structured JSON response returned to ln-770 coordinator
 
 ---
 

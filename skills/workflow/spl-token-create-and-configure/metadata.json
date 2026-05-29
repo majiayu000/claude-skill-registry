@@ -1,0 +1,16 @@
+{
+  "name": "spl-token-create-and-configure",
+  "repo": "SanctifiedOps/solana-skills",
+  "path": "skills/tokens/spl-token-create-and-configure/SKILL.md",
+  "source": "github.com/SanctifiedOps/solana-skills",
+  "downloaded_at": "2026-01-27T01:45:22.602527Z",
+  "dir_name": "spl-token-create-and-configure",
+  "category": "workflow",
+  "author": "SanctifiedOps",
+  "source_url": "https://github.com/SanctifiedOps/solana-skills/blob/main/skills/tokens/spl-token-create-and-configure/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SanctifiedOps",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

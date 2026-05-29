@@ -1,0 +1,13 @@
+{
+  "name": "check-existing-artifacts",
+  "description": "",
+  "repo": "OmniaffixDave/SessionGuardian",
+  "category": "agent",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OmniaffixDave/SessionGuardian",
+  "github_path": ".github/skills/check-existing-artifacts",
+  "github_branch": "master",
+  "dir_name": "check-existing-artifacts",
+  "downloaded_at": "2026-02-05T01:44:25.010188Z"
+}

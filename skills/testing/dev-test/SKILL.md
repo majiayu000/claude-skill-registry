@@ -1,186 +1,96 @@
 ---
-name: dev-test
-description: "This skill should be used when the user needs to 'debug web applications', 'test UI interactions', 'capture screenshots or network requests', 'test desktop automation', or needs to select between testing tools. Routes to platform-specific E2E testing skills: Chrome MCP for debugging, Playwright for CI/CD, Hammerspoon for macOS, Linux for X11/Wayland."
+name: dev-test-playwright
+description: "Playwright MCP browser testing. Headless E2E, cross-browser, CI/CD automation."
 ---
 
-
-## Where This Fits
-
-```
-Main Chat                          Task Agent
-─────────────────────────────────────────────────────
-dev-implement
-  → dev-ralph-loop (loads dev-tdd)
-    → dev-delegate
-      → Task agent ──────────────→ uses dev-test (this skill)
-                                     ↓ loads dev-tdd again
-                                   has TDD protocol + gates
-                                     → routes to specific tool
-```
+**Announce:** "I'm using dev-test-playwright for headless browser automation."
 
 <EXTREMELY-IMPORTANT>
-## Load TDD Enforcement (REQUIRED)
+## Gate Reminder
 
-Before choosing testing tools, you MUST load the TDD skill to ensure gate compliance:
+Before taking screenshots or running E2E tests, you MUST complete all 6 gates from dev-tdd:
 
 ```
-Skill(skill="workflows:dev-tdd")
+GATE 1: BUILD
+GATE 2: LAUNCH (with file-based logging)
+GATE 3: WAIT
+GATE 4: CHECK PROCESS
+GATE 5: READ LOGS ← MANDATORY, CANNOT SKIP
+GATE 6: VERIFY LOGS
+THEN: E2E tests/screenshots
 ```
 
-This loads:
-- Task reframing (your job is writing tests, not features)
-- **The Execution Gate** (6 mandatory gates before E2E testing)
-- **GATE 5: READ LOGS** (mandatory - cannot skip)
-- The Iron Law of TDD (test-first approach)
-
-**Read dev-tdd skill content now before selecting testing tools.**
+**You loaded dev-tdd earlier. Follow the gates now.**
 </EXTREMELY-IMPORTANT>
-
-**This skill routes to the right testing tool.** The loaded `dev-tdd` skill provides TDD protocol details.
 
 ## Contents
 
-- [The Iron Law](#the-iron-law-of-testing)
-- [Browser Testing Decision Tree](#browser-testing-decision-tree)
-- [Platform Detection](#platform-detection)
-- [Sub-Skills Reference](#sub-skills-reference)
-- [Unit & Integration Tests](#unit--integration-tests)
+- [Tool Availability Gate](#tool-availability-gate)
+- [When to Use Playwright MCP](#when-to-use-playwright-mcp)
+- [MCP Tools Overview](#mcp-tools-overview)
+- [Navigation](#navigation)
+- [Element Interaction](#element-interaction)
+- [Verification](#verification)
+- [Form Handling](#form-handling)
+- [Advanced Patterns](#advanced-patterns)
+- [Complete E2E Examples](#complete-e2e-examples)
+
+# Playwright MCP Browser Automation
 
 <EXTREMELY-IMPORTANT>
-## The Iron Law of Testing
+## Tool Availability Gate
 
-**YOU MUST WRITE E2E TESTS FOR USER-FACING FEATURES. This is not negotiable.**
+**Verify Playwright MCP tools are available before proceeding.**
 
-When your changes affect what users see or interact with, you MUST:
-1. Write an E2E test that simulates user behavior
-2. Run it and verify it PASSES (not just unit tests)
-3. Document: "E2E: [test name] passes with [evidence]"
-4. Include screenshot/snapshot for visual changes
+Check for these MCP functions:
+- `mcp__playwright__browser_navigate`
+- `mcp__playwright__browser_snapshot`
+- `mcp__playwright__browser_click`
 
-**Unit tests prove components work. E2E tests prove YOUR feature works for users.**
+**If MCP tools are not available:**
+```
+STOP: Cannot proceed with Playwright automation.
+
+Missing: Playwright MCP server
+
+The Playwright MCP server must be configured and running.
+Check your Claude Code MCP configuration.
+
+Reply when configured and I'll continue testing.
+```
+
+**This gate is non-negotiable. Missing tools = full stop.**
+</EXTREMELY-IMPORTANT>
+
+<EXTREMELY-IMPORTANT>
+## When to Use Playwright MCP
+
+**USE Playwright MCP when you need:**
+- Headless browser automation (CI/CD)
+- Cross-browser testing (Chromium, Firefox, WebKit)
+- Test isolation (fresh browser state per test)
+- Standard E2E test suite automation
+- Network mocking/interception
+- Parallel test execution
+
+**DO NOT use Playwright MCP when:**
+- Debugging console messages (use Chrome MCP)
+- Inspecting network requests/responses (use Chrome MCP)
+- Executing custom JavaScript in page (use Chrome MCP)
+- Recording GIFs of interactions (use Chrome MCP)
+- Interactive debugging with real browser (use Chrome MCP)
+
+**For debugging, use:** `Skill(skill="workflows:dev-test-chrome")`
 
 ### Rationalization Prevention
 
-When you catch yourself thinking these rationalizations, STOP—you're about to skip E2E tests:
-
-| Thought | Why You're Wrong | Do Instead |
-|---------|-----------------|-----------|
-| "Unit tests are enough" | Your unit tests don't test user flows. | Write E2E. |
-| "E2E is too slow" | You're choosing slow tests < shipped bugs. | Write E2E. |
-| "I'll add E2E later" | You won't. Your future self won't either. | Write it NOW. |
-| "This is just backend" | Does it affect user output? Then YOU need E2E. | Write E2E. |
-| "The tool setup is complex" | Your complexity = complex failure modes. E2E finds them. | Write E2E. |
-| "The UI is unchanged" | Your assumption isn't proven. | Prove it with a visual snapshot. |
-| "Manual testing is faster" | You're LYING about coverage to yourself. | Write E2E. |
-| "It's just a small change" | Your small change breaks UIs. E2E proves it doesn't. | Write E2E. |
-| "User can verify" | NO. You don't trust users with QA. | Automated verification or it didn't happen. |
-| **"Log checking is my E2E test"** | **You're confusing observability with verification.** | **Verify your actual outputs.** |
-| **"Screenshots are too hard to capture"** | **Your avoidance = hard to debug in production later.** | **Automate it.** |
-
-### Fake E2E Detection - STOP
-
-**If your "E2E test" does any of these, it's NOT E2E:**
-
-| Pattern | Why It's Fake | Real E2E Alternative |
-|---------|---------------|----------------------|
-| `grep "success" logs.txt` | Only proves code ran | Verify actual output file/UI/API response |
-| `assert mock.called` | Tests mock, not real system | Use real integration, verify real data |
-| `cat output.txt \| wc -l` | File exists ≠ correct content | Read file, assert exact expected content |
-| "I ran it manually" | No automation = no evidence | Capture manual test as automated test |
-| Check log for icon name | Observability, not verification | Screenshot + visual diff of rendered icon |
-| Exit code 0 | Process succeeded ≠ output correct | Verify the actual output data |
-
-**The test:** If removing the actual implementation still passes your "E2E test", it's fake.
-
-**Example of fake E2E that caught nothing:**
-```python
-# FAKE E2E - only checks logs
-def test_icon_theme_change():
-    run_command("set-theme papirus")
-    logs = read_logs()
-    assert "papirus" in logs  # ❌ FAKE - only proves code ran
-    # BUG: 89% of icons weren't changed, test still passed!
-```
-
-**Real E2E that would have caught the bug:**
-```python
-# REAL E2E - verifies actual output
-def test_icon_theme_change():
-    run_command("set-theme papirus")
-    screenshot = capture_desktop()
-    assert visual_diff(screenshot, "expected_papirus.png") < threshold  # ✅ REAL
-    # This would have shown 89% of icons were wrong
-```
-
-### Red Flags - STOP If Thinking:
-
-If you catch yourself thinking these patterns, STOP—you're about to skip E2E:
-
-| Thought | Why You're Wrong | Do Instead |
-|---------|-----------------|-----------|
-| "Tests pass" (only unit) | Your unit tests ≠ E2E | Write E2E test |
-| "Code looks correct" | You're only looking ≠ running user flow | Run E2E |
-| "It worked when I tried it" | Your manual testing ≠ automated | Capture as E2E |
-| "Screenshot shows it works" | Your static screenshot ≠ interaction test | Add automation |
-</EXTREMELY-IMPORTANT>
-
-## Browser Testing Decision Tree
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    BROWSER TESTING REQUIRED?                     │
-└─────────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-        ┌─────────────────────────────────────────────┐
-        │  Need to debug JS errors or API calls?       │
-        │  (console.log, network requests, XHR)        │
-        └─────────────────────────────────────────────┘
-                    │                    │
-                   YES                   NO
-                    │                    │
-                    ▼                    ▼
-        ┌───────────────────┐  ┌──────────────────────────┐
-        │   CHROME MCP      │  │  Running in CI/CD?        │
-        │   (debugging)     │  │  (headless, automated)    │
-        └───────────────────┘  └──────────────────────────┘
-                                      │           │
-                                     YES          NO
-                                      │           │
-                                      ▼           ▼
-                        ┌──────────────┐  ┌───────────────────┐
-                        │ PLAYWRIGHT   │  │ Cross-browser     │
-                        │ MCP          │  │ needed?           │
-                        └──────────────┘  └───────────────────┘
-                                                │          │
-                                               YES         NO
-                                                │          │
-                                                ▼          ▼
-                                    ┌──────────────┐ ┌────────────┐
-                                    │ PLAYWRIGHT   │ │ Either OK  │
-                                    │ MCP          │ │ (prefer    │
-                                    └──────────────┘ │ Playwright)│
-                                                     └────────────┘
-```
-
-<EXTREMELY-IMPORTANT>
-### Iron Laws: Browser MCP Selection
-
-**YOU MUST USE CHROME MCP FOR API/CONSOLE DEBUGGING. NO EXCEPTIONS.**
-**YOU MUST USE PLAYWRIGHT MCP FOR CI/CD TESTING. NO EXCEPTIONS.**
-
-### Quick Decision Table
-
-| Need | Tool | Why |
-|------|------|-----|
-| Debug console errors | **Chrome MCP** | `read_console_messages` |
-| Inspect API calls/responses | **Chrome MCP** | `read_network_requests` |
-| Execute custom JS in page | **Chrome MCP** | `javascript_tool` |
-| Record interaction as GIF | **Chrome MCP** | `gif_creator` |
-| Headless/CI automation | **Playwright MCP** | Headless mode |
-| Cross-browser testing | **Playwright MCP** | Firefox/WebKit support |
-| Standard E2E suite | **Playwright MCP** | Test isolation, maturity |
-| Interactive debugging | **Chrome MCP** | Real browser, console access |
+| Thought | Reality |
+|---------|---------|
+| "Playwright can do everything" | NO. It cannot read console or network requests. |
+| "I don't need console debugging" | You will. Start with Chrome MCP if unsure. |
+| "I'll add console checks later" | You can't with Playwright. Choose the right tool now. |
+| "Headless mode doesn't matter" | YES IT DOES for CI/CD. |
+| "Chrome MCP works for CI" | NO. It requires visible browser. |
 
 ### Capability Comparison
 
@@ -189,178 +99,415 @@ If you catch yourself thinking these patterns, STOP—you're about to skip E2E:
 | Navigate/click/type | ✅ | ✅ |
 | Accessibility tree | ✅ `browser_snapshot` | ✅ `read_page` |
 | Screenshots | ✅ | ✅ |
-| **Console messages** | ❌ | ✅ `read_console_messages` |
-| **Network requests** | ❌ | ✅ `read_network_requests` |
-| **JavaScript execution** | ❌ | ✅ `javascript_tool` |
-| **GIF recording** | ❌ | ✅ `gif_creator` |
-| **Headless mode** | ✅ | ❌ (requires visible browser) |
-| **Cross-browser** | ✅ (Chromium/Firefox/WebKit) | ❌ (Chrome only) |
-| Natural language find | ❌ | ✅ `find` |
-
-### Rationalization Prevention (Browser MCP)
-
-| Thought | Why You're Wrong | Do Instead |
-|---------|-----------------|-----------|
-| "I'll check the console manually" | You can't capture all edge cases manually. | Use Chrome MCP `read_console_messages` |
-| "I can infer the API response" | Your inference is wrong. Real data differs. | Use Chrome MCP `read_network_requests` |
-| "Playwright can do everything" | You're wrong. It cannot read console or network. | Use Chrome MCP for debugging |
-| "Chrome MCP is enough for CI" | You're ignoring constraints—it requires visible browser. | Use Playwright MCP for CI/CD |
-| "I'll just look at DevTools" | Your manual inspection is not automated. | Automate with Chrome MCP |
-| "Headless doesn't matter" | You're wrong. Your CI/CD requires headless. | Use Playwright MCP |
+| **Headless mode** | ✅ | ❌ |
+| **Cross-browser** | ✅ | ❌ |
+| Console messages | ❌ | ✅ |
+| Network requests | ❌ | ✅ |
+| JavaScript execution | ❌ | ✅ |
+| GIF recording | ❌ | ✅ |
 </EXTREMELY-IMPORTANT>
 
-## Platform Detection
+## MCP Tools Overview
 
-Detect the operating system and display server to select the appropriate testing tool:
+| Tool | Purpose |
+|------|---------|
+| `browser_navigate` | Navigate to URL |
+| `browser_snapshot` | Get accessibility tree (page state) |
+| `browser_click` | Click elements |
+| `browser_type` | Type into inputs |
+| `browser_select_option` | Select dropdown options |
+| `browser_hover` | Hover over elements |
+| `browser_wait_for` | Wait for conditions |
+| `browser_take_screenshot` | Visual capture |
+| `browser_press` | Press keys |
 
-```bash
-# Detect platform for desktop automation
-case "$(uname -s)" in
-    Darwin) echo "macOS - use dev-test-hammerspoon" ;;
-    Linux)
-        if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-            echo "Linux/Wayland - use dev-test-linux (ydotool)"
-        else
-            echo "Linux/X11 - use dev-test-linux (xdotool)"
-        fi
-        ;;
-esac
-```
+## Navigation
 
-### Desktop Automation Decision Tree
+### Basic Navigation
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                   DESKTOP AUTOMATION REQUIRED?                   │
-└─────────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-                    ┌─────────────────┐
-                    │   Platform?      │
-                    └─────────────────┘
-                    /        |         \
-                 macOS    Linux      Windows
-                   │         │           │
-                   ▼         ▼           ▼
-        ┌──────────────┐ ┌─────────┐ ┌─────────┐
-        │ HAMMERSPOON  │ │ LINUX   │ │ NOT     │
-        │ (dev-test-   │ │ (dev-   │ │ SUPPORTED│
-        │ hammerspoon) │ │ test-   │ └─────────┘
-        └──────────────┘ │ linux)  │
-                         └─────────┘
-                              │
-                    ┌─────────┴─────────┐
-                    │   Display Server?  │
-                    └───────────────────┘
-                         /         \
-                    Wayland        X11
-                       │            │
-                       ▼            ▼
-                 ┌──────────┐ ┌──────────┐
-                 │ ydotool  │ │ xdotool  │
-                 └──────────┘ └──────────┘
+mcp__playwright__browser_navigate(url="https://example.com")
 ```
 
-## Sub-Skills Reference
+### Wait for Page Load
+
+```
+mcp__playwright__browser_navigate(url="https://example.com")
+mcp__playwright__browser_wait_for(state="networkidle")
+```
+
+### Get Current State
+
+```
+mcp__playwright__browser_snapshot()
+```
+
+The snapshot returns the **accessibility tree** - a structured representation of all interactive elements on the page.
+
+## Element Interaction
+
+### Clicking Elements
+
+```
+# By visible text
+mcp__playwright__browser_click(element="Submit button")
+
+# By ref (from snapshot)
+mcp__playwright__browser_click(ref="button[type=submit]")
+
+# By role and name
+mcp__playwright__browser_click(element="Login", role="button")
+```
+
+### Typing Text
+
+```
+# Into focused element
+mcp__playwright__browser_type(text="hello world")
+
+# Into specific element
+mcp__playwright__browser_click(element="Email input")
+mcp__playwright__browser_type(text="user@example.com")
+
+# Clear and type
+mcp__playwright__browser_click(element="Search box")
+mcp__playwright__browser_type(text="new search", clear=true)
+```
+
+### Keyboard Shortcuts
+
+```
+# Press Enter
+mcp__playwright__browser_press(key="Enter")
+
+# Keyboard shortcuts
+mcp__playwright__browser_press(key="Control+a")
+mcp__playwright__browser_press(key="Control+c")
+```
+
+## Verification
 
 <EXTREMELY-IMPORTANT>
-### Tool Availability Gate
+### The Iron Law of Verification
 
-**Verify tools are available BEFORE proceeding. Missing tools = FULL STOP.**
+**EVERY action must be VERIFIED. Taking action is not enough.**
 
-Each sub-skill has its own availability gate. Load the appropriate skill and follow its gate.
+After clicking, typing, or navigating, you MUST:
+1. Wait for the expected result
+2. Take a snapshot to verify state
+3. Document the verification in LEARNINGS.md
+
+| Action | Verification |
+|--------|--------------|
+| Click submit | `wait_for(text="Success")` + snapshot |
+| Navigate | `wait_for(state="networkidle")` + snapshot |
+| Fill form | Snapshot shows filled values |
+| Login | Snapshot shows dashboard/logged-in state |
+
+**"I clicked it" is not verification. Prove the click worked.**
 </EXTREMELY-IMPORTANT>
 
-### Browser Testing
+### Snapshot Verification
 
-| Skill | Use Case | Key Capabilities |
-|-------|----------|------------------|
-| `Skill(skill="workflows:dev-test-chrome")` | Debugging, console/network inspection | `read_console_messages`, `read_network_requests`, `javascript_tool` |
-| `Skill(skill="workflows:dev-test-playwright")` | CI/CD, headless, cross-browser E2E | Headless mode, Firefox/WebKit, test isolation |
+```
+# 1. Perform action
+mcp__playwright__browser_click(element="Submit")
 
-### Desktop Automation
+# 2. Wait for result
+mcp__playwright__browser_wait_for(text="Success")
 
-| Skill | Platform | Primary Tool |
-|-------|----------|--------------|
-| `Skill(skill="workflows:dev-test-hammerspoon")` | macOS | Hammerspoon (`hs`) |
-| `Skill(skill="workflows:dev-test-linux")` | Linux | ydotool (Wayland) / xdotool (X11) |
-
-## Unit & Integration Tests
-
-### Test Discovery
-
-Locate test directories and identify the test framework used in the project:
-
-```bash
-# Find test directory
-ls -d tests/ test/ spec/ __tests__/ 2>/dev/null
-
-# Find test framework
-cat package.json 2>/dev/null | grep -E "(test|jest)"
-cat pyproject.toml 2>/dev/null | grep -i pytest
-cat Cargo.toml 2>/dev/null | grep -i "\[dev-dependencies\]"
-cat meson.build 2>/dev/null | grep -i test
+# 3. Take snapshot to verify
+mcp__playwright__browser_snapshot()
+# Check snapshot contains expected elements
 ```
 
-### Common Test Frameworks
+### Wait Conditions
 
-| Language | Framework | Command |
-|----------|-----------|---------|
-| Python | pytest | `pytest tests/ -v` |
-| JavaScript | jest | `npm test` |
-| TypeScript | vitest | `npx vitest` |
-| Rust | cargo | `cargo test` |
-| C/C++ | meson | `meson test -C build -v` |
-| Go | go test | `go test ./...` |
+```
+# Wait for text to appear
+mcp__playwright__browser_wait_for(text="Welcome back")
 
-### CLI Application Testing
+# Wait for element
+mcp__playwright__browser_wait_for(selector="#success-message")
 
-Execute CLI applications with test inputs and verify outputs against expected results:
+# Wait for network idle
+mcp__playwright__browser_wait_for(state="networkidle")
 
-```bash
-# Run with test inputs
-./app --test-mode input.txt > output.txt
-
-# Compare to expected
-diff expected.txt output.txt
-
-# Check exit code
-./app --validate file && echo "PASS" || echo "FAIL"
+# Wait for navigation
+mcp__playwright__browser_wait_for(state="load")
 ```
 
-## Output Requirements
+### Screenshots
 
-**Every test run MUST be documented in LEARNINGS.md:**
+```
+# Full page
+mcp__playwright__browser_take_screenshot(path="/tmp/screenshot.png", fullPage=true)
 
-```markdown
-## Test Run: [Description]
+# Viewport only
+mcp__playwright__browser_take_screenshot(path="/tmp/viewport.png")
 
-**Tool:** [Chrome MCP / Playwright / Hammerspoon / ydotool / pytest / etc.]
-
-**Command:**
-```bash
-pytest tests/ -v
+# Specific element
+mcp__playwright__browser_take_screenshot(
+    path="/tmp/element.png",
+    selector="#main-content"
+)
 ```
 
-**Output:**
-```
-tests/test_feature.py::test_basic PASSED
-tests/test_feature.py::test_edge_case PASSED
-tests/test_feature.py::test_error FAILED
+## Form Handling
 
-1 failed, 2 passed
+### Text Inputs
+
+```
+mcp__playwright__browser_click(element="Username")
+mcp__playwright__browser_type(text="john_doe")
+
+mcp__playwright__browser_click(element="Password")
+mcp__playwright__browser_type(text="secret123")
 ```
 
-**Result:** 2/3 PASS, 1 FAIL
+### Dropdowns
 
-**Next:** Fix test_error failure
 ```
+mcp__playwright__browser_select_option(
+    element="Country dropdown",
+    value="US"
+)
+
+# Or by label
+mcp__playwright__browser_select_option(
+    element="Country",
+    label="United States"
+)
+```
+
+### Checkboxes and Radio Buttons
+
+```
+# Check checkbox
+mcp__playwright__browser_click(element="Accept terms checkbox")
+
+# Verify checked state (via snapshot)
+mcp__playwright__browser_snapshot()
+# Look for checked="true" in accessibility tree
+```
+
+### File Upload
+
+```
+mcp__playwright__browser_set_input_files(
+    selector="input[type=file]",
+    files=["/path/to/file.pdf"]
+)
+```
+
+## Advanced Patterns
+
+### Multi-Step Form
+
+```
+# Step 1
+mcp__playwright__browser_click(element="Name input")
+mcp__playwright__browser_type(text="John Doe")
+mcp__playwright__browser_click(element="Next button")
+mcp__playwright__browser_wait_for(text="Step 2")
+
+# Step 2
+mcp__playwright__browser_click(element="Email input")
+mcp__playwright__browser_type(text="john@example.com")
+mcp__playwright__browser_click(element="Next button")
+mcp__playwright__browser_wait_for(text="Step 3")
+
+# Step 3 - Submit
+mcp__playwright__browser_click(element="Submit button")
+mcp__playwright__browser_wait_for(text="Success")
+```
+
+### Handling Modals
+
+```
+# Click to open modal
+mcp__playwright__browser_click(element="Open Dialog")
+mcp__playwright__browser_wait_for(text="Dialog Title")
+
+# Interact with modal
+mcp__playwright__browser_click(element="Confirm button")
+mcp__playwright__browser_wait_for(state="hidden", selector=".modal")
+```
+
+### Iframes
+
+```
+# Switch to iframe
+mcp__playwright__browser_frame(name="payment-iframe")
+
+# Interact within iframe
+mcp__playwright__browser_click(element="Card number")
+mcp__playwright__browser_type(text="4111111111111111")
+
+# Switch back to main
+mcp__playwright__browser_main_frame()
+```
+
+### Hover and Tooltips
+
+```
+mcp__playwright__browser_hover(element="Help icon")
+mcp__playwright__browser_wait_for(text="This is the tooltip text")
+mcp__playwright__browser_snapshot()
+```
+
+## Complete E2E Examples
+
+### Login Flow
+
+```
+# 1. Navigate to login page
+mcp__playwright__browser_navigate(url="https://app.example.com/login")
+mcp__playwright__browser_wait_for(state="networkidle")
+
+# 2. Take initial snapshot
+mcp__playwright__browser_snapshot()
+# Verify: Login form is visible
+
+# 3. Fill credentials
+mcp__playwright__browser_click(element="Email")
+mcp__playwright__browser_type(text="user@example.com")
+
+mcp__playwright__browser_click(element="Password")
+mcp__playwright__browser_type(text="password123")
+
+# 4. Submit
+mcp__playwright__browser_click(element="Sign In")
+mcp__playwright__browser_wait_for(text="Dashboard")
+
+# 5. Verify success
+mcp__playwright__browser_snapshot()
+# Verify: Dashboard is visible, user name shown
+
+# 6. Screenshot for evidence
+mcp__playwright__browser_take_screenshot(path="/tmp/login_success.png")
+```
+
+### E-Commerce Checkout
+
+```
+# 1. Navigate to product
+mcp__playwright__browser_navigate(url="https://shop.example.com/product/123")
+mcp__playwright__browser_wait_for(state="networkidle")
+
+# 2. Add to cart
+mcp__playwright__browser_click(element="Add to Cart")
+mcp__playwright__browser_wait_for(text="Added to cart")
+
+# 3. Go to cart
+mcp__playwright__browser_click(element="Cart icon")
+mcp__playwright__browser_wait_for(text="Your Cart")
+
+# 4. Verify cart
+mcp__playwright__browser_snapshot()
+# Verify: Product in cart, correct price
+
+# 5. Proceed to checkout
+mcp__playwright__browser_click(element="Checkout")
+mcp__playwright__browser_wait_for(text="Shipping Address")
+
+# 6. Fill shipping
+mcp__playwright__browser_click(element="Address")
+mcp__playwright__browser_type(text="123 Main St")
+
+mcp__playwright__browser_click(element="City")
+mcp__playwright__browser_type(text="New York")
+
+mcp__playwright__browser_select_option(element="State", value="NY")
+
+mcp__playwright__browser_click(element="Zip")
+mcp__playwright__browser_type(text="10001")
+
+# 7. Continue to payment
+mcp__playwright__browser_click(element="Continue to Payment")
+mcp__playwright__browser_wait_for(text="Payment Method")
+
+# 8. Verify order summary
+mcp__playwright__browser_snapshot()
+# Verify: Correct items, shipping address, total
+
+mcp__playwright__browser_take_screenshot(path="/tmp/checkout_complete.png")
+```
+
+### Search and Filter
+
+```
+# 1. Navigate
+mcp__playwright__browser_navigate(url="https://search.example.com")
+
+# 2. Search
+mcp__playwright__browser_click(element="Search box")
+mcp__playwright__browser_type(text="laptop")
+mcp__playwright__browser_press(key="Enter")
+mcp__playwright__browser_wait_for(text="results")
+
+# 3. Apply filter
+mcp__playwright__browser_click(element="Price filter")
+mcp__playwright__browser_click(element="Under $1000")
+mcp__playwright__browser_wait_for(state="networkidle")
+
+# 4. Verify filtered results
+mcp__playwright__browser_snapshot()
+# Verify: Results shown, filter applied
+
+# 5. Click first result
+mcp__playwright__browser_click(element="First product link")
+mcp__playwright__browser_wait_for(text="Product Details")
+
+mcp__playwright__browser_take_screenshot(path="/tmp/search_result.png")
+```
+
+## Error Handling
+
+### Retry Pattern
+
+```
+# Attempt action with retry
+for attempt in range(3):
+    try:
+        mcp__playwright__browser_click(element="Flaky Button")
+        mcp__playwright__browser_wait_for(text="Success", timeout=5000)
+        break  # Success
+    except:
+        if attempt == 2:
+            raise  # Give up after 3 attempts
+        time.sleep(1)  # Wait before retry
+```
+
+### Timeout Handling
+
+```
+# Set explicit timeout
+mcp__playwright__browser_wait_for(
+    text="Slow loading content",
+    timeout=30000  # 30 seconds
+)
+```
+
+## Limitations
+
+<EXTREMELY-IMPORTANT>
+### What Playwright MCP Cannot Do
+
+| Need | Why Playwright Fails | Use Instead |
+|------|---------------------|-------------|
+| Read console.log | No console access | Chrome MCP `read_console_messages` |
+| Inspect API responses | No network access | Chrome MCP `read_network_requests` |
+| Execute page JavaScript | No JS execution | Chrome MCP `javascript_tool` |
+| Record GIF | No recording capability | Chrome MCP `gif_creator` |
+
+**If you need debugging capabilities, switch to Chrome MCP.**
+</EXTREMELY-IMPORTANT>
 
 ## Integration
 
-For TDD protocol (RED-GREEN-REFACTOR), see:
-```
-Skill(skill="workflows:dev-tdd")
-```
+This skill is referenced by `dev-test` for Playwright browser automation.
 
-This skill is invoked by Task agents during `dev-implement` phase.
+**For debugging (console/network), use:** `Skill(skill="workflows:dev-test-chrome")`
+
+For TDD protocol, see: `Skill(skill="workflows:dev-tdd")`

@@ -2,7 +2,7 @@
 name: githubbing
 description: GitHub CLI (gh) installation and authenticated operations in Claude.ai containers. Use when user needs to create issues, PRs, view repos, or perform GitHub operations beyond raw API calls.
 metadata:
-  version: 1.1.1
+  version: 1.1.2
   requires: configuring
 ---
 

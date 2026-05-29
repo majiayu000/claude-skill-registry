@@ -1,9 +1,9 @@
 {
-  "name": "generating-sorbet",
+  "name": "generating-sorbet-inline",
   "repo": "DmitryPogrebnoy/ruby-agent-skills",
-  "path": "source/plugins/ruby-type-signature-skills/skills/generating-sorbet/SKILL.md",
+  "path": "source/plugins/ruby-type-signature-skills/skills/generating-sorbet-inline/SKILL.md",
   "source": "github.com/DmitryPogrebnoy/ruby-agent-skills",
-  "downloaded_at": "2026-01-14T01:01:57.783239Z",
+  "downloaded_at": "2026-01-14T01:01:57.962660Z",
   "dir_name": "generating-sorbet",
   "category": "development",
   "github_path": "plugins/ruby-type-signature-skills/skills/generating-sorbet-inline",

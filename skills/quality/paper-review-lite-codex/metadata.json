@@ -1,0 +1,17 @@
+{
+  "name": "paper-review-lite-codex",
+  "repo": "scdenney/open-science-skills",
+  "path": "plugin/skills/paper-review-lite-codex/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/scdenney/open-science-skills",
+  "dir_name": "paper-review-lite-codex",
+  "downloaded_at": "2026-05-23T03:30:02.718303Z",
+  "author": "scdenney",
+  "source_url": "https://github.com/scdenney/open-science-skills/blob/main/plugin/skills/paper-review-lite-codex/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/scdenney/open-science-skills/blob/main/plugin/skills/paper-review-lite-codex/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

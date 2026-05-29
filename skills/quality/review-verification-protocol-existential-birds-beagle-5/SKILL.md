@@ -1,19 +1,38 @@
 ---
 name: review-verification-protocol
 description: Mandatory verification steps for all code reviews to reduce false positives. Load this skill before reporting ANY code review findings.
+user-invocable: false
 ---
 
 # Review Verification Protocol
 
 This protocol MUST be followed before reporting any code review finding. Skipping these steps leads to false positives that waste developer time and erode trust in reviews.
 
+## Hard gates (sequenced)
+
+Complete **in order** for each finding (or once per batch if every finding shares the same file/symbol). Do not advance while the prior gate fails.
+
+1. **Read gate** — Open and read the **full** containing symbol (function, class, component, hook), not only the diff hunk or snippet.
+   **Pass:** You can state the **file path** and **symbol name** you read without re-opening the file.
+
+2. **Reference gate** (required before “unused”, “dead code”, or “never called”) — Run a workspace search for the identifier (or equivalent: find references in the IDE).
+   **Pass:** One concrete artifact: e.g. “`rg`/search: N matches” or “only the definition in `path`” — not a guess.
+
+3. **Mitigation gate** — Look for handling elsewhere: callers, middleware, route/loaders, error boundaries, framework validation, earlier guards, or comments/ADR context.
+   **Pass:** Either cite **where** the concern is already addressed, or one explicit sentence: “No mitigating pattern found after checking [scope].”
+
+4. **Claim gate** — Each reported issue must include **`[FILE:LINE]`** and a **specific line or behavior** that demonstrates the problem; severity must match [Severity Calibration](#severity-calibration) below.
+   **Pass:** A reviewer could navigate to that line and see the same issue; “might” or “could” without an anchor fails this gate.
+
+The checklist below restates the same expectations in checkbox form.
+
 ## Pre-Report Verification Checklist
 
 Before flagging ANY issue, verify:
 
-- [ ] **I read the actual code** - Not just the diff context, but the full function/class
-- [ ] **I searched for usages** - Before claiming "unused", searched all references
-- [ ] **I checked surrounding code** - The issue may be handled elsewhere (guards, earlier checks)
+- [ ] **I read the actual code** - Not just the diff context, but the full function/class (see **Read gate**)
+- [ ] **I searched for usages** - Before claiming "unused", searched all references (see **Reference gate**)
+- [ ] **I checked surrounding code** - The issue may be handled elsewhere (guards, earlier checks) (see **Mitigation gate**)
 - [ ] **I verified syntax against current docs** - Framework syntax evolves (Tailwind v4, TS 5.x, React 19)
 - [ ] **I distinguished "wrong" from "different style"** - Both approaches may be valid
 - [ ] **I considered intentional design** - Checked comments, CLAUDE.md, architectural context
@@ -200,9 +219,10 @@ Flag missing try/catch **ONLY IF**:
 
 ## Before Submitting Review
 
-Final verification:
+Final verification (after [Hard gates](#hard-gates-sequenced) for each finding):
+
 1. Re-read each finding and ask: "Did I verify this is actually an issue?"
-2. For each finding, can you point to the specific line that proves the issue exists?
+2. For each finding, can you point to the **specific line** that proves the issue exists? (must satisfy **Claim gate**)
 3. Would a domain expert agree this is a problem, or is it a style preference?
 4. Does fixing this provide real value, or is it busywork?
 5. Format every finding as: `[FILE:LINE] ISSUE_TITLE`

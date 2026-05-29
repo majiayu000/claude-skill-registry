@@ -1,0 +1,18 @@
+{
+  "name": "issue",
+  "description": "Create and update GitHub issues. Triggers on \"create issue\", \"file issue\", \"open issue\", \"new issue\", \"report bug\", \"request feature\", \"track this\", \"create epic\", \"create theme\", \"update issue\", \"che",
+  "repo": "zeroae/zae-limiter",
+  "path": ".claude/skills/issue",
+  "category": "productivity",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zeroae/zae-limiter",
+  "dir_name": "issue-zeroae-zae-limiter-2",
+  "author": "zeroae",
+  "source_url": "https://github.com/zeroae/zae-limiter/blob/main/.claude/skills/issue/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Zero A.E., LLC",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,39 +1,35 @@
 ---
 name: doc-updates
-description: |
-
-Triggers: consolidation, docstrings, writing, adr, readme
-  Update documentation with writing guideline enforcement, consolidation detection, and accuracy verification.
-
-  Triggers: documentation update, docs update, ADR, docstrings, writing guidelines, readme update, debloat docs
-
-  Use when: updating documentation after code changes, enforcing writing guidelines, maintaining ADRs
-
-  DO NOT use when: README-specific updates - use update-readme instead.
-  DO NOT use when: complex multi-file consolidation - use doc-consolidation.
-
-  Use this skill for general documentation updates with built-in quality gates.
+description: Updates documentation after code changes with quality gates, slop detection, and accuracy checks. Use when code changes require corresponding doc updates.
+alwaysApply: false
 category: artifact-generation
-tags: [documentation, readme, adr, docstrings, writing, consolidation, debloat]
-tools: [Read, Write, Edit, Bash, TodoWrite]
+tags:
+- documentation
+- readme
+- adr
+- docstrings
+- writing
+- consolidation
+- debloat
+tools: []
 complexity: medium
+model_hint: standard
 estimated_tokens: 1200
 progressive_loading: true
 modules:
-  - adr-patterns
-  - directory-style-rules
-  - accuracy-scanning
-  - consolidation-integration
-  - capabilities-sync
+- modules/adr-patterns.md
+- modules/directory-style-rules.md
+- modules/accuracy-scanning.md
+- modules/consolidation-integration.md
+- modules/capabilities-sync.md
 dependencies:
-  - sanctum:shared
-  - sanctum:git-workspace-review
-  - imbue:evidence-logging
-  - scribe:slop-detector
-  - scribe:doc-generator
+- sanctum:shared
+- sanctum:git-workspace-review
+- imbue:proof-of-work
+- scribe:slop-detector
+- scribe:doc-generator
 optional_dependencies:
-  - elements-of-style:writing-clearly-and-concisely
-version: 1.3.7
+- elements-of-style:writing-clearly-and-concisely
 ---
 ## Table of Contents
 
@@ -54,13 +50,18 @@ version: 1.3.7
 
 # Documentation Update Workflow
 
-## When to Use
+## When To Use
 
 Use this skill when code changes require updates to the README, plans, wikis, or docstrings. Run `Skill(sanctum:git-workspace-review)` first to capture the change context.
 
 ### System Capabilities
 
 The documentation update workflow includes several specialized functions. It identifies redundancy through consolidation detection and enforces directory-specific style rules, with strict limits for `docs/` and more lenient ones for the `book/` directory. The system also verifies the accuracy of version numbers and component counts and integrates with the LSP for semantic documentation verification in supported versions of Claude Code.
+
+## When NOT To Use
+
+- README-specific updates - use update-readme instead
+- Complex multi-file consolidation - use doc-consolidation
 
 ## Required TodoWrite Items
 

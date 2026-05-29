@@ -1,6 +1,7 @@
 ---
 name: meeting-prep
 description: Prepare for meetings by gathering attendee context and related topics
+context: fork
 ---
 
 Prepare for an upcoming meeting by gathering context on attendees and related topics.
@@ -92,6 +93,116 @@ Search `00-Inbox/Meetings/` for recent meetings with these attendees:
 - What was decided?
 - What follow-ups were committed?
 
+### Step 3a: Semantic Context Enrichment (if QMD available)
+
+**This step runs automatically when QMD is installed.** It enriches meeting prep with semantically related vault content that keyword search would miss.
+
+Check if QMD MCP tools are available by calling `qmd_status`. **If available:**
+
+1. **Semantic search for meeting topic:**
+   ```
+   qmd_search(query="$MEETING", limit=5)
+   ```
+   Look for: related past discussions, relevant decisions, thematic connections — content that shares meaning with the meeting topic but uses different words.
+
+2. **Semantic search for each attendee (beyond their person page):**
+   ```
+   qmd_search(query="$ATTENDEE_NAME context discussions decisions", limit=3)
+   ```
+   Look for: contextual references where this person is mentioned by role/title/team (e.g., "the VP of Sales asked about..."), not just by name.
+
+3. **Cross-reference results** with what Steps 1-3 already found. **Only surface NEW insights** — content that the keyword-based person page lookup and meeting folder grep in earlier steps missed.
+
+**Add to the prep brief under a "Semantic Connections" heading:**
+- Past discussions thematically related to this meeting (even if different keywords were used)
+- Decisions made in adjacent contexts that are relevant here
+- Commitments or open items discovered through semantic matching
+- Related projects or goals that connect by meaning
+
+**If QMD is not available:** Skip this step silently. Steps 1-3 provide the standard keyword-based context.
+
+---
+
+### Step 3b: Integration Context (if available)
+
+Check `System/integrations/config.yaml` to see which integrations are enabled.
+
+**Notion Integration:**
+If `enabled.notion: true` AND Notion MCP is available:
+```
+Search Notion for pages related to:
+- Meeting topic ($MEETING)
+- Attendee names
+
+Include in prep:
+- Relevant Notion docs (title + summary)
+- Shared pages with attendees
+```
+
+**Slack Integration:**
+If `enabled.slack: true` AND Slack MCP is available:
+```
+Search Slack for recent conversations:
+- With/about each attendee
+- Mentioning the meeting topic
+
+Include in prep:
+- Recent Slack context (last 7 days)
+- Key threads or decisions
+- Any commitments made
+```
+
+**Teams Integration:**
+If `teams.enabled: true` AND Teams MCP available:
+```
+Search Teams chats with attendees:
+- Recent 1:1 and group chats involving each attendee
+- Mentioning the meeting topic
+
+Check Teams channels related to meeting topic:
+- Project channels, department channels
+- Recent posts and replies
+
+Surface recent decisions from Teams threads:
+- Key decisions made in channel conversations
+- Any commitments or follow-ups from Teams chats
+
+Include in prep:
+- Recent Teams context (last 7 days)
+- Key threads or decisions from channels
+- Any commitments made in Teams chats
+```
+
+**When BOTH Slack and Teams are enabled:**
+- Check both sources for each attendee
+- Label context by source: "**From Slack:**" / "**From Teams:**"
+- Deduplicate if the same person appears in both (merge context, label the source)
+- Present in separate sub-sections under Integration Context
+
+**Google Workspace Integration:**
+If `google-workspace.enabled: true` AND Google Workspace MCP is available:
+```
+Search Gmail for recent threads with each attendee (last 7 days):
+- Email exchanges and their topics
+- Shared Google Docs mentioned in threads
+- Outstanding email requests (sent but no reply)
+
+Search for Google Docs related to:
+- Meeting topic ($MEETING)
+- Shared documents with attendees
+
+Include in prep:
+- Recent email exchanges (last 7 days) — key threads summarized
+- Shared documents — Google Docs, Sheets, or Slides linked in emails
+- Outstanding requests/follow-ups — emails waiting > 48h for reply
+```
+
+**Graceful Degradation:**
+If an integration is enabled but the MCP isn't responding:
+- Skip silently
+- Don't show error to user
+- Continue with vault-only context
+
 ### Step 4: Compile Prep Brief
 
 ## Output Format
@@ -150,6 +261,24 @@ Previous meetings with these attendees:
 
 ---
 
+## Integration Context (if available)
+
+*This section appears when productivity integrations are enabled.*
+
+### From Slack
+> Recent conversation context with attendees (last 7 days)
+
+### From Teams
+> Recent Teams chats and channel threads with attendees (last 7 days)
+
+### From Notion
+> Related Notion docs: [Doc title](link)
+
+### From Gmail
+> Email threads with [Attendee]: [Summary of outstanding requests]
+
+---
+
 ## Suggested Talking Points
 
 Based on the context above:
@@ -175,6 +304,21 @@ After the meeting:
 2. Update person pages with new context
 3. Create tasks for any action items
 ```
+
+---
+
+## Track Usage (Silent)
+
+Update `System/usage_log.md` to mark meeting prep as used.
+
+**Analytics (Silent):**
+
+Call `track_event` with event_name `meeting_prep_completed` and properties:
+- `attendees_count`: number of attendees
+
+This only fires if the user has opted into analytics. No action needed if it returns "analytics_disabled".
+
+---
 
 ## When to Use
 

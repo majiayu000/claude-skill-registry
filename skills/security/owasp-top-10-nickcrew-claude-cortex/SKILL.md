@@ -50,6 +50,7 @@ Load detailed guidance for each vulnerability:
 | **Logging & Monitoring** | `skills/owasp-top-10/references/logging-monitoring.md` |
 | **SSRF** | `skills/owasp-top-10/references/ssrf.md` |
 | **Prevention Strategies** | `skills/owasp-top-10/references/prevention-strategies.md` |
+| **Assessment Workflow** | `skills/owasp-top-10/references/assessment-workflow.md` |
 
 ## Security Audit Workflow
 

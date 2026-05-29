@@ -228,6 +228,8 @@ python3 skills/security-suite/scripts/prompt_redteam.py scan \
 
 ## Reference Documents
 
+- [references/security-suite.feature](references/security-suite.feature) — Executable spec: composable primitives (static/dynamic/contract) → security-report.json, authorization-bounded, supplier-to vibe (soc-qk4b)
+
 - [references/owasp-checklist.md](references/owasp-checklist.md)
 - [references/agentops-redteam-pack.json](references/agentops-redteam-pack.json)
 - [references/policy-example.json](references/policy-example.json)

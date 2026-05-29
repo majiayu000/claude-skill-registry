@@ -1,0 +1,16 @@
+{
+  "name": "platform-profile",
+  "repo": "younwony/younwony.github.io",
+  "path": ".claude/skills/data/platform-profile/SKILL.md",
+  "source": "github.com/younwony/younwony.github.io",
+  "downloaded_at": "2026-02-02T03:41:19.039357Z",
+  "dir_name": "platform-profile",
+  "category": "generation",
+  "author": "younwony",
+  "source_url": "https://github.com/younwony/younwony.github.io/blob/main/.claude/skills/data/platform-profile/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/younwony/younwony.github.io/blob/main/.claude/skills/data/platform-profile/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

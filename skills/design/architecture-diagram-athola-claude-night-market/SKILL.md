@@ -1,6 +1,6 @@
 ---
 name: architecture-diagram
-description: 'Generate Mermaid architecture diagrams from codebase structure.'
+description: Generates a Mermaid architecture diagram showing high-level component relationships. Use when visualizing how plugins or modules fit together.
 ---
 
 # Architecture Diagram

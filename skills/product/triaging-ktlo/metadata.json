@@ -1,0 +1,18 @@
+{
+  "name": "triaging-ktlo",
+  "repo": "nuggetswise/pmos",
+  "path": "skills/triaging-ktlo/SKILL.md",
+  "source": "github.com/nuggetswise/pmos",
+  "downloaded_at": "2026-01-17T01:25:01.381624Z",
+  "dir_name": "triaging-ktlo",
+  "category": "product",
+  "github_path": "skills/triaging-ktlo",
+  "github_branch": "main",
+  "author": "nuggetswise",
+  "source_url": "https://github.com/nuggetswise/pmos/blob/main/skills/triaging-ktlo/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jesse Vincent",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

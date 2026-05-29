@@ -69,10 +69,10 @@ allowed-tools:
 
 ## Task仕様ナビ
 
-| Task | 起動タイミング | 入力 | 出力 |
-|------|----------------|------|------|
-| design-error-messages | 設計時 | エラー要件 | エラーメッセージ仕様 |
-| implement-error-messages | 実装時 | エラーメッセージ仕様 | エラーシステム実装 |
+| Task                     | 起動タイミング | 入力                 | 出力                 |
+| ------------------------ | -------------- | -------------------- | -------------------- |
+| design-error-messages    | 設計時         | エラー要件           | エラーメッセージ仕様 |
+| implement-error-messages | 実装時         | エラーメッセージ仕様 | エラーシステム実装   |
 
 **詳細仕様**: 各Taskの詳細は `agents/` ディレクトリを参照
 
@@ -113,36 +113,36 @@ allowed-tools:
 
 ### agents/（Task仕様書）
 
-| Task | パス | 用途 |
-|------|------|------|
-| 設計 | See [agents/design-error-messages.md](agents/design-error-messages.md) | メッセージ設計 |
-| 実装 | See [agents/implement-error-messages.md](agents/implement-error-messages.md) | システム実装 |
+| Task | パス                                                                         | 用途           |
+| ---- | ---------------------------------------------------------------------------- | -------------- |
+| 設計 | See [agents/design-error-messages.md](agents/design-error-messages.md)       | メッセージ設計 |
+| 実装 | See [agents/implement-error-messages.md](agents/implement-error-messages.md) | システム実装   |
 
 ### references/（詳細知識）
 
-| リソース | パス | 用途 |
-|----------|------|------|
+| リソース           | パス                                                                             | 用途               |
+| ------------------ | -------------------------------------------------------------------------------- | ------------------ |
 | ユーザーメッセージ | See [references/user-friendly-messages.md](references/user-friendly-messages.md) | メッセージ設計指針 |
-| エラーコード体系 | See [references/error-code-system.md](references/error-code-system.md) | コード設計 |
-| i18n対応 | See [references/i18n-error-handling.md](references/i18n-error-handling.md) | 多言語対応 |
-| APIレスポンス | See [references/api-error-responses.md](references/api-error-responses.md) | レスポンス形式 |
+| エラーコード体系   | See [references/error-code-system.md](references/error-code-system.md)           | コード設計         |
+| i18n対応           | See [references/i18n-error-handling.md](references/i18n-error-handling.md)       | 多言語対応         |
+| APIレスポンス      | See [references/api-error-responses.md](references/api-error-responses.md)       | レスポンス形式     |
 
 ### scripts/（決定論的処理）
 
-| スクリプト | 用途 | 使用例 |
-|------------|------|--------|
-| `validate-error-messages.mjs` | メッセージ検証 | `node scripts/validate-error-messages.mjs` |
-| `log_usage.mjs` | フィードバック記録 | `node scripts/log_usage.mjs --result success` |
+| スクリプト                    | 用途               | 使用例                                        |
+| ----------------------------- | ------------------ | --------------------------------------------- |
+| `validate-error-messages.mjs` | メッセージ検証     | `node scripts/validate-error-messages.mjs`    |
+| `log_usage.mjs`               | フィードバック記録 | `node scripts/log_usage.mjs --result success` |
 
 ### assets/（テンプレート）
 
-| テンプレート | 用途 |
-|--------------|------|
+| テンプレート               | 用途                           |
+| -------------------------- | ------------------------------ |
 | `error-system-template.ts` | エラーシステム実装テンプレート |
 
 ## 変更履歴
 
-| Version | Date | Changes |
-|---------|------|---------|
-| 2.0.0 | 2026-01-01 | agents追加、Level1-4削除、18-skills.md仕様完全準拠 |
-| 1.0.0 | 2025-12-24 | 初版作成 |
+| Version | Date       | Changes                                            |
+| ------- | ---------- | -------------------------------------------------- |
+| 2.0.0   | 2026-01-01 | agents追加、Level1-4削除、18-skills.md仕様完全準拠 |
+| 1.0.0   | 2025-12-24 | 初版作成                                           |

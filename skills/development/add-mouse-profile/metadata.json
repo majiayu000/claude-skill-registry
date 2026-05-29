@@ -1,0 +1,16 @@
+{
+  "name": "add-mouse-profile",
+  "repo": "benzwick/SlicerMouseMaster",
+  "path": ".claude/skills/add-mouse-profile/SKILL.md",
+  "source": "github.com/benzwick/SlicerMouseMaster",
+  "downloaded_at": "2026-02-02T04:17:56.997192Z",
+  "dir_name": "add-mouse-profile",
+  "category": "development",
+  "author": "benzwick",
+  "source_url": "https://github.com/benzwick/SlicerMouseMaster/blob/main/.claude/skills/add-mouse-profile/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/benzwick/SlicerMouseMaster/blob/main/.claude/skills/add-mouse-profile/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

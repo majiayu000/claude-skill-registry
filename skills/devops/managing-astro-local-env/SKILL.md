@@ -123,3 +123,4 @@ astro dev upgrade-test
 - **setting-up-astro-project**: Initialize projects and configure dependencies
 - **authoring-dags**: Write DAGs (uses MCP tools, requires running Airflow)
 - **testing-dags**: Test DAGs (uses MCP tools, requires running Airflow)
+- **deploying-airflow**: Deploy DAGs to production (Astro, Docker Compose, Kubernetes)

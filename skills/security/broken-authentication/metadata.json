@@ -1,11 +1,11 @@
 {
   "name": "broken-authentication",
   "repo": "zebbern/claude-code-guide",
+  "path": "skills/broken-authentication/SKILL.md",
+  "source": "github.com/zebbern/claude-code-guide",
+  "downloaded_at": "2026-01-22T01:00:54.586656Z",
+  "dir_name": "broken-authentication",
   "category": "security",
-  "description": "This skill should be used when the user asks to",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:28:13.216914Z",
   "github_path": "skills/broken-authentication",
-  "github_branch": "main",
-  "dir_name": "broken-authentication"
+  "github_branch": "main"
 }

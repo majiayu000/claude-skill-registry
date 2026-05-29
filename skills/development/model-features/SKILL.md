@@ -1,5 +1,5 @@
 ---
-name: model-features
+name: plutonium-model-features
 description: Plutonium model features - has_cents, associations, scopes, and routing
 ---
 
@@ -282,5 +282,5 @@ sgid_array.each { |sgid| user.add_post_sgid(sgid) }
 
 ## Related Skills
 
-- `model` - Model overview and structure
-- `create-resource` - Scaffold generator
+- `plutonium-model` - Model overview and structure
+- `plutonium-create-resource` - Scaffold generator

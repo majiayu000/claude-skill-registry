@@ -26,21 +26,7 @@ This skill provides comprehensive guidance for developing AWS infrastructure usi
 
 ## AWS Documentation Requirement
 
-**CRITICAL**: This skill requires AWS MCP tools for accurate, up-to-date AWS information.
-
-### Before Answering AWS Questions
-
-1. **Always verify** using AWS MCP tools (if available):
-   - `mcp__aws-mcp__aws___search_documentation` or `mcp__*awsdocs*__aws___search_documentation` - Search AWS docs
-   - `mcp__aws-mcp__aws___read_documentation` or `mcp__*awsdocs*__aws___read_documentation` - Read specific pages
-   - `mcp__aws-mcp__aws___get_regional_availability` - Check service availability
-
-2. **If AWS MCP tools are unavailable**:
-   - Guide user to configure AWS MCP using the `aws-mcp-setup` skill (auto-loaded as dependency)
-   - Help determine which option fits their environment:
-     - Has uvx + AWS credentials → Full AWS MCP Server
-     - No Python/credentials → AWS Documentation MCP (no auth)
-   - If cannot determine → Ask user which option to use
+Always verify AWS facts using MCP tools (`mcp__aws-mcp__*` or `mcp__*awsdocs*__*`) before answering. The `aws-mcp-setup` dependency is auto-loaded — if MCP tools are unavailable, guide the user through that skill's setup flow.
 
 ## Integrated MCP Servers
 

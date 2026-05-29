@@ -1,9 +1,9 @@
 ---
 name: ddd-patterns
-description: DDD-Patterns - Atoll Tourisme. Use when implementing DDD patterns.
+description: Patterns DDD - Atoll Tourisme. Use when implementing DDD patterns.
 ---
 
-# DDD-Patterns - Atoll Tourisme
+# Patterns DDD - Atoll Tourisme
 
 This skill provides guidelines and best practices.
 

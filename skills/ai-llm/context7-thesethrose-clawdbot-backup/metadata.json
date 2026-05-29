@@ -1,0 +1,16 @@
+{
+  "name": "context7",
+  "repo": "TheSethRose/clawdbot-backup",
+  "path": "skills/context7/skill.md",
+  "source": "github.com/TheSethRose/clawdbot-backup",
+  "downloaded_at": "2026-02-02T04:55:19.204712Z",
+  "dir_name": "context7-thesethrose-clawdbot-backup",
+  "category": "ai-llm",
+  "author": "TheSethRose",
+  "source_url": "https://github.com/TheSethRose/clawdbot-backup/blob/main/skills/context7/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TheSethRose/clawdbot-backup/blob/main/skills/context7/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "search",
+  "repo": "CaseMark/legal-plugin",
+  "path": "search/SKILL.md",
+  "github_branch": "main",
+  "category": "domains",
+  "source": "github.com/CaseMark/legal-plugin",
+  "dir_name": "search-casemark-legal-plugin",
+  "downloaded_at": "2026-03-22T05:04:10.051970Z",
+  "author": "CaseMark",
+  "source_url": "https://github.com/CaseMark/legal-plugin/blob/main/search/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CaseMark/legal-plugin/blob/main/search/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

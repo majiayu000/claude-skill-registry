@@ -1,0 +1,17 @@
+{
+  "name": "sync-demo-seeder",
+  "repo": "aaronjoeldev/cashlytics-ai",
+  "path": ".claude/skills/sync-demo-seeder/SKILL.md",
+  "github_branch": "main",
+  "category": "workflow",
+  "source": "github.com/aaronjoeldev/cashlytics-ai",
+  "dir_name": "sync-demo-seeder",
+  "downloaded_at": "2026-03-22T06:38:15.977062Z",
+  "author": "aaronjoeldev",
+  "source_url": "https://github.com/aaronjoeldev/cashlytics-ai/blob/main/.claude/skills/sync-demo-seeder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaronjoeldev/cashlytics-ai/blob/main/.claude/skills/sync-demo-seeder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

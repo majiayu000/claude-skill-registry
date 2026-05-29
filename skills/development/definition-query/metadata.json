@@ -1,9 +1,9 @@
 {
-  "name": "definition-query",
+  "name": "plutonium-definition-query",
   "repo": "radioactive-labs/plutonium-core",
-  "path": ".claude/skills/definition-query/SKILL.md",
+  "path": ".claude/skills/plutonium-definition-query/SKILL.md",
   "source": "github.com/radioactive-labs/plutonium-core",
-  "downloaded_at": "2026-01-19T01:04:36.511094Z",
+  "downloaded_at": "2026-01-22T03:05:18.434594Z",
   "dir_name": "definition-query",
   "category": "development",
   "github_path": ".claude/skills/plutonium-definition-query",

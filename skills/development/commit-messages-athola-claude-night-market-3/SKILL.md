@@ -1,6 +1,6 @@
 ---
 name: commit-messages
-description: 'Generate conventional commit messages from staged changes.'
+description: Generates conventional commit messages from staged changes. Use when committing and needing a well-formatted message. Do not use for full PR prep; use pr-prep.
 alwaysApply: false
 category: artifact-generation
 tags:

@@ -1,0 +1,17 @@
+{
+  "name": "ask-smart",
+  "repo": "ilang-ai/autocode",
+  "path": "skills/ask-smart/SKILL.md",
+  "github_branch": "main",
+  "category": "agent",
+  "source": "github.com/ilang-ai/autocode",
+  "dir_name": "ask-smart",
+  "downloaded_at": "2026-05-20T03:58:03.948390Z",
+  "author": "ilang-ai",
+  "source_url": "https://github.com/ilang-ai/autocode/blob/main/skills/ask-smart/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ilang-ai/autocode/blob/main/skills/ask-smart/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

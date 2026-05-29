@@ -8,6 +8,7 @@ description: Implements React Flow node-based UIs correctly using @xyflow/react.
 ## Quick Start
 
 ```tsx
+import { useCallback } from 'react';
 import { ReactFlow, useNodesState, useEdgesState, addEdge } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 
@@ -41,6 +42,17 @@ export default function Flow() {
   );
 }
 ```
+
+## Implementation gates
+
+Run these in order; do not skip ahead on “looks fine.”
+
+1. **Styles on the page** — **Pass if** the bundle that renders `<ReactFlow />` imports `@xyflow/react/dist/style.css` (or equivalent CSS pipeline) so nodes/edges are visible and hit-targets match visuals.
+2. **`useReactFlow` boundary** — **Pass if** every caller of `useReactFlow()` is a descendant of `<ReactFlowProvider>` that wraps the same tree as `<ReactFlow />` (or you have intentionally split stores and can name both roots).
+3. **Stable `nodeTypes` / `edgeTypes`** — **Pass if** those maps are **module-scope constants** or `useMemo` with stable deps—not a new `{ ... }` literal each render in the component that renders `<ReactFlow />`.
+4. **Handles match edges** — **Pass if** for nodes with multiple `Handle` `id`s, every edge that must land on a specific handle sets `sourceHandle` / `targetHandle` accordingly (or you accept default handle resolution deliberately).
+
+See [ADDITIONAL_COMPONENTS.md](ADDITIONAL_COMPONENTS.md) for MiniMap, Controls, Background, NodeToolbar, and NodeResizer patterns.
 
 ## Core Patterns
 

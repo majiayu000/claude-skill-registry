@@ -1,29 +1,40 @@
 ---
 name: proof-of-work
-description: |
-  Enforces "prove before claim" discipline - validation, testing, and evidence requirements before declaring work complete.
-  Triggers: validation, definition-of-done, proof, acceptance-criteria, testing, completion, finished, done, working, should work, configured, ready to use, implemented, fixed, improvement validated, workflow optimized, performance improved, issue resolved.
-  Use when claiming work is complete, recommending solutions, or finishing implementations.
-  Do not use when asking questions or for work clearly in-progress.
-  MANDATORY: This skill is required before any completion claim.
+description: 'Enforce validation and evidence before declaring work complete. Use for acceptance criteria and done gates.'
+version: 1.9.3
+alwaysApply: false
 category: workflow-methodology
-tags: [validation, testing, proof, definition-of-done, acceptance-criteria]
-dependencies:
-  - imbue:evidence-logging
+tags:
+- validation
+- testing
+- proof
+- definition-of-done
+- acceptance-criteria
+dependencies: []
 tools: []
 usage_patterns:
-  - completion-validation
-  - acceptance-testing
-  - proof-generation
+- completion-validation
+- acceptance-testing
+- proof-generation
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 3000
 modules:
-  - modules/validation-protocols.md
-  - modules/acceptance-criteria.md
-  - modules/red-flags.md
-  - modules/iron-law-enforcement.md
-version: 1.3.5
+- modules/acceptance-criteria.md
+- modules/anti-cargo-cult.md
+- modules/evidence-logging.md
+- modules/iron-law-enforcement.md
+- modules/output-contracts.md
+- modules/red-flags.md
+- modules/retry-protocol.md
+- modules/todowrite-patterns.md
+- modules/validation-protocols.md
+role: library
 ---
+> Claims without evidence fail the people who depend on
+> your work. Proof-of-work is humility in practice:
+> "it looks correct" is not "I verified it works."
+
 # Proof of Work
 
 ## Table of Contents
@@ -97,7 +108,7 @@ Research known bugs and limitations related to the approach. Check GitHub issues
 
 ### Step 4: Capture Evidence (`proof:evidence-captured`)
 
-Use `imbue:evidence-logging` to document the commands executed, their output, timestamps, and the conclusions drawn from each step.
+Use `imbue:proof-of-work` to document the commands executed, their output, timestamps, and the conclusions drawn from each step.
 
 ### Step 5: Prove Completion (`proof:completion-proven`)
 
@@ -116,6 +127,16 @@ Verify that the problem was reproduced with evidence and the solution was tested
 ## Red Flag Self-Check
 
 Before sending a completion message, confirm that you have run the recommended commands and captured their output. Verify that you have researched known issues and that the validation steps are reproducible by the user. Ensure you are proving rather than assuming.
+
+## Supporting Modules
+
+- [TodoWrite naming patterns](modules/todowrite-patterns.md) - naming conventions and safe deletion rules for imbue TodoWrite items
+- [Evidence logging](modules/evidence-logging.md) - structured evidence capture, audit trails, and reproducibility patterns
+
+## Related Skills
+
+- `imbue:karpathy-principles` - The "Goal-Driven Execution" principle wraps the Iron Law in a four-principle synthesis useful as a pre-flight gate
+- See `docs/quality-gates.md#skill-level-quality-gate-composition` for the full gate-skill federation graph
 
 ## Exit Criteria
 

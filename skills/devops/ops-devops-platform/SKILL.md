@@ -1,13 +1,13 @@
 ---
 name: ops-devops-platform
-description: Production-grade DevOps patterns with Kubernetes 1.34+, Terraform 1.9+, Docker 27+, ArgoCD/FluxCD GitOps, SRE, eBPF-based observability, AI-driven monitoring, CI/CD security, and cloud-native operations (AWS, GCP, Azure, Kafka).
+description: "Production-grade DevOps and platform engineering patterns: Kubernetes, Terraform, containers, GitOps, CI/CD, observability, incident response, security hardening, and cloud-native operations (AWS, GCP, Azure, Kafka)."
 ---
 
 # DevOps Engineering — Quick Reference
 
-This skill equips Claude with actionable templates, checklists, and patterns for building self-service platforms, automating infrastructure with GitOps, deploying securely with DevSecOps, scaling with Kubernetes, ensuring reliability through SRE practices, and operating production systems with AI-driven observability.
+This skill equips teams with actionable templates, checklists, and patterns for building self-service platforms, automating infrastructure with GitOps, deploying securely with DevSecOps, scaling with Kubernetes, ensuring reliability through SRE practices, and operating production systems with strong observability.
 
-**Modern Best Practices (December 2025)**: Kubernetes 1.34 (in-place Pod resource updates GA, 1.35 releasing Dec 17), Docker 27 with BuildKit optimizations, Terraform 1.9+ with improved provider ecosystem, ArgoCD 2.14/FluxCD 2.5 GitOps patterns, eBPF-based observability (Cilium, Hubble), and AI-driven AIOps for incident correlation.
+**Modern Best Practices (Jan 2026)**: Kubernetes 1.33+ (supported releases + version skew policy), Docker Engine v27, Terraform 1.x (current stable in 1.14.x), GitOps with Argo CD v3 and Flux v2, OpenTelemetry for traces/metrics/logs, and eBPF-based observability where it meaningfully reduces operational overhead.
 
 ---
 
@@ -15,10 +15,10 @@ This skill equips Claude with actionable templates, checklists, and patterns for
 
 | Task | Tool/Framework | Command | When to Use |
 |------|----------------|---------|-------------|
-| Infrastructure as Code | Terraform 1.9+ | `terraform plan && terraform apply` | Provision cloud resources declaratively |
-| GitOps Deployment | ArgoCD / FluxCD | `argocd app sync myapp` | Continuous reconciliation, declarative deployments |
-| Container Build | Docker 27+ | `docker build -t app:v1 .` | Package applications with dependencies |
-| Kubernetes Deployment | kubectl / Helm (K8s 1.34+) | `kubectl apply -f deploy.yaml` / `helm upgrade app ./chart` | Deploy to K8s cluster, manage releases |
+| Infrastructure as Code | Terraform 1.x | `terraform plan && terraform apply` | Provision cloud resources declaratively |
+| GitOps Deployment | Argo CD / Flux | `argocd app sync myapp` | Continuous reconciliation, declarative deployments |
+| Container Build | Docker Engine v27 | `docker build -t app:v1 .` | Package applications with dependencies |
+| Kubernetes Deployment | kubectl / Helm (Kubernetes) | `kubectl apply -f deploy.yaml` / `helm upgrade app ./chart` | Deploy to K8s cluster, manage releases |
 | CI/CD Pipeline | GitHub Actions | Define workflow in `.github/workflows/ci.yml` | Automated testing, building, deploying |
 | Security Scanning | Trivy / Falco | `trivy image myapp:latest` | Vulnerability scanning, runtime security |
 | Monitoring & Alerts | Prometheus + Grafana | Configure ServiceMonitor and AlertManager | Observability, SLO tracking, incident alerts |
@@ -88,7 +88,7 @@ Claude should invoke this skill when users request:
 - GitOps workflows (ArgoCD, FluxCD, declarative infrastructure management)
 - Infrastructure as Code patterns (Terraform, K8s manifests, policy as code)
 - CI/CD pipelines with DevSecOps (GitHub Actions, security scanning, SAST/DAST/SCA)
-- SRE incident management, AI-driven alerting, escalation, or postmortem templates
+- SRE incident management, escalation, and postmortem templates
 - eBPF-based observability (Cilium, Hubble, kernel-level insights, OpenTelemetry)
 - Kubernetes operational patterns (day-2 operations, resource management, workload placement)
 - Cloud-native monitoring (Prometheus, Grafana, unified observability platforms)
@@ -103,7 +103,7 @@ Operational best practices by domain:
 - **DevOps/SRE Operations**: [resources/devops-best-practices.md](resources/devops-best-practices.md) - Core patterns for safe infrastructure changes, deployments, and incident response
 - **Platform Engineering**: [resources/platform-engineering-patterns.md](resources/platform-engineering-patterns.md) - Self-service platforms, golden paths, internal developer portals, policy as code
 - **GitOps Workflows**: [resources/gitops-workflows.md](resources/gitops-workflows.md) - Continuous reconciliation, multi-environment promotion, ArgoCD/FluxCD patterns, progressive delivery
-- **SRE Incident Management**: [resources/sre-incident-management.md](resources/sre-incident-management.md) - Severity classification, escalation procedures, blameless postmortems, AI-driven correlation
+- **SRE Incident Management**: [resources/sre-incident-management.md](resources/sre-incident-management.md) - Severity classification, escalation procedures, blameless postmortems, alert correlation, and runbooks
 - **Operational Standards**: [resources/operational-patterns.md](resources/operational-patterns.md) - Platform engineering blueprints, CI/CD safety, SLOs, and reliability drills
 
 Each guide includes:
@@ -162,6 +162,7 @@ Production templates organized by tech stack (27 templates total):
 
 ### Incident Response
 - [templates/incident-response/template-postmortem.md](templates/incident-response/template-postmortem.md) - Incident postmortems
+- [templates/incident-response/template-runbook-starter.md](templates/incident-response/template-runbook-starter.md) - Runbook starter template
 - [templates/incident-response/template-incident-comm.md](templates/incident-response/template-incident-comm.md) - Incident communication
 - [templates/incident-response/template-incident-response.md](templates/incident-response/template-incident-response.md) - Incident response procedures
 
@@ -180,15 +181,16 @@ Production templates organized by tech stack (27 templates total):
 - [resources/gitops-workflows.md](resources/gitops-workflows.md)
 
 **Shared Utilities** (Centralized patterns — extract, don't duplicate)
-- [../_shared/utilities/config-validation.md](../_shared/utilities/config-validation.md) — Zod 3.24+, secrets management (Vault, 1Password, Doppler)
-- [../_shared/utilities/resilience-utilities.md](../_shared/utilities/resilience-utilities.md) — p-retry v6, circuit breaker, OTel spans
-- [../_shared/utilities/logging-utilities.md](../_shared/utilities/logging-utilities.md) — pino v9 + OpenTelemetry integration
-- [../_shared/utilities/observability-utilities.md](../_shared/utilities/observability-utilities.md) — OpenTelemetry SDK, tracing, metrics
-- [../_shared/utilities/testing-utilities.md](../_shared/utilities/testing-utilities.md) — Test factories, fixtures, mocks
-- [../_shared/resources/code-quality-operational-playbook.md](../_shared/resources/code-quality-operational-playbook.md) — Canonical coding rules & review protocols
+- [../software-clean-code-standard/utilities/config-validation.md](../software-clean-code-standard/utilities/config-validation.md) — Zod 3.24+, secrets management (Vault, 1Password, Doppler)
+- [../software-clean-code-standard/utilities/resilience-utilities.md](../software-clean-code-standard/utilities/resilience-utilities.md) — p-retry v6, circuit breaker, OTel spans
+- [../software-clean-code-standard/utilities/logging-utilities.md](../software-clean-code-standard/utilities/logging-utilities.md) — pino v9 + OpenTelemetry integration
+- [../software-clean-code-standard/utilities/observability-utilities.md](../software-clean-code-standard/utilities/observability-utilities.md) — OpenTelemetry SDK, tracing, metrics
+- [../software-clean-code-standard/utilities/testing-utilities.md](../software-clean-code-standard/utilities/testing-utilities.md) — Test factories, fixtures, mocks
+- [../software-clean-code-standard/resources/clean-code-standard.md](../software-clean-code-standard/resources/clean-code-standard.md) — Canonical clean code rules (`CC-*`) for citation
 
 **Templates**
 - [templates/incident-response/template-postmortem.md](templates/incident-response/template-postmortem.md)
+- [templates/incident-response/template-runbook-starter.md](templates/incident-response/template-runbook-starter.md)
 - [templates/incident-response/template-incident-comm.md](templates/incident-response/template-incident-comm.md)
 - [templates/incident-response/template-incident-response.md](templates/incident-response/template-incident-response.md)
 - [templates/docker/template-docker-ops.md](templates/docker/template-docker-ops.md)
@@ -238,9 +240,88 @@ Production templates organized by tech stack (27 templates total):
 - [../dev-api-design/SKILL.md](../dev-api-design/SKILL.md) — RESTful API design and versioning
 - [../git-workflow/SKILL.md](../git-workflow/SKILL.md) — Git branching strategies and CI/CD integration
 
-**AI/ML Operations:**
+**Optional: AI/Automation (Related Skills):**
 - [../ai-mlops/SKILL.md](../ai-mlops/SKILL.md) — ML model deployment, monitoring, and lifecycle management
-- [../ai-mlops/SKILL.md](../ai-mlops/SKILL.md) — ML security, governance, and compliance
+
+---
+
+## Cost Governance & Capacity Planning
+
+**[templates/cost-governance/template-cost-governance.md](templates/cost-governance/template-cost-governance.md)** — Production cost control for cloud infrastructure.
+
+### Key Sections
+
+- **Cost Governance Framework** — Tagging strategy, budget alerts, anomaly detection
+- **Cloud Cost Optimization** — Right-sizing, reserved capacity, storage tiering
+- **Kubernetes Cost Control** — Resource requests/limits, quotas, autoscaler config
+- **Capacity Planning** — Utilization baseline, growth projections, scaling triggers
+- **FinOps Practices** — Monthly review agenda, optimization workflow
+
+---
+
+## Do / Avoid
+
+### GOOD: Do
+
+- Tag all resources at creation time
+- Set budget alerts before hitting limits
+- Review right-sizing recommendations monthly
+- Use spot/preemptible for fault-tolerant workloads
+- Set Kubernetes resource requests on all pods
+- Enable cluster autoscaler with scale-down
+- Document capacity planning assumptions
+- Run postmortems after every incident
+
+### BAD: Avoid
+
+- Deploying without cost tags
+- Running dev resources 24/7
+- Over-provisioning "just in case"
+- Ignoring reserved capacity opportunities
+- Disabling scale-down to "avoid disruption"
+- Alert fatigue (too many low-priority alerts)
+- Snowflake infrastructure (manual, undocumented)
+- "Clickops" drift (changes outside IaC)
+
+---
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Fix |
+|--------------|---------|-----|
+| **No tagging** | Can't attribute costs | Enforce tags in CI/CD |
+| **Dev runs 24/7** | 70% waste | Scheduled shutdown |
+| **Over-provisioned** | Paying for unused capacity | Monthly right-sizing |
+| **No reservations** | Paying on-demand premium | 60-70% coverage target |
+| **Alert fatigue** | Real issues missed | SLO-based alerting, tuned thresholds |
+| **Snowflake infra** | Undocumented, unreproducible | Everything in Terraform/IaC |
+| **No postmortems** | Same incidents repeat | Blameless postmortem for every SEV1/2 |
+
+---
+
+## Optional: AI/Automation
+
+> **Note**: AI assists with analysis but cost/incident decisions need human approval.
+
+### Automated Operations
+
+- Unused resource detection and notification
+- Right-sizing recommendation generation
+- Alert summarization and correlation
+- Runbook step suggestions
+
+### AI-Assisted Analysis
+
+- Cost trend prediction
+- Incident pattern identification
+- Post-mortem theme extraction
+
+### Bounded Claims
+
+- AI recommendations need validation before action
+- Automated deletions require approval workflow
+- Cost predictions are estimates, not guarantees
+- Runbook suggestions need SRE verification
 
 ---
 
@@ -249,7 +330,7 @@ Production templates organized by tech stack (27 templates total):
 See [resources/operational-patterns.md](resources/operational-patterns.md) for:
 - Platform engineering blueprints and GitOps reconciliation checklists
 - DevSecOps CI/CD gates, SLO/SLI playbooks, and rollout verification steps
-- Observability patterns (eBPF), AIOps incident handling, and reliability drills
+- Observability patterns (eBPF), incident noise reduction, and reliability drills
 
 ---
 
@@ -269,4 +350,3 @@ See [data/sources.json](data/sources.json) for 45+ curated sources organized by 
 ---
 
 *Use this skill as a hub for safe, modern, and production-grade DevOps patterns. All templates and patterns are operational—no theory or book summaries.*
-```

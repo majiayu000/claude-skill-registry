@@ -1,0 +1,17 @@
+{
+  "name": "yann-lecun",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/yann-lecun/SKILL.md",
+  "github_branch": "main",
+  "category": "agent",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "yann-lecun",
+  "downloaded_at": "2026-05-12T19:49:01.317788Z",
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/yann-lecun/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/yann-lecun/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

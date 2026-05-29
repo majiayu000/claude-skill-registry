@@ -1,0 +1,17 @@
+{
+  "name": "gifgrep",
+  "repo": "aresbit/OpenMateCode",
+  "path": "skills/gifgrep/SKILL.md",
+  "github_branch": "master",
+  "category": "generation",
+  "source": "github.com/aresbit/OpenMateCode",
+  "dir_name": "gifgrep-aresbit-openmatecode-2",
+  "downloaded_at": "2026-03-01T06:48:08.886548Z",
+  "author": "aresbit",
+  "source_url": "https://github.com/aresbit/OpenMateCode/blob/master/skills/gifgrep/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aresbit/OpenMateCode/blob/master/skills/gifgrep/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

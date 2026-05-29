@@ -1,0 +1,18 @@
+{
+  "name": "lead-scoring",
+  "description": "Implement and manage lead scoring systems. Use when working with lead qualification, conversion tracking, or lead funnel optimization. Triggers on \"lead\", \"scoring\", \"conversion\", \"funnel\", \"qualifica",
+  "repo": "JaveedIshaq/ai-workflow-orchestrator",
+  "path": "skills/lead-gen/lead-scoring",
+  "category": "product",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/JaveedIshaq/ai-workflow-orchestrator",
+  "dir_name": "lead-scoring-javeedishaq-ai-workflow-orchestr-2",
+  "author": "JaveedIshaq",
+  "source_url": "https://github.com/JaveedIshaq/ai-workflow-orchestrator/blob/main/skills/lead-gen/lead-scoring/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Antoine Schaller",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

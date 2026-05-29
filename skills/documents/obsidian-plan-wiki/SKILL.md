@@ -1,247 +1,339 @@
 ---
 name: obsidian-plan-wiki
-description: This skill should be used when creating or working with modular project plans stored as Obsidian-compatible markdown wikis. Use when the user asks to create a plan, roadmap, or documentation system that needs to be navigable in Obsidian, or when working with existing plan wikis that use the %% [ ] %% task tracking format.
+description: Create and manage behavior specification wikis in Obsidian format. Use when creating specs, documenting features, or when user mentions "wiki", "spec", or "workstream". Specs are the source of truth - point an agent at a spec to update code.
 ---
 
-# Obsidian Plan Wiki
+# Obsidian Spec Wiki
 
-Create and manage modular project plans as Obsidian-compatible markdown wikis with progressive disclosure, task tracking, and research integration.
+Create and manage behavior specification wikis as Obsidian-compatible markdown. Specs capture what the system does (not how to build it) so code can be rebuilt from specs alone.
 
 ## When to Use
 
-- Creating new project plans, roadmaps, or documentation systems
-- Working with existing plan wikis using `%% [ ] %%` task format
-- User mentions "plan", "roadmap", "wiki", or "Obsidian"
-- Need to organize complex multi-phase projects
+- Creating new project specs or documentation
+- Working with existing wikis using `%% [ ] %%` task format
+- User mentions "wiki", "spec", "workstream", or "Obsidian"
+- Need to document behavior for agent-driven code updates
+
+## Wiki Discovery
+
+Check for existing wiki in order:
+1. `docs/` - Primary location
+2. `docs/wiki/` - Nested variant
+3. `wiki/` - Root alternative
+4. `.plans/*/` - Legacy support
+
+First match wins. **Always use `docs/` for new wikis.**
 
 ## Directory Structure
 
-Initialize new plan wikis with this structure:
+```
+docs/
+├── README.md              # Index with workstream table
+├── CLAUDE.md              # Global agent rules
+├── changelog.md           # Keep a Changelog format
+├── workstreams/
+│   └── NN-name/
+│       ├── README.md      # Executive summary + spec table
+│       ├── CLAUDE.md      # Optional: workstream-specific rules
+│       └── N.N-spec.md    # Behavior specs
+├── reference/             # Shared architecture docs
+└── research/              # Oracle outputs (frozen)
+```
 
-```
-plan-name/
-├── README.md           # Index - start here, links to everything
-├── CLAUDE.md           # Rules for Claude working with this plan
-├── changelog.md        # Amendment history (Keep a Changelog format)
-├── deferred.md         # Preserved deferred work (optional)
-├── phases/             # High-level phase overviews
-│   ├── 01-phase-name.md
-│   └── 02-phase-name.md
-├── tasks/              # Individual task specifications
-│   ├── 1.1-task-slug.md
-│   └── 1.2-task-slug.md
-├── reference/          # Supporting documentation
-│   └── architecture.md
-└── research/           # Oracle/Delphi research outputs
-    ├── index.md
-    └── topic-name.md
-```
+**Key concepts:**
+- **Workstreams** = logical functional areas (not temporal phases)
+- **Specs** = behavior documents (what the system does)
+- **Research** = Oracle/Delphi outputs (frozen snapshots)
 
 ## Core Principles
 
 ### 1. Progressive Disclosure
 
-Load only what's needed for the current task:
+Load only what's needed:
 
 ```
-User asks about camera → Read tasks/3.3-camera.md only
-User asks about Phase 2 → Read phases/02-entity-system.md only
+User asks about auth → Read workstreams/01-auth/README.md
+User asks about login → Read workstreams/01-auth/1.1-login.md
 User asks for overview → Read README.md only
 ```
 
-Never load the entire plan into context at once.
+Never load the entire wiki into context at once.
 
-### 2. Task Tracking with Obsidian Comments
+### 2. Wiki Links Everywhere
 
-Track open questions and tasks using hidden Obsidian comments:
+All references use `[[wiki-links]]`. Broken links = sync signal.
 
 ```markdown
-%% [ ] this is an open question/task %%
-%% [x] this was completed → see [[research/result]] %%
+[[workstreams/01-auth/1.1-login|Login Flow]]
+[[reference/architecture#auth-middleware|Auth Middleware]]
 ```
 
-To find all open tasks:
+### 3. Task Tracking with Obsidian Comments
+
+Track open questions using hidden comments:
+
+```markdown
+%% [ ] open question or task %%
+%% [x] completed → see [[research/result]] %%
+```
+
+Find all open tasks:
 ```bash
-grep -r '%% \[ \]' path/to/plan/
-```
-
-When completing a task:
-1. Change `[ ]` to `[x]`
-2. Add arrow `→` with link to result
-3. Add entry to changelog.md
-
-### 3. Research Workflow
-
-When a `%% [ ] %%` comment needs research:
-
-**Simple question:** Launch single oracle agent (Task tool with general-purpose)
-
-**Complex/uncertain:** Use Delphi pattern (3 parallel oracles + synthesis)
-- Launch 3 agents with same question but different search angles
-- Synthesize results into single research document
-- Store in `research/` directory
-
-**After research:**
-```markdown
-%% [x] question → Delphi complete: [[research/topic-delphi]] %%
-> **Research:** See [[research/topic]] for details
+grep -r '%% \[ \]' docs/
 ```
 
 ### 4. Changelog Protocol
 
-Every change must be logged in `changelog.md` using Keep a Changelog format:
+Log every change in `changelog.md`:
 
 ```markdown
-## YYYY-MM-DD (Session N)
+## YYYY-MM-DD
 
 ### Added
 - [[path/to/file]] - Description
 
 ### Changed
 - [[path/to/file]] - What changed and why
-
-### Research
-- **Topic:** Summary of findings
 ```
 
-### 5. Wiki-Link Format
+## Templates
 
-Use Obsidian wiki-links for all internal references:
+### Spec File Template
 
 ```markdown
-[[tasks/1.1-project-structure]]           # Same directory
-[[../research/unity-cinemachine]]         # Relative path
-[[tasks/4.1-ui-framework|UI Framework]]   # With display text
+# N.N Spec Name
+
+> **Workstream:** [[../README|NN-Workstream-Name]]
+
+## Behavior
+
+### Contract
+- **Input:** description
+- **Output:** description
+- **Preconditions:** what must be true before
+- **Postconditions:** what will be true after
+
+### Scenarios
+- When X happens → Y should occur
+- When edge case → handle gracefully
+
+## Decisions
+
+### Assumptions
+1. [Assumption] - [implication if wrong]
+2. [Assumption] - [implication if wrong]
+
+### Failure Modes
+| Failure | Detection | Recovery |
+|---------|-----------|----------|
+| [scenario] | [how to detect] | [what to do] |
+
+### ADR-1: Decision Title
+- **Status:** Proposed | Accepted | Deprecated | Superseded
+- **Context:** Why this decision was needed
+- **Decision:** What we decided
+- **Consequences:** What happens as a result
+- **Alternatives:** What we considered and rejected
+
+### Open Questions
+%% [ ] Question needing resolution %%
+
+## Integration
+
+### Dependencies
+- [[path/to/spec|Display Name]] - what we need from it
+
+### Consumers
+- [[path/to/spec|Display Name]] - what uses us
+
+### Diagram
+```mermaid
+graph LR
+    A --> B
+    B --> C
+```
 ```
 
-## File Templates
-
-### README.md Template
+### Workstream README Template
 
 ```markdown
-# Project Name
+# NN Workstream Name
 
-> **For Claude:** Read specific phase/task files as needed. Don't load everything at once.
+> Brief description of what this workstream covers.
 
-**Goal:** [One sentence goal]
+## Goal
+What this workstream achieves.
 
-**Tech Stack:** [Key technologies]
+## Specs
 
----
+| Spec | Description | Status |
+|------|-------------|--------|
+| [[N.1-spec-name]] | Brief description | Status |
+| [[N.2-spec-name]] | Brief description | Status |
 
-## Quick Links
+## Shared Decisions
 
-- [[CLAUDE]] - **Rules for Claude** (read first)
-- [[changelog]] - Amendment history with links
+ADRs that apply to all specs in this workstream:
+- **Decision:** Brief summary
 
-## Research
+## Integration Points
 
-- [[research/topic]] - Description
-
-## Phases
-
-| Phase | Description | File |
-|-------|-------------|------|
-| 1 | Phase Name | [[phases/01-name]] |
-| 2 | Phase Name | [[phases/02-name]] |
-
-## Task Index
-
-### Phase 1: Name
-- [[tasks/1.1-slug|1.1 Task Title]]
-- [[tasks/1.2-slug|1.2 Task Title]]
-```
-
-### Task File Template
-
-```markdown
-# Task X.Y: Title
-
-**Phase:** N - Phase Name
-**Commit:** `type(scope): description`
-
-%% [ ] any open questions %%
-
-> **Research:** See [[../research/topic]] if applicable
-
-## Overview
-[Brief description]
-
-## Files
-- Create: `path/to/file.ext`
-- Update: `path/to/existing.ext`
-
-## Steps
-
-### Step 1: Name
-[Implementation details]
-
-## Success Criteria
-- [ ] Criterion 1
-- [ ] Criterion 2
+This workstream connects to:
+- [[../other-workstream/README|Other Workstream]] - how
 ```
 
 ### CLAUDE.md Template
 
-See `references/claude-template.md` for the full template.
+The project CLAUDE.md should include wiki operations guidance:
+
+```markdown
+# Rules for Claude: [Project Name]
+
+[Project-specific rules here...]
+
+---
+
+## Wiki Operations
+
+This documentation lives in an Obsidian vault. Follow these patterns.
+
+### Progressive Disclosure
+
+**Don't load everything.** Navigate in layers:
+
+1. **Start at workstream README** - `workstreams/##-name/README.md`
+   - Understand scope and current status
+   - See which specs exist
+
+2. **Read specific specs as needed** - `workstreams/##-name/#.#-spec.md`
+   - Load only the spec you're implementing
+   - Check "Integration" section for related specs
+
+3. **Dive into reference docs for deep context** - `reference/` or `workstreams/##-name/reference/`
+
+4. **Check research for background** - `research/topic/`
+
+### Updating Specs
+
+**Before:** Read Assumptions and Failure Modes
+**During:** Mark open questions resolved, note discoveries
+**After:** Update Success Criteria checkboxes, update README status
+
+### Link Format
+
+| Target | Format |
+|--------|--------|
+| Same directory | `[text](filename.md)` |
+| Parent | `[text](../README.md)` |
+| Cross-workstream | `[text](../06-name/README.md)` |
+```
+
+### Root README Template
+
+```markdown
+# Project Wiki
+
+> **For Claude:** Start here. Read workstream READMEs for context, then specific specs as needed.
+
+## Workstreams
+
+| # | Workstream | Description |
+|---|------------|-------------|
+| 01 | [[workstreams/01-name/README\|Name]] | Description |
+
+## Quick Links
+
+- [[CLAUDE]] - Rules for agents
+- [[changelog]] - What changed and when
+- [[reference/architecture]] - System overview
+
+## Research
+
+Oracle/Delphi outputs (frozen snapshots):
+- [[research/topic]] - Description
+```
 
 ## Workflow Patterns
 
-### Creating a New Plan
+### Creating a New Wiki
 
-1. Create directory structure (see above)
-2. Write README.md with phase overview
-3. Create CLAUDE.md with plan-specific rules
+1. Create `docs/` directory structure
+2. Write README.md with workstream table
+3. Create CLAUDE.md with project-specific rules
 4. Initialize changelog.md
-5. Create phase files with task lists
-6. Create individual task files as needed
+5. Create workstream folders with README.md
+6. Add specs as needed
 
-### Processing Open Tasks
+### Adding a Spec
 
-1. Find open tasks: `grep -r '%% \[ \]' path/to/plan/`
-2. For each task:
-   - Read the file containing the task
-   - Determine if research is needed
-   - Execute research (oracle or Delphi)
-   - Update task marker to `[x]` with result link
-   - Update changelog
-
-### Adding Research
-
-1. Create file in `research/` directory
-2. Use descriptive name: `topic-name.md` or `topic-delphi.md` for Delphi synthesis
-3. Include metadata header:
-   ```markdown
-   > **Research Type:** Oracle | Delphi
-   > **Date:** YYYY-MM-DD
-   > **Topic:** Brief description
-   ```
-4. Update research index if exists
-5. Link from relevant task files
+1. Create `N.N-spec-name.md` in workstream folder
+2. Fill in Behavior (contract + scenarios)
+3. Document Decisions (ADRs)
+4. Map Integration (dependencies + consumers with wiki links)
+5. Update workstream README table
 6. Add to changelog
 
-### Converting Diagrams to Mermaid
+### Research Workflow
 
-Replace ASCII art and text flow diagrams with Mermaid:
+When a `%% [ ] %%` needs research:
 
+**Simple question:** Launch oracle agent
+**Complex/uncertain:** Use Delphi (3 parallel oracles + synthesis)
+
+Store results in `research/`, link from spec:
 ```markdown
-# Before (ASCII)
-Phase 1 → Phase 2 → Phase 3
-
-# After (Mermaid)
-​```mermaid
-graph LR
-    P1[Phase 1] --> P2[Phase 2] --> P3[Phase 3]
-​```
+%% [x] question → see [[research/topic]] %%
 ```
 
-Preserve directory trees as-is (they're fine as ASCII).
+### Pointing an Agent at a Spec
+
+To update code based on a spec:
+1. Agent reads the spec's Behavior section (contract + scenarios)
+2. Agent reads the Integration section (what it touches)
+3. Agent implements/updates code to match spec
+4. Agent updates spec status if needed
+
+### Updating Specs During Implementation
+
+**Before starting:** Read the spec's Assumptions and Failure Modes.
+
+**During implementation:**
+- Add implementation notes to the spec
+- Mark open questions as resolved: `%% [x] Decided → [outcome] %%`
+- Note any discovered failure modes
+
+**After completing:**
+- Update Success Criteria checkboxes
+- Add commit hash if significant
+- Update workstream README status if needed
+
+## Link Format
+
+Use relative markdown links (Obsidian-compatible):
+
+| Target | Link Format |
+|--------|-------------|
+| Same directory | `[text](filename.md)` |
+| Parent directory | `[text](../README.md)` |
+| Subdirectory | `[text](reference/file.md)` |
+| Cross-workstream | `[text](../06-context-menu/README.md)` |
+| Heading anchor | `[text](file.md#section-name)` |
+
+## When to Create New Documentation
+
+| Situation | Action |
+|-----------|--------|
+| New feature area | Create new workstream directory |
+| New task within workstream | Create numbered spec file |
+| Deep technical topic | Add to `reference/` subdirectory |
+| Research question | Use Oracle, save to `research/` |
+| Workstream-specific rules | Create `CLAUDE.md` in workstream |
 
 ## Best Practices
 
-1. **Keep files focused** - One topic per file, link to related content
-2. **Use consistent naming** - `{phase}.{task}-{slug}.md` for tasks
+1. **Specs describe behavior, not implementation** - What it does, not how
+2. **All references are wiki links** - Broken links signal sync issues
 3. **Update changelog immediately** - Don't batch changes
-4. **Preserve deferred work** - Never delete, move to `deferred.md`
-5. **Version before major changes** - Copy to `{filename}.v{n}.md`
-6. **Research before deciding** - Use oracles for uncertain questions
+4. **One spec per feature/component** - Keep focused
+5. **Research before deciding** - Use oracles for uncertain questions
+6. **Optional CLAUDE.md per workstream** - For scoped agent rules

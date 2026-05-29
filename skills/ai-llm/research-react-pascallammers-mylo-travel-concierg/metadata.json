@@ -1,0 +1,16 @@
+{
+  "name": "research-react",
+  "repo": "pascallammers/mylo-travel-concierge-v2",
+  "path": ".claude/skills/research-react/skill.md",
+  "source": "github.com/pascallammers/mylo-travel-concierge-v2",
+  "downloaded_at": "2026-01-29T08:54:48.977145Z",
+  "dir_name": "research-react-pascallammers-mylo-travel-concierg",
+  "category": "ai-llm",
+  "author": "pascallammers",
+  "source_url": "https://github.com/pascallammers/mylo-travel-concierge-v2/blob/main/.claude/skills/research-react/skill.md",
+  "license": "AGPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

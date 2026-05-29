@@ -2,15 +2,16 @@
   "name": "postgres-hybrid-text-search",
   "repo": "timescale/pg-aiguide",
   "path": "skills/postgres-hybrid-text-search/SKILL.md",
-  "source": "github.com/timescale/pg-aiguide",
-  "downloaded_at": "2026-02-04T05:24:06.160458Z",
-  "dir_name": "postgres-hybrid-text-search",
+  "github_branch": "main",
   "category": "data",
+  "source": "github.com/timescale/pg-aiguide",
+  "dir_name": "postgres-hybrid-text-search",
+  "downloaded_at": "2026-05-28T04:14:22.598227Z",
   "author": "timescale",
   "source_url": "https://github.com/timescale/pg-aiguide/blob/main/skills/postgres-hybrid-text-search/SKILL.md",
-  "license": "Apache-2.0",
+  "license": "NOASSERTION",
   "copyright": "Copyright belongs to upstream author(s); see https://github.com/timescale/pg-aiguide/blob/main/skills/postgres-hybrid-text-search/SKILL.md",
-  "permission_note": "Use according to upstream license terms and attribution requirements.",
-  "distribution": "compatible",
-  "license_class": "compatible"
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

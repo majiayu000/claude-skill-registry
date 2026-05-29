@@ -1,0 +1,18 @@
+{
+  "name": "quantconnect-optimization",
+  "repo": "derekcrosslu/CLAUDE_CODE_EXPLORE",
+  "path": ".claude/skills/quantconnect-optimization/skill.md",
+  "source": "github.com/derekcrosslu/CLAUDE_CODE_EXPLORE",
+  "downloaded_at": "2026-01-22T02:16:31.298002Z",
+  "dir_name": "quantconnect-optimization",
+  "category": "workflow",
+  "github_path": ".claude/skills/quantconnect-optimization",
+  "github_branch": "main",
+  "author": "derekcrosslu",
+  "source_url": "https://github.com/derekcrosslu/CLAUDE_CODE_EXPLORE/blob/main/.claude/skills/quantconnect-optimization/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/derekcrosslu/CLAUDE_CODE_EXPLORE/blob/main/.claude/skills/quantconnect-optimization/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

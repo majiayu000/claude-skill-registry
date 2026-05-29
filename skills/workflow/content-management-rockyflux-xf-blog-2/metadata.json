@@ -1,0 +1,18 @@
+{
+  "name": "content-management",
+  "description": "管理博客内容发布流程，包括文章分类、标签管理、归档更新、内容审核等。使用时发布新文章、更新内容索引、管理内容组织时。",
+  "repo": "rockyflux/xf-blog",
+  "path": ".claude/skills/content-management",
+  "category": "workflow",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rockyflux/xf-blog",
+  "dir_name": "content-management-rockyflux-xf-blog-2",
+  "author": "rockyflux",
+  "source_url": "https://github.com/rockyflux/xf-blog/blob/main/.claude/skills/content-management/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rockyflux/xf-blog/blob/main/.claude/skills/content-management/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

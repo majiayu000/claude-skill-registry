@@ -1,7 +1,10 @@
 ---
 name: ln-740-quality-setup
-description: Coordinates linters, pre-commit hooks, and test infrastructure setup
+description: "Sets up linters, pre-commit hooks, and test infrastructure. Use when adding code quality tooling to a project."
+license: MIT
 ---
+
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # ln-740-quality-setup
 
@@ -87,10 +90,11 @@ Before delegating, check what configurations already exist.
 
 | Existing Config | Action | Confirmation |
 |-----------------|--------|--------------|
-| None found | Create new | No |
-| Partial found | Merge (add missing) | Ask user |
-| Complete found | Skip | Inform user |
-| User requests replace | Backup + replace | Yes |
+| None found | Create from template | No |
+| Exists but incomplete | Extend to match template | No |
+| Exists and matches template | Skip | Inform user |
+
+**Completeness Check (Python):** evaluate against ln-741's Completeness Check table (7 aspects: Ruff rules, per-file-ignores, advanced settings, MyPy strict, advanced tools, lint script, editorconfig). If ANY aspect is incomplete, delegate to ln-741 with instruction to EXTEND (not replace).
 
 ---
 
@@ -119,16 +123,13 @@ ln-740 (this)
               - pytest (Python)
 ```
 
-**Worker Invocation:**
+Pass detected stack and existing configs to workers via direct Skill tool invocation. For Python: instruct ln-741 to apply full quality stack per its Completeness Check table.
+
+**Invocations:**
 ```
-Skill tool: ln-741-linter-configurator
-Args: detected stack, existing config decisions
-
-Skill tool: ln-742-precommit-setup
-Args: detected stack, lint commands from ln-741
-
-Skill tool: ln-743-test-infrastructure
-Args: detected stack, project structure
+Skill(skill: "ln-741-linter-configurator", args: "{projectPath}")
+Skill(skill: "ln-742-precommit-setup", args: "{projectPath}")
+Skill(skill: "ln-743-test-infrastructure", args: "{projectPath}")
 ```
 
 ---
@@ -139,12 +140,18 @@ After all workers complete, verify the quality pipeline works.
 
 **Verification Steps:**
 
-| Check | Command | Expected |
-|-------|---------|----------|
-| Lint runs | `npm run lint` / `ruff check .` / `dotnet format --verify-no-changes` | No errors |
-| Format runs | `npm run format:check` / `ruff format --check` | No changes needed |
-| Tests run | `npm test` / `pytest` / `dotnet test` | Sample tests pass |
-| Hooks work | Create test commit | Hooks trigger |
+| Check | TypeScript | Python | .NET |
+|-------|-----------|--------|------|
+| Lint | ESLint | `ruff check` | `dotnet format --verify-no-changes` |
+| Format | Prettier | `ruff format --check` | dotnet format |
+| Type check | `tsc --noEmit` | `mypy` | Roslyn (build) |
+| Import boundaries | depcruise | `lint-imports` | -- |
+| Unused deps | knip | `deptry` | -- |
+| Dead code | knip | `vulture` | -- |
+| Vulnerability scan | `npm audit` | `pip-audit` | -- |
+| Unified script | `bash scripts/lint.sh` | `bash scripts/lint.sh` | `bash scripts/lint.sh` |
+| Tests | `npm test` | `pytest` | `dotnet test` |
+| Hooks | Create test commit | Create test commit | Create test commit |
 
 **On Failure:**
 1. Log specific failure
@@ -165,6 +172,24 @@ After all workers complete, verify the quality pipeline works.
 
 ---
 
+**TodoWrite format (mandatory):**
+```
+- Invoke ln-741-linter-configurator (pending)
+- Invoke ln-742-precommit-setup (pending)
+- Invoke ln-743-test-infrastructure (pending)
+- Verify quality pipeline (pending)
+```
+
+## Worker Invocation (MANDATORY)
+
+| Phase | Worker | Context |
+|-------|--------|---------|
+| 3a | ln-741-linter-configurator | Shared (Skill tool) — ESLint/Prettier, editorconfig, Ruff |
+| 3b | ln-742-precommit-setup | Shared (Skill tool) — Husky, lint-staged, commitlint |
+| 3c | ln-743-test-infrastructure | Shared (Skill tool) — Vitest, xUnit, pytest |
+
+**All workers:** Invoke via Skill tool — workers see coordinator context.
+
 ## Definition of Done
 
 - [ ] All detected technology stacks have appropriate quality tools
@@ -174,6 +199,14 @@ After all workers complete, verify the quality pipeline works.
 - [ ] Test command runs and sample tests pass
 - [ ] Pre-commit hooks trigger on test commit
 - [ ] User informed of all installed tools and commands
+
+---
+
+## Phase 5: Meta-Analysis
+
+**MANDATORY READ:** Load `shared/references/meta_analysis_protocol.md`
+
+Skill type: `execution-orchestrator`. Analyze this session per protocol §7. Output per protocol format.
 
 ---
 
@@ -197,5 +230,5 @@ After all workers complete, verify the quality pipeline works.
 
 ---
 
-**Version:** 2.0.0
-**Last Updated:** 2026-01-10
+**Version:** 3.0.0
+**Last Updated:** 2026-03-18

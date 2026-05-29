@@ -1,0 +1,16 @@
+{
+  "name": "selection-statistics",
+  "repo": "GPTomics/bioSkills",
+  "path": "population-genetics/selection-statistics/SKILL.md",
+  "source": "github.com/GPTomics/bioSkills",
+  "downloaded_at": "2026-01-29T03:17:28.426368Z",
+  "dir_name": "selection-statistics",
+  "category": "ai-ml",
+  "author": "GPTomics",
+  "source_url": "https://github.com/GPTomics/bioSkills/blob/main/population-genetics/selection-statistics/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 GPTomics",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

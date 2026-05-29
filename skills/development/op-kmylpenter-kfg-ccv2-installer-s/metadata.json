@@ -1,0 +1,16 @@
+{
+  "name": "op",
+  "repo": "kmylpenter/KFG-CCv2-Installer-Stable",
+  "path": ".claude/skills/op/SKILL.md",
+  "source": "github.com/kmylpenter/KFG-CCv2-Installer-Stable",
+  "downloaded_at": "2026-01-29T06:14:05.015469Z",
+  "dir_name": "op-kmylpenter-kfg-ccv2-installer-s",
+  "category": "development",
+  "author": "kmylpenter",
+  "source_url": "https://github.com/kmylpenter/KFG-CCv2-Installer-Stable/blob/main/.claude/skills/op/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/kmylpenter/KFG-CCv2-Installer-Stable/blob/main/.claude/skills/op/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "using-logging",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".cursor/skills/using-logging/SKILL.md",
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "downloaded_at": "2026-01-19T01:09:06.733228Z",
+  "dir_name": "using-logging",
+  "category": "development",
+  "github_path": ".agents/skills/using-logging",
+  "github_branch": "main",
+  "author": "andrelandgraf",
+  "source_url": "https://github.com/andrelandgraf/fullstackrecipes/blob/main/.agents/skills/using-logging/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/andrelandgraf/fullstackrecipes/blob/main/.agents/skills/using-logging/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

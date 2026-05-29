@@ -1,0 +1,17 @@
+{
+  "name": "team-plan",
+  "repo": "drbscl/dream-team",
+  "path": "skills/team-plan/SKILL.md",
+  "github_branch": "master",
+  "category": "planning",
+  "source": "github.com/drbscl/dream-team",
+  "dir_name": "team-plan",
+  "downloaded_at": "2026-03-22T07:49:08.830375Z",
+  "author": "drbscl",
+  "source_url": "https://github.com/drbscl/dream-team/blob/master/skills/team-plan/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/drbscl/dream-team/blob/master/skills/team-plan/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

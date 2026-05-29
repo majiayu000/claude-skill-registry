@@ -1,0 +1,16 @@
+{
+  "name": "providing-help",
+  "repo": "gannonh/kata",
+  "path": "skills/providing-help/SKILL.md",
+  "source": "github.com/gannonh/kata",
+  "downloaded_at": "2026-01-28T02:18:24.673292Z",
+  "dir_name": "providing-help",
+  "category": "documents",
+  "author": "gannonh",
+  "source_url": "https://github.com/gannonh/kata/blob/main/skills/providing-help/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gannonh/kata/blob/main/skills/providing-help/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

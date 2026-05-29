@@ -1,0 +1,20 @@
+{
+  "name": "task-detail",
+  "description": "",
+  "repo": "mae616/ai-template",
+  "category": "workflow",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mae616/ai-template",
+  "github_path": ".claude/skills/task-detail",
+  "github_branch": "main",
+  "dir_name": "task-detail",
+  "downloaded_at": "2026-02-05T01:45:07.965731Z",
+  "author": "mae616",
+  "source_url": "https://github.com/mae616/ai-template/blob/main/.claude/skills/task-detail/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 AI Template Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "terminal-title",
+  "repo": "ccf/claude-code-ccf-marketplace",
+  "path": "plugins/developer-essentials/skills/terminal-title/SKILL.md",
+  "source": "github.com/ccf/claude-code-ccf-marketplace",
+  "downloaded_at": "2026-02-02T05:11:52.709159Z",
+  "dir_name": "terminal-title",
+  "category": "productivity",
+  "author": "ccf",
+  "source_url": "https://github.com/ccf/claude-code-ccf-marketplace/blob/main/plugins/developer-essentials/skills/terminal-title/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Seth Hobson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

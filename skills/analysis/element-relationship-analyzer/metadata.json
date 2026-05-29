@@ -1,0 +1,16 @@
+{
+  "name": "element-relationship-analyzer",
+  "repo": "RevTechStudio/rts-plugins",
+  "path": "rts-plugin-generator/skills/element-relationship-analyzer/SKILL.md",
+  "source": "github.com/RevTechStudio/rts-plugins",
+  "downloaded_at": "2026-01-30T01:22:33.786108Z",
+  "dir_name": "element-relationship-analyzer",
+  "category": "analysis",
+  "author": "RevTechStudio",
+  "source_url": "https://github.com/RevTechStudio/rts-plugins/blob/main/rts-plugin-generator/skills/element-relationship-analyzer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/RevTechStudio/rts-plugins/blob/main/rts-plugin-generator/skills/element-relationship-analyzer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

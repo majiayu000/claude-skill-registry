@@ -74,8 +74,8 @@ Match the first row that applies. Output that message.
 | AGENTS=false | "🌱 ao is installed but not initialized here.\n  Run `ao quick-start` to apply the repeatable core seed. `ao quickstart` is the stable alias.\n  Then run `/bootstrap` only if you want the product/operations layer: PRODUCT.md, README.md, PROGRAM.md/AUTODEV.md, and optional hooks.\nThen: `/rpi \"a small goal\"` to run your first cycle." |
 | BD=false + CODEX=true | "✅ Codex plugin path ready.\n  `/rpi \"your goal\"` — full /discovery → /crank → /validation pipeline\n  `/research <topic>` — explore the codebase\n  Default installs are hookless; native hooks are optional with `install-codex.sh --with-hooks`.\n  Legacy explicit fallback commands remain `ao codex ensure-start` / `ao codex ensure-stop` when needed.\n  Manual escape hatch: `ao codex status`\n  Want issue tracking? `brew install boshu2/agentops/beads && bd init --prefix <prefix>`" |
 | BD=false | "✅ Flywheel active. Start now:\n  `/rpi \"your goal\"` — full /discovery → /crank → /validation pipeline\n  `/validation` — close out recent work and capture learnings\n  `/research <topic>` — explore the codebase\n  Want issue tracking? `brew install boshu2/agentops/beads && bd init --prefix <prefix>`" |
-| BD=true + CODEX=true | "✅ Codex full stack ready.\n  `bd ready` — see open work\n  `/rpi \"your goal\"` — start a new goal from scratch\n  Default installs are hookless; native hooks are optional with `install-codex.sh --with-hooks`.\n  Legacy explicit fallback commands remain `ao codex ensure-start` / `ao codex ensure-stop` when needed.\n  Manual escape hatch: `ao codex status`" |
-| BD=true | "✅ Full stack ready.\n  `bd ready` — see open work\n  `/rpi \"your goal\"` — start a new goal from scratch\n  `/status` — see current session state" |
+| BD=true + CODEX=true | "✅ Codex full stack ready.\n  `ao reconcile --json` — check git, CI, release, beads, and .agents agree\n  `bd ready` — see open work after high-severity reconciliation findings are clear\n  `/rpi \"your goal\"` — start a new goal from scratch\n  Default installs are hookless; native hooks are optional with `install-codex.sh --with-hooks`.\n  Legacy explicit fallback commands remain `ao codex ensure-start` / `ao codex ensure-stop` when needed.\n  Manual escape hatch: `ao codex status`" |
+| BD=true | "✅ Full stack ready.\n  `ao reconcile --json` — check git, CI, release, beads, and .agents agree\n  `bd ready` — see open work after high-severity reconciliation findings are clear\n  `/rpi \"your goal\"` — start a new goal from scratch\n  `/status` — see current session state" |
 
 Starting a new project? Run `/scaffold <language> <name>` to generate project structure with best practices.
 
@@ -93,7 +93,7 @@ Starting a new project? Run `/scaffold <language> <name>` to generate project st
 
 **User says:** `/quickstart`
 
-**What happens:** Agent detects full stack is ready and suggests `/rpi "your goal"` or `bd ready`.
+**What happens:** Agent detects full stack is ready and suggests `ao reconcile --json`, `bd ready`, or `/rpi "your goal"`.
 
 ## Troubleshooting
 

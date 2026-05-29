@@ -1,58 +1,30 @@
 ---
-name: test-skill
-description: Test skill for validation purposes
-allowed-tools: Read, Grep
+name: table-references-test
+description: Test skill with table-format references
+allowed-tools: Read, Bash
 ---
 
-# Test Skill
+# Table References Test Skill
 
-This is a test skill for validation purposes.
+This skill tests that scripts referenced in markdown tables are properly detected.
 
-## What This Skill Provides
+## External Resources
 
-- **Standard 1** - First standard
-- **Standard 2** - Second standard
-- **Standard 3** - Third standard
+### Scripts (scripts/)
 
-## When to Activate This Skill
+| Script | Mode | Purpose |
+|--------|------|---------|
+| `analyze-data.sh` | **EXECUTE** | Analyzes data files |
+| `validate-input.py` | **EXECUTE** | Validates input format |
 
-Activate this skill when:
-- Working with test scenarios
-- Validating component structures
-- Learning about skill patterns
+### References (references/)
+
+| Reference | Purpose |
+|-----------|---------|
+| `guide.md` | Main guide documentation |
 
 ## Workflow
 
-### Step 1: Identify Requirements
-Determine what standards are needed for the current task.
-
-### Step 2: Load Relevant Standards
-Based on the task:
-- **Testing** → Read standards/testing.md
-- **Validation** → Read standards/validation.md
-- **Patterns** → Read standards/patterns.md
-
-### Step 3: Apply Standards
-Follow guidance from loaded standards.
-
-## Standards Organization
-
-```
-standards/
-├── testing.md          (Testing standards)
-├── validation.md       (Validation standards)
-└── patterns.md         (Pattern standards)
-```
-
-## Tool Access
-
-**Read**: Load standard files on-demand
-**Grep**: Search for specific patterns in standards
-
-## Quality Verification
-
-Skills are self-contained when:
-- [ ] All standards in standards/ directory
-- [ ] All paths use relative paths
-- [ ] No external file references
-- [ ] No cross-skill duplication
+1. Execute `scripts/analyze-data.sh`
+2. Run validation with `scripts/validate-input.py`
+3. See `references/guide.md` for details

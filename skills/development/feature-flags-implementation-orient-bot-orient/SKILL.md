@@ -9,8 +9,7 @@ description: Database-backed feature flag systems in the Orient. Use when implem
 
 ```bash
 # Check feature flags in database
-docker exec orienter-postgres-0 psql -U orient -d whatsapp_bot_0 \
-  -c "SELECT id, name, enabled FROM feature_flags ORDER BY sort_order;"
+sqlite3 "$SQLITE_DB_PATH" "SELECT id, name, enabled FROM feature_flags ORDER BY sort_order;"
 
 # Test feature flag API
 curl -X GET http://localhost:4098/api/feature-flags \
@@ -22,7 +21,7 @@ curl -X GET http://localhost:4098/api/feature-flags \
 ```
 ┌─────────────────────┐     ┌─────────────────────┐     ┌─────────────────────┐
 │   Database          │────▶│   Dashboard API     │────▶│   Frontend          │
-│   (PostgreSQL)      │     │   (Express)         │     │   (React)           │
+│   (SQLite)          │     │   (Express)         │     │   (React)           │
 │                     │     │                     │     │                     │
 │ feature_flags table │     │ /api/feature-flags  │     │ useFeatureFlags()   │
 │ snake_case IDs      │     │ JWT Authentication  │     │ camelCase IDs       │
@@ -37,20 +36,16 @@ curl -X GET http://localhost:4098/api/feature-flags \
 Located in `packages/database/src/schema/index.ts`:
 
 ```typescript
-export const featureFlags = pgTable(
-  'feature_flags',
-  {
-    id: text('id').primaryKey(), // e.g., 'mini_apps', 'operations.billing'
-    name: text('name').notNull(), // Display name
-    description: text('description'),
-    enabled: boolean('enabled').default(true),
-    category: text('category').default('ui'),
-    sortOrder: integer('sort_order').default(0),
-    createdAt: timestamp('created_at', { withTimezone: true }).defaultNow(),
-    updatedAt: timestamp('updated_at', { withTimezone: true }).defaultNow(),
-  },
-  (table) => [index('idx_feature_flags_category').on(table.category)]
-);
+export const featureFlags = sqliteTable('feature_flags', {
+  id: text('id').primaryKey(), // e.g., 'mini_apps', 'operations.billing'
+  name: text('name').notNull(), // Display name
+  description: text('description'),
+  enabled: integer('enabled', { mode: 'boolean' }).default(true),
+  category: text('category').default('ui'),
+  sortOrder: integer('sort_order').default(0),
+  createdAt: integer('created_at', { mode: 'timestamp' }),
+  updatedAt: integer('updated_at', { mode: 'timestamp' }),
+});
 ```
 
 ### ID Naming Convention
@@ -328,7 +323,7 @@ console.log('DB ID:', toDbId(uiId));
 - [ ] Add flag to database migration
 - [ ] Run migration: `./run.sh dev` (auto-runs migrations)
 - [ ] Add to PRE_LAUNCH_DEFAULTS in `useFeatureFlags.ts` (if needs default)
-- [ ] Export from `@orient/database` if queried server-side
+- [ ] Export from `@orientbot/database` if queried server-side
 - [ ] Add ProtectedRoute wrapper if flag controls route access
 - [ ] Update navigation to conditionally show/hide based on flag
 - [ ] Test toggle in UI persists to database
@@ -342,8 +337,7 @@ console.log('DB ID:', toDbId(uiId));
 2. Toggle a flag
 3. Verify database updated:
    ```bash
-   docker exec orienter-postgres-0 psql -U orient -d whatsapp_bot_0 \
-     -c "SELECT id, enabled FROM feature_flags WHERE id = 'mini_apps';"
+   sqlite3 "$SQLITE_DB_PATH" "SELECT id, enabled FROM feature_flags WHERE id = 'mini_apps';"
    ```
 4. Verify UI reflects change (navigation item appears/disappears)
 

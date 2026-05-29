@@ -1,9 +1,10 @@
 ---
 name: ln-110-project-docs-coordinator
-description: Coordinates project documentation creation. Gathers context once, detects project type, delegates to 5 L3 workers (ln-111-115). L2 Coordinator invoked by ln-100.
+description: "Coordinates project documentation creation with single context gathering and project type detection. Use when generating project docs subset."
+license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Project Documentation Coordinator
 
@@ -32,7 +33,8 @@ L2 Coordinator that gathers project context once and delegates document creation
     "legacy_tech_stack": { "frontend": "...", "backend": "...", "versions": {} },
     "legacy_api": { "endpoints": [...], "authentication": "..." },
     "legacy_database": { "tables": [...], "relationships": [...] },
-    "legacy_runbook": { "prerequisites": [...], "install_steps": [...], "env_vars": [...] }
+    "legacy_runbook": { "prerequisites": [...], "install_steps": [...], "env_vars": [...] },
+    "legacy_infrastructure": { "servers": [...], "domains": [...], "ports": {} }
   }
 }
 ```
@@ -49,7 +51,7 @@ ln-110-project-docs-coordinator (this skill)
 │   ├── ln-112-project-core-creator → 3 core docs (ALWAYS)
 │   ├── ln-113-backend-docs-creator → 2 docs (if hasBackend/hasDatabase)
 │   ├── ln-114-frontend-docs-creator → 1 doc (if hasFrontend)
-│   └── ln-115-devops-docs-creator → 1 doc (if hasDocker)
+│   └── ln-115-devops-docs-creator → 2 docs (1 always + 1 if hasDocker)
 └── Phase 3: Aggregate Results
 ```
 
@@ -71,6 +73,10 @@ ln-110-project-docs-coordinator (this skill)
 | README.md | project description, scaling mentions | PROJECT_DESCRIPTION (fallback), DEPLOYMENT_SCALE (fallback) |
 | CODEOWNERS | maintainers | DEVOPS_CONTACTS |
 | git log | frequent committers | DEVOPS_CONTACTS (fallback) |
+| ~/.ssh/config, deploy targets | SSH aliases, hostnames, IPs | SERVER_INVENTORY |
+| docker-compose VIRTUAL_HOST vars | domain routing | DOMAIN_DNS |
+| .env.example registry URLs, .npmrc | artifact repos | ARTIFACT_REPOSITORY |
+| docker-compose deploy.resources | resource limits | HOST_REQUIREMENTS |
 
 **1.2 Detect Project Type:**
 
@@ -103,6 +109,10 @@ ln-110-project-docs-coordinator (this skill)
   "DEPLOYMENT_SCALE": "single",
   "DEVOPS_CONTACTS": [],
   "HAS_GPU": false,
+  "SERVER_INVENTORY": [],
+  "DOMAIN_DNS": [],
+  "ARTIFACT_REPOSITORY": {},
+  "HOST_REQUIREMENTS": {},
   "flags": { "hasBackend": true, "hasDatabase": true, "hasFrontend": true, "hasDocker": true }
 }
 ```
@@ -133,22 +143,32 @@ ln-110-project-docs-coordinator (this skill)
   - `LEGACY_CONTENT.legacy_api` → used by ln-113 for api_spec.md
   - `LEGACY_CONTENT.legacy_database` → used by ln-113 for database_schema.md
   - `LEGACY_CONTENT.legacy_runbook` → used by ln-115 for runbook.md
+  - `LEGACY_CONTENT.legacy_infrastructure` → used by ln-115 for infrastructure.md
 - If no LEGACY_CONTENT: workers use auto-discovery + template defaults
 
 ### Phase 2: Delegate to Workers
 
+> **MANDATORY:** All applicable workers MUST be invoked. Workers run in parallel via Agent tool for context isolation.
+
 **2.1 Always invoke (parallel):**
 - `ln-111-root-docs-creator` with Context Store
 - `ln-112-project-core-creator` with full Context Store
+- `ln-115-devops-docs-creator` with Context Store (infrastructure.md always; runbook.md internally conditional on hasDocker)
 
 **2.2 Conditionally invoke:**
 - `ln-113-backend-docs-creator` if hasBackend OR hasDatabase
 - `ln-114-frontend-docs-creator` if hasFrontend
-- `ln-115-devops-docs-creator` if hasDocker
 
-**Delegation Pattern:**
-- Pass Context Store and flags to workers via direct Skill tool invocation
-- Wait for completion
+**Invocation (parallel via Agent tool):**
+```
+Agent(description: "{doc_type} docs via {worker}",
+     prompt: "Invoke Skill(skill: \"{worker}\") with context below.\n\nCONTEXT: {contextStore}",
+     subagent_type: "general-purpose")
+```
+
+**Delegation Rules:**
+- Pass Context Store and flags to workers via Agent+Skill pattern
+- Wait for all Agent completions
 - Collect result (created, skipped, tbd_count, validation)
 
 ### Phase 3: Aggregate Results
@@ -178,6 +198,7 @@ ln-110-project-docs-coordinator (this skill)
     "docs/project/api_spec.md",
     "docs/project/database_schema.md",
     "docs/project/design_guidelines.md",
+    "docs/project/infrastructure.md",
     "docs/project/runbook.md"
   ],
   "context_store": {
@@ -196,18 +217,53 @@ ln-110-project-docs-coordinator (this skill)
 - **Idempotent** — workers skip existing files
 - **Parallel where possible** — ln-111 and ln-112 can run in parallel
 
+
+## Worker Invocation (MANDATORY)
+
+| Phase | Worker | Context | Condition |
+|-------|--------|--------|-----------|
+| 2 | ln-111-root-docs-creator | Agent (parallel) — root docs | ALWAYS |
+| 2 | ln-112-project-core-creator | Agent (parallel) — core project docs | ALWAYS |
+| 2 | ln-115-devops-docs-creator | Agent (parallel) — infrastructure + runbook | ALWAYS |
+| 2 | ln-113-backend-docs-creator | Agent (parallel) — API spec + DB schema | hasBackend OR hasDatabase |
+| 2 | ln-114-frontend-docs-creator | Agent (parallel) — design guidelines | hasFrontend |
+
+**All workers:** Invoke via Agent tool with Skill — workers get Context Store.
+
+**TodoWrite format (mandatory):**
+```
+- Build Context Store (pending)
+- Invoke ln-111-root-docs-creator (pending)
+- Invoke ln-112-project-core-creator (pending)
+- Invoke ln-115-devops-docs-creator (pending)
+- Invoke ln-113-backend-docs-creator [conditional] (pending)
+- Invoke ln-114-frontend-docs-creator [conditional] (pending)
+- Aggregate results (pending)
+```
+
+**Anti-Patterns:**
+- ❌ Creating documentation files directly instead of invoking workers
+- ❌ Marking worker steps done without Agent+Skill invocation
+- ❌ Skipping conditional workers without checking flags
+
 ### Documentation Standards (passed to workers)
 - **NO_CODE Rule:** Documents describe contracts, not implementations
 - **Stack Adaptation:** Links must match TECH_STACK (Context Store)
 - **Format Priority:** Tables/ASCII > Lists > Text
 
 ## Definition of Done
-- Context Store built with all discovered data
-- Project type flags determined
-- All applicable workers invoked
-- Results aggregated
-- **Actuality verified:** all document facts match current code (paths, functions, APIs, configs exist and are accurate)
-- Summary returned to ln-100
+- [ ] Context Store built with all discovered data
+- [ ] Project type flags determined
+- [ ] All applicable workers invoked
+- [ ] Results aggregated
+- [ ] **Actuality verified:** all document facts match current code (paths, functions, APIs, configs exist and are accurate)
+- [ ] Summary returned to ln-100
+
+## Phase 4: Meta-Analysis
+
+**MANDATORY READ:** Load `shared/references/meta_analysis_protocol.md`
+
+Skill type: `planning-coordinator`. Run after all phases complete. Output to chat using the `planning-coordinator` format.
 
 ## Reference Files
 - Guides: `references/guides/automatic_analysis_guide.md`, `critical_questions.md`, `troubleshooting.md`

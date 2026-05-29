@@ -1,0 +1,18 @@
+{
+  "name": "learning-taxonomy",
+  "repo": "yebot/rad-cc-plugins",
+  "path": "plugins/learning-loop/skills/learning-taxonomy/SKILL.md",
+  "source": "github.com/yebot/rad-cc-plugins",
+  "downloaded_at": "2026-01-22T02:38:38.876163Z",
+  "dir_name": "learning-taxonomy",
+  "category": "context-management",
+  "github_path": "plugins/learning-loop/skills/learning-taxonomy",
+  "github_branch": "main",
+  "author": "yebot",
+  "source_url": "https://github.com/yebot/rad-cc-plugins/blob/main/plugins/learning-loop/skills/learning-taxonomy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yebot/rad-cc-plugins/blob/main/plugins/learning-loop/skills/learning-taxonomy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -17,11 +17,11 @@ Execute PopKit's modular test suite to validate plugin integrity across all dist
 
 ## Arguments
 
-| Flag | Description |
-|------|-------------|
-| (category) | Test category: `agents`, `hooks`, `skills`, `structure` (default: all plugins) |
-| `--verbose` | Show detailed test output including passing tests |
-| `--fail-fast` | Stop on first test failure |
+| Flag          | Description                                                                    |
+| ------------- | ------------------------------------------------------------------------------ |
+| (category)    | Test category: `agents`, `hooks`, `skills`, `structure` (default: all plugins) |
+| `--verbose`   | Show detailed test output including passing tests                              |
+| `--fail-fast` | Stop on first test failure                                                     |
 
 ## Process
 
@@ -39,16 +39,19 @@ Determine which test runner to execute based on arguments:
 Use the Bash tool to run the appropriate Python test runner:
 
 **Test all plugins (default):**
+
 ```bash
 cd packages/popkit-core && python run_all_tests.py
 ```
 
 **Test all plugins with verbose:**
+
 ```bash
 cd packages/popkit-core && python run_all_tests.py --verbose
 ```
 
 **Test specific category (single plugin):**
+
 ```bash
 cd packages/popkit-core && python run_tests.py agents
 cd packages/popkit-core && python run_tests.py hooks
@@ -61,6 +64,7 @@ cd packages/popkit-core && python run_tests.py structure
 The test runner outputs structured results to stdout. Parse the output and provide a summary:
 
 **Key metrics to report:**
+
 - Total plugins tested
 - Plugins passed/failed
 - Total test cases executed
@@ -69,6 +73,7 @@ The test runner outputs structured results to stdout. Parse the output and provi
 - List of failures (if any)
 
 **Example summary format:**
+
 ```
 PopKit Plugin Tests Complete
 ============================

@@ -1,6 +1,6 @@
 ---
 name: learned-patterns
-description: Manage learned patterns - list, view, archive, boost or penalize confidence. Use when you want to see what patterns Claude has learned, review pattern effectiveness, or manage the pattern library.
+description: "[Tooling & Meta] Manage learned patterns - list, view, archive, boost or penalize confidence. Use when you want to see what patterns Claude has learned, review pattern effectiveness, or manage the pattern library."
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 infer: false
 ---
@@ -8,6 +8,21 @@ infer: false
 # Learned Patterns Management
 
 Manage the auto-learning pattern library. View, list, archive, and adjust confidence.
+
+## Summary
+
+**Goal:** View, list, archive, boost, or penalize learned patterns in the auto-learning pattern library.
+
+- **List patterns:** `node scripts/list-patterns.cjs [category] [--low|--high]`
+- **View details:** `node scripts/view-pattern.cjs <id>`
+- **Adjust confidence:** `node scripts/adjust-confidence.cjs <id> boost|penalize` (+10% / -15%)
+- **Archive:** `node scripts/archive-pattern.cjs <id> [reason]`
+- **Stats:** `node scripts/pattern-stats.cjs`
+
+**Key Principles:**
+- Patterns auto-decay after 30 days unused; below 20% confidence = auto-archived
+- Lifecycle: Detection (40-80%) -> Confirmation -> Injection -> Feedback Loop -> Decay
+- Max 5 patterns injected per context (~400 tokens)
 
 ## Quick Commands
 

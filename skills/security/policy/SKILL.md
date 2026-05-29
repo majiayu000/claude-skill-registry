@@ -1,5 +1,5 @@
 ---
-name: policy
+name: plutonium-policy
 description: Plutonium resource policies - authorization, attribute permissions, and scoping
 ---
 
@@ -86,6 +86,28 @@ end
 ```
 
 Actions are secure by default - undefined methods return `false`.
+
+### Bulk Action Authorization
+
+Bulk actions (operating on multiple selected records) support **per-record authorization**:
+
+```ruby
+def bulk_archive?
+  create? && !record.locked?  # Per-record check
+end
+
+def bulk_publish?
+  user.admin? || record.author == user
+end
+```
+
+**How bulk authorization works:**
+1. Policy method (e.g., `bulk_archive?`) is checked **per record** in the selection
+2. **Backend:** If any selected record fails authorization, the entire request is rejected
+3. **UI:** Only actions that **all** selected records support are shown (intersection)
+4. Records are fetched via `current_authorized_scope` - only accessible records can be selected
+
+This provides full per-record authorization while keeping the UI clean - users only see actions they can actually perform on their entire selection.
 
 ## Attribute Permissions
 
@@ -347,6 +369,6 @@ end
 
 ## Related Skills
 
-- `resource` - How policies fit in the resource architecture
-- `definition-actions` - Actions that need policy methods
-- `controller` - How controllers use policies
+- `plutonium-resource` - How policies fit in the resource architecture
+- `plutonium-definition-actions` - Actions that need policy methods
+- `plutonium-controller` - How controllers use policies

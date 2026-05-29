@@ -8,7 +8,6 @@ risk: unknown
 # Overview
 
 ## When to Use
-
 Use this skill for local model evaluation, backend selection, and GPU smoke tests outside the Hugging Face Jobs workflow.
 
 This skill is for **running evaluations against models on the Hugging Face Hub on local hardware**.
@@ -211,3 +210,8 @@ See:
 - `scripts/inspect_eval_uv.py`
 - `scripts/inspect_vllm_uv.py`
 - `scripts/lighteval_vllm_uv.py`
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

@@ -1,7 +1,6 @@
 ---
 name: workflow-improvement
-description: 'Retrospective evaluation and improvement of skills, agents, commands, and hooks. Use after a sprint or when a workflow felt friction-heavy.'
-version: 1.9.3
+description: Evaluates and improves skills, agents, commands, and hooks after a workflow slice. Use when execution felt slow, confusing, repetitive, or fragile.
 alwaysApply: false
 category: workflow-ops
 tags:
@@ -138,7 +137,7 @@ Generate 3 to 5 distinct improvement approaches and score each on impact, comple
 ## Step 4: Agree on a Plan (`plan-agreed`)
 
 Choose 1 approach and define:
-- Acceptance criteria (“substantive difference”)
+- Acceptance criteria ("substantive difference")
 - Files to change
 - Validation commands to run
 - Out-of-scope items to defer

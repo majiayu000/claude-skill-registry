@@ -1,0 +1,17 @@
+{
+  "name": "convex-feature-spec",
+  "repo": "BjornMelin/dev-skills",
+  "path": "skills/convex-feature-spec/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/BjornMelin/dev-skills",
+  "dir_name": "convex-feature-spec",
+  "downloaded_at": "2026-03-22T05:00:22.901956Z",
+  "author": "BjornMelin",
+  "source_url": "https://github.com/BjornMelin/dev-skills/blob/main/skills/convex-feature-spec/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BjornMelin/dev-skills/blob/main/skills/convex-feature-spec/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

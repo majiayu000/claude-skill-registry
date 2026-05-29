@@ -3,6 +3,7 @@ name: standards-shell
 description: This skill provides Shell/Bash coding standards and is automatically loaded for shell projects. It includes defensive scripting patterns, best practices, and recommended tooling.
 type: context
 applies_to: [bash, sh, shell, zsh, shellcheck, bats]
+file_extensions: [".sh", ".bash"]
 ---
 
 # Shell/Bash Coding Standards

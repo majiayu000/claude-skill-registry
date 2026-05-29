@@ -1,112 +1,142 @@
 ---
 name: designing-systems
-description: Create and manage design systems with tokens, color palettes, typography scales, and spacing systems. Use when user asks about design tokens, theming, color schemes, or consistent styling.
-allowed-tools: Read, Write, Edit, Glob, Grep, Task
+description: Use when creating design systems, tokens, color palettes, typography scales, or theming. Covers OKLCH colors, CSS variables, Tailwind v4 @theme.
+versions:
+  tailwindcss: "4.1"
 user-invocable: true
+allowed-tools: Read, Write, Edit, Glob, Grep, Task
+references: references/color-system.md, references/typography.md, references/theme-presets.md, references/grids-layout.md, references/ui-hierarchy.md, references/ui-spacing.md, references/ui-trends-2026.md, references/gradients-guide.md, references/tailwind-config.md, references/tailwind-utilities.md, references/tailwind-performance.md
+related-skills: generating-components, theming-tokens, dark-light-modes
 ---
 
 # Designing Systems
 
-Create consistent, scalable design systems with tokens.
+## Agent Workflow (MANDATORY)
 
-## APEX WORKFLOW
+Before ANY design system work, use `TeamCreate` to spawn 3 agents:
 
-### Phase 0: ANALYZE EXISTING (CRITICAL)
+1. **fuse-ai-pilot:explore-codebase** - Find existing CSS variables, Tailwind config, colors
+2. **fuse-ai-pilot:research-expert** - Verify latest OKLCH and Tailwind v4 patterns
+3. **mcp__context7__query-docs** - Check Tailwind v4 @theme syntax
+
+After implementation, run **fuse-ai-pilot:sniper** for validation.
+
+---
+
+## Overview
+
+| Feature | Description |
+|---------|-------------|
+| **OKLCH Colors** | Wide gamut P3 color space |
+| **CSS Variables** | Semantic token architecture |
+| **Tailwind v4 @theme** | CSS-first configuration |
+| **60-30-10 Rule** | Color distribution ratio |
+
+---
+
+## Critical Rules
+
+1. **OKLCH only** - No hex or RGB for colors
+2. **Forbidden fonts** - Inter, Roboto, Arial are BANNED
+3. **CSS variables** - Never hard-code colors
+4. **Analyze first** - Document existing system before changes
+5. **Dark mode** - Always define both light and dark tokens
+
+---
+
+## Architecture
 
 ```
-Task: explore-codebase
-Prompt: "Find existing design tokens: CSS variables, Tailwind config,
-color palette, typography, spacing patterns"
+styles/
+├── tokens/
+│   ├── colors.css       (~50 lines)
+│   ├── typography.css   (~30 lines)
+│   └── spacing.css      (~20 lines)
+└── app.css              (~40 lines - @import + @theme)
 ```
 
-**If design system exists:** Document and extend it.
-**If no design system:** Create new following this guide.
+→ See [color-system.md](references/color-system.md) for token examples
 
-## Design Token Categories
+---
 
-| Category | Format | Example |
-|----------|--------|---------|
-| Colors | OKLCH | `oklch(55% 0.20 260)` |
-| Typography | rem | `--text-lg: 1.125rem` |
-| Spacing | rem (4px grid) | `--spacing-4: 1rem` |
-| Radius | px/rem | `--radius-lg: 0.75rem` |
-| Shadows | CSS | `--shadow-md: ...` |
+## Reference Guide
 
-## Color System (OKLCH 2026)
+### Concepts
+
+| Topic | Reference | When to Consult |
+|-------|-----------|-----------------|
+| **Colors** | [color-system.md](references/color-system.md) | OKLCH palettes, psychology |
+| **Typography** | [typography.md](references/typography.md) | Fonts, scale, mobile sizes |
+| **Theme Presets** | [theme-presets.md](references/theme-presets.md) | Brutalist, Solarpunk, etc. |
+| **Grids** | [grids-layout.md](references/grids-layout.md) | 12-column, spacing |
+| **UI Hierarchy** | [ui-hierarchy.md](references/ui-hierarchy.md) | Visual hierarchy patterns |
+| **UI Spacing** | [ui-spacing.md](references/ui-spacing.md) | Spacing systems |
+| **UI Trends** | [ui-trends-2026.md](references/ui-trends-2026.md) | 2026 design trends |
+| **Gradients** | [gradients-guide.md](references/gradients-guide.md) | Gradient patterns |
+| **Tailwind Config** | [tailwind-config.md](references/tailwind-config.md) | v4 @theme setup |
+| **Tailwind Utils** | [tailwind-utilities.md](references/tailwind-utilities.md) | Utility patterns |
+| **Tailwind Perf** | [tailwind-performance.md](references/tailwind-performance.md) | Performance tips |
+
+### Templates
+
+Templates are in generating-components skill for implementation examples.
+
+---
+
+## Quick Reference
+
+### OKLCH Color Token
 
 ```css
-/* Primary palette - OKLCH for P3 wide gamut */
---color-primary-500: oklch(55% 0.20 260);
---color-primary-600: oklch(48% 0.18 260);
+:root {
+  --color-primary: oklch(55% 0.20 260);
+  --color-primary-foreground: oklch(98% 0.01 260);
+}
 
-/* Semantic mapping */
---color-background: var(--color-neutral-50);
---color-foreground: var(--color-neutral-900);
---color-muted: var(--color-neutral-100);
---color-border: var(--color-neutral-200);
-
-/* Dark mode */
 .dark {
-  --color-background: var(--color-neutral-900);
-  --color-foreground: var(--color-neutral-50);
+  --color-primary: oklch(65% 0.20 260);
 }
 ```
 
-## Typography Scale (1.25 ratio)
+→ See [color-system.md](references/color-system.md) for full palette
+
+### Typography Scale
 
 ```css
-/* FORBIDDEN: Inter, Roboto, Arial */
-/* USE: Clash Display, Satoshi, Bricolage Grotesque */
-
 --font-display: 'Clash Display', sans-serif;
 --font-sans: 'Satoshi', sans-serif;
 --font-mono: 'JetBrains Mono', monospace;
-
---text-sm: 0.875rem;   /* 14px */
---text-base: 1rem;     /* 16px */
---text-lg: 1.125rem;   /* 18px */
---text-xl: 1.25rem;    /* 20px */
---text-2xl: 1.5rem;    /* 24px */
 ```
 
-## Spacing (4px grid)
+→ See [typography.md](references/typography.md) for approved fonts
+
+### Tailwind v4 @theme
 
 ```css
---spacing-1: 0.25rem;  /* 4px */
---spacing-2: 0.5rem;   /* 8px */
---spacing-4: 1rem;     /* 16px */
---spacing-6: 1.5rem;   /* 24px */
---spacing-8: 2rem;     /* 32px */
-```
-
-## Tailwind v4 Config
-
-```css
-/* app.css - CSS-first config */
 @import "tailwindcss";
 
 @theme {
-  --color-primary-*: oklch(55% 0.20 260);
-  --font-display: 'Clash Display', sans-serif;
-  --radius-lg: 0.75rem;
+  --color-primary: var(--color-primary);
+  --font-display: var(--font-display);
 }
 ```
 
-## Validation
+→ See [tailwind-best-practices.md](references/tailwind-best-practices.md) for config
 
-```
-[ ] Existing tokens documented (Phase 0)
-[ ] No forbidden fonts (Inter/Roboto/Arial)
-[ ] OKLCH colors for wide gamut
-[ ] Dark mode variables defined
-[ ] Tailwind v4 @theme configured
-```
+---
 
-## References
+## Best Practices
 
-- **Color System**: `../../references/color-system.md` (psychology, 60-30-10 rule, OKLCH)
-- **Typography**: `../../references/typography.md` (mobile sizes, line-height, weights)
-- **Grids & Layout**: `../../references/grids-layout.md` (12-column, gutters, margins)
-- **UI Visual Design**: `../../references/ui-visual-design.md` (hierarchy, 2026 trends)
-- **Theme Presets**: `../../references/theme-presets.md` (Brutalist, Solarpunk, etc.)
-- **Tailwind Best Practices**: `../../references/tailwind-best-practices.md`
+### DO
+- Use OKLCH for wide gamut colors
+- Define semantic tokens (primary, success, destructive)
+- Support dark mode from the start
+- Follow 60-30-10 color distribution
+- Use approved fonts only
+
+### DON'T
+- Hard-code hex/RGB colors
+- Use Inter, Roboto, Arial fonts
+- Skip dark mode variables
+- Create tokens without semantic meaning
+- Mix color spaces (stick to OKLCH)

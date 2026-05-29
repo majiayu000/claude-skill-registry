@@ -1,0 +1,18 @@
+{
+  "name": "verify-known-issues",
+  "description": "Verify claims about known issues in libraries or tools. Use when about to state something is a \"known issue\", \"known bug\", or \"known limitation\".",
+  "repo": "beshkenadze/claude-skills-marketplace",
+  "path": "skills/meta/verify-known-issues",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/beshkenadze/claude-skills-marketplace",
+  "dir_name": "verify-known-issues-beshkenadze-claude-skills-market-2",
+  "author": "beshkenadze",
+  "source_url": "https://github.com/beshkenadze/claude-skills-marketplace/blob/main/skills/meta/verify-known-issues/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/beshkenadze/claude-skills-marketplace/blob/main/skills/meta/verify-known-issues/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

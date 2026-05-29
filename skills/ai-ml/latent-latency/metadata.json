@@ -1,0 +1,18 @@
+{
+  "name": "latent-latency",
+  "repo": "plurigrid/asi",
+  "path": "skills/latent-latency/SKILL.md",
+  "source": "github.com/plurigrid/asi",
+  "downloaded_at": "2026-01-19T05:42:05.512186Z",
+  "dir_name": "latent-latency",
+  "category": "ai-ml",
+  "github_path": "skills/latent-latency",
+  "github_branch": "main",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/latent-latency/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -18,6 +18,27 @@ description: |
 
 # Kubernetes / OpenShift Cluster Operations
 
+## Current Versions & Documentation (January 2026)
+
+| Platform | Current Version | Upgrade Path | Documentation |
+|----------|-----------------|--------------|---------------|
+| **Kubernetes** | 1.31.x | 1.30 → 1.31 | https://kubernetes.io/docs/tasks/administer-cluster/ |
+| **OpenShift** | 4.17.x | 4.16 → 4.17 | https://docs.openshift.com/container-platform/4.17/ |
+| **EKS** | 1.31 | Rolling updates | https://docs.aws.amazon.com/eks/latest/userguide/update-cluster.html |
+| **AKS** | 1.31 | Blue-green or rolling | https://learn.microsoft.com/azure/aks/upgrade-cluster |
+| **GKE** | 1.31 | Surge upgrades | https://cloud.google.com/kubernetes-engine/docs/how-to/upgrading-a-cluster |
+
+### Key Tools & Versions
+
+| Tool | Version | Install | Purpose |
+|------|---------|---------|--------|
+| **kubeadm** | 1.31.x | Package manager | Cluster bootstrap |
+| **Velero** | 1.15.x | Helm/CLI | Backup & restore |
+| **kube-prometheus-stack** | v67.x | Helm | Monitoring |
+| **VPA** | 1.3.x | kubectl apply | Vertical scaling |
+| **Cluster Autoscaler** | 1.31.x | Helm | Node autoscaling |
+| **Karpenter** | 1.1.x | Helm | AWS node provisioning |
+
 ## Command Usage Convention
 
 **IMPORTANT**: This skill uses `kubectl` as the primary command in all examples. When working with:
@@ -177,31 +198,65 @@ mv /tmp/kube-apiserver.yaml /etc/kubernetes/manifests/
 
 ### Velero Backup
 
+**Current Version: Velero 1.15.x (January 2026)**
+
 ```bash
-# Install Velero CLI and server
+# Install Velero CLI (v1.15.x)
+brew install velero
+# OR
+curl -LO https://github.com/vmware-tanzu/velero/releases/latest/download/velero-v1.15.0-linux-amd64.tar.gz
+
+# Install Velero server with AWS provider
 velero install \
-  --provider ${CLOUD_PROVIDER} \
+  --provider aws \
   --bucket ${BUCKET_NAME} \
-  --secret-file ./credentials \
-  --backup-location-config region=${REGION}
+  --secret-file ./credentials-velero \
+  --backup-location-config region=${REGION} \
+  --snapshot-location-config region=${REGION} \
+  --plugins velero/velero-plugin-for-aws:v1.10.0 \
+  --use-node-agent  # For file-system backups (CSI volumes)
+
+# Install with Azure provider
+velero install \
+  --provider azure \
+  --bucket ${CONTAINER_NAME} \
+  --secret-file ./credentials-velero \
+  --backup-location-config resourceGroup=${RG},storageAccount=${STORAGE_ACCOUNT} \
+  --snapshot-location-config resourceGroup=${RG} \
+  --plugins velero/velero-plugin-for-microsoft-azure:v1.10.0 \
+  --use-node-agent
+
+# Install with GCP provider
+velero install \
+  --provider gcp \
+  --bucket ${BUCKET_NAME} \
+  --secret-file ./credentials-velero \
+  --plugins velero/velero-plugin-for-gcp:v1.10.0 \
+  --use-node-agent
 
 # Create backup
 velero backup create ${BACKUP_NAME} \
   --include-namespaces ${NAMESPACES} \
-  --ttl 720h
+  --ttl 720h \
+  --default-volumes-to-fs-backup  # Use fs backup for CSI volumes
 
 # Create scheduled backup
 velero schedule create daily-backup \
   --schedule="0 2 * * *" \
   --include-namespaces ${NAMESPACES} \
-  --ttl 168h
+  --ttl 168h \
+  --default-volumes-to-fs-backup
 
 # Restore from backup
 velero restore create --from-backup ${BACKUP_NAME}
 
 # Check backup status
-velero backup describe ${BACKUP_NAME}
+velero backup describe ${BACKUP_NAME} --details
 velero backup logs ${BACKUP_NAME}
+
+# List all backups and schedules
+velero backup get
+velero schedule get
 ```
 
 ### Velero Backup Manifest
@@ -322,45 +377,179 @@ systemctl daemon-reload && systemctl restart kubelet
 kubectl uncordon ${NODE}
 ```
 
+### AKS Upgrade (Azure)
+
+**Documentation**: https://learn.microsoft.com/azure/aks/upgrade-cluster
+
+```bash
+# Check current version and available upgrades
+az aks get-versions --location ${LOCATION} -o table
+az aks show --resource-group ${RG} --name ${CLUSTER} --query kubernetesVersion
+az aks get-upgrades --resource-group ${RG} --name ${CLUSTER} -o table
+
+# Upgrade control plane and node pools together (default)
+az aks upgrade --resource-group ${RG} --name ${CLUSTER} \
+  --kubernetes-version 1.31.0
+
+# Upgrade control plane only
+az aks upgrade --resource-group ${RG} --name ${CLUSTER} \
+  --kubernetes-version 1.31.0 \
+  --control-plane-only
+
+# Upgrade specific node pool
+az aks nodepool upgrade --resource-group ${RG} --cluster-name ${CLUSTER} \
+  --name ${NODEPOOL} --kubernetes-version 1.31.0
+
+# Use blue-green upgrade with max surge
+az aks nodepool upgrade --resource-group ${RG} --cluster-name ${CLUSTER} \
+  --name ${NODEPOOL} --kubernetes-version 1.31.0 \
+  --max-surge 33%
+
+# Enable auto-upgrade channel
+az aks update --resource-group ${RG} --name ${CLUSTER} \
+  --auto-upgrade-channel stable
+
+# Check upgrade status
+az aks show --resource-group ${RG} --name ${CLUSTER} \
+  --query 'provisioningState'
+```
+
+### GKE Upgrade (Google Cloud)
+
+**Documentation**: https://cloud.google.com/kubernetes-engine/docs/how-to/upgrading-a-cluster
+
+```bash
+# Check available versions
+gcloud container get-server-config --region ${REGION}
+gcloud container clusters list --format="table(name,currentMasterVersion,currentNodeVersion)"
+
+# Check upgrade availability
+gcloud container clusters describe ${CLUSTER} --region ${REGION} \
+  --format="get(currentMasterVersion)"
+
+# Upgrade control plane (master)
+gcloud container clusters upgrade ${CLUSTER} --region ${REGION} \
+  --master --cluster-version 1.31
+
+# Upgrade node pools with surge
+gcloud container clusters upgrade ${CLUSTER} --region ${REGION} \
+  --node-pool ${POOL} \
+  --cluster-version 1.31
+
+# Blue-green upgrade for node pools
+gcloud container node-pools update ${POOL} --cluster ${CLUSTER} \
+  --region ${REGION} \
+  --enable-blue-green-upgrade \
+  --node-pool-soak-duration 3600s
+
+# Enable release channel for auto-upgrades
+gcloud container clusters update ${CLUSTER} --region ${REGION} \
+  --release-channel regular
+
+# For Autopilot clusters (auto-managed)
+gcloud container clusters update ${CLUSTER} --region ${REGION} \
+  --maintenance-window-start 02:00 \
+  --maintenance-window-end 06:00
+
+# Monitor upgrade
+gcloud container operations list --filter="targetLink~${CLUSTER}"
+```
+
 ### OpenShift Upgrade
+
+**Documentation**: https://docs.openshift.com/container-platform/4.17/updating/index.html
 
 ```bash
 # Check available updates
 oc adm upgrade
 
-# View update channels
-oc get clusterversion -o jsonpath='{.items[0].spec.channel}'
+# View current version and channel
+oc get clusterversion
+oc get clusterversion version -o jsonpath='{.spec.channel}'
 
-# Change channel (if needed)
-oc adm upgrade channel stable-4.14
+# Change channel (if needed) - EUS channels for extended support
+oc adm upgrade channel stable-4.17
+# OR for extended update support
+oc adm upgrade channel eus-4.16  # EUS to EUS upgrades
 
-# Start upgrade
+# Start upgrade to latest in channel
 oc adm upgrade --to-latest
-# Or specific version:
-oc adm upgrade --to=${VERSION}
+
+# OR upgrade to specific version
+oc adm upgrade --to=4.17.5
+
+# For EUS-to-EUS upgrades (4.14 EUS → 4.16 EUS)
+oc adm upgrade --to-multi-arch --to=4.16.0
 
 # Monitor upgrade progress
-oc get clusterversion
+watch -n 10 'oc get clusterversion && echo && oc get clusteroperators | grep -v "True.*False.*False"'
+
+# Detailed progress
+oc get clusterversion version -o jsonpath='{.status.conditions}' | jq
 oc get clusteroperators
-watch "oc get nodes && echo && oc get clusteroperators | grep -v 'True.*False.*False'"
+oc get nodes
+
+# Check machine config pool status
+oc get mcp
+
+# Troubleshoot stuck upgrades
+oc adm upgrade --include=current
+oc describe clusterversion version
+
+# ARO (Azure Red Hat OpenShift) upgrade
+az aro update --resource-group ${RG} --name ${CLUSTER}
+
+# ROSA (Red Hat OpenShift on AWS) upgrade
+rosa upgrade cluster --cluster ${CLUSTER} --version 4.17.5
+rosa describe upgrade --cluster ${CLUSTER}
 ```
 
 ### EKS Upgrade
 
+**Documentation**: https://docs.aws.amazon.com/eks/latest/userguide/update-cluster.html
+
 ```bash
-# Update control plane
+# Check current version and available updates
+aws eks describe-cluster --name ${CLUSTER_NAME} --query 'cluster.version'
+aws eks describe-addon-versions --kubernetes-version 1.31 | jq '.addons[].addonName'
+
+# Pre-upgrade: Update aws-cli and eksctl
+brew upgrade awscli eksctl
+
+# Update control plane (1.30 → 1.31)
 aws eks update-cluster-version \
   --name ${CLUSTER_NAME} \
-  --kubernetes-version ${VERSION}
+  --kubernetes-version 1.31
 
-# Wait for completion
+# Wait for completion (can take 20-40 minutes)
 aws eks wait cluster-active --name ${CLUSTER_NAME}
+aws eks describe-update --name ${CLUSTER_NAME} --update-id ${UPDATE_ID}
 
-# Update node groups
+# Update EKS add-ons to compatible versions
+for addon in vpc-cni coredns kube-proxy eks-pod-identity-agent; do
+  aws eks update-addon --cluster-name ${CLUSTER_NAME} \
+    --addon-name $addon \
+    --resolve-conflicts PRESERVE
+done
+
+# Update managed node groups
 aws eks update-nodegroup-version \
   --cluster-name ${CLUSTER_NAME} \
-  --nodegroup-name ${NODEGROUP_NAME} \
-  --kubernetes-version ${VERSION}
+  --nodegroup-name ${NODEGROUP_NAME}
+
+# For Karpenter-managed nodes (v1.0+)
+# Update Karpenter to compatible version first
+helm upgrade karpenter oci://public.ecr.aws/karpenter/karpenter \
+  --namespace karpenter \
+  --set settings.clusterName=${CLUSTER_NAME} \
+  --set controller.image.tag=1.1.0
+
+# Karpenter will automatically roll nodes with drift
+kubectl get nodeclaims
+
+# Verify upgrade
+kubectl get nodes
+kubectl version
 ```
 
 ## Resource Management
@@ -490,19 +679,44 @@ oc get csr -o go-template='{{range .items}}{{if not .status}}{{.metadata.name}}{
 
 ### Prometheus Stack (kube-prometheus-stack)
 
+**Current Version: Chart v67.x, Prometheus v2.55.x, Grafana v11.x (January 2026)**
+
 ```bash
-# Install via Helm
+# Add Helm repo
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 helm repo update
 
-helm install prometheus prometheus-community/kube-prometheus-stack \
+# Install via Helm (production-ready configuration)
+helm upgrade --install prometheus prometheus-community/kube-prometheus-stack \
   --namespace monitoring \
   --create-namespace \
-  --set prometheus.prometheusSpec.retention=15d \
-  --set prometheus.prometheusSpec.storageSpec.volumeClaimTemplate.spec.storageClassName=standard \
-  --set prometheus.prometheusSpec.storageSpec.volumeClaimTemplate.spec.resources.requests.storage=50Gi \
+  --version 67.x \
+  --set prometheus.prometheusSpec.retention=30d \
+  --set prometheus.prometheusSpec.retentionSize=50GB \
+  --set prometheus.prometheusSpec.replicas=2 \
+  --set prometheus.prometheusSpec.storageSpec.volumeClaimTemplate.spec.storageClassName=gp3 \
+  --set prometheus.prometheusSpec.storageSpec.volumeClaimTemplate.spec.resources.requests.storage=100Gi \
+  --set prometheus.prometheusSpec.resources.requests.memory=2Gi \
+  --set prometheus.prometheusSpec.resources.limits.memory=4Gi \
+  --set alertmanager.alertmanagerSpec.replicas=3 \
+  --set alertmanager.alertmanagerSpec.storage.volumeClaimTemplate.spec.storageClassName=gp3 \
+  --set alertmanager.alertmanagerSpec.storage.volumeClaimTemplate.spec.resources.requests.storage=10Gi \
   --set grafana.persistence.enabled=true \
-  --set grafana.persistence.size=10Gi
+  --set grafana.persistence.size=10Gi \
+  --set grafana.persistence.storageClassName=gp3 \
+  --set grafana.adminPassword="${GRAFANA_PASSWORD}" \
+  --set grafana.sidecar.dashboards.enabled=true \
+  --set grafana.sidecar.dashboards.searchNamespace=ALL
+
+# Access Grafana
+kubectl port-forward -n monitoring svc/prometheus-grafana 3000:80
+
+# Access Prometheus
+kubectl port-forward -n monitoring svc/prometheus-kube-prometheus-prometheus 9090:9090
+
+# Check status
+kubectl get servicemonitor -A
+kubectl get prometheusrules -A
 ```
 
 ### Custom ServiceMonitor
@@ -545,7 +759,7 @@ spec:
       rules:
         - alert: HighErrorRate
           expr: |
-            sum(rate(http_requests_total{job="${APP_NAME}",status=~"5.."}[5m])) 
+            sum(rate(http_requests_total{job="${APP_NAME}",status=~"5.."}[5m]))
             / sum(rate(http_requests_total{job="${APP_NAME}"}[5m])) > 0.05
           for: 5m
           labels:
@@ -553,7 +767,7 @@ spec:
           annotations:
             summary: "High error rate detected"
             description: "Error rate is {{ $value | humanizePercentage }} for {{ $labels.job }}"
-        
+
         - alert: PodCrashLooping
           expr: |
             rate(kube_pod_container_status_restarts_total{namespace="${NAMESPACE}"}[15m]) * 60 * 15 > 0
@@ -582,7 +796,7 @@ data:
         Log_Level     info
         Daemon        off
         Parsers_File  parsers.conf
-    
+
     [INPUT]
         Name              tail
         Tag               kube.*
@@ -592,7 +806,7 @@ data:
         Mem_Buf_Limit     5MB
         Skip_Long_Lines   On
         Refresh_Interval  10
-    
+
     [FILTER]
         Name                kubernetes
         Match               kube.*
@@ -602,7 +816,7 @@ data:
         Merge_Log           On
         K8S-Logging.Parser  On
         K8S-Logging.Exclude On
-    
+
     [OUTPUT]
         Name            es
         Match           *
@@ -610,7 +824,7 @@ data:
         Port            9200
         Logstash_Format On
         Retry_Limit     False
-  
+
   parsers.conf: |
     [PARSER]
         Name        cri
@@ -759,10 +973,10 @@ read -p "Delete namespace $NS? (yes/no): " confirm
 if [ "$confirm" = "yes" ]; then
   # Remove finalizers from stuck resources
   kubectl get all -n $NS -o name | xargs -I {} kubectl patch {} -n $NS -p '{"metadata":{"finalizers":null}}' --type=merge 2>/dev/null
-  
+
   # Delete namespace
   kubectl delete namespace $NS --timeout=120s
-  
+
   # Force delete if stuck
   if kubectl get namespace $NS &>/dev/null; then
     echo "Namespace stuck, removing finalizers..."

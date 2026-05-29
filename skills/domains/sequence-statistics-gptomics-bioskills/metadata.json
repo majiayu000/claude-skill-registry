@@ -1,0 +1,18 @@
+{
+  "name": "sequence-statistics",
+  "repo": "GPTomics/bioSkills",
+  "path": "sequence-io/sequence-statistics/SKILL.md",
+  "source": "github.com/GPTomics/bioSkills",
+  "downloaded_at": "2026-01-22T02:30:48.081505Z",
+  "dir_name": "sequence-statistics-gptomics-bioskills",
+  "category": "domains",
+  "github_path": "sequence-io/sequence-statistics",
+  "github_branch": "main",
+  "author": "GPTomics",
+  "source_url": "https://github.com/GPTomics/bioSkills/blob/main/sequence-io/sequence-statistics/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 GPTomics",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

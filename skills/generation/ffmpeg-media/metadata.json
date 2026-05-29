@@ -1,9 +1,9 @@
 {
-  "name": "ffmpeg-media",
+  "name": "media",
   "repo": "plurigrid/asi",
-  "path": "skills/ffmpeg-media/SKILL.md",
+  "path": "skills/media/SKILL.md",
   "source": "github.com/plurigrid/asi",
-  "downloaded_at": "2026-01-14T02:29:16.898304Z",
+  "downloaded_at": "2026-01-22T02:09:14.897952Z",
   "dir_name": "ffmpeg-media",
   "category": "generation",
   "github_path": "skills/ffmpeg-media",

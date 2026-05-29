@@ -1,0 +1,16 @@
+{
+  "name": "youtube",
+  "repo": "ericmjl/skills",
+  "path": "skills/youtube/SKILL.md",
+  "source": "github.com/ericmjl/skills",
+  "downloaded_at": "2026-01-29T07:11:02.788675Z",
+  "dir_name": "youtube-ericmjl-skills-e02e704f",
+  "category": "generation",
+  "author": "ericmjl",
+  "source_url": "https://github.com/ericmjl/skills/blob/main/skills/youtube/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ericmjl/skills/blob/main/skills/youtube/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

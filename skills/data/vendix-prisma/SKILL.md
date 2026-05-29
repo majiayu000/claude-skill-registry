@@ -1,344 +1,390 @@
 ---
-name: vendix-prisma
-description: >
-  Prisma ORM patterns for Vendix database operations.
-  Trigger: When editing schema.prisma, creating migrations, or using Prisma client.
-license: MIT
+name: vendix-prisma-schema
+description: Prisma schema editing.
 metadata:
-  author: vendix
-  version: "1.0"
+  scope: [root]
+  auto_invoke: "Editing Schema"
 ---
+# Vendix Prisma Schema Pattern
 
-## When to Use
+> **Schema Editing & Migrations** - Edición de schema.prisma, relaciones y workflow de migraciones en desarrollo.
 
-Use this skill when:
-- Modifying Prisma schema
-- Creating or running migrations
-- Using Prisma Client in services
-- Seeding database
+## 🎯 Schema Structure
 
-## Critical Patterns
-
-### Pattern 1: Schema Structure
-
-**apps/backend/prisma/schema.prisma**:
+**File:** `apps/backend/prisma/schema.prisma`
 
 ```prisma
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-}
-
 generator client {
   provider = "prisma-client-js"
 }
 
-model User {
-  id        String   @id @default(uuid())
-  email     String   @unique
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+```
+
+---
+
+## 📝 Naming Conventions
+
+### Database Objects
+
+```prisma
+// ✅ CORRECT - Tables in snake_case
+model users {}
+model product_variants {}
+model sales_order_items {}
+
+// ✅ CORRECT - Enums in snake_case with _enum suffix
+enum user_state_enum {
+  ACTIVE
+  INACTIVE
+  PENDING
+}
+
+// ❌ WRONG - Tables in PascalCase
+model Users {}
+model ProductVariants {}
+
+// ❌ WRONG - Enums in PascalCase
+enum UserState {}
+```
+
+### Fields
+
+```prisma
+// ✅ CORRECT - Fields in snake_case
+model users {
+  id               Int
+  user_name        String
+  email_address    String
+  organization_id  Int
+  main_store_id    Int?
+  created_at       DateTime
+  updated_at       DateTime
+}
+
+// ❌ WRONG - Fields in camelCase
+model users {
+  id               Int
+  userName         String
+  emailAddress     String
+  organizationId   Int
+  createdAt        DateTime
+}
+```
+
+---
+
+## 🔗 Relationship Patterns
+
+### One-to-Many
+
+```prisma
+model organizations {
+  id        Int       @id @default(autoincrement())
   name      String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  orders    Order[]
+  users     users[]   // One organization has many users
+  stores    stores[]  // One organization has many stores
 }
 
-model Order {
-  id        String   @id @default(uuid())
-  userId    String
-  user      User     @relation(fields: [userId], references: [id])
-  status    String   @default("PENDING")
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  items     OrderItem[]
-}
+model users {
+  id              Int            @id @default(autoincrement())
+  organization_id Int
+  organization    organizations  @relation(fields: [organization_id], references: [id])
 
-model OrderItem {
-  id        String   @id @default(uuid())
-  orderId   String
-  order     Order    @relation(fields: [orderId], references: [id])
-  productId String
-  quantity  Int
-  price     Decimal  @db.Decimal(10, 2)
+  // Index for foreign key
+  @@index([organization_id])
 }
 ```
 
-### Pattern 2: Prisma Service
+### Many-to-Many
 
-**apps/backend/src/prisma/prisma.service.ts**:
+```prisma
+model users {
+  id         Int          @id @default(autoincrement())
+  user_name  String
+  store_users store_users[]  // Join table
+}
 
-```typescript
-import { Injectable, OnModuleInit, OnModuleDestroy } from '@nestjs/common';
-import { PrismaClient } from '@prisma/client';
+model stores {
+  id         Int          @id @default(autoincrement())
+  name       String
+  store_users store_users[]  // Join table
+}
 
-@Injectable()
-export class PrismaService
-  extends PrismaClient
-  implements OnModuleInit, OnModuleDestroy
-{
-  async onModuleInit() {
-    await this.$connect();
-  }
+// Join table
+model store_users {
+  user_id    Int
+  store_id   Int
+  role       String
 
-  async onModuleDestroy() {
-    await this.$disconnect();
-  }
+  user       users     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  store      stores    @relation(fields: [store_id], references: [id], onDelete: Cascade)
+
+  @@id([user_id, store_id])  // Composite primary key
 }
 ```
 
-### Pattern 3: Using Prisma in Services
+### Self-Referencing
 
-```typescript
-import { Injectable } from '@nestjs/common';
-import { PrismaService } from '../prisma/prisma.service';
-
-@Injectable()
-export class UsersService {
-  constructor(private prisma: PrismaService) {}
-
-  async findAll() {
-    return this.prisma.user.findMany({
-      include: { orders: true },
-    });
-  }
-
-  async findOne(id: string) {
-    return this.prisma.user.findUnique({
-      where: { id },
-      include: { orders: { include: { items: true } } },
-    });
-  }
-
-  async create(data: { email: string; name: string }) {
-    return this.prisma.user.create({
-      data,
-    });
-  }
-
-  async update(id: string, data: { email?: string; name?: string }) {
-    return this.prisma.user.update({
-      where: { id },
-      data,
-    });
-  }
-
-  async remove(id: string) {
-    return this.prisma.user.delete({
-      where: { id },
-    });
-  }
+```prisma
+model users {
+  id           Int      @id @default(autoincrement())
+  user_name    String
+  manager_id   Int?
+  manager      users?   @relation("ManagerRelation", fields: [manager_id], references: [id])
+  subordinates users[]  @relation("ManagerRelation")
 }
 ```
 
-### Pattern 4: Transaction Handling
+---
 
-```typescript
-async createOrderWithItems(orderData: CreateOrderDto) {
-  return this.prisma.$transaction(async (tx) => {
-    const order = await tx.order.create({
-      data: {
-        userId: orderData.userId,
-        status: 'PENDING',
-      },
-    });
+## 🎨 Field Types & Attributes
 
-    await tx.orderItem.createMany({
-      data: orderData.items.map((item) => ({
-        orderId: order.id,
-        productId: item.productId,
-        quantity: item.quantity,
-        price: item.price,
-      })),
-    });
+### Common Field Types
 
-    return order;
-  });
+```prisma
+model products {
+  id            Int      @id @default(autoincrement())
+  name          String
+  description   String?  @db.Text
+  base_price    Decimal  @db.Decimal(10, 2)
+  is_active     Boolean  @default(true)
+  stock_quantity Int     @default(0)
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+
+  // Enums
+  status        product_status_enum @default(ACTIVE)
+
+  // JSON field for metadata
+  metadata      Json?
+
+  // Array of strings (PostgreSQL specific)
+  tags          String[]
+
+  // Indexes
+  @@index([organization_id, store_id])
+  @@index([is_active])
+}
+
+enum product_status_enum {
+  ACTIVE
+  INACTIVE
+  DRAFT
+  ARCHIVED
 }
 ```
 
-### Pattern 5: Complex Queries with Relations
+### Field Attributes
 
-```typescript
-// Find orders with user and items
-async getOrdersWithDetails() {
-  return this.prisma.order.findMany({
-    include: {
-      user: true,
-      items: {
-        include: {
-          product: true,
-        },
-      },
-    },
-  });
-}
+| Attribute | Description | Example |
+|-----------|-------------|---------|
+| `@id` | Primary key | `id Int @id` |
+| `@default(value)` | Default value | `created_at DateTime @default(now())` |
+| `@unique` | Unique constraint | `email String @unique` |
+| `@relation` | Define relation | `organization organizations @relation(...)` |
+| `@map(name)` | Map to different column name | `user_name String @map("userName")` |
+| `@updatedAt` | Auto-update timestamp | `updated_at DateTime @updatedAt` |
+| `@db.Type` | Database-specific type | `price Decimal @db.Decimal(10,2)` |
+| `@@index` | Define index | `@@index([field1, field2])` |
+| `@@unique` | Unique constraint on multiple fields | `@@unique([email, organization_id])` |
+| `@@map` | Map table to different name | `@@map("users")` |
 
-// Find with filtering
-async getOrdersByStatus(status: string) {
-  return this.prisma.order.findMany({
-    where: { status },
-    include: { items: true },
-  });
-}
+---
 
-// Find with pagination
-async getOrdersPaginated(page: number, limit: number) {
-  const skip = (page - 1) * limit;
-  const [orders, total] = await Promise.all([
-    this.prisma.order.findMany({
-      skip,
-      take: limit,
-      include: { user: true },
-    }),
-    this.prisma.order.count(),
-  ]);
+## 🔄 Migration Workflow
 
-  return { orders, total, page, limit };
-}
-```
-
-## Decision Tree
-
-```
-Modifying database schema?
-├── Edit schema.prisma
-├── Run migration: npx prisma migrate dev
-├── Review generated SQL
-└── Regenerate Prisma Client
-
-Adding new model?
-├── Add model to schema.prisma
-├── Define relations with @relation
-├── Create migration
-└── Update services to use new model
-
-Seeding database?
-├── Create seed file in prisma/seed.ts
-├── Add to package.json: "prisma": { "seed": "ts-node ..." }
-├── Run: npx prisma migrate reset
-└── Data seeded automatically
-
-Debugging Prisma?
-├── Enable query logging in PrismaService
-├── Use Prisma Studio: npx prisma studio
-└── Check DATABASE_URL in .env
-```
-
-## Code Examples
-
-### Example 1: Creating Migration
+### Development Mode
 
 ```bash
-# After editing schema.prisma
-cd apps/backend
-npx prisma migrate dev --name add_user_roles
+# 1. Make changes to schema.prisma
 
-# This creates:
-# - prisma/migrations/TIMESTAMP_add_user_roles/migration.sql
-# - Regenerates Prisma Client
-```
+# 2. Create migration (auto-applies in development)
+npx prisma migrate dev --name describe_your_changes
 
-### Example 2: Seeding Database
+# This will:
+# - Generate migration SQL
+# - Apply migration to database
+# - Regenerate Prisma Client
 
-**prisma/seed.ts**:
-```typescript
-import { PrismaClient } from '@prisma/client';
+# 3. Verify migration was applied
+npx prisma migrate status
 
-const prisma = new PrismaClient();
-
-async function main() {
-  await prisma.user.createMany({
-    data: [
-      { email: 'admin@vendix.com', name: 'Admin' },
-      { email: 'user@vendix.com', name: 'User' },
-    ],
-  });
-}
-
-main()
-  .catch((e) => {
-    console.error(e);
-    process.exit(1);
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
-  });
-```
-
-**package.json**:
-```json
-{
-  "prisma": {
-    "seed": "ts-node prisma/seed.ts"
-  }
-}
-```
-
-### Example 3: Error Handling
-
-```typescript
-async updateWithConflictHandling(id: string, email: string) {
-  try {
-    return await this.prisma.user.update({
-      where: { id },
-      data: { email },
-    });
-  } catch (error) {
-    if (error.code === 'P2002') {
-      // Unique constraint violation
-      throw new ConflictException('Email already exists');
-    }
-    if (error.code === 'P2025') {
-      // Record not found
-      throw new NotFoundException('User not found');
-    }
-    throw error;
-  }
-}
-```
-
-## Commands
-
-```bash
-# Create migration after schema change
-cd apps/backend
-npx prisma migrate dev --name describe_change
-
-# Reset database (WARNING: deletes all data)
+# 4. If needed, reset database (WARNING: deletes all data)
 npx prisma migrate reset
+```
 
-# Deploy migrations in production
+### Production Mode
+
+```bash
+# 1. Create migration without applying
+npx prisma migrate dev --create-only --name describe_your_changes
+
+# 2. Review generated migration SQL
+# Edit migration if needed
+
+# 3. Apply migration (production environment)
 npx prisma migrate deploy
-
-# Open Prisma Studio (GUI)
-npx prisma studio
-
-# Seed database
-npx prisma db seed
-
-# Format Prisma schema
-npx prisma format
-
-# Validate Prisma schema
-npx prisma validate
-
-# Generate Prisma Client (if needed manually)
-npx prisma generate
 ```
 
-## Environment Variables
+---
 
-**apps/backend/.env**:
-```env
-DATABASE_URL="postgresql://postgres:password@localhost:5432/vendix_db?schema=public"
+## 🎯 Schema Editing Workflow
+
+### Step 1: Backup Current State
+
+```bash
+# Export current schema
+npx prisma migrate diff \
+  --from-empty \
+  --to-schema-datamodel prisma/schema.prisma \
+  --script > backup.sql
 ```
 
-**Docker DATABASE_URL** (for containers):
-```env
-DATABASE_URL="postgresql://postgres:password@db:5432/vendix_db?schema=public"
+### Step 2: Edit Schema
+
+```prisma
+// Example: Adding new field
+model products {
+  id            Int      @id @default(autoincrement())
+  name          String
+  weight        Decimal?  @db.Decimal(10, 2)  // NEW FIELD
+  dimensions    Json?                         // NEW FIELD
+}
 ```
 
-## Resources
+### Step 3: Create Migration
 
-- **Prisma Schema**: [apps/backend/prisma/schema.prisma](../../../apps/backend/prisma/schema.prisma)
-- **Prisma Docs**: https://www.prisma.io/docs
-- **Reference**: See [skills/vendix-backend/SKILL.md](../vendix-backend/SKILL.md) for NestJS integration
+```bash
+npx prisma migrate dev --name add_product_weight_and_dimensions
+```
+
+### Step 4: Review Migration
+
+```sql
+-- Migration SQL
+ALTER TABLE "products" ADD COLUMN "weight" DECIMAL(10,2);
+ALTER TABLE "products" ADD COLUMN "dimensions" JSONB;
+```
+
+### Step 5: Apply & Test
+
+```bash
+# Migration applied automatically
+# Verify with Docker logs
+docker logs --tail 40 vendix_backend
+```
+
+---
+
+## 🔍 Common Schema Patterns
+
+### Soft Delete Pattern
+
+```prisma
+model users {
+  id         Int       @id @default(autoincrement())
+  user_name  String
+  deleted_at DateTime?  // Soft delete timestamp
+  is_active  Boolean   @default(true)
+
+  @@index([deleted_at])
+}
+
+// Query for non-deleted records
+const users = await prisma.users.findMany({
+  where: {
+    deleted_at: null,
+    is_active: true,
+  },
+});
+```
+
+### Timestamps Pattern
+
+```prisma
+model base_model {
+  id         Int      @id @default(autoincrement())
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+```
+
+### Multi-Tenant Pattern
+
+```prisma
+model products {
+  id              Int      @id @default(autoincrement())
+  name            String
+  organization_id Int      // Tenant ID
+  store_id        Int      // Sub-tenant ID
+
+  organization    organizations @relation(fields: [organization_id], references: [id])
+  store           stores        @relation(fields: [store_id], references: [id])
+
+  @@index([organization_id, store_id])
+}
+```
+
+---
+
+## 🚫 Common Mistakes
+
+### ❌ WRONG: PascalCase Tables
+
+```prisma
+model Users {  // ❌ WRONG
+  id Int @id
+  UserName String  // ❌ WRONG
+}
+```
+
+### ✅ CORRECT: snake_case Tables
+
+```prisma
+model users {  // ✅ CORRECT
+  id        Int      @id
+  user_name String   // ✅ CORRECT
+}
+```
+
+### ❌ WRONG: Missing Foreign Key Indexes
+
+```prisma
+model products {
+  id              Int
+  organization_id Int  // ❌ Missing index
+}
+```
+
+### ✅ CORRECT: With Indexes
+
+```prisma
+model products {
+  id              Int
+  organization_id Int
+
+  @@index([organization_id])  // ✅ Index for foreign key
+}
+```
+
+---
+
+## 🔍 Key Files Reference
+
+| File | Purpose |
+|------|---------|
+| `prisma/schema.prisma` | Database schema definition |
+| `prisma/migrations/` | Migration files |
+| `prisma/services/` | Extended Prisma services |
+
+---
+
+## Related Skills
+
+- `vendix-backend-prisma` - Prisma service patterns
+- `vendix-prisma-seed` - Seed data patterns
+- `vendix-naming-conventions` - Naming conventions (CRITICAL)

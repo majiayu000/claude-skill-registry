@@ -1,0 +1,16 @@
+{
+  "name": "ru-review",
+  "repo": "Dicklesworthstone/repo_updater",
+  "path": ".claude/skills/ru-review/SKILL.md",
+  "category": "quality",
+  "source": "github.com/Dicklesworthstone/repo_updater",
+  "dir_name": "ru-review",
+  "downloaded_at": "2026-02-15T05:02:08.527384Z",
+  "author": "Dicklesworthstone",
+  "source_url": "https://github.com/Dicklesworthstone/repo_updater/blob/main/.claude/skills/ru-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Dicklesworthstone/repo_updater/blob/main/.claude/skills/ru-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

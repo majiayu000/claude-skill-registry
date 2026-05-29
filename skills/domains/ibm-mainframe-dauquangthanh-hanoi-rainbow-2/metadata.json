@@ -1,0 +1,18 @@
+{
+  "name": "ibm-mainframe",
+  "description": "Provides comprehensive IBM Mainframe administration, development, and modernization guidance including z/OS operations, JCL scripting, COBOL/PL/I programming, CICS/IMS configuration, DB2 administratio",
+  "repo": "DauQuangThanh/hanoi-rainbow",
+  "path": "skills/ibm-mainframe",
+  "category": "domains",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/DauQuangThanh/hanoi-rainbow",
+  "dir_name": "ibm-mainframe-dauquangthanh-hanoi-rainbow-2",
+  "author": "DauQuangThanh",
+  "source_url": "https://github.com/DauQuangThanh/hanoi-rainbow/blob/main/skills/ibm-mainframe/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Dau Quang Thanh",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,6 +1,12 @@
----
-name: variant-interpretation-acmg
+---name: variant-interpretation-acmg
 description: Classifies genetic variants according to ACMG (American College of Medical Genetics) guidelines.
+keywords:
+  - acmg
+  - genomics
+  - variant-classification
+  - precision-medicine
+  - genetics
+measurable_outcome: Correctly classifies >95% of variants when provided with accurate ACMG evidence codes.
 license: MIT
 metadata:
   author: AI Group
@@ -10,7 +16,7 @@ compatibility:
 allowed-tools:
   - run_shell_command
   - read_file
----
+---"
 
 # Variant Interpretation (ACMG)
 
@@ -43,4 +49,3 @@ The **Variant Interpretation Skill** automates the classification of genetic var
 python3 Skills/Genomics/Variant_Interpretation/acmg_classifier.py \
     --evidence "PVS1,PM2"
 ```
-

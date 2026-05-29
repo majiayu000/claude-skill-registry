@@ -1,0 +1,18 @@
+{
+  "name": "youtube",
+  "description": "Comprehensive YouTube operations using yt-dlp - download videos/audio, extract transcripts and subtitles, get metadata, work with playlists, download thumbnails, and inspect available formats. Use thi",
+  "repo": "ericmjl/skills",
+  "path": "skills/youtube",
+  "category": "generation",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ericmjl/skills",
+  "dir_name": "youtube-ericmjl-skills-2",
+  "author": "ericmjl",
+  "source_url": "https://github.com/ericmjl/skills/blob/main/skills/youtube/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ericmjl/skills/blob/main/skills/youtube/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

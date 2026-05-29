@@ -1,11 +1,18 @@
 ---
 name: ln-150-presentation-creator
-description: Builds interactive HTML presentation with 6 tabs (Overview, Requirements, Architecture/C4, Tech Spec, Roadmap, Guides). Creates presentation/README.md hub. L2 Worker under ln-100-documents-pipeline.
+description: "Builds interactive HTML presentation from project docs with Mermaid diagrams. Use when sharing project overview with stakeholders."
+license: MIT
 ---
+
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # HTML Presentation Builder
 
 This skill creates an interactive, self-contained HTML presentation from existing project documentation. It transforms Markdown documents into a professional, navigable web presentation with diagrams, collapsible sections, and modern UI.
+
+## Purpose
+
+Transforms existing Markdown documentation into an interactive, self-contained HTML presentation with 6 tabs (Overview, Requirements, Architecture/C4, Tech Spec, Roadmap, Guides) and Mermaid diagram support.
 
 ## When to Use This Skill
 
@@ -25,12 +32,12 @@ Use this skill when:
 - `docs/project/tech_stack.md` (REQUIRED)
 
 **Optional files** (enhance presentation but not blocking):
-- `docs/project/api_spec.md`, `database_schema.md`, `design_guidelines.md`, `runbook.md`
+- `docs/project/api_spec.md`, `database_schema.md`, `design_guidelines.md`, `infrastructure.md`, `runbook.md`
 - `docs/reference/adrs/*.md` (ADRs with Category: Strategic|Technical)
 - `docs/reference/guides/*.md` (How-to guides)
 - `docs/tasks/kanban_board.md` (Epic Story Counters for Roadmap)
 
-## How It Works
+## Workflow
 
 The skill follows a **7-phase workflow**: READ DOCS → VALIDATE SOURCE EXISTS → VALIDATE SOURCE QUALITY → CREATE DIR → COPY TEMPLATES → INJECT CONTENT → BUILD HTML.
 
@@ -41,6 +48,8 @@ The skill follows a **7-phase workflow**: READ DOCS → VALIDATE SOURCE EXISTS �
 **Phase 5: COPY TEMPLATES** - Copy HTML/CSS/JS templates to assets/
 **Phase 6: INJECT CONTENT** - Parse MD docs → replace placeholders in tab files → delete example blocks
 **Phase 7: BUILD HTML** - Assemble modular components into standalone presentation_final.html
+
+**MANDATORY READ:** Load [references/phases_detailed.md](references/phases_detailed.md) for detailed workflow of each phase.
 
 ---
 
@@ -63,6 +72,7 @@ The skill follows a **7-phase workflow**: READ DOCS → VALIDATE SOURCE EXISTS �
    - `project/api_spec.md` - API endpoints, authentication (if exists)
    - `project/database_schema.md` - Database schema, ER diagrams (if exists)
    - `project/design_guidelines.md` - UI/UX design system (if exists)
+   - `project/infrastructure.md` - Infrastructure inventory (if exists)
    - `project/runbook.md` - Operational procedures (if exists)
 
 3. **Read ADRs** (if exist):
@@ -186,7 +196,7 @@ Log summary:
 
 **Output**: Content quality report with warnings
 
-📖 **Detailed workflow**: See [references/phases_detailed.md](references/phases_detailed.md#phase-3-validate-source-content-quality)
+📖 **Detailed workflow**: per `phases_detailed.md` §Phase 3
 
 ---
 
@@ -297,7 +307,7 @@ Log summary:
 
 **Output**: Clean, project-specific tab files ready for build
 
-📖 **Placeholder reference & example transformation**: See [references/phases_detailed.md](references/phases_detailed.md#phase-6-content-injection--example-cleanup)
+📖 **Placeholder reference & example transformation**: per `phases_detailed.md` §Phase 6
 
 ---
 
@@ -460,17 +470,37 @@ node build-presentation.js
 
 ## Definition of Done
 
-| Phase | Critical Checkpoints |
-|-------|---------------------|
-| **1. READ DOCS** | ✅ All docs loaded from docs/project/, docs/reference/, docs/tasks/ ✅ Metadata extracted ✅ Mermaid blocks preserved |
-| **2. VALIDATE EXISTS** | ✅ Required files exist (requirements.md, architecture.md, tech_stack.md) ✅ ERROR if missing |
-| **3. VALIDATE QUALITY** | ✅ Diagrams checked ✅ Placeholders detected ✅ Content length checked ✅ WARN only (non-blocking) |
-| **4. CREATE DIR** | ✅ docs/presentation/ created ✅ README.md created/preserved |
-| **5. COPY TEMPLATES** | ✅ assets/ created with all templates OR preserved if exists |
-| **6. INJECT CONTENT** | ✅ All 6 tabs populated ✅ **CRITICAL: Example blocks deleted** ✅ No `<!-- EXAMPLE -->` markers ✅ No hardcoded e-commerce data |
-| **7. BUILD HTML** | ✅ `node build-presentation.js` executed ✅ presentation_final.html created (~120-150 KB) ✅ Tested in browser |
+- [ ] All docs loaded from docs/project/, docs/reference/, docs/tasks/ with metadata extracted and Mermaid blocks preserved
+- [ ] Required files exist (requirements.md, architecture.md, tech_stack.md) — ERROR if missing
+- [ ] Diagrams checked, placeholders detected, content length checked (WARN only)
+- [ ] docs/presentation/ created, README.md created/preserved
+- [ ] assets/ created with all templates OR preserved if exists
+- [ ] All 6 tabs populated, example blocks deleted, no `<!-- EXAMPLE -->` markers, no hardcoded data
+- [ ] `node build-presentation.js` executed, presentation_final.html created, tested in browser
 
 **Output:** docs/presentation/presentation_final.html + assets/ + README.md
+
+---
+
+## Critical Rules
+
+- **3 required files:** requirements.md, architecture.md, tech_stack.md must exist — STOP execution if missing
+- **Never overwrite assets/:** Existing assets/ directory is preserved (user customizations); only presentation_final.html is regenerated
+- **Delete ALL example blocks:** Every `<!-- EXAMPLE START -->...<!-- EXAMPLE END -->` must be removed; no hardcoded e-commerce data in output
+- **Never edit presentation_final.html directly:** It is a generated file; edit source files in assets/ and rebuild
+- **Node.js v18+ required:** Build script depends on Node.js for assembling final HTML
+
+---
+
+## Reference Files
+
+- **Detailed phase workflow:** `references/phases_detailed.md`
+- **Presentation README template:** `references/presentation_readme_template.md`
+- **HTML template:** `references/presentation_template.html`
+- **Styles:** `references/styles.css`
+- **Scripts:** `references/scripts.js`
+- **Build script:** `references/build-presentation.js`
+- **Tab templates:** `references/tabs/tab_overview.html`, `tab_requirements.html`, `tab_architecture.html`, `tab_technical_spec.html`, `tab_roadmap.html`, `tab_guides.html`
 
 ---
 

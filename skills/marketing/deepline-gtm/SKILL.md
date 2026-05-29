@@ -334,10 +334,6 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
   Summary: Use list upload segments for contact or company matching. LinkedIn does not support true append semantics on LIST_UPLOAD segments, so treat syncs as replacements.
   Last reviewed: 2026-04-09
 
-- [linkedin_scraper playbook](provider-playbooks/linkedin_scraper.md)
-  Summary: Use LinkedinScraper for LinkedIn/Sales Navigator actions that require an authenticated identity. Prefer live read/extract tools first; engagement tools mutate LinkedIn state.
-  Last reviewed: 2026-05-05
-
 - [lusha playbook](provider-playbooks/lusha.md)
   Summary: Use for B2B email + direct dial enrichment by LinkedIn URL, email, or name+company. Also supports company enrichment by domain and prospecting search with department/seniority/industry filters.
   Last reviewed: 2026-03-31

@@ -1,93 +1,42 @@
 ---
-name: ultrawork
-description: Activate maximum performance mode with parallel agent orchestration for high-throughput task completion
+name: cancel-ultrawork
+description: Cancel active Ultrawork mode
 user-invocable: true
 ---
 
-# Ultrawork Skill
+# Cancel Ultrawork
 
-Activates maximum performance mode with parallel agent orchestration.
+[ULTRAWORK CANCELLED]
 
-## When Activated
+The Ultrawork mode has been cancelled. Clearing state files.
 
-This skill enhances Claude's capabilities by:
+## MANDATORY ACTION
 
-1. **Parallel Execution**: Running multiple agents simultaneously for independent tasks
-2. **Aggressive Delegation**: Routing tasks to specialist agents immediately
-3. **Background Operations**: Using `run_in_background: true` for long operations
-4. **Persistence Enforcement**: Never stopping until all tasks are verified complete
-5. **Smart Model Routing**: Using tiered agents to save tokens
+**First**, check if ultrawork is linked to an active Ralph loop:
 
-## Smart Model Routing (CRITICAL - SAVE TOKENS)
-
-**Choose tier based on task complexity: LOW (haiku) → MEDIUM (sonnet) → HIGH (opus)**
-
-### Available Agents by Tier
-
-| Domain | LOW (Haiku) | MEDIUM (Sonnet) | HIGH (Opus) |
-|--------|-------------|-----------------|-------------|
-| **Analysis** | `architect-low` | `architect-medium` | `architect` |
-| **Execution** | `executor-low` | `executor` | `executor-high` |
-| **Search** | `explore` | `explore-medium` | - |
-| **Research** | `researcher-low` | `researcher` | - |
-| **Frontend** | `designer-low` | `designer` | `designer-high` |
-| **Docs** | `writer` | - | - |
-| **Visual** | - | `vision` | - |
-| **Planning** | - | - | `planner`, `critic`, `analyst` |
-| **Testing** | - | `qa-tester` | - |
-| **Security** | `security-reviewer-low` | - | `security-reviewer` |
-| **Build** | `build-fixer-low` | `build-fixer` | - |
-| **TDD** | `tdd-guide-low` | `tdd-guide` | - |
-| **Code Review** | `code-reviewer-low` | - | `code-reviewer` |
-
-### Tier Selection Guide
-
-| Task Complexity | Tier | Examples |
-|-----------------|------|----------|
-| Simple lookups | LOW | "What does this function return?", "Find where X is defined" |
-| Standard work | MEDIUM | "Add error handling", "Implement this feature" |
-| Complex analysis | HIGH | "Debug this race condition", "Refactor auth module across 5 files" |
-
-### Routing Examples
-
-**CRITICAL: Always pass `model` parameter explicitly - Claude Code does NOT auto-apply models from agent definitions!**
-
-```
-// Simple question → LOW tier (saves tokens!)
-Task(subagent_type="oh-my-claudecode:architect-low", model="haiku", prompt="What does this function return?")
-
-// Standard implementation → MEDIUM tier
-Task(subagent_type="oh-my-claudecode:executor", model="sonnet", prompt="Add error handling to login")
-
-// Complex refactoring → HIGH tier
-Task(subagent_type="oh-my-claudecode:executor-high", model="opus", prompt="Refactor auth module using JWT across 5 files")
-
-// Quick file lookup → LOW tier
-Task(subagent_type="oh-my-claudecode:explore", model="haiku", prompt="Find where UserService is defined")
-
-// Thorough search → MEDIUM tier
-Task(subagent_type="oh-my-claudecode:explore-medium", model="sonnet", prompt="Find all authentication patterns in the codebase")
+```bash
+cat .omc/ultrawork-state.json 2>/dev/null | jq -r '.linked_to_ralph // false'
 ```
 
-## Background Execution Rules
+**If linked_to_ralph is true**: Use `/cancel-ralph` instead to cancel both Ralph and its linked Ultrawork.
 
-**Run in Background** (set `run_in_background: true`):
-- Package installation: npm install, pip install, cargo build
-- Build processes: npm run build, make, tsc
-- Test suites: npm test, pytest, cargo test
-- Docker operations: docker build, docker pull
+**Otherwise**, execute this command to cancel Ultrawork:
 
-**Run Blocking** (foreground):
-- Quick status checks: git status, ls, pwd
-- File reads, edits
-- Simple commands
+```bash
+mkdir -p .omc && \
+echo '{"active": false, "cancelled_at": "'$(date -Iseconds)'", "reason": "User cancelled via /cancel-ultrawork"}' > .omc/ultrawork-state.json && \
+echo '{"active": false, "cancelled_at": "'$(date -Iseconds)'", "reason": "User cancelled via /cancel-ultrawork"}' > ~/.claude/ultrawork-state.json
+```
 
-## Verification Checklist
+After running this command, ultrawork mode will be deactivated and the HUD will update.
 
-Before stopping, verify:
-- [ ] TODO LIST: Zero pending/in_progress tasks
-- [ ] FUNCTIONALITY: All requested features work
-- [ ] TESTS: All tests pass (if applicable)
-- [ ] ERRORS: Zero unaddressed errors
+## Note on Linked Modes
 
-**If ANY checkbox is unchecked, CONTINUE WORKING.**
+Since v3.0, Ralph automatically activates Ultrawork. If you see `linked_to_ralph: true` in the ultrawork state, it means Ultrawork was auto-activated by Ralph. In this case:
+- Use `/cancel-ralph` to cancel both modes
+- If you only cancel ultrawork, Ralph will continue but without parallel execution benefits
+
+## To Start Fresh
+
+- `/ultrawork "task"` - Start ultrawork only (standalone)
+- `/ralph "task"` - Start ralph with ultrawork (default)

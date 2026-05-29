@@ -1,7 +1,9 @@
 ---
 name: ln-721-frontend-restructure
-description: Restructures React frontend from monolith to component-based architecture
+description: "Frontend structure worker: SCAFFOLD new React project or RESTRUCTURE existing monolith to component-based architecture"
 ---
+
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
 
 # ln-721-frontend-restructure
 
@@ -9,7 +11,16 @@ description: Restructures React frontend from monolith to component-based archit
 **Category:** 7XX Project Bootstrap
 **Parent:** ln-720-structure-migrator
 
-Restructures monolithic React frontend code into component-based architecture using AST-based analysis methodology.
+Frontend structure worker with two modes: SCAFFOLD (generate minimal React project from template) or RESTRUCTURE (migrate monolith to component-based architecture).
+
+---
+
+## Mode Selection
+
+| Mode | When | Input | Output |
+|------|------|-------|--------|
+| **SCAFFOLD** | CREATE pipeline — no existing frontend | Target stack config from ln-720 | Minimal React + Vite project (~7 files) |
+| **RESTRUCTURE** | TRANSFORM pipeline — existing frontend found | Monolithic React source | Component-based architecture |
 
 ---
 
@@ -17,18 +28,28 @@ Restructures monolithic React frontend code into component-based architecture us
 
 | Aspect | Description |
 |--------|-------------|
-| **Input** | Monolithic React frontend source |
-| **Output** | Component-based architecture with co-located feature folders |
-| **Framework** | React only |
+| **Input** | Target stack config (SCAFFOLD) or monolithic React source (RESTRUCTURE) |
+| **Output** | Minimal project (SCAFFOLD) or component-based architecture (RESTRUCTURE) |
+| **Framework** | React + TypeScript + Vite |
 
 **Scope boundaries:**
-- Restructures existing code, does not add new functionality
+- SCAFFOLD: generates minimal starter files, no business logic
+- RESTRUCTURE: restructures existing code, does not add new functionality
 - Works with React + TypeScript projects
 - Applies transformation rules from reference files
 
 ---
 
 ## Workflow
+
+### SCAFFOLD Mode (CREATE pipeline)
+
+| Phase | Name | Actions | Output |
+|-------|------|---------|--------|
+| S1 | Generate | Create minimal React + Vite + TypeScript project files | ~7 starter files |
+| S2 | Verify | Check file structure, validate configs | Valid project skeleton |
+
+### RESTRUCTURE Mode (TRANSFORM pipeline)
 
 | Phase | Name | Actions | Output |
 |-------|------|---------|--------|
@@ -39,7 +60,36 @@ Restructures monolithic React frontend code into component-based architecture us
 
 ---
 
-## Phase 1: Analyze
+## SCAFFOLD Mode Phases
+
+### Phase S1: Generate Starter Files
+
+Create minimal React + Vite + TypeScript project.
+
+| File | Purpose |
+|------|---------|
+| `package.json` | Dependencies: react, react-dom, typescript, vite, @vitejs/plugin-react |
+| `vite.config.ts` | Vite config with React plugin, port, proxy settings |
+| `tsconfig.json` | Strict TypeScript config with path aliases |
+| `index.html` | Entry HTML with root div |
+| `src/main.tsx` | React entry point with StrictMode |
+| `src/App.tsx` | Root App component with router placeholder |
+| `src/index.css` | Base styles (reset, variables, layout) |
+
+### Phase S2: Verify Scaffold
+
+| Check | Method | Expected |
+|-------|--------|----------|
+| All files created | File existence check | 7 files present |
+| package.json valid | JSON parse | No syntax errors |
+| tsconfig.json valid | JSON parse | No syntax errors |
+| No hardcoded values | Content scan | Project name from config, not hardcoded |
+
+---
+
+## RESTRUCTURE Mode Phases
+
+### Phase 1: Analyze
 
 Scan current frontend structure and classify components.
 
@@ -54,7 +104,7 @@ Scan current frontend structure and classify components.
 
 ---
 
-## Phase 2: Plan
+### Phase 2: Plan
 
 Generate migration plan based on analysis.
 
@@ -69,7 +119,7 @@ Generate migration plan based on analysis.
 
 ---
 
-## Phase 3: Execute
+### Phase 3: Execute
 
 Apply transformations in correct order.
 
@@ -87,7 +137,7 @@ Apply transformations in correct order.
 
 ---
 
-## Phase 4: Verify
+### Phase 4: Verify
 
 Validate restructured project.
 
@@ -115,17 +165,24 @@ Validate restructured project.
 
 ## Critical Rules
 
-- **Single Responsibility:** Handle only frontend restructuring, no backend changes
+- **Mode Awareness:** SCAFFOLD creates from template; RESTRUCTURE transforms existing — never mix
+- **Single Responsibility:** Handle only frontend structure, no backend changes
 - **Idempotent:** Can re-run without duplicate files or corruption
-- **Build Verification:** Must verify `npm run build` passes after changes
-- **Preserve Functionality:** No behavioral changes, only structural
-- **Backup Strategy:** Do not delete source files until verification passes
+- **Build Verification:** Must verify build passes after changes (RESTRUCTURE: `npm run build`)
+- **Preserve Functionality:** No behavioral changes, only structural (RESTRUCTURE mode)
+- **Backup Strategy:** Do not delete source files until verification passes (RESTRUCTURE mode)
 - **Import Consistency:** Use path aliases for shared, relative for co-located
 
 ---
 
 ## Definition of Done
 
+**SCAFFOLD mode:**
+- [ ] All 7 starter files generated
+- [ ] package.json and tsconfig.json valid
+- [ ] No hardcoded project names (uses config values)
+
+**RESTRUCTURE mode:**
 - [ ] All source files analyzed and classified
 - [ ] Migration plan generated with Before/After mapping
 - [ ] Directory structure created per template
@@ -160,5 +217,5 @@ Validate restructured project.
 
 ---
 
-**Version:** 2.0.0
-**Last Updated:** 2026-01-10
+**Version:** 3.0.0
+**Last Updated:** 2026-02-07

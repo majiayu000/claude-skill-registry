@@ -1,23 +1,32 @@
 ---
 name: shell-review
-description: |
-  Audit shell scripts for correctness, portability, and common pitfalls.
-
-  Triggers: shell script, bash, sh, script review, pipeline, exit code
-  Use when: reviewing shell scripts, CI scripts, hook scripts, wrapper scripts
-  DO NOT use when: creating new scripts - use attune:workflow-setup
+description: Audits shell scripts for correctness, portability, and common pitfalls. Use when reviewing shell scripts or before committing shell changes.
+globs: "**/*.sh"
+alwaysApply: false
+  Use when reviewing shell scripts, CI scripts, hook scripts, wrapper scripts. Do
+  not use when creating new scripts - use attune:workflow-setup.
 category: build
-tags: [shell, bash, posix, scripting, ci, hooks]
-tools: [Read, Grep, Bash]
+tags:
+- shell
+- bash
+- posix
+- scripting
+- ci
+- hooks
+tools: []
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 200
 progressive_loading: true
-dependencies: [pensive:shared, imbue:evidence-logging]
+dependencies:
+- pensive:shared
+- imbue:proof-of-work
 modules:
-  - exit-codes
-  - portability
-  - safety-patterns
-version: 1.3.5
+- modules/exit-codes.md
+- modules/portability.md
+- modules/safety-patterns.md
+- modules/structure-patterns.md
+role: entrypoint
 ---
 ## Table of Contents
 
@@ -31,13 +40,21 @@ version: 1.3.5
 
 Audit shell scripts for correctness, safety, and portability.
 
+## Verification
+
+After review, run `shellcheck <script>` to verify fixes address identified issues.
+
+## Testing
+
+Run `pytest plugins/pensive/tests/skills/test_shell_review.py -v` to validate review patterns.
+
 ## Quick Start
 
 ```bash
 /shell-review path/to/script.sh
 ```
 
-## When to Use
+## When To Use
 
 - CI/CD pipeline scripts
 - Git hook scripts
@@ -45,13 +62,19 @@ Audit shell scripts for correctness, safety, and portability.
 - Build automation scripts
 - Pre-commit hook implementations
 
+## When NOT To Use
+
+- Non-shell scripts (Python, JS, etc.)
+- One-liner commands that don't need review
+
 ## Required TodoWrite Items
 
 1. `shell-review:context-mapped`
 2. `shell-review:exit-codes-checked`
 3. `shell-review:portability-checked`
 4. `shell-review:safety-patterns-verified`
-5. `shell-review:evidence-logged`
+5. `shell-review:structure-checked`
+6. `shell-review:evidence-logged`
 
 ## Workflow
 
@@ -60,9 +83,12 @@ Audit shell scripts for correctness, safety, and portability.
 Identify shell scripts:
 ```bash
 # Find shell scripts
-find . -name "*.sh" -type f | head -20
+find . -not -path "*/.venv/*" -not -path "*/__pycache__/*" \
+  -not -path "*/node_modules/*" -not -path "*/.git/*" \
+  -name "*.sh" -type f | head -20
 # Check shebangs
-grep -l "^#!/" scripts/ hooks/ 2>/dev/null | head -10
+rg -l "^#!/" scripts/ hooks/ 2>/dev/null | head -10
+# fallback: grep -l "^#!/" scripts/ hooks/ 2>/dev/null | head -10
 ```
 
 Document:
@@ -82,9 +108,13 @@ Document:
 
 @include modules/safety-patterns.md
 
-### Step 5: Evidence Log (`shell-review:evidence-logged`)
+### Step 5: Structure Patterns (`shell-review:structure-checked`)
 
-Use `imbue:evidence-logging` to record findings with file:line references.
+@include modules/structure-patterns.md
+
+### Step 6: Evidence Log (`shell-review:evidence-logged`)
+
+Use `imbue:proof-of-work` to record findings with file:line references.
 
 Summarize:
 - Critical issues (failures masked, security risks)
@@ -118,7 +148,11 @@ Approve / Approve with actions / Block
 
 ## Exit Criteria
 
-- Exit code propagation verified
-- Portability issues documented
-- Safety patterns checked
-- Evidence logged
+- [ ] Exit code propagation verified (pipelines checked for pipefail or
+  capture-and-check)
+- [ ] Portability issues documented (Bash-isms in `#!/bin/sh` scripts flagged)
+- [ ] Safety patterns verified (no echo, braced vars, `:?` expansion, cd in
+  subshells, no basename/dirname)
+- [ ] Structure patterns verified (library/executable distinction, main call,
+  preamble, depcheck, shfmt formatting)
+- [ ] Evidence logged with file:line references via `imbue:proof-of-work`

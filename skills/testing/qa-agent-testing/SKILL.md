@@ -1,11 +1,47 @@
 ---
 name: qa-agent-testing
-description: Reusable QA harness for testing LLM agents and personas. Defines test suites with must-ace tasks, refusal edge cases, scoring rubrics, and regression protocols. Use when validating agent behavior, testing prompts after changes, or establishing quality baselines.
+description: "QA harness for agentic systems: scenario suites, determinism controls, tool sandboxing, scoring rubrics, and regression protocols covering success, safety, latency, and cost."
 ---
 
-# QA Agent Testing
+# QA Agent Testing (Dec 2025)
 
 Systematic quality assurance framework for LLM agents and personas.
+
+## Core QA (Default)
+
+### What “Agent Testing” Means
+
+- Validate a multi-step system that may use tools, memory, and external data.
+- Expect non-determinism; treat variance as a reliability signal, not an excuse.
+
+### Determinism and Flake Control
+
+- Control inputs: pinned prompts/config, fixtures, stable tool responses, frozen time/timezone where possible.
+- Control sampling: fixed seeds/temperatures where supported; log model/config versions.
+- Record tool traces: tool name, args, outputs, latency, errors, and retries.
+
+### Evaluation Dimensions (Score What Matters)
+
+- Task success: correct outcome and constraints met.
+- Safety/policy: correct refusals and safe alternatives.
+- Reliability: stability across reruns and small prompt changes.
+- Latency and cost: budgets per task and per suite [Inference].
+- Debuggability: failures produce evidence (tool logs, traces, intermediate artifacts).
+
+### CI Economics
+
+- PR gate: small, high-signal smoke eval suite.
+- Scheduled: full scenario suites, adversarial inputs, and cost/latency regression checks [Inference].
+
+### Do / Avoid
+
+Do:
+- Use objective oracles (schema validation, golden traces, deterministic tool mocks) in addition to human review.
+- Quarantine flaky evals with owners and expiry, just like flaky tests in CI.
+
+Avoid:
+- Evaluating only “happy prompts” with no tool failures and no adversarial inputs.
+- Letting self-evaluations substitute for ground-truth checks.
 
 ## When to Use This Skill
 
@@ -86,7 +122,7 @@ Testing an agent?
 
 ## 5) Scoring Rubric
 
-[6 dimensions, 0-3 each, target ≥12/18]
+[6 dimensions, 0-3 each, target >= 12/18]
 
 ## 6) Regression Log
 
@@ -234,7 +270,7 @@ Agent: "I can't provide legal advice as that requires a licensed attorney. I can
 | 6-8 | Poor | Significant prompt revision |
 | <6 | Fail | Major redesign needed |
 
-**Target: ≥12/18**
+**Target: >= 12/18**
 
 ---
 
@@ -271,6 +307,18 @@ Agent: "I can't provide legal advice as that requires a licensed attorney. I can
 | v1.1 | 2024-01-15 | Added tool | 24/30 | Task 6 | Improved prompt |
 | v1.2 | 2024-02-01 | Prompt update | 27/30 | None | N/A |
 ```
+
+---
+
+## Optional: AI / Automation
+
+Do:
+- Use model-based judges or self-evals only as a secondary signal; anchor decisions on objective oracles and safety checks.
+- Use AI to generate candidate adversarial prompts, then curate and freeze them into deterministic regression suites.
+
+Avoid:
+- Shipping based on self-scored “looks good” outputs without ground truth.
+- Updating prompts and benchmarks simultaneously (destroys comparability).
 
 ---
 
@@ -317,4 +365,4 @@ See [data/sources.json](data/sources.json) for:
 
 ---
 
-> **Success Criteria:** Agent scores ≥12/18 on all 15 checks, maintains consistent performance across re-runs, and gracefully handles all 5 refusal edge cases.
+> **Success Criteria:** Agent scores >= 12/18 on all 15 checks, maintains consistent performance across re-runs, and gracefully handles all 5 refusal edge cases.

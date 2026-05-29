@@ -1,6 +1,6 @@
 ---
 name: documentation-process
-description: After implementing a new feature or fixing a bug, make sure to document the changes. Use after finishing the implementation phase for a feature or a bug-fix
+description: After implementing a new feature or fixing a bug, make sure to document the changes. Use when writing documentation, after finishing the implementation phase for a feature or a bug-fix
 ---
 
 # Documentation Process

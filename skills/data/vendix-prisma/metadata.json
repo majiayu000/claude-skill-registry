@@ -1,9 +1,9 @@
 {
-  "name": "vendix-prisma",
+  "name": "vendix-prisma-schema",
   "repo": "Rzyfront/Vendix",
-  "path": "skills/vendix-prisma/SKILL.md",
+  "path": "skills/vendix-prisma-schema/SKILL.md",
   "source": "github.com/Rzyfront/Vendix",
-  "downloaded_at": "2026-01-22T02:17:47.081503Z",
+  "downloaded_at": "2026-01-22T02:17:47.742641Z",
   "dir_name": "vendix-prisma",
   "category": "data",
   "github_path": "skills/vendix-prisma-schema",

@@ -1,15 +1,56 @@
 ---
 name: doc
-description: 'This skill should be used when the user asks to "generate documentation", "validate docs", "check doc coverage", "find missing docs", "create code-map", "sync documentation", "update docs", or needs guidance on documentation generation and validation for any repository type. Triggers: doc, documentation, code-map, doc coverage, validate docs.'
+description: Generate and validate repo docs (default), READMEs (--mode=readme), and OSS doc packs (--mode=oss).
+practices:
+- wiki-knowledge-surface
+- code-complete
+- pragmatic-programmer
+hexagonal_role: supporting
+consumes:
+- repo-context
+produces:
+- documentation
+context_rel: []
+skill_api_version: 1
+context:
+  window: fork
+  intent:
+    mode: task
+  sections:
+    exclude:
+    - HISTORY
+  intel_scope: topic
+metadata:
+  tier: product
+  dependencies:
+  - standards
+  - council
+output_contract: documentation files
 ---
-
 # Doc Skill
 
 **YOU MUST EXECUTE THIS WORKFLOW. Do not just describe it.**
 
-Generate and validate documentation for any project.
+Generate and validate documentation for any project. `--mode` selects the artifact family — the default mode handles code/API docs and code-maps; `--mode=readme` generates a gold-standard README; `--mode=oss` scaffolds and audits the open-source doc pack.
 
-## Execution Steps
+## Modes
+
+| `--mode` | Artifact | Read first |
+|----------|----------|-----------|
+| *(default)* | API docs, code-maps, doc coverage/validation | this file |
+| `readme` | Gold-standard README (interview → generate → council-validate) | [references/readme-craft.md](references/readme-craft.md) |
+| `oss` | OSS doc pack (CONTRIBUTING/CHANGELOG/AGENTS.md, audit + scaffold) | [references/oss-pack.md](references/oss-pack.md) |
+
+**Mode routing (absorbed skills):**
+
+| You typed | Runs |
+|-----------|------|
+| "readme", "rewrite the README", "validate the README" | `/doc --mode=readme [...]` |
+| "oss docs", "scaffold contributing", "audit OSS docs" | `/doc --mode=oss [...]` |
+
+When invoked with `--mode=readme` or `--mode=oss`, read the corresponding reference above and follow its workflow verbatim. The default-mode steps below apply only when no mode (or the implied code-docs mode) is selected.
+
+## Execution Steps (default mode — code/API docs)
 
 Given `/doc [command] [target]`:
 
@@ -202,3 +243,60 @@ Tell the user:
 | `gen [feature]` | Generate docs for specific feature |
 | `all` | Update all documentation |
 | `validate` | Check docs match code |
+
+## Examples
+
+### Generating API Documentation
+
+**User says:** `/doc gen authentication`
+
+**What happens:**
+1. Agent detects project type by checking for `package.json` and finding Node.js project
+2. Agent searches codebase for authentication-related functions using grep
+3. Agent reads authentication module files to understand implementation
+4. Agent generates documentation with purpose, parameters, returns, and usage examples
+5. Agent writes to `docs/api/authentication.md` with code samples
+6. Agent validates generated docs match actual function signatures
+
+**Result:** Complete API documentation created for authentication module with working code examples.
+
+### Checking Documentation Coverage
+
+**User says:** `/doc coverage`
+
+**What happens:**
+1. Agent detects Python project from `pyproject.toml`
+2. Agent counts total functions/classes with `grep -r "^def \|^class "`
+3. Agent counts documented items by searching for docstrings (`"""`)
+4. Agent calculates coverage: 45/67 items = 67% coverage
+5. Agent writes report to `.agents/doc/2026-02-13-coverage.md`
+6. Agent lists 22 undocumented functions as gaps
+
+**Result:** Documentation coverage report shows 67% coverage with specific list of 22 functions needing docs.
+
+## Troubleshooting
+
+| Problem | Cause | Solution |
+|---------|-------|----------|
+| Coverage calculation inaccurate | Grep pattern doesn't match all code styles | Adjust pattern for project conventions. For Python, check for `async def` and class methods. For Go, check both `func` and `type` definitions. |
+| Generated docs lack examples | Missing context about typical usage | Read existing tests to find usage patterns. Check README for code samples. Ask user for typical use case if unclear. |
+| Discover command finds too many items | Low existing documentation coverage | Prioritize by running `discover` on specific subdirectories. Focus on public API first, internal utilities later. Use `--limit` to process in batches. |
+| Validation shows docs out of sync | Code changed after docs written | Re-run `gen` command for affected features. Consider adding git hook to flag doc updates needed when code changes. |
+
+## Reference Documents
+
+- [references/doc.feature](references/doc.feature) — Executable spec: detect project type, generate type-appropriate docs from the repo, validate existing docs against source (soc-qk4b)
+- [references/readme.feature](references/readme.feature) — Executable spec (`--mode=readme`): mode detection, problem-first lead, trust block near install, collapse-don't-delete depth, the council gate, anti-pattern detection (soc-qk4b)
+- [references/oss-docs.feature](references/oss-docs.feature) — Executable spec (`--mode=oss`): audit existing/missing OSS docs, scaffold missing without overwrite, project-type-tailored (soc-qk4b)
+
+- [references/readme-craft.md](references/readme-craft.md) — `--mode=readme`: the 8 gold-standard README patterns, interview, generation structure, council validation, anti-pattern table
+- [references/oss-pack.md](references/oss-pack.md) — `--mode=oss`: audit + scaffold the OSS doc pack (CONTRIBUTING/CHANGELOG/AGENTS.md), project-type templates
+- [references/oss-documentation-tiers.md](references/oss-documentation-tiers.md) — OSS doc tier definitions (core/standard/enhanced)
+- [references/oss-project-types.md](references/oss-project-types.md) — Per-type OSS scaffolding templates (cli/operator/service/library/helm)
+- [references/oss-beads-patterns.md](references/oss-beads-patterns.md) — AGENTS.md beads-tracker patterns for OSS projects
+- [references/generation-templates.md](references/generation-templates.md)
+- [references/prose-and-report-workmanship.md](references/prose-and-report-workmanship.md)
+- [references/project-types.md](references/project-types.md)
+- [references/validation-rules.md](references/validation-rules.md)
+- [references/de-slopify.md](references/de-slopify.md) — Remove AI writing artifacts from docs
+- [references/architecture-report.md](references/architecture-report.md) — Generate technical architecture documents

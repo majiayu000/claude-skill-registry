@@ -1,6 +1,7 @@
 ---
 name: review-skill-improver
 description: Analyzes feedback logs to identify patterns and suggest improvements to review skills. Use when you have accumulated feedback data and want to improve review accuracy.
+user-invocable: false
 ---
 
 # Review Skill Improver
@@ -15,6 +16,15 @@ Analyzes structured feedback logs to:
 ## Input
 
 Feedback log in enhanced schema format (see `review-feedback-schema` skill).
+
+## Hard gates
+
+Run in order; do not emit the final **Review Skill Improvement Report** until each gate passes.
+
+1. **Input on record** — The log is loaded from a stated path in the repo or from an attached artifact, not from memory or paraphrase. **Pass:** the report header or Summary names that path or states “attached feedback blob” with byte/line count.
+2. **Schema / shape** — Entries match the enhanced schema (`rule_source`, `verdict`, `rationale`, etc. per `review-feedback-schema`). **Pass:** either all rows parse, or skipped malformed rows are counted and listed by row index (not silently dropped).
+3. **Aggregation before thresholds** — Complete Step 1 (per–`rule_source` totals, ACCEPT vs REJECT, rejection rate, rejection rationales) for the full parsed set before labeling any rule “high-rejection” or writing recommendations. **Pass:** Summary includes “Unique rules triggered” consistent with the aggregation table.
+4. **Evidence-bound recommendations** — Every recommendation includes at least one concrete evidence pointer (log row(s), or file:line + short quote) before **Proposed Fix**. **Pass:** **Evidence** is non-empty for each recommendation.
 
 ## Analysis Process
 

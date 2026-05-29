@@ -104,7 +104,7 @@ struct ContentView: View {
 }
 ```
 
-**TabView:**
+**TabView (iOS 18+):**
 
 ```swift
 struct MainTabView: View {
@@ -112,23 +112,17 @@ struct MainTabView: View {
 
     var body: some View {
         TabView(selection: $selectedTab) {
-            HomeView()
-                .tabItem {
-                    Label("Home", systemImage: "house")
-                }
-                .tag(0)
+            Tab("Home", systemImage: "house", value: 0) {
+                HomeView()
+            }
 
-            SearchView()
-                .tabItem {
-                    Label("Search", systemImage: "magnifyingglass")
-                }
-                .tag(1)
+            Tab("Search", systemImage: "magnifyingglass", value: 1) {
+                SearchView()
+            }
 
-            ProfileView()
-                .tabItem {
-                    Label("Profile", systemImage: "person")
-                }
-                .tag(2)
+            Tab("Profile", systemImage: "person", value: 2) {
+                ProfileView()
+            }
         }
     }
 }
@@ -263,10 +257,3 @@ struct FeatureCard: View {
 - **Dark Mode Problems**: Avoid hardcoded colors; use semantic or asset catalog colors
 - **Accessibility Failures**: Test with VoiceOver enabled
 - **Memory Leaks**: Watch for strong reference cycles in closures
-
-## Resources
-
-- [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/)
-- [SwiftUI Documentation](https://developer.apple.com/documentation/swiftui)
-- [SF Symbols App](https://developer.apple.com/sf-symbols/)
-- [WWDC SwiftUI Sessions](https://developer.apple.com/videos/swiftui/)

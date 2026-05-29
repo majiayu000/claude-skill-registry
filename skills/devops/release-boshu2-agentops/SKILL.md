@@ -84,7 +84,7 @@ Pre-flight validation, changelog from git history, version bumps across package 
 12. **Release commit** — `git commit -m "Release v<version>"` with all release artifacts staged.
 13. **Tag** — annotated `git tag -a v<version> -m "Release v<version>"`.
 14. **GitHub Release (CI handles this)** — do NOT `gh release create` locally; GoReleaser is sole creator.
-15. **Post-push exact-SHA CI verification** — after the operator pushes, run `scripts/verify-release-ci.sh v<version>` and do not declare the release complete until it prints `GO release-ci`.
+15. **Post-push exact-SHA CI verification** — after the operator pushes, run `scripts/verify-release-ci.sh v<version>` and `ao reconcile --json`; do not declare the release complete until exact-SHA verification prints `GO release-ci` and reconciliation shows the latest release tag Validate as green or a newer tag explicitly supersedes an older failed tag.
 16. **Post-release guidance** — show push commands and the verification command; do NOT push.
 17. **Audit trail format** — see workflow-detail for the markdown template.
 
@@ -129,7 +129,8 @@ Everything this skill does is local and reversible:
 - **Adapt, don't impose** — match the project's existing style rather than forcing a particular format
 - **User confirms** — never write without showing the draft first
 - **Local only** — never push, publish, or trigger remote actions
-- **Not done at tag** — after the user pushes, verify a green `validate.yml` run for the exact tagged SHA and record the run id plus conclusion in the handoff or release audit notes.
+- **Not done at tag** — after the user pushes, verify a green `validate.yml` run for the exact tagged SHA, run `ao reconcile --json`, and record the run id, conclusion, reconciliation overall status, and release-tag finding state in the handoff or release audit notes.
+- **Supersede historical red tags deliberately** — do not hand-wave an older failed tag Validate run. Either fix/rerun the tag pipeline when appropriate or cut a newer release tag whose `ao reconcile` release evidence is green.
 - **Two audiences** — CHANGELOG.md is for contributors (file paths, issue IDs, implementation detail). Release notes are for feed readers (plain English, user-visible impact, no insider jargon). Never copy-paste the changelog into the release notes.
 
 ---
@@ -137,7 +138,7 @@ Everything this skill does is local and reversible:
 ## Examples
 
 **User says:** `/release 1.7.0`
-Agent runs pre-flight → reads `v1.6.0..HEAD` git history → classifies commits → drafts CHANGELOG.md entry + curated release notes → detects version files (package.json, version.go, plugin manifests) → presents draft for review → on approval, writes files, creates release commit, creates annotated tag, prints push guidance, then after the user pushes verifies `scripts/verify-release-ci.sh v1.7.0` and records the run id/conclusion.
+Agent runs pre-flight → reads `v1.6.0..HEAD` git history → classifies commits → drafts CHANGELOG.md entry + curated release notes → detects version files (package.json, version.go, plugin manifests) → presents draft for review → on approval, writes files, creates release commit, creates annotated tag, prints push guidance, then after the user pushes verifies `scripts/verify-release-ci.sh v1.7.0`, runs `ao reconcile --json`, and records the run id/conclusion plus reconciliation state.
 
 **User says:** `/release --check`
 Agent runs all pre-flight checks and outputs a GO/NO-GO summary table. No writes.
@@ -179,3 +180,4 @@ When wiring or auditing the CI workflow that backs `--check` mode (or the tag-tr
 - [references/changelog-as-research-artifact.md](references/changelog-as-research-artifact.md)
 - [references/gh-actions-ci-patterns.md](references/gh-actions-ci-patterns.md)
 - [references/gh-actions-release-automation.md](references/gh-actions-release-automation.md)
+- [references/release.feature](references/release.feature) — Executable spec: --check readiness, curated notes + CHANGELOG reconcile, operator-performed tag/push, exact-SHA green verification (soc-qk4b)

@@ -1,5 +1,6 @@
 ---
-name: erp-data-extractor
+slug: "erp-data-extractor"
+display_name: "Erp Data Extractor"
 description: "Extract and analyze data from construction ERP systems. Pull project data for analytics, reporting, and integration."
 ---
 

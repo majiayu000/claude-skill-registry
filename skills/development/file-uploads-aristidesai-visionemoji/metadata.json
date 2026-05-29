@@ -1,0 +1,17 @@
+{
+  "name": "file-uploads",
+  "repo": "AristidesAI/VisionEmoji",
+  "path": ".claude/skills/file-uploads/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/AristidesAI/VisionEmoji",
+  "dir_name": "file-uploads-aristidesai-visionemoji",
+  "downloaded_at": "2026-03-22T04:53:11.567989Z",
+  "author": "AristidesAI",
+  "source_url": "https://github.com/AristidesAI/VisionEmoji/blob/main/.claude/skills/file-uploads/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AristidesAI/VisionEmoji/blob/main/.claude/skills/file-uploads/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

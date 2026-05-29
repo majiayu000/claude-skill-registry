@@ -1,0 +1,16 @@
+{
+  "name": "ai-newsletter",
+  "repo": "Automaat/research-machine",
+  "path": ".claude/skills/ai-newsletter/SKILL.md",
+  "category": "generation",
+  "source": "github.com/Automaat/research-machine",
+  "dir_name": "ai-newsletter",
+  "downloaded_at": "2026-02-22T04:44:18.261734Z",
+  "author": "Automaat",
+  "source_url": "https://github.com/Automaat/research-machine/blob/main/.claude/skills/ai-newsletter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Automaat/research-machine/blob/main/.claude/skills/ai-newsletter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

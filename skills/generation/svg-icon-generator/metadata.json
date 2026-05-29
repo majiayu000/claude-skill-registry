@@ -1,0 +1,17 @@
+{
+  "name": "svg-icon-generator",
+  "repo": "Brmbobo/Web2podcast",
+  "path": ".claude/agents/enterprise-frontend-design/agents/skills/18-visual-content/svg-icon-generator/SKILL.md",
+  "github_branch": "master",
+  "category": "generation",
+  "source": "github.com/Brmbobo/Web2podcast",
+  "dir_name": "svg-icon-generator",
+  "downloaded_at": "2026-03-22T05:01:47.790545Z",
+  "author": "Brmbobo",
+  "source_url": "https://github.com/Brmbobo/Web2podcast/blob/master/.claude/agents/enterprise-frontend-design/agents/skills/18-visual-content/svg-icon-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Brmbobo/Web2podcast/blob/master/.claude/agents/enterprise-frontend-design/agents/skills/18-visual-content/svg-icon-generator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

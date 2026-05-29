@@ -18,6 +18,21 @@ description: >
 
 > Project-instruction file resolution: `CLAUDE.md` and `AGENTS.md` (Codex CLI) are transparent aliases — see [skills/_shared/instruction-file-resolution.md](../_shared/instruction-file-resolution.md). Wherever this skill mentions `CLAUDE.md`, the alias rule applies.
 
+## Phase 0.5: Parallel-Aware Preamble
+
+> Skip silently when `persistence: false` in Session Config.
+
+Before any Phase 1 work, run the parallel-aware preamble per `skills/_shared/parallel-aware-preamble.md`. The preamble detects other active sessions in the worktree-family via `discoverActiveSessions(repoRoot)`, classifies the caller's mode via `classifyMode(callerMode)` against the exclusivity-matrix, and either:
+
+- Returns `PASS_THROUGH` (no other session / `always-ok` mode) → continue to Phase 1
+- Returns `EXCLUSIVE_BLOCKED` → fires Exclusive-Conflict AUQ from `skills/_shared/parallel-aware-auq.md`
+- Returns `PROMOTION_OFFER` → fires Worktree-Promotion AUQ (via `enterWorktree()` from `scripts/lib/autopilot/worktree-pipeline.mjs` — see `parallel-aware-auq.md` outcome-handling)
+
+On any non-PASS_THROUGH outcome that does not result in immediate exit, append a Deviation to STATE.md via `appendDeviationOnDisk(repoRoot, isoTimestamp, message)` from `scripts/lib/state-md.mjs`.
+
+**Implementation reference:** `skills/_shared/parallel-aware-preamble.md § Implementation`.
+**AUQ reference:** `skills/_shared/parallel-aware-auq.md`.
+
 ## Purpose
 
 Transform the agreed session scope (from session-start Q&A) into an executable wave plan (using role-based assignment) with specific agent assignments, file scopes, and acceptance criteria per task.
@@ -298,7 +313,7 @@ Distribute tasks across waves using 5 named roles. Read `waves` from Session Con
 | **Discovery** | Understand the current state before changing anything | No (read-only) |
 | **Impl-Core** | Primary implementation — core feature code, APIs, DB changes | Yes |
 | **Impl-Polish** | Fix issues from Impl-Core, secondary tasks, integration, edge cases | Yes |
-| **Quality** | Tests, typecheck, lint, security review | Yes (tests only) |
+| **Quality** | Tests, typecheck, lint, security review | Yes (tests only). Lint MUST use the canonical `{lint-command}` unscoped — never domain-split (e.g., `pnpm lint src/` hides errors in `tests/`). See quality-gates § Scope Policy. |
 | **Finalization** | Documentation, issue cleanup, commit preparation | Minimal |
 
 ### Role-to-Wave Mapping
@@ -342,6 +357,7 @@ When `docs-orchestrator.enabled: true`, apply the following concrete dispatch ru
 - Output: Validated understanding, updated task scope if discoveries warrant it
 - Tools: Read, Grep, Glob, Bash (read-only commands only) — do NOT use Edit or Write
 - Scope enforcement: set `allowedPaths` to `[]` (empty) for Discovery waves. Include in agent prompts: "You are READ-ONLY. Do NOT use Edit or Write tools."
+- Distributional claims MUST follow `.claude/rules/parallel-sessions.md` § PSA-006 — quote the executed grep pattern + file scope + count. Coordinators REJECT Discovery outputs that assert "N of M" or "100% of X" without a quoted grep transcript (deep-1647 W1-D3 incident class).
 
 **Impl-Core**
 - Full implementation agents with Write/Edit/Bash access

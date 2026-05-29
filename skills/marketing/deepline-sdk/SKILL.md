@@ -38,8 +38,21 @@ Same backend, three invocation paths.
 
 ## Mental model
 
-Deepline has two kinds of building blocks. You either invoke them directly via the CLI for one-shot work, or you compose them into a TypeScript `*.play.ts` file when the work is reusable, multi-stage, row-aware, or durable.
+Deepline has two kinds of building blocks. CLI probes answer questions; durable play steps accumulate progress.
 
+Think of a play as a checkpointed data pipeline, not a final wrapper around manual CLI work. For multi-step work, use the CLI to probe the smallest unknowns cheaply, then move each confirmed provider call, row shape, filter, and output column into a local `*.play.ts` file with stable keys. Rerun the play after each step so Deepline can reuse durable checkpoints instead of repeating known-good work.
+
+The loop:
+
+1. Probe one provider/tool/play call with `describe` and a tiny sample run.
+2. Add that step to the play with a stable `ctx.tools.execute`, `ctx.runPlay`, or `ctx.map(...).step(...)` key.
+3. Run `deepline plays check <file.play.ts>`.
+4. Run the play on a tiny input or one row.
+5. Inspect the result, then add the next step.
+
+Use direct CLI calls for probes, schema inspection, and known prebuilt one-offs. Use a play as soon as the work has multiple provider calls, row fanout, a waterfall, intermediate filtering, or a final output schema the user may want to rerun.
+
+A play should accumulate known-good steps. It should not be a last-minute escape hatch after broad CLI probing, JSON parsing failures, or output truncation. If a `plays check` failure takes more than two edits to resolve, stop and re-anchor on current play-authoring patterns in `shared/plays-best-practices.md`.
 
 | Building block | What it is                                                                                                                                                                                                                                      | How to find one                           | How to invoke                                                                                                                   |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
@@ -47,10 +60,10 @@ Deepline has two kinds of building blocks. You either invoke them directly via t
 | **Play**       | A typed workflow that composes tools and other plays. Some plays are shipped by Deepline ("prebuilt") for canonical patterns like email waterfalls; others are written by you in a `*.play.ts` file ("custom"). Both kinds invoke the same way. | `deepline plays search <category> --json` | `deepline plays run <name-or-file> --input '{...}' --watch` from the CLI, or `ctx.runPlay(name, input)` from another play |
 
 
-**One-shot** vs **reusable** is a judgment call:
+**Probe** vs **pipeline** is a judgment call:
 
-- **One-shot direct CLI** is the right answer for: a single provider lookup, a quick search to inspect what is available, an interactive exploration of a CSV, kicking off a known prebuilt play once. Reach for `deepline tools execute` or `deepline plays run` directly.
-- **Custom `*.play.ts`** is the right answer when: the workflow has multiple row-aware stages (enrich, then validate; lookup, then qualify), the workflow needs to be durable across long runs, the workflow will be re-run on different inputs, or the typed composition makes the logic clearer than a chain of CLI commands.
+- **Direct CLI probes** are the right answer for: a single provider lookup, a quick search to inspect what is available, an interactive exploration of a CSV, or kicking off a known prebuilt play once.
+- **Custom `*.play.ts` pipelines** are the right answer when: the workflow has multiple row-aware stages (enrich, then validate; lookup, then qualify), the workflow needs to be durable across long runs, the workflow will be re-run on different inputs, or the typed composition makes the logic clearer than a chain of CLI commands.
 
 If a prebuilt play already covers the goal, use it directly — do not wrap it in a custom play just to invoke it.
 

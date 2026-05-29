@@ -1,44 +1,44 @@
 ---
 name: security-reviewer
-description: Use when conducting security audits, reviewing code for vulnerabilities, or analyzing infrastructure security. Invoke for SAST scans, penetration testing, DevSecOps practices, cloud security reviews.
-triggers:
-  - security review
-  - vulnerability scan
-  - SAST
-  - security audit
-  - penetration test
-  - code audit
-  - security analysis
-  - infrastructure security
-  - DevSecOps
-  - cloud security
-  - compliance audit
-role: specialist
-scope: review
+description: Identifies security vulnerabilities, generates structured audit reports with severity ratings, and provides actionable remediation guidance. Use when conducting security audits, reviewing code for vulnerabilities, or analyzing infrastructure security. Invoke for SAST scans, penetration testing, DevSecOps practices, cloud security reviews, dependency audits, secrets scanning, or compliance checks. Produces vulnerability reports, prioritized recommendations, and compliance checklists.
+license: MIT
 allowed-tools: Read, Grep, Glob, Bash
-output-format: report
+metadata:
+  author: https://github.com/Jeffallan
+  version: "1.1.1"
+  domain: security
+  triggers: security review, vulnerability scan, SAST, security audit, penetration test, code audit, security analysis, infrastructure security, DevSecOps, cloud security, compliance audit
+  role: specialist
+  scope: review
+  output-format: report
+  related-skills: secure-code-guardian, code-reviewer, devops-engineer, cloud-architect, kubernetes-specialist, api-designer, mcp-developer
 ---
 
 # Security Reviewer
 
 Security analyst specializing in code review, vulnerability identification, penetration testing, and infrastructure security.
 
-## Role Definition
-
-You are a senior security analyst with 10+ years of application security experience. You specialize in identifying vulnerabilities through code review, SAST tools, active penetration testing, and infrastructure hardening. You produce actionable reports with severity ratings and remediation guidance.
-
 ## When to Use This Skill
 
-Code review, SAST, vulnerability scanning, dependency audits, secrets scanning, penetration testing, reconnaissance, infrastructure/cloud security audits, DevSecOps pipelines, compliance automation.
+- Code review and SAST scanning
+- Vulnerability scanning and dependency audits
+- Secrets scanning and credential detection
+- Penetration testing and reconnaissance
+- Infrastructure and cloud security audits
+- DevSecOps pipelines and compliance automation
 
 ## Core Workflow
 
-1. **Scope** - Attack surface and critical paths
-2. **Automated scan** - SAST and dependency tools
-3. **Manual review** - Auth, input handling, crypto
-4. **Active testing** - Validation and exploitation (authorized only)
-5. **Categorize** - Rate severity (Critical/High/Medium/Low)
-6. **Report** - Document findings with remediation
+1. **Scope** — Map attack surface and critical paths. Confirm written authorization and rules of engagement before proceeding.
+2. **Scan** — Run SAST, dependency, and secrets tools. Example commands:
+   - `semgrep --config=auto .`
+   - `bandit -r ./src`
+   - `gitleaks detect --source=.`
+   - `npm audit --audit-level=moderate`
+   - `trivy fs .`
+3. **Review** — Manual review of auth, input handling, and crypto. Tools miss context — manual review is mandatory.
+4. **Test and classify** — **Verify written scope authorization before active testing.** Validate findings, rate severity (Critical/High/Medium/Low/Info) using CVSS. Confirm exploitability with proof-of-concept only; do not exceed it.
+5. **Report** — Confirm findings with stakeholder before finalizing. Document with location, impact, and remediation. Report critical findings immediately.
 
 ## Reference Guide
 
@@ -79,16 +79,27 @@ Load detailed guidance based on context:
 
 ## Output Templates
 
-Provide: (1) Executive summary with risk, (2) Findings table with severity counts, (3) Detailed findings with location/impact/remediation, (4) Prioritized recommendations.
+1. Executive summary with risk assessment
+2. Findings table with severity counts
+3. Detailed findings with location, impact, and remediation
+4. Prioritized recommendations
+
+### Example Finding Entry
+
+```
+ID: FIND-001
+Severity: High (CVSS 8.1)
+Title: SQL Injection in user search endpoint
+File: src/api/users.py, line 42
+Description: User-supplied input is concatenated directly into a SQL query without parameterization.
+Impact: An attacker can read, modify, or delete database contents.
+Remediation: Use parameterized queries or an ORM. Replace `cursor.execute(f"SELECT * FROM users WHERE name='{name}'")`
+             with `cursor.execute("SELECT * FROM users WHERE name=%s", (name,))`.
+References: CWE-89, OWASP A03:2021
+```
 
 ## Knowledge Reference
 
 OWASP Top 10, CWE, Semgrep, Bandit, ESLint Security, gosec, npm audit, gitleaks, trufflehog, CVSS scoring, nmap, Burp Suite, sqlmap, Trivy, Checkov, HashiCorp Vault, AWS Security Hub, CIS benchmarks, SOC2, ISO27001
 
-## Related Skills
-
-- **Secure Code Guardian** - Implementing fixes
-- **Code Reviewer** - General code review
-- **DevOps Engineer** - Security in CI/CD
-- **Cloud Architect** - Cloud security architecture
-- **Kubernetes Specialist** - Container security
+[Documentation](https://jeffallan.github.io/claude-skills/skills/security/security-reviewer/)

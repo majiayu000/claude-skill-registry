@@ -1,0 +1,16 @@
+{
+  "name": "reframe",
+  "repo": "rohunvora/my-claude-skills",
+  "path": ".claude/skills/reframe/SKILL.md",
+  "source": "github.com/rohunvora/my-claude-skills",
+  "downloaded_at": "2026-02-02T03:58:05.402154Z",
+  "dir_name": "reframe",
+  "category": "creative",
+  "author": "rohunvora",
+  "source_url": "https://github.com/rohunvora/my-claude-skills/blob/main/.claude/skills/reframe/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rohunvora/my-claude-skills/blob/main/.claude/skills/reframe/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

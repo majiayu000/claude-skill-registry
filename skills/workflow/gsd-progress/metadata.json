@@ -1,0 +1,16 @@
+{
+  "name": "gsd-progress",
+  "repo": "shoootyou/get-shit-done-multi",
+  "path": ".codex/skills/gsd-progress/SKILL.md",
+  "source": "github.com/shoootyou/get-shit-done-multi",
+  "downloaded_at": "2026-02-02T05:11:26.371190Z",
+  "dir_name": "gsd-progress",
+  "category": "workflow",
+  "author": "shoootyou",
+  "source_url": "https://github.com/shoootyou/get-shit-done-multi/blob/main/.codex/skills/gsd-progress/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Lex Christopherson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

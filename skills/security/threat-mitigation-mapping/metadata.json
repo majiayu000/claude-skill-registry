@@ -1,11 +1,11 @@
 {
   "name": "threat-mitigation-mapping",
   "repo": "wshobson/agents",
+  "path": "plugins/security-scanning/skills/threat-mitigation-mapping/SKILL.md",
+  "source": "github.com/wshobson/agents",
+  "downloaded_at": "2026-01-22T03:51:08.403235Z",
+  "dir_name": "threat-mitigation-mapping",
   "category": "security",
-  "description": "Map identified threats to appropriate security controls and mitigations. Use when prioritizing security investments, creating remediation plans, or validating control effectiveness.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:55:34.724234Z",
   "github_path": "plugins/security-scanning/skills/threat-mitigation-mapping",
-  "github_branch": "main",
-  "dir_name": "threat-mitigation-mapping"
+  "github_branch": "main"
 }

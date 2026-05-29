@@ -1,7 +1,7 @@
 ---
 name: call-chain
 role: library
-description: 'Trace execution paths through the code graph. Shows call chains with criticality and Mermaid flowcharts.'
+description: Traces execution paths through the code graph with criticality scoring and Mermaid charts. Use when understanding how a function propagates through the system.
 ---
 
 # Call Chain Tracing

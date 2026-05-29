@@ -1,9 +1,9 @@
 {
-  "name": "aico-subagent-driven",
+  "name": "subagent-driven",
   "repo": "yellinzero/aico",
-  "path": ".claude/skills/aico-subagent-driven/SKILL.md",
+  "path": "employees/_shared/skills/subagent-driven/SKILL.md",
   "source": "github.com/yellinzero/aico",
-  "downloaded_at": "2026-01-21T03:00:49.092932Z",
+  "downloaded_at": "2026-01-21T03:00:49.436359Z",
   "dir_name": "aico-subagent-driven",
   "category": "orchestration",
   "github_path": ".claude/skills/aico-subagent-driven",

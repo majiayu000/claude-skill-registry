@@ -1,6 +1,6 @@
 ---
 name: voice-generate
-description: 'Generate text in a learned writing voice.'
+description: Generates text in a learned writing voice. Use when drafting content that must match a specific author's style profile extracted by voice-extract.
 globs: "**/*.{md,txt}"
 alwaysApply: false
 category: writing-quality

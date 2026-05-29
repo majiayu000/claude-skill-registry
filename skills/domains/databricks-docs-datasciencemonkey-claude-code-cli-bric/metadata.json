@@ -1,0 +1,13 @@
+{
+  "name": "databricks-docs",
+  "description": "",
+  "repo": "datasciencemonkey/claude-code-cli-bricks",
+  "category": "domains",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/datasciencemonkey/claude-code-cli-bricks",
+  "github_path": ".claude/skills/databricks-docs",
+  "github_branch": "main",
+  "dir_name": "databricks-docs-datasciencemonkey-claude-code-cli-bric",
+  "downloaded_at": "2026-02-05T01:44:57.025805Z"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "undo",
+  "repo": "manastalukdar/claude-devstudio",
+  "path": "skills/undo/SKILL.md",
+  "source": "github.com/manastalukdar/claude-devstudio",
+  "downloaded_at": "2026-02-02T03:11:44.327817Z",
+  "dir_name": "undo",
+  "category": "devops",
+  "author": "manastalukdar",
+  "source_url": "https://github.com/manastalukdar/claude-devstudio/blob/main/skills/undo/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Brenner Cruvinel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

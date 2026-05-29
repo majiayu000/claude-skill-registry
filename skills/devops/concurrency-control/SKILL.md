@@ -13,6 +13,7 @@ description: |
   Use when implementing concurrency control in GitHub Actions workflows, preventing race conditions, or designing group-based cancellation strategies.
   concurrency control, github actions, group, cancel-in-progress, race condition
 ---
+
 # concurrency-control
 
 ## 概要
@@ -59,11 +60,11 @@ GitHub Actions の並行実行制御を設計し、競合やレースコンデ�
 
 ## Task仕様ナビ
 
-| Task | 起動タイミング | 入力 | 出力 |
-| --- | --- | --- | --- |
-| analyze-concurrency-requirements | Phase 1開始時 | 目的/競合 | 要件整理メモ、成功条件一覧 |
-| design-concurrency-strategy | Phase 2開始時 | 要件整理メモ | concurrency 設計書、検証ガイド |
-| validate-concurrency-setup | Phase 3開始時 | concurrency 設計書 | 検証レポート、ログ更新内容 |
+| Task                             | 起動タイミング | 入力               | 出力                           |
+| -------------------------------- | -------------- | ------------------ | ------------------------------ |
+| analyze-concurrency-requirements | Phase 1開始時  | 目的/競合          | 要件整理メモ、成功条件一覧     |
+| design-concurrency-strategy      | Phase 2開始時  | 要件整理メモ       | concurrency 設計書、検証ガイド |
+| validate-concurrency-setup       | Phase 3開始時  | concurrency 設計書 | 検証レポート、ログ更新内容     |
 
 **詳細仕様**: 各Taskの詳細は `agents/` ディレクトリを参照
 
@@ -71,53 +72,53 @@ GitHub Actions の並行実行制御を設計し、競合やレースコンデ�
 
 ### すべきこと
 
-| 推奨事項 | 理由 |
-| --- | --- |
-| 競合シナリオを整理する | group 設計の根拠になるため |
-| group 命名を統一する | 競合の把握が容易になるため |
+| 推奨事項                        | 理由                         |
+| ------------------------------- | ---------------------------- |
+| 競合シナリオを整理する          | group 設計の根拠になるため   |
+| group 命名を統一する            | 競合の把握が容易になるため   |
 | cancel-in-progress を明文化する | 実行中断の影響を制御するため |
-| テンプレートを参照する | 設定漏れを防ぐため |
+| テンプレートを参照する          | 設定漏れを防ぐため           |
 
 ### 避けるべきこと
 
-| 禁止事項 | 問題点 |
-| --- | --- |
-| group を曖昧にする | 競合が再発する |
-| 検証なしで運用する | 失敗検知が遅れる |
+| 禁止事項                 | 問題点                 |
+| ------------------------ | ---------------------- |
+| group を曖昧にする       | 競合が再発する         |
+| 検証なしで運用する       | 失敗検知が遅れる       |
 | キャンセル方針を省略する | 重要ジョブが中断される |
 
 ## リソース参照
 
 ### scripts/（決定論的処理）
 
-| スクリプト | 機能 |
-| --- | --- |
-| `scripts/check-concurrency.mjs` | concurrency 設定の検証 |
-| `scripts/validate-skill.mjs` | スキル構造の検証 |
-| `scripts/log_usage.mjs` | 使用記録と評価メトリクス更新 |
+| スクリプト                      | 機能                         |
+| ------------------------------- | ---------------------------- |
+| `scripts/check-concurrency.mjs` | concurrency 設定の検証       |
+| `scripts/validate-skill.mjs`    | スキル構造の検証             |
+| `scripts/log_usage.mjs`         | 使用記録と評価メトリクス更新 |
 
 ### references/（詳細知識）
 
-| リソース | パス | 読込条件 |
-| --- | --- | --- |
-| レベル1 基礎 | [references/Level1_basics.md](references/Level1_basics.md) | 初回整理時 |
-| レベル2 実務 | [references/Level2_intermediate.md](references/Level2_intermediate.md) | 設計時 |
-| レベル3 応用 | [references/Level3_advanced.md](references/Level3_advanced.md) | 詳細設計時 |
-| レベル4 専門 | [references/Level4_expert.md](references/Level4_expert.md) | 改善ループ時 |
-| concurrency 構文 | [references/concurrency-syntax.md](references/concurrency-syntax.md) | 構成設計時 |
-| 競合パターン | [references/race-conditions.md](references/race-conditions.md) | 競合整理時 |
-| 旧スキル | [references/legacy-skill.md](references/legacy-skill.md) | 互換確認時 |
+| リソース         | パス                                                                   | 読込条件     |
+| ---------------- | ---------------------------------------------------------------------- | ------------ |
+| レベル1 基礎     | [references/Level1_basics.md](references/Level1_basics.md)             | 初回整理時   |
+| レベル2 実務     | [references/Level2_intermediate.md](references/Level2_intermediate.md) | 設計時       |
+| レベル3 応用     | [references/Level3_advanced.md](references/Level3_advanced.md)         | 詳細設計時   |
+| レベル4 専門     | [references/Level4_expert.md](references/Level4_expert.md)             | 改善ループ時 |
+| concurrency 構文 | [references/concurrency-syntax.md](references/concurrency-syntax.md)   | 構成設計時   |
+| 競合パターン     | [references/race-conditions.md](references/race-conditions.md)         | 競合整理時   |
+| 旧スキル         | [references/legacy-skill.md](references/legacy-skill.md)               | 互換確認時   |
 
 ### assets/（テンプレート・素材）
 
-| アセット | 用途 |
-| --- | --- |
+| アセット                           | 用途                         |
+| ---------------------------------- | ---------------------------- |
 | `assets/concurrency-workflow.yaml` | concurrency 設定テンプレート |
 
 ### 運用ファイル
 
-| ファイル | 目的 |
-| --- | --- |
-| `EVALS.json` | レベル評価・メトリクス管理 |
-| `LOGS.md` | 実行ログの蓄積 |
-| `CHANGELOG.md` | 改善履歴の記録 |
+| ファイル       | 目的                       |
+| -------------- | -------------------------- |
+| `EVALS.json`   | レベル評価・メトリクス管理 |
+| `LOGS.md`      | 実行ログの蓄積             |
+| `CHANGELOG.md` | 改善履歴の記録             |

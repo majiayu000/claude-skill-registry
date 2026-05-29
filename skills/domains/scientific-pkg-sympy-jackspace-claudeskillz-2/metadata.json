@@ -1,0 +1,18 @@
+{
+  "name": "scientific-pkg-sympy",
+  "description": "Use this skill when working with symbolic mathematics in Python. This skill should be used for symbolic computation tasks including solving equations algebraically, performing calculus operations (der",
+  "repo": "jackspace/ClaudeSkillz",
+  "path": "skills/scientific-pkg-sympy",
+  "category": "domains",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jackspace/ClaudeSkillz",
+  "dir_name": "scientific-pkg-sympy-jackspace-claudeskillz-2",
+  "author": "jackspace",
+  "source_url": "https://github.com/jackspace/ClaudeSkillz/blob/main/skills/scientific-pkg-sympy/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 ClaudeSkillz Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

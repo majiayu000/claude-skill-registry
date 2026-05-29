@@ -5,6 +5,18 @@ description: Advanced React Flow patterns for complex use cases. Use when implem
 
 # Advanced React Flow Patterns
 
+## Gates (check before shipping)
+
+Use these as **sequenced** checks—not “I think it works.”
+
+1. **Sub-flows / groups:** **Pass:** Every `parentId` matches an existing node `id`; the parent `type` is registered in `nodeTypes`; child positions are relative to the parent as intended (spot-check one drag inside/outside the group).
+2. **Custom connection line:** **Pass:** With a valid/invalid drag, stroke or `connectionStatus` visibly differs; path renders without console errors from `getSmoothStepPath` (invalid coords).
+3. **External drag-and-drop:** **Pass:** `onDragOver` always `preventDefault()`; drop position uses `screenToFlowPosition` (not raw `clientX`/`clientY` as flow coords); new node appears under the cursor on the pane.
+4. **Undo/redo:** **Pass:** One undo returns to the prior `{ nodes, edges }`; redo restores; rapid changes do not leave `canUndo`/`canRedo` inconsistent with visible graph (exercise add → undo → redo once).
+5. **Programmatic layout (dagre):** **Pass:** After `setNodes`, node positions match intended `rankdir`; `fitView` runs after layout (e.g. `requestAnimationFrame`) so the viewport is not stale.
+6. **Connect on drop (new node):** **Pass:** Dropping on empty pane creates a node **and** an edge from the source handle; dropping on a valid target does not duplicate nodes (only the invalid-drop path adds a node).
+7. **Selectors / store:** **Pass:** Components that `useStore` with objects use `shallow` (or equivalent) so unrelated store updates do not re-render every frame.
+
 ## Sub-Flows (Nested Nodes)
 
 ```tsx
@@ -87,7 +99,8 @@ function CustomConnectionLine({
 ## Drag and Drop from External Source
 
 ```tsx
-import { useReactFlow, useCallback, useRef } from 'react';
+import { useCallback, useRef, useState } from 'react';
+import { useReactFlow } from '@xyflow/react';
 
 function DnDFlow() {
   const reactFlowWrapper = useRef(null);

@@ -1,9 +1,9 @@
 {
-  "name": "interaction",
+  "name": "plutonium-interaction",
   "repo": "radioactive-labs/plutonium-core",
-  "path": ".claude/skills/interaction/SKILL.md",
+  "path": ".claude/skills/plutonium-interaction/SKILL.md",
   "source": "github.com/radioactive-labs/plutonium-core",
-  "downloaded_at": "2026-01-19T01:04:34.808943Z",
+  "downloaded_at": "2026-01-22T03:05:17.660207Z",
   "dir_name": "interaction",
   "category": "development",
   "github_path": ".claude/skills/plutonium-interaction",

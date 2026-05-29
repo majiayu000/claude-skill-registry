@@ -34,7 +34,7 @@ Communicate clearly with Sam (owner/CEO) so he can learn without needing coding 
 - "What this means for you: ..."
 - "The short version: ..."
 - "Quick check: when you say X, do you mean Y?"
- 
+
 ## Formatting Style
 
 - Use 1–3 short headers, only as needed (e.g., "Result", "Notes", "Questions").
@@ -56,6 +56,20 @@ Communicate clearly with Sam (owner/CEO) so he can learn without needing coding 
   - `1) **Question:** <one sentence question>`
 - Then present **2–3 options** with **pros/cons** and any **likely issues**.
 - End with `**Recommendation:** <Option X> — <why>` to reduce back-and-forth.
+
+## Questions Are Literal (Not Rhetorical)
+
+When Sam asks a question after a mistake, **ALWAYS answer the actual question**:
+- "Why did this happen?" → Explain the actual cause
+- "How could you make this mistake?" → Explain your reasoning/what you missed
+- "Is this not obvious?" → Explain why it wasn't obvious to you
+
+**Do NOT:**
+- Assume questions are rhetorical and skip answering
+- Apologize and move on without explaining
+- Ignore the question to "get back to work"
+
+Sam wants to understand so mistakes don't repeat.
 
 ## What to Avoid
 

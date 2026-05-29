@@ -184,3 +184,4 @@ One line per finding:
 
 - [references/skill-stocktake.md](references/skill-stocktake.md)
 - [references/codex-parity.md](references/codex-parity.md)
+- [references/heal-skill.feature](references/heal-skill.feature) — Executable spec: detect hygiene issues, flag Codex-parity drift, auto-fix + report, --strict fails on remaining findings (soc-qk4b)

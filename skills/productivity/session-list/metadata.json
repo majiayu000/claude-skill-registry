@@ -1,0 +1,16 @@
+{
+  "name": "session-list",
+  "repo": "manastalukdar/claude-devstudio",
+  "path": "skills/session-list/SKILL.md",
+  "source": "github.com/manastalukdar/claude-devstudio",
+  "downloaded_at": "2026-02-02T03:11:53.504802Z",
+  "dir_name": "session-list",
+  "category": "productivity",
+  "author": "manastalukdar",
+  "source_url": "https://github.com/manastalukdar/claude-devstudio/blob/main/skills/session-list/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Brenner Cruvinel",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

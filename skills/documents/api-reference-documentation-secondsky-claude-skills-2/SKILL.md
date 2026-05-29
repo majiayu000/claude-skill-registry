@@ -1,6 +1,7 @@
 ---
 name: api-reference-documentation
 description: Creates professional API documentation using OpenAPI specifications with endpoints, authentication, and interactive examples. Use when documenting REST APIs, creating SDK references, or building developer portals.
+license: MIT
 ---
 
 # API Reference Documentation

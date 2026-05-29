@@ -1,0 +1,16 @@
+{
+  "name": "worktree-safe-remove",
+  "repo": "barikata1984/.agent",
+  "path": "skills/worktree-safe-remove/SKILL.md",
+  "category": "devops",
+  "source": "github.com/barikata1984/.agent",
+  "dir_name": "worktree-safe-remove-barikata1984-agent",
+  "downloaded_at": "2026-02-22T06:29:13.959329Z",
+  "author": "barikata1984",
+  "source_url": "https://github.com/barikata1984/.agent/blob/main/skills/worktree-safe-remove/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/barikata1984/.agent/blob/main/skills/worktree-safe-remove/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

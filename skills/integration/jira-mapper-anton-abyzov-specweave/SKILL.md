@@ -1,5 +1,4 @@
 ---
-name: jira-mapper
 description: Expert in mapping SpecWeave increments to JIRA structure (Increment → Epic + Stories + Subtasks) with bidirectional sync. Use when exporting increments to JIRA, importing JIRA epics as increments, or configuring field mapping. Maintains traceability across systems.
 allowed-tools: Read, Write, Edit, Bash
 model: opus
@@ -37,7 +36,6 @@ You are an expert in mapping SpecWeave concepts to JIRA and vice versa with prec
 | **Status: in-progress** | Status: In Progress | Active work |
 | **Status: completed** | Status: Done | Finished |
 | **spec.md** | Epic Description | Summary + link to spec (if GitHub repo) |
-| **context-manifest.yaml** | Custom Field: Context | Serialized YAML in custom field (optional) |
 
 ### JIRA → SpecWeave
 
@@ -58,6 +56,77 @@ You are an expert in mapping SpecWeave concepts to JIRA and vice versa with prec
 
 ---
 
+## Security Rules (MANDATORY)
+
+These rules apply to ALL JIRA and Confluence API operations in this skill.
+
+### Credential Handling
+
+1. **Never collect credentials** — this skill reads from `.env` only, never prompts the user
+2. **Never log secrets** — never echo token values, auth headers, or base64 credentials
+3. **Never write credentials** — the user configures `.env` themselves
+
+### Credential Loading
+
+```bash
+# 1. Validate presence FIRST (before reading any values)
+for KEY in JIRA_API_TOKEN JIRA_EMAIL JIRA_DOMAIN; do
+  if ! grep -qE "^${KEY}=.+" .env; then
+    echo "Error: ${KEY} missing or empty in .env"
+    exit 1
+  fi
+done
+
+# 2. Load credentials ONLY after validation passes (never display values)
+#    head -1 ensures only first match used if .env has duplicate keys
+JIRA_API_TOKEN="$(grep '^JIRA_API_TOKEN=' .env | head -1 | cut -d '=' -f2-)"
+JIRA_EMAIL="$(grep '^JIRA_EMAIL=' .env | head -1 | cut -d '=' -f2-)"
+JIRA_DOMAIN="$(grep '^JIRA_DOMAIN=' .env | head -1 | cut -d '=' -f2-)"
+```
+
+### Domain Validation (before ANY API call)
+
+```bash
+# Reject IP addresses FIRST — IPv4, IPv6 brackets, hex-encoded (SSRF prevention)
+if [[ "$JIRA_DOMAIN" =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+ ]] || [[ "$JIRA_DOMAIN" =~ ^\[.*\]$ ]] || [[ "$JIRA_DOMAIN" =~ ^0x ]]; then
+  echo "Error: IP addresses not allowed — use a hostname"
+  exit 1
+fi
+
+# Reject localhost and private networks
+if [[ "$JIRA_DOMAIN" =~ ^(localhost|127\.|10\.|172\.(1[6-9]|2[0-9]|3[01])\.|192\.168\.) ]]; then
+  echo "Error: Internal/localhost addresses not allowed"
+  exit 1
+fi
+
+# Must be a valid hostname — no special chars, no consecutive dots
+if [[ ! "$JIRA_DOMAIN" =~ ^[a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?(\.[a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?)*$ ]]; then
+  echo "Error: JIRA_DOMAIN contains invalid characters"
+  exit 1
+fi
+
+# Cloud JIRA: must match <subdomain>.atlassian.net
+# Agent: use AskUserQuestion to confirm non-standard domain before retrying
+if [[ ! "$JIRA_DOMAIN" =~ ^[a-zA-Z0-9-]+\.atlassian\.net$ ]]; then
+  echo "Error: Domain does not match <subdomain>.atlassian.net pattern"
+  exit 1
+fi
+```
+
+### API Call Pattern (HTTPS only, quoted variables)
+
+```bash
+AUTH="$(printf '%s:%s' "$JIRA_EMAIL" "$JIRA_API_TOKEN" | base64)"
+
+# All API calls MUST use https://, double-quote all variables
+curl -s -f \
+  -H "Authorization: Basic $AUTH" \
+  -H "Content-Type: application/json" \
+  "https://${JIRA_DOMAIN}/rest/api/3/..."
+```
+
+---
+
 ## Conversion Workflows
 
 ### 1. Export: Increment → JIRA Epic
@@ -68,7 +137,7 @@ You are an expert in mapping SpecWeave concepts to JIRA and vice versa with prec
 - Increment folder exists
 - `spec.md` exists with valid frontmatter
 - `tasks.md` exists
-- JIRA connection configured
+- JIRA credentials configured in `.env` (validated per Security Rules above)
 
 **Process**:
 
@@ -232,18 +301,7 @@ Last Sync: 2025-10-26T14:00:00Z
    - [ ] {Subtask 3 title} (JIRA: PROJ-132)
    ```
 
-7. **Generate context-manifest.yaml** (default):
-   ```yaml
-   ---
-   spec_sections: []
-   documentation: []
-   max_context_tokens: 10000
-   priority: high
-   auto_refresh: false
-   ---
-   ```
-
-8. **Update JIRA Epic** (add custom field if available):
+7. **Update JIRA Epic** (add custom field if available):
    ```
    Custom Field: SpecWeave Increment ID = 0003-imported-feature
    ```
@@ -441,8 +499,7 @@ You:
 3. Auto-number next increment (e.g., 0003)
 4. Generate spec.md with user stories
 5. Generate tasks.md with subtasks
-6. Generate context-manifest.yaml (default)
-7. Present summary with increment location
+6. Present summary with increment location
 ```
 
 ### Bidirectional Sync
@@ -459,6 +516,120 @@ You:
 6. Update sync timestamps
 7. Present summary with changes applied
 ```
+
+---
+
+---
+
+## Confluence Page Sync (Atlassian Wiki)
+
+### Overview
+
+Sync SpecWeave living docs to Confluence pages. Confluence is commonly paired with JIRA for documentation.
+
+**Reference**: [confluence-page-api.md](../../reference/confluence-page-api.md)
+
+### Confluence Credentials
+
+Same security rules as JIRA credentials (see Security Rules section above). User configures `.env`, skill only validates presence. Same domain validation applies.
+
+Required `.env` keys (configured by the user, NOT by this skill):
+```
+CONFLUENCE_API_TOKEN=<your-token>    # Same as JIRA API token
+CONFLUENCE_EMAIL=<your-email>
+CONFLUENCE_DOMAIN=<your-company>.atlassian.net
+CONFLUENCE_SPACE_KEY=<space-key>
+```
+
+### Page Update Workflow (CRITICAL)
+
+**Rule**: Version MUST be incremented on every update.
+
+```bash
+# 1. GET current page to retrieve version
+GET /wiki/api/v2/pages/{pageId}?body-format=storage
+→ Extract: version.number, title, spaceId
+
+# 2. PUT with incremented version
+PUT /wiki/api/v2/pages/{pageId}
+{
+  "id": "{pageId}",
+  "status": "current",
+  "title": "{title}",
+  "spaceId": "{spaceId}",
+  "body": {
+    "representation": "storage",
+    "value": "<p>Updated content</p>"
+  },
+  "version": {
+    "number": {currentVersion + 1},
+    "message": "Synced from SpecWeave"
+  }
+}
+```
+
+### SpecWeave → Confluence Mapping
+
+| SpecWeave | Confluence | Location |
+|-----------|------------|----------|
+| Increment spec.md | Page | `/wiki/spaces/{SPACE}/pages/{pageId}` |
+| tasks.md | Task List macro | `<ac:task-list>` in page body |
+| Living docs | Child pages | Under parent page |
+| AC checkboxes | Task status | `complete`/`incomplete` |
+
+### Storage Format Essentials
+
+Confluence uses XHTML-based storage format (NOT standard HTML):
+
+```xml
+<!-- Task list for spec ACs -->
+<ac:task-list>
+  <ac:task>
+    <ac:task-status>incomplete</ac:task-status>
+    <ac:task-body>AC-001: User can login</ac:task-body>
+  </ac:task>
+  <ac:task>
+    <ac:task-status>complete</ac:task-status>
+    <ac:task-body>AC-002: Password validation</ac:task-body>
+  </ac:task>
+</ac:task-list>
+
+<!-- Status macro (colored label) -->
+<ac:structured-macro ac:name="status">
+  <ac:parameter ac:name="colour">Green</ac:parameter>
+  <ac:parameter ac:name="title">COMPLETED</ac:parameter>
+</ac:structured-macro>
+
+<!-- Code block -->
+<ac:structured-macro ac:name="code">
+  <ac:parameter ac:name="language">typescript</ac:parameter>
+  <ac:plain-text-body><![CDATA[const x = 1;]]></ac:plain-text-body>
+</ac:structured-macro>
+```
+
+### Metadata Storage
+
+```json
+{
+  "external_sync": {
+    "jira": { "issueKey": "PROJ-123" },
+    "confluence": {
+      "pageId": "123456789",
+      "pageUrl": "https://company.atlassian.net/wiki/spaces/PROJ/pages/123456789",
+      "spaceKey": "PROJ",
+      "lastSyncedAt": "2026-02-02T10:30:00Z"
+    }
+  }
+}
+```
+
+### Common Errors
+
+| Error | Cause | Fix |
+|-------|-------|-----|
+| `409: Version must be incremented` | Stale version | Re-GET page, increment version |
+| `400: Invalid storage format` | Bad XHTML | Self-close tags (`<br />`) |
+| `403: Forbidden` | No page permission | Check space permissions |
 
 ---
 

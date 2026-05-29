@@ -1,0 +1,16 @@
+{
+  "name": "dispatch-strategy-review",
+  "repo": "tarrragon/claude",
+  "path": "skills/dispatch-strategy-review/SKILL.md",
+  "source": "github.com/tarrragon/claude",
+  "downloaded_at": "2026-01-29T03:01:40.788165Z",
+  "dir_name": "dispatch-strategy-review",
+  "category": "orchestration",
+  "author": "tarrragon",
+  "source_url": "https://github.com/tarrragon/claude/blob/main/skills/dispatch-strategy-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tarrragon/claude/blob/main/skills/dispatch-strategy-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

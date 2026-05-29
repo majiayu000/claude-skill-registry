@@ -1,0 +1,17 @@
+{
+  "name": "SKILL.md.bash",
+  "description": "",
+  "repo": "bfly123/claude_code_bridge",
+  "category": "orchestration",
+  "tags": [],
+  "stars": 0,
+  "source": "Unknown",
+  "dir_name": "skill-md-bash",
+  "author": "bfly123",
+  "source_url": "https://github.com/bfly123/claude_code_bridge",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

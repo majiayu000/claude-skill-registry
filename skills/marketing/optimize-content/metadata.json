@@ -1,0 +1,16 @@
+{
+  "name": "optimize-content",
+  "repo": "NoCodeify/aeo",
+  "path": ".claude/skills/optimize-content/SKILL.md",
+  "category": "marketing",
+  "source": "github.com/NoCodeify/aeo",
+  "dir_name": "optimize-content",
+  "downloaded_at": "2026-02-15T05:32:14.623529Z",
+  "author": "NoCodeify",
+  "source_url": "https://github.com/NoCodeify/aeo/blob/main/.claude/skills/optimize-content/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/NoCodeify/aeo/blob/main/.claude/skills/optimize-content/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

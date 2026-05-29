@@ -1,0 +1,9 @@
+{
+  "name": "stop-tts",
+  "repo": "darthmolen/EnglishConnect",
+  "path": ".claude/skills/stop-tts/SKILL.md",
+  "source": "github.com/darthmolen/EnglishConnect",
+  "downloaded_at": "2026-02-02T03:59:41.533350Z",
+  "dir_name": "stop-tts",
+  "category": "system"
+}

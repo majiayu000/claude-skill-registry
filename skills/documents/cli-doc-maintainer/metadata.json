@@ -1,0 +1,16 @@
+{
+  "name": "cli-doc-maintainer",
+  "repo": "sunholo-data/ailang",
+  "path": ".claude/skills/cli-doc-maintainer/SKILL.md",
+  "source": "github.com/sunholo-data/ailang",
+  "downloaded_at": "2026-02-02T02:24:40.139562Z",
+  "dir_name": "cli-doc-maintainer",
+  "category": "documents",
+  "author": "sunholo-data",
+  "source_url": "https://github.com/sunholo-data/ailang/blob/main/.claude/skills/cli-doc-maintainer/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sunholo-data/ailang/blob/main/.claude/skills/cli-doc-maintainer/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

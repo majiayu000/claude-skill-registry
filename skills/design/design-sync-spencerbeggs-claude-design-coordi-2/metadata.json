@@ -1,0 +1,18 @@
+{
+  "name": "design-sync",
+  "description": "Sync design docs with codebase state. Use when verifying documentation accuracy, after code changes, or when last-synced is stale.",
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/design-sync",
+  "category": "design",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "dir_name": "design-sync-spencerbeggs-claude-design-coordi-2",
+  "author": "spencerbeggs",
+  "source_url": "https://github.com/spencerbeggs/claude-design-coordinator/blob/main/.claude/skills/design-sync/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/spencerbeggs/claude-design-coordinator/blob/main/.claude/skills/design-sync/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "scientific-neurokit2",
+  "repo": "pathvanasoftware/IOSStorageCleaner",
+  "path": ".claude/skills/scientific-neurokit2/SKILL.md",
+  "source": "github.com/pathvanasoftware/IOSStorageCleaner",
+  "downloaded_at": "2026-01-27T02:50:44.925969Z",
+  "dir_name": "scientific-neurokit2",
+  "category": "ai-ml",
+  "author": "pathvanasoftware",
+  "source_url": "https://github.com/pathvanasoftware/IOSStorageCleaner/blob/main/.claude/skills/scientific-neurokit2/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pathvanasoftware/IOSStorageCleaner/blob/main/.claude/skills/scientific-neurokit2/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

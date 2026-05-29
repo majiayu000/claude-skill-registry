@@ -3,9 +3,9 @@ name: screening-github-cloud
 description: Pre-clone security screening for GitHub repositories in sandboxed environments. Supports GitHub Codespaces (cloud) and Docker/OrbStack (local sandbox). Activates when user asks to "screen repo", "is this repo safe", "check before cloning", or mentions security screening.
 license: MIT
 metadata:
-  version: "5.0.0"
+  version: "5.2.0"
   author: gradigit
-  updated: "2026-01-31"
+  updated: "2026-02-09"
   environment: codespaces, docker, orbstack
   tags:
     - security
@@ -163,7 +163,17 @@ echo ""
 echo "Report: https://github.com/${REPO_SLUG}/blob/main/reports/${DATE}-${OWNER_REPO}.md"
 ```
 
-**After pushing, always output the full GitHub URL to the report.** This lets the user click directly to view it.
+**After pushing, always output the full GitHub URL to the report.** This lets the user Cmd+click directly to view it in their terminal.
+
+**CRITICAL: The very last thing you output after the entire screening is complete MUST be the full report URL on its own line, with no backticks, quotes, or markdown formatting around it.** This is required so it is Cmd+clickable in the terminal. Example:
+
+```
+Report saved and pushed.
+
+https://github.com/gradigit/screening-reports/blob/main/reports/2026-02-01-facebook-react.md
+```
+
+Do NOT wrap the URL in backticks or markdown links. Do NOT put a period after it. Output it as a bare URL on its own line as the final output of the screening session.
 
 Reports are then browsable in the repo's `reports/` directory on GitHub.
 
@@ -179,7 +189,7 @@ Reports are then browsable in the repo's `reports/` directory on GitHub.
 2. If private repo: ensure `gh` is authenticated (see Private Repos section)
 3. Clone target repo to ./target-repo
 4. Get repo metadata (stars, age, contributors)
-5. Run security scanners (Trivy, Gitleaks)
+5. Run security scanners (Trivy, Gitleaks, Semgrep)
 6. Check GitHub Actions (actionlint, zizmor)
 7. Static analysis for malicious patterns
 8. Dynamic analysis: run npm install / pip install
@@ -188,7 +198,8 @@ Reports are then browsable in the repo's `reports/` directory on GitHub.
 11. **Deep dive suspicious dependencies** (install, inspect, compare)
 12. Generate screening report
 13. Save report to Codespace's repo (see Saving Reports section)
-14. Destroy sandbox
+14. **Output the full GitHub URL to the report as the final line** (bare URL, no formatting — must be Cmd+clickable)
+15. Destroy sandbox
 
 Mark each task `in_progress` when starting, `completed` when done.
 
@@ -210,6 +221,9 @@ go install github.com/rhysd/actionlint/cmd/actionlint@latest
 
 # zizmor - GitHub Actions security scanner
 pip install zizmor
+
+# Semgrep - pattern-based static analysis (injection, eval, secrets in code)
+python3 -m pip install semgrep
 ```
 
 ### Run Scans
@@ -230,6 +244,9 @@ zizmor .github/workflows/ 2>/dev/null
 # Dependency audits
 npm audit 2>/dev/null || echo "No package-lock.json"
 pip-audit -r requirements.txt 2>/dev/null || echo "No requirements.txt"
+
+# Static analysis: injection, eval/exec, hardcoded secrets, unsafe patterns
+semgrep --config p/security-audit --config p/owasp-top-ten --no-git-ignore . 2>/dev/null
 ```
 
 ---
@@ -536,6 +553,9 @@ Save to `SCREENING-REPORT.md`:
 ### Gitleaks
 [Secrets found or "None"]
 
+### Semgrep
+[Static analysis findings or "None"]
+
 ### npm audit / pip-audit
 [Vulnerabilities or "None"]
 
@@ -550,7 +570,7 @@ Save to `SCREENING-REPORT.md`:
 [What to do based on verdict]
 
 ---
-*Sandboxed screening via screening-github-cloud v5.0.0*
+*Sandboxed screening via screening-github-cloud v5.2.0*
 *Dynamic analysis performed in disposable environment.*
 ```
 
@@ -650,6 +670,7 @@ Tested with these versions (tool APIs may change):
 | Gitleaks | 8.x | `apt install gitleaks` or `go install github.com/gitleaks/gitleaks/v8@latest` |
 | actionlint | 1.7+ | `go install github.com/rhysd/actionlint/cmd/actionlint@latest` |
 | zizmor | 0.x | `pip install zizmor` |
+| Semgrep | 1.x | `python3 -m pip install semgrep` |
 
 If tools fail to install, fall back to manual pattern matching. See [examples.md](examples.md) for failure recovery.
 

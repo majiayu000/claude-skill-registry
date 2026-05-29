@@ -1,0 +1,13 @@
+{
+  "name": "waybar",
+  "description": "",
+  "repo": "tobi/dotnix",
+  "category": "platform",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tobi/dotnix",
+  "github_path": ".claude/skills/waybar",
+  "github_branch": "main",
+  "dir_name": "waybar",
+  "downloaded_at": "2026-02-05T01:44:36.198488Z"
+}

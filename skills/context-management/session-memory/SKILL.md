@@ -1,6 +1,8 @@
 ---
 name: session-memory
-description: "Manages cross-session learning and memory persistence. Use when user asks about previous sessions, history, or to continue from before. Do NOT load for: implementation work, reviews, or ad-hoc information."
+description: "セッション間の学習と記憶の永続化を管理。Use when user asks about previous sessions, history, or to continue from before. Do NOT load for: implementation work, reviews, or ad-hoc information."
+description-en: "Manages cross-session learning and memory persistence. Use when user asks about previous sessions, history, or to continue from before. Do NOT load for: implementation work, reviews, or ad-hoc information."
+description-ja: "セッション間の学習と記憶の永続化を管理。Use when user asks about previous sessions, history, or to continue from before. Do NOT load for: implementation work, reviews, or ad-hoc information."
 allowed-tools: ["Read", "Write", "Append"]
 user-invocable: false
 ---
@@ -36,19 +38,21 @@ user-invocable: false
 
 ```
 .claude/
-└── memory/
-    ├── session-log.md      # セッションごとのログ
-    ├── decisions.md        # 重要な決定事項
-    ├── patterns.md         # 学んだパターン
-    └── context.json        # プロジェクトコンテキスト
+├── memory/
+│   ├── session-log.md      # セッションごとのログ
+│   ├── decisions.md        # 重要な決定事項
+│   ├── patterns.md         # 学んだパターン
+│   └── context.json        # プロジェクトコンテキスト
+└── state/
+    └── agent-trace.jsonl   # Agent Trace（ツール実行履歴）
 ```
 
 ### 推奨運用（SSOT/ローカル分離）
 
-- **SSOT（共有推奨）**: `decisions.md` / `patterns.md`  
+- **SSOT（共有推奨）**: `decisions.md` / `patterns.md`
   - 「決定（Why）」と「再利用できる解法（How）」を集約する
   - 各エントリは **タイトル + タグ**（例: `#decision #db`）を付け、先頭に **Index** を置く
-- **ローカル推奨**: `session-log.md` / `context.json` / `.claude/state/`  
+- **ローカル推奨**: `session-log.md` / `context.json` / `.claude/state/`
   - ノイズ/肥大化しやすいため、基本は Git 管理しない（必要なら個別に判断）
 
 ---
@@ -142,8 +146,18 @@ user-invocable: false
 
 1. `.claude/memory/context.json` を読み込み
 2. 前回のセッションログを確認
-3. 未完了タスクを特定
-4. コンテキストサマリーを生成
+3. **Agent Trace から直近の編集履歴を取得**
+4. 未完了タスクを特定
+5. コンテキストサマリーを生成
+
+**Agent Trace 活用**:
+```bash
+# 前回の編集ファイル一覧を取得
+tail -50 .claude/state/agent-trace.jsonl | jq -r '.files[].path' | sort -u
+
+# プロジェクト情報を取得
+tail -1 .claude/state/agent-trace.jsonl | jq '.metadata'
+```
 
 ### セッション中
 
@@ -156,6 +170,30 @@ user-invocable: false
 1. セッションサマリーを生成
 2. `context.json` を更新
 3. 次回への引き継ぎ事項を記録
+
+---
+
+## メモリ最適化（CC 2.1.38+）
+
+Claude Code 2.1.38 以降、セッション再開時のメモリ使用量が **68% 削減** されました。
+
+### 推奨ワークフロー
+
+```bash
+# 長時間作業は --resume を活用
+claude --resume
+
+# 大規模タスクは分割してセッション再開
+claude --resume "続きから"
+```
+
+| シナリオ | 推奨 |
+|---------|------|
+| 長時間実装 | 1-2時間ごとにセッション再開 |
+| 大規模リファクタ | 機能単位でセッション分割 |
+| メモリ不足警告 | 即座に `--resume` で再開 |
+
+> 💡 メモリ効率が大幅に改善されたため、セッション再開を積極的に活用してください。
 
 ---
 
@@ -198,6 +236,27 @@ Claude Code:
 - Supabase Auth を採用
 - App Router を使用
 ```
+
+---
+
+## Claude Code 自動メモリとの関係（D22）
+
+Claude Code 2.1.32+ には「自動メモリ」機能があり、`~/.claude/projects/<project>/memory/MEMORY.md` にセッション間の学習を自動保存します。
+
+Harness のメモリシステムとは**3層アーキテクチャ**として共存します:
+
+| 層 | システム | 内容 | 管理 |
+|----|---------|------|------|
+| **Layer 1** | Claude Code 自動メモリ | 汎用的な学習（ミス回避、ツール使い方） | 暗黙的・自動 |
+| **Layer 2** | Harness SSOT | プロジェクト固有の決定事項・パターン | 明示的・手動 |
+| **Layer 3** | Agent Memory | エージェント別のタスク学習 | エージェント定義 |
+
+**使い分け**:
+- Layer 1 の知見がプロジェクト全体に重要 → `/memory ssot` で Layer 2 に昇格
+- 日常的な学習は Layer 1 に任せる（無効化しない）
+- Agent Teams 使用時は並列書き込みに注意
+
+詳細: [D22: 3層メモリアーキテクチャ](../../.claude/memory/decisions.md#d22-3層メモリアーキテクチャ)
 
 ---
 

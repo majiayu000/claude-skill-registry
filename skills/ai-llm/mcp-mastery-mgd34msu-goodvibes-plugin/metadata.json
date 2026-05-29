@@ -1,0 +1,18 @@
+{
+  "name": "mcp-mastery",
+  "repo": "mgd34msu/goodvibes-plugin",
+  "path": "plugins/goodvibes/skills/common/tooling/mcp-mastery/SKILL.md",
+  "source": "github.com/mgd34msu/goodvibes-plugin",
+  "downloaded_at": "2026-01-22T03:54:21.805591Z",
+  "dir_name": "mcp-mastery-mgd34msu-goodvibes-plugin",
+  "category": "ai-llm",
+  "github_path": "plugins/goodvibes/skills/common/tooling/mcp-mastery",
+  "github_branch": "main",
+  "author": "mgd34msu",
+  "source_url": "https://github.com/mgd34msu/goodvibes-plugin/blob/main/plugins/goodvibes/skills/common/tooling/mcp-mastery/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 GoodVibes Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

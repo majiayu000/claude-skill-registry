@@ -1,7 +1,7 @@
 ---
 name: tasks-code-review
 version: 1.0.0
-description: Autonomous subagent variant of code-review. Use when reviewing code changes, pull requests, or performing refactoring analysis with focus on patterns, security, and performance.
+description: "[Testing] Autonomous subagent variant of code-review. Use when reviewing code changes, pull requests, or performing refactoring analysis with focus on patterns, security, and performance."
 infer: false
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash, Task
 ---
@@ -9,6 +9,24 @@ allowed-tools: Read, Write, Edit, Grep, Glob, Bash, Task
 > **Skill Variant:** Use this skill for **autonomous, comprehensive code reviews** with structured checklists. For interactive code review discussions with user feedback, use `code-review` instead.
 
 # Code Review Workflow
+
+## Summary
+
+**Goal:** Perform autonomous, comprehensive code reviews with structured checklists covering architecture, patterns, quality, security, and performance.
+
+| Step | Action | Key Notes |
+|------|--------|-----------|
+| 1 | Understand context | Read changed files, identify scope and intent |
+| 2 | Architecture compliance | Clean Architecture layers, repository patterns, service boundaries |
+| 3 | Pattern adherence | CQRS, entity patterns, component hierarchy, platform base classes |
+| 4 | Code quality | SRP, DRY, naming, abstractions |
+| 5 | Security & performance | Authorization, injection, N+1, pagination, caching |
+| 6 | Generate report | Findings with severity, file references, suggested fixes |
+
+**Key Principles:**
+- Autonomous variant — for interactive reviews with user feedback, use `code-review` instead
+- Check all 5 review dimensions: architecture, patterns, quality, security, performance
+- Every finding must reference specific file and line
 
 ## When to Use This Skill
 

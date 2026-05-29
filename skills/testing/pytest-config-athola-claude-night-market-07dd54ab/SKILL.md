@@ -1,24 +1,29 @@
 ---
 name: pytest-config
-description: |
-
-Triggers: fixtures, config, configuration, pytest, testing
-  Standardized pytest configuration for plugin development with shared test patterns.
-
-  Triggers: pytest configuration, conftest, fixtures, test setup
-  Use when: setting up pytest for plugin development or creating fixtures
+description: 'Standardized pytest config with reusable fixtures and CI integration.'
+globs: ["**/conftest.py", "**/pytest.ini", "**/pyproject.toml"]
+alwaysApply: false
 category: infrastructure
-tags: [pytest, testing, configuration, fixtures]
-dependencies: [leyline:testing-quality-standards]
+tags:
+- pytest
+- testing
+- configuration
+- fixtures
+dependencies:
+- leyline:testing-quality-standards
 estimated_tokens: 200
 provides:
-  infrastructure: [pytest-config, conftest-patterns, coverage-config]
+  infrastructure:
+  - pytest-config
+  - conftest-patterns
+  - coverage-config
 modules:
-  - modules/conftest-patterns.md
-  - modules/git-testing-fixtures.md
-  - modules/mock-fixtures.md
-  - modules/ci-integration.md
-version: 1.3.5
+- modules/conftest-patterns.md
+- modules/git-testing-fixtures.md
+- modules/mock-fixtures.md
+- modules/ci-integration.md
+- modules/README.md
+model_hint: standard
 ---
 ## Table of Contents
 
@@ -31,6 +36,17 @@ version: 1.3.5
 # Pytest Configuration Patterns
 
 Standardized pytest configuration and patterns for consistent testing infrastructure across Claude Night Market plugins.
+
+
+## When To Use
+
+- Setting up pytest configuration and fixtures
+- Configuring conftest.py patterns for test infrastructure
+
+## When NOT To Use
+
+- Non-Python projects or projects using other test frameworks
+- Simple scripts that do not need test infrastructure
 
 ## Quick Start
 
@@ -74,7 +90,7 @@ exclude_lines = [
 precision = 2
 show_missing = true
 ```
-**Verification:** Run `pytest -v` to verify tests pass.
+**Verification:** Run `pytest --collect-only` to verify discovery, `pytest -v --co -q` for markers, and `pytest --cov` for coverage thresholds.
 
 ## Detailed Patterns
 
@@ -97,7 +113,6 @@ Reference in your skill's frontmatter:
 ```yaml
 dependencies: [leyline:pytest-config, leyline:testing-quality-standards]
 ```
-**Verification:** Run `pytest -v` to verify tests pass.
 
 ## Exit Criteria
 

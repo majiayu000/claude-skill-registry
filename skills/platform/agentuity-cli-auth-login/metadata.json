@@ -1,0 +1,20 @@
+{
+  "name": "agentuity-cli-auth-login",
+  "description": "",
+  "repo": "agentuity/examples",
+  "category": "platform",
+  "tags": [],
+  "stars": 3,
+  "source": "",
+  "github_path": "training-v1/deep-research-v1/.agents/skills/agentuity-cli-auth-login",
+  "github_branch": "main",
+  "dir_name": "agentuity-cli-auth-login",
+  "downloaded_at": "2026-02-05T01:45:31.377547Z",
+  "author": "agentuity",
+  "source_url": "https://github.com/agentuity/examples/blob/main/training-v1/deep-research-v1/.agents/skills/agentuity-cli-auth-login/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 Agentuity, Inc.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

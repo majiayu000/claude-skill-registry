@@ -41,16 +41,18 @@ Search with "2025" or "2026", NEVER with past years.
 ## DRY - Reuse or Create Shared (MANDATORY)
 
 **Before writing ANY new code:**
-1. Search existing codebase for similar functionality
-2. Check shared locations: `modules/cores/lib/`, `modules/cores/components/`
+1. **Grep the codebase** for similar function names, patterns, or logic
+2. Check shared locations: `modules/cores/lib/`, `modules/cores/components/`, `modules/cores/hooks/`
 3. If similar code exists → extend/reuse instead of duplicate
 4. If code will be used by 2+ features → create it in `modules/cores/` directly
+5. Extract repeated logic (3+ occurrences) into shared helpers
+6. Run `npx jscpd ./src --threshold 3` after creating new files
 
 ---
 
 ## Agent Workflow (MANDATORY)
 
-Before ANY implementation, launch in parallel:
+Before ANY implementation, use `TeamCreate` to spawn 3 agents:
 
 1. **fuse-ai-pilot:explore-codebase** - Analyze project structure and existing patterns
 2. **fuse-ai-pilot:research-expert** - Verify latest docs for all stack technologies
@@ -187,3 +189,5 @@ Ready-to-copy code in `references/templates/`:
 - ❌ Missing JSDoc on exports
 - ❌ `any` type
 - ❌ Barrel exports
+- ❌ Duplicating existing utility/helper without Grep search first
+- ❌ Copy-pasting logic blocks instead of extracting shared function

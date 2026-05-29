@@ -1,0 +1,16 @@
+{
+  "name": "ha-dashboard",
+  "repo": "nodnarbnitram/claude-code-extensions",
+  "path": ".claude/skills/ha-dashboard/SKILL.md",
+  "source": "github.com/nodnarbnitram/claude-code-extensions",
+  "downloaded_at": "2026-01-29T07:08:56.979845Z",
+  "dir_name": "ha-dashboard-nodnarbnitram-claude-code-extensio",
+  "category": "platform",
+  "author": "nodnarbnitram",
+  "source_url": "https://github.com/nodnarbnitram/claude-code-extensions/blob/main/.claude/skills/ha-dashboard/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Brandon Martin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

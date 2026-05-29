@@ -1,34 +1,34 @@
 ---
 name: bug-review
-description: |
-
-Triggers: verification, fixes, defects, code-quality, review
-  Systematically uncover and fix bugs using language-specific expertise and
-  reproducible evidence.
-
-  Triggers: bug hunting, defect detection, debugging, fix verification, bug fix,
-  regression check, error investigation, defect documentation
-
-  Use when: deep bug hunting needed, documenting defects, verifying fixes,
-  systematic debugging required
-
-  DO NOT use when: test coverage audit - use test-review instead.
-  DO NOT use when: architecture issues - use architecture-review.
-
-  Use this skill for systematic bug hunting with evidence trails.
+role: library
+description: Hunts bugs with evidence trails. Use when investigating unexpected behavior or before merging code with potential hidden defects.
+alwaysApply: false
 category: code-review
-tags: [bugs, defects, debugging, code-quality, fixes, verification]
-tools: [defect-tracker, fix-generator, verification-runner]
+tags:
+- bugs
+- defects
+- debugging
+- code-quality
+- fixes
+- verification
+tools: []
 usage_patterns:
-  - bug-hunting
-  - defect-documentation
-  - fix-preparation
-  - verification-planning
+- bug-hunting
+- defect-documentation
+- fix-preparation
+- verification-planning
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 450
 progressive_loading: true
-dependencies: [pensive:shared, imbue:evidence-logging, imbue:diff-analysis/modules/risk-assessment-framework]
-version: 1.3.5
+dependencies:
+- pensive:shared
+- imbue:proof-of-work
+- imbue:diff-analysis/modules/risk-assessment-framework
+modules:
+- modules/defect-documentation.md
+- modules/fix-preparation.md
+- modules/language-detection.md
 ---
 ## Table of Contents
 
@@ -66,13 +66,17 @@ Systematic bug identification and fixing with language-specific expertise.
 ```
 **Verification:** Run the command with `--help` flag to verify availability.
 
-## When to Use
+## When To Use
 
 - Reviewing code for potential bugs
 - After receiving bug reports
 - Before major releases
 - During security audits
 - Investigating production issues
+
+## When NOT To Use
+
+- Test coverage audit - use test-review instead
 
 ## Required TodoWrite Items
 
@@ -128,7 +132,7 @@ Review code line-by-line, logging each bug with:
 
 Run static analyzers (`cargo clippy`, `ruff check`, `golangci-lint`, `eslint`).
 
-Use `imbue:evidence-logging` for reproducible capture.
+Use `imbue:proof-of-work` for reproducible capture.
 
 **Progressive**: Load `modules/defect-documentation.md` for classification details and analyzer commands.
 
@@ -206,15 +210,3 @@ Assign owners and deadlines for follow-up items.
 - Fixes prepared with test coverage verified
 - Verification plan includes commands and expected outputs
 - Remaining risks assessed and owners assigned
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

@@ -1,0 +1,18 @@
+{
+  "name": "pathway-mapping",
+  "description": "Map metabolites to biological pathways using KEGG, Reactome, and MetaboAnalyst. Perform pathway enrichment and topology analysis. Use when interpreting metabolomics results in the context of biochemic",
+  "repo": "GPTomics/bioSkills",
+  "path": "metabolomics/pathway-mapping",
+  "category": "domains",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "pathway-mapping-gptomics-bioskills-2",
+  "author": "GPTomics",
+  "source_url": "https://github.com/GPTomics/bioSkills/blob/main/metabolomics/pathway-mapping/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 GPTomics",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

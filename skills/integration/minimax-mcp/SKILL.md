@@ -1,13 +1,13 @@
 ---
 name: minimax-mcp
-description: "MiniMax MCP server integration with token-efficient AI delegation. Use for web search, image analysis, MCP server integration in terminal/desktop Claude, and Claude-MiniMax collaboration patterns. Provides working scripts and slash commands."
+description: "MiniMax MCP server integration with token-efficient AI delegation. Use for web search, image analysis, MCP server integration in terminal/desktop Kimi Code CLI, and Claude-MiniMax collaboration patterns. Provides working scripts and slash commands."
 ---
 
 # MiniMax MCP
 
 ## Overview
 
-This skill provides complete MiniMax MCP server integration for Claude, enabling token-efficient AI delegation with 85-90% token savings. MiniMax handles heavy computational tasks while Claude plans and reviews, creating an optimal division of labor.
+This skill provides complete MiniMax MCP server integration for Kimi Code CLI, enabling token-efficient AI delegation with 85-90% token savings. MiniMax handles heavy computational tasks while Kimi Code CLI plans and reviews, creating an optimal division of labor.
 
 ## Usage Guidance
 
@@ -37,11 +37,40 @@ These sources are reliable and searches are **automatically restricted** to thes
 - `platform.claude.com` - Claude platform docs
 - `docs.cursor.com` - Cursor IDE docs
 - `cursor.com` - Cursor docs
+- `platform.moonshot.cn` - Moonshot/Kimi official docs
 - `cookbook.openai.com` - OpenAI cookbook
 - `godotengine.org` - Godot official docs
 - `api.minimax.io` - MiniMax API docs
 
 **Implementation**: The `web-search.sh` script automatically appends `site:` filters to all queries, ensuring results only come from trusted domains. To search other domains, ask Sam for permission and use an alternative search method.
+
+### Official Documentation Requirement (CRITICAL)
+
+When researching configuration, API usage, or integration details:
+
+**ALWAYS prefer official documentation over third-party sources:**
+
+1. **Official Sources (Priority 1):**
+   - `docs.anthropic.com` - Anthropic official docs
+   - `platform.moonshot.cn` - Moonshot/Kimi official docs
+   - `docs.cursor.com` - Cursor IDE official docs
+   - `code.visualstudio.com` - VS Code official docs
+   - `github.com/anthropics` - Official Anthropic repositories
+   - `github.com/MoonshotAI` - Official Moonshot repositories
+
+2. **When searching for configuration:**
+   - Use `site:` operator to restrict to official domains
+   - Example: `site:platform.moonshot.cn Kimi K2 Claude Code configuration`
+   - Example: `site:docs.anthropic.com claude-code settings.json`
+
+3. **Third-party sources (Use with caution):**
+   - Only use when official docs are unavailable
+   - Cross-reference with official sources
+   - Note the source in your findings
+
+**Configuration changes should ONLY be based on official provider documentation.**
+
+See `AGENTS.md` for full research standards.
 
 ### Decision Trigger
 Before using Grep/Glob for research, pause and ask:
@@ -135,18 +164,18 @@ echo "Screenshot analysis:" && cat screenshot_analysis.json
 ### Token Savings with Parallel Delegation
 
 **Sequential (Bad):**
-- Research task 1: ~2000 tokens (Claude reads results)
+- Research task 1: ~2000 tokens (Kimi Code CLI reads results)
 - Research task 2: ~2000 tokens
 - Research task 3: ~2000 tokens
 - **Total: ~6000 tokens**
 
 **Parallel with MiniMax (Good):**
-- Launch 3 agents: ~100 tokens (Claude orchestrates)
+- Launch 3 agents: ~100 tokens (Kimi Code CLI orchestrates)
 - MiniMax handles all 3: ~6000 tokens (subagent compute)
-- Claude reviews synthesis: ~500 tokens
-- **Total: ~600 tokens for Claude** (90% savings)
+- Kimi Code CLI reviews synthesis: ~500 tokens
+- **Total: ~600 tokens for Kimi Code CLI** (90% savings)
 
-The key: Claude plans (~100), MiniMax executes (~6000 in subagents), Claude reviews (~500).
+The key: Kimi Code CLI plans (~100), MiniMax executes (~6000 in subagents), Kimi Code CLI reviews (~500).
 
 ### Example Pattern
 
@@ -169,7 +198,7 @@ Agent: *Reviews results* ✅
 ### 1. MCP Server Integration
 - **Launch MCP Server**: Start MiniMax MCP server with proper environment configuration
 - **Status Monitoring**: Check server health and connectivity
-- **Token Efficiency**: Claude plans (~100 tokens), MiniMax executes (~2000 tokens saved)
+- **Token Efficiency**: Kimi Code CLI plans (~100 tokens), MiniMax executes (~2000 tokens saved)
 
 ### 2. Direct API Access
 - **Web Search**: Google-like search via `/v1/coding_plan/search` endpoint
@@ -177,8 +206,8 @@ Agent: *Reviews results* ✅
 - **No Dependencies**: Works with curl only (no Python or server required)
 
 ### 3. Terminal & Desktop Support
-- **Terminal Claude**: Use direct API calls via curl
-- **Desktop Claude**: Use MCP server with native tools
+- **Terminal Kimi Code CLI**: Use direct API calls via curl
+- **Desktop Kimi Code CLI**: Use MCP server with native tools
 - **Cursor IDE**: Compatible with existing slash commands
 
 ### 4. Production-Ready
@@ -188,14 +217,14 @@ Agent: *Reviews results* ✅
 
 ## Quick Start
 
-### Start MCP Server (Desktop Claude)
+### Start MCP Server (Desktop Kimi Code CLI)
 ```bash
 MINIMAX_API_KEY="<your-minimax-api-key>" \
 MINIMAX_API_HOST="https://api.minimax.io" \
 uvx minimax-coding-plan-mcp -y
 ```
 
-### Direct API Usage (Terminal Claude)
+### Direct API Usage (Terminal Kimi Code CLI)
 
 **Web Search:**
 ```bash
@@ -215,9 +244,9 @@ curl -s -X POST "https://api.minimax.io/v1/coding_plan/vlm" \
   -d '{"prompt":"What do you see?","image_url":"https://example.com/image.png"}'
 ```
 
-## Claude Extension Usage (Recommended)
+## Kimi Code CLI Extension Usage (Recommended)
 
-For Claude extension users, call the MiniMax API directly via the Bash tool - no intermediate scripts needed.
+For Kimi Code CLI extension users, call the MiniMax API directly via the Bash tool - no intermediate scripts needed.
 
 **Web Search:**
 ```bash
@@ -237,24 +266,24 @@ curl -s -X POST "https://api.minimax.io/v1/coding_plan/vlm" \
   -d '{"prompt":"What do you see?","image_url":"https://example.com/image.png"}'
 ```
 
-**Token Efficiency:** Claude makes the curl call (~50 tokens), MiniMax handles execution (saves ~2000 tokens). This is the optimal pattern for extension usage.
+**Token Efficiency:** Kimi Code CLI makes the curl call (~50 tokens), MiniMax handles execution (saves ~2000 tokens). This is the optimal pattern for extension usage.
 
 ## Workflow Patterns
 
 ### Pattern 1: Research Delegation
-1. **Claude Plans** (minimal tokens ~50-100): "Search for Godot 4.5 features"
+1. **Kimi Code CLI Plans** (minimal tokens ~50-100): "Search for Godot 4.5 features"
 2. **MiniMax Executes** (heavy lifting ~2000 tokens): Web search via API
-3. **Claude Reviews** (oversight): Process results and provide insights
+3. **Kimi Code CLI Reviews** (oversight): Process results and provide insights
 
 ### Pattern 2: Image Analysis
-1. **Claude Directs** (planning): "Analyze this screenshot for UI issues"
+1. **Kimi Code CLI Directs** (planning): "Analyze this screenshot for UI issues"
 2. **MiniMax Analyzes** (computation): Image understanding via API
-3. **Claude Synthesizes** (quality control): Interpret analysis results
+3. **Kimi Code CLI Synthesizes** (quality control): Interpret analysis results
 
 ### Pattern 3: Plan Execution
-1. **Claude Creates Plan**: Structure approach and requirements
+1. **Kimi Code CLI Creates Plan**: Structure approach and requirements
 2. **MiniMax Executes**: Perform research, analysis, coding tasks
-3. **Claude Reviews**: Validate results and iterate as needed
+3. **Kimi Code CLI Reviews**: Validate results and iterate as needed
 
 ## Available Scripts
 
@@ -353,8 +382,8 @@ See [slash-commands.md](references/slash-commands.md) for command reference and 
 - Building workflows with AI collaboration
 
 **Choose Integration Method:**
-- **Terminal Claude**: Use direct API calls (curl)
-- **Desktop Claude**: Use MCP server (uvx)
+- **Terminal Kimi Code CLI**: Use direct API calls (curl)
+- **Desktop Kimi Code CLI**: Use MCP server (uvx)
 - **Cursor IDE**: Use slash commands or MCP tools
 
 ---

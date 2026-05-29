@@ -1,0 +1,16 @@
+{
+  "name": "lecture-iterator",
+  "repo": "The-Human-Company/ai-receptionist",
+  "path": ".claude/skills/lecture-iterator/SKILL.md",
+  "category": "documents",
+  "source": "github.com/The-Human-Company/ai-receptionist",
+  "dir_name": "lecture-iterator",
+  "downloaded_at": "2026-02-22T05:49:21.836554Z",
+  "author": "The-Human-Company",
+  "source_url": "https://github.com/The-Human-Company/ai-receptionist/blob/main/.claude/skills/lecture-iterator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/The-Human-Company/ai-receptionist/blob/main/.claude/skills/lecture-iterator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

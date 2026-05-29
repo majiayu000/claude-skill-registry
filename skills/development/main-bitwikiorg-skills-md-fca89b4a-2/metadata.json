@@ -1,9 +1,9 @@
 {
-  "name": "main",
+  "name": "__main__",
   "repo": "bitwikiorg/skills.md",
-  "path": "sources/langchain/main/SKILL.md",
+  "path": "sources/langchain/__main__/SKILL.md",
   "source": "github.com/bitwikiorg/skills.md",
-  "downloaded_at": "2026-01-22T01:14:58.303924Z",
+  "downloaded_at": "2026-01-22T01:15:03.109950Z",
   "dir_name": "main-bitwikiorg-skills-md-fca89b4a-2",
   "category": "development",
   "github_path": "sources/langchain/__main__",

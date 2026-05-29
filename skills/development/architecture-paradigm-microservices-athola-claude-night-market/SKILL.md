@@ -1,34 +1,24 @@
 ---
 name: architecture-paradigm-microservices
-description: |
-
-Triggers: architecture, team-autonomy, scalability, distributed-systems, microservices
-  Decompose systems into a suite of small, independently deployable services aligned
-  to specific business capabilities.
-
-  Triggers: microservices, service decomposition, independent deployment, team autonomy,
-  distributed system, API gateway, service mesh, bounded contexts, polyglot persistence
-
-  Use when: teams need high autonomy and independent releases, different capabilities
-  have distinct scaling needs, strong DevOps/SRE maturity exists, polyglot tech stacks needed
-
-  DO NOT use when: selecting from multiple paradigms - use architecture-paradigms first.
-  DO NOT use when: small team with low organizational complexity.
-  DO NOT use when: lack of DevOps maturity or limited platform engineering resources.
-  DO NOT use when: strong transactional consistency required across operations.
-
-  Consult this skill when designing or evolving microservices architectures.
-version: 1.3.5
+role: library
+description: 'Apply microservices for independent deployment and per-service scaling.'
+alwaysApply: false
 category: architectural-pattern
-tags: [architecture, microservices, distributed-systems, team-autonomy, scalability]
+tags:
+- architecture
+- microservices
+- distributed-systems
+- team-autonomy
+- scalability
 dependencies: []
-tools: [service-boundary-analyzer, api-contract-generator, resilience-patterns]
+tools: []
 usage_patterns:
-  - paradigm-implementation
-  - distributed-system-design
-  - team-scaling
-  - api-gateway-planning
+- paradigm-implementation
+- distributed-system-design
+- team-scaling
+- api-gateway-planning
 complexity: high
+model_hint: deep
 estimated_tokens: 900
 ---
 ## Table of Contents
@@ -39,7 +29,6 @@ estimated_tokens: 900
 - [Key Deliverables](#key-deliverables)
 - [Technology Guidance](#technology-guidance)
 - [Risks & Mitigations](#risks-mitigations)
-- [Troubleshooting](#troubleshooting)
 
 # The Microservices Architecture Paradigm
 
@@ -48,7 +37,7 @@ estimated_tokens: 900
 - When different business capabilities (bounded contexts) have distinct scaling requirements or would benefit from different technology stacks.
 - When there is a significant organizational commitment to investing in DevOps and SRE maturity, including advanced observability, CI/CD, and incident response capabilities.
 
-## When NOT to Use This Paradigm
+## When NOT To Use This Paradigm
 - When team size is small and organizational complexity is low
 - When lack of DevOps maturity or limited platform engineering resources
 - When system requires strong transactional consistency across operations
@@ -102,15 +91,16 @@ estimated_tokens: 900
   - **Mitigation**: Maintaining data consistency across services is a primary challenge. Employ patterns like Sagas for orchestrating transactions, validate message-based communication is idempotent, and use reconciliation jobs to handle eventual consistency.
 - **Incorrect Service Granularity ("Over-splitting")**:
   - **Mitigation**: If services are too small, the communication overhead can outweigh the benefits of distribution. validate each service owns a meaningful and substantial piece of functionality. Monitor change coupling between services to identify candidates for merging.
-## Troubleshooting
 
-### Common Issues
+## Concrete Components
 
-**Command not found**
-Ensure all dependencies are installed and in PATH
+These vocabulary items name the concrete tools and abstractions
+that show up when the paradigm is implemented. They are not
+required dependencies and they are not part of the skill's
+``tools:`` frontmatter (which is reserved for Claude Code tool
+restrictions). Use this list to disambiguate during architecture
+discussions.
 
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag
+- ``service-boundary-analyzer`` -- finds candidate seams via call-graph and data-ownership analysis
+- ``api-contract-generator`` -- OpenAPI/protobuf scaffolding for new service boundaries
+- ``resilience-patterns`` -- retry, circuit breaker, bulkhead, and timeout libraries

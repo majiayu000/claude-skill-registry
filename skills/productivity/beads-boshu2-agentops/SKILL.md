@@ -189,6 +189,7 @@ logging expectations, a named done state, and no dependency cycles.
 
 - [references/ANTI_PATTERNS.md](references/ANTI_PATTERNS.md)
 - [references/BOUNDARIES.md](references/BOUNDARIES.md)
+- [references/composition-over-invention.md](references/composition-over-invention.md) — Run `bd <subcmd> --help` before specifying enforcement commands; compose primitives, don't invent
 - [references/BR_REFERENCE.md](references/BR_REFERENCE.md)
 - [references/BV_TRIAGE.md](references/BV_TRIAGE.md)
 - [references/CLI_REFERENCE.md](references/CLI_REFERENCE.md)

@@ -25,7 +25,7 @@ Step 3 of development workflow:
 
 **If argument provided:**
 - File path: Read the file for brainstorming output
-- GitHub issue: Fetch with `gh issue view $ARG --comments`
+- GitHub issue number/URL: Fetch with `scripts/gh_issue_phase.sh get-issue $ARG`
 
 ## Workflow
 
@@ -98,6 +98,19 @@ List unknowns that must be resolved before planning.
 ### Next Step
 Ready to plan implementation. Enter Plan Mode or run `/plan`.
 ```
+
+## GitHub Issue Tracking
+
+**If a GitHub issue was provided or is available from prior phases:**
+
+Post design decision as a phase comment and set the label:
+
+```bash
+echo "$DESIGN_SUMMARY" | scripts/gh_issue_phase.sh post-phase $ISSUE design
+scripts/gh_issue_phase.sh set-label $ISSUE phase:design
+```
+
+Pass the issue number to the next skill (e.g., `/make-plan #42`).
 
 ## Common Mistakes
 

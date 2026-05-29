@@ -1,6 +1,6 @@
 ---
 name: dependency-graph
-description: 'Generate dependency graphs showing import relationships between modules or plugins.'
+description: Generates a Mermaid dependency graph showing import relationships between modules. Use when analyzing coupling, finding circular deps, or planning refactors.
 ---
 
 # Dependency Graph

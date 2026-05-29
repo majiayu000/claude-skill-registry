@@ -1,0 +1,16 @@
+{
+  "name": "linearization",
+  "repo": "plurigrid/asi",
+  "path": "skills/linearization/SKILL.md",
+  "source": "github.com/plurigrid/asi",
+  "downloaded_at": "2026-01-27T03:48:10.796402Z",
+  "dir_name": "linearization",
+  "category": "ai-ml",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/linearization/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

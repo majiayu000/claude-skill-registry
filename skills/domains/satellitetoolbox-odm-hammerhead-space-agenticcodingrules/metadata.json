@@ -1,0 +1,17 @@
+{
+  "name": "satellitetoolbox-odm",
+  "repo": "HAMMERHEAD-Space/AgenticCodingRules",
+  "path": ".claude/skills/satellitetoolbox-odm/SKILL.md",
+  "github_branch": "master",
+  "category": "domains",
+  "source": "github.com/HAMMERHEAD-Space/AgenticCodingRules",
+  "dir_name": "satellitetoolbox-odm-hammerhead-space-agenticcodingrules",
+  "downloaded_at": "2026-03-01T05:22:06.750775Z",
+  "author": "HAMMERHEAD-Space",
+  "source_url": "https://github.com/HAMMERHEAD-Space/AgenticCodingRules/blob/master/.claude/skills/satellitetoolbox-odm/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HAMMERHEAD-Space/AgenticCodingRules/blob/master/.claude/skills/satellitetoolbox-odm/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

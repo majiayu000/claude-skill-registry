@@ -1,0 +1,16 @@
+{
+  "name": "conductor-setup",
+  "repo": "rmyndharis/antigravity-skills",
+  "path": "skills/conductor-setup/SKILL.md",
+  "source": "github.com/rmyndharis/antigravity-skills",
+  "downloaded_at": "2026-01-29T07:48:46.929506Z",
+  "dir_name": "conductor-setup-rmyndharis-antigravity-skills",
+  "category": "workflow",
+  "author": "rmyndharis",
+  "source_url": "https://github.com/rmyndharis/antigravity-skills/blob/main/skills/conductor-setup/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Yudhi Armyndharis",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

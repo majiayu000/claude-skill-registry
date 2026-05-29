@@ -1,0 +1,17 @@
+{
+  "name": "media-library",
+  "repo": "NextSpark-js/nextspark",
+  "path": ".claude/skills/media-library/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/NextSpark-js/nextspark",
+  "dir_name": "media-library",
+  "downloaded_at": "2026-03-22T05:55:18.654650Z",
+  "author": "NextSpark-js",
+  "source_url": "https://github.com/NextSpark-js/nextspark/blob/main/.claude/skills/media-library/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/NextSpark-js/nextspark/blob/main/.claude/skills/media-library/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

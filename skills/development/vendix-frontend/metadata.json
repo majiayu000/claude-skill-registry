@@ -1,9 +1,9 @@
 {
-  "name": "vendix-frontend",
+  "name": "vendix-frontend-module",
   "repo": "Rzyfront/Vendix",
-  "path": "skills/vendix-frontend/SKILL.md",
+  "path": "skills/vendix-frontend-module/SKILL.md",
   "source": "github.com/Rzyfront/Vendix",
-  "downloaded_at": "2026-01-22T02:17:47.010348Z",
+  "downloaded_at": "2026-01-22T02:17:47.903763Z",
   "dir_name": "vendix-frontend",
   "category": "development",
   "github_path": "skills/vendix-frontend-module",

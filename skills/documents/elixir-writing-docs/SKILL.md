@@ -276,6 +276,14 @@ end
 
 The `@doc` tells the caller what `validate_coupon/1` does and returns. The inline comment explains an implementation decision that would otherwise be surprising.
 
+## Completing documentation (gates)
+
+Finish with these **sequenced** checks. Skip a step when it does not apply.
+
+1. **Doctests added or changed?** Run the project’s doctest verification (usually `mix test` for affected modules or the full suite). **Pass:** no doctest failures.
+2. **Cross-references, backticks, or `m:` links added or edited?** Run `mix docs`. **Pass:** the command completes; resolve ExDoc warnings about missing modules, callbacks, or bad links.
+3. **New or changed public API?** **Pass:** every exported `def` / `defmacro` has an intentional `@doc` or `@doc false`, and every public module has `@moduledoc` or `@moduledoc false`, consistent with your project’s policy.
+
 ## When to Load References
 
 - Writing doctests or debugging doctest failures --> [references/doctests.md](references/doctests.md)

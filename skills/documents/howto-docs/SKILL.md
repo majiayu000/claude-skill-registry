@@ -1,6 +1,7 @@
 ---
 name: howto-docs
 description: How-To guide patterns for documentation - task-oriented guides for users with specific goals
+user-invocable: false
 autoContext:
   whenUserAsks:
     - how to guide
@@ -303,6 +304,20 @@ Check your endpoint logs to confirm receipt.
 - [Webhook event reference](/reference/webhook-events)
 - [How to handle webhook retries](/how-to/webhook-retry-handling)
 ```
+
+## Hard gates (before publishing)
+
+Complete in order. Do not treat the doc as ready until each gate passes.
+
+1. **Goal lock** — Title starts with `How to` and names a specific outcome (verb + object). **Pass:** a reader can state what they will have done after following the guide, in one sentence, without reading the steps.
+
+2. **Prerequisites closed** — Everything required before step 1 is listed (access, tools, versions, prior guides). **Pass:** you cannot name a blocker that belongs in Prerequisites but is missing from the list.
+
+3. **Steps are atomic** — Each numbered step is one primary action; split if you would join with “and then” for unrelated actions. **Pass:** each step has a clear next action; risky steps (save, deploy, delete) state what the user should see after.
+
+4. **Success is observable** — The “Verify it worked” section names concrete signals (UI text, exit code, HTTP status, file path, log line). **Pass:** the reader can confirm success without interpreting vague “it works.”
+
+5. **Checklist complete** — Run the checklist below; every item is honestly yes or the guide is not ready to ship. **Pass:** all boxes checked.
 
 ## Checklist for How-To Guides
 

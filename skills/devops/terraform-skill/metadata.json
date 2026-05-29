@@ -2,10 +2,16 @@
   "name": "terraform-skill",
   "repo": "antonbabenko/terraform-skill",
   "path": "SKILL.md",
-  "source": "github.com/antonbabenko/terraform-skill",
-  "downloaded_at": "2026-01-22T01:12:48.177499Z",
-  "dir_name": "terraform-skill",
+  "github_branch": "master",
   "category": "devops",
-  "github_path": "",
-  "github_branch": "main"
+  "source": "github.com/antonbabenko/terraform-skill",
+  "dir_name": "terraform-skill",
+  "downloaded_at": "2026-04-22T01:31:26.483424Z",
+  "author": "antonbabenko",
+  "source_url": "https://github.com/antonbabenko/terraform-skill/blob/master/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/antonbabenko/terraform-skill/blob/master/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

@@ -1,7 +1,10 @@
 ---
 name: ln-760-security-setup
-description: Coordinates security scanning (secrets + deps). Delegates to ln-761/ln-762. Generates SECURITY.md, pre-commit hooks, CI workflow.
+description: "Sets up security scanning for secrets and dependency vulnerabilities. Use when adding security infrastructure to a project."
+license: MIT
 ---
+
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Security Setup Coordinator
 
@@ -9,7 +12,7 @@ L2 Domain Coordinator that orchestrates security scanning and configuration for 
 
 ## Purpose & Scope
 
-- Coordinate secret scanning (ln-761) and dependency audit (ln-762)
+- Coordinate secret scanning (ln-761) and dependency vulnerability audit (ln-625)
 - Aggregate findings from both workers into unified report
 - Generate security infrastructure: SECURITY.md, pre-commit hooks, CI workflow
 - Provide overall security score and risk assessment
@@ -43,11 +46,12 @@ L2 Domain Coordinator that orchestrates security scanning and configuration for 
 ### Phase 2: Delegate Scans
 
 **Step 1: Invoke ln-761 Secret Scanner**
-- Delegate via Skill tool
+- Delegate via Agent tool
 - Receive: findings list, severity summary, remediation guidance
 
-**Step 2: Invoke ln-762 Dependency Audit**
-- Delegate via Skill tool (can run parallel with Step 1)
+**Step 2: Invoke ln-625 Dependencies Auditor (mode=vulnerabilities_only)**
+- Delegate via Agent tool (can run parallel with Step 1)
+- Pass parameter: `mode=vulnerabilities_only`
 - Receive: vulnerability list, CVSS scores, fix recommendations
 
 ### Phase 3: Aggregate Reports
@@ -95,18 +99,49 @@ L2 Domain Coordinator that orchestrates security scanning and configuration for 
 
 ## Delegation Pattern
 
+> **CRITICAL:** All delegations use Agent tool with `subagent_type: "general-purpose"` for context isolation.
+
 | Worker | Parallel | Purpose |
 |--------|----------|---------|
 | ln-761-secret-scanner | Yes | Hardcoded secret detection |
-| ln-762-dependency-audit | Yes | Vulnerability scanning |
+| ln-625-dependencies-auditor | Yes | Vulnerability scanning (mode=vulnerabilities_only) |
 
-**Pattern:** Both workers can execute in parallel, then aggregate results.
+**Prompt template:**
+```
+Agent(description: "Secret scanning via ln-761",
+     prompt: "Execute security scanner.
+
+Step 1: Invoke worker:
+  Skill(skill: \"ln-761-secret-scanner\")
+
+CONTEXT:
+Project: {projectPath}",
+     subagent_type: "general-purpose")
+
+Agent(description: "Dependency vulnerability scan via ln-625",
+     prompt: "Execute vulnerability scanner.
+
+Step 1: Invoke worker:
+  Skill(skill: \"ln-625-dependencies-auditor\")
+
+CONTEXT:
+Project: {projectPath}
+Mode: vulnerabilities_only (only CVE scan, skip outdated/unused checks)",
+     subagent_type: "general-purpose")
+```
+
+**Pattern:** Both workers can execute in parallel via Agent tool, then aggregate results.
+
+**Anti-Patterns:**
+- ❌ Direct Skill tool invocation without Agent wrapper
+- ❌ Any execution bypassing subagent context isolation
+- ❌ Calling ln-625 without mode parameter (would run full audit)
 
 ---
 
 ## Definition of Done
 
-- [ ] Both workers (ln-761, ln-762) invoked and completed
+- [ ] Both workers (ln-761, ln-625) invoked and completed
 - [ ] Findings aggregated with severity classification
 - [ ] SECURITY.md created/updated
 - [ ] Pre-commit hook configured (or recommendation logged)
@@ -126,5 +161,15 @@ L2 Domain Coordinator that orchestrates security scanning and configuration for 
 
 ---
 
-**Version:** 2.0.0
-**Last Updated:** 2026-01-10
+## Critical Rules
+
+- **Always pass `mode=vulnerabilities_only` to ln-625** — full audit mode is not appropriate for bootstrap context
+- **Preserve existing configs** — if `.gitleaks.toml`, `SECURITY.md`, or `.pre-commit-config.yaml` exist, update rather than overwrite
+- **Use Agent tool with `subagent_type: "general-purpose"`** for all worker delegations (context isolation)
+- **Never fail on missing tools** — log warnings for unavailable scanners, continue with available ones
+- **Critical findings block completion** — flag for immediate attention before returning to parent
+
+---
+
+**Version:** 3.0.0
+**Last Updated:** 2026-02-05

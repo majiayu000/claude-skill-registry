@@ -4,6 +4,7 @@ description: "Create API reference documentation from docstrings. Use when docum
 mcp_fallback: none
 category: generation
 tier: 2
+user-invocable: false
 ---
 
 # Generate API Docs

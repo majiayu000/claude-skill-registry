@@ -1,0 +1,17 @@
+{
+  "name": "using-pendle-adapter",
+  "repo": "WayfinderFoundation/wayfinder-paths-sdk",
+  "path": ".claude/skills/using-pendle-adapter/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/WayfinderFoundation/wayfinder-paths-sdk",
+  "dir_name": "using-pendle-adapter",
+  "downloaded_at": "2026-03-22T06:30:16.333457Z",
+  "author": "WayfinderFoundation",
+  "source_url": "https://github.com/WayfinderFoundation/wayfinder-paths-sdk/blob/main/.claude/skills/using-pendle-adapter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/WayfinderFoundation/wayfinder-paths-sdk/blob/main/.claude/skills/using-pendle-adapter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

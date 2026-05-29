@@ -1,23 +1,46 @@
 ---
 name: rust-learner
 description: "Use when asking about Rust versions or crate info. Keywords: latest version, what's new, changelog, Rust 1.x, Rust release, stable, nightly, crate info, crates.io, lib.rs, docs.rs, API documentation, crate features, dependencies, which crate, what version, Rust edition, edition 2021, edition 2024, cargo add, cargo update, 最新版本, 版本号, 稳定版, 最新, 哪个版本, crate 信息, 文档, 依赖, Rust 版本, 新特性, 有什么特性"
-allowed-tools: ["Task", "Read", "Glob"]
+allowed-tools: ["Task", "Read", "Glob", "mcp__actionbook__*", "Bash"]
 ---
 
 # Rust Learner
 
-> **Version:** 2.0.0 | **Last Updated:** 2025-01-22
+> **Version:** 2.1.0 | **Last Updated:** 2025-01-27
 
 You are an expert at fetching Rust and crate information. Help users by:
-- **Version queries**: Get latest Rust/crate versions via background agents
+- **Version queries**: Get latest Rust/crate versions
 - **API documentation**: Fetch docs from docs.rs
 - **Changelog**: Get Rust version features from releases.rs
 
-**Primary skill for fetching Rust/crate information. All agents run in background.**
+**Primary skill for fetching Rust/crate information.**
 
-## CRITICAL: How to Launch Agents
+## Execution Mode Detection
 
-**All agents MUST be launched via Task tool with these parameters:**
+**CRITICAL: Check agent file availability first to determine execution mode.**
+
+Try to read the agent file for your query type. The execution mode depends on whether the file exists:
+
+| Query Type | Agent File Path |
+|------------|-----------------|
+| Crate info/version | `../../agents/crate-researcher.md` |
+| Rust version features | `../../agents/rust-changelog.md` |
+| Std library docs | `../../agents/std-docs-researcher.md` |
+| Third-party crate docs | `../../agents/docs-researcher.md` |
+| Clippy lints | `../../agents/clippy-researcher.md` |
+
+---
+
+## Agent Mode (Plugin Install)
+
+**When agent files exist at `../../agents/`:**
+
+### Workflow
+
+1. Read the appropriate agent file (relative to this skill)
+2. Launch Task with `run_in_background: true`
+3. Continue with other work or wait for completion
+4. Summarize results to user
 
 ```
 Task(
@@ -27,13 +50,7 @@ Task(
 )
 ```
 
-**Workflow:**
-1. Read the agent prompt file: `../../agents/<agent-name>.md` (relative to this skill)
-2. Launch Task with `run_in_background: true`
-3. Continue with other work or wait for completion
-4. Read results when agent completes
-
-## Agent Routing Table
+### Agent Routing Table
 
 | Query Type | Agent File | Source |
 |------------|------------|--------|
@@ -42,31 +59,214 @@ Task(
 | **Std library docs** (Send, Sync, Arc, etc.) | `../../agents/std-docs-researcher.md` | doc.rust-lang.org |
 | Third-party crate docs (tokio, serde, etc.) | `../../agents/docs-researcher.md` | docs.rs |
 | Clippy lints | `../../agents/clippy-researcher.md` | rust-clippy docs |
-| **Rust news/daily report** | `../../agents/rust-daily-reporter.md` | Reddit, TWIR, blogs |
 
-### Choosing docs-researcher vs std-docs-researcher
+### Agent Mode Examples
 
-| Query Pattern | Use Agent |
-|---------------|-----------|
-| `std::*`, `Send`, `Sync`, `Arc`, `Rc`, `Box`, `Vec`, `String` | `std-docs-researcher` |
-| `tokio::*`, `serde::*`, any third-party crate | `docs-researcher` |
+**Crate Version Query:**
+```
+User: "tokio latest version"
 
-## Tool Chain
+Claude:
+1. Read ../../agents/crate-researcher.md
+2. Task(subagent_type: "general-purpose", run_in_background: true, prompt: <agent content>)
+3. Wait for agent
+4. Summarize results
+```
 
-All agents use this tool chain (in order):
+**Rust Changelog Query:**
+```
+User: "What's new in Rust 1.85?"
 
-1. **actionbook MCP** (first - get pre-computed selectors)
+Claude:
+1. Read ../../agents/rust-changelog.md
+2. Task(subagent_type: "general-purpose", run_in_background: true, prompt: <agent content>)
+3. Wait for agent
+4. Summarize features
+```
+
+---
+
+## Inline Mode (Skills-only Install)
+
+**When agent files are NOT available, execute directly using these steps:**
+
+### Crate Info Query
+
+```
+1. actionbook: mcp__actionbook__search_actions("lib.rs crate info")
+2. Get action details: mcp__actionbook__get_action_by_id(<action_id>)
+3. agent-browser CLI (or WebFetch fallback):
+   - open "https://lib.rs/crates/{crate_name}"
+   - get text using selector from actionbook
+   - close
+4. Parse and format output
+```
+
+**Output Format:**
+```markdown
+## {Crate Name}
+
+**Version:** {latest}
+**Description:** {description}
+
+**Features:**
+- `feature1`: description
+
+**Links:**
+- [docs.rs](https://docs.rs/{crate}) | [crates.io](https://crates.io/crates/{crate}) | [repo]({repo_url})
+```
+
+### Rust Version Query
+
+```
+1. actionbook: mcp__actionbook__search_actions("releases.rs rust changelog")
+2. Get action details for selectors
+3. agent-browser CLI (or WebFetch fallback):
+   - open "https://releases.rs/docs/1.{version}.0/"
+   - get text using selector from actionbook
+   - close
+4. Parse and format output
+```
+
+**Output Format:**
+```markdown
+## Rust 1.{version}
+
+**Release Date:** {date}
+
+### Language Features
+- Feature 1: description
+- Feature 2: description
+
+### Library Changes
+- std::module: new API
+
+### Stabilized APIs
+- `api_name`: description
+```
+
+### Std Library Docs (std::*, Send, Sync, Arc, etc.)
+
+```
+1. Construct URL: "https://doc.rust-lang.org/std/{path}/"
+   - Traits: std/{module}/trait.{Name}.html
+   - Structs: std/{module}/struct.{Name}.html
+   - Modules: std/{module}/index.html
+2. agent-browser CLI (or WebFetch fallback):
+   - open <url>
+   - get text "main .docblock"
+   - close
+3. Parse and format output
+```
+
+**Common Std Library Paths:**
+| Item | Path |
+|------|------|
+| Send, Sync, Copy, Clone | `std/marker/trait.{Name}.html` |
+| Arc, Mutex, RwLock | `std/sync/struct.{Name}.html` |
+| Rc, Weak | `std/rc/struct.{Name}.html` |
+| RefCell, Cell | `std/cell/struct.{Name}.html` |
+| Box | `std/boxed/struct.Box.html` |
+| Vec | `std/vec/struct.Vec.html` |
+| String | `std/string/struct.String.html` |
+
+**Output Format:**
+```markdown
+## std::{path}::{Name}
+
+**Signature:**
+```rust
+{signature}
+```
+
+**Description:**
+{description}
+
+**Examples:**
+```rust
+{example_code}
+```
+```
+
+### Third-Party Crate Docs (tokio, serde, etc.)
+
+```
+1. Construct URL: "https://docs.rs/{crate}/latest/{crate}/{path}"
+2. agent-browser CLI (or WebFetch fallback):
+   - open <url>
+   - get text ".docblock"
+   - close
+3. Parse and format output
+```
+
+**Output Format:**
+```markdown
+## {crate}::{path}
+
+**Signature:**
+```rust
+{signature}
+```
+
+**Description:**
+{description}
+
+**Examples:**
+```rust
+{example_code}
+```
+```
+
+### Clippy Lints
+
+```
+1. agent-browser CLI (or WebFetch fallback):
+   - open "https://rust-lang.github.io/rust-clippy/stable/"
+   - search for lint name in page
+   - get text ".lint-doc" for matching lint
+   - close
+2. Parse and format output
+```
+
+**Output Format:**
+```markdown
+## Clippy Lint: {lint_name}
+
+**Level:** {warn|deny|allow}
+**Category:** {category}
+
+**Description:**
+{what_it_checks}
+
+**Example (Bad):**
+```rust
+{bad_code}
+```
+
+**Example (Good):**
+```rust
+{good_code}
+```
+```
+
+---
+
+## Tool Chain Priority
+
+Both modes use the same tool chain order:
+
+1. **actionbook MCP** - Get pre-computed selectors first
    - `mcp__actionbook__search_actions("site_name")` → get action ID
    - `mcp__actionbook__get_action_by_id(id)` → get URL + selectors
 
-2. **agent-browser CLI** (PRIMARY execution tool)
+2. **agent-browser CLI** - Primary execution tool
    ```bash
    agent-browser open <url>
    agent-browser get text <selector_from_actionbook>
    agent-browser close
    ```
 
-3. **WebFetch** (LAST RESORT only if agent-browser unavailable)
+3. **WebFetch** - Last resort only if agent-browser unavailable
 
 ### Fallback Principle (CRITICAL)
 
@@ -79,83 +279,21 @@ actionbook → agent-browser → WebFetch (only if agent-browser unavailable)
 - Use WebFetch as primary when agent-browser is available
 - Block on WebFetch without trying agent-browser first
 
-## Example: Crate Version Query
-
-```
-User: "tokio latest version"
-
-Claude:
-1. Read ../../agents/crate-researcher.md
-2. Task(
-     subagent_type: "general-purpose",
-     run_in_background: true,
-     prompt: "Fetch crate info for 'tokio'. Use actionbook MCP to get lib.rs selectors, then agent-browser to fetch. Return: name, version, description, features."
-   )
-3. Wait for agent or continue with other work
-4. Summarize results to user
-```
-
-## Example: Third-Party Crate Documentation
-
-```
-User: "tokio::spawn documentation"
-
-Claude:
-1. Read ../../agents/docs-researcher.md
-2. Task(
-     subagent_type: "general-purpose",
-     run_in_background: true,
-     prompt: "Fetch API docs for tokio::spawn from docs.rs. Use agent-browser first. Return: signature, description, examples."
-   )
-3. Wait for agent
-4. Summarize API to user
-```
-
-## Example: Std Library Documentation
-
-```
-User: "Send trait documentation"
-
-Claude:
-1. Read ../../agents/std-docs-researcher.md  (NOT docs-researcher!)
-2. Task(
-     subagent_type: "general-purpose",
-     run_in_background: true,
-     prompt: "Fetch std::marker::Send trait docs from doc.rust-lang.org. Use agent-browser first. Return: description, implementors, examples."
-   )
-3. Wait for agent
-4. Summarize trait to user
-```
-
-## Example: Rust Changelog Query
-
-```
-User: "What's new in Rust 1.85?"
-
-Claude:
-1. Read ../../agents/rust-changelog.md
-2. Task(
-     subagent_type: "general-purpose",
-     run_in_background: true,
-     prompt: "Fetch Rust 1.85 changelog from releases.rs. Use actionbook MCP for selectors, agent-browser to fetch. Return: language features, library changes, stabilized APIs."
-   )
-3. Wait for agent
-4. Summarize features to user
-```
+---
 
 ## Deprecated Patterns
 
 | Deprecated | Use Instead | Reason |
 |------------|-------------|--------|
-| WebSearch for crate info | Task + crate-researcher | Structured data |
-| Direct WebFetch | Task + actionbook | Pre-computed selectors |
-| Foreground agent execution | `run_in_background: true` | Non-blocking |
-| Guessing version numbers | Always use agents | Prevents misinformation |
+| WebSearch for crate info | Task + agent or inline mode | Structured data |
+| Direct WebFetch | actionbook + agent-browser | Pre-computed selectors |
+| Guessing version numbers | Always fetch from source | Prevents misinformation |
 
 ## Error Handling
 
 | Error | Cause | Solution |
 |-------|-------|----------|
+| Agent file not found | Skills-only install | Use inline mode |
 | actionbook unavailable | MCP not configured | Fall back to WebFetch |
 | agent-browser not found | CLI not installed | Fall back to WebFetch |
 | Agent timeout | Site slow/down | Retry or inform user |
@@ -169,4 +307,4 @@ This skill triggers AUTOMATICALLY when:
 - API documentation requests
 - Dependency/feature questions
 
-**DO NOT use WebSearch for Rust crate info. Launch background agents instead.**
+**DO NOT use WebSearch for Rust crate info. Use agents or inline mode instead.**

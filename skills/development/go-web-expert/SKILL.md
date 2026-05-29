@@ -24,6 +24,20 @@ Five non-negotiable rules for production-quality Go web applications. Every hand
 | 4 | Testability | Every handler has a `_test.go` using `httptest` with table-driven tests |
 | 5 | Documentation | Every exported symbol has a Go doc comment starting with its name |
 
+### Hard gates (new HTTP handler)
+
+Apply **in order**. Do not treat the next step as done until the **Pass when** for the current step is satisfied (objective evidence on disk or in test output—not “I checked mentally”).
+
+1. **Dependencies (Rule 1)** — **Pass when:** the handler is a method on a struct that holds every mutable dependency (`db`, logger, HTTP clients, caches); any new package-level `var` is only in the allowlist under [What Is Allowed at Package Level](#what-is-allowed-at-package-level). *Evidence:* constructor wires deps; no new forbidden globals from that list.
+
+2. **Boundary (Rule 3)** — **Pass before** calling service/domain code: **Pass when:** the request decodes into a tagged struct and `validate.Struct` (or equivalent) runs; invalid JSON and validation failures have defined HTTP status bodies (e.g. 400/422). *Evidence:* decode + `validate.Struct` appear in the handler; tests or manual run show 422/400 for bad input.
+
+3. **Errors (Rule 2)** — **Pass when:** no `_` discards on the handler path; `json.NewEncoder(w).Encode` errors are handled; errors passed up or logged use wrapping (`%w`) or mapped `AppError` as this skill prescribes. *Evidence:* review the diff for ignored errors and bare `return err` without context where wrapping is required.
+
+4. **Tests (Rule 4)** — **Pass when:** a `_test.go` exists for the handler package and calls `ServeHTTP` with `httptest`, including at least one success case and one non-2xx case (validation, not found, or domain error). *Evidence:* test file path exists; `go test` for that package passes.
+
+5. **Documentation (Rule 5)** — **Pass when:** every **new or changed** exported identifier in the change has a doc comment whose first line starts with that identifier’s name. *Evidence:* `go doc <pkg>` or the IDE/doc preview shows summaries for new exports.
+
 ---
 
 ## Rule 1: Zero Global State

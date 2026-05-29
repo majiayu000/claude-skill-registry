@@ -1,9 +1,9 @@
 ---
 name: aggregates
-description: Regel 05: Aggregates und Aggregate Roots. Use when implementing DDD patterns.
+description: Règle 05 : Aggregates et Aggregate Roots. Use when implementing DDD patterns.
 ---
 
-# Regel 05: Aggregates und Aggregate Roots
+# Règle 05 : Aggregates et Aggregate Roots
 
 This skill provides guidelines and best practices.
 

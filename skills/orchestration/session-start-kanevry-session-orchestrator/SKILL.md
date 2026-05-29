@@ -29,15 +29,37 @@ Read `skills/_shared/bootstrap-gate.md` and execute the gate check. If the gate 
 Do NOT proceed past Phase 0 if GATE_CLOSED. There is no bypass. Refer to `skills/_shared/bootstrap-gate.md` for the full HARD-GATE constraints.
 </HARD-GATE>
 
+## Phase 0.5: Parallel-Aware Preamble
+
+> Skip silently when `persistence: false` in Session Config.
+
+Before Phase 1, run the parallel-aware preamble per `skills/_shared/parallel-aware-preamble.md`. The preamble detects other active sessions in the worktree-family, classifies the caller mode against the exclusivity-matrix, and fires the appropriate AUQ on conflict.
+
+This runs BEFORE the local session-lock acquire in Phase 1.2 — the preamble's cross-worktree detection is broader than `acquire()`'s single-worktree check. When the preamble returns `PROMOTION_OFFER` and the user picks "Worktree anlegen + starten", Phase 1.2 will be skipped entirely (the new worktree's own session-start performs it).
+
+**Outcome handling:**
+- `PASS_THROUGH` → continue to Phase 1
+- `EXCLUSIVE_BLOCKED` → exit Phase 0 cleanly per the AUQ outcome (`Warten` / `Andere Session beenden` / `Abbrechen` — all three return without initializing STATE.md)
+- `PROMOTION_OFFER` with user picking "Worktree anlegen + starten" → call `enterWorktree({ basePath, sessionId, branch, repoRoot })` from `scripts/lib/autopilot/worktree-pipeline.mjs`. Compute params: `basePath = path.dirname(repoRoot)`, `sessionId` from resolveSemanticSessionId(), `branch` from current HEAD, `repoRoot = process.cwd()`. On success, exit Phase 0 immediately — the new worktree's own session-start runs from scratch (Phase 1 onwards), Phase 1.2 session-lock-acquire is the new worktree's responsibility. On enterWorktree failure (`WorktreeBoundaryError` or `git worktree add` non-zero exit), emit stderr WARN `parallel-aware: enterWorktree failed: <err>; falling back to Manuell` and proceed via the Manuell path.
+- `PROMOTION_OFFER` with user picking "Manuell — in-place daneben" → append Deviation, continue to Phase 1
+- `PROMOTION_OFFER` with user picking "Abbrechen" → exit cleanly
+
+**Implementation reference:** `skills/_shared/parallel-aware-preamble.md § Implementation`.
+**AUQ reference:** `skills/_shared/parallel-aware-auq.md`.
+
 ## Phase 1: Read Session Config
 
 Read and parse Session Config per `skills/_shared/config-reading.md`. Store result as `$CONFIG`.
 
 ## Phase 1.2: Session Lock Acquire (#330)
 
+> **See also Phase 0.5 (Parallel-Aware Preamble)** — the cross-worktree detection runs first. This Phase 1.2 handles the single-worktree local-lock semantics that complement the preamble.
+
 > Skip this phase if `persistence` config is `false`.
 
 Acquire a distributed session-lock to detect parallel sessions in the same repo before initializing STATE.md. This prevents two concurrent Claude/Codex sessions from stomping each other's wave state and metrics writes.
+
+**Mechanical wiring (Epic #583, 2026-05-27):** The SessionStart hook (`hooks/on-session-start.mjs` → `hooks/_lib/lock-bootstrap.mjs`) now writes `.orchestrator/session.lock` mechanically BEFORE this skill's prose runs. The prose Phase 1.2 becomes confirmatory — it verifies the lock exists with the expected shape via `readLock({ repoRoot: process.cwd() })`. Re-call `acquire()` only if `readLock()` returns `null` (mechanical hook failed) OR the existing lock's `session_id` does not match the current session's id (a rare divergence — surface via AUQ before overwriting). The decision flow below still applies to all three outcomes (active / stale / fs-error) when the prose path needs to acquire.
 
 ```javascript
 import { acquire, forceAcquire } from 'scripts/lib/session-lock.mjs';
@@ -107,6 +129,8 @@ Where `sessionId` is the session identifier derived from the session type and ti
 4. **`result.ok === false`** with `reason === 'fs-error'**:
    - Filesystem error when writing the lock file. Log `⚠ session-lock: acquire failed — <error>. Continuing without lock (degraded mode).` and proceed without a lock. Do NOT block the session for a transient FS error.
 
+> **New reasons from P1.2 #570:** When called with the optional `activeSessions` argument, `acquire()` can also return `active-incompatible-exclusive`, `active-compatible-parallel`, or `active-readonly-bypass`. Session-start invokes `acquire()` WITHOUT `activeSessions` (the preamble in Phase 0.5 already handled cross-worktree detection); these new reasons surface only in callers that bypass the preamble. Other entry-points (autopilot, session-plan, wave-executor, session-end) follow the same pattern.
+
 ### Cross-host behaviour
 
 When `existingLock.host !== os.hostname()`, PID liveness cannot be checked (`pidAlive: null`). In this case:
@@ -114,6 +138,40 @@ When `existingLock.host !== os.hostname()`, PID liveness cannot be checked (`pid
 - For stale reasons: the recommendation is still **Reclaim** only if TTL is clearly expired (>2× ttl_hours). Otherwise default to **Abort**.
 - **Never auto-reclaim cross-host locks** under any circumstance — always present the AUQ and let the user decide.
 - The AUQ question text for cross-host cases should note: `"(cross-host — PID liveness cannot be verified)"`.
+
+## Phase 1.2.1: Peer-Guard (Epic #583 defense-in-depth)
+
+> Skip this phase if `persistence` config is `false`.
+
+After Phase 1.2 acquires (or confirms) the lock, call `checkPeerStateMd(repoRoot, sessionId)` from `scripts/lib/state-md-peer-guard.mjs`. This catches the rare case where lock-based detection missed an active peer (e.g., the peer's `session.lock` was force-deleted by an out-of-band sweep but STATE.md is still `status: active`, OR the peer's registry write succeeded but the lock-bootstrap hook crashed before the lock landed).
+
+```javascript
+import { findPeers } from '$PLUGIN_ROOT/scripts/lib/peer-discovery.mjs';
+const { peers } = await findPeers(process.cwd(), { mySessionId: sessionId });
+const peer = peers.find((p) => p.source === 'state-md') ?? null;
+// Phase 1.2.1 consumes only the 'state-md' subset (STATE.md surface only).
+if (peer) {
+  // STATE.md is owned by an active peer — do NOT overwrite.
+  // peer.sessionId, peer.mode, peer.currentWave, peer.ageHours are populated.
+  // Fire the Worktree-Promotion AUQ from parallel-aware-auq.md.
+}
+```
+
+### Decision flow
+
+1. **`peer === null`** → no active peer owns STATE.md. Continue to Phase 1.5.
+2. **`peer !== null`** → STATE.md is owned by a live peer session. **Do NOT proceed with the default Phase 1.5/1b STATE.md overwrite.** Fire the Worktree-Promotion AUQ from `skills/_shared/parallel-aware-auq.md` (same options the Phase 0.5 preamble would emit on `PROMOTION_OFFER`).
+   - User picks "Worktree anlegen + starten" → call `enterWorktree(...)` and exit Phase 1 immediately (the new worktree's own session-start runs from scratch).
+   - User picks "Manuell — in-place daneben" → append a Deviation describing the missed peer detection, continue to Phase 1.5. STATE.md WILL be overwritten — the user has explicitly accepted that risk.
+   - User picks "Abbrechen" → exit cleanly.
+
+### Soft-gate semantics
+
+This is a SOFT-GATE — the operator can override via the AUQ — but the warning is mandatory and must not be silenced. Treat any `checkPeerStateMd` failure (read error, malformed STATE.md, etc.) as `peer === null` (fail-open: do not block the session for a corrupted STATE.md file; the rest of the parallel-aware machinery still applies).
+
+### Why this complements Phase 1.2
+
+Phase 1.2 owns the `.orchestrator/session.lock` file; Phase 1.2.1 owns the STATE.md frontmatter. The two surfaces can disagree (briefly, during a crash; durably, if a sweep deleted one but not the other). The Peer-Guard treats STATE.md as a second, independent source of truth — if EITHER source says a peer is active, the coordinator must pause before stomping shared state.
 
 ## Phase 1.5: Session Continuity
 
@@ -488,7 +546,19 @@ Group issues by:
 
    The banner is non-blocking — display in the Session Overview, do not halt the session. If `ci-status-banner.mjs` is absent (pre-#369 plugin install), skip silently.
 
-   All banners are non-blocking — display in the Session Overview, do not halt the session. If `bootstrap-lock-freshness.mjs` is absent (pre-#186 plugin install), skip silently.
+   Additionally, invoke the QG-command-drift probe (`scripts/lib/qg-command-drift-banner.mjs`) via `await checkQgCommandDrift({ repoRoot })`. The helper returns `null` (silent no-op) when no drift or when Session Config load fails. When a non-null result is returned, render `result.message` alongside the bootstrap-lock-freshness, vault-staleness, and CI-status banners:
+   - **Drift detected** (`{ severity: 'warn', message: ... }`): render `result.message`. The message has the shape `"⚠ Session Config drift (*-command keys): <details>. Verify the overrides are intentional. See .claude/rules/quality-gates-autofix.md § Session Config Command Injection for the RCE-equivalent trust-model."`
+   - **No drift**: silent (no banner).
+
+   The banner is non-blocking — display in the Session Overview, do not halt the session. Cross-reference: `.claude/rules/quality-gates-autofix.md` § Session Config Command Injection — the banner exists because `*-command` keys are RCE-equivalent under the VCS trust-anchor model.
+
+   Additionally, invoke the peer-cards-staleness probe (`scripts/lib/peer-cards/staleness-banner.mjs`) via `await checkPeerCardsStaleness({ repoRoot })`. The helper returns `null` (silent no-op) when `.orchestrator/peers/` is absent, neither USER.md nor AGENT.md is present, no card is stale, or the reader fails. When a non-null result is returned (`{ severity: 'warn', message, stale }`), render `result.message` alongside the bootstrap-lock-freshness, vault-staleness, CI-status, and QG-command-drift banners:
+   - **Stale (>30d)**: `"⚠ peer-cards: USER.md (Nd), AGENT.md (Nd) stale (>30 days) — consider running /evolve --dialectic to refresh."` (one or both targets, whichever are stale).
+   - **Fresh / absent / malformed frontmatter**: silent (no banner).
+
+   Cross-reference: `.claude/rules/owner-persona.md` (host-wide `owner.yaml` operator identity) and `skills/vault-sync/SKILL.md` (`type: peer-card` value in the vault-frontmatter enum). Peer cards complement `owner.yaml` with per-repo behavioural identity for the operator (USER.md) and agent (AGENT.md).
+
+   All banners are non-blocking — display in the Session Overview, do not halt the session. If `bootstrap-lock-freshness.mjs` is absent (pre-#186 plugin install) or `peer-cards/staleness-banner.mjs` is absent (pre-#503 plugin install), skip silently.
 
 ## Phase 4.5: Resource Health (v3.1.0)
 
@@ -605,6 +675,40 @@ Present a Surface Health block immediately after the per-type grouping, before t
    - Effectiveness: [completion rate trend, probe value, carryover pattern]
    ```
 
+## Phase 6.7: Memory Banner (#505)
+
+> Skip this phase silently when `persistence: false` OR `memory.banner.enabled: false` in Session Config (default: enabled). Silent no-op pattern mirrors Phase 6.5 / Phase 7.5.
+
+Render a compact, operator-visible banner summarizing what session-start loaded from persistent memory. The banner anchors operator confidence (cf. doobidoo/mcp-memory-service v8.5.7's SessionStart Hook for the precedent UX) and signals to fresh-cohort operators that the system is learning.
+
+```javascript
+import { renderMemoryBanner } from '${PLUGIN_ROOT}/scripts/lib/memory-banner.mjs';
+
+const bannerText = await renderMemoryBanner({
+  repoRoot: process.cwd(),
+  config: $CONFIG,
+});
+if (bannerText) {
+  console.log(bannerText);   // print to user-facing stdout
+}
+```
+
+### Behaviour summary
+
+- **Persistence off** (`persistence: false`) → silent no-op.
+- **Banner disabled** (`memory.banner.enabled: false`) → silent no-op.
+- **Fresh repo** (0 learnings + 0 sessions) → single line: `📚 Memory: 0 entries yet (first session). I'll start learning from this session forward.`
+- **Populated**: header `📚 Loaded from memory` + top-5 surfaced learnings (subject + confidence + type) + memory-stats line (`N memory files · M sessions ever · last cleanup K days ago`) + (when present) one excerpt line each from `USER.md` + `AGENT.md` peer cards (first non-empty section header + first content line).
+
+### Implementation notes
+
+- All inputs are derived through `readBannerInputs()` in `scripts/lib/memory-banner.mjs`; the skill never reads JSONL directly — keeps the banner authoritative for output format.
+- Memory-file count = `*.md` files under the memory directory (resolved by `resolveMemoryDir()` from `scripts/lib/memory-paths.mjs`, extracted from `auto-dream.mjs` in #512). Sessions count = lines in `.orchestrator/metrics/sessions.jsonl`. `daysSinceCleanup` = floor((now - lastCleanupAt) / 86400000); `null` when never cleaned.
+- Banner truncates subject and excerpt strings at ~80 visible chars (with `…`).
+- The banner NEVER exposes raw JSON; all values are pre-cleaned scalars.
+
+Cross-reference: PRD F2.3 acceptance criteria (#505); `scripts/lib/memory-banner.mjs` API (`renderMemoryBanner`, `readBannerInputs`; test-only exports `_formatBanner`, `_extractCardExcerpt` carry the `_`-prefix per #542 convention).
+
 ## Phase 7: Research (session type dependent)
 
 > **Note:** Implementation-specific research (library APIs, best practices for specific code changes) is deferred to session-plan, which knows the exact scope. Session-start focuses on state analysis.
@@ -685,5 +789,6 @@ After user alignment:
 | (inline) Phase 2.6 | Steering docs gate + load — reads `.orchestrator/steering/{product,tech,structure}.md`; silent no-op when directory absent |
 | (inline) Phase 2.7 | GitLab Portfolio Snapshot — dry-run aggregation banner; gated on `gitlab-portfolio.enabled: true` + `vault-integration.enabled: true`; dispatches `scripts/lib/gitlab-portfolio/cli.mjs --dry-run`; 8s timeout; never blocks session-start |
 | `phase-4-5-resource-health.md` | Phase 4.5 full procedural body — resource probe, adaptive thresholds table, AUQ presentation, session-plan cap handoff |
+| (inline) Phase 6.7 | Memory Banner — `renderMemoryBanner` from `scripts/lib/memory-banner.mjs` (#505); silent no-op when `memory.banner.enabled: false` or `persistence: false` |
 | `phase-7-5-mode-selector.md` | Phase 7.5 full procedural body — buildLiveSignals, selectMode invocation, banner rendering, AUQ ordering protocol, graceful no-op rules, accuracy learning write |
 | `phase-8-5-express-path.md` | Phase 8.5 full procedural body — activation conditions, banner, coordinator-direct execution, STATE.md logging, condition examples table |

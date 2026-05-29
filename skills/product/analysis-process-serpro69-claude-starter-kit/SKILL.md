@@ -9,20 +9,20 @@ description: Turn the idea for a feature into a fully-formed PRD/design/specific
 
 ## Ideas and Prototypes
 
-_Use this for ideas that are not fully thought out and do not have a fully-formed PRD/design/specification and/or implementation-plan._
+_Use this for ideas that are not fully thought out and do not have a fully-formed design/specification and/or implementation-plan._
 
 **For example:** I've got an idea I want to talk through with you before we proceed with the implementation.
 
-**Your job:** Help me turn it into a fully formed design and spec, and eventually an implementation plan.
+**Your job:** Help me turn it into a fully formed design, spec, implementation plan, and task list.
 
 See [idea-process.md](./idea-process.md).
 
-## Existing task-master tasks
+## Continue WIP Feature
 
-_For tasks that already exist in task-master._
+_Use this to resume work on a feature that already has design docs and a task list in `/docs/wip/`._
 
-**For example:** Let's work on task 6 next.
+**For example:** Let's continue working on the auth system.
 
-**Your job:** Make sure the task is well-documented and you fully understand the requirements and how to implement it. Then implement the task using `implementation-process` skill.
+**Your job:** Review the current state of the feature, understand what's been done and what's next, then proceed with implementation.
 
 See [existing-task-process.md](./existing-task-process.md).

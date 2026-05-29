@@ -1,5 +1,6 @@
 ---
-name: cwicr-work-breakdown
+slug: "cwicr-work-breakdown"
+display_name: "CWICR Work Breakdown"
 description: "Break down CWICR work items into component resources. Decompose aggregate items, analyze resource composition, and generate detailed bills of resources."
 ---
 

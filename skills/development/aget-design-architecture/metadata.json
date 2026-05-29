@@ -1,0 +1,17 @@
+{
+  "name": "aget-design-architecture",
+  "repo": "aget-framework/aget",
+  "path": ".claude/skills/aget-design-architecture/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/aget-framework/aget",
+  "dir_name": "aget-design-architecture",
+  "downloaded_at": "2026-03-22T06:42:59.740461Z",
+  "author": "aget-framework",
+  "source_url": "https://github.com/aget-framework/aget/blob/main/.claude/skills/aget-design-architecture/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aget-framework/aget/blob/main/.claude/skills/aget-design-architecture/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

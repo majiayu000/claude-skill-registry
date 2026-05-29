@@ -15,7 +15,8 @@ At the start, use `update_plan` to track each step:
 2. Load task-specific skills
 3. Make the change
 4. Run verification
-5. Run `$finalize` skill
+5. Run `$preview` skill for UI/UX changes
+6. Run `$finalize` skill
 
 ## Step 1: Run `$code-style` Skill
 
@@ -35,7 +36,11 @@ Apply the change described by the current context — the user request, a prior 
 
 If a Verification section is in conversation context (e.g., from a plan file), execute the commands, smoke checks, or MCP tool invocations it specifies. If a check fails, run the `$investigate` skill. If a check is blocked by a dependency, unclear requirement, or environmental issue, use `request_user_input` to surface the blocker and let the user choose how to proceed. If no Verification section is in context, skip this step.
 
-## Step 5: Run `$finalize` Skill
+## Step 5: Run `$preview` Skill for UI/UX Changes
+
+If the change touches a user-facing surface (UI components, styles, templates, markup, user-facing routes or screens), run the `$preview` skill so the user can try it firsthand before QA. When it is unclear whether the change is user-facing, use `request_user_input` to ask whether to preview rather than skipping silently. Skip this step for changes with no user-facing surface (backend-only, CLI, library, build or config).
+
+## Step 6: Run `$finalize` Skill
 
 Run the `$finalize` skill.
 
@@ -43,5 +48,5 @@ Then update or check the active plan and proceed to any remaining task.
 
 ## Rules
 
-- Defer `git commit`, `git push`, and PR creation to Step 5.
+- Defer `git commit`, `git push`, and PR creation to Step 6.
 - Don't reference `.turbo/` content (filenames, IDs, headings) in code or comments. `.turbo/` is gitignored, so these references would be opaque to anyone reading without local copies.

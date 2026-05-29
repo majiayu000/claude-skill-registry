@@ -8,7 +8,7 @@ description: Pytest test development for Python microservices. Use when writing 
 ## Workflow
 
 1. **Identify behavior** - Target a single function/behavior per test
-2. **Write the test** - Plain function with AAA structure
+2. **Write the test** - Plain function (never a class) with AAA structure
 3. **Run and iterate** - Refine for readability and isolation
 
 ## Best Practices
@@ -27,6 +27,10 @@ description: Pytest test development for Python microservices. Use when writing 
 - Aim for meaningful coverage, not just high percentages
 - Keep imports at the top of the file, never inside test functions
 - Use blank lines to separate AAA sections, no comments needed
+- Use modern type hints: `dict[str, Any]`, `list[int]`, `str | None` (not `Dict`, `List`, `Optional`)
+- Consolidate assertions: Verify status code, response body, and side effects (DB state) in a single test function. Do not split these into separate tests.
+- Avoid implementation details: Do not test logging calls, private methods, path construction strings, or simple wrapper delegation.
+- Dataclasses for Parametrization: If a parametrized test needs more than 2 arguments, use a dataclass to structure the test cases.
 
 ## Project Structure
 
@@ -57,6 +61,14 @@ my-service/
 
 **Integration tests:** Real dependencies via testcontainers.
 
+## Anti-Patterns (Do Not Generate)
+
+- **Test Classes**: Do not use `class TestFoo:` to group tests. Use plain functions with descriptive names like `test_foo_does_x()`. Test classes add unnecessary indentation and `self` parameters.
+- **Logging Verification**: Do not test that `logger.error` was called. Exception raising is sufficient contract verification.
+- **Wrapper Tests**: Do not test methods that simply call another method (delegation). Test the underlying logic or the full chain.
+- **Path Construction**: Do not write tests solely to verify a URL string is built correctly; this is covered by the actual API call test.
+- **Atomic Fragmentation**: Do not write separate tests for `status_code`, `response_data`, and `db_state`. Combine them into one behavioral test.
+
 ## Test Naming
 
 Good names — specific about function and behavior:
@@ -81,6 +93,7 @@ Use blank lines to separate Arrange/Act/Assert — no comments needed:
 ```python
 from http import HTTPStatus
 
+# Good — plain function
 def test_create_user_returns_201_with_valid_data(client, make_user_payload):
     payload = make_user_payload(email="new@example.com")
 
@@ -88,6 +101,13 @@ def test_create_user_returns_201_with_valid_data(client, make_user_payload):
 
     assert response.status_code == HTTPStatus.CREATED
     assert response.json()["email"] == "new@example.com"
+
+# Bad — test class adds unnecessary structure
+class TestCreateUser:  # Don't do this
+    def test_returns_201(self, client, make_user_payload):
+        payload = make_user_payload(email="new@example.com")
+        response = client.post("/users", json=payload)
+        assert response.status_code == HTTPStatus.CREATED
 ```
 
 Test both success and error paths:
@@ -167,6 +187,20 @@ def test_create_job_status_with_error(): ...
 ```python
 # Skip: Testing that False stays False adds no value
 def test_error_stays_false_when_not_marked(): ...  # Don't write this
+```
+
+**Consolidate Initialization Tests**: Instead of testing every service property separately, verify the container in one go.
+
+```python
+# Good: Comprehensive Container Test
+def test_service_container_initializes_all_services(mock_client):
+    container = ServiceContainer(mock_client)
+
+    # Verify all services exist and share the client
+    assert isinstance(container.users, UserService)
+    assert isinstance(container.orders, OrderService)
+    assert container.users.client is mock_client
+    assert container.orders.client is mock_client
 ```
 
 ## Fixtures
@@ -372,31 +406,94 @@ Place container fixtures in `tests/integration/conftest.py` with `scope="module"
 
 ## Parametrization
 
-Use parametrization instead of loops:
+**Rule:** Use `pytest.mark.parametrize` for inputs. If the test case requires more than 2 arguments, define a dataclass at module level.
+
+### Dataclass Placement
+
+Define parametrization dataclasses after imports, before tests:
 
 ```python
-# Good: Parametrization
-@pytest.mark.parametrize("input_value,expected", [
-    ("hello", "HELLO"),
-    ("world", "WORLD"),
-    ("PyTest", "PYTEST"),
-])
-def test_uppercase_conversion(input_value, expected):
-    assert input_value.upper() == expected
+from dataclasses import dataclass, field
+from typing import Any
 
-# Bad: Loop inside test
-def test_uppercase_conversion_loop():
-    cases = [("hello", "HELLO"), ("world", "WORLD")]
-    for input_value, expected in cases:
-        assert input_value.upper() == expected  # Fails at first error
+import pytest
+
+pytestmark = pytest.mark.unit
+
+
+@dataclass
+class ApiRequestCase:
+    method: str
+    path: str
+    status_code: int
+    response_data: dict[str, Any]
+    request_kwargs: dict[str, Any] = field(default_factory=dict)
+    assertion_checks: dict[str, Any] = field(default_factory=dict)
+
+
+def test_api_client_request_successful_scenarios(case):
+    ...
 ```
 
-With IDs for clarity:
+### Complex Parametrization (Dataclass Pattern)
+
+Use dataclasses for 3+ parameters with modern type hints:
+
 ```python
-@pytest.mark.parametrize("status_code,should_retry", [
-    pytest.param(500, True, id="server_error_retries"),
-    pytest.param(400, False, id="client_error_no_retry"),
-])
+from dataclasses import dataclass, field
+from typing import Any
+
+@dataclass
+class ApiCase:
+    payload: dict[str, Any]
+    expected_status: int
+    expected_error: str | None = None
+    headers: dict[str, str] = field(default_factory=dict)
+
+@pytest.mark.parametrize("case", [
+    ApiCase(
+        payload={"email": "bad-format", "name": "Test"},
+        expected_status=400,
+        expected_error="Invalid email"
+    ),
+    ApiCase(
+        payload={"email": "good@test.com"},
+        expected_status=400,
+        expected_error="Field 'name' required"
+    ),
+], ids=lambda c: f"status_{c.expected_status}")
+def test_create_user_validation(client, case):
+    response = client.post("/users", json=case.payload, headers=case.headers)
+
+    assert response.status_code == case.expected_status
+    if case.expected_error:
+        assert case.expected_error in response.json()["detail"]
+```
+
+**ID Generation Tips:**
+- Use lambda to generate IDs from dataclass fields
+- Keep IDs concise but meaningful
+- Do not add fields solely for test IDs (like `description`)
+- Examples:
+  - `ids=lambda c: c.method.lower()`
+  - `ids=lambda c: f"{c.status}_{c.type}"`
+  - `ids=lambda c: f"{c.method.lower()}_{c.status_code}"`
+  - `ids=lambda c: "guaranteed_pass" if c.guaranteed_pass else "guaranteed_fail"`
+
+**Type Hints:**
+- Use lowercase: `dict[str, Any]`, `list[int]`, not `Dict`, `List`
+- Use pipe syntax: `str | None`, not `Optional[str]`
+- Only import `Any` from typing when needed
+
+### Simple Parametrization (Tuple Pattern)
+
+For 1 or 2 arguments, tuples are acceptable:
+
+```python
+@pytest.mark.parametrize("status_code, should_retry", [
+    (500, True),
+    (400, False),
+], ids=["server_error", "client_error"])
 def test_retry_logic(status_code, should_retry):
     assert should_retry_request(status_code) == should_retry
 ```
@@ -463,11 +560,15 @@ Before finishing, verify:
 
 - [ ] Tests placed in `tests/unit/` or `tests/integration/`
 - [ ] Imports at top of file, not inside functions
+- [ ] Modern type hints: `dict[str, Any]`, `list[int]`, `str | None`
+- [ ] Dataclasses defined at module level (after imports, before tests)
 - [ ] Plain functions, no test classes
 - [ ] Names follow `test_<function>_<behavior>`
 - [ ] Blank lines separate AAA sections (no comments)
 - [ ] One test per behavior (combine assertions for one operation's effects)
 - [ ] Parametrization used for input variations (True/False, different values)
+- [ ] Dataclasses used for 3+ parametrization arguments
+- [ ] Lambda-based test IDs generated from dataclass fields
 - [ ] No trivial tests (e.g., "False stays False")
 - [ ] Using `HTTPStatus` enum, not raw status codes
 - [ ] Testing both success and error paths

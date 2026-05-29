@@ -1,5 +1,6 @@
 ---
-name: cwicr-data-loader
+slug: "cwicr-data-loader"
+display_name: "CWICR Data Loader"
 description: "Load and parse DDC CWICR construction cost database from multiple formats: Parquet, Excel, CSV, Qdrant snapshots. Foundation for all CWICR operations."
 ---
 

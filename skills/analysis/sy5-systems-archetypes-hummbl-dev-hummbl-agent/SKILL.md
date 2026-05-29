@@ -16,11 +16,13 @@ Apply the SY5 Systems Archetypes transformation to recognize recurring dynamic p
 ## When to Use SY5
 
 ### Ideal Situations
+
 - Understand system-wide interactions and feedback loops
 - Detect patterns that emerge across components
 - Optimize for long-term system behavior, not just local gains
 
 ### Trigger Questions
+
 - "How can we use Systems Archetypes here?"
 - "What changes if we apply SY5 to this analyzing coordination patterns across teams?"
 - "Which assumptions does SY5 help us surface?"
@@ -28,18 +30,21 @@ Apply the SY5 Systems Archetypes transformation to recognize recurring dynamic p
 ## The SY5 Process
 
 ### Step 1: Define the focus
+
 ```typescript
 // Using SY5 (Systems Archetypes) - Establish the focus
 const focus = "Recognize recurring dynamic patterns across different domains";
 ```
 
 ### Step 2: Apply the model
+
 ```typescript
 // Using SY5 (Systems Archetypes) - Apply the transformation
 const output = applyModel("SY5", focus);
 ```
 
 ### Step 3: Synthesize outcomes
+
 ```typescript
 // Using SY5 (Systems Archetypes) - Capture insights and decisions
 const insights = summarize(output);
@@ -86,6 +91,7 @@ const result = applyModel("SY5", "Recognize recurring dynamic patterns across di
 ## Installation and Usage
 
 ### Nix Installation
+
 ```nix
 {
   programs.moltbot.plugins = [
@@ -95,11 +101,13 @@ const result = applyModel("SY5", "Recognize recurring dynamic patterns across di
 ```
 
 ### Manual Installation
+
 ```bash
 moltbot-registry install hummbl-agent/sy5-systems-archetypes
 ```
 
 ### Usage with Commands
+
 ```bash
 /apply-transformation SY5 "Recognize recurring dynamic patterns across different domains"
 ```

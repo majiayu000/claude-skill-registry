@@ -1,5 +1,6 @@
 ---
-name: llm-document-extraction
+slug: "llm-document-extraction"
+display_name: "Llm Document Extraction"
 description: "Extract structured data from construction documents using LLMs. Process RFIs, submittals, contracts, specifications. Convert unstructured PDFs to structured JSON/Excel."
 ---
 

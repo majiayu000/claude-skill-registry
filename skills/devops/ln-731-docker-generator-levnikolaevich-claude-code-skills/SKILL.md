@@ -1,13 +1,15 @@
 ---
 name: ln-731-docker-generator
-description: Generates Docker and docker-compose configuration for multi-container development
+description: "Generates Dockerfile and docker-compose configuration for multi-container development. Use when containerizing a project."
+license: MIT
 ---
+
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # ln-731-docker-generator
 
 **Type:** L3 Worker
 **Category:** 7XX Project Bootstrap
-**Parent:** ln-730-devops-setup
 
 Generates production-ready Docker configuration for containerized development.
 
@@ -183,6 +185,15 @@ Generated files must meet:
 | [docker_compose.template](references/docker_compose.template) | docker-compose.yml template |
 | [dockerignore.template](references/dockerignore.template) | .dockerignore template |
 | [nginx.template](references/nginx.template) | Nginx configuration |
+
+---
+
+## Definition of Done
+
+- [ ] Dockerfiles generated for all detected stack components (frontend/backend)
+- [ ] docker-compose.yml validates without errors (`docker-compose config`)
+- [ ] .dockerignore excludes sensitive files and build artifacts
+- [ ] All base images use pinned versions (not `latest`)
 
 ---
 

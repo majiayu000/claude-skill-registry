@@ -1,0 +1,16 @@
+{
+  "name": "fixme-todo-cleanup",
+  "repo": "HomericIntelligence/ProjectOdyssey",
+  "path": "skills/fixme-todo-cleanup/SKILL.md",
+  "category": "quality",
+  "source": "github.com/HomericIntelligence/ProjectOdyssey",
+  "dir_name": "fixme-todo-cleanup-homericintelligence-projectodyssey-2",
+  "downloaded_at": "2026-02-22T05:09:19.227781Z",
+  "author": "HomericIntelligence",
+  "source_url": "https://github.com/HomericIntelligence/ProjectOdyssey/blob/main/skills/fixme-todo-cleanup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HomericIntelligence/ProjectOdyssey/blob/main/skills/fixme-todo-cleanup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

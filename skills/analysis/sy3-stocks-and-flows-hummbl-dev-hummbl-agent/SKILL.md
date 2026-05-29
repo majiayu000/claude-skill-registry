@@ -16,11 +16,13 @@ Apply the SY3 Stocks & Flows transformation to distinguish accumulations from ra
 ## When to Use SY3
 
 ### Ideal Situations
+
 - Understand system-wide interactions and feedback loops
 - Detect patterns that emerge across components
 - Optimize for long-term system behavior, not just local gains
 
 ### Trigger Questions
+
 - "How can we use Stocks & Flows here?"
 - "What changes if we apply SY3 to this analyzing coordination patterns across teams?"
 - "Which assumptions does SY3 help us surface?"
@@ -28,18 +30,21 @@ Apply the SY3 Stocks & Flows transformation to distinguish accumulations from ra
 ## The SY3 Process
 
 ### Step 1: Define the focus
+
 ```typescript
 // Using SY3 (Stocks & Flows) - Establish the focus
 const focus = "Distinguish accumulations from rates of change affecting them";
 ```
 
 ### Step 2: Apply the model
+
 ```typescript
 // Using SY3 (Stocks & Flows) - Apply the transformation
 const output = applyModel("SY3", focus);
 ```
 
 ### Step 3: Synthesize outcomes
+
 ```typescript
 // Using SY3 (Stocks & Flows) - Capture insights and decisions
 const insights = summarize(output);
@@ -86,6 +91,7 @@ const result = applyModel("SY3", "Distinguish accumulations from rates of change
 ## Installation and Usage
 
 ### Nix Installation
+
 ```nix
 {
   programs.moltbot.plugins = [
@@ -95,11 +101,13 @@ const result = applyModel("SY3", "Distinguish accumulations from rates of change
 ```
 
 ### Manual Installation
+
 ```bash
 moltbot-registry install hummbl-agent/sy3-stocks-and-flows
 ```
 
 ### Usage with Commands
+
 ```bash
 /apply-transformation SY3 "Distinguish accumulations from rates of change affecting them"
 ```

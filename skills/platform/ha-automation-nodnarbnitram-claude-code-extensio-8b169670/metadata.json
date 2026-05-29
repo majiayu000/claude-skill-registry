@@ -1,0 +1,18 @@
+{
+  "name": "ha-automation",
+  "repo": "nodnarbnitram/claude-code-extensions",
+  "path": ".claude/skills/ha-automation/SKILL.md",
+  "source": "github.com/nodnarbnitram/claude-code-extensions",
+  "downloaded_at": "2026-01-22T02:20:20.642010Z",
+  "dir_name": "ha-automation-nodnarbnitram-claude-code-extensio-8b169670",
+  "category": "platform",
+  "github_path": ".claude/skills/ha-automation",
+  "github_branch": "main",
+  "author": "nodnarbnitram",
+  "source_url": "https://github.com/nodnarbnitram/claude-code-extensions/blob/main/.claude/skills/ha-automation/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Brandon Martin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

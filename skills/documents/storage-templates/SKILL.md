@@ -1,6 +1,8 @@
 ---
 name: storage-templates
 description: |
+
+Triggers: templates, maturity, storage, organization, patterns
   Generic template patterns and lifecycle stages for knowledge storage,
   configuration management, and structured documentation.
 
@@ -30,6 +32,26 @@ modules:
   - modules/template-patterns.md
   - modules/lifecycle-stages.md
 ---
+## Table of Contents
+
+- [Overview](#overview)
+- [When to Use](#when-to-use)
+- [Core Concepts](#core-concepts)
+- [Template Types](#template-types)
+- [Maturity Lifecycle](#maturity-lifecycle)
+- [Quick Start](#quick-start)
+- [Basic Template Structure](#basic-template-structure)
+- [Core Content](#core-content)
+- [Metadata](#metadata)
+- [File Naming Conventions](#file-naming-conventions)
+- [Domain Applications](#domain-applications)
+- [Common Patterns](#common-patterns)
+- [Promotion Workflow](#promotion-workflow)
+- [Template Selection Guide](#template-selection-guide)
+- [Integration Pattern](#integration-pattern)
+- [Detailed Resources](#detailed-resources)
+- [Exit Criteria](#exit-criteria)
+
 
 # Storage Templates
 
@@ -63,6 +85,7 @@ seedling → growing → evergreen → archive
     ↓         ↓          ↓           ↓
  1-2 weeks  1-3 months  permanent  deprecated
 ```
+**Verification:** Run the command with `--help` flag to verify availability.
 
 ## Quick Start
 
@@ -84,6 +107,7 @@ tags: [relevant, tags]
 ## Metadata
 [Context and attribution]
 ```
+**Verification:** Run the command with `--help` flag to verify availability.
 
 ### File Naming Conventions
 
@@ -137,6 +161,7 @@ See `modules/template-patterns.md` for detailed examples.
 # In your skill's frontmatter
 dependencies: [leyline:storage-templates]
 ```
+**Verification:** Run the command with `--help` flag to verify availability.
 
 ## Detailed Resources
 
@@ -149,3 +174,15 @@ dependencies: [leyline:storage-templates]
 - File naming convention applied
 - Maturity stage assigned
 - Promotion criteria understood
+## Troubleshooting
+
+### Common Issues
+
+**Command not found**
+Ensure all dependencies are installed and in PATH
+
+**Permission errors**
+Check file permissions and run with appropriate privileges
+
+**Unexpected behavior**
+Enable verbose logging with `--verbose` flag

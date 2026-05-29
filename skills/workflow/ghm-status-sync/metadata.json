@@ -1,0 +1,11 @@
+{
+  "name": "ghm-status-sync",
+  "repo": "mattgierhart/PRD-driven-context-engineering",
+  "path": ".claude/skills/ghm-status-sync/SKILL.md",
+  "source": "github.com/mattgierhart/PRD-driven-context-engineering",
+  "downloaded_at": "2026-01-22T02:02:06.891693Z",
+  "dir_name": "ghm-status-sync",
+  "category": "workflow",
+  "github_path": ".claude/skills/ghm-status-sync",
+  "github_branch": "main"
+}

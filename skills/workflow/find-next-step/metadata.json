@@ -1,0 +1,20 @@
+{
+  "name": "find-next-step",
+  "description": "",
+  "repo": "adamrdrew/ushabti",
+  "category": "workflow",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/adamrdrew/ushabti",
+  "github_path": "skills/find-next-step",
+  "github_branch": "master",
+  "dir_name": "find-next-step",
+  "downloaded_at": "2026-02-05T05:43:12.575807Z",
+  "author": "adamrdrew",
+  "source_url": "https://github.com/adamrdrew/ushabti/blob/master/skills/find-next-step/SKILL.md",
+  "license": "GPL-3.0",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

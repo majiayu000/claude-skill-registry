@@ -4,6 +4,8 @@ description: Coverage Gaps audit worker (L3). Identifies missing tests for criti
 allowed-tools: Read, Grep, Glob, Bash
 ---
 
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+
 # Coverage Gaps Auditor (L3 Worker)
 
 Specialized worker identifying missing tests for critical business logic.
@@ -18,36 +20,15 @@ Specialized worker identifying missing tests for critical business logic.
 
 ## Inputs (from Coordinator)
 
-Receives `contextStore` with critical paths classification, codebase structure, test file list.
+**MANDATORY READ:** Load `shared/references/task_delegation_pattern.md#audit-coordinator--worker-contract` for contextStore structure.
 
-**Domain-aware fields (NEW):**
-- `domain_mode`: `"domain-aware"` | `"global"` (optional, defaults to "global")
-- `current_domain`: `{name, path}` when domain_mode="domain-aware"
+Receives `contextStore` with: `tech_stack`, `testFilesMetadata`, `codebase_root`, `output_dir`.
 
-**Example contextStore (domain-aware):**
-```json
-{
-  "tech_stack": {...},
-  "best_practices": {...},
-  "testFilesMetadata": [...],
-  "codebase_root": "/project",
-  "domain_mode": "domain-aware",
-  "current_domain": {
-    "name": "orders",
-    "path": "src/orders"
-  }
-}
-```
+**Domain-aware:** Supports `domain_mode` + `current_domain` (see `audit_output_schema.md#domain-aware-worker-output`).
 
 ## Workflow
 
-1) **Parse context from contextStore**
-   - Extract tech_stack, best_practices, testFilesMetadata
-   - **Determine scan_path (NEW):**
-     ```
-     IF domain_mode == "domain-aware":
-       scan_path = codebase_root + "/" + current_domain.path
-       domain_name = current_domain.name
+1) **Parse context** — extract fields, determine `scan_path` (domain-aware if specified)
      ELSE:
        scan_path = codebase_root
        domain_name = null
@@ -65,10 +46,11 @@ Receives `contextStore` with critical paths classification, codebase structure, 
 4) **Collect missing tests**
    - Tag each finding with `domain: domain_name` (if domain-aware)
 
-5) **Calculate score**
+5) **Calculate Score:** Count violations by severity, calculate compliance score (X/10)
 
-6) **Return JSON with domain metadata**
-   - Include `domain` and `scan_path` fields (if domain-aware)
+6) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/634-coverage-gaps.md` (or `{output_dir}/634-coverage-gaps-{domain}.md` if domain-aware) in single Write call
+
+7) **Return Summary:** Return minimal summary to coordinator (see Output Format)
 
 ## Critical Paths Classification
 
@@ -166,76 +148,24 @@ Receives `contextStore` with critical paths classification, codebase structure, 
 
 ## Scoring Algorithm
 
-```
-critical_paths = count of critical paths
-tested_paths = count of critical paths with tests
-coverage_percentage = (tested_paths / critical_paths) * 100
-score = coverage_percentage / 10  // 100% coverage = 10 score
-score = max(0, min(10, score))
-```
+**MANDATORY READ:** Load `shared/references/audit_scoring.md` for unified scoring formula.
+
+**Severity mapping by Priority:**
+- Priority 20+ (Money, Security) missing test → CRITICAL
+- Priority 15-19 (Data Integrity, Core Flows) missing test → HIGH
+- Priority 10-14 (Important) missing test → MEDIUM
+- Priority <10 (Nice-to-have) → LOW
 
 ## Output Format
 
-**Global mode output:**
-```json
-{
-  "category": "Coverage Gaps",
-  "score": 6,
-  "critical_paths_total": 25,
-  "tested_paths": 15,
-  "untested_paths": 10,
-  "coverage_percentage": 60,
-  "findings": [
-    {
-      "severity": "CRITICAL",
-      "category": "Money",
-      "missing_test": "E2E: Payment with discount code",
-      "location": "services/payment.ts:processPayment()",
-      "priority": 25,
-      "justification": "Money calculation with discount logic — high risk of incorrect total",
-      "test_type": "E2E",
-      "effort": "M"
-    }
-  ]
-}
-```
+**MANDATORY READ:** Load `shared/templates/audit_worker_report_template.md` for file format.
 
-**Domain-aware mode output (NEW):**
-```json
-{
-  "category": "Coverage Gaps",
-  "score": 7,
-  "domain": "orders",
-  "scan_path": "src/orders",
-  "critical_paths_total": 12,
-  "tested_paths": 8,
-  "untested_paths": 4,
-  "coverage_percentage": 67,
-  "findings": [
-    {
-      "severity": "CRITICAL",
-      "category": "Money",
-      "missing_test": "E2E: applyDiscount() with edge cases",
-      "location": "src/orders/services/order.ts:45",
-      "priority": 25,
-      "justification": "Discount calculation in orders domain — high risk of incorrect total",
-      "test_type": "E2E",
-      "effort": "M",
-      "domain": "orders"
-    },
-    {
-      "severity": "HIGH",
-      "category": "Data Integrity",
-      "missing_test": "Integration: orderTransaction() rollback",
-      "location": "src/orders/repositories/order.ts:78",
-      "priority": 18,
-      "justification": "Data corruption risk in orders domain",
-      "test_type": "Integration",
-      "effort": "M",
-      "domain": "orders"
-    }
-  ]
-}
+Write report to `{output_dir}/634-coverage-gaps.md` (global) or `{output_dir}/634-coverage-gaps-{domain}.md` (domain-aware) with `category: "Coverage Gaps"` and checks: money_flow_coverage, security_flow_coverage, data_integrity_coverage, core_journey_coverage.
+
+Return summary to coordinator:
+```
+Report written: docs/project/.audit/ln-630/{YYYY-MM-DD}/634-coverage-gaps.md
+Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
 ## Critical Rules
@@ -247,13 +177,20 @@ score = max(0, min(10, score))
 
 ## Definition of Done
 
-- contextStore parsed (including domain_mode and current_domain)
+- contextStore parsed successfully (including output_dir, domain_mode, current_domain)
 - scan_path determined (domain path or codebase root)
 - Critical paths identified in scan_path (Money, Security, Data, Core Flows)
 - Test coverage checked for each critical path
 - Missing tests collected with severity, priority, justification, domain
-- Score calculated
-- JSON returned to coordinator with domain metadata
+- Score calculated using penalty algorithm
+- Report written to `{output_dir}/634-coverage-gaps.md` or `634-coverage-gaps-{domain}.md` (atomic single Write call)
+- Summary returned to coordinator
+
+## Reference Files
+
+- **Worker report template:** `shared/templates/audit_worker_report_template.md`
+- **Audit scoring formula:** `shared/references/audit_scoring.md`
+- **Audit output schema:** `shared/references/audit_output_schema.md`
 
 ---
 **Version:** 3.0.0

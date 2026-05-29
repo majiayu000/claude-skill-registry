@@ -1,28 +1,13 @@
 ---
 name: cpu-gpu-performance
-description: |
-
-Triggers: performance
-  Monitor and optimize CPU/GPU usage with load measurement and cost-effective
-  validation strategies.
-
-  Triggers: CPU usage, GPU usage, performance, load monitoring, build performance,
-  training, resource consumption, test suite, compilation
-
-  Use when: session starts (auto-load with token-conservation), planning builds
-  or training that could pin CPUs/GPUs for >1 minute, retrying failed resource-heavy commands
-
-  DO NOT use when: simple operations with no resource impact.
-  DO NOT use when: quick single-file operations.
-
-  Use this skill BEFORE resource-intensive operations. Establish baselines proactively.
-location: plugin
-token_budget: 400
+description: 'Establish CPU/GPU baselines before resource-intensive operations.'
+alwaysApply: false
 progressive_loading: true
 dependencies:
-  hub: [token-conservation]
+  hub:
+  - token-conservation
   modules: []
-version: 1.3.5
+model_hint: standard
 ---
 ## Table of Contents
 
@@ -38,11 +23,16 @@ version: 1.3.5
 
 # CPU/GPU Performance Discipline
 
-## When to Use
+## When To Use
 - At the beginning of every session (auto-load alongside `token-conservation`).
 - Whenever you plan to build, train, or test anything that could pin CPU cores
   or GPUs for more than a minute.
 - Before retrying a failing command that previously consumed significant resources.
+
+## When NOT To Use
+
+- Simple operations with no resource impact
+- Quick single-file operations
 
 ## Required TodoWrite Items
 1. `cpu-gpu-performance:baseline`
@@ -115,15 +105,3 @@ adding a new test marker or profiling documentation, to simplify future sessions
 - Concrete example(s) of what ran (e.g.):
   - "reran `pytest tests/test_orders.py -k test_refund` instead of `pytest -m slow`"
   - "profiled `nvidia-smi dmon` output to prove GPU idle time before scaling"
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

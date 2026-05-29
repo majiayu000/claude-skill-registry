@@ -1,0 +1,18 @@
+{
+  "name": "fswatch-duckdb",
+  "repo": "plurigrid/asi",
+  "path": "skills/fswatch-duckdb/SKILL.md",
+  "source": "github.com/plurigrid/asi",
+  "downloaded_at": "2026-01-19T05:42:05.121896Z",
+  "dir_name": "fswatch-duckdb-plurigrid-asi",
+  "category": "data",
+  "github_path": "skills/fswatch-duckdb",
+  "github_branch": "main",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/fswatch-duckdb/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

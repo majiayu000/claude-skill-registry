@@ -151,6 +151,8 @@ DESIGN VERDICT: <PASS|WARN|FAIL>
 
 ## Reference Documents
 
+- [references/design.feature](references/design.feature) — Executable spec: goal-vs-PRODUCT.md council verdict before discovery, --quick inline, --strict threshold (soc-qk4b)
+
 - [references/alignment-matrix.md](references/alignment-matrix.md) -- Scoring rubric for the five alignment dimensions
 - [references/project-reality-check.md](references/project-reality-check.md) -- Quick reality-check prompts before committing to a project direction
 - [references/product-council-preset.md](references/product-council-preset.md) -- Council `--preset=product` judge configuration and verdict rules

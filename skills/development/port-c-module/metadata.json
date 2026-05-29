@@ -1,0 +1,17 @@
+{
+  "name": "port-c-module",
+  "repo": "ChatAndBuild/chatchat-skills",
+  "path": "skills/port-c-module/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/ChatAndBuild/chatchat-skills",
+  "dir_name": "port-c-module",
+  "downloaded_at": "2026-03-01T05:03:16.584386Z",
+  "author": "ChatAndBuild",
+  "source_url": "https://github.com/ChatAndBuild/chatchat-skills/blob/main/skills/port-c-module/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ChatAndBuild/chatchat-skills/blob/main/skills/port-c-module/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

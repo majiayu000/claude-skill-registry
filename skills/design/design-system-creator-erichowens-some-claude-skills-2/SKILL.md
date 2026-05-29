@@ -46,8 +46,8 @@ The foundation of scalable design systems:
 
 ```css
 :root {
-  /* 1. PRIMITIVE - Raw values */
-  --color-blue-500: #3b82f6;
+  /* 1. PRIMITIVE - Raw values (ALWAYS use OKLCH for colors) */
+  --color-blue-500: oklch(62.8% 0.195 252.5);
   --space-4: 1rem;
 
   /* 2. SEMANTIC - Purpose-driven */
@@ -61,6 +61,43 @@ The foundation of scalable design systems:
 ```
 
 → See `references/token-architecture.md` for dark mode, multi-brand, and complete examples.
+
+## OKLCH: The Modern Color Standard
+
+**⚠️ CRITICAL: Always use OKLCH for color tokens, not hex or HSL.**
+
+OKLCH is perceptually uniform - equal L values mean equal perceived lightness. This is essential for:
+- Generating harmonious color scales
+- Ensuring accessibility (L=50% is true middle gray)
+- Theming (adjust L for dark mode, C for brand intensity)
+
+```css
+:root {
+  /* OKLCH format: oklch(Lightness% Chroma Hue) */
+
+  /* Primary scale - same hue, varying lightness */
+  --color-primary-100: oklch(95% 0.05 252);
+  --color-primary-500: oklch(62% 0.19 252);
+  --color-primary-900: oklch(30% 0.15 252);
+
+  /* Dark mode: reduce L uniformly */
+  --color-bg-light: oklch(98% 0.01 252);
+  --color-bg-dark: oklch(15% 0.02 252);
+}
+```
+
+**Essential OKLCH Resources:**
+| Resource | Purpose |
+|----------|---------|
+| [oklch.com](https://oklch.com/) | Interactive OKLCH color picker |
+| [Evil Martians: Why Quit RGB/HSL](https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl) | Why OKLCH is the new standard |
+| [Harmonizer](https://harmonizer.evilmartians.com/) | Generate harmonious palettes in OKLCH |
+
+**OKLCH Benefits for Design Systems:**
+- **Perceptual uniformity**: L=70% always looks 70% light
+- **Better contrast**: APCA-ready lightness calculations
+- **Easier scaling**: Math operations work predictably
+- **Native CSS**: `oklch()` works in all modern browsers (2023+)
 
 ## Design Bible Structure
 

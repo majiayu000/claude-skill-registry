@@ -432,6 +432,14 @@ function App() {
 }
 ```
 
+## Implementation gates
+
+Use these **sequenced checks** before treating an integration as done (they target common footguns, not style preferences).
+
+1. **CSS in the bundle** — Ensure `import '@xyflow/react/dist/style.css'` runs in the app (entry or layout). **Pass:** nodes and edges have expected default styling; handles are visible and interactable.
+2. **Stable `nodeTypes` / `edgeTypes`** — Do not pass a fresh object literal every render; define maps outside the component or memoize with `useMemo` and correct deps. **Pass:** no remount flicker or “maximum update depth” / runaway updates when only selection or viewport changes.
+3. **Provider boundary** — Components that call `useReactFlow()` must be descendants of `ReactFlowProvider`, and the flow must actually mount. **Pass:** no missing-context error at runtime; programmatic APIs (`fitView`, etc.) work where expected.
+
 ## Reference Files
 
 For detailed implementation patterns, see:

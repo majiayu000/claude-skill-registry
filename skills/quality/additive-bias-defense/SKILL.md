@@ -1,6 +1,6 @@
 ---
 name: additive-bias-defense
-description: 'Inverts burden of proof for code additions.'
+description: Inverts burden of proof for code additions. Use when reviewing PRs, planning refactors, or running unbloat to challenge every addition's necessity.
 alwaysApply: false
 category: quality-contract
 tags:

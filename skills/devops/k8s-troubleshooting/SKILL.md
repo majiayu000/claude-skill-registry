@@ -18,6 +18,56 @@ description: |
 
 # Kubernetes / OpenShift Troubleshooting Guide
 
+## Current Versions & Troubleshooting Tools (January 2026)
+
+| Platform | Version | Key Changes |
+|----------|---------|-------------|
+| **Kubernetes** | 1.31.x | Sidecar containers GA, Pod lifecycle improvements |
+| **OpenShift** | 4.17.x | OVN-Kubernetes default, enhanced web terminal |
+| **EKS** | 1.31 | Pod Identity, Auto Mode, Karpenter 1.x |
+| **AKS** | 1.31 | Cilium CNI, Workload Identity GA |
+| **GKE** | 1.31 | Autopilot improvements, Gateway API GA |
+
+### Troubleshooting Tools & CLIs
+
+| Tool | Version | Install | Purpose |
+|------|---------|---------|--------|
+| **kubectl** | 1.31.x | `brew install kubectl` | Cluster operations |
+| **oc** | 4.17.x | `brew install openshift-cli` | OpenShift operations |
+| **k9s** | 0.32.x | `brew install k9s` | Terminal UI |
+| **stern** | 1.30.x | `brew install stern` | Multi-pod log tailing |
+| **kubectx/kubens** | 0.9.x | `brew install kubectx` | Context/namespace switching |
+| **krew** | 0.4.x | kubectl plugin manager | Plugin ecosystem |
+| **kubectl-node-shell** | - | `kubectl krew install node-shell` | Node access |
+| **kubectl-neat** | - | `kubectl krew install neat` | Clean YAML output |
+| **kubectl-tree** | - | `kubectl krew install tree` | Resource hierarchy |
+
+```bash
+# Essential CLI tool installation
+brew install kubectl kubectx k9s stern
+
+# Install krew (kubectl plugin manager)
+(
+  set -x; cd "$(mktemp -d)" &&
+  OS="$(uname | tr '[:upper:]' '[:lower:]')" &&
+  ARCH="$(uname -m | sed -e 's/x86_64/amd64/' -e 's/arm64/arm64/')" &&
+  curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/krew-${OS}_${ARCH}.tar.gz" &&
+  tar zxvf krew-${OS}_${ARCH}.tar.gz &&
+  KREW=./krew-${OS}_${ARCH} && "$KREW" install krew
+)
+
+# Install useful kubectl plugins
+kubectl krew install ctx ns neat tree node-shell images lineage
+
+# Multi-pod log streaming with stern
+stern -n ${NAMESPACE} ${POD_PREFIX}
+stern -A -l app=${APP_NAME} --since 1h
+
+# Interactive cluster navigation with k9s
+k9s -n ${NAMESPACE}
+k9s --context ${CONTEXT}
+```
+
 ## Command Usage Convention
 
 **IMPORTANT**: This skill uses `kubectl` as the primary command in all examples. When working with:
@@ -234,6 +284,60 @@ oc get clusteroperators
 oc adm node-logs ${NODE_NAME} -u kubelet
 ```
 
+### Cloud Provider Specific Commands
+
+```bash
+# EKS Troubleshooting (AWS)
+aws eks describe-cluster --name ${CLUSTER} --query 'cluster.status'
+aws eks describe-addon --cluster-name ${CLUSTER} --addon-name vpc-cni --query 'addon.status'
+eksctl utils describe-stacks --cluster ${CLUSTER}
+exportctl get nodegroup --cluster ${CLUSTER}
+
+# EKS Pod Identity issues
+aws eks describe-pod-identity-association --cluster-name ${CLUSTER} --association-id ${ASSOC_ID}
+
+# EKS CloudWatch Logs Insights query for control plane logs
+aws logs filter-log-events --log-group-name /aws/eks/${CLUSTER}/cluster \
+  --filter-pattern "ERROR" --start-time ${TIMESTAMP}
+
+# AKS Troubleshooting (Azure)
+az aks show --resource-group ${RG} --name ${CLUSTER} --query provisioningState
+az aks get-credentials --resource-group ${RG} --name ${CLUSTER} --admin
+az aks browse --resource-group ${RG} --name ${CLUSTER}  # Opens dashboard
+
+# AKS diagnostic logs
+az aks kollect --resource-group ${RG} --name ${CLUSTER} --storage-account ${STORAGE}
+az aks check-network outbound --resource-group ${RG} --name ${CLUSTER}
+
+# AKS Workload Identity issues
+az aks show --resource-group ${RG} --name ${CLUSTER} --query 'oidcIssuerProfile'
+
+# GKE Troubleshooting (Google Cloud)
+gcloud container clusters describe ${CLUSTER} --region ${REGION} --format='value(status)'
+gcloud container clusters get-credentials ${CLUSTER} --region ${REGION}
+
+# GKE operations and errors
+gcloud container operations list --filter="targetLink:${CLUSTER}" --sort-by="~startTime" --limit=10
+gcloud container operations describe ${OPERATION_ID} --region ${REGION}
+
+# GKE Workload Identity issues
+gcloud iam service-accounts get-iam-policy ${GSA_EMAIL}
+
+# GKE node pool issues
+gcloud container node-pools describe ${POOL} --cluster ${CLUSTER} --region ${REGION}
+
+# ARO Troubleshooting (Azure Red Hat OpenShift)
+az aro show --resource-group ${RG} --name ${CLUSTER} --query provisioningState
+az aro list-credentials --resource-group ${RG} --name ${CLUSTER}
+az aro show --resource-group ${RG} --name ${CLUSTER} --query 'networkProfile'
+
+# ROSA Troubleshooting (Red Hat OpenShift on AWS)
+rosa describe cluster --cluster ${CLUSTER}
+rosa logs install --cluster ${CLUSTER}
+rosa logs uninstall --cluster ${CLUSTER}
+rosa list machinepools --cluster ${CLUSTER}
+```
+
 ## Pod Status Interpretation
 
 ### Pod Phase States
@@ -297,7 +401,7 @@ Type: Warning  → Potential issue, investigate
 ```
 # Common messages and fixes:
 "Insufficient cpu"           → Reduce requests or add capacity
-"Insufficient memory"        → Reduce requests or add capacity  
+"Insufficient memory"        → Reduce requests or add capacity
 "node(s) had taint"          → Add toleration or remove taint
 "node(s) didn't match selector" → Fix nodeSelector/affinity
 "persistentvolumeclaim not found" → Create PVC or fix name
@@ -799,7 +903,7 @@ MEM_LIM:.spec.containers[*].resources.limits.memory
 
 # Find pods without resource limits
 kubectl get pods -A -o json | jq -r \
-  '.items[] | select(.spec.containers[].resources.limits == null) | 
+  '.items[] | select(.spec.containers[].resources.limits == null) |
    "\(.metadata.namespace)/\(.metadata.name)"'
 ```
 

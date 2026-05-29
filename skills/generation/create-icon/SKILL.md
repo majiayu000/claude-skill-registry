@@ -13,6 +13,10 @@ triggers:
   - process icon
 metadata:
   short-description: "Create icons (72x72, Stream Deck compatible)"
+
+provides:
+  - create-icon
+composes: [, task-monitor]
 ---
 
 # create-icon

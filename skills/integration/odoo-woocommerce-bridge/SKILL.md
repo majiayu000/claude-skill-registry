@@ -133,3 +133,8 @@ def sync_inventory_to_woocommerce():
 - ✅ **Do:** Log all API calls and errors to a database table for debugging.
 - ❌ **Don't:** Process the same WooCommerce order twice — flag it as processed immediately after import.
 - ❌ **Don't:** Sync draft or cancelled WooCommerce orders to Odoo — filter by `status = processing` or `completed`.
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

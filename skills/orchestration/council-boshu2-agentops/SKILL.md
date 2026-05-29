@@ -80,9 +80,22 @@ See `references/cli-spawning.md` for the council-specific spawning flow (phases,
 
 ## Debate mode (`--mode=debate`)
 
-`--mode=debate` convenes 2–4 named domain-expert personas who duel: each writes an independent verdict in character, every persona adversarially cross-scores every rival 0–1000, then a **mandatory reveal round** forces concessions and surfaces blind spots. Synthesis is a score matrix → a ranked decision with dissent kept verbatim. `dueling-idea-wizards` maps to `--mode=debate --focus=ideas`; `/expert-council` routes here.
+`--mode=debate` convenes 2–4 named domain-expert personas who duel: each writes an independent verdict in character, every persona adversarially cross-scores every rival 0–1000, then a **mandatory reveal round** forces concessions and surfaces blind spots. Synthesis is a score matrix → a ranked decision with dissent kept verbatim. `dueling-idea-wizards` maps to `--mode=debate --focus=ideas`; the legacy expert-council command routes here.
 
 Constraints: personas decide and the orchestrator only counts; the briefing goes on disk, never through argv; the reveal is never skipped. Per-phase persona-slate / duel / reveal / score-matrix templates: [references/dueling-route.md](references/dueling-route.md).
+
+### Aliases (absorbed skills)
+
+These trigger phrases route to `--mode=debate` — there is no separate skill (the former expert-council skill was absorbed here):
+
+| You typed | Runs |
+|-----------|------|
+| "expert-council \<question\>" | `/council --mode=debate <question>` |
+| "expert-council" (slate of named experts) | `/council --mode=debate` — persona slate confirmed in Phase 1 |
+| "expert council", "dueling council", "council of \<names\>" | `/council --mode=debate` |
+| "dueling-idea-wizards" | `/council --mode=debate --focus=ideas` |
+
+When invoked under any of these, run debate mode directly with the same arguments — do not run a separate workflow.
 
 ## Adversarial round (`--adversarial`) — a verdict intensifier
 
@@ -204,6 +217,7 @@ See [references/multi-agent-architecture.md](references/multi-agent-architecture
 - [references/modes.md](references/modes.md)
 - [references/council-modes.feature](references/council-modes.feature)
 - [references/dueling-route.md](references/dueling-route.md)
+- [references/cross-vendor-duel-when-to-use.md](references/cross-vendor-duel-when-to-use.md) — Strategic call (when Opus+Codex is worth the cost) + score-symmetry diagnostic
 - [references/architecture-flow.md](references/architecture-flow.md)
 - [references/packet-format.md](references/packet-format.md)
 - [references/flags-reference.md](references/flags-reference.md)

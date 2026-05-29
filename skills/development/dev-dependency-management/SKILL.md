@@ -60,7 +60,7 @@ User needs: [Dependency Task]
     │   ├─ Routine update?
     │       ├─ Patch versions → `npm update` → Safe, do frequently
     │       ├─ Minor/major → Check CHANGELOG → Test in staging → Update gradually
-    │       └─ All at once → ❌ RISKY → Update in batches instead
+    │       └─ All at once → [FAIL] RISKY → Update in batches instead
     │
     ├─ Dependency conflict?
     │   ├─ Transitive dependency issue?
@@ -194,7 +194,7 @@ Common mistakes to avoid when managing dependencies.
 **[`templates/nodejs/`](templates/nodejs/)**
 
 - [`package-json-template.json`](templates/nodejs/package-json-template.json) - Production-ready package.json with best practices
-- [`npmrc-template.txt`](templates/nodejs/npmrc-template.txt) - Team configuration for npm
+- `npmrc-template.txt` - Team configuration for npm
 - [`pnpm-workspace-template.yaml`](templates/nodejs/pnpm-workspace-template.yaml) - Monorepo workspace setup
 
 ### Python
@@ -210,6 +210,76 @@ Common mistakes to avoid when managing dependencies.
 - [`dependabot-config.yml`](templates/automation/dependabot-config.yml) - GitHub Dependabot configuration
 - [`renovate-config.json`](templates/automation/renovate-config.json) - Renovate Bot configuration
 - [`audit-checklist.md`](templates/automation/audit-checklist.md) - Security audit workflow
+- **[`template-supply-chain-security.md`](templates/automation/template-supply-chain-security.md)** - **NEW** SBOM, provenance, vulnerability management
+- [`template-dependency-upgrade-playbook.md`](templates/automation/template-dependency-upgrade-playbook.md) - Upgrade batching, rollout, rollback
+- [`template-sbom-vuln-triage-checklist.md`](templates/automation/template-sbom-vuln-triage-checklist.md) - SBOM mapping + vulnerability triage
+
+---
+
+## Supply Chain Security
+
+**[templates/automation/template-supply-chain-security.md](templates/automation/template-supply-chain-security.md)** — Production-grade dependency security.
+
+Related templates:
+- [templates/automation/template-dependency-upgrade-playbook.md](templates/automation/template-dependency-upgrade-playbook.md)
+- [templates/automation/template-sbom-vuln-triage-checklist.md](templates/automation/template-sbom-vuln-triage-checklist.md)
+
+### Key Sections
+
+- **SBOM Generation** — CycloneDX, SPDX formats; CI/CD integration
+- **Provenance & Attestation** — SLSA levels, Sigstore signing, npm provenance
+- **Vulnerability Management** — Triage workflow, severity SLAs, scanning tools
+- **Upgrade Playbooks** — Batching strategy, rollback procedures
+- **Pinning & Reproducibility** — Lockfiles, hash pinning, version constraints
+
+### Do / Avoid
+
+#### GOOD: Do
+
+- Generate SBOM for every release
+- Sign release artifacts (Sigstore/cosign)
+- Run vulnerability scans in CI/CD
+- Fix critical vulnerabilities within 24 hours
+- Use lockfiles for reproducible builds
+- Verify npm package provenance
+- Batch non-security updates by risk level
+
+#### BAD: Avoid
+
+- Publishing without SBOM
+- Using unsigned packages in production
+- Ignoring vulnerability scanner output
+- Updating all dependencies at once
+- Using wildcard version ranges (`*`, `>=`)
+- Committing without updating lockfile
+- Bypassing security gates "just this once"
+
+### Anti-Patterns
+
+| Anti-Pattern | Problem | Fix |
+|--------------|---------|-----|
+| **No SBOM** | Can't respond to supply chain attacks | Generate SBOM in CI/CD |
+| **Unsigned artifacts** | Tampering undetectable | Sign with Sigstore |
+| **Floating versions** | Build not reproducible | Use lockfiles + exact versions |
+| **All-at-once updates** | Hard to bisect regressions | Batch by risk level |
+| **npm install in CI** | Non-deterministic | Use `npm ci` |
+| **No audit gate** | Vulnerabilities ship to prod | Gate deployments on audit |
+
+---
+
+## Optional: AI/Automation
+
+> **Note**: AI assists with triage but security decisions need human judgment.
+
+- **Automated PR triage** — Categorize dependency updates by risk
+- **Changelog summarization** — Summarize breaking changes in updates
+- **Vulnerability correlation** — Link CVEs to affected packages
+
+### Bounded Claims
+
+- AI cannot determine business risk acceptance
+- Automated fixes require security team review
+- Vulnerability severity context needs human validation
 
 ---
 
@@ -290,10 +360,10 @@ For complementary workflows and deeper dives:
 
 - [`dev-api-design`](../dev-api-design/SKILL.md) - API versioning strategies, dependency injection patterns
 - [`git-workflow`](../git-workflow/SKILL.md) - Git workflows for managing lockfile conflicts, branching strategies
-- [`testing-automation`](../testing-automation/SKILL.md) - Testing strategies for dependency updates, integration testing
+- [`qa-testing-strategy`](../qa-testing-strategy/SKILL.md) - Testing strategies for dependency updates, integration testing
 - [`software-security-appsec`](../software-security-appsec/SKILL.md) - OWASP Top 10, cryptography standards, authentication patterns
 - [`ops-devops-platform`](../ops-devops-platform/SKILL.md) - CI/CD pipelines, Docker containerization, DevSecOps, deployment automation
-- [`docs-technical-writing`](../docs-technical-writing/SKILL.md) - Documenting dependency choices, ADRs, changelogs
+- [`docs-codebase`](../docs-codebase/SKILL.md) - Documenting dependency choices, ADRs, changelogs
 
 ---
 

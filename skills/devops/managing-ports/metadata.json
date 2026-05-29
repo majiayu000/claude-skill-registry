@@ -1,0 +1,17 @@
+{
+  "name": "managing-ports",
+  "repo": "Saturate/skills",
+  "path": "managing-ports/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/Saturate/skills",
+  "dir_name": "managing-ports",
+  "downloaded_at": "2026-03-22T06:13:12.728537Z",
+  "author": "Saturate",
+  "source_url": "https://github.com/Saturate/skills/blob/main/managing-ports/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Saturate/skills/blob/main/managing-ports/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

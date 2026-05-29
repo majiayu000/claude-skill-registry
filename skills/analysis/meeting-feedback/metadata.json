@@ -1,0 +1,17 @@
+{
+  "name": "meeting-feedback",
+  "repo": "TimothyNguyen04/pmos",
+  "path": ".claude/skills/meeting-feedback/SKILL.md",
+  "github_branch": "main",
+  "category": "analysis",
+  "source": "github.com/TimothyNguyen04/pmos",
+  "dir_name": "meeting-feedback",
+  "downloaded_at": "2026-03-22T06:24:09.097043Z",
+  "author": "TimothyNguyen04",
+  "source_url": "https://github.com/TimothyNguyen04/pmos/blob/main/.claude/skills/meeting-feedback/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TimothyNguyen04/pmos/blob/main/.claude/skills/meeting-feedback/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

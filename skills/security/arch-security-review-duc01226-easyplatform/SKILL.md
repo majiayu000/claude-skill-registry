@@ -1,9 +1,32 @@
 ---
 name: arch-security-review
-description: Use when reviewing code for security vulnerabilities, implementing authorization, or ensuring data protection.
-infer: true
+version: 1.1.0
+description: '[Architecture] Use when reviewing code for security vulnerabilities, implementing authorization, or ensuring data protection.'
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash, Task
 ---
+
+> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI may ask user whether to skip.
+
+**Prerequisites:** **MUST READ** `.claude/skills/shared/evidence-based-reasoning-protocol.md` before executing.
+
+> **Critical Purpose:** Ensure quality — no flaws, no bugs, no missing updates, no stale content. Verify both code AND documentation.
+
+## Quick Summary
+
+**Goal:** Review code for security vulnerabilities against OWASP Top 10 and enforce authorization, data protection, and secure coding patterns.
+
+**Workflow:**
+
+1. **Pre-Flight** — Identify security-sensitive areas, check OWASP relevance, review existing patterns
+2. **OWASP Audit** — Evaluate code against all 10 categories (access control, injection, auth, etc.)
+3. **Project Checks** — Verify authorization attributes, entity access expressions, input validation
+4. **Report** — Document findings with severity, vulnerable vs secure code examples
+
+**Key Rules:**
+
+- Always check both backend (C#) and frontend (Angular) attack surfaces
+- Use `[PlatformAuthorize]` and entity-level access expressions, never rely on UI-only guards
+- Validate all external data with `PlatformValidationResult`, never trust client input
 
 # Security Review Workflow
 
@@ -181,47 +204,7 @@ private bool IsAllowedUrl(string url)
 
 ## Authorization Patterns
 
-### Controller Level
-
-```csharp
-[ApiController]
-[Route("api/[controller]")]
-[PlatformAuthorize]  // Require authentication
-public class EmployeeController : PlatformBaseController
-{
-    [HttpPost]
-    [PlatformAuthorize(Roles.Admin, Roles.Manager)]  // Role-based
-    public async Task<IActionResult> Create(...)
-}
-```
-
-### Handler Level
-
-```csharp
-protected override async Task<PlatformValidationResult<T>> ValidateRequestAsync(
-    PlatformValidationResult<T> validation, CancellationToken ct)
-{
-    return await validation
-        // Check role
-        .And(_ => RequestContext.HasRole(Roles.Admin), "Admin role required")
-        // Check company access
-        .And(_ => entity.CompanyId == RequestContext.CurrentCompanyId(),
-            "Access denied: different company")
-        // Check ownership
-        .And(_ => entity.OwnerId == RequestContext.UserId() ||
-            RequestContext.HasRole(Roles.Admin),
-            "Access denied: not owner");
-}
-```
-
-### Query Level
-
-```csharp
-// Always filter by company/user context
-var employees = await repo.GetAllAsync(
-    e => e.CompanyId == RequestContext.CurrentCompanyId()
-        && (e.IsPublic || e.OwnerId == RequestContext.UserId()));
-```
+**⚠️ MUST READ:** CLAUDE.md for `PlatformAuthorize` controller/handler patterns, `RequestContext` usage, and entity-level access filters.
 
 ## Data Protection
 
@@ -371,11 +354,15 @@ await DeleteAllUsers();
 - [ ] Logging appropriate (no PII)
 - [ ] Dependencies scanned
 
-## See Also
+## Related
 
-See `/security` command for structured security review workflow.
+- `arch-performance-optimization`
+- `arch-cross-service-integration`
+- `code-review`
 
-## IMPORTANT Task Planning Notes
+---
 
-- Always plan and break many small todo tasks
-- Always add a final review todo task to review the works done at the end to find any fix or enhancement needed
+**IMPORTANT Task Planning Notes (MUST FOLLOW)**
+
+- Always plan and break work into many small todo tasks
+- Always add a final review todo task to verify work quality and identify fixes/enhancements

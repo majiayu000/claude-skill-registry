@@ -1,11 +1,12 @@
 ---
 name: serena-semantic-code
-description: |
-  ALWAYS ACTIVE: Use Language Server Protocol (LSP) for semantic code understanding and intelligent editing.
-  This skill applies to ALL coding tasks. Use Serena's LSP tools for: (1) semantic navigation and symbol discovery,
-  (2) finding references and dependencies, (3) symbol-level editing and refactoring, (4) understanding project structure.
-  Dramatically improves code quality and reduces token usage compared to text-based grep/read operations.
-  Activate for any code-related work.
+description: This skill should be used when the user asks to "find a symbol", "locate code", "refactor", "rename across codebase", or performs ANY coding task with Serena toolbox. Use Language Server Protocol (LSP) for semantic navigation, symbol discovery, finding references, and intelligent editing. Applies to ALL coding tasks - dramatically improves code quality and reduces token usage.
+license: MIT
+compatibility: opencode
+metadata:
+  category: development
+  version: 1.0.0
+  toolbox: serena
 ---
 
 # Serena: Semantic Code Understanding via LSP

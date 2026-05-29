@@ -1,0 +1,17 @@
+{
+  "name": "init-very-good",
+  "repo": "AoEiuV020/video_concat",
+  "path": ".claude/skills/init-very-good/SKILL.md",
+  "github_branch": "main",
+  "category": "platform",
+  "source": "github.com/AoEiuV020/video_concat",
+  "dir_name": "init-very-good-aoeiuv020-video-concat",
+  "downloaded_at": "2026-03-22T04:52:13.395488Z",
+  "author": "AoEiuV020",
+  "source_url": "https://github.com/AoEiuV020/video_concat/blob/main/.claude/skills/init-very-good/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AoEiuV020/video_concat/blob/main/.claude/skills/init-very-good/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

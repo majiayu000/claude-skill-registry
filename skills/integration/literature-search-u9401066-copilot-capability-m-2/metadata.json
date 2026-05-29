@@ -1,0 +1,18 @@
+{
+  "name": "literature-search",
+  "description": "Search and retrieve academic literature from multiple databases.\nLOAD THIS SKILL WHEN: User says \"搜尋文獻\", \"search literature\", \"find papers\", \"PubMed\", \"學術搜尋\" | needs to find research articles | starti",
+  "repo": "u9401066/copilot-capability-manager",
+  "path": ".claude/skills/literature-search",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/u9401066/copilot-capability-manager",
+  "dir_name": "literature-search-u9401066-copilot-capability-m-2",
+  "author": "u9401066",
+  "source_url": "https://github.com/u9401066/copilot-capability-manager/blob/main/.claude/skills/literature-search/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 [Your Name or Organization]",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

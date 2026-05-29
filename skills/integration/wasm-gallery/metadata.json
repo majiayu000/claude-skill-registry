@@ -1,0 +1,17 @@
+{
+  "name": "wasm-gallery",
+  "repo": "ruvnet/ruflo",
+  "path": "plugins/ruflo-wasm/skills/wasm-gallery/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/ruvnet/ruflo",
+  "dir_name": "wasm-gallery",
+  "downloaded_at": "2026-05-04T02:14:38.989411Z",
+  "author": "ruvnet",
+  "source_url": "https://github.com/ruvnet/ruflo/blob/main/plugins/ruflo-wasm/skills/wasm-gallery/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ruvnet/ruflo/blob/main/plugins/ruflo-wasm/skills/wasm-gallery/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

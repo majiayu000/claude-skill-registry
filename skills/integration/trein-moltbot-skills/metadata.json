@@ -1,0 +1,16 @@
+{
+  "name": "trein",
+  "repo": "moltbot/skills",
+  "path": "skills/joehoel/trein/SKILL.md",
+  "source": "github.com/moltbot/skills",
+  "downloaded_at": "2026-01-29T05:14:24.360003Z",
+  "dir_name": "trein-moltbot-skills",
+  "category": "integration",
+  "author": "moltbot",
+  "source_url": "https://github.com/moltbot/skills/blob/main/skills/joehoel/trein/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 clawdbot",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

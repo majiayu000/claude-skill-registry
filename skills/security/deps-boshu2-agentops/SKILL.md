@@ -6,7 +6,8 @@ practices:
 - continuous-delivery
 - sre
 hexagonal_role: driven-adapter
-consumes: []
+consumes:
+- repo-context
 produces:
 - result.json
 context_rel: []
@@ -305,3 +306,7 @@ File name format: `YYYY-MM-DD-deps-<mode>.md`
 - `skills/security/SKILL.md` -- Broader security scanning
 - `skills/vibe/SKILL.md` -- Code quality validation
 - [references/library-update-ratchet.md](references/library-update-ratchet.md)
+
+## Reference Documents
+
+- [references/deps.feature](references/deps.feature) — Executable spec: scan manifests, audit vulns/outdated/licenses, vuln+license modes, multi-ecosystem, result.json (soc-qk4b)

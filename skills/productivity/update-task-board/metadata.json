@@ -1,0 +1,16 @@
+{
+  "name": "update-task-board",
+  "repo": "dudusoar/VRP-Toolkit",
+  "path": ".claude/skills/update-task-board/SKILL.md",
+  "source": "github.com/dudusoar/VRP-Toolkit",
+  "downloaded_at": "2026-02-02T04:23:31.494323Z",
+  "dir_name": "update-task-board",
+  "category": "productivity",
+  "author": "dudusoar",
+  "source_url": "https://github.com/dudusoar/VRP-Toolkit/blob/main/.claude/skills/update-task-board/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dudusoar/VRP-Toolkit/blob/main/.claude/skills/update-task-board/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "nixtla-liquidity-forecaster",
+  "repo": "intent-solutions-io/plugins-nixtla",
+  "path": "003-skills/.claude/skills/nixtla-liquidity-forecaster/SKILL.md",
+  "source": "github.com/intent-solutions-io/plugins-nixtla",
+  "downloaded_at": "2026-01-22T00:52:32.555401Z",
+  "dir_name": "nixtla-liquidity-forecaster",
+  "category": "ai-ml",
+  "github_path": "000-docs/000a-planned-skills/prediction-markets/nixtla-liquidity-forecaster",
+  "github_branch": "main",
+  "author": "intent-solutions-io",
+  "source_url": "https://github.com/intent-solutions-io/plugins-nixtla/blob/main/000-docs/000a-planned-skills/prediction-markets/nixtla-liquidity-forecaster/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2025-2026 Jeremy Longshore",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

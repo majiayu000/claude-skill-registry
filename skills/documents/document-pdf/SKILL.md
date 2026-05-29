@@ -7,6 +7,11 @@ description: Extract text and tables from PDFs, create formatted PDFs, merge/spl
 
 This skill enables PDF creation, extraction, manipulation, and analysis. Claude should apply these patterns when users need to generate invoices, reports, extract data from PDFs, merge documents, or work with PDF forms.
 
+**Modern Best Practices (Dec 2025)**:
+- PDF is a release artifact, not the editable source of truth.
+- Validate export fidelity (fonts, images, links) and accessibility baseline where applicable.
+- Treat PDFs as sensitive: scrub metadata, ensure real redaction, and control distribution.
+
 ---
 
 ## Quick Reference
@@ -242,6 +247,34 @@ PDF Task: [What do you need?]
 
 ---
 
+## Do / Avoid (Dec 2025)
+
+### Do
+
+- Keep a versioned source document (doc/slide/design file) alongside the PDF.
+- Verify links and reading order for long documents.
+- Use real redaction and test by copy/paste.
+
+### Avoid
+
+- Editing PDFs as the primary workflow when a source doc exists.
+- Shipping PDFs with broken links or illegible charts.
+- Including customer PII or secrets in PDFs without explicit approval.
+
+## What Good Looks Like
+
+- Fidelity: export is reproducible from a versioned source file (doc/slide/design) and looks identical across viewers.
+- Accessibility: tags/reading order are correct; links work; scanned docs are OCRed when appropriate.
+- Release hygiene: file naming includes version/date; metadata is clean; no “PDF as source of truth”.
+- Security: redaction is verified (copy/paste test) and sensitive data is minimized.
+- QA: release checklist completed using `templates/pdf-release-checklist.md`.
+
+## Optional: AI / Automation
+
+Use only when explicitly requested and policy-compliant.
+
+- Generate a release checklist run; humans verify the final PDF manually.
+
 ## Navigation
 
 **Resources**
@@ -252,6 +285,7 @@ PDF Task: [What do you need?]
 **Templates**
 - [templates/invoice-template.md](templates/invoice-template.md) — Invoice PDF generation
 - [templates/report-template.md](templates/report-template.md) — Multi-page report structure
+- [templates/pdf-release-checklist.md](templates/pdf-release-checklist.md) — Links, accessibility, export fidelity
 
 **Related Skills**
 - [../document-docx/SKILL.md](../document-docx/SKILL.md) — Word document generation

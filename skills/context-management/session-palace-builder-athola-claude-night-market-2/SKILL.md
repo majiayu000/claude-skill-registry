@@ -1,6 +1,6 @@
 ---
 name: session-palace-builder
-description: 'Build session-scoped temporary knowledge structures for multi-step projects.'
+description: Builds session-scoped temporary memory palaces for extended conversations. Use when tracking state across interruptions in a multi-step project.
 alwaysApply: false
 category: session-management
 tags:

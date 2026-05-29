@@ -1,0 +1,18 @@
+{
+  "name": "linear-prod-checklist",
+  "description": "Production readiness checklist for Linear integrations.\nUse when preparing to deploy a Linear integration to production,\nreviewing production requirements, or auditing existing deployments.\nTrigger wi",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/linear-pack/skills/linear-prod-checklist",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "dir_name": "linear-prod-checklist-jeremylongshore-claude-code-plugins-2",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/saas-packs/linear-pack/skills/linear-prod-checklist/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

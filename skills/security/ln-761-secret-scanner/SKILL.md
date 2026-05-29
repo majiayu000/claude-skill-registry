@@ -1,7 +1,10 @@
 ---
 name: ln-761-secret-scanner
-description: Scans codebase for hardcoded secrets. Returns normalized findings with severity and remediation guidance. Pre-commit hook integration.
+description: "Scans codebase for hardcoded secrets with severity classification and remediation guidance. Use when auditing a project for leaked credentials."
+license: MIT
 ---
+
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Secret Scanner
 

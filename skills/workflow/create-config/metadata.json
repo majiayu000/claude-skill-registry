@@ -1,0 +1,18 @@
+{
+  "name": "create_config",
+  "repo": "msalganik/sports-poetry-demo",
+  "path": ".claude/skills/create_config/SKILL.md.old",
+  "source": "github.com/msalganik/sports-poetry-demo",
+  "downloaded_at": "2026-01-14T03:23:20.529567Z",
+  "dir_name": "create-config",
+  "category": "workflow",
+  "github_path": ".claude/skills/create_config",
+  "github_branch": "main",
+  "author": "msalganik",
+  "source_url": "https://github.com/msalganik/sports-poetry-demo/blob/main/.claude/skills/create_config/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/msalganik/sports-poetry-demo/blob/main/.claude/skills/create_config/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

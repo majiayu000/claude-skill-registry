@@ -1,0 +1,17 @@
+{
+  "name": "convex-advisor",
+  "repo": "Agentic-Engineering-Agency/agentforge",
+  "path": ".agents/skills/convex-advisor/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/Agentic-Engineering-Agency/agentforge",
+  "dir_name": "convex-advisor",
+  "downloaded_at": "2026-03-22T04:48:29.273232Z",
+  "author": "Agentic-Engineering-Agency",
+  "source_url": "https://github.com/Agentic-Engineering-Agency/agentforge/blob/main/.agents/skills/convex-advisor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Agentic-Engineering-Agency/agentforge/blob/main/.agents/skills/convex-advisor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

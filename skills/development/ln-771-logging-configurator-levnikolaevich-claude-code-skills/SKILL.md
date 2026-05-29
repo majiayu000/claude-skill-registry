@@ -1,6 +1,7 @@
 ---
 name: ln-771-logging-configurator
-description: Configures structured logging (Serilog/.NET, structlog/Python)
+description: "Configures structured JSON logging with Serilog (.NET) or structlog (Python). Use when adding logging to backend projects."
+license: MIT
 ---
 
 # ln-771-logging-configurator
@@ -223,6 +224,25 @@ This skill is idempotent:
 - [Serilog.AspNetCore](https://github.com/serilog/serilog-aspnetcore)
 - [structlog Documentation](https://www.structlog.org/)
 - [ASP.NET Core Logging](https://learn.microsoft.com/aspnet/core/fundamentals/logging/)
+
+---
+
+## Critical Rules
+
+- **Use MCP ref/Context7 for current API** — do not hardcode Serilog/structlog config from memory
+- **Idempotent** — if Serilog or structlog already configured, return `status: "skipped"` immediately
+- **Environment-aware log levels** — Debug for Development, Information for Production (never Warning default)
+- **Always include correlation ID enrichment** — required for distributed tracing
+- **Return structured response** — `files_created`, `packages_added`, `registration_code` for coordinator aggregation
+
+## Definition of Done
+
+- [ ] Context Store received and validated (stack, framework, version)
+- [ ] Best practices researched via MCP tools for target stack
+- [ ] User decisions collected (format, enrichment, sinks, log levels)
+- [ ] Configuration files generated (extensions/config + appsettings or Python modules)
+- [ ] Syntax validated (`dotnet build` or `py_compile`)
+- [ ] Structured JSON response returned to ln-770 coordinator
 
 ---
 

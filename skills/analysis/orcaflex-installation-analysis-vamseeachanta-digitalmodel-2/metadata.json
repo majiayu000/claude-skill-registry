@@ -1,0 +1,18 @@
+{
+  "name": "orcaflex-installation-analysis",
+  "description": "Create and analyze OrcaFlex models for offshore installation sequences including subsea structure lowering, pipeline installation, and crane operations. Generate models at multiple water depths and or",
+  "repo": "vamseeachanta/digitalmodel",
+  "path": ".claude/skills/orcaflex-installation-analysis",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/vamseeachanta/digitalmodel",
+  "dir_name": "orcaflex-installation-analysis-vamseeachanta-digitalmodel-2",
+  "author": "vamseeachanta",
+  "source_url": "https://github.com/vamseeachanta/digitalmodel/blob/main/.claude/skills/orcaflex-installation-analysis/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 Vamsee Achanta",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

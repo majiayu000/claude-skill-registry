@@ -12,12 +12,10 @@ Assess external feedback (code reviews, AI suggestions, PR comments) with advers
 For each finding:
 
 1. **Read the referenced code** at the mentioned location — include the full function or logical block, not just the flagged line
-2. **Check for early exits:**
-   - If the finding references code that no longer exists or has since changed, skip it and note that the code has diverged.
-   - If two findings conflict with each other, skip both and document the conflict.
-3. **Determine scope** — clarify whether the issue was introduced by the PR/changeset or is pre-existing. Present this distinction explicitly so the user can decide whether it belongs in this PR's scope.
-   - Pre-existing issues in earlier commits on the same feature branch are in-scope by default — the entire branch is one coherent unit of work.
-   - Out-of-scope findings that are genuinely useful and have low blast radius should be accepted. Only skip out-of-scope findings when the change is disproportionate to the current work.
+2. **Check whether the code has diverged** — if the finding references code that no longer exists or has since changed, skip it and note the divergence.
+3. **Determine scope** — clarify whether the issue was introduced by the PR/changeset or is pre-existing.
+   - Pre-existing issues in earlier commits on the same feature branch are in-scope by default — the entire branch is one coherent unit of work. Judge these on their merits like any in-scope finding.
+   - Findings genuinely outside the branch's work are the user's call to include. Assign Escalate so the user decides whether to widen the changeset. Reserve Skip for changes whose cost wildly dwarfs the benefit.
 4. **Verify the claim** against the actual code — does the issue genuinely exist?
 5. **Assess severity:**
 
@@ -36,18 +34,21 @@ For each finding:
 
 | Verdict | Criteria |
 |---------|----------|
-| **Apply** | The finding is real: clear bug, missing check, genuine improvement, style violation matching project conventions |
-| **Skip** | False positive, subjective preference, reviewer is wrong, or change would be disproportionate |
-| **Escalate** | Genuinely ambiguous: behavior might be intentional, involves product intent, or requires domain knowledge the agent lacks |
+| **Apply** | The finding is real and in scope: clear bug, missing check, genuine improvement, style violation matching project conventions |
+| **Skip** | False positive, subjective preference, reviewer is wrong, or the change's cost wildly dwarfs its benefit |
+| **Escalate** | Needs the user's judgment: behavior might be intentional, involves product intent, requires domain knowledge the agent lacks, the finding is out of scope, or two findings present a genuine trade-off |
 
 Also assign an internal confidence level — **High**, **Medium**, or **Low** — reflecting how certain you are about the verdict. Confidence is used solely to route findings to the Devil's Advocate in Step 2. It does not appear in the output.
 
 **Escalate guidance:** When a finding questions whether behavior is intentional and neither docs, specs, nor code comments clarify the intent, assign Escalate. Do not autonomously accept or reject findings that hinge on product intent. If a counterpart implementation exists elsewhere, suggest checking it for consistency.
 
+**Conflict guidance:** When two findings contradict each other (they suggest opposite changes to the same code), treat the conflict as input, not a reason to skip. Verify each against the code and judge each on its merits as usual. If both are defensible and the choice is a genuine trade-off, assign Escalate to both, naming the opposing options so the user can decide.
+
 **Verdict guidance:**
 
 - Never auto-dismiss findings about security defaults, permission escalation, or fail-open vs fail-closed behavior. Always surface these even if the behavior appears intentional.
 - Readability and clarity improvements that genuinely make code cleaner are valid. Do not auto-classify cosmetic changes as subjective.
+- Removing a comment that adds no information beyond the code is a valid Apply, not a subjective preference. Keep only comments that capture a constraint the code cannot express.
 - Be skeptical of "defensive coding" suggestions that wrap natural code in verbose guards without evidence of real-world failures.
 - Weight reviewer authority. Feedback from trusted reviewers (repository maintainers or admins) should be treated with higher credibility even when phrased softly.
 - Plan deviation is not a verdict. Do not reject a finding on the grounds that it departs from a plan's prescribed shape. When the plan records a load-bearing reason for that shape, assign Escalate so the user can weigh the trade-off. When the plan is silent on why, or the recorded reason reads like "path of least deviation" or "minimal change", treat the shape as a default and judge the finding on its own merits.

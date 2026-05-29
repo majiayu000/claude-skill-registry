@@ -1,6 +1,6 @@
 ---
 name: skill-model-updater
-description: Update model references in skill files when new Claude models are released
+description: Updates model references across all skill files when new Claude models are released. Use when Anthropic releases new Claude models to keep skills current.
 argument-hint: <"check" | "update" | "update --dry-run">
 model: claude-haiku-4-5-20251001
 allowed-tools:
@@ -85,7 +85,8 @@ Haiku:  claude-haiku-4-5-20251001
 2. Glob for all `skills/*/SKILL.md` files
 3. Extract `model:` field from YAML frontmatter
 4. Compare against discovered current models
-5. Report status for each skill
+5. **Check CLAUDE.md** - Scan `${CLAUDE_PLUGIN_ROOT}/CLAUDE.md` for `Co-Authored-By: Claude` lines and verify model name is current
+6. Report status for each skill and CLAUDE.md
 
 **Output format:**
 ```
@@ -118,7 +119,8 @@ Summary: 19/20 skills current, 1 needs update
    - Read the SKILL.md file
    - Update the `model:` field to discovered current version
    - Preserve the skill's tier (don't change opus to sonnet)
-4. Report changes made
+4. **Update CLAUDE.md** - If `Co-Authored-By` line in `${CLAUDE_PLUGIN_ROOT}/CLAUDE.md` references an outdated model name, update it to current
+5. Report changes made
 
 **Output format:**
 ```
@@ -176,7 +178,7 @@ When Anthropic releases new models:
 2. **Review changes** - Verify discovered models are correct
 3. **Run update** - `/skill-model-updater update` to propagate changes
 
-**Note**: Tier assignments are documented in `/reference/model-strategy.md`. This skill preserves existing tiers - it only updates version numbers.
+**Note**: Tier assignments are documented in `${CLAUDE_PLUGIN_ROOT}/reference/model-strategy.md`. This skill preserves existing tiers - it only updates version numbers.
 
 ---
 
@@ -230,9 +232,20 @@ If a SKILL.md has malformed frontmatter:
 
 ---
 
+## Scope
+
+This skill updates model references in:
+1. **All `skills/*/SKILL.md` files** - The `model:` field in YAML frontmatter
+2. **`CLAUDE.md`** - The `Co-Authored-By: Claude [Model] <noreply@anthropic.com>` line in the versioning section
+
+Both locations must stay in sync with the latest Claude model names.
+
+---
+
 ## Remember
 
 - **Check before update** - Always know what will change
 - **Tiers are auto-detected** - Skill reads existing model field to determine tier (opus/sonnet/haiku)
 - **Shorthand is safe** - `opus`, `sonnet`, `haiku` always resolve to current versions
-- **Tier rationale** - See `/reference/model-strategy.md` for why each skill uses its tier
+- **Tier rationale** - See `${CLAUDE_PLUGIN_ROOT}/reference/model-strategy.md` for why each skill uses its tier
+- **CLAUDE.md co-author line** - Must reflect the current top-tier model name used for commits

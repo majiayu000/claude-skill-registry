@@ -1,0 +1,16 @@
+{
+  "name": "deliver-release-notes",
+  "repo": "product-on-purpose/pm-skills",
+  "path": "skills/deliver-release-notes/SKILL.md",
+  "source": "github.com/product-on-purpose/pm-skills",
+  "downloaded_at": "2026-02-02T02:42:37.850264Z",
+  "dir_name": "deliver-release-notes",
+  "category": "writing",
+  "author": "product-on-purpose",
+  "source_url": "https://github.com/product-on-purpose/pm-skills/blob/main/skills/deliver-release-notes/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2026 Jonathan",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

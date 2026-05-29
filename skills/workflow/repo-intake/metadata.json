@@ -1,0 +1,16 @@
+{
+  "name": "repo-intake",
+  "repo": "sd0xdev/sd0x-dev-flow",
+  "path": "skills/repo-intake/SKILL.md",
+  "source": "github.com/sd0xdev/sd0x-dev-flow",
+  "downloaded_at": "2026-02-01T02:26:15.313449Z",
+  "dir_name": "repo-intake",
+  "category": "workflow",
+  "author": "sd0xdev",
+  "source_url": "https://github.com/sd0xdev/sd0x-dev-flow/blob/main/skills/repo-intake/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 sd0xdev",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

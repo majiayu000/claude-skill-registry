@@ -1,6 +1,6 @@
 ---
 name: cove
-description: Apply Chain-of-Verification (CoVe) prompting to improve response accuracy through self-verification. Use for complex questions requiring fact-checking, technical accuracy, or multi-step reasoning.
+description: Apply Chain-of-Verification (CoVe) prompting to improve response accuracy through self-verification. Use when complex questions require fact-checking, technical accuracy, or multi-step reasoning.
 ---
 
 # Chain-of-Verification (CoVe)

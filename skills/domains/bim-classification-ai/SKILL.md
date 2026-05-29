@@ -1,5 +1,6 @@
 ---
-name: bim-classification-ai
+slug: "bim-classification-ai"
+display_name: "BIM Classification AI"
 description: "Classify BIM elements using AI and standard classification systems. Map elements to UniFormat, MasterFormat, OmniClass, and CWICR codes."
 ---
 

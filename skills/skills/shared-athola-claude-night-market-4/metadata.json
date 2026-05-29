@@ -1,0 +1,16 @@
+{
+  "name": "shared",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/scribe/skills/shared/SKILL.md",
+  "category": "skills",
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "shared-athola-claude-night-market-4",
+  "downloaded_at": "2026-02-11T01:26:54.367533Z",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/scribe/skills/shared/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 athola",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

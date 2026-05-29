@@ -1,9 +1,14 @@
-````markdown
 ---
 name: consume-youtube
 description: >
   Search and annotate YouTube transcripts already ingested by /ingest-youtube.
   Supports per-channel indexing and Horus notes with /memory integration.
+provides:
+  - consume-youtube
+composes:
+  - ingest-youtube
+  - memory
+  - task-monitor
 triggers:
   - consume youtube
   - search youtube
@@ -100,5 +105,3 @@ Notes are stored in `/memory` using the consume-common memory bridge:
   --category emotional_learning \
   --tags youtube,horus_lupercal
 ```
-
-````

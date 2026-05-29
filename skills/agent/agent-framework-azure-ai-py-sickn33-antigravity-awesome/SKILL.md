@@ -70,7 +70,7 @@ async def main():
             name="MyAgent",
             instructions="You are a helpful assistant.",
         )
-        
+
         result = await agent.run("Hello!")
         print(result.text)
 
@@ -106,7 +106,7 @@ async def main():
             instructions="You help with weather and time queries.",
             tools=[get_weather, get_current_time],  # Pass functions directly
         )
-        
+
         result = await agent.run("What's the weather in Seattle?")
         print(result.text)
 ```
@@ -135,7 +135,7 @@ async def main():
                 HostedWebSearchTool(name="Bing"),
             ],
         )
-        
+
         result = await agent.run("Calculate the factorial of 20 in Python")
         print(result.text)
 ```
@@ -152,7 +152,7 @@ async def main():
             name="StreamingAgent",
             instructions="You are a helpful assistant.",
         )
-        
+
         print("Agent: ", end="", flush=True)
         async for chunk in agent.run_stream("Tell me a short story"):
             if chunk.text:
@@ -176,18 +176,18 @@ async def main():
             instructions="You are a helpful assistant.",
             tools=[get_weather],
         )
-        
+
         # Create thread for conversation persistence
         thread = agent.get_new_thread()
-        
+
         # First turn
         result1 = await agent.run("What's the weather in Seattle?", thread=thread)
         print(f"Agent: {result1.text}")
-        
+
         # Second turn - context is maintained
         result2 = await agent.run("What about Portland?", thread=thread)
         print(f"Agent: {result2.text}")
-        
+
         # Save thread ID for later resumption
         print(f"Conversation ID: {thread.conversation_id}")
 ```
@@ -201,7 +201,7 @@ from azure.identity.aio import AzureCliCredential
 
 class WeatherResponse(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    
+
     location: str
     temperature: float
     unit: str
@@ -217,7 +217,7 @@ async def main():
             instructions="Provide weather information in structured format.",
             response_format=WeatherResponse,
         )
-        
+
         result = await agent.run("Weather in Seattle?")
         weather = WeatherResponse.model_validate_json(result.text)
         print(f"{weather.location}: {weather.temperature}°{weather.unit}")
@@ -288,23 +288,23 @@ async def main():
                 mcp_tool,
             ],
         )
-        
+
         thread = agent.get_new_thread()
-        
+
         # Non-streaming
         result = await agent.run(
             "Search for Python best practices and summarize",
             thread=thread,
         )
         print(f"Response: {result.text}")
-        
+
         # Streaming
         print("\nStreaming: ", end="")
         async for chunk in agent.run_stream("Continue with examples", thread=thread):
             if chunk.text:
                 print(chunk.text, end="", flush=True)
         print()
-        
+
         # Structured output
         result = await agent.run(
             "Analyze findings",
@@ -336,3 +336,8 @@ if __name__ == "__main__":
 
 ## When to Use
 This skill is applicable to execute the workflow or actions described in the overview.
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

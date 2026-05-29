@@ -16,7 +16,7 @@ related-skills: react-forms, react-state, react-19, solid-react
 
 ## Agent Workflow (MANDATORY)
 
-Before ANY implementation, launch in parallel:
+Before ANY implementation, use `TeamCreate` to spawn 3 agents:
 
 1. **fuse-ai-pilot:explore-codebase** - Analyze existing routes and navigation patterns
 2. **fuse-ai-pilot:research-expert** - Verify latest TanStack Router docs via Context7/Exa

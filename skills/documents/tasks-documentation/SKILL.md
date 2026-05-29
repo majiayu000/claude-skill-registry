@@ -1,5 +1,5 @@
 ---
-name: documentation
+name: tasks-documentation
 description: Use for WRITING documentation with ready-to-use code templates (C# XML docs, TypeScript JSDoc, API docs, README patterns). Best for implementing actual documentation, adding code comments, and creating docs from scratch. NOT for documentation planning (use documentation instead).
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash
 ---

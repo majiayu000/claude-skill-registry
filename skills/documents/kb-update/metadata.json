@@ -1,0 +1,17 @@
+{
+  "name": "kb-update",
+  "repo": "brainqub3/brainqub3",
+  "path": ".claude/skills/kb-update/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/brainqub3/brainqub3",
+  "dir_name": "kb-update",
+  "downloaded_at": "2026-03-22T07:19:24.181375Z",
+  "author": "brainqub3",
+  "source_url": "https://github.com/brainqub3/brainqub3/blob/main/.claude/skills/kb-update/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/brainqub3/brainqub3/blob/main/.claude/skills/kb-update/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,5 +1,5 @@
 ---
-# VERSION: 2.43.0
+# VERSION: 2.88.0
 name: task-classifier
 description: "Classify task complexity (1-10) to route to optimal model. Use when starting any non-trivial task to determine resources and approach. Triggers include: 'classify', 'complexity', 'what model', 'how complex'."
 context: fork
@@ -13,6 +13,13 @@ allowed-tools:
 # Skill: Task Classifier
 
 **ultrathink** - Take a deep breath. We're not here to write code. We're here to make a dent in the universe.
+
+## v2.88 Key Changes (MODEL-AGNOSTIC)
+
+- **Model-agnostic**: Uses model configured in `~/.claude/settings.json` or CLI/env vars
+- **No flags required**: Works with the configured default model
+- **Flexible**: Works with GLM-5, Claude, Minimax, or any configured model
+- **Settings-driven**: Model selection via `ANTHROPIC_DEFAULT_*_MODEL` env vars
 
 ## The Vision
 Classification should make the path forward feel inevitable.

@@ -1,95 +1,117 @@
 ---
 name: docx-to-markdown
-description: Convert Microsoft Word (.docx) files to Markdown. Use when importing Word documents, extracting content from DOCX for version control, or converting documentation to Markdown format.
-allowed-tools: Bash, Read, Write
+version: 1.0.0
+description: '[Document Processing] Convert Microsoft Word (.docx) files to Markdown with GFM support (tables, images, code blocks). Cross-platform.'
+
+allowed-tools: NONE
 ---
+
+> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI MUST ask user whether to skip.
+
+## Quick Summary
+
+**Goal:** Convert Microsoft Word (.docx) files to Markdown with GFM support (tables, images, formatting).
+
+**Workflow:**
+
+1. **Install** -- Ensure pandoc is available (required dependency)
+2. **Convert** -- Run pandoc with GFM output format and image extraction
+3. **Clean** -- Post-process markdown for consistency
+
+**Key Rules:**
+
+- Requires pandoc installed on the system
+- Extracts images to a media/ directory alongside the markdown
+- Preserves tables, formatting, and document structure
+
+**Be skeptical. Apply critical thinking, sequential thinking. Every claim needs traced proof, confidence percentages (Idea should be more than 80%).**
 
 # docx-to-markdown
 
-Convert Microsoft Word (.docx) documents to Markdown format.
+Convert Microsoft Word (.docx) files to Markdown format with GitHub-Flavored Markdown support.
 
 ## Installation Required
 
+**This skill requires npm dependencies.** Run one of the following:
+
 ```bash
+# Option 1: Install via ClaudeKit CLI (recommended)
+ck init  # Runs install.sh which handles all skills
+
+# Option 2: Manual installation
 cd .claude/skills/docx-to-markdown
 npm install
 ```
 
-**Dependencies:** `mammoth`, `turndown`, `@truto/turndown-plugin-gfm`
+**Dependencies:** `mammoth`, `turndown`, `turndown-plugin-gfm`
 
 ## Quick Start
 
 ```bash
 # Basic conversion
-node .claude/skills/docx-to-markdown/scripts/convert.cjs \
-  --file ./document.docx
+node .claude/skills/docx-to-markdown/scripts/convert.cjs --input ./document.docx
 
-# Custom output path
-node .claude/skills/docx-to-markdown/scripts/convert.cjs \
-  --file ./doc.docx \
-  --output ./output/doc.md
+# Specify output path
+node .claude/skills/docx-to-markdown/scripts/convert.cjs -i ./doc.docx -o ./output.md
 
-# Extract images to directory
-node .claude/skills/docx-to-markdown/scripts/convert.cjs \
-  --file ./doc.docx \
-  --output ./output/doc.md \
-  --images ./output/images/
+# Preserve images to folder
+node .claude/skills/docx-to-markdown/scripts/convert.cjs -i ./doc.docx --images ./images/
 ```
 
 ## CLI Options
 
-| Option            | Required | Description                                             |
-| ----------------- | -------- | ------------------------------------------------------- |
-| `--file <path>`   | Yes      | Input DOCX file                                         |
-| `--output <path>` | No       | Output Markdown path (default: input name + .md)        |
-| `--images <dir>`  | No       | Directory for extracted images (default: inline base64) |
+| Option     | Short | Description                    | Default       |
+| ---------- | ----- | ------------------------------ | ------------- |
+| `--input`  | `-i`  | Input DOCX file path           | (required)    |
+| `--output` | `-o`  | Output markdown file path      | `{input}.md`  |
+| `--images` |       | Directory for extracted images | inline base64 |
+| `--help`   | `-h`  | Show help message              |               |
 
-## Output Format (JSON)
+## Features
+
+- **GFM Tables:** Properly converts Word tables to markdown tables
+- **Images:** Extracts embedded images (base64 inline or to folder)
+- **Lists:** Ordered and unordered lists preserved
+- **Code Blocks:** Monospace text converted to code blocks
+- **Links:** Hyperlinks preserved
+- **Headings:** Heading levels maintained
+- **Cross-Platform:** Works on Windows, macOS, Linux
+
+## Conversion Pipeline
+
+```
+DOCX → mammoth → HTML → turndown → Markdown
+```
+
+The two-stage conversion (DOCX→HTML→MD) follows mammoth's official recommendation for best results.
+
+## Output
+
+Returns JSON on success:
 
 ```json
 {
-  "success": true,
-  "input": "/path/to/input.docx",
-  "output": "/path/to/output.md",
-  "wordCount": 1523,
-  "images": 5,
-  "warnings": ["Some formatting may be simplified"]
+    "success": true,
+    "input": "/path/to/input.docx",
+    "output": "/path/to/output.md",
+    "stats": {
+        "images": 3,
+        "tables": 2,
+        "headings": 5
+    }
 }
 ```
 
-## Supported Elements
+## Limitations
 
-- Headings (H1-H6)
-- Paragraphs and emphasis (bold, italic, strikethrough)
-- Ordered and unordered lists
-- Tables (GFM format)
-- Links
-- Images (extracted or base64)
-- Code blocks (requires Word "Code" style)
-- Blockquotes
+- Complex layouts (columns, text boxes) may not preserve structure
+- Merged table cells produce basic markdown tables
+- Comments and track changes are stripped
+- Some formatting (fonts, colors) lost in conversion
 
-## Known Limitations
+---
 
-- **Nested lists**: Numbering may reset in deeply nested lists
-- **Nested tables**: Inner tables are flattened
-- **Code blocks**: Require explicit Word style mapping ("Code" or "Code Block")
-- **Complex formatting**: Some advanced formatting may be simplified
-- **Footnotes**: Converted but may lose some formatting
+**IMPORTANT Task Planning Notes (MUST FOLLOW)**
 
-## Google Docs Support
-
-Export your Google Doc as DOCX first, then convert:
-
-1. In Google Docs: File → Download → Microsoft Word (.docx)
-2. Run this converter on the downloaded file
-
-## Troubleshooting
-
-**Dependencies not found:** Run `npm install` in skill directory
-**Empty output:** Ensure DOCX contains actual text (not just images)
-**Code blocks not detected:** Use Word's built-in "Code" style
-
-## IMPORTANT Task Planning Notes
-
-- Always plan and break many small todo tasks
-- Always add a final review todo task to review the works done at the end to find any fix or enhancement needed
+- Always plan and break work into many small todo tasks
+- Always add a final review todo task to verify work quality and identify fixes/enhancements

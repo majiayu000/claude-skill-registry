@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-29T13:47:12.369980+00:00",
+  "skills_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch018",
+  "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch018/migration-artifacts/2026-05-29-current-other-full-rerun-batch-018/classification.jsonl",
+  "policy": {
+    "min_confidence": 0.7,
+    "from_categories": [
+      "other"
+    ],
+    "to_categories": [],
+    "target_statuses": [
+      "active"
+    ],
+    "allow_target_other": false,
+    "movable_only": true,
+    "limit": null,
+    "apply_mode": "apply"
+  },
+  "summary": {
+    "classification_row_count": 25128,
+    "classification_status_counts": {
+      "missing_result": 2,
+      "ok": 25126
+    },
+    "planned_move_count": 3,
+    "movable_count": 3,
+    "blocked_count": 0,
+    "operation_counts": {
+      "move": 3
+    },
+    "reject_reasons": {
+      "classification status is not ok": 2,
+      "confidence below threshold": 520,
+      "source directory missing": 24603
+    },
+    "source_category_counts": {
+      "other": 3
+    },
+    "target_category_counts": {
+      "documents": 1,
+      "generation": 1,
+      "integration": 1
+    }
+  },
+  "moves": [
+    {
+      "operation": "move",
+      "source_path": "other/code-feeder-skill-ecrypted-data-code-feeder-skill-2",
+      "source_skill": "other/code-feeder-skill-ecrypted-data-code-feeder-skill-2/SKILL.md",
+      "source_category": "other",
+      "current_category": "other",
+      "target_category": "documents",
+      "target_status": "active",
+      "target_path": "documents/code-feeder-skill-ecrypted-data-code-feeder-skill-2",
+      "target_skill": "documents/code-feeder-skill-ecrypted-data-code-feeder-skill-2/SKILL.md",
+      "name": "code-feeder",
+      "confidence": 0.75,
+      "key": "Ecrypted-Data/Code_Feeder_Skill:name:code-feeder",
+      "repo": "Ecrypted-Data/Code_Feeder_Skill",
+      "reason": "classification target passed filters",
+      "source_sha256": "05c9fac2efde2c3d5c8663fbc037acf30bdbac2c14c666e1953db6b5731f3541",
+      "metadata_sha256": "e4b1007ba9fb3ed95c1e68e8a7482d6deec6fe0de623aa284141a2ebdcacefd1",
+      "semantic_text_sha256": "fbe026ac2dc14696f6685e15374b7f9364a04b0deb8fc39b26139aa21275b4aa"
+    },
+    {
+      "operation": "move",
+      "source_path": "other/linear-claude-skill-wrsmith108-linear-claude-skill-2",
+      "source_skill": "other/linear-claude-skill-wrsmith108-linear-claude-skill-2/SKILL.md",
+      "source_category": "other",
+      "current_category": "other",
+      "target_category": "integration",
+      "target_status": "active",
+      "target_path": "integration/linear-claude-skill-wrsmith108-linear-claude-skill-2-wrsmith108-linear-claude-skill",
+      "target_skill": "integration/linear-claude-skill-wrsmith108-linear-claude-skill-2-wrsmith108-linear-claude-skill/SKILL.md",
+      "name": "Linear",
+      "confidence": 0.92,
+      "key": "wrsmith108/linear-claude-skill:name:linear",
+      "repo": "wrsmith108/linear-claude-skill",
+      "reason": "classification target passed filters",
+      "source_sha256": "26f593bdb213bf97db89f03905c88ee60366f68b60b2d7ec68e5f6a41ff5b463",
+      "metadata_sha256": "fc5f5a735f12c888d8af8b4227511f713cf566379b253b38ff83e6159d5a05b4",
+      "semantic_text_sha256": "f43752f7d1bc6137874f22a5006a7b5c08502f0919a0376b24e951a9de235395"
+    },
+    {
+      "operation": "move",
+      "source_path": "other/video-to-gif-skill-texmeijin-video-to-gif-skill-9180b6cb",
+      "source_skill": "other/video-to-gif-skill-texmeijin-video-to-gif-skill-9180b6cb/SKILL.md",
+      "source_category": "other",
+      "current_category": "other",
+      "target_category": "generation",
+      "target_status": "active",
+      "target_path": "generation/video-to-gif-skill-texmeijin-video-to-gif-skill-9180b6cb",
+      "target_skill": "generation/video-to-gif-skill-texmeijin-video-to-gif-skill-9180b6cb/SKILL.md",
+      "name": "video-to-gif",
+      "confidence": 0.85,
+      "key": "TeXmeijin/video-to-gif-skill:name:video-to-gif",
+      "repo": "TeXmeijin/video-to-gif-skill",
+      "reason": "classification target passed filters",
+      "source_sha256": "591fb511e4a0bc0c2e858827b3d0d5855ca9f1df744fb399dd141a503a8e1bda",
+      "metadata_sha256": "7e579e78521cdf8ea7a5cebd0328947c61feb8bf3e5274bc66196f0f807e36b4",
+      "semantic_text_sha256": "2040271ff7eb808a1eab8c2dcd7834bdcf33b16c0502820f28637b8dc1f71f47"
+    }
+  ],
+  "notes": [
+    "Default mode is review-only and does not modify files.",
+    "Only --apply moves directories and updates metadata.json.",
+    "Blocked moves are never applied automatically."
+  ],
+  "applied_at": "2026-05-29T13:47:12.405112+00:00"
+}

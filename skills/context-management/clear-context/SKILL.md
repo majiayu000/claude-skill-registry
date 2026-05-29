@@ -1,27 +1,18 @@
 ---
 name: clear-context
-description: |
-  Automatic context management with graceful handoff to continuation subagent.
-
-  Triggers: context pressure, 80% threshold, auto-clear, context full,
-  continuation, session state, checkpoint
-
-  Use when: Context usage approaches 80% during long-running tasks.
-  This skill enables automatic continuation without manual /clear.
-
-  The key insight: Subagents have fresh context windows. By delegating
-  remaining work to a continuation subagent, we achieve effective "auto-clear"
-  without stopping the workflow.
+description: 'Automatic context management with graceful handoff to a continuation subagent at 80% usage.'
+alwaysApply: false
 category: conservation
 token_budget: 200
 progressive_loading: true
-
 hooks:
   PreToolUse:
-    - matcher: "Task"
-      command: |
-        echo "[skill:clear-context] Subagent delegation at $(date)" >> ${CLAUDE_CODE_TMPDIR:-/tmp}/clear-context-audit.log
-version: 1.3.5
+  - matcher: Task
+    command: 'echo "[skill:clear-context] Subagent delegation at $(date)" >> ${CLAUDE_CODE_TMPDIR:-/tmp}/clear-context-audit.log
+
+      '
+model_hint: standard
+role: library
 ---
 ## Table of Contents
 
@@ -46,11 +37,19 @@ When context pressure reaches critical levels (80%+), invoke this skill to:
 Skill(conserve:clear-context)
 ```
 
-## When to Use
+## When To Use
 
 - **Proactively**: Before starting large multi-chained tasks
 - **Reactively**: When context warning indicates 80%+ usage
 - **Automatically**: Integrated into long-running workflows
+
+## When NOT To Use
+
+- Context usage is under 50% - continue working normally
+- Mid-critical-operation where handoff would lose state
+- **Consider "Summarize from here" first** (Claude Code 2.1.32+): Before full auto-clear,
+  try partial summarization via the message selector. This compresses older context while
+  preserving recent work — often sufficient to relieve pressure without a full handoff.
 
 ## The Auto-Clear Pattern
 
@@ -89,14 +88,26 @@ Before triggering auto-clear, gather:
 - Files being actively worked on
 - Open TodoWrite items
 
+### Step 1.5: Finalize Task List Before Handoff
+
+**Important**: Before saving state or spawning a continuation agent, reconcile the task list:
+
+1. **Review all tasks** via `TaskList`
+2. **Mark completed tasks** as `completed` via `TaskUpdate` — do NOT leave done work as `in_progress`
+3. **Record existing task IDs** — collect all task IDs (pending and in_progress) to pass in the session state so the continuation agent references them instead of creating duplicates
+4. **Include task IDs in session state** under the `existing_task_ids` field (see Step 2)
+
+This prevents the continuation agent from creating duplicate tasks.
+
 ### Step 2: Save Session State
 
-**IMPORTANT**: If `.claude/session-state.md` already exists, you MUST Read it first before writing (Claude Code requires reading existing files before overwriting). Create the `.claude/` directory if it doesn't exist.
+**Important**: If `.claude/session-state.md` already exists, always Read it first before writing (Claude Code requires reading existing files before overwriting). Create the `.claude/` directory if it doesn't exist.
 
 Write to `.claude/session-state.md` (or `$CONSERVE_SESSION_STATE_PATH`):
 
 ```markdown
 # Session State Checkpoint
+state_version: 1
 Generated: [timestamp]
 Reason: Context threshold exceeded (80%+)
 
@@ -107,8 +118,8 @@ Reason: Context threshold exceeded (80%+)
 **Source Command**: [do-issue | execute-plan | etc.]
 **Remaining Tasks**: [list of pending items]
 
-> **CRITICAL**: If `auto_continue: true` or mode is `dangerous`/`unattended`,
-> the continuation agent MUST NOT pause for user confirmation.
+> **Important**: If `auto_continue: true` or mode is `dangerous`/`unattended`,
+> the continuation agent should not pause for user confirmation.
 > Continue executing all remaining tasks until completion.
 
 ## Current Task
@@ -128,6 +139,12 @@ Reason: Context threshold exceeded (80%+)
 ## Pending TodoWrite Items
 - [ ] Item 1
 - [ ] Item 2
+
+## Existing Task IDs
+[List task IDs from TaskList so the continuation agent can reference them
+instead of creating duplicates. Example:]
+- Task #1: "Implement feature X" (in_progress)
+- Task #2: "Write tests for feature X" (pending)
 
 ## Continuation Instructions
 [Specific next steps for the continuation agent]
@@ -163,7 +180,7 @@ if parent_state and parent_state.get("execution_mode"):
 
 ### Step 3: Spawn Continuation Agent
 
-Use the Task tool to delegate. **CRITICAL**: Include execution mode in the task prompt:
+Use the Task tool to delegate. **Important**: Include execution mode in the task prompt:
 
 ```
 Task: Continue the work from session checkpoint
@@ -175,16 +192,23 @@ Instructions:
    - DO NOT pause for user confirmation
    - Continue executing ALL remaining tasks until completion
    - Only stop on actual errors or when all work is done
-4. Verify understanding of current task and progress
-5. Continue from where the previous agent left off
-6. If you also approach 80% context, repeat this handoff process
+4. **TASK LIST**: Do NOT create new tasks via TaskCreate. The parent agent
+   already created the task list. Use TaskList to see existing tasks, and
+   TaskUpdate to mark them in_progress/completed. Check the "Existing Task IDs"
+   section in the session state for the authoritative list.
+5. Verify understanding of current task and progress
+6. Continue from where the previous agent left off
+7. If you also approach 80% context, repeat this handoff process
    - PRESERVE the execution mode when creating your own checkpoint
 
 The session state file contains all necessary context to continue without interruption.
 
-**EXECUTION MODE INHERITANCE**: You MUST inherit and propagate the execution
+**Execution mode inheritance**: Always inherit and propagate the execution
 mode from the session state. If the parent was in dangerous/unattended mode,
 you are also in that mode. Do not ask the user for confirmation.
+
+**Task deduplication**: Do not create duplicate tasks. The parent has already
+populated the task list. Use TaskUpdate on existing task IDs only.
 ```
 
 **For batch/multi-issue workflows** (e.g., `/do-issue 42 43 44`):
@@ -206,12 +230,26 @@ Instructions:
 This is an unattended batch operation. Continue without user prompts.
 ```
 
-### Step 4: Graceful Exit
+**Task Tool Details:**
+- Spawns subagent with fresh 1M context window
+- Up to 10 parallel agents supported
+- ~20k token overhead per subagent
 
-After spawning continuation agent:
-- Report that handoff is complete
-- Provide link to session state for reference
-- Exit current task (subagent continues)
+### Step 3 Fallback: Graceful Wrap-Up
+
+If Task tool is unavailable (permissions, context restrictions):
+
+1. **Complete current in-progress work** (finish edits, commits)
+2. **Summarize remaining tasks** in your response
+3. **Let auto-compact handle continuation** - Claude Code compresses context automatically
+4. **Manual continuation options**:
+   - `claude --continue` to resume session
+   - New session + `/catchup` to understand changes
+   - Read `.claude/session-state.md` for saved context
+
+> **Fixed in 2.1.63**: `/clear` now properly resets cached skills. Previously, stale skill content could persist into the new conversation. The `/clear` + `/catchup` pattern is now fully reliable.
+
+> **Fixed in 2.1.72**: `/clear` now only clears foreground tasks. Background agent and bash tasks continue running. Previously, `/clear` would kill all tasks including background ones, which was problematic for long-running background agents that should survive context resets.
 
 ## Integration with Existing Hooks
 
@@ -226,6 +264,7 @@ This skill works with `context_warning.py` hook:
 
 For detailed session state format and examples:
 - See `modules/session-state.md` for checkpoint format and handoff patterns
+- See `modules/session-state-schema.md` for versioned schema and migration logic
 
 ## Self-Monitoring Pattern
 
@@ -243,24 +282,25 @@ def long_running_task():
             return  # Continuation agent takes over
 ```
 
-## Estimation Without CLAUDE_CONTEXT_USAGE
+## Context Measurement Methods
 
-If the environment variable isn't available, estimate using:
+### Precise (Headless/Batch)
 
-1. **Turn count heuristic**: ~5-10K tokens per complex turn
-2. **Tool invocation count**: Heavy tool use = faster context growth
-3. **File read tracking**: Large files consume significant context
+For accurate token breakdown in automation:
 
-```python
-def estimate_context_pressure():
-    """Rough estimation when env var unavailable."""
-    # Heuristics (tune based on observation)
-    turns_weight = 0.02  # Each turn ~2% of typical context
-    file_reads_weight = 0.05  # Each file read ~5%
-
-    estimated = (turn_count * turns_weight) + (file_reads * file_reads_weight)
-    return min(estimated, 1.0)
+```bash
+claude -p "/context" --verbose --output-format json
 ```
+
+See `/conserve:optimize-context` for full headless documentation.
+
+### Fast Estimation (Real-time Hooks)
+
+For hooks where speed matters, use heuristics:
+
+1. **JSONL file size**: ~800KB ≈ 100% context (used by context_warning hook)
+2. **Turn count**: ~5-10K tokens per complex turn
+3. **Tool invocations**: Heavy tool use = faster growth
 
 ## Example: Brainstorm with Auto-Clear
 

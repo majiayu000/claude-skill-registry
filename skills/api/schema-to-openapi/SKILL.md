@@ -34,18 +34,18 @@ Output: `.synnovator/openapi.yaml`
 ## What Gets Generated
 
 ### Content Type Endpoints (7 resources)
-- `/categories` - Activity/competition management
+- `/events` - Activity/competition management
 - `/posts` - User posts and submissions
 - `/resources` - File attachments
-- `/rules` - Category rules and scoring criteria
+- `/rules` - Event rules and scoring criteria
 - `/users` - User management
 - `/groups` - Teams and groups
 - `/users/me` - Current user profile
 
 ### Nested Relation Endpoints
-- `/categories/{id}/rules` - Category rules
-- `/categories/{id}/posts` - Category submissions
-- `/categories/{id}/groups` - Registered teams
+- `/events/{id}/rules` - Event rules
+- `/events/{id}/posts` - Event submissions
+- `/events/{id}/groups` - Registered teams
 - `/groups/{id}/members` - Group membership
 - `/posts/{id}/resources` - Post attachments
 - `/posts/{id}/related` - Related posts

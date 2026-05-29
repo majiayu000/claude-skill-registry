@@ -1,0 +1,18 @@
+{
+  "name": "unity-ui-selector",
+  "description": "Guides selection between UGUI and UI Toolkit for projects. Use when choosing UI framework or migrating UI systems.",
+  "repo": "zsutxz/ClaudeLearning",
+  "path": ".claude/skills/unity-ui-selector",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zsutxz/ClaudeLearning",
+  "dir_name": "unity-ui-selector-zsutxz-claudelearning-2",
+  "author": "zsutxz",
+  "source_url": "https://github.com/zsutxz/ClaudeLearning/blob/main/.claude/skills/unity-ui-selector/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Gomoku Game Project",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

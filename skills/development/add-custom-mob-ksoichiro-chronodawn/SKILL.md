@@ -13,12 +13,12 @@ description: Use when adding new mobs or entities. Covers entity class, model, r
 
 When adding a new mob, complete ALL of the following:
 
-### Java Classes (per module: 1.20.1, 1.21.1, 1.21.2)
+### Java Classes (per module: 1.20.1, 1.21.1, 1.21.2, 1.21.4)
 *Note: 1.21.3 uses 1.21.2 modules (no separate directory)*
 - [ ] Entity class (`entities/mobs/MobNameEntity.java`)
 - [ ] Model class (`client/model/MobNameModel.java`)
 - [ ] Renderer class (`client/renderer/mobs/MobNameRenderer.java`)
-- [ ] RenderState class (`client/renderer/mobs/MobNameRenderState.java`) - **1.21.2 only**
+- [ ] RenderState class (`client/renderer/mobs/MobNameRenderState.java`) - **1.21.2 and 1.21.4 only**
 
 ### Registration (per version)
 - [ ] `ModEntities.java` - Entity type registration
@@ -37,8 +37,28 @@ When adding a new mob, complete ALL of the following:
 - [ ] Texture file (`textures/entity/mobs/mob_name.png`)
 - [ ] Loot table (`loot_table/entities/mob_name.json` or `loot_tables/` for 1.20.1)
 - [ ] Spawn egg model (`models/item/mob_name_spawn_egg.json`)
+- [ ] Spawn egg item definition (`items/mob_name_spawn_egg.json`) - **1.21.4 only**
 - [ ] Language files (`lang/en_us.json`, `lang/ja_jp.json`)
 - [ ] Biome spawn configuration (if replacing vanilla mob)
+
+---
+
+## Vanilla Mob Reference Parameters
+
+When creating a mob based on a vanilla mob, use these reference values:
+
+| Base Mob | sized(w, h) | Health | Attack | Speed | Other Attributes |
+|----------|-------------|--------|--------|-------|------------------|
+| Iron Golem | 1.4f, 2.7f | 100 | 7.5-21 | 0.25 | Knockback Resistance 1.0 |
+| Enderman | 0.6f, 2.9f | 40 | 7 | 0.3 | Follow Range 64 |
+| Zombie | 0.6f, 1.95f | 20 | 3 | 0.23 | - |
+| Spider | 1.4f, 0.9f | 16 | 2 | 0.3 | Wall climbing |
+| Skeleton | 0.6f, 1.99f | 20 | - | 0.25 | Bow attack |
+| Chicken | 0.4f, 0.7f | 4 | - | 0.25 | - |
+| Pig | 0.9f, 0.9f | 10 | - | 0.25 | - |
+| Rabbit | 0.4f, 0.5f | 3 | - | 0.3 | - |
+
+**Tip**: For hostile versions of friendly mobs, consider increasing Health and adding Attack damage.
 
 ---
 
@@ -251,9 +271,9 @@ public class MobNameRenderer extends MobRenderer<MobNameEntity, MobNameModel> {
 
 ---
 
-## 4. RenderState Class (1.21.2 Only)
+## 4. RenderState Class (1.21.2 and 1.21.4)
 
-Create in `common-1.21.2/src/main/java/com/chronodawn/client/renderer/mobs/`
+Create in `common-1.21.2/` and `common-1.21.4/` under `src/main/java/com/chronodawn/client/renderer/mobs/`
 
 ```java
 package com.chronodawn.client.renderer.mobs;
@@ -425,23 +445,27 @@ Quick reminder:
 - Add to `initializeSpawnEggs()` and `populateCreativeTab()`
 - Create `models/item/mob_name_spawn_egg.json` with `"parent": "item/template_spawn_egg"`
 - Add to NeoForge color handler in `ChronoDawnClientNeoForge.java`
+- **1.21.4 only**: Create `items/mob_name_spawn_egg.json` with tints array (colors in decimal)
 
 ---
 
 ## Version API Differences Summary
 
-| Feature | 1.20.1 | 1.21.1 | 1.21.2/1.21.3 |
-|---------|--------|--------|---------------|
-| Spawn type enum | `MobSpawnType` | `MobSpawnType` | `EntitySpawnReason` |
-| SynchedEntityData | `defineSynchedData()` no params | `defineSynchedData(Builder)` | `defineSynchedData(Builder)` |
-| EntityModel type param | `EntityModel<Entity>` | `EntityModel<Entity>` | `EntityModel<RenderState>` |
-| MobRenderer type params | 2 (`Entity, Model`) | 2 (`Entity, Model`) | 3 (`Entity, RenderState, Model`) |
-| renderToBuffer color | `float r,g,b,a` | `int color` | N/A (handled by RenderState) |
-| EntityType.Builder.build() | `build("name")` | `build(ResourceKey)` | `build(ResourceKey)` |
-| SpawnPlacements.Type | `SpawnPlacements.Type` | `SpawnPlacementTypes` | `SpawnPlacementTypes` |
-| Loot table directory | `loot_tables/` | `loot_table/` | `loot_table/` |
-| Looting enchant function | `looting_enchant` | `enchanted_count_increase` | `enchanted_count_increase` |
-| RenderState class | Not needed | Not needed | Required |
+| Feature | 1.20.1 | 1.21.1 | 1.21.2/1.21.3 | 1.21.4 |
+|---------|--------|--------|---------------|--------|
+| Spawn type enum | `MobSpawnType` | `MobSpawnType` | `EntitySpawnReason` | `EntitySpawnReason` |
+| SynchedEntityData | `defineSynchedData()` no params | `defineSynchedData(Builder)` | `defineSynchedData(Builder)` | `defineSynchedData(Builder)` |
+| EntityModel type param | `EntityModel<Entity>` | `EntityModel<Entity>` | `EntityModel<RenderState>` | `EntityModel<RenderState>` |
+| MobRenderer type params | 2 (`Entity, Model`) | 2 (`Entity, Model`) | 3 (`Entity, RenderState, Model`) | 3 (`Entity, RenderState, Model`) |
+| renderToBuffer color | `float r,g,b,a` | `int color` | N/A (handled by RenderState) | N/A (handled by RenderState) |
+| EntityType.Builder.build() | `build("name")` | `build(ResourceKey)` | `build(ResourceKey)` | `build(ResourceKey)` |
+| SpawnPlacements.Type | `SpawnPlacements.Type` | `SpawnPlacementTypes` | `SpawnPlacementTypes` | `SpawnPlacementTypes` |
+| Loot table directory | `loot_tables/` | `loot_table/` | `loot_table/` | `loot_table/` |
+| Looting enchant function | `looting_enchant` | `enchanted_count_increase` | `enchanted_count_increase` | `enchanted_count_increase` |
+| RenderState class | Not needed | Not needed | Required | Required |
+| Damage handling | `hurt(DamageSource, float)` | `hurt(DamageSource, float)` | `hurtServer(ServerLevel, DamageSource, float)` | `hurtServer(ServerLevel, DamageSource, float)` |
+| Y coord minimum | `getMinBuildHeight()` | `getMinBuildHeight()` | `getMinY()` | `getMinY()` |
+| Spawn egg item def | Not needed | Not needed | Not needed | `items/*.json` with tints |
 
 *Note: 1.21.3 is a hotfix release that shares modules with 1.21.2. No separate code changes are needed.*
 

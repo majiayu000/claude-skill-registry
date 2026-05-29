@@ -1,0 +1,17 @@
+{
+  "name": "md-files",
+  "repo": "fetchai/agents-aea",
+  "path": "tests/test_docs/test_bash_yaml/md_files/bash-skill.md",
+  "github_branch": "main",
+  "category": "agent",
+  "source": "github.com/fetchai/agents-aea",
+  "dir_name": "md-files-fetchai-agents-aea-2",
+  "downloaded_at": "2026-03-01T07:43:32.681898Z",
+  "author": "fetchai",
+  "source_url": "https://github.com/fetchai/agents-aea/blob/main/tests/test_docs/test_bash_yaml/md_files/bash-skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fetchai/agents-aea/blob/main/tests/test_docs/test_bash_yaml/md_files/bash-skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "aptos",
+  "repo": "raintree-technology/claude-starter",
+  "path": "templates/.claude/skills/aptos/skill.md",
+  "source": "github.com/raintree-technology/claude-starter",
+  "downloaded_at": "2026-01-22T02:31:18.673343Z",
+  "dir_name": "aptos",
+  "category": "domains",
+  "github_path": ".claude/skills/aptos",
+  "github_branch": "main",
+  "author": "raintree-technology",
+  "source_url": "https://github.com/raintree-technology/claude-starter/blob/main/.claude/skills/aptos/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Raintree Technology",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

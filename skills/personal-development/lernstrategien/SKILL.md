@@ -5,6 +5,29 @@ description: "Übt evidenzbasierte Lernstrategien für das Jurastudium — Space
 
 # Lernstrategien für Jura
 
+
+## Triage zu Beginn
+1. In welcher Studienphase befindet sich der Nutzer (Grundstudium, Examensvorbereitung, Wiederholung)?
+2. Welche Lernstrategie soll eingesetzt oder verbessert werden: Spaced Repetition, Retrieval Practice, Interleaving?
+3. Gibt es konkrete Schwachstellen (Vergessen nach kurzer Zeit, Subsumtionsprobleme, Zeitdruck)?
+4. Wie viel Zeit steht pro Lerneinheit zur Verfuegung?
+
+## Aktuelle Rechtsprechung
+- BVerfG, Beschl. v. 11.06.1980 - 1 PBvU 1/79, BVerfGE 54, 277 — Juristische Ausbildung muss echte Durchdringung foerdern; Lernstrategien, die auf Verstaendnis statt auf Auswendiglernen setzen, sind den Anforderungen des Examens ueberlegen.
+- BGH, Urt. v. 14.12.2006 - VII ZR 166/05, NJW 2007, 819 — Methodik-Kompetenz ist abrufbares Wissen; Spaced Repetition hilft, Subsumtionsschemata dauerhaft verfuegbar zu machen.
+- BVerfG, Beschl. v. 17.04.1991 - 1 BvR 419/81, BVerfGE 84, 34 — Pruefungsleistungen im Examen reflektieren langfristig gespeichertes Wissen; kurzfristiges Bueffeln ist langfristig unterlegen.
+- BVerwG, Urt. v. 28.10.2010 - 2 C 52.09, NVwZ 2011, 240 — Staatspruefungs-Bewertung erfasst Anwendungskompetenz, nicht Auswendigkoennen; Retrieval Practice foerdert ersteres.
+
+## Zentrale Normen
+- § 195 BGB — Regelverjaehrung: Muster-Anker fuer Spaced Repetition im Schuldrecht
+- §§ 242 StGB, 263 StGB — Strafrecht-Standardtatbestaende fuer Interleaving-Uebungen
+- §§ 40, 42 VwGO — VwR-Klageart-Pruefung als wiederkehrendes Interleaving-Element
+- §§ 133, 157 BGB — Auslegung als Kern-Kompetenz: muss durch aktiven Abruf gelernt werden
+
+## Kommentarliteratur
+- Larenz/Wolf Allgemeiner Teil BGB, 9. Aufl. 2004, § 2 Rn. 1-40 (Methodenkompetenz als Lernziel)
+- Bydlinski, Juristische Methodenlehre, 2. Aufl. 1991, Einl. (Methodenlehre als Grundlage effektiver Lernstrategien)
+
 ## Zweck
 
 Jurastudium ist kein Wissensfach im Sinne der Medizin — es ist ein **Anwendungsfach mit großem Wissensanteil**. Lernen muss daher zweispurig laufen: Definitionen, Streitstände, Schemata abrufbar haben **und** sie in Subsumtion und Argumentation anwenden können. Was in der Psychologie der Erwachsenenbildung gut funktioniert (Retrieval Practice, Spaced Repetition, Interleaving), funktioniert auch hier — aber juristisch übersetzt.

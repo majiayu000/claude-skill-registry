@@ -1,5 +1,4 @@
----
-name: nextjs-best-practices
+---name: nextjs-best-practices
 description: Guidelines for building scalable, SEO-friendly applications with Next.js (App Router).
 license: MIT
 metadata:
@@ -13,7 +12,13 @@ allowed-tools:
   - read_file
   - replace
   - write_file
----
+
+keywords:
+  - nextjs-best-practices
+  - automation
+  - biomedical
+measurable_outcome: execute task with >95% success rate.
+---"
 
 # Next.js Best Practices
 

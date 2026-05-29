@@ -1,7 +1,10 @@
 ---
 name: ln-113-backend-docs-creator
-description: Creates 2 backend docs (api_spec.md, database_schema.md). L3 Worker invoked CONDITIONALLY when hasBackend or hasDatabase detected.
+description: "Creates backend docs (api_spec.md, database_schema.md). Use when project has backend API or database."
+license: MIT
 ---
+
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Backend Documentation Creator
 
@@ -94,16 +97,17 @@ API spec documents **contracts**, NOT implementations:
 Tables (endpoints, schemas) > Mermaid (ER diagrams) > Lists > Text
 
 ## Definition of Done
-- Conditions checked (hasBackend, hasDatabase)
-- Applicable documents created
-- ER diagram generated (if database_schema.md created)
-- Self-validation passed
-- Status returned to coordinator
+- [ ] Conditions checked (hasBackend, hasDatabase)
+- [ ] Applicable documents created
+- [ ] ER diagram generated (if database_schema.md created)
+- [ ] Self-validation passed
+- [ ] **Actuality verified:** all document facts match current code (paths, functions, APIs, configs exist and are accurate)
+- [ ] Status returned to coordinator
 
 ## Reference Files
 - Templates: `references/templates/api_spec_template.md`, `database_schema_template.md`
 - Questions: `references/questions_backend.md` (Q39-Q42)
 
 ---
-**Version:** 1.2.0 (Added Stack Adaptation and Format Priority rules)
+**Version:** 1.2.0
 **Last Updated:** 2025-01-12

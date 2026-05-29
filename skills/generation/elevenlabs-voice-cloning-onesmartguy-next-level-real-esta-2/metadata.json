@@ -1,0 +1,18 @@
+{
+  "name": "elevenlabs-voice-cloning",
+  "description": "ElevenLabs voice cloning techniques, audio quality requirements, recording best practices, and training data optimization for professional-quality voice clones. Use when creating custom voices, clonin",
+  "repo": "onesmartguy/next-level-real-estate",
+  "path": ".claude/skills/ai-voice-audio/skills/elevenlabs-voice-cloning",
+  "category": "generation",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/onesmartguy/next-level-real-estate",
+  "dir_name": "elevenlabs-voice-cloning-onesmartguy-next-level-real-esta-2",
+  "author": "onesmartguy",
+  "source_url": "https://github.com/onesmartguy/next-level-real-estate/blob/main/.claude/skills/ai-voice-audio/skills/elevenlabs-voice-cloning/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/onesmartguy/next-level-real-estate/blob/main/.claude/skills/ai-voice-audio/skills/elevenlabs-voice-cloning/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

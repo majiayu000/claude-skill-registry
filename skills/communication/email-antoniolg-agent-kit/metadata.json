@@ -1,0 +1,17 @@
+{
+  "name": "email",
+  "repo": "antoniolg/agent-kit",
+  "path": "skills/email/SKILL.md",
+  "github_branch": "main",
+  "category": "communication",
+  "source": "github.com/antoniolg/agent-kit",
+  "dir_name": "email-antoniolg-agent-kit",
+  "downloaded_at": "2026-03-22T06:59:13.562059Z",
+  "author": "antoniolg",
+  "source_url": "https://github.com/antoniolg/agent-kit/blob/main/skills/email/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/antoniolg/agent-kit/blob/main/skills/email/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

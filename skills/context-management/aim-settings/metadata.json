@@ -1,0 +1,17 @@
+{
+  "name": "aim-settings",
+  "repo": "Hidden-History/ai-memory",
+  "path": ".claude/skills/aim-settings/SKILL.md",
+  "github_branch": "main",
+  "category": "context-management",
+  "source": "github.com/Hidden-History/ai-memory",
+  "dir_name": "aim-settings",
+  "downloaded_at": "2026-03-22T05:28:09.715116Z",
+  "author": "Hidden-History",
+  "source_url": "https://github.com/Hidden-History/ai-memory/blob/main/.claude/skills/aim-settings/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Hidden-History/ai-memory/blob/main/.claude/skills/aim-settings/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

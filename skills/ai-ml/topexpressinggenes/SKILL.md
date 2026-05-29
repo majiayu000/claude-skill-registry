@@ -1,39 +1,46 @@
 ---
-name: topexpressinggenes
-description: Identifies and visualizes the top expressing genes per cluster in T/B cells, followed by pathway enrichment analysis. Provides quick cluster characterization by highlighting the most highly expressed genes and their biological functions.
+name: topexpressinggenesofallcells
+description: Identifies and visualizes the top expressing genes per cluster across ALL cells (before T/B cell selection), followed by pathway enrichment analysis. Provides initial overview of all cell populations by highlighting the most highly expressed genes and their biological functions.
 ---
 
-# TopExpressingGenes Process Configuration
+# TopExpressingGenesOfAllCells Process Configuration
 
 ## Purpose
-Identifies and visualizes the top expressing genes per cluster in T/B cells, followed by pathway enrichment analysis. Provides quick cluster characterization by highlighting the most highly expressed genes and their biological functions.
+Identifies and visualizes the top expressing genes per cluster across ALL cells (before T/B cell selection), followed by pathway enrichment analysis. Provides initial overview of all cell populations by highlighting the most highly expressed genes and their biological functions.
 
 ## When to Use
-- **After**: `SeuratClustering` and `TOrBCellSelection` processes
-- **Use cases**: Quick cluster characterization, identifying dominant gene programs, pathway enrichment
-- **Optional process**: Enable only when cluster-level expression profiling is needed
+- **After**: `SeuratClusteringOfAllCells` process
+- **Before**: `TOrBCellSelection` (this is a pre-selection analysis)
+- **Use cases**:
+  - Quick overview of ALL cell populations before separation
+  - Initial assessment of broad cell type signatures
+  - Understanding overall cell composition before T/B selection
+  - Pathway enrichment on cell type markers before detailed analysis
+  - Quality check for unexpected cell types
+  - Complementary to `ClusterMarkersOfAllCells` for complete pre-selection profiling
+- **Optional process**: Enable only when pre-selection analysis is needed
 
 ## Configuration Structure
 
 ### Process Enablement
 ```toml
-[TopExpressingGenes]
+[TopExpressingGenesOfAllCells]
 cache = true
 ```
 
 ### Input Specification
 ```toml
-[TopExpressingGenes.in]
-srtobj = ["SeuratClustering"]
+[TopExpressingGenesOfAllCells.in]
+srtobj = ["SeuratClusteringOfAllCells"]
 ```
 
-**Note**: `srtobj` accepts the output from `SeuratClustering` or `SeuratSubClustering`.
+**Note**: `srtobj` accepts the output from `SeuratClusteringOfAllCells`.
 
 ## Environment Variables
 
 ### Core Parameters
 ```toml
-[TopExpressingGenes.envs]
+[TopExpressingGenesOfAllCells.envs]
 # Number of top expressing genes to identify per cluster
 n = 250
 
@@ -46,150 +53,301 @@ dbs = ["KEGG_2021_Human", "MSigDB_Hallmark_2020"]
 
 ### Enrichment Plot Settings
 ```toml
-[TopExpressingGenes.envs.enrich_plots_defaults]
-# Plot type: "bar", "dot", "lollipop", "network", "enrichmap", "wordcloud"
-plot_type = "bar"
+[TopExpressingGenesOfAllCells.envs.enrich_plots_defaults]
+# Plot type for enrichment results
+plot_type = "bar"  # Options: "bar", "dot", "lollipop", "network", "enrichmap", "wordcloud"
+
+# Device parameters
 devpars = {res = 100, width = 800, height = 600}
-top_term = 10  # Top enriched pathways to show
-ncol = 1
+
+# Additional output formats
+more_formats = []
+
+# Save R code to reproduce plots
+save_code = false
+
+# Top terms to display
+top_term = 10  # Number of top enriched pathways to show
+ncol = 1  # Number of columns in multi-panel plots
+```
+
+### Cell Subsetting
+```toml
+[TopExpressingGenesOfAllCells.envs]
+# Subset cells before analysis (optional)
+subset = ""
+```
+
+### Cache Control
+```toml
+[TopExpressingGenesOfAllCells.envs]
+# Cache intermediate results
+cache = "/tmp"  # true, false, or directory path
 ```
 
 ## Configuration Examples
 
 ### Minimal Configuration
 ```toml
-[TopExpressingGenes]
+[TopExpressingGenesOfAllCells]
 
-[TopExpressingGenes.in]
-srtobj = ["SeuratClustering"]
+[TopExpressingGenesOfAllCells.in]
+srtobj = ["SeuratClusteringOfAllCells"]
 ```
 
-### Top 10 Genes with Custom Databases
+### Top 10 Genes for Broad Cell Type ID
 ```toml
-[TopExpressingGenes]
+[TopExpressingGenesOfAllCells]
 
-[TopExpressingGenes.in]
-srtobj = ["SeuratClustering"]
+[TopExpressingGenesOfAllCells.in]
+srtobj = ["SeuratClusteringOfAllCells"]
 
-[TopExpressingGenes.envs]
-n = 10
-dbs = ["GO_Biological_Process_2025", "Reactome_Pathways_2024"]
-```
-
-### Network Visualization
-```toml
-[TopExpressingGenes.envs.enrich_plots."Network"]
-plot_type = "network"
-top_term = 15
-
-[TopExpressingGenes.envs.enrich_plots."Enrichmap"]
-plot_type = "enrichmap"
-```
-
-## Common Patterns
-
-### Pattern 1: Quick Cluster Overview
-```toml
-[TopExpressingGenes]
-
-[TopExpressingGenes.in]
-srtobj = ["SeuratClustering"]
-
-[TopExpressingGenes.envs]
+[TopExpressingGenesOfAllCells.envs]
 n = 10
 dbs = ["MSigDB_Hallmark_2020"]
 ```
 
-### Pattern 2: Detailed Profile
+### Multiple Databases for Comprehensive Overview
 ```toml
-[TopExpressingGenes.envs]
-n = 250
-enrich_style = "clusterprofiler"
+[TopExpressingGenesOfAllCells]
 
-[TopExpressingGenes.envs.enrich_plots]
-"KEGG" = {plot_type = "bar", dbs = ["KEGG_2021_Human"]}
-"Reactome" = {plot_type = "network"}
+[TopExpressingGenesOfAllCells.in]
+srtobj = ["SeuratClusteringOfAllCells"]
+
+[TopExpressingGenesOfAllCells.envs]
+n = 100
+dbs = [
+  "KEGG_2021_Human",
+  "MSigDB_Hallmark_2020",
+  "GO_Biological_Process_2025"
+]
 ```
 
-### Pattern 3: Multiple Visualizations
+## Common Patterns
+
+### Pattern 1: Quick All-Cell Overview (Pre-Selection)
 ```toml
-[TopExpressingGenes.envs]
+[TopExpressingGenesOfAllCells]
+
+[TopExpressingGenesOfAllCells.in]
+srtobj = ["SeuratClusteringOfAllCells"]
+
+[TopExpressingGenesOfAllCells.envs]
+n = 10
+dbs = ["MSigDB_Hallmark_2020"]
+
+[TopExpressingGenesOfAllCells.envs.enrich_plots_defaults]
+plot_type = "bar"
+top_term = 10
+```
+
+**What to expect**: Top 10 genes per cluster showing broad cell type markers (CD3 for T cells, CD19 for B cells, CD14 for monocytes, etc.)
+
+### Pattern 2: Broad Cell Type Signature Identification
+```toml
+[TopExpressingGenesOfAllCells]
+
+[TopExpressingGenesOfAllCells.in]
+srtobj = ["SeuratClusteringOfAllCells"]
+
+[TopExpressingGenesOfAllCells.envs]
 n = 50
 
-[TopExpressingGenes.envs.enrich_plots."Bar"]
-plot_type = "bar"
-
-[TopExpressingGenes.envs.enrich_plots."Word Cloud"]
-plot_type = "wordcloud"
+[TopExpressingGenesOfAllCells.envs.enrich_plots]
+"T Cell Pathways" = {plot_type = "bar", dbs = ["KEGG_2021_Human"]}
+"B Cell Pathways" = {plot_type = "bar", dbs = ["KEGG_2021_Human"]}
+"Myeloid Pathways" = {plot_type = "bar", dbs = ["KEGG_2021_Human"]}
 ```
 
-## Difference from ClusterMarkers
+**What to expect**: Identification of T cell (CD3E, CD3D), B cell (CD19, MS4A1), and myeloid (CD14, LYZ) signatures across clusters
 
-| Aspect | TopExpressingGenes | ClusterMarkers |
-|--------|-------------------|----------------|
-| **Finds** | Highest expressed genes within clusters | Genes differentially expressed between clusters |
-| **Meaning** | Basal/dominant expression | Distinguishing markers |
-| **Stat test** | None (average expression) | Statistical (Wilcoxon, MAST) |
-| **Use case** | Cluster identity/function | Marker discovery |
-| **Output** | Top N genes | DEGs with p-values/FC |
+### Pattern 3: Quality Check for Unexpected Cell Types
+```toml
+[TopExpressingGenesOfAllCells]
 
-**Recommendation**: Use both processes:
-1. `TopExpressingGenes`: Quick overview of dominant programs
-2. `ClusterMarkers`: Rigorous marker identification
+[TopExpressingGenesOfAllCells.in]
+srtobj = ["SeuratClusteringOfAllCells"]
+
+[TopExpressingGenesOfAllCells.envs]
+n = 20
+dbs = [
+  "GO_Biological_Process_2025",
+  "GO_Cellular_Component_2025"
+]
+
+[TopExpressingGenesOfAllCells.envs.enrich_plots_defaults]
+plot_type = "dot"
+top_term = 15
+```
+
+**What to expect**: Detection of contamination (e.g., EPCAM for epithelial, COL1A1 for fibroblasts, RBC markers)
+
+## Difference from TopExpressingGenes
+
+**TopExpressingGenesOfAllCells** vs **TopExpressingGenes**:
+
+| Aspect | TopExpressingGenesOfAllCells | TopExpressingGenes |
+|--------|-----------------------------|-------------------|
+| **When it runs** | BEFORE `TOrBCellSelection` | AFTER `TOrBCellSelection` |
+| **Input data** | All cells (unfiltered) | Only selected T or B cells |
+| **Upstream process** | `SeuratClusteringOfAllCells` | `SeuratClustering` + `TOrBCellSelection` |
+| **Use case** | Initial assessment, quality check | Detailed T/B cell analysis |
+| **Cell types** | ALL cell types present | Only T OR B cells |
+| **Typical markers** | CD3, CD19, CD14, etc. | Specific T/B cell subtypes |
+| **Position in workflow** | Pre-selection overview | Post-selection deep dive |
+
+**Workflow context**:
+```
+RNA Input → SeuratPreparing → SeuratClusteringOfAllCells
+                                              ↓
+                                      TopExpressingGenesOfAllCells  ← Runs here
+                                              ↓
+                                      TOrBCellSelection (separates T/B)
+                                              ↓
+                                      SeuratClustering (on selected cells)
+                                              ↓
+                                      TopExpressingGenes  ← Runs here
+```
+
+**Recommendation**:
+- Use `TopExpressingGenesOfAllCells` to assess overall data quality and cell type composition
+- Use `TopExpressingGenes` for detailed analysis of T or B cell subtypes
+- Enable both for comprehensive analysis: pre-selection overview + post-selection deep dive
 
 ## Dependencies
-- **Upstream**: `SeuratClustering`, `TOrBCellSelection` (for TCR route)
-- **Downstream**: None (terminal analysis process)
+- **Upstream**: `SeuratClusteringOfAllCells`
+- **Downstream**: `TOrBCellSelection` (optional - this process provides pre-selection context)
+- **Data**: Seurat object with cluster assignments for ALL cells
 
 ## Validation Rules
-- `n`: Positive integer (typically 10-500)
-- `dbs`: Valid enrichit/Enrichr database names or local GMT paths
-- `enrich_style`: "enrichr" or "clusterprofiler"
-- `plot_type`: Valid scplotter plot type
+- **`n` parameter**: Must be positive integer (typically 10-500)
+- **`dbs`**: Must be valid enrichit/Enrichr database names or local GMT file paths
+- **`enrich_style`**: Must be "enrichr" or "clusterprofiler"
+- **`plot_type`**: Must be valid scplotter plot type
+- **Workflow requirement**: Only runs when `SeuratClusteringOfAllCells` is enabled
 
 ## Troubleshooting
 
-### Ribosomal/Mitochondrial Gene Dominance
-**Issue**: Housekeeping genes (RPS, RPL, MT-) dominate
+### Process Not Running
+**Issue**: TopExpressingGenesOfAllCells not executed despite being in config
 
-**Solutions**: Increase `n`, use `ClusterMarkers`, filter genes in `SeuratPreparing`
+**Causes**:
+- `SeuratClusteringOfAllCells` not enabled
+- Missing dependency in workflow
+- Process disabled via validation warning
+
+**Solutions**:
+1. Ensure `SeuratClusteringOfAllCells` is enabled in config
+2. Check validation warnings: `python -m immunopipe.validate_config config.toml`
+3. Verify both processes in config:
+   ```toml
+   [SeuratClusteringOfAllCells]
+   [TopExpressingGenesOfAllCells]
+   ```
+
+### Mixed Cell Types in Results
+**Issue**: Clusters show multiple cell type markers (CD3 + CD19)
+
+**Causes**:
+- Overlapping clusters (resolution too low)
+- Doublets/multiplets not filtered
+- Contamination in data
+
+**Solutions**:
+1. Adjust clustering resolution in `SeuratClusteringOfAllCells`
+2. Filter doublets in `SeuratPreparing` step
+3. Use `TOrBCellSelection` after assessment to clean data
+
+### No Clear Cell Type Signatures
+**Issue**: Top genes list lacks expected markers (CD3, CD19, CD14)
+
+**Causes**:
+- Data quality issues (low counts, high mitochondrial)
+- Wrong organism (human vs mouse gene symbols)
+- Incomplete clustering
+
+**Solutions**:
+1. Check QC metrics in `SeuratClusterStatsOfAllCells`
+2. Verify organism (uppercase=human, titlecase=mouse)
+3. Review clustering results from `SeuratClusteringOfAllCells`
+
+### Ribosomal/Mitochondrial Gene Dominance
+**Issue**: Top genes list dominated by housekeeping genes (RPS, RPL, MT-)
+
+**Solutions**:
+1. Increase `n` parameter to see beyond housekeeping genes
+2. Filter out ribosomal/mitochondrial genes in `SeuratPreparing` step
+3. Use `ClusterMarkersOfAllCells` for differential expression
 
 ### Empty Enrichment Results
-**Issue**: No pathways enriched
+**Issue**: No pathways enriched despite top genes identified
 
-**Solutions**: Increase `n` to 100-500, verify species (UPPERCASE=human, TitleCase=mouse)
+**Causes**:
+- Gene identifiers don't match database
+- `n` too small for meaningful enrichment
+- Database not appropriate for cell type
+
+**Solutions**:
+1. Increase `n` to 100-500 genes
+2. Verify species match (check gene symbols)
+3. Try different databases (e.g., `GO_Biological_Process_2025`)
 
 ### Plot Rendering Errors
-**Issue**: Plots fail to render
+**Issue**: Enrichment plots fail to render
 
-**Solutions**: Reduce `top_term` (5-15), use simpler plots (`bar`, `dot`)
+**Causes**:
+- Network plots with too many terms
+- Missing dependencies in R environment
 
-### Performance Issues
-**Issue**: Process too slow
+**Solutions**:
+1. Reduce `top_term` parameter
+2. Use simpler plot types (`bar`, `dot`)
+3. Verify R packages installed: `enrichit`, `scplotter`
 
-**Solutions**: Reduce `n`, use fewer databases, disable enrichment: `dbs = []`
+## Output Structure
+```
+<srtobj_stem>.top_expressing_genes/
+├── <cluster_name>/              # One subdirectory per cluster (ALL cells)
+│   ├── top_genes.tsv            # Top N genes with expression metrics
+│   └── enrich/                 # Enrichment results
+│       ├── <db_name>/          # One subdirectory per database
+│       │   ├── *.Bar-Plot.png  # Enrichment plots
+│       │   ├── *.enrich.tsv    # Enrichment tables
+│       │   └── ...
+```
 
 ## External References
 
-### Databases (enrichit)
-- `KEGG_2021_Human` - KEGG pathways
-- `MSigDB_Hallmark_2020` - Hallmark gene sets
-- `GO_Biological_Process_2025` - GO Biological Process
-- `Reactome_Pathways_2024` - Reactome pathways
-- See: https://pwwang.github.io/enrichit/reference/FetchGMT.html
+### Enrichment Databases (enrichit)
+[Full reference](https://pwwang.github.io/enrichit/reference/FetchGMT.html)
 
-### Plot Types (scplotter)
-- `bar` - Bar chart
-- `dot` - Dot plot
+**Built-in databases**:
+- `KEGG_2021_Human` - KEGG pathways (human)
+- `MSigDB_Hallmark_2020` - MSigDB Hallmark gene sets
+- `GO_Biological_Process_2025` - GO Biological Process terms
+- `GO_Cellular_Component_2025` - GO Cellular Component terms
+- `GO_Molecular_Function_2025` - GO Molecular Function terms
+- `Reactome_Pathways_2024` - Reactome pathways
+- `WikiPathways_2024_Human` - WikiPathways (human)
+
+**Enrichr libraries**: See https://maayanlab.cloud/Enrichr/#libraries
+
+### Enrichment Plot Types (scplotter)
+[Full reference](https://pwwang.github.io/scplotter/reference/EnrichmentPlot.html)
+
+- `bar` - Bar chart of enriched terms
+- `dot` - Dot plot (bubble chart)
 - `lollipop` - Lollipop plot
-- `network` - Network visualization
-- `enrichmap` - Enrichment map
-- `wordcloud` - Word cloud
+- `network` - Network visualization of term relationships
+- `enrichmap` - Enrichment map (similar to Cytoscape)
+- `wordcloud` - Word cloud visualization
 
 ### Enrichment Styles
-- `enrichr` - Fisher's exact test
-- `clusterprofiler` - Hypergeometric test
+- `enrichr` - Fisher's exact test (Enrichr-style)
+- `clusterprofiler` - Hypergeometric test (clusterProfiler-style)
 
 ## See Also
-- `TopExpressingGenesOfAllCells` - Top genes before T/B selection
-- `ClusterMarkers` - Differential expression analysis
+- `TopExpressingGenes` - Top genes for selected T/B cells after selection
+- `ClusterMarkersOfAllCells` - Differential expression for all cells before selection
+- `SeuratClusteringOfAllCells` - Clustering on all cells before T/B selection
+- `TOrBCellSelection` - T/B cell separation process

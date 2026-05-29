@@ -1,0 +1,16 @@
+{
+  "name": "submission-handler",
+  "repo": "magnusrodseth/aoc-2025",
+  "path": ".claude/skills/submission-handler/SKILL.md",
+  "source": "github.com/magnusrodseth/aoc-2025",
+  "downloaded_at": "2026-02-02T05:05:23.593419Z",
+  "dir_name": "submission-handler",
+  "category": "workflow",
+  "author": "magnusrodseth",
+  "source_url": "https://github.com/magnusrodseth/aoc-2025/blob/main/.claude/skills/submission-handler/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/magnusrodseth/aoc-2025/blob/main/.claude/skills/submission-handler/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

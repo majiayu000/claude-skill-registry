@@ -1,0 +1,18 @@
+{
+  "name": "front-id-converter",
+  "description": "Convert between Front URL IDs (base-10) and API IDs (base-36 with prefix). Use when working with Front inbox, conversation, or message IDs.",
+  "repo": "skillrecordings/support",
+  "path": ".claude/skills/front-id-converter",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/skillrecordings/support",
+  "dir_name": "front-id-converter-skillrecordings-support-2",
+  "author": "skillrecordings",
+  "source_url": "https://github.com/skillrecordings/support/blob/main/.claude/skills/front-id-converter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/skillrecordings/support/blob/main/.claude/skills/front-id-converter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

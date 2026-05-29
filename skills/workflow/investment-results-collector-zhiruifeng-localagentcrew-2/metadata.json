@@ -1,0 +1,18 @@
+{
+  "name": "investment-results-collector",
+  "description": "Collects and stores investment analysis results according to the web service storage specifications",
+  "repo": "ZhiruiFeng/LocalAgentCrew",
+  "path": ".claude/skills/investment-results-collector",
+  "category": "workflow",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/ZhiruiFeng/LocalAgentCrew",
+  "dir_name": "investment-results-collector-zhiruifeng-localagentcrew-2",
+  "author": "ZhiruiFeng",
+  "source_url": "https://github.com/ZhiruiFeng/LocalAgentCrew/blob/main/.claude/skills/investment-results-collector/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Zhirui Feng",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

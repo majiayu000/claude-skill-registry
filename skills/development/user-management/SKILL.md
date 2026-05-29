@@ -137,6 +137,8 @@ public class PasswordPolicyValidator {
 }
 ```
 
+**ブルートフォース対策**: `PasswordPolicyConfig` の `max_attempts` / `lockout_duration_seconds` でRedisカウンターによるロックアウトが可能。詳細は `documentation/docs/content_06_developer-guide/05-configuration/authn/password.md` を参照。
+
 ## パスワード変更
 
 ```java

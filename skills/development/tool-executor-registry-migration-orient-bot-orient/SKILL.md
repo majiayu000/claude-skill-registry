@@ -83,11 +83,8 @@ If found in discovery but not in executor, the tool needs migration.
 assistant-server.ts
     └── base-server.ts
         └── executeToolCallFromRegistry()
-            └── ToolExecutorRegistry.execute()  ← ONLY checks here
-                ↓ (if not found)
-            └── legacyExecutor  ← ONLY if setLegacyExecutor() was called
-                ↓ (if not found)
-            └── Returns "Unknown tool" error
+            ├── ToolExecutorRegistry.execute()  ← checks here first
+            └── Returns "Unknown tool" error    ← if not found
 ```
 
 **CRITICAL**: `base-server.ts` does NOT automatically have access to the legacy `mcp-server.ts` switch statement. Tools MUST be in `ToolExecutorRegistry` to work with assistant-server.
@@ -151,8 +148,8 @@ export function getToolExecutorRegistry(): ToolExecutorRegistry {
 
 ```bash
 # Build affected packages
-pnpm --filter @orient/agents build
-pnpm --filter @orient/mcp-servers build
+pnpm --filter @orientbot/agents build
+pnpm --filter @orientbot/mcp-servers build
 
 # Copy to root dist (CRITICAL - often forgotten!)
 cp packages/mcp-servers/dist/*.js dist/mcp-servers/
@@ -229,7 +226,7 @@ After migration, verify:
 1. **Build succeeds**:
 
    ```bash
-   pnpm --filter @orient/agents build
+   pnpm --filter @orientbot/agents build
    ```
 
 2. **Handler is registered** (check built file):

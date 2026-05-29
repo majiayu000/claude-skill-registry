@@ -19,7 +19,7 @@ The script:
 - Fetches repository contents via GitHub API
 - Downloads SKILL.md for each skill directory
 - Reports installed/updated/skipped counts
-- Excludes: templates, .github, .claude, uploads directories
+- Excludes: templates, .github, .claude, .uploads directories
 
 ## Network Requirements
 

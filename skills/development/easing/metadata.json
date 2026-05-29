@@ -1,0 +1,18 @@
+{
+  "name": "easing",
+  "repo": "bitwikiorg/skills.md",
+  "path": "sources/anthropic/easing/SKILL.md",
+  "source": "github.com/bitwikiorg/skills.md",
+  "downloaded_at": "2026-01-22T01:15:00.182067Z",
+  "dir_name": "easing",
+  "category": "development",
+  "github_path": "sources/anthropic/easing",
+  "github_branch": "main",
+  "author": "bitwikiorg",
+  "source_url": "https://github.com/bitwikiorg/skills.md/blob/main/sources/anthropic/easing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 BITwiki",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

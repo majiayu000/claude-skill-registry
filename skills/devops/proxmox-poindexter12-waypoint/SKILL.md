@@ -6,6 +6,7 @@ description: |
   Use when working with Proxmox configurations, CLI commands, troubleshooting
   VMs/containers, or planning resource allocation.
   Triggers: proxmox, qemu, kvm, lxc, pve, vm, container, cluster, vzdump, qm, pct.
+agent: proxmox-expert
 ---
 
 # Proxmox Skill

@@ -1,0 +1,17 @@
+{
+  "name": "add-opencode",
+  "repo": "qwibitai/nanoclaw",
+  "path": ".claude/skills/add-opencode/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/qwibitai/nanoclaw",
+  "dir_name": "add-opencode",
+  "downloaded_at": "2026-05-04T02:13:21.759914Z",
+  "author": "qwibitai",
+  "source_url": "https://github.com/qwibitai/nanoclaw/blob/main/.claude/skills/add-opencode/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/qwibitai/nanoclaw/blob/main/.claude/skills/add-opencode/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

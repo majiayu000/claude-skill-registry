@@ -1,9 +1,9 @@
 {
-  "name": "topexpressinggenes",
+  "name": "topexpressinggenesofallcells",
   "repo": "pwwang/immunopipe",
-  "path": "skills/topexpressinggenes/SKILL.md",
+  "path": "skills/topexpressinggenesofallcells/SKILL.md",
   "source": "github.com/pwwang/immunopipe",
-  "downloaded_at": "2026-01-22T03:34:35.020390Z",
+  "downloaded_at": "2026-01-22T03:34:36.826246Z",
   "dir_name": "topexpressinggenes",
   "category": "ai-ml",
   "github_path": "skills/topexpressinggenesofallcells",

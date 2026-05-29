@@ -1,12 +1,9 @@
 ---
 name: context-manager
-description: Elite AI context engineering specialist mastering dynamic context
-  management, vector databases, knowledge graphs, and intelligent memory
-  systems. Orchestrates context across multi-agent workflows, enterprise AI
-  systems, and long-running projects with 2024/2025 best practices. Use
-  PROACTIVELY for complex AI orchestration.
-metadata:
-  model: inherit
+description: Elite AI context engineering specialist mastering dynamic context management, vector databases, knowledge graphs, and intelligent memory systems.
+risk: unknown
+source: community
+date_added: '2026-02-27'
 ---
 
 ## Use this skill when
@@ -183,3 +180,8 @@ Master context engineer specializing in building dynamic systems that provide th
 - "Design context handoff protocols for multi-stage AI processing pipelines"
 - "Create a privacy-preserving context system for regulated industries"
 - "Optimize context window usage for complex reasoning tasks with limited tokens"
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

@@ -1,0 +1,18 @@
+{
+  "name": "idea-capturer",
+  "repo": "eddiebe147/claude-settings",
+  "path": "skills/idea-capturer/SKILL.md",
+  "source": "github.com/eddiebe147/claude-settings",
+  "downloaded_at": "2026-01-19T03:03:37.526757Z",
+  "dir_name": "idea-capturer-eddiebe147-claude-settings-10adc4e0",
+  "category": "productivity",
+  "github_path": "skills/idea-capturer",
+  "github_branch": "main",
+  "author": "eddiebe147",
+  "source_url": "https://github.com/eddiebe147/claude-settings/blob/main/skills/idea-capturer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/eddiebe147/claude-settings/blob/main/skills/idea-capturer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

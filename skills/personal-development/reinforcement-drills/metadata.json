@@ -1,0 +1,16 @@
+{
+  "name": "reinforcement-drills",
+  "repo": "gtmagents/gtm-agents",
+  "path": "plugins/sales-coaching/skills/reinforcement-drills/SKILL.md",
+  "source": "github.com/gtmagents/gtm-agents",
+  "downloaded_at": "2026-02-02T02:59:24.092813Z",
+  "dir_name": "reinforcement-drills",
+  "category": "personal-development",
+  "author": "gtmagents",
+  "source_url": "https://github.com/gtmagents/gtm-agents/blob/main/plugins/sales-coaching/skills/reinforcement-drills/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gtmagents/gtm-agents/blob/main/plugins/sales-coaching/skills/reinforcement-drills/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

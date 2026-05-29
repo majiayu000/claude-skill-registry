@@ -505,3 +505,14 @@ import {
 - [ ] Pre-commit hook integration for enforcement
 - [ ] Real-time drift alerts
 - [ ] Standards comparison across projects
+
+## Project-Specific Learnings
+
+**Before starting work, check for project-specific learnings:**
+
+```bash
+# Check if skill memory exists for this skill
+cat .specweave/skill-memories/code-standards-analyzer.md 2>/dev/null || echo "No project learnings yet"
+```
+
+Project learnings are automatically captured by the reflection system when corrections or patterns are identified during development. These learnings help you understand project-specific conventions and past decisions.

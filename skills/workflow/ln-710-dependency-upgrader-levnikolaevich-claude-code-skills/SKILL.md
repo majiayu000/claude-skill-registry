@@ -3,6 +3,8 @@ name: ln-710-dependency-upgrader
 description: Coordinates dependency upgrades across all detected package managers
 ---
 
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+
 # ln-710-dependency-upgrader
 
 **Type:** L2 Domain Coordinator
@@ -83,6 +85,19 @@ Verify project state before starting upgrade.
 ---
 
 ## Phase 3: Delegate to Workers
+
+> **CRITICAL:** All delegations use Task tool with `subagent_type: "general-purpose"` for context isolation.
+
+**Prompt template:**
+```
+Task(description: "Upgrade deps via ln-71X",
+     prompt: "Execute ln-71X-{worker}. Read skill from ln-71X-{worker}/SKILL.md. Context: {delegationContext}",
+     subagent_type: "general-purpose")
+```
+
+**Anti-Patterns:**
+- ❌ Direct Skill tool invocation without Task wrapper
+- ❌ Any execution bypassing subagent context isolation
 
 ### Delegation Context
 
@@ -211,6 +226,18 @@ Options:
 
 - [breaking_changes_patterns.md](references/breaking_changes_patterns.md)
 - [security_audit_guide.md](references/security_audit_guide.md)
+
+---
+
+## Definition of Done
+
+- Pre-flight checks passed (clean git state, backup branch created)
+- All package managers detected from indicator files
+- Security audit completed per manager (critical vulns block upgrade)
+- Workers delegated via Task tool with context isolation
+- Worker results collected with upgrade/skip/fail counts
+- Build verified after all upgrades applied
+- Summary report generated with totalPackages, upgraded, skipped, failed, buildVerified
 
 ---
 

@@ -1,0 +1,16 @@
+{
+  "name": "sentry-debug-bundle",
+  "repo": "byteworthy/Upstream",
+  "path": ".agents/skills/sentry-debug-bundle/SKILL.md",
+  "source": "github.com/byteworthy/Upstream",
+  "downloaded_at": "2026-01-29T03:34:14.131264Z",
+  "dir_name": "sentry-debug-bundle",
+  "category": "devops",
+  "author": "byteworthy",
+  "source_url": "https://github.com/byteworthy/Upstream/blob/main/.agents/skills/sentry-debug-bundle/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2024-2026 ByteWorthy LLC. All rights reserved.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

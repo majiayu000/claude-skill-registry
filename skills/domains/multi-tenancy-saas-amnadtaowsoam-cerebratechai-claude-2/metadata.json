@@ -1,0 +1,18 @@
+{
+  "name": "multi-tenancy-saas",
+  "description": "Multi-tenancy lets one product serve many customers safely. The hard parts are enforcing isolation everywhere (API, DB, cache, jobs), preventing noisy-neighbor issues, and keeping operations (migratio",
+  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
+  "path": "62-scale-operations/multi-tenancy-saas",
+  "category": "domains",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
+  "dir_name": "multi-tenancy-saas-amnadtaowsoam-cerebratechai-claude-2",
+  "author": "AmnadTaowsoam",
+  "source_url": "https://github.com/AmnadTaowsoam/cerebratechai-claude-skills/blob/main/62-scale-operations/multi-tenancy-saas/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CerebratechAI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

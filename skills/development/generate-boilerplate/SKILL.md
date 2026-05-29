@@ -4,6 +4,7 @@ description: "Create starter code from templates. Use when setting up new module
 mcp_fallback: none
 category: generation
 tier: 1
+user-invocable: false
 ---
 
 # Generate Boilerplate

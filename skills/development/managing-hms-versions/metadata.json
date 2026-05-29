@@ -1,0 +1,16 @@
+{
+  "name": "managing-hms-versions",
+  "repo": "gpt-cmdr/hms-commander",
+  "path": ".claude/skills/managing-hms-versions/SKILL.md",
+  "source": "github.com/gpt-cmdr/hms-commander",
+  "downloaded_at": "2026-02-02T04:24:42.249078Z",
+  "dir_name": "managing-hms-versions",
+  "category": "development",
+  "author": "gpt-cmdr",
+  "source_url": "https://github.com/gpt-cmdr/hms-commander/blob/main/.claude/skills/managing-hms-versions/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 hms-commander contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

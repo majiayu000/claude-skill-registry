@@ -1,0 +1,17 @@
+{
+  "name": "gather-screenshots",
+  "repo": "Andamio-Platform/coach",
+  "path": "skills/gather-screenshots/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/Andamio-Platform/coach",
+  "dir_name": "gather-screenshots",
+  "downloaded_at": "2026-03-22T04:50:58.205648Z",
+  "author": "Andamio-Platform",
+  "source_url": "https://github.com/Andamio-Platform/coach/blob/main/skills/gather-screenshots/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Andamio-Platform/coach/blob/main/skills/gather-screenshots/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

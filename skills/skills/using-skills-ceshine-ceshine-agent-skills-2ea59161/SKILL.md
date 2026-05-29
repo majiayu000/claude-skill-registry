@@ -13,9 +13,9 @@ This is not negotiable. This is not optional. You cannot rationalize your way ou
 
 ## How to Access Skills
 
-**In Claude Code and OpenCode:** Use the `Skill` tool. When you invoke a skill, its content is loaded and presented to you — follow it directly. Never use the Read tool on skill files.
-
-**In other environments:** Check your platform's documentation for how skills are loaded.
+- **In Claude Code and OpenCode:** Use the `Skill` tool. When you invoke a skill, its content is loaded and presented to you — follow it directly. Never use the Read tool on skill files.
+- **In Codex:** Simply follow the system instructions for using skills (using the standard tools to read the SKILL.md).
+- **In other environments:** Check your platform's documentation for how skills are loaded.
 
 # Using Skills
 

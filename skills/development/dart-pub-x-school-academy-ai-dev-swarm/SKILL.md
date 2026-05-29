@@ -1,17 +1,17 @@
 ---
-name: dart-pub
-description: "To run Dart or Flutter pub commands like `pub get` or `pub add`, execute a pub command for the given roots."
+name: dart-pub-dev-search
+description: "To search pub.dev for relevant Dart packages, query by keywords and return download counts, topics, license, and publisher."
 ---
 
 ## Usage
 Use the MCP tool `dev-swarm.request` to send the payload as a JSON string:
 
 ```json
-{"server_id":"dart","tool_name":"pub","arguments":{}}
+{"server_id":"dart","tool_name":"pub_dev_search","arguments":{}}
 ```
 
 ## Tool Description
-Runs a pub command for the given project roots, like `dart pub get` or `flutter pub add`.
+Searches pub.dev for packages relevant to a given search query. The response will describe each result with its download count, package description, topics, license, and publisher.
 
 ## Arguments Schema
 The schema below describes the `arguments` object in the request payload.
@@ -19,36 +19,14 @@ The schema below describes the `arguments` object in the request payload.
 {
   "type": "object",
   "properties": {
-    "command": {
+    "query": {
       "type": "string",
-      "title": "The pub command to run.",
-      "description": "Currently only `add`, `get`, `remove`, and `upgrade` are supported."
-    },
-    "packageName": {
-      "type": "string",
-      "title": "The package name to run the command for.",
-      "description": "This is required for the `add`, and `remove` commands."
-    },
-    "roots": {
-      "type": "array",
-      "title": "All projects roots to run this tool in.",
-      "items": {
-        "type": "object",
-        "properties": {
-          "root": {
-            "type": "string",
-            "title": "The file URI of the project root to run this tool in.",
-            "description": "This must be equal to or a subdirectory of one of the roots allowed by the client. Must be a URI with a `file:` scheme (e.g. file:///absolute/path/to/root)."
-          }
-        },
-        "required": [
-          "root"
-        ]
-      }
+      "title": "Search query",
+      "description": "The query to run against pub.dev package search.\n\nBesides freeform keyword search `pub.dev` supports the following search query\nexpressions:\n\n  - `\"exact phrase\"`: By default, when you perform a search, the results include\n    packages with similar phrases. When a phrase is inside quotes, you'll see\n    only those packages that contain exactly the specified phrase.\n\n  - `dependency:<package_name>`: Searches for packages that reference\n    `package_name` in their `pubspec.yaml`.\n\n  - `dependency*:<package_name>`: Searches for packages that depend on\n    `package_name` (as direct, dev, or transitive dependencies).\n\n  - `topic:<topic-name>`: Searches for packages that have specified the\n    `topic-name` [topic](/topics).\n\n  - `publisher:<publisher-name.com>`: Searches for packages published by `publisher-name.com`\n\n  - `sdk:<sdk>`: Searches for packages that support the given SDK. `sdk` can be either `flutter` or `dart`\n\n  - `runtime:<runtime>`: Searches for packages that support the given runtime. `runtime` can be one of `web`, `native-jit` and `native-aot`.\n\n  - `updated:<duration>`: Searches for packages updated in the given past days,\n    with the following recognized formats: `3d` (3 days), `2w` (two weeks), `6m` (6 months), `2y` 2 years.\n\n  - `has:executable`: Search for packages with Dart files in their `bin/` directory.\n\nTo search for alternatives do multiple searches. There is no \"or\" operator.\n  "
     }
   },
   "required": [
-    "command"
+    "query"
   ]
 }
 ```

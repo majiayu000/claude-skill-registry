@@ -1,0 +1,16 @@
+{
+  "name": "add-subtitles",
+  "repo": "tpott/pub_musings",
+  "path": "cc_plugins/skills/add-subtitles/SKILL.md",
+  "source": "github.com/tpott/pub_musings",
+  "downloaded_at": "2026-02-02T03:21:47.325093Z",
+  "dir_name": "add-subtitles",
+  "category": "generation",
+  "author": "tpott",
+  "source_url": "https://github.com/tpott/pub_musings/blob/main/cc_plugins/skills/add-subtitles/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2018 tpott",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

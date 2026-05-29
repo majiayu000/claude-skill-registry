@@ -28,6 +28,7 @@ Avoid when:
 | Mermaid diagrams | `skills/documentation-production/references/diagrams.md` |
 | Teach concepts / learning paths | `skills/documentation-production/references/teacher.md` |
 | Tutorials / workshops | `skills/documentation-production/references/tutorials.md` |
+| Writing process & style | `skills/documentation-production/references/writing-process.md` |
 
 ## Workflow
 1. Identify doc type and target audience.

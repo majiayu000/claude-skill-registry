@@ -1,6 +1,7 @@
 ---
 name: epub-creator
 description: Create production-quality EPUB 3 ebooks from markdown and images with automated QA, formatting fixes, and validation. Use when creating ebooks, converting markdown to EPUB, or compiling chapters into a publishable book. Handles markdown quirks, generates TOC, adds covers, and validates output automatically.
+allowed-tools: Bash, Read, Write
 ---
 
 # EPUB Creator (Production Grade)
@@ -9,12 +10,25 @@ Create validated, publication-ready EPUB 3 ebooks from markdown files and images
 
 ## Prerequisites
 
+**Python Version**: Requires Python 3.8 or higher
+
 ```bash
-uv pip install ebooklib markdown Pillow beautifulsoup4 lxml
+# Install all required packages
+uv pip install ebooklib markdown Pillow beautifulsoup4 lxml PyYAML
+
+# Or with pip
+pip install ebooklib markdown Pillow beautifulsoup4 lxml PyYAML
 ```
 
-Optional for validation:
+**Optional** (for EPUB validation):
 ```bash
+# macOS
+brew install epubcheck
+
+# Linux (Debian/Ubuntu)
+apt install epubcheck
+
+# Via Python wrapper
 uv pip install epubcheck
 ```
 
@@ -192,6 +206,83 @@ def validate_cover(cover_path: str) -> tuple:
     return cover_path, issues
 ```
 
+### 1.5 Pre-Validate All Sources
+
+Run comprehensive validation before processing:
+
+```python
+def validate_sources(source_dir: str) -> dict:
+    """Pre-validate all source files before processing."""
+    report = {
+        'valid': True,
+        'markdown_files': [],
+        'images': [],
+        'errors': [],
+        'warnings': []
+    }
+
+    source = Path(source_dir)
+
+    # Check directory exists
+    if not source.exists():
+        report['valid'] = False
+        report['errors'].append(f"Source directory not found: {source_dir}")
+        return report
+
+    # Find markdown files
+    md_files = sorted(source.glob('*.md'))
+    if not md_files:
+        md_files = sorted(source.glob('**/*.md'))
+
+    if not md_files:
+        report['valid'] = False
+        report['errors'].append("No markdown files found")
+        return report
+
+    print(f"📋 Pre-validating {len(md_files)} markdown files...")
+
+    for md_file in md_files:
+        try:
+            content = md_file.read_text(encoding='utf-8')
+            report['markdown_files'].append({
+                'path': str(md_file),
+                'size': md_file.stat().st_size,
+                'word_count': len(content.split())
+            })
+
+            # Check for broken image references
+            img_refs = re.findall(r'!\[([^\]]*)\]\(([^)]+)\)', content)
+            for alt, img_path in img_refs:
+                full_path = (md_file.parent / img_path).resolve()
+                if not full_path.exists():
+                    report['warnings'].append(f"Missing image: {img_path} in {md_file.name}")
+                else:
+                    report['images'].append(str(full_path))
+
+        except Exception as e:
+            report['errors'].append(f"Cannot read {md_file.name}: {e}")
+
+    # Check for cover
+    cover_patterns = ['cover.jpg', 'cover.png', 'Cover.jpg', 'Cover.png']
+    cover_found = any((source / p).exists() for p in cover_patterns)
+    if not cover_found:
+        report['warnings'].append("No cover image found (optional but recommended)")
+
+    report['valid'] = len(report['errors']) == 0
+
+    # Print summary
+    print(f"   ✓ {len(report['markdown_files'])} markdown files")
+    print(f"   ✓ {len(report['images'])} images referenced")
+    if report['warnings']:
+        for w in report['warnings']:
+            print(f"   ⚠ {w}")
+    if report['errors']:
+        for e in report['errors']:
+            print(f"   ✗ {e}")
+
+    return report
+```
+
 ---
 
 ## Step 2: Content Conversion
@@ -291,6 +382,100 @@ def markdown_to_xhtml(content: str, title: str) -> str:
 </html>'''
 
     return xhtml
+```
+
+### 2.4 Extract Nested ToC Structure
+
+Generate hierarchical table of contents with section anchors:
+
+```python
+from slugify import slugify  # pip install python-slugify
+
+def extract_toc_structure(content: str, chapter_file: str, toc_depth: int = 2) -> list:
+    """Extract hierarchical TOC entries from chapter content.
+
+    Args:
+        content: HTML content of the chapter
+        chapter_file: Filename for href links
+        toc_depth: 1=H1 only, 2=H1+H2, 3=H1+H2+H3
+
+    Returns:
+        List of TOC entries with nested children
+    """
+    entries = []
+    soup = BeautifulSoup(content, 'lxml')
+
+    # Get H1 (chapter title)
+    h1 = soup.find('h1')
+    if h1:
+        chapter_entry = {
+            'title': h1.get_text().strip(),
+            'href': chapter_file,
+            'children': []
+        }
+
+        # Get H2 entries if toc_depth >= 2
+        if toc_depth >= 2:
+            for h2 in soup.find_all('h2'):
+                h2_id = slugify(h2.get_text())
+                h2['id'] = h2_id  # Add anchor to HTML
+                h2_entry = {
+                    'title': h2.get_text().strip(),
+                    'href': f"{chapter_file}#{h2_id}",
+                    'children': []
+                }
+
+                # Get H3 entries if toc_depth >= 3
+                if toc_depth >= 3:
+                    # Find H3s that follow this H2 (until next H2)
+                    next_elem = h2.find_next_sibling()
+                    while next_elem and next_elem.name != 'h2':
+                        if next_elem.name == 'h3':
+                            h3_id = slugify(next_elem.get_text())
+                            next_elem['id'] = h3_id
+                            h2_entry['children'].append({
+                                'title': next_elem.get_text().strip(),
+                                'href': f"{chapter_file}#{h3_id}"
+                            })
+                        next_elem = next_elem.find_next_sibling()
+
+                chapter_entry['children'].append(h2_entry)
+
+        entries.append(chapter_entry)
+
+    return entries, str(soup)  # Return modified HTML with IDs
+
+
+def build_nested_toc(toc_entries: list) -> tuple:
+    """Build ebooklib TOC structure from nested entries."""
+    toc = []
+
+    for entry in toc_entries:
+        if entry.get('children'):
+            # Create section with children
+            children = []
+            for child in entry['children']:
+                if child.get('children'):
+                    # H2 with H3 children
+                    grandchildren = [
+                        epub.Link(gc['href'], gc['title'], gc['title'])
+                        for gc in child['children']
+                    ]
+                    children.append((
+                        epub.Link(child['href'], child['title'], child['title']),
+                        grandchildren
+                    ))
+                else:
+                    children.append(epub.Link(child['href'], child['title'], child['title']))
+
+            toc.append((
+                epub.Link(entry['href'], entry['title'], entry['title']),
+                children
+            ))
+        else:
+            toc.append(epub.Link(entry['href'], entry['title'], entry['title']))
+
+    return toc
 ```
 
 ---
@@ -465,9 +650,42 @@ def create_production_epub(
     language: str = 'en',
     cover_path: str = None,
     publisher: str = None,
-    description: str = None
+    description: str = None,
+    # Configurable parameters
+    max_image_size_mb: float = 2.0,
+    max_image_dimension: int = 2000,
+    image_quality: int = 85,
+    cover_min_width: int = 1400,
+    cover_min_height: int = 2100,
+    toc_depth: int = 2,  # 1=chapters only, 2=include H2, 3=include H3
+    custom_css: str = None,
 ) -> dict:
-    """Create a production-quality EPUB with full QA."""
+    """Create a production-quality EPUB with full QA.
+
+    Args:
+        source_dir: Directory containing markdown files
+        output_path: Output EPUB file path
+        title: Book title
+        author: Author name
+        language: Language code (default: 'en')
+        cover_path: Path to cover image (optional)
+        publisher: Publisher name (optional)
+        description: Book description (optional)
+        max_image_size_mb: Maximum image file size before optimization
+        max_image_dimension: Maximum image dimension in pixels
+        image_quality: JPEG quality for optimized images (1-100)
+        cover_min_width: Minimum cover width in pixels
+        cover_min_height: Minimum cover height in pixels
+        toc_depth: Table of contents depth (1-3)
+        custom_css: Custom CSS to append to stylesheet
+
+    Returns:
+        dict: Creation report with status, chapters, fixes, and errors
+    """
+
+    print(f"📖 Starting EPUB creation: {title}")
+    print(f"   Source: {source_dir}")
+    print(f"   Output: {output_path}")
 
     report = {
         'status': 'success',
@@ -522,7 +740,11 @@ def create_production_epub(
     toc = []
     image_items = {}
 
+    print(f"   📝 Processing {len(md_files)} chapters...")
+
     for i, md_file in enumerate(md_files, 1):
+        print(f"      [{i}/{len(md_files)}] {md_file.name}")
+
         # Read and fix content
         with open(md_file, 'r', encoding='utf-8', errors='replace') as f:
             raw_content = f.read()
@@ -588,8 +810,10 @@ def create_production_epub(
     book.spine = ['nav'] + chapters
 
     # Write EPUB
+    print(f"   📦 Assembling EPUB...")
     epub.write_epub(output_path, book, {})
 
+    print(f"   ✓ Created: {output_path}")
     report['output'] = output_path
     report['total_chapters'] = len(chapters)
     report['total_images'] = len(image_items)
@@ -657,7 +881,121 @@ def validate_epub(epub_path: str) -> dict:
     return result
 ```
 
-### 4.2 Content QA Checklist
+### 4.2 Comprehensive Post-Validation
+
+Run thorough checks on the generated EPUB:
+
+```python
+import zipfile
+import subprocess
+
+def post_validate_epub(epub_path: str) -> dict:
+    """Comprehensive post-creation validation."""
+    report = {
+        'valid': True,
+        'checks': [],
+        'errors': [],
+        'warnings': []
+    }
+
+    path = Path(epub_path)
+
+    print(f"\n🔍 Post-validating: {path.name}")
+
+    # 1. File exists and readable
+    if not path.exists():
+        report['valid'] = False
+        report['errors'].append("EPUB file not created")
+        return report
+    report['checks'].append("✓ File exists")
+
+    # 2. File size check
+    size_mb = path.stat().st_size / (1024 * 1024)
+    if size_mb > 50:
+        report['warnings'].append(f"Large file: {size_mb:.1f}MB (may cause reader issues)")
+    elif size_mb < 0.001:
+        report['valid'] = False
+        report['errors'].append("File too small - likely empty or corrupted")
+    report['checks'].append(f"✓ File size: {size_mb:.2f}MB")
+
+    # 3. Valid ZIP structure
+    try:
+        with zipfile.ZipFile(path, 'r') as zf:
+            names = zf.namelist()
+
+            # Check mimetype
+            if 'mimetype' not in names:
+                report['errors'].append("Missing mimetype file")
+                report['valid'] = False
+            else:
+                mime = zf.read('mimetype').decode('utf-8')
+                if mime.strip() != 'application/epub+zip':
+                    report['errors'].append(f"Invalid mimetype: {mime}")
+                    report['valid'] = False
+                else:
+                    report['checks'].append("✓ Valid mimetype")
+
+            # Check container.xml
+            if 'META-INF/container.xml' not in names:
+                report['errors'].append("Missing container.xml")
+                report['valid'] = False
+            else:
+                report['checks'].append("✓ Container.xml present")
+
+            # Check for content
+            xhtml_files = [n for n in names if n.endswith('.xhtml')]
+            if not xhtml_files:
+                report['errors'].append("No XHTML content files")
+                report['valid'] = False
+            else:
+                report['checks'].append(f"✓ {len(xhtml_files)} content files")
+
+            # Check for styles
+            css_files = [n for n in names if n.endswith('.css')]
+            if css_files:
+                report['checks'].append(f"✓ {len(css_files)} stylesheet(s)")
+
+            # Check for images
+            img_files = [n for n in names if any(n.endswith(ext) for ext in ['.jpg', '.jpeg', '.png', '.gif'])]
+            if img_files:
+                report['checks'].append(f"✓ {len(img_files)} image(s)")
+
+    except zipfile.BadZipFile:
+        report['valid'] = False
+        report['errors'].append("Invalid ZIP/EPUB structure")
+
+    # 4. Try epubcheck if available
+    try:
+        result = subprocess.run(
+            ['epubcheck', str(path)],
+            capture_output=True, text=True, timeout=60
+        )
+        if result.returncode == 0:
+            report['checks'].append("✓ epubcheck validation passed")
+        else:
+            # Parse epubcheck output for specific issues
+            for line in result.stderr.split('\n'):
+                if 'ERROR' in line:
+                    report['errors'].append(line.strip())
+                elif 'WARNING' in line:
+                    report['warnings'].append(line.strip())
+    except FileNotFoundError:
+        report['checks'].append("○ epubcheck not installed (optional)")
+    except subprocess.TimeoutExpired:
+        report['warnings'].append("epubcheck timed out - file may be too large")
+
+    # Print summary
+    for check in report['checks']:
+        print(f"   {check}")
+    for warning in report['warnings']:
+        print(f"   ⚠ {warning}")
+    for error in report['errors']:
+        print(f"   ✗ {error}")
+
+    return report
+```
+
+### 4.3 Content QA Checklist
 
 ```python
 def qa_checklist(epub_path: str, report: dict) -> dict:

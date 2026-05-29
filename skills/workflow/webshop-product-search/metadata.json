@@ -1,0 +1,20 @@
+{
+  "name": "webshop-product-search",
+  "description": "",
+  "repo": "zjunlp/SkillNet",
+  "category": "workflow",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/zjunlp/SkillNet",
+  "github_path": "skills/benchmark_skills/webshop/webshop-product-search",
+  "github_branch": "main",
+  "dir_name": "webshop-product-search",
+  "downloaded_at": "2026-02-05T01:44:58.900041Z",
+  "author": "zjunlp",
+  "source_url": "https://github.com/zjunlp/SkillNet/blob/main/skills/benchmark_skills/webshop/webshop-product-search/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 ZJUNLP",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

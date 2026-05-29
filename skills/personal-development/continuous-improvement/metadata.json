@@ -1,0 +1,18 @@
+{
+  "name": "continuous-improvement",
+  "repo": "muyen/vibe-to-prod",
+  "path": ".claude/skills/continuous-improvement/SKILL.md",
+  "source": "github.com/muyen/vibe-to-prod",
+  "downloaded_at": "2026-01-22T01:24:12.370707Z",
+  "dir_name": "continuous-improvement",
+  "category": "personal-development",
+  "github_path": ".claude/skills/continuous-improvement",
+  "github_branch": "main",
+  "author": "muyen",
+  "source_url": "https://github.com/muyen/vibe-to-prod/blob/main/.claude/skills/continuous-improvement/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 From Vibe to Production",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

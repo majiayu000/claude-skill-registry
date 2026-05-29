@@ -1,0 +1,18 @@
+{
+  "name": "file-organization-patterns",
+  "repo": "michsindlinger/agent-os-extended",
+  "path": "agent-os/templates/skills/file-organization-patterns/SKILL.md",
+  "source": "github.com/michsindlinger/agent-os-extended",
+  "downloaded_at": "2026-01-22T03:54:37.404545Z",
+  "dir_name": "file-organization-patterns",
+  "category": "development",
+  "github_path": "agent-os/templates/skills/file-organization-patterns",
+  "github_branch": "main",
+  "author": "michsindlinger",
+  "source_url": "https://github.com/michsindlinger/agent-os-extended/blob/main/agent-os/templates/skills/file-organization-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/michsindlinger/agent-os-extended/blob/main/agent-os/templates/skills/file-organization-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

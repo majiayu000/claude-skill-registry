@@ -1,6 +1,6 @@
 ---
 name: workflow-diagram
-description: 'Generate workflow diagrams showing process steps, decision points, and state transitions.'
+description: Generates a Mermaid workflow diagram showing process steps, decisions, and state transitions. Use when documenting CI/CD pipelines or lifecycle processes.
 ---
 
 # Workflow Diagram

@@ -232,6 +232,7 @@ interactive, loop, and artifact-mode examples.
 
 ## Reference Documents
 
+- [references/rpi.feature](references/rpi.feature) — Executable spec: strict ordered phases, validation-never-skipped, context-density across handoffs (soc-qk4b.2)
 - [references/orchestrator-compression-anti-pattern.md](references/orchestrator-compression-anti-pattern.md) — Phase-skipping failure mode; rationalizations to reject
 - [references/autonomous-execution.md](references/autonomous-execution.md)
 - [references/installed-plugin-version-not-repo-head.md](references/installed-plugin-version-not-repo-head.md) — `/rpi` loads from `~/.claude/plugins/cache/`, not the repo working tree; verify which version is active before measuring

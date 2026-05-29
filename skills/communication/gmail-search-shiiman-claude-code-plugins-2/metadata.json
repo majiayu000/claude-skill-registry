@@ -1,0 +1,18 @@
+{
+  "name": "gmail-search",
+  "description": "Gmail でメールを検索する。「メール検索」「メールを探して」「Gmail 検索」「メールを検索して」「○○からのメール」「件名で検索」などで起動。`/shiiman-google:gmail-search` を実行してメールを検索する。",
+  "repo": "shiiman/claude-code-plugins",
+  "path": "plugins/shiiman-google/skills/gmail-search",
+  "category": "communication",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shiiman/claude-code-plugins",
+  "dir_name": "gmail-search-shiiman-claude-code-plugins-2",
+  "author": "shiiman",
+  "source_url": "https://github.com/shiiman/claude-code-plugins/blob/main/plugins/shiiman-google/skills/gmail-search/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shiiman/claude-code-plugins/blob/main/plugins/shiiman-google/skills/gmail-search/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

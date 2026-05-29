@@ -1,6 +1,9 @@
 ---
 name: solidity-security
-description: Master smart contract security best practices to prevent common vulnerabilities and implement secure Solidity patterns. Use when writing smart contracts, auditing existing contracts, or implementing security measures for blockchain applications.
+description: "Master smart contract security best practices, vulnerability prevention, and secure Solidity development patterns."
+risk: safe
+source: community
+date_added: "2026-02-27"
 ---
 
 # Solidity Security
@@ -32,3 +35,8 @@ Master smart contract security best practices, vulnerability prevention, and sec
 ## Resources
 
 - `resources/implementation-playbook.md` for detailed patterns and examples.
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

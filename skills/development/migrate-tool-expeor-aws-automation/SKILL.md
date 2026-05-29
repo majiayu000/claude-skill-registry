@@ -133,7 +133,7 @@ def generate_report(results, account_id):
 
 #### After (현재 패턴)
 ```python
-from core.tools.output import OutputPath, open_in_explorer
+from core.shared.io.output import OutputPath, open_in_explorer
 
 def generate_report(results, ctx):
     # ctx에서 identifier 추출
@@ -270,7 +270,7 @@ def generate_excel(results, output_path):
 
 #### After (현재 패턴)
 ```python
-from core.tools.io.excel import Workbook, ColumnDef, Styles
+from core.shared.io.excel import Workbook, ColumnDef, Styles
 
 def generate_excel(results, output_path):
     wb = Workbook()
@@ -311,7 +311,7 @@ summary.add_list_section("Top 5 계정", top_accounts)
 ```
 
 #### 변경 포인트
-- 직접 `openpyxl.Workbook` → `core.tools.io.excel.Workbook`
+- 직접 `openpyxl.Workbook` → core.cli.io.excel.Workbook`
 - 수동 스타일 → `ColumnDef.style`, `Styles.danger()`
 - 수동 컬럼 너비 → `ColumnDef.width`
 - 수동 필터/고정 → 자동 적용
@@ -443,7 +443,7 @@ with open("report.html", "w") as f:
 
 #### After (현재 패턴)
 ```python
-from core.tools.io.html import create_aws_report
+from core.shared.io.html import create_aws_report
 
 def generate_report(results, output_path, ctx):
     report = create_aws_report(
@@ -488,8 +488,8 @@ def run(ctx):
 
 #### After (현재 패턴)
 ```python
-from core.tools.io import generate_reports
-from core.tools.io.excel import ColumnDef
+from core.shared.io.compat import generate_reports
+from core.shared.io.excel import ColumnDef
 
 def run(ctx):
     results = collect_data(ctx)
@@ -546,7 +546,7 @@ for func in functions:
 
 #### After (현재 패턴)
 ```python
-from shared.aws.metrics import (
+from core.shared.aws.metrics import (
     batch_get_metrics,
     build_lambda_metric_queries,
 )
@@ -601,7 +601,7 @@ def tool2_collect(session, region):
 
 #### After (현재 패턴)
 ```python
-from shared.aws.inventory import InventoryCollector
+from core.shared.aws.inventory import InventoryCollector
 
 def tool1_collect(ctx, session, region):
     collector = InventoryCollector(ctx)
@@ -656,7 +656,7 @@ def tool2_collect(ctx, session, region):
      os.makedirs(output_dir, exist_ok=True)
 
    권장:
-     from core.tools.output import OutputPath
+     from core.shared.io.output import OutputPath
      output_path = OutputPath(identifier).sub("ec2", "unused").with_date().build()
 
 2. Error Handling (Line 78-82)
@@ -678,7 +678,7 @@ def tool2_collect(ctx, session, region):
      ws.cell(row=1, column=1, value="Header")
 
    권장:
-     from core.tools.io.excel import Workbook, ColumnDef
+     from core.shared.io.excel import Workbook, ColumnDef
      wb = Workbook()
      sheet = wb.new_sheet("Results", columns=[...])
 
@@ -693,9 +693,9 @@ def tool2_collect(ctx, session, region):
 
 ## 참조 파일
 
-- `core/tools/output/__init__.py` - OutputPath 패턴
+- `shared/io/output/__init__.py` - OutputPath 패턴
 - `core/parallel/errors.py` - 에러 핸들링 패턴
-- `core/tools/io/excel/workbook.py` - Excel 출력 패턴
+- `shared/io/excel/workbook.py` - Excel 출력 패턴
 - `core/parallel/__init__.py` - 병렬 처리 패턴
 
 ## 주의사항

@@ -20,6 +20,15 @@ description: Go application architecture with net/http 1.22+ routing, project st
 3. **Explicit over magic** -- No `init()` side effects, no framework auto-wiring. `main.go` is the composition root where everything is assembled visibly.
 4. **Small interfaces, big structs** -- Define interfaces at the consumer, keep them narrow (1-3 methods). Concrete types carry the implementation.
 
+## Hard gates
+
+Use this sequence when implementing or reviewing work that claims to follow this skill. Do not skip ahead; each step has a **pass condition** you can answer with tooling or a concrete file path.
+
+1. **Toolchain vs APIs** — If the code uses Go 1.22+ `ServeMux` features (method+path patterns like `"GET /x/{id}"`, `r.PathValue`, or `{path...}`): run `go version` and **pass** only if the reported toolchain is **go1.22+**. If the project must stay on an older Go, **pass** only by not using those APIs (use a compatible router or older patterns) and say so in the review or PR.
+2. **Composition root** — **Pass** when `main.go` or `cmd/.../main.go` visibly constructs the server and injects shared dependencies (DB, logger, config). **Fail** if shared dependencies are wired in `init()` or package-level `var` instead of explicit construction in `main` (or a `run()` called from `main`).
+3. **Production HTTP shutdown** — For a long-lived HTTP service, **pass** only if shutdown uses `http.Server.Shutdown` with a **bounded** context (e.g. `context.WithTimeout`) after waiting on `signal.NotifyContext` (or equivalent). Cite the file path when reporting; see [references/graceful-shutdown.md](references/graceful-shutdown.md) for the full pattern.
+4. **No env/globals in handlers** — **Pass** when handlers and domain code take dependencies via structs/arguments. **Fail** if handlers read `os.Getenv` for secrets or use package-level `var` for DB/clients (loading env in `main` or a dedicated config package is fine).
+
 ## Go 1.22+ Enhanced Routing
 
 Go 1.22 upgraded `http.ServeMux` with method-based routing and path parameters, eliminating the most common reason for third-party routers.

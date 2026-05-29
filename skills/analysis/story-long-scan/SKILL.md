@@ -52,24 +52,24 @@ metadata:
 
 | 优先级 | 模式 | 说明 | 何时用 |
 |--------|------|------|--------|
-| 1 | **browser-cdp 采集** | 直接抓取平台页面，产出结构化文件 | 有 Chrome 环境时（优先） |
+| 1 | **脚本采集** | 直接抓取平台页面/SSR 数据，产出结构化文件 | 优先；起点默认不需要 Chrome |
 | 2 | **用户提供** | 用户粘贴榜单截图/文字/链接 | 用户已有数据时 |
 | 3 | **内置知识** | 基于知识库趋势数据做分析 | 无法联网、用户无数据时 |
 
-#### browser-cdp 采集模式
+#### 脚本采集模式
 
-使用 `/browser-cdp` 启动 Chrome，直接抓取平台榜单页面的结构化数据。
+优先运行对应平台脚本直接采集结构化数据。起点使用移动端 SSR pageContext，默认不需要 Chrome/CDP；番茄等需要浏览器态的平台再使用 `/browser-cdp` 启动 Chrome。
 
 **采集流程**：
-1. 启动 browser-cdp，打开目标榜单 URL
-2. 等待列表元素加载，逐条提取字段（排名、书名、作者、题材、字数、推荐/在读数等）
+1. 选择平台脚本；起点直接运行 `scripts/qidian-rank-scraper.js`，番茄/七猫/晋江等按需启动 browser-cdp
+2. 等待列表元素或 SSR 数据加载，逐条提取字段（排名、书名、作者、题材、字数、推荐/在读数等）
 3. 需要补充数据时（标签、简介、最新更新），进入详情页提取
 4. 按规范格式写入 Markdown 文件
 5. 多榜单/多题材时，逐组采集并保存
 
 **输出规范**：详见 [references/scan-output-format.md](references/scan-output-format.md)，包含各平台字段定义、输出模板、文件命名规范。
 
-**起点采集目标**：
+**起点采集目标**（优先运行 `node scripts/qidian-rank-scraper.js --type {榜单} --outdir {输出目录}`；默认 `--mode auto` 会先用 `https://m.qidian.com` 移动端 SSR，PC/CDP 只作回退）：
 
 | 榜单 | URL | 核心字段 |
 |------|-----|----------|
@@ -317,10 +317,10 @@ URL 参数：`/rank/{channel}_{type}_{cat_id}`，channel 0=女频/1=男频，typ
 | [references/reader-profiling.md](references/reader-profiling.md) | 需要分析目标读者画像时 |
 | [references/genre-trends.md](references/genre-trends.md) | 查看题材趋势候选、切入约束和样本校验规则时 |
 | [references/publishing-guide.md](references/publishing-guide.md) | 平台适配+推荐机制校验+数据指标+简介设计 |
-| [references/scan-output-format.md](references/scan-output-format.md) | browser-cdp采集字段定义+输出模板+文件命名规范 |
+| [references/scan-output-format.md](references/scan-output-format.md) | 脚本/CDP 采集字段定义+输出模板+文件命名规范 |
 | [scripts/cdp-utils.js](scripts/cdp-utils.js) | CDP 公共工具函数（ab/sleep/evalJSON/safeStr/scrollLoad/getArg），各采集脚本共用 |
 | [scripts/fanqie-rank-scraper.js](scripts/fanqie-rank-scraper.js) | 番茄榜单采集，通过详情页绕过字体反爬，配合 browser-cdp 使用 |
-| [scripts/qidian-rank-scraper.js](scripts/qidian-rank-scraper.js) | 起点榜单采集（畅销/月票/新书等），SSR 直出提取 |
+| [scripts/qidian-rank-scraper.js](scripts/qidian-rank-scraper.js) | 起点榜单采集（畅销/月票/新书等），默认移动端 SSR 提取，PC/CDP 回退 |
 | [scripts/qimao-rank-scraper.js](scripts/qimao-rank-scraper.js) | 七猫榜单采集（大热/新书/完结等），tab 切换+滚动加载 |
 | [scripts/jjwxc-rank-scraper.js](scripts/jjwxc-rank-scraper.js) | 晋江榜单采集（收入金榜/月榜等），按频道分组提取 |
 | [scripts/ciweimao-rank-scraper.js](scripts/ciweimao-rank-scraper.js) | 刺猬猫榜单采集（点击/收藏/月票等），单页 9 榜提取 |

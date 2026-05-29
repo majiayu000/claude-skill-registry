@@ -1,0 +1,17 @@
+{
+  "name": "feature-status-sync",
+  "repo": "buddypia/kaiju-voice",
+  "path": ".claude/skills/feature-status-sync/SKILL.md",
+  "github_branch": "master",
+  "category": "workflow",
+  "source": "github.com/buddypia/kaiju-voice",
+  "dir_name": "feature-status-sync",
+  "downloaded_at": "2026-03-01T07:05:48.080962Z",
+  "author": "buddypia",
+  "source_url": "https://github.com/buddypia/kaiju-voice/blob/master/.claude/skills/feature-status-sync/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/buddypia/kaiju-voice/blob/master/.claude/skills/feature-status-sync/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

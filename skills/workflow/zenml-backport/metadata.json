@@ -1,0 +1,9 @@
+{
+  "name": "zenml-backport",
+  "repo": "zenml-io/zenml",
+  "path": ".claude/skills/zenml-backport/skill.md",
+  "source": "github.com/zenml-io/zenml",
+  "downloaded_at": "2026-02-02T04:10:19.618858Z",
+  "dir_name": "zenml-backport",
+  "category": "workflow"
+}

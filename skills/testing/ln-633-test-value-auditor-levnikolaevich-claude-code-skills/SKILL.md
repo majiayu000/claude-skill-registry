@@ -1,8 +1,11 @@
 ---
 name: ln-633-test-value-auditor
-description: Risk-Based Value audit worker (L3). Calculates Usefulness Score = Impact (1-5) × Probability (1-5) for each test. Returns KEEP/REVIEW/REMOVE decisions based on thresholds (≥15 KEEP, 10-14 REVIEW, <10 REMOVE).
+description: Calculates Usefulness Score = Impact (1-5) × Probability (1-5) for each test. Returns KEEP/REVIEW/REMOVE decisions based on thresholds (≥15 KEEP, 10-14 REVIEW, <10 REMOVE).
 allowed-tools: Read, Grep, Glob, Bash
+license: MIT
 ---
+
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
 
 # Risk-Based Value Auditor (L3 Worker)
 
@@ -18,16 +21,19 @@ Specialized worker calculating Usefulness Score for each test.
 
 ## Inputs (from Coordinator)
 
-Receives `contextStore` with Impact/Probability matrices, test file list.
+**MANDATORY READ:** Load `shared/references/task_delegation_pattern.md#audit-coordinator--worker-contract` for contextStore structure.
+
+Receives `contextStore` with: `tech_stack`, `testFilesMetadata`, `codebase_root`, `output_dir`.
 
 ## Workflow
 
-1) Parse context
-2) For each test: calculate Usefulness Score
-3) Classify: KEEP (≥15), REVIEW (10-14), REMOVE (<10)
-4) Collect findings
-5) Calculate score
-6) Return JSON
+1) **Parse Context:** Extract tech stack, Impact/Probability matrices, test file list, output_dir from contextStore
+2) **Calculate Scores:** For each test: calculate Usefulness Score = Impact x Probability
+3) **Classify Decisions:** KEEP (>=15), REVIEW (10-14), REMOVE (<10)
+4) **Collect Findings:** Record each REVIEW/REMOVE decision with severity, location (file:line), effort estimate (S/M/L), recommendation
+5) **Calculate Score:** Count violations by severity, calculate compliance score (X/10)
+6) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/633-test-value.md` in single Write call
+7) **Return Summary:** Return minimal summary to coordinator (see Output Format)
 
 ## Usefulness Score Calculation
 
@@ -133,61 +139,53 @@ Decision: REVIEW (if E2E covers, remove; else keep)
 - Testing constant values
 - Testing type annotations
 
-## Scoring Algorithm (for compliance)
+## Scoring Algorithm
 
-```
-total_tests = KEEP + REVIEW + REMOVE
-remove_percentage = (REMOVE / total_tests) * 100
-score = 10 - (remove_percentage / 10)  // penalize for wasteful tests
-score = max(0, min(10, score))
-```
+**MANDATORY READ:** Load `shared/references/audit_scoring.md` for unified scoring formula.
+
+**Severity mapping by Usefulness Score:**
+- Score <5 → CRITICAL (test wastes significant maintenance effort)
+- Score 5-9 → HIGH (test likely wasteful)
+- Score 10-14 → MEDIUM (review needed)
+- Score ≥15 → no issue (KEEP)
 
 ## Output Format
 
-```json
-{
-  "category": "Risk-Based Value",
-  "score": 7,
-  "total_tests": 65,
-  "keep_count": 35,
-  "review_count": 15,
-  "remove_count": 15,
-  "findings": [
-    {
-      "test_file": "payment.test.ts",
-      "test_name": "processPayment calculates discount correctly",
-      "location": "payment.test.ts:45-68",
-      "impact": 5,
-      "probability": 4,
-      "usefulness_score": 20,
-      "decision": "KEEP",
-      "reason": "Critical money calculation, complex algorithm"
-    },
-    {
-      "test_file": "utils.test.ts",
-      "test_name": "validateEmail returns true for valid email",
-      "location": "utils.test.ts:23-27",
-      "impact": 2,
-      "probability": 2,
-      "usefulness_score": 4,
-      "decision": "REMOVE",
-      "reason": "Low value, likely covered by E2E registration test",
-      "effort": "S"
-    },
-    {
-      "test_file": "auth.test.ts",
-      "test_name": "login with valid credentials returns JWT",
-      "location": "auth.test.ts:12-25",
-      "impact": 4,
-      "probability": 3,
-      "usefulness_score": 12,
-      "decision": "REVIEW",
-      "question": "Is this already covered by E2E login test?",
-      "effort": "S"
-    }
-  ]
-}
+**MANDATORY READ:** Load `shared/templates/audit_worker_report_template.md` for file format.
+
+Write report to `{output_dir}/633-test-value.md` with `category: "Risk-Based Value"` and checks: usefulness_score, remove_candidates, review_candidates.
+
+Return summary to coordinator:
 ```
+Report written: docs/project/.audit/ln-630/{YYYY-MM-DD}/633-test-value.md
+Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
+```
+
+**Note:** Tests with Usefulness Score >=15 (KEEP) are NOT included in findings -- only issues are reported.
+
+## Critical Rules
+
+- **Do not auto-fix:** Report only
+- **Effort realism:** S = <1h, M = 1-4h, L = >4h
+- **Score objectivity:** Base Impact and Probability on code analysis, not assumptions
+- **KEEP tests not reported:** Only REVIEW and REMOVE decisions appear in findings
+- **Cross-reference E2E:** REVIEW decisions depend on whether E2E already covers the scenario
+
+## Definition of Done
+
+- contextStore parsed successfully (including output_dir)
+- Usefulness Score calculated for each test (Impact x Probability)
+- Decisions classified: KEEP (>=15), REVIEW (10-14), REMOVE (<10)
+- Findings collected with severity, location, effort, recommendation
+- Score calculated using penalty algorithm
+- Report written to `{output_dir}/633-test-value.md` (atomic single Write call)
+- Summary returned to coordinator
+
+## Reference Files
+
+- **Worker report template:** `shared/templates/audit_worker_report_template.md`
+- **Audit scoring formula:** `shared/references/audit_scoring.md`
+- **Audit output schema:** `shared/references/audit_output_schema.md`
 
 ---
 **Version:** 3.0.0

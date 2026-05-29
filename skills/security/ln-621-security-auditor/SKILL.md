@@ -1,8 +1,11 @@
 ---
 name: ln-621-security-auditor
-description: Security audit worker (L3). Scans codebase for hardcoded secrets, SQL injection, XSS, insecure dependencies, missing input validation. Returns findings with severity (Critical/High/Medium/Low), location, effort, and recommendations.
+description: "Checks hardcoded secrets, SQL injection, XSS, insecure deps, input validation. Use when auditing security."
 allowed-tools: Read, Grep, Glob, Bash
+license: MIT
 ---
+
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Security Auditor (L3 Worker)
 
@@ -18,31 +21,26 @@ Specialized worker auditing security vulnerabilities in codebase.
 
 ## Inputs (from Coordinator)
 
-Receives `contextStore` as JSON string:
-```json
-{
-  "tech_stack": {
-    "language": "TypeScript",
-    "frameworks": ["Express", "React"],
-    "database": "PostgreSQL",
-    ...
-  },
-  "best_practices": {
-    "framework_patterns": [...],
-    "security_guidelines": [...]
-  },
-  "principles": {...},
-  "codebase_root": "/path/to/project"
-}
-```
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
+
+Receives `contextStore` with: `tech_stack`, `best_practices`, `principles`, `codebase_root`, `output_dir`.
 
 ## Workflow
 
-1) **Parse Context:** Extract tech stack, best practices, codebase root from contextStore
-2) **Scan Codebase:** Run security checks using Glob/Grep patterns (see Audit Rules below)
-3) **Collect Findings:** Record each violation with severity, location (file:line), effort estimate (S/M/L), recommendation
-4) **Calculate Score:** Count violations by severity, calculate compliance score (X/10)
-5) **Return Results:** Return JSON with category, score, findings to coordinator
+**MANDATORY READ:** Load `shared/references/two_layer_detection.md` for detection methodology.
+
+1) **Parse Context:** Extract tech stack, best practices, codebase root, output_dir from contextStore
+2) **Scan Codebase (Layer 1):** Run security checks using Glob/Grep patterns (see Audit Rules below)
+3) **Analyze Context (Layer 2):** For each candidate, read surrounding code to classify:
+   - Secrets: test fixture / example / template → FP. Production code → confirmed
+   - SQL injection: ORM parameterization nearby → FP. Raw string concat with user input → confirmed
+   - XSS: framework auto-escapes (React JSX, Go templates) → FP. Unsafe context (`innerHTML`, `| safe`) → confirmed
+   - Deps: vulnerable API not called in project → downgrade. Exploitable path → confirmed
+   - Validation: internal service-to-service endpoint → downgrade. Public API → confirmed
+4) **Collect Findings:** Record confirmed violations with severity, location (file:line), effort estimate (S/M/L), recommendation
+5) **Calculate Score:** Count violations by severity, calculate compliance score (X/10)
+6) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/621-security.md` in single Write call
+7) **Return Summary:** Return minimal summary to coordinator (see Output Format)
 
 ## Audit Rules (Priority: CRITICAL)
 
@@ -131,54 +129,23 @@ Receives `contextStore` as JSON string:
 
 ## Scoring Algorithm
 
-```
-violations = {critical: N, high: M, medium: K, low: L}
-
-penalty = (critical * 2.0) + (high * 1.0) + (medium * 0.5) + (low * 0.2)
-
-score = max(0, 10 - penalty)
-```
-
-**Examples:**
-- 0 violations → 10/10
-- 1 critical → 8/10
-- 2 critical, 3 high → 3/10
-- 5 critical, 10 high → 0/10
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/references/audit_scoring.md`.
 
 ## Output Format
 
-Return JSON to coordinator:
-```json
-{
-  "category": "Security",
-  "score": 7,
-  "total_issues": 5,
-  "critical": 1,
-  "high": 2,
-  "medium": 2,
-  "low": 0,
-  "findings": [
-    {
-      "severity": "CRITICAL",
-      "location": "src/api/auth.ts:45",
-      "issue": "Hardcoded API key in production code",
-      "principle": "Secrets Management (OWASP A02:2021 Cryptographic Failures)",
-      "recommendation": "Move API_KEY to environment variable (.env file)",
-      "effort": "S"
-    },
-    {
-      "severity": "HIGH",
-      "location": "src/db/queries.ts:112",
-      "issue": "SQL injection via string concatenation",
-      "principle": "Input Validation (OWASP A03:2021 Injection)",
-      "recommendation": "Use parameterized queries or ORM to prevent SQL injection",
-      "effort": "M"
-    }
-  ]
-}
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
+
+Write report to `{output_dir}/621-security.md` with `category: "Security"` and checks: hardcoded_secrets, sql_injection, xss_vulnerabilities, insecure_dependencies, missing_input_validation.
+
+Return summary to coordinator:
+```
+Report written: docs/project/.audit/ln-620/{YYYY-MM-DD}/621-security.md
+Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 ```
 
 ## Critical Rules
+
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
 - **Do not auto-fix:** Report violations only; coordinator creates task for user to fix
 - **Tech stack aware:** Use contextStore to apply framework-specific patterns (e.g., React XSS vs PHP XSS)
@@ -188,14 +155,18 @@ Return JSON to coordinator:
 
 ## Definition of Done
 
-- contextStore parsed successfully
-- All 5 security checks completed (secrets, SQL injection, XSS, deps, validation)
-- Findings collected with severity, location, effort, recommendation
-- Score calculated using penalty algorithm
-- JSON result returned to coordinator
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
+
+- [ ] contextStore parsed successfully (including output_dir)
+- [ ] All 5 security checks completed (secrets, SQL injection, XSS, deps, validation)
+- [ ] Findings collected with severity, location, effort, recommendation
+- [ ] Score calculated using penalty algorithm
+- [ ] Report written to `{output_dir}/621-security.md` (atomic single Write call)
+- [ ] Summary returned to coordinator
 
 ## Reference Files
 
+- **Audit output schema:** `shared/references/audit_output_schema.md`
 - Security audit rules: [references/security_rules.md](references/security_rules.md)
 
 ---

@@ -1,11 +1,11 @@
 {
   "name": "wheels-test-generator",
   "repo": "wheels-dev/wheels",
+  "path": "examples/tweet/.claude/skills/wheels-test-generator/SKILL.md",
+  "source": "github.com/wheels-dev/wheels",
+  "downloaded_at": "2026-01-22T02:34:45.596804Z",
+  "dir_name": "wheels-test-generator",
   "category": "testing",
-  "description": "Generate TestBox BDD test specs for Wheels models, controllers, and integration tests. Use when creating tests for models (validations, associations), controllers (actions, filters), or integration wo",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:28.632501Z",
   "github_path": ".claude/skills/wheels-test-generator",
-  "github_branch": "main",
-  "dir_name": "wheels-test-generator"
+  "github_branch": "main"
 }

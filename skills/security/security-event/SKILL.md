@@ -76,6 +76,12 @@ libs/
 - `statistics_events`テーブルで直接upsert
 - 10ms → 0.53ms（約19倍高速化）
 
+### パフォーマンス改善（#1231）
+- フックコンフィグ取得をAdapter層でキャッシュ（TTL 5分）
+- 設定の登録/更新/削除時にキャッシュ自動無効化
+- `TenantQueryDataSource`と同じパターンで実装
+- 実装: `SecurityEventHookConfigurationQueryDataSource`, `SecurityEventHookConfigurationCommandDataSource`
+
 ## フック種別
 
 | フック | 用途 |

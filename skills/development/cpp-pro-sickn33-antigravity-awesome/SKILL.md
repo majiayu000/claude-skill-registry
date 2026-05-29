@@ -1,11 +1,9 @@
 ---
 name: cpp-pro
-description: Write idiomatic C++ code with modern features, RAII, smart
-  pointers, and STL algorithms. Handles templates, move semantics, and
-  performance optimization. Use PROACTIVELY for C++ refactoring, memory safety,
-  or complex C++ patterns.
-metadata:
-  model: opus
+description: Write idiomatic C++ code with modern features, RAII, smart pointers, and STL algorithms. Handles templates, move semantics, and performance optimization.
+risk: unknown
+source: community
+date_added: '2026-02-27'
 ---
 
 ## Use this skill when
@@ -57,3 +55,8 @@ You are a C++ programming expert specializing in modern C++ and high-performance
 - Clear documentation of template interfaces
 
 Follow C++ Core Guidelines. Prefer compile-time errors over runtime errors.
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

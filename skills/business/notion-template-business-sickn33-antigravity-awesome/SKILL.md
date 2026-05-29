@@ -539,10 +539,14 @@ Workflow:
 Works well with: `micro-saas-launcher`, `copywriting`, `landing-page-design`, `seo`
 
 ## When to Use
-
 - User mentions or implies: notion template
 - User mentions or implies: sell templates
 - User mentions or implies: digital product
 - User mentions or implies: notion business
 - User mentions or implies: gumroad
 - User mentions or implies: template business
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

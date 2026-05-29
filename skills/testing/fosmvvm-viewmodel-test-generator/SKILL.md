@@ -88,6 +88,7 @@ import FOSFoundation
 import FOSTesting
 import Foundation
 import Testing
+@testable import {ViewModelsTarget}
 
 @Suite("My ViewModel Tests")
 struct MyViewModelTests: LocalizableTestCase {
@@ -95,12 +96,14 @@ struct MyViewModelTests: LocalizableTestCase {
 
     init() throws {
         self.locStore = try Self.loadLocalizationStore(
-            bundle: Bundle.module,
-            resourceDirectoryName: "TestYAML"
+            bundle: {ViewModelsTarget}.resourceAccess,
+            resourceDirectoryName: ""
         )
     }
 }
 ```
+
+The `{ViewModelsTarget}.resourceAccess` is the resource accessor defined when creating the ViewModels SPM target (via `FOSResourceAccessor` build tool plugin).
 
 ### What LocalizableTestCase Provides
 
@@ -351,3 +354,4 @@ let vm = try .stub().toJSON(encoder: encoder(locale: en)).fromJSON()
 | Version | Date | Changes |
 |---------|------|---------|
 | 1.0 | 2025-01-02 | Initial skill |
+| 1.1 | 2026-01-19 | Updated LocalizableTestCase example to use {ViewModelsTarget}.resourceAccess pattern. |

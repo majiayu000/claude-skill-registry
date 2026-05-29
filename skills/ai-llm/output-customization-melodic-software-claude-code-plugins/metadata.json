@@ -1,0 +1,18 @@
+{
+  "name": "output-customization",
+  "repo": "melodic-software/claude-code-plugins",
+  "path": "plugins/claude-ecosystem/skills/output-customization/SKILL.md",
+  "source": "github.com/melodic-software/claude-code-plugins",
+  "downloaded_at": "2026-01-14T03:00:22.713836Z",
+  "dir_name": "output-customization-melodic-software-claude-code-plugins",
+  "category": "ai-llm",
+  "github_path": "plugins/claude-ecosystem/skills/output-customization",
+  "github_branch": "main",
+  "author": "melodic-software",
+  "source_url": "https://github.com/melodic-software/claude-code-plugins/blob/main/plugins/claude-ecosystem/skills/output-customization/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Melodic Software",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

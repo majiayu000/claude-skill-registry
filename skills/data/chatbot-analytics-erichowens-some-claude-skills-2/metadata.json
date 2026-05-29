@@ -1,0 +1,18 @@
+{
+  "name": "chatbot-analytics",
+  "description": "Implement AI chatbot analytics and conversation monitoring. Use when adding conversation metrics, tracking AI usage, measuring user engagement with chat, or building conversation dashboards. Activates",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/chatbot-analytics",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "chatbot-analytics-erichowens-some-claude-skills-2",
+  "author": "erichowens",
+  "source_url": "https://github.com/erichowens/some_claude_skills/blob/main/.claude/skills/chatbot-analytics/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Erich Owens",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

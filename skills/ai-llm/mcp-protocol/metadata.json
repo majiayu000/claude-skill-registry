@@ -1,0 +1,13 @@
+{
+  "name": "mcp-protocol",
+  "description": "",
+  "repo": "kaewz-manga/cl-n8n-mcp",
+  "category": "ai-llm",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kaewz-manga/cl-n8n-mcp",
+  "github_path": ".claude/skills/mcp-protocol",
+  "github_branch": "main",
+  "dir_name": "mcp-protocol",
+  "downloaded_at": "2026-02-05T01:44:44.583097Z"
+}

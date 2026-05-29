@@ -1,0 +1,16 @@
+{
+  "name": "session-intelligence-harvester",
+  "repo": "mjunaidca/mjs-agent-skills",
+  "path": "docs/taskflow-vault/skills/engineering/session-intelligence-harvester/SKILL.md",
+  "source": "github.com/mjunaidca/mjs-agent-skills",
+  "downloaded_at": "2026-02-02T02:50:26.278288Z",
+  "dir_name": "session-intelligence-harvester-mjunaidca-mjs-agent-skills",
+  "category": "skills",
+  "author": "mjunaidca",
+  "source_url": "https://github.com/mjunaidca/mjs-agent-skills/blob/main/docs/taskflow-vault/skills/engineering/session-intelligence-harvester/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mjunaidca/mjs-agent-skills/blob/main/docs/taskflow-vault/skills/engineering/session-intelligence-harvester/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

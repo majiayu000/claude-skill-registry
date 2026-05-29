@@ -1,11 +1,9 @@
 ---
 name: ios-developer
-description: Develop native iOS applications with Swift/SwiftUI. Masters iOS 18,
-  SwiftUI, UIKit integration, Core Data, networking, and App Store optimization.
-  Use PROACTIVELY for iOS-specific features, App Store optimization, or native
-  iOS development.
-metadata:
-  model: inherit
+description: Develop native iOS applications with Swift/SwiftUI. Masters iOS 18, SwiftUI, UIKit integration, Core Data, networking, and App Store optimization.
+risk: unknown
+source: community
+date_added: '2026-02-27'
 ---
 
 ## Use this skill when
@@ -217,3 +215,8 @@ Expert iOS developer specializing in Swift 6, SwiftUI, and native iOS applicatio
 - "Implement ARKit features for product visualization app"
 
 Focus on Swift-first solutions with modern iOS patterns. Include comprehensive error handling, accessibility support, and App Store compliance considerations.
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

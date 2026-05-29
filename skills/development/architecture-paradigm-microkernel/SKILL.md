@@ -1,20 +1,14 @@
 ---
 name: architecture-paradigm-microkernel
 description: |
-  Build a minimal, stable core system that loads plug-ins to provide feature
-  variability and extensibility for platform development.
 
-  Triggers: microkernel, plugin architecture, plugin system, extensibility,
-  platform design, IDE architecture, marketplace, core system, plugin loader
+Triggers: extensibility, architecture, platform-design, plugin, microkernel
+  Minimal core system with plugin-based feature extensibility for platform development.
 
-  Use when: building platforms, IDEs, or marketplaces with third-party extensions,
-  core stability is critical while features vary, plugin isolation is needed
+  Triggers: microkernel, plugin-architecture, extensibility, platform-design
 
-  DO NOT use when: selecting from multiple paradigms - use architecture-paradigms first.
-  DO NOT use when: no extensibility requirements exist.
-  DO NOT use when: plugin isolation overhead isn't justified.
-
-  Consult this skill when designing plugin architectures or building platforms.
+  Use when: platforms/IDEs/marketplaces, core stability critical, plugin isolation needed
+  DO NOT use when: selecting paradigms (use architecture-paradigms first), no extensibility needed
 version: 1.0.0
 category: architectural-pattern
 tags: [architecture, microkernel, plugin, extensibility, platform-design]
@@ -54,3 +48,15 @@ estimated_tokens: 900
   - **Mitigation**: Use semantic versioning (SemVer) rigorously for both the core and the plugins. Where necessary, provide abstraction layers or "shims" to maintain backward compatibility with older plugins.
 - **Core System Bloat**:
   - **Mitigation**: There is often pressure to add feature logic to the stable core. Aggressively resist this temptation. The core should remain minimal, with new features implemented as plugins whenever possible.
+## Troubleshooting
+
+### Common Issues
+
+**Command not found**
+Ensure all dependencies are installed and in PATH
+
+**Permission errors**
+Check file permissions and run with appropriate privileges
+
+**Unexpected behavior**
+Enable verbose logging with `--verbose` flag

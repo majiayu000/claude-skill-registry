@@ -45,6 +45,39 @@ The PDF is generated automatically from the markdown using `md-to-pdf`.
 
 ---
 
+## Gameplay Level Identification
+
+Before beginning validation, identify the gameplay level based on resource allocation and restrictions.
+
+| Level        | Starting Karma | Resources (A/B/C/D/E)    | Availability | Device Rating |
+| ------------ | -------------- | ------------------------ | ------------ | ------------- |
+| Street       | 13             | 75K/50K/25K/15K/6K       | ≤10          | ≤4            |
+| Standard     | 25             | 450K/275K/140K/50K/6K    | ≤12          | ≤6            |
+| Prime Runner | 35             | 500K/325K/210K/150K/100K | ≤15          | —             |
+
+**Identification Heuristics:**
+
+1. **Check resource totals** - If total gear exceeds 450K, likely Prime Runner
+2. **Check availability** - If any item >12 availability, likely Prime Runner
+3. **Check starting karma** - If negative qualities suggest >25 starting karma budget, likely Prime Runner
+4. **Check device ratings** - If commlinks/decks >Rating 6, likely Prime Runner
+
+**Output Format:**
+
+```markdown
+### Gameplay Level Identification
+
+**Detected Level:** Standard
+**Evidence:**
+
+- Total resources: 249,500¥ (within 275K Budget B)
+- Max availability: 12R (Wired Reflexes 2)
+- Max device rating: 5 (Hermes Ikon)
+- Estimated karma budget: 25 (standard)
+```
+
+---
+
 ## Input Requirements
 
 When importing an archetype, gather:
@@ -380,6 +413,349 @@ Cross-reference metatype with special attribute points:
 
 Calculate special attribute points spent on Edge.
 
+---
+
+## Karma Expenditure Validation
+
+After priority inference, validate how the starting karma was spent.
+
+### Karma Budget by Gameplay Level
+
+| Level        | Starting Karma | Max Karma-to-Nuyen |
+| ------------ | -------------- | ------------------ |
+| Street       | 13             | 5 (→10,000¥)       |
+| Standard     | 25             | 10 (→20,000¥)      |
+| Prime Runner | 35             | 25 (→50,000¥)      |
+
+### Karma Expenditure Categories
+
+| Category                    | Cost               | Limit                                |
+| --------------------------- | ------------------ | ------------------------------------ |
+| Positive Qualities          | Listed cost        | ≤25 Karma total                      |
+| Negative Qualities          | Receive listed     | ≤25 Karma bonus                      |
+| Karma-to-Nuyen              | 1:2,000¥           | Level-dependent (see above)          |
+| Active Skill                | New Rating × 2     | Max rating 6 (7 with Aptitude)       |
+| Skill Group                 | New Rating × 5     | Max rating 6                         |
+| Specialization              | 7 Karma            | One per skill                        |
+| Attribute                   | New Rating × 5     | One Physical OR Mental at max        |
+| Spells/Rituals/Preparations | 5 Karma each       | ≤Magic × 2 each category             |
+| Complex Forms               | 4 Karma each       | ≤Logic                               |
+| Focus Bonding               | Force × multiplier | Count ≤ Magic, Total Force ≤ Magic×2 |
+| Power Points (Mystic Adept) | 5 Karma each       | ≤Magic rating                        |
+| Contact                     | Connection+Loyalty | 2-7 Karma per contact, min 1+1       |
+
+### Skill Karma Cost Reference
+
+| From → To | Karma Cost | Cumulative (from 0) |
+| --------- | ---------- | ------------------- |
+| 0 → 1     | 2          | 2                   |
+| 1 → 2     | 4          | 6                   |
+| 2 → 3     | 6          | 12                  |
+| 3 → 4     | 8          | 20                  |
+| 4 → 5     | 10         | 30                  |
+| 5 → 6     | 12         | 42                  |
+
+### Karma-Optimal Skill Allocation
+
+**CRITICAL:** When a character has more total skill points than their priority provides, the order of allocation matters significantly for karma efficiency.
+
+**The Problem:**
+If you allocate priority points to low-rated skills first, you'll be forced to buy high-rated skills with karma, which is extremely expensive.
+
+**Example - Face (Elf) with Priority A Skills:**
+
+- Priority A provides: 46 skill points + 10 group points
+- Character needs: 48 skill points (2 over budget)
+- Skills include: Etiquette 5, Negotiation 5, various 4s, and First Aid 1, Pilot Ground 1
+
+**Wrong approach (expensive):**
+
+- Allocate 46 points including First Aid 1 and Pilot Ground 1
+- Buy remaining skills (e.g., Unarmed 2) with karma
+- Cost: Unarmed 0→2 = 6 karma
+
+**Correct approach (cheap):**
+
+- Allocate 46 points to HIGH-value skills first (5s, 4s, then 2s)
+- Buy the CHEAPEST skills (rating 1s) with karma
+- Cost: First Aid 0→1 (2 karma) + Pilot Ground 0→1 (2 karma) = 4 karma
+
+**Savings:** 2 karma (which can mean the difference between legal and illegal)
+
+### Skill Allocation Order of Operations
+
+When building a character with excess skill points:
+
+1. **Calculate total skill points needed** (sum of all individual skill ratings)
+2. **Calculate priority skill points available** (from priority table)
+3. **Calculate excess** (needed - available)
+4. **Sort skills by rating** (highest to lowest)
+5. **Allocate priority points from highest-rated skills down**
+6. **Leave the lowest-rated skills (rating 1s) to buy with karma**
+7. **Verify karma cost** for the leftover skills
+
+**Allocation Priority Order:**
+
+1. Rating 6 skills (12 karma each to buy)
+2. Rating 5 skills (10 karma each to buy)
+3. Rating 4 skills (8 karma each to buy)
+4. Rating 3 skills (6 karma each to buy)
+5. Rating 2 skills (4 karma each to buy)
+6. Rating 1 skills (2 karma each to buy) ← **Buy these with karma**
+
+### Shadow Master Implementation Notes
+
+When entering skills in Shadow Master:
+
+1. **First:** Enter all skill groups (these use group points, not skill points)
+2. **Second:** Enter high-rated individual skills (5s and 4s) using priority points
+3. **Third:** Enter medium-rated skills (3s and 2s) using remaining priority points
+4. **Last:** Enter rating-1 skills - these should consume karma, not priority points
+
+If you run out of karma before completing all skills, **go back and reallocate**:
+
+- Remove points from a rating-1 skill (freeing priority points)
+- Add those points to a higher-rated skill that was using karma
+- The rating-1 skill now uses karma (cheaper) instead of the higher-rated skill
+
+### Focus Bonding Costs
+
+| Focus Type       | Multiplier | F1  | F2  | F3  | F4  | F5  | F6  |
+| ---------------- | ---------- | --- | --- | --- | --- | --- | --- |
+| Qi Focus         | ×2         | 2   | 4   | 6   | 8   | 10  | 12  |
+| Spell Focus      | ×2         | 2   | 4   | 6   | 8   | 10  | 12  |
+| Spirit Focus     | ×2         | 2   | 4   | 6   | 8   | 10  | 12  |
+| Enchanting Focus | ×3         | 3   | 6   | 9   | 12  | 15  | 18  |
+| Metamagic Focus  | ×3         | 3   | 6   | 9   | 12  | 15  | 18  |
+| Weapon Focus     | ×3         | 3   | 6   | 9   | 12  | 15  | 18  |
+| Power Focus      | ×6         | 6   | 12  | 18  | 24  | 30  | 36  |
+
+### Output Format
+
+```markdown
+### Karma Expenditure Validation
+
+**Starting Karma:** 25 (Standard level)
+
+| Category           | Items                           | Cost | Running Total  |
+| ------------------ | ------------------------------- | ---- | -------------- |
+| Positive Qualities | Ambidextrous (4), Toughness (9) | 13   | 13             |
+| Negative Qualities | SINner (Corporate) (-25)        | -25  | -12            |
+| Karma-to-Nuyen     | 5 Karma → 10,000¥               | 5    | -7             |
+| Contact Pool       | Fixer (3/2), Street Doc (2/1)   | 8    | 1              |
+| Focus Bonding      | Weapon Focus F3                 | 9    | 10             |
+| Skills             | Pistols 1→2 (4), Sneak spec (7) | 11   | 21             |
+| **Total Spent**    |                                 | 46   |                |
+| **Net Karma**      | 25 - 46 + 25 (negatives)        | 4    | ✓ ≤7 carryover |
+
+**Validation:**
+
+- ✓ Positive qualities (13) ≤ 25 limit
+- ✓ Negative qualities (25) ≤ 25 limit
+- ✓ Karma-to-Nuyen (5) ≤ 10 limit (Standard)
+- ✓ Remaining karma (4) ≤ 7 carryover limit
+```
+
+---
+
+## Knowledge & Language Skill Validation
+
+### Formula
+
+```
+Free Knowledge Points = (Intuition + Logic) × 2
+```
+
+### Example Calculation
+
+| Intuition | Logic | Free Points |
+| --------- | ----- | ----------- |
+| 3         | 2     | 10          |
+| 4         | 3     | 14          |
+| 5         | 4     | 18          |
+
+### Knowledge Skill Categories
+
+| Category     | Linked Attribute |
+| ------------ | ---------------- |
+| Academic     | Logic            |
+| Professional | Logic            |
+| Interests    | Intuition        |
+| Street       | Intuition        |
+
+### Output Format
+
+```markdown
+### Knowledge & Language Skills
+
+**Free Points:** (INT 4 + LOG 3) × 2 = **14 points**
+
+| Skill                         | Category     | Rating | Points |
+| ----------------------------- | ------------ | ------ | ------ |
+| English                       | Language     | N      | 0      |
+| Spanish                       | Language     | 3      | 3      |
+| Seattle Street Gangs          | Street       | 4      | 4      |
+| Corporate Security Procedures | Professional | 3      | 3      |
+| Firearms Manufacturers        | Interests    | 2      | 2      |
+| **Total**                     |              |        | **12** |
+
+**Validation:** ✓ 12 points spent ≤ 14 available
+```
+
+---
+
+## Contact Pool Validation
+
+### Formula
+
+```
+Free Contact Karma = Charisma × 3
+```
+
+**Note:** This pool can ONLY be used for contacts, not other karma expenditures.
+
+### Limits
+
+- **Per Contact:** 2-7 Karma (min 1 Connection + 1 Loyalty)
+- **No limit** on number of contacts
+
+### Contact Cost Matrix
+
+| Connection | Loy 1 | Loy 2 | Loy 3 | Loy 4 | Loy 5 | Loy 6 |
+| ---------- | ----- | ----- | ----- | ----- | ----- | ----- |
+| 1          | 2     | 3     | 4     | 5     | 6     | 7     |
+| 2          | 3     | 4     | 5     | 6     | 7     | —     |
+| 3          | 4     | 5     | 6     | 7     | —     | —     |
+| 4          | 5     | 6     | 7     | —     | —     | —     |
+| 5          | 6     | 7     | —     | —     | —     | —     |
+| 6          | 7     | —     | —     | —     | —     | —     |
+
+### Output Format
+
+```markdown
+### Contact Pool Validation
+
+**Free Contact Karma:** CHA 3 × 3 = **9 Karma**
+
+| Contact             | Connection | Loyalty | Cost  |
+| ------------------- | ---------- | ------- | ----- |
+| Fixer (Mr. Johnson) | 3          | 2       | 5     |
+| Street Doc (Patch)  | 2          | 1       | 3     |
+| **Total**           |            |         | **8** |
+
+**Validation:** ✓ 8 Karma spent ≤ 9 available
+**Excess to General Pool:** 1 Karma (can be used for other purchases)
+```
+
+---
+
+## Magic Purchase Limits (Awakened Characters)
+
+### Spells, Rituals, and Preparations
+
+| Category     | Karma Cost | Creation Limit |
+| ------------ | ---------- | -------------- |
+| Spells       | 5 each     | ≤ Magic × 2    |
+| Rituals      | 5 each     | ≤ Magic × 2    |
+| Preparations | 5 each     | ≤ Magic × 2    |
+
+**Example:** Magic 4 character can have up to 8 spells, 8 rituals, and 8 preparations.
+
+### Focus Bonding Limits at Creation
+
+| Limit            | Formula   |
+| ---------------- | --------- |
+| Max bonded count | ≤ Magic   |
+| Max total Force  | ≤ Magic×2 |
+| Force per test   | Only 1    |
+
+**Example:** Magic 4 can bond up to 4 foci with total Force ≤ 8.
+
+### Mystic Adept Power Points
+
+- **Cost:** 5 Karma per Power Point
+- **Limit:** Cannot exceed Magic rating
+- **Note:** Adepts get Power Points free (= Magic rating)
+
+### Output Format
+
+```markdown
+### Magic Validation
+
+**Magic Rating:** 4 (Magician)
+**Tradition:** Hermetic
+
+**Spells (6/8 limit):**
+
+- Stunbolt, Manabolt, Armor, Heal, Improved Invisibility, Levitate
+
+**Foci (2 foci, Force 5/8 limit):**
+| Focus | Force | Bonding Cost |
+| -------------- | ----- | ------------ |
+| Spell Focus | 3 | 6 Karma |
+| Power Focus | 2 | 12 Karma |
+| **Total** | 5 | **18 Karma** |
+
+**Validation:**
+
+- ✓ Spells (6) ≤ Magic×2 (8)
+- ✓ Foci count (2) ≤ Magic (4)
+- ✓ Total Force (5) ≤ Magic×2 (8)
+```
+
+---
+
+## Creation Limits Summary
+
+### Hard Limits (All Levels)
+
+| Category               | Limit                |
+| ---------------------- | -------------------- |
+| Karma carryover        | ≤7                   |
+| Nuyen carryover        | ≤5,000¥              |
+| Positive qualities     | ≤25 Karma            |
+| Negative qualities     | ≤25 Karma bonus      |
+| Attribute augmentation | +4 max per attribute |
+| Physical at max        | Only 1               |
+| Mental at max          | Only 1               |
+| Skill rating           | ≤6 (7 with Aptitude) |
+| Bonded foci count      | ≤Magic               |
+| Bonded foci Force      | ≤Magic × 2           |
+| Spells per category    | ≤Magic × 2           |
+| Complex forms          | ≤Logic               |
+| Bound spirits          | ≤Charisma            |
+| Registered sprites     | ≤Charisma            |
+
+### Level-Dependent Limits
+
+| Limit          | Street | Standard | Prime |
+| -------------- | ------ | -------- | ----- |
+| Starting Karma | 13     | 25       | 35    |
+| Availability   | ≤10    | ≤12      | ≤15   |
+| Device Rating  | ≤4     | ≤6       | —     |
+| Karma-to-Nuyen | 5      | 10       | 25    |
+
+### Output Format
+
+```markdown
+### Creation Limits Validation
+
+| Limit                 | Value | Max   | Status |
+| --------------------- | ----- | ----- | ------ |
+| Karma carryover       | 4     | 7     | ✓      |
+| Nuyen carryover       | 2,500 | 5,000 | ✓      |
+| Positive qualities    | 13    | 25    | ✓      |
+| Negative qualities    | 25    | 25    | ✓      |
+| Physical at max       | 1     | 1     | ✓      |
+| Mental at max         | 0     | 1     | ✓      |
+| Max skill rating      | 6     | 6     | ✓      |
+| Max availability      | 12R   | 12    | ✓      |
+| Max device rating     | 5     | 6     | ✓      |
+| Foci count            | 2     | 4     | ✓      |
+| Foci total Force      | 5     | 8     | ✓      |
+| Spells (per category) | 6     | 8     | ✓      |
+```
+
 ### Output Format
 
 ```markdown
@@ -450,8 +826,127 @@ Calculate special attribute points spent on Edge.
 Before generating the markdown:
 
 1. **Check item existence** - Verify all items exist in `/data/editions/sr5/core-rulebook.json`
-2. **Check naming consistency** - Match exact names from catalog
+2. **Check naming consistency** - Match exact names from catalog (see Fuzzy Matching below)
 3. **Check availability limits** - Items must be ≤12 availability at creation (without qualities)
+
+### Default Rating Rule
+
+**CRITICAL:** When a stat block lists an item that has ratings in the database but does NOT specify a rating, **default to Rating 1**.
+
+**Example:**
+
+- Stat block shows: "Bug Scanner — 100¥"
+- Database has: Bug Scanner (Rating 1-6, costs 100¥-600¥)
+- Correct interpretation: Bug Scanner Rating 1 at 100¥
+
+**Common rated items that often omit ratings:**
+| Item | Rating Range | R1 Cost | R6 Cost |
+|------|--------------|---------|---------|
+| Bug Scanner | 1-6 | 100¥ | 600¥ |
+| White Noise Generator | 1-6 | 50¥ | 300¥ |
+| Jammer (Area) | 1-6 | 200¥ | — |
+| Medkit | 1-6 | 250¥ | 1,500¥ |
+| Fake SIN | 1-6 | 2,500¥ | 15,000¥ |
+| Autopicker | 1-6 | 50¥ | 300¥ |
+
+**Validation:** If the stat block price doesn't match Rating 1, check if it matches another rating and document accordingly.
+
+### Fuzzy Matching for Item Names
+
+**CRITICAL:** Sourcebook stat blocks often use slightly different names than the database. Before marking an item as "missing," perform fuzzy matching to find close matches.
+
+#### Name Normalization Steps
+
+When an exact match fails, normalize both the stat block name and database names:
+
+1. **Remove/normalize hyphens and spaces:**
+   - `Ultra Power` → `ultrapower`
+   - `Ultra-Power` → `ultrapower`
+   - Match: ✓
+
+2. **Normalize Roman numerals vs digits:**
+   - `Predator V` → `predator5`
+   - `Predator 5` → `predator5`
+   - Match: ✓
+
+3. **Handle parenthetical variations:**
+   - `Smartgun System (Internal)` → `smartgunsysteminternal`
+   - `Internal Smartgun System` → search for "smartgun" + "internal"
+
+4. **Case-insensitive comparison:**
+   - `APDS` = `apds` = `Apds`
+
+5. **Handle common abbreviations:**
+   - `E-War` ↔ `Electronic Warfare`
+   - `AR` ↔ `Assault Rifle`
+   - `SMG` ↔ `Submachine Gun`
+
+#### Fuzzy Search Algorithm
+
+```
+1. Exact match → Use database name
+2. Normalized match (remove hyphens/spaces, lowercase) → Use database name
+3. Substring match (stat block name contained in database name) → Flag as "close match"
+4. Token overlap (≥80% of words match) → Flag as "close match"
+5. No match → Mark as "missing"
+```
+
+#### Common Name Variations
+
+| Stat Block Name      | Database Name         | Variation Type |
+| -------------------- | --------------------- | -------------- |
+| Browning Ultra Power | Browning Ultra-Power  | Hyphen         |
+| Ares Predator 5      | Ares Predator V       | Roman numeral  |
+| Ingram Smartgun X    | Ingram Smartgun XI    | Numeral typo   |
+| Fichetti Sec 600     | Fichetti Security 600 | Abbreviation   |
+| Earbuds              | Ear Buds              | Word split     |
+| Hardware kit         | Hardware Toolkit      | Synonym        |
+| Jammer (area)        | Area Jammer           | Word order     |
+| Silencer             | Silencer/Suppressor   | Partial name   |
+| Concealed holster    | Concealable Holster   | Adjective form |
+| Regular ammunition   | Regular Rounds        | Synonym        |
+| Wired Reflexes 2     | Wired Reflexes        | Rating in name |
+
+#### Updated Validation Output Format
+
+```markdown
+### Matched Items (45/50)
+
+**Exact matches:** 42 items found in `/data/editions/sr5/core-rulebook.json`
+
+**Close matches (auto-corrected):**
+| Stat Block Name | Database Name | Correction Applied |
+| -------------------- | -------------------- | ------------------ |
+| Browning Ultra Power | Browning Ultra-Power | Added hyphen |
+| Earbuds | Ear Buds | Split words |
+| Silencer | Silencer/Suppressor | Full name |
+
+### Missing from Database (3 items)
+
+| Item                     | Type     | Fuzzy Search Results               |
+| ------------------------ | -------- | ---------------------------------- |
+| Electrochromatic T-shirt | Clothing | No close matches found             |
+| Custom Grip Mod          | Weapon   | Partial: "Grip" in 3 items         |
+| Ares Roto-Drone MkII     | Drone    | Close: "Ares Roto-Drone" (no MkII) |
+```
+
+#### Implementation: grep Commands for Fuzzy Search
+
+When validating items, use these grep patterns:
+
+```bash
+# Exact match
+grep -i '"name": "Browning Ultra Power"' /data/editions/sr5/core-rulebook.json
+
+# Normalized search (ignore hyphens/spaces)
+grep -i '"name":.*browning.*ultra.*power' /data/editions/sr5/core-rulebook.json
+
+# Partial/substring search
+grep -i '"name":.*browning' /data/editions/sr5/core-rulebook.json | head -20
+
+# Find all weapons to manually review
+grep -i '"name":' /data/editions/sr5/core-rulebook.json | grep -i pistol
+```
 
 ### Calculation Validation
 
@@ -465,6 +960,30 @@ Before generating the markdown:
 1. **Parent-child relationships** - Every enhancement must have a parent
 2. **Capacity bounds** - No container can exceed its rated capacity
 3. **License-SIN binding** - Licenses must match their parent SIN rating
+
+### Karma & Budget Validation
+
+1. **Karma budget** - Verify starting karma matches gameplay level (13/25/35)
+2. **Positive qualities** - Total ≤25 Karma
+3. **Negative qualities** - Total bonus ≤25 Karma
+4. **Karma-to-Nuyen** - Verify conversion within level limit
+5. **Karma carryover** - Remaining ≤7 Karma
+6. **Nuyen carryover** - Remaining ≤5,000¥
+
+### Knowledge & Contact Validation
+
+1. **Knowledge points** - Verify total ≤ (INT + LOG) × 2
+2. **Contact pool** - Verify total ≤ CHA × 3 (contacts only)
+3. **Contact limits** - Each contact 2-7 Karma (min 1 Con + 1 Loy)
+
+### Magic/Resonance Validation (if applicable)
+
+1. **Spell limits** - Each category ≤ Magic × 2
+2. **Focus count** - Bonded foci ≤ Magic
+3. **Focus Force** - Total Force ≤ Magic × 2
+4. **Complex forms** - Total ≤ Logic
+5. **Bound spirits** - Count ≤ Charisma
+6. **Registered sprites** - Count ≤ Charisma
 
 ### Validation Output Format
 

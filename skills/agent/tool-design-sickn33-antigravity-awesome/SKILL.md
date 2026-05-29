@@ -1,8 +1,9 @@
 ---
 name: tool-design
-description: "Build tools that agents can use effectively, including architectural reduction patterns"
-source: "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/tool-design"
+description: "Build tools that agents can use effectively, including architectural reduction patterns. Use when creating new tools for agent systems, debugging tool-related failures or misuse, or optimizing existing tool sets for better agent performance."
 risk: safe
+source: "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/tool-design"
+date_added: "2026-02-27"
 ---
 
 ## When to Use This Skill
@@ -14,8 +15,7 @@ Use this skill when working with build tools that agents can use effectively, in
 
 Tools are the primary mechanism through which agents interact with the world. They define the contract between deterministic systems and non-deterministic agents. Unlike traditional software APIs designed for developers, tool APIs must be designed for language models that reason about intent, infer parameter values, and generate calls from natural language requests. Poor tool design creates failure modes that no amount of prompt engineering can fix. Effective tool design follows specific principles that account for how agents perceive and use tools.
 
-## When to Activate
-
+## When to Use
 Activate this skill when:
 - Creating new tools for agent systems
 - Debugging tool-related failures or misuse
@@ -98,7 +98,7 @@ The question to ask: are your tools enabling new capabilities, or are they const
 **Build for Future Models**
 Models improve faster than tooling can keep up. An architecture optimized for today's model may be over-constrained for tomorrow's. Build minimal architectures that can benefit from model improvements rather than sophisticated architectures that lock in current limitations.
 
-See [Architectural Reduction Case Study](./references/architectural_reduction.md) for production evidence.
+See Architectural Reduction Case Study for production evidence.
 
 ### Tool Description Engineering
 
@@ -167,7 +167,7 @@ Claude can optimize its own tools. When given a tool and observed failure modes,
 def optimize_tool_description(tool_spec, failure_examples):
     """
     Use an agent to analyze tool failures and improve descriptions.
-    
+
     Process:
     1. Agent attempts to use tool across diverse tasks
     2. Collect failure modes and friction points
@@ -176,20 +176,20 @@ def optimize_tool_description(tool_spec, failure_examples):
     """
     prompt = f"""
     Analyze this tool specification and the observed failures.
-    
+
     Tool: {tool_spec}
-    
+
     Failures observed:
     {failure_examples}
-    
+
     Identify:
     1. Why agents are failing with this tool
     2. What information is missing from the description
     3. What ambiguities cause incorrect usage
-    
+
     Propose an improved tool description that addresses these issues.
     """
-    
+
     return get_agent_response(prompt)
 ```
 
@@ -227,19 +227,19 @@ When designing tool collections:
 def get_customer(customer_id: str, format: str = "concise"):
     """
     Retrieve customer information by ID.
-    
+
     Use when:
     - User asks about specific customer details
     - Need customer context for decision-making
     - Verifying customer identity
-    
+
     Args:
         customer_id: Format "CUST-######" (e.g., "CUST-000001")
         format: "concise" for key fields, "detailed" for complete record
-    
+
     Returns:
         Customer object with requested fields
-    
+
     Errors:
         NOT_FOUND: Customer ID not found
         INVALID_FORMAT: ID must match CUST-###### pattern
@@ -295,8 +295,8 @@ This skill connects to:
 ## References
 
 Internal references:
-- [Best Practices Reference](./references/best_practices.md) - Detailed tool design guidelines
-- [Architectural Reduction Case Study](./references/architectural_reduction.md) - Production evidence for tool minimalism
+- Best Practices Reference - Detailed tool design guidelines
+- Architectural Reduction Case Study - Production evidence for tool minimalism
 
 Related skills in this collection:
 - context-fundamentals - Tool context interactions
@@ -316,3 +316,8 @@ External resources:
 **Last Updated**: 2025-12-23
 **Author**: Agent Skills for Context Engineering Contributors
 **Version**: 1.1.0
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

@@ -1,0 +1,16 @@
+{
+  "name": "pdb",
+  "repo": "adaptyvbio/protein-design-skills",
+  "path": "skills/pdb/SKILL.md",
+  "source": "github.com/adaptyvbio/protein-design-skills",
+  "downloaded_at": "2026-01-29T07:43:49.465514Z",
+  "dir_name": "pdb-adaptyvbio-protein-design-skill-54d0608c",
+  "category": "domains",
+  "author": "adaptyvbio",
+  "source_url": "https://github.com/adaptyvbio/protein-design-skills/blob/main/skills/pdb/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Adaptyv",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

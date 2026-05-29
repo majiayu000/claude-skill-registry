@@ -1,0 +1,20 @@
+{
+  "name": "aqe-v2-v3-migration",
+  "description": "The most comprehensive Claude Code skills registry - 50,000+ skills indexed",
+  "repo": "majiayu000/claude-skill-registry",
+  "category": "workflow",
+  "tags": [],
+  "stars": 48,
+  "source": "",
+  "github_path": "skills/data/aqe-v2-v3-migration",
+  "github_branch": "main",
+  "dir_name": "aqe-v2-v3-migration",
+  "downloaded_at": "2026-02-05T01:45:25.422896Z",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/data/aqe-v2-v3-migration/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

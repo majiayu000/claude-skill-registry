@@ -1,6 +1,9 @@
 ---
 name: gdpr-data-handling
-description: Implement GDPR-compliant data handling with consent management, data subject rights, and privacy by design. Use when building systems that process EU personal data, implementing privacy controls, or conducting GDPR compliance reviews.
+description: "Practical implementation guide for GDPR-compliant data processing, consent management, and privacy controls."
+risk: safe
+source: community
+date_added: "2026-02-27"
 ---
 
 # GDPR Data Handling
@@ -31,3 +34,8 @@ Practical implementation guide for GDPR-compliant data processing, consent manag
 ## Resources
 
 - `resources/implementation-playbook.md` for detailed patterns and examples.
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

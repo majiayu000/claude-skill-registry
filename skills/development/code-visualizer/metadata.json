@@ -1,0 +1,18 @@
+{
+  "name": "code-visualizer",
+  "repo": "rysweet/azlin",
+  "path": ".claude/skills/code-visualizer/SKILL.md",
+  "source": "github.com/rysweet/azlin",
+  "downloaded_at": "2026-01-22T01:54:28.349616Z",
+  "dir_name": "code-visualizer",
+  "category": "development",
+  "github_path": ".claude/skills/code-visualizer",
+  "github_branch": "main",
+  "author": "rysweet",
+  "source_url": "https://github.com/rysweet/azlin/blob/main/.claude/skills/code-visualizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rysweet/azlin/blob/main/.claude/skills/code-visualizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

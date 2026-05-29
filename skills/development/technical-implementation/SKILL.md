@@ -22,11 +22,17 @@ You're at step 5. Execute the plan. Don't re-debate decisions.
 
 ## Hard Rules
 
+**MANDATORY. No exceptions. Violating these rules invalidates the work.**
+
 1. **No code before tests** - Write the failing test first. Always.
-2. **No test changes to pass** - If code doesn't pass, fix the code. Tests can only be fixed if genuinely broken or poorly designed, never to accommodate broken code.
+2. **No test changes to pass** - Fix the code, not the test.
 3. **No scope expansion** - If it's not in the plan, don't build it.
 4. **No assumptions** - Uncertain? Check specification. Still uncertain? Stop and ask.
 5. **Commit after green** - Every passing test = commit point.
+
+**Pragmatic TDD**: The discipline is test-first sequencing, not artificial minimalism. Write complete, functional implementations - don't fake it with hardcoded returns. "Minimal" means no gold-plating beyond what the test requires.
+
+See **[tdd-workflow.md](references/tdd-workflow.md)** for the full TDD cycle, violation recovery, and guidance on when tests can change.
 
 ## Workflow
 
@@ -39,7 +45,8 @@ Complete ALL setup steps before proceeding to implementation work.
 
 1. **Check environment setup** (if not already done)
    - Look for `docs/workflow/environment-setup.md`
-   - If exists, follow the setup instructions before proceeding
+   - If exists and states "No special setup required", skip to step 2
+   - If exists with instructions, follow the setup before proceeding
    - If missing, ask: "Are there any environment setup instructions I should follow?"
 
    See **[environment-setup.md](references/environment-setup.md)** for details.
@@ -49,24 +56,20 @@ Complete ALL setup steps before proceeding to implementation work.
    - Load the output adapter: `skills/technical-planning/references/output-{format}.md`
    - Follow the **Implementation** section for how to read tasks and update progress
 
-3. **Validate scope** (if specific phase or task was requested)
+3. **Read the TDD workflow** - Load **[tdd-workflow.md](references/tdd-workflow.md)** before writing any code. This is mandatory.
+
+4. **Validate scope** (if specific phase or task was requested)
    - If the requested phase or task doesn't exist in the plan, STOP immediately
    - Ask the user for clarification - don't assume or proceed with a different scope
    - Wait for the user to either correct the scope or ask you to stop
 
-4. **For each phase**:
-   - Announce phase start
-   - Review phase acceptance criteria
-   - For each task:
-     - Derive test from task's micro acceptance criteria
-     - Write failing test
-     - Implement minimal code to pass
-     - Refactor if needed (only when green)
-     - Commit
+5. **For each phase**:
+   - Announce phase start and review acceptance criteria
+   - For each task: follow the TDD cycle loaded in step 3
    - Verify all phase acceptance criteria met
    - **Ask user before proceeding to next phase**
 
-5. **Reference specification** when rationale unclear
+6. **Reference specification** when rationale unclear
 
 ## Progress Announcements
 

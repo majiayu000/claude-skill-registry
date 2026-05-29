@@ -1,6 +1,10 @@
 ---
 name: kratos-mapper
-description: Generates bidirectional mapper functions between protobuf DTOs and business models for go-kratos services. Creates type-safe conversions with proper field mapping. Use when implementing service layer mappers.
+description: Generates bidirectional mapper functions (transformers/converters/adapters) between protobuf DTOs and business domain models for go-kratos services. Creates type-safe conversions with proper field mapping, handles timestamps, enums, optional fields, and pagination metadata transformations. Use when converting DTOs to domain models, transforming proto to biz models, mapping requests/responses, implementing type conversions, creating entity transformers, or handling DTO transformations between layers.
+tags: [kratos, mapper, dto, converter, transformer, proto, domain-model, type-conversion]
+keywords: [mapper, convert, transform, DTO, proto to domain, domain to proto, type conversion, request mapping, response mapping, transformer, converter, adapter]
+version: 2.0.0
+last_updated: 2026-01-12
 ---
 
 <objective>

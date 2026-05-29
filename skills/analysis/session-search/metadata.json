@@ -1,0 +1,18 @@
+{
+  "name": "session-search",
+  "repo": "terraphim/codex-skills",
+  "path": "skills/session-search/SKILL.md",
+  "source": "github.com/terraphim/codex-skills",
+  "downloaded_at": "2026-01-22T02:22:57.003699Z",
+  "dir_name": "session-search",
+  "category": "analysis",
+  "github_path": "skills/session-search",
+  "github_branch": "main",
+  "author": "terraphim",
+  "source_url": "https://github.com/terraphim/codex-skills/blob/main/skills/session-search/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/terraphim/codex-skills/blob/main/skills/session-search/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

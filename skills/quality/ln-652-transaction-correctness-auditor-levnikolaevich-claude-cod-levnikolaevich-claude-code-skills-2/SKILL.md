@@ -1,10 +1,11 @@
 ---
 name: ln-652-transaction-correctness-auditor
-description: "Transaction correctness audit worker (L3). Checks missing intermediate commits, transaction scope (too wide/narrow), missing rollback handling, long-held transactions, trigger/notify interaction. Returns findings with severity, location, effort, recommendations."
+description: "Checks transaction scope, missing rollback handling, long-held transactions, trigger/notify interaction. Use when auditing transaction correctness."
 allowed-tools: Read, Grep, Glob, Bash
+license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Transaction Correctness Auditor (L3 Worker)
 
@@ -12,7 +13,6 @@ Specialized worker auditing database transaction patterns for correctness, scope
 
 ## Purpose & Scope
 
-- **Worker in ln-650 coordinator pipeline** - invoked by ln-650-persistence-performance-auditor
 - Audit **transaction correctness** (Priority: HIGH)
 - Check commit patterns, transaction boundaries, rollback handling, trigger/notify semantics
 - Write structured findings to file with severity, location, effort, recommendations
@@ -20,13 +20,15 @@ Specialized worker auditing database transaction patterns for correctness, scope
 
 ## Inputs (from Coordinator)
 
-**MANDATORY READ:** Load `shared/references/task_delegation_pattern.md#audit-coordinator--worker-contract` for contextStore structure.
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
 
 Receives `contextStore` with: `tech_stack`, `best_practices`, `db_config` (database type, ORM settings, trigger/notify patterns), `codebase_root`, `output_dir`.
 
 **Domain-aware:** Supports `domain_mode` + `current_domain`.
 
 ## Workflow
+
+**MANDATORY READ:** Load `shared/references/two_layer_detection.md` for detection methodology.
 
 1) **Parse context from contextStore**
    - Extract tech_stack, best_practices, db_config, output_dir
@@ -68,6 +70,8 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `db_config` (datab
 **Severity:**
 - **CRITICAL:** Missing commit for NOTIFY/LISTEN-based real-time features (SSE, WebSocket)
 - **HIGH:** Missing commit for triggers that update materialized data
+
+**Exception:** Single atomic operation with no intermediate observable state → downgrade CRITICAL to MEDIUM. Transaction scope documented as intentional (ADR, architecture comment) → downgrade one level
 
 **Recommendation:**
 - Add `session.commit()` at progress milestones (throttled: every N%, every T seconds)
@@ -142,15 +146,51 @@ Receives `contextStore` with: `tech_stack`, `best_practices`, `db_config` (datab
 
 **Effort:** M (restructure code to minimize transaction window)
 
+### 6. Event Channel Name Consistency
+**What:** Publisher channel/topic name does not match subscriber channel/topic name
+
+**Detection:**
+- **Step 1:** Collect publisher channel names (extend Phase 2 trigger discovery):
+  - Migration triggers: extract string argument from `pg_notify('channel_name', ...)`, `NOTIFY channel_name`
+  - Application code: Grep for `\.publish\(["']|\.emit\(["']|redis.*publish\(["']|\.send_to\(["']` in `src/`, `app/`
+  - Extract: `{channel_name, source_file, source_line, technology}`
+- **Step 2:** Collect subscriber channel names:
+  - PostgreSQL: Grep for `LISTEN\s+(\w+)` in application code (not just migrations)
+  - Redis: Grep for `\.subscribe\(["']([^"']+)` in `src/`, `app/`
+  - EventEmitter/WebSocket: Grep for `\.on\(["']([^"']+)` in handler/listener directories
+  - Extract: `{channel_name, source_file, source_line, technology}`
+- **Step 3:** Cross-reference publishers vs subscribers:
+  - Exact match: `publisher.channel_name == subscriber.channel_name` → OK
+  - Near-miss: Levenshtein distance <= 2 OR one is substring of the other → flag as MISMATCH
+  - Orphaned publisher: channel exists in publishers but not in subscribers → flag as ORPHAN
+  - Orphaned subscriber: channel exists in subscribers but not in publishers → flag as ORPHAN
+
+**Layer 2 Context Analysis (MANDATORY):**
+- If channel name comes from shared config constant or env var (e.g., `CHANNEL = os.environ["EVENT_CHANNEL"]`) and both publisher and subscriber use same source → NOT a mismatch
+- If channel uses dynamic suffix pattern (e.g., `job_events:{job_id}`) and both sides use same template → NOT orphaned
+- Exclude test files (`**/test*/**`, `**/*.test.*`) from both publisher and subscriber discovery
+
+**Severity:**
+- **CRITICAL:** Channel name mismatch (near-miss: publisher sends to `job_events`, subscriber listens on `job_event`)
+- **HIGH:** Orphaned publisher — events sent but never consumed (data loss risk if events carry state changes)
+- **MEDIUM:** Orphaned subscriber — listener registered but no publisher found (dead code or future feature)
+
+**Recommendation:**
+- For mismatches: unify channel name to a single constant shared between publisher and subscriber
+- For orphaned publishers: add subscriber or remove unused NOTIFY/publish
+- For orphaned subscribers: add publisher or remove dead listener
+
+**Effort:** S (fix typo/add constant) to M (design missing subscriber/publisher)
+
 ## Scoring Algorithm
 
-**MANDATORY READ:** Load `shared/references/audit_scoring.md` for unified scoring formula.
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/references/audit_scoring.md`.
 
 ## Output Format
 
-**MANDATORY READ:** Load `shared/templates/audit_worker_report_template.md` for file format.
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
 
-Write report to `{output_dir}/652-transaction-correctness.md` with `category: "Transaction Correctness"` and checks: missing_intermediate_commits, scope_too_wide, scope_too_narrow, missing_rollback, long_held_transaction.
+Write report to `{output_dir}/652-transaction-correctness.md` with `category: "Transaction Correctness"` and checks: missing_intermediate_commits, scope_too_wide, scope_too_narrow, missing_rollback, long_held_transaction, event_channel_consistency.
 
 Return summary to coordinator:
 ```
@@ -160,6 +200,8 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 
 ## Critical Rules
 
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
+
 - **Do not auto-fix:** Report only
 - **Trigger discovery first:** Always scan migrations for triggers/NOTIFY before analyzing transaction patterns
 - **ORM-aware:** Check if ORM context manager auto-rollbacks (`async with session.begin()` is safe)
@@ -168,22 +210,22 @@ Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
 
 ## Definition of Done
 
-- contextStore parsed successfully (including output_dir)
-- scan_path determined
-- Trigger/NOTIFY infrastructure discovered from migrations
-- All 5 checks completed:
-  - missing intermediate commits, scope too wide, scope too narrow, missing rollback, long-held
-- Findings collected with severity, location, effort, recommendation
-- Score calculated using penalty algorithm
-- Report written to `{output_dir}/652-transaction-correctness.md` (atomic single Write call)
-- Summary returned to coordinator
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
+
+- [ ] contextStore parsed successfully (including output_dir)
+- [ ] scan_path determined
+- [ ] Trigger/NOTIFY infrastructure discovered from migrations
+- [ ] All 6 checks completed:
+  - missing intermediate commits, scope too wide, scope too narrow, missing rollback, long-held, event channel consistency
+- [ ] Findings collected with severity, location, effort, recommendation
+- [ ] Score calculated using penalty algorithm
+- [ ] Report written to `{output_dir}/652-transaction-correctness.md` (atomic single Write call)
+- [ ] Summary returned to coordinator
 
 ## Reference Files
 
-- **Worker report template:** `shared/templates/audit_worker_report_template.md`
-- **Audit scoring formula:** `shared/references/audit_scoring.md`
 - **Audit output schema:** `shared/references/audit_output_schema.md`
 
 ---
-**Version:** 1.0.0
-**Last Updated:** 2026-02-04
+**Version:** 1.1.0
+**Last Updated:** 2026-03-15

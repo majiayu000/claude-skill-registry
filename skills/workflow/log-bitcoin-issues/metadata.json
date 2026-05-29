@@ -1,0 +1,16 @@
+{
+  "name": "log-bitcoin-issues",
+  "repo": "phrazzld/claude-config",
+  "path": "skills/log-bitcoin-issues/SKILL.md",
+  "source": "github.com/phrazzld/claude-config",
+  "downloaded_at": "2026-01-30T04:28:36.560787Z",
+  "dir_name": "log-bitcoin-issues",
+  "category": "workflow",
+  "author": "phrazzld",
+  "source_url": "https://github.com/phrazzld/claude-config/blob/main/skills/log-bitcoin-issues/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/phrazzld/claude-config/blob/main/skills/log-bitcoin-issues/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

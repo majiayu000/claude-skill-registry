@@ -1,0 +1,17 @@
+{
+  "name": "prospect-icp-search",
+  "repo": "amplemarket/skills",
+  "path": "skills/prospect-icp-search/SKILL.md",
+  "github_branch": "master",
+  "category": "integration",
+  "source": "github.com/amplemarket/skills",
+  "dir_name": "prospect-icp-search",
+  "downloaded_at": "2026-03-22T06:54:11.431740Z",
+  "author": "amplemarket",
+  "source_url": "https://github.com/amplemarket/skills/blob/master/skills/prospect-icp-search/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/amplemarket/skills/blob/master/skills/prospect-icp-search/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

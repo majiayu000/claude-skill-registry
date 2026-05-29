@@ -1,0 +1,18 @@
+{
+  "name": "EXECUTION",
+  "repo": "jadenmubaira-oss/POLYPROPHET",
+  "path": ".agent/skills/EXECUTION/SKILL.md",
+  "source": "github.com/jadenmubaira-oss/POLYPROPHET",
+  "downloaded_at": "2026-01-17T03:52:47.022240Z",
+  "dir_name": "execution",
+  "category": "agent",
+  "github_path": ".agent/skills/EXECUTION",
+  "github_branch": "main",
+  "author": "jadenmubaira-oss",
+  "source_url": "https://github.com/jadenmubaira-oss/POLYPROPHET/blob/main/.agent/skills/EXECUTION/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jadenmubaira-oss/POLYPROPHET/blob/main/.agent/skills/EXECUTION/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

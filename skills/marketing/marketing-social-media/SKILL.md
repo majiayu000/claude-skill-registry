@@ -1,23 +1,234 @@
 ---
 name: marketing-social-media
-description: Operational social media marketing system with templates, checklists, execution patterns, and decision trees for SMMA growth, paid social, content creation, offer building, and lead generation.
+description: Sustainable social media marketing with platform-agnostic principles, content typology, engagement quality metrics, and distribution workflows for brand building and audience growth.
 ---
 
 # SOCIAL MEDIA MARKETING — OPERATIONAL SKILL
 
-This skill contains **actionable, non-theoretical operational systems** for scaling social media marketing on **LinkedIn (2025 viral mechanics)**, TikTok, Meta, YouTube, Google, and organic platforms.
+This skill contains **actionable, non-theoretical operational systems** for sustainable social media marketing across LinkedIn, TikTok, Meta (FB/IG), YouTube, and X.
+
+**Structure**: Core social media principles first. AI-specific automation in clearly labeled "Optional: AI / Automation" sections.
+
+**Scope note**: For email outreach and lead generation, see [marketing-leads-generation](../marketing-leads-generation/SKILL.md). For SEO, see [marketing-seo-technical](../marketing-seo-technical/SKILL.md).
+
+---
+
+## Core: Platform-Agnostic Principles
+
+These principles apply regardless of platform. Master them before platform-specific tactics.
+
+### The 3 Pillars
+
+| Pillar | Description | Measure |
+|--------|-------------|---------|
+| **Audience** | Who you serve, their problems, what they value | Follower quality, engagement rate |
+| **Format** | Content type optimized for platform + audience | View-through, completion, saves |
+| **Cadence** | Consistent publishing rhythm | Posting frequency, time-to-response |
+
+### Audience-First Thinking
+
+| Question | Why It Matters |
+|----------|---------------|
+| Who specifically am I creating for? | Generic content = generic results |
+| What problem does this solve for them? | Value-first, not self-promotion |
+| Where do they spend time online? | Platform selection follows audience |
+| What format do they prefer? | Match format to consumption habits |
+
+### Format Selection by Goal
+
+| Goal | Best Formats | Worst Formats |
+|------|--------------|---------------|
+| **Awareness** | Short-form video, carousels, threads | Long-form without distribution |
+| **Engagement** | Polls, questions, controversial takes | Corporate announcements |
+| **Authority** | Long-form, original research, case studies | Repurposed generic content |
+| **Conversion** | Direct CTAs, testimonials, demos | Soft branding |
+
+### Cadence Guidelines
+
+Start with a cadence you can sustain for 8–12 weeks without sacrificing quality.
+
+| Cadence Tier | Typical Output | Best For | Notes |
+|-------------|----------------|----------|-------|
+| **Light** | 2–3 posts/week | Small teams, early consistency | Use templates + repurposing |
+| **Standard** | 4–7 posts/week | Most product teams | Mix educational + proof + community |
+| **Heavy** | Daily + community touchpoints | Media-led teams | Requires strong production pipeline |
+
+---
+
+## Core: Content Typology
+
+Every post should map to one of these types. Mix types across your content calendar.
+
+| Type | Purpose | Example | Frequency |
+|------|---------|---------|-----------|
+| **Educational** | Teach something valuable | How-to, tutorial, framework | 40-50% |
+| **Narrative** | Share stories that resonate | Personal journey, case study, behind-the-scenes | 20-30% |
+| **Proof** | Demonstrate results/credibility | Testimonial, metric, achievement | 15-20% |
+| **Community** | Engage and connect | Question, poll, reply, shoutout | 10-15% |
+| **Promotional** | Drive action | Offer, CTA, launch | 5-10% max |
+
+### Do (Content Mix)
+
+- Plan content mix monthly, not post-by-post
+- Lead with educational; end week with proof or community
+- Test different type ratios for your audience
+- Repurpose across types (educational → narrative)
+
+### Avoid (Content Mix)
+
+- Mostly promotional content (looks like spam)
+- All educational (no personality, no engagement)
+- Random posting without type intention
+- Copying competitor content 1:1
+
+---
+
+## Core: Engagement Quality vs Vanity Metrics
+
+### What to Track (Quality)
+
+| Metric | Why It Matters |
+|--------|----------------|
+| **Saves/bookmarks** | Strong signal that content is useful |
+| **Shares/reposts** | Indicates distribution value and message resonance |
+| **Comment quality** | Depth of discussion and objections surfaced |
+| **Profile visits** | Interest in the creator/company after content |
+| **Link clicks** | Conversion path signal (only if UTMs are clean) |
+| **Downstream conversions** | Sign-ups, demos, trials, purchases from social landings |
+
+### What to Ignore (Vanity)
+
+| Metric | Why It's Misleading |
+|--------|---------------------|
+| **Follower count alone** | Bots, inactive, wrong audience |
+| **Impressions without engagement** | Seen ≠ valued |
+| **Likes without context** | Easy to give, low signal |
+| **Viral posts without conversion** | Fame ≠ revenue |
+
+### Do (Metrics)
+
+- Track engagement rate, not raw likes
+- Monitor save rate as quality signal
+- Measure conversion from social (UTMs, ask "how did you hear about us")
+- Compare metrics to your own baseline, not others
+
+### Avoid (Metrics)
+
+- Buying followers or engagement
+- Chasing viral at expense of relevance
+- Ignoring negative engagement signals (unfollows, hides)
+- Reporting vanity metrics to stakeholders
+
+---
+
+## Core: Social → Site → Conversion Flows
+
+Social media is rarely the conversion point. Design the flow:
+
+```text
+Social Post → Link/Bio → Landing Page → Conversion
+
+OR
+
+Social Post → DM/Comment → Conversation → Conversion
+
+OR
+
+Social Post → Lead Magnet → Email Nurture → Conversion
+```
+
+### Flow Design Checklist
+
+| Step | Question | If No |
+|------|----------|-------|
+| **Post** | Does it provide standalone value? | Rewrite—no one clicks without value |
+| **CTA** | Is there one clear next action? | Simplify to single CTA |
+| **Link/Bio** | Does it match post promise? | Align messaging |
+| **Landing** | Does it load fast, mobile-first? | Optimize (see [marketing-seo-technical](../marketing-seo-technical/SKILL.md)) |
+| **Conversion** | Is friction minimized? | Reduce form fields, add trust signals |
+
+Use [content-distribution-plan.md](templates/content-distribution-plan.md) to plan search + social distribution for each piece of content.
+
+### Do (Conversion Flows)
+
+- Test bio link vs in-post link
+- Use UTM parameters to track social → site
+- Optimize landing page for mobile-first reading and fast load
+- Retarget engaged users who didn't convert
+
+### Avoid (Conversion Flows)
+
+- Generic bio links that don't change
+- No tracking on social traffic
+- Desktop-first landing pages
+- Sending cold traffic straight to purchase
+
+---
+
+## Core: Community Management Basics
+
+### Response Time Standards
+
+| Interaction Type | Target Response Time |
+|------------------|---------------------|
+| **Comment on your post** | Same day (faster during launch windows) |
+| **Direct message** | Within 1 business day (faster for high-intent inquiries) |
+| **Mention/tag** | Within 24 hours |
+| **Negative feedback** | ASAP (same day) |
+
+### Moderation Principles
+
+| Situation | Action |
+|-----------|--------|
+| **Spam/bot** | Delete and block |
+| **Constructive criticism** | Thank, address publicly |
+| **Negative but valid** | Acknowledge, offer to continue privately |
+| **Trolling/harassment** | Hide/delete, block if repeated |
+| **Questions** | Answer helpfully, link to resources |
+
+### Do (Community)
+
+- Respond to every real comment (first week especially)
+- Ask follow-up questions to drive discussion
+- Highlight community members (reshare, mention)
+- Set community guidelines for owned spaces
+
+### Avoid (Community)
+
+- Ignoring comments (signals you don't care)
+- Deleting all criticism (looks like hiding)
+- Generic copy-paste responses
+- Letting trolls derail conversations
+
+---
+
+## Platform-Specific Constraints (Dec 2025)
+
+| Platform | Best For | Primary Formats | Key Constraints |
+|----------|----------|-----------------|----------------|
+| **LinkedIn** | B2B, thought leadership | Text posts, carousels, native video | Professional context, credibility signals |
+| **X (Twitter)** | News, opinions, real-time | Short posts, threads, quotes | Fast feed, context collapse, short half-life |
+| **TikTok** | Discovery | Vertical video | Creative production cadence, format-native editing |
+| **Instagram** | Visual storytelling | Reels, carousels, stories | Visual consistency, mobile-first creative |
+| **YouTube** | Evergreen + search | Long-form + Shorts | Production effort, retention focus |
+
+For detailed platform-specific guidance, see:
+- [resources/linkedin-engagement-patterns.md](resources/linkedin-engagement-patterns.md)
+- [resources/tiktok-best-practices.md](resources/tiktok-best-practices.md)
+- [resources/instagram-best-practices.md](resources/instagram-best-practices.md)
+- [resources/youtube-best-practices.md](resources/youtube-best-practices.md)
+
+---
 
 Use this skill when the user asks for:
-- content ideas, calendars, scripts, hooks  
-- ad creative templates  
-- growth frameworks  
-- optimization workflows  
-- offer creation & lead generation  
-- paid social setup and scaling  
-- SEO content for social platforms  
-- copywriting requests  
-- outreach templates  
-- performance audits  
+- content ideas, calendars, scripts, hooks
+- ad creative templates
+- growth frameworks
+- optimization workflows
+- paid social setup and scaling
+- copywriting requests
+- community management
+- performance audits
 
 ---
 
@@ -32,14 +243,15 @@ Use this skill when the user asks for:
 | YouTube Ads | Video Brief | `templates/ads/youtube-video-brief.md` | Long-form video campaigns |
 | Influencer/UGC Program | Influencer Ops | `resources/influencer-ops-and-partnerships.md` | Sourcing, rights, Spark/whitelisting |
 | **Organic Content** | | | |
-| LinkedIn Posts | Viral Post Templates | `templates/social/viral-post-templates.md` | B2B thought leadership, 2025 mechanics |
+| LinkedIn Posts | Multi-Platform Template | `templates/social/multi-platform-content-template.md` | Platform-adapted posts with consistent message |
 | LinkedIn Carousel | Carousel Template | `templates/social/carousel-template.md` | Educational content, frameworks |
-| Virality / WOM | STEPPS & Seeding | `resources/virality-word-of-mouth.md` | Word-of-mouth loops, share triggers |
+| Community Engagement | Engagement Calendar | `templates/community/community-engagement-calendar.md` | Plan recurring engagement and rituals |
 | TikTok/Reels/Shorts | Organic Script | `templates/social/tiktok-organic-script.md` | Short-form video content |
 | Instagram Carousel | IG Carousel Template | `templates/social/instagram-carousel-template.md` | Multi-slide educational posts |
 | Instagram Reels | Reels Template | `templates/social/instagram-reels-template.md` | Short-form vertical video |
 | Content Calendar | 30-Day Calendar | `templates/social/30-day-content-calendar.md` | Monthly content planning |
-| Hook Library | Social Hook Library | `templates/social/social-hook-library.md` | Attention-grabbing opening lines |
+| Content Distribution | Distribution Plan | [templates/content-distribution-plan.md](templates/content-distribution-plan.md) | Search + Social distribution |
+| Hook Library | Social Hook Library | `templates/social/social-hook-library.md` | Clear openers that match value + audience |
 | **Outreach & Email** | | | |
 | Cold Email | Cold Email Template | `templates/email/cold-email-template.md` | B2B prospecting, initial outreach |
 | Lead Nurture | Nurture Sequence | `templates/email/lead-nurture-sequence.md` | Email drip campaigns |
@@ -47,7 +259,7 @@ Use this skill when the user asks for:
 | Sales Email | Sales Template | `templates/email/sales-email-template.md` | Direct sales pitches |
 | Newsletter | Newsletter Template | `templates/email/newsletter-template.md` | Regular audience communication |
 | **Offers & Conversion** | | | |
-| Grand Slam Offer | Offer Builder | `templates/offers/grand-slam-offer-builder.md` | High-value offer creation (Hormozi) |
+| Offer Builder | Offer Builder | `templates/offers/grand-slam-offer-builder.md` | Clarify value, proof, and risk reduction |
 | Value Stack | Value Stack Template | `templates/offers/value-stack-template.md` | Offer positioning, bonuses |
 | Offer Messaging | Messaging Template | `templates/offers/offer-messaging-template.md` | Copywriting, value communication |
 | Pricing Calculator | Pricing Calculator | `templates/offers/offer-pricing-calculator.md` | Price optimization |
@@ -59,11 +271,10 @@ Use this skill when the user asks for:
 | Keyword Research | Research SOP | `templates/seo/keyword-research-sop.md` | SEO keyword discovery |
 | Product-Led SEO | PL SEO Strategy | `resources/product-led-seo-strategy.md` | Programmatic templates, index control |
 | **Strategy Resources** | | | |
-| LinkedIn Viral Mechanics | Viral Content Guide | `resources/linkedin-viral-content.md` | 2025 LinkedIn algorithm |
+| LinkedIn Engagement | Engagement Patterns Guide | `resources/linkedin-engagement-patterns.md` | Practical engagement and formatting patterns |
 | Paid Social Patterns | Paid Social Guide | `resources/paid-social-patterns.md` | Scaling, optimization, testing |
 | Persuasion Patterns | Persuasion Guide | `resources/persuasion-patterns.md` | Copywriting psychology |
 | Community Building | Community Guide | `resources/community-building-patterns.md` | Audience growth, engagement |
-| AI Governance | Governance Guide | `resources/ai-marketing-governance.md` | ROI, safety, evaluation guardrails |
 | Influencer Ops | Creator Program Guide | `resources/influencer-ops-and-partnerships.md` | Contracts, rights, reporting |
 
 ---
@@ -72,32 +283,26 @@ Use this skill when the user asks for:
 
 ```text
 ### Paid Social Troubleshooting
-CTR low (<0.8%) → Refresh hook/creative  
-CTR ok, CVR low (<1.5%) → Fix landing page/offer clarity  
-High CPC → Tighten hook or broaden audience; check bid/placement overlap  
+Low CTR → Refresh hook/creative; re-check audience/placement fit
+Clicks ok, conversions low → Fix landing page message match + friction; verify tracking
+Costs rising → Refresh creative; adjust targeting; check budget pacing
 
 ### Organic Growth Triage
-Inconsistent posting → Fix cadence/system  
-Good watch time, low follows → Strengthen CTA and identity hooks  
-Followers, no leads → Add offer-driven posts + booking CTA  
+Inconsistent output → Set a sustainable cadence and reuse templates
+Reach ok, low engagement → Improve clarity/value density; tighten format
+Engagement ok, low clicks/leads → Strengthen CTA and link path; reduce landing friction
 
-### Virality / WOM Triage
-Low shares/saves → Increase practical value or social currency (STEPPS)  
-Views, low CTR → Fix thumbnail/title/hook tension  
-Comments, low conversions → Add clearer offer bridge + CTA  
-
-### Lead System Triage
-Low replies → Clarify offer/proof; swap angles  
-Clicks, low bookings → Fix follow-up cadence + booking friction  
-Lead source skewed → Rebalance paid/social/outbound; add retargeting  
-No-shows → Reminders + value drop; tighten qualification  
+### Community Triage
+Spam/noise rising → Enforce guidelines + moderation SOP
+Healthy engagement but low retention → Add recurring rituals and onboarding
+Negative sentiment → Acknowledge, resolve publicly where appropriate, document themes
 
 ### SEO / Content Triage
-Low CTR → Rewrite title/meta to match intent; add schema where relevant  
-Indexed but not ranking → Improve internal links, on-page intent match, freshness  
-Traffic, low conversions → Align CTA to intent; tighten offer on page  
+Search impressions, low clicks → Rewrite titles/snippets to match intent
+Indexed but flat → Improve internal links, update content for proof/freshness
+Traffic, low conversions → Align CTA to intent; tighten offer and trust on page
 
-For detailed trees (TikTok scaling, offer creation, outreach triage), see `resources/operational-patterns.md`, `resources/lead-systems-and-pipelines.md`, `resources/virality-word-of-mouth.md`, and `resources/product-led-seo-strategy.md`.
+For deeper playbooks, see `resources/operational-patterns.md`, `resources/paid-social-patterns.md`, and the community templates in `templates/community/`.
 ```
 
 ---
@@ -116,8 +321,6 @@ For detailed trees (TikTok scaling, offer creation, outreach triage), see `resou
 - [resources/tiktok-best-practices.md](resources/tiktok-best-practices.md)
 - [resources/instagram-best-practices.md](resources/instagram-best-practices.md)
 - [resources/youtube-best-practices.md](resources/youtube-best-practices.md)
-- [resources/ai-marketing-patterns.md](resources/ai-marketing-patterns.md)
-- [resources/ai-marketing-governance.md](resources/ai-marketing-governance.md)
 - [resources/persuasion-patterns.md](resources/persuasion-patterns.md)
 - [resources/community-building-patterns.md](resources/community-building-patterns.md)
 - [resources/influencer-ops-and-partnerships.md](resources/influencer-ops-and-partnerships.md)
@@ -125,6 +328,10 @@ For detailed trees (TikTok scaling, offer creation, outreach triage), see `resou
 - [resources/content-research-and-comms.md](resources/content-research-and-comms.md)
 - [resources/product-led-seo-strategy.md](resources/product-led-seo-strategy.md)
 - [data/sources.json](data/sources.json)
+
+**Optional: AI / Automation**
+- [resources/ai-marketing-patterns.md](resources/ai-marketing-patterns.md)
+- [resources/ai-marketing-governance.md](resources/ai-marketing-governance.md)
 
 ### Templates
 #### Ads
@@ -190,11 +397,10 @@ For detailed trees (TikTok scaling, offer creation, outreach triage), see `resou
 - [../product-management/SKILL.md](../product-management/SKILL.md) — Product positioning, messaging frameworks, discovery, and go-to-market strategy
 - [../docs-ai-prd/SKILL.md](../docs-ai-prd/SKILL.md) — PRDs, technical specs, and requirements for marketing campaigns
 
-**AI & Content Intelligence**
-- [../ai-prompt-engineering/SKILL.md](../ai-prompt-engineering/SKILL.md) — LLM prompts for content generation, hooks, CTA variants, and creative testing
-- [../ai-llm/SKILL.md](../ai-llm/SKILL.md) — RAG systems, embeddings, and AI-powered content libraries
-- [../ai-agents/SKILL.md](../ai-agents/SKILL.md) — Multi-agent systems for marketing automation and campaign orchestration
-- [../marketing-ai-search-optimization/SKILL.md](../marketing-ai-search-optimization/SKILL.md) — AI search engine optimization (AEO/GEO) for ChatGPT, Perplexity, Claude, and Gemini citations
+**Optional: AI / Automation**
+- [../ai-prompt-engineering/SKILL.md](../ai-prompt-engineering/SKILL.md) — Content ideation variants (use with human review)
+- [../ai-agents/SKILL.md](../ai-agents/SKILL.md) — Automation patterns (monitoring, routing, reporting)
+- [../marketing-ai-search-optimization/SKILL.md](../marketing-ai-search-optimization/SKILL.md) — Optional assistant/answer-engine visibility work
 
 **Frontend & Design**
 - [../software-frontend/SKILL.md](../software-frontend/SKILL.md) — Landing page implementation, web performance, and conversion optimization
@@ -209,14 +415,112 @@ For detailed trees (TikTok scaling, offer creation, outreach triage), see `resou
 - [../dev-api-design/SKILL.md](../dev-api-design/SKILL.md) — REST APIs for CRM integrations, webhooks, and marketing tool connections
 
 ### Operational Deep Dives
-- [resources/operational-patterns.md](resources/operational-patterns.md) — Core growth engines, testing frameworks, anti-patterns, landing page checklist, and AI tooling recommendations
+- [resources/operational-patterns.md](resources/operational-patterns.md) — Core operating patterns, testing frameworks, and anti-patterns
 - [resources/lead-systems-and-pipelines.md](resources/lead-systems-and-pipelines.md) — Pipeline math, follow-up cadences, lead magnets, retargeting map
-- [resources/virality-word-of-mouth.md](resources/virality-word-of-mouth.md) — STEPPS, seeding, referral loops, share/save optimization
+- [resources/virality-word-of-mouth.md](resources/virality-word-of-mouth.md) — [Inference] Word-of-mouth mechanics (use cautiously; do not plan around virality)
 - [resources/product-led-seo-strategy.md](resources/product-led-seo-strategy.md) — Programmatic SEO, crawl/index control, zero-demand plays
-- [resources/ai-marketing-governance.md](resources/ai-marketing-governance.md) — AI ROI, risk controls, evaluation, human-in-the-loop
 
 ---
 
 ## External Resources
 
-See [data/sources.json](data/sources.json) for official documentation across Google Ads, Meta, TikTok, YouTube, and AI/ML research references.
+See [data/sources.json](data/sources.json) for official documentation across Google Ads, Meta, TikTok, YouTube, and platform analytics (automation sources are tagged optional).
+
+---
+
+## Optional: AI / Automation
+
+> **Note**: Core social media fundamentals above work without AI tools. This section covers optional automation capabilities.
+
+### Scheduling & Publishing
+
+| Tool | Platforms | Best For |
+|------|-----------|----------|
+| **Buffer** | All major | Simple scheduling, analytics |
+| **Hootsuite** | All major | Enterprise, team collaboration |
+| **Later** | IG, TikTok, Pinterest | Visual planning, link-in-bio |
+| **Sprout Social** | All major | Enterprise, CRM integration |
+| **Native schedulers** | Platform-specific | Best reach (some algorithms favor native) |
+
+### AI Content Assistance
+
+| Use Case | Tools | Consideration |
+|----------|-------|---------------|
+| **Ideation** | ChatGPT, Claude | Starting point only—add human insight |
+| **Hook generation** | LLM prompts | A/B test AI vs human hooks |
+| **Repurposing** | Opus Clip, Descript | Video → clips, long → short |
+| **Image generation** | Midjourney, DALL-E | Check platform policies on AI content |
+| **Caption writing** | LLM prompts | Always edit for brand voice |
+
+### Moderation & Monitoring
+
+| Use Case | Tools | Benefit |
+|----------|-------|---------|
+| **Comment moderation** | Meta AI, Sprinklr | Filter spam, flag issues |
+| **Brand monitoring** | Mention, Brand24 | Track mentions across platforms |
+| **Sentiment analysis** | Sprout, Brandwatch | Aggregate sentiment trends |
+
+### Do (AI/Automation)
+
+- Use scheduling to maintain consistency when you can't post live
+- Test AI-generated hooks/captions against human-written
+- Automate monitoring, not engagement (replies should be human)
+- Label AI-generated content where required by platform
+
+### Avoid (AI/Automation)
+
+- Full automation of replies/DMs (obvious, damages trust)
+- AI content without human review (brand voice, factual accuracy)
+- Over-relying on AI ideation (becomes generic)
+- Ignoring platform policies on AI content disclosure
+
+See [resources/ai-marketing-governance.md](resources/ai-marketing-governance.md) for AI governance framework.
+
+---
+
+## Collaboration Notes
+
+### With Product
+
+- **Launch coordination**: Social amplification for product launches
+- **Feature education**: Tutorial content for new features
+- **User feedback**: Social comments/DMs = product insights
+- **Community features**: Product roadmap for community needs
+
+### With Sales
+
+- **Social selling support**: Content for sales team to share
+- **Lead alerts**: DMs and comments with buying signals → Sales
+- **Case studies**: Sales wins → Social proof content
+- **Event promotion**: Webinars, demos, conferences
+
+### With Engineering
+
+- **Social embeds**: Share buttons, social proof widgets
+- **API integrations**: CRM sync, lead capture from social
+- **Analytics setup**: UTM handling, conversion tracking
+- **Page performance**: Social traffic = mobile traffic = fast pages
+
+### With Design
+
+- **Visual templates**: Consistent brand assets across platforms
+- **Video production**: Reels, TikToks, YouTube Shorts
+- **Carousel design**: LinkedIn, Instagram carousel templates
+- **UGC guidelines**: Brand guidelines for community content
+
+---
+
+## Anti-Patterns
+
+| Anti-Pattern | Why It Fails | Instead |
+|--------------|--------------|---------|
+| **Post and ghost** | No feedback loop; weak trust | Set a response SLA and seed discussion |
+| **Same content everywhere** | Ignores platform culture | Adapt format and tone per platform |
+| **Chasing followers** | Vanity metric, often wrong audience | Focus on engagement rate, conversions |
+| **Inconsistent posting** | Breaks continuity and learnings | Batch content, reuse templates, schedule |
+| **All promotional** | Audience tunes out | Make promotion the minority; lead with value |
+| **Ignoring analytics** | Can't improve what you don't measure | Weekly metric review, monthly deep dive |
+| **Copying competitors** | No differentiation, always behind | Study competitors, create unique angle |
+| **Buying engagement** | Platform detection, fake audience | Build organic, slower but real |
+| **No conversion path** | Social activity without business results | Clear CTA, tracked links, landing pages |
+| **Platform dependency** | Distribution risk | Build owned channels (email, community) and retargeting |

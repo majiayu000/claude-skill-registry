@@ -7,6 +7,12 @@ description: Create, edit, and analyze Excel spreadsheets with formulas, formatt
 
 This skill enables creation, editing, and analysis of Excel spreadsheets programmatically. Claude should apply these patterns when users need to generate data reports, financial models, automate Excel workflows, or process spreadsheet data.
 
+**Modern Best Practices (Dec 2025)**:
+- Treat spreadsheets as software: clear inputs/outputs, auditability, and versioning.
+- Protect data integrity: control totals, validation, and traceability to sources.
+- Accessibility and readability matter (labels, contrast, not color-only meaning).
+- Ship with a review loop and an owner (avoid “mystery models”).
+
 ---
 
 ## Quick Reference
@@ -246,6 +252,35 @@ Excel Task: [What do you need?]
 
 ---
 
+## Do / Avoid (Dec 2025)
+
+### Do
+
+- Separate Inputs / Calculations / Outputs (tabs or clear sections).
+- Keep assumptions explicit (value + unit + source + date).
+- Add control totals and reconciliation checks for imported data.
+
+### Avoid
+
+- Hardcoded constants inside formulas without a documented assumption.
+- Hidden rows/columns that change results without documentation.
+- Sharing sheets with customer PII or secrets.
+
+## What Good Looks Like
+
+- Structure: clear Inputs/Assumptions, Calculations, and Outputs separation (tabs or sections).
+- Integrity: no `#REF!`, broken named ranges, or hardcoded constants hidden in formulas.
+- Traceability: every key output ties back to labeled inputs (units + source + date).
+- Checks: control totals, reconciliations, and error flags that fail loudly.
+- Review: independent review pass using `templates/spreadsheet-model-review-checklist.md`.
+
+## Optional: AI / Automation
+
+Use only when explicitly requested and policy-compliant.
+
+- Generate first-pass formulas/charts; humans verify correctness and edge cases.
+- Draft documentation tabs (assumptions, glossary); do not invent source data.
+
 ## Navigation
 
 **Resources**
@@ -257,6 +292,7 @@ Excel Task: [What do you need?]
 **Templates**
 - [templates/financial-report.md](templates/financial-report.md) — Financial statement template
 - [templates/data-dashboard.md](templates/data-dashboard.md) — Dashboard with charts
+- [templates/spreadsheet-model-review-checklist.md](templates/spreadsheet-model-review-checklist.md) — Model QA checklist (assumptions, formulas, traceability)
 
 **Related Skills**
 - [../document-pdf/SKILL.md](../document-pdf/SKILL.md) — PDF generation from data

@@ -1,0 +1,16 @@
+{
+  "name": "proteomics-qc",
+  "repo": "GPTomics/bioSkills",
+  "path": "proteomics/proteomics-qc/SKILL.md",
+  "source": "github.com/GPTomics/bioSkills",
+  "downloaded_at": "2026-01-29T03:17:29.341490Z",
+  "dir_name": "proteomics-qc",
+  "category": "analysis",
+  "author": "GPTomics",
+  "source_url": "https://github.com/GPTomics/bioSkills/blob/main/proteomics/proteomics-qc/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 GPTomics",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

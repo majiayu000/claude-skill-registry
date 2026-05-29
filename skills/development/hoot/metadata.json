@@ -1,9 +1,9 @@
 {
-  "name": "hoot",
+  "name": "guile-goblins-hoot",
   "repo": "plurigrid/asi",
-  "path": "skills/hoot/SKILL.md",
+  "path": "skills/guile-goblins-hoot/SKILL.md",
   "source": "github.com/plurigrid/asi",
-  "downloaded_at": "2026-01-14T02:29:12.616909Z",
+  "downloaded_at": "2026-01-22T02:09:11.562662Z",
   "dir_name": "hoot",
   "category": "development",
   "github_path": "skills/guile-goblins-hoot",

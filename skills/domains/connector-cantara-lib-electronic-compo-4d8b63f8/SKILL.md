@@ -1,162 +1,212 @@
 ---
-name: connector
-description: Use when working with connector components - headers, sockets, wire-to-board, board-to-board connectors. Includes adding patterns, parsing connector MPNs, extracting pin count, pitch, and series information.
+name: similarity-connector
+description: Use when working with connector similarity calculations - comparing connector MPNs, understanding pin count/pitch/family matching, or connector-specific similarity logic.
 ---
 
-# Connector Component Skill
+# Connector Similarity Calculator Skill
 
-Guidance for working with connector components in the lib-electronic-components library.
+Guidance for working with `ConnectorSimilarityCalculator` in the lib-electronic-components library.
 
-## Supported Manufacturers & Patterns
+## Overview
 
-| Manufacturer | Handler | MPN Patterns | Example |
-|--------------|---------|--------------|---------|
-| Wurth | `WurthHandler` | `61########`, `62########` | `6130xx14021` |
-| Molex | `MolexHandler` | `43###-####`, `39###-####`, `53###-####` | `43045-0212` |
-| TE Connectivity | `TEHandler` | `1-######`, `2-######`, `282###-#` | `282836-3` |
-| JST | `JSTHandler` | `PH#`, `EH#`, `XH#`, `ZH#` | `PHR-2` |
-| Hirose | `HiroseHandler` | `DF#`, `FH#`, `BM#`, `ZX#` | `DF13-2P-1.25DSA` |
-| Amphenol | `AmphenolHandler` | `10####`, `20####` | `10127716-001 |
+The `ConnectorSimilarityCalculator` compares connectors based on:
+- **Family** - Connector type/series (must match)
+- **Pin count** - Number of contacts (must match for high similarity)
+- **Pitch** - Contact spacing
+- **Mounting type** - Through-hole vs SMD
+- **Series compatibility** - Within TE, Molex, etc.
 
-## ComponentTypes
+## Applicable Types
 
 ```java
-// Base type
 ComponentType.CONNECTOR
-
-// Manufacturer-specific types
-ComponentType.CONNECTOR_WURTH
 ComponentType.CONNECTOR_MOLEX
 ComponentType.CONNECTOR_TE
 ComponentType.CONNECTOR_JST
 ComponentType.CONNECTOR_HIROSE
 ComponentType.CONNECTOR_AMPHENOL
 ComponentType.CONNECTOR_HARWIN
+// Any type starting with "CONNECTOR_"
 ```
 
-## Wurth Connectors
+Returns `false` for `null` type.
 
-### MPN Structure
-```
-61 300 14 021 1
-│  │   │  │   │
-│  │   │  │   └── Variant (plating, orientation)
-│  │   │  └────── Pitch code (021=2.00mm, 254=2.54mm)
-│  │   └───────── Pin count (14 pins)
-│  └───────────── Series (300=WR-PHD)
-└──────────────── Product family (61=Headers)
+## Similarity Thresholds
+
+```java
+HIGH_SIMILARITY = 0.9;   // Same series, same pin count
+MEDIUM_SIMILARITY = 0.5; // Compatible but different
+LOW_SIMILARITY = 0.3;    // Different pin counts
 ```
 
-### Series Codes
+## Key Rules
 
-| Prefix | Series | Description |
-|--------|--------|-------------|
-| 61 | Pin Headers | Male headers |
-| 62 | Socket Headers | Female headers |
-| 613 | WR-PHD | Pin Header Double Row |
-| 614 | WR-BHD | Box Header |
-| 615 | WR-TBL | Terminal Blocks |
+### Family Must Match
+Different connector families always return 0.0:
 
-## Molex Connectors
-
-### Series & Families
-
-| Series | Family | Pitch | Current |
-|--------|--------|-------|---------|
-| 43045 | Micro-Fit 3.0 | 3.00mm | 5A |
-| 39281 | Mini-Fit Jr. | 4.20mm | 9A |
-| 53261 | PicoBlade | 1.25mm | 1A |
-| 22057 | KK 254 | 2.54mm | 3A |
-| 51021 | PicoClasp | 1.00mm | 1A |
-| 51047 | Nano-Fit | 2.50mm | 3.5A |
-
-### MPN Structure
-```
-43045 - 0212
-│       │
-│       └── Position/variant (02=2 circuits, 12=vertical)
-└────────── Series (Micro-Fit 3.0)
+```java
+// Different families = incompatible
+calculator.calculateSimilarity("TE-connector", "Molex-connector", registry);
+// Returns 0.0
 ```
 
-## JST Connectors
+### Pin Count Rules
+```java
+// Same pin count required for high similarity
+calculator.calculateSimilarity("10-pin", "10-pin-variant", registry);
+// Returns HIGH
 
-### Series
-
-| Series | Pitch | Description |
-|--------|-------|-------------|
-| PH | 2.00mm | Wire-to-board |
-| XH | 2.50mm | Wire-to-board |
-| EH | 2.50mm | Wire-to-board |
-| ZH | 1.50mm | Wire-to-board |
-| SM | 2.50mm | Wire-to-wire |
-| PA | 2.00mm | High density |
-
-### MPN Pattern
-```
-PHR-2
-│  │
-│  └── Pin count
-└───── Series (PH = 2.0mm pitch)
-       R = Receptacle housing
+// Different pin counts = LOW
+calculator.calculateSimilarity("10-pin", "20-pin", registry);
+// Returns 0.3
 ```
 
 ## TE Connectivity Connectors
 
-### MPN Patterns
-
-| Pattern | Description |
-|---------|-------------|
-| `1-######` | Legacy part numbers |
-| `2-######` | Current part numbers |
-| `282###-#` | Terminal blocks |
-
-## Adding New Connector Patterns
-
-1. In the manufacturer handler's `initializePatterns()`:
-```java
-registry.addPattern(ComponentType.CONNECTOR, "^NEWCON[0-9].*");
-registry.addPattern(ComponentType.CONNECTOR_MANUFACTURER, "^NEWCON[0-9].*");
+### Part Number Format
+```
+1-292161-0
+│ │      │
+│ │      └── Configuration/variant
+│ └─────────  Series number
+└───────────  Prefix
 ```
 
-2. Add to `getSupportedTypes()`:
 ```java
-types.add(ComponentType.CONNECTOR);
-types.add(ComponentType.CONNECTOR_MANUFACTURER);
+// Same TE series
+calculator.calculateSimilarity("1-292161-0", "1-292161-2", registry);
+// Returns 0.9 (same series)
 ```
 
-## Similarity Calculation
+## Würth Headers (WR-PHD)
 
-`ConnectorSimilarityCalculator` compares:
-- Pin count
-- Pitch
-- Connector type (header, socket, wire-to-board)
-- Current rating
-- Series family
-
-## Key Handler Methods
-
-### Extract Series
 ```java
-// Returns "61300" from Wurth header
-handler.extractSeries("6130014021");
-
-// Returns "43045" from Molex
-handler.extractSeries("43045-0212");
+// Compatible header variants
+calculator.calculateSimilarity("61300411121", "61300411021", registry);
+// Returns 0.9 if same pin count
 ```
 
-### Extract Pin Count
-Most handlers can extract pin count from MPN for matching purposes.
+## Similarity Building Blocks
 
-## Connector Handler Registry
+When connectors aren't direct variants, similarity is built from:
+- **Same pin count**: +0.2
+- **Same pitch**: +0.2
+- **Same mounting type**: +0.1
 
-There's also a specialized connector handler system in `connectors/` package:
-- `ConnectorHandler` - Interface for connector-specific parsing
-- `ConnectorHandlerRegistry` - Registry of connector handlers
-- `TEConnectorHandler` - TE-specific parsing
-- `WurthHeaderHandler` - Wurth header parsing
+```java
+// Compatible characteristics
+// Same pin count (+0.2) + Same pitch (+0.2) + Same mount (+0.1) = 0.5
+```
+
+## Connector Handlers
+
+The calculator uses specialized handlers:
+- `TEConnectorHandler`
+- `MolexConnectorHandler`
+- `JSTConnectorHandler`
+- etc.
+
+These extract:
+- `getPinCount(mpn)` - Number of contacts
+- `getPitch(mpn)` - Contact spacing (mm)
+- `getMountingType(mpn)` - THT/SMD
+- `getFamily()` - Connector family name
+- `getVariant(mpn)` - Specific variant
+- `areCompatible(mpn1, mpn2)` - Direct compatibility check
+
+## Test Examples
+
+```java
+// Same TE connector
+calculator.calculateSimilarity("1-292161-0", "1-292161-0", registry);
+// Returns 1.0
+
+// Same TE series, different variant
+calculator.calculateSimilarity("1-292161-0", "1-292161-2", registry);
+// Returns 0.9
+
+// Different families
+calculator.calculateSimilarity("TE-part", "Molex-part", registry);
+// Returns 0.0
+
+// Null handling
+calculator.calculateSimilarity(null, "1-292161-0", registry);
+// Returns 0.0
+```
 
 ---
 
 ## Learnings & Quirks
 
-<!-- Record component-specific discoveries, edge cases, and quirks here -->
+### TE Part Numbers
+- Format often: `X-XXXXXX-X` or `XXXXXXXX`
+- Series number is key to compatibility
+- Last digits often indicate configuration
+
+### Molex Part Numbers
+- Often 10+ digits
+- Series embedded in part number
+- Configuration codes vary by series
+
+## Metadata-Driven Implementation (January 2026)
+
+**Status**: ✅ Converted (pre-existing)
+
+The `ConnectorSimilarityCalculator` uses a **metadata-driven approach** with `ConnectorHandler` integration.
+
+### Specs Compared
+
+| Spec | Importance | Tolerance Rule | Description |
+|------|-----------|----------------|-------------|
+| **pinCount** | CRITICAL | exactMatch | Number of pins (MUST match) |
+| **pitch** | CRITICAL | exactMatch | Pin spacing (2.54mm, 1.27mm, etc.) |
+| **family** | HIGH | exactMatch | Connector series/family |
+| **mountingType** | HIGH | exactMatch | THT, SMD, Press-fit |
+
+### Implementation Pattern
+
+```java
+// Different families return 0.0 immediately
+if (!handler1.getFamily().equals(handler2.getFamily())) {
+    return 0.0;
+}
+
+// Extract specs using ConnectorHandler
+int pinCount1 = handler1.getPinCount(mpn1);
+int pinCount2 = handler2.getPinCount(mpn2);
+double pitch1 = handler1.getPitch(mpn1);
+double pitch2 = handler2.getPitch(mpn2);
+
+// Weighted spec scoring
+// pinCount: CRITICAL (1.0 weight)
+// pitch: CRITICAL (1.0 weight)
+// family: HIGH (0.7 weight)
+// mountingType: HIGH (0.7 weight)
+```
+
+### Key Feature: Handler-Based Extraction
+
+Unlike other calculators that use regex patterns, `ConnectorSimilarityCalculator` uses `ConnectorHandler` implementations for accurate spec extraction.
+
+**Why more accurate**: Connectors have complex MPN formats that vary by manufacturer. Using handlers ensures correct extraction of pin count and pitch.
+
+---
+
+### Pin Count Extraction
+- Critical for compatibility
+- Different manufacturers encode differently
+- Some require handler-specific logic
+
+### Pitch Variations
+- 2.54mm (0.1") - Standard through-hole
+- 2.00mm - Common header pitch
+- 1.27mm (0.05") - Fine pitch
+- 0.5mm - FPC connectors
+
+### Mounting Types
+- THT (Through-Hole Technology)
+- SMT/SMD (Surface Mount)
+- Press-fit
+- Wire-to-board
+
+<!-- Add new learnings above this line -->

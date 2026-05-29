@@ -1,8 +1,9 @@
 ---
-name: sensor-data-aggregator
+name: "sensor-data-aggregator"
 description: "Aggregate and analyze IoT sensor data from construction sites. Collect data from multiple sensor types, detect anomalies, and trigger alerts for safety and quality monitoring."
+homepage: "https://datadrivenconstruction.io"
+metadata: {"openclaw": {"emoji": "🚀", "os": ["darwin", "linux", "win32"], "homepage": "https://datadrivenconstruction.io", "requires": {"bins": ["python3"]}}}
 ---
-
 # Sensor Data Aggregator
 
 ## Overview

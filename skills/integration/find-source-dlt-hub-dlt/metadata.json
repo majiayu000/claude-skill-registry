@@ -1,0 +1,17 @@
+{
+  "name": "find-source",
+  "repo": "dlt-hub/dlt",
+  "path": "tests/workspace/cli/ai/cases/mock_workbench/rest-api-pipeline/skills/find-source/SKILL.md",
+  "github_branch": "master",
+  "category": "integration",
+  "source": "github.com/dlt-hub/dlt",
+  "dir_name": "find-source-dlt-hub-dlt",
+  "downloaded_at": "2026-03-22T07:47:02.561373Z",
+  "author": "dlt-hub",
+  "source_url": "https://github.com/dlt-hub/dlt/blob/master/tests/workspace/cli/ai/cases/mock_workbench/rest-api-pipeline/skills/find-source/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dlt-hub/dlt/blob/master/tests/workspace/cli/ai/cases/mock_workbench/rest-api-pipeline/skills/find-source/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

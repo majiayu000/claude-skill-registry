@@ -1,0 +1,17 @@
+{
+  "name": "search-router",
+  "repo": "vibeeval/vibecosystem",
+  "path": "skills/search-router/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/vibeeval/vibecosystem",
+  "dir_name": "search-router-vibeeval-vibecosystem",
+  "downloaded_at": "2026-05-17T04:04:32.864533Z",
+  "author": "vibeeval",
+  "source_url": "https://github.com/vibeeval/vibecosystem/blob/main/skills/search-router/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vibeeval/vibecosystem/blob/main/skills/search-router/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

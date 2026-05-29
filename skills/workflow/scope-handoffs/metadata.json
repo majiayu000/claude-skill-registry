@@ -1,0 +1,16 @@
+{
+  "name": "scope-handoffs",
+  "repo": "technicalpickles/pickled-claude-plugins",
+  "path": "plugins/stay-on-target/skills/scope-handoffs/SKILL.md",
+  "source": "github.com/technicalpickles/pickled-claude-plugins",
+  "downloaded_at": "2026-02-02T03:44:21.791911Z",
+  "dir_name": "scope-handoffs",
+  "category": "workflow",
+  "author": "technicalpickles",
+  "source_url": "https://github.com/technicalpickles/pickled-claude-plugins/blob/main/plugins/stay-on-target/skills/scope-handoffs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Josh Nichols",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

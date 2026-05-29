@@ -1,0 +1,11 @@
+{
+  "name": "gobby-metrics",
+  "repo": "GobbyAI/gobby",
+  "path": "src/gobby/install/shared/skills/gobby-metrics/SKILL.md",
+  "source": "github.com/GobbyAI/gobby",
+  "downloaded_at": "2026-01-17T01:37:10.637565Z",
+  "dir_name": "gobby-metrics",
+  "category": "performance",
+  "github_path": ".claude/skills/gobby-metrics",
+  "github_branch": "main"
+}

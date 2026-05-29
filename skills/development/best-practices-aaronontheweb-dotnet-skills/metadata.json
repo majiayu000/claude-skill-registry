@@ -1,0 +1,16 @@
+{
+  "name": "best-practices",
+  "repo": "Aaronontheweb/dotnet-skills",
+  "path": "skills/akka/best-practices/SKILL.md",
+  "source": "github.com/Aaronontheweb/dotnet-skills",
+  "downloaded_at": "2026-02-02T05:01:25.059604Z",
+  "dir_name": "best-practices-aaronontheweb-dotnet-skills",
+  "category": "development",
+  "author": "Aaronontheweb",
+  "source_url": "https://github.com/Aaronontheweb/dotnet-skills/blob/main/skills/akka/best-practices/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Aaron Stannard <https://aaronstannard.com/>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

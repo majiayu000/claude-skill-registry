@@ -3,9 +3,15 @@ name: ln-140-test-docs-creator
 description: Creates test documentation (testing-strategy.md + tests/README.md). Establishes testing philosophy and Story-Level Test Task Pattern. L2 Worker in ln-100-documents-pipeline workflow.
 ---
 
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
+
 # Test Documentation Creator
 
 This skill creates and validates test documentation: testing-strategy.md (universal testing philosophy) + tests/README.md (test organization structure and Story-Level Test Task Pattern).
+
+## Purpose
+
+Creates and validates test documentation (testing-strategy.md + tests/README.md) establishing universal testing philosophy, Risk-Based Testing strategy, and Story-Level Test Task Pattern for any project.
 
 ## When to Use This Skill
 
@@ -17,7 +23,7 @@ This skill should be used directly when:
 - Setting up test philosophy and structure documentation for existing project
 - NOT creating full documentation structure (use ln-100-documents-pipeline for complete setup)
 
-## How It Works
+## Workflow
 
 The skill follows a 3-phase workflow: **CREATE** → **VALIDATE STRUCTURE** → **VALIDATE CONTENT**. Each phase builds on the previous, ensuring complete structure and semantic validation.
 
@@ -326,7 +332,19 @@ tests/
 
 ---
 
-## Reference Files Used
+## Critical Rules
+
+- **Documentation only:** This skill creates test DOCUMENTATION, NOT actual test code
+- **3-phase pipeline:** CREATE → VALIDATE STRUCTURE → VALIDATE CONTENT (no phase skipping)
+- **Auto-discovery first:** Scan test frameworks and directory structure before falling back to defaults
+- **Idempotent execution:** Checks existence before creation; re-validates on each run without duplication
+- **SCOPE tags required:** Both files must have `<!-- SCOPE: ... -->` tag in first 5 lines
+
+---
+
+## Reference Files
+
+- **Risk-based testing methodology:** `shared/references/risk_based_testing_guide.md`
 
 ### Templates
 
@@ -371,7 +389,7 @@ tests/
 - **Auto-discovery first**: Scan test frameworks and directory structure before using defaults
 - **Idempotent**: ✅ Can run multiple times safely (checks existence before creation, re-validates on each run)
 - **Separation of concerns**: CREATE → VALIDATE STRUCTURE → VALIDATE CONTENT
-- **Story-Level Test Task Pattern**: Tests consolidated in final Story task (ln-510-test-planner creates task, ln-420-test-executor implements)
+- **Story-Level Test Task Pattern**: Tests consolidated in final Story task (test planner creates task, test executor implements)
 - **Value-Based Testing**: 2-5 E2E, 3-8 Integration, 5-15 Unit per Story (10-28 total max), Priority ≥15 MUST be tested
 - **No test code**: This skill creates DOCUMENTATION only, NOT actual tests
 
@@ -449,5 +467,5 @@ Before completing work, verify ALL checkpoints:
 
 ---
 
-**Version:** 7.2.0 (Added tests/manual/results/ structure creation and .gitignore entry)
+**Version:** 7.2.0
 **Last Updated:** 2026-01-15

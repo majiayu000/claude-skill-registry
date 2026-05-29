@@ -61,14 +61,25 @@ Report status using this scale:
 
 Check Airflow for the source pipeline:
 
-1. **Find the DAG**: Which DAG populates this table? Use `list_dags` and look for matching names.
+1. **Find the DAG**: Which DAG populates this table? Use `af dags list` and look for matching names.
 
 2. **Check DAG status**:
-   - Is the DAG paused? Use `get_dag_details`
-   - Did the last run fail? Use `get_dag_stats`
+   - Is the DAG paused? Use `af dags get <dag_id>`
+   - Did the last run fail? Use `af dags stats`
    - Is a run currently in progress?
 
 3. **Diagnose if needed**: If the DAG failed, use the **debugging-dags** skill to investigate.
+
+### On Astro
+
+If you're running on Astro, you can also:
+
+- **DAG history in the Astro UI**: Check the deployment's DAG run history for a visual timeline of recent runs and their outcomes
+- **Astro alerts for SLA monitoring**: Configure alerts to get notified when DAGs miss their expected completion windows, catching staleness before users report it
+
+### On OSS Airflow
+
+- **Airflow UI**: Use the DAGs view and task logs to verify last successful runs and SLA misses
 
 ## Output Format
 

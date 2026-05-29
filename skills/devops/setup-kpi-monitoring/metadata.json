@@ -1,0 +1,16 @@
+{
+  "name": "setup-kpi-monitoring",
+  "repo": "mariotoffia/gobridge",
+  "path": ".cursor/skills/setup-kpi-monitoring/SKILL.md",
+  "source": "github.com/mariotoffia/gobridge",
+  "downloaded_at": "2026-02-02T02:30:05.434221Z",
+  "dir_name": "setup-kpi-monitoring",
+  "category": "devops",
+  "author": "mariotoffia",
+  "source_url": "https://github.com/mariotoffia/gobridge/blob/main/.cursor/skills/setup-kpi-monitoring/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mariotoffia/gobridge/blob/main/.cursor/skills/setup-kpi-monitoring/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

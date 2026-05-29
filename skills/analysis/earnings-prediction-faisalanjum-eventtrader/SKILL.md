@@ -1,7 +1,8 @@
 ---
 name: earnings-prediction
 description: Predicts stock direction/magnitude at T=0 (report release). Uses PIT data only. Run before earnings-attribution.
-allowed-tools: Read, Write, Grep, Glob, Bash, TodoWrite, Task, Skill
+context: fork
+allowed-tools: Read, Write, Grep, Glob, Bash, TodoWrite, Skill
 model: claude-opus-4-5
 permissionMode: dontAsk
 ---

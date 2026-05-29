@@ -1,841 +1,1127 @@
 ---
-name: axiom-swiftui-nav
-description: Use when implementing navigation patterns, choosing between NavigationStack and NavigationSplitView, handling deep links, adopting coordinator patterns, or requesting code review of navigation implementation - prevents navigation state corruption, deep link failures, and state restoration bugs for iOS 18+
-user-invocable: true
-skill_type: discipline
+name: axiom-swiftui-nav-diag
+description: Use when debugging navigation not responding, unexpected pops, deep links showing wrong screen, state lost on tab switch or background, crashes in navigationDestination, or any SwiftUI navigation failure - systematic diagnostics with production crisis defense
+user-invocable: false
+skill_type: diagnostic
 version: 1.0.0
-last_updated: 2025-12-05
-apple_platforms: iOS 18+ (Tab/Sidebar), iOS 26+ (Liquid Glass)
-# MCP annotations (ignored by Claude Code)
-mcp:
-  category: swiftui
-  tags: [swiftui, navigation, navigationstack, navigationsplitview, deep-links, state-restoration, coordinator-pattern]
-  related: [swiftui-nav-diag, axiom-swiftui-nav-ref, axiom-swiftui-layout]
 ---
 
-# SwiftUI Navigation
+# SwiftUI Navigation Diagnostics
 
-## When to Use This Skill
+## Overview
 
-Use when:
-- Choosing navigation architecture (NavigationStack vs NavigationSplitView vs TabView)
-- Implementing programmatic navigation with NavigationPath
-- Setting up deep linking and URL routing
-- Implementing state restoration for navigation
-- Adopting Tab/Sidebar patterns (iOS 18+)
-- Implementing coordinator/router patterns
-- Requesting code review of navigation implementation before shipping
+**Core principle** 85% of navigation problems stem from path state management errors, view identity issues, or placement mistakes—not SwiftUI defects.
 
-#### Related Skills
-- Use `axiom-swiftui-nav-diag` for systematic troubleshooting of navigation failures
-- Use `axiom-swiftui-nav-ref` for comprehensive API reference (including Tab customization, iOS 26+ features) with all WWDC examples
+SwiftUI's navigation system is used by millions of apps and handles complex navigation patterns reliably. If your navigation is failing, not responding, or behaving unexpectedly, the issue is almost always in how you're managing navigation state, not the framework itself.
 
-## Example Prompts
+This skill provides systematic diagnostics to identify root causes in minutes, not hours.
 
-These are real questions developers ask that this skill is designed to answer:
+## Red Flags — Suspect Navigation Issue
 
-#### 1. "Should I use NavigationStack or NavigationSplitView for my app?"
--> The skill provides a decision tree based on device targets, content hierarchy depth, and multiplatform requirements
+If you see ANY of these, suspect a code issue, not framework breakage:
 
-#### 2. "How do I navigate programmatically in SwiftUI?"
--> The skill shows NavigationPath manipulation patterns for push, pop, pop-to-root, and deep linking
+- Navigation tap does nothing (link present but doesn't push)
+- Back button pops to wrong screen or root
+- Deep link opens app but shows wrong screen
+- Navigation state lost when switching tabs
+- Navigation state lost when app backgrounds
+- Same NavigationLink pushes twice
+- Navigation animation stuck or janky
+- Crash with `navigationDestination` in stack trace
 
-#### 3. "My deep links aren't working. The app opens but shows the wrong screen."
--> The skill covers URL parsing patterns, path construction order, and timing issues with onOpenURL
+- ❌ **FORBIDDEN** "SwiftUI navigation is broken, let's wrap UINavigationController"
+  - NavigationStack is used by Apple's own apps
+  - Wrapping UIKit adds complexity and loses SwiftUI state management benefits
+  - UIKit interop has its own edge cases you'll spend weeks discovering
+  - Your issue is almost certainly path management, not framework defect
 
-#### 4. "Navigation state is lost when my app goes to background."
--> The skill demonstrates Codable NavigationPath, SceneStorage persistence, and crash-resistant restoration
-
-#### 5. "How do I implement a coordinator pattern in SwiftUI?"
--> The skill provides Router pattern examples alongside guidance on when coordinators add value vs complexity
-
----
-
-## Red Flags — Anti-Patterns to Prevent
-
-If you're doing ANY of these, STOP and use the patterns in this skill:
-
-### ❌ CRITICAL — Never Do These
-
-#### 1. Using deprecated NavigationView on iOS 16+
-```swift
-// ❌ WRONG — Deprecated, different behavior on iOS 16+
-NavigationView {
-    List { ... }
-}
-.navigationViewStyle(.stack)
-```
-**Why this fails** NavigationView is deprecated since iOS 16. It lacks NavigationPath support, making programmatic navigation and deep linking unreliable. Different behavior across iOS versions causes bugs.
-
-#### 2. Using view-based NavigationLink for programmatic navigation
-```swift
-// ❌ WRONG — Cannot programmatically control
-NavigationLink("Recipe") {
-    RecipeDetail(recipe: recipe)  // View destination, no value
-}
-```
-**Why this fails** View-based links cannot be controlled programmatically. No way to deep link or pop to this destination. Deprecated since iOS 16.
-
-#### 3. Putting navigationDestination inside lazy containers
-```swift
-// ❌ WRONG — May not be loaded when needed
-LazyVGrid(columns: columns) {
-    ForEach(items) { item in
-        NavigationLink(value: item) { ... }
-            .navigationDestination(for: Item.self) { item in  // Don't do this
-                ItemDetail(item: item)
-            }
-    }
-}
-```
-**Why this fails** Lazy containers don't load all views immediately. navigationDestination may not be visible to NavigationStack, causing navigation to silently fail.
-
-#### 4. Storing full model objects in NavigationPath for restoration
-```swift
-// ❌ WRONG — Duplicates data, stale on restore
-class NavigationModel: Codable {
-    var path: [Recipe] = []  // Full Recipe objects
-}
-```
-**Why this fails** Duplicates data already in your model. On restore, Recipe data may be stale (edited/deleted elsewhere). Use IDs and resolve to current data.
-
-#### 5. Modifying NavigationPath outside MainActor
-```swift
-// ❌ WRONG — UI update off main thread
-Task.detached {
-    await viewModel.path.append(recipe)  // Background thread
-}
-```
-**Why this fails** NavigationPath binds to UI. Modifications must happen on MainActor or navigation state becomes corrupted. Can cause crashes or silent failures.
-
-#### 6. Missing @MainActor isolation for navigation state
-```swift
-// ❌ WRONG — Not MainActor isolated
-class Router: ObservableObject {
-    @Published var path = NavigationPath()  // No @MainActor
-}
-```
-**Why this fails** In Swift 6 strict concurrency, @Published properties accessed from SwiftUI views require MainActor isolation. Causes data race warnings and potential crashes.
-
-#### 7. Not handling navigation state in multi-tab apps
-```swift
-// ❌ WRONG — Shared NavigationPath across tabs
-TabView {
-    Tab("Home") { HomeView() }
-    Tab("Settings") { SettingsView() }
-}
-// All tabs share same NavigationStack — wrong!
-```
-**Why this fails** Each tab should have its own NavigationStack to preserve navigation state when switching tabs. Shared state causes confusing UX.
-
-#### 8. Ignoring NavigationPath decoding errors
-```swift
-// ❌ WRONG — Crashes on invalid data
-let path = NavigationPath(try! decoder.decode(NavigationPath.CodableRepresentation.self, from: data))
-```
-**Why this fails** User may have deleted items that were in the path. Schema may have changed. Force unwrap causes crash on restore.
-
----
+**Critical distinction** NavigationStack behavior is deterministic. If it's not working, you're modifying state incorrectly, have view identity issues, or navigationDestination is misplaced.
 
 ## Mandatory First Steps
 
-**ALWAYS complete these steps** before implementing navigation:
+**ALWAYS run these checks FIRST** (before changing code):
 
 ```swift
-// Step 1: Identify your navigation structure
-// Ask: Single stack? Multi-column? Tab-based with per-tab navigation?
-// Record answer before writing any code
-
-// Step 2: Choose container based on structure
-// Single stack (iPhone-primary): NavigationStack
-// Multi-column (iPad/Mac-primary): NavigationSplitView
-// Tab-based: TabView with NavigationStack per tab
-
-// Step 3: Define your value types for navigation
-// All values pushed on NavigationStack must be Hashable
-// For deep linking/restoration, also Codable
-struct Recipe: Hashable, Codable, Identifiable { ... }
-
-// Step 4: Plan deep link URLs (if needed)
-// myapp://recipe/{id}
-// myapp://category/{name}/recipe/{id}
-
-// Step 5: Plan state restoration (if needed)
-// Will you use SceneStorage? What data must be Codable?
-```
-
----
-
-## Quick Decision Tree
-
-```
-Need navigation?
-├─ Multi-column interface (iPad/Mac primary)?
-│  └─ NavigationSplitView
-│     ├─ Need drill-down in detail column?
-│     │  └─ NavigationStack inside detail (Pattern 3)
-│     └─ Selection-only detail?
-│        └─ Just selection binding (Pattern 2)
-├─ Tab-based app?
-│  └─ TabView
-│     ├─ Each tab needs drill-down?
-│     │  └─ NavigationStack per tab (Pattern 4)
-│     └─ iPad sidebar experience?
-│        └─ .tabViewStyle(.sidebarAdaptable) (Pattern 5)
-└─ Single-column stack?
-   └─ NavigationStack
-      ├─ Need deep linking?
-      │  └─ Use NavigationPath (Pattern 1b)
-      └─ Simple push/pop?
-         └─ Typed array path (Pattern 1a)
-
-Need state restoration?
-└─ SceneStorage + Codable NavigationPath (Pattern 6)
-
-Need coordinator abstraction?
-├─ Complex conditional flows?
-├─ Navigation logic testing needed?
-├─ Sharing navigation across many screens?
-└─ YES to any → Router pattern (Pattern 7)
-   NO to all → Use NavigationPath directly
-```
-
----
-
-## Pattern 1a: Basic NavigationStack
-
-**When**: Simple push/pop navigation, all destinations same type
-
-**Time cost**: 5-10 min
-
-```swift
-struct RecipeList: View {
-    @State private var path: [Recipe] = []
-
-    var body: some View {
-        NavigationStack(path: $path) {
-            List(recipes) { recipe in
-                NavigationLink(recipe.name, value: recipe)
-            }
-            .navigationTitle("Recipes")
-            .navigationDestination(for: Recipe.self) { recipe in
-                RecipeDetail(recipe: recipe)
-            }
+// 1. Add NavigationPath logging
+NavigationStack(path: $path) {
+    RootView()
+        .onChange(of: path.count) { oldCount, newCount in
+            print("📍 Path changed: \(oldCount) → \(newCount)")
+            // If this never fires, link isn't modifying path
+            // If it fires unexpectedly, something else modifies path
         }
-    }
-
-    // Programmatic navigation
-    func showRecipe(_ recipe: Recipe) {
-        path.append(recipe)
-    }
-
-    func popToRoot() {
-        path.removeAll()
-    }
 }
+
+// 2. Check navigationDestination is visible
+// Put temporary print in destination closure
+.navigationDestination(for: Recipe.self) { recipe in
+    let _ = print("🔗 Destination for Recipe: \(recipe.name)")
+    RecipeDetail(recipe: recipe)
+}
+// If this never prints, destination isn't being evaluated
+
+// 3. Check NavigationLink is inside NavigationStack
+// Visual inspection: Trace from NavigationLink up view hierarchy
+// Must hit NavigationStack, not another container first
+
+// 4. Check path state location
+// @State must be in stable view (not recreated each render)
+// Must be @State, @StateObject, or @Observable — not local variable
+
+// 5. Test basic case in isolation
+// Create minimal reproduction
+NavigationStack {
+    NavigationLink("Test", value: "test")
+        .navigationDestination(for: String.self) { str in
+            Text("Pushed: \(str)")
+        }
+}
+// If this works, problem is in your specific setup
 ```
 
-**Key points:**
-- Typed array `[Recipe]` when all values are same type
-- Value-based `NavigationLink(title, value:)`
-- `navigationDestination(for:)` outside lazy containers
+#### What this tells you
+
+| Observation | Diagnosis | Next Step |
+|-------------|-----------|-----------|
+| onChange never fires on tap | NavigationLink not in NavigationStack hierarchy | Pattern 1a |
+| onChange fires but view doesn't push | navigationDestination not found/loaded | Pattern 1b |
+| onChange fires, view pushes, then immediate pop | View identity issue or path modification | Pattern 2a |
+| Path changes unexpectedly (not from tap) | External code modifying path | Pattern 2b |
+| Deep link path.append() doesn't navigate | Timing issue or wrong thread | Pattern 3b |
+| State lost on tab switch | NavigationStack shared across tabs | Pattern 4a |
+| Works first time, fails on return | View recreation issue | Pattern 5a |
+
+#### MANDATORY INTERPRETATION
+
+Before changing ANY code, identify ONE of these:
+
+1. If link tap does nothing AND no onChange → Link outside NavigationStack (check hierarchy)
+2. If onChange fires but nothing pushes → navigationDestination not in scope (check placement)
+3. If pushes then immediately pops → View identity change or path reset (check @State location)
+4. If deep link fails → Timing or MainActor issue (check thread)
+5. If crash → Force unwrap on path decode or missing type registration
+
+#### If diagnostics are contradictory or unclear
+- STOP. Do NOT proceed to patterns yet
+- Add print statements at every path modification point
+- Create minimal reproduction case
+- Test with String values first (simplest case)
+
+## Decision Tree
+
+Use this to reach the correct diagnostic pattern in 2 minutes:
+
+```
+Navigation problem?
+├─ Navigation tap does nothing?
+│  ├─ NavigationLink inside NavigationStack?
+│  │  ├─ No → Pattern 1a (Link outside Stack)
+│  │  └─ Yes → Check navigationDestination
+│  │
+│  ├─ navigationDestination registered?
+│  │  ├─ Inside lazy container? → Pattern 1b (Lazy Loading)
+│  │  ├─ Type mismatch? → Pattern 1c (Type Registration)
+│  │  └─ Blocked by sheet/popover? → Pattern 1d (Modal Blocking)
+│  │
+│  └─ Using view-based link?
+│     └─ → Pattern 1e (Deprecated API)
+│
+├─ Unexpected pop back?
+│  ├─ Immediate pop after push?
+│  │  ├─ View body recreating path? → Pattern 2a (Path Recreation)
+│  │  ├─ @State in wrong view? → Pattern 2a (State Location)
+│  │  └─ ForEach id changing? → Pattern 2c (Identity Change)
+│  │
+│  ├─ Pop when shouldn't?
+│  │  ├─ External code calling removeLast? → Pattern 2b (Unexpected Modification)
+│  │  ├─ Task cancelled? → Pattern 2b (Async Cancellation)
+│  │  └─ MainActor issue? → Pattern 2d (Threading)
+│  │
+│  └─ Back button behavior wrong?
+│     └─ → Pattern 2e (Stack Corruption)
+│
+├─ Deep link not working?
+│  ├─ URL not received?
+│  │  ├─ onOpenURL not called? → Check URL scheme in Info.plist
+│  │  └─ Universal Links issue? → Check apple-app-site-association
+│  │
+│  ├─ URL received, path not updated?
+│  │  ├─ path.append not on MainActor? → Pattern 3a (Threading)
+│  │  ├─ Timing issue (app not ready)? → Pattern 3b (Initialization)
+│  │  └─ NavigationStack not created yet? → Pattern 3b (Lifecycle)
+│  │
+│  └─ Path updated, wrong screen shown?
+│     ├─ Wrong path order? → Pattern 3c (Path Construction)
+│     ├─ Wrong type appended? → Pattern 3c (Type Mismatch)
+│     └─ Item not found? → Pattern 3d (Data Resolution)
+│
+├─ State lost?
+│  ├─ Lost on tab switch?
+│  │  ├─ Shared NavigationStack? → Pattern 4a (Shared State)
+│  │  └─ Tab recreation? → Pattern 4a (Tab Identity)
+│  │
+│  ├─ Lost on background/foreground?
+│  │  ├─ No SceneStorage? → Pattern 4b (No Persistence)
+│  │  └─ Decode failure? → Pattern 4c (Decode Error)
+│  │
+│  └─ Lost on rotation/size change?
+│     └─ → Pattern 4d (Layout Recreation)
+│
+└─ Crash?
+   ├─ EXC_BAD_ACCESS in navigation code?
+   │  └─ → Pattern 5a (Memory Issue)
+   │
+   ├─ Fatal error: type not registered?
+   │  └─ → Pattern 5b (Missing Destination)
+   │
+   └─ Decode failure on restore?
+      └─ → Pattern 5c (Restoration Crash)
+```
+
+## Pattern Selection Rules (MANDATORY)
+
+Before proceeding to a pattern:
+
+1. **Navigation tap does nothing** → Add onChange logging FIRST, then Pattern 1
+2. **Unexpected pop** → Find WHAT is modifying path (logging), then Pattern 2
+3. **Deep link fails** → Verify URL received (print in onOpenURL), then Pattern 3
+4. **State lost** → Identify WHEN lost (tab switch vs background), then Pattern 4
+5. **Crash** → Get full stack trace, then Pattern 5
+
+#### Apply ONE pattern at a time
+- Implement the fix from one pattern
+- Test thoroughly
+- Only if issue persists, try next pattern
+- DO NOT apply multiple patterns simultaneously (can't isolate cause)
+
+#### FORBIDDEN
+- Guessing at solutions without diagnostics
+- Changing multiple things at once
+- Wrapping with UINavigationController "because SwiftUI is broken"
+- Adding delays/DispatchQueue.main.async without understanding why
+- Switching to view-based NavigationLink "to avoid path issues"
 
 ---
 
-## Pattern 1b: NavigationStack with Deep Linking
+## Diagnostic Patterns
 
-**When**: Multiple destination types, URL-based deep linking
+### Pattern 1a: NavigationLink Outside NavigationStack
 
-**Time cost**: 15-20 min
+**Time cost** 5-10 minutes
 
+#### Symptom
+- Tapping NavigationLink does nothing
+- No navigation occurs, no errors
+- onChange(of: path) never fires
+
+#### Diagnosis
 ```swift
+// Check view hierarchy — NavigationLink must be INSIDE NavigationStack
+
+// ❌ WRONG — Link outside stack
 struct ContentView: View {
-    @State private var path = NavigationPath()
+    var body: some View {
+        VStack {
+            NavigationLink("Go", value: "test")  // Outside stack!
+            NavigationStack {
+                Text("Root")
+            }
+        }
+    }
+}
+
+// Check: Add background color to NavigationStack
+NavigationStack {
+    Color.red  // If link is on red, it's inside
+}
+```
+
+#### Fix
+```swift
+// ✅ CORRECT — Link inside stack
+struct ContentView: View {
+    var body: some View {
+        NavigationStack {
+            VStack {
+                NavigationLink("Go", value: "test")  // Inside stack
+                Text("Root")
+            }
+            .navigationDestination(for: String.self) { str in
+                Text("Pushed: \(str)")
+            }
+        }
+    }
+}
+```
+
+#### Verification
+- Tap link, navigation occurs
+- onChange(of: path) fires when tapped
+
+---
+
+### Pattern 1b: navigationDestination in Lazy Container
+
+**Time cost** 10-15 minutes
+
+#### Symptom
+- NavigationLink tap does nothing OR works intermittently
+- onChange fires (path updated) but view doesn't push
+- Console may show: "A navigationDestination for [Type] was not found"
+
+#### Diagnosis
+```swift
+// ❌ WRONG — Destination inside lazy container (may not be loaded)
+ScrollView {
+    LazyVStack {
+        ForEach(items) { item in
+            NavigationLink(item.name, value: item)
+                .navigationDestination(for: Item.self) { item in
+                    ItemDetail(item: item)  // May not be evaluated!
+                }
+        }
+    }
+}
+```
+
+#### Fix
+```swift
+// ✅ CORRECT — Destination outside lazy container
+ScrollView {
+    LazyVStack {
+        ForEach(items) { item in
+            NavigationLink(item.name, value: item)
+        }
+    }
+}
+.navigationDestination(for: Item.self) { item in
+    ItemDetail(item: item)  // Always available
+}
+```
+
+#### Verification
+- Add print in destination closure — should always print on navigation
+- Works regardless of scroll position
+
+---
+
+### Pattern 1c: Type Registration Mismatch
+
+**Time cost** 10 minutes
+
+#### Symptom
+- Navigation tap does nothing
+- No matching navigationDestination for the value type
+- May work for some links, not others
+
+#### Diagnosis
+```swift
+// Check: Value type must EXACTLY match destination type
+
+// Link uses Recipe
+NavigationLink(recipe.name, value: recipe)  // value is Recipe
+
+// Destination registered for... Recipe.ID?
+.navigationDestination(for: Recipe.ID.self) { id in  // ❌ Wrong type!
+    RecipeDetail(id: id)
+}
+```
+
+#### Fix
+```swift
+// Match types exactly
+NavigationLink(recipe.name, value: recipe)  // Recipe
+
+.navigationDestination(for: Recipe.self) { recipe in  // ✅ Recipe
+    RecipeDetail(recipe: recipe)
+}
+
+// OR change link to use ID
+NavigationLink(recipe.name, value: recipe.id)  // Recipe.ID
+
+.navigationDestination(for: Recipe.ID.self) { id in  // ✅ Recipe.ID
+    RecipeDetail(id: id)
+}
+```
+
+#### Verification
+- Print type in destination: `print(type(of: value))`
+- Types must match exactly (no inheritance)
+
+---
+
+### Pattern 2a: NavigationPath Recreated Every Render
+
+**Time cost** 15-20 minutes
+
+#### Symptom
+- Navigation pushes then immediately pops back
+- Appears to "flash" the destination view
+- Works once, then fails, or fails immediately
+
+#### Diagnosis
+```swift
+// ❌ WRONG — Path created in view body (reset every render)
+struct ContentView: View {
+    var body: some View {
+        let path = NavigationPath()  // Recreated every time!
+        NavigationStack(path: .constant(path)) {
+            // ...
+        }
+    }
+}
+
+// ❌ WRONG — @State in child view that gets recreated
+struct ParentView: View {
+    @State var showChild = true
+    var body: some View {
+        if showChild {
+            ChildView()  // Recreated when showChild toggles
+        }
+    }
+}
+
+struct ChildView: View {
+    @State var path = NavigationPath()  // Lost when ChildView recreated
+    // ...
+}
+```
+
+#### Fix
+```swift
+// ✅ CORRECT — @State at stable level
+struct ContentView: View {
+    @State private var path = NavigationPath()  // Persists across renders
 
     var body: some View {
         NavigationStack(path: $path) {
-            HomeView()
-                .navigationDestination(for: Category.self) { category in
-                    CategoryView(category: category)
-                }
-                .navigationDestination(for: Recipe.self) { recipe in
-                    RecipeDetail(recipe: recipe)
-                }
-        }
-        .onOpenURL { url in
-            handleDeepLink(url)
-        }
-    }
-
-    func handleDeepLink(_ url: URL) {
-        // URL: myapp://category/desserts/recipe/apple-pie
-        path.removeLast(path.count)  // Pop to root first
-
-        guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false) else { return }
-        let segments = components.path.split(separator: "/").map(String.init)
-
-        var index = 0
-        while index < segments.count - 1 {
-            switch segments[index] {
-            case "category":
-                if let category = Category(rawValue: segments[index + 1]) {
-                    path.append(category)
-                }
-                index += 2
-            case "recipe":
-                if let recipe = dataModel.recipe(named: segments[index + 1]) {
-                    path.append(recipe)
-                }
-                index += 2
-            default:
-                index += 1
-            }
-        }
-    }
-}
-```
-
-**Key points:**
-- `NavigationPath` for heterogeneous types
-- Pop to root before building deep link path
-- Build path in correct order (parent → child)
-
----
-
-## Pattern 2: NavigationSplitView Selection-Based
-
-**When**: Multi-column layout where detail shows selected item
-
-**Time cost**: 10-15 min
-
-```swift
-struct MultiColumnView: View {
-    @State private var selectedCategory: Category?
-    @State private var selectedRecipe: Recipe?
-
-    var body: some View {
-        NavigationSplitView {
-            List(Category.allCases, selection: $selectedCategory) { category in
-                NavigationLink(category.name, value: category)
-            }
-            .navigationTitle("Categories")
-        } content: {
-            if let category = selectedCategory {
-                List(recipes(in: category), selection: $selectedRecipe) { recipe in
-                    NavigationLink(recipe.name, value: recipe)
-                }
-                .navigationTitle(category.name)
-            } else {
-                Text("Select a category")
-            }
-        } detail: {
-            if let recipe = selectedRecipe {
-                RecipeDetail(recipe: recipe)
-            } else {
-                Text("Select a recipe")
-            }
-        }
-    }
-}
-```
-
-**Key points:**
-- `selection: $binding` on List connects to column selection
-- Value-presenting links update selection automatically
-- Adapts to single stack on iPhone
-
----
-
-## Pattern 3: NavigationSplitView with Stack in Detail
-
-**When**: Multi-column with drill-down capability in detail
-
-**Time cost**: 20-25 min
-
-```swift
-struct GridWithDrillDown: View {
-    @State private var selectedCategory: Category?
-    @State private var path: [Recipe] = []
-
-    var body: some View {
-        NavigationSplitView {
-            List(Category.allCases, selection: $selectedCategory) { category in
-                NavigationLink(category.name, value: category)
-            }
-            .navigationTitle("Categories")
-        } detail: {
-            NavigationStack(path: $path) {
-                if let category = selectedCategory {
-                    RecipeGrid(category: category)
-                        .navigationDestination(for: Recipe.self) { recipe in
-                            RecipeDetail(recipe: recipe)
-                        }
-                } else {
-                    Text("Select a category")
-                }
-            }
-        }
-    }
-}
-```
-
-**Key points:**
-- NavigationStack inside detail column
-- Grid → Detail drill-down while preserving sidebar
-- Separate path for drill-down, selection for sidebar
-
----
-
-## Pattern 4: TabView with Per-Tab NavigationStack
-
-**When**: Tab-based app where each tab has its own navigation
-
-**Time cost**: 15-20 min
-
-```swift
-struct TabBasedApp: View {
-    var body: some View {
-        TabView {
-            Tab("Home", systemImage: "house") {
-                NavigationStack {
-                    HomeView()
-                        .navigationDestination(for: Item.self) { item in
-                            ItemDetail(item: item)
-                        }
-                }
-            }
-
-            Tab("Search", systemImage: "magnifyingglass") {
-                NavigationStack {
-                    SearchView()
-                }
-            }
-
-            Tab("Settings", systemImage: "gear") {
-                NavigationStack {
-                    SettingsView()
-                }
-            }
-        }
-    }
-}
-```
-
-**Key points:**
-- Each Tab has its own NavigationStack
-- Navigation state preserved when switching tabs
-- iOS 18+ Tab syntax with systemImage
-
----
-
-## Pattern 5: Sidebar-Adaptable TabView (iOS 18+)
-
-**When**: Tab bar on iPhone, sidebar on iPad
-
-**Time cost**: 20-25 min
-
-```swift
-struct AdaptableApp: View {
-    var body: some View {
-        TabView {
-            Tab("Watch Now", systemImage: "play") {
-                WatchNowView()
-            }
-            Tab("Library", systemImage: "books.vertical") {
-                LibraryView()
-            }
-
-            TabSection("Collections") {
-                Tab("Favorites", systemImage: "star") {
-                    FavoritesView()
-                }
-                Tab("Recently Added", systemImage: "clock") {
-                    RecentView()
-                }
-            }
-
-            Tab(role: .search) {
-                SearchView()
-            }
-        }
-        .tabViewStyle(.sidebarAdaptable)
-    }
-}
-```
-
-**Key points:**
-- `.tabViewStyle(.sidebarAdaptable)` enables sidebar on iPad
-- `TabSection` creates collapsible groups in sidebar
-- `Tab(role: .search)` gets special placement
-
----
-
-## Pattern 6: State Restoration
-
-**When**: Preserve navigation state across app launches
-
-**Time cost**: 25-30 min
-
-```swift
-@MainActor
-class NavigationModel: ObservableObject, Codable {
-    @Published var selectedCategory: Category?
-    @Published var recipePath: [Recipe.ID] = []  // Store IDs, not objects
-
-    enum CodingKeys: String, CodingKey {
-        case selectedCategory, recipePath
-    }
-
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(selectedCategory, forKey: .selectedCategory)
-        try container.encode(recipePath, forKey: .recipePath)
-    }
-
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        selectedCategory = try container.decodeIfPresent(Category.self, forKey: .selectedCategory)
-        recipePath = try container.decode([Recipe.ID].self, forKey: .recipePath)
-    }
-
-    init() {}
-
-    var jsonData: Data? {
-        get { try? JSONEncoder().encode(self) }
-        set {
-            guard let data = newValue,
-                  let model = try? JSONDecoder().decode(NavigationModel.self, from: data)
-            else { return }
-            selectedCategory = model.selectedCategory
-            recipePath = model.recipePath
+            RootView()
         }
     }
 }
 
+// ✅ CORRECT — @StateObject for ObservableObject
 struct ContentView: View {
     @StateObject private var navModel = NavigationModel()
-    @SceneStorage("navigation") private var data: Data?
 
     var body: some View {
-        NavigationStack(path: $navModel.recipePath) {
-            // Content
-        }
-        .task {
-            if let data { navModel.jsonData = data }
-            for await _ in navModel.objectWillChange.values {
-                data = navModel.jsonData
-            }
+        NavigationStack(path: $navModel.path) {
+            RootView()
         }
     }
 }
 ```
 
-**Key points:**
-- Store IDs, resolve to current objects
-- `@MainActor` for Swift 6 concurrency safety
-- SceneStorage for automatic scene-scoped persistence
-- Use `compactMap` when resolving IDs to handle deleted items
+#### Verification
+- Add onChange logging — path should not reset unexpectedly
+- Navigate, wait, path.count stays stable
 
 ---
 
-## Pattern 7: Router/Coordinator
+### Pattern 2d: Path Modified Off MainActor
 
-**When**: Complex navigation logic, need testability
+**Time cost** 10-15 minutes
 
-**Time cost**: 30-45 min
+#### Symptom
+- Navigation works sometimes, fails others
+- Swift 6 warnings about MainActor isolation
+- Unexpected pops or state corruption
 
+#### Diagnosis
 ```swift
-enum AppRoute: Hashable {
-    case home
-    case category(Category)
-    case recipe(Recipe)
-    case settings
+// ❌ WRONG — Modifying path from background task
+func loadAndNavigate() async {
+    let recipe = await fetchRecipe()
+    path.append(recipe)  // ⚠️ Not on MainActor!
 }
 
+// Check: Search for path.append, path.removeLast outside @MainActor context
+```
+
+#### Fix
+```swift
+// ✅ CORRECT — Ensure MainActor
+@MainActor
+func loadAndNavigate() async {
+    let recipe = await fetchRecipe()
+    path.append(recipe)  // ✅ MainActor isolated
+}
+
+// OR explicitly dispatch
+func loadAndNavigate() async {
+    let recipe = await fetchRecipe()
+    await MainActor.run {
+        path.append(recipe)
+    }
+}
+
+// ✅ BEST — Use @Observable with @MainActor
 @Observable
 @MainActor
 class Router {
     var path = NavigationPath()
 
-    func navigate(to route: AppRoute) {
-        path.append(route)
+    func navigate(to value: any Hashable) {
+        path.append(value)
     }
+}
+```
 
-    func pop() {
-        guard !path.isEmpty else { return }
-        path.removeLast()
+#### Verification
+- No Swift 6 concurrency warnings
+- Navigation consistent regardless of timing
+
+---
+
+### Pattern 3a: Deep Link Threading Issue
+
+**Time cost** 15-20 minutes
+
+#### Symptom
+- Deep link URL received (onOpenURL fires)
+- path.append called but navigation doesn't happen
+- Works when app is in foreground, fails from cold start
+
+#### Diagnosis
+```swift
+// ❌ WRONG — May be called before NavigationStack exists
+.onOpenURL { url in
+    handleDeepLink(url)  // NavigationStack may not be rendered yet
+}
+
+func handleDeepLink(_ url: URL) {
+    path.append(parsedValue)  // Modifies path that doesn't exist yet
+}
+```
+
+#### Fix
+```swift
+// ✅ CORRECT — Defer deep link handling
+@State private var pendingDeepLink: URL?
+@State private var isReady = false
+
+var body: some View {
+    NavigationStack(path: $path) {
+        RootView()
+            .onAppear {
+                isReady = true
+                if let url = pendingDeepLink {
+                    handleDeepLink(url)
+                    pendingDeepLink = nil
+                }
+            }
     }
-
-    func popToRoot() {
-        path.removeLast(path.count)
+    .onOpenURL { url in
+        if isReady {
+            handleDeepLink(url)
+        } else {
+            pendingDeepLink = url  // Queue for later
+        }
     }
+}
+```
 
-    func showRecipeOfTheDay() {
-        popToRoot()
-        if let recipe = DataModel.shared.recipeOfTheDay {
-            path.append(AppRoute.recipe(recipe))
+#### Verification
+- Test deep link from cold start (app killed)
+- Test deep link when app in background
+- Test deep link when app in foreground
+
+---
+
+### Pattern 3c: Deep Link Path Construction Order
+
+**Time cost** 10-15 minutes
+
+#### Symptom
+- Deep link navigates but to wrong screen
+- Shows intermediate screen instead of final destination
+- Path appears correct but wrong view displayed
+
+#### Diagnosis
+```swift
+// ❌ WRONG — Wrong order (child before parent)
+// URL: myapp://category/desserts/recipe/apple-pie
+func handleDeepLink(_ url: URL) {
+    path.append(recipe)    // Recipe pushed first
+    path.append(category)  // Category pushed second — WRONG ORDER
+}
+// User sees Category screen, not Recipe screen
+```
+
+#### Fix
+```swift
+// ✅ CORRECT — Parent before child
+func handleDeepLink(_ url: URL) {
+    path.removeLast(path.count)  // Clear existing
+
+    // Build hierarchy: parent → child
+    path.append(category)  // First: Category
+    path.append(recipe)    // Second: Recipe (shows this screen)
+}
+
+// For complex paths, build array first
+var newPath: [any Hashable] = []
+// Parse URL segments...
+newPath.append(category)
+newPath.append(subcategory)
+newPath.append(item)
+
+// Then apply
+path = NavigationPath(newPath)
+```
+
+#### Verification
+- Print path after construction
+- Final item in path should be the destination screen
+
+---
+
+### Pattern 4a: Shared NavigationStack Across Tabs
+
+**Time cost** 15-20 minutes
+
+#### Symptom
+- Navigate in Tab A, switch to Tab B
+- Return to Tab A — navigation state lost (back at root)
+- Or: Navigation from Tab A appears in Tab B
+
+#### Diagnosis
+```swift
+// ❌ WRONG — Single NavigationStack wrapping TabView
+NavigationStack(path: $path) {
+    TabView {
+        Tab("Home") { HomeView() }
+        Tab("Settings") { SettingsView() }
+    }
+}
+// All tabs share same navigation — state mixed/lost
+
+// ❌ WRONG — Same @State used across tabs
+@State var path = NavigationPath()  // Shared
+TabView {
+    Tab("Home") {
+        NavigationStack(path: $path) { ... }  // Uses shared path
+    }
+    Tab("Settings") {
+        NavigationStack(path: $path) { ... }  // Same path!
+    }
+}
+```
+
+#### Fix
+```swift
+// ✅ CORRECT — Each tab has own NavigationStack
+TabView {
+    Tab("Home", systemImage: "house") {
+        NavigationStack {  // Own stack
+            HomeView()
+                .navigationDestination(for: HomeItem.self) { ... }
+        }
+    }
+    Tab("Settings", systemImage: "gear") {
+        NavigationStack {  // Own stack
+            SettingsView()
+                .navigationDestination(for: SettingItem.self) { ... }
         }
     }
 }
 
-struct ContentView: View {
-    @State private var router = Router()
+// For per-tab path tracking:
+struct HomeTab: View {
+    @State private var path = NavigationPath()  // Tab-specific
 
     var body: some View {
-        NavigationStack(path: $router.path) {
+        NavigationStack(path: $path) {
             HomeView()
-                .navigationDestination(for: AppRoute.self) { route in
-                    switch route {
-                    case .home: HomeView()
-                    case .category(let cat): CategoryView(category: cat)
-                    case .recipe(let recipe): RecipeDetail(recipe: recipe)
-                    case .settings: SettingsView()
-                    }
-                }
         }
-        .environment(router)
     }
 }
 ```
 
-**When coordinators add value:**
-- Complex conditional navigation flows
-- Navigation logic needs unit testing
-- Multiple views trigger same navigation
-- UIKit interop with custom transitions
-
-**When coordinators add complexity without value:**
-- Simple linear navigation
-- < 5 navigation destinations
-- No need for navigation testing
-- NavigationPath already handles your deep linking
+#### Verification
+- Navigate in Tab A, switch tabs, return — state preserved
+- Each tab maintains independent navigation history
 
 ---
 
-## Anti-Patterns (DO NOT DO THIS)
+### Pattern 4b: No State Persistence on Background
 
-### ❌ Nesting NavigationStack inside NavigationStack
+**Time cost** 15-20 minutes
 
+#### Symptom
+- Navigate to screen, background app
+- Kill app or wait for system to terminate
+- Relaunch — navigation state lost (back at root)
+
+#### Diagnosis
 ```swift
-// ❌ WRONG — Nested stacks
-NavigationStack {
-    SomeView()
-        .sheet(isPresented: $showSheet) {
-            NavigationStack {  // Creates separate stack — confusing
-                SheetContent()
+// ❌ WRONG — No persistence mechanism
+@State private var path = NavigationPath()
+// Path lost when app terminates
+```
+
+#### Fix
+```swift
+// ✅ CORRECT — Use SceneStorage + Codable
+struct ContentView: View {
+    @StateObject private var navModel = NavigationModel()
+    @SceneStorage("navigation") private var savedData: Data?
+
+    var body: some View {
+        NavigationStack(path: $navModel.path) {
+            RootView()
+        }
+        .task {
+            // Restore on appear
+            if let data = savedData {
+                navModel.restore(from: data)
+            }
+            // Save on changes
+            for await _ in navModel.objectWillChange.values {
+                savedData = navModel.encoded()
             }
         }
+    }
 }
-```
 
-**Issue** Two navigation stacks create confusing UX. Back button behavior unclear.
-**Fix** Use single NavigationStack, present sheets without nested navigation when possible.
+@MainActor
+class NavigationModel: ObservableObject {
+    @Published var path = NavigationPath()
 
-### ❌ Using NavigationLink inside Button
+    func encoded() -> Data? {
+        guard let codable = path.codable else { return nil }
+        return try? JSONEncoder().encode(codable)
+    }
 
-```swift
-// ❌ WRONG — Double navigation triggers
-Button("Go") {
-    // Some action
-} label: {
-    NavigationLink(value: item) {  // Fires on button AND link
-        Text("Item")
+    func restore(from data: Data) {
+        guard let codable = try? JSONDecoder().decode(
+            NavigationPath.CodableRepresentation.self,
+            from: data
+        ) else { return }
+        path = NavigationPath(codable)
     }
 }
 ```
 
-**Issue** Both Button and NavigationLink respond to taps.
-**Fix** Use only NavigationLink, put action in `.simultaneousGesture` if needed.
+#### Verification
+- Navigate deep, background app
+- Kill app via Xcode
+- Relaunch — state restored
 
-### ❌ Creating NavigationPath in view body
+---
 
+### Pattern 5b: Missing navigationDestination Registration
+
+**Time cost** 10-15 minutes
+
+#### Symptom
+- Crash: "No destination found for [Type]"
+- Or navigation silently fails
+- Happens when pushing certain types
+
+#### Diagnosis
 ```swift
-// ❌ WRONG — Recreated every render
-var body: some View {
-    let path = NavigationPath()  // Reset on every render!
-    NavigationStack(path: .constant(path)) { ... }
+// Every type pushed on path needs a destination
+
+// You push Recipe
+path.append(recipe)  // Recipe type
+
+// But only registered Category
+.navigationDestination(for: Category.self) { ... }
+// No destination for Recipe!
+```
+
+#### Fix
+```swift
+// Register ALL types you might push
+NavigationStack(path: $path) {
+    RootView()
+        .navigationDestination(for: Category.self) { category in
+            CategoryView(category: category)
+        }
+        .navigationDestination(for: Recipe.self) { recipe in
+            RecipeDetail(recipe: recipe)
+        }
+        .navigationDestination(for: Chef.self) { chef in
+            ChefProfile(chef: chef)
+        }
+}
+
+// Or use enum route type for single registration
+enum AppRoute: Hashable {
+    case category(Category)
+    case recipe(Recipe)
+    case chef(Chef)
+}
+
+.navigationDestination(for: AppRoute.self) { route in
+    switch route {
+    case .category(let cat): CategoryView(category: cat)
+    case .recipe(let recipe): RecipeDetail(recipe: recipe)
+    case .chef(let chef): ChefProfile(chef: chef)
+    }
 }
 ```
 
-**Issue** Path recreated each render, navigation state lost.
-**Fix** Use `@State` or `@StateObject` for navigation state.
+#### Verification
+- List all types you push on path
+- Verify each has matching navigationDestination
 
 ---
 
-## Pressure Scenario: "Make Navigation Like Instagram"
+### Pattern 5c: State Restoration Decode Crash
 
-### The Problem
+**Time cost** 15-20 minutes
 
-Product/design asks for complex navigation like Instagram:
-- "Tab bar with per-tab navigation stacks"
-- "Smooth coordinator pattern for all flows"
-- "Deep linking to any screen"
-- "Profile accessible from anywhere"
+#### Symptom
+- Crash on app launch
+- Stack trace shows JSON decode failure
+- Happens after app update or data model change
 
-### Red Flags — Recognize Over-Engineering Pressure
+#### Diagnosis
+```swift
+// ❌ WRONG — Force unwrap decode
+func restore(from data: Data) {
+    let codable = try! JSONDecoder().decode(  // 💥 Crashes!
+        NavigationPath.CodableRepresentation.self,
+        from: data
+    )
+    path = NavigationPath(codable)
+}
 
-If you hear ANY of these, **STOP and evaluate**:
-
-- 🚩 **"Let's build a full coordinator layer before any views"** → Usually YAGNI
-- 🚩 **"We need a navigation architecture that handles anything"** → Scope creep
-- 🚩 **"Instagram/TikTok does it this way"** → They have 100+ engineers
-
-### Time Cost Comparison
-
-#### Option A: Over-Engineered Coordinator
-- Time to build coordinator layer: 3-5 days
-- Time to maintain and debug: Ongoing
-- Time when requirements change: Significant refactor
-
-#### Option B: Built-in Navigation + Simple Router
-- Time to implement Pattern 4 (TabView + NavigationStack): 2-3 hours
-- Time to add Router if needed: 1-2 hours
-- Time when requirements change: Incremental additions
-
-### How to Push Back Professionally
-
-#### Step 1: Quantify Current Needs
-```
-"Let's list our actual navigation flows:
-1. Home → Item Detail
-2. Search → Results → Item Detail
-3. Profile → Settings
-
-That's 6 destinations. NavigationPath handles this natively."
+// Crash reasons:
+// - Saved path contains type that no longer exists
+// - Codable encoding changed between versions
+// - Saved item was deleted
 ```
 
-#### Step 2: Show the Built-in Solution
+#### Fix
+```swift
+// ✅ CORRECT — Graceful decode with fallback
+func restore(from data: Data) {
+    do {
+        let codable = try JSONDecoder().decode(
+            NavigationPath.CodableRepresentation.self,
+            from: data
+        )
+        path = NavigationPath(codable)
+    } catch {
+        print("Navigation restore failed: \(error)")
+        path = NavigationPath()  // Start fresh
+        // Optionally clear bad saved data
+    }
+}
+
+// ✅ BETTER — Store IDs, resolve to objects
+class NavigationModel: ObservableObject, Codable {
+    var selectedIds: [String] = []  // Store IDs
+
+    func resolvedPath(dataModel: DataModel) -> NavigationPath {
+        var path = NavigationPath()
+        for id in selectedIds {
+            if let item = dataModel.item(withId: id) {
+                path.append(item)
+            }
+            // Missing items silently skipped
+        }
+        return path
+    }
+}
 ```
-"Here's our navigation with NavigationStack + NavigationPath:
-[Show Pattern 1b code]
 
-This gives us:
-- Programmatic navigation ✓
-- Deep linking ✓
-- State restoration ✓
-- Type safety ✓
-
-Without a coordinator layer."
-```
-
-#### Step 3: Offer Incremental Path
-```
-"If we find NavigationPath insufficient, we can add a Router
-(Pattern 7) later. It's 30-45 minutes of work.
-
-But let's start with the simpler solution and add complexity
-only when we hit a real limitation."
-```
-
-### Real-World Example: 48-Hour Feature Push
-
-**Scenario:**
-- PM: "We need deep linking for the campaign launch in 2 days"
-- Lead: "Let's build a proper coordinator first"
-- Time available: 16 working hours
-
-**Wrong approach:**
-- 8 hours: Build coordinator infrastructure
-- 4 hours: Debug coordinator edge cases
-- 4 hours: Rush deep linking on broken foundation
-- Result: Buggy, deadline missed
-
-**Correct approach:**
-- 2 hours: Implement Pattern 1b (NavigationStack with deep linking)
-- 1 hour: Test all deep link URLs
-- 1 hour: Add SceneStorage restoration (Pattern 6)
-- Result: Working deep links in 4 hours, 12 hours for polish/testing
+#### Verification
+- Delete saved state, launch app — no crash
+- Simulate bad data — graceful fallback
+- Change data model, launch — handles mismatch
 
 ---
 
-## Pressure Scenario: "NavigationView Backward Compatibility"
+## Production Crisis Scenario
 
-### The Problem
+### Context: Navigation Randomly Breaks After iOS Update
 
-Team lead says: "Let's use NavigationView so we support iOS 15"
+#### Situation
+- iOS 18 ships on Tuesday
+- By Wednesday, support tickets surge: "navigation broken"
+- 20% of users report tapping links does nothing
+- Some users report navigation "resets randomly"
+- CTO asks: "What's the ETA on a fix?"
 
-### Red Flags
+#### Pressure signals
+- 🚨 **Production issue** 20% of users affected
+- ⏰ **Time pressure** "Users are leaving bad reviews"
+- 👔 **Executive visibility** CTO personally tracking
+- 📱 **Platform change** New iOS version
 
-- 🚩 NavigationView deprecated since iOS 16 (2022)
-- 🚩 Different behavior across iOS versions causes bugs
-- 🚩 No NavigationPath support — can't deep link properly
+#### Rationalization traps (DO NOT fall into these)
 
-### Data to Share
+1. *"It's an iOS 18 bug, wait for Apple to fix"*
+   - If 80% of users work fine, it's not iOS
+   - Apple's apps use same NavigationStack
+   - Your code has an edge case exposed by iOS changes
 
+2. *"Let's wrap UINavigationController"*
+   - 2-3 week rewrite
+   - Lose SwiftUI state management
+   - UIKit has its own iOS 18 changes
+   - Doesn't address root cause
+
+3. *"Add retry logic for navigation"*
+   - Navigation is synchronous — retries don't help
+   - Masks symptom, doesn't fix cause
+   - Makes debugging harder
+
+4. *"Roll back to pre-iOS 18 version"*
+   - Can't control user iOS version
+   - App Store version must support iOS 18
+   - Doesn't fix the issue
+
+#### MANDATORY Diagnostic Protocol
+
+You have 2 hours to provide CTO with:
+1. Root cause
+2. Fix timeline
+3. Workaround for affected users
+
+#### Step 1: Identify Pattern (30 minutes)
+
+```swift
+// Release build with diagnostic logging
+#if DEBUG || DIAGNOSTIC
+NavigationStack(path: $path) {
+    // ...
+}
+.onChange(of: path.count) { old, new in
+    Analytics.log("nav_path_change", ["old": old, "new": new])
+}
+#endif
+
+// Check analytics for:
+// - path.count going to 0 unexpectedly → Path recreation
+// - path.count increasing but no push → Missing destination
+// - No path changes at all → Link not firing
 ```
-iOS 16+ adoption: 95%+ of active devices (as of 2024)
-iOS 15: < 5% and declining
 
-NavigationView limitations:
-- No programmatic path manipulation
-- No type-safe navigation
-- No built-in state restoration
-- Behavior varies by iOS version
+#### Step 2: Cross-Reference with iOS 18 Changes (15 minutes)
+
+```swift
+// iOS 18 changes that affect navigation:
+// 1. Stricter MainActor enforcement
+// 2. Changes to view identity in TabView
+// 3. New navigation lifecycle timing
+
+// Most common iOS 18 issue:
+// Code that worked by accident now fails
+
+// Check: Any path modifications in async contexts without @MainActor?
+Task {
+    let result = await fetch()
+    path.append(result)  // ⚠️ iOS 18 stricter about this
+}
 ```
 
-### Push-Back Script
+#### Step 3: Apply Targeted Fix (30 minutes)
 
+```swift
+// Root cause found: NavigationPath modified from async context
+// iOS 17 was lenient, iOS 18 enforces MainActor properly
+
+// ❌ Old code (worked on iOS 17, breaks on iOS 18)
+func loadAndNavigate() async {
+    let recipe = await fetchRecipe()
+    path.append(recipe)  // Race condition
+}
+
+// ✅ Fix: Explicit MainActor isolation
+@MainActor
+func loadAndNavigate() async {
+    let recipe = await fetchRecipe()
+    path.append(recipe)  // ✅ Safe
+}
+
+// OR: Annotate entire class
+@Observable
+@MainActor
+class Router {
+    var path = NavigationPath()
+
+    func navigate(to value: any Hashable) {
+        path.append(value)
+    }
+}
 ```
-"NavigationView was deprecated in iOS 16 (2022). Here's the impact:
 
-1. We lose NavigationPath — can't implement deep linking reliably
-2. Behavior differs between iOS 15 and 16 — more bugs to maintain
-3. iOS 15 is < 5% of users — we're adding complexity for small audience
+#### Step 4: Validate and Deploy (45 minutes)
 
-Recommendation: Set deployment target to iOS 16, use NavigationStack.
-If iOS 15 support is required, use NavigationStack with @available
-checks and fallback UI for older devices."
+```swift
+// 1. Test on iOS 17 device — still works
+// 2. Test on iOS 18 device — now works
+// 3. Test all navigation paths
+// 4. Submit expedited review
+
+// Expedited review justification:
+// "Critical bug fix for iOS 18 compatibility affecting 20% of users"
+```
+
+#### Professional Communication Templates
+
+#### To CTO (45 minutes after starting)
+```
+Root cause identified: Navigation code wasn't properly isolated
+to the main thread. iOS 18 enforces this more strictly than iOS 17.
+
+Fix: Add @MainActor annotation to navigation code.
+Already tested on iOS 17 (no regression) and iOS 18 (fixes issue).
+
+Timeline:
+- Fix ready: Now
+- QA validation: 1 hour
+- App Store submission: Today
+- Available to users: 24-48 hours (expedited review)
+
+Workaround for affected users: Force quit and relaunch app
+often clears the issue temporarily.
+```
+
+#### To Engineering Team
+```
+iOS 18 Navigation Fix
+
+Root cause: NavigationPath modifications in async contexts
+without @MainActor isolation. iOS 17 was permissive, iOS 18 enforces.
+
+Fix applied:
+- Added @MainActor to Router class
+- Updated all path.append/removeLast calls to be MainActor-isolated
+- Added Swift 6 concurrency checking to catch future issues
+
+Files changed: Router.swift, ContentView.swift, DeepLinkHandler.swift
+
+Testing needed:
+- All navigation flows
+- Deep links from cold start
+- Tab switching with navigation state
+- Background/foreground with navigation state
 ```
 
 ---
 
-## Code Review Checklist
+## Quick Reference Table
 
-### Navigation Architecture
-- [ ] Correct container for use case (Stack vs SplitView vs TabView)
-- [ ] Value-based NavigationLink (not view-based)
-- [ ] navigationDestination outside lazy containers
-- [ ] Each tab has own NavigationStack (if tab-based)
-
-### State Management
-- [ ] NavigationPath in @State or @StateObject (not recreated in body)
-- [ ] @MainActor isolation for navigation state (Swift 6)
-- [ ] IDs stored for restoration (not full objects)
-- [ ] Error handling for decode failures
-
-### Deep Linking
-- [ ] onOpenURL handler present
-- [ ] Pop to root before building path
-- [ ] Path built in correct order (parent → child)
-- [ ] Missing data handled gracefully
-
-### iOS 26+ Features
-- [ ] No custom backgrounds interfering with Liquid Glass
-- [ ] Bottom-aligned search working on iPhone
-- [ ] Tab bar minimization if appropriate
+| Symptom | Likely Cause | First Check | Pattern | Fix Time |
+|---------|--------------|-------------|---------|----------|
+| Link tap does nothing | Link outside stack | View hierarchy | 1a | 5-10 min |
+| Intermittent navigation failure | Destination in lazy container | Destination placement | 1b | 10-15 min |
+| Works for some types, not others | Type mismatch | Print type(of:) | 1c | 10 min |
+| Push then immediate pop | Path recreated | @State location | 2a | 15-20 min |
+| Random unexpected pops | External path modification | Add logging | 2b | 15-20 min |
+| Works on MainActor, fails in Task | Threading issue | Check @MainActor | 2d | 10-15 min |
+| Deep link doesn't navigate | Not on MainActor | Thread check | 3a | 15-20 min |
+| Deep link from cold start fails | Timing/lifecycle | Add pendingDeepLink | 3b | 15-20 min |
+| Deep link shows wrong screen | Path order wrong | Print path contents | 3c | 10-15 min |
+| State lost on tab switch | Shared NavigationStack | Check Tab structure | 4a | 15-20 min |
+| State lost on background | No persistence | Add SceneStorage | 4b | 20-25 min |
+| Crash on launch (decode) | Force unwrap decode | Error handling | 5c | 15-20 min |
+| "No destination found" crash | Missing registration | List all types | 5b | 10-15 min |
 
 ---
 
-## Troubleshooting Quick Reference
+## Common Mistakes
 
-| Symptom | Likely Cause | Pattern |
-|---------|--------------|---------|
-| Navigation doesn't respond to taps | NavigationLink outside NavigationStack | Check hierarchy |
-| Double navigation on tap | Button wrapping NavigationLink | Remove Button wrapper |
-| State lost on tab switch | Shared NavigationStack across tabs | Pattern 4 |
-| State lost on background | No SceneStorage | Pattern 6 |
-| Deep link shows wrong screen | Path built in wrong order | Pattern 1b |
-| Crash on restore | Force unwrap decode | Handle errors gracefully |
+### Mistake 1: Putting navigationDestination Inside ForEach
+
+**Problem** Destination not loaded when needed (lazy evaluation).
+
+**Why it fails** LazyVStack/ForEach don't evaluate all children. Destination may not exist when link is tapped.
+
+#### Fix
+```swift
+// Move destination OUTSIDE lazy container
+List {
+    ForEach(items) { item in
+        NavigationLink(item.name, value: item)
+    }
+}
+.navigationDestination(for: Item.self) { item in
+    ItemDetail(item: item)
+}
+```
+
+### Mistake 2: Using NavigationView on iOS 16+
+
+**Problem** NavigationView deprecated, different behavior across versions.
+
+**Why it fails** No NavigationPath support, can't programmatically navigate or deep link reliably.
+
+#### Fix
+- Replace `NavigationView` with `NavigationStack` or `NavigationSplitView`
+- Use value-based `NavigationLink(title, value:)` instead of view-based
+
+### Mistake 3: Creating NavigationPath in computed property
+
+**Problem** Path reset every access.
+
+**Why it fails** `var body` is called repeatedly. Creating path there means it's reset constantly.
+
+#### Fix
+```swift
+// Use @State, not computed
+@State private var path = NavigationPath()  // ✅ Persists
+
+// NOT
+var path: NavigationPath { NavigationPath() }  // ❌ Reset every time
+```
+
+### Mistake 4: Not Handling Decode Errors in Restoration
+
+**Problem** Crash when saved navigation data is invalid.
+
+**Why it fails** Data model changes, items deleted, encoding format changes between app versions.
+
+#### Fix
+- Always use `try?` or `do/catch` for decode
+- Provide fallback (empty path)
+- Consider storing IDs and resolving to objects
+
+### Mistake 5: Assuming Deep Links Work Immediately
+
+**Problem** Deep link on cold start fails.
+
+**Why it fails** `onOpenURL` may fire before `NavigationStack` is rendered.
+
+#### Fix
+- Queue deep link URL
+- Process after `onAppear` of NavigationStack
+- Use `isReady` flag pattern
 
 ---
 
-## Resources
+## Cross-References
 
-**WWDC**: 2022-10054, 2024-10147, 2025-256, 2025-323
+### For Preventive Patterns
 
-**Skills**: axiom-swiftui-nav-diag, axiom-swiftui-nav-ref
+**swiftui-nav skill** — Discipline-enforcing anti-patterns:
+- Red Flags: NavigationView, view-based links, path in body
+- Pattern 1a-7: Correct implementation patterns
+- Pressure Scenarios: How to handle architecture pressure
+
+### For API Reference
+
+**swiftui-nav-ref skill** — Complete API documentation:
+- NavigationStack, NavigationSplitView, NavigationPath full API
+- All WWDC code examples with timestamps
+- Router/Coordinator patterns with testing
+- iOS 26+ features (Liquid Glass, bottom search)
+
+### For Related Issues
+
+**swift-concurrency skill** — If MainActor issues:
+- Pattern 3: @MainActor isolation patterns
+- Async/await with UI updates
+- Task cancellation handling
 
 ---
 
-**Last Updated** Based on WWDC 2022-2025 navigation sessions
-**Platforms** iOS 18+, iPadOS 18+, macOS 15+, watchOS 11+, tvOS 18+
+**Last Updated** 2025-12-05
+**Status** Production-ready diagnostics
+**Tested** Diagnostic patterns validated against common navigation issues

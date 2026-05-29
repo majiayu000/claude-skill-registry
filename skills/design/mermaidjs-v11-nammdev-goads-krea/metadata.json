@@ -1,0 +1,17 @@
+{
+  "name": "mermaidjs-v11",
+  "repo": "NammDev/Goads-Krea",
+  "path": ".claude/skills/mermaidjs-v11/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/NammDev/Goads-Krea",
+  "dir_name": "mermaidjs-v11-nammdev-goads-krea",
+  "downloaded_at": "2026-03-22T05:53:15.699782Z",
+  "author": "NammDev",
+  "source_url": "https://github.com/NammDev/Goads-Krea/blob/main/.claude/skills/mermaidjs-v11/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/NammDev/Goads-Krea/blob/main/.claude/skills/mermaidjs-v11/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

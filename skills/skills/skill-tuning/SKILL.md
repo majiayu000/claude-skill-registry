@@ -1,7 +1,7 @@
 ---
 name: skill-tuning
 description: Universal skill diagnosis and optimization tool. Detect and fix skill execution issues including context explosion, long-tail forgetting, data flow disruption, and agent coordination failures. Supports Gemini CLI for deep analysis. Triggers on "skill tuning", "tune skill", "skill diagnosis", "optimize skill", "skill debug".
-allowed-tools: Task, AskUserQuestion, Read, Write, Bash, Glob, Grep, mcp__ace-tool__search_context
+allowed-tools: Agent, AskUserQuestion, Read, Write, Bash, Glob, Grep, mcp__ace-tool__search_context
 ---
 
 # Skill Tuning

@@ -14,6 +14,10 @@ triggers:
   - music preferences
 metadata:
   short-description: YouTube history → Horus music discovery
+
+provides:
+  - ingest-yt-history
+composes: [, task-monitor]
 ---
 
 # YouTube History → Horus Music Discovery

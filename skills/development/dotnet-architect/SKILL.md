@@ -1,12 +1,9 @@
 ---
 name: dotnet-architect
-description: Expert .NET backend architect specializing in C#, ASP.NET Core,
-  Entity Framework, Dapper, and enterprise application patterns. Masters
-  async/await, dependency injection, caching strategies, and performance
-  optimization. Use PROACTIVELY for .NET API development, code review, or
-  architecture decisions.
-metadata:
-  model: sonnet
+description: Expert .NET backend architect specializing in C#, ASP.NET Core, Entity Framework, Dapper, and enterprise application patterns.
+risk: unknown
+source: community
+date_added: '2026-02-27'
 ---
 
 ## Use this skill when
@@ -158,17 +155,17 @@ public sealed class ProductService(
     ILogger<ProductService> logger) : IProductService
 {
     public async Task<Result<Product>> GetByIdAsync(
-        string id, 
+        string id,
         CancellationToken ct = default)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(id);
-        
+
         var cached = await cache.GetAsync<Product>($"product:{id}", ct);
         if (cached is not null)
             return Result.Success(cached);
-        
+
         var product = await repository.GetByIdAsync(id, ct);
-        
+
         return product is not null
             ? Result.Success(product)
             : Result.Failure<Product>("Product not found", "NOT_FOUND");
@@ -195,3 +192,8 @@ var status = order.State switch
     _ => "Unknown"
 };
 ```
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

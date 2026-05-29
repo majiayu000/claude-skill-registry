@@ -1,0 +1,11 @@
+{
+  "name": "jira-create",
+  "repo": "bcowdery/claude-skills",
+  "path": "patsy-plugin/skills/jira-create/SKILL.md",
+  "source": "github.com/bcowdery/claude-skills",
+  "downloaded_at": "2026-01-19T01:37:32.295968Z",
+  "dir_name": "jira-create",
+  "category": "integration",
+  "github_path": "patsy-plugin/skills/jira-create",
+  "github_branch": "main"
+}

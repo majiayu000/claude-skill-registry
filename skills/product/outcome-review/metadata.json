@@ -1,0 +1,16 @@
+{
+  "name": "outcome-review",
+  "repo": "yohayetsion/product-org-os",
+  "path": "product-org-plugin/skills/outcome-review/SKILL.md",
+  "source": "github.com/yohayetsion/product-org-os",
+  "downloaded_at": "2026-01-27T02:44:18.989990Z",
+  "dir_name": "outcome-review",
+  "category": "product",
+  "author": "yohayetsion",
+  "source_url": "https://github.com/yohayetsion/product-org-os/blob/main/product-org-plugin/skills/outcome-review/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Yohay Etsion",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

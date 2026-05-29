@@ -1,0 +1,10 @@
+{
+  "name": "mova-repo-snapshot-basic",
+  "description": "LLM-only skill that accepts a repository structure dump, README, and notes, and returns a standardized markdown snapshot, condensed memory summary, and human checklist. No external HTTP requests or we",
+  "repo": "Leryk1981/mova_wf_cycle",
+  "category": "documents",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Leryk1981/mova_wf_cycle",
+  "dir_name": "mova-repo-snapshot-basic-leryk1981-mova-wf-cycle-083a1ec3"
+}

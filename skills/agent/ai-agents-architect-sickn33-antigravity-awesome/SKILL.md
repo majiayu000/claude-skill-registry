@@ -321,7 +321,6 @@ Robust output handling:
 Works well with: `rag-engineer`, `prompt-engineer`, `backend`, `mcp-builder`
 
 ## When to Use
-
 - User mentions or implies: build agent
 - User mentions or implies: AI agent
 - User mentions or implies: autonomous agent
@@ -334,3 +333,8 @@ Works well with: `rag-engineer`, `prompt-engineer`, `backend`, `mcp-builder`
 - User mentions or implies: crewai
 - User mentions or implies: autogen
 - User mentions or implies: claude agent sdk
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

@@ -1,6 +1,6 @@
 ---
 name: markdown-formatting
-description: 'Markdown formatting conventions for diff-friendly docs.'
+description: Enforces markdown line-wrap and structure rules for clean git diffs. Use when writing or editing any committed markdown documentation or skill file.
 globs: "**/*.md"
 alwaysApply: false
 category: cross-plugin-patterns

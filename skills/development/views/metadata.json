@@ -1,9 +1,9 @@
 {
-  "name": "views",
+  "name": "plutonium-views",
   "repo": "radioactive-labs/plutonium-core",
-  "path": ".claude/skills/views/SKILL.md",
+  "path": ".claude/skills/plutonium-views/SKILL.md",
   "source": "github.com/radioactive-labs/plutonium-core",
-  "downloaded_at": "2026-01-19T01:04:32.270065Z",
+  "downloaded_at": "2026-01-22T03:05:16.095251Z",
   "dir_name": "views",
   "category": "development",
   "github_path": ".claude/skills/plutonium-views",

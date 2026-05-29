@@ -1,0 +1,18 @@
+{
+  "name": "learn-from-session",
+  "description": "Analyze Claude Code sessions to learn what went right/wrong and suggest high-confidence improvements to skills. Use when asked to analyze a session, learn from a session, or review workflow effectiven",
+  "repo": "doodledood/claude-code-plugins",
+  "path": ".claude/skills/learn-from-session",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/doodledood/claude-code-plugins",
+  "dir_name": "learn-from-session-doodledood-claude-code-plugins-2",
+  "author": "doodledood",
+  "source_url": "https://github.com/doodledood/claude-code-plugins/blob/main/.claude/skills/learn-from-session/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/doodledood/claude-code-plugins/blob/main/.claude/skills/learn-from-session/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

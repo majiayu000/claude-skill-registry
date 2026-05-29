@@ -1,0 +1,17 @@
+{
+  "name": "andamio-cli",
+  "repo": "Andamio-Platform/coach",
+  "path": "skills/andamio-cli/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/Andamio-Platform/coach",
+  "dir_name": "andamio-cli",
+  "downloaded_at": "2026-03-22T04:50:56.883973Z",
+  "author": "Andamio-Platform",
+  "source_url": "https://github.com/Andamio-Platform/coach/blob/main/skills/andamio-cli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Andamio-Platform/coach/blob/main/skills/andamio-cli/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

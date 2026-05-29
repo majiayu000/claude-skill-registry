@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "status": "passed",
-  "generated_at": "2026-05-29T06:51:41Z",
+  "generated_at": "2026-05-29T15:03:48Z",
   "core_repo": "majiayu000/claude-skill-registry-core",
-  "core_sha": "23e52324bc65008dcf15a4b4db13b93d3a90a01f",
+  "core_sha": "48e095f5aa2a1a7311f0f7f8d389c175d1126293",
   "data_repo": "majiayu000/claude-skill-registry-data",
-  "data_sha": "28e2c80beb93dd04b12da7fbdd14148bea87bf5e",
-  "github_run_id": "26621520300",
+  "data_sha": "d5fe76cf7ef103a13e7780bc2473a52df681b35e",
+  "github_run_id": "26642739778",
   "github_run_attempt": "1",
-  "github_run_url": "https://github.com/majiayu000/claude-skill-registry/actions/runs/26621520300",
+  "github_run_url": "https://github.com/majiayu000/claude-skill-registry/actions/runs/26642739778",
   "promotion_gate": {
     "mode": "pre-commit canary validation",
     "result": "allowed"
@@ -30,42 +30,42 @@
     {
       "name": "registry pointer and manifest",
       "status": "passed",
-      "detail": "registry-manifest.json: 256 shards, 156979 records"
+      "detail": "registry-manifest.json: 256 shards, 156977 records"
     },
     {
       "name": "search pointer and manifest",
       "status": "passed",
-      "detail": "docs/search-index.json -> search-index-manifest.json; docs/search-index-manifest.json: 6 shards, 209585 records"
+      "detail": "docs/search-index.json -> search-index-manifest.json; docs/search-index-manifest.json: 6 shards, 197608 records"
     },
     {
       "name": "quality signal pointer and manifest",
       "status": "passed",
-      "detail": "docs/quality-index.json -> quality-index-manifest.json; docs/quality-index-manifest.json: 6 shards, 157467 records"
+      "detail": "docs/quality-index.json -> quality-index-manifest.json; docs/quality-index-manifest.json: 6 shards, 157418 records"
     },
     {
       "name": "security signal pointer and manifest",
       "status": "passed",
-      "detail": "docs/security-index.json -> security-index-manifest.json; docs/security-index-manifest.json: 18 shards, 157467 records"
+      "detail": "docs/security-index.json -> security-index-manifest.json; docs/security-index-manifest.json: 18 shards, 157418 records"
     },
     {
       "name": "ranking signal pointer and manifest",
       "status": "passed",
-      "detail": "docs/ranking-index.json -> ranking-index-manifest.json; docs/ranking-index-manifest.json: 5 shards, 157467 records"
+      "detail": "docs/ranking-index.json -> ranking-index-manifest.json; docs/ranking-index-manifest.json: 5 shards, 157418 records"
     },
     {
       "name": "category index and other manifest",
       "status": "passed",
-      "detail": "docs/categories/other/manifest.json: 3 shards, 25128 records"
+      "detail": "docs/categories/other/manifest.json: 1 shards, 522 records"
     },
     {
       "name": "stats shard summary",
       "status": "passed",
-      "detail": "largest_generated_file_bytes=8388738"
+      "detail": "largest_generated_file_bytes=8388696"
     },
     {
       "name": "skills mirror count and gitignore",
       "status": "passed",
-      "detail": "209585 SKILL.md and 209585 metadata files match stats and are not ignored"
+      "detail": "197608 SKILL.md and 197608 metadata files match stats and are not ignored"
     }
   ]
 }

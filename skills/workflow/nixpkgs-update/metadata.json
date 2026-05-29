@@ -1,0 +1,18 @@
+{
+  "name": "nixpkgs-update",
+  "repo": "anntnzrb/agents",
+  "path": "assets/skills/nixpkgs-update/SKILL.md",
+  "source": "github.com/anntnzrb/agents",
+  "downloaded_at": "2026-01-20T02:54:29.701378Z",
+  "dir_name": "nixpkgs-update",
+  "category": "workflow",
+  "github_path": "assets/skills/nixpkgs-update",
+  "github_branch": "main",
+  "author": "anntnzrb",
+  "source_url": "https://github.com/anntnzrb/agents/blob/main/assets/skills/nixpkgs-update/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anntnzrb/agents/blob/main/assets/skills/nixpkgs-update/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

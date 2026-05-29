@@ -1,13 +1,15 @@
 ---
 name: ln-732-cicd-generator
-description: Generates GitHub Actions CI workflow configuration
+description: "Generates GitHub Actions CI workflow configuration. Use when adding continuous integration to a project."
+license: MIT
 ---
+
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # ln-732-cicd-generator
 
 **Type:** L3 Worker
 **Category:** 7XX Project Bootstrap
-**Parent:** ln-730-devops-setup
 
 Generates GitHub Actions CI pipeline for automated testing and validation.
 
@@ -178,6 +180,14 @@ Generated workflow must:
 | [github_ci.template.yml](references/github_ci.template.yml) | Full template with comments |
 | [github_ci_dotnet.template.yml](references/github_ci_dotnet.template.yml) | Compact .NET stack template |
 | [github_ci_python.template.yml](references/github_ci_python.template.yml) | Compact Python stack template |
+
+---
+
+## Definition of Done
+
+- [ ] `.github/workflows/ci.yml` generated and passes YAML validation
+- [ ] Pipeline includes lint, build, test, and docker jobs
+- [ ] All action versions pinned (not `@latest`)
 
 ---
 

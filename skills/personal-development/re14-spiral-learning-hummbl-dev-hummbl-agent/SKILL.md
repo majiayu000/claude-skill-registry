@@ -16,11 +16,13 @@ Apply the RE14 Spiral Learning transformation to revisit concepts at increasing 
 ## When to Use RE14
 
 ### Ideal Situations
+
 - Iterate toward a better solution using feedback loops
 - Refine a process through repeated cycles
 - Scale a pattern through repetition and standardization
 
 ### Trigger Questions
+
 - "How can we use Spiral Learning here?"
 - "What changes if we apply RE14 to this iterating a workflow over several cycles?"
 - "Which assumptions does RE14 help us surface?"
@@ -28,18 +30,21 @@ Apply the RE14 Spiral Learning transformation to revisit concepts at increasing 
 ## The RE14 Process
 
 ### Step 1: Define the focus
+
 ```typescript
 // Using RE14 (Spiral Learning) - Establish the focus
 const focus = "Revisit concepts at increasing depth, building on previous understanding";
 ```
 
 ### Step 2: Apply the model
+
 ```typescript
 // Using RE14 (Spiral Learning) - Apply the transformation
 const output = applyModel("RE14", focus);
 ```
 
 ### Step 3: Synthesize outcomes
+
 ```typescript
 // Using RE14 (Spiral Learning) - Capture insights and decisions
 const insights = summarize(output);
@@ -86,6 +91,7 @@ const result = applyModel("RE14", "Revisit concepts at increasing depth, buildin
 ## Installation and Usage
 
 ### Nix Installation
+
 ```nix
 {
   programs.moltbot.plugins = [
@@ -95,11 +101,13 @@ const result = applyModel("RE14", "Revisit concepts at increasing depth, buildin
 ```
 
 ### Manual Installation
+
 ```bash
 moltbot-registry install hummbl-agent/re14-spiral-learning
 ```
 
 ### Usage with Commands
+
 ```bash
 /apply-transformation RE14 "Revisit concepts at increasing depth, building on previous understanding"
 ```

@@ -1,0 +1,16 @@
+{
+  "name": "gpu-resource-optimizer",
+  "repo": "Brmbobo/Web2podcast",
+  "path": ".claude/agents/enterprise-frontend-design/agents/skills/08-ml-deployment/gpu-resource-optimizer/SKILL.md",
+  "source": "github.com/Brmbobo/Web2podcast",
+  "downloaded_at": "2026-02-01T01:33:39.633023Z",
+  "dir_name": "gpu-resource-optimizer",
+  "category": "ai-ml",
+  "author": "Brmbobo",
+  "source_url": "https://github.com/Brmbobo/Web2podcast/blob/main/.claude/agents/enterprise-frontend-design/agents/skills/08-ml-deployment/gpu-resource-optimizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Brmbobo/Web2podcast/blob/main/.claude/agents/enterprise-frontend-design/agents/skills/08-ml-deployment/gpu-resource-optimizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

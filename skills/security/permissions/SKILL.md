@@ -1,258 +1,207 @@
 ---
-name: permissions
-description: Use when implementing authorization, access control, RBAC, role-based permissions, guards, policies, row-level security, guest access, or protecting API endpoints. Covers Guard system, roles, permissions, policies, and data filtering.
+name: bknd-assign-permissions
+description: Use when assigning permissions to roles in Bknd. Covers permission syntax (simple strings, extended format), permission effects (allow/deny), policies with conditions, entity-specific permissions, and fine-grained access control patterns.
 ---
 
-# Permissions and Access Control
+# Assign Permissions
 
-Bknd provides a comprehensive authorization system built on Guard, roles, permissions, and policies. This system controls who can access what in your application.
+Configure detailed permissions for roles using simple strings, extended format with effects, and conditional policies.
 
-## What You'll Learn
+## Prerequisites
 
-- Configure the Guard and roles
-- Define permissions with allow, deny, and filter effects
-- Use policies for row-level security
-- Implement guest access for public endpoints
-- Filter data based on user context
+- Bknd project with code-first configuration
+- Auth enabled (`auth: { enabled: true }`)
+- Guard enabled (`guard: { enabled: true }`)
+- At least one role defined (see **bknd-create-role**)
 
-## Core Concepts
+## When to Use UI Mode
 
-Bknd's authorization follows this hierarchy:
+- Viewing current role permissions
+- Quick permission checks
 
-```
-Guard (evaluates)
-  └─> Roles (group permissions)
-      └─> Permissions (define what's allowed)
-          └─> Policies (conditional logic)
-```
+**UI steps:** Admin Panel > Auth > Roles > Select role
 
-- **Guard**: Evaluates permissions against user context
-- **Roles**: Group permissions and define default behavior
-- **Permissions**: Grant access with allow, deny, or filter effects
-- **Policies**: Add conditional logic to permissions
+**Note:** Permission assignment requires code mode. UI is read-only.
 
-## Enabling Authorization
+## When to Use Code Mode
 
-The Guard is automatically enabled when you enable auth:
+- Assigning permissions to roles
+- Adding permission effects (allow/deny)
+- Creating conditional policies
+- Entity-specific permission rules
+
+## Code Approach
+
+### Step 1: Simple Permission Strings
+
+Assign basic permissions as string array:
 
 ```typescript
-import { em, entity, text, boolean } from "bknd";
+import { serve } from "bknd/adapter/bun";
+import { em, entity, text } from "bknd";
 
 const schema = em({
-  posts: entity("posts", {
-    title: text().required(),
-    content: text(),
-    published: boolean(),
-  }),
+  posts: entity("posts", { title: text().required() }),
 });
 
-export default {
+serve({
+  connection: { url: "file:data.db" },
   config: {
     data: schema.toJSON(),
     auth: {
       enabled: true,
-      jwt: {
-        issuer: "my-app",
-      },
-      roles: [
-        {
-          name: "guest",
-          is_default: true,
+      guard: { enabled: true },
+      roles: {
+        editor: {
           implicit_allow: false,
           permissions: [
+            "data.entity.read",    // Read any entity
+            "data.entity.create",  // Create in any entity
+            "data.entity.update",  // Update any entity
+            // No delete permission
+          ],
+        },
+      },
+    },
+  },
+});
+```
+
+### Available Permissions
+
+| Permission | Filterable | Description |
+|------------|------------|-------------|
+| `data.entity.read` | Yes | Read entity records |
+| `data.entity.create` | Yes | Create new records |
+| `data.entity.update` | Yes | Update existing records |
+| `data.entity.delete` | Yes | Delete records |
+| `data.database.sync` | No | Sync database schema |
+| `data.raw.query` | No | Execute raw SELECT |
+| `data.raw.mutate` | No | Execute raw INSERT/UPDATE/DELETE |
+
+**Filterable** means you can add conditions/filters via policies.
+
+### Step 2: Extended Permission Format
+
+Use objects for explicit allow/deny effects:
+
+```typescript
+{
+  roles: {
+    moderator: {
+      implicit_allow: false,
+      permissions: [
+        { permission: "data.entity.read", effect: "allow" },
+        { permission: "data.entity.update", effect: "allow" },
+        { permission: "data.entity.delete", effect: "deny" },  // Explicit deny
+      ],
+    },
+  },
+}
+```
+
+### Permission Effects
+
+| Effect | Description |
+|--------|-------------|
+| `allow` | Grant the permission (default) |
+| `deny` | Explicitly block the permission |
+
+**Deny overrides allow** - useful when `implicit_allow: true` but you want to block specific actions.
+
+### Step 3: Conditional Policies
+
+Add policies for fine-grained control:
+
+```typescript
+{
+  roles: {
+    content_editor: {
+      implicit_allow: false,
+      permissions: [
+        {
+          permission: "data.entity.read",
+          effect: "allow",
+          policies: [
             {
-              permission: "entityRead",
+              description: "Only read posts and comments",
+              condition: { entity: { $in: ["posts", "comments"] } },
               effect: "allow",
-              policies: [
-                {
-                  condition: { entity: "posts" },
-                  effect: "filter",
-                  filter: { published: true },
-                },
-              ],
+            },
+          ],
+        },
+        {
+          permission: "data.entity.create",
+          effect: "allow",
+          policies: [
+            {
+              condition: { entity: { $in: ["posts", "comments"] } },
+              effect: "allow",
             },
           ],
         },
       ],
     },
   },
-};
-```
-
-## Defining Roles
-
-Roles group permissions together and set default behavior:
-
-```typescript
-{
-  name: "admin",
-  is_default: false,
-  implicit_allow: true,
-  permissions: [],
 }
 ```
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `name` | string | Unique role identifier |
-| `is_default` | boolean | Assigned to users without explicit role |
-| `implicit_allow` | boolean | Allow all permissions (security risk) |
-| `permissions` | array | List of permissions for this role |
-
-## Permission Effects
-
-Permissions define what's allowed with three effects:
-
-### Allow Effect
-
-Grants access when conditions are met:
+### Policy Structure
 
 ```typescript
 {
-  permission: "data.entity.read",
-  effect: "allow",
-  policies: [
-    {
-      condition: { entity: "posts" },
-      effect: "allow",
-    },
-  ],
+  description?: string,      // Human-readable (optional)
+  condition?: ObjectQuery,   // When policy applies
+  effect: "allow" | "deny" | "filter",
+  filter?: ObjectQuery,      // Row filter (for effect: "filter")
 }
 ```
 
-### Deny Effect
+### Policy Effects
 
-Revokes access (takes precedence over allow):
+| Effect | Purpose |
+|--------|---------|
+| `allow` | Grant when condition met |
+| `deny` | Block when condition met |
+| `filter` | Apply row-level filter to results |
 
-```typescript
-{
-  permission: "data.entity.delete",
-  effect: "deny",
-  policies: [
-    {
-      condition: { entity: "posts" },
-      effect: "deny",
-    },
-  ],
-}
-```
+### Condition Operators
 
-### Filter Effect
+| Operator | Description | Example |
+|----------|-------------|---------|
+| `$eq` | Equal | `{ entity: { $eq: "posts" } }` |
+| `$ne` | Not equal | `{ entity: { $ne: "users" } }` |
+| `$in` | In array | `{ entity: { $in: ["posts", "comments"] } }` |
+| `$nin` | Not in array | `{ entity: { $nin: ["users", "secrets"] } }` |
+| `$gt` | Greater than | `{ age: { $gt: 18 } }` |
+| `$gte` | Greater or equal | `{ level: { $gte: 5 } }` |
+| `$lt` | Less than | `{ count: { $lt: 100 } }` |
+| `$lte` | Less or equal | `{ priority: { $lte: 3 } }` |
 
-Filters data based on query criteria (row-level security):
+### Step 4: Variable Placeholders
 
-```typescript
-{
-  permission: "data.entity.read",
-  effect: "allow",
-  policies: [
-    {
-      condition: { entity: "posts" },
-      effect: "filter",
-      filter: { author_id: "@auth.user.id" },
-    },
-  ],
-}
-```
+Reference runtime context with `@variable`:
 
-## Common Patterns
+| Placeholder | Description |
+|-------------|-------------|
+| `@user.id` | Current user's ID |
+| `@user.email` | Current user's email |
+| `@user.role` | Current user's role |
+| `@entity` | Current entity name |
+| `@id` | Current record ID |
 
-### Public Read, Authenticated Write
+Example - user can only update their own profile:
 
 ```typescript
 {
-  auth: {
-    enabled: true,
-    roles: [
-      {
-        name: "guest",
-        is_default: true,
-        implicit_allow: false,
-        permissions: [
-          {
-            permission: "data.entity.read",
-            effect: "allow",
-            policies: [
-              {
-                condition: { entity: "posts" },
-                effect: "filter",
-                filter: { published: true },
-              },
-            ],
-          },
-        ],
-      },
-      {
-        name: "user",
-        is_default: false,
-        implicit_allow: false,
-        permissions: [
-          {
-            permission: "data.entity.create",
-            effect: "allow",
-            policies: [
-              {
-                condition: { entity: "posts" },
-                effect: "allow",
-              },
-            ],
-          },
-          {
-            permission: "data.entity.update",
-            effect: "allow",
-            policies: [
-              {
-                condition: { entity: "posts" },
-                effect: "filter",
-                filter: { author_id: "@auth.user.id" },
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  },
-}
-```
-
-### User-Own Data Pattern
-
-Users can only read and modify their own data:
-
-```typescript
-{
-  name: "user",
   permissions: [
-    {
-      permission: "data.entity.read",
-      effect: "allow",
-      policies: [
-        {
-          condition: { entity: "posts" },
-          effect: "filter",
-          filter: { author_id: "@auth.user.id" },
-        },
-      ],
-    },
     {
       permission: "data.entity.update",
       effect: "allow",
       policies: [
         {
-          condition: { entity: "posts" },
-          effect: "filter",
-          filter: { author_id: "@auth.user.id" },
-        },
-      ],
-    },
-    {
-      permission: "data.entity.delete",
-      effect: "allow",
-      policies: [
-        {
-          condition: { entity: "posts" },
-          effect: "filter",
-          filter: { author_id: "@auth.user.id" },
+          condition: { entity: "users", "@id": "@user.id" },
+          effect: "allow",
         },
       ],
     },
@@ -260,187 +209,350 @@ Users can only read and modify their own data:
 }
 ```
 
-### Multi-Tenant Isolation
+### Step 5: Entity-Specific Permissions
 
-Each tenant sees only their data:
+Grant different permissions per entity:
 
 ```typescript
 {
-  name: "user",
+  roles: {
+    blog_author: {
+      implicit_allow: false,
+      permissions: [
+        // Full CRUD on posts
+        {
+          permission: "data.entity.read",
+          effect: "allow",
+          policies: [{ condition: { entity: "posts" }, effect: "allow" }],
+        },
+        {
+          permission: "data.entity.create",
+          effect: "allow",
+          policies: [{ condition: { entity: "posts" }, effect: "allow" }],
+        },
+        {
+          permission: "data.entity.update",
+          effect: "allow",
+          policies: [{ condition: { entity: "posts" }, effect: "allow" }],
+        },
+        {
+          permission: "data.entity.delete",
+          effect: "allow",
+          policies: [{ condition: { entity: "posts" }, effect: "allow" }],
+        },
+
+        // Read-only on categories
+        {
+          permission: "data.entity.read",
+          effect: "allow",
+          policies: [{ condition: { entity: "categories" }, effect: "allow" }],
+        },
+      ],
+    },
+  },
+}
+```
+
+## Common Patterns
+
+### Read-Only Role
+
+```typescript
+{
+  roles: {
+    viewer: {
+      implicit_allow: false,
+      permissions: ["data.entity.read"],
+    },
+  },
+}
+```
+
+### CRUD Without Delete
+
+```typescript
+{
+  roles: {
+    contributor: {
+      implicit_allow: false,
+      permissions: [
+        "data.entity.read",
+        "data.entity.create",
+        "data.entity.update",
+        { permission: "data.entity.delete", effect: "deny" },
+      ],
+    },
+  },
+}
+```
+
+### Admin with Restricted Raw Access
+
+```typescript
+{
+  roles: {
+    admin: {
+      implicit_allow: true,  // Allow all by default
+      permissions: [
+        // But deny raw database access
+        { permission: "data.raw.query", effect: "deny" },
+        { permission: "data.raw.mutate", effect: "deny" },
+      ],
+    },
+  },
+}
+```
+
+### Multi-Entity Role
+
+```typescript
+{
+  roles: {
+    content_manager: {
+      implicit_allow: false,
+      permissions: [
+        // Content entities: full CRUD
+        {
+          permission: "data.entity.read",
+          effect: "allow",
+          policies: [{
+            condition: { entity: { $in: ["posts", "pages", "comments", "media"] } },
+            effect: "allow",
+          }],
+        },
+        {
+          permission: "data.entity.create",
+          effect: "allow",
+          policies: [{
+            condition: { entity: { $in: ["posts", "pages", "comments", "media"] } },
+            effect: "allow",
+          }],
+        },
+        {
+          permission: "data.entity.update",
+          effect: "allow",
+          policies: [{
+            condition: { entity: { $in: ["posts", "pages", "comments", "media"] } },
+            effect: "allow",
+          }],
+        },
+        {
+          permission: "data.entity.delete",
+          effect: "allow",
+          policies: [{
+            condition: { entity: { $in: ["posts", "pages", "comments"] } },  // No media delete
+            effect: "allow",
+          }],
+        },
+      ],
+    },
+  },
+}
+```
+
+### Deny Specific Entity
+
+```typescript
+{
+  roles: {
+    user: {
+      implicit_allow: false,
+      permissions: [
+        // Can read most entities
+        "data.entity.read",
+        // But never access secrets entity
+        {
+          permission: "data.entity.read",
+          effect: "deny",
+          policies: [{
+            condition: { entity: "secrets" },
+            effect: "deny",
+          }],
+        },
+      ],
+    },
+  },
+}
+```
+
+### Create Helper Function
+
+For complex role definitions:
+
+```typescript
+// helpers/permissions.ts
+type EntityPermission = "read" | "create" | "update" | "delete";
+
+function entityPermissions(
+  entities: string[],
+  actions: EntityPermission[]
+) {
+  const permMap: Record<EntityPermission, string> = {
+    read: "data.entity.read",
+    create: "data.entity.create",
+    update: "data.entity.update",
+    delete: "data.entity.delete",
+  };
+
+  return actions.map((action) => ({
+    permission: permMap[action],
+    effect: "allow" as const,
+    policies: [{
+      condition: { entity: { $in: entities } },
+      effect: "allow" as const,
+    }],
+  }));
+}
+
+// Usage
+{
+  roles: {
+    blog_author: {
+      implicit_allow: false,
+      permissions: [
+        ...entityPermissions(["posts", "comments"], ["read", "create", "update"]),
+        ...entityPermissions(["categories", "tags"], ["read"]),
+      ],
+    },
+  },
+}
+```
+
+## Verification
+
+Test permission assignments:
+
+**1. Login as user with role:**
+
+```bash
+curl -X POST http://localhost:7654/api/auth/password/login \
+  -H "Content-Type: application/json" \
+  -d '{"email": "editor@example.com", "password": "password123"}'
+```
+
+**2. Test allowed permission:**
+
+```bash
+curl http://localhost:7654/api/data/posts \
+  -H "Authorization: Bearer <token>"
+# Should return 200 with data
+```
+
+**3. Test denied permission:**
+
+```bash
+curl -X DELETE http://localhost:7654/api/data/posts/1 \
+  -H "Authorization: Bearer <token>"
+# Should return 403 Forbidden
+```
+
+**4. Test entity-specific permission:**
+
+```bash
+# If only posts/comments allowed:
+curl http://localhost:7654/api/data/users \
+  -H "Authorization: Bearer <token>"
+# Should return 403 if users entity not in allowed list
+```
+
+## Common Pitfalls
+
+### Permission Not Taking Effect
+
+**Problem:** Changed permissions but old behavior persists
+
+**Fix:** Restart server - role config is loaded at startup:
+
+```bash
+# Stop and restart
+bknd run
+```
+
+### Deny Not Overriding
+
+**Problem:** Deny effect not blocking access
+
+**Fix:** Check policy condition - deny only applies when condition matches:
+
+```typescript
+// WRONG - no condition, may not match
+{ permission: "data.entity.delete", effect: "deny" }
+
+// CORRECT - simple deny at permission level
+{
   permissions: [
-    {
-      permission: "data.entity.read",
-      effect: "allow",
-      policies: [
-        {
-          condition: { entity: "*" },
-          effect: "filter",
-          filter: { tenant_id: "@auth.user.tenant_id" },
-        },
-      ],
-    },
+    "data.entity.read",
+    "data.entity.create",
+    // Don't include delete at all
   ],
 }
 ```
 
-## Policy Variables
+### Entity Condition Not Matching
 
-Policies support dynamic variable substitution using `@variable` syntax:
+**Problem:** Entity-specific permission not working
 
-### Available Variables
-
-| Variable | Source | Example |
-|----------|--------|---------|
-| `@auth.user.id` | Authenticated user's ID | `@auth.user.id` |
-| `@auth.user.role` | User's role name | `@auth.user.role` |
-| `@auth.user.*` | Any user property | `@auth.user.email`, `@auth.user.tenant_id` |
-| `@ctx.*` | Guard config context | Custom context variables |
-
-### Example: User-Owned Data
+**Fix:** Verify entity name matches exactly:
 
 ```typescript
-filter: {
-  author_id: "@auth.user.id",
-}
+// WRONG - entity name case matters
+{ condition: { entity: "Posts" } }
+
+// CORRECT - use exact entity name
+{ condition: { entity: "posts" } }
 ```
 
-### Example: Time-Based Access
+### Multiple Policies Conflict
 
-```typescript
-filter: {
-  start_date: { $lte: "@ctx.now" },
-  end_date: { $gte: "@ctx.now" },
-}
-```
+**Problem:** Confusing behavior with multiple policies
 
-### Example: Multi-Tenant with Public Content
-
-```typescript
-filter: {
-  $or: [
-    { published: true },
-    { tenant_id: "@auth.user.tenant_id" },
-  ],
-}
-```
-
-## Data Permissions
-
-Bknd provides built-in permissions for data operations:
-
-| Permission | Description | Filterable |
-|------------|-------------|------------|
-| `data.entity.read` | Read entity data | Yes |
-| `data.entity.create` | Create new entity records | Yes |
-| `data.entity.update` | Update entity records | Yes |
-| `data.entity.delete` | Delete entity records | Yes |
-
-All data permissions support the `filter` effect for row-level security.
-
-## Schema Permissions
-
-Schema operations are protected by system permissions:
+**Fix:** Understand evaluation order - first matching policy wins:
 
 ```typescript
 {
-  permission: "system.schema.read",
-  effect: "allow",
-  policies: [],
+  policies: [
+    // More specific first
+    { condition: { entity: "secrets" }, effect: "deny" },
+    // General fallback last
+    { effect: "allow" },
+  ],
 }
 ```
 
-Protects:
-- `GET /api/system/schema` - Get current schema
-- `GET /api/data/schema` - Get data schema
+### Variable Placeholder Not Resolving
 
-## Testing Permissions
+**Problem:** `@user.id` appearing literally in filter
 
-Create test users to verify access control. Use HTTP API to test with auth context:
+**Fix:** Variables only work in `filter` and `condition` fields:
 
 ```typescript
-import { createApp } from "bknd";
-
-const app = createApp({
-  connection: { url: "file:test.db" },
-  config: {
-    data: schema.toJSON(),
-    auth: {
-      enabled: true,
-      jwt: {
-        secret: "test-secret",
-      },
-      roles: [
-        // Your roles configuration
-      ],
-    },
-  },
-});
-await app.build();
-
-// Create test data via mutator (bypasses permissions)
-await app.em.mutator("posts").insertMany([
-  { title: "Public Post", published: true },
-  { title: "Private Post", published: false },
-]);
-
-// Test as guest (no authentication)
-const guestResponse = await app.server.request("/api/data/entity/posts");
-const guestPosts = await guestResponse.json();
-console.log("Guest sees:", guestPosts.data); // Only published posts
-
-// Create authenticated user and test
-const user = await app.createUser({
-  email: "user@example.com",
-  password: "password123",
-});
-
-const token = await app.auth.login(user.email, "password123");
-
-// Test as authenticated user with JWT
-const userResponse = await app.server.request("/api/data/entity/posts", {
-  headers: {
-    Authorization: `Bearer ${token}`,
-  },
-});
-const userPosts = await userResponse.json();
-console.log("User sees:", userPosts.data);
+// CORRECT usage
+{
+  condition: { "@id": "@user.id" },  // Works
+  filter: { user_id: "@user.id" },   // Works
+}
 ```
 
 ## DOs and DON'Ts
 
 **DO:**
-- Use `implicit_allow: false` for production roles (require explicit permissions)
-- Use `filter` effect for row-level security
-- Test with both guest and authenticated contexts
-- Define `is_default` role for unauthenticated access
-- Use policy filters for complex access rules
+- Start with minimal permissions, add as needed
+- Use `$in` operator for multiple entities
+- Test each permission after adding
+- Use descriptive policy descriptions
+- Prefer explicit permissions over `implicit_allow`
 
 **DON'T:**
-- Use `implicit_allow: true` unless you truly need all access
-- Forget to set `is_default: true` for guest role
-- Mix allow and deny in the same permission (deny takes precedence)
-- Skip testing edge cases (what happens with null user context?)
-- Hardcode user IDs in filters (use `@user.id` instead)
+- Grant `data.raw.*` to non-admin roles (SQL injection risk)
+- Use `implicit_allow: true` with deny policies (confusing)
+- Forget to restart server after config changes
+- Mix simple strings and extended format unnecessarily
+- Over-complicate with too many nested policies
 
-## Common Issues
+## Related Skills
 
-**Guests can't access anything:**
-- Ensure `auth.enabled: true` (required for Guard)
-- Check `is_default: true` is set on a role
-- Verify `implicit_allow: false` (explicit permissions required)
-
-**Users accessing protected data:**
-- Check `filter` conditions match your data structure
-- Verify policy variables (`@auth.user.id`) are resolving correctly
-- Ensure no `implicit_allow: true` roles are assigned
-
-**Public endpoints returning 403:**
-- Verify guest role has the required permission
-- Check policy conditions are met
-- Debug with `console.log(ctx.get("auth"))` to see user context
-
-## Next Steps
-
-- **[Auth](auth)** - Configure authentication strategies
-- **[Data Schema](data-schema)** - Define your data model
-- **[Query](query)** - Learn the query system
+- **bknd-create-role** - Define new roles
+- **bknd-row-level-security** - Filter data by user ownership
+- **bknd-protect-endpoint** - Secure specific endpoints
+- **bknd-public-vs-auth** - Configure public vs authenticated access
+- **bknd-setup-auth** - Initialize authentication system

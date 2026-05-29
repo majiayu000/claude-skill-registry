@@ -1,6 +1,7 @@
 ---
 name: ln-774-healthcheck-setup
-description: Configures health check endpoints for Kubernetes readiness/liveness/startup
+description: "Configures health check endpoints for Kubernetes readiness/liveness/startup probes. Use when deploying to Kubernetes."
+license: MIT
 ---
 
 # ln-774-healthcheck-setup
@@ -258,6 +259,25 @@ startupProbe:
 - [ASP.NET Core Health Checks](https://learn.microsoft.com/aspnet/core/host-and-deploy/health-checks)
 - [Kubernetes Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
 - [AWS EKS Health Check Best Practices](https://docs.aws.amazon.com/eks/latest/best-practices/application.html)
+
+---
+
+## Critical Rules
+
+- **Three separate endpoints** — `/health/live`, `/health/ready`, `/health/startup` per Kubernetes best practices
+- **Liveness must not check dependencies** — only confirms app is alive (avoids cascade restarts)
+- **Readiness checks all dependencies** — DB, Redis, RabbitMQ connectivity verified
+- **Auto-detect dependencies from project files** — scan csproj/requirements for known packages
+- **Idempotent** — if `AddHealthChecks`/`MapHealthChecks` or `/health` route exists, return `status: "skipped"`
+
+## Definition of Done
+
+- [ ] Context Store received (stack, project root)
+- [ ] Dependencies detected (PostgreSQL, MySQL, Redis, RabbitMQ, MongoDB)
+- [ ] Health check endpoints generated (live, ready, startup) for detected stack
+- [ ] Kubernetes probe manifest snippet generated with proper timing parameters
+- [ ] Syntax validated (`dotnet build` or `py_compile`)
+- [ ] Structured JSON response returned to ln-770 coordinator
 
 ---
 

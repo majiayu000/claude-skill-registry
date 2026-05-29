@@ -1,6 +1,6 @@
 ---
 name: llama-cpp
-description: Secondary local LLM inference engine via llama.cpp. This skill should be used when running GGUF models directly, loading LoRA adapters for Kothar, benchmarking inference speed, or serving models via llama-server. Complements Ollama (which remains primary for RLAMA and general use).
+description: "Run GGUF models directly, load LoRA adapters, benchmark inference speed, and serve models via llama-server using llama.cpp. Includes Qwen 3.5 serve scripts (9B dense + F16, 35B MoE) with asymmetric KV cache and thinking mode. Secondary to Ollama; use when needing direct model control or LoRA hot-loading. Triggers on 'llama.cpp', 'GGUF', 'LoRA adapter', 'benchmark inference', 'llama-server'."
 user-invocable: false
 ---
 
@@ -51,22 +51,51 @@ curl http://localhost:8081/v1/chat/completions \
   -d '{"model":"default","messages":[{"role":"user","content":"Hello"}]}'
 ```
 
-### Serve Qwen3.5 (MoE-Optimized)
+### Serve Qwen3.5
 
-Dedicated server for Qwen3.5 models with asymmetric KV cache, jinja templates, and thinking mode:
+Dedicated servers for Qwen3.5 models with asymmetric KV cache, jinja templates, and thinking mode.
+
+**9B Dense (recommended for 24-36GB systems):**
 
 ```bash
-# Default: Qwen3.5-35B-A3B, thinking mode, 16K context
-~/.claude/skills/llama-cpp/scripts/llama_serve_qwen35.sh
+# Default: Qwen3.5-9B, thinking mode, 32K context
+~/.claude/skills/llama-cpp/scripts/llama_serve_qwen35_9b.sh
+
+# Full precision F16 (~17.9 GB, zero quantization loss)
+~/.claude/skills/llama-cpp/scripts/llama_serve_qwen35_9b.sh ~/models/Qwen3.5-9B-BF16.gguf
 
 # Non-thinking mode, shorter context
-THINK=0 CTX=8192 ~/.claude/skills/llama-cpp/scripts/llama_serve_qwen35.sh
-
-# Different model
-~/.claude/skills/llama-cpp/scripts/llama_serve_qwen35.sh qwen3.5:27b
+THINK=0 CTX=8192 ~/.claude/skills/llama-cpp/scripts/llama_serve_qwen35_9b.sh
 ```
 
-Memory-optimized for M4 Max 36GB: asymmetric KV cache (q8_0 keys + q4_0 values) saves ~60% KV memory vs FP16.
+**35B MoE (for 64+ GB systems):**
+
+```bash
+~/.claude/skills/llama-cpp/scripts/llama_serve_qwen35.sh  # defaults to qwen3.5:35b-a3b
+```
+
+9B Q4 uses ~6.6 GB (ample headroom); F16 uses ~17.9 GB (fits with 32K context on 36GB). Asymmetric KV cache (q8_0 keys + q4_0 values) saves ~60% KV memory vs FP16 cache.
+
+#### F16 (Full Precision) Mode
+
+For maximum quality (zero quantization loss), download and serve the BF16 GGUF:
+
+```bash
+# Download once (~17.9 GB)
+huggingface-cli download unsloth/Qwen3.5-9B-GGUF "Qwen3.5-9B-BF16.gguf" --local-dir ~/models
+
+# Serve F16
+~/.claude/skills/llama-cpp/scripts/llama_serve_qwen35_9b.sh ~/models/Qwen3.5-9B-BF16.gguf
+```
+
+F16 vs Q4 on M4 Max 36GB:
+
+| | Q4_K_M (default) | BF16 (F16) |
+|---|---|---|
+| Size | 6.6 GB | 17.9 GB |
+| Speed | ~38 tok/s | ~8-12 tok/s |
+| Quality | ~99.5% | 100% (reference) |
+| Max context | 262K | ~32K comfortable |
 
 ### Benchmark (llama.cpp vs Ollama)
 
@@ -123,7 +152,7 @@ Ollama (primary, port 11434)          llama.cpp (secondary, port 8081)
 Both share the same GGUF model files (~/.ollama/models/blobs/)
 ```
 
-## Subprocess Best Practices (Build 7940+)
+## Subprocess Best Practices (Build 8180+)
 
 When calling llama-cli from scripts or subprocesses:
 - **Always use `--single-turn`** — generates one response then exits (prevents interactive chat mode hang)
@@ -133,4 +162,3 @@ When calling llama-cli from scripts or subprocesses:
 - **Use `--flash-attn on`** (not bare `--flash-attn`) — now takes argument
 - **Timing stats** appear in stdout as `[ Prompt: X t/s | Generation: Y t/s ]` (via `--show-timings`, default: on)
 - **Redirect stderr to file, not variable** — spinner output can overflow bash variables
-

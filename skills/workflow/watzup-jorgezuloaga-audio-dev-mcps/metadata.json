@@ -1,0 +1,17 @@
+{
+  "name": "watzup",
+  "repo": "JorgeZuloaga/audio-dev-mcps",
+  "path": "mcp-rew/.claude/skills/watzup/SKILL.md",
+  "github_branch": "main",
+  "category": "workflow",
+  "source": "github.com/JorgeZuloaga/audio-dev-mcps",
+  "dir_name": "watzup-jorgezuloaga-audio-dev-mcps",
+  "downloaded_at": "2026-03-22T05:35:37.273939Z",
+  "author": "JorgeZuloaga",
+  "source_url": "https://github.com/JorgeZuloaga/audio-dev-mcps/blob/main/mcp-rew/.claude/skills/watzup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JorgeZuloaga/audio-dev-mcps/blob/main/mcp-rew/.claude/skills/watzup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

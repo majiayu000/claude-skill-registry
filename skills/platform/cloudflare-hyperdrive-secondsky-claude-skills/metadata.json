@@ -1,0 +1,18 @@
+{
+  "name": "cloudflare-hyperdrive",
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/cloudflare-hyperdrive/skills/cloudflare-hyperdrive/SKILL.md",
+  "source": "github.com/secondsky/claude-skills",
+  "downloaded_at": "2026-01-22T02:51:08.365763Z",
+  "dir_name": "cloudflare-hyperdrive-secondsky-claude-skills",
+  "category": "platform",
+  "github_path": "plugins/cloudflare-hyperdrive/skills/cloudflare-hyperdrive",
+  "github_branch": "main",
+  "author": "secondsky",
+  "source_url": "https://github.com/secondsky/claude-skills/blob/main/plugins/cloudflare-hyperdrive/skills/cloudflare-hyperdrive/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Claude Skills Maintainers",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

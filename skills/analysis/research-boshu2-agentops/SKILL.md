@@ -381,6 +381,8 @@ For onboarding-style research ("what does this do?", new repo orientation), foll
 
 ## Reference Documents
 
+- [references/research.feature](references/research.feature) — Executable spec: prior-art-first, explore-agent + iterative retrieval, cited .agents/research/ artifact, Gate-1 unless --auto (soc-qk4b)
+
 - [references/iterative-retrieval.md](references/iterative-retrieval.md)
 - [references/deep-research-mcp.md](references/deep-research-mcp.md)
 - [references/backend-background-tasks.md](references/backend-background-tasks.md)

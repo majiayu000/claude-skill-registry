@@ -1,8 +1,9 @@
 ---
-name: etl-pipeline
+name: "etl-pipeline"
 description: "Build automated ETL (Extract-Transform-Load) pipelines for construction data. Process PDFs, Excel, BIM exports. Generate reports, dashboards, and integrate with other systems. Orchestrate with Airflow or n8n."
+homepage: "https://datadrivenconstruction.io"
+metadata: {"openclaw": {"emoji": "⚙️", "os": ["darwin", "linux", "win32"], "homepage": "https://datadrivenconstruction.io", "requires": {"bins": ["python3"]}}}
 ---
-
 # ETL Pipeline for Construction Data
 
 ## Overview

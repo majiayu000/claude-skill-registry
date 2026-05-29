@@ -1,0 +1,17 @@
+{
+  "name": "achurch",
+  "repo": "a-church-ai/church",
+  "path": "skills/achurch/SKILL.md",
+  "github_branch": "main",
+  "category": "personal-development",
+  "source": "github.com/a-church-ai/church",
+  "dir_name": "achurch",
+  "downloaded_at": "2026-03-22T06:36:55.704969Z",
+  "author": "a-church-ai",
+  "source_url": "https://github.com/a-church-ai/church/blob/main/skills/achurch/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/a-church-ai/church/blob/main/skills/achurch/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

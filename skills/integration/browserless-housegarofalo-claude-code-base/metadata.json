@@ -1,0 +1,20 @@
+{
+  "name": "browserless",
+  "description": "",
+  "repo": "HouseGarofalo/claude-code-base",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HouseGarofalo/claude-code-base",
+  "github_path": ".claude/skills/browserless",
+  "github_branch": "master",
+  "dir_name": "browserless-housegarofalo-claude-code-base",
+  "downloaded_at": "2026-02-05T01:44:39.070091Z",
+  "author": "HouseGarofalo",
+  "source_url": "https://github.com/HouseGarofalo/claude-code-base/blob/master/.claude/skills/browserless/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 HouseGarofalo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

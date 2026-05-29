@@ -1,0 +1,16 @@
+{
+  "name": "ward-identity-checker",
+  "repo": "plurigrid/asi",
+  "path": "skills/ward-identity-checker/SKILL.md",
+  "source": "github.com/plurigrid/asi",
+  "downloaded_at": "2026-01-29T07:42:17.042406Z",
+  "dir_name": "ward-identity-checker",
+  "category": "ai-ml",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/ward-identity-checker/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

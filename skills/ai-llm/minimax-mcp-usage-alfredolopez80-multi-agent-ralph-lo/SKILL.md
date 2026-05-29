@@ -1,8 +1,17 @@
 ---
-# VERSION: 2.43.0
+# VERSION: 2.88.0
 name: minimax-mcp-usage
-description: "Optimal patterns for MiniMax MCP tools (web_search + understand_image)"
+description: "[DEPRECATED] Use /research skill with Zai MCP instead - Optimal patterns for MiniMax MCP tools"
 ---
+
+> **DEPRECATED (v2.88.0)**: This skill is deprecated. Use the `/research` skill instead, which leverages Zai MCP for comprehensive web search with better features:
+> - No API key required (free)
+> - Chinese content support (CSDN, Juejin, Linux.do)
+> - GitHub README extraction
+> - URL reader with markdown conversion
+> - Domain and recency filtering
+>
+> See: `.claude/skills/research/SKILL.md`
 
 **ultrathink** - Take a deep breath. We're not here to write code. We're here to make a dent in the universe.
 

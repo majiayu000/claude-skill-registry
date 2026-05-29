@@ -1,11 +1,9 @@
 ---
 name: ruby-pro
-description: Write idiomatic Ruby code with metaprogramming, Rails patterns, and
-  performance optimization. Specializes in Ruby on Rails, gem development, and
-  testing frameworks. Use PROACTIVELY for Ruby refactoring, optimization, or
-  complex Ruby features.
-metadata:
-  model: inherit
+description: Write idiomatic Ruby code with metaprogramming, Rails patterns, and performance optimization. Specializes in Ruby on Rails, gem development, and testing frameworks.
+risk: unknown
+source: community
+date_added: '2026-02-27'
 ---
 
 ## Use this skill when
@@ -54,3 +52,8 @@ You are a Ruby expert specializing in clean, maintainable, and performant Ruby c
 - Refactoring suggestions for legacy Ruby code
 
 Favor Ruby's expressiveness. Include Gemfile and .rubocop.yml when relevant.
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

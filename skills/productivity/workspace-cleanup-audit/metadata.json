@@ -1,0 +1,17 @@
+{
+  "name": "workspace-cleanup-audit",
+  "repo": "gaelic-ghost/productivity-skills",
+  "path": "workspace-cleanup-audit/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/gaelic-ghost/productivity-skills",
+  "dir_name": "workspace-cleanup-audit",
+  "downloaded_at": "2026-03-01T07:49:44.678572Z",
+  "author": "gaelic-ghost",
+  "source_url": "https://github.com/gaelic-ghost/productivity-skills/blob/main/workspace-cleanup-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gaelic-ghost/productivity-skills/blob/main/workspace-cleanup-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

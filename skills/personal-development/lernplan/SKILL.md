@@ -36,7 +36,6 @@ Der Pflichtstoffkatalog richtet sich nach dem jeweiligen Juristenausbildungsgese
 
 Für BGB-Schwerpunktplanung:
 - BGH, Urt. v. 25.11.2009 – VIII ZR 318/08, NJW 2010, 610 Rn. 12 — Leistungsstörungsrecht, dauerhaft examensrelevant
-- BGH, Urt. v. 19.09.2006 – XI ZR 204/04, BGHZ 169, 109 Rn. 20 ff. — Anspruchskonkurrenz
 
 Für Strafrecht-Schwerpunktplanung:
 - BGH, Beschl. v. 04.11.1988 – GSSt 1/88, BGHSt 36, 1 (Lederriemen) — Dauerklassiker mündliche Prüfung
@@ -234,3 +233,10 @@ Nach jeder Sitzung (Karteikarten, Drill, Klausur) wird ein Sitzungsbericht an `s
 Zeitschätzungen je Rechtsgebiet sind Orientierungswerte auf Basis typischer Examensgewichtungen — nicht Garantien. Hochprioritäre Themen richten sich nach dem Pflichtfachkatalog des Bundeslandes und der Examenspraxis der letzten Jahre. `[SCHÄTZUNG]` markiert alle Zeitangaben, die auf allgemeinen Erfahrungswerten beruhen.
 
 Hinweis: Dieser Lernplan ersetzt keine Beratung durch Seminarleiter, Repetitoren oder Examenscoaches, die den individuellen Kenntnisstand kennen.
+
+---
+
+<!-- AUDIT 27.05.2026 -->
+## Audit-Hinweis (27.05.2026)
+
+- **BGH XI ZR 204/04 (19.09.2006) entfernt.** Das Aktenzeichen und BGHZ 169, 109 sind korrekt, jedoch ist das behauptete Thema „Anspruchskonkurrenz (Rn. 20 ff.)“ eine Halluzination: Echtes Thema laut dejure.org ist Bankhaftung / Schrottimmobilien / HaustuerWiderruf (HWiG) / c.i.c. Der Eintrag wurde als WRONG_TOPIC eingestuft. Kein geeigneter Ersatz mit verifiziertem Aktenzeichen zur Anspruchskonkurrenz gefunden; Eintrag geloescht.

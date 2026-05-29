@@ -31,6 +31,7 @@ Ask the user or read from `copilot-instructions.md` and `docs/requirements/appli
 
 **Always use latest versions from npm**:
 - Fetch from npm: `npm view <package> version`
+- **Exception**: Component library packages use `npm show` (see component-library skill)
 - Apply caret prefix: `3.5.13` → `^3.5.13`
 - Use template: `reference/latest-versions.md`
 - Use recommended tools: Vitest + Pinia
@@ -80,6 +81,7 @@ Use: `reference/latest-versions.md` (fetches latest versions from npm)
 2. **Resolve "latest" entries**:
    - For all packages marked as `"latest"` in the configuration
    - Fetch current version from npm: `npm view <package> version`
+   - **Exception**: Component library packages use `npm show` instead of `npm view`
    - Example: `"vue": "latest"` → `npm view vue version` → `"vue": "^3.5.13"`
 
 3. **Apply resolved versions**:
@@ -129,7 +131,7 @@ Use this configuration to determine which versions to use:
     "vite": "latest",
     "typescript": "latest"
   },
-  
+
   "dependencies": {
     "vue-router": "latest",
     "vuex": "latest",
@@ -143,7 +145,7 @@ Use this configuration to determine which versions to use:
     "date-fns-tz": "latest",
     "@datadog/browser-rum": "latest"
   },
-  
+
   "devDependencies": {
     "@vitejs/plugin-vue": "latest",
     "@types/node": "latest",
@@ -153,6 +155,8 @@ Use this configuration to determine which versions to use:
     "vite-svg-loader": "latest",
     "vitest": "latest",
     "@vitest/ui": "latest",
+    "@vitest/coverage-v8": "latest",
+    "jsdom": "latest",
     "jest": "latest",
     "@vue/test-utils": "latest",
     "@vue/vue3-jest": "latest",
@@ -183,11 +187,11 @@ Use this configuration to determine which versions to use:
     "chokidar-cli": "latest",
     "onchange": "latest"
   },
-  
+
   "componentLibraries": {
     "@royalaholddelhaize/pdl-spectrum-component-library-web": "latest"
   },
-  
+
   "docker": {
     "node": "22-stable",
     "nginx": "alpine"
@@ -197,6 +201,7 @@ Use this configuration to determine which versions to use:
 
 **Version Strategies**:
 - `"latest"` - Fetch current version from npm registry (e.g., `npm view vue version`)
+- **Note**: Component library packages use `npm show` instead of `npm view`
 - `"^6.3.5"` - Pin to specific version with caret (allows minor/patch updates)
 - `"~6.3.5"` - Pin with tilde (allows patch updates only)
 - `"6.3.5"` - Exact version (no updates)
@@ -208,5 +213,3 @@ Use this configuration to determine which versions to use:
 - **Version Configuration**: See "Version Configuration (versions.json)" section above in this file
 - **Package Templates**: `reference/` directory (jest-vuex.md, vitest-pinia.md, latest-versions.md)
 - **Complete Examples**: `examples.md`
-
-

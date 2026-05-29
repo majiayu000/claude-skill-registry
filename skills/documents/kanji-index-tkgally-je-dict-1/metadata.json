@@ -1,0 +1,16 @@
+{
+  "name": "kanji-index",
+  "repo": "tkgally/je-dict-1",
+  "path": ".claude/skills/kanji-index/SKILL.md",
+  "source": "github.com/tkgally/je-dict-1",
+  "downloaded_at": "2026-01-29T07:30:49.246868Z",
+  "dir_name": "kanji-index-tkgally-je-dict-1",
+  "category": "documents",
+  "author": "tkgally",
+  "source_url": "https://github.com/tkgally/je-dict-1/blob/main/.claude/skills/kanji-index/SKILL.md",
+  "license": "CC0-1.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tkgally/je-dict-1/blob/main/.claude/skills/kanji-index/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

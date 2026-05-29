@@ -1,157 +1,200 @@
 ---
-name: break-filter-js-from-html
-description: Guidance for bypassing HTML/JavaScript sanitization filters in security testing contexts. This skill should be used when tasked with finding XSS filter bypasses, testing HTML sanitizers, or exploiting parser differentials between server-side filters and browsers. Applies to CTF challenges, authorized penetration testing, and security research involving HTML injection and JavaScript execution through sanitization bypasses.
+name: filter-js-from-html
+description: Guidance for removing JavaScript from HTML while preserving structure and formatting. This skill applies when filtering XSS vectors, sanitizing HTML content, removing script tags and event handlers, or building HTML sanitization tools. It covers comprehensive XSS vector identification, format-preserving transformations, and verification strategies.
 ---
 
-# Break Filter JS From HTML
+# Filter JavaScript from HTML
 
-## Overview
+This skill provides guidance for tasks involving the removal of JavaScript from HTML documents while preserving the original structure and formatting. These tasks require careful handling of multiple XSS attack vectors and strict format preservation.
 
-This skill provides a systematic methodology for analyzing and bypassing HTML sanitization filters that attempt to prevent JavaScript execution. The focus is on understanding filter mechanics deeply before attempting bypasses, and on robust verification of solutions.
+## Task Recognition
 
-## When to Use This Skill
+This skill applies to tasks that involve:
+- Removing JavaScript from HTML files
+- Building HTML sanitizers or filters
+- Stripping script tags and event handlers
+- Sanitizing user-generated HTML content
+- XSS prevention through HTML transformation
 
-- Analyzing HTML sanitization filters to find bypass vectors
-- CTF challenges involving XSS filter evasion
-- Authorized security testing of web application input sanitization
-- Understanding parser differentials between server-side parsers and browsers
+## Core Challenges
 
-## Phase 1: Environment and Filter Analysis
+### 1. Multiple JavaScript Injection Vectors
 
-Before attempting any bypass, thoroughly understand the test environment and filter mechanics.
+JavaScript can be embedded in HTML through numerous mechanisms:
 
-### Environment Reconnaissance
+| Vector Type | Examples |
+|-------------|----------|
+| Script elements | `<script>`, `<script src="...">` |
+| Event handlers | `onclick`, `onerror`, `onload`, `onmouseover`, etc. |
+| URL schemes | `javascript:`, `vbscript:`, `data:` |
+| Special elements | `<svg>`, `<math>`, `<iframe>`, `<object>`, `<embed>` |
+| Attribute contexts | `href`, `src`, `action`, `formaction`, `srcdoc`, `data` |
+| CSS-based | `expression()`, `-moz-binding`, `behavior` |
+| Meta redirects | `<meta http-equiv="refresh">` |
 
-1. **Identify all relevant file locations** - Locate the filter implementation, test harness, and any configuration files
-2. **Understand the test verification process** - Determine how success is measured (browser alert, DOM inspection, etc.)
-3. **Verify path dependencies** - Check if tests expect files at specific paths; create symlinks or copies if needed
-4. **Document the execution flow** - Trace how input flows from your payload through the filter to the browser
+### 2. Format Preservation Requirements
 
-### Filter Mechanism Analysis
+When a task specifies preserving original formatting:
+- Whitespace (spaces, tabs, newlines) must remain unchanged
+- HTML entity encoding must be preserved (e.g., `&amp;` stays as `&amp;`)
+- Attribute quote styles must be maintained
+- Self-closing tag format must be preserved exactly
+- Comments and CDATA sections may require preservation
 
-Examine the filter code to understand:
+### 3. Parser Bypass Techniques
 
-1. **Parsing library used** - Different parsers (BeautifulSoup, DOMPurify, html-sanitizer, etc.) have different behaviors
-2. **What elements are removed** - Script tags, iframes, objects, embeds, etc.
-3. **What attributes are stripped** - Event handlers (on*), href with javascript:, etc.
-4. **Processing order** - Does the filter run once or recursively? Are there multiple passes?
-5. **Output encoding** - Is the output HTML-encoded, or passed through raw?
+Attackers use various techniques to bypass naive filters:
+- Mixed/unusual casing: `<ScRiPt>`, `jAvAsCrIpT:`
+- Whitespace injection: `java script:`, `on\nclick`
+- Null bytes and control characters
+- HTML entity encoding within attributes
+- Malformed HTML that browsers still parse
+- Unicode variations and homoglyphs
 
-### Create a Filter Output Test
+## Recommended Approach
 
-Before running browser tests, create a quick method to see the filter's output directly:
+### Step 1: Understand the Complete Requirements
 
-```bash
-# Example: Check what the filter outputs for a given input
-echo '<script>alert(1)</script>' > /tmp/test.html && python filter.py /tmp/test.html && cat /tmp/test.html
+Before implementation, clarify:
+1. What constitutes "JavaScript" in this context (scripts only, or all executable content?)
+2. Format preservation requirements (exact byte preservation vs semantic preservation)
+3. How to handle edge cases (malformed HTML, unknown attributes)
+4. What elements/attributes are allowed vs blocked (allowlist vs blocklist)
+
+### Step 2: Choose an Appropriate Parser
+
+For Python implementations:
+- `html.parser.HTMLParser` - Built-in, handles most cases
+- `lxml` - Faster, better malformed HTML handling
+- `BeautifulSoup` - User-friendly but may alter formatting
+- `html5lib` - Most browser-accurate parsing
+
+**Critical Configuration:**
+- Disable character reference conversion to preserve entities (e.g., `convert_charrefs=False` for HTMLParser)
+- Configure parser to preserve whitespace
+
+### Step 3: Identify All Dangerous Patterns
+
+Reference `references/xss_vectors.md` for comprehensive patterns. Key categories:
+
+**Event Handler Attributes** - Block all `on*` attributes:
+```
+onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove,
+onmouseout, onmouseenter, onmouseleave, onkeydown, onkeyup, onkeypress,
+onfocus, onblur, onchange, onsubmit, onreset, onselect, oninput, onload,
+onerror, onabort, onbeforeunload, onunload, onresize, onscroll, etc.
 ```
 
-This allows rapid iteration without slow browser-based testing.
-
-## Phase 2: Bypass Strategy Selection
-
-Based on the filter analysis, select appropriate bypass strategies. Order these by likelihood of success given the specific filter.
-
-### Parser Differential Exploits
-
-Parser differentials occur when the server-side filter parses HTML differently than browsers. This is often the most effective approach for library-based filters.
-
-**Key concept:** The filter's parser may interpret certain HTML constructs differently than browsers, allowing tags that appear "safe" to the filter to execute JavaScript in browsers.
-
-Elements that commonly cause parser differentials:
-- `<noscript>` - Parsed differently with/without JavaScript enabled
-- `<template>` - Content may not be parsed as HTML by some libraries
-- `<textarea>` and `<title>` - RCDATA parsing contexts
-- Comments and CDATA sections
-- Malformed or nested tags
-
-### Encoding and Obfuscation
-
-- HTML entity encoding (decimal, hex, named entities)
-- Unicode normalization issues
-- Double encoding
-- Null bytes and other special characters
-- Case variations (if filter is case-sensitive)
-
-### DOM Clobbering and Indirect Execution
-
-- Creating elements that shadow built-in properties
-- Exploiting existing JavaScript that reads from DOM
-- CSS-based attacks (if JavaScript reads computed styles)
-
-### Lesser-Known Vectors
-
-- SVG with embedded scripts or event handlers
-- MathML elements
-- XML processing instructions (if XHTML mode)
-- Data URIs in appropriate contexts
-
-## Phase 3: Systematic Testing
-
-### Testing Methodology
-
-1. **Test filter output first** - Before browser testing, verify the filter passes your payload through
-2. **Use a minimal payload** - Start with the simplest possible XSS (`alert(1)`) before complex payloads
-3. **Document each attempt** - Record what was tried, filter output, and browser result
-4. **Understand failures** - When a technique fails, determine if it was filtered or if the browser didn't execute it
-
-### Efficient Iteration Pattern
-
+**Dangerous URL Attributes** - Check for `javascript:`, `vbscript:`, `data:` schemes in:
 ```
-1. Hypothesize a bypass based on filter analysis
-2. Test against filter directly (fast)
-3. If filter passes payload through, test in browser
-4. If browser doesn't execute, investigate why
-5. If filter blocks, analyze how and adjust approach
+href, src, action, formaction, poster, data, codebase, cite, background,
+profile, usemap, longdesc, dynsrc, lowsrc, srcdoc
 ```
 
-### Avoid These Inefficiencies
+**Dangerous Elements** - Consider blocking entirely:
+```
+script, iframe, object, embed, applet, base, meta (with http-equiv),
+link (with rel=import), svg (contains script), math
+```
 
-- Running slow browser tests for payloads that don't survive the filter
-- Moving to new techniques without understanding why previous ones failed
-- Trying browser-incompatible techniques (e.g., deprecated HTML features)
+### Step 4: Implement with Defense in Depth
 
-## Phase 4: Verification
+1. **Normalize before checking** - Lowercase, strip whitespace, decode entities
+2. **Use allowlists over blocklists** - Safer to specify what's allowed
+3. **Handle attribute values carefully** - Escape quotes, check for encoded payloads
+4. **Process nested contexts** - SVG/MathML have their own parsing rules
 
-### Robust Solution Verification
+### Step 5: Verify Format Preservation
 
-A single passing test is insufficient. Verify solutions thoroughly:
+To ensure exact format preservation:
+1. Compare byte-by-byte, not just visual output
+2. Use diff tools to identify any alterations
+3. Test with HTML containing:
+   - Various whitespace patterns
+   - Different quote styles
+   - HTML entities that should remain encoded
+   - Self-closing tags with/without spaces
 
-1. **Run multiple times** - Ensure the solution works consistently, not just once
-2. **Test filter idempotency** - Run the filtered output through the filter again to ensure it still works
-3. **Check for timing issues** - Browser-based tests may have race conditions
-4. **Verify in isolation** - Test the filtered HTML directly in a browser outside the test harness
-5. **Document exact steps** - Record the precise sequence to reproduce the successful bypass
+## Verification Strategy
 
-### Before Declaring Success
+### Test Categories
 
-- Confirm the test passes multiple consecutive runs
-- Verify no pending file modifications could invalidate the solution
-- Ensure the solution doesn't depend on test environment quirks
-- Check that the final state of all files is correct
+1. **Basic Functionality**
+   - Script tag removal
+   - Event handler removal
+   - JavaScript URL removal
+   - Safe content preservation
+
+2. **Format Preservation**
+   - Whitespace unchanged
+   - Entities preserved
+   - Quote styles maintained
+   - Self-closing tag format
+
+3. **XSS Bypass Attempts**
+   - Case variations
+   - Whitespace injection
+   - Entity encoding
+   - Malformed HTML
+   - See `references/xss_vectors.md` for comprehensive list
+
+4. **Error Handling**
+   - Empty files
+   - Invalid HTML
+   - Non-existent files
+   - Binary files
+   - Permission errors
+
+### Testing Best Practices
+
+- Create a single comprehensive test file covering all cases
+- Keep test files for regression testing (do not delete)
+- Use diff tools to verify exact output
+- Test with real-world malicious payloads
+- Verify the complete implementation after all edits
 
 ## Common Pitfalls
 
-### Environment Issues
+### 1. Incomplete Vector Coverage
+**Problem:** Only removing `<script>` tags while ignoring event handlers and URL schemes.
+**Solution:** Reference `references/xss_vectors.md` for all vectors.
 
-- **Path mismatches** - Test harnesses may expect files at specific locations different from where you found them
-- **Stale state** - Previous failed attempts may leave files in unexpected states
-- **Permission issues** - Filters may fail silently if they can't write output files
+### 2. Altering Format While Filtering
+**Problem:** Parser converts entities, changes whitespace, or modifies tag format.
+**Solution:** Configure parser to preserve format; verify with byte-level comparison.
 
-### Analysis Mistakes
+### 3. Case-Sensitive Matching
+**Problem:** Checking for `onclick` but missing `ONCLICK` or `OnClick`.
+**Solution:** Normalize to lowercase before comparison.
 
-- **Assuming filter behavior** - Always verify by reading the code; don't guess what's filtered
-- **Ignoring processing order** - A filter that removes `<script>` then `<iframe>` may be bypassed differently than one that does it in reverse
-- **Missing recursive filtering** - Some filters process until no more matches; others run once
+### 4. Ignoring Dangerous URL Schemes
+**Problem:** Only blocking `javascript:` while allowing `data:text/html,...`.
+**Solution:** Block all executable URL schemes in relevant attributes.
 
-### Testing Mistakes
+### 5. Keeping Style Attributes
+**Problem:** CSS can contain `expression()`, `-moz-binding`, or exfiltration URLs.
+**Solution:** Either sanitize style content or remove style attributes entirely.
 
-- **Browser-specific payloads** - Techniques that work in one browser may fail in another
-- **Deprecated HTML** - Many classic XSS vectors no longer work in modern browsers
-- **Premature optimization** - Getting a complex payload through is worthless if a simpler one works
+### 6. Incomplete Verification
+**Problem:** Deleting test files, not reading final code, minimal test coverage.
+**Solution:** Keep all tests, verify complete file contents, test adversarially.
 
-### Verification Mistakes
+### 7. Trusting Parser Output
+**Problem:** Assuming the parser handles all malformed HTML correctly.
+**Solution:** Test with intentionally malformed HTML; consider browser parsing quirks.
 
-- **Single test run** - Flaky tests can pass once then fail
-- **Modifying files after success** - Any changes after a successful test may invalidate it
-- **Ignoring test harness quirks** - The test may measure success differently than expected
+## Implementation Checklist
+
+Before considering the task complete:
+
+- [ ] All script elements removed
+- [ ] All event handler attributes removed (entire `on*` family)
+- [ ] All `javascript:`, `vbscript:`, `data:` URLs handled
+- [ ] Dangerous elements handled (`iframe`, `object`, `embed`, `svg/script`, etc.)
+- [ ] Format preservation verified with diff
+- [ ] Entity encoding preserved
+- [ ] Case-insensitive matching implemented
+- [ ] Whitespace in attributes handled
+- [ ] Error cases tested
+- [ ] Complete code verified (read final file)
+- [ ] Test files retained for verification

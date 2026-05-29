@@ -1,8 +1,9 @@
 ---
-name: bim-clash-detection
+name: "bim-clash-detection"
 description: "Detect and analyze geometric clashes in BIM models. Identify MEP, structural, and architectural conflicts before construction."
+homepage: "https://datadrivenconstruction.io"
+metadata: {"openclaw": {"emoji": "🔍", "os": ["darwin", "linux", "win32"], "homepage": "https://datadrivenconstruction.io", "requires": {"bins": ["python3"]}}}
 ---
-
 # BIM Clash Detection
 
 ## Business Case

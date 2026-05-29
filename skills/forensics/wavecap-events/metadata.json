@@ -1,0 +1,11 @@
+{
+  "name": "wavecap-events",
+  "repo": "TobiasWooldridge/WaveCap",
+  "path": ".claude/skills/wavecap-events/skill.md",
+  "source": "github.com/TobiasWooldridge/WaveCap",
+  "downloaded_at": "2026-01-22T02:11:28.095929Z",
+  "dir_name": "wavecap-events",
+  "category": "forensics",
+  "github_path": ".claude/skills/wavecap-events",
+  "github_branch": "main"
+}

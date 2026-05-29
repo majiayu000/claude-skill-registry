@@ -1,0 +1,16 @@
+{
+  "name": "doc-consistency",
+  "repo": "s-hiraoku/vscode-sidebar-terminal",
+  "path": ".claude/skills/doc-consistency/SKILL.md",
+  "source": "github.com/s-hiraoku/vscode-sidebar-terminal",
+  "downloaded_at": "2026-01-29T02:49:56.470980Z",
+  "dir_name": "doc-consistency",
+  "category": "quality",
+  "author": "s-hiraoku",
+  "source_url": "https://github.com/s-hiraoku/vscode-sidebar-terminal/blob/main/.claude/skills/doc-consistency/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024-2025 s-hiraoku",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

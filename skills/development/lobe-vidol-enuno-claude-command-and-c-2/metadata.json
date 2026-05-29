@@ -1,0 +1,18 @@
+{
+  "name": "lobe-vidol",
+  "description": "LobeVidol - Virtual idol creation platform with MMD dance support, VRM character customization, multi-provider LLM integration, and interactive 3D conversations",
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/lobe-vidol",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/enuno/claude-command-and-control",
+  "dir_name": "lobe-vidol-enuno-claude-command-and-c-2",
+  "author": "enuno",
+  "source_url": "https://github.com/enuno/claude-command-and-control/blob/main/skills-templates/lobe-vidol/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/enuno/claude-command-and-control/blob/main/skills-templates/lobe-vidol/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

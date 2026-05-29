@@ -1,0 +1,18 @@
+{
+  "name": "exa-search",
+  "description": "Use when searching for concepts, ideas, or similar content without exact keywords; when user asks \"find similar to...\", needs semantic discovery, research across perspectives, or explicitly mentions e",
+  "repo": "mhagrelius/dotfiles",
+  "path": ".claude/skills/exa-search",
+  "category": "ai-llm",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mhagrelius/dotfiles",
+  "dir_name": "exa-search-mhagrelius-dotfiles-2",
+  "author": "mhagrelius",
+  "source_url": "https://github.com/mhagrelius/dotfiles/blob/main/.claude/skills/exa-search/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mhagrelius/dotfiles/blob/main/.claude/skills/exa-search/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

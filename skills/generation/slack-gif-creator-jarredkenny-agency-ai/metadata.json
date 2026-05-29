@@ -1,0 +1,13 @@
+{
+  "name": "slack-gif-creator",
+  "description": "",
+  "repo": "jarredkenny/agency-ai",
+  "category": "generation",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jarredkenny/agency-ai",
+  "github_path": "roles/orchestrator/skills/slack-gif-creator",
+  "github_branch": "main",
+  "dir_name": "slack-gif-creator-jarredkenny-agency-ai",
+  "downloaded_at": "2026-02-05T01:45:07.779916Z"
+}

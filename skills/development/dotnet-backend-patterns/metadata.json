@@ -1,11 +1,11 @@
 {
   "name": "dotnet-backend-patterns",
   "repo": "wshobson/agents",
+  "path": "plugins/dotnet-contribution/skills/dotnet-backend-patterns/SKILL.md",
+  "source": "github.com/wshobson/agents",
+  "downloaded_at": "2026-01-22T03:51:08.632048Z",
+  "dir_name": "dotnet-backend-patterns",
   "category": "development",
-  "description": "Master C#/.NET backend development patterns for building robust APIs, MCP servers, and enterprise applications. Covers async/await, dependency injection, Entity Framework Core, Dapper, configuration, ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:55:34.044820Z",
   "github_path": "plugins/dotnet-contribution/skills/dotnet-backend-patterns",
-  "github_branch": "main",
-  "dir_name": "dotnet-backend-patterns"
+  "github_branch": "main"
 }

@@ -262,6 +262,15 @@ The SDK uses Server-Sent Events (SSE) with UIMessageChunk types:
 
 **Client-side tools** omit `execute` and are handled via `onToolCall` and `addToolOutput`.
 
+## Gates
+
+Use this **sequence**; treat a step as incomplete until the pass condition is true in code or UI (not “should work”).
+
+1. **Streaming route** — *Pass if:* the chat handler chains `convertToModelMessages` → `streamText` (or the SDK pattern your app standardizes) → `toUIMessageStreamResponse` (or equivalent stream response). *Fail if:* responses are plain JSON strings without the UI message stream contract.
+2. **Client ↔ route** — *Pass if:* `useChat` `id` / `DefaultChatTransport` `api` (and `prepareSendMessagesRequest` body) matches the route path and the body the server reads. *Fail if:* client posts to a different path or shape than the handler expects.
+3. **Tools closed loop** — *Pass if:* every tool in `tools` has server `execute` **or** `onToolCall` + `addToolOutput` with the same `toolCallId`, and the UI handles the `tool-*` part states you surface. *Fail if:* a tool name exists in `tools` but has no handler or missing states in the renderer.
+4. **Persistence (if any)** — *Pass if:* before saving, the server runs `validateUIMessages` (or stricter validation). *Fail if:* unvalidated client payloads are written to storage.
+
 ## Best Practices
 
 1. Always handle the `error` state and provide user feedback

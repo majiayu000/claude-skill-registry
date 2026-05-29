@@ -1,23 +1,36 @@
 ---
 name: pr-validate
-description: 'Validate PR scope and quality.'
+description: Validate PR scope and quality.
+practices:
+- continuous-integration
+- code-complete
+- pragmatic-programmer
+hexagonal_role: driving-adapter
+consumes:
+- validation
+produces:
+- result.json
+context_rel:
+- kind: customer-of
+  with: validation
 skill_api_version: 1
 context:
   window: fork
   intent:
     mode: task
   sections:
-    exclude: [HISTORY]
+    exclude:
+    - HISTORY
   intel_scope: topic
 license: MIT
 compatibility: Requires git, gh CLI
 metadata:
   author: AI Platform Team
-  version: "1.0.0"
+  version: 1.0.0
   tier: contribute
   internal: false
 allowed-tools: Read, Bash, Grep, Glob
-output_contract: "stdout: PR validation report"
+output_contract: 'stdout: PR validation report'
 ---
 # PR Validate Skill
 
@@ -195,3 +208,7 @@ git rebase origin/main
 | Scope creep detected | Extra files or mixed objectives | Split unrelated changes into follow-up PR |
 | Alignment check fails | Branch diverged from target expectations | Reconcile base branch and acceptance criteria |
 | Output unclear | Findings not prioritized | Sort findings by blocker vs non-blocker severity |
+
+## Reference Documents
+
+- [references/pr-validate.feature](references/pr-validate.feature) — Executable spec: isolation + upstream-alignment + scope-containment + quality-gate checks → submission-readiness verdict (soc-qk4b)

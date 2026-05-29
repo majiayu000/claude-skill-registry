@@ -393,6 +393,7 @@ The hook is non-blocking (always exits 0) and outputs warnings via JSON. See [re
 
 ## Reference Documents
 
+- [references/vibe.feature](references/vibe.feature) — Executable spec: council verdict (complexity/architecture/security/intent-fit), block-on-CRITICAL, verdict.json (soc-qk4b)
 - [references/complexity-analysis.md](references/complexity-analysis.md)
 - [references/deep-checks.md](references/deep-checks.md)
 - [references/post-verdict-actions.md](references/post-verdict-actions.md)

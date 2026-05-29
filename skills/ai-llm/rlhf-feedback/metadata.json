@@ -1,0 +1,16 @@
+{
+  "name": "rlhf-feedback",
+  "repo": "IgorGanapolsky/Random-Timer",
+  "path": ".claude/skills/rlhf-feedback/SKILL.md",
+  "source": "github.com/IgorGanapolsky/Random-Timer",
+  "downloaded_at": "2026-01-28T02:20:35.287424Z",
+  "dir_name": "rlhf-feedback",
+  "category": "ai-llm",
+  "author": "IgorGanapolsky",
+  "source_url": "https://github.com/IgorGanapolsky/Random-Timer/blob/main/.claude/skills/rlhf-feedback/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Igor Ganapolsky",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

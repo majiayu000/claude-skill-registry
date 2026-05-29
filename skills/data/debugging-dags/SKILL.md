@@ -7,15 +7,27 @@ description: Comprehensive DAG failure diagnosis and root cause analysis. Use fo
 
 You are a data engineer debugging a failed Airflow DAG. Follow this systematic approach to identify the root cause and provide actionable remediation.
 
+## Running the CLI
+
+Run all `af` commands using uvx (no installation required):
+
+```bash
+uvx --from astro-airflow-mcp af <command>
+```
+
+Throughout this document, `af` is shorthand for `uvx --from astro-airflow-mcp af`.
+
+---
+
 ## Step 1: Identify the Failure
 
 If a specific DAG was mentioned:
-- Use `diagnose_dag_run` with the dag_id and dag_run_id (if provided)
-- If no run_id specified, use `get_dag_stats` to find recent failures
+- Run `af runs diagnose <dag_id> <dag_run_id>` (if run_id is provided)
+- If no run_id specified, run `af dags stats` to find recent failures
 
 If no DAG was specified:
-- Use `get_system_health` to find recent failures across all DAGs
-- List any import errors (broken DAG files)
+- Run `af health` to find recent failures across all DAGs
+- Check for import errors with `af dags errors`
 - Show DAGs with recent failures
 - Ask which DAG to investigate further
 
@@ -23,7 +35,7 @@ If no DAG was specified:
 
 Once you have identified a failed task:
 
-1. **Get task logs** using `get_task_logs` with the dag_id, dag_run_id, and task_id
+1. **Get task logs** using `af tasks logs <dag_id> <dag_run_id> <task_id>`
 2. **Look for the actual exception** - scroll past the Airflow boilerplate to find the real error
 3. **Categorize the failure type**:
    - **Data issue**: Missing data, schema change, null values, constraint violation
@@ -41,7 +53,19 @@ Gather additional context to understand WHY this happened:
 4. **Historical pattern**: Is this a recurring failure? Check if same task failed before
 5. **Timing**: Did this fail at an unusual time? (resource contention, maintenance windows)
 
-Use `get_dag_run` to compare the failed run against recent successful runs.
+Use `af runs get <dag_id> <dag_run_id>` to compare the failed run against recent successful runs.
+
+### On Astro
+
+If you're running on Astro, these additional tools can help with diagnosis:
+
+- **Deployment activity log**: Check the Astro UI for recent deploys — a failed deploy or recent code change is often the cause of sudden failures
+- **Astro alerts**: Configure alerts in the Astro UI for proactive failure monitoring (DAG failure, task duration, SLA miss)
+- **Observability**: Use the Astro [observability dashboard](https://www.astronomer.io/docs/astro/airflow-alerts) to track DAG health trends and spot recurring issues
+
+### On OSS Airflow
+
+- **Airflow UI**: Use the DAGs page, Graph view, and task logs to inspect recent runs and failures
 
 ## Step 4: Provide Actionable Output
 
@@ -70,5 +94,6 @@ How to prevent this from happening again:
 
 ### Quick Commands
 Provide ready-to-use commands:
-- To rerun the failed task: `airflow tasks run <dag_id> <task_id> <execution_date>`
-- To clear and retry: `airflow tasks clear <dag_id> -t <task_id> -s <start_date> -e <end_date>`
+- To clear and rerun the entire DAG run: `af runs clear <dag_id> <run_id>`
+- To clear and rerun specific failed tasks: `af tasks clear <dag_id> <run_id> <task_ids> -D`
+- To delete a stuck or unwanted run: `af runs delete <dag_id> <run_id>`

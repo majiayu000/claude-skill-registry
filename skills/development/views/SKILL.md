@@ -1,5 +1,5 @@
 ---
-name: views
+name: plutonium-views
 description: Customizing Plutonium views - pages, forms, displays, tables, and layouts using Phlex
 ---
 
@@ -555,9 +555,9 @@ end
 
 ## Related Skills
 
-- `forms` - Custom form templates and field builders
-- `assets` - TailwindCSS and component theming
-- `definition-fields` - Field/input/display configuration
-- `definition-actions` - Action buttons and interactions
-- `controller` - Presentation hooks (`present_parent?`, etc.)
-- `portal` - Portal-specific customization
+- `plutonium-forms` - Custom form templates and field builders
+- `plutonium-assets` - TailwindCSS and component theming
+- `plutonium-definition-fields` - Field/input/display configuration
+- `plutonium-definition-actions` - Action buttons and interactions
+- `plutonium-controller` - Presentation hooks (`present_parent?`, etc.)
+- `plutonium-portal` - Portal-specific customization

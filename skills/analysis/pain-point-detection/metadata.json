@@ -1,0 +1,18 @@
+{
+  "name": "pain-point-detection",
+  "repo": "jeffrschneider/OpenHarness",
+  "path": "examples/sales-call-prep/package/skills/pain-point-detection/SKILL.md",
+  "source": "github.com/jeffrschneider/OpenHarness",
+  "downloaded_at": "2026-01-21T02:49:21.629205Z",
+  "dir_name": "pain-point-detection",
+  "category": "analysis",
+  "github_path": "examples/sales-call-prep/package/skills/pain-point-detection",
+  "github_branch": "main",
+  "author": "jeffrschneider",
+  "source_url": "https://github.com/jeffrschneider/OpenHarness/blob/main/examples/sales-call-prep/package/skills/pain-point-detection/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jeffrschneider/OpenHarness/blob/main/examples/sales-call-prep/package/skills/pain-point-detection/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

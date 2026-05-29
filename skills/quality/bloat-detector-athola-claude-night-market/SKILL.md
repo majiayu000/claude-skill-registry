@@ -1,36 +1,40 @@
 ---
 name: bloat-detector
-description: |
-  Detect codebase bloat through progressive analysis: dead code, duplication, complexity, documentation bloat.
-
-  Triggers: bloat detection, dead code, code cleanup, duplication, technical debt, unused code
-
-  Use when: context usage high, quarterly maintenance, pre-release cleanup, before refactoring
-  DO NOT use when: active feature development, time-sensitive bugs, codebase < 1000 lines
+description: 'Detect codebase bloat via progressive analysis: dead code, duplication, complexity, and doc bloat'
+version: 1.9.0
+alwaysApply: false
 category: conservation
-tags: [bloat, cleanup, static-analysis, technical-debt, optimization]
-tools: [Bash, Grep, Glob, Read]
+tags:
+- bloat
+- cleanup
+- static-analysis
+- technical-debt
+- optimization
+tools:
+- Bash
+- Grep
+- Glob
+- Read
 modules:
-  - quick-scan
-  - git-history-analysis
-  - code-bloat-patterns
-  - ai-generated-bloat
-  - documentation-bloat
-  - static-analysis-integration
-  - remediation-types
+- quick-scan
+- git-history-analysis
+- growth-analysis
+- code-bloat-patterns
+- ai-generated-bloat
+- documentation-bloat
+- static-analysis-integration
+- remediation-types
 progressive_loading: true
 estimated_tokens: 400
-version: 1.3.5
+usage_patterns:
+- "bloat"
+- "dead code"
+- "unused"
+- "cleanup"
+- "unbloat"
+- "prune"
+model_hint: standard
 ---
-## Table of Contents
-
-- [Bloat Categories](#bloat-categories)
-- [Quick Start](#quick-start)
-- [When to Use](#when-to-use)
-- [Confidence Levels](#confidence-levels)
-- [Prioritization](#prioritization)
-- [Module Architecture](#module-architecture)
-- [Safety](#safety)
 
 # Bloat Detector
 
@@ -66,7 +70,7 @@ Adds: Static analysis (Vulture/Knip), git churn hotspots, doc similarity
 ```
 Adds: Cross-file redundancy, dependency graphs, readability metrics
 
-## When to Use
+## When To Use
 
 | Do | Don't |
 |----|-------|
@@ -74,6 +78,12 @@ Adds: Cross-file redundancy, dependency graphs, readability metrics
 | Quarterly maintenance | Time-sensitive bugs |
 | Pre-release cleanup | Codebase < 1000 lines |
 | Before major refactoring | Tools unavailable (Tier 2/3) |
+
+## When NOT To Use
+
+- Active feature development
+- Time-sensitive bugs
+- Codebase < 1000 lines
 
 ## Confidence Levels
 
@@ -94,6 +104,7 @@ Priority = (Token_Savings × 0.4) + (Maintenance × 0.3) + (Confidence × 0.2) +
 **Tier 1** (always available):
 - See `modules/quick-scan.md` - Heuristics, no tools
 - See `modules/git-history-analysis.md` - Staleness, churn, vibe coding signatures
+- See `modules/growth-analysis.md` - Growth velocity, forecasts, threshold alerts
 
 **Tier 2** (optional tools):
 - See `modules/code-bloat-patterns.md` - Anti-patterns (God class, Lava flow)
@@ -103,6 +114,49 @@ Priority = (Token_Savings × 0.4) + (Maintenance × 0.3) + (Confidence × 0.2) +
 
 **Shared**:
 - See `modules/remediation-types.md` - DELETE, REFACTOR, CONSOLIDATE, ARCHIVE
+
+## Ecosystem-Level Detection
+
+Patterns that span plugin boundaries or manifest configuration,
+discovered through ecosystem-wide audits.
+
+### `alwaysApply` Accumulation
+
+Flag plugins with 3+ skills where `alwaysApply: true`.
+Each always-on skill injects its full text into every session,
+creating a baseline token floor before the user types anything.
+Sum the `estimated_tokens` fields to report total per-session cost.
+
+### Hook Registration Gaps
+
+Compare hooks declared in `plugin.json` or `openpackage.yml`
+against entries in `hooks.json`. A hook present in `hooks.json`
+but absent from the manifest is invisible to the plugin loader
+and cannot be audited, versioned, or disabled through normal
+plugin management.
+
+### Boilerplate Footer Detection
+
+Scan skill files for identical multi-line text blocks repeated
+across 10+ files (e.g., generic troubleshooting sections like
+"Command not found / Permission errors / Unexpected behavior").
+These are copy-paste artifacts that inflate token cost without
+adding skill-specific value.
+
+### ToC Bloat in Skills
+
+Skills loaded into model context gain nothing from HTML-style
+Tables of Contents. Detect `## Table of Contents` followed by
+bulleted anchor-link lists. These waste tokens since
+the model reads sequentially, not via hyperlinks.
+
+### Unregistered Module Subdirectories
+
+Compare files on disk in `skills/*/modules/` against the
+`modules:` list in each skill's SKILL.md frontmatter. Files
+that exist on disk but are not listed in the manifest are
+invisible to progressive loading and may be dead weight or
+missing from the load path.
 
 ## Auto-Exclusions
 

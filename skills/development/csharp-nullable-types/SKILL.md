@@ -1,694 +1,933 @@
 ---
 name: csharp-nullable-types
-description: Use when C# nullable reference types and value types for null safety, nullable annotations, and patterns for handling null values.
+description: Use when C# nullable reference types, null safety patterns, and migration strategies. Use when ensuring null safety in C# code.
 allowed-tools:
+  - Bash
   - Read
   - Write
   - Edit
-  - Grep
-  - Glob
-  - Bash
 ---
 
 # C# Nullable Types
 
-Nullable types in C# help prevent null reference exceptions, one of the most
-common programming errors. C# 8.0 introduced nullable reference types,
-providing compile-time null-safety checking. This skill covers nullable value
-types, nullable reference types, null-coalescing operators, and patterns for
-safe null handling.
+Master nullable reference types, null safety patterns, and migration strategies
+in C# 8+. This skill covers nullable value types, nullable reference types,
+null-safety annotations, operators, and best practices for writing null-safe code.
+
+## Nullable Reference Types (C# 8+)
+
+Nullable reference types provide compile-time null safety by distinguishing
+between nullable and non-nullable reference types.
+
+### Enabling Nullable Context
+
+```csharp
+// Project-wide in .csproj
+<PropertyGroup>
+    <Nullable>enable</Nullable>
+</PropertyGroup>
+
+// File-level directive
+#nullable enable
+
+public class User
+{
+    // Non-nullable - must be initialized
+    public string Name { get; set; } = string.Empty;
+
+    // Nullable - can be null
+    public string? MiddleName { get; set; }
+
+    // Non-nullable - must be set in constructor
+    public string Email { get; set; }
+
+    public User(string email)
+    {
+        Email = email;
+    }
+}
+
+// Disable for legacy code
+#nullable disable
+
+public class LegacyClass
+{
+    public string Name { get; set; } // Warning suppressed
+}
+
+#nullable restore // Return to project default
+```
+
+### Non-nullable and Nullable References
+
+```csharp
+#nullable enable
+
+public class PersonService
+{
+    // ✅ Non-nullable parameter and return type
+    public string FormatName(string firstName, string lastName)
+    {
+        return $"{firstName} {lastName}";
+    }
+
+    // ✅ Nullable parameter
+    public string FormatNameWithMiddle(string firstName, string? middleName, string lastName)
+    {
+        if (middleName != null)
+        {
+            return $"{firstName} {middleName} {lastName}";
+        }
+        return $"{firstName} {lastName}";
+    }
+
+    // ✅ Nullable return type
+    public string? FindUserEmail(int userId)
+    {
+        var user = _repository.Find(userId);
+        return user?.Email; // May return null
+    }
+
+    // ⚠️ Warning - possible null reference
+    public string GetUpperName(string? name)
+    {
+        // CS8602: Possible null reference
+        return name.ToUpper();
+    }
+
+    // ✅ Fixed with null check
+    public string GetUpperNameSafe(string? name)
+    {
+        if (name == null)
+        {
+            throw new ArgumentNullException(nameof(name));
+        }
+        return name.ToUpper();
+    }
+}
+```
 
 ## Nullable Value Types
 
-Value types (int, double, bool, struct) normally cannot be null. Nullable
-value types enable representing "no value" state.
+Value types can be made nullable using Nullable&lt;T&gt; or the ? syntax.
+
+### Nullable&lt;T&gt; and T?
 
 ```csharp
-using System;
-
 public class NullableValueTypes
 {
-    // Declaration
-    public void Declaration()
+    // Nullable value types
+    public int? Age { get; set; }
+    public DateTime? BirthDate { get; set; }
+    public decimal? Salary { get; set; }
+    public bool? IsActive { get; set; }
+
+    // Equivalent to:
+    public Nullable<int> AgeVerbose { get; set; }
+
+    public void WorkWithNullables()
     {
-        int? nullableInt = null;
-        int? anotherInt = 42;
+        int? value = null;
 
-        double? nullableDouble = null;
-        bool? nullableBool = true;
-
-        // Generic syntax (equivalent)
-        Nullable<int> genericNullable = null;
-    }
-
-    // Checking for null
-    public void NullChecking()
-    {
-        int? value = GetNullableValue();
-
-        // HasValue property
+        // HasValue and Value properties
         if (value.HasValue)
         {
             int actualValue = value.Value;
             Console.WriteLine(actualValue);
         }
 
-        // Comparison with null
-        if (value != null)
-        {
-            Console.WriteLine(value.Value);
-        }
-
-        // Null-conditional operator
-        int? doubled = value?.GetHashCode();
-    }
-
-    // Getting values
-    public void GettingValues()
-    {
-        int? value = 42;
-
-        // Value property (throws if null)
-        int val1 = value.Value;
-
         // GetValueOrDefault
-        int val2 = value.GetValueOrDefault();  // Returns 0 if null
-        int val3 = value.GetValueOrDefault(10); // Returns 10 if null
+        int result1 = value.GetValueOrDefault(); // 0
+        int result2 = value.GetValueOrDefault(42); // 42
 
-        // Null-coalescing operator
-        int val4 = value ?? 0;  // Returns 0 if null
+        // Null coalescing
+        int result3 = value ?? 100; // 100
     }
 
-    // Nullable in expressions
-    public void NullableExpressions()
+    public int CalculateAge(DateTime? birthDate)
     {
-        int? a = 10;
-        int? b = 20;
-        int? c = null;
+        // ⚠️ Warning - possible null reference
+        // return DateTime.Now.Year - birthDate.Value.Year;
 
-        // Arithmetic (null if any operand is null)
-        int? sum1 = a + b;  // 30
-        int? sum2 = a + c;  // null
-
-        // Comparison
-        bool? equal = a == b;  // false
-        bool? greater = a > c;  // null
-
-        // Logical operators
-        bool? and = (a > 5) & (c > 5);  // null
-    }
-
-    // Nullable structs
-    public struct Point
-    {
-        public int X { get; set; }
-        public int Y { get; set; }
-    }
-
-    public void NullableStructs()
-    {
-        Point? point = null;
-
-        if (point.HasValue)
+        // ✅ Correct with null check
+        if (!birthDate.HasValue)
         {
-            int x = point.Value.X;
-            int y = point.Value.Y;
+            throw new ArgumentException("Birth date is required", nameof(birthDate));
         }
 
-        // Null-conditional with structs
-        int? x = point?.X;
+        return DateTime.Now.Year - birthDate.Value.Year;
     }
-
-    private int? GetNullableValue() => null;
 }
 ```
 
-## Nullable Reference Types
-
-C# 8.0+ provides nullable reference types, enabling compile-time null-safety
-for reference types.
+### Nullable Value Type Operations
 
 ```csharp
-#nullable enable
-
-using System;
-using System.Collections.Generic;
-
-public class NullableReferenceTypes
+public class NullableOperations
 {
-    // Non-nullable by default
-    public string Name { get; set; } = string.Empty;
-
-    // Explicitly nullable
-    public string? MiddleName { get; set; }
-
-    // Constructor
-    public NullableReferenceTypes(string name, string? middleName = null)
+    public void ArithmeticOperations()
     {
-        Name = name;  // Must be non-null
-        MiddleName = middleName;  // Can be null
+        int? a = 5;
+        int? b = 10;
+        int? c = null;
+
+        // Arithmetic with nullables
+        int? sum = a + b; // 15
+        int? nullSum = a + c; // null
+
+        // Comparison
+        bool? equal = a == b; // false
+        bool? nullEqual = a == c; // null (neither true nor false)
+
+        // Lifted operators
+        int? result = (a > 0) ? a * 2 : null;
     }
 
-    // Method with nullable parameters
-    public string FormatName(string firstName, string? middleName,
-                            string lastName)
+    public decimal? CalculateDiscount(decimal? price, decimal? discountPercent)
     {
-        // Compiler warns if middleName used without null check
-        if (middleName != null)
+        // If either is null, result is null
+        return price * (1 - discountPercent / 100);
+    }
+
+    public void BooleanLogic()
+    {
+        bool? a = true;
+        bool? b = false;
+        bool? c = null;
+
+        // Three-valued logic
+        bool? and1 = a & b;  // false
+        bool? and2 = a & c;  // null
+        bool? and3 = b & c;  // false (false & anything = false)
+
+        bool? or1 = a | b;   // true
+        bool? or2 = a | c;   // true (true | anything = true)
+        bool? or3 = b | c;   // null
+    }
+}
+```
+
+## Null Safety Annotations
+
+Attributes that provide additional null-safety information to the compiler.
+
+### Common Annotations
+
+```csharp
+using System.Diagnostics.CodeAnalysis;
+
+public class AnnotationExamples
+{
+    // [NotNull] - Parameter won't be null when method returns normally
+    public void ProcessUser([NotNull] User? user)
+    {
+        if (user == null)
         {
-            return $"{firstName} {middleName} {lastName}";
+            throw new ArgumentNullException(nameof(user));
         }
 
-        return $"{firstName} {lastName}";
+        // Compiler knows user is not null here
+        Console.WriteLine(user.Name);
     }
 
-    // Nullable return type
-    public string? FindPerson(int id)
+    // [MaybeNull] - Return value may be null even if type is non-nullable
+    [return: MaybeNull]
+    public T GetValueOrDefault<T>(string key)
     {
-        // May return null
-        return id > 0 ? "Found" : null;
-    }
-
-    // Collections of nullable types
-    public void CollectionExamples()
-    {
-        // List of non-null strings
-        List<string> names = new List<string> { "Alice", "Bob" };
-
-        // List of nullable strings
-        List<string?> nullableNames = new List<string?>
+        if (_dictionary.TryGetValue(key, out var value))
         {
-            "Alice", null, "Charlie"
-        };
-
-        // Dictionary with nullable values
-        Dictionary<string, string?> dict =
-            new Dictionary<string, string?>
-            {
-                { "key1", "value1" },
-                { "key2", null }
-            };
+            return value;
+        }
+        return default; // May be null for reference types
     }
 
-    // Nullable generic types
-    public T? FindById<T>(int id) where T : class
+    // [NotNullWhen] - Parameter is not null when method returns specified bool
+    public bool TryGetUser(int id, [NotNullWhen(true)] out User? user)
     {
-        // Returns null if not found
-        return default(T);
+        user = _repository.Find(id);
+        return user != null;
     }
 
-    // Not-null assertion operator
-    public void NotNullAssertion()
+    public void UseUser(int id)
     {
-        string? maybeName = GetName();
-
-        // Tell compiler this won't be null (use with caution!)
-        string name = maybeName!;
+        if (TryGetUser(id, out var user))
+        {
+            // Compiler knows user is not null here
+            Console.WriteLine(user.Name);
+        }
     }
 
-    private string? GetName() => null;
+    // [NotNullIfNotNull] - Return value is not null if parameter
+    // is not null
+    [return: NotNullIfNotNull(nameof(value))]
+    public string? ProcessString(string? value)
+    {
+        return value?.Trim().ToUpperInvariant();
+    }
+
+    // [DoesNotReturn] - Method never returns normally
+    [DoesNotReturn]
+    public void ThrowError(string message)
+    {
+        throw new InvalidOperationException(message);
+    }
+
+    public void ValidateUser(User? user)
+    {
+        if (user == null)
+        {
+            ThrowError("User is required");
+        }
+
+        // Compiler knows this is unreachable if user is null
+        Console.WriteLine(user.Name);
+    }
+}
+```
+
+### MemberNotNull Annotation
+
+```csharp
+public class InitializationExample
+{
+    private string _name;
+    private string _email;
+
+    public InitializationExample()
+    {
+        Initialize("Default", "default@example.com");
+    }
+
+    // Tells compiler these members are initialized
+    [MemberNotNull(nameof(_name), nameof(_email))]
+    private void Initialize(string name, string email)
+    {
+        _name = name;
+        _email = email;
+    }
+
+    [MemberNotNull(nameof(_name), nameof(_email))]
+    public void Reset()
+    {
+        _name = string.Empty;
+        _email = string.Empty;
+    }
+}
+```
+
+## Null-Forgiving Operator
+
+The null-forgiving operator (!) suppresses nullable warnings when you know
+better than the compiler.
+
+### Using the ! Operator
+
+```csharp
+public class NullForgivingExamples
+{
+    private User? _currentUser;
+
+    public void Initialize()
+    {
+        _currentUser = LoadUser();
+    }
+
+    public void ProcessCurrentUser()
+    {
+        // ⚠️ Warning: Possible null reference
+        // Console.WriteLine(_currentUser.Name);
+
+        // ✅ Use ! when you know it's not null
+        Console.WriteLine(_currentUser!.Name);
+    }
+
+    // ⚠️ Use sparingly and carefully
+    public string GetUserName()
+    {
+        // Only use ! if you're absolutely sure
+        return _currentUser!.Name;
+    }
+
+    // ✅ Better: check explicitly
+    public string GetUserNameSafe()
+    {
+        if (_currentUser == null)
+        {
+            throw new InvalidOperationException("User not initialized");
+        }
+
+        return _currentUser.Name;
+    }
+
+    // Common pattern with dictionary
+    public void DictionaryPattern()
+    {
+        var dict = new Dictionary<string, User>();
+        dict["key"] = new User("test@example.com");
+
+        // You know key exists
+        var user = dict["key"];
+        Console.WriteLine(user.Email); // No warning needed
+
+        // But with TryGetValue
+        if (dict.TryGetValue("key", out var foundUser))
+        {
+            // foundUser is User?, but you know it's not null here
+            Console.WriteLine(foundUser!.Email); // Or better: check in if
+        }
+    }
+}
+```
+
+### When NOT to Use the Null-Forgiving Operator
+
+```csharp
+public class BadNullForgiving
+{
+    // ❌ BAD - Hiding real problems
+    public void ProcessData(string? input)
+    {
+        var result = input!.ToUpper(); // Will crash if input is null
+    }
+
+    // ✅ GOOD - Proper null handling
+    public void ProcessDataSafe(string? input)
+    {
+        if (input == null)
+        {
+            throw new ArgumentNullException(nameof(input));
+        }
+
+        var result = input.ToUpper();
+    }
+
+    // ❌ BAD - False confidence
+    public User GetUser(int id)
+    {
+        return _repository.Find(id)!; // May actually be null!
+    }
+
+    // ✅ GOOD - Handle null case
+    public User GetUserSafe(int id)
+    {
+        return _repository.Find(id)
+            ?? throw new KeyNotFoundException($"User {id} not found");
+    }
+}
+```
+
+## Null-Conditional Operators
+
+Safe navigation operators for accessing members that might be null.
+
+### ?. and ?[] Operators
+
+```csharp
+public class NullConditionalExamples
+{
+    public void SafeNavigation()
+    {
+        User? user = GetUser();
+
+        // ✅ Null-conditional member access
+        string? name = user?.Name; // null if user is null
+
+        // ✅ Chaining null-conditional operators
+        string? city = user?.Address?.City;
+
+        // ✅ Null-conditional indexing
+        char? firstChar = user?.Name?[0];
+
+        // ✅ Combining with method calls
+        int? nameLength = user?.Name?.Length;
+
+        // ✅ With null coalescing
+        string displayName = user?.Name ?? "Guest";
+
+        // ✅ Null-conditional with invocation
+        int? result = user?.CalculateAge();
+    }
+
+    public void ArrayAndCollectionAccess()
+    {
+        int[]? numbers = GetNumbers();
+
+        // ✅ Null-conditional array access
+        int? first = numbers?[0];
+
+        // ✅ Null-conditional with LINQ
+        int? max = numbers?.Max();
+
+        // ✅ Dictionary access
+        Dictionary<string, User>? users = GetUsers();
+        User? user = users?["key"];
+    }
+
+    public void InvocationExamples()
+    {
+        Action? callback = GetCallback();
+
+        // ✅ Null-conditional invocation
+        callback?.Invoke();
+
+        // Equivalent to:
+        if (callback != null)
+        {
+            callback.Invoke();
+        }
+
+        // ✅ With events
+        EventHandler? handler = SomeEvent;
+        handler?.Invoke(this, EventArgs.Empty);
+    }
 }
 ```
 
 ## Null-Coalescing Operators
 
-Null-coalescing operators provide concise null handling.
+The ?? and ??= operators provide default values for null expressions.
+
+### ?? Operator
 
 ```csharp
-#nullable enable
-
-using System;
-using System.Collections.Generic;
-
-public class NullCoalescingOperators
+public class NullCoalescingExamples
 {
-    // Null-coalescing operator (??)
-    public string GetDisplayName(string? name)
+    public void BasicCoalescing()
     {
-        // Returns "Unknown" if name is null
-        return name ?? "Unknown";
+        string? name = GetName();
+
+        // ✅ Provide default if null
+        string displayName = name ?? "Unknown";
+
+        // ✅ Chain multiple coalescing
+        string result = GetPrimaryName()
+            ?? GetSecondaryName()
+            ?? GetDefaultName()
+            ?? "Fallback";
+
+        // ✅ With value types
+        int? nullableValue = GetValue();
+        int value = nullableValue ?? 0;
+
+        // ✅ Combine with null-conditional
+        int length = user?.Name?.Length ?? 0;
     }
 
-    // Chaining
-    public string GetFirstNonNull(string? a, string? b, string? c)
+    public User GetUserOrDefault(int id)
     {
-        return a ?? b ?? c ?? "Default";
+        // ✅ Return default if null
+        return _repository.Find(id) ?? new User("guest@example.com");
     }
 
-    // Null-coalescing assignment (??=)
-    public void NullCoalescingAssignment()
+    public string GetConfigValue(string key, string defaultValue)
     {
-        string? name = null;
-
-        // Assign only if null
-        name ??= "Default Name";  // name is now "Default Name"
-
-        name ??= "Another Name";  // name stays "Default Name"
+        // ✅ Configuration pattern
+        return _config[key] ?? defaultValue;
     }
+}
+```
 
-    // With collections
-    public void CollectionCoalescing()
-    {
-        List<string>? list = null;
+### ??= Operator (Null-Coalescing Assignment)
 
-        // Initialize if null
-        list ??= new List<string>();
-
-        // Add items
-        list.Add("item");
-    }
-
-    // In property initialization
+```csharp
+public class NullCoalescingAssignment
+{
+    private User? _cachedUser;
     private List<string>? _items;
-    public List<string> Items => _items ??= new List<string>();
 
-    // Complex expressions
-    public string ComplexCoalescing(User? user)
+    public User GetUser(int id)
     {
-        // Multiple levels
-        return user?.Profile?.DisplayName ??
-               user?.Email ??
-               "Guest";
+        // ✅ Lazy initialization pattern
+        _cachedUser ??= LoadUser(id);
+        return _cachedUser;
     }
 
-    public class User
+    public void EnsureListInitialized()
     {
-        public Profile? Profile { get; set; }
-        public string? Email { get; set; }
+        // ✅ Ensure collection is initialized
+        _items ??= new List<string>();
+        _items.Add("item");
     }
 
-    public class Profile
+    public void UpdateNameIfNull(User user)
     {
-        public string? DisplayName { get; set; }
+        // ✅ Set only if currently null
+        user.MiddleName ??= "N/A";
+    }
+
+    // Before C# 8, you would write:
+    public void OldWay()
+    {
+        if (_items == null)
+        {
+            _items = new List<string>();
+        }
+
+        // Or:
+        _items = _items ?? new List<string>();
     }
 }
 ```
 
-## Null-Conditional Operator
+## Pattern Matching with Null
 
-The null-conditional operator safely accesses members and calls methods on
-potentially null references.
+C# 9+ pattern matching enhancements for null checking.
 
-```csharp
-#nullable enable
-
-using System;
-using System.Collections.Generic;
-
-public class NullConditionalOperator
-{
-    public class Person
-    {
-        public string Name { get; set; } = string.Empty;
-        public Address? Address { get; set; }
-        public List<string>? PhoneNumbers { get; set; }
-    }
-
-    public class Address
-    {
-        public string City { get; set; } = string.Empty;
-        public string? PostalCode { get; set; }
-    }
-
-    // Basic null-conditional
-    public string? GetCity(Person? person)
-    {
-        // Returns null if person or Address is null
-        return person?.Address?.City;
-    }
-
-    // With indexers
-    public string? GetFirstPhone(Person? person)
-    {
-        // Returns null if person, PhoneNumbers is null, or empty
-        return person?.PhoneNumbers?[0];
-    }
-
-    // With method calls
-    public int? GetNameLength(Person? person)
-    {
-        return person?.Name.Length;
-    }
-
-    // Combining operators
-    public string GetCityOrDefault(Person? person)
-    {
-        return person?.Address?.City ?? "Unknown";
-    }
-
-    // With arrays
-    public string? GetFirstItem(string[]? items)
-    {
-        return items?[0];
-    }
-
-    // With delegates
-    public void InvokeCallback(Action? callback)
-    {
-        callback?.Invoke();
-    }
-
-    // With events
-    public event EventHandler? DataChanged;
-
-    public void OnDataChanged()
-    {
-        DataChanged?.Invoke(this, EventArgs.Empty);
-    }
-
-    // Chaining multiple operations
-    public void ChainedOperations(Person? person)
-    {
-        string? result = person?
-            .Address?
-            .City
-            .ToUpper()
-            .Substring(0, 3);
-    }
-}
-```
-
-## Null Handling Patterns
-
-Common patterns for safely handling null values.
+### Null Pattern Matching
 
 ```csharp
-#nullable enable
-
-using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-
-public class NullHandlingPatterns
+public class PatternMatchingExamples
 {
-    // Null object pattern
-    public interface ILogger
+    public void IsPatterns()
     {
-        void Log(string message);
-    }
+        object? obj = GetObject();
 
-    public class ConsoleLogger : ILogger
-    {
-        public void Log(string message) =>
-            Console.WriteLine(message);
-    }
-
-    public class NullLogger : ILogger
-    {
-        public void Log(string message) { }
-    }
-
-    // Guard clauses
-    public void ProcessData(string? data)
-    {
-        if (data == null)
+        // ✅ Check for null
+        if (obj is null)
         {
-            throw new ArgumentNullException(nameof(data));
+            Console.WriteLine("Object is null");
         }
 
-        // data is non-null here
-        Console.WriteLine(data.Length);
-    }
-
-    // Early return
-    public string FormatData(string? data)
-    {
-        if (data == null) return string.Empty;
-
-        return data.ToUpper();
-    }
-
-    // TryGet pattern
-    public bool TryGetValue(string key, [NotNullWhen(true)] out string? value)
-    {
-        // Simulate lookup
-        if (key == "valid")
+        // ✅ Check for not null
+        if (obj is not null)
         {
-            value = "Found";
-            return true;
+            Console.WriteLine("Object is not null");
         }
 
-        value = null;
-        return false;
-    }
-
-    public void UseTryGet()
-    {
-        if (TryGetValue("valid", out string? result))
+        // ✅ Type pattern with null check
+        if (obj is string s)
         {
-            // result is guaranteed non-null here
-            Console.WriteLine(result.Length);
+            // s is not null here
+            Console.WriteLine(s.ToUpper());
+        }
+
+        // ✅ Property pattern
+        if (obj is User { Name: not null } user)
+        {
+            Console.WriteLine(user.Name);
         }
     }
 
-    // MemberNotNull attribute
-    private string? _cachedValue;
-
-    [MemberNotNull(nameof(_cachedValue))]
-    private void EnsureCacheLoaded()
+    public string GetDescription(User? user) => user switch
     {
-        _cachedValue ??= LoadValue();
-    }
+        null => "No user",
+        { Name: null } => "User without name",
+        { Name: var name } => $"User: {name}"
+    };
 
-    public void UseCache()
+    public void RecursivePatterns()
     {
-        EnsureCacheLoaded();
-        // _cachedValue is guaranteed non-null
-        Console.WriteLine(_cachedValue.Length);
-    }
+        Order? order = GetOrder();
 
-    // NotNullIfNotNull attribute
-    [return: NotNullIfNotNull(nameof(input))]
-    public string? Transform(string? input)
-    {
-        return input?.ToUpper();
-    }
-
-    // AllowNull and DisallowNull
-    private string _name = string.Empty;
-
-    [AllowNull]
-    public string Name
-    {
-        get => _name;
-        set => _name = value ?? string.Empty;
-    }
-
-    private string LoadValue() => "loaded";
-}
-```
-
-## Nullable Annotations
-
-Attributes that provide additional null-state information to the compiler.
-
-```csharp
-#nullable enable
-
-using System.Diagnostics.CodeAnalysis;
-using System.Collections.Generic;
-
-public class NullableAnnotations
-{
-    // NotNull - parameter won't be null when method returns
-    public void Initialize([NotNull] ref string? value)
-    {
-        value ??= "default";
-    }
-
-    // MaybeNull - return may be null despite non-nullable type
-    [return: MaybeNull]
-    public T GetDefaultValue<T>()
-    {
-        return default(T);
-    }
-
-    // DoesNotReturn - method never returns normally
-    [DoesNotReturn]
-    public void ThrowError(string message)
-    {
-        throw new System.InvalidOperationException(message);
-    }
-
-    public void UseDoesNotReturn(string? value)
-    {
-        if (value == null)
+        // ✅ Complex pattern matching
+        var status = order switch
         {
-            ThrowError("Value is null");
-        }
-
-        // Compiler knows value is not null here
-        System.Console.WriteLine(value.Length);
-    }
-
-    // MemberNotNullWhen
-    private string? _data;
-
-    [MemberNotNullWhen(true, nameof(_data))]
-    private bool IsDataLoaded()
-    {
-        return _data != null;
-    }
-
-    public void UseData()
-    {
-        if (IsDataLoaded())
-        {
-            // _data is guaranteed non-null
-            System.Console.WriteLine(_data.Length);
-        }
-    }
-
-    // NotNullIfNotNull
-    [return: NotNullIfNotNull(nameof(source))]
-    public string? ProcessString(string? source)
-    {
-        return source?.Trim();
+            null => "No order",
+            { Customer: null } => "Order without customer",
+            { Customer.Address: null } => "Customer without address",
+            { Customer.Address.City: var city } => $"Shipping to {city}",
+        };
     }
 }
 ```
 
 ## Migration Strategies
 
-Strategies for adopting nullable reference types in existing code.
+Gradually migrate existing code to nullable reference types.
+
+### Incremental Migration
 
 ```csharp
-// Gradual migration approach
+// Step 1: Enable nullable in .csproj with warnings as errors
+<PropertyGroup>
+    <Nullable>enable</Nullable>
+    <WarningsAsErrors>nullable</WarningsAsErrors>
+</PropertyGroup>
 
-// File 1: Keep nullability disabled
+// Step 2: Migrate file by file
+#nullable enable
+
+public class MigratedClass
+{
+    // Fix all warnings in this file
+    public string Name { get; set; } = string.Empty;
+    public string? Description { get; set; }
+}
+
+// Step 3: Use #nullable disable for legacy code
 #nullable disable
 
 public class LegacyClass
 {
-    public string Name { get; set; }  // Implicitly nullable
-}
-
-#nullable restore
-
-// File 2: Enable nullability for new code
-#nullable enable
-
-public class ModernClass
-{
-    public string Name { get; set; } = string.Empty;  // Non-nullable
-    public string? MiddleName { get; set; }  // Explicitly nullable
-}
-
-#nullable restore
-
-// File 3: Suppress warnings during migration
-#nullable enable
-
-public class MigratingClass
-{
-    // Suppress specific warnings
-    #pragma warning disable CS8618
+    // No nullable warnings here
     public string Name { get; set; }
-    #pragma warning restore CS8618
+}
 
-    // Or use ! operator temporarily
-    public string GetName() => Name!;
+#nullable restore
+```
+
+### Migration Patterns
+
+```csharp
+public class MigrationPatterns
+{
+    // Before: Everything nullable by default
+    #nullable disable
+    public string GetUserName(User user)
+    {
+        return user.Name;
+    }
+    #nullable restore
+
+    // After: Explicit nullability
+    #nullable enable
+    public string GetUserNameNullable(User? user)
+    {
+        if (user == null)
+        {
+            throw new ArgumentNullException(nameof(user));
+        }
+
+        return user.Name ?? throw new InvalidOperationException("Name is required");
+    }
+
+    // Pattern: Make optional parameters explicit
+    // Before
+    #nullable disable
+    public void ProcessData(string data, string format)
+    {
+        format = format ?? "json";
+    }
+    #nullable restore
+
+    // After
+    #nullable enable
+    public void ProcessDataNullable(string data, string? format = null)
+    {
+        format ??= "json";
+    }
+
+    // Pattern: Use nullable return types
+    // Before
+    #nullable disable
+    public User FindUser(int id)
+    {
+        return _repository.Find(id); // May return null
+    }
+    #nullable restore
+
+    // After
+    #nullable enable
+    public User? FindUserNullable(int id)
+    {
+        return _repository.Find(id);
+    }
 }
 ```
 
-## Working with External Libraries
+## Compiler Warnings and Strictness
 
-Handling nullability when working with libraries that don't use nullable
-annotations.
+Understanding and configuring nullable warning levels.
+
+### Warning Levels
+
+```csharp
+// In .csproj
+<PropertyGroup>
+    <Nullable>enable</Nullable>
+
+    <!-- Treat nullable warnings as errors -->
+    <WarningsAsErrors>CS8600;CS8601;CS8602;CS8603;CS8604</WarningsAsErrors>
+
+    <!-- Or treat all nullable warnings as errors -->
+    <WarningsAsErrors>nullable</WarningsAsErrors>
+</PropertyGroup>
+
+// Common warnings:
+// CS8600: Converting null literal or possible null value to non-nullable type
+// CS8601: Possible null reference assignment
+// CS8602: Dereference of a possibly null reference
+// CS8603: Possible null reference return
+// CS8604: Possible null reference argument
+
+#nullable enable
+
+public class WarningExamples
+{
+    // CS8618: Non-nullable property must contain non-null value when exiting constructor
+    public string Name { get; set; } = string.Empty;
+
+    // CS8603: Possible null reference return
+    public string GetName(User? user)
+    {
+        return user?.Name ?? string.Empty; // Fix
+    }
+
+    // CS8602: Dereference of possibly null reference
+    public int GetLength(string? value)
+    {
+        return value?.Length ?? 0; // Fix
+    }
+
+    // Suppress specific warning
+    #pragma warning disable CS8602
+    public void LegacyCode(string? value)
+    {
+        Console.WriteLine(value.Length); // Warning suppressed
+    }
+    #pragma warning restore CS8602
+}
+```
+
+## Nullable in Generic Constraints
+
+Handling nullability in generic type parameters.
+
+### Generic Nullable Constraints
 
 ```csharp
 #nullable enable
 
-using System;
-
-public class ExternalLibraryHandling
+public class GenericNullability
 {
-    // Assume external library method
-    // public string GetData() { ... }
-
-    // Defensive programming
-    public void UseExternalLibrary()
+    // T? is nullable for both reference and value types
+    public T? FindOrDefault<T>(int id)
     {
-        // Treat return as potentially null
-        string? data = GetExternalData();
-
-        if (data != null)
-        {
-            ProcessData(data);
-        }
+        var result = _repository.Find<T>(id);
+        return result; // May be null
     }
 
-    // Create wrappers
-    public string? GetExternalDataSafe()
+    // where T : class - T is a reference type
+    public T Create<T>(string name) where T : class, new()
     {
-        string result = GetExternalData();
-        return string.IsNullOrEmpty(result) ? null : result;
+        var instance = new T();
+        return instance; // Never null
     }
 
-    // Extension methods for safety
-    public static class StringExtensions
+    // where T : class? - T is a nullable reference type
+    public void Process<T>(T? value) where T : class
     {
-        public static string OrEmpty(this string? value)
+        if (value == null)
         {
-            return value ?? string.Empty;
+            return;
         }
 
-        public static bool IsNullOrEmpty(
-            [NotNullWhen(false)] this string? value)
-        {
-            return string.IsNullOrEmpty(value);
-        }
+        // value is not null here
+        Console.WriteLine(value.ToString());
     }
 
-    private string GetExternalData() => "data";
-    private void ProcessData(string data) { }
+    // where T : struct - T is a non-nullable value type
+    public T GetValue<T>() where T : struct
+    {
+        return default; // Returns default value, never null
+    }
+
+    // where T : notnull - T cannot be nullable
+    public void RequireNonNull<T>(T value) where T : notnull
+    {
+        // value is guaranteed not to be null
+        Console.WriteLine(value.ToString());
+    }
+}
+```
+
+### Nullable Generic Patterns
+
+```csharp
+public class Repository<T> where T : class
+{
+    private readonly Dictionary<int, T> _cache = new();
+
+    // Return nullable when not found
+    public T? Find(int id)
+    {
+        _cache.TryGetValue(id, out var result);
+        return result;
+    }
+
+    // Throw when not found
+    public T Get(int id)
+    {
+        return _cache[id]; // Throws if not found
+    }
+
+    // Try pattern
+    public bool TryGet(int id, [NotNullWhen(true)] out T? result)
+    {
+        return _cache.TryGetValue(id, out result);
+    }
+}
+
+public class NullableGenericList<T>
+{
+    private readonly List<T> _items = new();
+
+    // First or null
+    public T? FirstOrDefault()
+    {
+        return _items.Count > 0 ? _items[0] : default;
+    }
+
+    // Find with predicate
+    public T? Find(Predicate<T> predicate)
+    {
+        foreach (var item in _items)
+        {
+            if (predicate(item))
+            {
+                return item;
+            }
+        }
+        return default;
+    }
 }
 ```
 
 ## Best Practices
 
-1. Enable nullable reference types in new projects from the start
-2. Use `string?` for optional string parameters and return values
-3. Initialize non-nullable properties in constructors or with default values
-4. Prefer null-coalescing operators over explicit null checks
-5. Use `NotNullWhen` attribute for `TryGet` pattern methods
-6. Validate arguments early with guard clauses
-7. Use `ThrowIfNull` helper for parameter validation
-8. Avoid using `!` operator unless absolutely certain value is non-null
-9. Leverage compiler warnings to find potential null reference issues
-10. Document nullability expectations in public APIs
+1. **Enable Nullable Globally**: Use `<Nullable>enable</Nullable>` in .csproj
+2. **Explicit Nullability**: Make nullability intentions clear in APIs
+3. **Validate at Boundaries**: Check for null at public API boundaries
+4. **Use Null-Conditional Operators**: Prefer ?. over explicit null checks
+5. **Avoid Null-Forgiving**: Use ! sparingly and only when truly necessary
+6. **Return Non-Nullable**: Prefer non-nullable return types when possible
+7. **Use Annotations**: Apply [NotNull], [MaybeNull] etc. appropriately
+8. **Constructor Initialization**: Initialize non-nullable properties in constructors
+9. **Throw on Invalid State**: Throw exceptions for unexpected nulls
+10. **Gradual Migration**: Migrate file-by-file with #nullable directives
 
 ## Common Pitfalls
 
-1. Using `!` operator to silence warnings without ensuring non-null
-2. Not initializing non-nullable properties in all constructors
-3. Returning null from methods declared with non-nullable return types
-4. Forgetting to check for null before dereferencing nullable references
-5. Mixing nullable and non-nullable contexts causing confusion
-6. Over-using nullable types when default values would suffice
-7. Not propagating null checks through method chains
-8. Assuming external library methods respect nullability
-9. Ignoring nullable warnings during migration
-10. Using `#pragma warning disable` too broadly
+1. **Overusing !**: Suppressing warnings instead of fixing root cause
+2. **Not Initializing**: Forgetting to initialize non-nullable properties
+3. **Silent Failures**: Not handling null cases in public APIs
+4. **Mixing Contexts**: Inconsistent nullable/disable throughout codebase
+5. **Ignoring Warnings**: Treating warnings as noise instead of issues
+6. **Null Return Types**: Returning null without nullable return type
+7. **Unchecked Parameters**: Not validating nullable parameters
+8. **Generic Confusion**: Misunderstanding T? in generic methods
+9. **Legacy Assumptions**: Assuming all references can be null
+10. **False Confidence**: Trusting ! operator without verification
 
-## When to Use Nullable Types
+## When to Use
 
-Use nullable types when you need:
+Use this skill when:
 
-- Representing the absence of a value distinctly from default value
-- Database fields that can be NULL mapped to C# properties
-- Optional parameters in methods and constructors
-- API responses that may or may not contain data
-- Preventing null reference exceptions at compile time
-- Gradual migration of legacy code to null-safe patterns
-- Clear contracts about which values can be null
-- Type-safe handling of optional configuration values
-- Integration with external APIs that may return null
-- Functional programming patterns with Option/Maybe types
+- Writing null-safe C# code
+- Migrating to nullable reference types
+- Preventing NullReferenceExceptions
+- Designing clear APIs with explicit nullability
+- Working with optional values
+- Implementing defensive programming
+- Refactoring legacy code
+- Setting up new C# projects
+- Enforcing null safety at compile time
+- Working with generic nullable types
 
 ## Resources
 
-- [Nullable Reference Types](https://docs.microsoft.com/en-us/dotnet/csharp/nullable-references)
-- [Nullable Attributes](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/attributes/nullable-analysis)
-- [Migrating to Nullable References](https://docs.microsoft.com/en-us/dotnet/csharp/nullable-migration-strategies)
-- [C# Null Safety](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/nullable-types/)
+- [Nullable Reference Types](https://learn.microsoft.com/en-us/dotnet/csharp/nullable-references)
+- [Nullable Reference Types Migration](https://learn.microsoft.com/en-us/dotnet/csharp/nullable-migration-strategies)
+- [Nullable Attributes](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/attributes/nullable-analysis)
+- [Nullable Warning Codes](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings)
+- [Tutorial: Update Code with Nullable Reference Types](https://learn.microsoft.com/en-us/dotnet/csharp/tutorials/nullable-reference-types)

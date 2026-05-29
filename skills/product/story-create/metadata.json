@@ -1,0 +1,18 @@
+{
+  "name": "story-create",
+  "repo": "otrebu/all-agents",
+  "path": ".claude/skills/story-create/SKILL.md",
+  "source": "github.com/otrebu/all-agents",
+  "downloaded_at": "2026-01-21T02:20:44.092407Z",
+  "dir_name": "story-create",
+  "category": "product",
+  "github_path": ".claude/skills/story-create",
+  "github_branch": "main",
+  "author": "otrebu",
+  "source_url": "https://github.com/otrebu/all-agents/blob/main/.claude/skills/story-create/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/otrebu/all-agents/blob/main/.claude/skills/story-create/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

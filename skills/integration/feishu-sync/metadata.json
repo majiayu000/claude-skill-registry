@@ -1,0 +1,16 @@
+{
+  "name": "feishu-sync",
+  "repo": "muzhicaomingwang/ai-ideas",
+  "path": ".project/ai/pm/skills/feishu-sync/SKILL.md",
+  "source": "github.com/muzhicaomingwang/ai-ideas",
+  "downloaded_at": "2026-01-22T02:32:29.557324Z",
+  "dir_name": "feishu-sync",
+  "category": "integration",
+  "author": "muzhicaomingwang",
+  "source_url": "https://github.com/muzhicaomingwang/ai-ideas/blob/main/.project/ai/pm/skills/feishu-sync/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/muzhicaomingwang/ai-ideas/blob/main/.project/ai/pm/skills/feishu-sync/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

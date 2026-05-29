@@ -1,0 +1,18 @@
+{
+  "name": "spec-clarify",
+  "repo": "srnnkls/tropos",
+  "path": "skills/spec-clarify/SKILL.md",
+  "source": "github.com/srnnkls/tropos",
+  "downloaded_at": "2026-01-21T02:14:33.872946Z",
+  "dir_name": "spec-clarify-srnnkls-tropos",
+  "category": "planning",
+  "github_path": "skills/spec-clarify",
+  "github_branch": "main",
+  "author": "srnnkls",
+  "source_url": "https://github.com/srnnkls/tropos/blob/main/skills/spec-clarify/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/srnnkls/tropos/blob/main/skills/spec-clarify/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

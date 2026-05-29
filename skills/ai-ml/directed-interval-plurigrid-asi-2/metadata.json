@@ -1,0 +1,18 @@
+{
+  "name": "directed-interval",
+  "description": "Directed interval type 2 axiomatizing (0 → 1). Time-directed homotopy",
+  "repo": "plurigrid/asi",
+  "path": "skills/directed-interval",
+  "category": "ai-ml",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "directed-interval-plurigrid-asi-2",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/directed-interval/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

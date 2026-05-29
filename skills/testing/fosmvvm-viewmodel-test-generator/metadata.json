@@ -1,11 +1,11 @@
 {
   "name": "fosmvvm-viewmodel-test-generator",
   "repo": "foscomputerservices/FOSUtilities",
+  "path": ".claude/skills/fosmvvm-viewmodel-test-generator/SKILL.md",
+  "source": "github.com/foscomputerservices/FOSUtilities",
+  "downloaded_at": "2026-01-20T03:42:14.478581Z",
+  "dir_name": "fosmvvm-viewmodel-test-generator",
   "category": "testing",
-  "description": "Generate comprehensive ViewModel tests with multi-locale translation verification. Use when creating test coverage for ViewModels, especially those with localization.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:25.672099Z",
   "github_path": ".claude/skills/fosmvvm-viewmodel-test-generator",
-  "github_branch": "main",
-  "dir_name": "fosmvvm-viewmodel-test-generator"
+  "github_branch": "main"
 }

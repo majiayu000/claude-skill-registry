@@ -1,7 +1,7 @@
 ---
 name: baoyu-post-to-wechat
 description: Posts content to WeChat Official Account (微信公众号) via API or Chrome CDP. Supports article posting (文章) with HTML, markdown, or plain text input, and image-text posting (贴图, formerly 图文) with multiple images. Markdown article workflows default to converting ordinary external links into bottom citations for WeChat-friendly output. Use when user mentions "发布公众号", "post to wechat", "微信公众号", or "贴图/图文/文章".
-version: 1.56.1
+version: 1.118.0
 metadata:
   openclaw:
     homepage: https://github.com/JimLiu/baoyu-skills#baoyu-post-to-wechat
@@ -64,12 +64,25 @@ Found → read, parse, apply. Not found → run first-time setup (`references/co
 ```md
 default_theme: default
 default_color: blue
-default_publish_method: api
+default_publish_method: browser
 default_author: 宝玉
 need_open_comment: 1
 only_fans_can_comment: 0
 chrome_profile_path: /path/to/chrome/profile
+
+# Remote API publishing (optional) — only set if WeChat's IP allowlist
+# excludes your local machine. See "Remote API Method" below.
+# remote_publish_host: server.example.com
+# remote_publish_user: deploy
+# remote_publish_port: 22
+# remote_publish_identity_file: ~/.ssh/id_ed25519
+# remote_publish_known_hosts_file: ~/.ssh/known_hosts
+# remote_publish_strict_host_key_checking: accept-new
+# remote_publish_connect_timeout: 10
+# remote_publish_proxy_jump: bastion.example.com
 ```
+
+Raw `ssh` / `scp` options are intentionally not supported; only the typed keys above are honored. Authentication is SSH key only (no passwords).
 
 **Theme options**: default, grace, simple, modern. **Color presets**: blue, green, vermilion, yellow, purple, sky, rose, olive, black, gray, pink, red, orange (or hex).
 
@@ -148,10 +161,13 @@ Ask method unless specified in EXTEND.md or CLI:
 
 | Method | Speed | Requires |
 |--------|-------|----------|
-| `api` (Recommended) | Fast | API credentials |
+| `api` (Recommended) | Fast | API credentials (local IP allowlisted) |
 | `browser` | Slow | Chrome + logged-in session |
+| `remote-api` | Fast | API credentials + an SSH-reachable server whose IP is on the WeChat allowlist |
 
 **API selected + missing credentials** → run guided setup per `references/api-setup.md` (writes to `.baoyu-skills/.env`).
+
+**`remote-api` method**: WeChat's "公众号设置 → IP 白名单" often limits API access to one or two fixed IPs. If your local machine's IP is not on that list but a cloud server's is, use `remote-api`: all markdown rendering, image processing, draft assembly, and HTML rewriting still happen locally, and only the outbound HTTPS calls to `api.weixin.qq.com` (token, uploadimg, add_material, draft/add) are tunneled through an SSH SOCKS5 dynamic port forward (`ssh -N -D`) so that WeChat sees the remote server as the source IP. No files are written to the remote host; `AppSecret` never leaves the local process. Requires only `sshd` and outbound network on the remote host — no Python, no agent process. See "Remote API Method" below.
 
 ### Step 3: Resolve Theme/Color and Validate Metadata
 
@@ -182,6 +198,14 @@ ${BUN_X} {baseDir}/scripts/wechat-api.ts <file> --theme <theme> [--color <color>
 ```
 
 Always pass `--theme` even if it's `default`. Only pass `--color` when explicitly set by the user or EXTEND.md.
+
+**Remote API method** (same script, adds `--remote`):
+
+```bash
+${BUN_X} {baseDir}/scripts/wechat-api.ts <file> --theme <theme> --remote [--remote-host <host>] [--remote-user <user>] [--remote-port <port>] [--remote-identity-file <path>] [--remote-known-hosts-file <path>] [--remote-strict-host-key-checking yes|no|accept-new] [--remote-connect-timeout <s>] [--remote-proxy-jump <spec>]
+```
+
+Any `--remote-*` flag implies `--remote`. CLI values override account-level then global `remote_publish_*` keys from EXTEND.md. Setting `default_publish_method: remote-api` also enables remote mode without `--remote`.
 
 **`draft/add` payload rules**:
 - Endpoint: `POST https://api.weixin.qq.com/cgi-bin/draft/add?access_token=ACCESS_TOKEN`
@@ -225,19 +249,20 @@ Files created:
 
 ## Feature Comparison
 
-| Feature | Image-Text | Article (API) | Article (Browser) |
-|---------|:---:|:---:|:---:|
-| Plain text input | ✗ | ✓ | ✓ |
-| HTML input | ✗ | ✓ | ✓ |
-| Markdown input | Title/content | ✓ | ✓ |
-| Multiple images | ✓ (up to 9) | ✓ (inline) | ✓ (inline) |
-| Themes | ✗ | ✓ | ✓ |
-| Auto-generate metadata | ✗ | ✓ | ✓ |
-| Default cover fallback (`imgs/cover.png`) | ✗ | ✓ | ✗ |
-| Comment control | ✗ | ✓ | ✗ |
-| Requires Chrome | ✓ | ✗ | ✓ |
-| Requires API credentials | ✗ | ✓ | ✗ |
-| Speed | Medium | Fast | Slow |
+| Feature | Image-Text | Article (API) | Article (Remote API) | Article (Browser) |
+|---------|:---:|:---:|:---:|:---:|
+| Plain text input | ✗ | ✓ | ✓ | ✓ |
+| HTML input | ✗ | ✓ | ✓ | ✓ |
+| Markdown input | Title/content | ✓ | ✓ | ✓ |
+| Multiple images | ✓ (up to 9) | ✓ (inline) | ✓ (inline) | ✓ (inline) |
+| Themes | ✗ | ✓ | ✓ | ✓ |
+| Auto-generate metadata | ✗ | ✓ | ✓ | ✓ |
+| Default cover fallback (`imgs/cover.png`) | ✗ | ✓ | ✓ | ✗ |
+| Comment control | ✗ | ✓ | ✓ | ✗ |
+| Requires Chrome | ✓ | ✗ | ✗ | ✓ |
+| Requires API credentials | ✗ | ✓ | ✓ | ✗ |
+| Requires SSH-reachable server with allowlisted IP | ✗ | ✗ | ✓ | ✗ |
+| Speed | Medium | Fast | Fast | Slow |
 
 ## Troubleshooting
 
@@ -251,6 +276,10 @@ Files created:
 | No cover image | Add frontmatter cover or place `imgs/cover.png` in article directory |
 | Wrong comment defaults | Check `need_open_comment` / `only_fans_can_comment` in EXTEND.md |
 | Paste fails | Check system clipboard permissions |
+| `Remote publish host is required` | Set `--remote-host` or `remote_publish_host` in EXTEND.md |
+| `SOCKS proxy on 127.0.0.1:… not ready` | SSH could not start the tunnel — check key, host, `StrictHostKeyChecking`, or use `--remote-connect-timeout` |
+| `ssh exited early` during remote publish | Verify the user can `ssh` non-interactively to the server; raise `--remote-connect-timeout` if the link is slow |
+| Remote API call returns `errcode 40164` (invalid IP) | The remote server's egress IP is not on WeChat's allowlist; add it in 公众号设置 → IP 白名单 |
 
 ## References
 

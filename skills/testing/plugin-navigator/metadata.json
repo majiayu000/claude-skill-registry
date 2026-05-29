@@ -1,0 +1,17 @@
+{
+  "name": "plugin-navigator",
+  "repo": "agude/agude.github.io",
+  "path": ".claude/skills/plugin-navigator/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/agude/agude.github.io",
+  "dir_name": "plugin-navigator",
+  "downloaded_at": "2026-03-22T06:44:32.084593Z",
+  "author": "agude",
+  "source_url": "https://github.com/agude/agude.github.io/blob/main/.claude/skills/plugin-navigator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agude/agude.github.io/blob/main/.claude/skills/plugin-navigator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

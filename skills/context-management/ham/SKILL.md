@@ -1,227 +1,93 @@
 ---
 name: ham
-description: Set up Hierarchical Agent Memory (HAM) — scoped CLAUDE.md files per directory that reduce token spend. Trigger on "go ham", "set up HAM", "HAM savings", or "HAM stats".
+ham_version: "2026.02.28"
+description: Set up Hierarchical Agent Memory (HAM) — scoped CLAUDE.md files per directory that reduce token spend. Trigger on "go ham", "set up HAM", "ham commands", "ham help", "ham route", "ham remove", "ham update", "ham status", "ham benchmark", "ham baseline start", "ham baseline stop", "ham metrics clear", "HAM savings", "HAM stats", "HAM dashboard", "HAM sandwich", "HAM insights", "HAM carbon", or "ham sync".
 ---
 
-# HAM (Hierarchical Agent Memory)
+## Pro Guard — run FIRST
 
-Scoped memory system that reduces context token spend per request.
+Before ANY command, check for Pro signals: `.ham/config.json` with `"pro": true`, `enabledImporters` with more than `"claude"`, or any `**/AGENTS.md` files.
 
-## Quick Start
+- **If Pro detected:** allow `go ham` (Pro-aware mode) and `ham remove` (has own Pro logic). All other commands → print `HAM Pro detected — this project is managed by HAM Pro. Manage at goham.dev` and STOP.
+- **Pro rules:** NEVER create/modify/delete AGENTS.md files. CLAUDE.md = HAM-owned. AGENTS.md = Pro-owned.
 
-**Trigger:** "go ham"
+## Commands
 
-When user says "go ham":
+**Trigger:** "ham commands" or "ham help" — list all commands:
 
-1. **Auto-detect everything** — scan for platform signals and project maturity silently
-2. **Generate files** — create the memory structure without asking questions
-3. **Confirm setup** — list files created, tell user to run `HAM savings` to see impact
-
-Only ask questions if detection fails.
-
-## Onboarding Flow
-
-### Step 1: Silent Detection
-
-Scan the project root for platform signals:
-
-| Files Found | Platform |
+| Command | What it does |
 |---|---|
-| `*.xcodeproj`, `Package.swift` | iOS |
-| `build.gradle*`, `settings.gradle` | Android |
-| `pubspec.yaml` | Flutter |
-| `package.json` + `react-native` | React Native |
-| `package.json` + `next/nuxt/svelte` | Web |
-| `pyproject.toml`, `requirements.txt` | Python |
-| `Cargo.toml` | Rust |
-| `go.mod` | Go |
+| `go ham` | Set up HAM (auto-detects stack and structure) |
+| `ham remove` | Remove HAM safely (preserves Pro files) |
+| `ham update` | Run `bash <skill-dir>/scripts/update.sh`, update `.ham/version` |
+| `ham status` | Show version, update status, memory file count, last setup date |
+| `ham route` | Add/update Context Routing in root CLAUDE.md |
+| `ham dashboard` | Launch web dashboard at :7777 via `node <skill-dir>/dashboard/launch.js --port 7777` |
+| `ham savings` | Show token and cost savings report |
+| `ham carbon` | Run `node <skill-dir>/dashboard/carbon-cli.js [--last] [--days 30]` |
+| `ham insights` | Generate insights → write actionable items to `.memory/inbox.md` |
+| `ham benchmark` | Run `node <skill-dir>/dashboard/benchmark-cli.js [--days 30] [--model name] [--json]` |
+| `ham baseline start` | Begin 10-task baseline capture |
+| `ham baseline stop` | End baseline early, keep partial data |
+| `ham metrics clear` | Delete all benchmark data (confirm first) |
+| `ham audit` | Check memory system health |
+| `ham sync` | Sync Claude Code sessions → `.ham/metrics/sessions.jsonl`. Run `node <skill-dir>/dashboard/sync-cli.js [--force] [--json]` |
 
-Detect maturity by counting subdirectories with code:
-- 0-2 dirs → **Greenfield/Early** (scaffold mode)
-- 3+ dirs → **Brownfield** (analysis mode)
+## go ham — Setup
 
-### Step 2: Generate Structure
+0. **Update check** — compare `.ham/version` against `ham_version` in frontmatter. If outdated, print update notice. Never block.
+1. **Detect platform** — scan for: `*.xcodeproj`/`Package.swift` (iOS), `build.gradle*` (Android), `pubspec.yaml` (Flutter), `package.json` + framework (Web/RN), `pyproject.toml`/`requirements.txt` (Python), `Cargo.toml` (Rust), `go.mod` (Go).
+2. **Detect maturity** — count subdirs with code: 0-2 = greenfield, 3+ = brownfield.
+3. **Monorepo guard** — if >20 code dirs: present sorted list, pre-select top 15, let user adjust. Hard cap: never create >20 subdirectory CLAUDE.md files.
+4. **Generate files** silently, then confirm.
 
-Create files based on detection:
+**Pro-aware mode:** if Pro detected, skip directories with existing CLAUDE.md (Pro-created). Fill gaps only. Never touch AGENTS.md.
+
+### Generated Structure
 
 ```
 project/
-├── CLAUDE.md              # Root context (~200 tokens)
+├── CLAUDE.md              # Root (~200 tokens)
+├── .ham/
+│   ├── version
+│   └── metrics/state.json # {mode, tasks_completed, tasks_target, started_at, memory_reads, total_prompts}
 ├── .memory/
-│   ├── decisions.md       # Empty, ready for ADRs
-│   ├── patterns.md        # Empty, ready for patterns
+│   ├── decisions.md       # ADRs
+│   ├── patterns.md        # Reusable patterns
 │   ├── inbox.md           # Inferred items (brownfield only)
-│   └── audit-log.md       # Audit history (auto-maintained)
-└── [src dirs]/
-    └── CLAUDE.md          # Per-directory context (brownfield only)
+│   └── audit-log.md       # Audit history (last 5 entries)
+└── [src dirs]/CLAUDE.md   # Per-directory (brownfield only)
 ```
 
-For greenfield: only create root + .memory/
-For brownfield: also create subdirectory CLAUDE.md files
+Greenfield: root + .memory/ + .ham/ only. Brownfield: also subdirectory CLAUDE.md files.
 
-### Step 3: Capture Baseline
+### .gitignore
 
-Before creating any files, measure what exists:
-
-```python
-# Capture baseline for savings comparison
-baseline = {
-    "captured_at": "YYYY-MM-DD",
-    "existing_claude_md": {
-        "found": true/false,
-        "path": "CLAUDE.md",
-        "chars": 1234,
-        "tokens": 308  # chars ÷ 4
-    },
-    "existing_context_files": [
-        # Any other .md files that were serving as context
-    ],
-    "total_baseline_tokens": 308
-}
+Append (idempotent — check for `# HAM` marker first):
+```
+# HAM — AI agent scaffolding (local, do not commit)
+.ham/
+.memory/
+**/CLAUDE.md
+!CLAUDE.md
+# end HAM
 ```
 
-Save this to `.memory/baseline.json`:
+### Capture Baseline
 
+Before creating files, save `.memory/baseline.json`:
 ```json
-{
-  "captured_at": "2026-02-23",
-  "existing_claude_md": {
-    "found": true,
-    "chars": 4820,
-    "tokens": 1205
-  },
-  "notes": "Migrated from monolithic CLAUDE.md"
-}
+{"captured_at":"YYYY-MM-DD","existing_claude_md":{"found":true,"chars":4820,"tokens":1205},"notes":"Migrated from monolithic CLAUDE.md"}
 ```
+If no existing CLAUDE.md: `{"captured_at":"...","existing_claude_md":{"found":false},"estimated_baseline_tokens":7500}`.
 
-If no existing CLAUDE.md, use estimated baseline:
+### Initialize Benchmarking
 
-```json
-{
-  "captured_at": "2026-02-23",
-  "existing_claude_md": {
-    "found": false
-  },
-  "estimated_baseline_tokens": 7500,
-  "notes": "No existing memory system. Using estimated baseline for agent re-orientation costs."
-}
-```
+Create `.ham/metrics/state.json`: `{"mode":"baseline","tasks_completed":0,"tasks_target":10,"started_at":"ISO-8601","memory_reads":0,"total_prompts":0}`. Next 10 tasks log to `baseline.jsonl` without HAM memory loading. Auto-transitions to active after 10.
 
-### Step 4: Confirm Setup
+### Confirm Setup
 
-After creating files, output:
-
-```
-HAM setup complete. Created [N] files.
-Baseline captured in .memory/baseline.json
-
-Run "HAM savings" to see your token and cost savings.
-```
-
-## HAM Savings Command
-
-**Trigger:** "HAM savings" or "HAM stats"
-
-When user runs this command:
-
-1. **Read baseline** — load `.memory/baseline.json` for before comparison
-2. **Count actual files** — find all CLAUDE.md files and .memory/ files in the project
-3. **Measure actual token counts** — count tokens in each file (use ~4 chars = 1 token as estimate)
-4. **Calculate and display** with full transparency:
-
-```
-┌─────────────────────────────────────────────────────────┐
-│  HAM Savings Report                                     │
-├─────────────────────────────────────────────────────────┤
-│  BASELINE (from .memory/baseline.json)                  │
-│  ─────────────────────────────────────────────────────  │
-│  Captured: [date]                                       │
-│  Old CLAUDE.md: [X] tokens ([found/not found])         │
-│  Estimated re-orientation: ~[Y] tokens/prompt           │
-│  Total baseline: [Z] tokens/prompt                      │
-│                                                         │
-│  YOUR CURRENT HAM SETUP                                 │
-│  ─────────────────────────────────────────────────────  │
-│  Root CLAUDE.md:        [X] tokens ([Y] chars ÷ 4)     │
-│  Subdirectory files:    [N] files, [Z] tokens total    │
-│  .memory/ files:        [M] files (loaded on demand)   │
-│                                                         │
-│  TOKENS LOADED PER PROMPT                               │
-│  ─────────────────────────────────────────────────────  │
-│  Typical prompt:        [A] tokens                      │
-│    └─ Root CLAUDE.md:   [X] tokens (always)            │
-│    └─ 1 subdir file:    ~[B] tokens (when in subdir)   │
-│                                                         │
-│  YOUR ACTUAL SAVINGS                                    │
-│  ─────────────────────────────────────────────────────  │
-│  Before HAM:            [baseline] tokens/prompt        │
-│  After HAM:             [A] tokens/prompt               │
-│  Savings per prompt:    [diff] tokens ([pct]%)          │
-│                                                         │
-│  MONTHLY PROJECTION (50 prompts/day × 30 days)         │
-│  ─────────────────────────────────────────────────────  │
-│  Prompts/month:         1,500                           │
-│  Tokens saved:          ~[monthly_tokens]               │
-│  Cost saved (Sonnet):   ~$[sonnet] (@$3/M input tokens)│
-│  Cost saved (Opus):     ~$[opus] (@$15/M input tokens) │
-└─────────────────────────────────────────────────────────┘
-```
-
-If `.memory/baseline.json` doesn't exist (skill wasn't used for setup), show:
-
-```
-NOTE: No baseline captured. Run "go ham" to set up with baseline tracking,
-or create .memory/baseline.json manually with your old CLAUDE.md token count.
-```
-
-### Calculation Logic
-
-```python
-# Token estimation
-def count_tokens(text):
-    return len(text) // 4  # ~4 characters per token
-
-# Measure actual HAM files
-root_tokens = count_tokens(read("CLAUDE.md"))
-subdir_files = glob("**/CLAUDE.md", exclude="root")
-subdir_tokens = sum(count_tokens(read(f)) for f in subdir_files)
-avg_subdir = subdir_tokens / len(subdir_files) if subdir_files else 0
-
-# Tokens per typical prompt (root + 1 subdir)
-ham_tokens = root_tokens + avg_subdir
-
-# Baseline estimate (without any memory system)
-# Conservative: agent re-orients each prompt
-baseline_low = 5000
-baseline_high = 10000
-baseline_mid = 7500
-
-# Savings
-savings_tokens = baseline_mid - ham_tokens
-savings_pct = (savings_tokens / baseline_mid) * 100
-
-# Monthly (50 prompts/day × 30 days)
-monthly_prompts = 1500
-monthly_tokens_saved = savings_tokens * monthly_prompts
-cost_sonnet = (monthly_tokens_saved / 1_000_000) * 3  # $3/M
-cost_opus = (monthly_tokens_saved / 1_000_000) * 15   # $15/M
-```
-
-## System Architecture
-
-Three layers:
-
-**Layer 1 — Root CLAUDE.md** (~200 tokens)
-Stack, rules, operating instructions. No implementation details.
-
-**Layer 2 — Subdirectory CLAUDE.md** (~250 tokens each)
-Scoped context per directory. Agent reads root + target directory only.
-
-**Layer 3 — .memory/** (on-demand)
-- `decisions.md` — Confirmed Architecture Decision Records
-- `patterns.md` — Confirmed reusable patterns
-- `inbox.md` — Inferred items awaiting confirmation
-- `audit-log.md` — Audit history (auto-maintained, last 5 entries)
+Report files created. If root CLAUDE.md >3,000 tokens: warn, list sections that may belong in subdirectory files, offer interactive migration (present each candidate one at a time, move only on user confirmation).
 
 ## Operating Instructions
 
@@ -231,11 +97,11 @@ Embed in every root CLAUDE.md:
 ## Agent Memory System
 
 ### Before Working
-- Read this file for global context
-- Read target directory's CLAUDE.md before changes
+- Read this file for global context, then read the target directory's CLAUDE.md before changes
+- If this file has a ## Context Routing section, use it to find the right subdirectory CLAUDE.md
 - Check .memory/decisions.md before architectural changes
 - Check .memory/patterns.md before implementing common functionality
-- Check if a memory audit is due: read `.memory/audit-log.md` for the last audit date. If 14+ days have passed OR 10+ session files in `.memory/sessions/` are dated after the last audit, suggest: "It's been [N days/sessions] since the last memory audit. Run one? (say 'HAM audit' or skip)". Do not repeat if already suggested this session. If `audit-log.md` is missing, treat as never audited.
+- Check if audit is due: if 14+ days or 10+ sessions since last audit in .memory/audit-log.md, suggest running one
 
 ### During Work
 - Create CLAUDE.md in any new directory you create
@@ -252,138 +118,109 @@ Embed in every root CLAUDE.md:
 - Never promote from inbox without user confirmation
 ```
 
-## HAM Audit Command
+## Task Metrics Logging
 
-**Trigger:** "HAM audit" or "HAM health", or accepted from a proactive suggestion
+Each non-trivial task logs two JSONL entries to `.ham/metrics/tasks.jsonl` (or `baseline.jsonl` in baseline mode):
 
-When user runs this command (or accepts a proactive audit suggestion), check the health of the memory system:
-
-```
-┌─────────────────────────────────────────────────────────┐
-│  HAM Health Check                                       │
-├─────────────────────────────────────────────────────────┤
-│  Root CLAUDE.md                                         │
-│    Lines: [N] (recommend: <60)                         │
-│    Tokens: [X] (recommend: <250)                       │
-│    Status: [✓ healthy | ⚠ oversized]                   │
-│                                                         │
-│  Subdirectory CLAUDE.md files                           │
-│    Found: [N] files                                     │
-│    Oversized: [M] files (>75 lines)                    │
-│    Missing: [K] directories have code but no CLAUDE.md │
-│                                                         │
-│  .memory/ status                                        │
-│    decisions.md: [N] entries                           │
-│    patterns.md: [N] entries                            │
-│    inbox.md: [N] unreviewed items [⚠ if >0]           │
-│                                                         │
-│  Recommendations:                                       │
-│    [List any issues found]                             │
-└─────────────────────────────────────────────────────────┘
+```json
+{"id":"task-<hex8>","type":"task_start","timestamp":"ISO-8601","description":"...","ham_active":true,"model":"claude-opus-4-6","files_read":0,"memory_files_loaded":0,"estimated_tokens":0}
+{"id":"task-<hex8>","type":"task_end","timestamp":"ISO-8601","status":"completed"}
 ```
 
-After presenting results:
-- If `.memory/audit-log.md` doesn't exist, create it from the template in `references/templates.md`.
-- Append an entry to `.memory/audit-log.md` with the date, number of issues found, and a one-line summary.
-- If the table exceeds 5 entries, remove the oldest row (keeping the header).
+Skip trivial queries (HAM commands, yes/no, clarifications). Increment `total_prompts` in state.json for every non-trivial task; increment `memory_reads` when `.memory/` files are loaded.
+
+### Baseline Mode
+
+Check `.ham/metrics/state.json` before each task:
+
+1. **mode = "baseline":** write to `baseline.jsonl`, set `ham_active: false`, skip subdir CLAUDE.md and .memory/ files. Only increment `tasks_completed` for `status: "completed"` (not "error"/"skipped"). Transition to active when `tasks_completed >= tasks_target`.
+
+2. **mode = "active", or state.json missing, or state.json unparseable:** write to `tasks.jsonl`, set `ham_active: true`, load all files normally. If state.json was corrupt, warn user once: `⚠ .ham/metrics/state.json is corrupted. Treating as active mode.`
+
+## ham savings
+
+**Trigger:** "HAM savings" or "HAM stats"
+
+Read `.memory/baseline.json`, count tokens in all CLAUDE.md and .memory/ files (chars ÷ 4), then display: baseline section, current HAM setup, tokens per prompt, savings, and monthly projection (1,500 prompts at $3/M Sonnet, $15/M Opus).
+
+### Calculation
+
+```python
+root_tokens = count_tokens(read("CLAUDE.md"))
+subdir_files = glob("**/CLAUDE.md", exclude="root")
+avg_subdir = sum(count_tokens(read(f)) for f in subdir_files) / len(subdir_files) if subdir_files else 0
+
+# .memory/ weighted by tracked read frequency
+memory_tokens = sum(count_tokens(read(f)) for f in glob(".memory/*.md"))
+state = read_json(".ham/metrics/state.json")
+memory_weight = state["memory_reads"] / state["total_prompts"] if state.get("total_prompts", 0) >= 10 else 0.30
+ham_tokens = root_tokens + avg_subdir + (memory_tokens * memory_weight)
+
+# Baseline: measured if baseline.json exists, tiered estimate otherwise
+if exists(".memory/baseline.json"):
+    baseline_mid = baseline_data["old_claude_md_tokens"] + max(500, len(subdir_files) * 300)
+    baseline_is_measured = True
+else:
+    code_dirs = count_dirs_with_code()
+    baseline_mid = max(1000, ham_tokens * 1.5) if code_dirs <= 2 else max(3000, ham_tokens * 2.5) if code_dirs <= 10 else max(5000, ham_tokens * 3.5)
+    baseline_is_measured = False
+```
+
+**Display rules:** when `baseline_is_measured = False`, show raw token counts only — no savings percentage or cost projections. Add: `⚠ No baseline captured — savings % requires a real baseline. Run "go ham" to capture one.` Show "(estimated)" next to .memory/ frequency until 10+ prompts tracked.
+
+## ham remove
+
+**Trigger:** "ham remove" — EXEMPT from Pro guard.
+
+1. Detect Pro (same checks as guard)
+2. Inventory: skill-owned (.memory/\*, .ham/\*, subdir CLAUDE.md, HAM sections in root) vs Pro-owned (.ham/config.json, AGENTS.md) vs user files (root CLAUDE.md content)
+3. Show dry-run listing what will be deleted/edited/kept
+4. Confirm with user
+5. Execute: delete skill files, strip `## Agent Memory System` and `## Context Routing` from root CLAUDE.md, remove HAM block from .gitignore
+6. Report results
+
+## ham route
+
+**Trigger:** "ham route"
+
+1. Find all `**/CLAUDE.md` (excluding root)
+2. Build entries: `→ [label]: [path]` (label = directory name)
+3. Append or update `## Context Routing` in root CLAUDE.md. Never remove existing entries.
+
+## ham dashboard
+
+**Trigger:** "HAM dashboard" or "HAM sandwich"
+
+Check for updates, then run `node <skill-dir>/dashboard/launch.js --port 7777` from the project root. Dashboard reads session JSONL from `~/.claude/projects/` — no database. Tell user to open http://localhost:7777.
+
+## ham insights
+
+**Trigger:** "HAM insights"
+
+Run `node <skill-dir>/dashboard/insights-cli.js --days 30`. Parse JSON output, filter to actionable items, deduplicate against existing `.memory/inbox.md`, write new items in format:
+```markdown
+### Insight: [title] ([date])
+**Confidence:** [severity] | **Observed:** [detail] | **Proposed Action:** [action]
+```
+Log to `.memory/audit-log.md` (keep last 5 entries). Report summary to user.
+
+## ham audit
+
+**Trigger:** "HAM audit" or "HAM health"
+
+Check: root CLAUDE.md size (recommend <60 lines, <250 tokens), subdirectory file count and oversized files (>75 lines), missing CLAUDE.md in code dirs, .memory/ entry counts, unreviewed inbox items. Present results, append to `.memory/audit-log.md`.
+
+## ham baseline start / stop
+
+**start:** Create `.ham/metrics/state.json` with `mode: "baseline"`, `tasks_target: 10`. Tell user next 10 tasks capture baseline.
+
+**stop:** Set `mode: "active"` in state.json. Report tasks captured.
 
 ## Templates
 
-### Root CLAUDE.md (Universal)
+See `templates.md` for full templates. Summary:
 
-```markdown
-# [Project Name]
-
-## Stack
-- [Auto-detected framework/language]
-- [Database if detected]
-- [Key dependencies]
-
-## Rules
-- [2-3 critical project rules]
-
-## Agent Memory System
-[Insert operating instructions from above]
-```
-
-### Subdirectory CLAUDE.md
-
-```markdown
-# [Directory] Context
-
-## Purpose
-[One sentence]
-
-## Conventions
-- [Directory-specific conventions]
-
-## Patterns
-- [Key patterns used here]
-```
-
-### decisions.md
-
-```markdown
-# Architecture Decisions
-
-## ADR-001: [Title] (YYYY-MM-DD)
-**Status:** active
-**Decision:** [What was chosen]
-**Context:** [Why this choice was made]
-**Alternatives:** [What was rejected]
-```
-
-### inbox.md
-
-```markdown
-# Memory Inbox
-
-Review periodically. Confirm → move to decisions/patterns. Reject → delete.
-
----
-```
-
-## How We Estimate Savings (Transparency)
-
-### Where "Without HAM" numbers come from
-
-Without a scoped memory system, an AI coding agent typically:
-
-| Activity | Token Estimate | Source |
-|---|---|---|
-| Re-reading directory structure | 2,000-3,000 | Listing files, understanding layout |
-| Re-discovering conventions | 1,500-2,500 | Reading config files, package.json, etc. |
-| Loading monolithic CLAUDE.md | 2,000-4,000 | If one exists, or equivalent context |
-| **Total baseline** | **5,000-10,000** | Per prompt without scoped memory |
-
-These are estimates based on typical agent behavior. Your actual baseline depends on:
-- Project size and complexity
-- How much the agent re-reads each session
-- Whether you have any existing context files
-
-### Where "With HAM" numbers come from
-
-HAM tokens are **measured directly** from your files:
-- Count characters in each CLAUDE.md file
-- Divide by 4 (rough token estimate)
-- Sum root + typical subdirectory file
-
-### Cost assumptions
-
-| Model | Input Cost | Source |
-|---|---|---|
-| Claude Sonnet | $3/M tokens | Anthropic API pricing (Feb 2025) |
-| Claude Opus | $15/M tokens | Anthropic API pricing (Feb 2025) |
-
-**Monthly projection assumes:**
-- 50 prompts/day (adjust to your usage)
-- 30 days/month
-- Savings = (baseline - HAM tokens) × prompts
-
-### Honest caveats
-
-- Baseline is an **estimate** — your mileage may vary
-- HAM tokens are **measured** — these are accurate
-- Actual savings depend on your workflow
-- Some prompts won't benefit (e.g., simple questions)
-- Agents still read source files — HAM reduces *context* overhead, not all token usage
+- **Root CLAUDE.md:** Project name, Stack, Rules, Agent Memory System (operating instructions above)
+- **Subdirectory CLAUDE.md:** Purpose (1 sentence), Conventions, Patterns
+- **decisions.md:** ADR format (status, decision, context, alternatives)
+- **inbox.md:** Header + review instructions

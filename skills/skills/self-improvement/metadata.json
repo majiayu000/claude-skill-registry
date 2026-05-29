@@ -1,0 +1,16 @@
+{
+  "name": "self-improvement",
+  "repo": "ionfury/homelab",
+  "path": ".claude/skills/self-improvement/SKILL.md",
+  "category": "skills",
+  "source": "github.com/ionfury/homelab",
+  "dir_name": "self-improvement",
+  "downloaded_at": "2026-02-22T07:32:20.505711Z",
+  "author": "ionfury",
+  "source_url": "https://github.com/ionfury/homelab/blob/main/.claude/skills/self-improvement/SKILL.md",
+  "license": "WTFPL",
+  "copyright": "Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

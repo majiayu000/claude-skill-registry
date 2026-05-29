@@ -1,0 +1,16 @@
+{
+  "name": "parsing",
+  "repo": "inocan-group/inferred-types",
+  "path": ".claude/skills/parsing/SKILL.md",
+  "category": "development",
+  "source": "github.com/inocan-group/inferred-types",
+  "dir_name": "parsing-inocan-group-inferred-types-3",
+  "downloaded_at": "2026-02-15T07:35:14.548784Z",
+  "author": "inocan-group",
+  "source_url": "https://github.com/inocan-group/inferred-types/blob/main/.claude/skills/parsing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/inocan-group/inferred-types/blob/main/.claude/skills/parsing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

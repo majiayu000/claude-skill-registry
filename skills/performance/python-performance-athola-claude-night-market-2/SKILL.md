@@ -1,7 +1,6 @@
 ---
 name: python-performance
-description: 'Python performance profiling and optimization: bottleneck detection, memory tuning, benchmarking'
-version: 1.9.3
+description: Profiles Python code for performance bottlenecks and memory issues. Use when Python code is slow or when profiling for optimization before a release.
 globs: "**/*.py"
 alwaysApply: false
 category: performance
@@ -23,11 +22,11 @@ model_hint: standard
 estimated_tokens: 1200
 progressive_loading: true
 modules:
-- profiling-tools
-- optimization-patterns
-- memory-management
-- benchmarking-tools
-- best-practices
+- modules/profiling-tools.md
+- modules/optimization-patterns.md
+- modules/memory-management.md
+- modules/benchmarking-tools.md
+- modules/best-practices.md
 ---
 # Python Performance Optimization
 

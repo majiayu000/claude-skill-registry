@@ -1,0 +1,16 @@
+{
+  "name": "upload-drive",
+  "repo": "iamgrewal/rolesense",
+  "path": ".agent/skills/upload-drive/SKILL.md",
+  "source": "github.com/iamgrewal/rolesense",
+  "downloaded_at": "2026-01-27T04:02:11.053208Z",
+  "dir_name": "upload-drive",
+  "category": "integration",
+  "author": "iamgrewal",
+  "source_url": "https://github.com/iamgrewal/rolesense/blob/main/.agent/skills/upload-drive/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/iamgrewal/rolesense/blob/main/.agent/skills/upload-drive/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

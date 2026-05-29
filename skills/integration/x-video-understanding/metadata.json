@@ -1,0 +1,13 @@
+{
+  "name": "x-video-understanding",
+  "description": "",
+  "repo": "az9713/whatsapp-claude-old",
+  "category": "integration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/az9713/whatsapp-claude-old",
+  "github_path": ".claude/skills/x-video-understanding",
+  "github_branch": "main",
+  "dir_name": "x-video-understanding",
+  "downloaded_at": "2026-02-05T01:44:37.778190Z"
+}

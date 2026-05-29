@@ -1,0 +1,17 @@
+{
+  "name": "azure-baremetal-infrastructure",
+  "repo": "MicrosoftDocs/Agent-Skills",
+  "path": "skills/azure-baremetal-infrastructure/SKILL.md",
+  "github_branch": "main",
+  "category": "domains",
+  "source": "github.com/MicrosoftDocs/Agent-Skills",
+  "dir_name": "azure-baremetal-infrastructure",
+  "downloaded_at": "2026-03-22T05:50:51.759051Z",
+  "author": "MicrosoftDocs",
+  "source_url": "https://github.com/MicrosoftDocs/Agent-Skills/blob/main/skills/azure-baremetal-infrastructure/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/MicrosoftDocs/Agent-Skills/blob/main/skills/azure-baremetal-infrastructure/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

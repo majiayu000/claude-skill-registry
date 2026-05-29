@@ -8,6 +8,7 @@ description: 認可エンドポイント（Authorization Endpoint）機能の開
 ## ドキュメント
 
 - `documentation/docs/content_06_developer-guide/03-application-plane/02-authorization-flow.md` - 認可フロー実装ガイド
+- `documentation/docs/content_06_developer-guide/03-application-plane/02-01-authorization-request-verification.md` - 認可リクエスト検証フロー詳細（プロファイル決定、検証チェーン、エラーハンドリング）
 - `documentation/docs/content_03_concepts/03-authentication-authorization/concept-04-authorization.md` - 認可概念
 
 ## 機能概要

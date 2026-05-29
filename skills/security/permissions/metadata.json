@@ -1,9 +1,9 @@
 {
-  "name": "permissions",
+  "name": "bknd-assign-permissions",
   "repo": "cameronapak/freedom-stack-v3",
-  "path": ".opencode/skill/permissions/SKILL.md",
+  "path": ".agents/skills/bknd-assign-permissions/SKILL.md",
   "source": "github.com/cameronapak/freedom-stack-v3",
-  "downloaded_at": "2026-01-21T01:52:48.121536Z",
+  "downloaded_at": "2026-01-22T03:30:08.988989Z",
   "dir_name": "permissions",
   "category": "security",
   "github_path": ".agents/skills/bknd-assign-permissions",

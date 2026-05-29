@@ -1,35 +1,24 @@
 ---
 name: architecture-paradigm-layered
-description: |
-
-Triggers: monolith, separation-of-concerns, n-tier, architecture, layered
-  Use a Layered (N-Tier) architecture to separate presentation, domain logic, and
-  data access responsibilities within a system.
-
-  Triggers: layered architecture, n-tier, separation of concerns, presentation layer,
-  data access layer, service layer, traditional architecture, monolith structure,
-  layer enforcement, dependency direction
-
-  Use when: building traditional applications with clear boundaries, working with
-  moderate-sized teams, needing familiar and well-understood patterns, compliance
-  requirements demand clear separation
-
-  DO NOT use when: selecting from multiple paradigms - use architecture-paradigms first.
-  DO NOT use when: high scalability needs independent component scaling.
-  DO NOT use when: teams need independent deployment cycles - use microservices.
-
-  Consult this skill when implementing layered patterns or enforcing layer boundaries.
-version: 1.3.5
+description: 'Layered (n-tier) architecture with enforced layer boundaries and separation of concerns.'
+version: 1.9.3
+alwaysApply: false
 category: architectural-pattern
-tags: [architecture, layered, n-tier, separation-of-concerns, monolith]
+tags:
+- architecture
+- layered
+- n-tier
+- separation-of-concerns
+- monolith
 dependencies: []
-tools: [dependency-validator, layer-enforcer, architecture-compliance-checker]
+tools: []
 usage_patterns:
-  - paradigm-implementation
-  - legacy-system-modernization
-  - team-structure-alignment
-  - compliance-requirements
+- paradigm-implementation
+- legacy-system-modernization
+- team-structure-alignment
+- compliance-requirements
 complexity: low
+model_hint: fast
 estimated_tokens: 700
 ---
 ## Table of Contents
@@ -40,7 +29,6 @@ estimated_tokens: 700
 - [Key Deliverables](#key-deliverables)
 - [Technology Guidance](#technology-guidance)
 - [Risks & Mitigations](#risks-mitigations)
-- [Troubleshooting](#troubleshooting)
 
 # The Layered (N-Tier) Architecture Paradigm
 
@@ -49,7 +37,7 @@ estimated_tokens: 700
 - When compliance or operations teams require clear separation of concerns (e.g., UI vs. domain logic vs. persistence).
 - When the deployment artifact remains a monolith, but code clarity and separation are degrading.
 
-## When NOT to Use This Paradigm
+## When NOT To Use This Paradigm
 - When high scalability demands require independent scaling of components
 - When multiple teams need independent deployment cycles
 - When complex business logic requires frequent cross-layer communication
@@ -100,15 +88,3 @@ estimated_tokens: 700
   - **Mitigation**: For features that span multiple layers, strict adherence can lead to excessive "pass-through" code and increased latency. In such cases, consider using a Façade pattern to provide a more direct interface where appropriate.
 - **"Leaky" Layers**:
   - **Mitigation**: Developers may be tempted to bypass architectural rules for expediency, which degrades the architecture. Treat all architectural violations as build-breaking failures or critical issues in code review.
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

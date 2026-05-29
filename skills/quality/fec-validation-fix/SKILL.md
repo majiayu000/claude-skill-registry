@@ -38,7 +38,3 @@ description: Use when running existing project validation commands and fixing fa
 - 失败项已修复或给出明确原因和后续行动
 - 修复报告保存为 `reports/validation-fix-YYYY-MM-DD-HHmmss.md`
 - 报告包含命令状态表、问题根因、修复说明、变更文件和剩余风险
-
-## Related Agent
-
-- [frontend-build-fixer](../../agents/frontend-build-fixer.md) - 复杂构建、类型检查、测试或 CI 失败的增量修复。

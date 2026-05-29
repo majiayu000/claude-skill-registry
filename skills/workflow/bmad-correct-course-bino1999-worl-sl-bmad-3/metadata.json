@@ -1,0 +1,17 @@
+{
+  "name": "bmad-correct-course",
+  "repo": "bino1999/worl-sl-bmad",
+  "path": "_bmad/bmm/workflows/4-implementation/bmad-correct-course/SKILL.md",
+  "github_branch": "main",
+  "category": "workflow",
+  "source": "github.com/bino1999/worl-sl-bmad",
+  "dir_name": "bmad-correct-course-bino1999-worl-sl-bmad-3",
+  "downloaded_at": "2026-03-22T07:15:16.494859Z",
+  "author": "bino1999",
+  "source_url": "https://github.com/bino1999/worl-sl-bmad/blob/main/_bmad/bmm/workflows/4-implementation/bmad-correct-course/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bino1999/worl-sl-bmad/blob/main/_bmad/bmm/workflows/4-implementation/bmad-correct-course/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

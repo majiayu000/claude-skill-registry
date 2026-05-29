@@ -1,34 +1,23 @@
 ---
 name: architecture-paradigm-client-server
-description: |
-
-Triggers: server, client-server, architecture, peer-to-peer, distributed-systems
-  Model system responsibilities across clients, servers, and optional peer-to-peer
-  nodes for traditional distributed applications.
-
-  Triggers: client-server, web architecture, mobile backend, API design, thin client,
-  thick client, peer-to-peer, P2P, offline-first, synchronization
-
-  Use when: traditional web/mobile applications with centralized services,
-  clear separation between client and server responsibilities needed
-
-  DO NOT use when: selecting from multiple paradigms - use architecture-paradigms first.
-  DO NOT use when: peer-to-peer dominates - consider dedicated P2P patterns.
-
-  Consult this skill when designing client-server systems or API architectures.
-version: 1.3.5
+description: Applies client-server architecture for web/mobile apps. Use when designing systems with centralized backend services, trust boundaries, or offline-first sync.
+alwaysApply: false
 category: architectural-pattern
-tags: [architecture, client-server, peer-to-peer, distributed-systems]
+tags:
+- architecture
+- client-server
+- peer-to-peer
+- distributed-systems
 dependencies: []
-tools: [api-contract-generator, networking-debugger]
+tools: []
 usage_patterns:
-  - paradigm-implementation
-  - distributed-system-design
-  - offline-first
+- paradigm-implementation
+- distributed-system-design
+- offline-first
 complexity: low
+model_hint: fast
 estimated_tokens: 600
 ---
-
 # The Client-Server and Peer-to-Peer Paradigms
 
 ## When to Employ This Paradigm
@@ -55,15 +44,15 @@ estimated_tokens: 600
   - **Mitigation**: When clients contain too much business logic, it often becomes duplicated and out-of-sync with the server. Share validation logic by packaging it in a common library or move the rules definitively to the server.
 - **Peer-to-Peer Data Conflicts**:
   - **Mitigation**: In a peer-to-peer model, data conflicts are inevitable. Design formal conflict resolution strategies (e.g., CRDTs, last-write-wins) and consensus mechanisms from the beginning.
-## Troubleshooting
 
-### Common Issues
+## Concrete Components
 
-**Command not found**
-Ensure all dependencies are installed and in PATH
+These vocabulary items name the concrete tools and abstractions
+that show up when the paradigm is implemented. They are not
+required dependencies and they are not part of the skill's
+``tools:`` frontmatter (which is reserved for Claude Code tool
+restrictions). Use this list to disambiguate during architecture
+discussions.
 
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag
+- ``api-contract-generator`` -- produces machine-readable OpenAPI/RPC contracts the client and server share
+- ``networking-debugger`` -- captures request/response traces for diagnosing latency, retries, and timeout issues

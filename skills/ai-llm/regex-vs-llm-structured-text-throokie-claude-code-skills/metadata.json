@@ -1,0 +1,17 @@
+{
+  "name": "regex-vs-llm-structured-text",
+  "repo": "Throokie/claude-code-skills",
+  "path": "skills/regex-vs-llm-structured-text/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-llm",
+  "source": "github.com/Throokie/claude-code-skills",
+  "dir_name": "regex-vs-llm-structured-text-throokie-claude-code-skills",
+  "downloaded_at": "2026-03-22T06:23:58.621258Z",
+  "author": "Throokie",
+  "source_url": "https://github.com/Throokie/claude-code-skills/blob/main/skills/regex-vs-llm-structured-text/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Throokie/claude-code-skills/blob/main/skills/regex-vs-llm-structured-text/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

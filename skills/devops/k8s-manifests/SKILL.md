@@ -14,6 +14,47 @@ description: |
 
 # Kubernetes / OpenShift Manifest Generator
 
+## Current Versions & CLI Documentation (January 2026)
+
+| Platform | Current Version | CLI | Documentation |
+|----------|-----------------|-----|---------------|
+| **Kubernetes** | 1.31.x | `kubectl` | https://kubernetes.io/docs/ |
+| **OpenShift** | 4.17.x | `oc` | https://docs.openshift.com/ |
+| **EKS** | 1.31 | `aws eks`, `eksctl` | https://docs.aws.amazon.com/eks/ |
+| **AKS** | 1.31 | `az aks` | https://learn.microsoft.com/azure/aks/ |
+| **GKE** | 1.31 | `gcloud container` | https://cloud.google.com/kubernetes-engine/docs |
+| **ARO** | 4.17 | `az aro`, `oc` | https://learn.microsoft.com/azure/openshift/ |
+| **ROSA** | 4.17 | `rosa`, `oc` | https://docs.openshift.com/rosa/ |
+
+### CLI Installation Quick Reference
+
+```bash
+# kubectl (latest stable)
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/$(uname -s | tr '[:upper:]' '[:lower:]')/amd64/kubectl"
+chmod +x kubectl && sudo mv kubectl /usr/local/bin/
+# OR
+brew install kubectl
+
+# oc (OpenShift CLI) - download from mirror.openshift.com or:
+brew install openshift-cli
+
+# eksctl (AWS EKS)
+brew install eksctl
+# OR
+curl -sLO "https://github.com/eksctl-io/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz"
+
+# Azure CLI + AKS
+brew install azure-cli
+az extension add --name aks-preview
+
+# Google Cloud SDK + GKE
+brew install google-cloud-sdk
+gcloud components install gke-gcloud-auth-plugin
+
+# ROSA CLI
+rosa download cli
+```
+
 ## Command Usage Convention
 
 **IMPORTANT**: This skill uses `kubectl` as the primary command in all examples. When working with:
@@ -798,23 +839,231 @@ spec:
 
 ## Platform-Specific Notes
 
-### EKS (AWS)
-- Use `kubernetes.io/aws-load-balancer-*` annotations for ALB/NLB
-- IAM Roles for Service Accounts (IRSA) for AWS API access
-- EBS CSI driver for storage
+### EKS (AWS) - v1.31
 
-### GKE (Google Cloud)
-- Use `cloud.google.com/neg` for Network Endpoint Groups
-- Workload Identity for GCP API access
-- Compute Engine persistent disk for storage
+**CLI Commands:**
+```bash
+# Create cluster with eksctl
+eksctl create cluster --name ${CLUSTER} --region ${REGION} \
+  --version 1.31 --nodegroup-name standard \
+  --node-type m6i.large --nodes 3 --nodes-min 1 --nodes-max 5 \
+  --managed --spot
 
-### AKS (Azure)
-- Use `kubernetes.io/azure-load-balancer-*` annotations
-- AAD Pod Identity or Workload Identity for Azure access
-- Azure Disk/File for storage
+# Get kubeconfig
+aws eks update-kubeconfig --name ${CLUSTER} --region ${REGION}
 
-### OpenShift
-- Use Routes instead of Ingress (or both with ingress controller)
-- DeploymentConfig for S2I builds (or standard Deployment)
-- SCCs for pod security (instead of PodSecurityPolicies/Standards)
-- Image Streams for internal registry management
+# Check add-ons
+aws eks list-addons --cluster-name ${CLUSTER}
+
+# Install EKS Pod Identity (replaces IRSA in 1.31+)
+eksctl create podidentityassociation --cluster ${CLUSTER} \
+  --namespace ${NS} --service-account-name ${SA} \
+  --role-arn arn:aws:iam::${ACCOUNT}:role/${ROLE}
+```
+
+**Key Features (1.31):**
+- EKS Pod Identity (simplified IAM for pods, replaces IRSA complexity)
+- EKS Auto Mode (automatic node management)
+- EBS CSI driver for gp3 volumes (default)
+- AWS Load Balancer Controller v2.9+ for ALB/NLB
+- Karpenter v1.0+ for autoscaling
+
+**Manifest Annotations:**
+```yaml
+# ALB Ingress (AWS Load Balancer Controller)
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+    alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-TLS13-1-2-2021-06
+    alb.ingress.kubernetes.io/certificate-arn: ${ACM_CERT_ARN}
+    alb.ingress.kubernetes.io/healthcheck-path: /healthz
+    alb.ingress.kubernetes.io/wafv2-acl-arn: ${WAF_ARN}  # Optional WAF
+
+# NLB Service
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: nlb
+    service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
+    service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: ip
+    service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
+```
+
+### GKE (Google Cloud) - v1.31
+
+**CLI Commands:**
+```bash
+# Create Autopilot cluster (recommended)
+gcloud container clusters create-auto ${CLUSTER} \
+  --region ${REGION} \
+  --release-channel regular
+
+# Create Standard cluster
+gcloud container clusters create ${CLUSTER} \
+  --region ${REGION} \
+  --num-nodes 3 \
+  --machine-type e2-standard-4 \
+  --enable-autoscaling --min-nodes 1 --max-nodes 10 \
+  --workload-pool=${PROJECT}.svc.id.goog \
+  --enable-dataplane-v2  # Cilium-based networking
+
+# Get credentials
+gcloud container clusters get-credentials ${CLUSTER} --region ${REGION}
+
+# Check GKE version
+gcloud container get-server-config --region ${REGION}
+```
+
+**Key Features (1.31):**
+- Autopilot mode (fully managed nodes)
+- GKE Dataplane V2 (Cilium-based eBPF networking)
+- Workload Identity Federation (replaces node SA)
+- Gateway API support (standard)
+- Config Connector for GCP resource management
+
+**Manifest Annotations:**
+```yaml
+# GCE Ingress with Google-managed cert
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: gce
+    kubernetes.io/ingress.global-static-ip-name: ${STATIC_IP}
+    networking.gke.io/managed-certificates: ${MANAGED_CERT}
+    networking.gke.io/v1beta1.FrontendConfig: ${FRONTEND_CONFIG}
+
+# NEG for container-native load balancing (recommended)
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    cloud.google.com/neg: '{"ingress": true}'
+    cloud.google.com/backend-config: '{"default": "${BACKEND_CONFIG}"}'
+```
+
+### AKS (Azure) - v1.31
+
+**CLI Commands:**
+```bash
+# Create AKS cluster
+az aks create --resource-group ${RG} --name ${CLUSTER} \
+  --kubernetes-version 1.31 \
+  --node-count 3 --node-vm-size Standard_D4s_v5 \
+  --enable-managed-identity \
+  --enable-workload-identity \
+  --enable-oidc-issuer \
+  --network-plugin azure \
+  --network-plugin-mode overlay \
+  --network-dataplane cilium \
+  --enable-addons monitoring
+
+# Get credentials
+az aks get-credentials --resource-group ${RG} --name ${CLUSTER}
+
+# Check cluster
+az aks show --resource-group ${RG} --name ${CLUSTER}
+
+# Enable addons
+az aks enable-addons --addons azure-keyvault-secrets-provider \
+  --resource-group ${RG} --name ${CLUSTER}
+```
+
+**Key Features (1.31):**
+- Azure CNI Overlay with Cilium (eBPF networking)
+- Workload Identity (Azure AD pod identity replacement)
+- KEDA add-on (event-driven autoscaling)
+- Azure Key Vault Secrets Provider (CSI driver)
+- Automatic image cleaner and node autoprovision
+
+**Manifest Annotations:**
+```yaml
+# Azure Application Gateway Ingress
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: azure/application-gateway
+    appgw.ingress.kubernetes.io/ssl-redirect: "true"
+    appgw.ingress.kubernetes.io/use-private-ip: "false"
+    appgw.ingress.kubernetes.io/backend-path-prefix: "/"
+    appgw.ingress.kubernetes.io/waf-policy-for-path: ${WAF_POLICY_ID}
+
+# Azure Internal Load Balancer
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+    service.beta.kubernetes.io/azure-load-balancer-internal-subnet: ${SUBNET}
+    service.beta.kubernetes.io/azure-pls-create: "true"  # Private Link
+```
+
+### OpenShift / ARO / ROSA - v4.17
+
+**CLI Commands:**
+```bash
+# OpenShift CLI basics
+oc login ${API_URL} --token=${TOKEN}
+oc project ${NAMESPACE}
+oc new-project ${PROJECT}
+
+# ARO (Azure Red Hat OpenShift)
+az aro create --resource-group ${RG} --name ${CLUSTER} \
+  --vnet ${VNET} --master-subnet ${MASTER_SUBNET} \
+  --worker-subnet ${WORKER_SUBNET} \
+  --pull-secret @pull-secret.txt
+
+az aro show --resource-group ${RG} --name ${CLUSTER} --query consoleProfile.url
+az aro list-credentials --resource-group ${RG} --name ${CLUSTER}
+
+# ROSA (Red Hat OpenShift on AWS)
+rosa create cluster --cluster-name ${CLUSTER} \
+  --region ${REGION} \
+  --sts --mode auto \
+  --hosted-cp  # Hosted control plane (HCP) for faster provisioning
+
+rosa describe cluster --cluster ${CLUSTER}
+rosa create admin --cluster ${CLUSTER}
+```
+
+**Key Features (4.17):**
+- OVN-Kubernetes (default CNI with eBPF)
+- ROSA with Hosted Control Planes (HCP)
+- SecurityContextConstraints (SCC) with Pod Security Admission
+- OpenShift GitOps (ArgoCD) and Pipelines (Tekton) operators
+- Service Mesh 3.0 (Istio-based)
+- OpenShift AI (machine learning platform)
+
+**OpenShift-specific Resources:**
+```yaml
+# Route (instead of Ingress)
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: ${APP_NAME}
+  annotations:
+    haproxy.router.openshift.io/timeout: 60s
+    haproxy.router.openshift.io/rate-limit-connections: "true"
+    haproxy.router.openshift.io/rate-limit-connections.rate-http: "100"
+spec:
+  host: ${HOST}
+  to:
+    kind: Service
+    name: ${APP_NAME}
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+    certificate: |
+      ${CERT}
+    key: |
+      ${KEY}
+```

@@ -1,9 +1,10 @@
 ---
 name: dev-design
-description: "REQUIRED Phase 4 of /dev workflow. Proposes architecture approaches with trade-offs and gets user approval."
+description: This skill should be used when the user asks to "propose architecture", "design implementation approach", "choose between approaches", or in Phase 4 of /dev workflow after exploration is complete. Proposes 2-3 architecture approaches with clear trade-offs, decomposes features into independent tasks, and obtains explicit user approval before implementation begins.
+version: 0.1.0
 ---
 
-**Announce:** "I'm using dev-design (Phase 4) to propose implementation approaches."
+**Announce:** "Using dev-design (Phase 4) to propose implementation approaches and obtain user approval."
 
 ## Contents
 
@@ -23,7 +24,7 @@ Propose implementation approaches, explain trade-offs, get user approval.
 <EXTREMELY-IMPORTANT>
 ## The Iron Law of Design
 
-**USER MUST APPROVE BEFORE IMPLEMENTATION. This is not negotiable.**
+**YOU MUST GET USER APPROVAL BEFORE IMPLEMENTATION. This is not negotiable.**
 
 After presenting approaches:
 1. Show 2-3 options with trade-offs
@@ -33,7 +34,7 @@ After presenting approaches:
 
 Implementation CANNOT start without user saying "Yes" or choosing an approach.
 
-**If you catch yourself about to implement without user approval, STOP.**
+**STOP - you're about to implement without user approval.**
 </EXTREMELY-IMPORTANT>
 
 ## What Design Does
@@ -53,7 +54,7 @@ Implementation CANNOT start without user saying "Yes" or choosing an approach.
 
 ### 1. Review Inputs
 
-Before designing, ensure you have:
+Before designing, ensure the following exist:
 - `.claude/SPEC.md` - final requirements
 - Exploration findings - key files, patterns
 - Clarified decisions - edge cases, integrations
@@ -76,9 +77,10 @@ Each approach should address the same requirements differently:
 
 ### 3. Present with Trade-offs
 
-Use AskUserQuestion to present approaches:
+Use the AskUserQuestion tool to present approaches:
 
-```
+```python
+# AskUserQuestion: Present 2-3 architecture approaches with trade-offs for user selection
 AskUserQuestion(questions=[{
   "question": "Which architecture approach should we use?",
   "header": "Architecture",
@@ -106,14 +108,102 @@ AskUserQuestion(questions=[{
 - Clear trade-offs for each
 - Reference specific files from exploration
 
-### 4. Write PLAN.md
+### 4. Feature Decomposition Check
 
-After user chooses, write `.claude/PLAN.md`:
+**CRITICAL:** Before writing PLAN.md, check if this is actually multiple features.
+
+Review the scope and ask:
+
+```python
+# AskUserQuestion: Determine if feature should be split into independent tasks
+AskUserQuestion(questions=[{
+  "question": "Is this one cohesive feature or multiple independent features?",
+  "header": "Scope",
+  "options": [
+    {
+      "label": "One feature",
+      "description": "Implement everything together in one branch/worktree"
+    },
+    {
+      "label": "Multiple features",
+      "description": "Break into separate features, each with own branch/worktree/PR"
+    }
+  ],
+  "multiSelect": false
+}])
+```
+
+**If "Multiple features":**
+
+1. **List the independent features** identified from SPEC.md:
+   ```
+   Based on the requirements, this breaks into:
+   1. Theme infrastructure (color system, theme provider)
+   2. Settings UI (theme selector component)
+   3. Component updates (update 20+ components to use theme)
+   4. Persistence layer (save user preference)
+
+   Each can be implemented and PR'd independently.
+   ```
+
+2. **Ask which to tackle first:**
+   ```python
+   # AskUserQuestion: Prioritize which feature to implement first
+   AskUserQuestion(questions=[{
+     "question": "Which feature should we implement first?",
+     "header": "Priority",
+     "options": [
+       {"label": "Theme infrastructure (Recommended)", "description": "Foundation that others depend on"},
+       {"label": "Settings UI", "description": "UI for theme selection"},
+       {"label": "Component updates", "description": "Apply themes to components"},
+       {"label": "Persistence layer", "description": "Save user preference"}
+     ],
+     "multiSelect": false
+   }])
+   ```
+
+3. **Write PLAN.md for ONLY the chosen feature**
+
+4. **Document remaining features** in `.claude/BACKLOG.md`:
+   ```markdown
+   # Feature Backlog
+
+   ## Dark Mode Implementation
+
+   ### Completed
+   - [ ] None yet
+
+   ### Next Up
+   - [ ] Theme infrastructure
+   - [ ] Settings UI
+   - [ ] Component updates
+   - [ ] Persistence layer
+
+   **Current Focus:** Theme infrastructure
+   ```
+
+**If "One feature":**
+
+Proceed to write PLAN.md for the entire scope (step 5 below).
+
+**Why this matters:**
+
+- Multiple features in one branch = massive PR, review hell, merge conflicts
+- Separate features = clean PRs, incremental progress, easier reviews
+- After first feature PR merges, come back and tackle next feature
+
+### 5. Write PLAN.md
+
+After user chooses approach AND confirms scope, write `.claude/PLAN.md`:
 
 ```markdown
 # Implementation Plan: [Feature]
 
-> **For Claude:** REQUIRED SUB-SKILL: Use `Skill(skill="workflows:dev-implement")` to implement this plan with TDD.
+> **For Claude:** REQUIRED SUB-SKILL: Invoke `Skill(skill="workflows:dev-implement")` to implement this plan.
+>
+> **Per-Task Ralph Loops:** Assign each task its OWN ralph loop. Do NOT combine multiple tasks into one loop.
+>
+> **Delegation:** Main chat orchestrates, Task agents implement. Use `Skill(skill="workflows:dev-delegate")` for subagent templates.
 
 ## Chosen Approach
 [Name]: [Brief description]
@@ -133,35 +223,79 @@ After user chooses, write `.claude/PLAN.md`:
 |------|---------|
 | `src/auth/types.ts` | Session type definitions |
 
-## Implementation Order
-1. [ ] Add types (no dependencies)
-2. [ ] Implement service method
-3. [ ] Add route handler
-4. [ ] Write tests
+## Implementation Order (with Per-Task Ralph Loops)
 
-## Testing Strategy
-- Unit tests for service method
-- Integration test for endpoint
-- Match patterns from `tests/auth/*.test.ts`
+> **For Claude:** Each task = one ralph loop. Complete task N before starting task N+1.
+>
+> Pattern: `Skill(skill="ralph-loop:ralph-loop", args="Task N: [name] --max-iterations 10 --completion-promise TASKN_DONE")`
+
+| Task | Ralph Loop | Core Test (MUST EXECUTE CODE) | Verify Command |
+|------|------------|-------------------------------|----------------|
+| 1. Add types | `"Task 1: Add types" → TASK1_DONE` | N/A (types only) | `tsc --noEmit` |
+| 2. Service method | `"Task 2: Service method" → TASK2_DONE` | `test_validate_session()` calls method, checks return | `pytest tests/test_auth.py -v` |
+| 3. Route handler | `"Task 3: Route handler" → TASK3_DONE` | Integration test hits endpoint, checks response | `pytest tests/test_api.py -v` |
+
+### What Counts as a REAL Test
+
+| ✅ REAL (execute + verify) | ❌ NOT A TEST (never do this) |
+|----------------------------|-------------------------------|
+| pytest calls function | grep for function exists |
+| Playwright clicks button | ast-grep finds pattern |
+| API request checks response | Log says "success" |
+| Screenshot comparison | "Code looks correct" |
+
+**Every task MUST have a test that EXECUTES the code and VERIFIES behavior.**
 ```
 
-### 5. User Gate - Final Approval
+### 6. User Gate - Final Approval
 
-After writing PLAN.md, explicit approval:
+After writing PLAN.md, get explicit approval:
 
 ```
 AskUserQuestion(questions=[{
   "question": "Ready to start implementation?",
   "header": "Approval",
   "options": [
-    {"label": "Yes, proceed", "description": "Start /dev-implement with TDD"},
+    {"label": "Yes, proceed", "description": "Start implementation with TDD"},
     {"label": "No, discuss changes", "description": "Modify the plan first"}
   ],
   "multiSelect": false
 }])
 ```
 
-**Only proceed to /dev-implement after "Yes, proceed".**
+**If "No":** Wait for user feedback, modify plan, ask again.
+
+**If "Yes":** Proceed to workspace setup question in Step 7 below.
+
+### 7. Workspace Setup Question
+
+After user approves implementation, ask about worktree isolation:
+
+```
+AskUserQuestion(questions=[{
+  "question": "Create isolated worktree for this feature?",
+  "header": "Workspace",
+  "options": [
+    {"label": "Yes (Recommended)", "description": "Work in isolated .worktrees/ directory - keeps main workspace clean"},
+    {"label": "No", "description": "Work in current directory"}
+  ],
+  "multiSelect": false
+}])
+```
+
+**If "Yes (Recommended)":**
+
+Invoke the dev-worktree skill:
+```bash
+# dev-worktree: Create isolated git worktree for feature development
+Skill(skill="workflows:dev-worktree")
+```
+
+Then after worktree is created, invoke dev-implement.
+
+**If "No":**
+
+Directly invoke dev-implement in current directory without worktree isolation.
 
 ## Approach Categories
 
@@ -180,14 +314,48 @@ Required sections:
 - **Implementation Order** - Ordered task list with dependencies
 - **Testing Strategy** - How to verify
 
+## The Gate Function
+
+Complete all steps before starting implementation:
+
+```
+1. REVIEW → Read SPEC.md and exploration findings
+2. PROPOSE → Present 2-3 approaches with trade-offs
+3. ASK → Use AskUserQuestion with clear options
+4. DECOMPOSE → Ask "One feature or multiple?" (CRITICAL)
+   └─ If multiple → List features, ask which first, write BACKLOG.md
+5. WAIT → Do NOT proceed until user responds
+6. DOCUMENT → Write chosen approach to PLAN.md (for chosen feature only if decomposed)
+7. CONFIRM → Ask "Ready to proceed?"
+8. WORKSPACE → Ask "Create worktree?" (Yes recommended / No)
+9. SETUP → If worktree Yes, invoke dev-worktree
+10. GATE → Only start /dev-implement after all approvals
+```
+
+**Mandatory steps (NEVER skip):** DECOMPOSE, WAIT, WORKSPACE, and GATE.
+
+## Rationalization Prevention
+
+Recognize these thoughts as red flags—they signal attempts to bypass the user gate:
+
+| Thought | Reality |
+|---------|---------|
+| "User will approve this" | Your assumption ≠ approval. Ask and wait. |
+| "It's the obvious choice" | User decides what's obvious. Present options. |
+| "Let me just start" | NO. Gate exists for a reason. Wait. |
+| "User said they trust me" | Trust doesn't mean skip approval. Ask. |
+| "Time pressure" | You'll waste more time with the wrong approach. Wait for approval. |
+| "Only one viable option" | Present it anyway. User may see alternatives. |
+| "Ask forgiveness later" | No. Ask permission now. |
+
 ## Red Flags - STOP If You're About To:
 
 | Action | Why It's Wrong | Do Instead |
 |--------|----------------|------------|
-| Present only one approach | User has no choice | Always show 2-3 options |
-| Skip trade-offs | User can't make informed decision | Explain pros/cons clearly |
-| Start implementing | No approval yet | Wait for explicit "Yes" |
-| Assume recommendation accepted | User might prefer different | Ask and wait for answer |
+| Present only one approach | You're removing user choice | Always show 2-3 options |
+| Skip trade-offs | You're making decision for user | Explain pros/cons clearly |
+| Start implementing | You don't have approval yet | Wait for explicit "Yes" |
+| Assume recommendation accepted | You're guessing at user preference | Ask and wait for answer |
 
 ## Output
 
@@ -199,9 +367,25 @@ Design complete when:
 
 ## Phase Complete
 
-**REQUIRED SUB-SKILL:** After user approves ("Yes, proceed"), IMMEDIATELY invoke:
-```
-Skill(skill="workflows:dev-implement")
-```
+**After user approves ("Yes, proceed"):**
 
-Do NOT proceed without explicit user approval.
+1. **Ask about worktree** (Step 7 above)
+2. **If worktree chosen:**
+   - Invoke `Skill(skill="workflows:dev-worktree")`
+   - After worktree created, invoke `Skill(skill="workflows:dev-implement")`
+3. **If no worktree:**
+   - Directly invoke `Skill(skill="workflows:dev-implement")`
+
+**Required before proceeding:**
+- Explicit user approval for implementation
+- Feature scope decision (one feature vs multiple)
+- User choice on worktree (Yes/No)
+
+**After this feature is implemented and PR'd:**
+
+If multiple features were identified in step 4, check `.claude/BACKLOG.md` for remaining features:
+1. View remaining features in BACKLOG.md
+2. Invoke `/dev` again to tackle the next feature
+3. Repeat until all features are complete
+
+This enables incremental development: one feature → PR → merge → next feature.

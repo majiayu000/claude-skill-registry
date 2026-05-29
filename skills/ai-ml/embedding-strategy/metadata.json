@@ -1,0 +1,16 @@
+{
+  "name": "embedding-strategy",
+  "repo": "Agentient/vibekit",
+  "path": "plugins/rag-tools/skills/embedding-strategy/SKILL.md",
+  "source": "github.com/Agentient/vibekit",
+  "downloaded_at": "2026-02-02T03:05:01.297927Z",
+  "dir_name": "embedding-strategy",
+  "category": "ai-ml",
+  "author": "Agentient",
+  "source_url": "https://github.com/Agentient/vibekit/blob/main/plugins/rag-tools/skills/embedding-strategy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Agentient/vibekit/blob/main/plugins/rag-tools/skills/embedding-strategy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

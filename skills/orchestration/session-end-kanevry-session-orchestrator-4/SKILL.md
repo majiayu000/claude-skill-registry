@@ -26,6 +26,22 @@ Read `skills/_shared/bootstrap-gate.md` and execute the gate check. If the gate 
 Do NOT proceed past Phase 0 if GATE_CLOSED. There is no bypass. Refer to `skills/_shared/bootstrap-gate.md` for the full HARD-GATE constraints.
 </HARD-GATE>
 
+## Phase 0.5: Parallel-Aware Preamble
+
+> Skip silently when `persistence: false` in Session Config.
+
+Before Phase 1, run the parallel-aware preamble per `skills/_shared/parallel-aware-preamble.md`. The preamble detects other active sessions in the worktree-family via `discoverActiveSessions(repoRoot)`, classifies the caller's mode via `classifyMode(callerMode)` against the exclusivity-matrix, and fires the appropriate AUQ on conflict.
+
+**Outcome handling:**
+- `PASS_THROUGH` → continue to Phase 1
+- `EXCLUSIVE_BLOCKED` → exit Phase 0 cleanly per the AUQ outcome
+- `PROMOTION_OFFER` → user picks Worktree-Promotion (see `parallel-aware-auq.md` outcome-handling — calls `enterWorktree()`), in-place + Deviation, or Abbrechen
+
+For session-end specifically: the preamble is DETECTION-ONLY. The lock-release path in later phases keeps its current behavior — releasing the OWN session's lock requires no matrix consultation.
+
+**Implementation reference:** `skills/_shared/parallel-aware-preamble.md § Implementation`.
+**AUQ reference:** `skills/_shared/parallel-aware-auq.md`.
+
 ## Phase 1: Plan Verification
 
 Read back the session plan that was agreed at the start. For EACH planned item:
@@ -239,6 +255,18 @@ Pass the aggregated counts and mode forward to Phase 6 Final Report (Docs Health
 
 ## Phase 3: Documentation Updates
 
+> **Final heartbeat (#590-3)** — at Phase 3 entry, refresh the session-lock heartbeat BEFORE the multi-minute close-out chain (vault-mirror, dialectic, durable-commit, metrics). A long-idle deep session may not have had PostToolBatch activity for >4h; without a refresh the 4h-TTL lock would lapse mid-close and appear stale to a concurrent session. Place this call BEFORE Phase 3.8 Session Lock Release (which deletes the lock — refreshing a deleted lock is a no-op). Best-effort: a failure must NOT block the close.
+>
+> ```js
+> // Final heartbeat (#590-3) — refresh before the multi-minute close-out (vault-mirror, dialectic, durable-commit)
+> // so a long-idle deep session's 4h-TTL lock does not lapse mid-close.
+> // BEFORE Phase 3.8 lock-release (which deletes the lock).
+> import { updateHeartbeat } from 'scripts/lib/session-lock.mjs';
+> updateHeartbeat({ sessionId, repoRoot: process.cwd() });
+> ```
+>
+> Skip silently if `persistence: false` in Session Config (no session.lock exists in that mode).
+
 ### 3.0 Defensive Cleanup
 
 Delete `<state-dir>/wave-scope.json` if it still exists:
@@ -278,7 +306,7 @@ Review `<state-dir>/rules/` files that are relevant to this session's work:
 
 > **Ownership Reference:** See `skills/_shared/state-ownership.md`. session-end is authorized to set `status: completed` plus the optional `updated` timestamp (#184), and — as of Phase A of Epic #271 — the 5 Recommendation fields written by Phase 3.7a. No other fields.
 
-> **Runtime Ordering Note (Epic #271 Phase A):** Phase 3.4's `status: completed` write executes LAST in Phase 3, AFTER Phase 3.7 (sessions.jsonl) and Phase 3.7a (Compute and Write Recommendations). The ordinal position here (3.4) is kept for historical compatibility; the canonical runtime order is `3.1 → 3.2 → 3.3 → 3.4a → 3.5 → 3.5a → 3.6 → 3.6.5 → 3.6.7 → 3.7 → 3.7a → 3.4`. Rationale: Phase 3.7a reads in-memory session metrics and writes the 5 Recommendation fields via `updateFrontmatterFields`; that write must complete BEFORE the STATE.md frontmatter is finalized with `status: completed` so the Recommendation fields are visible to the next session-start while STATE.md is still `status: active`. Crash-resilience: if `/close` aborts between 3.7a and 3.4, STATE.md carries `status: active` + Recommendations; session-start Phase 1.5 offers resume (and the banner renders). If the reverse ordering were used (status: completed first), a crash would leave `status: completed` without Recommendations — the Reader would silently no-op the banner, losing the handoff.
+> **Runtime Ordering Note (Epic #271 Phase A):** Phase 3.4's `status: completed` write executes LAST in Phase 3, AFTER Phase 3.7 (sessions.jsonl) and Phase 3.7a (Compute and Write Recommendations). The ordinal position here (3.4) is kept for historical compatibility; the canonical runtime order is `3.1 → 3.2 → 3.3 → 3.4a → 3.5 → 3.5a → 3.6 → 3.6.5 → 3.6.7 → 3.7 → 3.7a → 3.7b → 3.4`. Rationale: Phase 3.7a reads in-memory session metrics and writes the 5 Recommendation fields via `updateFrontmatterFields`; that write must complete BEFORE the STATE.md frontmatter is finalized with `status: completed` so the Recommendation fields are visible to the next session-start while STATE.md is still `status: active`. Crash-resilience: if `/close` aborts between 3.7a and 3.4, STATE.md carries `status: active` + Recommendations; session-start Phase 1.5 offers resume (and the banner renders). If the reverse ordering were used (status: completed first), a crash would leave `status: completed` without Recommendations — the Reader would silently no-op the banner, losing the handoff.
 
 > Gate: Only run if `persistence` is enabled in Session Config and `<state-dir>/STATE.md` exists.
 1. Set frontmatter `status: completed`
@@ -357,24 +385,41 @@ The proposals queue is populated mid-session by wave-executor agents calling `no
 
 #### Coordinator-direct procedure
 
-1. Read Session Config: `memory.proposals.enabled` (default `true`), `memory.proposals.quota-per-wave` (default 5), `memory.proposals.confidence-floor` (default 0.5).
+1. Read Session Config: `memory.proposals.enabled` (default `true`), `memory.proposals.quota-per-wave` (default 5), `memory.proposals.confidence-floor` (default 0.5), `auto-dream.min-confidence` (default 0.5 — issue #566; SECOND gate above the write-time `memory.proposals.confidence-floor`).
 
-2. Invoke `collectProposals` from `scripts/lib/memory-proposals/collector.mjs`:
+2. Invoke `collectProposals` from `scripts/lib/memory-proposals/collector.mjs`, passing the collect-emit confidence floor from Session Config:
    ```javascript
    import { collectProposals } from '${PLUGIN_ROOT}/scripts/lib/memory-proposals/collector.mjs';
-   const { queue, stats, perWaveSummaries } = await collectProposals({ repoRoot: process.cwd() });
+   const { queue, stats, perWaveSummaries } = await collectProposals({
+     repoRoot: process.cwd(),
+     // Issue #566: collect-emit confidence floor. Records with
+     // `record.confidence < minConfidence` are dropped from `queue` (but
+     // counted in stats). When the key is absent, defaults to 0.5 via the
+     // `_parseAutoDream` parser.
+     minConfidence: config['auto-dream']?.['min-confidence'],
+   });
    ```
 
 3. If `queue.length === 0`: log `memory-proposals: queue empty (stats: ${JSON.stringify(stats)})` and continue.
 
-4. **AUQ pagination logic**: rendered via `_partitionForAuq(queue)` from `scripts/lib/memory-proposals/auq-partition.mjs`:
+4. **AUQ pagination logic**: partition the queue into FIFO batches of 4 inline:
 
    - Empty queue → silent skip (no AUQ rendered).
    - 1-4 items → single multiSelect call with all items as options.
    - 5+ items → sequential multiSelect calls in batches of 4 (FIFO order; final batch may have < 4 items).
 
-   Import: `import { _partitionForAuq } from '${PLUGIN_ROOT}/scripts/lib/memory-proposals/auq-partition.mjs';`
-   Call: `const { batches } = _partitionForAuq(queue);` then iterate `batches` and emit one `AskUserQuestion` per batch with `header: "Memory — Confirm Proposals (Batch N of M)"`. Option label format: `[<type-12>] | <subject-40> | conf=X.XX`. Option description: `evidence: <first 60 chars of insight>`. `multiSelect: true`.
+   ```javascript
+   // Inlined from former scripts/lib/memory-proposals/auq-partition.mjs (PRD F2.2 #502 closed; see #558 M2).
+   const BATCH_SIZE = 4;
+   const batches = [];
+   if (Array.isArray(queue) && queue.length > 0) {
+     for (let i = 0; i < queue.length; i += BATCH_SIZE) {
+       batches.push(queue.slice(i, i + BATCH_SIZE));
+     }
+   }
+   ```
+
+   Then iterate `batches` and emit one `AskUserQuestion` per batch with `header: "Memory — Confirm Proposals (Batch N of M)"`. Option label format: `[<type-12>] | <subject-40> | conf=X.XX`. Option description: `evidence: <first 60 chars of insight>`. `multiSelect: true`.
 
 5. After all batches answered, partition the queue into `approved` (any option selected across all batches) and `rejected` (all unselected).
 
@@ -414,7 +459,8 @@ After learnings are written (Phase 3.6), determine whether to dispatch a `/memor
 2. Invoke `shouldDispatchAutoDream` from `scripts/lib/auto-dream.mjs`:
 
    ```javascript
-   import { shouldDispatchAutoDream, resolveMemoryDir } from '${PLUGIN_ROOT}/scripts/lib/auto-dream.mjs';
+   import { shouldDispatchAutoDream } from '${PLUGIN_ROOT}/scripts/lib/auto-dream.mjs';
+   import { resolveMemoryDir } from '${PLUGIN_ROOT}/scripts/lib/memory-paths.mjs';
    const memoryDir = resolveMemoryDir();
    const decision = await shouldDispatchAutoDream({
      repoRoot: process.cwd(),
@@ -515,6 +561,16 @@ Calls `computeV0Recommendation({completionRate, carryoverRatio, carryoverIssues}
 
 **See `phase-3-7a-recommendations.md` for full details.**
 
+### 3.7b Durable-Commit Session Telemetry (#490 AC2)
+
+> Gate: Always runs when persistence is enabled. Local execution is a no-op (`enabled: false`).
+
+> **Ordering:** Runs AFTER Phase 3.7a (Recommendations written to STATE.md) and BEFORE Phase 3.4 (`status: completed`). See the Phase 3.4 Runtime Ordering Note canonical order.
+
+Wraps the already-completed Phase 3.7 + 3.7a writes with `withDurableCommit` (from `scripts/lib/autopilot/durable-telemetry.mjs`) for the two session-end-owned files: `.orchestrator/metrics/sessions.jsonl` and `<state-dir>/STATE.md`. `enabled: false` keeps local closes a no-op (`{ok: true, skipped: true}`); the flag flips `true` only in cloud Routines execution so telemetry survives ephemeral-clone reclamation. `autopilot.jsonl` is NOT in scope here — `scripts/lib/autopilot/loop.mjs` owns its commit (#490 Wave-2).
+
+**See `phase-3-7a-recommendations.md` § Phase 3.7b for the full `withDurableCommit` invocation.**
+
 ## Phase 3.8: Session Lock Release (#330)
 
 > Gate: Only run if `persistence` is `true` in Session Config. Skip silently otherwise.
@@ -523,6 +579,9 @@ After STATE.md is finalized with `status: completed` (Phase 3.4) and Recommendat
 
 ```javascript
 import { release } from 'scripts/lib/session-lock.mjs';
+// sessionId = the session identifier established by session-start Phase 1.2 acquire()
+//   and stored in .orchestrator/session.lock (session_id field); matches the
+//   STATE.md frontmatter `session:` field written during Pre-Wave 1b initialization.
 const result = release({ sessionId, repoRoot: process.cwd() });
 // result.ok is always true unless a filesystem error occurred.
 // result.deleted === true  → lock file removed successfully.
@@ -570,6 +629,108 @@ git push origin HEAD
 # Only attempt if 'mirror: github' is in Session Config AND remote exists
 git remote get-url github 2>/dev/null && git push github HEAD 2>/dev/null || echo "GitHub mirror: not configured"
 ```
+
+## Phase 4a: Auto-Promoted Worktree Cleanup (#575 P3.2)
+
+> Skip if `persistence: false` in Session Config. Skip silently if the current worktree is NOT an Auto-promoted sibling (the common case).
+
+After Phase 4 commit+push has durably persisted `sessions.jsonl` + `STATE.md` to origin, check whether the current session ran in an Auto-promoted sibling worktree (created via the P3.1 PROMOTION_OFFER path). If yes, apply Hybrid Cleanup-Pattern: clean → auto-remove, dirty → AUQ.
+
+> **Ordering rationale (#490 durableCommit dependency):** Phase 4a runs AFTER Phase 4 commit+push, NOT before. Removing the promoted worktree before commit+push would lose the worktree's `STATE.md` before Phase 3.4 metrics writes (`sessions.jsonl`) are committed, violating the #490 durableCommit ordering invariant. Once Phase 4 has pushed all metrics + STATE.md to origin, the promoted worktree can be safely removed without data loss.
+
+### Detection: is the current worktree an Auto-promoted sibling?
+
+Auto-promoted sibling worktrees are created by `enterWorktree()` during the Phase 0.5 PROMOTION_OFFER path. Their path layout is `<basePath>/<repo-name>-<sessionId>/`. Detection uses `parseSessionId()` from `scripts/lib/session-id.mjs` (#572) — never custom regex.
+
+> **Authoritative impl:** `scripts/lib/session-end/worktree-cleanup.mjs` — `detectAutoPromotedWorktree(repoRoot, sessionId, opts)`. Import and call; do NOT re-implement from this doc.
+>
+> Algorithm: parse `sessionId` via `parseSessionId()`; return `null` immediately for UUID-format sessions (never auto-promoted). Derive the MAIN checkout root from the first `worktree ` entry of `git worktree list --porcelain` (NOT `path.basename(repoRoot)` — the promoted worktree's basename IS the comparison target). If `repoRoot` resolves to the main checkout, return `null`. Otherwise compare `path.basename(repoRoot)` against `<main-repo-name>-<sessionId>`; on match return `{ wtPath, sessionId, branch }`, else `null`. All git invocation is via the injection-safe `opts.execFileFn` (default `execFileSync` with an args array — #577 HARDEN-001).
+
+### Clean-check
+
+A worktree is clean iff ALL three conditions hold:
+
+1. **No uncommitted changes**: `git status --porcelain` is empty
+2. **No untracked files**: implicit in #1 (porcelain includes `??` entries)
+3. **No unpushed commits**: `git status --short --branch` does NOT contain `ahead` indicator
+
+> **Authoritative impl:** `scripts/lib/session-end/worktree-cleanup.mjs` — `isWorktreeClean(wtPath, opts)`. Import and call; do NOT re-implement from this doc.
+>
+> Algorithm: run `git status --porcelain`; if non-empty → dirty (`false`). Else run `git status --short --branch`; if it matches `/\bahead\b/` → unpushed (`false`). Otherwise `true`. On ANY git error → `false` (conservative PSA-003 default: never auto-remove a worktree we could not verify). Git invocation is via the injection-safe `opts.execFileFn` (default `execFileSync` with an args array — #577 HARDEN-001).
+
+### Clean path: auto-remove + WARN (PRD §3 P3 Gherkin row 2)
+
+When detection returns a worktree object AND `isWorktreeClean()` returns `true`, auto-remove via `git worktree remove` (NO `--force`) and log a WARN line. The main checkout's git dir (`repoMainRoot`) is derived via the first entry of `git worktree list --porcelain`.
+
+> **Authoritative impl:** import `detectAutoPromotedWorktree` + `isWorktreeClean` from `scripts/lib/session-end/worktree-cleanup.mjs`. All git invocation MUST go through the injection-safe arg-array form (`execFileSync('git', ['-C', dir, …])`, #577 HARDEN-001) — never the legacy `execSync(\`git -C ${var} …\`)` template-literal shell form.
+
+```js
+import { execFileSync } from 'node:child_process';
+import { detectAutoPromotedWorktree, isWorktreeClean } from '${PLUGIN_ROOT}/scripts/lib/session-end/worktree-cleanup.mjs';
+
+const promoted = detectAutoPromotedWorktree(process.cwd(), sessionId);
+if (!promoted) {
+  // Not auto-promoted — skip Phase 4a entirely. Continue to Phase 5.
+} else {
+  // Derive main checkout root from first worktree-list entry (arg-array, no shell)
+  const wtList = execFileSync('git', ['-C', promoted.wtPath, 'worktree', 'list', '--porcelain'], { encoding: 'utf8' });
+  const mainLine = wtList.split('\n').find((l) => l.startsWith('worktree '));
+  const repoMainRoot = mainLine ? mainLine.slice('worktree '.length).trim() : null;
+
+  if (isWorktreeClean(promoted.wtPath)) {
+    // Clean path: PRD §3 P3 Gherkin row 2 — auto-remove
+    console.warn(`session-end Phase 4a: auto-promoted worktree ${promoted.wtPath} is clean — removing via 'git worktree remove'`);
+    execFileSync('git', ['-C', repoMainRoot, 'worktree', 'remove', promoted.wtPath], { encoding: 'utf8' });
+  } else {
+    // Dirty path: PRD §3 P3 Gherkin row 3 — AUQ before any destructive action
+    // [AUQ block — see Dirty path subsection below]
+  }
+}
+```
+
+### Dirty path: AUQ before destructive action (PRD §3 P3 Gherkin row 3)
+
+When the worktree is dirty (uncommitted, untracked, OR unpushed), render this AUQ via the coordinator's `AskUserQuestion` tool. The AUQ is coordinator-only — per `.claude/rules/ask-via-tool.md` AUQ-004, dispatched agents cannot call AUQ. Calling `git worktree remove --force` without explicit operator confirmation would violate PSA-003 (destructive action safeguards) — the dirty state may contain another session's work-in-progress or unmerged commits.
+
+```js
+AskUserQuestion({
+  questions: [{
+    question: `Auto-promoted worktree at ${promoted.wtPath} has uncommitted/untracked/unpushed changes. How should I proceed?`,
+    header: "Worktree-Cleanup",
+    multiSelect: false,
+    options: [
+      { label: "Behalten (Recommended)", description: "Keep the worktree as-is. No cleanup. Review and remove manually later." },
+      { label: "Löschen", description: "I confirm the changes are handled or expendable. Run 'git worktree remove --force' on the worktree." },
+      { label: "Manuell", description: "Exit /close. I will inspect the worktree before re-running /close." },
+    ],
+  }],
+});
+```
+
+**Codex CLI / Cursor IDE fallback** (numbered Markdown list):
+
+```
+Worktree cleanup options:
+1. **Behalten (Recommended)** — Keep the worktree as-is. No cleanup. Review and remove manually later.
+2. **Löschen** — I confirm the changes are handled or expendable. Run 'git worktree remove --force'.
+3. **Manuell** — Exit /close. I will inspect the worktree before re-running /close.
+Reply with the number of your choice.
+```
+
+**On user choice:**
+
+- **Behalten** → log `session-end Phase 4a: auto-promoted worktree retained (dirty); operator chose Behalten`. Continue to Phase 5.
+- **Löschen** → `execFileSync('git', ['-C', repoMainRoot, 'worktree', 'remove', '--force', promoted.wtPath])` (arg-array, no shell — #577 HARDEN-001). Log WARN: `session-end Phase 4a: auto-promoted worktree force-removed by user choice`. Continue to Phase 5.
+- **Manuell** → exit `/close` cleanly. Print: `session-end aborted at Phase 4a by user choice. Re-run /close after handling the worktree manually.`
+
+### Cross-references
+
+- **PRD:** `docs/prd/2026-05-26-parallel-aware-sessions.md` §3 P3 Gherkin rows 2-3 + §3.A P3 EARS event-driven clauses
+- **PSA-003:** `.claude/rules/parallel-sessions.md` — destructive action safeguards (`git worktree remove --force` requires explicit user authorization)
+- **#490 durableCommit dependency:** Phase 4a runs AFTER Phase 4 commit+push to guarantee `sessions.jsonl` + `STATE.md` are persisted to origin BEFORE worktree removal
+- **Detection helper:** `parseSessionId()` from `scripts/lib/session-id.mjs` (#572)
+- **AUQ rule:** `.claude/rules/ask-via-tool.md` AUQ-004 — coordinator-only invocation
+- **Companion phases:** P3.1 PROMOTION_OFFER (`enterWorktree()` in `parallel-aware-auq.md`) creates the worktree; this phase removes it.
 
 ## Phase 5: Issue Cleanup
 
@@ -674,6 +835,7 @@ Present to the user:
 | (inline) Phase 3.6.7 | Auto-Dialectic dispatch — `shouldDispatchAutoDialectic` + dispatch /evolve --dialectic --dry-run + writes `.orchestrator/dialectic-pending.md` + updates `.orchestrator/dialectic-last-run` |
 | `session-metrics-write.md` | Phase 3.7 JSONL append, vault-mirror invocation, and behavior matrix |
 | `phase-3-7a-recommendations.md` | Phase 3.7a full procedural body — computeV0Recommendation call, STATE.md field write, data source guarantee, error mode |
+| `phase-3-7a-recommendations.md` § 3.7b | Phase 3.7b full procedural body — `withDurableCommit` invocation for `sessions.jsonl` + `STATE.md` (#490 AC2), `enabled:false` local no-op, autopilot.jsonl exclusion note |
 | (inline) Phase 3.8 | Session Lock Release — `release()` call, silent-OK on mismatch/absent, non-fatal on fs-error, ordering note (after STATE.md writes, before Phase 4 commit staging) |
 
 ## Anti-Patterns

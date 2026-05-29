@@ -1,6 +1,7 @@
 ---
 name: api-contract-testing
 description: Verifies API contracts between services using consumer-driven contracts, schema validation, and tools like Pact. Use when testing microservices communication, preventing breaking changes, or validating OpenAPI specifications.
+license: MIT
 ---
 
 # API Contract Testing

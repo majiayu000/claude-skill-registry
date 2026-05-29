@@ -1,0 +1,17 @@
+{
+  "name": "listing-stale-branches",
+  "repo": "joaquimscosta/arkhe-claude-plugins",
+  "path": "plugins/git/skills/listing-stale-branches/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/joaquimscosta/arkhe-claude-plugins",
+  "dir_name": "listing-stale-branches",
+  "downloaded_at": "2026-05-23T03:21:09.491582Z",
+  "author": "joaquimscosta",
+  "source_url": "https://github.com/joaquimscosta/arkhe-claude-plugins/blob/main/plugins/git/skills/listing-stale-branches/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/joaquimscosta/arkhe-claude-plugins/blob/main/plugins/git/skills/listing-stale-branches/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

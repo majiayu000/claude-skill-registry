@@ -1,6 +1,8 @@
 ---
 name: bug-review
 description: |
+
+Triggers: verification, fixes, defects, code-quality, review
   Systematically uncover and fix bugs using language-specific expertise and
   reproducible evidence.
 
@@ -27,6 +29,30 @@ estimated_tokens: 450
 progressive_loading: true
 dependencies: [pensive:shared, imbue:evidence-logging, imbue:diff-analysis/modules/risk-assessment-framework]
 ---
+## Table of Contents
+
+- [Quick Start](#quick-start)
+- [When to Use](#when-to-use)
+- [Required TodoWrite Items](#required-todowrite-items)
+- [Progressive Loading](#progressive-loading)
+- [Workflow](#workflow)
+- [Step 1: Detect Languages (`bug-review:language-detected`)](#step-1:-detect-languages-(bug-review:language-detected))
+- [Step 2: Plan Reproduction (`bug-review:repro-plan`)](#step-2:-plan-reproduction-(bug-review:repro-plan))
+- [Step 3: Document Defects (`bug-review:defects-documented`)](#step-3:-document-defects-(bug-review:defects-documented))
+- [Step 4: Prepare Fixes (`bug-review:fixes-prepared`)](#step-4:-prepare-fixes-(bug-review:fixes-prepared))
+- [Step 5: Verification Plan (`bug-review:verification-plan`)](#step-5:-verification-plan-(bug-review:verification-plan))
+- [Defect Classification (Condensed)](#defect-classification-(condensed))
+- [Output Format](#output-format)
+- [Summary](#summary)
+- [Defects Found](#defects-found)
+- [[D1] file.rs:142 - Title](#[d1]-filers:142---title)
+- [Proposed Fixes](#proposed-fixes)
+- [Fix for D1](#fix-for-d1)
+- [Test Updates](#test-updates)
+- [Evidence](#evidence)
+- [Best Practices](#best-practices)
+- [Exit Criteria](#exit-criteria)
+
 
 # Bug Review Workflow
 
@@ -37,6 +63,7 @@ Systematic bug identification and fixing with language-specific expertise.
 ```bash
 /bug-review
 ```
+**Verification:** Run the command with `--help` flag to verify availability.
 
 ## When to Use
 
@@ -86,6 +113,7 @@ cargo test -p core
 pytest tests/test_api.py
 npm test -- pkg
 ```
+**Verification:** Run `pytest -v tests/test_api.py` to verify.
 
 Capture blockers and propose mocks when dependencies unavailable.
 
@@ -161,6 +189,7 @@ Assign owners and deadlines for follow-up items.
 - Logs and outputs
 - External references
 ```
+**Verification:** Run `pytest -v` to verify tests pass.
 
 ## Best Practices
 
@@ -176,3 +205,15 @@ Assign owners and deadlines for follow-up items.
 - Fixes prepared with test coverage verified
 - Verification plan includes commands and expected outputs
 - Remaining risks assessed and owners assigned
+## Troubleshooting
+
+### Common Issues
+
+**Command not found**
+Ensure all dependencies are installed and in PATH
+
+**Permission errors**
+Check file permissions and run with appropriate privileges
+
+**Unexpected behavior**
+Enable verbose logging with `--verbose` flag

@@ -1,0 +1,16 @@
+{
+  "name": "launch-alert-bot",
+  "repo": "SanctifiedOps/solana-skills",
+  "path": "skills/bots/launch-alert-bot/SKILL.md",
+  "source": "github.com/SanctifiedOps/solana-skills",
+  "downloaded_at": "2026-01-27T01:45:20.029544Z",
+  "dir_name": "launch-alert-bot",
+  "category": "integration",
+  "author": "SanctifiedOps",
+  "source_url": "https://github.com/SanctifiedOps/solana-skills/blob/main/skills/bots/launch-alert-bot/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SanctifiedOps",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

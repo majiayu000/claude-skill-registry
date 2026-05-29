@@ -1,273 +1,128 @@
 ---
 name: nextjs-shadcn
-description: shadcn/ui for Next.js App Router - Field components, TanStack Form integration, Server/Client Components. Use when building UI with shadcn in Next.js.
-user-invocable: false
+description: shadcn/ui for Next.js App Router with TanStack Form. Use when building UI components, forms, dialogs, tables, toasts, or accessible components.
+versions:
+  shadcn-ui: 3.8.0
+  nextjs: 16
+  tailwindcss: 4
+user-invocable: true
+references: references/installation.md, references/configuration.md, references/theming.md, references/button.md, references/input.md, references/label.md, references/textarea.md, references/card.md, references/select.md, references/checkbox.md, references/switch.md, references/radio-group.md, references/slider.md, references/toggle.md, references/toggle-group.md, references/input-otp.md, references/dialog.md, references/alert-dialog.md, references/sheet.md, references/drawer.md, references/popover.md, references/tooltip.md, references/hover-card.md, references/context-menu.md, references/collapsible.md, references/toast.md, references/alert.md, references/skeleton.md, references/progress.md, references/spinner.md, references/table.md, references/tabs.md, references/accordion.md, references/badge.md, references/avatar.md, references/separator.md, references/scroll-area.md, references/aspect-ratio.md, references/resizable.md, references/carousel.md, references/chart.md, references/dropdown.md, references/command.md, references/breadcrumb.md, references/navigation-menu.md, references/menubar.md, references/sidebar.md, references/pagination.md, references/calendar.md, references/field-patterns.md, references/form-examples.md
+related-skills: nextjs-16, nextjs-tanstack-form, tailwindcss, solid-nextjs
 ---
 
 # shadcn/ui for Next.js
 
-Beautiful, accessible components with TanStack Form integration.
+Beautiful, accessible components built on Radix UI with Tailwind CSS styling.
 
-## Installation
+## Agent Workflow (MANDATORY)
 
-```bash
-bunx --bun shadcn@latest init
-```
+Before ANY implementation, use `TeamCreate` to spawn 3 agents:
 
-### Configuration (Tailwind CSS v4)
+1. **fuse-ai-pilot:explore-codebase** - Analyze existing components and patterns
+2. **fuse-ai-pilot:research-expert** - Verify latest shadcn/ui docs via Context7/Exa
+3. **mcp__shadcn__*** - Search registry for component availability
 
-```json
-{
-  "$schema": "https://ui.shadcn.com/schema.json",
-  "style": "new-york",
-  "rsc": true,
-  "tsx": true,
-  "tailwind": {
-    "config": "",
-    "css": "app/globals.css",
-    "baseColor": "gray",
-    "cssVariables": true,
-    "prefix": ""
-  },
-  "iconLibrary": "lucide",
-  "aliases": {
-    "components": "@/modules/cores/shadcn/components",
-    "utils": "@/modules/cores/lib/utils",
-    "ui": "@/modules/cores/shadcn/components/ui",
-    "lib": "@/modules/cores/lib",
-    "hooks": "@/modules/cores/hooks"
-  }
-}
-```
-
-**Note:** For Tailwind CSS v4, the `config` field must be empty.
+After implementation, run **fuse-ai-pilot:sniper** for validation.
 
 ---
 
-## Adding Components
+## Overview
 
-```bash
-bunx --bun shadcn@latest add button card field input
-```
+### When to Use
 
----
+- Building UI components for Next.js App Router applications
+- Need accessible, customizable form components (inputs, selects, checkboxes)
+- Implementing dialogs, sheets, drawers, or overlay patterns
+- Creating data tables with sorting, filtering, and pagination
+- Building navigation menus, sidebars, or command palettes
+- Need toast notifications or alert feedback components
 
-## Form with TanStack Form
+### Why shadcn/ui
 
-```typescript
-// components/ProfileForm.tsx
-'use client'
-
-import { useForm } from '@tanstack/react-form'
-import { toast } from 'sonner'
-import { z } from 'zod'
-import { Button } from '@/modules/cores/shadcn/components/ui/button'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/modules/cores/shadcn/components/ui/card'
-import {
-  Field,
-  FieldDescription,
-  FieldError,
-  FieldGroup,
-  FieldLabel,
-} from '@/modules/cores/shadcn/components/ui/field'
-import { Input } from '@/modules/cores/shadcn/components/ui/input'
-
-const formSchema = z.object({
-  username: z
-    .string()
-    .min(3, 'Username must be at least 3 characters.')
-    .max(10, 'Username must be at most 10 characters.')
-    .regex(/^[a-zA-Z0-9_]+$/, 'Letters, numbers, underscores only.'),
-})
-
-export function ProfileForm() {
-  const form = useForm({
-    defaultValues: { username: '' },
-    validators: { onSubmit: formSchema },
-    onSubmit: async ({ value }) => {
-      toast('Saved!', { description: JSON.stringify(value) })
-    },
-  })
-
-  return (
-    <Card className="w-full sm:max-w-md">
-      <CardHeader>
-        <CardTitle>Profile Settings</CardTitle>
-        <CardDescription>Update your profile information.</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <form
-          id="profile-form"
-          onSubmit={(e) => {
-            e.preventDefault()
-            form.handleSubmit()
-          }}
-        >
-          <FieldGroup>
-            <form.Field
-              name="username"
-              children={(field) => {
-                const isInvalid = field.state.meta.isTouched && !field.state.meta.isValid
-                return (
-                  <Field data-invalid={isInvalid}>
-                    <FieldLabel htmlFor="username">Username</FieldLabel>
-                    <Input
-                      id="username"
-                      name={field.name}
-                      value={field.state.value}
-                      onBlur={field.handleBlur}
-                      onChange={(e) => field.handleChange(e.target.value)}
-                      aria-invalid={isInvalid}
-                      placeholder="shadcn"
-                    />
-                    <FieldDescription>
-                      Your public display name. 3-10 characters.
-                    </FieldDescription>
-                    {isInvalid && <FieldError errors={field.state.meta.errors} />}
-                  </Field>
-                )
-              }}
-            />
-          </FieldGroup>
-        </form>
-      </CardContent>
-      <CardFooter>
-        <Field orientation="horizontal">
-          <Button type="button" variant="outline" onClick={() => form.reset()}>
-            Reset
-          </Button>
-          <Button type="submit" form="profile-form">
-            Save
-          </Button>
-        </Field>
-      </CardFooter>
-    </Card>
-  )
-}
-```
+| Feature | Benefit |
+|---------|---------|
+| Copy/paste model | Components copied to your project, full ownership |
+| Radix UI foundation | Accessibility built-in, unstyled primitives |
+| Tailwind CSS styling | Utility-first, easy customization |
+| TanStack Form ready | Modern form library with Field pattern |
+| Server Components | RSC-compatible, optimal bundle size |
+| Lucide icons | Consistent, customizable icon set |
 
 ---
 
-## Field Component Pattern
+## Critical Rules
 
-```typescript
-// New shadcn Field components for forms
-import {
-  Field,
-  FieldContent,
-  FieldDescription,
-  FieldError,
-  FieldGroup,
-  FieldLabel,
-  FieldLegend,
-  FieldSeparator,
-  FieldSet,
-  FieldTitle,
-} from '@/modules/cores/shadcn/components/ui/field'
-
-// Basic field
-<Field data-invalid={hasError}>
-  <FieldLabel htmlFor="email">Email</FieldLabel>
-  <Input id="email" />
-  <FieldDescription>Your email address.</FieldDescription>
-  {hasError && <FieldError errors={errors} />}
-</Field>
-
-// Horizontal field (for switches, checkboxes)
-<Field orientation="horizontal">
-  <FieldContent>
-    <FieldTitle>Notifications</FieldTitle>
-    <FieldDescription>Receive email notifications.</FieldDescription>
-  </FieldContent>
-  <Switch />
-</Field>
-```
+1. **NEVER create components manually** - Always install with `bunx --bun shadcn@latest add`
+2. **TanStack Form only** - NOT React Hook Form for all form implementations
+3. **Radix UI primitives** - Components built on Radix (NOT Base UI)
+4. **Lucide icons** - Default icon library, NOT Remix icons or others
+5. **Field pattern** - Use Field, FieldLabel, FieldError for form fields
+6. **SOLID paths** - Components at `@/modules/cores/shadcn/components/ui/`
 
 ---
 
-## Server Components (Default)
+## Architecture
 
-```typescript
-// app/users/page.tsx (Server Component)
-import { Card, CardContent, CardHeader, CardTitle } from '@/modules/cores/shadcn/components/ui/card'
-import { Badge } from '@/modules/cores/shadcn/components/ui/badge'
+### Component Foundation
 
-export default async function UsersPage() {
-  const users = await getUsers()
+- **Radix UI** - Headless, accessible primitives (Dialog, Select, Popover, Tabs)
+- **Tailwind CSS v4** - Styling via utility classes, CSS-first config
+- **class-variance-authority** - Variant management for component styles
+- **clsx + tailwind-merge** - Conditional class composition via `cn()` utility
 
-  return (
-    <div className="grid gap-4 md:grid-cols-2">
-      {users.map((user) => (
-        <Card key={user.id}>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              {user.name}
-              <Badge variant={user.role === 'admin' ? 'default' : 'secondary'}>
-                {user.role}
-              </Badge>
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-muted-foreground">{user.email}</p>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  )
-}
-```
+### Project Structure
+
+Components installed to `@/modules/cores/shadcn/components/ui/` following SOLID architecture. Utils at `@/modules/cores/lib/utils.ts` with `cn()` helper function.
 
 ---
 
-## Toast Notifications
+## MCP Server Integration
 
-```typescript
-// app/layout.tsx
-import { Toaster } from '@/modules/cores/shadcn/components/ui/sonner'
+Create `.mcp.json` at project root for Claude Code integration with shadcn registry.
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <body>
-        {children}
-        <Toaster />
-      </body>
-    </html>
-  )
-}
+### Available MCP Tools
 
-// Usage in components
-import { toast } from 'sonner'
+- `mcp__shadcn__search_items_in_registries` - Search available components
+- `mcp__shadcn__view_items_in_registries` - View component source code
+- `mcp__shadcn__get_item_examples_from_registries` - Get usage examples
+- `mcp__shadcn__get_add_command_for_items` - Get installation commands
 
-toast('Success!', { description: 'Your changes have been saved.' })
-toast.error('Error', { description: 'Something went wrong.' })
-```
+See [installation.md](references/installation.md) for complete MCP setup.
 
 ---
 
 ## Component Categories
 
-| Category | Components |
-|----------|------------|
-| Layout | Card, Separator, Tabs, Accordion |
-| Forms | Button, Input, Field, Select, Checkbox, Switch |
-| Feedback | Alert, Toast (Sonner), Dialog, Sheet |
-| Data | Table, Badge, Avatar, Calendar |
-| Navigation | Breadcrumb, DropdownMenu, Command |
+| Category | Components | Primary Reference |
+|----------|------------|-------------------|
+| Setup | Init, configuration, theming, icons | [installation.md](references/installation.md) |
+| Forms | Button, Input, Field, Select, Checkbox, Switch, Slider | [field-patterns.md](references/field-patterns.md) |
+| Overlay | Dialog, Sheet, Drawer, Popover, Tooltip, HoverCard | [dialog.md](references/dialog.md) |
+| Feedback | Alert, Toast (Sonner), Progress, Skeleton, Spinner | [toast.md](references/toast.md) |
+| Data Display | Table, Badge, Avatar, Calendar, Chart, Carousel | [table.md](references/table.md) |
+| Navigation | Breadcrumb, DropdownMenu, Command, Sidebar, Tabs | [sidebar.md](references/sidebar.md) |
+| Layout | Card, Accordion, Separator, ScrollArea, Resizable | [card.md](references/card.md) |
 
 ---
 
 ## Best Practices
 
-1. **Use Field components** - New pattern for form fields
-2. **TanStack Form** - Preferred over React Hook Form
-3. **Server Components** - Default, no `'use client'`
-4. **Sonner for toasts** - Modern toast notifications
-5. **MCP tools** - Use `mcp__shadcn__*` to explore components
+1. **Field components** - Use new Field pattern for consistent form field structure
+2. **Server Components default** - Add `'use client'` only when interactivity needed
+3. **Sonner for toasts** - Modern toast notifications over legacy toast
+4. **MCP tools first** - Use `mcp__shadcn__*` to explore before implementing
+5. **Theming via CSS variables** - Customize colors in `globals.css` `:root`
+6. **Accessibility** - Rely on Radix UI keyboard navigation and ARIA
+
+---
+
+## Reference Guide
+
+| Need | Reference |
+|------|-----------|
+| Initial setup | [installation.md](references/installation.md), [configuration.md](references/configuration.md) |
+| Form patterns | [field-patterns.md](references/field-patterns.md), [form-examples.md](references/form-examples.md) |
+| Theme customization | [theming.md](references/theming.md) |
+| Data tables | [table.md](references/table.md) |
+| Modal dialogs | [dialog.md](references/dialog.md), [alert-dialog.md](references/alert-dialog.md) |
+| Navigation | [sidebar.md](references/sidebar.md), [navigation-menu.md](references/navigation-menu.md) |

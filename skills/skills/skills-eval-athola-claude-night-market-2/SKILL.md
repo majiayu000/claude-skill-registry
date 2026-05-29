@@ -1,6 +1,6 @@
 ---
 name: skills-eval
-description: 'Evaluate Claude skill quality through structured auditing. Use when reviewing, preparing for production, or auditing skills.'
+description: 'Evaluate Claude skill quality through auditing. Use when reviewing or auditing skills.'
 alwaysApply: false
 category: skill-management
 tags:

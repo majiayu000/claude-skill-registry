@@ -8,6 +8,8 @@ description: ローカル開発環境の構築・設定を行う際に使用。D
 ## ドキュメント
 
 - `documentation/docs/content_02_quickstart/quickstart-01-getting-started.md` - クイックスタート
+  - 「ローカル環境のリソースチューニング」セクション - Docker/PostgreSQL/HikariCP/nginx設定
+- `documentation/docs/content_11_learning/26-performance-tuning/` - パフォーマンスチューニングガイド
 - `docker-compose.yaml` - PostgreSQL構成
 - `docker-compose-mysql.yaml` - MySQL構成
 
@@ -19,9 +21,10 @@ description: ローカル開発環境の構築・設定を行う際に使用。D
 ┌─────────────────────────────────────────────────────────────┐
 │                    *.local.dev サブドメイン                    │
 ├─────────────────────────────────────────────────────────────┤
-│  api.local.dev    → nginx → idp-server-1/2 (8081/8082)     │
-│  auth.local.dev   → app-view (認可UI)                       │
-│  sample.local.dev → sample-web (サンプルRP)                 │
+│  api.local.dev      → nginx → idp-server-1/2 (8081/8082)   │
+│  mtls.api.local.dev → nginx → idp-server-1/2 (mTLS)       │
+│  auth.local.dev     → app-view (認可UI)                     │
+│  sample.local.dev   → sample-web (サンプルRP)               │
 └─────────────────────────────────────────────────────────────┘
                               ↓
 ┌─────────────────────────────────────────────────────────────┐
@@ -54,10 +57,10 @@ dnsmasqが使えない環境向け:
 
 ```bash
 # Linux / macOS
-sudo sh -c 'echo "127.0.0.1 api.local.dev auth.local.dev sample.local.dev" >> /etc/hosts'
+sudo sh -c 'echo "127.0.0.1 api.local.dev mtls.api.local.dev auth.local.dev sample.local.dev" >> /etc/hosts'
 
 # Windows (管理者権限のPowerShell)
-Add-Content -Path C:\Windows\System32\drivers\etc\hosts -Value "127.0.0.1 api.local.dev auth.local.dev sample.local.dev"
+Add-Content -Path C:\Windows\System32\drivers\etc\hosts -Value "127.0.0.1 api.local.dev mtls.api.local.dev auth.local.dev sample.local.dev"
 ```
 
 ### 設定確認
@@ -123,7 +126,7 @@ docker compose -f docker-compose-mysql.yaml up -d
 
 | サービス | ポート | 説明 |
 |---------|-------|------|
-| `nginx` | 443 | リバースプロキシ（api.local.dev） |
+| `nginx` | 443 | リバースプロキシ（api.local.dev / mtls.api.local.dev） |
 | `idp-server-1` | 8081 | idp-server インスタンス1 |
 | `idp-server-2` | 8082 | idp-server インスタンス2 |
 | `app-view` | 3000 | 認可UI（auth.local.dev） |

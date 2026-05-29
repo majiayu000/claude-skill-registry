@@ -15,7 +15,7 @@ Minimal, scalable state management with React 18+ useSyncExternalStore.
 
 ## Agent Workflow (MANDATORY)
 
-Before ANY implementation, launch in parallel:
+Before ANY implementation, use `TeamCreate` to spawn 3 agents:
 
 1. **fuse-ai-pilot:explore-codebase** - Analyze existing stores and state patterns
 2. **fuse-ai-pilot:research-expert** - Verify latest Zustand v5 docs via Context7/Exa

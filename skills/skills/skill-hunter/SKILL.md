@@ -43,13 +43,22 @@ If any required input is missing, ask for it and stop. Do not list candidates or
 
 ## Workflow
 
+Progress tracker (copy into your response and update as you go):
+- [ ] Dossier: scanned project, identified stack and goals
+- [ ] Questions: user answered or explicitly waived
+- [ ] Discovery: searched required sources (skills.sh ☐ Context7 ☐ GitHub ☐)
+- [ ] Inspection: read SKILL.md for 3+ candidates
+- [ ] Overlap: capability matrix complete
+- [ ] Recommendation: stack presented with confidence ratings
+- [ ] Install: user confirmed, skills installed
+- [ ] Verify: all skills load correctly
+
 ### 1) Build a project dossier
 - Confirm project root; ask if unclear.
-- Scan repo and subdirectories until the scope is unambiguous.
-- Read key docs: `AGENTS.md`, `README*`, `docs/`, `CHANGELOG*`, `package.json`, `pyproject.toml`, `requirements*`, `go.mod`, `Cargo.toml`, `pom.xml`, `Makefile`, CI configs, infra/IaC files.
-- Find domain keywords, APIs, and workflows using your agent's file discovery and content search tools.
+- Read: dependency manifests (`package.json`, `pyproject.toml`, `requirements*`, `go.mod`, `Cargo.toml`, `pom.xml`), `README*`, and `AGENTS.md`.
+- Scan for existing installed skills (overlap awareness).
+- If goals or constraints are still unclear after the above, also read: `docs/`, `CHANGELOG*`, CI configs, `Makefile`, infra/IaC files.
 - Summarize: domain, stack, critical workflows, tools, constraints, and risks.
-- Inventory currently installed local skills for overlap awareness only.
 
 ### 2) Ask clarifying questions (required)
 - Ask clarifying questions **before any external search**.
@@ -78,38 +87,39 @@ If any required input is missing, ask for it and stop. Do not list candidates or
 - If permission is granted and capability exists, you must perform external discovery and include a concise search log in the response.
 
 Search targets:
-- Context7 registry (use CLI search; see below)
-- skills.sh via `npx skills find <query>` (preferred) or homepage leaderboard + detail pages
-- GitHub search: `SKILL.md in:path <technology>`
-- Optional: official vendor `.well-known/skills` endpoints (if the project vendor publishes them)
+- **skills.sh** via `npx skills find <query>` — outputs results directly in non-interactive environments; use freely.
+- **Context7** registry via CLI search (see CLI guidance below).
+- **GitHub search**: `SKILL.md in:path <technology>` — use as a fallback when registries return fewer than 2 candidates for a category, or for niche/specialized technologies.
+- Optional: [Skills Directory](https://skillsdirectory.com) for curated, quality-reviewed skills.
+- Optional: official vendor `.well-known/skills` endpoints (if the project vendor publishes them).
 
-Prioritize Context7 and skills.sh via their official tools. Use direct GitHub searches as a secondary source for gaps or high‑value skills not found via registries.
-
-Prefer official/trusted sources: skills created/maintained by the tool or company that owns the tech in the codebase. If a registry is unavailable, say so and fall back to GitHub search or the vendor's official docs.
+Prioritize skills.sh and Context7 via their official tools. Prefer official/trusted sources: skills created/maintained by the tool or company that owns the tech in the codebase. If a registry is unavailable, say so and fall back to GitHub search or the vendor's official docs.
 
 Hard gates:
-- Skills.sh must be searched via `npx skills find <query>` or the homepage leaderboard.
-- Context7 must be attempted via CLI search (`ctx7 skills search ...` or `npx -y ctx7 skills search ...`).
-- GitHub search should be performed for relevant technologies.
-- If a source is unavailable, log the failure, mark it **unavailable** in the search log, and proceed.
+- skills.sh must be searched via `npx skills find <query>`.
+- Context7 must be attempted via `ctx7 skills suggest` and/or `ctx7 skills search`.
+- GitHub search should be used when registries return fewer than 2 candidates for a category, or when the technology is niche/specialized.
+- If a source is unavailable, log the failure, mark it **unavailable** in the search summary, and proceed.
 - Block only if all sources fail or if required sources were skipped without a stated reason.
-- Do not list candidates unless required sources were searched or you explicitly state why they were unavailable.
 - For each source, open at least one relevant skill detail page or repo entry (or explicitly state none were relevant).
 
 Context7 CLI guidance:
-- Prefer `ctx7 skills search "<query>"` if installed.
-- If not installed, try `npx -y ctx7 skills search "<query>"` (do not install skills; cancel after results list).
-- If the CLI is interactive, record the results shown and exit without selection/installation.
+- Context7 CLI commands (`ctx7 skills search`, `ctx7 skills suggest`) print results before showing an interactive selection prompt. Wrap them with `timeout 10` to capture results without hanging: `timeout 10 npx -y ctx7 skills suggest` or `timeout 10 npx -y ctx7 skills search "<query>"`. A timeout exit code (124) is expected; the results are in the captured output.
+- If the project has dependency files (package.json, requirements.txt, pyproject.toml), run `ctx7 skills suggest` first to get dependency-aware recommendations. Record the output and use it to supplement keyword searches.
+- Then run `ctx7 skills search "<query>"` for targeted category keywords.
+- Do not attempt to interact with ctx7 selection prompts. Use the printed results as evidence and install separately via `npx skills add` or `ctx7 skills install` with explicit arguments.
+- Context7 results include install counts and trust scores (0–10); use these as additional signals during inspection (Step 4).
 
-Search matrix requirement:
-- For each selected category, run at least one query per source (Context7, skills.sh, GitHub) unless that source is unavailable.
-- Do not “sample” a few skills; cover each category × source. If the search budget is large, ask the user to cap it (default: 1 query per category per source).
+Search matrix:
+- Run `ctx7 skills suggest` once (covers all categories via dependency analysis).
+- For each selected category, run at least one `npx skills find <query>`. Batch related categories into a single broad query where possible (e.g., "testing security" covers Quality & Safety).
+- Use GitHub search for gaps — categories where registries returned fewer than 2 candidates.
+- Default budget: 1 query per category for skills.sh, 1 suggest + 1–2 targeted searches for Context7, GitHub only as needed.
 - Reuse the same query terms across sources when possible to keep coverage consistent.
-- For skills.sh, use `npx skills find <term>` or the homepage leaderboard plus `site:skills.sh <term>` web search to find relevant detail pages.
-- If a candidate is not discoverable via `npx skills find`, verify it with `npx skills add <repo> --list` (or equivalent) before treating it as installable via Skills CLI.
+- If a candidate is not discoverable via `npx skills find`, verify it with `npx skills add <repo> --list` before treating it as installable via Skills CLI.
 
-Search tips (concise):
-- Use specific keywords (e.g., “react testing” beats “testing”).
+Search tips:
+- Use specific keywords (e.g., "react testing" beats "testing").
 - Try synonyms (deploy/deployment, ci-cd, automation/workflow).
 - Check popular sources when relevant (e.g., official vendor skills).
 
@@ -126,7 +136,7 @@ Inspection checklist:
 
 Minimum evidence:
 - If external browsing is permitted and available, inspect at least 3 external candidates (or all found, whichever is smaller).
-- If no external candidates exist after exhaustive search, return **blocked: insufficient external candidates** and list the searches performed.
+- If no external candidates exist after exhaustive search, report that no relevant external skills were found and list the searches performed.
 - If a candidate’s SKILL.md cannot be opened from the source, mark it **unverified** and exclude it from primary recommendations.
 
 ### 5) Evaluate quality and overlap
@@ -143,7 +153,7 @@ Minimum evidence:
 - For each skill, include purpose, source, trust tier, overlap notes, and a confidence rating (High/Medium/Low) with a 1–2 sentence rationale.
 - Include the **install method per skill** (Skills CLI, Codex skill-installer, git clone, package upload, or vendor-specific).
 - Do not include Low-confidence skills in the primary stack. List them separately under **Experimental / Unverified** with explicit caveats.
-- If steps 3–5 were not completed when external browsing is permitted, respond with **blocked: external discovery not completed** and list what is missing.
+- If steps 3–5 were skipped when external browsing is available, respond with **incomplete: external discovery not finished** and list what is missing.
  - End with a **selection prompt** (multi‑choice) asking which stack to install at the **project level**. Allow “none” and custom text.
 
 ### 7) Confirm and install (agent-aware)
@@ -178,19 +188,11 @@ If the user explicitly waives questions, state the assumptions in your response.
 
 If required inputs are missing: ask questions only and stop.
 
-- Project dossier: stack, goals, constraints, key workflows
-- Search log: tool + query + source domain (only when external search is used). Do not fabricate logs or links.
-  - For Context7, record CLI commands used (ctx7 or npx) or mark as unavailable if CLI is not present.
-- Required sources: Context7 (ok/unavailable), skills.sh (ok), GitHub (ok)
-- Search matrix: categories × sources with queries used
-- Inspection notes: per candidate
-- Candidate skills: source + trust tier + inspection notes
-- Local skills (awareness only): list but do not recommend
-- Overlap analysis: what each skill covers and conflicts
-- Recommendations (external only): primary stack + optional variants, each with confidence + rationale
-- Experimental / Unverified: Low-confidence skills with explicit caveats (optional)
-- Requirements & Risks: required installs/dependencies and any security/data-access risks per recommended skill
-- Install method per skill (explicit)
-- Checklist: Discovery ☐ Inspection ☐ Overlap ☐ Recommendation
-- Assumptions (if any)
-- Next step: multi‑choice selection of stack to install (project‑level)
+- **Project dossier**: stack, goals, constraints, key workflows
+- **Search summary**: sources searched (ok/unavailable), queries used per category, total candidates found. Do not fabricate logs or links. For Context7, record CLI commands used or mark as unavailable.
+- **Candidate table**: per candidate — name, source, trust tier, confidence (H/M/L), key finding from inspection
+- **Local skills** (only if overlaps exist): list with overlap notes
+- **Recommendations** (external only): primary stack + optional variants. Per skill: purpose, confidence + rationale, install method, requirements/risks.
+- **Experimental / Unverified** (if any): Low-confidence skills with caveats
+- **Assumptions** (if waiver was given)
+- **Next step**: multi‑choice selection of stack to install (project‑level)

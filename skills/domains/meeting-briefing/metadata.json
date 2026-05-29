@@ -1,0 +1,17 @@
+{
+  "name": "meeting-briefing",
+  "repo": "YongjianWan/--agentskill",
+  "path": "skill/legal/skills/meeting-briefing/SKILL.md",
+  "github_branch": "main",
+  "category": "domains",
+  "source": "github.com/YongjianWan/--agentskill",
+  "dir_name": "meeting-briefing",
+  "downloaded_at": "2026-03-22T06:34:04.974906Z",
+  "author": "YongjianWan",
+  "source_url": "https://github.com/YongjianWan/--agentskill/blob/main/skill/legal/skills/meeting-briefing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/YongjianWan/--agentskill/blob/main/skill/legal/skills/meeting-briefing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

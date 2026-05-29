@@ -16,11 +16,13 @@ Apply the RE19 Auto-Refactor transformation to systematically improve system str
 ## When to Use RE19
 
 ### Ideal Situations
+
 - Iterate toward a better solution using feedback loops
 - Refine a process through repeated cycles
 - Scale a pattern through repetition and standardization
 
 ### Trigger Questions
+
 - "How can we use Auto-Refactor here?"
 - "What changes if we apply RE19 to this iterating a workflow over several cycles?"
 - "Which assumptions does RE19 help us surface?"
@@ -28,18 +30,21 @@ Apply the RE19 Auto-Refactor transformation to systematically improve system str
 ## The RE19 Process
 
 ### Step 1: Define the focus
+
 ```typescript
 // Using RE19 (Auto-Refactor) - Establish the focus
 const focus = "Systematically improve system structure without changing external behavior";
 ```
 
 ### Step 2: Apply the model
+
 ```typescript
 // Using RE19 (Auto-Refactor) - Apply the transformation
 const output = applyModel("RE19", focus);
 ```
 
 ### Step 3: Synthesize outcomes
+
 ```typescript
 // Using RE19 (Auto-Refactor) - Capture insights and decisions
 const insights = summarize(output);
@@ -86,6 +91,7 @@ const result = applyModel("RE19", "Systematically improve system structure witho
 ## Installation and Usage
 
 ### Nix Installation
+
 ```nix
 {
   programs.moltbot.plugins = [
@@ -95,11 +101,13 @@ const result = applyModel("RE19", "Systematically improve system structure witho
 ```
 
 ### Manual Installation
+
 ```bash
 moltbot-registry install hummbl-agent/re19-auto-refactor
 ```
 
 ### Usage with Commands
+
 ```bash
 /apply-transformation RE19 "Systematically improve system structure without changing external behavior"
 ```

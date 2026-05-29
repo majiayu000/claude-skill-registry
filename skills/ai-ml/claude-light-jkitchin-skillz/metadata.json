@@ -1,0 +1,18 @@
+{
+  "name": "claude-light",
+  "repo": "jkitchin/skillz",
+  "path": "skills/programming/claude-light/SKILL.md",
+  "source": "github.com/jkitchin/skillz",
+  "downloaded_at": "2026-01-22T01:09:22.116909Z",
+  "dir_name": "claude-light-jkitchin-skillz",
+  "category": "ai-ml",
+  "github_path": "skills/programming/claude-light",
+  "github_branch": "main",
+  "author": "jkitchin",
+  "source_url": "https://github.com/jkitchin/skillz/blob/main/skills/programming/claude-light/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 John Kitchin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

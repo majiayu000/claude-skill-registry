@@ -1,0 +1,18 @@
+{
+  "name": "catsharp",
+  "repo": "plurigrid/asi",
+  "path": "skills/catsharp/SKILL.md",
+  "source": "github.com/plurigrid/asi",
+  "downloaded_at": "2026-01-14T02:29:13.464351Z",
+  "dir_name": "catsharp",
+  "category": "ai-ml",
+  "github_path": "skills/catsharp",
+  "github_branch": "main",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/catsharp/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

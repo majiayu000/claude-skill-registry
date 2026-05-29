@@ -2,8 +2,8 @@
 name: wave-executor
 user-invocable: false
 tags: [orchestration, execution, agents, waves]
-model: sonnet
-model-preference: sonnet
+model: opus
+model-preference: opus
 model-preference-codex: gpt-5.4-mini
 model-preference-cursor: claude-sonnet-4-6
 description: >
@@ -60,6 +60,22 @@ Read `skills/_shared/bootstrap-gate.md` and execute the gate check. If the gate 
 Do NOT proceed past Phase 0 if GATE_CLOSED. There is no bypass. Refer to `skills/_shared/bootstrap-gate.md` for the full HARD-GATE constraints.
 </HARD-GATE>
 
+## Phase 0.5: Parallel-Aware Preamble
+
+> Skip silently when `persistence: false` in Session Config.
+
+Before Phase 1, run the parallel-aware preamble per `skills/_shared/parallel-aware-preamble.md`. The preamble detects other active sessions in the worktree-family via `discoverActiveSessions(repoRoot)`, classifies the caller's mode via `classifyMode(callerMode)` against the exclusivity-matrix, and fires the appropriate AUQ on conflict.
+
+**Outcome handling:**
+- `PASS_THROUGH` → continue to Phase 1
+- `EXCLUSIVE_BLOCKED` → exit Phase 0 cleanly per the AUQ outcome
+- `PROMOTION_OFFER` → user picks Worktree-Promotion (see `parallel-aware-auq.md` outcome-handling — calls `enterWorktree()`), in-place + Deviation, or Abbrechen
+
+For session-end specifically: the preamble is DETECTION-ONLY. The lock-release path in later phases keeps its current behavior — releasing the OWN session's lock requires no matrix consultation.
+
+**Implementation reference:** `skills/_shared/parallel-aware-preamble.md § Implementation`.
+**AUQ reference:** `skills/_shared/parallel-aware-auq.md`.
+
 ## Pre-Execution Check
 
 Before starting the first wave (Discovery role):
@@ -70,7 +86,7 @@ Before starting the first wave (Discovery role):
 5. **Read Session Config**: Parse Session Config per `skills/_shared/config-reading.md`. Store result as `$CONFIG`. Extract these fields:
    - `persistence` (default: true), `enforcement` (default: warn), `isolation` (default: auto)
    - `agents-per-wave` (default: 6), `max-turns` (default: auto), `pencil` (default: null)
-   
+
    **Execution Config shortcut:** If the session-plan output contains an `### Execution Config` section, its execution-level fields (waves, agents-per-wave, isolation, enforcement, max-turns) take precedence over `$CONFIG`. Session-level fields (persistence, pencil) always come from `$CONFIG`. If the Execution Config section is missing, use `$CONFIG` alone.
 6. **Initialize session metrics** (if `persistence` enabled): Prepare a metrics tracking object for this session:
    - `session_id`: `<branch>-<YYYY-MM-DD>-<HHmm>` (HHmm from `started_at` — ensures uniqueness across multiple sessions per day)
@@ -240,6 +256,39 @@ Each agent prompt MUST NOT include:
 - Vague instructions like "improve" or "optimize" without specifics
 - Assumptions about code state — provide the actual state
 
+## Agent Memory-Proposal Capability (#501)
+
+Wave-executor agents may propose memory entries (learnings) mid-session via the `memory.propose` CLI. The coordinator surfaces proposals at session-end Phase 3.6.3 (`skills/session-end/SKILL.md`) for AUQ-confirm before promoting them to `learnings.jsonl` with `_provenance: agent-proposed@<wave-id>`. Conservative safety model: max `memory.proposals.quota-per-wave` (default 5) per wave, `memory.proposals.confidence-floor` (default 0.5).
+
+**Agent prompt boilerplate** — when dispatching an Impl-Core / Impl-Polish / Quality agent in a session where `memory.proposals.enabled: true` (default), include this block in the agent's prompt so the capability is discoverable:
+
+```
+## Memory Proposal Capability (optional)
+
+During this wave, you may propose a learning to the session's memory via the CLI:
+
+  SO_WAVE_AGENT=1 node scripts/memory-propose.mjs \
+      --type <one of: workflow-pattern|anti-pattern|pattern|recurring-issue|fragile-file|effective-sizing|proven-pattern|mode-selector-accuracy|hardware-pattern|autopilot-effectiveness> \
+      --subject "one-line title (max 100 chars, no newlines)" \
+      --insight "your discovery paragraph (max 2000 chars)" \
+      --evidence "concrete proof: code citation / log excerpt / commit ref (max 5000 chars)" \
+      --confidence <0.5 to 1.0>
+
+MUST prefix with `SO_WAVE_AGENT=1` — without it the CLI returns exit 3 `rejected-wrong-context`. The env-var is the per-process guard that distinguishes wave-executor agents from coordinator-context invocations.
+
+Exit code 0 = queued (the coordinator will present at session-end via AskUserQuestion); 1 = quota-exceeded; 2 = rejected-low-confidence (below floor 0.5); 3 = rejected-wrong-context (STATE.md not active OR SO_WAVE_AGENT != "1"); 4 = error (arg validation or internal).
+
+Use ONLY when you find a recurring pattern, anti-pattern, or constraint worth carrying into future sessions. The coordinator confirms each proposal before it lands in learnings.jsonl. Do NOT over-propose — quota is bounded per wave.
+```
+
+**Skip injection** when:
+- `memory.proposals.enabled: false` in Session Config, OR
+- Discovery / Finalization waves (Discovery is read-only; Finalization is coordinator-direct)
+
+**Audit trail:** the `hooks/pre-bash-memory-propose-audit.mjs` hook logs every CLI invocation to `.orchestrator/metrics/events.jsonl` with the value of `--insight` / `--subject` / `--evidence` redacted (privacy-by-default).
+
+Cross-reference: PRD F2.1 / issue #501 / `agents/memory-proposal-collector.md` (coordinator-side AUQ rendering reference doc) / `scripts/lib/memory-proposals/{schema,store,collector,sink}.mjs` (the modules).
+
 ## Session Type Behavior
 
 ### Housekeeping Sessions
@@ -339,6 +388,59 @@ The diff JSON block (`{ new_errors, resolved_errors, baseline_count, current_cou
 **Configuration:** diff-mode is enabled by default once a baseline exists. To force full enforcement at any checkpoint, set `vault-sync.mode: full` in Session Config or pass `--mode full` explicitly.
 
 > **Cross-reference:** baseline file shape, diff output schema, and schema-hash mismatch handling are documented in `skills/vault-sync/SKILL.md` § Modes (#327).
+
+## Inter-Wave Quality-Gate (with Auto-Fix Loop — #521)
+
+After each wave, run the Quality-Gate. If `verification-auto-fix.enabled: true`
+in Session Config, the gate uses `runQualityGateWithRetry()` from
+`scripts/lib/quality-gate.mjs` which dispatches up to `max-retries` (default 2)
+fixer-agent dispatches on failure.
+
+### Invocation
+
+```javascript
+import { runQualityGateWithRetry } from '../../scripts/lib/quality-gate.mjs';
+
+const result = await runQualityGateWithRetry({
+  maxRetries: config['verification-auto-fix']?.['max-retries'] ?? 2,
+  repoRoot: process.cwd(),
+  dispatchFixer: async ({ failures, correctiveContext, changedFiles }) => {
+    // Coordinator dispatches a code-implementer fixer subagent here with:
+    //   - failures (gate + output)
+    //   - correctiveContext (from .orchestrator/current-session.json)
+    //   - changedFiles (since last green SHA)
+    // Subagent's task: fix the failing gate, never broaden scope.
+    await dispatchFixerSubagent({ failures, correctiveContext, changedFiles });
+  },
+});
+```
+
+### Decision flow
+
+- `result.ok === true` → Wave green, proceed to next wave or session-end.
+- `result.ok === false` → Hard abort.
+  - quality-gate.mjs writes `.orchestrator/metrics/verification-failures/<ts>.json` (diagnostics bundle — automatic, redacted per `redactDiagnosticsBundle()`).
+  - **Coordinator** (not fixer-subagent) appends a deviation entry to STATE.md via `appendDeviationOnDisk()` — see `wave-loop.md` § STATE.md Deviation — Auto-Fix Result.
+  - Wave execution is blocked; operator must manually fix or disable auto-fix.
+- `result.attempts > 1` → **Coordinator** logs a Deviation in STATE.md via `appendDeviationOnDisk()`: `auto-fix used N retries to clear Wave <wave>`.
+
+### Skip Conditions
+
+- `verification-auto-fix.enabled: false` (default) → fall back to single-shot
+  quality-gate, abort on first failure (current behavior preserved per PRD § 3
+  Gherkin negative path).
+- `verification-auto-fix.max-retries: 0` → equivalent to disabled.
+
+### Anti-pattern (BE-012 awareness)
+
+The fixer-agent prompt MUST include a reminder of `.claude/rules/test-quality.md`
+"test-the-mock" anti-pattern. A fix that makes tests green by mocking out the
+real failure is a regression vector. The fixer prompt should explicitly say:
+"Do NOT change test mocks to make tests pass. Fix the actual code defect."
+
+### Heartbeat cadence at inter-wave checkpoints (#590-3)
+
+After each quality-gate PASS, the coordinator refreshes the session-lock heartbeat via the post-wave STATE.md step. See `wave-loop.md § 3a. Post-Wave: Update STATE.md` — step 5 contains the `updateHeartbeat` instruction and best-effort framing. The `sessionId` passed to `updateHeartbeat` is the session identifier established by session-start Phase 1.2 `acquire()` and stored in `.orchestrator/session.lock` (its `session_id` field); it matches the STATE.md frontmatter `session:` field written during Pre-Wave 1b initialization.
 
 ## Frontmatter-Guard (#328)
 

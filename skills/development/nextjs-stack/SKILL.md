@@ -18,7 +18,7 @@ Master skill combining all framework documentation for modern Next.js developmen
 
 ## Agent Workflow (MANDATORY)
 
-Before ANY implementation, launch in parallel:
+Before ANY implementation, use `TeamCreate` to spawn 3 agents:
 
 1. **fuse-ai-pilot:explore-codebase** - Analyze project structure and existing patterns
 2. **fuse-ai-pilot:research-expert** - Verify latest docs for all stack technologies

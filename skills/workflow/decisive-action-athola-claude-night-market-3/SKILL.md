@@ -1,6 +1,6 @@
 ---
 name: decisive-action
-description: 'Guide on when to ask clarifying questions vs proceed with standard approaches.'
+description: Guides when to ask clarifying questions versus proceed autonomously. Use to reduce unnecessary clarifying questions when intent is clear.
 alwaysApply: true
 category: workflow
 tags:

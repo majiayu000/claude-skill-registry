@@ -1,0 +1,16 @@
+{
+  "name": "tailor-resume",
+  "repo": "shindo107/job-coach-and-scout",
+  "path": ".claude/skills/tailor-resume/SKILL.md",
+  "source": "github.com/shindo107/job-coach-and-scout",
+  "downloaded_at": "2026-02-02T01:58:18.839388Z",
+  "dir_name": "tailor-resume",
+  "category": "documents",
+  "author": "shindo107",
+  "source_url": "https://github.com/shindo107/job-coach-and-scout/blob/main/.claude/skills/tailor-resume/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shindo107/job-coach-and-scout/blob/main/.claude/skills/tailor-resume/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

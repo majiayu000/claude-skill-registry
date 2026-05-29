@@ -18,6 +18,12 @@ Expert guidance for designing scalable, maintainable REST and GraphQL APIs with 
 - Implementing HATEOAS or hypermedia-driven APIs
 - Creating API specifications (OpenAPI, GraphQL Schema)
 
+## Quick Reference
+
+| Topic | Load reference |
+| --- | --- |
+| **Design Process** | `skills/api-design-patterns/references/design-process.md` |
+
 ## Core Principles
 
 ### 1. Resource-Oriented Design (REST)

@@ -1,6 +1,6 @@
 ---
 name: skillforge
-description: "Intelligent skill router and creator. Analyzes ANY input to recommend existing skills, improve them, or create new ones. Uses deep iterative analysis with 11 thinking models, regression questioning, evolution lens, and multi-agent synthesis panel. Phase 0 triage ensures you never duplicate existing functionality."
+description: "Intelligent skill router, proactive advisor, and creator. Analyzes ANY input to recommend existing skills, improve them, or create new ones. Adds proactive Context Skill Advisor suggestions from session, project, and personal context using user-controlled Proactivity Levels."
 license: MIT
 model: claude-opus-4-5-20251101
 user-invocable: true
@@ -8,10 +8,11 @@ allowed-tools:
   - Read
   - Glob
   - Grep
+  - Bash
   - Write
   - Edit
 metadata:
-  version: 4.1.0
+  version: 5.2.0
   subagent_model: claude-opus-4-5-20251101
   domains: [meta-skill, automation, skill-creation, orchestration, agentic, routing]
   type: orchestrator
@@ -19,9 +20,9 @@ metadata:
   outputs: [SKILL.md, references/, scripts/, SKILL_SPEC.md, recommendations]
 ---
 
-# SkillForge 4.1 - Intelligent Skill Router & Creator
+# SkillForge 5.2 - Intelligent Skill Router, Advisor & Creator
 
-Analyzes ANY input to find, improve, or create the right skill.
+Analyzes ANY input to find, improve, or create the right skill. It can also proactively surface evidence-backed skill suggestions through the Context Skill Advisor.
 
 ---
 
@@ -66,11 +67,18 @@ TypeError: Cannot read property 'map' of undefined
 - `improve {skill-name} skill` - Enters improvement mode
 - `help me with` / `I need to` - Detects task and routes
 
+### Proactive Advisor Triggers (NEW in v5.2)
+- Session start - Show pending suggestions from the Advisory Queue
+- Advisor Checkpoint - Evaluate task shifts, repeated friction, and before-final moments
+- Scheduled Background Advising - Run local scheduled advisor checks based on Proactivity Level
+- `SkillForge advice` / `context advisor` - Inspect or manage queued suggestions
+
 | Input | Output | Quality Gate |
 |-------|--------|--------------|
 | Any input | Triage → Route → Action | Phase 0 analysis |
 | Explicit create | New skill | Unanimous panel approval |
 | Task/question | Skill recommendation | Match confidence ≥60% |
+| Advisor checkpoint | Evidence-backed suggestion | Proactivity Level threshold |
 
 ---
 
@@ -148,6 +156,92 @@ Only add higher-risk tools when explicitly required:
 | `SkillForge --quick {goal}` | Reduced depth (not recommended) |
 | `SkillForge --triage {input}` | Run Phase 0 triage only |
 | `SkillForge --improve {skill}` | Enter improvement mode for existing skill |
+| `python scripts/install_skillforge.py` | Configure proactive advising |
+| `bash scripts/install_workshop.sh` | Install SkillForge for Claude Code, Codex, and workshop use |
+| `python scripts/context_advisor.py checkpoint --text "<context>"` | Run an Advisor Checkpoint |
+| `python scripts/context_advisor.py run` | Run Scheduled Background Advising and queue suggestions |
+| `python scripts/context_advisor.py list` | List pending suggestions |
+
+---
+
+## Context Skill Advisor (NEW in v5.2)
+
+The Context Skill Advisor produces proactive, evidence-backed suggestions without replacing explicit SkillForge routing.
+
+### Proactivity Levels
+
+| Level | Minimum Confidence | Max Surfaced | Schedule |
+|-------|--------------------|--------------|----------|
+| `off` | N/A | 0 | Never |
+| `quiet` | 85 | 1 per session/day | Daily |
+| `balanced` | 70 | 2 per session, 3 per day | Every 2 hours |
+| `active` | 55 | 4 per session, 8 per day | Every 30 minutes |
+
+Install default: `balanced`.
+
+### Context Source Tiers
+
+All three source tiers are enabled by default, but the advisor uses Targeted Content Access: search first, then read only narrow relevant excerpts.
+
+| Tier | Examples |
+|------|----------|
+| Session Context | Current prompt, checkpoint text, immediate workspace state |
+| Project Context | `AGENTS.md`, `README.md`, `CONTEXT.md`, package files, ADRs |
+| Personal Context | `~/kb`, `~/Documents/Work`, `~/Projects`, GitHub repo metadata |
+
+### Suggestion Shape
+
+Every proactive suggestion includes:
+- Suggested skill or New Skill Opportunity
+- Why now
+- 1-3 evidence items
+- Confidence band and component scores
+- Action: `use_existing`, `compose_skills`, `improve_existing`, or `create_new`
+- User choices: `use`, `snooze`, `dismiss`, `never for this project`
+- Sensitivity note when Personal Context contributed
+
+SkillForge does not auto-invoke suggested skills. Suggestions become Confirmed Skill Use only after user confirmation or explicit host direction.
+
+### Advisor Commands
+
+```bash
+# Configure global defaults and print the checkpoint integration snippet
+python scripts/install_skillforge.py
+
+# One-command workshop install for Claude Code and Codex
+curl -fsSL https://raw.githubusercontent.com/tripleyak/SkillForge/main/scripts/install_workshop.sh | bash
+
+# Configure a different Proactivity Level
+python scripts/install_skillforge.py --proactivity-level quiet
+
+# Add a project override
+python scripts/install_skillforge.py --project-override /path/to/project --proactivity-level active
+
+# Run a checkpoint from the active agent session
+python scripts/context_advisor.py checkpoint --cwd "$PWD" --text "<brief current context>"
+
+# Run scheduled advising and write to the Advisory Queue
+python scripts/context_advisor.py run --cwd "$PWD"
+
+# Manage queued advice
+python scripts/context_advisor.py list
+python scripts/context_advisor.py use <suggestion-id>
+python scripts/context_advisor.py snooze <suggestion-id> --hours 24
+python scripts/context_advisor.py dismiss <suggestion-id>
+python scripts/context_advisor.py never-project <suggestion-id>
+```
+
+### Configuration
+
+Global config lives at `~/.config/skillforge/config.json`.
+
+Project overrides live at `.skillforge/config.json`.
+
+Precedence: project override → global config → built-in default `balanced`.
+
+Advisor state lives at `~/.local/share/skillforge/advisor_state.json`.
+
+Queued suggestions live at `~/.local/share/skillforge/advice.jsonl`.
 
 ---
 
@@ -236,7 +330,7 @@ Phase 0 uses a pre-built index of all skills:
 python scripts/discover_skills.py
 
 # Index location: ~/.cache/skillrecommender/skill_index.json
-# Scans: ~/.claude/skills/, plugins/marketplaces/*, plugins/cache/*
+# Scans: ~/.codex/skills/, ~/.agents/skills/, ~/.claude/skills/, and plugin caches
 ```
 
 ### Integration with Phases 1-4
@@ -246,6 +340,26 @@ python scripts/discover_skills.py
 - **CREATE_NEW**: Full pipeline (Phase 1 → 2 → 3 → 4)
 - **COMPOSE**: Suggests using SkillComposer instead
 - **CLARIFY**: Pauses for user input before proceeding
+
+---
+
+## Script Inventory
+
+| Script | Purpose |
+|--------|---------|
+| `scripts/discover_skills.py` | Build the searchable skill index |
+| `scripts/triage_skill_request.py` | Route explicit input to use, improve, create, compose, or clarify |
+| `scripts/context_advisor.py` | Run Advisor Checkpoints, Scheduled Background Advising, queue review, and feedback actions |
+| `scripts/advisor_scoring.py` | Combine Skill Match Score with advisor evidence and feedback |
+| `scripts/context_sources.py` | Collect targeted Session, Project, Personal, and GitHub metadata evidence |
+| `scripts/skillforge_config.py` | Load global config, project overrides, defaults, and Proactivity Level settings |
+| `scripts/install_skillforge.py` | Configure proactive advising, scheduler files, and agent integration snippets |
+| `scripts/install_workshop.sh` | One-command workshop installer for Claude Code, Codex, shared skills, and `/skillforge` |
+| `scripts/init_skill.py` | Scaffold new skills |
+| `scripts/quick_validate.py` | Run fast package validation |
+| `scripts/validate-skill.py` | Run full structural validation |
+| `scripts/package_skill.py` | Package a skill while respecting `.skillignore` |
+| `scripts/check_docs_safety.py` | Check docs for unsafe tool payload interpolation patterns |
 
 ---
 

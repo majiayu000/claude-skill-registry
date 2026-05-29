@@ -1,8 +1,9 @@
 ---
-name: df-merger
+name: "df-merger"
 description: "Merge pandas DataFrames from multiple construction sources. Handle different schemas, keys, and data quality issues."
+homepage: "https://datadrivenconstruction.io"
+metadata: {"openclaw": {"emoji": "🐼", "os": ["darwin", "linux", "win32"], "homepage": "https://datadrivenconstruction.io", "requires": {"bins": ["python3"]}}}
 ---
-
 # DataFrame Merger for Construction Data
 
 ## Overview

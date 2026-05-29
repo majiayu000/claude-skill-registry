@@ -71,7 +71,6 @@ Before making any changes to the relayer database, you MUST:
    | 1478       | 0xa66dbdc1874acfddf14e75e6a20dd1632e9e3206c5f5855884da0d26d8ca12fa | 9891872      |
 
 2. Use `AskUserQuestion` to get explicit confirmation:
-
    - Question: "Do you want to apply these merkle tree fixes to the relayer database?"
    - Options: "Yes, apply fixes" / "No, cancel"
 

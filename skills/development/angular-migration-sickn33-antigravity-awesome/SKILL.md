@@ -1,6 +1,9 @@
 ---
 name: angular-migration
-description: Migrate from AngularJS to Angular using hybrid mode, incremental component rewriting, and dependency injection updates. Use when upgrading AngularJS applications, planning framework migrations, or modernizing legacy Angular code.
+description: "Master AngularJS to Angular migration, including hybrid apps, component conversion, dependency injection changes, and routing migration."
+risk: unknown
+source: community
+date_added: "2026-02-27"
 ---
 
 # Angular Migration
@@ -426,3 +429,8 @@ Phase 4: Cleanup (1-2 weeks)
 - Not handling scope properly
 - Mixing patterns (AngularJS + Angular)
 - Inadequate testing
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

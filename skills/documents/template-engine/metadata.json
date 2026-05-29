@@ -1,0 +1,18 @@
+{
+  "name": "template-engine",
+  "repo": "jmagly/ai-writing-guide",
+  "path": ".factory/skills/template-engine/SKILL.md",
+  "source": "github.com/jmagly/ai-writing-guide",
+  "downloaded_at": "2026-01-22T03:04:45.214572Z",
+  "dir_name": "template-engine",
+  "category": "documents",
+  "github_path": "plugins/utils/skills/template-engine",
+  "github_branch": "main",
+  "author": "jmagly",
+  "source_url": "https://github.com/jmagly/ai-writing-guide/blob/main/plugins/utils/skills/template-engine/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Joe Magly",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

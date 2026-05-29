@@ -1,0 +1,18 @@
+{
+  "name": "relational-database-web",
+  "repo": "baiyongping/cowork-platform",
+  "path": ".codebuddy/skills/relational-database-web/SKILL.md",
+  "source": "github.com/baiyongping/cowork-platform",
+  "downloaded_at": "2026-01-22T03:47:02.085908Z",
+  "dir_name": "relational-database-web-baiyongping-cowork-platform",
+  "category": "api",
+  "github_path": ".claude/skills/relational-database-web",
+  "github_branch": "main",
+  "author": "baiyongping",
+  "source_url": "https://github.com/baiyongping/cowork-platform/blob/main/.claude/skills/relational-database-web/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/baiyongping/cowork-platform/blob/main/.claude/skills/relational-database-web/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

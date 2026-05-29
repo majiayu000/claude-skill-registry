@@ -1,0 +1,13 @@
+{
+  "name": "check-dependencies",
+  "description": "",
+  "repo": "HomericIntelligence/ProjectOdyssey",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/HomericIntelligence/ProjectOdyssey",
+  "github_path": ".claude/skills/tier-2/check-dependencies",
+  "github_branch": "main",
+  "dir_name": "check-dependencies-homericintelligence-projectodyssey",
+  "downloaded_at": "2026-02-05T01:44:42.956310Z"
+}

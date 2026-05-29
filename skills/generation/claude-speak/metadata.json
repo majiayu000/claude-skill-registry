@@ -1,0 +1,18 @@
+{
+  "name": "claude-speak",
+  "repo": "leegonzales/AISkills",
+  "path": "ClaudeSpeak/claude-speak/SKILL.md",
+  "source": "github.com/leegonzales/AISkills",
+  "downloaded_at": "2026-01-14T02:13:21.145552Z",
+  "dir_name": "claude-speak",
+  "category": "generation",
+  "github_path": "ClaudeSpeak/claude-speak",
+  "github_branch": "main",
+  "author": "leegonzales",
+  "source_url": "https://github.com/leegonzales/AISkills/blob/main/ClaudeSpeak/claude-speak/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Lee Gonzales",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

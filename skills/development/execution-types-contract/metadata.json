@@ -1,0 +1,16 @@
+{
+  "name": "execution-types-contract",
+  "repo": "z3z1ma/vibe-pipe",
+  "path": ".opencode/skills/execution-types-contract/SKILL.md",
+  "source": "github.com/z3z1ma/vibe-pipe",
+  "downloaded_at": "2026-02-02T04:52:13.938972Z",
+  "dir_name": "execution-types-contract",
+  "category": "development",
+  "author": "z3z1ma",
+  "source_url": "https://github.com/z3z1ma/vibe-pipe/blob/main/.opencode/skills/execution-types-contract/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Alexander Butler",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

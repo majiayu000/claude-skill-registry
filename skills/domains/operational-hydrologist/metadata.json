@@ -1,0 +1,16 @@
+{
+  "name": "operational-hydrologist",
+  "repo": "hydrosolutions/SAPPHIRE_Forecast_Tools",
+  "path": ".claude/skills/operational-hydrologist/SKILL.md",
+  "source": "github.com/hydrosolutions/SAPPHIRE_Forecast_Tools",
+  "downloaded_at": "2026-02-01T04:55:18.214239Z",
+  "dir_name": "operational-hydrologist",
+  "category": "domains",
+  "author": "hydrosolutions",
+  "source_url": "https://github.com/hydrosolutions/SAPPHIRE_Forecast_Tools/blob/main/.claude/skills/operational-hydrologist/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2023 Beatrice Marti",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "brand-identity",
+  "description": "Brand strategy and identity design for businesses and products. Use when creating brand guidelines, developing visual identity systems, or defining brand positioning.",
+  "repo": "travisjneuman/.claude",
+  "path": "skills/brand-identity",
+  "category": "marketing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/travisjneuman/.claude",
+  "dir_name": "brand-identity-travisjneuman-claude-2",
+  "author": "travisjneuman",
+  "source_url": "https://github.com/travisjneuman/.claude/blob/main/skills/brand-identity/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Travis Neuman",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

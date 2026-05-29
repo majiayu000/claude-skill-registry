@@ -1,0 +1,18 @@
+{
+  "name": "aws-dynamodb",
+  "description": "AWS DynamoDB single-table design, GSI patterns, SDK v3 TypeScript/Python",
+  "repo": "alinaqi/claude-bootstrap",
+  "path": "skills/aws-dynamodb",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/alinaqi/claude-bootstrap",
+  "dir_name": "aws-dynamodb-alinaqi-claude-bootstrap-2",
+  "author": "alinaqi",
+  "source_url": "https://github.com/alinaqi/claude-bootstrap/blob/main/skills/aws-dynamodb/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ali Naqi",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

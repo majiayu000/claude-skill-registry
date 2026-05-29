@@ -1,0 +1,18 @@
+{
+  "name": "xkcd",
+  "repo": "clawdbot/skills",
+  "path": "skills/dbhurley/xkcd/SKILL.md",
+  "source": "github.com/clawdbot/skills",
+  "downloaded_at": "2026-01-22T02:30:24.398989Z",
+  "dir_name": "xkcd-clawdbot-skills",
+  "category": "generation",
+  "github_path": "skills/dbhurley/xkcd",
+  "github_branch": "main",
+  "author": "clawdbot",
+  "source_url": "https://github.com/clawdbot/skills/blob/main/skills/dbhurley/xkcd/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 clawdbot",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

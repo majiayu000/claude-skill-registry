@@ -1,6 +1,9 @@
 ---
 name: codex-review
-description: Professional code review with auto CHANGELOG generation, integrated with Codex AI
+description: "Professional code review with auto CHANGELOG generation, integrated with Codex AI. Use when you want professional code review before commits, you need automatic CHANGELOG generation, or reviewing large-scale refactoring."
+risk: unknown
+source: community
+date_added: "2026-02-27"
 ---
 
 # codex-review
@@ -35,3 +38,8 @@ See the GitHub repository for troubleshooting guides.
 
 ## Related Skills
 - context7-auto-research, tavily-web, exa-search, firecrawl-scraper
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

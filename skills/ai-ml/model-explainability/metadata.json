@@ -1,9 +1,9 @@
 {
-  "name": "model-explainability",
+  "name": "explainability",
   "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
-  "path": "44-ai-governance/model-explainability/SKILL.md",
+  "path": "44-ai-governance/explainability/SKILL.md",
   "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills",
-  "downloaded_at": "2026-01-19T02:22:16.992077Z",
+  "downloaded_at": "2026-01-22T02:36:45.870694Z",
   "dir_name": "model-explainability",
   "category": "ai-ml",
   "github_path": "44-ai-governance/model-explainability",

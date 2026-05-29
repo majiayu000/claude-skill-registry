@@ -3,6 +3,8 @@ name: jtbd-map
 description: "Map user Jobs to be Done across functional, emotional, and social dimensions. Based on Christensen's JTBD theory."
 metadata:
   instruction_budget: "6"
+  framework_dependency: "mycelium"
+  framework_dependency_note: "This skill is designed to run within the Mycelium framework (https://github.com/haabe/mycelium). Standalone use will skip the canvas state, theory gates, and harness behavior the skill assumes. Install: /plugin install mycelium@haabe/mycelium."
 ---
 
 # Jobs to be Done Mapping

@@ -1,0 +1,13 @@
+{
+  "name": "generate-diagram",
+  "description": "",
+  "repo": "llmsresearch/paperbanana",
+  "category": "generation",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/llmsresearch/paperbanana",
+  "github_path": ".claude/skills/generate-diagram",
+  "github_branch": "main",
+  "dir_name": "generate-diagram",
+  "downloaded_at": "2026-02-05T05:36:35.916340Z"
+}

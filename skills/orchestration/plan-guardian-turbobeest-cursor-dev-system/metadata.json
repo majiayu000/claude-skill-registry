@@ -1,0 +1,16 @@
+{
+  "name": "plan-guardian",
+  "repo": "turbobeest/cursor-dev-system",
+  "path": "skills/plan-guardian/SKILL.md",
+  "source": "github.com/turbobeest/cursor-dev-system",
+  "downloaded_at": "2026-01-29T06:24:04.297471Z",
+  "dir_name": "plan-guardian-turbobeest-cursor-dev-system",
+  "category": "orchestration",
+  "author": "turbobeest",
+  "source_url": "https://github.com/turbobeest/cursor-dev-system/blob/main/skills/plan-guardian/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/turbobeest/cursor-dev-system/blob/main/skills/plan-guardian/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

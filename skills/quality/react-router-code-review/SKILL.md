@@ -50,6 +50,26 @@ Only flag these issues when the specific context applies:
 | Missing errorElement | No parent route in the hierarchy has an error boundary |
 | navigate() instead of Link | Navigation is NOT triggered by an event handler or conditional logic |
 
+## Gates (before reporting any finding)
+
+Run in order. **Pass each gate with evidence** (paths, line refs, or a one-line quote from code)—not intuition alone.
+
+### Gate 1 — Scope the route surface
+
+**Pass when:** You have repo path(s) to the route module, `routes` config entry, or layout that owns the behavior under review (write them in your notes before flagging).
+
+### Gate 2 — Context-sensitive match
+
+**Pass when:** For every issue that maps to **Context-Sensitive Rules**, the **Flag ONLY IF** condition is satisfied with a one-line rationale tied to the code; for other checklist items, you have a concrete code citation (path + line or short excerpt).
+
+### Gate 3 — Non-issue patterns
+
+**Pass when:** The behavior is not covered by **Valid Patterns (Do NOT Flag)** for that category.
+
+### Gate 4 — Verification protocol
+
+Load and follow [review-verification-protocol](../review-verification-protocol/SKILL.md). **Pass when:** Its pre-report checklist (and any issue-type subsection that applies) is complete for each finding you will output.
+
 ## When to Load References
 
 - Reviewing data fetching code → data-loading.md
@@ -64,7 +84,3 @@ Only flag these issues when the specific context applies:
 3. Are there error boundaries at appropriate route levels?
 4. Is navigation declarative with Link components?
 5. Are pending states properly handled?
-
-## Before Submitting Findings
-
-Load and follow [review-verification-protocol](../review-verification-protocol/SKILL.md) before reporting any issue.

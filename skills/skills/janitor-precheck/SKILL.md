@@ -1,68 +1,37 @@
 ---
 name: janitor-precheck
-description: "Check if a new skill overlaps with your existing ones before installing. Use when the user wants to evaluate a skill before adding it, check for duplicates pre-install, or verify a GitHub skill won't conflict."
+description: "Check if a new skill overlaps with existing ones before installing. Deprecated alias — use /janitor-discover with a URL or path."
 metadata:
-  version: 1.1.0
+  version: 1.3.0
+  deprecated: true
+  replaced_by: janitor-discover
 ---
 
-# Pre-Install Overlap Check
+# Pre-Install Overlap Check (Deprecated Alias)
 
-Check if a new skill would duplicate existing ones before installing it.
+**Renamed in v1.3.** Pre-install check is now part of `/janitor-discover`. Passing a GitHub URL or local path to `/janitor-discover` runs the same overlap analysis. This alias will be removed in v1.4.
+
+When invoked, run `/janitor-discover` with the same argument and mention the rename in one short line at the top.
 
 ## How to Run
 
 ```bash
-bash ~/.claude/skills/skills-janitor/scripts/precheck.sh <github-url-or-path> [--json]
+bash ~/.claude/skills/skills-janitor/scripts/discover.sh <github-url-or-path> [--json]
 ```
 
-## Examples
+Examples:
+- `discover.sh https://github.com/user/my-skill`
+- `discover.sh user/my-skill`
+- `discover.sh ~/Downloads/some-skill/`
 
-```bash
-# Check a GitHub repo
-precheck.sh https://github.com/user/my-skill
+## Migration
 
-# Check a specific skill folder in a repo
-precheck.sh https://github.com/user/repo/tree/main/skills/my-skill
+- Pre-install check by URL → `/janitor-discover <url>`
+- Pre-install check by path → `/janitor-discover <path>`
 
-# Check a local path
-precheck.sh ~/Downloads/some-skill/
-```
-
-## How It Works
-
-1. Fetches the SKILL.md from the given GitHub URL or local path
-2. Extracts description and trigger keywords
-3. Compares against all installed skills using Jaccard similarity
-4. Reports overlap level:
-   - **0-30%**: Safe to install, no significant overlap
-   - **30-60%**: Moderate overlap, review before installing
-   - **60%+**: High overlap, likely duplicate of existing skill
-
-## Output
-
-```
-=== Skills Janitor - Pre-Install Check ===
-
-  Checking: marketing-seo-v2
-  Keywords: seo, audit, ranking, technical, meta, tags
-
-  Scanned 35 installed skills
-
-  --- HIGH OVERLAP (likely duplicates) ---
-    [72%] marketing-seo-audit (user)
-         Shared: seo, audit, ranking, meta
-         Existing desc: audit seo issues on your site...
-
-  VERDICT: High overlap detected - likely duplicate
-```
-
-## After Checking
-
-- If HIGH overlap: consider using the existing skill instead
-- If MODERATE overlap: review both descriptions to see if they serve different purposes
-- If SAFE: go ahead and install
+The v1.3 check is more accurate than v1.2 because the installed-skills baseline now includes plugin-namespaced skills (`marketing-skills:image`, `figma:figma-use`, etc.) that v1.2 was blind to.
 
 ## Related Skills
 
-- For checking existing duplicates: `/janitor-report`
-- For full inventory: `/janitor-audit`
+- `/janitor-discover` — the new combined entry point
+- `/janitor-report` — full health check, including existing duplicates

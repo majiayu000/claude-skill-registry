@@ -1,0 +1,16 @@
+{
+  "name": "js-fix-jsdoc",
+  "repo": "cuioss/plan-marshall",
+  "path": "marketplace/bundles/pm-dev-frontend/skills/js-fix-jsdoc/SKILL.md",
+  "source": "github.com/cuioss/plan-marshall",
+  "downloaded_at": "2026-02-02T01:11:20.679013Z",
+  "dir_name": "js-fix-jsdoc",
+  "category": "quality",
+  "author": "cuioss",
+  "source_url": "https://github.com/cuioss/plan-marshall/blob/main/marketplace/bundles/pm-dev-frontend/skills/js-fix-jsdoc/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2025 Oliver Wolff",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

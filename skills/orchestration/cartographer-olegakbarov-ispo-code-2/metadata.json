@@ -1,0 +1,18 @@
+{
+  "name": "cartographer",
+  "description": "Maps and documents codebases of any size by orchestrating parallel subagents. Creates docs/CODEBASE_MAP.md with architecture, file purposes, dependencies, and navigation guides. Updates CLAUDE.md with",
+  "repo": "olegakbarov/ispo-code",
+  "path": ".claude/skills/cartographer",
+  "category": "orchestration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/olegakbarov/ispo-code",
+  "dir_name": "cartographer-olegakbarov-ispo-code-2",
+  "author": "olegakbarov",
+  "source_url": "https://github.com/olegakbarov/ispo-code/blob/main/.claude/skills/cartographer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/olegakbarov/ispo-code/blob/main/.claude/skills/cartographer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,11 +1,11 @@
 {
   "name": "k8s-operations",
   "repo": "kcns008/cluster-code",
+  "path": ".claude/skills/k8s-operations/SKILL.md",
+  "source": "github.com/kcns008/cluster-code",
+  "downloaded_at": "2026-01-22T01:22:10.205813Z",
+  "dir_name": "k8s-operations",
   "category": "devops",
-  "description": "Kubernetes and OpenShift cluster operations, maintenance, and lifecycle management. Use this skill when:(1) Performing cluster upgrades (K8s, OCP, EKS, GKE, AKS)(2) Backup and disaster recovery (etcd,",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:34.671302Z",
   "github_path": ".claude/skills/k8s-operations",
-  "github_branch": "main",
-  "dir_name": "k8s-operations"
+  "github_branch": "main"
 }

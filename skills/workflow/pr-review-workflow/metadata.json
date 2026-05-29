@@ -1,0 +1,17 @@
+{
+  "name": "pr-review-workflow",
+  "repo": "baphled/dotopencode",
+  "path": "skills/pr-review-workflow/SKILL.md",
+  "github_branch": "main",
+  "category": "workflow",
+  "source": "github.com/baphled/dotopencode",
+  "dir_name": "pr-review-workflow",
+  "downloaded_at": "2026-03-22T07:10:24.805977Z",
+  "author": "baphled",
+  "source_url": "https://github.com/baphled/dotopencode/blob/main/skills/pr-review-workflow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/baphled/dotopencode/blob/main/skills/pr-review-workflow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

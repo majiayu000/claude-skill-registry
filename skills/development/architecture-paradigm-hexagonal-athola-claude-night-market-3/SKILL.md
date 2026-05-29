@@ -1,7 +1,7 @@
 ---
 name: architecture-paradigm-hexagonal
-description: 'Hexagonal (Ports and Adapters) architecture isolating domain logic from infrastructure.'
-version: 1.9.0
+role: library
+description: Applies hexagonal architecture isolating domain from infrastructure. Use when designing systems where testability and port/adapter separation are priorities.
 alwaysApply: false
 category: architectural-pattern
 tags:
@@ -11,10 +11,7 @@ tags:
 - infrastructure-independence
 - testability
 dependencies: []
-tools:
-- boundary-validator
-- adapter-generator
-- contract-tester
+tools: []
 usage_patterns:
 - paradigm-implementation
 - refactoring-guidance
@@ -62,3 +59,16 @@ estimated_tokens: 1200
   - **Mitigation**: If a port's interface exposes details about the transport layer (e.g., HTTP headers), it is a "leaky abstraction." Refactor these interfaces to use domain-centric Data Transfer Objects (DTOs) instead.
 - **Adapter Drift**:
   - **Mitigation**: An adapter can become out-of-sync with the external technology it represents (e.g., database schema changes). Schedule regular, automated validation of adapters, such as verifying that SQL migrations still align with the expectations of the persistence port.
+
+## Concrete Components
+
+These vocabulary items name the concrete tools and abstractions
+that show up when the paradigm is implemented. They are not
+required dependencies and they are not part of the skill's
+``tools:`` frontmatter (which is reserved for Claude Code tool
+restrictions). Use this list to disambiguate during architecture
+discussions.
+
+- ``boundary-validator`` -- checks every adapter conforms to the port contract
+- ``adapter-generator`` -- scaffolds primary and secondary adapters from a port spec
+- ``contract-tester`` -- validates each adapter against its port via shared contract tests

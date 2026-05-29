@@ -1,0 +1,13 @@
+{
+  "name": "audit",
+  "description": "",
+  "repo": "kynetic-ai/kynetic-spec",
+  "category": "quality",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/kynetic-ai/kynetic-spec",
+  "github_path": ".claude/skills/audit",
+  "github_branch": "main",
+  "dir_name": "audit-kynetic-ai-kynetic-spec",
+  "downloaded_at": "2026-02-05T05:32:51.124094Z"
+}

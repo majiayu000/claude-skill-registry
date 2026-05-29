@@ -1,0 +1,18 @@
+{
+  "name": "gay-monte-carlo",
+  "repo": "plurigrid/asi",
+  "path": "skills/gay-monte-carlo/SKILL.md",
+  "source": "github.com/plurigrid/asi",
+  "downloaded_at": "2026-01-19T05:42:06.538603Z",
+  "dir_name": "gay-monte-carlo",
+  "category": "ai-ml",
+  "github_path": "skills/gay-monte-carlo",
+  "github_branch": "main",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/gay-monte-carlo/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

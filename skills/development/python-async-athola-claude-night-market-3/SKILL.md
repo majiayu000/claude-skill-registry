@@ -1,7 +1,6 @@
 ---
 name: python-async
-description: 'Async Python patterns and concurrency: async APIs, I/O-bound apps, rate limiting, context managers'
-version: 1.9.0
+description: Async Python patterns via asyncio and aiohttp for I/O-bound concurrency. Use when adding async APIs, handling concurrent I/O, or debugging async code.
 globs: "**/*.py"
 alwaysApply: false
 category: async
@@ -12,9 +11,7 @@ tags:
 - concurrency
 - await
 - coroutines
-tools:
-- async-analyzer
-- concurrency-checker
+tools: []
 usage_patterns:
 - async-api-development
 - concurrent-io
@@ -25,13 +22,13 @@ model_hint: standard
 estimated_tokens: 400
 progressive_loading: true
 modules:
-- basic-patterns
-- concurrency-control
-- error-handling-timeouts
-- advanced-patterns
-- testing-async
-- real-world-applications
-- pitfalls-best-practices
+- modules/basic-patterns.md
+- modules/concurrency-control.md
+- modules/error-handling-timeouts.md
+- modules/advanced-patterns.md
+- modules/testing-async.md
+- modules/real-world-applications.md
+- modules/pitfalls-best-practices.md
 ---
 # Async Python Patterns
 

@@ -1,0 +1,17 @@
+{
+  "name": "geocoding",
+  "repo": "dohoon84/openchiken",
+  "path": "skills/geocoding/SKILL.md",
+  "github_branch": "master",
+  "category": "data",
+  "source": "github.com/dohoon84/openchiken",
+  "dir_name": "geocoding",
+  "downloaded_at": "2026-03-22T07:47:41.487894Z",
+  "author": "dohoon84",
+  "source_url": "https://github.com/dohoon84/openchiken/blob/master/skills/geocoding/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dohoon84/openchiken/blob/master/skills/geocoding/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

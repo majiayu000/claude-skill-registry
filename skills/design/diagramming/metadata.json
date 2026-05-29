@@ -1,0 +1,16 @@
+{
+  "name": "diagramming",
+  "repo": "joaquimscosta/arkhe-claude-plugins",
+  "path": "plugins/doc/skills/diagramming/SKILL.md",
+  "source": "github.com/joaquimscosta/arkhe-claude-plugins",
+  "downloaded_at": "2026-01-29T07:04:32.882988Z",
+  "dir_name": "diagramming",
+  "category": "design",
+  "author": "joaquimscosta",
+  "source_url": "https://github.com/joaquimscosta/arkhe-claude-plugins/blob/main/plugins/doc/skills/diagramming/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Joaquim Costa",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

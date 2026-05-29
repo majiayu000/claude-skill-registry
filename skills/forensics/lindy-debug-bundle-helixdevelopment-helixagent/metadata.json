@@ -1,0 +1,16 @@
+{
+  "name": "lindy-debug-bundle",
+  "repo": "HelixDevelopment/HelixAgent",
+  "path": "skills/plugins/saas-packs/lindy-pack/lindy-debug-bundle/SKILL.md",
+  "source": "github.com/HelixDevelopment/HelixAgent",
+  "downloaded_at": "2026-01-29T08:59:14.062919Z",
+  "dir_name": "lindy-debug-bundle-helixdevelopment-helixagent",
+  "category": "forensics",
+  "author": "HelixDevelopment",
+  "source_url": "https://github.com/HelixDevelopment/HelixAgent/blob/main/skills/plugins/saas-packs/lindy-pack/lindy-debug-bundle/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025-2026 Milos Vasic",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -45,7 +45,8 @@ Moves **3 (vertical slice decomposition)** and **5 (wave validity check)** of th
 ## Discovery Boundary
 
 Use the [Skill Ports and Adapters](../../docs/contracts/skill-ports-and-adapters.md)
-vocabulary for the boundary from Discovery into Plan:
+vocabulary and the [Intent-to-Loop Hexagon](../../docs/architecture/intent-to-loop-hexagon.md)
+for the boundary from Discovery into Plan:
 
 | Boundary piece | Plan contract |
 |---|---|
@@ -56,14 +57,7 @@ vocabulary for the boundary from Discovery into Plan:
 | Context packet | slice plan, file dependency matrix, acceptance criteria, test levels |
 | Guard adapter | stale-scope verification, symbol verification, wave-validity check |
 
-```gherkin
-Feature: Plan converts dense intent into executable slices
-  Scenario: Plan consumes Discovery output
-    Given Discovery provides density fields and artifact links
-    When Plan receives the `plan_slices` port request
-    Then each slice has acceptance criteria, write scope, test levels, and ownership
-    And no slice depends on raw Discovery chat context
-```
+Executable acceptance: [references/plan.feature](references/plan.feature) — consumes Discovery output, one slice per Given/When/Then row, wave-validity gate, durable slice-validation artifact.
 
 ## Flags
 
@@ -122,6 +116,17 @@ Active findings from `.agents/findings/registry.jsonl` are a fallback planning i
 
 If research files exist, read the most recent one and verify it contains substantive sections (Summary, Findings, Architecture, Executive Summary, Recommendations) before proceeding. See [references/pre-decomposition.md](references/pre-decomposition.md) for the validation grep and warning behavior.
 
+### Step 2.3: Optional Strategic Duel Gate
+
+When the plan is likely to span more than one execution session AND it contains
+at least one contested operator-default decision, recommend the
+dueling-idea-wizards route (`/council --mode=debate --focus=ideas`) on the
+strategic question before decomposition. Treat it as advisory, not a hard
+prerequisite: skip it for single-session plans or plans with no meaningful
+contested default. Evidence from the 2026-05-17 Mt Olympus run: a roughly
+22 minute duel flipped 3/5 operator defaults and surfaced one already-shipped
+adapter bug that ordinary review and passing tests had missed.
+
 ### Step 3: Explore the Codebase (if needed)
 
 Dispatch an Explore sub-agent (Task tool) with a prompt that demands symbol-level detail: file inventory, function/method signatures, struct/type definitions, reuse points with `file:line`, test file locations and naming conventions, import paths. Read [references/pre-decomposition.md](references/pre-decomposition.md) for the canonical explore prompt.
@@ -168,6 +173,13 @@ Analyze the goal and break it into discrete, implementable issues. For each issu
 #### Acceptance Criteria Contract (mandatory)
 
 Every issue body MUST contain an `acceptance_criteria` fenced YAML block. The block lives BELOW the issue's textual description and ABOVE any "Reference" or "Notes" trailer. The parent epic body carries its own `acceptance_criteria` block (epic-level criteria); each child bead carries its own. `/discovery` STEP 6 lifts both into the execution packet under `epic_criteria` and `bead_criteria`. Canonical shape: [`schemas/execution-packet.schema.json`](../../schemas/execution-packet.schema.json) (`#/$defs/Criterion`).
+
+Every feature, bug, or product-facing behavior issue MUST also carry either a
+fenced `gherkin` block or a link to the upstream intent issue scenario it
+implements. Every non-trivial plan and bead body SHOULD include the `hexagon:`
+boundary block from `docs/architecture/intent-to-loop-hexagon.md` so the next
+agent knows the inbound port, bounded context, adapters, context packet, and
+done state.
 
 ```yaml
 acceptance_criteria:

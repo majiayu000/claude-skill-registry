@@ -14,6 +14,14 @@ description: Reviews SwiftUI code for view composition, state management, perfor
 | LazyStacks, AnyView, ForEach, identity | [references/performance.md](references/performance.md) |
 | VoiceOver, Dynamic Type, labels, traits | [references/accessibility.md](references/accessibility.md) |
 
+## Gates (review workflow)
+
+Complete in order; do not skip ahead.
+
+1. **Anchor scope** — Pass when: every reviewed file is listed as a repo-relative `.swift` path (or the review explicitly states “none opened / N/A” with reason).
+2. **Reference before critique** — Pass when: for any non-trivial body, modifier chain, or wrapper-ownership question, you have opened the matching `references/*.md` row from the table above *or* you state “not needed” with one line why.
+3. **Evidence-bound findings** — Pass when: each substantive issue includes **`[FILE:LINE]`** (or a bounded line range) before recommendations; symbols/snippets may supplement but not replace the location anchor; no finding that rests only on “typical SwiftUI” without pointing at this code.
+
 ## Review Checklist
 
 - [ ] View body under 10 composed elements (extract subviews)

@@ -1,0 +1,20 @@
+{
+  "name": "quick-spec",
+  "description": "",
+  "repo": "PabloLION/bmad-plugin",
+  "category": "planning",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/PabloLION/bmad-plugin",
+  "github_path": "plugins/bmad/skills/quick-spec",
+  "github_branch": "main",
+  "dir_name": "quick-spec",
+  "downloaded_at": "2026-02-05T01:44:26.478275Z",
+  "author": "PabloLION",
+  "source_url": "https://github.com/PabloLION/bmad-plugin/blob/main/plugins/bmad/skills/quick-spec/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2026 PabloLION",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

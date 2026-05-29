@@ -1,0 +1,16 @@
+{
+  "name": "feed-reader",
+  "repo": "frogr/austnomaton",
+  "path": "skills/feed-reader/skill.md",
+  "category": "workflow",
+  "source": "github.com/frogr/austnomaton",
+  "dir_name": "feed-reader",
+  "downloaded_at": "2026-02-22T07:12:23.576661Z",
+  "author": "frogr",
+  "source_url": "https://github.com/frogr/austnomaton/blob/main/skills/feed-reader/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/frogr/austnomaton/blob/main/skills/feed-reader/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

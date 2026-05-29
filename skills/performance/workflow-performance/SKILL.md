@@ -116,8 +116,14 @@ Duration: 30min per scenario
 | Memory reduction | 30% |
 | Cost reduction | 20% |
 
+## Quick Reference
+
+| Resource | Reference File |
+|---|---|
+| **Optimization Techniques** | `skills/workflow-performance/references/optimization-techniques.md` |
+
 ## Anti-patterns
-- ❌ Optimizing without measuring first
-- ❌ Micro-optimizations before algorithmic fixes
-- ❌ Optimizing code that isn't the bottleneck
-- ❌ No load testing before production
+- Optimizing without measuring first
+- Micro-optimizations before algorithmic fixes
+- Optimizing code that isn't the bottleneck
+- No load testing before production

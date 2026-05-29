@@ -1,0 +1,16 @@
+{
+  "name": "ghostty-config",
+  "repo": "sammcj/agentic-coding",
+  "path": "Claude/skills/ghostty-config/SKILL.md",
+  "source": "github.com/sammcj/agentic-coding",
+  "downloaded_at": "2026-01-29T05:45:00.032681Z",
+  "dir_name": "ghostty-config-sammcj-agentic-coding",
+  "category": "system",
+  "author": "sammcj",
+  "source_url": "https://github.com/sammcj/agentic-coding/blob/main/Claude/skills/ghostty-config/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sammcj/agentic-coding/blob/main/Claude/skills/ghostty-config/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

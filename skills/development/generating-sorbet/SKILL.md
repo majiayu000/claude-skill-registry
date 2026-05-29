@@ -1,22 +1,22 @@
 ---
-name: generating-sorbet
-description: Generates Sorbet type signatures in separate RBI files from Ruby source files. Triggers when creating type definitions, adding types to Ruby code, or generating .rbi files for classes/modules without existing Sorbet signatures.
+name: generating-sorbet-inline
+description: Generates Sorbet inline type signatures using sig blocks directly in Ruby source files. Triggers when adding Sorbet types, annotating Ruby methods with sig syntax, or generating type signatures for Sorbet-typed projects.
 ---
 
-# Sorbet RBI Generation Skill
+# Sorbet Inline Generation Skill
 
-Generate Sorbet type signatures in separate `.rbi` files. RBI files are used when you cannot or should not modify the original Ruby source - such as for gems, generated code, or legacy codebases.
+Generate Sorbet type signatures using `sig {}` blocks directly in Ruby source files. Sorbet signatures are valid Ruby code that enable both static and runtime type checking.
 
 # Instructions
 
-When generating Sorbet RBI signatures, always follow these steps.
+When generating Sorbet inline signatures, always follow these steps.
 
 Copy this checklist and track your progress:
 
 ```
-Sorbet RBI Generation Progress:
+Sorbet Inline Generation Progress:
 - [ ] Step 1: Analyze the Ruby source
-- [ ] Step 2: Generate RBI files
+- [ ] Step 2: Add Sorbet signatures
 - [ ] Step 3: Eliminate `T.untyped` in signatures
 - [ ] Step 4: Review and refine signatures
 - [ ] Step 5: Validate signatures with Sorbet
@@ -32,8 +32,9 @@ Sorbet RBI Generation Progress:
 - You MUST prepend any command with `bundle exec` if the project has Gemfile.
 - You MUST use `sig { }` block syntax for method signatures.
 - You MUST add `extend T::Sig` to classes/modules before using `sig`.
-- You MUST NOT add method bodies in RBI files - only signatures and empty method definitions.
-- You MUST place RBI files in `./rbi` directory.
+- You MUST focus on method signatures only. Skip local variables, intermediate expressions, and other non-method annotations.
+- You MUST NOT use or generate `.rbi` files. This skill is for inline signatures only.
+- You MUST preserve the existing `# typed:` sigil level if one exists. Do not upgrade or change strictness without explicit user consent.
 
 ## 1. Analyze the Ruby Source
 
@@ -43,38 +44,29 @@ Read and understand the Ruby source file:
 - Identify all classes, modules, methods, constants and instance variables.
 - Note inheritance, module inclusion and definitions based on metaprogramming.
 - Note visibility modifiers - `public`, `private`, `protected`.
+- Note existing `# typed:` sigil level at the top of the file.
 - Note type parameters for generic classes.
 
-## 2. Generate RBI Files
+## 2. Add Sorbet Signatures
 
 Always perform this step.
 
-1. Determine the correct RBI directory:
+1. First, check if the file already has a `# typed:` sigil at the top:
+    - **If sigil exists**: Preserve the existing level. Do not change it without user consent.
+    - **If no sigil exists**: Add `# typed: true` as a sensible default (allows gradual typing).
 
-    Place RBI files in `./rbi` directory. Sorbet reads all `.rbi` files from this location.
+    Sigil levels (least to most strict): `ignore` < `false` < `true` < `strict` < `strong`
 
-    RBI files are needed to describe code Sorbet cannot understand statically:
-    - Gem definitions
-    - Methods created with `define_method` or `method_missing`
-    - Constants from `const_get`/`const_set`
-    - Dynamic ancestors added via `extend`
-    - DSL-generated methods (Rails, ActiveRecord, etc.)
-
-2. Create the RBI file with typed sigil:
-    ```ruby
-    # typed: strict
-    ```
-
-3. Add `extend T::Sig` to each class/module:
+2. Add `extend T::Sig` to the class/module:
     ```ruby
     class MyClass
       extend T::Sig
     end
     ```
 
-4. Add method stubs with signatures (no method bodies):
+3. Then add type signatures using `sig {}` blocks:
 
-**Example - Ruby Source:**
+**Example - Before:**
 ```ruby
 class User
   attr_reader :name, :age
@@ -90,9 +82,9 @@ class User
 end
 ```
 
-**Example - RBI File (`rbi/user.rbi`):**
+**Example - After:**
 ```ruby
-# typed: strict
+# typed: true
 
 class User
   extend T::Sig
@@ -104,15 +96,20 @@ class User
   attr_reader :age
 
   sig { params(name: String, age: Integer).void }
-  def initialize(name, age); end
+  def initialize(name, age)
+    @name = name
+    @age = age
+  end
 
   sig { params(greeting: String).returns(String) }
-  def greet(greeting); end
+  def greet(greeting)
+    "#{greeting}, #{@name}!"
+  end
 end
 ```
 
-- RBI files mirror structure but contain only signatures and empty method stubs
-- See [syntax.md](reference/syntax.md) for the full Sorbet RBI syntax guide
+- Focus on method and attribute signatures only
+- See [syntax.md](reference/syntax.md) for the full Sorbet syntax guide
 
 ## 3. Eliminate `T.untyped` in Signatures
 
@@ -129,7 +126,6 @@ Always perform this step.
 - Verify signatures are correct, coherent, and complete.
 - Remove unnecessary `T.untyped` types.
 - Ensure all methods and attributes have signatures.
-- Verify class hierarchy and module inclusions match the source.
 - Fix any errors and repeat until signatures are correct.
 
 ## 5. Validate Signatures with Sorbet
@@ -152,12 +148,12 @@ This checks:
 - Signature syntax correctness
 - Type consistency
 - Method parameter/return type matching
-- Class/module structure matching source
+- Instance variable initialization
 
 Fix any errors reported and repeat until validation passes.
 
 # References
 
-- [syntax.md](reference/syntax.md) - Sorbet RBI syntax guide
-- [references/](reference/references/STRUCTURE.md) - Real-world RBI examples from stripe-ruby
-- [Sorbet RBI documentation](https://sorbet.org/docs/rbi) - Official RBI docs
+- [syntax.md](reference/syntax.md) - Sorbet signature syntax guide
+- [sorbet_examples/](reference/sorbet_examples/STRUCTURE.md) - Real-world Sorbet examples from production gems
+- [Sorbet documentation](https://sorbet.org/docs/overview) - Official Sorbet docs

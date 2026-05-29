@@ -1,38 +1,47 @@
 ---
 name: delegation-core
-description: Delegate tasks to external LLM services (Gemini, Qwen) with quota, logging, and error handling.
-triggers: delegate task, external LLM, gemini, qwen, large context, offload
-use_when: tasks exceed context window or need cheaper processing
-do_not_use_when: task requires Claude's reasoning
+description: Delegate tasks to external LLM services (Gemini, Qwen) with quota, logging,
+version: 1.9.0
+alwaysApply: false
+  and error handling. Use when tasks exceed context window or need cheaper processing.
+  Do not use when task requires reasoning by Claude.
 category: delegation-framework
-tags: [delegation, external-llm, gemini, qwen, task-management, quality-control]
+tags:
+- delegation
+- external-llm
+- gemini
+- qwen
+- task-management
+- quality-control
 dependencies:
-  - leyline:quota-management
-  - leyline:usage-logging
-  - leyline:service-registry
-  - leyline:error-patterns
-  - leyline:authentication-patterns
-tools: [delegation-executor]
+- leyline:quota-management
+- leyline:usage-logging
+- leyline:service-registry
+- leyline:error-patterns
+- leyline:authentication-patterns
+tools:
+- delegation-executor
 usage_patterns:
-  - task-assessment
-  - delegation-planning
-  - quality-validation
-  - integration-workflows
+- task-assessment
+- delegation-planning
+- quality-validation
+- integration-workflows
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 250
 progressive_loading: true
 modules:
-  - modules/task-assessment.md
-  - modules/cost-estimation.md
-  - modules/handoff-patterns.md
-  - modules/troubleshooting.md
+- modules/task-assessment.md
+- modules/cost-estimation.md
+- modules/handoff-patterns.md
+- modules/troubleshooting.md
 references:
-  - leyline/skills/quota-management/SKILL.md
-  - leyline/skills/usage-logging/SKILL.md
-  - leyline/skills/error-patterns/SKILL.md
-  - leyline/skills/authentication-patterns/SKILL.md
-  - leyline/skills/service-registry/SKILL.md
-version: 1.3.5
+- leyline/skills/quota-management/SKILL.md
+- leyline/skills/usage-logging/SKILL.md
+- leyline/skills/error-patterns/SKILL.md
+- leyline/skills/authentication-patterns/SKILL.md
+- leyline/skills/service-registry/SKILL.md
+- references/execution-modes.md
 ---
 ## Table of Contents
 
@@ -58,11 +67,15 @@ version: 1.3.5
 
 A method for deciding when and how to delegate tasks to external LLM services. Core principle: **delegate execution, retain high-level reasoning**.
 
-## When to Use
+## When To Use
 - Before invoking external LLMs for task assistance.
 - When operations are token-heavy and exceed local context limits.
 - When batch processing benefits from different model characteristics.
 - When tasks require routing between models.
+
+## When NOT To Use
+
+- Task requires reasoning by Claude
 
 ## Philosophy
 
@@ -126,6 +139,31 @@ Execute and validate results:
 
 **Exit Criteria**: Results validated and integrated, usage logged.
 
+## MCP Authentication
+
+### OAuth Client Credentials (Claude Code 2.1.30+)
+
+For MCP servers that don't support Dynamic Client Registration (e.g., Slack), pre-configured OAuth client credentials can be provided:
+
+```bash
+claude mcp add <server-name> --client-id <id> --client-secret <secret>
+```
+
+This enables delegation workflows through MCP servers that require pre-configured OAuth, expanding the range of external services available for task delegation.
+
+### Claude.ai MCP Connectors (Claude Code 2.1.46+)
+
+As an alternative to manual OAuth setup, users can configure MCP servers directly in claude.ai at claude.ai/settings/connectors. These connectors are automatically available in Claude Code when logged in with a claude.ai account — no `claude mcp add` or credential management required. This provides a browser-based auth flow that may be simpler for services with complex OAuth requirements.
+
+## Worktree Isolation for File-Modifying Delegations (Claude Code 2.1.49+)
+
+When delegating tasks that modify files to subagents, use `isolation: worktree` in the agent frontmatter to run each agent in a temporary git worktree. This prevents file conflicts when multiple delegated agents operate in parallel on overlapping paths. The worktree is auto-cleaned if no changes are made; preserved with commits if the agent produces changes.
+
+```yaml
+# Agent frontmatter for isolated delegation
+isolation: worktree
+```
+
 ## Leyline Infrastructure
 
 Conjure uses leyline infrastructure:
@@ -145,6 +183,20 @@ See `modules/cost-estimation.md` for leyline integration examples.
 For detailed service workflows:
 - `Skill(conjure:gemini-delegation)`: Gemini CLI specifics.
 - `Skill(conjure:qwen-delegation)`: Qwen MCP specifics.
+
+## Execution Modes
+
+When delegating to multiple agents, choose the appropriate
+execution mode:
+
+| Mode | When to Use | How It Works |
+|------|-------------|--------------|
+| single-session | Sequential tasks, same-file edits | Claude works through tasks in order |
+| subagents | Parallel independent tasks | Agents work independently, report back |
+| agent-team | Parallel coordinated tasks | Agents can communicate with each other |
+
+See `references/execution-modes.md` for the selection decision
+matrix, mode compatibility notes, and anti-patterns to avoid.
 
 ## Module Reference
 

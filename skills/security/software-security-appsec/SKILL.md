@@ -1,11 +1,11 @@
 ---
 name: software-security-appsec
-description: Modern application security patterns including OWASP Top 10:2025, zero trust architecture, supply chain security, authentication, authorization, input validation, and cryptography for 2024-2025
+description: Modern application security patterns aligned with OWASP Top 10 (2021) and OWASP Top 10:2025 Release Candidate, OWASP API Security Top 10 (2023), NIST SSDF, zero trust, supply chain security, authentication, authorization, input validation, and cryptography.
 ---
 
 # Software Security & AppSec — Quick Reference
 
-Production-grade security patterns for building secure applications in 2024-2025. Covers OWASP Top 10:2025 (including new Supply Chain Failures category), zero trust architecture, modern authentication, and defensive coding.
+Production-grade security patterns for building secure applications in Dec 2025. Covers OWASP Top 10 (stable 2021) https://owasp.org/www-project-top-ten/ and OWASP Top 10:2025 Release Candidate (preview) https://owasp.org/Top10/2025/, plus OWASP API Security Top 10 (2023) https://owasp.org/API-Security/ and secure SDLC baselines (NIST SSDF) https://csrc.nist.gov/publications/detail/sp/800-218/final.
 
 ---
 
@@ -22,6 +22,7 @@ Activate this skill when:
 - Building systems that must comply with OWASP, NIST, PCI DSS, GDPR, HIPAA, or SOC 2
 - Integrating third-party dependencies (supply chain security review)
 - Implementing zero trust architecture or modern cloud-native security patterns
+- Establishing or improving secure SDLC gates (threat modeling, SAST/DAST, dependency scanning)
 
 ---
 
@@ -72,6 +73,65 @@ Security requirement: [Feature Type]
 
 ---
 
+## Incident Response Patterns (Dec 2025)
+
+### Security Incident Playbook
+
+| Phase | Actions |
+|-------|---------|
+| **Detect** | Alert fires, user report, automated scan |
+| **Contain** | Isolate affected systems, revoke compromised credentials |
+| **Investigate** | Collect logs, determine scope, identify root cause |
+| **Remediate** | Patch vulnerability, rotate secrets, update defenses |
+| **Recover** | Restore services, verify fixes, update monitoring |
+| **Learn** | Post-mortem, update playbooks, share lessons |
+
+### Security Logging Requirements
+
+| What to Log | Format | Retention |
+|-------------|--------|-----------|
+| Authentication events | JSON with correlation ID | 90 days minimum |
+| Authorization failures | JSON with user context | 90 days minimum |
+| Data access (sensitive) | JSON with resource ID | 1 year minimum |
+| Security scan results | SARIF format | 1 year minimum |
+
+**Do:**
+
+- Include correlation IDs across services
+- Log to SIEM (Splunk, Datadog, ELK)
+- Mask PII in logs
+
+**Avoid:**
+
+- Logging passwords, tokens, or keys
+- Unstructured log formats
+- Missing timestamps or context
+
+---
+
+### Optional: AI/Automation Extensions
+
+> **Note**: Security considerations for AI systems. Skip if not building AI features.
+
+#### LLM Security Patterns
+
+| Threat | Mitigation |
+|--------|------------|
+| Prompt injection | Input validation, output filtering, sandboxed execution |
+| Data exfiltration | Output scanning, PII detection |
+| Model theft | API rate limiting, watermarking |
+| Jailbreaking | Constitutional AI, guardrails |
+
+#### AI-Assisted Security Tools
+
+| Tool | Use Case |
+|------|----------|
+| Semgrep | Static analysis with AI rules |
+| Snyk Code | AI-powered vulnerability detection |
+| GitHub CodeQL | Semantic code analysis |
+
+---
+
 ## .NET/EF Core Crypto Integration Security
 
 For C#/.NET crypto/fintech services using Entity Framework Core, see:
@@ -92,9 +152,9 @@ For C#/.NET crypto/fintech services using Entity Framework Core, see:
 
 #### 2025 Updates & Modern Architecture
 
-- [resources/supply-chain-security.md](resources/supply-chain-security.md) — **NEW**: OWASP A03:2025, npm Shai-Hulud attack response, SLSA, Sigstore, trusted publishing
-- [resources/zero-trust-architecture.md](resources/zero-trust-architecture.md) — **NEW**: NIST SP 800-207, CISA maturity model, mTLS, SPIFFE/SPIRE, policy-based access
-- [resources/owasp-top-10.md](resources/owasp-top-10.md) — OWASP Top 10:2025 threats and mitigations with new categories
+- [resources/supply-chain-security.md](resources/supply-chain-security.md) — Dependency, build, and artifact integrity (SLSA, provenance, signing)
+- [resources/zero-trust-architecture.md](resources/zero-trust-architecture.md) — NIST SP 800-207, service identity, policy-based access
+- [resources/owasp-top-10.md](resources/owasp-top-10.md) — OWASP Top 10 mapping (2021 stable + 2025 RC preview)
 - [resources/advanced-xss-techniques.md](resources/advanced-xss-techniques.md) — 2024-2025 XSS: mutation XSS, polyglots, SVG attacks, context-aware encoding
 
 #### Foundation Security Patterns
@@ -108,6 +168,7 @@ For C#/.NET crypto/fintech services using Entity Framework Core, see:
 #### External References
 
 - [data/sources.json](data/sources.json) — 70+ curated security resources (OWASP 2025, supply chain, zero trust, API security, compliance)
+- Shared checklists: [../software-clean-code-standard/templates/checklists/secure-code-review-checklist.md](../software-clean-code-standard/templates/checklists/secure-code-review-checklist.md), [../software-clean-code-standard/templates/checklists/backend-api-review-checklist.md](../software-clean-code-standard/templates/checklists/backend-api-review-checklist.md)
 
 ### Templates by Domain
 

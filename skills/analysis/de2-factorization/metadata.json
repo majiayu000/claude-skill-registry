@@ -1,0 +1,16 @@
+{
+  "name": "de2-factorization",
+  "repo": "hummbl-dev/hummbl-agent",
+  "path": "skills/DE-decomposition/de2-factorization/SKILL.md",
+  "source": "github.com/hummbl-dev/hummbl-agent",
+  "downloaded_at": "2026-01-31T01:51:41.753148Z",
+  "dir_name": "de2-factorization",
+  "category": "analysis",
+  "author": "hummbl-dev",
+  "source_url": "https://github.com/hummbl-dev/hummbl-agent/blob/main/skills/DE-decomposition/de2-factorization/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2026 Reuben Bowlby and Daniel Matha. All rights reserved.",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

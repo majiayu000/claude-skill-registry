@@ -1,0 +1,18 @@
+{
+  "name": "architecture-fit-check",
+  "description": "Framework for evaluating if change-set specs fit existing codebase architecture",
+  "repo": "shanepadgett/agent-extensions",
+  "path": "skills/architecture-fit-check",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/shanepadgett/agent-extensions",
+  "dir_name": "architecture-fit-check-shanepadgett-agent-extensions-2",
+  "author": "shanepadgett",
+  "source_url": "https://github.com/shanepadgett/agent-extensions/blob/main/skills/architecture-fit-check/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shanepadgett/agent-extensions/blob/main/skills/architecture-fit-check/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

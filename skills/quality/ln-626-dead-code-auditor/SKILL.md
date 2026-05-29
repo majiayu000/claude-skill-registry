@@ -1,8 +1,11 @@
 ---
 name: ln-626-dead-code-auditor
-description: Dead code & legacy audit worker (L3). Checks unreachable code, unused imports/variables/functions, commented-out code, backward compatibility shims, deprecated patterns. Returns findings.
-allowed-tools: Read, Grep, Glob, Bash
+description: "Checks unreachable code, unused imports/variables/functions, commented-out code, deprecated patterns. Use when auditing dead code."
+allowed-tools: Read, Grep, Glob, Bash, mcp__hex-graph__index_project, mcp__hex-graph__find_unused_exports
+license: MIT
 ---
+
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Dead Code Auditor (L3 Worker)
 
@@ -17,17 +20,29 @@ Specialized worker auditing unused and unreachable code.
 
 ## Inputs (from Coordinator)
 
-Receives `contextStore` with tech stack, codebase root.
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
+
+Receives `contextStore` with tech stack, codebase root, output_dir.
 
 ## Workflow
 
-1) Parse context
-2) Run dead code detection (linters, grep)
-3) Collect findings
-4) Calculate score
-5) Return JSON
+**MANDATORY READ:** Load `shared/references/two_layer_detection.md` for detection methodology.
+
+1) Parse context + output_dir
+2) Run dead code detection (Layer 1: linters, grep)
+   - **ESM/JS/TS projects:** Use `index_project` then `find_unused_exports` as primary detection for unused exports. Keep grep-based detection as fallback for non-JS languages or when graph is unavailable.
+3) Analyze context per candidate (Layer 2):
+   - Unused functions: used via dynamic import/reflection? Exported in public API? Used in other packages (monorepo)?
+   - Commented code: TODO with context or algorithm explanation → FP. Truly dead code block → confirmed
+   - Legacy shims: read git blame — age? Is there an issue/PR tracking removal?
+4) Collect confirmed findings
+5) Calculate score
+6) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/626-dead-code.md` in single Write call
+7) **Return Summary:** Return minimal summary to coordinator
 
 ## Audit Rules
+
+**MANDATORY READ:** Load `shared/references/clean_code_checklist.md` for universal dead code patterns and severity definitions.
 
 ### 1. Unreachable Code
 **Detection:**
@@ -92,41 +107,46 @@ Receives `contextStore` with tech stack, codebase root.
 
 ## Scoring Algorithm
 
-```
-penalty = (high * 1.0) + (medium * 0.5) + (low * 0.2)
-score = max(0, 10 - penalty)
-```
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/references/audit_scoring.md`.
 
 ## Output Format
 
-```json
-{
-  "category": "Dead Code",
-  "score": 6,
-  "total_issues": 12,
-  "high": 2,
-  "medium": 3,
-  "low": 7,
-  "findings": [
-    {
-      "severity": "MEDIUM",
-      "location": "src/utils/helpers.ts:45",
-      "issue": "Function 'formatDate' is never used",
-      "principle": "Code Maintainability / Clean Code",
-      "recommendation": "Remove unused function or export if needed elsewhere",
-      "effort": "S"
-    },
-    {
-      "severity": "HIGH",
-      "location": "src/api/v1/auth.ts:12-15",
-      "issue": "Backward compatibility shim for old password validation (6+ months old)",
-      "principle": "No Legacy Code / Clean Architecture",
-      "recommendation": "Remove old password validation, keep only new implementation. Update API version if breaking.",
-      "effort": "M"
-    }
-  ]
-}
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
+
+Write report to `{output_dir}/626-dead-code.md` with `category: "Dead Code"` and checks: unreachable_code, unused_exports, commented_code, legacy_shims.
+
+Return summary to coordinator:
 ```
+Report written: docs/project/.audit/ln-620/{YYYY-MM-DD}/626-dead-code.md
+Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
+```
+
+## Reference Files
+
+- **Clean code checklist:** `shared/references/clean_code_checklist.md`
+- **Audit output schema:** `shared/references/audit_output_schema.md`
+
+## Critical Rules
+
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
+
+- **Do not auto-fix:** Report only, never delete code
+- **Age-aware severity:** Legacy shims >6 months = MEDIUM, <3 months = LOW
+- **Effort realism:** S = <1h, M = 1-4h, L = >4h
+- **Exclusions:** Skip generated code, vendor, migrations, test fixtures
+- **Git-aware:** Recommend deletion confidently -- git history preserves old code
+
+## Definition of Done
+
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
+
+- [ ] contextStore parsed (including output_dir)
+- [ ] All 4 checks completed (unreachable code, unused imports/vars/functions, commented-out code, legacy shims)
+- [ ] Clean code checklist loaded from `shared/references/clean_code_checklist.md`
+- [ ] Findings collected with severity, location, effort, recommendation
+- [ ] Score calculated per `shared/references/audit_scoring.md`
+- [ ] Report written to `{output_dir}/626-dead-code.md` (atomic single Write call)
+- [ ] Summary returned to coordinator
 
 ---
 **Version:** 3.0.0

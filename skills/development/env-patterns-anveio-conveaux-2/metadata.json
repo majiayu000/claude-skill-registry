@@ -1,0 +1,18 @@
+{
+  "name": "env-patterns",
+  "description": "Environment/config conventions (env vars, defaults, validation, CI/local differences). Use when adding config or diagnosing env-related failures.",
+  "repo": "Anveio/conveaux",
+  "path": ".claude/skills/env-patterns",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Anveio/conveaux",
+  "dir_name": "env-patterns-anveio-conveaux-2",
+  "author": "Anveio",
+  "source_url": "https://github.com/Anveio/conveaux/blob/main/.claude/skills/env-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Anveio/conveaux/blob/main/.claude/skills/env-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

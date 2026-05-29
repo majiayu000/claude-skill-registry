@@ -1,0 +1,18 @@
+{
+  "name": "recovery-app-legal-terms",
+  "description": "Generate legally-sound terms of service, privacy policies, and medical disclaimers for recovery and wellness applications. Expert in HIPAA, GDPR, CCPA compliance. Activate on 'terms of service', 'priv",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/recovery-app-legal-terms",
+  "category": "domains",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "recovery-app-legal-terms-erichowens-some-claude-skills-2",
+  "author": "erichowens",
+  "source_url": "https://github.com/erichowens/some_claude_skills/blob/main/.claude/skills/recovery-app-legal-terms/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Erich Owens",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

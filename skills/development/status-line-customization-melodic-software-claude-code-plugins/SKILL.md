@@ -1,6 +1,7 @@
 ---
 name: status-line-customization
 description: Central authority for Claude Code status line configuration. Covers custom status line creation, /statusline command, status line settings (statusLine in settings.json), JSON input structure (model, workspace, cost, session info), status line scripts (Bash, Python, Node.js), terminal color codes, git-aware status lines, helper functions, and status line troubleshooting. Supports creating custom status lines, configuring status line behavior, and displaying contextual session information. Delegates 100% to docs-management skill for official documentation.
+user-invocable: false
 allowed-tools: Read, Glob, Grep, Skill
 ---
 
@@ -78,6 +79,7 @@ Use these keywords when querying docs-management skill for official documentatio
 | Session Info | "status line session_id", "transcript_path" |
 | Cost Info | "status line cost", "total_cost_usd", "lines_added" |
 | Version Info | "status line version", "output_style" |
+| Context Usage | "used_percentage", "remaining_percentage", "context window usage", "context capacity" |
 
 ### Script Examples
 
@@ -315,6 +317,9 @@ Never flag a technology usage as incorrect without first:
 
 ## Version History
 
+- **v1.1.0** (2026-01-16): Added v2.1.6+ keyword registry entries
+  - Added context usage fields (used_percentage, remaining_percentage)
+
 - **v1.0.0** (2025-11-26): Initial release
   - Pure delegation architecture
   - Comprehensive keyword registry
@@ -326,5 +331,5 @@ Never flag a technology usage as incorrect without first:
 
 ## Last Updated
 
-**Date:** 2025-11-28
+**Date:** 2026-01-16
 **Model:** claude-opus-4-5-20251101

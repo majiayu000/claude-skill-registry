@@ -1,7 +1,7 @@
 ---
 name: blast-radius
 role: entrypoint
-description: 'Analyze blast radius of code changes with risk scoring. Shows affected nodes and untested functions.'
+description: Analyzes code change impact with risk scoring and affected-node mapping. Use before merging to understand what a change touches and what lacks test coverage.
 model_hint: standard
 tags:
 - code-review

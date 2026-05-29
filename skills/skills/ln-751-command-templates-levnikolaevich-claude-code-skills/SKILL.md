@@ -1,7 +1,10 @@
 ---
 name: ln-751-command-templates
 description: Generates individual .claude/commands files from templates
+license: MIT
 ---
+
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
 
 # ln-751-command-templates
 
@@ -58,7 +61,32 @@ Common variables:
 - `{{BACKEND_PORT}}` — Backend API port
 - `{{TECH_STACK}}` — Technology stack summary
 
-See individual templates in `references/` for full variable lists.
+**MANDATORY READ:** Load templates from `references/` for full variable lists.
+
+---
+
+## Critical Rules
+
+- **Template-driven only:** All output generated from `references/` templates, never freeform
+- **Full substitution:** Every `{{VARIABLE}}` must be replaced; fail if any placeholder unresolved
+- **Write to correct path:** Output always goes to `.claude/commands/`, never elsewhere
+- **No template modification:** Templates in `references/` are read-only; only output files are written
+
+## Definition of Done
+
+- Template loaded from `references/{template}.md`
+- All `{{VARIABLE}}` placeholders substituted with values from ln-750
+- Output written to `.claude/commands/{command}.md`
+- Success/failure reported back to coordinator
+
+## Reference Files
+
+- **refresh_context_template.md:** [references/refresh_context_template.md](references/refresh_context_template.md)
+- **refresh_infrastructure_template.md:** [references/refresh_infrastructure_template.md](references/refresh_infrastructure_template.md)
+- **build_and_test_template.md:** [references/build_and_test_template.md](references/build_and_test_template.md)
+- **ui_testing_template.md:** [references/ui_testing_template.md](references/ui_testing_template.md)
+- **deploy_template.md:** [references/deploy_template.md](references/deploy_template.md)
+- **database_ops_template.md:** [references/database_ops_template.md](references/database_ops_template.md)
 
 ---
 

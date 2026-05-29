@@ -2,15 +2,16 @@
   "name": "alphaear-predictor",
   "repo": "RKiding/Awesome-finance-skills",
   "path": "skills/alphaear-predictor/SKILL.md",
-  "source": "github.com/RKiding/Awesome-finance-skills",
-  "downloaded_at": "2026-02-02T02:13:53.031360Z",
-  "dir_name": "alphaear-predictor",
+  "github_branch": "main",
   "category": "ai-ml",
+  "source": "github.com/RKiding/Awesome-finance-skills",
+  "dir_name": "alphaear-predictor",
+  "downloaded_at": "2026-03-22T06:08:48.130006Z",
   "author": "RKiding",
   "source_url": "https://github.com/RKiding/Awesome-finance-skills/blob/main/skills/alphaear-predictor/SKILL.md",
-  "license": "Apache-2.0",
+  "license": "NOASSERTION",
   "copyright": "Copyright belongs to upstream author(s); see https://github.com/RKiding/Awesome-finance-skills/blob/main/skills/alphaear-predictor/SKILL.md",
-  "permission_note": "Use according to upstream license terms and attribution requirements.",
-  "distribution": "compatible",
-  "license_class": "compatible"
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

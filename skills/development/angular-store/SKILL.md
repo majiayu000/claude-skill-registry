@@ -1,27 +1,34 @@
 ---
-name: angular-store
+name: frontend-angular-store
 description: Use when implementing state management with PlatformVmStore for complex components requiring reactive state, effects, and selectors.
+allowed-tools: Read, Write, Edit, Grep, Glob, Bash
 ---
 
-# Angular Store Development
+# Angular Store Development Workflow
 
-## Required Reading
+## When to Use This Skill
 
-**For comprehensive TypeScript/Angular patterns, you MUST read:**
+- List components with CRUD operations
+- Complex state with multiple data sources
+- Shared state between components
+- Caching and reloading patterns
 
-- **`docs/claude/frontend-typescript-complete-guide.md`** - Complete patterns for stores, effects, selectors, API services
-- **`docs/claude/scss-styling-guide.md`** - SCSS patterns, mixins, BEM conventions
+## Pre-Flight Checklist
 
----
+- [ ] Identify state shape (what data is needed)
+- [ ] **Read the design system docs** for the target application (see below)
+- [ ] Identify side effects (API calls, etc.)
+- [ ] Search similar stores: `grep "{Feature}Store" --include="*.ts"`
+- [ ] Determine caching requirements
 
 ## 🎨 Design System Documentation (MANDATORY)
 
 **Before creating any store, read the design system documentation for your target application:**
 
-| Application                       | Design System Location                           |
-| --------------------------------- | ------------------------------------------------ |
-| **WebV2 Apps**                    | `docs/design-system/`                            |
-| **TextSnippetClient**             | `src/PlatformExampleAppWeb/apps/playground-text-snippet/docs/design-system/` |
+| Application           | Design System Location                                          |
+| --------------------- | --------------------------------------------------------------- |
+| **WebV2 Apps**        | `docs/design-system/`                                           |
+| **TextSnippetClient** | `src/Frontend/apps/playground-text-snippet/docs/design-system/` |
 
 **Key docs to read:**
 
@@ -29,127 +36,403 @@ description: Use when implementing state management with PlatformVmStore for com
 - `06-state-management.md` - State management patterns (NgRx, PlatformVmStore)
 - `07-technical-guide.md` - Implementation checklist, best practices
 
-## Component Hierarchy
+## File Location
 
-| Base Class                 | Use Case                        |
-| -------------------------- | ------------------------------- |
-| `PlatformVmStoreComponent` | Basic store without auth        |
-| `AppBaseVmStoreComponent`  | Store with auth, roles, company |
+```
+src/Frontend/apps/{app-name}/src/app/
+└── features/
+    └── {feature}/
+        ├── {feature}.store.ts
+        └── {feature}.component.ts
+```
 
-## Store Pattern
+## Store Architecture
+
+```
+PlatformVmStore<TState>
+├── State: TState (reactive signal)
+├── Selectors: select() → Signal<T>
+├── Effects: effectSimple() → side effects
+├── Updaters: updateState() → mutations
+└── Loading/Error: observerLoadingErrorState()
+```
+
+## Pattern 1: Basic CRUD Store
 
 ```typescript
-// Store definition
+// {feature}-list.store.ts
+import { Injectable } from '@angular/core';
+import { PlatformVmStore } from '@libs/platform-core';
+
+// ═══════════════════════════════════════════════════════════════════════════
+// STATE INTERFACE
+// ═══════════════════════════════════════════════════════════════════════════
+
+export interface FeatureListState {
+    items: FeatureDto[];
+    selectedItem?: FeatureDto;
+    filters: FeatureFilters;
+    pagination: PaginationState;
+}
+
+export interface FeatureFilters {
+    searchText?: string;
+    status?: FeatureStatus[];
+    dateRange?: DateRange;
+}
+
+export interface PaginationState {
+    pageIndex: number;
+    pageSize: number;
+    totalCount: number;
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// STORE IMPLEMENTATION
+// ═══════════════════════════════════════════════════════════════════════════
+
 @Injectable()
-export class EmployeeListStore extends PlatformVmStore<EmployeeListVm> {
-    constructor(private employeeApi: EmployeeApiService) {
-        super();
-    }
+export class FeatureListStore extends PlatformVmStore<FeatureListState> {
+    // ─────────────────────────────────────────────────────────────────────────
+    // CONFIGURATION
+    // ─────────────────────────────────────────────────────────────────────────
+
+    // State factory
+    protected override vmConstructor = (data?: Partial<FeatureListState>) =>
+        ({
+            items: [],
+            filters: {},
+            pagination: { pageIndex: 0, pageSize: 20, totalCount: 0 },
+            ...data
+        }) as FeatureListState;
 
     // Optional: Enable caching
-    protected get enableCaching() {
+    protected override get enableCaching() {
         return true;
     }
-    protected cachedStateKeyName = () => 'EmployeeListStore';
+    protected override cachedStateKeyName = () => 'FeatureListStore';
 
-    // ViewModel constructor
-    protected vmConstructor = (data?: Partial<EmployeeListVm>) => new EmployeeListVm(data);
+    // ─────────────────────────────────────────────────────────────────────────
+    // SELECTORS (Reactive Signals)
+    // ─────────────────────────────────────────────────────────────────────────
 
-    // Effects
-    public loadEmployees = this.effectSimple(
-        () => this.employeeApi.getEmployees().pipe(this.tapResponse(employees => this.updateState({ employees }))),
-        'loadEmployees'
-    );
+    public readonly items$ = this.select(state => state.items);
+    public readonly selectedItem$ = this.select(state => state.selectedItem);
+    public readonly filters$ = this.select(state => state.filters);
+    public readonly pagination$ = this.select(state => state.pagination);
 
-    public deleteEmployee = this.effectSimple(
-        (id: string) =>
-            this.employeeApi.delete(id).pipe(
-                this.tapResponse(() =>
+    // Derived selectors
+    public readonly hasItems$ = this.select(state => state.items.length > 0);
+    public readonly isEmpty$ = this.select(state => state.items.length === 0);
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // EFFECTS (Side Effects)
+    // ─────────────────────────────────────────────────────────────────────────
+
+    // Load items with current filters
+    public loadItems = this.effectSimple(() => {
+        const state = this.currentVm();
+        return this.featureApi
+            .getList({
+                ...state.filters,
+                skipCount: state.pagination.pageIndex * state.pagination.pageSize,
+                maxResultCount: state.pagination.pageSize
+            })
+            .pipe(
+                this.tapResponse(result => {
+                    this.updateState({
+                        items: result.items,
+                        pagination: {
+                            ...state.pagination,
+                            totalCount: result.totalCount
+                        }
+                    });
+                })
+            );
+    }, 'loadItems');
+
+    // Save item (create or update)
+    public saveItem = this.effectSimple(
+        (item: FeatureDto) =>
+            this.featureApi.save(item).pipe(
+                this.tapResponse(saved => {
                     this.updateState(state => ({
-                        employees: state.employees.filter(e => e.id !== id)
-                    }))
-                )
+                        items: state.items.upsertBy(x => x.id, [saved]),
+                        selectedItem: saved
+                    }));
+                })
             ),
-        'deleteEmployee'
+        'saveItem'
     );
 
-    // Selectors
-    public readonly employees$ = this.select(state => state.employees);
-    public readonly activeCount$ = this.select(state => state.employees.filter(e => e.isActive).length);
-    public readonly isLoading$ = this.isLoading$('loadEmployees');
+    // Delete item
+    public deleteItem = this.effectSimple(
+        (id: string) =>
+            this.featureApi.delete(id).pipe(
+                this.tapResponse(() => {
+                    this.updateState(state => ({
+                        items: state.items.filter(x => x.id !== id),
+                        selectedItem: state.selectedItem?.id === id ? undefined : state.selectedItem
+                    }));
+                })
+            ),
+        'deleteItem'
+    );
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // STATE UPDATERS
+    // ─────────────────────────────────────────────────────────────────────────
+
+    public setFilters(filters: Partial<FeatureFilters>): void {
+        this.updateState(state => ({
+            filters: { ...state.filters, ...filters },
+            pagination: { ...state.pagination, pageIndex: 0 } // Reset to first page
+        }));
+    }
+
+    public setPage(pageIndex: number): void {
+        this.updateState(state => ({
+            pagination: { ...state.pagination, pageIndex }
+        }));
+    }
+
+    public selectItem(item?: FeatureDto): void {
+        this.updateState({ selectedItem: item });
+    }
+
+    public clearFilters(): void {
+        this.updateState({
+            filters: {},
+            pagination: { ...this.currentVm().pagination, pageIndex: 0 }
+        });
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // CONSTRUCTOR
+    // ─────────────────────────────────────────────────────────────────────────
+
+    constructor(private featureApi: FeatureApiService) {
+        super();
+    }
 }
 ```
 
-## Component Usage
+## Pattern 2: Store with Dependent Data
+
+```typescript
+@Injectable()
+export class EmployeeFormStore extends PlatformVmStore<EmployeeFormState> {
+    protected override vmConstructor = (data?: Partial<EmployeeFormState>) =>
+        ({
+            employee: null,
+            departments: [],
+            positions: [],
+            managers: [],
+            ...data
+        }) as EmployeeFormState;
+
+    // Load all dependent data in parallel
+    public loadFormData = this.effectSimple(
+        (employeeId?: string) =>
+            forkJoin({
+                employee: employeeId ? this.employeeApi.getById(employeeId) : of(this.createNewEmployee()),
+                departments: this.departmentApi.getActive(),
+                positions: this.positionApi.getAll(),
+                managers: this.employeeApi.getManagers()
+            }).pipe(
+                this.tapResponse(result => {
+                    this.updateState({
+                        employee: result.employee,
+                        departments: result.departments,
+                        positions: result.positions,
+                        managers: result.managers
+                    });
+                })
+            ),
+        'loadFormData'
+    );
+
+    // Dependent selector - filter managers by department
+    public managersForDepartment$ = (departmentId: string) => this.select(state => state.managers.filter(m => m.departmentId === departmentId));
+}
+```
+
+## Pattern 3: Store with Caching
+
+```typescript
+@Injectable({ providedIn: 'root' }) // Singleton for caching
+export class LookupDataStore extends PlatformVmStore<LookupDataState> {
+    protected override get enableCaching() {
+        return true;
+    }
+    protected override cachedStateKeyName = () => 'LookupDataStore';
+
+    // Cache timeout (optional)
+    protected override get cacheExpirationMs() {
+        return 5 * 60 * 1000;
+    } // 5 minutes
+
+    // Load with cache check
+    public loadCountries = this.effectSimple(() => {
+        if (this.currentVm().countries.length > 0) {
+            return EMPTY; // Already loaded, skip
+        }
+
+        return this.lookupApi.getCountries().pipe(
+            this.tapResponse(countries => {
+                this.updateState({ countries });
+            })
+        );
+    }, 'loadCountries');
+}
+```
+
+## Component Integration
 
 ```typescript
 @Component({
-    selector: 'app-employee-list',
-    template: `
-        <app-loading-and-error-indicator [target]="this">
-            @if (vm(); as vm) {
-                @for (emp of vm.employees; track emp.id) {
-                    <div>{{ emp.name }}</div>
-                }
-            }
-        </app-loading-and-error-indicator>
-    `,
-    providers: [EmployeeListStore]
+    selector: 'app-feature-list',
+    templateUrl: './feature-list.component.html',
+    providers: [FeatureListStore] // Component-scoped store
 })
-export class EmployeeListComponent extends AppBaseVmStoreComponent<EmployeeListVm, EmployeeListStore> {
-    constructor(store: EmployeeListStore) {
+export class FeatureListComponent extends AppBaseVmStoreComponent<FeatureListState, FeatureListStore> implements OnInit {
+    constructor(store: FeatureListStore) {
         super(store);
     }
 
-    ngOnInit() {
-        this.store.loadEmployees();
+    ngOnInit(): void {
+        this.store.loadItems();
     }
 
-    onRefresh() {
-        this.reload(); // Reloads all store effects
+    onSearch(text: string): void {
+        this.store.setFilters({ searchText: text });
+        this.store.loadItems();
     }
 
-    onDelete(id: string) {
-        this.store.deleteEmployee(id);
+    onPageChange(pageIndex: number): void {
+        this.store.setPage(pageIndex);
+        this.store.loadItems();
+    }
+
+    onDelete(item: FeatureDto): void {
+        this.store.deleteItem(item.id);
+    }
+
+    onRefresh(): void {
+        this.reload(); // Inherited - reloads all store effects
+    }
+
+    // Loading states
+    get isLoading$() {
+        return this.store.isLoading$('loadItems');
+    }
+    get isSaving$() {
+        return this.store.isLoading$('saveItem');
+    }
+    get isDeleting$() {
+        return this.store.isLoading$('deleteItem');
     }
 }
 ```
 
-## Key APIs
+## Template Usage
 
-| Store Method                     | Purpose                       |
-| -------------------------------- | ----------------------------- |
-| `effectSimple(fn)`               | Create side effect            |
-| `updateState(partial)`           | Update store state            |
-| `select(selector)`               | Create selector               |
-| `observerLoadingErrorState(key)` | Track loading/error state     |
-| `tapResponse(next, error?)`      | Handle response               |
-| `isLoading$(key)`                | Get loading signal for effect |
+```html
+<app-loading-and-error-indicator [target]="this">
+    @if (vm(); as vm) {
+    <!-- Filters -->
+    <div class="filters">
+        <input [value]="vm.filters.searchText ?? ''" (input)="onSearch($event.target.value)" placeholder="Search..." />
+    </div>
 
-| Component Method    | Purpose                       |
-| ------------------- | ----------------------------- |
-| `vm()`              | Get current view model signal |
-| `currentVm()`       | Get current view model value  |
-| `updateVm(partial)` | Update view model             |
-| `reload()`          | Reload all store effects      |
+    <!-- List -->
+    @for (item of vm.items; track item.id) {
+    <div class="item" [class.selected]="vm.selectedItem?.id === item.id">
+        {{ item.name }}
+        <button (click)="onDelete(item)" [disabled]="isDeleting$()">Delete</button>
+    </div>
+    } @empty {
+    <div class="empty">No items found</div>
+    }
 
-## ViewModel Pattern
+    <!-- Pagination -->
+    <app-pagination
+        [pageIndex]="vm.pagination.pageIndex"
+        [pageSize]="vm.pagination.pageSize"
+        [totalCount]="vm.pagination.totalCount"
+        (pageChange)="onPageChange($event)"
+    />
+    }
+</app-loading-and-error-indicator>
+```
+
+## Key Store APIs
+
+| Method                        | Purpose              | Example                                                   |
+| ----------------------------- | -------------------- | --------------------------------------------------------- |
+| `select()`                    | Create selector      | `this.select(s => s.items)`                               |
+| `updateState()`               | Update state         | `this.updateState({ items })`                             |
+| `effectSimple()`              | Create effect        | `this.effectSimple(() => api.call(), 'requestKey')`       |
+| `currentVm()`                 | Get current state    | `const state = this.currentVm()`                          |
+| `observerLoadingErrorState()` | Track loading/error  | Use outside effectSimple only (effectSimple handles this) |
+| `tapResponse()`               | Handle success/error | `.pipe(this.tapResponse(success, error))`                 |
+| `isLoading$()`                | Loading signal       | `this.store.isLoading$('loadItems')`                      |
+
+## Anti-Patterns to AVOID
+
+:x: **Calling effects without tracking**
 
 ```typescript
-export class EmployeeListVm {
-    employees: EmployeeDto[] = [];
-    selectedId?: string;
-    filters: EmployeeFilters = new EmployeeFilters();
+// WRONG - no loading state
+this.api.getItems().subscribe(items => this.updateState({ items }));
 
-    constructor(data?: Partial<EmployeeListVm>) {
-        Object.assign(this, data);
-    }
-}
+// CORRECT - effectSimple auto-tracks loading state via second parameter
+public loadItems = this.effectSimple(
+    () => this.api.getItems().pipe(
+        this.tapResponse(items => this.updateState({ items }))
+    ),
+    'loadItems'
+);
 ```
 
-## Anti-Patterns
+:x: **Mutating state directly**
 
-- Direct state mutation (use `updateState()`)
-- Not providing store in component `providers`
-- Manual subscription management
-- Not using `observerLoadingErrorState` for API calls
+```typescript
+// WRONG - direct mutation
+this.currentVm().items.push(newItem);
+
+// CORRECT - immutable update
+this.updateState(state => ({
+    items: [...state.items, newItem]
+}));
+```
+
+:x: **Using store without provider**
+
+```typescript
+// WRONG - no provider
+export class MyComponent {
+  constructor(private store: FeatureStore) { }  // Error: No provider
+}
+
+// CORRECT - provide at component level
+@Component({
+  providers: [FeatureStore]
+})
+```
+
+## Verification Checklist
+
+- [ ] State interface defines all required properties
+- [ ] `vmConstructor` provides default state
+- [ ] Effects use `effectSimple()` with request key as second parameter
+- [ ] Effects use `tapResponse()` for handling
+- [ ] Selectors are memoized with `select()`
+- [ ] State updates are immutable
+- [ ] Store provided at correct level (component vs root)
+- [ ] Caching configured if needed
+
+## Task Planning Notes
+
+- Always plan and break many small todo tasks
+- Always add a final review todo task to review the works done at the end to find any fix or enhancement needed

@@ -5,6 +5,20 @@ description: Reviews React Flow code for anti-patterns, performance issues, and 
 
 # React Flow Code Review
 
+When reviewing React Flow code, complete the gates below in order. Each step has an objective pass condition before moving on.
+
+## Review gates (sequenced)
+
+1. **Locate flow code** — Search the review scope for `ReactFlow`, `ReactFlowProvider`, `useReactFlow`, `@xyflow/react`, `nodeTypes`, and `edgeTypes`. **Pass:** a short list of file paths (or explicit “none in scope” after searching).
+
+2. **Provider boundary** — For each `useReactFlow()` (and other hooks that require the provider), trace the component tree to an enclosing `ReactFlowProvider`, or record a concrete mismatch with **file:line**.
+
+3. **Stable types and memo surfaces** — For each custom node or edge component, note whether it uses `memo` and typed props (`NodeProps<...>`, etc.). For each `nodeTypes` / `edgeTypes` value passed into `<ReactFlow>`, confirm a stable reference (module scope, or `useMemo` with deps you can point to) or flag unstable recreation with **file:line**.
+
+4. **Report with evidence** — For each finding you will deliver, record **file path and line number(s)** (or a minimal quoted snippet). **Pass:** no critical or high-severity issue is stated without that citation.
+
+5. **Close the checklists** — Use [Performance Checklist](#performance-checklist) and [Common Mistakes](#common-mistakes); each item is **satisfied**, **not applicable** (with reason), or **open** with evidence. **Pass:** no item left silently ambiguous.
+
 ## Critical Anti-Patterns
 
 ### 1. Defining nodeTypes/edgeTypes Inside Components

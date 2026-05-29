@@ -1,0 +1,16 @@
+{
+  "name": "google-trends-ath-detector",
+  "repo": "fatfingererr/macro-skills",
+  "path": "skills/google-trends-ath-detector/SKILL.md",
+  "source": "github.com/fatfingererr/macro-skills",
+  "downloaded_at": "2026-01-27T01:02:11.973591Z",
+  "dir_name": "google-trends-ath-detector",
+  "category": "analysis",
+  "author": "fatfingererr",
+  "source_url": "https://github.com/fatfingererr/macro-skills/blob/main/skills/google-trends-ath-detector/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Ruei-Ci Wang",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

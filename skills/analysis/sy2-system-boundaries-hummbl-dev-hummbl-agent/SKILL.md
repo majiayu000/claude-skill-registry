@@ -16,11 +16,13 @@ Apply the SY2 System Boundaries transformation to define what is inside versus o
 ## When to Use SY2
 
 ### Ideal Situations
+
 - Understand system-wide interactions and feedback loops
 - Detect patterns that emerge across components
 - Optimize for long-term system behavior, not just local gains
 
 ### Trigger Questions
+
 - "How can we use System Boundaries here?"
 - "What changes if we apply SY2 to this analyzing coordination patterns across teams?"
 - "Which assumptions does SY2 help us surface?"
@@ -28,18 +30,21 @@ Apply the SY2 System Boundaries transformation to define what is inside versus o
 ## The SY2 Process
 
 ### Step 1: Define the focus
+
 ```typescript
 // Using SY2 (System Boundaries) - Establish the focus
 const focus = "Define what is inside versus outside system scope for analysis or design";
 ```
 
 ### Step 2: Apply the model
+
 ```typescript
 // Using SY2 (System Boundaries) - Apply the transformation
 const output = applyModel("SY2", focus);
 ```
 
 ### Step 3: Synthesize outcomes
+
 ```typescript
 // Using SY2 (System Boundaries) - Capture insights and decisions
 const insights = summarize(output);
@@ -86,6 +91,7 @@ const result = applyModel("SY2", "Define what is inside versus outside system sc
 ## Installation and Usage
 
 ### Nix Installation
+
 ```nix
 {
   programs.moltbot.plugins = [
@@ -95,11 +101,13 @@ const result = applyModel("SY2", "Define what is inside versus outside system sc
 ```
 
 ### Manual Installation
+
 ```bash
 moltbot-registry install hummbl-agent/sy2-system-boundaries
 ```
 
 ### Usage with Commands
+
 ```bash
 /apply-transformation SY2 "Define what is inside versus outside system scope for analysis or design"
 ```

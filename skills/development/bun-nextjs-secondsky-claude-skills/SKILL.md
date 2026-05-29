@@ -1,7 +1,9 @@
 ---
-name: Bun Next.js
+name: bun-nextjs
 description: This skill should be used when the user asks about "Next.js with Bun", "Bun and Next", "running Next.js on Bun", "Next.js development with Bun", "create-next-app with Bun", or building Next.js applications using Bun as the runtime.
-version: 1.0.0
+metadata:
+  version: "1.0.0"
+license: MIT
 ---
 
 # Bun Next.js

@@ -145,6 +145,14 @@ Tailwind v4 eliminates configuration files:
 - **Theming & Design Tokens**: See [references/theming.md](references/theming.md) for @theme modes, color palettes, custom fonts, animations
 - **Dark Mode Strategies**: See [references/dark-mode.md](references/dark-mode.md) for media queries, class-based, attribute-based approaches
 
+## Gates (setup verification)
+
+Before recommending `@theme` choices, OKLCH tokens, or v4 utilities, confirm the project is actually on the v4 integration path:
+
+1. **Build wiring:** The Vite config loads `tailwindcss()` from `@tailwindcss/vite`, and the CSS entry uses `@import 'tailwindcss'`. If this fails, stop — fix wiring per [references/setup.md](references/setup.md) first.
+2. **Major versions:** `package.json` lists `tailwindcss` (and `@tailwindcss/vite` when using Vite) at **major 4**, not a v3 PostCSS-only toolchain.
+3. **Theme source:** New theme tokens live in `@theme` / `@theme inline` in CSS — not `tailwind.config.js` `extend` (v3). If a v3 config still drives the theme, migrating wiring takes precedence over token tweaks.
+
 ## Decision Guide
 
 ### When to use @theme inline vs default

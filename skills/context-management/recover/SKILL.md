@@ -6,7 +6,9 @@ practices:
 - legacy-code-seams
 - pragmatic-programmer
 hexagonal_role: driving-adapter
-consumes: []
+consumes:
+- bd
+- rpi
 produces:
 - .agents/rpi/*.md
 context_rel: []
@@ -360,3 +362,7 @@ Render this with a single code block. No visual dashboard when `--json` is activ
 | Knowledge injection fails silently | ao CLI not installed or no knowledge artifacts | Ensure ao installed: `brew install ao`. If no learnings exist, run `/validation` to seed the knowledge base. |
 | Suggested action doesn't match context | State-aware rules didn't capture edge case | Use `--json` to inspect raw state and verify which condition matched. Review priority table in Step 5. |
 | JSON output malformed | Parallel bash calls returned unexpected format | Check each bash call individually. Ensure jq parsing works on actual data. Validate JSON structure before returning to user. |
+
+## Reference Documents
+
+- [references/recover.feature](references/recover.feature) — Executable spec: detect rpi phase from phased-state, surface claimed/ready bd work, recent git, --json dashboard (soc-qk4b)

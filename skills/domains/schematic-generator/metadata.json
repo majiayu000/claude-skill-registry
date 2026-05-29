@@ -1,0 +1,17 @@
+{
+  "name": "schematic-generator",
+  "repo": "Agile-V/agile_v_skills",
+  "path": "schematic-generator/SKILL.md",
+  "github_branch": "main",
+  "category": "domains",
+  "source": "github.com/Agile-V/agile_v_skills",
+  "dir_name": "schematic-generator",
+  "downloaded_at": "2026-03-01T04:48:04.346318Z",
+  "author": "Agile-V",
+  "source_url": "https://github.com/Agile-V/agile_v_skills/blob/main/schematic-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Agile-V/agile_v_skills/blob/main/schematic-generator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

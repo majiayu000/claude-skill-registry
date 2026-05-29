@@ -1,0 +1,13 @@
+{
+  "name": "evaluate-diagram",
+  "description": "",
+  "repo": "llmsresearch/paperbanana",
+  "category": "analysis",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/llmsresearch/paperbanana",
+  "github_path": ".claude/skills/evaluate-diagram",
+  "github_branch": "main",
+  "dir_name": "evaluate-diagram",
+  "downloaded_at": "2026-02-05T05:36:35.917184Z"
+}

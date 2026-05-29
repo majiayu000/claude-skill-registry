@@ -7,6 +7,12 @@ description: Create, edit, and analyze Microsoft Word documents with tracked cha
 
 This skill enables creation, editing, and analysis of Word documents programmatically. Claude should apply these patterns when users need to generate reports, contracts, proposals, documentation, or any structured Word documents from data or templates.
 
+**Modern Best Practices (Dec 2025)**:
+- Use styles (Headings, lists, tables) for structure and maintainability.
+- Keep versioning and owners explicit (review cadence, last-updated).
+- Accessibility basics: headings hierarchy, readable tables, alt text where possible.
+- Prefer a source doc + PDF release artifact workflow for distribution.
+
 ---
 
 ## Quick Reference
@@ -188,6 +194,35 @@ CONTRACT STRUCTURE
 
 ---
 
+## Do / Avoid (Dec 2025)
+
+### Do
+
+- Use consistent heading levels and a table of contents for long docs.
+- Capture decisions and action items with owners and due dates.
+- Store docs in a versioned, searchable system.
+
+### Avoid
+
+- Manual formatting instead of styles (breaks consistency).
+- Docs with no owner or review cadence (stale quickly).
+- Copy/pasting without updating definitions and links.
+
+## What Good Looks Like
+
+- Structure: consistent heading hierarchy, styles, and (when needed) an auto-generated table of contents.
+- Decisions: decisions/actions captured with owner + due date (not buried in prose).
+- Versioning: doc ID + version + change summary; review cadence defined.
+- Accessibility: headings/reading order are correct; alt text for non-decorative images.
+- Reuse: use `templates/doc-template-pack.md` for decision logs and recurring doc types.
+
+## Optional: AI / Automation
+
+Use only when explicitly requested and policy-compliant.
+
+- Summarize meeting notes into decisions/actions; humans verify accuracy.
+- Draft first-pass docs from outlines; do not invent facts or quotes.
+
 ## Navigation
 
 **Resources**
@@ -198,6 +233,7 @@ CONTRACT STRUCTURE
 **Templates**
 - [templates/report-template.md](templates/report-template.md) — Standard report structure
 - [templates/contract-template.md](templates/contract-template.md) — Legal document structure
+- [templates/doc-template-pack.md](templates/doc-template-pack.md) — Decision log, meeting notes, changelog templates
 
 **Related Skills**
 - [../document-pdf/SKILL.md](../document-pdf/SKILL.md) — PDF generation and conversion

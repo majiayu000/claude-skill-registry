@@ -1,11 +1,11 @@
 {
   "name": "llm-testing",
   "repo": "yonatangross/skillforge-claude-plugin",
+  "path": "skills/llm-testing/SKILL.md",
+  "source": "github.com/yonatangross/skillforge-claude-plugin",
+  "downloaded_at": "2026-01-22T01:25:12.945470Z",
+  "dir_name": "llm-testing",
   "category": "testing",
-  "description": "Testing patterns for LLM-based applications. Use when testing AI/ML integrations, mocking LLM responses, testing async timeouts, or validating structured outputs from LLMs.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:24.427061Z",
   "github_path": "skills/llm-testing",
-  "github_branch": "main",
-  "dir_name": "llm-testing"
+  "github_branch": "main"
 }

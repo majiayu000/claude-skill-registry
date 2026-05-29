@@ -1,0 +1,16 @@
+{
+  "name": "verify-after-pushing",
+  "repo": "viteinfinite/sync-skills",
+  "path": ".opencode/skill/verify-after-pushing/SKILL.md",
+  "source": "github.com/viteinfinite/sync-skills",
+  "downloaded_at": "2026-02-02T01:07:44.323275Z",
+  "dir_name": "verify-after-pushing",
+  "category": "devops",
+  "author": "viteinfinite",
+  "source_url": "https://github.com/viteinfinite/sync-skills/blob/main/.opencode/skill/verify-after-pushing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/viteinfinite/sync-skills/blob/main/.opencode/skill/verify-after-pushing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

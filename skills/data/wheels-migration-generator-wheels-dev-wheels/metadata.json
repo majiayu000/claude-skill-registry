@@ -1,0 +1,11 @@
+{
+  "name": "wheels-migration-generator",
+  "repo": "wheels-dev/wheels",
+  "path": "examples/tweet/.claude/skills/wheels-migration-generator/SKILL.md",
+  "source": "github.com/wheels-dev/wheels",
+  "downloaded_at": "2026-01-22T02:34:45.242897Z",
+  "dir_name": "wheels-migration-generator-wheels-dev-wheels",
+  "category": "data",
+  "github_path": ".claude/skills/wheels-migration-generator",
+  "github_branch": "main"
+}

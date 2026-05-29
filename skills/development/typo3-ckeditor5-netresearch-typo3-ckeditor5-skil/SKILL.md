@@ -41,6 +41,39 @@ packages/my-plugin/src/
 └── myplugincommand.js    # Command implementation
 ```
 
+## Backend Integration (nr-llm)
+
+When integrating CKEditor plugins with TYPO3 backend services (like nr-llm for AI features):
+
+### Response Property Names
+
+**CRITICAL:** Frontend JavaScript must use the exact property names returned by the backend.
+
+```javascript
+// Backend returns: { content: "...", model: "...", usage: {...} }
+
+// WRONG - will be undefined
+const text = result.completion;  // Backend doesn't return 'completion'
+
+// CORRECT - matches backend response
+const text = result.content;
+```
+
+**Real-world bug from t3x-cowriter:**
+- Backend `CompleteResponse::success()` returned `content` property
+- Frontend used `result.completion` (wrong property name)
+- Fix: Changed to `result.content`
+
+### Verification Pattern
+
+```javascript
+// Log response structure during development
+console.log('Backend response:', JSON.stringify(result, null, 2));
+
+// Then use correct property
+const content = result.content || '';
+```
+
 ## Migration Checklist
 
 - [ ] Audit existing CKEditor 4 plugins
@@ -48,6 +81,7 @@ packages/my-plugin/src/
 - [ ] Convert to class-based architecture
 - [ ] Update YAML config from PageTSConfig
 - [ ] Test content rendering
+- [ ] **Verify JS property names match backend response** (if using AJAX)
 
 ## Verification
 

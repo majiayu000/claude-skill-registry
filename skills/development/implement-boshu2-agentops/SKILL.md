@@ -162,6 +162,7 @@ Remaining: <what's left>
 - [references/binary-deployment-gate.md](references/binary-deployment-gate.md) — CLI/hook binary-deployment gate spec
 - [references/gate-checks.md](references/gate-checks.md) — Ratchet and pre-mortem gate checks
 - [references/green-mode.md](references/green-mode.md) — GREEN mode test-first implementation rules
+- [references/implement.feature](references/implement.feature) — Executable spec: the /implement done-state (first-failing-test → green → refactor → verified close) (soc-qk4b.2)
 - [references/quality-loop.md](references/quality-loop.md) — Pre-commit autonomous quality loop
 - [references/resume-protocol.md](references/resume-protocol.md) — Resume protocol for interrupted sessions
 - [references/workflow.md](references/workflow.md) — Full execution workflow (Steps 0 through 8)

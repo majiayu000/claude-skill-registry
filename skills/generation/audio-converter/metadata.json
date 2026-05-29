@@ -1,0 +1,16 @@
+{
+  "name": "audio-converter",
+  "repo": "dkyazzentwatwa/chatgpt-skills",
+  "path": "audio-converter/SKILL.md",
+  "source": "github.com/dkyazzentwatwa/chatgpt-skills",
+  "downloaded_at": "2026-02-02T01:26:33.644770Z",
+  "dir_name": "audio-converter",
+  "category": "generation",
+  "author": "dkyazzentwatwa",
+  "source_url": "https://github.com/dkyazzentwatwa/chatgpt-skills/blob/main/audio-converter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dkyazzentwatwa/chatgpt-skills/blob/main/audio-converter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

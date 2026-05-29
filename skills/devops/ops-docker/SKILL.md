@@ -14,6 +14,10 @@ triggers:
 allowed-tools: Bash
 metadata:
   short-description: Safe Docker cleanup and stack management
+
+provides:
+  - ops-docker
+composes: [, task-monitor]
 ---
 
 # Docker Ops

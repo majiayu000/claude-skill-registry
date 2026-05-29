@@ -2,6 +2,7 @@
 name: jest-generator
 description: Generate Jest unit tests for JavaScript/TypeScript with mocking, coverage. Use for JS/TS modules, React components, test generation, or encountering missing coverage, improper mocking, test structure errors.
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob
+license: MIT
 ---
 
 # Jest Generator Skill

@@ -1,6 +1,6 @@
 ---
 name: kratos-service-layer
-description: Generates gRPC/HTTP service handlers for go-kratos microservices. Creates service structs, handler methods, and integrates with protobuf definitions. Use when implementing service layer for kratos services.
+description: Generates gRPC/HTTP service handlers for go-kratos microservices. Creates service structs, handler methods, and integrates with protobuf definitions. Use when implementing RPC handlers, adding API endpoints, creating dual transport (HTTP/gRPC) handlers, or connecting transport layer to business logic in kratos services.
 ---
 
 <essential_principles>

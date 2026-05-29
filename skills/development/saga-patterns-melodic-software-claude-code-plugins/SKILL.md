@@ -1,526 +1,382 @@
 ---
-name: saga-patterns
-description: Distributed transaction patterns using orchestration and choreography
+name: event-modeling
+description: Adam Dymitruk's Event Modeling methodology with swimlanes
 allowed-tools: Read, Glob, Grep, Write, Edit
 ---
 
-# Saga Patterns Skill
+# Event Modeling Skill
 
 ## When to Use This Skill
 
 Use this skill when:
 
-- **Saga Patterns tasks** - Working on distributed transaction patterns using orchestration and choreography
-- **Planning or design** - Need guidance on Saga Patterns approaches
+- **Event Modeling tasks** - Working on adam dymitruk's event modeling methodology with swimlanes
+- **Planning or design** - Need guidance on Event Modeling approaches
 - **Best practices** - Want to follow established patterns and standards
 
 ## Overview
 
-Design distributed transaction patterns using orchestration and choreography for microservices.
+Create Event Models using Adam Dymitruk's visual methodology for designing event-driven systems.
 
 ## MANDATORY: Documentation-First Approach
 
-Before designing sagas:
+Before creating Event Models:
 
-1. **Invoke `docs-management` skill** for saga patterns
-2. **Verify patterns** via MCP servers (perplexity, context7)
-3. **Base guidance on established microservices patterns**
+1. **Invoke `docs-management` skill** for Event Modeling patterns
+2. **Verify methodology** via MCP servers (perplexity, eventmodeling.org)
+3. **Base guidance on Adam Dymitruk's original methodology**
 
-## Saga Fundamentals
-
-```text
-Why Sagas?
-
-PROBLEM:
-Distributed transactions across services are complex.
-Traditional 2PC (Two-Phase Commit) doesn't scale.
-
-SOLUTION:
-Saga = Sequence of local transactions
-Each step has a compensating action
-Eventual consistency instead of ACID
-
-┌─────────┐    ┌─────────┐    ┌─────────┐
-│ Step 1  │───►│ Step 2  │───►│ Step 3  │
-│ Tx + Cx │    │ Tx + Cx │    │ Tx + Cx │
-└─────────┘    └─────────┘    └─────────┘
-     │              │              │
-     ▼              ▼              ▼
-   Local         Local          Local
- Transaction  Transaction    Transaction
-
-Tx = Forward Transaction
-Cx = Compensating Transaction
-```
-
-## Saga Coordination Styles
-
-### Choreography (Event-Driven)
+## Event Modeling Fundamentals
 
 ```text
-Choreography Pattern:
+Event Modeling Structure:
 
-Services communicate through events.
-No central coordinator.
-Each service knows what to do next.
+TIME FLOWS LEFT TO RIGHT ───────────────────────────────────────────►
 
-┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-│   Order     │    │  Payment    │    │  Inventory  │
-│   Service   │    │  Service    │    │  Service    │
-└──────┬──────┘    └──────┬──────┘    └──────┬──────┘
-       │                  │                  │
-       │ OrderCreated     │                  │
-       │─────────────────►│                  │
-       │                  │ PaymentProcessed │
-       │                  │─────────────────►│
-       │                  │                  │ InventoryReserved
-       │◄─────────────────┼──────────────────│
-       │ OrderConfirmed   │                  │
-
-Characteristics:
-✓ Loose coupling
-✓ Simple services
-✗ Hard to track
-✗ Cyclic dependencies risk
+┌─────────────────────────────────────────────────────────────────────┐
+│ BLUE: UI / Commands / External Triggers                            │
+│ ┌──────────┐  ┌──────────┐  ┌──────────┐                           │
+│ │ Screen/  │  │ Button   │  │ API      │                           │
+│ │ Wireframe│  │ Click    │  │ Call     │                           │
+│ └────┬─────┘  └────┬─────┘  └────┬─────┘                           │
+├──────┼─────────────┼─────────────┼──────────────────────────────────┤
+│      ▼             ▼             ▼                                  │
+│ ORANGE: Domain Events (State Changes)                              │
+│ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐                 │
+│ │ OrderPlaced  │ │ OrderPaid    │ │ OrderShipped │                 │
+│ └──────────────┘ └──────────────┘ └──────────────┘                 │
+│      │                 │               │                            │
+├──────┼─────────────────┼───────────────┼────────────────────────────┤
+│      ▼                 ▼               ▼                            │
+│ GREEN: Read Models / Projections                                   │
+│ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐                 │
+│ │ Order List   │ │ Payment      │ │ Shipping     │                 │
+│ │ View         │ │ Status       │ │ Dashboard    │                 │
+│ └──────────────┘ └──────────────┘ └──────────────┘                 │
+└─────────────────────────────────────────────────────────────────────┘
 ```
 
-### Orchestration (Coordinator-Driven)
+## Four Types of Specifications
+
+### 1. Commands (Blue Lane - Top)
 
 ```text
-Orchestration Pattern:
+Commands: User intentions that may cause state changes
 
-Central orchestrator coordinates the saga.
-Services expose commands.
-Orchestrator manages state.
+CHARACTERISTICS:
+- Represent user actions or external triggers
+- May succeed or fail (validation)
+- Produce one or more events on success
+- Include wireframes/mockups for UI commands
 
-                ┌─────────────────┐
-                │   Orchestrator  │
-                │  (Saga Manager) │
-                └────────┬────────┘
-                         │
-        ┌────────────────┼────────────────┐
-        │                │                │
-        ▼                ▼                ▼
-┌─────────────┐  ┌─────────────┐  ┌─────────────┐
-│   Order     │  │  Payment    │  │  Inventory  │
-│   Service   │  │  Service    │  │  Service    │
-└─────────────┘  └─────────────┘  └─────────────┘
-
-Characteristics:
-✓ Clear flow visibility
-✓ Easier debugging
-✗ Single point of failure
-✗ Coupling to orchestrator
+EXAMPLES:
+┌─────────────────────────────┐
+│ PlaceOrder                  │
+├─────────────────────────────┤
+│ • Customer ID               │
+│ • Items: [ProductId, Qty]   │
+│ • Shipping Address          │
+│ • Payment Method            │
+└─────────────────────────────┘
 ```
 
-## Choreography Implementation
-
-### Event-Driven Flow
-
-```csharp
-// Order Service - Starts Saga
-public class OrderService
-{
-    private readonly IEventPublisher _events;
-
-    public async Task CreateOrderAsync(CreateOrderCommand cmd)
-    {
-        var order = new Order(cmd.CustomerId, cmd.Items);
-        await _repository.SaveAsync(order);
-
-        // Publish event to start saga
-        await _events.PublishAsync(new OrderCreated
-        {
-            OrderId = order.Id,
-            CustomerId = cmd.CustomerId,
-            TotalAmount = order.TotalAmount
-        });
-    }
-
-    // Handle compensation
-    public async Task HandleAsync(PaymentFailed @event)
-    {
-        var order = await _repository.GetAsync(@event.OrderId);
-        order.Cancel("Payment failed");
-        await _repository.SaveAsync(order);
-
-        await _events.PublishAsync(new OrderCancelled
-        {
-            OrderId = @event.OrderId,
-            Reason = "Payment failed"
-        });
-    }
-}
-
-// Payment Service - Reacts to OrderCreated
-public class PaymentService
-{
-    public async Task HandleAsync(OrderCreated @event)
-    {
-        try
-        {
-            var payment = await ProcessPaymentAsync(@event.OrderId, @event.TotalAmount);
-
-            await _events.PublishAsync(new PaymentProcessed
-            {
-                OrderId = @event.OrderId,
-                PaymentId = payment.Id
-            });
-        }
-        catch (PaymentException ex)
-        {
-            await _events.PublishAsync(new PaymentFailed
-            {
-                OrderId = @event.OrderId,
-                Reason = ex.Message
-            });
-        }
-    }
-}
-
-// Inventory Service - Reacts to PaymentProcessed
-public class InventoryService
-{
-    public async Task HandleAsync(PaymentProcessed @event)
-    {
-        try
-        {
-            await ReserveInventoryAsync(@event.OrderId);
-
-            await _events.PublishAsync(new InventoryReserved
-            {
-                OrderId = @event.OrderId
-            });
-        }
-        catch (InsufficientInventoryException)
-        {
-            // Trigger compensation
-            await _events.PublishAsync(new InventoryReservationFailed
-            {
-                OrderId = @event.OrderId
-            });
-        }
-    }
-
-    // Compensating action
-    public async Task HandleAsync(OrderCancelled @event)
-    {
-        await ReleaseInventoryAsync(@event.OrderId);
-    }
-}
-```
-
-## Orchestration Implementation
-
-### Saga Orchestrator
-
-```csharp
-// Saga State Machine
-public class OrderSaga : Saga<OrderSagaData>,
-    IAmStartedBy<OrderCreated>,
-    IHandle<PaymentProcessed>,
-    IHandle<PaymentFailed>,
-    IHandle<InventoryReserved>,
-    IHandle<InventoryReservationFailed>
-{
-    protected override void ConfigureHowToFindSaga(SagaPropertyMapper<OrderSagaData> mapper)
-    {
-        mapper.MapSaga(s => s.OrderId)
-            .ToMessage<OrderCreated>(m => m.OrderId)
-            .ToMessage<PaymentProcessed>(m => m.OrderId)
-            .ToMessage<PaymentFailed>(m => m.OrderId)
-            .ToMessage<InventoryReserved>(m => m.OrderId)
-            .ToMessage<InventoryReservationFailed>(m => m.OrderId);
-    }
-
-    public async Task Handle(OrderCreated message, IMessageHandlerContext context)
-    {
-        Data.OrderId = message.OrderId;
-        Data.CustomerId = message.CustomerId;
-        Data.TotalAmount = message.TotalAmount;
-        Data.Status = SagaStatus.Started;
-
-        // Request payment
-        await context.Send(new ProcessPaymentCommand
-        {
-            OrderId = message.OrderId,
-            Amount = message.TotalAmount
-        });
-    }
-
-    public async Task Handle(PaymentProcessed message, IMessageHandlerContext context)
-    {
-        Data.PaymentId = message.PaymentId;
-        Data.Status = SagaStatus.PaymentCompleted;
-
-        // Request inventory reservation
-        await context.Send(new ReserveInventoryCommand
-        {
-            OrderId = message.OrderId
-        });
-    }
-
-    public async Task Handle(PaymentFailed message, IMessageHandlerContext context)
-    {
-        Data.Status = SagaStatus.Failed;
-
-        // Compensate: Cancel order
-        await context.Send(new CancelOrderCommand
-        {
-            OrderId = message.OrderId,
-            Reason = "Payment failed"
-        });
-
-        MarkAsComplete();
-    }
-
-    public async Task Handle(InventoryReserved message, IMessageHandlerContext context)
-    {
-        Data.Status = SagaStatus.Completed;
-
-        // Complete the saga
-        await context.Publish(new OrderCompleted
-        {
-            OrderId = Data.OrderId
-        });
-
-        MarkAsComplete();
-    }
-
-    public async Task Handle(InventoryReservationFailed message, IMessageHandlerContext context)
-    {
-        Data.Status = SagaStatus.Failed;
-
-        // Compensate: Refund payment
-        await context.Send(new RefundPaymentCommand
-        {
-            OrderId = Data.OrderId,
-            PaymentId = Data.PaymentId
-        });
-
-        // Compensate: Cancel order
-        await context.Send(new CancelOrderCommand
-        {
-            OrderId = Data.OrderId,
-            Reason = "Inventory unavailable"
-        });
-
-        MarkAsComplete();
-    }
-}
-
-public class OrderSagaData : ContainSagaData
-{
-    public Guid OrderId { get; set; }
-    public Guid CustomerId { get; set; }
-    public decimal TotalAmount { get; set; }
-    public Guid? PaymentId { get; set; }
-    public SagaStatus Status { get; set; }
-}
-```
-
-## Compensating Transactions
-
-### Compensation Design
+### 2. Events (Orange Lane - Middle)
 
 ```text
-Compensation Principles:
+Events: Facts that have happened (past tense, immutable)
 
-1. SEMANTIC UNDO
-   Not always exact reverse
-   Example: Cancel order vs. un-create order
+CHARACTERISTICS:
+- Past tense naming (OrderPlaced, not PlaceOrder)
+- Immutable once recorded
+- Capture what happened and when
+- Single source of truth
 
-2. IDEMPOTENT
-   Can be called multiple times safely
-   Same result regardless of retries
+NAMING CONVENTION:
+✓ OrderPlaced
+✓ PaymentReceived
+✓ ShipmentDispatched
+✗ PlaceOrder (command, not event)
+✗ OrderUpdate (too vague)
 
-3. NEVER FAIL
-   Compensation must succeed eventually
-   Use retries with backoff
-
-4. ORDERED
-   Compensate in reverse order
-   Last step first, first step last
-
-Compensation Flow:
-Step 1 ─► Step 2 ─► Step 3 ─► FAILURE
-   │         │         │         │
-   │         │         │         ▼
-   │         │         └───► Compensate 3
-   │         │                   │
-   │         └───────────────► Compensate 2
-   │                             │
-   └─────────────────────────► Compensate 1
+EXAMPLE:
+┌─────────────────────────────┐
+│ OrderPlaced                 │
+├─────────────────────────────┤
+│ • OrderId: guid             │
+│ • CustomerId: guid          │
+│ • Items: [...]              │
+│ • PlacedAt: timestamp       │
+│ • TotalAmount: decimal      │
+└─────────────────────────────┘
 ```
 
-### Compensation Examples
-
-```csharp
-// Forward Transaction and Compensation Pairs
-public class ReservationService
-{
-    // Forward: Reserve inventory
-    public async Task<ReservationId> ReserveAsync(OrderId orderId, List<Item> items)
-    {
-        var reservation = new Reservation(orderId, items);
-        foreach (var item in items)
-        {
-            await _inventory.DecrementAsync(item.ProductId, item.Quantity);
-        }
-        await _repository.SaveAsync(reservation);
-        return reservation.Id;
-    }
-
-    // Compensating: Release reservation
-    public async Task ReleaseAsync(ReservationId reservationId)
-    {
-        var reservation = await _repository.GetAsync(reservationId);
-        if (reservation.Status == ReservationStatus.Released)
-            return; // Idempotent
-
-        foreach (var item in reservation.Items)
-        {
-            await _inventory.IncrementAsync(item.ProductId, item.Quantity);
-        }
-
-        reservation.Release();
-        await _repository.SaveAsync(reservation);
-    }
-}
-```
-
-## Error Handling
-
-### Retry Strategies
+### 3. Read Models (Green Lane - Bottom)
 
 ```text
-Retry Patterns:
+Read Models: Projections optimized for queries
 
-1. IMMEDIATE RETRY
-   For transient failures
-   Network glitches, timeouts
+CHARACTERISTICS:
+- Built from events
+- Optimized for specific query patterns
+- Can be rebuilt from event stream
+- Eventually consistent
 
-2. EXPONENTIAL BACKOFF
-   Increasing delays
-   1s → 2s → 4s → 8s
+TYPES:
+- List views (showing multiple items)
+- Detail views (single item details)
+- Dashboards (aggregations)
+- Search indexes
 
-3. CIRCUIT BREAKER
-   Stop retrying after threshold
-   Allow recovery time
-
-4. DEAD LETTER QUEUE
-   Capture failed messages
-   Manual intervention
+EXAMPLE:
+┌─────────────────────────────┐
+│ OrderSummaryView            │
+├─────────────────────────────┤
+│ • OrderId                   │
+│ • CustomerName              │
+│ • Status (derived)          │
+│ • ItemCount                 │
+│ • TotalAmount               │
+│ • LastUpdated               │
+└─────────────────────────────┘
 ```
 
-### Timeout Handling
+### 4. Automations (Policies/Reactions)
 
-```csharp
-// Saga with Timeout
-public class OrderSaga : Saga<OrderSagaData>
-{
-    public async Task Handle(OrderCreated message, IMessageHandlerContext context)
-    {
-        // Set timeout for payment
-        await RequestTimeout<PaymentTimeout>(
-            context,
-            TimeSpan.FromMinutes(30));
+```text
+Automations: Processes triggered by events
 
-        await context.Send(new ProcessPaymentCommand { ... });
-    }
+CHARACTERISTICS:
+- React to events automatically
+- May produce commands or integrate external systems
+- Represent business policies
+- Handle async processing
 
-    public async Task Timeout(PaymentTimeout timeout, IMessageHandlerContext context)
-    {
-        if (Data.Status == SagaStatus.AwaitingPayment)
-        {
-            // Payment didn't complete in time
-            await context.Send(new CancelOrderCommand
-            {
-                OrderId = Data.OrderId,
-                Reason = "Payment timeout"
-            });
-
-            Data.Status = SagaStatus.TimedOut;
-            MarkAsComplete();
-        }
-    }
-}
+NOTATION:
+┌─────────────────────────────┐
+│ ⚡ PaymentReceivedPolicy    │
+├─────────────────────────────┤
+│ WHEN: PaymentReceived       │
+│ THEN: InitiateShipment      │
+└─────────────────────────────┘
 ```
 
-## Saga Design Template
+## Event Modeling Process
+
+### Step 1: Brain Dump Events
+
+```text
+Brainstorm all domain events (orange stickies):
+
+1. Gather stakeholders
+2. Ask: "What happens in this process?"
+3. Write events in past tense
+4. Don't worry about order yet
+5. Include all significant state changes
+
+Example Output:
+- OrderPlaced
+- OrderConfirmed
+- PaymentReceived
+- PaymentFailed
+- InventoryReserved
+- ShipmentCreated
+- ShipmentDispatched
+- OrderDelivered
+```
+
+### Step 2: Arrange Timeline
+
+```text
+Organize events chronologically:
+
+1. Find the "happy path" events
+2. Arrange left to right
+3. Group related events vertically
+4. Identify parallel flows
+5. Note temporal dependencies
+
+Timeline:
+OrderPlaced → OrderConfirmed → PaymentReceived → InventoryReserved → ShipmentCreated → ShipmentDispatched → OrderDelivered
+                                   │
+                                   └→ PaymentFailed → OrderCancelled
+```
+
+### Step 3: Add Commands (Blue)
+
+```text
+What triggers each event?
+
+For each event, ask:
+- What user action caused this?
+- What external system triggered it?
+- Is there a UI screen involved?
+
+Add commands above events they produce:
+[PlaceOrder] → OrderPlaced
+[ProcessPayment] → PaymentReceived
+[DispatchShipment] → ShipmentDispatched
+```
+
+### Step 4: Add Read Models (Green)
+
+```text
+What information is needed for each command?
+
+For each command, ask:
+- What data does the user need to see?
+- What validation data is required?
+- What views enable this action?
+
+Add read models below events that populate them:
+OrderPlaced → [OrderConfirmationView]
+ShipmentDispatched → [TrackingDashboard]
+```
+
+### Step 5: Identify Automations
+
+```text
+What happens automatically?
+
+Look for:
+- Events that trigger other events
+- Integration with external systems
+- Time-based rules
+- Business policies
+
+Example:
+PaymentReceived → ⚡ ReserveInventoryPolicy → InventoryReserved
+```
+
+## Event Model Template
 
 ```markdown
-# Saga Design: [Process Name]
+# Event Model: [Process Name]
 
 ## Overview
-[What this saga accomplishes]
+[What this process accomplishes]
 
-## Trigger
-[What event starts this saga]
+## Actors
+- [User type 1]
+- [User type 2]
+- [External system]
 
-## Steps
-
-| Step | Service | Action | Compensating Action |
-|------|---------|--------|---------------------|
-| 1 | [Service] | [Forward action] | [Compensation] |
-| 2 | [Service] | [Forward action] | [Compensation] |
-| 3 | [Service] | [Forward action] | [Compensation] |
-
-## Flow Diagram
+## Event Model Diagram
 
 ```text
-[ASCII saga flow diagram]
+TIME ──────────────────────────────────────────────────────────────►
+
+COMMANDS (Blue)
+┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐
+│ Cmd 1   │    │ Cmd 2   │    │ Cmd 3   │    │ Cmd 4   │
+└────┬────┘    └────┬────┘    └────┬────┘    └────┬────┘
+     │              │              │              │
+     ▼              ▼              ▼              ▼
+EVENTS (Orange)
+┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐
+│ Event1  │───►│ Event2  │───►│ Event3  │───►│ Event4  │
+└─────────┘    └─────────┘    └─────────┘    └─────────┘
+     │              │              │              │
+     ▼              ▼              ▼              ▼
+READ MODELS (Green)
+┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐
+│ View 1  │    │ View 2  │    │ View 3  │    │ View 4  │
+└─────────┘    └─────────┘    └─────────┘    └─────────┘
 ```
 
-## Failure Scenarios
+## Commands Detail
 
-| Failure Point | What Failed | Compensation Chain |
-|---------------|-------------|-------------------|
-| After Step 1 | [Description] | Compensate 1 |
-| After Step 2 | [Description] | Compensate 2 → 1 |
+| Command | Input | Produces Events | Read Model Needed |
+|---------|-------|-----------------|-------------------|
+| [Name] | [Data] | [Events] | [View] |
 
-## Timeout Handling
+## Events Detail
 
-- Step 1 timeout: [What happens]
-- Step 2 timeout: [What happens]
+| Event | Data | Triggered By | Updates |
+|-------|------|--------------|---------|
+| [Name] | [Fields] | [Command/Automation] | [Read Models] |
 
-## Idempotency
+## Read Models Detail
 
-- [How duplicates are handled]
+| Read Model | Purpose | Updated By Events |
+|------------|---------|-------------------|
+| [Name] | [Query it answers] | [Events list] |
 
-## Monitoring
+## Automations
 
-- [What to monitor]
-- [Alerting thresholds]
+| Automation | Trigger Event | Action | Produces |
+|------------|---------------|--------|----------|
+| [Name] | [Event] | [What it does] | [Events/Side effects] |
 
 ```text
 
 ```
 
-## Choosing Choreography vs Orchestration
+## Patterns and Guidelines
 
-| Factor | Choreography | Orchestration |
-|--------|--------------|---------------|
-| **Coupling** | Loose | Tighter |
-| **Visibility** | Distributed | Centralized |
-| **Complexity** | In events | In orchestrator |
-| **Debugging** | Harder | Easier |
-| **Team structure** | Independent teams | Central team |
-| **Failure handling** | Distributed | Centralized |
-| **Best for** | Simple flows | Complex flows |
+### Given/When/Then Specifications
+
+```text
+Each slice can be expressed as:
+
+GIVEN: [Read Model State / Context]
+WHEN: [Command is executed]
+THEN: [Events are produced]
+  AND: [Read Models are updated]
+
+Example:
+GIVEN: Cart exists with items
+WHEN: PlaceOrder command executed
+THEN: OrderPlaced event recorded
+  AND: OrderSummaryView updated
+  AND: InventoryReservationRequested event triggered
+```
+
+### Slices (Vertical Features)
+
+```text
+A slice includes everything for one feature:
+
+┌─────────────────────────────┐
+│         SLICE 1             │
+│  ┌─────────────────────┐    │
+│  │ Command: PlaceOrder │    │
+│  └─────────────────────┘    │
+│  ┌─────────────────────┐    │
+│  │ Event: OrderPlaced  │    │
+│  └─────────────────────┘    │
+│  ┌─────────────────────┐    │
+│  │ View: OrderSummary  │    │
+│  └─────────────────────┘    │
+└─────────────────────────────┘
+
+Each slice is independently implementable and testable.
+```
+
+### Blue Print (Implementation Guide)
+
+```text
+Event Model becomes implementation blueprint:
+
+1. Commands → API Endpoints / UI Components
+2. Events → Event Store Schema
+3. Read Models → Database Tables / Views
+4. Automations → Event Handlers / Policies
+
+Each slice maps directly to code.
+```
 
 ## Workflow
 
-When designing sagas:
+When creating Event Models:
 
-1. **Identify Boundaries**: Which services participate?
-2. **Define Steps**: Forward actions in order
-3. **Design Compensations**: Reverse actions for each step
-4. **Choose Style**: Choreography or orchestration?
-5. **Handle Failures**: Timeouts, retries, dead letters
-6. **Ensure Idempotency**: All actions repeatable safely
-7. **Plan Monitoring**: Track saga state and failures
-8. **Test Failure Paths**: Verify compensations work
+1. **Define Scope**: What process are we modeling?
+2. **Brain Dump Events**: List all state changes
+3. **Arrange Timeline**: Order events chronologically
+4. **Add Commands**: What triggers each event?
+5. **Add Read Models**: What data supports each command?
+6. **Identify Automations**: What happens automatically?
+7. **Validate with Stakeholders**: Does this match reality?
+8. **Define Slices**: Group into implementable features
 
 ## References
 

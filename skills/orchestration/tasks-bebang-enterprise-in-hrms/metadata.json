@@ -1,0 +1,17 @@
+{
+  "name": "tasks",
+  "repo": "Bebang-Enterprise-Inc/hrms",
+  "path": ".claude/skills/tasks/skill.md",
+  "github_branch": "master",
+  "category": "orchestration",
+  "source": "github.com/Bebang-Enterprise-Inc/hrms",
+  "dir_name": "tasks-bebang-enterprise-in-hrms",
+  "downloaded_at": "2026-03-01T04:58:27.568976Z",
+  "author": "Bebang-Enterprise-Inc",
+  "source_url": "https://github.com/Bebang-Enterprise-Inc/hrms/blob/master/.claude/skills/tasks/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Bebang-Enterprise-Inc/hrms/blob/master/.claude/skills/tasks/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

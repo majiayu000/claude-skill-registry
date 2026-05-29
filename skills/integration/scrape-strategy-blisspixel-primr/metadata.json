@@ -1,0 +1,17 @@
+{
+  "name": "scrape-strategy",
+  "repo": "blisspixel/primr",
+  "path": "skills/scrape-strategy/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/blisspixel/primr",
+  "dir_name": "scrape-strategy-blisspixel-primr",
+  "downloaded_at": "2026-03-22T07:16:33.584380Z",
+  "author": "blisspixel",
+  "source_url": "https://github.com/blisspixel/primr/blob/main/skills/scrape-strategy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/blisspixel/primr/blob/main/skills/scrape-strategy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

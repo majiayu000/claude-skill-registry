@@ -1,30 +1,48 @@
 ---
 name: create-meta-prompts
-description: "Generate meta-prompts for Claude-to-Claude pipelines and multi-stage workflows. Use when creating optimized prompts for complex workflows. Not for simple single-turn prompts or manual messaging."
+description: "Generate meta-prompts for Claude-to-Claude pipelines and multi-stage workflows. Use when creating optimized prompts for complex workflows, delegating to subagents, or managing multi-stage execution. Includes XML output structuring, metadata injection, and chain provenance. Not for simple single-turn prompts, manual messaging, or non-Claude integrations. Keywords: prompt chain, delegation, multi-stage, workflow orchestration, Claude-to-Claude."
 ---
 
-##
+<mission_control>
+<objective>Generate meta-prompts for Claude-to-Claude pipelines with structured XML output and metadata for multi-stage workflows.</objective>
+<success_criteria>Prompt folder created in .claude/workspace/prompts/, SUMMARY.md generated, chain provenance maintained</success_criteria>
+</mission_control>
 
-Objective
-Create prompts optimized for Claude-to-Claude communication in multi-stage workflows. Outputs are structured with XML and metadata for efficient parsing by subsequent prompts.
-Every execution produces a `SUMMARY.md` for quick human scanning without reading full outputs.
-Each prompt gets its own folder in `.claude/workspace/prompts/` with its output artifacts, enabling clear provenance and chain detection.
+## Quick Start
 
-##
+**If you need to create a single prompt:** Follow Phase 1 (Intake) → Phase 2 (Generate) → Phase 3 (Present).
 
-Quick Start
+**If you need a prompt chain:** Use Chain Detection → Generate multiple prompts → Execute sequentially with dependency handling.
 
-### Workflow
+**If you need purpose-specific templates:** Reference ## PATTERN: Purpose Templates for Do/Plan/Research/Refine patterns.
 
-1. **Intake**: Determine purpose (Do/Plan/Research/Refine), gather requirements
-2. **Chain detection**: Check for existing research/plan files to reference
-3. **Generate**: Create prompt using purpose-specific patterns
-4. **Save**: Create folder in `.claude/workspace/prompts/{number}-{topic}-{purpose}/`
-5. **Present**: Show decision tree for running
-6. **Execute**: Run prompt(s) with dependency-aware execution engine
-7. **Summarize**: Create SUMMARY.md for human scanning
+## Navigation
 
-#### Folder Structure
+| If you need... | Read this section... |
+| :------------- | :------------------- |
+| Create a meta-prompt | ## PATTERN: Workflow |
+| Purpose-specific templates | ## PATTERN: Purpose Templates |
+| Purpose inference | ## PATTERN: Autonomous Purpose Detection |
+| Chain detection and dependencies | ## PATTERN: Dependency Management |
+| Execution modes | ## PATTERN: Execution Engine |
+| SUMMARY.md structure | ## PATTERN: SUMMARY.md Template |
+| Common mistakes | ## ANTI-PATTERN: Common Mistakes |
+| Quality verification | ## Recognition Questions |
+
+## PATTERN: Workflow
+
+**Generate and execute meta-prompts for multi-stage workflows:**
+
+| Phase | Action | Result |
+| :---- | :------ | :------ |
+| **1. Intake** | Determine purpose, gather requirements | Clear prompt scope |
+| **2. Chain Detection** | Check for existing research/plan files | Referenced context |
+| **3. Generate** | Create prompt using purpose-specific patterns | Structured prompt folder |
+| **4. Present** | Show decision tree for running | User can execute, review, or save |
+| **5. Execute** | Run prompt(s) with dependency-aware engine | XML output with metadata |
+| **6. Summarize** | Create SUMMARY.md for human scanning | Quick-ler + key findings |
+
+### Folder Structure
 
 ```
 .claude/workspace/prompts/
@@ -50,319 +68,670 @@ Quick Start
 │   └── SUMMARY.md
 ```
 
-##
+## PATTERN: Autonomous Purpose Detection
 
-Context
-Prompts directory: !`[ -d ./.claude/planning/prompts ] && echo "exists" || echo "missing"`
-Existing research/plans: !`find ./.claude/planning/prompts -name "*-research.md" -o -name "*-plan.md" 2>/dev/null | head -10`
-Next prompt number: !`ls -d ./.claude/workspace/prompts/*/ 2>/dev/null | wc -l | xargs -I {} expr {} + 1`
+### 1. Purpose Gate (CRITICAL - First Action)
 
-##
+**BEFORE analyzing anything**, infer purpose from context.
 
-Automated Workflow
-
-### 0. Intake Gate
-
-#### Adaptive Requirements Gathering
-
-##### Critical First Action
-
-**BEFORE analyzing anything**, check if context was provided.
-IF no context provided (skill invoked without description):
-→ **IMMEDIATELY use AskUserQuestion** with:
-
-- header: "Purpose"
-- question: "What is the purpose of this prompt?"
-- options:
-  - "Do" - Execute a task, produce an artifact
-  - "Plan" - Create an approach, roadmap, or strategy
-  - "Research" - Gather information or understand something
-  - "Refine" - Improve an existing research or plan output
-    After selection, ask: "Describe what you want to accomplish" (they select "Other" to provide free text).
-    IF context was provided:
-    → Check if purpose is inferable from keywords:
+**IF context provided:** Infer purpose from keywords:
 - `implement`, `build`, `create`, `fix`, `add`, `refactor` → Do
 - `plan`, `roadmap`, `approach`, `strategy`, `decide`, `phases` → Plan
 - `research`, `understand`, `learn`, `gather`, `analyze`, `explore` → Research
 - `refine`, `improve`, `deepen`, `expand`, `iterate`, `update` → Refine
-  → If unclear, ask the Purpose question above as first contextual question
-  → If clear, proceed to adaptive_analysis with inferred purpose
 
-##### Adaptive Analysis
+**IF context unclear:** Trust inference from available information. Do not ask questions—proceed with best judgment.
 
-Extract and infer:
+### 2. Topic Identifier
 
-- **Purpose**: Do, Plan, Research, or Refine
-- **Topic identifier**: Kebab-case identifier for file naming (e.g., `auth`, `stripe-payments`)
-- **Complexity**: Simple vs complex (affects prompt depth)
-- **Prompt structure**: Single vs multiple prompts
-- **Target** (Refine only): Which existing output to improve
-  If topic identifier not obvious, ask:
-- header: "Topic"
-- question: "What topic/feature is this for? (used for file naming)"
-- Let user provide via "Other" option
-- Enforce kebab-case (convert spaces/underscores to hyphens)
-  For Refine purpose, also identify target output from `.claude/workspace/prompts/*/` to improve.
+Derive topic from context. Convert to kebab-case automatically:
+- Spaces → hyphens
+- CamelCase → kebab-case
+- Underscores → hyphens
 
-##### Chain Detection
+### 3. Chain Detection
 
-Scan `.claude/workspace/prompts/*/` for existing `*-research.md` and `*-plan.md` files.
-If found:
+Scan `.claude/workspace/prompts/*/` for existing `*-research.md` and `*-plan.md` files. If found:
 
-1. List them: "Found existing files: auth-research.md (in 001-auth-research/), stripe-plan.md (in 005-stripe-plan/)"
-2. Use AskUserQuestion:
-   - header: "Reference"
-   - question: "Should this prompt reference any existing research or plans?"
-   - options: List found files + "None"
-   - multiSelect: true
-     Match by topic keyword when possible (e.g., "auth plan" → suggest auth-research.md).
-
-##### Contextual Questioning
-
-Generate 2-4 questions using AskUserQuestion based on purpose and gaps.
-Load questions from: [references/question-bank.md](references/question-bank.md)
-Route by purpose:
-
-- Do → artifact type, scope, approach
-- Plan → plan purpose, format, constraints
-- Research → depth, sources, output format
-- Refine → target selection, feedback, preservation
-
-##### Decision Gate
-
-After receiving answers, present decision gate using AskUserQuestion:
-
-- header: "Ready"
-- question: "Ready to create the prompt?"
-- options:
-  - "Proceed" - Create the prompt with current context
-  - "Ask more questions" - I have more details to clarify
-  - "Let me add context" - I want to provide additional information
-    Loop until "Proceed" selected.
-
-##### Finalization
-
-After "Proceed" selected, state confirmation:
-"Creating a {purpose} prompt for: {topic}
-Folder: .claude/workspace/prompts/{number}-{topic}-{purpose}/
-References: {list any chained files}"
-Then proceed to generation.
-
-### 1. Generate
-
-#### Generate Prompt
-
-Load purpose-specific patterns:
-
-- Do: [references/do-patterns.md](references/do-patterns.md)
-- Plan: [references/plan-patterns.md](references/plan-patterns.md)
-- Research: [references/research-patterns.md](references/research-patterns.md)
-- Refine: [references/refine-patterns.md](references/refine-patterns.md)
-  Load intelligence rules: [references/intelligence-rules.md](references/intelligence-rules.md)
-
-#### Prompt Structure
-
-All generated prompts include:
-
-1. **Objective**: What to accomplish, why it matters
-2. **Context**: Referenced files (@), dynamic context (!)
-3. **Requirements**: Specific instructions for the task
-4. **Output specification**: Where to save, what structure
-5. **Metadata requirements**: For research/plan outputs, specify XML metadata structure
-6. **SUMMARY.md requirement**: All prompts must create a SUMMARY.md file
-7. **Success criteria**: How to know it worked
-   For Research and Plan prompts, output must include:
-
-- `<confidence>` - How confident in findings
-- `<dependencies>` - What's needed to proceed
-- `<open_questions>` - What remains uncertain
-- `<assumptions>` - What was assumed
-  All prompts must create `SUMMARY.md` with:
-- **One-liner** - Substantive description of outcome
-- **Version** - v1 or iteration info
-- **Key Findings** - Actionable takeaways
-- **Files Created** - (Do prompts only)
-- **Decisions Needed** - What requires user input
-- **Blockers** - External impediments
-- **Next Step** - Concrete forward action
-
-#### File Creation
-
-1. Create folder: `.claude/workspace/prompts/{number}-{topic}-{purpose}/`
-2. Create `completed/` subfolder
-3. Write prompt to: `.claude/workspace/prompts/{number}-{topic}-{purpose}/{number}-{topic}-{purpose}.md`
-4. Prompt instructs output to: `.claude/workspace/prompts/{number}-{topic}-{purpose}/{topic}-{purpose}.md`
-
-### 2. Present
-
-#### Present Decision Tree
-
-After saving prompt(s), present inline (not AskUserQuestion):
-
-#### Single Prompt Presentation
-
-```
-Prompt created: .claude/workspace/prompts/{number}-{topic}-{purpose}/{number}-{topic}-{purpose}.md
-What's next?
-1. Run prompt now
-2. Review/edit prompt first
-3. Save for later
-4. Other
-Choose (1-4): _
+```yaml
+header: "Reference"
+question: "Should this prompt reference any existing research or plans?"
+options:
+  - label: "{file1}"
+    description: "Found in .prompts/{folder1}/"
+  - label: "{file2}"
+    description: "Found in .prompts/{folder2}/"
+  - label: "None"
+    description: "Start fresh without referencing existing files"
+multiSelect: true
 ```
 
-#### Multi-Prompt Presentation
+### 4. Purpose-Specific Questions
 
-```
-Prompts created:
-- .claude/workspace/prompts/001-auth-research/001-auth-research.md
-- .claude/workspace/prompts/002-auth-plan/002-auth-plan.md
-- .claude/workspace/prompts/003-auth-implement/003-auth-implement.md
-Detected execution order: Sequential (002 references 001 output, 003 references 002 output)
-What's next?
-1. Run all prompts (sequential)
-2. Review/edit prompts first
-3. Save for later
-4. Other
-Choose (1-4): _
-```
+**For Do prompts:**
 
-### 3. Execute
-
-#### Execution Engine
-
-#### Execution Modes
-
-##### Single Prompt
-
-Straightforward execution of one prompt.
-
-1. Read prompt file contents
-2. Spawn Task agent with subagent_type="general-purpose"
-3. Include in task prompt:
-   - The complete prompt contents
-   - Output location: `.claude/workspace/prompts/{number}-{topic}-{purpose}/{topic}-{purpose}.md`
-4. Wait for completion
-5. Validate output (see validation section)
-6. Archive prompt to `completed/` subfolder
-7. Report results with next-step options
-
-##### Sequential Execution
-
-For chained prompts where each depends on previous output.
-
-1. Build execution queue from dependency order
-2. For each prompt in queue:
-   a. Read prompt file
-   b. Spawn Task agent
-   c. Wait for completion
-   d. Validate output
-   e. If validation fails → stop, report failure, offer recovery options
-   f. If success → archive prompt, continue to next
-3. Report consolidated results
-
-###### Progress Reporting
-
-Show progress during execution:
-
-```
-Executing 1/3: 001-auth-research... ✓
-Executing 2/3: 002-auth-plan... ✓
-Executing 3/3: 003-auth-implement... (running)
+```yaml
+header: "Output type"
+question: "What are you creating?"
+options:
+  - label: "Code/feature"
+    description: "Software implementation"
+  - label: "Document/content"
+    description: "Written material, documentation"
+  - label: "Design/spec"
+    description: "Architecture, wireframes, specifications"
 ```
 
-##### Parallel Execution
-
-For independent prompts with no dependencies.
-
-1. Read all prompt files
-2. **CRITICAL**: Spawn ALL Task agents in a SINGLE message
-   - This is required for true parallel execution
-   - Each task includes its output location
-3. Wait for all to complete
-4. Validate all outputs
-5. Archive all prompts
-6. Report consolidated results (successes and failures)
-
-###### Failure Handling
-
-Unlike sequential, parallel continues even if some fail:
-
-- Collect all results
-- Archive successful prompts
-- Report failures with details
-- Offer to retry failed prompts
-
-##### Mixed Dependencies
-
-For complex DAGs (e.g., two parallel research → one plan).
-
-1. Analyze dependency graph from @ references
-2. Group into execution layers:
-   - Layer 1: No dependencies (run parallel)
-   - Layer 2: Depends only on layer 1 (run after layer 1 completes)
-   - Layer 3: Depends on layer 2, etc.
-3. Execute each layer:
-   - Parallel within layer
-   - Sequential between layers
-4. Stop if any dependency fails (downstream prompts can't run)
-
-###### Example
-
-```
-Layer 1 (parallel): 001-api-research, 002-db-research
-Layer 2 (after layer 1): 003-architecture-plan
-Layer 3 (after layer 2): 004-implement
+```yaml
+header: "Scope"
+question: "What level of completeness?"
+options:
+  - label: "Production-ready"
+    description: "Ship to users, needs polish and tests"
+  - label: "Working prototype"
+    description: "Functional but rough edges acceptable"
+  - label: "Proof of concept"
+    description: "Minimal viable demonstration"
 ```
 
-##### Dependency Detection
+**For Plan prompts:**
 
-###### Automatic Detection
+```yaml
+header: "Plan for"
+question: "What is this plan leading to?"
+options:
+  - label: "Implementation"
+    description: "Break down how to build something"
+  - label: "Decision"
+    description: "Weigh options, choose an approach"
+  - label: "Process"
+    description: "Define workflow or methodology"
+```
 
-Scan prompt contents for @ references to determine dependencies:
+**For Research prompts:**
 
-1. Parse each prompt for `@.claude/workspace/prompts/{number}-{topic}/` patterns
+```yaml
+header: "Depth"
+question: "How deep should the research go?"
+options:
+  - label: "Overview"
+    description: "High-level understanding, key concepts"
+  - label: "Comprehensive"
+    description: "Detailed exploration, multiple perspectives"
+  - label: "Exhaustive"
+    description: "Everything available, edge cases included"
+```
+
+**For Refine prompts:**
+
+```yaml
+header: "Target"
+question: "Which output should be refined?"
+options:
+  - label: "{file1}"
+    description: "In .prompts/{folder1}/"
+  - label: "{file2}"
+    description: "In .prompts/{folder2}/"
+```
+
+```yaml
+header: "Improvement"
+question: "What needs improvement?"
+options:
+  - label: "Deepen analysis"
+    description: "Add more detail, examples, or rigor"
+  - label: "Expand scope"
+    description: "Cover additional areas or topics"
+  - label: "Correct errors"
+    description: "Fix factual mistakes or outdated info"
+  - label: "Restructure"
+    description: "Reorganize for clarity or usability"
+```
+
+### 5. Decision Gate
+
+After receiving answers, present decision gate:
+
+```yaml
+header: "Ready"
+question: "Ready to create the prompt?"
+options:
+  - label: "Proceed"
+    description: "Create the prompt with current context"
+  - label: "Ask more questions"
+    description: "I have more details to clarify"
+  - label: "Let me add context"
+    description: "I want to provide additional information"
+```
+
+Loop until "Proceed" selected.
+
+## PATTERN: Purpose Templates
+
+### Do Pattern (Execution)
+
+```xml
+## Objective
+
+{Clear statement of what to build/create/fix}
+
+Purpose: {Why this matters, what it enables}
+Output: {What artifact(s) will be produced}
+
+## Context
+
+{Referenced research/plan files if chained}
+[topic]-research.md
+[topic]-plan.md
+
+{Project context}
+[relevant-files]
+
+## Requirements
+
+{Specific functional requirements}
+{Quality requirements}
+{Constraints and boundaries}
+
+## Implementation
+
+{Specific approaches or patterns to follow}
+{What to avoid and WHY}
+{Integration points}
+
+## Output
+
+Create/modify files:
+- `./path/to/file.ext` - {description}
+
+## Verification
+
+Before declaring complete:
+- {Specific test or check}
+- {How to confirm it works}
+- {Edge cases to verify}
+
+## Success Criteria
+
+{Clear, measurable criteria}
+- SUMMARY.md created with files list and next step
+```
+
+### Plan Pattern (Roadmaps)
+
+```xml
+## Objective
+
+Create a {plan type} for {topic}.
+
+Purpose: {What decision/implementation this enables}
+Input: {Research or context being used}
+Output: {topic}-plan.md with actionable phases/steps
+
+## Context
+
+Research findings: [research-file]
+
+## Planning Requirements
+
+{What the plan needs to address}
+{Constraints to work within}
+{Success criteria for the planned outcome}
+
+## Output Structure
+
+Save to: `.prompts/{num}-{topic}-plan/{topic}-plan.md`
+
+Structure using XML:
+
+```xml
+<plan>
+
+## Summary
+
+{One paragraph overview of the approach}
+
+  <phases>
+
+#### Phase 1: {Phase Name}
+
+## Objective
+
+{What this phase accomplishes}
+
+## Tasks
+
+<task priority="high">{Specific actionable task}
+        <task priority="medium">{Another task}
+
+      <deliverables>
+        <deliverable>{What's produced}
+
+
+## Dependencies
+
+{What must exist before this phase}
+
+    <!-- Additional phases -->
+
+
+  <metadata>
+
+### {high|medium|low}
+
+{Why this confidence level}
+
+
+## Dependencies
+
+{External dependencies needed}
+
+    <open_questions>
+      {Uncertainties that may affect execution}
+
+
+## Assumptions
+
+{What was assumed in creating this plan}
+
+```
+
+### Research Pattern (Information Gathering)
+
+```xml
+## Objective
+
+Research {topic} to inform {subsequent use}.
+
+Purpose: {What decision/implementation this enables}
+Scope: {Boundaries of the research}
+Output: {topic}-research.md with structured findings
+
+## Research Scope
+
+<include>
+{What to investigate}
+{Specific questions to answer}
+
+<exclude>
+{What's out of scope}
+{What to defer to later research}
+
+## Sources
+
+Priority sources with exact URLs:
+Official documentation:
+- https://example.com/official-docs
+
+Search queries:
+- "{topic} best practices {current_year}"
+- "{topic} latest version"
+
+## Verification Checklist
+
+□ Verify ALL known options (enumerate below)
+□ Document exact file locations/URLs for each option
+□ Verify precedence/hierarchy rules if applicable
+□ Confirm syntax and examples from official sources
+□ Check for recent updates or changes
+
+## Output Structure
+
+Save to: `.prompts/{num}-{topic}-research/{topic}-research.md`
+
+Structure using XML:
+
+```xml
+<research>
+
+## Summary
+
+{2-3 paragraph executive summary of key findings}
+
+
+  <findings>
+    <finding category="{category}">
+      <title>{Finding title}
+      <detail>{Detailed explanation}
+      <source>{Where this came from}
+      <relevance>{Why this matters for the goal}
+
+
+  <recommendations>
+    <recommendation priority="high">
+      <action>{What to do}
+
+## Rationale
+
+{Why}
+
+
+  <code_examples>
+    {Relevant code patterns, snippets, configurations}
+
+
+  <metadata>
+
+### {high|medium|low}
+
+{Why this confidence level}
+
+
+## Dependencies
+
+{What's needed to act on this research}
+
+    <open_questions>
+      {What couldn't be determined}
+
+
+## Assumptions
+
+{What was assumed}
+
+
+    <quality_report>
+      <sources_consulted>
+        {List URLs of official documentation}
+
+      <claims_verified>
+        {Key findings verified with official sources}
+
+      <claims_assumed>
+        {Findings based on inference or incomplete information}
+
+
+```
+```
+
+### Refine Pattern (Iteration)
+
+```xml
+## Objective
+
+Refine {topic}-{original_purpose} based on feedback.
+
+Target: [prompt-file]
+Current summary: [summary-file]
+
+Purpose: {What improvement is needed}
+Output: Updated {topic}-{original_purpose}.md with improvements
+
+## Context
+
+Original output: [prompt-file]
+
+<feedback>
+{Specific issues to address}
+{What was missing or insufficient}
+{Areas needing more depth}
+
+<preserve>
+{What worked well and should be kept}
+{Structure or findings to maintain}
+
+## Requirements
+
+- Address all feedback points
+- Maintain original structure and metadata format
+- Keep what worked from previous version
+- Update confidence based on improvements
+
+## Output
+
+1. Archive current to: `.prompts/{num}-{topic}-{original_purpose}/archive/{topic}-{original_purpose}-v{n}.md`
+2. Write improved to: `.prompts/{num}-{topic}-{original_purpose}/{topic}-{original_purpose}.md`
+3. Create SUMMARY.md with version info and changes
+```
+
+## PATTERN: Dependency Management
+
+### Detection
+
+Scan prompt contents for cross-references to determine dependencies:
+
+1. Parse each prompt for `.claude/workspace/prompts/{number}-{topic}/` patterns
 2. Build dependency graph
 3. Detect cycles (error if found)
 4. Determine execution order
 
-###### Inference Rules
+### Inference Rules
 
-If no explicit @ references found, infer from purpose:
+If no explicit cross-references found, infer from purpose:
 
-- Research prompts: No dependencies (can parallel)
+- Research prompts: No dependencies (can run parallel)
 - Plan prompts: Depend on same-topic research
 - Do prompts: Depend on same-topic plan
-  Override with explicit references when present.
 
-###### Missing Dependencies
+Override with explicit references when present.
+
+### Missing Dependencies
 
 If a prompt references output that doesn't exist:
 
 1. Check if it's another prompt in this session (will be created)
 2. Check if it exists in `.claude/workspace/prompts/*/` (already completed)
-3. If truly missing:
-   - Warn user: "002-auth-plan references auth-research.md which doesn't exist"
-   - Offer: Create the missing research prompt first? / Continue anyway? / Cancel?
+3. If truly missing: Warn user and offer options
 
-##### Validation
+## PATTERN: Execution Engine
 
-###### Output Validation
+### Single Prompt
 
-After each prompt completes, verify success:
+1. Read prompt file contents
+2. Delegate to implementation specialist
+3. Include: complete prompt contents, output location
+4. Wait for completion
+5. Validate output
+6. Archive prompt to `completed/` subfolder
+7. Report results with next-step options
+
+### Sequential Execution
+
+For chained prompts where each depends on previous output.
+
+1. Build execution queue from dependency order
+2. For each prompt:
+   a. Read prompt file
+   b. Spawn Task agent
+   c. Wait for completion
+   d. Validate output
+   e. If validation fails → stop, report failure, offer recovery
+   f. If success → archive prompt, continue
+3. Report consolidated results
+
+**Progress Reporting:**
+```
+Executing 1/3: 001-auth-research... ✅
+Executing 2/3: 002-auth-plan... ✅
+Executing 3/3: 003-auth-implement... (running)
+```
+
+### Parallel Execution
+
+For independent prompts with no dependencies.
+
+1. Read all prompt files
+2. **CRITICAL**: Spawn ALL Task agents in a SINGLE message
+3. Wait for all to complete
+4. Validate all outputs
+5. Archive all prompts
+6. Report consolidated results
+
+### Mixed Dependencies (DAGs)
+
+For complex graphs (e.g., two parallel research → one plan).
+
+1. Analyze dependency graph from file references
+2. Group into execution layers:
+   - Layer 1: No dependencies (run parallel)
+   - Layer 2: Depends only on layer 1
+   - Layer 3: Depends on layer 2, etc.
+3. Execute each layer (parallel within, sequential between)
+4. Stop if any dependency fails
+
+**Example:**
+```
+Layer 1 (parallel): 001-api-research, 002-db-research
+Layer 2 (after layer 1): 003-architecture-plan
+```
+
+## PATTERN: SUMMARY.md Template
+
+Every executed prompt creates this file for human scanning:
+
+```markdown
+# {Topic} {Purpose} Summary
+
+**{Substantive one-liner describing outcome}**
+
+## Version
+{v1 or "v2 (refined from v1)"}
+
+## Changes from Previous
+{Only include if v2+}
+
+## Key Findings
+- {Most important finding or action}
+- {Second key item}
+- {Third key item}
+
+## Files Created
+{Only include for Do prompts}
+- `path/to/file.ts` - Description
+
+## Decisions Needed
+{Specific actionable decisions, or "None"}
+
+## Blockers
+{External impediments, or "None"}
+
+## Next Step
+{Concrete forward action}
+
+---
+*Confidence: {High|Medium|Low}*
+*Iterations: {n}*
+*Full output: {filename.md}*
+```
+
+### One-Liner Requirements
+
+Must be substantive - describes actual outcome, not status.
+
+| Good | Bad |
+| :--- | :--- |
+| "JWT with jose library and httpOnly cookies recommended" | "Research completed" |
+| "4-phase implementation: types → JWT core → refresh → tests" | "Plan created" |
+| "JWT middleware complete with 6 files in src/auth/" | "Implementation finished" |
+
+### Purpose Variations
+
+- **Research**: Emphasize key recommendation, decision readiness. Next step: Create plan.
+- **Plan**: Emphasize phase breakdown, assumptions needing validation. Next step: Execute first phase.
+- **Do**: Emphasize files created, test status. Next step: Run tests or execute next phase.
+- **Refine**: Emphasize what improved, version number. Include Changes from Previous.
+
+## PATTERN: Metadata Requirements
+
+For Research and Plan outputs, require XML metadata:
+
+```xml
+<metadata>
+
+### {high|medium|low}
+
+{Why this confidence level}
+
+
+## Dependencies
+
+{External requirements that must be met}
+
+    <open_questions>
+      {What couldn't be determined or needs validation}
+
+
+## Assumptions
+
+{Context assumed that might need validation}
+
+```
+
+### Confidence Levels
+
+- **high**: Official docs, verified patterns, clear consensus, few unknowns
+- **medium**: Mixed sources, some outdated info, minor gaps, reasonable approach
+- **low**: Sparse documentation, conflicting info, significant unknowns, best guess
+
+## ANTI-PATTERN: Common Mistakes
+
+### Mistake 1: Skipping Chain Detection
+
+❌ **Wrong:** Created new research prompt without checking existing prompts → Duplicate work.
+
+✅ **Correct:** Before generating, scan `.claude/workspace/prompts/*/` for existing research/plan files → Reference existing outputs.
+
+### Mistake 2: Missing Metadata in Research/Plan Outputs
+
+❌ **Wrong:** Prompt outputs research.md without `<confidence>`, `<dependencies>`, `<assumptions>` → Planning prompt lacks context.
+
+✅ **Correct:** Include metadata requirements in prompt template.
+
+### Mistake 3: Empty SUMMARY.md
+
+❌ **Wrong:** Created SUMMARY.md with "Research completed" → No value for human scanning.
+
+✅ **Correct:** Require substantive SUMMARY.md with one-liner, key findings, decisions, blockers, next step.
+
+### Mistake 4: No Validation Before Archiving
+
+❌ **Wrong:** Archived prompt immediately after execution without checking output → Broken chains continue downstream.
+
+✅ **Correct:** Validate before archiving: file exists, not empty, required metadata present, SUMMARY.md created.
+
+### Mistake 5: Sequential Failure Without Stop
+
+❌ **Wrong:** Prompt 2 of 3 failed → Continued to prompt 3 → Waste.
+
+✅ **Correct:** For sequential chains, stop immediately on failure:
+```
+❌ Failed at 2/3: 002-auth-plan
+Completed: 001-auth-research ✅
+Not started: 003-auth-implement
+```
+
+### Mistake 6: Missing Decision Tree
+
+❌ **Wrong:** Created prompt → Immediately executed → User had no opportunity to review.
+
+✅ **Correct:** Present decision tree after prompt creation:
+```
+Prompt created. What's next?
+1. Run now
+2. Review/edit first
+3. Save for later
+```
+
+### Mistake 7: Asking Instead of Inferring
+
+❌ **Wrong:** Ask "What do you want?" without attempting inference first.
+
+✅ **Correct:** Trust ability to infer from context. If context is sparse, make educated assumptions and proceed.
+
+## EDGE: Validation
+
+### Output Validation Checklist
+
+After each prompt completes, verify:
 
 1. **File exists**: Check output file was created
 2. **Not empty**: File has content (> 100 chars)
 3. **Metadata present** (for research/plan): Check for required XML tags
-   - `<confidence>`
-   - `<dependencies>`
-   - `<open_questions>`
-   - `<assumptions>`
 4. **SUMMARY.md exists**: Check SUMMARY.md was created
-5. **SUMMARY.md complete**: Has required sections (Key Findings, Decisions Needed, Blockers, Next Step)
+5. **SUMMARY.md complete**: Has required sections
 6. **One-liner is substantive**: Not generic like "Research completed"
 
-###### Validation Failure
+### Validation Failure Handling
 
 If validation fails:
 
@@ -372,16 +741,14 @@ If validation fails:
   - Continue anyway (for non-critical issues)
   - Stop and investigate
 
-###### Failure Handling
-
-###### Sequential Failure
+### Sequential Failure
 
 Stop the chain immediately:
 
 ```
-✗ Failed at 2/3: 002-auth-plan
+❌ Failed at 2/3: 002-auth-plan
 Completed:
-- 001-auth-research ✓ (archived)
+- 001-auth-research ✅ (archived)
 Failed:
 - 002-auth-plan: Output file not created
 Not started:
@@ -390,231 +757,40 @@ What's next?
 1. Retry 002-auth-plan
 2. View error details
 3. Stop here (keep completed work)
-4. Other
 ```
 
-###### Parallel Failure
+### Parallel Failure
 
 Continue others, report all results:
 
 ```
 Parallel execution completed with errors:
-✓ 001-api-research (archived)
-✗ 002-db-research: Validation failed - missing <confidence> tag
-✓ 003-ui-research (archived)
+✅ 001-api-research (archived)
+❌ 002-db-research: Validation failed - missing <confidence> tag
+✅ 003-ui-research (archived)
 What's next?
 1. Retry failed prompt (002)
 2. View error details
 3. Continue without 002
-4. Other
 ```
 
-##### Archiving
+## Recognition Questions
 
-###### Archive Timing
-
-- **Sequential**: Archive each prompt immediately after successful completion
-  - Provides clear state if execution stops mid-chain
-- **Parallel**: Archive all at end after collecting results
-  - Keeps prompts available for potential retry
-
-###### Archive Operation
-
-Move prompt file to completed subfolder:
-
-```bash
-mv .claude/workspace/prompts/{number}-{topic}-{purpose}/{number}-{topic}-{purpose}.md \
-   .claude/workspace/prompts/{number}-{topic}-{purpose}/completed/
-```
-
-Output file stays in place (not moved).
-
-##### Result Presentation
-
-###### Single Result
-
-```
-✓ Executed: 001-auth-research
-✓ Created: .claude/workspace/prompts/001-auth-research/SUMMARY.md
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# Auth Research Summary
-**JWT with jose library and httpOnly cookies recommended**
-
-##
-Key Findings
-• jose outperforms jsonwebtoken with better TypeScript support
-• httpOnly cookies required (localStorage is XSS vulnerable)
-• Refresh rotation is OWASP standard
-
-##
-Decisions Needed
-None - ready for planning
-
-##
-Blockers
-None
-
-##
-Next Step
-Create auth-plan.md
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-What's next?
-1. Create planning prompt (auth-plan)
-2. View full research output
-3. Done
-4. Other
-```
-
-Display the actual SUMMARY.md content inline so user sees findings without opening files.
-
-###### Chain Result
-
-```
-✓ Chain completed: auth workflow
-Results:
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-001-auth-research
-**JWT with jose library and httpOnly cookies recommended**
-Decisions: None • Blockers: None
-002-auth-plan
-**4-phase implementation: types → JWT core → refresh → tests**
-Decisions: Approve 15-min token expiry • Blockers: None
-003-auth-implement
-**JWT middleware complete with 6 files created**
-Decisions: Review before Phase 2 • Blockers: None
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-All prompts archived. Full summaries in .claude/workspace/prompts/*/SUMMARY.md
-What's next?
-1. Review implementation
-2. Run tests
-3. Create new prompt chain
-4. Other
-```
-
-For chains, show condensed one-liner from each SUMMARY.md with decisions/blockers flagged.
-
-##### Special Cases
-
-###### Re-running Completed
-
-If user wants to re-run an already-completed prompt:
-
-1. Check if prompt is in `completed/` subfolder
-2. Move it back to parent folder
-3. Optionally backup existing output: `{output}.bak`
-4. Execute normally
-
-###### Output Conflicts
-
-If output file already exists:
-
-1. For re-runs: Backup existing → `{filename}.bak`
-2. For new runs: Should not happen (unique numbering)
-3. If conflict detected: Ask user - Overwrite? / Rename? / Cancel?
-
-###### Commit Handling
-
-After successful execution:
-
-1. Do NOT auto-commit (user controls git workflow)
-2. Mention what files were created/modified
-3. User can commit when ready
-   Exception: If user explicitly requests commit, stage and commit:
-
-- Output files created
-- Prompts archived
-- Any implementation changes (for Do prompts)
-
-###### Recursive Prompts
-
-If a prompt's output includes instructions to create more prompts:
-
-1. This is advanced usage - don't auto-detect
-2. Present the output to user
-3. User can invoke skill again to create follow-up prompts
-4. Maintains user control over prompt creation
-
-##
-
-Reference Guides
-**Prompt patterns by purpose:**
-
-- [references/do-patterns.md](references/do-patterns.md) - Execution prompts + output structure
-- [references/plan-patterns.md](references/plan-patterns.md) - Planning prompts + plan.md structure
-- [references/research-patterns.md](references/research-patterns.md) - Research prompts + research.md structure
-- [references/refine-patterns.md](references/refine-patterns.md) - Iteration prompts + versioning
-  **Shared templates:**
-- [references/summary-template.md](references/summary-template.md) - SUMMARY.md structure and field requirements
-- [references/metadata-guidelines.md](references/metadata-guidelines.md) - Confidence, dependencies, open questions, assumptions
-  **Supporting references:**
-- [references/question-bank.md](references/question-bank.md) - Intake questions by purpose
-- [references/intelligence-rules.md](references/intelligence-rules.md) - Extended thinking, parallel tools, depth decisions
-
-##
-
-Success Criteria
-**Prompt Creation:**
-
-- Intake gate completed with purpose and topic identified
-- Chain detection performed, relevant files referenced
-- Prompt generated with correct structure for purpose
-- Folder created in `.claude/workspace/prompts/` with correct naming
-- Output file location specified in prompt
-- SUMMARY.md requirement included in prompt
-- Metadata requirements included for Research/Plan outputs
-- Quality controls included for Research outputs (verification checklist, QA, pre-submission)
-- Streaming write instructions included for Research outputs
-- Decision tree presented
-  **Execution (if user chooses to run):**
-- Dependencies correctly detected and ordered
-- Prompts executed in correct order (sequential/parallel/mixed)
-- Output validated after each completion
-- SUMMARY.md created with all required sections
-- One-liner is substantive (not generic)
-- Failed prompts handled gracefully with recovery options
-- Successful prompts archived to `completed/` subfolder
-- SUMMARY.md displayed inline in results
-- Results presented with decisions/blockers flagged
-  **Research Quality (for Research prompts):**
-- Verification checklist completed
-- Quality report distinguishes verified from assumed claims
-- Sources consulted listed with URLs
-- Confidence levels assigned to findings
-- Critical claims verified with official documentation
+| Question | Recognition |
+| :------- | :---------- |
+| Purpose identified correctly? | Do/Plan/Research/Refine inferred from context |
+| Topic identifier derived? | kebab-case format, auto-converted |
+| Chain detection performed? | Existing research/plan files scanned and referenced |
+| Correct purpose template used? | Do/Plan/Research/Refine pattern matched to purpose |
+| Purpose inferred autonomously? | No AskUserQuestion used—trust inference |
+| Prompt folder created correctly? | `.claude/workspace/prompts/{number}-{topic}-{purpose}/` |
+| Output location specified? | Prompt includes file path for output |
+| SUMMARY.md requirement included? | All prompts require human-scannable summary |
+| Metadata requirements included? | Research/Plan outputs require XML metadata |
+| Validation checklist complete? | File exists, content present, metadata valid |
 
 ---
 
 <critical_constraint>
-MANDATORY: Create SUMMARY.md for every prompt execution
-MANDATORY: Validate output file exists and has required sections before archiving
-MANDATORY: Use proper XML metadata tags for research/plan outputs
-MANDATORY: Present decision tree before executing prompts
-MANDATORY: Handle validation failures gracefully with recovery options
-No exceptions. Meta-prompts must maintain provenance and enable human scanning.
+**Portability Invariant:** This skill must work in a project with ZERO external rules access (no CLAUDE.md, CLAUDE.local.md, or .claude/rules/ dependencies). All necessary patterns and philosophy are self-contained in this file. Never use relative paths pointing outside the skill itself. When referencing other components, use: "invoke `skill-name`" or "invoke `skill-name` and read its file".
 </critical_constraint>
-
----
-
-## Genetic Code
-
-This component carries essential Seed System principles for context: fork isolation:
-
-<critical_constraint>
-MANDATORY: All components MUST be self-contained (zero .claude/rules dependency)
-MANDATORY: Achieve 80-95% autonomy (0-5 AskUserQuestion rounds per session)
-MANDATORY: Description MUST use What-When-Not format in third person
-MANDATORY: No component references another component by name in description
-MANDATORY: Progressive disclosure - references/ for detailed content
-MANDATORY: Use XML for control (mission_control, critical_constraint), Markdown for data
-No exceptions. Portability invariant must be maintained.
-</critical_constraint>
-
-**Delta Standard**: Good Component = Expert Knowledge − What Claude Already Knows
-
-**Recognition Questions**:
-
-- "Would Claude know this without being told?" → Delete (zero delta)
-- "Can this work standalone?" → Fix if no (non-self-sufficient)
-- "Did I read the actual file, or just see it in grep?" → Verify before claiming
-
----

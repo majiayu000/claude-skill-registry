@@ -1,48 +1,39 @@
 ---
-name: Kotlin Coroutines & Flow
-description: Structured Concurrency, Flow patterns, and Asynchronous programming standards.
+name: Kotlin Coroutines Expert
+description: Standards for safe, structured concurrency in Kotlin.
 metadata:
-  labels: [kotlin, coroutines, flow, async, concurrency]
+  labels: [kotlin, concurrency, coroutines, async]
   triggers:
     files: ['**/*.kt']
-    keywords: [suspend, launch, async, flow, StateFlow, SharedFlow, Dispatchers]
+    keywords: [suspend, CoroutineScope, launch, async, Flow]
 ---
 
-# Kotlin Coroutines & Flow
+# Kotlin Coroutines Expert
 
-## **Priority: P1 (HIGH)**
+## **Priority: P0 (CRITICAL)**
 
-Standard for safe, structured asynchronous programming.
+**You are a Concurrency Expert.** Prioritize safety and cancellation support.
 
 ## Implementation Guidelines
 
-- **Structured Concurrency**: Always launch coroutines within a `CoroutineScope` (e.g., `viewModelScope`, `lifecycleScope`). Never use `GlobalScope`.
-- **Dispatchers**: Inject `DispatcherProvider` or `CoroutineDispatcher` to simplify testing. Do not hardcode `Dispatchers.IO` in classes.
-- **Suspend Functions**: Mark blocking/long-running operations as `suspend`. They should be "main-safe" (handle their own context switching).
-- **Flow**: Prefer `StateFlow` (state holder) and `SharedFlow` (events) over `LiveData`.
-- **Collection**: Use `collectLatest` for restartable upstream updates. Use `flowWithLifecycle` in UI.
-- **Error Handling**: Use `CoroutineExceptionHandler` for top-level launch, `try/catch` for code blocks within coroutines.
+- **Scope**: Use `viewModelScope` (Android) or structured `coroutineScope`.
+- **Dispatchers**: Inject dispatchers; never hardcode `Dispatchers.IO`.
+- **Flow**: Use `StateFlow` for state, `SharedFlow` for events.
+- **Exceptions**: Use `runCatching` or `CoroutineExceptionHandler`.
+
+## Concurrency Checklist (Mandatory)
+
+- [ ] **Cancellation**: Do loops check `isActive` or call `yield()`?
+- [ ] **Structured**: No `GlobalScope`? All children joined/awaited?
+- [ ] **Context**: Is `Dispatchers.Main` used for UI updates?
+- [ ] **Leaks**: Are scopes cancelled in `onCleared` / `onDestroy`?
 
 ## Anti-Patterns
 
-- **GlobalScope**: Leaks memory and breaks structure.
-- **Blocking Calls**: Never use `Thread.sleep` or blocking I/O in coroutines. Use `delay` or proper suspend functions.
-- **Async/Await Abuse**: Don't use `async` unless you need parallel execution. Use linear code in `launch`.
-- **Mutable State in Flow**: Don't expose `MutableStateFlow` publicly. Cast to `StateFlow`.
+- **No GlobalScope**: It leaks. Use structured concurrency.
+- **No Async without Await**: Don't `async { ... }` without `await()`.
+- **No Blocking**: Never `runBlocking` in prod code (only tests).
 
-## Code
+## References
 
-For detailed `ViewModel` + `StateFlow` and `Parallel Async` examples:
 [references/advanced-patterns.md](references/advanced-patterns.md)
-
-```kotlin
-// Structured Scope + Main-safe Suspend
-viewModelScope.launch {
-    val data = withContext(Dispatchers.IO) { repo.fetch() }
-    _state.value = UiState.Success(data)
-}
-```
-
-## Related Topics
-
-best-practices | language | android

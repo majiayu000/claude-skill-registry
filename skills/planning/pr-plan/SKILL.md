@@ -222,3 +222,7 @@ $pr-research <repo> -> $pr-plan <research> -> implement -> $pr-prep
 | Scope too broad | Multiple concerns mixed | Split by user-visible change or subsystem boundary |
 | Risk section is weak | Missing failure-mode analysis | Add integration, review, and rollback risks explicitly |
 | Plan conflicts with repo norms | Research artifact incomplete | Re-run `$pr-research` and refresh constraints |
+
+## Reference Documents
+
+- [references/pr-plan.feature](references/pr-plan.feature) — Executable spec: bound scope, capture project quality bar + PR requirements, write a plan with a pre-implementation checklist (soc-qk4b)

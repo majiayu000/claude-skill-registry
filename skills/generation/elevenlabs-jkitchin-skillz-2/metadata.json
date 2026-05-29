@@ -1,0 +1,18 @@
+{
+  "name": "elevenlabs",
+  "description": "AI-powered audio generation using ElevenLabs API - text-to-speech with lifelike voices,\nsound effects generation, and music creation from text descriptions. Generate natural-sounding\nspeech in 32 lang",
+  "repo": "jkitchin/skillz",
+  "path": "skills/creative/elevenlabs",
+  "category": "generation",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/jkitchin/skillz",
+  "dir_name": "elevenlabs-jkitchin-skillz-2",
+  "author": "jkitchin",
+  "source_url": "https://github.com/jkitchin/skillz/blob/main/skills/creative/elevenlabs/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 John Kitchin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

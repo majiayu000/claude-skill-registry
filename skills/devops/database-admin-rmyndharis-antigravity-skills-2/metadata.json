@@ -1,0 +1,18 @@
+{
+  "name": "database-admin",
+  "description": "Expert database administrator specializing in modern cloud databases, automation, and reliability engineering. Masters AWS/Azure/GCP database services, Infrastructure as Code, high availability, disas",
+  "repo": "rmyndharis/antigravity-skills",
+  "path": "skills/database-admin",
+  "category": "devops",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rmyndharis/antigravity-skills",
+  "dir_name": "database-admin-rmyndharis-antigravity-skills-2",
+  "author": "rmyndharis",
+  "source_url": "https://github.com/rmyndharis/antigravity-skills/blob/main/skills/database-admin/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Yudhi Armyndharis",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

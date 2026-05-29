@@ -1,0 +1,16 @@
+{
+  "name": "executing-plans",
+  "repo": "Smooth-Operation/household-expense-tracker",
+  "path": ".claude/skills/core/executing-plans/SKILL.md",
+  "category": "workflow",
+  "source": "github.com/Smooth-Operation/household-expense-tracker",
+  "dir_name": "executing-plans-smooth-operation-household-expense-tr",
+  "downloaded_at": "2026-02-22T05:44:59.153302Z",
+  "author": "Smooth-Operation",
+  "source_url": "https://github.com/Smooth-Operation/household-expense-tracker/blob/main/.claude/skills/core/executing-plans/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Smooth-Operation/household-expense-tracker/blob/main/.claude/skills/core/executing-plans/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

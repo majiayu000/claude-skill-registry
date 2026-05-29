@@ -1,5 +1,6 @@
 ---
-name: claims-documentation
+slug: "claims-documentation"
+display_name: "Claims Documentation"
 description: "Document construction claims for disputes and recovery. Compile evidence, calculate damages, track notice requirements, and prepare claim packages."
 ---
 

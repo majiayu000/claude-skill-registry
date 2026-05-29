@@ -1,0 +1,16 @@
+{
+  "name": "anki-card-generator",
+  "repo": "niracler/skill",
+  "path": "src/anki-card-generator/SKILL.md",
+  "source": "github.com/niracler/skill",
+  "downloaded_at": "2026-01-29T02:49:00.599389Z",
+  "dir_name": "anki-card-generator-niracler-skill",
+  "category": "personal-development",
+  "author": "niracler",
+  "source_url": "https://github.com/niracler/skill/blob/main/src/anki-card-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Niracler",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

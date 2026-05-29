@@ -1,0 +1,16 @@
+{
+  "name": "resilience-check",
+  "repo": "cpa03/blueprintify",
+  "path": ".opencode/skill/resilience-check/SKILL.md",
+  "source": "github.com/cpa03/blueprintify",
+  "downloaded_at": "2026-01-29T05:47:18.941807Z",
+  "dir_name": "resilience-check-cpa03-blueprintify-c63ac03e",
+  "category": "quality",
+  "author": "cpa03",
+  "source_url": "https://github.com/cpa03/blueprintify/blob/main/.opencode/skill/resilience-check/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cpa03/blueprintify/blob/main/.opencode/skill/resilience-check/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

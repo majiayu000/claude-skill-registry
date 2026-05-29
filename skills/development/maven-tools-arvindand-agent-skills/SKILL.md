@@ -1,230 +1,133 @@
 ---
 name: maven-tools
-description: "JVM dependency intelligence via Maven Tools MCP server. Use when user asks about Java/Kotlin/Scala dependencies, versions, upgrades, CVEs, or licenses. Use when analyzing pom.xml, build.gradle, or any Maven Central dependency. Use when user says 'check my dependencies', 'should I upgrade X', 'is this version safe', or 'what's the latest version of Y'."
-allowed-tools: mcp__maven-tools__*
+description: "JVM dependency intelligence via Maven Tools MCP server. Use when the user asks about Maven or Gradle dependencies, JVM library versions, safe upgrades, CVEs, license risks, release history, or project dependency health. Use when reviewing `pom.xml`, `build.gradle`, `build.gradle.kts`, or Maven coordinates. Use when the user says 'check my dependencies', 'should I upgrade X', or 'is this version safe'."
+allowed-tools: mcp__maven-tools__* mcp__context7__* WebSearch WebFetch
 ---
 
 # Maven Tools
 
-Dependency intelligence for JVM projects via Maven Tools MCP server.
+Use this skill to ground JVM dependency decisions in live Maven Central data.
 
-## Prerequisites
-
-Requires [Maven Tools MCP server](https://github.com/arvindand/maven-tools-mcp) configured in your MCP client.
-
-**Recommended setup (Claude Desktop):**
-
-```json
-{
-  "mcpServers": {
-    "maven-tools": {
-      "command": "docker",
-      "args": ["run", "-i", "--rm", "arvindand/maven-tools-mcp:latest-noc7"]
-    }
-  }
-}
-```
-
-**Why `-noc7`?** The `latest-noc7` variant focuses purely on dependency intelligence. For documentation lookup, use the separate [context7 skill](../context7/) which provides broader coverage and works independently. This modular approach means dependency tools work even if Context7 is blocked.
+This is an execution skill. Use Maven Tools MCP first for dependency facts, then do the reasoning in-model. Assume Maven Tools MCP is already configured; only discuss setup if the tools are unavailable.
 
 ## When to Use
 
-**Activate automatically when:**
+Activate when the user asks about:
 
-- User asks about Java/Kotlin/Scala/JVM dependencies
-- User mentions Maven, Gradle, pom.xml, build.gradle
-- User asks "what's the latest version of X"
-- User wants to check for updates, CVEs, or license issues
-- User says "analyze my dependencies" or "check my pom.xml"
-- User asks "should I upgrade X" or "is this version safe"
+- Java, Kotlin, Scala, or JVM dependencies
+- Maven, Gradle, `pom.xml`, `build.gradle`, or `build.gradle.kts`
+- latest versions, upgrades, CVEs, licenses, dependency age, or release history
+- whether a dependency is safe, current, stale, or worth upgrading
+
+## Core Boundary
+
+Use Maven Tools MCP for version, security, license, freshness, and release-pattern facts from Maven Central.
+
+- Do the reasoning in-model: recommend next steps, call out risk, and separate safe-now actions from manual-review items.
+- Normalize dependency inputs to `groupId:artifactId` or `groupId:artifactId:version` as needed.
+- For recommendation questions, evaluate concrete candidates with Maven Tools first, then add documentation context before making a strong call.
+- Do not use Maven metadata alone to decide library popularity, framework fit, migration effort, or performance tradeoffs.
 
 ## Tool Selection
 
-Pick the right tool for the task (8 tools available):
+Choose the narrowest tool that matches the request:
 
-| User Intent | Tool | Key Parameters |
-|-------------|------|----------------|
-| "Latest version of X" | `get_latest_version` | `stabilityFilter`: PREFER_STABLE (default) |
-| "Does version X.Y.Z exist?" | `check_version_exists` | — |
-| "Check these dependencies" (no versions) | `check_multiple_dependencies` | `stabilityFilter` |
-| "Should I upgrade from X to Y?" | `compare_dependency_versions` | `includeSecurityScan`: true |
-| "How old are my dependencies?" | `analyze_dependency_age` | `maxAgeInDays` threshold |
-| "Is this library maintained?" | `analyze_release_patterns` | `monthsToAnalyze`: 24 |
-| "Show version history" | `get_version_timeline` | `versionCount`: 20 |
-| "Full health check" | `analyze_project_health` | `includeSecurityScan`, `includeLicenseScan` |
+| Intent | Tool | Default Parameters |
+|--------|------|--------------------|
+| latest version lookup | `get_latest_version` | `stabilityFilter: PREFER_STABLE` |
+| check exact version | `check_version_exists` | none |
+| bulk candidate check (no current versions) | `check_multiple_dependencies` | `stabilityFilter: PREFER_STABLE` |
+| upgrade analysis (with current versions) | `compare_dependency_versions` | `includeSecurityScan: true`, `stabilityFilter: STABLE_ONLY` |
+| age/freshness | `analyze_dependency_age` | use project-appropriate threshold |
+| maintenance signal | `analyze_release_patterns` | `monthsToAnalyze: 24` |
+| release history | `get_version_timeline` | `versionCount: 20` |
+| full project audit | `analyze_project_health` | `includeSecurityScan: true`, `includeLicenseScan: true`, `stabilityFilter: PREFER_STABLE` |
 
-**Default choice:** When user says "check my dependencies" or pastes a pom.xml → use `analyze_project_health` for comprehensive analysis.
+Default to `analyze_project_health` when the user says "check my dependencies" or pastes a project dependency set.
 
-## Stability Filters
+Use `check_multiple_dependencies` for candidate sets without current versions. Use `compare_dependency_versions` for upgrade decisions on current versions. Use `analyze_project_health` for broad audits, not every single dependency question.
 
-Control which versions are returned:
+## Workflow
 
-| Filter | Use When |
-|--------|----------|
-| `PREFER_STABLE` | Default for recommendations — prioritizes stable, includes others |
-| `STABLE_ONLY` | Production upgrades — no RC/beta/alpha |
-| `ALL` | Research — see everything including snapshots |
+1. Extract dependencies from user input or the build file
+2. Pick the narrowest tool that answers the request
+3. Report the result in decision-oriented language:
+   - what is current
+   - what changed
+   - what is safe to do now
+   - what needs manual review
 
-## Common Workflows
+For upgrade questions, prefer `compare_dependency_versions` with:
 
-### "Check my dependencies"
+- `includeSecurityScan: true`
+- `stabilityFilter: STABLE_ONLY`
 
-1. Extract dependencies from pom.xml or user input
-2. Call `analyze_project_health` with:
-   - `includeSecurityScan: true`
-   - `includeLicenseScan: true`
-3. Report: outdated deps, CVEs, license risks, health score
+Then interpret the result conservatively:
 
-### "Should I upgrade Spring Boot?"
+- patch and minor updates are the default safe path
+- major updates should be treated as manual review unless the user explicitly wants a breaking upgrade
 
-1. Call `compare_dependency_versions` with current and target versions
-2. If major upgrade detected, note breaking changes likely
-3. Use context7 skill for migration documentation:
-   - `scripts/context7.py search "spring boot"`
-   - `scripts/context7.py docs "<library-id>" "migration guide"`
+When `compare_dependency_versions` returns `same_major_stable_fallback`:
 
-### "Is this dependency safe?"
+- treat the top-level major upgrade as the long-term path
+- treat the fallback as the safest immediate upgrade target
+- surface both, but recommend the fallback first for conservative maintenance workflows
 
-1. Call `get_latest_version` to check if user's version is current
-2. Call `analyze_release_patterns` to verify active maintenance
-3. Security scan is included by default — report any CVEs
+This is especially important for "safe update" or bot-like maintenance flows.
 
-### "What libraries should I use for X?"
+If the user asks whether a dependency is safe:
 
-1. This tool doesn't recommend new libraries — it analyzes existing ones
-2. Suggest user specify candidate libraries
-3. Then use `analyze_project_health` to compare candidates
+1. use `compare_dependency_versions` when remediation guidance matters
+2. use `analyze_release_patterns` when maintenance risk matters
+3. combine the two instead of relying only on "latest version" checks
 
-## Dependency Format
+## Documentation Handoff
 
-All tools expect Maven coordinates:
+When the answer needs migration guides, API details, or library usage patterns, add documentation context before giving a strong recommendation.
 
-```
-groupId:artifactId
-```
+Use this order:
 
-**Examples:**
+1. use Maven Tools MCP first for dependency facts
+2. if raw Context7 tools are available in the current tool list, use them directly
+3. otherwise, if standalone Context7 tools are available, use them
+4. otherwise, use `WebSearch` and `WebFetch` for official docs, release notes, and migration guides
+5. if no documentation path is available, say dependency facts are available but deeper doc lookup is not
 
-- `org.springframework.boot:spring-boot-starter`
-- `com.fasterxml.jackson.core:jackson-databind`
-- `org.junit.jupiter:junit-jupiter`
+Use this especially for:
 
-**From Gradle:** Convert `implementation("group:artifact:version")` → `group:artifact`
+- major upgrades
+- migration planning
+- recommendation-style comparisons between candidate libraries
 
-## Documentation Lookup (Guided Delegation)
+## Less Helpful / Out of Scope
 
-Maven Tools provides version intelligence. For migration guides and API documentation, delegate to the [context7 skill](../context7/).
+- private artifact repositories that are not mirrored through Maven Central
+- non-JVM ecosystems that do not use Maven coordinates
+- trivial one-off lookups where the exact dependency and decision are already obvious
+- recommendation questions driven mostly by ecosystem adoption or benchmarks unless you also add docs and broader research
 
-**Workflow:**
+## Setup Assumption
 
-1. Maven analysis reveals upgrade needed (e.g., Spring Boot 2→3)
-2. Load context7 skill for documentation lookup
-3. Query: "spring boot 3 migration guide" or "hibernate 6 breaking changes"
-4. Combine version data + documentation for complete upgrade plan
+Assume the user already has Maven Tools MCP configured.
 
-**Example chain:**
+- `arvindand/maven-tools-mcp:latest` is the default when raw Context7 tools should be exposed through the same server
+- `arvindand/maven-tools-mcp:latest-noc7` is the clean option when documentation is handled separately
 
-```
-User: "Should I upgrade Spring Boot from 2.7 to 3.2?"
-
-→ maven-tools: compare_dependency_versions
-  Result: Major upgrade, 3.2.1 available, no CVEs
-
-→ context7: scripts/context7.py search "spring boot"
-→ context7: scripts/context7.py docs "/spring-projects/spring-boot" "2.7 to 3 migration"
-  Result: javax→jakarta migration steps, config changes
-
-→ Combined response: Version analysis + migration steps
-```
-
-This separation means:
-
-- Dependency tools work even if Context7 is unreachable
-- Context7 skill is reusable for any library, not just JVM
-- Each skill stays focused and maintainable
-
-## Response Interpretation
-
-### Health Scores
-
-| Score | Meaning |
-|-------|---------|
-| 80-100 | Healthy — recent releases, no CVEs |
-| 60-79 | Good — minor concerns |
-| 40-59 | Aging — consider updates |
-| 0-39 | Stale — maintenance risk |
-
-### Age Classification
-
-| Class | Age | Action |
-|-------|-----|--------|
-| fresh | <6 months | No action needed |
-| current | 6-12 months | Monitor |
-| aging | 1-2 years | Plan upgrade |
-| stale | >2 years | Upgrade or replace |
-
-### Version Types
-
-| Type | Production Safe? |
-|------|-----------------|
-| stable | ✅ Yes |
-| rc | ⚠️ Test thoroughly |
-| beta | ⚠️ Non-critical only |
-| alpha | ❌ Development only |
-| milestone | ⚠️ Early adopters |
-| snapshot | ❌ Never in production |
-
-## Examples
-
-### Example 1: Quick version check
-
-**User:** "What's the latest stable Spring Boot?"
-
-```
-→ get_latest_version
-  groupId: org.springframework.boot
-  artifactId: spring-boot-starter
-  stabilityFilter: STABLE_ONLY
-```
-
-### Example 2: Upgrade analysis
-
-**User:** "I'm on Spring Boot 2.7.18, should I upgrade?"
-
-```
-→ compare_dependency_versions
-  dependencies: ["org.springframework.boot:spring-boot-starter:2.7.18"]
-  includeSecurityScan: true
-
-→ If major upgrade available, delegate to context7 skill:
-  scripts/context7.py search "spring boot"
-  scripts/context7.py docs "/spring-projects/spring-boot" "2.7 to 3 migration"
-```
-
-### Example 3: Full project audit
-
-**User:** "Analyze my pom.xml" (pastes file)
-
-```
-→ Extract all dependencies from pom.xml
-→ analyze_project_health
-  dependencies: [extracted list]
-  includeSecurityScan: true
-  includeLicenseScan: true
-```
+Only discuss installation when the tools are unavailable.
 
 ## Recovery
 
 | Issue | Action |
 |-------|--------|
-| MCP tools unavailable | Inform user: "Maven Tools MCP server not configured. Install from <https://github.com/arvindand/maven-tools-mcp> — use `latest-noc7` image since we have context7 skill for docs." |
-| Dependency not found | Verify groupId:artifactId format, check Maven Central |
-| Context7 skill unavailable | Fall back to web search for documentation |
-| Security scan slow | Results still return, CVE data may be partial |
-| Unknown version type | Treat as unstable, recommend stable alternative |
+| MCP tools unavailable | Tell the user Maven Tools MCP is not configured and point them to <https://github.com/arvindand/maven-tools-mcp>. Mention `:latest` when they want raw Context7 in the same server, or `:latest-noc7` when docs are handled separately. |
+| Dependency not found | Verify `groupId:artifactId` format and check whether the artifact is on Maven Central. |
+| Raw Context7 tools unavailable | Use standalone Context7 tools if available; otherwise fall back to `WebSearch` and `WebFetch`. |
+| No documentation path is available | Say dependency facts are available but deeper migration or API docs are not available in the current environment. |
+| Security scan is incomplete or slow | Use the partial result, say CVE data may be incomplete, and continue with version/maintenance guidance. |
+| Version type is unclear | Treat it as unstable and prefer a known stable release. |
 
 ---
 
 > **License:** MIT
-> **Requires:** [Maven Tools MCP server](https://github.com/arvindand/maven-tools-mcp) (`latest-noc7` recommended)
-> **Pairs with:** [context7 skill](../context7/) for documentation lookup
+> **Requires:** [Maven Tools MCP server](https://github.com/arvindand/maven-tools-mcp)
+> **Pairs with:** [context7 skill](../context7/) or standalone Context7 tools for documentation-heavy follow-up

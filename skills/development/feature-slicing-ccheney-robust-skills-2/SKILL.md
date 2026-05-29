@@ -1,11 +1,6 @@
 ---
 name: feature-slicing
-description: |
-  Apply Feature-Sliced Design (FSD) architecture to frontend projects. Triggers on: FSD, feature slicing,
-  frontend architecture, layer structure, module boundaries, scalable frontend, slice organization.
-
-  Use when: creating new features/components/pages, restructuring React/Next.js/Vue/Remix projects,
-  organizing frontend code, setting up project structure, fixing import violations, or migrating legacy codebases.
+description: Proactively apply when creating new features/components/pages or setting up frontend project structure. Triggers on FSD, feature slicing, frontend architecture, layer structure, module boundaries, scalable frontend, slice organization. Use when restructuring React/Next.js/Vue/Remix projects, organizing frontend code, fixing import violations, or migrating legacy codebases. Feature-Sliced Design (FSD) architecture for frontend projects.
 ---
 
 # Feature-Sliced Design Architecture

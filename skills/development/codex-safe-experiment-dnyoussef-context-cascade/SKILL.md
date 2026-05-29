@@ -12,13 +12,43 @@ x-tags:
   - safe-refactoring
 x-author: context-cascade
 x-verix-description: |
-  
+  [assert|neutral] codex-safe-experiment skill for sandboxed experimentation [ground:given] [conf:0.95] [state:confirmed]
 ---
-
 
 <!-- S0 META-IDENTITY -->
 
 # Codex Safe Experiment Skill
+
+
+
+---
+
+## LIBRARY-FIRST PROTOCOL (MANDATORY)
+
+**Before writing ANY code, you MUST check:**
+
+### Step 1: Library Catalog
+- Location: `.claude/library/catalog.json`
+- If match >70%: REUSE or ADAPT
+
+### Step 2: Patterns Guide
+- Location: `.claude/docs/inventories/LIBRARY-PATTERNS-GUIDE.md`
+- If pattern exists: FOLLOW documented approach
+
+### Step 3: Existing Projects
+- Location: `D:\Projects\*`
+- If found: EXTRACT and adapt
+
+### Decision Matrix
+| Match | Action |
+|-------|--------|
+| Library >90% | REUSE directly |
+| Library 70-90% | ADAPT minimally |
+| Pattern exists | FOLLOW pattern |
+| In project | EXTRACT |
+| No match | BUILD (add to library after) |
+
+---
 
 ## Kanitsal Cerceve (Evidential Frame Activation)
 Kaynak dogrulama modu etkin.
@@ -201,3 +231,5 @@ ALWAYS:
 - [ ] Memory-MCP updated
 
 <!-- PROMISE -->
+
+[commit|confident] <promise>CODEX_SAFE_EXPERIMENT_COMPLETE</promise>

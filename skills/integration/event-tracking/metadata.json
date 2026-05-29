@@ -1,0 +1,18 @@
+{
+  "name": "event-tracking",
+  "repo": "clix-so/skills",
+  "path": "skills/event-tracking/SKILL.md",
+  "source": "github.com/clix-so/skills",
+  "downloaded_at": "2026-01-22T01:43:57.174352Z",
+  "dir_name": "event-tracking",
+  "category": "integration",
+  "github_path": "skills/event-tracking",
+  "github_branch": "main",
+  "author": "clix-so",
+  "source_url": "https://github.com/clix-so/skills/blob/main/skills/event-tracking/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/clix-so/skills/blob/main/skills/event-tracking/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

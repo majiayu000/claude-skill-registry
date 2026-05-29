@@ -1,86 +1,113 @@
 ---
 name: markdown-to-pdf
-description: Convert markdown files to PDF with custom styling. Use when generating PDF documents from markdown, creating printable documentation, or exporting reports.
-allowed-tools: Bash, Read
+version: 1.0.0
+description: '[Document Processing] Convert markdown files to PDF with syntax highlighting and custom CSS support. Cross-platform (Windows, macOS, Linux).'
+
+allowed-tools: NONE
 ---
+
+> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI may ask user whether to skip.
+
+## Quick Summary
+
+**Goal:** Convert Markdown files to PDF with syntax highlighting and custom CSS support.
+
+**Workflow:**
+1. **Install** -- Ensure required tools (pandoc + wkhtmltopdf or weasyprint) are available
+2. **Convert** -- Run conversion with syntax highlighting and optional CSS
+3. **Verify** -- Check PDF output for formatting and completeness
+
+**Key Rules:**
+- Requires pandoc + a PDF engine (wkhtmltopdf or weasyprint)
+- Supports syntax highlighting for code blocks
+- Custom CSS can be applied for styling
 
 # markdown-to-pdf
 
-Convert markdown files to professionally-styled PDF documents.
+Convert markdown files to high-quality PDF documents with code syntax highlighting and custom CSS support.
 
 ## Installation Required
 
+**This skill requires npm dependencies.** Run one of the following:
+
 ```bash
+# Option 1: Install via ClaudeKit CLI (recommended)
+ck init  # Runs install.sh which handles all skills
+
+# Option 2: Manual installation
 cd .claude/skills/markdown-to-pdf
 npm install
 ```
 
-**Dependencies:** `md-to-pdf` (includes Puppeteer, auto-downloads Chromium ~200MB)
+**Dependencies:** `md-to-pdf`, `gray-matter`
+
+**Note:** First run may download Chromium (~150MB) unless system Chrome is detected.
 
 ## Quick Start
 
 ```bash
 # Basic conversion
-node .claude/skills/markdown-to-pdf/scripts/convert.cjs \
-  --file ./README.md
+node .claude/skills/markdown-to-pdf/scripts/convert.cjs --input ./README.md
 
-# Custom output path
-node .claude/skills/markdown-to-pdf/scripts/convert.cjs \
-  --file ./doc.md \
-  --output ./output/doc.pdf
+# Specify output path
+node .claude/skills/markdown-to-pdf/scripts/convert.cjs --input ./doc.md --output ./output.pdf
 
-# Custom styling
-node .claude/skills/markdown-to-pdf/scripts/convert.cjs \
-  --file ./report.md \
-  --style ./custom-style.css
+# With custom CSS
+node .claude/skills/markdown-to-pdf/scripts/convert.cjs --input ./doc.md --css ./my-style.css
 ```
 
 ## CLI Options
 
-| Option            | Required | Description                                  |
-| ----------------- | -------- | -------------------------------------------- |
-| `--file <path>`   | Yes      | Input markdown file                          |
-| `--output <path>` | No       | Output PDF path (default: input name + .pdf) |
-| `--style <path>`  | No       | Custom CSS file                              |
+| Option           | Short | Description                 | Default       |
+| ---------------- | ----- | --------------------------- | ------------- |
+| `--input`        | `-i`  | Input markdown file path    | (required)    |
+| `--output`       | `-o`  | Output PDF file path        | `{input}.pdf` |
+| `--css`          | `-c`  | Custom CSS file path        | built-in      |
+| `--no-highlight` |       | Disable syntax highlighting | false         |
+| `--help`         | `-h`  | Show help message           |               |
 
-## Output Format (JSON)
+## Features
 
-```json
-{
-  "success": true,
-  "input": "/path/to/input.md",
-  "output": "/path/to/output.pdf",
-  "pages": 5
-}
-```
+- **Syntax Highlighting:** Code blocks rendered with highlight.js
+- **Custom CSS:** Override default styles with your own CSS
+- **Cross-Platform:** Works on Windows, macOS, Linux
+- **System Chrome:** Uses installed Chrome/Chromium when available
+- **Frontmatter Support:** YAML frontmatter extracted for title/metadata
 
 ## Default Styling
 
-- GitHub-flavored markdown
-- Code syntax highlighting (highlight.js)
-- Sans-serif body (system fonts)
-- Monospace code blocks
-- A4 page size, 2cm margins
+The default PDF style includes:
 
-## Customization
+- Serif font (Georgia) for body text
+- Monospace font (Consolas/Monaco) for code
+- Proper page margins (2cm)
+- Code block background highlighting
+- Table borders and alternating row colors
 
-Create custom CSS:
+## Output
 
-```css
-body {
-  font-family: Georgia, serif;
-  font-size: 12pt;
-  line-height: 1.6;
+Returns JSON on success:
+
+```json
+{
+    "success": true,
+    "input": "/path/to/input.md",
+    "output": "/path/to/output.pdf",
+    "pages": 3
 }
-h1 { color: #2c3e50; border-bottom: 2px solid #3498db; }
-code { background: #f4f4f4; padding: 2px 6px; }
 ```
 
 ## Troubleshooting
 
-**Chromium download fails:** Set `PUPPETEER_SKIP_DOWNLOAD=1` then manually install Chrome
-**Memory issues:** Large docs may need `--max-old-space-size=4096`
+**Chrome not found:** The skill will automatically download Chromium. Set `PUPPETEER_SKIP_DOWNLOAD=1` to prevent this.
 
-## IMPORTANT Task Planning Notes
-- Always plan and break many small todo tasks
-- Always add a final review todo task to review the works done at the end to find any fix or enhancement needed
+**Memory issues:** Large documents may require more memory. Consider splitting into multiple files.
+
+**Font issues:** Embed fonts via CSS `@font-face` with base64-encoded fonts for consistent rendering.
+
+---
+
+**IMPORTANT Task Planning Notes (MUST FOLLOW)**
+
+- Always plan and break work into many small todo tasks
+- Always add a final review todo task to verify work quality and identify fixes/enhancements

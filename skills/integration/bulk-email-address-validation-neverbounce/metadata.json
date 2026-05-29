@@ -1,0 +1,17 @@
+{
+  "name": "bulk-email-address-validation-neverbounce",
+  "repo": "AgentPMT/agent-skills",
+  "path": "skills/bulk-email-address-validation-neverbounce/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/AgentPMT/agent-skills",
+  "dir_name": "bulk-email-address-validation-neverbounce",
+  "downloaded_at": "2026-03-22T04:47:57.812298Z",
+  "author": "AgentPMT",
+  "source_url": "https://github.com/AgentPMT/agent-skills/blob/main/skills/bulk-email-address-validation-neverbounce/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AgentPMT/agent-skills/blob/main/skills/bulk-email-address-validation-neverbounce/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

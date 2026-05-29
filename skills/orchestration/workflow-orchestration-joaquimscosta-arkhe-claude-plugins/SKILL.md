@@ -17,11 +17,11 @@ Guide users through structured thinking and recommend appropriate tools for comp
 
 | Situation | Recommendation |
 |-----------|----------------|
-| Multi-step project, full SDLC | `/develop` command |
-| Plan only, implement later | `/develop --plan-only` |
-| Resume existing plan | `/develop @path/to/plan.md` |
+| Multi-step project, full SDLC | `/core:develop` command |
+| Plan only, implement later | `/core:develop --plan-only` |
+| Resume existing plan | `/core:develop @path/to/plan.md` |
 | Single complex problem needing deep analysis | `/think` command |
-| Security-sensitive or high-stakes work | `/develop --validate` |
+| Security-sensitive or high-stakes work | `/core:develop --validate` |
 | Strategic decision with long-term impact | `deep-think-partner` agent |
 | Simple task, clear steps | Inline guidance (no command needed) |
 
@@ -55,7 +55,7 @@ When structured approach is needed:
 
 ## Command Reference
 
-### `/develop <request> [flags]`
+### `/core:develop <request> [flags]`
 
 Unified SDLC command with 6-phase pipeline and multi-agent orchestration.
 
@@ -67,7 +67,7 @@ Unified SDLC command with 6-phase pipeline and multi-agent orchestration.
 
 **Best for:** Feature implementations, refactoring projects, any multi-step development task.
 
-**Resume mode:** `/develop @path/to/plan.md` loads existing plan and continues.
+**Resume mode:** `/core:develop @path/to/plan.md` loads existing plan and continues.
 
 ### `/think [problem]`
 

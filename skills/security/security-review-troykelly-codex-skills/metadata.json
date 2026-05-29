@@ -1,9 +1,9 @@
 {
-  "name": "security-review",
+  "name": "security-reviewer",
   "repo": "troykelly/codex-skills",
-  "path": "skills/security-review/SKILL.md",
+  "path": "skills/security-reviewer/SKILL.md",
   "source": "github.com/troykelly/codex-skills",
-  "downloaded_at": "2026-01-22T04:02:56.345574Z",
+  "downloaded_at": "2026-01-22T04:02:57.398407Z",
   "dir_name": "security-review-troykelly-codex-skills",
   "category": "security",
   "github_path": "skills/security-reviewer",

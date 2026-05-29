@@ -1,0 +1,18 @@
+{
+  "name": "recursive-string-diagrams",
+  "repo": "plurigrid/asi",
+  "path": "skills/recursive-string-diagrams/SKILL.md",
+  "source": "github.com/plurigrid/asi",
+  "downloaded_at": "2026-01-20T01:34:54.819762Z",
+  "dir_name": "recursive-string-diagrams",
+  "category": "ai-ml",
+  "github_path": "skills/recursive-string-diagrams",
+  "github_branch": "main",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/recursive-string-diagrams/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

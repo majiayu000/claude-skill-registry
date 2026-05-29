@@ -1,7 +1,10 @@
 ---
 name: ln-114-frontend-docs-creator
-description: Creates design_guidelines.md for frontend projects. L3 Worker invoked CONDITIONALLY when hasFrontend detected.
+description: "Creates design_guidelines.md with WCAG 2.1 compliance and design system docs. Use when project has a frontend."
+license: MIT
 ---
+
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Frontend Documentation Creator
 
@@ -12,6 +15,7 @@ L3 Worker that creates design_guidelines.md. CONDITIONAL - only invoked when pro
 - Receives Context Store from ln-110-project-docs-coordinator
 - WCAG 2.1 Level AA accessibility compliance
 - Design system documentation
+- **Downstream consumers:** `design_guidelines.md` is loaded by ln-401 (Frontend Guard) and ln-402 (Frontend Review Checks) for runtime design validation against implementation
 - Never gathers context itself; uses coordinator input
 
 ## Invocation (who/when)
@@ -92,16 +96,17 @@ Design guidelines document **visual standards**, NOT code:
 Tables (colors, typography, spacing) > Lists (component inventory) > Text
 
 ## Definition of Done
-- Condition checked (hasFrontend)
-- Document created if applicable
-- Design system, typography, colors documented
-- WCAG references included
-- Status returned to coordinator
+- [ ] Condition checked (hasFrontend)
+- [ ] Document created if applicable
+- [ ] Design system, typography, colors documented
+- [ ] WCAG references included
+- [ ] **Actuality verified:** all document facts match current code (paths, functions, APIs, configs exist and are accurate)
+- [ ] Status returned to coordinator
 
 ## Reference Files
 - Templates: `references/templates/design_guidelines_template.md`
 - Questions: `references/questions_frontend.md` (Q43-Q45)
 
 ---
-**Version:** 1.1.0 (Added NO_CODE, Stack Adaptation, Format Priority rules)
+**Version:** 1.1.0
 **Last Updated:** 2025-01-12

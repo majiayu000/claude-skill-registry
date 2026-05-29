@@ -1,6 +1,6 @@
 ---
 name: debug-detective
-description: Systematic debugging approach for ANY codebase, ANY language, ANY bug type. Use when facing unexpected behavior, crashes, performance issues, or intermittent problems.
+description: "Systematic debugging approach for ANY codebase, ANY language, ANY bug type"
 ---
 
 # Debug Detective - Systematic Bug Hunting
@@ -8,7 +8,6 @@ description: Systematic debugging approach for ANY codebase, ANY language, ANY b
 ## 🎯 When to Use This Skill
 
 Use when facing ANY bug:
-
 - Unexpected behavior
 - Crashes or errors
 - Performance issues
@@ -18,7 +17,6 @@ Use when facing ANY bug:
 ## ⚡ Quick Start (Find bugs in 5 steps)
 
 ### The Universal Debug Protocol:
-
 1. **REPRODUCE** - Can you make it happen again?
 2. **ISOLATE** - Where exactly is it breaking?
 3. **UNDERSTAND** - Why is it breaking?
@@ -28,13 +26,11 @@ Use when facing ANY bug:
 ## 🔍 Step 1: REPRODUCE
 
 ### WITH MCP Tools:
-
 ```
 "Help me create a minimal reproduction for this bug: [describe bug]"
 ```
 
 ### WITHOUT MCP:
-
 ```bash
 # Document the exact steps:
 echo "=== BUG REPRODUCTION ===" > bug_report.md
@@ -48,7 +44,6 @@ echo "5. Actual: [what actually happens]" >> bug_report.md
 ```
 
 ### Quick Tests:
-
 ```bash
 # Different environments
 NODE_ENV=production npm start  # Production mode?
@@ -65,7 +60,6 @@ docker run ...                 # Container issue?
 ## 🎯 Step 2: ISOLATE
 
 ### WITH MCP (Architecture Analyzer):
-
 ```
 "Trace the execution flow for [feature name]"
 "Find all places where [variable/function] is used"
@@ -74,7 +68,6 @@ docker run ...                 # Container issue?
 ### WITHOUT MCP:
 
 #### Binary Search Method:
-
 ```bash
 # Cut the problem in half repeatedly
 # 1. Add midpoint log
@@ -85,7 +78,6 @@ console.log('=== MIDPOINT: Data here:', data);
 ```
 
 #### Breadcrumb Trail:
-
 ```javascript
 // Add numbered checkpoints
 console.log('🔍 1: Starting process');
@@ -96,7 +88,6 @@ console.log('🔍 4: Saving results');
 ```
 
 #### Git Bisect (for regressions):
-
 ```bash
 git bisect start
 git bisect bad HEAD           # Current version is broken
@@ -107,7 +98,6 @@ git bisect good v1.2.3         # This version worked
 ## 🧠 Step 3: UNDERSTAND
 
 ### WITH MCP (Smart Reviewer):
-
 ```
 "Analyze this function for potential issues: [paste code]"
 "What could cause [error message]?"
@@ -116,7 +106,6 @@ git bisect good v1.2.3         # This version worked
 ### WITHOUT MCP:
 
 #### The 5 Whys Technique:
-
 ```
 Problem: App crashes on user login
 Why? → Authentication fails
@@ -130,10 +119,9 @@ Root cause found!
 #### Common Bug Patterns Check:
 
 **Race Conditions:**
-
 ```javascript
 // Look for async without await
-someAsyncCall(); // Missing await?
+someAsyncCall();  // Missing await?
 doSomethingElse(); // This runs immediately!
 
 // Fix:
@@ -142,22 +130,19 @@ doSomethingElse();
 ```
 
 **Off-by-One Errors:**
-
 ```javascript
 // Check loop boundaries
 for (let i = 0; i <= array.length; i++)  // Should be < not <=
 ```
 
 **Type Mismatches:**
-
 ```javascript
 // Check for type coercion issues
-'1' + 1 === '11'; // String concatenation
-'1' - 1 === 0; // Number coercion
+"1" + 1 === "11"  // String concatenation
+"1" - 1 === 0     // Number coercion
 ```
 
 **Null/Undefined:**
-
 ```javascript
 // Add defensive checks
 const result = data?.user?.name ?? 'default';
@@ -166,7 +151,6 @@ const result = data?.user?.name ?? 'default';
 ## 🔧 Step 4: FIX
 
 ### WITH MCP (Refactor Assistant):
-
 ```
 "Fix this bug with minimal changes: [describe issue and paste code]"
 ```
@@ -174,14 +158,12 @@ const result = data?.user?.name ?? 'default';
 ### WITHOUT MCP:
 
 #### Minimal Fix Approach:
-
 1. **Smallest possible change** that fixes the issue
 2. **Don't refactor** while fixing (separate concerns)
 3. **Add defensive code** to prevent recurrence
 4. **Document the fix** with a comment
 
 #### Fix Template:
-
 ```javascript
 // BUG FIX: [Issue description]
 // Problem: [What was wrong]
@@ -201,7 +183,6 @@ if (user && user.role === 'admin') {
 ## ✅ Step 5: VERIFY
 
 ### WITH MCP (Test Generator):
-
 ```
 "Generate a test that verifies this bug is fixed"
 ```
@@ -209,7 +190,6 @@ if (user && user.role === 'admin') {
 ### WITHOUT MCP:
 
 #### Verification Checklist:
-
 ```bash
 # 1. Original bug fixed?
 [Run reproduction steps]
@@ -229,7 +209,6 @@ time npm start  # Basic performance check
 ```
 
 #### Regression Test:
-
 ```javascript
 // Add a test to prevent this bug from returning
 describe('Bug #123 - Login crash', () => {
@@ -246,7 +225,6 @@ describe('Bug #123 - Login crash', () => {
 ### Universal Quick Checks:
 
 #### Memory Issues:
-
 ```bash
 # Node.js
 node --inspect app.js  # Open chrome://inspect
@@ -259,7 +237,6 @@ jmap -dump:file=heap.bin <pid>
 ```
 
 #### CPU Issues:
-
 ```bash
 # Linux/Mac
 top -p <pid>
@@ -270,7 +247,6 @@ node --prof-process isolate-*.log
 ```
 
 #### Network Issues:
-
 ```bash
 # Check requests
 curl -v https://api.example.com
@@ -281,7 +257,6 @@ tcpdump -i any port 3000
 ## 🎯 Debug Strategies by Bug Type
 
 ### "Works on my machine":
-
 1. Check environment variables
 2. Compare dependency versions
 3. Check OS-specific code
@@ -289,7 +264,6 @@ tcpdump -i any port 3000
 5. Check timezone/locale differences
 
 ### Intermittent bugs:
-
 1. Add extensive logging
 2. Check race conditions
 3. Monitor resource usage
@@ -297,7 +271,6 @@ tcpdump -i any port 3000
 5. Use stress testing
 
 ### Performance degradation:
-
 1. Profile before/after
 2. Check database queries
 3. Look for N+1 problems
@@ -307,7 +280,6 @@ tcpdump -i any port 3000
 ## 💡 Pro Tips
 
 ### The Rubber Duck Method:
-
 ```markdown
 1. Explain the bug to a rubber duck (or colleague)
 2. Step through the code line by line
@@ -315,7 +287,6 @@ tcpdump -i any port 3000
 ```
 
 ### Fresh Eyes Technique:
-
 ```bash
 # After 30 minutes stuck:
 git stash          # Save work
@@ -325,7 +296,6 @@ git stash pop      # Return with fresh eyes
 ```
 
 ### Sanity Checks:
-
 ```bash
 # Is it plugged in?
 - Server running?
@@ -341,29 +311,23 @@ Keep a debug log for complex issues:
 
 ```markdown
 ## Bug: [Description]
-
 **Date:** [Date]
 **Severity:** Critical/High/Medium/Low
 
 ### Symptoms:
-
 -
 
 ### Reproduction:
-
 1.
 
 ### Hypotheses Tested:
-
 - [ ] Hypothesis 1: [Result]
 - [ ] Hypothesis 2: [Result]
 
 ### Solution:
-
 -
 
 ### Lessons Learned:
-
 -
 ```
 

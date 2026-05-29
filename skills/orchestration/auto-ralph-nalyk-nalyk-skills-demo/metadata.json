@@ -1,0 +1,18 @@
+{
+  "name": "auto-ralph",
+  "repo": "nalyk/nalyk-skills-demo",
+  "path": "plugins/auto-ralph/skills/auto-ralph/SKILL.md",
+  "source": "github.com/nalyk/nalyk-skills-demo",
+  "downloaded_at": "2026-01-21T01:00:08.739852Z",
+  "dir_name": "auto-ralph-nalyk-nalyk-skills-demo",
+  "category": "orchestration",
+  "github_path": "plugins/auto-ralph/skills/auto-ralph",
+  "github_branch": "main",
+  "author": "nalyk",
+  "source_url": "https://github.com/nalyk/nalyk-skills-demo/blob/main/plugins/auto-ralph/skills/auto-ralph/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nalyk/nalyk-skills-demo/blob/main/plugins/auto-ralph/skills/auto-ralph/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,11 +1,18 @@
 ---
 name: ln-130-tasks-docs-creator
-description: Creates task management documentation (docs/tasks/README.md + kanban_board.md). L2 Worker in ln-100-documents-pipeline. Sets up Linear integration and task tracking rules.
+description: "Creates task management docs (kanban board, workflow rules) with Linear integration. Use when setting up task tracking for a project."
+license: MIT
 ---
+
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Tasks Documentation Creator
 
 This skill creates task management documentation: docs/tasks/README.md (task management system rules) and docs/tasks/kanban_board.md (Linear integration with Epic Story Counters).
+
+## Purpose
+
+Create and validate task management documentation (docs/tasks/). Generates README.md with workflow rules and kanban_board.md with Linear integration, including interactive setup for team UUID/Key configuration.
 
 ## When to Use This Skill
 
@@ -19,7 +26,7 @@ Use this skill when:
 
 **Part of workflow**: ln-100-documents-pipeline → ln-110-project-docs-coordinator → ln-120-reference-docs-creator → **ln-130-tasks-docs-creator** → ln-140-test-docs-creator (optional) → ln-150-presentation-creator
 
-## How It Works
+## Workflow
 
 The skill follows a **3-phase workflow**: CREATE → VALIDATE STRUCTURE → VALIDATE CONTENT.
 
@@ -50,7 +57,8 @@ The skill follows a **3-phase workflow**: CREATE → VALIDATE STRUCTURE → VALI
    - Create the `docs/tasks/` directory if it doesn't exist
 
 3. **Create tasks/README.md from template**:
-   - Copy template: `references/tasks_readme_template.md` (v2.0.0) → `docs/tasks/README.md`
+   - **MANDATORY READ:** Load `references/tasks_readme_template.md`
+   - Copy template → `docs/tasks/README.md`
    - Replace placeholders:
      - `{{DATE}}` → current date (YYYY-MM-DD)
    - Template contains:
@@ -92,9 +100,7 @@ For each file:
 
 ### 2.2 Validate required sections
 
-**Load validation spec**:
-- Read `references/questions.md`
-- Extract section names from questions
+**MANDATORY READ:** Load `references/questions.md` for validation specs (section names, heuristics, special handling rules).
 
 **For tasks/README.md**:
 - Required sections (from questions.md):
@@ -180,9 +186,7 @@ If violations found: `⚠ Auto-fixed {total} structural violations`
 
 ### 3.1 Load validation spec
 
-1. Read `references/questions.md`
-2. Parse document sections and questions
-3. Extract validation heuristics for each section
+**MANDATORY READ:** Load `references/questions.md` — parse sections and extract validation heuristics.
 
 ### 3.2 Validate kanban_board.md → Linear Configuration (Special Handling)
 
@@ -375,123 +379,30 @@ docs/
 
 ---
 
-## Reference Files Used
+## Reference Files
 
-### Templates
-
-**Tasks README Template**:
-- `references/tasks_readme_template.md` (v2.0.0) - Task management system rules with:
-  - SCOPE tags (task management ONLY)
-  - Story-Level Test Task Pattern (tests in final Story task, NOT scattered)
-  - Kanban Board Structure (Epic Grouping Pattern with Status → Epic → Story → Tasks hierarchy)
-  - Linear Integration (MCP methods: create_project, create_issue, update_issue, list_issues)
-  - Maintenance section (Update Triggers, Verification, Last Updated)
-
-**Kanban Board Template**:
-- `references/kanban_board_template.md` (v3.0.0) - Linear integration template with:
-  - Linear Configuration table (Team Name, UUID, Key, Workspace URL)
-  - Epic Story Counters table (Next Epic Number, Story counters per Epic)
-  - Kanban sections: Backlog, Todo (✅ APPROVED), In Progress, To Review, To Rework, Done (Last 5 tasks), Postponed
-  - Epic Grouping Pattern format (Epic header → 📖 Story → Task with indentation)
-  - Placeholders for Epic/Story/Task entries
-
-### Validation Specification
-
-**questions.md**:
-- `references/questions.md` (v1.0) - Validation questions for task management documentation:
-  - 5 sections (3 for tasks/README.md, 2 for kanban_board.md)
-  - Question format: Question → Expected Content → Validation Heuristics → Auto-Discovery Hints → MCP Ref Hints
-  - Special handling section for Linear Configuration (placeholder detection, UUID/Team Key validation)
+- `references/tasks_readme_template.md` — Task management system rules template
+- `references/kanban_board_template.md` — Linear integration + kanban template
+- `references/questions.md` — Validation questions, heuristics, special handling rules
 
 ---
 
-## Best Practices
+## Critical Rules
 
-- **Story-Level Test Task Pattern**: Tests consolidated in final Story task, NOT scattered across implementation tasks
-- **Epic Grouping Pattern**: Epic context always visible, 0/2/4 space indentation (Epic → Story → Tasks)
-- **Linear MCP**: All task operations use Linear MCP methods (create_project, create_issue, update_issue)
-- **SCOPE Tags**: Include in first 3-5 lines of all documentation files
-- **Idempotent**: Can be invoked multiple times - checks file existence, preserves existing files, re-validates on each run
-
-### Documentation Standards
-- **NO_CODE Rule:** Task docs describe workflows, not implementations
-- **Stack Adaptation:** References must match project stack
-- **Format Priority:** Tables (states, transitions) > Lists > Text
-
----
-
-## Prerequisites
-
-**Orchestrator**: ln-110-documents-pipeline (invokes this worker in Phase 3, Step 3.3)
-
-**Standalone usage**: Creating task docs, re-validating, setting up Linear Configuration
-
-**Idempotent**: Yes - checks file existence, re-validates, auto-fixes, updates Linear Configuration if placeholders detected
-
----
+- **Idempotent:** Checks file existence before creation; preserves existing files; safe to re-run
+- **Linear UUID validation:** Team UUID must match `/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/`; Team Key must match `/^[A-Z]{2,4}$/`
+- **Placeholder detection:** If `[TEAM_NAME]`, `[TEAM_UUID]`, or `[TEAM_KEY]` found in kanban_board.md, enter interactive setup mode and prompt user
+- **SCOPE tags required:** Both README.md and kanban_board.md must have `<!-- SCOPE: ... -->` in first 5 lines
+- **Story-Level Test Task Pattern:** Tests consolidated in final Story task, not scattered across implementation tasks
 
 ## Definition of Done
 
-Before completing work, verify ALL checkpoints:
-
-### Phase 1: CREATE
-
-**✅ tasks/README.md:**
-- [ ] `docs/tasks/` directory created (if didn't exist)
-- [ ] `docs/tasks/README.md` created from template (if didn't exist) OR preserved (if existed)
-- [ ] All `{{DATE}}` placeholders replaced with current date
-- [ ] Template contains SCOPE tags, Story-Level Test Task Pattern, Kanban Board Structure, Linear Integration, Maintenance section
-- [ ] User notified: created OR preserved
-
-### Phase 2: VALIDATE STRUCTURE
-
-**✅ tasks/README.md:**
-- [ ] SCOPE tag present in first 5 lines OR auto-fixed
-- [ ] Required sections present (Linear Integration/Core Concepts, Task Workflow/Critical Rules, Task Templates) OR auto-fixed
-- [ ] Maintenance section present at end OR auto-fixed
-- [ ] POSIX line ending present OR auto-fixed
-- [ ] Validation summary logged
-
-**✅ kanban_board.md (if exists):**
-- [ ] SCOPE tag present OR auto-fixed
-- [ ] Required sections present (Linear Configuration, Work in Progress/Epic Tracking) OR auto-fixed
-- [ ] Maintenance section present OR auto-fixed
-- [ ] POSIX line ending present OR auto-fixed
-- [ ] Validation summary logged
-
-### Phase 3: VALIDATE CONTENT
-
-**✅ tasks/README.md:**
-- [ ] Linear Integration section validated (contains "Linear" OR "MCP" OR team ID OR workflow states OR length > 100 words)
-- [ ] Task Workflow section validated (contains workflow states OR review criteria OR length > 60 words)
-- [ ] Task Templates section validated (contains "template" OR Epic/Story/Task OR links OR length > 40 words)
-- [ ] Validation summary logged
-
-**✅ kanban_board.md (if exists):**
-- [ ] Linear Configuration section validated:
-  - [ ] If placeholders detected ([TEAM_NAME], [TEAM_UUID], [TEAM_KEY]):
-    - [ ] User prompted for Team Name (non-empty validation)
-    - [ ] User prompted for Team UUID (regex validation: `/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/`)
-    - [ ] User prompted for Team Key (regex validation: `/^[A-Z]{2,4}$/`)
-    - [ ] Placeholders replaced with user input
-    - [ ] Next Epic Number set to 1
-    - [ ] Next Story Number set to 1
-    - [ ] Last Updated date updated
-  - [ ] If real values present:
-    - [ ] Team UUID format validated
-    - [ ] Team Key format validated
-    - [ ] Validation result logged (valid OR invalid with warning)
-- [ ] Epic Tracking section validated (has "Epic" header OR table OR placeholder OR length > 20 words)
-- [ ] Validation summary logged
-
-**✅ Overall:**
-- [ ] Summary message displayed: "✓ Task management documentation validated (3-phase complete)"
-- [ ] User informed about any auto-fixes applied
-- [ ] User informed about Linear Configuration status (if applicable)
-
-**Output:** docs/tasks/README.md + optionally kanban_board.md (validated, auto-fixed where needed, Linear Configuration set up if placeholders found)
+- [ ] Phase 1: tasks/README.md created from template (or preserved if exists), placeholders replaced
+- [ ] Phase 2: Structure valid — SCOPE tags, required sections, Maintenance, POSIX endings (auto-fixed if needed)
+- [ ] Phase 3: Content valid — heuristics pass per questions.md, Linear Configuration set up (if placeholders found)
+- [ ] Summary message displayed with auto-fix count and Linear Configuration status
 
 ---
 
-**Version:** 7.1.0 (Added Documentation Standards section)
+**Version:** 7.1.0
 **Last Updated:** 2025-01-12

@@ -1,0 +1,17 @@
+{
+  "name": "refactor-safe-workflow",
+  "repo": "EtroxTaran/conductor",
+  "path": ".claude/skills/refactor-safe-workflow/SKILL.md",
+  "github_branch": "main",
+  "category": "orchestration",
+  "source": "github.com/EtroxTaran/conductor",
+  "dir_name": "refactor-safe-workflow-etroxtaran-conductor-2",
+  "downloaded_at": "2026-03-01T05:15:30.473312Z",
+  "author": "EtroxTaran",
+  "source_url": "https://github.com/EtroxTaran/conductor/blob/main/.claude/skills/refactor-safe-workflow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/EtroxTaran/conductor/blob/main/.claude/skills/refactor-safe-workflow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

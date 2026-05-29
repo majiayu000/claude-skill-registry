@@ -59,11 +59,16 @@ description: Reviews Elixir documentation for completeness, quality, and ExDoc b
 | Missing doctests | Function is pure AND deterministic |
 | Generic @doc | Doc restates function name without adding value |
 
+## Gates (sequenced — do not skip)
+
+Work in order. **Do not draft or ship a finding until the prior step passes.**
+
+1. **Scope lock** — **Pass when:** You listed the exact `.ex`/`.exs` file paths (or `Module` names) under review; no vague “the project” scope.
+2. **Full-context read** — **Pass when:** For each candidate issue, you read the full surrounding definition (all clauses for multi-clause functions; full `@moduledoc` block for module-level claims), not only a diff hunk or search snippet.
+3. **Evidence bundle** — **Pass when:** Every draft finding uses the `[FILE:LINE] ISSUE_TITLE` header (line range allowed) **and** includes a verbatim quote or pointer to the `@doc` / `@spec` / doctest text in question. `Module.function/arity` may appear as supporting context but does not replace the `[FILE:LINE]` anchor. For “doctest fails” claims, **Pass when:** you cite `mix test` output for the relevant file or line, or the exact error string.
+4. **Protocol before report** — **Pass when:** You loaded and followed [review-verification-protocol](../review-verification-protocol/SKILL.md) (its Pre-Report checklist) **before** finalizing the issue list—not after.
+
 ## When to Load References
 
 - Reviewing @moduledoc or @doc quality, seeing anti-patterns -> doc-quality.md
 - Reviewing @spec, @type, or @typedoc coverage -> spec-coverage.md
-
-## Before Submitting Findings
-
-Load and follow [review-verification-protocol](../review-verification-protocol/SKILL.md) before reporting any issue.

@@ -1,28 +1,36 @@
 ---
 name: architecture-paradigm-microkernel
-description: |
-
-Triggers: extensibility, architecture, platform-design, plugin, microkernel
-  Minimal core system with plugin-based feature extensibility for platform development.
-
-  Triggers: microkernel, plugin-architecture, extensibility, platform-design
-
-  Use when: platforms/IDEs/marketplaces, core stability critical, plugin isolation needed
-  DO NOT use when: selecting paradigms (use architecture-paradigms first), no extensibility needed
-version: 1.3.5
+description: 'Microkernel architecture with a minimal core and plugin-based extensibility for platforms.'
+alwaysApply: false
 category: architectural-pattern
-tags: [architecture, microkernel, plugin, extensibility, platform-design]
+tags:
+- architecture
+- microkernel
+- plugin
+- extensibility
+- platform-design
 dependencies: []
-tools: [plugin-loader, sandbox-executor, sdk-generator]
+tools: []
 usage_patterns:
-  - paradigm-implementation
-  - platform-development
-  - extensibility-design
+- paradigm-implementation
+- platform-development
+- extensibility-design
 complexity: high
+model_hint: deep
 estimated_tokens: 900
 ---
-
 # The Microkernel (Plugin) Architecture Paradigm
+
+
+## When To Use
+
+- Building extensible systems with plugin architectures
+- Products requiring customer-specific customizations
+
+## When NOT To Use
+
+- Monolithic applications without plugin extensibility needs
+- Systems where all features are core and tightly coupled by design
 
 ## When to Employ This Paradigm
 - When building platforms, Integrated Development Environments (IDEs), data ingestion pipelines, or marketplaces where third parties need to extend core functionality.
@@ -48,15 +56,3 @@ estimated_tokens: 900
   - **Mitigation**: Use semantic versioning (SemVer) rigorously for both the core and the plugins. Where necessary, provide abstraction layers or "shims" to maintain backward compatibility with older plugins.
 - **Core System Bloat**:
   - **Mitigation**: There is often pressure to add feature logic to the stable core. Aggressively resist this temptation. The core should remain minimal, with new features implemented as plugins whenever possible.
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

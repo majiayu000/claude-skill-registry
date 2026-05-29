@@ -1,0 +1,17 @@
+{
+  "name": "roundtable-memory-extract",
+  "repo": "Daisuke134/anicca-products",
+  "path": "openclaw-skills/roundtable-memory-extract/SKILL.md",
+  "github_branch": "main",
+  "category": "context-management",
+  "source": "github.com/Daisuke134/anicca-products",
+  "dir_name": "roundtable-memory-extract",
+  "downloaded_at": "2026-03-01T05:08:13.298888Z",
+  "author": "Daisuke134",
+  "source_url": "https://github.com/Daisuke134/anicca-products/blob/main/openclaw-skills/roundtable-memory-extract/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Daisuke134/anicca-products/blob/main/openclaw-skills/roundtable-memory-extract/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

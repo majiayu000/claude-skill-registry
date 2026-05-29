@@ -55,6 +55,31 @@ grep -r "ghp_[a-zA-Z0-9]{36}" . 2>/dev/null  # GitHub personal tokens
 - Commented-out code containing keys
 - Git history (check `git log -p` for deleted secrets)
 
+**Bare Error Detection (Signpost Compliance):**
+
+Grove requires all errors to use Signpost codes. Search for violations:
+
+```bash
+# Find bare throw error() without throwGroveError
+grep -r "throw error(" --include="*.ts" --include="*.js" | grep -v "throwGroveError\|node_modules\|\.test\."
+
+# Find ad-hoc JSON error responses without buildErrorJson
+grep -r "json.*error.*status" --include="*.ts" | grep -v "buildErrorJson\|node_modules"
+
+# Find console.error without logGroveError
+grep -r "console\.error" --include="*.ts" --include="*.svelte" | grep -v "logGroveError\|node_modules"
+
+# Find bare alert() where toast should be used
+grep -r "alert(" --include="*.svelte" --include="*.ts" | grep -v "node_modules"
+```
+
+**Signpost Compliance Checklist:**
+- [ ] No bare `throw error()` — use `throwGroveError()` or `buildErrorJson()`
+- [ ] No `console.error` without `logGroveError()` companion
+- [ ] No ad-hoc JSON error shapes — all use `buildErrorJson()`
+- [ ] No `alert()` — use `toast` from `@autumnsgrove/groveengine/ui`
+- [ ] `adminMessage` never exposed to client responses
+
 **Dependency Check:**
 ```bash
 # Check for known vulnerabilities

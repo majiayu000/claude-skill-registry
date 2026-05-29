@@ -1,0 +1,16 @@
+{
+  "name": "git-integration",
+  "repo": "Meme-Lords/granhackaria-run1",
+  "path": ".agents/skills/gsd/references/git-integration/SKILL.md",
+  "source": "github.com/Meme-Lords/granhackaria-run1",
+  "downloaded_at": "2026-02-02T04:52:00.785707Z",
+  "dir_name": "git-integration",
+  "category": "workflow",
+  "author": "Meme-Lords",
+  "source_url": "https://github.com/Meme-Lords/granhackaria-run1/blob/main/.agents/skills/gsd/references/git-integration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Meme-Lords/granhackaria-run1/blob/main/.agents/skills/gsd/references/git-integration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

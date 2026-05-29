@@ -1,0 +1,16 @@
+{
+  "name": "xml-standards",
+  "repo": "involvex/involvex-claude-marketplace",
+  "path": "plugins/agentdev/skills/xml-standards/SKILL.md",
+  "source": "github.com/involvex/involvex-claude-marketplace",
+  "downloaded_at": "2026-02-02T02:10:44.986904Z",
+  "dir_name": "xml-standards",
+  "category": "agent",
+  "author": "involvex",
+  "source_url": "https://github.com/involvex/involvex-claude-marketplace/blob/main/plugins/agentdev/skills/xml-standards/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/involvex/involvex-claude-marketplace/blob/main/plugins/agentdev/skills/xml-standards/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

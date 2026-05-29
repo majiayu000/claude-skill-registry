@@ -164,16 +164,21 @@ Extend both Ultracite core rules and Sablier devkit overrides. This provides opi
 
 ### Just Task Runner
 
-Import base recipes from devkit and add project-specific tasks as needed. Just provides a modern alternative to npm scripts with better composability.
+Import base recipes from devkit and add only project-specific tasks. The devkit provides common recipes—do not duplicate them.
 
 **Example `justfile`:**
 
 ```just
-import "@sablier/devkit/just/base.just"
+import "./node_modules/@sablier/devkit/just/base.just"
 
-# Project-specific recipe
-custom-task:
-    echo "Running custom task"
+# Default recipe
+default:
+    @just --list
+
+# Project-specific recipes only
+[group("app")]
+build:
+    na tsc
 ```
 
 **For advanced Just CLI usage** (modules, attributes, inline scripts, conditional execution), consult the `just-cli` skill which provides comprehensive guidance on Just's advanced features.
@@ -203,99 +208,51 @@ export default defineConfig({
 
 Execute these commands from the project root using the `just` command.
 
-### Development
+### Recipes from @sablier/devkit
+
+The devkit provides these recipes—**do not redefine them**:
+
+| Recipe           | Alias | Description                                    |
+| ---------------- | ----- | ---------------------------------------------- |
+| `full-check`     | `fc`  | Run all code checks (biome + prettier + types) |
+| `full-write`     | `fw`  | Run all code fixes                             |
+| `biome-check`    | `bc`  | Run Biome linting and formatting checks        |
+| `biome-write`    | `bw`  | Apply Biome fixes                              |
+| `biome-lint`     | `bl`  | Run Biome linter only                          |
+| `type-check`     | `tc`  | TypeScript type checking (tsgo/tsc)            |
+| `tsc-build`      | `tb`  | Build with TypeScript                          |
+| `prettier-check` | `pc`  | Check Prettier formatting                      |
+| `prettier-write` | `pw`  | Apply Prettier formatting                      |
+| `knip-check`     | `kc`  | Check for unused exports/dependencies          |
+| `knip-write`     | `kw`  | Fix unused exports/dependencies                |
+| `clean`          |       | Clean .DS_Store files                          |
+| `clean-modules`  |       | Remove node_modules recursively                |
+| `install`        |       | Install dependencies with ni                   |
+
+### Project-Specific Recipes
+
+Define only what the devkit doesn't provide:
 
 ```bash
-just dev
+just build      # Compile TypeScript (project entry point)
+just dev        # Start development mode with file watching
+just test       # Run tests with Vitest
+just test-ui    # Run tests with Vitest UI
 ```
-
-Start development mode with file watching and auto-reload.
-
-### Build
-
-```bash
-just build
-```
-
-Compile TypeScript to JavaScript in the `dist/` directory.
-
-### Test
-
-```bash
-just test
-```
-
-Run all tests with Vitest.
-
-```bash
-just test-watch
-```
-
-Run tests in watch mode for active development.
-
-### Code Quality
-
-```bash
-just full-check
-```
-
-Run comprehensive checks: TypeScript compilation, Biome linting, Biome formatting, and tests. Use this before commits and in CI pipelines.
-
-```bash
-just full-write
-```
-
-Auto-fix all fixable issues: apply Biome formatting and safe linting fixes.
-
-```bash
-just biome-check
-```
-
-Run only Biome linting and formatting checks without modifying files.
-
-```bash
-just biome-write
-```
-
-Apply Biome formatting and auto-fixes to all source files.
-
-### Clean
-
-```bash
-just clean
-```
-
-Remove generated files (`dist/`, `coverage/`, etc.).
 
 ## Package.json Scripts
 
-Configure standard npm scripts that delegate to Just recipes or run directly.
+Leave empty besides the husky setup. The `justfile` is used to run commands.
 
 **Essential scripts:**
 
 ```json
 {
   "scripts": {
-    "prepare": "husky install",
-    "build": "just build",
-    "test": "just test",
-    "dev": "just dev",
-    "lint": "just biome-check",
-    "format": "just biome-write",
-    "typecheck": "tsc --noEmit"
+    "prepare": "husky install"
   }
 }
 ```
-
-**Script purposes:**
-
-- `prepare` - Runs automatically after `npm install` to set up git hooks
-- `build` - Compiles production bundle
-- `test` - Executes test suite
-- `dev` - Starts development server/watcher
-- `lint` - Checks code quality without modifications
-- `format` - Applies automatic formatting
-- `typecheck` - Verifies TypeScript types without emitting files
 
 ## Directory Structure
 
@@ -429,7 +386,7 @@ Copy these pre-configured files from `resources/` directory to bootstrap new pro
 | `package.json`     | Base package.json with devDependencies (adapt name, description) |
 | `tsconfig.json`    | TypeScript configuration extending devkit                        |
 | `biome.jsonc`      | Linting and formatting rules                                     |
-| `justfile`         | Task automation recipes (build, test, check)                     |
+| `justfile`         | Project-specific recipes only (imports devkit base)              |
 | `vitest.config.ts` | Test framework setup for single repos                            |
 | `vitest.shared.ts` | Shared test config for monorepos                                 |
 | `.prettierrc.js`   | Prettier config extending devkit                                 |
@@ -438,6 +395,8 @@ Copy these pre-configured files from `resources/` directory to bootstrap new pro
 | `.gitignore`       | Standard Node.js exclusions                                      |
 
 **Usage:** Copy files to project root, then adapt `package.json` fields (name, description, author, version).
+
+**Important:** The `justfile` imports `@sablier/devkit/just/base.just` which provides common recipes. Only add project-specific recipes that aren't in the devkit.
 
 ## Reference Documentation
 
@@ -658,13 +617,13 @@ repos:
 ## Next Steps After Setup
 
 1. **Write initial code** in `src/index.ts`
-1. **Add first test** in `test/index.test.ts`
-1. **Run `just full-check`** to verify everything works
-1. **Create initial commit** with all scaffolding
-1. **Set up remote repository** and push
-1. **Configure CI/CD** using GitHub Actions or similar
-1. **Write README.md** with project-specific documentation
-1. **Add LICENSE** file appropriate for your use case
+2. **Add first test** in `test/index.test.ts`
+3. **Run `just full-check`** to verify everything works
+4. **Create initial commit** with all scaffolding
+5. **Set up remote repository** and push
+6. **Configure CI/CD** using GitHub Actions or similar
+7. **Write README.md** with project-specific documentation
+8. **Add LICENSE** file appropriate for your use case
 
 ## Related Skills
 

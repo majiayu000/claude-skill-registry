@@ -1,0 +1,17 @@
+{
+  "name": "handoff",
+  "repo": "haabe/mycelium",
+  "path": "plugins/mycelium/skills/handoff/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/haabe/mycelium",
+  "dir_name": "handoff-haabe-mycelium-2",
+  "downloaded_at": "2026-05-28T04:00:48.610458Z",
+  "author": "haabe",
+  "source_url": "https://github.com/haabe/mycelium/blob/main/plugins/mycelium/skills/handoff/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/haabe/mycelium/blob/main/plugins/mycelium/skills/handoff/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

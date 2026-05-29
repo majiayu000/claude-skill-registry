@@ -1,0 +1,18 @@
+{
+  "name": "chart-generator",
+  "description": "Generate charts and visualizations from data using various charting libraries and formats.",
+  "repo": "CuriousLearner/devkit",
+  "path": "skills/chart-generator",
+  "category": "generation",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CuriousLearner/devkit",
+  "dir_name": "chart-generator-curiouslearner-devkit-2",
+  "author": "CuriousLearner",
+  "source_url": "https://github.com/CuriousLearner/devkit/blob/main/skills/chart-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Sanyam Khurana",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

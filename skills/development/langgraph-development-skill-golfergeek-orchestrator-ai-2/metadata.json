@@ -1,0 +1,18 @@
+{
+  "name": "langgraph-development-skill",
+  "description": "CRITICAL: LangGraph workflows are NestJS applications under apps/langgraph/. They receive the same parameters as n8n workflows and use the same webhook status pattern. Wrap them as API agents.",
+  "repo": "GolferGeek/orchestrator-ai",
+  "path": ".claude/skills/langgraph-development-skill",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GolferGeek/orchestrator-ai",
+  "dir_name": "langgraph-development-skill-golfergeek-orchestrator-ai-2",
+  "author": "GolferGeek",
+  "source_url": "https://github.com/GolferGeek/orchestrator-ai/blob/main/.claude/skills/langgraph-development-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2024 GolferGeek",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

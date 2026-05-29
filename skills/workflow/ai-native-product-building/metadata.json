@@ -1,0 +1,16 @@
+{
+  "name": "ai-native-product-building",
+  "repo": "samarv/Shanon",
+  "path": ".claude/skills/ai-native-product-building/SKILL.md",
+  "source": "github.com/samarv/Shanon",
+  "downloaded_at": "2026-02-02T01:43:25.553042Z",
+  "dir_name": "ai-native-product-building",
+  "category": "workflow",
+  "author": "samarv",
+  "source_url": "https://github.com/samarv/Shanon/blob/main/.claude/skills/ai-native-product-building/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/samarv/Shanon/blob/main/.claude/skills/ai-native-product-building/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

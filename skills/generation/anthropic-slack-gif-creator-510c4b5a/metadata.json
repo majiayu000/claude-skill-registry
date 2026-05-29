@@ -1,0 +1,9 @@
+{
+  "source": "https://github.com/anthropics/skills",
+  "path": "skills/slack-gif-creator/SKILL.md",
+  "branch": "main",
+  "fetched_at": "2026-01-08T03:09:27Z",
+  "name": "anthropic-slack-gif-creator",
+  "category": "generation",
+  "dir_name": "anthropic-slack-gif-creator-510c4b5a"
+}

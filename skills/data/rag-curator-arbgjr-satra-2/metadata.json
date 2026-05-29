@@ -1,0 +1,18 @@
+{
+  "name": "rag-curator",
+  "description": "Curador do corpus RAG. Gerencia adição, organização e manutenção do conhecimento do projeto. Garante qualidade e acessibilidade.",
+  "repo": "arbgjr/satra",
+  "path": ".claude/skills/rag-curator",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/arbgjr/satra",
+  "dir_name": "rag-curator-arbgjr-satra-2",
+  "author": "arbgjr",
+  "source_url": "https://github.com/arbgjr/satra/blob/main/.claude/skills/rag-curator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) [year] [fullname]",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

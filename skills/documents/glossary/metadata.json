@@ -1,0 +1,16 @@
+{
+  "name": "glossary",
+  "repo": "MetaMask/ocap-kernel",
+  "path": ".claude/skills/glossary/SKILL.md",
+  "source": "github.com/MetaMask/ocap-kernel",
+  "downloaded_at": "2026-02-02T03:18:50.085435Z",
+  "dir_name": "glossary",
+  "category": "documents",
+  "author": "MetaMask",
+  "source_url": "https://github.com/MetaMask/ocap-kernel/blob/main/.claude/skills/glossary/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright 2025 Consensys Software Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

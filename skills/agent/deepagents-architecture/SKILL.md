@@ -202,26 +202,27 @@ Subagents receive their own middleware stack by default:
 
 Override with `default_middleware=[]` in SubAgentMiddleware or per-subagent `middleware` key.
 
-## Architecture Decision Checklist
+## Gates: architecture decisions before implementation
 
-Before implementing:
+Complete **in order**. A step **passes** only when the stated artifact exists in the design note, ADR stub, or ticket; internal intent alone does not count.
 
-1. [ ] Is Deep Agents the right tool? (vs LangGraph directly, vs simpler agent)
-2. [ ] Backend strategy chosen?
-   - [ ] Ephemeral only → StateBackend (default)
-   - [ ] Need disk access → FilesystemBackend
-   - [ ] Need cross-thread persistence → StoreBackend or CompositeBackend
-3. [ ] Subagent strategy defined?
-   - [ ] Which tasks benefit from isolation?
-   - [ ] Custom subagents with specialized tools/prompts?
-   - [ ] Parallel execution opportunities identified?
-4. [ ] Human-in-the-loop points defined?
-   - [ ] Which tools need approval?
-   - [ ] Approval flow (approve/edit/reject)?
-5. [ ] Custom middleware needed?
-   - [ ] System prompt injection?
-   - [ ] Request/response transformation?
-6. [ ] Context management considered?
-   - [ ] Long conversations → summarization triggers
-   - [ ] Large file handling → use references
-7. [ ] Checkpointing strategy? (for persistence/resume)
+1. **Fit** - Confirm Deep Agents vs alternatives (see tables above).
+   - **Pass:** Short written rationale that either names one matching "Use Deep Agents When You Need" bullet **or** one "Consider Alternatives" row plus the chosen alternative.
+
+2. **Backend** - Match the Backend Decision Tree to a concrete choice.
+   - **Pass:** Backend name(s) from the Backend Comparison table; if `FilesystemBackend` or `CompositeBackend`, `root_dir` and any route prefixes are written down (path placeholders OK).
+
+3. **Subagents** - Decide delegation boundaries.
+   - **Pass:** Either "no subagents" plus one sentence why **or** a named list where each subagent maps to at least one "When to Use Subagents" reason; parallel plans state what merges outputs.
+
+4. **Human-in-the-loop** - Approval surface.
+   - **Pass:** Explicit list of tools/operations that use `interrupt_on`, **or** "no HITL" plus one-line risk acceptance.
+
+5. **Middleware** - Custom vs built-in only.
+   - **Pass:** Either "custom middleware: none" **or** each custom piece named, placed after the built-in stack, and tied to prompt injection, tools, or request/response transforms.
+
+6. **Context** - Long threads and large inputs.
+   - **Pass:** Stated plan for default summarization behavior (~85% context / ~170k tokens) or an alternative cap; large files handled via references/chunking or equivalent, named in text.
+
+7. **Checkpointing** - Resume and durability.
+   - **Pass:** Checkpoint/checkpointer approach named for the graph **or** "none" with one-line rationale (e.g. ephemeral demo only).

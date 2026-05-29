@@ -1,0 +1,17 @@
+{
+  "name": "ln-015-hex-line-uninstaller",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "skills-catalog/ln-015-hex-line-uninstaller/SKILL.md",
+  "github_branch": "master",
+  "category": "platform",
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-015-hex-line-uninstaller",
+  "downloaded_at": "2026-05-02T01:52:59.933814Z",
+  "author": "levnikolaevich",
+  "source_url": "https://github.com/levnikolaevich/claude-code-skills/blob/master/skills-catalog/ln-015-hex-line-uninstaller/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/levnikolaevich/claude-code-skills/blob/master/skills-catalog/ln-015-hex-line-uninstaller/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

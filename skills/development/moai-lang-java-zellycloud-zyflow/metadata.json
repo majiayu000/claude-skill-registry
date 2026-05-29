@@ -1,9 +1,9 @@
 {
-  "name": "moai-lang-java",
+  "name": "moai-lang-javascript",
   "repo": "zellycloud/zyflow",
-  "path": ".claude/skills/moai-lang-java/SKILL.md",
+  "path": ".claude/skills/moai-lang-javascript/SKILL.md",
   "source": "github.com/zellycloud/zyflow",
-  "downloaded_at": "2026-01-22T04:03:53.145656Z",
+  "downloaded_at": "2026-01-22T04:03:54.227570Z",
   "dir_name": "moai-lang-java-zellycloud-zyflow",
   "category": "development",
   "github_path": ".claude/skills/moai-lang-javascript",

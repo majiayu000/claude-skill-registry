@@ -21,21 +21,22 @@ def _write_skill(
     name: str = "duplicate",
     repo: str = "owner/repo",
     path: str = ".claude/skills/duplicate/SKILL.md",
+    downloaded_at: str | None = "2026-01-01T00:00:00Z",
 ) -> None:
     skill_dir = root / rel
     skill_dir.mkdir(parents=True)
     (skill_dir / "SKILL.md").write_text(body, encoding="utf-8")
+    metadata = {
+        "name": name,
+        "repo": repo,
+        "path": path,
+        "category": Path(rel).parts[0],
+        "dir_name": Path(rel).name,
+    }
+    if downloaded_at is not None:
+        metadata["downloaded_at"] = downloaded_at
     (skill_dir / "metadata.json").write_text(
-        json.dumps(
-            {
-                "name": name,
-                "repo": repo,
-                "path": path,
-                "category": Path(rel).parts[0],
-                "dir_name": Path(rel).name,
-            },
-            indent=2,
-        ),
+        json.dumps(metadata, indent=2),
         encoding="utf-8",
     )
 
@@ -198,3 +199,225 @@ def test_plan_can_allow_metadata_identity_drift_after_review(tmp_path):
     )
 
     assert plan["summary"]["planned_remove_count"] == 1
+
+
+def test_plan_can_replace_target_with_newer_source_content_after_review(tmp_path):
+    cleanup = _load_module()
+    root = tmp_path / "skills"
+    _write_skill(
+        root,
+        "other/content-drift",
+        body="new source",
+        downloaded_at="2026-01-03T00:00:00Z",
+    )
+    _write_skill(
+        root,
+        "development/content-drift",
+        body="old target",
+        downloaded_at="2026-01-02T00:00:00Z",
+    )
+    report_path = tmp_path / "report.json"
+    _write_report(
+        root,
+        report_path,
+        [
+            _detail(
+                root,
+                source_path="other/content-drift",
+                target_path="development/content-drift",
+                skill_content_equal=False,
+            )
+        ],
+    )
+
+    plan = cleanup.build_cleanup_plan(
+        residual_report=report_path,
+        content_drift_strategy=cleanup.CONTENT_DRIFT_PREFER_NEWER_DOWNLOADED_AT,
+    )
+
+    assert plan["summary"]["planned_remove_count"] == 1
+    assert plan["removals"][0]["operation"] == "replace_target_remove_source"
+    assert plan["removals"][0]["reason"] == "source downloaded_at is newer than target"
+
+    cleanup.apply_cleanup_plan(root, plan)
+
+    assert not (root / "other" / "content-drift").exists()
+    assert (root / "development" / "content-drift" / "SKILL.md").read_text(
+        encoding="utf-8"
+    ) == "new source"
+    metadata = json.loads(
+        (root / "development" / "content-drift" / "metadata.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert metadata["category"] == "development"
+    assert metadata["dir_name"] == "content-drift"
+
+
+def test_plan_removes_source_when_target_is_newer_after_review(tmp_path):
+    cleanup = _load_module()
+    root = tmp_path / "skills"
+    _write_skill(
+        root,
+        "other/content-drift",
+        body="old source",
+        downloaded_at="2026-01-01T00:00:00Z",
+    )
+    _write_skill(
+        root,
+        "development/content-drift",
+        body="new target",
+        downloaded_at="2026-01-02T00:00:00Z",
+    )
+    report_path = tmp_path / "report.json"
+    _write_report(
+        root,
+        report_path,
+        [
+            _detail(
+                root,
+                source_path="other/content-drift",
+                target_path="development/content-drift",
+                skill_content_equal=False,
+            )
+        ],
+    )
+
+    plan = cleanup.build_cleanup_plan(
+        residual_report=report_path,
+        content_drift_strategy=cleanup.CONTENT_DRIFT_PREFER_NEWER_DOWNLOADED_AT,
+    )
+
+    assert plan["removals"][0]["operation"] == "remove_source_keep_target"
+    cleanup.apply_cleanup_plan(root, plan)
+    assert not (root / "other" / "content-drift").exists()
+    assert (root / "development" / "content-drift" / "SKILL.md").read_text(
+        encoding="utf-8"
+    ) == "new target"
+
+
+def test_content_drift_without_downloaded_at_fails_closed(tmp_path):
+    cleanup = _load_module()
+    root = tmp_path / "skills"
+    _write_skill(root, "other/content-drift", body="source", downloaded_at=None)
+    _write_skill(root, "development/content-drift", body="target")
+    report_path = tmp_path / "report.json"
+    _write_report(
+        root,
+        report_path,
+        [
+            _detail(
+                root,
+                source_path="other/content-drift",
+                target_path="development/content-drift",
+                skill_content_equal=False,
+            )
+        ],
+    )
+
+    plan = cleanup.build_cleanup_plan(
+        residual_report=report_path,
+        content_drift_strategy=cleanup.CONTENT_DRIFT_PREFER_NEWER_DOWNLOADED_AT,
+    )
+
+    assert plan["summary"]["planned_remove_count"] == 0
+    assert plan["summary"]["skipped_reasons"] == {
+        "downloaded_at unavailable for content drift": 1
+    }
+
+
+def test_content_drift_can_keep_target_when_downloaded_at_is_missing_after_review(
+    tmp_path,
+):
+    cleanup = _load_module()
+    root = tmp_path / "skills"
+    _write_skill(root, "other/content-drift", body="source", downloaded_at=None)
+    _write_skill(root, "development/content-drift", body="target")
+    report_path = tmp_path / "report.json"
+    _write_report(
+        root,
+        report_path,
+        [
+            _detail(
+                root,
+                source_path="other/content-drift",
+                target_path="development/content-drift",
+                skill_content_equal=False,
+            )
+        ],
+    )
+
+    plan = cleanup.build_cleanup_plan(
+        residual_report=report_path,
+        content_drift_strategy=cleanup.CONTENT_DRIFT_PREFER_NEWER_OR_KEEP_TARGET,
+    )
+
+    assert plan["summary"]["planned_remove_count"] == 1
+    assert plan["removals"][0]["operation"] == "remove_source_keep_target"
+    assert (
+        plan["removals"][0]["reason"]
+        == "target retained because downloaded_at is unavailable"
+    )
+    cleanup.apply_cleanup_plan(root, plan)
+    assert not (root / "other" / "content-drift").exists()
+    assert (root / "development" / "content-drift" / "SKILL.md").read_text(
+        encoding="utf-8"
+    ) == "target"
+
+
+def test_only_newest_source_replaces_shared_target(tmp_path):
+    cleanup = _load_module()
+    root = tmp_path / "skills"
+    _write_skill(
+        root,
+        "other/content-drift-newer",
+        body="newer source",
+        downloaded_at="2026-01-03T00:00:00Z",
+    )
+    _write_skill(
+        root,
+        "other/content-drift-newest",
+        body="newest source",
+        downloaded_at="2026-01-04T00:00:00Z",
+    )
+    _write_skill(
+        root,
+        "development/content-drift",
+        body="old target",
+        downloaded_at="2026-01-02T00:00:00Z",
+    )
+    report_path = tmp_path / "report.json"
+    _write_report(
+        root,
+        report_path,
+        [
+            _detail(
+                root,
+                source_path="other/content-drift-newer",
+                target_path="development/content-drift",
+                skill_content_equal=False,
+            ),
+            _detail(
+                root,
+                source_path="other/content-drift-newest",
+                target_path="development/content-drift",
+                skill_content_equal=False,
+            ),
+        ],
+    )
+
+    plan = cleanup.build_cleanup_plan(
+        residual_report=report_path,
+        content_drift_strategy=cleanup.CONTENT_DRIFT_PREFER_NEWER_DOWNLOADED_AT,
+    )
+
+    assert [removal["operation"] for removal in plan["removals"]] == [
+        "remove_source_keep_target",
+        "replace_target_remove_source",
+    ]
+    cleanup.apply_cleanup_plan(root, plan)
+    assert not (root / "other" / "content-drift-newer").exists()
+    assert not (root / "other" / "content-drift-newest").exists()
+    assert (root / "development" / "content-drift" / "SKILL.md").read_text(
+        encoding="utf-8"
+    ) == "newest source"

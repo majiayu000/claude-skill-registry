@@ -1,0 +1,17 @@
+{
+  "name": "maintain-documentation",
+  "repo": "devopsfactory-io/neptune",
+  "path": ".cursor/skills/maintain-documentation/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/devopsfactory-io/neptune",
+  "dir_name": "maintain-documentation-devopsfactory-io-neptune",
+  "downloaded_at": "2026-03-22T07:44:35.171768Z",
+  "author": "devopsfactory-io",
+  "source_url": "https://github.com/devopsfactory-io/neptune/blob/main/.cursor/skills/maintain-documentation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/devopsfactory-io/neptune/blob/main/.cursor/skills/maintain-documentation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,6 +1,8 @@
 ---
 name: pytest-config
 description: |
+
+Triggers: fixtures, config, configuration, pytest, testing
   Standardized pytest configuration for plugin development with shared test patterns.
 
   Triggers: pytest configuration, conftest, fixtures, test setup
@@ -64,6 +66,7 @@ exclude_lines = [
 precision = 2
 show_missing = true
 ```
+**Verification:** Run `pytest -v` to verify tests pass.
 
 ## Detailed Patterns
 
@@ -85,6 +88,7 @@ Reference in your skill's frontmatter:
 ```yaml
 dependencies: [leyline:pytest-config, leyline:testing-quality-standards]
 ```
+**Verification:** Run `pytest -v` to verify tests pass.
 
 ## Exit Criteria
 
@@ -93,3 +97,15 @@ dependencies: [leyline:pytest-config, leyline:testing-quality-standards]
 - test markers defined and documented
 - coverage configuration enforces quality thresholds
 - CI/CD integration configured for automated testing
+## Troubleshooting
+
+### Common Issues
+
+**Tests not discovered**
+Ensure test files match pattern `test_*.py` or `*_test.py`. Run `pytest --collect-only` to verify.
+
+**Import errors**
+Check that the module being tested is in `PYTHONPATH` or install with `pip install -e .`
+
+**Async tests failing**
+Install pytest-asyncio and decorate test functions with `@pytest.mark.asyncio`

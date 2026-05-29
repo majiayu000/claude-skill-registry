@@ -1,0 +1,18 @@
+{
+  "name": "dev-tools-skills",
+  "description": "Guide for development and code tools skills including document processing, browser automation, testing frameworks, and IDE integrations.",
+  "repo": "gmh5225/awesome-skills",
+  "path": ".claude/skills/dev-tools-skills",
+  "category": "skills",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/gmh5225/awesome-skills",
+  "dir_name": "dev-tools-skills-gmh5225-awesome-skills-2",
+  "author": "gmh5225",
+  "source_url": "https://github.com/gmh5225/awesome-skills/blob/main/.claude/skills/dev-tools-skills/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 gmh5225.eth",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

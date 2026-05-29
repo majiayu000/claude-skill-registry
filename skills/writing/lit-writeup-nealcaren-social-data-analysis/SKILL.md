@@ -115,8 +115,9 @@ See `clusters/` directory for detailed profiles with characteristic paragraph se
 - Integrate citations using appropriate patterns (see `techniques/citation-patterns.md`)
 - Maintain cluster-appropriate hedging level
 - Build toward the turn sentence
+- **Track all citations used** (author, year, context) for bibliography generation
 
-**Output**: Full draft of Theory section.
+**Output**: Full draft of Theory section + `citations-tracking.json`.
 
 > **Pause**: User reviews each subsection (if multiple) or full draft.
 
@@ -148,8 +149,10 @@ See `clusters/` directory for detailed profiles with characteristic paragraph se
 - Verify paragraph functions are clear
 - Ensure smooth transitions
 - Final polish for prose quality
+- **Compile citation list** with Zotero lookup (if MCP available)
+- **Generate bibliography** for reference section
 
-**Output**: Final Theory section with quality memo.
+**Output**: Final Theory section + quality memo + `citations-final.json` + `bibliography.md`.
 
 ---
 

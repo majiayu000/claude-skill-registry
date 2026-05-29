@@ -1,8 +1,12 @@
 ---
 name: ci
-description: "Diagnoses and fixes CI/CD pipeline failures. Use when user mentions CI failures, build errors, test failures, or pipeline issues. Do NOT load for: local builds, standard implementation work, reviews, or setup."
+description: "CIが赤くなったら呼んで。パイプライン消防隊、出動します。Use when user mentions CI failures, build errors, test failures, or pipeline issues. Do NOT load for: local builds, standard implementation work, reviews, or setup."
+description-en: "CI red? Call us. Pipeline fire brigade deploys. Use when user mentions CI failures, build errors, test failures, or pipeline issues. Do NOT load for: local builds, standard implementation work, reviews, or setup."
+description-ja: "CIが赤くなったら呼んで。パイプライン消防隊、出動します。Use when user mentions CI failures, build errors, test failures, or pipeline issues. Do NOT load for: local builds, standard implementation work, reviews, or setup."
 allowed-tools: ["Read", "Grep", "Bash", "Task"]
+user-invocable: false
 context: fork
+argument-hint: "[analyze|fix|run]"
 ---
 
 # CI/CD Skills
@@ -101,6 +105,52 @@ CI 失敗報告
 - [ ] 実装の修正で解決できないか確認した
 
 ユーザーの明示的な承認を待つ
+```
+
+### Git log 拡張フラグの活用（CC 2.1.49+）
+
+CI 失敗時の原因コミット特定に構造化ログを活用します。
+
+#### 原因コミットの特定
+
+```bash
+# 構造化フォーマットでコミット分析
+git log --format="%h|%s|%an|%ad" --date=short -10
+
+# トポロジカル順序で時系列分析
+git log --topo-order --oneline -20
+
+# 変更ファイルと原因の紐付け
+git log --raw --oneline -5
+```
+
+#### 主な活用場面
+
+| 用途 | フラグ | 効果 |
+|------|--------|------|
+| **失敗原因の特定** | `--format="%h|%s"` | コミット一覧の構造化 |
+| **時系列での追跡** | `--topo-order` | マージ順序を考慮した追跡 |
+| **変更影響の把握** | `--raw` | ファイル変更の詳細表示 |
+| **マージ除外分析** | `--cherry-pick --no-merges` | 実コミットのみを抽出 |
+
+#### 出力例
+
+```markdown
+🔍 CI 失敗原因分析
+
+最近のコミット（構造化）:
+| Hash | Subject | Author | Date |
+|------|---------|--------|------|
+| a1b2c3d | feat: update API | Alice | 2026-02-04 |
+| e4f5g6h | test: add tests | Bob | 2026-02-03 |
+
+変更ファイル（--raw）:
+├── src/api/endpoint.ts (Modified) ← 型エラー発生
+├── tests/api.test.ts (Modified)
+└── package.json (Modified)
+
+→ a1b2c3d のコミットが原因の可能性大
+  型エラー: src/api/endpoint.ts:42
 ```
 
 ## サブエージェント連携

@@ -1,0 +1,16 @@
+{
+  "name": "odoo-debugger",
+  "repo": "jamshu/jamshi-marketplace",
+  "path": "plugins/odoo-dev/skills/odoo-debugger/SKILL.md",
+  "source": "github.com/jamshu/jamshi-marketplace",
+  "downloaded_at": "2026-01-28T01:29:10.485557Z",
+  "dir_name": "odoo-debugger-jamshu-jamshi-marketplace",
+  "category": "development",
+  "author": "jamshu",
+  "source_url": "https://github.com/jamshu/jamshi-marketplace/blob/main/plugins/odoo-dev/skills/odoo-debugger/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jamshu/jamshi-marketplace/blob/main/plugins/odoo-dev/skills/odoo-debugger/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

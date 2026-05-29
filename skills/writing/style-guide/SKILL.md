@@ -61,12 +61,12 @@ allowed-tools: Read Write Edit Grep Glob AskUserQuestion
 
 각 카테고리의 완전한 검사 기준, 권위 출처, 예시, 교정 전략은 다음 참조 문서를 확인하세요:
 
-- **어조 및 격식 (1-2)**: [references/tone-consistency.md](references/tone-consistency.md) 참조
-- **용어 통일 (3-4)**: [references/terminology.md](references/terminology.md) 참조
-- **숫자 및 단위 (5-6)**: [references/numbering-units.md](references/numbering-units.md) 참조
-- **목록 구조 (7-8)**: [references/list-structure.md](references/list-structure.md) 참조
-- **인용 및 강조 (9-10)**: [references/quotation-emphasis.md](references/quotation-emphasis.md) 참조
-- **날짜 및 시간 (11-12)**: [references/datetime-reference.md](references/datetime-reference.md) 참조
+- **어조 및 격식 (1-3)**: [references/tone-consistency.md](references/tone-consistency.md) 참조
+- **용어 통일 (4-6)**: [references/terminology.md](references/terminology.md) 참조
+- **숫자 및 단위 (7-9)**: [references/numbering-units.md](references/numbering-units.md) 참조
+- **목록 구조 (10-12)**: [references/list-structure.md](references/list-structure.md) 참조
+- **인용 및 강조 (13-15)**: [references/quotation-emphasis.md](references/quotation-emphasis.md) 참조
+- **날짜 및 시간 (16-19)**: [references/datetime-reference.md](references/datetime-reference.md) 참조
 
 **상세 패턴을 로드해야 할 때**:
 - 해당 카테고리의 불일치를 감지했을 때 특정 참조 파일을 로드하세요

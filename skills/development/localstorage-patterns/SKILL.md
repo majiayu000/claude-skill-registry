@@ -3,7 +3,7 @@ name: localStorage-patterns
 scope: domain
 target: organizador-base-conhecimento
 description: |
-  Comprehensive guide to localStorage patterns for the Plataforma B2B de treinamento técnico corporativo educational platform. This skill covers schema design, error handling strategies, quota management, and synchronization patterns essential for building resilient web applications with client-side persistence.
+  Comprehensive guide to localStorage patterns for the Ultrathink educational platform. This skill covers schema design, error handling strategies, quota management, and synchronization patterns essential for building resilient web applications with client-side persistence.
 
   Learn how to handle common localStorage errors (QuotaExceededError, SecurityError, DOMException), implement graceful degradation, manage storage quotas (5-10MB browser limits, 50KB per note), and sync localStorage with React state. The skill emphasizes defensive programming, user-friendly error messages, and fallback strategies.
 
@@ -24,12 +24,12 @@ allowed-tools: |
 
 # localStorage Patterns
 
-> **Padrões de Persistência Client-Side para Plataforma B2B de treinamento técnico corporativo**
+> **Padrões de Persistência Client-Side para Sistema Educacional Corporativo**
 >
 > **Versão:** 1.0.0
 > **Última Atualização:** 2025-11-19
 > **Target:** localStorage API (Web Storage API)
-> **Projeto:** Plataforma B2B de treinamento técnico corporativo
+> **Projeto:** Organizador de Base de Conhecimento Enterprise
 
 ---
 
@@ -50,7 +50,7 @@ allowed-tools: |
 
 ## 🎯 Overview
 
-Esta skill documenta todos os padrões de uso do **localStorage** no **Plataforma B2B de treinamento técnico corporativo**, um sistema educacional que persiste notas de usuários e progresso de 227 módulos educacionais usando apenas client-side storage.
+Esta skill documenta todos os padrões de uso do **localStorage** no **Organizador de Base de Conhecimento Enterprise**, um sistema educacional que persiste notas de usuários e progresso de 227 módulos educacionais usando apenas client-side storage.
 
 **O que você vai aprender:**
 - Como tratar erros de localStorage de forma robusta (QuotaExceededError, SecurityError)
@@ -192,9 +192,9 @@ function diagnoseLocalStorage() {
     });
   }
 
-  // 4. Listar keys do Plataforma B2B de treinamento técnico corporativo
-  const keys = Object.keys(localStorage).filter(k => k.startsWith('plataforma-b2b_'));
-  console.log('Keys Plataforma B2B de treinamento técnico corporativo:', keys);
+  // 4. Listar keys do Ultrathink
+  const keys = Object.keys(localStorage).filter(k => k.startsWith('ultrathink_'));
+  console.log('Keys Ultrathink:', keys);
   keys.forEach(key => {
     const size = new Blob([localStorage.getItem(key)]).size;
     console.log(`- ${key}: ${(size / 1024).toFixed(2)} KB`);
@@ -250,7 +250,7 @@ Opera:         10 MB por origem
 - 10 MB = ~5.000.000 caracteres
 - Nota de 50KB = ~25.000 caracteres (10 páginas A4)
 
-**Limites do Projeto Plataforma B2B de treinamento técnico corporativo:**
+**Limites do Projeto Ultrathink:**
 - 📝 **Máximo 50KB por nota** (25.000 caracteres)
 - 📊 **5 sistemas × 50KB = 250KB** (notas)
 - 📈 **227 módulos × 100 bytes = 22KB** (progresso)
@@ -272,7 +272,7 @@ Opera:         10 MB por origem
 **Como tratar:**
 ```javascript
 try {
-  localStorage.setItem('plataforma-b2b_notes_c', longText);
+  localStorage.setItem('ultrathink_notes_c', longText);
 } catch (error) {
   if (error.name === 'QuotaExceededError') {
     // Estratégias:
@@ -280,7 +280,7 @@ try {
     clearOldData();
 
     // 2. Tentar salvar em sessionStorage (fallback)
-    sessionStorage.setItem('plataforma-b2b_notes_c_temp', longText);
+    sessionStorage.setItem('ultrathink_notes_c_temp', longText);
 
     // 3. Avisar usuário
     showToast('⚠️ Storage cheio! Dados salvos temporariamente.', 'warning');
@@ -361,7 +361,7 @@ function safeGetItem(key, defaultValue = null) {
 ```javascript
 // ✅ SEMPRE fazer
 function saveNotes(courseId, notes) {
-  const key = `plataforma-b2b_notes_${courseId}`;
+  const key = `ultrathink_notes_${courseId}`;
 
   try {
     localStorage.setItem(key, notes);
@@ -382,7 +382,7 @@ function saveNotes(courseId, notes) {
 
 // ❌ NUNCA fazer
 function saveNotesUnsafe(courseId, notes) {
-  localStorage.setItem(`plataforma-b2b_notes_${courseId}`, notes); // Pode crashar!
+  localStorage.setItem(`ultrathink_notes_${courseId}`, notes); // Pode crashar!
 }
 ```
 
@@ -403,7 +403,7 @@ function useAutoSaveNotes(courseId) {
   // Carregar ao montar
   useEffect(() => {
     try {
-      const saved = localStorage.getItem(`plataforma-b2b_notes_${courseId}`);
+      const saved = localStorage.getItem(`ultrathink_notes_${courseId}`);
       if (saved) setNotes(saved);
     } catch (error) {
       console.warn('localStorage indisponível, usando memória');
@@ -419,7 +419,7 @@ function useAutoSaveNotes(courseId) {
       setSaveStatus('saving');
 
       try {
-        localStorage.setItem(`plataforma-b2b_notes_${courseId}`, notes);
+        localStorage.setItem(`ultrathink_notes_${courseId}`, notes);
         setSaveStatus('saved');
       } catch (error) {
         console.error('Erro ao salvar:', error);
@@ -427,7 +427,7 @@ function useAutoSaveNotes(courseId) {
 
         if (error.name === 'QuotaExceededError') {
           // Fallback: sessionStorage
-          sessionStorage.setItem(`plataforma-b2b_notes_${courseId}_temp`, notes);
+          sessionStorage.setItem(`ultrathink_notes_${courseId}_temp`, notes);
         }
       }
     }, 1000); // Debounce 1s
@@ -584,7 +584,7 @@ function clearOldData(daysThreshold = 90) {
   let freedBytes = 0;
 
   keys.forEach(key => {
-    if (!key.startsWith('plataforma-b2b_')) return;
+    if (!key.startsWith('ultrathink_')) return;
 
     try {
       const data = JSON.parse(localStorage.getItem(key));
@@ -683,32 +683,32 @@ function migrateNotesSchema(key) {
 
 **Convenção do Projeto:**
 ```javascript
-// Namespace: plataforma-b2b_<tipo>_<identificador>
+// Namespace: ultrathink_<tipo>_<identificador>
 
 // Notas por curso
-'plataforma-b2b_notes_bash'
-'plataforma-b2b_notes_c'
-'plataforma-b2b_notes_rust'
+'ultrathink_notes_bash'
+'ultrathink_notes_c'
+'ultrathink_notes_rust'
 
 // Progresso por curso
-'plataforma-b2b_progress_bash'
-'plataforma-b2b_progress_c'
-'plataforma-b2b_progress_rust'
+'ultrathink_progress_bash'
+'ultrathink_progress_c'
+'ultrathink_progress_rust'
 
 // Configurações globais
-'plataforma-b2b_settings_theme'
-'plataforma-b2b_settings_language'
+'ultrathink_settings_theme'
+'ultrathink_settings_language'
 
 // Sessão temporária
-'plataforma-b2b_session_current_view'
+'ultrathink_session_current_view'
 
 // Função helper
 function getKey(type, identifier) {
-  return `plataforma-b2b_${type}_${identifier}`;
+  return `ultrathink_${type}_${identifier}`;
 }
 
 // Uso
-const key = getKey('notes', 'bash'); // 'plataforma-b2b_notes_bash'
+const key = getKey('notes', 'bash'); // 'ultrathink_notes_bash'
 ```
 
 ---
@@ -736,7 +736,7 @@ const key = getKey('notes', 'bash'); // 'plataforma-b2b_notes_bash'
 // Operações CRUD
 class CourseProgress {
   constructor(courseId, totalModules) {
-    this.key = `plataforma-b2b_progress_${courseId}`;
+    this.key = `ultrathink_progress_${courseId}`;
     this.courseId = courseId;
     this.totalModules = totalModules;
   }
@@ -926,7 +926,7 @@ export function useAutoSaveNotes(courseId, debounceMs = 1000) {
   const [storageAvailable, setStorageAvailable] = useState(true);
   const timerRef = useRef(null);
 
-  const key = `plataforma-b2b_notes_${courseId}`;
+  const key = `ultrathink_notes_${courseId}`;
 
   // Carregar notas ao montar
   useEffect(() => {
@@ -1035,7 +1035,7 @@ import { useState, useEffect, useCallback } from 'react';
  */
 export function useModuleProgress(courseId, totalModules) {
   const [completed, setCompleted] = useState([]);
-  const key = `plataforma-b2b_progress_${courseId}`;
+  const key = `ultrathink_progress_${courseId}`;
 
   // Carregar progresso ao montar
   useEffect(() => {
@@ -1301,7 +1301,7 @@ console.log(`Total usado: ${calculateTotalSize()} MB`);
 function clearOldData() {
   const keys = Object.keys(localStorage);
   keys.forEach(key => {
-    if (!key.startsWith('plataforma-b2b_')) return;
+    if (!key.startsWith('ultrathink_')) return;
 
     try {
       const data = JSON.parse(localStorage.getItem(key));
@@ -1338,7 +1338,7 @@ try {
 **Diagnóstico:**
 ```javascript
 function validateLocalStorageData() {
-  const keys = Object.keys(localStorage).filter(k => k.startsWith('plataforma-b2b_'));
+  const keys = Object.keys(localStorage).filter(k => k.startsWith('ultrathink_'));
 
   keys.forEach(key => {
     try {
@@ -1370,7 +1370,7 @@ function safeGetItem(key, defaultValue = null) {
 }
 
 // Uso
-const notes = safeGetItem('plataforma-b2b_notes_c', '');
+const notes = safeGetItem('ultrathink_notes_c', '');
 ```
 
 ---
@@ -1384,14 +1384,14 @@ const notes = safeGetItem('plataforma-b2b_notes_c', '');
 **Diagnóstico:**
 ```javascript
 // Verificar se key está correta
-console.log('Keys Plataforma B2B de treinamento técnico corporativo:', Object.keys(localStorage).filter(k => k.startsWith('plataforma-b2b_')));
+console.log('Keys Ultrathink:', Object.keys(localStorage).filter(k => k.startsWith('ultrathink_')));
 
 // Verificar em outra tab (mesmo domínio)
 // localStorage é compartilhado entre tabs da mesma origem
 ```
 
 **Causas comuns:**
-1. Key incorreta (`plataforma-b2b_notes_c` vs `c-learning-notes`)
+1. Key incorreta (`ultrathink_notes_c` vs `c-learning-notes`)
 2. Limpar storage ao desmontar (erro de código)
 3. Browser limpa localStorage (configuração)
 
@@ -1399,8 +1399,8 @@ console.log('Keys Plataforma B2B de treinamento técnico corporativo:', Object.k
 ```javascript
 // Usar constantes para keys
 const STORAGE_KEYS = {
-  notes: (courseId) => `plataforma-b2b_notes_${courseId}`,
-  progress: (courseId) => `plataforma-b2b_progress_${courseId}`
+  notes: (courseId) => `ultrathink_notes_${courseId}`,
+  progress: (courseId) => `ultrathink_progress_${courseId}`
 };
 
 // Nunca limpar ao desmontar
@@ -1460,7 +1460,7 @@ function useDebouncedLocalStorage(key, value, delay = 1000) {
 ### Skills Relacionadas
 
 - **[react-components-patterns](../react-components-patterns/SKILL.md)** - Hooks customizados (useAutoSaveNotes)
-- **[platform-architecture](../platform-architecture/SKILL.md)** - Arquitetura e localStorage keys
+- **[ultrathink-arch](../ultrathink-arch/SKILL.md)** - Arquitetura e localStorage keys
 - **[system-state-management](../system-state-management/SKILL.md)** - Sincronização localStorage ↔ React
 
 ### Documentação Técnica

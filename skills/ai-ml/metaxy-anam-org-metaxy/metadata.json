@@ -2,15 +2,16 @@
   "name": "metaxy",
   "repo": "anam-org/metaxy",
   "path": ".claude-plugin/skills/metaxy/SKILL.md",
-  "source": "github.com/anam-org/metaxy",
-  "downloaded_at": "2026-01-29T05:16:35.671393Z",
-  "dir_name": "metaxy-anam-org-metaxy",
+  "github_branch": "main",
   "category": "ai-ml",
+  "source": "github.com/anam-org/metaxy",
+  "dir_name": "metaxy-anam-org-metaxy",
+  "downloaded_at": "2026-03-22T06:55:00.522257Z",
   "author": "anam-org",
   "source_url": "https://github.com/anam-org/metaxy/blob/main/.claude-plugin/skills/metaxy/SKILL.md",
-  "license": "Apache-2.0",
+  "license": "NOASSERTION",
   "copyright": "Copyright belongs to upstream author(s); see https://github.com/anam-org/metaxy/blob/main/.claude-plugin/skills/metaxy/SKILL.md",
-  "permission_note": "Use according to upstream license terms and attribution requirements.",
-  "distribution": "compatible",
-  "license_class": "compatible"
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

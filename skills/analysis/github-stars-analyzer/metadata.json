@@ -1,0 +1,16 @@
+{
+  "name": "github-stars-analyzer",
+  "repo": "chaorenex1/coding-workflow",
+  "path": "skills/github-stars-analyzer/SKILL.md",
+  "source": "github.com/chaorenex1/coding-workflow",
+  "downloaded_at": "2026-01-30T01:00:37.352927Z",
+  "dir_name": "github-stars-analyzer",
+  "category": "analysis",
+  "author": "chaorenex1",
+  "source_url": "https://github.com/chaorenex1/coding-workflow/blob/main/skills/github-stars-analyzer/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 chaorenex1",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

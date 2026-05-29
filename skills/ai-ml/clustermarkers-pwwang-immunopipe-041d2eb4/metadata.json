@@ -1,9 +1,9 @@
 {
-  "name": "clustermarkers",
+  "name": "clustermarkersofallcells",
   "repo": "pwwang/immunopipe",
-  "path": "skills/clustermarkers/SKILL.md",
+  "path": "skills/clustermarkersofallcells/SKILL.md",
   "source": "github.com/pwwang/immunopipe",
-  "downloaded_at": "2026-01-22T03:34:33.969652Z",
+  "downloaded_at": "2026-01-22T03:34:36.279600Z",
   "dir_name": "clustermarkers-pwwang-immunopipe-041d2eb4",
   "category": "ai-ml",
   "github_path": "skills/clustermarkersofallcells",

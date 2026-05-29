@@ -1,11 +1,11 @@
 {
   "name": "memory-safety-patterns",
   "repo": "wshobson/agents",
+  "path": "plugins/systems-programming/skills/memory-safety-patterns/SKILL.md",
+  "source": "github.com/wshobson/agents",
+  "downloaded_at": "2026-01-22T03:51:07.857671Z",
+  "dir_name": "memory-safety-patterns",
   "category": "development",
-  "description": "Implement memory-safe programming with RAII, ownership, smart pointers, and resource management across Rust, C++, and C. Use when writing safe systems code, managing resources, or preventing memory bu",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:55:35.189504Z",
   "github_path": "plugins/systems-programming/skills/memory-safety-patterns",
-  "github_branch": "main",
-  "dir_name": "memory-safety-patterns"
+  "github_branch": "main"
 }

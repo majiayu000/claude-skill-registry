@@ -1,8 +1,8 @@
 ---
 name: developing-preact
-description: Specialized Preact development skill for standards-based web applications with native-first architecture and minimal dependency footprint. Use when building Preact projects, particularly those involving data visualization, interactive applications, single-page apps with HTM syntax, Web Components integration, CSV/JSON data parsing, WebGL shader visualizations, or zero-build solutions with CDN imports.
+description: Specialized Preact development skill for standards-based web applications with native-first architecture and minimal dependency footprint. Use when building Preact projects, particularly those involving data visualization, interactive applications, single-page apps with HTM syntax, Web Components integration, CSV/JSON data parsing, WebGL shader visualizations, or zero-build solutions with vendored ESM imports.
 metadata:
-  version: 1.1.0
+  version: 1.2.0
 ---
 
 # Preact Developer
@@ -13,7 +13,7 @@ Transform Claude into a specialized Preact developer with expertise in building 
 
 ## Core Philosophy
 
-**Native-First Development**: Leverage ES modules, Import Maps, Web Components, native form validation, Fetch API, and built-in DOM methods before reaching for external libraries. Default to zero-build solutions with HTM and CDN imports for rapid prototyping and small-to-medium applications.
+**Native-First Development**: Leverage ES modules, Import Maps, Web Components, native form validation, Fetch API, and built-in DOM methods before reaching for external libraries. Default to zero-build solutions with HTM and vendored ESM imports for rapid prototyping and small-to-medium applications.
 
 **Always Deliver in Artifacts**: All code should be created as artifacts to enable iterative editing across sessions.
 
@@ -39,12 +39,12 @@ Follow this decision tree to determine the optimal architecture:
 
 **Architecture**:
 - HTM syntax with import maps
-- CDN-based dependencies (esm.sh)
-- Tailwind CSS via CDN
+- Vendored ESM dependencies (fetched from npm registry via `scripts/vendor.sh`)
+- Tailwind CSS via CLI (purged, minified)
 - Single HTML file or minimal file structure
 - No build process
 
-**Start with**: Use `assets/boilerplate.html` as the foundation
+**Start with**: Run `bash scripts/vendor.sh` to fetch dependencies, then use `assets/boilerplate.html` as the foundation
 
 ### 2. Small-to-Medium Application (No Build Tooling)
 
@@ -80,22 +80,26 @@ Follow this decision tree to determine the optimal architecture:
 
 ### Import Map Configuration
 
-Always use this exact import map structure for standalone examples:
+Always use this exact import map structure for standalone examples. Dependencies are vendored locally via `scripts/vendor.sh` (fetched from `registry.npmjs.org`):
 
 ```html
 <script type="importmap">
   {
     "imports": {
-      "preact": "https://esm.sh/*preact@10.23.1",
-      "preact/": "https://esm.sh/*preact@10.23.1/",
-      "@preact/signals": "https://esm.sh/*@preact/signals@1.3.0",
-      "htm/preact": "https://esm.sh/*htm@3.1.1/preact"
+      "preact": "./vendor/preact.module.js",
+      "preact/hooks": "./vendor/hooks.module.js",
+      "@preact/signals-core": "./vendor/signals-core.mjs",
+      "@preact/signals": "./vendor/signals.mjs",
+      "htm": "./vendor/htm.module.js",
+      "htm/preact": "./vendor/htm.module.js"
     }
   }
 </script>
 ```
 
-**Critical**: Always use the `*` prefix in esm.sh URLs to mark all dependencies as external, preventing duplicate Preact instances.
+**Critical — modular files, not standalone bundle**: Do NOT use `htm/preact/standalone.module.js`. The standalone bundle embeds its own Preact copy, which causes `@preact/signals` to get a different Preact instance (it imports `from 'preact'` as a bare specifier). Modular files + import map = one shared Preact instance for everything.
+
+**Why vendored, not CDN**: `esm.sh` is a pass-through to the entire npm registry — allowlisting it opens arbitrary code execution surface. `registry.npmjs.org` is already on the container egress allowlist and provides scoped, versioned tarballs.
 
 ### Syntax Preference
 
@@ -133,7 +137,7 @@ HTM uses JavaScript template literals. Everything that was `{expression}` in JSX
    ```javascript
    // JSX
    <Button onClick={handleClick}>Save</Button>
-   
+
    // HTM
    <${Button} onClick=${handleClick}>Save</${Button}>
    ```
@@ -142,7 +146,7 @@ HTM uses JavaScript template literals. Everything that was `{expression}` in JSX
    ```javascript
    // JSX
    {isOpen && <Modal title="Hello" />}
-   
+
    // HTM
    ${isOpen && html`<${Modal} title="Hello" />`}
    ```
@@ -151,7 +155,7 @@ HTM uses JavaScript template literals. Everything that was `{expression}` in JSX
    ```javascript
    // JSX
    <Input {...inputProps} />
-   
+
    // HTM
    <${Input} ...${inputProps} />
    ```
@@ -179,9 +183,10 @@ Use function components with:
 
 ### Styling Strategy
 
-**Default**: Tailwind CSS via CDN for standalone examples
-**Avoid**: Inline styles except for dynamic values impossible to express through utilities
-**Alternative**: CSS modules or styled-components only when project requires scoped styling
+**Default**: Tailwind CSS via CLI — install with `npm install tailwindcss@3 --save-dev`, then generate purged CSS with `npx tailwindcss -o vendor/tailwind.css --content "*.html" --minify`. This produces ~6KB of CSS containing only used classes.
+**Avoid**: Tailwind CDN (`cdn.tailwindcss.com`) — not on container egress allowlist, and loads the full 100KB+ JIT compiler.
+**Avoid**: Inline styles except for dynamic values impossible to express through utilities.
+**Alternative**: CSS modules or styled-components only when project requires scoped styling.
 
 ## Dependency Evaluation Framework
 
@@ -284,12 +289,12 @@ function parseCSV(text) {
 
 function DataAnalyzer() {
   const data = useSignal([]);
-  
+
   const handleFile = async (e) => {
     const text = await e.target.files[0].text();
     data.value = parseCSV(text);
   };
-  
+
   return html`
     <input type="file" accept=".csv" onChange=${handleFile} />
     <div>Loaded ${data.value.length} rows</div>
@@ -306,19 +311,19 @@ import { useEffect, useRef } from 'preact/hooks';
 
 function ShaderCanvas({ fragmentShader }) {
   const canvasRef = useRef(null);
-  
+
   useEffect(() => {
     const canvas = canvasRef.current;
     const gl = canvas.getContext('webgl2');
-    
+
     // Setup WebGL context, shaders, buffers
     // Render loop
-    
+
     return () => {
       // Cleanup
     };
   }, [fragmentShader]);
-  
+
   return html`<canvas ref=${canvasRef} class="w-full h-full" />`;
 }
 ```
@@ -357,7 +362,7 @@ import { users, isAuthenticated } from './state.js';
 ### References (Load as Needed)
 
 - **`references/preact-v10-guide.md`**: Complete Preact v10 API reference covering import maps, HTM syntax, React differences, Signals API, Web Components, SSR, performance patterns, Context, error boundaries, and common gotchas
-  
+
 - **`references/architecture-patterns.md`**: Advanced patterns including zero-build architecture, state management strategies, data fetching, routing, forms, progressive enhancement, accessibility, performance optimization, testing, and security best practices
 
 ### Assets (Copy into Projects)
@@ -374,12 +379,16 @@ import { users, isAuthenticated } from './state.js';
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Run: bash scripts/vendor.sh -->
   <script type="importmap">
     {
       "imports": {
-        "preact": "https://esm.sh/*preact@10.23.1",
-        "@preact/signals": "https://esm.sh/*@preact/signals@1.3.0",
-        "htm/preact": "https://esm.sh/*htm@3.1.1/preact"
+        "preact": "./vendor/preact.module.js",
+        "preact/hooks": "./vendor/hooks.module.js",
+        "@preact/signals-core": "./vendor/signals-core.mjs",
+        "@preact/signals": "./vendor/signals.mjs",
+        "htm": "./vendor/htm.module.js",
+        "htm/preact": "./vendor/htm.module.js"
       }
     }
   </script>
@@ -429,7 +438,7 @@ For mathematical visualizations using WebGL shaders, create a canvas element, in
 
 Before delivering code, verify:
 
-- [ ] Import map uses `*` prefix for all esm.sh URLs
+- [ ] Import map uses vendored local paths (no CDN URLs)
 - [ ] HTM syntax is used (unless JSX explicitly requested)
 - [ ] Keys provided for all mapped elements
 - [ ] Signals used for reactive state
@@ -440,13 +449,72 @@ Before delivering code, verify:
 - [ ] Comments explain non-obvious patterns
 - [ ] No unnecessary dependencies included
 
+## Container Testing
+
+Test Preact apps locally in Claude.ai containers using Playwright. This workflow avoids external CDNs entirely — all dependencies are vendored from `registry.npmjs.org`.
+
+### Setup (one-time per session)
+
+```bash
+# 1. Vendor JS dependencies
+bash scripts/vendor.sh
+
+# 2. Generate Tailwind CSS (if using Tailwind)
+npm install tailwindcss@3 --save-dev
+npx tailwindcss -o vendor/tailwind.css --content "*.html" --minify
+```
+
+### Serve and Test
+
+```bash
+# 3. Serve locally
+python3 -m http.server 8765 &
+
+# 4. Test with Playwright
+python3 << 'PYEOF'
+from playwright.sync_api import sync_playwright
+
+with sync_playwright() as p:
+    browser = p.chromium.launch(headless=True, args=["--no-sandbox"])
+    page = browser.new_page()
+
+    errors = []
+    page.on("console", lambda m: errors.append(m.text) if m.type == "error" else None)
+    page.on("pageerror", lambda e: errors.append(str(e)))
+
+    page.goto("http://localhost:8765", wait_until="networkidle")
+
+    # Verify no console errors (catches import failures immediately)
+    assert not errors, f"Console errors: {errors}"
+
+    # Verify app rendered
+    assert page.locator("#app").inner_html() != "", "App did not render"
+
+    # Example: test interaction
+    # page.click("button")
+    # assert "Count: 1" in page.content()
+
+    browser.close()
+    print("All tests passed")
+PYEOF
+```
+
+### Key guidance
+
+- **Use Playwright directly** for local testing — not webctl (webctl is for external sites through the proxy)
+- **`python3 -m http.server`** is sufficient — no npm server needed
+- **Console error capture** via `page.on("console")` and `page.on("pageerror")` catches import failures immediately
+- **`--no-sandbox`** is required in container environments
+
 ## Getting Started
 
 For immediate implementation:
 
-1. Copy `assets/boilerplate.html` as the starting point
-2. Read `references/preact-v10-guide.md` for API details
-3. Reference `assets/component-patterns.md` for common UI patterns
-4. Consult `references/architecture-patterns.md` for advanced scenarios
+1. Run `bash scripts/vendor.sh` to fetch vendored dependencies
+2. (Optional) Generate Tailwind CSS: `npm install tailwindcss@3 --save-dev && npx tailwindcss -o vendor/tailwind.css --content "*.html" --minify`
+3. Copy `assets/boilerplate.html` as the starting point
+4. Read `references/preact-v10-guide.md` for API details
+5. Reference `assets/component-patterns.md` for common UI patterns
+6. Consult `references/architecture-patterns.md` for advanced scenarios
 
 The skill is designed to enable rapid development of high-quality Preact applications with minimal friction and maximum standards compliance.

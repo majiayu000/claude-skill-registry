@@ -172,6 +172,112 @@ Keep `MEMORY.md` clean and under the 200-line limit.
    done
    ```
 
+## Phase 4.5: Worktree-Stale-Sweep (#575 P3.2)
+
+> Skip if `persistence: false` in Session Config. Silent no-op if no Auto-promoted sibling worktrees exist or none are stale.
+
+Detect stale Auto-promoted worktrees (older than `stale-branch-days` from Session Config, default 7 days) and offer them for batch-removal alongside the other housekeeping prune actions from Phase 4. This sub-phase is **additive** — it appends candidates to the existing prune flow rather than introducing a separate independent confirmation cycle.
+
+### Detection: list candidate auto-promoted worktrees
+
+Auto-promoted worktrees follow the layout `<parentDir>/<repoName>-<sessionId>/`, where `<sessionId>` is a semantic session-id (per `parseSessionId()` from `scripts/lib/session-id.mjs`). Random-suffix worktrees (UUID-format) are NOT auto-promoted and MUST be ignored.
+
+> **Authoritative impl:** `scripts/lib/memory-cleanup/worktree-sweep.mjs` — `listAutoPromotedWorktrees(repoRoot, mainCheckoutRoot, opts)`. Import and call; do NOT re-implement from this doc.
+>
+> Algorithm: split `git worktree list --porcelain` on the blank-line delimiter; for each `worktree ` entry, skip the main checkout, then require the basename to start with `<repoName>-` and the suffix to parse as a `semantic` session-id via `parseSessionId()` (UUID / random suffixes excluded). Each match yields `{ wtPath, sessionId, branch }`. Any git failure → `[]` (conservative no-op). Git invocation is via the injection-safe `opts.execFileFn` (default `execFileSync` with an args array — #577 HARDEN-001).
+
+### Staleness check
+
+A worktree is stale iff `mtime(worktree-dir) < now - stale-branch-days × 86400 × 1000`. Read `stale-branch-days` from Session Config (default 7):
+
+> **Authoritative impl:** `scripts/lib/memory-cleanup/worktree-sweep.mjs` — `isWorktreeStale(wtPath, staleBranchDays)`. Import and call; do NOT re-implement from this doc.
+>
+> Algorithm: `statSync(wtPath)`; stale iff `Date.now() - stat.mtimeMs > staleBranchDays × 24 × 60 × 60 × 1000`. A missing or unreadable path → `false` (conservative no-op).
+
+### Integration with the existing housekeeping prune AUQ
+
+After Phase 4 (Prune & Index) compiles its list of items to offer for removal, ALSO include any stale auto-promoted worktrees. The user sees them in the same AUQ ("batch-decide" per PRD §3 P3 Gherkin row 4):
+
+```js
+import { execFileSync } from 'node:child_process';
+import { listAutoPromotedWorktrees, isWorktreeStale } from '$PLUGIN_ROOT/scripts/lib/memory-cleanup/worktree-sweep.mjs';
+import { discoverActiveSessions } from '$PLUGIN_ROOT/scripts/lib/session-discovery.mjs';
+
+const staleBranchDays = $CONFIG['stale-branch-days'] ?? 7;
+const candidates = listAutoPromotedWorktrees(process.cwd(), mainCheckoutRoot);
+const stale = candidates.filter((c) => isWorktreeStale(c.wtPath, staleBranchDays));
+
+if (stale.length === 0) {
+  // Silent no-op — no stale worktrees to offer.
+} else {
+  // #580-HARDEN-002: cross-check candidates against LIVE peer sessions before offering removal.
+  // A stale-by-mtime worktree may still be the checkout of an active parallel session — removing
+  // it would disrupt that session (PSA-002 overlap). Flag any such candidate so the AUQ can warn.
+  const active = await discoverActiveSessions(mainCheckoutRoot);
+  const livePaths = new Set(active.map((s) => s.worktreePath));
+  const annotated = stale.map((wt) => ({ ...wt, activePeer: livePaths.has(wt.wtPath) }));
+
+  // Add to the existing housekeeping prune AUQ. Each stale worktree becomes one option line:
+  // Format: `[ ] Stale auto-promoted worktree: <basename> (age <N>d) — remove via 'git worktree remove --force'`
+  // If `activePeer` is true, prefix the option with "⚠ ACTIVE PEER SESSION" and make Behalten the default.
+  //
+  // If memory-cleanup currently presents per-item AUQs (one question per prune candidate),
+  // append one question per stale worktree.
+  //
+  // If memory-cleanup uses a single multiSelect AUQ for the whole batch,
+  // add stale worktrees as additional options.
+  //
+  // Operator selects which to remove; coordinator runs (arg-array, no shell — #577 HARDEN-001):
+  //   execFileSync('git', ['-C', mainCheckoutRoot, 'worktree', 'remove', '--force', wtPath])
+  // for each selected. WARN line per removal.
+}
+```
+
+### AUQ example (per-item)
+
+When the candidate's `wtPath` matches a LIVE peer session (`wt.activePeer === true`, from `discoverActiveSessions()` above), the AUQ MUST surface a `⚠ ACTIVE PEER SESSION` warning and keep `Behalten` as the safe default — removing a live session's worktree mid-flight is a PSA-002 overlap that can corrupt another session's working state.
+
+```js
+const peerWarning = wt.activePeer
+  ? ' ⚠ ACTIVE PEER SESSION — removing may disrupt a live session.'
+  : '';
+
+AskUserQuestion({
+  questions: [{
+    question: `Stale auto-promoted worktree found: ${path.basename(wt.wtPath)} (age ${ageDays}d, branch=${wt.branch}).${peerWarning} Remove?`,
+    header: "Stale-Worktree",
+    multiSelect: false,
+    options: [
+      {
+        label: "Behalten (Recommended)",
+        description: wt.activePeer
+          ? "Keep this worktree — a LIVE peer session is using it. Removal would disrupt the active session."
+          : "Keep this worktree. Re-evaluate at next /memory-cleanup run.",
+      },
+      {
+        label: "Entfernen",
+        description: wt.activePeer
+          ? `⚠ ACTIVE PEER SESSION detected. Only choose this if you have confirmed no live session needs it, then run 'git worktree remove --force ${wt.wtPath}'.`
+          : `Run 'git worktree remove --force ${wt.wtPath}'.`,
+      },
+    ],
+  }],
+});
+```
+
+### PSA-003 compliance
+
+Per `.claude/rules/parallel-sessions.md` PSA-003: every `git worktree remove` is destructive — operator must explicitly authorize. The AUQ above satisfies this. Never auto-remove without user confirmation, even for stale worktrees. The `--force` flag is acceptable here only because the AUQ already secured explicit per-worktree consent; never apply `--force` to worktrees the operator did not select.
+
+### Cross-references
+
+- PRD: `docs/prd/2026-05-26-parallel-aware-sessions.md` §3 P3 Gherkin row 4 + §3.A P3 EARS state-driven clause
+- `stale-branch-days` config: `scripts/lib/config.mjs:138` (default: 7)
+- Detection helper: `parseSessionId()` from `scripts/lib/session-id.mjs`
+- Stale-sweep helpers: `listAutoPromotedWorktrees()` + `isWorktreeStale()` from `scripts/lib/memory-cleanup/worktree-sweep.mjs`
+- Live-peer detection (#580-HARDEN-002): `discoverActiveSessions(repoRoot)` from `scripts/lib/session-discovery.mjs` — flags stale candidates whose `wtPath` matches an active session so the AUQ warns before removal
+- PSA-003: `.claude/rules/parallel-sessions.md`
+
 ## Output
 
 After completing all four phases, report:

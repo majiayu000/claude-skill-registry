@@ -1,7 +1,10 @@
 ---
 name: ln-783-container-launcher
-description: Builds and launches Docker containers with health verification using best practices
+description: "Builds and launches Docker containers with health verification. Use when validating that containerized services start correctly."
+license: MIT
 ---
+
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # ln-783-container-launcher
 
@@ -210,6 +213,12 @@ Provide user with cleanup commands in report.
 - [ ] All health checks passing
 - [ ] Access URLs provided
 - [ ] Results returned to orchestrator
+
+---
+
+## Reference Files
+
+- Parent: `../ln-780-bootstrap-verifier/SKILL.md`
 
 ---
 

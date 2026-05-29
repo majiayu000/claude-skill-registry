@@ -1,18 +1,20 @@
 ---
 name: start-hotfix
-allowed-tools: Bash(git:*), Read, Write, Skill
+allowed-tools: Bash(git:*), Read, Write
 description: Start new hotfix branch
 model: haiku
-argument-hint: [hotfix-name]
+argument-hint: <version>
 user-invocable: true
 ---
 
-## Your Task
+## Phase 1: Start Hotfix
 
-1. **Load the `gitflow:gitflow-workflow` skill** using the `Skill` tool to access GitFlow workflow capabilities.
-2. Gather context: current branch, existing hotfix branches, latest tag, version files.
-3. Normalize the provided hotfix name from `$ARGUMENTS` to `$HOTFIX_NAME` using the normalization procedure defined in the `gitflow-workflow` skill references (strip `hotfix/` prefix if present, convert to kebab-case).
-4. Identify production base branch for the active workflow (usually `main` for Classic GitFlow, or `production` for GitLab Flow).
-5. Create or resume `hotfix/$HOTFIX_NAME` from the production base branch.
-6. Increment patch version (if the repo uses SemVer + tags) and update version files.
-7. Push the branch to origin if newly created.
+**Goal**: Create hotfix branch using git-flow-next CLI.
+
+**Actions**:
+1. Run `git flow hotfix start $ARGUMENTS`
+2. Update version in project files (package.json, Cargo.toml,
+   VERSION, etc.)
+3. Commit version bump: `chore: bump version to $ARGUMENTS`
+   with `Co-Authored-By` footer
+4. Push the branch: `git push -u origin hotfix/$ARGUMENTS`

@@ -1,7 +1,7 @@
 ---
 name: speckit-orchestrator
 role: entrypoint
-description: 'Workflow orchestrator for Spec Driven Development. Coordinates skills and tracks progress.'
+description: Orchestrates Spec Driven Development by coordinating spec, plan, and task skills. Use when running the full speckit workflow from spec to implementation.
 alwaysApply: false
 category: workflow-orchestration
 tags:
@@ -51,12 +51,12 @@ Coordinates the Spec Driven Development workflow, skill loading, and progress tr
 
 ## Persistent Presence Lens
 
-Treat SDD as a minimal, testable “self-modeling” loop:
+Treat SDD as a minimal, testable "self-modeling" loop:
 
 - **World model**: repo + speckit artifacts (`spec.md`, `plan.md`, `tasks.md`)
 - **Agent model**: loaded skills/plugins + constraints (especially `.specify/memory/constitution.md`) + progress state
 
-This mirrors patterns from open-ended embodied agents (e.g., Voyager/MineDojo) that compound capability via a curriculum (`tasks.md`) and a skill library (reusable plugin skills + superpowers methodology skills).
+This mirrors patterns from open-ended embodied agents (e.g., Voyager/MineDojo) that compound capability via a curriculum (`tasks.md`) and a skill library (reusable plugin skills and superpowers methodology skills).
 
 ## When To Use
 

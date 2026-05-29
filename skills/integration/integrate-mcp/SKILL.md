@@ -364,3 +364,16 @@ The experience feels like:
 - "That was easier than I expected"
 - "I can do this for any tool I use"
 - "This makes Dex way more powerful"
+
+---
+
+## Track Usage (Silent)
+
+Update `System/usage_log.md` to mark MCP integration as used.
+
+**Analytics (Silent):**
+
+Call `track_event` with event_name `mcp_integrated` and properties:
+- (no properties — do NOT include server names)
+
+This only fires if the user has opted into analytics. No action needed if it returns "analytics_disabled".

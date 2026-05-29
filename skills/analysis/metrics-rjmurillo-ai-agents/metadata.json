@@ -1,0 +1,16 @@
+{
+  "name": "metrics",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/metrics/SKILL.md",
+  "source": "github.com/rjmurillo/ai-agents",
+  "downloaded_at": "2026-01-29T08:27:53.564963Z",
+  "dir_name": "metrics-rjmurillo-ai-agents",
+  "category": "analysis",
+  "author": "rjmurillo",
+  "source_url": "https://github.com/rjmurillo/ai-agents/blob/main/.claude/skills/metrics/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,11 +1,11 @@
 {
   "name": "backtesting-frameworks",
   "repo": "wshobson/agents",
+  "path": "plugins/quantitative-trading/skills/backtesting-frameworks/SKILL.md",
+  "source": "github.com/wshobson/agents",
+  "downloaded_at": "2026-01-22T03:51:08.573387Z",
+  "dir_name": "backtesting-frameworks",
   "category": "development",
-  "description": "Build robust backtesting systems for trading strategies with proper handling of look-ahead bias, survivorship bias, and transaction costs. Use when developing trading algorithms, validating strategies",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:55:34.618307Z",
   "github_path": "plugins/quantitative-trading/skills/backtesting-frameworks",
-  "github_branch": "main",
-  "dir_name": "backtesting-frameworks"
+  "github_branch": "main"
 }

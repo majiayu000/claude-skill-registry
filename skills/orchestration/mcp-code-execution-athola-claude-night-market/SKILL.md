@@ -1,25 +1,18 @@
 ---
 name: mcp-code-execution
-description: |
-
-Triggers: execution, code
-  Transform tool-heavy workflows into MCP code execution patterns for token savings and optimized processing.
-
-  Triggers: MCP, code execution, tool chain, data pipeline, tool transformation, batch processing, workflow optimization
-
-  Use when: >3 tools chained sequentially, large datasets (>10k rows), large files (>50KB), context usage >25%
-
-  DO NOT use when: simple tool calls that don't chain.
-  DO NOT use when: context pressure is low and tools are fast.
-
-  Use this skill BEFORE building complex tool chains. Optimize proactively.
-location: plugin
-token_budget: 200
+description: 'Optimize multi-tool workflow chains via MCP server integration for processing large datasets, files, or complex pipelines.'
+version: 1.9.3
+alwaysApply: false
 progressive_loading: true
 dependencies:
-  hub: [context-optimization, token-conservation]
-  modules: [mcp-subagents, mcp-patterns, mcp-validation]
-version: 1.3.5
+  hub:
+  - context-optimization
+  - token-conservation
+  modules:
+  - mcp-subagents
+  - mcp-patterns
+  - mcp-validation
+model_hint: standard
 ---
 ## Table of Contents
 
@@ -58,13 +51,26 @@ python -m module_name --help
 \`\`\`
 
 **Verification**: Run with `--help` flag to confirm installation.
-## When to Use
+## When To Use
 - **Automatic**: Keywords: `code execution`, `MCP`, `tool chain`, `data pipeline`, `MECW`
 - **Tool Chains**: >3 tools chained sequentially
 - **Data Processing**: Large datasets (>10k rows) or files (>50KB)
 - **Context Pressure**: Current usage >25% of total window (proactive context management)
 
 > **MCP Tool Search (Claude Code 2.1.7+)**: When MCP tool descriptions exceed 10% of context, tools are automatically deferred and discovered via MCPSearch instead of being loaded upfront. This reduces token overhead by ~85% but means tools must be discovered on-demand. Haiku models do not support tool search. Configure threshold with `ENABLE_TOOL_SEARCH=auto:N` where N is the percentage.
+
+> **Subagent MCP Access Fix (Claude Code 2.1.30+)**: SDK-provided MCP tools are now properly synced to subagents. Prior to 2.1.30, subagents could not access SDK-provided MCP tools — workflows delegating MCP tool usage to subagents were silently broken. No workarounds needed on 2.1.30+.
+
+> **Claude.ai MCP Connectors (Claude Code 2.1.46+)**: Users logged into Claude Code with a claude.ai account may have additional MCP tools auto-loaded from claude.ai/settings/connectors. These tools contribute to the tool search threshold count. If workflows unexpectedly trigger tool search or context inflation, check `/mcp` for claude.ai-sourced connectors. Known reliability issue: connectors can silently disappear (GitHub #21817).
+
+> **MCP Prompt Cache Fix (Claude Code 2.1.70+)**: MCP servers with instructions connecting after the first turn no longer bust the prompt cache. Previously, a late-connecting MCP server would invalidate cached prompt prefixes, increasing token costs for the rest of the session. On 2.1.70+, prompt cache reuse is preserved regardless of when MCP servers connect.
+
+> **ToolSearch Reliability Fix (Claude Code 2.1.70+)**: Empty model responses after ToolSearch are fixed. The server was rendering tool schemas with system-prompt-style tags that could confuse models into stopping early. ToolSearch-heavy workflows (many deferred MCP tools) are now more reliable.
+
+## When NOT To Use
+
+- Simple tool calls that don't chain
+- Context pressure is low and tools are fast
 
 ## Core Hub Responsibilities
 - Orchestrates MCP code execution workflow
@@ -203,15 +209,3 @@ When MECW limits exceeded:
 - **MECW Compliance**: 100% adherence to 50% context rule
 - **Token Efficiency**: Maintain >80% savings vs traditional methods
 - **Module Coordination**: <5% overhead for hub orchestration
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

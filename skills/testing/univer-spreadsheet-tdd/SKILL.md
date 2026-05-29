@@ -16,6 +16,7 @@ Ordinary workbook edits can and should be verification-first, but they are not S
 - Do not read `.univer` or `.unv` package internals as assertion evidence.
 - Do not claim a SaC migration is complete from `univer sac apply` success alone.
 - Completion requires the latest relevant `univer sac verify <workspace> --json` run to report `passed`.
+- For non-trivial workbook changes, `passed` must include at least one checked pack and at least one passed assertion for the changed pack. An all-skipped or zero-assertion verify run is not a TDD completion signal.
 
 ## Workbook Understanding
 
@@ -40,9 +41,13 @@ When a user provides an existing workbook without SaC source, you may use readon
 Before editing migration source, write a short plan:
 
 1. Requested workbook-visible outcomes.
-2. Ordered Facade Migration Packs needed to deliver them.
-3. Assertion gate for each planned migration.
-4. Explicit non-goals for the current migration or pass.
+2. Baseline workbook evidence and final-layout reasoning.
+3. Workbook range roles: source data, target output, example/demo result, helper/control input, lookup/reference table, existing output, and preserve-only areas.
+4. Ordered Facade Migration Packs needed to deliver the outcomes.
+5. Assertion gate for each planned migration, including positive and negative checks.
+6. Explicit non-goals for the current migration or pass.
+
+For each relevant range role, decide whether the migration may read it, write it, replace it, or must leave it unchanged. Example/demo ranges may explain layout, formulas, or expected shape, but they are not target output unless the request explicitly says to update that range. Helper/control ranges parameterize the operation and should remain unchanged unless requested.
 
 Use multiple focused migrations when the task has multiple durable workbook intents, such as creating a sheet, loading a data model, adding formulas, and adding review output. Each migration should have one clear rollback boundary and its own assertion gate.
 
@@ -51,6 +56,18 @@ Do not split by individual cells, individual commands, or incidental implementat
 ## Assertion Contract
 
 Every non-trivial migration pack you create or modify needs an `assertions.ts` in the same pack before handoff. Assert workbook-visible outcomes: sheet existence, used range, representative values, formulas, and other stable user-facing facts.
+
+Derive assertions from the user request, baseline workbook evidence, and final-layout reasoning, not from whatever the migration happened to write. Assertions must cover every explicit workbook-visible effect requested by the user, even when some effect is outside a caller-provided check range.
+
+Assertions must prove workbook range roles, not only target values. Assert representative target outputs and assert that source, helper/control, lookup/reference, example/demo, and preserve-only ranges remain unchanged when the requested change does not allow modifying them. When an example/demo range is used to infer a formula or layout, add assertions that distinguish the real target range from the example range.
+
+For formula-driven work, assert representative calculated values in addition to formulas. Cover first, middle, last, blank, zero, date-boundary, text-boundary, and grouping-boundary cases when those cases affect the requested workbook-visible behavior.
+
+Treat external ranges, answer ranges, or requested output ranges as constraints and inspection windows, not as proof that the top-left cell is the output start or that the range contains the whole contract. If the request involves sorting, filtering, grouping, appending, deleting, reshaping, or "no extra" constraints, assert boundary cells before, inside, and after the affected area so stale headings, shifted output, uncleared tails, overwritten rows, and helper artifacts cannot pass unnoticed.
+
+Negative constraints are first-class assertions or probes. Cover requirements such as no extra headings, no helper sheets, no formatting changes, preserved existing rows, blank columns, cleared tails, or no overwrite when they are workbook-visible.
+
+Exact workbook-visible values are part of the contract. Use normalization for internal reasoning only; assertions and writes must preserve required casing, whitespace, abbreviations, blank-versus-zero semantics, text-versus-number semantics, and display-critical stored values.
 
 Keep assertions small and deterministic. Prefer representative ranges over broad workbook snapshots.
 

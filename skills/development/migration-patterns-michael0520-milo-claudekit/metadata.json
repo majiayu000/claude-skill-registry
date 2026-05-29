@@ -1,0 +1,20 @@
+{
+  "name": "migration-patterns",
+  "description": "",
+  "repo": "Michael0520/milo-claudekit",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Michael0520/milo-claudekit",
+  "github_path": "plugins/one-ui-migration/skills/migration-patterns",
+  "github_branch": "main",
+  "dir_name": "migration-patterns-michael0520-milo-claudekit",
+  "downloaded_at": "2026-02-05T01:44:29.475104Z",
+  "author": "Michael0520",
+  "source_url": "https://github.com/Michael0520/milo-claudekit/blob/main/plugins/one-ui-migration/skills/migration-patterns/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Michael Lo",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

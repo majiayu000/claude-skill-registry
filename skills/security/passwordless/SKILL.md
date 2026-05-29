@@ -101,6 +101,29 @@ Passkeyは、FIDO2/WebAuthnの一種で、Resident Key必須:
 
 FIDO-UAFは、モバイルデバイスでの生体認証（指紋、顔認証）を実現します。
 
+### デバイスシークレット自動発行
+
+FIDO-UAF登録時にテナントポリシーに基づいてデバイスシークレットを自動発行できます。
+
+**関連クラス**:
+- `DeviceSecretIssuer.java` - シークレット発行ロジック
+- `AuthenticationDeviceRule.java` - テナントポリシー設定
+- `FidoUafRegistrationInteractor.java` - FIDO-UAF登録インターアクター
+
+**テナントポリシー設定例**:
+```json
+{
+  "identity_policy_config": {
+    "authentication_device_rule": {
+      "issue_device_secret": true,
+      "device_secret_algorithm": "HS256"
+    }
+  }
+}
+```
+
+**詳細**: [デバイスクレデンシャル管理](../../documentation/docs/content_03_concepts/03-authentication-authorization/concept-10-device-credential.md)
+
 ## E2Eテスト
 
 ```
@@ -111,8 +134,11 @@ e2e/src/tests/
 ├── scenario/application/
 │   └── (パスワードレス認証シナリオ)
 │
-└── usecase/mfa/
-    └── mfa-03-fido-uaf-device-registration-acr-policy.test.js
+├── usecase/mfa/
+│   └── mfa-03-fido-uaf-device-registration-acr-policy.test.js
+│
+└── usecase/device-credential/
+    └── device-credential-04-device-secret-issuance.test.js  # デバイスシークレット自動発行
 ```
 
 ## コマンド

@@ -118,3 +118,7 @@ If MCP tools fail or no OpenAI docs resources are available:
 | Results are stale/unclear | Query too broad | Narrow query by product + feature, then fetch exact page section |
 | Need citation-ready answer | Source not fetched | Fetch specific doc section before answering |
 | Docs do not cover question | Gap in official docs | State gap explicitly and provide safe best-effort guidance |
+
+## Reference Documents
+
+- [references/openai-docs.feature](references/openai-docs.feature) — Executable spec: search official docs, fetch+quote exact sections, doc-grounded not from-memory (soc-qk4b)

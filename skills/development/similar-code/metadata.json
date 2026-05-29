@@ -1,0 +1,16 @@
+{
+  "name": "similar-code",
+  "repo": "hippocampus-dev/hippocampus",
+  "path": ".claude/skills/similar-code/SKILL.md",
+  "source": "github.com/hippocampus-dev/hippocampus",
+  "downloaded_at": "2026-02-02T02:55:18.579411Z",
+  "dir_name": "similar-code",
+  "category": "development",
+  "author": "hippocampus-dev",
+  "source_url": "https://github.com/hippocampus-dev/hippocampus/blob/main/.claude/skills/similar-code/SKILL.md",
+  "license": "GPL-2.0",
+  "copyright": "Copyright (C) 1989, 1991 Free Software Foundation, Inc.,",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

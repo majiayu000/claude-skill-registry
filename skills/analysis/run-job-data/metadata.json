@@ -1,0 +1,17 @@
+{
+  "name": "run-job-data",
+  "repo": "EPOCHDevs/ClaudeCodeResearch",
+  "path": ".claude/skills/run-job-data/SKILL.md",
+  "github_branch": "main",
+  "category": "analysis",
+  "source": "github.com/EPOCHDevs/ClaudeCodeResearch",
+  "dir_name": "run-job-data",
+  "downloaded_at": "2026-03-01T05:13:40.667772Z",
+  "author": "EPOCHDevs",
+  "source_url": "https://github.com/EPOCHDevs/ClaudeCodeResearch/blob/main/.claude/skills/run-job-data/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/EPOCHDevs/ClaudeCodeResearch/blob/main/.claude/skills/run-job-data/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

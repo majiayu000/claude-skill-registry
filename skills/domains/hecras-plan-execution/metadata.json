@@ -1,0 +1,16 @@
+{
+  "name": "hecras_plan_execution",
+  "repo": "gpt-cmdr/ras-commander",
+  "path": ".claude/skills/hecras_plan_execution/SKILL.md",
+  "source": "github.com/gpt-cmdr/ras-commander",
+  "downloaded_at": "2026-02-02T02:48:48.764964Z",
+  "dir_name": "hecras-plan-execution",
+  "category": "domains",
+  "author": "gpt-cmdr",
+  "source_url": "https://github.com/gpt-cmdr/ras-commander/blob/main/.claude/skills/hecras_plan_execution/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2024 William M. Katzenmeyer",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "norn",
+  "repo": "Clinscott/CStar",
+  "path": ".agents/skills/norn/SKILL.md",
+  "github_branch": "master",
+  "category": "orchestration",
+  "source": "github.com/Clinscott/CStar",
+  "dir_name": "norn",
+  "downloaded_at": "2026-03-22T05:05:53.726092Z",
+  "author": "Clinscott",
+  "source_url": "https://github.com/Clinscott/CStar/blob/master/.agents/skills/norn/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Clinscott/CStar/blob/master/.agents/skills/norn/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

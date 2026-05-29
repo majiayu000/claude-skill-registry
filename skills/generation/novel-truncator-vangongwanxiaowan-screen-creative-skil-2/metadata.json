@@ -1,0 +1,18 @@
+{
+  "name": "novel-truncator",
+  "description": "Intelligently truncate text while preserving content integrity. Suitable for novel text preprocessing, ensuring text does not exceed specified length limits",
+  "repo": "VanGongwanxiaowan/screen-creative-skills",
+  "path": "category/novel-screening/novel-truncator",
+  "category": "generation",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/VanGongwanxiaowan/screen-creative-skills",
+  "dir_name": "novel-truncator-vangongwanxiaowan-screen-creative-skil-2",
+  "author": "VanGongwanxiaowan",
+  "source_url": "https://github.com/VanGongwanxiaowan/screen-creative-skills/blob/main/category/novel-screening/novel-truncator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 宫凡",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

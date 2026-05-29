@@ -1,0 +1,16 @@
+{
+  "name": "specialized-omics-plots",
+  "repo": "GPTomics/bioSkills",
+  "path": "data-visualization/specialized-omics-plots/SKILL.md",
+  "source": "github.com/GPTomics/bioSkills",
+  "downloaded_at": "2026-01-29T08:13:11.890295Z",
+  "dir_name": "specialized-omics-plots-gptomics-bioskills-1ad4d906",
+  "category": "generation",
+  "author": "GPTomics",
+  "source_url": "https://github.com/GPTomics/bioSkills/blob/main/data-visualization/specialized-omics-plots/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 GPTomics",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

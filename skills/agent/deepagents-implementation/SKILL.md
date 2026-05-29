@@ -476,6 +476,16 @@ async def main():
         print(chunk)
 ```
 
+## Implementation gates
+
+Use this **sequenced** table for setups that touch **real disk, human interrupts, persistence, or MCP subprocesses** (skip for minimal `create_deep_agent()` smoke tests).
+
+| Step | Pass condition |
+|------|----------------|
+| 1 | **FilesystemBackend or `execute`:** `root_dir` is deliberately scoped (not an accidental home or filesystem root); smoke-test in a disposable directory before trusting production paths. |
+| 2 | **`interrupt_on` / resume:** A `checkpointer` is configured; every `invoke` / `astream` that may interrupt includes `config` with `configurable["thread_id"]`; after a pause, `agent.get_state(config)` shows pending interrupt state before `Command(resume=...)`, and the resume payload matches tool options (e.g. `allowed_decisions`) when set. |
+| 3 | **Store, PostgreSQL saver, MCP:** Credentials come from environment or a secret manager, not committed source; MCP `command` / `args` / required `env` keys match what the deployment host actually provides (e.g. `npx`, tokens). |
+
 ## Additional References
 
 For detailed reference documentation, see:

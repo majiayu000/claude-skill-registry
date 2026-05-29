@@ -1,0 +1,18 @@
+{
+  "name": "brief",
+  "description": "Create or update project brief through interactive discovery. Use when starting any new idea, revisiting an idea after time away, or when vision feels unclear.",
+  "repo": "TaylorHuston/local-life-manager",
+  "path": ".claude/skills/brief",
+  "category": "product",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/TaylorHuston/local-life-manager",
+  "dir_name": "brief-taylorhuston-local-life-manager-2",
+  "author": "TaylorHuston",
+  "source_url": "https://github.com/TaylorHuston/local-life-manager/blob/main/.claude/skills/brief/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TaylorHuston/local-life-manager/blob/main/.claude/skills/brief/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

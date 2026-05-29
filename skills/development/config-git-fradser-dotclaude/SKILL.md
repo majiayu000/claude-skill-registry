@@ -3,6 +3,7 @@ name: config-git
 description: Interactive git configuration setup
 user-invocable: true
 allowed-tools: ["Bash(git:*)", "Bash(ls:*)", "Bash(find:*)", "Read", "Write", "Glob", "AskUserQuestion"]
+argument-hint: "[no arguments needed]"
 model: haiku
 context: fork
 version: 0.1.0
@@ -45,9 +46,9 @@ Current Git Config Context:
 
 **CRITICAL - Scope Naming Rules**:
 - ALL scopes MUST be short (single words or abbreviations only)
-- Single words: use as-is (e.g., `api`, `ui`, `docs`)
-- Multi-word names: MUST convert to first letters (e.g., `plugin-optimizer` → `po`, `user-auth` → `ua`)
-- MUST NOT use full multi-word names like `plugin-optimizer` or `user-auth` as scopes
+- Single words: use as-is (e.g., `<word1>`, `<word2>`, `<word3>`)
+- Multi-word names: MUST convert to first letters (e.g., `<multi-word-name>` → `<mwn>`, `<another-example>` → `<ae>`)
+- MUST NOT use full multi-word names like `<multi-word-name>` or `<another-example>` as scopes
 
 **Actions**:
 1. Propose a list of commit scopes based on analysis

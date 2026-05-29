@@ -1,0 +1,16 @@
+{
+  "name": "streams",
+  "repo": "andrueandersoncs/claude-skill-effect-ts",
+  "path": "skills/streams/SKILL.md",
+  "source": "github.com/andrueandersoncs/claude-skill-effect-ts",
+  "downloaded_at": "2026-01-29T08:40:16.688456Z",
+  "dir_name": "streams-andrueandersoncs-claude-skill-effect",
+  "category": "ai-llm",
+  "author": "andrueandersoncs",
+  "source_url": "https://github.com/andrueandersoncs/claude-skill-effect-ts/blob/main/skills/streams/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Andrue Anderson",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

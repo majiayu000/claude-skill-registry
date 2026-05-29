@@ -1,6 +1,7 @@
 ---
 name: security-headers-configuration
 description: Configures HTTP security headers to protect against XSS, clickjacking, and MIME sniffing attacks. Use when hardening web applications, passing security audits, or implementing Content Security Policy.
+license: MIT
 ---
 
 # Security Headers Configuration

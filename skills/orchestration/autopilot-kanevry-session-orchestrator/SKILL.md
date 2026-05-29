@@ -14,6 +14,21 @@ model: sonnet
 
 # Autopilot Skill
 
+## Phase 0.5: Parallel-Aware Preamble
+
+> Skip silently when `persistence: false` in Session Config.
+
+Before any Phase 1 work, run the parallel-aware preamble per `skills/_shared/parallel-aware-preamble.md`. The preamble detects other active sessions in the worktree-family via `discoverActiveSessions(repoRoot)`, classifies the caller's mode via `classifyMode(callerMode)` against the exclusivity-matrix, and either:
+
+- Returns `PASS_THROUGH` (no other session / `always-ok` mode) → continue to Phase 1
+- Returns `EXCLUSIVE_BLOCKED` → fires Exclusive-Conflict AUQ from `skills/_shared/parallel-aware-auq.md`
+- Returns `PROMOTION_OFFER` → fires Worktree-Promotion AUQ (via `enterWorktree()` from `scripts/lib/autopilot/worktree-pipeline.mjs` — see `parallel-aware-auq.md` outcome-handling)
+
+On any non-PASS_THROUGH outcome that does not result in immediate exit, append a Deviation to STATE.md via `appendDeviationOnDisk(repoRoot, isoTimestamp, message)` from `scripts/lib/state-md.mjs`.
+
+**Implementation reference:** `skills/_shared/parallel-aware-preamble.md § Implementation`.
+**AUQ reference:** `skills/_shared/parallel-aware-auq.md`.
+
 ## Status
 
 **Phase C-1.b complete (2026-04-25, issues #295 + #300).** Runtime at

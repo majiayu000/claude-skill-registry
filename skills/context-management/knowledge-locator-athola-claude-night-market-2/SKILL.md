@@ -1,6 +1,6 @@
 ---
 name: knowledge-locator
-description: 'Search and navigate stored knowledge in memory palaces.'
+description: Searches and navigates stored knowledge in memory palaces. Use when looking for previously stored information or cross-referencing concepts across palaces.
 alwaysApply: false
 category: navigation
 tags:

@@ -15,6 +15,10 @@ triggers:
   - cursed text
 metadata:
   short-description: Adversarial PDF content for extractor stress testing
+
+provides:
+  - fixture-tricky
+composes: [, task-monitor]
 ---
 
 # Fixture Tricky Skill
@@ -114,6 +118,30 @@ Structure/layout patterns that confuse extractors:
 | `watermark` | Text overlaid with watermark |
 | `rotated-text` | 90° rotated text blocks |
 | `floating-elements` | Content out of reading order |
+
+### Requirements (`requirements`)
+
+Adversarial patterns for testing S08 requirements extraction:
+
+| Trick | Description |
+|-------|-------------|
+| `shall-variations` | SHALL/MUST/WILL in various formats and contexts |
+| `mixed-numbering` | REQ-001, R.1.2.3, §4.5.6 numbering schemes |
+| `table-requirements` | Requirements embedded in table cells |
+| `traceability-matrix` | Cross-reference matrix testing |
+| `conditional-requirements` | IF/WHEN/UNLESS clause patterns |
+| `false-positive-shall` | "Shall" in meeting notes/quotes (NOT requirements) |
+| `nested-requirements` | Parent/child hierarchical requirements |
+| `domain-specific-shall` | Aerospace (DO-178C), medical (IEC 62304), automotive (ISO 26262) |
+| `ambiguous-modal` | SHOULD/MAY/MIGHT (soft requirements) |
+
+```bash
+# Generate requirements fixtures
+uv run generate.py requirements --output requirements.pdf
+
+# Generate single trick for targeted testing
+uv run generate.py single false-positive-shall --output false_shall.pdf
+```
 
 ## Adding New Tricks
 

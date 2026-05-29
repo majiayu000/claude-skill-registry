@@ -1,0 +1,16 @@
+{
+  "name": "spec-gen",
+  "repo": "turbobeest/cursor-dev-system",
+  "path": "skills/spec-gen/SKILL.md",
+  "source": "github.com/turbobeest/cursor-dev-system",
+  "downloaded_at": "2026-01-29T06:24:04.084749Z",
+  "dir_name": "spec-gen-turbobeest-cursor-dev-system-109018ba",
+  "category": "workflow",
+  "author": "turbobeest",
+  "source_url": "https://github.com/turbobeest/cursor-dev-system/blob/main/skills/spec-gen/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/turbobeest/cursor-dev-system/blob/main/skills/spec-gen/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

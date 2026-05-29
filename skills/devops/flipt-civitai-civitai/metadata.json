@@ -1,0 +1,18 @@
+{
+  "name": "flipt",
+  "repo": "civitai/civitai",
+  "path": ".claude/skills/flipt/SKILL.md",
+  "source": "github.com/civitai/civitai",
+  "downloaded_at": "2026-01-22T02:37:37.256495Z",
+  "dir_name": "flipt-civitai-civitai",
+  "category": "devops",
+  "github_path": ".claude/skills/flipt",
+  "github_branch": "main",
+  "author": "civitai",
+  "source_url": "https://github.com/civitai/civitai/blob/main/.claude/skills/flipt/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/civitai/civitai/blob/main/.claude/skills/flipt/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

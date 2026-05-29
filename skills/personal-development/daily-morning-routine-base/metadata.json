@@ -1,0 +1,18 @@
+{
+  "name": "daily-morning-routine-base",
+  "repo": "ZachBeta/claude-as-coach",
+  "path": "skills/daily-morning-routine-base/SKILL.md",
+  "source": "github.com/ZachBeta/claude-as-coach",
+  "downloaded_at": "2026-01-21T01:12:44.676474Z",
+  "dir_name": "daily-morning-routine-base",
+  "category": "personal-development",
+  "github_path": "skills/daily-morning-routine-base",
+  "github_branch": "main",
+  "author": "ZachBeta",
+  "source_url": "https://github.com/ZachBeta/claude-as-coach/blob/main/skills/daily-morning-routine-base/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Zach Morek",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "start-feature",
+  "description": "",
+  "repo": "leeovery/claude-technical-workflows",
+  "category": "product",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/leeovery/claude-technical-workflows",
+  "github_path": "skills/start-feature",
+  "github_branch": "main",
+  "dir_name": "start-feature-leeovery-claude-technical-wor",
+  "downloaded_at": "2026-02-05T01:44:14.517893Z",
+  "author": "leeovery",
+  "source_url": "https://github.com/leeovery/claude-technical-workflows/blob/main/skills/start-feature/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Lee Overy",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

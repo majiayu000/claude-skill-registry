@@ -1,6 +1,7 @@
 ---
 name: seo-optimizer
 description: SEO optimization with keyword analysis, readability assessment, technical validation, content quality. Use for search rankings, blog posts, content audits, or encountering keyword density, readability scores, meta tags, schema markup errors.
+license: MIT
 ---
 
 # SEO Optimizer

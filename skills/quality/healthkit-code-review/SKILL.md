@@ -36,6 +36,17 @@ description: Reviews HealthKit code for authorization patterns, query usage, bac
 - Reviewing HKObserverQuery or `enableBackgroundDelivery` -> background.md
 - Reviewing HKQuantityType, HKCategoryType, or HKWorkout -> data-types.md
 
+## Review gates
+
+Run in order. **Do not state a finding in a later step until the pass condition for the current step is satisfied** (each pass condition is answerable from the codebase under review).
+
+1. **Scope** — **Pass:** Name the file path(s) and types/symbols using `HealthKit`, `HKHealthStore`, or `HK*` APIs (or state clearly that the diff touches none).
+2. **Availability and store** — **Pass:** Cite the call site of `isHealthDataAvailable()` before HealthKit use, or document why omission is acceptable for the scoped code; cite where `HKHealthStore` is created or injected.
+3. **Authorization semantics** — **Pass:** For each `requestAuthorization` / `getRequestStatusForAuthorization`, cite handler branches per [references/authorization.md](references/authorization.md) (e.g. success does not prove read access); do not infer read permission from `authorizationStatus` alone.
+4. **Queries and limits** — **Pass:** For each query, cite predicate + limit (`HKObjectQueryNoLimit` only with a bounded predicate); for totals/aggregates, cite `HKStatisticsQuery` / collection vs manual summing per [references/queries.md](references/queries.md).
+5. **Observers and background** — **Pass:** If `HKObserverQuery` or `enableBackgroundDelivery` appears, cite where the observer is started/stopped and where background delivery is registered; cite entitlements/Info.plist or flag missing config per [references/background.md](references/background.md). If absent, **Pass:** one line “no observer/background in scope.”
+6. **Threading and lifecycle** — **Pass:** Cite main-queue (or documented pattern) for UI updates from query callbacks; cite retention/`stop()`/`deinit` for long-running queries per checklist above.
+
 ## Review Questions
 
 1. Is `isHealthDataAvailable()` checked before creating HKHealthStore?

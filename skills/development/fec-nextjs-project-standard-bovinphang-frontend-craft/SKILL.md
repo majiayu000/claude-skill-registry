@@ -102,7 +102,13 @@ src/
 ## 与客户端 UI 模式的分工
 
 - **服务端**：渲染模式、数据获取与缓存、`loading.tsx` / `error.tsx`、路由与布局等以本 skill 为准。
-- **`'use client'` 组件**：组合与复合组件、表单、客户端状态、列表虚拟化、动效与键盘/焦点等，与纯 React 项目一致，遵循项目中的 React 规则（如 `.claude/rules/react.md`）。
+- **`'use client'` 组件**：组合与复合组件、表单、客户端状态、列表虚拟化、动效与键盘/焦点等，与纯 React 项目一致，遵循 **`fec-react-project-standard`** skill 及项目中的 React 规则（如 `.claude/rules/fec-react.md`）。
+
+## Related Skills / Boundary
+
+- `fec-react-project-standard` — 客户端 React 组件架构与 hooks 组织。
+- `fec-route-protection` — 鉴权、RBAC、redirect 与 middleware 安全边界。
+- `fec-data-fetching` — 客户端 TanStack Query server state；Next 服务端 fetch/cache 仍以本 skill 为准。
 
 ## Expected Output
 

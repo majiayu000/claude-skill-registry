@@ -1,0 +1,16 @@
+{
+  "name": "market-intel",
+  "repo": "frogr/austnomaton",
+  "path": ".claude/skills/market-intel/skill.md",
+  "category": "analysis",
+  "source": "github.com/frogr/austnomaton",
+  "dir_name": "market-intel-frogr-austnomaton",
+  "downloaded_at": "2026-02-22T07:12:23.838809Z",
+  "author": "frogr",
+  "source_url": "https://github.com/frogr/austnomaton/blob/main/.claude/skills/market-intel/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/frogr/austnomaton/blob/main/.claude/skills/market-intel/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

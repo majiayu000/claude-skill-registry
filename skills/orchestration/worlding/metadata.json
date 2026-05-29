@@ -1,0 +1,16 @@
+{
+  "name": "worlding",
+  "repo": "plurigrid/asi",
+  "path": "skills/worlding/SKILL.md",
+  "source": "github.com/plurigrid/asi",
+  "downloaded_at": "2026-01-29T07:42:18.688829Z",
+  "dir_name": "worlding",
+  "category": "orchestration",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/worlding/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

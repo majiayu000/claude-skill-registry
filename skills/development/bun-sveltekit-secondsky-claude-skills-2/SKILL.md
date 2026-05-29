@@ -1,7 +1,9 @@
 ---
-name: Bun SvelteKit
+name: bun-sveltekit
 description: Use when building or running SvelteKit apps on Bun, including SSR, adapters, and Bun-specific APIs
-keywords: [SvelteKit, Svelte 5, Bun, SSR, adapters, Vite, database, file operations]
+metadata:
+  keywords: "SvelteKit, Svelte 5, Bun, SSR, adapters, Vite, database, file operations"
+license: MIT
 ---
 
 # Bun SvelteKit
@@ -27,6 +29,16 @@ bun run build
 # Preview
 bun run preview
 ```
+
+## Secure Installation
+
+Scaffolding tools like `bunx sv create` download and execute remote code. Before running, follow supply chain security best practices:
+
+- **Block post-install scripts** — Bun disables them by default; allow specific packages via `trustedDependencies` in `package.json`
+- **Cooldown period** — Configure `minimumReleaseAge` in `bunfig.toml` to wait 7 days for new versions
+- **Audit before installing** — Run `socket package score npm <pkg>` or use `socket npm install <pkg>` to check packages
+
+Load the `dependency-upgrade` skill for full security configuration including Socket CLI integration, cooldown setup, lockfile validation, and CI enforcement.
 
 ## Project Setup
 

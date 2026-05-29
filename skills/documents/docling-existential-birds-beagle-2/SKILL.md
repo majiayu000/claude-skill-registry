@@ -62,6 +62,8 @@ All conversion operations return a `ConversionResult` containing:
 - `input`: Information about the source document
 
 ```python
+from docling.datamodel.base_models import ConversionStatus
+
 result = converter.convert("document.pdf")
 
 if result.status == ConversionStatus.SUCCESS:
@@ -295,6 +297,16 @@ for result in results:
     else:
         print(f"Failed: {result.input.file}")
 ```
+
+## Gates
+
+Before treating output as complete or feeding it downstream (RAG, evals, storage):
+
+1. Obtain `result` from `convert()` or follow batch sequencing in [references/batch.md](references/batch.md).
+2. **Pass:** `result.status` is `ConversionStatus.SUCCESS`, **or** `PARTIAL_SUCCESS` **and** you have read `result.errors` and explicitly accept partial output for the task, **or** `FAILURE` is handled (no export/chunking on failure unless intended).
+3. Only then call `export_to_*`, `save_as_*`, or chunkers in [references/chunking.md](references/chunking.md).
+
+For `convert_all`: **Pass** when each input maps to a result and each `result.status` is classified before writing outputs (see [references/batch.md](references/batch.md)).
 
 ## CLI Usage
 

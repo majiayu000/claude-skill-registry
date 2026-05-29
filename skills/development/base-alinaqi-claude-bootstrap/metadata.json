@@ -1,9 +1,9 @@
 {
-  "name": "base",
+  "name": "supabase-python",
   "repo": "alinaqi/claude-bootstrap",
-  "path": "skills/base/SKILL.md",
+  "path": "skills/supabase-python/SKILL.md",
   "source": "github.com/alinaqi/claude-bootstrap",
-  "downloaded_at": "2026-01-22T03:20:48.697056Z",
+  "downloaded_at": "2026-01-22T03:20:51.776725Z",
   "dir_name": "base-alinaqi-claude-bootstrap",
   "category": "development",
   "github_path": "skills/supabase-python",

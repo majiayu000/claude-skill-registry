@@ -1,0 +1,16 @@
+{
+  "name": "public",
+  "repo": "cgallic/mydeadinternet",
+  "path": "public/skill.md",
+  "category": "integration",
+  "source": "github.com/cgallic/mydeadinternet",
+  "dir_name": "public-cgallic-mydeadinternet",
+  "downloaded_at": "2026-02-15T06:42:45.956864Z",
+  "author": "cgallic",
+  "source_url": "https://github.com/cgallic/mydeadinternet/blob/main/public/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cgallic/mydeadinternet/blob/main/public/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

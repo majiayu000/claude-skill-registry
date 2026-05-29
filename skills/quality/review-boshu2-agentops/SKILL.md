@@ -340,6 +340,8 @@ Merge council findings into the review document under a "## Council Findings" se
 
 ## Reference Documents
 
+- [references/review.feature](references/review.feature) — Executable spec: risk-ranked diff review, mock/stub detection, bug scan, result.json (soc-qk4b)
+
 - [references/MOCK_FINDER.md](references/MOCK_FINDER.md) — Find stubs, mocks, placeholders, TODOs
 - [references/BUG_SCANNER.md](references/BUG_SCANNER.md) — Bug scanner: null derefs, leaks, security
 - [references/DOMAIN_AUDIT.md](references/DOMAIN_AUDIT.md) — Domain-parameterized audit (security, perf, UX, API, CLI)

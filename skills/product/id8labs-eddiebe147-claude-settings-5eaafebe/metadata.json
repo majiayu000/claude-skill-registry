@@ -1,0 +1,18 @@
+{
+  "name": "id8labs",
+  "repo": "eddiebe147/claude-settings",
+  "path": "skills/id8labs/SKILL.md",
+  "source": "github.com/eddiebe147/claude-settings",
+  "downloaded_at": "2026-01-19T03:03:29.093863Z",
+  "dir_name": "id8labs-eddiebe147-claude-settings-5eaafebe",
+  "category": "product",
+  "github_path": "skills/id8labs",
+  "github_branch": "main",
+  "author": "eddiebe147",
+  "source_url": "https://github.com/eddiebe147/claude-settings/blob/main/skills/id8labs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/eddiebe147/claude-settings/blob/main/skills/id8labs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

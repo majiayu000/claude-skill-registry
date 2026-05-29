@@ -16,6 +16,48 @@ description: |
 
 # OpenShift Cluster Health Analysis (Popeye-Style)
 
+## OpenShift Platform Versions & Documentation (January 2026)
+
+| Platform | Current Version | Support Status | Documentation |
+|----------|-----------------|----------------|---------------|
+| **OpenShift Container Platform** | 4.17.x | Current | https://docs.openshift.com/container-platform/4.17/ |
+| **OCP EUS (Extended Update Support)** | 4.16.x | EUS | https://access.redhat.com/support/policy/updates/openshift |
+| **ARO (Azure Red Hat OpenShift)** | 4.15-4.17 | GA | https://learn.microsoft.com/azure/openshift/ |
+| **ROSA (Red Hat OpenShift on AWS)** | 4.14-4.17 | GA | https://docs.openshift.com/rosa/ |
+| **ROSA HCP (Hosted Control Planes)** | 4.16-4.17 | GA | https://docs.openshift.com/rosa/rosa_hcp/ |
+| **OKD** | 4.16.x | Community | https://www.okd.io/ |
+
+### OpenShift 4.17 Key Features
+- **OVN-Kubernetes**: Default CNI with eBPF datapath acceleration
+- **MachineConfig Drift Detection**: Automatic detection of node configuration changes
+- **Enhanced Web Terminal**: Built-in terminal with pre-installed tools
+- **Pod Security Admission**: Full PSA enforcement with SCC integration
+- **OpenShift AI**: ML/AI platform integration (optional operator)
+- **GitOps 1.12+**: ArgoCD-based, ApplicationSet controller enhancements
+- **Pipelines 1.15+**: Tekton-based, Chains for supply chain security
+
+### CLI Installation
+
+```bash
+# OpenShift CLI (oc)
+brew install openshift-cli
+# OR download from mirror.openshift.com
+
+# ROSA CLI
+curl -LO https://mirror.openshift.com/pub/openshift-v4/clients/rosa/latest/rosa-linux.tar.gz
+tar -xf rosa-linux.tar.gz && sudo mv rosa /usr/local/bin/
+rosa login --token="${ROSA_TOKEN}"
+
+# ARO (uses Azure CLI)
+az extension add --name aro
+az aro list -o table
+
+# Verify CLI versions
+oc version
+rosa version
+az aro --help
+```
+
 ## OpenShift Detection and Command Convention
 
 **IMPORTANT**: This skill automatically detects OpenShift environments and uses `oc` commands.
@@ -341,20 +383,44 @@ else
     echo "✓ All namespaces have NetworkPolicies"
 fi
 
-# 5. OVNKubernetes network analysis (if applicable)
-echo -e "\n### OVNKubernetes Network Analysis ###"
-if oc get crd ovnclusterconfigs.v1.network.operator.openshift.io &>/dev/null; then
-    echo "INFO: OVNKubernetes CNI detected"
+# 5. OVNKubernetes network analysis (default in OCP 4.12+, eBPF in 4.17+)
+echo -e "\n### OVNKubernetes Network Analysis (OCP 4.17+ eBPF) ###"
+NETWORK_TYPE=$(oc get network.config.openshift.io cluster -o jsonpath='{.status.networkType}' 2>/dev/null)
+echo "INFO: Network type: $NETWORK_TYPE"
+
+if [ "$NETWORK_TYPE" == "OVNKubernetes" ]; then
+    echo "INFO: OVNKubernetes CNI detected (default for OCP 4.12+)"
+
     # Check OVNKubernetes pods
-    OVN_PODS=$(oc get pods -n openshift-ovn-kubernetes --no-headers | wc -l)
+    OVN_PODS=$(oc get pods -n openshift-ovn-kubernetes --no-headers 2>/dev/null | wc -l)
     echo "INFO: $OVN_PODS OVNKubernetes pods running"
 
-    OVN_READY=$(oc get pods -n openshift-ovn-kubernetes --field-selector=status.phase=Running --no-headers | wc -l)
+    OVN_READY=$(oc get pods -n openshift-ovn-kubernetes --field-selector=status.phase=Running --no-headers 2>/dev/null | wc -l)
     if [ $OVN_READY -lt $OVN_PODS ]; then
         echo "WARN: Some OVNKubernetes pods not ready"
+        oc get pods -n openshift-ovn-kubernetes | grep -v Running
     else
         echo "✓ OVNKubernetes pods healthy"
     fi
+
+    # Check for eBPF acceleration (4.17+)
+    if oc get network.operator.openshift.io cluster -o jsonpath='{.spec.defaultNetwork.ovnKubernetesConfig.egressIPConfig}' 2>/dev/null; then
+        echo "INFO: OVN-Kubernetes with eBPF datapath support available"
+    fi
+
+    # Check EgressIP configuration
+    EGRESS_IPS=$(oc get egressip --no-headers 2>/dev/null | wc -l)
+    if [ $EGRESS_IPS -gt 0 ]; then
+        echo "INFO: $EGRESS_IPS EgressIP resources configured"
+    fi
+
+    # Check for NetworkPolicy enforcement
+    echo "--- NetworkPolicy Status ---"
+    NETWORK_POLICIES=$(oc get networkpolicy -A --no-headers 2>/dev/null | wc -l)
+    echo "INFO: $NETWORK_POLICIES NetworkPolicies configured cluster-wide"
+elif [ "$NETWORK_TYPE" == "OpenShiftSDN" ]; then
+    echo "WARN: OpenShiftSDN detected - consider migrating to OVNKubernetes for OCP 4.17+ features"
+    echo "Migration guide: https://docs.openshift.com/container-platform/4.17/networking/ovn_kubernetes_network_provider/migrate-from-openshift-sdn.html"
 fi
 
 # 6. Egress networking analysis
@@ -476,44 +542,121 @@ fi
 # OpenShift Platform-Specific Analysis
 echo "=== OPENSHIFT PLATFORM-SPECIFIC ANALYSIS ==="
 
-# 1. Detect OpenShift variant
+### OpenShift Platform Detection
+
+```bash
+#!/bin/bash
+# OpenShift Platform-Specific Analysis
+echo "=== OPENSHIFT PLATFORM-SPECIFIC ANALYSIS ==="
+
+# 1. Detect OpenShift variant and version
 echo "### OpenShift Platform Detection ###"
 if oc get clusterversion version -o jsonpath='{.status.desired.version}' 2>/dev/null; then
     OCP_VERSION=$(oc get clusterversion version -o jsonpath='{.status.desired.version}')
     echo "INFO: OpenShift Container Platform version: $OCP_VERSION"
+
+    # Parse major.minor version
+    OCP_MAJOR=$(echo $OCP_VERSION | cut -d. -f1)
+    OCP_MINOR=$(echo $OCP_VERSION | cut -d. -f2)
+    echo "INFO: Major: $OCP_MAJOR, Minor: $OCP_MINOR"
+
+    # Check for 4.17+ features
+    if [ "$OCP_MINOR" -ge 17 ]; then
+        echo "INFO: OCP 4.17+ detected - OVN-Kubernetes eBPF, Pod Security Admission GA"
+    fi
 else
     echo "WARN: Unable to determine OpenShift version"
 fi
 
-# Check for ARO/ROSA specific markers
-if oc get machinesets -n openshift-machine-api 2>/dev/null | grep -q "azure"; then
+# Check for managed service platforms
+if oc get infrastructure cluster -o jsonpath='{.status.platformStatus.type}' 2>/dev/null | grep -qi "azure"; then
     echo "INFO: Azure Red Hat OpenShift (ARO) detected"
     PLATFORM="ARO"
-elif oc get machinesets -n openshift-machine-api 2>/dev/null | grep -q "aws"; then
-    echo "INFO: Red Hat OpenShift Service on AWS (ROSA) detected"
-    PLATFORM="ROSA"
+
+    # ARO-specific checks
+    echo "--- ARO Resource Group and Location ---"
+    oc get infrastructure cluster -o jsonpath='{.status.platformStatus.azure.resourceGroupName}'
+
+elif oc get infrastructure cluster -o jsonpath='{.status.platformStatus.type}' 2>/dev/null | grep -qi "aws"; then
+    # Check for ROSA markers
+    if oc get configmap -n kube-system aws-auth &>/dev/null && rosa describe cluster 2>/dev/null; then
+        echo "INFO: Red Hat OpenShift Service on AWS (ROSA) detected"
+        PLATFORM="ROSA"
+
+        # Check for HCP (Hosted Control Planes)
+        if rosa describe cluster 2>/dev/null | grep -q "Hosted Control Plane"; then
+            echo "INFO: ROSA with Hosted Control Planes (HCP) - faster provisioning, reduced cost"
+            PLATFORM="ROSA-HCP"
+        fi
+    else
+        echo "INFO: Self-managed OpenShift on AWS detected"
+        PLATFORM="OCP-AWS"
+    fi
+
+elif oc get infrastructure cluster -o jsonpath='{.status.platformStatus.type}' 2>/dev/null | grep -qi "gcp"; then
+    echo "INFO: OpenShift on Google Cloud Platform detected"
+    PLATFORM="OCP-GCP"
+
+elif oc get infrastructure cluster -o jsonpath='{.status.platformStatus.type}' 2>/dev/null | grep -qi "vsphere"; then
+    echo "INFO: OpenShift on VMware vSphere detected"
+    PLATFORM="OCP-vSphere"
+
+elif oc get infrastructure cluster -o jsonpath='{.status.platformStatus.type}' 2>/dev/null | grep -qi "baremetal"; then
+    echo "INFO: OpenShift on Bare Metal detected"
+    PLATFORM="OCP-BareMetal"
+
 else
     echo "INFO: Self-managed OpenShift Container Platform detected"
     PLATFORM="OCP"
 fi
 
+echo "Platform: $PLATFORM"
+```
+
 # 2. Platform-specific checks
 case $PLATFORM in
     "ARO")
-        echo -e "\n### ARO-Specific Checks ###"
+        echo -e "\n### ARO-Specific Checks (Azure Red Hat OpenShift) ###"
         echo "Checking Azure-specific configurations..."
+
         # Check Azure resource limits
         echo "INFO: Monitor Azure subscription quotas and limits"
         echo "INFO: Check Azure resource group permissions"
+
+        # ARO networking
+        echo "--- ARO Networking ---"
+        oc get network.config.openshift.io cluster -o jsonpath='{.status.networkType}'
+
+        # ARO upgrade
+        echo "--- ARO Upgrade Status ---"
+        echo "Use: az aro update --resource-group \${RG} --name \${CLUSTER}"
+        echo "Check available versions: az aro get-versions --location \${LOCATION}"
         ;;
-    "ROSA")
-        echo -e "\n### ROSA-Specific Checks ###"
+
+    "ROSA"|"ROSA-HCP")
+        echo -e "\n### ROSA-Specific Checks (Red Hat OpenShift on AWS) ###"
         echo "Checking AWS-specific configurations..."
+
         # Check AWS STS configuration
         echo "INFO: Verify AWS IAM roles and STS configuration"
-        echo "INFO: Check VPC and security group configurations"
+        rosa describe cluster 2>/dev/null | grep -E "AWS Account|Region|STS"
+
+        # ROSA upgrade
+        echo "--- ROSA Upgrade Status ---"
+        rosa list upgrades --cluster \${CLUSTER} 2>/dev/null || echo "Run: rosa list upgrades --cluster \${CLUSTER}"
+
+        # Check machine pools
+        echo "--- ROSA Machine Pools ---"
+        rosa list machinepools --cluster \${CLUSTER} 2>/dev/null || echo "Run: rosa list machinepools --cluster \${CLUSTER}"
+
+        if [ "$PLATFORM" == "ROSA-HCP" ]; then
+            echo "--- ROSA HCP Specific ---"
+            echo "INFO: Hosted Control Planes managed by AWS"
+            echo "INFO: Control plane nodes not visible, managed service"
+        fi
         ;;
-    "OCP")
+
+    "OCP"*)
         echo -e "\n### Self-Managed OCP Checks ###"
         echo "Checking infrastructure components..."
         # Check infrastructure nodes

@@ -71,10 +71,10 @@ After user confirms the approach, create the full plan document.
 
 ## Output Format
 
-Save the plan to `.plan/<index>--<plan-name>--<date>.md`
+Save the plan to `.plans/<index>--<plan-name>--<date>.md`
 
 **Naming rules:**
-- `<index>`: 3-digit sequential number (001, 002, etc.) - check existing files in `.plan/`
+- `<index>`: 3-digit sequential number (001, 002, etc.) - check existing files in `.plans/`
 - `<plan-name>`: kebab-case summary (e.g., `user-authentication-flow`, `product-gallery-redesign`)
 - `<date>`: Format `MM-DD-YYYY`
 
@@ -159,14 +159,14 @@ src/
 5. **Let user choose** their preferred approach
 6. **Ask for resources** they want to reference
 7. **Generate the plan** with all sections
-8. **Save to `.plan/` folder** with proper naming
+8. **Save to `.plans/` folder** with proper naming
 9. **Keep it under 500 lines** - be concise, use tables, avoid verbose explanations
 
 ## Important Notes
 
 - Always save the original prompt at the top of the document
-- Check `.plan/` folder for existing files to determine the next index
-- Create the `.plan/` folder if it doesn't exist
+- Check `.plans/` folder for existing files to determine the next index
+- Create the `.plans/` folder if it doesn't exist
 - Focus on actionable items, not theoretical discussions
 - Include code structure and type definitions
 - Be specific about file paths relative to project root

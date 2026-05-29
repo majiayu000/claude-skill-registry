@@ -1,9 +1,41 @@
 ---
 name: arch-cross-service-integration
-description: Use when designing or implementing cross-service communication, data synchronization, or service boundary patterns.
-infer: true
+version: 1.1.0
+description: '[Architecture] Use when designing or implementing cross-service communication, data synchronization, or service boundary patterns.'
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash, Task
 ---
+
+> **[IMPORTANT]** Use `TaskCreate` to break ALL work into small tasks BEFORE starting — including tasks for each file read. This prevents context loss from long files. For simple tasks, AI MUST ask user whether to skip.
+
+**Prerequisites:** **MUST READ** `.claude/skills/shared/evidence-based-reasoning-protocol.md` before executing.
+
+- `docs/project-reference/domain-entities-reference.md` — Domain entity catalog, relationships, cross-service sync (read when task involves business entities/models)
+
+## Quick Summary
+
+**Goal:** Design and implement cross-service communication, data sync, and service boundary patterns.
+
+**Workflow:**
+
+1. **Pre-Flight** — Identify source/target services, data ownership, sync vs async
+2. **Choose Pattern** — Entity Event Bus (recommended), Direct API, never shared DB
+3. **Implement** — Producer + Consumer with dependency waiting and race condition handling
+4. **Test** — Verify create/update/delete flows, out-of-order messages, force sync
+
+**Key Rules:**
+
+- Never access another service's database directly
+- Use `LastMessageSyncDate` for conflict resolution (only update if newer)
+- Consumers must wait for dependencies with `TryWaitUntilAsync`
+- Messages defined in shared project (search for: shared message definitions, bus message classes)
+
+**Be skeptical. Apply critical thinking, sequential thinking. Every claim needs traced proof, confidence percentages (Idea should be more than 80%).**
+
+> **MANDATORY IMPORTANT MUST** Plan ToDo Task to READ the following project-specific reference doc:
+>
+> - `backend-patterns-reference.md` — backend CQRS, entity event bus, message bus patterns
+>
+> If file not found, search for: cross-service message definitions, entity event producers, message bus consumers.
 
 # Cross-Service Integration Workflow
 
@@ -23,22 +55,7 @@ allowed-tools: Read, Write, Edit, Grep, Glob, Bash, Task
 
 ## Service Boundaries
 
-### EasyPlatform Services
-
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│                        EasyPlatform Platform                          │
-├───────────────┬───────────────┬───────────────┬────────────────────┤
-│ TextSnippet  │ TextSnippet   │ TextSnippet  │ TextSnippet      │
-│ (Example) │ (Example) │ (Example)     │ (Example)        │
-├───────────────┴───────────────┴───────────────┴────────────────────┤
-│                         Accounts Service                            │
-│                    (Authentication & Users)                         │
-├─────────────────────────────────────────────────────────────────────┤
-│                      Shared Infrastructure                          │
-│              RabbitMQ │ Redis │ MongoDB │ PostgreSQL                │
-└─────────────────────────────────────────────────────────────────────┘
-```
+> **Note:** Search for `project-structure-reference.md` or the project's service directories to discover the platform's service map, data ownership matrix, and shared infrastructure components.
 
 ## Communication Patterns
 
@@ -56,40 +73,19 @@ Source Service                    Target Service
       │ Auto-raise                      │
       ▼                                 ▼
 ┌────────────┐                   ┌────────────┐
-│  Producer  │── RabbitMQ ────▶ │  Consumer  │
+│  Producer  │── MsgBus  ────▶ │  Consumer  │
 └────────────┘                   └────────────┘
 ```
 
-**Implementation**:
-
-```csharp
-// Producer (Source: Accounts)
-internal sealed class EmployeeEntityEventBusMessageProducer
-    : PlatformCqrsEntityEventBusMessageProducer<EmployeeEntityEventBusMessage, Employee, string>
-{
-    public override async Task<bool> HandleWhen(PlatformCqrsEntityEvent<Employee> @event)
-        => @event.EntityData.IsActive || @event.CrudAction == PlatformCqrsEntityEventCrudAction.Deleted;
-}
-
-// Consumer (Target: TextSnippet)
-internal sealed class UpsertEmployeeConsumer
-    : PlatformApplicationMessageBusConsumer<EmployeeEntityEventBusMessage>
-{
-    public override async Task HandleLogicAsync(EmployeeEntityEventBusMessage message, string routingKey)
-    {
-        // Wait for dependencies
-        // Handle Create/Update/Delete
-    }
-}
-```
+**⚠️ MUST READ:** CLAUDE.md for Entity Event Bus Producer and Message Bus Consumer implementation patterns.
 
 ### Pattern 2: Direct API Call
 
 **Use when**: Real-time data needed, no local copy required.
 
 ```csharp
-// In TextSnippet, calling Accounts API
-public class AccountsApiClient
+// In Service A, calling Service B API
+public class ServiceBApiClient
 {
     private readonly HttpClient _client;
 
@@ -119,13 +115,7 @@ var accountsData = await accountsDbContext.Users.ToListAsync();
 
 ## Data Ownership Matrix
 
-| Entity    | Owner Service | Consumers                |
-| --------- | ------------- | ------------------------ |
-| User      | Accounts      | All services             |
-| Employee  | TextSnippet   | TextSnippet, TextSnippet |
-| Candidate | TextSnippet   | TextSnippet (on hire)    |
-| Company   | Accounts      | All services             |
-| Survey    | TextSnippet   | TextSnippet              |
+> **Note:** Search for `project-structure-reference.md` or the project's documentation for the entity ownership matrix. Each entity should have exactly ONE owning service; consumers receive synced copies via message bus.
 
 ## Synchronization Patterns
 
@@ -133,7 +123,7 @@ var accountsData = await accountsDbContext.Users.ToListAsync();
 
 ```csharp
 // For initial data population or recovery
-public class FullSyncJob : PlatformApplicationBackgroundJobExecutor
+public class FullSyncJob : BackgroundJobExecutor // project background job base (see docs/project-reference/backend-patterns-reference.md)
 {
     public override async Task ProcessAsync(object? param)
     {
@@ -155,7 +145,7 @@ public class FullSyncJob : PlatformApplicationBackgroundJobExecutor
 
 ```csharp
 // Normal operation via message bus
-internal sealed class EmployeeSyncConsumer : PlatformApplicationMessageBusConsumer<EmployeeEventBusMessage>
+internal sealed class EmployeeSyncConsumer : MessageBusConsumer<EmployeeEventBusMessage> // project message bus base (see docs/project-reference/backend-patterns-reference.md)
 {
     public override async Task HandleLogicAsync(EmployeeEventBusMessage message, string routingKey)
     {
@@ -171,16 +161,7 @@ internal sealed class EmployeeSyncConsumer : PlatformApplicationMessageBusConsum
 
 ### Conflict Resolution
 
-```csharp
-// Use LastMessageSyncDate for ordering
-entity.With(e => e.LastMessageSyncDate = message.CreatedUtcDate);
-
-// Only update if message is newer
-if (existing.LastMessageSyncDate <= message.CreatedUtcDate)
-{
-    await repository.UpdateAsync(updatedEntity);
-}
-```
+Use `LastMessageSyncDate` for ordering - only update if message is newer. See CLAUDE.md Message Bus Consumer pattern for full implementation.
 
 ## Integration Checklist
 
@@ -193,7 +174,7 @@ if (existing.LastMessageSyncDate <= message.CreatedUtcDate)
 
 ### Implementation
 
-- [ ] Message defined in PlatformExampleApp.Shared
+- [ ] Message defined in shared project
 - [ ] Producer filters appropriate events
 - [ ] Consumer waits for dependencies
 - [ ] Race condition handling implemented
@@ -213,8 +194,7 @@ if (existing.LastMessageSyncDate <= message.CreatedUtcDate)
 ### Message Not Arriving
 
 ```bash
-# Check RabbitMQ queues
-rabbitmqctl list_queues
+# Check message broker queues (search for: queue management commands)
 
 # Check producer is publishing
 grep -r "HandleWhen" --include="*Producer.cs" -A 5
@@ -292,7 +272,14 @@ if (existing.LastMessageSyncDate <= message.CreatedUtcDate)
 - [ ] Force sync mechanism available
 - [ ] Monitoring/alerting in place
 
-## IMPORTANT Task Planning Notes
+## Related
 
-- Always plan and break many small todo tasks
-- Always add a final review todo task to review the works done at the end to find any fix or enhancement needed
+- `arch-security-review`
+- `api-design`
+
+---
+
+**IMPORTANT Task Planning Notes (MUST FOLLOW)**
+
+- Always plan and break work into many small todo tasks
+- Always add a final review todo task to verify work quality and identify fixes/enhancements

@@ -1,0 +1,17 @@
+{
+  "name": "docs",
+  "repo": "Jetbuilt/connect_wise",
+  "path": "docs/Skill.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/Jetbuilt/connect_wise",
+  "dir_name": "docs-jetbuilt-connect-wise-2",
+  "downloaded_at": "2026-03-01T05:29:14.363318Z",
+  "author": "Jetbuilt",
+  "source_url": "https://github.com/Jetbuilt/connect_wise/blob/main/docs/Skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Jetbuilt/connect_wise/blob/main/docs/Skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

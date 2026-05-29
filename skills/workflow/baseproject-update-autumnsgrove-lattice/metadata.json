@@ -1,0 +1,16 @@
+{
+  "name": "baseproject-update",
+  "repo": "AutumnsGrove/Lattice",
+  "path": ".claude/skills/baseproject-update/SKILL.md",
+  "category": "workflow",
+  "source": "github.com/AutumnsGrove/Lattice",
+  "dir_name": "baseproject-update-autumnsgrove-lattice",
+  "downloaded_at": "2026-02-22T04:45:14.462096Z",
+  "author": "AutumnsGrove",
+  "source_url": "https://github.com/AutumnsGrove/Lattice/blob/main/.claude/skills/baseproject-update/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AutumnsGrove/Lattice/blob/main/.claude/skills/baseproject-update/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

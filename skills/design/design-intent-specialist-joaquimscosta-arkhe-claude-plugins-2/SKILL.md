@@ -1,6 +1,6 @@
 ---
 name: design-intent-specialist
-description: Creates accurate frontend implementations from visual references while maintaining design consistency. Use when user provides Figma URLs, screenshots, design images, or requests UI implementation from visual references. Automatically checks existing design intent patterns before implementation.
+description: Creates accurate frontend implementations from visual references while maintaining design consistency. Use when user provides Figma URLs, screenshots, design images, requests visual implementation from reference, or asks to build UI matching a design. Automatically checks existing design intent patterns before implementation.
 ---
 
 # Design Intent Specialist

@@ -43,3 +43,14 @@ description: Reviews App Intents code for intent structure, entities, shortcuts,
 3. Do phrases read naturally and include the app name?
 4. Are SwiftData models passed by `persistentModelID`, not directly?
 5. Would migrating from SiriKit break existing user shortcuts?
+
+## Hard gates (before reporting)
+
+Complete **in order** for each finding you intend to report. Do not advance until the pass condition is satisfied.
+
+1. **Location artifact** — The finding includes `[FILE:LINE]` (or a line range) copied from the current file contents; the path resolves in this repo.
+2. **Scope read** — You read the full surrounding type: the `AppIntent` / `AppEntity` / `EntityQuery` / `AppShortcutsProvider` (or equivalent) that contains the flagged code, not only a diff hunk or snippet.
+3. **Platform or integration claim** (only if the finding depends on minimum iOS, Swift Package vs app target, `@IntentParameterDependency` availability, SiriKit migration, or `isDiscoverable` / extension placement) — You name one concrete artifact you inspected (for example `IPHONEOS_DEPLOYMENT_TARGET` or target membership in the Xcode project, `Package.swift` `platforms`, entitlements, or where the intent file lives) **or** you drop or downgrade the finding to an open question.
+4. **Protocol** — Pre-report steps in [review-verification-protocol](../review-verification-protocol/SKILL.md) are satisfied for this item (no finding if they are not).
+
+Use the issue format `[FILE:LINE] ISSUE_TITLE` for each reported finding. Hard gate 4 is the full pre-report checklist for this skill’s review type.

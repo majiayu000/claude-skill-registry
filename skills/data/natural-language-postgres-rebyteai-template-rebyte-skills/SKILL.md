@@ -1,11 +1,11 @@
 ---
-name: natural-language-postgres
-description: Chat app that lets you ask questions in plain English and query your PostgreSQL database.
+name: natural-language-postgres-presentation
+description: Presentation-focused Natural Language to SQL app with PPT-style visualizations.
 ---
 
-# Natural Language Postgres
+# Natural Language Postgres Presentation
 
-A demo app that lets you ask questions in plain English and get answers from your database.
+A presentation-focused Natural Language to SQL app with PPT-style visualizations for showcasing data insights.
 
 ## Tech Stack
 
@@ -24,13 +24,13 @@ A demo app that lets you ask questions in plain English and get answers from you
 ### 1. Clone the Template
 
 ```bash
-git clone --depth 1 https://github.com/Eng0AI/natural-language-postgres.git .
+git clone --depth 1 https://github.com/Eng0AI/natural-language-postgres-presentation.git .
 ```
 
 If the directory is not empty:
 
 ```bash
-git clone --depth 1 https://github.com/Eng0AI/natural-language-postgres.git _temp_template
+git clone --depth 1 https://github.com/Eng0AI/natural-language-postgres-presentation.git _temp_template
 mv _temp_template/* _temp_template/.* . 2>/dev/null || true
 rm -rf _temp_template
 ```

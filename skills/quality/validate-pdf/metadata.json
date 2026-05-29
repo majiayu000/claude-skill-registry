@@ -1,0 +1,16 @@
+{
+  "name": "validate-pdf",
+  "repo": "BaselHussain/ai-keto-meal-plan-generator",
+  "path": ".claude/skills/validate-pdf/SKILL.md",
+  "source": "github.com/BaselHussain/ai-keto-meal-plan-generator",
+  "downloaded_at": "2026-02-02T02:25:36.504560Z",
+  "dir_name": "validate-pdf",
+  "category": "quality",
+  "author": "BaselHussain",
+  "source_url": "https://github.com/BaselHussain/ai-keto-meal-plan-generator/blob/main/.claude/skills/validate-pdf/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/BaselHussain/ai-keto-meal-plan-generator/blob/main/.claude/skills/validate-pdf/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,9 +1,9 @@
 ---
-name: refactor-150
-description: "Three-stage refactoring workflow: (1) iterative research of refactor/modularization options, (2) plan + risk/edge-case analysis + Scope150 validation, then implement with tests after user confirmation, and (3) apply Scout105 cleanup protocol. Use when asked to refactor, modularize, or restructure code safely."
+name: 52-execute-refactor-150
+description: "[52] EXECUTE. Three-stage refactoring workflow: (1) iterative research of refactor/modularization options, (2) plan + risk/edge-case analysis + Scope150 validation, then implement with tests after user confirmation, and (3) apply Scout105 cleanup protocol. Use when asked to refactor, modularize, or restructure code safely."
 ---
 
-# Refactor 150
+# Execute-Refactor 150 Protocol
 
 ## Overview
 

@@ -1,5 +1,5 @@
 ---
-name: interaction
+name: plutonium-interaction
 description: Plutonium interactions - encapsulated business logic for custom actions
 ---
 
@@ -68,7 +68,7 @@ input :content, as: :text
 input :date, as: :date
 ```
 
-See `definition-fields` skill for all input types and options.
+See `plutonium-definition-fields` skill for all input types and options.
 
 ## Presentation
 
@@ -209,11 +209,11 @@ end
 
 ### Bulk Actions (Multiple Records)
 
-Act on multiple selected records:
+Act on multiple selected records. When registered, the table shows checkboxes and a toolbar appears when records are selected.
 
 ```ruby
 class BulkArchiveInteraction < Plutonium::Resource::Interaction
-  attribute :resources  # Collection of records
+  attribute :resources  # Collection of records (note: plural)
 
   def execute
     resources.update_all(archived: true)
@@ -221,6 +221,8 @@ class BulkArchiveInteraction < Plutonium::Resource::Interaction
   end
 end
 ```
+
+**Authorization:** Bulk actions use per-record authorization. The policy method is checked for each selected record - if any fails, the entire request is rejected. The UI only shows actions that all selected records support.
 
 ## Connecting to Definitions
 
@@ -375,7 +377,7 @@ end
 
 ## Related Skills
 
-- `definition-actions` - Declaring actions in definitions
-- `forms` - Custom interaction form templates
-- `policy` - Controlling access to actions
-- `resource` - How interactions fit in the architecture
+- `plutonium-definition-actions` - Declaring actions in definitions
+- `plutonium-forms` - Custom interaction form templates
+- `plutonium-policy` - Controlling access to actions
+- `plutonium-resource` - How interactions fit in the architecture

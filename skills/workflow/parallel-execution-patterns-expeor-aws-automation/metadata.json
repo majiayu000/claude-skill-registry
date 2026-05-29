@@ -1,0 +1,16 @@
+{
+  "name": "parallel-execution-patterns",
+  "repo": "expeor/aws-automation",
+  "path": ".claude/skills/parallel-execution-patterns/SKILL.md",
+  "source": "github.com/expeor/aws-automation",
+  "downloaded_at": "2026-01-29T05:41:30.035875Z",
+  "dir_name": "parallel-execution-patterns-expeor-aws-automation",
+  "category": "workflow",
+  "author": "expeor",
+  "source_url": "https://github.com/expeor/aws-automation/blob/main/.claude/skills/parallel-execution-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/expeor/aws-automation/blob/main/.claude/skills/parallel-execution-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -4,6 +4,7 @@ description: "Measure test coverage and identify untested code. Use when assessi
 mcp_fallback: none
 category: analysis
 tier: 2
+user-invocable: false
 ---
 
 # Calculate Coverage

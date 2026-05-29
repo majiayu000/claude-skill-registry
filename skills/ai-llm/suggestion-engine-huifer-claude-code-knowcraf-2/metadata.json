@@ -1,0 +1,16 @@
+{
+  "name": "suggestion-engine",
+  "repo": "huifer/Claude-Code-KnowCraft",
+  "path": ".claude/skills/suggestion-engine/skill.md",
+  "category": "ai-llm",
+  "source": "github.com/huifer/Claude-Code-KnowCraft",
+  "dir_name": "suggestion-engine-huifer-claude-code-knowcraf-2",
+  "downloaded_at": "2026-02-22T07:29:21.471182Z",
+  "author": "huifer",
+  "source_url": "https://github.com/huifer/Claude-Code-KnowCraft/blob/main/.claude/skills/suggestion-engine/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/huifer/Claude-Code-KnowCraft/blob/main/.claude/skills/suggestion-engine/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

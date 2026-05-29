@@ -1,0 +1,18 @@
+{
+  "name": "derangement-crdt",
+  "repo": "plurigrid/asi",
+  "path": "skills/derangement-crdt/SKILL.md",
+  "source": "github.com/plurigrid/asi",
+  "downloaded_at": "2026-01-20T01:35:03.468527Z",
+  "dir_name": "derangement-crdt",
+  "category": "development",
+  "github_path": "skills/derangement-crdt",
+  "github_branch": "main",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/derangement-crdt/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

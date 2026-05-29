@@ -1,0 +1,16 @@
+{
+  "name": "dependency-mapping",
+  "repo": "forrestthewoods/anubis",
+  "path": ".claude/skills/dependency-mapping/SKILL.md",
+  "source": "github.com/forrestthewoods/anubis",
+  "downloaded_at": "2026-01-29T07:31:03.523149Z",
+  "dir_name": "dependency-mapping-forrestthewoods-anubis",
+  "category": "planning",
+  "author": "forrestthewoods",
+  "source_url": "https://github.com/forrestthewoods/anubis/blob/main/.claude/skills/dependency-mapping/SKILL.md",
+  "license": "Unlicense",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/forrestthewoods/anubis/blob/main/.claude/skills/dependency-mapping/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

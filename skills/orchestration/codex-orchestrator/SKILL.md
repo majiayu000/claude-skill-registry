@@ -400,7 +400,7 @@ The `--api` flag bypasses Codex CLI entirely and calls the OpenAI API directly v
 ~/.claude/skills/codex-orchestrator/scripts/codex-exec.sh researcher "What are the latest React patterns?" --api --model gpt-5.5
 ```
 
-**Supported models:** `gpt-5.5`, `gpt-5.5-pro`, `gpt-5.4`, `gpt-5-mini`, `o3`, `o4-mini`, `o3-mini`, `gpt-4.1`, `gpt-4.1-mini`, `gpt-4.1-nano`, `gpt-4o`, `gpt-4o-mini`, `gpt-4-turbo`
+**Supported models:** `gpt-5.5`, `gpt-5.5-pro`, `gpt-5.4`, `gpt-5-mini`, `gpt-5-nano`
 
 **Three-way mode (Claude + GPT):** Within a Claude Code session, invoke `gpt-api-chat.py` via Bash, read GPT's response, synthesize perspectives, and steer the conversation. Use `--session` to maintain GPT's context across turns.
 

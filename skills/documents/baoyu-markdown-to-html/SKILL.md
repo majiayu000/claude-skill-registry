@@ -1,7 +1,7 @@
 ---
 name: baoyu-markdown-to-html
-description: Converts Markdown to styled HTML with WeChat-compatible themes. Supports code highlighting, math, PlantUML, footnotes, alerts, infographics, and optional bottom citations for external links. Use when user asks for "markdown to html", "convert md to html", "md 转 html", "微信外链转底部引用", or needs styled HTML output from markdown.
-version: 1.56.1
+description: Converts Markdown to styled HTML with WeChat-compatible themes. Supports code highlighting, math, Mermaid (rendered to PNG via headless Chrome), PlantUML, footnotes, alerts, infographics, and optional bottom citations for external links. Use when user asks for "markdown to html", "convert md to html", "md 转 html", "微信外链转底部引用", or needs styled HTML output from markdown.
+version: 1.57.0
 metadata:
   openclaw:
     homepage: https://github.com/JimLiu/baoyu-skills#baoyu-markdown-to-html
@@ -45,7 +45,7 @@ Check EXTEND.md in priority order — the first one found wins:
 
 If none found, use defaults.
 
-**EXTEND.md supports**: default theme, custom CSS variables, code block style.
+**EXTEND.md supports**: default theme, custom CSS variables, code block style, mermaid defaults (`mermaid_theme`, `mermaid_scale`, `mermaid_background`).
 
 ## Workflow
 
@@ -124,6 +124,11 @@ ${BUN_X} {baseDir}/scripts/main.ts <markdown_file> [options]
 | `--title <title>` | Override title from frontmatter | |
 | `--cite` | Convert external links to bottom citations, append `引用链接` section | false (off) |
 | `--keep-title` | Keep the first heading in content | false (removed) |
+| `--mermaid-theme <name>` | Mermaid theme: `default`, `forest`, `dark`, `neutral`, `base` | default |
+| `--mermaid-scale <N>` | Mermaid render scale (positive number ≤ 4) | 2 |
+| `--mermaid-width <N>` | Mermaid target display width in CSS px; PNG is rendered at `width × scale` pixels when the diagram is narrower than this | 860 |
+| `--mermaid-bg <value>` | Mermaid background: `white`, `transparent`, or `#hex` | white |
+| `--no-mermaid` | Skip Mermaid PNG rendering; emit `<pre class="mermaid">` fallback | false |
 | `--help` | Show help | |
 
 **Color Presets:**
@@ -190,9 +195,18 @@ ${BUN_X} {baseDir}/scripts/main.ts article.md --title "My Article"
       "localPath": "/path/to/img.png",
       "originalPath": "imgs/image.png"
     }
+  ],
+  "mermaidImages": [
+    {
+      "hash": "a1b2c3d4e5f6",
+      "localPath": "/path/to/imgs/.mermaid-cache/mermaid-a1b2c3d4e5f6.png",
+      "cached": false
+    }
   ]
 }
 ```
+
+**Mermaid rendering**: Code blocks fenced as ` ```mermaid ` are rendered to PNGs via headless Chrome (CDP) and cached at `imgs/.mermaid-cache/mermaid-<hash>.png`. The cache key includes the code, theme, scale, target width, background, and mermaid version. Add `imgs/.mermaid-cache/` to `.gitignore` if you do not want generated diagrams checked in. Requires Chrome/Chromium/Edge on the system; otherwise the block falls back to `<pre class="mermaid">…</pre>` and conversion still succeeds.
 
 ## Themes
 
@@ -219,7 +233,7 @@ ${BUN_X} {baseDir}/scripts/main.ts article.md --title "My Article"
 | Alerts | `> [!NOTE]`, `> [!WARNING]`, etc. |
 | Footnotes | `[^1]` references |
 | Ruby text | `{base|annotation}` |
-| Mermaid | ` ```mermaid ` diagrams |
+| Mermaid | ` ```mermaid ` blocks rendered to local PNG via headless Chrome (cached under `imgs/.mermaid-cache/`); falls back to `<pre class="mermaid">` if Chrome is unavailable or rendering fails |
 | PlantUML | ` ```plantuml ` diagrams |
 
 ## Frontmatter

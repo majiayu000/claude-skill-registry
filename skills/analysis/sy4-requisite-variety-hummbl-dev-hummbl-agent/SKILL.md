@@ -16,11 +16,13 @@ Apply the SY4 Requisite Variety transformation to match control system's complex
 ## When to Use SY4
 
 ### Ideal Situations
+
 - Understand system-wide interactions and feedback loops
 - Detect patterns that emerge across components
 - Optimize for long-term system behavior, not just local gains
 
 ### Trigger Questions
+
 - "How can we use Requisite Variety here?"
 - "What changes if we apply SY4 to this analyzing coordination patterns across teams?"
 - "Which assumptions does SY4 help us surface?"
@@ -28,18 +30,21 @@ Apply the SY4 Requisite Variety transformation to match control system's complex
 ## The SY4 Process
 
 ### Step 1: Define the focus
+
 ```typescript
 // Using SY4 (Requisite Variety) - Establish the focus
 const focus = "Match control system's complexity to system being controlled";
 ```
 
 ### Step 2: Apply the model
+
 ```typescript
 // Using SY4 (Requisite Variety) - Apply the transformation
 const output = applyModel("SY4", focus);
 ```
 
 ### Step 3: Synthesize outcomes
+
 ```typescript
 // Using SY4 (Requisite Variety) - Capture insights and decisions
 const insights = summarize(output);
@@ -86,6 +91,7 @@ const result = applyModel("SY4", "Match control system's complexity to system be
 ## Installation and Usage
 
 ### Nix Installation
+
 ```nix
 {
   programs.moltbot.plugins = [
@@ -95,11 +101,13 @@ const result = applyModel("SY4", "Match control system's complexity to system be
 ```
 
 ### Manual Installation
+
 ```bash
 moltbot-registry install hummbl-agent/sy4-requisite-variety
 ```
 
 ### Usage with Commands
+
 ```bash
 /apply-transformation SY4 "Match control system's complexity to system being controlled"
 ```

@@ -1,56 +1,33 @@
 ---
 name: janitor-search
-description: "Search GitHub for new skills to install. Also use with --compare to analyze a local skill against GitHub alternatives and marketplace competition."
+description: "Search GitHub for new skills to install. Deprecated alias — use /janitor-discover (combines search + pre-install check)."
 metadata:
-  version: 1.1.0
+  version: 1.3.0
+  deprecated: true
+  replaced_by: janitor-discover
 ---
 
-# Skill Discovery & Comparison
+# Skill Discovery (Deprecated Alias)
 
-Search GitHub for Claude Code skills by keyword, or compare a local skill against alternatives.
+**Renamed in v1.3.** Search and pre-install check are now merged into one entry point: `/janitor-discover`. The new command dispatches to the right mode based on whether you pass a keyword (search) or a URL (pre-install check). This alias will be removed in v1.4.
+
+When invoked, run `/janitor-discover` with the same arguments and mention the rename in one short line at the top.
 
 ## How to Run
 
 ```bash
-# Search for skills
-bash ~/.claude/skills/skills-janitor/scripts/search.sh <keyword> [--limit N] [--json]
-
-# Compare your skill against GitHub alternatives
-bash ~/.claude/skills/skills-janitor/scripts/search.sh --compare <skill-name> [--json]
+bash ~/.claude/skills/skills-janitor/scripts/discover.sh <keyword-or-url> [options]
 ```
 
-## Search Mode
+All flags from the v1.2 search command (`--limit`, `--compare`, `--json`) work unchanged.
 
-- `<keyword>` - required search term (e.g., "marketing", "deployment", "testing")
-- `--limit N` - max results (default: 10)
-- `--json` - raw JSON output
+## Migration
 
-### How It Works
-
-1. Searches GitHub repos matching `{keyword} claude skill` in name/description/README
-2. Also searches by topic tag `claude-code`
-3. Cross-references results against your installed skills and plugins
-4. Marks each result as `INSTALLED` or `AVAILABLE`
-
-## Compare Mode (`--compare`)
-
-Analyzes a local skill against alternatives found on GitHub:
-- Composite scoring: 40% keyword overlap, 30% popularity, 15% recency, 15% activity
-- Shows marketplace install counts when available
-- Reports market position (unique niche vs. crowded space)
-
-```bash
-search.sh --compare my-marketing-skill
-```
-
-## Rate Limits
-
-- Unauthenticated: 60 requests/hour
-- Set `GITHUB_TOKEN` env var for 5,000 requests/hour
-- Results cached for 24 hours
+- Keyword search → `/janitor-discover <keyword>`
+- Compare mode → `/janitor-discover --compare <skill-name>`
+- Pre-install check → `/janitor-discover <github-url>` (replaces `/janitor-precheck`)
 
 ## Related Skills
 
-- For checking which skills you actually use: `/janitor-usage`
-- For token cost analysis: `/janitor-tokens`
-- For pre-install overlap check: `/janitor-precheck`
+- `/janitor-discover` — the new combined entry point
+- `/janitor-value` — check which existing skills you actually use before adding more

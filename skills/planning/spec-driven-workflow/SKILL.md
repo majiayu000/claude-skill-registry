@@ -53,20 +53,28 @@ description: SPEC-First planning workflow - explore codebase, gather requirement
 
 ## Execution Steps
 
-## ⛔ MAIN ORCHESTRATOR RESTRICTIONS
-
-**FORBIDDEN**: Direct codebase exploration (use explorer/researcher agents via Task tool), direct gate resolution without delegation
-**MANDATORY**: Step 1 exploration (parallel agents), Step 1.9/1.10 gap investigation (agents before user), GPT via gpt-delegation
-**EXCEPTIONS**: Keyword detection, pattern matching, draft file creation, question filtering
-**WHY**: Subagent isolation = 50-80% context savings (CLAUDE.md:58-59)
-
----
-
 ### Step 0: Initialize Progress Tracking
 Create TaskCreate entry for planning phase (TaskCreate analyzing - marks /00_plan start).
 
-### Step 1: Explore Codebase
-Launch explorer + researcher in parallel for comprehensive discovery.
+### Step 1: Explore Codebase via planning-team
+Create planning-team for comprehensive discovery. Team lead operates in delegate mode.
+
+**Spawn Pattern**:
+```markdown
+Spawn teammate "codebase-explorer" with prompt:
+  "You are an explorer (see @.claude/agents/explorer.md).
+  Explore codebase for [domain] related to [task].
+  Find: files, patterns, config, tests. Share findings via Message.
+  Output: File list with descriptions."
+
+Spawn teammate "docs-researcher" with prompt:
+  "You are a researcher (see @.claude/agents/researcher.md).
+  Research external docs for [task].
+  Find: official docs, best practices, security. Share findings via Message.
+  Output: Research summary with links."
+```
+
+**Coordination**: Teammates share findings via direct messaging, team lead synthesizes results for plan creation.
 
 ### Step 1.5: Scope Clarity Check
 **Triggers**: Completeness keywords, reference-based requests, ambiguous scope, multi-layer arch. **Action**: Ask user to select scope. **Details**: REFERENCE.md
@@ -144,7 +152,7 @@ Draft file: User Requirements table, Decisions Log, Success Criteria with checkb
 
 ## Further Reading
 
-**Internal**: @.claude/skills/spec-driven-workflow/REFERENCE.md - Advanced planning patterns, detailed step implementation, context pack formats, decision tracking examples | @.claude/skills/parallel-subagents/SKILL.md - Parallel agent execution | @.claude/skills/gpt-delegation/SKILL.md - GPT consultation | @.claude/skills/confirm-plan/SKILL.md - Plan confirmation | @.claude/skills/execute-plan/SKILL.md - Plan execution
+**Internal**: @.claude/skills/spec-driven-workflow/REFERENCE.md - Advanced planning patterns, detailed step implementation, context pack formats, decision tracking examples | @.claude/skills/agent-teams/SKILL.md - Agent Teams coordination patterns | @.claude/skills/gpt-delegation/SKILL.md - GPT consultation | @.claude/skills/confirm-plan/SKILL.md - Plan confirmation | @.claude/skills/execute-plan/SKILL.md - Plan execution
 
 **External**: [SPEC-First Development](https://en.wikipedia.org/wiki/Specification_by_example) | [PRP Framework](https://pragprog.com/)
 

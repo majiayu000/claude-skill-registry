@@ -1,0 +1,18 @@
+{
+  "name": "ha-addon",
+  "description": "Develop Home Assistant add-ons with Docker, Supervisor API, and multi-arch builds. Use when creating add-ons, configuring Dockerfiles, setting up ingress, or publishing to repositories. Activates on k",
+  "repo": "nodnarbnitram/claude-code-extensions",
+  "path": ".claude/skills/ha-addon",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/nodnarbnitram/claude-code-extensions",
+  "dir_name": "ha-addon-nodnarbnitram-claude-code-extensio-2",
+  "author": "nodnarbnitram",
+  "source_url": "https://github.com/nodnarbnitram/claude-code-extensions/blob/main/.claude/skills/ha-addon/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Brandon Martin",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

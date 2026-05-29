@@ -62,7 +62,16 @@ python3 cli.py \
   --spec <spec-file> \
   --output <output-dir> \
   [--resources users,posts]  # 可选：只生成特定资源
+  [--conflict-strategy skip|backup|overwrite]  # 默认: skip
+  [--dry-run]  # 预览模式，不写入文件
 ```
+
+**冲突处理策略**：
+- `skip`（默认）：跳过已存在的文件，不覆盖
+- `backup`：备份已存在的文件后覆盖（推荐用于更新）
+- `overwrite`：直接覆盖（危险！）
+
+**预览模式**：使用 `--dry-run` 可以预览将要生成的文件，而不实际写入。
 
 **生成内容**：
 - `models/` - SQLAlchemy 数据库模型

@@ -11,7 +11,7 @@ license: MIT
 compatibility: Any GraphQL implementation (Apollo Server, graphql-js, Yoga, etc.)
 metadata:
   author: apollographql
-  version: "1.0"
+  version: "1.0.0"
 allowed-tools: Bash(npm:*) Bash(npx:*) Read Write Edit Glob Grep
 ---
 

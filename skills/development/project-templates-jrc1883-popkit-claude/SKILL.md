@@ -19,14 +19,14 @@ Instead of dynamically generating technology options (which can miss relevant ch
 
 ## Available Templates
 
-| Template | Use Case | Key Decisions |
-|----------|----------|---------------|
-| `saas-api` | Backend APIs for SaaS products | Runtime, Database, Auth, Billing |
-| `ml-service` | ML/AI inference APIs | Runtime, Model Serving, Inference Engine |
-| `cli-tool` | Command-line applications | Language, Distribution, Config Format |
-| `fullstack` | Full-stack web applications | Frontend, Backend, Database, Hosting |
-| `browser-extension` | Browser extensions | Manifest Version, Framework, Storage |
-| `mobile-backend` | Mobile app backends | Runtime, Push Notifications, Real-time |
+| Template            | Use Case                       | Key Decisions                            |
+| ------------------- | ------------------------------ | ---------------------------------------- |
+| `saas-api`          | Backend APIs for SaaS products | Runtime, Database, Auth, Billing         |
+| `ml-service`        | ML/AI inference APIs           | Runtime, Model Serving, Inference Engine |
+| `cli-tool`          | Command-line applications      | Language, Distribution, Config Format    |
+| `fullstack`         | Full-stack web applications    | Frontend, Backend, Database, Hosting     |
+| `browser-extension` | Browser extensions             | Manifest Version, Framework, Storage     |
+| `mobile-backend`    | Mobile app backends            | Runtime, Push Notifications, Real-time   |
 
 ## Template Schema
 
@@ -49,7 +49,11 @@ Each template is a JSON file with this structure:
           "value": "node-fastify",
           "label": "Node.js + Fastify",
           "description": "Fast, TypeScript-native, great for APIs",
-          "pros": ["Fastest Node framework", "First-class TypeScript", "Schema validation built-in"],
+          "pros": [
+            "Fastest Node framework",
+            "First-class TypeScript",
+            "Schema validation built-in"
+          ],
           "cons": ["Smaller ecosystem than Express", "Less middleware available"],
           "when": "Performance critical, TypeScript preferred, API-focused",
           "popularity": { "npm_weekly": 2000000, "github_stars": 28000 }
@@ -78,6 +82,7 @@ Each template is a JSON file with this structure:
 When `/popkit:dev full` reaches Phase 3 (Questions):
 
 1. **Template Selection** - First question asks project type:
+
    ```
    What type of project is this?
    - SaaS Backend API
@@ -90,6 +95,7 @@ When `/popkit:dev full` reaches Phase 3 (Questions):
 2. **Load Template** - Based on selection, load the corresponding template
 
 3. **Ask Template Questions** - Use `AskUserQuestion` with template-defined options:
+
    ```
    Use AskUserQuestion tool with:
    - questions: template.questions (converted to AskUserQuestion format)
@@ -136,6 +142,7 @@ Each template option should include:
 - **Maintenance status**: Last release, contributor activity
 
 Sources:
+
 - npm trends (https://npmtrends.com)
 - State of JS/Python/Go surveys
 - TechEmpower benchmarks

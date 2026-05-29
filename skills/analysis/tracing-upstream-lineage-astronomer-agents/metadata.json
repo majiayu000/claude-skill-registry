@@ -1,0 +1,17 @@
+{
+  "name": "tracing-upstream-lineage",
+  "repo": "astronomer/agents",
+  "path": "skills/tracing-upstream-lineage/SKILL.md",
+  "github_branch": "main",
+  "category": "analysis",
+  "source": "github.com/astronomer/agents",
+  "dir_name": "tracing-upstream-lineage-astronomer-agents",
+  "downloaded_at": "2026-03-22T07:04:11.179910Z",
+  "author": "astronomer",
+  "source_url": "https://github.com/astronomer/agents/blob/main/skills/tracing-upstream-lineage/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/astronomer/agents/blob/main/skills/tracing-upstream-lineage/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

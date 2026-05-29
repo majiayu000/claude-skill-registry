@@ -1,0 +1,16 @@
+{
+  "name": "team-dependency",
+  "repo": "duc01226/EasyPlatform",
+  "path": ".claude/skills/team-dependency/SKILL.md",
+  "category": "planning",
+  "source": "github.com/duc01226/EasyPlatform",
+  "dir_name": "team-dependency",
+  "downloaded_at": "2026-02-22T06:58:41.665341Z",
+  "author": "duc01226",
+  "source_url": "https://github.com/duc01226/EasyPlatform/blob/main/.claude/skills/team-dependency/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2021 Dang Phuoc Duc",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

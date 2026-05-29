@@ -1,6 +1,6 @@
 ---
 name: standards-migration
-description: Create and manage database migrations with reversible changes, proper naming conventions, and zero-downtime deployment strategies. Use this skill when creating database migration files, modifying schema, adding or removing tables/columns, managing indexes, or handling data migrations. Apply when working with migration files (e.g., db/migrate/, migrations/, alembic/, sequelize migrations), schema changes, database versioning, rollback implementations, or when you need to ensure backwards compatibility during deployments. Use for any task involving database structure changes, index creation, constraint modifications, or data transformation scripts.
+description: Create reversible database migrations with proper naming, zero-downtime strategies, and backwards compatibility. Apply when creating migration files, modifying schema, or managing database versioning.
 ---
 
 # Migration Standards

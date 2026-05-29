@@ -1,6 +1,7 @@
 ---
 name: spring-boot-modulith
-description: Spring Modulith 2.0 implementation for bounded contexts in Spring Boot 4. Use when structuring application modules, implementing @ApplicationModuleListener for event-driven communication, testing with Scenario API, enforcing module boundaries, or externalizing events to Kafka/AMQP. For modular monolith architecture decisions, see the domain-driven-design skill.
+description: Spring Modulith 2.0 implementation for bounded contexts in Spring Boot 4. Use when structuring application modules, implementing @ApplicationModuleListener for event-driven communication, testing with Scenario API, enforcing module boundaries, externalizing events to Kafka/AMQP, building a modular monolith, defining module dependencies, managing inter-module events, or organizing DDD modules as packages. Covers package-based module boundaries, named interfaces, event publication, and Scenario API testing. For architecture decisions, see domain-driven-design skill.
+spring-boot-version: "4.0"
 ---
 
 # Spring Modulith for Bounded Contexts
@@ -57,8 +58,18 @@ See [EXAMPLES.md](EXAMPLES.md) for complete working examples including:
 
 - **Examples**: See [EXAMPLES.md](EXAMPLES.md) for complete working code examples
 - **Troubleshooting**: See [TROUBLESHOOTING.md](TROUBLESHOOTING.md) for common issues and Boot 4 migration
+- **Workflow**: See [WORKFLOW.md](WORKFLOW.md) for detailed step-by-step Modulith setup
 - **Module Structure**: See [references/MODULE-STRUCTURE.md](references/MODULE-STRUCTURE.md) for package conventions, named interfaces, dependency rules
 - **Event Patterns**: See [references/EVENTS.md](references/EVENTS.md) for publishing, handling, externalization, testing with Scenario API
+
+## Related Skills
+
+| Need | Skill |
+|------|-------|
+| DDD concepts | `domain-driven-design` |
+| Data layer per module | `spring-boot-data-ddd` |
+| Module event testing | `spring-boot-testing` |
+| REST APIs for modules | `spring-boot-web-api` |
 
 ## Anti-Pattern Checklist
 

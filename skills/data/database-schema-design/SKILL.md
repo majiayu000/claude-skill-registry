@@ -1,13 +1,9 @@
 ---
 name: database-schema-design
 description: Database schema design for PostgreSQL/MySQL with normalization, relationships, constraints. Use for new databases, schema reviews, migrations, or encountering missing PKs/FKs, wrong data types, premature denormalization, EAV anti-pattern.
-keywords: database schema, schema design, database normalization, 1nf 2nf 3nf,
-  primary key, foreign key, database relationships, one to many, many to many,
-  data types postgresql, constraints check, audit columns, soft delete,
-  database best practices, schema patterns, database anti-patterns,
-  missing primary key, no foreign key, varchar max, denormalization,
-  entity relationship, composite key, uuid vs bigserial, timestamptz
 license: MIT
+metadata:
+  keywords: "database schema, schema design, database normalization, 1nf 2nf 3nf, primary key, foreign key, database relationships, one to many, many to many, data types postgresql, constraints check, audit columns, soft delete, database best practices, schema patterns, database anti-patterns, missing primary key, no foreign key, varchar max, denormalization, entity relationship, composite key, uuid vs bigserial, timestamptz"
 ---
 
 # database-schema-design

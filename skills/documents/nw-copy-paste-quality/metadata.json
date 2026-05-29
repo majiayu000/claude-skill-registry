@@ -1,0 +1,17 @@
+{
+  "name": "nw-copy-paste-quality",
+  "repo": "nWave-ai/nWave",
+  "path": "nWave/skills/nw-copy-paste-quality/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/nWave-ai/nWave",
+  "dir_name": "nw-copy-paste-quality",
+  "downloaded_at": "2026-03-20T01:30:16.520137Z",
+  "author": "nWave-ai",
+  "source_url": "https://github.com/nWave-ai/nWave/blob/main/nWave/skills/nw-copy-paste-quality/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nWave-ai/nWave/blob/main/nWave/skills/nw-copy-paste-quality/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "orthogonal-get-brand-assets",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/capabilities/orthogonal-get-brand-assets/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "orthogonal-get-brand-assets",
+  "downloaded_at": "2026-04-23T01:43:54.236166Z",
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/capabilities/orthogonal-get-brand-assets/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/capabilities/orthogonal-get-brand-assets/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

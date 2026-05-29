@@ -1,0 +1,18 @@
+{
+  "name": "check-links",
+  "repo": "unfinishablemap/unfinishablemap",
+  "path": ".claude/skills/check-links/SKILL.md",
+  "source": "github.com/unfinishablemap/unfinishablemap",
+  "downloaded_at": "2026-01-22T03:17:33.162416Z",
+  "dir_name": "check-links",
+  "category": "quality",
+  "github_path": ".claude/skills/check-links",
+  "github_branch": "main",
+  "author": "unfinishablemap",
+  "source_url": "https://github.com/unfinishablemap/unfinishablemap/blob/main/.claude/skills/check-links/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Southgate AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

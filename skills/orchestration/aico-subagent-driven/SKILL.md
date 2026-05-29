@@ -25,7 +25,7 @@ description: |
       ↓
 3. For each task:
    a. Dispatch Implementer Subagent
-   b. Implementer: implement, test, commit
+   b. Implementer: implement and test
    c. Dispatch Spec Reviewer (matches spec?)
    d. Spec issues? → Implementer fixes → re-review
    e. Dispatch Quality Reviewer (code quality?)

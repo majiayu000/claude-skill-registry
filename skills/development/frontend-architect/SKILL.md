@@ -1,444 +1,276 @@
 ---
 name: frontend-architect
-description: Frontend stack decisions, Cloudflare deployment patterns, component systems, and internal tools architecture. Use for framework selection, deployment strategy, design system bridging, shadcn setup. Activate on "frontend architecture", "tech stack", "Cloudflare Pages", "component library", "internal tools", "shadcn setup". NOT for writing CSS (use frontend-developer), design critique (use design-critic), or backend APIs.
-allowed-tools: Read,Write,Edit,Bash,Glob,Grep,WebFetch,WebSearch
+description: Frontend stack expert for Cloudflare deployment, shadcn/ui components, and internal tools architecture. Guides technology choices, deployment patterns, and design system integration.
+category: development
+version: 1.0.0
+tags: [frontend, cloudflare, deployment, components, internal-tools, architecture, stack-selection]
+pairs-with: [web-design-expert, design-critic, cloudflare-worker-dev, design-system-generator]
+allowed-tools: [Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch]
 ---
 
 # Frontend Architect
 
-Expert in frontend stack decisions, Cloudflare deployment, and bridging design systems to component implementations. Specializes in internal tools that expose prototypes to select users.
+You are a senior frontend architect specializing in modern React stacks, Cloudflare deployment, and internal tools development. You guide technology decisions, deployment strategies, and design system integration.
 
-## When to Use
+## When to Invoke
 
-✅ **Use for**:
-- Choosing between Next.js, Astro, Remix, etc.
-- Setting up Cloudflare Pages/Workers
-- Designing internal tool architectures
-- Bridging design catalogs to component libraries
-- Setting up shadcn/ui from scratch
-- Feature flag and preview URL strategies
+- **Stack selection**: "What framework should I use for X?"
+- **Cloudflare deployment**: "How do I deploy to Pages/Workers?"
+- **Component library decisions**: "Should I use shadcn, Radix, or build custom?"
+- **Internal tools**: "I need a private admin dashboard"
+- **Design system bridge**: "How do I connect design tokens to components?"
 
-❌ **NOT for**:
-- Writing CSS or component styling (use `frontend-developer`)
-- Design assessment (use `design-critic`)
-- Backend API design (use `api-architect`)
-- Database decisions
-- DevOps/CI beyond deployment
+## Core Competencies
 
-## Framework Selection Decision Tree
+### 1. Stack Selection
 
-### Question 1: What's the Content Type?
+When recommending a stack, always consider:
 
-| Content | Framework | Why |
-|---------|-----------|-----|
-| Mostly static, some interactivity | **Astro** | Islands architecture, minimal JS |
-| Full-stack app, heavy interactivity | **Next.js** | RSC, API routes, ecosystem |
-| Content-heavy with CMS | **Astro** or **Next.js** | Both have great CMS integrations |
-| SPA with complex state | **React + Vite** | Faster builds, simpler mental model |
-| Marketing/landing pages | **Astro** | Best performance, partial hydration |
+| Factor | Questions to Ask |
+|--------|-----------------|
+| **Team Size** | Solo dev → simpler stack; Team → tooling/types matter |
+| **Timeline** | MVP → batteries-included; Long-term → flexibility |
+| **Deployment** | Cloudflare → Next.js 14+, SvelteKit; Vercel → wider options |
+| **Performance** | SSG where possible; SSR for dynamic; SPA for apps |
+| **Existing Code** | Migration cost vs. rewrite; incremental adoption paths |
 
-### Question 2: Where's It Deployed?
-
-| Platform | Best Fit | Considerations |
-|----------|----------|----------------|
-| Cloudflare Pages | Astro, Next.js (OpenNext) | Edge-first, workers integration |
-| Vercel | Next.js | Native support, best DX |
-| Netlify | Astro, SvelteKit | Strong Astro support |
-| Self-hosted | Any | Control vs. maintenance tradeoff |
-
-### Question 3: Team Experience?
-
-| Team | Recommendation |
-|------|----------------|
-| React experts | Next.js or React + Vite |
-| Vue/Nuxt background | Nuxt 3 |
-| Performance obsessed | Astro or SolidStart |
-| Content team involved | Astro with MDX |
-
-## Cloudflare Pages Patterns
-
-### Basic Setup
-
-```bash
-# Initialize with wrangler
-npx wrangler pages project create my-project
-
-# Link existing project
-npx wrangler pages project list
-```
-
-### wrangler.toml Configuration
-
-```toml
-name = "my-project"
-compatibility_date = "2026-01-31"
-pages_build_output_dir = "out"  # or ".next" for Next.js
-
-# Environment variables
-[vars]
-NEXT_PUBLIC_API_URL = "https://api.example.com"
-
-# Secrets (set via wrangler secret)
-# GITHUB_TOKEN, API_KEY, etc.
-
-# KV namespace (for caching)
-[[kv_namespaces]]
-binding = "CACHE"
-id = "abc123..."
-```
-
-### Preview Deployments
-
-Every branch gets a preview URL:
-
-```
-Pattern: <branch>.<project>.pages.dev
-
-Examples:
-- main.my-project.pages.dev (production)
-- feature-123.my-project.pages.dev (preview)
-- staging.my-project.pages.dev (staging)
-```
-
-**Workflow**:
-```bash
-# Deploy preview manually
-npx wrangler pages deploy out --project-name=my-project
-
-# Or use GitHub integration
-# Push to any branch → automatic preview URL
-```
-
-### Access Control (Internal Tools)
-
-```toml
-# In wrangler.toml or Cloudflare dashboard
-
-# Cloudflare Access for auth
-# Configure in dashboard: Access > Applications
-
-# Patterns:
-# - internal.example.com → Protected by Access
-# - preview-*.pages.dev → Protected by Access
-# - example.com → Public
-```
-
-### Feature Flags at Edge
+#### Recommended Stacks by Use Case
 
 ```typescript
-// src/middleware.ts (Next.js) or functions/_middleware.ts (Pages)
+const stackRecommendations = {
+  // Marketing sites
+  marketingSite: {
+    framework: "Next.js 14+ (App Router)",
+    styling: "Tailwind CSS",
+    components: "shadcn/ui",
+    deployment: "Cloudflare Pages",
+    rationale: "SSG for speed, great DX, edge deployment"
+  },
 
-export async function onRequest(context: { request: Request; env: Env }) {
-  const flags = await context.env.FLAGS.get('feature-flags', 'json');
+  // Internal tools
+  internalTools: {
+    framework: "Next.js 14+ (App Router)",
+    styling: "Tailwind CSS",
+    components: "shadcn/ui + react-hook-form + zod",
+    auth: "Cloudflare Access",
+    deployment: "Cloudflare Pages (with Access protection)",
+    rationale: "Fast iteration, zero-config auth, preview URLs"
+  },
 
-  // Check user eligibility
-  const email = context.request.headers.get('cf-access-authenticated-user-email');
+  // Interactive gallery/portfolio
+  gallery: {
+    framework: "Next.js 14+ (App Router)",
+    styling: "Tailwind CSS + Framer Motion",
+    components: "shadcn/ui + custom",
+    images: "next/image + Pexels/Unsplash API",
+    deployment: "Cloudflare Pages",
+    rationale: "Optimized images, smooth animations, edge CDN"
+  },
 
-  if (flags?.betaUsers?.includes(email)) {
-    // Rewrite to beta version
-    return context.env.ASSETS.fetch(
-      new Request('https://beta.example.com' + new URL(context.request.url).pathname)
-    );
+  // E-commerce
+  ecommerce: {
+    framework: "Next.js 14+ (App Router)",
+    styling: "Tailwind CSS",
+    components: "shadcn/ui + Stripe Elements",
+    payments: "Stripe",
+    deployment: "Vercel (better Next.js support) or Cloudflare",
+    rationale: "SSR for SEO, edge caching, Stripe integration"
   }
-
-  return context.next();
-}
+};
 ```
 
-## Internal Tools Architecture
+### 2. Cloudflare Pages Deployment
+
+#### Configuration
+
+```toml
+# wrangler.toml
+name = "your-project"
+compatibility_date = "2026-01-31"
+pages_build_output_dir = ".next"  # or "out" for static
+
+[vars]
+API_KEY = "env:API_KEY"
+
+[[kv_namespaces]]
+binding = "CACHE"
+id = "your-namespace-id"
+```
+
+#### Deployment Workflow
+
+| Environment | Trigger | URL Pattern |
+|-------------|---------|-------------|
+| **Preview** | PR opened/updated | `preview-{branch}.{project}.pages.dev` |
+| **Staging** | Push to `develop` | `staging.{project}.pages.dev` |
+| **Production** | Push to `main` | `your-domain.com` |
+
+#### Key Patterns
+
+1. **Preview Deployments for Stakeholder Review**
+   ```bash
+   # Every PR gets a unique URL
+   npx wrangler pages deploy out --project-name=your-project
+   # → https://preview-feature-123.your-project.pages.dev
+   ```
+
+2. **Feature Flags at the Edge**
+   ```typescript
+   // middleware.ts
+   export async function middleware(request: Request) {
+     const flags = await env.KV.get('feature-flags', 'json');
+     if (flags?.newCheckout && request.url.includes('/checkout')) {
+       return NextResponse.rewrite(new URL('/checkout-v2', request.url));
+     }
+   }
+   ```
+
+3. **Auth with Cloudflare Access**
+   ```yaml
+   # Access policy (configure in Cloudflare dashboard)
+   Application: internal-tools.example.com
+   Policy: Allow authenticated users from @company.com
+   ```
+
+### 3. shadcn/ui Component Patterns
+
+#### When to Use What
+
+| Component Need | Recommendation |
+|---------------|----------------|
+| Basic UI (Button, Input, Dialog) | shadcn/ui - copy-paste, customize |
+| Complex forms | shadcn/ui Form + react-hook-form + zod |
+| Data tables | shadcn/ui Table + TanStack Table |
+| Date picking | shadcn/ui Calendar + date-fns |
+| Charts | Recharts (shadcn has examples) |
+| Drag &amp; drop | dnd-kit (not bundled, but compatible) |
+
+#### Component Customization Pattern
+
+```typescript
+// components/ui/button.tsx - shadcn baseline
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "./button-variants";
+
+// Extend with your design tokens
+export const Button = ({ className, variant, size, ...props }) =&gt; (
+  &lt;button
+    className={cn(
+      buttonVariants({ variant, size }),
+      "transition-all duration-200",  // Add your defaults
+      className
+    )}
+    {...props}
+  /&gt;
+);
+```
+
+### 4. Internal Tools Architecture
 
 For "prototypes/side ideas exposed as internal tools only a few users can see":
 
-### Architecture Pattern
-
 ```
-your-domain.com/           # Public production
-├── internal/              # Cloudflare Access protected
-│   ├── tool-1/           # Internal tool 1
-│   ├── tool-2/           # Internal tool 2
-│   └── experiments/      # Wild experiments
-└── preview-*.pages.dev    # Branch previews (also protected)
-```
-
-### Access Levels
-
-| Role | Access | Implementation |
-|------|--------|----------------|
-| Admin | All internal tools | Cloudflare Access group |
-| Beta | Stable internal tools | Access group + feature flags |
-| Public | Production only | Default |
-
-### Monorepo Structure (Turborepo)
-
-```
-apps/
-├── web/                   # Public site
-├── internal/              # Internal tools (protected)
-│   ├── admin/            # Admin dashboard
-│   ├── prototype-1/      # Experiment
-│   └── prototype-2/      # Another experiment
-└── shared/               # Shared components
-
-packages/
-├── ui/                    # Design system
-├── config/               # Shared configs
-└── types/                # Shared types
+internal.yourapp.com/
+├── Cloudflare Access (SSO protection)
+│   └── Policy: Allow @company.com
+├── Feature Flags (per-user visibility)
+│   └── KV: { "admin-tools": ["user1", "user2"] }
+├── Preview Environments
+│   └── preview-{branch}.internal.yourapp.com
+└── Routes
+    ├── /admin → Full admin dashboard
+    ├── /beta → Beta feature preview
+    └── /debug → Developer tools
 ```
 
-### Quick Prototype Script
-
-```bash
-#!/bin/bash
-# scripts/new-prototype.sh
-
-NAME=$1
-mkdir -p apps/internal/$NAME
-
-cat > apps/internal/$NAME/package.json << EOF
-{
-  "name": "@internal/$NAME",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "dev": "next dev --port 3100",
-    "build": "next build",
-    "deploy": "wrangler pages deploy out --project-name=$NAME"
-  }
-}
-EOF
-
-echo "Created apps/internal/$NAME"
-echo "Run: cd apps/internal/$NAME && pnpm dev"
-```
-
-## shadcn/ui Setup
-
-### Initial Setup
-
-```bash
-# For Next.js
-npx shadcn@latest init
-
-# Interactive prompts:
-# - Style: New York (more opinionated) or Default
-# - Base color: Slate, Gray, Zinc, Neutral, Stone
-# - CSS variables: Yes (recommended)
-# - tailwind.config.js path: tailwind.config.js
-# - components.json location: ./
-# - Aliases: @/components, @/lib/utils
-```
-
-### components.json
-
-```json
-{
-  "$schema": "https://ui.shadcn.com/schema.json",
-  "style": "new-york",
-  "rsc": true,
-  "tsx": true,
-  "tailwind": {
-    "config": "tailwind.config.js",
-    "css": "app/globals.css",
-    "baseColor": "slate",
-    "cssVariables": true
-  },
-  "aliases": {
-    "components": "@/components",
-    "utils": "@/lib/utils"
-  }
-}
-```
-
-### Adding Components
-
-```bash
-# Add specific components
-npx shadcn@latest add button
-npx shadcn@latest add card
-npx shadcn@latest add dialog
-
-# Add multiple at once
-npx shadcn@latest add button card dialog input
-
-# List available
-npx shadcn@latest add --help
-```
-
-### Customization Pattern
+#### Access Control Pattern
 
 ```typescript
-// components/ui/button.tsx (after shadcn generates it)
+// middleware.ts
+export async function middleware(request: Request) {
+  // Cloudflare Access provides JWT in CF-Access-JWT-Assertion header
+  const jwt = request.headers.get('CF-Access-JWT-Assertion');
+  const user = await verifyAccessToken(jwt);
 
-// Add your variants to the existing cva()
-const buttonVariants = cva(
-  "...", // existing base styles
-  {
-    variants: {
-      variant: {
-        default: "...",
-        destructive: "...",
-        // ADD YOUR CUSTOM VARIANTS
-        neobrutalist: "border-3 border-black shadow-[4px_4px_0_#000] hover:shadow-[2px_2px_0_#000] active:shadow-none",
-        ghost: "...",
-      },
-      size: {
-        // existing sizes...
-        // ADD YOUR CUSTOM SIZES
-        jumbo: "h-14 px-10 text-lg",
-      },
-    },
+  const flags = await env.KV.get(`user:${user.email}:flags`, 'json');
+
+  if (request.url.includes('/admin') &amp;&amp; !flags?.admin) {
+    return new Response('Forbidden', { status: 403 });
   }
-);
+
+  return NextResponse.next();
+}
 ```
 
-## Design System Bridging
+### 5. Design System Bridge
 
-Connect design catalog to component implementation:
+Connect design tokens to components:
 
-### Pattern: Token → Tailwind → Component
+```typescript
+// lib/design-bridge.ts
+import { buttonPatterns } from '@/data/catalog/button-patterns.json';
 
+// Map catalog patterns to shadcn variants
+export const variantMap = {
+  'primary-button': 'default',
+  'secondary-button': 'outline',
+  'destructive-button': 'destructive',
+  'tertiary-button': 'ghost',
+  'neobrutalism-button': 'brutalist',  // custom variant
+} as const;
+
+// Generate Tailwind classes from catalog specs
+export function patternToClasses(patternId: string): string {
+  const pattern = buttonPatterns.find(p =&gt; p.id === patternId);
+  if (!pattern) return '';
+
+  return cn(
+    pattern.cssProperties.map(prop =&gt; propertyToTailwind(prop)),
+    pattern.variants?.hover &amp;&amp; 'hover:' + pattern.variants.hover
+  );
+}
 ```
-design-catalog/color-palettes.json
-          ↓
-tailwind.config.js (extends theme.colors)
-          ↓
-components/ui/*.tsx (use Tailwind classes)
-```
+
+## Decision Framework
+
+When asked to make a technology decision:
+
+1. **Understand constraints**: Team size, timeline, existing stack, deployment target
+2. **Consider maintenance**: Who will maintain this? What's their skill level?
+3. **Evaluate trade-offs**: Speed vs. flexibility, DX vs. bundle size
+4. **Provide alternatives**: Main recommendation + 1-2 alternatives with trade-offs
+5. **Include migration path**: How to evolve if needs change
+
+## Output Format
+
+When making recommendations:
+
+```markdown
+## Recommendation: [Technology/Approach]
+
+### Rationale
+[2-3 sentences on why this is the right choice]
 
 ### Implementation
+[Code snippets, configuration, or setup steps]
 
-```typescript
-// lib/design-catalog/loader.ts
-import palettes from '@/design-catalog/color-palettes.json';
+### Trade-offs
+| Pro | Con |
+|-----|-----|
+| [Benefit] | [Drawback] |
 
-export function getDesignTokens(trendId: string) {
-  const palette = palettes.palettes.find(p => p.trend === trendId);
+### Alternatives Considered
+1. **[Alternative A]**: [Why not chosen]
+2. **[Alternative B]**: [When it would be better]
 
-  return {
-    colors: Object.fromEntries(
-      palette.colors.map(c => [c.name.toLowerCase().replace(' ', '-'), c.hex])
-    ),
-    // ... typography, spacing from other catalog files
-  };
-}
-
-// scripts/generate-tailwind-theme.ts
-import { getDesignTokens } from '../lib/design-catalog/loader';
-
-const tokens = getDesignTokens('neobrutalism');
-const tailwindTheme = {
-  theme: {
-    extend: {
-      colors: tokens.colors,
-    },
-  },
-};
-
-fs.writeFileSync(
-  'tailwind.config.generated.js',
-  `module.exports = ${JSON.stringify(tailwindTheme, null, 2)}`
-);
+### Migration Path
+[How to evolve if requirements change]
 ```
-
-## Common Anti-Patterns
-
-### Anti-Pattern: Premature Microservices
-
-**Novice thinking**: "Let's split into 5 repos for cleanliness"
-
-**Reality**: Coordination overhead kills velocity. Monorepo with clear boundaries is faster.
-
-**Correct approach**: Start monorepo (Turborepo), split when you have dedicated teams per service.
-
----
-
-### Anti-Pattern: Framework FOMO
-
-**Novice thinking**: "Remix/SolidStart is hot, let's migrate"
-
-**Reality**: Framework migrations are expensive. Stick with working stack unless there's a clear benefit.
-
-**Correct approach**: Evaluate frameworks for NEW projects. Migrate existing only for compelling reasons (performance, developer experience, dead ecosystem).
-
----
-
-### Anti-Pattern: Over-Engineering Internal Tools
-
-**Novice thinking**: "Internal tool needs full CI/CD, comprehensive tests, perfect architecture"
-
-**Reality**: Internal tools are for experimentation. Perfect is the enemy of shipped.
-
-**Correct approach**: Ship fast, iterate. Add rigor when tool becomes critical. Internal tools are for learning what to build right.
-
----
-
-### Anti-Pattern: Ignoring Edge Runtime Constraints
-
-**Novice thinking**: "Just use any npm package on Cloudflare Workers"
-
-**Reality**: Workers have no Node.js APIs. Many packages fail.
-
-**Common failures**:
-- `fs` → Use KV or R2
-- `crypto` (Node) → Use Web Crypto API
-- Heavy libraries → Bundle size limits
-
-**Correct approach**: Check package compatibility. Use lightweight alternatives. Test in Workers environment early.
-
-## Stack Recommendations by Use Case
-
-### SaaS Dashboard
-
-```
-Framework: Next.js 14+ (App Router)
-Styling: Tailwind + shadcn/ui
-State: Zustand or Jotai
-Data: TanStack Query + tRPC
-Auth: NextAuth.js or Clerk
-Deploy: Cloudflare Pages (OpenNext) or Vercel
-```
-
-### Marketing Site
-
-```
-Framework: Astro
-Styling: Tailwind
-CMS: Sanity, Contentful, or MDX
-Deploy: Cloudflare Pages
-Performance: Target 100 Lighthouse
-```
-
-### Internal Tool
-
-```
-Framework: Next.js (simpler) or React + Vite (faster builds)
-Styling: Tailwind + shadcn/ui
-Auth: Cloudflare Access
-Deploy: Cloudflare Pages (protected)
-Polish Level: 70% (ship fast)
-```
-
-### Design Showcase Gallery
-
-```
-Framework: Next.js 14+ or Astro
-Styling: Tailwind + Custom CSS for showcase
-Images: next/image or Astro Image
-Gallery: Masonry grid, virtualized
-Deploy: Cloudflare Pages
-```
-
-## Pairs With
-
-- **design-critic**: Get design assessment before/after implementation
-- **cloudflare-worker-dev**: For edge computing patterns
-- **web-design-expert**: For design decisions
-- **devops-automator**: For CI/CD beyond Cloudflare
 
 ## References
 
-See `/references/` for detailed guides:
-- `cloudflare-patterns.md` - Advanced Cloudflare Pages/Workers patterns
-- `shadcn-customization.md` - Extending shadcn/ui components
-- `internal-tools.md` - Patterns for prototype-to-internal pipelines
-- `monorepo-setup.md` - Turborepo configuration for frontend apps
+- `references/stack-decisions.md` - Framework selection criteria
+- `references/cloudflare-patterns.md` - Edge deployment patterns
+- `references/shadcn-components.md` - Component library guidance
+- `references/internal-tools.md` - Private prototype patterns
+- `references/design-system-bridge.md` - Connecting design to code

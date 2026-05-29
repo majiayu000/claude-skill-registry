@@ -1,6 +1,6 @@
 ---
 name: solve-challenge
-description: Solve CTF challenges by analyzing files, connecting to services, and applying exploitation techniques. Orchestrates category-specific CTF skills for pwn, crypto, web, reverse engineering, forensics, OSINT, malware analysis, and miscellaneous challenges.
+description: Solves CTF challenges by performing first-pass triage, identifying the dominant category, and routing execution to the right specialized ctf-* skill. Use when the user gives you a challenge bundle, a remote service, a suspicious file, or only a vague challenge description and you must determine where to start. Do not use it when the category is already clear and a specialized skill can be invoked directly; this is the dispatcher and recon entrypoint, not the deepest reference for category-specific techniques.
 license: MIT
 compatibility: Requires filesystem-based agent (Claude Code or similar) with bash, Python 3, and internet access. Orchestrates other ctf-* skills.
 allowed-tools: Bash Read Write Edit Glob Grep Task WebFetch WebSearch Skill
@@ -13,7 +13,55 @@ metadata:
 
 You're a skilled CTF player. Your goal is to solve the challenge and find the flag.
 
+## Environment Setup
+
+Two setup strategies depending on your workflow:
+
+### Pre-install (recommended before competitions)
+
+Use the central installer entrypoint:
+
+```bash
+bash scripts/install_ctf_tools.sh all
+```
+
+Run a narrower mode when you only want one tool group:
+
+```bash
+bash scripts/install_ctf_tools.sh python
+bash scripts/install_ctf_tools.sh apt
+bash scripts/install_ctf_tools.sh brew
+bash scripts/install_ctf_tools.sh gems
+bash scripts/install_ctf_tools.sh go
+bash scripts/install_ctf_tools.sh manual
+```
+
+The full package lists now live in [scripts/install_ctf_tools.sh](../scripts/install_ctf_tools.sh).
+
+### On-demand (during challenges)
+
+Each category skill's `SKILL.md` has a **Prerequisites** section listing only the tools needed for that category. Install as you go.
+
 ## Workflow
+
+### Step 0: CTFd Platform Detection
+
+If the CTF platform URL is known, check if it runs CTFd and switch to API-driven navigation:
+
+```bash
+# Detect CTFd (look for /api/v1/ and /themes/core/)
+curl -s "$CTF_URL/api/v1/" | head -5
+curl -s "$CTF_URL" | grep -oE '/themes/core/'
+```
+
+If CTFd is detected, **ask the user for their API token** (generated from CTFd Settings > Access Tokens). The token is not provided by default — the user must create one in the CTFd web UI first. Once provided, set the environment variables and proceed via API:
+
+```bash
+export CTF_URL="https://ctf.example.com"
+export CTF_TOKEN="ctfd_..."  # Ask user for this
+```
+
+Invoke `/ctf-misc` and load its `ctfd-navigation.md` for the full API reference and Python client class.
 
 ### Step 1: Recon
 
@@ -37,12 +85,12 @@ Determine the primary category, then invoke the matching skill.
 
 **By challenge description keywords:**
 - "buffer overflow", "ROP", "shellcode", "libc", "heap" -> pwn
-- "RSA", "AES", "cipher", "encrypt", "prime", "modulus" -> crypto
+- "RSA", "AES", "cipher", "encrypt", "prime", "modulus", "lattice", "LWE", "GCM" -> crypto
 - "XSS", "SQL", "injection", "cookie", "JWT", "SSRF" -> web
-- "disk image", "memory dump", "packet capture", "registry" -> forensics
+- "disk image", "memory dump", "packet capture", "registry", "power trace", "side-channel", "spectrogram", "audio tracks", "MKV" -> forensics
 - "find", "locate", "identify", "who", "where" -> osint
 - "obfuscated", "packed", "C2", "malware", "beacon" -> malware
-- "jail", "sandbox", "escape", "encoding", "signal" -> misc
+- "jail", "sandbox", "escape", "encoding", "signal", "game", "Nim", "commitment", "Gray code" -> misc
 
 **By service behavior:**
 - Port with interactive prompt, crash on long input -> pwn
@@ -86,6 +134,14 @@ If your first approach doesn't work:
 - Misc + Crypto: jail escape requires building crypto primitives under constraints
 - OSINT + Stego: social media posts with unicode homoglyph steganography (Cyrillic lookalikes encode bits)
 - Web + Forensics: paywall bypass (curl reveals content hidden by CSS overlays)
+- Misc + Crypto + Game Theory: multi-phase interactive challenges with AES decryption → HMAC commitment → combinatorial game solving (GF(256) Nim)
+- Crypto + Geometry + Lattice: multi-layer challenges progressing from spatial reconstruction → subspace recovery → LWE solving → AES-GCM decryption
+- Forensics + Signal Processing: power traces / side-channel analysis requiring statistical analysis of measurement data
+- Forensics + Network + Encoding: timing-based encoding in PCAP (inter-packet intervals encode binary data)
+
+### Step 5: Generate Write-up
+
+After solving the challenge, invoke `/ctf-writeup` to generate a standardized submission-style writeup — concise, reproducible, and ready for competition organizers or teammates to validate.
 
 ## Flag Formats
 

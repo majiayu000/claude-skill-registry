@@ -232,3 +232,10 @@ model = AnthropicModel(
 | Long context | `anthropic:claude-sonnet-4-5` (200k) or `google-gla:gemini-2.0-flash` |
 | Reasoning | `openai:o1-preview` |
 | Cost-sensitive prod | `FallbackModel` with fast model first |
+
+## Check gates before ship
+
+Use these only where they prevent obvious misconfiguration; they do not replace integration tests.
+
+- **Fallback chain order:** **Pass:** The first model passed to `FallbackModel(...)` is the intended primary; each subsequent model is a deliberate fallback (not reversed by mistake).
+- **Secrets:** **Pass:** Production and shared scripts load API keys from environment variables or a platform secret store; no real keys committed (placeholders only in examples).

@@ -32,56 +32,17 @@ This skill provides comprehensive guidance for building serverless applications 
 
 ## AWS Documentation Requirement
 
-**CRITICAL**: This skill requires AWS MCP tools for accurate, up-to-date AWS information.
-
-### Before Answering AWS Questions
-
-1. **Always verify** using AWS MCP tools (if available):
-   - `mcp__aws-mcp__aws___search_documentation` or `mcp__*awsdocs*__aws___search_documentation` - Search AWS docs
-   - `mcp__aws-mcp__aws___read_documentation` or `mcp__*awsdocs*__aws___read_documentation` - Read specific pages
-   - `mcp__aws-mcp__aws___get_regional_availability` - Check service availability
-
-2. **If AWS MCP tools are unavailable**:
-   - Guide user to configure AWS MCP using the `aws-mcp-setup` skill (auto-loaded as dependency)
-   - Help determine which option fits their environment:
-     - Has uvx + AWS credentials → Full AWS MCP Server
-     - No Python/credentials → AWS Documentation MCP (no auth)
-   - If cannot determine → Ask user which option to use
+Always verify AWS facts using MCP tools (`mcp__aws-mcp__*` or `mcp__*awsdocs*__*`) before answering. The `aws-mcp-setup` dependency is auto-loaded — if MCP tools are unavailable, guide the user through that skill's setup flow.
 
 ## Serverless MCP Servers
 
-This skill can leverage serverless-specific MCP servers for enhanced development workflows:
+This skill leverages the CDK MCP server (provided via `aws-cdk-development` dependency) and AWS Documentation MCP for serverless guidance.
 
-### AWS Serverless MCP Server
-**Purpose**: Complete serverless application lifecycle with SAM CLI
-- Initialize new serverless applications
-- Deploy serverless applications
-- Test Lambda functions locally
-- Generate SAM templates
-- Manage serverless application lifecycle
-
-### AWS Lambda Tool MCP Server
-**Purpose**: Execute Lambda functions as tools
-- Invoke Lambda functions directly
-- Test Lambda integrations
-- Execute workflows requiring private resource access
-- Run Lambda-based automation
-
-### AWS Step Functions MCP Server
-**Purpose**: Execute complex workflows and orchestration
-- Create and manage state machines
-- Execute workflow orchestrations
-- Handle distributed transactions
-- Implement saga patterns
-- Coordinate microservices
-
-### Amazon SNS/SQS MCP Server
-**Purpose**: Event-driven messaging and queue management
-- Publish messages to SNS topics
-- Send/receive messages from SQS queues
-- Manage event-driven communication
-- Implement pub/sub patterns
-- Handle asynchronous processing
+> **Note**: The following AWS MCP servers are available separately via the Full AWS MCP Server (see `aws-mcp-setup` skill) and are not bundled with this plugin:
+> - AWS Serverless MCP — SAM CLI lifecycle (init, deploy, local test)
+> - AWS Lambda Tool MCP — Direct Lambda invocation
+> - AWS Step Functions MCP — Workflow orchestration
+> - Amazon SNS/SQS MCP — Messaging and queue management
 
 ## When to Use This Skill
 
@@ -302,336 +263,27 @@ async function withRetry<T>(fn: () => Promise<T>, maxRetries = 3): Promise<T> {
 }
 ```
 
-## Event-Driven Architecture Patterns
+## Architecture Patterns
 
-### Pattern 1: Event Router (EventBridge)
+For detailed implementation patterns with full code examples, see the reference documentation:
 
-Use EventBridge for event routing and filtering:
+### Event-Driven Architecture Patterns
+**File**: `references/eda-patterns.md`
+- Event Router with EventBridge (custom event bus, schema registry, rule-based routing)
+- Queue-Based Processing with SQS (standard/FIFO, DLQ, Lambda consumers)
+- Pub/Sub Fan-Out with SNS + SQS (multi-consumer, filtering)
+- Saga Pattern with Step Functions (distributed transactions, compensating actions)
+- Event Sourcing with DynamoDB Streams (append-only event store, projections)
 
-```typescript
-// Create custom event bus
-const eventBus = new events.EventBus(this, 'AppEventBus', {
-  eventBusName: 'application-events',
-});
+### Serverless Architecture Patterns
+**File**: `references/serverless-patterns.md`
+- API-Driven Microservices (REST API + Lambda backend)
+- Stream Processing with Kinesis (real-time, batch windowing, bisect on error)
+- Async Task Processing with SQS (background jobs, concurrency control)
+- Scheduled Jobs with EventBridge (cron/rate schedules)
+- Webhook Processing (signature validation, async queue forwarding)
 
-// Define event schema
-const schema = new events.Schema(this, 'OrderSchema', {
-  schemaName: 'OrderPlaced',
-  definition: events.SchemaDefinition.fromInline({
-    openapi: '3.0.0',
-    info: { version: '1.0.0', title: 'Order Events' },
-    paths: {},
-    components: {
-      schemas: {
-        OrderPlaced: {
-          type: 'object',
-          properties: {
-            orderId: { type: 'string' },
-            customerId: { type: 'string' },
-            amount: { type: 'number' },
-          },
-        },
-      },
-    },
-  }),
-});
-
-// Create rules for different consumers
-new events.Rule(this, 'ProcessOrderRule', {
-  eventBus,
-  eventPattern: {
-    source: ['orders'],
-    detailType: ['OrderPlaced'],
-  },
-  targets: [new targets.LambdaFunction(processOrderFunction)],
-});
-
-new events.Rule(this, 'NotifyCustomerRule', {
-  eventBus,
-  eventPattern: {
-    source: ['orders'],
-    detailType: ['OrderPlaced'],
-  },
-  targets: [new targets.LambdaFunction(notifyCustomerFunction)],
-});
-```
-
-### Pattern 2: Queue-Based Processing (SQS)
-
-Use SQS for reliable asynchronous processing:
-
-```typescript
-// Standard queue for at-least-once delivery
-const queue = new sqs.Queue(this, 'ProcessingQueue', {
-  visibilityTimeout: Duration.seconds(300),
-  retentionPeriod: Duration.days(14),
-  deadLetterQueue: {
-    queue: dlq,
-    maxReceiveCount: 3,
-  },
-});
-
-// FIFO queue for ordered processing
-const fifoQueue = new sqs.Queue(this, 'OrderedQueue', {
-  fifo: true,
-  contentBasedDeduplication: true,
-  deduplicationScope: sqs.DeduplicationScope.MESSAGE_GROUP,
-});
-
-// Lambda consumer
-new lambda.EventSourceMapping(this, 'QueueConsumer', {
-  target: processingFunction,
-  eventSourceArn: queue.queueArn,
-  batchSize: 10,
-  maxBatchingWindow: Duration.seconds(5),
-});
-```
-
-### Pattern 3: Pub/Sub (SNS + SQS Fan-Out)
-
-Implement fan-out pattern for multiple consumers:
-
-```typescript
-// Create SNS topic
-const topic = new sns.Topic(this, 'OrderTopic', {
-  displayName: 'Order Events',
-});
-
-// Multiple SQS queues subscribe to topic
-const inventoryQueue = new sqs.Queue(this, 'InventoryQueue');
-const shippingQueue = new sqs.Queue(this, 'ShippingQueue');
-const analyticsQueue = new sqs.Queue(this, 'AnalyticsQueue');
-
-topic.addSubscription(new subscriptions.SqsSubscription(inventoryQueue));
-topic.addSubscription(new subscriptions.SqsSubscription(shippingQueue));
-topic.addSubscription(new subscriptions.SqsSubscription(analyticsQueue));
-
-// Each queue has its own Lambda consumer
-new lambda.EventSourceMapping(this, 'InventoryConsumer', {
-  target: inventoryFunction,
-  eventSourceArn: inventoryQueue.queueArn,
-});
-```
-
-### Pattern 4: Saga Pattern with Step Functions
-
-Implement distributed transactions:
-
-```typescript
-const reserveFlight = new tasks.LambdaInvoke(this, 'ReserveFlight', {
-  lambdaFunction: reserveFlightFunction,
-  outputPath: '$.Payload',
-});
-
-const reserveHotel = new tasks.LambdaInvoke(this, 'ReserveHotel', {
-  lambdaFunction: reserveHotelFunction,
-  outputPath: '$.Payload',
-});
-
-const processPayment = new tasks.LambdaInvoke(this, 'ProcessPayment', {
-  lambdaFunction: processPaymentFunction,
-  outputPath: '$.Payload',
-});
-
-// Compensating transactions
-const cancelFlight = new tasks.LambdaInvoke(this, 'CancelFlight', {
-  lambdaFunction: cancelFlightFunction,
-});
-
-const cancelHotel = new tasks.LambdaInvoke(this, 'CancelHotel', {
-  lambdaFunction: cancelHotelFunction,
-});
-
-// Define saga with compensation
-const definition = reserveFlight
-  .next(reserveHotel)
-  .next(processPayment)
-  .addCatch(cancelHotel.next(cancelFlight), {
-    resultPath: '$.error',
-  });
-
-new stepfunctions.StateMachine(this, 'BookingStateMachine', {
-  definition,
-  timeout: Duration.minutes(5),
-});
-```
-
-### Pattern 5: Event Sourcing
-
-Store events as source of truth:
-
-```typescript
-// Event store with DynamoDB
-const eventStore = new dynamodb.Table(this, 'EventStore', {
-  partitionKey: { name: 'aggregateId', type: dynamodb.AttributeType.STRING },
-  sortKey: { name: 'version', type: dynamodb.AttributeType.NUMBER },
-  stream: dynamodb.StreamViewType.NEW_IMAGE,
-});
-
-// Lambda function stores events
-export const handleCommand = async (event: any) => {
-  const { aggregateId, eventType, eventData } = event;
-
-  // Get current version
-  const items = await dynamodb.query({
-    TableName: process.env.EVENT_STORE,
-    KeyConditionExpression: 'aggregateId = :id',
-    ExpressionAttributeValues: { ':id': aggregateId },
-    ScanIndexForward: false,
-    Limit: 1,
-  });
-
-  const nextVersion = items.Items?.[0]?.version + 1 || 1;
-
-  // Append new event
-  await dynamodb.putItem({
-    TableName: process.env.EVENT_STORE,
-    Item: {
-      aggregateId,
-      version: nextVersion,
-      eventType,
-      eventData,
-      timestamp: Date.now(),
-    },
-  });
-};
-
-// Projections read from event stream
-eventStore.grantStreamRead(projectionFunction);
-```
-
-## Serverless Architecture Patterns
-
-### Pattern 1: API-Driven Microservices
-
-REST APIs with Lambda backend:
-
-```typescript
-const api = new apigateway.RestApi(this, 'Api', {
-  restApiName: 'microservices-api',
-  deployOptions: {
-    throttlingRateLimit: 1000,
-    throttlingBurstLimit: 2000,
-    tracingEnabled: true,
-  },
-});
-
-// User service
-const users = api.root.addResource('users');
-users.addMethod('GET', new apigateway.LambdaIntegration(getUsersFunction));
-users.addMethod('POST', new apigateway.LambdaIntegration(createUserFunction));
-
-// Order service
-const orders = api.root.addResource('orders');
-orders.addMethod('GET', new apigateway.LambdaIntegration(getOrdersFunction));
-orders.addMethod('POST', new apigateway.LambdaIntegration(createOrderFunction));
-```
-
-### Pattern 2: Stream Processing
-
-Real-time data processing with Kinesis:
-
-```typescript
-const stream = new kinesis.Stream(this, 'DataStream', {
-  shardCount: 2,
-  retentionPeriod: Duration.days(7),
-});
-
-// Lambda processes stream records
-new lambda.EventSourceMapping(this, 'StreamProcessor', {
-  target: processFunction,
-  eventSourceArn: stream.streamArn,
-  batchSize: 100,
-  maxBatchingWindow: Duration.seconds(5),
-  parallelizationFactor: 10,
-  startingPosition: lambda.StartingPosition.LATEST,
-  retryAttempts: 3,
-  bisectBatchOnError: true,
-  onFailure: new lambdaDestinations.SqsDestination(dlq),
-});
-```
-
-### Pattern 3: Async Task Processing
-
-Background job processing:
-
-```typescript
-// SQS queue for tasks
-const taskQueue = new sqs.Queue(this, 'TaskQueue', {
-  visibilityTimeout: Duration.minutes(5),
-  receiveMessageWaitTime: Duration.seconds(20), // Long polling
-  deadLetterQueue: {
-    queue: dlq,
-    maxReceiveCount: 3,
-  },
-});
-
-// Lambda worker processes tasks
-const worker = new lambda.Function(this, 'TaskWorker', {
-  // ... configuration
-  reservedConcurrentExecutions: 10, // Control concurrency
-});
-
-new lambda.EventSourceMapping(this, 'TaskConsumer', {
-  target: worker,
-  eventSourceArn: taskQueue.queueArn,
-  batchSize: 10,
-  reportBatchItemFailures: true, // Partial batch failure handling
-});
-```
-
-### Pattern 4: Scheduled Jobs
-
-Periodic processing with EventBridge:
-
-```typescript
-// Daily cleanup job
-new events.Rule(this, 'DailyCleanup', {
-  schedule: events.Schedule.cron({ hour: '2', minute: '0' }),
-  targets: [new targets.LambdaFunction(cleanupFunction)],
-});
-
-// Process every 5 minutes
-new events.Rule(this, 'FrequentProcessing', {
-  schedule: events.Schedule.rate(Duration.minutes(5)),
-  targets: [new targets.LambdaFunction(processFunction)],
-});
-```
-
-### Pattern 5: Webhook Processing
-
-Handle external webhooks:
-
-```typescript
-// API Gateway endpoint for webhooks
-const webhookApi = new apigateway.RestApi(this, 'WebhookApi', {
-  restApiName: 'webhooks',
-});
-
-const webhook = webhookApi.root.addResource('webhook');
-webhook.addMethod('POST', new apigateway.LambdaIntegration(webhookFunction, {
-  proxy: true,
-  timeout: Duration.seconds(29), // API Gateway max
-}));
-
-// Lambda handler validates and queues webhook
-export const handler = async (event: APIGatewayProxyEvent) => {
-  // Validate webhook signature
-  const isValid = validateSignature(event.headers, event.body);
-  if (!isValid) {
-    return { statusCode: 401, body: 'Invalid signature' };
-  }
-
-  // Queue for async processing
-  await sqs.sendMessage({
-    QueueUrl: process.env.QUEUE_URL,
-    MessageBody: event.body,
-  });
-
-  // Return immediately
-  return { statusCode: 202, body: 'Accepted' };
-};
-```
+> **Important**: When using CDK code examples from references, avoid hardcoding resource names (e.g., `restApiName`, `eventBusName`). Let CDK generate unique names automatically to enable reusability and parallel deployments. See `aws-cdk-development` skill for details.
 
 ## Best Practices
 
@@ -700,37 +352,9 @@ new NodejsFunction(this, 'Function', {
 
 ## Using MCP Servers Effectively
 
-### AWS Serverless MCP Usage
+Use the CDK MCP server (via `aws-cdk-development` dependency) for construct recommendations and CDK-specific guidance when building serverless infrastructure.
 
-**Lifecycle management**:
-- Initialize new serverless projects
-- Generate SAM templates
-- Deploy applications
-- Test locally before deployment
-
-### Lambda Tool MCP Usage
-
-**Function execution**:
-- Test Lambda functions directly
-- Execute automation workflows
-- Access private resources
-- Validate integrations
-
-### Step Functions MCP Usage
-
-**Workflow orchestration**:
-- Create state machines for complex workflows
-- Execute distributed transactions
-- Implement saga patterns
-- Coordinate microservices
-
-### SNS/SQS MCP Usage
-
-**Messaging operations**:
-- Test pub/sub patterns
-- Send test messages to queues
-- Validate event routing
-- Debug message processing
+Use AWS Documentation MCP to verify service features, regional availability, and API specifications before implementing.
 
 ## Additional Resources
 

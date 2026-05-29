@@ -1,0 +1,16 @@
+{
+  "name": "diagrams-generator",
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave-diagrams/skills/diagrams-generator/SKILL.md",
+  "category": "generation",
+  "source": "github.com/anton-abyzov/specweave",
+  "dir_name": "diagrams-generator",
+  "downloaded_at": "2026-02-22T06:18:52.477212Z",
+  "author": "anton-abyzov",
+  "source_url": "https://github.com/anton-abyzov/specweave/blob/main/plugins/specweave-diagrams/skills/diagrams-generator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Anton Abyzov",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

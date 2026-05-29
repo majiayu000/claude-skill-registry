@@ -4,6 +4,7 @@ description: "Create test cases for functions and modules. Use when implementing
 mcp_fallback: none
 category: testing
 tier: 2
+user-invocable: false
 ---
 
 # Generate Tests

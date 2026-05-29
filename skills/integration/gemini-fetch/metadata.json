@@ -1,0 +1,16 @@
+{
+  "name": "gemini-fetch",
+  "repo": "sskim91/dotfiles",
+  "path": ".claude/skills/gemini-fetch/SKILL.md",
+  "source": "github.com/sskim91/dotfiles",
+  "downloaded_at": "2026-02-02T02:01:32.868748Z",
+  "dir_name": "gemini-fetch",
+  "category": "integration",
+  "author": "sskim91",
+  "source_url": "https://github.com/sskim91/dotfiles/blob/main/.claude/skills/gemini-fetch/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SEONG SEOB KIM",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

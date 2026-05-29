@@ -1,13 +1,13 @@
 ---
 name: compression-strategy
-description: 'Analyze current context and recommend compression strategies for bloated or quota-heavy sessions'
-version: 1.9.3
+description: Recommends context compression strategies for bloated or quota-heavy sessions. Use when context feels sluggish or quota burns faster than expected.
 globs:
 alwaysApply: false
 progressive_loading: true
 dependencies:
   hub: []
-  modules: []
+  modules:
+    - log-debugging-hygiene
 model_hint: standard
 ---
 # Compression Strategy
@@ -45,7 +45,7 @@ Run `/context` to check current usage. Then estimate:
 
 Based on analysis, recommend one of:
 
-### Option A: `/clear` + `/catchup`
+### Option A: `/clear` and `/catchup`
 
 Best when:
 - Task phase complete (planning done, implementation starting)
@@ -68,7 +68,7 @@ Process:
 1. Run `Skill(conserve:clear-context)` to spawn continuation agent
 2. Agent receives fresh context with saved state
 
-### Option C: Archive + Summarize
+### Option C: Archive and Summarize
 
 Best when:
 - Context 40-60% full
@@ -98,9 +98,9 @@ For the recommended strategy, estimate:
 
 | Strategy | Typical Savings | Risk |
 |----------|-----------------|------|
-| /clear + /catchup | 70-90% | Low if state saved |
+| /clear and /catchup | 70-90% | Low if state saved |
 | Continuation agent | 80-95% | Low, state preserved |
-| Archive + summarize | 20-40% | Very low |
+| Archive and summarize | 20-40% | Very low |
 | Delegate to subagent | 30-50% | Low, parallel work |
 
 ## Context Archive Location
@@ -118,6 +118,16 @@ any `/compact` operation.
 - **PreCompact hook**: Automatically preserves context before compression
 - **Tool output summarizer**: Warns when tool outputs accumulate
 - **Context warning hook**: Three-tier alerts at 40%/50%/80%
+
+## Specialized Modules
+
+Load `modules/log-debugging-hygiene.md` when the bloat source is
+pasted log output (debug traces, CI failures, hook logs, JSONL).
+That module documents a three-tier filter-first workflow with
+benchmarked snippets and an honest framing of when compression
+is and is not warranted. On the committed `intake_queue.jsonl`
+fixture, `tail -n 100` beats lossless compression by 25
+percentage points; the module formalizes that asymmetry.
 
 ## Example Usage
 

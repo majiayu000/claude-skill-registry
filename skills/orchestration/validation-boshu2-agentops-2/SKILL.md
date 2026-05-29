@@ -14,6 +14,13 @@ Validation delegates to `$vibe`, `$post-mortem`, `$retro`, and `$forge` (plus li
 
 See [`docs/learnings/orchestrator-compression-anti-pattern.md`](../../docs/learnings/orchestrator-compression-anti-pattern.md) for the live compression signature.
 
+Validation owns the `validate_acceptance` port in the
+[Intent-to-Loop Hexagon](../../docs/architecture/intent-to-loop-hexagon.md).
+The roll-up must preserve bounded context, context packet, guard adapters, done
+state, and fresh proof for each accepted scenario. Apply the
+[Completion-Claim Kernel](../shared/validation-contract.md#completion-claim-kernel)
+before accepting DONE/closed/green claims.
+
 ## DAG — Execute This Sequentially
 
 ### Step 0: Load Prior Validation Context
@@ -149,7 +156,7 @@ STEP 1.7.5 ── Release-Readiness Gates (MANDATORY when IS_RELEASE_CONTEXT=1)
 STEP 1.8 ── Stage 4: Behavioral Validation (holdout scenarios + agent-built specs)
             Skip if: no .agents/holdout/ directory AND no .agents/specs/ directory
             Skip if: --no-behavioral flag set
-            
+
             Sub-steps:
               a) List active scenarios and agent-built specs:
                    ao scenario list --status active 2>/dev/null
@@ -170,7 +177,7 @@ STEP 1.8 ── Stage 4: Behavioral Validation (holdout scenarios + agent-built 
                    mean < 0.5 → FAIL ("Implementation does not satisfy holdout scenarios")
               h) Write results to .agents/rpi/scenario-results.json
               i) Include satisfaction_score in validation_state
-            
+
             PASS/WARN? → continue to STEP 2
             FAIL? → write summary, output <promise>FAIL</promise>, stop
 

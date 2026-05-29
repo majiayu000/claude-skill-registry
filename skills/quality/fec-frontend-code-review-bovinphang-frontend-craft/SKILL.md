@@ -48,11 +48,11 @@ description: Use when the user asks for general frontend code review, PR review,
 
 6. 可维护性
 
-- 组件/页面文件规模是否合理（宜约 **300 行**内；逾 **500 行**或复杂度过高须拆分，见 `templates/rules/react.md` / `vue.md`「组件文件规模」）
+- 组件/页面文件规模是否合理（宜约 **300 行**内；逾 **500 行**或复杂度过高须拆分，见 `templates/shared/rules/fec-react.md` / `fec-vue.md`「组件文件规模」）
 - 命名质量是否良好
 - 是否有应该提取的重复逻辑
 - 是否存在死代码、过期注释或临时性 hack
-- 业务状态、类型、标识是否用裸数字/裸字符串（应对齐 `templates/rules/typescript.md`「禁止 Magic Number / Magic String」）
+- 业务状态、类型、标识是否用裸数字/裸字符串（应对齐 `templates/shared/rules/fec-typescript.md`「禁止 Magic Number / Magic String」）
 
 7. 测试
 

@@ -1,6 +1,6 @@
 ---
 name: progressive-loading
-description: 'Progressive module loading with hub-and-spoke pattern for token optimization. Lazy loading.'
+description: Implements hub-and-spoke lazy loading to minimize token usage in large skills. Use when building multi-module skills that need conditional on-demand loading.
 alwaysApply: false
 category: infrastructure
 tags:

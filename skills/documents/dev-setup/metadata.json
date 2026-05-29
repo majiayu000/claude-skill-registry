@@ -1,0 +1,17 @@
+{
+  "name": "dev-setup",
+  "repo": "oprogramadorreal/optimus-claude",
+  "path": "skills/dev-setup/SKILL.md",
+  "github_branch": "master",
+  "category": "documents",
+  "source": "github.com/oprogramadorreal/optimus-claude",
+  "dir_name": "dev-setup",
+  "downloaded_at": "2026-04-13T01:48:57.526827Z",
+  "author": "oprogramadorreal",
+  "source_url": "https://github.com/oprogramadorreal/optimus-claude/blob/master/skills/dev-setup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oprogramadorreal/optimus-claude/blob/master/skills/dev-setup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

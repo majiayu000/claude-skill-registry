@@ -152,15 +152,22 @@ Ensure checklist includes items for constitution MUST rules:
 
 ---
 
-## Step 6: Save & Report
+## Step 6: Save & Validate
 
 1. Save to `relentless/features/NNN-feature/checklist.md`
-2. Report:
+2. **Run the validator to ensure checklist.md is correctly formatted:**
+   ```bash
+   .claude/skills/validators/scripts/validate-checklist.sh "relentless/features/NNN-feature/checklist.md"
+   ```
+   - If validation fails, fix the errors and re-run
+   - Warnings are acceptable but should be reviewed
+3. Report:
    - Total checklist items: N
    - Items per category
    - Mandatory items included: TDD ✓, Quality Gates ✓, Routing ✓
    - Constitution compliance items: N
    - Gaps identified: N
+   - Validation: PASS/FAIL
    - Next step: `/relentless.convert` (if not done) or `/relentless.analyze`
 
 ---

@@ -1,0 +1,17 @@
+{
+  "name": "playground",
+  "repo": "AWS-Educate/template-nextjs-sanity-tailwind-amplify",
+  "path": ".agents/skills/playground/SKILL.md",
+  "github_branch": "main",
+  "category": "generation",
+  "source": "github.com/AWS-Educate/template-nextjs-sanity-tailwind-amplify",
+  "dir_name": "playground-aws-educate-template-nextjs-sani",
+  "downloaded_at": "2026-03-01T04:45:03.652212Z",
+  "author": "AWS-Educate",
+  "source_url": "https://github.com/AWS-Educate/template-nextjs-sanity-tailwind-amplify/blob/main/.agents/skills/playground/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AWS-Educate/template-nextjs-sanity-tailwind-amplify/blob/main/.agents/skills/playground/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

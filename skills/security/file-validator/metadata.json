@@ -1,0 +1,16 @@
+{
+  "name": "file-validator",
+  "repo": "cisco-ai-defense/skill-scanner",
+  "path": "evals/skills/safe-skills-2/file-validator/SKILL.md",
+  "source": "github.com/cisco-ai-defense/skill-scanner",
+  "downloaded_at": "2026-02-02T04:32:50.378604Z",
+  "dir_name": "file-validator",
+  "category": "security",
+  "author": "cisco-ai-defense",
+  "source_url": "https://github.com/cisco-ai-defense/skill-scanner/blob/main/evals/skills/safe-skills-2/file-validator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright 2026 Cisco Systems, Inc. and its affiliates",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

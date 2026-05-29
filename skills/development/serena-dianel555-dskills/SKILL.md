@@ -8,35 +8,86 @@ description: |
 
 IDE-like semantic code operations via CLI. Provides symbol-level code navigation, editing, and project memory.
 
-## Execution
+## Prerequisites
 
-### MCP Tools (if available)
-Use `mcp__serena__*` tools directly.
-
-### CLI
 ```bash
-# Prerequisites: pip install serena-agent typer
-# Environment: SERENA_PROJECT (default: current directory)
+pip install serena-agent typer pyyaml
+```
+
+## Quick Start
+
+**First-time setup**: Launch the Web Dashboard to initialize and register the project:
+
+```bash
+python -m tools dashboard serve --open-browser
+```
+
+This will:
+- Initialize Serena configuration
+- Register the current project in `~/.serena/serena_config.yml`
+- Open the Web Dashboard for monitoring and configuration
+
+**Configuration**: Edit `.env` file in `skills/serena/` directory:
+```bash
+SERENA_CONTEXT=claude-code
+SERENA_MODES=interactive,editing,onboarding
+SERENA_PROJECT=.
+```
+
+## Usage
+
+### Basic Command Structure
+
+```bash
+python -m tools [GLOBAL OPTIONS] <command> [COMMAND OPTIONS]
+```
+
+**Global Options** (must be specified before the command):
+- `-p, --project PATH` - Project directory (default: current directory, env: SERENA_PROJECT)
+- `-c, --context TEXT` - Execution context (auto-detected if not specified, env: SERENA_CONTEXT)
+- `-m, --mode TEXT` - Operation modes (can be specified multiple times, env: SERENA_MODES)
+
+### Working with Different Projects
+
+**Important**: When working with projects in different locations (especially cross-drive on Windows), use `--project`:
+
+```bash
+# Correct: Use --project for different project locations
+python -m tools --project "/path/to/project" symbol find MyClass
+python -m tools --project "E:\MyProject" file search "pattern"
+
+# Incorrect: Don't use --path with absolute paths from different drives
+python -m tools file search "pattern" --path "E:\MyProject"  # Will fail!
+```
+
+The `--path` option in subcommands expects **relative paths** within the project. Always use `--project` to set the project root first.
+
+### Common Operations
+
+```bash
+# Dashboard
+python -m tools dashboard serve --open-browser
+python -m tools dashboard info
 
 # Symbol operations
-python -m skills.serena.tools symbol find MyClass --body
-python -m skills.serena.tools symbol overview src/main.py
-python -m skills.serena.tools symbol refs MyClass/method
-python -m skills.serena.tools symbol rename OldName NewName --path src/file.py
+python -m tools symbol find MyClass --body
+python -m tools symbol overview src/main.py
+python -m tools symbol refs MyClass/method
+python -m tools symbol rename OldName NewName --path src/file.py
 
 # Memory operations
-python -m skills.serena.tools memory list
-python -m skills.serena.tools memory read project_overview
-python -m skills.serena.tools memory write api_notes --content "..."
+python -m tools memory list
+python -m tools memory read project_overview
+python -m tools memory write api_notes --content "..."
 
 # File operations
-python -m skills.serena.tools file list --recursive
-python -m skills.serena.tools file find "**/*.py"
-python -m skills.serena.tools file search "TODO:.*" --path src
+python -m tools file list --recursive
+python -m tools file find "**/*.py"
+python -m tools file search "TODO:.*" --path src
 
 # Extended tools
-python -m skills.serena.tools cmd run "git status"
-python -m skills.serena.tools config read config.json
+python -m tools cmd run "git status"
+python -m tools config read config.json
 ```
 
 ## Tool Routing Policy
@@ -57,6 +108,15 @@ python -m skills.serena.tools config read config.json
 - Documentation files (Markdown)
 
 ## Command Reference
+
+### Dashboard Commands
+| Command | Description |
+|---------|-------------|
+| `dashboard serve [--open-browser] [--browser-cmd <path>]` | Start Web Dashboard server |
+| `dashboard info` | Show current configuration |
+| `dashboard tools` | List active and available tools |
+| `dashboard modes` | List active and available modes |
+| `dashboard contexts` | List active and available contexts |
 
 ### Symbol Commands
 | Command | Description |
@@ -100,32 +160,38 @@ python -m skills.serena.tools config read config.json
 | `workflow check` | Check onboarding status |
 | `workflow tools [--scope all]` | List available tools |
 
-## Workflow
+## Workflow Examples
 
 ### Phase 1: Exploration
 ```bash
-symbol overview src/main.py           # Understand file structure
-symbol find MyClass --depth 1         # Explore class members
-symbol find MyClass/method --body     # Get implementation details
+python -m tools symbol overview src/main.py           # Understand file structure
+python -m tools symbol find MyClass --depth 1         # Explore class members
+python -m tools symbol find MyClass/method --body     # Get implementation details
 ```
 
 ### Phase 2: Analysis
 ```bash
-symbol refs MyClass/method            # Impact analysis
-memory list                           # Check project knowledge
-memory read architecture              # Retrieve context
+python -m tools symbol refs MyClass/method            # Impact analysis
+python -m tools memory list                           # Check project knowledge
+python -m tools memory read architecture              # Retrieve context
 ```
 
 ### Phase 3: Modification
 ```bash
-symbol find target --body             # Verify target
-symbol replace target --path f --body "..."  # Edit
-symbol rename old new --path f        # Refactor
+python -m tools symbol find target --body             # Verify target
+python -m tools symbol replace target --path f --body "..."  # Edit
+python -m tools symbol rename old new --path f        # Refactor
 ```
 
 ## Error Handling
 
+All CLI output is JSON:
+
 ```json
+// Success
+{"result": <data>}
+
+// Error
 {"error": {"code": "ERROR_CODE", "message": "description"}}
 ```
 

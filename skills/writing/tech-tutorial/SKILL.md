@@ -1,11 +1,8 @@
 ---
 name: tech-tutorial
-description: Plan, draft, and refine technical tutorials for developers.
+description: Plans, drafts, and refines technical tutorials for developers. Use when writing step-by-step guides or getting-started walkthroughs backed by working code.
 globs: "**/*.md"
 alwaysApply: false
-  Use when writing step-by-step guides, getting-started walkthroughs, or
-  concept explanations backed by working code. Do not use for API reference
-  docs (use doc-generator) or prose cleanup (use slop-detector).
 category: artifact-generation
 tags:
 - tutorial

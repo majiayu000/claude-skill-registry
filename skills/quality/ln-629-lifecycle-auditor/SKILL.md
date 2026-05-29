@@ -1,8 +1,11 @@
 ---
 name: ln-629-lifecycle-auditor
-description: Application lifecycle audit worker (L3). Checks bootstrap initialization order, graceful shutdown, resource cleanup, signal handling, liveness/readiness probes. Returns findings with severity, location, effort, recommendations.
+description: "Checks bootstrap initialization, graceful shutdown, resource cleanup, signal handling, liveness/readiness probes. Use when auditing app lifecycle."
 allowed-tools: Read, Grep, Glob, Bash
+license: MIT
 ---
+
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Lifecycle Auditor (L3 Worker)
 
@@ -17,15 +20,25 @@ Specialized worker auditing application lifecycle and entry points.
 
 ## Inputs (from Coordinator)
 
-Receives `contextStore` with tech stack, deployment type, codebase root.
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
+
+Receives `contextStore` with tech stack, deployment type, codebase root, output_dir.
 
 ## Workflow
 
-1) Parse context
-2) Check lifecycle patterns
-3) Collect findings
-4) Calculate score
-5) Return JSON
+**MANDATORY READ:** Load `shared/references/two_layer_detection.md` for detection methodology.
+
+1) Parse context + output_dir
+2) Check lifecycle patterns (Layer 1: grep for SIGTERM, shutdown handlers, probes)
+3) Analyze context per candidate (Layer 2):
+   - Bootstrap order: read main file — trace actual init sequence, verify dependencies satisfied before use
+   - Graceful shutdown: read signal handlers — do they actually close all resources? Or just log and exit?
+   - Resource cleanup: read shutdown handler — are ALL opened resources (DB, Redis, queues) closed?
+   - Probes: check deployment config (Dockerfile, k8s manifests) — is this containerized?
+4) Collect confirmed findings
+5) Calculate score
+6) **Write Report:** Build full markdown report in memory per `shared/templates/audit_worker_report_template.md`, write to `{output_dir}/629-lifecycle.md` in single Write call
+7) **Return Summary:** Return minimal summary to coordinator
 
 ## Audit Rules
 
@@ -93,33 +106,44 @@ Receives `contextStore` with tech stack, deployment type, codebase root.
 
 ## Scoring Algorithm
 
-```
-penalty = (high * 1.0) + (medium * 0.5) + (low * 0.2)
-score = max(0, 10 - penalty)
-```
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/references/audit_scoring.md`.
 
 ## Output Format
 
-```json
-{
-  "category": "Lifecycle",
-  "score": 7,
-  "total_issues": 4,
-  "high": 1,
-  "medium": 3,
-  "low": 0,
-  "findings": [
-    {
-      "severity": "HIGH",
-      "location": "src/index.ts:1-50",
-      "issue": "No SIGTERM handler for graceful shutdown",
-      "principle": "Graceful Shutdown / Resource Management",
-      "recommendation": "Add SIGTERM handler to close DB connections and server gracefully",
-      "effort": "M"
-    }
-  ]
-}
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
+
+Write report to `{output_dir}/629-lifecycle.md` with `category: "Lifecycle"` and checks: bootstrap_order, graceful_shutdown, resource_cleanup, signal_handling, probes.
+
+Return summary to coordinator:
 ```
+Report written: docs/project/.audit/ln-620/{YYYY-MM-DD}/629-lifecycle.md
+Score: X.X/10 | Issues: N (C:N H:N M:N L:N)
+```
+
+## Reference Files
+
+- **Audit output schema:** `shared/references/audit_output_schema.md`
+
+## Critical Rules
+
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
+
+- **Do not auto-fix:** Report only, lifecycle changes risk downtime
+- **Deployment-aware:** Adapt probe checks to deployment type (Kubernetes = probes required, bare metal = optional)
+- **Effort realism:** S = <1h, M = 1-4h, L = >4h
+- **Exclusions:** Skip CLI tools and scripts (no long-running lifecycle), skip serverless functions (platform-managed lifecycle)
+- **Initialization order matters:** Flag DB usage before DB init as HIGH regardless of context
+
+## Definition of Done
+
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
+
+- [ ] contextStore parsed (deployment type, output_dir)
+- [ ] All 5 checks completed (bootstrap order, graceful shutdown, resource cleanup, signal handling, probes)
+- [ ] Findings collected with severity, location, effort, recommendation
+- [ ] Score calculated per `shared/references/audit_scoring.md`
+- [ ] Report written to `{output_dir}/629-lifecycle.md` (atomic single Write call)
+- [ ] Summary returned to coordinator
 
 ---
 **Version:** 3.0.0

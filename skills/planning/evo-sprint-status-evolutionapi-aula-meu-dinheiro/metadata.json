@@ -1,0 +1,17 @@
+{
+  "name": "evo-sprint-status",
+  "repo": "EvolutionAPI/aula-meu-dinheiro",
+  "path": ".claude/skills/evo-sprint-status/SKILL.md",
+  "github_branch": "main",
+  "category": "planning",
+  "source": "github.com/EvolutionAPI/aula-meu-dinheiro",
+  "dir_name": "evo-sprint-status-evolutionapi-aula-meu-dinheiro",
+  "downloaded_at": "2026-03-22T05:20:04.123487Z",
+  "author": "EvolutionAPI",
+  "source_url": "https://github.com/EvolutionAPI/aula-meu-dinheiro/blob/main/.claude/skills/evo-sprint-status/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/EvolutionAPI/aula-meu-dinheiro/blob/main/.claude/skills/evo-sprint-status/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

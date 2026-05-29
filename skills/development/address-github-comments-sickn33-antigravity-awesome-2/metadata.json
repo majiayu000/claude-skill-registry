@@ -1,0 +1,18 @@
+{
+  "name": "address-github-comments",
+  "description": "Use when you need to address review or issue comments on an open GitHub Pull Request using the gh CLI.",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/address-github-comments",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "address-github-comments-sickn33-antigravity-awesome-2",
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/address-github-comments/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Antigravity User",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

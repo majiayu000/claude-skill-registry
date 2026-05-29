@@ -13,9 +13,12 @@ from typing import Any
 
 from audit_category_residuals import file_sha256, metadata_identity
 from apply_category_migration import parse_csv
-from utils import load_metadata
+from utils import load_metadata, write_metadata
 
 SCHEMA_VERSION = 1
+CONTENT_DRIFT_REFUSE = "refuse"
+CONTENT_DRIFT_PREFER_NEWER_DOWNLOADED_AT = "prefer-newer-downloaded-at"
+CONTENT_DRIFT_PREFER_NEWER_OR_KEEP_TARGET = "prefer-newer-downloaded-at-or-keep-target"
 
 
 def sorted_counter(counter: Counter[str]) -> dict[str, int]:
@@ -59,12 +62,119 @@ def detail_is_removable(
     return True, "exact duplicate"
 
 
+def parse_downloaded_at(value: Any) -> datetime | None:
+    if not isinstance(value, str) or not value:
+        return None
+    normalized = value.strip()
+    if normalized.endswith("Z"):
+        normalized = f"{normalized[:-1]}+00:00"
+    try:
+        parsed = datetime.fromisoformat(normalized)
+    except ValueError:
+        return None
+    if parsed.tzinfo is None:
+        return parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(timezone.utc)
+
+
+def content_drift_resolution(
+    *,
+    skills_dir: Path,
+    detail: dict[str, Any],
+    strategy: str,
+) -> tuple[str, str, dict[str, str]]:
+    if strategy == CONTENT_DRIFT_REFUSE:
+        return "", "SKILL content differs", {}
+    if strategy not in {
+        CONTENT_DRIFT_PREFER_NEWER_DOWNLOADED_AT,
+        CONTENT_DRIFT_PREFER_NEWER_OR_KEEP_TARGET,
+    }:
+        raise ValueError(f"unsupported content drift strategy: {strategy}")
+
+    source = skills_dir / str(detail.get("source_path") or "")
+    target = skills_dir / str(detail.get("target_path") or "")
+    source_metadata = load_metadata(source)
+    target_metadata = load_metadata(target)
+    source_downloaded_at = parse_downloaded_at(source_metadata.get("downloaded_at"))
+    target_downloaded_at = parse_downloaded_at(target_metadata.get("downloaded_at"))
+    context = {
+        "source_downloaded_at": str(source_metadata.get("downloaded_at") or ""),
+        "target_downloaded_at": str(target_metadata.get("downloaded_at") or ""),
+    }
+    if source_downloaded_at is None or target_downloaded_at is None:
+        if strategy == CONTENT_DRIFT_PREFER_NEWER_OR_KEEP_TARGET:
+            return (
+                "remove_source_keep_target",
+                "target retained because downloaded_at is unavailable",
+                context,
+            )
+        return "", "downloaded_at unavailable for content drift", context
+    if source_downloaded_at == target_downloaded_at:
+        if strategy == CONTENT_DRIFT_PREFER_NEWER_OR_KEEP_TARGET:
+            return (
+                "remove_source_keep_target",
+                "target retained because downloaded_at is tied",
+                context,
+            )
+        return "", "downloaded_at tied for content drift", context
+    if source_downloaded_at > target_downloaded_at:
+        return (
+            "replace_target_remove_source",
+            "source downloaded_at is newer than target",
+            context,
+        )
+    return (
+        "remove_source_keep_target",
+        "target downloaded_at is newer than source",
+        context,
+    )
+
+
+def order_and_deduplicate_replacements(removals: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for removal in removals:
+        grouped.setdefault(str(removal.get("target_path") or ""), []).append(removal)
+
+    ordered: list[dict[str, Any]] = []
+    for target_path in sorted(grouped):
+        group = grouped[target_path]
+        replacements = [
+            removal
+            for removal in group
+            if removal.get("operation") == "replace_target_remove_source"
+        ]
+        winner: dict[str, Any] | None = None
+        if replacements:
+            winner = max(
+                replacements,
+                key=lambda removal: parse_downloaded_at(
+                    removal.get("source_downloaded_at")
+                )
+                or datetime.min.replace(tzinfo=timezone.utc),
+            )
+            for removal in replacements:
+                if removal is winner:
+                    continue
+                removal["operation"] = "remove_source_keep_target"
+                removal["reason"] = "target retained because another source in plan is newer"
+
+        group.sort(
+            key=lambda removal: (
+                1 if removal.get("operation") == "replace_target_remove_source" else 0,
+                str(removal.get("source_path") or ""),
+            )
+        )
+        ordered.extend(group)
+    return ordered
+
+
 def build_cleanup_plan(
     *,
     residual_report: Path,
     skills_dir: Path | None = None,
     from_categories: set[str] | None = None,
     require_metadata_identity: bool = True,
+    content_drift_strategy: str = CONTENT_DRIFT_REFUSE,
     limit: int | None = None,
 ) -> dict[str, Any]:
     report = load_report(residual_report)
@@ -87,12 +197,32 @@ def build_cleanup_plan(
             require_metadata_identity=require_metadata_identity,
         )
         if not removable:
-            skipped_reasons[reason] += 1
-            continue
+            if (
+                reason == "SKILL content differs"
+                and detail.get("target_exists")
+                and (
+                    not require_metadata_identity
+                    or bool(detail.get("metadata_identity_equal"))
+                )
+            ):
+                operation, reason, context = content_drift_resolution(
+                    skills_dir=selected_skills_dir,
+                    detail=detail,
+                    strategy=content_drift_strategy,
+                )
+                if not operation:
+                    skipped_reasons[reason] += 1
+                    continue
+            else:
+                skipped_reasons[reason] += 1
+                continue
+        else:
+            operation = "remove_duplicate"
+            context = {}
         source = str(detail["source_path"])
         target = str(detail["target_path"])
         removal = {
-            "operation": "remove_duplicate",
+            "operation": operation,
             "source_path": source,
             "source_skill": str(detail.get("source_skill") or f"{source}/SKILL.md"),
             "target_path": target,
@@ -106,11 +236,14 @@ def build_cleanup_plan(
             "skill_content_equal": bool(detail.get("skill_content_equal")),
             "reason": reason,
         }
+        removal.update(context)
         removals.append(removal)
         source_counts[source_category(detail)] += 1
         target_counts[removal["target_category"]] += 1
         if max_removals is not None and len(removals) >= max_removals:
             break
+
+    removals = order_and_deduplicate_replacements(removals)
 
     return {
         "schema_version": SCHEMA_VERSION,
@@ -120,6 +253,7 @@ def build_cleanup_plan(
         "policy": {
             "from_categories": sorted(from_categories),
             "require_metadata_identity": require_metadata_identity,
+            "content_drift_strategy": content_drift_strategy,
             "limit": limit,
             "apply_mode": "review-only",
         },
@@ -135,6 +269,7 @@ def build_cleanup_plan(
             "Default mode is review-only and does not modify files.",
             "Apply mode re-verifies source and target SKILL hashes before removal.",
             "Metadata identity must match by default; use --allow-metadata-identity-drift only after review.",
+            "Content drift is refused by default; prefer-newer-downloaded-at requires both source and target downloaded_at values.",
         ],
     }
 
@@ -142,7 +277,12 @@ def build_cleanup_plan(
 def apply_cleanup_plan(skills_dir: Path, plan: dict[str, Any]) -> None:
     require_metadata_identity = bool(plan.get("policy", {}).get("require_metadata_identity", True))
     for removal in plan["removals"]:
-        if removal.get("operation") != "remove_duplicate":
+        operation = removal.get("operation")
+        if operation not in {
+            "remove_duplicate",
+            "remove_source_keep_target",
+            "replace_target_remove_source",
+        }:
             raise ValueError(f"unsupported operation: {removal.get('operation')}")
         source = skills_dir / removal["source_path"]
         target = skills_dir / removal["target_path"]
@@ -158,13 +298,19 @@ def apply_cleanup_plan(skills_dir: Path, plan: dict[str, Any]) -> None:
             raise ValueError(f"source SKILL hash changed: {source}")
         if target_hash != removal.get("target_skill_sha256"):
             raise ValueError(f"target SKILL hash changed: {target}")
-        if not source_hash or source_hash != target_hash:
+        if operation == "remove_duplicate" and (not source_hash or source_hash != target_hash):
             raise ValueError(f"source and target SKILL content differs: {source}")
         if require_metadata_identity:
             source_identity = metadata_identity(load_metadata(source))
             target_identity = metadata_identity(load_metadata(target))
             if source_identity != target_identity:
                 raise ValueError(f"metadata identity changed or differs: {source}")
+        if operation == "replace_target_remove_source":
+            source_metadata = load_metadata(source)
+            source_metadata["category"] = removal["target_category"]
+            source_metadata["dir_name"] = target.name
+            shutil.copy2(source / "SKILL.md", target / "SKILL.md")
+            write_metadata(target, source_metadata)
         shutil.rmtree(source)
 
 
@@ -190,6 +336,15 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--skills-dir", type=Path)
     parser.add_argument("--from-category", action="append")
     parser.add_argument("--allow-metadata-identity-drift", action="store_true")
+    parser.add_argument(
+        "--content-drift-strategy",
+        choices=[
+            CONTENT_DRIFT_REFUSE,
+            CONTENT_DRIFT_PREFER_NEWER_DOWNLOADED_AT,
+            CONTENT_DRIFT_PREFER_NEWER_OR_KEEP_TARGET,
+        ],
+        default=CONTENT_DRIFT_REFUSE,
+    )
     parser.add_argument("--limit", type=int)
     parser.add_argument("--apply", action="store_true")
     parser.add_argument("--json", action="store_true")
@@ -205,6 +360,7 @@ def main(argv: list[str] | None = None) -> int:
         skills_dir=args.skills_dir,
         from_categories=parse_csv(args.from_category),
         require_metadata_identity=not args.allow_metadata_identity_drift,
+        content_drift_strategy=args.content_drift_strategy,
         limit=args.limit,
     )
     skills_dir = Path(plan["skills_dir"])

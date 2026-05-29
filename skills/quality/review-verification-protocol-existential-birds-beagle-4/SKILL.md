@@ -1,22 +1,38 @@
 ---
 name: review-verification-protocol
 description: Mandatory verification steps for all code reviews to reduce false positives. Load this skill before reporting ANY code review findings.
+user-invocable: false
 ---
 
 # Review Verification Protocol
 
 This protocol MUST be followed before reporting any code review finding. Skipping these steps leads to false positives that waste developer time and erode trust in reviews.
 
+For Elixir/OTP/Phoenix/LiveView files, apply the gates below first; the issue-type and cross-stack sections apply when the reviewed code uses those stacks or patterns.
+
+## Hard gates (execute in order)
+
+Do not report a finding until each relevant gate passes for **that** finding. A gate passes only when the pass condition is objectively satisfied (tool output, cited path:line), not when it “feels” verified.
+
+1. **Read gate** — *Pass if:* you opened the full defining function, module section, or template region (or equivalent scoped read), not only the PR diff hunk for that symbol.
+2. **Evidence gate** — *Pass if:* the finding cites `path:line` (or line range) that you can tie to actual file content from a read/search tool in this session.
+3. **Usage gate** (before “unused”, “dead code”, “unreachable”) — *Pass if:* you ran a repo-wide reference search and can state the result (e.g. zero matches vs matches at listed paths); if the symbol may be invoked dynamically, *Pass if:* you checked reflection-like mechanisms (macros, `apply`, MFA strings, config) or explicitly mark uncertainty as a question, not a defect.
+4. **Cross-cutting gate** (before “missing validation/error handling”) — *Pass if:* you checked at least one of caller, plug/pipeline, context, supervision, or framework guarantees, or you document that none apply.
+5. **Severity gate** (before Critical/Major) — *Pass if:* you can name a concrete failure mode (what breaks, who is affected), not a style preference or hypothetical edge case.
+
+If you cannot pass a gate, **omit the finding**, **downgrade** per [Severity Calibration](#severity-calibration), or **ask a question** instead of asserting a defect.
+
 ## Pre-Report Verification Checklist
 
-Before flagging ANY issue, verify:
+Before flagging ANY issue, verify (maps to [Hard gates](#hard-gates-execute-in-order)):
 
-- [ ] **I read the actual code** - Not just the diff context, but the full function/class
-- [ ] **I searched for usages** - Before claiming "unused", searched all references
-- [ ] **I checked surrounding code** - The issue may be handled elsewhere (guards, earlier checks)
-- [ ] **I verified syntax against current docs** - Framework syntax evolves (Tailwind v4, TS 5.x, React 19)
-- [ ] **I distinguished "wrong" from "different style"** - Both approaches may be valid
-- [ ] **I considered intentional design** - Checked comments, CLAUDE.md, architectural context
+- [ ] **Read gate** — Full symbol/region read, not diff-only
+- [ ] **Evidence gate** — Citable `path:line` from tool-backed content
+- [ ] **Usage gate** — Reference search (or dynamic-call check) before “unused”
+- [ ] **Cross-cutting gate** — Validation/handling checked at other layers where relevant
+- [ ] **Docs/syntax** — Verified against current framework/docs for the file’s stack (e.g. Tailwind v4, TS 5.x, React 19 when reviewing those files)
+- [ ] **Style vs wrong** — Both approaches may be valid; distinguish
+- [ ] **Intentional design** — Comments, CLAUDE.md, AGENTS.md, architectural context considered
 
 ## Verification by Issue Type
 
@@ -201,6 +217,7 @@ Flag missing error handling **ONLY IF**:
 ## Before Submitting Review
 
 Final verification:
+0. For each finding, confirm the [Hard gates](#hard-gates-execute-in-order) that apply to its type were passed (or the finding was downgraded/removed).
 1. Re-read each finding and ask: "Did I verify this is actually an issue?"
 2. For each finding, can you point to the specific line that proves the issue exists?
 3. Would a domain expert agree this is a problem, or is it a style preference?

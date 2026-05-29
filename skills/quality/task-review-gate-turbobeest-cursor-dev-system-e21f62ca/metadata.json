@@ -1,0 +1,16 @@
+{
+  "name": "task-review-gate",
+  "repo": "turbobeest/cursor-dev-system",
+  "path": "skills/task-review-gate/SKILL.md",
+  "source": "github.com/turbobeest/cursor-dev-system",
+  "downloaded_at": "2026-01-29T06:24:04.472316Z",
+  "dir_name": "task-review-gate-turbobeest-cursor-dev-system-e21f62ca",
+  "category": "quality",
+  "author": "turbobeest",
+  "source_url": "https://github.com/turbobeest/cursor-dev-system/blob/main/skills/task-review-gate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/turbobeest/cursor-dev-system/blob/main/skills/task-review-gate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,296 +1,229 @@
 ---
-name: Change Data Capture (CDC)
-description: Capturing and streaming database changes in real-time using Debezium, Kafka, and event-driven patterns for data synchronization.
+id: SKL-change-CHANGEDATACAPTURE
+name: Change Data Capture
+description: '* **Depends on**: None * **Compatible with**: None * **Conflicts with**:
+  None * **Related Skills**: None # Overview Comprehensive guide to Change Data Capture
+  (CDC) for real-time data synchronization,'
+version: 1.0.0
+status: active
+owner: '@cerebra-team'
+last_updated: '2026-02-22'
+category: Backend
+tags:
+- api
+- backend
+- server
+- database
+stack:
+- Python
+- Node.js
+- REST API
+- GraphQL
+difficulty: Intermediate
 ---
 
-# Change Data Capture (CDC)
+# Change Data Capture
+
+## Skill Profile
+*(Select at least one profile to enable specific modules)*
+- [ ] **DevOps**
+- [x] **Backend**
+- [ ] **Frontend**
+- [ ] **AI-RAG**
+- [ ] **Security Critical**
 
 ## Overview
+This skill provides comprehensive guidance and best practices for implementation. It enables teams to achieve reliable, maintainable, and scalable solutions.
 
-Change Data Capture (CDC) คือเทคนิคการ capture changes จาก database และ stream ไปยัง downstream systems แบบ real-time ใช้สำหรับ data replication, event sourcing, cache invalidation, และ building real-time analytics
+### When to use / When NOT to use
+* ✅ **Use when**: Implementing this capability in your project
+* ✅ **Use when**: Need to follow established patterns and conventions
+* ❌ **Avoid when**: The requirements don't match this skill's scope
+* ❌ **Avoid when**: Simpler alternatives would suffice
+
 
 ## Why This Matters
+- **Reduces Technical Debt**: Following established patterns prevents costly rework
+- **Increases System Stability**: Proper implementation reduces bugs and downtime
+- **Improves Team Velocity**: Clear guidance helps teams work more efficiently
+- **Reduces Maintenance Costs**: Well-structured code is easier to maintain
+- **Ensures Investment Confidence**: Following standards gives confidence in technical decisions
 
-- **Real-time Sync**: Data available in seconds, not hours
-- **Low Impact**: Reads from transaction log, minimal database load
-- **Reliable**: Captures all changes including deletes
-- **Event-Driven**: Enable reactive architectures
 
----
+## Core Concepts & Rules
 
-## Core Concepts
+### 1. Core Principles
+- Follow established patterns and conventions
+- Maintain consistency across codebase
+- Document decisions and trade-offs
 
-### 1. Debezium with Kafka Connect
+### 2. Implementation Guidelines
+- Start with the simplest viable solution
+- Iterate based on feedback and requirements
+- Test thoroughly before deployment
 
-```yaml
-# docker-compose.yml
-version: '3.8'
-services:
-  zookeeper:
-    image: confluentinc/cp-zookeeper:7.5.0
-    environment:
-      ZOOKEEPER_CLIENT_PORT: 2181
 
-  kafka:
-    image: confluentinc/cp-kafka:7.5.0
-    depends_on: [zookeeper]
-    ports: ['9092:9092']
-    environment:
-      KAFKA_BROKER_ID: 1
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
-      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+## Inputs / Outputs / Contracts
 
-  connect:
-    image: debezium/connect:2.4
-    depends_on: [kafka]
-    ports: ['8083:8083']
-    environment:
-      BOOTSTRAP_SERVERS: kafka:29092
-      GROUP_ID: connect-cluster
-      CONFIG_STORAGE_TOPIC: connect-configs
-      OFFSET_STORAGE_TOPIC: connect-offsets
-      STATUS_STORAGE_TOPIC: connect-status
+* **Inputs**:
+  - Requirements and specifications
+  - Existing codebase and architecture
+  - Team context and constraints
+* **Entry Conditions**:
+  - Project repository initialized
+  - Development environment set up
+  - Required dependencies installed
+* **Outputs**:
+  - Implementation code and documentation
+  - Test cases and test results
+  - Deployment artifacts
+* **Artifacts Required (Deliverables)**:
+  - Source code changes
+  - Updated documentation
+  - Test coverage reports
+* **Acceptance Evidence**:
+  - All tests passing
+  - Code review approved
+  - Documentation updated
+* **Success Criteria**:
+  - Meets all functional requirements
+  - Follows established patterns
+  - Test coverage ≥ 80%
+
+
+## Skill Composition
+* **Depends on**: None
+* **Compatible with**: None
+* **Conflicts with**: None
+* **Related Skills**: None
+
+# Overview
+Comprehensive guide to Change Data Capture (CDC) for real-time data synchronization, including Debezium, Kafka Connect, and CDC patterns
+
+## Quick Start / Implementation Example
+
+1. Review requirements and constraints
+2. Set up development environment
+3. Implement core functionality following patterns
+4. Write tests for critical paths
+5. Run tests and fix issues
+6. Document any deviations or decisions
+
+```python
+# Example implementation following best practices
+def example_function():
+    # Your implementation here
+    pass
 ```
 
-### 2. PostgreSQL Connector Configuration
 
-```json
-{
-  "name": "orders-connector",
-  "config": {
-    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
-    "database.hostname": "postgres",
-    "database.port": "5432",
-    "database.user": "debezium",
-    "database.password": "${secrets:postgres-password}",
-    "database.dbname": "orders_db",
-    "database.server.name": "orders",
-    "table.include.list": "public.orders,public.order_items",
-    "plugin.name": "pgoutput",
-    "slot.name": "debezium_orders",
-    "publication.name": "dbz_publication",
-    "topic.prefix": "cdc",
-    "transforms": "unwrap",
-    "transforms.unwrap.type": "io.debezium.transforms.ExtractNewRecordState",
-    "transforms.unwrap.drop.tombstones": "false",
-    "transforms.unwrap.delete.handling.mode": "rewrite",
-    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
-    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
-    "key.converter.schemas.enable": "false",
-    "value.converter.schemas.enable": "false"
-  }
-}
-```
+## Assumptions / Constraints / Non-goals
 
-### 3. CDC Event Structure
+* **Assumptions**:
+  - Development environment is properly configured
+  - Required dependencies are available
+  - Team has basic understanding of domain
+* **Constraints**:
+  - Must follow existing codebase conventions
+  - Time and resource limitations
+  - Compatibility requirements
+* **Non-goals**:
+  - This skill does not cover edge cases outside scope
+  - Not a replacement for formal training
 
-```typescript
-// Raw Debezium event
-interface DebeziumEvent<T> {
-  schema: object;
-  payload: {
-    before: T | null;      // Previous state (null for INSERT)
-    after: T | null;       // New state (null for DELETE)
-    source: {
-      version: string;
-      connector: string;
-      name: string;
-      ts_ms: number;
-      snapshot: boolean;
-      db: string;
-      table: string;
-      txId: number;
-      lsn: number;
-    };
-    op: 'c' | 'u' | 'd' | 'r';  // create, update, delete, read (snapshot)
-    ts_ms: number;
-  };
-}
 
-// After ExtractNewRecordState transform
-interface TransformedEvent<T> {
-  ...T;                    // All fields from the record
-  __op: 'c' | 'u' | 'd';   // Operation type
-  __deleted: boolean;      // True for deletes
-  __source_ts_ms: number;  // Source timestamp
-}
-```
+## Compatibility & Prerequisites
 
-### 4. Consuming CDC Events (Node.js)
+* **Supported Versions**:
+  - Python 3.8+
+  - Node.js 16+
+  - Modern browsers (Chrome, Firefox, Safari, Edge)
+* **Required AI Tools**:
+  - Code editor (VS Code recommended)
+  - Testing framework appropriate for language
+  - Version control (Git)
+* **Dependencies**:
+  - Language-specific package manager
+  - Build tools
+  - Testing libraries
+* **Environment Setup**:
+  - `.env.example` keys: `API_KEY`, `DATABASE_URL` (no values)
 
-```typescript
-import { Kafka, EachMessagePayload } from 'kafkajs';
 
-const kafka = new Kafka({
-  clientId: 'order-processor',
-  brokers: ['localhost:9092'],
-});
+## Test Scenario Matrix (QA Strategy)
 
-const consumer = kafka.consumer({ groupId: 'order-sync-group' });
+| Type | Focus Area | Required Scenarios / Mocks |
+| :--- | :--- | :--- |
+| **Unit** | Core Logic | Must cover primary logic and at least 3 edge/error cases. Target minimum 80% coverage |
+| **Integration** | DB / API | All external API calls or database connections must be mocked during unit tests |
+| **E2E** | User Journey | Critical user flows to test |
+| **Performance** | Latency / Load | Benchmark requirements |
+| **Security** | Vuln / Auth | SAST/DAST or dependency audit |
+| **Frontend** | UX / A11y | Accessibility checklist (WCAG), Performance Budget (Lighthouse score) |
 
-async function startConsumer() {
-  await consumer.connect();
-  await consumer.subscribe({ 
-    topics: ['cdc.public.orders', 'cdc.public.order_items'],
-    fromBeginning: false,
-  });
 
-  await consumer.run({
-    eachMessage: async ({ topic, partition, message }: EachMessagePayload) => {
-      const event = JSON.parse(message.value?.toString() || '{}');
-      const key = JSON.parse(message.key?.toString() || '{}');
-      
-      console.log(`[${topic}] Operation: ${event.__op}, ID: ${key.id}`);
-      
-      switch (event.__op) {
-        case 'c': // Create
-          await handleInsert(topic, event);
-          break;
-        case 'u': // Update
-          await handleUpdate(topic, event);
-          break;
-        case 'd': // Delete
-          await handleDelete(topic, key);
-          break;
-      }
-    },
-  });
-}
+## Technical Guardrails & Security Threat Model
 
-async function handleInsert(topic: string, data: any) {
-  if (topic.includes('orders')) {
-    await elasticsearchClient.index({
-      index: 'orders',
-      id: data.id,
-      body: data,
-    });
-    await redisClient.del(`order:${data.id}`); // Invalidate cache
-  }
-}
+### 1. Security & Privacy (Threat Model)
+* **Top Threats**: Injection attacks, authentication bypass, data exposure
+- [ ] **Data Handling**: Sanitize all user inputs to prevent Injection attacks. Never log raw PII
+- [ ] **Secrets Management**: No hardcoded API keys. Use Env Vars/Secrets Manager
+- [ ] **Authorization**: Validate user permissions before state changes
 
-async function handleUpdate(topic: string, data: any) {
-  if (topic.includes('orders')) {
-    await elasticsearchClient.update({
-      index: 'orders',
-      id: data.id,
-      body: { doc: data },
-    });
-    await redisClient.del(`order:${data.id}`);
-  }
-}
+### 2. Performance & Resources
+- [ ] **Execution Efficiency**: Consider time complexity for algorithms
+- [ ] **Memory Management**: Use streams/pagination for large data
+- [ ] **Resource Cleanup**: Close DB connections/file handlers in finally blocks
 
-async function handleDelete(topic: string, key: any) {
-  if (topic.includes('orders')) {
-    await elasticsearchClient.delete({
-      index: 'orders',
-      id: key.id,
-    });
-    await redisClient.del(`order:${key.id}`);
-  }
-}
-```
+### 3. Architecture & Scalability
+- [ ] **Design Pattern**: Follow SOLID principles, use Dependency Injection
+- [ ] **Modularity**: Decouple logic from UI/Frameworks
 
-### 5. Outbox Pattern
+### 4. Observability & Reliability
+- [ ] **Logging Standards**: Structured JSON, include trace IDs `request_id`
+- [ ] **Metrics**: Track `error_rate`, `latency`, `queue_depth`
+- [ ] **Error Handling**: Standardized error codes, no bare except
+- [ ] **Observability Artifacts**:
+    - **Log Fields**: timestamp, level, message, request_id
+    - **Metrics**: request_count, error_count, response_time
+    - **Dashboards/Alerts**: High Error Rate > 5%
 
-```typescript
-// Instead of direct CDC, use transactional outbox
-interface OutboxEvent {
-  id: string;
-  aggregate_type: string;
-  aggregate_id: string;
-  event_type: string;
-  payload: object;
-  created_at: Date;
-}
 
-// In your service
-async function createOrder(orderData: CreateOrderDto) {
-  await prisma.$transaction(async (tx) => {
-    // Create order
-    const order = await tx.order.create({ data: orderData });
-    
-    // Create outbox event (same transaction)
-    await tx.outboxEvent.create({
-      data: {
-        id: uuid(),
-        aggregate_type: 'Order',
-        aggregate_id: order.id,
-        event_type: 'OrderCreated',
-        payload: order,
-      },
-    });
-    
-    return order;
-  });
-}
+## Agent Directives & Error Recovery
+*(ข้อกำหนดสำหรับ AI Agent ในการคิดและแก้ปัญหาเมื่อเกิดข้อผิดพลาด)*
 
-// Debezium captures from outbox table
-// Then delete processed events periodically
-```
+- **Thinking Process**: Analyze root cause before fixing. Do not brute-force.
+- **Fallback Strategy**: Stop after 3 failed test attempts. Output root cause and ask for human intervention/clarification.
+- **Self-Review**: Check against Guardrails & Anti-patterns before finalizing.
+- **Output Constraints**: Output ONLY the modified code block. Do not explain unless asked.
 
-## Quick Start
 
-1. **Start infrastructure:**
-   ```bash
-   docker-compose up -d
-   ```
+## Definition of Done (DoD) Checklist
 
-2. **Enable logical replication (PostgreSQL):**
-   ```sql
-   ALTER SYSTEM SET wal_level = logical;
-   -- Restart PostgreSQL
-   ```
+- [ ] Tests passed + coverage met
+- [ ] Lint/Typecheck passed
+- [ ] Logging/Metrics/Trace implemented
+- [ ] Security checks passed
+- [ ] Documentation/Changelog updated
+- [ ] Accessibility/Performance requirements met (if frontend)
 
-3. **Create publication:**
-   ```sql
-   CREATE PUBLICATION dbz_publication FOR TABLE orders, order_items;
-   ```
 
-4. **Register connector:**
-   ```bash
-   curl -X POST http://localhost:8083/connectors \
-     -H "Content-Type: application/json" \
-     -d @postgres-connector.json
-   ```
+## Anti-patterns / Pitfalls
 
-5. **Verify topics:**
-   ```bash
-   kafka-topics --list --bootstrap-server localhost:9092
-   ```
+* ⛔ **Don't**: Log PII, catch-all exception, N+1 queries
+* ⚠️ **Watch out for**: Common symptoms and quick fixes
+* 💡 **Instead**: Use proper error handling, pagination, and logging
 
-6. **Start consuming events**
 
-## Production Checklist
+## Reference Links & Examples
 
-- [ ] Dedicated replication slot with monitoring
-- [ ] Schema registry for event evolution
-- [ ] Dead letter queue for failed events
-- [ ] Exactly-once semantics configured
-- [ ] Connector monitoring and alerting
-- [ ] Slot lag monitoring (prevent WAL bloat)
-- [ ] Idempotent consumers
-- [ ] Snapshot strategy defined
-- [ ] Data masking for sensitive fields
+* Internal documentation and examples
+* Official documentation and best practices
+* Community resources and discussions
 
-## Anti-patterns
 
-1. **Ignoring Schema Evolution**: Use Schema Registry and compatible changes
-2. **No Idempotency**: Consumers must handle duplicate events
-3. **Unbounded Replication Slots**: Monitor and clean up stale slots
-4. **Large Payloads**: Consider references instead of full documents
+## Versioning & Changelog
 
-## Integration Points
-
-- **Elasticsearch**: Real-time search indexing
-- **Redis**: Cache invalidation
-- **Data Warehouse**: Real-time ETL to Snowflake/BigQuery
-- **Event Sourcing**: Build event stores
-- **Microservices**: Cross-service data sync
-
-## Further Reading
-
-- [Debezium Documentation](https://debezium.io/documentation/)
-- [CDC Patterns](https://debezium.io/documentation/reference/stable/architecture.html)
-- [Outbox Pattern](https://debezium.io/documentation/reference/stable/transformations/outbox-event-router.html)
+* **Version**: 1.0.0
+* **Changelog**:
+  - 2026-02-22: Initial version with complete template structure

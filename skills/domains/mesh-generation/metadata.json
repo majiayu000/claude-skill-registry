@@ -1,0 +1,17 @@
+{
+  "name": "mesh-generation",
+  "repo": "HeshamFS/materials-simulation-skills",
+  "path": "skills/core-numerical/mesh-generation/SKILL.md",
+  "github_branch": "main",
+  "category": "domains",
+  "source": "github.com/HeshamFS/materials-simulation-skills",
+  "dir_name": "mesh-generation",
+  "downloaded_at": "2026-03-22T05:28:04.604710Z",
+  "author": "HeshamFS",
+  "source_url": "https://github.com/HeshamFS/materials-simulation-skills/blob/main/skills/core-numerical/mesh-generation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/HeshamFS/materials-simulation-skills/blob/main/skills/core-numerical/mesh-generation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

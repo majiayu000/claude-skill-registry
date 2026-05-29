@@ -1,0 +1,16 @@
+{
+  "name": "seo-local-business",
+  "repo": "jezweb/claude-skills",
+  "path": "skills/seo-local-business/SKILL.md",
+  "category": "marketing",
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "seo-local-business",
+  "downloaded_at": "2026-02-22T07:39:29.924162Z",
+  "author": "jezweb",
+  "source_url": "https://github.com/jezweb/claude-skills/blob/main/skills/seo-local-business/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Dawes (Jezweb)",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

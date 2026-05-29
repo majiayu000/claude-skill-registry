@@ -3,7 +3,6 @@ name: phx:perf
 description: Analyze Elixir/Phoenix performance — N+1 queries, assign bloat, ecto optimization, genserver bottlenecks. Use when slowness, timeouts, or high memory reported.
 effort: high
 argument-hint: "[page|context|module] [--focus ecto|liveview|otp]"
-disable-model-invocation: true
 ---
 
 # Performance Analysis

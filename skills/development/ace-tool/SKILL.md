@@ -1,12 +1,12 @@
 ---
 name: ace-tool
 description: |
-  Semantic codebase search and prompt enhancement via standalone CLI. Use when: (1) Semantic code search with natural language queries, (2) Prompt enhancement with codebase context, (3) Before grep/find/glob operations for better accuracy, (4) Complex requirements clarification, (5) Large codebase navigation. Triggers: "search context", "enhance prompt", "find code that", "clarify requirements". IMPORTANT: Always use ace-tool BEFORE grep/find/glob for semantic-level code location.
+  Semantic codebase search, code indexing, and prompt enhancement via standalone CLI. Use when: (1) Semantic code search with natural language queries, (2) Code indexing for remote codebase retrieval, (3) Prompt enhancement with codebase context, (4) Before grep/find/glob operations for better accuracy, (5) Complex requirements clarification, (6) Large codebase navigation. Triggers: "search context", "enhance prompt", "find code that", "index project", "clarify requirements". IMPORTANT: Always use ace-tool BEFORE grep/find/glob for semantic-level code location.
 ---
 
 # ACE-Tool - Semantic Code Search & Prompt Enhancement
 
-High-performance semantic search and AI-powered prompt enhancement. Standalone CLI (no MCP dependency).
+High-performance semantic search, code indexing, and AI-powered prompt enhancement. Standalone CLI (no MCP dependency).
 
 ## Execution Methods
 
@@ -14,7 +14,10 @@ High-performance semantic search and AI-powered prompt enhancement. Standalone C
 # Prerequisites: pip install httpx tenacity
 # Environment: ACE_API_URL, ACE_API_TOKEN (optional for local fallback)
 
-# Search codebase with natural language
+# Index project for remote search (upload code blobs to ACE service)
+python scripts/ace_cli.py index -p /path/to/project
+
+# Search codebase with natural language (remote if API configured, else local fallback)
 python scripts/ace_cli.py search_context -p /path/to/project -q "function that handles authentication"
 
 # Enhance prompt (interactive mode - default, opens browser)
@@ -22,6 +25,9 @@ python scripts/ace_cli.py enhance_prompt -p "implement login feature" -H "User: 
 
 # Enhance prompt (non-interactive, JSON output)
 python scripts/ace_cli.py enhance_prompt --no-interactive -p "implement login feature"
+
+# Enhance prompt with project context (enables cloud retrieval for all endpoints)
+python scripts/ace_cli.py enhance_prompt -p "implement login feature" --project-root /path/to/project
 
 # Enhance prompt with specific endpoint
 python scripts/ace_cli.py --endpoint claude enhance_prompt -p "implement login feature"
@@ -40,6 +46,7 @@ python scripts/ace_cli.py get_config
 | Locate feature code | `find . -name "*.py"` | `search_context -q "feature description"` |
 | Clarify requirements | Manual analysis | `enhance_prompt -p "requirement"` |
 | Understand code flow | Multiple grep/read | `search_context -q "flow description"` |
+| Index codebase | N/A | `index -p <project_root>` |
 
 ### When to Use Built-in Tools
 - Exact string matching (known identifiers)
@@ -48,8 +55,18 @@ python scripts/ace_cli.py get_config
 
 ## Command Reference
 
+### index
+Index project files for remote codebase retrieval. Scans, hashes, chunks large files, and uploads to the ACE batch-upload API. Uses incremental indexing with gzip JSON cache at `.ace-tool/index.json.gz`.
+
+```bash
+python scripts/ace_cli.py index -p <project_root>
+
+Options:
+  -p, --project-root    Project root path (required)
+```
+
 ### search_context
-Search codebase using natural language descriptions.
+Search codebase using natural language descriptions. Routes to remote API (`POST /agents/codebase-retrieval`) when configured, with automatic local keyword fallback.
 
 ```bash
 python scripts/ace_cli.py search_context -p <project_root> -q <query>
@@ -60,7 +77,7 @@ Options:
 ```
 
 ### enhance_prompt
-Enhance prompts with codebase context and conversation history.
+Enhance prompts with codebase context and conversation history. All endpoints (old, new, third-party) inject cloud retrieval context when `--project-root` is provided.
 
 ```bash
 python scripts/ace_cli.py [--endpoint TYPE] enhance_prompt -p <prompt> [options]
@@ -74,7 +91,7 @@ Command Options:
   -p, --prompt          Original prompt (required)
   -H, --history         Conversation history: "User: xxx\nAssistant: yyy"
   --history-file        File containing conversation history
-  --project-root        Project root path (optional)
+  --project-root        Project root path (enables cloud retrieval context)
   --no-interactive      Disable web UI, output JSON directly
   --no-browser          Don't auto-open browser, just print URL
   --port                Port for web server (default: 8765)
@@ -103,16 +120,19 @@ Default mode opens web UI with actions:
 
 ## Workflow
 
+### Phase 0: Index Project (once or after major changes)
+```bash
+index -p .                                            # Upload code blobs to ACE
+```
+
 ### Phase 1: Semantic Search
 ```bash
-search_context -p . -q "database connection pooling"  # Find relevant code
-# Review returned file locations
-# Read specific files for details
+search_context -p . -q "database connection pooling"  # Remote retrieval or local fallback
 ```
 
 ### Phase 2: Prompt Enhancement
 ```bash
-enhance_prompt -p "optimize query performance"        # Opens interactive UI
+enhance_prompt -p "optimize query performance" --project-root .  # With cloud context
 # Review and refine enhanced prompt
 # Use Regenerate/Refine as needed
 # Send Enhanced to confirm
@@ -126,9 +146,10 @@ enhance_prompt -p "optimize query performance"        # Opens interactive UI
 
 | Error | Recovery |
 |-------|----------|
-| No API configured | Uses local fallback for search_context |
-| Token invalid (401) | Check API token |
-| Access denied (403) | Token may be disabled |
+| No API configured | Uses local fallback for search_context; returns original for enhance |
+| Token invalid (401) | Check API token (logged at ERROR level) |
+| Access denied (403) | Token may be disabled (logged at ERROR level) |
+| Upload failure | Index rollback to previous state; cached blobs still returned |
 | Connection timeout | Retries up to 3 times with exponential backoff |
 | No results | Broaden search query |
 
@@ -141,3 +162,4 @@ enhance_prompt -p "optimize query performance"        # Opens interactive UI
 | Ignore conversation history | Include history in `enhance_prompt` |
 | Use exact match for conceptual search | Use natural language query |
 | Always use non-interactive mode | Use interactive mode for review |
+| Skip `--project-root` for enhance | Include it for cloud-based code context |

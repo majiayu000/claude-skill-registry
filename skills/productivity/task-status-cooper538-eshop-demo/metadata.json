@@ -1,0 +1,17 @@
+{
+  "name": "task-status",
+  "repo": "cooper538/eshop-demo",
+  "path": ".claude/skills/task-status/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/cooper538/eshop-demo",
+  "dir_name": "task-status-cooper538-eshop-demo",
+  "downloaded_at": "2026-03-22T07:33:22.712273Z",
+  "author": "cooper538",
+  "source_url": "https://github.com/cooper538/eshop-demo/blob/main/.claude/skills/task-status/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cooper538/eshop-demo/blob/main/.claude/skills/task-status/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

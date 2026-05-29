@@ -112,7 +112,7 @@ while read user; do
 done
 
 # Rotate access key
-OLD_KEY="AKIAIOSFODNN7EXAMPLE"
+OLD_KEY="<AWS_ACCESS_KEY_ID>"
 USER="myuser"
 
 # Create new key
@@ -297,27 +297,27 @@ def enforce_mfa():
     """Identify users without MFA"""
     users = iam.list_users()['Users']
     no_mfa = []
-    
+
     for user in users:
         mfa_devices = iam.list_mfa_devices(
             UserName=user['UserName']
         )['MFADevices']
-        
+
         if not mfa_devices:
             no_mfa.append(user['UserName'])
-    
+
     return no_mfa
 
 def rotate_old_keys():
     """Find access keys older than 90 days"""
     users = iam.list_users()['Users']
     old_keys = []
-    
+
     for user in users:
         keys = iam.list_access_keys(
             UserName=user['UserName']
         )['AccessKeyMetadata']
-        
+
         for key in keys:
             age = datetime.now(key['CreateDate'].tzinfo) - key['CreateDate']
             if age.days > 90:
@@ -326,40 +326,40 @@ def rotate_old_keys():
                     'key_id': key['AccessKeyId'],
                     'age_days': age.days
                 })
-    
+
     return old_keys
 
 def find_overpermissive_policies():
     """Find policies with wildcard actions"""
     policies = iam.list_policies(Scope='Local')['Policies']
     overpermissive = []
-    
+
     for policy in policies:
         version = iam.get_policy_version(
             PolicyArn=policy['Arn'],
             VersionId=policy['DefaultVersionId']
         )
-        
+
         doc = version['PolicyVersion']['Document']
         for statement in doc.get('Statement', []):
             if statement.get('Action') == '*':
                 overpermissive.append(policy['PolicyName'])
                 break
-    
+
     return overpermissive
 
 if __name__ == "__main__":
     print("IAM Hardening Report")
     print("=" * 50)
-    
+
     print("\nUsers without MFA:")
     for user in enforce_mfa():
         print(f"  - {user}")
-    
+
     print("\nOld access keys (>90 days):")
     for key in rotate_old_keys():
         print(f"  - {key['user']}: {key['age_days']} days")
-    
+
     print("\nOverpermissive policies:")
     for policy in find_overpermissive_policies():
         print(f"  - {policy}")
@@ -395,3 +395,8 @@ kiro-cli chat "Create a least privilege policy with aws-iam-best-practices"
 - [IAM Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
 - [IAM Policy Simulator](https://policysim.aws.amazon.com/)
 - [IAM Access Analyzer](https://aws.amazon.com/iam/features/analyze-access/)
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

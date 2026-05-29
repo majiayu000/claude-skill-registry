@@ -20,25 +20,28 @@ Systematically document Claude Code sessions into the knowledge bank.
 
 **Important**: Session recap should run in a **new session** after the work session ends. This ensures the full transcript is captured.
 
-1. **During your work session**: Note down the session path displayed at startup
-   - Claude Code shows: `Session: /path/to/.claude/projects/.../session-id.jsonl`
-   - Save this path for later
+1. **Exit the work session**: The SessionEnd hook automatically saves transcript segments and builds `session.md` as a hub note with links to all artifacts.
 
-2. **Exit the work session**: The final transcript is automatically saved
-
-3. **Start a new session**: Begin fresh to run the recap
+2. **Start a new session**: Begin fresh to run the recap
    ```
    claude
    ```
 
-4. **Invoke session-recap with the path**:
+3. **Invoke session-recap with the session folder**:
    ```
-   Recap the session at /path/to/session-id.jsonl
+   Recap the session at {KB_PATH}/_sessions/YYYY-MM-DD/{session_id}/
    ```
    Or:
    ```
-   /second-brain:session-recap /path/to/session-id.jsonl
+   /second-brain:session-recap {KB_PATH}/_sessions/YYYY-MM-DD/{session_id}/
    ```
+
+### Legacy: Raw Transcript Path
+
+If no session folder exists (e.g., hooks were not configured), you can still provide a raw `.jsonl` transcript path:
+```
+Recap the session at /path/to/session-id.jsonl
+```
 
 ### Why a New Session?
 
@@ -56,26 +59,30 @@ Running session-recap in the same session would miss the final conversation cont
 
 ---
 
-## Quick Reference
-
-| Input | Output |
-|-------|--------|
-| Session folder path | Daily log + extracted docs |
-| Current conversation | Daily log + extracted docs |
-
-| Document Type | Cross-Refs Required |
-|---------------|-------------------|
-| Technical docs | 10-15 (MUST) |
-| Reflections | 5-8 (MUST) |
-
----
-
 ## RFC 2119 Keywords
 
 This skill uses RFC 2119 keywords:
 - **MUST**: Absolute requirement, cannot be skipped
 - **SHOULD**: Valid exceptions may exist but require conscious weighing
 - **MAY**: Truly optional
+
+---
+
+## Full Recap — No Shortcuts
+
+Every session recap executes all 5 phases completely — no exceptions. A daily log alone is not a recap; it's a log entry. The knowledge bank compounds from extracted concepts, reflections, and best practices, not from session summaries. Skipping phases produces a diary, not a brain.
+
+Even when processing many sessions, each session gets its own full Phase 2.1 reflection gate, Phase 2.4 source ingestion plan, and Phase 3 document creation. Do not batch sessions into a single daily log or skip phases for throughput.
+
+## Batch Recap
+
+When recapping multiple sessions (e.g., "recap all sessions since March 29"):
+
+1. **Discover** — list all sessions in date range, read each session.md for metadata
+2. **Triage** — skip sessions with no transcript, trivial (<5 user messages), or already recapped
+3. **Process chronologically** — full 5-phase workflow per session, each gets its own daily log + extracted docs
+4. **Parallelize when independent** — different projects/topics can use parallel agents; same investigation thread should be sequential for cross-references
+5. **Integrate once at end** — index regeneration and log append after all sessions, not per session
 
 ---
 
@@ -88,19 +95,46 @@ This skill uses RFC 2119 keywords:
 #### 1.1 Load Session Data
 
 **If session folder provided**:
-```bash
-# Find latest segment
-LATEST_SEGMENT=$(ls -d "$SESSION_FOLDER"/segment-* 2>/dev/null | grep -v 'segment-final' | sort -t- -k2 -n | tail -1)
-[ -z "$LATEST_SEGMENT" ] && [ -d "$SESSION_FOLDER/segment-final" ] && LATEST_SEGMENT="$SESSION_FOLDER/segment-final"
 
-# Read transcript
-TRANSCRIPT="$LATEST_SEGMENT/transcript.jsonl"
+First, read `session.md` as the hub note for both metadata and content navigation:
+```bash
+obsidian vault="knowledge-bank" read path="_sessions/{date}/{session_id}/session.md"
 ```
 
-**If no folder**: Analyze current conversation context.
+**Frontmatter metadata** (supplements later phases):
+- `project`, `session_name`, `tags`, `summary`, `duration_seconds`, `started_at`, `ended_at`, `transcript_source`
+
+**Body navigation** — follow session.md body sections:
+
+| Section | Content | How to use |
+|---------|---------|------------|
+| `## Generated Artifacts` | WikiLinks to docs in `docs/` | Read for additional context |
+| `## Transcript` | Source path to original `.jsonl` | Use for `parse_transcript.sh` |
+| `## Compaction Points` | Line counts per segment boundary | Context on session length/compaction |
+| `## Memory Snapshot` | WikiLinks to memory/*.md | Read auto-memory for project context |
+
+Then locate the transcript:
+```bash
+# Preferred: read transcript_source from session.md frontmatter (v2.1+)
+TRANSCRIPT_SOURCE=$(read_frontmatter_prop "$SESSION_FOLDER/session.md" "transcript_source")
+
+if [ -n "$TRANSCRIPT_SOURCE" ] && [ -f "$TRANSCRIPT_SOURCE" ]; then
+    TRANSCRIPT="$TRANSCRIPT_SOURCE"
+else
+    # Fallback for old sessions: find latest segment copy
+    LATEST_SEGMENT=$(ls -d "$SESSION_FOLDER"/segment-* 2>/dev/null | grep -v 'segment-final' | sort -t- -k2 -n | tail -1)
+    [ -z "$LATEST_SEGMENT" ] && [ -d "$SESSION_FOLDER/segment-final" ] && LATEST_SEGMENT="$SESSION_FOLDER/segment-final"
+    TRANSCRIPT="$LATEST_SEGMENT/transcript.jsonl"
+fi
+```
+
+**If no folder (current conversation mode)**: Skip session.md reading. Analyze current conversation context.
 
 #### 1.2 Detect Project
 
+If session.md `project` property is set (non-empty) → use it directly.
+
+Otherwise → fall back to transcript parsing:
 ```bash
 ./scripts/parse_transcript.sh "$TRANSCRIPT" project
 ```
@@ -116,6 +150,25 @@ TRANSCRIPT="$LATEST_SEGMENT/transcript.jsonl"
 ```
 
 Extracts: user requests, files read, files modified, commands, errors, subagents, **insights**.
+
+#### 1.4 Detect Session Sources (SHOULD complete when session folder provided)
+
+Scan session.md body sections and transcript for ingestible knowledge:
+
+```bash
+./scripts/detect_session_sources.sh "$SESSION_FOLDER" "$TRANSCRIPT"
+```
+
+Outputs classified sources, one per line: `artifact|<path>|<description>` or `reference|<path>|<description>`.
+
+| session.md Section | What it contains | Ingest as |
+|---|---|---|
+| `## Generated Artifacts` | Docs in `docs/` (designs, plans, research, investigations, SOPs) | artifact — high-value, already distilled |
+| `## Plans` | Claude Code plan files (architectural decisions, implementation approaches) | artifact — captures decision rationale |
+| `## Memory Snapshot` | Auto-memory files (project context, lessons learned) | reference — supplements context |
+| Transcript | Non-code files read (.md, .pdf, .txt) and URLs fetched (WebFetch) | reference — external knowledge consumed |
+
+Record the classified list for Phase 2.5.
 
 ---
 
@@ -170,7 +223,25 @@ See [cross-reference-guide.md](references/cross-reference-guide.md) for methodol
 
 See [distillation-guide.md](references/distillation-guide.md) for detailed methodology.
 
-#### 2.4 Insight Classification (SHOULD complete when insights exist)
+#### 2.4 Source Ingestion Plan (SHOULD complete when sources detected in 1.4)
+
+For each source detected in Phase 1.4, decide:
+
+| Decision | When | Action |
+|----------|------|--------|
+| **Ingest as KB doc** | High-value, reusable knowledge (design doc, investigation, best practice) | Create concept/component/best-practice doc (5-8 WikiLinks) |
+| **Distill and ingest** | Large source (>100KB) needing reduction | Apply [distillation-guide.md](references/distillation-guide.md), then create doc |
+| **Skip** | Transient, already covered by daily log, or not knowledge-bearing | Note in daily log only |
+
+Guidelines:
+- **Artifacts** in `docs/` are high-value by default — they were already distilled during the session
+- **Plans** capture decision rationale — ingest when they document non-obvious architectural choices
+- **Memory snapshots** supplement context but rarely need their own KB doc — skip unless they contain unique project insights
+- **External references** need judgment — don't ingest the entire article, extract its key insights relevant to the session's work
+
+Record decisions for Phase 3 creation.
+
+#### 2.5 Insight Classification (SHOULD complete when insights exist)
 
 If insights were extracted in Phase 1.3, classify each:
 
@@ -196,8 +267,10 @@ If insights were extracted in Phase 1.3, classify each:
 1. **Concept docs** - MUST if patterns discovered OR insight reveals architecture
 2. **Component docs** - MUST if components modified OR insight describes behavior
 3. **Best practice docs** - SHOULD if methodology identified OR insight documents technique
-4. **Process reflections** - **MUST if Phase 2.1 decision = required** OR insight reveals workflow/anti-pattern
-5. **Daily session log** - MUST (always required, includes all insights)
+4. **Artifact-derived docs** - SHOULD if Phase 2.4 decision = ingest (from session `docs/` artifacts, plans). Use 5-8 WikiLinks. Frontmatter: `source-type: artifact`, `ingested-from: {path}`
+5. **Reference-derived docs** - MAY if Phase 2.4 decision = ingest (from external references). Use 5-8 WikiLinks. Frontmatter: `source-type: reference`, `ingested-from: {path or URL}`
+6. **Process reflections** - **MUST if Phase 2.1 decision = required** OR insight reveals workflow/anti-pattern
+7. **Daily session log** - MUST (always required, includes all insights)
 
 #### Document Locations
 
@@ -242,8 +315,13 @@ type: concept|component|best-practice|daily-log|reflection
 created: YYYY-MM-DD
 modified: YYYY-MM-DD
 project: Claude Code
+session-folder: _sessions/YYYY-MM-DD/{session_id}
+source-type: session|artifact|reference    # Optional: how this knowledge entered the KB
+ingested-from: /path/to/source.md          # Optional: provenance for artifact/reference docs
 ---
 ```
+
+The `session-folder` field applies to ALL recap-created docs (daily log, concepts, components, best practices, reflections). It creates a reverse reference — Obsidian's backlinks panel on `session.md` will show all KB docs extracted from that session. Omit if no session folder was provided (current conversation mode).
 
 #### Obsidian Syntax (MUST invoke when obsidian skills installed)
 
@@ -313,6 +391,8 @@ This ensures proper Obsidian Flavored Markdown syntax for:
 
 **Index Maintenance** (MUST verify):
 - [ ] Obsidian Base indices regenerated for project
+- [ ] Knowledge Bank index regenerated (`_meta/index.md`)
+- [ ] Operation log entry appended (`_meta/log.md`)
 - [ ] MOC Canvas updated (if MOC modified)
 
 #### 4.4 MOC Updates (conditional)
@@ -334,7 +414,23 @@ This ensures proper Obsidian Flavored Markdown syntax for:
 
 Generates queryable indices for concepts, components, practices, and sessions.
 
-#### 5.2 Update MOC Canvas (MUST complete when MOC modified)
+#### 5.2 Regenerate Knowledge Bank Index (MUST complete when new docs created)
+
+Without this, newly created docs won't appear in `_meta/index.md` and knowledge-bank-lookup can't discover them via the unified catalog:
+```bash
+source skills/common/generate_index.sh
+generate_index "$KB_PATH"
+```
+
+#### 5.3 Append Operation Log (MUST complete)
+
+The operation log feeds kb-lint's staleness detection and provides an audit trail of what changed when:
+```bash
+source skills/common/obsidian_helpers.sh
+append_kb_log "$KB_PATH" "ingest" "session-recap" "Created: [list created docs]. Updated: [list updated docs]"
+```
+
+#### 5.4 Update MOC Canvas (MUST complete when MOC modified)
 
 **MUST** update canvas when MOC files modified:
 ```bash
@@ -345,36 +441,12 @@ Creates visual JSON Canvas representation of knowledge relationships.
 
 ---
 
-## Decision Reference
-
-### When Reflection is REQUIRED
-
-| Session Characteristic | Reflection Required |
-|-----------------------|-------------------|
-| Debugging occurred | MUST |
-| Problem-solving with investigation | MUST |
-| New pattern discovered | MUST |
-| Workflow friction encountered | SHOULD |
-| Simple file edits only | MAY skip |
-| Documentation-only changes | MAY skip |
-
-### When to Create Each Document Type
-
-| Document Type | Create When |
-|---------------|-------------|
-| Concept | New pattern/principle discovered |
-| Component | New class/interface/behavior documented |
-| Best Practice | Reusable methodology identified |
-| Reflection | See decision gate above |
-| Daily Log | Always (every session) |
-
----
-
 ## Scripts Reference
 
 | Script | Purpose | Phase |
 |--------|---------|-------|
 | `parse_transcript.sh` | Extract data from session transcript | 1.2, 1.3 |
+| `detect_session_sources.sh` | Detect ingestible references and artifacts | 1.4 |
 | `detect_project.sh` | Auto-detect project from path | 1.2 (internal) |
 | `search_cross_references.sh` | Find cross-reference targets | 2.2 |
 | `detect_external_docs.sh` | Scan for investigation documents | 2.3 |
@@ -385,31 +457,9 @@ Creates visual JSON Canvas representation of knowledge relationships.
 | `validate_cross_references.sh` | Check for broken WikiLinks | 4.3 |
 | `verify_quality.sh` | Verify document quality | 4.3 |
 | `generate_knowledge_base.sh` | Generate Obsidian Base indices | 5.1 |
-| `generate_moc_canvas.sh` | Create MOC visualization canvas | 5.2 |
-
----
-
-## Common Mistakes
-
-### Mistake 1: Skipping Reflections
-
-**Symptom**: Only technical docs created, no reflections.
-**Cause**: Treating "OPTIONAL" as "skip if unsure".
-**Fix**: Complete Phase 2.1 decision gate explicitly.
-
-### Mistake 2: Insufficient Cross-References
-
-**Symptom**: Document has < 10 WikiLinks.
-**Cause**: Skipping cross-reference discovery.
-**Fix**: Run `search_cross_references.sh` before writing.
-
-### Mistake 3: Premature Completion
-
-**Symptom**: Declaring done without verification.
-**Cause**: Not running Phase 4 checklist.
-**Fix**: MUST run `verify_session_recap.sh` before declaring complete.
-
-See [common-mistakes.md](references/common-mistakes.md) for full list.
+| `generate_index.sh` | Regenerate `_meta/index.md` content catalog | 5.2 |
+| `append_kb_log` | Append operation entry to `_meta/log.md` | 5.3 |
+| `generate_moc_canvas.sh` | Create MOC visualization canvas | 5.4 |
 
 ---
 
@@ -431,9 +481,11 @@ Session recap is complete when:
 
 ## Resources
 
+- [KB Schema](_meta/schema.md) — Unified conventions for all KB documents (document types, frontmatter, WikiLinks, naming)
 - [Templates](references/templates.md)
 - [Cross-Reference Guide](references/cross-reference-guide.md)
 - [Quality Standards](references/quality-standards.md)
 - [Completion Checklist](references/completion-checklist.md)
-- [Common Mistakes](references/common-mistakes.md)
+- [Common Mistakes](references/common-mistakes.md) — top 3: skipping reflections, insufficient cross-refs, premature completion
+- [Decision Reference](references/completion-checklist.md) — when reflection is required, when to create each doc type
 - [Distillation Guide](references/distillation-guide.md)

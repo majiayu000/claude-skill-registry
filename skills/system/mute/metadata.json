@@ -1,0 +1,17 @@
+{
+  "name": "mute",
+  "repo": "cpoepke/claude-talk",
+  "path": "skills/mute/SKILL.md",
+  "github_branch": "main",
+  "category": "system",
+  "source": "github.com/cpoepke/claude-talk",
+  "dir_name": "mute",
+  "downloaded_at": "2026-03-01T07:18:16.359664Z",
+  "author": "cpoepke",
+  "source_url": "https://github.com/cpoepke/claude-talk/blob/main/skills/mute/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cpoepke/claude-talk/blob/main/skills/mute/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

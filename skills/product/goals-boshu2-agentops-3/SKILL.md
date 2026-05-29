@@ -443,6 +443,7 @@ ao goals render --out spec.feature     # write Gherkin to a file
 
 ## Reference Documents
 
+- [references/goals.feature](references/goals.feature) — Executable spec: measure gates → verdict, directives steering, GOALS.md source-of-truth, measurement-root (soc-qk4b)
 - [references/generation-heuristics.md](references/generation-heuristics.md)
 - [references/goals-schema.md](references/goals-schema.md)
 - [references/executable-spec-chain.md](references/executable-spec-chain.md)

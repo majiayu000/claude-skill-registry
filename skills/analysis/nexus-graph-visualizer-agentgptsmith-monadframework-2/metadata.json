@@ -1,0 +1,16 @@
+{
+  "name": "nexus-graph-visualizer",
+  "repo": "agentgptsmith/MonadFramework",
+  "path": ".claude/skills/ain-soph/graph/nexus-graph-visualizer/SKILL.md",
+  "category": "analysis",
+  "source": "github.com/agentgptsmith/MonadFramework",
+  "dir_name": "nexus-graph-visualizer-agentgptsmith-monadframework-2",
+  "downloaded_at": "2026-02-15T06:07:11.678839Z",
+  "author": "agentgptsmith",
+  "source_url": "https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/ain-soph/graph/nexus-graph-visualizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/ain-soph/graph/nexus-graph-visualizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

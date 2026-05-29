@@ -7,6 +7,12 @@ description: Create, edit, and analyze PowerPoint presentations with slides, lay
 
 This skill enables creation and editing of PowerPoint presentations programmatically. Claude should apply these patterns when users need to generate pitch decks, reports, training materials, or automate presentation workflows.
 
+**Modern Best Practices (Dec 2025)**:
+- One slide = one takeaway; design the deck around a decision or audience goal.
+- Cite numbers (definition + timeframe + source) and keep a single source of truth for charts.
+- Accessibility basics: reading order, contrast, and not color-only meaning.
+- Version decks and enforce review loops (avoid “final_final_v7.pptx”).
+
 ---
 
 ## Quick Reference
@@ -249,6 +255,35 @@ QUARTERLY REVIEW STRUCTURE
 
 ---
 
+## Do / Avoid (Dec 2025)
+
+### Do
+
+- Use a slide narrative plan (title + 1-sentence takeaway + supporting visual).
+- Put the executive summary up front for decision decks.
+- Keep speaker notes aligned with slide takeaways.
+
+### Avoid
+
+- Dense slides with multiple messages.
+- Uncited numbers or charts without definitions.
+- Pixelated screenshots and unreadable tables.
+
+## What Good Looks Like
+
+- Narrative: each slide has a 1-sentence takeaway and supports a single decision or insight.
+- Structure: opening executive summary + clear arc (problem → insight → recommendation → next steps).
+- Data hygiene: charts show units, timeframes, sources, and consistent axes.
+- Design: consistent typography, spacing, and contrast; no “wall of text” slides.
+- Accessibility: reading order set and meaningful alt text where needed.
+
+## Optional: AI / Automation
+
+Use only when explicitly requested and policy-compliant.
+
+- Draft slide headlines and speaker notes; humans verify accuracy and tone.
+- Generate chart code from data; humans verify labels, units, and sources.
+
 ## Navigation
 
 **Resources**
@@ -259,6 +294,7 @@ QUARTERLY REVIEW STRUCTURE
 **Templates**
 - [templates/pitch-deck.md](templates/pitch-deck.md) — Startup pitch structure
 - [templates/quarterly-review.md](templates/quarterly-review.md) — Business review template
+- [templates/slide-narrative-template.md](templates/slide-narrative-template.md) — 1-sentence takeaway per slide
 
 **Related Skills**
 - [../document-pdf/SKILL.md](../document-pdf/SKILL.md) — Export presentations to PDF

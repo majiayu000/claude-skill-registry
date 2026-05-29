@@ -1,0 +1,20 @@
+{
+  "name": "content-ordering",
+  "description": "",
+  "repo": "joshribakoff/fightingwithai.com",
+  "category": "documents",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/joshribakoff/fightingwithai.com",
+  "github_path": ".claude/skills/content-ordering",
+  "github_branch": "main",
+  "dir_name": "content-ordering",
+  "downloaded_at": "2026-02-05T01:44:21.075700Z",
+  "author": "joshribakoff",
+  "source_url": "https://github.com/joshribakoff/fightingwithai.com/blob/main/.claude/skills/content-ordering/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 fightingwithai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

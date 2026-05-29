@@ -1,10 +1,44 @@
 ---
 name: diagram-patterns
 description: Decision guidance for selecting the right diagram type and tool. Provides patterns for common visualization scenarios, tool comparison, and best practices.
-allowed-tools: Read, Glob, Grep, Skill
+allowed-tools: Read, Glob, Grep, Skill, AskUserQuestion
 ---
 
 # Diagram Selection & Patterns
+
+## Interactive Diagram Selection
+
+Use AskUserQuestion to understand requirements and recommend the optimal diagram type and tool:
+
+```yaml
+# Question 1: Primary Purpose (MCP: CLI best practices - scope selection)
+question: "What are you trying to visualize?"
+header: "Purpose"
+options:
+  - label: "System Architecture (Recommended)"
+    description: "Components, services, containers, deployment"
+  - label: "Process/Workflow"
+    description: "Steps, decisions, activities, state transitions"
+  - label: "Data Structures"
+    description: "Classes, entities, relationships, schemas"
+  - label: "Interactions"
+    description: "Sequence of calls, messages, API flows"
+
+# Question 2: Tool Constraints (MCP: CLI best practices - output format)
+question: "Do you have tool or platform constraints?"
+header: "Tool"
+options:
+  - label: "GitHub/GitLab Markdown (Recommended)"
+    description: "Use Mermaid - native rendering, no setup"
+  - label: "Maximum Customization"
+    description: "Use PlantUML - more styling, sprites, icons"
+  - label: "Enterprise Architecture"
+    description: "Use PlantUML - C4, ArchiMate support"
+  - label: "No Preference"
+    description: "I'll recommend based on diagram type"
+```
+
+Use these responses to apply the decision tree and recommend the appropriate diagram type and tool.
 
 ## Overview
 

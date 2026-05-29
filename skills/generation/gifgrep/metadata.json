@@ -1,0 +1,20 @@
+{
+  "name": "gifgrep",
+  "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
+  "repo": "clawdbot/clawdbot",
+  "category": "generation",
+  "tags": [],
+  "stars": 7675,
+  "source": "",
+  "github_path": "skills/gifgrep",
+  "github_branch": "main",
+  "dir_name": "gifgrep",
+  "downloaded_at": "2026-02-05T01:45:10.783110Z",
+  "author": "clawdbot",
+  "source_url": "https://github.com/clawdbot/clawdbot/blob/main/skills/gifgrep/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Peter Steinberger",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

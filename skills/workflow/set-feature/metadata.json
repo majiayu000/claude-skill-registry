@@ -1,0 +1,17 @@
+{
+  "name": "set-feature",
+  "repo": "EvolutionAPI/EVO-METHOD",
+  "path": "src/bmm/workflows/set-feature/SKILL.md",
+  "github_branch": "main",
+  "category": "workflow",
+  "source": "github.com/EvolutionAPI/EVO-METHOD",
+  "dir_name": "set-feature",
+  "downloaded_at": "2026-03-22T05:19:48.734353Z",
+  "author": "EvolutionAPI",
+  "source_url": "https://github.com/EvolutionAPI/EVO-METHOD/blob/main/src/bmm/workflows/set-feature/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/EvolutionAPI/EVO-METHOD/blob/main/src/bmm/workflows/set-feature/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

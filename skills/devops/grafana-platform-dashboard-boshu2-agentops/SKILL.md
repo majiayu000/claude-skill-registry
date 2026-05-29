@@ -133,3 +133,4 @@ Report:
 1. [Platform Contract](references/platform-contract.md)
 2. [PromQL Panel Library](references/promql-library.md)
 3. [Layout Guidelines](references/layout-guidelines.md)
+4. [references/grafana-platform-dashboard.feature](references/grafana-platform-dashboard.feature) — Executable spec: lock scope + IA from contracts, queries from known library, validate before apply, verify sync (soc-qk4b)

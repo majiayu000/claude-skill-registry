@@ -1,5 +1,5 @@
 ---
-name: definition-query
+name: plutonium-definition-query
 description: Configure search, filters, scopes, and sorting for Plutonium resources
 ---
 
@@ -16,8 +16,12 @@ class PostDefinition < ResourceDefinition
     scope.where("title ILIKE ?", "%#{query}%")
   end
 
-  # Filters - sidebar filter inputs
-  filter :status, with: Plutonium::Query::Filters::Text, predicate: :eq
+  # Filters - dropdown filter panel
+  filter :title, with: :text, predicate: :contains
+  filter :status, with: :select, choices: %w[draft published archived]
+  filter :published, with: :boolean
+  filter :created_at, with: :date_range
+  filter :category, with: :association
 
   # Scopes - quick filter buttons
   scope :published
@@ -69,63 +73,139 @@ end
 
 ## Filters
 
-Currently Plutonium provides the **Text filter** with various predicates.
+Plutonium provides **6 built-in filter types**. Use shorthand symbols or full class names.
 
-### Text Filter Predicates
+### Text Filter
+
+String/text filtering with pattern matching.
 
 ```ruby
-# Exact match
-filter :status, with: Plutonium::Query::Filters::Text, predicate: :eq
+# Shorthand (recommended)
+filter :title, with: :text, predicate: :contains
+filter :status, with: :text, predicate: :eq
 
-# Not equal
-filter :status, with: Plutonium::Query::Filters::Text, predicate: :not_eq
-
-# Contains (LIKE %value%)
+# Full class name
 filter :title, with: Plutonium::Query::Filters::Text, predicate: :contains
-
-# Not contains
-filter :title, with: Plutonium::Query::Filters::Text, predicate: :not_contains
-
-# Starts with (LIKE value%)
-filter :slug, with: Plutonium::Query::Filters::Text, predicate: :starts_with
-
-# Ends with (LIKE %value)
-filter :email, with: Plutonium::Query::Filters::Text, predicate: :ends_with
-
-# Pattern match (* becomes %)
-filter :title, with: Plutonium::Query::Filters::Text, predicate: :matches
-
-# Not matching pattern
-filter :title, with: Plutonium::Query::Filters::Text, predicate: :not_matches
 ```
 
-### Custom Filter with Lambda
+**Predicates:**
+
+| Predicate | SQL | Description |
+|-----------|-----|-------------|
+| `:eq` | `= value` | Exact match (default) |
+| `:not_eq` | `!= value` | Not equal |
+| `:contains` | `LIKE %value%` | Contains substring |
+| `:not_contains` | `NOT LIKE %value%` | Does not contain |
+| `:starts_with` | `LIKE value%` | Starts with |
+| `:ends_with` | `LIKE %value` | Ends with |
+| `:matches` | `LIKE value` | Pattern match (`*` becomes `%`) |
+| `:not_matches` | `NOT LIKE value` | Does not match pattern |
+
+### Boolean Filter
+
+True/false filtering for boolean columns.
 
 ```ruby
-filter :published, with: ->(scope, value) {
-  value == "true" ? scope.where.not(published_at: nil) : scope.where(published_at: nil)
-}
+# Basic
+filter :active, with: :boolean
+
+# Custom labels
+filter :published, with: :boolean, true_label: "Published", false_label: "Draft"
 ```
+
+Renders a select dropdown with "All", true label ("Yes"), and false label ("No").
+
+### Date Filter
+
+Single date filtering with comparison predicates.
+
+```ruby
+filter :created_at, with: :date, predicate: :gteq  # On or after
+filter :due_date, with: :date, predicate: :lt      # Before
+filter :published_at, with: :date, predicate: :eq  # On exact date
+```
+
+**Predicates:**
+
+| Predicate | Description |
+|-----------|-------------|
+| `:eq` | On this date (default) |
+| `:not_eq` | Not on this date |
+| `:lt` | Before date |
+| `:lteq` | On or before date |
+| `:gt` | After date |
+| `:gteq` | On or after date |
+
+### Date Range Filter
+
+Filter between two dates (from/to).
+
+```ruby
+# Basic
+filter :created_at, with: :date_range
+
+# Custom labels
+filter :published_at, with: :date_range,
+  from_label: "Published from",
+  to_label: "Published to"
+```
+
+Renders two date pickers. Both are optional - users can filter with just "from" or just "to".
+
+### Select Filter
+
+Filter from predefined choices.
+
+```ruby
+# Static choices (array)
+filter :status, with: :select, choices: %w[draft published archived]
+
+# Dynamic choices (proc)
+filter :category, with: :select, choices: -> { Category.pluck(:name) }
+
+# Multiple selection
+filter :tags, with: :select, choices: %w[ruby rails js], multiple: true
+```
+
+### Association Filter
+
+Filter by associated record.
+
+```ruby
+# Basic - infers Category class from :category key
+filter :category, with: :association
+
+# Explicit class
+filter :author, with: :association, class_name: User
+
+# Multiple selection
+filter :tags, with: :association, class_name: Tag, multiple: true
+```
+
+Renders a resource select dropdown. Converts filter key to foreign key (`:category` -> `:category_id`).
+
+## Custom Filters
 
 ### Custom Filter Class
 
 ```ruby
-# Define custom filter
-class DateRangeFilter < Plutonium::Query::Filter
-  def apply(scope, start_date: nil, end_date: nil)
-    scope = scope.where("#{key} >= ?", start_date.beginning_of_day) if start_date.present?
-    scope = scope.where("#{key} <= ?", end_date.end_of_day) if end_date.present?
+class PriceRangeFilter < Plutonium::Query::Filter
+  def apply(scope, min: nil, max: nil)
+    scope = scope.where("price >= ?", min) if min.present?
+    scope = scope.where("price <= ?", max) if max.present?
     scope
   end
 
   def customize_inputs
-    input :start_date, as: :date
-    input :end_date, as: :date
+    input :min, as: :number
+    input :max, as: :number
+    field :min, placeholder: "Min price..."
+    field :max, placeholder: "Max price..."
   end
 end
 
 # Use in definition
-filter :created_at, with: DateRangeFilter
+filter :price, with: PriceRangeFilter
 ```
 
 ## Scopes
@@ -210,111 +290,53 @@ Query parameters are structured under `q`:
 
 ```
 /posts?q[search]=rails
-/posts?q[status][query]=published
+/posts?q[title][query]=widget
+/posts?q[status][value]=published
+/posts?q[created_at][from]=2024-01-01&q[created_at][to]=2024-12-31
 /posts?q[scope]=recent
 /posts?q[sort_fields][]=created_at&q[sort_directions][created_at]=desc
 ```
 
-Combined:
-```
-/posts?q[search]=rails&q[scope]=published&q[sort_fields][]=created_at&q[sort_directions][created_at]=desc
-```
+## Filter Summary Table
 
-## Common Patterns
-
-### Status Filter
-
-```ruby
-class PostDefinition < ResourceDefinition
-  filter :status, with: Plutonium::Query::Filters::Text, predicate: :eq
-
-  scope :draft
-  scope :published
-  scope :archived
-end
-```
-
-### Date-Based Scopes
-
-```ruby
-class PostDefinition < ResourceDefinition
-  scope(:today) { |scope| scope.where(created_at: Time.current.all_day) }
-  scope(:this_week) { |scope| scope.where(created_at: Time.current.all_week) }
-  scope(:this_month) { |scope| scope.where(created_at: Time.current.all_month) }
-end
-```
-
-### Archive State Scopes
-
-```ruby
-class PostDefinition < ResourceDefinition
-  scope :active
-  scope :archived
-
-  # Default to showing only active
-  default_sort { |scope| scope.active.order(created_at: :desc) }
-end
-```
-
-### Full-Text Search with pg_search
-
-```ruby
-# Model
-class Post < ApplicationRecord
-  include PgSearch::Model
-  pg_search_scope :search_content, against: [:title, :content]
-end
-
-# Definition
-class PostDefinition < ResourceDefinition
-  search do |scope, query|
-    scope.search_content(query)
-  end
-end
-```
-
-### Association Filtering
-
-```ruby
-class PostDefinition < ResourceDefinition
-  filter :author_name, with: Plutonium::Query::Filters::Text, predicate: :contains
-
-  search do |scope, query|
-    scope.joins(:author).where(
-      "posts.title ILIKE :q OR users.name ILIKE :q",
-      q: "%#{query}%"
-    ).distinct
-  end
-end
-```
+| Type | Symbol | Input Params | Options |
+|------|--------|--------------|---------|
+| Text | `:text` | `query` | `predicate:` |
+| Boolean | `:boolean` | `value` | `true_label:`, `false_label:` |
+| Date | `:date` | `value` | `predicate:` |
+| Date Range | `:date_range` | `from`, `to` | `from_label:`, `to_label:` |
+| Select | `:select` | `value` | `choices:`, `multiple:` |
+| Association | `:association` | `value` | `class_name:`, `multiple:` |
 
 ## Complete Example
 
 ```ruby
-class PostDefinition < ResourceDefinition
+class ProductDefinition < ResourceDefinition
   # Full-text search
   search do |scope, query|
     scope.where(
-      "title ILIKE :q OR content ILIKE :q",
+      "name ILIKE :q OR description ILIKE :q",
       q: "%#{query}%"
     )
   end
 
   # Filters
-  filter :status, with: Plutonium::Query::Filters::Text, predicate: :eq
-  filter :category, with: Plutonium::Query::Filters::Text, predicate: :eq
-  filter :title, with: Plutonium::Query::Filters::Text, predicate: :contains
+  filter :name, with: :text, predicate: :contains
+  filter :status, with: :select, choices: %w[draft active discontinued]
+  filter :featured, with: :boolean
+  filter :created_at, with: :date_range
+  filter :price, with: :date, predicate: :gteq
+  filter :category, with: :association
 
-  # Quick scopes (reference model scopes)
-  scope :published
-  scope :draft
+  # Quick scopes
+  scope :active, default: true
   scope :featured
   scope(:recent) { |scope| scope.where('created_at > ?', 1.week.ago) }
 
   # Sortable columns
-  sorts :title, :created_at, :view_count, :published_at
+  sorts :name, :price, :created_at
 
-  # Default: newest first
+  # Default sort
   default_sort :created_at, :desc
 end
 ```
@@ -329,6 +351,6 @@ end
 
 ## Related Skills
 
-- `definition` - Overview and structure
-- `definition-fields` - Fields, inputs, displays
-- `definition-actions` - Actions and interactions
+- `plutonium-definition` - Overview and structure
+- `plutonium-definition-fields` - Fields, inputs, displays
+- `plutonium-definition-actions` - Actions and interactions

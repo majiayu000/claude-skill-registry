@@ -1,8 +1,9 @@
 ---
 name: design-md
 description: "Analyze Stitch projects and synthesize a semantic design system into DESIGN.md files"
-source: "https://github.com/google-labs-code/stitch-skills/tree/main/skills/design-md"
 risk: safe
+source: "https://github.com/google-labs-code/stitch-skills/tree/main/skills/design-md"
+date_added: "2026-02-27"
 ---
 
 # Stitch DESIGN.md Skill
@@ -48,7 +49,7 @@ To analyze a Stitch project, you must retrieve screen metadata and design assets
    - Review screen titles to identify the target screen (e.g., "Home", "Landing Page")
    - Extract the Screen ID from the screen's `name` field
 
-4. **Metadata fetch**: 
+4. **Metadata fetch**:
    - Call `[prefix]:get_screen` with both `projectId` and `screenId` (both as numeric IDs only)
    - This returns the complete screen object including:
      - `screenshot.downloadUrl` - Visual reference of the design
@@ -176,3 +177,8 @@ To use this skill for the Furniture Collection project:
 - ❌ Forgetting to explain functional roles of design elements
 - ❌ Being too vague in atmosphere descriptions
 - ❌ Ignoring subtle design details like shadows or spacing patterns
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

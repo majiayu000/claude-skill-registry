@@ -1,0 +1,18 @@
+{
+  "name": "behavioral-core",
+  "description": "Plaited behavioral programming patterns for event-driven coordination and symbolic reasoning. Use when implementing behavioral programs with behavioral()/useBehavioral, designing rule composition with",
+  "repo": "plaited/plaited",
+  "path": ".claude/skills/behavioral-core",
+  "category": "orchestration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plaited/plaited",
+  "dir_name": "behavioral-core-plaited-plaited-2",
+  "author": "plaited",
+  "source_url": "https://github.com/plaited/plaited/blob/main/.claude/skills/behavioral-core/SKILL.md",
+  "license": "ISC",
+  "copyright": "Copyright (c) 2023 - present Edward Irby",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

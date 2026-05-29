@@ -1,5 +1,4 @@
----
-name: protein-structure-prediction
+---name: protein-structure-prediction
 description: Predicts 3D protein structures from amino acid sequences using ESMFold or AlphaFold3 (mock).
 license: MIT
 metadata:
@@ -10,7 +9,13 @@ compatibility:
 allowed-tools:
   - run_shell_command
   - read_file
----
+
+keywords:
+  - protein-structure
+  - automation
+  - biomedical
+measurable_outcome: execute task with >95% success rate.
+---"
 
 # Protein Structure Prediction (ESMFold/AF3)
 
@@ -44,4 +49,3 @@ python3 Skills/Drug_Discovery/Protein_Structure/esmfold_client.py \
     --sequence "MKTIIALSYIFCLVFDYDY" \
     --output structure.pdb
 ```
-

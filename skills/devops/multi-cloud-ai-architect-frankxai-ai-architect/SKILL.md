@@ -1,7 +1,9 @@
 ---
 name: Multi-Cloud AI Architect
 description: Design and deploy AI workloads across AWS, Azure, GCP, and OCI with intelligent routing, cost optimization, and cross-cloud patterns
-version: 1.0.0
+version: 1.1.0
+last_updated: 2026-01-06
+external_version: "OCI-Azure Interconnect GA"
 triggers:
   - multi-cloud
   - cross-cloud

@@ -17,6 +17,22 @@ The drum echoes through the valleys. The Bear wakes from long slumber, gathering
 
 ---
 
+## Grove Tools for This Gathering
+
+Use `gw` and `gf` throughout. Quick reference for migration work:
+
+```bash
+# Find migration-related code and schemas
+gf --agent search "table_name"      # Find references to affected tables
+gf --agent db                       # Find database-related code
+gf --agent migrations               # List existing migration files
+
+# Commit completed migrations
+gw git ship --write -a -m "feat: migrate description"
+```
+
+---
+
 ## The Gathering
 
 ```
@@ -35,20 +51,23 @@ Request  Animals    Work       Data     Complete
 
 ### Phase 1: SUMMON
 
-*The drum sounds. The valleys stir...*
+_The drum sounds. The valleys stir..._
 
 Receive and parse the request:
 
 **Clarify the Migration:**
+
 - What data needs to move?
 - From where to where?
 - Are relationships involved?
 - What's the rollback plan?
 
 **Scope Check:**
+
 > "I'll mobilize a migration gathering for: **[migration description]**
-> 
+>
 > This will involve:
+>
 > - 🐕 Bloodhound scouting the codebase
 >   - Map data relationships
 >   - Find all references to affected tables
@@ -59,14 +78,14 @@ Receive and parse the request:
 >   - Transform in batches
 >   - Validate after each phase
 >   - Verify complete migration
-> 
+>
 > Proceed with the gathering?"
 
 ---
 
 ### Phase 2: ORGANIZE
 
-*The animals prepare for the journey...*
+_The animals prepare for the journey..._
 
 Dispatch in sequence:
 
@@ -81,13 +100,14 @@ Territory      Data
 ```
 
 **Dependencies:**
+
 - Bloodhound must complete before Bear (needs to understand relationships)
 
 ---
 
 ### Phase 3: EXECUTE
 
-*The paths are known. The migration begins...*
+_The paths are known. The migration begins..._
 
 Execute each phase:
 
@@ -165,7 +185,7 @@ Output:
 
 ### Phase 4: VALIDATE
 
-*The journey ends. Both animals confirm safe arrival...*
+_The journey ends. Both animals confirm safe arrival..._
 
 **Validation Checklist:**
 
@@ -183,7 +203,7 @@ Output:
 
 ```sql
 -- Row count validation
-SELECT 
+SELECT
   (SELECT COUNT(*) FROM old_table) as source_count,
   (SELECT COUNT(*) FROM new_table) as dest_count;
 
@@ -198,8 +218,8 @@ WHERE p.id IS NULL;
 -- Should be 0
 
 -- Data sampling
-SELECT * FROM new_table 
-ORDER BY RANDOM() 
+SELECT * FROM new_table
+ORDER BY RANDOM()
 LIMIT 10;
 
 -- Spot check transformation logic
@@ -209,7 +229,7 @@ LIMIT 10;
 
 ### Phase 5: COMPLETE
 
-*The gathering ends. Data rests in its new home...*
+_The gathering ends. Data rests in its new home..._
 
 **Completion Report:**
 
@@ -219,21 +239,25 @@ LIMIT 10;
 ### Migration: [Description]
 
 ### Animals Mobilized
+
 🐕 Bloodhound → 🐻 Bear
 
 ### Territory Mapped (Bloodhound)
+
 - Tables affected: [count]
 - Relationships found: [count]
 - Code files referencing data: [count]
 - Edge cases identified: [list]
 
 ### Data Moved (Bear)
+
 - Records migrated: [count]
 - Duration: [time]
 - Batches processed: [count]
 - Errors encountered: [count]
 
 ### Validation Results
+
 - Row count match: ✅ [source] = [dest]
 - Data integrity: ✅
 - Foreign keys: ✅
@@ -241,19 +265,22 @@ LIMIT 10;
 - Performance: ✅
 
 ### Rollback Status
+
 - Backup retained at: [location]
 - Rollback tested: ✅
 - Rollback time: [estimated]
 
 ### Files Updated
+
 - Migration scripts: [files]
 - Application code: [files]
 - Documentation: [files]
 
 ### Time Elapsed
+
 [Duration]
 
-*The data has found its new home.* 🌲
+_The data has found its new home._ 🌲
 ```
 
 ---
@@ -278,4 +305,4 @@ LIMIT 10;
 
 ---
 
-*Every piece of data arrived safely.* 🌲
+_Every piece of data arrived safely._ 🌲

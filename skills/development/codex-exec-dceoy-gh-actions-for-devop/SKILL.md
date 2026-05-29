@@ -51,7 +51,7 @@ Read relevant files to understand patterns.
 Run Codex with clear instructions:
 
 ```bash
-codex exec "[TASK]
+codex --sandbox=workspace-write exec "[TASK]
 
 Follow these guidelines:
 - Follow existing code patterns and conventions
@@ -93,7 +93,7 @@ Provide clear summary:
 ### Generate New Code
 
 ```bash
-codex exec "Create a UserProfile component in src/components/ with:
+codex --sandbox=workspace-write exec "Create a UserProfile component in src/components/ with:
 - Props: name (string), email (string), avatar (string optional)
 - Display user info in a card layout
 - Use TypeScript types
@@ -104,7 +104,7 @@ codex exec "Create a UserProfile component in src/components/ with:
 ### Refactor Code
 
 ```bash
-codex exec "Refactor the validation logic in src/components/LoginForm.tsx:
+codex --sandbox=workspace-write exec "Refactor the validation logic in src/components/LoginForm.tsx:
 - Extract validation into separate src/utils/validation.ts file
 - Create validateEmail and validatePassword functions
 - Maintain all existing functionality
@@ -114,7 +114,7 @@ codex exec "Refactor the validation logic in src/components/LoginForm.tsx:
 ### Fix Bugs
 
 ```bash
-codex exec "Fix the memory leak in src/hooks/useWebSocket.ts:
+codex --sandbox=workspace-write exec "Fix the memory leak in src/hooks/useWebSocket.ts:
 - The WebSocket connection is not being cleaned up
 - Add proper cleanup in useEffect return function
 - Ensure connection closes on unmount"
@@ -123,7 +123,7 @@ codex exec "Fix the memory leak in src/hooks/useWebSocket.ts:
 ### Add Features
 
 ```bash
-codex exec "Add email validation to ContactForm.tsx:
+codex --sandbox=workspace-write exec "Add email validation to ContactForm.tsx:
 - Use regex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 - Show error message below input field
 - Validate on blur and submit
@@ -134,7 +134,7 @@ codex exec "Add email validation to ContactForm.tsx:
 ### Create Tests
 
 ```bash
-codex exec "Create unit tests for src/utils/validation.ts:
+codex --sandbox=workspace-write exec "Create unit tests for src/utils/validation.ts:
 - Test validateEmail with valid/invalid inputs
 - Test validatePassword with edge cases
 - Test error messages
@@ -147,21 +147,21 @@ codex exec "Create unit tests for src/utils/validation.ts:
 ### Safe Mode (Default)
 
 ```bash
-codex exec "[TASK]"
+codex --sandbox=workspace-write exec "[TASK]"
 # Prompts for approval before each action
 ```
 
 ### Preview Mode
 
 ```bash
-codex exec "[TASK]" --dry-run
+codex --sandbox=workspace-write exec "[TASK]" --dry-run
 # Shows what would be done without executing
 ```
 
 ### Automated Mode ⚠️
 
 ```bash
-codex exec "[TASK]" --yes
+codex --sandbox=workspace-write exec "[TASK]" --yes
 # Auto-approves all actions - use with caution!
 ```
 

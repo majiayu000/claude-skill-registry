@@ -1,14 +1,14 @@
 ---
 name: ux-nomenclature
-description: Garante nomenclatura consistente seguindo o glossário do ÉPICO 12 (Arquitetura de Informação do Plataforma B2B de treinamento técnico corporativo)
+description: Garante nomenclatura consistente seguindo o glossário do ÉPICO 12 (Arquitetura de Informação do Ultrathink)
 allowed-tools: [Read, Edit, Grep]
 ---
 
-# UX Nomenclature Skill - Plataforma B2B de treinamento técnico corporativo
+# UX Nomenclature Skill - Ultrathink
 
 ## Objetivo
 
-Esta skill ativa automaticamente quando você está trabalhando com nomenclatura de UI/UX no Plataforma B2B de treinamento técnico corporativo, garantindo **consistência absoluta** com o glossário definido no PRODUCT-CENTRAL-DOCUMENT.md (ÉPICO 12).
+Esta skill ativa automaticamente quando você está trabalhando com nomenclatura de UI/UX no Ultrathink, garantindo **consistência absoluta** com o glossário definido no PRODUCT-CENTRAL-DOCUMENT.md (ÉPICO 12).
 
 ## Glossário Obrigatório
 

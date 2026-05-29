@@ -6,7 +6,9 @@ practices:
 - legacy-code-seams
 - design-patterns
 hexagonal_role: supporting
-consumes: []
+consumes:
+- complexity
+- repo-context
 produces:
 - git-changes
 context_rel: []
@@ -446,5 +448,7 @@ explicitly excluded with `--exclude` and justified in the closeout.
 - `/implement` -- if refactoring requires new code
 
 ## Reference Documents
+
+- [references/refactor.feature](references/refactor.feature) — Executable spec: one transformation/one test/one commit, target + hotspot (complexity-first) modes, revert on test fail (soc-qk4b)
 
 - [references/behavior-preserving-simplification.md](references/behavior-preserving-simplification.md)

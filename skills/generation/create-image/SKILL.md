@@ -15,6 +15,14 @@ triggers:
   - flowchart image
 metadata:
   short-description: "Create images (AI-generated, Mermaid, placeholders)"
+
+provides:
+  - create-image
+composes:
+  - memory
+  - dogpile
+  - create-movie
+  - task-monitor
 ---
 
 # create-image
@@ -24,6 +32,7 @@ Generate images using FREE AI image generation backends.
 ## Features
 
 - **Ollama (local)** - Z-Image Turbo or FLUX2-Klein via Ollama (FREE, no internet)
+- **Gemini 2.5 Flash Image** - AI-generated images via Google gemini-2.5-flash-image (FREE with API key)
 - **FLUX.1-schnell** - AI-generated images via HuggingFace (FREE remote)
 - **Mermaid diagrams** - Flowcharts and architecture diagrams (FREE)
 - **Placeholder images** - Random grayscale from picsum.photos (FREE)
@@ -35,7 +44,7 @@ Generate images using FREE AI image generation backends.
 ```bash
 cd .pi/skills/create-image
 
-# Generate an AI image (uses FLUX.1-schnell)
+# Generate an AI image (uses Gemini or FLUX)
 uv run --script generate.py "hardware verification flowchart for microprocessor" \
   --output test_figure.png \
   --size 400x600
@@ -75,14 +84,16 @@ uv run --script generate.py "<prompt>" [options]
 
 ### Backends
 
-| Backend | Description | Requires | Cost |
-|---------|-------------|----------|------|
-| `ollama` | Z-Image/FLUX2 local generation | Ollama + model | **FREE (local)** |
-| `flux` | FLUX.1-schnell AI generation | `HF_TOKEN` | **FREE (remote)** |
-| `mermaid` | Flowchart/diagram generation | `mmdc` CLI | **FREE** |
-| `placeholder` | picsum.photos (grayscale) | Nothing | **FREE** |
-| `solid` | Gray box with text label | Pillow | **FREE** |
-| `auto` | Try backends in order | Any available | - |
+| Backend       | Description                    | Requires                             | Cost              |
+| ------------- | ------------------------------ | ------------------------------------ | ----------------- |
+| `gemini`      | Gemini 2.5 Flash Image         | `GEMINI_API_KEY` or `GOOGLE_API_KEY` | **FREE**          |
+| `google`      | Alias for gemini               | `GEMINI_API_KEY` or `GOOGLE_API_KEY` | **FREE**          |
+| `ollama`      | Z-Image/FLUX2 local generation | Ollama + model                       | **FREE (local)**  |
+| `flux`        | FLUX.1-schnell AI generation   | `HF_TOKEN`                           | **FREE (remote)** |
+| `mermaid`     | Flowchart/diagram generation   | `mmdc` CLI                           | **FREE**          |
+| `placeholder` | picsum.photos (grayscale)      | Nothing                              | **FREE**          |
+| `solid`       | Gray box with text label       | Pillow                               | **FREE**          |
+| `auto`        | Try backends in order          | Any available                        | -                 |
 
 ## Setup
 
@@ -97,7 +108,19 @@ ollama pull x/z-image-turbo
 ollama pull x/flux2-klein
 ```
 
-### Option 2: HuggingFace Token (FREE Remote)
+### Option 2: Google Gemini 2.5 Flash Image (Nano Banana) (FREE API)
+
+Get a FREE API key from [aistudio.google.com](https://aistudio.google.com/):
+
+```bash
+export GEMINI_API_KEY="your_api_key_here"
+# or
+export GOOGLE_API_KEY="your_api_key_here"
+```
+
+**Note:** This uses the `gemini-2.5-flash-image` model (aka "nano-banana") via the REST API. No special SDK installation required (uses `requests`). Image generation counts against your daily Pro quota (~1000 images/day). Either `GEMINI_API_KEY` or `GOOGLE_API_KEY` will work.
+
+### Option 3: HuggingFace Token (FREE Remote)
 
 Get a FREE HuggingFace token from [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens):
 
@@ -105,7 +128,7 @@ Get a FREE HuggingFace token from [huggingface.co/settings/tokens](https://huggi
 export HF_TOKEN="hf_your_token_here"
 ```
 
-### Option 3: Mermaid (for Diagrams)
+### Option 4: Mermaid (for Diagrams)
 
 ```bash
 npm install -g @mermaid-js/mermaid-cli
@@ -114,6 +137,7 @@ npm install -g @mermaid-js/mermaid-cli
 ## Example Prompts
 
 ### Security Documents
+
 ```bash
 "APT attack kill chain diagram with reconnaissance, weaponization, delivery, exploitation phases"
 "network intrusion detection system architecture"
@@ -121,6 +145,7 @@ npm install -g @mermaid-js/mermaid-cli
 ```
 
 ### Engineering Documents
+
 ```bash
 "hardware verification flow for microprocessor with RTL, synthesis, and timing analysis"
 "FPGA design pipeline from HDL to bitstream"
@@ -128,6 +153,7 @@ npm install -g @mermaid-js/mermaid-cli
 ```
 
 ### Scientific Documents
+
 ```bash
 "machine learning pipeline with data preprocessing, training, and inference stages"
 "experimental methodology flowchart"
@@ -138,11 +164,11 @@ npm install -g @mermaid-js/mermaid-cli
 
 Pre-generated images are available in `cached_images/` - **use these first** to avoid unnecessary API calls:
 
-| File | Description | Size |
-|------|-------------|------|
-| `decorative.png` | Abstract cover/decorative illustration | 512x512 |
-| `flowchart.png` | Technical workflow/process diagram | 512x512 |
-| `network_arch.png` | Network/system architecture diagram | 512x512 |
+| File               | Description                            | Size    |
+| ------------------ | -------------------------------------- | ------- |
+| `decorative.png`   | Abstract cover/decorative illustration | 512x512 |
+| `flowchart.png`    | Technical workflow/process diagram     | 512x512 |
+| `network_arch.png` | Network/system architecture diagram    | 512x512 |
 
 ```bash
 # Copy cached image instead of generating

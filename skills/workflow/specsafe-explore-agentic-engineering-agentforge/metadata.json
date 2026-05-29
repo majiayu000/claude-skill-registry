@@ -1,0 +1,17 @@
+{
+  "name": "specsafe-explore",
+  "repo": "Agentic-Engineering-Agency/agentforge",
+  "path": ".claude/skills/specsafe-explore/SKILL.md",
+  "github_branch": "main",
+  "category": "workflow",
+  "source": "github.com/Agentic-Engineering-Agency/agentforge",
+  "dir_name": "specsafe-explore-agentic-engineering-agentforge",
+  "downloaded_at": "2026-03-22T04:48:32.647585Z",
+  "author": "Agentic-Engineering-Agency",
+  "source_url": "https://github.com/Agentic-Engineering-Agency/agentforge/blob/main/.claude/skills/specsafe-explore/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Agentic-Engineering-Agency/agentforge/blob/main/.claude/skills/specsafe-explore/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

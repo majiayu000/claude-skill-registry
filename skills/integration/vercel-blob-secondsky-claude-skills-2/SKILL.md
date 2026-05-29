@@ -1,11 +1,30 @@
 ---
 name: vercel-blob
-description: Vercel Blob object storage with CDN for Next.js. Use for file uploads (images, PDFs, videos), presigned URLs, user-generated content, file management, or encountering BLOB_READ_WRITE_TOKEN errors, file size limits, client upload token errors.
+description: "Vercel Blob object storage with CDN for Next.js. Use for file uploads (images, PDFs, videos), presigned URLs, user-generated content, file management, or encountering BLOB_READ_WRITE_TOKEN errors, file size limits, client upload token errors."
 
-  Keywords: vercel blob, @vercel/blob, vercel storage, vercel file upload, vercel cdn, blob storage vercel, client upload vercel, presigned url vercel, file upload nextjs, image upload vercel, pdf upload, video upload, user uploads, multipart upload, streaming upload, blob cdn, vercel assets, file download
+metadata:
+  keywords:
+    - vercel blob
+    - "@vercel/blob"
+    - vercel storage
+    - vercel file upload
+    - vercel cdn
+    - blob storage vercel
+    - client upload vercel
+    - presigned url vercel
+    - file upload nextjs
+    - image upload vercel
+    - pdf upload
+    - video upload
+    - user uploads
+    - multipart upload
+    - streaming upload
+    - blob cdn
+    - vercel assets
+    - file download
+
 license: MIT
 ---
-
 # Vercel Blob (Object Storage)
 
 **Status**: Production Ready

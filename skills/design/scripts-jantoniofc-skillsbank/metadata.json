@@ -1,0 +1,17 @@
+{
+  "name": "scripts",
+  "repo": "JantonioFC/skillsbank",
+  "path": "scripts/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/JantonioFC/skillsbank",
+  "dir_name": "scripts-jantoniofc-skillsbank",
+  "downloaded_at": "2026-03-22T05:32:39.496506Z",
+  "author": "JantonioFC",
+  "source_url": "https://github.com/JantonioFC/skillsbank/blob/main/scripts/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JantonioFC/skillsbank/blob/main/scripts/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

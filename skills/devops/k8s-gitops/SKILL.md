@@ -35,20 +35,40 @@ GitOps workflows, CI/CD integration, and progressive delivery patterns for clust
 
 ## ArgoCD Setup
 
+### Current Versions & Documentation
+- **ArgoCD**: v2.13.x (Latest stable as of January 2026)
+- **CLI Install**: `brew install argocd` or `curl -sSL -o argocd-linux-amd64 https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64`
+- **Docs**: https://argo-cd.readthedocs.io/
+- **Release Notes**: https://github.com/argoproj/argo-cd/releases
+
 ### Installation
 
 ```bash
 # Create namespace
 kubectl create namespace argocd
 
-# Install ArgoCD
+# Install ArgoCD (v2.13.x - HA for production, non-HA for dev)
+# Non-HA (development/testing)
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+# HA Installation (production recommended)
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/ha/install.yaml
 
 # Wait for pods
 kubectl wait --for=condition=Ready pods --all -n argocd --timeout=300s
 
-# Get initial admin password
+# Get initial admin password (ArgoCD 2.x+)
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+
+# Install ArgoCD CLI (latest)
+# macOS
+brew install argocd
+# Linux
+curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+chmod +x /usr/local/bin/argocd
+
+# Login to ArgoCD
+argocd login localhost:8080 --username admin --password $(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d)
 
 # Access UI (port-forward for testing)
 kubectl port-forward svc/argocd-server -n argocd 8080:443
@@ -182,11 +202,27 @@ spec:
 
 ## Flux CD Setup
 
+### Current Versions & Documentation
+- **Flux**: v2.4.x (Latest stable as of January 2026)
+- **CLI Install**: `brew install fluxcd/tap/flux` or `curl -s https://fluxcd.io/install.sh | sudo bash`
+- **Docs**: https://fluxcd.io/flux/
+- **Release Notes**: https://github.com/fluxcd/flux2/releases
+
 ### Installation
 
 ```bash
-# Install Flux CLI
+# Install Flux CLI (v2.4.x+)
+# macOS
+brew install fluxcd/tap/flux
+
+# Linux
 curl -s https://fluxcd.io/install.sh | sudo bash
+
+# Verify installation
+flux --version
+
+# Check prerequisites
+flux check --pre
 
 # Bootstrap with GitHub
 flux bootstrap github \
@@ -195,6 +231,18 @@ flux bootstrap github \
   --branch=main \
   --path=clusters/${CLUSTER_NAME} \
   --personal
+
+# Bootstrap with GitLab
+flux bootstrap gitlab \
+  --owner=${GITLAB_GROUP} \
+  --repository=${REPO_NAME} \
+  --branch=main \
+  --path=clusters/${CLUSTER_NAME} \
+  --personal
+
+# Check Flux status
+flux check
+flux get all -A
 ```
 
 ### Flux GitRepository
@@ -304,6 +352,44 @@ spec:
 
 ## Kustomize
 
+### Current Versions & Documentation
+- **Kustomize**: v5.5.x (Latest stable as of January 2026)
+- **Built into kubectl**: `kubectl kustomize` (may lag behind standalone)
+- **Standalone Install**: `brew install kustomize` or from GitHub releases
+- **Docs**: https://kustomize.io/
+- **Catalog**: https://kubectl.docs.kubernetes.io/references/kustomize/
+
+### Kustomize CLI Quick Reference
+
+```bash
+# Install standalone Kustomize (v5.5.x+)
+brew install kustomize
+# OR
+curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | bash
+
+# Build and preview
+kustomize build overlays/prod
+
+# Apply directly
+kubectl apply -k overlays/prod
+# OR
+kustomize build overlays/prod | kubectl apply -f -
+
+# Edit image tags
+kustomize edit set image myapp=registry/myapp:v2.0.0
+
+# Set namespace
+kustomize edit set namespace production
+
+# Add resources
+kustomize edit add resource new-deployment.yaml
+
+# Kustomize v5.x features
+# - Improved replacements (replacing vars)
+# - Better OpenAPI schema support
+# - Enhanced component support
+```
+
 ### Base Structure
 
 ```
@@ -313,6 +399,11 @@ app/
 │   ├── deployment.yaml
 │   ├── service.yaml
 │   └── configmap.yaml
+├── components/         # Reusable Kustomize components (v4.1+)
+│   ├── monitoring/
+│   │   └── kustomization.yaml
+│   └── security/
+│       └── kustomization.yaml
 └── overlays/
     ├── dev/
     │   ├── kustomization.yaml
@@ -433,12 +524,51 @@ spec:
 
 ## Helm
 
+### Current Versions & Documentation
+- **Helm**: v3.16.x (Latest stable as of January 2026)
+- **CLI Install**: `brew install helm` or `curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash`
+- **Docs**: https://helm.sh/docs/
+- **Hub**: https://artifacthub.io/
+
+### Helm CLI Quick Reference
+
+```bash
+# Install Helm (v3.16.x+)
+brew install helm
+# OR
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+
+# Add common repositories
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm repo add jetstack https://charts.jetstack.io
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+
+# Search charts
+helm search repo nginx
+helm search hub prometheus
+
+# Install/Upgrade with values
+helm upgrade --install ${RELEASE} ${CHART} \
+  --namespace ${NAMESPACE} --create-namespace \
+  -f values-${ENV}.yaml \
+  --set image.tag=${TAG} \
+  --wait --timeout 10m
+
+# OCI registry support (Helm 3.8+)
+helm pull oci://registry.example.com/charts/myapp --version 1.0.0
+helm push myapp-1.0.0.tgz oci://registry.example.com/charts
+```
+
 ### Chart Structure
 
 ```
 ${CHART_NAME}/
 ├── Chart.yaml
+├── Chart.lock          # Dependency lock file (Helm 3.x+)
 ├── values.yaml
+├── values.schema.json  # JSON Schema for values validation
 ├── values-dev.yaml
 ├── values-prod.yaml
 ├── templates/
@@ -450,8 +580,11 @@ ${CHART_NAME}/
 │   ├── secret.yaml
 │   ├── hpa.yaml
 │   ├── pdb.yaml
+│   ├── serviceaccount.yaml
+│   ├── servicemonitor.yaml  # For Prometheus Operator
 │   └── NOTES.txt
-└── charts/           # Dependencies
+├── charts/             # Dependencies
+└── crds/               # Custom Resource Definitions
 ```
 
 ### Chart.yaml
@@ -613,6 +746,11 @@ spec:
 
 ### GitHub Actions
 
+**Current Versions & Documentation:**
+- **GitHub Actions Docs**: https://docs.github.com/en/actions
+- **Reusable Workflows**: https://docs.github.com/en/actions/using-workflows/reusing-workflows
+- **OIDC for Cloud**: https://docs.github.com/en/actions/deployment/security-hardening-your-deployments
+
 ```yaml
 # .github/workflows/ci-cd.yaml
 name: CI/CD Pipeline
@@ -627,33 +765,51 @@ env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
 
+# Recommended: Use OIDC for cloud provider authentication (no long-lived secrets)
+permissions:
+  contents: read
+  packages: write
+  id-token: write  # Required for OIDC
+
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
       - name: Run tests
         run: |
-          # Add test commands
+          npm ci
+          npm test
 
   build:
     needs: test
     runs-on: ubuntu-latest
     outputs:
       image-tag: ${{ steps.meta.outputs.tags }}
+      digest: ${{ steps.build.outputs.digest }}
     steps:
       - uses: actions/checkout@v4
-      
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      
+
       - name: Login to Container Registry
         uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      
+
       - name: Extract metadata
         id: meta
         uses: docker/metadata-action@v5
@@ -663,16 +819,21 @@ jobs:
             type=sha,prefix=
             type=ref,event=branch
             type=semver,pattern={{version}}
-      
+            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/main' }}
+
       - name: Build and push
-        uses: docker/build-push-action@v5
+        id: build
+        uses: docker/build-push-action@v6
         with:
           context: .
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          provenance: true
+          sbom: true
 
   deploy-dev:
     needs: build
@@ -680,12 +841,12 @@ jobs:
     if: github.ref == 'refs/heads/develop'
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Update Kustomize image tag
         run: |
           cd overlays/dev
           kustomize edit set image ${IMAGE_NAME}=${REGISTRY}/${IMAGE_NAME}:${{ github.sha }}
-      
+
       - name: Commit and push
         run: |
           git config user.name "GitHub Actions"
@@ -701,12 +862,12 @@ jobs:
     environment: production
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Update Kustomize image tag
         run: |
           cd overlays/prod
           kustomize edit set image ${IMAGE_NAME}=${REGISTRY}/${IMAGE_NAME}:${{ github.sha }}
-      
+
       - name: Create PR for production
         uses: peter-evans/create-pull-request@v5
         with:
@@ -717,8 +878,33 @@ jobs:
 
 ### Tekton Pipeline (OpenShift)
 
+**Current Versions & Documentation:**
+- **Tekton Pipelines**: v0.67.x (Latest stable as of January 2026)
+- **OpenShift Pipelines**: Based on Tekton, included in OCP 4.14+
+- **Docs**: https://tekton.dev/docs/
+- **OpenShift Docs**: https://docs.openshift.com/pipelines/
+- **CLI (tkn)**: `brew install tektoncd-cli` or from OpenShift
+
+```bash
+# Install Tekton CLI
+brew install tektoncd-cli
+# OR on OpenShift
+oc get tkn  # Pre-installed with OpenShift Pipelines operator
+
+# List pipelines and runs
+tkn pipeline list
+tkn pipelinerun list
+
+# Start a pipeline
+tkn pipeline start ${PIPELINE_NAME} -p param1=value1
+
+# View logs
+tkn pipelinerun logs ${PIPELINERUN_NAME} -f
+```
+
 ```yaml
-apiVersion: tekton.dev/v1beta1
+# Note: Tekton v0.50+ uses v1 API, older clusters may need v1beta1
+apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
   name: build-and-deploy
@@ -734,11 +920,11 @@ spec:
       type: string
     - name: deployment-namespace
       type: string
-  
+
   workspaces:
     - name: shared-workspace
     - name: docker-credentials
-  
+
   tasks:
     - name: git-clone
       taskRef:
@@ -752,7 +938,7 @@ spec:
       workspaces:
         - name: output
           workspace: shared-workspace
-    
+
     - name: build-image
       taskRef:
         name: buildah
@@ -769,7 +955,7 @@ spec:
           workspace: shared-workspace
         - name: dockerconfig
           workspace: docker-credentials
-    
+
     - name: update-manifest
       taskRef:
         name: kustomize-update
@@ -783,7 +969,7 @@ spec:
       workspaces:
         - name: source
           workspace: shared-workspace
-    
+
     - name: deploy
       taskRef:
         name: kubernetes-actions
@@ -909,8 +1095,33 @@ spec:
 
 ### Kyverno Policies
 
+**Current Versions & Documentation:**
+- **Kyverno**: v1.13.x (Latest stable as of January 2026)
+- **Install**: `helm install kyverno kyverno/kyverno -n kyverno --create-namespace`
+- **Docs**: https://kyverno.io/docs/
+- **Policy Library**: https://kyverno.io/policies/
+- **CLI**: `brew install kyverno` or from GitHub releases
+
+```bash
+# Install Kyverno via Helm (v1.13.x+)
+helm repo add kyverno https://kyverno.github.io/kyverno/
+helm repo update
+helm install kyverno kyverno/kyverno -n kyverno --create-namespace \
+  --set replicaCount=3 \
+  --set resources.limits.memory=512Mi
+
+# Install Kyverno CLI
+brew install kyverno
+
+# Test policy locally before applying
+kyverno apply policy.yaml --resource deployment.yaml
+
+# Validate policies
+kyverno test .
+```
+
 ```yaml
-# Require resource limits
+# Require resource limits (Kyverno v1.10+ syntax)
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
 metadata:
@@ -977,8 +1188,32 @@ spec:
 
 ### OPA Gatekeeper
 
+**Current Versions & Documentation:**
+- **Gatekeeper**: v3.18.x (Latest stable as of January 2026)
+- **Install**: `helm install gatekeeper gatekeeper/gatekeeper -n gatekeeper-system --create-namespace`
+- **Docs**: https://open-policy-agent.github.io/gatekeeper/
+- **Constraint Library**: https://github.com/open-policy-agent/gatekeeper-library
+- **Rego Playground**: https://play.openpolicyagent.org/
+
+```bash
+# Install Gatekeeper via Helm (v3.18.x+)
+helm repo add gatekeeper https://open-policy-agent.github.io/gatekeeper/charts
+helm repo update
+helm install gatekeeper gatekeeper/gatekeeper -n gatekeeper-system --create-namespace \
+  --set replicas=3 \
+  --set audit.replicas=1
+
+# Check Gatekeeper status
+kubectl get pods -n gatekeeper-system
+kubectl get constrainttemplates
+kubectl get constraints
+
+# View violations
+kubectl get constraints -o json | jq '.items[].status.violations'
+```
+
 ```yaml
-# Constraint Template
+# Constraint Template (Gatekeeper v3.x)
 apiVersion: templates.gatekeeper.sh/v1
 kind: ConstraintTemplate
 metadata:

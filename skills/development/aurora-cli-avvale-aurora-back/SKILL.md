@@ -1,13 +1,14 @@
 ---
 name: aurora-cli
 description: >
-  Run Aurora CLI commands to generate/regenerate modules, add packages, or create projects.
-  Trigger: When user asks to regenerate code, load module, add package, or create new Aurora project.
+  Run Aurora CLI commands to generate/regenerate modules, add packages, or
+  create projects. Trigger: When user asks to regenerate code, load module, add
+  package, or create new Aurora project.
 license: MIT
 metadata:
   author: aurora
-  version: "1.0"
-  auto_invoke: "Regenerating modules, adding packages, Aurora CLI operations"
+  version: '1.0'
+  auto_invoke: 'Regenerating modules, adding packages, Aurora CLI operations'
 ---
 
 ## When to Use
@@ -24,26 +25,54 @@ metadata:
 
 ### Command Structure
 
-| Action | Command | When to Use |
-|--------|---------|-------------|
-| Regenerate module | `aurora load back module -n=<bc>/<module>` | After YAML changes |
-| Force regenerate | `aurora load back module -n=<bc>/<module> -f` | Override hash protection |
-| With tests | `aurora load back module -n=<bc>/<module> -t` | Generate e2e tests |
-| Add package | `aurora add back <package>` | Install preconfigured package |
-| New project | `aurora new back <name>` | Create new project (rare) |
+| Action            | Command                                       | When to Use                   |
+| ----------------- | --------------------------------------------- | ----------------------------- |
+| Regenerate module | `aurora load back module -n=<bc>/<module>`    | After YAML changes            |
+| Force regenerate  | `aurora load back module -n=<bc>/<module> -f` | Override hash protection      |
+| With tests        | `aurora load back module -n=<bc>/<module> -t` | Generate e2e tests            |
+| Add package       | `aurora add back <package>`                   | Install preconfigured package |
+| New project       | `aurora new back <name>`                      | Create new project (rare)     |
+
+### CRITICAL: Always use `-ft` for schema changes
+
+**When regenerating a module after YAML schema changes, ALWAYS use `-ft`
+flags.** Without `-ft`, existing files are not overwritten and tests are not
+regenerated, causing the generated code to be out of sync with the schema.
+
+```bash
+# ✅ CORRECT - Always use after schema changes
+aurora load back module -n=<bc>/<module> -ft
+
+# ❌ INCORRECT - Files won't be updated, tests won't regenerate
+aurora load back module -n=<bc>/<module>
+```
 
 ### Hash Protection System
 
-Aurora tracks file modifications via hash. Files with custom changes are **protected by default**:
+Aurora tracks file modifications via hash. Files with custom changes are
+**protected by default**:
+
 - Without `-f`: Modified files are preserved
 - With `-f`: All files are overwritten (use with caution)
+
+### CRITICAL: Handling `.origin` files after regeneration
+
+When Aurora detects that a file was manually modified (different hash), it
+creates a `.origin.ts` file instead of overwriting. The CLI asks:
+`Do you want to manage origin files? (Y/n)` — **always answer `Y`**.
+
+**After the CLI finishes, invoke the `aurora-origin-merge` skill** to handle all
+`.origin` files. That skill contains the complete merge workflow, rules by file
+type, and conflict resolution.
 
 ---
 
 ## Execution Flow
 
 ### 1. Identify Action
+
 Ask the user what they want to do:
+
 1. **Generate/Regenerate module** - Regenerate code from existing YAML
 2. **Add package** - Install preconfigured package (auditing, oauth, etc.)
 3. **Create project** - Create new Aurora project (rare)
@@ -51,19 +80,19 @@ Ask the user what they want to do:
 ### 2. Gather Information
 
 **For Generate/Regenerate Module:**
+
 1. Ask which bounded context and module to regenerate
 2. ONLY if you can't identify them, list available YAMLs in `cliter/` using Glob
-3. Ask about flags:
-   - `--force` (overwrite existing files)
-   - `--tests` (generate e2e tests)
-   - `--verbose` (detailed output)
+3. **Always use `-ft` flags** (force + tests) — do NOT ask, this is mandatory
 
 **For Add Package:**
+
 1. Run `aurora add back` to show available packages
 2. Ask which package to install
 3. Ask if `--force` is needed
 
 **For Create Project:**
+
 1. Ask for project name
 2. Confirm before executing
 
@@ -124,29 +153,31 @@ aurora new back my-project
 
 ## Flags
 
-| Flag | Description |
-|------|-------------|
-| `-f, --force` | Overwrite existing files (even with modified hash) |
-| `-t, --tests` | Generate e2e test files |
-| `-v, --verbose` | Show detailed CLI output |
+| Flag            | Description                                        |
+| --------------- | -------------------------------------------------- |
+| `-f, --force`   | Overwrite existing files (even with modified hash) |
+| `-t, --tests`   | Generate e2e test files                            |
+| `-v, --verbose` | Show detailed CLI output                           |
 
 ---
 
 ## Error Handling
 
-| Error | Solution |
-|-------|----------|
-| CLI not found | Report that Aurora CLI is not installed |
-| YAML not found | Report expected path and suggest creating it |
-| Permission error | Report and suggest solutions |
-| Execution error | Show complete error output |
+| Error            | Solution                                     |
+| ---------------- | -------------------------------------------- |
+| CLI not found    | Report that Aurora CLI is not installed      |
+| YAML not found   | Report expected path and suggest creating it |
+| Permission error | Report and suggest solutions                 |
+| Execution error  | Show complete error output                   |
 
 ---
 
 ## Related Skills
 
 This skill works with:
-- **aurora-project-structure**: Understand project structure and locate generated files
+
+- **aurora-project-structure**: Understand project structure and locate
+  generated files
 - **aurora-cqrs**: Understand CQRS components that will be regenerated
 - **conventional-commits**: Create commits after successful regeneration
 

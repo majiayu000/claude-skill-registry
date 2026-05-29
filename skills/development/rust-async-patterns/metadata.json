@@ -1,11 +1,11 @@
 {
   "name": "rust-async-patterns",
   "repo": "wshobson/agents",
+  "path": "plugins/systems-programming/skills/rust-async-patterns/SKILL.md",
+  "source": "github.com/wshobson/agents",
+  "downloaded_at": "2026-01-22T03:51:06.732815Z",
+  "dir_name": "rust-async-patterns",
   "category": "development",
-  "description": "Master Rust async programming with Tokio, async traits, error handling, and concurrent patterns. Use when building async Rust applications, implementing concurrent systems, or debugging async code.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:55:35.199702Z",
   "github_path": "plugins/systems-programming/skills/rust-async-patterns",
-  "github_branch": "main",
-  "dir_name": "rust-async-patterns"
+  "github_branch": "main"
 }

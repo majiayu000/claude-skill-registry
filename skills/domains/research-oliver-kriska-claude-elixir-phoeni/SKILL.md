@@ -2,7 +2,6 @@
 name: phx:research
 description: "Research Elixir/Phoenix topics or evaluate Hex libraries (--library). Use when learning about libraries, patterns, or comparing approaches. Searches HexDocs, ElixirForum, GitHub."
 effort: high
-disable-model-invocation: true
 ---
 
 # Research Elixir Topic

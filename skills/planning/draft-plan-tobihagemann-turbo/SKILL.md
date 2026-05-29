@@ -61,7 +61,7 @@ Ground library and framework choices in current reality before escalating decisi
 1. **Scan for matching skills.** Compare the task description against available skill trigger descriptions. For each unambiguous match, run the skill via the Skill tool. This loads decision-level guidance (idiomatic patterns, known pitfalls, version constraints) before product decisions are made. If unsure, do not load.
 2. **Look up library docs.** For libraries or frameworks the task clearly depends on, query documentation MCP tools (or WebSearch as a fallback) when the decision hinges on current library state such as whether a feature exists, which versions support it, or whether an API has been deprecated.
 
-Keep findings at the decision level: what a library can do, which approach is idiomatic, which version to target. Do not embed specific API signatures or code snippets into the plan. Those belong in `/implement-plan`, which re-loads the same skills at execution time.
+Keep findings at the decision level: what a library can do, which approach is idiomatic, which version to target. Do not embed specific API signatures or code snippets into the plan. Those belong at execution time, where the same skills are re-loaded.
 
 ## Step 4: Escalate Product Decisions
 

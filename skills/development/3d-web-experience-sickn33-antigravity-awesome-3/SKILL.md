@@ -364,7 +364,6 @@ Workflow:
 Works well with: `scroll-experience`, `interactive-portfolio`, `frontend`, `landing-page-design`
 
 ## When to Use
-
 - User mentions or implies: 3D website
 - User mentions or implies: three.js
 - User mentions or implies: WebGL
@@ -372,3 +371,8 @@ Works well with: `scroll-experience`, `interactive-portfolio`, `frontend`, `land
 - User mentions or implies: 3D experience
 - User mentions or implies: spline
 - User mentions or implies: product configurator
+
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

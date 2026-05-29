@@ -1,9 +1,6 @@
 ---
 name: swift-best-practices
-description: |
-  This skill should be used when writing or reviewing Swift code for iOS or macOS projects. Apply modern Swift 6+ best practices, concurrency patterns, API design guidelines, and migration strategies. Covers async/await, actors, MainActor, Sendable, typed throws, and Swift 6 breaking changes.
-
-  Keywords: concurrency, async-await, actors, Sendable, typed-throws, Swift-6, migration, data-races, MainActor, nonisolated, isolated, iOS, macOS, SwiftUI, Combine, Swift-concurrency, actor-isolation, strict-concurrency, Swift-migration, modern-Swift, Swift-evolution, code-review, Swift-patterns, Apple-platforms, Xcode, iOS-development, macOS-development
+description: "| This skill should be used when writing or reviewing Swift code for iOS or macOS projects. Apply modern Swift 6+ best practices, concurrency patterns, API design guidelines, and migration strategies. Covers async/await, actors, MainActor, Sendable, typed throws, and Swift 6 breaking changes."
 license: MIT
 allowed-tools: [Read, Write, Edit, Bash, Grep, Glob]
 metadata:
@@ -14,8 +11,35 @@ metadata:
   companion_mcp: "swiftlens"
   mcp_install: "uvx swiftlens"
   references_source: "sammcj/agentic-coding (Apache 2.0)"
+  keywords:
+    - concurrency
+    - async-await
+    - actors
+    - Sendable
+    - typed-throws
+    - Swift-6
+    - migration
+    - data-races
+    - MainActor
+    - nonisolated
+    - isolated
+    - iOS
+    - macOS
+    - SwiftUI
+    - Combine
+    - Swift-concurrency
+    - actor-isolation
+    - strict-concurrency
+    - Swift-migration
+    - modern-Swift
+    - Swift-evolution
+    - code-review
+    - Swift-patterns
+    - Apple-platforms
+    - Xcode
+    - iOS-development
+    - macOS-development
 ---
-
 # Swift Best Practices Skill
 
 ## Overview

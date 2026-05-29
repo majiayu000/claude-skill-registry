@@ -1,7 +1,8 @@
 ---
 name: mutation-testing
-description: Validate test effectiveness with mutation testing using Stryker (TypeScript/JavaScript) and mutmut (Python). Find weak tests that pass despite code mutations. Use to improve test quality.
+description: Validate test effectiveness with mutation testing using Stryker (TypeScript/JavaScript with Vitest or bun test via @hughescr/stryker-bun-runner) and mutmut (Python). Find weak tests that pass despite code mutations. Use to improve test quality.
 allowed-tools: Bash, Read, Edit, Write, Grep, Glob, TodoWrite
+license: MIT
 ---
 
 # Mutation Testing
@@ -17,7 +18,9 @@ Expert knowledge for mutation testing - validating that your tests actually catc
 
 ## TypeScript/JavaScript (Stryker)
 
-### Installation
+### Vitest Runner
+
+#### Installation
 
 ```bash
 # Using Bun
@@ -27,7 +30,7 @@ bun add -d @stryker-mutator/core @stryker-mutator/vitest-runner
 npm install -D @stryker-mutator/core @stryker-mutator/vitest-runner
 ```
 
-### Configuration
+#### Configuration
 
 ```typescript
 // stryker.config.mjs
@@ -41,6 +44,47 @@ export default {
   incremental: true,
 }
 ```
+
+### Bun Native Runner (`bun test`)
+
+Use when projects use `bun test` directly (not Vitest).
+
+#### Requirements
+
+- Bun **>= 1.3.7** (needs TestReporter WebSocket events from Bun PR #25986)
+- `@stryker-mutator/core ^9.0.0`
+
+#### Installation
+
+```bash
+bun add -D @hughescr/stryker-bun-runner @stryker-mutator/core
+```
+
+#### Configuration
+
+```javascript
+// stryker.conf.mjs
+export default {
+  testRunner: 'bun',
+  coverageAnalysis: 'perTest',
+  mutate: ['src/**/*.ts', '!src/**/*.test.ts'],
+  thresholds: { high: 80, low: 60, break: 60 },
+  incremental: true,
+  bun: {
+    inspectorTimeout: 5000,  // WebSocket Inspector connection timeout (ms)
+    // bunPath: '/path/to/bun',  // only if custom Bun install
+    // timeout: 30000,           // test timeout (ms)
+    // env: { DEBUG: 'true' },
+    // bunArgs: ['--bail'],
+  },
+}
+```
+
+#### Key Behaviors
+
+- **Sequential execution**: Runs tests with `--concurrency=1` for accurate per-test coverage. Slower than parallel but required for correct test-to-mutant correlation.
+- **Concurrent test patching**: Automatically patches `describe.concurrent()`, `test.concurrent()`, `it.concurrent()` to run sequentially during mutation testing — no code changes needed.
+- **Inspector Protocol**: Uses Bun's WebSocket Inspector API to discover tests and correlate coverage.
 
 ### Running Stryker
 

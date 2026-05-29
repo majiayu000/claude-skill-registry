@@ -1,7 +1,10 @@
 ---
 name: ln-730-devops-setup
-description: Coordinates Docker, CI/CD, and environment configuration setup via auto-detection
+description: "Sets up Docker, CI/CD, and environment configuration with auto-detection. Use when adding DevOps infrastructure to a project."
+license: MIT
 ---
+
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # ln-730-devops-setup
 
@@ -81,15 +84,15 @@ Delegate to workers in parallel (independent tasks):
 ```
 ln-730 (Coordinator)
     |
-    +---> ln-731-docker-generator
+    +---> ln-731-docker-generator (via Skill tool)
     |         Input: stack config, versions
     |         Output: Dockerfile.*, docker-compose.yml, .dockerignore
     |
-    +---> ln-732-cicd-generator
+    +---> ln-732-cicd-generator (via Skill tool)
     |         Input: stack config, detected commands
     |         Output: .github/workflows/ci.yml
     |
-    +---> ln-733-env-configurator
+    +---> ln-733-env-configurator (via Skill tool)
               Input: detected environment variables
               Output: .env.example, .env.development, .gitignore updates
 ```
@@ -98,6 +101,14 @@ ln-730 (Coordinator)
 - If worker fails, log error and continue with others
 - Report all failures at the end
 - Suggest manual fixes for failed components
+
+
+**Invocations:**
+```
+Skill(skill: "ln-731-docker-generator", args: "{projectPath}")
+Skill(skill: "ln-732-cicd-generator", args: "{projectPath}")
+Skill(skill: "ln-733-env-configurator", args: "{projectPath}")
+```
 
 ### Phase 4: Configuration Verification
 
@@ -147,6 +158,25 @@ Generate summary:
 
 ---
 
+**TodoWrite format (mandatory):**
+```
+- Invoke ln-731-docker-generator (pending)
+- Invoke ln-732-cicd-generator (pending)
+- Invoke ln-733-env-configurator (pending)
+- Verify configuration (pending)
+- Generate completion report (pending)
+```
+
+## Worker Invocation (MANDATORY)
+
+| Phase | Worker | Context |
+|-------|--------|---------|
+| 3a | ln-731-docker-generator | Shared (Skill tool) — Dockerfiles, docker-compose, .dockerignore |
+| 3b | ln-732-cicd-generator | Shared (Skill tool) — CI/CD pipeline configuration |
+| 3c | ln-733-env-configurator | Shared (Skill tool) — environment files and .gitignore |
+
+**All workers:** Invoke via Skill tool — workers see coordinator context.
+
 ## Definition of Done
 
 - [ ] Pre-flight validation passed
@@ -155,6 +185,22 @@ Generate summary:
 - [ ] `docker-compose config` validates successfully
 - [ ] No secrets in generated files
 - [ ] Completion report displayed
+
+---
+
+## Reference Files
+
+- Worker: `../ln-731-docker-generator/SKILL.md`
+- Worker: `../ln-732-cicd-generator/SKILL.md`
+- Worker: `../ln-733-env-configurator/SKILL.md`
+
+---
+
+## Meta-Analysis
+
+**MANDATORY READ:** Load `shared/references/meta_analysis_protocol.md`
+
+Skill type: `execution-orchestrator`. Run after all phases complete. Output to chat using the `execution-orchestrator` format.
 
 ---
 

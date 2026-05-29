@@ -1,6 +1,6 @@
 ---
 name: research
-description: 'Multi-source research across code, discourse, and academic channels.'
+description: Runs multi-source research across GitHub, HN, Reddit, arXiv, and Semantic Scholar. Use when surveying a technical topic across multiple channels.
 alwaysApply: false
 category: orchestration
 tags:

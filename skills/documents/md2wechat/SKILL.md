@@ -623,6 +623,20 @@ A: Possible causes:
 1. Insufficient permissions - ensure account is verified
 2. Sensitive content - check article content
 3. Draft limit reached - check existing drafts
+4. **Content size out of limit (errcode=45002)** - article content exceeds WeChat API limit
+
+**Q: "content size out of limit" error (errcode=45002)**
+A: WeChat draft API has content limits:
+- **Characters**: < 20,000 characters (中文算1个字符)
+- **Size**: < 1 MB
+
+If you encounter this error:
+1. Shorten your article content
+2. Reduce unnecessary formatting (inline CSS adds size)
+3. Consider splitting into multiple articles
+4. Use simpler themes with less inline styling
+
+API mode generates more inline CSS which increases content size. For very long articles, consider manual editing or splitting.
 
 **Q: API rate limit exceeded**
 A: WeChat has API limits. Wait and retry:
@@ -712,6 +726,14 @@ bash skill/md2wechat/scripts/run.sh write --list
 
 # Write with creator style (interactive)
 bash skill/md2wechat/scripts/run.sh write
+
+# Write with specific style (via stdin/piped)
+echo "你的想法或内容" | bash skill/md2wechat/scripts/run.sh write --style dan-koe
+
+# Write with title and heredoc
+bash skill/md2wechat/scripts/run.sh write --style dan-koe --title "文章标题" <<EOF
+你的内容
+EOF
 
 # Write with specific style
 bash skill/md2wechat/scripts/run.sh write --style dan-koe

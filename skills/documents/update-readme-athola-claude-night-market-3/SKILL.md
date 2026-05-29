@@ -1,6 +1,6 @@
 ---
 name: update-readme
-description: 'Refresh README structure and content using repo context.'
+description: Refreshes README structure and content using repo context and exemplar research. Use when README needs a structural update after significant project changes.
 alwaysApply: false
 category: artifact-generation
 tags:

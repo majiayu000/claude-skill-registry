@@ -1,8 +1,11 @@
 ---
 name: ln-630-test-auditor
-description: Test suite audit coordinator (L2). Delegates to 5 workers (Business Logic, E2E, Value, Coverage, Isolation). Aggregates results, creates Linear task in Epic 0.
-allowed-tools: Read, Grep, Glob, Bash, mcp__Ref, mcp__context7, mcp__linear-server, Skill
+description: "Test suite audit coordinator. Delegates to 5 workers (Business Logic, E2E, Value, Coverage, Isolation). Aggregates results into docs/project/test_audit.md."
+allowed-tools: Read, Grep, Glob, Bash, mcp__Ref, mcp__context7, Skill
+license: MIT
 ---
+
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root.
 
 # Test Suite Auditor (L2 Coordinator)
 
@@ -16,7 +19,7 @@ Coordinates comprehensive test suite audit across 6 quality categories using 5 s
 - Identifies missing tests for critical business logic
 - Detects anti-patterns and isolation issues
 - Aggregates results into unified report
-- Creates single Linear task in Epic 0
+- Write report to `docs/project/test_audit.md` (file-based, no task creation)
 - Manual invocation by user; not part of Story pipeline
 
 ## Core Philosophy
@@ -54,16 +57,29 @@ Coordinates comprehensive test suite audit across 6 quality categories using 5 s
 
 **Actions:**
 1. Use MCP Ref/Context7 to research testing best practices for detected tech stack
-2. Load [../ln-350-story-test-planner/references/risk_based_testing_guide.md](../ln-350-story-test-planner/references/risk_based_testing_guide.md)
+2. Load [../shared/references/risk_based_testing_guide.md](../shared/references/risk_based_testing_guide.md)
 3. Build `contextStore` with:
    - Testing philosophy (E2E primary, Unit supplementary)
    - Usefulness Score formulas (Impact × Probability)
    - Anti-patterns catalog
    - Framework detection patterns
 
+**Add output_dir to contextStore:**
+```json
+{
+  "output_dir": "docs/project/.audit/ln-630/{YYYY-MM-DD}"
+}
+```
+
 **Output:** `contextStore` — shared context for all workers
 
 **Key Benefit:** Context gathered ONCE → passed to all workers → token-efficient
+
+### Phase 2.5: Prepare Output Directory
+
+```bash
+mkdir -p {output_dir}   # No deletion — date folders preserve history
+```
 
 ### Phase 3: Domain Discovery (NEW)
 
@@ -112,6 +128,19 @@ Coordinates comprehensive test suite audit across 6 quality categories using 5 s
 
 ### Phase 4: Delegate to Workers
 
+> **CRITICAL:** All delegations use Task tool with `subagent_type: "general-purpose"` for context isolation.
+
+**Prompt template:**
+```
+Task(description: "Test audit via ln-63X",
+     prompt: "Execute ln-63X-{worker}. Read skill from ln-63X-{worker}/SKILL.md. Context: {contextStore}",
+     subagent_type: "general-purpose")
+```
+
+**Anti-Patterns:**
+- ❌ Direct Skill tool invocation without Task wrapper
+- ❌ Any execution bypassing subagent context isolation
+
 #### Phase 4a: Global Workers (PARALLEL)
 
 **Global workers** scan entire test suite (not domain-aware):
@@ -121,12 +150,14 @@ Coordinates comprehensive test suite audit across 6 quality categories using 5 s
 | 1 | [ln-631-test-business-logic-auditor](../ln-631-test-business-logic-auditor/) | Business Logic Focus | Framework/Library tests (Prisma, Express, bcrypt, JWT, axios, React hooks) → REMOVE |
 | 2 | [ln-632-test-e2e-priority-auditor](../ln-632-test-e2e-priority-auditor/) | E2E Priority | E2E baseline (2/endpoint), Pyramid validation, Missing E2E tests |
 | 3 | [ln-633-test-value-auditor](../ln-633-test-value-auditor/) | Risk-Based Value | Usefulness Score = Impact × Probability<br>Decisions: ≥15 KEEP, 10-14 REVIEW, <10 REMOVE |
-| 5 | [ln-635-test-isolation-auditor](../ln-635-test-isolation-auditor/) | Isolation + Anti-Patterns | Isolation (6 categories), Determinism, Anti-Patterns (6 types) |
+| 5 | [ln-635-test-isolation-auditor](../ln-635-test-isolation-auditor/) | Isolation + Anti-Patterns | Isolation (6 categories), Determinism, Anti-Patterns (7 types) |
 
 **Invocation (4 workers in PARALLEL):**
 ```javascript
 FOR EACH worker IN [ln-631, ln-632, ln-633, ln-635]:
-  Skill(skill=worker, args=JSON.stringify(contextStore))
+  Task(description: "Test audit via " + worker,
+       prompt: "Execute " + worker + ". Read skill. Context: " + JSON.stringify(contextStore),
+       subagent_type: "general-purpose")
 ```
 
 #### Phase 4b: Domain-Aware Worker (PARALLEL per domain)
@@ -146,62 +177,101 @@ IF domain_mode == "domain-aware":
       domain_mode: "domain-aware",
       current_domain: { name: domain.name, path: domain.path }
     }
-    Skill(skill="ln-634-test-coverage-auditor", args=JSON.stringify(domain_context))
+    Task(description: "Test audit coverage " + domain.name + " via ln-634",
+         prompt: "Execute ln-634-test-coverage-auditor. Read skill. Context: " + JSON.stringify(domain_context),
+         subagent_type: "general-purpose")
 ELSE:
   // Fallback: invoke once for entire codebase (global mode)
-  Skill(skill="ln-634-test-coverage-auditor", args=JSON.stringify(contextStore))
+  Task(description: "Test audit coverage via ln-634",
+       prompt: "Execute ln-634-test-coverage-auditor. Read skill. Context: " + JSON.stringify(contextStore),
+       subagent_type: "general-purpose")
 ```
 
 **Parallelism strategy:**
 - Phase 4a: All 4 global workers run in PARALLEL
 - Phase 4b: All N domain-aware invocations run in PARALLEL
-- Example: 3 domains → 3 ln-374 invocations in single message
+- Example: 3 domains → 3 ln-634 invocations in single message
 
-**Each worker returns structured JSON:**
-```json
-{
-  "category": "Business Logic Focus",
-  "score": 7,
-  "total_issues": 12,
-  "findings": [
-    {
-      "severity": "MEDIUM",
-      "test_file": "auth.test.ts",
-      "test_name": "bcrypt hashes password",
-      "decision": "REMOVE",
-      "usefulness_score": 3,
-      "reason": "Tests library behavior, not OUR code",
-      "effort": "S"
-    }
-  ]
-}
+**Worker Output Contract (File-Based):**
+
+Workers write full report to `{output_dir}/{worker_id}.md` per `shared/templates/audit_worker_report_template.md`.
+
+Workers return **minimal summary** in-context (~50 tokens):
+```
+Report written: docs/project/.audit/ln-630/{YYYY-MM-DD}/631-business-logic.md
+Score: 7.5/10 | Issues: 5 (C:0 H:2 M:2 L:1)
 ```
 
-### Phase 5: Aggregate Results
+Coordinator extracts score/counts from return values. Full findings stay in files.
 
-**Goal:** Merge all worker results into unified Test Suite Audit Report with domain grouping
+**Unified Scoring Formula (all workers):**
+```
+penalty = (critical × 2.0) + (high × 1.0) + (medium × 0.5) + (low × 0.2)
+score = max(0, 10 - penalty)
+```
+
+**Domain-aware workers** add optional fields: `domain`, `scan_path`
+
+### Phase 5: Aggregate Results (File-Based)
+
+**Goal:** Merge all worker results into unified Test Suite Audit Report
+
+Workers wrote reports to `{output_dir}/` and returned minimal summaries. Aggregation uses **return values for numbers** and **file reads for findings tables**.
+
+**Aggregation Algorithm:**
+```
+1. Parse scores/counts from worker return strings (already in context)
+2. Read worker report files from {output_dir}/ for findings tables
+3. Sum severity counts across all workers
+4. Calculate Overall Score: average of 5 worker scores
+5. Sort findings by severity: CRITICAL → HIGH → MEDIUM → LOW
+6. Group findings by category for report sections
+```
 
 **Actions:**
-1. **Collect results** from all workers (global + domain-aware)
-2. **Global workers (ln-371, ln-372, ln-373, ln-375)** → merge findings (as before)
-3. **Domain-aware worker (ln-374)** → group by domain.name:
-   - Aggregate coverage gaps per domain
-   - Build Domain Coverage Summary table
-4. **Merge findings** into decision categories:
-   - **Tests to REMOVE** (Usefulness Score <10)
-   - **Tests to REVIEW** (Usefulness Score 10-14)
-   - **Tests to KEEP** (Usefulness Score ≥15)
-   - **Missing Tests** (Priority/Justification) — grouped by domain if domain_mode="domain-aware"
-   - **Anti-Patterns Found** (counts + examples)
-5. **Calculate compliance scores** (6 categories, each /10)
-6. **Build decision summary** (KEEP/REVIEW/REMOVE counts)
-7. **Generate Executive Summary** (2-3 sentences)
-8. **Create Linear task** in Epic 0 with full report (see Output Format below)
-9. **Return summary** to user
+1. **Parse return values** from all workers for scores/counts
+2. **Read worker files** from `{output_dir}/` for detailed findings
+3. **Sum severity counts** across all workers
+4. **Calculate overall score** = average of 5 worker scores
+5. **Domain-aware worker (ln-634)** → group by domain.name if domain_mode="domain-aware"
+6. **Generate Executive Summary** (2-3 sentences)
+7. **Write report** to `docs/project/test_audit.md`
+8. **Return summary** to user
 
 **Findings grouping:**
 - Categories 1-3, 5-6 (Business Logic, E2E, Value, Isolation, Anti-Patterns) → single tables (global)
 - Category 4 (Coverage Gaps) → subtables per domain (if domain_mode="domain-aware")
+
+**Context Validation (Post-Filter):**
+
+**MANDATORY READ:** Load `shared/references/context_validation.md`
+
+Apply Rules 1, 5 + test-specific filters to merged findings:
+```
+FOR EACH finding WHERE severity IN (HIGH, MEDIUM):
+  # Rule 1: ADR/Planned Override
+  IF finding matches ADR → advisory "[Planned: ADR-XXX]"
+
+  # Rule 5: Locality/Single-Consumer
+  IF "extract shared helper" suggestion AND consumer_count == 1 → advisory
+
+  # Test-specific: Custom wrapper detection
+  IF "framework test" finding (ln-631) AND test imports custom wrapper class:
+    → advisory (tests custom logic, not framework)
+
+  # Test-specific: Setup/fixture code
+  IF "The Liar" finding (ln-635) AND file is conftest/fixture/setup:
+    → advisory (setup code, no assertions expected)
+
+  # Test-specific: Parameterized test
+  IF "The Giant" finding (ln-635) AND test is parameterized/data-driven:
+    → severity -= 1 (size from data, not complexity)
+
+Downgraded findings → "Advisory Findings" section in report.
+Recalculate scores excluding advisory findings from penalty.
+```
+
+**Exempt:** Coverage gap CRITICAL findings (ln-634), risk-value scores (ln-633).
 
 ## Output Format
 
@@ -211,26 +281,26 @@ ELSE:
 ### Executive Summary
 [2-3 sentences: test suite health, major issues, key recommendations]
 
-### Test Count by Decision
+### Severity Summary
 
-| Decision | Count | % |
-|----------|-------|---|
-| KEEP | X | X% |
-| REVIEW | X | X% |
-| REMOVE | X | X% |
-| **Total** | **X** | |
+| Severity | Count |
+|----------|-------|
+| Critical | X |
+| High | X |
+| Medium | X |
+| Low | X |
+| **Total** | **X** |
 
 ### Compliance Score
 
 | Category | Score | Notes |
 |----------|-------|-------|
 | Business Logic Focus | X/10 | X framework tests found |
-| E2E Priority | X/10 | X E2E, X Integration, X Unit |
-| Risk-Based Value | X/10 | X tests with Priority <10 |
+| E2E Critical Coverage | X/10 | X critical paths missing E2E |
+| Risk-Based Value | X/10 | X low-value tests |
 | Coverage Gaps | X/10 | X critical paths untested |
-| Test Isolation | X/10 | X isolation issues |
-| Anti-Patterns | X/10 | X anti-patterns found |
-| **Overall** | **X/10** | |
+| Isolation & Anti-Patterns | X/10 | X isolation + anti-pattern issues |
+| **Overall** | **X/10** | Average of 5 categories |
 
 ### Domain Coverage Summary (NEW - if domain_mode="domain-aware")
 
@@ -243,16 +313,15 @@ ELSE:
 
 ### Audit Findings
 
-| Severity | Location | Issue | Violated Principle | Recommendation | Effort |
-|----------|----------|-------|-------------------|----------------|--------|
-| **CRITICAL** | - | Missing E2E for payment with discount | #3: E2E for critical paths only (Money Priority 25) | Add E2E test: successful payment + discount edge cases | M |
-| **HIGH** | auth.test.ts:45 | Test "bcrypt hashes password" (Score 3) | #1: Test business logic, not frameworks | Delete — bcrypt already tested by maintainers | S |
-| **HIGH** | db.test.ts:78 | Test "Prisma findMany returns array" (Score 4) | #1: Test business logic, not frameworks | Delete — Prisma ORM already tested | S |
-| **HIGH** | - | Missing Unit test for tax calculation edge cases | #5: Every test must justify existence (Impact 5 × Probability 4 = 20) | Add Unit tests for country-specific tax rules | M |
-| **MEDIUM** | utils.test.ts:23 | Test "validateEmail returns true" (Score 12) | #4: Usefulness over quantity | Review: if E2E login covers → DELETE; else KEEP | S |
-| **MEDIUM** | order.test.ts:200-350 | Giant test (>100 lines) | Anti-pattern: The Giant | Split into focused tests (one scenario per test) | M |
-| **MEDIUM** | test.ts:45 | No assertions in test | Anti-pattern: The Liar | Add specific assertions or delete test | S |
-| **LOW** | auth.test.ts | Only positive login scenarios | Anti-pattern: Happy Path Only | Add negative tests (invalid credentials, expired tokens) | M |
+| Severity | Location | Issue | Principle | Recommendation | Effort |
+|----------|----------|-------|-----------|----------------|--------|
+| **CRITICAL** | routes/payment.ts:45 | Missing E2E for payment processing (Priority 25) | E2E Critical Coverage / Money Flow | Add E2E: successful payment + discount edge cases | M |
+| **HIGH** | auth.test.ts:45-52 | Test 'bcrypt hashes password' validates library behavior | Business Logic Focus / Crypto Testing | Delete — bcrypt already tested by maintainers | S |
+| **HIGH** | db.test.ts:78-85 | Test 'Prisma findMany returns array' validates ORM | Business Logic Focus / ORM Testing | Delete — Prisma already tested | S |
+| **HIGH** | user.test.ts:45 | Anti-pattern 'The Liar' — no assertions | Anti-Patterns / The Liar | Add specific assertions or delete test | S |
+| **MEDIUM** | utils.test.ts:23-27 | Test 'validateEmail' has Usefulness Score 4 | Risk-Based Value / Low Priority | Delete — likely covered by E2E registration | S |
+| **MEDIUM** | order.test.ts:200-350 | Anti-pattern 'The Giant' — 150 lines | Anti-Patterns / The Giant | Split into focused tests | M |
+| **LOW** | payment.test.ts | Anti-pattern 'Happy Path Only' — no error tests | Anti-Patterns / Happy Path | Add negative tests | M |
 
 ### Coverage Gaps by Domain (if domain_mode="domain-aware")
 
@@ -287,7 +356,7 @@ Each worker:
 
 ## Critical Rules
 
-- **Two-stage delegation:** Global workers (4) + Domain-aware worker (ln-374 × N domains)
+- **Two-stage delegation:** Global workers (4) + Domain-aware worker (ln-634 × N domains)
 - **Domain discovery:** Auto-detect domains from folder structure; fallback to global mode if <2 domains
 - **Parallel execution:** All workers (global + domain-aware) run in PARALLEL
 - **Domain-grouped output:** Coverage Gaps findings grouped by domain (if domain_mode="domain-aware")
@@ -306,7 +375,7 @@ Each worker:
 - Domain discovery completed (domain_mode determined)
 - contextStore built with test metadata + domain info
 - Global workers (4) invoked in PARALLEL
-- Domain-aware worker (ln-374) invoked per domain in PARALLEL
+- Domain-aware worker (ln-634) invoked per domain in PARALLEL
 - All workers completed successfully (or reported errors)
 - Results aggregated with domain grouping (if domain_mode="domain-aware")
 - Domain Coverage Summary built (if domain_mode="domain-aware")
@@ -314,8 +383,17 @@ Each worker:
 - Keep/Remove/Refactor decisions for each test
 - Missing tests identified with Priority (grouped by domain if applicable)
 - Anti-patterns catalogued
-- Linear task created in Epic 0 with full report
+- Report written to `docs/project/test_audit.md`
 - Summary returned to user
+
+## Reference Files
+
+- **Orchestrator lifecycle:** `shared/references/orchestrator_pattern.md`
+- **Risk-based testing methodology:** `shared/references/risk_based_testing_guide.md`
+- **Task delegation pattern:** `shared/references/task_delegation_pattern.md`
+- **Audit scoring formula:** `shared/references/audit_scoring.md`
+- **Audit output schema:** `shared/references/audit_output_schema.md`
+- **MANDATORY READ:** `shared/references/research_tool_fallback.md`
 
 ## Related Skills
 
@@ -327,7 +405,7 @@ Each worker:
   - [ln-635-test-isolation-auditor](../ln-635-test-isolation-auditor/) — Isolation + Anti-Patterns
 
 - **Reference:**
-  - [../ln-350-story-test-planner](../ln-350-story-test-planner/) — Risk-Based Testing Guide
+  - [../shared/references/risk_based_testing_guide.md](../shared/references/risk_based_testing_guide.md) — Risk-Based Testing Guide
   - [../ln-620-codebase-auditor](../ln-620-codebase-auditor/) — Codebase audit coordinator (similar pattern)
 
 ---

@@ -1,7 +1,10 @@
 ---
 name: ln-641-pattern-analyzer
-description: L3 Worker. Analyzes single pattern implementation, calculates 4 scores (compliance, completeness, quality, implementation), identifies gaps and issues. Usually invoked by ln-640, can also analyze a specific pattern on user request.
+description: "Analyzes single pattern implementation, calculates compliance/completeness/quality scores, identifies gaps. Use when auditing a specific pattern."
+license: MIT
 ---
+
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/{path}`.
 
 # Pattern Analyzer
 
@@ -15,164 +18,150 @@ L3 Worker that analyzes a single architectural pattern against best practices an
 - Identify gaps and issues with severity and effort estimates
 - Return structured analysis result to coordinator
 
+**Out of Scope** (owned by ln-624-code-quality-auditor):
+- Cyclomatic complexity thresholds (>10, >20)
+- Method/class length thresholds (>50, >100, >500 lines)
+- Quality Score focuses on pattern-specific quality (SOLID within pattern, pattern-level smells), not generic code metrics
+
 ## Input (from ln-640 coordinator)
+
 ```
 - pattern: string          # Pattern name (e.g., "Job Processing")
 - locations: string[]      # Known file paths/directories
-- adr_reference: string    # Path to related ADR (if exists)
 - bestPractices: object    # Best practices from MCP Ref/Context7/WebSearch
+- output_dir: string       # e.g., "docs/project/.audit/ln-640/{YYYY-MM-DD}"
 ```
+
+> **Note:** All patterns arrive pre-verified (passed ln-640 Phase 1d applicability gate with >= 2 structural components confirmed).
 
 ## Workflow
 
+**MANDATORY READ:** Load `shared/references/two_layer_detection.md` for detection methodology.
+
 ### Phase 1: Find Implementations
+
+**MANDATORY READ:** Load `../ln-640-pattern-evolution-auditor/references/pattern_library.md` — use "Pattern Detection (Grep)" table for detection keywords per pattern.
+
 ```
-# Use locations from coordinator + additional search
-files = []
-files.append(Glob(locations))
-
-# Expand search using common_patterns.md grep patterns
-IF pattern == "Job Processing":
-  files.append(Grep("Queue|Worker|Job|Bull|BullMQ", "**/*.{ts,js,py}"))
-IF pattern == "Event-Driven":
-  files.append(Grep("EventEmitter|publish|subscribe|on\\(", "**/*.{ts,js,py}"))
-# ... etc
-
-deduplicate(files)
+IF pattern.source == "adaptive":
+  # Pattern discovered by coordinator Phase 1b — evidence already provided
+  files = pattern.evidence.files
+  SKIP detection keyword search (already done in Phase 1b)
+ELSE:
+  # Baseline pattern — use library detection keywords
+  files = Glob(locations)
+  additional = Grep("{pattern_keywords}", "**/*.{ts,js,py,rb,cs,java}")
+  files = deduplicate(files + additional)
 ```
 
 ### Phase 2: Read and Analyze Code
+
 ```
 FOR EACH file IN files (limit: 10 key files):
   Read(file)
-  Extract:
-    - Components implemented
-    - Patterns used
-    - Error handling approach
-    - Logging/observability
-    - Tests coverage
+  Extract: components, patterns, error handling, logging, tests
 ```
 
 ### Phase 3: Calculate 4 Scores
 
-**Compliance Score (0-100):**
-```
-score = 0
-IF follows industry standard (MADR, Nygard): +30
-IF has ADR documentation: +20
-IF consistent naming conventions: +15
-IF follows tech stack conventions: +15
-IF no anti-patterns detected: +20
-```
+**MANDATORY READ:** Load `../ln-640-pattern-evolution-auditor/references/scoring_rules.md` — follow Detection column for each criterion.
 
-**Completeness Score (0-100):**
-```
-score = 0
-IF all required components present: +40
-IF error handling implemented: +20
-IF logging/observability: +15
-IF tests exist: +15
-IF documentation complete: +10
-```
+| Score | Source in scoring_rules.md | Max |
+|-------|---------------------------|-----|
+| Compliance | "Compliance Score" section — industry standard, naming, conventions, anti-patterns | 100 |
+| Completeness | "Completeness Score" section — required components table (per pattern), error handling, tests | 100 |
+| Quality | "Quality Score" section — method length, complexity, code smells, SOLID | 100 |
+| Implementation | "Implementation Score" section — compiles, production usage, integration, monitoring | 100 |
 
-**Quality Score (0-100):**
-```
-score = 0
-IF code readable (short methods, clear names): +25
-IF maintainable (low complexity): +25
-IF no code smells: +20
-IF follows SOLID: +15
-IF performance optimized: +15
-```
-
-**Implementation Score (0-100):**
-```
-score = 0
-IF code exists and compiles: +30
-IF used in production paths (not dead code): +25
-IF no dead/unused implementations: +15
-IF integrated with other patterns: +15
-IF monitored/observable: +15
-```
+**Scoring process for each criterion:**
+1. Run the Detection Grep/Glob from scoring_rules.md
+2. If matches found → add points per criterion
+3. If anti-pattern/smell detected → subtract per deduction table
+4. Document evidence: file path + line for each score justification
 
 ### Phase 4: Identify Issues and Gaps
+
 ```
-issues = []
-FOR EACH bestPractice IN bestPractices:
-  IF NOT implemented:
-    issues.append({
-      severity: "HIGH" | "MEDIUM" | "LOW",
-      category: "compliance" | "completeness" | "quality" | "implementation",
-      issue: description,
-      suggestion: how to fix,
-      effort: estimate ("2h", "4h", "1d", "3d")
-    })
+FOR EACH bestPractice NOT implemented:
+  issues.append({
+    severity: "HIGH" | "MEDIUM" | "LOW",
+    category: "compliance" | "completeness" | "quality" | "implementation",
+    issue: description,
+    suggestion: how to fix,
+    effort: "S" | "M" | "L"
+  })
+
+# Layer 2 context check (MANDATORY):
+# Deviation documented in code comment or ADR? → downgrade to LOW
+# Pattern intentionally simplified for project scale? → skip
+
 
 gaps = {
-  undocumented: aspects not in ADR,
-  unimplemented: ADR decisions not in code
+  missingComponents: required components not found in code,
+  inconsistencies: conflicting or incomplete implementations
 }
-
-recommendations = [
-  "Create ADR for X",
-  "Update existing ADR with Y",
-  "Refactor Z to match pattern"
-]
 ```
 
-### Phase 5: Return Result
-```json
-{
-  "pattern": "Job Processing",
-  "scores": {
-    "compliance": 72,
-    "completeness": 85,
-    "quality": 68,
-    "implementation": 90
-  },
-  "codeReferences": [
-    "src/jobs/processor.ts",
-    "src/workers/base.ts"
-  ],
-  "issues": [
-    {
-      "severity": "HIGH",
-      "category": "quality",
-      "issue": "No dead letter queue",
-      "suggestion": "Add Bull DLQ configuration",
-      "effort": "4h"
-    }
-  ],
-  "gaps": {
-    "undocumented": ["Error recovery strategy"],
-    "unimplemented": ["Job prioritization from ADR"]
-  },
-  "recommendations": [
-    "Create ADR for dead letter queue strategy"
-  ]
-}
+### Phase 5: Calculate Score
+
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/references/audit_scoring.md`.
+
+**Diagnostic sub-scores** (0-100 each) are calculated separately and reported in AUDIT-META for diagnostic purposes only:
+- compliance, completeness, quality, implementation
+
+### Phase 6: Write Report
+
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md` and `shared/templates/audit_worker_report_template.md`.
+
+```
+# Build pattern name slug: "Job Processing" → "job-processing"
+slug = pattern.name.lower().replace(" ", "-")
+
+# Build markdown report in memory with:
+# - AUDIT-META (extended: score [penalty-based] + diagnostic score_compliance/completeness/quality/implementation)
+# - Checks table (compliance_check, completeness_check, quality_check, implementation_check)
+# - Findings table (issues sorted by severity)
+# - DATA-EXTENDED: {pattern, codeReferences, gaps, recommendations}
+
+Write to {output_dir}/641-pattern-{slug}.md (atomic single Write call)
+```
+
+### Phase 7: Return Summary
+
+```
+Report written: docs/project/.audit/ln-640/{YYYY-MM-DD}/641-pattern-job-processing.md
+Score: 7.9/10 (C:72 K:85 Q:68 I:90) | Issues: 3 (H:1 M:2 L:0)
 ```
 
 ## Critical Rules
+
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
+
 - **One pattern only:** Analyze only the pattern passed by coordinator
 - **Read before score:** Never score without reading actual code
-- **Effort estimates:** Always provide realistic effort for each issue
-- **Best practices comparison:** Use bestPractices from coordinator, not assumptions
+- **Detection-based scoring:** Use Grep/Glob patterns from scoring_rules.md, not assumptions
+- **Effort estimates:** Always provide S/M/L for each issue
 - **Code references:** Always include file paths for findings
 
 ## Definition of Done
-- All implementations found via Glob/Grep
-- Key files read and analyzed
-- 4 scores calculated with justification
-- Issues identified with severity, category, suggestion, effort
-- Gaps documented (undocumented, unimplemented)
-- Recommendations provided
-- Structured result returned to coordinator
+
+**MANDATORY READ:** Load `shared/references/audit_worker_core_contract.md`.
+
+- [ ] All implementations found via Glob/Grep (using pattern_library.md keywords or adaptive evidence)
+- [ ] Key files read and analyzed
+- [ ] 4 scores calculated using scoring_rules.md Detection patterns
+- [ ] Issues identified with severity, category, suggestion, effort
+- [ ] Gaps documented (missing components, inconsistencies)
+- [ ] Recommendations provided
+- [ ] Report written to `{output_dir}/641-pattern-{slug}.md` (atomic single Write call)
+- [ ] Summary returned to coordinator
 
 ## Reference Files
+
 - Scoring rules: `../ln-640-pattern-evolution-auditor/references/scoring_rules.md`
-- Common patterns: `../ln-640-pattern-evolution-auditor/references/common_patterns.md`
+- Pattern library: `../ln-640-pattern-evolution-auditor/references/pattern_library.md`
+- **MANDATORY READ:** `shared/references/research_tool_fallback.md`
 
 ---
-**Version:** 1.0.0
-**Last Updated:** 2026-01-29
+**Version:** 2.0.0
+**Last Updated:** 2026-02-08

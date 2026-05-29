@@ -1,0 +1,17 @@
+{
+  "name": "scout-ext",
+  "repo": "duc01226/EasyPlatform",
+  "path": ".claude/skills/scout-ext/SKILL.md",
+  "github_branch": "main",
+  "category": "orchestration",
+  "source": "github.com/duc01226/EasyPlatform",
+  "dir_name": "scout-ext",
+  "downloaded_at": "2026-03-22T07:50:16.289069Z",
+  "author": "duc01226",
+  "source_url": "https://github.com/duc01226/EasyPlatform/blob/main/.claude/skills/scout-ext/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/duc01226/EasyPlatform/blob/main/.claude/skills/scout-ext/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

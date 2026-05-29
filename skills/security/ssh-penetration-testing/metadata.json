@@ -1,11 +1,11 @@
 {
   "name": "ssh-penetration-testing",
   "repo": "zebbern/claude-code-guide",
+  "path": "skills/ssh-penetration-testing/SKILL.md",
+  "source": "github.com/zebbern/claude-code-guide",
+  "downloaded_at": "2026-01-22T01:00:55.147227Z",
+  "dir_name": "ssh-penetration-testing",
   "category": "security",
-  "description": "This skill should be used when the user asks to \"pentest SSH services\", \"enumerate SSH configurations\", \"brute force SSH credentials\", \"exploit SSH vulnerabilities\", \"perform SSH tunneling\", or \"audit",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:55:40.862281Z",
   "github_path": "skills/ssh-penetration-testing",
-  "github_branch": "main",
-  "dir_name": "ssh-penetration-testing"
+  "github_branch": "main"
 }

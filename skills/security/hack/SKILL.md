@@ -16,6 +16,19 @@ triggers:
 metadata:
   short-description: Containerized security auditing and ethical hacking
   requires: docker
+provides:
+  - security-scan
+  - docker-isolation
+composes:
+  - memory
+  - skills-broadcast
+  - scheduler
+  - task-monitor
+
+taxonomy:
+  - security
+  - corruption
+  - stealth
 ---
 
 # Hack Skill
@@ -23,6 +36,7 @@ metadata:
 **Containerized security auditing and ethical hacking tools.**
 
 All security operations run in **isolated Docker containers** - no tools execute on the host system. This ensures:
+
 - Isolation from host filesystem and network
 - Reproducible scanning environment
 - No risk of tool vulnerabilities affecting host
@@ -65,7 +79,14 @@ All security operations run in **isolated Docker containers** - no tools execute
 
 # Filter by severity
 ./run.sh audit /path/to/code --severity high
+
+# Use threat profile for deeper audit
+./run.sh audit /path/to/code --profile state-actor
 ```
+
+### Hybrid Correlation
+
+The skill automatically correlates **DAST** (Nuclei/Nmap) findings with **SAST** (Semgrep/Bandit) origins via `correlation.py`. When both tools verify a vulnerability class (e.g., SQL Injection), the confidence is boosted to **VERIFIED** in the reports.
 
 ### Software Composition Analysis (SCA)
 
@@ -91,6 +112,27 @@ All security operations run in **isolated Docker containers** - no tools execute
 
 # Interactive shell in isolated environment
 ./run.sh exploit --target 192.168.1.50 --env kali --interactive
+
+# Novel Iterative Exploitation (Chaos Mode)
+# Enforces mandatory research phase and iterative feedback loop with novel payloads
+./run.sh exploit --target 192.168.1.50 --chaos --max-retries 5
+```
+
+### Threat Profiles
+
+Use `--profile` to adjust scanning intensity and stealth:
+
+| Profile           | Strategy       | Nmap Timing | Use Case                |
+| ----------------- | -------------- | ----------- | ----------------------- |
+| `script-kiddie`   | Loud & Fast    | `-T4`       | Quick baseline          |
+| `hobbyist`        | Standard       | `-T3`       | General audit (Default) |
+| `organized-crime` | Stealthy       | `-T2`       | Stealth testing         |
+| `state-actor`     | Expert Stealth | `-T1`       | Depth & evasiveness     |
+
+Example:
+
+```bash
+./run.sh scan 10.0.0.5 --profile state-actor
 ```
 
 ### Knowledge Base & Research
@@ -104,6 +146,9 @@ All security operations run in **isolated Docker containers** - no tools execute
 
 # Deep research via dogpile
 ./run.sh research "buffer overflow mitigation techniques"
+
+# Update exploit feeds (CVE monitoring)
+./run.sh update-exploits --source github
 ```
 
 ## Architecture
@@ -123,24 +168,28 @@ All security operations run in **isolated Docker containers** - no tools execute
 ## Red Team / Blue Team Usage
 
 ### Red Team (Attack)
+
 - `scan` - Discover open ports and services
 - `audit` - Find vulnerabilities in target code
 - `exploit` - Execute PoC in isolated environment
 - `learn --source github` - Find CVE exploits
 - `prove --negate` - Find counterexamples to security claims
 
-### Blue Team (Defense)
-- `audit` - Find vulnerabilities before attackers
-- `sca` - Identify vulnerable dependencies
-- `prove` - Formally verify security properties
-- `research` - Study attack techniques to defend against
+### Threat Intelligence
+
+- `update-exploits` - Monitor latest CVEs and exploit feeds
+- `research` - Trigger mandatory research phase before exploits
+- `chaos` - Generate novel/insane exploit ideas via Codex
+- `task-monitor` - Dynamic progress tracking for all sessions
 
 ## Memory Integration
 
 The hack skill is **deeply integrated** with the memory skill - the brain of the entire project.
 
 ### Automatic Memory Recall
+
 All scanning and audit commands automatically query memory for relevant prior knowledge before execution:
+
 - Previous scanning techniques that worked
 - Known vulnerabilities and their mitigations
 - Exploit patterns and defenses
@@ -154,6 +203,7 @@ All scanning and audit commands automatically query memory for relevant prior kn
 ```
 
 ### Explicit Memory Commands
+
 ```bash
 # Store security knowledge
 ./run.sh remember "Use nmap -sV for service detection" --title "nmap tips"
@@ -165,6 +215,7 @@ All scanning and audit commands automatically query memory for relevant prior kn
 ```
 
 ### Knowledge Flow
+
 ```
 +----------------+     +---------------+     +------------------+
 | hack skill     | --> | memory skill  | --> | Future Sessions  |
@@ -182,24 +233,24 @@ The hack skill **delegates** to sibling skills rather than duplicating functiona
 
 ### Core Integrations (Direct Commands)
 
-| Skill | Command | Purpose |
-|-------|---------|---------|
-| `memory` | (automatic) | Recall prior exploits/solutions before every operation |
-| `anvil` | `hack harden` | Thunderdome multi-agent red teaming |
-| `ops-docker` | `hack docker-cleanup` | Container pruning and management |
-| `treesitter` | `hack symbols` | Parse code structure before auditing |
-| `taxonomy` | `hack classify` | Tag findings with bridge tags (Loyalty, Fragility, etc.) |
-| `task-monitor` | (automatic) | Track long-running scan progress |
+| Skill          | Command               | Purpose                                                  |
+| -------------- | --------------------- | -------------------------------------------------------- |
+| `memory`       | (automatic)           | Recall prior exploits/solutions before every operation   |
+| `anvil`        | `hack harden`         | Thunderdome multi-agent red teaming                      |
+| `ops-docker`   | `hack docker-cleanup` | Container pruning and management                         |
+| `treesitter`   | `hack symbols`        | Parse code structure before auditing                     |
+| `taxonomy`     | `hack classify`       | Tag findings with bridge tags (Loyalty, Fragility, etc.) |
+| `task-monitor` | (automatic)           | Track long-running scan progress                         |
 
 ### Research Integrations (via `hack research`)
 
-| Skill | Usage |
-|-------|-------|
-| `dogpile` | Deep multi-source research |
-| `arxiv` | Academic security papers |
-| `perplexity` | Real-time threat intelligence |
-| `lean4-prove` | Formal security verification |
-| `learn` | Knowledge extraction & storage |
+| Skill         | Usage                          |
+| ------------- | ------------------------------ |
+| `dogpile`     | Deep multi-source research     |
+| `arxiv`       | Academic security papers       |
+| `perplexity`  | Real-time threat intelligence  |
+| `lean4-prove` | Formal security verification   |
+| `learn`       | Knowledge extraction & storage |
 
 ### Skill Delegation Examples
 
@@ -227,6 +278,7 @@ The hack skill **delegates** to sibling skills rather than duplicating functiona
 ## Example Workflows
 
 ### Vulnerability Assessment
+
 ```bash
 # 1. Scan network
 ./run.sh scan 192.168.1.0/24 --scan-type basic
@@ -239,6 +291,7 @@ The hack skill **delegates** to sibling skills rather than duplicating functiona
 ```
 
 ### Exploit Development
+
 ```bash
 # 1. Research the vulnerability
 ./run.sh learn --source github --query "CVE-2024-XXXX"

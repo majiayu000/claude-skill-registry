@@ -1,0 +1,16 @@
+{
+  "name": "codex",
+  "repo": "johnlindquist/script-kit-next",
+  "path": ".opencode/skill/codex/SKILL.md",
+  "category": "agent",
+  "source": "github.com/johnlindquist/script-kit-next",
+  "dir_name": "codex-johnlindquist-script-kit-next-2",
+  "downloaded_at": "2026-02-22T07:42:39.138072Z",
+  "author": "johnlindquist",
+  "source_url": "https://github.com/johnlindquist/script-kit-next/blob/main/.opencode/skill/codex/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/johnlindquist/script-kit-next/blob/main/.opencode/skill/codex/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

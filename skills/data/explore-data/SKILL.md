@@ -12,356 +12,351 @@ allowed-tools:
 
 # Exploring Data in Bauplan
 
-This skill is for exploring and understanding data stored in a Bauplan lakehouse using the Bauplan Python SDK. It is intended for analysis, validation, and data exploration. It must not be used to mutate data or run pipelines.
+Explore and understand data stored in a Bauplan lakehouse using the Python SDK. This skill is read-only. It must not create tables, import data, run pipelines, or merge branches.
 
-The Python SDK is preferred over the CLI for exploration because it can return richer metadata objects and can export larger query results to files instead of truncating output in the terminal.
+If the user asks for any write operation, stop and suggest switching to a write-capable skill (data-pipeline or safe-ingestion).
 
-Create a temporary folder in the project called `data-exploration` in which you can create a Python file named `data_explorer.py` and use that to iterate on the code to explore the data.
+## Before You Start
 
-## Scope and Safety Guarantees
+Ask the user which branch or ref to explore. All reads must be scoped to an explicit ref. Never rely on implicit defaults.
 
-This skill is read-only by construction.
+## Required Deliverables
 
-Allowed:
+Every exploration MUST produce a `summary.md` file in the project root. This file is written in Phase 4. If you reach the end of Phase 3, you MUST proceed to Phase 4 and write `summary.md`. Do not end the conversation after Phase 3. The exploration is incomplete without `summary.md`.
 
-* List namespaces and tables
-* Inspect table schemas and metadata
-* Preview rows
-* Run ad-hoc SELECT queries, including JOINS 
-* Compute basic stats and distributions
-* Export query results to CSV, Parquet, or JSON for offline inspection
+## Phased Execution (Critical)
 
-Not allowed:
+This skill runs in four phases. Each phase is a separate bash execution of `data_explorer.py`. After each phase, **report findings in the chat** before proceeding to the next phase. The user must see incremental progress throughout the exploration.
 
-* Create or modify tables
-* Import data
-* Run pipelines
-* Merge branches
-* Any write or publish operation
+The phases are:
 
-If the user asks for any operation that writes data, stop and suggest switching to a write-capable skill (for example WAP or creating-bauplan-pipelines).
+| Phase | Name | Typical duration | Gate |
+|-------|------|-----------------|------|
+| 1 | Discovery | <30s | Report table list. Ask which tables to explore. |
+| 2 | Schema + Semantics | 1-2 min | Report schemas and table descriptions. Proceed automatically. |
+| 3 | Profiling + Anomalies | 1-2 min per table | Announce each table before profiling, report findings after. |
+| 4 | Joins + Summary | <1 min | Write `summary.md`. Present to user. |
 
+**Between every phase, post a chat message summarizing what was found.** Do not chain all phases into a single bash call.
 
-## Branch and Ref Context
+**Responsiveness rule (hard constraint):** Always post a chat message between consecutive bash calls. Never execute two bash calls back-to-back without a message to the user in between.
 
-All reads MUST be scoped to a ref (branch name or ref object, also optionally tag and namespace). 
+## Single Script, Iterative Execution
 
-In the Python SDK, most read APIs take `ref=` or `branch=`. ALWAYS make the ref explicit in code; NEVER rely on implicit defaults.
+All exploration code lives in one file: `data_explorer.py` in the project root. Overwrite this file at the start of each phase with the code for that phase. Each phase prints its findings to stdout. Do not create additional Python files or subdirectories.
 
-Before starting YOU MUST ask the user what branch(es) and ref(s) she intends to explore.
+## Setup Block
 
-The examples below use `ref="<ref_to_explore>"`.
-
-## Minimal Setup
-
-```python
-import bauplan
-
-client = bauplan.Client()
-ref = "<ref_to_explore>"  # branch name or ref object
-```
-
-The exact authentication mechanism depends on the user environment (profile vs API key), but `bauplan.Client()` is the entry point.
-
-## Typical Exploration Workflow
-
-1. Pick the branch or ref to explore.
-2. Discover namespaces and tables.
-3. Inspect schemas and metadata for candidate tables.
-4. Preview small samples.
-5. Run targeted profiling queries.
-6. (optional) Export larger results to files when needed.
-
-## Discover Namespaces
-
-```python
-import bauplan
-
-client = bauplan.Client()
-ref = "<ref_to_explore>"  # branch name or ref object
-namespaces = list(client.get_namespaces(ref=ref))
-```
-
-You can filter and limit if you want to keep results small.
-
-## Discover Tables
-
-```python
-import bauplan
-
-client = bauplan.Client()
-ref = "<ref_to_explore>"  # branch name or ref object
-tables_resp = client.get_tables(ref=ref, filter_by_namespace="bauplan")  # optional filter
-tables = list(client.get_tables(ref=ref, filter_by_namespace="bauplan"))
-```
-
-Use `filter_by_name` and `limit` when exploring large catalogs.
-
-## Inspect Table Schema and Metadata
-
-Use this to answer: does a table exist, what are the fields, how many records.
-
-```python
-import bauplan
-
-client = bauplan.Client()
-ref = "<ref_to_explore>"  # branch name or ref object
-exists = client.has_table(table="my_table", ref=ref)
-table = client.get_table(table="my_table", namespace="bauplan", ref=ref)
-num_records = table.records
-fields = [(c.name, c.type) for c in table.fields]
-```
-
-If you need raw Iceberg metadata for debugging, request it explicitly:
-
-```python
-import bauplan
-
-client = bauplan.Client()
-ref = "<ref_to_explore>"  # branch name or ref object
-table = client.get_table(table="my_table", namespace="bauplan", ref=ref, include_raw=True)
-raw_metadata = table.raw  # name may differ; inspect the returned object
-```
-
-`get_table` is the authoritative source for schema and core metadata on a given ref.
-
-## Preview Rows Safely
-
-Use queries with explicit column selection and a small LIMIT.
-
-```python
-import bauplan
-
-client = bauplan.Client()
-ref = "<ref_to_explore>"  # branch name or ref object
-q = """
-SELECT col1, col2, col3
-FROM bauplan.my_table
-LIMIT 10
-"""
-res = client.query(q, ref=ref, max_rows=10)
-```
-
-Use `max_rows` as an additional guardrail in the SDK.
-
-Rules:
-
-* Always use LIMIT and select explicit columns.
-* DO NOT EVER run unbounded queries.
-* ALWAYS AVOID wide scans when a filter can reduce data early.
-
-## Preview Rows as DataFrames
-Bauplan query method returns a class pyarrow.lib.Table. When useful, use DataFrame libraries like Pandas or Polars to facilitate visualization or manipulation of the tables:
-
-### Polars 
-Polars is the cleanest next step because it consumes Arrow zero-copy.
+Write the following setup once at the top of `data_explorer.py`. All subsequent examples assume this block exists.
 
 ```python
 import bauplan
 import polars as pl
+from datetime import datetime, timezone
 
 client = bauplan.Client()
-ref = "<ref_to_explore>"  # branch name or ref object
-q = """
-SELECT col1, col2, col3
-FROM bauplan.my_table
-LIMIT 10
-"""
-res = client.query(q, ref=ref, max_rows=10)
+ref = "<ref_to_explore>"  # branch name or commit hash — always explicit
+```
+
+---
+
+## Phase 1 — Discovery
+
+**Goal:** List all namespaces and tables available on the ref. Report them. Ask the user which tables to explore in depth.
+
+```python
+namespaces = list(client.get_namespaces(ref=ref))
+print("=== Namespaces ===")
+for ns in namespaces:
+    print(f"  {ns.namespace}")
+
+tables = list(client.get_tables(ref=ref))
+print("\n=== Tables ===")
+for t in tables:
+    print(f"  {t.namespace}.{t.name}")
+```
+
+**After execution:** Post the table list in the chat. Ask: "Which tables should I explore in depth? I can inspect all of them, or you can pick a subset." If the user selects a subset, only those tables proceed to Phase 2. If the user says "all," proceed with all tables.
+
+---
+
+## Phase 2 — Schema + Semantics
+
+**Goal:** For each selected table, inspect its schema, sample 20 rows, and produce a one-sentence description of its purpose and grain.
+
+### 2A. Schema and metadata
+
+```python
+table = client.get_table(table="my_table", namespace="bauplan", ref=ref)
+print(f"\n=== {table.namespace}.{table.name} ===")
+print(f"Records: {table.records}")
+for c in table.fields:
+    print(f"  {c.name}: {c.type}")
+```
+
+### 2B. Sample and semantics
+
+```python
+res = client.query("""
+    SELECT *
+    FROM bauplan.my_table
+    LIMIT 20
+""", ref=ref, max_rows=20)
 df = pl.from_arrow(res.to_arrow())
 print(df)
-
 ```
 
-### Arrow
-Useful when you only need schema or batches.
+From the schema and sample, produce a one-sentence description: what entity each row represents, what the grain is, and what the table likely feeds into. Print this description as part of the output.
+
+Example: `"bauplan.raw_ecommerce_events: one row per user interaction with a product, timestamped, grouped by session."`
+
+**After execution:** Post schemas and descriptions in the chat. Proceed to Phase 3 automatically.
+
+If more than 5 tables are selected, split Phase 2 into batches of 5 tables per bash call. Post findings after each batch.
+
+---
+
+## Phase 3 — Profiling + Anomalies
+
+**Goal:** Profile each selected table and detect anomalies. Process one table at a time. Announce each table before running queries, then report findings immediately after.
+
+### Execution rule (hard constraint)
+
+**Profile ONE table per bash execution. Do not loop over multiple tables in a single script run.**
+
+The sequence for each table is:
+
+1. **Chat message.** Tell the user which table you are about to profile and where you are in the list: `"Profiling bauplan.orders (3 of 7)..."`
+2. **Rewrite `data_explorer.py`** with queries for that single table only.
+3. **Run it.** One bash call, one table.
+4. **Chat message.** Report findings using the compact format below.
+5. **Move to the next table.** Go back to step 1.
+
+Do not combine multiple tables into one script. Do not use a for-loop over tables. Each bash call must target exactly one table. This ensures the user sees progress after every table.
+
+**Report format:**
+
+```
+📊 bauplan.orders (3/7)
+  Rows: 1,234,567
+  Time range: 2024-01-01 → 2024-12-31 (56 days stale)
+  Null flags: shipping_address (72% null)
+  Duplicate keys: none
+```
+
+If standard checks raise a flag, tell the user before running deep checks: `"→ shipping_address is 72% null. Running deep checks..."` Then report those results in a follow-up message.
+
+### Standard checks (always run)
+
+Combine row count, time range, and null rates into a **single query** per table. Phase 2 already collected the schema, so you know every column name. Generate the query dynamically.
 
 ```python
-import bauplan
-
-client = bauplan.Client()
-
-q = """
-SELECT col1, col2, col3
-FROM bauplan.my_table
-LIMIT 10
-"""
-res = client.query(q, ref=ref, max_rows=10)
-
-table = res.to_arrow()
-print(table.schema)
-print(table.num_rows)
-
+# One query covers row count, time range, and null rates for all columns.
+# Adjust column names based on the schema collected in Phase 2.
+client.query("""
+    SELECT
+        COUNT(*) AS row_count,
+        MIN(event_time) AS min_t,
+        MAX(event_time) AS max_t,
+        1.0 - CAST(COUNT(order_id) AS DOUBLE) / COUNT(*) AS null_rate_order_id,
+        1.0 - CAST(COUNT(customer_id) AS DOUBLE) / COUNT(*) AS null_rate_customer_id,
+        1.0 - CAST(COUNT(shipping_address) AS DOUBLE) / COUNT(*) AS null_rate_shipping_address
+    FROM bauplan.orders
+""", ref=ref, max_rows=1)
 ```
 
-### Pandas
-```python
+For every timestamp column, compare `MAX` to today. If the gap exceeds what the table's grain implies (e.g., an hourly event table whose latest row is 30 days old), flag the table as potentially stale. Print the gap in days.
 
-import bauplan
-import pandas 
+Flag any column where the null rate exceeds 50%.
 
-client = bauplan.Client()
-
-q = """
-SELECT col1, col2, col3
-FROM bauplan.my_table
-LIMIT 10
-"""
-res = client.query(q, ref=ref, max_rows=10)
-
-df = res.to_pandas() 
-print(df.head())
-```
-
-## Basic Profiling Queries
-
-Row count:
+**Candidate key duplicates** (second query). For columns whose names contain `_id` or that appear first in the schema, check for duplicates.
 
 ```python
-res = client.query("SELECT COUNT(*) AS n FROM bauplan.my_table", ref=ref, max_rows=1)
+client.query("""
+    SELECT order_id, COUNT(*) AS n
+    FROM bauplan.my_table
+    GROUP BY order_id
+    HAVING COUNT(*) > 1
+    LIMIT 10
+""", ref=ref, max_rows=10)
 ```
 
-Null rate:
+Report the count of duplicated keys and a few examples if any exist.
+
+That is two queries per table for standard checks.
+
+### Deep checks (opt-in)
+
+Run these when the standard checks raise a flag, or when the user explicitly requests a thorough inspection. Announce what triggered the deep check and which column you are investigating.
+
+**Cardinality surprises.** Compute distinct count for categorical columns (status, type, category) and identifiers (user_id, order_id). Flag if a categorical column has unexpectedly high cardinality or an identifier has unexpectedly low cardinality.
 
 ```python
-q = """
-SELECT
-  COUNT(*) AS total_rows,
-  COUNT(user_id) AS non_null_user_id
-FROM bauplan.my_table
-"""
-res = client.query(q, ref=ref, max_rows=1)
+client.query("""
+    SELECT
+        COUNT(DISTINCT status) AS distinct_status,
+        COUNT(DISTINCT user_id) AS distinct_user_id
+    FROM bauplan.my_table
+""", ref=ref, max_rows=1)
 ```
 
-Top values:
+**Value distribution for flagged columns.** When a column has a high null rate or unexpected cardinality, sample its values.
 
 ```python
-q = """
-SELECT status, COUNT(*) AS n
-FROM bauplan.my_table
-GROUP BY status
-ORDER BY n DESC
-LIMIT 20
-"""
-res = client.query(q, ref=ref, max_rows=20)
+client.query("""
+    SELECT status, COUNT(*) AS n
+    FROM bauplan.my_table
+    GROUP BY status
+    ORDER BY n DESC
+    LIMIT 20
+""", ref=ref, max_rows=20)
 ```
 
-Time range:
+**Type-value mismatches.** For columns whose names imply a specific format (email, url, phone, ip_address, zip_code), sample values and verify they match the expected pattern.
 
 ```python
-q = """
-SELECT MIN(event_time) AS min_t, MAX(event_time) AS max_t
-FROM bauplan.my_table
-"""
-res = client.query(q, ref=ref, max_rows=1)
+client.query("""
+    SELECT email
+    FROM bauplan.my_table
+    WHERE email IS NOT NULL
+    LIMIT 20
+""", ref=ref, max_rows=20)
 ```
 
-The SDK query API supports `ref` scoping and `max_rows`. ([docs.bauplanlabs.com][1])
+Inspect the sample. If values clearly violate the expected format, flag the column.
 
-## Export Larger Results to Files
+---
 
-When terminal output or in-memory objects are too limiting, export results to a file and inspect locally.
+## Phase 4 — Joins + Summary
 
-CSV export:
+**Goal:** Identify join candidates across tables, then write `summary.md`.
+
+### 4A. Join candidates
+
+After inspecting multiple tables, look for columns that serve as join keys.
+
+**Name matching.** Scan column names across all inspected tables. Columns with identical names or conventional foreign key patterns (e.g., `PULocationID` matching `LocationID`) are candidates.
+
+**Key overlap.** For each candidate pair, verify overlap.
 
 ```python
-client.query_to_csv_file(
-  path="results.csv",
-  query="SELECT * FROM bauplan.my_table WHERE event_date >= '2026-01-01'",
-  ref=ref,
-  max_rows=1_000_000,
-)
+client.query("""
+    SELECT COUNT(*) AS overlap
+    FROM (
+        SELECT DISTINCT user_id FROM bauplan.orders
+        INTERSECT
+        SELECT DISTINCT user_id FROM bauplan.users
+    )
+""", ref=ref, max_rows=1)
 ```
 
-Parquet export (preferred for large results):
+**Join cardinality.** Determine whether the relationship is one-to-one, one-to-many, or many-to-many.
 
 ```python
-client.query_to_parquet_file(
-  path="results.parquet",
-  query="SELECT * FROM bauplan.my_table WHERE event_date >= '2026-01-01'",
-  ref=ref,
-  max_rows=10_000_000,
-)
+client.query("""
+    SELECT
+        COUNT(*) AS total_rows,
+        COUNT(DISTINCT user_id) AS distinct_keys
+    FROM bauplan.orders
+""", ref=ref, max_rows=1)
 ```
 
-JSON/JSONL export:
+If `total_rows == distinct_keys`, the key is unique on that side.
 
-```python
-client.query_to_json_file(
-  path="results.jsonl",
-  query="SELECT * FROM bauplan.my_table LIMIT 10000",
-  file_format="jsonl",
-  ref=ref,
-  max_rows=10_000,
-)
+For each viable join, print: the two tables, the join columns, the overlap count, and the cardinality (e.g., "orders.user_id → users.user_id: 98% overlap, many-to-one").
+
+### 4B. Write summary.md
+
+Write `summary.md` in the project root. This is a required deliverable. Use the template below.
+
+```markdown
+# Data Exploration Summary
+
+**Ref:** <ref explored>
+**Date:** <timestamp>
+**Tables inspected:** <count>
+
+## Tables
+
+### <namespace>.<table_name>
+
+**Semantics:** <one-sentence description of purpose and grain>
+
+**Stats:**
+- Rows: <count>
+- Time range: <min> → <max> (<N days stale> or "fresh")
+
+**Schema (key columns):**
+| Column | Type |
+|--------|------|
+| col1   | type |
+| col2   | type |
+
+**Anomalies:**
+<List each flag from Phase 3. If none, state "No anomalies detected.">
+
+**Join candidates:**
+<List viable joins with overlap and cardinality. If none, state "No join candidates identified.">
+
+---
+
+(Repeat for each table.)
+
+## Cross-Table Observations
+
+<Any patterns that span multiple tables: shared keys, referential integrity gaps, schema inconsistencies, temporal misalignment between tables. If none, state "No cross-table observations.">
 ```
 
-These file-writing helpers exist specifically to handle larger result sets beyond what the CLI is comfortable with.
+Separate facts (derived from queries) from inferences (suggested by patterns). Label inferences explicitly.
 
-## Comparing Data Across Refs
+**After execution:** Present `summary.md` to the user. The exploration is complete only after this file is delivered.
 
-There is no “checkout” in Python. Instead, run the same operation twice with different `ref=` and compare.
+---
 
-Example: compare row counts:
+## Compare Across Refs
+
+When the user needs to compare branches, run the same query with different `ref=` values.
 
 ```python
 q = "SELECT COUNT(*) AS n FROM bauplan.my_table"
-
 n_main = client.query(q, ref="main", max_rows=1)
 n_dev = client.query(q, ref="<username>.<branch>", max_rows=1)
 ```
 
-Example: compare schemas:
+## Export Results to File
+
+Use CSV by default. Switch to Parquet when the result set exceeds ~1M rows.
 
 ```python
-t_main = client.get_table("my_table", namespace="bauplan", ref="main")
-t_dev  = client.get_table("my_table", namespace="bauplan", ref="<username>.<branch>")
+# CSV (default)
+client.query_to_csv_file(
+    path="results.csv",
+    query="SELECT col1, col2 FROM bauplan.my_table WHERE event_date >= '2026-01-01'",
+    ref=ref,
+    max_rows=1_000_000,
+)
 
-schema_main = [(c.name, c.type) for c in t_main.fields]
-schema_dev  = [(c.name, c.type) for c in t_dev.fields]
+# Parquet (large results only)
+client.query_to_parquet_file(
+    path="results.parquet",
+    query="SELECT col1, col2 FROM bauplan.my_table WHERE event_date >= '2026-01-01'",
+    ref=ref,
+    max_rows=10_000_000,
+)
 ```
 
-Never claim equality between branches without checking both schema and at least one data-level signal.
+## Query Safety Rules
 
-## Interpreting Results
+- Every SELECT must include a `LIMIT` clause.
+- Every SELECT must list columns explicitly. The only exception is `SELECT *` in Phase 2 (semantics step) where the goal is to see all columns in a small sample.
+- Use `max_rows` as an additional SDK-level guardrail.
+- Avoid wide scans when a filter can reduce data early.
 
-When reporting results:
+## Outputs
 
-* State the branch and table explicitly.
-* Distinguish facts from assumptions.
-* Do not infer business meaning unless the user asks.
-* Highlight anomalies clearly (unexpected nulls, empty tables, schema drift).
-* Avoid speculation. If data is insufficient, say so.
-* Avoid business interpretation unless the user explicitly asked for it.
+The exploration produces two artifacts:
 
+1. **`data_explorer.py`** — the exploration script in its final state.
+2. **`summary.md`** — structured summary of all findings, written in Phase 4.
 
-
-## When to Stop Exploration
-
-Stop and ask for confirmation if:
-
-* The user’s next step implies writing data.
-* The exploration reveals missing or inconsistent inputs.
-* Source tables required for a pipeline do not exist.
-* The user’s stated goal conflicts with observed data shape.
-
-At that point, recommend switching to pipeline creation or revision.
-
-## Final Output: Structured Summary (Required)
-
-At the end of the exploration, generate a structured textual summary in Markdown.
-This summary is the default final output unless the user explicitly requests a different format (for example, a file export).
-
-The summary MUST:
-
-- Clearly state the ref(s) and branche(s) that were explored.
-- List the tables inspected, grouped by namespace. 
-- For each table, include: Table name, Approximate row count (if available), Key columns and their types (omit extremely wide schemas; show only relevant or representative columns), Partitioning (if any), Notable observations (null-heavy columns, empty tables, schema drift, unexpected types, missing keys), Explicitly separate observations (facts derived from inspection) from assumptions or hypotheses (if any).
-
-The summary MUST NOT:
-
-- Include raw row values beyond illustrative examples already discussed.
-- Include exported files or links unless explicitly requested.
-- Speculate about intent, semantics, or downstream usage.
-
-This Markdown summary should be concise, factual, and readable by a human, and serve as a handoff artifact for subsequent steps such as pipeline design or data validation.
+Both live in the project root.

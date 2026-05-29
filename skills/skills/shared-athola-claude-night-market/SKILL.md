@@ -1,22 +1,16 @@
 ---
 name: pensive:shared
-description: |
-
-Triggers: infrastructure, review, patterns, shared
-  Shared infrastructure and reusable modules for all pensive review skills.
-
-  Triggers: pensive patterns, review workflow, output templates, quality checklists,
-  pensive infrastructure, shared review patterns
-
-  Use when: other pensive skills need common patterns, creating new review skills,
-  ensuring consistency across pensive plugin
-
-  DO NOT use directly: this skill is infrastructure for other pensive skills.
-
-  This skill provides shared patterns consumed by other pensive skills.
+description: 'DO NOT use directly: this skill is infrastructure for other pensive
+  skills. This skill provides shared patterns consumed by other pensive skills. Use
+  when other pensive skills need common patterns, creating new review skills, ensuring
+  consistency across pensive plugin.'
 category: review-infrastructure
-tags: [shared, infrastructure, review, patterns]
-version: 1.3.5
+tags:
+- shared
+- infrastructure
+- review
+- patterns
+version: 1.4.0
 estimated_tokens: 50
 ---
 
@@ -38,6 +32,7 @@ Available shared modules:
 - See `modules/review-workflow-core.md` for the core 5-step workflow pattern
 - See `modules/output-format-templates.md` for standard output structures
 - See `modules/quality-checklist-patterns.md` for reusable quality checklists
+- See `modules/code-quality-analysis.md` for deduplication and redundancy detection
 
 ## Usage
 
@@ -62,6 +57,7 @@ All pensive review skills:
 - `pensive:makefile-review`
 - `pensive:math-review`
 - `pensive:unified-review`
+- `pensive:code-refinement`
 ## Troubleshooting
 
 ### Common Issues

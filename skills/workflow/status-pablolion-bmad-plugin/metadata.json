@@ -1,0 +1,20 @@
+{
+  "name": "status",
+  "description": "",
+  "repo": "PabloLION/bmad-plugin",
+  "category": "workflow",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/PabloLION/bmad-plugin",
+  "github_path": "plugins/bmad/skills/status",
+  "github_branch": "main",
+  "dir_name": "status-pablolion-bmad-plugin",
+  "downloaded_at": "2026-02-05T01:44:26.475936Z",
+  "author": "PabloLION",
+  "source_url": "https://github.com/PabloLION/bmad-plugin/blob/main/plugins/bmad/skills/status/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2026 PabloLION",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

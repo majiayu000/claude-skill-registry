@@ -1,5 +1,4 @@
 ---
-name: github-sync
 description: Two-way synchronization between SpecWeave specs and GitHub Projects (push & pull by default). Use when asking about GitHub integration setup, troubleshooting sync issues, or configuring sync settings. For actual syncing, use /sw-github:sync-spec command.
 ---
 
@@ -458,14 +457,86 @@ For monorepos with multiple GitHub repositories:
 
 ---
 
-## Related
+## Projects V2 Integration (v3.0.0+)
 
-- **github-issue-tracker**: Track individual tasks as issue comments (DEPRECATED - use spec sync instead)
-- **github-manager agent**: AI agent for GitHub operations
-- **Commands**: `/sw-github:sync-spec`, `/sw-github:import-project`, `/sw-github:status`
+### Enabling Projects V2
+
+Add `projectV2Enabled: true` to your sync config:
+
+```json
+{
+  "sync": {
+    "profiles": {
+      "myproject": {
+        "provider": "github",
+        "config": {
+          "owner": "myorg",
+          "repo": "myrepo",
+          "projectV2Enabled": true,
+          "projectV2Number": 5
+        }
+      }
+    }
+  }
+}
+```
+
+### What Happens with V2 Enabled
+
+1. **Push sync** creates/updates GitHub issues (same as before)
+2. **Issues are added to Projects V2 board** automatically
+3. **Status field** is set based on user story status (planned/in-progress/completed)
+4. **Priority field** is set based on user story priority (P1-P4)
+
+### Custom Field Mappings
+
+```json
+{
+  "statusFieldMapping": {
+    "planned": "Todo",
+    "in-progress": "In Progress",
+    "completed": "Done"
+  },
+  "priorityFieldMapping": {
+    "P1": "Urgent",
+    "P2": "High",
+    "P3": "Medium",
+    "P4": "Low"
+  }
+}
+```
+
+### Pull Sync (GitHub to Spec)
+
+Pull sync fetches issue state and compares with spec ACs:
+- AC checkbox toggles on GitHub are detected and applied to spec
+- Issue close/reopen is detected as status change
+- Conflicts are detected when both spec and GitHub changed the same field
+
+### Batch Sync
+
+Sync all specs at once:
+- Discovers all `spec-*.md` files in `.specweave/docs/internal/specs/`
+- Syncs each sequentially
+- Reports summary with created/updated/failed counts
+
+### Cross-Repo Sync
+
+For distributed strategies, issues can be created in different repos:
+- User stories specify target repos via `targetRepos` field
+- Cross-references added: "Also tracked in: org/other-repo#XX"
+- All cross-repo issues added to shared org-level Projects V2 board
 
 ---
 
-**Version**: 2.0.0 (Spec-based architecture)
+## Related
+
+- **github-issue-tracker**: DEPRECATED - use spec sync instead
+- **Commands**: `/sw-github:sync-spec`, `/sw-github:import-project`, `/sw-github:status`
+- **Team Skills**: `/sw:team-lead`, `/sw:team-status`, `/sw:team-merge`
+
+---
+
+**Version**: 3.0.0 (Projects V2 + Pull Sync + Cross-Repo)
 **Plugin**: specweave-github
-**Last Updated**: 2025-11-11
+**Last Updated**: 2026-02-06

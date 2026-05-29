@@ -1,0 +1,16 @@
+{
+  "name": "upgrade-vs-immutable-decision",
+  "repo": "SanctifiedOps/solana-skills",
+  "path": "skills/core-dev/upgrade-vs-immutable-decision/SKILL.md",
+  "source": "github.com/SanctifiedOps/solana-skills",
+  "downloaded_at": "2026-01-27T01:45:22.787187Z",
+  "dir_name": "upgrade-vs-immutable-decision",
+  "category": "security",
+  "author": "SanctifiedOps",
+  "source_url": "https://github.com/SanctifiedOps/solana-skills/blob/main/skills/core-dev/upgrade-vs-immutable-decision/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SanctifiedOps",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

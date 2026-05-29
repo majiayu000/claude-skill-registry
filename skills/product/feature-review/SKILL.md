@@ -1,6 +1,8 @@
 ---
 name: feature-review
 description: |
+
+Triggers: feature, backlog, prioritization, roadmap, wsjf
   Feature review and prioritization with RICE/WSJF/Kano scoring. Creates GitHub issues for suggestions.
 
   Triggers: feature review, prioritization, RICE, WSJF, roadmap, backlog
@@ -26,6 +28,36 @@ modules:
   - modules/tradeoff-dimensions.md
   - modules/configuration.md
 ---
+## Table of Contents
+
+- [Philosophy](#philosophy)
+- [When to Use](#when-to-use)
+- [When NOT to Use](#when-not-to-use)
+- [Quick Start](#quick-start)
+- [1. Inventory Current Features](#1-inventory-current-features)
+- [2. Score and Classify](#2-score-and-classify)
+- [3. Generate Suggestions](#3-generate-suggestions)
+- [4. Upload to GitHub](#4-upload-to-github)
+- [Workflow](#workflow)
+- [Phase 1: Feature Discovery (`feature-review:inventory-complete`)](#phase-1:-feature-discovery-(feature-review:inventory-complete))
+- [Phase 2: Classification (`feature-review:classified`)](#phase-2:-classification-(feature-review:classified))
+- [Phase 3: Scoring (`feature-review:scored`)](#phase-3:-scoring-(feature-review:scored))
+- [Phase 4: Tradeoff Analysis (`feature-review:tradeoffs-analyzed`)](#phase-4:-tradeoff-analysis-(feature-review:tradeoffs-analyzed))
+- [Phase 5: Gap Analysis & Suggestions (`feature-review:suggestions-generated`)](#phase-5:-gap-analysis-&-suggestions-(feature-review:suggestions-generated))
+- [Phase 6: GitHub Integration (`feature-review:issues-created`)](#phase-6:-github-integration-(feature-review:issues-created))
+- [Configuration](#configuration)
+- [Configuration File](#configuration-file)
+- [Guardrails](#guardrails)
+- [Required TodoWrite Items](#required-todowrite-items)
+- [Integration Points](#integration-points)
+- [Output Format](#output-format)
+- [Feature Inventory Table](#feature-inventory-table)
+- [Suggestion Report](#suggestion-report)
+- [Feature Suggestions](#feature-suggestions)
+- [High Priority (Score > 2.5)](#high-priority-(score->-25))
+- [Related Skills](#related-skills)
+- [Reference](#reference)
+
 
 # Feature Review
 
@@ -33,17 +65,12 @@ Review implemented features and suggest new ones using evidence-based prioritiza
 
 ## Philosophy
 
-**Core Belief:** Feature decisions should be data-driven. Every feature has tradeoffs that deserve evaluation.
-
-**Three Pillars:**
-1. **Evidence-Based Scoring**: Hybrid RICE+WSJF with Kano classification.
-2. **Configurable Heuristics**: Opinionated defaults with customization.
-3. **Actionable Output**: Issue generation for accepted features.
+Feature decisions rely on data. Every feature involves tradeoffs that require evaluation. This skill uses hybrid RICE+WSJF scoring with Kano classification to prioritize work and generates actionable GitHub issues for accepted suggestions.
 
 ## When to Use
 
-- Periodic roadmap reviews (sprint planning, quarterly reviews).
-- Retrospective evaluations after shipping features.
+- Roadmap reviews (sprint planning, quarterly reviews).
+- Retrospective evaluations.
 - Planning new development cycles.
 
 ## When NOT to Use
@@ -233,7 +260,7 @@ These rules apply to all configurations:
 ## Integration Points
 
 - **`imbue:scope-guard`**: Provides Worthiness Scores for suggestions.
-- **`sanctum:fix-issue`**: Prioritizes issues with high scores.
+- **`sanctum:do-issue`**: Prioritizes issues with high scores.
 - **`superpowers:brainstorming`**: Evaluates new ideas against existing features.
 
 ## Output Format
@@ -273,3 +300,15 @@ These rules apply to all configurations:
 - **[classification-system.md](modules/classification-system.md)**: Axes definition.
 - **[tradeoff-dimensions.md](modules/tradeoff-dimensions.md)**: Quality attributes.
 - **[configuration.md](modules/configuration.md)**: Customization options.
+## Troubleshooting
+
+### Common Issues
+
+**Command not found**
+Ensure all dependencies are installed and in PATH
+
+**Permission errors**
+Check file permissions and run with appropriate privileges
+
+**Unexpected behavior**
+Enable verbose logging with `--verbose` flag

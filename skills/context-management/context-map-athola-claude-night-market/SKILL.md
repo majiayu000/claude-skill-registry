@@ -1,6 +1,6 @@
 ---
 name: context-map
-description: 'Generate a compressed project context map.'
+description: Generates a compressed project context map to avoid expensive Read/Grep calls. Use at session start or before implementing features in an unfamiliar codebase.
 category: optimization
 tags:
   - context

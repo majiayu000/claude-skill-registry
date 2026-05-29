@@ -1,387 +1,419 @@
 ---
-name: "moai-lang-java"
-description: "Java 21 LTS development specialist covering Spring Boot 3.3, virtual threads, pattern matching, and enterprise patterns. Use when building enterprise applications, microservices, or Spring projects."
-version: 1.0.0
+name: "moai-lang-javascript"
+description: "JavaScript ES2024+ development specialist covering Node.js 22 LTS, Bun 1.x (serve, SQLite, S3, shell, test), Deno 2.x, testing (Vitest, Jest), linting (ESLint 9, Biome), and backend frameworks (Express, Fastify, Hono). Use when developing JavaScript APIs, web applications, or Node.js projects."
+version: 1.1.0
 category: "language"
 modularized: false
 user-invocable: false
-tags: ['java', 'spring-boot', 'jpa', 'hibernate', 'virtual-threads', 'enterprise']
-context7-libraries: ['/spring-projects/spring-boot', '/spring-projects/spring-framework', '/spring-projects/spring-security']
-related-skills: ['moai-lang-kotlin', 'moai-domain-backend']
-updated: 2025-12-07
+updated: 2026-01-08
 status: "active"
+allowed-tools:
+  - Read
+  - Grep
+  - Glob
+  - Bash
+  - mcp__context7__resolve-library-id
+  - mcp__context7__get-library-docs
 ---
 
 ## Quick Reference (30 seconds)
 
-Java 21 LTS Expert - Enterprise development with Spring Boot 3.3, Virtual Threads, and modern Java features.
+JavaScript ES2024+ Development Specialist - Modern JavaScript with Node.js 22 LTS, multiple runtimes, and contemporary tooling.
 
-Auto-Triggers: Java files (`.java`), build files (`pom.xml`, `build.gradle`, `build.gradle.kts`)
+Auto-Triggers: `.js`, `.mjs`, `.cjs` files, `package.json`, Node.js projects, JavaScript discussions
 
-Core Capabilities:
-- Java 21 LTS: Virtual threads, pattern matching, record patterns, sealed classes
-- Spring Boot 3.3: REST controllers, services, repositories, WebFlux reactive
-- Spring Security 6: JWT authentication, OAuth2, role-based access control
-- JPA/Hibernate 7: Entity mapping, relationships, queries, transactions
-- JUnit 5: Unit testing, mocking, TestContainers integration
-- Build Tools: Maven 3.9, Gradle 8.5 with Kotlin DSL
+Core Stack:
+- ES2024+: Set methods, Promise.withResolvers, immutable arrays, import attributes
+- Node.js 22 LTS: Native TypeScript, built-in WebSocket, stable watch mode
+- Runtimes: Node.js 20/22 LTS, Deno 2.x, Bun 1.x
+- Testing: Vitest, Jest, Node.js test runner
+- Linting: ESLint 9 flat config, Biome
+- Bundlers: Vite, esbuild, Rollup
+- Frameworks: Express, Fastify, Hono, Koa
+
+Quick Commands:
+```bash
+# Create Vite project
+npm create vite@latest my-app -- --template vanilla
+
+# Initialize with modern tooling
+npm init -y && npm install -D vitest eslint @eslint/js
+
+# Run with Node.js watch mode
+node --watch server.js
+
+# Run TypeScript directly in Node.js 22+
+node --experimental-strip-types app.ts
+```
 
 ---
 
 ## Implementation Guide (5 minutes)
 
-### Java 21 LTS Features
+### ES2024 Key Features
 
-Virtual Threads (Project Loom):
-```java
-// Lightweight concurrent programming
-try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
-    IntStream.range(0, 10_000).forEach(i ->
-        executor.submit(() -> {
-            Thread.sleep(Duration.ofSeconds(1));
-            return i;
-        })
-    );
-}
+Set Operations:
+```javascript
+const setA = new Set([1, 2, 3, 4]);
+const setB = new Set([3, 4, 5, 6]);
 
-// Structured concurrency (preview)
-try (var scope = new StructuredTaskScope.ShutdownOnFailure()) {
-    Supplier<User> user = scope.fork(() -> fetchUser(userId));
-    Supplier<List<Order>> orders = scope.fork(() -> fetchOrders(userId));
-    scope.join().throwIfFailed();
-    return new UserWithOrders(user.get(), orders.get());
-}
+setA.intersection(setB);      // Set {3, 4}
+setA.union(setB);             // Set {1, 2, 3, 4, 5, 6}
+setA.difference(setB);        // Set {1, 2}
+setA.symmetricDifference(setB); // Set {1, 2, 5, 6}
+setA.isSubsetOf(setB);        // false
+setA.isSupersetOf(setB);      // false
+setA.isDisjointFrom(setB);    // false
 ```
 
-Pattern Matching for Switch:
-```java
-String describe(Object obj) {
-    return switch (obj) {
-        case Integer i when i > 0 -> "positive integer: " + i;
-        case Integer i -> "non-positive integer: " + i;
-        case String s -> "string of length " + s.length();
-        case List<?> list -> "list with " + list.size() + " elements";
-        case null -> "null value";
-        default -> "unknown type";
-    };
+Promise.withResolvers():
+```javascript
+function createDeferred() {
+  const { promise, resolve, reject } = Promise.withResolvers();
+  return { promise, resolve, reject };
 }
+
+const deferred = createDeferred();
+setTimeout(() => deferred.resolve('done'), 1000);
+const result = await deferred.promise;
 ```
 
-Record Patterns and Sealed Classes:
-```java
-record Point(int x, int y) {}
-record Rectangle(Point topLeft, Point bottomRight) {}
+Immutable Array Methods:
+```javascript
+const original = [3, 1, 4, 1, 5];
 
-int area(Rectangle rect) {
-    return switch (rect) {
-        case Rectangle(Point(var x1, var y1), Point(var x2, var y2)) ->
-            Math.abs((x2 - x1) * (y2 - y1));
-    };
-}
+// New methods return new arrays (don't mutate)
+const sorted = original.toSorted();           // [1, 1, 3, 4, 5]
+const reversed = original.toReversed();       // [5, 1, 4, 1, 3]
+const spliced = original.toSpliced(1, 2, 9);  // [3, 9, 1, 5]
+const changed = original.with(2, 99);         // [3, 1, 99, 1, 5]
 
-public sealed interface Shape permits Circle, Rectangle {
-    double area();
-}
-public record Circle(double radius) implements Shape {
-    public double area() { return Math.PI * radius * radius; }
-}
+console.log(original); // [3, 1, 4, 1, 5] - unchanged
 ```
 
-### Spring Boot 3.3
+Object.groupBy and Map.groupBy:
+```javascript
+const items = [
+  { type: 'fruit', name: 'apple' },
+  { type: 'vegetable', name: 'carrot' },
+  { type: 'fruit', name: 'banana' },
+];
 
-REST Controller:
-```java
-@RestController
-@RequestMapping("/api/users")
-@RequiredArgsConstructor
-public class UserController {
-    private final UserService userService;
+const grouped = Object.groupBy(items, item => item.type);
+// { fruit: [{...}, {...}], vegetable: [{...}] }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<UserDto> getUser(@PathVariable Long id) {
-        return userService.findById(id)
-            .map(ResponseEntity::ok)
-            .orElse(ResponseEntity.notFound().build());
-    }
-
-    @PostMapping
-    public ResponseEntity<UserDto> createUser(@Valid @RequestBody CreateUserRequest request) {
-        UserDto user = userService.create(request);
-        URI location = URI.create("/api/users/" + user.id());
-        return ResponseEntity.created(location).body(user);
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
-        return userService.delete(id)
-            ? ResponseEntity.noContent().build()
-            : ResponseEntity.notFound().build();
-    }
-}
+const mapGrouped = Map.groupBy(items, item => item.type);
+// Map { 'fruit' => [...], 'vegetable' => [...] }
 ```
 
-Service Layer:
-```java
-@Service
-@RequiredArgsConstructor
-@Transactional(readOnly = true)
-public class UserService {
-    private final UserRepository userRepository;
-    private final PasswordEncoder passwordEncoder;
+### ES2025 Features
 
-    public Optional<User> findById(Long id) {
-        return userRepository.findById(id);
-    }
+Import Attributes (JSON Modules):
+```javascript
+import config from './config.json' with { type: 'json' };
+import styles from './styles.css' with { type: 'css' };
 
-    @Transactional
-    public User create(CreateUserRequest request) {
-        if (userRepository.existsByEmail(request.email())) {
-            throw new DuplicateEmailException(request.email());
-        }
-        var user = User.builder()
-            .name(request.name())
-            .email(request.email())
-            .passwordHash(passwordEncoder.encode(request.password()))
-            .status(UserStatus.PENDING)
-            .build();
-        return userRepository.save(user);
-    }
-}
+console.log(config.apiUrl);
 ```
 
-### Spring Security 6
-
-Security Configuration:
-```java
-@Configuration
-@EnableWebSecurity
-public class SecurityConfig {
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        return http
-            .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/public/**").permitAll()
-                .requestMatchers("/api/admin/**").hasRole("ADMIN")
-                .anyRequest().authenticated()
-            )
-            .oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()))
-            .sessionManagement(session ->
-                session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-            .csrf(csrf -> csrf.disable())
-            .build();
-    }
-
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
-}
+RegExp.escape:
+```javascript
+const userInput = 'hello (world)';
+const safePattern = RegExp.escape(userInput);
+// "hello\\ \\(world\\)"
+const regex = new RegExp(safePattern);
 ```
 
-### JPA/Hibernate Patterns
+### Node.js 22 LTS Features
 
-Entity Definition:
-```java
-@Entity
-@Table(name = "users")
-@Getter @Setter
-@NoArgsConstructor @Builder
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+Built-in WebSocket Client:
+```javascript
+const ws = new WebSocket('wss://example.com/socket');
 
-    @Column(nullable = false)
-    private String name;
+ws.addEventListener('open', () => {
+  ws.send(JSON.stringify({ type: 'hello' }));
+});
 
-    @Column(nullable = false, unique = true)
-    private String email;
-
-    @Enumerated(EnumType.STRING)
-    private UserStatus status;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Order> orders = new ArrayList<>();
-}
+ws.addEventListener('message', (event) => {
+  const data = JSON.parse(event.data);
+  console.log('Received:', data);
+});
 ```
 
-Repository with Custom Queries:
-```java
-public interface UserRepository extends JpaRepository<User, Long> {
-    Optional<User> findByEmail(String email);
-    boolean existsByEmail(String email);
+Native TypeScript Support (Experimental):
+```bash
+# Run .ts files directly in Node.js 22.6+
+node --experimental-strip-types app.ts
 
-    @Query("SELECT u FROM User u LEFT JOIN FETCH u.orders WHERE u.id = :id")
-    Optional<User> findByIdWithOrders(@Param("id") Long id);
-
-    Page<User> findByNameContainingIgnoreCase(String name, Pageable pageable);
-}
+# In Node.js 22.18+, type stripping is enabled by default
+node app.ts
 ```
 
-DTOs as Records:
-```java
-public record UserDto(Long id, String name, String email, UserStatus status) {
-    public static UserDto from(User user) {
-        return new UserDto(user.getId(), user.getName(), user.getEmail(), user.getStatus());
+Watch Mode (Stable):
+```bash
+# Auto-restart on file changes
+node --watch server.js
+
+# Watch specific files
+node --watch-path=./src --watch-path=./config server.js
+```
+
+Permission Model:
+```bash
+# Restrict file system access
+node --permission --allow-fs-read=/app/data server.js
+
+# Restrict network access
+node --permission --allow-net=api.example.com server.js
+```
+
+### Backend Frameworks
+
+Express (Traditional):
+```javascript
+import express from 'express';
+
+const app = express();
+app.use(express.json());
+
+app.get('/api/users', async (req, res) => {
+  const users = await db.users.findAll();
+  res.json(users);
+});
+
+app.post('/api/users', async (req, res) => {
+  const user = await db.users.create(req.body);
+  res.status(201).json(user);
+});
+
+app.listen(3000, () => console.log('Server running on port 3000'));
+```
+
+Fastify (High Performance):
+```javascript
+import Fastify from 'fastify';
+
+const fastify = Fastify({ logger: true });
+
+const userSchema = {
+  body: {
+    type: 'object',
+    required: ['name', 'email'],
+    properties: {
+      name: { type: 'string', minLength: 2 },
+      email: { type: 'string', format: 'email' },
+    },
+  },
+};
+
+fastify.post('/api/users', { schema: userSchema }, async (request, reply) => {
+  const user = await db.users.create(request.body);
+  return reply.code(201).send(user);
+});
+
+await fastify.listen({ port: 3000 });
+```
+
+Hono (Edge-First):
+```javascript
+import { Hono } from 'hono';
+import { cors } from 'hono/cors';
+import { logger } from 'hono/logger';
+import { validator } from 'hono/validator';
+
+const app = new Hono();
+
+app.use('*', logger());
+app.use('/api/*', cors());
+
+app.get('/api/users', async (c) => {
+  const users = await db.users.findAll();
+  return c.json(users);
+});
+
+app.post('/api/users',
+  validator('json', (value, c) => {
+    if (!value.name || !value.email) {
+      return c.json({ error: 'Invalid input' }, 400);
     }
-}
+    return value;
+  }),
+  async (c) => {
+    const user = await db.users.create(c.req.valid('json'));
+    return c.json(user, 201);
+  }
+);
 
-public record CreateUserRequest(
-    @NotBlank @Size(min = 2, max = 100) String name,
-    @NotBlank @Email String email,
-    @NotBlank @Size(min = 8) String password
-) {}
+export default app;
+```
+
+### Testing with Vitest
+
+Configuration:
+```javascript
+// vitest.config.js
+import { defineConfig } from 'vitest/config';
+
+export default defineConfig({
+  test: {
+    globals: true,
+    environment: 'node',
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'json', 'html'],
+    },
+  },
+});
+```
+
+Test Example:
+```javascript
+// user.test.js
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { createUser, getUser } from './user.js';
+
+describe('User Service', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  it('should create a user', async () => {
+    const user = await createUser({ name: 'John', email: 'john@example.com' });
+    expect(user).toMatchObject({ name: 'John', email: 'john@example.com' });
+    expect(user.id).toBeDefined();
+  });
+
+  it('should throw on invalid email', async () => {
+    await expect(createUser({ name: 'John', email: 'invalid' }))
+      .rejects.toThrow('Invalid email');
+  });
+});
+```
+
+### ESLint 9 Flat Config
+
+```javascript
+// eslint.config.js
+import js from '@eslint/js';
+import globals from 'globals';
+
+export default [
+  js.configs.recommended,
+  {
+    languageOptions: {
+      ecmaVersion: 2025,
+      sourceType: 'module',
+      globals: {
+        ...globals.node,
+        ...globals.es2025,
+      },
+    },
+    rules: {
+      'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+      'no-console': ['warn', { allow: ['warn', 'error'] }],
+      'prefer-const': 'error',
+      'no-var': 'error',
+    },
+  },
+];
+```
+
+### Biome (All-in-One)
+
+```json
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.0/schema.json",
+  "organizeImports": { "enabled": true },
+  "linter": {
+    "enabled": true,
+    "rules": { "recommended": true }
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "semicolons": "always"
+    }
+  }
+}
 ```
 
 ---
 
 ## Advanced Patterns
 
-### Virtual Threads Integration
+For comprehensive documentation including advanced async patterns, module system details, performance optimization, and production deployment configurations, see:
 
-```java
-@Service
-@RequiredArgsConstructor
-public class AsyncUserService {
-    public UserWithDetails fetchUserDetails(Long userId) throws Exception {
-        try (var scope = new StructuredTaskScope.ShutdownOnFailure()) {
-            Supplier<User> userTask = scope.fork(() -> userRepo.findById(userId).orElseThrow());
-            Supplier<List<Order>> ordersTask = scope.fork(() -> orderRepo.findByUserId(userId));
-            scope.join().throwIfFailed();
-            return new UserWithDetails(userTask.get(), ordersTask.get());
-        }
-    }
+- [reference.md](reference.md) - Complete API reference, Context7 library mappings, package manager comparison
+- [examples.md](examples.md) - Production-ready code examples, full-stack patterns, testing templates
 
-    public void processUsersInParallel(List<Long> userIds) {
-        try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
-            userIds.stream().map(id -> executor.submit(() -> processUser(id))).toList();
-        }
-    }
-}
+### Context7 Integration
+
+```javascript
+// Node.js - mcp__context7__get_library_docs("/nodejs/node", "esm modules async", 1)
+// Express - mcp__context7__get_library_docs("/expressjs/express", "middleware routing", 1)
+// Fastify - mcp__context7__get_library_docs("/fastify/fastify", "plugins hooks", 1)
+// Hono - mcp__context7__get_library_docs("/honojs/hono", "middleware validators", 1)
+// Vitest - mcp__context7__get_library_docs("/vitest-dev/vitest", "mocking coverage", 1)
 ```
-
-### Build Configuration
-
-Maven 3.9:
-```xml
-<project>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.3.0</version>
-    </parent>
-    <properties><java.version>21</java.version></properties>
-    <dependencies>
-        <dependency><groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId></dependency>
-        <dependency><groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId></dependency>
-    </dependencies>
-</project>
-```
-
-Gradle 8.5 (Kotlin DSL):
-```kotlin
-plugins {
-    id("org.springframework.boot") version "3.3.0"
-    id("io.spring.dependency-management") version "1.1.4"
-    java
-}
-java { toolchain { languageVersion = JavaLanguageVersion.of(21) } }
-dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
-}
-```
-
-### Testing with JUnit 5
-
-Unit Testing:
-```java
-@ExtendWith(MockitoExtension.class)
-class UserServiceTest {
-    @Mock private UserRepository userRepository;
-    @InjectMocks private UserService userService;
-
-    @Test
-    void shouldCreateUser() {
-        when(userRepository.existsByEmail(anyString())).thenReturn(false);
-        when(userRepository.save(any())).thenReturn(User.builder().id(1L).build());
-        var result = userService.create(new CreateUserRequest("John", "john@test.com", "pass"));
-        assertThat(result.getId()).isEqualTo(1L);
-    }
-}
-```
-
-Integration Testing with TestContainers:
-```java
-@Testcontainers
-@SpringBootTest
-class UserRepositoryTest {
-    @Container
-    static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:16-alpine");
-
-    @DynamicPropertySource
-    static void props(DynamicPropertyRegistry registry) {
-        registry.add("spring.datasource.url", postgres::getJdbcUrl);
-    }
-
-    @Autowired UserRepository repo;
-
-    @Test
-    void shouldSaveUser() {
-        var user = repo.save(User.builder().name("John").email("john@test.com").build());
-        assertThat(user.getId()).isNotNull();
-    }
-}
-```
-
----
-
-## Context7 Integration
-
-Library mappings for latest documentation:
-- `/spring-projects/spring-boot` - Spring Boot 3.3 documentation
-- `/spring-projects/spring-framework` - Spring Framework core
-- `/spring-projects/spring-security` - Spring Security 6
-- `/hibernate/hibernate-orm` - Hibernate 7 ORM patterns
-- `/junit-team/junit5` - JUnit 5 testing framework
 
 ---
 
 ## Works Well With
 
-- `moai-lang-kotlin` - Kotlin interoperability and Spring Kotlin extensions
-- `moai-domain-backend` - REST API, GraphQL, microservices architecture
-- `moai-domain-database` - JPA, Hibernate, R2DBC patterns
-- `moai-foundation-quality` - JUnit 5, Mockito, TestContainers integration
-- `moai-infra-docker` - JVM container optimization
+- `moai-lang-typescript` - TypeScript integration, type checking with JSDoc
+- `moai-domain-backend` - API design, microservices architecture
+- `moai-domain-database` - Database integration, ORM patterns
+- `moai-workflow-testing` - TDD workflows, testing strategies
+- `moai-foundation-quality` - Code quality standards
+- `moai-essentials-debug` - Debugging JavaScript applications
 
 ---
 
-## Troubleshooting
+## Quick Troubleshooting
 
-Common Issues:
-- Version mismatch: `java -version`, check `JAVA_HOME` points to Java 21
-- Compilation errors: `mvn clean compile -X` or `gradle build --info`
-- Virtual thread issues: Ensure Java 21+ with `--enable-preview` if needed
-- JPA lazy loading: Use `@Transactional` or `JOIN FETCH` queries
+Module System Issues:
+```bash
+# Check package.json type
+cat package.json | grep '"type"'
 
-Performance Tips:
-- Enable Virtual Threads: `spring.threads.virtual.enabled=true`
-- Use GraalVM Native Image for faster startup
-- Configure connection pooling with HikariCP
+# ESM: "type": "module" - use import/export
+# CommonJS: "type": "commonjs" or omitted - use require/module.exports
+```
+
+Node.js Version Check:
+```bash
+node --version  # Should be 20.x or 22.x LTS
+npm --version   # Should be 10.x+
+```
+
+Common Fixes:
+```bash
+# Clear npm cache
+npm cache clean --force
+
+# Delete node_modules and reinstall
+rm -rf node_modules package-lock.json && npm install
+
+# Fix permission issues
+npm config set prefix ~/.npm-global
+```
+
+ESM/CommonJS Interop:
+```javascript
+// Import CommonJS from ESM
+import pkg from 'commonjs-package';
+const { namedExport } = pkg;
+
+// Dynamic import in CommonJS
+const { default: esmModule } = await import('esm-package');
+```
 
 ---
 
-## Advanced Documentation
-
-For comprehensive reference materials:
-- [reference.md](reference.md) - Java 21 features, Context7 mappings, performance
-- [examples.md](examples.md) - Production-ready Spring Boot examples
-
----
-
-Last Updated: 2025-12-07
-Status: Production Ready (v1.0.0)
+Last Updated: 2026-01-05
+Status: Active (v1.1.0)

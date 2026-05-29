@@ -1,0 +1,18 @@
+{
+  "name": "vocabulary-notes",
+  "repo": "tkgally/je-dict-1",
+  "path": ".claude/skills/vocabulary-notes/SKILL.md",
+  "source": "github.com/tkgally/je-dict-1",
+  "downloaded_at": "2026-01-22T02:07:31.352722Z",
+  "dir_name": "vocabulary-notes",
+  "category": "documents",
+  "github_path": ".claude/skills/vocabulary-notes",
+  "github_branch": "main",
+  "author": "tkgally",
+  "source_url": "https://github.com/tkgally/je-dict-1/blob/main/.claude/skills/vocabulary-notes/SKILL.md",
+  "license": "CC0-1.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tkgally/je-dict-1/blob/main/.claude/skills/vocabulary-notes/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

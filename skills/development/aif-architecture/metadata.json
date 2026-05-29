@@ -1,0 +1,17 @@
+{
+  "name": "aif-architecture",
+  "repo": "ArtemYurov/TomoBar",
+  "path": ".claude/skills/aif-architecture/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/ArtemYurov/TomoBar",
+  "dir_name": "aif-architecture",
+  "downloaded_at": "2026-03-22T04:53:26.657843Z",
+  "author": "ArtemYurov",
+  "source_url": "https://github.com/ArtemYurov/TomoBar/blob/main/.claude/skills/aif-architecture/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ArtemYurov/TomoBar/blob/main/.claude/skills/aif-architecture/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

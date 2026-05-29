@@ -1,0 +1,18 @@
+{
+  "name": "cv-knowledge-query",
+  "repo": "fotescodev/portfolio",
+  "path": ".claude/skills/cv-knowledge-query/SKILL.md",
+  "source": "github.com/fotescodev/portfolio",
+  "downloaded_at": "2026-01-22T01:54:45.727204Z",
+  "dir_name": "cv-knowledge-query-fotescodev-portfolio-278e1a40",
+  "category": "domains",
+  "github_path": ".claude/skills/cv-knowledge-query",
+  "github_branch": "main",
+  "author": "fotescodev",
+  "source_url": "https://github.com/fotescodev/portfolio/blob/main/.claude/skills/cv-knowledge-query/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/fotescodev/portfolio/blob/main/.claude/skills/cv-knowledge-query/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

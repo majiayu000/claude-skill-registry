@@ -1,0 +1,16 @@
+{
+  "name": "openclaw",
+  "repo": "TechNickAI/openclaw-config",
+  "path": "skills/openclaw/SKILL.md",
+  "category": "platform",
+  "source": "github.com/TechNickAI/openclaw-config",
+  "dir_name": "openclaw-technickai-openclaw-config",
+  "downloaded_at": "2026-02-15T05:52:03.473464Z",
+  "author": "TechNickAI",
+  "source_url": "https://github.com/TechNickAI/openclaw-config/blob/main/skills/openclaw/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/TechNickAI/openclaw-config/blob/main/skills/openclaw/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,21 +1,22 @@
 ---
 name: gif-generation
-description: |
-
-Triggers: optimization, ffmpeg, generation, gif, video
-  Post-process video files and generate optimized GIFs.
-  Converts webm/mp4 to GIF with configurable quality settings.
-
-  Triggers: gif conversion, video to gif, optimize gif, webm to gif
-
-  Use when: converting browser recordings to GIF format, optimizing GIF file size
+description: Post-process video files and generate optimized GIFs. Converts webm/mp4
+version: 1.9.0
+alwaysApply: false
+  to GIF with configurable quality settings.
 category: media-generation
-tags: [gif, ffmpeg, video, conversion, optimization]
-tools: [Bash]
+tags:
+- gif
+- ffmpeg
+- video
+- conversion
+- optimization
+tools:
+- Bash
 complexity: low
+model_hint: fast
 estimated_tokens: 400
 progressive_loading: false
-version: 1.3.5
 ---
 ## Table of Contents
 
@@ -41,6 +42,17 @@ version: 1.3.5
 # GIF Generation Skill
 
 Post-process video files (webm/mp4) and generate optimized GIF output with configurable quality settings.
+
+
+## When To Use
+
+- Converting recordings to animated GIF format
+- Creating lightweight demo animations
+
+## When NOT To Use
+
+- High-quality video output - use full recording tools
+- Static image generation without animation needs
 
 ## Overview
 

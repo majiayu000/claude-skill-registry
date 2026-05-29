@@ -1,0 +1,10 @@
+{
+  "name": "mova-skill-mova-ai-bootstrap-generate-basic",
+  "description": "Generates a static MOVA AI bootstrap pack for a target model/environment (no LLM calls). Input: env.mova_ai_bootstrap_generate_v1, output: ds.mova_ai_bootstrap_pack_v1.",
+  "repo": "Leryk1981/mova_wf_cycle",
+  "category": "generation",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Leryk1981/mova_wf_cycle",
+  "dir_name": "mova-skill-mova-ai-bootstrap-generate-basic-leryk1981-mova-wf-cy-leryk1981-mova-wf-cycle"
+}

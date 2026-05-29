@@ -78,12 +78,12 @@ allowed-tools:
 
 ## Task仕様ナビ
 
-| Task | 役割 | 入力 | 出力 | 参照先 | 実行タイミング |
-| --- | --- | --- | --- | --- | --- |
-| 入力整理 | 範囲/制約整理 | 仕様/要件 | 入力整理メモ | `references/boundary-value-fundamentals.md` | Phase 1 |
-| 同値クラス設計 | 有効/無効定義 | 入力整理メモ | 同値クラス表 | `references/equivalence-partitioning.md` | Phase 2 |
-| テスト生成 | 境界/エッジ抽出 | 同値クラス表 | テストケース一覧 | `assets/test-case-design-template.md` | Phase 3 |
-| 検証 | カバレッジ確認 | テストケース一覧 | 検証メモ | `references/Level3_advanced.md` | Phase 4 |
+| Task           | 役割            | 入力             | 出力             | 参照先                                      | 実行タイミング |
+| -------------- | --------------- | ---------------- | ---------------- | ------------------------------------------- | -------------- |
+| 入力整理       | 範囲/制約整理   | 仕様/要件        | 入力整理メモ     | `references/boundary-value-fundamentals.md` | Phase 1        |
+| 同値クラス設計 | 有効/無効定義   | 入力整理メモ     | 同値クラス表     | `references/equivalence-partitioning.md`    | Phase 2        |
+| テスト生成     | 境界/エッジ抽出 | 同値クラス表     | テストケース一覧 | `assets/test-case-design-template.md`       | Phase 3        |
+| 検証           | カバレッジ確認  | テストケース一覧 | 検証メモ         | `references/Level3_advanced.md`             | Phase 4        |
 
 ## ベストプラクティス
 
@@ -126,8 +126,8 @@ allowed-tools:
 
 ## 変更履歴
 
-| Version | Date       | Changes                                             |
-| ------- | ---------- | --------------------------------------------------- |
-| 2.1.0   | 2025-12-31 | 18-skills準拠、Task仕様追加、scripts整備            |
-| 2.0.0   | 2025-12-31 | 18-skills.md仕様に完全準拠                           |
-| 1.0.0   | 2025-12-24 | 初版作成                                            |
+| Version | Date       | Changes                                  |
+| ------- | ---------- | ---------------------------------------- |
+| 2.1.0   | 2025-12-31 | 18-skills準拠、Task仕様追加、scripts整備 |
+| 2.0.0   | 2025-12-31 | 18-skills.md仕様に完全準拠               |
+| 1.0.0   | 2025-12-24 | 初版作成                                 |

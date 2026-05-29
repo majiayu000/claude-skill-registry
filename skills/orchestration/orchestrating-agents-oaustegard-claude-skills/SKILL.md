@@ -2,7 +2,7 @@
 name: orchestrating-agents
 description: Orchestrates parallel API instances, delegated sub-tasks, and multi-agent workflows with streaming and tool-enabled delegation patterns. Use for parallel analysis, multi-perspective reviews, or complex task decomposition.
 metadata:
-  version: 0.1.2
+  version: 0.3.0
 ---
 
 # Orchestrating Agents
@@ -35,7 +35,7 @@ from claude_client import invoke_claude
 
 response = invoke_claude(
     prompt="Analyze this code for security vulnerabilities: ...",
-    model="claude-sonnet-4-5-20250929"
+    model="claude-sonnet-4-6"
 )
 print(response)
 ```
@@ -60,7 +60,7 @@ prompts = [
     }
 ]
 
-results = invoke_parallel(prompts, model="claude-sonnet-4-5-20250929")
+results = invoke_parallel(prompts, model="claude-sonnet-4-6")
 
 for i, result in enumerate(results):
     print(f"\n=== Perspective {i+1} ===")
@@ -195,7 +195,7 @@ Single synchronous invocation with full control:
 ```python
 invoke_claude(
     prompt: str | list[dict],
-    model: str = "claude-sonnet-4-5-20250929",
+    model: str = "claude-sonnet-4-6",
     system: str | list[dict] | None = None,
     max_tokens: int = 4096,
     temperature: float = 1.0,
@@ -209,7 +209,7 @@ invoke_claude(
 
 **Parameters:**
 - `prompt`: The user message (string or list of content blocks)
-- `model`: Claude model to use (default: claude-sonnet-4-5-20250929)
+- `model`: Claude model to use (default: claude-sonnet-4-6)
 - `system`: Optional system prompt (string or list of content blocks)
 - `max_tokens`: Maximum tokens in response (default: 4096)
 - `temperature`: Randomness 0-1 (default: 1.0)
@@ -230,7 +230,7 @@ Concurrent invocations using lightweight workflow pattern:
 ```python
 invoke_parallel(
     prompts: list[dict],
-    model: str = "claude-sonnet-4-5-20250929",
+    model: str = "claude-sonnet-4-6",
     max_tokens: int = 4096,
     max_workers: int = 5,
     shared_system: str | list[dict] | None = None,
@@ -258,7 +258,7 @@ Stream responses in real-time with optional callbacks:
 invoke_claude_streaming(
     prompt: str | list[dict],
     callback: callable = None,
-    model: str = "claude-sonnet-4-5-20250929",
+    model: str = "claude-sonnet-4-6",
     system: str | list[dict] | None = None,
     max_tokens: int = 4096,
     temperature: float = 1.0,
@@ -282,7 +282,7 @@ Parallel invocations with per-agent streaming callbacks:
 invoke_parallel_streaming(
     prompts: list[dict],
     callbacks: list[callable] = None,
-    model: str = "claude-sonnet-4-5-20250929",
+    model: str = "claude-sonnet-4-6",
     max_tokens: int = 4096,
     max_workers: int = 5,
     shared_system: str | list[dict] | None = None,
@@ -319,7 +319,7 @@ Manages multi-turn conversations with automatic caching:
 ```python
 thread = ConversationThread(
     system: str | list[dict] | None = None,
-    model: str = "claude-sonnet-4-5-20250929",
+    model: str = "claude-sonnet-4-6",
     max_tokens: int = 4096,
     temperature: float = 1.0,
     cache_system: bool = True
@@ -337,7 +337,102 @@ response = thread.send(
 - `clear()`: Clear conversation history
 - `__len__()`: Get number of turns
 
-**Note:** Automatically caches conversation history to minimize token costs across turns.
+**New in 0.3.0:**
+- `turn_count` property: Number of completed turn pairs
+- `send_continuation(guidance, cache_history)`: Lightweight continuation turn (requires prior `send()`)
+- `max_turns` constructor parameter: Optional turn limit
+- `continuation_prompt` constructor parameter: Default continuation guidance
+
+### `StallDetector`
+
+Monitors activity timestamps and detects unresponsive operations:
+
+```python
+from claude_client import StallDetector
+
+def handle_stall(task_id, idle_seconds):
+    print(f"Task {task_id} stalled for {idle_seconds:.1f}s")
+
+detector = StallDetector(timeout=60.0, on_stall=handle_stall)
+detector.register("task-1")
+detector.start_monitoring(poll_interval=5.0)
+
+# Call heartbeat() during streaming/progress
+detector.heartbeat("task-1")
+
+# When done
+detector.unregister("task-1")
+detector.stop_monitoring()
+```
+
+### `TaskTracker` (task_state module)
+
+Formal task lifecycle state machine with enforced transitions:
+
+```python
+from task_state import TaskTracker, TaskState
+
+tracker = TaskTracker(max_retries=3)
+tracker.add("task-1", category="security")
+
+tracker.claim("task-1")    # UNCLAIMED → CLAIMED
+tracker.start("task-1")    # CLAIMED → RUNNING (increments attempt)
+tracker.complete("task-1")  # RUNNING → COMPLETED
+
+# On failure with retry:
+tracker.fail("task-2", error="timeout")
+tracker.retry("task-2")     # FAILED → RETRY_QUEUED (if under max_retries)
+tracker.claim("task-2")     # RETRY_QUEUED → CLAIMED
+
+# Query state
+tracker.active_count(category="security")
+tracker.get_by_state(TaskState.RUNNING)
+tracker.summary()  # {"completed": 1, "running": 1, ...}
+```
+
+### `invoke_with_retry()` (orchestration module)
+
+Single invocation with exponential backoff:
+
+```python
+from orchestration import invoke_with_retry
+
+response = invoke_with_retry(
+    "Analyze this code...",
+    max_retries=3,
+    base_delay_ms=1000,   # 1s, 2s, 4s backoff
+    max_delay_ms=10000,   # capped at 10s
+)
+```
+
+### `invoke_parallel_managed()` (orchestration module)
+
+Full-featured parallel invocations with all Symphony patterns:
+
+```python
+from orchestration import invoke_parallel_managed, ConcurrencyLimiter
+
+limiter = ConcurrencyLimiter(
+    global_limit=10,
+    category_limits={"security": 3, "perf": 3}
+)
+
+def reconcile(prompts, tracker):
+    # Filter out invalid/duplicate work before dispatch
+    return [p for p in prompts if should_run(p)]
+
+results = invoke_parallel_managed(
+    prompts=[
+        {"prompt": "Security review...", "task_id": "sec-1", "category": "security"},
+        {"prompt": "Perf review...", "task_id": "perf-1", "category": "perf"},
+    ],
+    reconcile=reconcile,
+    concurrency_limiter=limiter,
+    max_retries=3,
+    stall_timeout=60.0,
+    on_stall=lambda tid, idle: print(f"{tid} stalled"),
+)
+```
 
 ## Example Workflows
 

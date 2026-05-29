@@ -1,6 +1,6 @@
 ---
 name: war-room
-description: 'Multi-LLM expert panel for high-stakes, hard-to-reverse decisions. Adversarial review.'
+description: Convenes a multi-LLM expert panel to pressure-test hard-to-reverse decisions. Use when reversibility score is low and adversarial review is warranted.
 alwaysApply: false
 # Custom metadata (not used by Claude for matching):
 model_preference: claude-opus-4
@@ -305,7 +305,7 @@ Deliberation mode is automatically selected based on Reversibility Score:
 | ≤ 0.40 | Express (bypass full War Room) |
 | 0.41 - 0.60 | Lightweight panel |
 | 0.61 - 0.80 | Full Council |
-| > 0.80 | Full Council + Delphi |
+| > 0.80 | Full Council and Delphi |
 
 ### Manual Override
 
@@ -386,7 +386,7 @@ Note: In agent teams mode, all teammates run as Claude Code instances (Opus/Sonn
 ### Deliberation Flow with Agent Teams
 
 1. **Lead creates team** → spawns teammates in tmux panes
-2. **Phase 1 (Intel)**: Lead assigns intel tasks to scout + intel-officer via inbox
+2. **Phase 1 (Intel)**: Lead assigns intel tasks to scout and intel-officer via inbox
 3. **Phase 3 (COA)**: Lead broadcasts situation assessment; teammates develop COAs independently; messaging allows clarifying questions mid-development
 4. **Phase 4 (Red Team)**: Red-team teammate receives all COAs, posts challenges; other teammates can **respond to challenges in real-time**
 5. **Phase 5 (Voting)**: Lead broadcasts ballot; teammates rank via inbox messages

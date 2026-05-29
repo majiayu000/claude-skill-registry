@@ -1,0 +1,13 @@
+{
+  "name": "caching-strategy",
+  "description": "",
+  "repo": "saleor/storefront",
+  "category": "performance",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/saleor/storefront",
+  "github_path": ".claude/skills/caching-strategy",
+  "github_branch": "main",
+  "dir_name": "caching-strategy",
+  "downloaded_at": "2026-02-05T01:44:42.567395Z"
+}

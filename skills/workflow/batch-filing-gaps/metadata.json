@@ -1,0 +1,17 @@
+{
+  "name": "batch-filing-gaps",
+  "repo": "0xHoneyJar/construct-observer",
+  "path": "skills/batch-filing-gaps/SKILL.md",
+  "github_branch": "main",
+  "category": "workflow",
+  "source": "github.com/0xHoneyJar/construct-observer",
+  "dir_name": "batch-filing-gaps",
+  "downloaded_at": "2026-03-01T04:39:50.704758Z",
+  "author": "0xHoneyJar",
+  "source_url": "https://github.com/0xHoneyJar/construct-observer/blob/main/skills/batch-filing-gaps/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/0xHoneyJar/construct-observer/blob/main/skills/batch-filing-gaps/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

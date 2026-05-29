@@ -1,0 +1,18 @@
+{
+  "name": "chat-naming",
+  "description": "Generate descriptive chat titles from the first message using a fast LLM. Runs as a background workflow step after the main response to avoid delaying the experience.",
+  "repo": "andrelandgraf/fullstackrecipes",
+  "path": ".agents/skills/chat-naming",
+  "category": "ai-llm",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/andrelandgraf/fullstackrecipes",
+  "dir_name": "chat-naming-andrelandgraf-fullstackrecipes-2",
+  "author": "andrelandgraf",
+  "source_url": "https://github.com/andrelandgraf/fullstackrecipes/blob/main/.agents/skills/chat-naming/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/andrelandgraf/fullstackrecipes/blob/main/.agents/skills/chat-naming/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "anycrawl-social-extractor",
+  "repo": "Citedy/skills",
+  "path": "skills/anycrawl-social-extractor/SKILL.md",
+  "github_branch": "main",
+  "category": "integration",
+  "source": "github.com/Citedy/skills",
+  "dir_name": "anycrawl-social-extractor",
+  "downloaded_at": "2026-03-22T05:05:13.010293Z",
+  "author": "Citedy",
+  "source_url": "https://github.com/Citedy/skills/blob/main/skills/anycrawl-social-extractor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Citedy/skills/blob/main/skills/anycrawl-social-extractor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "brightdata",
+  "repo": "danielmiessler/Personal_AI_Infrastructure",
+  "path": "Releases/v2.3/.claude/skills/BrightData/SKILL.md",
+  "category": "integration",
+  "source": "github.com/danielmiessler/Personal_AI_Infrastructure",
+  "dir_name": "brightdata-danielmiessler-personal-ai-infrastr-4",
+  "downloaded_at": "2026-02-15T06:53:18.928692Z",
+  "author": "danielmiessler",
+  "source_url": "https://github.com/danielmiessler/Personal_AI_Infrastructure/blob/main/Releases/v2.3/.claude/skills/BrightData/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Daniel Miessler",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

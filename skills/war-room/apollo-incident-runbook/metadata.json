@@ -1,0 +1,16 @@
+{
+  "name": "apollo-incident-runbook",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/apollo-pack/skills/apollo-incident-runbook/SKILL.md",
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "downloaded_at": "2026-01-27T03:43:08.042831Z",
+  "dir_name": "apollo-incident-runbook",
+  "category": "war-room",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/plugins/saas-packs/apollo-pack/skills/apollo-incident-runbook/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

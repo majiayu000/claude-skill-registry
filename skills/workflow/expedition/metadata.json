@@ -1,0 +1,20 @@
+{
+  "name": "expedition",
+  "description": "",
+  "repo": "hankh95/yurtle-kanban",
+  "category": "workflow",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/hankh95/yurtle-kanban",
+  "github_path": "skills/expedition",
+  "github_branch": "main",
+  "dir_name": "expedition",
+  "downloaded_at": "2026-02-05T05:39:12.119711Z",
+  "author": "hankh95",
+  "source_url": "https://github.com/hankh95/yurtle-kanban/blob/main/skills/expedition/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Hank Head",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

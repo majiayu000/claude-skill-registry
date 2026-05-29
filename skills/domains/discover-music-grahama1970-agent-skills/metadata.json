@@ -1,0 +1,17 @@
+{
+  "name": "discover-music",
+  "repo": "grahama1970/agent-skills",
+  "path": "skills/discover-music/SKILL.md",
+  "github_branch": "main",
+  "category": "domains",
+  "source": "github.com/grahama1970/agent-skills",
+  "dir_name": "discover-music-grahama1970-agent-skills",
+  "downloaded_at": "2026-03-01T07:57:13.281217Z",
+  "author": "grahama1970",
+  "source_url": "https://github.com/grahama1970/agent-skills/blob/main/skills/discover-music/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/grahama1970/agent-skills/blob/main/skills/discover-music/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

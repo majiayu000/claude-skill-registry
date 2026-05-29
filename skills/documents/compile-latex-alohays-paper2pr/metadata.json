@@ -1,0 +1,17 @@
+{
+  "name": "compile-latex",
+  "repo": "alohays/paper2pr",
+  "path": ".claude/skills/compile-latex/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/alohays/paper2pr",
+  "dir_name": "compile-latex-alohays-paper2pr",
+  "downloaded_at": "2026-03-22T06:53:01.173748Z",
+  "author": "alohays",
+  "source_url": "https://github.com/alohays/paper2pr/blob/main/.claude/skills/compile-latex/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alohays/paper2pr/blob/main/.claude/skills/compile-latex/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

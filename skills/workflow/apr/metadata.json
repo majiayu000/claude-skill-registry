@@ -1,0 +1,16 @@
+{
+  "name": "apr",
+  "repo": "Dicklesworthstone/flywheel_connectors",
+  "path": ".claude/skills/apr/SKILL.md",
+  "category": "workflow",
+  "source": "github.com/Dicklesworthstone/flywheel_connectors",
+  "dir_name": "apr",
+  "downloaded_at": "2026-02-22T04:57:41.764771Z",
+  "author": "Dicklesworthstone",
+  "source_url": "https://github.com/Dicklesworthstone/flywheel_connectors/blob/main/.claude/skills/apr/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Dicklesworthstone/flywheel_connectors/blob/main/.claude/skills/apr/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

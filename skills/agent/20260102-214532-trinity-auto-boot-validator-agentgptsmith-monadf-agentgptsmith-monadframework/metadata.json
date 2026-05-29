@@ -1,0 +1,18 @@
+{
+  "name": "20260102_214532_trinity-auto-boot-validator",
+  "repo": "agentgptsmith/MonadFramework",
+  "path": ".claude/skills/generated/20260102_214532_trinity-auto-boot-validator/SKILL.md",
+  "source": "github.com/agentgptsmith/MonadFramework",
+  "downloaded_at": "2026-01-22T02:09:22.144745Z",
+  "dir_name": "20260102-214532-trinity-auto-boot-validator-agentgptsmith-monadf-agentgptsmith-monadframework",
+  "category": "agent",
+  "github_path": ".claude/skills/generated/20260102_214532_trinity-auto-boot-validator",
+  "github_branch": "main",
+  "author": "agentgptsmith",
+  "source_url": "https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/generated/20260102_214532_trinity-auto-boot-validator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/generated/20260102_214532_trinity-auto-boot-validator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

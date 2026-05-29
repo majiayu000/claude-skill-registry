@@ -1,0 +1,18 @@
+{
+  "name": "exoplanet-workflows",
+  "repo": "benchflow-ai/skillsbench",
+  "path": "tasks/exoplanet-detection-period/environment/skills/exoplanet-workflows/SKILL.md",
+  "source": "github.com/benchflow-ai/skillsbench",
+  "downloaded_at": "2026-01-14T03:02:46.347106Z",
+  "dir_name": "exoplanet-workflows-benchflow-ai-skillsbench",
+  "category": "domains",
+  "github_path": "tasks/exoplanet-detection-period/environment/skills/exoplanet-workflows",
+  "github_branch": "main",
+  "author": "benchflow-ai",
+  "source_url": "https://github.com/benchflow-ai/skillsbench/blob/main/tasks/exoplanet-detection-period/environment/skills/exoplanet-workflows/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/benchflow-ai/skillsbench/blob/main/tasks/exoplanet-detection-period/environment/skills/exoplanet-workflows/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

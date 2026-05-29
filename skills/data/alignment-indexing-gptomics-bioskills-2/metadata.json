@@ -1,0 +1,18 @@
+{
+  "name": "alignment-indexing",
+  "description": "Create and use BAI/CSI indices for BAM/CRAM files using samtools and pysam. Use when enabling random access to alignment files or fetching specific genomic regions.",
+  "repo": "GPTomics/bioSkills",
+  "path": "alignment-files/alignment-indexing",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/GPTomics/bioSkills",
+  "dir_name": "alignment-indexing-gptomics-bioskills-2",
+  "author": "GPTomics",
+  "source_url": "https://github.com/GPTomics/bioSkills/blob/main/alignment-files/alignment-indexing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 GPTomics",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

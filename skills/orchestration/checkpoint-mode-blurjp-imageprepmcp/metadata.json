@@ -1,0 +1,13 @@
+{
+  "name": "checkpoint-mode",
+  "description": "",
+  "repo": "Blurjp/ImagePrepMCP",
+  "category": "orchestration",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".claude/skills/loki-mode/agent-skills/checkpoint-mode",
+  "github_branch": "main",
+  "dir_name": "checkpoint-mode-blurjp-imageprepmcp",
+  "downloaded_at": "2026-02-05T01:45:48.945212Z"
+}

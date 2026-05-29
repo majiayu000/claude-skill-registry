@@ -1,0 +1,17 @@
+{
+  "name": "domain-predicates",
+  "repo": "front-depiction/cli-stock",
+  "path": ".claude/skills/domain-predicates/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/front-depiction/cli-stock",
+  "dir_name": "domain-predicates-front-depiction-cli-stock-3",
+  "downloaded_at": "2026-03-01T07:47:38.885458Z",
+  "author": "front-depiction",
+  "source_url": "https://github.com/front-depiction/cli-stock/blob/main/.claude/skills/domain-predicates/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/front-depiction/cli-stock/blob/main/.claude/skills/domain-predicates/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

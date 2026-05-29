@@ -1,0 +1,20 @@
+{
+  "name": "detect-commands",
+  "description": "",
+  "repo": "CheekyCodexConjurer/aera-chart-engine",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "",
+  "github_path": ".codex/skills/detect_commands",
+  "github_branch": "main",
+  "dir_name": "detect-commands-cheekycodexconjurer-aera-chart-engine",
+  "downloaded_at": "2026-02-05T05:48:24.204799Z",
+  "author": "CheekyCodexConjurer",
+  "source_url": "https://github.com/CheekyCodexConjurer/aera-chart-engine/blob/main/.codex/skills/detect_commands/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 CheekyCodexConjurer",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

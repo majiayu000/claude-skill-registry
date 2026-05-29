@@ -1,0 +1,17 @@
+{
+  "name": "automating-voice-memos",
+  "repo": "SpillwaveSolutions/automating-mac-apps-plugin",
+  "path": "plugins/automating-mac-apps-plugin/skills/automating-voice-memos/SKILL.md",
+  "github_branch": "main",
+  "category": "platform",
+  "source": "github.com/SpillwaveSolutions/automating-mac-apps-plugin",
+  "dir_name": "automating-voice-memos-spillwavesolutions-automating-mac-apps-3",
+  "downloaded_at": "2026-03-22T06:17:38.019069Z",
+  "author": "SpillwaveSolutions",
+  "source_url": "https://github.com/SpillwaveSolutions/automating-mac-apps-plugin/blob/main/plugins/automating-mac-apps-plugin/skills/automating-voice-memos/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SpillwaveSolutions/automating-mac-apps-plugin/blob/main/plugins/automating-mac-apps-plugin/skills/automating-voice-memos/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

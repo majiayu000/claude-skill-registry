@@ -1,0 +1,17 @@
+{
+  "name": "code-documentation-code-explain",
+  "repo": "Claude-Code-Community-Ireland/claude-code-resources",
+  "path": "skills/general/code-documentation-code-explain/skill.md",
+  "github_branch": "main",
+  "category": "personal-development",
+  "source": "github.com/Claude-Code-Community-Ireland/claude-code-resources",
+  "dir_name": "code-documentation-code-explain-claude-code-communit-claude-code",
+  "downloaded_at": "2026-03-01T05:04:00.439660Z",
+  "author": "Claude-Code-Community-Ireland",
+  "source_url": "https://github.com/Claude-Code-Community-Ireland/claude-code-resources/blob/main/skills/general/code-documentation-code-explain/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Claude-Code-Community-Ireland/claude-code-resources/blob/main/skills/general/code-documentation-code-explain/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

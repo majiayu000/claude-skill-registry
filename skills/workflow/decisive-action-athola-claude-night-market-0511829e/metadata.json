@@ -1,0 +1,18 @@
+{
+  "name": "decisive-action",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/conserve/skills/decisive-action/SKILL.md",
+  "source": "github.com/athola/claude-night-market",
+  "downloaded_at": "2026-01-22T03:09:15.823217Z",
+  "dir_name": "decisive-action-athola-claude-night-market-0511829e",
+  "category": "workflow",
+  "github_path": "plugins/conserve/skills/decisive-action",
+  "github_branch": "main",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/main/plugins/conserve/skills/decisive-action/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 athola",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

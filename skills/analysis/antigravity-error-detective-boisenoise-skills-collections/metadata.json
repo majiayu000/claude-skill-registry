@@ -1,0 +1,16 @@
+{
+  "name": "antigravity-error-detective",
+  "repo": "boisenoise/skills-collections",
+  "path": "skills/antigravity-error-detective/SKILL.md",
+  "source": "github.com/boisenoise/skills-collections",
+  "downloaded_at": "2026-01-29T08:28:32.970339Z",
+  "dir_name": "antigravity-error-detective-boisenoise-skills-collections",
+  "category": "analysis",
+  "author": "boisenoise",
+  "source_url": "https://github.com/boisenoise/skills-collections/blob/main/skills/antigravity-error-detective/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/boisenoise/skills-collections/blob/main/skills/antigravity-error-detective/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

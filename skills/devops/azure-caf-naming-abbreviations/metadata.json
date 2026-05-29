@@ -1,0 +1,17 @@
+{
+  "name": "azure-caf-naming-abbreviations",
+  "repo": "alefteris/agent-skills",
+  "path": "azure-caf-naming-abbreviations/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/alefteris/agent-skills",
+  "dir_name": "azure-caf-naming-abbreviations",
+  "downloaded_at": "2026-03-01T06:36:36.058715Z",
+  "author": "alefteris",
+  "source_url": "https://github.com/alefteris/agent-skills/blob/main/azure-caf-naming-abbreviations/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alefteris/agent-skills/blob/main/azure-caf-naming-abbreviations/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "compressed-nfts-basics",
+  "repo": "SanctifiedOps/solana-skills",
+  "path": "skills/core-dev/compressed-nfts-basics/SKILL.md",
+  "source": "github.com/SanctifiedOps/solana-skills",
+  "downloaded_at": "2026-01-27T01:45:21.162194Z",
+  "dir_name": "compressed-nfts-basics",
+  "category": "development",
+  "author": "SanctifiedOps",
+  "source_url": "https://github.com/SanctifiedOps/solana-skills/blob/main/skills/core-dev/compressed-nfts-basics/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SanctifiedOps",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

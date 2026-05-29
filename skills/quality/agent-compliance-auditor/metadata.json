@@ -1,0 +1,16 @@
+{
+  "name": "agent-compliance-auditor",
+  "repo": "marcelocmenezes/antigravity-agentkit",
+  "path": ".agent/skills/agent-compliance-auditor/SKILL.md",
+  "source": "github.com/marcelocmenezes/antigravity-agentkit",
+  "downloaded_at": "2026-01-29T02:56:30.530868Z",
+  "dir_name": "agent-compliance-auditor",
+  "category": "quality",
+  "author": "marcelocmenezes",
+  "source_url": "https://github.com/marcelocmenezes/antigravity-agentkit/blob/main/.agent/skills/agent-compliance-auditor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/marcelocmenezes/antigravity-agentkit/blob/main/.agent/skills/agent-compliance-auditor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

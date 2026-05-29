@@ -1,0 +1,18 @@
+{
+  "name": "design-scalardb",
+  "repo": "wfukatsu/refactoring-agent-for-claude-code",
+  "path": ".claude/skills/design-scalardb/skill.md",
+  "source": "github.com/wfukatsu/refactoring-agent-for-claude-code",
+  "downloaded_at": "2026-01-22T03:38:40.050180Z",
+  "dir_name": "design-scalardb",
+  "category": "domains",
+  "github_path": ".claude/skills/design-scalardb-analytics",
+  "github_branch": "main",
+  "author": "wfukatsu",
+  "source_url": "https://github.com/wfukatsu/refactoring-agent-for-claude-code/blob/main/.claude/skills/design-scalardb-analytics/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wfukatsu/refactoring-agent-for-claude-code/blob/main/.claude/skills/design-scalardb-analytics/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "encode-repo-serena",
+  "repo": "rjmurillo/ai-agents",
+  "path": ".claude/skills/encode-repo-serena/SKILL.md",
+  "source": "github.com/rjmurillo/ai-agents",
+  "downloaded_at": "2026-01-22T04:17:13.086391Z",
+  "dir_name": "encode-repo-serena-rjmurillo-ai-agents-d2ae314e",
+  "category": "context-management",
+  "github_path": ".claude/skills/encode-repo-serena",
+  "github_branch": "main",
+  "author": "rjmurillo",
+  "source_url": "https://github.com/rjmurillo/ai-agents/blob/main/.claude/skills/encode-repo-serena/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

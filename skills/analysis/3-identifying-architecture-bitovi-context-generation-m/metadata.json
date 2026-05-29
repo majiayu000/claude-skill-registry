@@ -1,0 +1,16 @@
+{
+  "name": "3-identifying-architecture",
+  "repo": "bitovi/context-generation-mvp",
+  "path": ".claude/skills/3-identifying-architecture/SKILL.md",
+  "category": "analysis",
+  "source": "github.com/bitovi/context-generation-mvp",
+  "dir_name": "3-identifying-architecture-bitovi-context-generation-m",
+  "downloaded_at": "2026-02-15T06:34:29.202906Z",
+  "author": "bitovi",
+  "source_url": "https://github.com/bitovi/context-generation-mvp/blob/main/.claude/skills/3-identifying-architecture/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bitovi/context-generation-mvp/blob/main/.claude/skills/3-identifying-architecture/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

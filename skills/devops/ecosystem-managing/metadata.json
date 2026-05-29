@@ -1,0 +1,18 @@
+{
+  "name": "ecosystem-managing",
+  "repo": "VidyFoo/antigravity-skill-engine",
+  "path": ".agent/skills/3-sys/ecosystem-managing/SKILL.md",
+  "source": "github.com/VidyFoo/antigravity-skill-engine",
+  "downloaded_at": "2026-01-22T03:47:05.409312Z",
+  "dir_name": "ecosystem-managing",
+  "category": "devops",
+  "github_path": ".agent/skills/3-sys/ecosystem-managing",
+  "github_branch": "main",
+  "author": "VidyFoo",
+  "source_url": "https://github.com/VidyFoo/antigravity-skill-engine/blob/main/.agent/skills/3-sys/ecosystem-managing/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Antigravity Lab",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

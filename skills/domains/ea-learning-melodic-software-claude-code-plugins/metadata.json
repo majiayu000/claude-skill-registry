@@ -1,0 +1,16 @@
+{
+  "name": "ea-learning",
+  "repo": "melodic-software/claude-code-plugins",
+  "path": "plugins/enterprise-architecture/skills/ea-learning/SKILL.md",
+  "source": "github.com/melodic-software/claude-code-plugins",
+  "downloaded_at": "2026-01-29T06:56:03.955410Z",
+  "dir_name": "ea-learning-melodic-software-claude-code-plugins",
+  "category": "domains",
+  "author": "melodic-software",
+  "source_url": "https://github.com/melodic-software/claude-code-plugins/blob/main/plugins/enterprise-architecture/skills/ea-learning/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Melodic Software",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

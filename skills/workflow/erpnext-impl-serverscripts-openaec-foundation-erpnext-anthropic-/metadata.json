@@ -1,0 +1,18 @@
+{
+  "name": "erpnext-impl-serverscripts",
+  "description": "Implementation workflows and decision trees for ERPNext Server Scripts. Use when determining HOW to implement server-side features: document validation, automated calculations, API endpoints, schedule",
+  "repo": "OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "path": "skills/source/impl/erpnext-impl-serverscripts",
+  "category": "workflow",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package",
+  "dir_name": "erpnext-impl-serverscripts-openaec-foundation-erpnext-anthropic-",
+  "author": "OpenAEC-Foundation",
+  "source_url": "https://github.com/OpenAEC-Foundation/ERPNext_Anthropic_Claude_Development_Skill_Package/blob/main/skills/source/impl/erpnext-impl-serverscripts/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

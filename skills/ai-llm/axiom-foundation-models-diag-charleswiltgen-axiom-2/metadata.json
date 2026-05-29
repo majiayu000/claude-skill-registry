@@ -1,0 +1,18 @@
+{
+  "name": "axiom-foundation-models-diag",
+  "description": "Use when debugging Foundation Models issues — context exceeded, guardrail violations, slow generation, availability problems, unsupported language, or unexpected output. Systematic diagnostics with pr",
+  "repo": "CharlesWiltgen/Axiom",
+  "path": ".claude-plugin/plugins/axiom/skills/axiom-foundation-models-diag",
+  "category": "ai-llm",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/CharlesWiltgen/Axiom",
+  "dir_name": "axiom-foundation-models-diag-charleswiltgen-axiom-2",
+  "author": "CharlesWiltgen",
+  "source_url": "https://github.com/CharlesWiltgen/Axiom/blob/main/.claude-plugin/plugins/axiom/skills/axiom-foundation-models-diag/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Charles Wiltgen",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "command-basic-patterns",
+  "repo": "daishiman/AIWorkflowOrchestrator",
+  "path": "docs/99-claude/skills/command-basic-patterns/SKILL.md",
+  "source": "github.com/daishiman/AIWorkflowOrchestrator",
+  "downloaded_at": "2026-01-22T01:26:15.594087Z",
+  "dir_name": "command-basic-patterns",
+  "category": "workflow",
+  "github_path": "docs/99-claude/skills/command-basic-patterns",
+  "github_branch": "main",
+  "author": "daishiman",
+  "source_url": "https://github.com/daishiman/AIWorkflowOrchestrator/blob/main/docs/99-claude/skills/command-basic-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/daishiman/AIWorkflowOrchestrator/blob/main/docs/99-claude/skills/command-basic-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

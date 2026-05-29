@@ -1,0 +1,16 @@
+{
+  "name": "2026-legal-research-agent",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/2026-legal-research-agent/SKILL.md",
+  "source": "github.com/erichowens/some_claude_skills",
+  "downloaded_at": "2026-02-02T01:26:59.880670Z",
+  "dir_name": "2026-legal-research-agent",
+  "category": "agent",
+  "author": "erichowens",
+  "source_url": "https://github.com/erichowens/some_claude_skills/blob/main/.claude/skills/2026-legal-research-agent/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Erich Owens",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

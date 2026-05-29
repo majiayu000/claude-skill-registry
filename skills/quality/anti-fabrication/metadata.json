@@ -1,0 +1,16 @@
+{
+  "name": "anti-fabrication",
+  "repo": "vinnie357/claude-skills",
+  "path": "core/skills/anti-fabrication/SKILL.md",
+  "source": "github.com/vinnie357/claude-skills",
+  "downloaded_at": "2026-01-27T03:06:34.165664Z",
+  "dir_name": "anti-fabrication",
+  "category": "quality",
+  "author": "vinnie357",
+  "source_url": "https://github.com/vinnie357/claude-skills/blob/main/core/skills/anti-fabrication/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Vinnie Mazza",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

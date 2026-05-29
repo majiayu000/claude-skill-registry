@@ -1,0 +1,13 @@
+{
+  "name": "azure-speech-to-text-rest-py",
+  "description": "",
+  "repo": "microsoft/skills",
+  "category": "api",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/microsoft/skills",
+  "github_path": ".github/skills/azure-speech-to-text-rest-py",
+  "github_branch": "main",
+  "dir_name": "azure-speech-to-text-rest-py",
+  "downloaded_at": "2026-02-05T01:44:52.497091Z"
+}

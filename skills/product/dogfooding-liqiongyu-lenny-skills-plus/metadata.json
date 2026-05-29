@@ -1,0 +1,16 @@
+{
+  "name": "dogfooding",
+  "repo": "liqiongyu/lenny_skills_plus",
+  "path": "skills/dogfooding/SKILL.md",
+  "source": "github.com/liqiongyu/lenny_skills_plus",
+  "downloaded_at": "2026-01-29T08:27:42.846547Z",
+  "dir_name": "dogfooding-liqiongyu-lenny-skills-plus",
+  "category": "product",
+  "author": "liqiongyu",
+  "source_url": "https://github.com/liqiongyu/lenny_skills_plus/blob/main/skills/dogfooding/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/liqiongyu/lenny_skills_plus/blob/main/skills/dogfooding/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

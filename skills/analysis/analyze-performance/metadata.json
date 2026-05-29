@@ -1,0 +1,16 @@
+{
+  "name": "analyze-performance",
+  "repo": "qmu/workaholic",
+  "path": "plugins/core/skills/analyze-performance/SKILL.md",
+  "source": "github.com/qmu/workaholic",
+  "downloaded_at": "2026-01-29T07:44:25.717320Z",
+  "dir_name": "analyze-performance",
+  "category": "analysis",
+  "author": "qmu",
+  "source_url": "https://github.com/qmu/workaholic/blob/main/plugins/core/skills/analyze-performance/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/qmu/workaholic/blob/main/plugins/core/skills/analyze-performance/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "edge-function-generator",
+  "repo": "Spectaculous-Code/raamattu-nyt",
+  "path": ".claude/skills/edge-function-generator/SKILL.md",
+  "source": "github.com/Spectaculous-Code/raamattu-nyt",
+  "downloaded_at": "2026-01-29T08:02:35.021412Z",
+  "dir_name": "edge-function-generator-spectaculous-code-raamattu-nyt-2e6a902c",
+  "category": "development",
+  "author": "Spectaculous-Code",
+  "source_url": "https://github.com/Spectaculous-Code/raamattu-nyt/blob/main/.claude/skills/edge-function-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Spectaculous-Code/raamattu-nyt/blob/main/.claude/skills/edge-function-generator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

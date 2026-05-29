@@ -1,0 +1,17 @@
+{
+  "batch_id": "current-other-low-confidence-batch-014",
+  "migration_policy": {
+    "fail_closed": true,
+    "min_confidence": 0.9,
+    "movable_only": true
+  },
+  "parent_issue": "https://github.com/majiayu000/claude-skill-registry-data/issues/77",
+  "schema_version": 1,
+  "selected_input_count": 10000,
+  "selection_policy": {
+    "limit": 10000,
+    "order": "residual workset iteration order",
+    "workset": "low_confidence"
+  },
+  "source_classification_jsonl": "migration-artifacts/2026-05-29-current-other-residual-batch-013/post-batch013-combined-classification.jsonl"
+}

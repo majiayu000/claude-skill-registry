@@ -1,0 +1,17 @@
+{
+  "name": "corrections-audit",
+  "repo": "haabe/mycelium",
+  "path": ".claude/skills/corrections-audit/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/haabe/mycelium",
+  "dir_name": "corrections-audit",
+  "downloaded_at": "2026-05-04T02:04:26.873046Z",
+  "author": "haabe",
+  "source_url": "https://github.com/haabe/mycelium/blob/main/.claude/skills/corrections-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/haabe/mycelium/blob/main/.claude/skills/corrections-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

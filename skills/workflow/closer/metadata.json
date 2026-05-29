@@ -1,0 +1,16 @@
+{
+  "name": "closer",
+  "repo": "ianphil/prism",
+  "path": ".claude/skills/closer/SKILL.md",
+  "source": "github.com/ianphil/prism",
+  "downloaded_at": "2026-02-01T04:09:04.130390Z",
+  "dir_name": "closer",
+  "category": "workflow",
+  "author": "ianphil",
+  "source_url": "https://github.com/ianphil/prism/blob/main/.claude/skills/closer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ianphil/prism/blob/main/.claude/skills/closer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

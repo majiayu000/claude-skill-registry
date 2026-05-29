@@ -1,0 +1,20 @@
+{
+  "name": "epic-management",
+  "description": "The most comprehensive Claude Code skills registry - 50,000+ skills indexed",
+  "repo": "majiayu000/claude-skill-registry",
+  "category": "product",
+  "tags": [],
+  "stars": 48,
+  "source": "",
+  "github_path": "skills/data/epic-management",
+  "github_branch": "main",
+  "dir_name": "epic-management",
+  "downloaded_at": "2026-02-05T01:45:15.405547Z",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/claude-skill-registry/blob/main/skills/data/epic-management/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 majiayu000",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

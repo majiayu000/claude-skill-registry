@@ -1,0 +1,18 @@
+{
+  "name": "action-queue",
+  "description": "Sims-inspired task scheduling — queue actions, execute in order",
+  "repo": "SimHacker/moollm",
+  "path": "skills/action-queue",
+  "category": "orchestration",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SimHacker/moollm",
+  "dir_name": "action-queue-simhacker-moollm-2",
+  "author": "SimHacker",
+  "source_url": "https://github.com/SimHacker/moollm/blob/main/skills/action-queue/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Don Hopkins, Leela AI",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

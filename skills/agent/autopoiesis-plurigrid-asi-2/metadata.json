@@ -1,0 +1,18 @@
+{
+  "name": "autopoiesis",
+  "description": "Self-producing skill system combining ruler enforcement with skill self-evolution. Implements trifurcation-first imperative via nbb sexp invocation for idempotent agent instruction.",
+  "repo": "plurigrid/asi",
+  "path": "skills/autopoiesis",
+  "category": "agent",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/plurigrid/asi",
+  "dir_name": "autopoiesis-plurigrid-asi-2",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/autopoiesis/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

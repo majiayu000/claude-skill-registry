@@ -1,0 +1,71 @@
+{
+  "applied_at": "2026-05-29T00:55:26.620530+00:00",
+  "classification_jsonl": "migration-artifacts/2026-05-29-current-other-low-confidence-batch-014/classification.jsonl",
+  "generated_at": "2026-05-29T00:55:26.589367+00:00",
+  "move_count": 1,
+  "move_examples": [
+    {
+      "confidence": 0.9,
+      "current_category": "other",
+      "key": "gokhanarkan/claude-github-summary:name:github-summary",
+      "metadata_sha256": "6431b5a15c403e4326803d61d69508dcc9daa413123eaf1c0db6bba3f662a3d2",
+      "name": "github-summary",
+      "operation": "move",
+      "reason": "classification target passed filters",
+      "repo": "gokhanarkan/claude-github-summary",
+      "semantic_text_sha256": "8fe2141e06957df467bbfd56e3beb419a4ef4fd7a46c6e0075da4883fe5c8c56",
+      "source_category": "other",
+      "source_path": "other/claude-github-summary-gokhanarkan-claude-github-summar",
+      "source_sha256": "5a5ac2e2f28aab23f3e16b5b8a711f20486e13b35ece6a9e50edf1c499d7c7a0",
+      "source_skill": "other/claude-github-summary-gokhanarkan-claude-github-summar/SKILL.md",
+      "target_category": "analysis",
+      "target_path": "analysis/claude-github-summary-gokhanarkan-claude-github-summar",
+      "target_skill": "analysis/claude-github-summary-gokhanarkan-claude-github-summar/SKILL.md",
+      "target_status": "active"
+    }
+  ],
+  "notes": [
+    "Default mode is review-only and does not modify files.",
+    "Only --apply moves directories and updates metadata.json.",
+    "Blocked moves are never applied automatically."
+  ],
+  "policy": {
+    "allow_target_other": false,
+    "apply_mode": "apply",
+    "from_categories": [
+      "other"
+    ],
+    "limit": null,
+    "min_confidence": 0.9,
+    "movable_only": true,
+    "target_statuses": [
+      "active"
+    ],
+    "to_categories": []
+  },
+  "schema_version": 1,
+  "skills_dir": ".",
+  "summary": {
+    "blocked_count": 0,
+    "classification_row_count": 10000,
+    "classification_status_counts": {
+      "ok": 10000
+    },
+    "movable_count": 1,
+    "operation_counts": {
+      "move": 1
+    },
+    "planned_move_count": 1,
+    "reject_reasons": {
+      "confidence below threshold": 5766,
+      "source directory missing": 2701,
+      "target category already contains a skill with the same stable key": 1532
+    },
+    "source_category_counts": {
+      "other": 1
+    },
+    "target_category_counts": {
+      "analysis": 1
+    }
+  }
+}

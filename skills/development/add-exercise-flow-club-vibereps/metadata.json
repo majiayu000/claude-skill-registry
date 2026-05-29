@@ -1,0 +1,18 @@
+{
+  "name": "add-exercise",
+  "repo": "Flow-Club/vibereps",
+  "path": ".claude/skills/add-exercise/SKILL.md",
+  "source": "github.com/Flow-Club/vibereps",
+  "downloaded_at": "2026-01-14T02:37:08.286845Z",
+  "dir_name": "add-exercise-flow-club-vibereps",
+  "category": "development",
+  "github_path": ".claude/skills/add-exercise",
+  "github_branch": "main",
+  "author": "Flow-Club",
+  "source_url": "https://github.com/Flow-Club/vibereps/blob/main/.claude/skills/add-exercise/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Flow Club",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "check-inline-code",
+  "repo": "nextflow-io/training",
+  "path": ".claude/skills/check-inline-code/SKILL.md",
+  "source": "github.com/nextflow-io/training",
+  "downloaded_at": "2026-01-29T06:16:23.558470Z",
+  "dir_name": "check-inline-code-nextflow-io-training",
+  "category": "quality",
+  "author": "nextflow-io",
+  "source_url": "https://github.com/nextflow-io/training/blob/main/.claude/skills/check-inline-code/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nextflow-io/training/blob/main/.claude/skills/check-inline-code/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

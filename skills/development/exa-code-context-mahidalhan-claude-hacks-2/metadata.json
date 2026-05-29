@@ -1,0 +1,18 @@
+{
+  "name": "exa-code-context",
+  "description": "USE WHEN: needing real code examples from GitHub, finding API usage patterns, looking up framework setup, verifying library implementations, eliminating hallucinations with working code.\nDO NOT USE WH",
+  "repo": "mahidalhan/claude-hacks",
+  "path": ".claude/skills/exa-code-context",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mahidalhan/claude-hacks",
+  "dir_name": "exa-code-context-mahidalhan-claude-hacks-2",
+  "author": "mahidalhan",
+  "source_url": "https://github.com/mahidalhan/claude-hacks/blob/main/.claude/skills/exa-code-context/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Skilled Spec Contributors",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

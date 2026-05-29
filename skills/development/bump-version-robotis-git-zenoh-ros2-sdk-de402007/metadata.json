@@ -1,0 +1,16 @@
+{
+  "name": "bump-version",
+  "repo": "ROBOTIS-GIT/zenoh_ros2_sdk",
+  "path": ".claude/skills/bump-version/SKILL.md",
+  "source": "github.com/ROBOTIS-GIT/zenoh_ros2_sdk",
+  "downloaded_at": "2026-01-22T03:29:55.253791Z",
+  "dir_name": "bump-version-robotis-git-zenoh-ros2-sdk-de402007",
+  "category": "development",
+  "author": "ROBOTIS-GIT",
+  "source_url": "https://github.com/ROBOTIS-GIT/zenoh_ros2_sdk/blob/main/.claude/skills/bump-version/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ROBOTIS-GIT/zenoh_ros2_sdk/blob/main/.claude/skills/bump-version/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

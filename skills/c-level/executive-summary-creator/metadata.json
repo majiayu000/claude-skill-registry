@@ -1,0 +1,18 @@
+{
+  "name": "executive-summary-creator",
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "skills/20-enterprise-workflows/executive-summary-creator/SKILL.md",
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "downloaded_at": "2026-01-20T01:16:02.592947Z",
+  "dir_name": "executive-summary-creator",
+  "category": "c-level",
+  "github_path": "planned-skills/generated/20-enterprise-workflows/executive-summary-creator",
+  "github_branch": "main",
+  "author": "jeremylongshore",
+  "source_url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills/blob/main/planned-skills/generated/20-enterprise-workflows/executive-summary-creator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Jeremy Longshore",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

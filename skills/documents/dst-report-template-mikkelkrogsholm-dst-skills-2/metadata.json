@@ -1,0 +1,18 @@
+{
+  "name": "dst-report-template",
+  "description": "Generate HTML research reports with embedded data, charts, and analysis.\nUse when creating final research deliverables. Supports single comprehensive\nreports or multiple focused reports. Handles styli",
+  "repo": "mikkelkrogsholm/dst-skills",
+  "path": ".claude/skills/dst-report-template",
+  "category": "documents",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/mikkelkrogsholm/dst-skills",
+  "dir_name": "dst-report-template-mikkelkrogsholm-dst-skills-2",
+  "author": "mikkelkrogsholm",
+  "source_url": "https://github.com/mikkelkrogsholm/dst-skills/blob/main/.claude/skills/dst-report-template/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mikkelkrogsholm/dst-skills/blob/main/.claude/skills/dst-report-template/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

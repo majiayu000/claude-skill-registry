@@ -1,0 +1,16 @@
+{
+  "name": "ebfe-validator",
+  "repo": "gpt-cmdr/ras-commander",
+  "path": ".claude/skills/ebfe-validator/SKILL.md",
+  "source": "github.com/gpt-cmdr/ras-commander",
+  "downloaded_at": "2026-01-29T06:12:39.198539Z",
+  "dir_name": "ebfe-validator-gpt-cmdr-ras-commander",
+  "category": "quality",
+  "author": "gpt-cmdr",
+  "source_url": "https://github.com/gpt-cmdr/ras-commander/blob/main/.claude/skills/ebfe-validator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright (c) 2024 William M. Katzenmeyer",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

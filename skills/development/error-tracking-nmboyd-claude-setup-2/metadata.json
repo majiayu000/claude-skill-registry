@@ -1,0 +1,18 @@
+{
+  "name": "error-tracking",
+  "description": "Add Sentry v8 error tracking and performance monitoring to your project services. Use this skill when adding error handling, creating new controllers, instrumenting cron jobs, or tracking database per",
+  "repo": "NmBoyd/claude_setup",
+  "path": ".claude/skills/error-tracking",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/NmBoyd/claude_setup",
+  "dir_name": "error-tracking-nmboyd-claude-setup-2",
+  "author": "NmBoyd",
+  "source_url": "https://github.com/NmBoyd/claude_setup/blob/main/.claude/skills/error-tracking/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/NmBoyd/claude_setup/blob/main/.claude/skills/error-tracking/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

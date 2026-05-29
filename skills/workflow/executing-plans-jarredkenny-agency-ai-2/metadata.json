@@ -1,0 +1,16 @@
+{
+  "name": "executing-plans",
+  "repo": "jarredkenny/agency-ai",
+  "path": "roles/solo/skills/executing-plans/SKILL.md",
+  "category": "workflow",
+  "source": "github.com/jarredkenny/agency-ai",
+  "dir_name": "executing-plans-jarredkenny-agency-ai-2",
+  "downloaded_at": "2026-02-22T07:36:29.183983Z",
+  "author": "jarredkenny",
+  "source_url": "https://github.com/jarredkenny/agency-ai/blob/main/roles/solo/skills/executing-plans/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jarredkenny/agency-ai/blob/main/roles/solo/skills/executing-plans/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

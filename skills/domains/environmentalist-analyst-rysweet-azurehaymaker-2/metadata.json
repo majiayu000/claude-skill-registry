@@ -1,0 +1,18 @@
+{
+  "name": "environmentalist-analyst",
+  "description": "Analyzes events through environmental lens using ecological principles, systems thinking, sustainability frameworks,\nand conservation biology to assess ecosystem health, biodiversity impacts, and long",
+  "repo": "rysweet/AzureHayMaker",
+  "path": ".claude/skills/environmentalist-analyst",
+  "category": "domains",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/rysweet/AzureHayMaker",
+  "dir_name": "environmentalist-analyst-rysweet-azurehaymaker-2",
+  "author": "rysweet",
+  "source_url": "https://github.com/rysweet/AzureHayMaker/blob/main/.claude/skills/environmentalist-analyst/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Ryan Sweet / Microsoft",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

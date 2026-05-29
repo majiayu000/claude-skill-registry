@@ -1,0 +1,17 @@
+{
+  "name": "archive-prd",
+  "repo": "djnsty23/claude-auto-dev",
+  "path": "skills/archive-prd/SKILL.md",
+  "github_branch": "main",
+  "category": "workflow",
+  "source": "github.com/djnsty23/claude-auto-dev",
+  "dir_name": "archive-prd",
+  "downloaded_at": "2026-03-01T07:28:16.475421Z",
+  "author": "djnsty23",
+  "source_url": "https://github.com/djnsty23/claude-auto-dev/blob/main/skills/archive-prd/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/djnsty23/claude-auto-dev/blob/main/skills/archive-prd/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

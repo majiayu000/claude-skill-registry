@@ -1,0 +1,17 @@
+{
+  "name": "emily",
+  "repo": "Demerzels-lab/elsamultiskillagent",
+  "path": "public/skills/mavremu/emily/SKILL.md",
+  "github_branch": "main",
+  "category": "domains",
+  "source": "github.com/Demerzels-lab/elsamultiskillagent",
+  "dir_name": "emily",
+  "downloaded_at": "2026-03-01T05:10:22.664092Z",
+  "author": "Demerzels-lab",
+  "source_url": "https://github.com/Demerzels-lab/elsamultiskillagent/blob/main/public/skills/mavremu/emily/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Demerzels-lab/elsamultiskillagent/blob/main/public/skills/mavremu/emily/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

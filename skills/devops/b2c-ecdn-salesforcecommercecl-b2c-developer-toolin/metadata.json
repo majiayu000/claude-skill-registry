@@ -1,0 +1,16 @@
+{
+  "name": "b2c-ecdn",
+  "repo": "SalesforceCommerceCloud/b2c-developer-tooling",
+  "path": "plugins/b2c-cli/skills/b2c-ecdn/SKILL.md",
+  "source": "github.com/SalesforceCommerceCloud/b2c-developer-tooling",
+  "downloaded_at": "2026-01-29T05:18:26.207670Z",
+  "dir_name": "b2c-ecdn-salesforcecommercecl-b2c-developer-toolin",
+  "category": "devops",
+  "author": "SalesforceCommerceCloud",
+  "source_url": "https://github.com/SalesforceCommerceCloud/b2c-developer-tooling/blob/main/plugins/b2c-cli/skills/b2c-ecdn/SKILL.md",
+  "license": "Apache-2.0",
+  "copyright": "Copyright (c) 2024 Salesforce, Inc.",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

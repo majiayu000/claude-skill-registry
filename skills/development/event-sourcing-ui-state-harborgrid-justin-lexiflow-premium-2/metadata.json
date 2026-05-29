@@ -1,0 +1,18 @@
+{
+  "name": "event-sourcing-ui-state",
+  "description": "Use event sourcing to build auditable, replayable UI state systems compatible with concurrent rendering.",
+  "repo": "harborgrid-justin/lexiflow-premium",
+  "path": "frontend/.github-skills/event-sourcing-ui-state",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/harborgrid-justin/lexiflow-premium",
+  "dir_name": "event-sourcing-ui-state-harborgrid-justin-lexiflow-premium-2",
+  "author": "harborgrid-justin",
+  "source_url": "https://github.com/harborgrid-justin/lexiflow-premium/blob/main/frontend/.github-skills/event-sourcing-ui-state/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/harborgrid-justin/lexiflow-premium/blob/main/frontend/.github-skills/event-sourcing-ui-state/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

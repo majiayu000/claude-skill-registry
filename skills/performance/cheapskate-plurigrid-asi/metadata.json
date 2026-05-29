@@ -1,0 +1,16 @@
+{
+  "name": "cheapskate",
+  "repo": "plurigrid/asi",
+  "path": "skills/cheapskate/SKILL.md",
+  "source": "github.com/plurigrid/asi",
+  "downloaded_at": "2026-01-29T07:42:15.354900Z",
+  "dir_name": "cheapskate-plurigrid-asi",
+  "category": "performance",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/cheapskate/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

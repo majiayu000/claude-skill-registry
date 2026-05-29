@@ -1,0 +1,18 @@
+{
+  "name": "copy-ai",
+  "description": "AI-powered copywriting and content generation.",
+  "repo": "Andrejones92/canifi-life-os",
+  "path": "skills/copy-ai",
+  "category": "writing",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Andrejones92/canifi-life-os",
+  "dir_name": "copy-ai-andrejones92-canifi-life-os-2",
+  "author": "Andrejones92",
+  "source_url": "https://github.com/Andrejones92/canifi-life-os/blob/main/skills/copy-ai/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Andrejones92/canifi-life-os/blob/main/skills/copy-ai/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "checking-system-logs",
+  "description": "",
+  "repo": "tomcounsell/ai",
+  "category": "system",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/tomcounsell/ai",
+  "github_path": ".claude/skills/checking-system-logs",
+  "github_branch": "main",
+  "dir_name": "checking-system-logs",
+  "downloaded_at": "2026-02-05T01:44:59.387385Z"
+}

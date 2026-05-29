@@ -1,0 +1,18 @@
+{
+  "name": "background-job-orchestrator",
+  "description": "Expert in background job processing with Bull/BullMQ (Redis), Celery, and cloud queues. Implements retries, scheduling, priority queues, and worker management. Use for async task processing, email cam",
+  "repo": "erichowens/some_claude_skills",
+  "path": ".claude/skills/background-job-orchestrator",
+  "category": "workflow",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/erichowens/some_claude_skills",
+  "dir_name": "background-job-orchestrator-erichowens-some-claude-skills-2",
+  "author": "erichowens",
+  "source_url": "https://github.com/erichowens/some_claude_skills/blob/main/.claude/skills/background-job-orchestrator/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 Erich Owens",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

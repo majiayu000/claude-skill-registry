@@ -1,0 +1,17 @@
+{
+  "name": "adinsights-release-readiness",
+  "repo": "cpowe-ADT/ADinsights",
+  "path": "docs/ops/skills/adinsights-release-readiness/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/cpowe-ADT/ADinsights",
+  "dir_name": "adinsights-release-readiness",
+  "downloaded_at": "2026-03-01T07:18:19.367369Z",
+  "author": "cpowe-ADT",
+  "source_url": "https://github.com/cpowe-ADT/ADinsights/blob/main/docs/ops/skills/adinsights-release-readiness/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cpowe-ADT/ADinsights/blob/main/docs/ops/skills/adinsights-release-readiness/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

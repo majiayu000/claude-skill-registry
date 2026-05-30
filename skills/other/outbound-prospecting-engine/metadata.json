@@ -1,0 +1,17 @@
+{
+  "name": "outbound-prospecting-engine",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/playbooks/outbound-prospecting-engine/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "outbound-prospecting-engine",
+  "downloaded_at": "2026-05-30T03:49:03.654171Z",
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/playbooks/outbound-prospecting-engine/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/playbooks/outbound-prospecting-engine/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

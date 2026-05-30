@@ -1,0 +1,21 @@
+{
+  "name": "unknown",
+  "description": null,
+  "repo": "Cantara/lib-electronic-components",
+  "path": ".claude/skills/manufacturers/goodark/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 1,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-cantara-lib-electronic-compo-4",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "Cantara",
+  "source_url": "https://github.com/Cantara/lib-electronic-components/blob/main/.claude/skills/manufacturers/goodark/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Cantara/lib-electronic-components/blob/main/.claude/skills/manufacturers/goodark/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "operating-kubernetes",
+  "repo": "ancoleman/ai-design-components",
+  "path": "skills/operating-kubernetes/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ancoleman/ai-design-components",
+  "dir_name": "operating-kubernetes",
+  "downloaded_at": "2026-05-30T03:41:47.681826Z",
+  "author": "ancoleman",
+  "source_url": "https://github.com/ancoleman/ai-design-components/blob/main/skills/operating-kubernetes/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ancoleman/ai-design-components/blob/main/skills/operating-kubernetes/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

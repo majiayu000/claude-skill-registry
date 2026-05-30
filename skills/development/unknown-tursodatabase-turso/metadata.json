@@ -1,0 +1,21 @@
+{
+  "name": "unknown",
+  "description": "Turso is an in-process SQL database, compatible with SQLite.",
+  "repo": "tursodatabase/turso",
+  "path": ".claude/skills/mvcc/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [],
+  "stars": 16753,
+  "source": "GitHub Code Search Results",
+  "dir_name": "unknown-tursodatabase-turso",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "tursodatabase",
+  "source_url": "https://github.com/tursodatabase/turso/blob/main/.claude/skills/mvcc/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tursodatabase/turso/blob/main/.claude/skills/mvcc/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

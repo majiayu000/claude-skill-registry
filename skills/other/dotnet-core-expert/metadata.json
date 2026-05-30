@@ -1,0 +1,17 @@
+{
+  "name": "dotnet-core-expert",
+  "repo": "Jeffallan/claude-skills",
+  "path": "skills/dotnet-core-expert/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Jeffallan/claude-skills",
+  "dir_name": "dotnet-core-expert",
+  "downloaded_at": "2026-05-30T03:33:26.879171Z",
+  "author": "Jeffallan",
+  "source_url": "https://github.com/Jeffallan/claude-skills/blob/main/skills/dotnet-core-expert/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Jeffallan/claude-skills/blob/main/skills/dotnet-core-expert/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

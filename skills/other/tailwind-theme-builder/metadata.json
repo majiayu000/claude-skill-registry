@@ -1,0 +1,17 @@
+{
+  "name": "tailwind-theme-builder",
+  "repo": "jezweb/claude-skills",
+  "path": "plugins/frontend/skills/tailwind-theme-builder/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/jezweb/claude-skills",
+  "dir_name": "tailwind-theme-builder",
+  "downloaded_at": "2026-05-30T03:51:05.637923Z",
+  "author": "jezweb",
+  "source_url": "https://github.com/jezweb/claude-skills/blob/main/plugins/frontend/skills/tailwind-theme-builder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jezweb/claude-skills/blob/main/plugins/frontend/skills/tailwind-theme-builder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

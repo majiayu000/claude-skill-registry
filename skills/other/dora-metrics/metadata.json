@@ -1,0 +1,17 @@
+{
+  "name": "dora-metrics",
+  "repo": "athola/claude-night-market",
+  "path": "plugins/minister/skills/dora-metrics/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/athola/claude-night-market",
+  "dir_name": "dora-metrics",
+  "downloaded_at": "2026-05-30T03:42:28.771959Z",
+  "author": "athola",
+  "source_url": "https://github.com/athola/claude-night-market/blob/master/plugins/minister/skills/dora-metrics/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/athola/claude-night-market/blob/master/plugins/minister/skills/dora-metrics/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

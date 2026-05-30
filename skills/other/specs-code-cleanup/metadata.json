@@ -1,0 +1,17 @@
+{
+  "name": "specs-code-cleanup",
+  "repo": "giuseppe-trisciuoglio/developer-kit",
+  "path": "plugins/developer-kit-specs/skills/specs-code-cleanup/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/giuseppe-trisciuoglio/developer-kit",
+  "dir_name": "specs-code-cleanup",
+  "downloaded_at": "2026-05-30T03:48:09.784157Z",
+  "author": "giuseppe-trisciuoglio",
+  "source_url": "https://github.com/giuseppe-trisciuoglio/developer-kit/blob/main/plugins/developer-kit-specs/skills/specs-code-cleanup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/giuseppe-trisciuoglio/developer-kit/blob/main/plugins/developer-kit-specs/skills/specs-code-cleanup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "pinme-share",
+  "repo": "glitternetwork/pinme",
+  "path": "skills/pinme-share/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/glitternetwork/pinme",
+  "dir_name": "pinme-share",
+  "downloaded_at": "2026-05-30T03:48:21.491669Z",
+  "author": "glitternetwork",
+  "source_url": "https://github.com/glitternetwork/pinme/blob/main/skills/pinme-share/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/glitternetwork/pinme/blob/main/skills/pinme-share/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

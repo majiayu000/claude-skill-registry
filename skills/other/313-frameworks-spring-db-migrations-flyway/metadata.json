@@ -1,0 +1,17 @@
+{
+  "name": "313-frameworks-spring-db-migrations-flyway",
+  "repo": "jabrena/cursor-rules-java",
+  "path": "skills/313-frameworks-spring-db-migrations-flyway/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/jabrena/cursor-rules-java",
+  "dir_name": "313-frameworks-spring-db-migrations-flyway",
+  "downloaded_at": "2026-05-30T03:50:31.521588Z",
+  "author": "jabrena",
+  "source_url": "https://github.com/jabrena/cursor-rules-java/blob/main/skills/313-frameworks-spring-db-migrations-flyway/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jabrena/cursor-rules-java/blob/main/skills/313-frameworks-spring-db-migrations-flyway/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

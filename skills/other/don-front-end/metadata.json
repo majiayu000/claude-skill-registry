@@ -1,0 +1,17 @@
+{
+  "name": "don-front-end",
+  "repo": "developer-overheid-nl/skills-developer-overheid-nl",
+  "path": "skills/don-front-end/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/developer-overheid-nl/skills-developer-overheid-nl",
+  "dir_name": "don-front-end",
+  "downloaded_at": "2026-05-30T03:46:08.696568Z",
+  "author": "developer-overheid-nl",
+  "source_url": "https://github.com/developer-overheid-nl/skills-developer-overheid-nl/blob/main/skills/don-front-end/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/developer-overheid-nl/skills-developer-overheid-nl/blob/main/skills/don-front-end/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

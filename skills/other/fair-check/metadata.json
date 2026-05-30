@@ -1,0 +1,17 @@
+{
+  "name": "fair-check",
+  "repo": "scdenney/open-science-skills",
+  "path": "plugin/skills/fair-check/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/scdenney/open-science-skills",
+  "dir_name": "fair-check",
+  "downloaded_at": "2026-05-30T03:59:34.672304Z",
+  "author": "scdenney",
+  "source_url": "https://github.com/scdenney/open-science-skills/blob/main/plugin/skills/fair-check/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/scdenney/open-science-skills/blob/main/plugin/skills/fair-check/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

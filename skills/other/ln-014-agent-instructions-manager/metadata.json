@@ -1,0 +1,17 @@
+{
+  "name": "ln-014-agent-instructions-manager",
+  "repo": "levnikolaevich/claude-code-skills",
+  "path": "plugins/setup-environment/skills/ln-014-agent-instructions-manager/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/levnikolaevich/claude-code-skills",
+  "dir_name": "ln-014-agent-instructions-manager",
+  "downloaded_at": "2026-05-30T03:52:21.080432Z",
+  "author": "levnikolaevich",
+  "source_url": "https://github.com/levnikolaevich/claude-code-skills/blob/master/plugins/setup-environment/skills/ln-014-agent-instructions-manager/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/levnikolaevich/claude-code-skills/blob/master/plugins/setup-environment/skills/ln-014-agent-instructions-manager/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

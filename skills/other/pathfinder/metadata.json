@@ -1,0 +1,17 @@
+{
+  "name": "pathfinder",
+  "repo": "thedotmack/claude-mem",
+  "path": "plugin/skills/pathfinder/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/thedotmack/claude-mem",
+  "dir_name": "pathfinder",
+  "downloaded_at": "2026-05-30T04:01:26.457067Z",
+  "author": "thedotmack",
+  "source_url": "https://github.com/thedotmack/claude-mem/blob/main/plugin/skills/pathfinder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/thedotmack/claude-mem/blob/main/plugin/skills/pathfinder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "grill-with-docs",
+  "repo": "mxyhi/ok-skills",
+  "path": "grill-with-docs/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mxyhi/ok-skills",
+  "dir_name": "grill-with-docs",
+  "downloaded_at": "2026-05-30T03:55:44.119202Z",
+  "author": "mxyhi",
+  "source_url": "https://github.com/mxyhi/ok-skills/blob/main/grill-with-docs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mxyhi/ok-skills/blob/main/grill-with-docs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

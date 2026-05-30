@@ -1,0 +1,17 @@
+{
+  "name": "runbook-writer",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/runbook-writer/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "runbook-writer",
+  "downloaded_at": "2026-05-30T03:55:12.575865Z",
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/runbook-writer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/runbook-writer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

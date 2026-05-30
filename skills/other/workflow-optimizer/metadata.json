@@ -1,0 +1,17 @@
+{
+  "name": "workflow-optimizer",
+  "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+  "path": "plugins/ccam-productivity/skills/workflow-optimizer/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/hoangsonww/Claude-Code-Agent-Monitor",
+  "dir_name": "workflow-optimizer",
+  "downloaded_at": "2026-05-30T03:49:36.404930Z",
+  "author": "hoangsonww",
+  "source_url": "https://github.com/hoangsonww/Claude-Code-Agent-Monitor/blob/master/plugins/ccam-productivity/skills/workflow-optimizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hoangsonww/Claude-Code-Agent-Monitor/blob/master/plugins/ccam-productivity/skills/workflow-optimizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

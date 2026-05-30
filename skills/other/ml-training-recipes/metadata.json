@@ -1,0 +1,17 @@
+{
+  "name": "ml-training-recipes",
+  "repo": "OpenRaiser/NanoResearch",
+  "path": "skills/vendor-ai-research/ml-training-recipes/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/OpenRaiser/NanoResearch",
+  "dir_name": "ml-training-recipes",
+  "downloaded_at": "2026-05-30T03:36:21.050384Z",
+  "author": "OpenRaiser",
+  "source_url": "https://github.com/OpenRaiser/NanoResearch/blob/main/skills/vendor-ai-research/ml-training-recipes/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OpenRaiser/NanoResearch/blob/main/skills/vendor-ai-research/ml-training-recipes/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

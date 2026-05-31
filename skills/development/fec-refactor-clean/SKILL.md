@@ -19,9 +19,12 @@ description: Use when safely removing dead frontend code, unused exports, stale 
    - SAFE：测试夹具、未引用工具函数、明确未导出的私有组件。
    - CAUTION：共享组件、feature 入口、样式文件、Storybook stories。
    - DANGER：路由、配置、package scripts、运行时模板、动态 import、插件元数据。
+   - UPGRADE：过期依赖、重复依赖、未使用依赖和安全告警先进入依赖升级或依赖清理评估，不与死代码删除混做。
 4. 只自动处理 SAFE 项；CAUTION 和 DANGER 需输出建议和证据，不直接删除。
 5. 每批清理后运行受影响验证命令。
 6. 若验证失败，停止扩大清理范围，先定位该批次。
+7. 清理结束后做行为等价复核：公开 API、路由、命令、模板、metadata、文档示例和报告输出仍可被引用。
+8. 对技术债排序：优先清理有验证保护、影响开发效率或阻塞升级的项目；低证据的大范围重写只输出建议。
 
 ## Frontend-Specific Checks
 
@@ -35,6 +38,8 @@ description: Use when safely removing dead frontend code, unused exports, stale 
 - 不删除无法证明无引用的公开 API、路由、模板或配置。
 - 不用“一次大删除”替代可验证的小批次清理。
 - 不把格式化、重命名或架构重写混入死代码清理。
+- 不用“看起来没人用”作为证据；必须有搜索、工具输出、类型错误消失或测试保护。
+- 不把依赖大版本升级伪装成清理；升级风险、release notes 和 lockfile 变更应分流到依赖升级工作流。
 
 ## Expected Output
 

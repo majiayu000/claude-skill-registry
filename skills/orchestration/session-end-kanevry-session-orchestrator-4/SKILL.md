@@ -30,7 +30,7 @@ Do NOT proceed past Phase 0 if GATE_CLOSED. There is no bypass. Refer to `skills
 
 > Skip silently when `persistence: false` in Session Config.
 
-Before Phase 1, run the parallel-aware preamble per `skills/_shared/parallel-aware-preamble.md`. The preamble detects other active sessions in the worktree-family via `discoverActiveSessions(repoRoot)`, classifies the caller's mode via `classifyMode(callerMode)` against the exclusivity-matrix, and fires the appropriate AUQ on conflict.
+Before Phase 1, run the parallel-aware preamble per `skills/_shared/parallel-aware-preamble.md`. The preamble detects other active sessions in the worktree-family via `findPeers(repoRoot, { mySessionId })`, classifies the caller's mode via `classifyMode(callerMode)` against the exclusivity-matrix, and fires the appropriate AUQ on conflict.
 
 **Outcome handling:**
 - `PASS_THROUGH` → continue to Phase 1

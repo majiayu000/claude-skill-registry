@@ -196,8 +196,12 @@ Scan for:
    this guide...").
 4. **Hedging seesaw** ("While X has its merits, it's not
    without its challenges").
-5. **Parallel "not just" / "not only"** as paragraph
-   openers.
+5. **Contrastive constructions** as paragraph openers: both
+   contrastive negation ("not just X, but Y", "It's not X,
+   it's Y") and affirmative antithesis ("Less X, more Y",
+   "Where others X, we Y"). Avoid in all but the most
+   necessary cases; keep only when the contrast carries
+   information that survives removal.
 
 See the module for the full pattern catalogue and false-
 positive guidance.
@@ -233,7 +237,8 @@ post-GPT-5 / post-Claude-4.5 prose. Each is detailed in
 | Em-dash overuse | — used as rhetorical pause | Most-cited single tell of 2026 |
 | Plus-sign for "and" | "hooks and skills" in prose | Strong: humans have "and" |
 | Spatial copula | "lives in", "sits at", "stands as", "boasts" | Inanimate subject with animate verb |
-| Negative parallelism | "Not X but Y", "No X. No Y. Just Z.", "No X, no Y, no Z", "It's not X, it's Y", "Y, not X" | Rhetorical scaffold with no argument |
+| Negative parallelism (contrastive negation) | "Not X but Y", "No X. No Y. Just Z.", "No X, no Y, no Z", "It's not X, it's Y", "Y, not X" | Rhetorical scaffold with no argument |
+| Contrastive parallelism (affirmative antithesis) | "Less X, more Y", "Where others X, we Y", "Humans propose; machines dispose" | Manufactured punch; same scaffold without the "not" |
 | Throat-clearing openers | "Here's the thing,", "Look,", "Let that sink in." | Discourse markers signaling nothing |
 | Three-fragment burst | "Focused. Aligned. Measurable." | Rhythm without information |
 | Significance cluster | "stands as a testament to", "marks a turning point" | Asserts importance without showing it |
@@ -443,7 +448,10 @@ Summary report format (human-readable):
 - Line 27: "hooks + skills" → "hooks and skills" (plus-sign
   conjunction in prose)
 - Line 34: "It's not a tool, it's a transformation" →
-  rewrite positively (negative parallelism)
+  rewrite positively (negative parallelism / contrastive
+  negation)
+- Line 38: "Less config, more code" → state plainly
+  (contrastive parallelism; keep only if load-bearing)
 - Line 56: "Here's the thing," → delete (throat-clearing
   opener)
 - Line 78: "Focused. Aligned. Measurable." → "Focused,

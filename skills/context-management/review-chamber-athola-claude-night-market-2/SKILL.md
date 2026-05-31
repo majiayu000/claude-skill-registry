@@ -1,7 +1,6 @@
 ---
 name: review-chamber
-description: Capture and retrieve PR review knowledge in project memory palaces.
-version: 1.9.0
+description: Captures and retrieves PR-review findings in memory palaces. Use after PR review to store architectural decisions, patterns, and standards for future reference.
 alwaysApply: false
 usage_patterns:
 - capture-review: After PR review completion, capture significant findings
@@ -98,7 +97,7 @@ Route findings to appropriate subrooms:
 
 | Finding Type | Target Room | Criteria |
 |-------------|-------------|----------|
-| Architectural choice | `decisions/` | BLOCKING + architectural context |
+| Architectural choice | `decisions/` | BLOCKING and architectural context |
 | Recurring issue | `patterns/` | Seen before or likely to recur |
 | Quality example | `standards/` | Exemplifies coding standards |
 | Learning/insight | `lessons/` | Retrospective or post-mortem |

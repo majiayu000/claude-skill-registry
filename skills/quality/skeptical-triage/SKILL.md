@@ -10,6 +10,7 @@ when_to_use: |
   - P2 findings or advisory notes (cost > benefit)
   - Hard findings (secrets in source/git, confirmed CVEs, failing tests) — these are facts, not judgments
   - Quick factual lookups ("does this file exist?", "what version is pinned?")
+effort: medium
 allowed-tools: Read, Grep, Bash, Glob
 paths:
   - "docs/**"

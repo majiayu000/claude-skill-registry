@@ -1,6 +1,7 @@
 ---
 name: aws-cost-operations
-description: This skill provides AWS cost optimization, monitoring, and operational best practices with integrated MCP servers for billing analysis, cost estimation, observability, and security assessment.
+description: AWS cost optimization, monitoring, and operational excellence expert. Use when analyzing AWS bills, estimating costs, setting up CloudWatch alarms, querying logs, auditing CloudTrail activity, or assessing security posture. Essential when user mentions AWS costs, spending, billing, budget, pricing, CloudWatch, observability, monitoring, alerting, CloudTrail, audit, or wants to optimize AWS infrastructure costs and operational efficiency.
+context: fork
 skills:
   - aws-mcp-setup
 allowed-tools:
@@ -28,98 +29,41 @@ This skill provides comprehensive guidance for AWS cost optimization, monitoring
 
 ## AWS Documentation Requirement
 
-**CRITICAL**: This skill requires AWS MCP tools for accurate, up-to-date AWS information.
-
-### Before Answering AWS Questions
-
-1. **Always verify** using AWS MCP tools (if available):
-   - `mcp__aws-mcp__aws___search_documentation` or `mcp__*awsdocs*__aws___search_documentation` - Search AWS docs
-   - `mcp__aws-mcp__aws___read_documentation` or `mcp__*awsdocs*__aws___read_documentation` - Read specific pages
-   - `mcp__aws-mcp__aws___get_regional_availability` - Check service availability
-
-2. **If AWS MCP tools are unavailable**:
-   - Guide user to configure AWS MCP using the `aws-mcp-setup` skill (auto-loaded as dependency)
-   - Help determine which option fits their environment:
-     - Has uvx + AWS credentials → Full AWS MCP Server
-     - No Python/credentials → AWS Documentation MCP (no auth)
-   - If cannot determine → Ask user which option to use
+Always verify AWS facts using MCP tools (`mcp__aws-mcp__*` or `mcp__*awsdocs*__*`) before answering. The `aws-mcp-setup` dependency is auto-loaded — if MCP tools are unavailable, guide the user through that skill's setup flow.
 
 ## Integrated MCP Servers
 
-This skill includes 8 MCP servers automatically configured with the plugin:
+This plugin provides 3 MCP servers:
 
-### Cost Management Servers
+### Bundled Servers
 
-#### 1. AWS Billing and Cost Management MCP Server
-**Purpose**: Real-time billing and cost management
-- View current AWS spending and trends
-- Analyze billing details across services
-- Track budget utilization
-- Monitor cost allocation tags
-- Review consolidated billing for organizations
-
-#### 2. AWS Pricing MCP Server
+#### 1. AWS Pricing MCP Server (`pricing`)
 **Purpose**: Pre-deployment cost estimation and optimization
 - Estimate costs before deploying resources
 - Compare pricing across regions
 - Calculate Total Cost of Ownership (TCO)
 - Evaluate different service options for cost efficiency
-- Get current pricing information for AWS services
 
-#### 3. AWS Cost Explorer MCP Server
+#### 2. AWS Cost Explorer MCP Server (`costexp`)
 **Purpose**: Detailed cost analysis and reporting
 - Analyze historical spending patterns
-- Create custom cost reports
 - Identify cost anomalies and trends
 - Forecast future costs
 - Analyze cost by service, region, or tag
-- Generate cost optimization recommendations
 
-### Monitoring & Observability Servers
-
-#### 4. Amazon CloudWatch MCP Server
+#### 3. Amazon CloudWatch MCP Server (`cw`)
 **Purpose**: Metrics, alarms, and logs analysis
 - Query CloudWatch metrics and logs
 - Create and manage CloudWatch alarms
-- Analyze application performance metrics
 - Troubleshoot operational issues
-- Set up custom dashboards
 - Monitor resource utilization
 
-#### 5. Amazon CloudWatch Application Signals MCP Server
-**Purpose**: Application monitoring and performance insights
-- Monitor application health and performance
-- Analyze service-level objectives (SLOs)
-- Track application dependencies
-- Identify performance bottlenecks
-- Monitor service map and traces
-
-#### 6. AWS Managed Prometheus MCP Server
-**Purpose**: Prometheus-compatible monitoring
-- Query Prometheus metrics
-- Monitor containerized applications
-- Analyze Kubernetes workload metrics
-- Create PromQL queries
-- Track custom application metrics
-
-### Audit & Security Servers
-
-#### 7. AWS CloudTrail MCP Server
-**Purpose**: AWS API activity and audit analysis
-- Analyze AWS API calls and user activity
-- Track resource changes and modifications
-- Investigate security incidents
-- Audit compliance requirements
-- Identify unusual access patterns
-- Review who made what changes when
-
-#### 8. AWS Well-Architected Security Assessment Tool MCP Server
-**Purpose**: Security assessment against Well-Architected Framework
-- Assess security posture against AWS best practices
-- Identify security gaps and vulnerabilities
-- Get security improvement recommendations
-- Review security pillar compliance
-- Generate security assessment reports
+> **Note**: The following servers are available separately via the Full AWS MCP Server (see `aws-mcp-setup` skill) and are not bundled with this plugin:
+> - AWS Billing and Cost Management MCP — Real-time billing details
+> - CloudWatch Application Signals MCP — APM and SLOs
+> - AWS Managed Prometheus MCP — PromQL queries for containers
+> - AWS CloudTrail MCP — API activity audit
+> - AWS Well-Architected Security Assessment MCP — Security posture assessment
 
 ## When to Use This Skill
 

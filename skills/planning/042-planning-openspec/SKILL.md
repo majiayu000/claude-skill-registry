@@ -4,7 +4,7 @@ description: Use when you need to take a `*.plan.md` file and turn it into OpenS
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.15.0-SNAPSHOT
+  version: 0.15.0
 ---
 # OpenSpec Change Planning from `*.plan.md`
 

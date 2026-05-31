@@ -1,0 +1,17 @@
+{
+  "name": "kiro-skill",
+  "repo": "feiskyer/claude-code-settings",
+  "path": "skills/kiro-skill/SKILL.md",
+  "github_branch": "main",
+  "category": "workflow",
+  "source": "github.com/feiskyer/claude-code-settings",
+  "dir_name": "kiro-skill",
+  "downloaded_at": "2026-05-30T03:47:23.275493Z",
+  "author": "feiskyer",
+  "source_url": "https://github.com/feiskyer/claude-code-settings/blob/main/skills/kiro-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/feiskyer/claude-code-settings/blob/main/skills/kiro-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

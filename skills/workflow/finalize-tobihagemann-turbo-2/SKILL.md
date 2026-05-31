@@ -12,23 +12,28 @@ Post-implementation QA workflow: tests, code polishing, commit, and self-improve
 At the start, use `update_plan` to track each phase:
 
 1. Run `$polish-code` skill
-2. Run `$update-changelog` skill
-3. Run `$self-improve` skill
-4. Ship It
+2. Run `$simplify-docs` skill
+3. Run `$update-changelog` skill
+4. Run `$self-improve` skill
+5. Ship It
 
 ## Phase 1: Run `$polish-code` Skill
 
 Run the `$polish-code` skill for the current changes.
 
-## Phase 2: Run `$update-changelog` Skill
+## Phase 2: Run `$simplify-docs` Skill
+
+Run the `$simplify-docs` skill on the staged changes (`git diff --cached`). Stage any edits it makes before continuing.
+
+## Phase 3: Run `$update-changelog` Skill
 
 Run the `$update-changelog` skill.
 
-## Phase 3: Run `$self-improve` Skill
+## Phase 4: Run `$self-improve` Skill
 
 Run the `$self-improve` skill for the current session. Always run this phase even if the session seemed routine.
 
-## Phase 4: Ship It
+## Phase 5: Ship It
 
 ### Step 1: Analyze Split
 

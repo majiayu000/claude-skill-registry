@@ -6,10 +6,13 @@ practices:
 - design-by-contract
 - sre
 hexagonal_role: supporting
-consumes: []
+consumes:
+- repo-context
 produces:
 - result.json
-context_rel: []
+context_rel:
+- kind: supplier-to
+  with: vibe
 skill_api_version: 1
 metadata:
   tier: judgment
@@ -334,6 +337,8 @@ Instead:
 - [skills/bug-hunt/SKILL.md](../bug-hunt/SKILL.md) — Systematic audit (closest cousin)
 
 ## Reference Documents
+
+- [references/red-team.feature](references/red-team.feature) — Executable spec: persona attempts real tasks against a surface, reports what breaks, distinct from council/vibe, --surface selects target (soc-qk4b)
 
 - [references/persona-format.md](references/persona-format.md) — Persona YAML schema with context restriction fields
 - [references/scenario-format.md](references/scenario-format.md) — Scenario YAML schema with pass/fail criteria

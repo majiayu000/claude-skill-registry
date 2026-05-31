@@ -8,32 +8,24 @@ allowed-tools: Read, Write, Edit, Bash, Glob, Grep
 
 ## Overview
 
-Amazon DynamoDB is a fully managed NoSQL database service that provides fast and predictable performance with seamless scalability. This skill covers patterns for working with DynamoDB using AWS SDK for Java 2.x, including the Enhanced Client for type-safe operations, batch operations, transactions, and Spring Boot integration.
+Provides DynamoDB patterns using AWS SDK for Java 2.x with Enhanced Client for type-safe CRUD, queries, batch operations, transactions, and Spring Boot integration.
 
 ## When to Use
 
-Use this skill when:
-- Creating, updating, or deleting DynamoDB tables
-- Performing CRUD operations on DynamoDB items
-- Querying or scanning tables
-- Working with Global Secondary Indexes (GSI) or Local Secondary Indexes (LSI)
-- Implementing batch operations for efficiency
-- Using DynamoDB transactions
-- Integrating DynamoDB with Spring Boot applications
-- Working with DynamoDB Enhanced Client for type-safe operations
+- CRUD operations on DynamoDB items
+- Querying tables with sort keys or GSI
+- Batch operations for multiple items
+- Atomic transactions across tables
+- Spring Boot integration with DynamoDB
 
 ## Instructions
 
-Follow these steps to work with Amazon DynamoDB:
-
-1. **Add Dependencies** - Include dynamodb and dynamodb-enhanced dependencies
-2. **Create Client** - Instantiate DynamoDbEnhancedClient for type-safe operations
-3. **Define Entities** - Annotate classes with `@DynamoDbBean` for mapping
-4. **Configure Tables** - Set up DynamoDbTable instances for your entities
-5. **CRUD Operations** - Implement putItem, getItem, updateItem, deleteItem
-6. **Query Operations** - Use QueryConditional for filtered queries
-7. **Batch Operations** - Use batchGetItem and batchWriteItem for efficiency
-8. **Test Locally** - Use LocalStack or DynamoDB Local for development
+1. Add AWS SDK DynamoDB dependencies to `pom.xml`
+2. Configure client setup (low-level or Enhanced Client)
+3. Define entity classes with `@DynamoDbBean` annotations
+4. Perform operations using `DynamoDbTable` (CRUD, query, scan, batch, transactions)
+5. Handle partial failures with retry logic and exponential backoff
+6. Use repository pattern for Spring Boot integration
 
 ## Dependencies
 
@@ -51,7 +43,6 @@ Add to `pom.xml`:
     <artifactId>dynamodb-enhanced</artifactId>
 </dependency>
 ```
-
 ## Client Setup
 
 ### Low-Level Client
@@ -74,8 +65,6 @@ DynamoDbEnhancedClient enhancedClient = DynamoDbEnhancedClient.builder()
 ```
 
 ## Entity Mapping
-
-To define DynamoDB entities, use `@DynamoDbBean` annotation:
 
 ```java
 @DynamoDbBean
@@ -160,6 +149,13 @@ For detailed query patterns, see [Advanced Operations Reference](references/adva
 
 ## Scan Operations
 
+> **Warning**: Scan reads entire table and consumes read capacity for all items. Prefer Query operations with partition keys or GSIs whenever possible.
+
+**Validation before scan**:
+- Confirm query with partition key is not feasible for your access pattern
+- Verify table has sufficient provisioned read capacity or use on-demand mode
+- Consider using pagination with `limit()` to control capacity consumption
+
 ```java
 // Scan all items
 List<Customer> allCustomers = table.scan().items().stream()
@@ -198,23 +194,61 @@ List<Customer> customers = result.resultsForTable(table).stream()
     .collect(Collectors.toList());
 ```
 
-### Batch Write
+### Batch Write with Error Handling
 ```java
 WriteBatch.Builder<Customer> batchBuilder = WriteBatch.builder(Customer.class)
     .mappedTableResource(table);
 
 customers.forEach(batchBuilder::addPutItem);
 
-enhancedClient.batchWriteItem(r -> r.addWriteBatch(batchBuilder.build()));
+BatchWriteItemEnhancedRequest request = BatchWriteItemEnhancedRequest.builder()
+    .addWriteBatch(batchBuilder.build())
+    .build();
+
+BatchWriteResult result = enhancedClient.batchWriteItem(request);
+
+// Validate: check for unprocessed items
+if (!result.writeResponsesForTable(table).isEmpty()) {
+    // Retry unprocessed items with exponential backoff
+    Map<String, AttributeValue> unprocessed = result.writeResponsesForTable(table).get(0)
+        .unprocessedAttributes();
+    if (unprocessed != null && !unprocessed.isEmpty()) {
+        enhancedClient.batchWriteItem(r -> r
+            .addWriteBatch(WriteBatch.builder(Customer.class)
+                .mappedTableResource(table)
+                .addPutItemFromItem(unprocessed)
+                .build()));
+    }
+}
 ```
 
 ## Transactions
 
-### Transactional Write
+### Transactional Write with Retry
 ```java
-enhancedClient.transactWriteItems(r -> r
-    .addPutItem(customerTable, customer)
-    .addPutItem(orderTable, order));
+public void placeOrderWithRetry(Order order, Customer customer, int maxRetries) {
+    int attempt = 0;
+    while (attempt < maxRetries) {
+        try {
+            enhancedClient.transactWriteItems(r -> r
+                .addPutItem(customerTable, customer)
+                .addPutItem(orderTable, order));
+            return;
+        } catch (TransactionCanceledException e) {
+            if (e.cancellationReasons().stream()
+                .anyMatch(r -> r.code().equals("TransactionCanceledException")
+                    && r.message().contains("throughput"))) {
+                attempt++;
+                if (attempt < maxRetries) {
+                    try { Thread.sleep((long) Math.pow(2, attempt) * 100); }
+                    catch (InterruptedException ie) { Thread.currentThread().interrupt(); }
+                }
+            } else {
+                throw e; // Non-retryable error
+            }
+        }
+    }
+}
 ```
 
 ### Transactional Read
@@ -342,21 +376,16 @@ For detailed testing strategies, see [Testing Strategies](references/testing-str
 
 ## Best Practices
 
-1. **Use Enhanced Client**: Provides type-safe operations with less boilerplate
-2. **Design partition keys carefully**: Distribute data evenly across partitions
-3. **Use composite keys**: Leverage sort keys for efficient queries
-4. **Create GSIs strategically**: Support different access patterns
-5. **Use batch operations**: Reduce API calls for multiple items
-6. **Implement pagination**: For large result sets use pagination
-7. **Use transactions**: For operations that must be atomic
-8. **Avoid scans**: Prefer queries with proper indexes
-9. **Handle conditional writes**: Prevent race conditions
-10. **Use proper error handling**: Handle exceptions like `ProvisionedThroughputExceeded`
+- **Use Enhanced Client**: Type-safe operations with less boilerplate
+- **Design partition keys for even distribution**: Avoid hot partitions
+- **Prefer queries over scans**: Use GSIs for access patterns
+- **Batch in chunks of 25/100**: BatchGetItem limits to 100, BatchWriteItem to 25 per table
+- **Handle partial failures**: Implement retry with exponential backoff for `ProvisionedThroughputExceeded`
+- **Use conditional writes**: Prevent race conditions with `attribute_not_exists(pk)`
 
 ## Examples
 
-### Example 1: Complete CRUD Repository
-
+### Complete CRUD Repository
 ```java
 @Repository
 public class UserRepository {
@@ -364,8 +393,7 @@ public class UserRepository {
     private final DynamoDbTable<User> userTable;
 
     public UserRepository(DynamoDbEnhancedClient enhancedClient) {
-        this.userTable = enhancedClient.table("Users",
-            TableSchema.fromBean(User.class));
+        this.userTable = enhancedClient.table("Users", TableSchema.fromBean(User.class));
     }
 
     public User save(User user) {
@@ -378,27 +406,13 @@ public class UserRepository {
         return Optional.ofNullable(userTable.getItem(key));
     }
 
-    public List<User> findByEmail(String email) {
-        Expression filter = Expression.builder()
-            .expression("email = :email")
-            .putExpressionValue(":email",
-                AttributeValue.builder().s(email).build())
-            .build();
-
-        return userTable.scan(r -> r.filterExpression(filter))
-            .items().stream()
-            .collect(Collectors.toList());
-    }
-
     public void deleteById(String userId) {
-        Key key = Key.builder().partitionValue(userId).build();
-        userTable.deleteItem(key);
+        userTable.deleteItem(Key.builder().partitionValue(userId).build());
     }
 }
 ```
 
-### Example 2: Conditional Write with Retry
-
+### Conditional Write with Retry
 ```java
 public boolean createIfNotExists(User user) {
     PutItemEnhancedRequest<User> request = PutItemEnhancedRequest.builder(User.class)
@@ -415,73 +429,13 @@ public boolean createIfNotExists(User user) {
 }
 ```
 
-### Example 3: Transaction Write
-
-```java
-public void placeOrder(Order order, Customer customer) {
-    enhancedClient.transactWriteItems(r -> r
-        .addPutItem(orderTable, order)
-        .addUpdateItem(customerTable,
-            UpdateItem.builder()
-                .key(Key.builder().partitionValue(customer.getId()).build())
-                .updateExpression("ADD orderCount :one")
-                .expressionValues(Map.of(":one",
-                    AttributeValue.builder().n("1").build()))
-                .build()));
-}
-```
-
-## Common Patterns
-
-### Conditional Operations
-```java
-PutItemEnhancedRequest request = PutItemEnhancedRequest.builder(table)
-    .item(customer)
-    .conditionExpression("attribute_not_exists(customerId)")
-    .build();
-
-table.putItemWithRequestBuilder(request);
-```
-
-### Pagination
-```java
-ScanEnhancedRequest request = ScanEnhancedRequest.builder()
-    .limit(100)
-    .build();
-
-PaginatedScanIterable<Customer> results = table.scan(request);
-results.stream().forEach(page -> {
-    // Process each page
-});
-```
-
-## Performance Considerations
-
-- Monitor read/write capacity units
-- Implement exponential backoff for retries
-- Use proper pagination for large datasets
-- Consider eventual consistency for reads
-- Use `ReturnConsumedCapacity` to monitor capacity usage
-
-## Related Skills
-
-- `aws-sdk-java-v2-core` - Core AWS SDK patterns
-- `spring-data-jpa` - Alternative data access patterns
-- `unit-test-service-layer` - Service testing patterns
-- `unit-test-wiremock-rest-api` - Testing external APIs
-
 ## Constraints and Warnings
 
-- **Item Size Limit**: DynamoDB items are limited to 400KB
-- **Partition Key Design**: Poor partition key design causes hot partitions
-- **Read/Write Capacity**: Monitor consumed capacity to avoid throttling
-- **Eventual Consistency**: Eventually consistent reads may return stale data
-- **Scan Operations**: Scans consume large amounts of read capacity; avoid when possible
-- **Batch Limits**: Batch operations are limited to 25 or 100 items
-- **Transaction Costs**: Transactions cost 2x the read/write capacity units
-- **Index Limit**: Tables can have up to 5 GSI and 5 LSI
-- **TTL Costs**: Time-to-live deletion still consumes write capacity
-- **Global Tables**: Multi-region replication increases costs significantly
+- **Item Size Limit**: DynamoDB items limited to 400KB
+- **Partition Key Design**: Poor design causes hot partitions
+- **Batch Limits**: BatchGetItem max 100, BatchWriteItem max 25 items per table
+- **Transaction Costs**: Transactions cost 2x read/write capacity units
+- **Scan Operations**: Scans consume large amounts of read capacity; use only when necessary
 
 ## References
 

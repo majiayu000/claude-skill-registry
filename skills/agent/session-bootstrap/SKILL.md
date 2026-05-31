@@ -14,7 +14,7 @@ description: Agent init prompt.
 Triggers:
 
 - **Manual spawn** — operator just spawned a fresh agent into the repo: `ao session bootstrap`.
-- **SessionStart hook** — fail-open auto-fire when supported: `hooks/session-start-bootstrap.sh` runs `ao session bootstrap --robot` and discards exit code.
+- **SessionStart hook (opt-in)** — AgentOps 3.0 ships no SessionStart hook. If you author one via the `hooks-authoring` skill, it can fail-open auto-fire `ao session bootstrap --robot` and discard the exit code.
 - **Pipeline submit** — `agentopsd` and headless CI agents call `ao session bootstrap --json` before claiming work.
 
 If you spawned without running it: stop, run it, then resume.

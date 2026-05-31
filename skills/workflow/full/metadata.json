@@ -1,0 +1,17 @@
+{
+  "name": "full",
+  "repo": "oliver-kriska/claude-elixir-phoenix",
+  "path": "plugins/elixir-phoenix/skills/full/SKILL.md",
+  "github_branch": "main",
+  "category": "workflow",
+  "source": "github.com/oliver-kriska/claude-elixir-phoenix",
+  "dir_name": "full",
+  "downloaded_at": "2026-05-30T03:56:55.674672Z",
+  "author": "oliver-kriska",
+  "source_url": "https://github.com/oliver-kriska/claude-elixir-phoenix/blob/main/plugins/elixir-phoenix/skills/full/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/oliver-kriska/claude-elixir-phoenix/blob/main/plugins/elixir-phoenix/skills/full/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

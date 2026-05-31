@@ -6,6 +6,7 @@ when_to_use: |
   - pm is writing PLAN-*.md and the Cost section is required
   - architect is forecasting LLM burn for a new feature (gate:cost for AI archetypes)
   - any report claims a savings ratio — must show methodology
+effort: low
 allowed-tools: Read, Write
 paths:
   - "docs/plans/**"

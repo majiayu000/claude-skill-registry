@@ -30,6 +30,8 @@ description: Use when implementing or reviewing SVG animation, path drawing, ico
 | 时间轴、复杂编排、滚动触发 | GSAP |
 | 需要保持零依赖的静态 SVG | CSS 或 SMIL |
 
+如果动效跨越页面转场、滚动叙事或复杂组件编排，应先按交互动效 workflow 判断强度、懒加载和 reduced-motion 策略；本 skill 只负责 SVG 图形本身的路径、形变和图标 motion。
+
 ### 2. 使用 CSS 实现路径描边
 
 ```tsx
@@ -124,6 +126,13 @@ export function LogoReveal() {
 }
 ```
 
+### 5. 控制运行成本
+
+- 大型 SVG 拆成静态底图和少量可动画节点，不要让每个 path 都参与时间轴。
+- 图标库或 Lottie 替代方案必须按需加载，不进入所有页面的基础包。
+- 循环动画只在可见区域运行，页面隐藏或组件卸载时停止。
+- 移动端减少滤镜、mask、clipPath 和大量渐变叠加。
+
 ## Constraints
 
 - 优先动画 `transform`、`opacity` 和 SVG 路径属性；避免高频修改 layout 相关属性。
@@ -131,6 +140,8 @@ export function LogoReveal() {
 - 所有非装饰性 SVG 必须有可访问名称；装饰性 SVG 使用 `aria-hidden="true"`。
 - 默认尊重 `prefers-reduced-motion`，复杂动效必须提供静态或弱动效降级。
 - 不要把大型 SVG 内联到频繁重渲染的组件中；提取为 memoized 组件或外部资源。
+- 不用动画改变可点击区域、阅读顺序或焦点位置。
+- 不让 SVG 滤镜、模糊、mask 或 clipPath 成为移动端掉帧主因；复杂效果需要设备降级。
 
 ## Expected Output
 

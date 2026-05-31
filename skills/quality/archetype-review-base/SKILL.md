@@ -14,6 +14,7 @@ when_to_use: |
   Do NOT apply when running security-officer general STRIDE — that's a
   different review tier (cross-domain, fallback for archetypes without
   a domain reviewer).
+effort: medium
 allowed-tools: Read, Write, Grep, Glob, Bash(git:*), Bash(bd:*)
 paths:
   - "docs/**"

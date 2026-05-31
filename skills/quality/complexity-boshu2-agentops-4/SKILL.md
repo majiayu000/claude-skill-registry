@@ -208,3 +208,7 @@ Tell the user:
 | No complexity issues found | Threshold too high or genuinely simple code | Lower threshold: try `gocyclo -over 5` or check if path includes actual implementation files vs tests. |
 | Report shows functions without recommendations | Generic analysis without codebase context | Read the high-CC functions to understand structure, then provide specific refactoring suggestions based on actual code patterns. |
 | Mixed language project | Multiple languages in target path | Run analysis separately per language: `/complexity src/python/` then `/complexity src/go/`, combine reports manually. |
+
+## Reference Documents
+
+- [references/complexity.feature](references/complexity.feature) — Executable spec: rank functions by cyclomatic complexity, scope to recent changes by default, focused hotspot list (soc-qk4b)

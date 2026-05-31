@@ -4,7 +4,7 @@ description: Use when you need the Jira CLI (`jira`) to verify installation, con
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.15.0-SNAPSHOT
+  version: 0.15.0
 ---
 # Jira CLI - issues, workflows, and discussion for analysis
 

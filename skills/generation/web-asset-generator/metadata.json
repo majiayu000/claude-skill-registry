@@ -1,0 +1,17 @@
+{
+  "name": "web-asset-generator",
+  "repo": "majiayu000/spellbook",
+  "path": "skills/web-asset-generator/SKILL.md",
+  "github_branch": "main",
+  "category": "generation",
+  "source": "github.com/majiayu000/spellbook",
+  "dir_name": "web-asset-generator",
+  "downloaded_at": "2026-05-30T03:53:29.676251Z",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/spellbook/blob/main/skills/web-asset-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/majiayu000/spellbook/blob/main/skills/web-asset-generator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

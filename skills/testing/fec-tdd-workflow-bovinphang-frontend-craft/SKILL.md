@@ -21,6 +21,11 @@ description: Use when implementing new frontend behavior, fixing bugs, or refact
 5. 重新运行测试，确认变绿。
 6. 在测试保持通过的前提下重构命名、边界和重复逻辑。
 7. 对 bug 修复，保留能复现问题的回归测试。
+8. 每轮只扩大一个可观察行为；新需求、新边界和新异常路径各自进入下一轮。
+
+## Prove-It Pattern
+
+修复缺陷时先让测试失败，再让它通过。若无法先失败，说明测试没有覆盖原始问题，需要收窄输入、断言或测试层级。
 
 ## Frontend Test Selection
 
@@ -38,10 +43,10 @@ description: Use when implementing new frontend behavior, fixing bugs, or refact
 - 不测试实现细节、私有状态或脆弱 DOM 结构。
 - 不把 E2E 当作所有风险的默认答案；优先选择离风险最近的测试层。
 - 如果现有仓库没有测试基础设施，先输出最小测试落地建议，再请求用户确认是否引入。
+- 不在红灯阶段同时重构；先证明问题，再最小修复，再整理结构。
 
 ## Expected Output
 
 - 至少一个先失败后通过的测试覆盖新增或修复行为。
 - 实现保持最小范围，重构只在测试通过后进行。
 - 总结运行过的测试命令、覆盖的行为和未覆盖风险。
-

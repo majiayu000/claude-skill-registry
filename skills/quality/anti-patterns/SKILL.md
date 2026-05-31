@@ -8,6 +8,7 @@ when_to_use: |
   - senior-dev is implementing and considers a "quick fix" that is anti-pattern
   - l3-support is doing root-cause and finds an anti-pattern as the cause
   - any agent reviewing third-party code that exhibits anti-patterns
+effort: low
 allowed-tools: Read, Grep, Glob
 paths:
   - "docs/**"

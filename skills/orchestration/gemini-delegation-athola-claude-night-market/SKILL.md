@@ -1,50 +1,55 @@
 ---
 name: gemini-delegation
-description: Gemini CLI delegation workflow implementing delegation-core for Google's Gemini models.
-triggers: gemini cli, gemini delegation, google gemini, 1M context, large file analysis, gemini batch
-use_when: delegation-core selected Gemini, need Gemini's 1M+ token context window, batch processing required
-do_not_use_when: deciding which model to use (use delegation-core first), gemini CLI not installed
+description: Delegates tasks to Gemini CLI implementing delegation-core for Google's models. Use when delegation-core selects Gemini or 1M+ token context is needed.
+alwaysApply: false
 category: delegation-implementation
-tags: [gemini, cli, delegation, google, large-context]
-dependencies: [delegation-core]
-tools: [gemini-cli]
+tags:
+- gemini
+- cli
+- delegation
+- google
+- large-context
+dependencies:
+- delegation-core
+tools:
+- gemini-cli
 usage_patterns:
-  - gemini-cli-integration
-  - large-context-analysis
-  - batch-processing
+- gemini-cli-integration
+- large-context-analysis
+- batch-processing
 complexity: intermediate
+model_hint: standard
 estimated_tokens: 600
 progressive_loading: true
 modules:
-  - modules/gemini-specifics.md
+- modules/gemini-specifics.md
 references:
-  - delegation-core/../../leyline/skills/authentication-patterns/SKILL.md
-  - delegation-core/../../leyline/skills/quota-management/SKILL.md
-  - delegation-core/../../leyline/skills/usage-logging/SKILL.md
-  - delegation-core/../../leyline/skills/error-patterns/SKILL.md
-version: 1.3.5
+- delegation-core/../../leyline/skills/authentication-patterns/SKILL.md
+- delegation-core/../../leyline/skills/quota-management/SKILL.md
+- delegation-core/../../leyline/skills/usage-logging/SKILL.md
+- delegation-core/../../leyline/skills/error-patterns/SKILL.md
 ---
 ## Table of Contents
 
 - [Overview](#overview)
 - [When to Use](#when-to-use)
 - [Prerequisites](#prerequisites)
-- [Delegation Flow](#delegation-flow)
 - [Quick Start](#quick-start)
-- [Basic Command](#basic-command)
-- [Save Output](#save-output)
-- [Shared Patterns](#shared-patterns)
 - [Gemini-Specific Details](#gemini-specific-details)
-- [Exit Criteria](#exit-criteria)
 
 
 # Gemini CLI Delegation
 
 ## Overview
 
-This skill implements `conjure:delegation-core` for the Gemini CLI. It provides Gemini-specific authentication, quota management, and command construction using shared patterns.
+This skill implements `conjure:delegation-core` for the Gemini CLI.
+It provides Gemini-specific authentication, quota management,
+and command construction.
 
-## When to Use
+For shared delegation patterns, see `Skill(conjure:delegation-core)`.
+
+## When To Use
+
 - After `Skill(conjure:delegation-core)` determines Gemini is suitable
 - When you need Gemini's large context window (1M+ tokens)
 - For batch processing, summarization, or pattern extraction tasks
@@ -68,15 +73,6 @@ export GEMINI_API_KEY="your-key"
 ```
 **Verification:** Run the command with `--help` flag to verify availability.
 
-## Delegation Flow
-
-Implements standard delegation-core flow with Gemini specifics:
-
-1. `gemini-delegation:auth-verified` - Verify Gemini authentication
-2. `gemini-delegation:quota-checked` - Check Gemini API quota
-3. `gemini-delegation:command-executed` - Execute via Gemini CLI
-4. `gemini-delegation:usage-logged` - Log Gemini API usage
-
 ## Quick Start
 
 ### Basic Command
@@ -93,28 +89,13 @@ gemini --model gemini-2.5-pro-exp -p "..."
 # JSON output
 gemini --output-format json -p "..."
 ```
-**Verification:** Run the command with `--help` flag to verify availability.
 
 ### Save Output
 ```bash
 gemini -p "..." > delegations/gemini/$(date +%Y%m%d_%H%M%S).md
 ```
-**Verification:** Run the command with `--help` flag to verify availability.
-
-## Shared Patterns
-
-This skill uses shared modules from delegation-core:
-- **Authentication**: See `delegation-core/../../leyline/skills/authentication-patterns/SKILL.md`
-- **Quota Management**: See `delegation-core/../../leyline/skills/quota-management/SKILL.md`
-- **Usage Logging**: See `delegation-core/../../leyline/skills/usage-logging/SKILL.md`
-- **Error Handling**: See `delegation-core/../../leyline/skills/error-patterns/SKILL.md`
 
 ## Gemini-Specific Details
 
-For Gemini-specific models, CLI options, cost reference, and troubleshooting, see `modules/gemini-specifics.md`.
-
-## Exit Criteria
-- Authentication confirmed working
-- Quota checked and sufficient
-- Command executed successfully
-- Usage logged for tracking
+For Gemini-specific models, CLI options, cost reference,
+and troubleshooting, see `modules/gemini-specifics.md`.

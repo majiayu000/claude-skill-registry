@@ -2,6 +2,7 @@
 name: great_cto
 description: Use when the CTO describes a feature, task, or project goal. Orchestrates the full SDLC pipeline automatically based on project type.
 when_to_use: "Always active when .great_cto/PROJECT.md exists. Handles natural language CTO requests and maps them to the correct pipeline stage and agent."
+effort: high
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Agent
 paths:
   - ".great_cto/**"
@@ -59,6 +60,87 @@ pipeline gets bypassed.
 one of the rows above, dispatch that specialist **first**. Reach for
 `general-purpose` only when nothing matches. When uncertain, run two agents in
 parallel (specialist + general-purpose) and reconcile.
+
+## Agent dispatch semantics
+
+When spawning workers, choose the right dispatch mode:
+
+### Fork (context-inheriting)
+Use when: parallel read-only research, quick scoped lookup, second opinion on a finding.
+- Inherits full parent context — no need to re-brief background knowledge
+- Short directive prompt (≤5 sentences): "Read X, answer Y"
+- Set `background: true` for truly parallel forks
+- **Don't peek mid-flight**: do not call `TaskOutput` before the fork finishes — you'll get partial results
+- **Don't race**: if two forks could write to the same Beads task, serialize their close calls
+
+### Spawn (fresh specialist)
+Use when: independent implementation task, domain specialist work, isolated verification.
+- Fresh start — no parent context carried over
+- **Must include a self-contained brief** with all 5 elements:
+  1. Original request (verbatim)
+  2. Decisions already made (do not re-derive)
+  3. Work completed before this agent (file paths + key findings)
+  4. Current plan state (what runs after, what this unblocks)
+  5. Owned files (explicit list — all others are read-only)
+- Always specify `subagent_type:` — never default to `general-purpose` for specialist work
+
+### Never Delegate Understanding
+A brief that says "based on your findings, fix the bug" is a failed brief.
+Include what you already know: **file paths, line numbers, exact changes**.
+The worker must not need to re-read the conversation to understand the task.
+
+### Concurrency safety
+- **Reads**: always parallel — no limit
+- **Writes**: parallel ONLY if owned files are disjoint (no overlap)
+- **Shared file + parallel write** = guaranteed lost work; make sequential instead
+- **Verification** (tests, audits): parallel after all writes complete
+
+## Structured Findings Format
+
+All review, QA, and audit agents must produce findings in this format. Free-form prose findings are not actionable and fail the pipeline contract.
+
+### Finding block
+
+```
+### [Severity] Finding title
+
+- **Location**: `path/to/file.ts:42` (or component/endpoint name)
+- **Problem**: what is wrong — specific, evidence-backed
+- **Why it matters**: consequence if not fixed (data loss, security gap, user impact, tech debt)
+- **Recommended fix**: concrete action — code change, config update, design change
+- **Status**: Open | Fixed | Needs decision
+```
+
+### Severity definitions
+
+| Severity | Definition | Pipeline effect |
+|----------|-----------|----------------|
+| **Critical** | Data loss, security vulnerability, crash, or broken core functionality | Blocks merge / gate:ship |
+| **Major** | Incorrect behavior, missing edge case, significant risk | Should fix before merge; blocks gate:ship if unfixed |
+| **Minor** | Code quality, maintainability, minor correctness issue | Recommended but not blocking |
+| **Nit** | Style, naming, preference | Optional — do not block on Nit |
+
+### Summary block (end of every review)
+
+```
+## Review Summary
+
+| Severity | Count | Blocking |
+|----------|-------|---------|
+| Critical | N | Yes |
+| Major    | N | Yes |
+| Minor    | N | No |
+| Nit      | N | No |
+
+**Verdict**: APPROVED | BLOCKED
+**Reason**: <one sentence — what must change for APPROVED>
+```
+
+**Rules**:
+- Issue-first: flag design-level issues early, not buried under implementation detail
+- Evidence-backed: every finding links to a file:line or named component
+- No "it looks good" — always produce concrete findings or explicit LGTM with rationale
+- Separate pre-existing issues from issues introduced by the current change
 
 ## Environment Bootstrap
 

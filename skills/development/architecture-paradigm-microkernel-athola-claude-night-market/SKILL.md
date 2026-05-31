@@ -1,6 +1,6 @@
 ---
 name: architecture-paradigm-microkernel
-description: 'Microkernel architecture with a minimal core and plugin-based extensibility for platforms.'
+description: Applies microkernel architecture with minimal core and plugin extensibility. Use when building platforms where third parties extend core functionality.
 alwaysApply: false
 category: architectural-pattern
 tags:
@@ -56,3 +56,16 @@ estimated_tokens: 900
   - **Mitigation**: Use semantic versioning (SemVer) rigorously for both the core and the plugins. Where necessary, provide abstraction layers or "shims" to maintain backward compatibility with older plugins.
 - **Core System Bloat**:
   - **Mitigation**: There is often pressure to add feature logic to the stable core. Aggressively resist this temptation. The core should remain minimal, with new features implemented as plugins whenever possible.
+
+## Concrete Components
+
+These vocabulary items name the concrete tools and abstractions
+that show up when the paradigm is implemented. They are not
+required dependencies and they are not part of the skill's
+``tools:`` frontmatter (which is reserved for Claude Code tool
+restrictions). Use this list to disambiguate during architecture
+discussions.
+
+- ``plugin-loader`` — discovers, validates, and activates plugins at runtime
+- ``sandbox-executor`` — runs each plugin in an isolated context with a constrained capability set
+- ``sdk-generator`` — produces language-specific SDKs from the kernel's stable interface

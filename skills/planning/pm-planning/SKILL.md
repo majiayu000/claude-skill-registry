@@ -9,6 +9,7 @@ when_to_use: |
   Do NOT apply for:
   - nano archetypes (pm phase is skipped — senior-dev claims one task directly)
   - bug-fixes with a one-line repro (no decomposition needed)
+effort: medium
 allowed-tools: Read, Write, Bash(bd:*)
 paths:
   - "docs/architecture/**"

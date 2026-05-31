@@ -3,6 +3,7 @@ name: generate-ui-from-brand
 description: Pipeline skill — turns a URL or DESIGN.md into a concrete UI structure with decisions already made. Extracts live design tokens, normalizes them into a semantic system, applies UX principles, and outputs an actionable UI spec. Use when building UI for an existing brand from scratch, auditing a design system, or refactoring visual inconsistency.
 metadata:
   priority: 9
+  requires: "dembrandt>=0.12.10"
   docs:
     - "https://dembrandt.com"
     - "https://www.npmjs.com/package/dembrandt"
@@ -38,8 +39,8 @@ retrieval:
 
 # generate-ui-from-brand
 
-**Type:** Pipeline / Orchestrator  
-**Input:** URL or existing DESIGN.md  
+**Type:** Pipeline / Orchestrator
+**Input:** URL or existing DESIGN.md
 **Output:** Actionable UI spec with decisions made
 
 ---
@@ -47,17 +48,22 @@ retrieval:
 ## Step 1 — Extract
 
 **If a URL is provided and Dembrandt MCP is available:**
+
+All MCP extraction tools are async — they return a `job_id` immediately. Poll `get_job_status` until `status` is `"completed"`, then read `result`.
+
 ```
-get_design_tokens(url)
-get_color_palette(url)
-get_typography(url)
-get_component_styles(url)
-get_spacing(url)
+{ job_id } = get_design_tokens({ url })
+{ result } = get_job_status({ job_id })   // repeat until status === "completed"
+```
+
+Run these in sequence (each extraction launches a browser):
+```
+get_design_tokens, get_color_palette, get_typography, get_component_styles, get_spacing
 ```
 
 **If Dembrandt MCP is not available, run CLI:**
 ```bash
-npx dembrandt <url> --design-md --pages 3
+npx dembrandt <url> --design-md --crawl 3
 ```
 
 **If DESIGN.md already exists:** parse it directly — skip extraction.
@@ -214,15 +220,15 @@ FONT SIZE VIOLATIONS
 Page layout:
   Header (fixed, 56px)
     Logo | Nav | [Global controls: small type]
-  
+
   Main
     Hero section
       H1 (display scale) + lead text + primary CTA (color-primary, full)
-    
+
     Feature grid (3-col)
       Card (shadow-card, radius-card) × 3
         Icon + H4 + body text
-    
+
   Footer
     Links (text-sm, color-text-secondary)
     Language/currency selector (text-sm)

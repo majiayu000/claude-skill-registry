@@ -4,7 +4,7 @@ description: Use when you need data access with Quarkus Hibernate ORM Panache ‚Ä
 license: Apache-2.0
 metadata:
   author: Juan Antonio Bre√±a Moral
-  version: 0.15.0-SNAPSHOT
+  version: 0.15.0
 ---
 # Hibernate ORM with Panache
 

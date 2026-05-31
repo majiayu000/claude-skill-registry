@@ -43,6 +43,12 @@ def calculate_total(prices: list[float]) -> float:
 3. **Docstrings**: Required for LLM to understand tool purpose
 4. **Google-style docstrings**: Used for parameter descriptions
 
+### Gates (verify in the file, not from memory)
+
+1. **Decorator matches signature** — If the first parameter is `RunContext[...]`, the decorator must be `@agent.tool` (not `@agent.tool_plain`). **Pass:** the same `def` line’s decorator stack includes `@agent.tool`, and the first parameter is typed `RunContext[...]`.
+2. **Plain tools** — With `@agent.tool_plain`, the parameter list must not include `RunContext`. **Pass:** a quick scan of the signature shows no `RunContext`.
+3. **Docstring for the model** — Non-empty docstring; if the tool has parameters, describe them (Google `Args:` or Sphinx `:param` when using `docstring_format='sphinx'`). **Pass:** each parameter in the signature is mentioned in the docstring body.
+
 ## Docstring Formats
 
 Google style (default):

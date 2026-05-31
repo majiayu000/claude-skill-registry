@@ -1,6 +1,6 @@
 ---
 name: clear-context
-description: 'Automatic context management with graceful handoff to a continuation subagent at 80% usage.'
+description: Manages context overflow by handing off to a fresh subagent at 80% usage. Use when context pressure is critical and work must continue uninterrupted.
 alwaysApply: false
 category: conservation
 token_budget: 200
@@ -247,7 +247,7 @@ If Task tool is unavailable (permissions, context restrictions):
    - New session + `/catchup` to understand changes
    - Read `.claude/session-state.md` for saved context
 
-> **Fixed in 2.1.63**: `/clear` now properly resets cached skills. Previously, stale skill content could persist into the new conversation. The `/clear` + `/catchup` pattern is now fully reliable.
+> **Fixed in 2.1.63**: `/clear` now properly resets cached skills. Previously, stale skill content could persist into the new conversation. The `/clear` and `/catchup` pattern is now fully reliable.
 
 > **Fixed in 2.1.72**: `/clear` now only clears foreground tasks. Background agent and bash tasks continue running. Previously, `/clear` would kill all tasks including background ones, which was problematic for long-running background agents that should survive context resets.
 

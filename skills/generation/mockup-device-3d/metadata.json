@@ -1,0 +1,17 @@
+{
+  "name": "mockup-device-3d",
+  "repo": "nexu-io/html-anything",
+  "path": "next/src/lib/templates/skills/mockup-device-3d/SKILL.md",
+  "github_branch": "main",
+  "category": "generation",
+  "source": "github.com/nexu-io/html-anything",
+  "dir_name": "mockup-device-3d",
+  "downloaded_at": "2026-05-30T03:56:35.564010Z",
+  "author": "nexu-io",
+  "source_url": "https://github.com/nexu-io/html-anything/blob/main/next/src/lib/templates/skills/mockup-device-3d/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nexu-io/html-anything/blob/main/next/src/lib/templates/skills/mockup-device-3d/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

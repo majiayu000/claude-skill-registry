@@ -1,6 +1,6 @@
 ---
 name: deepline-gtm
-description: "Use this skill for GTM prospecting, enrichment, qualification, and outbound workflows, especially when users mention Deepline, CSV processing, lead/account/contact research, waterfall enrichment, email or LinkedIn lookup, personalization, scoring, or campaign activation. Route CSV-heavy and provider-driven requests through this skill, then rely on linked sub-docs and provider playbooks for execution details. Providers: adyntel, ai_ark, apify, apollo, attio, bettercontact, bloomberry, builtwith, cloudflare, contactout, crustdata, crustdata-v2, customer_db, dataforseo, datagma, deepline_native, deeplineagent, discolike, dropleads, exa, findymail, firecrawl, forager, fullenrich, generic_http, google_ads_audiences, heyreach, hubspot, hunter, icypeas, instantly, ipqs, leadmagic, lemlist, limadata, linkedin_ads_audiences, linkedin_scraper, lusha, openwebninja, parallel, peopledatalabs, predictleads, prospeo, rocketreach, salesforce, serper, slack, smartlead, snowflake, theirstack, trestle, upcell, wiza, zerobounce."
+description: "Use to prospect, enrich, qualify, and activate outbound — especially when users mention Deepline, CSV processing, lead/account/contact research, waterfall enrichment, email or LinkedIn lookup, personalization, scoring, or campaign activation. Route CSV-heavy and provider-driven requests here, then rely on linked sub-docs and provider playbooks for execution details. Providers: adyntel, ai_ark, apify, apollo, attio, bettercontact, bloomberry, builtwith, cloudflare, contactout, crustdata, crustdata-v2, customer_db, dataforseo, datagma, deepline_native, deeplineagent, discolike, dropleads, exa, findymail, firecrawl, forager, fullenrich, generic_http, google_ads_audiences, heyreach, hubspot, hunter, icypeas, instantly, ipqs, leadmagic, lemlist, limadata, linkedin_ads_audiences, linkedin_scraper, lusha, openmart, openwebninja, parallel, peopledatalabs, predictleads, prospeo, rocketreach, salesforce, serper, slack, smartlead, snowflake, theirstack, trestle, upcell, wiza, zerobounce."
 ---
 
 # GTM Meta Skill
@@ -263,7 +263,7 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
   Last reviewed: 2026-04-30
 
 - [dropleads playbook](provider-playbooks/dropleads.md)
-  Summary: Use Prime-DB search/count first to scope segments efficiently, then run finder/verifier steps only on shortlisted records. Prefer companyDomains over companyNames, split multi-word keywords into separate tokens, and use broad jobTitles plus seniority instead of exact-title matching.
+  Summary: Use Prime-DB search/count for contact discovery at known accounts, then run finder/verifier steps only on shortlisted records. Prefer filters.companyDomains when you already have account domains; do not rely on search_people results to discover a complete account-domain list. Split multi-word keywords into separate tokens, and use broad jobTitles plus seniority instead of exact-title matching.
   Last reviewed: 2026-02-26
 
 - [exa playbook](provider-playbooks/exa.md)
@@ -337,6 +337,10 @@ GTM time windows, thresholds, and interpretation rules are defined in the Defini
 - [lusha playbook](provider-playbooks/lusha.md)
   Summary: Use for B2B email + direct dial enrichment by LinkedIn URL, email, or name+company. Also supports company enrichment by domain and prospecting search with department/seniority/industry filters.
   Last reviewed: 2026-03-31
+
+- [openmart playbook](provider-playbooks/openmart.md)
+  Summary: Use brand search for one-row-per-company prospecting, local business search for store-level records, enrich_company for domain/social enrichment, and async batch tasks for people, email, or tech lookups.
+  Last reviewed: 2026-05-25
 
 - [openwebninja playbook](provider-playbooks/openwebninja.md)
   Summary: Use the namespace to choose the product: jsearch for jobs, glassdoor for employer/job market data, localbusiness for Google Maps business data.

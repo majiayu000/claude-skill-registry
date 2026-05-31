@@ -1,6 +1,6 @@
 ---
 name: session-to-post
-description: 'Convert a Claude Code session into a shareable blog post or case study capturing decisions, process, and outcomes.'
+description: Converts a Claude Code session into a blog post, case study, or Reddit post. Use when publishing dev blog content or community posts from real sessions.
 globs: "**/*.md"
 alwaysApply: false
 category: artifact-generation
@@ -11,14 +11,16 @@ tags:
 - case-study
 - storytelling
 - developer-experience
+- reddit
 tools: []
 complexity: medium
 model_hint: standard
-estimated_tokens: 2500
+estimated_tokens: 3100
 progressive_loading: true
 modules:
 - modules/session-extraction.md
 - modules/narrative-structure.md
+- modules/reddit-format.md
 dependencies:
 - scribe:shared
 - scribe:slop-detector
@@ -40,6 +42,8 @@ process, not just results.
 - Building case studies for tools, libraries, or techniques
 - Producing marketing content that demonstrates capability
 - Documenting a process for teammates who weren't in the session
+- Sharing a session story with a Reddit community (r/programming,
+  r/rust, r/Python, r/ClaudeAI, etc.)
 
 ## When NOT To Use
 
@@ -57,7 +61,7 @@ Use them when the post needs more than prose.
 |------|-------|-------------|
 | Terminal demo GIF | `scry:vhs-recording` | Record a build/test run as an animated GIF |
 | Browser demo GIF | `scry:browser-recording` | Capture a web UI walkthrough via Playwright |
-| Composite media | `scry:media-composition` | Stitch terminal + browser GIFs side-by-side |
+| Composite media | `scry:media-composition` | Stitch terminal and browser GIFs side-by-side |
 | Proof of claims | `imbue:proof-of-work` | Verify every number in the post with evidence |
 | Code quality narrative | `pensive:code-refinement` | Describe what was cleaned up and why |
 | Review narrative | `imbue:structured-review` | Capture review findings as post content |
@@ -84,7 +88,7 @@ Invoke Skill(scry:browser-recording) with a Playwright spec that:
   captures the result
 ```
 
-**Composition** (side-by-side before/after, terminal + browser):
+**Composition** (side-by-side before/after, terminal and browser):
 ```
 Invoke Skill(scry:media-composition) to stitch recordings into
 a single visual that tells the story.
@@ -151,9 +155,21 @@ Look for:
 
 ### Step 3: Draft the Post
 
-Load the `narrative-structure` module for formatting templates.
+**Choose format first:**
 
-**Structure** (adapt to content):
+| Format | Module | When |
+|--------|--------|------|
+| Blog post | `narrative-structure` | Dev blog, company blog, personal site |
+| Case study | `narrative-structure` | Marketing, tool demonstrations |
+| Social thread | `narrative-structure` | Twitter/X, Bluesky, LinkedIn |
+| Reddit post | `reddit-format` | Community engagement, r/programming etc. |
+
+For Reddit: load `modules/reddit-format.md` instead of the blog
+template below. The structure, tone, and quality gate differ.
+
+Load the `narrative-structure` module for blog/case-study templates.
+
+**Blog post structure** (adapt to content):
 
 ```markdown
 # Title: [Verb] + [What] + [With What]
@@ -192,21 +208,37 @@ Honest remaining work. No false completeness.
 
 ### Step 4: Quality Gate
 
+**For blog posts and case studies:**
 1. **Slop check**: `Skill(scribe:slop-detector)` on the draft
 2. **Proof-of-work**: `Skill(imbue:proof-of-work)` on all claims
 3. **Recording check**: does any section need a GIF?
-4. **Title test**: would you click this? Does it promise something specific?
+4. **Title test**: would you click this? Does it promise
+   something specific?
 5. **Opening test**: does paragraph one say what the post is about?
+
+**For Reddit posts (additional gates):**
+1. **TL;DR present**: is it after `---` at the end?
+2. **Lede not buried**: is the most interesting thing in the
+   first two sentences?
+3. **Subreddit fit**: does the content match the target subreddit's
+   norms? Check the subreddit's top posts of the month.
+4. **First comment drafted**: are the repo link and any reference
+   material ready to post as a follow-up comment?
+5. **Header count**: if the post is under 600 words, are headers
+   absent (or replaced with bold inline labels)?
 
 ### Step 5: Output
 
-Write the post to the requested location (default: `docs/posts/`).
+Write the post to the requested location (default:
+`docs/posts/`).
 
 Report:
+- Format used (blog post / case study / Reddit post)
 - Word count
-- Slop score
+- Slop score (blog/case-study only)
 - Verifiable claims count
 - Recordings generated (if any)
+- For Reddit: target subreddit and first-comment content
 
 ## Example
 
@@ -242,3 +274,17 @@ A session that ported a Quake 2 engine from C to Rust:
 
 Every claim is checkable: line counts from `wc -l`, test counts
 from `cargo test`, file counts from filesystem log output.
+
+## Exit Criteria
+
+- [ ] Format selected (blog post, case study, or Reddit post)
+- [ ] Session brief compiled from git history and conversation
+  context
+- [ ] Draft written to `docs/posts/` (or specified path)
+- [ ] For blog/case-study: slop score reported, all claims
+  tagged with evidence references
+- [ ] For Reddit: TL;DR present, lede in first two sentences,
+  target subreddit identified, first comment drafted
+- [ ] Word count and verifiable claim count reported
+- [ ] Incomplete or unverifiable claims are flagged, not silently
+  dropped

@@ -176,6 +176,14 @@ with agent.override(model=TestModel(), deps=mock_deps):
     result = agent.run_sync('Test prompt')
 ```
 
+## Gates
+
+Run these in order before treating the agent as correct; each step has an objective pass condition.
+
+1. **Deps cover every access** — Collect every `ctx.deps.<attr>` (and nested uses) from tools, `@agent.instructions`, and `@agent.system_prompt`. **Pass:** each `<attr>` exists on `deps_type` (and static checking passes if you use mypy/pyright on `Agent[DepsType, …]`).
+2. **Every run that needs deps gets them** — **Pass:** each `agent.run` / `run_sync` path that executes those tools passes `deps=` whose type matches `deps_type` (no `None` unless the agent truly has no deps).
+3. **Tests pin deps shape** — **Pass:** tests that use `agent.override` pass a `deps=` value with the same fields/types as production `Deps` (not a partial mock unless tools under test never touch missing fields).
+
 ## Best Practices
 
 1. **Keep deps immutable**: Use frozen dataclasses or Pydantic models

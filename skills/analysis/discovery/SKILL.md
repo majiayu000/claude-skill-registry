@@ -9,6 +9,7 @@ when_to_use: |
   - l3-support, when triaging a new incident
   - regulated-reviewer, when classifying compliance scope
   - any reviewer who needs domain context the user hasn't given
+effort: medium
 allowed-tools: Read, Grep, Glob, Bash(git:*), Bash(bd:*)
 paths:
   - "docs/**"

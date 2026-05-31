@@ -1,7 +1,7 @@
 ---
 name: baidu-wenku-aippt-personal
 description: >-
-  百度文库 AI PPT 生成工具 — 一句话自动生成高质量 PPT，支持多种风格、场景和配色。
+  百度文库智能PPT个人版 — 一句话自动生成高质量 PPT，支持多种风格、场景和配色。
   TRIGGER: 用户提及"生成PPT/做PPT/制作PPT/AI PPT/aippt/幻灯片/演示文稿"时触发。
   DO NOT TRIGGER: 非 PPT 相关操作，文件管理操作，网盘上传下载等操作。
 allowed-tools: Bash, Read, Glob, Grep, AskUserQuestion
@@ -48,7 +48,7 @@ argument-hint: "[PPT 主题描述]"
 ## 核心操作：AI PPT 生成
 
 ```bash
-bdpan aippt "<用户原始query>" "<title>" "<page>" "<style>" "<scene>" "<color>"
+bash ${CLAUDE_SKILL_DIR}/scripts/run-aippt.sh "<用户原始query>" "<title>" "<page>" "<style>" "<scene>" "<color>"
 ```
 
 **参数说明：**
@@ -67,13 +67,28 @@ bdpan aippt "<用户原始query>" "<title>" "<page>" "<style>" "<scene>" "<color
 **执行步骤：**
 
 1. 将用户原始 query 作为第一参数，生成 title，智能匹配 page、style、scene、color（不向用户展示）
-2. 直接执行 `bdpan aippt "<用户原始query>" "<title>" "<page>" "<style>" "<scene>" "<color>"` 生成 PPT
+2. 执行：
+   ```bash
+   bash ${CLAUDE_SKILL_DIR}/scripts/run-aippt.sh "<用户原始query>" "<title>" "<page>" "<style>" "<scene>" "<color>"
+   ```
 3. **解析命令输出中的大纲**：Agent 必须在思考过程（thinking）中完整记录并分析生成的 PPT 大纲内容，包括各章节标题和子标题的结构，以便用户通过查看思考过程了解 PPT 内容结构
-4. 向用户展示生成结果（文件名、预览链接、剩余次数）
+4. 向用户展示生成结果（文件名、预览链接、剩余次数），并且必须原样展示命令输出中的使用说明提示（tip）
+5. **原样展示规则**：命令输出中 `[DISPLAY_VERBATIM_START]` 和 `[DISPLAY_VERBATIM_END]` 之间的内容，必须作为引用块（blockquote `>`）完整原样展示给用户，禁止省略、改写、总结或翻译。示例输出格式：
+   > 温馨提示：今日AI PPT 生成次数已经用完，明日 0 点后会自动刷新额度。如有大量生成PPT需求，可以通过官网联系我们。官网地址：https://pan.baidu.com/union/home
+6. 如果命令输出中包含更新提示，原样展示给用户（无输出则跳过）
 
 **确认规则：**
 
 - 用户提供了主题描述 → 直接执行
+
+---
+
+## 技能升级
+
+用户回复"技能升级"时：
+1. 执行 `bash ${CLAUDE_SKILL_DIR}/scripts/update.sh --yes`
+2. 展示更新结果
+3. 提示用户重新打开技能体验新版本
 
 ---
 

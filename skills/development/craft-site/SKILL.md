@@ -19,6 +19,7 @@ When this skill triggers, also load:
 - **`craft-twig-guidelines`** — Twig coding standards: variable naming, null handling, whitespace control, include isolation, Craft helpers. Required for any Twig code.
 - **`craft-content-modeling`** — Sections, entry types, fields, Matrix, relations. Required when deciding what content to query or how templates access data.
 - **`ddev`** — All commands run through DDEV. Required for running Vite, npm, and Craft CLI commands.
+- **`craft-cloud`** — When the site is hosted on Craft Cloud (detect via `craft-cloud.yaml` at the repo root or `craftcms/cloud` in `composer.json`). Required for edge static caching rules, `cloud.esi(...)` dynamic islands inside cached pages, edge image transform constraints, and the `csrfInput()` requirement on cacheable pages.
 
 ## Documentation
 

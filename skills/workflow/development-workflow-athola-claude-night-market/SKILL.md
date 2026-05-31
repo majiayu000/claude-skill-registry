@@ -49,9 +49,9 @@ Get started quickly with this development workflow framework:
 - Implement testing strategies for quality assurance
 
 **Progressive Learning**: Start simple, add complexity as needed
-1. **Basic workflow** → git-workflow + code-review
-2. **Quality focus** → add testing-strategies + documentation
-3. **Production ready** → add deployment-procedures + monitoring
+1. **Basic workflow** → git-workflow and code-review
+2. **Quality focus** → add testing-strategies and documentation
+3. **Production ready** → add deployment-procedures and monitoring
 
 ** Use Case-Based**: Jump directly to what you need
 - New project? → Start with git-workflow

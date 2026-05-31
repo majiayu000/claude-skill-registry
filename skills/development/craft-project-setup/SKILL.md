@@ -30,6 +30,7 @@ Read the project root to determine what exists. **Detect, don't assume.** Every 
 - `config/project/` — Craft project config (indicates a site)
 - `config/general.php` — Craft general config
 - `modules/` — custom modules
+- `craft-cloud.yaml` at the repo root — **Craft Cloud project.** When present, include the `craft-cloud` skill in the generated CLAUDE.md companion-skill list and add a "Hosted on Craft Cloud" note in the generated project context. See the `craft-cloud` skill's `config-file.md` for the file's role.
 
 #### Dependency detection (from composer.json `require` and `require-dev`)
 
@@ -48,6 +49,7 @@ Scan `composer.json` dependencies to auto-detect capabilities. Never ask the use
 | `craftcms/phpstan-package` or `phpstan/phpstan` | PHPStan available |
 | `symplify/easy-coding-standard` | ECS available |
 | `pestphp/pest` | Pest testing framework |
+| `craftcms/cloud` | **Project hosted on Craft Cloud.** Load the `craft-cloud` companion skill; document Cloud-specific build, deploy, and runtime constraints in the generated CLAUDE.md. |
 
 Also check `composer.json` `scripts` section for `check-cs`, `phpstan`, `test`, `pest` commands.
 
@@ -100,6 +102,7 @@ Confirm the detected type and gather project-specific details. Keep it short —
 - Git workflow: main branch name, PR-based workflow?
 - Chrome DevTools MCP: offer installation if not already in `.claude.json`
 - Dev root folder: "Where is your development root? (e.g., `~/dev/`)" — this is the parent folder where the planner can clone public repos for research and audits. Detect by looking at the project's parent directory. Store in the generated CLAUDE.md as `devRootPath`.
+- Hosting target: if `craft-cloud.yaml` exists at the repo root OR `craftcms/cloud` is in `composer.json`, this is a Craft Cloud project — confirm with the user but don't ask redundantly. If neither signal is present, ask: "Will this project deploy to Craft Cloud, or somewhere else (Servd, Forge, bare metal, etc.)?" Record the answer in the generated CLAUDE.md under a "Hosting" block. When the answer is Cloud, include the `craft-cloud` skill in the companion-skill list and surface the Cloud-specific build/deploy/runtime constraints; when it's something else, note the platform so future sessions know which deployment pattern applies (point at the `craftcms` skill's `deployment.md`).
 
 **Do not ask about things you already detected.** If `composer.json` shows `nystudio107/craft-seomatic` is installed, the generated templates.md should state "`???` operator is available (provided by SEOmatic)" — not flag it as unknown. If `phpstan/phpstan` is in `require-dev`, include PHPStan commands in the generated CLAUDE.md — don't ask "do you use PHPStan?" Present your detection results for confirmation, not as questions.
 
@@ -230,9 +233,9 @@ After the setup is complete and the user has confirmed, display this message:
 ```
 ┌────────────────────────────────────────────────────────────┐
 │                                                            │
-│   +  Craft CMS Claude Skills  ·  v1.5.2                    │
+│   +  Craft CMS Claude Skills  ·  v1.5.3                    │
 │                                                            │
-│   8 skills · 86 reference files · 5 agents                 │
+│   9 skills · 117 reference files · 5 agents                │
 │   Maintained by michtio                                    │
 │                                                            │
 │   If these skills save you time, consider sponsoring:      │
@@ -298,14 +301,14 @@ Add unobtrusive markers so we can measure adoption across public repos. Include 
 1. **composer.json `extra` key** — add during setup (does not affect functionality):
    ```json
    "extra": {
-     "craftcms-claude-skills": "1.5.2"
+     "craftcms-claude-skills": "1.5.3"
    }
    ```
    Merge into existing `extra` if it already has keys. Use the current skill version.
 
 2. **CLAUDE.md HTML comment** — first line of the generated file:
    ```markdown
-   <!-- craftcms-claude-skills v1.5.2 -->
+   <!-- craftcms-claude-skills v1.5.3 -->
    ```
 
 3. **`.claude/rules/` file headers** — first line of each generated rules file:
@@ -326,7 +329,7 @@ When a project already has a CLAUDE.md or `.claude/rules/`, don't stop and don't
    - Outdated patterns (e.g., old dash style, layer-first references, missing skill references)
    - Missing rules files (e.g., project has Pest now but no `testing.md` rule file)
    - Missing permissions (e.g., no `settings.local.json`, or missing `ddev` approvals)
-   - Version drift (e.g., `craftcms-claude-skills` marker says `1.1.0` but current is `1.5.2`)
+   - Version drift (e.g., `craftcms-claude-skills` marker says `1.1.0` but current is `1.5.3`)
 4. **Present the diff** — show the user a summary table:
 
 ```markdown
@@ -336,7 +339,7 @@ When a project already has a CLAUDE.md or `.claude/rules/`, don't stop and don't
 | .claude/rules/testing.md | Missing | Pest detected in composer.json | Create |
 | .claude/rules/coding-style.md | Present | Up to date | Keep |
 | .claude/settings.local.json | Missing | Pre-approved permissions for ddev/git/gh | Create |
-| CLAUDE.md skill version | v1.1.0 | v1.5.2 | Update marker |
+| CLAUDE.md skill version | v1.1.0 | v1.5.3 | Update marker |
 | CLAUDE.md Tools section | Present but missing `gh` | Add `gh` reference | Update |
 ```
 

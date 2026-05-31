@@ -225,15 +225,15 @@ The user can override any Nen Court verdict:
 
 ## Integration Points
 
-- **`imbue:scope-guard`** -- Soft vow layer. Worthiness
+- **`imbue:scope-guard`** — Soft vow layer. Worthiness
   scoring is a judgment call that belongs in skills.
-- **`imbue:proof-of-work`** -- Mixed enforcement.
+- **`imbue:proof-of-work`** — Mixed enforcement.
   Evidence rules are soft; evidence content can be
   verified by a Nen Court validator.
-- **`imbue:justify`** -- Post-hoc Nen Court audit.
+- **`imbue:justify`** — Post-hoc Nen Court audit.
   Already functions as a validator agent for additive
   bias, Iron Law, and test mutations.
-- **Mission Orchestrator** -- Phase-routing with Nen
+- **Mission Orchestrator** — Phase-routing with Nen
   Court checkpoints between phases as gates:
 
 ```

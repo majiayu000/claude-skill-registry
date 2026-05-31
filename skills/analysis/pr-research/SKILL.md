@@ -181,7 +181,7 @@ Write to `.agents/research/YYYY-MM-DD-pr-{repo-slug}.md`
 | #N | bug/feat | easy/medium |
 
 ## Next Steps
--> `$pr-plan .agents/research/YYYY-MM-DD-pr-{repo}.md`
+-> `$plan .agents/research/YYYY-MM-DD-pr-{repo}.md`
 ```
 
 ---
@@ -199,7 +199,7 @@ Write to `.agents/research/YYYY-MM-DD-pr-{repo-slug}.md`
 ## Workflow Integration
 
 ```
-$pr-research <repo> -> $pr-plan <research> -> implement -> $pr-prep
+$pr-research <repo> -> $plan <research> -> implement -> $pr-prep
 ```
 
 ## Examples

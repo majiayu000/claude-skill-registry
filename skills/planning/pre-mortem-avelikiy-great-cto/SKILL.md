@@ -7,6 +7,7 @@ when_to_use: |
   - pm, while breaking work into tasks (Pre-mortem section in PLAN-*.md)
   - security-officer, when threat-modeling
   - any time the feature is irreversible or high-blast-radius
+effort: medium
 allowed-tools: Read, Write
 paths:
   - "docs/plans/**"
@@ -57,6 +58,30 @@ For each cause, score:
 
 Top 3 by risk score → these are your highest-priority mitigations.
 
+### Step 4b. Classify risks — Tigers / Paper Tigers / Elephants
+
+After scoring, classify each risk into one of three types:
+
+**🐯 Tigers** — Real problems you personally believe could derail the project
+- Based on evidence, past experience, or clear logic
+- Should keep you awake at night
+- Require concrete action
+- Classify each Tiger by urgency:
+  - **Launch-Blocking**: Must be resolved before shipping (broken core feature, regulatory blocker, data integrity risk)
+  - **Fast-Follow**: Must be resolved within 30 days post-launch (performance issues, secondary features)
+  - **Track**: Monitor post-launch, fix if it becomes an issue (edge cases, nice-to-haves)
+
+**📄 Paper Tigers** — Concerns others might raise that you don't believe are real risks
+- Valid-sounding on the surface but unlikely or overblown
+- Not worth significant resource investment
+- Worth documenting to align stakeholders and avoid repeated debates
+- For each: explain WHY you don't believe it's a real risk
+
+**🐘 Elephants** — Things the team knows about but isn't discussing openly
+- Uncomfortable concerns: technical debt, team tension, unrealistic timeline, design that nobody likes
+- Uncertain — you're not sure if it's a problem, but nobody is investigating
+- Deserve explicit surfacing before launch — silent elephants become Tigers post-launch
+
 ### Step 5. For each top-3 cause, write a guardrail in the plan
 
 Each guardrail is a concrete change to the plan:
@@ -83,6 +108,22 @@ Six months from now, this project failed. Headline:
 |---|---|---|---|---|
 | <specific cause> | 4 | 5 | 20 | <Task #N: write idempotency test> |
 | ... | | | | |
+
+### 🐯 Tigers (real risks — require action)
+
+| Tiger | Classification | Mitigation | Owner | Due |
+|-------|---------------|-----------|-------|-----|
+| <risk> | Launch-Blocking | <concrete action> | <team/person> | <date> |
+| <risk> | Fast-Follow | <concrete action> | <team/person> | <date> |
+| <risk> | Track | <monitoring approach> | <owner> | post-launch |
+
+### 📄 Paper Tigers (overblown — document to align stakeholders)
+
+- **<concern>**: Not a real risk because <reason>. If <condition> changes, revisit.
+
+### 🐘 Elephants (unspoken — needs open discussion)
+
+- **<concern>**: Nobody is talking about this. Suggested conversation: "<how to raise it>".
 
 ### Accepted risks (no mitigation)
 

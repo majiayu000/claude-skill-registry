@@ -2,15 +2,16 @@
   "name": "competitor-analysis",
   "repo": "aaron-he-zhu/seo-geo-claude-skills",
   "path": "research/competitor-analysis/SKILL.md",
-  "source": "github.com/aaron-he-zhu/seo-geo-claude-skills",
-  "downloaded_at": "2026-02-02T02:55:12.759523Z",
-  "dir_name": "competitor-analysis-aaron-he-zhu-seo-geo-claude-skill",
+  "github_branch": "main",
   "category": "marketing",
+  "source": "github.com/aaron-he-zhu/seo-geo-claude-skills",
+  "dir_name": "competitor-analysis-aaron-he-zhu-seo-geo-claude-skill",
+  "downloaded_at": "2026-05-30T03:39:45.121691Z",
   "author": "aaron-he-zhu",
   "source_url": "https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/competitor-analysis/SKILL.md",
-  "license": "Apache-2.0",
+  "license": "NOASSERTION",
   "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/competitor-analysis/SKILL.md",
-  "permission_note": "Use according to upstream license terms and attribution requirements.",
-  "distribution": "compatible",
-  "license_class": "compatible"
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
 }

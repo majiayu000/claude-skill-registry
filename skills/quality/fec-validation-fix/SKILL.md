@@ -24,6 +24,13 @@ description: Use when running existing project validation commands and fixing fa
 7. 如果同一错误连续三次修复仍失败，停止扩大改动并报告阻塞。
 8. 最后按 `Expected Output` 总结执行结果、修复内容和剩余风险。
 
+## Failure Triage
+
+- 先修最早出现且会级联的错误，例如缺失类型、导入失败、配置解析失败。
+- 区分真实产品 bug、测试环境问题、快照漂移、依赖版本变化和 flaky。
+- 对 CI 专属失败记录 Node 版本、包管理器、环境变量、路径大小写和工作目录差异。
+- 修复测试时优先修产品代码或测试等待方式，不用删除断言掩盖真实回归。
+
 ## 强约束
 
 - 不要盲目关闭规则来消除报错
@@ -31,6 +38,7 @@ description: Use when running existing project validation commands and fixing fa
 - 不要因为附近测试失败就顺手重写无关模块
 - 不要一次性修改多个无关根因
 - 不要删除失败测试来让验证通过
+- 不要只运行失败命令的片段就声称整体验证通过
 
 ## Expected Output
 

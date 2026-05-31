@@ -1,0 +1,768 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-31T02:29:32.910239+00:00",
+  "skills_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch019",
+  "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch019/migration-artifacts/2026-05-31-new-other-intake-batch019/classification.jsonl",
+  "policy": {
+    "min_confidence": 0.7,
+    "from_categories": [
+      "other"
+    ],
+    "to_categories": [],
+    "target_statuses": [
+      "active"
+    ],
+    "allow_target_other": false,
+    "apply_mode": "report-only",
+    "example_limit_per_reason": 30,
+    "top_targets_per_reason": 20,
+    "conflict_detail_limit": 1000
+  },
+  "summary": {
+    "classification_row_count": 5157,
+    "archive_skill_count": 198706,
+    "scoped_archive_skill_count": 530,
+    "scoped_archive_classification_gap": 522,
+    "classification_status_counts": {
+      "missing_result": 2,
+      "ok": 5154,
+      "unknown_or_inactive_category": 1
+    },
+    "archive_category_counts": {
+      "agent": 1885,
+      "ai-llm": 2657,
+      "ai-ml": 2588,
+      "analysis": 5052,
+      "api": 1360,
+      "bash": 316,
+      "business": 1403,
+      "c-level": 80,
+      "communication": 705,
+      "context-management": 1459,
+      "creative": 862,
+      "data": 49372,
+      "design": 13941,
+      "development": 39271,
+      "devops": 10930,
+      "documents": 7827,
+      "domains": 2666,
+      "examples": 186,
+      "forensics": 157,
+      "gaming": 915,
+      "generation": 1510,
+      "integration": 6872,
+      "language": 177,
+      "local-ai-infrastructure": 107,
+      "marketing": 3125,
+      "orchestration": 2862,
+      "other": 530,
+      "performance": 1099,
+      "personal-development": 802,
+      "planning": 1830,
+      "platform": 994,
+      "product": 3047,
+      "productivity": 3306,
+      "quality": 4422,
+      "security": 5310,
+      "skills": 2616,
+      "system": 363,
+      "testing": 11395,
+      "travel": 53,
+      "war-room": 42,
+      "workflow": 3491,
+      "writing": 1121
+    },
+    "source_state_counts": {
+      "exists": 8,
+      "missing": 5149
+    },
+    "existing_source_category_counts": {
+      "other": 8
+    },
+    "scoped_source_category_counts": {
+      "other": 8
+    },
+    "scoped_existing_source_count": 8,
+    "candidate_move_count": 0,
+    "blocked_existing_key_count": 0,
+    "stable_key_conflict_detail_count": 0,
+    "stable_key_conflict_detail_summary": {},
+    "primary_reason_counts": {
+      "classification status is not ok": 3,
+      "confidence below threshold": 5,
+      "source directory missing": 5149
+    },
+    "all_blocker_reason_counts": {
+      "classification status is not ok": 3,
+      "classification target matches current category": 5,
+      "confidence below threshold": 7,
+      "target category other requires --allow-target-other": 5,
+      "target category status 'unknown' excluded by filter": 1
+    },
+    "target_category_counts": {
+      "": 2,
+      "agent": 49,
+      "ai-llm": 75,
+      "ai-ml": 148,
+      "analysis": 373,
+      "api": 72,
+      "bash": 12,
+      "business": 79,
+      "c-level": 2,
+      "communication": 24,
+      "context-management": 76,
+      "creative": 11,
+      "data": 185,
+      "design": 217,
+      "development": 593,
+      "devops": 220,
+      "documents": 235,
+      "domains": 305,
+      "examples": 3,
+      "forensics": 12,
+      "gaming": 23,
+      "generation": 160,
+      "integration": 283,
+      "knowledge-management": 1,
+      "language": 9,
+      "local-ai-infrastructure": 10,
+      "marketing": 187,
+      "orchestration": 229,
+      "other": 5,
+      "performance": 58,
+      "personal-development": 46,
+      "planning": 94,
+      "platform": 72,
+      "product": 152,
+      "productivity": 31,
+      "quality": 322,
+      "security": 220,
+      "skills": 115,
+      "system": 17,
+      "testing": 129,
+      "travel": 2,
+      "war-room": 5,
+      "workflow": 230,
+      "writing": 64
+    },
+    "target_status_counts": {
+      "active": 5156,
+      "unknown": 1
+    },
+    "same_policy_plan_summary": {
+      "classification_row_count": 5157,
+      "classification_status_counts": {
+        "missing_result": 2,
+        "ok": 5154,
+        "unknown_or_inactive_category": 1
+      },
+      "planned_move_count": 0,
+      "movable_count": 0,
+      "blocked_count": 0,
+      "operation_counts": {},
+      "reject_reasons": {
+        "classification status is not ok": 3,
+        "confidence below threshold": 5,
+        "source directory missing": 5149
+      },
+      "source_category_counts": {},
+      "target_category_counts": {}
+    }
+  },
+  "buckets": [
+    {
+      "reason": "source directory missing",
+      "count": 5149,
+      "target_categories": [
+        {
+          "value": "development",
+          "count": 593
+        },
+        {
+          "value": "analysis",
+          "count": 373
+        },
+        {
+          "value": "quality",
+          "count": 322
+        },
+        {
+          "value": "domains",
+          "count": 305
+        },
+        {
+          "value": "integration",
+          "count": 283
+        },
+        {
+          "value": "documents",
+          "count": 235
+        },
+        {
+          "value": "workflow",
+          "count": 230
+        },
+        {
+          "value": "orchestration",
+          "count": 229
+        },
+        {
+          "value": "devops",
+          "count": 220
+        },
+        {
+          "value": "security",
+          "count": 220
+        },
+        {
+          "value": "design",
+          "count": 217
+        },
+        {
+          "value": "marketing",
+          "count": 187
+        },
+        {
+          "value": "data",
+          "count": 185
+        },
+        {
+          "value": "generation",
+          "count": 160
+        },
+        {
+          "value": "product",
+          "count": 152
+        },
+        {
+          "value": "ai-ml",
+          "count": 148
+        },
+        {
+          "value": "testing",
+          "count": 129
+        },
+        {
+          "value": "skills",
+          "count": 115
+        },
+        {
+          "value": "planning",
+          "count": 94
+        },
+        {
+          "value": "business",
+          "count": 79
+        }
+      ],
+      "target_status_counts": {
+        "active": 5149
+      },
+      "examples": [
+        {
+          "path": "other/0-autoresearch-skill-orchestra-research-ai-research-skills/SKILL.md",
+          "name": "autoresearch",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "orchestration",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/0-autoresearch-skill/SKILL.md",
+          "name": "autoresearch",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "orchestration",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/00-basic-skill/SKILL.md",
+          "name": "code-reviewing",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "quality",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/001-skills-inventory/SKILL.md",
+          "name": "001-skills-inventory",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/002-agents-inventory/SKILL.md",
+          "name": "002-agents-inventory",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/003-agents-installation/SKILL.md",
+          "name": "003-agents-installation",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "agent",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/01-dotnet-clean-architecture/SKILL.md",
+          "name": "dotnet-clean-architecture",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.92,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/012-agile-epic/SKILL.md",
+          "name": "012-agile-epic",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "product",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/013-agile-feature/SKILL.md",
+          "name": "013-agile-feature",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "product",
+          "target_status": "active",
+          "confidence": 0.88,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/014-agile-user-story/SKILL.md",
+          "name": "014-agile-user-story",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "product",
+          "target_status": "active",
+          "confidence": 0.88,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/02-dotnet-cqrs-command-generator/SKILL.md",
+          "name": "dotnet-cqrs-command-generator",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/02-progressive-skill/SKILL.md",
+          "name": "api-documenting",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/03-dotnet-cqrs-query-generator/SKILL.md",
+          "name": "dotnet-cqrs-query-generator",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/03-financial-skill/SKILL.md",
+          "name": "financial-analyzing",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "analysis",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/030-architecture-adr-general/SKILL.md",
+          "name": "030-architecture-adr-general",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/031-architecture-adr-functional-requirements/SKILL.md",
+          "name": "031-architecture-adr-functional-requirements",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/032-architecture-adr-non-functional-requirements/SKILL.md",
+          "name": "032-architecture-adr-non-functional-requirements",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/033-architecture-diagrams/SKILL.md",
+          "name": "033-architecture-diagrams",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "design",
+          "target_status": "active",
+          "confidence": 0.8,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/04-codebase-visualizer/SKILL.md",
+          "name": "codebase-visualizer",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "analysis",
+          "target_status": "active",
+          "confidence": 0.75,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/04-dotnet-domain-entity-generator/SKILL.md",
+          "name": "dotnet-domain-entity-generator",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/041-planning-plan-mode/SKILL.md",
+          "name": "041-planning-plan-mode",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "planning",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/042-planning-openspec/SKILL.md",
+          "name": "042-planning-openspec",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "planning",
+          "target_status": "active",
+          "confidence": 0.92,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/043-planning-github-issues/SKILL.md",
+          "name": "043-planning-github-issues",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "planning",
+          "target_status": "active",
+          "confidence": 0.88,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/044-planning-jira/SKILL.md",
+          "name": "044-planning-jira",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "planning",
+          "target_status": "active",
+          "confidence": 0.88,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/05-api-generator/SKILL.md",
+          "name": "api-generating",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/05-dotnet-repository-pattern/SKILL.md",
+          "name": "dotnet-repository-pattern",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.92,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/06-dotnet-ef-core-configuration/SKILL.md",
+          "name": "dotnet-ef-core-configuration",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.92,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/07-1-dotnet-legacy-api-controllers/SKILL.md",
+          "name": "dotnet-legacy-api-controllers",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.93,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/07-2-dotnet-minimal-api-endpoints/SKILL.md",
+          "name": "dotnet-minimal-api-endpoints",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/08-dotnet-result-pattern/SKILL.md",
+          "name": "dotnet-result-pattern",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        }
+      ]
+    },
+    {
+      "reason": "confidence below threshold",
+      "count": 5,
+      "target_categories": [
+        {
+          "value": "other",
+          "count": 5
+        }
+      ],
+      "target_status_counts": {
+        "active": 5
+      },
+      "examples": [
+        {
+          "path": "other/about-bitwize-music-studio-claude-ai-music-skil-8/SKILL.md",
+          "name": "about",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.55,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/join-discord/SKILL.md",
+          "name": "gsd:join-discord",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.5,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/quickstart-boshu2-agentops/SKILL.md",
+          "name": "quickstart",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.6,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/quickstart/SKILL.md",
+          "name": "quickstart",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.6,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/template-skill/SKILL.md",
+          "name": "template-skill",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.3,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        }
+      ]
+    },
+    {
+      "reason": "classification status is not ok",
+      "count": 3,
+      "target_categories": [
+        {
+          "value": "",
+          "count": 2
+        },
+        {
+          "value": "knowledge-management",
+          "count": 1
+        }
+      ],
+      "target_status_counts": {
+        "active": 2,
+        "unknown": 1
+      },
+      "examples": [
+        {
+          "path": "other/curate/SKILL.md",
+          "name": "curate",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "knowledge-management",
+          "target_status": "unknown",
+          "confidence": 0.75,
+          "status": "unknown_or_inactive_category",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/research-deep-weizhena-deep-research-skills/SKILL.md",
+          "name": "research-deep",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "",
+          "target_status": "active",
+          "confidence": null,
+          "status": "missing_result",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/research-deep/SKILL.md",
+          "name": "research-deep",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "",
+          "target_status": "active",
+          "confidence": null,
+          "status": "missing_result",
+          "reason": "classification status is not ok"
+        }
+      ]
+    }
+  ],
+  "details": {
+    "stable_key_conflicts": []
+  },
+  "notes": [
+    "This report is read-only and never moves, deletes, or rewrites skills.",
+    "same_policy_plan_summary is generated by apply_category_migration.py with the same flags.",
+    "primary_reason_counts are mutually exclusive and explain the current archive state first.",
+    "all_blocker_reason_counts can exceed scoped_existing_source_count because one row may have multiple blockers.",
+    "source directory missing usually means the classification row points at a pre-migration path that has already moved.",
+    "scoped_archive_classification_gap is scoped_archive_skill_count minus scoped_existing_source_count; positive values indicate archive skills not covered by the classification file or duplicate classification coverage.",
+    "stable_key_conflicts detail is bounded by --conflict-detail-limit and includes content hashes so duplicate removal is not inferred from the stable key alone."
+  ]
+}

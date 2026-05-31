@@ -40,7 +40,7 @@ For package inventory, protocol details, and helper-script behavior, rely on the
 ## Package Facts
 
 <!-- RecallLoom metadata sync start: package-metadata -->
-- package version: `0.4.1`
+- package version: `0.4.3`
 - protocol version: `1.0`
 - supported protocol versions:
   - `1.0`
@@ -70,6 +70,25 @@ RecallLoom package support is separate from project sidecar protocol compatibili
 - If support is `unknown_offline`, diagnostic and read-only actions MAY continue, but mutating actions MUST block until support can be verified.
 - Blocked actions MUST return the shared failure contract with `blocked_reason: package_support_blocked` and a `package_support` object. See `references/package-support-policy.md`.
 
+## Public Surface And Required Checks
+
+- Public package and release surfaces MUST stay limited to files a user needs to install, understand, and operate the package.
+- Public surfaces MUST NOT include copied project memory, generated runtime output, machine-local data, maintainer-only working files, or material that is not required by the installable package.
+- Public CI and required checks MAY validate repository contents and metadata.
+- Required-check wording MUST NOT present repository checks as proof of a user's local workspace state, host behavior, or sidecar trust status.
+
+## Non-Invasive Defaults And UX Gates
+
+- Core install and daily use MUST NOT require or auto-install hooks, daemons, watchers, MCP/plugin enforcement, host adapters, telemetry/metrics, or remote payload transmission.
+- Native command wrappers are opt-in convenience entrypoints over the same dispatcher, not a required enforcement layer.
+- Ordinary docs/source/planning edits outside the managed sidecar stay silent allow or low-friction unless they affect provenance-sensitive RecallLoom state.
+- Managed sidecar or provenance-impacting actions surface one of `allow`, `warn`, `ask`, or `block` in helper readiness output when provenance state is relevant.
+- `warn` is for low-risk structural-only or readable legacy states and should stay brief; repeated same-session low-risk warnings should be cooldown-friendly.
+- `ask` is for legacy review / repair import or reviewed imported baseline actions and requires explicit operator confirmation before higher-risk writes.
+- `block` is non-waivable for forged markers, detected receipt/store inconsistency, direct `state.json` / `config.json` edits, privacy violations, and any state classified as `inconsistent_or_tampered_evidence`.
+- Do not present remote services, host memory, plugins, MCP, hooks, or wrappers as authority for local helper evidence.
+- Receipt-backed mutation is limited to dispatcher-issued managed-file writes, daily-log appends to the current latest cursor, and post-append summary sync. Archive apply and bridge apply remain preview-only until those surfaces gain their own receipt support.
+
 ## Write Protocol Red Lines
 
 - Managed sidecar writes MUST use helper scripts. Do not bypass them with blind file replacement, blind patching, or hand-built sidecar files.
@@ -79,7 +98,7 @@ RecallLoom package support is separate from project sidecar protocol compatibili
 - Protocol `1.0` daily-log counters are file-local: `entry-seq` is `1..N` within one daily log and canonical `entry-id` is `entry-{entry_seq}`. Do not treat either as globally unique.
 - Keep `state.json.daily_logs.entry_count` as `entry_count`; it means the entry marker count in the latest active daily log, not a global cumulative count.
 - If a helper write fails, diagnose, fix, retry, then surface the helper failure contract if it still cannot complete.
-- Manual repair is allowed only for explicit damaged-sidecar repair; repair marker and state cursor fields as one consistency set, then rerun `validate_context.py`.
+- Damaged-sidecar recovery MUST use the canonical recovery proposal/review/promotion helpers and `validate_context.py`; do not hand-edit managed markers, `state.json`, `config.json`, receipts, or helper-evidence stores.
 
 ## When To Use It
 
@@ -243,8 +262,13 @@ Default exits before any write should stay explicit:
 Read-side trust notes:
 
 - `sidecar_trust_state` stays in helper JSON, not in protocol `1.0`
+- `state.json.provenance` may store local provenance markers such as `structurally_valid`, `review_imported_baseline`, or `helper_evidenced` after a receipt-finalized helper write; helper JSON still owns operational `provenance_state` routing
+- Legacy sidecars without baseline metadata are readable, but write readiness must route through review / repair import before mutating helper writes
+- `structurally_valid` and `review_imported_baseline` mean structural/readiness evidence only and MUST NOT be treated as `helper_evidenced`
+- Receipt-backed provenance is only claimed after dispatcher-backed receipt finalization writes the optional local receipt store and updates provenance metadata; structural validation alone MUST NOT output `helper_evidenced`
+- Default `rl-validate` / `validate_context.py` remains structural and does not read the optional receipt store. Receipt-store validation is explicit: use `--require-provenance` with exactly one scope flag, `--changed-only` or `--full`.
 - `continuity_drift_risk_level` is a review signal, not proof that the sidecar is damaged
-- `allowed_operation_level` helps hosts route low-risk read vs review-first vs write-after-preflight flows
+- `allowed_operation_level` and `write_readiness` help hosts route low-risk read vs review-first vs write-after-preflight flows
 
 Project-local overrides MAY narrow read order, write order, or archive behavior, but they do not replace the core file contract.
 

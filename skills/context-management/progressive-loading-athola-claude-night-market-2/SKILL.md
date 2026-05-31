@@ -192,33 +192,33 @@ should only load the ones whose activation context fires.
 
 **Operating-system patterns** (load on detected platform):
 
-- `modules/linux-patterns.md` -- Linux-specific shell, paths, and process patterns
-- `modules/macos-patterns.md` -- macOS-specific tooling and platform quirks
-- `modules/windows-patterns.md` -- Windows shell, path, and PowerShell patterns
+- `modules/linux-patterns.md` — Linux-specific shell, paths, and process patterns
+- `modules/macos-patterns.md` — macOS-specific tooling and platform quirks
+- `modules/windows-patterns.md` — Windows shell, path, and PowerShell patterns
 
 **Language and runtime patterns** (load on detected ecosystem):
 
-- `modules/modern-python.md` -- Python 3.11+ idioms, typing, async
-- `modules/legacy-python.md` -- Python 2 / pre-3.8 compatibility patterns
-- `modules/python-packaging.md` -- pyproject.toml, uv, pip, hatch, poetry
-- `modules/python-patterns.md` -- General Python authoring patterns
-- `modules/python-testing.md` -- pytest, fixtures, parametrization, mocking
-- `modules/cargo-patterns.md` -- Rust Cargo workspace and dependency patterns
-- `modules/rust-review.md` -- Rust code-review patterns
+- `modules/modern-python.md` — Python 3.11+ idioms, typing, async
+- `modules/legacy-python.md` — Python 2 / pre-3.8 compatibility patterns
+- `modules/python-packaging.md` — pyproject.toml, uv, pip, hatch, poetry
+- `modules/python-patterns.md` — General Python authoring patterns
+- `modules/python-testing.md` — pytest, fixtures, parametrization, mocking
+- `modules/cargo-patterns.md` — Rust Cargo workspace and dependency patterns
+- `modules/rust-review.md` — Rust code-review patterns
 
 **Workflow patterns** (load on detected task):
 
-- `modules/api-patterns.md` -- API design and endpoint conventions
-- `modules/api-review.md` -- API surface review patterns
-- `modules/git-patterns.md` -- Git workflow and history patterns
-- `modules/git-catchup-patterns.md` -- Catching up on a branch or PR diff
-- `modules/document-analysis-patterns.md` -- Reading and analyzing documents
-- `modules/log-analysis-patterns.md` -- Parsing and reasoning over logs
-- `modules/performance.md` -- Performance investigation patterns
+- `modules/api-patterns.md` — API design and endpoint conventions
+- `modules/api-review.md` — API surface review patterns
+- `modules/git-patterns.md` — Git workflow and history patterns
+- `modules/git-catchup-patterns.md` — Catching up on a branch or PR diff
+- `modules/document-analysis-patterns.md` — Reading and analyzing documents
+- `modules/log-analysis-patterns.md` — Parsing and reasoning over logs
+- `modules/performance.md` — Performance investigation patterns
 
 **Reference material** (load only when explicitly cited):
 
-- `modules/large-reference.md` -- Large reference tables and lookups (load
+- `modules/large-reference.md` — Large reference tables and lookups (load
   last; tokens are non-trivial)
 
 ## Integration with Other Skills

@@ -37,7 +37,8 @@ See `CLAUDE.md` *Canvas writes — Read before Write* for the canonical rule.
 
 1. **Run `/mycelium:bias-check`** before designing questions
 2. Review current OST -- what are you trying to learn?
-3. Design questions that are story-based and past-tense
+3. **Seed learning-target questions from open canvas gaps** (per `engine/canvas-guidance.yml#learning_target_coupling`): scan the canvas for entries explicitly waiting on evidence — ON HOLD / RE-GATED action flags, in-progress human-tasks naming a MISSING SIGNAL, low-confidence entries with an un-validated assumption — and seed AT LEAST ONE question per relevant gap. Tag each seeded question inline `[target → <file>#<anchor>]` so the answer routes back via `/mycelium:log-evidence`. Feedback capacity is scarce and non-repeating; an un-targeted session spends it without retiring any open gap. NUDGE-tier: zero-target sessions are allowed (pure discovery), but the omission should be a choice.
+4. Design questions that are story-based and past-tense
 
 ## Question Design Rules
 

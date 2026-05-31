@@ -18,7 +18,7 @@ model: sonnet
 
 > Skip silently when `persistence: false` in Session Config.
 
-Before any Phase 1 work, run the parallel-aware preamble per `skills/_shared/parallel-aware-preamble.md`. The preamble detects other active sessions in the worktree-family via `discoverActiveSessions(repoRoot)`, classifies the caller's mode via `classifyMode(callerMode)` against the exclusivity-matrix, and either:
+Before any Phase 1 work, run the parallel-aware preamble per `skills/_shared/parallel-aware-preamble.md`. The preamble detects other active sessions in the worktree-family via `findPeers(repoRoot, { mySessionId })`, classifies the caller's mode via `classifyMode(callerMode)` against the exclusivity-matrix, and either:
 
 - Returns `PASS_THROUGH` (no other session / `always-ok` mode) → continue to Phase 1
 - Returns `EXCLUSIVE_BLOCKED` → fires Exclusive-Conflict AUQ from `skills/_shared/parallel-aware-auq.md`

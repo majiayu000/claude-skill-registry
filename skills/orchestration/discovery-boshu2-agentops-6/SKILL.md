@@ -127,10 +127,7 @@ and the acceptance-criteria YAML contract.
 | `--ideate` | auto | Force the open-ended generate-winnow path: delegate to `/brainstorm --ideate` (30→5→15), then operationalize into self-documenting `bd` beads and refine 4-5x in plan space. Auto-on for open-ended goals. See [Open-Ended Path](#open-ended-path-generate-winnow--operationalize--refine). |
 | `--complexity=<level>` | auto | Force complexity level (`fast` / `standard` / `full`) |
 | `--no-budget` | off | Disable phase time budgets |
-| `--no-scaffold` | off | Skip scaffold auto-invocation in STEP 4.5 (canonical name) |
-| `--no-lifecycle` | off | **DEPRECATED ALIAS** for `--no-scaffold`. Honored through v2.40.0 for transition. When both flags are passed, they are equivalent. |
-
-> **Deprecation note:** When Claude encounters `--no-lifecycle` on `/discovery`, treat it as `--no-scaffold` and mention the deprecation inline in the phase summary (e.g., `"used deprecated --no-lifecycle, prefer --no-scaffold"`). This surfaces guidance in the RPI output without a runtime parser.
+| `--no-scaffold` | off | Skip scaffold auto-invocation in STEP 4.5 |
 
 ## Quick Start
 

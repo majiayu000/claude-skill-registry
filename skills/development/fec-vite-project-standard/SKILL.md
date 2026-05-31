@@ -37,6 +37,8 @@ description: Use when creating, configuring, reviewing, or debugging Vite-based 
    - 发布前运行 `vite build`，并用 `vite preview` 做本地构建烟测。
    - 手动分包使用稳定的对象形式优先，避免把每个依赖拆成独立小 chunk。
    - 生产 sourcemap 默认关闭；若上传错误追踪平台，上传后不随站点公开。
+   - 动效、3D、图表、编辑器、地图和音视频处理库优先通过动态导入或路由级拆包隔离。
+   - 检查静态资源是否进入正确目录、是否被 hash/cache、是否存在占位 URL 或过大的未压缩媒体。
 
 ## Minimal Config
 
@@ -73,6 +75,8 @@ export default defineConfig(({ mode }) => {
 - 不默认引入 legacy 插件；只有真实用户数据需要时再启用。
 - 不用 `vite preview` 作为生产服务器。
 - 组件库必须 externalize peer dependencies，并单独产出 `.d.ts`。
+- 不把服务端密钥通过 `define`、`import.meta.env` 或空前缀 `loadEnv` 注入客户端。
+- 不把 GSAP、Three.js、Lottie、Monaco、地图 SDK 等重型库放进所有页面共享入口；先评估 async chunk 和首屏影响。
 
 ## Expected Output
 

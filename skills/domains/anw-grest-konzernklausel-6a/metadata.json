@@ -1,0 +1,17 @@
+{
+  "name": "anw-grest-konzernklausel-6a",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "steuerrecht-anwalt-und-berater/skills/anw-grest-konzernklausel-6a/SKILL.md",
+  "github_branch": "main",
+  "category": "domains",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "anw-grest-konzernklausel-6a",
+  "downloaded_at": "2026-05-30T03:35:03.442502Z",
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/steuerrecht-anwalt-und-berater/skills/anw-grest-konzernklausel-6a/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/steuerrecht-anwalt-und-berater/skills/anw-grest-konzernklausel-6a/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

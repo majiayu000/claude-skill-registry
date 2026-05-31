@@ -1,6 +1,6 @@
 ---
 name: damage-control
-description: 'Recover from broken agent state including crash recovery, context overflow, merge conflicts, and corrupted worktrees.'
+description: Recovers broken agent state via crash recovery, context overflow, and merge conflict protocols. Use when an agent session fails or a worktree is corrupted.
 alwaysApply: false
 category: infrastructure
 tags:

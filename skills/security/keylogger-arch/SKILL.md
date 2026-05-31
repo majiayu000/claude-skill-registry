@@ -4,6 +4,14 @@ description: Low-level keylogger architecture — SetWindowsHookEx, raw input de
 metadata:
   type: offensive
   phase: research
+kill_chain:
+  phase: [install, actions]
+  step: [5, 7]
+  attck_tactics: [TA0003, TA0009]
+depends_on: [privesc-windows, edr-evasion]
+feeds_into: [red-team-ops]
+inputs: [target_os, edr_product]
+outputs: [keylogger_binary, captured_input]
   ---
 
 # Keylogger Architecture

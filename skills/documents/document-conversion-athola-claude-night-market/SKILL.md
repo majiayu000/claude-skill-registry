@@ -1,6 +1,6 @@
 ---
 name: document-conversion
-description: 'Document-to-markdown conversion with tiered fallback: MCP markitdown, native tools, or user notice.'
+description: Converts documents and URLs to markdown via tiered fallback (MCP markitdown, native tools, user notice). Use when a skill must ingest PDF, DOCX, or URL content.
 alwaysApply: false
 category: infrastructure
 tags:

@@ -4,7 +4,7 @@ description: Use when you need to create a DEVELOPER.md file for a Maven project
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.15.0-SNAPSHOT
+  version: 0.15.0
 ---
 # Create DEVELOPER.md for the Maven projects
 

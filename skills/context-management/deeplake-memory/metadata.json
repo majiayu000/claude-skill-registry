@@ -1,0 +1,17 @@
+{
+  "name": "deeplake-memory",
+  "repo": "activeloopai/hivemind",
+  "path": "codex/skills/deeplake-memory/SKILL.md",
+  "github_branch": "main",
+  "category": "context-management",
+  "source": "github.com/activeloopai/hivemind",
+  "dir_name": "deeplake-memory",
+  "downloaded_at": "2026-05-30T03:39:51.426023Z",
+  "author": "activeloopai",
+  "source_url": "https://github.com/activeloopai/hivemind/blob/main/codex/skills/deeplake-memory/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/activeloopai/hivemind/blob/main/codex/skills/deeplake-memory/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

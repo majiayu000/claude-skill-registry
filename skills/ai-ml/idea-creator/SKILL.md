@@ -2,7 +2,7 @@
 name: idea-creator
 description: Generate and rank research ideas given a broad direction. Use when user says "找idea", "brainstorm ideas", "generate research ideas", "what can we work on", or wants to explore a research area for publishable directions.
 argument-hint: [research-direction]
-allowed-tools: Bash(*), Read, Write, Grep, Glob, WebSearch, WebFetch, Agent, mcp__codex__codex, mcp__codex__codex-reply
+allowed-tools: Bash(*), Read, Write, Grep, Glob, WebSearch, WebFetch, Agent, mcp__codex__codex, mcp__codex__codex-reply, mcp__manual_review__review, mcp__manual_review__review_reply
 ---
 
 # Research Idea Creator
@@ -19,11 +19,32 @@ Given a broad research direction from the user, systematically generate, validat
 - **PILOT_TIMEOUT_HOURS = 3** — Hard timeout: kill pilots exceeding 3 hours. Collect partial results if available.
 - **MAX_PILOT_IDEAS = 3** — Pilot at most 3 ideas in parallel. Additional ideas are validated on paper only.
 - **MAX_TOTAL_GPU_HOURS = 8** — Total GPU budget for all pilots combined.
-- **REVIEWER_MODEL = `gpt-5.5`** — Model used via Codex MCP for brainstorming and review. Must be an OpenAI model (e.g., `gpt-5.5`, `o3`, `gpt-4o`).
-- **REVIEWER_BACKEND = `codex`** — Default: Codex MCP (xhigh). Override with `— reviewer: oracle-pro` for GPT-5.4 Pro via Oracle MCP. See `shared-references/reviewer-routing.md`.
+- **REVIEWER_MODEL = `gpt-5.5`** — Default model for the Codex backend. Must be an OpenAI model (e.g., `gpt-5.5`, `o3`, `gpt-4o`). Manual backend uses whatever model the user chooses, **but it must be a non-Claude model** — the executor is Claude, so pasting into any Claude product makes Claude judge Claude and voids the cross-model invariant (see `shared-references/reviewer-routing.md`).
+- **REVIEWER_BACKEND = `codex`** — Default: Codex MCP (xhigh). Override with `— reviewer: oracle-pro` for Oracle MCP, or `— reviewer: manual` for Manual Review MCP. If manual-review MCP is unavailable, stop and print the install command; do not fall back to Codex. See `shared-references/reviewer-routing.md`.
 - **OUTPUT_DIR = `idea-stage/`** — All idea-stage outputs go here. Create the directory if it doesn't exist.
 
 > 💡 Override via argument, e.g., `/idea-creator "topic" — pilot budget: 4h per idea, 20h total`.
+
+## Reviewer Calling Convention
+
+When calling the reviewer for idea evaluation, branch on REVIEWER_BACKEND:
+
+**If REVIEWER_BACKEND = `codex`:**
+  Use `mcp__codex__codex` for new review threads.
+  Use `mcp__codex__codex-reply` for follow-up rounds (reuse threadId).
+
+**If REVIEWER_BACKEND = `manual`:**
+  Use `mcp__manual_review__review` for new review threads with:
+    prompt: [exact same prompt that would go to Codex]
+    config: {"model_reasoning_effort": "xhigh"}
+  Save the returned `threadId`.
+  Use `mcp__manual_review__review_reply` for follow-up rounds with:
+    threadId: [saved manual-review threadId]
+    prompt: [follow-up prompt]
+    config: {"model_reasoning_effort": "xhigh"}
+
+Prompt fidelity: the manual prompt must be exactly the same text that Codex would receive.
+Review tracing applies equally to both backends.
 
 ## Workflow
 
@@ -87,15 +108,77 @@ Map the research area to understand what exists and where the gaps are.
    - Scaling regimes that haven't been explored
    - Diagnostic questions that nobody has asked
 
+### Phase 1.5: Parallel lens fan-out (Tier-aware) — breadth, not verdict
+
+Idea generation benefits from **breadth**: more independent analytic angles
+surface more candidate ideas. This skill fans out *candidate generation*
+across analytic **lenses**, then funnels every candidate through the single
+Phase-4 cross-model jury. Fan-out widens the jury's input; it never makes the
+accept/reject decision. This follows
+[`shared-references/fan-out-pattern.md`](../shared-references/fan-out-pattern.md);
+the verdict stays cross-model per
+[`shared-references/acceptance-gate.md`](../shared-references/acceptance-gate.md)
+(idea novelty/quality is a Type-B verdict — same-family generation is fine,
+same-family *acquittal* is not).
+
+**Lenses** (the structural-gap angles from Phase 1, step 3):
+`method-transfer` (works in domain A, untried in B) · `contradiction`
+(conflicting findings to resolve) · `untested-assumption` (everyone assumes,
+nobody tested) · `scaling-regime` (unexplored regime) · `diagnostic`
+(question nobody asked). This set is a floor, not a ceiling — add a
+domain-specific lens when the direction warrants.
+
+**Tier-portable dispatch** (the Phase-4 jury downstream is identical on every tier):
+- **Tier 1** (Workflow available): spawn one **Claude subagent per lens**;
+  each runs the Phase-1 survey *through its lens* and the Phase-2 generation
+  prompt *restricted to that lens*, returning candidates as structured output.
+- **Tier 2** (Agent tool, no Workflow): spawn the same per-lens subagents via
+  the Agent tool.
+- **Tier 3** (no spawning): enumerate the lenses sequentially in one pass —
+  the original single-thread behavior, made explicit. No capability assumed.
+
+> **Why the lens shards are Claude, not Codex.** Generation is candidate
+> production, not a verdict, so same-family is safe — and Codex MCP is
+> **serial** (concurrent codex calls hang), so spending its scarce capacity
+> on parallel generation is both unsafe-to-parallelize and wasteful. Reserve
+> Codex for the one Phase-4 jury call. On Tier 1/2 the lens subagents are the
+> generators; the single Phase-2 codex brainstorm below still runs once as an
+> optional cross-model *seed* (a generator, not a judge), and its ideas join
+> the merged pool.
+
+**Per-shard output** (the generation-fan-out schema from
+[`fan-out-pattern.md`](../shared-references/fan-out-pattern.md) — `shard_id` +
+`candidates[]` + per-item `dedup_key`):
+```json
+{"shard_id": "<lens id>", "candidates": [{"summary": "...", "hypothesis": "...",
+  "mve": "...", "contribution_type": "...", "risk": "...", "effort": "...",
+  "dedup_key": "<hypothesis slug — the mechanical-dedup identity>"}]}
+```
+
+**Merge + mechanical dedup**: union all lenses' ideas; cluster near-identical
+ideas by hypothesis (mechanical similarity only — **never** drop one for being
+"weak"; weakness is a Phase-4 verdict, not a merge step). The deduped union is
+the candidate set that enters Phase 3.
+
 ### Phase 2: Idea Generation (brainstorm with external LLM)
 
-Use the external LLM via Codex MCP for divergent thinking:
+Use the selected reviewer backend (see Reviewer Calling Convention) for divergent thinking.
+
+*For `codex` backend:*
 
 ```
 mcp__codex__codex:
   model: REVIEWER_MODEL
   config: {"model_reasoning_effort": "xhigh"}
   prompt: |
+    You are a senior ML researcher brainstorming research ideas.
+```
+
+*For `manual` backend:* use `mcp__manual_review__review` with the exact same prompt text and `config: {"model_reasoning_effort": "xhigh"}`. Save the returned `threadId` for Phase 4 follow-up.
+
+The brainstorming prompt:
+
+```
     You are a senior ML researcher brainstorming research ideas.
 
     Research direction: [user's direction]
@@ -125,43 +208,78 @@ mcp__codex__codex:
 
 Save the threadId for follow-up.
 
-### Phase 3: First-Pass Filtering
+### Phase 3: Mechanical consolidation + objective feasibility gate
 
-For each generated idea, quickly evaluate:
+> **This phase does NOT judge idea quality, novelty, or impact.** Those are
+> Type-B verdicts reserved for the Phase-4 cross-model jury (see
+> [`shared-references/acceptance-gate.md`](../shared-references/acceptance-gate.md)).
+> Eliminating ideas here on a same-family novelty or impact call would
+> pre-filter the jury's input with same-family quality judgment — exactly
+> what [`fan-out-pattern.md`](../shared-references/fan-out-pattern.md) forbids.
+> Phase 3 only (a) finishes the mechanical dedup from the fan-out merge and
+> (b) drops ideas that are **objectively** out of budget. Everything else
+> passes through **annotated, not eliminated** — the jury decides.
 
-1. **Feasibility check**: Can we actually run this experiment with available resources?
-   - Compute requirements (estimate GPU-hours)
-   - Data availability
-   - Implementation complexity
-   - Skip ideas requiring > 1 week of GPU time or unavailable datasets
+1. **Objective feasibility gate (Type-A — safe same-model)**: drop an idea
+   ONLY on a mechanical, budget-based fact:
+   - estimated compute > 1 week of available GPU time, OR
+   - requires a dataset that is provably unavailable.
+   These are objective resource facts. Do **not** drop on "implementation
+   looks complex" — annotate complexity as `effort_note` instead.
 
-2. **Novelty quick-check**: For each idea, do 2-3 targeted searches to see if it's already been done. Full `/novelty-check` comes later for survivors.
+2. **Novelty signal — ANNOTATE, do not eliminate**: for each surviving idea,
+   do 2-3 targeted searches and attach a `prior_work` note (what looks
+   related, with links). This is *input for the jury*, not a filter. The
+   authoritative novelty verdict is Phase 4's `/novelty-check` (multi-source +
+   cross-model). Do **not** drop an idea here because it "might already be
+   done."
 
-3. **Impact estimation**: Would a reviewer care about the result?
-   - "So what?" test: if the experiment succeeds, does it change how people think?
-   - Is the finding actionable or just interesting?
+3. **Impact signal — ANNOTATE, do not eliminate**: attach a one-line
+   `so_what` note (why the result would matter either way). Do **not** drop on
+   a same-family "a reviewer wouldn't care" call — "would a reviewer care?" is
+   *precisely* the question the Phase-4 cross-model devil's-advocate asks.
+   Forward the note; let the jury rule.
 
-Eliminate ideas that fail any of these. Typically 8-12 ideas reduce to 4-6.
+Every feasible, non-duplicate idea — carrying its `prior_work`, `so_what`, and
+`effort_note` annotations — proceeds to Phase 4. Typically only the
+budget-infeasible are dropped; the cross-model jury, not the executor, does
+the quality narrowing.
 
-### Phase 4: Deep Validation (for top ideas)
+### Phase 4: Deep Validation (the cross-model jury)
 
-For each surviving idea, run a deeper evaluation:
+**This is the jury.** It receives the FULL annotated candidate set from
+Phase 3 (Phase 3 no longer pre-narrows on quality), and the **cross-model
+reviewer — not the executor — does the quality/novelty narrowing.** Run the
+steps in this order so the cheap cross-model triage gates the expensive
+per-idea novelty search:
 
-1. **Novelty check**: Use the `/novelty-check` workflow (multi-source search + GPT-5.4 cross-verification) for each idea
-
-2. **Critical review**: Use GPT-5.4 via `mcp__codex__codex-reply` (same thread):
+1. **Cross-model triage (devil's advocate) — ranks ALL candidates first.**
+   Use the selected reviewer backend (see Reviewer Calling Convention). For
+   `codex`, use `mcp__codex__codex-reply` (same thread). For `manual`, use
+   `mcp__manual_review__review_reply` with the saved threadId. Pass every
+   candidate with its `prior_work` / `so_what` / `effort_note` annotations:
    ```
-   Here are our top ideas after filtering:
-   [paste surviving ideas with novelty check results]
+   Here is the full annotated candidate set (deduped, budget-feasible):
+   [paste all candidates with their prior_work / so_what / effort_note notes]
 
    For each, play devil's advocate:
    - What's the strongest objection a reviewer would raise?
    - What's the most likely failure mode?
+   - Is the prior_work note a real novelty problem, or differentiable?
    - How would you rank these for a top venue submission?
-   - Which 2-3 would you actually work on?
+   - Which 2-3 would you actually work on, and why?
    ```
+   The reviewer's ranking is the authoritative quality verdict. The executor
+   does not eliminate candidates on its own taste before or instead of this.
 
-3. **Combine rankings**: Merge your assessment with GPT-5.4's ranking. Select top 2-3 ideas for pilot experiments.
+2. **Novelty check — on the reviewer's top picks only.** Run the
+   `/novelty-check` workflow (multi-source search + cross-model verification)
+   on the ideas the triage ranked worth pursuing. This bounds the expensive
+   multi-source search to the survivors instead of every candidate, while
+   keeping the novelty verdict cross-model.
+
+3. **Select for pilots**: take the top 2-3 ideas that survive both the
+   cross-model triage and the novelty check forward to Phase 5.
 
 ### Phase 5: Parallel Pilot Experiments (for top 2-3 ideas)
 
@@ -319,4 +437,4 @@ implement                     → write code
 
 ## Review Tracing
 
-After each `mcp__codex__codex` or `mcp__codex__codex-reply` reviewer call, save the trace following `shared-references/review-tracing.md` (Policy C — forensic; never silently skip). Use `save_trace.sh` (resolved per the chain in `shared-references/integration-contract.md` §2) or write files directly to `.aris/traces/<skill>/<date>_run<NN>/`. Respect the `--- trace:` parameter (default: `full`).
+After each reviewer call (`mcp__codex__codex`, `mcp__codex__codex-reply`, `mcp__manual_review__review`, or `mcp__manual_review__review_reply`), save the trace following `shared-references/review-tracing.md` (Policy C — forensic; never silently skip). Use `save_trace.sh` (resolved per the chain in `shared-references/integration-contract.md` §2) or write files directly to `.aris/traces/<skill>/<date>_run<NN>/`. Respect the `--- trace:` parameter (default: `full`).

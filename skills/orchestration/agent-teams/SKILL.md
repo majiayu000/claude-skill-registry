@@ -1,11 +1,7 @@
 ---
 name: agent-teams
-description: Coordinate Claude Code Agent Teams through filesystem-based protocol. Use
-version: 1.9.0
+description: Coordinates Claude agent teams via filesystem protocol. Use when orchestrating parallel agents with task dependencies. Do not use for single-agent tasks.
 alwaysApply: false
-  when orchestrating multiple Claude agents on parallel tasks, need task dependency
-  management, multi-agent code review or implementation. Do not use when single-agent
-  work suffices, task is not parallelizable.
 category: delegation-framework
 tags:
 - agent-teams
@@ -18,10 +14,7 @@ dependencies:
 - delegation-core
 - leyline:damage-control
 - leyline:risk-classification
-tools:
-- Bash
-- Read
-- Write
+tools: []
 usage_patterns:
 - team-orchestration
 - parallel-implementation
@@ -61,7 +54,7 @@ references:
 
 ## Overview
 
-Claude Code Agent Teams enables multiple Claude CLI processes to collaborate on shared work through a filesystem-based coordination protocol. Each teammate runs as an independent `claude` process in a tmux pane, communicating via JSON files guarded by `fcntl` locks. No database, no daemon, no network layer.
+Claude Code Agent Teams enables multiple Claude CLI processes to collaborate on shared work through a filesystem-based coordination protocol. Each teammate runs as an independent `claude` process in a tmux pane, communicating via JSON files guarded by `fcntl` locks, with no database, daemon, or network layer.
 
 This skill provides the patterns for orchestrating agent teams effectively.
 
@@ -201,7 +194,7 @@ guidance and example team formations.
 
 ## Health Monitoring
 
-Team members can be monitored for health via heartbeat messages and claim expiry. The lead polls team health every 60s with a 2-stage stall detection protocol (health_check probe + 30s wait). Stalled agents have their tasks released and are restarted or replaced following the "replace don't wait" doctrine. See `modules/health-monitoring.md` for the full protocol and state machine.
+Team members can be monitored for health via heartbeat messages and claim expiry. The lead polls team health every 60s with a 2-stage stall detection protocol (health_check probe and 30s wait). Stalled agents have their tasks released and are restarted or replaced following the "replace don't wait" doctrine. See `modules/health-monitoring.md` for the full protocol and state machine.
 
 ## Module Reference
 
@@ -244,7 +237,7 @@ Install via package manager: `brew install tmux` / `apt install tmux`
 If an agent crashes mid-operation, lock files may persist. Remove `.lock` files manually from `~/.claude/teams/<team>/inboxes/` or `~/.claude/tasks/<team>/`
 
 **Orphaned tasks**
-Tasks claimed by a crashed agent stay `in_progress` indefinitely. Use `modules/health-monitoring.md` for heartbeat-based stall detection and automatic task release. The health monitoring protocol detects unresponsive agents within 60s + 30s probe window and releases their tasks for reassignment.
+Tasks claimed by a crashed agent stay `in_progress` indefinitely. Use `modules/health-monitoring.md` for heartbeat-based stall detection and automatic task release. The health monitoring protocol detects unresponsive agents within 60s and 30s probe window and releases their tasks for reassignment.
 
 **Message ordering**
 Filesystem timestamp resolution varies (HFS+ = 1s granularity). Use numbered filenames or UUID-sorted names to avoid collision on rapid message bursts.

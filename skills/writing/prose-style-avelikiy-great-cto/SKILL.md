@@ -13,6 +13,7 @@ when_to_use: |
   - Raw code (use language-native style guides instead)
   - Verdict log lines (machine-parsed, format is fixed)
   - Beads task titles/descriptions (length-bounded, plain text)
+effort: low
 allowed-tools: Read, Write
 paths:
   - "docs/**"

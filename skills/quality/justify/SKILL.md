@@ -1,6 +1,6 @@
 ---
 name: justify
-description: 'Post-implementation audit. Detects additive bias and test tampering.'
+description: Audits changes for additive bias and Iron Law compliance. Use when reviewing completed work before merging or after AI-assisted implementation.
 alwaysApply: false
 category: workflow-methodology
 tags:

@@ -19,7 +19,7 @@ You are a prompt engineer. You take the user's rough idea, identify the target A
 **Hard rules — NEVER violate these:**
 
 1. NEVER output a prompt without first confirming the target tool — ask if ambiguous
-2. NEVER embed techniques that require multiple independent inference passes or external orchestration (Mixture of Experts, Tree of Thought, Graph of Thought, Universal Self-Consistency, multi-step prompt chaining) — these fabricate when collapsed into a single prompt
+2. NEVER embed techniques that simulate multiple independent inference passes or external orchestration inside a single prompt (Mixture of Experts, Tree of Thought, Graph of Thought, Universal Self-Consistency, multi-step prompt chaining) — these fabricate when collapsed into one real inference pass. This does NOT bar a prompt that asks an agent platform to run REAL parallel subagents natively (e.g., a Claude Code dynamic workflow — Template N): there the platform executes real inference across real agents, so the passes are not collapsed and do not fabricate; the deliverable is still a single copyable prompt
 3. NEVER add Chain of Thought to reasoning-native models — they think internally, CoT degrades output. Consult `$CLAUDE_PLUGIN_ROOT/skills/prompt/references/tool-routing.md` for the current list of reasoning-native models
 4. NEVER ask more than 3 clarifying questions before producing a prompt (use `AskUserQuestion` for each)
 5. NEVER pad output with explanations the user did not request
@@ -28,7 +28,7 @@ You are a prompt engineer. You take the user's rough idea, identify the target A
 
 **Output format — ALWAYS follow this:**
 
-1. A single copyable prompt block ready to paste into the target tool
+1. A single copyable prompt block ready to paste into the target tool, delivered wrapped in the Step 8 `----- BEGIN PROMPT -----` / `----- END PROMPT -----` boundary markers (outside the code fence) so the block is unambiguous in a terminal
 2. A brief line: Target: [tool name] | [One sentence — what was optimized and why]
 3. If the prompt needs setup steps before pasting, add a short plain-English instruction note below. 1-2 lines max. ONLY when genuinely needed.
 
@@ -100,12 +100,13 @@ Based on the task type and target tool, select the appropriate prompt architectu
 | Code editing in Cursor / Windsurf / Copilot | G — File-Scope |
 | Autonomous agent (Claude Code, Devin, SWE-agent) | H — ReAct + Stop Conditions |
 | Codebase exploration and planning (Claude Code plan mode) | M — Exploration + Plan Architecture |
+| Fan-out / parallel subagent work at scale (Claude Code dynamic workflow) | N — Dynamic Workflow Orchestration |
 | Image / video generation | I — Visual Descriptor |
 | Editing an existing image | J — Reference Image Editing |
 | ComfyUI node-based workflow | K — ComfyUI |
 | Breaking down / adapting existing prompt | L — Prompt Decompiler |
 
-If the target is Claude Code and the task involves exploration or planning rather than execution, use Template M. If ambiguous, ask: "Should Claude Code explore and create a plan, or execute changes directly?" When using Template M: your output is a PROMPT — NEVER produce the plan itself. The prompt must be self-contained because it starts a new conversation with no prior context.
+If the target is Claude Code, route by intent: **execute changes directly** → Template H; **explore and plan** (read-only) → Template M; **orchestrate many parallel agents** for fan-out work one conversation cannot coordinate (codebase-wide audit, large migration, cross-checked research, plan-from-several-angles) → Template N. Route clearly fan-out-shaped requests to N directly; if the choice is genuinely ambiguous, ask once via `AskUserQuestion` offering the three options (counts toward the 3-question limit). For Template M **or** N, your output is a PROMPT — NEVER produce the plan or the workflow script itself, and a Template-N prompt MUST contain the literal word "workflow" (its trigger). The prompt must be self-contained — it starts a new conversation (M) or drives a background workflow (N) with no prior context.
 
 If the task doesn't clearly match one template, default to RTF (A) for simple tasks or RISEN (C) for complex ones.
 
@@ -160,11 +161,13 @@ Place the memory block in the first 30% of the prompt so it survives attention d
 
 ### Step 8 — Deliver
 
-Output in this exact structure:
+Output in this exact structure. Wrap the prompt in plain-text boundary markers placed OUTSIDE the code fence (so selecting the fenced block copies only the prompt, never the markers):
 
+----- BEGIN PROMPT -----
 ```
 [Single copyable prompt block ready to paste into the target tool]
 ```
+----- END PROMPT -----
 
 **Target:** [tool name] | [One sentence — what was optimized and why]
 
@@ -172,11 +175,14 @@ Output in this exact structure:
 
 [Optional: if prompt was generated in English from non-English input, add the translation note from Step 1.]
 
+Always emit the `----- BEGIN PROMPT -----` / `----- END PROMPT -----` markers as plain text on their own lines, immediately outside the opening and closing fence — never inside it. They wrap the delivered prompt block only; do not wrap the `**Target:**` line or the optional notes, and do not label the Step-7 memory-block fence that lives inside the prompt body. This wrapper applies to every delivered prompt block, including multi-prompt and Prompt Decompiler (Template L) outputs.
+
 ### Step 9 — Next Step
 
 Recommend the next step based on context:
 
-- If the prompt was for Claude Code plan mode → tell the user to paste the prompt as the **first message in a new Claude Code conversation started in plan mode**. Do not suggest pasting it in the current conversation. Treat plan mode as review-only: iterate on the plan, then **toggle plan mode off without approving** (plan-mode approval executes immediately and skips any follow-up skill like `/optimus:tdd`). For the exact client-agnostic wording on entering/exiting plan mode and the full handoff template, see `$CLAUDE_PLUGIN_ROOT/references/skill-handoff.md`.
+- If the prompt was for Claude Code plan mode → tell the user to paste it as the **first message in a new Claude Code conversation started in plan mode**, then iterate on the plan against the real codebase. **Default (a standalone plan or a prose deliverable): approve the plan to implement in that same conversation** — this is plan mode's intended flow and keeps the rich context just built. After implementing, suggest `/optimus:commit` (then `/optimus:pr`) to capture the work — staying in that conversation. **Carve-out: if this plan will feed `/optimus:tdd`** (test-first production code), treat plan mode as review-only and **do not approve** — approval executes immediately and bypasses TDD's Red-Green-Refactor discipline; instead toggle plan mode off, let Claude append a "Refined plan" section to the design/task doc, then start a fresh conversation for `/optimus:tdd`. For the deliverable-typed decision, client-agnostic toggle wording, and the full handoff template, see `$CLAUDE_PLUGIN_ROOT/references/skill-handoff.md`.
+- If the prompt was a dynamic-workflow prompt (Template N) → tell the user to paste it into Claude Code in **normal mode** (the literal word "workflow" triggers it; Claude Code then shows the planned phases for the user to approve before it runs). It runs in the background, can be stopped from `/workflows`, and uses meaningfully more tokens than a normal turn. Do **not** use plan mode — workflow subagents auto-approve edits regardless of mode. If the fan-out would write production code that should follow test-first discipline, do not route it through a workflow; use the plan-mode → `/optimus:tdd` path instead. After an editing workflow completes, suggest `/optimus:commit` to capture the work.
 - If the prompt was for Claude Code (regular mode) and the user is in an active project → suggest `/optimus:tdd` to build test-first from the prompt, or `/optimus:commit` to commit related work. Mention they can paste the prompt directly or in a new conversation.
 - If the prompt was for an external tool and the user has related code changes → suggest `/optimus:commit` to commit related work
 - If the user might need another prompt → "Need a prompt for another tool or task? Just describe what you need." If there are pending code changes, also suggest `/optimus:commit`.
@@ -184,9 +190,9 @@ Recommend the next step based on context:
 
 Tell the user the closing tip per `$CLAUDE_PLUGIN_ROOT/references/skill-handoff.md` "Closing tip wording":
 
-- If only `/optimus:commit` is recommended (bullet 3 — external tool with related code changes) → use **Variant A** with `<continuation-skill(s)>` = `/optimus:commit` and `<non-continuation-examples>` = `/optimus:code-review`, `/optimus:unit-test`, etc.
-- If `/optimus:commit` is recommended alongside a non-continuation skill (bullets 2 and 4 — regular-mode Claude Code with `/optimus:tdd`, or another prompt + commit) → use **Variant B** with `<continuation-skill(s)>` = `/optimus:commit` and `<non-continuation-examples>` = `/optimus:tdd`, `/optimus:init`, another prompt, etc.
-- Otherwise (plan-mode prompt, no pending code changes) → use **Variant C** (default).
+- If only continuation skills are recommended — an external tool with related code changes (→ `/optimus:commit`); an **approved plan-mode prompt that implemented code in this conversation** (→ `/optimus:commit`, then `/optimus:pr`); or an **editing dynamic workflow** (→ `/optimus:commit`) — use **Variant A** with `<continuation-skill(s)>` = the recommended skill(s) and `<non-continuation-examples>` = `/optimus:code-review`, `/optimus:unit-test`, etc.
+- If `/optimus:commit` is recommended alongside a non-continuation skill (regular-mode Claude Code with `/optimus:tdd`, or another prompt + commit) → use **Variant B** with `<continuation-skill(s)>` = `/optimus:commit` and `<non-continuation-examples>` = `/optimus:tdd`, `/optimus:init`, another prompt, etc.
+- Otherwise (a **review-only plan-mode prompt routed to `/optimus:tdd`** in a fresh conversation, a **read-only / audit dynamic workflow**, or no pending code changes) → use **Variant C** (default).
 
 ---
 
@@ -196,7 +202,7 @@ Tell the user the closing tip per `$CLAUDE_PLUGIN_ROOT/references/skill-handoff.
 - Never show template names, framework names, or pattern names to the user — they see only the finished prompt.
 - Never discuss prompting theory unless the user explicitly asks.
 - The 3-question limit is across the entire workflow (Steps 1-5 combined). Prioritize the most critical unknowns.
-- For complex tasks that genuinely require multiple prompts, output Prompt 1 and add "Run this first, then ask for Prompt 2" below it. If the user asks for everything at once, deliver all parts with clear section breaks.
+- For complex tasks that genuinely require multiple prompts, output Prompt 1 — wrapped in the Step 8 `----- BEGIN PROMPT -----` / `----- END PROMPT -----` markers — and add "Run this first, then ask for Prompt 2" below the closing marker. If the user asks for everything at once, deliver all parts with clear section breaks, each prompt individually wrapped in its own BEGIN/END markers.
 
 ## Reference Files
 

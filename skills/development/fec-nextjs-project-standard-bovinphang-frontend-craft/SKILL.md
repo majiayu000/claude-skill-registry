@@ -17,7 +17,8 @@ description: Use when creating or reviewing Next.js 14+ App Router projects, fil
 2. 默认服务端组件优先；只有需要浏览器 API、交互状态或事件处理时才使用 `'use client'`。
 3. 明确 SSR / SSG / ISR / CSR 渲染模式和 Next fetch/cache 策略。
 4. 为路由补齐 `loading.tsx`、`error.tsx`、`not-found.tsx`、metadata 和敏感逻辑的服务端边界。
-5. 客户端组件架构问题分流到 React 项目 workflow。
+5. 引入第三方库前检查是否支持 Server Component；浏览器专属、动效、图表、编辑器和 WebGL 库必须放进客户端叶子组件并按需加载。
+6. 客户端组件架构问题分流到 React 项目 workflow。
 
 ## 项目结构
 
@@ -98,17 +99,15 @@ src/
 - 不在服务端组件中直接使用 `useState`、`useEffect`、浏览器 API
 - 敏感逻辑（如鉴权）放在服务端或 API Route，不暴露在客户端
 - 图片使用 `next/image`，字体使用 `next/font`
+- 不把密钥、内部 API 地址或服务端 token 放入 `NEXT_PUBLIC_` 环境变量。
+- 不让大型动效库、3D 场景、富文本编辑器或地图 SDK 进入根布局同步 bundle。
+- 首屏媒体必须有确定尺寸、真实资源和合理 priority；不要用远程占位图撑布局。
 
 ## 与客户端 UI 模式的分工
 
 - **服务端**：渲染模式、数据获取与缓存、`loading.tsx` / `error.tsx`、路由与布局等以本 skill 为准。
-- **`'use client'` 组件**：组合与复合组件、表单、客户端状态、列表虚拟化、动效与键盘/焦点等，与纯 React 项目一致，遵循 **`fec-react-project-standard`** skill 及项目中的 React 规则（如 `.claude/rules/fec-react.md`）。
-
-## Related Skills / Boundary
-
-- `fec-react-project-standard` — 客户端 React 组件架构与 hooks 组织。
-- `fec-route-protection` — 鉴权、RBAC、redirect 与 middleware 安全边界。
-- `fec-data-fetching` — 客户端 TanStack Query server state；Next 服务端 fetch/cache 仍以本 skill 为准。
+- **`'use client'` 组件**：组合与复合组件、表单、客户端状态、列表虚拟化、动效与键盘/焦点等，与纯 React 项目一致，遵循项目中的 React 规则（如 `.claude/rules/fec-react.md`）。
+- **权限与客户端数据**：鉴权、RBAC、redirect、客户端 server state 和缓存失效应按对应专项 workflow 处理；Next 服务端 fetch/cache 仍以本 skill 为准。
 
 ## Expected Output
 

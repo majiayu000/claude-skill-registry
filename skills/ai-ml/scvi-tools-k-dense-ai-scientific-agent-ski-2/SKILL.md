@@ -3,7 +3,7 @@ name: scvi-tools
 description: Deep generative models for single-cell omics. Use when you need probabilistic batch correction (scVI), transfer learning, differential expression with uncertainty, or multi-modal integration (TOTALVI, MultiVI). Best for advanced modeling, batch effects, multimodal data. For standard analysis pipelines use scanpy.
 license: BSD-3-Clause license
 metadata:
-  version: "1.0"
+  version: "1.1"
   skill-author: K-Dense Inc.
 ---
 
@@ -11,7 +11,9 @@ metadata:
 
 ## Overview
 
-scvi-tools is a comprehensive Python framework for probabilistic models in single-cell genomics. Built on PyTorch and PyTorch Lightning, it provides deep generative models using variational inference for analyzing diverse single-cell data modalities.
+scvi-tools is a comprehensive Python framework for probabilistic models in single-cell genomics. Built on PyTorch and PyTorch Lightning, it provides deep generative models using variational inference for analyzing diverse single-cell data modalities. Current stable release: **scvi-tools 1.4.3** (May 2026).
+
+**Model namespaces matter:** core models (scVI, scANVI, totalVI, MultiVI, PeakVI, AUTOZI, CondSCVI, DestVI, LinearSCVI, AmortizedLDA, JaxSCVI) live under `scvi.model`. Most other models (VeloVI, contrastiveVI, CellAssign, PoissonVI, scBasset, MrVI, MethylVI/MethylANVI, CytoVI, SysVI, Decipher, gimVI, scVIVA, ResolVI, Stereoscope, Solo, totalANVI, DIAGVI) live under `scvi.external`. The reference files specify the correct namespace per model.
 
 ## When to Use This Skill
 
@@ -46,8 +48,10 @@ Models for analyzing single-cell chromatin data. See `references/models-atac-seq
 ### 3. Multimodal & Multi-omics Integration
 Joint analysis of multiple data types. See `references/models-multimodal.md` for:
 - **totalVI**: CITE-seq protein and RNA joint modeling
-- **MultiVI**: Paired and unpaired multi-omic integration
+- **totalANVI**: Semi-supervised CITE-seq (totalVI with cell-type labels)
+- **MultiVI**: Paired and unpaired multi-omic integration (MuData-based)
 - **MrVI**: Multi-resolution cross-sample analysis
+- **DIAGVI**: Diagonal integration of unpaired single-cell datasets (added in 1.4.3)
 
 ### 4. Spatial Transcriptomics
 Spatially-resolved transcriptomics analysis. See `references/models-spatial.md` for:
@@ -171,11 +175,19 @@ See `references/theoretical-foundations.md` for detailed background on the mathe
 
 ## Installation
 
+Requires Python **3.12+** (scvi-tools 1.4 dropped older versions).
+
 ```bash
 uv pip install scvi-tools
 # For GPU support
-uv pip install scvi-tools[cuda]
+uv pip install "scvi-tools[cuda]"
 ```
+
+For reproducible environments, pin a version: `uv pip install scvi-tools==1.4.3`.
+
+**Compute backends:** training defaults to PyTorch (CPU/GPU/TPU). A JAX backend
+(`scvi.model.JaxSCVI`) and an experimental MLX backend for Apple silicon
+(`scvi.model.mlxSCVI`) are available for select models.
 
 ## Best Practices
 
@@ -186,4 +198,3 @@ uv pip install scvi-tools[cuda]
 5. **Model saving**: Always save trained models to avoid retraining
 6. **GPU usage**: Enable GPU acceleration for large datasets (`accelerator="gpu"`)
 7. **Scanpy integration**: Store outputs in AnnData objects for downstream analysis
-

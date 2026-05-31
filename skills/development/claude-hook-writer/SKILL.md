@@ -8,6 +8,7 @@ metadata:
   optimization_date: 2025-12-17
   token_savings: ~55%
   errors_prevented: 5
+license: MIT
 ---
 
 # Claude Hook Writer

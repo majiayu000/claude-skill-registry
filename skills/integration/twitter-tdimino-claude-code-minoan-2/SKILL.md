@@ -202,45 +202,47 @@ X API deduplicates reads within 24h. Cache prevents redundant queries within 15m
 
 Uses undocumented Twitter GraphQL APIs via browser cookies. Free but may break when Twitter rotates internals.
 
+Always pass `--cookie-source chrome` to all bird commands to avoid EPERM warnings from Safari cookie access.
+
 ### Posting
 
 ```bash
-bird tweet "Hello world"
-bird reply 123456789 "Great thread!"
-bird tweet "With image" --media photo.png --alt "Description"
+bird --cookie-source chrome tweet "Hello world"
+bird --cookie-source chrome reply 123456789 "Great thread!"
+bird --cookie-source chrome tweet "With image" --media photo.png --alt "Description"
 ```
 
 ### Reading
 
 ```bash
-bird read 123456789
-bird thread https://x.com/user/status/123456789
-bird replies 123456789 --json
+bird --cookie-source chrome read 123456789
+bird --cookie-source chrome thread https://x.com/user/status/123456789
+bird --cookie-source chrome replies 123456789 --json
 ```
 
 ### Search (free, via GraphQL)
 
 ```bash
-bird search "query" -n 10
-bird search "from:anthropic" -n 20 --json
+bird --cookie-source chrome search "query" -n 10
+bird --cookie-source chrome search "from:anthropic" -n 20 --json
 ```
 
 ### Monitoring
 
 ```bash
-bird mentions -n 10
-bird bookmarks -n 20
-bird likes -n 20
-bird following -n 50
-bird followers -n 50
+bird --cookie-source chrome mentions -n 10
+bird --cookie-source chrome bookmarks -n 20
+bird --cookie-source chrome likes -n 20
+bird --cookie-source chrome following -n 50
+bird --cookie-source chrome followers -n 50
 ```
 
 ### Maintenance
 
 ```bash
-bird whoami          # verify auth
-bird check           # credential sources
-bird query-ids --fresh  # refresh when Twitter rotates IDs
+bird --cookie-source chrome whoami          # verify auth
+bird --cookie-source chrome check           # credential sources
+bird --cookie-source chrome query-ids --fresh  # refresh when Twitter rotates IDs
 ```
 
 ---

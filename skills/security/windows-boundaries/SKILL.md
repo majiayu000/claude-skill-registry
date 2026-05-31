@@ -4,6 +4,14 @@ description: Windows security boundary attacks — kernel/user boundary, sandbox
 metadata:
   type: offensive
   phase: exploitation
+kill_chain:
+  phase: [exploit, install]
+  step: [4, 5]
+  attck_tactics: [TA0002, TA0004]
+depends_on: [privesc-windows, exploit-development]
+feeds_into: [red-team-ops]
+inputs: [sandbox_config, kernel_info]
+outputs: [boundary_escape, elevated_access]
   ---
 
 # Windows Security Boundaries
@@ -115,17 +123,17 @@ whoami /groups | findstr "Mandatory"
    - File picker broker (allows file access)
    - Print broker
    - Clipboard broker
-   
+
 2. Kernel vulnerabilities — AppContainer is userland enforcement
    - win32k syscalls still accessible (reduced but not eliminated)
    - Kernel bug = full escape
-   
+
 3. COM object abuse — some COM servers run at higher integrity
    - Find COM objects accessible from AppContainer
    - Exploit logic bugs in COM server
-   
+
 4. Named pipe/ALPC — if broker exposes pipe without proper ACL
-   
+
 5. Capability abuse — overly permissive capabilities granted
    - internetClient, privateNetworkClientServer
    - documentsLibrary, picturesLibrary
@@ -216,4 +224,204 @@ rpcdump.py target_ip
 2. UAC bypass → High integrity
 3. Load vulnerable driver (BYOVD)
 4. Kernel R/W primitive → disable PPL, steal SYSTEM token
+```
+
+## Advanced: Browser Sandbox Escape
+
+### Chromium Sandbox Architecture
+```
+// Chromium uses multi-process architecture:
+// - Browser process: full privileges, manages tabs
+// - Renderer process: sandboxed (AppContainer on Windows)
+// - GPU process: limited sandbox
+// - Network process: limited sandbox
+//
+// Sandbox restrictions (renderer):
+// - No filesystem access (except via IPC to browser)
+// - No network access (except via IPC)
+// - No process creation
+// - Limited Windows API access
+// - AppContainer integrity level (below Low)
+
+// Escape path: Renderer RCE → IPC bug → Browser process
+// IPC mechanism: Mojo (Chromium's IPC framework)
+// Attack surface: every Mojo interface exposed to renderer
+```
+
+### Mojo IPC Exploitation
+```c
+// Mojo interfaces define the renderer→browser attack surface
+// Each interface = potential sandbox escape if mishandled
+
+// Common vulnerability patterns:
+// 1. Type confusion in Mojo message deserialization
+// 2. UAF when interface pointer outlives backing object
+// 3. Race condition between validation and use
+// 4. Missing origin checks (renderer claims wrong origin)
+
+// Exploitation:
+// 1. Achieve renderer RCE (V8 type confusion, JIT bug)
+// 2. Enumerate available Mojo interfaces
+// 3. Fuzz or audit interface implementations in browser process
+// 4. Trigger bug → code execution in browser process (Medium integrity)
+// 5. From browser process: full system access or further escalation
+
+// Historical examples:
+// CVE-2019-5786: FileReader UAF → renderer RCE → Mojo escape
+// CVE-2021-21224: V8 type confusion → Mojo IPC → sandbox escape
+// CVE-2022-0609: Animation UAF → full chain
+```
+
+### Windows Sandbox Escape Techniques
+```c
+// AppContainer escape vectors:
+// 1. Kernel vulnerability (win32k, ntoskrnl)
+//    - AppContainer can still make syscalls
+//    - win32k attack surface reduced but not eliminated
+//    - Kernel bug → SYSTEM (bypasses all userland sandboxes)
+
+// 2. Named object abuse
+//    - Some named objects accessible from AppContainer
+//    - If higher-privilege process opens object with weak DACL
+//    - AppContainer can interact with it
+
+// 3. ALPC/RPC to privileged services
+//    - Some RPC endpoints accessible from AppContainer
+//    - Vulnerability in RPC handler → escape
+//    - Example: Print Spooler accessible from some sandboxes
+
+// 4. Token manipulation
+//    - If sandbox has SeImpersonatePrivilege (rare)
+//    - Potato-style attacks work from sandbox
+//    - Usually sandboxes strip this privilege
+
+// 5. Shared memory / mapped sections
+//    - If shared section has weak permissions
+//    - Corrupt data used by higher-privilege process
+//    - Example: shared font cache corruption → win32k exploit
+```
+
+## Advanced: PPL (Protected Process Light) Exploitation
+
+### PPL Architecture
+```c
+// PPL levels (highest to lowest):
+// - PPL-Windows: OS critical processes
+// - PPL-WinTcb: Windows Trusted Computer Base
+// - PPL-Antimalware: AV/EDR processes (MsMpEng.exe, CrowdStrike)
+// - PPL-Lsa: LSASS (when RunAsPPL enabled)
+// - PP-Authenticode: signed processes
+//
+// PPL prevents:
+// - OpenProcess with PROCESS_VM_READ/WRITE
+// - Debugging (DebugActiveProcess)
+// - Thread injection (CreateRemoteThread)
+// - Memory reading (ReadProcessMemory)
+// - DLL injection
+//
+// Even SYSTEM cannot open PPL process with full access
+```
+
+### PPL Bypass Techniques
+```c
+// 1. BYOVD → kernel R/W → modify EPROCESS.Protection field
+//    Set Protection.Level = 0 → process is no longer protected
+//    Then: normal OpenProcess/ReadProcessMemory works
+BYTE protection_offset = 0x87A;  // Offset varies by Windows version
+WriteKernelMemory(eprocess + protection_offset, 0, 1);  // Clear protection
+
+// 2. PPLdump (abuse PPL-signed DLL)
+//    Load DLL signed with PPL-compatible certificate
+//    DLL runs inside PPL process → can read its memory
+//    Dump LSASS from within PPL context
+
+// 3. PPLKiller (vulnerable driver)
+//    Use signed driver with R/W primitive
+//    Modify EPROCESS.SignatureLevel and Protection
+//    Process becomes unprotected → dump normally
+
+// 4. Mimikatz driver (mimidrv.sys)
+//    Mimikatz's own signed driver
+//    Removes PPL protection from LSASS
+//    Then: sekurlsa::logonpasswords works
+
+// 5. Userland exploit in PPL process
+//    If PPL process has vulnerability (e.g., DLL hijack)
+//    Exploit it → code execution within PPL context
+//    From inside: full access to PPL memory
+```
+
+## Advanced: COM/RPC Boundary Attacks
+
+### COM Activation Attacks
+```c
+// COM objects can be activated cross-process and cross-integrity
+// If COM server runs at higher integrity → potential escalation
+
+// Attack: find COM object that:
+// 1. Runs as SYSTEM or high integrity
+// 2. Exposes dangerous methods (file write, command exec)
+// 3. Accessible from medium/low integrity
+
+// Discovery:
+// OleViewDotNet — enumerate COM objects, check permissions
+// Look for: LaunchPermission allows Everyone/Users
+// Check: methods that take file paths or command strings
+
+// Historical: CMSTPLUA, ICMLuaUtil (UAC bypass via COM)
+// These COM objects auto-elevate and expose ShellExec methods
+```
+
+### RPC Interface Exploitation
+```c
+// Windows RPC: thousands of interfaces, many accessible remotely
+// Each interface = potential attack surface
+
+// Enumeration:
+// rpcdump.py — list RPC interfaces on target
+// RpcView — GUI tool for local RPC interface analysis
+// NtObjectManager — PowerShell module for RPC analysis
+
+// Attack methodology:
+// 1. Enumerate interfaces (rpcdump, ifids)
+// 2. Identify interesting interfaces (file ops, process creation)
+// 3. Check access permissions (who can call?)
+// 4. Fuzz interface methods
+// 5. Exploit: type confusion, buffer overflow, logic bugs
+
+// PetitPotam (MS-EFSRPC): RPC interface that coerces NTLM auth
+// PrinterBug (MS-RPRN): RPC interface that coerces NTLM auth
+// Both: accessible remotely with domain user credentials
+```
+
+## Advanced: Integrity Level Escalation
+
+### Medium → High (UAC Bypass Catalog)
+```powershell
+# Auto-elevating binaries (Microsoft-signed, manifest has autoElevate=true):
+# fodhelper.exe, computerdefaults.exe, sdclt.exe, slui.exe
+# eventvwr.exe, cmstp.exe, wsreset.exe, changepk.exe
+
+# Technique: registry key hijacking
+# These binaries read HKCU registry before executing
+# Attacker writes command to HKCU → binary auto-elevates → executes attacker command
+
+# Example: fodhelper.exe
+# Reads: HKCU\Software\Classes\ms-settings\Shell\Open\command
+# Write payload there → run fodhelper → payload runs elevated
+
+# Environment variable abuse:
+# Some auto-elevate binaries use %SYSTEMROOT% or %WINDIR%
+# If attacker can control env var → DLL hijack in fake system directory
+```
+
+### Low → Medium
+```c
+// Low integrity → Medium integrity is a security boundary
+// Escape vectors:
+// 1. Exploit vulnerability in medium-integrity process
+// 2. Abuse shared resources (clipboard, drag-drop)
+// 3. Exploit broker process (if application uses broker pattern)
+// 4. Kernel vulnerability (bypasses all integrity levels)
+// 5. Time-of-check-time-of-use on shared files
 ```

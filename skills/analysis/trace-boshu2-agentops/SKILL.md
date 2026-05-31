@@ -9,7 +9,9 @@ hexagonal_role: supporting
 consumes: []
 produces:
 - result.json
-context_rel: []
+context_rel:
+- kind: customer-of
+  with: provenance
 skill_api_version: 1
 allowed-tools: Read, Grep, Glob, Bash
 context:

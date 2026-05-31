@@ -104,6 +104,15 @@ g.setNode(node.id, {
 g.setGraph({ rankdir: 'LR' }); // Horizontal layout
 ```
 
+## Hard gates
+
+Run these in order before treating layout as correct (each step has an objective pass condition):
+
+1. **Dimensions match conversion** — For every node id, the `width` and `height` given to `g.setNode` for that id are the same numbers used to compute `position.x` / `position.y` from `g.node(id)` (half-width / half-height must match the dagre node box).
+2. **Center → top-left** — `position` is `{ x: centerX - width/2, y: centerY - height/2 }`, not raw `g.node(id).x` / `.y` alone.
+3. **React Flow state update** — After programmatic layout, `setNodes` / `setEdges` receive a **new** array instance (e.g. `[...layouted]` or `layouted.map(...)`), not the previous reference unchanged.
+4. **Optional sanity** — If you use `fitView` after layout, it runs after nodes are committed (e.g. next `requestAnimationFrame` or `setTimeout(0)`), not in the same synchronous tick as `setNodes` with stale measurements.
+
 ## Complete Implementation
 
 ### Basic Layout Function

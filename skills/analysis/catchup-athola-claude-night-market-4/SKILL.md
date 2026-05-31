@@ -1,6 +1,6 @@
 ---
 name: catchup
-description: 'Summarize recent git changes for context recovery.'
+description: Summarizes recent git changes for context recovery after session breaks. Use when resuming work after a gap or handing off to another session.
 alwaysApply: false
 category: analysis-methods
 tags:
@@ -105,7 +105,7 @@ Capture: Tests, Documentation, Reviews, Blockers, Questions. If none, state expl
 Use `imbue:diff-analysis` for risk assessment, `imbue:proof-of-work` for reproducibility, `sanctum:git-workspace-review` for git data. Feed to `brainstorming` or `writing-plans` as needed.
 
 ## Token Conservation
-Reference paths + lines (don't reproduce). Summarize outputs. Defer deep analysis. Use progressive loading.
+Reference paths and lines (don't reproduce). Summarize outputs. Defer deep analysis. Use progressive loading.
 
 ## Exit Criteria
 - Four TodoWrite items completed

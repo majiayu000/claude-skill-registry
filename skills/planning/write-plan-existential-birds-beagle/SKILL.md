@@ -1,7 +1,6 @@
 ---
 name: write-plan
 description: "Use when you have a finalized `beagle-analysis:brainstorm-beagle` spec at `.beagle/concepts/<slug>/spec.md` and need a bite-sized, TDD-driven implementation plan before any code is written. Triggers on: \"write a plan\", \"plan this spec\", \"turn the spec into a plan\", \"now plan the implementation\", \"/write-plan\". Reads the spec, designs the file structure, decomposes work into 2-5 minute TDD steps with exact paths and commands, self-reviews against the spec, gets user approval, then writes to `.beagle/concepts/<slug>/plan.md`. Does NOT brainstorm specs, write code, or execute the plan — produces the plan document only."
-disable-model-invocation: true
 ---
 
 # Write Plan: Spec Into Implementation Plan

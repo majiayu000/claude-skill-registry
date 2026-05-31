@@ -58,6 +58,9 @@ print(result.output.population)  # int, validated
 ## Agent Configuration
 
 ```python
+from pydantic_ai import Agent
+from pydantic_ai.settings import ModelSettings
+
 agent = Agent(
     'openai:gpt-4o',
     output_type=MyOutput,           # Structured output type
@@ -142,6 +145,14 @@ agent: Agent[None, str] = Agent('openai:gpt-4o')
 # Option 2: Pass deps=None
 result = agent.run_sync('Hello', deps=None)
 ```
+
+## Verification gates
+
+Run these in order before depending on an agent in production code:
+
+1. **Smoke run** — Execute `agent.run_sync('Reply with OK.')` (or `await agent.run(...)` in async code). **Pass:** the call completes without raising and `result.output` is present.
+2. **Structured output** — If you set `output_type`, prompt for a response that should satisfy the schema. **Pass:** `result.output` is an instance of your Pydantic model; repeated validation failures mean tightening instructions or `retries`, not adding features yet.
+3. **Dependencies** — If you set `deps_type`, call `run` / `run_sync` with `deps=` of that type. **Pass:** the invocation type-checks and completes (or fails only for model/API reasons, not a missing or wrong `deps` value).
 
 ## Decision Framework
 

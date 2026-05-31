@@ -47,6 +47,8 @@ See `CLAUDE.md` *Canvas writes — Read before Write* for the canonical rule.
 
 For the target solution, list ALL assumptions. Be honest -- most "obvious" things are actually assumptions.
 
+**Couple the test to open canvas gaps** (per `engine/canvas-guidance.yml#learning_target_coupling`): before finalizing the assumption list, scan the canvas for entries already waiting on evidence — ON HOLD / RE-GATED action flags, in-progress human-tasks naming a MISSING SIGNAL, low-confidence entries with an un-validated assumption. If this test touches any of them, add that gap to the list explicitly and tag it `[target → <file>#<anchor>]` so `/mycelium:log-evidence` routes the result back. A test that retires no open gap spends scarce feedback capacity without advancing the canvas. NUDGE-tier — zero-target tests are allowed, but make it a choice.
+
 ## Step 2: Prioritize (2x2 Matrix)
 
 Plot each assumption on:

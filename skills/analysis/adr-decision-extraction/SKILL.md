@@ -1,6 +1,6 @@
 ---
 name: adr-decision-extraction
-description: Extract architectural decisions from conversations. Identifies problem-solution pairs, trade-off discussions, and explicit choices. Use when analyzing session transcripts for ADR generation.
+description: "Use when you need to mine a conversation, session transcript, or design discussion for architectural decisions before writing ADRs. Identifies problem-solution pairs, trade-off debates, technology choices, and explicit \"[ADR]\" tags. Triggers on \"what decisions did we make\", \"extract decisions from this chat\", \"find the choices in our discussion\", or \"summarize architectural decisions\". Also useful after long planning sessions to capture decisions that were made implicitly. Does NOT write ADR documents \u2014 use adr-writing or write-adr for that."
 ---
 
 # ADR Decision Extraction
@@ -75,6 +75,15 @@ Patterns detected without explicit tags require confidence assessment:
 3. **Extract trade-off discussions** - Capture alternatives and reasoning
 4. **Assess confidence** - Rate each non-explicit decision
 5. **Capture context** - Note surrounding discussion for ADR writer
+
+## Hard gates
+
+Run these **in order** after the workflow above and **before** returning output. Each step has an objective pass condition.
+
+1. **Explicit `[ADR]` inventory** — Capture every `[ADR]` segment from the full source (verbatim in working notes). **Pass:** a second pass over the same source adds no new `[ADR]` blocks.
+2. **De-duplicate** — Merge or drop inferred rows that repeat an explicit `[ADR]` decision (see [Merge Related Decisions](#merge-related-decisions)). **Pass:** at most one row per distinct decision.
+3. **Schema validity** — Serialized JSON matches [Output Format](#output-format) and [Field Definitions](#field-definitions). **Pass:** parse succeeds; every `decisions[]` item has non-empty `title`, `problem`, `chosen_option`; `confidence` ∈ {`high`,`medium`,`low`}; `alternatives_discussed` is an array (use `[]` if none); other optional fields per table.
+4. **Low-confidence audit** — For any `confidence: "low"`, `source_context` states what was missing, weak, or contradictory. **Pass:** a reader can see why the rating is not higher.
 
 ## Pattern Examples
 

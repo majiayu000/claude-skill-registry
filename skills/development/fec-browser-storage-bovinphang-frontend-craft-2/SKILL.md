@@ -19,7 +19,7 @@ description: Use when choosing, implementing, or reviewing browser storage such 
 
 ## Detailed References
 
-Load [references/storage-patterns.md](references/storage-patterns.md) for storage selection tables, localStorage/sessionStorage wrappers, IndexedDB examples, cookie helpers, and sensitive-data rules.
+涉及存储选型表、localStorage/sessionStorage 封装、IndexedDB 示例、Cookie 辅助方法和敏感数据规则时，加载 [references/storage-patterns.md](references/storage-patterns.md)。
 
 ## Constraints
 
@@ -32,4 +32,3 @@ Load [references/storage-patterns.md](references/storage-patterns.md) for storag
 ## Expected Output
 
 产出统一的 storage/cookie/db 封装，key 有命名空间，数据有过期或清理策略，敏感数据只进入合适的安全边界。
-

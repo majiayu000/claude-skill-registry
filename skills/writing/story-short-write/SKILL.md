@@ -70,7 +70,7 @@ metadata:
 
 #### 对标上下文加载
 
-> **拆文库/对标关系**：`拆文库/` = analyze skill 的原始产出（source of truth），位于项目根目录。`对标/` = 当前短篇的引用视图，位于 `{短篇标题}/对标/`。短篇写作优先读取 `{短篇标题}/对标/{书名}/`，不存在则回退项目根 `拆文库/{书名}/`，再回退 `{短篇标题}/拆文库/{书名}/`（兼容旧结构）。
+> **拆文库/对标关系**：`拆文库/` = analyze skill 的原始产出（数据源），位于项目根目录。`对标/` = 当前短篇的引用视图，位于 `{短篇标题}/对标/`。短篇写作优先读取 `{短篇标题}/对标/{书名}/`，不存在则回退项目根 `拆文库/{书名}/`，再回退 `{短篇标题}/拆文库/{书名}/`（兼容旧结构）。
 
 推荐目录结构：
 
@@ -98,6 +98,11 @@ metadata:
 2. 读取核心发现：结构段落、情绪曲线、反转位置、铺垫方式、句式节奏、可借鉴技法
 3. 写入本篇 `设定.md` 的“对标摘要”区，写作时每个场景从中召回 1-2 个相关技法
 4. 如只找到原文、未找到拆文报告，提示用户先运行 `/story-short-analyze`；如用户要求继续，也可只按原文做弱参考
+
+> **拆文产出格式**：analyze 落盘的完整文件树、`_meta.json` schema、Stage→文件映射，以及「story-short-write 怎么读这些产出」的下游消费规范，见 [references/output-contract.md](references/output-contract.md)。
+
+<!-- cross-book-recall:trigger:structure-positioning -->
+> **多对标书时**：参 `references/cross-book-recall.md`，副对标 anchor 入「对标摘要」区
 
 #### Agent 调用：story-architect
 
@@ -163,7 +168,6 @@ metadata:
 ├── 设定.md              ← Phase 2 产出（含对标摘要）
 ├── 小节大纲.md          ← Phase 2 产出
 ├── 正文.md              ← Phase 3 产出
-├── 自检_{标题}.md       ← Phase 4 产出
 └── 对标/                ← 当前短篇引用视图（可选）
     └── {书名}/
         ├── 拆文报告.md
@@ -177,6 +181,8 @@ metadata:
 
 **准备层**（每个场景写前执行 2 步，是核心方法的落地：确认情绪目标 → 召回技法模块）：
 - **步骤 1：记忆+召回**：① 本场景目标情绪词？② 借鉴哪个参考文件的哪个技法？③ 具体用在哪个段落？答不出 → 先回读参考再动笔。如有 `对标/` 或 `拆文库/` 结构化产出，按“对标上下文加载”规则检索与当前场景最相关的结构/情绪/反转/写作手法模块作为参考，并写入“拆文召回摘要”
+  <!-- cross-book-recall:trigger:tempo-section -->
+  - **多对标书时**：参 `references/cross-book-recall.md`，副对标 anchor 入"拆文召回摘要"
 - **步骤 2：指令确认**：用一句话概括本场景写作意图（情绪+技法+适配段落），确认后开始写作
 
 **写作指令：按三维度织入逐场景写作，不是翻译大纲。每个场景让读者和主角一起经历。三个维度（发生、感知、反应）同时织入同一段连续正文——不按维度分段，不用"先写发生再补感知"的方式写作。织入后仍必须按镜头断段：一段只承载一个动作/信息变化，优先一段一句，避免一段到底。输出前做密度重排：段落 >60 字按句号/动作转折拆开，单句 >45 字拆短。**
@@ -188,7 +194,7 @@ metadata:
 ⚠️ **硬约束：每节 ≥ 800 字 / 50-65 行**。
 题材例外：爽文、打脸、系统流等高信息密度题材可降至 ≥ 500 字/节（见 genre-writing-formulas.md 各题材速查表），但不得低于 500 字。
 写完每节后必须统计字数和行数。不足 800 字（高信息密度题材不足 500 字）的节不得跳过，必须补充更多子事件/对话来补足后再写下一节。整篇完成后总字数必须 ≥ 8000 字。
-**字数统计必须跨平台可执行：优先使用 Python 字符统计**：`python3 -c "from pathlib import Path; print(len(Path('文件路径').read_text(encoding='utf-8')))"`。Windows / DeepSeek / Claude Code 组合下不要让模型自行估算字数；`wc -m` 仅作为 macOS/Linux 备选，禁止使用 `wc -c`（字节数）。如果当前 agent/工具环境没有 Bash/Python 权限，必须在自检文件中标注“未完成机器字数验证”，并按行数速算作为临时估计，不得声称已通过字数硬验证。
+**字数统计必须跨平台可执行：优先使用 Python 字符统计**：`python3 -c "from pathlib import Path; print(len(Path('文件路径').read_text(encoding='utf-8')))"`。Windows / DeepSeek / Claude Code 组合下不要让模型自行估算字数；`wc -m` 仅作为 macOS/Linux 备选，禁止使用 `wc -c`（字节数）。如果当前 agent/工具环境没有 Bash/Python 权限，必须明确声明“未完成机器字数验证”，并按行数速算作为临时估计，不得声称已通过字数硬验证。
 **⚠️ 字数不足 = 章节未完成。禁止在字数未达标时结束章节。必须继续展开场景直到达标。**
 
 **节数守恒**：正文节数必须等于小节大纲规划节数。不得合并多节为一节。如果写作中发现某节不需要独立存在，应回到大纲阶段调整，而非在写作时偷减。
@@ -196,7 +202,7 @@ metadata:
 **节长达标流程**：
 1. **写作时**：按三维度织入写每个子事件——发生、感知、反应织入同一段连续正文，不按维度分段写
 2. **字数不足时**（逐节统计后）：用以下方法补足（优先级从高到低）：
-   - 补充更多子事件/情节点（回到小节大纲补充）
+   - 补充更多子事件（回到小节大纲补充）
    - 加一轮对话（参考 writing-craft.md 对话权力模式）
    - 加回忆闪回（1-2 句关联记忆）
    - 加环境物件（通过动作带出，不独立成句）
@@ -322,10 +328,9 @@ metadata:
 
 如 agent 不可用，由主线程直接执行。
 
-**自检记录隔离规则**：
-- 所有自检记录（字数统计、禁用词扫描结果、格式检查清单）必须写入独立文件 `自检_{标题}.md`（标题取自 Phase 2 核心框架）
-- **绝对不能**将自检记录附加到正文文件末尾
-- 自检文件与正文文件完全分离，便于后续清理和归档
+**正文洁净规则**：
+- 自检（字数统计、禁用词扫描、格式检查）是过程动作，结果直接在对话里说明，不落盘成文件
+- **绝对不能**把自检记录附加到正文文件末尾
 - 正文中不得出现任何 `<!-- 自检 -->` 或类似的检查标记注释
 
 不通过 → 回退补足。
@@ -378,6 +383,24 @@ metadata:
 | [references/genre-core-mechanics.md](references/genre-core-mechanics.md) | 核心梗设计 |
 | [references/genre-readers.md](references/genre-readers.md) | 读者心理 |
 | [references/state-tracking.md](references/state-tracking.md) | 状态追踪协议（Phase 3 准备层参考） |
+| [references/output-contract.md](references/output-contract.md) | Phase 2 对标上下文加载时（理解 analyze 产出格式与消费规范） |
+
+### 按主题快速定位（横切主题）
+
+有些主题散在多个文件里。下表给每个主题一个**权威文件**（先读它，通常够用），配套文件只在需要那个角度时再加载。括号是该文件里对应的小节。
+
+| 主题 | 权威文件（先读） | 配套文件（按角度补充） |
+|------|-----------------|----------------------|
+| 情绪设计 | **`references/emotional-methods.md`**（情感三板斧 + 拉扯节奏 + 失败模式） | `references/emotional-arc-design.md`（六种弧线 / 前反应-复现-后反应结构）· `references/genre-writing-techniques.md`（情绪操控核心法则） |
+| 反转 | **`references/reversal-toolkit.md`**（反转类型 / 铺垫 / 有效性自检） | `references/villain-and-reveal.md`（真相揭露机制 / 反转有效性自检） |
+| 反派揭露 | **`references/villain-and-reveal.md`**（反派模板 / 揭露机制 / 报应设计） | `references/reversal-toolkit.md` |
+| 人物 | **`references/character-basics.md`**（主角/配角/反派/动机模板速填） | `references/character-design-methods.md`（三层标签反差/深化）· `references/character-relations.md`（关系/感情线） |
+| 钩子 | **`references/hooks-chapter.md`**（章节/开篇钩子类型） | `references/hooks-paragraph.md`（段落钩子）· `references/hooks-suspense.md`（悬念设计） |
+| 女频写作 | **`references/female-audience-writing.md`**（核心原则 / 文案结构体系 / 感情线写法深化） | `references/genre-writing-techniques.md`（女频读者心理与写作技法 / 感情线四阶段推进法）· `references/genre-readers.md`（读者心理） |
+| 题材公式 | **`references/genre-writing-formulas.md`**（各题材创作公式速查） | `references/genre-catalog.md`（题材框架）· `references/genre-core-mechanics.md`（核心梗设计） |
+| 开头 | **`references/opening-design.md`**（黄金一章 / 三大基点 / 题材开头模板） | `references/hooks-chapter.md`（开篇钩子类型） |
+| 格式与节奏 | **`references/format-and-structure.md`**（正文格式硬规范） | `references/writing-craft.md`（三维度织入）· `references/writing-workflow.md`（设计/精修工作流） |
+| 去AI味 | **`references/anti-ai-writing.md`**（定性裁定） | `references/banned-words.md`（禁用词扫描）· `references/quality-checklist.md`（成稿检查） |
 
 ---
 

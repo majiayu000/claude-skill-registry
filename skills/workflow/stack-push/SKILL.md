@@ -1,6 +1,6 @@
 ---
 name: stack-push
-description: 'Push all branches in a stack and open or update dependent PRs.'
+description: Pushes all branches in a stack and opens or updates one dependent PR per slice. Use after stack-create to publish the stack or after adding commits to a slice.
 alwaysApply: false
 category: workflow-automation
 tags:

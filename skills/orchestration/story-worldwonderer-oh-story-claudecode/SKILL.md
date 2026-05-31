@@ -19,6 +19,7 @@ description: |
 | 长篇拆文 | 拆文、分析这本书、黄金三章 | `/story-long-analyze` |
 | 短篇拆文 | 拆短篇、分析这个故事 | `/story-short-analyze` |
 | 长篇扫榜 | 长篇排行、什么火、起点/番茄/晋江 | `/story-long-scan` |
+| 选题决策 | 写什么能爆、帮我选题、选题方向 | `/story-long-scan` |
 | 短篇扫榜 | 短篇排行、知乎盐言排行 | `/story-short-scan` |
 | 去 AI 味 | 去 AI 味、太 AI、去味 | `/story-deslop` |
 | 封面 | 封面、封面图 | `/story-cover` |

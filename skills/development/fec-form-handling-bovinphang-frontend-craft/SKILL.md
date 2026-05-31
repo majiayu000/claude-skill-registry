@@ -51,7 +51,9 @@ export function LoginFormView() {
       <input id="password" type="password" {...register("password")} />
       {errors.password && <span role="alert">{errors.password.message}</span>}
 
-      <button disabled={isSubmitting}>{isSubmitting ? "提交中..." : "提交"}</button>
+      <button disabled={isSubmitting}>
+        {isSubmitting ? "提交中..." : "提交"}
+      </button>
     </form>
   );
 }
@@ -59,7 +61,7 @@ export function LoginFormView() {
 
 ## Detailed References
 
-Load [references/advanced-form-patterns.md](references/advanced-form-patterns.md) for `Controller`, `useFieldArray`, dependent validation, file upload, multi-step forms, async validation, and performance patterns.
+涉及 `Controller`、`useFieldArray`、联动校验、文件上传、多步表单、异步校验和性能模式时，加载 [references/advanced-form-patterns.md](references/advanced-form-patterns.md)。
 
 ## Constraints
 
@@ -72,4 +74,3 @@ Load [references/advanced-form-patterns.md](references/advanced-form-patterns.md
 ## Expected Output
 
 产出类型安全、可访问、提交状态明确的表单；复杂字段和文件上传有 schema 约束，输入过程无明显卡顿，服务端错误能回填到用户可理解的位置。
-

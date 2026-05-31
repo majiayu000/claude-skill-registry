@@ -272,6 +272,14 @@ def good_return() -> dict:
 
 ## Debugging Tips
 
+### Gates (ambiguous failures)
+
+When the agent misbehaves but the stack trace or error string is unclear, follow **in order**; do not skip ahead.
+
+1. **Capture evidence** — Re-run with `capture_run_messages()` or, after `run`/`run_sync`, inspect `result.all_messages()` (or print message types in order). **Pass:** You can name the message part type and one line of content that explains the failure (e.g. `RetryPromptPart`, tool return, model text).
+2. **Separate model from schema** — If validation or `RetryPromptPart` appears, compare the last model message to your `output_type` fields and types. **Pass:** You identified a concrete mismatch (missing field, wrong type, refusal) before only raising `retries` or changing the model.
+3. **Confirm deps on every path** — If tools or deps fail, verify each call site (`run`, `run_sync`, `run_stream`) supplies `deps=...` when `deps_type` is set. **Pass:** A minimal repro with explicit `deps` matches or rules out a deps wiring bug.
+
 ### Enable tracing
 
 ```python

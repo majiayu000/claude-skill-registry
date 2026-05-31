@@ -1,0 +1,17 @@
+{
+  "name": "ktx",
+  "repo": "Kaelio/ktx-ai-data-agents-mcp-context-skills",
+  "path": "skills/ktx/SKILL.md",
+  "github_branch": "main",
+  "category": "platform",
+  "source": "github.com/Kaelio/ktx-ai-data-agents-mcp-context-skills",
+  "dir_name": "ktx",
+  "downloaded_at": "2026-05-30T03:34:33.440093Z",
+  "author": "Kaelio",
+  "source_url": "https://github.com/Kaelio/ktx-ai-data-agents-mcp-context-skills/blob/main/skills/ktx/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kaelio/ktx-ai-data-agents-mcp-context-skills/blob/main/skills/ktx/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

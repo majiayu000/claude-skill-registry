@@ -1,0 +1,17 @@
+{
+  "name": "oh-my-issues",
+  "repo": "thedotmack/claude-mem",
+  "path": "plugin/skills/oh-my-issues/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/thedotmack/claude-mem",
+  "dir_name": "oh-my-issues",
+  "downloaded_at": "2026-05-30T04:01:27.001497Z",
+  "author": "thedotmack",
+  "source_url": "https://github.com/thedotmack/claude-mem/blob/main/plugin/skills/oh-my-issues/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/thedotmack/claude-mem/blob/main/plugin/skills/oh-my-issues/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

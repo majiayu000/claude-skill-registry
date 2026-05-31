@@ -267,21 +267,18 @@ URL 参数：`/rank/{channel}_{type}_{cat_id}`，channel 0=女频/1=男频，typ
 
 ---
 
-### Phase 4：选题匹配
+### Phase 4：选题决策
 
-根据扫榜结果，结合项目条件输出选题匹配：
+把扫榜结果变成能直接用的选题建议，产出 `选题决策.md`。完整方法（选题四步 + 可行性判断 + 输出模板）见 [references/topic-decision.md](references/topic-decision.md)。
 
 **如信息不足，向用户补齐项目条件：**「目标平台、已有素材、擅长题材/写作约束、计划篇幅是什么？」
 
-然后做匹配：
-- 项目素材/能力约束 × 榜上重复样本 = 优先候选
-- 缺少成熟样本或设定储备 → 优先选择边界清楚、结构成熟、风险可控的题材
-- 已有明确优势素材 → 输出能放大该优势的差异化方向，并列出验证样本
+按 `topic-decision.md` 的选题四步产出 2-3 个推荐选题（能爆的原因 → 市场验证 → 差异化定位 → 可行性+失败风险+验证动作），写入**本次扫榜输出目录** `{outdir}/选题决策.md`，并告知用户路径与下一步：「开书时把 `选题决策.md` 放到小说项目根目录，写作会自动读取；想确认"能爆的原因"先 `/story-long-analyze` 拆对标书。」
 
-**绝对不要做的事：**
-- 不输出项目素材无法支撑的领域题材
-- 不只看热度，必须给出可行性和失败风险
-- 不忽略平台调性差异（起点男频和晋江女频的审美完全不同）
+**硬规则：**
+- 可行性上限：背靠榜单标了 `[数据稀疏]` 或同方向样本 <15（小平台<10）⇒ 不许给"高"，强制降到"中" + 写明先验证；内置知识模式一律给"中"。
+- "能爆的原因"只记为假设（`待拆文验证`）——单本上榜是个例，多本重复才算信号；要坐实靠拆文回填，本阶段不拆文。
+- 不输出项目素材无法支撑的题材；不只看热度，必须给可行性和失败风险；不忽略平台调性差异（起点男频和晋江女频审美完全不同）。
 
 ---
 
@@ -308,12 +305,15 @@ URL 参数：`/rank/{channel}_{type}_{cat_id}`，channel 0=女频/1=男频，typ
 | 直接开写 | story-long-write | `/story-long-write` |
 | 更适合短篇 | story-short-scan | `/story-short-scan` |
 
+> **选题决策.md 交接**：Phase 4 产出的 `选题决策.md` 写在扫榜输出目录（扫榜常在没有小说项目时进行）。开书时把它搬到小说项目根目录，story-long-write Phase 1 会自动读取；拆文（story-long-analyze）会在汇总报告产出后回填对应选题的"能爆的原因"。
+
 ## 参考资料
 
 按需加载以下文件：
 
 | 文件 | 何时加载 |
 |------|----------|
+| [references/topic-decision.md](references/topic-decision.md) | Phase 4 选题决策：选题四步 + 可行性判断 + 选题决策.md 模板 |
 | [references/reader-profiling.md](references/reader-profiling.md) | 需要分析目标读者画像时 |
 | [references/genre-trends.md](references/genre-trends.md) | 查看题材趋势候选、切入约束和样本校验规则时 |
 | [references/publishing-guide.md](references/publishing-guide.md) | 平台适配+推荐机制校验+数据指标+简介设计 |

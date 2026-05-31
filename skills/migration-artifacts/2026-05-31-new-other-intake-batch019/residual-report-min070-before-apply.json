@@ -1,0 +1,1750 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-31T02:23:49.639061+00:00",
+  "skills_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch019",
+  "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch019/migration-artifacts/2026-05-31-new-other-intake-batch019/classification.jsonl",
+  "policy": {
+    "min_confidence": 0.7,
+    "from_categories": [
+      "other"
+    ],
+    "to_categories": [],
+    "target_statuses": [
+      "active"
+    ],
+    "allow_target_other": false,
+    "apply_mode": "report-only",
+    "example_limit_per_reason": 20,
+    "top_targets_per_reason": 20,
+    "conflict_detail_limit": 20
+  },
+  "summary": {
+    "classification_row_count": 5157,
+    "archive_skill_count": 202775,
+    "scoped_archive_skill_count": 5679,
+    "scoped_archive_classification_gap": 522,
+    "classification_status_counts": {
+      "missing_result": 2,
+      "ok": 5154,
+      "unknown_or_inactive_category": 1
+    },
+    "archive_category_counts": {
+      "agent": 1877,
+      "ai-llm": 2643,
+      "ai-ml": 2555,
+      "analysis": 4918,
+      "api": 1345,
+      "bash": 314,
+      "business": 1383,
+      "c-level": 80,
+      "communication": 697,
+      "context-management": 1443,
+      "creative": 858,
+      "data": 49330,
+      "design": 13917,
+      "development": 39196,
+      "devops": 10903,
+      "documents": 7792,
+      "domains": 2537,
+      "examples": 184,
+      "forensics": 153,
+      "gaming": 913,
+      "generation": 1472,
+      "integration": 6817,
+      "language": 174,
+      "local-ai-infrastructure": 107,
+      "marketing": 3110,
+      "orchestration": 2828,
+      "other": 5679,
+      "performance": 1091,
+      "personal-development": 784,
+      "planning": 1809,
+      "platform": 965,
+      "product": 3021,
+      "productivity": 3291,
+      "quality": 4354,
+      "security": 5298,
+      "skills": 2603,
+      "system": 352,
+      "testing": 11386,
+      "travel": 52,
+      "war-room": 41,
+      "workflow": 3390,
+      "writing": 1113
+    },
+    "source_state_counts": {
+      "exists": 5157
+    },
+    "existing_source_category_counts": {
+      "other": 5157
+    },
+    "scoped_source_category_counts": {
+      "other": 5157
+    },
+    "scoped_existing_source_count": 5157,
+    "candidate_move_count": 1080,
+    "blocked_existing_key_count": 4069,
+    "stable_key_conflict_detail_count": 20,
+    "stable_key_conflict_detail_summary": {
+      "metadata_identity_equal": 17,
+      "skill_content_equal": 9
+    },
+    "primary_reason_counts": {
+      "classification status is not ok": 3,
+      "confidence below threshold": 5,
+      "movable candidate under selected policy": 1080,
+      "target category already contains a skill with the same stable key": 4069
+    },
+    "all_blocker_reason_counts": {
+      "classification status is not ok": 3,
+      "classification target matches current category": 5,
+      "confidence below threshold": 7,
+      "target category already contains a skill with the same stable key": 4069,
+      "target category other requires --allow-target-other": 5,
+      "target category status 'unknown' excluded by filter": 1
+    },
+    "target_category_counts": {
+      "": 2,
+      "agent": 49,
+      "ai-llm": 75,
+      "ai-ml": 148,
+      "analysis": 373,
+      "api": 72,
+      "bash": 12,
+      "business": 79,
+      "c-level": 2,
+      "communication": 24,
+      "context-management": 76,
+      "creative": 11,
+      "data": 185,
+      "design": 217,
+      "development": 593,
+      "devops": 220,
+      "documents": 235,
+      "domains": 305,
+      "examples": 3,
+      "forensics": 12,
+      "gaming": 23,
+      "generation": 160,
+      "integration": 283,
+      "knowledge-management": 1,
+      "language": 9,
+      "local-ai-infrastructure": 10,
+      "marketing": 187,
+      "orchestration": 229,
+      "other": 5,
+      "performance": 58,
+      "personal-development": 46,
+      "planning": 94,
+      "platform": 72,
+      "product": 152,
+      "productivity": 31,
+      "quality": 322,
+      "security": 220,
+      "skills": 115,
+      "system": 17,
+      "testing": 129,
+      "travel": 2,
+      "war-room": 5,
+      "workflow": 230,
+      "writing": 64
+    },
+    "target_status_counts": {
+      "active": 5156,
+      "unknown": 1
+    },
+    "same_policy_plan_summary": {
+      "classification_row_count": 5157,
+      "classification_status_counts": {
+        "missing_result": 2,
+        "ok": 5154,
+        "unknown_or_inactive_category": 1
+      },
+      "planned_move_count": 5149,
+      "movable_count": 1080,
+      "blocked_count": 4069,
+      "operation_counts": {
+        "blocked_existing_key": 4069,
+        "move": 1080
+      },
+      "reject_reasons": {
+        "classification status is not ok": 3,
+        "confidence below threshold": 5
+      },
+      "source_category_counts": {
+        "other": 5149
+      },
+      "target_category_counts": {
+        "agent": 49,
+        "ai-llm": 75,
+        "ai-ml": 148,
+        "analysis": 373,
+        "api": 72,
+        "bash": 12,
+        "business": 79,
+        "c-level": 2,
+        "communication": 24,
+        "context-management": 76,
+        "creative": 11,
+        "data": 185,
+        "design": 217,
+        "development": 593,
+        "devops": 220,
+        "documents": 235,
+        "domains": 305,
+        "examples": 3,
+        "forensics": 12,
+        "gaming": 23,
+        "generation": 160,
+        "integration": 283,
+        "language": 9,
+        "local-ai-infrastructure": 10,
+        "marketing": 187,
+        "orchestration": 229,
+        "performance": 58,
+        "personal-development": 46,
+        "planning": 94,
+        "platform": 72,
+        "product": 152,
+        "productivity": 31,
+        "quality": 322,
+        "security": 220,
+        "skills": 115,
+        "system": 17,
+        "testing": 129,
+        "travel": 2,
+        "war-room": 5,
+        "workflow": 230,
+        "writing": 64
+      }
+    }
+  },
+  "buckets": [
+    {
+      "reason": "target category already contains a skill with the same stable key",
+      "count": 4069,
+      "target_categories": [
+        {
+          "value": "development",
+          "count": 518
+        },
+        {
+          "value": "quality",
+          "count": 254
+        },
+        {
+          "value": "analysis",
+          "count": 239
+        },
+        {
+          "value": "integration",
+          "count": 228
+        },
+        {
+          "value": "security",
+          "count": 208
+        },
+        {
+          "value": "documents",
+          "count": 200
+        },
+        {
+          "value": "orchestration",
+          "count": 195
+        },
+        {
+          "value": "design",
+          "count": 193
+        },
+        {
+          "value": "devops",
+          "count": 193
+        },
+        {
+          "value": "domains",
+          "count": 176
+        },
+        {
+          "value": "marketing",
+          "count": 172
+        },
+        {
+          "value": "data",
+          "count": 143
+        },
+        {
+          "value": "workflow",
+          "count": 129
+        },
+        {
+          "value": "product",
+          "count": 126
+        },
+        {
+          "value": "generation",
+          "count": 122
+        },
+        {
+          "value": "testing",
+          "count": 120
+        },
+        {
+          "value": "ai-ml",
+          "count": 115
+        },
+        {
+          "value": "skills",
+          "count": 102
+        },
+        {
+          "value": "planning",
+          "count": 73
+        },
+        {
+          "value": "ai-llm",
+          "count": 61
+        }
+      ],
+      "target_status_counts": {
+        "active": 4069
+      },
+      "examples": [
+        {
+          "path": "other/0-autoresearch-skill-orchestra-research-ai-research-skills/SKILL.md",
+          "name": "autoresearch",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "orchestration",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "orchestration/0-autoresearch-skill-orchestra-research-ai-research-skills/SKILL.md"
+        },
+        {
+          "path": "other/0-autoresearch-skill/SKILL.md",
+          "name": "autoresearch",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "orchestration",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "orchestration/0-autoresearch-skill/SKILL.md"
+        },
+        {
+          "path": "other/00-basic-skill/SKILL.md",
+          "name": "code-reviewing",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "quality",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "quality/00-basic-skill/SKILL.md"
+        },
+        {
+          "path": "other/001-skills-inventory/SKILL.md",
+          "name": "001-skills-inventory",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "documents/001-skills-inventory/SKILL.md"
+        },
+        {
+          "path": "other/002-agents-inventory/SKILL.md",
+          "name": "002-agents-inventory",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "documents/002-agents-inventory/SKILL.md"
+        },
+        {
+          "path": "other/003-agents-installation/SKILL.md",
+          "name": "003-agents-installation",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "agent",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "agent/003-agents-installation/SKILL.md"
+        },
+        {
+          "path": "other/01-dotnet-clean-architecture/SKILL.md",
+          "name": "dotnet-clean-architecture",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.92,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "development/01-dotnet-clean-architecture/SKILL.md"
+        },
+        {
+          "path": "other/012-agile-epic/SKILL.md",
+          "name": "012-agile-epic",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "product",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "product/012-agile-epic/SKILL.md"
+        },
+        {
+          "path": "other/013-agile-feature/SKILL.md",
+          "name": "013-agile-feature",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "product",
+          "target_status": "active",
+          "confidence": 0.88,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "product/013-agile-feature/SKILL.md"
+        },
+        {
+          "path": "other/014-agile-user-story/SKILL.md",
+          "name": "014-agile-user-story",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "product",
+          "target_status": "active",
+          "confidence": 0.88,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "product/014-agile-user-story/SKILL.md"
+        },
+        {
+          "path": "other/02-dotnet-cqrs-command-generator/SKILL.md",
+          "name": "dotnet-cqrs-command-generator",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "development/unknown-ronnythedev-dotnet-clean-archite-5/SKILL.md"
+        },
+        {
+          "path": "other/02-progressive-skill/SKILL.md",
+          "name": "api-documenting",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "api/02-progressive-skill/SKILL.md"
+        },
+        {
+          "path": "other/03-dotnet-cqrs-query-generator/SKILL.md",
+          "name": "dotnet-cqrs-query-generator",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "development/unknown-ronnythedev-dotnet-clean-archite-25/SKILL.md"
+        },
+        {
+          "path": "other/03-financial-skill/SKILL.md",
+          "name": "financial-analyzing",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "analysis",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "analysis/03-financial-skill/SKILL.md"
+        },
+        {
+          "path": "other/030-architecture-adr-general/SKILL.md",
+          "name": "030-architecture-adr-general",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "documents/030-architecture-adr-general/SKILL.md"
+        },
+        {
+          "path": "other/031-architecture-adr-functional-requirements/SKILL.md",
+          "name": "031-architecture-adr-functional-requirements",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "documents/031-architecture-adr-functional-requirements/SKILL.md"
+        },
+        {
+          "path": "other/032-architecture-adr-non-functional-requirements/SKILL.md",
+          "name": "032-architecture-adr-non-functional-requirements",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "documents/032-architecture-adr-non-functional-requirements/SKILL.md"
+        },
+        {
+          "path": "other/04-dotnet-domain-entity-generator/SKILL.md",
+          "name": "dotnet-domain-entity-generator",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "development/unknown-ronnythedev-dotnet-clean-archite-24/SKILL.md"
+        },
+        {
+          "path": "other/041-planning-plan-mode/SKILL.md",
+          "name": "041-planning-plan-mode",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "planning",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "planning/041-planning-plan-mode/SKILL.md"
+        },
+        {
+          "path": "other/042-planning-openspec/SKILL.md",
+          "name": "042-planning-openspec",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "planning",
+          "target_status": "active",
+          "confidence": 0.92,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "planning/042-planning-openspec/SKILL.md"
+        }
+      ]
+    },
+    {
+      "reason": "movable candidate under selected policy",
+      "count": 1080,
+      "target_categories": [
+        {
+          "value": "analysis",
+          "count": 134
+        },
+        {
+          "value": "domains",
+          "count": 129
+        },
+        {
+          "value": "workflow",
+          "count": 101
+        },
+        {
+          "value": "development",
+          "count": 75
+        },
+        {
+          "value": "quality",
+          "count": 68
+        },
+        {
+          "value": "integration",
+          "count": 55
+        },
+        {
+          "value": "data",
+          "count": 42
+        },
+        {
+          "value": "generation",
+          "count": 38
+        },
+        {
+          "value": "documents",
+          "count": 35
+        },
+        {
+          "value": "orchestration",
+          "count": 34
+        },
+        {
+          "value": "ai-ml",
+          "count": 33
+        },
+        {
+          "value": "platform",
+          "count": 29
+        },
+        {
+          "value": "devops",
+          "count": 27
+        },
+        {
+          "value": "product",
+          "count": 26
+        },
+        {
+          "value": "design",
+          "count": 24
+        },
+        {
+          "value": "planning",
+          "count": 21
+        },
+        {
+          "value": "business",
+          "count": 20
+        },
+        {
+          "value": "personal-development",
+          "count": 18
+        },
+        {
+          "value": "context-management",
+          "count": 16
+        },
+        {
+          "value": "api",
+          "count": 15
+        }
+      ],
+      "target_status_counts": {
+        "active": 1080
+      },
+      "examples": [
+        {
+          "path": "other/033-architecture-diagrams/SKILL.md",
+          "name": "033-architecture-diagrams",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "design",
+          "target_status": "active",
+          "confidence": 0.8,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "design/033-architecture-diagrams/SKILL.md"
+        },
+        {
+          "path": "other/04-codebase-visualizer/SKILL.md",
+          "name": "codebase-visualizer",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "analysis",
+          "target_status": "active",
+          "confidence": 0.75,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "analysis/04-codebase-visualizer/SKILL.md"
+        },
+        {
+          "path": "other/07-1-dotnet-legacy-api-controllers/SKILL.md",
+          "name": "dotnet-legacy-api-controllers",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.93,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "api/07-1-dotnet-legacy-api-controllers/SKILL.md"
+        },
+        {
+          "path": "other/07-2-dotnet-minimal-api-endpoints/SKILL.md",
+          "name": "dotnet-minimal-api-endpoints",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "api/07-2-dotnet-minimal-api-endpoints/SKILL.md"
+        },
+        {
+          "path": "other/162-java-profiling-analyze/SKILL.md",
+          "name": "162-java-profiling-analyze",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "analysis",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "analysis/162-java-profiling-analyze/SKILL.md"
+        },
+        {
+          "path": "other/163-java-profiling-refactor/SKILL.md",
+          "name": "163-java-profiling-refactor",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "development/163-java-profiling-refactor/SKILL.md"
+        },
+        {
+          "path": "other/183-java-observability-tracing-opentelemetry/SKILL.md",
+          "name": "183-java-observability-tracing-opentelemetry",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "development/183-java-observability-tracing-opentelemetry/SKILL.md"
+        },
+        {
+          "path": "other/200-agents-md/SKILL.md",
+          "name": "200-agents-md",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "documents/200-agents-md/SKILL.md"
+        },
+        {
+          "path": "other/24-dotnet-rate-limiting/SKILL.md",
+          "name": "dotnet-rate-limiting",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "security",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "security/24-dotnet-rate-limiting/SKILL.md"
+        },
+        {
+          "path": "other/302-frameworks-spring-boot-rest/SKILL.md",
+          "name": "302-frameworks-spring-boot-rest",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "api/302-frameworks-spring-boot-rest/SKILL.md"
+        },
+        {
+          "path": "other/303-frameworks-spring-boot-validation/SKILL.md",
+          "name": "303-frameworks-spring-boot-validation",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "quality",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "quality/303-frameworks-spring-boot-validation/SKILL.md"
+        },
+        {
+          "path": "other/403-frameworks-quarkus-validation/SKILL.md",
+          "name": "403-frameworks-quarkus-validation",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "quality",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "quality/403-frameworks-quarkus-validation/SKILL.md"
+        },
+        {
+          "path": "other/502-frameworks-micronaut-rest/SKILL.md",
+          "name": "502-frameworks-micronaut-rest",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "api/502-frameworks-micronaut-rest/SKILL.md"
+        },
+        {
+          "path": "other/511-frameworks-micronaut-jdbc/SKILL.md",
+          "name": "511-frameworks-micronaut-jdbc",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "development/511-frameworks-micronaut-jdbc/SKILL.md"
+        },
+        {
+          "path": "other/513-frameworks-micronaut-db-migrations-flyway/SKILL.md",
+          "name": "513-frameworks-micronaut-db-migrations-flyway",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "devops",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "devops/513-frameworks-micronaut-db-migrations-flyway/SKILL.md"
+        },
+        {
+          "path": "other/514-frameworks-micronaut-kafka/SKILL.md",
+          "name": "514-frameworks-micronaut-kafka",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "integration",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "integration/514-frameworks-micronaut-kafka/SKILL.md"
+        },
+        {
+          "path": "other/a-evolve/SKILL.md",
+          "name": "evolving-ai-agents",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "ai-ml",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "ai-ml/a-evolve/SKILL.md"
+        },
+        {
+          "path": "other/accessibility-aggregation-ammawla-encode-toolkit/SKILL.md",
+          "name": "accessibility-aggregation",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "domains",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "domains/accessibility-aggregation-ammawla-encode-toolkit/SKILL.md"
+        },
+        {
+          "path": "other/accessibility-aggregation/SKILL.md",
+          "name": "accessibility-aggregation",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "domains",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "domains/accessibility-aggregation/SKILL.md"
+        },
+        {
+          "path": "other/accessibility/SKILL.md",
+          "name": "accessibility",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "quality",
+          "target_status": "active",
+          "confidence": 0.92,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "quality/accessibility/SKILL.md"
+        }
+      ]
+    },
+    {
+      "reason": "confidence below threshold",
+      "count": 5,
+      "target_categories": [
+        {
+          "value": "other",
+          "count": 5
+        }
+      ],
+      "target_status_counts": {
+        "active": 5
+      },
+      "examples": [
+        {
+          "path": "other/about-bitwize-music-studio-claude-ai-music-skil-8/SKILL.md",
+          "name": "about",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.55,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/join-discord/SKILL.md",
+          "name": "gsd:join-discord",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.5,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/quickstart-boshu2-agentops/SKILL.md",
+          "name": "quickstart",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.6,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/quickstart/SKILL.md",
+          "name": "quickstart",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.6,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/template-skill/SKILL.md",
+          "name": "template-skill",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.3,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        }
+      ]
+    },
+    {
+      "reason": "classification status is not ok",
+      "count": 3,
+      "target_categories": [
+        {
+          "value": "",
+          "count": 2
+        },
+        {
+          "value": "knowledge-management",
+          "count": 1
+        }
+      ],
+      "target_status_counts": {
+        "active": 2,
+        "unknown": 1
+      },
+      "examples": [
+        {
+          "path": "other/curate/SKILL.md",
+          "name": "curate",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "knowledge-management",
+          "target_status": "unknown",
+          "confidence": 0.75,
+          "status": "unknown_or_inactive_category",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/research-deep-weizhena-deep-research-skills/SKILL.md",
+          "name": "research-deep",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "",
+          "target_status": "active",
+          "confidence": null,
+          "status": "missing_result",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/research-deep/SKILL.md",
+          "name": "research-deep",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "",
+          "target_status": "active",
+          "confidence": null,
+          "status": "missing_result",
+          "reason": "classification status is not ok"
+        }
+      ]
+    }
+  ],
+  "details": {
+    "stable_key_conflicts": [
+      {
+        "source_path": "other/0-autoresearch-skill-orchestra-research-ai-research-skills",
+        "source_skill": "other/0-autoresearch-skill-orchestra-research-ai-research-skills/SKILL.md",
+        "target_path": "orchestration/0-autoresearch-skill-orchestra-research-ai-research-skills",
+        "target_skill": "orchestration/0-autoresearch-skill-orchestra-research-ai-research-skills/SKILL.md",
+        "target_exists": true,
+        "target_category": "orchestration",
+        "target_status": "active",
+        "classification_name": "autoresearch",
+        "confidence": 0.95,
+        "key": "Orchestra-Research/AI-Research-SKILLs:0-autoresearch-skill/SKILL.md",
+        "source_metadata_identity": {
+          "name": "0-autoresearch-skill",
+          "repo": "Orchestra-Research/AI-Research-SKILLs",
+          "path": "0-autoresearch-skill/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/main/0-autoresearch-skill/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "Orchestra-Research"
+        },
+        "target_metadata_identity": {
+          "name": "0-autoresearch-skill",
+          "repo": "Orchestra-Research/AI-Research-SKILLs",
+          "path": "0-autoresearch-skill/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/main/0-autoresearch-skill/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "Orchestra-Research"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "b7ca0d7a6e905da85a8b494d3fe398ac78eaa278854f67b50a34f2b37a9a2b78",
+        "target_skill_sha256": "b7ca0d7a6e905da85a8b494d3fe398ac78eaa278854f67b50a34f2b37a9a2b78",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/0-autoresearch-skill",
+        "source_skill": "other/0-autoresearch-skill/SKILL.md",
+        "target_path": "orchestration/0-autoresearch-skill",
+        "target_skill": "orchestration/0-autoresearch-skill/SKILL.md",
+        "target_exists": true,
+        "target_category": "orchestration",
+        "target_status": "active",
+        "classification_name": "autoresearch",
+        "confidence": 0.95,
+        "key": "OpenRaiser/NanoResearch:skills/vendor-ai-research/0-autoresearch-skill/SKILL.md",
+        "source_metadata_identity": {
+          "name": "0-autoresearch-skill",
+          "repo": "OpenRaiser/NanoResearch",
+          "path": "skills/vendor-ai-research/0-autoresearch-skill/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/OpenRaiser/NanoResearch/blob/main/skills/vendor-ai-research/0-autoresearch-skill/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "OpenRaiser"
+        },
+        "target_metadata_identity": {
+          "name": "0-autoresearch-skill",
+          "repo": "OpenRaiser/NanoResearch",
+          "path": "skills/vendor-ai-research/0-autoresearch-skill/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/OpenRaiser/NanoResearch/blob/main/skills/vendor-ai-research/0-autoresearch-skill/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "OpenRaiser"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "b7ca0d7a6e905da85a8b494d3fe398ac78eaa278854f67b50a34f2b37a9a2b78",
+        "target_skill_sha256": "b7ca0d7a6e905da85a8b494d3fe398ac78eaa278854f67b50a34f2b37a9a2b78",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/00-basic-skill",
+        "source_skill": "other/00-basic-skill/SKILL.md",
+        "target_path": "quality/00-basic-skill",
+        "target_skill": "quality/00-basic-skill/SKILL.md",
+        "target_exists": true,
+        "target_category": "quality",
+        "target_status": "active",
+        "classification_name": "code-reviewing",
+        "confidence": 0.9,
+        "key": "huangjia2019/claude-code-engineering:04-Skills/projects/00-basic-skill/SKILL.md",
+        "source_metadata_identity": {
+          "name": "00-basic-skill",
+          "repo": "huangjia2019/claude-code-engineering",
+          "path": "04-Skills/projects/00-basic-skill/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/huangjia2019/claude-code-engineering/blob/main/04-Skills/projects/00-basic-skill/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "huangjia2019"
+        },
+        "target_metadata_identity": {
+          "name": "00-basic-skill",
+          "repo": "huangjia2019/claude-code-engineering",
+          "path": "04-Skills/projects/00-basic-skill/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/huangjia2019/claude-code-engineering/blob/main/04-Skills/projects/00-basic-skill/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "huangjia2019"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "97b1336201d88dd1cd47dbc55fc80486849b7a2b9303dc6b5170bc35d4a8189b",
+        "target_skill_sha256": "97b1336201d88dd1cd47dbc55fc80486849b7a2b9303dc6b5170bc35d4a8189b",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/001-skills-inventory",
+        "source_skill": "other/001-skills-inventory/SKILL.md",
+        "target_path": "documents/001-skills-inventory",
+        "target_skill": "documents/001-skills-inventory/SKILL.md",
+        "target_exists": true,
+        "target_category": "documents",
+        "target_status": "active",
+        "classification_name": "001-skills-inventory",
+        "confidence": 0.85,
+        "key": "jabrena/cursor-rules-java:skills/001-skills-inventory/SKILL.md",
+        "source_metadata_identity": {
+          "name": "001-skills-inventory",
+          "repo": "jabrena/cursor-rules-java",
+          "path": "skills/001-skills-inventory/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/jabrena/cursor-rules-java/blob/main/skills/001-skills-inventory/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "jabrena"
+        },
+        "target_metadata_identity": {
+          "name": "001-skills-inventory",
+          "repo": "jabrena/cursor-rules-java",
+          "path": "skills/001-skills-inventory/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/jabrena/cursor-rules-java/blob/main/skills/001-skills-inventory/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "jabrena"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "944a40efcc678eb99ce390021037b3750419d42093ca77a10c99d3ff349ef8c9",
+        "target_skill_sha256": "acb0b326597f9184e2b7b1fddd3cd53205b57781951afdeb3016f9877e19f5c2",
+        "skill_content_equal": false
+      },
+      {
+        "source_path": "other/002-agents-inventory",
+        "source_skill": "other/002-agents-inventory/SKILL.md",
+        "target_path": "documents/002-agents-inventory",
+        "target_skill": "documents/002-agents-inventory/SKILL.md",
+        "target_exists": true,
+        "target_category": "documents",
+        "target_status": "active",
+        "classification_name": "002-agents-inventory",
+        "confidence": 0.85,
+        "key": "jabrena/cursor-rules-java:skills/002-agents-inventory/SKILL.md",
+        "source_metadata_identity": {
+          "name": "002-agents-inventory",
+          "repo": "jabrena/cursor-rules-java",
+          "path": "skills/002-agents-inventory/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/jabrena/cursor-rules-java/blob/main/skills/002-agents-inventory/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "jabrena"
+        },
+        "target_metadata_identity": {
+          "name": "002-agents-inventory",
+          "repo": "jabrena/cursor-rules-java",
+          "path": "skills/002-agents-inventory/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/jabrena/cursor-rules-java/blob/main/skills/002-agents-inventory/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "jabrena"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "d5f7609696cfd8f01cfd6be4af6bda555d207f36f0d3cedf1e2603612057b3ce",
+        "target_skill_sha256": "75db6c8ed8aa33a5c5b7dab15a9c9dd3d7aaf6f5be698050906da3a93871cdd2",
+        "skill_content_equal": false
+      },
+      {
+        "source_path": "other/003-agents-installation",
+        "source_skill": "other/003-agents-installation/SKILL.md",
+        "target_path": "agent/003-agents-installation",
+        "target_skill": "agent/003-agents-installation/SKILL.md",
+        "target_exists": true,
+        "target_category": "agent",
+        "target_status": "active",
+        "classification_name": "003-agents-installation",
+        "confidence": 0.95,
+        "key": "jabrena/cursor-rules-java:skills/003-agents-installation/SKILL.md",
+        "source_metadata_identity": {
+          "name": "003-agents-installation",
+          "repo": "jabrena/cursor-rules-java",
+          "path": "skills/003-agents-installation/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/jabrena/cursor-rules-java/blob/main/skills/003-agents-installation/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "jabrena"
+        },
+        "target_metadata_identity": {
+          "name": "003-agents-installation",
+          "repo": "jabrena/cursor-rules-java",
+          "path": "skills/003-agents-installation/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/jabrena/cursor-rules-java/blob/main/skills/003-agents-installation/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "jabrena"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "bd7a35a2133991ee4b4c2e0227628840a172909b01fcbfbcb159b311a8b94b0d",
+        "target_skill_sha256": "3e3e8c886f7b9caf8a8bec2ad39cdbb5200ef17149d3c0f0b1a6e5784cc45c4d",
+        "skill_content_equal": false
+      },
+      {
+        "source_path": "other/01-dotnet-clean-architecture",
+        "source_skill": "other/01-dotnet-clean-architecture/SKILL.md",
+        "target_path": "development/01-dotnet-clean-architecture",
+        "target_skill": "development/01-dotnet-clean-architecture/SKILL.md",
+        "target_exists": true,
+        "target_category": "development",
+        "target_status": "active",
+        "classification_name": "dotnet-clean-architecture",
+        "confidence": 0.92,
+        "key": "ronnythedev/dotnet-clean-architecture-skills:skills/01-dotnet-clean-architecture/SKILL.md",
+        "source_metadata_identity": {
+          "name": "01-dotnet-clean-architecture",
+          "repo": "ronnythedev/dotnet-clean-architecture-skills",
+          "path": "skills/01-dotnet-clean-architecture/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/ronnythedev/dotnet-clean-architecture-skills/blob/main/skills/01-dotnet-clean-architecture/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "ronnythedev"
+        },
+        "target_metadata_identity": {
+          "name": "01-dotnet-clean-architecture",
+          "repo": "ronnythedev/dotnet-clean-architecture-skills",
+          "path": "skills/01-dotnet-clean-architecture/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/ronnythedev/dotnet-clean-architecture-skills/blob/main/skills/01-dotnet-clean-architecture/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "ronnythedev"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "b7ea87e129c62976a84614aa6408834026705d1f5f1b3e0e30992ede630db50e",
+        "target_skill_sha256": "b7ea87e129c62976a84614aa6408834026705d1f5f1b3e0e30992ede630db50e",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/012-agile-epic",
+        "source_skill": "other/012-agile-epic/SKILL.md",
+        "target_path": "product/012-agile-epic",
+        "target_skill": "product/012-agile-epic/SKILL.md",
+        "target_exists": true,
+        "target_category": "product",
+        "target_status": "active",
+        "classification_name": "012-agile-epic",
+        "confidence": 0.9,
+        "key": "jabrena/cursor-rules-java:skills/012-agile-epic/SKILL.md",
+        "source_metadata_identity": {
+          "name": "012-agile-epic",
+          "repo": "jabrena/cursor-rules-java",
+          "path": "skills/012-agile-epic/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/jabrena/cursor-rules-java/blob/main/skills/012-agile-epic/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "jabrena"
+        },
+        "target_metadata_identity": {
+          "name": "012-agile-epic",
+          "repo": "jabrena/cursor-rules-java",
+          "path": "skills/012-agile-epic/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/jabrena/cursor-rules-java/blob/main/skills/012-agile-epic/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "jabrena"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "13906b39f7e4fc9390d06d2ea2768f7ac2b361cc6a20dfc77be14b88d7dd7c86",
+        "target_skill_sha256": "44f5a0e063109dc046f99a5ff70b526754bbbae4c68aaeb4bf86b15daeb6e0fe",
+        "skill_content_equal": false
+      },
+      {
+        "source_path": "other/013-agile-feature",
+        "source_skill": "other/013-agile-feature/SKILL.md",
+        "target_path": "product/013-agile-feature",
+        "target_skill": "product/013-agile-feature/SKILL.md",
+        "target_exists": true,
+        "target_category": "product",
+        "target_status": "active",
+        "classification_name": "013-agile-feature",
+        "confidence": 0.88,
+        "key": "jabrena/cursor-rules-java:skills/013-agile-feature/SKILL.md",
+        "source_metadata_identity": {
+          "name": "013-agile-feature",
+          "repo": "jabrena/cursor-rules-java",
+          "path": "skills/013-agile-feature/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/jabrena/cursor-rules-java/blob/main/skills/013-agile-feature/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "jabrena"
+        },
+        "target_metadata_identity": {
+          "name": "013-agile-feature",
+          "repo": "jabrena/cursor-rules-java",
+          "path": "skills/013-agile-feature/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/jabrena/cursor-rules-java/blob/main/skills/013-agile-feature/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "jabrena"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "878c51a013d7ccabbcb668bdbda602e86321089504c09214105f2d558e39e30a",
+        "target_skill_sha256": "5181e27760031f03240b2db9b0f894a47d2c681c34b646778179f9b7ee05c67e",
+        "skill_content_equal": false
+      },
+      {
+        "source_path": "other/014-agile-user-story",
+        "source_skill": "other/014-agile-user-story/SKILL.md",
+        "target_path": "product/014-agile-user-story",
+        "target_skill": "product/014-agile-user-story/SKILL.md",
+        "target_exists": true,
+        "target_category": "product",
+        "target_status": "active",
+        "classification_name": "014-agile-user-story",
+        "confidence": 0.88,
+        "key": "jabrena/cursor-rules-java:skills/014-agile-user-story/SKILL.md",
+        "source_metadata_identity": {
+          "name": "014-agile-user-story",
+          "repo": "jabrena/cursor-rules-java",
+          "path": "skills/014-agile-user-story/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/jabrena/cursor-rules-java/blob/main/skills/014-agile-user-story/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "jabrena"
+        },
+        "target_metadata_identity": {
+          "name": "014-agile-user-story",
+          "repo": "jabrena/cursor-rules-java",
+          "path": "skills/014-agile-user-story/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/jabrena/cursor-rules-java/blob/main/skills/014-agile-user-story/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "jabrena"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "b8abe16673ac12020316f776457265cab6ec2e444248f69243f3aeb4924dda7b",
+        "target_skill_sha256": "2e14129a6fda80be441d54299252e84a6d77f8c4e396da8dd1210d28784e3b27",
+        "skill_content_equal": false
+      },
+      {
+        "source_path": "other/02-dotnet-cqrs-command-generator",
+        "source_skill": "other/02-dotnet-cqrs-command-generator/SKILL.md",
+        "target_path": "development/unknown-ronnythedev-dotnet-clean-archite-5",
+        "target_skill": "development/unknown-ronnythedev-dotnet-clean-archite-5/SKILL.md",
+        "target_exists": true,
+        "target_category": "development",
+        "target_status": "active",
+        "classification_name": "dotnet-cqrs-command-generator",
+        "confidence": 0.95,
+        "key": "ronnythedev/dotnet-clean-architecture-skills:skills/02-dotnet-cqrs-command-generator/SKILL.md",
+        "source_metadata_identity": {
+          "name": "02-dotnet-cqrs-command-generator",
+          "repo": "ronnythedev/dotnet-clean-architecture-skills",
+          "path": "skills/02-dotnet-cqrs-command-generator/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/ronnythedev/dotnet-clean-architecture-skills/blob/main/skills/02-dotnet-cqrs-command-generator/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "ronnythedev"
+        },
+        "target_metadata_identity": {
+          "name": "unknown",
+          "repo": "ronnythedev/dotnet-clean-architecture-skills",
+          "path": "skills/02-dotnet-cqrs-command-generator/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/ronnythedev/dotnet-clean-architecture-skills/blob/main/skills/02-dotnet-cqrs-command-generator/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "ronnythedev"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "a422be7c972eed9a732fbe2aa1308e235e542d56a79c229b4eb48fa5396d18a9",
+        "target_skill_sha256": "a422be7c972eed9a732fbe2aa1308e235e542d56a79c229b4eb48fa5396d18a9",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/02-progressive-skill",
+        "source_skill": "other/02-progressive-skill/SKILL.md",
+        "target_path": "api/02-progressive-skill",
+        "target_skill": "api/02-progressive-skill/SKILL.md",
+        "target_exists": true,
+        "target_category": "api",
+        "target_status": "active",
+        "classification_name": "api-documenting",
+        "confidence": 0.95,
+        "key": "huangjia2019/claude-code-engineering:04-Skills/projects/02-progressive-skill/SKILL.md",
+        "source_metadata_identity": {
+          "name": "02-progressive-skill",
+          "repo": "huangjia2019/claude-code-engineering",
+          "path": "04-Skills/projects/02-progressive-skill/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/huangjia2019/claude-code-engineering/blob/main/04-Skills/projects/02-progressive-skill/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "huangjia2019"
+        },
+        "target_metadata_identity": {
+          "name": "02-progressive-skill",
+          "repo": "huangjia2019/claude-code-engineering",
+          "path": "04-Skills/projects/02-progressive-skill/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/huangjia2019/claude-code-engineering/blob/main/04-Skills/projects/02-progressive-skill/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "huangjia2019"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "1452f5de6644e2aa7afe7ce3926cb22327fe2bc6227b622fe02f3f57078d21db",
+        "target_skill_sha256": "1452f5de6644e2aa7afe7ce3926cb22327fe2bc6227b622fe02f3f57078d21db",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/03-dotnet-cqrs-query-generator",
+        "source_skill": "other/03-dotnet-cqrs-query-generator/SKILL.md",
+        "target_path": "development/unknown-ronnythedev-dotnet-clean-archite-25",
+        "target_skill": "development/unknown-ronnythedev-dotnet-clean-archite-25/SKILL.md",
+        "target_exists": true,
+        "target_category": "development",
+        "target_status": "active",
+        "classification_name": "dotnet-cqrs-query-generator",
+        "confidence": 0.95,
+        "key": "ronnythedev/dotnet-clean-architecture-skills:skills/03-dotnet-cqrs-query-generator/SKILL.md",
+        "source_metadata_identity": {
+          "name": "03-dotnet-cqrs-query-generator",
+          "repo": "ronnythedev/dotnet-clean-architecture-skills",
+          "path": "skills/03-dotnet-cqrs-query-generator/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/ronnythedev/dotnet-clean-architecture-skills/blob/main/skills/03-dotnet-cqrs-query-generator/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "ronnythedev"
+        },
+        "target_metadata_identity": {
+          "name": "unknown",
+          "repo": "ronnythedev/dotnet-clean-architecture-skills",
+          "path": "skills/03-dotnet-cqrs-query-generator/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/ronnythedev/dotnet-clean-architecture-skills/blob/main/skills/03-dotnet-cqrs-query-generator/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "ronnythedev"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "cdce1456e2e3814ca36b8d7b905d2d119b22c8bfee4c3c15925a50ac674d4155",
+        "target_skill_sha256": "cdce1456e2e3814ca36b8d7b905d2d119b22c8bfee4c3c15925a50ac674d4155",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/03-financial-skill",
+        "source_skill": "other/03-financial-skill/SKILL.md",
+        "target_path": "analysis/03-financial-skill",
+        "target_skill": "analysis/03-financial-skill/SKILL.md",
+        "target_exists": true,
+        "target_category": "analysis",
+        "target_status": "active",
+        "classification_name": "financial-analyzing",
+        "confidence": 0.9,
+        "key": "huangjia2019/claude-code-engineering:04-Skills/projects/03-financial-skill/SKILL.md",
+        "source_metadata_identity": {
+          "name": "03-financial-skill",
+          "repo": "huangjia2019/claude-code-engineering",
+          "path": "04-Skills/projects/03-financial-skill/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/huangjia2019/claude-code-engineering/blob/main/04-Skills/projects/03-financial-skill/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "huangjia2019"
+        },
+        "target_metadata_identity": {
+          "name": "03-financial-skill",
+          "repo": "huangjia2019/claude-code-engineering",
+          "path": "04-Skills/projects/03-financial-skill/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/huangjia2019/claude-code-engineering/blob/main/04-Skills/projects/03-financial-skill/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "huangjia2019"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "df84a5f19256138894ece3a6013de5c09fa5cd132fb597bbf7e6d8769dd1e7b1",
+        "target_skill_sha256": "df84a5f19256138894ece3a6013de5c09fa5cd132fb597bbf7e6d8769dd1e7b1",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/030-architecture-adr-general",
+        "source_skill": "other/030-architecture-adr-general/SKILL.md",
+        "target_path": "documents/030-architecture-adr-general",
+        "target_skill": "documents/030-architecture-adr-general/SKILL.md",
+        "target_exists": true,
+        "target_category": "documents",
+        "target_status": "active",
+        "classification_name": "030-architecture-adr-general",
+        "confidence": 0.9,
+        "key": "jabrena/cursor-rules-java:skills/030-architecture-adr-general/SKILL.md",
+        "source_metadata_identity": {
+          "name": "030-architecture-adr-general",
+          "repo": "jabrena/cursor-rules-java",
+          "path": "skills/030-architecture-adr-general/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/jabrena/cursor-rules-java/blob/main/skills/030-architecture-adr-general/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "jabrena"
+        },
+        "target_metadata_identity": {
+          "name": "030-architecture-adr-general",
+          "repo": "jabrena/cursor-rules-java",
+          "path": "skills/030-architecture-adr-general/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/jabrena/cursor-rules-java/blob/main/skills/030-architecture-adr-general/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "jabrena"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "4860cb14bd9b32021c502da72ae78a457d515b708641620e65fb701788d62e69",
+        "target_skill_sha256": "37ac0975d1561c6f21d117ac1ae3f674ee728329b8cef6431d7311306e71fcb6",
+        "skill_content_equal": false
+      },
+      {
+        "source_path": "other/031-architecture-adr-functional-requirements",
+        "source_skill": "other/031-architecture-adr-functional-requirements/SKILL.md",
+        "target_path": "documents/031-architecture-adr-functional-requirements",
+        "target_skill": "documents/031-architecture-adr-functional-requirements/SKILL.md",
+        "target_exists": true,
+        "target_category": "documents",
+        "target_status": "active",
+        "classification_name": "031-architecture-adr-functional-requirements",
+        "confidence": 0.85,
+        "key": "jabrena/cursor-rules-java:skills/031-architecture-adr-functional-requirements/SKILL.md",
+        "source_metadata_identity": {
+          "name": "031-architecture-adr-functional-requirements",
+          "repo": "jabrena/cursor-rules-java",
+          "path": "skills/031-architecture-adr-functional-requirements/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/jabrena/cursor-rules-java/blob/main/skills/031-architecture-adr-functional-requirements/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "jabrena"
+        },
+        "target_metadata_identity": {
+          "name": "031-architecture-adr-functional-requirements",
+          "repo": "jabrena/cursor-rules-java",
+          "path": "skills/031-architecture-adr-functional-requirements/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/jabrena/cursor-rules-java/blob/main/skills/031-architecture-adr-functional-requirements/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "jabrena"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "7682e01d32a82ccffb9ca4c6a261e9bdb76bd65617c6bcf89683e5de72402045",
+        "target_skill_sha256": "a08702a5d049e172bc89ef0ff62d707e770312efd5b32d29e60924a147a992c0",
+        "skill_content_equal": false
+      },
+      {
+        "source_path": "other/032-architecture-adr-non-functional-requirements",
+        "source_skill": "other/032-architecture-adr-non-functional-requirements/SKILL.md",
+        "target_path": "documents/032-architecture-adr-non-functional-requirements",
+        "target_skill": "documents/032-architecture-adr-non-functional-requirements/SKILL.md",
+        "target_exists": true,
+        "target_category": "documents",
+        "target_status": "active",
+        "classification_name": "032-architecture-adr-non-functional-requirements",
+        "confidence": 0.85,
+        "key": "jabrena/cursor-rules-java:skills/032-architecture-adr-non-functional-requirements/SKILL.md",
+        "source_metadata_identity": {
+          "name": "032-architecture-adr-non-functional-requirements",
+          "repo": "jabrena/cursor-rules-java",
+          "path": "skills/032-architecture-adr-non-functional-requirements/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/jabrena/cursor-rules-java/blob/main/skills/032-architecture-adr-non-functional-requirements/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "jabrena"
+        },
+        "target_metadata_identity": {
+          "name": "032-architecture-adr-non-functional-requirements",
+          "repo": "jabrena/cursor-rules-java",
+          "path": "skills/032-architecture-adr-non-functional-requirements/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/jabrena/cursor-rules-java/blob/main/skills/032-architecture-adr-non-functional-requirements/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "jabrena"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "9386d120634cd6bbe11c09e3e91d8ca2514762b791f28983e4b0d7e6949d59aa",
+        "target_skill_sha256": "36606c5c04f469e5a886501ca7b93b2bb9e0f78a3b6532b18ae2a92d4718d030",
+        "skill_content_equal": false
+      },
+      {
+        "source_path": "other/04-dotnet-domain-entity-generator",
+        "source_skill": "other/04-dotnet-domain-entity-generator/SKILL.md",
+        "target_path": "development/unknown-ronnythedev-dotnet-clean-archite-24",
+        "target_skill": "development/unknown-ronnythedev-dotnet-clean-archite-24/SKILL.md",
+        "target_exists": true,
+        "target_category": "development",
+        "target_status": "active",
+        "classification_name": "dotnet-domain-entity-generator",
+        "confidence": 0.9,
+        "key": "ronnythedev/dotnet-clean-architecture-skills:skills/04-dotnet-domain-entity-generator/SKILL.md",
+        "source_metadata_identity": {
+          "name": "04-dotnet-domain-entity-generator",
+          "repo": "ronnythedev/dotnet-clean-architecture-skills",
+          "path": "skills/04-dotnet-domain-entity-generator/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/ronnythedev/dotnet-clean-architecture-skills/blob/main/skills/04-dotnet-domain-entity-generator/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "ronnythedev"
+        },
+        "target_metadata_identity": {
+          "name": "unknown",
+          "repo": "ronnythedev/dotnet-clean-architecture-skills",
+          "path": "skills/04-dotnet-domain-entity-generator/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/ronnythedev/dotnet-clean-architecture-skills/blob/main/skills/04-dotnet-domain-entity-generator/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "ronnythedev"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "cb20d2fdf46b3ac7788a67b644e6d4130ff0c3718c8e439768f0a92e658de1f2",
+        "target_skill_sha256": "cb20d2fdf46b3ac7788a67b644e6d4130ff0c3718c8e439768f0a92e658de1f2",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/041-planning-plan-mode",
+        "source_skill": "other/041-planning-plan-mode/SKILL.md",
+        "target_path": "planning/041-planning-plan-mode",
+        "target_skill": "planning/041-planning-plan-mode/SKILL.md",
+        "target_exists": true,
+        "target_category": "planning",
+        "target_status": "active",
+        "classification_name": "041-planning-plan-mode",
+        "confidence": 0.95,
+        "key": "jabrena/cursor-rules-java:skills/041-planning-plan-mode/SKILL.md",
+        "source_metadata_identity": {
+          "name": "041-planning-plan-mode",
+          "repo": "jabrena/cursor-rules-java",
+          "path": "skills/041-planning-plan-mode/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/jabrena/cursor-rules-java/blob/main/skills/041-planning-plan-mode/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "jabrena"
+        },
+        "target_metadata_identity": {
+          "name": "041-planning-plan-mode",
+          "repo": "jabrena/cursor-rules-java",
+          "path": "skills/041-planning-plan-mode/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/jabrena/cursor-rules-java/blob/main/skills/041-planning-plan-mode/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "jabrena"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "da46bddf090908bbea4173637ef9606d92d1e56c33c1e7a75f92e9b4bf688f3f",
+        "target_skill_sha256": "97b02c9ced81d9714ab01f4ef18cfb0aa9014b7081690493872e468c348e0944",
+        "skill_content_equal": false
+      },
+      {
+        "source_path": "other/042-planning-openspec",
+        "source_skill": "other/042-planning-openspec/SKILL.md",
+        "target_path": "planning/042-planning-openspec",
+        "target_skill": "planning/042-planning-openspec/SKILL.md",
+        "target_exists": true,
+        "target_category": "planning",
+        "target_status": "active",
+        "classification_name": "042-planning-openspec",
+        "confidence": 0.92,
+        "key": "jabrena/cursor-rules-java:skills/042-planning-openspec/SKILL.md",
+        "source_metadata_identity": {
+          "name": "042-planning-openspec",
+          "repo": "jabrena/cursor-rules-java",
+          "path": "skills/042-planning-openspec/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/jabrena/cursor-rules-java/blob/main/skills/042-planning-openspec/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "jabrena"
+        },
+        "target_metadata_identity": {
+          "name": "042-planning-openspec",
+          "repo": "jabrena/cursor-rules-java",
+          "path": "skills/042-planning-openspec/SKILL.md",
+          "github_branch": "main",
+          "source_url": "https://github.com/jabrena/cursor-rules-java/blob/main/skills/042-planning-openspec/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "jabrena"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "192b5b9ae3e52ad5959df414b3abfa4c7206db904ba79e1c352bd7cac1317cdc",
+        "target_skill_sha256": "827e3624ca04a625d02ad104477d5b858c74d216303939134ac6a74c06bbc9d3",
+        "skill_content_equal": false
+      }
+    ]
+  },
+  "notes": [
+    "This report is read-only and never moves, deletes, or rewrites skills.",
+    "same_policy_plan_summary is generated by apply_category_migration.py with the same flags.",
+    "primary_reason_counts are mutually exclusive and explain the current archive state first.",
+    "all_blocker_reason_counts can exceed scoped_existing_source_count because one row may have multiple blockers.",
+    "source directory missing usually means the classification row points at a pre-migration path that has already moved.",
+    "scoped_archive_classification_gap is scoped_archive_skill_count minus scoped_existing_source_count; positive values indicate archive skills not covered by the classification file or duplicate classification coverage.",
+    "stable_key_conflicts detail is bounded by --conflict-detail-limit and includes content hashes so duplicate removal is not inferred from the stable key alone."
+  ]
+}

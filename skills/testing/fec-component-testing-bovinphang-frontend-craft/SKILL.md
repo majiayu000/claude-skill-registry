@@ -21,6 +21,8 @@ description: Use when authoring or reviewing frontend unit, component, or light 
 
 ### 2. 优先按用户可感知行为测试
 
+每个测试保持 Arrange / Act / Assert 清晰分段：准备数据和渲染、执行用户动作、断言用户可见结果或公开契约。
+
 ```tsx
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -69,6 +71,9 @@ vi.mock("../api/users", () => ({
 - mock 网络、时间、路由和浏览器 API。
 - 不 mock 被测组件的内部函数。
 - 对设计系统基础组件只做轻量 mock，保留可访问行为。
+- mock 数据应表达业务场景，不使用只有测试作者能理解的随意字符串。
+- 共享 fixture 应保持可读，复杂对象用 builder 补默认值；每个测试只覆盖与场景相关的字段。
+- mock 网络时优先模拟用户可见结果和错误形状，不复制后端实现细节。
 
 ### 5. 覆盖关键状态
 
@@ -93,6 +98,12 @@ function setup() {
 
 将重复渲染逻辑放入 `setup`，但不要隐藏测试的核心操作和断言。
 
+### 7. 回归测试先证明问题
+
+- Bug 修复先写能复现失败的最小测试。
+- 失败原因应指向用户行为或公开契约，而不是导入错误、测试环境或等待方式。
+- 修复后保留回归测试，避免把验证只留在手工步骤里。
+
 ## Constraints
 
 - 避免测试实现细节，例如内部 state 名称、私有函数调用、DOM 层级快照。
@@ -100,6 +111,8 @@ function setup() {
 - 异步断言使用 `findBy*` 或 `waitFor`，不要用固定延迟。
 - 测试名称应描述用户场景，而不是函数名。
 - 组件测试不能替代 E2E；路由、真实浏览器兼容和跨页流程仍需 E2E。
+- 不在测试里复制组件实现逻辑；否则测试会和错误实现一起通过。
+- 不在测试间共享可变 fixture、全局 store 或 fake timer 状态；每个用例独立 setup 和 cleanup。
 
 ## Expected Output
 

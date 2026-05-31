@@ -4,7 +4,7 @@ description: Use when you need to apply Java concurrency best practices — incl
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.15.0-SNAPSHOT
+  version: 0.15.0
 ---
 # Java rules for Concurrency objects
 

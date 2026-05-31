@@ -19,7 +19,8 @@ description: Use when synchronizing frontend project documentation with source-o
 2. 比对文档中的数量、名称、命令、报告文件名和运行时支持矩阵。
 3. 更新所有受影响语言版本；若仓库有多语言 README，保持信息一致。
 4. 对生成型报告或示例，只更新稳定约定，不把临时报告内容写入公开文档。
-5. 运行文档/元数据一致性测试或相关打包检查。
+5. 若变更来自依赖升级、架构决策或公共能力调整，同步轻量 ADR、变更说明、示例 prompt 和迁移注意事项。
+6. 运行文档/元数据一致性测试或相关打包检查。
 
 ## Constraints
 
@@ -27,6 +28,7 @@ description: Use when synchronizing frontend project documentation with source-o
 - 不引入与事实来源不一致的命令、路径或能力名称。
 - 不修改用户项目私有文档，除非用户明确指定。
 - 多语言文档若无法完整翻译，至少保持数量、命令名、skill id、agent id 和报告格式一致。
+- 不把 ADR 当作长篇复盘；只记录背景、决策、取舍、影响范围、验证和回滚线索。
 
 ## Expected Output
 

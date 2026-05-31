@@ -1,11 +1,6 @@
 ---
 name: error-patterns
-description: 'Standardized error handling patterns with classification, recovery,
-  and logging strategies.
-
-
-  error handling, error recovery, graceful degradation, resilience.'
-version: 1.9.3
+description: Provides error classification, recovery, and graceful-degradation patterns. Use when implementing error handling or debugging resilience failures in any skill.
 alwaysApply: false
 category: infrastructure
 tags:

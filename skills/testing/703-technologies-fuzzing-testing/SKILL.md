@@ -4,7 +4,7 @@ description: Use when you need to add or review fuzz testing for Java APIs with 
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.15.0-SNAPSHOT
+  version: 0.15.0
 ---
 # Java fuzz testing with CATS
 

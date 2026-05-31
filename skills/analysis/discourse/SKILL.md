@@ -1,7 +1,7 @@
 ---
 name: discourse
 role: library
-description: 'Scan HN, Lobsters, Reddit, and tech blogs for experience reports.'
+description: Scans HN, Lobsters, Reddit, and tech blogs for community experience reports. Use when gathering practitioner opinions on a technology or approach.
 alwaysApply: false
 category: research
 tags:

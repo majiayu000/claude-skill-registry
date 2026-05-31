@@ -189,6 +189,16 @@ key phrases, tables for comparisons. One idea per paragraph.
 100 words, 1-2 H2s naturally, meta description. After that: synonyms and natural
 language. No stuffing.
 
+**Compliance-sensitive topics require official sources.** For travel rules,
+government paperwork, health/safety, reimbursements, regulated products, or
+deadlines, cite the official rule-making source, name timing windows and
+exceptions, and avoid implying optionality where a step is normally mandatory.
+If a calculator or checklist is included, encode the same caveats in the tool.
+
+**Validate media assets.** Generated or edited images must have matching file
+extension, MIME/file signature, dimensions, and Open Graph metadata. Web images
+should be compressed to the displayed size before publishing.
+
 ### Deliverables for blog posts:
 1. Full post in markdown with heading hierarchy (H1 → H2 → H3), opening with a
    hook paragraph (not throat-clearing) and a table of contents that mirrors the
@@ -272,6 +282,9 @@ written.
 - [ ] All inline images uploaded, alt text set, lazy-loaded below the fold
 - [ ] Table of contents renders with working anchor links
 - [ ] Internal links placed (both directions)
+- [ ] Open Graph image added
+- [ ] Open Graph image file format, dimensions, and byte size verified
+- [ ] Official sources cited for compliance-sensitive claims
 - [ ] Canonical URL set to self
 - [ ] Mobile rendering verified
 ```

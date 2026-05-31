@@ -4,6 +4,14 @@ description: Windows exploit mitigation bypass — ASLR, DEP/NX, CFG/XFG, CET/Sh
 metadata:
   type: offensive
   phase: exploitation
+kill_chain:
+  phase: [exploit]
+  step: [4]
+  attck_tactics: [TA0002, TA0005]
+depends_on: [exploit-development, reverse-engineering]
+feeds_into: [shellcode-dev, edr-evasion]
+inputs: [mitigation_config, binary_analysis]
+outputs: [bypass_technique, finding_record]
   ---
 
 # Windows Mitigations & Bypass
@@ -238,3 +246,263 @@ void PatchETW() {
 | CFG ON | ROP/JOP with valid targets only |
 | ACG ON | No shellcode injection — ROP only |
 | CET ON | No ROP — JOP or find CET-disabled process |
+
+## Advanced: CET/Shadow Stack Deep Dive
+
+### How CET Works
+```
+// Intel CET (Control-flow Enforcement Technology):
+// 1. Shadow Stack: hardware-maintained copy of return addresses
+//    - CALL pushes return addr to both regular stack AND shadow stack
+//    - RET compares: if mismatch → #CP (Control Protection) exception
+//    - Shadow stack is in separate memory, not writable by normal instructions
+//
+// 2. Indirect Branch Tracking (IBT):
+//    - Every indirect JMP/CALL target must begin with ENDBR64 instruction
+//    - If target doesn't start with ENDBR64 → #CP exception
+//    - Marks valid indirect call targets at compile time
+```
+
+### CET Bypass Techniques
+```c
+// 1. Target processes without CET (many legacy apps)
+// Check: GetProcessMitigationPolicy(ProcessUserShadowStackPolicy)
+// Many apps compiled without /CETCOMPAT flag
+
+// 2. JOP (Jump-Oriented Programming) — no RET needed
+// Chain: JMP gadgets ending in JMP [reg]
+// Dispatcher gadget: updates register, JMPs to next gadget
+// Functional gadgets: perform operations, JMP to dispatcher
+//
+// JOP chain structure:
+// dispatcher: mov rax, [rbx]; add rbx, 8; jmp rax
+// gadget1: pop rdi; jmp [dispatch_table]
+// gadget2: mov rsi, rcx; jmp [dispatch_table]
+
+// 3. Signal/Exception handler abuse
+// Legitimate exception unwinding modifies shadow stack
+// Trigger exception → handler gets clean shadow stack entry
+// Use handler to redirect execution
+
+// 4. WRSS instruction (Write Shadow Stack)
+// If attacker has kernel access, can write shadow stack directly
+// WRSS is ring-0 only on most implementations
+// Some configurations allow ring-3 WRSS via XSAVE area
+
+// 5. Shadow stack token corruption
+// Shadow stack stores "tokens" at switch points
+// If you can corrupt a saved token → hijack restore
+```
+
+## Advanced: VBS (Virtualization-Based Security) Attacks
+
+### VBS Architecture
+```
+// VBS creates two "Virtual Trust Levels" using Hyper-V:
+// VTL0 (Normal World): regular OS, applications, kernel
+// VTL1 (Secure World): Secure Kernel, LSASS (Credential Guard), HVCI
+//
+// VTL1 enforces:
+// - Code Integrity (HVCI): only signed code runs in kernel
+// - Credential Guard: isolates secrets from VTL0
+// - KDP: protects kernel data structures
+//
+// Even with kernel access in VTL0, cannot read/write VTL1 memory
+```
+
+### VBS Bypass Approaches
+```c
+// 1. Disable VBS via boot configuration (requires local admin + reboot)
+// bcdedit /set hypervisorlaunchtype off
+// reg add "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v EnableVirtualizationBasedSecurity /t REG_DWORD /d 0
+// Requires physical access or remote reboot capability
+
+// 2. HVCI bypass via vulnerable signed driver
+// HVCI blocks unsigned kernel code — but signed drivers still load
+// Find driver with arbitrary R/W primitive (BYOVD)
+// Use driver to modify kernel structures without executing unsigned code
+
+// 3. Hypervisor vulnerabilities (rare, high impact)
+// CVE-2021-28476 (Hyper-V vmswitch RCE)
+// CVE-2022-21907 (HTTP.sys → Hyper-V escape)
+// Guest-to-host escape → full system compromise
+
+// 4. Side-channel attacks on VTL1
+// Spectre-class attacks may leak VTL1 secrets to VTL0
+// Requires specific microarchitectural conditions
+// Heavily mitigated by microcode updates
+```
+
+## Advanced: Kernel Exploitation (Windows 11 24H2+)
+
+### Modern Kernel Mitigations
+```
+// kCFG (Kernel Control Flow Guard): validates kernel indirect calls
+// kASLR: kernel base randomization (14+ bits entropy)
+// SMEP: prevents kernel from executing user-mode pages
+// SMAP: prevents kernel from accessing user-mode memory
+// KDP: Kernel Data Protection via VTL1
+// Kernel CET: shadow stacks for kernel mode
+// VBS-based KCFI: kernel code flow integrity via hypervisor
+```
+
+### Kernel Pool Exploitation (Modern)
+```c
+// Post-segment heap (Windows 10 19H1+):
+// Pool allocations use segment heap — different from legacy pool
+// LFH (Low Fragmentation Heap) for small allocations
+// VS (Variable Size) segments for larger allocations
+
+// Exploitation strategy:
+// 1. Spray pool with controlled objects
+// 2. Create holes by freeing specific objects
+// 3. Trigger vulnerability to corrupt adjacent object
+// 4. Use corrupted object for read/write primitive
+
+// Useful objects for pool spray:
+// _WNF_STATE_DATA (controllable size, read/write via WNF APIs)
+// _PIPE_ATTRIBUTE (via NtFsControlFile on named pipes)
+// _TOKEN (via NtDuplicateToken, rich attack surface)
+
+// Pool overflow → arbitrary write primitive:
+// Corrupt _WNF_STATE_DATA.AllocatedSize → OOB read
+// Corrupt _WNF_STATE_DATA.DataSize → OOB write
+// Build R/W primitive → overwrite EPROCESS.Token → SYSTEM
+```
+
+### BYOVD (Bring Your Own Vulnerable Driver)
+```c
+// Load signed vulnerable driver → use its R/W primitives
+// Bypasses HVCI because driver is legitimately signed
+
+// Attack flow:
+// 1. Drop signed vulnerable driver to disk
+// 2. Load via sc create / NtLoadDriver
+// 3. Use IOCTL for arbitrary kernel R/W
+// 4. Overwrite process token → SYSTEM
+// 5. Or: remove kernel callbacks → blind EDR
+
+// Example: RTCore64.sys (MSI Afterburner)
+// IOCTL 0x80002048 — read physical memory
+// IOCTL 0x8000204C — write physical memory
+
+// Detection evasion for BYOVD:
+// - Use uncommon/new vulnerable drivers not yet in blocklists
+// - WDAC driver blocklist: check if driver is blocked
+// - Microsoft maintains revocation list — but enforcement varies
+```
+
+## Advanced: ACG Deep Bypass
+
+### ACG Enforcement Details
+```c
+// ACG (Arbitrary Code Guard) prevents:
+// - VirtualAlloc with PAGE_EXECUTE_*
+// - VirtualProtect changing pages to executable
+// - MapViewOfFile with execute permissions
+// - WriteProcessMemory to executable pages
+
+// What ACG ALLOWS:
+// - Loading signed DLLs (they get execute permission)
+// - JIT processes with special exemption (Edge, Firefox)
+// - Existing executable code (ROP/JOP over signed code)
+
+// Bypass 1: Cross-process injection from non-ACG process
+// Find process without ACG → inject there → attack ACG process from it
+
+// Bypass 2: JIT process exemption
+// Some JIT processes have ACG disabled or exempted
+// v8 (Chrome), SpiderMonkey (Firefox), .NET JIT
+// Inject into JIT process → use JIT to generate executable code
+
+// Bypass 3: Shared memory section
+// Create section with SEC_IMAGE flag (pretend it's a DLL)
+// Map as executable in ACG process
+// Requires the section to pass code integrity checks
+```
+
+## Advanced: WDAC Deep Bypass
+
+### WDAC Policy Analysis
+```powershell
+# Dump active WDAC policy
+Get-CIPolicy -FilePath C:\Windows\System32\CodeIntegrity\SIPolicy.p7b
+
+# Find allowed signers
+# Check for wildcards, overly broad publisher rules
+# Look for: AllowedSigners with Filename rules (can be bypassed)
+
+# Common WDAC bypass paths:
+# 1. Signed Microsoft binaries that execute arbitrary code (LOLBins):
+#    - MSBuild.exe (compiles and runs C# inline)
+#    - cmstp.exe (COM scriptlet execution)
+#    - mshta.exe (HTML application execution)
+#    - dnscmd.exe (DLL loading via ServerLevelPluginDll)
+#    - bginfo.exe (executes VBScript from .bgi files)
+
+# 2. Managed code execution via trusted .NET assemblies:
+#    - Find allowed .NET app → inject into its AppDomain
+#    - Use Assembly.Load to dynamically load from memory
+
+# 3. Script engine bypass:
+#    - wscript/cscript if not blocked → execute JScript/VBScript
+#    - PowerShell Constrained Language Mode bypass via runspace
+```
+
+### DLL Sideloading with WDAC
+```c
+// Find allowed applications that load DLLs from writable locations
+// Process Monitor filter: Result = NAME NOT FOUND, Path contains .dll
+// If allowed app searches for DLL in user-writable path:
+// Place malicious DLL there → allowed app loads it → code execution
+
+// Known sideload targets:
+// Teams (many DLL search order issues)
+// Visual Studio (plugin loading)
+// Various Microsoft Office components
+// Any allowed app with DLL hijack vulnerability
+```
+
+## Advanced: Mitigation Interaction Chains
+
+### CFG + DEP Bypass Chain
+```
+// Scenario: CFG ON, DEP ON, ASLR ON
+
+// Step 1: Info leak → defeat ASLR
+// Use type confusion or UAF to read pointer → calculate module base
+
+// Step 2: Find CFG-valid dispatch gadget
+// CFG bitmap marks valid indirect call targets
+// Find: a valid target that allows arbitrary control flow
+// Examples: longjmp, coroutine resume, virtual destructor, __guard_dispatch_icall_fptr
+
+// Step 3: Use dispatch gadget to call VirtualProtect (DEP bypass)
+// CFG allows the call (valid target)
+// VirtualProtect makes shellcode region executable
+
+// Step 4: Execute shellcode
+// ROP is unnecessary — direct shellcode execution after VirtualProtect
+```
+
+### ACG + CIG Bypass Chain
+```
+// Scenario: ACG ON (no dynamic code), CIG ON (only signed images)
+
+// Step 1: Data-only attack (no code execution needed)
+// Corrupt application data structures to achieve goal
+// Example: modify authentication state variable in memory
+
+// Step 2: If code execution needed → signed code reuse
+// Build JOP/ROP chain using only signed module gadgets
+// No new executable code generated — only existing signed code reused
+
+// Step 3: Cross-process fallback
+// Find process without ACG/CIG (legacy app, helper process)
+// Inject into that process instead
+// Attack target from the un-mitigated process
+
+// Step 4: DLL sideloading (if CIG allows specific publishers)
+// Sign a DLL with an allowed certificate
+// Or find validly-signed DLL with exploitable functionality
+```

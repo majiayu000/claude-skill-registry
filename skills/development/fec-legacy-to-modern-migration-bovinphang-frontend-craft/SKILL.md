@@ -168,7 +168,7 @@ description: Use when planning or implementing an intentional migration from Jav
 
 ## Detailed References
 
-Load [references/migration-report-template.md](references/migration-report-template.md) when writing a migration analysis or migration plan report.
+撰写迁移分析或迁移计划报告时，加载 [references/migration-report-template.md](references/migration-report-template.md)。
 
 ## Expected Output
 

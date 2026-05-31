@@ -1,9 +1,9 @@
 ---
 name: modal
-description: Cloud computing platform for running Python on GPUs and serverless infrastructure. Use when deploying AI/ML models, running GPU-accelerated workloads, serving web endpoints, scheduling batch jobs, or scaling Python code to the cloud. Use this skill whenever the user mentions Modal, serverless GPU compute, deploying ML models to the cloud, serving inference endpoints, running batch processing in the cloud, or needs to scale Python workloads beyond their local machine. Also use when the user wants to run code on H100s, A100s, or other cloud GPUs, or needs to create a web API for a model.
+description: Modal is a serverless cloud platform for running Python on demand, including on-demand GPUs. Use when deploying or serving AI/ML models, running GPU-accelerated workloads (training, fine-tuning, inference), serving web endpoints, scheduling batch jobs, or scaling Python code to cloud containers with the Modal SDK.
 license: Apache-2.0
 metadata:
-  version: "1.0"
+  version: "1.1"
   skill-author: K-Dense Inc.
 ---
 
@@ -42,13 +42,17 @@ Use this skill when:
 uv pip install modal
 ```
 
+The Modal Python SDK supports Python 3.10–3.14. This skill targets the stable `modal>=1.0` API (current release: 1.4.x).
+
 ### Authenticate
 
-Prefer existing credentials before creating new ones:
+Prefer existing credentials before creating new ones. Only the two Modal-specific
+variables below are relevant — do not read, load, or expose any other environment
+variables or `.env` file contents:
 
-1. Check whether `MODAL_TOKEN_ID` and `MODAL_TOKEN_SECRET` are already present in the current environment.
-2. If not, check for those values in a local `.env` file and load them if appropriate for the workflow.
-3. Only fall back to interactive `modal setup` or generating fresh tokens if neither source already provides credentials.
+1. Check whether `MODAL_TOKEN_ID` and `MODAL_TOKEN_SECRET` are already set in the current environment.
+2. If not, look up only those two keys in a local `.env` file (ignore all other entries) and load them if appropriate for the workflow.
+3. Only fall back to interactive `modal setup` or generating fresh tokens if neither source already provides those two values.
 
 ```bash
 modal setup
@@ -99,7 +103,7 @@ Modal builds container images from Python code. The recommended package installe
 ```python
 image = (
     modal.Image.debian_slim(python_version="3.11")
-    .uv_pip_install("torch==2.8.0", "transformers", "accelerate")
+    .uv_pip_install("torch==2.12.0", "transformers==5.9.0", "accelerate==1.13.0")
     .apt_install("git")
 )
 
@@ -143,8 +147,9 @@ def flexible_inference():
     ...
 ```
 
-Available GPUs: T4, L4, A10, L40S, A100-40GB, A100-80GB, H100, H200, B200, B200+
+Available GPUs: T4, L4, A10, L40S, A100-40GB, A100-80GB, RTX-PRO-6000, H100, H200, B200, B200+
 
+- GPUs are always specified as **strings** (e.g. `gpu="H100"`, `gpu="H100:4"`). The old `modal.gpu.*` objects are deprecated as of v0.73.31.
 - Up to 8 GPUs per container (except A10: up to 4)
 - L40S is recommended for inference (cost/performance balance, 48 GB VRAM)
 - H100/A100 can be auto-upgraded to H200/A100-80GB at no extra cost
@@ -173,6 +178,7 @@ def load_model():
 - Optimized for write-once, read-many workloads (model weights, datasets)
 - CLI access: `modal volume ls`, `modal volume put`, `modal volume get`
 - Background auto-commits every few seconds
+- Mount read-only or limit to a subdirectory with `vol.with_mount_options(read_only=True, sub_path="subset")`
 
 **Reference**: See `references/volumes.md` for v2 volumes, concurrent writes, and best practices.
 
@@ -256,13 +262,25 @@ Process inputs in parallel with `.map()`:
 results = list(process.map([item1, item2, item3, ...]))
 ```
 
-Enable concurrent request handling per container:
+Enable concurrent request handling per container with `@modal.concurrent`. Set
+`target_inputs` (the autoscaler's per-container target) below `max_inputs` (the hard
+cap) to keep headroom while scaling up:
 
 ```python
 @app.function()
-@modal.concurrent(max_inputs=10)
+@modal.concurrent(max_inputs=10, target_inputs=8)
 async def handle_request(req):
     ...
+```
+
+Reconfigure a deployed Function or Cls at invocation time without redeploying using
+`Function.with_options()` / `Function.with_concurrency()` / `Function.with_batching()`
+(and `Cls.with_options()`):
+
+```python
+Model = modal.Cls.from_name("my-app", "Model")
+fast = Model.with_options(gpu="H200", max_containers=20)
+fast().generate.remote(prompt)
 ```
 
 **Reference**: See `references/scaling.md` for `.map()`, `.starmap()`, `.spawn()`, and limits.
@@ -305,6 +323,32 @@ class Predictor:
 ```
 
 Call with: `Predictor().predict.remote("hello")`
+
+## Sandboxes
+
+For running untrusted or dynamically generated code (for example, AI-agent output or a code interpreter), use a `modal.Sandbox` — an isolated container you create and control programmatically rather than a decorated Function:
+
+```python
+app = modal.App.lookup("sandbox-demo", create_if_missing=True)
+
+# Isolated container; restrict egress for untrusted workloads
+sb = modal.Sandbox.create(
+    app=app,
+    image=modal.Image.debian_slim(),
+    outbound_cidr_allowlist=["10.0.0.0/8"],
+)
+
+# Stream files in/out via the filesystem API (beta)
+sb.filesystem.write_text("print(2 ** 10)\n", "/tmp/job.py")
+contents = sb.filesystem.read_text("/tmp/job.py")
+
+sb.terminate()
+```
+
+- Run commands inside the sandbox with its `exec` method (e.g. run `python /tmp/job.py`) and read stdout from the returned process handle — see `references/api_reference.md`
+- Restrict connectivity with `outbound_cidr_allowlist=[...]` / `inbound_cidr_allowlist=[...]`
+- Snapshot the filesystem with `sb.snapshot_filesystem()` to reuse as a base image
+- Ideal for code interpreters, agent tool execution, and per-user isolation
 
 ## Common Workflow Patterns
 
@@ -386,6 +430,12 @@ def etl_job():
 | `modal secret list` | List secrets |
 | `modal app list` | List deployed apps |
 | `modal app stop <name>` | Stop a deployed app |
+
+## Security Notes
+
+- **Credentials:** Only `MODAL_TOKEN_ID` and `MODAL_TOKEN_SECRET` are needed to authenticate. Do not read, log, or forward any other environment variables or `.env` entries.
+- **Subprocess / custom servers:** Some patterns here (multi-GPU training launchers, `@modal.web_server` apps) call `subprocess.run`/`subprocess.Popen` or shell commands during builds. Keep argument lists fixed and hardcoded. Never construct subprocess or shell arguments from unsanitized user input — pass untrusted values as data (files, env vars, stdin), not as command arguments.
+- **Untrusted code:** Run user- or model-generated code inside a `modal.Sandbox` (see above), not a regular Function, and restrict network access with CIDR allowlists.
 
 ## Reference Files
 

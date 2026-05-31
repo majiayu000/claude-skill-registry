@@ -42,7 +42,7 @@ role: entrypoint
 > don't surface inconsistencies, don't present
 > tradeoffs, don't push back when they should.
 >
-> -- Andrej Karpathy, on agentic coding failure modes
+> — Andrej Karpathy, on agentic coding failure modes
 
 ## What This Is
 
@@ -101,7 +101,7 @@ speculative.**
 > They really like to overcomplicate code and APIs,
 > bloat abstractions.
 >
-> -- Andrej Karpathy, on the same agentic-coding thread
+> — Andrej Karpathy, on the same agentic-coding thread
 
 
 

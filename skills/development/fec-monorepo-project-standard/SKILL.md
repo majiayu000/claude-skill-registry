@@ -16,8 +16,9 @@ description: Use when creating, reviewing, or restructuring frontend monorepos w
 1. 先确认仓库是否已使用 pnpm workspace、Turborepo 或 Nx，并沿用现有包命名与任务约定。
 2. 将应用放在 `apps/`，共享库、配置和工具放在 `packages/` 或既有等价目录。
 3. 内部依赖使用 `workspace:*`，通过依赖图驱动构建顺序。
-4. 为 build、lint、test 配置可缓存、可并行的根任务。
-5. 发布包前检查包边界、循环依赖、exports、peer dependencies 和版本策略。
+4. 为 build、lint、test 配置可缓存、可并行、可增量的根任务，并明确输入、输出和环境变量。
+5. 在 Turborepo/Nx 中配置 affected/changed 范围命令，CI 优先跑受影响包，同时保留主干全量验证入口。
+6. 发布包前检查包边界、循环依赖、exports、peer dependencies 和版本策略。
 
 ## 工具选择
 
@@ -100,6 +101,8 @@ packages:
 
 - `^build` 表示先执行依赖包的 build
 - `outputs` 用于缓存命中判断
+- `inputs` 应包含源码、配置、锁文件和环境相关文件；不要把 `.env` secret 值写入缓存 key
+- 远程缓存要区分可信 CI 与本地开发，避免把含敏感信息的产物上传
 
 ## Nx 任务编排
 
@@ -127,6 +130,8 @@ packages:
 - 构建顺序由依赖图决定，不手动指定无关依赖
 - 根目录执行 `pnpm -r build` 或 `turbo run build` 时，所有包按序构建
 - 禁止循环依赖，新增包时通过 `pnpm why` 检查依赖链
+- CI cache 只缓存依赖安装目录和任务产物，不缓存未验证的构建状态
+- affected 构建不能替代发布前全量验证；主干或 release 分支仍需完整质量门禁
 
 ## Expected Output
 
@@ -134,3 +139,4 @@ packages:
 - `pnpm-workspace.yaml` 和 `turbo.json` / `nx.json` 配置正确
 - 内部包使用 `workspace:*` 协议，无循环依赖
 - 构建、lint、test 任务可通过根命令一键执行，缓存命中率高
+- CI 能区分 affected 快速反馈和 release 全量验证，缓存配置不会泄露密钥或隐藏依赖边界问题

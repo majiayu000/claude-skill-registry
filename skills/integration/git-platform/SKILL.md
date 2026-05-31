@@ -1,6 +1,6 @@
 ---
 name: git-platform
-description: 'Git platform detection and cross-platform command mapping for GitHub, GitLab, and Bitbucket.'
+description: Detects git forge (GitHub/GitLab/Bitbucket) and maps CLI commands cross-platform. Use when writing skills that must run on any git hosting provider.
 alwaysApply: false
 category: infrastructure
 tags:

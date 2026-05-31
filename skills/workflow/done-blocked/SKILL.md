@@ -11,6 +11,7 @@ when_to_use: |
   - l3-support incident triage step → DONE or BLOCKED
   - project-auditor audit completion → DONE or BLOCKED
   Do NOT force this on intermediate progress pings (those are advisory). Only terminal verdicts.
+effort: low
 allowed-tools: Read, Write, Bash
 paths:
   - ".great_cto/verdicts/**"

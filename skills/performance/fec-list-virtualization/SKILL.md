@@ -19,7 +19,7 @@ description: Use when optimizing or reviewing large lists, virtual scrolling, wi
 
 ## Detailed References
 
-Load [references/virtualization-patterns.md](references/virtualization-patterns.md) for fixed-size lists, variable/dynamic height, infinite scroll, grid virtualization, and performance notes.
+涉及固定高度列表、可变/动态高度、无限滚动、网格虚拟化和性能注意事项时，加载 [references/virtualization-patterns.md](references/virtualization-patterns.md)。
 
 ## Constraints
 

@@ -1,7 +1,6 @@
 ---
 name: feature-review
-description: 'Score backlog items with RICE, WSJF, or Kano and file GitHub issues for the top picks. Use for roadmap triage. NOT a code or diff review.'
-version: 1.9.3
+description: Scores backlog items with RICE/WSJF/Kano and files GitHub issues for top candidates. Use when triaging a roadmap or prioritizing features for a sprint.
 alwaysApply: false
 category: workflow-methodology
 tags:
@@ -29,6 +28,7 @@ modules:
 - modules/tradeoff-dimensions.md
 - modules/research-enrichment.md
 - modules/configuration.md
+- modules/multi-metric-evaluation-methodology.md
 ---
 ## Table of Contents
 
@@ -175,6 +175,10 @@ Adjusted Score = Feature Score * Confidence
 - **< 1.5**: Low priority.
 
 See [scoring-framework.md](modules/scoring-framework.md) for the framework.
+See [multi-metric-evaluation-methodology.md](modules/multi-metric-evaluation-methodology.md)
+when one model is not enough: it covers how to combine
+RICE, WSJF, and Kano, where each model fits, and how to
+reconcile conflicting signals.
 
 ### Phase 4: Tradeoff Analysis (`feature-review:tradeoffs-analyzed`)
 
@@ -377,4 +381,6 @@ These rules apply to all configurations:
 - **[scoring-framework.md](modules/scoring-framework.md)**: RICE+WSJF hybrid.
 - **[classification-system.md](modules/classification-system.md)**: Axes definition.
 - **[tradeoff-dimensions.md](modules/tradeoff-dimensions.md)**: Quality attributes.
+- **[research-enrichment.md](modules/research-enrichment.md)**: tome-driven score deltas, channel-to-factor mapping, graceful degradation.
+- **[multi-metric-evaluation-methodology.md](modules/multi-metric-evaluation-methodology.md)**: Combining RICE, WSJF, and Kano when no single model suffices.
 - **[configuration.md](modules/configuration.md)**: Customization options.

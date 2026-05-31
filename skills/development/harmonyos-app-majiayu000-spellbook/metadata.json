@@ -1,0 +1,17 @@
+{
+  "name": "harmonyos-app",
+  "repo": "majiayu000/spellbook",
+  "path": "skills/harmonyos-app/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/majiayu000/spellbook",
+  "dir_name": "harmonyos-app-majiayu000-spellbook",
+  "downloaded_at": "2026-05-30T03:53:28.329926Z",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/spellbook/blob/main/skills/harmonyos-app/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/majiayu000/spellbook/blob/main/skills/harmonyos-app/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

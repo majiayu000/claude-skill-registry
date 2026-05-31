@@ -174,11 +174,12 @@ Default to resolving. Defer only when the answer genuinely needs codebase or pat
 
 ## Step 6: Present and Finalize
 
-Present the draft to the user. Use `request_user_input` to offer three paths:
+Present a brief summary of the drafted spec: the problem, the chosen solution, and the shape of the requirements, short enough to read at a glance so the user does not have to read the full spec. Fit the summary to the spec rather than a fixed template.
 
-- **Approve** — spec is final
-- **Revise** — user specifies sections to change; apply edits and re-present
-- **Discuss more** — return to Step 3 for additional exploration, then re-draft
+Then use `request_user_input` to offer two paths:
+
+- **Approve** (Recommended) — the spec is final.
+- **Revise** — the user describes what to change, whether specific edits or areas to rethink. Apply the edits, reopening the Step 3 discussion when the change needs exploration, then re-summarize and re-present.
 
 After approval:
 

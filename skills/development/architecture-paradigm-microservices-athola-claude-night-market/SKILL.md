@@ -1,7 +1,7 @@
 ---
 name: architecture-paradigm-microservices
 role: library
-description: 'Apply microservices for independent deployment and per-service scaling.'
+description: Applies microservices for independent deployment and per-service scaling. Use when teams need autonomous release cycles with distinct capability scaling needs.
 alwaysApply: false
 category: architectural-pattern
 tags:
@@ -101,6 +101,6 @@ required dependencies and they are not part of the skill's
 restrictions). Use this list to disambiguate during architecture
 discussions.
 
-- ``service-boundary-analyzer`` -- finds candidate seams via call-graph and data-ownership analysis
-- ``api-contract-generator`` -- OpenAPI/protobuf scaffolding for new service boundaries
-- ``resilience-patterns`` -- retry, circuit breaker, bulkhead, and timeout libraries
+- ``service-boundary-analyzer`` — finds candidate seams via call-graph and data-ownership analysis
+- ``api-contract-generator`` — OpenAPI/protobuf scaffolding for new service boundaries
+- ``resilience-patterns`` — retry, circuit breaker, bulkhead, and timeout libraries

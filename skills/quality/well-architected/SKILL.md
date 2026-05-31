@@ -10,6 +10,7 @@ when_to_use: |
   - nano project_size (overhead exceeds value)
   - bug-fix tasks (no architecture change)
   - pure refactor with no behaviour change
+effort: high
 allowed-tools: Read, Write, Grep, Glob
 paths:
   - "docs/architecture/**"

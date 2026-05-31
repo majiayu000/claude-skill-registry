@@ -101,6 +101,7 @@ Structure explanations from simple to complex:
 
 - [WORKFLOW.md](WORKFLOW.md) - Detailed step-by-step methodology
 - [EXAMPLES.md](EXAMPLES.md) - Comprehensive explanation examples
+- [TROUBLESHOOTING.md](TROUBLESHOOTING.md) - Common issues and fixes
 
 ## Integration
 

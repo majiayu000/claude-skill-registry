@@ -2,7 +2,7 @@
 name: meta-optimize
 description: "Analyze ARIS usage logs and propose optimizations to SKILL.md files, reviewer prompts, and workflow defaults. Outer-loop harness optimization inspired by Meta-Harness (Lee et al., 2026). Use when user says \"优化技能\", \"meta optimize\", \"improve skills\", \"分析使用记录\", or wants to optimize ARIS's own harness components based on accumulated experience."
 argument-hint: [target-skill-or-all]
-allowed-tools: Bash(*), Read, Write, Edit, Grep, Glob, Agent, mcp__codex__codex, mcp__codex__codex-reply
+allowed-tools: Bash(*), Read, Write, Edit, Grep, Glob, mcp__codex__codex, mcp__codex__codex-reply
 ---
 
 # Meta-Optimize: Outer-Loop Harness Optimization for ARIS
@@ -109,7 +109,7 @@ For each optimization target, generate a concrete diff:
 +++ b/skills/auto-review-loop/SKILL.md
 @@ -15,7 +15,7 @@
  ## Constants
- 
+
 -- **SCORE_THRESHOLD = 6** — Minimum review score to accept.
 +- **SCORE_THRESHOLD = 7** — Minimum review score to accept. (Raised based on usage data: 60% of users overrode to 7+.)
 ```
@@ -131,22 +131,22 @@ mcp__codex__codex:
   config: {"model_reasoning_effort": "xhigh"}
   prompt: |
     You are reviewing a proposed optimization to an ARIS SKILL.md file.
-    
+
     ## Original Skill (relevant section)
     [paste original]
-    
+
     ## Proposed Patch
     [paste diff]
-    
+
     ## Evidence from Usage Log
     [paste summary stats]
-    
+
     Review this patch:
     1. Does the evidence support the change?
     2. Could this change hurt other use cases?
     3. Is the change minimal and safe?
     4. Score 1-10: should this be applied?
-    
+
     If score < 7, explain what additional evidence would be needed.
 ```
 

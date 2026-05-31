@@ -241,5 +241,6 @@ invocation walkthrough and manual transcript-mining walkthrough.
 
 ## Reference Documents
 
+- [references/forge.feature](references/forge.feature) — Executable spec: mine transcripts → queued candidates, funnel-not-filter, --promote, consumes-transcripts-not-skills (soc-qk4b)
 - [references/uncaptured-lesson-patterns.md](references/uncaptured-lesson-patterns.md) — signal patterns and 26 known uncaptured lesson categories for transcript mining
 - [references/feedback-compiler-drafts.md](references/feedback-compiler-drafts.md) — auto-drafted learning workflow (F5.4 fail->pass ledger transitions, `cli/internal/feedbackcompiler`)

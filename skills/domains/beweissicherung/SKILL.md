@@ -1,6 +1,6 @@
 ---
 name: beweissicherung
-description: "Anordnung, Aktualisierung, Aufhebung oder Statusbericht zu Aufbewahrungspflichten und Beweissicherungsmaßnahmen nach deutschem Recht – § 257 HGB, § 147 AO, §§ 286 und 444 ZPO (Beweisvereitelung), §§ 485 ff. ZPO (Selbständiges Beweisverfahren). Verwenden, wenn der Nutzer sagt „Aufbewahrungspflicht prüfen\", „Beweissicherung anordnen\", „Legal Hold einrichten\" oder Statusbericht über Sicherungsmaßnahmen anfordert."
+description: "Beweissicherungsantrag im selbständigen Beweisverfahren vorbereiten: Sachverständigengutachten vor Klageerhebung sichern. Normen: §§ 485 ff. ZPO. Prüfraster: Beweissicherungsinteresse, Antragstellung, Gutachterauswahl, Verfahrensablauf. Output: Antrag auf selbständiges Beweisverfahren. Abgrenzung: nicht einstweilige Verfuegung."
 ---
 
 # Aufbewahrungspflicht und Beweissicherung
@@ -32,10 +32,10 @@ Erstellung, Aktualisierung oder Aufhebung von Beweissicherungs- und Aufbewahrung
 | Lohnunterlagen (SV-relevant) | 10 Jahre | § 28f Abs. 2 SGB IV |
 
 **Prozessuale Aufbewahrungspflicht:**
-Ab Kenntnis eines konkreten Rechtsstreits oder einer ernsthaften Drohung entsteht eine Pflicht zur Beweissicherung (vgl. BGH, Urt. v. 23.10.2008 – III ZR 57/07, NJW 2009, 366 Rn. 19 – Beweisvereitelung). Eine schuldhafte Vernichtung von Beweismitteln kann nach § 444 ZPO zur Umkehr der Beweislast führen oder nach § 286 ZPO als beweiswürdigungserhebliches Indiz gewertet werden.
+Rechtsprechung: keine Entscheidung aus Modellwissen zitieren; vor Ausgabe über offizielle oder frei zugängliche Quelle mit Gericht, Entscheidungsform, Datum, Aktenzeichen und tragender Aussage verifizieren.
 
 **Konsequenzen der Beweisvereitelung:**
-- § 444 ZPO: Unwiderlegliche Vermutung, dass das vernichtete Dokument den gegnerischen Vortrag bestätigt hätte (BGH, Urt. v. 14.12.2016 – IV ZR 527/15, NJW 2017, 869 Rn. 17).
+- Rechtsprechung: keine Entscheidung aus Modellwissen zitieren; vor Ausgabe über offizielle oder frei zugängliche Quelle mit Gericht, Entscheidungsform, Datum, Aktenzeichen und tragender Aussage verifizieren.
 - § 286 ZPO: Freie Beweiswürdigung kann vernichtungsbedingte Nachteile zulasten der vernichtenden Partei ziehen.
 - §§ 339 ff. StGB: Strafbarkeit wegen Beweisvereitelung / Urkundenunterdrückung (§ 274 StGB) bei vorsätzlicher Vernichtung.
 
@@ -73,11 +73,9 @@ Tabelle aller aktiven Sicherungsanordnungen im Portfolio mit:
 
 Verbindlich: `../references/zitierweise.md`.
 
-- BGH, Urt. v. 14.12.2016 – IV ZR 527/15, NJW 2017, 869 Rn. 17 (Beweisvereitelung § 444 ZPO: Vermutungswirkung).
-- BGH, Urt. v. 23.10.2008 – III ZR 57/07, NJW 2009, 366 Rn. 19 (Beweisvereitelung und Pflicht zur Beweismittelsicherung).
-- Greger, in: Zöller, ZPO, 35. Aufl. 2024, § 444 Rn. 1 ff. (Beweisvereitelung: Voraussetzungen, Rechtsfolgen).
-- Huber, in: Musielak/Voit, ZPO, 21. Aufl. 2024, § 485 Rn. 3 ff. (Selbständiges Beweisverfahren: Voraussetzungen, Antrag).
-- BGH, Urt. v. 09.04.2014 – VIII ZR 404/12, NJW 2014, 2102 Rn. 15 (§ 493 ZPO: Bindungswirkung des Sachverständigengutachtens aus dem selbständigen Beweisverfahren).
+- Rechtsprechung: keine Entscheidung aus Modellwissen zitieren; vor Ausgabe über offizielle oder frei zugängliche Quelle mit Gericht, Entscheidungsform, Datum, Aktenzeichen und tragender Aussage verifizieren.
+- Quellenregel: Literatur nur mit Nutzerquelle oder lizenziertem Live-Zugriff; keine Kommentar-, Handbuch- oder Aufsatzfundstellen aus Modellwissen.
+- Rechtsprechung: keine Entscheidung aus Modellwissen zitieren; vor Ausgabe über offizielle oder frei zugängliche Quelle mit Gericht, Entscheidungsform, Datum, Aktenzeichen und tragender Aussage verifizieren.
 - § 257 HGB; § 147 AO (Aufbewahrungsfristen).
 - § 274 StGB (Urkundenunterdrückung), § 339 StGB (Rechtsbeugung, nur für Richter und Beamte).
 
@@ -100,7 +98,7 @@ An: [Name, Funktion, Abteilung]
 
 Betreff: Aufbewahrungspflicht im Zusammenhang mit [Sachverhaltskurzbezeichnung]
 
-Aufgrund eines bevorstehenden / laufenden Rechtsstreits [Aktenzeichen oder Sachverhalt] 
+Aufgrund eines bevorstehenden / laufenden Rechtsstreits [Aktenzeichen oder Sachverhalt]
 ordnen wir an, folgende Unterlagen bis auf Weiteres aufzubewahren:
 
 Betroffene Dokumente:
@@ -108,7 +106,7 @@ Betroffene Dokumente:
 2. Verträge und Anlagen zu [Projekt]
 3. [weitere Kategorien]
 
-LÖSCHVERBOT: Es ist untersagt, die oben bezeichneten Unterlagen zu löschen, zu 
+LÖSCHVERBOT: Es ist untersagt, die oben bezeichneten Unterlagen zu löschen, zu
 vernichten, zu überschreiben oder anderweitig unzugänglich zu machen.
 
 Nächste Überprüfung: TT.MM.JJJJ
@@ -117,7 +115,10 @@ Kontakt: [Anwalt, Kanzlei, Telefon]
 
 ## Risiken / typische Fehler
 
-- **Verzögerter Hold:** Die Anordnung muss bei Kenntnis des Rechtsstreits sofort erfolgen; spätere Vernichtung begründet Beweisvereitelung auch ohne Hold (BGH – IV ZR 527/15).
+- Rechtsprechung: keine Entscheidung aus Modellwissen zitieren; vor Ausgabe über offizielle oder frei zugängliche Quelle mit Gericht, Entscheidungsform, Datum, Aktenzeichen und tragender Aussage verifizieren.
 - **Zu enger Anwendungsbereich:** Custodians und Dokumentenkategorien zu eng gewählt; alle betroffenen Abteilungen und IT-Systeme (E-Mail-Archiv, Cloud-Speicher) einschließen.
 - **Datenschutzkollision:** Aufbewahrungspflicht und DSGVO-Löschpflicht können kollidieren; bei Widerspruch gilt prozessuale Sicherungspflicht im Zweifel (vgl. Art. 17 Abs. 3 lit. e DSGVO: Aufbewahrung für Rechtsstreitigkeiten).
 - **Selbständiges Beweisverfahren zu spät:** Nach Sachzustandsveränderung ist keine Beweissicherung mehr möglich; § 485 ZPO-Antrag frühzeitig stellen.
+
+<!-- AUDIT 27.05.2026 bundle_040
+-->

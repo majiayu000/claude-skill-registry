@@ -1,0 +1,353 @@
+{
+  "schema_version": 1,
+  "batch_id": "batch019-new-other-intake",
+  "generated_at": "2026-05-31T01:11:42.693422+00:00",
+  "issue": "https://github.com/majiayu000/claude-skill-registry-data/issues/90",
+  "old_data_sha": "d5fe76cf7ef103a13e7780bc2473a52df681b35e",
+  "new_data_sha": "29c3a954af7497ab86b3c8ceae2b33fb039ed584",
+  "skills_dir": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch019",
+  "input_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch019/migration-artifacts/2026-05-31-new-other-intake-batch019/input.jsonl",
+  "selected_input_count": 5157,
+  "selection": {
+    "path_filter": "other/**/SKILL.md",
+    "diff_filter": "added between old_data_sha and new_data_sha",
+    "content_chars": 2000
+  },
+  "top_repos": [
+    {
+      "repo": "gooseworks-ai/goose-skills",
+      "count": 100
+    },
+    {
+      "repo": "K-Dense-AI/scientific-agent-skills",
+      "count": 100
+    },
+    {
+      "repo": "Klotzkette/claude-fuer-deutsches-recht",
+      "count": 100
+    },
+    {
+      "repo": "tobihagemann/turbo",
+      "count": 100
+    },
+    {
+      "repo": "sequenzia/agent-alchemy",
+      "count": 100
+    },
+    {
+      "repo": "levnikolaevich/claude-code-skills",
+      "count": 100
+    },
+    {
+      "repo": "longbridge/skills",
+      "count": 100
+    },
+    {
+      "repo": "existential-birds/beagle",
+      "count": 99
+    },
+    {
+      "repo": "nWave-ai/nWave",
+      "count": 99
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "count": 98
+    },
+    {
+      "repo": "aiskillstore/marketplace",
+      "count": 98
+    },
+    {
+      "repo": "giuseppe-trisciuoglio/developer-kit",
+      "count": 98
+    },
+    {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "count": 98
+    },
+    {
+      "repo": "parcadei/Continuous-Claude-v3",
+      "count": 98
+    },
+    {
+      "repo": "wanshuiyin/Auto-claude-code-research-in-sleep",
+      "count": 98
+    },
+    {
+      "repo": "Tibsfox/gsd-skill-creator",
+      "count": 97
+    },
+    {
+      "repo": "davepoon/buildwithclaude",
+      "count": 97
+    },
+    {
+      "repo": "secondsky/claude-skills",
+      "count": 96
+    },
+    {
+      "repo": "boshu2/agentops",
+      "count": 96
+    },
+    {
+      "repo": "athola/claude-night-market",
+      "count": 95
+    },
+    {
+      "repo": "tdimino/claude-code-minoan",
+      "count": 92
+    },
+    {
+      "repo": "ammawla/encode-toolkit",
+      "count": 92
+    },
+    {
+      "repo": "vibeeval/vibecosystem",
+      "count": 90
+    },
+    {
+      "repo": "nexscope-ai/eCommerce-Skills",
+      "count": 89
+    },
+    {
+      "repo": "Orchestra-Research/AI-Research-SKILLs",
+      "count": 87
+    },
+    {
+      "repo": "a5c-ai/babysitter",
+      "count": 86
+    },
+    {
+      "repo": "jabrena/cursor-rules-java",
+      "count": 83
+    },
+    {
+      "repo": "nexu-io/html-anything",
+      "count": 75
+    },
+    {
+      "repo": "ancoleman/ai-design-components",
+      "count": 74
+    },
+    {
+      "repo": "Jeffallan/claude-skills",
+      "count": 66
+    },
+    {
+      "repo": "joaquimscosta/arkhe-claude-plugins",
+      "count": 64
+    },
+    {
+      "repo": "jezweb/claude-skills",
+      "count": 64
+    },
+    {
+      "repo": "majiayu000/spellbook",
+      "count": 62
+    },
+    {
+      "repo": "nanocoai/nanoclaw",
+      "count": 57
+    },
+    {
+      "repo": "fcakyon/claude-codex-settings",
+      "count": 55
+    },
+    {
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "count": 55
+    },
+    {
+      "repo": "oliver-kriska/claude-elixir-phoenix",
+      "count": 55
+    },
+    {
+      "repo": "bitwize-music-studio/claude-ai-music-skills",
+      "count": 54
+    },
+    {
+      "repo": "browser-act/skills",
+      "count": 54
+    },
+    {
+      "repo": "motherduckdb/agent-skills",
+      "count": 54
+    }
+  ],
+  "artifacts": {
+    "classification_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch019/migration-artifacts/2026-05-31-new-other-intake-batch019/classification.jsonl",
+    "classification_report": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch019/migration-artifacts/2026-05-31-new-other-intake-batch019/classification-report.json",
+    "checkpoint_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch019/migration-artifacts/2026-05-31-new-other-intake-batch019/checkpoint.jsonl",
+    "apply_plan_min070": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch019/migration-artifacts/2026-05-31-new-other-intake-batch019/apply-plan-min070.json",
+    "apply_result_min070": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch019/migration-artifacts/2026-05-31-new-other-intake-batch019/apply-result-min070.json",
+    "residual_report_min070": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch019/migration-artifacts/2026-05-31-new-other-intake-batch019/residual-report-min070.json",
+    "sample_audit_min070": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch019/migration-artifacts/2026-05-31-new-other-intake-batch019/sample-audit-min070.json",
+    "classification_pilot_jsonl": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch019/migration-artifacts/2026-05-31-new-other-intake-batch019/classification-pilot.jsonl",
+    "classification_pilot_report": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch019/migration-artifacts/2026-05-31-new-other-intake-batch019/classification-pilot-report.json",
+    "residual_report_before_apply": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch019/migration-artifacts/2026-05-31-new-other-intake-batch019/residual-report-min070-before-apply.json",
+    "residual_report_after_moves": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch019/migration-artifacts/2026-05-31-new-other-intake-batch019/residual-report-min070-after-moves.json",
+    "stable_key_cleanup_plan_default": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch019/migration-artifacts/2026-05-31-new-other-intake-batch019/stable-key-cleanup-plan-default.json",
+    "stable_key_cleanup_plan_prefer_newer": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch019/migration-artifacts/2026-05-31-new-other-intake-batch019/stable-key-cleanup-plan-prefer-newer.json",
+    "stable_key_cleanup_result_prefer_newer": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch019/migration-artifacts/2026-05-31-new-other-intake-batch019/stable-key-cleanup-result-prefer-newer.json",
+    "residual_report_final": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch019/migration-artifacts/2026-05-31-new-other-intake-batch019/residual-report-final-min070.json",
+    "normalize_skill_depth_report_final": "/Users/lifcc/Desktop/code/AI/tools/claude-skill-registry-data-batch019/migration-artifacts/2026-05-31-new-other-intake-batch019/normalize-skill-depth-report-final.json"
+  },
+  "commands": [
+    "python scripts/classify_residual_workset_with_llm.py --workset-jsonl ... --classification-output ... --checkpoint-jsonl ... --api-key-env MIMO_API_KEY --base-url https://token-plan-sgp.xiaomimimo.com/v1 --model mimo-v2.5-pro --temperature 0",
+    "python scripts/apply_category_migration.py --skills-dir ... --classification-jsonl ... --from-category other --min-confidence 0.70 --movable-only --output ...",
+    "python scripts/sample_category_classification_audit.py --workset-jsonl ... --classification-jsonl ... --output ...",
+    "python scripts/audit_category_residuals.py --skills-dir ... --classification-jsonl ... --from-category other --min-confidence 0.70 --output ..."
+  ],
+  "root_cause": {
+    "summary": "The 2026-05-30 GitHub discovery intake assigned newly discovered skills to other by default; all 5,157 selected metadata records had category=other and no metadata description. SKILL.md-first classification shows most are semantically classifiable or duplicate existing stable keys.",
+    "source_script": "claude-skill-registry-core/scripts/discover_by_topic.py download_skill hardcodes category=\"other\" for discovered SKILL.md files.",
+    "publish_policy": "Publishing can continue with other; this batch is post-publish classification cleanup for new intake only."
+  },
+  "final_summary": {
+    "classification_status_counts": {
+      "missing_result": 2,
+      "ok": 5154,
+      "unknown_or_inactive_category": 1
+    },
+    "classification_category_counts": {
+      "": 2,
+      "agent": 49,
+      "ai-llm": 75,
+      "ai-ml": 148,
+      "analysis": 373,
+      "api": 72,
+      "bash": 12,
+      "business": 79,
+      "c-level": 2,
+      "communication": 24,
+      "context-management": 76,
+      "creative": 11,
+      "data": 185,
+      "design": 217,
+      "development": 593,
+      "devops": 220,
+      "documents": 235,
+      "domains": 305,
+      "examples": 3,
+      "forensics": 12,
+      "gaming": 23,
+      "generation": 160,
+      "integration": 283,
+      "knowledge-management": 1,
+      "language": 9,
+      "local-ai-infrastructure": 10,
+      "marketing": 187,
+      "orchestration": 229,
+      "other": 5,
+      "performance": 58,
+      "personal-development": 46,
+      "planning": 94,
+      "platform": 72,
+      "product": 152,
+      "productivity": 31,
+      "quality": 322,
+      "security": 220,
+      "skills": 115,
+      "system": 17,
+      "testing": 129,
+      "travel": 2,
+      "war-room": 5,
+      "workflow": 230,
+      "writing": 64
+    },
+    "direct_move_count": 1080,
+    "direct_move_target_counts": {
+      "agent": 8,
+      "ai-llm": 14,
+      "ai-ml": 33,
+      "analysis": 134,
+      "api": 15,
+      "bash": 2,
+      "business": 20,
+      "communication": 8,
+      "context-management": 16,
+      "creative": 4,
+      "data": 42,
+      "design": 24,
+      "development": 75,
+      "devops": 27,
+      "documents": 35,
+      "domains": 129,
+      "examples": 2,
+      "forensics": 4,
+      "gaming": 2,
+      "generation": 38,
+      "integration": 55,
+      "language": 3,
+      "marketing": 15,
+      "orchestration": 34,
+      "performance": 8,
+      "personal-development": 18,
+      "planning": 21,
+      "platform": 29,
+      "product": 26,
+      "productivity": 15,
+      "quality": 68,
+      "security": 12,
+      "skills": 13,
+      "system": 11,
+      "testing": 9,
+      "travel": 1,
+      "war-room": 1,
+      "workflow": 101,
+      "writing": 8
+    },
+    "stable_key_cleanup_count": 4069,
+    "stable_key_cleanup_target_counts": {
+      "agent": 41,
+      "ai-llm": 61,
+      "ai-ml": 115,
+      "analysis": 239,
+      "api": 57,
+      "bash": 10,
+      "business": 59,
+      "c-level": 2,
+      "communication": 16,
+      "context-management": 60,
+      "creative": 7,
+      "data": 143,
+      "design": 193,
+      "development": 518,
+      "devops": 193,
+      "documents": 200,
+      "domains": 176,
+      "examples": 1,
+      "forensics": 8,
+      "gaming": 21,
+      "generation": 122,
+      "integration": 228,
+      "language": 6,
+      "local-ai-infrastructure": 10,
+      "marketing": 172,
+      "orchestration": 195,
+      "performance": 50,
+      "personal-development": 28,
+      "planning": 73,
+      "platform": 43,
+      "product": 126,
+      "productivity": 16,
+      "quality": 254,
+      "security": 208,
+      "skills": 102,
+      "system": 6,
+      "testing": 120,
+      "travel": 1,
+      "war-room": 4,
+      "workflow": 129,
+      "writing": 56
+    },
+    "final_other_count": 530,
+    "final_candidate_move_count": 0,
+    "final_primary_reasons": {
+      "classification status is not ok": 3,
+      "confidence below threshold": 5,
+      "source directory missing": 5149
+    }
+  }
+}

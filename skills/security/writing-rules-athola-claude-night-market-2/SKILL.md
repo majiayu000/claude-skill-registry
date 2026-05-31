@@ -1,6 +1,6 @@
 ---
 name: writing-rules
-description: 'Create markdown-based behavioral rules to prevent unwanted actions and block dangerous commands.'
+description: Creates behavioral rules in markdown to block dangerous commands or restrict AI behavior. Use when adding safety guardrails or preventing specific commands.
 alwaysApply: false
 category: hook-development
 tags:

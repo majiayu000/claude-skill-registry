@@ -109,3 +109,10 @@ store.subscribe((state) => console.log(state))
 | `getState()` | Outside React, event handlers |
 | `subscribe()` | External systems, logging |
 | Vanilla store | Non-React environments |
+
+## Gates (persist and devtools)
+
+Before merging code that uses these middlewares (see [references/middleware.md](references/middleware.md) for setup):
+
+1. **`persist`** — **Pass when** persisted keys are explicit (`partialize` or a reviewed full-state snapshot) and the JSON written to storage cannot include auth tokens, API keys, or other secrets.
+2. **`devtools` in shipped bundles** — **Pass when** DevTools runs only in development (env gate), or you leave a one-line note in the PR explaining why it stays enabled in production.

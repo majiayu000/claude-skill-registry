@@ -165,8 +165,7 @@ Schedule one post per week, P0s first. Format every entry against this schema:
 | `published` | publisher POSTed to the webhook with 2xx | `publish_pending.py` |
 | `failed` | publisher got 4xx; needs user fix | `publish_pending.py` |
 
-The publisher (`openclaw/bin/publish_pending.py`, opt-in via OpenClaw cron)
-only picks up entries with `status === "ready_to_publish"` AND a non-empty
+A publisher should only pick up entries with `status === "ready_to_publish"` AND a non-empty
 `bodyPath`. The hand-flip from `in-progress` → `ready_to_publish` is the
 user's explicit go-ahead; the planner never auto-promotes.
 

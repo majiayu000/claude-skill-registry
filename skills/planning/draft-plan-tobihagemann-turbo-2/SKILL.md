@@ -17,6 +17,7 @@ Use `update_plan` to track each step:
 4. Escalate product decisions
 5. Deep-dive discussion
 6. Draft and write the plan file
+7. Present summary and finalize
 
 ## Step 1: Capture the Task and Pick a Slug
 
@@ -61,7 +62,7 @@ Ground library and framework choices in current reality before escalating decisi
 1. **Scan for matching skills.** Compare the task description against available skill trigger descriptions. For each unambiguous match, run the skill by reading and following the installed skill instructions. This loads decision-level guidance (idiomatic patterns, known pitfalls, version constraints) before product decisions are made. If unsure, do not load.
 2. **Look up library docs.** For libraries or frameworks the task clearly depends on, query documentation MCP tools (or WebSearch as a fallback) when the decision hinges on current library state such as whether a feature exists, which versions support it, or whether an API has been deprecated.
 
-Keep findings at the decision level: what a library can do, which approach is idiomatic, which version to target. Do not embed specific API signatures or code snippets into the plan. Those belong in `$implement-plan`, which re-loads the same skills at execution time.
+Keep findings at the decision level: what a library can do, which approach is idiomatic, which version to target. Do not embed specific API signatures or code snippets into the plan. Those belong at execution time, where the same skills are re-loaded.
 
 ## Step 4: Escalate Product Decisions
 
@@ -154,6 +155,15 @@ Files to read in full before starting implementation:
 - **Verification**: Describe how to know the change actually works. Prefer specific test commands, named test files, or named smoke checks over vague phrases like "run the tests." If the change has no observable behavior, say so explicitly.
 - **Context Files**: Curate the minimum set needed to become productive. Do not dump every file touched — only the ones that anchor understanding.
 - **Scope**: Plan content describes what to build. Do not embed task tracking, skill loading, `$finalize` invocation, test commands, or commit instructions in the plan content — those are execution-wrapper concerns.
+
+## Step 7: Present Summary and Finalize
+
+Present a brief summary of the drafted plan: the essence of what it builds and the key decisions behind it, short enough to read at a glance so the user does not have to read the full plan file. Fit the summary to the plan rather than a fixed template.
+
+Then use `request_user_input` to offer two paths:
+
+- **Approve** (Recommended) — the plan is final.
+- **Revise** — the user describes what to change. Apply the edits to the plan file, then re-summarize and re-present.
 
 Then update or check the active plan and proceed to any remaining task.
 

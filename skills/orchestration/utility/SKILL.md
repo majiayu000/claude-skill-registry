@@ -1,7 +1,6 @@
 ---
 name: utility
-description: 'Score candidate agent actions by expected gain, cost, uncertainty, and redundancy to guide dispatch and termination decisions.'
-version: 1.9.0
+description: Scores agent actions by expected gain, cost, uncertainty, and redundancy. Use when deciding whether to dispatch an agent or invoke a tool.
 alwaysApply: false
 category: infrastructure
 tags:
@@ -114,30 +113,30 @@ Document the override and the gain value in your reasoning trace.
 
 Minimal 4-step advisory pattern:
 
-1. **Construct state** -- gather task context per
+1. **Construct state** — gather task context per
    `modules/state-builder.md`
-2. **Score candidates** -- evaluate each action in `A` per
+2. **Score candidates** — evaluate each action in `A` per
    `modules/action-selector.md`
-3. **Prefer highest utility** -- select the action with the
+3. **Prefer highest utility** — select the action with the
    maximum `U(a | s_t)`, subject to termination conditions
-4. **Log score and decision** -- record the winning action,
+4. **Log score and decision** — record the winning action,
    its utility value, and step count before executing
 
 ## Detailed Resources
 
-- **State Builder**: `modules/state-builder.md` -- how to
+- **State Builder**: `modules/state-builder.md` — how to
   populate `s_t` from task context
-- **Gain**: `modules/gain.md` -- estimating expected information
+- **Gain**: `modules/gain.md` — estimating expected information
   or progress gain
-- **Step Cost**: `modules/step-cost.md` -- token, latency, and
+- **Step Cost**: `modules/step-cost.md` — token, latency, and
   monetary cost tables
-- **Uncertainty**: `modules/uncertainty.md` -- confidence
+- **Uncertainty**: `modules/uncertainty.md` — confidence
   estimation and calibration
-- **Redundancy**: `modules/redundancy.md` -- detecting duplicate
+- **Redundancy**: `modules/redundancy.md` — detecting duplicate
   or low-delta actions
-- **Action Selector**: `modules/action-selector.md` -- scoring
+- **Action Selector**: `modules/action-selector.md` — scoring
   loop and tie-breaking rules
-- **Integration**: `modules/integration.md` -- wiring utility
+- **Integration**: `modules/integration.md` — wiring utility
   scoring into existing orchestration loops
 
 ## Exit Criteria

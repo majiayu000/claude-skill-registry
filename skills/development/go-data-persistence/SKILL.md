@@ -260,6 +260,23 @@ Load **transactions.md** when:
 - Choosing transaction isolation levels
 - Debugging deadlocks or long-running transactions
 
+## Gates (objective checks before merge)
+
+Run these in order; do not rationalize past a failed step.
+
+1. **Migrations**
+   1. List the migration file paths you are adding or relying on (both `.up.sql` and `.down.sql` per version).
+   2. **Pass:** Each new version has a matching pair on disk with consistent naming (see [Migrations](#migrations)).
+   3. **Pass:** You did not rewrite migration content that is already applied anywhere you care about (production or shared dev); you added a new version instead.
+
+2. **Query safety**
+   1. Scan the diff for dynamic SQL built with `fmt.Sprintf`, `+`, or string concatenation involving request fields, JSON, or other external input.
+   2. **Pass:** Every such query uses bind parameters (`$1`, `:name`) or an ORM/query builder that emits parameterized statements; identifiers (table/column names) that must be dynamic use an explicit allowlist, not raw strings from users.
+
+3. **Pool and context**
+   1. Confirm database pool construction (`sql.Open`, `pgxpool.New`, etc.) runs once at process startup and is shared, not inside per-request handlers.
+   2. **Pass:** Code paths that should respect cancellation/timeouts use `QueryContext`, `ExecContext`, `GetContext`, or equivalent—not `Query`/`Exec` without context—for work tied to `context.Context`.
+
 ## Anti-Patterns
 
 ### Using string concatenation for queries

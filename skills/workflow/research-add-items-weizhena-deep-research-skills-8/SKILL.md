@@ -1,4 +1,5 @@
 ---
+name: research-add-items
 user-invocable: true
 description: 向现有调研outline补充items（调研对象）。
 allowed-tools: Bash, Read, Write, Glob, WebSearch, Task, AskUserQuestion

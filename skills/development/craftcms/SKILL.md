@@ -16,6 +16,7 @@ When this skill triggers, also load:
 - **`craft-php-guidelines`** — PHPDoc standards, section headers, naming conventions, class organization, ECS/PHPStan, verification checklist. Required for any PHP code.
 - **`ddev`** — All commands run through DDEV. Required for running ECS, PHPStan, scaffolding, and tests.
 - **`craft-garnish`** — When working on CP JavaScript, asset bundles, or interactive CP components. Covers Garnish's class system, UI widgets (Modal, HUD, DisclosureMenu, Select), drag system, and the Craft.* JS class pattern.
+- **`craft-cloud`** — When the project is hosted on Craft Cloud (detect via `craft-cloud.yaml` at the repo root or `craftcms/cloud` in `composer.json`). Required for plugin Cloud-compatibility constraints — `App::isEphemeral()` guards, asset-bundle CDN publishing, 15-minute queue-job cap, `csrfInput()` function over raw token output, and the `cloud/up` deploy lifecycle events.
 
 ## Documentation
 
@@ -118,6 +119,10 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 - "Add a screen to the User edit page" → read `elements.md` (Extending User Edit Screens)
 - "Make plugin settings read-only when allowAdminChanges is off" → read `cp.md` (Read-Only Mode)
 - "Add tabs to a plugin's settings page" → read `cp.md` (Settings Pages → With tabs or custom actions). `settingsHtml()` is single-pane only — tabs require a custom controller and a template extending `_layouts/cp` directly.
+- "Make a plugin Cloud-compatible" → load `craft-cloud` skill → `plugin-development.md` (ephemeral filesystem, asset-bundle constraints, queue cap, CSRF function, cookie-free design)
+- "Deploy a Craft project to Cloud" → load `craft-cloud` skill → `config-file.md` + `deploy-pipeline.md` + `extension.md`
+- "Migrate a self-hosted Craft site to Cloud" → load `craft-cloud` skill → `migration.md`
+- "Why does my plugin's file write silently fail on Cloud?" → load `craft-cloud` skill → `plugin-development.md` (Ephemeral filesystem) + `extension.md` (App::isEphemeral)
 
 Load only the reference files your task needs — each file costs input tokens on every turn.
 

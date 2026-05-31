@@ -104,7 +104,7 @@ description: Use when implementing UI from Figma, Sketch, MasterGo, Pixso, Modao
 
 ## Detailed References
 
-Load [references/design-plan-template.md](references/design-plan-template.md) when writing the implementation plan report.
+撰写实现计划报告时，加载 [references/design-plan-template.md](references/design-plan-template.md)。
 
 ## Constraints
 

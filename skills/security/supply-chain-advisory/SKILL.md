@@ -1,6 +1,6 @@
 ---
 name: supply-chain-advisory
-description: 'Supply chain security: bad-version detection, incident response, lockfile audit, artifact scan.'
+description: Audits dependency supply chains for bad versions, lockfile drift, and artifact integrity. Use when adding deps, handling incidents, or releasing a plugin.
 alwaysApply: false
 category: infrastructure
 tags:
@@ -55,7 +55,7 @@ responding to compromised packages in Python ecosystems.
 
 ## Known-Bad Versions Blocklist
 
-The blocklist lives at `${CLAUDE_SKILL_DIR}/known-bad-versions.json`.
+The blocklist is at `${CLAUDE_SKILL_DIR}/known-bad-versions.json`.
 It is consumed by:
 
 1. **SessionStart hook** — warns per-session when compromised versions detected
@@ -113,7 +113,7 @@ will fail with a hash mismatch. This is your strongest automatic defense.
 | **Lockfile hashes** | uv.lock SHA256 | Tampered re-published versions |
 | **Version exclusions** | pyproject.toml `!=` | Known-bad versions on fresh resolve |
 | **SessionStart hook** | sanctum hook | Per-session warning for compromised deps |
-| **CI scanning** | OSV + Safety | CVE database + advisory matching |
+| **CI scanning** | OSV, Safety | CVE database, and advisory matching |
 | **Artifact scanning** | make supply-chain-scan | Malicious files (.pth, scripts) |
 
 ## Limitations

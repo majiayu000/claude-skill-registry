@@ -1,0 +1,17 @@
+{
+  "name": "humanizer",
+  "repo": "majiayu000/spellbook",
+  "path": "skills/humanizer/SKILL.md",
+  "github_branch": "main",
+  "category": "writing",
+  "source": "github.com/majiayu000/spellbook",
+  "dir_name": "humanizer-majiayu000-spellbook",
+  "downloaded_at": "2026-05-30T03:53:26.784998Z",
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/spellbook/blob/main/skills/humanizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/majiayu000/spellbook/blob/main/skills/humanizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

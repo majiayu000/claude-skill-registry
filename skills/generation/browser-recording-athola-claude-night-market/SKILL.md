@@ -1,25 +1,25 @@
 ---
 name: browser-recording
-description: |
-
-Triggers: tutorial, web, video, browser, playwright
-  Record browser sessions using Playwright for web UI tutorials, converts video to GIF
-
-  Triggers: browser recording, playwright, web demo
-
-  Use when: creating browser-based tutorials
+description: Records browser sessions via Playwright and converts video to GIF. Use when creating web UI tutorials or demos showing browser interactions.
+alwaysApply: false
 category: media-generation
-tags: [playwright, browser, recording, video, web, tutorial]
-tools: [Read, Write, Bash]
+tags:
+- playwright
+- browser
+- recording
+- video
+- web
+- tutorial
+tools: []
 complexity: medium
+model_hint: standard
 estimated_tokens: 500
 progressive_loading: true
 modules:
-  - spec-execution
-  - video-capture
+- modules/spec-execution.md
+- modules/video-capture.md
 dependencies:
-  - scry:gif-generation
-version: 1.3.5
+- scry:gif-generation
 ---
 ## Table of Contents
 
@@ -41,6 +41,17 @@ version: 1.3.5
 # Browser Recording Skill
 
 Record browser sessions using Playwright to create video captures of web UI interactions for tutorials and documentation.
+
+
+## When To Use
+
+- Recording browser sessions with Playwright
+- Creating web application demo recordings
+
+## When NOT To Use
+
+- Terminal-only workflows - use scry:vhs-recording instead
+- Static screenshots - use standard screenshot tools
 
 ## Overview
 
@@ -198,15 +209,3 @@ Default output paths:
 ## See Also
 
 - scry:gif-generation: Convert video to optimized GIF
-## Troubleshooting
-
-### Common Issues
-
-**Command not found**
-Ensure all dependencies are installed and in PATH
-
-**Permission errors**
-Check file permissions and run with appropriate privileges
-
-**Unexpected behavior**
-Enable verbose logging with `--verbose` flag

@@ -1,7 +1,6 @@
 ---
 name: rust-review
-description: 'Rust code audit: unsafe blocks, ownership patterns, and Cargo dependency security scanning'
-version: 1.9.0
+description: Audits Rust code for unsafe blocks, ownership issues, and Cargo dependency risks. Use when reviewing Rust code or before merging Rust changes.
 globs: "**/*.rs"
 alwaysApply: false
 category: code-review
@@ -12,10 +11,7 @@ tags:
 - unsafe
 - traits
 - cargo
-tools:
-- borrow-checker-analyzer
-- unsafe-auditor
-- dependency-scanner
+tools: []
 usage_patterns:
 - rust-audit
 - unsafe-review
@@ -41,6 +37,10 @@ modules:
 - error-messages.md
 - duplicate-validators.md
 - builtin-preference.md
+- model-specific-tells.md
+- iterator-and-allocation-slop.md
+- test-slop.md
+- async-slop.md
 ---
 ## Table of Contents
 
@@ -103,7 +103,7 @@ Expert-level Rust code audits with focus on safety, correctness, and idiomatic p
 
 Load modules as needed based on review scope:
 
-**Quick Review** (ownership + errors):
+**Quick Review** (ownership and errors):
 - See `modules/ownership-analysis.md` for borrowing and lifetime analysis
 - See `modules/error-handling.md` for Result/Option patterns
 
@@ -134,6 +134,8 @@ Load modules as needed based on review scope:
 - [ ] All unsafe blocks documented with SAFETY comments
 - [ ] FFI boundaries properly wrapped
 - [ ] Memory safety invariants maintained
+- [ ] `mlock`/`munlock` calls: RLIMIT verified, page-aligned,
+  ENOMEM handled
 
 ### Correctness
 - [ ] Error handling complete

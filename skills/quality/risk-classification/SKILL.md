@@ -1,6 +1,6 @@
 ---
 name: risk-classification
-description: '4-tier risk classification for agent tasks. GREEN/YELLOW heuristic, RED/CRITICAL escalate to war-room-checkpoint.'
+description: Classifies agent tasks into 4 risk tiers (GREEN/YELLOW/RED/CRITICAL). Use when assessing action reversibility before committing to an approach.
 alwaysApply: false
 category: infrastructure
 tags:
@@ -70,9 +70,9 @@ Provides inline risk classification for agent tasks using a 4-tier model (GREEN/
 | Tier | Color | Scope | Example | Verification |
 |------|-------|-------|---------|-------------|
 | **GREEN** | Safe | Single file, trivial revert | Test files, docs, utils | None required |
-| **YELLOW** | Caution | Module-level, user-visible | Components, routes, views | Conflict check + test pass |
-| **RED** | Danger | Cross-module, security/data | Migrations, auth, database schema | War-room RS + full test + review |
-| **CRITICAL** | Stop | Irreversible, regulated | Data deletion, production deploy | War-room RS + human approval |
+| **YELLOW** | Caution | Module-level, user-visible | Components, routes, views | Conflict check and test pass |
+| **RED** | Danger | Cross-module, security/data | Migrations, auth, database schema | War-room RS, full test, and review |
+| **CRITICAL** | Stop | Irreversible, regulated | Data deletion, production deploy | War-room RS and human approval |
 
 ## Hybrid Routing
 

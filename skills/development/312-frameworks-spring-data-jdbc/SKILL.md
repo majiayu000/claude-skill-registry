@@ -4,7 +4,7 @@ description: Use when you need to use Spring Data JDBC with Java records — inc
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.15.0-SNAPSHOT
+  version: 0.15.0
 ---
 # Spring Data JDBC with Records
 

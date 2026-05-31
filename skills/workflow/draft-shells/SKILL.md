@@ -54,9 +54,10 @@ The default is one shell. Adding a shell costs a fresh-session handoff: lost in-
 
 - **Context-window pressure.** The combined work would exhaust a single Codex session before completing: too much code to read in full, too many distinct codebase conventions to absorb, or too much output to generate in one window. Judge from the actual scope and codebase shape, not from headcounts. Distinct Produces/Consumes boundaries between two pieces are not enough on their own to justify a split.
 - **Hard dependency ordering.** A later piece cannot be meaningfully drafted or expanded until an earlier piece's concrete output exists, such as generated types, framework wiring, or established patterns that later sessions need to survey against.
-- **Independent subsystems with no overlap.** Two or more pieces share no coupling and no overlap in pattern surveys, so separate focused sessions give a real benefit over one combined session.
 
-If none of these apply, the work is one shell. Do not invent dependencies to hit a multi-shell shape. A spec's suggested groupings are a starting point — collapse adjacent suggestions into a single shell when no forcing condition separates them. Trust larger units of work; most spec items do not earn their own shell.
+Independence is not a forcing condition. Treat two subsystems that share no coupling as cheap to combine into one shell. Split independent pieces only when the combined work also trips context-window pressure.
+
+If neither forcing condition applies, the work is one shell. Do not invent dependencies to hit a multi-shell shape. A spec's suggested groupings are a starting point — collapse adjacent suggestions into a single shell when no forcing condition separates them. Trust larger units of work; most spec items do not earn their own shell.
 
 Items folded into a shell go into that shell's Implementation Steps. If several folded items have no clear home, group them into a single "minor fixes" shell at the end.
 
@@ -88,13 +89,17 @@ For each shell, identify the structural contract with the rest of the decomposit
 
 - **Produces** — What this shell creates that other shells (or the final system) can use. List concrete artifacts at the conceptual level: modules, types, endpoints, data models, UI screens, migration files. File paths are filled in at expansion time.
 - **Consumes** — What this shell depends on that must already exist. Either listed in a prior shell's Produces (and that producing shell named directly in this shell's frontmatter `depends_on`), or marked "from existing codebase" if it predates this decomposition. Every Consumes entry must be traceable to a source.
-- **Covers spec requirements** — Which `R<N>` IDs from the spec's `## Requirements` section this shell implements. The union of Covers across all shells must equal the full set of R-ids in the spec. Every R-id must appear in at least one shell's Covers. Write one R-id per bullet in the Step 4 template. For partial coverage of a single R-id, mark the entry `R<N> (partial: <what's deferred>)` and name the deferred work in that shell's Open Questions. A bare `R<N>` for partial coverage breaks the invariant. Do not invent variant annotations such as `(finished: ...)` or `(closing: ...)`.
+- **Covers spec requirements** — Which `R<N>` IDs from the spec's `## Requirements` section this shell implements. The union of Covers across all shells must equal the full set of R-ids in the spec. Every R-id must appear in at least one shell's Covers. Write one R-id per bullet in the Step 4 template. For partial coverage of a single R-id, mark the entry `R<N> (partial: <what's deferred>)` and name the deferred work in that shell's Open Questions. A bare `R<N>` for partial coverage breaks the invariant. When a single R-id spans two shells — typically when one shell ships scaffolding or placeholders that a later shell fills — neither shell may claim it bare. Both shells use `R<N> (partial: <what's deferred to the other shell>)` with non-overlapping deferred slices. The bare form is reserved for an R-id that is fully satisfied as of the end of one shell. Do not invent variant annotations such as `(finished: ...)`, `(closing: ...)`, `(completes: ...)`, or any other annotation that tries to convey "this is the shell that ships the rest"; use the two-partials pattern instead.
 
 ### Shell Slug
 
 Each shell gets a slug derived from its title using spec slug rules (lowercase, hyphenated, ≤40 chars), prefixed with the shell number: `<spec-slug>-NN-<title-slug>`. The shell keeps this file name when `$expand-shell` fills it in.
 
 Example: spec slug `photo-sorter-v2`, Shell 3 titled "Build duplicate detection" → slug `photo-sorter-v2-03-build-duplicate-detection`, written to `.turbo/shells/photo-sorter-v2-03-build-duplicate-detection.md`.
+
+### Pre-Write Checkpoint
+
+Before proceeding to Step 3, list each shell beyond the first and name the specific forcing condition that justifies its existence as a separate shell (context-window pressure or hard dependency ordering). If a shell's only justification is "this piece is independent" or "this is a separate subsystem", collapse it into an adjacent shell. Re-run this checkpoint until every shell beyond the first names a concrete forcing condition.
 
 ### Single-Shell Bail-out
 
@@ -195,7 +200,14 @@ If a shell has no Open Questions, include the section with "None" so the structu
 
 ## Step 5: Present Summary
 
-Present a brief summary: number of shells, one-line description of each shell's scope, and any assumptions made about ambiguities. Tell the user the next step:
+Present a brief summary of the decomposition: number of shells, a one-line description of each shell's scope, and any assumptions made about ambiguities. Fit the summary to the decomposition rather than a fixed template.
+
+Then use `request_user_input` to offer two paths:
+
+- **Approve** (Recommended) — the decomposition is final.
+- **Revise** — the user describes what to change. Apply it, re-running Step 2 when the change is structural (it alters shell count or boundaries) and rewriting the affected shell files, then re-summarize and re-present.
+
+After approval, tell the user the next step:
 
 > To start implementation, run `$pick-next-shell`.
 
@@ -210,4 +222,5 @@ Then update or check the active plan and proceed to any remaining task.
 - Every Consumes entry must be backed by an explicit edge in the shell's frontmatter `depends_on` (or marked "from existing codebase").
 - The union of all Covers fields must equal the full set of R-ids in the spec's `## Requirements` section. Every R-id must appear in at least one shell's Covers.
 - Coverage notations: only bare `R<N>` (full, claimed exactly once) and `R<N> (partial: <what's deferred>)`. Do not invent variants like `(finished: ...)`.
+- When a requirement's work splits across two shells, use the two-partials pattern. Never co-occur a bare claim with a partial claim for the same R-id.
 - Implementation Steps (High-Level) describe build work. Exclude `git commit`, `git push`, and PR creation.

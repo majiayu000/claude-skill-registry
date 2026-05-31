@@ -1,12 +1,26 @@
 ---
 name: challenge
-description: 'Adaptive-difficulty challenge testing codebase understanding via multiple-choice and trace exercises.'
+description: Presents adaptive codebase challenge questions with multiple-choice and trace exercises. Use when testing contributor knowledge of the codebase.
 model_hint: standard
 ---
 
 # Run Gauntlet Challenge
 
 Present challenges from the knowledge base and evaluate answers.
+
+## In-Loop Provider Setup
+
+Before generating a challenge, register the in-loop variation
+provider so we do not call out to the Anthropic API just to spawn
+a sibling Claude (issue #464). Outside Claude Code this is a
+no-op and the default Anthropic provider remains active.
+
+```python
+from gauntlet.providers.in_loop import (
+    register_in_loop_provider_if_inside_claude_code,
+)
+register_in_loop_provider_if_inside_claude_code()
+```
 
 ## Steps
 

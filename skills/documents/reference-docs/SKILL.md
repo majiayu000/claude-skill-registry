@@ -1,6 +1,7 @@
 ---
 name: reference-docs
 description: Reference documentation patterns for API and symbol documentation. Use when writing reference docs, API docs, parameter tables, or technical specifications. Triggers on reference docs, API reference, function reference, parameters table, symbol documentation.
+user-invocable: false
 ---
 
 # Reference Documentation Patterns
@@ -316,9 +317,18 @@ Always include links to related content:
 - [User Authentication Guide](/guides/authentication) - How authentication works
 ```
 
+## Gates (completion order)
+
+Use this **sequenced** workflow before treating a reference page as complete. Finish step *n* before *n+1*; each step has a **Pass** you can check on the written page alone (no “I verified internally”).
+
+1. **Structure** — Sections match your project template (typically Parameters, Returns, Example, Related; HTTP docs add Endpoint, Path/Query, Headers, Response). **Pass:** every required section exists, or a one-line omission note appears under **Related** (e.g. “No query parameters”).
+2. **Tables** — Parameters/returns/errors use tables with consistent columns per **Consistent Format Across Entries** and **Required vs Optional**. **Pass:** no blank Description cells; no `TBD` / `???` for shipped APIs.
+3. **Runnable example** — At least one example meets **Every Example Must Be Runnable** and **Use Realistic Values**. **Pass:** imports included; user-visible strings are realistic (not generic `foo`/`bar` unless the API is illustrative-only).
+4. **Related** — **Pass:** `## Related` contains ≥1 Markdown link to another reference or guide, or one explicit sentence that there are no related symbols.
+
 ## Checklist for Reference Pages
 
-Before considering a reference page complete:
+After the **Gates (completion order)** above, confirm:
 
 - [ ] Title matches the symbol/API name exactly
 - [ ] Description is one clear sentence

@@ -1,6 +1,6 @@
 ---
 name: codex-orchestrator
-description: "Spawn specialized OpenAI Codex CLI subagents for code review, debugging, architecture analysis, security audits, refactoring, documentation, and autonomous /goal runs via AGENTS.md persona injection (gpt-5.5, gpt-5.5-pro, gpt-5-mini). Triggers on 'delegate to Codex', 'Codex subagent', 'code review agent', 'security audit', 'refactor with Codex', 'goal run', 'autonomous goal'."
+description: "Spawn specialized OpenAI Codex CLI subagents for code review, debugging, architecture analysis, security audits, refactoring, documentation, comparative evidence adjudication, and autonomous /goal runs via AGENTS.md persona injection (gpt-5.5, gpt-5.5-pro, gpt-5-mini). Triggers on 'delegate to Codex', 'Codex subagent', 'code review agent', 'security audit', 'refactor with Codex', 'goal run', 'autonomous goal', 'have Codex weigh this'."
 ---
 
 # Codex Orchestrator
@@ -59,6 +59,7 @@ To manually check/update:
 | `syseng` | Infrastructure, DevOps, CI/CD, monitoring | Deployment, containers, observability, production ops |
 | `builder` | Greenfield implementation, new features | Creating new code from specs, incremental feature development |
 | `researcher` | Read-only Q&A, codebase analysis | Questions, analysis, comparisons (no file changes) |
+| `adjudicator` | Read-only comparative evidence weighing | Ambiguous hypotheses, rival interpretations, corpus comparisons, sign-value adjudication |
 | `chat` | Open-ended conversation | General questions, brainstorming, discussion (read-only, ephemeral) |
 | `goal` | Goal specification for /goal runs | Drafting structured objectives for autonomous multi-hour Codex sessions |
 
@@ -113,6 +114,9 @@ Examples:
 # Ask a question about the codebase (read-only, no file changes)
 ~/.claude/skills/codex-orchestrator/scripts/codex-exec.sh researcher "Explain the authentication flow in this project"
 
+# Weigh rival hypotheses or ambiguous evidence (read-only, high reasoning)
+~/.claude/skills/codex-orchestrator/scripts/codex-exec.sh adjudicator "With Linear B and Linear A inscriptions side-by-side, weigh candidate values for the missing sound and rank the hypotheses."
+
 # Research with Exa web search (injects Exa guide into AGENTS.md)
 ~/.claude/skills/codex-orchestrator/scripts/codex-exec.sh researcher "What are the latest React Server Component patterns?" --web-search
 
@@ -158,6 +162,7 @@ python3 ~/.claude/skills/codex-orchestrator/scripts/codex-session.py info securi
 - **debugger** for bug investigation
 - **architect** for understanding system behavior
 - **researcher** for questions and analysis (read-only, no changes)
+- **adjudicator** for weighing rival hypotheses, ambiguous evidence, and corpus-level comparisons (read-only, high reasoning)
 - **chat** for open-ended conversation and brainstorming (read-only, ephemeral)
 
 ### Creation Tasks
@@ -247,6 +252,26 @@ python3 ~/.claude/skills/codex-orchestrator/scripts/codex-session.py info securi
 # 3. Implement
 ~/.claude/skills/codex-orchestrator/scripts/codex-exec.sh builder "Implement the caching layer from architect's design"
 ```
+
+## Backgrounding & Parallel Execution
+
+Codex CLI v0.124.0+ requires a controlling TTY. When run with shell `&` or Claude Code's `run_in_background: true`, the TTY is detached and Codex silently produces empty output (openai/codex#19945). Longer prompts increase failure likelihood (empirically observed) — the researcher profile is especially vulnerable.
+
+`codex-exec.sh` and `codex-goal.sh` automatically detect non-TTY contexts and wrap `codex exec` with `script(1)` to re-attach a pseudo-TTY. No user action is required.
+
+For direct `codex exec` calls (not through `codex-exec.sh`), wrap manually:
+
+```bash
+# macOS
+script -q /dev/null codex exec --skip-git-repo-check "prompt" </dev/null
+
+# Linux
+script -qfc 'codex exec --skip-git-repo-check "prompt" </dev/null' /dev/null
+```
+
+AGENTS.md backups are PID-scoped — multiple `codex-exec.sh` instances can safely run in the same directory.
+
+**`--no-cleanup` flag** (codex-exec.sh only): When set, the output temp file is preserved after exit and its path is printed to stderr (`OUTPUT_FILE=<path>`). Use when the caller needs to retrieve the output file asynchronously.
 
 ## Goal Runs
 
@@ -351,6 +376,7 @@ Each profile has a default model and reasoning effort. User flags override these
 | **Coding** | builder, reviewer, debugger, refactor, syseng, security, docs | `gpt-5.5` | `high` |
 | **Planning** | planner, architect, goal | `gpt-5.5` | `high` |
 | **Research** | researcher | `gpt-5.5` | `medium` |
+| **Adjudication** | adjudicator | `gpt-5.5` | `high` |
 | **Chat** | chat | `gpt-5.4` | `medium` |
 
 **Reasoning effort levels**: `none` < `minimal` < `low` < `medium` < `high` < `xhigh`
@@ -446,7 +472,7 @@ export OPENAI_API_KEY=sk-...
 ```
 
 ### "Profile not found"
-Available profiles: reviewer, debugger, architect, security, refactor, docs, planner, syseng, builder, researcher, chat, goal
+Available profiles: reviewer, debugger, architect, security, refactor, docs, planner, syseng, builder, researcher, adjudicator, chat, goal
 
 Check profile exists:
 ```bash
@@ -454,7 +480,8 @@ ls ~/.claude/skills/codex-orchestrator/agents/
 ```
 
 ### "Codex produced no output"
-The researcher/chat profiles capture output to a temp file. If Codex exits without writing to it, the script warns and exits 1. Common causes:
+The researcher/adjudicator/chat profiles capture output to a temp file. If Codex exits without writing to it, the script warns and exits 1. Common causes:
+- **TTY detachment (most common)**: Codex CLI v0.124.0+ silently crashes when backgrounded without a TTY. `codex-exec.sh` auto-wraps with `script(1)` — verify your Codex version (`codex --version`). Longer prompts increase failure rate.
 - Codex session too short to produce a response
 - Model returned empty response (retry)
 - AGENTS.md was missing (check for stale `.AGENTS.md.codex-backup.*` files in working directory)

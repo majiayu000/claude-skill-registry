@@ -1,15 +1,29 @@
 ---
 name: review-verification-protocol
 description: Mandatory verification steps for all code reviews to reduce false positives. Load this skill before reporting ANY code review findings.
+user-invocable: false
 ---
 
 # Review Verification Protocol
 
 This protocol MUST be followed before reporting any code review finding. Skipping these steps leads to false positives that waste developer time and erode trust in reviews.
 
+## Hard gates (sequence)
+
+Apply **once per finding** before it may appear in the review. If a gate fails, **omit** the finding, **downgrade** to Informational (per [Severity Calibration](#severity-calibration)), or **rephrase** as a question—do not ship soft accusations.
+
+| Step | What you do | Pass condition (objective) |
+|------|----------------|----------------------------|
+| **1. Anchor** | Read the full enclosing symbol or module, not only the diff hunk. | You can state **file path** and **line range** (or symbol name + file) you are judging. |
+| **2. Evidence** | For this finding’s type, run the checks in [Verification by Issue Type](#verification-by-issue-type). | Each required check has an **artifact**: pasted tool output, **file:line** citation, or explicit **"none"** / **"N matches"** after a repo search—not a claim you "looked." |
+| **3. Severity** | Assign severity using [Severity Calibration](#severity-calibration). | Label matches the table; requests for net-new code that did not exist in scope are **Informational** only. |
+| **4. Format** | Draft the finding for the report. | Matches `[FILE:LINE] ISSUE_TITLE`; Informational items do not add to the actionable count. |
+
+Style-only or preference items must fail gate 2 or map to **Do NOT Flag At All**—they do not get a severity.
+
 ## Pre-Report Verification Checklist
 
-Before flagging ANY issue, verify:
+Before flagging ANY issue, verify (these items are **what gate 2 must produce evidence for**):
 
 - [ ] **I read the actual code** - Not just the diff context, but the full function/class
 - [ ] **I searched for usages** - Before claiming "unused", searched all references
@@ -201,13 +215,14 @@ Flag missing try/catch **ONLY IF**:
 ## Before Submitting Review
 
 Final verification:
-1. Re-read each finding and ask: "Did I verify this is actually an issue?"
-2. For each finding, can you point to the specific line that proves the issue exists?
-3. Would a domain expert agree this is a problem, or is it a style preference?
-4. Does fixing this provide real value, or is it busywork?
-5. Format every finding as: `[FILE:LINE] ISSUE_TITLE`
-6. For each finding, ask: "Does this fix existing code, or does it request entirely new code that didn't exist before?" If the latter, downgrade to Informational.
-7. If this is a re-review: ONLY verify previous fixes. Do not introduce new findings.
+1. Each finding passed [Hard gates (sequence)](#hard-gates-sequence) (anchor, evidence with artifacts, severity, format).
+2. Re-read each finding and ask: "Did I verify this is actually an issue?"
+3. For each finding, can you point to the specific line that proves the issue exists?
+4. Would a domain expert agree this is a problem, or is it a style preference?
+5. Does fixing this provide real value, or is it busywork?
+6. Format every finding as: `[FILE:LINE] ISSUE_TITLE`
+7. For each finding, ask: "Does this fix existing code, or does it request entirely new code that didn't exist before?" If the latter, downgrade to Informational.
+8. If this is a re-review: ONLY verify previous fixes. Do not introduce new findings.
 
 If uncertain about any finding, either:
 - Remove it from the review

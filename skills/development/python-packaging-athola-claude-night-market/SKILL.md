@@ -1,6 +1,6 @@
 ---
 name: python-packaging
-description: 'Python package creation and distribution: pyproject.toml, entry points, PyPI publishing, CI/CD.'
+description: Python package creation and PyPI distribution via pyproject.toml and entry points. Use when publishing a package or setting up build configuration.
 globs: "**/*.py"
 alwaysApply: false
 category: packaging

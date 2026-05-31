@@ -19,7 +19,13 @@ Draft a title and description, embedding any diagrams in the body. Output the dr
 
 ## Step 3: Confirm and Create
 
-Use `AskUserQuestion` for confirmation only. Create the PR with `gh pr create`. Do not set `--assignee` unless the user explicitly asks to assign someone.
+Use `AskUserQuestion` for confirmation only. Write the drafted body to `.turbo/pr/body.md` with the Write tool, then create the PR with `gh pr create --body-file`:
+
+```bash
+gh pr create --title "<TITLE>" --body-file .turbo/pr/body.md
+```
+
+Do not set `--assignee` unless the user explicitly asks to assign someone.
 
 ## Diagrams
 

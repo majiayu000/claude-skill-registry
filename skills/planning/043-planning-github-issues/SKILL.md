@@ -4,7 +4,7 @@ description: Use when you need the GitHub CLI (`gh`) to verify installation, lis
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.15.0-SNAPSHOT
+  version: 0.15.0
 ---
 # GitHub CLI — issues, milestones, and discussion for analysis
 

@@ -240,6 +240,9 @@ def build_apply_plan(
         if not source_dir.exists():
             reject_reasons["source directory missing"] += 1
             continue
+        if not (skills_dir / source_skill_rel).is_file():
+            reject_reasons["source SKILL.md missing"] += 1
+            continue
         if reason := source_hash_mismatch(row, source_dir):
             reject_reasons[reason] += 1
             continue

@@ -30,6 +30,28 @@ def _write_skill_with_body(root: Path, rel_dir: str, metadata: dict, body: str) 
     return skill_dir
 
 
+def test_metadata_identity_normalizes_path_and_branch_aliases():
+    module = _load_module()
+
+    assert module.metadata_identity(
+        {
+            "name": "demo",
+            "repo": "owner/repo",
+            "path": "skills/demo",
+            "branch": "main",
+            "license": "MIT",
+        }
+    ) == module.metadata_identity(
+        {
+            "name": "demo",
+            "repo": "owner/repo",
+            "github_path": "skills/demo",
+            "github_branch": "main",
+            "license": "MIT",
+        }
+    )
+
+
 def test_depth_plan_uses_metadata_category_for_nested_skill(tmp_path):
     module = _load_module()
     skills_dir = tmp_path / "skills"

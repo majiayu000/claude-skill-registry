@@ -20,6 +20,23 @@ def _write_jsonl(path: Path, rows: list[dict]) -> None:
     )
 
 
+def test_parse_args_status_replaces_default_ok():
+    sampler = _load_module()
+
+    args = sampler.parse_args(
+        [
+            "--workset-jsonl",
+            "workset.jsonl",
+            "--classification-jsonl",
+            "classification.jsonl",
+            "--status",
+            "api_error",
+        ]
+    )
+
+    assert args.status == ["api_error"]
+
+
 def test_builds_deterministic_sample_with_input_context(tmp_path):
     sampler = _load_module()
     workset = tmp_path / "workset.jsonl"

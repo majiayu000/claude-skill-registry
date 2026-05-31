@@ -70,7 +70,7 @@ class CategoryTaxonomy:
         raise UnknownCategoryError(f"Unknown category: {raw_category!r}")
 
     def code_for(self, raw_category: str | None, *, allow_alias: bool = False) -> str:
-        slug = self.resolve(raw_category, allow_unknown=True, allow_alias=allow_alias)
+        slug = self.resolve(raw_category, allow_unknown=True, allow_alias=True)
         definition = self.categories.get(slug)
         return definition.code if definition else slug
 

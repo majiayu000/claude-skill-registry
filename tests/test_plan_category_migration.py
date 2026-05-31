@@ -146,6 +146,38 @@ def test_plan_reports_source_conflict_before_legacy_migration(tmp_path):
     assert change["review_required"] is True
 
 
+def test_plan_does_not_hide_source_conflicts_by_alias_normalization(tmp_path):
+    planner = _load_module()
+    skills_dir = tmp_path / "skills"
+    _write_skill(
+        skills_dir,
+        "development",
+        "metadata-alias",
+        {
+            "name": "metadata-alias",
+            "category": "engineering",
+            "description": "Build framework compile debug helper.",
+        },
+    )
+
+    plan = planner.build_plan(skills_dir)
+    change = {item["path"]: item for item in plan["changes"]}[
+        "development/metadata-alias/SKILL.md"
+    ]
+
+    assert change["action"] == "resolve_source_conflict"
+    assert change["current_category"] == "engineering"
+    assert change["raw_sources"] == {
+        "directory": "development",
+        "metadata": "engineering",
+    }
+    assert change["resolved_sources"] == {
+        "directory": "development",
+        "metadata": "engineering",
+    }
+    assert change["review_required"] is True
+
+
 def test_plan_uses_frontmatter_description_when_metadata_description_missing(tmp_path):
     planner = _load_module()
     skills_dir = tmp_path / "skills"
@@ -173,5 +205,40 @@ def test_plan_uses_frontmatter_description_when_metadata_description_missing(tmp
         "other/frontmatter-devops/SKILL.md"
     ]
 
+    assert change["action"] == "heuristic_reclassify"
+    assert change["proposed_category"] == "devops"
+
+
+def test_plan_does_not_use_body_description_when_content_chars_zero(tmp_path):
+    planner = _load_module()
+    skills_dir = tmp_path / "skills"
+    _write_skill(
+        skills_dir,
+        "other",
+        "quiet-helper",
+        {
+            "name": "quiet-helper",
+            "category": "other",
+        },
+        (
+            "---\n"
+            "name: quiet-helper\n"
+            "---\n\n"
+            "Docker Kubernetes CI CD deploy infrastructure workflow.\n"
+        ),
+    )
+
+    default_plan = planner.build_plan(skills_dir, min_score=2, min_delta=2)
+    scanned_body_plan = planner.build_plan(
+        skills_dir,
+        content_chars=200,
+        min_score=2,
+        min_delta=2,
+    )
+
+    assert default_plan["changes"] == []
+    change = {item["path"]: item for item in scanned_body_plan["changes"]}[
+        "other/quiet-helper/SKILL.md"
+    ]
     assert change["action"] == "heuristic_reclassify"
     assert change["proposed_category"] == "devops"

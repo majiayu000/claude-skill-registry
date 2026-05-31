@@ -695,6 +695,7 @@ def test_skill_source_dir_resolves_skill_parent():
 
 def test_bundled_file_allowlist_is_scoped_and_size_limited():
     module = load_module()
+    support = load_support_module()
 
     assert module.bundled_relative_path("", "package.json") == "package.json"
     assert (
@@ -729,6 +730,8 @@ def test_bundled_file_allowlist_is_scoped_and_size_limited():
         )
         is False
     )
+    assert support.requires_complete_bundled_archive("See references/guide.md") is True
+    assert support.requires_complete_bundled_archive("Set user preference/theme.md") is False
 
 
 def test_bundled_download_failure_does_not_publish_partial_archive(tmp_path, monkeypatch):

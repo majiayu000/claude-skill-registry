@@ -13,7 +13,7 @@ from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
-from utils import extract_description, load_metadata
+from utils import extract_description, load_metadata, normalize_category
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -33,11 +33,18 @@ def safe_write_registry(registry_path: Path, registry: dict) -> bool:
 
         temp_path.rename(registry_path)
         return True
-    except Exception as e:
-        logger.error(f"Failed to write registry: {e}")
-        if temp_path.exists():
-            temp_path.unlink()
-        return False
+    except Exception:
+        logger.exception("Failed to write registry")
+        try:
+            if temp_path.exists():
+                temp_path.unlink()
+        except Exception as cleanup_error:
+            logger.error(
+                "Failed to remove temporary registry file %s: %s",
+                temp_path,
+                cleanup_error,
+            )
+        raise
 
 
 def safe_write_json(output_path: Path, payload: dict) -> None:
@@ -310,8 +317,7 @@ def cleanup_orphan_metadata(skills_dir: Path) -> int:
 
 def sanitize_category(category: str) -> str:
     """Sanitize category name for use as filename."""
-    # Replace / and other problematic characters with -
-    return category.replace("/", "-").replace("\\", "-").replace(":", "-")
+    return normalize_category(category or "other")
 
 
 def build_category_indexes(skills: list, output_dir: Path):
@@ -482,14 +488,11 @@ if __name__ == "__main__":
             manifest_path=manifest_ref if args.compat_manifest_pointer else None,
         )
 
-        if safe_write_registry(registry_path, registry):
-            print(
-                f"Written compatibility {registry_path} "
-                f"with {len(unique_skills)} skills, {len(plugins)} plugins"
-            )
-        else:
-            print("Failed to write registry!")
-            return
+        safe_write_registry(registry_path, registry)
+        print(
+            f"Written compatibility {registry_path} "
+            f"with {len(unique_skills)} skills, {len(plugins)} plugins"
+        )
         print()
 
         if not args.skip_categories:

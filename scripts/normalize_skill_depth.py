@@ -21,6 +21,7 @@ from category_taxonomy import resolve_category
 from utils import (
     build_legal_metadata,
     build_skill_key,
+    canonical_metadata_identity,
     get_repo_suffix,
     load_metadata,
     normalize_category,
@@ -132,12 +133,7 @@ def file_sha256(path: Path) -> str:
 
 
 def metadata_identity(metadata: dict[str, Any]) -> dict[str, Any]:
-    identity: dict[str, Any] = {}
-    for field in METADATA_IDENTITY_FIELDS:
-        value = metadata.get(field)
-        if value not in (None, ""):
-            identity[field] = value
-    return identity
+    return canonical_metadata_identity(metadata, METADATA_IDENTITY_FIELDS)
 
 
 def duplicate_safety(skills_dir: Path, source_dir: Path, target_rel: Path) -> dict[str, Any]:

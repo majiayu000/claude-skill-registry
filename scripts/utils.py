@@ -269,6 +269,34 @@ def build_skill_key(repo: str = "", path: str = "", name: str = "", category: st
     return ""
 
 
+def canonical_metadata_identity(metadata: dict[str, Any], fields: tuple[str, ...]) -> dict[str, Any]:
+    """Build metadata identity while treating known source aliases as equivalent."""
+    identity: dict[str, Any] = {}
+    alias_groups = {
+        "path": ("github_path", "path"),
+        "branch": ("github_branch", "branch"),
+    }
+    handled_aliases = set()
+    field_set = set(fields)
+    for canonical_field, aliases in alias_groups.items():
+        if not any(alias in field_set for alias in aliases):
+            continue
+        handled_aliases.update(aliases)
+        for alias in aliases:
+            value = metadata.get(alias)
+            if value not in (None, ""):
+                identity[canonical_field] = value
+                break
+
+    for field in fields:
+        if field in handled_aliases:
+            continue
+        value = metadata.get(field)
+        if value not in (None, ""):
+            identity[field] = value
+    return identity
+
+
 def iter_source_skills(source: dict):
     """Yield source rows with any top-level repo applied to rows that omit it."""
     default_repo = source.get("repo") if isinstance(source.get("repo"), str) else ""
@@ -485,7 +513,7 @@ def skill_semantic_fields(
         description = _semantic_text(metadata.get("description"))
         if description:
             sources["description"] = "metadata"
-        elif content:
+        elif content_chars > 0 and content:
             description = extract_description(content)
             if description:
                 sources["description"] = "body"

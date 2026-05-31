@@ -213,6 +213,47 @@ def test_source_hash_mismatch_blocks_stale_classification(tmp_path):
     }
 
 
+def test_missing_source_skill_file_blocks_apply_plan(tmp_path):
+    migrator = _load_module()
+    skills_dir = tmp_path / "skills"
+    source_dir = skills_dir / "other" / "missing-skill"
+    source_dir.mkdir(parents=True)
+    (source_dir / "metadata.json").write_text(
+        json.dumps(
+            {
+                "name": "missing-skill",
+                "category": "other",
+                "dir_name": "missing-skill",
+            },
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
+    classification = tmp_path / "classification.jsonl"
+    _write_classification(
+        classification,
+        [
+            {
+                "path": "other/missing-skill/SKILL.md",
+                "name": "missing-skill",
+                "current_category": "other",
+                "llm_category": "development",
+                "confidence": 0.95,
+                "status": "ok",
+            }
+        ],
+    )
+
+    plan = migrator.build_apply_plan(
+        skills_dir=skills_dir,
+        classification_jsonl=classification,
+        from_categories={"other"},
+    )
+
+    assert plan["summary"]["planned_move_count"] == 0
+    assert plan["summary"]["reject_reasons"] == {"source SKILL.md missing": 1}
+
+
 def test_movable_only_skips_blocked_moves_and_fills_limit(tmp_path):
     migrator = _load_module()
     skills_dir = tmp_path / "skills"

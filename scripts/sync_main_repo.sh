@@ -109,13 +109,18 @@ remove_local_artifacts_under() {
 }
 
 sync_core_to_main() {
-  # Keep all main-owned workflows stable. Mirroring a new workflow file from core
-  # requires token workflow scope in the publish repo and breaks scheduled publish.
+  # Keep main-owned workflows and repository routing docs/templates stable.
+  # Mirroring a new workflow file from core requires token workflow scope in the
+  # publish repo and breaks scheduled publish.
   rsync -a --delete \
     --exclude '.git' \
     --exclude '.gitignore' \
+    --exclude 'README.md' \
     --exclude 'skills' \
     --exclude 'skills/**' \
+    --exclude '.github/ISSUE_TEMPLATE' \
+    --exclude '.github/ISSUE_TEMPLATE/**' \
+    --exclude '.github/PULL_REQUEST_TEMPLATE.md' \
     --exclude '.github/workflows/*.yml' \
     --exclude '.github/workflows/*.yaml' \
     --exclude '.ruff_cache' \

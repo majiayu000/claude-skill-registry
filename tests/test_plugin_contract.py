@@ -3,6 +3,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+import pytest
+
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS_DIR = ROOT / "scripts"
 if str(SCRIPTS_DIR) not in sys.path:
@@ -445,6 +447,39 @@ def test_safe_write_registry_writes_compact_json(tmp_path):
     assert content == '{"skills":[{"name":"demo","repo":"owner/repo"}]}'
 
 
+def test_safe_write_registry_raises_on_write_failure(tmp_path):
+    registry_path = tmp_path / "missing" / "registry.json"
+
+    with pytest.raises(FileNotFoundError):
+        rebuild_registry.safe_write_registry(registry_path, {"skills": []})
+
+    assert not (tmp_path / "missing" / "registry.json.tmp").exists()
+
+
+def test_build_category_indexes_normalizes_control_character_categories(tmp_path):
+    output_dir = tmp_path / "categories"
+    skills = [
+        {
+            "name": "demo",
+            "description": "Demo skill",
+            "category": "nestjs-validation-and-pipes\n",
+            "stars": 0,
+        }
+    ]
+
+    rebuild_registry.build_category_indexes(skills, output_dir)
+
+    category_files = [
+        path for path in output_dir.iterdir() if path.name != "index.json"
+    ]
+    assert [path.name for path in category_files] == [
+        "nestjs-validation-and-pipes.json"
+    ]
+    assert not any("\n" in path.name for path in category_files)
+    category_data = json.loads(category_files[0].read_text(encoding="utf-8"))
+    assert category_data["category"] == "nestjs-validation-and-pipes"
+
+
 def test_registry_shard_id_is_stable_for_install_and_branch():
     skill = {
         "name": "demo",
@@ -596,6 +631,51 @@ def test_rebuild_registry_accepts_absolute_manifest_output(tmp_path):
     assert registry["manifest"] == "artifacts/registry-manifest.json"
     assert manifest["shard_count"] == 256
     assert all(entry["path"].startswith("registry-shards/") for entry in manifest["shards"])
+
+
+def test_rebuild_registry_exits_nonzero_on_registry_write_failure(tmp_path):
+    skills_dir = tmp_path / "skills"
+    skill_dir = skills_dir / "development" / "demo"
+    skill_dir.mkdir(parents=True)
+    (skill_dir / "SKILL.md").write_text("# demo\n\nDemo skill.", encoding="utf-8")
+    (skill_dir / "metadata.json").write_text(
+        json.dumps(
+            {
+                "name": "demo",
+                "repo": "owner/repo",
+                "github_path": "skills/demo",
+                "github_branch": "main",
+                "category": "development",
+                "tags": ["demo"],
+                "stars": 1,
+                "source": "test",
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            str(SCRIPTS_DIR / "rebuild_registry.py"),
+            "--skills-dir",
+            str(skills_dir),
+            "--registry",
+            str(tmp_path / "missing" / "registry.json"),
+            "--manifest",
+            str(tmp_path / "artifacts" / "registry-manifest.json"),
+            "--shards-dir",
+            str(tmp_path / "artifacts" / "registry-shards"),
+            "--skip-categories",
+        ],
+        check=False,
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+    )
+
+    assert result.returncode != 0
+    assert "Failed to write registry" in result.stderr
 
 
 def test_cleanup_orphan_metadata_removes_only_orphans(tmp_path):

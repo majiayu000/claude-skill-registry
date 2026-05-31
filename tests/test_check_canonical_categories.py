@@ -162,6 +162,35 @@ def test_docs_gate_rejects_category_count_drift(tmp_path):
     assert "category-count-mismatch" in codes
 
 
+def test_count_map_compare_reports_missing_empty_side():
+    gate = _load_module()
+    issues = []
+
+    gate._compare_count_maps(
+        issues,
+        expected={"documents": 1},
+        expected_label="category index",
+        actual={},
+        actual_label="category manifests",
+        path="docs/categories/index.json",
+    )
+    gate._compare_count_maps(
+        issues,
+        expected={},
+        expected_label="category index",
+        actual={"documents": 1},
+        actual_label="category manifests",
+        path="docs/categories/index.json",
+    )
+
+    assert [issue.code for issue in issues] == [
+        "category-count-missing",
+        "category-count-missing",
+    ]
+    assert "category index has 'documents' but category manifests does not" in issues[0].message
+    assert "category manifests has 'documents' but category index does not" in issues[1].message
+
+
 def test_publish_gate_accepts_canonical_shapes(tmp_path):
     gate = _load_module()
     skills_dir = tmp_path / "skills"

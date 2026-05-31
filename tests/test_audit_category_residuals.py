@@ -51,6 +51,28 @@ def _write_classification(path: Path, rows: list[dict]) -> None:
     )
 
 
+def test_metadata_identity_normalizes_path_and_branch_aliases():
+    audit = _load_module()
+
+    assert audit.metadata_identity(
+        {
+            "name": "demo",
+            "repo": "owner/repo",
+            "path": "skills/demo",
+            "branch": "main",
+            "license": "MIT",
+        }
+    ) == audit.metadata_identity(
+        {
+            "name": "demo",
+            "repo": "owner/repo",
+            "github_path": "skills/demo",
+            "github_branch": "main",
+            "license": "MIT",
+        }
+    )
+
+
 def test_report_separates_missing_sources_from_current_residuals(tmp_path):
     audit = _load_module()
     skills_dir = tmp_path / "skills"

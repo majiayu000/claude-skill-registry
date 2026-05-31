@@ -142,7 +142,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--output", type=Path)
     parser.add_argument("--sample-size", type=int, default=50)
     parser.add_argument("--seed", default="category-audit-v1")
-    parser.add_argument("--status", action="append", default=["ok"])
+    parser.add_argument("--status", action="append")
     parser.add_argument("--min-confidence", type=float)
     parser.add_argument("--json", action="store_true")
     parser.add_argument("--preview-limit", type=int, default=10)
@@ -160,7 +160,7 @@ def main(argv: list[str] | None = None) -> int:
         classification_jsonl=args.classification_jsonl,
         output_sample_size=args.sample_size,
         seed=args.seed,
-        statuses=parse_csv(args.status),
+        statuses=parse_csv(args.status) if args.status else None,
         min_confidence=args.min_confidence,
     )
     payload = json.dumps(report, indent=2, ensure_ascii=False)

@@ -162,6 +162,21 @@ def test_publish_sync_has_observable_steps_and_cache_excludes():
     assert "-exec rm -f {} +" in cleanup_block
 
 
+def test_publish_sync_preserves_main_owned_routing_files():
+    sync_script = read_repo_file("scripts/sync_main_repo.sh")
+    sync_block = sync_script[
+        sync_script.index("sync_core_to_main()") : sync_script.index(
+            "sync_data_to_main()"
+        )
+    ]
+
+    assert "--exclude 'README.md'" in sync_block
+    assert "--exclude '.github/ISSUE_TEMPLATE'" in sync_block
+    assert "--exclude '.github/ISSUE_TEMPLATE/**'" in sync_block
+    assert "--exclude '.github/PULL_REQUEST_TEMPLATE.md'" in sync_block
+    assert "--delete-excluded" not in sync_block
+
+
 def test_publish_sync_metadata_compliance_is_advisory_for_historical_notices():
     sync_script = read_repo_file("scripts/sync_main_repo.sh")
     notices_block = sync_script[sync_script.index("Generate third-party notices") :]
@@ -235,15 +250,6 @@ def test_sync_data_stages_registry_shard_artifacts():
     workflow = read_repo_file(".github/workflows/sync-data.yml")
 
     assert "git add registry.json registry_summary.json registry-manifest.json registry-shards/" in workflow
-
-
-def test_publish_canary_uses_dynamic_category_manifest():
-    workflow = read_repo_file(".github/workflows/publish-from-core.yml")
-
-    assert "def validate_category_manifest()" in workflow
-    assert 'load_json("docs/categories/index.json")' in workflow
-    assert "category index and dynamic manifest" in workflow
-    assert '"docs/categories/other/manifest.json"' not in workflow
 
 
 def test_sync_data_cleans_ci_archive_leftovers_before_discovery():

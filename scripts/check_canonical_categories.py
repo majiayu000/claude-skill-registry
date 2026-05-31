@@ -190,8 +190,6 @@ def _compare_count_maps(
     actual_label: str,
     path: str,
 ) -> None:
-    if not expected or not actual:
-        return
     for slug in sorted(set(expected) | set(actual)):
         if slug not in expected:
             issues.append(

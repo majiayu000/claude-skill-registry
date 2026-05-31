@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "status": "passed",
-  "generated_at": "2026-05-31T05:20:46Z",
+  "generated_at": "2026-05-31T07:57:15Z",
   "core_repo": "majiayu000/claude-skill-registry-core",
-  "core_sha": "307a1f68aa7c1e183d76c67fa617d237f248f22c",
+  "core_sha": "ff2e2df35daf259a736677d416c93dc9ee183667",
   "data_repo": "majiayu000/claude-skill-registry-data",
   "data_sha": "53c0fac62da85fcadf33ca9e2df7ee3b7d100f30",
-  "github_run_id": "26703382234",
+  "github_run_id": "26706582995",
   "github_run_attempt": "1",
-  "github_run_url": "https://github.com/majiayu000/claude-skill-registry/actions/runs/26703382234",
+  "github_run_url": "https://github.com/majiayu000/claude-skill-registry/actions/runs/26706582995",
   "promotion_gate": {
     "mode": "pre-commit canary validation",
     "result": "allowed"
@@ -53,9 +53,9 @@
       "detail": "docs/ranking-index.json -> ranking-index-manifest.json; docs/ranking-index-manifest.json: 5 shards, 157847 records"
     },
     {
-      "name": "category index and other manifest",
+      "name": "category index and dynamic manifest",
       "status": "passed",
-      "detail": "docs/categories/other/manifest.json: 1 shards, 5723 records"
+      "detail": "42 categories indexed; docs/categories/agent/manifest.json: 1 shards, 1885 records"
     },
     {
       "name": "stats shard summary",

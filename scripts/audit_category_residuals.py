@@ -23,7 +23,7 @@ from apply_category_migration import (
 )
 from category_taxonomy import get_taxonomy
 from plan_category_migration import iter_skill_dirs
-from utils import load_metadata, normalize_name, normalize_repo
+from utils import canonical_metadata_identity, load_metadata, normalize_name, normalize_repo
 
 SCHEMA_VERSION = 1
 MOVABLE_REASON = "movable candidate under selected policy"
@@ -113,12 +113,7 @@ def file_sha256(path: Path) -> str:
 
 
 def metadata_identity(metadata: dict[str, Any]) -> dict[str, Any]:
-    identity: dict[str, Any] = {}
-    for field in CONFLICT_METADATA_IDENTITY_FIELDS:
-        value = metadata.get(field)
-        if value not in (None, ""):
-            identity[field] = value
-    return identity
+    return canonical_metadata_identity(metadata, CONFLICT_METADATA_IDENTITY_FIELDS)
 
 
 def stable_key_conflict_detail(

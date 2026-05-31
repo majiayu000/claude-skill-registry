@@ -174,6 +174,60 @@ def test_apply_fails_closed_when_source_hash_changes(tmp_path):
     assert (root / "other" / "exact" / "SKILL.md").exists()
 
 
+def test_apply_rejects_source_path_that_escapes_skills_dir(tmp_path):
+    cleanup = _load_module()
+    root = tmp_path / "skills"
+    outside = tmp_path / "outside-source"
+    _write_skill(root, "other/exact", body="same")
+    _write_skill(root, "development/exact", body="same")
+    _write_skill(outside.parent, outside.name, body="same")
+    report_path = tmp_path / "report.json"
+    _write_report(
+        root,
+        report_path,
+        [_detail(root, source_path="other/exact", target_path="development/exact")],
+    )
+    plan = cleanup.build_cleanup_plan(residual_report=report_path)
+    plan["removals"][0]["source_path"] = "../outside-source"
+    plan["removals"][0]["source_skill_sha256"] = _sha(outside / "SKILL.md")
+
+    try:
+        cleanup.apply_cleanup_plan(root, plan)
+    except ValueError as exc:
+        assert "source_path must not contain '..'" in str(exc)
+    else:
+        raise AssertionError("expected escaping source path to fail closed")
+
+    assert (outside / "SKILL.md").exists()
+
+
+def test_apply_rejects_absolute_target_path(tmp_path):
+    cleanup = _load_module()
+    root = tmp_path / "skills"
+    outside = tmp_path / "outside-target"
+    _write_skill(root, "other/exact", body="same")
+    _write_skill(root, "development/exact", body="same")
+    _write_skill(outside.parent, outside.name, body="same")
+    report_path = tmp_path / "report.json"
+    _write_report(
+        root,
+        report_path,
+        [_detail(root, source_path="other/exact", target_path="development/exact")],
+    )
+    plan = cleanup.build_cleanup_plan(residual_report=report_path)
+    plan["removals"][0]["target_path"] = str(outside)
+    plan["removals"][0]["target_skill_sha256"] = _sha(outside / "SKILL.md")
+
+    try:
+        cleanup.apply_cleanup_plan(root, plan)
+    except ValueError as exc:
+        assert "target_path must be relative to skills_dir" in str(exc)
+    else:
+        raise AssertionError("expected absolute target path to fail closed")
+
+    assert (root / "other" / "exact" / "SKILL.md").exists()
+
+
 def test_plan_can_allow_metadata_identity_drift_after_review(tmp_path):
     cleanup = _load_module()
     root = tmp_path / "skills"

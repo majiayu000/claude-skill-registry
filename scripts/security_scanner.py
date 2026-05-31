@@ -806,7 +806,7 @@ def main():
 
         if args.report_only:
             exit(0)
-        exit(0 if is_safe or not args.strict else 1)
+        exit(0 if is_safe else 1)
 
     elif path.is_dir():
         # Scan directory

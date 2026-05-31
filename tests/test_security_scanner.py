@@ -1,6 +1,7 @@
 import importlib.util
 import io
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -152,6 +153,50 @@ description: Demo skill used to verify bundled rule scanning.
         and "rules/dangerous.md" in issue.get("file", "")
         for issue in issues
     )
+
+
+def test_scanner_rejects_missing_frontmatter(tmp_path):
+    module = load_module()
+    skill_dir = tmp_path / "demo"
+    skill_dir.mkdir(parents=True)
+    (skill_dir / "SKILL.md").write_text("# Demo\n", encoding="utf-8")
+
+    scanner = module.SecurityScanner()
+    is_safe, issues = scanner.scan_file(skill_dir / "SKILL.md")
+
+    assert is_safe is False
+    assert any(issue.get("type") == "no_frontmatter" for issue in issues)
+
+
+def test_single_file_scan_exits_nonzero_for_unsafe_skill(tmp_path):
+    skill_dir = tmp_path / "demo"
+    skill_dir.mkdir(parents=True)
+    skill_file = skill_dir / "SKILL.md"
+    skill_file.write_text(
+        """---
+name: demo
+description: Demo skill used to verify single-file unsafe scan exit status.
+---
+
+# Demo
+
+```python
+eval("unsafe")
+```
+""",
+        encoding="utf-8",
+    )
+
+    script_path = Path(__file__).resolve().parents[1] / "scripts" / "security_scanner.py"
+    result = subprocess.run(
+        [sys.executable, str(script_path), str(skill_file)],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+
+    assert result.returncode == 1
+    assert "ERROR" in result.stdout
 
 
 def test_scanner_checks_flowhunt_style_support_files(tmp_path):

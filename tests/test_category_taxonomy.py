@@ -38,7 +38,8 @@ def test_taxonomy_rejects_aliases_by_default_and_codes():
     assert taxonomy.resolve_category("Engineering", allow_unknown=True) == "engineering"
     assert taxonomy.resolve_category("Engineering", allow_alias=True) == "development"
     assert taxonomy.get_category_code("development") == "dev"
-    assert taxonomy.get_category_code("Engineering") == "engineering"
+    assert taxonomy.get_category_code("Engineering") == "dev"
+    assert taxonomy.get_category_code("dev") == "dev"
     assert taxonomy.get_category_code("Engineering", allow_alias=True) == "dev"
     assert taxonomy.get_category_code("unknown-new-bucket") == "unknown-new-bucket"
     assert "development" in taxonomy.publishable_categories()

@@ -11,8 +11,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from audit_category_residuals import file_sha256, metadata_identity
 from apply_category_migration import parse_csv
+from audit_category_residuals import file_sha256, metadata_identity
 from utils import load_metadata, write_metadata
 
 SCHEMA_VERSION = 1
@@ -274,6 +274,24 @@ def build_cleanup_plan(
     }
 
 
+def resolve_plan_path(skills_dir: Path, raw_path: Any, *, field: str) -> Path:
+    relative_path = Path(str(raw_path))
+    if relative_path.is_absolute():
+        raise ValueError(f"{field} must be relative to skills_dir: {raw_path}")
+    if not relative_path.parts:
+        raise ValueError(f"{field} must not be empty")
+    if ".." in relative_path.parts:
+        raise ValueError(f"{field} must not contain '..': {raw_path}")
+
+    skills_root = skills_dir.resolve()
+    resolved_path = (skills_root / relative_path).resolve()
+    try:
+        resolved_path.relative_to(skills_root)
+    except ValueError as exc:
+        raise ValueError(f"{field} escapes skills_dir: {raw_path}") from exc
+    return resolved_path
+
+
 def apply_cleanup_plan(skills_dir: Path, plan: dict[str, Any]) -> None:
     require_metadata_identity = bool(plan.get("policy", {}).get("require_metadata_identity", True))
     for removal in plan["removals"]:
@@ -284,8 +302,8 @@ def apply_cleanup_plan(skills_dir: Path, plan: dict[str, Any]) -> None:
             "replace_target_remove_source",
         }:
             raise ValueError(f"unsupported operation: {removal.get('operation')}")
-        source = skills_dir / removal["source_path"]
-        target = skills_dir / removal["target_path"]
+        source = resolve_plan_path(skills_dir, removal["source_path"], field="source_path")
+        target = resolve_plan_path(skills_dir, removal["target_path"], field="target_path")
         if source == target:
             raise ValueError(f"source and target are identical: {source}")
         if not source.exists():

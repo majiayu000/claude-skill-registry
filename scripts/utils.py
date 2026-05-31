@@ -546,6 +546,134 @@ def skill_semantic_fields(
     }
 
 
+def _semantic_tokens(text: str) -> list[str]:
+    return re.findall(r"[a-z0-9]+", text.lower())
+
+
+def _keyword_matches(tokens: list[str], keyword: str) -> bool:
+    parts = [part for part in keyword.split("-") if part]
+    if not parts:
+        return False
+    if len(parts) > 1:
+        window = len(parts)
+        return any(tokens[index : index + window] == parts for index in range(len(tokens)))
+
+    part = parts[0]
+    if len(part) <= 3:
+        return part in tokens
+    return any(token == part or token.startswith(part) for token in tokens)
+
+
+def category_keyword_scores(
+    text: str,
+    keyword_map: dict[str, list[str]] | None = None,
+) -> dict[str, dict[str, Any]]:
+    """Score taxonomy categories against semantic text and retain matched signals."""
+    tokens = _semantic_tokens(text)
+    scores: dict[str, dict[str, Any]] = {}
+    for category, keywords in (keyword_map or CATEGORY_KEYWORDS).items():
+        signals = [
+            keyword
+            for keyword in keywords
+            if _keyword_matches(tokens, str(keyword).strip().lower())
+        ]
+        if signals:
+            scores[category] = {
+                "score": len(signals),
+                "signals": signals,
+            }
+    return scores
+
+
+def classify_category_from_semantics(
+    semantics: dict[str, Any],
+    *,
+    default_category: str = "other",
+    min_score: int = 2,
+    min_delta: int = 1,
+    high_score: int = 4,
+    high_delta: int = 2,
+) -> dict[str, Any]:
+    """Classify semantic fields with auditable taxonomy keyword evidence."""
+    scores = category_keyword_scores(str(semantics.get("text") or ""))
+    ranked = sorted(
+        scores.items(),
+        key=lambda item: (-int(item[1]["score"]), item[0]),
+    )
+    semantic_sources = dict(semantics.get("sources") or {})
+
+    if not ranked:
+        return {
+            "category": default_category,
+            "status": "unclassified",
+            "method": "taxonomy_keyword_v1",
+            "confidence": "low",
+            "reason": "no taxonomy keywords matched SKILL.md semantic text",
+            "score": 0,
+            "runner_up": "",
+            "runner_up_score": 0,
+            "signals": [],
+            "semantic_sources": semantic_sources,
+        }
+
+    top_category, top = ranked[0]
+    top_score = int(top["score"])
+    runner_category = ranked[1][0] if len(ranked) > 1 else ""
+    runner_score = int(ranked[1][1]["score"]) if len(ranked) > 1 else 0
+    delta = top_score - runner_score
+
+    if top_score < min_score:
+        return {
+            "category": default_category,
+            "status": "unclassified",
+            "method": "taxonomy_keyword_v1",
+            "confidence": "low",
+            "reason": (
+                f"top category {top_category} scored {top_score}, below "
+                f"minimum score {min_score}"
+            ),
+            "score": top_score,
+            "runner_up": runner_category,
+            "runner_up_score": runner_score,
+            "signals": list(top["signals"]),
+            "semantic_sources": semantic_sources,
+        }
+
+    if delta < min_delta:
+        return {
+            "category": default_category,
+            "status": "unclassified",
+            "method": "taxonomy_keyword_v1",
+            "confidence": "low",
+            "reason": (
+                f"ambiguous taxonomy keyword scores: {top_category}={top_score}, "
+                f"{runner_category}={runner_score}"
+            ),
+            "score": top_score,
+            "runner_up": runner_category,
+            "runner_up_score": runner_score,
+            "signals": list(top["signals"]),
+            "semantic_sources": semantic_sources,
+        }
+
+    confidence = "high" if top_score >= high_score and delta >= high_delta else "medium"
+    return {
+        "category": top_category,
+        "status": "classified",
+        "method": "taxonomy_keyword_v1",
+        "confidence": confidence,
+        "reason": (
+            f"matched taxonomy keywords for {top_category}: "
+            f"{', '.join(top['signals'])}"
+        ),
+        "score": top_score,
+        "runner_up": runner_category,
+        "runner_up_score": runner_score,
+        "signals": list(top["signals"]),
+        "semantic_sources": semantic_sources,
+    }
+
+
 def load_metadata(skill_dir: Path) -> dict:
     """Safely load metadata.json from a skill directory."""
     meta_path = skill_dir / "metadata.json"
@@ -569,12 +697,8 @@ def write_metadata(skill_dir: Path, meta: dict) -> None:
 
 def guess_category(text: str) -> str:
     """Guess category from combined text (path + content snippet)."""
-    lowered = text.lower()
-    scores: dict[str, int] = {}
-    for category, keywords in CATEGORY_KEYWORDS.items():
-        score = sum(1 for kw in keywords if kw in lowered)
-        if score > 0:
-            scores[category] = score
+    scored = category_keyword_scores(text)
+    scores = {category: int(result["score"]) for category, result in scored.items()}
     if scores:
         return max(scores, key=scores.get)
     return "other"

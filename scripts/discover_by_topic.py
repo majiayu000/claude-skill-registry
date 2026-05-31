@@ -4,20 +4,28 @@ Discover skills by GitHub Topics
 Uses GitHub Search API to find repositories with claude-code-skills or claude-skills topics
 """
 
-import os
 import json
-import time
 import logging
+import os
 import shutil
 import tempfile
+import time
 from collections import defaultdict
-import requests
 from datetime import datetime
 from pathlib import Path
 
+import requests
 from security_blocklist import blocked_metadata_source, load_security_blocklist
 from security_scanner import SecurityScanner
-from utils import normalize_name, ensure_unique_dir, build_skill_key, build_legal_metadata
+from utils import (
+    build_legal_metadata,
+    build_skill_key,
+    classify_category_from_semantics,
+    ensure_unique_dir,
+    extract_frontmatter,
+    normalize_name,
+    skill_semantic_fields,
+)
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -269,14 +277,6 @@ class GitHubTopicDiscovery:
         """Find all SKILL.md files in a repository"""
         skills = []
 
-        # Common skill locations
-        paths_to_check = [
-            '',
-            'skills',
-            '.claude/skills',
-            '.codex/skills',
-        ]
-
         # First try to search the repo for SKILL.md files
         url = f"{GITHUB_API}/search/code"
         params = {
@@ -335,18 +335,31 @@ class GitHubTopicDiscovery:
                     if '---' not in content[:100] and 'name:' not in content[:500]:
                         continue
 
-                    # Save skill (case-safe)
-                    category = "other"
+                    semantic_seed_metadata = {
+                        'name': skill_dir,
+                        'repo': repo,
+                        'path': path,
+                    }
+                    frontmatter = extract_frontmatter(content)
+                    semantics = skill_semantic_fields(
+                        Path(skill_dir),
+                        metadata=semantic_seed_metadata,
+                        frontmatter=frontmatter,
+                        rel=Path(path),
+                        content=content,
+                        content_chars=4096,
+                    )
+                    classification = classify_category_from_semantics(semantics)
+                    category = str(classification["category"])
                     key = build_skill_key(repo, path, name=skill_dir, category=category)
 
-                    # Save metadata
                     legal_meta = build_legal_metadata(
                         repo=repo,
                         path=path,
                         branch=branch,
                     )
                     metadata = {
-                        'name': skill_dir,
+                        'name': semantics["name"],
                         'repo': repo,
                         'path': path,
                         'github_branch': branch,
@@ -354,8 +367,14 @@ class GitHubTopicDiscovery:
                         'source': f'github.com/{repo}',
                         'dir_name': skill_dir,
                         'downloaded_at': datetime.utcnow().isoformat() + 'Z',
+                        'classification': {
+                            'schema_version': 1,
+                            **classification,
+                        },
                         **legal_meta,
                     }
+                    if semantics["description"]:
+                        metadata["description"] = semantics["description"]
 
                     output_dir.mkdir(parents=True, exist_ok=True)
                     with tempfile.TemporaryDirectory(
@@ -591,7 +610,7 @@ class GitHubTopicDiscovery:
         )
         self._update_priors(priors_output, discovered_at, repos_to_scan)
 
-        logger.info(f"\n=== Summary ===")
+        logger.info("\n=== Summary ===")
         logger.info(f"Repositories discovered: {len(self.discovered_repos)}")
         logger.info(f"Skills downloaded: {downloaded}")
         logger.info(f"Candidate records written: {candidates_written}")

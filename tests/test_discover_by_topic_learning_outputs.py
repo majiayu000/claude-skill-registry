@@ -212,6 +212,71 @@ def test_download_skill_preserves_existing_archive_on_security_scan_failure(tmp_
     assert (existing_dir / "metadata.json").read_text(encoding="utf-8") == existing_metadata
 
 
+def test_download_skill_classifies_from_skill_md_first(tmp_path):
+    module = load_module()
+    discovery = module.GitHubTopicDiscovery(request_delay=0.0)
+    discovery.session = FakeSession(
+        FakeResponse(
+            200,
+            (
+                "---\n"
+                "name: docker-deployer\n"
+                "description: Deploy Docker Kubernetes CI CD infrastructure automation.\n"
+                "tags: [docker, kubernetes, ci]\n"
+                "---\n"
+                "# Docker Deployer\n\n"
+                "Builds release images and deploys services to Kubernetes clusters.\n"
+            ),
+        )
+    )
+
+    downloaded = discovery.download_skill(
+        "acme/docker-deployer",
+        "skills/docker-deployer/SKILL.md",
+        tmp_path / "skills",
+    )
+
+    assert downloaded is True
+    skill_dir = tmp_path / "skills" / "devops" / "docker-deployer"
+    metadata = module.json.loads((skill_dir / "metadata.json").read_text(encoding="utf-8"))
+    assert (skill_dir / "SKILL.md").exists()
+    assert not (tmp_path / "skills" / "other" / "docker-deployer").exists()
+    assert metadata["category"] == "devops"
+    assert metadata["description"] == "Deploy Docker Kubernetes CI CD infrastructure automation."
+    assert metadata["classification"]["status"] == "classified"
+    assert metadata["classification"]["confidence"] == "high"
+    assert metadata["classification"]["method"] == "taxonomy_keyword_v1"
+    assert metadata["classification"]["semantic_sources"]["description"] == "frontmatter"
+
+
+def test_download_skill_falls_back_to_other_with_audit_reason(tmp_path):
+    module = load_module()
+    discovery = module.GitHubTopicDiscovery(request_delay=0.0)
+    discovery.session = FakeSession(
+        FakeResponse(
+            200,
+            "---\nname: quiet-helper\n---\n# Quiet Helper\n\nShort note.\n",
+        )
+    )
+
+    downloaded = discovery.download_skill(
+        "acme/quiet-helper",
+        "skills/quiet-helper/SKILL.md",
+        tmp_path / "skills",
+    )
+
+    assert downloaded is True
+    skill_dir = tmp_path / "skills" / "other" / "quiet-helper"
+    metadata = module.json.loads((skill_dir / "metadata.json").read_text(encoding="utf-8"))
+    assert (skill_dir / "SKILL.md").exists()
+    assert metadata["category"] == "other"
+    assert metadata["classification"]["status"] == "unclassified"
+    assert metadata["classification"]["confidence"] == "low"
+    assert metadata["classification"]["reason"] == (
+        "no taxonomy keywords matched SKILL.md semantic text"
+    )
+
+
 def test_download_skill_scans_existing_bundled_files_before_refresh(tmp_path):
     module = load_module()
     discovery = module.GitHubTopicDiscovery(request_delay=0.0)

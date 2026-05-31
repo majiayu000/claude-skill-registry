@@ -264,6 +264,13 @@ def test_sync_data_cleans_ci_archive_leftovers_before_discovery():
     assert workflow.count("--skip-ci-untracked-cleanup") == 2
 
 
+def test_sync_data_discovery_writes_to_archive_root_not_other_category():
+    workflow = read_repo_file(".github/workflows/sync-data.yml")
+
+    assert "--output skills/other" not in workflow
+    assert workflow.count("--output skills") == 2
+
+
 def test_metadata_compliance_refuses_unexpected_zero_target_scan():
     workflow = read_repo_file(".github/workflows/metadata-compliance.yml")
 

@@ -127,7 +127,14 @@ Dispatch the session-reviewer agent to verify implementation quality before the 
    - **Context**: the session plan (issues, acceptance criteria) and all wave results from STATE.md
 2. Wait for the reviewer's **Verdict**:
    - **PROCEED** — continue to Phase 2
-   - **FIX REQUIRED** — address each listed item before proceeding. For quick fixes (<2 min each), fix inline. For larger items, create carryover issues (same as Phase 1.2) and note them as unresolved review findings in the Final Report
+   - **FIX REQUIRED** — disposition each listed item by severity:
+
+     | Finding class | Disposition |
+     |---|---|
+     | HIGH+ / blocking review finding | Fix inline if quick (<2 min); else create an issue (`priority:high`, `status:ready`) and note it in the Final Report |
+     | MED / LOW review finding | Fold in-session if quick; else record under "Unresolved Review Findings" in the Final Report — DO NOT create an issue (#617) |
+     | Planned-carryover (item was in the plan, not finished) | ALWAYS create a `[Carryover]` issue per Phase 1.2 — unchanged |
+     | SPIRAL / FAILED agent carryover | ALWAYS file via `createSpiralCarryoverIssue` per Phase 1.6 — unchanged |
 
 ### 1.9 Mission-Status Classification (when `mission-status` present in STATE.md)
 
@@ -453,7 +460,7 @@ The proposals queue is populated mid-session by wave-executor agents calling `no
 
 > Skip this phase if `memory-cleanup-threshold: 0` (kill-switch per PRD F2.2). Also skip on non-Claude-Code platforms (memory dir at `~/.claude/projects/` is Claude Code-only, mirrors Phase 3.5 gate).
 
-After learnings are written (Phase 3.6), determine whether to dispatch a `/memory-cleanup --dry-run` subagent. The decision uses MEMORY.md line count and a sessions-since-last-cleanup signal; the subagent writes a unified-diff proposal to `.orchestrator/pending-dream.md` for the next session to apply via `/memory-cleanup --apply-pending`.
+After learnings are written (Phase 3.6), determine whether to emit a **manual-cadence nudge** to run `/memory-cleanup --dry-run` in the next session. The decision uses MEMORY.md line count and a sessions-since-last-cleanup signal. There is no `memory-cleanup` agent in the registry, so the historical auto-dream subagent dispatch never fired (see #614) — the nudge replaces it. A manually-run `/memory-cleanup --dry-run` writes a unified-diff proposal to `.orchestrator/pending-dream.md` for the session after that to apply via `/memory-cleanup --apply-pending`.
 
 1. Read `memory-cleanup-threshold` (default 5) and `memory-cleanup-soft-limit` (default 180) from `$CONFIG`.
 2. Invoke `shouldDispatchAutoDream` from `scripts/lib/auto-dream.mjs`:
@@ -469,26 +476,13 @@ After learnings are written (Phase 3.6), determine whether to dispatch a `/memor
      softLimit: config['memory-cleanup-soft-limit'] ?? 180,
    });
    ```
-3. If `decision.trigger === false`: log `auto-dream: not dispatched (${decision.reason})` and continue. Skip the subagent dispatch.
-4. If `decision.trigger === true`: dispatch a subagent that runs the dry-run path of /memory-cleanup:
+3. If `decision.trigger === false`: log `auto-dream: not triggered (${decision.reason})` and continue. Emit no nudge.
+4. If `decision.trigger === true`: **do not dispatch a subagent** — there is no `memory-cleanup` agent in `agents/`, so the historical `Agent({…})` dispatch pointed at the agent name `memory-cleanup` (a subagent type that was never built) and never fired (see #614). Instead, emit a manual-cadence nudge and continue:
 
-   ```javascript
-   Agent({
-     description: "Auto-dream dry-run (memory consolidation proposal)",
-     prompt: `Invoke /memory-cleanup --dry-run.
-       Read MEMORY.md and topic files at ${memoryDir}.
-       Produce a unified-diff proposal and write it to .orchestrator/pending-dream.md
-         via writePendingDream() from scripts/lib/auto-dream.mjs.
-       Do NOT modify any files in ~/.claude/.
-       Do NOT call any session-* skills (no recursion).
-       Return one-line status: 'pending-dream written: <N> lines proposed' OR
-       'no consolidation needed (MEMORY.md is healthy)'.`,
-     subagent_type: "session-orchestrator:memory-cleanup",
-     run_in_background: false,
-   })
-   ```
-5. After dispatch, confirm `.orchestrator/pending-dream.md` exists; if not, log `⚠ auto-dream: subagent returned without writing pending-dream sidecar — investigate next session`.
-6. Record the outcome (skipped / dispatched / failed) so Phase 6 Final Report can surface a line: `auto-dream: dry-run produced — apply with /memory-cleanup --apply-pending in the next session`.
+   `auto-dream: cadence reached (${decision.reason}) — run /memory-cleanup --dry-run manually in the next session, then apply the proposal with /memory-cleanup --apply-pending.`
+
+   The `shouldDispatchAutoDream` decision helper and `scripts/lib/auto-dream.mjs` lib stay in use: they compute the signal that drives this nudge and back the manual `/memory-cleanup` path (`writePendingDream` / `readPendingDream` / `applyPendingDream`).
+5. Record the outcome (skipped / nudge-emitted) so Phase 6 Final Report can surface a line: `auto-dream: manual /memory-cleanup --dry-run recommended (cadence reached) — apply with /memory-cleanup --apply-pending next session`.
 
 The pending-dream sidecar at `.orchestrator/pending-dream.md` is intentionally outside the vault tree — vault-mirror (Phase 3.7) must exclude it from its scope so the proposal survives the session close without being mirrored into 50-sessions/.
 
@@ -498,7 +492,7 @@ Cross-reference: PRD F2.2 acceptance criteria; `scripts/lib/auto-dream.mjs` API 
 
 > Skip this phase if `dialectic.cadence: 0` (kill-switch per PRD F2.5 AC3). Also skip if `persistence` is `false` in Session Config.
 
-After learnings are written (Phase 3.6) and the auto-dream decision is made (Phase 3.6.5), determine whether to dispatch `/evolve --dialectic --dry-run`. The decision uses sessions-since-last-dialectic counted against `.orchestrator/dialectic-last-run`. On trigger, the subagent runs the full dialectic deriver and writes the proposed diff to `.orchestrator/dialectic-pending.md`; the timestamp is updated only on successful dispatch (not on skip).
+After learnings are written (Phase 3.6) and the auto-dream decision is made (Phase 3.6.5), determine whether to emit a **manual-cadence nudge** to run `/evolve --dialectic` in the next session. The decision uses sessions-since-last-dialectic counted against `.orchestrator/dialectic-last-run`. There is no `evolve` agent in the registry, and the nearest one (`dialectic-deriver`) is `sandbox-tier: read-only` and cannot write the sidecar — so the historical auto-dialectic subagent dispatch never fired (see #614). On trigger, emit the nudge and advance `.orchestrator/dialectic-last-run`; the timestamp is updated only when the nudge is emitted (not on skip), so the reminder surfaces once per cadence window rather than every session. A manually-run `/evolve --dialectic --dry-run` writes the proposed diff to `.orchestrator/dialectic-pending.md`.
 
 1. Read `dialectic.cadence` (default 5), `dialectic.model` (default haiku), `dialectic.budget-tokens` (default 8000) from `$CONFIG`.
 
@@ -511,37 +505,26 @@ After learnings are written (Phase 3.6) and the auto-dream decision is made (Pha
    });
    ```
 
-3. If `decision.trigger === false`: log `auto-dialectic: not dispatched (${decision.reason})` and continue. Skip subagent. Do NOT update `.orchestrator/dialectic-last-run`.
+3. If `decision.trigger === false`: log `auto-dialectic: not triggered (${decision.reason})` and continue. Emit no nudge. Do NOT update `.orchestrator/dialectic-last-run`.
 
 4. **AC4 precondition guard:** Even if cadence met, if `signals.sessionsSinceLast === 0 && signals.learningsSinceLast === 0`, skip with reason `no-new-input-since-last-run`. The Final Report (Phase 6) MUST include the literal string `dialectic: skipped (no new input since last run)`.
 
-5. If `decision.trigger === true`: dispatch a subagent:
-   ```javascript
-   Agent({
-     description: "Auto-dialectic dry-run (peer-card consolidation proposal)",
-     prompt: `Invoke /evolve --dialectic --dry-run.
-       Use dialectic.model=${config.dialectic?.model ?? 'haiku'} with budget ${config.dialectic?.['budget-tokens'] ?? 8000} input + 4000 output tokens.
-       Produce diff via runDialecticDeriver from scripts/dialectic-deriver.mjs;
-       writeDialecticPending writes to .orchestrator/dialectic-pending.md.
-       Do NOT modify .orchestrator/peers/USER.md or AGENT.md (dry-run only).
-       Return one-line status.`,
-     subagent_type: "session-orchestrator:evolve",
-     run_in_background: false,
-   })
-   ```
+5. If `decision.trigger === true`: **do not dispatch a subagent** (see #614 — no `evolve` agent exists; `dialectic-deriver` is read-only and cannot write the sidecar). Instead, emit a manual-cadence nudge and continue:
 
-6. After dispatch, confirm `.orchestrator/dialectic-pending.md` exists; if not, log `⚠ auto-dialectic: subagent returned without writing dialectic-pending sidecar — investigate next session` and do NOT update `dialectic-last-run`.
+   `auto-dialectic: cadence reached (${decision.reason}) — run /evolve --dialectic --dry-run manually in the next session, review .orchestrator/dialectic-pending.md, then apply with /evolve --dialectic --apply.`
 
-7. On successful dispatch (sidecar present), update `.orchestrator/dialectic-last-run` via `writeDialecticLastRun(repoRoot, new Date().toISOString())`. Atomic; failures non-fatal.
+   The `shouldDispatchAutoDialectic` decision helper and `scripts/lib/auto-dialectic.mjs` lib stay in use: they compute the cadence signal that drives this nudge.
 
-8. Record outcome (skipped/dispatched/failed) for Phase 6 Final Report: `auto-dialectic: dry-run produced — review at .orchestrator/dialectic-pending.md and apply with /evolve --dialectic --apply in the next session`.
+6. When the nudge is emitted (cadence reached), update `.orchestrator/dialectic-last-run` via `writeDialecticLastRun({ repoRoot, isoTimestamp: new Date().toISOString() })` so the cadence counter advances and the nudge does not repeat every session. Atomic; failures non-fatal.
+
+7. Record outcome (skipped / nudge-emitted) for Phase 6 Final Report: `auto-dialectic: manual /evolve --dialectic --dry-run recommended (cadence reached) — apply with /evolve --dialectic --apply next session`.
 
 The `.orchestrator/dialectic-pending.md` sidecar is intentionally outside the vault tree — vault-mirror (Phase 3.7) MUST exclude it from its scope.
 
 Cross-reference: PRD F2.5 acceptance criteria (#506); `scripts/lib/auto-dialectic.mjs` API.
 
-> **Dispatch chain rationale (3 design choices in the chain session-end → subagent → /evolve → runDialecticDeriver → dispatchAgent → Agent):**
-> - **session-end → subagent (not direct invoke):** session-end runs in the main coordinator context; spawning a subagent isolates the dialectic pass into a fresh context window, prevents the deriver's input-heavy payload (top-50 learnings + last-10 sessions + 2 peer cards + steering) from polluting the main coordinator's context, and lets the subagent run as Haiku while the coordinator stays Opus.
+> **Dialectic chain rationale** — design choices in the manual `/evolve --dialectic` chain (`/evolve → runDialecticDeriver → dispatchAgent → Agent`). Session-end no longer auto-dispatches this chain (see #614 — the `evolve` agent never existed); the rationale below applies when you run `/evolve --dialectic` manually:
+> - **/evolve → subagent (not direct invoke):** the manual `/evolve --dialectic` skill spawns a subagent so the dialectic pass runs in a fresh context window — keeping the deriver's input-heavy payload (top-50 learnings + last-10 sessions + 2 peer cards + steering) out of the invoking coordinator's context, and letting the deriver run as Haiku while the coordinator stays Opus.
 > - **/evolve → runDialecticDeriver (not direct dispatchAgent):** /evolve owns argument parsing, config resolution, dry-run/apply gating, error-handling, and sidecar writes; runDialecticDeriver owns the pure derivation pipeline (load → payload → budget-check → dispatch → parse → guard). Separating skill-level orchestration from deriver business logic lets unit tests exercise the deriver without standing up the full evolve skill.
 > - **runDialecticDeriver → dispatchAgent (DI boundary):** per `.claude/rules/prompt-caching.md:3`, session-orchestrator forbids direct `@anthropic-ai/sdk` imports in business logic (the harness manages caching at the platform layer). dispatchAgent is the injected boundary — the evolve skill wires the real `Agent({...})` harness call at runtime, tests pass a `vi.fn()` mock. Same DI shape as `scripts/lib/autopilot.mjs::runLoop({opts})` (cf. `scripts/dialectic-deriver.mjs:7-16,531`).
 
@@ -766,7 +749,7 @@ For each finding with severity `critical` or `high` from Phase 1.5:
 2. Log each created issue ID for the Final Report
 3. Update `discovery_stats.issues_created` count
 
-4. **Create gap issues**: for newly-discovered problems
+4. **Create gap issues for HIGH+/blocking newly-discovered problems only** — MED/LOW review findings are recorded in the Final Report, not filed as issues (#617; see the Phase 1.8 severity-disposition table). This mirrors the Phase 5 "Discovery Issue Creation" gate (critical/high only).
 5. **Update milestones**: if milestone progress changed
 
 ## Phase 6: Final Report
@@ -787,6 +770,10 @@ Present to the user:
 ### New Issues Created
 - #R: [title] (priority: [X], status: ready)
 - #S: [title] (priority: [X], status: ready)
+
+### Unresolved Review Findings (MED/LOW — recorded, not ticketed) [#617]
+- [MED] <finding> — <file:line> — <why deferred / fold decision>
+- [LOW] <finding> — <file:line>
 
 ### Metrics
 - Duration: [total wall-clock time]
@@ -831,8 +818,8 @@ Present to the user:
 | `phase-3-2-docs-verification.md` | Phase 3.2 full procedural body — docs-tasks load, SESSION_START_REF, per-task loop, mode-gated report, Documentation Coverage block |
 | `learning-patterns.md` | Phases 3.5a + 3.6 extraction heuristics, confidence updates, passive decay, and JSONL write procedure |
 | (inline) Phase 3.6.3 | Memory-Proposals Collection — `collectProposals` + AUQ multiSelect + `writeApproved` + `clearProposalsJsonl` |
-| (inline) Phase 3.6.5 | Auto-Dream dispatch — `shouldDispatchAutoDream` + dispatch /memory-cleanup --dry-run + writes `.orchestrator/pending-dream.md` |
-| (inline) Phase 3.6.7 | Auto-Dialectic dispatch — `shouldDispatchAutoDialectic` + dispatch /evolve --dialectic --dry-run + writes `.orchestrator/dialectic-pending.md` + updates `.orchestrator/dialectic-last-run` |
+| (inline) Phase 3.6.5 | Auto-Dream nudge — `shouldDispatchAutoDream` + manual-cadence nudge to run /memory-cleanup --dry-run next session (no live dispatch — #614) |
+| (inline) Phase 3.6.7 | Auto-Dialectic nudge — `shouldDispatchAutoDialectic` + manual-cadence nudge to run /evolve --dialectic next session + advances `.orchestrator/dialectic-last-run` (no live dispatch — #614) |
 | `session-metrics-write.md` | Phase 3.7 JSONL append, vault-mirror invocation, and behavior matrix |
 | `phase-3-7a-recommendations.md` | Phase 3.7a full procedural body — computeV0Recommendation call, STATE.md field write, data source guarantee, error mode |
 | `phase-3-7a-recommendations.md` § 3.7b | Phase 3.7b full procedural body — `withDurableCommit` invocation for `sessions.jsonl` + `STATE.md` (#490 AC2), `enabled:false` local no-op, autopilot.jsonl exclusion note |
@@ -852,7 +839,8 @@ Present to the user:
 - **NEVER commit with TypeScript errors** — 0 errors is non-negotiable
 - **NEVER use `git add .`** — stage files individually to avoid capturing parallel session work
 - **NEVER skip issue updates** — VCS must reflect reality after every session
-- **ALWAYS create issues for unfinished work** — nothing should be "remembered" without a ticket
+- **ALWAYS create issues for unfinished PLANNED work** — SPIRAL/FAILED agent carryover and partially-done plan items (Phase 1.2 / 1.6) ALWAYS get a ticket; nothing planned-but-unfinished is "remembered" without one.
+- **DO NOT auto-file MED/LOW review findings as issues** — newly-surfaced reviewer findings (Phase 1.8 / W4 panel) at MED or LOW severity are folded in-session or recorded in the Final Report under "Unresolved Review Findings". Only HIGH+/blocking review findings get an issue. (Issue #617 — stops the self-referential low-priority backlog.)
 - **ALWAYS push to origin** — local-only work is lost work
 - **ALWAYS mirror to GitHub** if configured — keep mirrors in sync
 - **ALWAYS review `git diff --cached`** before committing — verify only YOUR changes are staged

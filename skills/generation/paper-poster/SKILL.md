@@ -2,7 +2,7 @@
 name: paper-poster
 description: "Generate a conference poster (article + tcbposter LaTeX → A0/A1 PDF + editable PPTX + SVG) from a compiled paper. Use when user says \"做海报\", \"制作海报\", \"conference poster\", \"make poster\", \"生成poster\", \"poster session\", or wants to create a poster for a conference presentation."
 argument-hint: "[paper-directory-or-venue] [— style-ref: <source>]"
-allowed-tools: Bash(*), Read, Write, Edit, Grep, Glob, Agent, mcp__codex__codex, mcp__codex__codex-reply
+allowed-tools: Bash(*), Read, Write, Edit, Grep, Glob, mcp__codex__codex, mcp__codex__codex-reply
 ---
 
 # Paper Poster: From Paper to Conference Poster
@@ -69,7 +69,7 @@ Sources accepted: local TeX dir / file, local PDF, arXiv id, http(s) URL. Overle
 
 - Use `style_profile.md` to align figure-to-text ratio, caption length tendency, and paragraph density. Venue color scheme and column count above still take precedence — `--style-ref` only refines density tendencies.
 - **Never copy poster content, design elements, slogans, or section names verbatim** from anything reachable through the cache.
-- **Never pass `— style-ref` (or the cache contents) to the GPT-5.4 reviewer sub-agent** — the reviewer must judge the poster's clarity on its own merits.
+- **Never pass `— style-ref` (or the cache contents) to the GPT-5.5 reviewer sub-agent** — the reviewer must judge the poster's clarity on its own merits.
 
 ## Venue Color Schemes
 
@@ -802,7 +802,7 @@ Append all iteration scores and feedback to `poster/POSTER_VISUAL_REVIEW.md`:
 
 ### Phase 6: Codex MCP Review
 
-Send the poster content plan + key LaTeX sections to GPT-5.4 xhigh for review.
+Send the poster content plan + key LaTeX sections to GPT-5.5 xhigh for review.
 
 ```
 mcp__codex__codex:

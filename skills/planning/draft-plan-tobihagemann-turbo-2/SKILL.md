@@ -158,7 +158,7 @@ Files to read in full before starting implementation:
 
 ## Step 7: Present Summary and Finalize
 
-Present a brief summary of the drafted plan: the essence of what it builds and the key decisions behind it, short enough to read at a glance so the user does not have to read the full plan file. Fit the summary to the plan rather than a fixed template.
+Present a brief summary of the drafted plan: the essence of what it builds and the key decisions behind it, short enough to read at a glance so the user does not have to read the full plan file. When the plan delivers user-facing value, also present a short list of user stories capturing what someone gains from it. Skip the stories for changes with no user-facing gain, such as internal refactors or infrastructure work. Fit both to the plan rather than a fixed template.
 
 Then use `request_user_input` to offer two paths:
 

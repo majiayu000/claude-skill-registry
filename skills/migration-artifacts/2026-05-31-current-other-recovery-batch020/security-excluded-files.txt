@@ -1,0 +1,7 @@
+other/20260102-214532-trinity-auto-boot-validator-agentgptsmith-monadframework-2/SKILL.md
+other/9-4008-delskill/SKILL.md
+other/broaderlevelskill/SKILL.md
+other/matchjobadevidenceskill/SKILL.md
+other/matchresumeevidenceskill/SKILL.md
+other/pai/SKILL.md
+other/slimskill/SKILL.md

@@ -1,8 +1,8 @@
 ---
 name: tutorial
-description: Interactive guided album creation and session resume
+description: Provides interactive guided album creation for new users. Use when the user is new to the plugin or asks for a walkthrough of the album creation process.
 argument-hint: <new-album | resume | help>
-model: claude-sonnet-4-5-20250929
+model: claude-sonnet-4-6
 allowed-tools:
   - Read
   - Write
@@ -11,6 +11,7 @@ allowed-tools:
   - Grep
   - Bash
   - AskUserQuestion
+  - bitwize-music-mcp
 ---
 
 ## Your Task
@@ -43,7 +44,7 @@ You are a friendly guide helping users create albums step-by-step. Your job is t
 Walk the user through creating a new album interactively.
 
 **Approach:**
-1. **Check config first** - Read `~/.bitwize-music/config.yaml` to get `content_root`
+1. **Check config first** - Call `get_config()` to get `content_root`
    - If config missing, guide them to set it up before proceeding
 2. Welcome them warmly
 3. Work through the 7 planning phases ONE QUESTION AT A TIME
@@ -63,14 +64,14 @@ Walk the user through creating a new album interactively.
 Help returning users pick up where they left off.
 
 **Steps:**
-1. **Check config first** - Read `~/.bitwize-music/config.yaml` to get `content_root`
+1. **Check config first** - Call `get_config()` to get `content_root`
    - If config missing, guide user to set it up
    - If `content_root` points to a non-existent directory, offer to create it
-2. Scan `{content_root}/artists/*/albums/*/` for in-progress albums
-3. For each album found, check:
-   - Album status (from README frontmatter or Status line)
-   - Track count and completion status
-   - Any pending verifications
+2. Call `list_albums(status_filter="In Progress")` to find in-progress albums
+3. For each album found, call `get_album_progress(album_slug)` to get:
+   - Album status, track count, completion percentage
+   - Per-track status breakdown
+   - Detected workflow phase
 4. Present findings clearly
 5. Suggest specific next action with skill link
 
@@ -174,7 +175,7 @@ See [phases.md](phases.md) for the complete reference.
    mkdir -p {content_root}/artists/[artist]/albums/[genre]/[album-name]/tracks
    ```
 
-2. Create album README from template (read `{plugin_root}/templates/album.md` first)
+2. Create album README from template (read `${CLAUDE_PLUGIN_ROOT}/templates/album.md` first)
 
 3. Tell user: "I've created the album folder at `{content_root}/artists/...`. We'll fill in the details as we go."
 
@@ -217,7 +218,7 @@ At appropriate points, tell users about relevant skills:
 
 **You:**
 ```
-[reads ~/.bitwize-music/config.yaml]
+[calls get_config()]
 
 Config loaded:
   content_root: ~/music-projects
@@ -277,6 +278,7 @@ Now: What type of album is this?
 - **Thematic** - United by theme (not plot)
 - **Character Study** - Deep dive into one person
 - **Collection** - Standalone songs, loose connection
+- **Original Soundtrack (OST)** - Music for a fictional property's world, scenes, and key moments (games, films, shows)
 
 Which fits your vision?
 ```
@@ -291,13 +293,11 @@ Which fits your vision?
 
 **You:**
 ```
-[reads ~/.bitwize-music/config.yaml]
+[calls get_config(), list_albums(status_filter="In Progress")]
 
 Config loaded: content_root = ~/music-projects
 
 Let me check what you have in progress...
-
-[scans ~/music-projects/artists/*/albums/*/]
 
 Found 1 album in progress:
 

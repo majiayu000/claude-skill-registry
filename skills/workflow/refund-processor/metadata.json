@@ -1,0 +1,17 @@
+{
+  "name": "refund-processor",
+  "repo": "composio-community/support-skills",
+  "path": "refund-processor/SKILL.md",
+  "github_branch": "main",
+  "category": "workflow",
+  "source": "github.com/composio-community/support-skills",
+  "dir_name": "refund-processor",
+  "downloaded_at": "2026-05-31T04:11:58.278859Z",
+  "author": "composio-community",
+  "source_url": "https://github.com/composio-community/support-skills/blob/main/refund-processor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/composio-community/support-skills/blob/main/refund-processor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "haven-life",
+  "description": "Simple, affordable term life insurance online.",
+  "repo": "Andrejones92/canifi-life-os",
+  "path": "skills/haven-life",
+  "category": "domains",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Andrejones92/canifi-life-os",
+  "dir_name": "haven-life-andrejones92-canifi-life-os-2",
+  "author": "Andrejones92",
+  "source_url": "https://github.com/Andrejones92/canifi-life-os/blob/main/skills/haven-life/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Andrejones92/canifi-life-os/blob/main/skills/haven-life/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

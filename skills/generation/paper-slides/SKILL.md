@@ -2,7 +2,7 @@
 name: paper-slides
 description: "Generate conference presentation slides (beamer LaTeX → PDF + editable PPTX) from a compiled paper, with speaker notes and full talk script. Use when user says \"做PPT\", \"做幻灯片\", \"make slides\", \"conference talk\", \"presentation slides\", \"生成slides\", \"写演讲稿\", or wants beamer slides for a conference talk."
 argument-hint: "[paper-directory-or-talk-length] [— style-ref: <source>]"
-allowed-tools: Bash(*), Read, Write, Edit, Grep, Glob, Agent, mcp__codex__codex, mcp__codex__codex-reply
+allowed-tools: Bash(*), Read, Write, Edit, Grep, Glob, mcp__codex__codex, mcp__codex__codex-reply
 ---
 
 # Paper Slides: From Paper to Conference Talk
@@ -70,7 +70,7 @@ Sources accepted: local TeX dir / file, local PDF, arXiv id, http(s) URL. Overle
 
 - Use `style_profile.md` to align section-budget tendency and theorem-environment density. Talk-type slide count above still takes precedence.
 - **Never copy speaker-note prose, slide titles, or examples** from anything reachable through the cache. The talk content is from the user's paper, not the reference.
-- **Never pass `— style-ref` (or the cache contents) to the GPT-5.4 reviewer sub-agent** — the reviewer must judge the talk's clarity on its own merits.
+- **Never pass `— style-ref` (or the cache contents) to the GPT-5.5 reviewer sub-agent** — the reviewer must judge the talk's clarity on its own merits.
 
 ## Talk Type → Slide Count
 
@@ -357,7 +357,7 @@ If page count differs significantly from outline (>2 slides off), investigate.
 
 ### Phase 5: Codex MCP Review
 
-Send the slide outline + selected LaTeX frames to GPT-5.4 xhigh:
+Send the slide outline + selected LaTeX frames to GPT-5.5 xhigh:
 
 ```
 mcp__codex__codex:
@@ -564,7 +564,7 @@ The paper and code are available at the QR code on screen. I'm happy to take que
   ├── main.pdf              # Compiled slides (primary output)
   ├── presentation.pptx     # Editable PowerPoint
   ├── SLIDE_OUTLINE.md      # Slide-by-slide outline
-  ├── SLIDES_REVIEW.md      # GPT-5.4 review feedback
+  ├── SLIDES_REVIEW.md      # GPT-5.5 review feedback
   ├── speaker_notes.md      # Per-slide speaker notes
   ├── TALK_SCRIPT.md        # Full word-for-word talk script + Q&A
   ├── SLIDES_STATE.json     # State persistence

@@ -25,8 +25,10 @@ class FakeSession:
     def __init__(self, response):
         self.response = response
         self.headers = {}
+        self.calls = 0
 
     def get(self, url, timeout=None):
+        self.calls += 1
         return self.response
 
 
@@ -247,6 +249,52 @@ def test_download_skill_classifies_from_skill_md_first(tmp_path):
     assert metadata["classification"]["confidence"] == "high"
     assert metadata["classification"]["method"] == "taxonomy_keyword_v1"
     assert metadata["classification"]["semantic_sources"]["description"] == "frontmatter"
+
+
+def test_download_skill_skips_source_already_archived_in_another_category(tmp_path):
+    module = load_module()
+    discovery = module.GitHubTopicDiscovery(request_delay=0.0)
+    discovery.session = FakeSession(
+        FakeResponse(
+            200,
+            (
+                "---\n"
+                "name: docker-deployer\n"
+                "description: Deploy Docker Kubernetes CI CD infrastructure automation.\n"
+                "---\n"
+                "# Docker Deployer\n"
+            ),
+        )
+    )
+
+    existing_dir = tmp_path / "skills" / "development" / "docker-deployer"
+    existing_dir.mkdir(parents=True)
+    existing_skill = "---\nname: docker-deployer\n---\n# Existing Docker Deployer\n"
+    existing_metadata = module.json.dumps(
+        {
+            "name": "docker-deployer",
+            "repo": "acme/docker-deployer",
+            "path": "skills/docker-deployer",
+            "category": "development",
+            "source": "github.com/acme/docker-deployer",
+            "dir_name": "docker-deployer",
+        },
+        indent=2,
+    )
+    (existing_dir / "SKILL.md").write_text(existing_skill, encoding="utf-8")
+    (existing_dir / "metadata.json").write_text(existing_metadata, encoding="utf-8")
+
+    downloaded = discovery.download_skill(
+        "acme/docker-deployer",
+        "skills/docker-deployer/SKILL.md",
+        tmp_path / "skills",
+    )
+
+    assert downloaded is False
+    assert discovery.session.calls == 0
+    assert (existing_dir / "SKILL.md").read_text(encoding="utf-8") == existing_skill
+    assert not (tmp_path / "skills" / "other" / "docker-deployer").exists()
+    assert not (tmp_path / "skills" / "devops" / "docker-deployer").exists()
 
 
 def test_download_skill_falls_back_to_other_with_audit_reason(tmp_path):

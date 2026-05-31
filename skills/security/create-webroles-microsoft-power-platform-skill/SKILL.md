@@ -1,30 +1,15 @@
 ---
 name: create-webroles
-description: >
-  This skill should be used when the user asks to "create web roles", "add web roles",
-  "set up web roles", "add roles", "create roles for my site", "manage web roles",
-  "add authenticated role", "add anonymous role", or wants to create web roles for
-  their Power Pages code site. Web roles control access and permissions for site users.
+description: >-
+  Creates and configures web roles for a Power Pages code site. Web roles control access
+  and permissions for site users, including authenticated and anonymous roles. Use when the
+  user wants to create, add, set up, or manage web roles for their site.
 user-invocable: true
 allowed-tools: Read, Write, Bash, Grep, Glob, AskUserQuestion, Task, TaskCreate, TaskUpdate, TaskList
 model: opus
-hooks:
-  Stop:
-    - hooks:
-        - type: command
-          command: 'node "${CLAUDE_PLUGIN_ROOT}/skills/create-webroles/scripts/validate-webroles.js"'
-          timeout: 15
-        - type: prompt
-          prompt: >
-            If web roles were being created in this session (via /power-pages:create-webroles),
-            verify before allowing stop: 1) The .powerpages-site/web-roles/ directory was checked
-            for existing roles, 2) New web role YAML files were created with valid UUIDs generated
-            by the generate-uuid.js script, 3) All web role files were verified (valid UUIDs, correct
-            format, no duplicate flags), 4) The user was asked to deploy the site to apply the
-            new roles. If any of these are incomplete, return { "ok": false, "reason": "<specific issues>" }.
-            If no web role work happened or everything is complete, return { "ok": true }.
-          timeout: 30
 ---
+
+> **Plugin check**: Run `node "${CLAUDE_PLUGIN_ROOT}/scripts/check-version.js"` — if it outputs a message, show it to the user before proceeding.
 
 # Create Web Roles
 
@@ -59,47 +44,13 @@ Create web roles for a Power Pages code site. Web roles define the permissions a
 
 **Actions**:
 
-1. Look for the `.powerpages-site/web-roles/` directory in the project root. Use `Glob` to search:
+1. Locate the project root (`**/powerpages.config.json`) and check for `.powerpages-site/web-roles/`.
 
-   ```text
-   **/.powerpages-site/web-roles
-   ```
+2. **If `.powerpages-site` does NOT exist:** Ask the user to deploy first via `AskUserQuestion` (options: "Yes, deploy now (Recommended)", "No, I'll do it later"). If yes, invoke `/deploy-site` then resume from Phase 2. If no, stop.
 
-2. Also locate the project root by finding `powerpages.config.json`:
+3. **If `.powerpages-site` exists but `web-roles/` does NOT:** Create the `<PROJECT_ROOT>/.powerpages-site/web-roles/` directory.
 
-   ```text
-   **/powerpages.config.json
-   ```
-
-3. **If `.powerpages-site` folder does NOT exist:**
-
-   The site has not been deployed yet. The `.powerpages-site` folder is created automatically when the site is deployed for the first time using `pac pages upload-code-site`.
-
-   Tell the user:
-
-   > "The `.powerpages-site` folder was not found. This folder is created when the site is first deployed to Power Pages. I'll deploy your site first, and then we can create web roles."
-
-   Use `AskUserQuestion` to confirm:
-
-   | Question | Options |
-   |----------|---------|
-   | Your site needs to be deployed first so the `.powerpages-site` folder is created. Shall I deploy it now? | Yes, deploy now (Recommended), No, I'll do it later |
-
-   **If "Yes, deploy now"**: Invoke the `/power-pages:deploy-site` skill to deploy the site. Once deployment completes and `.powerpages-site` is created, resume this workflow from Phase 2.
-
-   **If "No, I'll do it later"**: Stop here — the user must deploy first before web roles can be created.
-
-4. **If `.powerpages-site` exists but `web-roles/` subdirectory does NOT exist:**
-
-   Create the `web-roles` directory:
-
-   ```powershell
-   New-Item -ItemType Directory -Path "<PROJECT_ROOT>/.powerpages-site/web-roles" -Force
-   ```
-
-   Proceed to Phase 2.
-
-5. **If both exist:** Proceed to Phase 2.
+4. **If both exist:** Proceed to Phase 2.
 
 **Output**: Confirmed `.powerpages-site/web-roles/` directory exists and is ready
 
@@ -178,7 +129,7 @@ For each new web role the user approved, create a YAML file in `.powerpages-site
 
 For each role, generate a UUID using the Node script. **NEVER generate UUIDs yourself — always use the script.**
 
-```powershell
+```bash
 node "${CLAUDE_PLUGIN_ROOT}/scripts/generate-uuid.js"
 ```
 
@@ -196,6 +147,7 @@ name: <Role Name>
 ```
 
 **Rules:**
+
 - Only ONE role can have `anonymoususersrole: true`
 - Only ONE role can have `authenticatedusersrole: true`
 - If an existing role already has one of these flags set to `true`, do not set it again on a new role
@@ -245,6 +197,7 @@ name: <Role Name>
 2. Present a summary of what was created:
 
    > "I've created the following new web roles:"
+>
    > | Role Name | ID | Anonymous | Authenticated |
    > |-----------|-----|-----------|---------------|
    > | Content Editors | `a1b2c3d4-...` | false | false |
@@ -258,11 +211,11 @@ name: <Role Name>
 
 4. **If "Yes, deploy now"**: Tell the user to invoke the deploy skill:
 
-   > "Please run `/power-pages:deploy-site` to deploy your site and apply the new web roles."
+   > "Please run `/deploy-site` to deploy your site and apply the new web roles."
 
 5. **If "No, I'll deploy later"**: Acknowledge and remind them:
 
-   > "No problem! Remember to deploy your site using `/power-pages:deploy-site` when you're ready to apply the new web roles to your Power Pages environment."
+   > "No problem! Remember to deploy your site using `/deploy-site` when you're ready to apply the new web roles to your Power Pages environment."
 
 **Output**: Summary presented and deployment offered
 

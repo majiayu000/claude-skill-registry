@@ -265,7 +265,7 @@ phases:
     template:
       cmd: python run_train.py --direction c --backbone softmax --n_hidden ${N} ...
       output_check: checkpoints/transformer/teacher_L96_K500_N${N}.pt
-
+  
   - name: distill_students
     depends_on: train_teachers
     grid:

@@ -75,8 +75,8 @@ File extraction and hashing
 ### Correlation Queries
 ```sql
 -- Splunk: PowerShell encoded command
-index=security EventCode=4688
-| where match(Process_Command_Line, "powershell.*-enc")
+index=security EventCode=4688 
+| where match(Process_Command_Line, "powershell.*-enc") 
 | stats count by Computer, User, _time
 | where count > 3
 
@@ -191,7 +191,7 @@ index=sysmon EventCode=10 TargetImage="*lsass.exe"
 | where count > 0
 
 | Detect DCSync (Directory Replication)
-index=security EventCode=4662
+index=security EventCode=4662 
 | where match(Properties, "(?i)(1131f6aa|1131f6ad|89e95b76)")
 | where NOT match(SubjectUserName, "(?i)(\\$|MSOL_)")
 | stats count by SubjectUserName, ObjectName

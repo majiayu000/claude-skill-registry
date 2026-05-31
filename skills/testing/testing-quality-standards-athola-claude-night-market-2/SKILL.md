@@ -1,6 +1,6 @@
 ---
 name: testing-quality-standards
-description: 'Testing quality metrics, coverage thresholds, and anti-patterns.'
+description: Defines testing quality metrics, coverage thresholds, and anti-patterns. Use when establishing test gates or validating a test suite's coverage targets.
 globs: "**/test_*.py"
 alwaysApply: false
 category: infrastructure

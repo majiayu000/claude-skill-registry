@@ -1,0 +1,16 @@
+{
+  "name": "c",
+  "repo": "plurigrid/asi",
+  "path": "skills/c/SKILL.md",
+  "source": "github.com/plurigrid/asi",
+  "downloaded_at": "2026-02-02T02:39:47.897043Z",
+  "dir_name": "c",
+  "category": "integration",
+  "author": "plurigrid",
+  "source_url": "https://github.com/plurigrid/asi/blob/main/skills/c/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2025 SkillCreator.ai",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

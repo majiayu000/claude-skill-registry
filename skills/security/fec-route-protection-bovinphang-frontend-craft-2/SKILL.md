@@ -118,6 +118,8 @@ router.beforeEach(async (to) => {
 - `403`：进入无权限页，不反复重试。
 - `loading`：渲染稳定骨架屏，避免先显示私有内容再跳转。
 - 登录成功：只跳转到同源且允许的路径，防止 open redirect。
+- RBAC：权限矩阵来自可信会话或后端返回；前端只用于路由体验和 UI 裁剪，不能替代接口授权。
+- 会话刷新：401 刷新失败后统一清理状态；避免多个并发请求各自触发跳转或刷新风暴。
 
 ## Constraints
 
@@ -126,8 +128,8 @@ router.beforeEach(async (to) => {
 - redirect 参数必须限制为站内路径，不能直接信任 URL 输入。
 - 权限信息应来自可信会话或后端响应，不要只依赖 localStorage 中的角色字段。
 - 多租户应用必须把 tenant/org 上下文纳入权限判断。
+- 不把菜单隐藏视为授权完成；用户直接访问 URL、刷新页面、篡改 localStorage 和替换 tenant 都必须验证。
 
 ## Expected Output
 
 产出一套路由守卫实现，覆盖 loading、未登录、权限不足、登录后回跳和会话过期。验证时直接访问私有 URL、刷新页面、切换角色、篡改 redirect 参数，确认行为稳定且 API 仍有服务端授权。
-

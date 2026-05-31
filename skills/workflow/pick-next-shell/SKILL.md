@@ -55,7 +55,9 @@ Update the plan's YAML frontmatter to `status: ready`.
 
 ## Step 6: Run `$implement-plan` Skill
 
-Run the `$implement-plan` skill with the plan path from Step 2.
+Present a brief summary of the finished plan: the essence of what it builds and the key decisions behind it, short enough to read at a glance so the user does not have to open the full plan file. When the plan delivers user-facing value, also present a short list of user stories capturing what someone gains from it. Skip the stories for changes with no user-facing gain, such as internal refactors or infrastructure work. Fit both to the plan rather than a fixed template.
+
+Then run the `$implement-plan` skill with the plan path from Step 2.
 
 Then update or check the active plan and proceed to any remaining task.
 

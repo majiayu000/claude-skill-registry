@@ -1,0 +1,18 @@
+{
+  "name": "inner",
+  "repo": "jscraik/SkillsInspector",
+  "path": "Tests/SkillsCoreTests/Fixtures/nested/inner/SKILL.md",
+  "source": "github.com/jscraik/SkillsInspector",
+  "downloaded_at": "2026-01-20T03:28:30.266383Z",
+  "dir_name": "inner",
+  "category": "examples",
+  "github_path": "Tests/SkillsCoreTests/Fixtures/nested/inner",
+  "github_branch": "main",
+  "author": "jscraik",
+  "source_url": "https://github.com/jscraik/SkillsInspector/blob/main/Tests/SkillsCoreTests/Fixtures/nested/inner/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jscraik/SkillsInspector/blob/main/Tests/SkillsCoreTests/Fixtures/nested/inner/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

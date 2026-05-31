@@ -1,6 +1,6 @@
 ---
 name: mandat-schliessen
-description: "Mandat abschließen – Ergebnis, Endexposition und Erkenntnisse festhalten, dann aus dem aktiven Portfolio archivieren ohne den Datensatz zu löschen. Verwenden, wenn der Nutzer ein Mandat schließen möchte, sagt „[Mandat] ist abgeschlossen\", oder ein Vergleich, Klagerücknahme, Urteil, Rücknahme oder Konsolidierung als Ergebnis dokumentieren will."
+description: "Mandat nach Prozessabschluss formal schließen: Kostenfestsetzung, Archivierung, Mandanteninformation. Normen: §§ 103 ff. ZPO, RVG. Prüfraster: Kostenfestsetzungsantrag, Ergebnismitteilung, Handaktenfreigabe. Output: Abschlussbericht Mandat. Abgrenzung: nicht laufende Mandat-Aktualisierung."
 ---
 
 # Mandat schließen
@@ -56,12 +56,10 @@ Strukturierter Abschluss eines Mandats im Portfolio: Ergebnis dokumentieren, Kos
 
 Verbindlich: `../references/zitierweise.md`.
 
-- BGH, Urt. v. 10.02.2021 – VIII ZR 64/20, NJW 2021, 1161 Rn. 19 (Rechtskraft des Urteils: Umfang, § 322 ZPO).
-- BGH, Beschl. v. 30.05.2018 – XII ZB 308/16, NJW 2018, 2794 Rn. 14 (Prozessvergleich: Vollstreckbarkeit und Widerrufsvorbehalt).
-- Greger, in: Zöller, ZPO, 35. Aufl. 2024, § 269 Rn. 1 ff. (Klagerücknahme: Einwilligung, Kostenfolge).
-- Greger, in: Zöller, ZPO, 35. Aufl. 2024, § 91a Rn. 1 ff. (Erledigungserklärung: übereinstimmende Erklärungen, Kostentragungspflicht nach bisherigem Sach- und Streitstand).
+- Rechtsprechung: keine Entscheidung aus Modellwissen zitieren; vor Ausgabe über offizielle oder frei zugängliche Quelle mit Gericht, Entscheidungsform, Datum, Aktenzeichen und tragender Aussage verifizieren.
+- Quellenregel: Literatur nur mit Nutzerquelle oder lizenziertem Live-Zugriff; keine Kommentar-, Handbuch- oder Aufsatzfundstellen aus Modellwissen.
 - BRAO § 50 (Aufbewahrungspflicht Handakten: 6 Jahre); § 43a Abs. 5 BRAO (Fremdgelder).
-- BGH, Beschl. v. 19.09.2018 – IX ZB 16/17, NJW 2018, 3710 Rn. 22 (Kostenfestsetzungsverfahren §§ 103 ff. ZPO: Antragsfrist, sofortige Beschwerde).
+- Rechtsprechung: keine Entscheidung aus Modellwissen zitieren; vor Ausgabe über offizielle oder frei zugängliche Quelle mit Gericht, Entscheidungsform, Datum, Aktenzeichen und tragender Aussage verifizieren.
 
 ## Ausgabeformat
 
@@ -76,7 +74,7 @@ MANDATSGEHEIMNIS – § 43a Abs. 2 BRAO
 ──────────────────────────────────────
 ERGEBNIS
 ──────────────────────────────────────
-[Kurzbeschreibung: z. B. „Vergleich: Beklagter zahlt EUR 25.000; gegenseitige Erledigung aller Ansprüche. Protokolliert am TT.MM.JJJJ vor LG Frankfurt a. M., Az. 2-08 O 123/23."]
+Rechtsprechung live prüfen: Keine Entscheidung aus Modellwissen zitieren; vor Ausgabe über amtliche oder frei zugängliche Quelle mit Gericht, Entscheidungsform, Datum, Aktenzeichen und tragender Aussage verifizieren.
 
 ──────────────────────────────────────
 ENDEXPOSITION
@@ -104,3 +102,7 @@ _log.yaml-Status: archiv
 - **Fremdgelder nicht abgewickelt:** § 43a Abs. 5 BRAO – Fremdgelder (Kostenvorschüsse, Schadensersatzbeträge) unverzüglich weiterleiten; Verzögerung kann zur Strafbarkeit führen (§ 266 StGB).
 - **Rechtsmittelfrist läuft noch:** Vor dem Schließen prüfen, ob Berufungs- (§ 517 ZPO: 1 Monat) oder Revisionsfrist (§ 548 ZPO: 1 Monat) noch offen ist; Mandat erst nach Eintritt der Rechtskraft schließen oder Mandanten ausdrücklich auf Verzicht hinweisen.
 - **Vollstreckungsverjährung:** Vollstreckungstitel verjähren nach § 197 Abs. 1 Nr. 3 BGB in 30 Jahren; Abschluss nicht ohne Dokumentation der Vollstreckungsmaßnahmen.
+
+<!-- AUDIT 27.05.2026
+Halluzinierte Referenz geloescht. Keine Ersatzquelle gefunden.
+-->

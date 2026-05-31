@@ -4,7 +4,7 @@ description: Use when you need to install the embedded robot agents into either 
 license: Apache-2.0
 metadata:
   author: Juan Antonio Breña Moral
-  version: 0.15.0-SNAPSHOT
+  version: 0.15.0
 ---
 # Embedded agents installer
 

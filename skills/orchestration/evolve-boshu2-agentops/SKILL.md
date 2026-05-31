@@ -299,6 +299,8 @@ Before invoking the regression gate, sync downstream artifacts when the staged d
 
 Without these, the gate fails on stale-binary or embedded-drift errors that look like real regressions. See `references/gate-hygiene.md` for the detection recipe.
 
+**Adding or modifying a skill?** A skill touches **six derived surfaces** (registry.json SKU catalog, skill-domain-map, context-map, skill counts + the hand-added `SKILL-TIERS.md` row, codex twin, narrative counts) — regenerate them in one shot via `scripts/regen-all.sh` + the codex/count steps, never piecemeal. The most-missed is `registry.json` (stale → `contracts-sync` + `correctness(ubuntu)` fail together). See [references/new-skill-landing.md](references/new-skill-landing.md) for the full procedure, then [references/gate-hygiene.md](references/gate-hygiene.md) for the pre-push diff-scope check + pre-existing-vs-mine red triage.
+
 ### Step 5: Regression Gate
 
 After execution, run the project build+test bundle. If the repo execution profile declared `validation_commands`, run them. If a repo-local program contract exists, run its `validation_commands` too, de-duplicated and in declared order after the repo bootstrap checks. Also check `if [ -f scripts/check-wiring-closure.sh ]; then bash scripts/check-wiring-closure.sh; fi`.
@@ -447,7 +449,8 @@ See `references/cycle-history.md` for advanced troubleshooting.
 - [references/cycle-history.md](references/cycle-history.md) — JSONL format, recovery protocol, kill switch
 - [references/examples.md](references/examples.md) — Detailed usage examples
 - [references/fitness-scoring.md](references/fitness-scoring.md) — Baseline capture, regression detection, revert procedure
-- [references/gate-hygiene.md](references/gate-hygiene.md) — Pre-gate source-surface detection and structural gate-output parsing
+- [references/gate-hygiene.md](references/gate-hygiene.md) — Pre-gate source-surface detection, structural gate-output parsing, pre-push diff-scope check, pre-existing-vs-mine red triage
+- [references/new-skill-landing.md](references/new-skill-landing.md) — The six derived surfaces a new/modified skill must regenerate in one shot to stay one-shot-green
 - [references/goals-schema.md](references/goals-schema.md) — GOALS.yaml format and continuous metrics
 - [references/knowledge-loop-integration.md](references/knowledge-loop-integration.md) — Claim/release semantics and harvest re-read
 - [references/mechanical-batches.md](references/mechanical-batches.md) — Script-first vs per-file Edit for > 20-file uniform batches

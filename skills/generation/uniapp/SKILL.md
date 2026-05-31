@@ -101,8 +101,8 @@ description: "JeecgBoot UniApp3 移动端 CRUD 代码生成器。Use when user a
 | 名称含"备注/描述/内容/简介" | `textarea` | `<wd-textarea>` |
 | 名称含"密码" | `password` | `<wd-input show-password>` |
 | 名称含"省市区/地址" | `pca` | `<online-pca>` |
-| 名称含"部门" | `sel_depart` | `<select-dept>` |
-| 名称含"用户/人员/负责人" | `sel_user` | `<select-user>` |
+| 名称含"部门" | `sel_depart` | `<SelectDept>` |
+| 名称含"用户/人员/负责人" | `sel_user` | `<SelectUser>` |
 | 名称含"分类" 且有树结构 | `cat_tree` | `<CategorySelect>` |
 | DB类型为 int/long/double/BigDecimal | 数字输入 | `<wd-input inputMode="numeric">` |
 | 默认（字符串类型） | 文本输入 | `<wd-input>` |
@@ -312,6 +312,24 @@ import { duplicateCheck } from '@/service/api'
 
 ---
 
+## ⛔ 表单属性铁律（高频翻车点）
+
+> **`wd-input` / `wd-textarea` 等表单组件的 `name` 和 `prop` 属性值必须直接写字段名，禁止用单引号包裹。**
+>
+> ```vue
+> <!-- ✅ 正确 -->
+> <wd-input name="productName" prop="productName" ... />
+>
+> <!-- ❌ 错误 — 单引号包裹导致 wot-design-uni 校验失效 -->
+> <wd-input name="'productName'" prop="'productName'" ... />
+> ```
+>
+> **Why：** wot-design-uni 的 `wd-form` 校验时用 `name`/`prop` 的字面值去匹配 `:rules` 中的规则和 `myFormData` 的键。若写成 `name="'productName'"`，传入的是带单引号的字符串字面量 `'productName'`，而不是 `productName`，导致校验规则永远匹配不上，表单即使有值也提示必填错误。
+>
+> **How to apply：** 生成每一个表单字段时，`name=` 和 `prop=` 后面的双引号内只写驼峰字段名本身，不加任何额外引号或花括号。
+
+---
+
 ## 生成检查清单
 
 生成代码后自查：
@@ -327,3 +345,4 @@ import { duplicateCheck } from '@/service/api'
 - [ ] 表单页导入了所有用到的 online 组件
 - [ ] `{EntityName}Data.ts` 中字典字段的 `dataIndex` 使用了 `_dictText` 后缀
 - [ ] pages.json 中已注册新页面（或 `<route>` 标签能被 uni-pages 插件识别）
+- [ ] ⛔ **所有 `name=` 和 `prop=` 均为裸字段名，无多余单引号**（如 `name="fieldName"`，而非 `name="'fieldName'"`）

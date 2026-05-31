@@ -103,7 +103,7 @@ Each Task gets exactly 5 steps in this order. All 5 steps are mandatory.
 
 Reference test exemplifying this pattern: `tests/lib/wave-executor/persona-gate-hook.test.mjs` (shipped at #481).
 
-Follow `.claude/rules/test-quality.md`: one meaningful assertion per `it`, behaviour not implementation, no branching, hardcoded expected values.
+Follow `.claude/rules/testing.md` § "Test Quality — False-Positive Prevention": one meaningful assertion per `it`, behaviour not implementation, no branching, hardcoded expected values.
 
 Provide:
 - Exact file path (absolute from project root)
@@ -233,5 +233,5 @@ If the user selects "Dispatch via wave-executor", hand off to `skills/wave-execu
 - `skills/plan/SKILL.md` — produces the PRD this skill consumes
 - `skills/brainstorm/SKILL.md` — alternative source (design spec)
 - `skills/wave-executor/SKILL.md` — consumes the plan for parallel execution
-- `.claude/rules/test-quality.md` — test conventions to follow in Step 1
+- `.claude/rules/testing.md` § "Test Quality — False-Positive Prevention" — test conventions to follow in Step 1
 - `skills/write-executable-plan/plan-template.md` — structural template used in Phase 5

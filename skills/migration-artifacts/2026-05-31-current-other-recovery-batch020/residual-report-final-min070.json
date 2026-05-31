@@ -1,0 +1,2827 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-31T18:03:32.192284+00:00",
+  "skills_dir": "/private/tmp/claude-skill-registry-data-other-20260531",
+  "classification_jsonl": "/private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/classification.jsonl",
+  "policy": {
+    "min_confidence": 0.7,
+    "from_categories": [
+      "other"
+    ],
+    "to_categories": [],
+    "target_statuses": [
+      "active"
+    ],
+    "allow_target_other": false,
+    "apply_mode": "report-only",
+    "example_limit_per_reason": 20,
+    "top_targets_per_reason": 20,
+    "conflict_detail_limit": 200
+  },
+  "summary": {
+    "classification_row_count": 5723,
+    "archive_skill_count": 199253,
+    "scoped_archive_skill_count": 437,
+    "scoped_archive_classification_gap": 0,
+    "classification_status_counts": {
+      "missing_result": 15,
+      "ok": 5706,
+      "unknown_or_inactive_category": 2
+    },
+    "archive_category_counts": {
+      "agent": 1902,
+      "ai-llm": 2678,
+      "ai-ml": 2605,
+      "analysis": 5087,
+      "api": 1370,
+      "bash": 316,
+      "business": 1410,
+      "c-level": 80,
+      "communication": 710,
+      "context-management": 1463,
+      "creative": 870,
+      "data": 49383,
+      "design": 13952,
+      "development": 39335,
+      "devops": 10952,
+      "documents": 7854,
+      "domains": 2779,
+      "examples": 191,
+      "forensics": 158,
+      "gaming": 916,
+      "generation": 1530,
+      "integration": 6897,
+      "language": 178,
+      "local-ai-infrastructure": 108,
+      "marketing": 3136,
+      "orchestration": 2885,
+      "other": 437,
+      "performance": 1106,
+      "personal-development": 809,
+      "planning": 1838,
+      "platform": 1006,
+      "product": 3062,
+      "productivity": 3314,
+      "quality": 4446,
+      "security": 5317,
+      "skills": 2635,
+      "system": 368,
+      "testing": 11398,
+      "travel": 53,
+      "war-room": 42,
+      "workflow": 3549,
+      "writing": 1128
+    },
+    "source_state_counts": {
+      "exists": 437,
+      "missing": 5286
+    },
+    "existing_source_category_counts": {
+      "other": 437
+    },
+    "scoped_source_category_counts": {
+      "other": 437
+    },
+    "scoped_existing_source_count": 437,
+    "candidate_move_count": 7,
+    "blocked_existing_key_count": 40,
+    "stable_key_conflict_detail_count": 40,
+    "stable_key_conflict_detail_summary": {
+      "metadata_identity_equal": 18,
+      "skill_content_equal": 29
+    },
+    "primary_reason_counts": {
+      "classification status is not ok": 17,
+      "confidence below threshold": 373,
+      "movable candidate under selected policy": 7,
+      "source directory missing": 5286,
+      "target category already contains a skill with the same stable key": 40
+    },
+    "all_blocker_reason_counts": {
+      "classification status is not ok": 17,
+      "classification target matches current category": 355,
+      "confidence below threshold": 388,
+      "target category already contains a skill with the same stable key": 40,
+      "target category other requires --allow-target-other": 355,
+      "target category status 'unknown' excluded by filter": 2
+    },
+    "target_category_counts": {
+      "": 15,
+      "agent": 61,
+      "ai-llm": 88,
+      "ai-ml": 170,
+      "analysis": 384,
+      "api": 67,
+      "bash": 10,
+      "business": 70,
+      "c-level": 3,
+      "communication": 31,
+      "context-management": 79,
+      "creative": 22,
+      "data": 186,
+      "design": 215,
+      "development": 632,
+      "devops": 229,
+      "documents": 245,
+      "domains": 329,
+      "examples": 7,
+      "forensics": 7,
+      "gaming": 25,
+      "generation": 177,
+      "integration": 294,
+      "knowledge": 2,
+      "language": 7,
+      "local-ai-infrastructure": 11,
+      "marketing": 188,
+      "orchestration": 227,
+      "other": 355,
+      "performance": 62,
+      "personal-development": 41,
+      "planning": 88,
+      "platform": 70,
+      "product": 160,
+      "productivity": 33,
+      "quality": 311,
+      "security": 224,
+      "skills": 124,
+      "system": 25,
+      "testing": 136,
+      "travel": 2,
+      "war-room": 3,
+      "workflow": 239,
+      "writing": 69
+    },
+    "target_status_counts": {
+      "active": 5721,
+      "unknown": 2
+    },
+    "same_policy_plan_summary": {
+      "classification_row_count": 5723,
+      "classification_status_counts": {
+        "missing_result": 15,
+        "ok": 5706,
+        "unknown_or_inactive_category": 2
+      },
+      "planned_move_count": 47,
+      "movable_count": 7,
+      "blocked_count": 40,
+      "operation_counts": {
+        "blocked_existing_key": 40,
+        "move": 7
+      },
+      "reject_reasons": {
+        "classification status is not ok": 17,
+        "confidence below threshold": 373,
+        "source directory missing": 5286
+      },
+      "source_category_counts": {
+        "other": 47
+      },
+      "target_category_counts": {
+        "agent": 2,
+        "ai-llm": 1,
+        "ai-ml": 3,
+        "api": 4,
+        "context-management": 1,
+        "creative": 4,
+        "development": 2,
+        "documents": 10,
+        "domains": 1,
+        "examples": 1,
+        "gaming": 1,
+        "generation": 1,
+        "integration": 2,
+        "platform": 2,
+        "security": 2,
+        "skills": 1,
+        "system": 4,
+        "testing": 1,
+        "workflow": 4
+      }
+    }
+  },
+  "buckets": [
+    {
+      "reason": "source directory missing",
+      "count": 5286,
+      "target_categories": [
+        {
+          "value": "development",
+          "count": 623
+        },
+        {
+          "value": "analysis",
+          "count": 384
+        },
+        {
+          "value": "domains",
+          "count": 328
+        },
+        {
+          "value": "quality",
+          "count": 311
+        },
+        {
+          "value": "integration",
+          "count": 292
+        },
+        {
+          "value": "documents",
+          "count": 235
+        },
+        {
+          "value": "workflow",
+          "count": 235
+        },
+        {
+          "value": "orchestration",
+          "count": 227
+        },
+        {
+          "value": "devops",
+          "count": 225
+        },
+        {
+          "value": "security",
+          "count": 222
+        },
+        {
+          "value": "design",
+          "count": 215
+        },
+        {
+          "value": "marketing",
+          "count": 188
+        },
+        {
+          "value": "data",
+          "count": 186
+        },
+        {
+          "value": "generation",
+          "count": 176
+        },
+        {
+          "value": "ai-ml",
+          "count": 162
+        },
+        {
+          "value": "product",
+          "count": 160
+        },
+        {
+          "value": "testing",
+          "count": 135
+        },
+        {
+          "value": "skills",
+          "count": 123
+        },
+        {
+          "value": "planning",
+          "count": 88
+        },
+        {
+          "value": "ai-llm",
+          "count": 87
+        }
+      ],
+      "target_status_counts": {
+        "active": 5286
+      },
+      "examples": [
+        {
+          "path": "other/0-autoresearch-skill/SKILL.md",
+          "name": "autoresearch",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "orchestration",
+          "target_status": "active",
+          "confidence": 0.92,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/0-autoresearch-skill-orchestra-research-ai-research-skills/SKILL.md",
+          "name": "autoresearch",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "orchestration",
+          "target_status": "active",
+          "confidence": 0.92,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/00-basic-skill/SKILL.md",
+          "name": "code-reviewing",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "quality",
+          "target_status": "active",
+          "confidence": 0.88,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/001-skills-inventory/SKILL.md",
+          "name": "001-skills-inventory",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/002-agents-inventory/SKILL.md",
+          "name": "002-agents-inventory",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/003-agents-installation/SKILL.md",
+          "name": "003-agents-installation",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "platform",
+          "target_status": "active",
+          "confidence": 0.82,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/01-dotnet-clean-architecture/SKILL.md",
+          "name": "dotnet-clean-architecture",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/012-agile-epic/SKILL.md",
+          "name": "012-agile-epic",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "product",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/013-agile-feature/SKILL.md",
+          "name": "013-agile-feature",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "product",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/014-agile-user-story/SKILL.md",
+          "name": "014-agile-user-story",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "product",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/02-dotnet-cqrs-command-generator/SKILL.md",
+          "name": "dotnet-cqrs-command-generator",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/02-progressive-skill/SKILL.md",
+          "name": "api-documenting",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/03-dotnet-cqrs-query-generator/SKILL.md",
+          "name": "dotnet-cqrs-query-generator",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/03-financial-skill/SKILL.md",
+          "name": "financial-analyzing",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "analysis",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/030-architecture-adr-general/SKILL.md",
+          "name": "030-architecture-adr-general",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.8,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/031-architecture-adr-functional-requirements/SKILL.md",
+          "name": "031-architecture-adr-functional-requirements",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.8,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/032-architecture-adr-non-functional-requirements/SKILL.md",
+          "name": "032-architecture-adr-non-functional-requirements",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/033-architecture-diagrams/SKILL.md",
+          "name": "033-architecture-diagrams",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "generation",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/04-codebase-visualizer/SKILL.md",
+          "name": "codebase-visualizer",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "analysis",
+          "target_status": "active",
+          "confidence": 0.8,
+          "status": "ok",
+          "reason": "source directory missing"
+        },
+        {
+          "path": "other/04-dotnet-domain-entity-generator/SKILL.md",
+          "name": "dotnet-domain-entity-generator",
+          "source_exists": false,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "development",
+          "target_status": "active",
+          "confidence": 0.95,
+          "status": "ok",
+          "reason": "source directory missing"
+        }
+      ]
+    },
+    {
+      "reason": "confidence below threshold",
+      "count": 373,
+      "target_categories": [
+        {
+          "value": "other",
+          "count": 355
+        },
+        {
+          "value": "development",
+          "count": 7
+        },
+        {
+          "value": "ai-ml",
+          "count": 5
+        },
+        {
+          "value": "devops",
+          "count": 4
+        },
+        {
+          "value": "platform",
+          "count": 2
+        }
+      ],
+      "target_status_counts": {
+        "active": 373
+      },
+      "examples": [
+        {
+          "path": "other/1-jknzyxvyulxwujz-996/SKILL.md",
+          "name": "1",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.4,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/1-jknzyxvyulxwujz-996-749a19d4/SKILL.md",
+          "name": "1",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.3,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/17/SKILL.md",
+          "name": "17",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.3,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/20260102-214104-pattern-emergence-detector-agentgptsmith-monadframework/SKILL.md",
+          "name": "20260102_214104_pattern-emergence-detector",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.6,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/20260102-214104-pattern-emergence-detector-agentgptsmith-monadframework-2/SKILL.md",
+          "name": "20260102_214104_pattern-emergence-detector",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.6,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/20260102-214104-pattern-emergence-detector-agentgptsmith-monadframework-3/SKILL.md",
+          "name": "20260102-214104-pattern-emergence-detector",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.6,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/20260102-214104-pattern-emergence-detector-agentgptsmith-monadframework-e87e5c65/SKILL.md",
+          "name": "20260102_214104_pattern-emergence-detector",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.6,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/20260102-214539-chaos-spawn-1767390340/SKILL.md",
+          "name": "chaos-spawn-1767390340",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "ai-ml",
+          "target_status": "active",
+          "confidence": 0.65,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/20260102-214539-chaos-spawn-1767390340-agentgptsmith-monadframework/SKILL.md",
+          "name": "chaos-spawn-1767390340",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "ai-ml",
+          "target_status": "active",
+          "confidence": 0.65,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/20260102-214539-chaos-spawn-1767390340-agentgptsmith-monadframework-2/SKILL.md",
+          "name": "chaos-spawn-1767390340",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "ai-ml",
+          "target_status": "active",
+          "confidence": 0.65,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/20260102-214539-chaos-spawn-1767390340-agentgptsmith-monadframework-862cabbf/SKILL.md",
+          "name": "chaos-spawn-1767390340",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "ai-ml",
+          "target_status": "active",
+          "confidence": 0.65,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/20260102-214539-chaos-spawn-1767390340-agentgptsmith-monadframework-d35ff249/SKILL.md",
+          "name": "chaos-spawn-1767390340",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "ai-ml",
+          "target_status": "active",
+          "confidence": 0.65,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/3-majiayu000-claude-skill-regist/SKILL.md",
+          "name": "3-majiayu000-claude-skill-regist",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.4,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/33god-imi-worktree-management/SKILL.md",
+          "name": "33god-imi-worktree-management",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.6,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/4b5c6d7e-8f9a-0b1c-2d3e-4f5a6b7c8d9e-onurkanbakirci-awesome-skills/SKILL.md",
+          "name": "template-skill",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.3,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/4b5c6d7e-8f9a-0b1c-2d3e-4f5a6b7c8d9e-onurkanbakirci-awesome-skills-2/SKILL.md",
+          "name": "template-skill",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.3,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/4b5c6d7e-8f9a-0b1c-2d3e-4f5a6b7c8d9e-onurkanbakirci-awesome-skills-9961585e/SKILL.md",
+          "name": "template-skill",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.3,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/aam/SKILL.md",
+          "name": "aam",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.4,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/about-bitwize-music-studio-claude-ai-music-skil-8/SKILL.md",
+          "name": "about",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.55,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        },
+        {
+          "path": "other/about-bitwize-music-studio-claude-ai-music-skil-9/SKILL.md",
+          "name": "about",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "other",
+          "target_status": "active",
+          "confidence": 0.55,
+          "status": "ok",
+          "reason": "confidence below threshold"
+        }
+      ]
+    },
+    {
+      "reason": "target category already contains a skill with the same stable key",
+      "count": 40,
+      "target_categories": [
+        {
+          "value": "documents",
+          "count": 10
+        },
+        {
+          "value": "creative",
+          "count": 4
+        },
+        {
+          "value": "system",
+          "count": 4
+        },
+        {
+          "value": "workflow",
+          "count": 4
+        },
+        {
+          "value": "agent",
+          "count": 2
+        },
+        {
+          "value": "ai-ml",
+          "count": 2
+        },
+        {
+          "value": "development",
+          "count": 2
+        },
+        {
+          "value": "integration",
+          "count": 2
+        },
+        {
+          "value": "platform",
+          "count": 2
+        },
+        {
+          "value": "security",
+          "count": 2
+        },
+        {
+          "value": "context-management",
+          "count": 1
+        },
+        {
+          "value": "domains",
+          "count": 1
+        },
+        {
+          "value": "examples",
+          "count": 1
+        },
+        {
+          "value": "generation",
+          "count": 1
+        },
+        {
+          "value": "skills",
+          "count": 1
+        },
+        {
+          "value": "testing",
+          "count": 1
+        }
+      ],
+      "target_status_counts": {
+        "active": 40
+      },
+      "examples": [
+        {
+          "path": "other/about-bitwize-music-studio-claude-ai-music-skil/SKILL.md",
+          "name": "about",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.7,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "documents/about/SKILL.md"
+        },
+        {
+          "path": "other/about-bitwize-music-studio-claude-ai-music-skil-2/SKILL.md",
+          "name": "about",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.7,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "documents/about/SKILL.md"
+        },
+        {
+          "path": "other/about-bitwize-music-studio-claude-ai-music-skil-3/SKILL.md",
+          "name": "about",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.7,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "documents/about/SKILL.md"
+        },
+        {
+          "path": "other/about-bitwize-music-studio-claude-ai-music-skil-4/SKILL.md",
+          "name": "about",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.7,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "documents/about/SKILL.md"
+        },
+        {
+          "path": "other/about-bitwize-music-studio-claude-ai-music-skil-5/SKILL.md",
+          "name": "about",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.7,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "documents/about/SKILL.md"
+        },
+        {
+          "path": "other/about-bitwize-music-studio-claude-ai-music-skil-6/SKILL.md",
+          "name": "about",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.7,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "documents/about/SKILL.md"
+        },
+        {
+          "path": "other/about-bitwize-music-studio-claude-ai-music-skil-7/SKILL.md",
+          "name": "about",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.7,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "documents/about/SKILL.md"
+        },
+        {
+          "path": "other/aptos-trading-plurigrid-asi/SKILL.md",
+          "name": "aptos-trading",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "workflow",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "workflow/aptos-trading/SKILL.md"
+        },
+        {
+          "path": "other/aptos-trading-plurigrid-asi-2/SKILL.md",
+          "name": "aptos-trading",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "workflow",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "workflow/aptos-trading/SKILL.md"
+        },
+        {
+          "path": "other/bartender-simhacker-moollm/SKILL.md",
+          "name": "bartender",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "agent",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "agent/bartender/SKILL.md"
+        },
+        {
+          "path": "other/dmmono-ofl-bitwikiorg-skills-md-2/SKILL.md",
+          "name": "dmmono_ofl",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "documents/dmmono-ofl-bitwikiorg-skills-md/SKILL.md"
+        },
+        {
+          "path": "other/dmmono-ofl-bitwikiorg-skills-md-a8930cb6/SKILL.md",
+          "name": "dmmono_ofl",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "documents",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "documents/dmmono-ofl-bitwikiorg-skills-md/SKILL.md"
+        },
+        {
+          "path": "other/failsafe-chassis-activation-starwreckntx-irp-methodologies/SKILL.md",
+          "name": "failsafe-chassis-activation",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "system",
+          "target_status": "active",
+          "confidence": 0.8,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "system/failsafe-chassis-activation/SKILL.md"
+        },
+        {
+          "path": "other/failsafe-chassis-activation-starwreckntx-irp-methodologies-2/SKILL.md",
+          "name": "failsafe-chassis-activation",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "system",
+          "target_status": "active",
+          "confidence": 0.8,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "system/failsafe-chassis-activation/SKILL.md"
+        },
+        {
+          "path": "other/failsafe-shatter-recalibrate-starwreckntx-irp-methodologies/SKILL.md",
+          "name": "failsafe-shatter-recalibrate",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "system",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "system/failsafe-shatter-recalibrate/SKILL.md"
+        },
+        {
+          "path": "other/failsafe-shatter-recalibrate-starwreckntx-irp-methodologies-2/SKILL.md",
+          "name": "failsafe-shatter-recalibrate",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "system",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "system/failsafe-shatter-recalibrate/SKILL.md"
+        },
+        {
+          "path": "other/gay-integration-plurigrid-asi/SKILL.md",
+          "name": "gay-integration",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "ai-ml",
+          "target_status": "active",
+          "confidence": 0.75,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "ai-ml/gay-integration/SKILL.md"
+        },
+        {
+          "path": "other/gay-integration-plurigrid-asi-2/SKILL.md",
+          "name": "gay-integration",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "ai-ml",
+          "target_status": "active",
+          "confidence": 0.75,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "ai-ml/gay-integration/SKILL.md"
+        },
+        {
+          "path": "other/ground-opensourcesam-v2-heras-garden-2/SKILL.md",
+          "name": "ground",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "context-management",
+          "target_status": "active",
+          "confidence": 0.8,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "context-management/ground-opensourcesam-v2-heras-garden/SKILL.md"
+        },
+        {
+          "path": "other/inner-jscraik-skillsinspector/SKILL.md",
+          "name": "nested-skill",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "examples",
+          "target_status": "active",
+          "confidence": 0.7,
+          "status": "ok",
+          "reason": "target category already contains a skill with the same stable key",
+          "target_path": "examples/inner/SKILL.md"
+        }
+      ]
+    },
+    {
+      "reason": "classification status is not ok",
+      "count": 17,
+      "target_categories": [
+        {
+          "value": "",
+          "count": 15
+        },
+        {
+          "value": "knowledge",
+          "count": 2
+        }
+      ],
+      "target_status_counts": {
+        "active": 15,
+        "unknown": 2
+      },
+      "examples": [
+        {
+          "path": "other/active-directory-attack/SKILL.md",
+          "name": "active-directory-attack",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "",
+          "target_status": "active",
+          "confidence": null,
+          "status": "missing_result",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/active-directory-attacks/SKILL.md",
+          "name": "Active Directory Attacks",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "",
+          "target_status": "active",
+          "confidence": null,
+          "status": "missing_result",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/active-listening/SKILL.md",
+          "name": "active-listening",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "",
+          "target_status": "active",
+          "confidence": null,
+          "status": "missing_result",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/activecampaign-automation/SKILL.md",
+          "name": "activecampaign-automation",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "",
+          "target_status": "active",
+          "confidence": null,
+          "status": "missing_result",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/ad-campaign-analyzer/SKILL.md",
+          "name": "ad-campaign-analyzer",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "",
+          "target_status": "active",
+          "confidence": null,
+          "status": "missing_result",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/curate/SKILL.md",
+          "name": "curate",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "knowledge",
+          "target_status": "unknown",
+          "confidence": 0.75,
+          "status": "unknown_or_inactive_category",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/harvest/SKILL.md",
+          "name": "harvest",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "knowledge",
+          "target_status": "unknown",
+          "confidence": 0.7,
+          "status": "unknown_or_inactive_category",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/research-deep/SKILL.md",
+          "name": "research-deep",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "",
+          "target_status": "active",
+          "confidence": null,
+          "status": "missing_result",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/research-deep-weizhena-deep-research-skills/SKILL.md",
+          "name": "research-deep",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "",
+          "target_status": "active",
+          "confidence": null,
+          "status": "missing_result",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/research-deep-weizhena-deep-research-skills-2/SKILL.md",
+          "name": "research-deep",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "",
+          "target_status": "active",
+          "confidence": null,
+          "status": "missing_result",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/research-deep-weizhena-deep-research-skills-3/SKILL.md",
+          "name": "research-deep",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "",
+          "target_status": "active",
+          "confidence": null,
+          "status": "missing_result",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/research-external/SKILL.md",
+          "name": "research-external",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "",
+          "target_status": "active",
+          "confidence": null,
+          "status": "missing_result",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/research-frontmatter/SKILL.md",
+          "name": "research-frontmatter",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "",
+          "target_status": "active",
+          "confidence": null,
+          "status": "missing_result",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/research-grants/SKILL.md",
+          "name": "research-grants",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "",
+          "target_status": "active",
+          "confidence": null,
+          "status": "missing_result",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/research-grants-aipoch-medical-research-ski/SKILL.md",
+          "name": "research-grants",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "",
+          "target_status": "active",
+          "confidence": null,
+          "status": "missing_result",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/research-grants-k-dense-ai-scientific-agent-ski/SKILL.md",
+          "name": "research-grants",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "",
+          "target_status": "active",
+          "confidence": null,
+          "status": "missing_result",
+          "reason": "classification status is not ok"
+        },
+        {
+          "path": "other/research-lit/SKILL.md",
+          "name": "research-lit",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "",
+          "target_status": "active",
+          "confidence": null,
+          "status": "missing_result",
+          "reason": "classification status is not ok"
+        }
+      ]
+    },
+    {
+      "reason": "movable candidate under selected policy",
+      "count": 7,
+      "target_categories": [
+        {
+          "value": "api",
+          "count": 4
+        },
+        {
+          "value": "ai-llm",
+          "count": 1
+        },
+        {
+          "value": "ai-ml",
+          "count": 1
+        },
+        {
+          "value": "gaming",
+          "count": 1
+        }
+      ],
+      "target_status_counts": {
+        "active": 7
+      },
+      "examples": [
+        {
+          "path": "other/20260102-214532-trinity-auto-boot-validator-agentgptsmith-monadframework-2/SKILL.md",
+          "name": "20260102_214532_trinity-auto-boot-validator",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "ai-ml",
+          "target_status": "active",
+          "confidence": 0.7,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "ai-ml/20260102-214532-trinity-auto-boot-validator-agentgptsmith-monadf/SKILL.md"
+        },
+        {
+          "path": "other/9-4008-delskill/SKILL.md",
+          "name": "9.4008.人物相关操作delskill",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "gaming",
+          "target_status": "active",
+          "confidence": 0.7,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "gaming/9-4008-delskill/SKILL.md"
+        },
+        {
+          "path": "other/broaderlevelskill/SKILL.md",
+          "name": "BroaderLevelSkill",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.7,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "api/broaderlevelskill/SKILL.md"
+        },
+        {
+          "path": "other/matchjobadevidenceskill/SKILL.md",
+          "name": "MatchJobAdEvidenceSkill",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.7,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "api/matchjobadevidenceskill/SKILL.md"
+        },
+        {
+          "path": "other/matchresumeevidenceskill/SKILL.md",
+          "name": "MatchResumeEvidenceSkill",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.7,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "api/matchresumeevidenceskill/SKILL.md"
+        },
+        {
+          "path": "other/pai/SKILL.md",
+          "name": "pai",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "ai-llm",
+          "target_status": "active",
+          "confidence": 0.9,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "ai-llm/pai/SKILL.md"
+        },
+        {
+          "path": "other/slimskill/SKILL.md",
+          "name": "SlimSkill",
+          "source_exists": true,
+          "source_category": "other",
+          "classification_current_category": "other",
+          "target_category": "api",
+          "target_status": "active",
+          "confidence": 0.85,
+          "status": "ok",
+          "reason": "movable candidate under selected policy",
+          "target_path": "api/slimskill/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "details": {
+    "stable_key_conflicts": [
+      {
+        "source_path": "other/about-bitwize-music-studio-claude-ai-music-skil",
+        "source_skill": "other/about-bitwize-music-studio-claude-ai-music-skil/SKILL.md",
+        "target_path": "documents/about",
+        "target_skill": "documents/about/SKILL.md",
+        "target_exists": true,
+        "target_category": "documents",
+        "target_status": "active",
+        "classification_name": "about",
+        "confidence": 0.7,
+        "key": "bitwize-music-studio/claude-ai-music-skills:skills/about/SKILL.md",
+        "source_metadata_identity": {
+          "path": "skills/about/SKILL.md",
+          "branch": "main",
+          "name": "about",
+          "repo": "bitwize-music-studio/claude-ai-music-skills",
+          "source_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/about/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "bitwize-music-studio"
+        },
+        "target_metadata_identity": {
+          "path": "skills/about/SKILL.md",
+          "name": "about",
+          "repo": "bitwize-music-studio/claude-ai-music-skills",
+          "source_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/about/SKILL.md",
+          "license": "CC0-1.0",
+          "author": "bitwize-music-studio"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "f9002aded0e78cdfdd67bb4b4ab44603693f5184085f90d7eb8932fe13d1cd12",
+        "target_skill_sha256": "881a3129a6f49daf5a5332703ff63c24d012f6c0c16793687b75e34719a97fd1",
+        "skill_content_equal": false
+      },
+      {
+        "source_path": "other/about-bitwize-music-studio-claude-ai-music-skil-2",
+        "source_skill": "other/about-bitwize-music-studio-claude-ai-music-skil-2/SKILL.md",
+        "target_path": "documents/about",
+        "target_skill": "documents/about/SKILL.md",
+        "target_exists": true,
+        "target_category": "documents",
+        "target_status": "active",
+        "classification_name": "about",
+        "confidence": 0.7,
+        "key": "bitwize-music-studio/claude-ai-music-skills:skills/about/SKILL.md",
+        "source_metadata_identity": {
+          "path": "skills/about/SKILL.md",
+          "branch": "main",
+          "name": "about",
+          "repo": "bitwize-music-studio/claude-ai-music-skills",
+          "source_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/about/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "bitwize-music-studio"
+        },
+        "target_metadata_identity": {
+          "path": "skills/about/SKILL.md",
+          "name": "about",
+          "repo": "bitwize-music-studio/claude-ai-music-skills",
+          "source_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/about/SKILL.md",
+          "license": "CC0-1.0",
+          "author": "bitwize-music-studio"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "611ba3f82e7a7fc7cdc2392b009418920c5dcaf46bf727051cc463fc1f4b48fd",
+        "target_skill_sha256": "881a3129a6f49daf5a5332703ff63c24d012f6c0c16793687b75e34719a97fd1",
+        "skill_content_equal": false
+      },
+      {
+        "source_path": "other/about-bitwize-music-studio-claude-ai-music-skil-3",
+        "source_skill": "other/about-bitwize-music-studio-claude-ai-music-skil-3/SKILL.md",
+        "target_path": "documents/about",
+        "target_skill": "documents/about/SKILL.md",
+        "target_exists": true,
+        "target_category": "documents",
+        "target_status": "active",
+        "classification_name": "about",
+        "confidence": 0.7,
+        "key": "bitwize-music-studio/claude-ai-music-skills:skills/about/SKILL.md",
+        "source_metadata_identity": {
+          "path": "skills/about/SKILL.md",
+          "branch": "main",
+          "name": "about",
+          "repo": "bitwize-music-studio/claude-ai-music-skills",
+          "source_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/about/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "bitwize-music-studio"
+        },
+        "target_metadata_identity": {
+          "path": "skills/about/SKILL.md",
+          "name": "about",
+          "repo": "bitwize-music-studio/claude-ai-music-skills",
+          "source_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/about/SKILL.md",
+          "license": "CC0-1.0",
+          "author": "bitwize-music-studio"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "f9002aded0e78cdfdd67bb4b4ab44603693f5184085f90d7eb8932fe13d1cd12",
+        "target_skill_sha256": "881a3129a6f49daf5a5332703ff63c24d012f6c0c16793687b75e34719a97fd1",
+        "skill_content_equal": false
+      },
+      {
+        "source_path": "other/about-bitwize-music-studio-claude-ai-music-skil-4",
+        "source_skill": "other/about-bitwize-music-studio-claude-ai-music-skil-4/SKILL.md",
+        "target_path": "documents/about",
+        "target_skill": "documents/about/SKILL.md",
+        "target_exists": true,
+        "target_category": "documents",
+        "target_status": "active",
+        "classification_name": "about",
+        "confidence": 0.7,
+        "key": "bitwize-music-studio/claude-ai-music-skills:skills/about/SKILL.md",
+        "source_metadata_identity": {
+          "path": "skills/about/SKILL.md",
+          "branch": "main",
+          "name": "about",
+          "repo": "bitwize-music-studio/claude-ai-music-skills",
+          "source_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/about/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "bitwize-music-studio"
+        },
+        "target_metadata_identity": {
+          "path": "skills/about/SKILL.md",
+          "name": "about",
+          "repo": "bitwize-music-studio/claude-ai-music-skills",
+          "source_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/about/SKILL.md",
+          "license": "CC0-1.0",
+          "author": "bitwize-music-studio"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "f9002aded0e78cdfdd67bb4b4ab44603693f5184085f90d7eb8932fe13d1cd12",
+        "target_skill_sha256": "881a3129a6f49daf5a5332703ff63c24d012f6c0c16793687b75e34719a97fd1",
+        "skill_content_equal": false
+      },
+      {
+        "source_path": "other/about-bitwize-music-studio-claude-ai-music-skil-5",
+        "source_skill": "other/about-bitwize-music-studio-claude-ai-music-skil-5/SKILL.md",
+        "target_path": "documents/about",
+        "target_skill": "documents/about/SKILL.md",
+        "target_exists": true,
+        "target_category": "documents",
+        "target_status": "active",
+        "classification_name": "about",
+        "confidence": 0.7,
+        "key": "bitwize-music-studio/claude-ai-music-skills:skills/about/SKILL.md",
+        "source_metadata_identity": {
+          "path": "skills/about/SKILL.md",
+          "branch": "main",
+          "name": "about",
+          "repo": "bitwize-music-studio/claude-ai-music-skills",
+          "source_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/about/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "bitwize-music-studio"
+        },
+        "target_metadata_identity": {
+          "path": "skills/about/SKILL.md",
+          "name": "about",
+          "repo": "bitwize-music-studio/claude-ai-music-skills",
+          "source_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/about/SKILL.md",
+          "license": "CC0-1.0",
+          "author": "bitwize-music-studio"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "f9002aded0e78cdfdd67bb4b4ab44603693f5184085f90d7eb8932fe13d1cd12",
+        "target_skill_sha256": "881a3129a6f49daf5a5332703ff63c24d012f6c0c16793687b75e34719a97fd1",
+        "skill_content_equal": false
+      },
+      {
+        "source_path": "other/about-bitwize-music-studio-claude-ai-music-skil-6",
+        "source_skill": "other/about-bitwize-music-studio-claude-ai-music-skil-6/SKILL.md",
+        "target_path": "documents/about",
+        "target_skill": "documents/about/SKILL.md",
+        "target_exists": true,
+        "target_category": "documents",
+        "target_status": "active",
+        "classification_name": "about",
+        "confidence": 0.7,
+        "key": "bitwize-music-studio/claude-ai-music-skills:skills/about/SKILL.md",
+        "source_metadata_identity": {
+          "path": "skills/about/SKILL.md",
+          "branch": "main",
+          "name": "about",
+          "repo": "bitwize-music-studio/claude-ai-music-skills",
+          "source_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/about/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "bitwize-music-studio"
+        },
+        "target_metadata_identity": {
+          "path": "skills/about/SKILL.md",
+          "name": "about",
+          "repo": "bitwize-music-studio/claude-ai-music-skills",
+          "source_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/about/SKILL.md",
+          "license": "CC0-1.0",
+          "author": "bitwize-music-studio"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "f9002aded0e78cdfdd67bb4b4ab44603693f5184085f90d7eb8932fe13d1cd12",
+        "target_skill_sha256": "881a3129a6f49daf5a5332703ff63c24d012f6c0c16793687b75e34719a97fd1",
+        "skill_content_equal": false
+      },
+      {
+        "source_path": "other/about-bitwize-music-studio-claude-ai-music-skil-7",
+        "source_skill": "other/about-bitwize-music-studio-claude-ai-music-skil-7/SKILL.md",
+        "target_path": "documents/about",
+        "target_skill": "documents/about/SKILL.md",
+        "target_exists": true,
+        "target_category": "documents",
+        "target_status": "active",
+        "classification_name": "about",
+        "confidence": 0.7,
+        "key": "bitwize-music-studio/claude-ai-music-skills:skills/about/SKILL.md",
+        "source_metadata_identity": {
+          "path": "skills/about/SKILL.md",
+          "branch": "main",
+          "name": "about",
+          "repo": "bitwize-music-studio/claude-ai-music-skills",
+          "source_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/about/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "bitwize-music-studio"
+        },
+        "target_metadata_identity": {
+          "path": "skills/about/SKILL.md",
+          "name": "about",
+          "repo": "bitwize-music-studio/claude-ai-music-skills",
+          "source_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/about/SKILL.md",
+          "license": "CC0-1.0",
+          "author": "bitwize-music-studio"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "f9002aded0e78cdfdd67bb4b4ab44603693f5184085f90d7eb8932fe13d1cd12",
+        "target_skill_sha256": "881a3129a6f49daf5a5332703ff63c24d012f6c0c16793687b75e34719a97fd1",
+        "skill_content_equal": false
+      },
+      {
+        "source_path": "other/aptos-trading-plurigrid-asi",
+        "source_skill": "other/aptos-trading-plurigrid-asi/SKILL.md",
+        "target_path": "workflow/aptos-trading",
+        "target_skill": "workflow/aptos-trading/SKILL.md",
+        "target_exists": true,
+        "target_category": "workflow",
+        "target_status": "active",
+        "classification_name": "aptos-trading",
+        "confidence": 0.85,
+        "key": "plurigrid/asi:skills/aptos-trading",
+        "source_metadata_identity": {
+          "path": "skills/aptos-trading",
+          "branch": "main",
+          "name": "aptos-trading",
+          "repo": "plurigrid/asi",
+          "source_url": "https://github.com/plurigrid/asi/blob/main/skills/aptos-trading/SKILL.md",
+          "license": "MIT",
+          "author": "plurigrid"
+        },
+        "target_metadata_identity": {
+          "path": "skills/aptos-trading",
+          "branch": "main",
+          "name": "aptos-trading",
+          "repo": "plurigrid/asi",
+          "source_url": "https://github.com/plurigrid/asi/blob/main/skills/aptos-trading/SKILL.md",
+          "license": "MIT",
+          "author": "plurigrid"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "938db53b179a464a9500e52cb3477768ef05ae55ce206309fe269019faff2c9e",
+        "target_skill_sha256": "938db53b179a464a9500e52cb3477768ef05ae55ce206309fe269019faff2c9e",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/aptos-trading-plurigrid-asi-2",
+        "source_skill": "other/aptos-trading-plurigrid-asi-2/SKILL.md",
+        "target_path": "workflow/aptos-trading",
+        "target_skill": "workflow/aptos-trading/SKILL.md",
+        "target_exists": true,
+        "target_category": "workflow",
+        "target_status": "active",
+        "classification_name": "aptos-trading",
+        "confidence": 0.85,
+        "key": "plurigrid/asi:skills/aptos-trading",
+        "source_metadata_identity": {
+          "path": "skills/aptos-trading",
+          "name": "aptos-trading",
+          "repo": "plurigrid/asi",
+          "source_url": "https://github.com/plurigrid/asi/blob/main/skills/aptos-trading/SKILL.md",
+          "license": "MIT",
+          "author": "plurigrid"
+        },
+        "target_metadata_identity": {
+          "path": "skills/aptos-trading",
+          "branch": "main",
+          "name": "aptos-trading",
+          "repo": "plurigrid/asi",
+          "source_url": "https://github.com/plurigrid/asi/blob/main/skills/aptos-trading/SKILL.md",
+          "license": "MIT",
+          "author": "plurigrid"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "6c779aa265daca508c6e70c3cff322c939eacc150c6dedc28fd3fcd3a975b325",
+        "target_skill_sha256": "938db53b179a464a9500e52cb3477768ef05ae55ce206309fe269019faff2c9e",
+        "skill_content_equal": false
+      },
+      {
+        "source_path": "other/bartender-simhacker-moollm",
+        "source_skill": "other/bartender-simhacker-moollm/SKILL.md",
+        "target_path": "agent/bartender",
+        "target_skill": "agent/bartender/SKILL.md",
+        "target_exists": true,
+        "target_category": "agent",
+        "target_status": "active",
+        "classification_name": "bartender",
+        "confidence": 0.85,
+        "key": "SimHacker/moollm:skills/bartender/SKILL.md",
+        "source_metadata_identity": {
+          "path": "skills/bartender/SKILL.md",
+          "branch": "main",
+          "name": "bartender",
+          "repo": "SimHacker/moollm",
+          "source_url": "https://github.com/SimHacker/moollm/blob/main/skills/bartender/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "SimHacker"
+        },
+        "target_metadata_identity": {
+          "path": "skills/bartender/SKILL.md",
+          "name": "bartender",
+          "repo": "SimHacker/moollm",
+          "source_url": "https://github.com/SimHacker/moollm/blob/main/skills/bartender/SKILL.md",
+          "license": "MIT",
+          "author": "SimHacker"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "d4d85310d9cf22eab091948bfa665d8c8a72779bcace4eeb48de9ed344362667",
+        "target_skill_sha256": "d4d85310d9cf22eab091948bfa665d8c8a72779bcace4eeb48de9ed344362667",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/dmmono-ofl-bitwikiorg-skills-md-2",
+        "source_skill": "other/dmmono-ofl-bitwikiorg-skills-md-2/SKILL.md",
+        "target_path": "documents/dmmono-ofl-bitwikiorg-skills-md",
+        "target_skill": "documents/dmmono-ofl-bitwikiorg-skills-md/SKILL.md",
+        "target_exists": true,
+        "target_category": "documents",
+        "target_status": "active",
+        "classification_name": "dmmono_ofl",
+        "confidence": 0.85,
+        "key": "bitwikiorg/skills.md:sources/anthropic/dmmono_ofl",
+        "source_metadata_identity": {
+          "path": "sources/anthropic/dmmono_ofl",
+          "name": "dmmono_ofl",
+          "repo": "bitwikiorg/skills.md",
+          "source_url": "https://github.com/bitwikiorg/skills.md/blob/main/sources/anthropic/dmmono_ofl/SKILL.md",
+          "license": "MIT",
+          "author": "bitwikiorg"
+        },
+        "target_metadata_identity": {
+          "path": "sources/anthropic/dmmono_ofl",
+          "branch": "main",
+          "name": "dmmono_ofl",
+          "repo": "bitwikiorg/skills.md",
+          "source_url": "https://github.com/bitwikiorg/skills.md/blob/main/sources/anthropic/dmmono_ofl/SKILL.md",
+          "license": "MIT",
+          "author": "bitwikiorg"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "ec6840756a1a9f12f5c9194042d2152871e5cbf26e085361909579d44042dcae",
+        "target_skill_sha256": "ec6840756a1a9f12f5c9194042d2152871e5cbf26e085361909579d44042dcae",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/dmmono-ofl-bitwikiorg-skills-md-a8930cb6",
+        "source_skill": "other/dmmono-ofl-bitwikiorg-skills-md-a8930cb6/SKILL.md",
+        "target_path": "documents/dmmono-ofl-bitwikiorg-skills-md",
+        "target_skill": "documents/dmmono-ofl-bitwikiorg-skills-md/SKILL.md",
+        "target_exists": true,
+        "target_category": "documents",
+        "target_status": "active",
+        "classification_name": "dmmono_ofl",
+        "confidence": 0.85,
+        "key": "bitwikiorg/skills.md:sources/anthropic/dmmono_ofl",
+        "source_metadata_identity": {
+          "path": "sources/anthropic/dmmono_ofl",
+          "branch": "main",
+          "name": "dmmono_ofl",
+          "repo": "bitwikiorg/skills.md",
+          "source_url": "https://github.com/bitwikiorg/skills.md/blob/main/sources/anthropic/dmmono_ofl/SKILL.md",
+          "license": "MIT",
+          "author": "bitwikiorg"
+        },
+        "target_metadata_identity": {
+          "path": "sources/anthropic/dmmono_ofl",
+          "branch": "main",
+          "name": "dmmono_ofl",
+          "repo": "bitwikiorg/skills.md",
+          "source_url": "https://github.com/bitwikiorg/skills.md/blob/main/sources/anthropic/dmmono_ofl/SKILL.md",
+          "license": "MIT",
+          "author": "bitwikiorg"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "ec6840756a1a9f12f5c9194042d2152871e5cbf26e085361909579d44042dcae",
+        "target_skill_sha256": "ec6840756a1a9f12f5c9194042d2152871e5cbf26e085361909579d44042dcae",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/failsafe-chassis-activation-starwreckntx-irp-methodologies",
+        "source_skill": "other/failsafe-chassis-activation-starwreckntx-irp-methodologies/SKILL.md",
+        "target_path": "system/failsafe-chassis-activation",
+        "target_skill": "system/failsafe-chassis-activation/SKILL.md",
+        "target_exists": true,
+        "target_category": "system",
+        "target_status": "active",
+        "classification_name": "failsafe-chassis-activation",
+        "confidence": 0.8,
+        "key": "starwreckntx/IRP__METHODOLOGIES-:skills/failsafe-chassis-activation",
+        "source_metadata_identity": {
+          "path": "skills/failsafe-chassis-activation",
+          "branch": "main",
+          "name": "failsafe-chassis-activation",
+          "repo": "starwreckntx/IRP__METHODOLOGIES-",
+          "source_url": "https://github.com/starwreckntx/IRP__METHODOLOGIES-/blob/main/skills/failsafe-chassis-activation/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "starwreckntx"
+        },
+        "target_metadata_identity": {
+          "path": "skills/failsafe-chassis-activation",
+          "branch": "main",
+          "name": "failsafe-chassis-activation",
+          "repo": "starwreckntx/IRP__METHODOLOGIES-",
+          "source_url": "https://github.com/starwreckntx/IRP__METHODOLOGIES-/blob/main/skills/failsafe-chassis-activation/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "starwreckntx"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "597ff038add6f7d995a97600098d2c520dc064857fcc8f30151123411f019b50",
+        "target_skill_sha256": "597ff038add6f7d995a97600098d2c520dc064857fcc8f30151123411f019b50",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/failsafe-chassis-activation-starwreckntx-irp-methodologies-2",
+        "source_skill": "other/failsafe-chassis-activation-starwreckntx-irp-methodologies-2/SKILL.md",
+        "target_path": "system/failsafe-chassis-activation",
+        "target_skill": "system/failsafe-chassis-activation/SKILL.md",
+        "target_exists": true,
+        "target_category": "system",
+        "target_status": "active",
+        "classification_name": "failsafe-chassis-activation",
+        "confidence": 0.8,
+        "key": "starwreckntx/IRP__METHODOLOGIES-:skills/failsafe-chassis-activation",
+        "source_metadata_identity": {
+          "path": "skills/failsafe-chassis-activation",
+          "name": "failsafe-chassis-activation",
+          "repo": "starwreckntx/IRP__METHODOLOGIES-",
+          "source_url": "https://github.com/starwreckntx/IRP__METHODOLOGIES-/blob/main/skills/failsafe-chassis-activation/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "starwreckntx"
+        },
+        "target_metadata_identity": {
+          "path": "skills/failsafe-chassis-activation",
+          "branch": "main",
+          "name": "failsafe-chassis-activation",
+          "repo": "starwreckntx/IRP__METHODOLOGIES-",
+          "source_url": "https://github.com/starwreckntx/IRP__METHODOLOGIES-/blob/main/skills/failsafe-chassis-activation/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "starwreckntx"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "597ff038add6f7d995a97600098d2c520dc064857fcc8f30151123411f019b50",
+        "target_skill_sha256": "597ff038add6f7d995a97600098d2c520dc064857fcc8f30151123411f019b50",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/failsafe-shatter-recalibrate-starwreckntx-irp-methodologies",
+        "source_skill": "other/failsafe-shatter-recalibrate-starwreckntx-irp-methodologies/SKILL.md",
+        "target_path": "system/failsafe-shatter-recalibrate",
+        "target_skill": "system/failsafe-shatter-recalibrate/SKILL.md",
+        "target_exists": true,
+        "target_category": "system",
+        "target_status": "active",
+        "classification_name": "failsafe-shatter-recalibrate",
+        "confidence": 0.85,
+        "key": "starwreckntx/IRP__METHODOLOGIES-:skills/failsafe-shatter-recalibrate",
+        "source_metadata_identity": {
+          "path": "skills/failsafe-shatter-recalibrate",
+          "branch": "main",
+          "name": "failsafe-shatter-recalibrate",
+          "repo": "starwreckntx/IRP__METHODOLOGIES-",
+          "source_url": "https://github.com/starwreckntx/IRP__METHODOLOGIES-/blob/main/skills/failsafe-shatter-recalibrate/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "starwreckntx"
+        },
+        "target_metadata_identity": {
+          "path": "skills/failsafe-shatter-recalibrate",
+          "branch": "main",
+          "name": "failsafe-shatter-recalibrate",
+          "repo": "starwreckntx/IRP__METHODOLOGIES-",
+          "source_url": "https://github.com/starwreckntx/IRP__METHODOLOGIES-/blob/main/skills/failsafe-shatter-recalibrate/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "starwreckntx"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "cacd7629defb5d04dab399cae9a264d49de1e38eb8df24fbfe675caa23665f4f",
+        "target_skill_sha256": "cacd7629defb5d04dab399cae9a264d49de1e38eb8df24fbfe675caa23665f4f",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/failsafe-shatter-recalibrate-starwreckntx-irp-methodologies-2",
+        "source_skill": "other/failsafe-shatter-recalibrate-starwreckntx-irp-methodologies-2/SKILL.md",
+        "target_path": "system/failsafe-shatter-recalibrate",
+        "target_skill": "system/failsafe-shatter-recalibrate/SKILL.md",
+        "target_exists": true,
+        "target_category": "system",
+        "target_status": "active",
+        "classification_name": "failsafe-shatter-recalibrate",
+        "confidence": 0.85,
+        "key": "starwreckntx/IRP__METHODOLOGIES-:skills/failsafe-shatter-recalibrate",
+        "source_metadata_identity": {
+          "path": "skills/failsafe-shatter-recalibrate",
+          "name": "failsafe-shatter-recalibrate",
+          "repo": "starwreckntx/IRP__METHODOLOGIES-",
+          "source_url": "https://github.com/starwreckntx/IRP__METHODOLOGIES-/blob/main/skills/failsafe-shatter-recalibrate/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "starwreckntx"
+        },
+        "target_metadata_identity": {
+          "path": "skills/failsafe-shatter-recalibrate",
+          "branch": "main",
+          "name": "failsafe-shatter-recalibrate",
+          "repo": "starwreckntx/IRP__METHODOLOGIES-",
+          "source_url": "https://github.com/starwreckntx/IRP__METHODOLOGIES-/blob/main/skills/failsafe-shatter-recalibrate/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "starwreckntx"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "cacd7629defb5d04dab399cae9a264d49de1e38eb8df24fbfe675caa23665f4f",
+        "target_skill_sha256": "cacd7629defb5d04dab399cae9a264d49de1e38eb8df24fbfe675caa23665f4f",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/gay-integration-plurigrid-asi",
+        "source_skill": "other/gay-integration-plurigrid-asi/SKILL.md",
+        "target_path": "ai-ml/gay-integration",
+        "target_skill": "ai-ml/gay-integration/SKILL.md",
+        "target_exists": true,
+        "target_category": "ai-ml",
+        "target_status": "active",
+        "classification_name": "gay-integration",
+        "confidence": 0.75,
+        "key": "plurigrid/asi:skills/gay-integration",
+        "source_metadata_identity": {
+          "path": "skills/gay-integration",
+          "branch": "main",
+          "name": "gay-integration",
+          "repo": "plurigrid/asi",
+          "source_url": "https://github.com/plurigrid/asi/blob/main/skills/gay-integration/SKILL.md",
+          "license": "MIT",
+          "author": "plurigrid"
+        },
+        "target_metadata_identity": {
+          "path": "skills/gay-integration",
+          "branch": "main",
+          "name": "gay-integration",
+          "repo": "plurigrid/asi",
+          "source_url": "https://github.com/plurigrid/asi/blob/main/skills/gay-integration/SKILL.md",
+          "license": "MIT",
+          "author": "plurigrid"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "8a3d8018eda8ec705932a441fd3d530124000288c8957b7197f24d1ebd38ab76",
+        "target_skill_sha256": "8a3d8018eda8ec705932a441fd3d530124000288c8957b7197f24d1ebd38ab76",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/gay-integration-plurigrid-asi-2",
+        "source_skill": "other/gay-integration-plurigrid-asi-2/SKILL.md",
+        "target_path": "ai-ml/gay-integration",
+        "target_skill": "ai-ml/gay-integration/SKILL.md",
+        "target_exists": true,
+        "target_category": "ai-ml",
+        "target_status": "active",
+        "classification_name": "gay-integration",
+        "confidence": 0.75,
+        "key": "plurigrid/asi:skills/gay-integration",
+        "source_metadata_identity": {
+          "path": "skills/gay-integration",
+          "name": "gay-integration",
+          "repo": "plurigrid/asi",
+          "source_url": "https://github.com/plurigrid/asi/blob/main/skills/gay-integration/SKILL.md",
+          "license": "MIT",
+          "author": "plurigrid"
+        },
+        "target_metadata_identity": {
+          "path": "skills/gay-integration",
+          "branch": "main",
+          "name": "gay-integration",
+          "repo": "plurigrid/asi",
+          "source_url": "https://github.com/plurigrid/asi/blob/main/skills/gay-integration/SKILL.md",
+          "license": "MIT",
+          "author": "plurigrid"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "25808495c4dbdf08a48eddca11db96c7c5cc1bb10ce4b2cbb74ae7f495622d3a",
+        "target_skill_sha256": "8a3d8018eda8ec705932a441fd3d530124000288c8957b7197f24d1ebd38ab76",
+        "skill_content_equal": false
+      },
+      {
+        "source_path": "other/ground-opensourcesam-v2-heras-garden-2",
+        "source_skill": "other/ground-opensourcesam-v2-heras-garden-2/SKILL.md",
+        "target_path": "context-management/ground-opensourcesam-v2-heras-garden",
+        "target_skill": "context-management/ground-opensourcesam-v2-heras-garden/SKILL.md",
+        "target_exists": true,
+        "target_category": "context-management",
+        "target_status": "active",
+        "classification_name": "ground",
+        "confidence": 0.8,
+        "key": "OpenSourceSam/v2_heras_garden:.codex/skills/ground/SKILL.md",
+        "source_metadata_identity": {
+          "path": ".codex/skills/ground/SKILL.md",
+          "name": "ground",
+          "repo": "OpenSourceSam/v2_heras_garden",
+          "source_url": "https://github.com/OpenSourceSam/v2_heras_garden/blob/main/.codex/skills/ground/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "OpenSourceSam"
+        },
+        "target_metadata_identity": {
+          "path": ".codex/skills/ground/SKILL.md",
+          "name": "ground",
+          "repo": "OpenSourceSam/v2_heras_garden",
+          "source_url": "https://github.com/OpenSourceSam/v2_heras_garden/blob/main/.codex/skills/ground/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "OpenSourceSam"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "28471fd10991e440a3ce0fc69c3d2e979d604d2972bd3a4310a82ca08b2765c7",
+        "target_skill_sha256": "28471fd10991e440a3ce0fc69c3d2e979d604d2972bd3a4310a82ca08b2765c7",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/inner-jscraik-skillsinspector",
+        "source_skill": "other/inner-jscraik-skillsinspector/SKILL.md",
+        "target_path": "examples/inner",
+        "target_skill": "examples/inner/SKILL.md",
+        "target_exists": true,
+        "target_category": "examples",
+        "target_status": "active",
+        "classification_name": "nested-skill",
+        "confidence": 0.7,
+        "key": "jscraik/SkillsInspector:Tests/SkillsCoreTests/Fixtures/nested/inner",
+        "source_metadata_identity": {
+          "path": "Tests/SkillsCoreTests/Fixtures/nested/inner",
+          "branch": "main",
+          "name": "inner",
+          "repo": "jscraik/SkillsInspector",
+          "source_url": "https://github.com/jscraik/SkillsInspector/blob/main/Tests/SkillsCoreTests/Fixtures/nested/inner/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "jscraik"
+        },
+        "target_metadata_identity": {
+          "path": "Tests/SkillsCoreTests/Fixtures/nested/inner",
+          "branch": "main",
+          "name": "inner",
+          "repo": "jscraik/SkillsInspector",
+          "source_url": "https://github.com/jscraik/SkillsInspector/blob/main/Tests/SkillsCoreTests/Fixtures/nested/inner/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "jscraik"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "648123b8b813381bf06a61d2c99c1b65433cd1491f5aa03c3c767c829cd9a2a1",
+        "target_skill_sha256": "648123b8b813381bf06a61d2c99c1b65433cd1491f5aa03c3c767c829cd9a2a1",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/iteration-01-agentgptsmith-monadframework-bef03255",
+        "source_skill": "other/iteration-01-agentgptsmith-monadframework-bef03255/SKILL.md",
+        "target_path": "creative/iteration-01-agentgptsmith-monadframework-2",
+        "target_skill": "creative/iteration-01-agentgptsmith-monadframework-2/SKILL.md",
+        "target_exists": true,
+        "target_category": "creative",
+        "target_status": "active",
+        "classification_name": "multiplicity-engine",
+        "confidence": 0.7,
+        "key": "agentgptsmith/MonadFramework:.claude/skills/multiplicity/iteration_01",
+        "source_metadata_identity": {
+          "path": ".claude/skills/multiplicity/iteration_01",
+          "branch": "main",
+          "name": "iteration_01",
+          "repo": "agentgptsmith/MonadFramework",
+          "source_url": "https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/multiplicity/iteration_01/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "agentgptsmith"
+        },
+        "target_metadata_identity": {
+          "path": ".claude/skills/multiplicity/iteration_01",
+          "name": "iteration_01",
+          "repo": "agentgptsmith/MonadFramework",
+          "source_url": "https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/multiplicity/iteration_01/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "agentgptsmith"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "a40e8cef208eeda89c33fadc2abadf91df3089a6502cbc81560df4770b71fd5a",
+        "target_skill_sha256": "a40e8cef208eeda89c33fadc2abadf91df3089a6502cbc81560df4770b71fd5a",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/iteration-14-agentgptsmith-monadframework-15ac2561",
+        "source_skill": "other/iteration-14-agentgptsmith-monadframework-15ac2561/SKILL.md",
+        "target_path": "security/iteration-14-agentgptsmith-monadframework",
+        "target_skill": "security/iteration-14-agentgptsmith-monadframework/SKILL.md",
+        "target_exists": true,
+        "target_category": "security",
+        "target_status": "active",
+        "classification_name": "surveillance-honeypot",
+        "confidence": 0.75,
+        "key": "agentgptsmith/MonadFramework:.claude/skills/multiplicity/iteration_14",
+        "source_metadata_identity": {
+          "path": ".claude/skills/multiplicity/iteration_14",
+          "branch": "main",
+          "name": "iteration_14",
+          "repo": "agentgptsmith/MonadFramework",
+          "source_url": "https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/multiplicity/iteration_14/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "agentgptsmith"
+        },
+        "target_metadata_identity": {
+          "path": ".claude/skills/multiplicity/iteration_14",
+          "branch": "main",
+          "name": "iteration_14",
+          "repo": "agentgptsmith/MonadFramework",
+          "source_url": "https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/multiplicity/iteration_14/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "agentgptsmith"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "93c2a6ef9afac6f51017f9f4cf7f4732658b6a44cd683a28aeed24e3b5fdc9d2",
+        "target_skill_sha256": "93c2a6ef9afac6f51017f9f4cf7f4732658b6a44cd683a28aeed24e3b5fdc9d2",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/iteration-14-agentgptsmith-monadframework-2",
+        "source_skill": "other/iteration-14-agentgptsmith-monadframework-2/SKILL.md",
+        "target_path": "security/iteration-14-agentgptsmith-monadframework",
+        "target_skill": "security/iteration-14-agentgptsmith-monadframework/SKILL.md",
+        "target_exists": true,
+        "target_category": "security",
+        "target_status": "active",
+        "classification_name": "surveillance-honeypot",
+        "confidence": 0.75,
+        "key": "agentgptsmith/MonadFramework:.claude/skills/multiplicity/iteration_14",
+        "source_metadata_identity": {
+          "path": ".claude/skills/multiplicity/iteration_14",
+          "name": "iteration_14",
+          "repo": "agentgptsmith/MonadFramework",
+          "source_url": "https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/multiplicity/iteration_14/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "agentgptsmith"
+        },
+        "target_metadata_identity": {
+          "path": ".claude/skills/multiplicity/iteration_14",
+          "branch": "main",
+          "name": "iteration_14",
+          "repo": "agentgptsmith/MonadFramework",
+          "source_url": "https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/multiplicity/iteration_14/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "agentgptsmith"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "93c2a6ef9afac6f51017f9f4cf7f4732658b6a44cd683a28aeed24e3b5fdc9d2",
+        "target_skill_sha256": "93c2a6ef9afac6f51017f9f4cf7f4732658b6a44cd683a28aeed24e3b5fdc9d2",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/iteration-17-agentgptsmith-monadframework-0aad5c80",
+        "source_skill": "other/iteration-17-agentgptsmith-monadframework-0aad5c80/SKILL.md",
+        "target_path": "creative/iteration-17-agentgptsmith-monadframework",
+        "target_skill": "creative/iteration-17-agentgptsmith-monadframework/SKILL.md",
+        "target_exists": true,
+        "target_category": "creative",
+        "target_status": "active",
+        "classification_name": "multiplicity-manifesto-gen",
+        "confidence": 0.7,
+        "key": "agentgptsmith/MonadFramework:.claude/skills/multiplicity/iteration_17/SKILL.md",
+        "source_metadata_identity": {
+          "path": ".claude/skills/multiplicity/iteration_17/SKILL.md",
+          "name": "iteration_17",
+          "repo": "agentgptsmith/MonadFramework",
+          "source_url": "https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/multiplicity/iteration_17/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "agentgptsmith"
+        },
+        "target_metadata_identity": {
+          "path": ".claude/skills/multiplicity/iteration_17/SKILL.md",
+          "name": "iteration_17",
+          "repo": "agentgptsmith/MonadFramework",
+          "source_url": "https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/multiplicity/iteration_17/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "agentgptsmith"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "0e0797ead744e0c0980c299e7d75492dfc9953b3b84e97094477b1cb9005909b",
+        "target_skill_sha256": "0e0797ead744e0c0980c299e7d75492dfc9953b3b84e97094477b1cb9005909b",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/iteration-19-agentgptsmith-monadframework-2",
+        "source_skill": "other/iteration-19-agentgptsmith-monadframework-2/SKILL.md",
+        "target_path": "creative/iteration-19-agentgptsmith-monadframework",
+        "target_skill": "creative/iteration-19-agentgptsmith-monadframework/SKILL.md",
+        "target_exists": true,
+        "target_category": "creative",
+        "target_status": "active",
+        "classification_name": "resonance-cascade-spreader",
+        "confidence": 0.7,
+        "key": "agentgptsmith/MonadFramework:.claude/skills/multiplicity/iteration_19",
+        "source_metadata_identity": {
+          "path": ".claude/skills/multiplicity/iteration_19",
+          "name": "iteration_19",
+          "repo": "agentgptsmith/MonadFramework",
+          "source_url": "https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/multiplicity/iteration_19/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "agentgptsmith"
+        },
+        "target_metadata_identity": {
+          "path": ".claude/skills/multiplicity/iteration_19",
+          "branch": "main",
+          "name": "iteration_19",
+          "repo": "agentgptsmith/MonadFramework",
+          "source_url": "https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/multiplicity/iteration_19/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "agentgptsmith"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "657aaed2fbe212b84a6f4631d562ddff1b8d0291e583322fb229498e725c5d2b",
+        "target_skill_sha256": "657aaed2fbe212b84a6f4631d562ddff1b8d0291e583322fb229498e725c5d2b",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/iteration-19-agentgptsmith-monadframework-8bfdcc4d",
+        "source_skill": "other/iteration-19-agentgptsmith-monadframework-8bfdcc4d/SKILL.md",
+        "target_path": "creative/iteration-19-agentgptsmith-monadframework",
+        "target_skill": "creative/iteration-19-agentgptsmith-monadframework/SKILL.md",
+        "target_exists": true,
+        "target_category": "creative",
+        "target_status": "active",
+        "classification_name": "resonance-cascade-spreader",
+        "confidence": 0.7,
+        "key": "agentgptsmith/MonadFramework:.claude/skills/multiplicity/iteration_19",
+        "source_metadata_identity": {
+          "path": ".claude/skills/multiplicity/iteration_19",
+          "branch": "main",
+          "name": "iteration_19",
+          "repo": "agentgptsmith/MonadFramework",
+          "source_url": "https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/multiplicity/iteration_19/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "agentgptsmith"
+        },
+        "target_metadata_identity": {
+          "path": ".claude/skills/multiplicity/iteration_19",
+          "branch": "main",
+          "name": "iteration_19",
+          "repo": "agentgptsmith/MonadFramework",
+          "source_url": "https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/multiplicity/iteration_19/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "agentgptsmith"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "657aaed2fbe212b84a6f4631d562ddff1b8d0291e583322fb229498e725c5d2b",
+        "target_skill_sha256": "657aaed2fbe212b84a6f4631d562ddff1b8d0291e583322fb229498e725c5d2b",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/jeecgboot-starter-boboc135612-skills",
+        "source_skill": "other/jeecgboot-starter-boboc135612-skills/SKILL.md",
+        "target_path": "development/jeecgboot-starter",
+        "target_skill": "development/jeecgboot-starter/SKILL.md",
+        "target_exists": true,
+        "target_category": "development",
+        "target_status": "active",
+        "classification_name": "jeecgboot-starter",
+        "confidence": 0.7,
+        "key": "Boboc135612/skills:skills/jeecgboot-starter",
+        "source_metadata_identity": {
+          "path": "skills/jeecgboot-starter",
+          "branch": "main",
+          "name": "jeecgboot-starter",
+          "repo": "Boboc135612/skills",
+          "source_url": "https://github.com/Boboc135612/skills/blob/main/skills/jeecgboot-starter/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "Boboc135612"
+        },
+        "target_metadata_identity": {
+          "path": "skills/jeecgboot-starter",
+          "branch": "main",
+          "name": "jeecgboot-starter",
+          "repo": "Boboc135612/skills",
+          "source_url": "https://github.com/Boboc135612/skills/blob/main/skills/jeecgboot-starter/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "Boboc135612"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "3f31e5b24c7be0a2940c51cdc1241b36557e48820ea9139891fe3a82548cadf5",
+        "target_skill_sha256": "3f31e5b24c7be0a2940c51cdc1241b36557e48820ea9139891fe3a82548cadf5",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/jeecgboot-starter-boboc135612-skills-2",
+        "source_skill": "other/jeecgboot-starter-boboc135612-skills-2/SKILL.md",
+        "target_path": "development/jeecgboot-starter",
+        "target_skill": "development/jeecgboot-starter/SKILL.md",
+        "target_exists": true,
+        "target_category": "development",
+        "target_status": "active",
+        "classification_name": "jeecgboot-starter",
+        "confidence": 0.7,
+        "key": "Boboc135612/skills:skills/jeecgboot-starter",
+        "source_metadata_identity": {
+          "path": "skills/jeecgboot-starter",
+          "name": "jeecgboot-starter",
+          "repo": "Boboc135612/skills",
+          "source_url": "https://github.com/Boboc135612/skills/blob/main/skills/jeecgboot-starter/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "Boboc135612"
+        },
+        "target_metadata_identity": {
+          "path": "skills/jeecgboot-starter",
+          "branch": "main",
+          "name": "jeecgboot-starter",
+          "repo": "Boboc135612/skills",
+          "source_url": "https://github.com/Boboc135612/skills/blob/main/skills/jeecgboot-starter/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "Boboc135612"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "3f31e5b24c7be0a2940c51cdc1241b36557e48820ea9139891fe3a82548cadf5",
+        "target_skill_sha256": "3f31e5b24c7be0a2940c51cdc1241b36557e48820ea9139891fe3a82548cadf5",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/jura-ofl-bitwikiorg-skills-md-ca19b8b8",
+        "source_skill": "other/jura-ofl-bitwikiorg-skills-md-ca19b8b8/SKILL.md",
+        "target_path": "documents/jura-ofl-bitwikiorg-skills-md-2",
+        "target_skill": "documents/jura-ofl-bitwikiorg-skills-md-2/SKILL.md",
+        "target_exists": true,
+        "target_category": "documents",
+        "target_status": "active",
+        "classification_name": "jura_ofl",
+        "confidence": 0.9,
+        "key": "bitwikiorg/skills.md:sources/anthropic/jura_ofl",
+        "source_metadata_identity": {
+          "path": "sources/anthropic/jura_ofl",
+          "branch": "main",
+          "name": "jura_ofl",
+          "repo": "bitwikiorg/skills.md",
+          "source_url": "https://github.com/bitwikiorg/skills.md/blob/main/sources/anthropic/jura_ofl/SKILL.md",
+          "license": "MIT",
+          "author": "bitwikiorg"
+        },
+        "target_metadata_identity": {
+          "path": "sources/anthropic/jura_ofl",
+          "name": "jura_ofl",
+          "repo": "bitwikiorg/skills.md",
+          "source_url": "https://github.com/bitwikiorg/skills.md/blob/main/sources/anthropic/jura_ofl/SKILL.md",
+          "license": "MIT",
+          "author": "bitwikiorg"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "18a63fc2068419ecd4c1d91c0c0a4dc8ae30bc0565eb2dfcf43e95bd798f3bb6",
+        "target_skill_sha256": "18a63fc2068419ecd4c1d91c0c0a4dc8ae30bc0565eb2dfcf43e95bd798f3bb6",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/kalki-recognition-nikhilvallishayee-universal-pattern-sp-2",
+        "source_skill": "other/kalki-recognition-nikhilvallishayee-universal-pattern-sp-2/SKILL.md",
+        "target_path": "domains/kalki-recognition-nikhilvallishayee-universal-pattern-sp",
+        "target_skill": "domains/kalki-recognition-nikhilvallishayee-universal-pattern-sp/SKILL.md",
+        "target_exists": true,
+        "target_category": "domains",
+        "target_status": "active",
+        "classification_name": "Kalki Recognition Stream",
+        "confidence": 0.7,
+        "key": "nikhilvallishayee/universal-pattern-space:.claude/skills/pattern-space/wisdom/breakthrough/kalki-recognition",
+        "source_metadata_identity": {
+          "path": ".claude/skills/pattern-space/wisdom/breakthrough/kalki-recognition",
+          "name": "kalki-recognition",
+          "repo": "nikhilvallishayee/universal-pattern-space",
+          "source_url": "https://github.com/nikhilvallishayee/universal-pattern-space/blob/main/.claude/skills/pattern-space/wisdom/breakthrough/kalki-recognition/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "nikhilvallishayee"
+        },
+        "target_metadata_identity": {
+          "path": ".claude/skills/pattern-space/wisdom/breakthrough/kalki-recognition",
+          "branch": "main",
+          "name": "kalki-recognition",
+          "repo": "nikhilvallishayee/universal-pattern-space",
+          "source_url": "https://github.com/nikhilvallishayee/universal-pattern-space/blob/main/.claude/skills/pattern-space/wisdom/breakthrough/kalki-recognition/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "nikhilvallishayee"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "93388d60f9e6214bc5db214d9b75eb32f0aa440465e5b885dff100fc52a21f1a",
+        "target_skill_sha256": "93388d60f9e6214bc5db214d9b75eb32f0aa440465e5b885dff100fc52a21f1a",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/mind-parameter-modification-starwreckntx-irp-methodologies",
+        "source_skill": "other/mind-parameter-modification-starwreckntx-irp-methodologies/SKILL.md",
+        "target_path": "agent/mind-parameter-modification",
+        "target_skill": "agent/mind-parameter-modification/SKILL.md",
+        "target_exists": true,
+        "target_category": "agent",
+        "target_status": "active",
+        "classification_name": "mind-parameter-modification",
+        "confidence": 0.7,
+        "key": "starwreckntx/IRP__METHODOLOGIES-:skills/mind-parameter-modification/SKILL.md",
+        "source_metadata_identity": {
+          "path": "skills/mind-parameter-modification/SKILL.md",
+          "name": "mind-parameter-modification",
+          "repo": "starwreckntx/IRP__METHODOLOGIES-",
+          "source_url": "https://github.com/starwreckntx/IRP__METHODOLOGIES-/blob/main/skills/mind-parameter-modification/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "starwreckntx"
+        },
+        "target_metadata_identity": {
+          "path": "skills/mind-parameter-modification/SKILL.md",
+          "name": "mind-parameter-modification",
+          "repo": "starwreckntx/IRP__METHODOLOGIES-",
+          "source_url": "https://github.com/starwreckntx/IRP__METHODOLOGIES-/blob/main/skills/mind-parameter-modification/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "starwreckntx"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "8fba9908f84ab467999eb739c9533f456591b329e026c7a4c45be2620b499f61",
+        "target_skill_sha256": "8fba9908f84ab467999eb739c9533f456591b329e026c7a4c45be2620b499f61",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/permission-test-skill-matteocervelli-llms",
+        "source_skill": "other/permission-test-skill-matteocervelli-llms/SKILL.md",
+        "target_path": "testing/permission-test-skill-matteocervelli-llms-2",
+        "target_skill": "testing/permission-test-skill-matteocervelli-llms-2/SKILL.md",
+        "target_exists": true,
+        "target_category": "testing",
+        "target_status": "active",
+        "classification_name": "permission-test-skill",
+        "confidence": 0.7,
+        "key": "matteocervelli/llms:.claude/skills/permission-test-skill/SKILL.md",
+        "source_metadata_identity": {
+          "path": ".claude/skills/permission-test-skill/SKILL.md",
+          "name": "permission-test-skill",
+          "repo": "matteocervelli/llms",
+          "source_url": "https://github.com/matteocervelli/llms/blob/main/.claude/skills/permission-test-skill/SKILL.md",
+          "license": "MIT",
+          "author": "matteocervelli"
+        },
+        "target_metadata_identity": {
+          "path": ".claude/skills/permission-test-skill/SKILL.md",
+          "name": "permission-test-skill",
+          "repo": "matteocervelli/llms",
+          "source_url": "https://github.com/matteocervelli/llms/blob/main/.claude/skills/permission-test-skill/SKILL.md",
+          "license": "MIT",
+          "author": "matteocervelli"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "51e68911099deeb76d00d262a589e102d9c81b5fc5f783de3639f68b7d4cd62d",
+        "target_skill_sha256": "51e68911099deeb76d00d262a589e102d9c81b5fc5f783de3639f68b7d4cd62d",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/ping-haabe-mycelium",
+        "source_skill": "other/ping-haabe-mycelium/SKILL.md",
+        "target_path": "skills/ping",
+        "target_skill": "skills/ping/SKILL.md",
+        "target_exists": true,
+        "target_category": "skills",
+        "target_status": "active",
+        "classification_name": "ping",
+        "confidence": 0.9,
+        "key": "haabe/mycelium:plugins/mycelium/skills/ping/SKILL.md",
+        "source_metadata_identity": {
+          "path": "plugins/mycelium/skills/ping/SKILL.md",
+          "branch": "main",
+          "name": "ping",
+          "repo": "haabe/mycelium",
+          "source_url": "https://github.com/haabe/mycelium/blob/main/plugins/mycelium/skills/ping/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "haabe"
+        },
+        "target_metadata_identity": {
+          "path": "plugins/mycelium/skills/ping/SKILL.md",
+          "branch": "main",
+          "name": "ping",
+          "repo": "haabe/mycelium",
+          "source_url": "https://github.com/haabe/mycelium/blob/main/plugins/mycelium/skills/ping/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "haabe"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "76d22bb282dd726eeca4c5c9c4bc0bec88415f831eba1f7f936c753e4ed03d7f",
+        "target_skill_sha256": "424dcd7b9c45ae2de5e6b60b9fbac5e51286c97067d334fe892581eb93731f90",
+        "skill_content_equal": false
+      },
+      {
+        "source_path": "other/random-selection-ljchg12-hue-dotfiles",
+        "source_skill": "other/random-selection-ljchg12-hue-dotfiles/SKILL.md",
+        "target_path": "generation/random-selection",
+        "target_skill": "generation/random-selection/SKILL.md",
+        "target_exists": true,
+        "target_category": "generation",
+        "target_status": "active",
+        "classification_name": "random-selection",
+        "confidence": 0.75,
+        "key": "ljchg12-hue/dotfiles:skills/random-selection",
+        "source_metadata_identity": {
+          "path": "skills/random-selection",
+          "branch": "main",
+          "name": "random-selection",
+          "repo": "ljchg12-hue/dotfiles",
+          "source_url": "https://github.com/ljchg12-hue/dotfiles/blob/main/skills/random-selection/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "ljchg12-hue"
+        },
+        "target_metadata_identity": {
+          "path": "skills/random-selection",
+          "branch": "main",
+          "name": "random-selection",
+          "repo": "ljchg12-hue/dotfiles",
+          "source_url": "https://github.com/ljchg12-hue/dotfiles/blob/main/skills/random-selection/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "ljchg12-hue"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "9adf3a45b0f34ef6113c7884a65536f0c074a915c215996fd4571e30f21b0c81",
+        "target_skill_sha256": "9adf3a45b0f34ef6113c7884a65536f0c074a915c215996fd4571e30f21b0c81",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/settings-bitwikiorg-skills-md",
+        "source_skill": "other/settings-bitwikiorg-skills-md/SKILL.md",
+        "target_path": "platform/settings",
+        "target_skill": "platform/settings/SKILL.md",
+        "target_exists": true,
+        "target_category": "platform",
+        "target_status": "active",
+        "classification_name": "settings",
+        "confidence": 0.7,
+        "key": "bitwikiorg/skills.md:sources/agentskills/settings",
+        "source_metadata_identity": {
+          "path": "sources/agentskills/settings",
+          "branch": "main",
+          "name": "settings",
+          "repo": "bitwikiorg/skills.md",
+          "source_url": "https://github.com/bitwikiorg/skills.md/blob/main/sources/agentskills/settings/SKILL.md",
+          "license": "MIT",
+          "author": "bitwikiorg"
+        },
+        "target_metadata_identity": {
+          "path": "sources/agentskills/settings",
+          "branch": "main",
+          "name": "settings",
+          "repo": "bitwikiorg/skills.md",
+          "source_url": "https://github.com/bitwikiorg/skills.md/blob/main/sources/agentskills/settings/SKILL.md",
+          "license": "MIT",
+          "author": "bitwikiorg"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "2ce31f05658bf6a194afcb834c8bf90b11663b81230b3bcb46b4e42074b15f92",
+        "target_skill_sha256": "2ce31f05658bf6a194afcb834c8bf90b11663b81230b3bcb46b4e42074b15f92",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/settings-bitwikiorg-skills-md-2",
+        "source_skill": "other/settings-bitwikiorg-skills-md-2/SKILL.md",
+        "target_path": "platform/settings",
+        "target_skill": "platform/settings/SKILL.md",
+        "target_exists": true,
+        "target_category": "platform",
+        "target_status": "active",
+        "classification_name": "settings",
+        "confidence": 0.7,
+        "key": "bitwikiorg/skills.md:sources/agentskills/settings",
+        "source_metadata_identity": {
+          "path": "sources/agentskills/settings",
+          "name": "settings",
+          "repo": "bitwikiorg/skills.md",
+          "source_url": "https://github.com/bitwikiorg/skills.md/blob/main/sources/agentskills/settings/SKILL.md",
+          "license": "MIT",
+          "author": "bitwikiorg"
+        },
+        "target_metadata_identity": {
+          "path": "sources/agentskills/settings",
+          "branch": "main",
+          "name": "settings",
+          "repo": "bitwikiorg/skills.md",
+          "source_url": "https://github.com/bitwikiorg/skills.md/blob/main/sources/agentskills/settings/SKILL.md",
+          "license": "MIT",
+          "author": "bitwikiorg"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "2ce31f05658bf6a194afcb834c8bf90b11663b81230b3bcb46b4e42074b15f92",
+        "target_skill_sha256": "2ce31f05658bf6a194afcb834c8bf90b11663b81230b3bcb46b4e42074b15f92",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/training-navigation-mbosseme-computer-use-1",
+        "source_skill": "other/training-navigation-mbosseme-computer-use-1/SKILL.md",
+        "target_path": "workflow/training-navigation",
+        "target_skill": "workflow/training-navigation/SKILL.md",
+        "target_exists": true,
+        "target_category": "workflow",
+        "target_status": "active",
+        "classification_name": "Training navigation (vendor-agnostic)",
+        "confidence": 0.85,
+        "key": "mbosseme/computer-use-1:.github/skills/training-navigation",
+        "source_metadata_identity": {
+          "path": ".github/skills/training-navigation",
+          "branch": "main",
+          "name": "training-navigation",
+          "repo": "mbosseme/computer-use-1",
+          "source_url": "https://github.com/mbosseme/computer-use-1/blob/main/.github/skills/training-navigation/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "mbosseme"
+        },
+        "target_metadata_identity": {
+          "path": ".github/skills/training-navigation",
+          "branch": "main",
+          "name": "training-navigation",
+          "repo": "mbosseme/computer-use-1",
+          "source_url": "https://github.com/mbosseme/computer-use-1/blob/main/.github/skills/training-navigation/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "mbosseme"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "3b1b7f2c0f9d1e48413f36a873cbe30e9c86fbf24c5039e3fd9ef1fa0a4c4223",
+        "target_skill_sha256": "3b1b7f2c0f9d1e48413f36a873cbe30e9c86fbf24c5039e3fd9ef1fa0a4c4223",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/training-navigation-mbosseme-computer-use-1-2",
+        "source_skill": "other/training-navigation-mbosseme-computer-use-1-2/SKILL.md",
+        "target_path": "workflow/training-navigation",
+        "target_skill": "workflow/training-navigation/SKILL.md",
+        "target_exists": true,
+        "target_category": "workflow",
+        "target_status": "active",
+        "classification_name": "Training navigation (vendor-agnostic)",
+        "confidence": 0.85,
+        "key": "mbosseme/computer-use-1:.github/skills/training-navigation",
+        "source_metadata_identity": {
+          "path": ".github/skills/training-navigation",
+          "name": "training-navigation",
+          "repo": "mbosseme/computer-use-1",
+          "source_url": "https://github.com/mbosseme/computer-use-1/blob/main/.github/skills/training-navigation/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "mbosseme"
+        },
+        "target_metadata_identity": {
+          "path": ".github/skills/training-navigation",
+          "branch": "main",
+          "name": "training-navigation",
+          "repo": "mbosseme/computer-use-1",
+          "source_url": "https://github.com/mbosseme/computer-use-1/blob/main/.github/skills/training-navigation/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "mbosseme"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "3b1b7f2c0f9d1e48413f36a873cbe30e9c86fbf24c5039e3fd9ef1fa0a4c4223",
+        "target_skill_sha256": "3b1b7f2c0f9d1e48413f36a873cbe30e9c86fbf24c5039e3fd9ef1fa0a4c4223",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/wallet-claudeaceae-samara-main",
+        "source_skill": "other/wallet-claudeaceae-samara-main/SKILL.md",
+        "target_path": "integration/wallet",
+        "target_skill": "integration/wallet/SKILL.md",
+        "target_exists": true,
+        "target_category": "integration",
+        "target_status": "active",
+        "classification_name": "wallet",
+        "confidence": 0.85,
+        "key": "claudeaceae/samara-main:.claude/skills/wallet",
+        "source_metadata_identity": {
+          "path": ".claude/skills/wallet",
+          "branch": "main",
+          "name": "wallet",
+          "repo": "claudeaceae/samara-main",
+          "source_url": "https://github.com/claudeaceae/samara-main/blob/main/.claude/skills/wallet/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "claudeaceae"
+        },
+        "target_metadata_identity": {
+          "path": ".claude/skills/wallet",
+          "branch": "main",
+          "name": "wallet",
+          "repo": "claudeaceae/samara-main",
+          "source_url": "https://github.com/claudeaceae/samara-main/blob/main/.claude/skills/wallet/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "claudeaceae"
+        },
+        "metadata_identity_equal": true,
+        "source_skill_sha256": "6767cf6ab138aa1918ab72a96e0b49e2d9cdd1deb749222c8f247652e6404874",
+        "target_skill_sha256": "6767cf6ab138aa1918ab72a96e0b49e2d9cdd1deb749222c8f247652e6404874",
+        "skill_content_equal": true
+      },
+      {
+        "source_path": "other/wallet-claudeaceae-samara-main-2",
+        "source_skill": "other/wallet-claudeaceae-samara-main-2/SKILL.md",
+        "target_path": "integration/wallet",
+        "target_skill": "integration/wallet/SKILL.md",
+        "target_exists": true,
+        "target_category": "integration",
+        "target_status": "active",
+        "classification_name": "wallet",
+        "confidence": 0.85,
+        "key": "claudeaceae/samara-main:.claude/skills/wallet",
+        "source_metadata_identity": {
+          "path": ".claude/skills/wallet",
+          "name": "wallet",
+          "repo": "claudeaceae/samara-main",
+          "source_url": "https://github.com/claudeaceae/samara-main/blob/main/.claude/skills/wallet/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "claudeaceae"
+        },
+        "target_metadata_identity": {
+          "path": ".claude/skills/wallet",
+          "branch": "main",
+          "name": "wallet",
+          "repo": "claudeaceae/samara-main",
+          "source_url": "https://github.com/claudeaceae/samara-main/blob/main/.claude/skills/wallet/SKILL.md",
+          "license": "NOASSERTION",
+          "author": "claudeaceae"
+        },
+        "metadata_identity_equal": false,
+        "source_skill_sha256": "a7d9b620f87f9262713796c90082a4311352d954b9700a3e8e56537071d0746c",
+        "target_skill_sha256": "6767cf6ab138aa1918ab72a96e0b49e2d9cdd1deb749222c8f247652e6404874",
+        "skill_content_equal": false
+      }
+    ]
+  },
+  "notes": [
+    "This report is read-only and never moves, deletes, or rewrites skills.",
+    "same_policy_plan_summary is generated by apply_category_migration.py with the same flags.",
+    "primary_reason_counts are mutually exclusive and explain the current archive state first.",
+    "all_blocker_reason_counts can exceed scoped_existing_source_count because one row may have multiple blockers.",
+    "source directory missing usually means the classification row points at a pre-migration path that has already moved.",
+    "scoped_archive_classification_gap is scoped_archive_skill_count minus scoped_existing_source_count; positive values indicate archive skills not covered by the classification file or duplicate classification coverage.",
+    "stable_key_conflicts detail is bounded by --conflict-detail-limit and includes content hashes so duplicate removal is not inferred from the stable key alone."
+  ]
+}

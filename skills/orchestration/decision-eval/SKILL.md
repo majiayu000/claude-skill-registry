@@ -11,6 +11,7 @@ when_to_use: |
   - The ADR has only 1 option (no real alternatives)
   - User says "skip scoring" or "no scoring"
   - project_size is nano (overhead exceeds value)
+effort: medium
 allowed-tools: Read, Glob, Bash, Agent
 paths:
   - "docs/decisions/**"

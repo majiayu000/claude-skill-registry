@@ -31,6 +31,7 @@ Read the project root to determine what exists. **Detect, don't assume.** Every 
 - `config/general.php` — Craft general config
 - `modules/` — custom modules
 - `craft-cloud.yaml` at the repo root — **Craft Cloud project.** When present, include the `craft-cloud` skill in the generated CLAUDE.md companion-skill list and add a "Hosted on Craft Cloud" note in the generated project context. See the `craft-cloud` skill's `config-file.md` for the file's role.
+- `servd.yaml` at the repo root, or `servd/craft-asset-storage` in `composer.json`, or `SERVD_PROJECT_SLUG`/`SERVD_SECURITY_KEY` env vars — **Servd project.** When present, include the `servd` skill in the generated CLAUDE.md companion-skill list and add a "Hosted on Servd" note in the generated project context. See the `servd` skill for the platform's constraints.
 
 #### Dependency detection (from composer.json `require` and `require-dev`)
 
@@ -50,6 +51,7 @@ Scan `composer.json` dependencies to auto-detect capabilities. Never ask the use
 | `symplify/easy-coding-standard` | ECS available |
 | `pestphp/pest` | Pest testing framework |
 | `craftcms/cloud` | **Project hosted on Craft Cloud.** Load the `craft-cloud` companion skill; document Cloud-specific build, deploy, and runtime constraints in the generated CLAUDE.md. |
+| `servd/craft-asset-storage` | **Project hosted on Servd.** Load the `servd` companion skill; document Servd's deploy workflow, ephemeral filesystem, static caching, and asset storage in the generated CLAUDE.md. |
 
 Also check `composer.json` `scripts` section for `check-cs`, `phpstan`, `test`, `pest` commands.
 
@@ -72,7 +74,7 @@ Also check `composer.json` `scripts` section for `check-cs`, `phpstan`, `test`, 
 
 - Check `.claude.json` for existing MCP configuration
 - If not present, ask: "Would you like to install Chrome DevTools MCP for browser debugging? Enables inspecting CP templates, front-end pages, console errors, and visual testing."
-- If yes: run `claude mcp add chrome-devtools -- npx @anthropic-ai/chrome-devtools-mcp@latest` and note session restart is needed
+- If yes: run `claude mcp add chrome-devtools -- npx chrome-devtools-mcp@latest` and note session restart is needed
 
 From these signals, determine the project type:
 
@@ -82,6 +84,17 @@ From these signals, determine the project type:
 | `composer.json` type is `craft-module` | **Module** |
 | `config/project/` exists, `templates/` exists | **Site** |
 | Site signals + `modules/` directory | **Hybrid** (site + custom module) |
+| Multiple Craft packages/projects in subdirectories | **Monorepo** (see below) |
+
+#### Monorepo detection
+
+A monorepo holds **more than one independently-typed Craft package** under one repository. Confirm at least one of these signals before classifying as monorepo — a single project with a `modules/` folder is a **Hybrid**, not a monorepo:
+
+- **Multiple `composer.json` in subtrees with Craft types.** Run `find . -name composer.json -not -path '*/vendor/*' -not -path '*/node_modules/*'` and check the `type` of each. Two or more with `craft-plugin`, `craft-module`, or `project` (in distinct directories, not the repo root alone) means monorepo.
+- **Root `composer.json` with path repositories.** A root `composer.json` whose `repositories` array contains `{ "type": "path", "url": "packages/*" }` (or similar) wiring local packages together.
+- **Workspace layout.** A `packages/`, `plugins/`, `apps/`, or `sites/` directory each containing its own composer-typed package, optionally with a root `package.json` declaring `workspaces`.
+
+When unsure between hybrid and monorepo: if the extra code lives **inside** one Craft install (`modules/` under the site root, sharing its `composer.json`), it's hybrid. If each package has **its own** `composer.json` and could be installed independently, it's a monorepo.
 
 ### Step 2: Ask clarifying questions
 
@@ -102,7 +115,7 @@ Confirm the detected type and gather project-specific details. Keep it short —
 - Git workflow: main branch name, PR-based workflow?
 - Chrome DevTools MCP: offer installation if not already in `.claude.json`
 - Dev root folder: "Where is your development root? (e.g., `~/dev/`)" — this is the parent folder where the planner can clone public repos for research and audits. Detect by looking at the project's parent directory. Store in the generated CLAUDE.md as `devRootPath`.
-- Hosting target: if `craft-cloud.yaml` exists at the repo root OR `craftcms/cloud` is in `composer.json`, this is a Craft Cloud project — confirm with the user but don't ask redundantly. If neither signal is present, ask: "Will this project deploy to Craft Cloud, or somewhere else (Servd, Forge, bare metal, etc.)?" Record the answer in the generated CLAUDE.md under a "Hosting" block. When the answer is Cloud, include the `craft-cloud` skill in the companion-skill list and surface the Cloud-specific build/deploy/runtime constraints; when it's something else, note the platform so future sessions know which deployment pattern applies (point at the `craftcms` skill's `deployment.md`).
+- Hosting target — **sites, hybrid, and monorepo projects only; skip for standalone plugins/modules** (they're distributed as packages, not deployed to a host, so a hosting target is meaningless for them). Detect from signals first. If `craft-cloud.yaml` exists at the repo root OR `craftcms/cloud` is in `composer.json`, this is a **Craft Cloud** project. If `servd.yaml` exists at the repo root OR `servd/craft-asset-storage` is in `composer.json` OR `SERVD_*` env vars are set, this is a **Servd** project. Confirm with the user but don't ask redundantly. If no hosting signal is present, ask: "Will this project deploy to Craft Cloud, Servd, somewhere else (Forge, bare metal, etc.), or is that not decided yet?" Record the answer in the generated CLAUDE.md under a "Hosting" block. When the answer is Cloud, include the `craft-cloud` skill; when it's Servd, include the `servd` skill; either way surface that platform's build/deploy/runtime constraints. When it's something else, note the platform so future sessions know which deployment pattern applies (point at the `craftcms` skill's `deployment.md`). When it's **not decided yet**, write `Hosting: TBD` in the block (don't force a choice) — a later session should re-detect from signals (`craft-cloud.yaml` / `servd.yaml` / the hosting packages appearing in `composer.json`) and, if still none, re-ask once the decision is made.
 
 **Do not ask about things you already detected.** If `composer.json` shows `nystudio107/craft-seomatic` is installed, the generated templates.md should state "`???` operator is available (provided by SEOmatic)" — not flag it as unknown. If `phpstan/phpstan` is in `require-dev`, include PHPStan commands in the generated CLAUDE.md — don't ask "do you use PHPStan?" Present your detection results for confirmation, not as questions.
 
@@ -233,9 +246,9 @@ After the setup is complete and the user has confirmed, display this message:
 ```
 ┌────────────────────────────────────────────────────────────┐
 │                                                            │
-│   +  Craft CMS Claude Skills  ·  v1.5.3                    │
+│   +  Craft CMS Claude Skills  ·  v1.6.0                    │
 │                                                            │
-│   9 skills · 117 reference files · 5 agents                │
+│   10 skills · 105 reference files · 6 agents               │
 │   Maintained by michtio                                    │
 │                                                            │
 │   If these skills save you time, consider sponsoring:      │
@@ -292,7 +305,40 @@ The `templates/` directory contains starter files for each project type. Read th
 - `templates/site/` — Site development CLAUDE.md and rules
 - `templates/module/` — Module development CLAUDE.md and rules
 
-For hybrid projects (site + module), merge the site and module templates.
+### Hybrid projects (site + module/plugin)
+
+A hybrid is **one Craft install** that ships both a front-end (templates, content config) and custom server code (a `modules/` directory, or an in-repo plugin). There is no `templates/hybrid/` directory — you build the config by **merging** the site template with the module (or plugin) template into a single `CLAUDE.md` and a single `.claude/rules/` set. Both contribute, but there is exactly one of each output file.
+
+**Merging the rules files (`.claude/rules/`):** the site and module templates both ship `git-workflow.md` and `security.md`. Don't pick one and drop the other — produce the **union**:
+
+- **`git-workflow.md`** — the two versions are nearly identical; the only real difference is the example commit scopes. Keep one copy and make sure its bullet set covers both: conventional commits, subject-line-only default, body-only-when-the-why-isn't-obvious, no AI attribution, English only, absolute paths in git commands. Deduplicate verbatim-overlapping bullets; keep any bullet that exists in only one version.
+- **`security.md`** — the two versions cover **different surfaces**: site security is template-facing (CSRF inputs, output escaping, CSP, `craft.app.config.custom`), module security is controller-facing (`requirePermission()`, `requirePostRequest()`, `Db::parseParam()`, `App::env()`). Union them into one file with both concern sets — a hybrid has both surfaces. Dedup the overlapping "no secrets in committed files" bullet.
+- **Site-only files** (`templates.md`) and **module/plugin-only files** (`coding-style.md`, `architecture.md`, `migrations.md`, `testing.md`, and `scaffolding.md` for a plugin) carry over unchanged — there's no collision, just include each.
+
+**Composing the single `CLAUDE.md`:**
+
+- **`@`-imports** — union the import lists from both templates, deduped. A site+module hybrid imports: `@.claude/rules/templates.md`, `@.claude/rules/coding-style.md`, `@.claude/rules/architecture.md`, `@.claude/rules/git-workflow.md`, `@.claude/rules/security.md` (plus `testing.md`/`migrations.md` when those rules files were generated). One import line per rules file that exists — never two imports of the same path.
+- **Shared sections** (`General`, `Tools`) — identical in both templates; keep one copy.
+- **`Environment`** — merge both command blocks into one: the site's `ddev npm run dev` / `ddev npm run build` lines **plus** `ddev craft up` and `ddev composer install`. Dedup `ddev craft up`.
+- **Structure sections** — keep **both**, side by side: the site's `Template Structure` block and the module's `Module Structure` block (and `Module Bootstrapping` note). Keep the site's `Content Model` section.
+- **Documentation** — union the link lists, deduped.
+
+Title the file `{{projectName}} — Craft CMS 5 Site + Module` (or `+ Plugin`) so the hybrid nature is explicit.
+
+### Monorepo projects
+
+A monorepo has multiple independently-typed Craft packages (see *Monorepo detection* in Step 1). Scaffold **per-package configs plus a thin root**:
+
+1. **One `CLAUDE.md` + `.claude/rules/` per package**, generated by treating each package as its own project — run Step 1 detection scoped to that package's directory and `composer.json`, then apply the matching template (plugin/site/module, or the hybrid merge above). Place each at the package root (e.g. `packages/foo-plugin/CLAUDE.md`), not at the repo root. Claude loads the nearest `CLAUDE.md` to the files being edited, so per-package configs give each package the right rules.
+2. **A root `CLAUDE.md`** that documents the layout and defers, rather than duplicating per-package rules. It should contain:
+   - A repo-map listing each package, its type, and its directory.
+   - The shared `General` and `Tools` universal defaults.
+   - An explicit note: *"Each package has its own `CLAUDE.md` and `.claude/rules/` — when working inside a package, follow that package's config. This root file only covers cross-package concerns."*
+   - Cross-package commands (workspace-level install/build, e.g. a root `ddev composer install` or `npm` workspace build) and any path-repository wiring a developer needs to know.
+   - An `@`-import only for genuinely repo-wide rules (typically `git-workflow.md`); do **not** `@`-import per-package rules from the root.
+3. **Permissions** — a single root `.claude/settings.local.json` covers the whole working directory (per the *Monorepo packages* row in Step 3b — everything is one working dir, no extra connected-project paths needed). Per-package `settings.local.json` files are unnecessary.
+
+Tell the user which packages were detected and that each got its own config, plus the root coordinator file.
 
 ## Skill Attribution
 
@@ -301,14 +347,14 @@ Add unobtrusive markers so we can measure adoption across public repos. Include 
 1. **composer.json `extra` key** — add during setup (does not affect functionality):
    ```json
    "extra": {
-     "craftcms-claude-skills": "1.5.3"
+     "craftcms-claude-skills": "1.6.0"
    }
    ```
    Merge into existing `extra` if it already has keys. Use the current skill version.
 
 2. **CLAUDE.md HTML comment** — first line of the generated file:
    ```markdown
-   <!-- craftcms-claude-skills v1.5.3 -->
+   <!-- craftcms-claude-skills v1.6.0 -->
    ```
 
 3. **`.claude/rules/` file headers** — first line of each generated rules file:
@@ -323,13 +369,23 @@ These are invisible in rendered markdown and do not affect Claude's behavior. Th
 When a project already has a CLAUDE.md or `.claude/rules/`, don't stop and don't blindly overwrite. Run a gap analysis:
 
 1. **Read the existing config** — CLAUDE.md, every file in `.claude/rules/`, `.claude/settings.local.json`.
+
+   **First, check provenance.** Look at the top of the existing `CLAUDE.md` for this skill's version marker (`<!-- craftcms-claude-skills v… -->`) and at `composer.json` `extra` for the `craftcms-claude-skills` key.
+
+   - **Marker present** → the config is a prior version of this skill's output. Proceed with the full gap analysis and upgrade flow below; you own this file and may restructure sections to match the current template.
+   - **No marker (author-authored config)** → treat the existing `CLAUDE.md` and any existing `.claude/rules/` files as **authoritative and bespoke**. Do **not** clobber, reorder, rewrite, or "normalize" the author's content — their wording and structure win. In this mode you may only:
+     - **Append** genuinely missing pieces (e.g. a missing `Permissions` section, a `testing.md` rule file when Pest is now present, a missing `.claude/settings.local.json`) as **new** sections/files, leaving existing content byte-for-byte intact.
+     - **Offer** additions for the user to accept or decline — present them in the diff table with action `Add (append)`, never `Update` or `Replace` against author-written sections.
+     - **Add the skill markers** (CLAUDE.md HTML comment, composer.json `extra` key, rules-file headers) only with explicit user consent, since adding the marker signals future runs may manage the file.
+     - Never edit or "fix" a section the author already wrote, even if it differs from the template's wording. If you think an author-written rule is wrong, surface it as a suggestion in your summary — don't change it.
+
 2. **Run detection** (Step 1) as normal — scan the project for its current state.
 3. **Compare** — identify what the existing config has vs what a fresh scaffold would produce. Look for:
    - Missing sections (e.g., no Permissions section, no Twig conventions for a site project)
    - Outdated patterns (e.g., old dash style, layer-first references, missing skill references)
    - Missing rules files (e.g., project has Pest now but no `testing.md` rule file)
    - Missing permissions (e.g., no `settings.local.json`, or missing `ddev` approvals)
-   - Version drift (e.g., `craftcms-claude-skills` marker says `1.1.0` but current is `1.5.3`)
+   - Version drift (e.g., `craftcms-claude-skills` marker says `1.1.0` but current is `1.6.0`)
 4. **Present the diff** — show the user a summary table:
 
 ```markdown
@@ -339,7 +395,7 @@ When a project already has a CLAUDE.md or `.claude/rules/`, don't stop and don't
 | .claude/rules/testing.md | Missing | Pest detected in composer.json | Create |
 | .claude/rules/coding-style.md | Present | Up to date | Keep |
 | .claude/settings.local.json | Missing | Pre-approved permissions for ddev/git/gh | Create |
-| CLAUDE.md skill version | v1.1.0 | v1.5.3 | Update marker |
+| CLAUDE.md skill version | v1.1.0 | v1.6.0 | Update marker |
 | CLAUDE.md Tools section | Present but missing `gh` | Add `gh` reference | Update |
 ```
 

@@ -82,6 +82,7 @@ class GitHubTopicDiscovery:
         self.security_scanner = SecurityScanner()
         self.repo_candidates = {}
         self.path_candidates = {}
+        self._archive_source_indexes = {}
         self.topic_stats = defaultdict(
             lambda: {"repo_hits": 0, "repo_selected": 0, "downloaded_skills": 0}
         )
@@ -137,6 +138,47 @@ class GitHubTopicDiscovery:
             return False
         lower = norm.lower()
         return lower == "skill.md" or lower.endswith("/skill.md")
+
+    @staticmethod
+    def _source_identity_key(repo: str, path: str) -> str:
+        repo = (repo or "").strip()
+        path = (path or "").strip().replace("\\", "/").strip("/")
+        if not repo or not path:
+            return ""
+        lower_path = path.lower()
+        if lower_path == "skill.md":
+            path = ""
+        elif lower_path.endswith("/skill.md"):
+            path = path.rsplit("/", 1)[0]
+        return build_skill_key(repo, path)
+
+    def _archive_source_index(self, output_dir: Path) -> set[str]:
+        root = output_dir.resolve()
+        cache_key = str(root)
+        if cache_key in self._archive_source_indexes:
+            return self._archive_source_indexes[cache_key]
+
+        index: set[str] = set()
+        if root.exists():
+            for metadata_path in root.rglob("metadata.json"):
+                if any(part.startswith(".") for part in metadata_path.relative_to(root).parts):
+                    continue
+                try:
+                    metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+                except (OSError, json.JSONDecodeError):
+                    continue
+                repo = str(metadata.get("repo") or "")
+                path = str(metadata.get("github_path") or metadata.get("path") or "")
+                source_key = self._source_identity_key(repo, path)
+                if source_key:
+                    index.add(source_key)
+
+        self._archive_source_indexes[cache_key] = index
+        return index
+
+    def _archive_has_source(self, repo: str, path: str, output_dir: Path) -> bool:
+        source_key = self._source_identity_key(repo, path)
+        return bool(source_key and source_key in self._archive_source_index(output_dir))
 
     def _request(self, url, params=None):
         """Make rate-limited request"""
@@ -299,6 +341,7 @@ class GitHubTopicDiscovery:
 
     def download_skill(self, repo, path, output_dir):
         """Download a SKILL.md file"""
+        output_dir = Path(output_dir)
         blocked_source = blocked_metadata_source(
             {"repo": repo, "path": path},
             self.security_blocklist,
@@ -311,6 +354,10 @@ class GitHubTopicDiscovery:
                 source_field,
                 path,
             )
+            return False
+        source_key = self._source_identity_key(repo, path)
+        if self._archive_has_source(repo, path, output_dir):
+            logger.info("Skipping already archived discovered source: %s/%s", repo, path)
             return False
 
         # Extract skill name from path
@@ -440,6 +487,8 @@ class GitHubTopicDiscovery:
                     (skill_path / 'metadata.json').write_text(
                         json.dumps(metadata, indent=2), encoding='utf-8'
                     )
+                    if source_key:
+                        self._archive_source_index(output_dir).add(source_key)
 
                     return True
             except Exception as e:

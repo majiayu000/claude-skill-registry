@@ -62,7 +62,7 @@ perfectly fine when needed for clarity.
 
 `??` is the default. Always safe, always portable.
 
-`???` (empty coalesce) is acceptable if the project already has `nystudio107/craft-empty-coalesce` or `nystudio107/craft-seomatic` installed — both provide the operator. But never install a plugin just for `???`. Check `composer.json` first.
+`???` (empty coalesce) is acceptable if the project already has `nystudio107/craft-emptycoalesce` or `nystudio107/craft-seomatic` installed — both provide the operator. But never install a plugin just for `???`. Check `composer.json` first.
 
 ```twig
 {# Always correct #}
@@ -78,9 +78,9 @@ perfectly fine when needed for clarity.
 {% if entry.heading is not defined %}
 ```
 
-Craft 5.10 ships Twig 3.24, which supports the nullsafe operator (`?.`). Use it for
-deep traversal through chains that may have null links — it propagates `null` cleanly
-without the verbose `is defined and is not null` dance:
+Craft 5 supports the nullsafe operator (`?.`). Use it for deep traversal through
+chains that may have null links — it propagates `null` cleanly without the verbose
+`is defined and is not null` dance:
 
 ```twig
 {# Reach for ?. when any link in the chain may be null #}
@@ -296,33 +296,46 @@ outside 1-6.
 {{ maybeNull|timestamp }}                              {# returns "now" for null/empty #}
 ```
 
-## `collect()` Conventions
+### Filtering and Mapping — Default to `collect()`
 
-`collect()` wraps a Twig hash into a Collection object. Primary use cases:
-
-### Props collection
+For data manipulation in templates, **default to `collect()`** — one consistent, chainable API (`where`, `firstWhere`, `groupBy`, `keyBy`, `unique`, `pluck`, `map`, `filter`, `sortByDesc`) instead of mixing idioms:
 
 ```twig
-{%- set props = collect({
-    heading: heading ?? null,
-    content: content ?? null,
-    utilities: utilities ?? null,
-}) -%}
-
-{# Access with get() #}
-{{ props.get('heading') }}
-{{ props.get('size', 'text-base') }}
-
-{# Merge additional props #}
-{%- set props = props.merge({ icon: icon ?? null }) -%}
+{% set newsByYear = entries.collect
+    .where('type', 'news')
+    .sortByDesc('postDate')
+    .groupBy(e => e.postDate|date('Y')) %}
 ```
 
-### Class collection (named keys)
+The bare Twig/Craft array filters are fine for a **single trivial operation inline** — `{% for e in entries|filter(e => e.enabled) %}` — where a Collection adds nothing. But Twig's `|filter`/`|map` return plain arrays and Craft's `|where`/`|firstWhere`/`|group`/`|index` go through `ArrayHelper`, so they **don't chain like Collection methods**; once you need more than one step, switch to `collect()`. Don't mix both styles arbitrarily.
+
+There is **no `|indexBy` filter** — key a list with `|index` (or `.keyBy()` on a Collection) and bucket with `|group` (or `.groupBy()`). (`|where`, `|firstWhere`, `|contains`, `|group`, `|index`, `|explodeClass`/`|explodeStyle` are all Craft-registered filters.)
+
+### Safe Output and Inline Assets
+
+- **`|t('category')`** — route every user-facing string through translation; never hardcode display copy.
+- **`|purify`** — sanitize untrusted or rich HTML rather than reaching for `|raw`. Reserve `|raw` for trusted field output (CKEditor/Redactor); never `|raw` user-submitted or query-string-derived content.
+- **`|explodeClass` / `|explodeStyle`** — normalize a class/style string to an array before merging, instead of hand-splitting on spaces.
+- **`{% js %}` / `{% css %}` / `{% script %}`** — register inline assets through the View (it dedupes and positions them) instead of hand-writing `<script>`/`<style>`. (`{% js %}`/`{% css %}` go through the asset manager; `{% script %}`/`{% html %}` are verbatim.)
+- **`{% dd %}` / `dump()`** — for debugging only; never ship them, and don't use `{{ x|json_encode }}` as a debug hack.
+
+## `collect()` Conventions
+
+When building props and class collections, these are the style rules to enforce:
+
+- **camelCase keys** — `heroImage`, never `hero_image`.
+- **One named key per concern** — a class collection gets one key per style
+  concern (`layout`, `color`, `spacing`, …), never two classes fighting over the
+  same element.
+- **Build class strings with `.implode(' ')`** — never string concatenation
+  (`'flex ' ~ extraClass`).
+- **Null/empty values are harmless** — `implode(' ')` joins them as empty strings,
+  producing extra spaces that browsers normalize in class attributes.
 
 ```twig
 {%- set classes = collect({
     layout: 'flex items-center gap-2',
-    color: 'bg-brand-primary text-white',
+    color: 'bg-brand-primary text-brand-on-primary',
     hover: 'hover:bg-brand-accent',
     utilities: props.get('utilities'),
 }) -%}
@@ -330,22 +343,14 @@ outside 1-6.
 class="{{ classes.implode(' ') }}"
 ```
 
-Null values in `collect()` produce harmless extra spaces when joined — browsers
-normalize whitespace in class attributes. Use `classes.filter(v => v).implode(' ')`
-if you want pristine output for devMode inspection, but plain `implode(' ')`
-is fine for production.
-
-### Entry queries as Collections
-
-```twig
-{# .collect instead of .all() when you need Collection methods #}
-{%- set entries = craft.entries.section('blog').eagerly().collect -%}
-{%- set featured = entries.filter(e => e.featured).first -%}
-```
+For the full `collect()` method reference and architecture patterns (props
+collection, `get()`/`merge()`, entry-queries-as-Collections), see `craft-site`
+(`references/twig-collections.md`); for the named-key Tailwind class pattern, see
+`craft-site` (`references/tailwind-conventions.md`).
 
 ## Common Pitfalls
 
-1. **`???` operator without the plugin** — requires `nystudio107/craft-empty-coalesce` or `nystudio107/craft-seomatic`. Check `composer.json` before using. Default to `??`.
+1. **`???` operator without the plugin** — requires `nystudio107/craft-emptycoalesce` or `nystudio107/craft-seomatic`. Check `composer.json` before using. Default to `??`.
 2. **snake_case variables** — use camelCase: `heroImage` not `hero_image`.
 3. **Missing `only`** — silent variable leaking, invisible coupling.
 4. **`{%- minify -%}`** — deprecated. Use `{%-` whitespace control.
@@ -355,6 +360,6 @@ is fine for production.
 8. **Hardcoded colors in class strings** — `bg-yellow-600` → `bg-brand-accent`.
 9. **String concatenation for classes** — `'flex ' ~ extraClass` → use `collect({})` with named keys.
 10. **`is empty` / `|default` on Craft Models (5.10+)** — any `yii\base\Model` (entries, settings, custom models) is now treated as non-empty regardless of its property values. Means `{{ user|default('Guest') }}` always renders the user object; `{% if entry is empty %}` always false. Check the specific property you care about: `{% if entry.title is empty %}`.
-10. **`options.x` pattern** — old macro convention. Use direct variable names.
-11. **Blocks inside conditionals** — `{% if %}{% block foo %}{% endblock %}{% endif %}` is invalid Twig. Blocks are compile-time structures and cannot be conditionally defined. Move the conditional inside the block: `{% block foo %}{% if condition %}...{% endif %}{% endblock %}`.
-12. **Hardcoded `/admin` CP URL** — `cpTrigger` is configurable via `CRAFT_CP_TRIGGER` env var or `cpTrigger` in general.php. Many projects use `cp` instead of `admin`. Use `cpUrl()` function or check `.env` — never hardcode `/admin/`.
+11. **`options.x` pattern** — old macro convention. Use direct variable names.
+12. **Blocks inside conditionals** — `{% if %}{% block foo %}{% endblock %}{% endif %}` is invalid Twig. Blocks are compile-time structures and cannot be conditionally defined. Move the conditional inside the block: `{% block foo %}{% if condition %}...{% endif %}{% endblock %}`.
+13. **Hardcoded `/admin` CP URL** — `cpTrigger` is configurable via `CRAFT_CP_TRIGGER` env var or `cpTrigger` in general.php. Many projects use `cp` instead of `admin`. Use `cpUrl()` function or check `.env` — never hardcode `/admin/`.

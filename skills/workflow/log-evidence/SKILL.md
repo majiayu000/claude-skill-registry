@@ -80,9 +80,12 @@ See `CLAUDE.md` *Canvas writes — Read before Write* for the canonical rule.
    - Update `confidence` score with explicit reasoning
    - Update `captured_at` timestamp
 
-5. **Update `.claude/canvas/human-tasks.yml`**:
-   - Move task from `pending_tasks` to `completed_tasks`
-   - Record: `completed_at`, `evidence_logged_to`, `key_findings`, `source_class: external_human`
+5. **Close the source task — coupled to the evidence-write, not a separate afterthought** (`.claude/canvas/human-tasks.yml`):
+
+   Writing evidence and closing the task that produced it are *one* action, not two. The drift `/canvas-health` sub-check `8c(b)` catches — "evidence exists but the task is still open" — forms precisely when step 4 lands and this step is skipped. Do not report the evidence as logged until this is done.
+   - **Default (evidence answers the task)**: move the task from `pending_tasks` to `completed_tasks`. Record: `completed_at`, `evidence_logged_to` (the canvas file#anchor from step 4), `key_findings`, `source_class: external_human`.
+   - **Partial (some signal, task not fully answered)**: keep the task in `pending_tasks` but append to its `partial_findings[]` (with `date` + `evidence_logged_to`) AND state out loud why it stays open and what's still missing — otherwise `8c(b)` will flag it next health pass. An un-narrated open task with evidence attached is the drift, not the fix.
+   - **Registry sync (prevents `8c(c)` drift)**: if this evidence came from a *named* contributor whose consent or attribution state changed as a result of the conversation (e.g. they granted naming permission), update the canonical attribution registry (`$MYCELIUM_ATTRIBUTION_REGISTRY` or the private companion repo's `.claude/memory/attribution-registry.yml`) in the same pass — the registry is canonical (Check 33 reads it). If the registry isn't accessible in this context, say so and leave a note rather than recording consent only in auto-memory (the mismatch `8c(c)` exists to catch). Never print a `generic_only` / project-name carve-out value into output.
 
 ### Task Cancellation
 

@@ -265,6 +265,8 @@ print(f'已保存 output.png (1080x1440)')
 
 同样先调用 UI/UX Pro Max 获取配色和风格方向，再传给图片生成脚本：
 
+运行前设置 `ATLAS_API_KEY`/`LLM_API_KEY`；如需从文件读取，显式传 `--env-file` 或设置 `XHS_ENV_FILE`。
+
 ```bash
 python3 ~/.claude/skills/xiaohongshu/scripts/generate_image.py "{prompt}" --ratio 3:4 --num 1 --output ./images
 ```

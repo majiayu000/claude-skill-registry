@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "batch_id": "batch020-current-other-recovery",
+  "generated_at": "2026-05-31T16:51:54.882326+00:00",
+  "skills_dir": "/private/tmp/claude-skill-registry-data-other-20260531",
+  "input_jsonl": "/private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/input.jsonl",
+  "policy": {
+    "from_categories": [
+      "other"
+    ],
+    "limit": null,
+    "offset": 0,
+    "content_chars": 2000,
+    "exclude_input_jsonl": [],
+    "apply_mode": "review-only"
+  },
+  "summary": {
+    "archive_category_counts": {
+      "agent": 1885,
+      "ai-llm": 2657,
+      "ai-ml": 2588,
+      "analysis": 5052,
+      "api": 1360,
+      "bash": 316,
+      "business": 1403,
+      "c-level": 80,
+      "communication": 705,
+      "context-management": 1459,
+      "creative": 862,
+      "data": 49373,
+      "design": 13942,
+      "development": 39271,
+      "devops": 10930,
+      "documents": 7827,
+      "domains": 2666,
+      "examples": 186,
+      "forensics": 157,
+      "gaming": 915,
+      "generation": 1510,
+      "integration": 6872,
+      "language": 177,
+      "local-ai-infrastructure": 107,
+      "marketing": 3125,
+      "orchestration": 2862,
+      "other": 5723,
+      "performance": 1099,
+      "personal-development": 802,
+      "planning": 1830,
+      "platform": 994,
+      "product": 3047,
+      "productivity": 3307,
+      "quality": 4422,
+      "security": 5310,
+      "skills": 2616,
+      "system": 363,
+      "testing": 11396,
+      "travel": 53,
+      "war-room": 42,
+      "workflow": 3491,
+      "writing": 1121
+    },
+    "matching_category_skill_count": 5723,
+    "excluded_input_path_count": 0,
+    "excluded_live_match_count": 0,
+    "eligible_matching_category_skill_count": 5723,
+    "selected_input_count": 5723,
+    "selected_category_counts": {
+      "other": 5723
+    }
+  },
+  "artifacts": {
+    "input_jsonl": "/private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/input.jsonl",
+    "classification_jsonl": "/private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/classification.jsonl",
+    "classification_report": "/private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/classification-report.json",
+    "checkpoint_jsonl": "/private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/checkpoint.jsonl",
+    "apply_plan": "/private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/apply-plan.json",
+    "sample_audit": "/private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/sample-audit.json",
+    "residual_report": "/private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/residual-report.json",
+    "residual_worksets_report": "/private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/residual-worksets.json",
+    "residual_worksets_dir": "/private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/residual-worksets"
+  },
+  "commands": [
+    "python scripts/classify_residual_workset_with_llm.py --workset-jsonl /private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/input.jsonl --classification-output /private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/classification.jsonl --output /private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/classification-report.json --checkpoint-jsonl /private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/checkpoint.jsonl --api-key-env MIMO_API_KEY --base-url https://token-plan-sgp.xiaomimimo.com/v1 --model mimo-v2.5-pro --temperature 0",
+    "python scripts/sample_category_classification_audit.py --workset-jsonl /private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/input.jsonl --classification-jsonl /private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/classification.jsonl --output /private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/sample-audit.json",
+    "python scripts/apply_category_migration.py --skills-dir /private/tmp/claude-skill-registry-data-other-20260531 --classification-jsonl /private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/classification.jsonl --from-category other --min-confidence 0.9 --movable-only --output /private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/apply-plan.json",
+    "python scripts/audit_category_residuals.py --skills-dir /private/tmp/claude-skill-registry-data-other-20260531 --classification-jsonl /private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/classification.jsonl --from-category other --min-confidence 0.9 --output /private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/residual-report.json",
+    "python scripts/build_residual_category_worksets.py --skills-dir /private/tmp/claude-skill-registry-data-other-20260531 --classification-jsonl /private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/classification.jsonl --from-category other --min-confidence 0.9 --output /private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/residual-worksets.json --workset-output-dir /private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/residual-worksets"
+  ],
+  "notes": [
+    "This manifest and its input JSONL do not modify archive files.",
+    "Each input row carries SKILL.md and metadata SHA-256 provenance.",
+    "Run the sample audit before applying any generated move plan.",
+    "The apply step refuses inactive categories and changed source hashes.",
+    "Residual worksets explain classification gaps, low-confidence rows, target-other rows, and inactive targets before the next batch."
+  ],
+  "manifest_json": "/private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/manifest.json"
+}

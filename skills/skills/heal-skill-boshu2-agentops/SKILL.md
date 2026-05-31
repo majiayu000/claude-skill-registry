@@ -7,7 +7,9 @@ practices:
 hexagonal_role: supporting
 consumes: []
 produces: []
-context_rel: []
+context_rel:
+- kind: customer-of
+  with: skill-auditor
 skill_api_version: 1
 context:
   window: isolated

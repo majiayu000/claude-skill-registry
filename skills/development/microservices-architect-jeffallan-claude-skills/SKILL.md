@@ -125,7 +125,7 @@ readinessProbe:
   initialDelaySeconds: 5
   periodSeconds: 10
 ```
-`/health/live` — returns 200 if the process is running.
+`/health/live` — returns 200 if the process is running.  
 `/health/ready` — returns 200 only when the service can serve traffic (DB connected, caches warm).
 
 ## Constraints

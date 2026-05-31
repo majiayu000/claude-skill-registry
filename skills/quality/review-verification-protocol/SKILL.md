@@ -12,19 +12,19 @@ This protocol MUST be followed before reporting any code review finding. Skippin
 
 Run these **in order**. Do not move to the next gate until its **pass** condition is met (objective evidence, not internal certainty).
 
-1. **Read** — Open the file and read the **full** enclosing function, method, or type (not only the diff hunk).
+1. **Read** — Open the file and read the **full** enclosing function, method, or type (not only the diff hunk).  
    **Pass:** You can name the symbol and cite at least one line **outside** the changed lines that shows control flow, scope, or use relevant to the finding.
 
-2. **Reference** (required before any “unused”, “dead code”, or “never called” claim) — Search the workspace for the identifier and for imports/exports that could reference it.
+2. **Reference** (required before any “unused”, “dead code”, or “never called” claim) — Search the workspace for the identifier and for imports/exports that could reference it.  
    **Pass:** Recorded outcome: match count or list, or explicit “zero matches in repo” *before* asserting unused.
 
-3. **Upstream** (required before “missing validation” or “missing error handling”) — Inspect the immediate caller, route/middleware, or documented framework behavior that might already enforce the rule.
+3. **Upstream** (required before “missing validation” or “missing error handling”) — Inspect the immediate caller, route/middleware, or documented framework behavior that might already enforce the rule.  
    **Pass:** One sentence naming where responsibility lives, or “checked caller + framework path; still missing” with which layer you checked.
 
-4. **Severity** — Before assigning Critical or Major, map the issue to [Severity Calibration](#severity-calibration) and exclude style-only or [Informational](#informational-no-action-required) items.
+4. **Severity** — Before assigning Critical or Major, map the issue to [Severity Calibration](#severity-calibration) and exclude style-only or [Informational](#informational-no-action-required) items.  
    **Pass:** Chosen label matches a bullet under that severity; otherwise downgrade, reclassify as Informational, or omit.
 
-5. **Submit** — Each retained finding uses `[FILE:LINE]` plus a one-line proof; complete [Before Submitting Review](#before-submitting-review) steps 1–7 for this review.
+5. **Submit** — Each retained finding uses `[FILE:LINE]` plus a one-line proof; complete [Before Submitting Review](#before-submitting-review) steps 1–7 for this review.  
    **Pass:** Every step satisfied or the finding was removed or downgraded.
 
 The checklist below expands these gates by issue type; use both.

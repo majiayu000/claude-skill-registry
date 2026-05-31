@@ -99,6 +99,16 @@ These clauses address two documented Mycelium failures: **Eval Overfitting** (20
 - [ ] **Could-have** items pass NUDGE-only checks (acceptable to ship without full REVIEW compliance)
 - [ ] **Won't-have** items documented for future reference (not silently dropped)
 
+### AI Feature Contract (product_type: ai_tool ONLY)
+
+**Skip this entire section unless `diamonds/active.yml` declares `product_type: ai_tool`.** An AI feature is a behavioral contract, not a spec: it is judged on success thresholds, failure modes, and must-never constraints rather than line-item functionality. These criteria do NOT apply to software / content / service products — do not let them bleed into the product-agnostic checklist above.
+
+- [ ] **Eval suite passes at the declared threshold.** The threshold is a *product decision* recorded in `canvas/ai-tool-metrics.yml#prompt_quality`, not an engineering default — the PM owns the quality bar, not the engineer. A green eval run *below* the declared threshold is NOT DONE.
+- [ ] **PM sign-off on a representative output batch.** A human reviewed a real sample of outputs and accepted them. An eval pass is model-quality evidence; it is NOT a substitute for human acceptance of product behavior.
+- [ ] **Every `behavioral_constraints` entry verified non-violated.** Each must-never rule in `ai-tool-metrics.yml#behavioral_constraints` has a populated `verification` and a recent `last_verified`. An unverified constraint is NOT DONE (treat-uncertainty-as-not-done, per the anti-bias clauses above).
+- [ ] **`failure_modes` derived from real outputs, with binary acceptance.** `ai-tool-metrics.yml#failure_modes.outputs_reviewed` is set (target >= 20 real outputs reviewed) and every mode carries a BINARY `acceptance_criterion` naming who holds final judgment. Imagined failure modes do not count.
+- [ ] **AI transparency disclosure** present if the feature is user-facing (`regulatory.transparency_disclosure`, EU AI Act Art. 50) — cross-check via `/mycelium:regulatory-review`.
+
 ## Outcome
 - **DONE**: All required items checked. Proceed.
 - **NOT DONE**: List failing items. Address before marking complete.
@@ -109,3 +119,4 @@ These clauses address two documented Mycelium failures: **Eval Overfitting** (20
 - Downe: Good Services (quality)
 - OWASP: Security
 - WCAG: Accessibility
+- AI Feature Contract: AI PRD as behavioral contract — success thresholds, evidence-derived failure modes, must-never constraints (Adaline 2026)

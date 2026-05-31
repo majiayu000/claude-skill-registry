@@ -39,7 +39,7 @@ Use `WebFetch` on specific doc pages when a reference file doesn't cover enough 
 Matrix fields). Fields come from a global pool. This is the "entrification" of Craft — categories, tags, and globals are being unified into entries over a three-version arc:
 
 - **Craft 4.4** — `entrify` CLI commands added to convert categories, tags, and globals to entries
-- **Craft 5** — Creating new category groups, tag groups, or global sets is no longer possible in the CP. Existing ones continue to work. A unified "Content" section replaces the fragmented entries view. Custom entry index pages (5.9.0) solve the sidebar organization concern.
+- **Craft 5** — Categories, tags, and global sets are deprecated and discouraged for new projects. New category groups, tag groups, and global sets can still be created in the CP (the "New" buttons remain, gated by `allowAdminChanges`), and existing ones continue to work. A unified "Content" section replaces the fragmented entries view. Custom entry index pages (5.9.0) solve the sidebar organization concern.
 - **Craft 6** — Categories, tags, and global sets will be removed entirely
 
 For **new projects**, always use entries: Structure sections for hierarchical taxonomy, Channel sections for flat taxonomy, Singles for site-wide settings. For **existing projects**, migrate at your own pace using the `entrify` commands.
@@ -52,7 +52,7 @@ Three decisions define your content architecture:
 
 ## CMS Editions
 
-Craft CMS has four editions (Solo, Team, Pro, Enterprise) that affect content modeling. The key distinction: if any section needs per-group edit/view restrictions, you need **Pro or Enterprise** (user groups and permissions are Pro+ only). See `references/users-and-permissions.md` for the full editions table and permissions architecture.
+Craft CMS has four editions (Solo, Team, Pro, Enterprise) that affect content modeling. The key distinction: if any section needs multiple custom user groups with per-group edit/view restrictions, you need **Pro or Enterprise** (multiple custom user groups are Pro+ only). Team includes one fixed "Team" group whose permissions are customizable for non-admins, plus a 5-user cap. See `references/users-and-permissions.md` for the full editions table and permissions architecture.
 
 Choose the edition before modeling — it determines whether you can scope content access by user group, which affects section and field architecture.
 
@@ -72,7 +72,7 @@ Choose the edition before modeling — it determines whether you can scope conte
 Beyond the type, sections have settings that matter for content architecture:
 
 - **`maxAuthors`** (default 1) — allows multiple authors per entry (new in 5.0.0). Set higher for collaborative content.
-- **`minAuthors`** (default 0, new in 5.10) — minimum number of authors required to save an entry. Set `1` to enforce that every entry has at least one author. Validated on save; setting `minAuthors > maxAuthors` is rejected by Craft's section validator. Combine with `maxAuthors` to define an exact range (`min: 1, max: 3` = "1 to 3 authors required").
+- **`minAuthors`** (default 1, new in 5.10) — minimum number of authors required to save an entry. Set `1` to enforce that every entry has at least one author. Validated on save; setting `minAuthors > maxAuthors` is rejected by Craft's section validator. Combine with `maxAuthors` to define an exact range (`min: 1, max: 3` = "1 to 3 authors required").
 - **`enableVersioning`** (default true) — version history for entries
 - **`defaultPlacement`** — `'beginning'` or `'end'` for new entries in structures
 - **`previewTargets`** — array of `{label, urlFormat}` objects defining where entries can be previewed. Default: primary entry page. Add custom targets for headless frontends, staging URLs, or PDF previews.
@@ -226,7 +226,7 @@ ddev craft entrify/tags <tagGroupHandle>               # → Channel section
 ddev craft entrify/global-set <globalSetHandle>        # → Single section
 ```
 
-All three accept `--section` and `--entry-type` to target an existing section/entry type instead of creating new ones. `entrify/categories` and `entrify/tags` also accept `--author`.
+All three accept `--section` to target an existing section instead of creating a new one. `entrify/categories` and `entrify/tags` additionally accept `--entry-type` and `--author`; `entrify/global-set` does not.
 
 As of 5.9.0, these commands are interactive — the handle argument is optional.
 
@@ -262,7 +262,7 @@ For the full decision table, nested entry type patterns, and the CKEditor chunks
 - **Creating new fields without checking the global pool** — before adding any field, run the Reuse-First Workflow above. Enumerate existing fields via `config/project/fields/` and default to reusing via instance. The only justification for a new field is a different type or genuinely incompatible settings.
 - **Vague or reserved field handles** — `image`, `text`, `link` are too generic (and `link` is actually reserved). For every field handle in a content model, follow this check: (1) is the handle in the reserved list? If yes, use a synonym from the table. (2) Is the handle too generic for the global field pool? If yes, add domain context: `featuredImage`, `bodyContent`, `primaryLink`. (3) Don't over-specify — `blogFeaturedImage` creates a new field when you could instance `featuredImage` with a label override.
 - **Not planning multi-site from the start** — propagation method, field translation methods, and site settings must be configured before content exists. Changing propagation later resaves all entries.
-- **Using categories/tags/globals in new projects** — new creation is disabled in Craft 5 CP and they will be removed in Craft 6. Use entries instead.
+- **Using categories/tags/globals in new projects** — they're deprecated and discouraged in Craft 5 (still creatable in the CP) and will be removed in Craft 6. Use entries instead.
 - **Forgetting `preloadSingles`** — without it, singles aren't available as global variables and you need explicit queries.
 - **Matrix for everything** — 15+ entry types in one Matrix field is a red flag. Deeply nested Matrix hits `max_input_vars` limits and degrades CP performance.
 - **Not using `.eagerly()`** — every relational field access inside a loop should use `.eagerly()` to prevent N+1 queries.

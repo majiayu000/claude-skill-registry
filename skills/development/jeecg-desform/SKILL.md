@@ -189,15 +189,19 @@ result = check_code_available('<code>')  # 只接受 1 个参数
 
 ### 2. 识别字段并选择控件类型
 
-根据用户描述的关键词（也可能是图片），匹配对应的控件 type。
+根据用户描述的关键词（也可能是图片），匹配对应的控件 type——**下方自动注入的索引表已含「关键词 → 控件」映射**（`WIDGET_OPTIONS_INDEX` 区块的「关键词」列），直接据此选型。
 
-> 详见 `references/desform-widget-types.md` — 完整的关键词到控件类型映射表。
+**【强制】确定控件类型后、配置其属性前，必须先阅读 `references/desform-widget-options.md` 中该控件对应的片段**——按**下方自动注入的行号索引表**查到该控件的 `offset` / `limit`，直接 `Read` **只读那一段**（该文档很长，禁止全量读，无需 grep）。原因：许多控件有非直觉的内置能力，只看 `desform_utils.py` 工厂函数的默认 options 会把它们当成"无用的空字段"漏掉——典型如 `select-user`/`select-depart` 的 `keyMaps`（选人/选部门后自动回填工号、部门、职位、电话等关联字段，**属于组件内置功能，无需 JS 增强**）。不要凭训练知识假设某字段不存在或猜它的名字。
+
+<!-- WIDGET_OPTIONS_INDEX:START -->
+!`python ${CLAUDE_SKILL_DIR}/scripts/gen_widget_options_index.py 2>/dev/null || echo '> （控件选项索引自动生成失败，请用 grep -n "## <控件type>" references/desform-widget-options.md 定位行号后再 Read 该片段）'`
+<!-- WIDGET_OPTIONS_INDEX:END -->
 
 对于 radio/select/checkbox 控件，支持静态选项（默认）和系统字典两种数据源。
 
 > 详见 `references/desform-dict-config.md` — 字典配置方式、常用字典编码、Python 快捷函数用法。
 
-对于 table-dict (表字典) 组件时必须阅读 `references/desform-widget-options.md`（搜索 `table-dict`），了解用法和限制后再使用，**强制前提（不可跳过，不可替代）**
+对于 table-dict (表字典) 组件**尤其**必须阅读 `references/desform-widget-options.md`（按上方索引表定位 `table-dict` 片段），了解用法和限制后再使用，**强制前提（不可跳过，不可替代）**
 
 **⚠️ 选项颜色强制约束（radio / select / checkbox 的 `itemColor`）：**
 系统前端硬编码了 20 个合法颜色值，设置 `itemColor` 时必须严格从这 20 个值中选取，禁止使用任何范围外的颜色（包括视觉上接近的近似色，如 `#FF9800` ≠ `#FF9300`，`#9C27B0` ≠ `#7500EA`，`#F44336` ≠ `#F52222`）。同时必须将 `useColor` 设为 `true`，否则颜色在甘特图/看板视图中不生效。
@@ -491,6 +495,20 @@ desform 有两种完全独立的视图概念：
 
 ---
 
+## 一键生成积木报表（打印）
+
+> 当用户说"给这个表单加积木报表打印"、"创建打印报表"、"desform 集成积木"、"一键生成打印模板"、"按字段生成打印报表"等，**立即阅读 `references/desform-jimureport.md`**，然后用 `scripts/desform_jimureport.py` 一键创建报表并关联到表单的 `allowJmReport` 打印。
+
+脚本自动完成 5 步：创建空报表 → 保存 desform API 数据源 → 构造卡片打印模板（按 formStyle 适配 normal/word）→ 保存设计 → 回写表单 `allowJmReport`/`jmReportURL`。
+
+**两个关键点（详见 reference）：**
+- **积木报表 API base 常与 desform 不同**：desform 用 `--api-base`（如 `:3100/jeecgboot`），积木报表用 `--jmreport-base`（如 `:8080/jeecg-boot`）；同体部署时只传 `--api-base`。
+- **字段绑定用 `${dbCode.model}`**：desform 数据 API 返回的 JSON key = 控件 model，绑定/`fieldName` 都必须用 model（不是 key），否则打印值全空。
+
+> 简单的"按字段排版打印"用本脚本即可，**无需**加载 jimureport 技能。仅当用户要高度定制报表（分组/交叉/图表/套打背景图等）时，才提示用户加载 **jimureport** 技能，并以 `references/desform-jimureport.md` 的 desform 数据 API 规范作为数据集来源。
+
+---
+
 ## 参考文档
 
 ### OA 审批应用
@@ -507,12 +525,12 @@ desform 有两种完全独立的视图概念：
 | `scripts/desform_data_utils.py` | 数据操作工具库（CRUD、批量、回收站） |
 | `scripts/desform_auth_retry.py` | 字段权限重试（仅权限自动创建失败时使用） |
 | `scripts/desform_button_utils.py` | 自定义按钮操作工具库（增删改查、视图绑定、排序） |
+| `scripts/desform_jimureport.py` | 一键创建积木报表并关联表单打印（含删除/清除关联） |
 | `scripts/skill_temp_path.py` | 跨平台获取本技能临时目录/文件路径（写临时配置前必先调用，自动建目录） |
 
 ### 创建/更新表单时阅读
 
 - `references/desform-json-config.md` — JSON 配置格式、字段定义、子表说明、完整示例
-- `references/desform-widget-types.md` — 用户描述关键词 → 控件 type 映射表
 - `references/desform-dict-config.md` — 字典数据源配置（静态选项、系统字典、Python 用法）
 - `references/desform-python-utils.md` — desform_utils.py 使用指南、快捷函数、layout 参数
 - `references/desform-api-notes.md` — API 踩坑记录、错误处理、命名规则
@@ -549,6 +567,7 @@ desform 有两种完全独立的视图概念：
 - `references/desform-release-setting.md` — 涉及发布设置/外部链接时阅读（字段说明、URL格式、`externalTitle` 特殊值处理）；触发关键词：「发布设置」「外部链接」「公开链接」「二维码」「allowExternalLink」「页眉图片」「headerImgUrl」
 - `references/desform-notice-setting.md` — 涉及填报通知时阅读（`noticeType` 枚举值、`noticeReceiver` 格式、校验规则）；触发关键词：「填报通知」「新增通知」「提交通知」「enableNotice」「noticeType」「通知接收人」
 - `references/desform-print-setting.md` — 涉及打印设置时阅读（字段联动关系、积木报表集成）；触发关键词：「打印」「打印设置」「allowPrint」「积木报表」「jmReport」「disabledAutoGrid」
+- `references/desform-jimureport.md` — **一键生成积木报表打印**时阅读（脚本用法、与 onlform 差异、双 API base、formStyle 适配、`${dbCode.model}` 绑定规则）；触发关键词：「给表单加积木报表」「创建打印报表」「一键生成打印模板」「desform 集成积木」
 - `references/desform-switch-setting.md` — **零代码应用专属**，涉及功能开关时阅读（14个开关的完整配置、父子联动规则、viewAuth 约束、Python 示例）；触发关键词：「功能开关」「显示创建按钮」「禁用批量操作」「导入功能」「记录分享」「记录讨论」「附件下载」「记录日志」；函数导入方式见 `references/desform-lowapp-utils.md`
 
 ### 降级/排障

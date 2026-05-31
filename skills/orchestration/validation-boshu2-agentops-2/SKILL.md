@@ -156,7 +156,7 @@ STEP 1.7.5 ── Release-Readiness Gates (MANDATORY when IS_RELEASE_CONTEXT=1)
 STEP 1.8 ── Stage 4: Behavioral Validation (holdout scenarios + agent-built specs)
             Skip if: no .agents/holdout/ directory AND no .agents/specs/ directory
             Skip if: --no-behavioral flag set
-
+            
             Sub-steps:
               a) List active scenarios and agent-built specs:
                    ao scenario list --status active 2>/dev/null
@@ -177,7 +177,7 @@ STEP 1.8 ── Stage 4: Behavioral Validation (holdout scenarios + agent-built 
                    mean < 0.5 → FAIL ("Implementation does not satisfy holdout scenarios")
               h) Write results to .agents/rpi/scenario-results.json
               i) Include satisfaction_score in validation_state
-
+            
             PASS/WARN? → continue to STEP 2
             FAIL? → write summary, output <promise>FAIL</promise>, stop
 

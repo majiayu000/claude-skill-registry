@@ -108,7 +108,7 @@ Evaluate current diamond state and recommend next action.
 
 12. **Report harness thickness** (informational):
     - Count: total skills, active guardrails, mandatory reads, hooks, theory gates
-    - Current: 44 skills, 37 guardrails, 4 mandatory reads, 5 hook layers, 12 gates
+    - Current: 49 skills, 37 guardrails, 4 mandatory reads, 5 hook layers, 13 gates
     - If thickness has increased since last assess, note it
     - This is observability, not a gate — purely informational
     - *Source: Trivedy (Anatomy of an Agent Harness, LangChain blog — "scaffolding should decrease as models improve," but harnesses remain valuable as they engineer systems around model intelligence)*
@@ -144,6 +144,8 @@ Current focus: [plain-language description from ${CLAUDE_PLUGIN_ROOT}/engine/sta
 | Evidence | Pass/Fail | /mycelium:user-interview or /mycelium:assumption-test |
 | Four Risks | Pass/Fail | /mycelium:assumption-test |
 | ... | ... | ... |
+
+Render any **Fail** row so it pops (e.g. `**FAIL**` or a leading `Blocking:` line under the table) rather than letting it sit indistinguishable from `Pass` — the failing gate is the one the reader must not scroll past. Von Restorff; per `harness/design-principles.md`.
 
 ## What I'd Challenge (Devil's Advocate)
 - [Key assumption to question]

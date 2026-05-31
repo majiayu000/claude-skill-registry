@@ -29,7 +29,7 @@ When unsure about a convention, `WebFetch` the coding guidelines page for the au
 - Records use the **same class name** as models (namespace distinguishes). Alias when importing both: `use ...\records\MyEntity as MyEntityRecord;`.
 - Queue jobs have **no "Job" suffix** — `ResaveElements`, not `ResaveElementsJob`.
 - `declare(strict_types=1)` is NOT used in plugin source files. Only in standalone config files like `ecs.php`.
-- `@author` goes on classes and methods only — never on properties.
+- `@author` goes on classes and methods only — never on properties. (Craft *core* puts `@author` at the class level only; placing it on methods too is this project's house convention, not core style.)
 - Don't use `string|null` — use `?string` (short nullable notation).
 - Forget `parent::defineRules()` and you lose all inherited validation.
 - Using `[$this, '_validateFoo']` callable arrays or inline closures in `defineRules()` — Craft core uses string method names: `[['attr'], 'validateAttr']`. The validator method is public, no underscore — Yii invokes it by name.
@@ -56,7 +56,7 @@ Read the relevant reference file(s) for your task:
 1. PHPDocs on everything: classes, methods, properties. No exceptions.
 2. `@throws` chains: document every exception including uncaught from called methods.
 3. `@author` and `@since` at the bottom of class/method docblocks, after a blank line.
-4. Section headers with `// =========================================================================` on every class.
+4. Section headers with `// =========================================================================` on every class. (Craft *core* itself uses dash separators — `// ----` — with functional/domain labels like `// Statuses` or `// Events`. The `=====` separators and visibility labels below are a deliberate house convention for consistency across this project's plugins, not core style.)
 5. `declare(strict_types=1)` is NOT used in plugin source files — Craft's internal type coercion depends on PHP's default weak typing mode.
 6. Private methods/properties prefixed with underscore: `_registerCpUrlRules()`, `$_items`.
 7. `addSelect()` convention in `beforePrepare()` — additive across extensions, prevents column conflicts.
@@ -95,7 +95,7 @@ Only include sections that have content. Blank line after the separator, before 
 
 - **Happy path last.** Handle error conditions first with early returns.
 - **Avoid `else`** — use early returns instead.
-- **`match` over `switch`** — always.
+- **Prefer `match` over `switch`** for value-mapping and returns. The official guideline is "don't use `switch` when a single `if` suffices"; `switch` remains acceptable where it reads more clearly (and is common in core).
 - **Always use curly brackets** even for single statements.
 - **Separate compound conditions** into nested `if` statements for readability.
 - **Named arguments** when calling methods with 3+ parameters.

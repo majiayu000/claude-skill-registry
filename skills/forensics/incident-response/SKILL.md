@@ -318,7 +318,7 @@ vol3 -f mem.raw linux.check_syscall  # eBPF kprobes on syscalls
 # $MFT (Master File Table) — every file operation
 # Parse with: analyzeMFT, MFTECmd
 MFTECmd.exe -f '$MFT' --csv output/ --csvf mft.csv
-# Key fields: creation time, modification time, entry modification time,
+# Key fields: creation time, modification time, entry modification time, 
 # access time, file size, parent directory
 
 # $UsnJrnl (Update Sequence Number Journal) — file change log

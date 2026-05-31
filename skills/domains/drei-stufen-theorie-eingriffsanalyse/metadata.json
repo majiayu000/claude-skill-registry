@@ -1,0 +1,17 @@
+{
+  "name": "drei-stufen-theorie-eingriffsanalyse",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "bav-strategie-konzern/skills/drei-stufen-theorie-eingriffsanalyse/SKILL.md",
+  "github_branch": "main",
+  "category": "domains",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "drei-stufen-theorie-eingriffsanalyse",
+  "downloaded_at": "2026-05-31T04:01:55.112772Z",
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/bav-strategie-konzern/skills/drei-stufen-theorie-eingriffsanalyse/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/bav-strategie-konzern/skills/drei-stufen-theorie-eingriffsanalyse/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

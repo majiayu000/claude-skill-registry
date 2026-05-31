@@ -10,7 +10,7 @@ allowed-tools: Task, Read, Write, Edit, Bash, Grep, Glob, TodoWrite, AskUserQues
 
 Performs post-review cosmetic cleanup to make code production-ready. This workflow is now integrated as Phase T-7 of `/developer-kit-specs:specs.task-implementation`. It can also be invoked manually using `--action=cleanup`.
 
-**Input**: `docs/specs/[id]/tasks/TASK-XXX.md` (reviewed status)
+**Input**: `docs/specs/[id]/tasks/TASK-XXX.md` (reviewed status)  
 **Output**: Cleaned code, task marked `completed`
 
 ## When to Use
@@ -46,11 +46,11 @@ See `references/language-patterns.md` for language-specific formatter commands, 
    - `--lang` (optional): Target language/framework
    - `--task` (required): Task ID or file path
    - `--spec` (optional): Spec folder path (used with task ID)
-
+   
    **Support two formats**:
    - Format 1 (direct path): `--task=docs/specs/001-feature/tasks/TASK-001.md`
    - Format 2 (spec+task): `--spec=docs/specs/001-feature --task=TASK-001`
-
+   
    If Format 2 is used, construct the task file path as: `{spec}/tasks/{task}.md`
 
 2. Read the task file. Verify:
@@ -107,7 +107,7 @@ Review context for each finding. Remove confirmed debt and document what was rem
    - Add a `## Cleanup Summary` section to the task file
    - Check any remaining boxes in the DoD section
    - Hooks automatically update status to `completed` and set `completed_date` + `cleanup_date`
-
+   
 2. Append `## Cleanup Summary` to task file with:
    - Files cleaned
    - Changes made

@@ -109,7 +109,7 @@ For each optimization target, generate a concrete diff:
 +++ b/skills/auto-review-loop/SKILL.md
 @@ -15,7 +15,7 @@
  ## Constants
-
+ 
 -- **SCORE_THRESHOLD = 6** — Minimum review score to accept.
 +- **SCORE_THRESHOLD = 7** — Minimum review score to accept. (Raised based on usage data: 60% of users overrode to 7+.)
 ```
@@ -131,22 +131,22 @@ spawn_agent:
   reasoning_effort: xhigh
   message: |
     You are reviewing a proposed optimization to an ARIS SKILL.md file.
-
+    
     ## Original Skill (relevant section)
     [paste original]
-
+    
     ## Proposed Patch
     [paste diff]
-
+    
     ## Evidence from Usage Log
     [paste summary stats]
-
+    
     Review this patch:
     1. Does the evidence support the change?
     2. Could this change hurt other use cases?
     3. Is the change minimal and safe?
     4. Score 1-10: should this be applied?
-
+    
     If score < 7, explain what additional evidence would be needed.
 ```
 

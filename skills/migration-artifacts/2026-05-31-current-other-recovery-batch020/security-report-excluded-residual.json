@@ -1,0 +1,242 @@
+{
+  "scanner": {
+    "name": "claude-skill-registry-security-scanner",
+    "version": "1.1.0",
+    "ruleset_sha256": "a31a767b8ab792c3d20d5e6b323d450bc47e9d66b2622d59098501c5d3f1f49b"
+  },
+  "generated_at": "2026-05-31T18:14:13Z",
+  "total": 7,
+  "passed": 0,
+  "failed": 7,
+  "skills": [
+    {
+      "path": "other/20260102-214532-trinity-auto-boot-validator-agentgptsmith-monadframework-2/SKILL.md",
+      "safe": false,
+      "security_decision": {
+        "id": "23c1aac5ea9cdbdfce4c4cc845d0489d13b7efbea17f979140e6e56d32128193",
+        "status": "failed",
+        "reason": "scanner_errors",
+        "scanner": {
+          "name": "claude-skill-registry-security-scanner",
+          "version": "1.1.0",
+          "ruleset_sha256": "a31a767b8ab792c3d20d5e6b323d450bc47e9d66b2622d59098501c5d3f1f49b"
+        },
+        "provenance": {
+          "source_repo": "agentgptsmith/MonadFramework",
+          "source_path": ".claude/skills/generated/20260102_214532_trinity-auto-boot-validator",
+          "source_ref": "",
+          "source_url": "https://github.com/agentgptsmith/MonadFramework/blob/main/.claude/skills/generated/20260102_214532_trinity-auto-boot-validator/SKILL.md",
+          "content_sha256": "0df0b01cee1386c7658253c008a8b6a23e15462458a18644f4776a485a988781",
+          "scanned_at": "2026-05-31T18:14:13Z"
+        },
+        "issue_count": 2,
+        "error_count": 2,
+        "warning_count": 0
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "type": "yaml_parse_error",
+          "message": "Invalid YAML frontmatter: mapping values are not allowed here\n  in \"<unicode string>\", line 3, column 42:\n     ... on: Generated skill from request: trinity auto-boot validator\n                                         ^"
+        },
+        {
+          "severity": "error",
+          "type": "no_frontmatter",
+          "message": "SKILL.md must have YAML frontmatter"
+        }
+      ]
+    },
+    {
+      "path": "other/9-4008-delskill/SKILL.md",
+      "safe": false,
+      "security_decision": {
+        "id": "d4c694dd1ad2c5fbcbe2988cb8d47ecb5162bf1701437ff9b23fd27faccf9358",
+        "status": "failed",
+        "reason": "scanner_errors",
+        "scanner": {
+          "name": "claude-skill-registry-security-scanner",
+          "version": "1.1.0",
+          "ruleset_sha256": "a31a767b8ab792c3d20d5e6b323d450bc47e9d66b2622d59098501c5d3f1f49b"
+        },
+        "provenance": {
+          "source_repo": "jknzYxVYulxwuJZ/996",
+          "source_path": "",
+          "source_ref": "",
+          "source_url": "",
+          "content_sha256": "6fb25c406e49e65a72d3a9ab66351a0cea638093f3c0326a2be7406a165228ad",
+          "scanned_at": "2026-05-31T18:14:13Z"
+        },
+        "issue_count": 1,
+        "error_count": 1,
+        "warning_count": 0
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "type": "no_frontmatter",
+          "message": "SKILL.md must have YAML frontmatter"
+        }
+      ]
+    },
+    {
+      "path": "other/broaderlevelskill/SKILL.md",
+      "safe": false,
+      "security_decision": {
+        "id": "959a1017b23c7bb749ad281ae2c5f418ba713e49df8bb27f56cd76809b63d82a",
+        "status": "failed",
+        "reason": "scanner_errors",
+        "scanner": {
+          "name": "claude-skill-registry-security-scanner",
+          "version": "1.1.0",
+          "ruleset_sha256": "a31a767b8ab792c3d20d5e6b323d450bc47e9d66b2622d59098501c5d3f1f49b"
+        },
+        "provenance": {
+          "source_repo": "INDA-HR/python_sdk",
+          "source_path": "",
+          "source_ref": "",
+          "source_url": "",
+          "content_sha256": "8ae7d6755f4751051df025bc774ebe02b41e56fa0241d8bdef5ce964524b801d",
+          "scanned_at": "2026-05-31T18:14:13Z"
+        },
+        "issue_count": 1,
+        "error_count": 1,
+        "warning_count": 0
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "type": "no_frontmatter",
+          "message": "SKILL.md must have YAML frontmatter"
+        }
+      ]
+    },
+    {
+      "path": "other/matchjobadevidenceskill/SKILL.md",
+      "safe": false,
+      "security_decision": {
+        "id": "d92b1fa2bfa54882d64b4bdbb0a09b0425d9d91a024e52e7f9a3c5a0ddff7855",
+        "status": "failed",
+        "reason": "scanner_errors",
+        "scanner": {
+          "name": "claude-skill-registry-security-scanner",
+          "version": "1.1.0",
+          "ruleset_sha256": "a31a767b8ab792c3d20d5e6b323d450bc47e9d66b2622d59098501c5d3f1f49b"
+        },
+        "provenance": {
+          "source_repo": "INDA-HR/python_sdk",
+          "source_path": "",
+          "source_ref": "",
+          "source_url": "",
+          "content_sha256": "abc8357d27ee1fd48a3c3d7f063244cf2818d03eafada9e9d302909196e61970",
+          "scanned_at": "2026-05-31T18:14:13Z"
+        },
+        "issue_count": 1,
+        "error_count": 1,
+        "warning_count": 0
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "type": "no_frontmatter",
+          "message": "SKILL.md must have YAML frontmatter"
+        }
+      ]
+    },
+    {
+      "path": "other/matchresumeevidenceskill/SKILL.md",
+      "safe": false,
+      "security_decision": {
+        "id": "481a81969370e75a9ab572ad8a0c6c35d997cd43c4b69709a9ac25f3a5348e08",
+        "status": "failed",
+        "reason": "scanner_errors",
+        "scanner": {
+          "name": "claude-skill-registry-security-scanner",
+          "version": "1.1.0",
+          "ruleset_sha256": "a31a767b8ab792c3d20d5e6b323d450bc47e9d66b2622d59098501c5d3f1f49b"
+        },
+        "provenance": {
+          "source_repo": "INDA-HR/php_sdk",
+          "source_path": "",
+          "source_ref": "",
+          "source_url": "",
+          "content_sha256": "a99c28891f64b3f473ef5313270ad11eddc0d00f82e1553f026f2f828b9ab982",
+          "scanned_at": "2026-05-31T18:14:13Z"
+        },
+        "issue_count": 1,
+        "error_count": 1,
+        "warning_count": 0
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "type": "no_frontmatter",
+          "message": "SKILL.md must have YAML frontmatter"
+        }
+      ]
+    },
+    {
+      "path": "other/pai/SKILL.md",
+      "safe": false,
+      "security_decision": {
+        "id": "3972505666055b6fd844b1224bf9959e81caacad749c7d7d82c0166a2a2dd0fc",
+        "status": "failed",
+        "reason": "scanner_errors",
+        "scanner": {
+          "name": "claude-skill-registry-security-scanner",
+          "version": "1.1.0",
+          "ruleset_sha256": "a31a767b8ab792c3d20d5e6b323d450bc47e9d66b2622d59098501c5d3f1f49b"
+        },
+        "provenance": {
+          "source_repo": "majiayu000/claude-skill-registry-data",
+          "source_path": "data/pai",
+          "source_ref": "main",
+          "source_url": "",
+          "content_sha256": "5d22dfa03334cf45562688368b0a98d7b6fde9e3bab37cf6975d2152a0334215",
+          "scanned_at": "2026-05-31T18:14:13Z"
+        },
+        "issue_count": 1,
+        "error_count": 1,
+        "warning_count": 0
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "type": "no_frontmatter",
+          "message": "SKILL.md must have YAML frontmatter"
+        }
+      ]
+    },
+    {
+      "path": "other/slimskill/SKILL.md",
+      "safe": false,
+      "security_decision": {
+        "id": "f6ad1678a5838ac11a2874f382fd6f2829592843a83471e2d3d356222dd90e66",
+        "status": "failed",
+        "reason": "scanner_errors",
+        "scanner": {
+          "name": "claude-skill-registry-security-scanner",
+          "version": "1.1.0",
+          "ruleset_sha256": "a31a767b8ab792c3d20d5e6b323d450bc47e9d66b2622d59098501c5d3f1f49b"
+        },
+        "provenance": {
+          "source_repo": "INDA-HR/python_sdk",
+          "source_path": "",
+          "source_ref": "",
+          "source_url": "",
+          "content_sha256": "8fbb6da3b4ecfa337c214abac60275dbdd3d7d5ea6b4f515ce1b19b743342699",
+          "scanned_at": "2026-05-31T18:14:13Z"
+        },
+        "issue_count": 1,
+        "error_count": 1,
+        "warning_count": 0
+      },
+      "issues": [
+        {
+          "severity": "error",
+          "type": "no_frontmatter",
+          "message": "SKILL.md must have YAML frontmatter"
+        }
+      ]
+    }
+  ]
+}

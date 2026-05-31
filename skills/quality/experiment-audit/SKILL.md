@@ -159,7 +159,7 @@ You are an experiment integrity auditor. Read ALL files listed below
     - Details: what specifically was found
 
     Overall verdict: PASS | WARN | FAIL
-
+    
     Be thorough. Read every eval script line by line.
 ```
 
@@ -241,7 +241,7 @@ Also write `EXPERIMENT_AUDIT.json` for machine consumption:
   Scope:               ⚠️ WARN — 2 scenes, paper says "comprehensive"
 
   Overall: ⚠️ WARN
-
+  
   See EXPERIMENT_AUDIT.md for details.
 ```
 

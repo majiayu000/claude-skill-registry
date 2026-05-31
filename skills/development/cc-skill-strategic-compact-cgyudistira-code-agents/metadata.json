@@ -1,0 +1,20 @@
+{
+  "name": "cc-skill-strategic-compact",
+  "description": "",
+  "repo": "cgyudistira/code-agents",
+  "category": "development",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/cgyudistira/code-agents",
+  "github_path": "skills/cc-skill-strategic-compact",
+  "github_branch": "main",
+  "dir_name": "cc-skill-strategic-compact-cgyudistira-code-agents",
+  "downloaded_at": "2026-02-05T05:35:15.426292Z",
+  "author": "cgyudistira",
+  "source_url": "https://github.com/cgyudistira/code-agents/blob/main/skills/cc-skill-strategic-compact/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Antigravity User",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

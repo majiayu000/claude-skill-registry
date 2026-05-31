@@ -17,7 +17,7 @@ At the start, use `update_plan` to track each step:
 4. Write shell files
 5. Present summary
 
-If decomposition lands on one shell, the Single-Shell Bail-out at the end of Step 2 calls `update_plan` with a shortened step list (removing the remaining steps) and exits.
+If the confirmed shell count is one, the Single-Shell Bail-out at the end of Step 2 calls `update_plan` with a shortened step list (removing the remaining steps) and exits.
 
 ## Step 1: Resolve the Source Spec
 
@@ -46,42 +46,28 @@ If the spec has no `## Requirements` section or contains no `R<N>`-numbered item
 
 ## Step 2: Decompose Into Shells
 
-Split the spec into shells where each shell fits a single Codex context session.
+Split the spec into shells, each a unit of work for a separate Codex session. The user sets the final count in the gate at the end of this step. The analysis here makes that choice informed: find where the work can be cut, name what must stay together, then recommend a count with options.
 
-### Shell-Worthiness
+### Find the Seams
 
-The default is one shell. Adding a shell costs a fresh-session handoff: lost in-memory context, a repeated pattern survey, and an extra `$pick-next-shell` round. Splitting is justified only when a forcing condition for splitting applies:
+Identify where the work can be cut and the order pieces must land:
 
-- **Context-window pressure.** The combined work would exhaust a single Codex session before completing: too much code to read in full, too many distinct codebase conventions to absorb, or too much output to generate in one window. Judge from the actual scope and codebase shape, not from headcounts. Distinct Produces/Consumes boundaries between two pieces are not enough on their own to justify a split.
-- **Hard dependency ordering.** A later piece cannot be meaningfully drafted or expanded until an earlier piece's concrete output exists, such as generated types, framework wiring, or established patterns that later sessions need to survey against.
+- **Dependency order** — foundational work before dependent work: setup and scaffolding (project init, config, CI), then the data and domain layer (models, schemas, types), then core business logic, then the API and service layer, then UI and frontend, then integration and end-to-end concerns. A hard dependency is a strong seam: a later piece cannot be drafted or expanded until an earlier piece's concrete output exists (generated types, framework wiring, patterns later sessions survey against).
+- **Natural boundaries** — candidate cut points where one piece's output is another's input. A spec's suggested groupings are a starting point; treat them as candidate seams the count gate may regroup.
 
-Independence is not a forcing condition. Treat two subsystems that share no coupling as cheap to combine into one shell. Split independent pieces only when the combined work also trips context-window pressure.
+A seam is weak when cutting it buys nothing: the two sides share no ordering dependency and would sit comfortably in one session. Shared-nothing independence alone is a weak seam. A seam is strong when one side must exist before the other, or when keeping both sides in one session would overload it: too much code to read in full, too many distinct conventions to absorb, or too much output for one window.
 
-If neither forcing condition applies, the work is one shell. Do not invent dependencies to hit a multi-shell shape. A spec's suggested groupings are a starting point — collapse adjacent suggestions into a single shell when no forcing condition separates them. Trust larger units of work; most spec items do not earn their own shell.
+### Keep Combined
+
+Some pieces must share a shell regardless of the count the user picks:
+
+- **Tightly-coupled pieces** — when UI, API, and tests are inseparable, keep them in one shell.
+- **Atomic ripple** — when a breaking change to a shared interface requires every consumer across modules to update in lockstep, the change and all consumer updates land in one shell regardless of size. Splitting leaves intermediate states that break dependents.
+- **Reachability** — each shell leaves the codebase fully integrated, with no components unreachable from the project's entry points. Bundle tightly-coupled producer/consumer pairs into one shell, or have a foundation shell include a minimal integration point (a single working endpoint or CLI command) that proves the code is reachable. When a shell builds infrastructure a later shell consumes, name that consumer in the Produces field.
+
+These set the ceiling on the count: the work cannot split past the point where a combined piece would break.
 
 Items folded into a shell go into that shell's Implementation Steps. If several folded items have no clear home, group them into a single "minor fixes" shell at the end.
-
-**Forcing condition — atomic ripple (forces combination).** When a breaking change to a shared interface requires every consumer across multiple modules to update in lockstep, the change and all consumer updates must land in one shell regardless of size. Splitting leaves intermediate states that break dependents.
-
-### Sizing
-
-- One shell = one logical unit of work (a feature, a subsystem, a layer)
-- Never split tightly-coupled pieces across shells (if UI + API + tests are inseparable, keep them together)
-- Each shell must leave the codebase fully integrated, with no components unreachable from the project's entry points
-- When a shell builds infrastructure that a later shell consumes, name the consumer explicitly in the Produces field
-
-### Ordering
-
-Order by dependency, foundational work before dependent work:
-
-1. Setup and scaffolding (project init, config, CI)
-2. Data and domain layer (models, schemas, types)
-3. Core business logic
-4. API and service layer
-5. UI and frontend
-6. Integration and end-to-end concerns
-
-Mitigate dead code risk in bottom-up ordering by bundling tightly-coupled producer/consumer pairs into the same shell, or having foundation shells include a minimal integration point (e.g., a single working endpoint or CLI command) that proves the code is reachable.
 
 ### Wiring Invariants
 
@@ -97,13 +83,17 @@ Each shell gets a slug derived from its title using spec slug rules (lowercase, 
 
 Example: spec slug `photo-sorter-v2`, Shell 3 titled "Build duplicate detection" → slug `photo-sorter-v2-03-build-duplicate-detection`, written to `.turbo/shells/photo-sorter-v2-03-build-duplicate-detection.md`.
 
-### Pre-Write Checkpoint
+### Recommend and Confirm Shell Count
 
-Before proceeding to Step 3, list each shell beyond the first and name the specific forcing condition that justifies its existence as a separate shell (context-window pressure or hard dependency ordering). If a shell's only justification is "this piece is independent" or "this is a separate subsystem", collapse it into an adjacent shell. Re-run this checkpoint until every shell beyond the first names a concrete forcing condition.
+Form a recommended count from the seams and combination constraints above. The trade-off: more shells each cost a fresh-session handoff (lost in-memory context, a repeated pattern survey, an extra `$pick-next-shell` round); fewer shells risk overloading a session. Land the recommendation where that balance falls: lean toward fewer when the seams are weak, toward more when a strong seam or session overload pushes the work apart.
+
+Output the recommendation as text: the recommended count, a one-line scope for each proposed shell, and a line or two on why that count over its neighbors. Then use `request_user_input` to have the user set the final count. Offer the recommended count first, marked "(Recommended)", alongside 1-2 alternative counts; the auto-appended "Other" lets the user type any count.
+
+If the user picks a different count, re-group to match it: merge adjacent shells to reduce, or split at a seam to raise, keeping combined pieces together. Carry the confirmed count into the rest of the decomposition.
 
 ### Single-Shell Bail-out
 
-If decomposition lands on exactly one shell, do not write a shell file. A one-shell decomposition is structurally equivalent to a plan: `depends_on` is empty, Covers lists every R-id, Produces/Consumes has no consumers, and `$pick-next-shell` automation has nothing to coordinate.
+If the confirmed count is one shell, do not write a shell file. A one-shell decomposition is structurally equivalent to a plan: `depends_on` is empty, Covers lists every R-id, Produces/Consumes has no consumers, and `$pick-next-shell` automation has nothing to coordinate.
 
 Present this message:
 
@@ -200,7 +190,7 @@ If a shell has no Open Questions, include the section with "None" so the structu
 
 ## Step 5: Present Summary
 
-Present a brief summary of the decomposition: number of shells, a one-line description of each shell's scope, and any assumptions made about ambiguities. Fit the summary to the decomposition rather than a fixed template.
+Present a brief summary of the decomposition: number of shells, a one-line description of each shell's scope, and any assumptions made about ambiguities. When the project delivers user-facing value, also present a short list of user stories capturing what users gain from it. Skip the stories for work with no user-facing gain, such as internal refactors or infrastructure. Fit both to the decomposition rather than a fixed template.
 
 Then use `request_user_input` to offer two paths:
 
@@ -216,7 +206,7 @@ Then update or check the active plan and proceed to any remaining task.
 ## Rules
 
 - Never merge setup and finalization into the same shell
-- If the spec is ambiguous about what belongs together, prefer combining: fewer, larger shells are safer than over-split ones
+- When it is ambiguous whether two pieces belong together, default to combining them into one candidate shell; the user can split at the gate
 - Each shell must be self-contained with enough structural context (Context, Produces, Consumes, Covers) to understand the work without reading the full spec
 - Shell files are the only outputs. Do not modify the spec or project files.
 - Every Consumes entry must be backed by an explicit edge in the shell's frontmatter `depends_on` (or marked "from existing codebase").

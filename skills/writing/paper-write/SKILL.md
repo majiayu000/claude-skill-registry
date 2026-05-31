@@ -516,7 +516,7 @@ Passive voice IS acceptable for: established facts, methods where agent is irrel
 
 ### Step 6: Cross-Review with REVIEWER_MODEL
 
-Send the complete draft to GPT-5.4 xhigh:
+Send the complete draft to GPT-5.5 xhigh:
 
 ```
 mcp__codex__codex:

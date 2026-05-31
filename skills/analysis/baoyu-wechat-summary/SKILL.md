@@ -73,6 +73,7 @@ EXTEND.md is plain text with `key: value` or `key=value` lines, `#` for comments
 | `default_version` | `normal` / `roast` / `both` | `normal` | Which version(s) to generate when the user doesn't say otherwise. |
 | `default_time_range` | string (e.g. `7d`, `24h`, `1d`) | (none) | Default range when the user omits time and there's no incremental anchor. |
 | `data_root` | path | `{project_root}/wechat` | Override where digest folders live. |
+| `bot_aliases` | comma-separated strings | `bot, 精华bot` | Names that trigger the 「@bot 答疑」 section. A message containing `@<alias>` (case-insensitive) is treated as a question/request aimed at the digest bot. Pick names that do NOT match any real group member or existing bot, to avoid ambiguity. |
 
 A starter template lives at [EXTEND.md.example](EXTEND.md.example).
 
@@ -239,6 +240,26 @@ If a match is found:
 
 This is a heuristic — when uncertain (multiple matches, malformed title), default to `history.json` and tell the user what was skipped.
 
+### Step 3.9: Detect @bot requests (if any)
+
+Some group members address the digest bot directly — e.g. `@bot 帮我把昨天的讨论捋一下` or `@精华bot 这个链接讲了啥`. Catch these so each digest can answer them in a dedicated section instead of dropping them as noise.
+
+**Trigger**: a message whose text contains `@<alias>` for any alias in `bot_aliases` (from EXTEND.md; default `bot`, `精华bot`; case-insensitive). Aliases are stored as bare names — match the `@` prefix plus the alias.
+
+**Extract** into an internal worklist `== @bot 请求清单 ==` (working memory only — never written to the final digest):
+
+- Asker's real name — after Step 3.6 resolution; substitute `self_display` for the `self_wxid` user.
+- Request body — the text after stripping the `@<alias>` prefix. If the message is a reply (per Step 3.5's quote/reply fields), include the quoted message as context.
+- Anchor `local_id` for back-reference.
+
+**Misfire filtering**: if a real member's nickname happens to equal an alias, judge by context. Keep only messages genuinely aimed at the digest bot (a question or request for it); skip clear person-to-person talk — a reply to that real person, or banter teasing them. (Choosing a `bot_aliases` value no real member uses avoids this at the source; the filter is a backstop.) Pure greetings/banter (`@bot 在吗`) may be kept with a brief reply.
+
+**Answer-source constraint** (honored when rendering the section per [references/output-formats.md](references/output-formats.md)): answer from the group chat context plus your own knowledge only — **no web access**. For any request needing real-time or external information you can't verify, say so honestly (`这个我查不到实时数据，需要联网确认`) rather than fabricating.
+
+**No hits** → both versions omit the @bot 答疑 section entirely.
+
+Do this in the same read-through as Round 1's skeleton (via its `== @bot 请求清单 ==` block) so the messages aren't scanned twice.
+
 Generate the digest in three rounds so nothing slips through. The methodology stays here in SKILL.md; the content/style rules live in [references/output-formats.md](references/output-formats.md) — read that file in Round 2 before drafting.
 
 #### Round 1 — Build the skeleton
@@ -258,6 +279,10 @@ Internal working format (not written to the final file):
 
 == 发言统计 ==
 1. XXX — N 条  2. YYY — N 条  ...
+
+== @bot 请求清单（如有）==
+1. {提问者真名}（锚点 id：54080）— {去掉 @别名的请求正文}（reply 时附被回复内容）
+（本期无 @bot 请求则写「无」）
 ```
 
 Topic principles:

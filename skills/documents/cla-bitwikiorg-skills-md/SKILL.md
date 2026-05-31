@@ -1,56 +1,36 @@
 ---
-description: Imported skill cla from openai
-name: cla
-signature: 3c3fc352c13db113d079a637f338e696e2dc47af53bae3394cf8fb8de6daa562
-source: /a0/tmp/skills_research/openai/CLA.md
+description: Imported skill claude from agentskills
+name: claude
+signature: 3b7644e1732327259961039aaaaff41c5d8e773daa9994ab23a80c4377e46428
+source: /a0/tmp/skills_research/agentskills/docs/CLAUDE.md
 ---
 
-# Individual Contributor License Agreement (v1.0, OpenAI)
+# CLAUDE.md
 
-_Based on the Apache Software Foundation Individual CLA v 2.2._
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository. The project defines an open format for teaching AI agents specialized workflows through SKILL.md files.
 
-By commenting **“I have read the CLA Document and I hereby sign the CLA”**
-on a Pull Request, **you (“Contributor”) agree to the following terms** for any
-past and future “Contributions” submitted to the **OpenAI Codex CLI project
-(the “Project”)**.
+## Documentation
 
----
+The Agent Skills documentation site, defined in the `docs/` directory, is built with [Mintlify](https://mintlify.com). 
 
-## 1. Definitions
+### Quick Start Commands
 
-- **“Contribution”** – any original work of authorship submitted to the Project
-  (code, documentation, designs, etc.).
-- **“You” / “Your”** – the individual (or legal entity) posting the acceptance
-  comment.
+```bash
+# Install Mintlify CLI (required for local development)
+npm i -g mint
 
-## 2. Copyright License
+# Run local development server (run from /docs directory)
+cd docs && mint dev
 
-You grant **OpenAI, Inc.** and all recipients of software distributed by the
-Project a perpetual, worldwide, non‑exclusive, royalty‑free, irrevocable
-license to reproduce, prepare derivative works of, publicly display, publicly
-perform, sublicense, and distribute Your Contributions and derivative works.
+# Update Mintlify CLI if dev server issues occur
+mint update
+```
 
-## 3. Patent License
+Local preview available at `http://localhost:3000`
 
-You grant **OpenAI, Inc.** and all recipients of the Project a perpetual,
-worldwide, non‑exclusive, royalty‑free, irrevocable (except as below) patent
-license to make, have made, use, sell, offer to sell, import, and otherwise
-transfer Your Contributions alone or in combination with the Project.
+### Development Notes
 
-If any entity brings patent litigation alleging that the Project or a
-Contribution infringes a patent, the patent licenses granted by You to that
-entity under this CLA terminate.
-
-## 4. Representations
-
-1. You are legally entitled to grant the licenses above.
-2. Each Contribution is either Your original creation or You have authority to
-   submit it under this CLA.
-3. Your Contributions are provided **“AS IS”** without warranties of any kind.
-4. You will notify the Project if any statement above becomes inaccurate.
-
-## 5. Miscellany
-
-This Agreement is governed by the laws of the **State of California**, USA,
-excluding its conflict‑of‑laws rules. If any provision is held unenforceable,
-the remaining provisions remain in force.
+- **Navigation**: Defined in `docs/docs.json` under `navigation.pages` array
+- **Adding pages**: Create new `.mdx` file in `/docs`, add filename (without extension) to navigation
+- **Deployment**: Automatic on push to `main` branch
+- **Troubleshooting**: If page shows 404, ensure you're running `mint dev` from directory containing `docs.json`

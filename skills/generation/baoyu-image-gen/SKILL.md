@@ -179,7 +179,7 @@ For OpenAI, the built-in default is `gpt-image-2`. `gpt-image-1.5`, `gpt-image-1
 
 For Azure, `--model` / `default_model.azure` is the Azure deployment name. `AZURE_OPENAI_DEPLOYMENT` is the preferred env var; `AZURE_OPENAI_IMAGE_MODEL` is kept as a backward-compatible alias. If your Azure deployment is named after the underlying model, use `gpt-image-2`; otherwise use the exact custom deployment name.
 
-EXTEND.md overrides env vars: if EXTEND.md sets `default_model.google: "gemini-3-pro-image-preview"` and the env var sets `GOOGLE_IMAGE_MODEL=gemini-3.1-flash-image-preview`, EXTEND.md wins.
+EXTEND.md overrides env vars: if EXTEND.md sets `default_model.google: "gemini-3-pro-image"` and the env var sets `GOOGLE_IMAGE_MODEL=gemini-3.1-flash-image`, EXTEND.md wins.
 
 **Display model info before each generation**:
 

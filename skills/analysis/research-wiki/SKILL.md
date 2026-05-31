@@ -2,7 +2,7 @@
 name: research-wiki
 description: "Persistent research knowledge base that accumulates papers, ideas, experiments, claims, and their relationships across the entire research lifecycle. Inspired by Karpathy's LLM Wiki pattern. Use when user says \"知识库\", \"research wiki\", \"add paper\", \"wiki query\", \"查知识库\", or wants to build/query a persistent field map."
 argument-hint: [subcommand: init|ingest|sync|query|update|lint|stats]
-allowed-tools: Bash(*), Read, Write, Edit, Grep, Glob, Agent, WebSearch, WebFetch, mcp__codex__codex, mcp__codex__codex-reply
+allowed-tools: Bash(*), Read, Write, Edit, Grep, Glob, WebSearch, WebFetch, mcp__codex__codex, mcp__codex__codex-reply
 ---
 
 # Research Wiki: Persistent Research Knowledge Base
@@ -40,6 +40,22 @@ Inspired by [Karpathy's LLM Wiki pattern](https://gist.github.com/karpathy/442a6
 | `supersedes` | paper → paper | Newer work replaces older |
 
 Edges are stored in `graph/edges.jsonl` only. The `## Connections` section on each page is **auto-generated** from the graph — never hand-edit it.
+
+### Capture hygiene (anti-self-poisoning)
+
+Before persisting an **idea / claim / experiment** note, screen it for
+operational noise that would harden into a self-cited falsehood (see
+[`shared-references/capture-antipatterns.md`](../shared-references/capture-antipatterns.md)).
+Resolve the helper via the canonical chain (integration-contract §2):
+`.aris/tools/capture_filter.py` → `tools/capture_filter.py` →
+`$ARIS_REPO/tools/capture_filter.py` (warn-and-skip if unresolved). Run
+`python3 <capture_filter> -` on the note text; if it flags **env-failure /
+transient-error / negative-tool-claim**, do NOT store it as a durable node —
+rewrite it to the *fix / missing config / workaround*, or drop it. Never store
+"codex/gemini/the reviewer can't do X" — that gets loaded into every future
+session and cited against the agent long after the real cause is gone. (The wiki's
+"failed ideas → anti-repeat memory" is the GOOD inverse: a class-level *research*
+finding, not operational noise.)
 
 ## Wiki Directory Structure
 
@@ -246,7 +262,7 @@ Generate `query_pack.md` — a compressed, context-window-friendly summary:
 
 | Section | Budget | Content |
 |---------|--------|---------|
-| Project direction | 300 chars | From CLAUDE.md or RESEARCH_BRIEF.md |
+| Project direction | full sections | Structured extraction from `RESEARCH_BRIEF.md` by `## ` heading (Problem / Constraints / Direction / Background / Non-Goals / Domain Knowledge / Existing Results), in priority order. No per-field char cap — the 8000-char assembly loop is the only safety net. Falls back to a flat 600-char slice if the brief uses no known headings. |
 | Top 5 gaps | 1200 chars | From gap_map.md, ranked by: unresolved + linked ideas + failed experiments |
 | Paper clusters | 1600 chars | 3-5 clusters by tag overlap, 2-3 sentences each |
 | Failed ideas | 1400 chars | **Always included** — highest anti-repetition value |

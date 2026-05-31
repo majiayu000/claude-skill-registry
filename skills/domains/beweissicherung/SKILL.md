@@ -98,7 +98,7 @@ An: [Name, Funktion, Abteilung]
 
 Betreff: Aufbewahrungspflicht im Zusammenhang mit [Sachverhaltskurzbezeichnung]
 
-Aufgrund eines bevorstehenden / laufenden Rechtsstreits [Aktenzeichen oder Sachverhalt]
+Aufgrund eines bevorstehenden / laufenden Rechtsstreits [Aktenzeichen oder Sachverhalt] 
 ordnen wir an, folgende Unterlagen bis auf Weiteres aufzubewahren:
 
 Betroffene Dokumente:
@@ -106,7 +106,7 @@ Betroffene Dokumente:
 2. Verträge und Anlagen zu [Projekt]
 3. [weitere Kategorien]
 
-LÖSCHVERBOT: Es ist untersagt, die oben bezeichneten Unterlagen zu löschen, zu
+LÖSCHVERBOT: Es ist untersagt, die oben bezeichneten Unterlagen zu löschen, zu 
 vernichten, zu überschreiben oder anderweitig unzugänglich zu machen.
 
 Nächste Überprüfung: TT.MM.JJJJ

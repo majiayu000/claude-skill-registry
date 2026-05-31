@@ -1,0 +1,16 @@
+{
+  "name": "hello-world",
+  "repo": "bas/entire-test",
+  "path": ".claude/skills/hello-world/SKILL.md",
+  "category": "agent",
+  "source": "github.com/bas/entire-test",
+  "dir_name": "hello-world-bas-entire-test-2",
+  "downloaded_at": "2026-02-15T06:31:06.940108Z",
+  "author": "bas",
+  "source_url": "https://github.com/bas/entire-test/blob/main/.claude/skills/hello-world/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bas/entire-test/blob/main/.claude/skills/hello-world/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

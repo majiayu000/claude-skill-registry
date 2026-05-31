@@ -30,7 +30,7 @@ For each group:
    - Independent group: branch from the default branch
    - Stacked group: branch from the previous group's branch
 2. **Restore and stage** this group's files from the stash (`git checkout stash -- <files>` restores and stages in one operation). For files with hunks belonging to different groups, restore the file, then use Edit to remove the hunks that belong to later groups before staging. After committing, reset the working tree (`git checkout -- .`) to clean up before the next group.
-3. **Run `/commit-staged-push` Skill**
+3. **Commit and push**: run the `/commit-rules` skill to load commit message rules, commit the staged changes following them, then `git push`
 4. **Create or update PR**:
    - Staying on existing branch with a PR: run the `/update-pr` skill
    - New branch: run the `/create-pr` skill targeting the appropriate base (default branch for independent groups, previous group's branch for stacked groups)
@@ -45,6 +45,7 @@ Then use the TaskList tool and proceed to any remaining task.
 
 ## Rules
 
+- Run the `/commit-rules` skill before every commit; do not commit without loading it first.
 - Never lose uncommitted work. If any step fails (commit hook, push, PR creation), stop and report the failure, which groups have been shipped, and that the stash still contains all changes for recovery.
 - Stacked PRs target the previous group's branch. Independent PRs target the default branch.
 - For stacked groups, the PR description should note the dependency chain.

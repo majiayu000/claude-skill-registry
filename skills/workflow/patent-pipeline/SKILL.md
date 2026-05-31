@@ -249,7 +249,7 @@ Invoke `/patent-review`:
 /patent-review "patent/"
 ```
 
-This runs 2 rounds of examiner-style review via GPT-5.4 xhigh. The examiner evaluates clarity, written description, enablement, novelty, non-obviousness, and claim scope.
+This runs 2 rounds of examiner-style review via GPT-5.5 xhigh. The examiner evaluates clarity, written description, enablement, novelty, non-obviousness, and claim scope.
 
 **State**: Write `PATENT_STATE.json` with `phase: 4` and review score.
 

@@ -105,6 +105,8 @@ Risk Classification: [Minimal/Limited/High/Unacceptable]
 
 ### Decision
 Regulatory Gate: [Pass/Fail/N-A]
+
+(If Fail, lead the Decision block with a distinct blocker line so it pops — e.g. `BLOCKED: regulatory gate failed — [reason]` — rather than letting the verdict blend into the prose above. Von Restorff; per `harness/design-principles.md`.)
 ```
 
 ## Important Disclaimer

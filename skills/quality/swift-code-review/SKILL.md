@@ -9,16 +9,16 @@ description: Reviews Swift code for concurrency safety, error handling, memory m
 
 Follow this sequence **in order**. Do not emit findings until every **Pass** below is satisfied.
 
-1. **Swift / toolchain baseline** — Establish language and tooling context: `Package.swift` `// swift-tools-version` and any per-target Swift language version or `swiftSettings` in the manifest; for Xcode, `SWIFT_VERSION` (or equivalent) in project or target build settings; note if review is single-file only.
+1. **Swift / toolchain baseline** — Establish language and tooling context: `Package.swift` `// swift-tools-version` and any per-target Swift language version or `swiftSettings` in the manifest; for Xcode, `SWIFT_VERSION` (or equivalent) in project or target build settings; note if review is single-file only.  
    **Pass:** You state a concrete Swift language version or mode (e.g. Swift 6 language mode, tools 5.10) *before* advice that depends on strict concurrency, migration-only syntax, or SDK availability.
 
-2. **Read surrounding code** — For each changed `.swift` file, read the full enclosing type, function, method, or property that contains the edits, not only the diff hunk.
+2. **Read surrounding code** — For each changed `.swift` file, read the full enclosing type, function, method, or property that contains the edits, not only the diff hunk.  
    **Pass:** At least one full enclosing symbol (type or member) containing the change was read per changed file.
 
-3. **Scope the checklist** — Using [Quick Reference](#quick-reference), decide which [Review Checklist](#review-checklist) rows and [references](#when-to-load-references) apply; open those reference files; skip rows clearly unrelated to the diff.
+3. **Scope the checklist** — Using [Quick Reference](#quick-reference), decide which [Review Checklist](#review-checklist) rows and [references](#when-to-load-references) apply; open those reference files; skip rows clearly unrelated to the diff.  
    **Pass:** The review (or working notes) lists which checklist areas you applied, or marks areas N/A with a one-line reason tied to the diff (e.g. “no SwiftUI / @Observable in change”).
 
-4. **Pre-report verification** — Load and follow [review-verification-protocol](../review-verification-protocol/SKILL.md).
+4. **Pre-report verification** — Load and follow [review-verification-protocol](../review-verification-protocol/SKILL.md).  
    **Pass:** That skill’s **Hard gates (sequenced)** are satisfied for each finding you will report (full symbol read, usage search before “unused”, caller checked before “missing handling”, severity calibrated, `[FILE:LINE]` proof).
 
 ## Hard gates (same sequence, shorter)

@@ -1,9 +1,9 @@
 {
-  "name": "cla",
+  "name": "claude",
   "repo": "bitwikiorg/skills.md",
-  "path": "sources/openai/cla/SKILL.md",
+  "path": "sources/agentskills/claude/SKILL.md",
   "source": "github.com/bitwikiorg/skills.md",
-  "downloaded_at": "2026-01-22T01:14:57.491008Z",
+  "downloaded_at": "2026-01-22T01:15:02.706750Z",
   "dir_name": "cla-bitwikiorg-skills-md",
   "category": "documents",
   "github_path": "sources/vercel/claude",

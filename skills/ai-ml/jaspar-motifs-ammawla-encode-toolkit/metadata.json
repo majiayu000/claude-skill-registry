@@ -1,0 +1,17 @@
+{
+  "name": "jaspar-motifs",
+  "repo": "ammawla/encode-toolkit",
+  "path": "plugin/skills/jaspar-motifs/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-ml",
+  "source": "github.com/ammawla/encode-toolkit",
+  "dir_name": "jaspar-motifs-ammawla-encode-toolkit",
+  "downloaded_at": "2026-05-31T04:08:23.132547Z",
+  "author": "ammawla",
+  "source_url": "https://github.com/ammawla/encode-toolkit/blob/main/plugin/skills/jaspar-motifs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ammawla/encode-toolkit/blob/main/plugin/skills/jaspar-motifs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

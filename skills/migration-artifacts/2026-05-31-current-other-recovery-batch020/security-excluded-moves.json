@@ -1,0 +1,57 @@
+{
+  "generated_at": "2026-05-31T17:53:02.814520+00:00",
+  "security_report": "/private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/security-report-excluded-residual.json",
+  "changed_file_security_report_after_revert": "/private/tmp/claude-skill-registry-data-other-20260531/migration-artifacts/2026-05-31-current-other-recovery-batch020/security-report-changed.json",
+  "reverted_move_count": 7,
+  "reverted_moves": [
+    {
+      "source_path": "other/20260102-214532-trinity-auto-boot-validator-agentgptsmith-monadframework-2",
+      "target_path": "ai-ml/20260102-214532-trinity-auto-boot-validator-agentgptsmith-monadf",
+      "target_category": "ai-ml",
+      "target_skill": "ai-ml/20260102-214532-trinity-auto-boot-validator-agentgptsmith-monadf/SKILL.md",
+      "reason": "changed-file security scan failed after category move; keep residual in other"
+    },
+    {
+      "source_path": "other/9-4008-delskill",
+      "target_path": "gaming/9-4008-delskill",
+      "target_category": "gaming",
+      "target_skill": "gaming/9-4008-delskill/SKILL.md",
+      "reason": "changed-file security scan failed after category move; keep residual in other"
+    },
+    {
+      "source_path": "other/broaderlevelskill",
+      "target_path": "api/broaderlevelskill",
+      "target_category": "api",
+      "target_skill": "api/broaderlevelskill/SKILL.md",
+      "reason": "changed-file security scan failed after category move; keep residual in other"
+    },
+    {
+      "source_path": "other/matchjobadevidenceskill",
+      "target_path": "api/matchjobadevidenceskill",
+      "target_category": "api",
+      "target_skill": "api/matchjobadevidenceskill/SKILL.md",
+      "reason": "changed-file security scan failed after category move; keep residual in other"
+    },
+    {
+      "source_path": "other/matchresumeevidenceskill",
+      "target_path": "api/matchresumeevidenceskill",
+      "target_category": "api",
+      "target_skill": "api/matchresumeevidenceskill/SKILL.md",
+      "reason": "changed-file security scan failed after category move; keep residual in other"
+    },
+    {
+      "source_path": "other/pai",
+      "target_path": "ai-llm/pai",
+      "target_category": "ai-llm",
+      "target_skill": "ai-llm/pai/SKILL.md",
+      "reason": "changed-file security scan failed after category move; keep residual in other"
+    },
+    {
+      "source_path": "other/slimskill",
+      "target_path": "api/slimskill",
+      "target_category": "api",
+      "target_skill": "api/slimskill/SKILL.md",
+      "reason": "changed-file security scan failed after category move; keep residual in other"
+    }
+  ]
+}

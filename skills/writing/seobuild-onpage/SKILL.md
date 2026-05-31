@@ -1,9 +1,10 @@
 ---
 name: seobuild-onpage
-version: 1.7.1
+version: 1.9.0
 description: >
   Write SEO pages that rank on Google AND get cited by LLMs. Uses live SERP data,
-  500-token chunk architecture, and the Reddit Test quality gate.
+  500-token chunk architecture, RAG optimization for Gemini 3.5 Flash, and the
+  Reddit Test quality gate.
   Triggers on: "write an SEO page", "seo-agi", "seo page for [keyword]",
   "rank for [keyword]", "rewrite this page for SEO", "GEO", "AEO",
   "write a page that ranks".
@@ -99,7 +100,8 @@ If the user has Ahrefs or SEMRush MCP servers connected, use them to supplement 
 
 | Priority | Source | What It Provides |
 |----------|--------|-----------------|
-| 1 | DataForSEO | Live SERP, competitor content parsing, PAA, keyword volumes |
+| 1 | **Massive Web Render** (v1.9.0+) | Competitor content parsing only. Returns clean rendered markdown including JS-loaded content. Used when `MASSIVE_API_TOKEN` is set. Falls back to DataForSEO per-URL on failure. Does NOT provide SERP organic results. |
+| 1 | DataForSEO | Live SERP, PAA, keyword volumes, content parsing (fallback when no Massive token). Required -- the SERP and keyword data path has no alternative today. |
 | 2 | Ahrefs MCP | Keyword difficulty, DR, traffic estimates, backlink data |
 | 3 | SEMRush MCP | Keyword analytics, organic research, domain overview |
 | 4 | GSC | Owned query performance, CTR, position, cannibalization |
@@ -257,6 +259,9 @@ When generating HTML output, wrap the main article body in `<article>`, each log
 
 ### Proof-Term Proximity
 The specific numbers, entity names, and operational details that support a claim must appear in the same 500-token chunk as the H2 they support -- not separated by other sections. A proof term three sections away from its heading does not strengthen that heading's embedding signal. BERT and Neural Matching evaluate relevance within the passage window, not page-wide. If the supporting evidence for a claim cannot fit in the same chunk, split the topic into two headings, each with its own evidence block. Never orphan a proof term from its context heading.
+
+### DOM Vectoring & Shard Extraction Compliance
+Because Google utilizes Gemini 3.5 Flash via a Retrieval-Augmented Generation (RAG) architecture to build AI Overviews, it extracts structural "shards" directly from the raw HTML DOM. Do not rely on JSON-LD header injections to feed the AI Overview; layout tabular data in clean, front-facing HTML `<table>` formats or explicit inline RDFa spans. The RAG pipeline prioritizes text readily visible to a clean session crawler over JavaScript-rendered data wrappers.
 
 ### The RDFa Hack
 LLMs often ignore JSON-LD in the header. Embed semantic data directly inline using RDFa or Microdata (`<span>` tags). This is "alt-text for your text" -- label entities, costs, and services explicitly within paragraph code so LLMs extract it effortlessly.
@@ -507,11 +512,13 @@ A Tier 1 asset is a property where (a) Google or its retrieval pipeline already 
 | 1 | Medium (medium.com) | High DR, fast indexing, retrieved heavily by Perplexity and ChatGPT |
 | 1 | Custom Subreddit (you moderate) | Indexed by Google as Reddit subdomain, AI Overviews cite Reddit at high rates |
 | 1 | LinkedIn Articles (personal or company page) | Authority signal, indexed, surfaces in entity searches |
+| 1 | Trust Pilot (trustpilot.com) | Highly weighted trust/relevance signal for LLMs. Directly changes brand description vectoring in Gemini/ChatGPT inside 48 hours. |
+| 1 | Off-Page Schema Injection | Embedding `Organization` and `Person` schema in Cloud Pages / PRs linking back to the GBP CID blocks Google NavBoost from rank-shuffling (AB testing). |
 | 2 | YouTube video description + transcript | Owned, indexed, feeds entity graph for the channel |
 | 2 | GitHub repository README (if relevant vertical) | High trust, indexed, citation-ready |
 | 2 | Substack post (your own newsletter) | Owned domain, indexable, RSS-discoverable |
 
-Tier 2 assets are useful as additional corroboration but cannot substitute for the Tier 1 spread. A complete Tributary Trust deployment has **at minimum 4 of the 5 Tier 1 assets** populated for the target entity before the money page is published.
+Tier 2 assets are useful as additional corroboration but cannot substitute for the Tier 1 spread. A complete Tributary Trust deployment has **at minimum 5 of the 7 Tier 1 assets** populated for the target entity before the money page is published.
 
 ### The Companion Content Rule
 
@@ -765,9 +772,12 @@ Run before every delivery. If any answer is NO, revise before delivering.
 | 43 | N-Gram AI Alignment -- 2+ bigrams/trigrams from top 3 competitors verbatim in AI Summary Nugget? | YES/NO |
 | 44 | Dual-Intent -- Primary intent satisfied in first 500 tokens AND Secondary action funnel present? | YES/NO |
 | 45 | Status Code Governance -- every legacy URL has explicit 301 or 410 recommendation (no silent leave-as-is)? | YES/NO |
-| | **Score: X/45** | |
+| 46 | Trust Pilot entity profiling drafted with exact service target bigrams? | YES/NO |
+| 47 | Off-page assets mapped with cross-cutting Organization/Person schema to target GBP? | YES/NO |
+| 48 | Critical data points visible in raw HTML DOM (not buried solely in JSON-LD)? | YES/NO |
+| | **Score: X/48** | |
 
-Pages scoring below 36/45 must be revised before delivery. Items marked NO must include a note on what needs to be fixed.
+Pages scoring below 39/48 must be revised before delivery. Items marked NO must include a note on what needs to be fixed.
 
 ### Spam Resilience Priority: Technical Relevance > Human Tone
 In the 2025-2026 spam update cycle, Google is prioritizing **technical relevance density** (factual accuracy, entity coverage, structured data completeness) over "human-sounding" prose. A page that is factually perfect, entity-rich, and operationally detailed but "sounds like AI" will outperform a page with warm, conversational tone but thin substance.

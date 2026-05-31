@@ -1,7 +1,6 @@
 ---
 name: memory-palace-architect
-description: 'Design memory palace structures with spatial layouts and domain org.'
-version: 1.9.0
+description: Designs memory palace structures with spatial layouts and domain organization. Use when creating a new palace or planning knowledge architecture by hand.
 alwaysApply: false
 category: architecture
 tags:
@@ -23,6 +22,14 @@ complexity: intermediate
 model_hint: standard
 estimated_tokens: 600
 ---
+> **Status: unwired**. As of v1.9.4, no command or agent
+> invokes `Skill(memory-palace:memory-palace-architect)`.
+> The `/palace create` command does palace creation directly
+> without routing through this skill. The architectural
+> guidance below is reference material; consult it when
+> designing a new palace by hand. Tracked for follow-up in
+> the April 2026 skill audit.
+
 ## Table of Contents
 
 - [What It Is](#what-it-is)

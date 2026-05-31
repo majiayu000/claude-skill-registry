@@ -1,11 +1,11 @@
 ---
 name: simplify-code
-description: "Run a multi-agent review of changed files for reuse, quality, efficiency, and clarity issues followed by automated fixes. Use when the user asks to \"simplify code\", \"review changed code\", \"check for code reuse\", \"review code quality\", \"review efficiency\", \"simplify changes\", \"clean up code\", \"refactor changes\", or \"run simplify\"."
+description: "Run a multi-agent review of changed files for reuse, quality, efficiency, clarity, and altitude issues followed by automated fixes. Use when the user asks to \"simplify code\", \"review changed code\", \"check for code reuse\", \"review code quality\", \"review efficiency\", \"simplify changes\", \"clean up code\", \"refactor changes\", or \"run simplify\"."
 ---
 
 # Simplify Code
 
-Review code for reuse, quality, efficiency, and clarity issues, then fix them.
+Review code for reuse, quality, efficiency, clarity, and altitude issues, then fix them.
 
 ## Step 1: Determine the Scope
 
@@ -15,9 +15,9 @@ Determine what to review:
 - If a **file list or directory** was provided, review those files directly (read the full files, not a diff).
 - If **neither** was provided, determine the appropriate diff command (e.g., `git diff`, `git diff --cached`, `git diff HEAD`) based on the current git state. If there are no git changes, review the most recently modified files mentioned in the conversation.
 
-## Step 2: Launch Four Review Agents in Parallel
+## Step 2: Launch Five Review Agents in Parallel
 
-Launch all four agents below in a single assistant message so they run concurrently. Pass the scope from Step 1 to each agent.
+Launch all five agents below in a single assistant message so they run concurrently. Pass the scope from Step 1 to each agent.
 
 ### Agent 1: Code Reuse Review
 
@@ -61,9 +61,17 @@ Review the same changes for clarity, standards, and balance:
 5. **Dead weight**: redundant code, abstractions that add indirection without value
 6. **Unnecessary comments**: comments explaining WHAT the code does, narrating the change, or referencing the task/caller — delete; keep only non-obvious WHY (hidden constraints, subtle invariants, workarounds)
 
+### Agent 5: Altitude and Fix-Depth Review
+
+Review the same changes for whether each is implemented at the right depth:
+
+1. **Special case on shared infrastructure**: a narrow branch, flag, or conditional bolted onto a shared mechanism to handle one case, where generalizing the mechanism would remove the need for the special case. Name the generalization.
+2. **Shallow fix at the symptom**: a change applied at one call site that the same shape will require again at the next similar site. Prefer addressing the shared root.
+3. **Wrong layer**: logic placed in a caller, wrapper, or leaf when it belongs in the shared layer all paths flow through, or pushed into shared infrastructure when it is specific to one caller.
+
 ## Step 3: Fix Issues
 
-Wait for all four agents to complete. Aggregate their findings, then apply each fix directly, skipping false positives.
+Wait for all five agents to complete. Aggregate their findings, then apply each fix directly, skipping false positives.
 
 When done, briefly summarize what was fixed (or confirm the code was already clean).
 

@@ -86,7 +86,7 @@ Before starting the first wave (Discovery role):
 5. **Read Session Config**: Parse Session Config per `skills/_shared/config-reading.md`. Store result as `$CONFIG`. Extract these fields:
    - `persistence` (default: true), `enforcement` (default: warn), `isolation` (default: auto)
    - `agents-per-wave` (default: 6), `max-turns` (default: auto), `pencil` (default: null)
-
+   
    **Execution Config shortcut:** If the session-plan output contains an `### Execution Config` section, its execution-level fields (waves, agents-per-wave, isolation, enforcement, max-turns) take precedence over `$CONFIG`. Session-level fields (persistence, pencil) always come from `$CONFIG`. If the Execution Config section is missing, use `$CONFIG` alone.
 6. **Initialize session metrics** (if `persistence` enabled): Prepare a metrics tracking object for this session:
    - `session_id`: `<branch>-<YYYY-MM-DD>-<HHmm>` (HHmm from `started_at` — ensures uniqueness across multiple sessions per day)
@@ -433,7 +433,7 @@ const result = await runQualityGateWithRetry({
 
 ### Anti-pattern (BE-012 awareness)
 
-The fixer-agent prompt MUST include a reminder of `.claude/rules/test-quality.md`
+The fixer-agent prompt MUST include a reminder of `.claude/rules/testing.md` § "Test Quality — False-Positive Prevention"
 "test-the-mock" anti-pattern. A fix that makes tests green by mocking out the
 real failure is a regression vector. The fixer prompt should explicitly say:
 "Do NOT change test mocks to make tests pass. Fix the actual code defect."

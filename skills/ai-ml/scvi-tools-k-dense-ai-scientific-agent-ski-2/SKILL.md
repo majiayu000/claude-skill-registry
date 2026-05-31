@@ -198,3 +198,4 @@ For reproducible environments, pin a version: `uv pip install scvi-tools==1.4.3`
 5. **Model saving**: Always save trained models to avoid retraining
 6. **GPU usage**: Enable GPU acceleration for large datasets (`accelerator="gpu"`)
 7. **Scanpy integration**: Store outputs in AnnData objects for downstream analysis
+

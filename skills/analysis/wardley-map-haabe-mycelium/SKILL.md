@@ -3,6 +3,8 @@ name: wardley-map
 description: "Create or update a Wardley Map of the value chain. Maps user needs, components, evolution stages, and strategic gameplay."
 metadata:
   instruction_budget: "10"
+  framework_dependency: "mycelium"
+  framework_dependency_note: "This skill is designed to run within the Mycelium framework (https://github.com/haabe/mycelium). Standalone use will skip the canvas state, theory gates, and harness behavior the skill assumes. Install: /plugin install mycelium@haabe/mycelium."
 ---
 
 # Wardley Mapping

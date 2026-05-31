@@ -26,6 +26,7 @@ description: Use when user asks to create/design a big screen (大屏), full-scr
    - 错字段不报错只会被默认值覆盖（看似"有效"实则无效）。禁止按 Vue/React/Bootstrap 习惯拍脑袋写 `bgColor`/`fontColor`/`borderColor`——实际可能是 `backgroundColor`/`alternateBackgroundColor`/`BGC` 等平台自定义名
    - ECharts 标准字段（`series[*].itemStyle.color` / `xAxis.axisLabel.color` 等）可凭记忆写，不受此规则限制
 9. **配色禁止 AI 自编色值**——用户说"复古/商务/科技/红涨绿跌"等命名色板，必走 `style_ops.py set-palette --name <名称>`（或 spec 顶层 `palette`）。查色值用 `style_ops.py list-palettes`，不调 API 不耗 token
+10. 🚨 **用户已指定风格/配色/背景时，立即执行，禁止内部反复推翻**——用户说"浅色/深色/科技感/复古风/XX 风格"，选一个合理实现方案后直接执行，不得多轮权衡"技术上是否可行"。平台默认深色主题不是拒绝浅色的理由，遇到技术限制先执行再调整。post-creation 颜色调整必须合并批量：`style_ops.py` 多个子命令尽量串联为 1-2 次调用（`set-axis-color` + `set-title-color` + `set-grid-color` 可各自独立，但禁止因犹豫在 spec 生成后串行执行 6+ 次单独 HTTP 操作）
 
 ## ⚡ 写/改任何组件 option 字段前——强制预检（不可跳过）
 
@@ -290,6 +291,15 @@ python3 \
 spec_builder 自动处理：chartData 序列化、透明 bg、dark 主题、ECharts 轴样式、gradient 展开、pie 无 xAxis/yAxis、compareState 转换、命名色板应用、布局约束预警。
 
 **变体（variant）写法**：spec 中 `type` **不带后缀**（如 `"type":"JStatsSummary"`），变体通过同级 `"variant":"1"` 字段指定（生成 JStatsSummary_1）。直接写 `"type":"JStatsSummary_1"` 会找不到 handler。
+
+**🚨 spec JSON 核心字段速查（写错=脚本多跑一次，每次 +2-3 min）**
+
+| 字段 | ✅ 正确写法 | ❌ 错误写法（直觉陷阱） |
+|------|-----------|----------------------|
+| 位置/尺寸 | `"pos": [x, y, w, h]`（4 元素数组） | `"x":60,"y":90,"w":1800,"h":950`（分离字段） |
+| 静态数据 | `"data": [{"name":"A","value":1}]` | `"chartData": [...]`（这是 config 存储字段名，spec 里无效） |
+| 组件变体 | `"variant": "2"`（同级顶层字段） | `"type": "JStatsSummary_2"`（带后缀找不到 handler） |
+| JText 文字 | `"text": "内容"`（顶层） | `"option.body.text"` / `"data[0].value"`（handler 不读这里） |
 
 **禁止直接 Read `references/scripts/defaults/*.json`**，统一经 `--schema --full` 调取。
 

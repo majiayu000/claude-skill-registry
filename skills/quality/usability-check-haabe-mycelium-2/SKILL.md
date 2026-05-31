@@ -88,6 +88,12 @@ Even though it is better if the system can be used without documentation, it may
 - [ ] Help is concise and actionable
 - [ ] Contextual help available where needed (tooltips, inline)
 
+## Complementary: interaction & visual axioms (optional, nudge-only)
+
+Nielsen's heuristics are diagnostic *principles*. They do not cover the quantitative interaction-design layer: Fitts's/Hick's target-and-choice math, Gestalt grouping (proximity, similarity, closure, common-region), typography (line-length/CPL, line-height, F-pattern scanning), and cognitive-load laws. If this project has a UI surface and the user wants that layer, the `haabe/ux-axioms-mcp` server covers it. *Per its README*, the server exposes ~44 such axioms with `analyze_ui` / `suggest_axioms` / `generate_spec` / `generate_tests` tools — confirm the current install/run path against the repo before recommending a specific setup command.
+
+Mycelium **nudges, never installs**: offer it, let the user wire it up (per `${CLAUDE_PLUGIN_ROOT}/harness/design-principles.md` — autonomy/JIT-tooling). Don't double-surface — where a Nielsen heuristic and an axiom overlap (e.g. heuristic 4 Consistency ↔ Similarity; heuristic 8 Minimalist ↔ Occam's Razor), cite once. The persuasion axioms in that registry are dual-use; the same ethics line as anti-pattern #10 (Dark Pattern Marketing) applies.
+
 ## Output Format
 
 ```

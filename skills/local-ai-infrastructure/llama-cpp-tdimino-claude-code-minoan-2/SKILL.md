@@ -162,3 +162,4 @@ When calling llama-cli from scripts or subprocesses:
 - **Use `--flash-attn on`** (not bare `--flash-attn`) — now takes argument
 - **Timing stats** appear in stdout as `[ Prompt: X t/s | Generation: Y t/s ]` (via `--show-timings`, default: on)
 - **Redirect stderr to file, not variable** — spinner output can overflow bash variables
+

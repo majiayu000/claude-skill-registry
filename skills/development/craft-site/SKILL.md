@@ -20,6 +20,7 @@ When this skill triggers, also load:
 - **`craft-content-modeling`** — Sections, entry types, fields, Matrix, relations. Required when deciding what content to query or how templates access data.
 - **`ddev`** — All commands run through DDEV. Required for running Vite, npm, and Craft CLI commands.
 - **`craft-cloud`** — When the site is hosted on Craft Cloud (detect via `craft-cloud.yaml` at the repo root or `craftcms/cloud` in `composer.json`). Required for edge static caching rules, `cloud.esi(...)` dynamic islands inside cached pages, edge image transform constraints, and the `csrfInput()` requirement on cacheable pages.
+- **`servd`** — When the site is hosted on Servd (detect via `servd.yaml` at the repo root or `servd/craft-asset-storage` in `composer.json`). Required for Servd static caching, `{% dynamicInclude %}` islands in cached pages, running Blitz in reverse-proxy mode, and off-server image transforms.
 
 ## Documentation
 
@@ -59,6 +60,7 @@ Read the relevant reference file(s) for your task. Multiple files often apply to
 - "Understand atomic design methodology" → read `atomic-design.md`
 - "Set up Vite + Tailwind in a new Craft project" → read `vite-buildchain.md`
 - "Debug why assets aren't loading in production" → read `vite-buildchain.md`
+- "Look up a `craft.vite.*` Twig function (asset, register, critical CSS)" → read `plugins/vite.md`
 - "Install GTM/analytics/CMP in a Craft project" → read `third-party-integration.md`
 - "Configure SEOMatic for a section" → read `plugins/seomatic.md`
 - "Set up Blitz caching with Cloudflare" → read `plugins/blitz.md`
@@ -124,6 +126,7 @@ Detailed configuration, Twig API, and pitfalls for Craft plugins. Located in `re
 
 | Reference | Plugin | Key Surface |
 |-----------|--------|-------------|
+| `references/plugins/vite.md` | Vite (nystudio107) | `craft.vite.*` Twig API (`script`, `register`, `entry`, `asset`, `integrity`, `inline`, `includeCriticalCssTags`, `devServerRunning`), `vite.php` config keys. Buildchain/`vite.config.ts` detail in `references/vite-buildchain.md` |
 | `references/plugins/seomatic.md` | SEOMatic (nystudio107) | Meta cascade, Twig get/set API, JSON-LD, custom element SEO bundles, sitemaps, GraphQL |
 | `references/plugins/blitz.md` | Blitz (putyourlightson) | Refresh modes, Twig dynamic content, driver architecture (storage/purger/deployer), Nginx rewrite, Cloudflare integration |
 | `references/plugins/formie.md` | Formie (verbb) | Form rendering (one-line/granular), theme config for Tailwind, submission querying, hooks, integrations |
@@ -145,7 +148,7 @@ Detailed configuration, Twig API, and pitfalls for Craft plugins. Located in `re
 | `references/plugins/embedded-assets.md` | Embedded Assets (spicyweb) | oEmbed as first-class assets, `craft.embeddedAssets.get()`, iframe customization, GraphQL |
 | `references/plugins/amazon-ses.md` | Amazon SES (putyourlightson) | SES mail transport adapter, AWS credential config, SNS bounce tracking |
 | `references/plugins/feed-me.md` | Feed Me (craftcms) | Data import from XML/JSON/CSV, field mapping, duplicate handling, CLI automation |
-| `references/plugins/imager-x.md` | Imager-X (spacecrafttechnologies) | Advanced image transforms, batch generation, named presets, effects, optimizers, external storage |
+| `references/plugins/imager-x.md` | Imager-X (spacecatninja) | Advanced image transforms, batch generation, named presets, effects, optimizers, external storage |
 
 
 ## Component System Conventions

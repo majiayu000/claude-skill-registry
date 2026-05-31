@@ -187,3 +187,16 @@ hooks 注册合并按 command 字段去重：
 | references/agent-references/ | Agent 模板自带的参考资料副本；部署到 `.claude/skills/story-setup/references/agent-references/`，避免跨 skill references |
 | references/templates/settings-hooks.json | hooks 注册 JSON 片段 |
 | references/templates/上下文.md.tmpl | 写作上下文模板 |
+
+---
+
+## 流程衔接
+
+**流水线：** 部署
+**位置：** 初始化（最前置）
+
+| 时机 | 跳转到 | 命令 |
+|---|---|---|
+| 部署完成，开始写作 | story-long-write / story-short-write | `/story-long-write` 或 `/story-short-write` |
+| 导入已有小说做拆解 | story-import | `/story-import` |
+| 需要浏览器登录态（扫榜/拆文取原文） | browser-cdp | `/browser-cdp` |

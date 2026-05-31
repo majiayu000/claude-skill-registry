@@ -39,8 +39,8 @@ retrieval:
 
 # generate-ui-from-brand
 
-**Type:** Pipeline / Orchestrator
-**Input:** URL or existing DESIGN.md
+**Type:** Pipeline / Orchestrator  
+**Input:** URL or existing DESIGN.md  
 **Output:** Actionable UI spec with decisions made
 
 ---
@@ -220,15 +220,15 @@ FONT SIZE VIOLATIONS
 Page layout:
   Header (fixed, 56px)
     Logo | Nav | [Global controls: small type]
-
+  
   Main
     Hero section
       H1 (display scale) + lead text + primary CTA (color-primary, full)
-
+    
     Feature grid (3-col)
       Card (shadow-card, radius-card) × 3
         Icon + H4 + body text
-
+    
   Footer
     Links (text-sm, color-text-secondary)
     Language/currency selector (text-sm)

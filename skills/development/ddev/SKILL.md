@@ -1,6 +1,6 @@
 ---
 name: ddev
-description: "DDEV local development environment for Craft CMS projects. ALWAYS load this skill when running any ddev command, configuring .ddev/config.yaml, or troubleshooting local container issues. Covers: config.yaml settings (project type, PHP/Node versions, database, docroot), shorthand commands (ddev composer, ddev craft, ddev npm), add-ons (ddev add-on get for Redis, Mailpit), custom commands (.ddev/commands/), Vite dev server exposure (web_extra_exposed_ports, web_extra_daemons), database import/export (ddev import-db, ddev export-db, ddev craft db/backup), Xdebug toggling (ddev xdebug on/off), sharing local sites (ddev share, temporary public URLs), and troubleshooting (ddev poweroff, ddev logs, ddev describe, ddev delete, port conflicts, container restart issues). Triggers on: ddev start/stop/restart, ddev craft, ddev composer, ddev npm, ddev ssh, ddev import-db, ddev export-db, ddev xdebug, ddev share, ddev add-on, ddev poweroff, ddev describe, ddev logs, .ddev/config.yaml, web_extra_exposed_ports, web_extra_daemons, PHP version or Node version in local dev, database backup/restore locally, ran npm/composer on host instead of ddev, wrong node_modules architecture, local dev environment for Craft CMS. NOT for production deployment, CI/CD pipelines, GitHub Actions, or server configuration. NOT for Docker/container usage outside of DDEV."
+description: "DDEV local development environment for Craft CMS projects. ALWAYS load this skill when running any ddev command, configuring .ddev/config.yaml, or troubleshooting local container issues. Covers: config.yaml settings (project type, PHP/Node versions, database, docroot), shorthand commands (ddev composer, ddev craft, ddev npm), add-ons (ddev add-on get for Redis; built-in Mailpit), custom commands (.ddev/commands/), Vite dev server exposure (web_extra_exposed_ports, web_extra_daemons), database import/export (ddev import-db, ddev export-db, ddev craft db/backup), Xdebug toggling (ddev xdebug on/off), sharing local sites (ddev share, temporary public URLs), and troubleshooting (ddev poweroff, ddev logs, ddev describe, ddev delete, port conflicts, container restart issues). Triggers on: ddev start/stop/restart, ddev craft, ddev composer, ddev npm, ddev ssh, ddev import-db, ddev export-db, ddev xdebug, ddev share, ddev add-on, ddev poweroff, ddev describe, ddev logs, .ddev/config.yaml, web_extra_exposed_ports, web_extra_daemons, PHP version or Node version in local dev, database backup/restore locally, ran npm/composer on host instead of ddev, wrong node_modules architecture, local dev environment for Craft CMS. NOT for production deployment, CI/CD pipelines, GitHub Actions, or server configuration. NOT for Docker/container usage outside of DDEV."
 ---
 
 # DDEV for Craft CMS Development
@@ -73,7 +73,20 @@ database:
 nodejs_version: "20"
 ```
 
-DDEV auto-injects: `CRAFT_DB_SERVER`, `CRAFT_DB_USER`, `CRAFT_DB_PASSWORD`, `CRAFT_DB_DATABASE`, `PRIMARY_SITE_URL`.
+DDEV auto-injects: `CRAFT_DB_SERVER`, `CRAFT_DB_USER`, `CRAFT_DB_PASSWORD`, `CRAFT_DB_DATABASE`, `PRIMARY_SITE_URL`. These are injected into the container via `.ddev/.env.web` and can be opted out of with `disable_settings_management: true` in `.ddev/config.yaml`.
+
+## New Project Bootstrap
+
+The canonical flow for a fresh DDEV + Craft project:
+
+```bash
+mkdir my-craft-site && cd my-craft-site
+ddev config --project-type=craftcms --docroot=web   # writes .ddev/config.yaml
+ddev start
+ddev composer create-project craftcms/craft         # Craft's setup wizard runs automatically
+```
+
+`ddev composer create-project` launches Craft's interactive install wizard on completion. If it doesn't run (or you need to re-run it), use `ddev craft install`. Swap `craftcms/craft` for a community starter project to bootstrap from one instead.
 
 ## Common Commands
 
@@ -83,6 +96,8 @@ ddev stop                      # Stop the project
 ddev restart                   # Restart containers
 ddev ssh                       # SSH into web container
 ddev describe                  # Show project info and URLs
+ddev launch                    # Open the project in a browser
+ddev launch -m                 # Open Mailpit (also --mailpit)
 ddev logs                      # View container logs
 ddev import-db --file=dump.sql # Import database
 ddev export-db --file=dump.sql # Export database
@@ -112,10 +127,19 @@ No need to manually run `ddev craft migrate/all` or `ddev craft project-config/a
 
 ```bash
 ddev add-on get ddev/ddev-redis       # Install Redis
-ddev add-on get ddev/ddev-mailpit     # Install Mailpit
 ddev add-on list                       # List installed add-ons
 ddev add-on remove ddev/ddev-redis    # Remove add-on
 ```
+
+Mailpit is built into DDEV core — no add-on installation needed. Outgoing mail is captured automatically. Access the web UI with `ddev mailpit`, or `ddev describe` shows its URL (e.g. `https://{project}.ddev.site:8026`).
+
+## Sharing a Local Site
+
+```bash
+ddev share                     # Expose the project on a temporary public URL
+```
+
+`ddev share` defaults to the ngrok provider, which requires a free ngrok.com account and a configured ngrok auth token. (`cloudflared` is an alternative provider via `--provider=cloudflared`, no account required, but ngrok is the default.)
 
 ## Custom Commands
 
@@ -177,7 +201,7 @@ The Chrome DevTools MCP server gives Claude Code direct browser access — inspe
 ### Installation
 
 ```bash
-claude mcp add chrome-devtools -- npx @anthropic-ai/chrome-devtools-mcp@latest
+claude mcp add chrome-devtools -- npx chrome-devtools-mcp@latest
 ```
 
 Quit and reopen Claude Code to load the new MCP server. Requires Chrome or Chromium running — the MCP server handles the DevTools Protocol connection automatically.
@@ -214,7 +238,7 @@ DDEV sites are accessible at `https://{project}.ddev.site`. To inspect CP pages:
 
 ### Project setup
 
-The `craft-project-setup` skill offers to install Chrome DevTools MCP during scaffolding. If installed later, run `claude mcp add chrome-devtools -- npx @anthropic-ai/chrome-devtools-mcp@latest` from the project root — this writes to the project's `.claude.json`, keeping it project-level.
+The `craft-project-setup` skill offers to install Chrome DevTools MCP during scaffolding. If installed later, run `claude mcp add chrome-devtools -- npx chrome-devtools-mcp@latest` from the project root — this writes to the project's `.claude.json`, keeping it project-level.
 
 ## Troubleshooting
 

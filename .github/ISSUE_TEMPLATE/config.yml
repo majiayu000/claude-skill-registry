@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Core source-of-truth issues
+    url: https://github.com/majiayu000/claude-skill-registry-core/issues/new/choose
+    about: Use core for pipeline, source intake, schema, search, Pages, and publish orchestration.
+  - name: Archived skill data issues
+    url: https://github.com/majiayu000/claude-skill-registry-data/issues
+    about: Use data for archived skill body or archive metadata problems.

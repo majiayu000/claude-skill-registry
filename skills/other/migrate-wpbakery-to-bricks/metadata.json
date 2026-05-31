@@ -1,0 +1,17 @@
+{
+  "name": "migrate-wpbakery-to-bricks",
+  "repo": "respira-press/agent-skills-wordpress",
+  "path": "skills/migrate-wpbakery-to-bricks/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/respira-press/agent-skills-wordpress",
+  "dir_name": "migrate-wpbakery-to-bricks",
+  "downloaded_at": "2026-05-31T04:25:19.722516Z",
+  "author": "respira-press",
+  "source_url": "https://github.com/respira-press/agent-skills-wordpress/blob/main/skills/migrate-wpbakery-to-bricks/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/respira-press/agent-skills-wordpress/blob/main/skills/migrate-wpbakery-to-bricks/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

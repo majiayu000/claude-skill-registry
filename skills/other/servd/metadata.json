@@ -1,0 +1,17 @@
+{
+  "name": "servd",
+  "repo": "michtio/craftcms-claude-skills",
+  "path": "skills/servd/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/michtio/craftcms-claude-skills",
+  "dir_name": "servd",
+  "downloaded_at": "2026-05-31T04:21:10.988729Z",
+  "author": "michtio",
+  "source_url": "https://github.com/michtio/craftcms-claude-skills/blob/main/skills/servd/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/michtio/craftcms-claude-skills/blob/main/skills/servd/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

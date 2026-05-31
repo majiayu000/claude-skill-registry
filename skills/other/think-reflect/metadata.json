@@ -1,0 +1,17 @@
+{
+  "name": "think-reflect",
+  "repo": "chrisallenlane/claude-swe-workflows",
+  "path": "skills/think-reflect/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/chrisallenlane/claude-swe-workflows",
+  "dir_name": "think-reflect",
+  "downloaded_at": "2026-05-31T04:11:02.417227Z",
+  "author": "chrisallenlane",
+  "source_url": "https://github.com/chrisallenlane/claude-swe-workflows/blob/master/skills/think-reflect/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/chrisallenlane/claude-swe-workflows/blob/master/skills/think-reflect/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

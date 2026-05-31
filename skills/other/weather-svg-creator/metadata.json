@@ -1,0 +1,17 @@
+{
+  "name": "weather-svg-creator",
+  "repo": "shanraisshan/claude-code-best-practice",
+  "path": ".claude/skills/weather-svg-creator/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/shanraisshan/claude-code-best-practice",
+  "dir_name": "weather-svg-creator",
+  "downloaded_at": "2026-05-31T04:27:15.525211Z",
+  "author": "shanraisshan",
+  "source_url": "https://github.com/shanraisshan/claude-code-best-practice/blob/main/.claude/skills/weather-svg-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/shanraisshan/claude-code-best-practice/blob/main/.claude/skills/weather-svg-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

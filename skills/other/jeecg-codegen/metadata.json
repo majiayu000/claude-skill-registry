@@ -1,0 +1,17 @@
+{
+  "name": "jeecg-codegen",
+  "repo": "jeecgboot/skills",
+  "path": "jeecg-codegen/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/jeecgboot/skills",
+  "dir_name": "jeecg-codegen",
+  "downloaded_at": "2026-05-31T04:17:58.071659Z",
+  "author": "jeecgboot",
+  "source_url": "https://github.com/jeecgboot/skills/blob/main/jeecg-codegen/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jeecgboot/skills/blob/main/jeecg-codegen/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "research-frontmatter",
+  "repo": "joaquimscosta/arkhe-claude-plugins",
+  "path": "plugins/doc/skills/research-frontmatter/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/joaquimscosta/arkhe-claude-plugins",
+  "dir_name": "research-frontmatter",
+  "downloaded_at": "2026-05-31T04:18:13.778043Z",
+  "author": "joaquimscosta",
+  "source_url": "https://github.com/joaquimscosta/arkhe-claude-plugins/blob/main/plugins/doc/skills/research-frontmatter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/joaquimscosta/arkhe-claude-plugins/blob/main/plugins/doc/skills/research-frontmatter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

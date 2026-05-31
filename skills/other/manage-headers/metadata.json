@@ -1,0 +1,17 @@
+{
+  "name": "manage-headers",
+  "repo": "microsoft/power-platform-skills",
+  "path": "plugins/power-pages/skills/manage-headers/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/microsoft/power-platform-skills",
+  "dir_name": "manage-headers",
+  "downloaded_at": "2026-05-31T04:21:19.108597Z",
+  "author": "microsoft",
+  "source_url": "https://github.com/microsoft/power-platform-skills/blob/main/plugins/power-pages/skills/manage-headers/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/microsoft/power-platform-skills/blob/main/plugins/power-pages/skills/manage-headers/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

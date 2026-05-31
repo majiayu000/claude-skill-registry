@@ -1,0 +1,17 @@
+{
+  "name": "tidy-docs",
+  "repo": "chrisallenlane/claude-swe-workflows",
+  "path": "skills/tidy-docs/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/chrisallenlane/claude-swe-workflows",
+  "dir_name": "tidy-docs",
+  "downloaded_at": "2026-05-31T04:11:01.039663Z",
+  "author": "chrisallenlane",
+  "source_url": "https://github.com/chrisallenlane/claude-swe-workflows/blob/master/skills/tidy-docs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/chrisallenlane/claude-swe-workflows/blob/master/skills/tidy-docs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

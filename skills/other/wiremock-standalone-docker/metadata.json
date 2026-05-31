@@ -1,0 +1,17 @@
+{
+  "name": "wiremock-standalone-docker",
+  "repo": "giuseppe-trisciuoglio/developer-kit",
+  "path": "plugins/developer-kit-java/skills/wiremock-standalone-docker/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/giuseppe-trisciuoglio/developer-kit",
+  "dir_name": "wiremock-standalone-docker",
+  "downloaded_at": "2026-05-31T04:15:11.061638Z",
+  "author": "giuseppe-trisciuoglio",
+  "source_url": "https://github.com/giuseppe-trisciuoglio/developer-kit/blob/main/plugins/developer-kit-java/skills/wiremock-standalone-docker/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/giuseppe-trisciuoglio/developer-kit/blob/main/plugins/developer-kit-java/skills/wiremock-standalone-docker/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

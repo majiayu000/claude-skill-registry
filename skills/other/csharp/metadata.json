@@ -1,0 +1,17 @@
+{
+  "name": "csharp",
+  "repo": "alexander-danilenko/cortex-ai-skills",
+  "path": "skills/csharp/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/alexander-danilenko/cortex-ai-skills",
+  "dir_name": "csharp",
+  "downloaded_at": "2026-05-31T04:07:55.294034Z",
+  "author": "alexander-danilenko",
+  "source_url": "https://github.com/alexander-danilenko/cortex-ai-skills/blob/main/skills/csharp/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/alexander-danilenko/cortex-ai-skills/blob/main/skills/csharp/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

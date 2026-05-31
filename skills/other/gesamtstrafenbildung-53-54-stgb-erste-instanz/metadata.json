@@ -1,0 +1,17 @@
+{
+  "name": "gesamtstrafenbildung-53-54-stgb-erste-instanz",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "strafzumessung/skills/gesamtstrafenbildung-53-54-stgb-erste-instanz/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "gesamtstrafenbildung-53-54-stgb-erste-instanz",
+  "downloaded_at": "2026-05-31T04:01:57.972492Z",
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/strafzumessung/skills/gesamtstrafenbildung-53-54-stgb-erste-instanz/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/strafzumessung/skills/gesamtstrafenbildung-53-54-stgb-erste-instanz/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

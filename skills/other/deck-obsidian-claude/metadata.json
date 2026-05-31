@@ -1,0 +1,17 @@
+{
+  "name": "deck-obsidian-claude",
+  "repo": "nexu-io/html-anything",
+  "path": "next/src/lib/templates/skills/deck-obsidian-claude/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/nexu-io/html-anything",
+  "dir_name": "deck-obsidian-claude",
+  "downloaded_at": "2026-05-31T04:23:24.853715Z",
+  "author": "nexu-io",
+  "source_url": "https://github.com/nexu-io/html-anything/blob/main/next/src/lib/templates/skills/deck-obsidian-claude/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nexu-io/html-anything/blob/main/next/src/lib/templates/skills/deck-obsidian-claude/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

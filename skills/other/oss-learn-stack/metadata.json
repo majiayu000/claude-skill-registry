@@ -1,0 +1,17 @@
+{
+  "name": "oss-learn-stack",
+  "repo": "chiruu12/OSS-Skills",
+  "path": "skills/oss-learn-stack/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/chiruu12/OSS-Skills",
+  "dir_name": "oss-learn-stack",
+  "downloaded_at": "2026-05-31T04:10:56.907519Z",
+  "author": "chiruu12",
+  "source_url": "https://github.com/chiruu12/OSS-Skills/blob/main/skills/oss-learn-stack/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/chiruu12/OSS-Skills/blob/main/skills/oss-learn-stack/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

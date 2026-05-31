@@ -1,0 +1,17 @@
+{
+  "name": "univer-tdd",
+  "repo": "dream-num/skills",
+  "path": "skills/univer-tdd/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/dream-num/skills",
+  "dir_name": "univer-tdd",
+  "downloaded_at": "2026-05-31T04:13:05.706983Z",
+  "author": "dream-num",
+  "source_url": "https://github.com/dream-num/skills/blob/main/skills/univer-tdd/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dream-num/skills/blob/main/skills/univer-tdd/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

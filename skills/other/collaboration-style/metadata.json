@@ -1,0 +1,17 @@
+{
+  "name": "collaboration-style",
+  "repo": "cablate/ai-toolkit",
+  "path": "skills/collaboration-style/skill.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/cablate/ai-toolkit",
+  "dir_name": "collaboration-style",
+  "downloaded_at": "2026-05-31T04:10:50.841111Z",
+  "author": "cablate",
+  "source_url": "https://github.com/cablate/ai-toolkit/blob/master/skills/collaboration-style/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cablate/ai-toolkit/blob/master/skills/collaboration-style/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

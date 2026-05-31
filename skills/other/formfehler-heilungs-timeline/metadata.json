@@ -1,0 +1,17 @@
+{
+  "name": "formfehler-heilungs-timeline",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "wandeldarlehen-lebenszyklus/skills/formfehler-heilungs-timeline/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "formfehler-heilungs-timeline",
+  "downloaded_at": "2026-05-31T04:01:52.891932Z",
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/wandeldarlehen-lebenszyklus/skills/formfehler-heilungs-timeline/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/wandeldarlehen-lebenszyklus/skills/formfehler-heilungs-timeline/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

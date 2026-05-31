@@ -1,0 +1,17 @@
+{
+  "name": "multi-omics-integration",
+  "repo": "ammawla/encode-toolkit",
+  "path": "skills/multi-omics-integration/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ammawla/encode-toolkit",
+  "dir_name": "multi-omics-integration",
+  "downloaded_at": "2026-05-31T04:08:21.844257Z",
+  "author": "ammawla",
+  "source_url": "https://github.com/ammawla/encode-toolkit/blob/main/skills/multi-omics-integration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ammawla/encode-toolkit/blob/main/skills/multi-omics-integration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

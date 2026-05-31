@@ -1,0 +1,17 @@
+{
+  "name": "nw-fp-clojure",
+  "repo": "nWave-ai/nWave",
+  "path": "nWave/skills/nw-fp-clojure/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/nWave-ai/nWave",
+  "dir_name": "nw-fp-clojure",
+  "downloaded_at": "2026-05-31T04:22:42.883662Z",
+  "author": "nWave-ai",
+  "source_url": "https://github.com/nWave-ai/nWave/blob/main/nWave/skills/nw-fp-clojure/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nWave-ai/nWave/blob/main/nWave/skills/nw-fp-clojure/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

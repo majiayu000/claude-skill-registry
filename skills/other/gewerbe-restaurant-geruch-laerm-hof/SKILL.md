@@ -1,0 +1,40 @@
+---
+name: gewerbe-restaurant-geruch-laerm-hof
+description: "Bearbeitet Restaurant- und Gewerbekonflikte in WEG-Anlagen: Geruch, Lüftung, Lärm, Müll, Lieferverkehr, Fettabscheider, Sondernutzung, Brandschutz und Mieter-/Eigentümerrollen. Output: Eskalations- und Beschlussplan."
+---
+
+# Gewerbe, Restaurant, Geruch, Lärm und Hofnutzung
+
+Nutze diesen Skill, wenn in der Anlage ein Restaurant, Café, Laden oder sonstiges Gewerbe Konflikte auslöst: Gerüche, Abluft, Fett, Lieferverkehr, Müll, Hofnutzung, Außengastronomie, Brandschutz oder nächtlicher Lärm.
+
+## Prüfraster
+
+1. **Rechtsverhältnis trennen:** Gewerbemieter, Teileigentümer, Sondereigentümer, Gemeinschaft, Verwalter.
+2. **Teilungserklärung prüfen:** Nutzungszweck, Sondernutzungsrechte, Öffnungszeiten, bauliche Anlagen.
+3. **Störung konkretisieren:** Geruch, Lärm, Müll, Lieferverkehr, Schädlingsrisiko, Brandschutz, Fettabscheider.
+4. **Beweise sichern:** Geruchsprotokoll, Fotos, Zeugen, Messung, Ordnungsamt, Schornsteinfeger, Lüftungsfirma.
+5. **Verwaltungspfad:** Gespräch, Abmahnung, Beschluss, technische Prüfung, Behördenkontakt, Anwalt.
+6. **Mietrechtliche Schnittstelle:** Vermietender Eigentümer muss ggf. auf seinen Gewerbemieter einwirken.
+
+## Maßnahmenstufen
+
+| Stufe | Maßnahme | Zweck |
+| --- | --- | --- |
+| 1 | Sachverhalt und Belege sammeln | keine Stimmungslage entscheiden |
+| 2 | Betreiber/Eigentümer anhören | freiwillige Abhilfe |
+| 3 | Fachprüfung Abluft/Fett/Müll | technische Ursache |
+| 4 | Beschluss mit Auflagen | Verwaltung handlungsfähig machen |
+| 5 | Anwalt/Behörde | Unterlassung oder öffentlich-rechtliche Prüfung |
+
+## Beschlussbaustein
+
+```text
+Die Verwaltung wird beauftragt, die durch den Betrieb der Gewerbeeinheit Nr. [...] gemeldeten Geruchs-, Müll- und Lärmbelastungen aufzuklären, den Teileigentümer und den Betreiber anzuhören, eine fachtechnische Prüfung der Abluft- und Entsorgungssituation einzuholen und der Gemeinschaft bis zum [...] einen Maßnahmenvorschlag vorzulegen. Der Kostenrahmen für die Erstprüfung beträgt [...] EUR brutto.
+```
+
+## Red Flags
+
+- Beschwerden werden als Nachbarschaftsstreit abgetan, obwohl Gemeinschaftseigentum betroffen ist.
+- Gewerbemieter wird direkt in Anspruch genommen, obwohl zunächst der Teileigentümer Ansprechpartner ist.
+- Ordnungsrecht, Brandschutz und WEG-Recht werden vermischt.
+- Geruchsbeschwerden ohne Protokoll und Belege werden sofort eskaliert.

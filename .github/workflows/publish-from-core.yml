@@ -305,6 +305,27 @@ jobs:
               assert_pointer("registry.json", "registry-manifest.json")
               return assert_manifest("registry-manifest.json")
 
+          def validate_category_manifest() -> str:
+              index = load_json("docs/categories/index.json")
+              categories = index.get("categories")
+              if not isinstance(categories, list) or not categories:
+                  raise ValueError("docs/categories/index.json has no categories")
+              first = categories[0]
+              if not isinstance(first, dict):
+                  raise ValueError("docs/categories/index.json category entry is not an object")
+              manifest = first.get("manifest")
+              if not isinstance(manifest, str) or not manifest.strip():
+                  raise ValueError("docs/categories/index.json category entry missing manifest")
+              manifest_path = Path(manifest)
+              if manifest_path.is_absolute() or ".." in manifest_path.parts:
+                  raise ValueError(f"invalid category manifest path: {manifest}")
+              detail = assert_manifest(
+                  f"docs/{manifest}",
+                  count_key="count",
+                  artifact_base="docs",
+              )
+              return f"{len(categories)} categories indexed; {detail}"
+
           check("provenance refs", validate_provenance)
           check("registry pointer and manifest", validate_registry)
           check(
@@ -327,14 +348,7 @@ jobs:
                       + assert_manifest(f"docs/{name}-index-manifest.json", artifact_base="docs")
                   ),
               )
-          check(
-              "category index and other manifest",
-              lambda: assert_manifest(
-                  "docs/categories/other/manifest.json",
-                  count_key="count",
-                  artifact_base="docs",
-              ),
-          )
+          check("category index and dynamic manifest", validate_category_manifest)
           check("stats shard summary", validate_stats)
           check("skills mirror count and gitignore", validate_skill_mirror)
 

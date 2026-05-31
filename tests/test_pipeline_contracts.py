@@ -237,6 +237,15 @@ def test_sync_data_stages_registry_shard_artifacts():
     assert "git add registry.json registry_summary.json registry-manifest.json registry-shards/" in workflow
 
 
+def test_publish_canary_uses_dynamic_category_manifest():
+    workflow = read_repo_file(".github/workflows/publish-from-core.yml")
+
+    assert "def validate_category_manifest()" in workflow
+    assert 'load_json("docs/categories/index.json")' in workflow
+    assert "category index and dynamic manifest" in workflow
+    assert '"docs/categories/other/manifest.json"' not in workflow
+
+
 def test_sync_data_cleans_ci_archive_leftovers_before_discovery():
     workflow = read_repo_file(".github/workflows/sync-data.yml")
 

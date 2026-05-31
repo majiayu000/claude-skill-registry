@@ -1,0 +1,31 @@
+name: Mirror Artifact Problem
+description: Report a problem that exists only in the generated main repository artifact.
+title: "[Mirror] "
+labels: ["mirror-artifact"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What generated artifact is wrong, missing, stale, or inconsistent?
+    validations:
+      required: true
+  - type: input
+    id: artifact
+    attributes:
+      label: Artifact path or URL
+      placeholder: registry.json, registry-shards/00.json, provenance/merge-source.json
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Include the expected value, observed value, and any relevant `core_sha` or `data_sha`.
+  - type: checkboxes
+    id: routing
+    attributes:
+      label: Routing check
+      options:
+        - label: This is a generated mirror artifact problem, not a core pipeline or archived data request.
+          required: true

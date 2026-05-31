@@ -26,6 +26,14 @@ The largest searchable index of Claude Code skills, aggregated from GitHub and c
 
 **Repo layout note:** `core` owns workflows/pipeline logic, `data` stores `skills/**`, and `main` is generated from `core + data`. See `SCHEME2_SPLIT.md`.
 
+## Generated Mirror Notice
+
+This repository is the merged publish artifact for browsing and compatibility consumers. Source changes for discovery, download, security scanning, index generation, search, Pages, or publish orchestration belong in [`claude-skill-registry-core`](https://github.com/majiayu000/claude-skill-registry-core). Archived skill body and archive metadata issues belong in [`claude-skill-registry-data`](https://github.com/majiayu000/claude-skill-registry-data).
+
+- **Do not submit normal source PRs here** unless the change is explicitly main-owned, such as publish workflow routing or mirror-only repository metadata.
+- **Release status**: this mirror does not cut independent GitHub Releases for daily generated data. Use `provenance/merge-source.json`, `registry_summary.json`, and the generated timestamps to identify the exact `core_sha` and `data_sha` behind an artifact.
+- **Use issues here only for mirror artifact problems**, such as mismatched generated files, broken compatibility paths, or incorrect provenance after publish.
+
 ## Highlights
 
 - **Massive Skill Index** - Deduplicated, high-quality registry (see badge for live count)

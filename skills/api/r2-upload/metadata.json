@@ -1,0 +1,37 @@
+{
+  "name": "r2-upload",
+  "repo": "zebbern/claude-code-guide",
+  "path": "skills/r2-upload/SKILL.md",
+  "github_branch": "main",
+  "category": "api",
+  "source": "github.com/zebbern/claude-code-guide",
+  "dir_name": "r2-upload",
+  "downloaded_at": "2026-06-01T04:43:10.179706Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "api",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for api: api, endpoint",
+    "score": 2,
+    "runner_up": "bash",
+    "runner_up_score": 1,
+    "signals": [
+      "api",
+      "endpoint"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "zebbern",
+  "source_url": "https://github.com/zebbern/claude-code-guide/blob/main/skills/r2-upload/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zebbern/claude-code-guide/blob/main/skills/r2-upload/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Upload files to Cloudflare R2, AWS S3, or any S3-compatible storage (like MinIO) and generate secure, time-limited presigned download links with configurable expiration, typically set to 5 minutes. Use when the user needs to upload a file to cloud storage and get a shareable link, or mentions R2, S3, presigned URLs, temporary links, or file uploads with expiration."
+}

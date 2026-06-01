@@ -1,0 +1,38 @@
+{
+  "name": "log-error-digest",
+  "repo": "zebbern/claude-code-guide",
+  "path": "skills/log-error-digest/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/zebbern/claude-code-guide",
+  "dir_name": "log-error-digest",
+  "downloaded_at": "2026-06-01T04:43:13.997909Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: analysis=2, bash=2",
+    "score": 2,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "analysis",
+      "analyze"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "zebbern",
+  "source_url": "https://github.com/zebbern/claude-code-guide/blob/main/skills/log-error-digest/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zebbern/claude-code-guide/blob/main/skills/log-error-digest/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Analyze log files to troubleshoot errors, identify peak error periods, and produce error clustering, frequency statistics, and time distribution reports. Supports JSON, syslog, and Nginx formats with automatic detection. Use when a user uploads a .log file and asks to analyze errors, find patterns, debug issues, or get distribution stats."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "vscode-doctor",
+  "repo": "majiayu000/spellbook",
+  "path": "skills/vscode-doctor/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/majiayu000/spellbook",
+  "dir_name": "vscode-doctor",
+  "downloaded_at": "2026-06-01T04:32:45.612533Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script, cli",
+    "score": 3,
+    "runner_up": "workflow",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/spellbook/blob/main/skills/vscode-doctor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/majiayu000/spellbook/blob/main/skills/vscode-doctor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Diagnose slow or freezing VS Code-compatible editors with evidence-first, zero-hardcoded-assumption workflow. Use when the user reports editor lag, typing delay, UI freezes, extension host stalls, file watcher noise, high editor CPU/RSS, or wants a safe editor performance audit."
+}

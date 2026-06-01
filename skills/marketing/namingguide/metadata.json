@@ -1,0 +1,31 @@
+{
+  "name": "namingguide",
+  "description": "Complete naming guide generator for companies and product lines. Produces opinionated naming system, principles, dos/donts, and approval checklist as a usable document.",
+  "repo": "veyralabsgroup/veyraskills",
+  "path": "skills/naming-suite/namingguide",
+  "github_branch": "main",
+  "category": "marketing",
+  "tags": [
+    "naming",
+    "brand-strategy",
+    "style-guide",
+    "product",
+    "startup",
+    "claude-code"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "namingguide",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "references/examples/sample-guides.md",
+    "references/guide-structure.md"
+  ],
+  "author": "VeyraLabs",
+  "source_url": "https://github.com/veyralabsgroup/veyraskills/blob/main/skills/naming-suite/namingguide/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/veyralabsgroup/veyraskills/blob/main/skills/naming-suite/namingguide/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

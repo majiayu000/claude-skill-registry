@@ -1,0 +1,38 @@
+{
+  "name": "forge-app-review",
+  "repo": "atlassian/forge-skills",
+  "path": "skills/forge-app-review/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/atlassian/forge-skills",
+  "dir_name": "forge-app-review",
+  "downloaded_at": "2026-06-01T04:21:27.134108Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for design: ui, frontend, component",
+    "score": 3,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "ui",
+      "frontend",
+      "component"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "atlassian",
+  "source_url": "https://github.com/atlassian/forge-skills/blob/main/skills/forge-app-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/atlassian/forge-skills/blob/main/skills/forge-app-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Reviews Forge apps for security vulnerabilities, architecture issues, cost inefficiencies, performance problems, and trigger/scheduling waste before deployment. Use when the user says \"review my Forge app\", \"check my app\", \"pre-deploy check\", \"is my app ready to deploy\", \"audit my Forge app\", \"check for security issues\", \"check performance\", \"review manifest\", \"check my Forge app for problems\", \"app review\", \"optimize my Forge app costs\", \"reduce invocations\", \"why is my app expensive\", \"check my triggers\", or any request to evaluate a Forge app's quality, safety, cost efficiency, or readiness. Also triggers when users ask about Forge best practices, permission scopes, resolver optimization, storage efficiency, cold start reduction, frontend offloading, trigger filtering, scheduled trigger frequency, N+1 API calls, bulk API usage, verbose logging, or Forge platform pricing."
+}

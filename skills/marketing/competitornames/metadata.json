@@ -1,0 +1,32 @@
+{
+  "name": "competitornames",
+  "description": "Competitive naming landscape mapping with saturation scoring, whitespace identification, and naming brief generation for DomainForge or standalone use.",
+  "repo": "veyralabsgroup/veyraskills",
+  "path": "skills/naming-suite/competitornames",
+  "github_branch": "main",
+  "category": "marketing",
+  "tags": [
+    "naming",
+    "competitive-analysis",
+    "branding",
+    "startup",
+    "market-research",
+    "claude-code"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "competitornames",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "references/examples/sample-analyses.md",
+    "references/pattern-analysis.md",
+    "references/whitespace-mapping.md"
+  ],
+  "author": "VeyraLabs",
+  "source_url": "https://github.com/veyralabsgroup/veyraskills/blob/main/skills/naming-suite/competitornames/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/veyralabsgroup/veyraskills/blob/main/skills/naming-suite/competitornames/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

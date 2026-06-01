@@ -1,0 +1,38 @@
+{
+  "name": "forge-connector",
+  "repo": "atlassian/forge-skills",
+  "path": "skills/forge-connector/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/atlassian/forge-skills",
+  "dir_name": "forge-connector",
+  "downloaded_at": "2026-06-01T04:21:26.884422Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script, cli",
+    "score": 3,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "atlassian",
+  "source_url": "https://github.com/atlassian/forge-skills/blob/main/skills/forge-connector/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/atlassian/forge-skills/blob/main/skills/forge-connector/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Guides building and deploying Atlassian Forge Teamwork Graph connector apps that ingest external data into Atlassian's Teamwork Graph, making it searchable in Rovo Search and surfaced in Rovo Chat. Use when the user wants to build a Forge connector, ingest external data into Atlassian, connect a third-party tool (e.g. Google Drive, ServiceNow, Salesforce) to Atlassian, make external content searchable in Rovo, build a graph:connector module, use the @forge/teamwork-graph SDK, or implement onConnectionChange / validateConnection functions."
+}

@@ -1,0 +1,39 @@
+{
+  "name": "test-driven-dev",
+  "repo": "zebbern/claude-code-guide",
+  "path": "skills/test-driven-dev/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/zebbern/claude-code-guide",
+  "dir_name": "test-driven-dev",
+  "downloaded_at": "2026-06-01T04:43:14.555289Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: dev, code, build, refactor",
+    "score": 4,
+    "runner_up": "testing",
+    "runner_up_score": 3,
+    "signals": [
+      "dev",
+      "code",
+      "build",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "zebbern",
+  "source_url": "https://github.com/zebbern/claude-code-guide/blob/main/skills/test-driven-dev/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zebbern/claude-code-guide/blob/main/skills/test-driven-dev/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Test-driven development with red-green-refactor loop. Use when user wants to build features or fix bugs using TDD, mentions \"red-green-refactor\", wants integration tests, or asks for test-first development."
+}

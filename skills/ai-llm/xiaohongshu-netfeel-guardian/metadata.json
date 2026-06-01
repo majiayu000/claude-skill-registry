@@ -1,0 +1,37 @@
+{
+  "name": "xiaohongshu-netfeel-guardian",
+  "repo": "majiayu000/spellbook",
+  "path": "skills/xiaohongshu-netfeel-guardian/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-llm",
+  "source": "github.com/majiayu000/spellbook",
+  "dir_name": "xiaohongshu-netfeel-guardian",
+  "downloaded_at": "2026-06-01T04:32:45.799867Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "ai-llm",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for ai-llm: ai, prompt",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "ai",
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/spellbook/blob/main/skills/xiaohongshu-netfeel-guardian/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/majiayu000/spellbook/blob/main/skills/xiaohongshu-netfeel-guardian/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u5f53\u7528\u6237\u7528 Claude \u5199\u5c0f\u7ea2\u4e66\u3001\u516c\u4f17\u53f7\u3001\u89c6\u9891\u811a\u672c\u7b49\u5185\u5bb9\u65f6\uff0c\u8f93\u51fa\u51fa\u73b0\u7ffb\u8bd1\u8154\u3001\u82f1\u6587\u601d\u8003\u3001\u897f\u5f0f\u6846\u67b6\uff0c\u5bfc\u81f4\u201c\u50cf\u5916\u56fd\u4eba\u5047\u88c5\u5199\u4e2d\u6587\u201d\u65f6\u4f7f\u7528\u3002\n\n\u5178\u578b\u89e6\u53d1\u8bed\u53e5\uff1a\n- \u201cClaude\u5199\u5c0f\u7ea2\u4e66\u7ffb\u8bd1\u8154\u592a\u91cd\u201d\u201c\u82f1\u6587\u601d\u8003\u8f93\u51fa\u707e\u96be\u201d\n- \u201c\u5e2e\u6211\u628a\u8fd9\u4e2a\u7b14\u8bb0\u6539\u6210\u7eaf\u4e2d\u6587\u7f51\u611f\u201d\u201c\u53bb\u9664Claude\u7ffb\u8bd1\u8154\u201d\n- \u201c\u516c\u4f17\u53f7\u6587\u7ae0\u4e2d\u9014\u53d8\u82f1\u6587\u4e86\u201d\u201c50 Skills\u5185\u5bb9\u751f\u6210\u7ffb\u8f66\u201d\n- \u201c\u5f3a\u5236Claude\u7528\u4e2d\u6587\u601d\u8003\u5199\u7b14\u8bb0\u201d\u201c\u5c0f\u7ea2\u4e66\u60c5\u7eea\u5316\u8868\u8fbe\u6da6\u8272\u201d\n\n\u59cb\u7ec8\u4fdd\u62a4\u7528\u6237\u539f\u6709\u7684 CLAUDE.md / AGENTS.md \u4e2d\u7684\u4eba\u8bbe\u4e0e\u8bed\u6c14\u8981\u6c42\uff0c\u53ea\u505a\u6700\u5c0f\u5fc5\u8981\u5e72\u9884\u3002\u4f18\u5148\u4e0e xiaohongshu \u6280\u80fd\u7ec4\u5408\u4f7f\u7528\u3002"
+}

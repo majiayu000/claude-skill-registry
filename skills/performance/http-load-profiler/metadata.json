@@ -1,0 +1,39 @@
+{
+  "name": "http-load-profiler",
+  "repo": "zebbern/claude-code-guide",
+  "path": "skills/http-load-profiler/SKILL.md",
+  "github_branch": "main",
+  "category": "performance",
+  "source": "github.com/zebbern/claude-code-guide",
+  "dir_name": "http-load-profiler",
+  "downloaded_at": "2026-06-01T04:43:12.211867Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "performance",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for performance: performance, latency, benchmark",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "performance",
+      "latency",
+      "benchmark"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "zebbern",
+  "source_url": "https://github.com/zebbern/claude-code-guide/blob/main/skills/http-load-profiler/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zebbern/claude-code-guide/blob/main/skills/http-load-profiler/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Run stepped HTTP load tests with ab/wrk, ramping concurrency levels to collect p50/p90/p99 latency, detect performance inflection points, and recommend optimal concurrency. Triggered by requests like 'load test this URL', 'benchmark my API', 'find the max concurrency', or mentions of p99 latency, throughput saturation, or capacity planning."
+}

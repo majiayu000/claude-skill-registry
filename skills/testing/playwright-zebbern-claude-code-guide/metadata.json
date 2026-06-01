@@ -1,0 +1,39 @@
+{
+  "name": "playwright-skill",
+  "repo": "zebbern/claude-code-guide",
+  "path": "skills/playwright/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/zebbern/claude-code-guide",
+  "dir_name": "playwright-zebbern-claude-code-guide",
+  "downloaded_at": "2026-06-01T04:43:10.404248Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "testing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for testing: test, e2e, playwright, cypress",
+    "score": 4,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "test",
+      "e2e",
+      "playwright",
+      "cypress"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "zebbern",
+  "source_url": "https://github.com/zebbern/claude-code-guide/blob/main/skills/playwright/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zebbern/claude-code-guide/blob/main/skills/playwright/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Battle-tested Playwright patterns for E2E, API, component, visual, accessibility, and security testing. Covers locators, fixtures, POM, network mocking, auth flows, debugging, CI/CD (GitHub Actions, GitLab, CircleCI, Azure, Jenkins), framework recipes (React, Next.js, Vue, Angular), and migration guides from Cypress/Selenium. TypeScript and JavaScript."
+}

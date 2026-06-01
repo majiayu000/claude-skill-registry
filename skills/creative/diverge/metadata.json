@@ -1,0 +1,37 @@
+{
+  "name": "diverge",
+  "repo": "scdenney/open-science-skills",
+  "path": "codex/diverge/SKILL.md",
+  "github_branch": "main",
+  "category": "creative",
+  "source": "github.com/scdenney/open-science-skills",
+  "dir_name": "diverge",
+  "downloaded_at": "2026-06-01T04:38:54.787076Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "creative",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for creative: creative, writing",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 1,
+    "signals": [
+      "creative",
+      "writing"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "scdenney",
+  "source_url": "https://github.com/scdenney/open-science-skills/blob/main/codex/diverge/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/scdenney/open-science-skills/blob/main/codex/diverge/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Generate 3\u20135 conceptually distinct approaches to a task before implementing.\nLabels each by creativity dimension: Novel, Surprising, Diverse, or Conventional.\nHolds for user selection before writing any code. Based on Creative Preference\nOptimization (Ismayilzada et al., 2025) \u2014 brainstorm-then-select for maximizing\nnovelty, surprise, and diversity in outputs."
+}

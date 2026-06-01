@@ -1,0 +1,36 @@
+{
+  "name": "vaf-track-changes-nur-nach-frage",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "vertragsausfueller/skills/vaf-track-changes-nur-nach-frage/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "vaf-track-changes-nur-nach-frage",
+  "downloaded_at": "2026-06-01T04:14:16.317345Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-ml scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "documents",
+    "runner_up_score": 1,
+    "signals": [
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/vertragsausfueller/skills/vaf-track-changes-nur-nach-frage/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/vertragsausfueller/skills/vaf-track-changes-nur-nach-frage/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Track Changes und Redline nur nach ausdr\u00fccklicher Best\u00e4tigung erstellen: Anwendungsfall \u00fcberarbeiteter Vertrag soll als Track-Changes-Fassung ausgegeben werden; Skill fragt vorher explizit nach Best\u00e4tigung. \u00a7\u00a7 145 ff. BGB \u00c4nderungsverhandlung, \u00a7\u00a7 305 ff. BGB AGB-Transparenz. Pr\u00fcfraster ausdr\u00fcckliche Best\u00e4tigung vorhanden, saubere Ausgangsfassung nach Quality Gate vorhanden, Ausgangspunkt f\u00fcr \u00c4nderungsmarkierung definiert, Kommentierung materiell relevanter \u00c4nderungen. Output Track-Changes-Fassung oder ablehnende Weiterleitung zu Clean-Output. Abgrenzung zu Redline-QA f\u00fcr Pr\u00fcfung und zu Clean-Output."
+}

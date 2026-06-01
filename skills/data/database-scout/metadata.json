@@ -1,0 +1,38 @@
+{
+  "name": "database-scout",
+  "repo": "zebbern/claude-code-guide",
+  "path": "skills/database-scout/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/zebbern/claude-code-guide",
+  "dir_name": "database-scout",
+  "downloaded_at": "2026-06-01T04:43:11.924195Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "data",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for data: data, sql, database",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "data",
+      "sql",
+      "database"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "zebbern",
+  "source_url": "https://github.com/zebbern/claude-code-guide/blob/main/skills/database-scout/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zebbern/claude-code-guide/blob/main/skills/database-scout/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Explore SQLite and PostgreSQL databases: list tables, inspect schemas (columns/types/constraints), preview data, generate Mermaid ER diagrams, and run safe read-only queries. Triggered by requests to explore a database, view table structures, describe tables, generate diagrams, or query data, and by keywords like database exploration, schema, ER diagram, or SQL query."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "prompting-leitfaden",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "ki-richtlinie-kanzleien/skills/prompting-leitfaden/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-llm",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "prompting-leitfaden",
+  "downloaded_at": "2026-06-01T04:14:14.816170Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "ai-llm",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for ai-llm: prompt, prompting",
+    "score": 2,
+    "runner_up": "productivity",
+    "runner_up_score": 1,
+    "signals": [
+      "prompt",
+      "prompting"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/ki-richtlinie-kanzleien/skills/prompting-leitfaden/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/ki-richtlinie-kanzleien/skills/prompting-leitfaden/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Prompting-Leitfaden f\u00fcr juristische KI-Nutzung in Kanzleien: Anwendungsfall Anwalt oder Mitarbeitende wollen KI effektiver nutzen und benoetigen praxiserprobte Prompt-Methoden. Mandantenkommunikation mit KI, Anwaltsgeheimnis beim Prompten. Pr\u00fcfraster Vier-Elemente-Methode Zielformulierung Ausgabeformat Hintergrundwissen Beispiel, Rollenanweisung, Schritt-fuer-Schritt-Methode, Iteration, Zitate-Verifikation. Output Prompting-Leitfaden mit Vorlagen und Checkliste f\u00fcr juristische Aufgabentypen. Abgrenzung zu Halluzinations-Handhabung und zu Compliance-Regelsatz."
+}

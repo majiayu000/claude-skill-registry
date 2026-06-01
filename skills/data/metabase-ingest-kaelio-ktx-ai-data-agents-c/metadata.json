@@ -1,0 +1,38 @@
+{
+  "name": "metabase_ingest",
+  "repo": "Kaelio/ktx-ai-data-agents-context",
+  "path": "packages/cli/src/skills/metabase_ingest/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/Kaelio/ktx-ai-data-agents-context",
+  "dir_name": "metabase-ingest-kaelio-ktx-ai-data-agents-c",
+  "downloaded_at": "2026-06-01T04:14:08.627869Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "data",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for data: data, sql, database",
+    "score": 3,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "data",
+      "sql",
+      "database"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Kaelio",
+  "source_url": "https://github.com/Kaelio/ktx-ai-data-agents-context/blob/main/packages/cli/src/skills/metabase_ingest/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kaelio/ktx-ai-data-agents-context/blob/main/packages/cli/src/skills/metabase_ingest/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Convert Metabase questions, models, and metrics into KTX Semantic Layer source definitions. Covers result-metadata to KSL column type mapping, FK/PK detection, near-duplicate deduplication, pre-aggregation decomposition, join-graph connectivity, and how to react to priorProvenance from earlier ingest syncs. Load when the WorkUnit contains `cards/<id>.json` files under a Metabase bundle."
+}

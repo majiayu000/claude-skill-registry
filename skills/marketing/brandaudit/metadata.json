@@ -1,0 +1,33 @@
+{
+  "name": "brandaudit",
+  "description": "Existing brand name analysis across 8 dimensions with severity classification and rebrand verdict: KEEP, MINOR REFRESH, MODERATE REBRAND, or FULL REBRAND.",
+  "repo": "veyralabsgroup/veyraskills",
+  "path": "skills/naming-suite/brandaudit",
+  "github_branch": "main",
+  "category": "marketing",
+  "tags": [
+    "branding",
+    "brand-audit",
+    "naming",
+    "startup",
+    "rebrand",
+    "claude-code"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "brandaudit",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "references/audit-framework.md",
+    "references/examples/sample-audits.md",
+    "references/rebrand-decisions.md",
+    "references/weakness-patterns.md"
+  ],
+  "author": "VeyraLabs",
+  "source_url": "https://github.com/veyralabsgroup/veyraskills/blob/main/skills/naming-suite/brandaudit/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/veyralabsgroup/veyraskills/blob/main/skills/naming-suite/brandaudit/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

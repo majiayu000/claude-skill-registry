@@ -1,0 +1,36 @@
+{
+  "name": "dbt_ingest",
+  "repo": "Kaelio/ktx-ai-data-agents-context",
+  "path": "packages/cli/src/skills/dbt_ingest/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Kaelio/ktx-ai-data-agents-context",
+  "dir_name": "dbt-ingest",
+  "downloaded_at": "2026-06-01T04:14:07.865813Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-ml scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "bash",
+    "runner_up_score": 1,
+    "signals": [
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Kaelio",
+  "source_url": "https://github.com/Kaelio/ktx-ai-data-agents-context/blob/main/packages/cli/src/skills/dbt_ingest/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kaelio/ktx-ai-data-agents-context/blob/main/packages/cli/src/skills/dbt_ingest/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Map dbt `schema.yml` / `properties.yml` models and sources into KTX semantic-layer overlays and column notes. Covers `sources:` vs `models:`, column `data_tests` (not_null, unique, accepted_values, relationships), and how bundle-time writes complement manifest backfill from git sync. Load when the WorkUnit's `skillNames` includes `dbt_ingest` or when raw files are dbt YAML under `models/` / `sources/`."
+}

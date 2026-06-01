@@ -1,0 +1,38 @@
+{
+  "name": "turtle-signal",
+  "repo": "longbridge/skills",
+  "path": "skills/longbridge-turtle-signal/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/longbridge/skills",
+  "dir_name": "longbridge-turtle-signal",
+  "downloaded_at": "2026-06-01T04:32:41.793463Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, shell, cli",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "shell",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "longbridge",
+  "source_url": "https://github.com/longbridge/skills/blob/main/skills/longbridge-turtle-signal/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/longbridge/skills/blob/main/skills/longbridge-turtle-signal/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u57fa\u4e8e\u539f\u7248\u6d77\u9f9f\u4ea4\u6613\u6cd5\uff08Turtle Trading\uff09\u7684\u91cf\u5316\u4fe1\u53f7\u626b\u63cf\u4e0e\u4ed3\u4f4d\u8ba1\u7b97\u5de5\u5177\u3002\u901a\u8fc7 longbridge CLI \u83b7\u53d6 A\u80a1 / \u6e2f\u80a1 / \u7f8e\u80a1 / \u65b0\u52a0\u5761\u80a1\u7684\u884c\u60c5\u6570\u636e\uff0c\u81ea\u52a8\u8ba1\u7b97 ATR\uff08N \u503c\uff09\u3001\u7a81\u7834\u4fe1\u53f7\uff08System 1 / System 2\uff09\u3001\u6b62\u635f\u4ef7\u3001\u52a0\u4ed3\u70b9\u548c Unit \u4ed3\u4f4d\u5927\u5c0f\u3002\n\nUse when users mention \u6d77\u9f9f\u3001turtle\u3001\u6d77\u9f9f\u4ea4\u6613\u3001\u6d77\u9f9f\u4fe1\u53f7\u3001turtle signal\u3001turtle trading, or ask about \u7a81\u7834\u4fe1\u53f7\uff08breakout\uff09\u3001ATR\u3001N\u503c\u3001Unit\u4ed3\u4f4d\u3001\u6b62\u635f\u4ef7\u3001\u52a0\u4ed3\u70b9\u3001S1/S2\u4fe1\u53f7\u300120\u65e5\u9ad8\u70b9/\u4f4e\u70b9\u300155\u65e5\u7a81\u7834, or request to scan watchlist/index for trading signals using the turtle system. Also triggers when users say \"\u626b\u63cf\u7a81\u7834\u4fe1\u53f7\", \"\u5e2e\u6211\u7b97Unit\", \"\u6d77\u9f9f\u6b62\u635f\", \"\u6d77\u9f9f\u7cfb\u7edf\u5206\u6790\", or any variation combining a stock name/code with \"\u6d77\u9f9f\".\n\n**\u9002\u7528\u573a\u666f\uff1a**\n- \u6bcf\u65e5\u6536\u76d8\u540e\u626b\u63cf\u7a81\u7834\u4fe1\u53f7\uff0820\u65e5/55\u65e5\u9ad8\u4f4e\u70b9\u7a81\u7834\uff09\n- \u8ba1\u7b97\u5355\u80a1\u6216\u6279\u91cf\u6807\u7684\u7684 ATR\u3001\u6b62\u635f\u4ef7\u3001\u52a0\u4ed3\u70b9\n- \u6839\u636e\u8d26\u6237\u51c0\u503c\u8ba1\u7b97\u5408\u7406\u4ed3\u4f4d\uff08Unit\uff09\u5927\u5c0f\n- \u5224\u65ad\u73b0\u6709\u6301\u4ed3\u662f\u5426\u89e6\u53d1\u51fa\u573a\u6216\u52a0\u4ed3\u6761\u4ef6\n- \u626b\u63cf\u81ea\u9009\u80a1 / \u6307\u6570\u6210\u5206\u80a1\u7684\u6d77\u9f9f\u4fe1\u53f7\n\n**\u4e0d\u9002\u7528\uff1a**\n- \u57fa\u672c\u9762\u5206\u6790\uff08\u6d77\u9f9f\u7cfb\u7edf\u7eaf\u6280\u672f\u9762\uff09\n- \u9884\u6d4b\u4ef7\u683c\u6da8\u8dcc\u65b9\u5411\n- \u81ea\u52a8\u4e0b\u5355\uff08\u4ec5\u8f93\u51fa\u4fe1\u53f7\uff0c\u7528\u6237\u81ea\u884c\u64cd\u4f5c\uff09\n- A\u80a1/\u6e2f\u80a1/\u65b0\u52a0\u5761\u80a1\u505a\u7a7a\u5f00\u4ed3\u64cd\u4f5c"
+}

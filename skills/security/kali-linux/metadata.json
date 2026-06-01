@@ -1,0 +1,39 @@
+{
+  "name": "kali-linux",
+  "repo": "iuliandita/skills",
+  "path": "skills/kali-linux/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/iuliandita/skills",
+  "dir_name": "kali-linux",
+  "downloaded_at": "2026-06-01T04:29:46.484290Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "security",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for security: security, vulnerability, audit, fuzzing",
+    "score": 4,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "security",
+      "vulnerability",
+      "audit",
+      "fuzzing"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "iuliandita",
+  "source_url": "https://github.com/iuliandita/skills/blob/main/skills/kali-linux/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/iuliandita/skills/blob/main/skills/kali-linux/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u00b7 Administer Kali: apt, branches, metapackages, images, live USB persistence, NetHunter, wireless/GPU. Triggers: 'kali', 'kali rolling', 'kali snapshot', 'kali-tweaks', 'nethunter'."
+}

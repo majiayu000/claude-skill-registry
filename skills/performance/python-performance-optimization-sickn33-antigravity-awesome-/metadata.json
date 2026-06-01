@@ -1,0 +1,39 @@
+{
+  "name": "python-performance-optimization",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/python-performance-optimization/SKILL.md",
+  "github_branch": "main",
+  "category": "performance",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "python-performance-optimization-sickn33-antigravity-awesome-",
+  "downloaded_at": "2026-06-01T04:39:56.908022Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "performance",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for performance: performance, optimize, latency, speed",
+    "score": 4,
+    "runner_up": "data",
+    "runner_up_score": 3,
+    "signals": [
+      "performance",
+      "optimize",
+      "latency",
+      "speed"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/python-performance-optimization/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/python-performance-optimization/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Profile and optimize Python code using cProfile, memory profilers, and performance best practices. Use when debugging slow Python code, optimizing bottlenecks, or improving application performance."
+}

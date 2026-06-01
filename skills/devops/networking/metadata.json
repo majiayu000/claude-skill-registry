@@ -1,0 +1,41 @@
+{
+  "name": "networking",
+  "repo": "iuliandita/skills",
+  "path": "skills/networking/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/iuliandita/skills",
+  "dir_name": "networking",
+  "downloaded_at": "2026-06-01T04:29:48.709313Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "devops",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for devops: ci, cd, docker, kubernetes, infra, infrastructure",
+    "score": 6,
+    "runner_up": "security",
+    "runner_up_score": 3,
+    "signals": [
+      "ci",
+      "cd",
+      "docker",
+      "kubernetes",
+      "infra",
+      "infrastructure"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "iuliandita",
+  "source_url": "https://github.com/iuliandita/skills/blob/main/skills/networking/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/iuliandita/skills/blob/main/skills/networking/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u00b7 Configure/troubleshoot Linux networking: DNS, proxies, VPNs, VLANs, nftables, routing. Triggers: 'dns', 'reverse proxy', 'vpn', 'wireguard', 'tailscale', 'vlan', 'nftables', 'bgp', 'ospf', 'frrouting'. Not OPNsense: firewall-appliance."
+}

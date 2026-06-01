@@ -1,0 +1,37 @@
+{
+  "name": "anmeldung-strategie-portfolio",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "markenrecht-fashion-luxus/skills/anmeldung-strategie-portfolio/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "anmeldung-strategie-portfolio",
+  "downloaded_at": "2026-06-01T04:14:19.305855Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "data",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for data: data, database",
+    "score": 2,
+    "runner_up": "marketing",
+    "runner_up_score": 1,
+    "signals": [
+      "data",
+      "database"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/markenrecht-fashion-luxus/skills/anmeldung-strategie-portfolio/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/markenrecht-fashion-luxus/skills/anmeldung-strategie-portfolio/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Strategische Markenportfolio-Planung f\u00fcr Luxus-Modehaeuser: Mandant will Marken in DE/EU/international sch\u00fctzen oder Portfolio optimieren. Normen: \u00a7\u00a7 32 ff. MarkenG, Art. 32 ff. UMV (EU) 2017/1001, Madrid-Protokoll (WIPO). Pr\u00fcfraster: Nizza-Klassen (3/14/18/25/35), Multi-Class-Strategie, Prioritaets-Kaskade, Kostenoptimierung, Anmeldezeitpunkt. Output Marken-Portfolio-Plan, Anmelde-Empfehlung je Territorium, Kostenprojektion. Abgrenzung: Einzelne Anmeldung DPMA siehe wortmarke-anmeldung-dpma; Madrid-Protokoll Details siehe madrid-protokoll-und-internationale-registrierung."
+}

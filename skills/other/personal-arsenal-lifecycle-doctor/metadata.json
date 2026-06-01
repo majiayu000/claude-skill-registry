@@ -1,0 +1,36 @@
+{
+  "name": "personal-arsenal-lifecycle-doctor",
+  "repo": "majiayu000/spellbook",
+  "path": "skills/personal-arsenal-lifecycle-doctor/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/majiayu000/spellbook",
+  "dir_name": "personal-arsenal-lifecycle-doctor",
+  "downloaded_at": "2026-06-01T04:32:45.895564Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category api scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "development",
+    "runner_up_score": 1,
+    "signals": [
+      "api"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/spellbook/blob/main/skills/personal-arsenal-lifecycle-doctor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/majiayu000/spellbook/blob/main/skills/personal-arsenal-lifecycle-doctor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u626b\u63cf\u5e76\u8bca\u65ad\u4f60\u4e2a\u4eba ~/.claude/skills \u91cc\u7684\u6280\u80fd\u5065\u5eb7\u72b6\u6001\u3002\u5f53\u7528\u6237\u8bf4\u4ee5\u4e0b\u4efb\u610f\u5185\u5bb9\u65f6\u4f7f\u7528\uff1a\n- \u201c\u6211\u7684\u6280\u80fd\u5931\u6548\u4e86\u201d\u201c\u5347\u7ea7\u540e\u8001\u6280\u80fd\u4e0d\u8ba4\u4e86\u201d\n- \u201c\u6280\u80fd\u8150\u70c2\u4e86\u201d\u201c\u5916\u90e8\u4f9d\u8d56\u574f\u4e86\u201d\u201c\u6211\u7684\u4e2a\u4eba Arsenal \u4e71\u4e86\u201d\n- \u201c\u5e2e\u6211\u68c0\u67e5\u6280\u80fd\u5065\u5eb7\u201d\u201c\u6280\u80fd\u751f\u547d\u5468\u671f\u201d\u201c\u957f\u671f\u7ef4\u62a4\u6280\u80fd\u201d\n- \u201c\u6211 1-2 \u5e74\u524d\u8d85\u597d\u7528\u7684 Skill \u73b0\u5728 Claude \u5b8c\u5168\u4e0d\u8ba4\u4e86\u201d\n- \u201c\u6211\u7684\u90e8\u7f72\u7c7b\u6280\u80fd\u73b0\u5728\u6267\u884c\u4e0d\u4e86\u4e86\uff0c\u5916\u90e8\u9879\u76ee\u4e0b\u7ebf\u4e86\u201d\n\n\u7279\u522b\u9002\u5408\u7ef4\u62a4 1 \u5e74\u4ee5\u4e0a\u4e2a\u4eba\u6280\u80fd\u96c6\u5408\uff08Arsenal + \u81ea\u5b9a\u4e49 + \u793e\u533a\u62f7\u8d1d\u6df7\u5408\uff09\u7684\u91cd\u5ea6\u7528\u6237\u3002\nAlways protect \u7528\u6237\u73b0\u6709\u7684 CLAUDE.md / AGENTS.md / \u81ea\u5b9a\u4e49\u914d\u7f6e\uff0c\u53ea\u8bfb\u4f18\u5148\uff0c\u4efb\u4f55\u4fee\u6539\u5fc5\u987b\u7528\u6237\u660e\u786e\u786e\u8ba4\u540e\u624d\u6267\u884c\u3002\n\u53d1\u73b0\u95ee\u9898\u65f6\u4f18\u5148\u7ed9\u51fa\u6700\u5c0f\u53d8\u66f4 + \u5907\u4efd\u5efa\u8bae\uff0c\u7edd\u4e0d\u64c5\u81ea\u5927\u89c4\u6a21\u4fee\u6539\u3002"
+}

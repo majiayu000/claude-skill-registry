@@ -1,0 +1,39 @@
+{
+  "name": "jekyll-hyde",
+  "repo": "iuliandita/skills",
+  "path": "skills/jekyll-hyde/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/iuliandita/skills",
+  "dir_name": "jekyll-hyde",
+  "downloaded_at": "2026-06-01T04:29:47.389632Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "security",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for security: security, auth, audit, owasp",
+    "score": 4,
+    "runner_up": "ai-llm",
+    "runner_up_score": 3,
+    "signals": [
+      "security",
+      "auth",
+      "audit",
+      "owasp"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "iuliandita",
+  "source_url": "https://github.com/iuliandita/skills/blob/main/skills/jekyll-hyde/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/iuliandita/skills/blob/main/skills/jekyll-hyde/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u00b7 Review product, engineering, design, and business decisions with Jekyll/Hyde lenses. Triggers: 'jekyll', 'hyde', 'decision review', 'strategy review', 'red-team', 'dark pattern'."
+}

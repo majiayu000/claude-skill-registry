@@ -213,6 +213,13 @@ by policy, target `other`, classification status/path failures, stable-key
 conflicts, source missing, current archive category filtered out, and movable
 candidates under the selected policy.
 
+`scripts/build_other_residual_governance_report.py` explains the live residual
+bucket after a publish or data merge when there may no longer be a single active
+classification batch. It is report-only and groups current residual skills into
+security failures, structural review, semantic review candidates, low-context
+items, and manual taxonomy review. This script must not mutate archive contents
+or make publish decisions.
+
 ## Governance Gates
 
 Taxonomy gate:
@@ -247,6 +254,15 @@ Category artifact gate:
 - It also checks category count consistency across
   `docs/categories/index.json`, category pointers, category manifests, manifest
   part counts, category parts, and `docs/stats.json`.
+
+Release acceptance report:
+
+- `scripts/build_publish_readiness_report.py` reads the generated main artifact
+  and summarizes provenance, publish status, registry counts, category counts,
+  and category manifest consistency.
+- The readiness report is informational. It does not implement an `other`
+  count publish gate, and it must not be wired into publish as a blocker without
+  a separate maintainer decision.
 
 ## Operating Flow
 

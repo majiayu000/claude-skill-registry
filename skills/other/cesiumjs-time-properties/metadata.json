@@ -1,0 +1,36 @@
+{
+  "name": "cesiumjs-time-properties",
+  "repo": "CesiumGS/cesiumjs-skills",
+  "path": "skills/cesiumjs-time-properties/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/CesiumGS/cesiumjs-skills",
+  "dir_name": "cesiumjs-time-properties",
+  "downloaded_at": "2026-06-02T04:05:23.340394Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category data scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "design",
+    "runner_up_score": 1,
+    "signals": [
+      "data"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "CesiumGS",
+  "source_url": "https://github.com/CesiumGS/cesiumjs-skills/blob/main/skills/cesiumjs-time-properties/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CesiumGS/cesiumjs-skills/blob/main/skills/cesiumjs-time-properties/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "CesiumJS time, properties, and animation - Clock, JulianDate, TimeInterval, Property, SampledProperty, CallbackProperty, interpolation, splines, CZML temporal data. Use when making entity attributes time-dynamic, configuring the simulation clock, interpolating positions over time, or working with sampled or callback properties."
+}

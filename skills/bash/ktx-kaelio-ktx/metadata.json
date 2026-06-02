@@ -1,0 +1,39 @@
+{
+  "name": "ktx",
+  "repo": "Kaelio/ktx",
+  "path": "skills/ktx/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/Kaelio/ktx",
+  "dir_name": "ktx-kaelio-ktx",
+  "downloaded_at": "2026-06-02T04:08:18.971752Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for bash: bash, shell, script, cli",
+    "score": 4,
+    "runner_up": "ai-llm",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "shell",
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Kaelio",
+  "source_url": "https://github.com/Kaelio/ktx/blob/main/skills/ktx/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kaelio/ktx/blob/main/skills/ktx/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Installs and configures ktx, the open-source context layer for data agents \u2014 runs ktx setup non-interactively with hidden CLI flags, configures database connections and embeddings, installs agent integration, and verifies readiness. Use when the user asks an agent to add ktx to a project, connect data sources, install agent rules, ingest schema, or troubleshoot a local ktx install."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "allgemein",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "verlagsredaktion/skills/allgemein/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "allgemein",
+  "downloaded_at": "2026-06-02T04:08:40.374285Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, seo, social",
+    "score": 3,
+    "runner_up": "communication",
+    "runner_up_score": 1,
+    "signals": [
+      "marketing",
+      "seo",
+      "social"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/verlagsredaktion/skills/allgemein/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/verlagsredaktion/skills/allgemein/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Cooler Einstieg fuer das Verlagsredaktion-Plugin: stummer Upload, Morgenlage, Eingangskorb, Fristen, Rechteampel, Manuskriptstatus und Routing zu den Verlagsdesk-Skills."
+}

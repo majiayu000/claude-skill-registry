@@ -1,0 +1,36 @@
+{
+  "name": "mandat-triage-it-recht",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "fachanwalt-it-recht/skills/mandat-triage-it-recht/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "mandat-triage-it-recht",
+  "downloaded_at": "2026-06-02T04:08:32.684711Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-llm scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "ai"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/fachanwalt-it-recht/skills/mandat-triage-it-recht/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/fachanwalt-it-recht/skills/mandat-triage-it-recht/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Strukturierte Eingangs-Abfrage f\u00fcr IT-rechtliche Mandate mit Fristen-Sofort-Check. Anwendungsfall neues IT-Rechtsmandat geht ein und muss schnell triagiert und dem richtigen Workflow zugeordnet werden. Normen Art. 33 DSGVO 72-Stunden-Frist NIS-2 24-Stunden-Fruehwarnung \u00a7\u00a7 327 ff. BGB Digitale Produkte. Pr\u00fcfraster Sachgebiet Mandantenrolle Vertragstyp Phase Sofort-Fristen Cyber-Vorfall Eskalation. Output Triage-Ergebnis mit Routing zu Folgeskills und Fristen-Eskalationshinweis bei Cyber-Vorfall. Abgrenzung zu erstgespraech-mandatsannahme und cyber-incident-response-72h."
+}

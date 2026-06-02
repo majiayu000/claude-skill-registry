@@ -1,0 +1,36 @@
+{
+  "name": "trusted-flagger-beschwerdemanagement-dsa",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "ecommerce-recht/skills/trusted-flagger-beschwerdemanagement-dsa/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "trusted-flagger-beschwerdemanagement-dsa",
+  "downloaded_at": "2026-06-02T04:08:39.590631Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-ml scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "",
+    "runner_up_score": 0,
+    "signals": [
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/ecommerce-recht/skills/trusted-flagger-beschwerdemanagement-dsa/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/ecommerce-recht/skills/trusted-flagger-beschwerdemanagement-dsa/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Trusted Flagger Beschwerdemanagement DSA: pr\u00fcft die einschl\u00e4gigen Voraussetzungen, Dokumente, Risiken und Ausnahmen. Norm-/Quellenanker: BGB \u00a7\u00a7 312 ff., 355 und 327 ff., 434 ff.; EGBGB Informationspflichten; PAngV; UWG; DDG; DSA; DSGVO; BFSG; GPSR; ElektroG/VerpackG/BattG."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "cesiumjs-camera",
+  "repo": "CesiumGS/cesiumjs-skills",
+  "path": "skills/cesiumjs-camera/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/CesiumGS/cesiumjs-skills",
+  "dir_name": "cesiumjs-camera",
+  "downloaded_at": "2026-06-02T04:05:19.370056Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, build",
+    "score": 2,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "CesiumGS",
+  "source_url": "https://github.com/CesiumGS/cesiumjs-skills/blob/main/skills/cesiumjs-camera/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CesiumGS/cesiumjs-skills/blob/main/skills/cesiumjs-camera/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "CesiumJS camera control - Camera, flyTo, lookAt, setView, ScreenSpaceCameraController, CameraEventAggregator, flight animation. Use when positioning the camera, creating flyTo animations, constraining user navigation, tracking entities, or converting between screen and world coordinates."
+}

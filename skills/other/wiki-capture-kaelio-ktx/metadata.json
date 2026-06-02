@@ -1,0 +1,37 @@
+{
+  "name": "wiki_capture",
+  "repo": "Kaelio/ktx",
+  "path": "packages/cli/src/skills/wiki_capture/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Kaelio/ktx",
+  "dir_name": "wiki-capture-kaelio-ktx",
+  "downloaded_at": "2026-06-02T04:08:21.694910Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: data=2, documents=2",
+    "score": 2,
+    "runner_up": "documents",
+    "runner_up_score": 2,
+    "signals": [
+      "data",
+      "analytics"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Kaelio",
+  "source_url": "https://github.com/Kaelio/ktx/blob/main/packages/cli/src/skills/wiki_capture/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Kaelio/ktx/blob/main/packages/cli/src/skills/wiki_capture/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "KTX's knowledge base - wiki pages for durable, reusable business knowledge. Covers capture workflow for user preferences, metric definitions, organizational conventions, and cross-references between wiki pages and semantic-layer sources. Loaded by the post-turn memory-agent only. The research agent reads wiki via `wiki_read`/`wiki_search` but does not write it."
+}

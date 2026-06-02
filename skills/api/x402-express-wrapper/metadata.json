@@ -1,0 +1,38 @@
+{
+  "name": "x402-express-wrapper",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/x402-express-wrapper/SKILL.md",
+  "github_branch": "main",
+  "category": "api",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "x402-express-wrapper",
+  "downloaded_at": "2026-06-02T04:34:12.413807Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "api",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for api: api, endpoint",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "api",
+      "endpoint"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/x402-express-wrapper/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/x402-express-wrapper/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Wrapper oficial de M2MCent (Node.js) para inyectar muros de pago x402 en APIs o servidores Model Context Protocol (MCP). Usar al construir nuevos servicios que requieran monetizaci\u00f3n m\u00e1quina a m\u00e1quina."
+}

@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-06-01T16:40:57.816776Z",
-  "archive_skill_md_count_raw": 199454,
-  "archive_metadata_count_raw": 199454,
-  "indexed_skill_count_scan_shape": 199454,
-  "registry_skill_count_dedup": 157600,
+  "updated_at": "2026-06-02T05:19:22.855505Z",
+  "archive_skill_md_count_raw": 199556,
+  "archive_metadata_count_raw": 199556,
+  "indexed_skill_count_scan_shape": 199556,
+  "registry_skill_count_dedup": 157698,
   "total_plugins": 3,
   "categories": 42,
   "category_counts": [
@@ -15,12 +15,12 @@
     {
       "name": "ai-llm",
       "code": "ai-llm",
-      "count": 2680
+      "count": 2681
     },
     {
       "name": "ai-ml",
       "code": "ai-ml",
-      "count": 2606
+      "count": 2607
     },
     {
       "name": "analysis",
@@ -30,12 +30,12 @@
     {
       "name": "api",
       "code": "api",
-      "count": 1371
+      "count": 1372
     },
     {
       "name": "bash",
       "code": "bash",
-      "count": 326
+      "count": 329
     },
     {
       "name": "business",
@@ -65,22 +65,22 @@
     {
       "name": "data",
       "code": "dat",
-      "count": 49395
+      "count": 49402
     },
     {
       "name": "design",
       "code": "des",
-      "count": 13957
+      "count": 13966
     },
     {
       "name": "development",
       "code": "dev",
-      "count": 39351
+      "count": 39354
     },
     {
       "name": "devops",
       "code": "ops",
-      "count": 10968
+      "count": 10969
     },
     {
       "name": "documents",
@@ -130,7 +130,7 @@
     {
       "name": "marketing",
       "code": "mkt",
-      "count": 3140
+      "count": 3141
     },
     {
       "name": "orchestration",
@@ -140,7 +140,7 @@
     {
       "name": "other",
       "code": "oth",
-      "count": 539
+      "count": 605
     },
     {
       "name": "performance",
@@ -165,12 +165,12 @@
     {
       "name": "product",
       "code": "prd",
-      "count": 3063
+      "count": 3064
     },
     {
       "name": "productivity",
       "code": "pro",
-      "count": 3317
+      "count": 3322
     },
     {
       "name": "quality",
@@ -180,7 +180,7 @@
     {
       "name": "security",
       "code": "sec",
-      "count": 5325
+      "count": 5326
     },
     {
       "name": "skills",
@@ -195,7 +195,7 @@
     {
       "name": "testing",
       "code": "tst",
-      "count": 11404
+      "count": 11406
     },
     {
       "name": "travel",
@@ -218,7 +218,7 @@
       "count": 1129
     }
   ],
-  "unique_repo_count": 9804,
+  "unique_repo_count": 9806,
   "official_skill_count": 0,
   "top_repositories": [
     {
@@ -231,7 +231,7 @@
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "count": 1636
+      "count": 1643
     },
     {
       "repo": "a5c-ai/babysitter",
@@ -266,34 +266,34 @@
   "index_size_bytes": 162,
   "index_size_gzip_bytes": 175,
   "search_shard_count": 6,
-  "search_largest_shard_bytes": 8388616,
-  "search_largest_shard_gzip_bytes": 2559865,
+  "search_largest_shard_bytes": 8388681,
+  "search_largest_shard_gzip_bytes": 2559828,
   "category_shard_count": 50,
-  "category_largest_part_bytes": 8388722,
-  "category_largest_part_gzip_bytes": 1736234,
-  "lite_index_count": 158042,
+  "category_largest_part_bytes": 8388693,
+  "category_largest_part_gzip_bytes": 1736091,
+  "lite_index_count": 158140,
   "lite_index_included_count": 5000,
   "lite_index_size_bytes": 3503714,
-  "lite_index_gzip_size_bytes": 687789,
+  "lite_index_gzip_size_bytes": 687817,
   "quality_index_size_bytes": 220,
   "quality_index_gzip_size_bytes": 213,
   "quality_shard_count": 6,
-  "quality_largest_shard_bytes": 8388687,
-  "quality_largest_shard_gzip_bytes": 1748794,
+  "quality_largest_shard_bytes": 8388701,
+  "quality_largest_shard_gzip_bytes": 1748727,
   "security_index_size_bytes": 223,
-  "security_index_gzip_size_bytes": 214,
+  "security_index_gzip_size_bytes": 216,
   "security_shard_count": 18,
-  "security_largest_shard_bytes": 8388673,
-  "security_largest_shard_gzip_bytes": 1638070,
+  "security_largest_shard_bytes": 8388720,
+  "security_largest_shard_gzip_bytes": 1638169,
   "ranking_index_size_bytes": 220,
-  "ranking_index_gzip_size_bytes": 213,
+  "ranking_index_gzip_size_bytes": 214,
   "ranking_shard_count": 5,
-  "ranking_largest_shard_bytes": 8388677,
-  "ranking_largest_shard_gzip_bytes": 2204820,
-  "largest_generated_file_bytes": 8388722,
+  "ranking_largest_shard_bytes": 8388705,
+  "ranking_largest_shard_gzip_bytes": 2204616,
+  "largest_generated_file_bytes": 8388720,
   "security_scan": {
-    "total": 199454,
-    "passed": 190537,
+    "total": 199556,
+    "passed": 190639,
     "failed": 8917
   }
 }

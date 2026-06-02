@@ -1,0 +1,36 @@
+{
+  "name": "cesiumjs-3d-tiles",
+  "repo": "CesiumGS/cesiumjs-skills",
+  "path": "skills/cesiumjs-3d-tiles/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/CesiumGS/cesiumjs-skills",
+  "dir_name": "cesiumjs-3d-tiles",
+  "downloaded_at": "2026-06-02T04:05:20.941538Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-ml scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "data",
+    "runner_up_score": 1,
+    "signals": [
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "CesiumGS",
+  "source_url": "https://github.com/CesiumGS/cesiumjs-skills/blob/main/skills/cesiumjs-3d-tiles/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/CesiumGS/cesiumjs-skills/blob/main/skills/cesiumjs-3d-tiles/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "CesiumJS 3D Tiles - Cesium3DTileset, styling, metadata, feature picking, voxels, point clouds, I3S, Gaussian splats, clipping planes and polygons. Use when loading 3D Tiles tilesets, styling building features, querying metadata properties, working with voxels or point clouds, or clipping spatial data."
+}

@@ -1,0 +1,44 @@
+---
+name: robot-as-a-service-vertrag
+description: "Entwirft und prüft Robot-as-a-Service-Verträge: Leistungsbeschreibung, SLA, Updates, Daten, Haftung, Wartung, Exit und Versicherung."
+---
+
+# Robot-as-a-Service-Vertrag
+
+Spezialskill im Plugin `robotik-recht`. Nutze ihn, wenn der Fall Robotik, autonome oder teilautonome Maschinen, integrierte KI, Sensorik, Remote-Updates, Mensch-Roboter-Interaktion, Produktsicherheit, Haftung, Datenschutz, Cybersecurity oder Robotikverträge berührt.
+
+## Start
+
+Kläre knapp:
+
+1. **Rolle:** Hersteller, Anbieter, Integrator, Importeur, Händler, Betreiber, Deployer, Wartung, Versicherer, Behörde oder Geschädigte Person.
+2. **Produkt:** Industrieroboter, Cobot, AMR/AGV, Service-, Pflege-, Medizin-, Haushalts-, Agrar-, Sicherheits-, Liefer- oder Sonderrobotik.
+3. **Ziel:** Freigabe, CE-Akte, Behördenantwort, Vertragsprüfung, Incident, Rückruf, Haftungsmemo, Datenschutzprüfung, Cyberprüfung, Klage/Verteidigung oder Vorstandsvorlage.
+4. **Dringlichkeit:** Unfall, Verletzung, Datenpanne, Cyberangriff, Marktüberwachung, Rückruf, Kundenstillstand, Frist oder nur Prävention.
+5. **Unterlagen:** Anleitung, Risikobeurteilung, EU-Konformitätserklärung, technische Dokumentation, Logs, Softwarestände, Verträge, DSFA, SBOM, Wartungsprotokolle, E-Mails.
+
+## Prüfspur
+
+- Baue zuerst eine **Rollenmatrix**. Robotikfälle kippen oft daran, wer rechtlich Hersteller, Anbieter, Betreiber oder bloßer Zulieferer ist.
+- Prüfe dann **parallel**: Maschinenrecht/Produktsicherheit, KI-VO, Produkthaftung, Datenschutz, Cybersecurity, Data Act, sektorspezifisches Recht und Vertrag.
+- Trenne sichere Tatsachen, technische Annahmen und Rechtsbewertung. Markiere jede nicht belegte technische Annahme sichtbar.
+- Arbeite mit einer **Ampel**: Rot = sofort handeln; Gelb = Unterlagen/Rückfragen; Grün = derzeit tragfähig, aber live zu verifizieren.
+- Bei Rechtsprechung und aktuellen Normen: keine Paywall-Fundstellen, keine erfundenen Aktenzeichen; live über amtliche/freie Quellen prüfen.
+
+## Spezifischer Fokus
+
+Dieser Skill fokussiert: **Entwirft und prüft Robot-as-a-Service-Verträge: Leistungsbeschreibung, SLA, Updates, Daten, Haftung, Wartung, Exit und Versicherung.**
+
+Quellen-/Normenanker: BGB, AGB-Recht, Datenschutz, CRA, Produkthaftung.
+
+## Ergebnisformat
+
+Liefere je nach Auftrag eines der folgenden Formate:
+
+- **Kurzvermerk** mit Ergebnis, Begründung, Risikoampel und offenen Fragen.
+- **Rückfragenliste** an Technik/QM/IT-Security/Datenschutz/Vertrieb.
+- **Dokumentenmatrix** mit vorhandenen und fehlenden Nachweisen.
+- **Behörden- oder Mandantenentwurf** mit vorsichtiger Sprache und Quellenhinweisen.
+- **Red-Team-Check** mit Gegenargumenten, Worst Case und nächstem Schritt.
+
+Schlage am Ende passende Anschluss-Skills aus `robotik-recht` vor. Wenn Datenschutz, KI-VO, IT-Recht, Medizinrecht, Arbeitsrecht oder Vertragsrecht überwiegt, nenne zusätzlich das passende Nachbarplugin.

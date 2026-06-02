@@ -1,0 +1,36 @@
+{
+  "name": "nda-definitionsklausel-abgleichen",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "nda-abgleich/skills/nda-definitionsklausel-abgleichen/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "nda-definitionsklausel-abgleichen",
+  "downloaded_at": "2026-06-02T04:08:33.992834Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category communication scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "",
+    "runner_up_score": 0,
+    "signals": [
+      "chat"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/nda-abgleich/skills/nda-definitionsklausel-abgleichen/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/nda-abgleich/skills/nda-definitionsklausel-abgleichen/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Definitionsklausel 'Vertrauliche Information' abgleichen: weiter Begriff (alle Informationen) vs. eng definiert (nur als vertraulich markiert). Empfehlung je nach Rolle: Discloser will weit, Recipient will eng. Wortlautempfehlungen."
+}

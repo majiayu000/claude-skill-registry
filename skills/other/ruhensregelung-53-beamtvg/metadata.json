@@ -1,0 +1,36 @@
+{
+  "name": "ruhensregelung-53-beamtvg",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "beamtenrecht/skills/ruhensregelung-53-beamtvg/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "ruhensregelung-53-beamtvg",
+  "downloaded_at": "2026-06-03T04:17:04.509191Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-ml scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "",
+    "runner_up_score": 0,
+    "signals": [
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/beamtenrecht/skills/ruhensregelung-53-beamtvg/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/beamtenrecht/skills/ruhensregelung-53-beamtvg/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Skill zur Ruhensregelung von Versorgungsbezuegen bei Erwerbseinkommen nach \u00a7 53 BeamtVG. Klaert Hinzuverdienstgrenze fuer Ruhestandsbeamte unterschiedliche Grenzen vor und nach Erreichen der Regelaltersgrenze Anrechnung von Verwendungseinkommen aus dem oeffentlichen Dienst und Erwerbsersatzeinkommen wie Krankengeld oder Arbeitslosengeld. Behandelt Sonderfaelle wie Tantiemen Aktienoptionen Honorare als Sachverstaendiger und Beratungseinkommen. Liefert Pruefraster und Antragsbausteine."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "ki-governance-kaltstart-interview",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "ki-governance/skills/ki-governance-kaltstart-interview/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-ml",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "ki-governance-kaltstart-interview",
+  "downloaded_at": "2026-06-03T04:17:13.885894Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "ai-ml",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for ai-ml: ai, model, training",
+    "score": 3,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "ai",
+      "model",
+      "training"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/ki-governance/skills/ki-governance-kaltstart-interview/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/ki-governance/skills/ki-governance-kaltstart-interview/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "KI-Governance-Plugin erstmalig einrichten oder Inventar der KI-Systeme im Unternehmen erfassen und AI-Act-Anwendungsbereich pr\u00fcfen. F\u00fchrt Erstgespraech durch ermittelt KI-Inventar Rolle im KI-Lieferkette (Anbieter/Betreiber Art. 3 KI-VO 2024/1689) regulatorischen Anwendungsbereich. Normen EU-KI-VO 2024/1689 Art. 3 Rolle Art. 6 Risikoklasse Hochrisiko-KI Anhang III. Output Praxisprofil in Konfiguration mit KI-Inventar Rollenklassifizierung und Governance-Framework. Abgrenzung: ki-governance-anpassen f\u00fcr spaetere Einzelaenderungen ki-inventar f\u00fcr laufende Inventar-Pflege."
+}

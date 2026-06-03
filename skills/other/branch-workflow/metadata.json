@@ -1,0 +1,38 @@
+{
+  "name": "branch-workflow",
+  "repo": "ToruAI/toru-claude-agents",
+  "path": "skills/branch-workflow/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ToruAI/toru-claude-agents",
+  "dir_name": "branch-workflow",
+  "downloaded_at": "2026-06-03T04:21:07.376206Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=3, product=3",
+    "score": 3,
+    "runner_up": "product",
+    "runner_up_score": 3,
+    "signals": [
+      "code",
+      "build",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "ToruAI",
+  "source_url": "https://github.com/ToruAI/toru-claude-agents/blob/main/skills/branch-workflow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ToruAI/toru-claude-agents/blob/main/skills/branch-workflow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Git branch workflow for autonomous work. Apply when implementing features, fixes, or any code changes."
+}

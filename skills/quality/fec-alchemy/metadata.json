@@ -1,0 +1,38 @@
+{
+  "name": "fec-alchemy",
+  "repo": "bovinphang/frontend-craft",
+  "path": "skills/fec-alchemy/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/bovinphang/frontend-craft",
+  "dir_name": "fec-alchemy",
+  "downloaded_at": "2026-06-03T04:25:22.552210Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "quality",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for quality: quality, lint, review",
+    "score": 3,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "quality",
+      "lint",
+      "review"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "bovinphang",
+  "source_url": "https://github.com/bovinphang/frontend-craft/blob/main/skills/fec-alchemy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bovinphang/frontend-craft/blob/main/skills/fec-alchemy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when absorbing ideas, capabilities, workflows, architecture, quality systems, ecosystem extensions, or engineering practices from any reference system into the current project through original, project-native redesign rather than copying."
+}

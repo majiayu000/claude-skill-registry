@@ -1,0 +1,36 @@
+{
+  "name": "common-law-us-vs-uk-drafting",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "common-law-kompass/skills/common-law-us-vs-uk-drafting/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "common-law-us-vs-uk-drafting",
+  "downloaded_at": "2026-06-03T04:17:13.164960Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category business scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "performance",
+    "runner_up_score": 1,
+    "signals": [
+      "business"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/common-law-kompass/skills/common-law-us-vs-uk-drafting/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/common-law-kompass/skills/common-law-us-vs-uk-drafting/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Anwalt muss zwischen British English English Law US contract style Delaware/New York-Konventionen und Business-English unterscheiden. Anwendungsfall Vertrag f\u00fcr UK- oder US-Gegenpartei. Pr\u00fcfraster Jurisdiction-Style-Matching Drafting-Konventionen Sprachebene. Output Drafting-Empfehlung Stil-Hinweise Klausel-Beispiele. Abgrenzung zu common-law-false-friends-scanner (Begriffe) und common-law-governing-law-jurisdiction (Rechtswahl)."
+}

@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-06-02T05:19:22.855505Z",
-  "archive_skill_md_count_raw": 199556,
-  "archive_metadata_count_raw": 199556,
-  "indexed_skill_count_scan_shape": 199556,
-  "registry_skill_count_dedup": 157698,
+  "updated_at": "2026-06-03T05:23:42.989098Z",
+  "archive_skill_md_count_raw": 199691,
+  "archive_metadata_count_raw": 199691,
+  "indexed_skill_count_scan_shape": 199691,
+  "registry_skill_count_dedup": 157829,
   "total_plugins": 3,
   "categories": 42,
   "category_counts": [
@@ -20,7 +20,7 @@
     {
       "name": "ai-ml",
       "code": "ai-ml",
-      "count": 2607
+      "count": 2609
     },
     {
       "name": "analysis",
@@ -30,17 +30,17 @@
     {
       "name": "api",
       "code": "api",
-      "count": 1372
+      "count": 1373
     },
     {
       "name": "bash",
       "code": "bash",
-      "count": 329
+      "count": 330
     },
     {
       "name": "business",
       "code": "business",
-      "count": 1410
+      "count": 1411
     },
     {
       "name": "c-level",
@@ -65,27 +65,27 @@
     {
       "name": "data",
       "code": "dat",
-      "count": 49402
+      "count": 49403
     },
     {
       "name": "design",
       "code": "des",
-      "count": 13966
+      "count": 13968
     },
     {
       "name": "development",
       "code": "dev",
-      "count": 39354
+      "count": 39369
     },
     {
       "name": "devops",
       "code": "ops",
-      "count": 10969
+      "count": 10971
     },
     {
       "name": "documents",
       "code": "doc",
-      "count": 7858
+      "count": 7860
     },
     {
       "name": "domains",
@@ -130,7 +130,7 @@
     {
       "name": "marketing",
       "code": "mkt",
-      "count": 3141
+      "count": 3143
     },
     {
       "name": "orchestration",
@@ -140,7 +140,7 @@
     {
       "name": "other",
       "code": "oth",
-      "count": 605
+      "count": 695
     },
     {
       "name": "performance",
@@ -165,22 +165,22 @@
     {
       "name": "product",
       "code": "prd",
-      "count": 3064
+      "count": 3067
     },
     {
       "name": "productivity",
       "code": "pro",
-      "count": 3322
+      "count": 3328
     },
     {
       "name": "quality",
       "code": "quality",
-      "count": 4447
+      "count": 4448
     },
     {
       "name": "security",
       "code": "sec",
-      "count": 5326
+      "count": 5328
     },
     {
       "name": "skills",
@@ -195,7 +195,7 @@
     {
       "name": "testing",
       "code": "tst",
-      "count": 11406
+      "count": 11408
     },
     {
       "name": "travel",
@@ -210,15 +210,15 @@
     {
       "name": "workflow",
       "code": "workflow",
-      "count": 3553
+      "count": 3554
     },
     {
       "name": "writing",
       "code": "writing",
-      "count": 1129
+      "count": 1130
     }
   ],
-  "unique_repo_count": 9806,
+  "unique_repo_count": 9807,
   "official_skill_count": 0,
   "top_repositories": [
     {
@@ -227,11 +227,11 @@
     },
     {
       "repo": "majiayu000/claude-skill-registry",
-      "count": 1846
+      "count": 1859
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "count": 1643
+      "count": 1649
     },
     {
       "repo": "a5c-ai/babysitter",
@@ -266,34 +266,34 @@
   "index_size_bytes": 162,
   "index_size_gzip_bytes": 175,
   "search_shard_count": 6,
-  "search_largest_shard_bytes": 8388681,
-  "search_largest_shard_gzip_bytes": 2559828,
+  "search_largest_shard_bytes": 8388575,
+  "search_largest_shard_gzip_bytes": 2558967,
   "category_shard_count": 50,
-  "category_largest_part_bytes": 8388693,
+  "category_largest_part_bytes": 8388750,
   "category_largest_part_gzip_bytes": 1736091,
-  "lite_index_count": 158140,
+  "lite_index_count": 158271,
   "lite_index_included_count": 5000,
   "lite_index_size_bytes": 3503714,
-  "lite_index_gzip_size_bytes": 687817,
+  "lite_index_gzip_size_bytes": 687807,
   "quality_index_size_bytes": 220,
   "quality_index_gzip_size_bytes": 213,
   "quality_shard_count": 6,
-  "quality_largest_shard_bytes": 8388701,
-  "quality_largest_shard_gzip_bytes": 1748727,
+  "quality_largest_shard_bytes": 8388643,
+  "quality_largest_shard_gzip_bytes": 1748739,
   "security_index_size_bytes": 223,
-  "security_index_gzip_size_bytes": 216,
+  "security_index_gzip_size_bytes": 215,
   "security_shard_count": 18,
   "security_largest_shard_bytes": 8388720,
-  "security_largest_shard_gzip_bytes": 1638169,
+  "security_largest_shard_gzip_bytes": 1638023,
   "ranking_index_size_bytes": 220,
-  "ranking_index_gzip_size_bytes": 214,
+  "ranking_index_gzip_size_bytes": 213,
   "ranking_shard_count": 5,
-  "ranking_largest_shard_bytes": 8388705,
-  "ranking_largest_shard_gzip_bytes": 2204616,
-  "largest_generated_file_bytes": 8388720,
+  "ranking_largest_shard_bytes": 8388713,
+  "ranking_largest_shard_gzip_bytes": 2204670,
+  "largest_generated_file_bytes": 8388750,
   "security_scan": {
-    "total": 199556,
-    "passed": 190639,
+    "total": 199691,
+    "passed": 190774,
     "failed": 8917
   }
 }

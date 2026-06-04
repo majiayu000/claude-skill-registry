@@ -1,0 +1,37 @@
+{
+  "name": "mobile-recon-android",
+  "repo": "0xGhostCAT/claude-ai-cyber-security-skills",
+  "path": "skills/26-mobile-recon-android/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/0xGhostCAT/claude-ai-cyber-security-skills",
+  "dir_name": "26-mobile-recon-android",
+  "downloaded_at": "2026-06-04T04:06:35.851564Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: api=2, bash=2",
+    "score": 2,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "api",
+      "endpoint"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "0xGhostCAT",
+  "source_url": "https://github.com/0xGhostCAT/claude-ai-cyber-security-skills/blob/main/skills/26-mobile-recon-android/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/0xGhostCAT/claude-ai-cyber-security-skills/blob/main/skills/26-mobile-recon-android/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Mobile (Android) app recon and analysis \u2014 decompile APK, extract secrets, find hardcoded endpoints, exposed Firebase / AWS / API keys, deeplink abuse, intent vulnerabilities, exported components, WebView XSS, MobSF static analysis. Use when target's scope includes Android apps (.apk)."
+}

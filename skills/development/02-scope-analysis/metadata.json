@@ -1,0 +1,38 @@
+{
+  "name": "scope-analysis",
+  "repo": "0xGhostCAT/claude-ai-cyber-security-skills",
+  "path": "skills/02-scope-analysis/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/0xGhostCAT/claude-ai-cyber-security-skills",
+  "dir_name": "02-scope-analysis",
+  "downloaded_at": "2026-06-04T04:06:40.725884Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, build, compile",
+    "score": 3,
+    "runner_up": "security",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build",
+      "compile"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "0xGhostCAT",
+  "source_url": "https://github.com/0xGhostCAT/claude-ai-cyber-security-skills/blob/main/skills/02-scope-analysis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/0xGhostCAT/claude-ai-cyber-security-skills/blob/main/skills/02-scope-analysis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Parse HackerOne / Bugcrowd / Intigriti scope into a structured asset list with in-scope, out-of-scope, and excluded-vuln-class breakdowns. Use when the user has chosen a program and needs to understand exactly what's allowed before recon."
+}

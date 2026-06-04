@@ -1,0 +1,40 @@
+{
+  "name": "claude-md-writer",
+  "repo": "serejaris/personal-corp-skills",
+  "path": "skills/claude-md-writer/skill.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/serejaris/personal-corp-skills",
+  "dir_name": "claude-md-writer-serejaris-personal-corp-skills",
+  "downloaded_at": "2026-06-04T04:35:26.327868Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for development: dev, code, build, debug, refactor",
+    "score": 5,
+    "runner_up": "data",
+    "runner_up_score": 3,
+    "signals": [
+      "dev",
+      "code",
+      "build",
+      "debug",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "serejaris",
+  "source_url": "https://github.com/serejaris/personal-corp-skills/blob/main/skills/claude-md-writer/skill.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/serejaris/personal-corp-skills/blob/main/skills/claude-md-writer/skill.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when creating or refactoring CLAUDE.md files - enforces best practices for size, structure, and content organization"
+}

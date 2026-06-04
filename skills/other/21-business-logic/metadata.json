@@ -1,0 +1,37 @@
+{
+  "name": "business-logic",
+  "repo": "0xGhostCAT/claude-ai-cyber-security-skills",
+  "path": "skills/21-business-logic/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/0xGhostCAT/claude-ai-cyber-security-skills",
+  "dir_name": "21-business-logic",
+  "downloaded_at": "2026-06-04T04:06:41.270606Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: business=2, workflow=2",
+    "score": 2,
+    "runner_up": "workflow",
+    "runner_up_score": 2,
+    "signals": [
+      "business",
+      "operations"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "0xGhostCAT",
+  "source_url": "https://github.com/0xGhostCAT/claude-ai-cyber-security-skills/blob/main/skills/21-business-logic/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/0xGhostCAT/claude-ai-cyber-security-skills/blob/main/skills/21-business-logic/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Hunt business logic flaws \u2014 race conditions, workflow state bypass, parameter pollution affecting logic, coupon/discount abuse, refund logic, multi-step process bypass, integer overflow, negative quantities, double-spend. Use when looking for non-CVE bugs that require understanding the app's intended workflow."
+}

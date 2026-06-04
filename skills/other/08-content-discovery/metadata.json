@@ -1,0 +1,38 @@
+{
+  "name": "content-discovery",
+  "repo": "0xGhostCAT/claude-ai-cyber-security-skills",
+  "path": "skills/08-content-discovery/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/0xGhostCAT/claude-ai-cyber-security-skills",
+  "dir_name": "08-content-discovery",
+  "downloaded_at": "2026-06-04T04:06:40.548544Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: api=3, data=3",
+    "score": 3,
+    "runner_up": "data",
+    "runner_up_score": 3,
+    "signals": [
+      "api",
+      "endpoint",
+      "openapi"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "0xGhostCAT",
+  "source_url": "https://github.com/0xGhostCAT/claude-ai-cyber-security-skills/blob/main/skills/08-content-discovery/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/0xGhostCAT/claude-ai-cyber-security-skills/blob/main/skills/08-content-discovery/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Fuzz directories, files, and parameters using ffuf, feroxbuster, arjun, paramspider, and x8. Use when the user has live hosts and needs to find hidden routes, backup files, exposed configs, and untracked URL parameters."
+}

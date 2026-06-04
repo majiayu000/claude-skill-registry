@@ -1,0 +1,37 @@
+{
+  "name": "gh-issues",
+  "repo": "serejaris/personal-corp-skills",
+  "path": "skills/gh-issues/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/serejaris/personal-corp-skills",
+  "dir_name": "gh-issues",
+  "downloaded_at": "2026-06-04T04:35:28.683497Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, productivity=2",
+    "score": 2,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "serejaris",
+  "source_url": "https://github.com/serejaris/personal-corp-skills/blob/main/skills/gh-issues/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/serejaris/personal-corp-skills/blob/main/skills/gh-issues/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when creating, searching, updating, or managing GitHub issues via CLI. Triggers: \"issue\", \"create issue\", \"gh issue\", \"task tracking\", \"context\", \"handoff\", \"resume task\", \"session context\", \"save progress\", \"active tasks\", \"in-progress\", \"my tasks\", \"open issues\". Covers: gh commands, bulk operations, JSON/jq, search filters, issue-to-PR workflow, AI session context storage, task workflow with labels."
+}

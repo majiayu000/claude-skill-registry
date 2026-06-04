@@ -1,0 +1,38 @@
+{
+  "name": "project-init",
+  "repo": "serejaris/personal-corp-skills",
+  "path": "skills/project-init/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/serejaris/personal-corp-skills",
+  "dir_name": "project-init-serejaris-personal-corp-skills",
+  "downloaded_at": "2026-06-04T04:35:27.877262Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: dev, code, framework",
+    "score": 3,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "dev",
+      "code",
+      "framework"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "serejaris",
+  "source_url": "https://github.com/serejaris/personal-corp-skills/blob/main/skills/project-init/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/serejaris/personal-corp-skills/blob/main/skills/project-init/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when setting up a new project for AI-agent-driven management, generating OKR, connecting GitHub as a command center, or when user says \"init project\", \"\u043d\u0430\u0441\u0442\u0440\u043e\u0439 \u043f\u0440\u043e\u0435\u043a\u0442\", \"set up my project\", \"initialize\", \"okr setup\", \"\u043e\u0444\u043e\u0440\u043c\u0438 okr\". First skill in the Personal Corp framework."
+}

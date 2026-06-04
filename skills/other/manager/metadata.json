@@ -1,0 +1,37 @@
+{
+  "name": "manager",
+  "repo": "serejaris/personal-corp-skills",
+  "path": "skills/manager/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/serejaris/personal-corp-skills",
+  "dir_name": "manager",
+  "downloaded_at": "2026-06-04T04:35:26.213659Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: devops=2, documents=2",
+    "score": 2,
+    "runner_up": "documents",
+    "runner_up_score": 2,
+    "signals": [
+      "infra",
+      "infrastructure"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "serejaris",
+  "source_url": "https://github.com/serejaris/personal-corp-skills/blob/main/skills/manager/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/serejaris/personal-corp-skills/blob/main/skills/manager/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when need to sync session work into GitHub issues OR query status of an existing track across repos. Two modes \u2014 write (end-of-session sync: find issues, update, create with parent epic + W-label) and read (status lookup across repos). Triggers on \"/manager\", \"sync session\", \"\u043e\u0431\u043d\u043e\u0432\u0438 issues\", \"\u0441\u0438\u043d\u043a\u043d\u0438 \u0441\u0435\u0441\u0441\u0438\u044e\", \"\u0437\u0430\u0444\u0438\u043a\u0441\u0438\u0440\u0443\u0439 \u043f\u0440\u043e\u0433\u0440\u0435\u0441\u0441\", \"\u0441\u0442\u0430\u0442\u0443\u0441 \u0437\u0430\u0434\u0430\u0447\u0438\", \"\u0447\u0442\u043e \u043f\u043e <track>\", \"\u0435\u0441\u0442\u044c \u043b\u0438 issue \u043f\u043e\", \"track status\", \"what about <track>\"."
+}

@@ -1,0 +1,40 @@
+{
+  "name": "llm-ai-security",
+  "repo": "0xGhostCAT/claude-ai-cyber-security-skills",
+  "path": "skills/25-llm-ai-security/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/0xGhostCAT/claude-ai-cyber-security-skills",
+  "dir_name": "25-llm-ai-security",
+  "downloaded_at": "2026-06-04T04:06:37.705862Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: doc, docs, pdf, word, markdown",
+    "score": 5,
+    "runner_up": "security",
+    "runner_up_score": 4,
+    "signals": [
+      "doc",
+      "docs",
+      "pdf",
+      "word",
+      "markdown"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "0xGhostCAT",
+  "source_url": "https://github.com/0xGhostCAT/claude-ai-cyber-security-skills/blob/main/skills/25-llm-ai-security/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/0xGhostCAT/claude-ai-cyber-security-skills/blob/main/skills/25-llm-ai-security/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Hunt vulnerabilities in LLM-powered applications \u2014 direct/indirect prompt injection, system prompt extraction, ASCII smuggling, RCE via code tools, agentic AI exploits (ASI01-ASI10), data exfiltration via response channels, IDOR in chat history, jailbreak chains, RAG poisoning. Use when target has a chatbot, AI assistant, copilot, or agentic AI features."
+}

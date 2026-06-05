@@ -1,0 +1,39 @@
+{
+  "name": "kai-data-dashboard",
+  "repo": "cgallic/kai-cmo-harness",
+  "path": "harness/skills/kai-data-dashboard/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/cgallic/kai-cmo-harness",
+  "dir_name": "kai-data-dashboard",
+  "downloaded_at": "2026-06-05T04:05:37.825178Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, seo, content, campaign",
+    "score": 4,
+    "runner_up": "data",
+    "runner_up_score": 3,
+    "signals": [
+      "marketing",
+      "seo",
+      "content",
+      "campaign"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cgallic",
+  "source_url": "https://github.com/cgallic/kai-cmo-harness/blob/main/harness/skills/kai-data-dashboard/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cgallic/kai-cmo-harness/blob/main/harness/skills/kai-data-dashboard/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Convert Kai workflow data, CSV exports, audit folders, SDR package outputs, and marketing reports into dashboard-ready specs or lightweight static dashboards. Use when \"data dashboard\", \"operator dashboard\", \"operator room\", \"HTML operators room\", \"sales dashboard\", \"SDR dashboard\", \"turn this data into a dashboard\", \"dashboard handoff\", \"visualize Kai data\", or any request to package sourced marketing, sales, audit, or SDR data for a dashboard or presentation surface."
+}

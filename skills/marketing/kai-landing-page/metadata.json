@@ -1,0 +1,39 @@
+{
+  "name": "kai-landing-page",
+  "repo": "cgallic/kai-cmo-harness",
+  "path": "harness/skills/kai-landing-page/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/cgallic/kai-cmo-harness",
+  "dir_name": "kai-landing-page",
+  "downloaded_at": "2026-06-05T04:05:36.557944Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, content, social, brand",
+    "score": 4,
+    "runner_up": "product",
+    "runner_up_score": 3,
+    "signals": [
+      "marketing",
+      "content",
+      "social",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cgallic",
+  "source_url": "https://github.com/cgallic/kai-cmo-harness/blob/main/harness/skills/kai-landing-page/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cgallic/kai-cmo-harness/blob/main/harness/skills/kai-landing-page/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Produce complete landing page copy using perception engineering and conversion frameworks. Generates hero section, value props, social proof blocks, objection handlers, and CTA \u2014 all scored against quality gates. Use when \"landing page\", \"sales page\", \"LP copy\", \"write a landing page\", \"hero section\", \"conversion page\", \"signup page\", or any request to produce persuasive page copy that converts visitors."
+}

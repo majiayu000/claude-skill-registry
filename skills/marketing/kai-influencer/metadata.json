@@ -1,0 +1,40 @@
+{
+  "name": "kai-influencer",
+  "repo": "cgallic/kai-cmo-harness",
+  "path": "harness/skills/kai-influencer/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/cgallic/kai-cmo-harness",
+  "dir_name": "kai-influencer",
+  "downloaded_at": "2026-06-05T04:05:33.933642Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for marketing: marketing, content, social, campaign, brand",
+    "score": 5,
+    "runner_up": "development",
+    "runner_up_score": 3,
+    "signals": [
+      "marketing",
+      "content",
+      "social",
+      "campaign",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cgallic",
+  "source_url": "https://github.com/cgallic/kai-cmo-harness/blob/main/harness/skills/kai-influencer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cgallic/kai-cmo-harness/blob/main/harness/skills/kai-influencer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Plan influencer marketing campaigns \u2014 find creators, write briefs, manage partnerships, and measure ROI. Use when \"influencer\", \"influencer marketing\", \"creator campaign\", \"UGC campaign\", \"brand ambassador\", \"creator partnership\", or any request to work with influencers or content creators."
+}

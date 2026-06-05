@@ -1,0 +1,39 @@
+{
+  "name": "bug-killer",
+  "repo": "sequenzia/agent-alchemy",
+  "path": "ported/20260310/full/dev-tools/skills/bug-killer/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/sequenzia/agent-alchemy",
+  "dir_name": "bug-killer-sequenzia-agent-alchemy-6",
+  "downloaded_at": "2026-06-05T04:21:56.544336Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for development: dev, code, framework, debug",
+    "score": 4,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "dev",
+      "code",
+      "framework",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sequenzia",
+  "source_url": "https://github.com/sequenzia/agent-alchemy/blob/main/ported/20260310/full/dev-tools/skills/bug-killer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sequenzia/agent-alchemy/blob/main/ported/20260310/full/dev-tools/skills/bug-killer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Systematic, hypothesis-driven debugging workflow with triage-based track routing. Use when asked to \"fix this bug\", \"debug this\", \"why is this failing\", \"this is broken\", \"investigate this error\", \"track down this issue\", or any debugging situation. Supports --deep flag to force full investigation."
+}

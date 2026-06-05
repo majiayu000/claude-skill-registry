@@ -1,0 +1,40 @@
+{
+  "name": "kai-cold-outreach",
+  "repo": "cgallic/kai-cmo-harness",
+  "path": "harness/skills/kai-cold-outreach/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/cgallic/kai-cmo-harness",
+  "dir_name": "kai-cold-outreach",
+  "downloaded_at": "2026-06-05T04:05:37.362467Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for marketing: marketing, content, social, campaign, brand",
+    "score": 5,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "content",
+      "social",
+      "campaign",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cgallic",
+  "source_url": "https://github.com/cgallic/kai-cmo-harness/blob/main/harness/skills/kai-cold-outreach/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cgallic/kai-cmo-harness/blob/main/harness/skills/kai-cold-outreach/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Build a complete cold email outreach system \u2014 ICP definition, sequence architecture, personalization strategy, and batch-produced email sequences with CAN-SPAM/deliverability compliance. Use when \"cold outreach\", \"cold email sequence\", \"outbound campaign\", \"prospecting emails\", \"sales outreach\", \"build outreach sequence\", or any request to create systematic cold email campaigns for lead generation."
+}

@@ -1,0 +1,39 @@
+{
+  "name": "review-tooling",
+  "repo": "tobihagemann/turbo",
+  "path": "claude/skills/review-tooling/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/tobihagemann/turbo",
+  "dir_name": "review-tooling",
+  "downloaded_at": "2026-06-05T04:23:59.027529Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=4, devops=4",
+    "score": 4,
+    "runner_up": "devops",
+    "runner_up_score": 4,
+    "signals": [
+      "dev",
+      "code",
+      "framework",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "tobihagemann",
+  "source_url": "https://github.com/tobihagemann/turbo/blob/main/claude/skills/review-tooling/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/tobihagemann/turbo/blob/main/claude/skills/review-tooling/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Detect what dev tooling infrastructure a project has and flag gaps across linters, formatters, pre-commit hooks, test runners, and CI/CD pipelines. Returns structured findings without applying changes. Use when the user asks to \"review tooling\", \"check project tooling\", \"what tooling is missing\", \"review dev infrastructure\", or \"tooling audit\"."
+}

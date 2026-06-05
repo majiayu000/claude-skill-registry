@@ -1,0 +1,39 @@
+{
+  "name": "pathml",
+  "repo": "K-Dense-AI/scientific-agent-skills",
+  "path": "skills/pathml/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-ml",
+  "source": "github.com/K-Dense-AI/scientific-agent-skills",
+  "dir_name": "pathml-k-dense-ai-scientific-agent-ski-2",
+  "downloaded_at": "2026-06-05T03:57:01.267704Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "ai-ml",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for ai-ml: ml, machine-learning, model, training",
+    "score": 4,
+    "runner_up": "development",
+    "runner_up_score": 3,
+    "signals": [
+      "ml",
+      "machine-learning",
+      "model",
+      "training"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "K-Dense-AI",
+  "source_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/pathml/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/pathml/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Full-featured computational pathology toolkit. Use for advanced WSI analysis including multiplexed immunofluorescence (CODEX, Vectra), nucleus segmentation, tissue graph construction, and ML model training on pathology data. Supports 160+ slide formats. For simple tile extraction from H&E slides, histolab may be simpler."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "windiff-version-diff-analysis",
+  "repo": "ergrelet/windiff",
+  "path": ".claude/skills/windiff-version-diff-analysis/SKILL.md",
+  "github_branch": "master",
+  "category": "bash",
+  "source": "github.com/ergrelet/windiff",
+  "dir_name": "windiff-version-diff-analysis",
+  "downloaded_at": "2026-06-05T04:08:31.987896Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script, cli",
+    "score": 3,
+    "runner_up": "analysis",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "ergrelet",
+  "source_url": "https://github.com/ergrelet/windiff/blob/master/.claude/skills/windiff-version-diff-analysis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ergrelet/windiff/blob/master/.claude/skills/windiff-version-diff-analysis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Generate and analyze a diff between two Windows versions (or two patch levels of one version) for security research, using the WinDiff CLI in this repo. Use this whenever the user wants to compare Windows builds to find what Microsoft changed between versions \u2014 new or removed syscalls, new exported/internal kernel routines, added structures or struct fields, new security mitigation flags (process/thread mitigations, CFG/CET/XFG, Code Integrity / ci.dll, kCET, win32k lockdown), AND any other new security-relevant feature or component: new kernel notification/callback surface (Ps/Ob/Cm callbacks, ETW providers and the EtwTi threat-intel channel, minifilter/altitude hooks), new telemetry, ELAM/AMSI/PPL/anti-tamper changes, and brand-new drivers or modules. Frame findings for three audiences \u2014 anti-malware / EDR developers, anti-cheat developers, and vulnerability researchers. Triggers on requests like \"diff ntoskrnl between 21H2 and 23H2\", \"what new syscalls were added in 24H2\", \"what changed in win32k.sys / ci.dll between these builds\", \"find new mitigation flags\", \"what new ETW providers or kernel callbacks appeared\", \"what's new that matters for EDR / anti-cheat\", or \"analyze the attack surface added in this Windows update\". The analysis must interpret the raw diff with Windows internals knowledge (Nt/Zw/Ps/Ke/Mm/Ob/Se/Cm/Etw/Ci prefixes, the roles of ntoskrnl.exe, ntdll.dll, win32k*.sys, ci.dll, cng.sys) to explain the likely intent and security relevance of each change, not just list symbols."
+}

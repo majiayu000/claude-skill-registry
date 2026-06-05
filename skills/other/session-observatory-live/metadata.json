@@ -1,0 +1,37 @@
+{
+  "name": "session-observatory-live",
+  "repo": "Tibsfox/gsd-skill-creator",
+  "path": "examples/skills/gsd-meta/session-observatory-live/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Tibsfox/gsd-skill-creator",
+  "dir_name": "session-observatory-live",
+  "downloaded_at": "2026-06-05T04:00:16.630092Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, data=2",
+    "score": 2,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Tibsfox",
+  "source_url": "https://github.com/Tibsfox/gsd-skill-creator/blob/main/examples/skills/gsd-meta/session-observatory-live/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tibsfox/gsd-skill-creator/blob/main/examples/skills/gsd-meta/session-observatory-live/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Conversational guide for using tools/session-retro/observe.mjs to capture friction, wins, corrections, decisions, gaps, tool-use, and checkpoints as they happen during a session. Use at session start (to kick off the log), at inflection points (to record events), and at session end (to archive and feed the retrospective generator)."
+}

@@ -1,0 +1,40 @@
+{
+  "name": "kai-weekly-audit",
+  "repo": "cgallic/kai-cmo-harness",
+  "path": "harness/skills/kai-weekly-audit/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/cgallic/kai-cmo-harness",
+  "dir_name": "kai-weekly-audit",
+  "downloaded_at": "2026-06-05T04:05:35.992347Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for marketing: marketing, seo, content, social, brand",
+    "score": 5,
+    "runner_up": "bash",
+    "runner_up_score": 3,
+    "signals": [
+      "marketing",
+      "seo",
+      "content",
+      "social",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cgallic",
+  "source_url": "https://github.com/cgallic/kai-cmo-harness/blob/main/harness/skills/kai-weekly-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cgallic/kai-cmo-harness/blob/main/harness/skills/kai-weekly-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Weekly marketing audit and operating review. Pulls the last 7 days of source-backed marketing, analytics, content, paid media, lead, watcher, and audit data; compares it to the prior 7 days; flags urgent issues; and produces a weekly scorecard plus action list. Use when \"weekly audit\", \"weekly marketing review\", \"weekly check-in\", \"weekly scorecard\", \"what changed this week\", \"Friday marketing review\", or any request for a recurring 7-day marketing audit."
+}

@@ -1,0 +1,39 @@
+{
+  "name": "nw-hexagonal-testing",
+  "repo": "nWave-ai/nWave",
+  "path": "plugins/nw/skills/nw-hexagonal-testing/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/nWave-ai/nWave",
+  "dir_name": "nw-hexagonal-testing-nwave-ai-nwave",
+  "downloaded_at": "2026-06-05T04:17:51.184239Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "testing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for testing: test, tdd, integration, e2e",
+    "score": 4,
+    "runner_up": "development",
+    "runner_up_score": 3,
+    "signals": [
+      "test",
+      "tdd",
+      "integration",
+      "e2e"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "nWave-ai",
+  "source_url": "https://github.com/nWave-ai/nWave/blob/main/plugins/nw/skills/nw-hexagonal-testing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nWave-ai/nWave/blob/main/plugins/nw/skills/nw-hexagonal-testing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "5-layer agent output validation, I/O contract specification, vertical slice development, and test doubles policy with per-layer examples"
+}

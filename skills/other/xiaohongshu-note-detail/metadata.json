@@ -1,0 +1,37 @@
+{
+  "name": "xiaohongshu-note-detail",
+  "repo": "browser-act/skills",
+  "path": "solutions/social-listening/xiaohongshu-note-detail/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/browser-act/skills",
+  "dir_name": "xiaohongshu-note-detail",
+  "downloaded_at": "2026-06-05T04:05:22.510656Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, marketing=2",
+    "score": 2,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "browser-act",
+  "source_url": "https://github.com/browser-act/skills/blob/main/solutions/social-listening/xiaohongshu-note-detail/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/browser-act/skills/blob/main/solutions/social-listening/xiaohongshu-note-detail/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Fetch Xiaohongshu (RedNote / xhs) note detail and comments by note ID, returning title, description, author info, engagement stats, tags, and paginated comment list. Use when user mentions note detail xiaohongshu, get rednote post, xhs note content, xiaohongshu comment scrape, fetch post comments, scrape xhs comments, rednote note details, xiaohongshu post engagement, xiaohongshu note content, rednote post data, xhs post detail, get xiaohongshu comments, rednote comment list, xiaohongshu note metadata, xhs note scrape, fetch rednote note."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "ci-cd-patterns",
+  "repo": "Tibsfox/gsd-skill-creator",
+  "path": "examples/skills/patterns/ci-cd-patterns/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Tibsfox/gsd-skill-creator",
+  "dir_name": "ci-cd-patterns",
+  "downloaded_at": "2026-06-05T04:00:17.781793Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=3, devops=3",
+    "score": 3,
+    "runner_up": "devops",
+    "runner_up_score": 3,
+    "signals": [
+      "code",
+      "build",
+      "compile"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Tibsfox",
+  "source_url": "https://github.com/Tibsfox/gsd-skill-creator/blob/main/examples/skills/patterns/ci-cd-patterns/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tibsfox/gsd-skill-creator/blob/main/examples/skills/patterns/ci-cd-patterns/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Provides CI/CD pipeline best practices for GitHub Actions, deployment strategies, and pipeline optimization. Use when setting up pipelines, configuring GitHub Actions, managing deployments, or when user mentions 'CI', 'CD', 'pipeline', 'GitHub Actions', 'deploy', 'workflow', 'build'."
+}

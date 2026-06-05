@@ -1,0 +1,37 @@
+{
+  "name": "nw-five-whys-methodology",
+  "repo": "nWave-ai/nWave",
+  "path": "plugins/nw/skills/nw-five-whys-methodology/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/nWave-ai/nWave",
+  "dir_name": "nw-five-whys-methodology",
+  "downloaded_at": "2026-06-05T04:17:46.377367Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: analysis=2, business=2",
+    "score": 2,
+    "runner_up": "business",
+    "runner_up_score": 2,
+    "signals": [
+      "analysis",
+      "analyze"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "nWave-ai",
+  "source_url": "https://github.com/nWave-ai/nWave/blob/main/plugins/nw/skills/nw-five-whys-methodology/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nWave-ai/nWave/blob/main/plugins/nw/skills/nw-five-whys-methodology/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Toyota 5 Whys methodology with multi-causal branching, evidence requirements, and validation techniques"
+}

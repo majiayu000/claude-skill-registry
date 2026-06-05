@@ -1,0 +1,38 @@
+{
+  "name": "lifecycle-hooks",
+  "repo": "sequenzia/agent-alchemy",
+  "path": "ported/20260310/nested/dev-tools/skills/lifecycle-hooks/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/sequenzia/agent-alchemy",
+  "dir_name": "lifecycle-hooks",
+  "downloaded_at": "2026-06-05T04:21:56.995473Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=3, development=3",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 3,
+    "signals": [
+      "bash",
+      "shell",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sequenzia",
+  "source_url": "https://github.com/sequenzia/agent-alchemy/blob/main/ported/20260310/nested/dev-tools/skills/lifecycle-hooks/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sequenzia/agent-alchemy/blob/main/ported/20260310/nested/dev-tools/skills/lifecycle-hooks/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Session-start lifecycle hooks for cross-plugin dependency resolution. Creates symlinks so cross-package references work in cached plugin environments."
+}

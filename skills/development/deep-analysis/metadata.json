@@ -1,0 +1,38 @@
+{
+  "name": "deep-analysis",
+  "repo": "sequenzia/agent-alchemy",
+  "path": "ported/20260310/full/core-tools/skills/deep-analysis/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/sequenzia/agent-alchemy",
+  "dir_name": "deep-analysis",
+  "downloaded_at": "2026-06-05T04:21:59.317868Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: dev, code, build",
+    "score": 3,
+    "runner_up": "analysis",
+    "runner_up_score": 2,
+    "signals": [
+      "dev",
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sequenzia",
+  "source_url": "https://github.com/sequenzia/agent-alchemy/blob/main/ported/20260310/full/core-tools/skills/deep-analysis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sequenzia/agent-alchemy/blob/main/ported/20260310/full/core-tools/skills/deep-analysis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Deep exploration and synthesis workflow using agent teams with dynamic planning and hub-and-spoke coordination. Use when asked for \"deep analysis\", \"deep understanding\", \"analyze codebase\", \"explore and analyze\", or \"investigate codebase\"."
+}

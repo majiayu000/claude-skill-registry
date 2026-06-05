@@ -1,0 +1,39 @@
+{
+  "name": "docs-manager",
+  "repo": "sequenzia/agent-alchemy",
+  "path": "ported/20260310/flat/dev-tools/skills/docs-manager/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/sequenzia/agent-alchemy",
+  "dir_name": "docs-manager-sequenzia-agent-alchemy-8",
+  "downloaded_at": "2026-06-05T04:21:57.729068Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: doc, docs, markdown, documentation",
+    "score": 4,
+    "runner_up": "development",
+    "runner_up_score": 3,
+    "signals": [
+      "doc",
+      "docs",
+      "markdown",
+      "documentation"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sequenzia",
+  "source_url": "https://github.com/sequenzia/agent-alchemy/blob/main/ported/20260310/flat/dev-tools/skills/docs-manager/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sequenzia/agent-alchemy/blob/main/ported/20260310/flat/dev-tools/skills/docs-manager/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Documentation management workflow for MkDocs sites and standalone markdown files \u2014 initialize, generate, update docs, and create change summaries. Use when asked to \"create docs\", \"write README\", \"update documentation\", \"generate docs site\", \"write CONTRIBUTING\", \"manage documentation\", or \"docs changelog\"."
+}

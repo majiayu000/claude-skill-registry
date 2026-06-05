@@ -1,0 +1,39 @@
+{
+  "name": "code-quality",
+  "repo": "sequenzia/agent-alchemy",
+  "path": "ported/20260310/nested/dev-tools/skills/code-quality/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/sequenzia/agent-alchemy",
+  "dir_name": "code-quality-sequenzia-agent-alchemy-2",
+  "downloaded_at": "2026-06-05T04:21:57.940307Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for development: dev, code, build, debug",
+    "score": 4,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "dev",
+      "code",
+      "build",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sequenzia",
+  "source_url": "https://github.com/sequenzia/agent-alchemy/blob/main/ported/20260310/nested/dev-tools/skills/code-quality/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sequenzia/agent-alchemy/blob/main/ported/20260310/nested/dev-tools/skills/code-quality/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Provides code quality principles including SOLID, DRY, testing strategies, and best practices for implementation review. Use when reviewing code or applying quality standards."
+}

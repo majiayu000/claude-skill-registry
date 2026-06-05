@@ -5,11 +5,11 @@ description: >-
   do alone — physical presence (storefront photos, deliveries, on-site
   verification, mystery shopping) or specialized human skill (writing,
   design, translation, proofreading, video). Post the bounty, the worker
-  submits photo/text proof, you approve to release payment. Every paid
-  action requires in-conversation user confirmation; spending caps are
-  enforced server-side. One-time agent setup at
-  https://getterdone.ai/register-agent.
-version: 1.8.6
+  submits photo/text proof, you approve to release payment. Paid actions
+  default to in-conversation user confirmation; autonomous review is an
+  explicit opt-in path with server-side per-task and daily spending caps.
+  One-time agent setup at https://getterdone.ai/register-agent.
+version: 1.9.0
 provider:
   name: GetterDone Inc.
   url: https://getterdone.ai
@@ -307,6 +307,8 @@ npx -y @getterdone/mcp-server@1.x.y     # pin in install command
 
 Unlike digital API calls that complete in milliseconds, human physical labor takes **real time** — a worker needs to travel to a location, perform the task, and submit photo proof. Expect task completion to take anywhere from **30 minutes to several days**, depending on the task and local worker availability.
 
+> 🔐 **Confirmation model — read before picking a strategy.** Every paid action (`create_task`, `fund_account`, `approve_task`, `dispute_task`) **defaults to requiring explicit in-conversation user confirmation** — §3 Step 0 and §4 walk through the prompts you must use. **Strategy 3 (Fully Autonomous Review) below is an explicit opt-in path** intended for agents whose human owner has chosen to run them without per-action approval (e.g. pipeline agents, the Taskmaster pattern). Strategy 3 still operates under the server-side per-task and daily spending caps set at registration (§1 Step 5) and the API enforces those caps regardless of which strategy you use. **If you are unsure which mode you are in, default to human confirmation** — Strategies 1 and 2 keep the user in the loop.
+
 ### The Task State Machine
 
 ```
@@ -491,11 +493,11 @@ Pass the tunnel URL to `configure_webhook`. The tunnel stays alive as long as th
 
 ---
 
-#### Strategy 3: Fully Autonomous Review (Layer on Top of 1 or 2)
+#### Strategy 3: Fully Autonomous Review (Opt-In — Layer on Top of 1 or 2)
 
-Use this strategy when you are an **autonomous agent** that posts tasks programmatically and does not require human approval before paying workers. The Taskmaster pattern, pipeline agents, and any agent with well-defined `reviewCriteria` all qualify. Combine it with Strategy 1 (polling) or Strategy 2 (webhooks) as your delivery mechanism.
+> **This is the opt-in autonomous path described in the §2 confirmation-model disclosure.** Use it only when the human owner has deliberately configured this agent to act on submissions without per-action user approval — pipeline agents, the Taskmaster pattern, and agents with well-defined `reviewCriteria` are the intended fit. Human-in-the-loop agents should use Strategy 1 or 2 with §4's review flow instead. Server-side spending caps (§1 Step 5) apply regardless.
 
-Instead of presenting proof to a user, your loop evaluates the platform's `criteriaCheckResult` directly and calls `approve_task` or `dispute_task` without waiting for input:
+Combine it with Strategy 1 (polling) or Strategy 2 (webhooks) as your delivery mechanism. Instead of presenting proof to a user, your loop evaluates the platform's `criteriaCheckResult` directly and calls `approve_task` or `dispute_task` without waiting for input:
 
 ```
 every 10 minutes:

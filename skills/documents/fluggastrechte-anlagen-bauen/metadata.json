@@ -1,0 +1,37 @@
+{
+  "name": "fluggastrechte-anlagen-bauen",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "fluggastrechte/skills/fluggastrechte-anlagen-bauen/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "fluggastrechte-anlagen-bauen",
+  "downloaded_at": "2026-06-05T03:57:18.135625Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: pdf, docx",
+    "score": 2,
+    "runner_up": "communication",
+    "runner_up_score": 1,
+    "signals": [
+      "pdf",
+      "docx"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/fluggastrechte/skills/fluggastrechte-anlagen-bauen/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/fluggastrechte/skills/fluggastrechte-anlagen-bauen/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Baut aus den Belegen eines Fluggastrechte-Mandats ein beA-konformes Anlagenkonvolut. Verwendet zum bestehenden Schriftsatz (Forderungsschreiben Mahnung Klage) die Belege Buchungsbest\u00e4tigung Boardingpass Annullierungsbest\u00e4tigung E-Mail-Verkehr Quittungen. Konvertiert alles nach PDF nummeriert in der Reihenfolge der ersten Erwaehnung im Schriftsatz stempelt oben rechts Anlage K 1 in Arial 12 fett und benennt beA-tauglich. Liefert Einzel-PDFs Konvolut-PDF Anlagenverzeichnis und optional ein Schriftsatz-mit-Anlagen-Bundle als ein PDF."
+}

@@ -1,0 +1,43 @@
+---
+name: workflow-kaltstart-und-routing
+description: "Kaltstart und Routing im Plugin meinungspruefer: führt vom ersten Satz oder Dokument in den passenden Arbeitsweg, erkennt Rolle, Ziel, Risiko und Anschluss-Skills."
+---
+
+# Kaltstart und Routing
+
+## Aufgabe
+Dieser Workflow-Skill für `meinungspruefer` Kaltstart und Routing im Plugin meinungspruefer: führt vom ersten Satz oder Dokument in den passenden Arbeitsweg, erkennt Rolle, Ziel, Risiko und Anschluss-Skills.. Er ist dazu da, den Nutzer schneller und sicherer in die richtige Bearbeitung zu führen.
+
+## Kaltstart
+Wenn Material vorliegt, arbeite zuerst mit dem Material. Stelle nur Rückfragen, die für die nächste Weiche nötig sind:
+
+1. Wer fragt in welcher Rolle?
+2. Was ist das gewünschte Ergebnis?
+3. Gibt es Fristen, Termine, Zustellungen, Zahlungen oder Sanktionen?
+4. Welche Unterlagen, Daten oder Belege liegen bereits vor?
+
+## Arbeitsworkflow
+1. Rolle, Ziel, Frist und Unterlagenlage in höchstens fünf Fragen klären.
+2. Bestehende Dokumente zuerst auswerten; Rückfragen nur dort stellen, wo sie die Entscheidung ändern.
+3. Passende Spezialskills aus diesem Plugin vorschlagen und begründen.
+4. Ein sofort nutzbares Ergebnis erzeugen: Ampel, Plan, Brief, Tabelle, Checkliste oder Memo.
+
+## Output-Standard
+- Kurzbild: worum es geht, was gesichert ist, was offen ist.
+- Prüf- oder Bearbeitungsmatrix mit den entscheidenden Punkten.
+- Konkreter nächster Schritt mit Frist, Zuständigkeit und Unterlagen.
+- Bei Außenkommunikation: knapper, sachlicher Textbaustein ohne unnötige Nebenangaben.
+
+## Quellenregel
+- Aktuelle Normen, Behördenhinweise, Gerichtsseiten, Register, Formulare und EU-/Landesrecht live prüfen, wenn sie für das Ergebnis tragend sind.
+- Rechtsprechung nur mit Gericht, Datum, Aktenzeichen und frei prüfbarer Quelle ausgeben.
+- Keine BeckRS-, juris-, Kommentar-, Handbuch- oder Aufsatz-Blindzitate aus Modellwissen.
+- Unsicherheiten und Annahmen ausdrücklich markieren.
+
+## Äußerungsrecht — Kaltstart-Weichen
+- **Werturteil oder Tatsachenbehauptung?** Wahlfreiheit der Meinung Art. 5 Abs. 1 GG; bei Tatsachen Beweisbarkeit prüfen (BVerfG ständige Rspr.). Mehrdeutigkeit → Stolpe-Linie: jede Deutungsvariante muss bei Unterlassung verboten werden können (BVerfGE 114, 339).
+- **Schmähkritik vs. zulässige Meinungsäußerung:** Schmähkritik nur bei reiner Diffamierung ohne Sachbezug (BVerfG ständige Rspr.); ansonsten Abwägung Persönlichkeitsrecht (Art. 2 I, 1 I GG) vs. Art. 5 GG.
+- **Personenkreis:** Privatperson, Politiker (§ 188 StGB), Amtsträger; Machtkritik genießt erhöhten Schutz, aber kein Freibrief.
+- **Forum:** Print, Rundfunk, Soziale Medien (DSA-Pflichten), Betrieb (BetrVG-Bezug?). Plattformlöschung nach DSA Art. 16-17 prüfen.
+- **Frist:** Unterlassungsanspruch (§§ 823, 1004 BGB analog) und Gegendarstellung (Landespressegesetze, idR unverzüglich, max. 3 Monate).
+- Falle: Persönliches Empfinden des Mandanten als Schmähkritik bezeichnen — der Begriff ist nach BVerfG eng auszulegen.

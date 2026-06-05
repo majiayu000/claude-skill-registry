@@ -1,0 +1,38 @@
+{
+  "name": "kai-html-presentation",
+  "repo": "cgallic/kai-cmo-harness",
+  "path": "harness/skills/kai-html-presentation/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/cgallic/kai-cmo-harness",
+  "dir_name": "kai-html-presentation",
+  "downloaded_at": "2026-06-05T04:05:38.814135Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, seo, content",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "seo",
+      "content"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cgallic",
+  "source_url": "https://github.com/cgallic/kai-cmo-harness/blob/main/harness/skills/kai-html-presentation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cgallic/kai-cmo-harness/blob/main/harness/skills/kai-html-presentation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Client-ready HTML presentation builder for Kai audit and report folders. Converts weekly audits, monthly audits, marketing reports, scorecards, findings, data-source notes, and action plans into a polished single-file HTML deck with sourced metrics, executive slides, speaker notes, and delivery-ready styling. Use when \"HTML presentation\", \"HTML deck\", \"client-ready audit deck\", \"turn this audit into slides\", \"present the weekly audit\", \"present the monthly audit\", or any request to deliver Kai reports as HTML slides."
+}

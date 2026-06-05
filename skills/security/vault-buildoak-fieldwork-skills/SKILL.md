@@ -44,7 +44,7 @@ This vault encrypts them. Even if someone copies your entire hard drive, they ca
 
 **Before (plaintext .env):**
 ```text
-OPENAI_API_KEY=sk-abc123-real-key-here     <- anyone can read this
+OPENAI_API_KEY=YOUR_API_KEY     <- anyone can read this
 DATABASE_URL=postgres://admin:password@...  <- sitting in plain text
 STRIPE_SECRET=sk_live_...                   <- one leak away from disaster
 ```

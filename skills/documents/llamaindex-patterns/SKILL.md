@@ -336,7 +336,7 @@ bash scripts/setup-llamaindex.sh
 **Step 2: Configure API Keys**
 Edit `.env` file:
 ```bash
-OPENAI_API_KEY=sk-your-actual-key-here
+OPENAI_API_KEY=YOUR_API_KEY
 ANTHROPIC_API_KEY=sk-ant-your-key-here  # Optional
 ```
 

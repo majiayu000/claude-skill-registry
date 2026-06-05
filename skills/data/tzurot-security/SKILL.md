@@ -50,7 +50,7 @@ GitGuardian CI checks scan for secrets. Test files with fake API keys can trigge
 
    ```typescript
    // ❌ WRONG - High entropy, triggers GitGuardian
-   const apiKey = 'sk-test-byok-key-abc123xyz789';
+   const apiKey = 'YOUR_API_KEY';
    const apiKey = 'test-byok-key-not-a-real-secret';
 
    // ✅ CORRECT - Low entropy, obviously fake

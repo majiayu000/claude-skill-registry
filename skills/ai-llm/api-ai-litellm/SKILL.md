@@ -259,14 +259,14 @@ Virtual keys let you distribute access with per-key budgets, rate limits, and mo
 ```yaml
 # config.yaml
 general_settings:
-  master_key: sk-litellm-master-key-change-me # Must start with sk-
+  master_key: YOUR_API_KEY # Must start with sk-
   database_url: os.environ/DATABASE_URL # PostgreSQL required
 ```
 
 ```bash
 # Generate a virtual key via API
 curl 'http://localhost:4000/key/generate' \
-  -H 'Authorization: Bearer sk-litellm-master-key-change-me' \
+  -H 'Authorization: Bearer YOUR_API_KEY' \
   -H 'Content-Type: application/json' \
   -d '{
     "models": ["claude-sonnet", "gpt-4o"],
@@ -274,7 +274,7 @@ curl 'http://localhost:4000/key/generate' \
     "duration": "30d",
     "metadata": {"team": "backend", "project": "search"}
   }'
-# Returns: { "key": "sk-generated-key-abc123", ... }
+# Returns: { "key": "YOUR_API_KEY", ... }
 ```
 
 **Why good:** Per-key model restrictions, budget caps, and expiry; metadata enables tag-based spend tracking; master key authentication protects key generation

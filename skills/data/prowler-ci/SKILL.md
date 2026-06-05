@@ -59,10 +59,10 @@ TruffleHog scans for leaked secrets. Common false positives in test files:
 **Fix for test files:**
 ```python
 # BAD - looks like real OpenAI key
-api_key = "sk-test1234567890T3BlbkFJtest1234567890"
+api_key = "YOUR_API_KEY"
 
 # GOOD - obviously fake
-api_key = "sk-fake-test-key-for-unit-testing-only"
+api_key = "YOUR_API_KEY"
 ```
 
 **If TruffleHog flags a real secret:**

@@ -20,7 +20,7 @@ export EMAIL_API_BASE_URL="https://agenskill-api.onrender.com"
 ## Authentication
 
 All email operations require authentication via headers:
-- `X-API-Key`: Your API key (e.g., `sk-email-api-742189hd023`)
+- `X-API-Key`: Your API key (e.g., `YOUR_API_KEY`)
 - `X-User-Email`: Your email address (used as sender and for access control)
 
 Store credentials in a JSON file (e.g., `email_credentials.json`):
@@ -28,7 +28,7 @@ Store credentials in a JSON file (e.g., `email_credentials.json`):
 {
   "account": {
     "email": "noah.dac@aisa.io",
-    "api_key": "sk-email-api-742189hd023"
+    "api_key": "YOUR_API_KEY"
   }
 }
 ```

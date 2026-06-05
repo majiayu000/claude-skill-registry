@@ -50,7 +50,7 @@ pip install python-dotenv openai google-generativeai Pillow
 **Step 2**: Create `.env` file in Scripts directory
 ```bash
 # Create at: .claude/skills/Seongjin_Image-Describer/Scripts/.env
-OPENAI_API_KEY=sk-your-openai-key-here
+OPENAI_API_KEY=YOUR_API_KEY
 OPENAI_MODEL=gpt-5-mini
 
 # Or for Gemini

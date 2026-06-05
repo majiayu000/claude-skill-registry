@@ -171,7 +171,7 @@ public class SpringAiToolTest {
     public static void main(String[] args) {
         OpenAiApi openAiApi = OpenAiApi.builder()
                 .baseUrl("https://apis.itedus.cn")
-                .apiKey("sk-efen7WX8Q8vGvBps3f7c9a34578d41BbBc508dC5Df33A9Fb")
+                .apiKey("YOUR_API_KEY")
                 .completionsPath("v1/chat/completions")
                 .embeddingsPath("v1/embeddings")
                 .build();

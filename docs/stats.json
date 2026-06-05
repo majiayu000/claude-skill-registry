@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-05T05:08:46.413774Z",
+  "updated_at": "2026-06-05T18:23:32.127801Z",
   "archive_skill_md_count_raw": 200133,
   "archive_metadata_count_raw": 200133,
   "indexed_skill_count_scan_shape": 200133,
@@ -284,16 +284,16 @@
   "security_index_gzip_size_bytes": 215,
   "security_shard_count": 18,
   "security_largest_shard_bytes": 8388557,
-  "security_largest_shard_gzip_bytes": 1638070,
+  "security_largest_shard_gzip_bytes": 1637933,
   "ranking_index_size_bytes": 220,
-  "ranking_index_gzip_size_bytes": 213,
+  "ranking_index_gzip_size_bytes": 214,
   "ranking_shard_count": 5,
-  "ranking_largest_shard_bytes": 8388701,
-  "ranking_largest_shard_gzip_bytes": 2204777,
+  "ranking_largest_shard_bytes": 8388680,
+  "ranking_largest_shard_gzip_bytes": 2204803,
   "largest_generated_file_bytes": 8388707,
   "security_scan": {
     "total": 200133,
-    "passed": 191216,
-    "failed": 8917
+    "passed": 191221,
+    "failed": 8912
   }
 }

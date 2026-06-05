@@ -57,7 +57,7 @@ chmod 600 ~/.codex/config.toml
 
 # Method 3: Per-project config
 mkdir -p .codex
-echo 'api_key = "sk-project-specific-key"' > .codex/config.toml
+echo 'api_key = "YOUR_API_KEY"' > .codex/config.toml
 echo '.codex/' >> .gitignore
 ```
 
@@ -557,7 +557,7 @@ codex exec -p auto -m o3 "Complex task with reasoning"
 # .codex/config.toml
 [profiles.project]
 model = "gpt-5.1-codex"
-api_key = "sk-project-specific-key"
+api_key = "YOUR_API_KEY"
 ```
 
 ## Related Skills

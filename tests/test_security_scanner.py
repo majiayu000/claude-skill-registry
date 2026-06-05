@@ -199,6 +199,40 @@ eval("unsafe")
     assert "ERROR" in result.stdout
 
 
+def test_scanner_blocks_openai_compatible_key_without_echoing_secret(tmp_path):
+    module = load_module()
+    token = "sk-" + ("A" * 32)
+    skill_dir = tmp_path / "demo"
+    skill_dir.mkdir(parents=True)
+    (skill_dir / "SKILL.md").write_text(
+        f"""---
+name: demo
+description: Demo skill used to verify OpenAI-compatible key detection.
+---
+
+# Demo
+
+```java
+OpenAiApi.builder().apiKey("{token}").build();
+```
+""",
+        encoding="utf-8",
+    )
+
+    scanner = module.SecurityScanner()
+    is_safe, issues = scanner.scan_file(skill_dir / "SKILL.md")
+    serialized_issues = json.dumps(issues)
+
+    assert is_safe is False
+    assert token not in serialized_issues
+    assert any(
+        issue.get("type") == "hardcoded_credential"
+        and issue.get("pattern") == "openai_compatible_api_key"
+        and "code" not in issue
+        for issue in issues
+    )
+
+
 def test_scanner_checks_flowhunt_style_support_files(tmp_path):
     module = load_module()
     skill_dir = tmp_path / "flowhunt"

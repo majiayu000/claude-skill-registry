@@ -245,7 +245,7 @@ node route-intent.mjs "任务" --parallel
         },
         {
           "id": "key-2",
-          "api_key": "sk-ant-api03-placeholder",
+          "api_key": "YOUR_API_KEY",
           "_status": "placeholder"
         }
       ]

@@ -58,7 +58,7 @@ OPENAI_MODEL=gpt-4
 **`.env.example` (documentation):**
 ```bash
 # OpenAI Configuration
-OPENAI_API_KEY=sk-proj-your-openai-api-key-here
+OPENAI_API_KEY=YOUR_API_KEY
 OPENAI_MODEL=gpt-4
 ```
 

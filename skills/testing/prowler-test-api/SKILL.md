@@ -114,11 +114,11 @@ CI runs TruffleHog to detect leaked secrets. Use obviously fake values:
 
 ```python
 # BAD - TruffleHog will flag these patterns:
-api_key = "sk-test1234567890T3BlbkFJtest1234567890"  # OpenAI pattern
+api_key = "YOUR_API_KEY"  # OpenAI pattern
 api_key = "AKIA..."  # AWS pattern
 
 # GOOD - clearly fake values:
-api_key = "sk-fake-test-key-for-unit-testing-only"
+api_key = "YOUR_API_KEY"
 api_key = "fake-aws-key-for-testing"
 ```
 

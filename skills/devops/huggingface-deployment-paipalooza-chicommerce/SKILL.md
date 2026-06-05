@@ -267,10 +267,10 @@ MINIMAX_API_BASE_URL="https://api.minimaxi.chat"
 
 ```bash
 # OpenAI API (GPT, Whisper, TTS, DALL-E)
-OPENAI_API_KEY="sk-xxxxxxxxxxxxxxxxxxxxx"
+OPENAI_API_KEY="YOUR_API_KEY"
 
 # Anthropic API (Claude)
-ANTHROPIC_API_KEY="sk-ant-xxxxxxxxxxxxxxxxxxxxx"
+ANTHROPIC_API_KEY="YOUR_API_KEY"
 ```
 
 ## Implementation Checklist

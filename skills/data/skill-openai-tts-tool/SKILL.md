@@ -389,7 +389,7 @@ openai-tts-tool synthesize "Meditation guide" --voice shimmer
 Error: Invalid OpenAI API key
 
 # Solution
-export OPENAI_API_KEY="sk-your-valid-api-key-here"
+export OPENAI_API_KEY="YOUR_API_KEY"
 openai-tts-tool info  # Verify the key works
 ```
 

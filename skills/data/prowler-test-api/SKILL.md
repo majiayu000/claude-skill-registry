@@ -128,10 +128,10 @@ def test_cross_tenant_access_denied(self, authenticated_client, tenants_fixture)
 
 ```python
 # BAD - TruffleHog flags these:
-api_key = "sk-test1234567890T3BlbkFJtest1234567890"
+api_key = "YOUR_API_KEY"
 
 # GOOD - obviously fake:
-api_key = "sk-fake-test-key-for-unit-testing-only"
+api_key = "YOUR_API_KEY"
 ```
 
 ---

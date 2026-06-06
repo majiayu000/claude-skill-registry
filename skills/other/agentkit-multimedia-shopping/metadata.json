@@ -1,0 +1,36 @@
+{
+  "name": "agentkit-multimedia-shopping",
+  "repo": "anbeime/skill",
+  "path": "skills/agentkit-multimedia-shopping/agentkit-multimedia-shopping/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/anbeime/skill",
+  "dir_name": "agentkit-multimedia-shopping",
+  "downloaded_at": "2026-06-06T03:46:00.976574Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-llm scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "ai"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "anbeime",
+  "source_url": "https://github.com/anbeime/skill/blob/main/skills/agentkit-multimedia-shopping/agentkit-multimedia-shopping/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anbeime/skill/blob/main/skills/agentkit-multimedia-shopping/agentkit-multimedia-shopping/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u57fa\u4e8eByteDance agentkit-samples\u591a\u5a92\u4f53\u7528\u4f8b\u7684\u5c0f\u7701\u5bfc\u8d2d\u5458\u6570\u5b57\u4eba\u5e26\u8d27\u89c6\u9891\u751f\u6210\u6280\u80fd\uff0c\u6574\u5408\u591a\u6a21\u6001\u5185\u5bb9\u751f\u6210\u80fd\u529b\uff08\u56fe\u50cf\u3001\u89c6\u9891\u3001\u97f3\u9891\uff09\uff0c\u652f\u6301AI\u7ed8\u753b\u3001\u8bed\u97f3\u5408\u6210\u3001\u89c6\u9891\u751f\u6210\uff0c\u4e0e\u5c0f\u7701\u5bfc\u8d2d\u5458\u4eba\u8bbe\u878d\u5408\uff0c9:16\u7ad6\u5c4f\u9002\u914d\uff0c\u76f4\u63a5\u5bf9\u63a5\u5e26\u8d27\u89c6\u9891\u751f\u6210\u6d41\u7a0b"
+}

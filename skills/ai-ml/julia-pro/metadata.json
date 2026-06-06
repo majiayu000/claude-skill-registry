@@ -1,0 +1,40 @@
+{
+  "name": "julia-pro",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "plugins/antigravity-awesome-skills/skills/julia-pro/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-ml",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "julia-pro",
+  "downloaded_at": "2026-06-06T04:05:16.447352Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "ai-ml",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for ai-ml: ai, ml, machine-learning, model, training",
+    "score": 5,
+    "runner_up": "product",
+    "runner_up_score": 3,
+    "signals": [
+      "ai",
+      "ml",
+      "machine-learning",
+      "model",
+      "training"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/plugins/antigravity-awesome-skills/skills/julia-pro/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/antigravity-awesome-skills/blob/main/plugins/antigravity-awesome-skills/skills/julia-pro/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Master Julia 1.10+ with modern features, performance optimization, multiple dispatch, and production-ready practices."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "wechatsync-publisher",
+  "repo": "anbeime/skill",
+  "path": "skills/wechatsync-publisher/wechatsync-publisher/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/anbeime/skill",
+  "dir_name": "wechatsync-publisher",
+  "downloaded_at": "2026-06-06T03:46:00.633425Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, documents=2",
+    "score": 2,
+    "runner_up": "documents",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "anbeime",
+  "source_url": "https://github.com/anbeime/skill/blob/main/skills/wechatsync-publisher/wechatsync-publisher/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anbeime/skill/blob/main/skills/wechatsync-publisher/wechatsync-publisher/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u591a\u5e73\u53f0\u5185\u5bb9\u53d1\u5e03\u52a9\u624b\uff0c\u652f\u6301\u667a\u80fd\u9009\u9898\u7b5b\u9009\u3001AI\u751f\u6210\u4f18\u8d28\u5185\u5bb9\u3001\u4e00\u952e\u53d1\u5e03\u5230\u5fae\u4fe1\u516c\u4f17\u53f7\u7b49\u5e73\u53f0\uff1b\u652f\u6301\u5185\u5bb9\u683c\u5f0f\u81ea\u52a8\u9002\u914d\uff08HTML/Markdown/\u7eaf\u6587\u672c\uff09"
+}

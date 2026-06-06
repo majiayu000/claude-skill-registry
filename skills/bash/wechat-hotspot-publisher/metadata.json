@@ -1,0 +1,37 @@
+{
+  "name": "wechat-hotspot-publisher",
+  "repo": "anbeime/skill",
+  "path": "skills/wechat-hotspot-publisher/wechat-hotspot-publisher/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/anbeime/skill",
+  "dir_name": "wechat-hotspot-publisher",
+  "downloaded_at": "2026-06-06T03:45:59.038411Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script",
+    "score": 2,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "anbeime",
+  "source_url": "https://github.com/anbeime/skill/blob/main/skills/wechat-hotspot-publisher/wechat-hotspot-publisher/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anbeime/skill/blob/main/skills/wechat-hotspot-publisher/wechat-hotspot-publisher/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u667a\u80fd\u91c7\u96c6\u70ed\u70b9\u8bdd\u9898\uff0c10\u5206\u5236\u7b5b\u9009\u4f18\u8d28\u9009\u9898\uff0cAI\u751f\u6210\u7206\u6b3e\u5185\u5bb9\uff08\u6807\u9898/\u5c01\u9762/\u6807\u7b7e/\u56fe\u7247/HTML\u6392\u7248\uff09\uff0c\u652f\u6301\u7d20\u6750\u4e0a\u4f20\u548c\u8349\u7a3f\u7bb1\u53d1\u5e03\uff0c\u4e00\u952e\u53d1\u5e03\u5230\u5fae\u4fe1\u516c\u4f17\u53f7\u3001\u5c0f\u7ea2\u4e66\u3001B\u7ad9\u7b49\u591a\u5e73\u53f0"
+}

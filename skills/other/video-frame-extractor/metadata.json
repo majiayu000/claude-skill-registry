@@ -1,0 +1,37 @@
+{
+  "name": "video-frame-extractor",
+  "repo": "anbeime/skill",
+  "path": "skills/video-frame-extractor/video-frame-extractor/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/anbeime/skill",
+  "dir_name": "video-frame-extractor",
+  "downloaded_at": "2026-06-06T03:45:54.752876Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-llm=2, ai-ml=2",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "anbeime",
+  "source_url": "https://github.com/anbeime/skill/blob/main/skills/video-frame-extractor/video-frame-extractor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anbeime/skill/blob/main/skills/video-frame-extractor/video-frame-extractor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u89c6\u9891\u53cd\u63a8\u5de5\u5177,\u652f\u6301\u89c6\u9891\u62bd\u5e27\u3001\u89c6\u89c9\u6a21\u578b\u5206\u6790\u3001\u63d0\u793a\u8bcd\u751f\u6210,\u9002\u7528\u4e8e\u89c6\u9891\u521b\u4f5c\u53c2\u8003\u3001\u5185\u5bb9\u63d0\u53d6\u3001\u573a\u666f\u5206\u6790"
+}

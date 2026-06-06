@@ -1,0 +1,42 @@
+{
+  "name": "huashu-design",
+  "repo": "mxyhi/ok-skills",
+  "path": "huashu-design/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/mxyhi/ok-skills",
+  "dir_name": "huashu-design",
+  "downloaded_at": "2026-06-06T04:00:05.381917Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for design: design, ui, ux, css, frontend, component, figma",
+    "score": 7,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "design",
+      "ui",
+      "ux",
+      "css",
+      "frontend",
+      "component",
+      "figma"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mxyhi",
+  "source_url": "https://github.com/mxyhi/ok-skills/blob/main/huashu-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mxyhi/ok-skills/blob/main/huashu-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u82b1\u53d4Design\u2014\u2014\u7528HTML\u505a\u9ad8\u4fdd\u771f\u539f\u578b\u3001\u4ea4\u4e92Demo\u3001\u5e7b\u706f\u7247\u3001\u52a8\u753b\u3001\u8bbe\u8ba1\u53d8\u4f53\u63a2\u7d22+\u8bbe\u8ba1\u65b9\u5411\u987e\u95ee+\u4e13\u5bb6\u8bc4\u5ba1\u3002\u6839\u636e\u4efb\u52a1embody\u5bf9\u5e94\u4e13\u5bb6\uff08UX/\u52a8\u753b\u5e08/\u5e7b\u706f\u7247\u8bbe\u8ba1\u5e08/\u539f\u578b\u5e08\uff09\uff0c\u907f\u514dweb design tropes\u3002\u89e6\u53d1\u8bcd\uff1a\u505a\u539f\u578b\u3001\u8bbe\u8ba1Demo\u3001\u4ea4\u4e92\u539f\u578b\u3001HTML\u6f14\u793a\u3001\u52a8\u753bDemo\u3001\u8bbe\u8ba1\u53d8\u4f53\u3001hi-fi\u8bbe\u8ba1\u3001UI mockup\u3001prototype\u3001\u8bbe\u8ba1\u63a2\u7d22\u3001\u505a\u4e2aHTML\u9875\u9762\u3001\u505a\u4e2a\u53ef\u89c6\u5316\u3001app\u539f\u578b\u3001iOS\u539f\u578b\u3001\u79fb\u52a8\u5e94\u7528mockup\u3001\u5bfc\u51faMP4\u3001\u5bfc\u51faGIF\u300160fps\u89c6\u9891\u3001\u8bbe\u8ba1\u98ce\u683c\u3001\u8bbe\u8ba1\u65b9\u5411\u3001\u8bbe\u8ba1\u54f2\u5b66\u3001\u914d\u8272\u65b9\u6848\u3001\u89c6\u89c9\u98ce\u683c\u3001\u63a8\u8350\u98ce\u683c\u3001\u9009\u4e2a\u98ce\u683c\u3001\u505a\u4e2a\u597d\u770b\u7684\u3001\u8bc4\u5ba1\u3001\u597d\u4e0d\u597d\u770b\u3001review this design\u3001\u5e26\u89e3\u8bf4\u7684\u52a8\u753b\u3001\u89e3\u8bf4\u89c6\u9891\u3001\u6982\u5ff5\u89e3\u91ca\u89c6\u9891\u3001\u957f\u89c6\u9891\u79d1\u666e\u3001\u914d\u97f3\u52a8\u753b\u3001voiceover\u3001narration\u3001TTS+\u52a8\u753b\u30015\u5206\u949f\u8bb2\u6e05\u695a\u4ec0\u4e48\u662fXX\u3002**\u4e3b\u5e72\u80fd\u529b**\uff1aJunior Designer\u5de5\u4f5c\u6d41\uff08\u5148\u5047\u8bbe+reasoning+placeholder\u518d\u8fed\u4ee3\uff09\u3001\u53cdAI slop\u6e05\u5355\u3001React+Babel\u6700\u4f73\u5b9e\u8df5\u3001Tweaks\u53d8\u4f53\u5207\u6362\u3001Speaker Notes\u3001Starter Components\uff08\u5e7b\u706f\u7247/\u53d8\u4f53/\u52a8\u753b/\u8bbe\u5907\u8fb9\u6846/\u89e3\u8bf4Stage\uff09\u3001App\u539f\u578b\u5b88\u5219\uff08Wikimedia/Met/Unsplash\u53d6\u771f\u56fe+AppPhone\u53ef\u4ea4\u4e92+Playwright\u70b9\u51fb\u6d4b\u8bd5\uff09\u3001HTML\u52a8\u753b\u2192MP4/GIF\u5bfc\u51fa\uff0825fps\u57fa\u7840+60fps\u63d2\u5e27+palette\u4f18\u5316+\u573a\u666f\u5316BGM+\u81ea\u52a8fade\uff09\u3001**\u5e26\u89e3\u8bf4\u957f\u52a8\u753bpipeline**\uff08\u8c46\u5305TTS+\u5b9e\u6d4b\u65f6\u957f\u751ftimeline+NarrationStage+ducking\u6df7\u97f3\uff1b\u94c1\u5f8b\uff1a\u8fde\u7eed\u8fd0\u52a8\u53d9\u4e8b\uff0c\u7981PowerPoint\u5207\u6362\uff09\u3002**\u9700\u6c42\u6a21\u7ccaFallback**\uff1a\u8bbe\u8ba1\u65b9\u5411\u987e\u95ee\u2014\u20145\u6d41\u6d3e\u00d720\u54f2\u5b66\uff08Pentagram\u4fe1\u606f\u5efa\u7b51/Field.io\u8fd0\u52a8\u8bd7\u5b66/Kenya Hara\u4e1c\u65b9\u6781\u7b80/Sagmeister\u5b9e\u9a8c\u5148\u950b\u7b49\uff09\u63a83\u65b9\u5411+24\u9884\u5236showcase+\u5e76\u884c3 Demo\u9009\u3002**\u53ef\u9009**\uff1a5\u7ef4\u5ea6\u8bc4\u5ba1\uff08\u54f2\u5b66\u4e00\u81f4/\u89c6\u89c9\u5c42\u7ea7/\u7ec6\u8282/\u529f\u80fd/\u521b\u65b0\u540410\u5206+\u4fee\u590d\u6e05\u5355\uff09\u3002"
+}

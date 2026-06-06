@@ -1,0 +1,37 @@
+{
+  "name": "hunt-session",
+  "repo": "elementalsouls/Claude-BugHunter",
+  "path": "skills/hunt-session/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/elementalsouls/Claude-BugHunter",
+  "dir_name": "hunt-session",
+  "downloaded_at": "2026-06-06T03:50:52.314431Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: analysis=2, api=2",
+    "score": 2,
+    "runner_up": "api",
+    "runner_up_score": 2,
+    "signals": [
+      "analysis",
+      "analyze"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "elementalsouls",
+  "source_url": "https://github.com/elementalsouls/Claude-BugHunter/blob/main/skills/hunt-session/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/elementalsouls/Claude-BugHunter/blob/main/skills/hunt-session/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Hunt Session Management vulnerabilities \u2014 session fixation, session prediction (low entropy), insufficient invalidation on logout/password change, concurrent session abuse, JWT as session without expiry or revocation, cookie attribute issues (Secure/HttpOnly/SameSite missing). Medium to High impact."
+}

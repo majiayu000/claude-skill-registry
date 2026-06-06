@@ -1,0 +1,39 @@
+{
+  "name": "skillers",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/skillers/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "skillers",
+  "downloaded_at": "2026-06-06T03:41:29.776975Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "productivity",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for productivity: productivity, automation, workflow, task",
+    "score": 4,
+    "runner_up": "workflow",
+    "runner_up_score": 3,
+    "signals": [
+      "productivity",
+      "automation",
+      "workflow",
+      "task"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/skillers/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/skillers/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Mine local agent transcripts into redacted workflow-pattern evidence and recommend at most five automation specs as an extend op; never creates files, only asks which specs should proceed. Use when the user says \"learn my workflow\", \"suggest skills\", \"suggest hooks\", \"automate repetitive work\", \"what should I automate\", or \"skillers\"."
+}

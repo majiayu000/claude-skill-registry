@@ -1,0 +1,37 @@
+{
+  "name": "digital-avatar-shopping-video",
+  "repo": "anbeime/skill",
+  "path": "skills/digital-avatar-shopping-video/digital-avatar-shopping-video/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/anbeime/skill",
+  "dir_name": "digital-avatar-shopping-video",
+  "downloaded_at": "2026-06-06T03:45:57.090768Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: content, brand",
+    "score": 2,
+    "runner_up": "api",
+    "runner_up_score": 1,
+    "signals": [
+      "content",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "anbeime",
+  "source_url": "https://github.com/anbeime/skill/blob/main/skills/digital-avatar-shopping-video/digital-avatar-shopping-video/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anbeime/skill/blob/main/skills/digital-avatar-shopping-video/digital-avatar-shopping-video/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u5c0f\u7701\u5bfc\u8d2d\u5458\u591a\u667a\u80fd\u4f53\u6570\u5b57\u4eba\u53e3\u64ad\u5e26\u8d27\u89c6\u9891\u751f\u6210\u7cfb\u7edf\uff0c\u4ee5\"\u5c0f\u7701\u5bfc\u8d2d\u5458\"\u4e3a\u6838\u5fc3\u4eba\u8bbe\uff0c\u6253\u9020\u4e13\u4e1a\u8d2d\u7269\u52a9\u624b+\u6570\u5b57\u4eba\u53e3\u64ad\u5e26\u8d27\u89c6\u9891\u4e00\u4f53\u5316\u670d\u52a1\u3002\u6db5\u76d6\u4e94\u5927\u667a\u80fd\u4f53\uff08\u5c0f\u7701\u5bfc\u8d2d\u5458\u3001\u5e26\u8d27\u811a\u672c\u5e08\u3001\u6570\u5b57\u4eba\u53e3\u64ad\u751f\u6210\u5e08\u3001\u5e26\u8d27\u753b\u9762\u8bbe\u8ba1\u5e08\u3001\u97f3\u753b\u5408\u6210\u5e08\uff09\uff0c\u4ea7\u51fa\"\u6570\u5b57\u4eba\u53e3\u64ad+\u5e26\u8d27\u753b\u9762+\u5b57\u5e55\u97f3\u6548\"\u7684\u6210\u54c1\u89c6\u9891\uff0c\u9002\u914d\u6296\u97f3\u3001\u5feb\u624b\u7b49\u77ed\u89c6\u9891\u5e73\u53f0\uff0c\u652f\u6301\u6dd8\u5b9d\u3001\u4eac\u4e1c\u3001\u62fc\u591a\u591a\u3001\u552f\u54c1\u4f1a\u7b49\u5168\u5e73\u53f0\u5546\u54c1\u4fe1\u606f\uff0c\u5177\u5907\u77e5\u8bc6\u5e93\u81ea\u52a8\u5b58\u53d6\u80fd\u529b\u3002"
+}

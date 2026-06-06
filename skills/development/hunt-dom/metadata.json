@@ -1,0 +1,38 @@
+{
+  "name": "hunt-dom",
+  "repo": "elementalsouls/Claude-BugHunter",
+  "path": "skills/hunt-dom/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/elementalsouls/Claude-BugHunter",
+  "dir_name": "hunt-dom",
+  "downloaded_at": "2026-06-06T03:50:49.717058Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: dev, code, debug",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "dev",
+      "code",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "elementalsouls",
+  "source_url": "https://github.com/elementalsouls/Claude-BugHunter/blob/main/skills/hunt-dom/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/elementalsouls/Claude-BugHunter/blob/main/skills/hunt-dom/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Hunt client-side DOM vulnerabilities \u2014 DOM Clobbering (overwrite JS globals via HTML injection), PostMessage hijacking (missing origin check), Service Worker abuse (intercept requests), CSS Injection/Exfiltration (attribute selectors \u2192 token char-by-char), Client-side template injection, dangerouslySetInnerHTML. Use when hunting DOM-XSS, client-side auth bypass, or token exfiltration without server-side interaction."
+}

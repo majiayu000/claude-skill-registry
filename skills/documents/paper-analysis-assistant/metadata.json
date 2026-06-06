@@ -1,0 +1,38 @@
+{
+  "name": "paper-analysis-assistant",
+  "repo": "anbeime/skill",
+  "path": "skills/paper-analysis-assistant/paper-analysis-assistant/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/anbeime/skill",
+  "dir_name": "paper-analysis-assistant",
+  "downloaded_at": "2026-06-06T03:46:00.893740Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: pdf, word, pptx",
+    "score": 3,
+    "runner_up": "analysis",
+    "runner_up_score": 2,
+    "signals": [
+      "pdf",
+      "word",
+      "pptx"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "anbeime",
+  "source_url": "https://github.com/anbeime/skill/blob/main/skills/paper-analysis-assistant/paper-analysis-assistant/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anbeime/skill/blob/main/skills/paper-analysis-assistant/paper-analysis-assistant/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u6839\u636earXiv\u8bba\u6587\u7f51\u5740\u81ea\u52a8\u4e0b\u8f7dPDF\u5e76\u8fdb\u884c\u591a\u7ef4\u5ea6\u5206\u6790\uff0c\u5305\u62ec\u6587\u672c\u63d0\u53d6\u3001\u8bcd\u9891\u5206\u6790\u3001\u8bed\u97f3\u64ad\u62a5\u3001\u64ad\u5ba2\u5bf9\u8bdd\u751f\u6210\u3001\u4ea4\u4e92\u5f0f\u7f51\u9875\u3001PPT\u3001\u603b\u7ed3\u56fe\u548c\u5f15\u7528\u5206\u6790"
+}

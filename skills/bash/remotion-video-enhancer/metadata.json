@@ -1,0 +1,37 @@
+{
+  "name": "remotion-video-enhancer",
+  "repo": "anbeime/skill",
+  "path": "skills/remotion-video-enhancer/remotion-video-enhancer/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/anbeime/skill",
+  "dir_name": "remotion-video-enhancer",
+  "downloaded_at": "2026-06-06T03:45:58.783991Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script",
+    "score": 2,
+    "runner_up": "data",
+    "runner_up_score": 1,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "anbeime",
+  "source_url": "https://github.com/anbeime/skill/blob/main/skills/remotion-video-enhancer/remotion-video-enhancer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anbeime/skill/blob/main/skills/remotion-video-enhancer/remotion-video-enhancer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u89c6\u9891\u8f6c\u573a\u4e0e\u52a8\u753b\u589e\u5f3a\u5de5\u5177\uff0c\u63d0\u53d6 Remotion \u7684\u52a8\u753b\u7406\u5ff5\uff0c\u63d0\u4f9b\u9ad8\u7ea7\u89c6\u9891\u8f6c\u573a\u6548\u679c\u548c Framer Motion \u4ea4\u4e92\u5f0f\u52a8\u753b\u3002\u53ef\u4e0e ppt-generator\u3001nanobanana-ppt-visualizer\u3001ppt-roadshow-generator Skill \u534f\u540c\u5de5\u4f5c\u3002"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "architecture-foundation",
+  "repo": "majiayu000/spellbook",
+  "path": "skills/architecture-foundation/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/majiayu000/spellbook",
+  "dir_name": "architecture-foundation",
+  "downloaded_at": "2026-06-06T03:58:02.627785Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: data=3, workflow=3",
+    "score": 3,
+    "runner_up": "workflow",
+    "runner_up_score": 3,
+    "signals": [
+      "data",
+      "database",
+      "pipeline"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/spellbook/blob/main/skills/architecture-foundation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/majiayu000/spellbook/blob/main/skills/architecture-foundation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Design architecture foundations before implementation. Use when asked to design or refactor architecture, choose Rust/Go crate, package, module, runtime, workflow, or service boundaries, compare mature project architecture, prevent stacked one-off PRs, audit migration debt in existing repos, or produce a spec before coding."
+}

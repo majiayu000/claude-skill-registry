@@ -1,0 +1,37 @@
+{
+  "name": "media-processor",
+  "repo": "anbeime/skill",
+  "path": "skills/media-processor/media-processor/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/anbeime/skill",
+  "dir_name": "media-processor",
+  "downloaded_at": "2026-06-06T03:45:57.466028Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script",
+    "score": 2,
+    "runner_up": "quality",
+    "runner_up_score": 1,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "anbeime",
+  "source_url": "https://github.com/anbeime/skill/blob/main/skills/media-processor/media-processor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anbeime/skill/blob/main/skills/media-processor/media-processor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u63d0\u4f9b\u57fa\u4e8e FFmpeg \u548c ImageMagick \u7684\u591a\u5a92\u4f53\u5904\u7406\u80fd\u529b\uff0c\u652f\u6301\u89c6\u9891\u548c\u56fe\u50cf\u7684\u683c\u5f0f\u8f6c\u6362\u3001\u5206\u8fa8\u7387\u8c03\u6574\u3001\u538b\u7f29\u7b49\u64cd\u4f5c"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "video-recreation",
+  "repo": "anbeime/skill",
+  "path": "skills/video-recreation/video-recreation/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/anbeime/skill",
+  "dir_name": "video-recreation",
+  "downloaded_at": "2026-06-06T03:46:01.293575Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script",
+    "score": 2,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "anbeime",
+  "source_url": "https://github.com/anbeime/skill/blob/main/skills/video-recreation/video-recreation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anbeime/skill/blob/main/skills/video-recreation/video-recreation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u5b8c\u6574\u7684\u89c6\u9891\u4e8c\u521b\u5de5\u5177\uff0c\u652f\u6301\u89c6\u9891\u53cd\u63a8\u3001\u7d20\u6750\u751f\u6210(\u56fe\u7247/\u97f3\u6548/\u80cc\u666f\u97f3\u4e50/\u914d\u97f3/\u5b57\u5e55)\u3001\u89c6\u9891\u5408\u6210\u3001\u6587\u4ef6\u4e0b\u8f7d\u7684\u5168\u6d41\u7a0b\uff0c\u96c6\u6210Coze Bot API\u8fdb\u884c\u89c6\u89c9\u5206\u6790\uff0c\u4f7f\u7528Edge-TTS\u8fdb\u884c\u8bed\u97f3\u5408\u6210"
+}

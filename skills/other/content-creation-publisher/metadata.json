@@ -1,0 +1,37 @@
+{
+  "name": "content-creation-publisher",
+  "repo": "anbeime/skill",
+  "path": "skills/content-creation-publisher/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/anbeime/skill",
+  "dir_name": "content-creation-publisher",
+  "downloaded_at": "2026-06-06T03:45:58.096826Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: analysis=2, marketing=2",
+    "score": 2,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "analysis",
+      "analyze"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "anbeime",
+  "source_url": "https://github.com/anbeime/skill/blob/main/skills/content-creation-publisher/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anbeime/skill/blob/main/skills/content-creation-publisher/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u5185\u5bb9\u521b\u4f5c\u4e0e\u53d1\u5e03\u5168\u6d41\u7a0b\u6280\u80fd\uff0c\u6574\u5408\u7f51\u9875\u91c7\u96c6\u3001Markdown\u683c\u5f0f\u5316\u3001\u667a\u80fd\u914d\u56fe\u3001\u591a\u5e73\u53f0\u53d1\u5e03\uff08\u5fae\u4fe1\u516c\u4f17\u53f7\u3001X/Twitter\uff09\u529f\u80fd\uff0c\u5b9e\u73b0\u4ece\u5185\u5bb9\u83b7\u53d6\u5230\u53d1\u5e03\u7684\u4e00\u7ad9\u5f0f\u89e3\u51b3\u65b9\u6848"
+}

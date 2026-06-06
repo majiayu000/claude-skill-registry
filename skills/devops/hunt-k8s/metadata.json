@@ -1,0 +1,39 @@
+{
+  "name": "hunt-k8s",
+  "repo": "elementalsouls/Claude-BugHunter",
+  "path": "skills/hunt-k8s/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/elementalsouls/Claude-BugHunter",
+  "dir_name": "hunt-k8s",
+  "downloaded_at": "2026-06-06T03:50:49.175362Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "devops",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for devops: docker, kubernetes, infra, infrastructure",
+    "score": 4,
+    "runner_up": "api",
+    "runner_up_score": 2,
+    "signals": [
+      "docker",
+      "kubernetes",
+      "infra",
+      "infrastructure"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "elementalsouls",
+  "source_url": "https://github.com/elementalsouls/Claude-BugHunter/blob/main/skills/hunt-k8s/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/elementalsouls/Claude-BugHunter/blob/main/skills/hunt-k8s/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Hunt Kubernetes and Docker specific vulnerabilities \u2014 Kubernetes API anonymous access, kubelet 10250 unauth exec, etcd 2379 unauth, dashboard exposure, RBAC misconfig, secret leakage, docker.sock exposure, privileged container escape, container registry exposure, pod service account token abuse. Use when target runs containerized infrastructure, exposes K8s ports, or when cloud metadata reveals K8s service accounts."
+}

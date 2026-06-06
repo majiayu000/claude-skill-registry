@@ -1,0 +1,36 @@
+{
+  "name": "qwen3-asr-assistant",
+  "repo": "anbeime/skill",
+  "path": "skills/qwen3-asr-assistant/qwen3-asr-assistant/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/anbeime/skill",
+  "dir_name": "qwen3-asr-assistant",
+  "downloaded_at": "2026-06-06T03:45:58.175221Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category api scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "bash",
+    "runner_up_score": 1,
+    "signals": [
+      "api"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "anbeime",
+  "source_url": "https://github.com/anbeime/skill/blob/main/skills/qwen3-asr-assistant/qwen3-asr-assistant/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anbeime/skill/blob/main/skills/qwen3-asr-assistant/qwen3-asr-assistant/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u667a\u80fd\u8bed\u97f3\u8f6c\u6587\u5b57\u52a9\u624b\uff0c\u57fa\u4e8e Qwen3-ASR \u6a21\u578b\uff0c\u652f\u6301\u5b9e\u65f6\u8bed\u97f3\u8bc6\u522b\u548c\u667a\u80fd\u6587\u672c\u6539\u5199\u3002\u53ef\u4ee5\u5c06\u5f55\u97f3\u8f6c\u6362\u4e3a\u6587\u5b57\uff0c\u5e76\u4e00\u952e\u6539\u5199\u6210\u90ae\u4ef6\u3001\u7b14\u8bb0\u3001\u793e\u4ea4\u5a92\u4f53\u6587\u6848\uff0c\u652f\u6301\u590d\u5236\u3001\u5206\u4eab\u548c\u5f55\u97f3\u62fc\u63a5\u3002\u9002\u7528\u4e8e\u4f1a\u8bae\u7eaa\u8981\u3001\u8bed\u97f3\u5907\u5fd8\u3001\u5185\u5bb9\u521b\u4f5c\u7b49\u591a\u79cd\u573a\u666f\u3002"
+}

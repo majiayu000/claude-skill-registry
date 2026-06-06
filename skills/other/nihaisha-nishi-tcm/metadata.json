@@ -1,0 +1,36 @@
+{
+  "name": "nihaisha",
+  "repo": "JuneYaooo/nihaisha-nishi-tcm",
+  "path": "SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/JuneYaooo/nihaisha-nishi-tcm",
+  "dir_name": "nihaisha-nishi-tcm",
+  "downloaded_at": "2026-06-06T03:38:27.496677Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-ml scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "marketing",
+    "runner_up_score": 1,
+    "signals": [
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "JuneYaooo",
+  "source_url": "https://github.com/JuneYaooo/nihaisha-nishi-tcm/blob/main/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/JuneYaooo/nihaisha-nishi-tcm/blob/main/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use this skill when the user asks about Ni Haisha / \u502a\u6d77\u53a6 TCM course material, especially Shang Han Lun / \u4f24\u5bd2\u8bba, Jingui / \u91d1\u532e\u8981\u7565, Zhongjing Xinfa / \u4ef2\u666f\u5fc3\u6cd5, clinical cases / \u4e34\u5e8a\u6848\u4f8b / \u502a\u5e08\u533b\u6848, Bagang Bianzheng / \u516b\u7eb2\u8fa8\u8bc1, Fuyang Forum / \u6276\u9633\u8bba\u575b, Yijinjing / \u6613\u7b4b\u7ecf, Liang Dong dialogue / \u6881\u51ac\u5bf9\u8bdd\u502a\u5e08, Stanford lecture / \u65af\u5766\u798f\u5927\u5b66\u6f14\u8bb2, Tianji / \u5929\u7eaa / \u6613\u7ecf / \u9633\u5b85 / \u7d2b\u5fae\u6597\u6570, Huangdi Neijing / \u9ec4\u5e1d\u5185\u7ecf, Shennong Bencao / \u795e\u519c\u672c\u8349, acupuncture / \u9488\u7078, meridians, acupoints, six-channel pattern identification, symptom-to-formula routing, formula comparison, lesson review, board/PPT screenshot evidence, or course-derived study notes. This skill is for educational distillation and study support only, not medical diagnosis, prescriptions, dosage, or individualized treatment."
+}

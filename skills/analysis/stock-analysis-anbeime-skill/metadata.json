@@ -1,0 +1,37 @@
+{
+  "name": "stock-analysis",
+  "repo": "anbeime/skill",
+  "path": "skills/stock-analysis/stock-analysis/SKILL.md",
+  "github_branch": "main",
+  "category": "analysis",
+  "source": "github.com/anbeime/skill",
+  "dir_name": "stock-analysis-anbeime-skill",
+  "downloaded_at": "2026-06-06T03:46:01.053924Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "analysis",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for analysis: analysis, analyze",
+    "score": 2,
+    "runner_up": "bash",
+    "runner_up_score": 1,
+    "signals": [
+      "analysis",
+      "analyze"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "anbeime",
+  "source_url": "https://github.com/anbeime/skill/blob/main/skills/stock-analysis/stock-analysis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anbeime/skill/blob/main/skills/stock-analysis/stock-analysis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u80a1\u7968\u4e2a\u80a1\u5206\u6790\uff0c\u5b9e\u65f6\u83b7\u53d6\u4ef7\u683c\u6da8\u8dcc\u5e45\uff0c\u8ba1\u7b97\u6280\u672f\u6307\u6807\u548c\u652f\u6491\u4f4d\uff0c\u8bc6\u522b\u7f3a\u53e3\u5e76\u5224\u65ad\u652f\u6491\u538b\u529b\uff0c\u667a\u80fd\u9884\u6d4b\u672a\u67653\u5929\u8d70\u52bf\u5e76\u7ed9\u51fa\u64cd\u4f5c\u5efa\u8bae"
+}

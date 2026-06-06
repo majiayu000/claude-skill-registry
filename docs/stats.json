@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-06T04:45:57.953144Z",
+  "updated_at": "2026-06-06T17:22:18.012826Z",
   "archive_skill_md_count_raw": 200329,
   "archive_metadata_count_raw": 200329,
   "indexed_skill_count_scan_shape": 200329,
@@ -90,7 +90,7 @@
     {
       "name": "domains",
       "code": "domains",
-      "count": 3097
+      "count": 3154
     },
     {
       "name": "examples",
@@ -140,7 +140,7 @@
     {
       "name": "other",
       "code": "oth",
-      "count": 759
+      "count": 702
     },
     {
       "name": "performance",
@@ -266,11 +266,11 @@
   "index_size_bytes": 162,
   "index_size_gzip_bytes": 174,
   "search_shard_count": 6,
-  "search_largest_shard_bytes": 8388605,
+  "search_largest_shard_bytes": 8388675,
   "search_largest_shard_gzip_bytes": 2554814,
   "category_shard_count": 50,
   "category_largest_part_bytes": 8388691,
-  "category_largest_part_gzip_bytes": 1736473,
+  "category_largest_part_gzip_bytes": 1736472,
   "lite_index_count": 158897,
   "lite_index_included_count": 5000,
   "lite_index_size_bytes": 3503714,
@@ -279,17 +279,17 @@
   "quality_index_gzip_size_bytes": 213,
   "quality_shard_count": 6,
   "quality_largest_shard_bytes": 8388698,
-  "quality_largest_shard_gzip_bytes": 1748356,
+  "quality_largest_shard_gzip_bytes": 1748355,
   "security_index_size_bytes": 223,
   "security_index_gzip_size_bytes": 215,
   "security_shard_count": 18,
   "security_largest_shard_bytes": 8388637,
-  "security_largest_shard_gzip_bytes": 1638042,
+  "security_largest_shard_gzip_bytes": 1638053,
   "ranking_index_size_bytes": 220,
   "ranking_index_gzip_size_bytes": 214,
   "ranking_shard_count": 5,
-  "ranking_largest_shard_bytes": 8388607,
-  "ranking_largest_shard_gzip_bytes": 2204761,
+  "ranking_largest_shard_bytes": 8388686,
+  "ranking_largest_shard_gzip_bytes": 2204770,
   "largest_generated_file_bytes": 8388698,
   "security_scan": {
     "total": 200329,

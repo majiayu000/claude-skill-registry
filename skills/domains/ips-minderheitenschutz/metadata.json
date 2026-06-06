@@ -1,0 +1,36 @@
+{
+  "name": "ips-minderheitenschutz",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "insolvenzplan-starug-planwerkstatt/skills/ips-minderheitenschutz/SKILL.md",
+  "github_branch": "main",
+  "category": "domains",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "ips-minderheitenschutz",
+  "downloaded_at": "2026-06-01T04:14:20.169260Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category planning scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "productivity",
+    "runner_up_score": 1,
+    "signals": [
+      "plan"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/insolvenzplan-starug-planwerkstatt/skills/ips-minderheitenschutz/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/insolvenzplan-starug-planwerkstatt/skills/ips-minderheitenschutz/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Schlechterstellungsrisiken opponierender Beteiligter analysieren und Planangriffe durch Minderheitenschutzprüfung abwenden. § 251 InsO § 64 StaRUG Minderheitenschutz. Prüfraster: individuelle Schlechterstellung Sicherheitsleistungen Vergleichsrechnung Einwandkatalog Bestätigungshemmnisse. Output: Minderheitenschutzmatrix Nachbesserungsliste. Abgrenzung: nicht für Cramdown-Fragen (ips-cramdown-obstruktion)."
+}

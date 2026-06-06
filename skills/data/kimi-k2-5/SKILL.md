@@ -25,7 +25,7 @@ Kimi K2.5 is the **most capable subagent** available in this project. Use it whe
 ### Manual Environment Setup
 ```powershell
 $env:ANTHROPIC_BASE_URL = "https://api.moonshot.cn/anthropic/"
-$env:ANTHROPIC_API_KEY = "sk-kimi-EpYxHXd4Y0P4pCgjqJUXGmqN1DtwzdQkjMW3LxAleWGPozfXwXibfKSQ2uLZDisd"
+$env:ANTHROPIC_API_KEY = "<KIMI_API_KEY>"
 $env:ANTHROPIC_MODEL = "kimi-k2.5-thinking"
 $env:ANTHROPIC_SMALL_FAST_MODEL = "kimi-k2-turbo-preview"
 ```

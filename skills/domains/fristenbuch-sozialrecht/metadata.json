@@ -1,0 +1,36 @@
+{
+  "name": "fristenbuch-sozialrecht",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "fachanwalt-sozialrecht/skills/fristenbuch-sozialrecht/SKILL.md",
+  "github_branch": "main",
+  "category": "domains",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "fristenbuch-sozialrecht",
+  "downloaded_at": "2026-06-03T04:17:11.047044Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category security scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "",
+    "runner_up_score": 0,
+    "signals": [
+      "audit"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/fachanwalt-sozialrecht/skills/fristenbuch-sozialrecht/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/fachanwalt-sozialrecht/skills/fristenbuch-sozialrecht/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Anwalt oder Sekretariat muss Fristen in Sozialrechtsverfahren erfassen und ueberwachen. Fristenbuch Sozialrecht. Standardfristen: § 84 SGG Widerspruch 1 Monat § 87 SGG Klage 1 Monat § 173 SGG Beschwerde 1 Monat Untätigkeit § 88 SGG 6 Monate. Berechnung nach § 37 SGB X (Vier-Tage-Fiktion seit 1.1.2025 PostModG) und § 26 SGB X. Output: Fristenbuch-Eintrag mit Hauptfrist und Vorfristen. Abgrenzung zu bescheid-frist-quick-check (Schnellprüfung Einzelfall) und widerspruchsfrist-und-zustellung-sgb (Detailprüfung Zustellung)."
+}

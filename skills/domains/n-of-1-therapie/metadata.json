@@ -1,0 +1,36 @@
+{
+  "name": "n-of-1-therapie",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "fachanwalt-medizinrecht/skills/n-of-1-therapie/SKILL.md",
+  "github_branch": "main",
+  "category": "domains",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "n-of-1-therapie",
+  "downloaded_at": "2026-06-04T04:10:45.398297Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category development scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "marketing",
+    "runner_up_score": 1,
+    "signals": [
+      "framework"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/fachanwalt-medizinrecht/skills/n-of-1-therapie/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/fachanwalt-medizinrecht/skills/n-of-1-therapie/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "N-of-1-Therapie und Heilversuch: moderner Medizinrechts-Skill für Individualisierte Therapie außerhalb Standardpfad, Erkenntnisgrenze, Einwilligung und Kostenträger. Mit Haftung, Aufklärung, Behördenweg, Beweislogik und Quellencheck."
+}

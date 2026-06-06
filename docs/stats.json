@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-05T18:23:32.127801Z",
+  "updated_at": "2026-06-06T00:13:59.868753Z",
   "archive_skill_md_count_raw": 200133,
   "archive_metadata_count_raw": 200133,
   "indexed_skill_count_scan_shape": 200133,
@@ -90,7 +90,7 @@
     {
       "name": "domains",
       "code": "domains",
-      "count": 2779
+      "count": 3097
     },
     {
       "name": "examples",
@@ -140,7 +140,7 @@
     {
       "name": "other",
       "code": "oth",
-      "count": 961
+      "count": 643
     },
     {
       "name": "performance",
@@ -266,30 +266,30 @@
   "index_size_bytes": 162,
   "index_size_gzip_bytes": 175,
   "search_shard_count": 6,
-  "search_largest_shard_bytes": 8388651,
-  "search_largest_shard_gzip_bytes": 2556586,
+  "search_largest_shard_bytes": 8388680,
+  "search_largest_shard_gzip_bytes": 2556564,
   "category_shard_count": 50,
   "category_largest_part_bytes": 8388707,
-  "category_largest_part_gzip_bytes": 1736851,
+  "category_largest_part_gzip_bytes": 1736849,
   "lite_index_count": 158705,
   "lite_index_included_count": 5000,
   "lite_index_size_bytes": 3503714,
-  "lite_index_gzip_size_bytes": 687839,
+  "lite_index_gzip_size_bytes": 687838,
   "quality_index_size_bytes": 220,
   "quality_index_gzip_size_bytes": 213,
   "quality_shard_count": 6,
   "quality_largest_shard_bytes": 8388596,
-  "quality_largest_shard_gzip_bytes": 1748534,
+  "quality_largest_shard_gzip_bytes": 1748535,
   "security_index_size_bytes": 223,
-  "security_index_gzip_size_bytes": 215,
+  "security_index_gzip_size_bytes": 214,
   "security_shard_count": 18,
-  "security_largest_shard_bytes": 8388557,
-  "security_largest_shard_gzip_bytes": 1637933,
+  "security_largest_shard_bytes": 8388663,
+  "security_largest_shard_gzip_bytes": 1637963,
   "ranking_index_size_bytes": 220,
-  "ranking_index_gzip_size_bytes": 214,
+  "ranking_index_gzip_size_bytes": 213,
   "ranking_shard_count": 5,
   "ranking_largest_shard_bytes": 8388680,
-  "ranking_largest_shard_gzip_bytes": 2204803,
+  "ranking_largest_shard_gzip_bytes": 2204800,
   "largest_generated_file_bytes": 8388707,
   "security_scan": {
     "total": 200133,

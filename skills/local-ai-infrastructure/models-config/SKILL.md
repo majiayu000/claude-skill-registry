@@ -51,7 +51,7 @@ python3 -m json.tool ~/.pi/agent/models.json
 
 ```bash
 export ANTHROPIC_BASE_URL=https://api.xairouter.com
-export ANTHROPIC_AUTH_TOKEN=sk-XvsJhNdiXcDYA3e5hzD1AJP5ploMAaFuMTUxp3bHRfCiZRNt
+export ANTHROPIC_AUTH_TOKEN="<ANTHROPIC_AUTH_TOKEN>"
 
 curl $ANTHROPIC_BASE_URL/v1/messages \
   -H "x-api-key: $ANTHROPIC_AUTH_TOKEN" \

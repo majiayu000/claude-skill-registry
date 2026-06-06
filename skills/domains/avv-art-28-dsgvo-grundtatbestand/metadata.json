@@ -1,0 +1,36 @@
+{
+  "name": "avv-art-28-dsgvo-grundtatbestand",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "datenschutzrecht/skills/avv-art-28-dsgvo-grundtatbestand/SKILL.md",
+  "github_branch": "main",
+  "category": "domains",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "avv-art-28-dsgvo-grundtatbestand",
+  "downloaded_at": "2026-06-02T04:08:35.294381Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-ml scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "data",
+    "runner_up_score": 1,
+    "signals": [
+      "training"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/datenschutzrecht/skills/avv-art-28-dsgvo-grundtatbestand/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/datenschutzrecht/skills/avv-art-28-dsgvo-grundtatbestand/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Grundtatbestand der Auftragsverarbeitung nach Art. 28 DSGVO. Klaert Rollenzuordnung Verantwortlicher gegen Auftragsverarbeiter wenn ein Dienstleister personenbezogene Daten im fremden Auftrag verarbeitet. Wann gilt Art. 28 wann Art. 26 wann Funktionsuebertragung. Output: Pruefvermerk zur Rollenzuordnung und AVV-Pflicht."
+}

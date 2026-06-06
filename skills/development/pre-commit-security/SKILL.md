@@ -253,7 +253,8 @@ chmod +x .git/hooks/pre-commit
 
 ```bash
 # 検出テスト（ブロックされるべき）
-echo 'API_KEY="sk-proj-test123456789012345678901234567890123456"' > test.txt
+# Replace the placeholder with a disposable local canary before running this test.
+echo 'API_KEY="<DISPOSABLE_TEST_SECRET>"' > test.txt
 git add test.txt
 git commit -m "test"  # ❌ ブロックされる
 

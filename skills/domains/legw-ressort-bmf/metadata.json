@@ -1,0 +1,34 @@
+{
+  "name": "legw-ressort-bmf",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "legistik-werkstatt/skills/legw-ressort-bmf/SKILL.md",
+  "github_branch": "main",
+  "category": "domains",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "legw-ressort-bmf",
+  "downloaded_at": "2026-06-03T04:17:19.392385Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "no taxonomy keywords matched SKILL.md semantic text",
+    "score": 0,
+    "runner_up": "",
+    "runner_up_score": 0,
+    "signals": [],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/legistik-werkstatt/skills/legw-ressort-bmf/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/legistik-werkstatt/skills/legw-ressort-bmf/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Heranfuehrung Ressort BMF (Bundesministerium der Finanzen). Schwerpunkt: Steuer- und Fiskalrecht; Haushalts- und Zuwendungsrecht; Finanzmarkt; Zoll und Aussenwirtschaft; Geldwaesche. Kernnormen: AO; EStG; KStG; UStG; BHO; FinStabG; KWG; WpHG; ZollVG; GwG. Fuenf Spezialfelder: steuerrecht-und-fiskalnormen; haushalts-und-zuwendungsrecht; finanzmarktaufsicht-bafin-kwg-wpig; zoll-und-aussenwirtschaftsrecht; geldwaesche-und-sanktionsrecht. Output: Ressort-Kompass mit Materie; Akteuren; Normbestand; Aufsicht und Stolpersteinen. Anschluss legw-ressortaufgaben-bmf und legw-bmf-Themenslug."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "pm-feedback",
+  "repo": "serejaris/personal-corp-skills",
+  "path": "skills/pm-feedback/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/serejaris/personal-corp-skills",
+  "dir_name": "pm-feedback",
+  "downloaded_at": "2026-06-07T04:31:31.169115Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: analysis=2, design=2",
+    "score": 2,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "analysis",
+      "analyze"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "serejaris",
+  "source_url": "https://github.com/serejaris/personal-corp-skills/blob/main/skills/pm-feedback/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/serejaris/personal-corp-skills/blob/main/skills/pm-feedback/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u041a\u043b\u0430\u0441\u0441\u0438\u0444\u0438\u0446\u0438\u0440\u0443\u0435\u0442 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c\u0441\u043a\u0438\u0439 \u0444\u0438\u0434\u0431\u0435\u043a (Excel/CSV/\u0442\u0435\u043a\u0441\u0442) \u043f\u043e 6 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f\u043c, \u0434\u0435\u043b\u0430\u0435\u0442 sentiment-\u0430\u043d\u0430\u043b\u0438\u0437, \u043a\u043b\u0430\u0441\u0442\u0435\u0440\u0438\u0437\u0430\u0446\u0438\u044e \u0442\u0435\u043c, \u0430\u043d\u0430\u043b\u0438\u0437 \u0442\u0440\u0435\u043d\u0434\u043e\u0432, \u0442\u0440\u0438\u0430\u043d\u0433\u0443\u043b\u044f\u0446\u0438\u044e \u043f\u043e \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u0430\u043c, \u0440\u0430\u0441\u0447\u0451\u0442 NPS \u0438 \u0438\u0437\u0432\u043b\u0435\u0447\u0435\u043d\u0438\u0435 \u043f\u0435\u0440\u0441\u043e\u043d. \u041d\u0430 \u0432\u044b\u0445\u043e\u0434\u0435 \u2014 Top-10 \u0431\u043e\u043b\u0435\u0439 \u0441 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0430\u0446\u0438\u044f\u043c\u0438 \u043a \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044e. User-invoked only \u2014 do NOT auto-trigger. Triggers on /pm-feedback, \"\u0430\u043d\u0430\u043b\u0438\u0437 \u043e\u0431\u0440\u0430\u0442\u043d\u043e\u0439 \u0441\u0432\u044f\u0437\u0438\", \"\u0440\u0430\u0437\u0431\u043e\u0440 \u043e\u0442\u0437\u044b\u0432\u043e\u0432\", \"\u0430\u043d\u0430\u043b\u0438\u0437 NPS\", \"analyze user feedback\", \"VOC analysis\", \"NPS analysis\", \"review analysis\"."
+}

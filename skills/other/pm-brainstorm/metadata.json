@@ -1,0 +1,37 @@
+{
+  "name": "pm-brainstorm",
+  "repo": "serejaris/personal-corp-skills",
+  "path": "skills/pm-brainstorm/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/serejaris/personal-corp-skills",
+  "dir_name": "pm-brainstorm",
+  "downloaded_at": "2026-06-07T04:31:31.492924Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-llm=2, design=2",
+    "score": 2,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "serejaris",
+  "source_url": "https://github.com/serejaris/personal-corp-skills/blob/main/skills/pm-brainstorm/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/serejaris/personal-corp-skills/blob/main/skills/pm-brainstorm/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u041f\u0440\u043e\u0432\u043e\u0434\u0438\u0442 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439 \u0441\u0435\u0430\u043d\u0441 \u0434\u0438\u0432\u0435\u0440\u0433\u0435\u043d\u0446\u0438\u0438 \u0432\u043e\u043a\u0440\u0443\u0433 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u043e\u0439 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u043e\u0432\u043e\u0439 \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u044b \u0438\u043b\u0438 \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e\u0441\u0442\u0438. \u0412\u0441\u0442\u0440\u043e\u0435\u043d\u044b SCAMPER (7 \u0440\u0430\u043a\u0443\u0440\u0441\u043e\u0432), 5 Whys \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430 \u043a\u043e\u0440\u043d\u0435\u0432\u043e\u0439 \u043f\u0440\u0438\u0447\u0438\u043d\u044b, \u043a\u0440\u043e\u0441\u0441-\u0434\u043e\u043c\u0435\u043d\u043d\u043e\u0435 \u0432\u0434\u043e\u0445\u043d\u043e\u0432\u0435\u043d\u0438\u0435, \u043e\u0433\u0440\u0430\u043d\u0438\u0447\u0438\u0432\u0430\u044e\u0449\u0438\u0435 \u0438\u043d\u043d\u043e\u0432\u0430\u0446\u0438\u0438, \u043e\u0431\u0440\u0430\u0442\u043d\u044b\u0439 \u0431\u0440\u0435\u0439\u043d\u0448\u0442\u043e\u0440\u043c \u0438 \u043c\u0430\u0442\u0440\u0438\u0446\u0430 Impact/Effort \u0434\u043b\u044f \u043e\u0442\u0431\u043e\u0440\u0430. \u041d\u0430 \u0432\u044b\u0445\u043e\u0434\u0435 \u2014 \u226510 \u0438\u0434\u0435\u0439 \u0441 \u0434\u0435\u0442\u0430\u043b\u044c\u043d\u043e \u043f\u0440\u043e\u0440\u0430\u0431\u043e\u0442\u0430\u043d\u043d\u044b\u043c Top-3. User-invoked only \u2014 do NOT auto-trigger. Triggers on /pm-brainstorm, \"\u0438\u0434\u0435\u0438 \u0434\u043b\u044f \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u0430\", \"\u043f\u0440\u043e\u0434\u0443\u043a\u0442\u043e\u0432\u044b\u0439 \u0431\u0440\u0435\u0439\u043d\u0448\u0442\u043e\u0440\u043c\", \"\u0434\u0438\u0432\u0435\u0440\u0433\u0435\u043d\u0446\u0438\u044f \u0438\u0434\u0435\u0439\", \"How Might We\", \"SCAMPER\", \"product brainstorm\", \"feature ideas\"."
+}

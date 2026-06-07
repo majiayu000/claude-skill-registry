@@ -1,0 +1,36 @@
+{
+  "name": "kaltstart",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "corporate-kanzlei/skills/kaltstart/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "kaltstart",
+  "downloaded_at": "2026-06-07T04:05:57.698687Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-ml scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "",
+    "runner_up_score": 0,
+    "signals": [
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/corporate-kanzlei/skills/kaltstart/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/corporate-kanzlei/skills/kaltstart/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Kaltstart Corporate-Kanzlei: Strukturiert den Einstieg in ein neues Corporate/M&A-Mandat mit Schnellerfassung von Parteien, Dealtyp, Phase, ersten Risiken und naechsten Schritten. Normen: BRAO \u00a7\u00a7 43a und 49b; GwG \u00a7 10 (KYC); MAR Insider-Abgrenzung. Pr\u00fcfraster: Mandantenrolle (Kaeufer/Verkaeufer/Target), Dealtyp (Share/Asset/Merger/Distressed), Phase, Konflikt-Check, Fristen-Sofortcheck. Output Deal-Kurzkarte mit Ampel, Routing-Empfehlung an Fachmodule. Abgrenzung: Detailarbeit siehe kommandocenter; Deal-Intake siehe deal-intake-skill."
+}

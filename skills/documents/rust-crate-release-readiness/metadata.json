@@ -1,0 +1,38 @@
+{
+  "name": "rust-crate-release-readiness",
+  "repo": "boshu2/agentops",
+  "path": "skills/rust-crate-release-readiness/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/boshu2/agentops",
+  "dir_name": "rust-crate-release-readiness",
+  "downloaded_at": "2026-06-08T04:18:43.018703Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: doc, docs, documentation",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "doc",
+      "docs",
+      "documentation"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "boshu2",
+  "source_url": "https://github.com/boshu2/agentops/blob/main/skills/rust-crate-release-readiness/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/boshu2/agentops/blob/main/skills/rust-crate-release-readiness/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when preparing a Rust crate release with metadata, semver, docs, tests, packaging, and rollback notes.\nTriggers:"
+}

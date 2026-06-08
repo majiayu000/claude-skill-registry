@@ -1,0 +1,37 @@
+{
+  "name": "repeatedly-apply-skill",
+  "repo": "boshu2/agentops",
+  "path": "images/gemini/skills/repeatedly-apply-skill/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/boshu2/agentops",
+  "dir_name": "repeatedly-apply-skill",
+  "downloaded_at": "2026-06-08T04:18:38.330408Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: design=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "ui",
+      "animation"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "boshu2",
+  "source_url": "https://github.com/boshu2/agentops/blob/main/images/gemini/skills/repeatedly-apply-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/boshu2/agentops/blob/main/images/gemini/skills/repeatedly-apply-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when applying a skill repeatedly with progressive deepening for iterative improvement."
+}

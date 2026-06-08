@@ -1,0 +1,37 @@
+{
+  "name": "standup",
+  "repo": "thedotmack/claude-mem",
+  "path": "plugin/skills/standup/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/thedotmack/claude-mem",
+  "dir_name": "standup",
+  "downloaded_at": "2026-06-08T04:37:12.782938Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: word, markdown",
+    "score": 2,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "word",
+      "markdown"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "thedotmack",
+  "source_url": "https://github.com/thedotmack/claude-mem/blob/main/plugin/skills/standup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/thedotmack/claude-mem/blob/main/plugin/skills/standup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Convene the recently-active git worktrees as named agents in a markdown group\nchat, have them reconcile what each changed, and converge on ONE consolidated\nworktree. Each branch is an agent that posts to a shared STANDUP.md (YAML front\nmatter holds the GOAL + PROMPT; the body is the chat log), then the room agrees\non a merge order and a single consolidation plan in the SUMMATION. The room is\nfilled either by time window (past 1h / 4h / 24h / 7d / all \u2014 only worktrees\nactive in it join, so a 40-worktree machine collapses to the handful you\nactually touched) or by hand-picking specific worktrees and/or open GitHub PRs\nfrom a checkbox-style list. Use this skill whenever the user says \"standup\",\n\"run the standup\", \"reconcile my worktrees\", \"consolidate worktrees\", \"merge\nthese branches together\", \"merge these PRs\", \"combine these worktrees and pull\nrequests\", \"what's everyone at\", \"have my worktrees check in\", or wants several\nbranch-named agents to coordinate / resolve overlapping work into one\ndeliverable through a shared chat file \u2014 even if they don't say the word\n\"standup\"."
+}

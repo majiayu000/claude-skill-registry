@@ -1,0 +1,37 @@
+{
+  "name": "ost-render",
+  "repo": "haabe/mycelium",
+  "path": "plugins/mycelium/skills/ost-render/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/haabe/mycelium",
+  "dir_name": "ost-render",
+  "downloaded_at": "2026-06-08T04:24:37.520684Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: framework, build",
+    "score": 2,
+    "runner_up": "data",
+    "runner_up_score": 1,
+    "signals": [
+      "framework",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "haabe",
+  "source_url": "https://github.com/haabe/mycelium/blob/main/plugins/mycelium/skills/ost-render/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/haabe/mycelium/blob/main/plugins/mycelium/skills/ost-render/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Render `.claude/canvas/opportunities.yml` as a diagram or structured list. Read-only. Default format Mermaid mindmap. Consults the attribution registry per `${CLAUDE_PLUGIN_ROOT}/engine/render-conventions.md` consent + privacy gate. Second specialist in the render fleet."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "20-andruia-niche-intelligence",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/20-andruia-niche-intelligence/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "20-andruia-niche-intelligence",
+  "downloaded_at": "2026-06-08T04:36:05.346694Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for design: ui, ux",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "ui",
+      "ux"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/20-andruia-niche-intelligence/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/20-andruia-niche-intelligence/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Estratega de Inteligencia de Dominio de Andru.ia. Analiza el nicho espec\u00edfico de un proyecto para inyectar conocimientos, regulaciones y est\u00e1ndares \u00fanicos del sector. Act\u00edvalo tras definir el nicho."
+}

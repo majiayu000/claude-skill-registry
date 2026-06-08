@@ -1,0 +1,39 @@
+{
+  "name": "shadcn",
+  "repo": "syahiidkamil/Software-Engineer-AI-Agent-Atlas",
+  "path": ".claude/skills/shadcn/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/syahiidkamil/Software-Engineer-AI-Agent-Atlas",
+  "dir_name": "shadcn",
+  "downloaded_at": "2026-06-08T04:36:56.976464Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: design=4, development=4",
+    "score": 4,
+    "runner_up": "development",
+    "runner_up_score": 4,
+    "signals": [
+      "design",
+      "ui",
+      "component",
+      "tailwind"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "syahiidkamil",
+  "source_url": "https://github.com/syahiidkamil/Software-Engineer-AI-Agent-Atlas/blob/main/.claude/skills/shadcn/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/syahiidkamil/Software-Engineer-AI-Agent-Atlas/blob/main/.claude/skills/shadcn/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Manages shadcn components and projects \u2014 adding, searching, fixing, debugging, styling, and composing UI. Provides project context, component docs, and usage examples. Applies when working with shadcn/ui, component registries, presets, --preset codes, or any project with a components.json file. Also triggers for \"shadcn init\", \"create an app with --preset\", or \"switch to --preset\"."
+}

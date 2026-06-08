@@ -1,0 +1,37 @@
+{
+  "name": "cycle-render",
+  "repo": "haabe/mycelium",
+  "path": "plugins/mycelium/skills/cycle-render/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/haabe/mycelium",
+  "dir_name": "cycle-render",
+  "downloaded_at": "2026-06-08T04:24:37.210145Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "productivity",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for productivity: task, memory",
+    "score": 2,
+    "runner_up": "data",
+    "runner_up_score": 1,
+    "signals": [
+      "task",
+      "memory"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "haabe",
+  "source_url": "https://github.com/haabe/mycelium/blob/main/plugins/mycelium/skills/cycle-render/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/haabe/mycelium/blob/main/plugins/mycelium/skills/cycle-render/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Render `.claude/canvas/cycle-history.yml` as a Gantt chart + outcome distribution pie (or ascii / json). Read-only. Consults the attribution registry per `${CLAUDE_PLUGIN_ROOT}/engine/render-conventions.md` consent + privacy gate. Third specialist in the render fleet."
+}

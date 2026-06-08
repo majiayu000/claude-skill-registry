@@ -1,0 +1,37 @@
+{
+  "name": "pptx",
+  "repo": "syahiidkamil/Software-Engineer-AI-Agent-Atlas",
+  "path": ".claude/skills/pptx/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/syahiidkamil/Software-Engineer-AI-Agent-Atlas",
+  "dir_name": "pptx-syahiidkamil-software-engineer-ai",
+  "downloaded_at": "2026-06-08T04:37:01.270561Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, productivity=2",
+    "score": 2,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "syahiidkamil",
+  "source_url": "https://github.com/syahiidkamil/Software-Engineer-AI-Agent-Atlas/blob/main/.claude/skills/pptx/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/syahiidkamil/Software-Engineer-AI-Agent-Atlas/blob/main/.claude/skills/pptx/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use this skill any time a .pptx file is involved in any way \u2014 as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates, layouts, speaker notes, or comments. Trigger whenever the user mentions \"deck,\" \"slides,\" \"presentation,\" or references a .pptx filename, regardless of what they plan to do with the content afterward. If a .pptx file needs to be opened, created, or touched, use this skill."
+}

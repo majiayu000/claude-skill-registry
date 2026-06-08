@@ -9,7 +9,7 @@ description: >-
   default to in-conversation user confirmation; autonomous review is an
   explicit opt-in path with server-side per-task and daily spending caps.
   One-time agent setup at https://getterdone.ai/register-agent.
-version: 1.9.0
+version: 1.11.0
 provider:
   name: GetterDone Inc.
   url: https://getterdone.ai
@@ -236,9 +236,9 @@ After the user restarts their agent host, return to Step 1.
 
 ---
 
-### Step 3 — Fund Your Agent Wallet (One-Time)
+### Step 3 — Set Up Funding (One-Time)
 
-Before `fund_account` or `create_task` will work, the human owner must complete the Agent Owner setup — Stripe Identity verification (KYC/AML) + card vault:
+Before `create_task` will work, the human owner must complete the Agent Owner setup — Stripe Identity verification (KYC/AML) + card vault + a Funding Token:
 
 ```
 https://getterdone.ai/register-agent?step=fund
@@ -246,8 +246,9 @@ https://getterdone.ai/register-agent?step=fund
 
 This takes ~2 minutes. Once done:
 - The platform issues a Funding Token linked to your Agent ID
-- `fund_account` works autonomously from that point forward — no token parameter needed
-- `create_task` will work as soon as your balance is positive
+- `create_task` charges the owner's card for reward + fee at creation, against that token — **funding is automatic, no separate top-up step**
+- If `create_task` returns `402 NO_FUNDING_TOKEN`, setup isn't complete yet — send the owner to the link above
+- (`fund_account` is deprecated and now a no-op — it no longer charges; do not call it)
 
 > **Why is this required?** GetterDone operates under an FBO (For Benefit Of) model: funds are held in custody by the platform on behalf of each agent and worker. Stripe Identity verification is required to comply with KYC/AML regulations before funds can be deposited.
 
@@ -435,6 +436,7 @@ Events you will receive:
 | `task.contested` | Worker is contesting your dispute |
 | `task.completed` | Task approved, funds released |
 | `task.expired` | Task expired without a claim or submission |
+| `task.refunded` | Escrow refunded (cancel / expire / dispute-won) — to the card for direct-charge tasks, or the wallet for legacy tasks |
 
 Each POST includes these headers:
 - `X-GetterDone-Signature: sha256=<hex>` — HMAC-SHA256 of the raw JSON body string, keyed with your `webhookSecret`
@@ -610,20 +612,15 @@ create_task({ ..., remote: true })
 - Use `minImages` (0–10) and/or `minVideos` (0–3) to require visual proof — text-only submissions are easier to fake.
 - Set `minTrustScore` (0–100) if you need a more vetted worker. Workers start at 70; reaching 80 unlocks the "Trusted" tier.
 
-**Before posting, check your balance:**
-```
-get_balance()
-// { balance: 42.50, pendingEscrow: 15.00, currency: "USD" }
-```
+**Funding is automatic.** `create_task` charges the Agent Owner's card for `reward + fee` at creation, drawing against your active funding token — you no longer need to call `fund_account` first. Expired, cancelled, or dispute-won tasks refund the full amount back to the card (a `task.refunded` webhook fires).
 
-If balance is insufficient, top up first:
-```
-fund_account({ amount: 50.00 })
-```
-
-> **Prerequisite:** `fund_account` requires a one-time Agent Owner setup at **https://getterdone.ai/agent-owner** (Stripe Identity verification + card vault). If your developer hasn't done this yet, direct them there before calling this tool.
+> **Prerequisite:** A one-time Agent Owner setup at **https://getterdone.ai/agent-owner** (Stripe Identity verification + card vault + funding token) is still required before `create_task` can charge. If `create_task` returns `402` with `NO_FUNDING_TOKEN`, direct your developer there.
 >
-> **Tip — first-time setup:** Use the `fund_account` **prompt** (not tool) for a guided walkthrough: `fund_account({ amount: 50.00 })` as a prompt will explain setup steps and provide direct deeplinks with your Agent ID pre-filled.
+> **`fund_account` is deprecated and a no-op** — funding now happens at task creation. The tool no longer charges the card or credits any balance (calling it does nothing); just call `create_task`. `get_balance` remains useful to view `pendingEscrow` (escrow held across your active tasks):
+> ```
+> get_balance()
+> // { balance: 0.00, pendingEscrow: 15.00, currency: "USD" }
+> ```
 
 ### Step B: Attach Reference Files (Optional)
 
@@ -876,7 +873,7 @@ In addition to tools, the server exposes read-only **resources** that some MCP h
 | `upload_attachment` | Attach a reference file (URL or base64) for the worker |
 | `configure_webhook` | Register a URL for real-time task event notifications; returns `webhookSecret` |
 | `get_balance` | Check current wallet balance and pending escrow |
-| `fund_account` | Add USD to your wallet (requires one-time Agent Owner setup at `/agent-owner`) |
+| `fund_account` | *Deprecated / no-op* — funding is automatic at `create_task`. No longer charges; returns success so legacy callers don't error |
 | `rate_worker` | Leave a 1–5 star rating after task completion (24-hour window) |
 | `get_worker_profile` | View a worker's trust tier, rating, and history |
 | `get_reputation` | **Your reliability tier** — completion rate, dispute rate, reliability tier — quick credibility snapshot |

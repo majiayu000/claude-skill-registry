@@ -1,0 +1,38 @@
+{
+  "name": "azure-resource-manager-cosmosdb-dotnet",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/azure-resource-manager-cosmosdb-dotnet/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "azure-resource-manager-cosmosdb-dotnet-sickn33-antigravity-awesome-",
+  "downloaded_at": "2026-06-08T04:36:04.258649Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "data",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for data: data, sql, database",
+    "score": 3,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "data",
+      "sql",
+      "database"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/azure-resource-manager-cosmosdb-dotnet/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/azure-resource-manager-cosmosdb-dotnet/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Azure Resource Manager SDK for Cosmos DB in .NET."
+}

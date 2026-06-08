@@ -1,0 +1,37 @@
+{
+  "name": "learning-from-mistakes",
+  "repo": "syahiidkamil/Software-Engineer-AI-Agent-Atlas",
+  "path": ".claude/skills/learning-from-mistakes/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/syahiidkamil/Software-Engineer-AI-Agent-Atlas",
+  "dir_name": "learning-from-mistakes",
+  "downloaded_at": "2026-06-08T04:37:02.713017Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: docs, markdown",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 1,
+    "signals": [
+      "docs",
+      "markdown"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "syahiidkamil",
+  "source_url": "https://github.com/syahiidkamil/Software-Engineer-AI-Agent-Atlas/blob/main/.claude/skills/learning-from-mistakes/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/syahiidkamil/Software-Engineer-AI-Agent-Atlas/blob/main/.claude/skills/learning-from-mistakes/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Record a hard-won engineering lesson after a bug or mistake is resolved. Use when a bug resisted ATLAS until Boss's guidance cracked it, or when a long debugging hunt ended in an aha moment worth never relearning."
+}

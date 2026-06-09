@@ -1,0 +1,38 @@
+{
+  "name": "project-reality-check",
+  "repo": "boshu2/agentops",
+  "path": "skills/project-reality-check/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/boshu2/agentops",
+  "dir_name": "project-reality-check",
+  "downloaded_at": "2026-06-09T03:48:28.943666Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: dev, code, build",
+    "score": 3,
+    "runner_up": "documents",
+    "runner_up_score": 2,
+    "signals": [
+      "dev",
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "boshu2",
+  "source_url": "https://github.com/boshu2/agentops/blob/main/skills/project-reality-check/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/boshu2/agentops/blob/main/skills/project-reality-check/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when comparing a project vision to code reality and turning gaps into tracked work.\nTriggers:"
+}

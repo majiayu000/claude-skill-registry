@@ -1,0 +1,37 @@
+{
+  "name": "etsy-shop-setup",
+  "repo": "nexscope-ai/eCommerce-Skills",
+  "path": "etsy-shop-setup/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/nexscope-ai/eCommerce-Skills",
+  "dir_name": "etsy-shop-setup",
+  "downloaded_at": "2026-06-09T04:00:56.174447Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-llm=2, analysis=2",
+    "score": 2,
+    "runner_up": "analysis",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "nexscope-ai",
+  "source_url": "https://github.com/nexscope-ai/eCommerce-Skills/blob/main/etsy-shop-setup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nexscope-ai/eCommerce-Skills/blob/main/etsy-shop-setup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Etsy shop launch guide \u2014 policies, branding, first listings, SEO foundation, payment setup"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "intent-router",
+  "repo": "Tibsfox/gsd-skill-creator",
+  "path": "project-claude/skills/intent-router/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Tibsfox/gsd-skill-creator",
+  "dir_name": "intent-router",
+  "downloaded_at": "2026-06-09T03:43:22.496594Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: planning=2, productivity=2",
+    "score": 2,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "planning",
+      "plan"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Tibsfox",
+  "source_url": "https://github.com/Tibsfox/gsd-skill-creator/blob/main/project-claude/skills/intent-router/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tibsfox/gsd-skill-creator/blob/main/project-claude/skills/intent-router/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Classify the information-need of a query and dispatch it to the appropriate retrieval or reasoning strategy. Use before read-side memory access, before multi-strategy retrieval, or any time you'd otherwise default to \"one retriever for everything\". Returns a strategy label, a token budget, and a retrieval depth so downstream handlers can be specialised. Backed by Pre-Route (arxiv 2605.10235v2) and MemFlow (arxiv 2605.03312v1), which together show LLMs possess latent routing ability elicitable via a structured prompt \u2014 and that externalising the routing decision improves small-model performance by ~2x. Triggers: \"route this\", \"what strategy\", \"before retrieving\", \"intent classification\", or any query whose ideal handling depends on what KIND of question it is."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "longbridge-research",
+  "repo": "longbridge/skills",
+  "path": "skills/longbridge-research/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/longbridge/skills",
+  "dir_name": "longbridge-research",
+  "downloaded_at": "2026-06-09T03:58:42.331623Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: planning=2, security=2",
+    "score": 2,
+    "runner_up": "security",
+    "runner_up_score": 2,
+    "signals": [
+      "planning",
+      "plan"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "longbridge",
+  "source_url": "https://github.com/longbridge/skills/blob/main/skills/longbridge-research/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/longbridge/skills/blob/main/skills/longbridge-research/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Institution ratings, consensus price targets, EPS/revenue forecasts, finance calendar, shareholder data, fund holders, insider trades (SEC Form 4), short interest, industry rankings, peer group analysis via Longbridge. Frameworks: investment proposals, coverage initiation, stock research, competitive analysis, financial planning, and DeFi/on-chain analysis.\nTriggers: \"\u673a\u6784\u8bc4\u7ea7\", \"\u76ee\u6807\u4ef7\", \"\u4e00\u81f4\u9884\u671f\", \"EPS\u9884\u6d4b\", \"\u5185\u90e8\u4eba\u4ea4\u6613\", \"\u7a7a\u5934\", \"\u884c\u4e1a\u6392\u540d\", \"\u6295\u8d44\u63d0\u6848\", \"\u9996\u6b21\u8986\u76d6\", \"\u7ade\u4e89\u683c\u5c40\", \"\u8d22\u52a1\u89c4\u5212\", \"DeFi\u6536\u76ca\", \"\u94fe\u4e0a\u6570\u636e\", \"\u6a5f\u69cb\u8a55\u7d1a\", \"\u76ee\u6a19\u50f9\", \"\u4e00\u81f4\u9810\u671f\", \"\u5167\u90e8\u4eba\u4ea4\u6613\", \"\u7a7a\u982d\", \"\u6295\u8cc7\u63d0\u6848\", \"\u9996\u6b21\u8986\u84cb\", \"\u7af6\u722d\u683c\u5c40\", \"\u93c8\u4e0a\u6578\u64da\", \"analyst rating\", \"price target\", \"consensus\", \"insider trades\", \"short interest\", \"coverage initiation\", \"DeFi yield\", \"on-chain\", \"earnings calendar\", \"finance calendar\", \"\u8d22\u62a5\u65e5\u5386\", \"\u4e0b\u5468\u8c01\u8d22\u62a5\", \"\u4e0b\u5468\u8d22\u62a5\", \"\u4e0b\u5468\u6709\u54ea\u4e9b\u8d22\u62a5\", \"\u54ea\u4e9b\u8d22\u62a5\", \"\u8c01\u8d22\u62a5\", \"FOMC\", \"\u975e\u519c\", \"\u80a1\u4e1c\", \"\u8c01\u6301\u6709\", \"\u80a1\u6771\", \"\u57fa\u91d1\u6301\u4ed3\", \"\u57fa\u91d1\u6301\u5009\", \"\u6a5f\u69cb\u8a55\u7d1a\", \"\u76ee\u6a19\u50f9\", \"\u8ca1\u52d9\u898f\u5283\""
+}

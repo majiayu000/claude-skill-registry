@@ -1,0 +1,36 @@
+{
+  "name": "longbridge-intel",
+  "repo": "longbridge/skills",
+  "path": "skills/longbridge-intel/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/longbridge/skills",
+  "dir_name": "longbridge-intel",
+  "downloaded_at": "2026-06-09T03:58:42.240066Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category analysis scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "bash",
+    "runner_up_score": 1,
+    "signals": [
+      "analysis"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "longbridge",
+  "source_url": "https://github.com/longbridge/skills/blob/main/skills/longbridge-intel/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/longbridge/skills/blob/main/skills/longbridge-intel/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Market intelligence: strategy screener, popularity rankings, top movers with news correlation, quote anomalies, index/ETF constituent stocks, morning briefings, catalyst monitoring for watchlist, event-driven strategies, ETF fund flows, sector rotation, market microstructure, supply chain analysis, industry overviews, and ARK-style disruptive innovation analysis.\nTriggers: \"\u7b5b\u9009\", \"\u7b56\u7565\u7b5b\u9009\", \"\u6392\u884c\", \"\u70ed\u5ea6\", \"\u5f02\u52a8\", \"\u6210\u5206\u80a1\", \"\u6668\u62a5\", \"\u65e9\u62a5\", \"\u50ac\u5316\u5242\", \"\u4e8b\u4ef6\u9a71\u52a8\", \"ETF\u8d44\u91d1\u6d41\", \"\u677f\u5757\u8f6e\u52a8\", \"\u4ea7\u4e1a\u94fe\", \"\u884c\u4e1a\u6982\u89c8\", \"\u98a0\u8986\u5f0f\u521b\u65b0\", \"ARK\", \"\u7be9\u9078\", \"\u6392\u884c\", \"\u7570\u52d5\", \"\u6210\u5206\u80a1\", \"\u6668\u5831\", \"ETF\u8cc7\u91d1\u6d41\", \"\u677f\u584a\u8f2a\u52d5\", \"\u7522\u696d\u93c8\", \"screener\", \"rank\", \"anomaly\", \"constituent\", \"morning brief\", \"catalyst\", \"event strategy\", \"ETF flow\", \"ETF\u8d44\u91d1\u6d41\", \"ETF\u7533\u8d4e\", \"ETF\u8cc7\u91d1\u6d41\", \"etf flow\", \"\u8d44\u91d1\u7533\u8d4e\", \"etf \u8d44\u91d1\", \"sector rotation\", \"supply chain\", \"ARK\", \"disruptive innovation\", \"\u677f\u5757\u7b5b\u9009\", \"\u884c\u4e1a\u7b5b\u9009\", \"\u677f\u584a\u7be9\u9078\", \"\u5f37\u52e2\u677f\u584a\", \"\u5f31\u52e2\u677f\u584a\", \"top sectors\", \"\u50ac\u5316\u5291\", \"\u4e8b\u4ef6\u9a45\u52d5\", \"\u884c\u696d\u6982\u89bd\", \"\u985b\u8986\u5f0f\u5275\u65b0\", \"\u7b56\u7565\u7be9\u9078\", \"\u71b1\u5ea6\""
+}

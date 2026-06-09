@@ -1,0 +1,36 @@
+{
+  "name": "longbridge-content",
+  "repo": "longbridge/skills",
+  "path": "skills/longbridge-content/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/longbridge/skills",
+  "dir_name": "longbridge-content",
+  "downloaded_at": "2026-06-09T03:58:42.402781Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category analysis scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "bash",
+    "runner_up_score": 1,
+    "signals": [
+      "analysis"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "longbridge",
+  "source_url": "https://github.com/longbridge/skills/blob/main/skills/longbridge-content/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/longbridge/skills/blob/main/skills/longbridge-content/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Latest news articles, regulatory filings, community discussion topics for listed stocks, and SEC EDGAR filing analysis (10-K/10-Q/8-K/proxy/Form 4) via Longbridge.\nTriggers: \"\u65b0\u95fb\", \"\u516c\u544a\", \"\u8d44\u8baf\", \"\u8bdd\u9898\", \"\u793e\u533a\u8ba8\u8bba\", \"SEC\", \"10-K\", \"10-Q\", \"8-K\", \"Form 4\", \"\u65b0\u805e\", \"\u516c\u544a\", \"\u8cc7\u8a0a\", \"\u8a71\u984c\", \"\u793e\u5340\u8a0e\u8ad6\", \"news\", \"filing\", \"announcement\", \"topic\", \"community\", \"SEC filing\", \"annual report\", \"quarterly report\", \"proxy\", \"insider filing\", \"regulatory rules\", \"\u76d1\u7ba1\u89c4\u5219\", \"\u6da8\u8dcc\u505c\", \"\u6f32\u8dcc\u505c\", \"T+1\", \"PDT rule\", \"\u7194\u65ad\", \"\u7194\u65b7\", \"circuit breaker\", \"margin rules\", \"\u4fdd\u8bc1\u91d1\", \"\u4fdd\u8b49\u91d1\", \"\u76e3\u7ba1\u898f\u5247\""
+}

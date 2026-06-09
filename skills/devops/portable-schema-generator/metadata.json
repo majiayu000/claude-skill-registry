@@ -1,0 +1,37 @@
+{
+  "name": "portable-schema-generator",
+  "repo": "Tibsfox/gsd-skill-creator",
+  "path": "examples/skills/gsd-meta/portable-schema-generator/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/Tibsfox/gsd-skill-creator",
+  "dir_name": "portable-schema-generator",
+  "downloaded_at": "2026-06-09T03:43:21.809921Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "devops",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for devops: deploy, infra",
+    "score": 2,
+    "runner_up": "bash",
+    "runner_up_score": 1,
+    "signals": [
+      "deploy",
+      "infra"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Tibsfox",
+  "source_url": "https://github.com/Tibsfox/gsd-skill-creator/blob/main/examples/skills/gsd-meta/portable-schema-generator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tibsfox/gsd-skill-creator/blob/main/examples/skills/gsd-meta/portable-schema-generator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Emit Postgres.sql and SQLite.sql from a single schema spec so tools work across both drivers without duplicating DDL by hand. Use when designing a schema that needs to support both shared Postgres deployments and zero-config SQLite. Reduces two-file sync burden to a single source edit."
+}

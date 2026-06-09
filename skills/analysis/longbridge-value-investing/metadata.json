@@ -1,0 +1,37 @@
+{
+  "name": "longbridge-value-investing",
+  "repo": "longbridge/skills",
+  "path": "skills/longbridge-value-investing/SKILL.md",
+  "github_branch": "main",
+  "category": "analysis",
+  "source": "github.com/longbridge/skills",
+  "dir_name": "longbridge-value-investing",
+  "downloaded_at": "2026-06-09T03:58:42.635595Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "analysis",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for analysis: analysis, analyze",
+    "score": 2,
+    "runner_up": "bash",
+    "runner_up_score": 1,
+    "signals": [
+      "analysis",
+      "analyze"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "longbridge",
+  "source_url": "https://github.com/longbridge/skills/blob/main/skills/longbridge-value-investing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/longbridge/skills/blob/main/skills/longbridge-value-investing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Value investing analysis using Graham (NCAV/net-net/defensive-investor) and Buffett (economic moat/ROE/FCF) methodologies. Covers single-stock diagnostics and batch screening for both Graham cigar-butt and Buffett quality-compounder criteria. Runs cross-statement reconciliation before scoring. Data from Longbridge CLI first, MCP fallback, WebSearch only for genuine gaps.\nTriggers: \"\u683c\u96f7\u5384\u59c6\", \"\u5df4\u83f2\u7279\", \"\u6361\u70df\u8482\", \"\u70df\u8482\u80a1\", \"NCAV\", \"\u51c0\u6d41\u52a8\u8d44\u4ea7\", \"\u62a4\u57ce\u6cb3\", \"\u4ef7\u503c\u6295\u8d44\", \"\u5b89\u5168\u8fb9\u9645\", \"\u6df1\u5ea6\u4ef7\u503c\", \"\u64bf\u7159\u8482\", \"\u7159\u8482\u80a1\", \"\u6de8\u6d41\u52d5\u8cc7\u7522\", \"\u8b77\u57ce\u6cb3\", \"\u5b89\u5168\u908a\u969b\", \"Graham\", \"Buffett\", \"cigar butt\", \"net-net\", \"NCAV screen\", \"moat\", \"value investing\", \"margin of safety\", \"deep value\", \"quality compounder\", \"\u50f9\u503c\u6295\u8cc7\", \"\u6df1\u5ea6\u50f9\u503c\", \"\u9632\u5fa1\u578b\u6295\u8d44\u8005\", \"\u9632\u79a6\u578b\u6295\u8cc7\u8005\""
+}

@@ -1,0 +1,38 @@
+{
+  "name": "understand-dashboard",
+  "repo": "Egonex-AI/Understand-Anything",
+  "path": "understand-anything-plugin/skills/understand-dashboard/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/Egonex-AI/Understand-Anything",
+  "dir_name": "understand-dashboard-egonex-ai-understand-anything",
+  "downloaded_at": "2026-06-09T03:38:11.434633Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: dev, code, build",
+    "score": 3,
+    "runner_up": "analysis",
+    "runner_up_score": 1,
+    "signals": [
+      "dev",
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Egonex-AI",
+  "source_url": "https://github.com/Egonex-AI/Understand-Anything/blob/main/understand-anything-plugin/skills/understand-dashboard/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Egonex-AI/Understand-Anything/blob/main/understand-anything-plugin/skills/understand-dashboard/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Launch the interactive web dashboard to visualize a codebase's knowledge graph"
+}

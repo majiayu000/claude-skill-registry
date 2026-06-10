@@ -1,0 +1,37 @@
+{
+  "name": "zh-docgen",
+  "repo": "laolaoshiren/claude-code-skills-zh",
+  "path": "skills/zh-docgen/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/laolaoshiren/claude-code-skills-zh",
+  "dir_name": "zh-docgen",
+  "downloaded_at": "2026-06-10T04:10:28.249216Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: docs, markdown",
+    "score": 2,
+    "runner_up": "api",
+    "runner_up_score": 1,
+    "signals": [
+      "docs",
+      "markdown"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "laolaoshiren",
+  "source_url": "https://github.com/laolaoshiren/claude-code-skills-zh/blob/main/skills/zh-docgen/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/laolaoshiren/claude-code-skills-zh/blob/main/skills/zh-docgen/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u4e2d\u6587\u6587\u6863\u751f\u6210\u5668 - \u4ece\u4ee3\u7801\u5e93\u81ea\u52a8\u751f\u6210\u4e2d\u6587\u6280\u672f\u6587\u6863"
+}

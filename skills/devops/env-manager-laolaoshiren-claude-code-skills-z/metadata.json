@@ -1,0 +1,38 @@
+{
+  "name": "env-manager",
+  "repo": "laolaoshiren/claude-code-skills-zh",
+  "path": "skills/env-manager/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/laolaoshiren/claude-code-skills-zh",
+  "dir_name": "env-manager-laolaoshiren-claude-code-skills-z",
+  "downloaded_at": "2026-06-10T04:10:29.719596Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "devops",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for devops: ci, cd, docker",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "ci",
+      "cd",
+      "docker"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "laolaoshiren",
+  "source_url": "https://github.com/laolaoshiren/claude-code-skills-zh/blob/main/skills/env-manager/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/laolaoshiren/claude-code-skills-zh/blob/main/skills/env-manager/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u73af\u5883\u53d8\u91cf\u7ba1\u7406\u5668\uff1a\u626b\u63cf\u3001\u6821\u9a8c\u3001\u540c\u6b65 .env \u6587\u4ef6\uff0c\u751f\u6210\u5b89\u5168\u914d\u7f6e\u6a21\u677f"
+}

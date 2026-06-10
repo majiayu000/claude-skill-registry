@@ -1,0 +1,40 @@
+{
+  "name": "cloudflare",
+  "repo": "aiskillstore/marketplace",
+  "path": "skills/cloudflare/cloudflare/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/aiskillstore/marketplace",
+  "dir_name": "cloudflare-aiskillstore-marketplace",
+  "downloaded_at": "2026-06-10T03:57:58.963574Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "data",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for data: data, sql, database, etl, pipeline",
+    "score": 5,
+    "runner_up": "ai-ml",
+    "runner_up_score": 3,
+    "signals": [
+      "data",
+      "sql",
+      "database",
+      "etl",
+      "pipeline"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aiskillstore",
+  "source_url": "https://github.com/aiskillstore/marketplace/blob/main/skills/cloudflare/cloudflare/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aiskillstore/marketplace/blob/main/skills/cloudflare/cloudflare/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Comprehensive Cloudflare platform skill covering Workers, Pages, storage (KV, D1, R2), AI (Workers AI, Vectorize, Agents SDK), feature flags (Flagship), networking (Tunnel, Spectrum), security (WAF, DDoS), and infrastructure-as-code (Terraform, Pulumi). Use for any Cloudflare development task. Biases towards retrieval from Cloudflare docs over pre-trained knowledge."
+}

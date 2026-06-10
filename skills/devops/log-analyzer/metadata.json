@@ -1,0 +1,37 @@
+{
+  "name": "log-analyzer",
+  "repo": "laolaoshiren/claude-code-skills-zh",
+  "path": "skills/log-analyzer/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/laolaoshiren/claude-code-skills-zh",
+  "dir_name": "log-analyzer",
+  "downloaded_at": "2026-06-10T04:10:31.236753Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "devops",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for devops: docker, kubernetes",
+    "score": 2,
+    "runner_up": "analysis",
+    "runner_up_score": 1,
+    "signals": [
+      "docker",
+      "kubernetes"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "laolaoshiren",
+  "source_url": "https://github.com/laolaoshiren/claude-code-skills-zh/blob/main/skills/log-analyzer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/laolaoshiren/claude-code-skills-zh/blob/main/skills/log-analyzer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u65e5\u5fd7\u5206\u6790\u52a9\u624b \u2014 \u667a\u80fd\u89e3\u6790\u65e5\u5fd7\u6587\u4ef6\uff0c\u8bc6\u522b\u5f02\u5e38\u6a21\u5f0f\uff0c\u5b9a\u4f4d\u95ee\u9898\u6839\u56e0"
+}

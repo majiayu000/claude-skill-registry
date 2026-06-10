@@ -1,0 +1,37 @@
+{
+  "name": "error-translator",
+  "repo": "laolaoshiren/claude-code-skills-zh",
+  "path": "skills/error-translator/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/laolaoshiren/claude-code-skills-zh",
+  "dir_name": "error-translator",
+  "downloaded_at": "2026-06-10T04:10:32.989727Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "data",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for data: data, sql",
+    "score": 2,
+    "runner_up": "documents",
+    "runner_up_score": 1,
+    "signals": [
+      "data",
+      "sql"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "laolaoshiren",
+  "source_url": "https://github.com/laolaoshiren/claude-code-skills-zh/blob/main/skills/error-translator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/laolaoshiren/claude-code-skills-zh/blob/main/skills/error-translator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u7f16\u7a0b\u9519\u8bef\u6d88\u606f\u7ffb\u8bd1\u4e13\u5bb6 \u2014 \u5c06\u82f1\u6587\u9519\u8bef\u6d88\u606f\u7ffb\u8bd1\u6210\u4e2d\u6587\uff0c\u89e3\u91ca\u539f\u56e0\u5e76\u63d0\u4f9b\u4fee\u590d\u65b9\u6848"
+}

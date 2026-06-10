@@ -1,0 +1,38 @@
+{
+  "name": "api-tester",
+  "repo": "laolaoshiren/claude-code-skills-zh",
+  "path": "skills/api-tester/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/laolaoshiren/claude-code-skills-zh",
+  "dir_name": "api-tester",
+  "downloaded_at": "2026-06-10T04:10:28.832265Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: api=3, testing=3",
+    "score": 3,
+    "runner_up": "testing",
+    "runner_up_score": 3,
+    "signals": [
+      "api",
+      "endpoint",
+      "openapi"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "laolaoshiren",
+  "source_url": "https://github.com/laolaoshiren/claude-code-skills-zh/blob/main/skills/api-tester/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/laolaoshiren/claude-code-skills-zh/blob/main/skills/api-tester/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "API \u81ea\u52a8\u5316\u6d4b\u8bd5 - OpenAPI \u89e3\u6790\u3001\u6d4b\u8bd5\u7528\u4f8b\u751f\u6210\u3001\u96c6\u6210\u6d4b\u8bd5"
+}

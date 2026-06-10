@@ -1,0 +1,38 @@
+{
+  "name": "performance-optimizer",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/performance-optimizer/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "performance-optimizer-sickn33-antigravity-awesome-",
+  "downloaded_at": "2026-06-10T04:18:43.249491Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "data",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for data: data, sql, database",
+    "score": 3,
+    "runner_up": "performance",
+    "runner_up_score": 2,
+    "signals": [
+      "data",
+      "sql",
+      "database"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/performance-optimizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/performance-optimizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Identifies and fixes performance bottlenecks in code, databases, and APIs. Measures before and after to prove improvements."
+}

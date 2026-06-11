@@ -1,0 +1,37 @@
+{
+  "name": "using-startup-superpowers",
+  "repo": "davepoon/buildwithclaude",
+  "path": "plugins/startup-superpowers/skills/using-startup-superpowers/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/davepoon/buildwithclaude",
+  "dir_name": "using-startup-superpowers",
+  "downloaded_at": "2026-06-11T04:18:07.014112Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: documents=2, product=2",
+    "score": 2,
+    "runner_up": "product",
+    "runner_up_score": 2,
+    "signals": [
+      "word",
+      "markdown"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "davepoon",
+  "source_url": "https://github.com/davepoon/buildwithclaude/blob/main/plugins/startup-superpowers/skills/using-startup-superpowers/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/davepoon/buildwithclaude/blob/main/plugins/startup-superpowers/skills/using-startup-superpowers/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use at the start of any conversation about a startup idea, product validation, founder strategy, or work inside a `startup/` workspace. Establishes file conventions, voice-input handling, subagent dispatch rules, and how to update each artifact safely. Activate before invoking any other startup-superpowers skill."
+}

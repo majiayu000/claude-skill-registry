@@ -1,0 +1,37 @@
+{
+  "name": "scaffold-exercises",
+  "repo": "pedrohcgs/claude-code-my-workflow",
+  "path": ".claude/skills/scaffold-exercises/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/pedrohcgs/claude-code-my-workflow",
+  "dir_name": "scaffold-exercises",
+  "downloaded_at": "2026-06-11T04:30:31.735814Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, devops=2",
+    "score": 2,
+    "runner_up": "devops",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "pedrohcgs",
+  "source_url": "https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/.claude/skills/scaffold-exercises/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/.claude/skills/scaffold-exercises/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Scaffold a graded problem set with sections, problems, worked solutions, and short \"why this matters\" explainers across analytical, empirical, and coding types. Use when user says \"make a problem set on X\", \"scaffold exercises for this lecture\", \"create practice problems\", \"generate homework with a solution key\", \"build a graded assignment on topic Y\". Emits a clean student set plus a separate solution key \u2014 NOT for grading submissions or auto-checking student answers."
+}

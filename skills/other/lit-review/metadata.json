@@ -1,0 +1,37 @@
+{
+  "name": "lit-review",
+  "repo": "pedrohcgs/claude-code-my-workflow",
+  "path": ".claude/skills/lit-review/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/pedrohcgs/claude-code-my-workflow",
+  "dir_name": "lit-review",
+  "downloaded_at": "2026-06-11T04:30:32.611680Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: documents=2, quality=2",
+    "score": 2,
+    "runner_up": "quality",
+    "runner_up_score": 2,
+    "signals": [
+      "docs",
+      "markdown"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "pedrohcgs",
+  "source_url": "https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/.claude/skills/lit-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/.claude/skills/lit-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Structured literature search + synthesis with citation extraction, thematic clustering, and gap identification. Use when user says \"find papers on X\", \"do a lit review\", \"what's the literature on...\", \"summarize what we know about...\", \"where's the gap in this field\", \"review recent work on Y\". Produces a written review with BibTeX-ready citations. Uses WebSearch/WebFetch for recent work."
+}

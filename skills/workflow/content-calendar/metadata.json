@@ -1,0 +1,37 @@
+{
+  "name": "content-calendar",
+  "repo": "notque/vexjoy-agent",
+  "path": "skills/content/content-calendar/SKILL.md",
+  "github_branch": "main",
+  "category": "workflow",
+  "source": "github.com/notque/vexjoy-agent",
+  "dir_name": "content-calendar",
+  "downloaded_at": "2026-06-11T04:29:44.046490Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "workflow",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for workflow: process, pipeline",
+    "score": 2,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "process",
+      "pipeline"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "notque",
+  "source_url": "https://github.com/notque/vexjoy-agent/blob/main/skills/content/content-calendar/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/notque/vexjoy-agent/blob/main/skills/content/content-calendar/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Manage editorial content through 6 pipeline stages."
+}

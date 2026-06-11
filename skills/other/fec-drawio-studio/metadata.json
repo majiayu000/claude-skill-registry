@@ -1,0 +1,38 @@
+{
+  "name": "fec-drawio-studio",
+  "repo": "bovinphang/frontend-craft",
+  "path": "skills/fec-drawio-studio/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/bovinphang/frontend-craft",
+  "dir_name": "fec-drawio-studio",
+  "downloaded_at": "2026-06-11T04:16:04.964931Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-ml=3, bash=3",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 3,
+    "signals": [
+      "ai",
+      "ml",
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "bovinphang",
+  "source_url": "https://github.com/bovinphang/frontend-craft/blob/main/skills/fec-drawio-studio/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bovinphang/frontend-craft/blob/main/skills/fec-drawio-studio/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when creating editable technical diagrams with draw.io / diagrams.net sources, including architecture diagrams, ERD, UML, sequence diagrams, flowcharts, ML model diagrams, official shape lookup, brand symbols, Graphviz auto-layout, codebase structure maps, .drawio validation, or draw.io CLI export fallback. Do not use for ordinary raster image generation, freehand sketches, interactive canvas/Three.js scenes, or decorative SVG animation. Chinese triggers include draw.io, diagrams.net, \u53ef\u7f16\u8f91\u67b6\u6784\u56fe, .drawio, ER \u56fe, UML, \u5e8f\u5217\u56fe, \u81ea\u52a8\u5e03\u5c40, \u5f62\u72b6\u68c0\u7d22, \u4ee3\u7801\u7ed3\u6784\u56fe."
+}

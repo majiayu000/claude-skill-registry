@@ -1,0 +1,37 @@
+{
+  "name": "read-only-ops",
+  "repo": "notque/vexjoy-agent",
+  "path": "skills/process/read-only-ops/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/notque/vexjoy-agent",
+  "dir_name": "read-only-ops",
+  "downloaded_at": "2026-06-11T04:29:36.309194Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "data",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for data: data, sql",
+    "score": 2,
+    "runner_up": "bash",
+    "runner_up_score": 1,
+    "signals": [
+      "data",
+      "sql"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "notque",
+  "source_url": "https://github.com/notque/vexjoy-agent/blob/main/skills/process/read-only-ops/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/notque/vexjoy-agent/blob/main/skills/process/read-only-ops/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Read-only exploration, inspection, and reporting without modifications. Explore and report on code/config/state without writing or modifying anything."
+}

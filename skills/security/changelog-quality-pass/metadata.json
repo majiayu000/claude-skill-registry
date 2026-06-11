@@ -1,0 +1,39 @@
+{
+  "name": "changelog-quality-pass",
+  "repo": "boshu2/agentops",
+  "path": "skills/changelog-quality-pass/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/boshu2/agentops",
+  "dir_name": "changelog-quality-pass",
+  "downloaded_at": "2026-06-11T04:16:00.518945Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "security",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for security: security, auth, vulnerability, audit",
+    "score": 4,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "security",
+      "auth",
+      "vulnerability",
+      "audit"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "boshu2",
+  "source_url": "https://github.com/boshu2/agentops/blob/main/skills/changelog-quality-pass/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/boshu2/agentops/blob/main/skills/changelog-quality-pass/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when writing or auditing changelogs and release notes for user-facing, semver-aware clarity.\nTriggers:"
+}

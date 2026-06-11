@@ -1,0 +1,37 @@
+{
+  "name": "taobao-product-detail",
+  "repo": "browser-act/skills",
+  "path": "solutions/ecommerce/taobao-product-detail/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/browser-act/skills",
+  "dir_name": "taobao-product-detail",
+  "downloaded_at": "2026-06-11T04:16:07.210207Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, data=2",
+    "score": 2,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "browser-act",
+  "source_url": "https://github.com/browser-act/skills/blob/main/solutions/ecommerce/taobao-product-detail/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/browser-act/skills/blob/main/solutions/ecommerce/taobao-product-detail/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Fetch full product detail from a Taobao or Tmall product page by itemId, returning title, price, shop info, images, SKU variants, and product attributes. Use when user asks to get product details from Taobao, scrape a Taobao item page, extract product info by item ID, fetch Tmall product data, \u6293\u53d6\u6dd8\u5b9d\u5546\u54c1\u8be6\u60c5, \u83b7\u53d6\u6dd8\u5b9d\u5546\u54c1\u4fe1\u606f, \u6dd8\u5b9d\u5546\u54c1\u9875\u9762\u91c7\u96c6, \u5929\u732b\u5546\u54c1\u8be6\u60c5, \u6309\u5546\u54c1ID\u83b7\u53d6\u4fe1\u606f. Also applies to building product databases, price tracking by itemId, and product comparison research."
+}

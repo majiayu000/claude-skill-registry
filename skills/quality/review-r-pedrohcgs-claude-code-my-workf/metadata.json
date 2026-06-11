@@ -1,0 +1,37 @@
+{
+  "name": "review-r",
+  "repo": "pedrohcgs/claude-code-my-workflow",
+  "path": ".claude/skills/review-r/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/pedrohcgs/claude-code-my-workflow",
+  "dir_name": "review-r-pedrohcgs-claude-code-my-workf",
+  "downloaded_at": "2026-06-11T04:30:30.284047Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "quality",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for quality: quality, review",
+    "score": 2,
+    "runner_up": "analysis",
+    "runner_up_score": 1,
+    "signals": [
+      "quality",
+      "review"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "pedrohcgs",
+  "source_url": "https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/.claude/skills/review-r/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/.claude/skills/review-r/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Read-only R code review protocol for `.R` scripts. Checks code quality, reproducibility, domain correctness, tidyverse idioms, and professional standards; produces a report without editing. Use when user says \"review this R script\", \"check the R code\", \"audit the analysis code\", \"code review on the R\", or when an R file is touched as part of a paper submission. NOT for running the code \u2014 pair with `/audit-reproducibility` for numeric verification."
+}

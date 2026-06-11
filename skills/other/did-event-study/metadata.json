@@ -1,0 +1,37 @@
+{
+  "name": "did-event-study",
+  "repo": "pedrohcgs/claude-code-my-workflow",
+  "path": ".claude/skills/did-event-study/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/pedrohcgs/claude-code-my-workflow",
+  "dir_name": "did-event-study",
+  "downloaded_at": "2026-06-11T04:30:31.138898Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, data=2",
+    "score": 2,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "pedrohcgs",
+  "source_url": "https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/.claude/skills/did-event-study/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/.claude/skills/did-event-study/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Run a staggered difference-in-differences / event-study analysis to the Sant'Anna practitioner standard \u2014 drives the canonical packages (R `did`/`DRDID`/`didFF`/`contdid`; Stata `csdid`/`drdid`), enforces the doubly-robust default, a mandatory diagnostic + sensitivity suite, uniform-band inference, replicate-and-verify-against-source discipline, and ends in a graded credibility verdict. Use when user says \"run a DiD\", \"event study\", \"staggered adoption\", \"Callaway Sant'Anna\", \"att_gt\", \"csdid\", \"did with multiple periods\", or points at panel data with a treatment-timing variable. NEVER reimplements an estimator."
+}

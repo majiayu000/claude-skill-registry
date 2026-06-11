@@ -1,0 +1,39 @@
+{
+  "name": "design",
+  "repo": "notque/vexjoy-agent",
+  "path": "skills/business/design/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/notque/vexjoy-agent",
+  "dir_name": "design-notque-vexjoy-agent",
+  "downloaded_at": "2026-06-11T04:29:34.036427Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for design: design, ui, ux, component",
+    "score": 4,
+    "runner_up": "development",
+    "runner_up_score": 3,
+    "signals": [
+      "design",
+      "ui",
+      "ux",
+      "component"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "notque",
+  "source_url": "https://github.com/notque/vexjoy-agent/blob/main/skills/business/design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/notque/vexjoy-agent/blob/main/skills/business/design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Design workflows \u2014 UX copy, design systems, design critique, accessibility review, design handoff, user research synthesis. Use when writing UI copy, reviewing designs, building component systems, checking accessibility, or preparing developer handoffs."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "validate-bib",
+  "repo": "pedrohcgs/claude-code-my-workflow",
+  "path": ".claude/skills/validate-bib/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/pedrohcgs/claude-code-my-workflow",
+  "dir_name": "validate-bib",
+  "downloaded_at": "2026-06-11T04:30:30.752952Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: quality=2, security=2",
+    "score": 2,
+    "runner_up": "security",
+    "runner_up_score": 2,
+    "signals": [
+      "quality",
+      "validate"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "pedrohcgs",
+  "source_url": "https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/.claude/skills/validate-bib/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/.claude/skills/validate-bib/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Validate bibliography entries against citations in all lecture files. Structural checks (missing/unused entries, malformed fields) by default; `--semantic` adds citation-drift detection, DOI verification, and style-consistency checks."
+}

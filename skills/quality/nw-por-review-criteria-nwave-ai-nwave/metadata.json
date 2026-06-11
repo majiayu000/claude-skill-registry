@@ -1,0 +1,38 @@
+{
+  "name": "nw-por-review-criteria",
+  "repo": "nWave-ai/nWave",
+  "path": "plugins/nw/skills/nw-por-review-criteria/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/nWave-ai/nWave",
+  "dir_name": "nw-por-review-criteria-nwave-ai-nwave",
+  "downloaded_at": "2026-06-11T04:28:32.658417Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "quality",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for quality: quality, review, validate",
+    "score": 3,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "quality",
+      "review",
+      "validate"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "nWave-ai",
+  "source_url": "https://github.com/nWave-ai/nWave/blob/main/plugins/nw/skills/nw-por-review-criteria/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nWave-ai/nWave/blob/main/plugins/nw/skills/nw-por-review-criteria/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Review dimensions and bug patterns for journey artifact reviews"
+}

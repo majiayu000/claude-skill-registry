@@ -1,0 +1,38 @@
+{
+  "name": "steve-jobs-design-review",
+  "repo": "wondelai/skills",
+  "path": "steve-jobs-design-review/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/wondelai/skills",
+  "dir_name": "steve-jobs-design-review",
+  "downloaded_at": "2026-06-11T04:36:36.781756Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: design=3, development=3",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 3,
+    "signals": [
+      "design",
+      "ui",
+      "ux"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "wondelai",
+  "source_url": "https://github.com/wondelai/skills/blob/main/steve-jobs-design-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wondelai/skills/blob/main/steve-jobs-design-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Review designs, products, and features with Steve Jobs' standards: ruthless simplicity, focus, and end-to-end excellence. Use when the user mentions \"Steve Jobs review\", \"design review\", \"product review\", \"what would Steve do\", \"insanely great\", \"simplify this product\", \"too many features\", \"product taste\", or \"saying no\". Also trigger when critiquing a UI, feature, or roadmap for focus and simplicity, when cutting scope to the essential, or when pressure-testing the complete experience from first run to daily use. Covers the simplicity audit, the no list, design-is-how-it-works, end-to-end experience ownership, demo culture, and a Jobs-style review protocol with binary verdicts. For visual design fundamentals, see refactoring-ui. For usability audits, see ux-heuristics. For detail polish, see microinteractions."
+}

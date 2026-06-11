@@ -1,0 +1,36 @@
+{
+  "name": "dokumente-intake",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "energierecht/skills/dokumente-intake/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "dokumente-intake-klotzkette-claude-fuer-deutsche-5",
+  "downloaded_at": "2026-06-11T04:08:41.564689Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category documents scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "marketing",
+    "runner_up_score": 1,
+    "signals": [
+      "pdf"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/energierecht/skills/dokumente-intake/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/energierecht/skills/dokumente-intake/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Dokumentenintake f\u00fcr Energierecht (EnWG, EEG): sortiert Netzanschlussvertrag, EEG-Verg\u00fctungsbescheid, Marktstammdatenregister-Eintrag, pr\u00fcft Datum, Absender, Frist und Beweiswert (Messdaten, Anschlussberichte); markiert L\u00fccken; ber\u00fccksichtigt Mandatsgeheimnis \u00a7 43a BRAO."
+}

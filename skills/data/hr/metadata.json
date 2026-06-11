@@ -1,0 +1,39 @@
+{
+  "name": "hr",
+  "repo": "notque/vexjoy-agent",
+  "path": "skills/business/hr/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/notque/vexjoy-agent",
+  "dir_name": "hr",
+  "downloaded_at": "2026-06-11T04:29:29.817853Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "data",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for data: data, analytics, database, pipeline",
+    "score": 4,
+    "runner_up": "business",
+    "runner_up_score": 2,
+    "signals": [
+      "data",
+      "analytics",
+      "database",
+      "pipeline"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "notque",
+  "source_url": "https://github.com/notque/vexjoy-agent/blob/main/skills/business/hr/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/notque/vexjoy-agent/blob/main/skills/business/hr/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "People operations workflows \u2014 recruiting pipeline, performance reviews, compensation analysis, offer drafting, interview prep, onboarding, org planning. Use when managing hiring pipelines, writing performance reviews, analyzing compensation, drafting offers, or planning organizational changes."
+}

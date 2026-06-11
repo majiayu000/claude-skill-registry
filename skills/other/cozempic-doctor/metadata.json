@@ -1,0 +1,36 @@
+{
+  "name": "cozempic-doctor",
+  "repo": "Ruya-AI/cozempic",
+  "path": "plugin/skills/cozempic-doctor/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Ruya-AI/cozempic",
+  "dir_name": "cozempic-doctor",
+  "downloaded_at": "2026-06-11T04:10:46.476168Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-ml scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "api",
+    "runner_up_score": 1,
+    "signals": [
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Ruya-AI",
+  "source_url": "https://github.com/Ruya-AI/cozempic/blob/main/plugin/skills/cozempic-doctor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Ruya-AI/cozempic/blob/main/plugin/skills/cozempic-doctor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Run health checks on Claude Code configuration and sessions. Use when troubleshooting Claude Code issues. (cozempic \u2014 does not shadow Claude Code's built-in /doctor)"
+}

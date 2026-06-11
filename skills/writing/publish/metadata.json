@@ -1,0 +1,39 @@
+{
+  "name": "publish",
+  "repo": "notque/vexjoy-agent",
+  "path": "skills/content/publish/SKILL.md",
+  "github_branch": "main",
+  "category": "writing",
+  "source": "github.com/notque/vexjoy-agent",
+  "dir_name": "publish",
+  "downloaded_at": "2026-06-11T04:29:29.962128Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "writing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for writing: writing, writer, blog, article",
+    "score": 4,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "writing",
+      "writer",
+      "blog",
+      "article"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "notque",
+  "source_url": "https://github.com/notque/vexjoy-agent/blob/main/skills/content/publish/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/notque/vexjoy-agent/blob/main/skills/content/publish/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Content-publishing umbrella covering the blog pipeline from blueprint to\nupload: post outlining, pre-publication validation, SEO optimization, bulk\nfind/replace and frontmatter editing, link auditing, image auditing,\ntaxonomy management, and WordPress upload. Use for \"outline post\",\n\"article outline\", \"pre-publish check\", \"frontmatter validation\", \"check\nSEO\", \"keyword analysis\", \"meta description\", \"batch edit posts\", \"bulk\nfrontmatter update\", \"mass edit\", \"audit links\", \"broken links\", \"audit\nimages\", \"alt text check\", \"audit taxonomy\", \"fix tags\", \"merge\ncategories\", \"upload to wordpress\", \"create wordpress draft\", \"post to\nwordpress\", \"edit wordpress post\", \"create wp categories\", \"auto-create\ncategories\", \"search wp media\", or \"find existing wordpress image\"."
+}

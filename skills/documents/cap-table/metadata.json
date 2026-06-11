@@ -1,0 +1,40 @@
+{
+  "name": "cap-table",
+  "repo": "lool-ventures/founder-skills",
+  "path": "founder-skills/skills/cap-table/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/lool-ventures/founder-skills",
+  "dir_name": "cap-table",
+  "downloaded_at": "2026-06-11T04:26:19.243754Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for documents: docs, pdf, xlsx, docx, markdown",
+    "score": 5,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "docs",
+      "pdf",
+      "xlsx",
+      "docx",
+      "markdown"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "lool-ventures",
+  "source_url": "https://github.com/lool-ventures/founder-skills/blob/main/founder-skills/skills/cap-table/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/lool-ventures/founder-skills/blob/main/founder-skills/skills/cap-table/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Models cap-table mechanics for founders modeling dilution before signing \u2014 SAFE/note conversion, priced rounds with BBWA / narrow-based / full-ratchet anti-dilution, option-pool top-ups, warrants (cash and net-share exercise of vested outstanding warrants, deterministic pre-round pump), Israeli \u2194 Delaware flips (1:1 share-for-share), MFN chains, pay-to-play, dual-class structures with voting-power render, Israeli \u00a7102 / IIA cap-table interactions, multi-scenario chained or independent rounds, and counsel-handoff packets citing NVCA, YC SAFE primer, Cooley GO. Use when a founder shares a SAFE, convertible note, term sheet, option plan, warrant, Articles of Association, or Carta XLSX. NOT for waterfall modeling, cumulative dividends, RSUs, 83(b), 409A, SPAC, or warrant repricing \u2014 see scope notes."
+}

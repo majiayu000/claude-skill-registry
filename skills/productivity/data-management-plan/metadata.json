@@ -1,0 +1,37 @@
+{
+  "name": "data-management-plan",
+  "repo": "pedrohcgs/claude-code-my-workflow",
+  "path": ".claude/skills/data-management-plan/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/pedrohcgs/claude-code-my-workflow",
+  "dir_name": "data-management-plan",
+  "downloaded_at": "2026-06-11T04:30:31.859203Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "productivity",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for productivity: workflow, task",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "workflow",
+      "task"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "pedrohcgs",
+  "source_url": "https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/.claude/skills/data-management-plan/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/.claude/skills/data-management-plan/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Draft a funder-compliant Data Management Plan (NSF DMP, NIH DMS Policy 2023, ERC, Horizon Europe) by composing the confidential-data and environment-capture primitives. Sections cover data description, formats/metadata, storage/backup, access/sharing, preservation/archiving, and roles. Use when user says \"data management plan\", \"DMP\", \"DMSP\", \"NIH data sharing plan\", \"write the data plan for my grant\", or when a grant proposal needs a data-management section. NOT a submission tool \u2014 produces a draft the user pastes into the funder portal (DMPTool, NIH ASSIST, Horizon Europe portal)."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "learn",
+  "repo": "pedrohcgs/claude-code-my-workflow",
+  "path": ".claude/skills/learn/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/pedrohcgs/claude-code-my-workflow",
+  "dir_name": "learn-pedrohcgs-claude-code-my-workf",
+  "downloaded_at": "2026-06-11T04:30:29.687247Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=3, documents=3",
+    "score": 3,
+    "runner_up": "documents",
+    "runner_up_score": 3,
+    "signals": [
+      "dev",
+      "code",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "pedrohcgs",
+  "source_url": "https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/.claude/skills/learn/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/.claude/skills/learn/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Extract reusable knowledge from the current session into a persistent skill.\nUse when you discover something non-obvious, create a workaround, or develop\na multi-step workflow that future sessions would benefit from."
+}

@@ -1,0 +1,39 @@
+{
+  "name": "html-artifact",
+  "repo": "notque/vexjoy-agent",
+  "path": "skills/meta/html-artifact/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/notque/vexjoy-agent",
+  "dir_name": "html-artifact",
+  "downloaded_at": "2026-06-11T04:29:40.555283Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for design: design, css, component, animation",
+    "score": 4,
+    "runner_up": "data",
+    "runner_up_score": 3,
+    "signals": [
+      "design",
+      "css",
+      "component",
+      "animation"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "notque",
+  "source_url": "https://github.com/notque/vexjoy-agent/blob/main/skills/meta/html-artifact/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/notque/vexjoy-agent/blob/main/skills/meta/html-artifact/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Generate rich self-contained HTML artifacts instead of markdown. Auto-detects\nartifact shape (spec, code-review, prototype, report, editor, data-viz,\ndiagram, deck) and loads shape-specific patterns. Bundles Birchline design system with 4 theme\npresets. Use for \"make HTML\", \"as HTML\", \"HTML artifact\", or auto-injected\nby router when output benefits from rich visualization."
+}

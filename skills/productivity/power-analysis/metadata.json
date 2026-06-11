@@ -1,0 +1,37 @@
+{
+  "name": "power-analysis",
+  "repo": "pedrohcgs/claude-code-my-workflow",
+  "path": ".claude/skills/power-analysis/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/pedrohcgs/claude-code-my-workflow",
+  "dir_name": "power-analysis",
+  "downloaded_at": "2026-06-11T04:30:35.809823Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "productivity",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for productivity: workflow, task",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "workflow",
+      "task"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "pedrohcgs",
+  "source_url": "https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/.claude/skills/power-analysis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/.claude/skills/power-analysis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Compute statistical power, required sample size, and minimum detectable effect (MDE) for a study design, then write a registry-ready power section. Handles two-arm RCTs (with clustering / ICC and unequal allocation), multiple-arm corrections, and a simulation-based power option for non-standard designs (DiD/event-study, IV, panel). Use when user says \"power analysis\", \"power calculation\", \"MDE\", \"minimum detectable effect\", \"how big a sample do I need\", \"is my study powered\", \"power for an RCT\", or when /preregister needs a power section for an experiment. Produces a power/MDE table, power curves, and a methods paragraph to paste into a preregistration."
+}

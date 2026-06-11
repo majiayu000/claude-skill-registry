@@ -1,0 +1,39 @@
+{
+  "name": "skill-composer",
+  "repo": "notque/vexjoy-agent",
+  "path": "skills/meta/skill-composer/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/notque/vexjoy-agent",
+  "dir_name": "skill-composer",
+  "downloaded_at": "2026-06-11T04:29:39.992865Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, framework, build, debug",
+    "score": 4,
+    "runner_up": "quality",
+    "runner_up_score": 3,
+    "signals": [
+      "code",
+      "framework",
+      "build",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "notque",
+  "source_url": "https://github.com/notque/vexjoy-agent/blob/main/skills/meta/skill-composer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/notque/vexjoy-agent/blob/main/skills/meta/skill-composer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "DAG-based multi-skill orchestration with dependency resolution."
+}

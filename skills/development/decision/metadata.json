@@ -1,0 +1,37 @@
+{
+  "name": "decision",
+  "repo": "AlpacaLabsLLC/skills-for-architects",
+  "path": "plugins/09-project-dossier/skills/decision/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/AlpacaLabsLLC/skills-for-architects",
+  "dir_name": "decision",
+  "downloaded_at": "2026-06-11T04:04:33.376720Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, software",
+    "score": 2,
+    "runner_up": "analysis",
+    "runner_up_score": 1,
+    "signals": [
+      "code",
+      "software"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "AlpacaLabsLLC",
+  "source_url": "https://github.com/AlpacaLabsLLC/skills-for-architects/blob/main/plugins/09-project-dossier/skills/decision/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AlpacaLabsLLC/skills-for-architects/blob/main/plugins/09-project-dossier/skills/decision/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Capture a project decision as an ADR-style record in decisions/NNNN-slug.md \u2014 context, options considered, the call, consequences, status. Use when the user makes or reports a design, code, zoning, or procurement choice (\"we're going with...\", \"the client decided...\"), when an analysis surfaces options that force a choice, or to supersede an earlier decision. Records reasoning \u2014 current facts live in PROJECT.md via /project-dossier."
+}

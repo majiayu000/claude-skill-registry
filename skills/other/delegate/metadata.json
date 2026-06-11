@@ -1,0 +1,37 @@
+{
+  "name": "delegate",
+  "repo": "saadshahd/moo.md",
+  "path": "hope/skills/delegate/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/saadshahd/moo.md",
+  "dir_name": "delegate",
+  "downloaded_at": "2026-06-11T04:32:30.960183Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: orchestration=2, productivity=2",
+    "score": 2,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "orchestration",
+      "multi-agent"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "saadshahd",
+  "source_url": "https://github.com/saadshahd/moo.md/blob/main/hope/skills/delegate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/saadshahd/moo.md/blob/main/hope/skills/delegate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Locks the session into DELEGATOR mode \u2014 route all work to subagents and workflows, do no work directly."
+}

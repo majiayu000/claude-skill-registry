@@ -1,0 +1,37 @@
+{
+  "name": "new-skill",
+  "repo": "pedrohcgs/claude-code-my-workflow",
+  "path": ".claude/skills/new-skill/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/pedrohcgs/claude-code-my-workflow",
+  "dir_name": "new-skill",
+  "downloaded_at": "2026-06-11T04:30:30.511771Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "productivity",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for productivity: workflow, task",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "workflow",
+      "task"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "pedrohcgs",
+  "source_url": "https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/.claude/skills/new-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/.claude/skills/new-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Scaffold a new skill that follows this repo's conventions \u2014 interviews for purpose, trigger phrases, and tool needs, then writes `.claude/skills/<name>/SKILL.md` from the skill template with frontmatter and body that pass the integrity gates on first try. Use when user says \"write a skill\", \"scaffold a skill\", \"create a new skill\", \"I keep doing X, make it a skill\", \"new slash command\", or \"turn this workflow into a skill\". NOT for capturing a one-off session discovery \u2014 that is `/learn`."
+}

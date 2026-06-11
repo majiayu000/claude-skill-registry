@@ -1,0 +1,36 @@
+{
+  "name": "devils-advocate",
+  "repo": "pedrohcgs/claude-code-my-workflow",
+  "path": ".claude/skills/devils-advocate/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/pedrohcgs/claude-code-my-workflow",
+  "dir_name": "devils-advocate",
+  "downloaded_at": "2026-06-11T04:30:32.209299Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category design scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "documents",
+    "runner_up_score": 1,
+    "signals": [
+      "design"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "pedrohcgs",
+  "source_url": "https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/.claude/skills/devils-advocate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/.claude/skills/devils-advocate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Adversarial 5-7 question challenge to a deck's pedagogical choices \u2014 ordering, prerequisites, cognitive load, motivation. Use when user says \"devil's advocate\", \"poke holes in this deck\", \"push back on my slides\", \"stress-test the design\", \"what would a skeptical student ask?\". Read-only; surfaces questions to force rethinking. Lighter than `/pedagogy-review`."
+}

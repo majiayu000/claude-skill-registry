@@ -1,0 +1,37 @@
+{
+  "name": "amazon-alexa-qa",
+  "repo": "browser-act/skills",
+  "path": "solutions/ecommerce/amazon-alexa-qa/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/browser-act/skills",
+  "dir_name": "amazon-alexa-qa",
+  "downloaded_at": "2026-06-11T04:16:06.425060Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, product=2",
+    "score": 2,
+    "runner_up": "product",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "browser-act",
+  "source_url": "https://github.com/browser-act/skills/blob/main/solutions/ecommerce/amazon-alexa-qa/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/browser-act/skills/blob/main/solutions/ecommerce/amazon-alexa-qa/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Amazon Alexa for Shopping Q&A automation: submits questions to Amazon's Alexa/Rufus AI shopping assistant and collects response text; supports optional keyword search context (navigate to search results page before asking for category-specific answers). Use when user mentions Amazon Alexa, Rufus, Amazon shopping assistant, Amazon AI chat, ask Amazon, Amazon Q&A, automate Alexa questions, Rufus chatbot, Amazon assistant automation, collect Alexa responses, bulk question submission to Amazon, keyword search context, category research. Also applies to extracting Amazon product recommendations from conversational AI, automating repeated queries to Amazon's AI shopping feature, collecting Alexa shopping responses at scale, or market research within a specific product category."
+}

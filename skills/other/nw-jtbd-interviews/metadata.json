@@ -1,0 +1,37 @@
+{
+  "name": "nw-jtbd-interviews",
+  "repo": "nWave-ai/nWave",
+  "path": "plugins/nw/skills/nw-jtbd-interviews/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/nWave-ai/nWave",
+  "dir_name": "nw-jtbd-interviews",
+  "downloaded_at": "2026-06-12T04:28:31.197749Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-llm=2, ai-ml=2",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "nWave-ai",
+  "source_url": "https://github.com/nWave-ai/nWave/blob/main/plugins/nw/skills/nw-jtbd-interviews/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nWave-ai/nWave/blob/main/plugins/nw/skills/nw-jtbd-interviews/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "JTBD discovery techniques adapted for AI product owner context. Four Forces extraction, job dimension probing, question banks, and anti-patterns for interactive feature discovery conversations."
+}

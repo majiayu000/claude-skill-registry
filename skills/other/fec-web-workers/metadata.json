@@ -1,0 +1,36 @@
+{
+  "name": "fec-web-workers",
+  "repo": "bovinphang/frontend-craft",
+  "path": "localized/zh-CN/skills/fec-web-workers/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/bovinphang/frontend-craft",
+  "dir_name": "fec-web-workers",
+  "downloaded_at": "2026-06-12T04:16:12.112287Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category design scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "performance",
+    "runner_up_score": 1,
+    "signals": [
+      "ui"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "bovinphang",
+  "source_url": "https://github.com/bovinphang/frontend-craft/blob/main/localized/zh-CN/skills/fec-web-workers/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bovinphang/frontend-craft/blob/main/localized/zh-CN/skills/fec-web-workers/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u7528\u4e8e\u5c06\u6602\u8d35\u7684\u6d4f\u89c8\u5668\u5de5\u4f5c\u79fb\u51fa\u4e3b\u7ebf\u7a0b\uff0c\u6d89\u53ca Web Workers\u3001SharedWorker\u3001worker \u6c60\u3001Comlink\u3001transferable objects\u3001Vite/Webpack worker \u96c6\u6210\u6216 UI \u54cd\u5e94\u6027\u4fee\u590d\u3002\u4e0d\u8981\u7528\u4e8e\u8f7b\u91cf\u540c\u6b65\u5de5\u4f5c\u6216 DOM \u64cd\u4f5c\uff1b\u4e2d\u6587\u89e6\u53d1\u8bcd\u5305\u62ec Web Worker\u3001\u540e\u53f0\u7ebf\u7a0b\u3001\u4e3b\u7ebf\u7a0b\u963b\u585e\u3002"
+}

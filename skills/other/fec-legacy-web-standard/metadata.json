@@ -1,0 +1,36 @@
+{
+  "name": "fec-legacy-web-standard",
+  "repo": "bovinphang/frontend-craft",
+  "path": "localized/zh-CN/skills/fec-legacy-web-standard/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/bovinphang/frontend-craft",
+  "dir_name": "fec-legacy-web-standard",
+  "downloaded_at": "2026-06-12T04:16:16.986421Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category design scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "productivity",
+    "runner_up_score": 1,
+    "signals": [
+      "css"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "bovinphang",
+  "source_url": "https://github.com/bovinphang/frontend-craft/blob/main/localized/zh-CN/skills/fec-legacy-web-standard/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bovinphang/frontend-craft/blob/main/localized/zh-CN/skills/fec-legacy-web-standard/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u7528\u4e8e\u7ef4\u62a4\u6216\u5b89\u5168\u4fee\u6539\u65e2\u6709\u975e\u6846\u67b6\u524d\u7aef\u4ee3\u7801\uff1a\u539f\u751f JavaScript\u3001jQuery\u3001HTML/CSS\u3001MPA \u9875\u9762\u3001\u670d\u52a1\u7aef\u6e32\u67d3\u6a21\u677f\u3001\u9057\u7559\u63d2\u4ef6\u6216\u9700\u8981\u957f\u671f\u4fdd\u6301\u5f53\u524d\u6280\u672f\u6808\u7684\u4ee3\u7801\u3002\u82e5\u662f\u89c4\u5212\u8fc1\u79fb\u5230 React/Vue/TypeScript\uff0c\u8bf7\u4f7f\u7528\u8fc1\u79fb skill\uff1b\u4e2d\u6587\u89e6\u53d1\u8bcd\u5305\u62ec \u4f20\u7edf\u524d\u7aef\u3001\u539f\u751f JS\u3001jQuery\u3002"
+}

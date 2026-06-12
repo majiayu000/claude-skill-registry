@@ -1,7 +1,8 @@
 ---
 name: pagerunner-skill
-description: Real Chrome automation for AI agents — authenticated sessions, PII anonymization, snapshots, and multi-agent coordination via KV store.
-version: "1.2.3"
+description: Real Chrome automation for AI agents — authenticated sessions, PII anonymization, sealed secrets, site adapters, session checkpoints, and video recording.
+version: "1.3.1"
+license: MIT
 metadata:
   author: Stas
   license: MIT
@@ -345,11 +346,14 @@ await close_session(sessionId);
 ## Deeper Dives
 
 - **I want to learn all the workflow patterns** → [PATTERNS.md](PATTERNS.md)
-- **I need to see all 27 tools** → [REFERENCE.md](REFERENCE.md)
-- **I need to handle sensitive data** → [SECURITY.md](SECURITY.md)
+- **I need to see all ~44 tools** → [REFERENCE.md](REFERENCE.md)
+- **I need to handle sensitive data** (PII, credentials, sealed secrets) → [SECURITY.md](SECURITY.md)
+- **I want to call a site's API directly from my session** (site adapters) → [REFERENCE.md § Site Intelligence](REFERENCE.md#site-intelligence-4-tools)
+- **I want to inspect network / console traffic** → [REFERENCE.md § Network & Console](REFERENCE.md#network--console-2-tools)
+- **I want to record the session as a video** → [RECORDING.md](RECORDING.md) (director's guide) or [REFERENCE.md § Video Recording](REFERENCE.md#video-recording-7-tools) for tool signatures
 - **Results look wrong? Hallucination?** → [HALLUCINATION_PREVENTION.md](HALLUCINATION_PREVENTION.md)
 - **Show me full ICP workflows** → [EXAMPLES.md](EXAMPLES.md)
-- **Multi-agent coordination, daemon setup** → [ADVANCED.md](ADVANCED.md)
+- **Multi-agent coordination, daemon setup, auto-recovery** → [ADVANCED.md](ADVANCED.md)
 - **Something broke?** → [DEBUGGING.md](DEBUGGING.md)
 
 ---

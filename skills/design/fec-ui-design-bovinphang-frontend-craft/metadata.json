@@ -1,0 +1,41 @@
+{
+  "name": "fec-ui-design",
+  "repo": "bovinphang/frontend-craft",
+  "path": "localized/zh-CN/skills/fec-ui-design/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/bovinphang/frontend-craft",
+  "dir_name": "fec-ui-design-bovinphang-frontend-craft",
+  "downloaded_at": "2026-06-12T04:16:11.013579Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for design: design, ui, ux, css, tailwind, figma",
+    "score": 6,
+    "runner_up": "product",
+    "runner_up_score": 2,
+    "signals": [
+      "design",
+      "ui",
+      "ux",
+      "css",
+      "tailwind",
+      "figma"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "bovinphang",
+  "source_url": "https://github.com/bovinphang/frontend-craft/blob/main/localized/zh-CN/skills/fec-ui-design/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bovinphang/frontend-craft/blob/main/localized/zh-CN/skills/fec-ui-design/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u7528\u4e8e\u6784\u5efa\u3001\u5ba1\u67e5\u6216\u6539\u8fdb\u9700\u8981\u4ea7\u54c1\u4e13\u5c5e\u8bbe\u8ba1\u65b9\u5411\u7684\u524d\u7aef UI\uff0c\u5305\u62ec\u8bbe\u8ba1\u7cfb\u7edf\u751f\u6210\u3001Master/Page \u8986\u76d6\u3001\u72ec\u7279\u89c6\u89c9\u8bc6\u522b\u3001\u53cd\u901a\u7528\u754c\u9762\u9009\u62e9\u3001\u9996\u5c4f\u5c42\u7ea7\u3001UI \u6253\u78e8\u3001\u56fe\u8868 UX\u3001\u4ea4\u4e92\u72b6\u6001\u3001\u54cd\u5e94\u5f0f\u884c\u4e3a\u6216\u89c6\u89c9 QA\u3002\u5916\u90e8\u8bbe\u8ba1\u6587\u4ef6\u4e3a\u6743\u5a01\u65f6\uff0c\u5e94\u4ece\u8be5\u6765\u6e90\u5b9e\u73b0\uff0c\u800c\u4e0d\u662f\u81ea\u884c\u53d1\u660e\u65b9\u5411\uff1b\u4e2d\u6587\u89e6\u53d1\u8bcd\u5305\u62ec UI \u8bbe\u8ba1\u3001\u8bbe\u8ba1\u7cfb\u7edf\u3001\u89c6\u89c9\u98ce\u683c\u3001\u4e0d\u8981\u6a21\u677f\u5316\u3001\u9ad8\u7ea7\u611f\u3001\u754c\u9762\u6253\u78e8\u3001\u4ea4\u4e92\u72b6\u6001\u3002"
+}

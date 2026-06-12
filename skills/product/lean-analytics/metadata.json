@@ -1,0 +1,38 @@
+{
+  "name": "lean-analytics",
+  "repo": "wondelai/skills",
+  "path": "lean-analytics/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/wondelai/skills",
+  "dir_name": "lean-analytics",
+  "downloaded_at": "2026-06-12T04:36:42.394569Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "product",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for product: product, feature, metrics",
+    "score": 3,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "product",
+      "feature",
+      "metrics"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "wondelai",
+  "source_url": "https://github.com/wondelai/skills/blob/main/lean-analytics/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wondelai/skills/blob/main/lean-analytics/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Choose and audit startup metrics using Alistair Croll and Benjamin Yoskovitz's \"Lean Analytics: Use Data to Build a Better Startup Faster\". Use when the user mentions \"what metrics should we track\", \"KPIs\", \"north star metric\", \"One Metric That Matters\", \"OMTM\", \"vanity metrics\", \"analytics dashboard\", \"DAU/MAU\", \"churn benchmark\", or \"measure product-market fit\". Also trigger when choosing metrics for a startup or feature, auditing dashboards for vanity metrics, setting metric targets and baselines, or instrumenting a product by business model and stage. Covers good-vs-vanity metrics, the One Metric That Matters, metrics by business model, the five startup stages, and benchmarks with lines in the sand. For the build-measure-learn loop itself, see lean-startup. For fixing activation and retention, see improve-retention."
+}

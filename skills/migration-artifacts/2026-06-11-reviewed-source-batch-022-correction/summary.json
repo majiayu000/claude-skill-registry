@@ -1,0 +1,30 @@
+{
+  "issue": 89,
+  "parent_pr": 99,
+  "moved": 3,
+  "blocked": 0,
+  "skill_hash_mismatches": 0,
+  "verification": [
+    {
+      "target_path": "devops/kai-upgrade",
+      "before_skill_sha1": "dfdbdc1632981ffd450e50e435ec0799c7af8e54",
+      "after_skill_sha1": "dfdbdc1632981ffd450e50e435ec0799c7af8e54",
+      "metadata_category": "devops",
+      "metadata_dir_name": "kai-upgrade"
+    },
+    {
+      "target_path": "workflow/kai-retro",
+      "before_skill_sha1": "c6d7b969b6b8aea6e323da3df886b8bc0a984912",
+      "after_skill_sha1": "c6d7b969b6b8aea6e323da3df886b8bc0a984912",
+      "metadata_category": "workflow",
+      "metadata_dir_name": "kai-retro"
+    },
+    {
+      "target_path": "design/kai-taste",
+      "before_skill_sha1": "abfbf199f3166b098c9cc1b1699288840d60f280",
+      "after_skill_sha1": "abfbf199f3166b098c9cc1b1699288840d60f280",
+      "metadata_category": "design",
+      "metadata_dir_name": "kai-taste"
+    }
+  ]
+}

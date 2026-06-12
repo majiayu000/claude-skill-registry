@@ -1,0 +1,34 @@
+{
+  "name": "02",
+  "repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "path": "grosskanzlei-corporate-ma/skills/02/SKILL.md",
+  "github_branch": "main",
+  "category": "domains",
+  "source": "github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "dir_name": "02",
+  "downloaded_at": "2026-06-07T04:06:02.269696Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "domains",
+    "status": "reviewed",
+    "method": "manual_source_batch_v1",
+    "confidence": "high",
+    "reason": "Klotzkette/claude-fuer-deutsches-recht is a German law/domain-specific skill collection; issue #89 prior reviewed batches mapped this source to domains.",
+    "signals": [
+      "source_repo",
+      "legal_domain_terms"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Klotzkette",
+  "source_url": "https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/grosskanzlei-corporate-ma/skills/02/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Klotzkette/claude-fuer-deutsches-recht/blob/main/grosskanzlei-corporate-ma/skills/02/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Corporate und M&A Rechtsprechungsrecherche: Anwendungsfall Anwalt braucht für Gutachten, Schriftsatz oder DD-Report relevante BGH-Rechtsprechung zu Organpflichten, Kapitalmarkt, Umwandlung oder Insolvenz. §§ 93 und 179a AktG, § 15 AktG Verfahren. Prüfraster amtliche Bundes- und Landesquellen, Aktenzeichen-Verifizierung, Randnummern, Fundstellen-Kette, aktuelle BGH-Senats-Rechtsprechung. Output Rechtsprechungs-Digest mit Datum, Aktenzeichen, Leitsatz und Deal-Relevanz. Abgrenzung zu inhaltlicher Vertragsgestaltung in SPA/APA-Entwurf und zu Board-Paper."
+}

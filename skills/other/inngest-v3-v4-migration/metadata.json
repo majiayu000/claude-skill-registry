@@ -1,0 +1,37 @@
+{
+  "name": "inngest-v3-v4-migration",
+  "repo": "inngest/inngest-skills",
+  "path": "skills/inngest-v3-v4-migration/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/inngest/inngest-skills",
+  "dir_name": "inngest-v3-v4-migration",
+  "downloaded_at": "2026-06-12T04:23:20.639663Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: api=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "api",
+      "sdk"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "inngest",
+  "source_url": "https://github.com/inngest/inngest-skills/blob/main/skills/inngest-v3-v4-migration/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/inngest/inngest-skills/blob/main/skills/inngest-v3-v4-migration/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when upgrading an existing TypeScript codebase from Inngest SDK v3 to v4, or when fixing mixed v3/v4 API usage. Covers detecting current SDK usage, moving triggers into createFunction options, replacing EventSchemas with eventType/staticSchema, moving serve options to the client, updating realtime imports, rewriting step.invoke string IDs, checkpointing/serverless runtime settings, Connect option changes, and verification."
+}

@@ -1,0 +1,39 @@
+{
+  "name": "fec-e2e-testing",
+  "repo": "bovinphang/frontend-craft",
+  "path": "localized/zh-CN/skills/fec-e2e-testing/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/bovinphang/frontend-craft",
+  "dir_name": "fec-e2e-testing",
+  "downloaded_at": "2026-06-12T04:16:17.593210Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "testing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for testing: test, e2e, playwright, cypress",
+    "score": 4,
+    "runner_up": "api",
+    "runner_up_score": 1,
+    "signals": [
+      "test",
+      "e2e",
+      "playwright",
+      "cypress"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "bovinphang",
+  "source_url": "https://github.com/bovinphang/frontend-craft/blob/main/localized/zh-CN/skills/fec-e2e-testing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bovinphang/frontend-craft/blob/main/localized/zh-CN/skills/fec-e2e-testing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u7528\u4e8e\u521b\u5efa\u3001\u7ef4\u62a4\u3001\u8c03\u8bd5\u6216\u5ba1\u67e5\u771f\u5b9e\u6d4f\u89c8\u5668\u7aef\u5230\u7aef\u6d4b\u8bd5\uff0c\u5305\u62ec Playwright/Cypress\u3001Page Object\u3001CI \u4ea7\u7269\u3001trace\u3001\u4e0d\u7a33\u5b9a\u7528\u4f8b\u3001\u8de8\u9875\u9762\u89c6\u89c9\u56de\u5f52\u4ee5\u53ca\u767b\u5f55\u3001\u652f\u4ed8\u3001\u6743\u9650\u6216 CRUD \u7b49\u5173\u952e\u7528\u6237\u65c5\u7a0b\u3002\u82e5\u662f\u6d4b\u8bd5\u5c42\u89c4\u5212\u6216\u9760\u8fd1 UI \u7ec4\u4ef6\u7684\u6d4b\u8bd5\uff0c\u5148\u9009\u62e9\u5bf9\u5e94\u6d4b\u8bd5\u5de5\u4f5c\u6d41\uff1b\u4e2d\u6587\u89e6\u53d1\u8bcd\u5305\u62ec E2E\u3001\u7aef\u5230\u7aef\u6d4b\u8bd5\u3001Playwright\u3001Cypress\u3002"
+}

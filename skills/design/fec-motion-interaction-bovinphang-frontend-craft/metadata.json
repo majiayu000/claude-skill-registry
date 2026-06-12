@@ -1,0 +1,38 @@
+{
+  "name": "fec-motion-interaction",
+  "repo": "bovinphang/frontend-craft",
+  "path": "localized/zh-CN/skills/fec-motion-interaction/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/bovinphang/frontend-craft",
+  "dir_name": "fec-motion-interaction-bovinphang-frontend-craft",
+  "downloaded_at": "2026-06-12T04:16:16.776225Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for design: ui, css, animation",
+    "score": 3,
+    "runner_up": "",
+    "runner_up_score": 0,
+    "signals": [
+      "ui",
+      "css",
+      "animation"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "bovinphang",
+  "source_url": "https://github.com/bovinphang/frontend-craft/blob/main/localized/zh-CN/skills/fec-motion-interaction/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bovinphang/frontend-craft/blob/main/localized/zh-CN/skills/fec-motion-interaction/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u7528\u4e8e\u8bbe\u8ba1\u3001\u5b9e\u73b0\u6216\u5ba1\u67e5\u524d\u7aef\u4ea4\u4e92\u52a8\u6548\u3001\u9875\u9762\u8f6c\u573a\u3001\u6eda\u52a8\u52a8\u753b\u3001Framer Motion\u3001GSAP\u3001Lottie\u3001CSS \u52a8\u753b\u3001\u52a8\u6548\u5f3a\u5ea6\u3001\u52a8\u753b\u6027\u80fd\u3001\u51cf\u5c11\u52a8\u6548\u884c\u4e3a\u6216\u517c\u5177\u8868\u73b0\u529b\u4e0e\u53ef\u8bbf\u95ee\u6027\u7684 UI \u52a8\u6548\u3002\u4e0d\u8981\u7528\u4e8e\u4ec5 SVG \u8def\u5f84\u7ed8\u5236\u3001Canvas/WebGL \u6e32\u67d3\u6216\u666e\u901a hover \u72b6\u6001\uff1b\u4e2d\u6587\u89e6\u53d1\u8bcd\u5305\u62ec \u52a8\u6548\u8bbe\u8ba1\u3001\u4ea4\u4e92\u52a8\u6548\u3001\u9875\u9762\u8f6c\u573a\u3001\u6eda\u52a8\u52a8\u753b\u3001Framer Motion\u3001GSAP\u3002"
+}

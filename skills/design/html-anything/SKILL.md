@@ -77,6 +77,35 @@ For example:
 Do not answer those requests with Markdown summaries or generic reports. Build
 the live HTML artifact.
 
+### Reference Example Loading
+
+When the selected catalog style has `referenceHtml`, read that file before
+writing new HTML. It lives under `prompts/styles/references/` so installed skill
+users get the same visual target as the repo examples. If `referenceHtml` is
+absent, fall back to `examples/<example>/output.html` when available.
+
+Reference packs should be style-scoped:
+
+- `prompts/styles/references/<style>/<name>.html`
+- `prompts/styles/references/<style>/assets/...`
+
+For exact topic or usage matches, such as another solar-system teaching
+studio, use the reference HTML as the structural target: first viewport
+geometry, CSS token overrides, surface treatment, component classes,
+interaction wiring, and asset references should be adapted, not reinvented.
+
+Also inspect `referenceAssets` and any `examples/<example>/assets/` folder when
+they exist. Reuse or copy matching local assets before generating substitutes.
+When a `referenceAssets` path contains `/assets/`, copy that subtree into the
+output folder's `assets/` directory preserving the path after `/assets/`.
+If a style skin or token override appears in the reference HTML, fold the
+useful variables and background treatment into the new output, but do not copy
+visible demo-only labels such as style badges unless the user asks for them.
+
+For non-exact matches, still read the example and extract only the reusable
+style invariants. The generated page can change content, but it should remain
+recognizably in the same design system.
+
 ## Default Artifact Behavior
 
 When the final answer would be long, visual, structured, comparative,
@@ -252,6 +281,13 @@ Honor explicit style direction in natural language:
    or compliance gate, treat it as a hard requirement for the final HTML, not a
    mood board.
 
+   If the catalog entry names `referenceHtml`, read that file as well. If it
+   only names an example, read `examples/<example>/output.html` when available.
+   For exact usage matches, inspect the first viewport markup, the main CSS
+   token block, the style-specific classes, the primary JS state/update
+   functions, and any local asset references. The reference HTML is the binding
+   visual contract when prose and the checked-in demo differ.
+
 5. **Choose auto style.**
    Pick the page style internally. Do not ask the user to choose unless
    they explicitly want style options.
@@ -261,9 +297,9 @@ Honor explicit style direction in natural language:
    first viewport geometry, layout scaffold, typography roles, color/surface
    language, component vocabulary, primary interaction, motion grammar, and
    what must be absent. Pull required primitives and avoid rules from
-   `catalog.json`, then pull visual details from the full style prompt. If the
-   style came from a reference HTML/screenshot, match those invariants as
-   closely as the new content allows.
+   `catalog.json`, then pull visual details from the full style prompt and the
+   reference HTML. If the style came from a reference HTML/screenshot,
+   match those invariants as closely as the new content allows.
 
 7. **Build the page.**
    Create the HTML/CSS/JS directly. Keep the page useful, interactive,
@@ -272,6 +308,9 @@ Honor explicit style direction in natural language:
    root `<html>` element and use the style's class/component vocabulary.
 
 8. **Generate assets when they improve the artifact.**
+   Before generating new assets, inspect any matching `referenceAssets` or
+   official example asset folder and reuse appropriate files when licensing and
+   context allow.
    Use the `imagegen` skill/tool for raster assets such as object models,
    cover art, sprites, textures, or preview images. Save project-bound
    assets into the output folder. Do not leave referenced assets only in
@@ -304,6 +343,10 @@ Before final handoff, the HTML must pass this internal checklist:
 
 - The root `<html>` declares `data-ha-style`.
 - The first viewport is built from the selected style's scaffold.
+- If the selected style has a catalog `referenceHtml`, the generated first
+  viewport visibly matches that reference's scaffold, token system, surface
+  language, and interaction grammar unless the user explicitly requested a
+  different style.
 - At least four style-specific class names/components from the style prompt
   appear in the HTML.
 - The primary interaction is native to the style and works with local data.

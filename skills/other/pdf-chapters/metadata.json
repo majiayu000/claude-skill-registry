@@ -1,0 +1,37 @@
+{
+  "name": "golden-pdf-ch",
+  "repo": "yusufkaraaslan/Skill_Seekers",
+  "path": "tests/golden/phase2/pdf_chapters/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/yusufkaraaslan/Skill_Seekers",
+  "dir_name": "pdf-chapters",
+  "downloaded_at": "2026-06-12T04:36:52.772388Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, documents=2",
+    "score": 2,
+    "runner_up": "documents",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "programming"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "yusufkaraaslan",
+  "source_url": "https://github.com/yusufkaraaslan/Skill_Seekers/blob/master/tests/golden/phase2/pdf_chapters/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yusufkaraaslan/Skill_Seekers/blob/master/tests/golden/phase2/pdf_chapters/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when testing chapter categorization"
+}

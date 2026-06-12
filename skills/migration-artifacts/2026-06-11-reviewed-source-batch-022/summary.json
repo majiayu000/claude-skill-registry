@@ -1,0 +1,427 @@
+{
+  "issue": 89,
+  "moved": 50,
+  "blocked": 0,
+  "moved_by_repo": {
+    "0xGhostCAT/claude-ai-cyber-security-skills": 15,
+    "elementalsouls/Claude-BugHunter": 9,
+    "cgallic/kai-cmo-harness": 15,
+    "CesiumGS/cesiumjs-skills": 11
+  },
+  "before_counts": {
+    "other": 933,
+    "security": 5340,
+    "marketing": 3187,
+    "development": 39461
+  },
+  "after_counts": {
+    "other": 883,
+    "security": 5364,
+    "marketing": 3202,
+    "development": 39472
+  },
+  "collision_resolved": [],
+  "skill_hash_mismatches": 0,
+  "verification": [
+    {
+      "target_path": "security/03-threat-modeling-mindmap",
+      "source_repo": "0xGhostCAT/claude-ai-cyber-security-skills",
+      "before_skill_sha1": "473a3653b719ae9d949e7ae8cbb3adae20134431",
+      "after_skill_sha1": "473a3653b719ae9d949e7ae8cbb3adae20134431",
+      "metadata_category": "security",
+      "metadata_dir_name": "03-threat-modeling-mindmap"
+    },
+    {
+      "target_path": "security/07-js-analysis",
+      "source_repo": "0xGhostCAT/claude-ai-cyber-security-skills",
+      "before_skill_sha1": "84fc8efc384e27925fa95eae8fd35346b55354af",
+      "after_skill_sha1": "84fc8efc384e27925fa95eae8fd35346b55354af",
+      "metadata_category": "security",
+      "metadata_dir_name": "07-js-analysis"
+    },
+    {
+      "target_path": "security/08-content-discovery",
+      "source_repo": "0xGhostCAT/claude-ai-cyber-security-skills",
+      "before_skill_sha1": "c509b394292834f76ff7efdf2a7ac389c9b3795e",
+      "after_skill_sha1": "c509b394292834f76ff7efdf2a7ac389c9b3795e",
+      "metadata_category": "security",
+      "metadata_dir_name": "08-content-discovery"
+    },
+    {
+      "target_path": "security/09-continuous-monitoring",
+      "source_repo": "0xGhostCAT/claude-ai-cyber-security-skills",
+      "before_skill_sha1": "be907489579b1d3bbff74f15620f5ebeb9258d2d",
+      "after_skill_sha1": "be907489579b1d3bbff74f15620f5ebeb9258d2d",
+      "metadata_category": "security",
+      "metadata_dir_name": "09-continuous-monitoring"
+    },
+    {
+      "target_path": "security/10-idor-hunting",
+      "source_repo": "0xGhostCAT/claude-ai-cyber-security-skills",
+      "before_skill_sha1": "b8f6a6ca2e1be52602ed7bdff00d54645320548a",
+      "after_skill_sha1": "b8f6a6ca2e1be52602ed7bdff00d54645320548a",
+      "metadata_category": "security",
+      "metadata_dir_name": "10-idor-hunting"
+    },
+    {
+      "target_path": "security/11-auth-bypass",
+      "source_repo": "0xGhostCAT/claude-ai-cyber-security-skills",
+      "before_skill_sha1": "3bc0bf2b4ef6581785b6dbc4167f91a51a419f3b",
+      "after_skill_sha1": "3bc0bf2b4ef6581785b6dbc4167f91a51a419f3b",
+      "metadata_category": "security",
+      "metadata_dir_name": "11-auth-bypass"
+    },
+    {
+      "target_path": "security/12-ato-chains",
+      "source_repo": "0xGhostCAT/claude-ai-cyber-security-skills",
+      "before_skill_sha1": "9152285675c3688805e1412580ff0b531d0fa74c",
+      "after_skill_sha1": "9152285675c3688805e1412580ff0b531d0fa74c",
+      "metadata_category": "security",
+      "metadata_dir_name": "12-ato-chains"
+    },
+    {
+      "target_path": "security/15-ssrf",
+      "source_repo": "0xGhostCAT/claude-ai-cyber-security-skills",
+      "before_skill_sha1": "efb4f2981f55bd353d4db74da826d51509cf9f1b",
+      "after_skill_sha1": "efb4f2981f55bd353d4db74da826d51509cf9f1b",
+      "metadata_category": "security",
+      "metadata_dir_name": "15-ssrf"
+    },
+    {
+      "target_path": "security/18-graphql",
+      "source_repo": "0xGhostCAT/claude-ai-cyber-security-skills",
+      "before_skill_sha1": "a03b603f364c65ea4e2e0a2c757973471bd2e41f",
+      "after_skill_sha1": "a03b603f364c65ea4e2e0a2c757973471bd2e41f",
+      "metadata_category": "security",
+      "metadata_dir_name": "18-graphql"
+    },
+    {
+      "target_path": "security/21-business-logic",
+      "source_repo": "0xGhostCAT/claude-ai-cyber-security-skills",
+      "before_skill_sha1": "390fef5c04efd8bdcfcd90d5b883fd7ad36926f6",
+      "after_skill_sha1": "390fef5c04efd8bdcfcd90d5b883fd7ad36926f6",
+      "metadata_category": "security",
+      "metadata_dir_name": "21-business-logic"
+    },
+    {
+      "target_path": "security/23-cache-poisoning",
+      "source_repo": "0xGhostCAT/claude-ai-cyber-security-skills",
+      "before_skill_sha1": "7b0578ed208b2f5f2a8f3f158b2990c7c5ecdd21",
+      "after_skill_sha1": "7b0578ed208b2f5f2a8f3f158b2990c7c5ecdd21",
+      "metadata_category": "security",
+      "metadata_dir_name": "23-cache-poisoning"
+    },
+    {
+      "target_path": "security/24-http-smuggling",
+      "source_repo": "0xGhostCAT/claude-ai-cyber-security-skills",
+      "before_skill_sha1": "02555ad507b36e806ea4ae52f799b86c497851ba",
+      "after_skill_sha1": "02555ad507b36e806ea4ae52f799b86c497851ba",
+      "metadata_category": "security",
+      "metadata_dir_name": "24-http-smuggling"
+    },
+    {
+      "target_path": "security/26-mobile-recon-android",
+      "source_repo": "0xGhostCAT/claude-ai-cyber-security-skills",
+      "before_skill_sha1": "d7eeb042103aa57fb67f12f6f12b775e91dc237d",
+      "after_skill_sha1": "d7eeb042103aa57fb67f12f6f12b775e91dc237d",
+      "metadata_category": "security",
+      "metadata_dir_name": "26-mobile-recon-android"
+    },
+    {
+      "target_path": "security/27-cloud-misconfig",
+      "source_repo": "0xGhostCAT/claude-ai-cyber-security-skills",
+      "before_skill_sha1": "3eb39dd9232899bc6beadadfef9754dd0c2e58cf",
+      "after_skill_sha1": "3eb39dd9232899bc6beadadfef9754dd0c2e58cf",
+      "metadata_category": "security",
+      "metadata_dir_name": "27-cloud-misconfig"
+    },
+    {
+      "target_path": "security/29-hackerone-reporting",
+      "source_repo": "0xGhostCAT/claude-ai-cyber-security-skills",
+      "before_skill_sha1": "7c0bfddb265b14e8c3495c22f5bafabf84fca0ab",
+      "after_skill_sha1": "7c0bfddb265b14e8c3495c22f5bafabf84fca0ab",
+      "metadata_category": "security",
+      "metadata_dir_name": "29-hackerone-reporting"
+    },
+    {
+      "target_path": "security/hunt-brute-force",
+      "source_repo": "elementalsouls/Claude-BugHunter",
+      "before_skill_sha1": "4203ac34b74465d61687daa22777c91d56a5c912",
+      "after_skill_sha1": "4203ac34b74465d61687daa22777c91d56a5c912",
+      "metadata_category": "security",
+      "metadata_dir_name": "hunt-brute-force"
+    },
+    {
+      "target_path": "security/hunt-cors",
+      "source_repo": "elementalsouls/Claude-BugHunter",
+      "before_skill_sha1": "2bf98cd28af62477419d343af9975a0aa0b4b925",
+      "after_skill_sha1": "2bf98cd28af62477419d343af9975a0aa0b4b925",
+      "metadata_category": "security",
+      "metadata_dir_name": "hunt-cors"
+    },
+    {
+      "target_path": "security/hunt-ldap",
+      "source_repo": "elementalsouls/Claude-BugHunter",
+      "before_skill_sha1": "9fb0b75ca1ceb084a295f678af85853a495de229",
+      "after_skill_sha1": "9fb0b75ca1ceb084a295f678af85853a495de229",
+      "metadata_category": "security",
+      "metadata_dir_name": "hunt-ldap"
+    },
+    {
+      "target_path": "security/hunt-nosqli",
+      "source_repo": "elementalsouls/Claude-BugHunter",
+      "before_skill_sha1": "0b956938f0d89fda08b877846526b16fc9b737e2",
+      "after_skill_sha1": "0b956938f0d89fda08b877846526b16fc9b737e2",
+      "metadata_category": "security",
+      "metadata_dir_name": "hunt-nosqli"
+    },
+    {
+      "target_path": "security/hunt-ntlm-info",
+      "source_repo": "elementalsouls/Claude-BugHunter",
+      "before_skill_sha1": "5754c3238e0eebd795abd8631f8b4ff8afacbf1c",
+      "after_skill_sha1": "5754c3238e0eebd795abd8631f8b4ff8afacbf1c",
+      "metadata_category": "security",
+      "metadata_dir_name": "hunt-ntlm-info"
+    },
+    {
+      "target_path": "security/hunt-session",
+      "source_repo": "elementalsouls/Claude-BugHunter",
+      "before_skill_sha1": "a43fa1e237ab356520460baa1ae29656060f4e8c",
+      "after_skill_sha1": "a43fa1e237ab356520460baa1ae29656060f4e8c",
+      "metadata_category": "security",
+      "metadata_dir_name": "hunt-session"
+    },
+    {
+      "target_path": "security/hunt-source-leak",
+      "source_repo": "elementalsouls/Claude-BugHunter",
+      "before_skill_sha1": "c44a5ba0b279ef59a2e59daee61b057e0fcf565b",
+      "after_skill_sha1": "c44a5ba0b279ef59a2e59daee61b057e0fcf565b",
+      "metadata_category": "security",
+      "metadata_dir_name": "hunt-source-leak"
+    },
+    {
+      "target_path": "security/hunt-tls-network",
+      "source_repo": "elementalsouls/Claude-BugHunter",
+      "before_skill_sha1": "aa065cd3b4cf7c1f671df4370522bcf1cf698c34",
+      "after_skill_sha1": "aa065cd3b4cf7c1f671df4370522bcf1cf698c34",
+      "metadata_category": "security",
+      "metadata_dir_name": "hunt-tls-network"
+    },
+    {
+      "target_path": "security/hunt-websocket",
+      "source_repo": "elementalsouls/Claude-BugHunter",
+      "before_skill_sha1": "1e849f4c3bcd50e53d40476c270c3ef758c69767",
+      "after_skill_sha1": "1e849f4c3bcd50e53d40476c270c3ef758c69767",
+      "metadata_category": "security",
+      "metadata_dir_name": "hunt-websocket"
+    },
+    {
+      "target_path": "marketing/ad-research",
+      "source_repo": "cgallic/kai-cmo-harness",
+      "before_skill_sha1": "ce2a8c1f03789e5acf3636f6152da17032c690f3",
+      "after_skill_sha1": "ce2a8c1f03789e5acf3636f6152da17032c690f3",
+      "metadata_category": "marketing",
+      "metadata_dir_name": "ad-research"
+    },
+    {
+      "target_path": "marketing/content-gate",
+      "source_repo": "cgallic/kai-cmo-harness",
+      "before_skill_sha1": "b173144c92c733234c69a67e12bd82ea5d829583",
+      "after_skill_sha1": "b173144c92c733234c69a67e12bd82ea5d829583",
+      "metadata_category": "marketing",
+      "metadata_dir_name": "content-gate"
+    },
+    {
+      "target_path": "marketing/content-write",
+      "source_repo": "cgallic/kai-cmo-harness",
+      "before_skill_sha1": "81a48dad67ecc013485228491d99a949b5d321e3",
+      "after_skill_sha1": "81a48dad67ecc013485228491d99a949b5d321e3",
+      "metadata_category": "marketing",
+      "metadata_dir_name": "content-write"
+    },
+    {
+      "target_path": "marketing/kai-ad-campaign",
+      "source_repo": "cgallic/kai-cmo-harness",
+      "before_skill_sha1": "de1feb697382f7746e2122ba9af9bd8a06a33147",
+      "after_skill_sha1": "de1feb697382f7746e2122ba9af9bd8a06a33147",
+      "metadata_category": "marketing",
+      "metadata_dir_name": "kai-ad-campaign"
+    },
+    {
+      "target_path": "marketing/kai-analytics",
+      "source_repo": "cgallic/kai-cmo-harness",
+      "before_skill_sha1": "ad7cc8c79972d07a949ed5646fe55f125fec60aa",
+      "after_skill_sha1": "ad7cc8c79972d07a949ed5646fe55f125fec60aa",
+      "metadata_category": "marketing",
+      "metadata_dir_name": "kai-analytics"
+    },
+    {
+      "target_path": "marketing/kai-daily-ad-review",
+      "source_repo": "cgallic/kai-cmo-harness",
+      "before_skill_sha1": "961e11b5e31e76ea17a0297d9f640133c13bfeaa",
+      "after_skill_sha1": "961e11b5e31e76ea17a0297d9f640133c13bfeaa",
+      "metadata_category": "marketing",
+      "metadata_dir_name": "kai-daily-ad-review"
+    },
+    {
+      "target_path": "marketing/kai-growth-plan",
+      "source_repo": "cgallic/kai-cmo-harness",
+      "before_skill_sha1": "ab539d93f6a8b489b5a6637911b6bff42a534996",
+      "after_skill_sha1": "ab539d93f6a8b489b5a6637911b6bff42a534996",
+      "metadata_category": "marketing",
+      "metadata_dir_name": "kai-growth-plan"
+    },
+    {
+      "target_path": "marketing/kai-monthly-audit",
+      "source_repo": "cgallic/kai-cmo-harness",
+      "before_skill_sha1": "43a0c980213e14d68b418989d51373086c580433",
+      "after_skill_sha1": "43a0c980213e14d68b418989d51373086c580433",
+      "metadata_category": "marketing",
+      "metadata_dir_name": "kai-monthly-audit"
+    },
+    {
+      "target_path": "marketing/kai-newsletter",
+      "source_repo": "cgallic/kai-cmo-harness",
+      "before_skill_sha1": "72bf8ac6e7f2c18c867424172073d0349313f684",
+      "after_skill_sha1": "72bf8ac6e7f2c18c867424172073d0349313f684",
+      "metadata_category": "marketing",
+      "metadata_dir_name": "kai-newsletter"
+    },
+    {
+      "target_path": "marketing/kai-product-maker",
+      "source_repo": "cgallic/kai-cmo-harness",
+      "before_skill_sha1": "fbdf25f8591954186f50bed0ec9ce57b54b66f95",
+      "after_skill_sha1": "fbdf25f8591954186f50bed0ec9ce57b54b66f95",
+      "metadata_category": "marketing",
+      "metadata_dir_name": "kai-product-maker"
+    },
+    {
+      "target_path": "marketing/kai-retro",
+      "source_repo": "cgallic/kai-cmo-harness",
+      "before_skill_sha1": "c6d7b969b6b8aea6e323da3df886b8bc0a984912",
+      "after_skill_sha1": "c6d7b969b6b8aea6e323da3df886b8bc0a984912",
+      "metadata_category": "marketing",
+      "metadata_dir_name": "kai-retro"
+    },
+    {
+      "target_path": "marketing/kai-taste",
+      "source_repo": "cgallic/kai-cmo-harness",
+      "before_skill_sha1": "abfbf199f3166b098c9cc1b1699288840d60f280",
+      "after_skill_sha1": "abfbf199f3166b098c9cc1b1699288840d60f280",
+      "metadata_category": "marketing",
+      "metadata_dir_name": "kai-taste"
+    },
+    {
+      "target_path": "marketing/kai-topical-map",
+      "source_repo": "cgallic/kai-cmo-harness",
+      "before_skill_sha1": "240d3eaf392db9ff6b60df74b3555228f1ff701e",
+      "after_skill_sha1": "240d3eaf392db9ff6b60df74b3555228f1ff701e",
+      "metadata_category": "marketing",
+      "metadata_dir_name": "kai-topical-map"
+    },
+    {
+      "target_path": "marketing/kai-upgrade",
+      "source_repo": "cgallic/kai-cmo-harness",
+      "before_skill_sha1": "dfdbdc1632981ffd450e50e435ec0799c7af8e54",
+      "after_skill_sha1": "dfdbdc1632981ffd450e50e435ec0799c7af8e54",
+      "metadata_category": "marketing",
+      "metadata_dir_name": "kai-upgrade"
+    },
+    {
+      "target_path": "marketing/kai-write",
+      "source_repo": "cgallic/kai-cmo-harness",
+      "before_skill_sha1": "aea6924de5198ab24b3d3923297afbed41699472",
+      "after_skill_sha1": "aea6924de5198ab24b3d3923297afbed41699472",
+      "metadata_category": "marketing",
+      "metadata_dir_name": "kai-write"
+    },
+    {
+      "target_path": "development/cesiumjs-3d-tiles",
+      "source_repo": "CesiumGS/cesiumjs-skills",
+      "before_skill_sha1": "a6616900e35c35fd95969d56c25c5b1ee8a64185",
+      "after_skill_sha1": "a6616900e35c35fd95969d56c25c5b1ee8a64185",
+      "metadata_category": "development",
+      "metadata_dir_name": "cesiumjs-3d-tiles"
+    },
+    {
+      "target_path": "development/cesiumjs-custom-shader",
+      "source_repo": "CesiumGS/cesiumjs-skills",
+      "before_skill_sha1": "98f15316eb2902d8b620377b321dbcb2cc0d85e0",
+      "after_skill_sha1": "98f15316eb2902d8b620377b321dbcb2cc0d85e0",
+      "metadata_category": "development",
+      "metadata_dir_name": "cesiumjs-custom-shader"
+    },
+    {
+      "target_path": "development/cesiumjs-entities",
+      "source_repo": "CesiumGS/cesiumjs-skills",
+      "before_skill_sha1": "8b81c958e91d2f64950ddb6724ead1cf40254f4f",
+      "after_skill_sha1": "8b81c958e91d2f64950ddb6724ead1cf40254f4f",
+      "metadata_category": "development",
+      "metadata_dir_name": "cesiumjs-entities"
+    },
+    {
+      "target_path": "development/cesiumjs-imagery",
+      "source_repo": "CesiumGS/cesiumjs-skills",
+      "before_skill_sha1": "48858879fe4843f452e3cf38045aa377ea26eb03",
+      "after_skill_sha1": "48858879fe4843f452e3cf38045aa377ea26eb03",
+      "metadata_category": "development",
+      "metadata_dir_name": "cesiumjs-imagery"
+    },
+    {
+      "target_path": "development/cesiumjs-interaction",
+      "source_repo": "CesiumGS/cesiumjs-skills",
+      "before_skill_sha1": "22e5d2a31c8219a8ef4fee86c6e47284ae8c82b5",
+      "after_skill_sha1": "22e5d2a31c8219a8ef4fee86c6e47284ae8c82b5",
+      "metadata_category": "development",
+      "metadata_dir_name": "cesiumjs-interaction"
+    },
+    {
+      "target_path": "development/cesiumjs-models-particles",
+      "source_repo": "CesiumGS/cesiumjs-skills",
+      "before_skill_sha1": "6c09a3bdde589b9f01edcf83daccc27dadffb816",
+      "after_skill_sha1": "6c09a3bdde589b9f01edcf83daccc27dadffb816",
+      "metadata_category": "development",
+      "metadata_dir_name": "cesiumjs-models-particles"
+    },
+    {
+      "target_path": "development/cesiumjs-primitives",
+      "source_repo": "CesiumGS/cesiumjs-skills",
+      "before_skill_sha1": "d8752e34ae86a6cd316aeeb7ee44e4323f1acc0a",
+      "after_skill_sha1": "d8752e34ae86a6cd316aeeb7ee44e4323f1acc0a",
+      "metadata_category": "development",
+      "metadata_dir_name": "cesiumjs-primitives"
+    },
+    {
+      "target_path": "development/cesiumjs-spatial-math",
+      "source_repo": "CesiumGS/cesiumjs-skills",
+      "before_skill_sha1": "7f2132e7e6ee0cb4c79689b722525aab30220710",
+      "after_skill_sha1": "7f2132e7e6ee0cb4c79689b722525aab30220710",
+      "metadata_category": "development",
+      "metadata_dir_name": "cesiumjs-spatial-math"
+    },
+    {
+      "target_path": "development/cesiumjs-terrain-environment",
+      "source_repo": "CesiumGS/cesiumjs-skills",
+      "before_skill_sha1": "fb9a1e283a89ce578670099df124a976789bb26c",
+      "after_skill_sha1": "fb9a1e283a89ce578670099df124a976789bb26c",
+      "metadata_category": "development",
+      "metadata_dir_name": "cesiumjs-terrain-environment"
+    },
+    {
+      "target_path": "development/cesiumjs-time-properties",
+      "source_repo": "CesiumGS/cesiumjs-skills",
+      "before_skill_sha1": "9d6e590ef627099923f9eb32b71e2d504fc00342",
+      "after_skill_sha1": "9d6e590ef627099923f9eb32b71e2d504fc00342",
+      "metadata_category": "development",
+      "metadata_dir_name": "cesiumjs-time-properties"
+    },
+    {
+      "target_path": "development/using-cesiumjs-skills",
+      "source_repo": "CesiumGS/cesiumjs-skills",
+      "before_skill_sha1": "26a29541a1eed8f11b6e86b815b177ab2aa429ab",
+      "after_skill_sha1": "26a29541a1eed8f11b6e86b815b177ab2aa429ab",
+      "metadata_category": "development",
+      "metadata_dir_name": "using-cesiumjs-skills"
+    }
+  ]
+}

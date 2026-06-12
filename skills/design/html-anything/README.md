@@ -15,6 +15,10 @@
   <a href="https://clockless-org.github.io/html-anything/examples/"><img alt="11 demos" src="https://img.shields.io/badge/examples-11%20demos-0f766e?style=flat-square"></a>
 </p>
 
+<p align="center">
+  <a href="https://clockless-org.github.io/html-anything/examples/"><strong>→ Open the live demo gallery</strong></a>
+</p>
+
 `html-anything` works inside Codex and Claude Code. Ask for a teaching site,
 drop in a PDF, upload a CSV, point it at a folder, or hand it an export like
 Amazon orders, Kindle highlights, Spotify history, WeChat / iMessage,
@@ -48,18 +52,14 @@ more interactive, and easier to share when the answer is really a page.
 <td width="100%" valign="top">
 <h3>After: live HTML artifact</h3>
 <p>The same teaching goal becomes a visual, interactive learning page.</p>
-<a href="https://clockless-org.github.io/html-anything/examples/solar-system-studio/output.html"><img src="./docs/example-previews/solar-system-studio.jpg" alt="html-anything solar system teaching studio" width="100%"></a>
+<a href="https://clockless-org.github.io/html-anything/examples/solar-system-studio/output.html"><img src="./docs/example-demos/solar-system-studio.gif" alt="html-anything solar system teaching studio (animated demo)" width="100%"></a>
 </td>
 </tr>
 </table>
 
 ## Preview
 
-<p align="center">
-  <a href="https://clockless-org.github.io/html-anything/examples/"><strong>Open gallery →</strong></a>
-  <br>
-  <sub>Install the skill, then try the prompt under any card to reproduce that usage pattern.</sub>
-</p>
+<sub>Each card shows the kind of question a user would naturally ask. The skill detects intent, picks the right design system, and ships a polished HTML page — without anyone mentioning HTML. Open the [live demo gallery](https://clockless-org.github.io/html-anything/examples/) to see the rendered outputs.</sub>
 
 ### Teaching Studios
 
@@ -69,13 +69,13 @@ more interactive, and easier to share when the answer is really a page.
 <a href="https://clockless-org.github.io/html-anything/examples/solar-system-studio/output.html"><img src="./docs/example-demos/solar-system-studio.gif" alt="Teach a concept demo" width="100%"></a><br>
 <strong><a href="https://clockless-org.github.io/html-anything/examples/solar-system-studio/output.html">Teach a concept →</a></strong><br>
 <sub>Source: teaching brief · Style: <code>teaching</code></sub><br>
-<sub><strong>Prompt:</strong> <code>Create a three-panel interactive teaching studio about the solar system, with a selectable model, compare controls, and live inspector.</code></sub>
+<sub><strong>Ask:</strong> <code>Teach me the solar system.</code></sub>
 </td>
 <td width="50%" valign="top">
 <a href="https://clockless-org.github.io/html-anything/examples/markdown/output.html"><img src="./docs/example-demos/markdown.gif" alt="Learn from long-form text demo" width="100%"></a><br>
 <strong><a href="https://clockless-org.github.io/html-anything/examples/markdown/output.html">Learn from long-form text →</a></strong><br>
 <sub>Source: Markdown file · Style: <code>architectural-spread</code></sub><br>
-<sub><strong>Prompt:</strong> <code>Turn this Markdown essay into a split-screen architectural visual explainer.</code></sub>
+<sub><strong>Ask:</strong> <code>Help me understand this essay.</code> (with a markdown file attached)</sub>
 </td>
 </tr>
 <tr>
@@ -83,7 +83,7 @@ more interactive, and easier to share when the answer is really a page.
 <a href="https://clockless-org.github.io/html-anything/examples/docx/output.html"><img src="./docs/example-demos/docx.gif" alt="Learn from a document demo" width="100%"></a><br>
 <strong><a href="https://clockless-org.github.io/html-anything/examples/docx/output.html">Learn from a document →</a></strong><br>
 <sub>Source: DOCX file · Style: <code>kami-reading</code></sub><br>
-<sub><strong>Prompt:</strong> <code>Turn this DOCX memo into a calm long-form reader with printable chapters.</code></sub>
+<sub><strong>Ask:</strong> <code>Make this memo easier to read.</code> (with a docx file attached)</sub>
 </td>
 <td width="50%" valign="top"></td>
 </tr>
@@ -98,13 +98,13 @@ more interactive, and easier to share when the answer is really a page.
 <a href="https://clockless-org.github.io/html-anything/examples/editorial-carousel/output.html"><img src="./docs/example-demos/editorial-carousel.gif" alt="Argument as sequence demo" width="100%"></a><br>
 <strong><a href="https://clockless-org.github.io/html-anything/examples/editorial-carousel/output.html">Argument as sequence →</a></strong><br>
 <sub>Source: strategy essay · Style: <code>editorial-carousel</code></sub><br>
-<sub><strong>Prompt:</strong> <code>Turn this strategy essay into a shareable editorial carousel.</code></sub>
+<sub><strong>Ask:</strong> <code>Help me share this strategy essay with my team.</code></sub>
 </td>
 <td width="50%" valign="top">
 <a href="https://clockless-org.github.io/html-anything/examples/pdf/output.html"><img src="./docs/example-demos/pdf.gif" alt="Guide from dense document demo" width="100%"></a><br>
 <strong><a href="https://clockless-org.github.io/html-anything/examples/pdf/output.html">Guide from dense document →</a></strong><br>
 <sub>Source: PDF report · Style: <code>digital-eguide</code></sub><br>
-<sub><strong>Prompt:</strong> <code>Turn this PDF guide into an interactive e-guide.</code></sub>
+<sub><strong>Ask:</strong> <code>Summarize this report and let me browse it section by section.</code></sub>
 </td>
 </tr>
 <tr>
@@ -112,13 +112,13 @@ more interactive, and easier to share when the answer is really a page.
 <a href="https://clockless-org.github.io/html-anything/examples/email/output.html"><img src="./docs/example-demos/email.gif" alt="Inbox or workstream audit demo" width="100%"></a><br>
 <strong><a href="https://clockless-org.github.io/html-anything/examples/email/output.html">Inbox or workstream audit →</a></strong><br>
 <sub>Source: Mbox archive · Style: <code>soft-saas</code></sub><br>
-<sub><strong>Prompt:</strong> <code>Turn this mbox archive into a soft SaaS email workstream console.</code></sub>
+<sub><strong>Ask:</strong> <code>What's happening in my inbox? Show me the open loops.</code></sub>
 </td>
 <td width="50%" valign="top">
 <a href="https://clockless-org.github.io/html-anything/examples/ci-log/output.html"><img src="./docs/example-demos/ci-log.gif" alt="Debugging evidence demo" width="100%"></a><br>
 <strong><a href="https://clockless-org.github.io/html-anything/examples/ci-log/output.html">Debugging evidence →</a></strong><br>
 <sub>Source: CI log · Style: <code>terminal-cli</code></sub><br>
-<sub><strong>Prompt:</strong> <code>Turn this CI log into a terminal-style debugging evidence page.</code></sub>
+<sub><strong>Ask:</strong> <code>Why did this build fail? Walk me through it.</code></sub>
 </td>
 </tr>
 </table>
@@ -132,13 +132,13 @@ more interactive, and easier to share when the answer is really a page.
 <a href="https://clockless-org.github.io/html-anything/examples/wechat-couple/output.html"><img src="./docs/example-demos/wechat-couple.gif" alt="Private chat recap demo" width="100%"></a><br>
 <strong><a href="https://clockless-org.github.io/html-anything/examples/wechat-couple/output.html">Private chat recap →</a></strong><br>
 <sub>Source: 1:1 chat export · Style: <code>love-romance-3d</code></sub><br>
-<sub><strong>Prompt:</strong> <code>Analyze this 1:1 chat export as a private relationship recap. Mask names.</code></sub>
+<sub><strong>Ask:</strong> <code>Recap our 1:1 chat history. Keep it private — mask names.</code></sub>
 </td>
 <td width="50%" valign="top">
 <a href="https://clockless-org.github.io/html-anything/examples/slack/output.html"><img src="./docs/example-demos/slack.gif" alt="Group contribution analysis demo" width="100%"></a><br>
 <strong><a href="https://clockless-org.github.io/html-anything/examples/slack/output.html">Group contribution analysis →</a></strong><br>
 <sub>Source: team chat export · Style: <code>kinetic-scoreboard</code></sub><br>
-<sub><strong>Prompt:</strong> <code>Turn this Slack export into a kinetic team contribution scoreboard.</code></sub>
+<sub><strong>Ask:</strong> <code>Who's driving the conversation in this Slack channel?</code></sub>
 </td>
 </tr>
 </table>
@@ -152,107 +152,120 @@ more interactive, and easier to share when the answer is really a page.
 <a href="https://clockless-org.github.io/html-anything/examples/kindle-highlights/output.html"><img src="./docs/example-demos/kindle-highlights.gif" alt="Reflective reading archive demo" width="100%"></a><br>
 <strong><a href="https://clockless-org.github.io/html-anything/examples/kindle-highlights/output.html">Reflective reading archive →</a></strong><br>
 <sub>Source: My Clippings.txt · Style: <code>living-essay</code></sub><br>
-<sub><strong>Prompt:</strong> <code>Turn my Kindle highlights into a reflective living essay archive.</code></sub>
+<sub><strong>Ask:</strong> <code>What have I been reading and thinking about?</code></sub>
 </td>
 <td width="50%" valign="top">
 <a href="https://clockless-org.github.io/html-anything/examples/travel-history/output.html"><img src="./docs/example-demos/travel-history.gif" alt="Mobility recap demo" width="100%"></a><br>
 <strong><a href="https://clockless-org.github.io/html-anything/examples/travel-history/output.html">Mobility recap →</a></strong><br>
 <sub>Source: Uber/Lyft CSV · Style: <code>global-travel</code></sub><br>
-<sub><strong>Prompt:</strong> <code>Turn this Uber/Lyft ride history CSV into a global travel map recap.</code></sub>
+<sub><strong>Ask:</strong> <code>Where have I been this year? Show me on a map.</code></sub>
 </td>
 </tr>
 </table>
 
 ## Install
 
-### Recommended — Agent Skills CLI
+Pick the path for your agent:
+[Claude Code](#claude-code) ·
+[Codex](#codex) ·
+[claude.ai](#claudeai-web) ·
+[Claude API](#claude-api) ·
+[Cursor / Cline / Windsurf / OpenCode / Goose / Letta / …](#one-command-for-most-cli-and-editor-agents) ·
+[ClawHub](#clawhub-publish)
 
-One command, works across Claude Code, Codex, Cursor, Cline, Windsurf
-and any other agent that follows the [open agent skills](https://skills.sh)
-spec:
+### One command for most CLI and editor agents
 
 ```bash
 npx skills add clockless-org/html-anything
 ```
 
-The CLI also pings the public skills directory, so installs feed the
-[skills.sh leaderboard](https://skills.sh/clockless-org/html-anything).
+Works with **Claude Code**, **Codex**, **Cursor**, **Cline**, **Windsurf**,
+**OpenCode**, **Goose**, **Letta**, **Roo Code**, **Kiro**, and any other
+agent following the [open agent-skills spec](https://agentskills.io).
+The CLI also pings [skills.sh](https://skills.sh/clockless-org/html-anything)
+so installs feed the public leaderboard.
 
-### Manual install (Claude Code)
+### Claude Code
 
 ```bash
-mkdir -p ~/.claude/skills
 git clone https://github.com/clockless-org/html-anything ~/.claude/skills/html-anything
 ```
 
-Restart Claude Code so it loads `SKILL.md`.
+Restart Claude Code so it loads `SKILL.md`. To update later:
+`git -C ~/.claude/skills/html-anything pull`.
 
-### Manual install (Codex)
+### Codex
 
 ```bash
-mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
 git clone https://github.com/clockless-org/html-anything "${CODEX_HOME:-$HOME/.codex}/skills/html-anything"
 ```
 
-Restart Codex so it loads the skill.
+Restart Codex.
 
-To update a manual install later:
+### claude.ai (web)
 
-```bash
-git -C ~/.claude/skills/html-anything pull
-```
+1. Download [`html-anything-skill.zip`](https://github.com/clockless-org/html-anything/releases/latest/download/html-anything-skill.zip) (`SKILL.md` + `prompts/`, including style references).
+2. In claude.ai: **Settings → Features → Skills → Upload a Skill** → drop the zip.
 
-### Publish To ClawHub
+Requires **Pro / Max / Team / Enterprise** with code execution enabled.
+Custom skills on claude.ai are per-user; each teammate uploads their own copy.
 
-This repo includes `.clawhubignore` so ClawHub publishes only the skill bundle:
-`SKILL.md` plus `prompts/`. It intentionally excludes examples, screenshots,
-fixtures, generated outputs, source code, and the repo license file.
+### Claude API
 
 ```bash
-npm i -g clawhub
-clawhub login
-clawhub skill publish . \
-  --owner YOUR_HANDLE_OR_ORG \
-  --version 0.1.0 \
-  --clawscan-note "Creates local HTML pages from user-provided prompts, files, folders, and URLs. Reads local files only when the user asks."
+curl https://api.anthropic.com/v1/skills \
+  -H "x-api-key: $ANTHROPIC_API_KEY" \
+  -H "anthropic-beta: skills-2025-10-02,code-execution-2025-08-25,files-api-2025-04-14" \
+  -F file=@html-anything-skill.zip
 ```
+
+Then reference the returned `skill_id` in the `container` of any message.
+See the [Skills API guide](https://platform.claude.com/docs/en/build-with-claude/skills-guide).
+Uploaded skills are workspace-wide.
+
+### ClawHub (publish)
+
+This repo carries `.clawhubignore` so only `SKILL.md` + `prompts/` ship,
+including canonical style references used by installed agents:
+
+```bash
+npm i -g clawhub && clawhub login
+clawhub publish . --slug html-anything --version 0.1.1 --tags latest
+```
+
+### Where it does not work
+
+| Surface | Status |
+|---|---|
+| ChatGPT / chatgpt.com | ❌ Custom GPTs are a different format. Use **OpenAI Codex CLI** instead (above). |
+| Gemini web / Google Gems | ❌ Different format. Use **Gemini CLI** (`npx skills add`) instead. |
+| Anthropic / Claude Desktop | ✅ Reads `~/.claude/skills/` — same as Claude Code. |
+
+> ℹ Custom Skills do not sync across surfaces. The same skill uploaded to claude.ai is **not** automatically available on Claude Code or the API — each surface keeps its own copy.
 
 ## Use
 
-Ask in plain language:
+Just ask your real question. You do not need to mention HTML, pages, dashboards,
+reports, atlases, or any of the design vocabulary — the skill decides when an
+answer should be a page and ships one.
 
 ```text
-Use html-anything to create an interactive teaching site about the solar system.
+Teach me the solar system.
+What does my Amazon order history say about me?
+Help me understand this CSV.
+What did I read in 2025?
+Walk me through this GitHub repo.
+How did last quarter go?
+Make sense of this messy log file.
+Recap our 1:1 chat from this year.
 ```
 
-```text
-Explain the solar system as a beautiful interactive page.
-```
+Each of these triggers a polished, single-file HTML page in the right design
+system. Short conversational asks stay short.
 
-```text
-Use html-anything on my Amazon order history. Walk me through the export first.
-```
-
-```text
-Use html-anything to turn ~/Downloads/_chat.txt into a relationship report.
-```
-
-```text
-Use html-anything to make this CSV into a shareable dashboard.
-```
-
-```text
-Use html-anything on this GitHub repo URL.
-```
-
-You do not always need to say "HTML". Requests like "make this easier to read",
-"turn this into a visual report", "make a shareable explainer", "create a recap",
-or "present this beautifully" should trigger the skill.
-
-If you already have the file, folder, or URL, give it to the agent. If
-you only know the source type, such as "Amazon orders", "Spotify history",
-"1:1 chat export", or "Google Photos Takeout", the skill first explains how
-to export the data, then converts it after you provide the export.
+If you name a data source but have no file yet (*"my Spotify history"*,
+*"my WhatsApp chat"*, *"my Google Photos Takeout"*), the skill walks you
+through the export first.
 
 ## Input And Output
 
@@ -291,6 +304,11 @@ HTML or screenshot, the generated page should reproduce the reference's first
 viewport, component vocabulary, interaction model, motion grammar, and visual
 absence rules. Source modules are translated into the style instead of forcing
 every output into the same dashboard/report shape.
+
+Canonical style references can live under `prompts/styles/references/<style>/`,
+so the published skill can use the same structural target as the demo gallery
+without bundling every example. Style-specific assets stay beside their own
+reference pack and are copied only when that style needs them.
 
 | Usage pattern | Style |
 |---|---|
@@ -348,9 +366,9 @@ Each use case can use one or more style systems.
 | Conversation Analysis | WeChat, iMessage-style CSV, Slack, Discord, Telegram, email-style threads | `love-romance-3d`, `kinetic-scoreboard`, `network-map` |
 | Personal Data & Places | Amazon orders, Apple Health, browser history, YouTube, Spotify, Twitch, Kindle highlights, Venmo / PayPal, AI chat exports, notes vaults, Google Maps saved places, travel history, GPX, KML, itinerary CSV, location history | `timeline-story`, `global-travel`, `living-essay`, `network-map`, `map-atlas` |
 
-Use case is user-facing; style is internal. A user can simply say "make this
-CSV prettier" or "turn this into a teaching site" and the skill picks the
-right system automatically.
+Use case is user-facing; style is internal. The user never has to name a
+style — natural asks like *"help me understand this CSV"* or *"teach me the
+solar system"* are enough; the skill picks the right system automatically.
 
 The detailed source-specific instructions live in [`prompts/sources/`](./prompts/sources/).
 

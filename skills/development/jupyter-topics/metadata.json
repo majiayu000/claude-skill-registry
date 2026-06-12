@@ -1,0 +1,38 @@
+{
+  "name": "golden-jupyter-topics",
+  "repo": "yusufkaraaslan/Skill_Seekers",
+  "path": "tests/golden/phase2/jupyter_topics/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
+  "source": "github.com/yusufkaraaslan/Skill_Seekers",
+  "dir_name": "jupyter-topics",
+  "downloaded_at": "2026-06-12T04:36:52.926735Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, programming, build",
+    "score": 3,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "programming",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "yusufkaraaslan",
+  "source_url": "https://github.com/yusufkaraaslan/Skill_Seekers/blob/master/tests/golden/phase2/jupyter_topics/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/yusufkaraaslan/Skill_Seekers/blob/master/tests/golden/phase2/jupyter_topics/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when testing the golden_jupyter_topics golden build"
+}

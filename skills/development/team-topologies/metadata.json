@@ -1,0 +1,39 @@
+{
+  "name": "team-topologies",
+  "repo": "wondelai/skills",
+  "path": "team-topologies/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/wondelai/skills",
+  "dir_name": "team-topologies",
+  "downloaded_at": "2026-06-12T04:36:41.829740Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for development: code, framework, build, software",
+    "score": 4,
+    "runner_up": "communication",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "framework",
+      "build",
+      "software"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "wondelai",
+  "source_url": "https://github.com/wondelai/skills/blob/main/team-topologies/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wondelai/skills/blob/main/team-topologies/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Organize business and technology teams for fast flow using Matthew Skelton and Manuel Pais's \"Team Topologies\". Use when the user mentions \"team topologies\", \"Conway's law\", \"platform team\", \"stream-aligned team\", \"team boundaries\", \"cognitive load\", \"how should we split teams\", \"org design\", \"who owns this service\", or \"team dependencies\". Also trigger when reorganizing engineering teams, aligning team and service boundaries, splitting a monolith and deciding team ownership, reducing cross-team dependencies and handoffs, or designing an internal platform. Covers the four team types, three interaction modes, the inverse Conway maneuver, and fracture planes. For bounded contexts and domain boundaries, see domain-driven-design. For dependency direction inside a codebase, see clean-architecture."
+}

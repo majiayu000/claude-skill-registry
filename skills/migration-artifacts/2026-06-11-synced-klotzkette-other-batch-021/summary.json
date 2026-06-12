@@ -1,0 +1,653 @@
+{
+  "issue": 89,
+  "source_repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "moved": 90,
+  "blocked": 0,
+  "collision_resolved": [
+    {
+      "source_path": "other/intake",
+      "target_path": "domains/intake-klotzkette-claude-fuer-deutsches-recht"
+    }
+  ],
+  "before_counts": {
+    "other": 1023,
+    "domains": 3154
+  },
+  "after_counts": {
+    "other": 933,
+    "domains": 3244
+  },
+  "skill_hash_mismatches": 0,
+  "verification": [
+    {
+      "target_path": "domains/02",
+      "before_skill_sha1": "eb0782297a5fe4fc08fb88573ce8bc746e5df915",
+      "after_skill_sha1": "eb0782297a5fe4fc08fb88573ce8bc746e5df915",
+      "metadata_category": "domains",
+      "metadata_dir_name": "02"
+    },
+    {
+      "target_path": "domains/03",
+      "before_skill_sha1": "2883cbd7da354d30bdc0584c757542f03f8677d9",
+      "after_skill_sha1": "2883cbd7da354d30bdc0584c757542f03f8677d9",
+      "metadata_category": "domains",
+      "metadata_dir_name": "03"
+    },
+    {
+      "target_path": "domains/04",
+      "before_skill_sha1": "502b5ed875bc3113cd010a108c5339046afd22e8",
+      "after_skill_sha1": "502b5ed875bc3113cd010a108c5339046afd22e8",
+      "metadata_category": "domains",
+      "metadata_dir_name": "04"
+    },
+    {
+      "target_path": "domains/abstimmung",
+      "before_skill_sha1": "bf3c23e82ab81b348be40d574da1dc11c3dcacb3",
+      "after_skill_sha1": "bf3c23e82ab81b348be40d574da1dc11c3dcacb3",
+      "metadata_category": "domains",
+      "metadata_dir_name": "abstimmung"
+    },
+    {
+      "target_path": "domains/aequitas",
+      "before_skill_sha1": "0f124ae4322cc80a7b3adb603d3c9cdd0718a120",
+      "after_skill_sha1": "0f124ae4322cc80a7b3adb603d3c9cdd0718a120",
+      "metadata_category": "domains",
+      "metadata_dir_name": "aequitas"
+    },
+    {
+      "target_path": "domains/agio",
+      "before_skill_sha1": "a97e4aa83d523d1e636d0c78bcff34b435efdd72",
+      "after_skill_sha1": "a97e4aa83d523d1e636d0c78bcff34b435efdd72",
+      "metadata_category": "domains",
+      "metadata_dir_name": "agio"
+    },
+    {
+      "target_path": "domains/anpassen",
+      "before_skill_sha1": "7c6206eb1504cc17091058d1075630b6514e3ee9",
+      "after_skill_sha1": "7c6206eb1504cc17091058d1075630b6514e3ee9",
+      "metadata_category": "domains",
+      "metadata_dir_name": "anpassen"
+    },
+    {
+      "target_path": "domains/anpassen-klotzkette-claude-fuer-deutsche",
+      "before_skill_sha1": "eb125a6b526c8121d5d744c9e3422455976b47f0",
+      "after_skill_sha1": "eb125a6b526c8121d5d744c9e3422455976b47f0",
+      "metadata_category": "domains",
+      "metadata_dir_name": "anpassen-klotzkette-claude-fuer-deutsche"
+    },
+    {
+      "target_path": "domains/anpassen-klotzkette-claude-fuer-deutsche-2",
+      "before_skill_sha1": "9f248e1b128bb0fb7563090b284060edfecdbf03",
+      "after_skill_sha1": "9f248e1b128bb0fb7563090b284060edfecdbf03",
+      "metadata_category": "domains",
+      "metadata_dir_name": "anpassen-klotzkette-claude-fuer-deutsche-2"
+    },
+    {
+      "target_path": "domains/anpassen-klotzkette-claude-fuer-deutsche-3",
+      "before_skill_sha1": "5eb9d7c761470ca0c90bf1956dd16fd57663ff16",
+      "after_skill_sha1": "5eb9d7c761470ca0c90bf1956dd16fd57663ff16",
+      "metadata_category": "domains",
+      "metadata_dir_name": "anpassen-klotzkette-claude-fuer-deutsche-3"
+    },
+    {
+      "target_path": "domains/anpassen-klotzkette-claude-fuer-deutsche-4",
+      "before_skill_sha1": "a6758b96ce8753db78c154e45bef3354cda45c9d",
+      "after_skill_sha1": "a6758b96ce8753db78c154e45bef3354cda45c9d",
+      "metadata_category": "domains",
+      "metadata_dir_name": "anpassen-klotzkette-claude-fuer-deutsche-4"
+    },
+    {
+      "target_path": "domains/anschluss",
+      "before_skill_sha1": "a4396b059903e61cd0bd83e6b2fd2b4a92c5025f",
+      "after_skill_sha1": "a4396b059903e61cd0bd83e6b2fd2b4a92c5025f",
+      "metadata_category": "domains",
+      "metadata_dir_name": "anschluss"
+    },
+    {
+      "target_path": "domains/anschluss-klotzkette-claude-fuer-deutsche",
+      "before_skill_sha1": "36cd6237e61e110ce991758e504df7957daed722",
+      "after_skill_sha1": "36cd6237e61e110ce991758e504df7957daed722",
+      "metadata_category": "domains",
+      "metadata_dir_name": "anschluss-klotzkette-claude-fuer-deutsche"
+    },
+    {
+      "target_path": "domains/anschluss-klotzkette-claude-fuer-deutsche-2",
+      "before_skill_sha1": "05aba18b6a18380d72c8651e43dc9cbda965a5f4",
+      "after_skill_sha1": "05aba18b6a18380d72c8651e43dc9cbda965a5f4",
+      "metadata_category": "domains",
+      "metadata_dir_name": "anschluss-klotzkette-claude-fuer-deutsche-2"
+    },
+    {
+      "target_path": "domains/anschluss-klotzkette-claude-fuer-deutsche-3",
+      "before_skill_sha1": "c6b40e5599a990faed477ccaa9d8d1f2d5b7afdb",
+      "after_skill_sha1": "c6b40e5599a990faed477ccaa9d8d1f2d5b7afdb",
+      "metadata_category": "domains",
+      "metadata_dir_name": "anschluss-klotzkette-claude-fuer-deutsche-3"
+    },
+    {
+      "target_path": "domains/anschluss-router",
+      "before_skill_sha1": "46c9bbf60b5d245c9f4a534115d47e73521eed88",
+      "after_skill_sha1": "46c9bbf60b5d245c9f4a534115d47e73521eed88",
+      "metadata_category": "domains",
+      "metadata_dir_name": "anschluss-router"
+    },
+    {
+      "target_path": "domains/anschluss-router-klotzkette-claude-fuer-deutsche",
+      "before_skill_sha1": "25a3a06c11bb4c8cfbc78399d97fa1ec9fcea68f",
+      "after_skill_sha1": "25a3a06c11bb4c8cfbc78399d97fa1ec9fcea68f",
+      "metadata_category": "domains",
+      "metadata_dir_name": "anschluss-router-klotzkette-claude-fuer-deutsche"
+    },
+    {
+      "target_path": "domains/anschluss-routing",
+      "before_skill_sha1": "e30e4d9911461a1d1ea6b7193137a970ac2ccf28",
+      "after_skill_sha1": "e30e4d9911461a1d1ea6b7193137a970ac2ccf28",
+      "metadata_category": "domains",
+      "metadata_dir_name": "anschluss-routing"
+    },
+    {
+      "target_path": "domains/anschluss-routing-klotzkette-claude-fuer-deutsche",
+      "before_skill_sha1": "a349b06ed06d56039177a5b52d7c57daa9da40f0",
+      "after_skill_sha1": "a349b06ed06d56039177a5b52d7c57daa9da40f0",
+      "metadata_category": "domains",
+      "metadata_dir_name": "anschluss-routing-klotzkette-claude-fuer-deutsche"
+    },
+    {
+      "target_path": "domains/bag",
+      "before_skill_sha1": "98ef953f3f3b0d733ecb3ded7d6e5958f9e745dd",
+      "after_skill_sha1": "98ef953f3f3b0d733ecb3ded7d6e5958f9e745dd",
+      "metadata_category": "domains",
+      "metadata_dir_name": "bag"
+    },
+    {
+      "target_path": "domains/bea-journal",
+      "before_skill_sha1": "39ebe2be821da943d9eca426e5a07642d1c98400",
+      "after_skill_sha1": "39ebe2be821da943d9eca426e5a07642d1c98400",
+      "metadata_category": "domains",
+      "metadata_dir_name": "bea-journal"
+    },
+    {
+      "target_path": "domains/bgb",
+      "before_skill_sha1": "d11ebd1e73cf3306bf4d1677746fa57a8fbecb5f",
+      "after_skill_sha1": "d11ebd1e73cf3306bf4d1677746fa57a8fbecb5f",
+      "metadata_category": "domains",
+      "metadata_dir_name": "bgb"
+    },
+    {
+      "target_path": "domains/bgb-klotzkette-claude-fuer-deutsche",
+      "before_skill_sha1": "bd4b408d517c0f2f4a0349131d765b73b5faf4ef",
+      "after_skill_sha1": "bd4b408d517c0f2f4a0349131d765b73b5faf4ef",
+      "metadata_category": "domains",
+      "metadata_dir_name": "bgb-klotzkette-claude-fuer-deutsche"
+    },
+    {
+      "target_path": "domains/bmleh",
+      "before_skill_sha1": "cc898618d01be7a357527ca05c0b7900603080d2",
+      "after_skill_sha1": "cc898618d01be7a357527ca05c0b7900603080d2",
+      "metadata_category": "domains",
+      "metadata_dir_name": "bmleh"
+    },
+    {
+      "target_path": "domains/bona-fides",
+      "before_skill_sha1": "e3187c339e3fdaa62f551ec03f69ef39869bf865",
+      "after_skill_sha1": "e3187c339e3fdaa62f551ec03f69ef39869bf865",
+      "metadata_category": "domains",
+      "metadata_dir_name": "bona-fides"
+    },
+    {
+      "target_path": "domains/deal-intake",
+      "before_skill_sha1": "56aeaa514a0fd4e789090f65ae3d6b7c7b39a094",
+      "after_skill_sha1": "56aeaa514a0fd4e789090f65ae3d6b7c7b39a094",
+      "metadata_category": "domains",
+      "metadata_dir_name": "deal-intake"
+    },
+    {
+      "target_path": "domains/dokumente-intake",
+      "before_skill_sha1": "6be8d6a768f7d8bc89ed273d82d05032dc54d41a",
+      "after_skill_sha1": "6be8d6a768f7d8bc89ed273d82d05032dc54d41a",
+      "metadata_category": "domains",
+      "metadata_dir_name": "dokumente-intake"
+    },
+    {
+      "target_path": "domains/dokumente-intake-klotzkette-claude-fuer-deutsche",
+      "before_skill_sha1": "aa4d0a47b785e4ce6a5b892e2fc92561e6ab7b76",
+      "after_skill_sha1": "aa4d0a47b785e4ce6a5b892e2fc92561e6ab7b76",
+      "metadata_category": "domains",
+      "metadata_dir_name": "dokumente-intake-klotzkette-claude-fuer-deutsche"
+    },
+    {
+      "target_path": "domains/dokumente-intake-klotzkette-claude-fuer-deutsche-2",
+      "before_skill_sha1": "2ba019da0b9ee771a55298ff2507590a27a8aa00",
+      "after_skill_sha1": "2ba019da0b9ee771a55298ff2507590a27a8aa00",
+      "metadata_category": "domains",
+      "metadata_dir_name": "dokumente-intake-klotzkette-claude-fuer-deutsche-2"
+    },
+    {
+      "target_path": "domains/dokumente-intake-klotzkette-claude-fuer-deutsche-3",
+      "before_skill_sha1": "3df4763af30d9af5f8a811cd8592a75898bfd73e",
+      "after_skill_sha1": "3df4763af30d9af5f8a811cd8592a75898bfd73e",
+      "metadata_category": "domains",
+      "metadata_dir_name": "dokumente-intake-klotzkette-claude-fuer-deutsche-3"
+    },
+    {
+      "target_path": "domains/dokumente-intake-klotzkette-claude-fuer-deutsche-4",
+      "before_skill_sha1": "14a2007e7c9af63a78c0c361039d7dcff0749c7e",
+      "after_skill_sha1": "14a2007e7c9af63a78c0c361039d7dcff0749c7e",
+      "metadata_category": "domains",
+      "metadata_dir_name": "dokumente-intake-klotzkette-claude-fuer-deutsche-4"
+    },
+    {
+      "target_path": "domains/dokumente-intake-klotzkette-claude-fuer-deutsche-5",
+      "before_skill_sha1": "d475d60eedc1bda4bb44204fe3d68059c600658f",
+      "after_skill_sha1": "d475d60eedc1bda4bb44204fe3d68059c600658f",
+      "metadata_category": "domains",
+      "metadata_dir_name": "dokumente-intake-klotzkette-claude-fuer-deutsche-5"
+    },
+    {
+      "target_path": "domains/einstieg-routing",
+      "before_skill_sha1": "01f4ebeab11aaad1a776fa6bcdc71966c4c59659",
+      "after_skill_sha1": "01f4ebeab11aaad1a776fa6bcdc71966c4c59659",
+      "metadata_category": "domains",
+      "metadata_dir_name": "einstieg-routing"
+    },
+    {
+      "target_path": "domains/einstieg-routing-klotzkette-claude-fuer-deutsche",
+      "before_skill_sha1": "fed1297410b1727484be47e62a090c46ca502a8d",
+      "after_skill_sha1": "fed1297410b1727484be47e62a090c46ca502a8d",
+      "metadata_category": "domains",
+      "metadata_dir_name": "einstieg-routing-klotzkette-claude-fuer-deutsche"
+    },
+    {
+      "target_path": "domains/einstieg-routing-klotzkette-claude-fuer-deutsche-2",
+      "before_skill_sha1": "511ec5624ea7cb4173db21a081240f1ed2bf08fd",
+      "after_skill_sha1": "511ec5624ea7cb4173db21a081240f1ed2bf08fd",
+      "metadata_category": "domains",
+      "metadata_dir_name": "einstieg-routing-klotzkette-claude-fuer-deutsche-2"
+    },
+    {
+      "target_path": "domains/einstieg-routing-klotzkette-claude-fuer-deutsche-3",
+      "before_skill_sha1": "ae458153ef84fa95863c1b345c46e146f2acd976",
+      "after_skill_sha1": "ae458153ef84fa95863c1b345c46e146f2acd976",
+      "metadata_category": "domains",
+      "metadata_dir_name": "einstieg-routing-klotzkette-claude-fuer-deutsche-3"
+    },
+    {
+      "target_path": "domains/einstieg-routing-klotzkette-claude-fuer-deutsche-4",
+      "before_skill_sha1": "c169949b077bced7a14e05d0e08ad670145432ba",
+      "after_skill_sha1": "c169949b077bced7a14e05d0e08ad670145432ba",
+      "metadata_category": "domains",
+      "metadata_dir_name": "einstieg-routing-klotzkette-claude-fuer-deutsche-4"
+    },
+    {
+      "target_path": "domains/einstieg-routing-klotzkette-claude-fuer-deutsche-5",
+      "before_skill_sha1": "33ae0b79d63dcdd5baa5215996b6e9aad9dc129d",
+      "after_skill_sha1": "33ae0b79d63dcdd5baa5215996b6e9aad9dc129d",
+      "metadata_category": "domains",
+      "metadata_dir_name": "einstieg-routing-klotzkette-claude-fuer-deutsche-5"
+    },
+    {
+      "target_path": "domains/einstieg-routing-klotzkette-claude-fuer-deutsche-6",
+      "before_skill_sha1": "bce8d1318bc8ec5081844670ae002155b698cb34",
+      "after_skill_sha1": "bce8d1318bc8ec5081844670ae002155b698cb34",
+      "metadata_category": "domains",
+      "metadata_dir_name": "einstieg-routing-klotzkette-claude-fuer-deutsche-6"
+    },
+    {
+      "target_path": "domains/energievertraege",
+      "before_skill_sha1": "3037e53cdbfed393cb02983dc4cc539e2b49d5f7",
+      "after_skill_sha1": "3037e53cdbfed393cb02983dc4cc539e2b49d5f7",
+      "metadata_category": "domains",
+      "metadata_dir_name": "energievertraege"
+    },
+    {
+      "target_path": "domains/erechnung",
+      "before_skill_sha1": "4176caa3888183e1eda0c5fe2d6ee5a404901307",
+      "after_skill_sha1": "4176caa3888183e1eda0c5fe2d6ee5a404901307",
+      "metadata_category": "domains",
+      "metadata_dir_name": "erechnung"
+    },
+    {
+      "target_path": "domains/excel",
+      "before_skill_sha1": "1660327bfc37a226fb973a3c7c1202c398cb57b5",
+      "after_skill_sha1": "1660327bfc37a226fb973a3c7c1202c398cb57b5",
+      "metadata_category": "domains",
+      "metadata_dir_name": "excel"
+    },
+    {
+      "target_path": "domains/export",
+      "before_skill_sha1": "9416145dd6174d597f4e23b5d22d0d0e81d083c5",
+      "after_skill_sha1": "9416145dd6174d597f4e23b5d22d0d0e81d083c5",
+      "metadata_category": "domains",
+      "metadata_dir_name": "export"
+    },
+    {
+      "target_path": "domains/idw-iv",
+      "before_skill_sha1": "261125affd4b81f07093b3abae44d76119ed28fb",
+      "after_skill_sha1": "261125affd4b81f07093b3abae44d76119ed28fb",
+      "metadata_category": "domains",
+      "metadata_dir_name": "idw-iv"
+    },
+    {
+      "target_path": "domains/industriekunden",
+      "before_skill_sha1": "9259f49d143737d0d1a9bf992e2f44ff6dc91e71",
+      "after_skill_sha1": "9259f49d143737d0d1a9bf992e2f44ff6dc91e71",
+      "metadata_category": "domains",
+      "metadata_dir_name": "industriekunden"
+    },
+    {
+      "target_path": "domains/intake-klotzkette-claude-fuer-deutsches-recht",
+      "before_skill_sha1": "9dab0f8dd8ec1a6d562cc2e43e56aadd6a16e551",
+      "after_skill_sha1": "9dab0f8dd8ec1a6d562cc2e43e56aadd6a16e551",
+      "metadata_category": "domains",
+      "metadata_dir_name": "intake-klotzkette-claude-fuer-deutsches-recht"
+    },
+    {
+      "target_path": "domains/kaltstart",
+      "before_skill_sha1": "a9826b1978359f5cdb25e6ad8bbcc0c1ee424342",
+      "after_skill_sha1": "a9826b1978359f5cdb25e6ad8bbcc0c1ee424342",
+      "metadata_category": "domains",
+      "metadata_dir_name": "kaltstart"
+    },
+    {
+      "target_path": "domains/kaltstart-triage",
+      "before_skill_sha1": "5ce5bddd62ba82316f3aae46930d44ab3a02acf6",
+      "after_skill_sha1": "5ce5bddd62ba82316f3aae46930d44ab3a02acf6",
+      "metadata_category": "domains",
+      "metadata_dir_name": "kaltstart-triage"
+    },
+    {
+      "target_path": "domains/kaltstart-triage-klotzkette-claude-fuer-deutsche",
+      "before_skill_sha1": "dd758b8e6a2a900fa3f0337e87b22d48887536a7",
+      "after_skill_sha1": "dd758b8e6a2a900fa3f0337e87b22d48887536a7",
+      "metadata_category": "domains",
+      "metadata_dir_name": "kaltstart-triage-klotzkette-claude-fuer-deutsche"
+    },
+    {
+      "target_path": "domains/kg",
+      "before_skill_sha1": "8f3a69e44e0296354559059c50a02f9adc84c27f",
+      "after_skill_sha1": "8f3a69e44e0296354559059c50a02f9adc84c27f",
+      "metadata_category": "domains",
+      "metadata_dir_name": "kg"
+    },
+    {
+      "target_path": "domains/klage",
+      "before_skill_sha1": "fefe73cd83d71da2f53ffff94f2b09d67f4a9aff",
+      "after_skill_sha1": "fefe73cd83d71da2f53ffff94f2b09d67f4a9aff",
+      "metadata_category": "domains",
+      "metadata_dir_name": "klage"
+    },
+    {
+      "target_path": "domains/kommandocenter",
+      "before_skill_sha1": "577369a28ba4f29644ab6feb521b91ba55eb8eb1",
+      "after_skill_sha1": "577369a28ba4f29644ab6feb521b91ba55eb8eb1",
+      "metadata_category": "domains",
+      "metadata_dir_name": "kommandocenter"
+    },
+    {
+      "target_path": "domains/ma",
+      "before_skill_sha1": "2b578e56da0ce2a0a4fd2ef8f1a764df432f482a",
+      "after_skill_sha1": "2b578e56da0ce2a0a4fd2ef8f1a764df432f482a",
+      "metadata_category": "domains",
+      "metadata_dir_name": "ma"
+    },
+    {
+      "target_path": "domains/matter-file",
+      "before_skill_sha1": "ac20054f24336a8ee42e6b6664a51449ec3b88ec",
+      "after_skill_sha1": "ac20054f24336a8ee42e6b6664a51449ec3b88ec",
+      "metadata_category": "domains",
+      "metadata_dir_name": "matter-file"
+    },
+    {
+      "target_path": "domains/meldung-bfdi",
+      "before_skill_sha1": "f74f4c74147a83d6936f986f61c4ebee9ccb9269",
+      "after_skill_sha1": "f74f4c74147a83d6936f986f61c4ebee9ccb9269",
+      "metadata_category": "domains",
+      "metadata_dir_name": "meldung-bfdi"
+    },
+    {
+      "target_path": "domains/meldung-hbdi",
+      "before_skill_sha1": "0a0ad1a61fea2ee2d9e0b6a483eea4b1003b834e",
+      "after_skill_sha1": "0a0ad1a61fea2ee2d9e0b6a483eea4b1003b834e",
+      "metadata_category": "domains",
+      "metadata_dir_name": "meldung-hbdi"
+    },
+    {
+      "target_path": "domains/netz-speicher",
+      "before_skill_sha1": "21213ec36af32f4a1f0164bf694e983873236eaf",
+      "after_skill_sha1": "21213ec36af32f4a1f0164bf694e983873236eaf",
+      "metadata_category": "domains",
+      "metadata_dir_name": "netz-speicher"
+    },
+    {
+      "target_path": "domains/noxalhaftung",
+      "before_skill_sha1": "3ad800988533cc13d793c1e0fc76b94e150ba669",
+      "after_skill_sha1": "3ad800988533cc13d793c1e0fc76b94e150ba669",
+      "metadata_category": "domains",
+      "metadata_dir_name": "noxalhaftung"
+    },
+    {
+      "target_path": "domains/output-waehlen",
+      "before_skill_sha1": "e7758d8bf4334cc09307ba7f2d6285a9f6aa18b2",
+      "after_skill_sha1": "e7758d8bf4334cc09307ba7f2d6285a9f6aa18b2",
+      "metadata_category": "domains",
+      "metadata_dir_name": "output-waehlen"
+    },
+    {
+      "target_path": "domains/output-waehlen-klotzkette-claude-fuer-deutsche",
+      "before_skill_sha1": "d29a8b919dd8309f1bc0790277396475d9d02bbe",
+      "after_skill_sha1": "d29a8b919dd8309f1bc0790277396475d9d02bbe",
+      "metadata_category": "domains",
+      "metadata_dir_name": "output-waehlen-klotzkette-claude-fuer-deutsche"
+    },
+    {
+      "target_path": "domains/output-waehlen-klotzkette-claude-fuer-deutsche-2",
+      "before_skill_sha1": "5289b51a4607c9f048a2655d0ad3494e63b6a2fa",
+      "after_skill_sha1": "5289b51a4607c9f048a2655d0ad3494e63b6a2fa",
+      "metadata_category": "domains",
+      "metadata_dir_name": "output-waehlen-klotzkette-claude-fuer-deutsche-2"
+    },
+    {
+      "target_path": "domains/output-waehlen-klotzkette-claude-fuer-deutsche-3",
+      "before_skill_sha1": "41f480350b555f9b3c15dbc63fcc1b1be7d74b54",
+      "after_skill_sha1": "41f480350b555f9b3c15dbc63fcc1b1be7d74b54",
+      "metadata_category": "domains",
+      "metadata_dir_name": "output-waehlen-klotzkette-claude-fuer-deutsche-3"
+    },
+    {
+      "target_path": "domains/output-waehlen-klotzkette-claude-fuer-deutsche-4",
+      "before_skill_sha1": "bb2a48d23dc6df119e5ae96a8f04fda7070dcd6f",
+      "after_skill_sha1": "bb2a48d23dc6df119e5ae96a8f04fda7070dcd6f",
+      "metadata_category": "domains",
+      "metadata_dir_name": "output-waehlen-klotzkette-claude-fuer-deutsche-4"
+    },
+    {
+      "target_path": "domains/output-waehlen-klotzkette-claude-fuer-deutsche-5",
+      "before_skill_sha1": "2fd9031123b48a068016604acc72c7bec18bbd62",
+      "after_skill_sha1": "2fd9031123b48a068016604acc72c7bec18bbd62",
+      "metadata_category": "domains",
+      "metadata_dir_name": "output-waehlen-klotzkette-claude-fuer-deutsche-5"
+    },
+    {
+      "target_path": "domains/output-waehlen-klotzkette-claude-fuer-deutsche-6",
+      "before_skill_sha1": "5d5c9e7dcf44ab7a9bba46f62ce9dffc66667ddd",
+      "after_skill_sha1": "5d5c9e7dcf44ab7a9bba46f62ce9dffc66667ddd",
+      "metadata_category": "domains",
+      "metadata_dir_name": "output-waehlen-klotzkette-claude-fuer-deutsche-6"
+    },
+    {
+      "target_path": "domains/output-waehlen-klotzkette-claude-fuer-deutsche-7",
+      "before_skill_sha1": "2ab56a4e38ae67f4911dd7ce59d6032fa6ce9b85",
+      "after_skill_sha1": "2ab56a4e38ae67f4911dd7ce59d6032fa6ce9b85",
+      "metadata_category": "domains",
+      "metadata_dir_name": "output-waehlen-klotzkette-claude-fuer-deutsche-7"
+    },
+    {
+      "target_path": "domains/output-waehlen-klotzkette-claude-fuer-deutsche-8",
+      "before_skill_sha1": "935519f178a25736773cfe9f355808a7898c505c",
+      "after_skill_sha1": "935519f178a25736773cfe9f355808a7898c505c",
+      "metadata_category": "domains",
+      "metadata_dir_name": "output-waehlen-klotzkette-claude-fuer-deutsche-8"
+    },
+    {
+      "target_path": "domains/postlauf",
+      "before_skill_sha1": "d9399613c49a62f88ea0ce204cbf543113370e9f",
+      "after_skill_sha1": "d9399613c49a62f88ea0ce204cbf543113370e9f",
+      "metadata_category": "domains",
+      "metadata_dir_name": "postlauf"
+    },
+    {
+      "target_path": "domains/quellen-livecheck",
+      "before_skill_sha1": "09fb5bc1dbe5584aacfca35bbae8e243df7fac37",
+      "after_skill_sha1": "09fb5bc1dbe5584aacfca35bbae8e243df7fac37",
+      "metadata_category": "domains",
+      "metadata_dir_name": "quellen-livecheck"
+    },
+    {
+      "target_path": "domains/quellen-livecheck-klotzkette-claude-fuer-deutsche",
+      "before_skill_sha1": "432b7feaca4c854818995f79595bbd6367e8e541",
+      "after_skill_sha1": "432b7feaca4c854818995f79595bbd6367e8e541",
+      "metadata_category": "domains",
+      "metadata_dir_name": "quellen-livecheck-klotzkette-claude-fuer-deutsche"
+    },
+    {
+      "target_path": "domains/quellen-livecheck-klotzkette-claude-fuer-deutsche-2",
+      "before_skill_sha1": "53b761c7d7c59c2cdceeff869004b34987490906",
+      "after_skill_sha1": "53b761c7d7c59c2cdceeff869004b34987490906",
+      "metadata_category": "domains",
+      "metadata_dir_name": "quellen-livecheck-klotzkette-claude-fuer-deutsche-2"
+    },
+    {
+      "target_path": "domains/quellenkarte",
+      "before_skill_sha1": "52a5a47d071116f76d802c514e046923b3a816db",
+      "after_skill_sha1": "52a5a47d071116f76d802c514e046923b3a816db",
+      "metadata_category": "domains",
+      "metadata_dir_name": "quellenkarte"
+    },
+    {
+      "target_path": "domains/rechtsquellen",
+      "before_skill_sha1": "656fd4b899204f5d9e3aa1e271935bd94b6eb80a",
+      "after_skill_sha1": "656fd4b899204f5d9e3aa1e271935bd94b6eb80a",
+      "metadata_category": "domains",
+      "metadata_dir_name": "rechtsquellen"
+    },
+    {
+      "target_path": "domains/rechtsquellen-klotzkette-claude-fuer-deutsche",
+      "before_skill_sha1": "590f223dd4e37f13cd9727b5275100896dabdadf",
+      "after_skill_sha1": "590f223dd4e37f13cd9727b5275100896dabdadf",
+      "metadata_category": "domains",
+      "metadata_dir_name": "rechtsquellen-klotzkette-claude-fuer-deutsche"
+    },
+    {
+      "target_path": "domains/rechtsquellen-klotzkette-claude-fuer-deutsche-2",
+      "before_skill_sha1": "831c1b27b751608ba17ce17625e123a8f880849b",
+      "after_skill_sha1": "831c1b27b751608ba17ce17625e123a8f880849b",
+      "metadata_category": "domains",
+      "metadata_dir_name": "rechtsquellen-klotzkette-claude-fuer-deutsche-2"
+    },
+    {
+      "target_path": "domains/redline-qa",
+      "before_skill_sha1": "e44544ab792effcd7980c7c1e2064f0ed1f26a32",
+      "after_skill_sha1": "e44544ab792effcd7980c7c1e2064f0ed1f26a32",
+      "metadata_category": "domains",
+      "metadata_dir_name": "redline-qa"
+    },
+    {
+      "target_path": "domains/ressort-aa",
+      "before_skill_sha1": "8f8d856d50c3497136b129a14d665d87edbeccb3",
+      "after_skill_sha1": "8f8d856d50c3497136b129a14d665d87edbeccb3",
+      "metadata_category": "domains",
+      "metadata_dir_name": "ressort-aa"
+    },
+    {
+      "target_path": "domains/sgb-sg",
+      "before_skill_sha1": "7925dbb90ba950a7a3f308193682438e0d1877ca",
+      "after_skill_sha1": "7925dbb90ba950a7a3f308193682438e0d1877ca",
+      "metadata_category": "domains",
+      "metadata_dir_name": "sgb-sg"
+    },
+    {
+      "target_path": "domains/standard",
+      "before_skill_sha1": "ec8d4141b862917451fcc55f28ba664f97a475d6",
+      "after_skill_sha1": "ec8d4141b862917451fcc55f28ba664f97a475d6",
+      "metadata_category": "domains",
+      "metadata_dir_name": "standard"
+    },
+    {
+      "target_path": "domains/stipulatio",
+      "before_skill_sha1": "7937624ead48cea521e8fafa830c3d95f0e52885",
+      "after_skill_sha1": "7937624ead48cea521e8fafa830c3d95f0e52885",
+      "metadata_category": "domains",
+      "metadata_dir_name": "stipulatio"
+    },
+    {
+      "target_path": "domains/transaktionen-dd",
+      "before_skill_sha1": "f258a1682b6b9b2fad1885167cc58ebaf3257430",
+      "after_skill_sha1": "f258a1682b6b9b2fad1885167cc58ebaf3257430",
+      "metadata_category": "domains",
+      "metadata_dir_name": "transaktionen-dd"
+    },
+    {
+      "target_path": "domains/transaktionen-dd-klotzkette-claude-fuer-deutsche",
+      "before_skill_sha1": "4377a91f64252991d58133e937deb0ebbcc53c02",
+      "after_skill_sha1": "4377a91f64252991d58133e937deb0ebbcc53c02",
+      "metadata_category": "domains",
+      "metadata_dir_name": "transaktionen-dd-klotzkette-claude-fuer-deutsche"
+    },
+    {
+      "target_path": "domains/unterlagen-luecken",
+      "before_skill_sha1": "16377535866322013a6dd3168cff72ec00fc3911",
+      "after_skill_sha1": "16377535866322013a6dd3168cff72ec00fc3911",
+      "metadata_category": "domains",
+      "metadata_dir_name": "unterlagen-luecken"
+    },
+    {
+      "target_path": "domains/verfahren",
+      "before_skill_sha1": "f52170a18ace61cf12bb080bcb1408966cda8c1c",
+      "after_skill_sha1": "f52170a18ace61cf12bb080bcb1408966cda8c1c",
+      "metadata_category": "domains",
+      "metadata_dir_name": "verfahren"
+    },
+    {
+      "target_path": "domains/verfahren-klotzkette-claude-fuer-deutsche",
+      "before_skill_sha1": "bc44c2a8b1077e77dfeb8bb9f1b178d4ead38790",
+      "after_skill_sha1": "bc44c2a8b1077e77dfeb8bb9f1b178d4ead38790",
+      "metadata_category": "domains",
+      "metadata_dir_name": "verfahren-klotzkette-claude-fuer-deutsche"
+    },
+    {
+      "target_path": "domains/waerme-quartier",
+      "before_skill_sha1": "fd496e9c253289236cfdbf79a58fa91103678d88",
+      "after_skill_sha1": "fd496e9c253289236cfdbf79a58fa91103678d88",
+      "metadata_category": "domains",
+      "metadata_dir_name": "waerme-quartier"
+    },
+    {
+      "target_path": "domains/wettbewerb",
+      "before_skill_sha1": "66c5e5c625906ee20164848bed51f1fc4bee05cf",
+      "after_skill_sha1": "66c5e5c625906ee20164848bed51f1fc4bee05cf",
+      "metadata_category": "domains",
+      "metadata_dir_name": "wettbewerb"
+    },
+    {
+      "target_path": "domains/widerspruch",
+      "before_skill_sha1": "426cae452813efb79c0d77e0ecdf396256ae24a6",
+      "after_skill_sha1": "426cae452813efb79c0d77e0ecdf396256ae24a6",
+      "metadata_category": "domains",
+      "metadata_dir_name": "widerspruch"
+    },
+    {
+      "target_path": "domains/word",
+      "before_skill_sha1": "280c559131618785926dac8e798206f424fd810e",
+      "after_skill_sha1": "280c559131618785926dac8e798206f424fd810e",
+      "metadata_category": "domains",
+      "metadata_dir_name": "word"
+    },
+    {
+      "target_path": "domains/zeitleiste",
+      "before_skill_sha1": "267fb54836d92a1d0b251822ae9871e718f6cf12",
+      "after_skill_sha1": "267fb54836d92a1d0b251822ae9871e718f6cf12",
+      "metadata_category": "domains",
+      "metadata_dir_name": "zeitleiste"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "kai-growth-plan",
+  "repo": "cgallic/kai-cmo-harness",
+  "path": "harness/skills/kai-growth-plan/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/cgallic/kai-cmo-harness",
+  "dir_name": "kai-growth-plan",
+  "downloaded_at": "2026-06-05T04:05:35.789123Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "reviewed",
+    "method": "manual_source_batch_v1",
+    "confidence": "high",
+    "reason": "CMO/marketing operations skills covering ads, content, analytics, growth plans, monthly audits, offers, positioning, and lifecycle marketing.",
+    "signals": [
+      "source_repo",
+      "marketing_terms"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "cgallic",
+  "source_url": "https://github.com/cgallic/kai-cmo-harness/blob/main/harness/skills/kai-growth-plan/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/cgallic/kai-cmo-harness/blob/main/harness/skills/kai-growth-plan/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Generate a stage-appropriate marketing plan based on your company's MRR/stage. Uses the marketing-by-stage playbook to tell you exactly what to do (and what NOT to do) at pre-launch, early ($0-10K MRR), growth ($10-100K MRR), or scale ($100K+ MRR). Use when \"what should I do for marketing\", \"growth plan\", \"marketing plan\", \"I just raised a round\", \"marketing strategy\", \"what's the right marketing for my stage\", \"GTM strategy\", or any request for a stage-appropriate marketing roadmap."
+}

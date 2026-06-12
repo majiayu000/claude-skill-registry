@@ -1,0 +1,48 @@
+{
+  "issue": 89,
+  "batch": "2026-06-11-reviewed-source-batch-022",
+  "source_category": "other",
+  "planned_moves": 50,
+  "source_mappings": [
+    {
+      "source_repo": "0xGhostCAT/claude-ai-cyber-security-skills",
+      "target_category": "security",
+      "rationale": "Bug bounty and application-security hunting skills with threat modeling, JS analysis, content discovery, auth bypass, SSRF, SQLi, XSS, and IDOR coverage."
+    },
+    {
+      "source_repo": "elementalsouls/Claude-BugHunter",
+      "target_category": "security",
+      "rationale": "Bug-hunting security skills for brute force, CORS, LDAP/NoSQL injection, session management, source leaks, TLS/network, and related vulnerability classes."
+    },
+    {
+      "source_repo": "cgallic/kai-cmo-harness",
+      "target_category": "marketing",
+      "rationale": "CMO/marketing operations skills covering ads, content, analytics, growth plans, monthly audits, offers, positioning, and lifecycle marketing."
+    },
+    {
+      "source_repo": "CesiumGS/cesiumjs-skills",
+      "target_category": "development",
+      "rationale": "CesiumJS SDK development skills covering 3D Tiles, entities, imagery, interaction, primitives, spatial math, terrain, time, viewer, and widgets."
+    }
+  ],
+  "planned_by_repo": {
+    "0xGhostCAT/claude-ai-cyber-security-skills": 15,
+    "elementalsouls/Claude-BugHunter": 9,
+    "cgallic/kai-cmo-harness": 15,
+    "CesiumGS/cesiumjs-skills": 11
+  },
+  "collision_count": 0,
+  "decision": "migrate reviewed high-confidence residual source groups from other into specific categories",
+  "before_counts": {
+    "other": 933,
+    "security": 5340,
+    "marketing": 3187,
+    "development": 39461
+  },
+  "excluded_reviewed_candidates": [
+    {
+      "source_repo": "bitwize-music-studio/claude-ai-music-skills",
+      "reason": "current residual rows are plugin/about entries with weak archive category signal; left fail-closed in other for a separate review"
+    }
+  ]
+}

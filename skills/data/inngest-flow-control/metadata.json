@@ -1,0 +1,37 @@
+{
+  "name": "inngest-flow-control",
+  "repo": "inngest/inngest-skills",
+  "path": "skills/inngest-flow-control/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/inngest/inngest-skills",
+  "dir_name": "inngest-flow-control",
+  "downloaded_at": "2026-06-12T04:23:18.496137Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "data",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for data: data, database",
+    "score": 2,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "data",
+      "database"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "inngest",
+  "source_url": "https://github.com/inngest/inngest-skills/blob/main/skills/inngest-flow-control/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/inngest/inngest-skills/blob/main/skills/inngest-flow-control/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when handling external API rate limits (e.g., OpenAI 429s, HubSpot or Stripe rate limits), preventing duplicate work from rapid event bursts (debouncing user actions), spreading load over time, ensuring per-tenant fairness, processing events in batches, limiting concurrent runs of the same operation, or assigning priority to important runs. Covers Inngest flow control: concurrency limits with keys, throttling, rate limiting, debounce, priority, singleton, and event batching."
+}

@@ -1,0 +1,39 @@
+{
+  "name": "codebase-overview",
+  "repo": "notque/vexjoy-agent",
+  "path": "skills/research/codebase-overview/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/notque/vexjoy-agent",
+  "dir_name": "codebase-overview-notque-vexjoy-agent",
+  "downloaded_at": "2026-06-12T04:29:30.746103Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for development: dev, code, framework, build",
+    "score": 4,
+    "runner_up": "analysis",
+    "runner_up_score": 2,
+    "signals": [
+      "dev",
+      "code",
+      "framework",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "notque",
+  "source_url": "https://github.com/notque/vexjoy-agent/blob/main/skills/research/codebase-overview/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/notque/vexjoy-agent/blob/main/skills/research/codebase-overview/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Systematic codebase exploration and architecture mapping."
+}

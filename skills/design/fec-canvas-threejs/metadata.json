@@ -1,0 +1,38 @@
+{
+  "name": "fec-canvas-threejs",
+  "repo": "bovinphang/frontend-craft",
+  "path": "localized/zh-CN/skills/fec-canvas-threejs/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/bovinphang/frontend-craft",
+  "dir_name": "fec-canvas-threejs",
+  "downloaded_at": "2026-06-12T04:16:12.527143Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for design: ui, css, animation",
+    "score": 3,
+    "runner_up": "workflow",
+    "runner_up_score": 2,
+    "signals": [
+      "ui",
+      "css",
+      "animation"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "bovinphang",
+  "source_url": "https://github.com/bovinphang/frontend-craft/blob/main/localized/zh-CN/skills/fec-canvas-threejs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bovinphang/frontend-craft/blob/main/localized/zh-CN/skills/fec-canvas-threejs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u7528\u4e8e\u6784\u5efa\u6216\u5ba1\u67e5 Canvas 2D\u3001Three.js/WebGL\u3001React Three Fiber\u3001GLSL shader\u3001ShaderToy \u5230 WebGL \u9002\u914d\u30012D/3D \u53ef\u89c6\u5316\u3001\u6e38\u620f\u6e32\u67d3\u3001\u52a8\u753b\u5faa\u73af\u3001GPU \u8d44\u6e90\u6e05\u7406\u6216\u6e32\u67d3\u6027\u80fd\u3002\u4e0d\u8981\u7528\u4e8e\u6807\u51c6 DOM UI\u3001\u5df2\u6709\u56fe\u8868\u5e93\u8986\u76d6\u7684\u56fe\u8868\u6216\u975e\u56fe\u5f62\u7c7b\u6027\u80fd\u5de5\u4f5c\uff1b\u4e2d\u6587\u89e6\u53d1\u8bcd\u5305\u62ec Canvas\u3001Three.js\u3001WebGL\u3001GLSL\u3001Shader\u30013D\u3001\u6570\u636e\u53ef\u89c6\u5316\u3001\u6e38\u620f\u3002"
+}

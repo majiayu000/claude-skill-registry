@@ -1,0 +1,14 @@
+{
+  "issue": 89,
+  "batch": "2026-06-11-reviewed-source-batch-022-correction",
+  "parent_pr": 99,
+  "decision": "correct three weaker Kai classifications identified during post-merge review",
+  "planned_moves": 3,
+  "source_category": "marketing",
+  "target_categories": [
+    "devops",
+    "workflow",
+    "design"
+  ],
+  "rationale": "Post-merge read-only review agreed the main reviewed batch fit, but flagged three Kai entries whose primary semantics are operations/workflow/design rather than marketing."
+}

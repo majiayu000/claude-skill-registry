@@ -1,0 +1,38 @@
+{
+  "name": "inngest-api-cli",
+  "repo": "inngest/inngest-skills",
+  "path": "skills/inngest-api-cli/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/inngest/inngest-skills",
+  "dir_name": "inngest-api-cli",
+  "downloaded_at": "2026-06-12T04:23:20.832770Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: api=3, development=3",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 3,
+    "signals": [
+      "api",
+      "endpoint",
+      "openapi"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "inngest",
+  "source_url": "https://github.com/inngest/inngest-skills/blob/main/skills/inngest-api-cli/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/inngest/inngest-skills/blob/main/skills/inngest-api-cli/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when operating Inngest API resources from the terminal with `npx inngest-cli@latest api`: Cloud/local run debugging, event-run lookup, function traces, function invocation, app syncs, webhooks, environments, keys, account checks, and Insights queries. Provides prescriptive command routing for agents: which CLI command to run for a run ID, event ID, app ID, function ID, Cloud environment, API key, missing ID, or potentially mutating operation. Use `inngest-cli` for dev server setup/general CLI workflows and `inngest-api` only when raw REST API v2 docs or OpenAPI fallback are needed."
+}

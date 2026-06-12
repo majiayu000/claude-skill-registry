@@ -15,6 +15,10 @@
   "stars": 0,
   "source": "Community Skills",
   "dir_name": "humanizar-texto-es-toniperea-humanizar-texto-es-16",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "README.md"
+  ],
   "author": "ToniPerea",
   "source_url": "https://github.com/ToniPerea/humanizar-texto-es/blob/main/SKILL.md",
   "license": "NOASSERTION",

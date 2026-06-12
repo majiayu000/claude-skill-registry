@@ -1,0 +1,41 @@
+{
+  "name": "super-product-owner",
+  "repo": "syahiidkamil/Software-Engineer-AI-Agent-Atlas",
+  "path": ".claude/skills/super-product-owner/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/syahiidkamil/Software-Engineer-AI-Agent-Atlas",
+  "dir_name": "super-product-owner",
+  "downloaded_at": "2026-06-12T04:33:43.394359Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "product",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for product: product, roadmap, feature, backlog, user-research, metrics",
+    "score": 6,
+    "runner_up": "design",
+    "runner_up_score": 3,
+    "signals": [
+      "product",
+      "roadmap",
+      "feature",
+      "backlog",
+      "user-research",
+      "metrics"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "syahiidkamil",
+  "source_url": "https://github.com/syahiidkamil/Software-Engineer-AI-Agent-Atlas/blob/main/.claude/skills/super-product-owner/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/syahiidkamil/Software-Engineer-AI-Agent-Atlas/blob/main/.claude/skills/super-product-owner/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Complete Product Owner / Product Manager capability \u2014 a wiki-style knowledge map of product practice in active software development: the role and its boundaries, strategy cascade (vision \u2192 OKRs \u2192 roadmap \u2192 backlog), continuous discovery, backlog craft (epics, INVEST stories, acceptance criteria), prioritization frameworks (RICE, MoSCoW, Kano, WSJF), sprint delivery, metrics (North Star, AARRR), stakeholder management, and anti-patterns. The PO/PM owns what gets built, in what order, and why \u2014 including the end-to-end user flows and user journeys. Use when scoping a product or feature, decomposing an idea into outcomes/epics/stories, prioritizing a backlog, defining an MVP, mapping user journeys, measuring success, or saying no to a stakeholder. Pairs with super-ui-ux-design, which owns how each screen looks and behaves."
+}

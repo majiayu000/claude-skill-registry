@@ -1,0 +1,37 @@
+{
+  "name": "fec-testing-strategy",
+  "repo": "bovinphang/frontend-craft",
+  "path": "localized/zh-CN/skills/fec-testing-strategy/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/bovinphang/frontend-craft",
+  "dir_name": "fec-testing-strategy",
+  "downloaded_at": "2026-06-12T04:16:13.290560Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "testing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for testing: test, e2e",
+    "score": 2,
+    "runner_up": "api",
+    "runner_up_score": 1,
+    "signals": [
+      "test",
+      "e2e"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "bovinphang",
+  "source_url": "https://github.com/bovinphang/frontend-craft/blob/main/localized/zh-CN/skills/fec-testing-strategy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bovinphang/frontend-craft/blob/main/localized/zh-CN/skills/fec-testing-strategy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u7528\u4e8e\u89c4\u5212\u6216\u5ba1\u67e5\u524d\u7aef\u6d4b\u8bd5\u7b56\u7565\uff0c\u6309\u98ce\u9669\u9009\u62e9\u6b63\u786e\u6d4b\u8bd5\u5c42\u7ea7\uff0c\u5c06\u8986\u76d6\u6620\u5c04\u5230\u9759\u6001\u68c0\u67e5\u3001\u5355\u5143\u6d4b\u8bd5\u3001\u7ec4\u4ef6\u6d4b\u8bd5\u3001\u96c6\u6210\u6d4b\u8bd5\u3001E2E\u3001Storybook/\u89c6\u89c9\u56de\u5f52\u3001a11y\u3001\u5b89\u5168\u3001\u6027\u80fd\u6216 CI gates\u3002\u4e0d\u8981\u7528\u4e8e\u7f16\u5199\u5355\u4e2a\u7ec4\u4ef6/E2E \u6d4b\u8bd5\u6216\u53ea\u662f\u8fd0\u884c\u73b0\u6709\u9a8c\u8bc1\u547d\u4ee4\uff1b\u4e2d\u6587\u89e6\u53d1\u8bcd\u5305\u62ec \u6d4b\u8bd5\u7b56\u7565\u3001\u6d4b\u8bd5\u5206\u5c42\u3001\u6d4b\u8bd5\u8ba1\u5212\u3001\u8986\u76d6\u77e9\u9635\u3002"
+}

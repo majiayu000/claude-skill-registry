@@ -1,0 +1,37 @@
+{
+  "name": "fec-typescript-project-standard",
+  "repo": "bovinphang/frontend-craft",
+  "path": "localized/zh-CN/skills/fec-typescript-project-standard/SKILL.md",
+  "github_branch": "main",
+  "category": "api",
+  "source": "github.com/bovinphang/frontend-craft",
+  "dir_name": "fec-typescript-project-standard",
+  "downloaded_at": "2026-06-12T04:16:15.570284Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "api",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for api: api, sdk",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "api",
+      "sdk"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "bovinphang",
+  "source_url": "https://github.com/bovinphang/frontend-craft/blob/main/localized/zh-CN/skills/fec-typescript-project-standard/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bovinphang/frontend-craft/blob/main/localized/zh-CN/skills/fec-typescript-project-standard/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u7528\u4e8e\u521b\u5efa\u3001\u914d\u7f6e\u3001\u5ba1\u67e5\u6216\u8c03\u8bd5\u524d\u7aef\u5e94\u7528\u3001\u5e93\u3001SDK\u3001CLI\u3001monorepo \u5305\u4e2d\u7684 TypeScript \u9879\u76ee\u89c4\u8303\uff0c\u5305\u62ec tsconfig\u3001strictness\u3001module/moduleResolution\u3001\u8def\u5f84\u522b\u540d\u3001project references\u3001\u58f0\u660e\u6587\u4ef6\u3001package exports\u3001\u516c\u5171 API \u7c7b\u578b\u3001DTO\u3001\u9ad8\u7ea7\u6cdb\u578b\u3001\u5224\u522b\u8054\u5408\u3001\u7c7b\u578b\u5b88\u536b\u3001\u7c7b\u578b\u6536\u7a84\u6216\u7c7b\u578b\u7ea7\u56de\u5f52\u3002React/Vue/Next/Nuxt \u7ec4\u4ef6\u67b6\u6784\u4f18\u5148\u4f7f\u7528\u6846\u67b6\u9879\u76ee skill\uff1b\u4e2d\u6587\u89e6\u53d1\u8bcd\u5305\u62ec TypeScript \u9879\u76ee\u89c4\u8303\u3001TS \u9879\u76ee\u89c4\u8303\u3001TypeScript \u7c7b\u578b\u5b89\u5168\u3001\u7c7b\u578b\u5efa\u6a21\u3001\u6cdb\u578b\u3001\u5224\u522b\u8054\u5408\u3001\u7c7b\u578b\u6536\u7a84\u3001tsconfig\u3001\u58f0\u660e\u6587\u4ef6\u3002"
+}

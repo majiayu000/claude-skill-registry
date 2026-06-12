@@ -1,0 +1,15 @@
+{
+  "issue": 89,
+  "batch": "2026-06-11-synced-klotzkette-other-batch-021",
+  "source_repo": "Klotzkette/claude-fuer-deutsches-recht",
+  "source_category": "other",
+  "target_category": "domains",
+  "planned_moves": 90,
+  "collision_count": 1,
+  "decision": "migrate reviewed Klotzkette German-law/domain skills from other to domains",
+  "rationale": "Issue #89 previous reviewed Klotzkette batches established this source repository as legal/domain-specific content. The 2026-06-11 archive sync introduced another high-confidence residual set from the same source.",
+  "before_counts": {
+    "other": 1023,
+    "domains": 3154
+  }
+}

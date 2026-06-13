@@ -1,0 +1,38 @@
+{
+  "name": "customise-workflow",
+  "repo": "anombyte93/prd-taskmaster",
+  "path": "skills/customise-workflow/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/anombyte93/prd-taskmaster",
+  "dir_name": "customise-workflow",
+  "downloaded_at": "2026-06-13T04:02:33.824251Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script, cli",
+    "score": 3,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "anombyte93",
+  "source_url": "https://github.com/anombyte93/prd-taskmaster/blob/main/skills/customise-workflow/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anombyte93/prd-taskmaster/blob/main/skills/customise-workflow/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Customise the prd-taskmaster plugin workflow via curated brainstorm questions. The AI asks, the user answers in plain English, and the skill writes their preferences to .atlas-ai/config/atlas.json. Future runs of prd-taskmaster read that file and apply user preferences to phase gates, validation strictness, default provider, preferred execution mode, and template choice. For deeper tweaks beyond the curated questions, users can hand-edit files in .atlas-ai/customizations/. Use when the user says \"customise workflow\", \"customize workflow\", \"adjust my PRD settings\", \"tune the skill\", or wants to change how prd-taskmaster behaves."
+}

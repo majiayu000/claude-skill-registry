@@ -1,0 +1,37 @@
+{
+  "name": "statistical-power",
+  "repo": "K-Dense-AI/scientific-agent-skills",
+  "path": "skills/statistical-power/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/K-Dense-AI/scientific-agent-skills",
+  "dir_name": "statistical-power",
+  "downloaded_at": "2026-06-13T03:55:36.602218Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: analysis=2, planning=2",
+    "score": 2,
+    "runner_up": "planning",
+    "runner_up_score": 2,
+    "signals": [
+      "analysis",
+      "analyze"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "K-Dense-AI",
+  "source_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/statistical-power/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/statistical-power/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Sample-size and statistical power calculations for planning studies. Use whenever someone asks \"how many subjects/samples/replicates do I need\", wants an a priori power analysis, a minimum detectable effect (MDE), a power curve, or needs to justify a sample size for a grant, IRB protocol, or pre-registration. Covers closed-form power for t-tests, ANOVA, proportions, correlations, chi-square, and regression, plus simulation-based (Monte Carlo) power for designs with no formula \u2014 logistic/Poisson regression, mixed models, cluster-randomized trials, survival, and interactions. Use this skill even when the request only mentions an effect size, alpha, or \"80% power\" without saying \"power analysis\" explicitly. For laying out the study (randomization, blocking, factorial/DOE, crossover, sequential designs) use experimental-design; for analyzing data already collected and reporting it use statistical-analysis."
+}

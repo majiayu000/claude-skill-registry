@@ -1,0 +1,38 @@
+{
+  "name": "go",
+  "repo": "anombyte93/prd-taskmaster",
+  "path": "skills/go/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/anombyte93/prd-taskmaster",
+  "dir_name": "go-anombyte93-prd-taskmaster",
+  "downloaded_at": "2026-06-13T04:02:32.249080Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, build, software",
+    "score": 3,
+    "runner_up": "product",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build",
+      "software"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "anombyte93",
+  "source_url": "https://github.com/anombyte93/prd-taskmaster/blob/main/skills/go/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anombyte93/prd-taskmaster/blob/main/skills/go/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Zero-config goal-to-tasks engine. Takes any goal (software, pentest, business, learning), runs adaptive discovery, generates a validated spec, parses into TaskMaster tasks, creates an implementation plan, and executes with built-in CDD verification. Use when user says \"PRD\", \"product requirements\", \"I want to build\", or any goal-driven phrase."
+}

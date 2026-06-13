@@ -1,0 +1,37 @@
+{
+  "name": "muapi-chibi-collage-effect",
+  "repo": "SamurAIGPT/Generative-Media-Skills",
+  "path": "library/visual/chibi-collage-effect/SKILL.md",
+  "github_branch": "main",
+  "category": "analysis",
+  "source": "github.com/SamurAIGPT/Generative-Media-Skills",
+  "dir_name": "chibi-collage-effect",
+  "downloaded_at": "2026-06-13T03:58:44.026790Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "analysis",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for analysis: analysis, analyze",
+    "score": 2,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "analysis",
+      "analyze"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "SamurAIGPT",
+  "source_url": "https://github.com/SamurAIGPT/Generative-Media-Skills/blob/main/library/visual/chibi-collage-effect/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SamurAIGPT/Generative-Media-Skills/blob/main/library/visual/chibi-collage-effect/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Turn a real lifestyle photo into a polished \"chibi clone sticker diary\" image \u2014 the original person stays photorealistic, surrounded by 5\u20138 kawaii chibi mini-clones, scrapbook doodles, and handwritten-style captions that match the scene."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "continuity-loop",
+  "repo": "boshu2/agentops",
+  "path": "skills-codex/continuity-loop/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/boshu2/agentops",
+  "dir_name": "continuity-loop",
+  "downloaded_at": "2026-06-13T04:03:57.413758Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: shell, script",
+    "score": 2,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "shell",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "boshu2",
+  "source_url": "https://github.com/boshu2/agentops/blob/main/skills-codex/continuity-loop/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/boshu2/agentops/blob/main/skills-codex/continuity-loop/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Own the unattended renewal spine: renewal ticks, the two-tick stall rule, and escalation for NTM panes coordinated over MCP Agent Mail."
+}

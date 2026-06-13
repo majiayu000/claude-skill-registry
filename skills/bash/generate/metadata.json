@@ -1,0 +1,38 @@
+{
+  "name": "generate",
+  "repo": "anombyte93/prd-taskmaster",
+  "path": "skills/generate/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/anombyte93/prd-taskmaster",
+  "dir_name": "generate",
+  "downloaded_at": "2026-06-13T04:02:32.046453Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script, cli",
+    "score": 3,
+    "runner_up": "ai-ml",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "anombyte93",
+  "source_url": "https://github.com/anombyte93/prd-taskmaster/blob/main/skills/generate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anombyte93/prd-taskmaster/blob/main/skills/generate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Phase 2 of the prd-taskmaster pipeline: spec generation and task parsing. Loads a template (comprehensive|minimal), fills it with DISCOVER-phase constraints and answers, validates the spec (placeholders_found, grade thresholds), parses the PRD into tasks via task-master, runs TaskMaster's native complexity analysis, and expands every task into verifiable subtasks. Autonomous-safe. Declares GENERATE complete so HANDOFF can follow."
+}

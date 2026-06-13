@@ -1,0 +1,37 @@
+{
+  "name": "muapi-logo-creator",
+  "repo": "SamurAIGPT/Generative-Media-Skills",
+  "path": "library/visual/logo-creator/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/SamurAIGPT/Generative-Media-Skills",
+  "dir_name": "logo-creator",
+  "downloaded_at": "2026-06-13T03:58:43.490984Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-llm=2, ai-ml=2",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "SamurAIGPT",
+  "source_url": "https://github.com/SamurAIGPT/Generative-Media-Skills/blob/main/library/visual/logo-creator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SamurAIGPT/Generative-Media-Skills/blob/main/library/visual/logo-creator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Engineer professional-grade brand logos using geometric primitives and negative space \u2014 generates minimalist, scalable vector-style marks via muapi.ai"
+}

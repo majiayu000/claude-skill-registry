@@ -1,0 +1,37 @@
+{
+  "name": "discover",
+  "repo": "anombyte93/prd-taskmaster",
+  "path": "skills/discover/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/anombyte93/prd-taskmaster",
+  "dir_name": "discover",
+  "downloaded_at": "2026-06-13T04:02:31.879875Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: product=2, writing=2",
+    "score": 2,
+    "runner_up": "writing",
+    "runner_up_score": 2,
+    "signals": [
+      "prd",
+      "metrics"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "anombyte93",
+  "source_url": "https://github.com/anombyte93/prd-taskmaster/blob/main/skills/discover/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anombyte93/prd-taskmaster/blob/main/skills/discover/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Phase 1 of the prd-taskmaster pipeline: brainstorm-driven discovery. Delegates to superpowers:brainstorming in Interactive Mode (one adaptive question at a time), or self-brainstorms in Autonomous Mode when no user is present. Intercepts before the brainstorming chain hands off to writing-plans \u2014 this skill owns the exit. Extracts constraints, calibrates scale (Solo / Team / Enterprise), and advances the pipeline to GENERATE."
+}

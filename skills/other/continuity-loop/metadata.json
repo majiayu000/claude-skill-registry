@@ -1,0 +1,37 @@
+{
+  "name": "continuity-loop",
+  "repo": "boshu2/agentops",
+  "path": "skills/continuity-loop/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/boshu2/agentops",
+  "dir_name": "continuity-loop",
+  "downloaded_at": "2026-06-13T04:03:55.566001Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: orchestration=2, productivity=2",
+    "score": 2,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "orchestration",
+      "multi-agent"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "boshu2",
+  "source_url": "https://github.com/boshu2/agentops/blob/main/skills/continuity-loop/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/boshu2/agentops/blob/main/skills/continuity-loop/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Own the unattended renewal spine: renewal ticks, the two-tick stall rule, escalation for NTM panes over MCP Agent Mail. Use when wiring or tuning a loop's continuity step."
+}

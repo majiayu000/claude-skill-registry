@@ -1,0 +1,37 @@
+{
+  "name": "execute-task",
+  "repo": "anombyte93/prd-taskmaster",
+  "path": "skills/execute-task/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/anombyte93/prd-taskmaster",
+  "dir_name": "execute-task",
+  "downloaded_at": "2026-06-13T04:02:33.467505Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-llm=2, bash=2",
+    "score": 2,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "anombyte93",
+  "source_url": "https://github.com/anombyte93/prd-taskmaster/blob/main/skills/execute-task/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anombyte93/prd-taskmaster/blob/main/skills/execute-task/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Execute the next TaskMaster task using the implementation plan with CDD verification. Picks the next ready task, matches it to the plan step, implements via a dispatched subagent, verifies subtasks with evidence, marks the task done, and loops until every task is complete.\nWraps the TaskMaster next -> in-progress -> done lifecycle with CDD GREEN / RED / BLUE verification and the plugin's triple-verification rule. Autonomous by design \u2014 no user prompts inside the loop."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "muapi-3d-logo-animation",
+  "repo": "SamurAIGPT/Generative-Media-Skills",
+  "path": "library/motion/3d-logo-animation/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-llm",
+  "source": "github.com/SamurAIGPT/Generative-Media-Skills",
+  "dir_name": "3d-logo-animation",
+  "downloaded_at": "2026-06-13T03:58:52.414415Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "ai-llm",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for ai-llm: ai, llm, prompt",
+    "score": 3,
+    "runner_up": "ai-ml",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "llm",
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "SamurAIGPT",
+  "source_url": "https://github.com/SamurAIGPT/Generative-Media-Skills/blob/main/library/motion/3d-logo-animation/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/SamurAIGPT/Generative-Media-Skills/blob/main/library/motion/3d-logo-animation/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Transform a 2D logo into a premium 3D version and animate it with professional cinematic effects."
+}

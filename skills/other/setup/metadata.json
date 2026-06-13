@@ -1,0 +1,37 @@
+{
+  "name": "setup",
+  "repo": "anombyte93/prd-taskmaster",
+  "path": "skills/setup/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/anombyte93/prd-taskmaster",
+  "dir_name": "setup",
+  "downloaded_at": "2026-06-13T04:02:31.488266Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-llm=2, ai-ml=2",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "anombyte93",
+  "source_url": "https://github.com/anombyte93/prd-taskmaster/blob/main/skills/setup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/anombyte93/prd-taskmaster/blob/main/skills/setup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Phase 0 of the prd-taskmaster pipeline. Resolves the active backend, initializes the project, configures the provider stack when the TaskMaster backend is active (DETECT-FIRST \u2014 never overwrite a working user config), and verifies the AI pipeline. Autonomous: zero user questions unless a hard block is hit. Declares the Setup phase complete so DISCOVER can follow."
+}

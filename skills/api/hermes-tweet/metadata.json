@@ -1,0 +1,27 @@
+{
+  "name": "hermes-tweet",
+  "description": "Native Hermes Agent X/Twitter plugin for tweet search, account reads, monitoring, and approval-gated actions through Xquik.",
+  "repo": "Xquik-dev/hermes-tweet",
+  "path": "hermes_tweet/skills/hermes-tweet",
+  "github_branch": "master",
+  "category": "api",
+  "tags": [
+    "hermes-agent",
+    "twitter",
+    "x",
+    "social-media",
+    "automation"
+  ],
+  "stars": 9,
+  "source": "Community Skills",
+  "dir_name": "hermes-tweet",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "Xquik-dev",
+  "source_url": "https://github.com/Xquik-dev/hermes-tweet/blob/master/hermes_tweet/skills/hermes-tweet/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Xquik-dev/hermes-tweet/blob/master/hermes_tweet/skills/hermes-tweet/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted"
+}

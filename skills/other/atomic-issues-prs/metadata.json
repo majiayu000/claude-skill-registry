@@ -1,0 +1,36 @@
+{
+  "name": "atomic-issues-prs",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/atomic-issues-prs/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "atomic-issues-prs",
+  "downloaded_at": "2026-06-14T04:16:34.771449Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category api scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "quality",
+    "runner_up_score": 1,
+    "signals": [
+      "api"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/atomic-issues-prs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/atomic-issues-prs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Publish a change-set as atomic GitHub issues/PRs \u2014 one issue/PR per logical change, never bundled. Use when the user says \"open a PR per change\", \"atomic PRs\", \"push issues and prs atomically\", \"individual PR for each change\", or wants a change-set delivered as separate PRs/issues. Asks per run which objects to create (PR-only vs issue+linked-PR). Detects whether the canonical repo is directly pushable via `gh`; if not, pushes branches to the fork and opens PRs targeting upstream with `--head <fork-owner>:<branch>`. Requires `gh` auth; refuses force-push and direct push to protected branches without explicit authorization."
+}

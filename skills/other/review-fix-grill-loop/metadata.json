@@ -1,0 +1,36 @@
+{
+  "name": "review-fix-grill-loop",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/review-fix-grill-loop/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "review-fix-grill-loop",
+  "downloaded_at": "2026-06-14T04:16:34.922588Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category design scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "development",
+    "runner_up_score": 1,
+    "signals": [
+      "design"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/review-fix-grill-loop/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/review-fix-grill-loop/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Grill the current changes \u2014 fan out parallel review subagents over the working-tree + branch-vs-base diff, resolve each confirmed finding with multiple architectural solutions, fix in verified batches with auto-revert, re-review only changed files, and loop until no critical/high/medium finding remains. Use when the user says \"grill my changes\", \"review-fix loop\", \"review and fix my diff until clean\", \"keep reviewing and fixing until no issues\", or \"grill loop\". Diff-scoped sibling of audit-project (whole-project) with a resolve stage and a medium severity floor."
+}

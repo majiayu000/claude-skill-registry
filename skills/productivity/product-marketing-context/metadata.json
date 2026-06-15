@@ -1,0 +1,37 @@
+{
+  "name": "product-marketing-context",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/product-marketing-context/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "product-marketing-context",
+  "downloaded_at": "2026-06-15T04:52:27.556754Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "productivity",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for productivity: workflow, task",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "workflow",
+      "task"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/product-marketing-context/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/product-marketing-context/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Create or update a reusable product marketing context document with positioning, audience, ICP, use cases, and messaging. Use at the start of a project to avoid repeating core marketing context across tasks."
+}

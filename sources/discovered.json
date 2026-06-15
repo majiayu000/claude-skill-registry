@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-06-14T04:44:26.472217Z",
+  "discovered_at": "2026-06-15T04:56:35.123843Z",
   "total_repos": 300,
-  "total_skills": 22,
+  "total_skills": 43,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -52,7 +52,6 @@
     "JuneYaooo/social-account-doctor",
     "JuneYaooo/xhs-writer-skill",
     "K-Dense-AI/scientific-agent-skills",
-    "KadenMc/work-buddy",
     "Kaelio/ktx",
     "Kanevry/session-orchestrator",
     "KhazP/vibe-coding-prompt-template",
@@ -64,6 +63,7 @@
     "MoizIbnYousaf/marketing-cli",
     "Natively-AI-assistant/natively-cluely-ai-assistant",
     "NevaMind-AI/memU",
+    "NintendaDev/unikit-ai",
     "OpenRaiser/NanoResearch",
     "Orchestra-Research/AI-Research-SKILLs",
     "OthmanAdi/planning-with-files",
@@ -92,6 +92,7 @@
     "Weizhena/Deep-Research-skills",
     "WenyuChiou/awesome-agentic-ai-zh",
     "XPOZpublic/xpoz-agent-skills",
+    "a-ariff/ariff-claude-plugins",
     "a5c-ai/babysitter",
     "aaron-he-zhu/seo-geo-claude-skills",
     "aaronjmars/agent-credit",
@@ -263,7 +264,6 @@
     "rohitg00/pro-workflow",
     "romainsimon/paperasse",
     "ronnythedev/dotnet-clean-architecture-skills",
-    "runkids/feature-radar",
     "saadshahd/moo.md",
     "scdenney/open-science-skills",
     "secondsky/claude-skills",
@@ -314,92 +314,176 @@
   ],
   "skills": [
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "skills/atomic-issues-prs/SKILL.md"
+      "repo": "NintendaDev/unikit-ai",
+      "path": "skills/unikit/SKILL.md"
     },
     {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "skills/review-fix-grill-loop/SKILL.md"
+      "repo": "NintendaDev/unikit-ai",
+      "path": "skills/unikit-todo/SKILL.md"
+    },
+    {
+      "repo": "NintendaDev/unikit-ai",
+      "path": "skills/unikit-rules/SKILL.md"
+    },
+    {
+      "repo": "NintendaDev/unikit-ai",
+      "path": "examples/extensions/unikit-ext-hello/skills/hello-world/SKILL.md"
+    },
+    {
+      "repo": "NintendaDev/unikit-ai",
+      "path": "skills/unikit-commit/SKILL.md"
+    },
+    {
+      "repo": "NintendaDev/unikit-ai",
+      "path": "examples/extensions/unikit-ext-hello-v2/skills/hello-world/SKILL.md"
+    },
+    {
+      "repo": "NintendaDev/unikit-ai",
+      "path": "skills/unikit-review/SKILL.md"
+    },
+    {
+      "repo": "NintendaDev/unikit-ai",
+      "path": "skills/unikit-plan/SKILL.md"
+    },
+    {
+      "repo": "NintendaDev/unikit-ai",
+      "path": "skills/unikit-devcontext/SKILL.md"
+    },
+    {
+      "repo": "NintendaDev/unikit-ai",
+      "path": "skills/unikit-explore/SKILL.md"
+    },
+    {
+      "repo": "NintendaDev/unikit-ai",
+      "path": "skills/unikit-memory/SKILL.md"
+    },
+    {
+      "repo": "NintendaDev/unikit-ai",
+      "path": "skills/unikit-rules-registry/SKILL.md"
+    },
+    {
+      "repo": "NintendaDev/unikit-ai",
+      "path": "skills/unikit-architecture/SKILL.md"
+    },
+    {
+      "repo": "NintendaDev/unikit-ai",
+      "path": "skills/unikit-fix/SKILL.md"
+    },
+    {
+      "repo": "NintendaDev/unikit-ai",
+      "path": "skills/unikit-roadmap/SKILL.md"
+    },
+    {
+      "repo": "NintendaDev/unikit-ai",
+      "path": "examples/extensions/unikit-ext-replace/skills/custom-commit/SKILL.md"
+    },
+    {
+      "repo": "NintendaDev/unikit-ai",
+      "path": "skills/unikit-skills-context/SKILL.md"
+    },
+    {
+      "repo": "NintendaDev/unikit-ai",
+      "path": "skills/unikit-verify/SKILL.md"
+    },
+    {
+      "repo": "NintendaDev/unikit-ai",
+      "path": "skills/unikit-implement/SKILL.md"
+    },
+    {
+      "repo": "NintendaDev/unikit-ai",
+      "path": "skills/unikit-improve/SKILL.md"
+    },
+    {
+      "repo": "NintendaDev/unikit-ai",
+      "path": "skills/unikit-evolve/SKILL.md"
+    },
+    {
+      "repo": "NintendaDev/unikit-ai",
+      "path": "skills/unikit-docs/SKILL.md"
+    },
+    {
+      "repo": "aiskillstore/marketplace",
+      "path": "skills/sickn33/wiki-qa/SKILL.md"
+    },
+    {
+      "repo": "anombyte93/prd-taskmaster",
+      "path": "skills/atlas/SKILL.md"
     },
     {
       "repo": "boshu2/agentops",
-      "path": "images/gemini/skills/process-triage/SKILL.md"
+      "path": "skills-codex/operationalize/SKILL.md"
     },
     {
       "repo": "boshu2/agentops",
-      "path": "images/gemini/skills/beads-bv/SKILL.md"
+      "path": "skills-codex/account-rotation/SKILL.md"
     },
     {
       "repo": "boshu2/agentops",
-      "path": ".agy-plugin/skills/planning-workflow/SKILL.md"
+      "path": "images/gemini/skills/skill-auditor/SKILL.md"
     },
     {
       "repo": "boshu2/agentops",
-      "path": "skills/account-rotation/SKILL.md"
+      "path": "skills/acfs/SKILL.md"
     },
     {
       "repo": "boshu2/agentops",
-      "path": ".agy-plugin/skills/caam/SKILL.md"
+      "path": "images/gemini/skills/sbh/SKILL.md"
     },
     {
       "repo": "boshu2/agentops",
-      "path": "skills/codex-approval/SKILL.md"
+      "path": ".agy-plugin/skills/cass/SKILL.md"
     },
     {
       "repo": "boshu2/agentops",
-      "path": ".agy-plugin/skills/ntm/SKILL.md"
+      "path": ".agy-plugin/skills/beads-bv/SKILL.md"
     },
     {
-      "repo": "boshu2/agentops",
-      "path": "skills/vibing-with-ntm/SKILL.md"
+      "repo": "dembrandt/dembrandt-skills",
+      "path": "skills/layout-paradigms-and-consistency/SKILL.md"
     },
     {
-      "repo": "boshu2/agentops",
-      "path": "skills-codex/pre-land-refuters/SKILL.md"
+      "repo": "nanocoai/nanoclaw",
+      "path": ".claude/skills/migrate-memory/SKILL.md"
     },
     {
-      "repo": "boshu2/agentops",
-      "path": "images/gemini/skills/ssh/SKILL.md"
+      "repo": "sickn33/antigravity-awesome-skills",
+      "path": "skills/frontend-security-coder/SKILL.md"
     },
     {
-      "repo": "boshu2/agentops",
-      "path": "skills-codex/converge/SKILL.md"
+      "repo": "sickn33/antigravity-awesome-skills",
+      "path": "skills/permission-manager/SKILL.md"
     },
     {
-      "repo": "boshu2/agentops",
-      "path": "images/gemini/skills/vibing-with-ntm/SKILL.md"
+      "repo": "sickn33/antigravity-awesome-skills",
+      "path": "skills/android-dev/SKILL.md"
     },
     {
-      "repo": "boshu2/agentops",
-      "path": "skills/operationalize/SKILL.md"
+      "repo": "sickn33/antigravity-awesome-skills",
+      "path": "skills/product-marketing-context/SKILL.md"
     },
     {
-      "repo": "boshu2/agentops",
-      "path": "images/gemini/skills/beads-br/SKILL.md"
+      "repo": "sickn33/antigravity-awesome-skills",
+      "path": "skills/decision-navigator/SKILL.md"
     },
     {
-      "repo": "boshu2/agentops",
-      "path": "images/gemini/skills/gh-actions/SKILL.md"
+      "repo": "sickn33/antigravity-awesome-skills",
+      "path": "plugins/antigravity-awesome-skills/skills/filesystem-context/SKILL.md"
     },
     {
-      "repo": "boshu2/agentops",
-      "path": "skills/beads-workflow/SKILL.md"
+      "repo": "sickn33/antigravity-awesome-skills",
+      "path": "skills/ddd-strategic-design/SKILL.md"
     },
     {
-      "repo": "getaero-io/gtm-eng-skills",
-      "path": "skills/deepline-plays-feedback/SKILL.md"
+      "repo": "sickn33/antigravity-awesome-skills",
+      "path": "skills/backend-security-coder/SKILL.md"
     },
     {
-      "repo": "getaero-io/gtm-eng-skills",
-      "path": "skills/deepline-plays-quickstart/SKILL.md"
+      "repo": "sickn33/antigravity-awesome-skills",
+      "path": "skills/video-content-extractor/SKILL.md"
     },
     {
-      "repo": "majiayu000/spellbook",
-      "path": "skills/multi-model-orchestrator/SKILL.md"
-    },
-    {
-      "repo": "saadshahd/moo.md",
-      "path": "hope/skills/target/SKILL.md"
+      "repo": "sickn33/antigravity-awesome-skills",
+      "path": "plugins/antigravity-awesome-skills-claude/skills/hr-pro/SKILL.md"
     }
   ]
 }

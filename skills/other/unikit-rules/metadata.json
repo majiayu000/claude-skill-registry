@@ -1,0 +1,37 @@
+{
+  "name": "unikit-rules",
+  "repo": "NintendaDev/unikit-ai",
+  "path": "skills/unikit-rules/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/NintendaDev/unikit-ai",
+  "dir_name": "unikit-rules",
+  "downloaded_at": "2026-06-15T04:27:45.192300Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: design=2, productivity=2",
+    "score": 2,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "design",
+      "ui"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "NintendaDev",
+  "source_url": "https://github.com/NintendaDev/unikit-ai/blob/main/skills/unikit-rules/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/NintendaDev/unikit-ai/blob/main/skills/unikit-rules/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Add project-specific rules and conventions to .unikit/RULES.md for a {{engine_name}} project. Cross-checks new rules against the knowledge base in .unikit/memory/ (via RULES_INDEX.md) to detect overlap with existing core or stack rules. Use when user says \"add rule\", \"remember this convention\", \"always do X in code\", \"never use Y\", or wants to codify a coding standard. Also trigger when user corrects agent behavior and wants it remembered as a project rule."
+}

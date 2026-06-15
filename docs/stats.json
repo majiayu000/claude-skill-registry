@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-06-15T03:49:44.746739Z",
-  "archive_skill_md_count_raw": 201274,
-  "archive_metadata_count_raw": 201274,
-  "indexed_skill_count_scan_shape": 201274,
-  "registry_skill_count_dedup": 159367,
+  "updated_at": "2026-06-15T05:40:24.226597Z",
+  "archive_skill_md_count_raw": 201322,
+  "archive_metadata_count_raw": 201322,
+  "indexed_skill_count_scan_shape": 201322,
+  "registry_skill_count_dedup": 159410,
   "total_plugins": 3,
   "categories": 42,
   "category_counts": [
@@ -25,7 +25,7 @@
     {
       "name": "analysis",
       "code": "analysis",
-      "count": 5096
+      "count": 5097
     },
     {
       "name": "api",
@@ -35,7 +35,7 @@
     {
       "name": "bash",
       "code": "bash",
-      "count": 470
+      "count": 472
     },
     {
       "name": "business",
@@ -65,17 +65,17 @@
     {
       "name": "data",
       "code": "dat",
-      "count": 49447
+      "count": 49450
     },
     {
       "name": "design",
       "code": "des",
-      "count": 14032
+      "count": 14034
     },
     {
       "name": "development",
       "code": "dev",
-      "count": 39504
+      "count": 39507
     },
     {
       "name": "devops",
@@ -140,7 +140,7 @@
     {
       "name": "other",
       "code": "oth",
-      "count": 1002
+      "count": 1031
     },
     {
       "name": "performance",
@@ -170,12 +170,12 @@
     {
       "name": "productivity",
       "code": "pro",
-      "count": 3381
+      "count": 3386
     },
     {
       "name": "quality",
       "code": "quality",
-      "count": 4485
+      "count": 4487
     },
     {
       "name": "security",
@@ -195,7 +195,7 @@
     {
       "name": "testing",
       "code": "tst",
-      "count": 11438
+      "count": 11439
     },
     {
       "name": "travel",
@@ -218,7 +218,7 @@
       "count": 1138
     }
   ],
-  "unique_repo_count": 9824,
+  "unique_repo_count": 9825,
   "official_skill_count": 0,
   "top_repositories": [
     {
@@ -231,7 +231,7 @@
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "count": 1720
+      "count": 1730
     },
     {
       "repo": "a5c-ai/babysitter",
@@ -243,7 +243,7 @@
     },
     {
       "repo": "aiskillstore/marketplace",
-      "count": 965
+      "count": 966
     },
     {
       "repo": "TheBushidoCollective/han",
@@ -264,36 +264,36 @@
   ],
   "featured_count": 100,
   "index_size_bytes": 162,
-  "index_size_gzip_bytes": 175,
+  "index_size_gzip_bytes": 174,
   "search_shard_count": 6,
-  "search_largest_shard_bytes": 8388678,
-  "search_largest_shard_gzip_bytes": 2583841,
+  "search_largest_shard_bytes": 8388668,
+  "search_largest_shard_gzip_bytes": 2583767,
   "category_shard_count": 50,
   "category_largest_part_bytes": 8388680,
-  "category_largest_part_gzip_bytes": 1736515,
-  "lite_index_count": 159809,
+  "category_largest_part_gzip_bytes": 1736532,
+  "lite_index_count": 159852,
   "lite_index_included_count": 5000,
   "lite_index_size_bytes": 3502726,
   "lite_index_gzip_size_bytes": 682375,
   "quality_index_size_bytes": 220,
-  "quality_index_gzip_size_bytes": 214,
+  "quality_index_gzip_size_bytes": 213,
   "quality_shard_count": 6,
-  "quality_largest_shard_bytes": 8388705,
-  "quality_largest_shard_gzip_bytes": 1755856,
+  "quality_largest_shard_bytes": 8388633,
+  "quality_largest_shard_gzip_bytes": 1755845,
   "security_index_size_bytes": 223,
   "security_index_gzip_size_bytes": 215,
   "security_shard_count": 19,
-  "security_largest_shard_bytes": 8388708,
-  "security_largest_shard_gzip_bytes": 1636646,
+  "security_largest_shard_bytes": 8388668,
+  "security_largest_shard_gzip_bytes": 1636712,
   "ranking_index_size_bytes": 220,
-  "ranking_index_gzip_size_bytes": 214,
+  "ranking_index_gzip_size_bytes": 213,
   "ranking_shard_count": 5,
-  "ranking_largest_shard_bytes": 8388693,
-  "ranking_largest_shard_gzip_bytes": 2221542,
-  "largest_generated_file_bytes": 8388708,
+  "ranking_largest_shard_bytes": 8388605,
+  "ranking_largest_shard_gzip_bytes": 2221523,
+  "largest_generated_file_bytes": 8388680,
   "security_scan": {
-    "total": 201274,
-    "passed": 192362,
+    "total": 201322,
+    "passed": 192410,
     "failed": 8912
   }
 }

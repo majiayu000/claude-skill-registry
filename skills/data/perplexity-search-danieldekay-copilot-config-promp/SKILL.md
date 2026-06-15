@@ -40,10 +40,10 @@ Use this skill when:
 2. **Configure environment**:
    ```bash
    # Set API key
-   export OPENROUTER_API_KEY='sk-or-v1-your-key-here'
+   export OPENROUTER_API_KEY='${OPENROUTER_API_KEY}'
 
    # Or use setup script
-   python scripts/setup_env.py --api-key sk-or-v1-your-key-here
+   python scripts/setup_env.py --api-key ${OPENROUTER_API_KEY}
    ```
 
 3. **Install dependencies**:
@@ -262,9 +262,9 @@ Perplexity models have different pricing tiers:
 
 **Solution**:
 ```bash
-export OPENROUTER_API_KEY='sk-or-v1-your-key-here'
+export OPENROUTER_API_KEY='${OPENROUTER_API_KEY}'
 # Or run setup script
-python scripts/setup_env.py --api-key sk-or-v1-your-key-here
+python scripts/setup_env.py --api-key ${OPENROUTER_API_KEY}
 ```
 
 ### LiteLLM Not Installed

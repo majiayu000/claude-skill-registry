@@ -269,7 +269,7 @@ mkdir -p ~/claude-agents
 
 # Configure environment
 cat > ~/claude-agents/.env <<EOF
-ANTHROPIC_API_KEY=sk-ant-api03-your-key-here
+ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
 API_KEY=your-secure-random-api-key
 EOF
 

@@ -37,7 +37,7 @@ Google Gemini APIを直接使用して、ロゴ、コトネちゃん、サイト
 
 ### 環境変数
 ```bash
-export GOOGLE_API_KEY="YOUR_GOOGLE_API_KEY"
+export GOOGLE_API_KEY="${GOOGLE_API_KEY}"
 ```
 
 ---
@@ -52,7 +52,7 @@ export GOOGLE_API_KEY="YOUR_GOOGLE_API_KEY"
 nano ~/.zshrc
 
 # 以下を追加
-export GOOGLE_API_KEY="YOUR_GOOGLE_API_KEY"
+export GOOGLE_API_KEY="${GOOGLE_API_KEY}"
 
 # 設定を反映
 source ~/.zshrc

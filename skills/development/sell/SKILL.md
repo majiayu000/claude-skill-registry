@@ -457,7 +457,7 @@ node "${CLAUDE_PLUGIN_ROOT}/scripts/deploy-exe.js" \
   --file index.html \
   --clerk-key "$(cat clerk-jwks-key.pem)" \
   --clerk-webhook-secret "whsec_xxx" \
-  --ai-key "sk-or-v1-your-provisioning-key" \
+  --ai-key "${OPENROUTER_API_KEY}" \
   --multi-tenant \
   --tenant-limit 5
 ```

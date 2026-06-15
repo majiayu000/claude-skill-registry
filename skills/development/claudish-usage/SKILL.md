@@ -198,7 +198,7 @@ Claudish (Claude-ish) is a proxy tool that:
 export OPENROUTER_API_KEY='sk-or-v1-...'  # Your OpenRouter API key
 
 # Optional (but recommended)
-export ANTHROPIC_API_KEY='sk-ant-api03-placeholder'  # Prevents Claude Code dialog
+export ANTHROPIC_API_KEY='${ANTHROPIC_API_KEY}'  # Prevents Claude Code dialog
 
 # Optional - default model
 export CLAUDISH_MODEL='x-ai/grok-code-fast-1'  # or ANTHROPIC_MODEL

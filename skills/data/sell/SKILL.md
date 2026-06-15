@@ -288,7 +288,7 @@ node "${CLAUDE_PLUGIN_ROOT}/scripts/deploy-exe.js" --name wedding-photos --file 
 node "${CLAUDE_PLUGIN_ROOT}/scripts/deploy-exe.js" \
   --name wedding-photos \
   --file index.html \
-  --ai-key "sk-or-v1-your-provisioning-key" \
+  --ai-key "${OPENROUTER_API_KEY}" \
   --multi-tenant \
   --tenant-limit 5
 ```

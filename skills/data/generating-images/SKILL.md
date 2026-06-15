@@ -37,7 +37,7 @@ python scripts/generate.py \
 Set your OpenRouter API key as environment variable:
 
 ```bash
-export OPENROUTER_API_KEY="sk-or-v1-YOUR_API_KEY_HERE"
+export OPENROUTER_API_KEY="${OPENROUTER_API_KEY}"
 ```
 
 ## Aspect ratios

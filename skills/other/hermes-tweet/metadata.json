@@ -1,0 +1,37 @@
+{
+  "name": "hermes-tweet",
+  "repo": "davepoon/buildwithclaude",
+  "path": "plugins/all-skills/skills/hermes-tweet/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/davepoon/buildwithclaude",
+  "dir_name": "hermes-tweet",
+  "downloaded_at": "2026-06-16T04:28:53.662294Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, marketing=2",
+    "score": 2,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "dev",
+      "code"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "davepoon",
+  "source_url": "https://github.com/davepoon/buildwithclaude/blob/main/plugins/all-skills/skills/hermes-tweet/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/davepoon/buildwithclaude/blob/main/plugins/all-skills/skills/hermes-tweet/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use Hermes Tweet when a Claude Code workflow needs a source-aware handoff to Hermes Agent for X/Twitter research, account context, monitoring, or approval-gated actions through the native Hermes Agent plugin."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "idea",
+  "repo": "serejaris/personal-corp-skills",
+  "path": "skills/idea/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/serejaris/personal-corp-skills",
+  "dir_name": "idea",
+  "downloaded_at": "2026-06-16T04:42:27.932527Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: data=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "data",
+      "pipeline"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "serejaris",
+  "source_url": "https://github.com/serejaris/personal-corp-skills/blob/main/skills/idea/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/serejaris/personal-corp-skills/blob/main/skills/idea/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when capturing ONE new idea the user voices and wants recorded \u2014 \"save this idea\", \"I have an idea\", \"log this idea\", \"/idea\", \"idea: ...\". Creates a provenance-tracked folder (one folder per idea) in your ideas repo, dedups against an index, optionally mirrors to a GitHub Project view filtered by label:idea. NOT for mining ideas out of transcripts/meetings (use a dedicated extraction skill) and NOT for dated work tasks (use an issue tracker / the manager skill). Triggers also in Russian: \u00ab\u0437\u0430\u043f\u0438\u0448\u0438 \u0438\u0434\u0435\u044e\u00bb, \u00ab\u0443 \u043c\u0435\u043d\u044f \u0438\u0434\u0435\u044f\u00bb, \u00ab\u0437\u0430\u0444\u0438\u043a\u0441\u0438\u0440\u0443\u0439 \u0438\u0434\u0435\u044e\u00bb."
+}

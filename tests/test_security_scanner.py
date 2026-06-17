@@ -395,10 +395,12 @@ def test_scanner_checks_all_archived_support_dirs(tmp_path):
     knowledge_dir = skill_dir / "knowledge"
     templates_dir = skill_dir / "templates"
     assets_dir = skill_dir / "assets"
+    bin_dir = skill_dir / "bin"
     examples_dir.mkdir(parents=True)
     knowledge_dir.mkdir()
     templates_dir.mkdir()
     assets_dir.mkdir()
+    bin_dir.mkdir()
     (skill_dir / "SKILL.md").write_text(
         """---
 name: demo
@@ -425,6 +427,10 @@ description: Demo skill used to verify bundled support dir scanning.
         "<svg><script>eval('unsafe')</script></svg>\n",
         encoding="utf-8",
     )
+    (bin_dir / "helper.sh").write_text(
+        "python -c \"eval('unsafe')\"\n",
+        encoding="utf-8",
+    )
 
     scanner = module.SecurityScanner()
     is_safe, issues = scanner.scan_file(skill_dir / "SKILL.md")
@@ -435,6 +441,7 @@ description: Demo skill used to verify bundled support dir scanning.
     assert any("knowledge/workflow.md" in file for file in issue_files)
     assert any("templates/postinstall.js" in file for file in issue_files)
     assert any("assets/payload.svg" in file for file in issue_files)
+    assert any("bin/helper.sh" in file for file in issue_files)
 
 
 def test_scanner_rejects_obfuscation_execution_error(tmp_path):

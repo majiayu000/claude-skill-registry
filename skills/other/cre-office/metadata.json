@@ -1,0 +1,37 @@
+{
+  "name": "cre-office",
+  "repo": "ahacker-1/cre-agent-skills",
+  "path": "claude-code-plugins/cre-office/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/ahacker-1/cre-agent-skills",
+  "dir_name": "cre-office",
+  "downloaded_at": "2026-06-17T04:22:18.250001Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, quality=2",
+    "score": 2,
+    "runner_up": "quality",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "ahacker-1",
+  "source_url": "https://github.com/ahacker-1/cre-agent-skills/blob/main/claude-code-plugins/cre-office/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ahacker-1/cre-agent-skills/blob/main/claude-code-plugins/cre-office/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "CRE Office analysis suite - 8 specialist skills for U.S. office acquisitions, refinancings, lease-up, tenant credit, TI/LC underwriting, financing fit, and investment committee memo writing."
+}

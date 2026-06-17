@@ -1,1 +1,1 @@
-{"v":"2026-06-16","t":201368,"deprecated_full_payload":true,"manifest":"search-index-manifest.json","message":"Full search payload moved to search-shards/*.json"}
+{"v":"2026-06-17","t":201408,"deprecated_full_payload":true,"manifest":"search-index-manifest.json","message":"Full search payload moved to search-shards/*.json"}

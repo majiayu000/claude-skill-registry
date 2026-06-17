@@ -1,0 +1,43 @@
+{
+  "name": "display-dev",
+  "description": "Publish AI-generated HTML or Markdown as shareable display.dev URLs behind company auth, named-email access, public links, or 30-day anonymous claim links.",
+  "repo": "display-dev/skill",
+  "path": "skills/display-dev",
+  "github_branch": "main",
+  "category": "productivity",
+  "tags": [
+    "publishing",
+    "sharing",
+    "markdown",
+    "html",
+    "auth",
+    "agent-output"
+  ],
+  "stars": 10,
+  "source": "Community Skills",
+  "dir_name": "display-dev",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "bin/jq-linux-amd64",
+    "bin/jq-linux-arm64",
+    "bin/jq-macos-amd64",
+    "bin/jq-macos-arm64",
+    "bin/jq-windows-amd64.exe",
+    "bin/jq.LICENSE",
+    "scripts/_common.sh",
+    "scripts/comment-reply.sh",
+    "scripts/comments-list.sh",
+    "scripts/comments-stream.sh",
+    "scripts/login.sh",
+    "scripts/publish.sh",
+    "scripts/share.sh",
+    "scripts/thread-resolve.sh"
+  ],
+  "author": "display-dev",
+  "source_url": "https://github.com/display-dev/skill/blob/main/skills/display-dev/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/display-dev/skill/blob/main/skills/display-dev/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

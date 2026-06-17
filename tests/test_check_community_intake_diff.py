@@ -239,6 +239,90 @@ def test_rejects_category_canonicalization_with_whitespace():
     ]
 
 
+def test_accepts_final_existing_entry_metadata_correction():
+    base = render_catalog(
+        [
+            {
+                "name": "alpha",
+                "repo": "acme/alpha",
+                "path": "",
+                "description": "A",
+                "category": "development",
+                "tags": ["a"],
+                "stars": 0,
+            },
+            {
+                "name": "beta",
+                "repo": "acme/beta",
+                "path": "template",
+                "description": "B",
+                "category": "productivity",
+                "tags": ["b"],
+                "stars": 0,
+                "source_url": "https://github.com/acme/beta/blob/main/template/SKILL.md",
+            },
+        ]
+    )
+    head = render_catalog(
+        [
+            {
+                "name": "alpha",
+                "repo": "acme/alpha",
+                "path": "",
+                "description": "A",
+                "category": "development",
+                "tags": ["a"],
+                "stars": 0,
+            },
+            {
+                "name": "beta",
+                "repo": "acme/beta",
+                "path": "skills/beta",
+                "description": "B",
+                "category": "productivity",
+                "tags": ["b"],
+                "stars": 0,
+                "source_url": "https://github.com/acme/beta/blob/main/skills/beta/SKILL.md",
+            },
+        ]
+    )
+
+    assert validate_community_intake_text(base, head) == []
+
+
+def test_rejects_final_existing_entry_identity_rewrite():
+    base = render_catalog(
+        [
+            {
+                "name": "alpha",
+                "repo": "acme/alpha",
+                "path": "",
+                "description": "A",
+                "category": "development",
+                "tags": ["a"],
+                "stars": 0,
+            }
+        ]
+    )
+    head = render_catalog(
+        [
+            {
+                "name": "beta",
+                "repo": "acme/beta",
+                "path": "",
+                "description": "B",
+                "category": "development",
+                "tags": ["b"],
+                "stars": 0,
+            }
+        ]
+    )
+
+    assert validate_community_intake_text(base, head) == [
+        "community intake PRs must preserve the existing `skills` list and append new entries at the end"
+    ]
+
+
 def test_rejects_format_only_changes_without_new_entries():
     base = render_catalog(
         [

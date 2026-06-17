@@ -76,6 +76,7 @@ DEFAULT_LEARNING_PRIORS_PATH = ROOT_DIR / "sources" / "learning" / "discovery_pr
 GITHUB_API_BASE = "https://api.github.com"
 
 BUNDLED_DIR_ALLOWLIST = {
+    "bin",
     "connectors",
     "references",
     "reference",
@@ -87,6 +88,7 @@ BUNDLED_DIR_ALLOWLIST = {
     "prompts",
     "rules",
 }
+SAFE_BUNDLED_BIN_FILENAMES = re.compile(r"^jq(?:-[A-Za-z0-9_.-]+|\.LICENSE)$")
 BUNDLED_ROOT_FILE_ALLOWLIST = {
     "audit.md",
     "package.json",
@@ -143,7 +145,8 @@ BUNDLED_EXCLUDED_PARTS = {
     "venv",
 }
 MAX_BUNDLED_FILE_BYTES = 1_000_000
-MAX_BUNDLED_TOTAL_BYTES = 5_000_000
+MAX_BUNDLED_BIN_FILE_BYTES = 3_000_000
+MAX_BUNDLED_TOTAL_BYTES = 8_000_000
 MAX_BUNDLED_FILES_PER_SKILL = 100
 
 
@@ -215,6 +218,8 @@ def should_recurse_bundled_dir(relative_path: str) -> bool:
         return False
     if any(part.startswith(".") or part in BUNDLED_EXCLUDED_PARTS for part in parts):
         return False
+    if parts[0] == "bin":
+        return len(parts) == 1
     return parts[0] in BUNDLED_DIR_ALLOWLIST
 
 
@@ -223,7 +228,7 @@ def is_safe_bundled_file(relative_path: str, size: int) -> bool:
     normalized = relative_path.strip("/")
     if not normalized or normalized == "SKILL.md":
         return False
-    if size < 0 or size > MAX_BUNDLED_FILE_BYTES:
+    if size < 0:
         return False
 
     parts = [part for part in normalized.split("/") if part]
@@ -236,9 +241,19 @@ def is_safe_bundled_file(relative_path: str, size: int) -> bool:
     if filename.lower() == "skill.md":
         return False
     if len(parts) == 1:
+        if size > MAX_BUNDLED_FILE_BYTES:
+            return False
         return filename in BUNDLED_ROOT_FILE_ALLOWLIST
 
     if parts[0] not in BUNDLED_DIR_ALLOWLIST:
+        return False
+    if parts[0] == "bin":
+        return (
+            len(parts) == 2
+            and size <= MAX_BUNDLED_BIN_FILE_BYTES
+            and SAFE_BUNDLED_BIN_FILENAMES.fullmatch(filename) is not None
+        )
+    if size > MAX_BUNDLED_FILE_BYTES:
         return False
     if filename in BUNDLED_ROOT_FILE_ALLOWLIST:
         return True

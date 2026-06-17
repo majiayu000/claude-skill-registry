@@ -196,3 +196,152 @@ def test_flowhunt_style_support_files_are_archived_with_directory_mode(
     assert (skill_dir / "connectors" / "email-calendar.md").read_text(
         encoding="utf-8"
     ) == "# Email\n"
+
+
+def test_display_dev_bundled_jq_files_are_archived_with_rendered_skill_path(
+    tmp_path,
+    monkeypatch,
+):
+    module = load_module()
+    registry_path = tmp_path / "registry.json"
+    output_dir = tmp_path / "skills"
+    failure_report_path = tmp_path / "failure_report.json"
+    manifest_path = tmp_path / "manifest.json"
+    registry_path.write_text(
+        json.dumps(
+            {
+                "skills": [
+                    {
+                        "name": "display-dev",
+                        "repo": "display-dev/skill",
+                        "path": "skills/display-dev",
+                        "category": "productivity",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    install_fake_aiohttp(
+        monkeypatch,
+        {
+            "https://raw.githubusercontent.com/display-dev/skill/main/skills/display-dev/SKILL.md": FakeResponse(
+                200,
+                text=(
+                    "---\nname: display-dev\n"
+                    "description: Rendered display.dev skill.\n---\n"
+                    "# display.dev\nUses scripts/publish.sh and bundled "
+                    "bin/jq-linux-amd64 for JSON processing.\n"
+                ),
+            ),
+            "https://api.github.com/repos/display-dev/skill/contents/skills/display-dev?ref=main": FakeResponse(
+                200,
+                json_payload=[
+                    {"type": "file", "path": "skills/display-dev/SKILL.md", "size": 160},
+                    {"type": "dir", "path": "skills/display-dev/bin", "size": 0},
+                    {"type": "dir", "path": "skills/display-dev/scripts", "size": 0},
+                ],
+            ),
+            "https://api.github.com/repos/display-dev/skill/contents/skills/display-dev/bin?ref=main": FakeResponse(
+                200,
+                json_payload=[
+                    {
+                        "type": "file",
+                        "path": "skills/display-dev/bin/jq-linux-amd64",
+                        "download_url": "https://download.example/jq-linux-amd64",
+                        "size": 2_319_424,
+                    },
+                    {
+                        "type": "file",
+                        "path": "skills/display-dev/bin/jq-linux-arm64",
+                        "download_url": "https://download.example/jq-linux-arm64",
+                        "size": 1_709_616,
+                    },
+                    {
+                        "type": "file",
+                        "path": "skills/display-dev/bin/jq-macos-amd64",
+                        "download_url": "https://download.example/jq-macos-amd64",
+                        "size": 851_328,
+                    },
+                    {
+                        "type": "file",
+                        "path": "skills/display-dev/bin/jq-macos-arm64",
+                        "download_url": "https://download.example/jq-macos-arm64",
+                        "size": 807_984,
+                    },
+                    {
+                        "type": "file",
+                        "path": "skills/display-dev/bin/jq-windows-amd64.exe",
+                        "download_url": "https://download.example/jq-windows-amd64.exe",
+                        "size": 985_088,
+                    },
+                    {
+                        "type": "file",
+                        "path": "skills/display-dev/bin/jq.LICENSE",
+                        "download_url": "https://download.example/jq.LICENSE",
+                        "size": 6_026,
+                    },
+                    {
+                        "type": "file",
+                        "path": "skills/display-dev/bin/other-tool",
+                        "download_url": "https://download.example/other-tool",
+                        "size": 1024,
+                    },
+                ],
+            ),
+            "https://api.github.com/repos/display-dev/skill/contents/skills/display-dev/scripts?ref=main": FakeResponse(
+                200,
+                json_payload=[
+                    {
+                        "type": "file",
+                        "path": "skills/display-dev/scripts/publish.sh",
+                        "download_url": "https://download.example/publish.sh",
+                        "size": 24,
+                    }
+                ],
+            ),
+            "https://download.example/jq-linux-amd64": FakeResponse(
+                200,
+                body=b"x" * 2_319_424,
+            ),
+            "https://download.example/jq-linux-arm64": FakeResponse(
+                200,
+                body=b"x" * 1_709_616,
+            ),
+            "https://download.example/jq-macos-amd64": FakeResponse(200, body=b"jq macos amd64"),
+            "https://download.example/jq-macos-arm64": FakeResponse(200, body=b"jq macos arm64"),
+            "https://download.example/jq-windows-amd64.exe": FakeResponse(
+                200,
+                body=b"jq windows amd64",
+            ),
+            "https://download.example/jq.LICENSE": FakeResponse(200, body=b"jq license"),
+            "https://download.example/publish.sh": FakeResponse(200, body=b"#!/usr/bin/env bash\n"),
+        },
+    )
+
+    stats = asyncio.run(
+        module.download_skills(
+            registry_path,
+            output_dir,
+            manifest_path=manifest_path,
+            failure_report_path=failure_report_path,
+        )
+    )
+
+    assert stats["downloaded"] == 1
+    assert stats["failed"] == 0
+    assert stats["bundled_files"] == 7
+    skill_dir = next(output_dir.glob("productivity/*"))
+    metadata = json.loads((skill_dir / "metadata.json").read_text(encoding="utf-8"))
+    assert metadata["archive_mode"] == "directory"
+    assert metadata["bundled_files"] == [
+        "bin/jq-linux-amd64",
+        "bin/jq-linux-arm64",
+        "bin/jq-macos-amd64",
+        "bin/jq-macos-arm64",
+        "bin/jq-windows-amd64.exe",
+        "bin/jq.LICENSE",
+        "scripts/publish.sh",
+    ]
+    assert (skill_dir / "bin" / "jq-linux-amd64").stat().st_size == 2_319_424
+    assert not (skill_dir / "bin" / "other-tool").exists()

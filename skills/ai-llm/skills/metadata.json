@@ -1,0 +1,37 @@
+{
+  "name": "hivemind",
+  "repo": "activeloopai/hivemind",
+  "path": "harnesses/openclaw/skills/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-llm",
+  "source": "github.com/activeloopai/hivemind",
+  "dir_name": "skills",
+  "downloaded_at": "2026-06-17T04:22:11.427440Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "ai-llm",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for ai-llm: ai, prompt",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "ai",
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "activeloopai",
+  "source_url": "https://github.com/activeloopai/hivemind/blob/main/harnesses/openclaw/skills/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/activeloopai/hivemind/blob/main/harnesses/openclaw/skills/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Global team and org memory powered by Activeloop. ALWAYS check BOTH built-in memory AND Hivemind memory when recalling information."
+}

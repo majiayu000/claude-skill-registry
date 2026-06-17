@@ -12,25 +12,16 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from urllib.parse import quote
 
-# Add parent to path for imports
 SCRIPT_DIR = Path(__file__).resolve().parent
 ROOT_DIR = SCRIPT_DIR.parent
 sys.path.insert(0, str(ROOT_DIR))
 sys.path.insert(0, str(SCRIPT_DIR))
 
 from security_blocklist import blocked_metadata_source, load_security_blocklist
-from utils import (
-    build_legal_metadata,
-    build_skill_key,
-    ensure_unique_dir,
-    normalize_name,
-)
-
 from sync_pipeline_support import (
     DEFAULT_LEARNING_PRIORS_PATH,
     DEFAULT_MANIFEST_PATH,
     GITHUB_API_BASE,
-    MAX_BUNDLED_FILE_BYTES,
     MAX_BUNDLED_FILES_PER_SKILL,
     MAX_BUNDLED_TOTAL_BYTES,
     ROOT_DIR,
@@ -60,6 +51,13 @@ from sync_pipeline_support import (
     utc_now,
     validate_existing_archive_sources,
 )
+from utils import (
+    build_legal_metadata,
+    build_skill_key,
+    ensure_unique_dir,
+    normalize_name,
+)
+
 
 async def download_skills(
     registry_path: Path,
@@ -79,12 +77,10 @@ async def download_skills(
     logger.info("STEP 3: Downloading SKILL.md files")
     logger.info("=" * 60)
 
-    # Import here to avoid circular imports
     from collections import defaultdict
 
     import aiohttp
     from security_scanner import SecurityScanner
-
     GITHUB_RAW_BASE = "https://raw.githubusercontent.com"
     BRANCHES = ("main", "master")
     MAX_CONCURRENT = 100
@@ -473,7 +469,7 @@ async def download_skills(
                 failed.append(rel_path)
                 continue
 
-            if len(content) > MAX_BUNDLED_FILE_BYTES:
+            if not is_safe_bundled_file(rel_path, len(content)):
                 failed.append(rel_path)
                 continue
             target_path.parent.mkdir(parents=True, exist_ok=True)
@@ -750,7 +746,6 @@ async def download_skills(
             )
 
             await asyncio.sleep(0.2)
-
     # Final count
     final_count = sum(1 for _ in output_dir.rglob("SKILL.md"))
     if manifest_file is not None and (manifest_state["dirty"] or not manifest_file.exists()):

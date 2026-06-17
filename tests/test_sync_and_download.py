@@ -704,6 +704,8 @@ def test_bundled_file_allowlist_is_scoped_and_size_limited():
     )
     assert module.bundled_relative_path("skills/demo", "other/scripts/run.sh") == ""
     assert module.should_recurse_bundled_dir("scripts") is True
+    assert module.should_recurse_bundled_dir("bin") is True
+    assert module.should_recurse_bundled_dir("bin/nested") is False
     assert module.should_recurse_bundled_dir("references/nested") is True
     assert module.should_recurse_bundled_dir("reference") is True
     assert module.should_recurse_bundled_dir("connectors") is True
@@ -716,6 +718,11 @@ def test_bundled_file_allowlist_is_scoped_and_size_limited():
     assert module.is_safe_bundled_file("knowledge/finance-metrics.md", 1024) is True
     assert module.is_safe_bundled_file("prompts/audit-system-prompt.md", 1024) is True
     assert module.is_safe_bundled_file("scripts/listen.mjs", 1024) is True
+    assert module.is_safe_bundled_file("bin/jq-linux-amd64", 2_319_424) is True
+    assert module.is_safe_bundled_file("bin/jq-windows-amd64.exe", 985_088) is True
+    assert module.is_safe_bundled_file("bin/jq.LICENSE", 6_026) is True
+    assert module.is_safe_bundled_file("bin/random-tool", 1024) is False
+    assert module.is_safe_bundled_file("bin/nested/jq-linux-amd64", 1024) is False
     assert module.is_safe_bundled_file("package.json", 1024) is True
     assert module.is_safe_bundled_file("setup.md", 1024) is True
     assert module.is_safe_bundled_file("audit.md", 1024) is True
@@ -727,6 +734,13 @@ def test_bundled_file_allowlist_is_scoped_and_size_limited():
         module.is_safe_bundled_file(
             "references/huge.py",
             module.MAX_BUNDLED_FILE_BYTES + 1,
+        )
+        is False
+    )
+    assert (
+        module.is_safe_bundled_file(
+            "bin/jq-linux-amd64",
+            support.MAX_BUNDLED_BIN_FILE_BYTES + 1,
         )
         is False
     )

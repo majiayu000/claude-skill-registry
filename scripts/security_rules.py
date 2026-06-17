@@ -2,7 +2,6 @@
 
 import re
 
-
 DANGEROUS_PATTERNS = {
     # Code execution
     "eval": r"\beval\s*\(",
@@ -87,6 +86,7 @@ SENSITIVE_PATHS = [
 
 
 BUNDLED_SCAN_DIRS = (
+    "bin",
     "connectors",
     "references",
     "reference",

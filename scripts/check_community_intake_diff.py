@@ -86,6 +86,50 @@ def _is_allowed_category_canonicalization(base_entry: Any, head_entry: Any) -> b
     )
 
 
+def _same_skill_identity(base_entry: Any, head_entry: Any) -> bool:
+    if not isinstance(base_entry, dict) or not isinstance(head_entry, dict):
+        return False
+    return (
+        str(base_entry.get("name") or "").strip(),
+        str(base_entry.get("repo") or "").strip(),
+    ) == (
+        str(head_entry.get("name") or "").strip(),
+        str(head_entry.get("repo") or "").strip(),
+    )
+
+
+def _changed_skill_fields(base_entry: Any, head_entry: Any) -> set[str]:
+    if not isinstance(base_entry, dict) or not isinstance(head_entry, dict):
+        return set()
+    keys = set(base_entry) | set(head_entry)
+    return {key for key in keys if base_entry.get(key) != head_entry.get(key)}
+
+
+def _is_final_skill_metadata_correction(
+    base_text: str,
+    head_text: str,
+    base_skills: list[Any],
+    head_skills: list[Any],
+) -> bool:
+    if not base_skills or len(head_skills) != len(base_skills):
+        return False
+    if head_skills[:-1] != base_skills[:-1]:
+        return False
+    if head_skills[-1] == base_skills[-1]:
+        return False
+    if not _same_skill_identity(base_skills[-1], head_skills[-1]):
+        return False
+    if not _changed_skill_fields(base_skills[-1], head_skills[-1]) <= {"path", "source_url"}:
+        return False
+
+    base_lines = base_text.splitlines()
+    head_lines = head_text.splitlines()
+    last_skill_line = _find_last_skill_line(base_lines)
+    if last_skill_line is None:
+        return True
+    return base_lines[:last_skill_line] == head_lines[:last_skill_line]
+
+
 def _existing_entries_are_preserved_or_canonicalized(
     base_skills: list[Any], head_skills: list[Any]
 ) -> tuple[bool, bool]:
@@ -138,6 +182,9 @@ def validate_community_intake_text(base_text: str, head_text: str) -> list[str]:
 
     if len(head_skills) < len(base_skills):
         errors.append("community intake PRs must not remove catalog entries")
+        return errors
+
+    if _is_final_skill_metadata_correction(base_text, head_text, base_skills, head_skills):
         return errors
 
     existing_entries_ok, canonicalized_existing_category = (
@@ -214,10 +261,7 @@ def main() -> int:
             print(f"- {error}")
         return 1
 
-    print(
-        "Community intake diff check passed "
-        f"({config.path} preserves existing entries and appends new ones only)"
-    )
+    print(f"Community intake diff check passed ({config.path} satisfies intake constraints)")
     return 0
 
 

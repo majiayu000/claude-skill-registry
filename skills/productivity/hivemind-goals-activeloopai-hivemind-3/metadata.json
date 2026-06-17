@@ -1,0 +1,38 @@
+{
+  "name": "hivemind-goals",
+  "repo": "activeloopai/hivemind",
+  "path": "harnesses/hermes/skills/hivemind-goals/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/activeloopai/hivemind",
+  "dir_name": "hivemind-goals-activeloopai-hivemind-3",
+  "downloaded_at": "2026-06-17T04:22:12.111373Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "productivity",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for productivity: workflow, task, memory",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "workflow",
+      "task",
+      "memory"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "activeloopai",
+  "source_url": "https://github.com/activeloopai/hivemind/blob/main/harnesses/hermes/skills/hivemind-goals/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/activeloopai/hivemind/blob/main/harnesses/hermes/skills/hivemind-goals/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Create, track and update team goals + KPIs in Hivemind via the `hivemind` CLI. Use whenever the user mentions a goal, objective, KPI, target, milestone, or asks to track progress on something measurable. ALSO use when the user says \"task\", \"todo\", \"work item\", \"remind me to\", \"fix X\", or any actionable work item \u2014 the goal system replaced the legacy `hivemind tasks` CLI and now covers both objectives and tasks."
+}

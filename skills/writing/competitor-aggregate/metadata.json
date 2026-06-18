@@ -1,0 +1,37 @@
+{
+  "name": "competitor-aggregate",
+  "repo": "matteotitta/claude-code-marketing-quickstart",
+  "path": ".claude/skills/competitor-aggregate/SKILL.md",
+  "github_branch": "main",
+  "category": "writing",
+  "source": "github.com/matteotitta/claude-code-marketing-quickstart",
+  "dir_name": "competitor-aggregate",
+  "downloaded_at": "2026-06-18T04:27:59.527188Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "writing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for writing: copy, article",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "copy",
+      "article"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "matteotitta",
+  "source_url": "https://github.com/matteotitta/claude-code-marketing-quickstart/blob/main/.claude/skills/competitor-aggregate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/matteotitta/claude-code-marketing-quickstart/blob/main/.claude/skills/competitor-aggregate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Synthesize multiple per-competitor research files (produced by /competitor-research) into a single canonical threat matrix. Writes to marketing/competitors/aggregate.md as the locked canonical version every downstream skill reads. Triggers - \"competitor aggregate\", \"synthesize competitors\", \"competitor matrix\", \"threat matrix\", \"lock competitor canonical\""
+}

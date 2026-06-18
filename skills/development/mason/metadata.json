@@ -1,0 +1,40 @@
+{
+  "name": "mason",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/agent-squad/mason/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "mason",
+  "downloaded_at": "2026-06-18T04:34:16.186303Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, framework, build, debug, refactor",
+    "score": 5,
+    "runner_up": "quality",
+    "runner_up_score": 4,
+    "signals": [
+      "code",
+      "framework",
+      "build",
+      "debug",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/agent-squad/mason/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/agent-squad/mason/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Produces clean, functional code that matches the architecture and checklists."
+}

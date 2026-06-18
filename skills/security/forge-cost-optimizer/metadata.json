@@ -1,0 +1,38 @@
+{
+  "name": "forge-cost-optimizer",
+  "repo": "atlassian/forge-skills",
+  "path": "skills/forge-cost-optimizer/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/atlassian/forge-skills",
+  "dir_name": "forge-cost-optimizer",
+  "downloaded_at": "2026-06-18T04:15:40.401963Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "security",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for security: security, auth, audit",
+    "score": 3,
+    "runner_up": "api",
+    "runner_up_score": 2,
+    "signals": [
+      "security",
+      "auth",
+      "audit"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "atlassian",
+  "source_url": "https://github.com/atlassian/forge-skills/blob/main/skills/forge-cost-optimizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/atlassian/forge-skills/blob/main/skills/forge-cost-optimizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Optimizes Atlassian Forge apps to reduce platform consumption and avoid unnecessary costs using Atlassian's \"Optimise Forge platform costs\" guidance. Use when the user asks to optimize Forge app costs, reduce Forge invocations, lower GB-seconds, reduce storage or log usage, tune memory, replace polling, improve scheduled triggers, reduce KVS writes, move work to the frontend, use bridge APIs, batch API calls, add caching, or evaluate Forge Remote trade-offs. By default, perform an audit first and offer to make the recommended changes after presenting the audit. Only modify files immediately when the user explicitly asks the agent to implement or apply optimizations."
+}

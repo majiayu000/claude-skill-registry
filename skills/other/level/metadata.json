@@ -1,0 +1,37 @@
+{
+  "name": "level",
+  "repo": "matteotitta/claude-code-marketing-quickstart",
+  "path": ".claude/skills/level/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/matteotitta/claude-code-marketing-quickstart",
+  "dir_name": "level",
+  "downloaded_at": "2026-06-18T04:27:58.481651Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, marketing=2",
+    "score": 2,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "matteotitta",
+  "source_url": "https://github.com/matteotitta/claude-code-marketing-quickstart/blob/main/.claude/skills/level/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/matteotitta/claude-code-marketing-quickstart/blob/main/.claude/skills/level/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Score your Claude Code environment on a fun 0-10 ladder (Tourist \u2192 Swarm) calibrated to the quickstart's 4 systems \u2014 Context, Skills, Integrations, Orchestration. Two front doors - an interactive quiz (zero setup, shareable) or a silent scan of your repo. Outputs a next-level roadmap plus a branded HTML dashboard or a paste-anywhere ASCII card. The default mastery skill of this quickstart. Triggers - \"level\", \"what's my claude code level\", \"claude code level quiz\", \"assess my setup\", \"how good is my setup\", \"claude code maturity\""
+}

@@ -1,0 +1,36 @@
+{
+  "name": "new-work",
+  "repo": "posit-dev/skills",
+  "path": "posit-dev/new-work/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/posit-dev/skills",
+  "dir_name": "new-work",
+  "downloaded_at": "2026-06-18T04:31:13.182093Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-ml scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "communication",
+    "runner_up_score": 1,
+    "signals": [
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "posit-dev",
+  "source_url": "https://github.com/posit-dev/skills/blob/main/posit-dev/new-work/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/posit-dev/skills/blob/main/posit-dev/new-work/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Create and manage todo tracking documents for features, bugs, and multi-step tasks. Use when starting new work that benefits from a persistent record of decisions, progress, and context."
+}

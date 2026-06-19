@@ -1,0 +1,38 @@
+{
+  "name": "linkedin-job-scraper",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/lead-generation/capabilities/linkedin-job-scraper/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "linkedin-job-scraper",
+  "downloaded_at": "2026-06-19T04:42:06.163037Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/lead-generation/capabilities/linkedin-job-scraper/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/lead-generation/capabilities/linkedin-job-scraper/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Scrapes LinkedIn job postings using the JobSpy library (python-jobspy). Use this skill whenever the user wants to find jobs on LinkedIn, search for open roles, pull job listings, build a job pipeline, source job targets for GTM research, or monitor hiring signals. Even if the user just says \"find me some jobs\" or \"what roles is [company] hiring for\", use this skill. It runs a local Python script that outputs a CSV of job postings with title, company, location, salary, job type, description, and direct URLs."
+}

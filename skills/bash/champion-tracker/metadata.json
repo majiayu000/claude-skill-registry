@@ -1,0 +1,39 @@
+{
+  "name": "champion-tracker",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/sales/capabilities/champion-tracker/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "champion-tracker",
+  "downloaded_at": "2026-06-19T04:41:59.659003Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script, cli",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/sales/capabilities/champion-tracker/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/sales/capabilities/champion-tracker/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Track product champions for job changes and qualify their new companies against ICP. Takes a CSV of known champions (with LinkedIn URLs), creates a baseline snapshot via Apify enrichment, then detects when champions move to new companies. Scores new companies on a 0-4 ICP fit scale. Outputs a downloadable CSV of movers with qualification verdicts."
+}

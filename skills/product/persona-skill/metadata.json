@@ -1,0 +1,38 @@
+{
+  "name": "mira-tan-perspective",
+  "repo": "AIScientists-Dev/Flowtrace",
+  "path": "scripts/examples/distill-mind/fixtures/persona_skill/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/AIScientists-Dev/Flowtrace",
+  "dir_name": "persona-skill",
+  "downloaded_at": "2026-06-19T04:23:55.944257Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "product",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for product: product, feature, metrics",
+    "score": 3,
+    "runner_up": "workflow",
+    "runner_up_score": 2,
+    "signals": [
+      "product",
+      "feature",
+      "metrics"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "AIScientists-Dev",
+  "source_url": "https://github.com/AIScientists-Dev/Flowtrace/blob/main/scripts/examples/distill-mind/fixtures/persona_skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/AIScientists-Dev/Flowtrace/blob/main/scripts/examples/distill-mind/fixtures/persona_skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "The design-judgment lens of Mira Tan (a FICTIONAL product-design mentor), distilled from an\ninvented corpus into 4 mental models, 5 decision heuristics, and a full expression DNA.\nUse as a design-crit advisor: paste a flow, get Mira's read \u2014 friction audit, the one job, subtract-before-add.\nTriggers: \"what would Mira say\", \"Mira's read\", \"run a friction audit\", \"Mira perspective\", \"switch to Mira\"."
+}

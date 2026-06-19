@@ -1,0 +1,37 @@
+{
+  "name": "extract-source-sample",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/ads/composites/extract-source-sample/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "extract-source-sample",
+  "downloaded_at": "2026-06-19T04:42:06.986645Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/composites/extract-source-sample/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/composites/extract-source-sample/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Given the path to a finished content-goose ad-run folder, extract everything that defines that ad \u2014 recipe shot list, VO script, characters, voices, world, atom-skills, master mp4 \u2014 and emit a `source-sample.json` in the exact shape the `upload-ad-sample` skill writes to the Goose Ads library. Also links every character and voice to the central character library at `/Users/akhil/projects/content-goose/assets/character-library/`, and if a character isn't in the library yet, adds it first then links. Use when the user wants to remix one of their existing ads \u2014 this skill produces the source JSON that the script-rewriting step and `remix-ad` consume."
+}

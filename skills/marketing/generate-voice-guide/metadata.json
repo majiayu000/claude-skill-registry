@@ -1,0 +1,40 @@
+{
+  "name": "generate-voice-guide",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/brand/capabilities/generate-voice-guide/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "generate-voice-guide",
+  "downloaded_at": "2026-06-19T04:41:59.940420Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for marketing: marketing, content, social, brand",
+    "score": 4,
+    "runner_up": "documents",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "content",
+      "social",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/brand/capabilities/generate-voice-guide/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/brand/capabilities/generate-voice-guide/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Generate a personal voice guide for X (Twitter) and/or LinkedIn by scanning a user's past posts and iteratively refining with sample-and-feedback loops. Produces a structured markdown voice guide that sibling skills (create-x-content, create-linkedin-content) consume to draft in-voice posts. Different from brand-voice-extractor, which analyses company blogs/landing pages \u2014 this skill is for personal social voice."
+}

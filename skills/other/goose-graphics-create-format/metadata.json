@@ -1,0 +1,38 @@
+{
+  "name": "goose-graphics-create-format",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/design/composites/goose-graphics-create-format/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "goose-graphics-create-format",
+  "downloaded_at": "2026-06-19T04:42:04.296334Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, testing=2",
+    "score": 2,
+    "runner_up": "testing",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/design/composites/goose-graphics-create-format/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/design/composites/goose-graphics-create-format/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Creates a new graphics format spec (custom canvas dimensions + content rules) and publishes it to the Gooseworks library so any agent can render against it. Use when the existing community formats (carousel, story, infographic, slides, poster, chart, tweet, plus community additions) don't fit the user's canvas \u2014 e.g., LinkedIn banner 1584\u00d7396, story cover 1080\u00d71920, event flyer 8.5\u00d711in. Mirrors goose-graphics-create-style but for formats."
+}

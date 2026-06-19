@@ -1,0 +1,39 @@
+{
+  "name": "ad-campaign-analyzer",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/ads/composites/ad-campaign-analyzer/SKILL.md",
+  "github_branch": "main",
+  "category": "performance",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "ad-campaign-analyzer",
+  "downloaded_at": "2026-06-19T04:42:08.396979Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "performance",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for performance: performance, optimize, benchmark",
+    "score": 3,
+    "runner_up": "analysis",
+    "runner_up_score": 2,
+    "signals": [
+      "performance",
+      "optimize",
+      "benchmark"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/composites/ad-campaign-analyzer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/composites/ad-campaign-analyzer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Analyze ad campaign performance data (Google, Meta, LinkedIn) to identify what's working, what's wasting budget, and specific cut/scale/test recommendations. Runs statistical analysis, funnel diagnostics, and multi-channel budget reallocation with specific dollar-amount shift recommendations and scenario modeling."
+}

@@ -1,0 +1,39 @@
+{
+  "name": "ultracost",
+  "repo": "davepoon/buildwithclaude",
+  "path": "plugins/ultracost/skills/ultracost/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/davepoon/buildwithclaude",
+  "dir_name": "ultracost",
+  "downloaded_at": "2026-06-19T04:38:49.548832Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, compile, debug, refactor",
+    "score": 4,
+    "runner_up": "productivity",
+    "runner_up_score": 3,
+    "signals": [
+      "code",
+      "compile",
+      "debug",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "davepoon",
+  "source_url": "https://github.com/davepoon/buildwithclaude/blob/main/plugins/ultracost/skills/ultracost/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/davepoon/buildwithclaude/blob/main/plugins/ultracost/skills/ultracost/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Quality-first per-stage model routing AND a pre-flight cost gate for Claude Code dynamic workflows. Use when authoring or running ultracode / dynamic-workflow scripts, spawning subagents, or writing agent() stages \u2014 pin the right model and effort on every stage, then estimate cost and confirm with the user before launching. Verify scripts with /ultracost:check."
+}

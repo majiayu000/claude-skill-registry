@@ -1,0 +1,38 @@
+{
+  "name": "tdd",
+  "repo": "Shelpuk-AI-Technology-Consulting/agent-skill-tdd",
+  "path": "skills/tdd/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/Shelpuk-AI-Technology-Consulting/agent-skill-tdd",
+  "dir_name": "tdd-shelpuk-ai-technolog-agent-skill-tdd",
+  "downloaded_at": "2026-06-19T04:30:40.145967Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "testing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for testing: test, tdd, integration",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "test",
+      "tdd",
+      "integration"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Shelpuk-AI-Technology-Consulting",
+  "source_url": "https://github.com/Shelpuk-AI-Technology-Consulting/agent-skill-tdd/blob/main/skills/tdd/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Shelpuk-AI-Technology-Consulting/agent-skill-tdd/blob/main/skills/tdd/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use for every coding task. Enforce strict TDD workflow: activate Serena, investigate first, clarify+confirm requirements, write per-task REQUIREMENTS.md in .requirements/<datetime>_<feature_name>/, verify APIs via web search, then implement in tiny test-verified steps."
+}

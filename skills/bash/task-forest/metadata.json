@@ -1,0 +1,38 @@
+{
+  "name": "task-forest",
+  "repo": "dongshuyan/compass-skills",
+  "path": "skills/task-forest/SKILL.md",
+  "github_branch": "master",
+  "category": "bash",
+  "source": "github.com/dongshuyan/compass-skills",
+  "dir_name": "task-forest",
+  "downloaded_at": "2026-06-20T04:00:26.575983Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script, cli",
+    "score": 3,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "dongshuyan",
+  "source_url": "https://github.com/dongshuyan/compass-skills/blob/master/skills/task-forest/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dongshuyan/compass-skills/blob/master/skills/task-forest/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Maintains a repo-local task forest or task DAG for the current workspace. Use when the user asks to initialize, update, close a session, summarize evolving project tasks, decide whether a new request is a global task or subtask, track task progress/history/deviations/todos, export a task graph HTML, or provide task data for gap-router/local-agent-control-room. Do not use for executing the tasks themselves."
+}

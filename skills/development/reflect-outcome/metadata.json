@@ -1,0 +1,37 @@
+{
+  "name": "reflect-outcome",
+  "repo": "DheerG/swarms",
+  "path": "skills/reflect-outcome/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/DheerG/swarms",
+  "dir_name": "reflect-outcome",
+  "downloaded_at": "2026-06-20T03:46:58.851514Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, build",
+    "score": 2,
+    "runner_up": "devops",
+    "runner_up_score": 1,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "DheerG",
+  "source_url": "https://github.com/DheerG/swarms/blob/main/skills/reflect-outcome/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/DheerG/swarms/blob/main/skills/reflect-outcome/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Detects when a stated outcome names a specific instance \u2014 a mechanism-as-means or a single named product \u2014 where a category was meant, and returns a neutral fork for the lead to show the user, or nothing. Invoked by launch commands at outcome capture, in place of the verbatim echo."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "jurisdiction-format",
+  "repo": "wanshuiyin/Auto-claude-code-research-in-sleep",
+  "path": "skills/skills-codex/jurisdiction-format/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
+  "dir_name": "jurisdiction-format-wanshuiyin-auto-claude-code-res",
+  "downloaded_at": "2026-06-20T04:16:56.715141Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: word, docx, markdown",
+    "score": 3,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "word",
+      "docx",
+      "markdown"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "wanshuiyin",
+  "source_url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/main/skills/skills-codex/jurisdiction-format/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/main/skills/skills-codex/jurisdiction-format/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Compile patent application into jurisdiction-specific filing format. Use when user says \"\u683c\u5f0f\u8f6c\u6362\", \"jurisdiction format\", \"\u56fd\u5bb6\u683c\u5f0f\", \"compile patent\", or wants formatted patent documents for CN/US/EP filing."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "stakeholder-engagement-advisor",
+  "repo": "deanpeters/Product-Manager-Skills",
+  "path": "skills/stakeholder-engagement-advisor/SKILL.md",
+  "github_branch": "main",
+  "category": "planning",
+  "source": "github.com/deanpeters/Product-Manager-Skills",
+  "dir_name": "stakeholder-engagement-advisor",
+  "downloaded_at": "2026-06-20T04:00:22.398152Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "planning",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for planning: planning, plan, roadmap",
+    "score": 3,
+    "runner_up": "quality",
+    "runner_up_score": 2,
+    "signals": [
+      "planning",
+      "plan",
+      "roadmap"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "deanpeters",
+  "source_url": "https://github.com/deanpeters/Product-Manager-Skills/blob/main/skills/stakeholder-engagement-advisor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/deanpeters/Product-Manager-Skills/blob/main/skills/stakeholder-engagement-advisor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Plan engagement for a specific stakeholder. Use when preparing an outreach, navigating resistance, or aligning a critical relationship before a key milestone."
+}

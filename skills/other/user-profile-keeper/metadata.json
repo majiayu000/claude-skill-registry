@@ -1,0 +1,36 @@
+{
+  "name": "user-profile-keeper",
+  "repo": "dongshuyan/compass-skills",
+  "path": "skills/user-profile-keeper/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/dongshuyan/compass-skills",
+  "dir_name": "user-profile-keeper",
+  "downloaded_at": "2026-06-20T04:00:26.903386Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category bash scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "data",
+    "runner_up_score": 1,
+    "signals": [
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "dongshuyan",
+  "source_url": "https://github.com/dongshuyan/compass-skills/blob/master/skills/user-profile-keeper/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dongshuyan/compass-skills/blob/master/skills/user-profile-keeper/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Local user-profile maintenance skill for Codex, Claude Code, OpenClaw, OpenCode, and other agent harnesses. Use only when the user explicitly invokes this skill or asks to create, initialize, update, query, correct, delete, export, or audit a local persistent user profile. Also use to extract durable collaboration preferences, requirement-expression habits, capability boundaries, recurring omissions, risk preferences, privacy boundaries, and typical events from the current session into auditable, confirmable, retractable local profile data. Do not auto-invoke, upload profile data, or replace task-clarifier's normal clarification flow."
+}

@@ -1,0 +1,39 @@
+{
+  "name": "flowguard",
+  "repo": "majiayu000/spellbook",
+  "path": "skills/flowguard/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/majiayu000/spellbook",
+  "dir_name": "flowguard",
+  "downloaded_at": "2026-06-20T04:07:41.286694Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "productivity",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for productivity: workflow, task, planning, memory",
+    "score": 4,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "workflow",
+      "task",
+      "planning",
+      "memory"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/spellbook/blob/main/skills/flowguard/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/majiayu000/spellbook/blob/main/skills/flowguard/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Guard long, ambiguous, or stateful AI-agent work from drift. Use when the user asks to run or continue a multi-step task, autonomous loop, bug fix, repo change, PR readiness check, compaction handoff, resume from previous context, cost-control checkpoint, or any task likely to span many tool calls, files, sessions, agents, or verification gates."
+}

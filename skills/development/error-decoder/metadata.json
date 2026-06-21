@@ -1,0 +1,38 @@
+{
+  "name": "error-decoder",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/error-decoder/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "error-decoder",
+  "downloaded_at": "2026-06-21T04:42:57.422534Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, framework, debug",
+    "score": 3,
+    "runner_up": "quality",
+    "runner_up_score": 1,
+    "signals": [
+      "code",
+      "framework",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/error-decoder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/error-decoder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Decode an error message or stack trace into a plain-English cause, the exact fix, and how to prevent it. Use when asked to explain an error, debug a stack trace, figure out why code is throwing, or make sense of a cryptic exception. Produces a structured diagnosis: what the error means, the most likely cause, a concrete fix with code, and a prevention tip."
+}

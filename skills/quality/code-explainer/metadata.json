@@ -1,0 +1,37 @@
+{
+  "name": "code-explainer",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/code-explainer/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "code-explainer",
+  "downloaded_at": "2026-06-21T04:42:59.156894Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "quality",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for quality: quality, review",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 1,
+    "signals": [
+      "quality",
+      "review"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/code-explainer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/code-explainer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Explain what a piece of code does in plain English, at the depth the reader needs. Use when asked to explain code, walk through a function, understand an unfamiliar snippet, or onboard to a file. Produces a one-line summary, a step-by-step walkthrough, the non-obvious parts called out, and any bugs or smells spotted along the way."
+}

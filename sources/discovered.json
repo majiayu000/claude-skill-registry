@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-06-20T04:18:53.236866Z",
+  "discovered_at": "2026-06-21T04:52:12.111931Z",
   "total_repos": 300,
-  "total_skills": 34,
+  "total_skills": 19,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -13,7 +13,6 @@
   "repos": [
     "0xGhostCAT/claude-ai-cyber-security-skills",
     "2389-research/claude-plugins",
-    "2389-research/mcp-socialmedia",
     "23blocks-OS/ai-maestro",
     "24kchengYe/human-skill-tree",
     "2dubu/liquid-glass",
@@ -289,6 +288,7 @@
     "thedotmack/claude-mem",
     "theogbrand/yoink",
     "timescale/pg-aiguide",
+    "tmssoftware/skills",
     "travisvn/awesome-claude-skills",
     "tripleyak/SkillForge",
     "tuan3w/obsidian-vault-agent",
@@ -314,140 +314,80 @@
   ],
   "skills": [
     {
-      "repo": "DheerG/swarms",
-      "path": "skills/reflect-outcome/SKILL.md"
+      "repo": "cgallic/kai-cmo-harness",
+      "path": "harness/skills/kai-brand-pulse/SKILL.md"
     },
     {
-      "repo": "bitjaru/styleseed",
-      "path": "skills/styleseed-design-review/SKILL.md"
+      "repo": "existential-birds/beagle",
+      "path": "plugins/beagle-analysis/skills/quick-plan/SKILL.md"
     },
     {
-      "repo": "boshu2/agentops",
-      "path": "images/gemini/skills/post-mortem/SKILL.md"
+      "repo": "haabe/mycelium",
+      "path": "plugins/mycelium/skills/receipt-render/SKILL.md"
     },
     {
-      "repo": "boshu2/agentops",
-      "path": "images/gemini/skills/plan/SKILL.md"
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/error-decoder/SKILL.md"
     },
     {
-      "repo": "boshu2/agentops",
-      "path": ".agy-plugin/skills/vibing-with-ntm/SKILL.md"
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/regex-builder/SKILL.md"
     },
     {
-      "repo": "deanpeters/Product-Manager-Skills",
-      "path": "skills/stakeholder-engagement-advisor/SKILL.md"
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/code-explainer/SKILL.md"
     },
     {
-      "repo": "deanpeters/Product-Manager-Skills",
-      "path": "skills/stakeholder-identification/SKILL.md"
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/red-team-review/SKILL.md"
     },
     {
-      "repo": "deanpeters/Product-Manager-Skills",
-      "path": "skills/stakeholder-mapping/SKILL.md"
-    },
-    {
-      "repo": "dongshuyan/compass-skills",
-      "path": "skills/task-forest/SKILL.md"
-    },
-    {
-      "repo": "dongshuyan/compass-skills",
-      "path": "skills/task-clarifier/SKILL.md"
-    },
-    {
-      "repo": "dongshuyan/compass-skills",
-      "path": "skills/user-profile-keeper/SKILL.md"
-    },
-    {
-      "repo": "dongshuyan/compass-skills",
-      "path": "skills/session-handoff-prompt/SKILL.md"
-    },
-    {
-      "repo": "majiayu000/spellbook",
-      "path": "skills/flowguard/SKILL.md"
-    },
-    {
-      "repo": "majiayu000/spellbook",
-      "path": "skills/repo-agent-context-audit/SKILL.md"
-    },
-    {
-      "repo": "mxyhi/ok-skills",
-      "path": "xquik-twitter/SKILL.md"
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/git-troubleshooter/SKILL.md"
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/tdd/SKILL.md"
+      "path": "skills/youtube-notetaker/SKILL.md"
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/grill-me/SKILL.md"
+      "path": "skills/super-code/cpp/SKILL.md"
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/crossframe-debate/SKILL.md"
+      "path": "skills/crossframe-dialogue/SKILL.md"
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/godot-gdscript-patterns/SKILL.md"
+      "path": "plugins/antigravity-awesome-skills/skills/mmx-cli/SKILL.md"
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/writing-great-skills/SKILL.md"
+      "path": "skills/ddd-context-mapping/SKILL.md"
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/design-it/flat-design-2/SKILL.md"
+      "path": "skills/agent-squad/SKILL.md"
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/lookdev-auto/SKILL.md"
+      "path": "skills/super-code/kotlin/SKILL.md"
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/crossframe-teach/SKILL.md"
+      "path": "skills/composition-patterns/SKILL.md"
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/lesson-generator/SKILL.md"
+      "path": "skills/android-cli/SKILL.md"
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/git-pr-workflows-pr-enhance/SKILL.md"
+      "path": "skills/loop-library/SKILL.md"
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/mercury-mcp/SKILL.md"
-    },
-    {
-      "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/design-it/vaporwave/SKILL.md"
-    },
-    {
-      "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/design-it/brutalism/SKILL.md"
-    },
-    {
-      "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/ckw-design/SKILL.md"
-    },
-    {
-      "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/design-it/dark-mode/SKILL.md"
-    },
-    {
-      "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/wiki-builder/SKILL.md"
-    },
-    {
-      "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/accint-solve/SKILL.md"
-    },
-    {
-      "repo": "wanshuiyin/Auto-claude-code-research-in-sleep",
-      "path": "skills/skills-codex/kill-argument/SKILL.md"
-    },
-    {
-      "repo": "wanshuiyin/Auto-claude-code-research-in-sleep",
-      "path": "skills/skills-codex/jurisdiction-format/SKILL.md"
+      "path": "skills/ingest-youtube/SKILL.md"
     }
   ]
 }

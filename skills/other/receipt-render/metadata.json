@@ -1,0 +1,36 @@
+{
+  "name": "receipt-render",
+  "repo": "haabe/mycelium",
+  "path": "plugins/mycelium/skills/receipt-render/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/haabe/mycelium",
+  "dir_name": "receipt-render",
+  "downloaded_at": "2026-06-21T04:36:44.727640Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category data scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "design",
+    "runner_up_score": 1,
+    "signals": [
+      "data"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "haabe",
+  "source_url": "https://github.com/haabe/mycelium/blob/main/plugins/mycelium/skills/receipt-render/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/haabe/mycelium/blob/main/plugins/mycelium/skills/receipt-render/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Render a completed diamond's work as a shareable, factual one-page \"work receipt\" (problem framed, assumptions tested, what was killed vs kept) carrying an origin line + a volitional onward-handoff data flow. Read-only. Consults the attribution registry per `${CLAUDE_PLUGIN_ROOT}/engine/render-conventions.md` consent + privacy gate. Follows the render fleet's shared conventions + consent gate (Check 43 applies via the `-render` name); a standalone shareable-artifact generator, NOT a `/render` dispatcher target. Audience fixed `external` (a hand-it-over artifact)."
+}

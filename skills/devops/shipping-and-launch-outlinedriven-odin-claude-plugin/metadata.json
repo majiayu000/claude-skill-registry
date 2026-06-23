@@ -1,0 +1,39 @@
+{
+  "name": "shipping-and-launch",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/shipping-and-launch/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "shipping-and-launch-outlinedriven-odin-claude-plugin",
+  "downloaded_at": "2026-06-23T10:26:11.896634Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "devops",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for devops: ci, deploy, infra, infrastructure",
+    "score": 4,
+    "runner_up": "development",
+    "runner_up_score": 3,
+    "signals": [
+      "ci",
+      "deploy",
+      "infra",
+      "infrastructure"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/shipping-and-launch/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/shipping-and-launch/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Prepares production launches. Use when preparing to deploy to production. Use when you need a pre-launch checklist, when setting up monitoring, when planning a staged rollout, or when you need a rollback strategy."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "vertical-construction",
+  "repo": "avelikiy/great_cto",
+  "path": "skills/vertical-construction/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/avelikiy/great_cto",
+  "dir_name": "vertical-construction",
+  "downloaded_at": "2026-06-23T10:32:17.523325Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: documents=2, product=2",
+    "score": 2,
+    "runner_up": "product",
+    "runner_up_score": 2,
+    "signals": [
+      "docs",
+      "excel"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "avelikiy",
+  "source_url": "https://github.com/avelikiy/great_cto/blob/main/skills/vertical-construction/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/avelikiy/great_cto/blob/main/skills/vertical-construction/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Domain knowledge for the construction vertical (contractors, field crews) so architect and pm don't spec construction products naively. Covers the vocabulary (bid vs estimate, takeoff, retainage, change order, AIA G702/G703, lien waiver, draw schedule), the non-obvious money rules that incumbents like Procore price out of reach for small contractors, what a naive build gets wrong (no assemblies, ignored retainage, ungated sub payments), and the entities that must be modelled. Applied by architect when writing ARCH-{slug}.md and by pm when writing PLAN-{slug}.md for any of the four construction products (bid-builder, project-mgmt, subcontractor-portal, field-docs)."
+}

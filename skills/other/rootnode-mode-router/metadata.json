@@ -1,0 +1,37 @@
+{
+  "name": "rootnode-mode-router",
+  "repo": "drayline/rootnode-skills",
+  "path": "rootnode-mode-router/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/drayline/rootnode-skills",
+  "dir_name": "rootnode-mode-router",
+  "downloaded_at": "2026-06-23T10:36:22.783249Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, marketing=2",
+    "score": 2,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "drayline",
+  "source_url": "https://github.com/drayline/rootnode-skills/blob/main/rootnode-mode-router/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/drayline/rootnode-skills/blob/main/rootnode-mode-router/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Selects the active profile from triggering context. Evaluates a rule set against inputs (current time, calendar state, geofence, manual command, custom signals) and returns the profile name that consuming Skills (handoff-trigger-check, critic-gate, future Skills) should apply. Configuration-driven; rule set lives in a router config file conforming to the included schema. Deterministic precedence \u2014 manual override beats calendar beats time-window beats default. Required default profile guarantees a routing decision always exists. Use when an orchestrator needs to pick a profile automatically rather than having the caller specify one, when wiring calendar/time/Telegram triggers to gate behavior, or when a Skill's behavior should change with availability mode. Trigger on: \"what profile should I use,\" \"route to a profile,\" \"which mode am I in,\" \"auto-select profile,\" \"active mode,\" \"current profile.\" Do NOT use to evaluate work readiness or review proposed changes. Always returns a profile name."
+}

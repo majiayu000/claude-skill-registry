@@ -1,0 +1,38 @@
+{
+  "name": "rootnode-domain-agentic-context",
+  "repo": "drayline/rootnode-skills",
+  "path": "rootnode-domain-agentic-context/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/drayline/rootnode-skills",
+  "dir_name": "rootnode-domain-agentic-context",
+  "downloaded_at": "2026-06-23T10:36:25.981734Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: devops=3, productivity=3",
+    "score": 3,
+    "runner_up": "productivity",
+    "runner_up_score": 3,
+    "signals": [
+      "deploy",
+      "infra",
+      "infrastructure"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "drayline",
+  "source_url": "https://github.com/drayline/rootnode-skills/blob/main/rootnode-domain-agentic-context/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/drayline/rootnode-skills/blob/main/rootnode-domain-agentic-context/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Specialized agentic and context engineering prompt methodology for Claude. Use when designing AI agents \u2014 system prompts, tool definitions, context window architectures, failure mode planning, multi-agent coordination, agent evaluation. Trigger on: \"design an agent,\" \"build a system prompt for an agent,\" \"architect an agent's context,\" \"design tool definitions,\" \"agent system prompt,\" \"context window architecture,\" \"tool interface design,\" \"evaluate agent behavior,\" \"multi-agent coordination,\" \"context engineering for agents,\" \"ACI design.\" Provides 12 tested approaches for agent architecture (designing agents, not using them). Do NOT use for evaluating or scoring individual non-agent prompts (use rootnode-prompt-validation if available). Do NOT use for general software architecture that hosts agents (use standard technical reasoning for that)."
+}

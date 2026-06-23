@@ -1,0 +1,37 @@
+{
+  "name": "rootnode-repo-hygiene",
+  "repo": "drayline/rootnode-skills",
+  "path": "rootnode-repo-hygiene/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/drayline/rootnode-skills",
+  "dir_name": "rootnode-repo-hygiene",
+  "downloaded_at": "2026-06-23T10:36:23.163985Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, product=2",
+    "score": 2,
+    "runner_up": "product",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "drayline",
+  "source_url": "https://github.com/drayline/rootnode-skills/blob/main/rootnode-repo-hygiene/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/drayline/rootnode-skills/blob/main/rootnode-repo-hygiene/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Audits Claude Code repositories. Two-phase workflow \u2014 Phase 1 sweeps 14 hygiene categories (permissions, hooks, CLAUDE.md bloat, Skills hygiene, process-abstraction, plus structural) and an optional 7-layer leak check. Phase 2 executes [APPROVED] markers from the report file. Use for repo cleanup, pre-distribution sanity, post-feature hygiene, environment audit, process-abstraction discovery. Trigger on \"audit my CC repo,\" \"sweep my repository for hygiene,\" \"check this CC environment,\" \"find process abstraction candidates,\" \"review my CLAUDE.md,\" \"clean up my .claude directory,\" \"pre-distribution hygiene check,\" \"find layer leaks in my CC setup.\" Routes structural findings to rootnode-cc-design REMEDIATE. Composes with rootnode-critic-gate. CC-only \u2014 does not scan Claude Projects. Do NOT use for building a Skill (use rootnode-skill-builder), compiling a prompt (use rootnode-prompt-compilation), scoring a single prompt (use rootnode-prompt-validation), or auditing a Project (use rootnode-project-audit)."
+}

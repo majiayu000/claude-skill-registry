@@ -1,0 +1,37 @@
+{
+  "name": "runway-planner",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/runway-planner/SKILL.md",
+  "github_branch": "main",
+  "category": "planning",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "runway-planner",
+  "downloaded_at": "2026-06-23T10:44:47.494754Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "planning",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for planning: planning, plan",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "planning",
+      "plan"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/runway-planner/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/runway-planner/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Turn burn and cash into a clear runway picture and a raise decision \u2014 months left, default-alive vs default-dead, and what to cut or change. Use when asked to calculate runway, model burn rate, decide when to raise, figure out if the company is default-alive, or plan a scenario with hiring/cuts. Produces the runway math, a default-alive verdict, and dated trigger points for raising or acting. Not financial advice."
+}

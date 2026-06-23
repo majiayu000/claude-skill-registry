@@ -1,0 +1,37 @@
+{
+  "name": "rootnode-block-selection",
+  "repo": "drayline/rootnode-skills",
+  "path": "rootnode-block-selection/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/drayline/rootnode-skills",
+  "dir_name": "rootnode-block-selection",
+  "downloaded_at": "2026-06-23T10:36:24.622909Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: business=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "business",
+      "strategy"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "drayline",
+  "source_url": "https://github.com/drayline/rootnode-skills/blob/main/rootnode-block-selection/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/drayline/rootnode-skills/blob/main/rootnode-block-selection/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Guides selection of identity, reasoning, and output approaches for Claude prompts based on task characteristics. Trigger on: \"help me choose an approach,\" \"which approach fits this task,\" \"recommend a prompt pattern,\" \"compare reasoning methods,\" \"map this task to the right approach,\" \"what combination of approaches,\" \"which identity fits,\" \"which reasoning method.\" Also trigger on symptom-phrased: \"my prompt feels generic,\" \"I don't know which approach to use,\" \"my output lacks domain depth.\" Covers decision-tree logic across 8 identity approaches, 18 reasoning variants, and 10 output formats. After selection, use the relevant catalog skill if available to retrieve full templates. Activate whenever approach-selection across multiple categories is the primary decision. Do NOT use when the user already names a specific approach to retrieve (use the relevant catalog skill directly if available) or for evaluating existing prompts (use rootnode-prompt-validation if available)."
+}

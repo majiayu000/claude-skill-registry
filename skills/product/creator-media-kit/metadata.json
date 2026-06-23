@@ -1,0 +1,38 @@
+{
+  "name": "creator-media-kit",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/creator-media-kit/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "creator-media-kit",
+  "downloaded_at": "2026-06-23T10:44:49.244404Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "product",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for product: product, feature, metrics",
+    "score": 3,
+    "runner_up": "communication",
+    "runner_up_score": 1,
+    "signals": [
+      "product",
+      "feature",
+      "metrics"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/creator-media-kit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/creator-media-kit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Build a creator's sponsorship media kit and brand-deal outreach \u2014 the one-pager brands ask for, plus a pitch email and a rate card. Use when asked to make a media kit, pitch a brand, land a sponsorship, write a brand-deal email, or set creator rates. Produces a structured media kit (audience, stats, offerings, past work), a personalised outreach email, and a defensible rate card. The creator side of a sponsorship \u2014 distinct from a brand briefing a creator."
+}

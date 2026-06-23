@@ -1,0 +1,38 @@
+{
+  "name": "rootnode-identity-blocks",
+  "repo": "drayline/rootnode-skills",
+  "path": "rootnode-identity-blocks/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/drayline/rootnode-skills",
+  "dir_name": "rootnode-identity-blocks",
+  "downloaded_at": "2026-06-23T10:36:24.363495Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: business=3, planning=3",
+    "score": 3,
+    "runner_up": "planning",
+    "runner_up_score": 3,
+    "signals": [
+      "business",
+      "operations",
+      "strategy"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "drayline",
+  "source_url": "https://github.com/drayline/rootnode-skills/blob/main/rootnode-identity-blocks/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/drayline/rootnode-skills/blob/main/rootnode-identity-blocks/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Eight tested identity approaches for Claude prompts, each shaping depth, vocabulary, reasoning style, and what Claude treats as obvious vs. requiring explanation. Use when the user wants a specific identity template \u2014 retrieving, reviewing, customizing, or building a role definition. Trigger on: \"give me the Strategic Advisor identity,\" \"show me the identity template for,\" \"I need a Technical Architect role,\" \"build a custom role for,\" \"show me all available identities.\" Also use when reviewing a prompt's identity layer or when output lacks domain-appropriate depth. Provides 8 tested approaches across strategy, technical, research, communications, and operations domains plus a template for building custom identities. If the user is unsure which identity fits their task, use rootnode-block-selection first if available. Do NOT use for evaluating complete prompts \u2014 use rootnode-prompt-validation if available. Do NOT use for full prompt assembly \u2014 use rootnode-prompt-compilation if available."
+}

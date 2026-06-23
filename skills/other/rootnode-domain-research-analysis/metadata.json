@@ -1,0 +1,37 @@
+{
+  "name": "rootnode-domain-research-analysis",
+  "repo": "drayline/rootnode-skills",
+  "path": "rootnode-domain-research-analysis/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/drayline/rootnode-skills",
+  "dir_name": "rootnode-domain-research-analysis",
+  "downloaded_at": "2026-06-23T10:36:26.287732Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, quality=2",
+    "score": 2,
+    "runner_up": "quality",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "drayline",
+  "source_url": "https://github.com/drayline/rootnode-skills/blob/main/rootnode-domain-research-analysis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/drayline/rootnode-skills/blob/main/rootnode-domain-research-analysis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Specialized research and analysis prompt methodology for Claude. Provides 11 tested approaches (3 identity, 4 reasoning, 4 output) for data analysis, policy research, systematic evidence review, investigative research, and research-specific deliverables. Use when building prompts for quantitative data interpretation, evidence-based policy recommendations, literature reviews, causal analysis, hypothesis-driven investigation, or briefing documents. Trigger on: \"prompt for data analysis,\" \"research prompt,\" \"policy brief prompt,\" \"literature review prompt,\" \"prompt for investigating,\" \"systematic review prompt,\" \"build a prompt for evidence synthesis,\" \"causal analysis prompt,\" \"briefing document prompt.\" Also use when user describes a research or analytical task and needs a structured Claude prompt for it. Do NOT use for evaluating existing prompts (use rootnode-prompt-validation if available) or auditing Claude Projects (use rootnode-project-audit if available)."
+}

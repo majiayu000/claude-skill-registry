@@ -1,0 +1,38 @@
+{
+  "name": "rootnode-full-stack-audit",
+  "repo": "drayline/rootnode-skills",
+  "path": "rootnode-full-stack-audit/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/drayline/rootnode-skills",
+  "dir_name": "rootnode-full-stack-audit",
+  "downloaded_at": "2026-06-23T10:36:24.881548Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "devops",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for devops: deploy, infra, infrastructure",
+    "score": 3,
+    "runner_up": "security",
+    "runner_up_score": 2,
+    "signals": [
+      "deploy",
+      "infra",
+      "infrastructure"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "drayline",
+  "source_url": "https://github.com/drayline/rootnode-skills/blob/main/rootnode-full-stack-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/drayline/rootnode-skills/blob/main/rootnode-full-stack-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Comprehensive audit of a user's entire Claude environment \u2014 combines Project audit (six-dimension Project Scorecard, seven anti-patterns) with Global audit (six-dimension Global Layer Scorecard) plus Cross-Layer Alignment Check across all nine layers and Evolutionary Recommendations across four pathways. Produces a unified action plan. Use when user says \"full audit of everything,\" \"audit my entire Claude setup,\" \"full stack audit,\" \"comprehensive review of my project and preferences,\" \"check everything,\" or wants the complete health check of both a specific Project AND their global configuration. Also use when a project audit reveals cross-layer issues that require full-stack visibility. Do NOT use for auditing only a Project (use rootnode-project-audit if available) or only global layers (use rootnode-global-audit if available). Do NOT use for single prompt evaluation (use rootnode-prompt-validation if available). Opus recommended; non-Opus models may produce less complete analysis."
+}

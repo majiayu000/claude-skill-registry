@@ -1,0 +1,37 @@
+{
+  "name": "vertical-onboarding",
+  "repo": "avelikiy/great_cto",
+  "path": "skills/vertical-onboarding/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/avelikiy/great_cto",
+  "dir_name": "vertical-onboarding",
+  "downloaded_at": "2026-06-23T10:32:16.760199Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: documents=2, testing=2",
+    "score": 2,
+    "runner_up": "testing",
+    "runner_up_score": 2,
+    "signals": [
+      "doc",
+      "docs"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "avelikiy",
+  "source_url": "https://github.com/avelikiy/great_cto/blob/main/skills/vertical-onboarding/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/avelikiy/great_cto/blob/main/skills/vertical-onboarding/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Onboarding-and-switching playbook for SMB Product-Builder products. Defines the first-run experience that turns a prospect leaving an incumbent (ServiceTitan/Toast/Mindbody/Shopify/QuickBooks) into an activated user \u2014 import-first onboarding, the activation milestone, sample-data fallback, and the time-to-first-value target. Applied by migration-import-engineer and architect/pm so onboarding is designed as a funnel, not an afterthought. Our whole wedge is \"low switching cost\"; this skill makes that real on day one."
+}

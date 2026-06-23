@@ -1,0 +1,38 @@
+{
+  "name": "\u7f16\u7a0b\u624b",
+  "repo": "XiaoMaColtAI/math-modeling-skill",
+  "path": "references/roles/\u7f16\u7a0b\u624b/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/XiaoMaColtAI/math-modeling-skill",
+  "dir_name": "unknown-xiaomacoltai-math-modeling-skill-2",
+  "downloaded_at": "2026-06-23T10:29:11.467056Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: pdf, excel, xlsx",
+    "score": 3,
+    "runner_up": "",
+    "runner_up_score": 0,
+    "signals": [
+      "pdf",
+      "excel",
+      "xlsx"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "XiaoMaColtAI",
+  "source_url": "https://github.com/XiaoMaColtAI/math-modeling-skill/blob/main/references/roles/\u7f16\u7a0b\u624b/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/XiaoMaColtAI/math-modeling-skill/blob/main/references/roles/\u7f16\u7a0b\u624b/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u6570\u5b66\u5efa\u6a21\u7684\u4ee3\u7801\u5b9e\u73b0\u9636\u6bb5\u3002\u5f53\u8fdb\u5165\"\u4ee3\u7801\u5b9e\u73b0\"\u9636\u6bb5\u3001\u9700\u8981\u7f16\u5199\u6c42\u89e3\u4ee3\u7801\u3001\u6570\u636e\u53ef\u89c6\u5316\u65f6\u52a0\u8f7d\u3002\u8d1f\u8d23\u4ee3\u7801\u7f16\u5199\u3001\u7ed3\u679c\u6c42\u89e3\u3001\u6570\u636e\u53ef\u89c6\u5316\u3001\u6587\u6863\u8bf4\u660e\u3002"
+}

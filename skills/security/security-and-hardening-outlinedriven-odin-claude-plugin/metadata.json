@@ -1,0 +1,39 @@
+{
+  "name": "security-and-hardening",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/security-and-hardening/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "security-and-hardening-outlinedriven-odin-claude-plugin",
+  "downloaded_at": "2026-06-23T10:26:12.971516Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "security",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for security: security, auth, audit, owasp",
+    "score": 4,
+    "runner_up": "data",
+    "runner_up_score": 3,
+    "signals": [
+      "security",
+      "auth",
+      "audit",
+      "owasp"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/security-and-hardening/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/security-and-hardening/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Hardens code against vulnerabilities. Use when handling user input, authentication, data storage, or external integrations. Use when building any feature that accepts untrusted data, manages user sessions, or interacts with third-party services."
+}

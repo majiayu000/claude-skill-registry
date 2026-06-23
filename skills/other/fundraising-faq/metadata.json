@@ -1,0 +1,36 @@
+{
+  "name": "fundraising-faq",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/fundraising-faq/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "fundraising-faq",
+  "downloaded_at": "2026-06-23T10:44:48.034802Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-ml scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "business",
+    "runner_up_score": 1,
+    "signals": [
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/fundraising-faq/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/fundraising-faq/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Pressure-test a fundraise by anticipating the hard investor questions and arming the founder with crisp answers. Use when asked to prep for investor Q&A, anticipate due-diligence questions, handle pushback on a raise, or build a fundraising FAQ. Produces the toughest questions an investor will ask \u2014 grouped by theme \u2014 each with the strongest honest answer and the trap to avoid."
+}

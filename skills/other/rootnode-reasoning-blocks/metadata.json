@@ -1,0 +1,37 @@
+{
+  "name": "rootnode-reasoning-blocks",
+  "repo": "drayline/rootnode-skills",
+  "path": "rootnode-reasoning-blocks/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/drayline/rootnode-skills",
+  "dir_name": "rootnode-reasoning-blocks",
+  "downloaded_at": "2026-06-23T10:36:25.004796Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: analysis=2, design=2",
+    "score": 2,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "analysis",
+      "analyze"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "drayline",
+  "source_url": "https://github.com/drayline/rootnode-skills/blob/main/rootnode-reasoning-blocks/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/drayline/rootnode-skills/blob/main/rootnode-reasoning-blocks/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Tested reasoning approaches for Claude prompts \u2014 18 variants across 6 categories (Analytical, Strategic, Creative, Technical, Research, Comparative). Use when the user wants a specific reasoning template \u2014 retrieving, reviewing, customizing, or combining reasoning instructions for a prompt. Trigger on: \"give me the Root Cause Diagnosis approach,\" \"show me the reasoning template for,\" \"I need the Evidence Synthesis method,\" \"show me analytical reasoning options,\" \"combine reasoning approaches for,\" \"show me all reasoning variants.\" Also use when a prompt produces shallow output and the fix is a reasoning upgrade. Provides 18 tested approaches for analytical, strategic, creative, technical, research, and comparison tasks. If the user is unsure which reasoning method fits, use rootnode-block-selection first if available. Do NOT use for evaluating existing prompts \u2014 use rootnode-prompt-validation if available. Do NOT use for project-level audits \u2014 use rootnode-project-audit if available."
+}

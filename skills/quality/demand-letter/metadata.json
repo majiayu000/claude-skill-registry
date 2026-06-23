@@ -1,0 +1,37 @@
+{
+  "name": "demand-letter",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/demand-letter/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "demand-letter",
+  "downloaded_at": "2026-06-23T10:44:47.238428Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "quality",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for quality: quality, review",
+    "score": 2,
+    "runner_up": "",
+    "runner_up_score": 0,
+    "signals": [
+      "quality",
+      "review"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/demand-letter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/demand-letter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Draft a firm, professional demand letter that states the facts, the legal/contractual basis, the specific demand, and a deadline. Use when asked to write a demand letter, send a formal demand for payment, draft a cease-and-desist, or formally request resolution before legal action. Produces a structured, factual letter with a clear ask and consequences \u2014 assertive but not threatening or defamatory. Not legal advice; have counsel review before sending."
+}

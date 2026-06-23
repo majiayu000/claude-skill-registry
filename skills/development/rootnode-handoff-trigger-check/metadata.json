@@ -1,0 +1,37 @@
+{
+  "name": "rootnode-handoff-trigger-check",
+  "repo": "drayline/rootnode-skills",
+  "path": "rootnode-handoff-trigger-check/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/drayline/rootnode-skills",
+  "dir_name": "rootnode-handoff-trigger-check",
+  "downloaded_at": "2026-06-23T10:36:25.846251Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, build",
+    "score": 2,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "drayline",
+  "source_url": "https://github.com/drayline/rootnode-skills/blob/main/rootnode-handoff-trigger-check/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/drayline/rootnode-skills/blob/main/rootnode-handoff-trigger-check/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Evaluates whether work-in-design is ready to hand off from a chat design conversation to autonomous execution (Claude Code, n8n, agent runtime). Runs a 7-condition gate: spec stability, verification surface, invariants, pump-primer, work decomposition, rollback cost, token budget headroom. Three invocation modes \u2014 deliberate (caller provides work_context, returns JSON verdict), proactive sensing (Claude detects handoff signals in design conversation and offers the check), conversational walkthrough (Claude walks the 7 conditions as discussion topics). Returns structured JSON in all modes. Use when designing a Claude Code deployment, scoping an autonomous run, or deciding next move. Trigger on: \"ready to hand off,\" \"ready for execution,\" \"is this CC-ready,\" \"handoff check,\" \"walk me through readiness,\" \"are we ready to ship this,\" \"should I just hand this off,\" or proactive detection. Do NOT use for evaluating completed work, runtime selection, or prompt quality. Profile-agnostic."
+}

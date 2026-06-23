@@ -1,0 +1,37 @@
+{
+  "name": "creator-brand-kit",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/creator-brand-kit/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "creator-brand-kit",
+  "downloaded_at": "2026-06-23T10:44:49.034534Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: content, brand",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "content",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/creator-brand-kit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/creator-brand-kit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Define a creator's brand foundation \u2014 niche, audience, positioning, content pillars, voice/tone, and bio \u2014 so every post is consistent and on-brand. Use when asked to define a creator brand, find a niche, set content pillars, write a voice guide, craft a bio, or build a brand kit for a personal brand or channel. Produces a reusable one-page brand kit that other content skills can read so output sounds like you, every time."
+}

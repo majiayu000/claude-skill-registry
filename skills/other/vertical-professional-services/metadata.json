@@ -1,0 +1,37 @@
+{
+  "name": "vertical-professional-services",
+  "repo": "avelikiy/great_cto",
+  "path": "skills/vertical-professional-services/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/avelikiy/great_cto",
+  "dir_name": "vertical-professional-services",
+  "downloaded_at": "2026-06-23T10:32:17.833246Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: creative=2, documents=2",
+    "score": 2,
+    "runner_up": "documents",
+    "runner_up_score": 2,
+    "signals": [
+      "creative",
+      "writing"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "avelikiy",
+  "source_url": "https://github.com/avelikiy/great_cto/blob/main/skills/vertical-professional-services/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/avelikiy/great_cto/blob/main/skills/vertical-professional-services/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Domain-knowledge primer for the professional-services vertical (agencies, consulting firms, creative studios) so architect/pm don't spec naively against PSA incumbents (Scoro, Productive, Accelo, Ruddr, BigTime). Supplies the vocabulary, the non-obvious billing/margin rules, the entities a real proposal/portal/time/profitability product must model, and the per-product wedge. Applied by architect/pm during spec authoring for any of the four products in this vertical \u2014 proposals, client-portal, time-invoicing, profitability."
+}

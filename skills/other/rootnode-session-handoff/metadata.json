@@ -1,0 +1,37 @@
+{
+  "name": "rootnode-session-handoff",
+  "repo": "drayline/rootnode-skills",
+  "path": "rootnode-session-handoff/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/drayline/rootnode-skills",
+  "dir_name": "rootnode-session-handoff",
+  "downloaded_at": "2026-06-23T10:36:24.754304Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: data=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "data",
+      "pipeline"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "drayline",
+  "source_url": "https://github.com/drayline/rootnode-skills/blob/main/rootnode-session-handoff/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/drayline/rootnode-skills/blob/main/rootnode-session-handoff/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Produces structured XML session continuation documents for multi-session workflows. Captures all active work streams, decisions with rationale, uploaded file content, conversation knowledge, artifacts, and open items into an ingestion-optimized handoff file. Generates closeout checklist covering Memory updates, build_context.md assessment, propagation items, and file delivery. Use when approaching context limits, wrapping up a session, or managing complex work across multiple conversations. Trigger on: \"create a handoff,\" \"session closeout,\" \"wrap up this session,\" \"prepare for handoff,\" \"continue next session,\" \"save our progress,\" \"we're running out of context,\" \"context is getting long,\" \"let's pick this up next time.\" Do NOT use for Memory optimization, context budget analysis, project audits, or simple conversation summaries with no continuation intent (for related work, use rootnode-memory-optimization or rootnode-context-budget if available)."
+}

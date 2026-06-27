@@ -13,9 +13,14 @@ from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
-from utils import extract_description, load_metadata, normalize_category
+from utils import (
+    extract_description,
+    is_declared_bundled_skill_file,
+    load_metadata,
+    normalize_category,
+)
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(message)s")
 logger = logging.getLogger(__name__)
 
 
@@ -26,7 +31,7 @@ def utc_now_isoformat() -> str:
 
 def safe_write_registry(registry_path: Path, registry: dict) -> bool:
     """Safely write registry.json with atomic operation"""
-    temp_path = registry_path.with_suffix('.json.tmp')
+    temp_path = registry_path.with_suffix(".json.tmp")
     try:
         with open(temp_path, "w", encoding="utf-8") as f:
             json.dump(registry, f, ensure_ascii=False, separators=(",", ":"))
@@ -235,6 +240,8 @@ def scan_skills(skills_dir: Path) -> list:
         return skills
 
     for skill_md in skills_dir.rglob("SKILL.md"):
+        if is_declared_bundled_skill_file(skill_md, skills_dir):
+            continue
         skill_dir = skill_md.parent
         rel_dir = skill_dir.relative_to(skills_dir)
         rel_parts = rel_dir.parts
@@ -261,16 +268,8 @@ def scan_skills(skills_dir: Path) -> list:
 
         # Repo/path/branch normalization across different metadata formats
         repo = metadata.get("repo", "")
-        github_path = (
-            metadata.get("github_path")
-            or metadata.get("path")
-            or "/".join(rel_parts)
-        )
-        github_branch = (
-            metadata.get("github_branch")
-            or metadata.get("branch")
-            or "main"
-        )
+        github_path = metadata.get("github_path") or metadata.get("path") or "/".join(rel_parts)
+        github_branch = metadata.get("github_branch") or metadata.get("branch") or "main"
 
         skill_entry = {
             "name": name,
@@ -348,9 +347,8 @@ def build_category_indexes(skills: list, output_dir: Path):
     index = {
         "updated_at": utc_now_isoformat(),
         "categories": [
-            {"name": cat, "count": len(skills)}
-            for cat, skills in sorted(categories.items())
-        ]
+            {"name": cat, "count": len(skills)} for cat, skills in sorted(categories.items())
+        ],
     }
     with open(output_dir / "index.json", "w", encoding="utf-8") as f:
         json.dump(index, f, indent=2)
@@ -376,10 +374,18 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Rebuild registry.json from downloaded skills")
     parser.add_argument("--skills-dir", default="skills", help="Skills directory to scan")
     parser.add_argument("--registry", default="registry.json", help="Output registry.json path")
-    parser.add_argument("--manifest", default="registry-manifest.json", help="Output shard manifest path")
-    parser.add_argument("--shards-dir", default="registry-shards", help="Output registry shards directory")
-    parser.add_argument("--categories-dir", default="categories", help="Output categories directory")
-    parser.add_argument("--skip-categories", action="store_true", help="Do not write category index files")
+    parser.add_argument(
+        "--manifest", default="registry-manifest.json", help="Output shard manifest path"
+    )
+    parser.add_argument(
+        "--shards-dir", default="registry-shards", help="Output registry shards directory"
+    )
+    parser.add_argument(
+        "--categories-dir", default="categories", help="Output categories directory"
+    )
+    parser.add_argument(
+        "--skip-categories", action="store_true", help="Do not write category index files"
+    )
     parser.add_argument(
         "--compat-manifest-pointer",
         action="store_true",

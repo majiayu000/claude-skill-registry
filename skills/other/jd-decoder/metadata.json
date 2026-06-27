@@ -1,0 +1,36 @@
+{
+  "name": "jd-decoder",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/jd-decoder/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "jd-decoder",
+  "downloaded_at": "2026-06-27T20:29:12.084664Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category analysis scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "documents",
+    "runner_up_score": 1,
+    "signals": [
+      "analysis"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/jd-decoder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/jd-decoder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Decode a job description to find what they actually want beneath the buzzwords. Use when asked to analyse a job description, decode a JD, assess fit for a role, or figure out what a posting really means before applying. Produces a decode \u2014 the real must-haves vs. nice-to-haves, hidden priorities & culture signals, red flags, an honest fit assessment, and the exact phrases to mirror in your application."
+}

@@ -1,0 +1,32 @@
+{
+  "name": "web-media-getter",
+  "description": "One query across free image/video/GIF APIs (stock, historical/archival, GIF engines) with license-tagged, attributed results.",
+  "repo": "connerkward/web-media-getter-skill",
+  "path": "SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "tags": [
+    "media",
+    "images",
+    "video",
+    "gif",
+    "stock",
+    "claude-code"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "web-media-getter",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "LICENSE",
+    "README.md",
+    "webmedia.py"
+  ],
+  "author": "Conner K. Ward",
+  "source_url": "https://github.com/connerkward/web-media-getter-skill/blob/main/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/connerkward/web-media-getter-skill/blob/main/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

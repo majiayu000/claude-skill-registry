@@ -1,0 +1,37 @@
+{
+  "name": "fleet-runs",
+  "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+  "path": "plugins/ccam-workflows/skills/fleet-runs/SKILL.md",
+  "github_branch": "master",
+  "category": "api",
+  "source": "github.com/hoangsonww/Claude-Code-Agent-Monitor",
+  "dir_name": "fleet-runs",
+  "downloaded_at": "2026-06-27T20:23:06.549129Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "api",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for api: api, endpoint",
+    "score": 2,
+    "runner_up": "data",
+    "runner_up_score": 1,
+    "signals": [
+      "api",
+      "endpoint"
+    ],
+    "semantic_sources": {
+      "name": "metadata",
+      "description": "frontmatter"
+    }
+  },
+  "author": "hoangsonww",
+  "source_url": "https://github.com/hoangsonww/Claude-Code-Agent-Monitor/blob/master/plugins/ccam-workflows/skills/fleet-runs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hoangsonww/Claude-Code-Agent-Monitor/blob/master/plugins/ccam-workflows/skills/fleet-runs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Summarize Workflow-tool fleet runs from the Agent Monitor \u2014 these fleets emit no hooks and are ingested from on-disk run journals. List recent runs with status and agents-per-run, then drill into a single run's per-agent detail. Reconciles against the live run-state endpoints. Use when reviewing Workflow() fleets rather than hook-instrumented interactive sessions."
+}

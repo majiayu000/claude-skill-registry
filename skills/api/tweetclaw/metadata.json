@@ -1,0 +1,27 @@
+{
+  "name": "tweetclaw",
+  "description": "OpenClaw plugin skill for X/Twitter search, account reads, monitored workflows, and approval-gated TweetClaw actions through Xquik.",
+  "repo": "Xquik-dev/tweetclaw",
+  "path": "skills/tweetclaw",
+  "github_branch": "master",
+  "category": "api",
+  "tags": [
+    "openclaw",
+    "twitter",
+    "x",
+    "social-media",
+    "automation"
+  ],
+  "stars": 75,
+  "source": "Community Skills",
+  "dir_name": "tweetclaw",
+  "archive_mode": "skill-md",
+  "bundled_files": [],
+  "author": "Xquik-dev",
+  "source_url": "https://github.com/Xquik-dev/tweetclaw/blob/master/skills/tweetclaw/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Xquik-dev/tweetclaw/blob/master/skills/tweetclaw/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -33,6 +33,8 @@ import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path, PurePosixPath
 
+import yaml
+
 # Add parent to path for imports
 SCRIPT_DIR = Path(__file__).resolve().parent
 ROOT_DIR = SCRIPT_DIR.parent
@@ -87,8 +89,11 @@ BUNDLED_DIR_ALLOWLIST = {
     "examples",
     "prompts",
     "rules",
+    "src",
 }
+DESIGN_BUNDLED_DIR_PATTERN = re.compile(r"^design-[a-z0-9-]+$")
 SAFE_BUNDLED_BIN_FILENAMES = re.compile(r"^jq(?:-[A-Za-z0-9_.-]+|\.LICENSE)$")
+BUNDLED_ROOT_CODE_FILE_PATTERN = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]*\.(?:py|swift)$")
 BUNDLED_ROOT_FILE_ALLOWLIST = {
     "audit.md",
     "package.json",
@@ -127,6 +132,7 @@ BUNDLED_FILE_EXTENSIONS = {
     ".py",
     ".sh",
     ".svg",
+    ".swift",
     ".toml",
     ".tpl",
     ".ts",
@@ -220,7 +226,9 @@ def should_recurse_bundled_dir(relative_path: str) -> bool:
         return False
     if parts[0] == "bin":
         return len(parts) == 1
-    return parts[0] in BUNDLED_DIR_ALLOWLIST
+    return parts[0] in BUNDLED_DIR_ALLOWLIST or (
+        DESIGN_BUNDLED_DIR_PATTERN.fullmatch(parts[0]) is not None
+    )
 
 
 def is_safe_bundled_file(relative_path: str, size: int) -> bool:
@@ -238,14 +246,20 @@ def is_safe_bundled_file(relative_path: str, size: int) -> bool:
         return False
 
     filename = parts[-1]
-    if filename.lower() == "skill.md":
-        return False
     if len(parts) == 1:
         if size > MAX_BUNDLED_FILE_BYTES:
             return False
-        return filename in BUNDLED_ROOT_FILE_ALLOWLIST
+        return (
+            filename in BUNDLED_ROOT_FILE_ALLOWLIST
+            or BUNDLED_ROOT_CODE_FILE_PATTERN.fullmatch(filename) is not None
+        )
 
-    if parts[0] not in BUNDLED_DIR_ALLOWLIST:
+    if filename.lower() == "skill.md":
+        return DESIGN_BUNDLED_DIR_PATTERN.fullmatch(parts[0]) is not None
+
+    if parts[0] not in BUNDLED_DIR_ALLOWLIST and (
+        DESIGN_BUNDLED_DIR_PATTERN.fullmatch(parts[0]) is None
+    ):
         return False
     if parts[0] == "bin":
         return (
@@ -271,7 +285,39 @@ def requires_complete_bundled_archive(skill_content: str) -> bool:
     for dirname in BUNDLED_DIR_ALLOWLIST:
         if re.search(rf"(?<![a-z0-9_.-]){re.escape(dirname)}/", normalized):
             return True
+    if re.search(r"(?<![a-z0-9_.-])design-[a-z0-9-]+/", normalized):
+        return True
+    if re.search(r"(?<![a-z0-9_/.-])[a-z0-9][a-z0-9_.-]*\.(?:py|swift)(?![a-z0-9_.-])", normalized):
+        return True
     return any(filename.lower() in normalized for filename in BUNDLED_REQUIRED_ROOT_FILE_HINTS)
+
+
+def normalize_skill_frontmatter_description(content: str, skill: dict) -> str:
+    """Replace overlong upstream descriptions with the curated source description."""
+    source_description = str(skill.get("description") or "").strip()
+    if not source_description or len(source_description) > 500:
+        return content
+    if not content.startswith("---"):
+        return content
+
+    parts = content.split("---", 2)
+    if len(parts) < 3:
+        return content
+
+    try:
+        frontmatter = yaml.safe_load(parts[1])
+    except yaml.YAMLError:
+        return content
+    if not isinstance(frontmatter, dict):
+        return content
+
+    upstream_description = frontmatter.get("description")
+    if not isinstance(upstream_description, str) or len(upstream_description) <= 500:
+        return content
+
+    frontmatter["description"] = source_description
+    rendered = yaml.safe_dump(frontmatter, sort_keys=False, allow_unicode=True).strip()
+    return f"---\n{rendered}\n---{parts[2]}"
 
 
 def build_manifest_key(repo: str, path: str, name: str, category: str) -> str:

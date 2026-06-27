@@ -1,0 +1,37 @@
+{
+  "name": "trustpilot-reviews",
+  "repo": "browser-act/skills",
+  "path": "solutions/social-listening/trustpilot-reviews/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/browser-act/skills",
+  "dir_name": "trustpilot-reviews",
+  "downloaded_at": "2026-06-27T20:17:47.901561Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-ml=2, bash=2",
+    "score": 2,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "ml",
+      "training"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "browser-act",
+  "source_url": "https://github.com/browser-act/skills/blob/main/solutions/social-listening/trustpilot-reviews/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/browser-act/skills/blob/main/solutions/social-listening/trustpilot-reviews/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Trustpilot customer reviews scraper for any company listed on trustpilot.com \u2014 given a company domain (e.g. shopify.com, apple.com, shopwagandtail.com) plus optional filters (page number, single star rating 1-5, single language ISO code, verified-only flag, has-company-reply flag, date period last30days/last3months/last6months/last12months, free-text keyword search, and reviewer countryCode client-side filter), extracts paginated reviews with 20+ fields per review: reviewId, reviewUrl, reviewTitle, reviewDescription, reviewRatingScore (1-5), reviewDate (ISO publishedDate), reviewDateOfExperience, reviewLabel, isReviewVerified, reviewer (display name), reviewerId, reviewersCountry (ISO Alpha-2), reviewLanguage, reviewCompanyResponse (the company reply text), plus pagination metadata (currentPage, totalPages, totalCount). Optional flags add reviewer profile metadata (reviewerNumberOfReviews, reviewerProfileIsVerified), reply analysis dates (companyReplyPublishedDate, companyReplyUpdatedDate), extended metadata (reviewSource, reviewVerificationSource, reviewLikes), and review photos. Use when user mentions Trustpilot reviews, scrape Trustpilot, get reviews from Trustpilot, Trustpilot review scraper, Trustpilot customer reviews, extract Trustpilot reviews, Trustpilot review data, download Trustpilot reviews, paginate Trustpilot, paginated Trustpilot reviews, filter Trustpilot reviews by star, filter Trustpilot by language, verified reviews Trustpilot, has reply Trustpilot, company response Trustpilot, Trustpilot reply analysis, brand monitoring Trustpilot, sentiment analysis Trustpilot, competitor reviews Trustpilot, bulk reviews from a Trustpilot page, batch download reviews, trustpilot.com reviews scraping, fake review research Trustpilot, Trustpilot dataset, persona research from Trustpilot reviews, Trustpilot keyword search reviews, Trustpilot date range reviews, review export Trustpilot. Also applies to comparing review trends across competitors, training data for LLM sentiment classifiers, monitoring competitor response time, exporting reviews for BI dashboards, lead generation from active reviewers, ML / fake-review detection, and aggregator sites that display third-party reviews."
+}

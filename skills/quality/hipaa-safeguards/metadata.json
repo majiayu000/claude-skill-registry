@@ -1,0 +1,38 @@
+{
+  "name": "hipaa-safeguards",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/hipaa-safeguards/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "hipaa-safeguards",
+  "downloaded_at": "2026-06-27T20:29:14.810779Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "quality",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for quality: quality, review, validate",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "quality",
+      "review",
+      "validate"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/hipaa-safeguards/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/hipaa-safeguards/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Map HIPAA Security Rule safeguards and run a risk analysis for systems handling PHI. Use when asked to become HIPAA-compliant, assess HIPAA safeguards, prepare for handling PHI/ePHI, or scope a BAA. Produces a HIPAA assessment \u2014 the administrative/physical/technical safeguards with required-vs-addressable status, a risk analysis, BAA scope, and a prioritised remediation plan."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "webcrawler-deep-crawl",
+  "repo": "browser-act/skills",
+  "path": "solutions/search-research/webcrawler-deep-crawl/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/browser-act/skills",
+  "dir_name": "webcrawler-deep-crawl",
+  "downloaded_at": "2026-06-27T20:17:48.000612Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=3, data=3",
+    "score": 3,
+    "runner_up": "data",
+    "runner_up_score": 3,
+    "signals": [
+      "bash",
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "browser-act",
+  "source_url": "https://github.com/browser-act/skills/blob/main/solutions/search-research/webcrawler-deep-crawl/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/browser-act/skills/blob/main/solutions/search-research/webcrawler-deep-crawl/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Deep-crawl any website from start URLs, return per-page LLM-ready text/markdown/HTML plus metadata (title, description, author, language, canonical URL, OG) and in-scope outbound links. Use when user mentions deep crawl website, recursive crawl, crawl a whole site, scrape entire website, scrape docs site, scrape documentation, scrape knowledge base, scrape blog, build RAG corpus, build vector database from website, knowledge base for chatbot, GPT knowledge files, llms.txt, sitemap crawl, BFS crawl, scrape with depth or page limit, include exclude URL globs, remove boilerplate, strip navigation header footer, website to markdown, website to text, multi-page extraction, bulk page scraping, clean markdown from URL, docs site to markdown corpus, site to clean corpus. Also applies to building RAG pipelines, indexing a customer site, syncing docs into a vector store, generating training corpora from any docs hub, or expanding a single start URL into a clean corpus of every reachable in-scope page."
+}

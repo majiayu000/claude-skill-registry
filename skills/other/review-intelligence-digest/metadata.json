@@ -1,0 +1,39 @@
+{
+  "name": "review-intelligence-digest",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/research/composites/review-intelligence-digest/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "review-intelligence-digest",
+  "downloaded_at": "2026-06-27T20:22:56.489340Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: product=3, quality=3",
+    "score": 3,
+    "runner_up": "quality",
+    "runner_up_score": 3,
+    "signals": [
+      "product",
+      "feature",
+      "metrics"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/research/composites/review-intelligence-digest/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/research/composites/review-intelligence-digest/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Scrape G2, Capterra, and Trustpilot reviews for your product and competitors, then extract recurring themes, objections, proof points, and exact customer language for use in messaging. Chains review-site-scraper with LLM analysis. Produces a weekly or monthly digest that feeds directly into copywriting, positioning, and sales enablement. Use when a marketing team needs to ground messaging in real customer language."
+}

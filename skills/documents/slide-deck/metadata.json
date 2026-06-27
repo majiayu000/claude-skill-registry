@@ -1,0 +1,38 @@
+{
+  "name": "slide-deck",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/slide-deck/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "slide-deck",
+  "downloaded_at": "2026-06-27T20:29:11.353953Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: doc, pptx, markdown",
+    "score": 3,
+    "runner_up": "ai-ml",
+    "runner_up_score": 2,
+    "signals": [
+      "doc",
+      "pptx",
+      "markdown"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/slide-deck/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/slide-deck/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Build a real, editable PowerPoint (.pptx) deck from an outline or brief. Use when asked to make a slide deck, a PowerPoint, a pitch/board/sales deck as an actual file, or to turn a doc/notes into slides. Produces an actual .pptx via a generated python-pptx script \u2014 a title slide, one idea per content slide with a clear headline and concise bullets, and consistent styling. Requires a code-execution environment (Claude Code, the API code tool, or Claude.ai)."
+}

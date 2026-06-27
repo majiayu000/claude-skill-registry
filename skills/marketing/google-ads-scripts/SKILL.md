@@ -1,14 +1,7 @@
 ---
 name: google-ads-scripts
-description: >
-  Write, debug, and ship Google Ads Scripts (AdsApp / AdsManagerApp) correctly
-  the first time. Covers selectors, GAQL search, the AdsApp.mutate() escape
-  hatch for resources the SDK does not wrap, demographic exclusions, MCC
-  parallel execution, preview-mode gotchas, idempotency patterns, and
-  common error messages. Use when the user says "Google Ads Script",
-  "AdsApp", "AdsManagerApp", "ads script", "AdWordsApp", "automate Google
-  Ads", "mutate ad group criterion", or pastes JavaScript that imports
-  AdsApp. NOT for auditing Google Ads accounts — for that see ads-google.
+description: Write, debug, and ship AdsApp/AdsManagerApp scripts correctly, covering
+  selectors, GAQL, mutate(), MCC parallel runs, and common errors.
 ---
 
 # Google Ads Scripts

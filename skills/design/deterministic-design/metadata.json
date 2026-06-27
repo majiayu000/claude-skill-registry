@@ -1,0 +1,34 @@
+{
+  "name": "deterministic-design",
+  "description": "Render the UI and prove it's balanced and usable: a deterministic layout audit plus a vision-model-judged usability pass.",
+  "repo": "connerkward/deterministic-design-skill",
+  "path": "SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "tags": [
+    "design",
+    "layout",
+    "usability",
+    "ui-audit",
+    "vision",
+    "claude-code"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "deterministic-design",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "LICENSE",
+    "README.md",
+    "design-spatial/SKILL.md",
+    "design-spatial/scripts/layout-audit.js",
+    "design-ux/SKILL.md"
+  ],
+  "author": "Conner K. Ward",
+  "source_url": "https://github.com/connerkward/deterministic-design-skill/blob/main/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/connerkward/deterministic-design-skill/blob/main/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "portfolio-page",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/portfolio-page/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "portfolio-page",
+  "downloaded_at": "2026-06-27T20:29:13.926868Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "product",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for product: product, metrics",
+    "score": 2,
+    "runner_up": "creative",
+    "runner_up_score": 1,
+    "signals": [
+      "product",
+      "metrics"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/portfolio-page/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/portfolio-page/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Structure a portfolio or case-study page that shows your work, not just lists it. Use when asked to write a portfolio page, a project case study, a work showcase, or an 'is this person good?' proof page. Produces a portfolio structure \u2014 a positioning header, and per-project case studies (context \u2192 your role \u2192 what you did \u2192 outcome) that demonstrate impact, ready to export as a designed page/PDF."
+}

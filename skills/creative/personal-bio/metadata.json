@@ -1,0 +1,37 @@
+{
+  "name": "personal-bio",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/personal-bio/SKILL.md",
+  "github_branch": "main",
+  "category": "creative",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "personal-bio",
+  "downloaded_at": "2026-06-27T20:29:12.606197Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "creative",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for creative: story, writing",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 1,
+    "signals": [
+      "story",
+      "writing"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/personal-bio/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/personal-bio/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Write a professional bio in the three lengths you actually need. Use when asked to write a bio, an 'about me', a speaker/author bio, or a short profile blurb. Produces three ready-to-use versions \u2014 a one-liner, a short (~50-word) bio, and a long (~150-word) bio \u2014 in a consistent third-person voice, plus a first-person variant."
+}

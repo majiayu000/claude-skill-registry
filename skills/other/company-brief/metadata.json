@@ -1,0 +1,37 @@
+{
+  "name": "company-brief",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/company-brief/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "company-brief",
+  "downloaded_at": "2026-06-27T20:29:13.210276Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: product=2, quality=2",
+    "score": 2,
+    "runner_up": "quality",
+    "runner_up_score": 2,
+    "signals": [
+      "product",
+      "metrics"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/company-brief/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/company-brief/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Build a candidate's research brief on a company before an application or interview. Use when asked to research a company for a job, prep a company brief before an interview, or understand a prospective employer fast. Produces a one-page brief \u2014 what they do & how they make money, recent news & trajectory, product & competitors, likely challenges, culture signals, and smart questions to ask."
+}

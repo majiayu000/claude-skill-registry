@@ -269,7 +269,9 @@ def build_skill_key(repo: str = "", path: str = "", name: str = "", category: st
     return ""
 
 
-def canonical_metadata_identity(metadata: dict[str, Any], fields: tuple[str, ...]) -> dict[str, Any]:
+def canonical_metadata_identity(
+    metadata: dict[str, Any], fields: tuple[str, ...]
+) -> dict[str, Any]:
     """Build metadata identity while treating known source aliases as equivalent."""
     identity: dict[str, Any] = {}
     alias_groups = {
@@ -663,8 +665,7 @@ def classify_category_from_semantics(
         "method": "taxonomy_keyword_v1",
         "confidence": confidence,
         "reason": (
-            f"matched taxonomy keywords for {top_category}: "
-            f"{', '.join(top['signals'])}"
+            f"matched taxonomy keywords for {top_category}: " f"{', '.join(top['signals'])}"
         ),
         "score": top_score,
         "runner_up": runner_category,
@@ -684,6 +685,62 @@ def load_metadata(skill_dir: Path) -> dict:
     except (json.JSONDecodeError, OSError) as e:
         logger.warning("Failed to load %s: %s", meta_path, e)
         return {}
+
+
+def _normalize_bundled_file_path(value: Any) -> str | None:
+    if not isinstance(value, str):
+        return None
+    text = value.strip().replace("\\", "/").strip("/")
+    if not text:
+        return None
+    parts = text.split("/")
+    if any(part in {"", ".", ".."} for part in parts):
+        return None
+    return "/".join(parts)
+
+
+def is_declared_bundled_skill_file(skill_md: Path, skills_dir: Path) -> bool:
+    """
+    Return True for nested SKILL.md files explicitly declared by the parent skill.
+
+    The archive layout treats skills/<category>/<skill>/SKILL.md as the only
+    skill entry. Some upstream skills also bundle support SKILL.md files under
+    that directory; those are valid only when parent metadata.json lists them in
+    bundled_files.
+    """
+    try:
+        rel_parts = skill_md.relative_to(skills_dir).parts
+    except ValueError:
+        return False
+
+    if len(rel_parts) <= 3 or rel_parts[-1] != "SKILL.md":
+        return False
+    if any(part.startswith(".") for part in rel_parts):
+        return False
+
+    parent_dir = skills_dir / rel_parts[0] / rel_parts[1]
+    parent_skill = parent_dir / "SKILL.md"
+    parent_metadata = parent_dir / "metadata.json"
+    if not parent_skill.exists() or not parent_metadata.exists():
+        return False
+
+    try:
+        metadata = json.loads(parent_metadata.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError) as exc:
+        logger.warning("Failed to inspect bundled files in %s: %s", parent_metadata, exc)
+        return False
+    if not isinstance(metadata, dict):
+        return False
+
+    bundled_files = metadata.get("bundled_files")
+    if not isinstance(bundled_files, list):
+        return False
+
+    nested_rel = Path(*rel_parts[2:]).as_posix()
+    declared_files = {
+        normalized for item in bundled_files if (normalized := _normalize_bundled_file_path(item))
+    }
+    return nested_rel in declared_files
 
 
 def write_metadata(skill_dir: Path, meta: dict) -> None:

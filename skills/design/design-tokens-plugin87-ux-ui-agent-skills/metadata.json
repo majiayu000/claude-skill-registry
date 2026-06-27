@@ -1,0 +1,38 @@
+{
+  "name": "design-tokens",
+  "repo": "plugin87/ux-ui-agent-skills",
+  "path": ".claude/skills/design-tokens/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/plugin87/ux-ui-agent-skills",
+  "dir_name": "design-tokens-plugin87-ux-ui-agent-skills",
+  "downloaded_at": "2026-06-27T20:31:20.925786Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for design: design, ui, component",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 1,
+    "signals": [
+      "design",
+      "ui",
+      "component"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "plugin87",
+  "source_url": "https://github.com/plugin87/ux-ui-agent-skills/blob/main/.claude/skills/design-tokens/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/plugin87/ux-ui-agent-skills/blob/main/.claude/skills/design-tokens/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Generate, extend, or audit design tokens in DTCG format with the 3-tier architecture (primitive \u2192 semantic \u2192 component). Use when the user wants a color palette, type scale, spacing/shadow/radius/motion tokens, multi-brand theming, or wants to validate token files. Covers colors, typography, spacing, shadows, borders, breakpoints, motion, gradients, opacity, blur, sizing, states, theming."
+}

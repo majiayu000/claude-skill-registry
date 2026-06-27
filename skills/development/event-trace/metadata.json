@@ -1,0 +1,38 @@
+{
+  "name": "event-trace",
+  "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+  "path": "plugins/ccam-devtools/skills/event-trace/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
+  "source": "github.com/hoangsonww/Claude-Code-Agent-Monitor",
+  "dir_name": "event-trace",
+  "downloaded_at": "2026-06-27T20:23:07.962328Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, build, debug",
+    "score": 3,
+    "runner_up": "api",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "metadata",
+      "description": "frontmatter"
+    }
+  },
+  "author": "hoangsonww",
+  "source_url": "https://github.com/hoangsonww/Claude-Code-Agent-Monitor/blob/master/plugins/ccam-devtools/skills/event-trace/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hoangsonww/Claude-Code-Agent-Monitor/blob/master/plugins/ccam-devtools/skills/event-trace/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Trace the full event chain for one Claude Code session into an ordered timeline of every event type with tool_name and summary, highlighting gaps, out-of-order events, and failures. Reads /api/events?session_id= and /api/sessions/:id from the Agent Monitor dashboard. Use when debugging what a session actually did, step by step."
+}

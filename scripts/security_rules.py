@@ -97,6 +97,7 @@ BUNDLED_SCAN_DIRS = (
     "examples",
     "prompts",
     "rules",
+    "src",
 )
 BUNDLED_SCAN_ROOT_FILES = (
     "audit.md",
@@ -125,6 +126,7 @@ BUNDLED_SCAN_EXTENSIONS = {
     ".py",
     ".sh",
     ".svg",
+    ".swift",
     ".toml",
     ".tpl",
     ".ts",

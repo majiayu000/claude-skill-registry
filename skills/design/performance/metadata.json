@@ -1,0 +1,40 @@
+{
+  "name": "performance",
+  "repo": "plugin87/ux-ui-agent-skills",
+  "path": ".claude/skills/performance/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/plugin87/ux-ui-agent-skills",
+  "dir_name": "performance",
+  "downloaded_at": "2026-06-27T20:31:20.648884Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for design: design, ui, css, component, animation",
+    "score": 5,
+    "runner_up": "performance",
+    "runner_up_score": 3,
+    "signals": [
+      "design",
+      "ui",
+      "css",
+      "component",
+      "animation"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "plugin87",
+  "source_url": "https://github.com/plugin87/ux-ui-agent-skills/blob/main/.claude/skills/performance/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/plugin87/ux-ui-agent-skills/blob/main/.claude/skills/performance/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Optimize UI performance against Core Web Vitals \u2014 LCP, INP, CLS \u2014 with loading/code-split strategy, layout-shift prevention, and animation performance rules. Use when the user wants to improve speed, fix jank or layout shift, hit Web Vitals budgets, or make a UI feel fast on low-end devices."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "research-repo",
+  "repo": "scdenney/open-science-skills",
+  "path": "plugin/skills/research-repo/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/scdenney/open-science-skills",
+  "dir_name": "research-repo",
+  "downloaded_at": "2026-06-27T20:33:19.747147Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "scdenney",
+  "source_url": "https://github.com/scdenney/open-science-skills/blob/main/plugin/skills/research-repo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/scdenney/open-science-skills/blob/main/plugin/skills/research-repo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Scaffold or audit an entire research project repository organized around its source library. Use whenever the user is starting, structuring, organizing, or reviewing a whole project \u2014 \"set up a research repo\", \"how should I structure/organize this project\", \"initialize my sources folder\", \"new paper or literature-review project\", \"audit my repo structure\", \"is my sources folder set up right\", \"check my project layout\". Builds the full tree from the sources spine outward \u2014 sources/{og,md,unprocessed}, references.bib, a PDF\u2192Markdown convert script (OpenDataLoader PDF), a process-source intake command, CLAUDE.md/AGENTS.md, .gitignore, .venv \u2014 plus the analysis, manuscript, and review folders; or audits an existing repo and reports what is present, partial, or missing. NOT for intaking or converting a single PDF (use process-source) or building a publication replication package (use replication-package)."
+}

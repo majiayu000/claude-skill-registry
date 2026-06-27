@@ -1,0 +1,37 @@
+{
+  "name": "public-social-research",
+  "repo": "getaero-io/gtm-eng-skills",
+  "path": "skills/public-social-research/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/getaero-io/gtm-eng-skills",
+  "dir_name": "public-social-research",
+  "downloaded_at": "2026-06-27T20:21:57.192286Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: documents=2, productivity=2",
+    "score": 2,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "doc",
+      "docs"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "getaero-io",
+  "source_url": "https://github.com/getaero-io/gtm-eng-skills/blob/main/skills/public-social-research/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/getaero-io/gtm-eng-skills/blob/main/skills/public-social-research/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Find public community language, market signals, launch feedback, and technical discussion across X/Twitter, Bluesky, Hacker News, and other public social sources."
+}

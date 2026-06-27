@@ -1,6 +1,7 @@
 ---
 name: hubspot-developer-skill
-description: use this skill when building, reviewing, migrating, or planning hubspot developer platform apps (cli projects, app-hsmeta.json), ui extensions (app cards, app pages, settings), @hubspot/ui-extensions components, crm hooks and crm data/action components, hubspot.fetch and serverless app-function hsmeta (config.endpoint, endpoint.methods array), hs project validate upload errors, oauth vs static token distribution, webhooks, custom workflow actions, agent tools, app events/objects, scopes and sensitive data, or marketplace readiness. use for coding agents that need architecture, extension-point choice, file layout, component selection, security constraints, checklists, and testing guidance.
+description: HubSpot developer platform assistant for CRM APIs, UI extensions, serverless
+  functions, webhooks, app metadata, testing, and Marketplace readiness.
 ---
 
 # HubSpot Developer Skill

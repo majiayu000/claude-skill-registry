@@ -1,0 +1,32 @@
+{
+  "name": "macos-screen-recorder",
+  "description": "Headless macOS screen recorder capturing the display plus system audio via ScreenCaptureKit — CLI, no BlackHole/loopback driver, no sudo.",
+  "repo": "connerkward/macos-screen-recorder-system-audio",
+  "path": "SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "tags": [
+    "macos",
+    "screen-recording",
+    "system-audio",
+    "screencapturekit",
+    "cli",
+    "claude-code"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "macos-screen-recorder",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "LICENSE",
+    "README.md",
+    "sck-record.swift"
+  ],
+  "author": "Conner K. Ward",
+  "source_url": "https://github.com/connerkward/macos-screen-recorder-system-audio/blob/main/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/connerkward/macos-screen-recorder-system-audio/blob/main/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

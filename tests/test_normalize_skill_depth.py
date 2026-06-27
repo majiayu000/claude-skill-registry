@@ -91,6 +91,53 @@ def test_depth_plan_uses_category_after_skills_prefix(tmp_path):
     assert plan["moves"][0]["target_path"] == "documents/doc-helper"
 
 
+def test_depth_plan_ignores_declared_bundled_skill_markdown(tmp_path):
+    module = _load_module()
+    skills_dir = tmp_path / "skills"
+    _write_skill(
+        skills_dir,
+        "design/deterministic-design",
+        {
+            "name": "deterministic-design",
+            "category": "design",
+            "repo": "connerkward/deterministic-design-skill",
+            "bundled_files": ["design-spatial/SKILL.md"],
+        },
+    )
+    bundled_dir = skills_dir / "design" / "deterministic-design" / "design-spatial"
+    bundled_dir.mkdir()
+    (bundled_dir / "SKILL.md").write_text("# Spatial helper\n", encoding="utf-8")
+
+    plan = module.build_depth_plan(skills_dir)
+
+    assert plan["move_count"] == 0
+    assert plan["moves"] == []
+
+
+def test_depth_plan_moves_undeclared_nested_skill_markdown(tmp_path):
+    module = _load_module()
+    skills_dir = tmp_path / "skills"
+    _write_skill(
+        skills_dir,
+        "design/deterministic-design",
+        {
+            "name": "deterministic-design",
+            "category": "design",
+            "repo": "connerkward/deterministic-design-skill",
+            "bundled_files": [],
+        },
+    )
+    nested_dir = skills_dir / "design" / "deterministic-design" / "design-spatial"
+    nested_dir.mkdir()
+    (nested_dir / "SKILL.md").write_text("# Spatial helper\n", encoding="utf-8")
+
+    plan = module.build_depth_plan(skills_dir)
+
+    assert plan["move_count"] == 1
+    assert plan["moves"][0]["source_path"] == "design/deterministic-design/design-spatial"
+    assert plan["moves"][0]["target_path"] == "design/design-spatial"
+
+
 def test_apply_depth_plan_preserves_existing_target_with_suffix(tmp_path):
     module = _load_module()
     skills_dir = tmp_path / "skills"

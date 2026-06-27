@@ -23,6 +23,7 @@ from utils import (
     build_skill_key,
     canonical_metadata_identity,
     get_repo_suffix,
+    is_declared_bundled_skill_file,
     load_metadata,
     normalize_category,
     normalize_name,
@@ -52,6 +53,8 @@ def is_standard(rel_parts: tuple[str, ...]) -> bool:
 
 def iter_nonstandard_skill_dirs(skills_dir: Path):
     for skill_md in sorted(skills_dir.rglob("SKILL.md")):
+        if is_declared_bundled_skill_file(skill_md, skills_dir):
+            continue
         rel = skill_md.relative_to(skills_dir)
         if any(part.startswith(".") for part in rel.parts):
             continue

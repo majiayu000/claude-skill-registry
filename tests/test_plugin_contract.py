@@ -83,14 +83,14 @@ def test_build_plugins_index_and_stats_use_plugin_keys(tmp_path):
     search_manifest = json.loads(
         (output_dir / "search-index-manifest.json").read_text(encoding="utf-8")
     )
-    category_index = json.loads((output_dir / "categories" / "index.json").read_text(encoding="utf-8"))
+    category_index = json.loads(
+        (output_dir / "categories" / "index.json").read_text(encoding="utf-8")
+    )
     category_pointer = json.loads(
         (output_dir / "categories" / "development.json").read_text(encoding="utf-8")
     )
     category_manifest = json.loads(
-        (output_dir / "categories" / "development" / "manifest.json").read_text(
-            encoding="utf-8"
-        )
+        (output_dir / "categories" / "development" / "manifest.json").read_text(encoding="utf-8")
     )
     quality_pointer = json.loads((output_dir / "quality-index.json").read_text(encoding="utf-8"))
     quality_manifest = json.loads(
@@ -136,9 +136,7 @@ def test_build_plugins_index_and_stats_use_plugin_keys(tmp_path):
     assert stats_data["quality_largest_shard_bytes"] > 0
     assert stats_data["security_largest_shard_bytes"] > 0
     assert stats_data["ranking_largest_shard_bytes"] > 0
-    assert stats_data["category_counts"] == [
-        {"name": "development", "code": "dev", "count": 1}
-    ]
+    assert stats_data["category_counts"] == [{"name": "development", "code": "dev", "count": 1}]
     assert stats_data["unique_repo_count"] == 1
     assert stats_data["official_skill_count"] == 0
     assert stats_data["top_repositories"] == [{"repo": "owner/repo", "count": 1}]
@@ -337,6 +335,36 @@ def test_scan_skills_v2_is_recursive_and_metadata_optional(tmp_path):
     assert by_dir["skill-beta"]["category"] == "development"
 
 
+def test_declared_bundled_skill_markdown_is_not_indexed_as_archive_skill(tmp_path):
+    skills_dir = tmp_path / "skills"
+    parent = skills_dir / "design" / "deterministic-design"
+    parent.mkdir(parents=True)
+    (parent / "SKILL.md").write_text("# Deterministic Design\n", encoding="utf-8")
+    (parent / "metadata.json").write_text(
+        json.dumps(
+            {
+                "name": "deterministic-design",
+                "category": "design",
+                "repo": "connerkward/deterministic-design-skill",
+                "path": "",
+                "bundled_files": ["design-spatial/SKILL.md", "design-ux/SKILL.md"],
+            }
+        ),
+        encoding="utf-8",
+    )
+    for bundled_dir_name in ("design-spatial", "design-ux"):
+        bundled_dir = parent / bundled_dir_name
+        bundled_dir.mkdir()
+        (bundled_dir / "SKILL.md").write_text(f"# {bundled_dir_name}\n", encoding="utf-8")
+
+    search_records = build_search_index.scan_skills_v2(skills_dir)
+    registry_records = rebuild_registry.scan_skills(skills_dir)
+
+    assert [record["name"] for record in search_records] == ["deterministic-design"]
+    assert [record["name"] for record in registry_records] == ["deterministic-design"]
+    assert search_records[0]["archive_path"] == "design/deterministic-design/SKILL.md"
+
+
 def test_rebuild_registry_omits_derived_and_empty_optional_fields(tmp_path):
     skills_dir = tmp_path / "skills"
     skill_dir = skills_dir / "development" / "skill-beta"
@@ -469,12 +497,8 @@ def test_build_category_indexes_normalizes_control_character_categories(tmp_path
 
     rebuild_registry.build_category_indexes(skills, output_dir)
 
-    category_files = [
-        path for path in output_dir.iterdir() if path.name != "index.json"
-    ]
-    assert [path.name for path in category_files] == [
-        "nestjs-validation-and-pipes.json"
-    ]
+    category_files = [path for path in output_dir.iterdir() if path.name != "index.json"]
+    assert [path.name for path in category_files] == ["nestjs-validation-and-pipes.json"]
     assert not any("\n" in path.name for path in category_files)
     category_data = json.loads(category_files[0].read_text(encoding="utf-8"))
     assert category_data["category"] == "nestjs-validation-and-pipes"

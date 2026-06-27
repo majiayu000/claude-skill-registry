@@ -42,6 +42,57 @@ def test_skills_dir_rejects_legacy_directory_and_metadata_mismatch(tmp_path):
     assert "category-mismatch" in codes
 
 
+def test_skills_dir_accepts_declared_bundled_skill_markdown(tmp_path):
+    gate = _load_module()
+    skills_dir = tmp_path / "skills"
+    parent = skills_dir / "design" / "deterministic-design"
+    parent.mkdir(parents=True)
+    (parent / "SKILL.md").write_text("# Deterministic Design\n", encoding="utf-8")
+    _write_json(
+        parent / "metadata.json",
+        {
+            "name": "deterministic-design",
+            "category": "design",
+            "repo": "connerkward/deterministic-design-skill",
+            "bundled_files": ["design-spatial/SKILL.md", "design-ux/SKILL.md"],
+        },
+    )
+    (parent / "design-spatial").mkdir()
+    (parent / "design-spatial" / "SKILL.md").write_text("# Spatial\n", encoding="utf-8")
+    (parent / "design-ux").mkdir()
+    (parent / "design-ux" / "SKILL.md").write_text("# UX\n", encoding="utf-8")
+
+    report = gate.build_report(skills_dirs=[skills_dir])
+
+    assert report["error_count"] == 0
+
+
+def test_skills_dir_rejects_undeclared_nested_skill_markdown(tmp_path):
+    gate = _load_module()
+    skills_dir = tmp_path / "skills"
+    parent = skills_dir / "design" / "deterministic-design"
+    parent.mkdir(parents=True)
+    (parent / "SKILL.md").write_text("# Deterministic Design\n", encoding="utf-8")
+    _write_json(
+        parent / "metadata.json",
+        {
+            "name": "deterministic-design",
+            "category": "design",
+            "repo": "connerkward/deterministic-design-skill",
+            "bundled_files": [],
+        },
+    )
+    (parent / "design-spatial").mkdir()
+    (parent / "design-spatial" / "SKILL.md").write_text("# Spatial\n", encoding="utf-8")
+
+    report = gate.build_report(skills_dirs=[skills_dir])
+
+    assert [item["code"] for item in report["errors"]] == ["file-missing"]
+    assert report["errors"][0]["path"].endswith(
+        "design/deterministic-design/design-spatial/metadata.json"
+    )
+
+
 def test_registry_shards_reject_noncanonical_categories(tmp_path):
     gate = _load_module()
     shards_dir = tmp_path / "registry-shards"

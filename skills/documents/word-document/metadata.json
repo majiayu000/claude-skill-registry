@@ -1,0 +1,41 @@
+{
+  "name": "word-document",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/word-document/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "word-document",
+  "downloaded_at": "2026-06-27T20:29:13.050077Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for documents: doc, docs, pdf, word, docx, markdown",
+    "score": 6,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "doc",
+      "docs",
+      "pdf",
+      "word",
+      "docx",
+      "markdown"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/word-document/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/word-document/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Build a real, formatted Word (.docx) document \u2014 headings, styles, tables, TOC-ready. Use when asked to produce a Word doc, a .docx, a formatted report/contract/proposal/letter as an actual file (not markdown). Produces an actual .docx via a generated python-docx script with proper heading styles, body text, tables, and page structure. Requires a code-execution environment (Claude Code, the API code tool, or Claude.ai)."
+}

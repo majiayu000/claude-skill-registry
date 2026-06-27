@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Any
 
 from category_taxonomy import CategoryTaxonomy, category_slug, get_taxonomy
+from utils import is_declared_bundled_skill_file
 
 
 @dataclass(frozen=True)
@@ -226,6 +227,8 @@ def check_skills_dir(skills_dir: Path, gate: CategoryGate) -> list[CategoryIssue
         return [CategoryIssue("skills-dir-missing", str(skills_dir), "skills directory missing")]
 
     for skill_md in sorted(skills_dir.rglob("SKILL.md")):
+        if is_declared_bundled_skill_file(skill_md, skills_dir):
+            continue
         skill_dir = skill_md.parent
         rel_parts = skill_md.relative_to(skills_dir).parts
         label = _record_path(skill_md, skills_dir)
@@ -333,7 +336,9 @@ def _check_category_entry(
     issues: list[CategoryIssue],
 ) -> str | None:
     if not isinstance(entry, dict):
-        issues.append(CategoryIssue("category-entry-shape", path, "category entry must be an object"))
+        issues.append(
+            CategoryIssue("category-entry-shape", path, "category entry must be an object")
+        )
         return None
     slug = gate.check_category(entry.get("name"), path=path, field="category.name", issues=issues)
     if "code" in entry:

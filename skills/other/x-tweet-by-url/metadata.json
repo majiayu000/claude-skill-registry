@@ -1,0 +1,37 @@
+{
+  "name": "x-tweet-by-url",
+  "repo": "browser-act/skills",
+  "path": "solutions/social-listening/x-tweet-by-url/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/browser-act/skills",
+  "dir_name": "x-tweet-by-url",
+  "downloaded_at": "2026-06-27T20:17:47.677427Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, workflow=2",
+    "score": 2,
+    "runner_up": "workflow",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "browser-act",
+  "source_url": "https://github.com/browser-act/skills/blob/main/solutions/social-listening/x-tweet-by-url/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/browser-act/skills/blob/main/solutions/social-listening/x-tweet-by-url/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Scrapes tweets from any X (Twitter) URL \u2014 search results, user profile, single tweet detail, or list timeline \u2014 and returns normalized per-tweet data with text, author, engagement counts, media, hashtags, mentions, and cursor for pagination. Use when user mentions X URL scraper, Twitter URL scraper, scrape from URL, given an X link, given a Twitter link, accept mixed X URLs, accept mixed Twitter URLs, search URL, profile URL, list URL, status URL, tweet detail URL, scrape startUrls Twitter, X startUrls, mixed batch of Twitter links, paste links and scrape, mass URL extraction X, mass URL extraction Twitter, scrape from a list of links, x.com URLs, twitter.com URLs, classify Twitter URLs, auto-detect Twitter URL type, scrape lists on X, scrape Twitter lists, list timeline scraper, list tweet scraper, scrape conversation by URL. Also applies to processing seed URL files, dispatching mixed X URLs through a single workflow, list-based KOL monitoring, batch-collecting tweets from a curated list of profiles, lists, and individual posts."
+}

@@ -201,6 +201,8 @@ def test_build_index_generates_security_report_for_checked_out_data():
     assert "unzip -o security-report.zip -d docs || true" not in build_steps
     assert "test -f \"$RUNNER_TEMP/security-report.json\"" in build_steps
     assert "--allow-missing-security-evidence" not in build_steps
+    assert "'scripts/build_search_index.py'" in workflow
+    assert "'scripts/search_sources.py'" in workflow
     assert "'scripts/security_scanner.py'" in workflow
     assert "'scripts/security_blocklist.py'" in workflow
     assert "'sources/security_blocklist.json'" in workflow

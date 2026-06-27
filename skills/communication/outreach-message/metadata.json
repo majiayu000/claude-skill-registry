@@ -1,0 +1,38 @@
+{
+  "name": "outreach-message",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/outreach-message/SKILL.md",
+  "github_branch": "main",
+  "category": "communication",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "outreach-message",
+  "downloaded_at": "2026-06-27T20:29:14.902833Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "communication",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for communication: messaging, email, chat",
+    "score": 3,
+    "runner_up": "quality",
+    "runner_up_score": 1,
+    "signals": [
+      "messaging",
+      "email",
+      "chat"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/outreach-message/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/outreach-message/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Write cold outreach and networking messages that actually get replies. Use when asked to write a cold message to a recruiter/hiring manager, a LinkedIn connection note, a referral request, or a networking/coffee-chat ask during a job search. Produces short, specific, reply-worthy messages \u2014 tuned to the recipient and the ask \u2014 with a clear subject and a low-friction call to action."
+}

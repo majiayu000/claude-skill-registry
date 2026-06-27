@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-23T12:02:57.794661Z",
-  "count": 3,
+  "updated_at": "2026-06-27T21:20:28.336401Z",
+  "count": 4,
   "plugins": [
     {
       "name": "pm-ai-partner",
@@ -124,6 +124,47 @@
         "slope-guard.sh"
       ],
       "source_url": "https://github.com/srbryers/slope",
+      "license": "MIT"
+    },
+    {
+      "name": "notfair",
+      "description": "Official Google Ads, Meta Ads, SEO, and GEO Claude Code plugin from NotFair with coordinated skills, MCP-backed account data, and plugin install/update flow.",
+      "repo": "nowork-studio/NotFair",
+      "category": "marketing",
+      "tags": [
+        "seo",
+        "geo",
+        "google-ads",
+        "meta-ads",
+        "mcp",
+        "advertising",
+        "keyword-research",
+        "schema-markup"
+      ],
+      "install": "/plugin marketplace add nowork-studio/notfair; /plugin install notfair@nowork-studio",
+      "homepage": "https://notfair.co",
+      "author": "NotFair",
+      "skills": [
+        "google-ads",
+        "google-ads-audit",
+        "google-ads-copy",
+        "google-ads-landing",
+        "meta-ads",
+        "meta-ads-audit",
+        "seo-analysis",
+        "content-writer",
+        "content-planner",
+        "keyword-research",
+        "meta-tags-optimizer",
+        "schema-markup-generator",
+        "setup-cms",
+        "seo-page",
+        "broken-link-checker",
+        "geo-optimizer",
+        "upgrade",
+        "gemini"
+      ],
+      "source_url": "https://github.com/nowork-studio/NotFair",
       "license": "MIT"
     }
   ]

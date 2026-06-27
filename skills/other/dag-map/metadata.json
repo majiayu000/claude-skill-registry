@@ -1,0 +1,37 @@
+{
+  "name": "dag-map",
+  "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+  "path": "plugins/ccam-workflows/skills/dag-map/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/hoangsonww/Claude-Code-Agent-Monitor",
+  "dir_name": "dag-map",
+  "downloaded_at": "2026-06-27T20:23:05.596666Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: api=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "api",
+      "endpoint"
+    ],
+    "semantic_sources": {
+      "name": "metadata",
+      "description": "frontmatter"
+    }
+  },
+  "author": "hoangsonww",
+  "source_url": "https://github.com/hoangsonww/Claude-Code-Agent-Monitor/blob/master/plugins/ccam-workflows/skills/dag-map/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hoangsonww/Claude-Code-Agent-Monitor/blob/master/plugins/ccam-workflows/skills/dag-map/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Render the multi-agent orchestration DAG for a session \u2014 parent\u2192child subagent edges, tree depth, and fan-out \u2014 from the Agent Monitor workflow intelligence API. Cross-checks the orchestration dataset against the raw agent records and session detail. Use when visualizing how a session's agent structure was organized."
+}

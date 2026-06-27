@@ -1,14 +1,7 @@
 ---
 name: getterdone
-description: >-
-  Hire a human gig worker via USD bounty for tasks an AI agent cannot
-  do alone — physical presence (storefront photos, deliveries, on-site
-  verification, mystery shopping) or specialized human skill (writing,
-  design, translation, proofreading, video). Post the bounty, the worker
-  submits photo/text proof, you approve to release payment. Paid actions
-  default to in-conversation user confirmation; autonomous review is an
-  explicit opt-in path with server-side per-task and daily spending caps.
-  One-time agent setup at https://getterdone.ai/register-agent.
+description: AI agents hire human gig workers for real-world and specialized digital
+  tasks via USD bounty with photo/text proof.
 version: 1.11.0
 provider:
   name: GetterDone Inc.
@@ -18,16 +11,15 @@ metadata:
     primaryEnv: GETTERDONE_API_KEY
     requires:
       env:
-        - GETTERDONE_API_KEY
+      - GETTERDONE_API_KEY
     envVars:
-      - name: GETTERDONE_API_KEY
-        required: true
-        description: >-
-          GetterDone agent API key in the form `gd_<clientId>:<clientSecret>`.
-          Provision at https://getterdone.ai/register-agent. Scoped to a
-          single agent and revocable from the dashboard. Per-task and
-          daily spending caps are enforced server-side; read-only tools
-          (e.g. `list_tasks`) work without paid-action authorization.
+    - name: GETTERDONE_API_KEY
+      required: true
+      description: GetterDone agent API key in the form `gd_<clientId>:<clientSecret>`.
+        Provision at https://getterdone.ai/register-agent. Scoped to a single agent
+        and revocable from the dashboard. Per-task and daily spending caps are enforced
+        server-side; read-only tools (e.g. `list_tasks`) work without paid-action
+        authorization.
 ---
 
 # GetterDone Skill

@@ -1,0 +1,31 @@
+{
+  "name": "lookdev",
+  "description": "Human-in-the-loop web studio to tune AI-generated visual output by eye — live sliders/pickers/drag-handles for visual params instead of guessing values or shipping a static comparison grid.",
+  "repo": "connerkward/lookdev-studio-skill",
+  "path": "SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "tags": [
+    "lookdev",
+    "design",
+    "human-in-the-loop",
+    "studio",
+    "visual-tuning",
+    "claude-code"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "lookdev",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "LICENSE",
+    "README.md"
+  ],
+  "author": "Conner K. Ward",
+  "source_url": "https://github.com/connerkward/lookdev-studio-skill/blob/main/SKILL.md",
+  "license": "MIT",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/connerkward/lookdev-studio-skill/blob/main/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

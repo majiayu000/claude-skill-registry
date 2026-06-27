@@ -1,0 +1,36 @@
+{
+  "name": "resume",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/resume/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "resume",
+  "downloaded_at": "2026-06-27T20:29:10.935432Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category communication scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "design",
+    "runner_up_score": 1,
+    "signals": [
+      "email"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/resume/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/resume/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Write a sharp, achievement-led resume/CV that passes ATS and earns the interview. Use when asked to write or rewrite a resume or CV, turn experience into a resume, or tailor a resume to a job. Produces a clean, single-column, ATS-friendly resume \u2014 summary, experience as quantified accomplishment bullets, skills, and education \u2014 ready to export as a designed PDF."
+}

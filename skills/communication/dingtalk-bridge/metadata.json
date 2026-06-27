@@ -19,7 +19,11 @@
   "bundled_files": [
     "LICENSE",
     "README.md",
-    "scripts/install.sh"
+    "scripts/install.sh",
+    "src/__init__.py",
+    "src/config.py",
+    "src/send.py",
+    "src/stream_bot.py"
   ],
   "author": "mguozhen",
   "source_url": "https://github.com/mguozhen/dingtalk-bridge/blob/main/SKILL.md",

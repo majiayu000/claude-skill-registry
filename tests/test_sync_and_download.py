@@ -711,12 +711,20 @@ def test_bundled_file_allowlist_is_scoped_and_size_limited():
     assert module.should_recurse_bundled_dir("connectors") is True
     assert module.should_recurse_bundled_dir("knowledge") is True
     assert module.should_recurse_bundled_dir("prompts") is True
+    assert module.should_recurse_bundled_dir("src") is True
+    assert module.should_recurse_bundled_dir("design-spatial") is True
     assert module.should_recurse_bundled_dir("docs") is False
     assert module.is_safe_bundled_file("references/helper.py", 1024) is True
     assert module.is_safe_bundled_file("reference/environment.md", 1024) is True
     assert module.is_safe_bundled_file("connectors/slack.md", 1024) is True
     assert module.is_safe_bundled_file("knowledge/finance-metrics.md", 1024) is True
     assert module.is_safe_bundled_file("prompts/audit-system-prompt.md", 1024) is True
+    assert module.is_safe_bundled_file("src/polish.py", 1024) is True
+    assert module.is_safe_bundled_file("src/events-log.swift", 1024) is True
+    assert module.is_safe_bundled_file("webmedia.py", 1024) is True
+    assert module.is_safe_bundled_file("sck-record.swift", 1024) is True
+    assert module.is_safe_bundled_file("design-spatial/SKILL.md", 1024) is True
+    assert module.is_safe_bundled_file("design-spatial/scripts/layout-audit.js", 1024) is True
     assert module.is_safe_bundled_file("scripts/listen.mjs", 1024) is True
     assert module.is_safe_bundled_file("bin/jq-linux-amd64", 2_319_424) is True
     assert module.is_safe_bundled_file("bin/jq-windows-amd64.exe", 985_088) is True
@@ -745,7 +753,152 @@ def test_bundled_file_allowlist_is_scoped_and_size_limited():
         is False
     )
     assert support.requires_complete_bundled_archive("See references/guide.md") is True
+    assert support.requires_complete_bundled_archive("Run src/polish.py") is True
+    assert support.requires_complete_bundled_archive("Run webmedia.py") is True
+    assert support.requires_complete_bundled_archive("Read design-spatial/SKILL.md") is True
     assert support.requires_complete_bundled_archive("Set user preference/theme.md") is False
+    normalized = support.normalize_skill_frontmatter_description(
+        f"---\nname: demo\ndescription: {'x' * 501}\n---\n# Demo\n",
+        {"description": "Curated short source description."},
+    )
+    assert "Curated short source description." in normalized
+    assert "x" * 501 not in normalized
+
+
+def test_bundles_root_helpers_src_and_design_subskills(tmp_path, monkeypatch):
+    module = load_module()
+    registry_path = tmp_path / "registry.json"
+    output_dir = tmp_path / "skills"
+    failure_report_path = tmp_path / "failure_report.json"
+    manifest_path = tmp_path / "manifest.json"
+    registry_path.write_text(
+        json.dumps(
+            {
+                "skills": [
+                    {
+                        "name": "media-design",
+                        "repo": "acme/media-design",
+                        "path": "",
+                        "category": "development",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    skill_text = (
+        "---\nname: media-design\n"
+        "description: Demo skill with root helpers and design subskills.\n---\n"
+        "# Demo\n"
+        "Run webmedia.py, sck-record.swift, src/polish.py, and design-spatial/SKILL.md.\n"
+    )
+    install_fake_aiohttp(
+        monkeypatch,
+        {
+            "https://raw.githubusercontent.com/acme/media-design/main/SKILL.md": FakeResponse(
+                200,
+                text=skill_text,
+            ),
+            "https://api.github.com/repos/acme/media-design/contents?ref=main": FakeResponse(
+                200,
+                json_payload=[
+                    {"type": "file", "path": "SKILL.md", "size": len(skill_text)},
+                    {
+                        "type": "file",
+                        "path": "webmedia.py",
+                        "download_url": "https://download.example/webmedia.py",
+                        "size": 20,
+                    },
+                    {
+                        "type": "file",
+                        "path": "sck-record.swift",
+                        "download_url": "https://download.example/sck-record.swift",
+                        "size": 20,
+                    },
+                    {"type": "dir", "path": "src", "size": 0},
+                    {"type": "dir", "path": "design-spatial", "size": 0},
+                ],
+            ),
+            "https://api.github.com/repos/acme/media-design/contents/src?ref=main": FakeResponse(
+                200,
+                json_payload=[
+                    {
+                        "type": "file",
+                        "path": "src/polish.py",
+                        "download_url": "https://download.example/polish.py",
+                        "size": 20,
+                    }
+                ],
+            ),
+            "https://api.github.com/repos/acme/media-design/contents/design-spatial?ref=main": (
+                FakeResponse(
+                    200,
+                    json_payload=[
+                        {
+                            "type": "file",
+                            "path": "design-spatial/SKILL.md",
+                            "download_url": "https://download.example/design-spatial-skill",
+                            "size": 80,
+                        },
+                        {"type": "dir", "path": "design-spatial/scripts", "size": 0},
+                    ],
+                )
+            ),
+            "https://api.github.com/repos/acme/media-design/contents/design-spatial/scripts?ref=main": (
+                FakeResponse(
+                    200,
+                    json_payload=[
+                        {
+                            "type": "file",
+                            "path": "design-spatial/scripts/layout-audit.js",
+                            "download_url": "https://download.example/layout-audit.js",
+                            "size": 20,
+                        }
+                    ],
+                )
+            ),
+            "https://download.example/webmedia.py": FakeResponse(200, text="print('media')\n"),
+            "https://download.example/sck-record.swift": FakeResponse(200, text="print(\"rec\")\n"),
+            "https://download.example/polish.py": FakeResponse(200, text="print('polish')\n"),
+            "https://download.example/design-spatial-skill": FakeResponse(
+                200,
+                text=(
+                    "---\nname: design-spatial\n"
+                    "description: Demo nested design subskill.\n---\n# Design Spatial\n"
+                ),
+            ),
+            "https://download.example/layout-audit.js": FakeResponse(200, text="console.log('ok')\n"),
+        },
+    )
+
+    stats = asyncio.run(
+        module.download_skills(
+            registry_path,
+            output_dir,
+            manifest_path=manifest_path,
+            failure_report_path=failure_report_path,
+        )
+    )
+
+    assert stats["downloaded"] == 1
+    assert stats["failed"] == 0
+    assert stats["bundled_files"] == 5
+    skill_dir = next(output_dir.glob("development/*"))
+    assert (skill_dir / "webmedia.py").is_file()
+    assert (skill_dir / "sck-record.swift").is_file()
+    assert (skill_dir / "src" / "polish.py").is_file()
+    assert (skill_dir / "design-spatial" / "SKILL.md").is_file()
+    assert (skill_dir / "design-spatial" / "scripts" / "layout-audit.js").is_file()
+    metadata = json.loads((skill_dir / "metadata.json").read_text(encoding="utf-8"))
+    assert metadata["archive_mode"] == "directory"
+    assert metadata["bundled_files"] == [
+        "design-spatial/SKILL.md",
+        "design-spatial/scripts/layout-audit.js",
+        "sck-record.swift",
+        "src/polish.py",
+        "webmedia.py",
+    ]
 
 
 def test_bundled_download_failure_does_not_publish_partial_archive(tmp_path, monkeypatch):

@@ -1,0 +1,36 @@
+{
+  "name": "subagent-driven",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/subagent-driven/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "subagent-driven",
+  "downloaded_at": "2026-06-27T20:10:37.809901Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-llm scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "bash",
+    "runner_up_score": 1,
+    "signals": [
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/subagent-driven/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/subagent-driven/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Execute a multi-task plan by dispatching one fresh subagent per task, auditing each result against an adversarial review gate before the next starts, and closing with a broad whole-branch review. Use when a plan, checklist, or multi-step change has tasks that can be delegated, or when the user says \"subagent-driven\", \"delegated execution\", \"execute the plan with subagents\", or hands you an ordered plan to run."
+}

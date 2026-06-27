@@ -1,0 +1,39 @@
+{
+  "name": "image-to-code",
+  "repo": "plugin87/ux-ui-agent-skills",
+  "path": ".claude/skills/image-to-code/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/plugin87/ux-ui-agent-skills",
+  "dir_name": "image-to-code",
+  "downloaded_at": "2026-06-27T20:31:21.029713Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for design: design, ui, css, component",
+    "score": 4,
+    "runner_up": "development",
+    "runner_up_score": 3,
+    "signals": [
+      "design",
+      "ui",
+      "css",
+      "component"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "plugin87",
+  "source_url": "https://github.com/plugin87/ux-ui-agent-skills/blob/main/.claude/skills/image-to-code/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/plugin87/ux-ui-agent-skills/blob/main/.claude/skills/image-to-code/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Turn a reference image, screenshot, or mockup into token-driven, accessible code \u2014 infer the design system from the reference (palette, type scale, spacing, radius, layout archetype), map it to the 3-tier tokens, rebuild it, then verify with the kit's gates. Use when the user provides a design/screenshot and wants matching UI code."
+}

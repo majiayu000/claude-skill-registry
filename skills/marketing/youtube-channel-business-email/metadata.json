@@ -1,0 +1,38 @@
+{
+  "name": "youtube-channel-business-email",
+  "repo": "browser-act/skills",
+  "path": "solutions/lead-generation/youtube-channel-business-email/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/browser-act/skills",
+  "dir_name": "youtube-channel-business-email",
+  "downloaded_at": "2026-06-27T20:17:48.836151Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, social, brand",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "social",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "browser-act",
+  "source_url": "https://github.com/browser-act/skills/blob/main/solutions/lead-generation/youtube-channel-business-email/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/browser-act/skills/blob/main/solutions/lead-generation/youtube-channel-business-email/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "YouTube channel business email and contact extractor: accepts a channel id (UCxxx), handle (@name), or URL; navigates the channel About view; extracts the business email from the description text plus full channel metadata (name, id, country, subscriber count, view count, video count, joined date, external links classified as social/aggregator/personal). When the description has no email, follows non-social outbound links (personal site, business site, link aggregator) and scans those pages for an email so creators who place their inquiry email on their own site are still covered. Use when user mentions youtube channel email, youtube business email, youtube creator email, youtube contact email, youtube channel contact, youtube channel scraper email, youtube email finder, youtube influencer email, youtube outreach, youtube sponsorship contact, youtube partnership email, scrape email from youtube, get email from youtube channel, find youtube creator contact, extract youtube channel emails in bulk, youtube channel inquiry email, business inquiries youtube, brand deal email youtube, lead generation youtube creators, youtube creator outreach list, youtube channel about email, ytInitialData about, youtube channel id to email, youtube handle to email, youtube channel url to email, youtube about page scraper, channel about page email, youtube channel metadata, youtube channel social links, youtube channel external links, youtube channel description email, follow channel website for email, scrape creator personal website from youtube. Also applies to building creator/KOL contact databases for influencer marketing, agency lead lists, sponsorship prospecting, brand-creator collaboration sourcing, and enriching existing YouTube channel lists with contact info."
+}

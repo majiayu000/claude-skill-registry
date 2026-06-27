@@ -19,7 +19,9 @@
   "archive_mode": "directory",
   "bundled_files": [
     "README.md",
-    "requirements.txt"
+    "requirements.txt",
+    "run_daily.py",
+    "warmup_reddit.py"
   ],
   "author": "mguozhen",
   "source_url": "https://github.com/mguozhen/social-bot/blob/main/SKILL.md",

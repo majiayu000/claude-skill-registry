@@ -1,0 +1,37 @@
+{
+  "name": "cover-letter",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/cover-letter/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "cover-letter",
+  "downloaded_at": "2026-06-27T20:29:12.973800Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: creative=2, documents=2",
+    "score": 2,
+    "runner_up": "documents",
+    "runner_up_score": 2,
+    "signals": [
+      "creative",
+      "writing"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/cover-letter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/cover-letter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Write a specific, non-generic cover letter that connects your evidence to the role. Use when asked to write a cover letter, an application letter, or a note to accompany a resume. Produces a tight 3\u20134 paragraph letter \u2014 a real hook, two evidence paragraphs mapping your proof to the job's needs, and a confident close \u2014 tailored to the company, ready to export as a designed PDF."
+}

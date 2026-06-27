@@ -36,7 +36,7 @@ from sync_pipeline_support import (
     load_acquisition_manifest,
     load_learning_priors,
     logger,
-    not_found_cooldown_hours,
+    not_found_cooldown_hours, normalize_skill_frontmatter_description,
     prune_negative_cache,
     remove_ci_untracked_archive_files,
     requires_complete_bundled_archive,
@@ -551,7 +551,7 @@ async def download_skills(
                     try:
                         async with session.get(url, timeout=request_timeout) as resp:
                             if resp.status == 200:
-                                content = await resp.text()
+                                content = normalize_skill_frontmatter_description(await resp.text(), skill)
                                 if content and len(content) > 50 and ("---" in content[:50] or "#" in content[:100]):
                                     require_complete_archive = requires_complete_bundled_archive(content)
                                     # Valid content - save under category with normalized name

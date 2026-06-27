@@ -1,0 +1,37 @@
+{
+  "name": "soc2-readiness",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/soc2-readiness/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "soc2-readiness",
+  "downloaded_at": "2026-06-27T20:29:13.547214Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, quality=2",
+    "score": 2,
+    "runner_up": "quality",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/soc2-readiness/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/soc2-readiness/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Assess SOC 2 readiness across the Trust Services Criteria and produce a gap remediation plan. Use when asked to prepare for a SOC 2 audit, run a SOC 2 readiness/gap assessment, scope controls, or get audit-ready. Produces a readiness report \u2014 scope & criteria, a control-by-control status, a weighted readiness score, prioritised gaps with owners, and the evidence each control needs."
+}

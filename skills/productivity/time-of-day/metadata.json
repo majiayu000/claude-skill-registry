@@ -1,0 +1,38 @@
+{
+  "name": "time-of-day",
+  "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+  "path": "plugins/ccam-productivity/skills/time-of-day/SKILL.md",
+  "github_branch": "master",
+  "category": "productivity",
+  "source": "github.com/hoangsonww/Claude-Code-Agent-Monitor",
+  "dir_name": "time-of-day",
+  "downloaded_at": "2026-06-27T20:23:11.231418Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "productivity",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for productivity: productivity, task, planning",
+    "score": 3,
+    "runner_up": "api",
+    "runner_up_score": 2,
+    "signals": [
+      "productivity",
+      "task",
+      "planning"
+    ],
+    "semantic_sources": {
+      "name": "metadata",
+      "description": "frontmatter"
+    }
+  },
+  "author": "hoangsonww",
+  "source_url": "https://github.com/hoangsonww/Claude-Code-Agent-Monitor/blob/master/plugins/ccam-productivity/skills/time-of-day/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hoangsonww/Claude-Code-Agent-Monitor/blob/master/plugins/ccam-productivity/skills/time-of-day/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Discover when you are most active and most productive with Claude Code by bucketing sessions and events into hour-of-day and day-of-week bins from their timestamps, then flagging peak versus low-output windows. Uses the session list, per-session events, and analytics daily trends. Use when planning a schedule or deciding when to do deep work versus lighter tasks."
+}

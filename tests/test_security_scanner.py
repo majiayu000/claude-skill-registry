@@ -388,6 +388,77 @@ description: Demo skill used to verify file list ownership.
     assert selected == [(skill_dir / "SKILL.md").resolve()]
 
 
+def test_file_list_maps_declared_bundled_skill_markdown_to_owner_skill(tmp_path):
+    module = load_module()
+    skills_dir = tmp_path / "skills"
+    skill_dir = skills_dir / "design" / "deterministic-design"
+    bundled_dir = skill_dir / "design-spatial"
+    bundled_dir.mkdir(parents=True)
+    (skill_dir / "SKILL.md").write_text(
+        """---
+name: deterministic-design
+description: Demo skill used to verify bundled SKILL.md ownership.
+---
+
+# Deterministic Design
+""",
+        encoding="utf-8",
+    )
+    (skill_dir / "metadata.json").write_text(
+        json.dumps({"bundled_files": ["design-spatial/SKILL.md"]}),
+        encoding="utf-8",
+    )
+    (bundled_dir / "SKILL.md").write_text(
+        "---\ndescription: Broken support frontmatter: not an archive skill\n---\n",
+        encoding="utf-8",
+    )
+    file_list = tmp_path / "changed-files.txt"
+    file_list.write_text(
+        "design/deterministic-design/design-spatial/SKILL.md\n",
+        encoding="utf-8",
+    )
+
+    selected = module.resolve_scan_file_list(skills_dir, file_list)
+    report = module.scan_directory(skills_dir, quiet=True, selected_files=selected)
+
+    assert selected == [(skill_dir / "SKILL.md").resolve()]
+    assert report["total"] == 1
+    assert report["failed"] == 0
+    assert report["skills"][0]["path"] == "design/deterministic-design/SKILL.md"
+
+
+def test_directory_scan_skips_declared_bundled_skill_markdown_as_archive_target(tmp_path):
+    module = load_module()
+    skills_dir = tmp_path / "skills"
+    skill_dir = skills_dir / "design" / "deterministic-design"
+    bundled_dir = skill_dir / "design-spatial"
+    bundled_dir.mkdir(parents=True)
+    (skill_dir / "SKILL.md").write_text(
+        """---
+name: deterministic-design
+description: Demo skill used to verify bundled SKILL.md target filtering.
+---
+
+# Deterministic Design
+""",
+        encoding="utf-8",
+    )
+    (skill_dir / "metadata.json").write_text(
+        json.dumps({"bundled_files": ["design-spatial/SKILL.md"]}),
+        encoding="utf-8",
+    )
+    (bundled_dir / "SKILL.md").write_text(
+        "---\ndescription: Broken support frontmatter: not an archive skill\n---\n",
+        encoding="utf-8",
+    )
+
+    report = module.scan_directory(skills_dir, quiet=True)
+
+    assert report["total"] == 1
+    assert report["failed"] == 0
+    assert report["skills"][0]["path"] == "design/deterministic-design/SKILL.md"
+
+
 def test_scanner_checks_all_archived_support_dirs(tmp_path):
     module = load_module()
     skill_dir = tmp_path / "demo"

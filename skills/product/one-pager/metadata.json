@@ -1,0 +1,38 @@
+{
+  "name": "one-pager",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/one-pager/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "one-pager",
+  "downloaded_at": "2026-06-27T20:29:11.246315Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "product",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for product: product, feature, metrics",
+    "score": 3,
+    "runner_up": "documents",
+    "runner_up_score": 2,
+    "signals": [
+      "product",
+      "feature",
+      "metrics"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/one-pager/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/one-pager/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Distil anything \u2014 a startup, product, project, or idea \u2014 into a single persuasive page. Use when asked to make a one-pager, a one-page summary, a leave-behind, a startup/product one-sheet, or a tl;dr brief. Produces a structured single page \u2014 headline + tagline, the problem, the solution, why-now/proof, and a clear ask/CTA \u2014 designed to be skimmed and remembered, ready to export as a typeset PDF."
+}

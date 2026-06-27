@@ -1,14 +1,8 @@
 ---
 name: confluence-to-agent-knowledge-base
-description: >
-  Turn any Confluence Cloud instance into a private, searchable AI knowledge base
-  on GitHub with access-tiered repos. Interactive 6-phase walkthrough using the
-  Atlassian MCP connector (no API tokens needed). Ingests pages, compiles a
-  structured wiki with categories and summaries, sets up search/Q&A CLI tools,
-  splits into access-controlled GitHub repos, and configures weekly auto-sync.
-  Use when asked to "migrate confluence", "create knowledge base from confluence",
-  "set up a KB", "export confluence to github", "confluence to markdown",
-  "build a knowledge base", or "make confluence searchable".
+description: Turn any Confluence Cloud instance into a private, searchable AI knowledge
+  base on GitHub with access-tiered repos. Interactive 6-phase walkthrough using the
+  Atlassian MCP connector.
 ---
 
 # Confluence to Agent Knowledge Base

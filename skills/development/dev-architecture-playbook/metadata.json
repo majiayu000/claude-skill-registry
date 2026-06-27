@@ -1,0 +1,41 @@
+{
+  "name": "dev-architecture-playbook",
+  "repo": "majiayu000/spellbook",
+  "path": "skills/dev-architecture-playbook/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/majiayu000/spellbook",
+  "dir_name": "dev-architecture-playbook",
+  "downloaded_at": "2026-06-27T20:27:09.965201Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: dev, code, build, software, debug, refactor",
+    "score": 6,
+    "runner_up": "design",
+    "runner_up_score": 5,
+    "signals": [
+      "dev",
+      "code",
+      "build",
+      "software",
+      "debug",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/spellbook/blob/main/skills/dev-architecture-playbook/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/majiayu000/spellbook/blob/main/skills/dev-architecture-playbook/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Route full software-development architecture work from product intent through design, implementation, testing, release, and operations. Use when the user asks for a complete development architecture, wants to know which Spellbook skills to combine, needs an execution path across PRD/spec/API/data/security/performance/release/SRE, or asks to turn an idea or repo into a production-ready engineering plan."
+}

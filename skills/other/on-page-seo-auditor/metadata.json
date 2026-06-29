@@ -1,0 +1,38 @@
+{
+  "name": "on-page-seo-auditor",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "optimize/on-page-seo-auditor/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "on-page-seo-auditor",
+  "downloaded_at": "2026-06-29T04:09:50.077023Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: marketing=3, security=3",
+    "score": 3,
+    "runner_up": "security",
+    "runner_up_score": 3,
+    "signals": [
+      "marketing",
+      "seo",
+      "content"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/optimize/on-page-seo-auditor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/optimize/on-page-seo-auditor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"audit on-page SEO\" or \"diagnose why a single page dropped\"; scores titles, meta, header structure, keyword placement, links, and images with prioritized fixes. Not for E-E-A-T / publish-readiness scoring \u2014 use content-quality-auditor; not for crawl / CWV / indexing \u2014 use technical-seo-checker. \u9875\u9762SEO\u5ba1\u8ba1/\u6392\u540d\u8bca\u65ad"
+}

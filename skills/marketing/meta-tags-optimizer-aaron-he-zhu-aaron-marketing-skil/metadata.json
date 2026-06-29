@@ -1,0 +1,39 @@
+{
+  "name": "meta-tags-optimizer",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "build/meta-tags-optimizer/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "meta-tags-optimizer-aaron-he-zhu-aaron-marketing-skil",
+  "downloaded_at": "2026-06-29T04:09:49.305653Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, seo, content, social",
+    "score": 4,
+    "runner_up": "writing",
+    "runner_up_score": 3,
+    "signals": [
+      "marketing",
+      "seo",
+      "content",
+      "social"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/build/meta-tags-optimizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/build/meta-tags-optimizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"optimize meta tags\"; improves titles, descriptions, Open Graph, Twitter cards, and CTR test variants. Not for JSON-LD structured data \u2014 use schema-markup-generator; not for body copy \u2014 use seo-content-writer. \u6807\u9898\u4f18\u5316/\u5143\u63cf\u8ff0/CTR"
+}

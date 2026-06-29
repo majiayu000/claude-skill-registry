@@ -1,0 +1,38 @@
+{
+  "name": "internal-linking-optimizer",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "optimize/internal-linking-optimizer/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "internal-linking-optimizer-aaron-he-zhu-aaron-marketing-skil",
+  "downloaded_at": "2026-06-29T04:09:50.995076Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "security",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for security: security, auth, audit",
+    "score": 3,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "security",
+      "auth",
+      "audit"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/optimize/internal-linking-optimizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/optimize/internal-linking-optimizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"fix internal linking\" or \"find orphan pages\"; maps link architecture, authority flow, anchor text, and crawl depth, then delivers a prioritized source/target/anchor plan. Not for external backlinks \u2014 use backlink-analyzer. \u5185\u94fe\u4f18\u5316/\u7ad9\u5185\u67b6\u6784"
+}

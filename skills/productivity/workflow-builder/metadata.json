@@ -1,0 +1,39 @@
+{
+  "name": "workflow-builder",
+  "repo": "EAIconsulting/cowork-skills-library",
+  "path": "skills/workflow-builder/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/EAIconsulting/cowork-skills-library",
+  "dir_name": "workflow-builder",
+  "downloaded_at": "2026-06-29T04:02:36.672961Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "productivity",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for productivity: productivity, automation, workflow, task",
+    "score": 4,
+    "runner_up": "workflow",
+    "runner_up_score": 3,
+    "signals": [
+      "productivity",
+      "automation",
+      "workflow",
+      "task"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "EAIconsulting",
+  "source_url": "https://github.com/EAIconsulting/cowork-skills-library/blob/main/skills/workflow-builder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/EAIconsulting/cowork-skills-library/blob/main/skills/workflow-builder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Takes a repeating task from your work, breaks it into Cowork steps, and builds it into a documented, reusable workflow \u2014 optionally turning it into a custom skill. For converting manual repeating tasks into automated systems, when documenting a process for consistent execution, or during a productivity overhaul. Use when the user says \"build a workflow\", \"automate my process\", \"I do this every week\", \"create a system\", \"repeating task\", \"I keep doing the same thing\", or \"make this a workflow\"."
+}

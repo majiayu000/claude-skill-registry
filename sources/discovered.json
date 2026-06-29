@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-06-28T04:29:57.053503Z",
+  "discovered_at": "2026-06-29T04:34:31.257978Z",
   "total_repos": 300,
-  "total_skills": 6,
+  "total_skills": 73,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -36,6 +36,7 @@
     "Darthflute/social-calendar-skill",
     "DeliciousBuding/xiaohongshu-skill",
     "DheerG/swarms",
+    "EAIconsulting/cowork-skills-library",
     "Egonex-AI/Understand-Anything",
     "ForteScarlet/codex-kkp",
     "Frappucc1no/recall-loom",
@@ -93,9 +94,8 @@
     "Weizhena/Deep-Research-skills",
     "Welbo12/claude-design-studio-toolkit",
     "WenyuChiou/awesome-agentic-ai-zh",
-    "XPOZpublic/xpoz-agent-skills",
     "a5c-ai/babysitter",
-    "aaron-he-zhu/seo-geo-claude-skills",
+    "aaron-he-zhu/aaron-marketing-skills",
     "aaronjmars/agent-credit",
     "aaronjmars/soul.md",
     "activeloopai/hivemind",
@@ -252,7 +252,6 @@
     "oribarilan/97",
     "parcadei/Continuous-Claude-v3",
     "pedrohcgs/claude-code-my-workflow",
-    "pessini/langgraph-skills-agent",
     "plugin87/ux-ui-agent-skills",
     "posit-dev/skills",
     "proyecto26/sherlock-ai-plugin",
@@ -296,6 +295,7 @@
     "vibeeval/vibecosystem",
     "vladikk/modularity",
     "vulhunt-re/skills",
+    "wanshuiyin/Anti-Autoresearch",
     "wanshuiyin/Auto-claude-code-research-in-sleep",
     "waynesutton/convexskills",
     "wells1137/media-skills",
@@ -314,28 +314,296 @@
   ],
   "skills": [
     {
-      "repo": "Kaelio/ktx",
-      "path": "packages/cli/src/skills/gdrive_synthesize/SKILL.md"
+      "repo": "EAIconsulting/cowork-skills-library",
+      "path": "skills/memory-system/SKILL.md"
+    },
+    {
+      "repo": "EAIconsulting/cowork-skills-library",
+      "path": "skills/content-engine/SKILL.md"
+    },
+    {
+      "repo": "EAIconsulting/cowork-skills-library",
+      "path": "skills/parallel-power/SKILL.md"
+    },
+    {
+      "repo": "EAIconsulting/cowork-skills-library",
+      "path": "skills/meeting-machine/SKILL.md"
+    },
+    {
+      "repo": "EAIconsulting/cowork-skills-library",
+      "path": "skills/safe-first-task/SKILL.md"
+    },
+    {
+      "repo": "EAIconsulting/cowork-skills-library",
+      "path": "skills/context-manager/SKILL.md"
+    },
+    {
+      "repo": "EAIconsulting/cowork-skills-library",
+      "path": "skills/teach-your-voice/SKILL.md"
+    },
+    {
+      "repo": "EAIconsulting/cowork-skills-library",
+      "path": "skills/safety-and-audit/SKILL.md"
+    },
+    {
+      "repo": "EAIconsulting/cowork-skills-library",
+      "path": "skills/workflow-builder/SKILL.md"
+    },
+    {
+      "repo": "EAIconsulting/cowork-skills-library",
+      "path": "skills/dispatch-starter/SKILL.md"
+    },
+    {
+      "repo": "EAIconsulting/cowork-skills-library",
+      "path": "skills/skill-customizer/SKILL.md"
+    },
+    {
+      "repo": "EAIconsulting/cowork-skills-library",
+      "path": "skills/delegation-coach/SKILL.md"
+    },
+    {
+      "repo": "EAIconsulting/cowork-skills-library",
+      "path": "skills/what-can-cowork-do/SKILL.md"
+    },
+    {
+      "repo": "EAIconsulting/cowork-skills-library",
+      "path": "skills/cowork-health-check/SKILL.md"
+    },
+    {
+      "repo": "EAIconsulting/cowork-skills-library",
+      "path": "skills/cowork-vs-chat-demo/SKILL.md"
+    },
+    {
+      "repo": "EAIconsulting/cowork-skills-library",
+      "path": "skills/cowork-setup-wizard/SKILL.md"
+    },
+    {
+      "repo": "EAIconsulting/cowork-skills-library",
+      "path": "skills/first-scheduled-task/SKILL.md"
+    },
+    {
+      "repo": "EAIconsulting/cowork-skills-library",
+      "path": "skills/client-context-system/SKILL.md"
+    },
+    {
+      "repo": "EAIconsulting/cowork-skills-library",
+      "path": "skills/skill-creator-guide/SKILL.md"
+    },
+    {
+      "repo": "EAIconsulting/cowork-skills-library",
+      "path": "skills/research-synthesizer/SKILL.md"
+    },
+    {
+      "repo": "EAIconsulting/cowork-skills-library",
+      "path": "skills/weekly-business-pulse/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "map/fit-scorer/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "monitor/rank-tracker/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "track/roi-calculator/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "plan/brief-generator/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "monitor/alert-manager/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "insight/trend-spotter/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "plan/budget-optimizer/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "plan/campaign-planner/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "track/report-generator/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "map/competitor-tracker/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "research/serp-analysis/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "convert/ugc-repurposer/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "map/influencer-discovery/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "build/seo-content-writer/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "insight/niche-researcher/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "activate/contract-helper/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "convert/landing-optimizer/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "research/keyword-research/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "activate/outreach-manager/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "activate/content-reviewer/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "convert/content-amplifier/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "monitor/backlink-analyzer/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "build/meta-tags-optimizer/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "insight/audience-analyzer/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "optimize/content-refresher/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "track/performance-analyzer/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "build/geo-content-optimizer/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "research/competitor-analysis/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "optimize/on-page-seo-auditor/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "monitor/performance-reporter/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "build/schema-markup-generator/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "research/content-gap-analysis/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "cross-cutting/entity-optimizer/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "optimize/technical-seo-checker/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "cross-cutting/memory-management/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "optimize/internal-linking-optimizer/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "cross-cutting/content-quality-auditor/SKILL.md"
+    },
+    {
+      "repo": "aaron-he-zhu/aaron-marketing-skills",
+      "path": "cross-cutting/domain-authority-auditor/SKILL.md"
+    },
+    {
+      "repo": "avelikiy/great_cto",
+      "path": "skills/observability-baseline/SKILL.md"
+    },
+    {
+      "repo": "avelikiy/great_cto",
+      "path": "skills/test-strategy/SKILL.md"
+    },
+    {
+      "repo": "boshu2/agentops",
+      "path": "skills/orchestrate/SKILL.md"
+    },
+    {
+      "repo": "khendzel/skills-janitor",
+      "path": "skills/janitor-swipe/SKILL.md"
     },
     {
       "repo": "mohitagw15856/pm-claude-skills",
-      "path": "skills/data-contract/SKILL.md"
+      "path": "skills/kb-audit/SKILL.md"
     },
     {
       "repo": "mohitagw15856/pm-claude-skills",
-      "path": "skills/sql-optimizer/SKILL.md"
+      "path": "skills/rate-card/SKILL.md"
     },
     {
       "repo": "mohitagw15856/pm-claude-skills",
-      "path": "skills/dbt-model-spec/SKILL.md"
+      "path": "skills/support-macro/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/escalation-tree/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/support-runbook/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/engagement-retro/SKILL.md"
+    },
+    {
+      "repo": "mohitagw15856/pm-claude-skills",
+      "path": "skills/client-discovery/SKILL.md"
+    },
+    {
+      "repo": "wanshuiyin/Auto-claude-code-research-in-sleep",
+      "path": "skills/paper-poster-html/SKILL.md"
+    },
+    {
+      "repo": "wanshuiyin/Auto-claude-code-research-in-sleep",
+      "path": "skills/skills-codex-gemini-review/paper-poster-html/SKILL.md"
     },
     {
       "repo": "zebbern/skills",
-      "path": "SKILL.md"
-    },
-    {
-      "repo": "zebbern/skills",
-      "path": "goal-creator/SKILL.md"
+      "path": "claude-code-project/SKILL.md"
     }
   ]
 }

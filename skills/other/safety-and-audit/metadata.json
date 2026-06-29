@@ -1,0 +1,37 @@
+{
+  "name": "safety-and-audit",
+  "repo": "EAIconsulting/cowork-skills-library",
+  "path": "skills/safety-and-audit/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/EAIconsulting/cowork-skills-library",
+  "dir_name": "safety-and-audit",
+  "downloaded_at": "2026-06-29T04:02:36.525456Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-llm=2, ai-ml=2",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "EAIconsulting",
+  "source_url": "https://github.com/EAIconsulting/cowork-skills-library/blob/main/skills/safety-and-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/EAIconsulting/cowork-skills-library/blob/main/skills/safety-and-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Sets up safe working habits and a change log so you always know what Cowork has done to your files \u2014 and can undo anything. Use when setting up file protection guardrails, for establishing safe automation habits, during initial access configuration, when granting file permissions for the first time, or when the user says \"is cowork safe\", \"file safety\", \"what if it deletes my files\", \"audit trail\", \"safety setup\", \"I'm nervous about file access\", \"how do I trust cowork with my files\", \"can cowork mess up my computer\", \"I heard someone lost files\", or \"how do I stay in control\"."
+}

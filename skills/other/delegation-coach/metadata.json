@@ -1,0 +1,37 @@
+{
+  "name": "delegation-coach",
+  "repo": "EAIconsulting/cowork-skills-library",
+  "path": "skills/delegation-coach/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/EAIconsulting/cowork-skills-library",
+  "dir_name": "delegation-coach",
+  "downloaded_at": "2026-06-29T04:02:37.054060Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-llm=2, documents=2",
+    "score": 2,
+    "runner_up": "documents",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "EAIconsulting",
+  "source_url": "https://github.com/EAIconsulting/cowork-skills-library/blob/main/skills/delegation-coach/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/EAIconsulting/cowork-skills-library/blob/main/skills/delegation-coach/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Teaches you how to delegate tasks to Cowork so clearly that you get exactly what you asked for \u2014 every time. Use when learning how to give better instructions, for improving your delegation technique, during early Cowork adoption when results feel off, when writing clearer task descriptions, or when the user says \"how do I ask cowork to do things\", \"delegation tips\", \"better instructions\", \"cowork isn't doing what I want\", \"help me delegate\", \"my results are bad\", \"how do I give better prompts\", \"cowork keeps getting it wrong\", \"I don't know how to use this\", or \"how do I get good results\"."
+}

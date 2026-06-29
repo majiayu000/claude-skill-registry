@@ -1,0 +1,36 @@
+{
+  "name": "cowork-vs-chat-demo",
+  "repo": "EAIconsulting/cowork-skills-library",
+  "path": "skills/cowork-vs-chat-demo/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/EAIconsulting/cowork-skills-library",
+  "dir_name": "cowork-vs-chat-demo",
+  "downloaded_at": "2026-06-29T04:02:37.497023Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-llm scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "ai"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "EAIconsulting",
+  "source_url": "https://github.com/EAIconsulting/cowork-skills-library/blob/main/skills/cowork-vs-chat-demo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/EAIconsulting/cowork-skills-library/blob/main/skills/cowork-vs-chat-demo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "See the difference between Chat and Cowork with a live side-by-side comparison for understanding why Cowork is built differently. Use when evaluating AI tools, for comparing chat versus agent capabilities, during an AI tool decision, when switching from ChatGPT or Claude Chat, or when the user says \"what is different about cowork\", \"cowork vs chat\", \"why not just use chatgpt\", \"show me the difference\", \"compare chat and cowork\", or \"why should I use cowork instead of chat\"."
+}

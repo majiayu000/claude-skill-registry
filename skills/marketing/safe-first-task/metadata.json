@@ -1,0 +1,38 @@
+{
+  "name": "safe-first-task",
+  "repo": "EAIconsulting/cowork-skills-library",
+  "path": "skills/safe-first-task/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/EAIconsulting/cowork-skills-library",
+  "dir_name": "safe-first-task",
+  "downloaded_at": "2026-06-29T04:02:36.001665Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, content, brand",
+    "score": 3,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "content",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "EAIconsulting",
+  "source_url": "https://github.com/EAIconsulting/cowork-skills-library/blob/main/skills/safe-first-task/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/EAIconsulting/cowork-skills-library/blob/main/skills/safe-first-task/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "A zero-risk first Cowork experience for discovering what Cowork does differently. Use when onboarding to Cowork, for getting started safely, during first-time exploration, when starting fresh with a new AI tool, or when the user says \"I am new to Cowork\", \"first task\", \"show me what Cowork does\", \"what can you do that Chat cannot\", \"help me get started\", or \"safe first task\"."
+}

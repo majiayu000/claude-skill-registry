@@ -1,0 +1,37 @@
+{
+  "name": "weekly-business-pulse",
+  "repo": "EAIconsulting/cowork-skills-library",
+  "path": "skills/weekly-business-pulse/SKILL.md",
+  "github_branch": "main",
+  "category": "communication",
+  "source": "github.com/EAIconsulting/cowork-skills-library",
+  "dir_name": "weekly-business-pulse",
+  "downloaded_at": "2026-06-29T04:02:38.330721Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "communication",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for communication: communication, email",
+    "score": 2,
+    "runner_up": "business",
+    "runner_up_score": 1,
+    "signals": [
+      "communication",
+      "email"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "EAIconsulting",
+  "source_url": "https://github.com/EAIconsulting/cowork-skills-library/blob/main/skills/weekly-business-pulse/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/EAIconsulting/cowork-skills-library/blob/main/skills/weekly-business-pulse/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Cross-tool weekly intelligence briefing that pulls from your calendar, email, Slack, and tasks to produce a comprehensive pulse on what happened and what is coming. Useful for reviewing your week, during end-of-week wrap-ups, for preparing Monday priorities, and when catching up after time away. Use when the user says \"weekly pulse\", \"weekly briefing\", \"week summary\", \"what happened this week\", \"weekly review\", or \"business pulse\"."
+}

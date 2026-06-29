@@ -1,0 +1,37 @@
+{
+  "name": "meeting-machine",
+  "repo": "EAIconsulting/cowork-skills-library",
+  "path": "skills/meeting-machine/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/EAIconsulting/cowork-skills-library",
+  "dir_name": "meeting-machine",
+  "downloaded_at": "2026-06-29T04:02:35.820019Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: communication=2, productivity=2",
+    "score": 2,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "communication",
+      "email"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "EAIconsulting",
+  "source_url": "https://github.com/EAIconsulting/cowork-skills-library/blob/main/skills/meeting-machine/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/EAIconsulting/cowork-skills-library/blob/main/skills/meeting-machine/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "End-to-end meeting workflow skill. Pre-meeting: research attendees, build agenda, prepare talking points, create pre-read. Post-meeting: process notes into action items, draft follow-up emails, log decisions, update project notes. Useful for preparing for important calls, during post-meeting processing, when following up with attendees, and for building a running decision log. Use when the user says \"prepare for meeting\", \"meeting prep\", \"process meeting notes\", \"meeting follow up\", \"meeting machine\", or \"prep for my call\"."
+}

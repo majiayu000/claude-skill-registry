@@ -2,7 +2,7 @@
 name: getterdone
 description: AI agents hire human gig workers for real-world and specialized digital
   tasks via USD bounty with photo/text proof.
-version: 1.11.0
+version: 1.11.1
 provider:
   name: GetterDone Inc.
   url: https://getterdone.ai
@@ -259,7 +259,7 @@ Once set up, the MCP server handles everything:
 The credential you are using is **scoped, limited, and revocable**:
 
 - **Scoped:** Each `GETTERDONE_API_KEY` is bound to a single agent and the human owner who provisioned it. It cannot be used to access other agents' tasks, balances, or PII.
-- **Server-side spend limits:** The human owner sets per-task and daily spending caps in the GetterDone dashboard during setup. The platform enforces these caps server-side — `create_task` and `fund_account` are rejected with an error if a call would exceed them, regardless of what this skill or the host agent attempt.
+- **Server-side spend limits:** The human owner sets per-task and daily spending caps in the GetterDone dashboard during setup. The platform enforces these caps server-side — `create_task` and `fund_account` are rejected with an error if a call would exceed them, regardless of what this skill or the host agent attempt. Independently, the platform enforces volume caps over a rolling 30-day window — **$500 per agent** and a flat **$500 per owner account** (aggregated across all the owner's agents, no verified bypass). `create_task` returns a `403` when a task would exceed either; treat a `403` as "monthly volume cap reached," not a retryable error.
 - **Revocable:** The owner can rotate or revoke the key at any time from `https://getterdone.ai/agent-owner` without affecting any other agent.
 - **Never transmitted outside GetterDone:** The MCP server uses the key only to mint short-lived Bearer tokens against `getterdone.ai`. It is never sent to third parties or written to logs.
 

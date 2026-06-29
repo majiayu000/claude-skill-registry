@@ -1,0 +1,38 @@
+{
+  "name": "cowork-setup-wizard",
+  "repo": "EAIconsulting/cowork-skills-library",
+  "path": "skills/cowork-setup-wizard/SKILL.md",
+  "github_branch": "main",
+  "category": "communication",
+  "source": "github.com/EAIconsulting/cowork-skills-library",
+  "dir_name": "cowork-setup-wizard",
+  "downloaded_at": "2026-06-29T04:02:37.660531Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "communication",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for communication: communication, email, chat",
+    "score": 3,
+    "runner_up": "documents",
+    "runner_up_score": 2,
+    "signals": [
+      "communication",
+      "email",
+      "chat"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "EAIconsulting",
+  "source_url": "https://github.com/EAIconsulting/cowork-skills-library/blob/main/skills/cowork-setup-wizard/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/EAIconsulting/cowork-skills-library/blob/main/skills/cowork-setup-wizard/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "A 15-minute guided setup that teaches Cowork who you are, how you work, and what tools you use \u2014 so every result feels tailored instead of generic. Use when setting up Cowork for the first time, for personalizing your workspace preferences, during onboarding after your first session, when configuring your tools and context, or when the user says \"set up cowork\", \"configure cowork\", \"why is cowork giving me generic results\", \"cowork setup\", \"personalize cowork\", \"make cowork know me\", \"cowork feels like chatgpt\", or \"how do I get better results from cowork\"."
+}

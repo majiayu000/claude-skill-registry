@@ -1,0 +1,39 @@
+{
+  "name": "keyword-research",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "research/keyword-research/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "keyword-research-aaron-he-zhu-aaron-marketing-skil",
+  "downloaded_at": "2026-06-29T04:09:48.619873Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for marketing: marketing, seo, content, campaign",
+    "score": 4,
+    "runner_up": "api",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "seo",
+      "content",
+      "campaign"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/research/keyword-research/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/research/keyword-research/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"find keywords\", \"\u6316\u8bcd\", or \"\u641c\u4ec0\u4e48\u8bcd\"; prioritizes search volume, keyword difficulty, intent, and topic clusters from provided or connected data. Not for competitor-relative coverage gaps \u2014 use content-gap-analysis. \u5173\u952e\u8bcd\u7814\u7a76/\u5185\u5bb9\u9009\u9898"
+}

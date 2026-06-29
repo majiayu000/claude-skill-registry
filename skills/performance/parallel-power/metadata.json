@@ -1,0 +1,37 @@
+{
+  "name": "parallel-power",
+  "repo": "EAIconsulting/cowork-skills-library",
+  "path": "skills/parallel-power/SKILL.md",
+  "github_branch": "main",
+  "category": "performance",
+  "source": "github.com/EAIconsulting/cowork-skills-library",
+  "dir_name": "parallel-power",
+  "downloaded_at": "2026-06-29T04:02:35.637951Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "performance",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for performance: performance, speed",
+    "score": 2,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "performance",
+      "speed"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "EAIconsulting",
+  "source_url": "https://github.com/EAIconsulting/cowork-skills-library/blob/main/skills/parallel-power/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/EAIconsulting/cowork-skills-library/blob/main/skills/parallel-power/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Shows you how to use Cowork's parallel workers to run multiple tasks at the same time instead of one after another \u2014 dramatically cutting the time on batch work. For processing large batches of files or research tasks, when running multiple independent analyses simultaneously, or during a performance optimization session. Use when the user says \"speed up\", \"parallel workers\", \"batch task\", \"process multiple files\", \"why is cowork so slow\", \"faster\", \"do several things at once\", or \"can cowork multitask\"."
+}

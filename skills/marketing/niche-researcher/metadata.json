@@ -1,0 +1,39 @@
+{
+  "name": "niche-researcher",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "insight/niche-researcher/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "niche-researcher",
+  "downloaded_at": "2026-06-29T04:09:48.190622Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, content, social, brand",
+    "score": 4,
+    "runner_up": "data",
+    "runner_up_score": 3,
+    "signals": [
+      "marketing",
+      "content",
+      "social",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/insight/niche-researcher/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/insight/niche-researcher/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"research a niche community\", \"deep-dive a subculture\", or \"find micro-niches for a brand\"; produces a community map, culture decode (language, norms, taboos), key-voice tiers, content ecosystem, brand-fit score, and a phased entry strategy. Not for finding specific creators to contract \u2014 use influencer-discovery."
+}

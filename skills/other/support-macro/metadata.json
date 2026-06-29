@@ -1,0 +1,36 @@
+{
+  "name": "support-macro",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/support-macro/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "support-macro",
+  "downloaded_at": "2026-06-29T04:25:16.812501Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category marketing scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "quality",
+    "runner_up_score": 1,
+    "signals": [
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/support-macro/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/support-macro/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Write reusable support macros / canned responses that sound human, not robotic. Use when asked to write a support macro, a canned response, a saved reply, or a template for a common customer ticket. Produces a macro \u2014 an empathetic opener, the clear answer/steps, placeholders for personalisation, and a warm close \u2014 plus variants (resolved / need-more-info / escalating), tuned to keep it human."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "first-scheduled-task",
+  "repo": "EAIconsulting/cowork-skills-library",
+  "path": "skills/first-scheduled-task/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/EAIconsulting/cowork-skills-library",
+  "dir_name": "first-scheduled-task",
+  "downloaded_at": "2026-06-29T04:02:37.820101Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "productivity",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for productivity: automation, task, memory",
+    "score": 3,
+    "runner_up": "communication",
+    "runner_up_score": 1,
+    "signals": [
+      "automation",
+      "task",
+      "memory"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "EAIconsulting",
+  "source_url": "https://github.com/EAIconsulting/cowork-skills-library/blob/main/skills/first-scheduled-task/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/EAIconsulting/cowork-skills-library/blob/main/skills/first-scheduled-task/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Guides you through setting up your first automatic task in Cowork \u2014 picking the right one, configuring the schedule, and making sure it runs correctly. For enabling background automation while you focus on other work, when setting up recurring morning briefings or end-of-day summaries, or during an automation setup session. Use when the user says \"schedule a task\", \"automate something\", \"run this every day\", \"recurring task\", \"first scheduled task\", \"daily automation\", or \"can cowork do something automatically\"."
+}

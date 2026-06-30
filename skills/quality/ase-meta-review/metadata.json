@@ -1,0 +1,38 @@
+{
+  "name": "ase-meta-review",
+  "repo": "rse/ase",
+  "path": "plugin/skills/ase-meta-review/SKILL.md",
+  "github_branch": "master",
+  "category": "quality",
+  "source": "github.com/rse/ase",
+  "dir_name": "ase-meta-review",
+  "downloaded_at": "2026-06-30T04:12:09.147506Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "quality",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for quality: quality, lint, review",
+    "score": 3,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "quality",
+      "lint",
+      "review"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "rse",
+  "source_url": "https://github.com/rse/ase/blob/master/plugin/skills/ase-meta-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/rse/ase/blob/master/plugin/skills/ase-meta-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Perform a holistic, human-reviewer-style critique of the currently staged Git changes and emit an approve/reject verdict with prioritized, severity-tagged, line-cited findings. Use when the user wants the staged diff \"reviewed\", \"critiqued\", or \"code-reviewed\" before committing."
+}

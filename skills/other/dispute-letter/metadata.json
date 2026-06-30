@@ -1,0 +1,36 @@
+{
+  "name": "dispute-letter",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/dispute-letter/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "dispute-letter",
+  "downloaded_at": "2026-06-30T04:07:56.644351Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category creative scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "development",
+    "runner_up_score": 1,
+    "signals": [
+      "writing"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/dispute-letter/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/dispute-letter/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Write a letter to dispute an incorrect charge, bill, or record. Use when asked to dispute a credit-card charge, contest a bill or invoice, challenge a credit-report error, or formally dispute a fee. Produces a clear dispute letter \u2014 what's being disputed, why it's wrong, the evidence, and the correction requested \u2014 in the firm, paper-trail tone these situations need."
+}

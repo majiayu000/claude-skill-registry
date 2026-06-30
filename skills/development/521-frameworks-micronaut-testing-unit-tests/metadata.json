@@ -1,0 +1,40 @@
+{
+  "name": "521-frameworks-micronaut-testing-unit-tests",
+  "repo": "jabrena/plinth",
+  "path": "skills/521-frameworks-micronaut-testing-unit-tests/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/jabrena/plinth",
+  "dir_name": "521-frameworks-micronaut-testing-unit-tests",
+  "downloaded_at": "2026-06-30T04:03:08.286037Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for development: code, framework, build, compile, refactor",
+    "score": 5,
+    "runner_up": "productivity",
+    "runner_up_score": 1,
+    "signals": [
+      "code",
+      "framework",
+      "build",
+      "compile",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "jabrena",
+  "source_url": "https://github.com/jabrena/plinth/blob/main/skills/521-frameworks-micronaut-testing-unit-tests/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jabrena/plinth/blob/main/skills/521-frameworks-micronaut-testing-unit-tests/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when you need to write unit tests for Micronaut applications \u2014 Mockito-first with @ExtendWith(MockitoExtension.class), @MicronautTest with @MockBean, HttpClient @Client(/) assertions, @Property overrides, @ParameterizedTest, and *Test vs *IT naming. For framework-agnostic Java use @131-java-testing-unit-testing. This should trigger for requests such as Add or improve unit tests in a Micronaut project; Reduce unnecessary @MicronautTest usage with Mockito-first tests. Part of cursor-rules-java project"
+}

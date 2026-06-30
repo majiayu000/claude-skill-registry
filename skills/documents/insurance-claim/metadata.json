@@ -1,0 +1,37 @@
+{
+  "name": "insurance-claim",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/insurance-claim/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "insurance-claim",
+  "downloaded_at": "2026-06-30T04:07:56.887756Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: word, documentation",
+    "score": 2,
+    "runner_up": "quality",
+    "runner_up_score": 1,
+    "signals": [
+      "word",
+      "documentation"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/insurance-claim/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/insurance-claim/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Write a clear insurance claim letter or appeal that supports a payout. Use when asked to write an insurance claim, file a claim letter, document a loss for insurance, or appeal a denied claim. Produces a structured claim \u2014 policy and incident details, the documented loss, the amount claimed, and the evidence \u2014 or an appeal that rebuts the denial reason, ready to submit."
+}

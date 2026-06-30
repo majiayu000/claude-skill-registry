@@ -1,0 +1,38 @@
+{
+  "name": "using-offensive-claude",
+  "repo": "hypnguyen1209/offensive-claude",
+  "path": "skills/using-offensive-claude/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/hypnguyen1209/offensive-claude",
+  "dir_name": "using-offensive-claude",
+  "downloaded_at": "2026-06-30T04:02:42.457947Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "security",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for security: security, auth, pentest",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "security",
+      "auth",
+      "pentest"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "hypnguyen1209",
+  "source_url": "https://github.com/hypnguyen1209/offensive-claude/blob/main/skills/using-offensive-claude/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hypnguyen1209/offensive-claude/blob/main/skills/using-offensive-claude/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when starting any offensive-security engagement or task \u2014 establishes how to find and invoke the right skill before any action (including clarifying questions, recon, exploitation, or reporting)"
+}

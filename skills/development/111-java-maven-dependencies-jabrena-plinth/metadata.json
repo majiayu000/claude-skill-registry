@@ -1,0 +1,38 @@
+{
+  "name": "111-java-maven-dependencies",
+  "repo": "jabrena/plinth",
+  "path": "skills/111-java-maven-dependencies/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/jabrena/plinth",
+  "dir_name": "111-java-maven-dependencies-jabrena-plinth",
+  "downloaded_at": "2026-06-30T04:03:00.197673Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, programming, compile",
+    "score": 3,
+    "runner_up": "analysis",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "programming",
+      "compile"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "jabrena",
+  "source_url": "https://github.com/jabrena/plinth/blob/main/skills/111-java-maven-dependencies/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jabrena/plinth/blob/main/skills/111-java-maven-dependencies/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when you need to add or evaluate Maven dependencies that improve code quality \u2014 including nullness annotations (JSpecify), static analysis (Error Prone + NullAway), functional programming (VAVR), or architecture testing (ArchUnit) \u2014 and want a consultative, question-driven approach that adds only what you actually need. This should trigger for requests such as Add Maven dependencies; Add JSpecify nullness dependencies; Add Error Prone NullAway dependencies; Add VAVR functional dependencies; Add ArchUnit architecture testing dependencies. Part of cursor-rules-java project"
+}

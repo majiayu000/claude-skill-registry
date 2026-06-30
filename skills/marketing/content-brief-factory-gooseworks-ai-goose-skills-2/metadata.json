@@ -1,0 +1,39 @@
+{
+  "name": "content-brief-factory",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/content/composites/content-brief-factory/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "content-brief-factory-gooseworks-ai-goose-skills-2",
+  "downloaded_at": "2026-06-30T04:01:40.375433Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: seo, content, brand",
+    "score": 3,
+    "runner_up": "analysis",
+    "runner_up_score": 2,
+    "signals": [
+      "seo",
+      "content",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/content/composites/content-brief-factory/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/content/composites/content-brief-factory/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Generate detailed, differentiated content briefs at scale. Each brief includes SERP analysis, competing page breakdown, unique angles from real customer language (reviews, Reddit), internal linking plan, and SERP feature targets. Batch mode produces 10-50 briefs in one run. Crushes generic \"keyword density\" briefs from tools like Surfer or Clearscope."
+}

@@ -1,0 +1,40 @@
+{
+  "name": "feature-launch-playbook",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/content/composites/feature-launch-playbook/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "feature-launch-playbook-gooseworks-ai-goose-skills-2",
+  "downloaded_at": "2026-06-30T04:01:42.425301Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, content, social, brand",
+    "score": 4,
+    "runner_up": "documents",
+    "runner_up_score": 3,
+    "signals": [
+      "marketing",
+      "content",
+      "social",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/content/composites/feature-launch-playbook/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/content/composites/feature-launch-playbook/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Take a new feature or product update and generate the full launch kit: changelog entry, email announcement, LinkedIn post variants, in-app banner text, Twitter/X thread, and internal sales enablement one-pager. Pure reasoning skill that chains product context with audience-specific copy generation. Use when a product marketing team needs to turn a feature spec into launch-ready assets fast."
+}

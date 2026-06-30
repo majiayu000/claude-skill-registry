@@ -1,0 +1,39 @@
+{
+  "name": "315-frameworks-spring-mongodb",
+  "repo": "jabrena/plinth",
+  "path": "skills/315-frameworks-spring-mongodb/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/jabrena/plinth",
+  "dir_name": "315-frameworks-spring-mongodb",
+  "downloaded_at": "2026-06-30T04:03:01.072326Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for development: framework, build, compile, refactor",
+    "score": 4,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "framework",
+      "build",
+      "compile",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "jabrena",
+  "source_url": "https://github.com/jabrena/plinth/blob/main/skills/315-frameworks-spring-mongodb/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jabrena/plinth/blob/main/skills/315-frameworks-spring-mongodb/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when you need to design or implement MongoDB data access in Spring Boot \u2014 including document modeling, Spring Data Mongo repositories/templates, indexing, optimistic concurrency, and error handling. This should trigger for requests such as Add MongoDB in Spring Boot; Review Spring Data Mongo design; Improve error handling for Mongo writes. Part of cursor-rules-java project"
+}

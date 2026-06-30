@@ -1,0 +1,40 @@
+{
+  "name": "302-frameworks-spring-boot-rest",
+  "repo": "jabrena/plinth",
+  "path": "skills/302-frameworks-spring-boot-rest/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/jabrena/plinth",
+  "dir_name": "302-frameworks-spring-boot-rest-jabrena-plinth",
+  "downloaded_at": "2026-06-30T04:03:03.275724Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for development: code, framework, build, compile, refactor",
+    "score": 5,
+    "runner_up": "api",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "framework",
+      "build",
+      "compile",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "jabrena",
+  "source_url": "https://github.com/jabrena/plinth/blob/main/skills/302-frameworks-spring-boot-rest/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jabrena/plinth/blob/main/skills/302-frameworks-spring-boot-rest/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when you need to design, review, or improve REST APIs with Spring Boot \u2014 including HTTP methods, resource URIs, status codes, DTOs, versioning, deprecation and sunset headers, content negotiation (JSON and vendor media types), ISO-8601 instants in DTOs, pagination/sorting/filtering, Bean Validation at the boundary, idempotency, ETag concurrency, HTTP caching, error handling, security, contract-first OpenAPI (OpenAPI Generator), controller advice, and problem details for errors. This should trigger for requests such as Review Java code for Spring Boot REST API; Apply best practices for Spring Boot REST API in Java code. Part of cursor-rules-java project"
+}

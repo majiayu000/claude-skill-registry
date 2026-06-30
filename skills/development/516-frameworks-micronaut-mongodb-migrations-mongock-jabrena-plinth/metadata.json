@@ -1,0 +1,40 @@
+{
+  "name": "516-frameworks-micronaut-mongodb-migrations-mongock",
+  "repo": "jabrena/plinth",
+  "path": "skills/516-frameworks-micronaut-mongodb-migrations-mongock/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/jabrena/plinth",
+  "dir_name": "516-frameworks-micronaut-mongodb-migrations-mongock-jabrena-plinth",
+  "downloaded_at": "2026-06-30T04:03:07.812485Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for development: code, framework, build, compile, refactor",
+    "score": 5,
+    "runner_up": "testing",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "framework",
+      "build",
+      "compile",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "jabrena",
+  "source_url": "https://github.com/jabrena/plinth/blob/main/skills/516-frameworks-micronaut-mongodb-migrations-mongock/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jabrena/plinth/blob/main/skills/516-frameworks-micronaut-mongodb-migrations-mongock/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when you need to add or review Mongock MongoDB data migrations in a Micronaut application \u2014 including Mongock runner/driver selection, Micronaut bean wiring, migration scan packages, @ChangeUnit classes, lock/transaction settings, and Testcontainers verification. This should trigger for requests such as Add Mongock migrations in Micronaut; Review Micronaut MongoDB data migrations; Configure Mongock change units with Micronaut Data MongoDB. Part of cursor-rules-java project"
+}

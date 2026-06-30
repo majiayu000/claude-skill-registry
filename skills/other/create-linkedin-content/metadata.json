@@ -1,0 +1,38 @@
+{
+  "name": "create-linkedin-content",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/content/capabilities/create-linkedin-content/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "create-linkedin-content",
+  "downloaded_at": "2026-06-30T04:01:42.782898Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, design=2",
+    "score": 2,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/content/capabilities/create-linkedin-content/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/content/capabilities/create-linkedin-content/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Draft voice-tuned LinkedIn post variants from a free-form brief. Reads a personal voice guide (generated via generate-voice-guide), produces 2\u20135 variants with distinct framings, applies LinkedIn-specific defaults (arrow bullets, \"why this matters\" beat, 150\u2013500 words), and self-checks against the voice guide's banned phrases before returning."
+}

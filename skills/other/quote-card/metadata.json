@@ -1,0 +1,37 @@
+{
+  "name": "quote-card",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/quote-card/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "quote-card",
+  "downloaded_at": "2026-06-30T04:07:56.013014Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: marketing=2, quality=2",
+    "score": 2,
+    "runner_up": "quality",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "social"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/quote-card/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/quote-card/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Pull the single most shareable quote out of a testimonial, review, interview, or long text and format it as a clean quote card. Use when asked to make a pull-quote, testimonial graphic, or 'quote card' for social/marketing. Produces a tightly-edited quote with attribution and 2-3 alternates, structured to look great exported as a PNG from the playground."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "mind-map",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/mind-map/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "mind-map",
+  "downloaded_at": "2026-06-30T04:07:55.198833Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: documents=2, planning=2",
+    "score": 2,
+    "runner_up": "planning",
+    "runner_up_score": 2,
+    "signals": [
+      "word",
+      "markdown"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/mind-map/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/mind-map/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Turn a topic, brainstorm, or document into a structured mind map. Use when asked to brainstorm around a theme, organize ideas, break a topic into branches, or summarize something as a mind map. Produces a ready-to-render Mermaid mindmap (renders live, exportable as PNG/SVG) plus a short note on the structure chosen."
+}

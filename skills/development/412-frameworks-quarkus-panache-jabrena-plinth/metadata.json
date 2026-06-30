@@ -1,0 +1,40 @@
+{
+  "name": "412-frameworks-quarkus-panache",
+  "repo": "jabrena/plinth",
+  "path": "skills/412-frameworks-quarkus-panache/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/jabrena/plinth",
+  "dir_name": "412-frameworks-quarkus-panache-jabrena-plinth",
+  "downloaded_at": "2026-06-30T04:03:02.298223Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for development: code, framework, build, compile, refactor",
+    "score": 5,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "framework",
+      "build",
+      "compile",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "jabrena",
+  "source_url": "https://github.com/jabrena/plinth/blob/main/skills/412-frameworks-quarkus-panache/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jabrena/plinth/blob/main/skills/412-frameworks-quarkus-panache/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when you need data access with Quarkus Hibernate ORM Panache \u2014 including PanacheEntity / PanacheEntityBase, PanacheRepository, named queries, JPQL, native SQL, DTO projections (project(Class)), pagination (Page.of()), N+1 avoidance (JOIN FETCH), optimistic locking (@Version / OptimisticLockException), @NamedQuery for validated reusable queries, transactions, @TestTransaction for test isolation, and immutable-friendly patterns. This is the Quarkus analogue to Spring Data for relational persistence. This should trigger for requests such as Review Panache entities or repositories in Quarkus; Improve Hibernate ORM data access with Panache; Add DTO projections, JOIN FETCH, pagination, or optimistic locking to Panache queries; Fix N+1 query problems or add @Version concurrency control in Quarkus Panache. Part of cursor-rules-java project"
+}

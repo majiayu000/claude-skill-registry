@@ -1,0 +1,38 @@
+{
+  "name": "808-regulations-eu-digital-markets-act",
+  "repo": "jabrena/plinth",
+  "path": "skills/808-regulations-eu-digital-markets-act/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/jabrena/plinth",
+  "dir_name": "808-regulations-eu-digital-markets-act-jabrena-plinth",
+  "downloaded_at": "2026-06-30T04:03:05.610074Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "data",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for data: data, analytics, pipeline",
+    "score": 3,
+    "runner_up": "communication",
+    "runner_up_score": 2,
+    "signals": [
+      "data",
+      "analytics",
+      "pipeline"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "jabrena",
+  "source_url": "https://github.com/jabrena/plinth/blob/main/skills/808-regulations-eu-digital-markets-act/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jabrena/plinth/blob/main/skills/808-regulations-eu-digital-markets-act/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when reviewing, designing, or modifying Java enterprise systems that may support EU Digital Markets Act gatekeeper-platform concerns, core platform services, interoperability, business-user data access, consent-dependent data combination, ranking, self-preferencing, advertising transparency, or anti-circumvention controls. This should trigger for requests such as Review a Java platform for DMA controls; Design interoperability and business-user data access evidence; Add ranking, consent, preference, or anti-circumvention audit controls; Assess gatekeeper-platform engineering evidence before production release. Part of cursor-rules-java project"
+}

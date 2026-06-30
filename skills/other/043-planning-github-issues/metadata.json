@@ -1,0 +1,37 @@
+{
+  "name": "043-planning-github-issues",
+  "repo": "jabrena/plinth",
+  "path": "skills/043-planning-github-issues/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/jabrena/plinth",
+  "dir_name": "043-planning-github-issues",
+  "downloaded_at": "2026-06-30T04:02:58.756294Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: planning=2, productivity=2",
+    "score": 2,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "planning",
+      "plan"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "jabrena",
+  "source_url": "https://github.com/jabrena/plinth/blob/main/skills/043-planning-github-issues/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jabrena/plinth/blob/main/skills/043-planning-github-issues/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when you need GitHub CLI (`gh`) installation/authentication guidance and a sanitized GitHub issue inventory workflow. The agent does not ingest GitHub issue or milestone output directly; it asks the user for sanitized issue summaries before analysis or @014-agile-user-story handoff. This should trigger for requests such as GitHub issue summary workflow; GitHub CLI setup for issues; Prepare sanitized GitHub issue inventory. Part of cursor-rules-java project"
+}

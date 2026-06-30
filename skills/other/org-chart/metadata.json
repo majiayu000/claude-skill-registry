@@ -1,0 +1,36 @@
+{
+  "name": "org-chart",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/org-chart/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "org-chart",
+  "downloaded_at": "2026-06-30T04:07:55.668884Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category quality scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "",
+    "runner_up_score": 0,
+    "signals": [
+      "quality"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/org-chart/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/org-chart/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Turn a team or reporting structure into a clean org chart. Use when asked to draw an org chart, show reporting lines, visualize team structure, or map who reports to whom. Produces a ready-to-render Mermaid org chart (renders live, exportable as PNG/SVG) plus headcount notes and any structural observations."
+}

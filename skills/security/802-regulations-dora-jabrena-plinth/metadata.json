@@ -1,0 +1,38 @@
+{
+  "name": "802-regulations-dora",
+  "repo": "jabrena/plinth",
+  "path": "skills/802-regulations-dora/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/jabrena/plinth",
+  "dir_name": "802-regulations-dora-jabrena-plinth",
+  "downloaded_at": "2026-06-30T04:02:55.479219Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "security",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for security: security, auth, audit",
+    "score": 3,
+    "runner_up": "business",
+    "runner_up_score": 2,
+    "signals": [
+      "security",
+      "auth",
+      "audit"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "jabrena",
+  "source_url": "https://github.com/jabrena/plinth/blob/main/skills/802-regulations-dora/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jabrena/plinth/blob/main/skills/802-regulations-dora/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when reviewing, designing, or modifying Java enterprise systems that may support financial entities, critical ICT services, third-party ICT provider integrations, or operational resilience obligations under DORA. This should trigger for requests such as Review a Java platform for DORA ICT risk controls; Design operational resilience evidence for a financial service; Add incident, continuity, backup, recovery, or third-party ICT controls; Assess resilience testing and monitoring before production release. Part of cursor-rules-java project"
+}

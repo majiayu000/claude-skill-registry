@@ -1,0 +1,37 @@
+{
+  "name": "hiring-signal-outreach",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/outreach/composites/hiring-signal-outreach/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "hiring-signal-outreach",
+  "downloaded_at": "2026-06-30T04:01:40.903412Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-llm scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "ai"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/outreach/composites/hiring-signal-outreach/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/outreach/composites/hiring-signal-outreach/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "End-to-end hiring signal composite. Takes any set of companies, detects job postings that your product augments or replaces, finds relevant people (the hiring manager, buyers, champions, users), and drafts personalized outreach using the job role as the hook. Tool-agnostic \u2014 works with any company source, job board, contact finder, and outreach platform."
+}

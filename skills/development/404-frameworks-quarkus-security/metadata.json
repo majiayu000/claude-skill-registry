@@ -1,0 +1,40 @@
+{
+  "name": "404-frameworks-quarkus-security",
+  "repo": "jabrena/plinth",
+  "path": "skills/404-frameworks-quarkus-security/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/jabrena/plinth",
+  "dir_name": "404-frameworks-quarkus-security",
+  "downloaded_at": "2026-06-30T04:03:02.731530Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for development: code, framework, build, compile, refactor",
+    "score": 5,
+    "runner_up": "api",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "framework",
+      "build",
+      "compile",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "jabrena",
+  "source_url": "https://github.com/jabrena/plinth/blob/main/skills/404-frameworks-quarkus-security/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jabrena/plinth/blob/main/skills/404-frameworks-quarkus-security/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when you need to design, review, or improve security in Quarkus applications \u2014 including Quarkus Security with JWT/OIDC, basic auth, @RolesAllowed / @Authenticated / @PermitAll, SecurityIdentity, permission checks, path-based authorization in configuration, exception mapping for auth failures, and sensitive-data-safe logging. This should trigger for requests such as Add Quarkus security support; Review Quarkus security configuration; Improve API authorization in Quarkus; Add JWT/OIDC security in Quarkus; Harden Quarkus authorization rules. Part of cursor-rules-java project"
+}

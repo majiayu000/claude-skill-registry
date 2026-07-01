@@ -1,0 +1,38 @@
+{
+  "name": "opencl-runtime",
+  "repo": "a5c-ai/babysitter",
+  "path": "library/specializations/gpu-programming/skills/opencl-runtime/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "opencl-runtime-a5c-ai-babysitter",
+  "downloaded_at": "2026-07-01T04:08:54.645815Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, programming, compile",
+    "score": 3,
+    "runner_up": "ai-ml",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "programming",
+      "compile"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "a5c-ai",
+  "source_url": "https://github.com/a5c-ai/babysitter/blob/main/library/specializations/gpu-programming/skills/opencl-runtime/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/a5c-ai/babysitter/blob/main/library/specializations/gpu-programming/skills/opencl-runtime/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Cross-vendor OpenCL runtime management and kernel development. Query platforms/devices, generate portable OpenCL C kernel code, handle vendor-specific extensions, manage contexts and command queues, compile and cache programs."
+}

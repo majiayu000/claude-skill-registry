@@ -1,0 +1,38 @@
+{
+  "name": "setup-datamodel",
+  "repo": "microsoft/power-platform-skills",
+  "path": "plugins/mobile-apps/skills/setup-datamodel/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/microsoft/power-platform-skills",
+  "dir_name": "setup-datamodel",
+  "downloaded_at": "2026-07-01T04:23:29.605772Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "productivity",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for productivity: workflow, task, planning",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "workflow",
+      "task",
+      "planning"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "microsoft",
+  "source_url": "https://github.com/microsoft/power-platform-skills/blob/main/plugins/mobile-apps/skills/setup-datamodel/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/microsoft/power-platform-skills/blob/main/plugins/mobile-apps/skills/setup-datamodel/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user wants to design or redesign the Dataverse schema and connector plan for an existing mobile app, or has an ER diagram (image, Mermaid, or text) to apply. Skip when the user is creating a brand-new app \u2014 /create-mobile-app handles the data model inline."
+}

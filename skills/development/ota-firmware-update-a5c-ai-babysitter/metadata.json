@@ -1,0 +1,37 @@
+{
+  "name": "ota-firmware-update",
+  "repo": "a5c-ai/babysitter",
+  "path": "library/specializations/embedded-systems/skills/ota-firmware-update/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "ota-firmware-update-a5c-ai-babysitter",
+  "downloaded_at": "2026-07-01T04:09:02.681504Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: programming, build",
+    "score": 2,
+    "runner_up": "bash",
+    "runner_up_score": 1,
+    "signals": [
+      "programming",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "a5c-ai",
+  "source_url": "https://github.com/a5c-ai/babysitter/blob/main/library/specializations/embedded-systems/skills/ota-firmware-update/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/a5c-ai/babysitter/blob/main/library/specializations/embedded-systems/skills/ota-firmware-update/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Over-the-air firmware update implementation expertise for embedded systems. Expert skill for delta updates, image signing, update protocols, partition management, and rollback mechanisms."
+}

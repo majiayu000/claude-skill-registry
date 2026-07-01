@@ -1,0 +1,42 @@
+{
+  "name": "ci-cd",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/ci-cd/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "ci-cd",
+  "downloaded_at": "2026-07-01T04:05:53.778112Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "testing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for testing: test, jest, pytest, integration, e2e, playwright, cypress",
+    "score": 7,
+    "runner_up": "workflow",
+    "runner_up_score": 4,
+    "signals": [
+      "test",
+      "jest",
+      "pytest",
+      "integration",
+      "e2e",
+      "playwright",
+      "cypress"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/ci-cd/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/ci-cd/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Set up or modify CI/CD pipelines and deployment automation. Use when setting up build pipelines, automating quality gates, configuring test runners in CI, or establishing deployment strategies."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "operational-expert-tool-ui",
+  "repo": "dembrandt/dembrandt-skills",
+  "path": "skills/operational-expert-tool-ui/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/dembrandt/dembrandt-skills",
+  "dir_name": "operational-expert-tool-ui",
+  "downloaded_at": "2026-07-01T04:15:03.844004Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: design=3, productivity=3",
+    "score": 3,
+    "runner_up": "productivity",
+    "runner_up_score": 3,
+    "signals": [
+      "design",
+      "ui",
+      "component"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "dembrandt",
+  "source_url": "https://github.com/dembrandt/dembrandt-skills/blob/main/skills/operational-expert-tool-ui/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dembrandt/dembrandt-skills/blob/main/skills/operational-expert-tool-ui/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Operational expert tools \u2014 used by domain specialists for hours every day \u2014 require a different design approach than consumer or occasional-use software. Information density, workflow linearity, and at-a-glance status take priority over whitespace and discoverability. Use when designing dispatch tools, warehouse management, logistics, scheduling, or any B2B tool whose primary users are trained specialists."
+}

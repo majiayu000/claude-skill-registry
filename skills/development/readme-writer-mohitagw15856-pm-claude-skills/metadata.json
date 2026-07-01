@@ -1,0 +1,38 @@
+{
+  "name": "readme-writer",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/readme-writer/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "readme-writer-mohitagw15856-pm-claude-skills",
+  "downloaded_at": "2026-07-01T04:24:23.465548Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, build, software",
+    "score": 3,
+    "runner_up": "documents",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build",
+      "software"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/readme-writer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/readme-writer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Write a clear, well-structured README for a software project or open-source repo. Use when asked to write or improve a README, document a project, or make a repo approachable. Produces a complete README \u2014 one-line pitch, badges, quickstart, usage, install, contributing, license \u2014 that gets someone from landing to running fast."
+}

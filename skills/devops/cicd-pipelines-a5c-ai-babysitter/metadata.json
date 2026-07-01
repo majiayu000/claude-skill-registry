@@ -1,0 +1,40 @@
+{
+  "name": "cicd-pipelines",
+  "repo": "a5c-ai/babysitter",
+  "path": "library/specializations/devops-sre-platform/skills/cicd-pipelines/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "cicd-pipelines-a5c-ai-babysitter",
+  "downloaded_at": "2026-07-01T04:08:58.680910Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "devops",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for devops: devops, ci, cd, docker, deploy",
+    "score": 5,
+    "runner_up": "bash",
+    "runner_up_score": 3,
+    "signals": [
+      "devops",
+      "ci",
+      "cd",
+      "docker",
+      "deploy"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "a5c-ai",
+  "source_url": "https://github.com/a5c-ai/babysitter/blob/main/library/specializations/devops-sre-platform/skills/cicd-pipelines/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/a5c-ai/babysitter/blob/main/library/specializations/devops-sre-platform/skills/cicd-pipelines/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Multi-platform CI/CD pipeline expertise. Generate GitHub Actions, GitLab CI, Jenkins, and Azure Pipelines configurations. Analyze failures, optimize execution time, validate syntax, and configure matrix builds and caching strategies."
+}

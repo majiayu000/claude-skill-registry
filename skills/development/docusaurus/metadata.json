@@ -1,0 +1,39 @@
+{
+  "name": "docusaurus",
+  "repo": "a5c-ai/babysitter",
+  "path": "library/specializations/technical-documentation/skills/docusaurus/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "docusaurus",
+  "downloaded_at": "2026-07-01T04:08:58.072641Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, build, software, debug",
+    "score": 4,
+    "runner_up": "design",
+    "runner_up_score": 3,
+    "signals": [
+      "code",
+      "build",
+      "software",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "a5c-ai",
+  "source_url": "https://github.com/a5c-ai/babysitter/blob/main/library/specializations/technical-documentation/skills/docusaurus/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/a5c-ai/babysitter/blob/main/library/specializations/technical-documentation/skills/docusaurus/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Deep integration with Docusaurus for documentation site development. Configure projects, manage sidebars, versioning, i18n, develop plugins, and optimize builds for React-based documentation."
+}

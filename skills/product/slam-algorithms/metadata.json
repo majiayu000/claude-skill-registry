@@ -1,0 +1,38 @@
+{
+  "name": "slam-algorithms",
+  "repo": "a5c-ai/babysitter",
+  "path": "library/specializations/robotics-simulation/skills/slam-algorithms/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "slam-algorithms",
+  "downloaded_at": "2026-07-01T04:09:00.307679Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "product",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for product: feature, backlog, metrics",
+    "score": 3,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "feature",
+      "backlog",
+      "metrics"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "a5c-ai",
+  "source_url": "https://github.com/a5c-ai/babysitter/blob/main/library/specializations/robotics-simulation/skills/slam-algorithms/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/a5c-ai/babysitter/blob/main/library/specializations/robotics-simulation/skills/slam-algorithms/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Expert skill for SLAM algorithm selection, configuration, and tuning. Configure visual SLAM (ORB-SLAM3, RTAB-Map), LiDAR SLAM (Cartographer, LIO-SAM), tune parameters, evaluate accuracy, and optimize for real-time performance."
+}

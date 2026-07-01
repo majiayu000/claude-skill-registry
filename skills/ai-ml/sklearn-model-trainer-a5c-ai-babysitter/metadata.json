@@ -1,0 +1,39 @@
+{
+  "name": "sklearn-model-trainer",
+  "repo": "a5c-ai/babysitter",
+  "path": "library/specializations/data-science-ml/skills/sklearn-model-trainer/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-ml",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "sklearn-model-trainer-a5c-ai-babysitter",
+  "downloaded_at": "2026-07-01T04:09:05.907124Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "ai-ml",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for ai-ml: ml, machine-learning, model, training",
+    "score": 4,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "ml",
+      "machine-learning",
+      "model",
+      "training"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "a5c-ai",
+  "source_url": "https://github.com/a5c-ai/babysitter/blob/main/library/specializations/data-science-ml/skills/sklearn-model-trainer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/a5c-ai/babysitter/blob/main/library/specializations/data-science-ml/skills/sklearn-model-trainer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Scikit-learn model training skill with cross-validation, hyperparameter tuning, pipeline construction, and model serialization. Enables automated ML model development using scikit-learn's comprehensive toolkit."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "deprecate-and-migrate",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/deprecate-and-migrate/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "deprecate-and-migrate",
+  "downloaded_at": "2026-07-01T04:06:01.375162Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: docs, markdown, documentation",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "docs",
+      "markdown",
+      "documentation"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/deprecate-and-migrate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/deprecate-and-migrate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Plan and execute deprecation and migration of old systems, APIs, or features. Use when removing old code, migrating users to a new implementation, or deciding whether to maintain or sunset something."
+}

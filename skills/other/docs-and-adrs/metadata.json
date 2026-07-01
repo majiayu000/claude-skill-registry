@@ -1,0 +1,38 @@
+{
+  "name": "docs-and-adrs",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/docs-and-adrs/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "docs-and-adrs",
+  "downloaded_at": "2026-07-01T04:05:59.940501Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=3, documents=3",
+    "score": 3,
+    "runner_up": "documents",
+    "runner_up_score": 3,
+    "signals": [
+      "code",
+      "framework",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/docs-and-adrs/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/docs-and-adrs/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Record decisions and documentation that explain why the codebase is shaped as it is. Use when making architectural decisions, changing public APIs, shipping features, or capturing context for future engineers and agents."
+}

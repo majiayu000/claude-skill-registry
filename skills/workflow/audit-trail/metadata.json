@@ -1,0 +1,38 @@
+{
+  "name": "audit-trail",
+  "repo": "a5c-ai/babysitter",
+  "path": "library/methodologies/ccpm/skills/audit-trail/SKILL.md",
+  "github_branch": "main",
+  "category": "workflow",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "audit-trail",
+  "downloaded_at": "2026-07-01T04:08:53.549673Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "workflow",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for workflow: workflow, process, pipeline",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "workflow",
+      "process",
+      "pipeline"
+    ],
+    "semantic_sources": {
+      "name": "metadata",
+      "description": "body"
+    }
+  },
+  "author": "a5c-ai",
+  "source_url": "https://github.com/a5c-ai/babysitter/blob/main/library/methodologies/ccpm/skills/audit-trail/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/a5c-ai/babysitter/blob/main/library/methodologies/ccpm/skills/audit-trail/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Full traceability from PRD to code commit through the CCPM spec-driven pipeline."
+}

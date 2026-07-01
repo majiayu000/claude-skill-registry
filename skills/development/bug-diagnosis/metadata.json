@@ -1,0 +1,37 @@
+{
+  "name": "bug-diagnosis",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/bug-diagnosis/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "bug-diagnosis",
+  "downloaded_at": "2026-07-01T04:24:22.826708Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, debug",
+    "score": 2,
+    "runner_up": "planning",
+    "runner_up_score": 1,
+    "signals": [
+      "code",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/bug-diagnosis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/bug-diagnosis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Diagnose a bug systematically instead of guessing \u2014 reproduce, isolate, form hypotheses, and test them to root cause. Use when debugging, chasing a defect, an intermittent failure, or 'why is this happening?'. Produces a structured diagnosis: a reliable repro, the narrowed-down location, ranked hypotheses with how to test each, and the root cause + fix once found."
+}

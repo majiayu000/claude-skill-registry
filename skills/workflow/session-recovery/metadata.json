@@ -1,0 +1,38 @@
+{
+  "name": "session-recovery",
+  "repo": "a5c-ai/babysitter",
+  "path": "library/methodologies/planning-with-files/skills/session-recovery/SKILL.md",
+  "github_branch": "main",
+  "category": "workflow",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "session-recovery",
+  "downloaded_at": "2026-07-01T04:08:59.101629Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "workflow",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for workflow: workflow, process, pipeline",
+    "score": 3,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "workflow",
+      "process",
+      "pipeline"
+    ],
+    "semantic_sources": {
+      "name": "metadata",
+      "description": "body"
+    }
+  },
+  "author": "a5c-ai",
+  "source_url": "https://github.com/a5c-ai/babysitter/blob/main/library/methodologies/planning-with-files/skills/session-recovery/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/a5c-ai/babysitter/blob/main/library/methodologies/planning-with-files/skills/session-recovery/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Detect and recover previous planning sessions, reconstructing lost context from persistent planning files."
+}

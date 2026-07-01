@@ -1,0 +1,36 @@
+{
+  "name": "character-physics",
+  "repo": "a5c-ai/babysitter",
+  "path": "library/specializations/game-development/skills/character-physics/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "character-physics",
+  "downloaded_at": "2026-07-01T04:08:59.463470Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category bash scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "development",
+    "runner_up_score": 1,
+    "signals": [
+      "bash"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "a5c-ai",
+  "source_url": "https://github.com/a5c-ai/babysitter/blob/main/library/specializations/game-development/skills/character-physics/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/a5c-ai/babysitter/blob/main/library/specializations/game-development/skills/character-physics/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Character controller skill for movement physics and platformer mechanics."
+}

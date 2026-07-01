@@ -1,0 +1,38 @@
+{
+  "name": "doubt-driven",
+  "repo": "OutlineDriven/odin-claude-plugin",
+  "path": "skills/doubt-driven/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/OutlineDriven/odin-claude-plugin",
+  "dir_name": "doubt-driven",
+  "downloaded_at": "2026-07-01T04:05:59.090149Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, compile, debug",
+    "score": 3,
+    "runner_up": "orchestration",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "compile",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "OutlineDriven",
+  "source_url": "https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/doubt-driven/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/OutlineDriven/odin-claude-plugin/blob/main/skills/doubt-driven/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Subject non-trivial decisions to adversarial review before they stand. Use when correctness matters more than speed, the code is unfamiliar, stakes are high, or verifying now is cheaper than debugging later."
+}

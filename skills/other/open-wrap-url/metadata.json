@@ -1,0 +1,37 @@
+{
+  "name": "open-wrap-url",
+  "repo": "microsoft/power-platform-skills",
+  "path": "plugins/mobile-apps/skills/open-wrap-url/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/microsoft/power-platform-skills",
+  "dir_name": "open-wrap-url",
+  "downloaded_at": "2026-07-01T04:23:27.252482Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "microsoft",
+  "source_url": "https://github.com/microsoft/power-platform-skills/blob/main/plugins/mobile-apps/skills/open-wrap-url/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/microsoft/power-platform-skills/blob/main/plugins/mobile-apps/skills/open-wrap-url/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user wants to open the Power Apps Wrap page for an app ID in the active environment."
+}

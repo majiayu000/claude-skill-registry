@@ -1,0 +1,48 @@
+{
+  "name": "before-you-build-skill",
+  "version": "0.1.2",
+  "description": "Install the Before You Build Skill for AI coding tools.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "before-you-build-skill": "bin/before-you-build-skill.mjs",
+    "byb-skill": "bin/before-you-build-skill.mjs"
+  },
+  "files": [
+    "SKILL.md",
+    "README.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "agents/",
+    "bin/",
+    "docs/",
+    "examples/",
+    "references/"
+  ],
+  "scripts": {
+    "check": "node ./bin/before-you-build-skill.mjs --help && node ./bin/before-you-build-skill.mjs doctor"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bin1874/before-you-build-skill.git"
+  },
+  "homepage": "https://beforeyoubuild.fyi/en/skill",
+  "bugs": {
+    "url": "https://github.com/bin1874/before-you-build-skill/issues"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "skill",
+    "codex",
+    "claude",
+    "cursor",
+    "openclaw",
+    "hermes",
+    "gemini-cli",
+    "product-validation"
+  ]
+}

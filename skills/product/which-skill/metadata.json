@@ -1,0 +1,40 @@
+{
+  "name": "which-skill",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/which-skill/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "which-skill",
+  "downloaded_at": "2026-07-02T04:04:48.369214Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "product",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for product: product, prd, feature, backlog, user-research",
+    "score": 5,
+    "runner_up": "productivity",
+    "runner_up_score": 3,
+    "signals": [
+      "product",
+      "prd",
+      "feature",
+      "backlog",
+      "user-research"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/which-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/which-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Route a fuzzy request to the right skill in this library. Use when the user is unsure which skill fits, asks 'which skill should I use for X', describes a task without naming a skill, or when a request could plausibly match several skills. Produces a best-fit recommendation with the inputs to gather, a runner-up with the tie-breaker, and a workflow recipe when the job spans multiple skills."
+}

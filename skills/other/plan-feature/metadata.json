@@ -1,0 +1,38 @@
+{
+  "name": "plan-feature",
+  "repo": "appleboy/skills",
+  "path": "plugins/plan-feature/skills/plan-feature/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/appleboy/skills",
+  "dir_name": "plan-feature",
+  "downloaded_at": "2026-07-02T03:51:27.307788Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=3, product=3",
+    "score": 3,
+    "runner_up": "product",
+    "runner_up_score": 3,
+    "signals": [
+      "code",
+      "framework",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "appleboy",
+  "source_url": "https://github.com/appleboy/skills/blob/main/plugins/plan-feature/skills/plan-feature/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/appleboy/skills/blob/main/plugins/plan-feature/skills/plan-feature/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Plan a feature before writing any code. Use this skill at the START of non-trivial feature work \u2014 when the user says they want to \"add\", \"build\", \"implement\", \"create\", \"develop\", or \"ship\" a feature, endpoint, component, page, service, or capability. Especially trigger when the user's prompt is short or under-specified (\"add a dashboard\", \"build an auth flow\", \"let's do user activity reports\") \u2014 those need planning, not direct execution. The skill walks through requirements clarification, codebase exploration, sketches a Mermaid architecture/flow diagram of the proposed design, and produces a plan.md document the user can hand off to a fresh AI session for execution. Skip only when the change is genuinely trivial (typo fixes, single-line tweaks, renames). When in doubt, plan."
+}

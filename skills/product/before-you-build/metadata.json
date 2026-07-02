@@ -27,6 +27,7 @@
     "examples/real-case-dripfit.md",
     "examples/real-case-gummysearch.md",
     "examples/real-case-ledger-cloud-reminders.md",
+    "package.json",
     "references/case-memory-api.md",
     "references/evidence-check.md",
     "references/failure-patterns.md"

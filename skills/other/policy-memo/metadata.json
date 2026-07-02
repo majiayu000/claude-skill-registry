@@ -1,0 +1,36 @@
+{
+  "name": "policy-memo",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/policy-memo/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "policy-memo",
+  "downloaded_at": "2026-07-02T04:04:48.195998Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category analysis scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "data",
+    "runner_up_score": 1,
+    "signals": [
+      "analysis"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/policy-memo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/policy-memo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Write a decision-ready policy memo that frames an issue and recommends an option. Use when asked to write a policy memo, options paper, decision memo for a principal/minister/executive, or brief a decision-maker on a policy choice. Produces a tight memo: the issue, background, options with trade-offs, a clear recommendation, and implementation/risks \u2014 written for a busy decision-maker who reads the first paragraph."
+}

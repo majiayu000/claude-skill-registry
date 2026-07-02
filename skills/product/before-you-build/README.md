@@ -2,6 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Release](https://img.shields.io/github/v/release/bin1874/before-you-build-skill?include_prereleases)](https://github.com/bin1874/before-you-build-skill/releases)
+[![npm](https://img.shields.io/npm/v/before-you-build-skill)](https://www.npmjs.com/package/before-you-build-skill)
 [![GitHub stars](https://img.shields.io/github/stars/bin1874/before-you-build-skill)](https://github.com/bin1874/before-you-build-skill/stargazers)
 [![Website](https://img.shields.io/badge/website-beforeyoubuild.fyi-blue)](https://beforeyoubuild.fyi/en/skill)
 
@@ -34,16 +35,19 @@ This skill adds a simple pre-build review step. Before the agent writes code, it
 - AI SaaS builders turning demos into products.
 - Product engineers adding features to existing products.
 - Teams using Codex, Claude Code, Cursor, OpenCode, OpenClaw, or similar coding agents.
+- Teams using Hermes, Gemini CLI, and other tools that can load local skills, rules, or slash commands.
 - Anyone tempted to ask an agent to implement before the demand risk is clear.
 
 ## Compatible Tools
 
 | Tool | Recommended setup |
 |---|---|
-| Codex | Install the repository as a local skill folder when local skills are available. |
-| Claude Code | Use as a Claude Code skill or copy `SKILL.md` into project instructions. |
-| Cursor | Add `SKILL.md` as a project rule, then invoke it before implementation. |
-| OpenCode / OpenClaw | Add `SKILL.md` as a custom skill, rule, memory, or named instruction. See [docs/OPENCLAW.md](docs/OPENCLAW.md) for OpenClaw publishing notes. |
+| Codex | Run `npx before-you-build-skill install codex`. |
+| Claude Code | Run `npx before-you-build-skill install claude`, or copy `SKILL.md` into project instructions. |
+| Cursor | Run `npx before-you-build-skill install cursor --path /path/to/project`. |
+| OpenClaw | Use OpenClaw's native Git install or the `npx` local installer. See [docs/OPENCLAW.md](docs/OPENCLAW.md). |
+| Hermes | Run `npx before-you-build-skill install hermes`. |
+| Gemini CLI | Run `npx before-you-build-skill install gemini` to create a slash command plus a local skill reference. |
 | Other agents | Paste the minimal prompt from [docs/INSTALL.md](docs/INSTALL.md). |
 
 ## What It Does
@@ -84,7 +88,21 @@ Do not use it as a replacement for technical review, security review, architectu
 
 ## Quick Start
 
-Copy this into your AI coding tool:
+Install it into Codex:
+
+```bash
+npx before-you-build-skill install codex
+```
+
+Or install another local adapter:
+
+```bash
+npx before-you-build-skill install hermes
+npx before-you-build-skill install openclaw
+npx before-you-build-skill install gemini
+```
+
+Then start a request with:
 
 ```text
 Use before-you-build to review this idea before implementation:
@@ -100,9 +118,12 @@ The agent should return a short reality check with a verdict before it starts im
 .
 - SKILL.md
 - CONTRIBUTING.md
+- package.json
 - .clawhubignore
 - agents/
   - openai.yaml
+- bin/
+  - before-you-build-skill.mjs
 - .github/
   - ISSUE_TEMPLATE/
   - DISCUSSION_TEMPLATE/
@@ -122,6 +143,39 @@ The agent should return a short reality check with a verdict before it starts im
 
 ## Install
 
+### One-command install
+
+Use the published npm package when you want the skill copied into a local tool directory:
+
+```bash
+npx before-you-build-skill install codex
+npx before-you-build-skill install claude
+npx before-you-build-skill install cursor --path /path/to/project
+npx before-you-build-skill install openclaw
+npx before-you-build-skill install hermes
+npx before-you-build-skill install gemini
+```
+
+Package page:
+
+```text
+https://www.npmjs.com/package/before-you-build-skill
+```
+
+To install local adapters for every supported target:
+
+```bash
+npx before-you-build-skill install all
+```
+
+The installer is a convenience wrapper. Some tools also have native installation flows. For example, OpenClaw can install directly from Git:
+
+```bash
+openclaw skills install git:bin1874/before-you-build-skill@main --as before-you-build
+```
+
+### Manual install
+
 Clone or download this repository, then add the whole folder to your AI coding tool's skill, agent, or custom instruction location.
 
 ```bash
@@ -138,10 +192,22 @@ For OpenClaw and ClawHub-specific publishing notes, see [docs/OPENCLAW.md](docs/
 
 | Setup | What to do |
 |---|---|
+| `npx` installer | Run `npx before-you-build-skill install <target>`. |
 | Full skill package | Clone this repo and add the whole folder to your tool's skill directory. |
 | Project-level rule | Copy `SKILL.md` into your project rules or instruction file. |
 | Prompt-only | Use the minimal prompt in [docs/INSTALL.md](docs/INSTALL.md#minimal-prompt-only-setup). |
 | Optional Case Memory | Use [references/case-memory-api.md](references/case-memory-api.md) only after user permission. |
+
+## `npx` Targets
+
+| Target | Installed files |
+|---|---|
+| `codex` | `~/.codex/skills/before-you-build/` |
+| `claude` | `~/.claude/skills/before-you-build/` |
+| `cursor` | `<project>/.cursor/rules/before-you-build.md` |
+| `openclaw` | `~/.openclaw/skills/before-you-build/` |
+| `hermes` | `~/.hermes/skills/before-you-build/` |
+| `gemini` | `~/.gemini/commands/before-you-build.toml` and `~/.gemini/skills/before-you-build/` |
 
 ## Basic Usage
 

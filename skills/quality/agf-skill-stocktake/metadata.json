@@ -1,0 +1,39 @@
+{
+  "name": "agf-skill-stocktake",
+  "repo": "pcliangx/AppGenesisForge",
+  "path": ".claude/skills/agf-skill-stocktake/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/pcliangx/AppGenesisForge",
+  "dir_name": "agf-skill-stocktake",
+  "downloaded_at": "2026-07-03T03:47:29.135781Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "quality",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for quality: quality, lint, review, validate",
+    "score": 4,
+    "runner_up": "documents",
+    "runner_up_score": 3,
+    "signals": [
+      "quality",
+      "lint",
+      "review",
+      "validate"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "pcliangx",
+  "source_url": "https://github.com/pcliangx/AppGenesisForge/blob/main/.claude/skills/agf-skill-stocktake/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pcliangx/AppGenesisForge/blob/main/.claude/skills/agf-skill-stocktake/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when PL / tech-lead audits the content quality of AGF's own skills (`.claude/skills/agf-*/SKILL.md`). Provides the 5-dimension checklist (Actionability / Scope fit / Uniqueness vs CLAUDE.md+standards / Currency of pointers / Gate-binding validity), 5-verdict rubric (Keep/Improve/Update/Retire/Merge), reason-quality bar (\u53cd\u6577\u884d), and output skeleton. Triggered each MINOR release retro or manually."
+}

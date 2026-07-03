@@ -1,0 +1,38 @@
+{
+  "name": "codex",
+  "repo": "notque/vexjoy-agent",
+  "path": "skills/meta/codex/SKILL.md",
+  "github_branch": "main",
+  "category": "workflow",
+  "source": "github.com/notque/vexjoy-agent",
+  "dir_name": "codex-notque-vexjoy-agent",
+  "downloaded_at": "2026-07-03T03:46:26.053867Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "workflow",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for workflow: workflow, process, pipeline",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "workflow",
+      "process",
+      "pipeline"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "notque",
+  "source_url": "https://github.com/notque/vexjoy-agent/blob/main/skills/meta/codex/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/notque/vexjoy-agent/blob/main/skills/meta/codex/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Run bulk/mechanical work on gpt-5.5 via the Codex CLI."
+}

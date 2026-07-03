@@ -1,0 +1,38 @@
+{
+  "name": "kol-discovery",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/social/capabilities/kol-discovery/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "kol-discovery",
+  "downloaded_at": "2026-07-03T03:38:15.667778Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, data=2",
+    "score": 2,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/social/capabilities/kol-discovery/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/social/capabilities/kol-discovery/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Find Key Opinion Leaders (KOLs) in a given domain by combining web research with LinkedIn post search. Given a company/idea and target domain, generates authority keywords, searches LinkedIn posts to find prolific authors with high engagement, and merges with web-researched influencers. Use when someone wants to \"find influencers in X space\" or \"who are the KOLs for Y industry.\""
+}

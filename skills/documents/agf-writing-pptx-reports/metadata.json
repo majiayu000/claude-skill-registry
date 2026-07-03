@@ -1,0 +1,40 @@
+{
+  "name": "agf-writing-pptx-reports",
+  "repo": "pcliangx/AppGenesisForge",
+  "path": ".claude/skills/agf-writing-pptx-reports/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/pcliangx/AppGenesisForge",
+  "dir_name": "agf-writing-pptx-reports",
+  "downloaded_at": "2026-07-03T03:47:30.734588Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for documents: pdf, excel, pptx, xlsx, docx",
+    "score": 5,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "pdf",
+      "excel",
+      "pptx",
+      "xlsx",
+      "docx"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "pcliangx",
+  "source_url": "https://github.com/pcliangx/AppGenesisForge/blob/main/.claude/skills/agf-writing-pptx-reports/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pcliangx/AppGenesisForge/blob/main/.claude/skills/agf-writing-pptx-reports/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u7528 python-pptx \u5199\"\u73b0\u4ee3\u5316\u4e2d\u6587\u5236\u5ea6 / \u515a\u653f / \u4f01\u4e1a\u5ba3\u8d2f PPT\"\uff08\u542b\u51b3\u8bae\u4e66\u63d0\u62a5\u3001\u8bc4\u5ba1\u62a5\u544a\u3001\u7ba1\u7406\u529e\u6cd5\u3001\u57f9\u8bad\u5ba3\u8d2f\u7b49 23 \u9875\u91cf\u7ea7 deck\uff09\u3002\u5f53\u7528\u6237\u8981\u6c42\u7a0b\u5e8f\u5316\u751f\u6210 PPT \u4e14\u62b1\u6028\"\u8001\u571f / \u5b57\u4f53\u4e11 / \u8868\u683c\u4e71 / \u6587\u5b57\u6ea2\u51fa / \u4e2d\u6587\u5b57\u4f53 fallback / \u7f3a\u67b6\u6784\u56fe\"\u65f6\u542f\u7528\u2014\u2014`python-pptx` \u9ed8\u8ba4 API \u4e00\u5806\u5751\u5fc5\u987b\u4e3b\u52a8\u907f\u5f00\u3002\u63d0\u4f9b\uff1a\u8def\u5f84\u51b3\u7b56 / \u8bbe\u8ba1 token / 12 \u4e2a helper \u5168\u5957 / 7 \u4e2a\u81f4\u4e11\u53cd\u6a21\u5f0f / 12 \u4e2a\u5173\u952e\u6280\u5de7 / LibreOffice \u6e32\u67d3\u9a8c\u8bc1\u95ed\u73af / \u8de8\u5e73\u53f0\u4e2d\u6587\u5b57\u4f53\u751f\u6548 lxml \u5199\u6cd5 / \u914d\u5957 draw.io \u753b\u67b6\u6784\u56fe\u9009\u578b\uff08\u4e2d\u6587\u5b57\u4f53\u3001\u914d\u8272\u30018 \u5927\u5751\u3001\u5d4c\u5165 PPT \u94fe\u8def\uff09\u3002"
+}

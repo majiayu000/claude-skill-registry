@@ -1,0 +1,37 @@
+{
+  "name": "list-experiment",
+  "repo": "scdenney/open-science-skills",
+  "path": "codex/list-experiment/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/scdenney/open-science-skills",
+  "dir_name": "list-experiment",
+  "downloaded_at": "2026-07-03T03:49:32.894764Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, build",
+    "score": 2,
+    "runner_up": "analysis",
+    "runner_up_score": 1,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "scdenney",
+  "source_url": "https://github.com/scdenney/open-science-skills/blob/main/codex/list-experiment/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/scdenney/open-science-skills/blob/main/codex/list-experiment/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Design and diagnose list experiments (item count technique)."
+}

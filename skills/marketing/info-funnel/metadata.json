@@ -1,0 +1,38 @@
+{
+  "name": "info-funnel",
+  "repo": "nexu-io/html-anything",
+  "path": "next/src/lib/templates/skills/info-funnel/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/nexu-io/html-anything",
+  "dir_name": "info-funnel",
+  "downloaded_at": "2026-07-03T03:46:21.632309Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, social",
+    "score": 2,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "marketing",
+      "social"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "nexu-io",
+  "source_url": "https://github.com/nexu-io/html-anything/blob/main/next/src/lib/templates/skills/info-funnel/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nexu-io/html-anything/blob/main/next/src/lib/templates/skills/info-funnel/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "3-6 \u9636\u9012\u51cf\u6f0f\u6597, \u7a81\u51fa\u8f6c\u5316\u7387 / \u7b5b\u9009\u6bd4\u4f8b / \u6d41\u91cf\u635f\u8017\u3002\u7ad6\u56fe\u9002\u5408 IG Story / \u5c0f\u7ea2\u4e66"
+}

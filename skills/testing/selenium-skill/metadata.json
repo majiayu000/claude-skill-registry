@@ -1,0 +1,40 @@
+{
+  "name": "selenium-skill",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/selenium-skill/SKILL.md",
+  "github_branch": "main",
+  "category": "testing",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "selenium-skill",
+  "downloaded_at": "2026-07-03T03:50:35.920657Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "testing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for testing: test, qa, jest, pytest, integration",
+    "score": 5,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "test",
+      "qa",
+      "jest",
+      "pytest",
+      "integration"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/selenium-skill/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/selenium-skill/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Generates production-grade Selenium WebDriver automation scripts and tests in Java, Python, JavaScript, C#, Ruby, or PHP. Supports local execution and TestMu AI cloud with 3000+ browser/OS combinations. Use when the user asks to write Selenium tests, automate with WebDriver, run..."
+}

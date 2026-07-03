@@ -1,0 +1,39 @@
+{
+  "name": "linkedin-post-research",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/social/capabilities/linkedin-post-research/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "linkedin-post-research",
+  "downloaded_at": "2026-07-03T03:38:19.412228Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script, cli",
+    "score": 3,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/social/capabilities/linkedin-post-research/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/social/capabilities/linkedin-post-research/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Search LinkedIn posts by keywords, sorted by engagement or date. Use when researching what people are saying about a topic on LinkedIn, finding high-engagement content, identifying thought leaders, or discovering warm leads through post engagement. Returns author, post text, reactions, comments, shares, post URL, and date. No LinkedIn cookies or login required."
+}

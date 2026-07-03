@@ -1,0 +1,41 @@
+{
+  "name": "ad-creative-builder",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "paid/orchestrate/ad-creative-builder/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "ad-creative-builder",
+  "downloaded_at": "2026-07-03T03:30:01.570258Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for marketing: marketing, seo, content, social, campaign, brand",
+    "score": 6,
+    "runner_up": "security",
+    "runner_up_score": 3,
+    "signals": [
+      "marketing",
+      "seo",
+      "content",
+      "social",
+      "campaign",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/paid/orchestrate/ad-creative-builder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/paid/orchestrate/ad-creative-builder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"write ad copy\", \"generate RSA headlines\", or \"build ad creative at volume\"; produces ad units \u2014 RSA headlines/descriptions, hooks, and an angle matrix \u2014 message-matched to the destination landing page. Not for scoring an ad account \u2014 use ad-account-auditor; not for the post-click page \u2014 use landing-optimizer; not for organic articles \u2014 use seo-content-writer. \u5e7f\u544a\u521b\u610f/\u5e7f\u544a\u6587\u6848/RSA\u6807\u9898"
+}

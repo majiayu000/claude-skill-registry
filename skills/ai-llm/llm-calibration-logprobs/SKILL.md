@@ -1,0 +1,93 @@
+---
+name: llm-calibration-logprobs
+description: "Analyze LLM token logprobs and calibration. Use for per-decision confidence, ECE, Brier scores, reliability diagrams, and low-confidence triage."
+---
+
+# Reading a Model's Own Uncertainty from Token Log-Probabilities
+
+## Instructions
+
+This skill covers **within-model** confidence: how sure a single model is about each decision it makes, read off the token log-probabilities it emits, and whether that internal confidence is *calibrated* against ground truth. It pairs with the `model-council-voting` skill, which handles the complement — **between-coder** agreement across several independent models. Use both: one model's high self-reported confidence on an item, and three models independently agreeing on that item, are different kinds of evidence, and a careful pipeline reports both. This skill does not cover codebook design or human-validation statistics (κ, F1) — those live in the `text-classification` skill; cross-reference it rather than re-deriving them here.
+
+### 1. What a Token Log-Probability Is, and When to Use It
+
+- A generative LLM produces each output token by sampling from a probability distribution over its vocabulary. The **log-probability** (logprob) of the token it actually emitted is `log P(token | context)`; exponentiating gives a probability in `[0, 1]`. A logprob of `0.0` means probability 1.0 (the model treated that token as certain); `-2.30` means probability ≈ 0.10. This is the model's *own* assessment of how likely that token was, conditional on everything before it.
+- Use logprobs when you need a **per-item, per-decision** confidence signal that is nearly free (it falls out of the same forward pass that produced the label) and continuous. It answers "how sure was the model about *this* classification?" — a question a hard 0/1 label cannot.
+- Do **not** treat a logprob as a probability of *correctness*. It is the model's subjective probability under its own learned distribution, which can be systematically wrong. Section 4 is the entire reason this distinction matters: a model can assign 0.95 to tokens that are right only 70% of the time. The logprob is a *claim* about confidence; calibration assessment is how you check whether the claim holds.
+- This is a long-standing idea in NLP — token probabilities are the native uncertainty signal of a language model — but it is under-used in applied social science, where the convention is to take the final label at face value and discard the distribution it came from. Recovering and using that distribution is the contribution of this skill (see also §6's disciplinary note).
+- Sequence-likelihood self-evaluation (asking the model itself to rate confidence, or reading off the probability it assigns to its own answer) is studied directly in the calibration literature (Kadavath et al. 2022; Tian et al. 2023). Prefer the *emitted-token* logprob over a *prompted* "rate your confidence HIGH/MEDIUM/LOW" string when both are available: the verbalized rating is itself generated text subject to the same biases, whereas the logprob is the underlying mechanism.
+
+### 2. Collecting Logprobs and Aggregating Multi-Token Labels
+
+- **Turn on logprob return at the API/server level.** OpenAI chat completions accept `logprobs=True` and `top_logprobs=K` (K ≤ 20 at time of writing); the response carries a per-token list with `.token`, `.logprob`, and a `.top_logprobs` list of the K most likely alternatives at that position. vLLM exposes the same fields through its OpenAI-compatible server (`logprobs=K`). Ollama returns per-token logprobs through its API as well. `analysis/classify_openai.py` in the open-text surveys project is a worked example: it sets `api_kwargs["logprobs"] = True; api_kwargs["top_logprobs"] = 5` and stashes `resp.choices[0].logprobs.content` for every response.
+- **Fix the decoding so the logprobs are reproducible.** Set `temperature=0` and a fixed `seed` (that script uses `temperature=0, seed=42`). Temperature 0 makes the *label* deterministic on most backends, but note that it does **not** by itself make logprob *values* bit-identical across hosted-API calls — see §6. Record both settings.
+- **A label usually spans several tokens, so aggregate.** A code like `civic_commitment` tokenizes into multiple sub-word pieces (`civic`, `_comm`, `itment`, …). You must combine their logprobs into one per-item confidence. The robust way to find the right tokens is to reconstruct the full output string, locate the label inside it (e.g., the value after `"code":`), build a character-offset map for each token, and select exactly the tokens overlapping the label's character span — this is what `extract_code_logprobs()` does in `classify_openai.py` rather than guessing token indices. Aggregation choices:
+  - **Sum of label-token logprobs** = `log P(whole label string)` = the joint sequence probability. This is the principled "how likely was this exact label" number but is **length-confounded**: longer labels score lower simply by having more factors, so it is only comparable across labels of similar token length. `classify_openai.py` stores this as `logprob_code_sum`.
+  - **Mean per-token logprob** (sum ÷ token count), equivalently the geometric mean probability, removes most of the length confound and is the better default when labels differ in length.
+  - **First-token logprob.** For a closed label set whose options diverge at the first token, the first decision token already carries most of the information; it is cheap and length-invariant. `classify_openai.py` stores `logprob_first_token` for exactly this reason. Use it only after checking your labels actually disambiguate early — if two codes share a long prefix, the first token is uninformative.
+  - State which aggregation you used and why; the three give different numbers and are not interchangeable.
+- **Capture the top alternatives, not just the chosen token.** Store the `top_logprobs` list at the first label position (the `top_alternatives_json` column in `classify_openai.py`). The gap between the chosen token and the runner-up — the **margin** — is a separate, often more discriminating, uncertainty signal than the absolute logprob (see §3).
+- **Constrain the output so the label tokens are findable.** Logprob aggregation is far easier when the model emits a rigid schema (e.g., JSON with a `"code"` field) so you can regex-locate the label. Free-form prose makes the label-token span ambiguous. This is the same structured-output discipline the `text-classification` skill recommends for parsing.
+
+### 3. Confidence Tiers, Margins, and Triage
+
+- **Map the aggregated logprob (or its probability) onto action tiers** so the continuous signal drives the pipeline. A practical default three-tier scheme on the chosen-label probability `p = exp(logprob)`:
+  - `p ≥ 0.90` → **auto-accept** (high confidence)
+  - `0.65 ≤ p < 0.90` → **accept but flag for spot-check**
+  - `p < 0.65` → **route to human review** (low confidence)
+  - These cut points are **house defaults for planning, not values from a cited study**, and they are only meaningful *after* you have checked calibration (§4): if the model is overconfident, a 0.90 cut admits too many errors and the thresholds must move. Re-derive the cuts from your own reliability diagram, picking the probability bin where empirical accuracy crosses your tolerated error rate.
+- **Use the margin to the top alternative as a second trigger.** Even when the chosen-token probability is high, a small margin to the runner-up (e.g., `p_top − p_second < 0.10`) marks a genuine coin-toss between two specific labels. Margin and absolute confidence disagree often enough that flagging on *either* catches more true errors than flagging on absolute confidence alone. The runner-up token also tells you *which* alternative the model was torn between, which is diagnostic for codebook ambiguity.
+- **Triage low-confidence items to humans rather than discarding them.** The point of the tiers is allocation of scarce human attention: review the genuine coin-tosses, not a random sample. This is the within-model analogue of the disagreement-based flagging in the `text-classification` skill's hybrid workflow — there, items are flagged when models disagree; here, when a single model is internally unsure.
+- **Expect a minority of items in the low tier.** As a planning band, anticipate roughly 10–20% of items below a sensibly-placed low-confidence cut; a much larger share usually means the task is genuinely ambiguous, the label set overlaps, or the prompt is under-specified — return to the codebook before spending review hours. This band is a house default, not a cited threshold.
+
+### 4. Calibration Assessment
+
+A model is **calibrated** if, among all items it labels with confidence `p`, a fraction `p` are actually correct. Confidence tiers are only trustworthy once you have measured this against held-out ground truth.
+
+- **Reliability diagram.** Bin items by predicted confidence (e.g., 10 equal-width bins on `p`), and plot mean predicted confidence (x) against empirical accuracy (y) per bin. Perfect calibration lies on the 45° diagonal. Points **below** the diagonal = **overconfidence** (the model claims more certainty than it earns); **above** = **underconfidence**. Modern deep networks, including large transformers, are typically miscalibrated toward overconfidence (Guo et al. 2017).
+- **Expected Calibration Error (ECE).** Summarize the diagram as the accuracy-weighted average gap between confidence and accuracy across bins: `ECE = Σ_b (n_b / N) · |acc(b) − conf(b)|` (Guo et al. 2017). Lower is better; report it with the bin count, since ECE is sensitive to binning. Treat ECE as a scalar companion to the diagram, never a replacement — two very different reliability curves can share an ECE.
+- **Brier score.** The mean squared error between the predicted probability and the 0/1 outcome (Brier 1950): `BS = (1/N) Σ (p_i − y_i)²`. It is a *proper scoring rule* — it rewards honest probabilities — and jointly captures calibration and resolution (the spread of confidences), so it penalizes a model that hedges everything at 0.5. Report Brier alongside ECE; they answer different questions.
+- **Distinguish calibration from accuracy.** A highly accurate model can be badly calibrated and vice versa. The triage in §3 depends on *calibration*, not accuracy: if the 0.90-confidence bin is only 70% accurate, the auto-accept tier is leaking errors regardless of overall F1.
+- **A model can be calibrated against its own panel yet overconfident against humans.** Logprobs are computed under the model's own distribution; if you only ever check them against *other model runs* or the model's own consistency, you measure self-consistency, not correctness. The ground truth for a calibration diagram must be **human-adjudicated labels** (or another external standard), not the model's modal answer. This is the precise sense in which within-model confidence (this skill) and cross-model agreement (`model-council-voting`) can both look reassuring while the labels are jointly wrong — correlated model errors inflate both.
+- **Temperature scaling is a cheap post-hoc fix if you only need calibration, not better accuracy.** Fitting a single scalar `T` on a held-out set to divide the logits before softmax often largely corrects ECE without changing the argmax label (Guo et al. 2017). Fit `T` on a calibration split, report ECE/Brier before and after, and never fit it on the same data you evaluate on.
+
+### 5. Using Uncertainty in the Pipeline
+
+- **Route, don't discard.** The default action for a low-confidence item is human review (§3), not deletion — dropping unsure items biases the surviving sample toward whatever the model finds easy, which is rarely random with respect to the construct.
+- **Propagate uncertainty downstream instead of hard-labeling.** When LLM labels feed a regression or prevalence estimate, carrying the per-item confidence (e.g., as observation weights, soft labels, or multiple-imputation draws over the label) is more honest than collapsing every item to 0/1. At minimum, run the downstream analysis twice — once on all labels, once excluding the low-confidence tier — and report whether conclusions move. This connects to the measurement-error correction the `text-classification` skill flags for classifier-as-variable designs.
+- **Downweight, don't trust blindly.** If you must use a single point estimate, weighting items by calibrated confidence is preferable to equal weights when the analysis tolerates it.
+- **Report the share of the corpus in each tier.** The fraction of auto-accept vs. human-routed items is a corpus-level quality signal worth reporting alongside accuracy, and it sizes the human-review budget.
+
+### 6. Caveats
+
+- **Proprietary logprob availability and variance.** Hosted APIs may restrict, omit, or change logprob support without notice, and the returned values can drift across model snapshots and even across identical calls. `temperature=0` fixes the sampled token on most backends but does **not** guarantee bit-identical logprob *values* on hosted infrastructure (batching, kernel non-determinism, and silent model updates all perturb them). Pin the exact model version, record the run date, and re-measure calibration after any model update. Open-weight models served locally (vLLM, Ollama) give far more stable and inspectable logprobs — `hpc/DESKTOP_LOGPROBS.md` runs Llama 3.1 8B and Qwen 2.5 3B locally via Ollama precisely to get reproducible per-token logprobs across models.
+- **Chain-of-thought text is not a confidence measure.** A long, fluent reasoning trace, or a verbalized "I am highly confident," is generated text subject to the same miscalibration as any other output. Do not substitute the *presence* or *tone* of reasoning for the *logprob* of the label. Verbalized confidence can be elicited and can be made roughly calibrated with effort (Tian et al. 2023), but treat it as a separate, weaker signal — when both are available, cross-check them rather than trusting the prose.
+- **Closed-set vs. open-ended tasks.** Logprob confidence is most interpretable for a fixed label set where the alternatives are enumerable. For open-ended generation (summaries, extractions), the per-token logprob measures local fluency, not global correctness, and aggregating it into a single "is this output right" number is much weaker.
+- **Disciplinary note.** Computational linguists and ML researchers routinely lean on token probabilities as the model's uncertainty (it is the native quantity their models expose), while applied social scientists tend to take the final label at face value and never request the distribution. Neither convention is sufficient alone: the logprob is informative but must be *calibrated against external truth* before it can carry weight in an estimate. Make the choice explicit in the methods section rather than inheriting it from disciplinary habit.
+
+### 7. Reproducibility and Reporting
+
+- **Record the full collection recipe:** exact model identifier and version/snapshot, decoding settings (`temperature`, `seed`, `top_logprobs` K), the output schema used to locate label tokens, and the aggregation function (first-token / sum / mean) with its rationale. Store the raw per-token logprobs and the top-K alternatives, not just the derived scalar — the `logprob_first_token`, `logprob_code_sum`, and `top_alternatives_json` columns in `classify_openai.py` are a reasonable minimal schema.
+- **Report the calibration assessment, not just that you collected logprobs:** the reliability diagram, ECE (with bin count), and Brier score on a held-out human-labeled set, plus the direction and size of any miscalibration (over- vs. underconfidence) and whether you applied temperature scaling.
+- **Report the triage outcome:** the confidence/margin thresholds used, how they were derived from the reliability diagram, the share of items in each tier, and the human-review rate.
+- **State the ground-truth source for calibration** explicitly (human adjudication vs. anything model-derived) so readers can see the calibration was checked against external truth, not self-consistency.
+- For the broader methods-section checklist (model version disclosure, archived prompts, DA-RT/JARS compliance), compose with the `methods-reporting` skill. For the between-model agreement statistics that complement this within-model confidence, use the `model-council-voting` skill; for codebook and human-validation metrics, the `text-classification` skill.
+
+## Quality Checks
+
+- [ ] Logprob return enabled at the API/server level (`logprobs=True`, `top_logprobs=K`) and `temperature=0` with a fixed `seed` recorded
+- [ ] Multi-token labels aggregated into one per-item confidence by an explicit, stated method (first-token / sum / mean), with the length-confound of the raw sum acknowledged
+- [ ] Label tokens located by reconstructing the output and matching a character span (not by guessed token indices), as in `extract_code_logprobs()`
+- [ ] Top-K alternatives stored and the **margin** to the runner-up computed as a second uncertainty signal
+- [ ] Logprob confidence is not reported as a probability of correctness without a calibration check against external ground truth
+- [ ] Confidence tiers / triage thresholds derived from the reliability diagram, not assumed; house-default cut points (e.g., 0.90 / 0.65) re-justified on this corpus
+- [ ] Reliability diagram produced against **human-adjudicated** labels (not the model's own modal answer or other model runs)
+- [ ] Expected Calibration Error reported with its bin count (Guo et al. 2017)
+- [ ] Brier score reported alongside ECE as a proper scoring rule (Brier 1950)
+- [ ] Direction of miscalibration stated (over- vs. underconfidence); temperature scaling applied/evaluated on a separate split if used (Guo et al. 2017)
+- [ ] Low-confidence items routed to human review, not discarded; per-tier corpus shares and human-review rate reported
+- [ ] Downstream analysis run with and without the low-confidence tier (or with uncertainty propagated as weights/soft labels), and sensitivity reported
+- [ ] Chain-of-thought text and verbalized confidence are not substituted for the token logprob
+- [ ] Proprietary-logprob instability acknowledged: exact model snapshot pinned, run date recorded, calibration re-measured after any model update
+- [ ] Full collection recipe and raw per-token logprobs archived (model version, decoding settings, output schema, aggregation function)
+- [ ] Discipline-specific convention (token-probability vs. face-value-label) made explicit in the methods section

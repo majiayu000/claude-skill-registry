@@ -1,0 +1,38 @@
+{
+  "name": "agf-writing-prd",
+  "repo": "pcliangx/AppGenesisForge",
+  "path": ".claude/skills/agf-writing-prd/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/pcliangx/AppGenesisForge",
+  "dir_name": "agf-writing-prd",
+  "downloaded_at": "2026-07-03T03:47:28.551268Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: design=3, product=3",
+    "score": 3,
+    "runner_up": "product",
+    "runner_up_score": 3,
+    "signals": [
+      "design",
+      "ui",
+      "frontend"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "pcliangx",
+  "source_url": "https://github.com/pcliangx/AppGenesisForge/blob/main/.claude/skills/agf-writing-prd/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/pcliangx/AppGenesisForge/blob/main/.claude/skills/agf-writing-prd/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "[DEPRECATED since v6.9.0 \u2192 removed in v7.0.0; use agf-writing-change instead] Legacy PRD intake. Use when product-lead is about to draft a PRD for a new feature. Provides the 10-section PRD structure, AC quality bar, must-have fields, and the verification gate before sign-off."
+}

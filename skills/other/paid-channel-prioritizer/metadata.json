@@ -1,0 +1,38 @@
+{
+  "name": "paid-channel-prioritizer",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/ads/composites/paid-channel-prioritizer/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "paid-channel-prioritizer",
+  "downloaded_at": "2026-07-03T03:38:16.553348Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: analysis=2, business=2",
+    "score": 2,
+    "runner_up": "business",
+    "runner_up_score": 2,
+    "signals": [
+      "analysis",
+      "analyze"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/composites/paid-channel-prioritizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/composites/paid-channel-prioritizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "For founders who don't know where to start with paid ads. Analyzes ICP, competitor ad presence, budget constraints, and product type to recommend which 1-2 paid channels to start with and provides a 90-day ramp plan. Prevents the common mistake of spreading a small budget across too many platforms."
+}

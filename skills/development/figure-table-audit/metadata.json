@@ -1,0 +1,39 @@
+{
+  "name": "figure-table-audit",
+  "repo": "scdenney/open-science-skills",
+  "path": "codex/figure-table-audit/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/scdenney/open-science-skills",
+  "dir_name": "figure-table-audit",
+  "downloaded_at": "2026-07-03T03:49:35.081347Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for development: code, build, software, compile",
+    "score": 4,
+    "runner_up": "documents",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build",
+      "software",
+      "compile"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "scdenney",
+  "source_url": "https://github.com/scdenney/open-science-skills/blob/main/codex/figure-table-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/scdenney/open-science-skills/blob/main/codex/figure-table-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Audit figures, tables, captions, cross-references, and statistical notes."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "task-decomposition",
+  "repo": "a5c-ai/babysitter",
+  "path": "library/methodologies/ccpm/skills/task-decomposition/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/a5c-ai/babysitter",
+  "dir_name": "task-decomposition",
+  "downloaded_at": "2026-07-03T03:29:56.059384Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, orchestration=2",
+    "score": 2,
+    "runner_up": "orchestration",
+    "runner_up_score": 2,
+    "signals": [
+      "build",
+      "software"
+    ],
+    "semantic_sources": {
+      "name": "metadata",
+      "description": "body"
+    }
+  },
+  "author": "a5c-ai",
+  "source_url": "https://github.com/a5c-ai/babysitter/blob/main/library/methodologies/ccpm/skills/task-decomposition/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/a5c-ai/babysitter/blob/main/library/methodologies/ccpm/skills/task-decomposition/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Break epics into parallelizable tasks with acceptance criteria, effort estimates, and dependency graphs."
+}

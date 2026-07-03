@@ -1,0 +1,39 @@
+{
+  "name": "fact-check",
+  "repo": "scdenney/open-science-skills",
+  "path": "plugin/skills/fact-check/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/scdenney/open-science-skills",
+  "dir_name": "fact-check-scdenney-open-science-skills-2",
+  "downloaded_at": "2026-07-03T03:49:34.801103Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for documents: pdf, word, docx, markdown",
+    "score": 4,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "pdf",
+      "word",
+      "docx",
+      "markdown"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "scdenney",
+  "source_url": "https://github.com/scdenney/open-science-skills/blob/main/plugin/skills/fact-check/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/scdenney/open-science-skills/blob/main/plugin/skills/fact-check/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Fact-check a manuscript's claims against the cited sources themselves. Locate each source's knowledge-base Markdown file and verify the in-text claim is actually supported. Runs a pre-flight gate that refuses unless a per-source Markdown knowledge base exists and is clean (PDFs converted via process-source); then runs citation-check; then audits claim support, overclaiming, direction, scope, and misattribution."
+}

@@ -1,0 +1,36 @@
+{
+  "name": "deck-autopsy",
+  "repo": "mohitagw15856/pm-claude-skills",
+  "path": "skills/deck-autopsy/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/mohitagw15856/pm-claude-skills",
+  "dir_name": "deck-autopsy",
+  "downloaded_at": "2026-07-03T03:45:22.652783Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category design scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "marketing",
+    "runner_up_score": 1,
+    "signals": [
+      "design"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "mohitagw15856",
+  "source_url": "https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/deck-autopsy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/mohitagw15856/pm-claude-skills/blob/main/skills/deck-autopsy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Autopsy a slide deck from photos or screenshots of its slides \u2014 the narrative arc, the numbers, and what each slide is hiding. Use when given slide images (a competitor's pitch, a conference talk, your own deck before a big meeting) and asked what the deck argues, whether it holds up, or how to counter or improve it. Produces a slide-by-slide read, the reconstructed argument chain, weak links, and the questions the deck is engineered to avoid. Requires image input."
+}

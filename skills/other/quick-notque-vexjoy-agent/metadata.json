@@ -1,0 +1,38 @@
+{
+  "name": "quick",
+  "repo": "notque/vexjoy-agent",
+  "path": "skills/process/quick/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/notque/vexjoy-agent",
+  "dir_name": "quick-notque-vexjoy-agent",
+  "downloaded_at": "2026-07-03T03:46:26.484195Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=3, quality=3",
+    "score": 3,
+    "runner_up": "quality",
+    "runner_up_score": 3,
+    "signals": [
+      "code",
+      "build",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "notque",
+  "source_url": "https://github.com/notque/vexjoy-agent/blob/main/skills/process/quick/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/notque/vexjoy-agent/blob/main/skills/process/quick/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Tracked lightweight execution with composable rigor flags: --trivial, --discuss, --research, --full. Covers zero-ceremony inline fixes (typo, spelling fix, small mistake in a single file, \u22643 edits) through contained multi-file changes."
+}

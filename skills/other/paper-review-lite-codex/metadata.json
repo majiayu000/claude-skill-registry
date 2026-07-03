@@ -1,0 +1,37 @@
+{
+  "name": "paper-review-lite-codex",
+  "repo": "scdenney/open-science-skills",
+  "path": "codex/paper-review-lite-codex/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/scdenney/open-science-skills",
+  "dir_name": "paper-review-lite-codex",
+  "downloaded_at": "2026-07-03T03:49:40.305852Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, documents=2",
+    "score": 2,
+    "runner_up": "documents",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "scdenney",
+  "source_url": "https://github.com/scdenney/open-science-skills/blob/main/codex/paper-review-lite-codex/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/scdenney/open-science-skills/blob/main/codex/paper-review-lite-codex/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Run a cross-model adversarial pre-submission audit from Codex. Use when a user explicitly requests the heavier paper-review-lite-codex workflow, independent Codex and Claude review passes, or cross-model verification of a manuscript. Apply the paper-review-lite protocol, cross-check findings against the manuscript, and retain only evidence-grounded issues."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "programmatic-seo",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "build/programmatic-seo/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "programmatic-seo-aaron-he-zhu-aaron-marketing-skil",
+  "downloaded_at": "2026-07-03T03:29:58.471442Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, seo, content",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "seo",
+      "content"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/build/programmatic-seo/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/build/programmatic-seo/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"build programmatic SEO pages\" or \"generate pages at scale\"; designs a template \u00d7 dataset page system with playbook selection, a data-defensibility tier check, and thin/duplicate guardrails. Not for finding what to target \u2014 use keyword-research or content-gap-analysis; not for writing one page \u2014 use seo-content-writer. \u6279\u91cf\u9875\u9762/\u7a0b\u5e8f\u5316SEO/\u6a21\u677f\u6570\u636e"
+}

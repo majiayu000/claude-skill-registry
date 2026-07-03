@@ -1,0 +1,37 @@
+{
+  "name": "replication-package",
+  "repo": "scdenney/open-science-skills",
+  "path": "codex/replication-package/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/scdenney/open-science-skills",
+  "dir_name": "replication-package",
+  "downloaded_at": "2026-07-03T03:49:39.728045Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: analysis=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "analysis",
+      "analyze"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "scdenney",
+  "source_url": "https://github.com/scdenney/open-science-skills/blob/main/codex/replication-package/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/scdenney/open-science-skills/blob/main/codex/replication-package/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Scaffold or audit a social-science replication package at a target directory. Generates folder structure, README, master.R, figure/table crosswalk, codebook template, LICENSE placeholder, .gitignore, and pre-release checklist. Adapted from Yusaku Horiuchi's replication-package-guide with FAIR-principle integration; platform-neutral (Harvard Dataverse, OSF, Zenodo, GitHub releases, institutional archives)."
+}

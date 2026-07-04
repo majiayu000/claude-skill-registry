@@ -1,0 +1,38 @@
+{
+  "name": "customer-win-back-sequencer",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/outreach/composites/customer-win-back-sequencer/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "customer-win-back-sequencer",
+  "downloaded_at": "2026-07-04T03:16:38.131628Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "product",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for product: product, feature",
+    "score": 2,
+    "runner_up": "analysis",
+    "runner_up_score": 1,
+    "signals": [
+      "product",
+      "feature"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/outreach/composites/customer-win-back-sequencer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/outreach/composites/customer-win-back-sequencer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "For churned accounts, research what has changed since they left \u2014 new funding, team growth, competitor dissatisfaction, product updates that address their pain \u2014 then assess re-engagement potential and generate a personalized win-back email sequence with timing recommendations. Chains web research and LinkedIn monitoring with email sequence generation."
+}

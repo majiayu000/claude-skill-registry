@@ -1,0 +1,37 @@
+{
+  "name": "budget-pacing-monitor",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "ad/scale/budget-pacing-monitor/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "budget-pacing-monitor",
+  "downloaded_at": "2026-07-04T03:08:20.627791Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: marketing=2, security=2",
+    "score": 2,
+    "runner_up": "security",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "campaign"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/ad/scale/budget-pacing-monitor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/ad/scale/budget-pacing-monitor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"check pacing\", \"am I over/under-spending\", \"is this campaign on track to hit budget\", or \"why did spend spike/stall mid-flight\"; returns a spend-vs-target-curve read, learning-phase status, an over/under-delivery call, and a reallocation trigger. Not for initial budget allocation \u2014 use budget-optimizer; not for choosing the bid strategy \u2014 use bid-strategy-planner; not for the RQS gate \u2014 use ad-account-auditor. \u4ed8\u8d39\u5e7f\u544a\u9884\u7b97\u8282\u594f\u76d1\u63a7/\u8dd1\u91cf\u8fc7\u5feb\u8fc7\u6162/\u5728\u9014\u914d\u901f"
+}

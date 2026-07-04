@@ -1,0 +1,38 @@
+{
+  "name": "hasdata",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/hasdata/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "hasdata",
+  "downloaded_at": "2026-07-04T03:29:03.305806Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for documents: docs, xlsx, markdown",
+    "score": 3,
+    "runner_up": "ai-llm",
+    "runner_up_score": 2,
+    "signals": [
+      "docs",
+      "xlsx",
+      "markdown"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/hasdata/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/hasdata/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use HasData APIs for web scraping and structured web data extraction."
+}

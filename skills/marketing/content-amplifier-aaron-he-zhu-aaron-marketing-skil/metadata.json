@@ -1,0 +1,40 @@
+{
+  "name": "content-amplifier",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "influencer/activate/content-amplifier/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "content-amplifier-aaron-he-zhu-aaron-marketing-skil",
+  "downloaded_at": "2026-07-04T03:08:28.013261Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for marketing: marketing, content, social, campaign, brand",
+    "score": 5,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "content",
+      "social",
+      "campaign",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/influencer/activate/content-amplifier/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/influencer/activate/content-amplifier/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"amplify influencer content with paid media\", \"set up whitelisting or Spark Ads\", \"decide which posts to boost\", \"repurpose influencer content\", \"turn one video into multiple ads\", or \"build a UGC asset library\"; produces (paid mode) a content-selection scorecard, a paid amplification strategy (whitelisting/boosting/dark posts), audience targeting, and a budget+optimization plan, or (repurpose mode) a rights-tracked content inventory, a 1-video-to-10+-asset repurposing map, per-format transformation specs, and a 30-day distribution plan. Not for gating whether a deliverable is publishable or FTC-compliant \u2014 use content-reviewer. \u590d\u7528\u8fbe\u4eba\u5185\u5bb9 / \u5185\u5bb9\u653e\u91cf."
+}

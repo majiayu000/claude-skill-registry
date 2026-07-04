@@ -1,0 +1,37 @@
+{
+  "name": "list-hygiene-monitor",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "email/setup/list-hygiene-monitor/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "list-hygiene-monitor",
+  "downloaded_at": "2026-07-04T03:08:22.956046Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, security=2",
+    "score": 2,
+    "runner_up": "security",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/email/setup/list-hygiene-monitor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/email/setup/list-hygiene-monitor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"watch my list health over time\", \"flag decaying / unengaged subscribers on a schedule\", \"why is my open rate drifting down / bounces creeping up\", or \"build me a re-permission and prune worklist\"; runs the scheduled SEND list-decay + suppression-drift watch \u2014 an engagement-recency cohort read (30/90/180/365-day), hard-bounce and spam-complaint trend vs benchmark, suppression-list growth/leakage check, and a segmented re-permission / sunset / prune worklist tied to SEND S (list hygiene) and E (engagement-decay) sub-items. Not for the one-time pre-send authentication pre-flight \u2014 use deliverability-qa; not for the consent/suppression record itself \u2014 use consent-registry; not for computing the EQS or enforcing vetoes \u2014 use email-quality-auditor. \u90ae\u4ef6\u5217\u8868\u5065\u5eb7\u5ea6\u76d1\u63a7/\u9000\u8ba2\u6f02\u79fb/\u6c89\u7761\u7528\u6237\u6e05\u7406"
+}

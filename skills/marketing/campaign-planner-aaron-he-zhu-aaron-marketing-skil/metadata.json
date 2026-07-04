@@ -1,0 +1,40 @@
+{
+  "name": "campaign-planner",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "influencer/plan/campaign-planner/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "campaign-planner-aaron-he-zhu-aaron-marketing-skil",
+  "downloaded_at": "2026-07-04T03:08:22.737885Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, content, social, campaign, brand",
+    "score": 5,
+    "runner_up": "data",
+    "runner_up_score": 4,
+    "signals": [
+      "marketing",
+      "content",
+      "social",
+      "campaign",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/influencer/plan/campaign-planner/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/influencer/plan/campaign-planner/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"plan an influencer campaign\", \"build a campaign blueprint\", or \"launch a product with creators\"; produces campaign objectives, platform and influencer-tier strategy, content requirements, a phased timeline, budget allocation, and KPI targets. Not for writing individual creator briefs \u2014 use brief-generator."
+}

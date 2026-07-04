@@ -1,0 +1,37 @@
+{
+  "name": "list-growth-designer",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "email/setup/list-growth-designer/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "list-growth-designer",
+  "downloaded_at": "2026-07-04T03:08:23.123387Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: data=2, design=2",
+    "score": 2,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "data",
+      "analytics"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/email/setup/list-growth-designer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/email/setup/list-growth-designer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"grow my email list\", \"design a lead magnet / signup incentive\", \"set up double opt-in\", or \"plan a referral / recommendation loop\"; produces a list-growth plan \u2014 acquisition channels, lead-magnet / incentive concepts, a compliant double-opt-in capture-flow spec, referral-loop mechanics, and subscriber-growth / cost-per-opt-in targets (labeled Estimated) \u2014 that feeds SEND-S (consent quality captured at acquisition) and SEND-N (lifecycle entry). Not for the signup page/popup UX itself \u2014 use landing-optimizer; not for recording the opt-in \u2014 use consent-registry; not for the confirmation-email copy \u2014 use email-creative-builder. \u90ae\u4ef6\u5217\u8868\u589e\u957f/lead magnet/\u53cc\u91cd\u786e\u8ba4/\u63a8\u8350\u73af"
+}

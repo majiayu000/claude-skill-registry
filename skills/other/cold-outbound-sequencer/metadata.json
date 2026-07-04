@@ -1,0 +1,37 @@
+{
+  "name": "cold-outbound-sequencer",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "email/deliver/cold-outbound-sequencer/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "cold-outbound-sequencer",
+  "downloaded_at": "2026-07-04T03:08:28.221589Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: creative=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "creative",
+      "writing"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/email/deliver/cold-outbound-sequencer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/email/deliver/cold-outbound-sequencer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"build a B2B cold-outbound sequence\", \"design reply-triage branching\", \"plan a domain warmup / sending throttle\", or \"make my outbound CAN-SPAM / opt-in compliant\"; produces a multi-step outbound sequence with reply-triage branches (positive / objection / referral / not-now / opt-out), a warmup + send-throttle ramp schedule, jurisdiction opt-in/CAN-SPAM guardrails (guidance, not legal advice), and a SEND S-dimension read. Not for B2C lifecycle flows \u2014 use email-sequence-designer; not for the consent record \u2014 use consent-registry; not for computing EQS \u2014 use email-quality-auditor. B2B\u51b7\u542f\u52a8\u5916\u8054\u5e8f\u5217/\u56de\u590d\u5206\u6d41/\u57df\u540d\u9884\u70ed"
+}

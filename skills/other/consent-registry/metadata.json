@@ -1,0 +1,37 @@
+{
+  "name": "consent-registry",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "protocol/consent-registry/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "consent-registry",
+  "downloaded_at": "2026-07-04T03:08:19.100689Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, marketing=2",
+    "score": 2,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/protocol/consent-registry/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/protocol/consent-registry/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"log this subscriber's opt-in\", \"record our unsubscribes and complaints\", or \"what lawful basis do we have to email this list\"; maintains one durable record per subscriber under memory/consent/ \u2014 subscription status, opt-in timestamp + lawful basis, double-opt-in proof, acquisition source, and an append-only unsubscribe/bounce/complaint history \u2014 and resolves consent candidates from list imports. Not for scoring the S2 consent or N1 opt-out vetoes or issuing an EQS verdict \u2014 use email-quality-auditor; not for building suppression segments \u2014 use list-segment-builder. \u8ba2\u9605\u540c\u610f\u53f0\u8d26/\u9000\u8ba2\u6291\u5236\u8bb0\u5f55/\u5408\u6cd5\u6027\u4f9d\u636e\u767b\u8bb0"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "dynamic-content-personalizer",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "email/engage/dynamic-content-personalizer/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "dynamic-content-personalizer",
+  "downloaded_at": "2026-07-04T03:08:33.100229Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: creative=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "creative",
+      "writing"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/email/engage/dynamic-content-personalizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/email/engage/dynamic-content-personalizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"personalize the email\", \"add merge tags / dynamic content\", \"set up conditional blocks per segment\", or \"make first-name and product-recommendation fields fall back safely\"; produces a merge-tag map with per-tag fallbacks, conditional-block rules with per-segment variations, a fallback-safety audit, and a PII guard on what may render, informing the SEND E (Engagement/personalization) dimension. Not for building the segments \u2014 use list-segment-builder; not for writing the base copy \u2014 use email-creative-builder; not for scoring EQS or running vetoes \u2014 use email-quality-auditor. \u90ae\u4ef6\u4e2a\u6027\u5316/\u5408\u5e76\u6807\u7b7e/\u6761\u4ef6\u5185\u5bb9\u5757/\u515c\u5e95\u9ed8\u8ba4\u503c"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "offers",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/offers/SKILL.md",
+  "github_branch": "main",
+  "category": "writing",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "offers",
+  "downloaded_at": "2026-07-04T03:29:00.389767Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "writing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for writing: writing, copy",
+    "score": 2,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "writing",
+      "copy"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/offers/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/offers/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "When the user wants to design, construct, or improve an offer \u2014 the thing they actually sell \u2014 including value framing, bonus stacking, guarantee design, scarcity/urgency, naming, and payment structure. Also use when the user mentions 'offer,' 'offer design,' 'build an offer,' 'grand..."
+}

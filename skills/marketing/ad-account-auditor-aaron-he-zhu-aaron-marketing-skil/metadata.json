@@ -1,0 +1,39 @@
+{
+  "name": "ad-account-auditor",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "ad/activate/ad-account-auditor/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "ad-account-auditor-aaron-he-zhu-aaron-marketing-skil",
+  "downloaded_at": "2026-07-04T03:08:20.415243Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, content, campaign, brand",
+    "score": 4,
+    "runner_up": "development",
+    "runner_up_score": 3,
+    "signals": [
+      "marketing",
+      "content",
+      "campaign",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/ad/activate/ad-account-auditor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/ad/activate/ad-account-auditor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when auditing a paid ad account for ROAS quality, wasted spend, or measurement integrity before scaling; runs RQS scoring with veto checks and a SHIP/FIX/BLOCK gate on your own exported account data. Not for building campaign structure \u2014 use campaign-architect; not for creative units \u2014 use ad-creative-builder. \u4ed8\u8d39\u5e7f\u544a\u8d26\u6237\u5ba1\u8ba1/ROAS\u8bc4\u5206"
+}

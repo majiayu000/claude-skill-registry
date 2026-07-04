@@ -1,0 +1,40 @@
+{
+  "name": "content-writer",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "seo-geo/build/content-writer/SKILL.md",
+  "github_branch": "main",
+  "category": "writing",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "content-writer-aaron-he-zhu-aaron-marketing-skil",
+  "downloaded_at": "2026-07-04T03:08:19.485425Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "writing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for writing: writing, writer, copy, blog, article",
+    "score": 5,
+    "runner_up": "marketing",
+    "runner_up_score": 3,
+    "signals": [
+      "writing",
+      "writer",
+      "copy",
+      "blog",
+      "article"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/seo-geo/build/content-writer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/seo-geo/build/content-writer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"write SEO content\", \"draft a blog post / landing page\", \"update outdated content\", or \"fix traffic/ranking decay\"; two modes \u2014 new drafts pages with keywords, headers, snippets, and evidence boundaries; refresh scores decay, prioritizes update work, and produces a republish plan with GEO guidance. Not for AI-citation/GEO readiness scoring \u2014 use geo-content-optimizer; not for publish-gate scoring \u2014 use content-quality-auditor. SEO\u6587\u7ae0\u5199\u4f5c/\u5185\u5bb9\u66f4\u65b0/\u6392\u540d\u6062\u590d"
+}

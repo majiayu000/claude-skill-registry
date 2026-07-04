@@ -1,0 +1,37 @@
+{
+  "name": "inbox-placement-monitor",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "email/deliver/inbox-placement-monitor/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "inbox-placement-monitor",
+  "downloaded_at": "2026-07-04T03:08:28.979427Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, marketing=2",
+    "score": 2,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/email/deliver/inbox-placement-monitor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/email/deliver/inbox-placement-monitor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"track where my emails are actually landing after I send\", \"read my seed-list inbox vs spam vs promotions results\", \"trend my Gmail Postmaster / Microsoft SNDS reputation\", or \"did placement drop after my last send\"; produces a per-provider inbox/spam/promotions placement read, a domain/IP reputation trend from Postmaster + SNDS, a send-over-send delta with named regressions, and a reusable SEND-S placement snapshot on your own exported telemetry. Not for the pre-send SPF/DKIM/DMARC auth pre-flight \u2014 use deliverability-qa; not for computing the EQS or running the vetoes \u2014 use email-quality-auditor. \u90ae\u4ef6\u6536\u4ef6\u7bb1\u843d\u70b9\u76d1\u6d4b/\u6536\u4ef6\u7bb1vs\u5783\u573e\u90ae\u4ef6/Postmaster\u58f0\u8a89\u8d8b\u52bf"
+}

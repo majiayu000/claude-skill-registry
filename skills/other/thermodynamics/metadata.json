@@ -1,0 +1,36 @@
+{
+  "name": "thermodynamics",
+  "repo": "Tibsfox/gsd-skill-creator",
+  "path": "examples/skills/physics/thermodynamics/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/Tibsfox/gsd-skill-creator",
+  "dir_name": "thermodynamics",
+  "downloaded_at": "2026-07-04T03:07:12.971541Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-ml scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "development",
+    "runner_up_score": 1,
+    "signals": [
+      "ml"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "Tibsfox",
+  "source_url": "https://github.com/Tibsfox/gsd-skill-creator/blob/main/examples/skills/physics/thermodynamics/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/Tibsfox/gsd-skill-creator/blob/main/examples/skills/physics/thermodynamics/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Thermodynamics from the zeroth law through statistical mechanics. Covers temperature and thermal equilibrium, heat transfer mechanisms (conduction, convection, radiation), the first law (internal energy, work, heat), PV diagrams, thermodynamic processes (isothermal, adiabatic, isobaric, isochoric), the second law (entropy, Carnot cycle, heat engines, refrigerators), Boltzmann's statistical interpretation (S = k ln W), kinetic theory of gases, the third law, phase transitions, and free energy (Helmholtz and Gibbs). Use when analyzing heat engines, energy transformations, entropy, gas behavior, or any system where temperature and energy flow are central."
+}

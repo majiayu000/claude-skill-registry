@@ -1,0 +1,37 @@
+{
+  "name": "rank-tracker",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "seo-geo/monitor/rank-tracker/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "rank-tracker-aaron-he-zhu-aaron-marketing-skil",
+  "downloaded_at": "2026-07-04T03:08:19.281118Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: analysis=2, data=2",
+    "score": 2,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "analysis",
+      "analyze"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/seo-geo/monitor/rank-tracker/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/seo-geo/monitor/rank-tracker/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"track rankings\" or \"\u67e5\u6392\u540d\"; measures keyword and SERP-position deltas over time from provided exports or connected tools, including AI-response checks. Not for multi-metric stakeholder reports or setting alerts \u2014 use performance-monitor (report or alert mode). \u6392\u540d\u8ffd\u8e2a/SERP\u76d1\u63a7"
+}

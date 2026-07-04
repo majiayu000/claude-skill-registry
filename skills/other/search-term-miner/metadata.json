@@ -1,0 +1,37 @@
+{
+  "name": "search-term-miner",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "ad/research/search-term-miner/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "search-term-miner",
+  "downloaded_at": "2026-07-04T03:08:19.726259Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: api=2, data=2",
+    "score": 2,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "api",
+      "sdk"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/ad/research/search-term-miner/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/ad/research/search-term-miner/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"mine my search terms\", \"find new keywords from converting queries\", \"build a negative-keyword list\", or \"cut wasted paid spend\"; harvests converting queries into new keywords/ad-groups, builds a standing negative-keyword list and an n-gram waste report from the search-terms export, and delivers a maintenance diff (add / negate / move). Not for account structure \u2014 use campaign-architect; not for budget split \u2014 use budget-optimizer; not for computing the final RQS \u2014 use ad-account-auditor. \u4ed8\u8d39\u5e7f\u544a\u641c\u7d22\u8bcd\u6316\u6398/\u5426\u5b9a\u5173\u952e\u8bcd/\u6d6a\u8d39\u8bcd\u6e05\u5355"
+}

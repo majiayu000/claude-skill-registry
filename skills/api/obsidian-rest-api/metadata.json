@@ -1,0 +1,38 @@
+{
+  "name": "obsidian-rest-api",
+  "repo": "davepoon/buildwithclaude",
+  "path": "plugins/all-skills/skills/obsidian-rest-api/SKILL.md",
+  "github_branch": "main",
+  "category": "api",
+  "source": "github.com/davepoon/buildwithclaude",
+  "dir_name": "obsidian-rest-api",
+  "downloaded_at": "2026-07-04T03:13:50.155953Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "api",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for api: api, endpoint, openapi",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "api",
+      "endpoint",
+      "openapi"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "davepoon",
+  "source_url": "https://github.com/davepoon/buildwithclaude/blob/main/plugins/all-skills/skills/obsidian-rest-api/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/davepoon/buildwithclaude/blob/main/plugins/all-skills/skills/obsidian-rest-api/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Call the Obsidian Local REST API directly (over HTTP) for vault operations the mcp__obsidian__* tools do NOT expose \u2014 move/rename a note, overwrite a whole file atomically (PUT), act on the currently-open active file, run an Obsidian command, open a note in the UI, list all tags, or do date-specific periodic-note CRUD. Prefer the mcp__obsidian__* tools for plain read/append/patch/delete/search; fall back to this skill only when the required method is missing from MCP."
+}

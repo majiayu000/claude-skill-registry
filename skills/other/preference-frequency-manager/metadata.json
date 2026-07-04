@@ -1,0 +1,37 @@
+{
+  "name": "preference-frequency-manager",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "email/nurture/preference-frequency-manager/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "preference-frequency-manager",
+  "downloaded_at": "2026-07-04T03:08:33.461699Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, security=2",
+    "score": 2,
+    "runner_up": "security",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/email/nurture/preference-frequency-manager/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/email/nurture/preference-frequency-manager/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"build a preference center\", \"set up a frequency opt-down ladder\", \"give people a step-down instead of unsubscribe\", or \"design a topic/cadence preference page\"; produces a preference-center field spec, a frequency/topic opt-down ladder (down-tier paths that substitute for a hard unsubscribe), a preference-to-suppression mapping, and a SEND N-dimension sub-item note on preference-center / frequency options offered. Not for the lifecycle flow map or cadence governance \u2014 use email-sequence-designer; not for the consent/suppression record itself \u2014 use consent-registry; not for computing EQS or ruling the N1 unsubscribe veto \u2014 use email-quality-auditor. \u90ae\u4ef6\u504f\u597d\u4e2d\u5fc3/\u964d\u9891\u9636\u68af\u8bbe\u8ba1/\u9000\u8ba2\u66ff\u4ee3\u964d\u6863"
+}

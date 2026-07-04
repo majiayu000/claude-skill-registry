@@ -1,0 +1,37 @@
+{
+  "name": "email-creative-builder",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "email/engage/email-creative-builder/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "email-creative-builder",
+  "downloaded_at": "2026-07-04T03:08:25.380154Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: communication=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "messaging",
+      "email"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/email/engage/email-creative-builder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/email/engage/email-creative-builder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"write the email\", \"draft subject lines\", or \"build email creative\"; produces the pre-click unit \u2014 subject-line variants + preheader, body copy, one clear CTA, and a plain-text alt \u2014 message-matched to the destination page and claims-ledger-aware. Not for pre-scoring or ranking subject-line variants (spam/truncation/render pre-score) \u2014 use subject-line-lab; not for scoring the email or computing EQS \u2014 use email-quality-auditor; not for the multi-step flow \u2014 use email-sequence-designer; not for the A/B test plan \u2014 use send-experiment-designer. \u90ae\u4ef6\u6587\u6848/\u4e3b\u9898\u884c/\u90ae\u4ef6\u521b\u610f"
+}

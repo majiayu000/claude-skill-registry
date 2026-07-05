@@ -1,0 +1,41 @@
+{
+  "name": "422-frameworks-quarkus-testing-integration-tests",
+  "repo": "jabrena/plinth",
+  "path": "skills/422-frameworks-quarkus-testing-integration-tests/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/jabrena/plinth",
+  "dir_name": "422-frameworks-quarkus-testing-integration-tests",
+  "downloaded_at": "2026-07-05T03:48:39.533745Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for development: dev, code, framework, build, compile, refactor",
+    "score": 6,
+    "runner_up": "devops",
+    "runner_up_score": 3,
+    "signals": [
+      "dev",
+      "code",
+      "framework",
+      "build",
+      "compile",
+      "refactor"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "jabrena",
+  "source_url": "https://github.com/jabrena/plinth/blob/main/skills/422-frameworks-quarkus-testing-integration-tests/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jabrena/plinth/blob/main/skills/422-frameworks-quarkus-testing-integration-tests/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when you need to write or improve integration tests for Quarkus \u2014 including @QuarkusTest, Dev Services for automatic container provisioning, Testcontainers via QuarkusTestResourceLifecycleManager, WireMock for external HTTP stubs, @QuarkusIntegrationTest for black-box testing against packaged artifacts, REST Assured, data isolation strategies (@TestTransaction vs @BeforeEach cleanup), and Maven Surefire/Failsafe three-tier split (*Test, *IT, *AT). This should trigger for requests such as Add or improve integration tests in a Quarkus project; Configure Testcontainers or Dev Services for Quarkus tests; Add WireMock stubs for external HTTP dependencies in Quarkus integration tests; Set up @QuarkusIntegrationTest for packaged artifact or native binary testing; Fix test data isolation or configure Maven Surefire/Failsafe split. Part of cursor-rules-java project"
+}

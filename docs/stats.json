@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-07-04T04:16:38.606202Z",
-  "archive_skill_md_count_raw": 202769,
-  "archive_metadata_count_raw": 202767,
-  "indexed_skill_count_scan_shape": 202767,
-  "registry_skill_count_dedup": 160780,
+  "updated_at": "2026-07-05T04:46:50.686791Z",
+  "archive_skill_md_count_raw": 202807,
+  "archive_metadata_count_raw": 202805,
+  "indexed_skill_count_scan_shape": 202805,
+  "registry_skill_count_dedup": 160813,
   "total_plugins": 4,
   "categories": 42,
   "category_counts": [
@@ -30,12 +30,12 @@
     {
       "name": "api",
       "code": "api",
-      "count": 1413
+      "count": 1414
     },
     {
       "name": "bash",
       "code": "bash",
-      "count": 533
+      "count": 534
     },
     {
       "name": "business",
@@ -65,27 +65,27 @@
     {
       "name": "data",
       "code": "dat",
-      "count": 49488
+      "count": 49489
     },
     {
       "name": "design",
       "code": "des",
-      "count": 14119
+      "count": 14123
     },
     {
       "name": "development",
       "code": "dev",
-      "count": 39697
+      "count": 39702
     },
     {
       "name": "devops",
       "code": "ops",
-      "count": 11020
+      "count": 11021
     },
     {
       "name": "documents",
       "code": "doc",
-      "count": 7961
+      "count": 7962
     },
     {
       "name": "domains",
@@ -130,17 +130,17 @@
     {
       "name": "marketing",
       "code": "mkt",
-      "count": 3331
+      "count": 3332
     },
     {
       "name": "orchestration",
       "code": "orchestration",
-      "count": 2886
+      "count": 2887
     },
     {
       "name": "other",
       "code": "oth",
-      "count": 1644
+      "count": 1661
     },
     {
       "name": "performance",
@@ -165,12 +165,12 @@
     {
       "name": "product",
       "code": "prd",
-      "count": 3114
+      "count": 3115
     },
     {
       "name": "productivity",
       "code": "pro",
-      "count": 3434
+      "count": 3435
     },
     {
       "name": "quality",
@@ -195,7 +195,7 @@
     {
       "name": "testing",
       "code": "tst",
-      "count": 11465
+      "count": 11466
     },
     {
       "name": "travel",
@@ -210,12 +210,12 @@
     {
       "name": "workflow",
       "code": "workflow",
-      "count": 3588
+      "count": 3589
     },
     {
       "name": "writing",
       "code": "writing",
-      "count": 1148
+      "count": 1149
     }
   ],
   "unique_repo_count": 9846,
@@ -235,7 +235,7 @@
     },
     {
       "repo": "a5c-ai/babysitter",
-      "count": 1351
+      "count": 1352
     },
     {
       "repo": "Klotzkette/claude-fuer-deutsches-recht",
@@ -264,36 +264,36 @@
   ],
   "featured_count": 100,
   "index_size_bytes": 162,
-  "index_size_gzip_bytes": 174,
+  "index_size_gzip_bytes": 175,
   "search_shard_count": 6,
-  "search_largest_shard_bytes": 8388577,
-  "search_largest_shard_gzip_bytes": 2585267,
+  "search_largest_shard_bytes": 8388680,
+  "search_largest_shard_gzip_bytes": 2585066,
   "category_shard_count": 50,
-  "category_largest_part_bytes": 8388658,
+  "category_largest_part_bytes": 8388752,
   "category_largest_part_gzip_bytes": 1736867,
-  "lite_index_count": 161222,
+  "lite_index_count": 161255,
   "lite_index_included_count": 5000,
   "lite_index_size_bytes": 3502495,
-  "lite_index_gzip_size_bytes": 682645,
+  "lite_index_gzip_size_bytes": 682643,
   "quality_index_size_bytes": 220,
   "quality_index_gzip_size_bytes": 213,
   "quality_shard_count": 6,
-  "quality_largest_shard_bytes": 8388607,
-  "quality_largest_shard_gzip_bytes": 1757280,
+  "quality_largest_shard_bytes": 8388713,
+  "quality_largest_shard_gzip_bytes": 1757293,
   "security_index_size_bytes": 223,
   "security_index_gzip_size_bytes": 214,
   "security_shard_count": 19,
-  "security_largest_shard_bytes": 8388702,
-  "security_largest_shard_gzip_bytes": 1637331,
+  "security_largest_shard_bytes": 8388643,
+  "security_largest_shard_gzip_bytes": 1637446,
   "ranking_index_size_bytes": 220,
   "ranking_index_gzip_size_bytes": 213,
   "ranking_shard_count": 5,
-  "ranking_largest_shard_bytes": 8388690,
-  "ranking_largest_shard_gzip_bytes": 2221389,
-  "largest_generated_file_bytes": 8388702,
+  "ranking_largest_shard_bytes": 8388716,
+  "ranking_largest_shard_gzip_bytes": 2221279,
+  "largest_generated_file_bytes": 8388752,
   "security_scan": {
-    "total": 202767,
-    "passed": 193855,
+    "total": 202805,
+    "passed": 193893,
     "failed": 8912
   }
 }

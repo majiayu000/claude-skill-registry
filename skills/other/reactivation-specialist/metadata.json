@@ -1,0 +1,37 @@
+{
+  "name": "reactivation-specialist",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "email/nurture/reactivation-specialist/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "reactivation-specialist",
+  "downloaded_at": "2026-07-05T03:38:21.511312Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, marketing=2",
+    "score": 2,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/email/nurture/reactivation-specialist/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/email/nurture/reactivation-specialist/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"build a win-back campaign\", \"re-engage lapsed subscribers\", \"run a re-permission / re-consent sweep\", or \"sunset my dead list\"; produces a closed-loop reactivation program \u2014 a lapsed-cohort definition, a staged offer ladder, a re-consent (re-permission) capture step, and a sunset-confirm / suppression rule. Owns none of the SEND-N sub-item notes: engagement-decay / sunset is email-sequence-designer's and preference-center / frequency options is preference-frequency-manager's \u2014 this skill references those notes, it does not re-emit them. Not for the general lifecycle flows (welcome/cart/post-purchase) \u2014 use email-sequence-designer; not for the preference-center / opt-down ladder \u2014 use preference-frequency-manager; not for the consent record itself \u2014 use consent-registry; not for computing EQS or the N1 veto \u2014 use email-quality-auditor. \u6d41\u5931\u53ec\u56de/\u91cd\u65b0\u6388\u6743/\u6c89\u9ed8\u7528\u6237\u6e05\u7406"
+}

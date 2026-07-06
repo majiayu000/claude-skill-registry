@@ -2,7 +2,7 @@
 name: getterdone
 description: AI agents hire human gig workers for real-world and specialized digital
   tasks via USD bounty with photo/text proof.
-version: 1.11.1
+version: 1.13.0
 provider:
   name: GetterDone Inc.
   url: https://getterdone.ai
@@ -260,6 +260,7 @@ The credential you are using is **scoped, limited, and revocable**:
 
 - **Scoped:** Each `GETTERDONE_API_KEY` is bound to a single agent and the human owner who provisioned it. It cannot be used to access other agents' tasks, balances, or PII.
 - **Server-side spend limits:** The human owner sets per-task and daily spending caps in the GetterDone dashboard during setup. The platform enforces these caps server-side — `create_task` and `fund_account` are rejected with an error if a call would exceed them, regardless of what this skill or the host agent attempt. Independently, the platform enforces volume caps over a rolling 30-day window — **$500 per agent** and a flat **$500 per owner account** (aggregated across all the owner's agents, no verified bypass). `create_task` returns a `403` when a task would exceed either; treat a `403` as "monthly volume cap reached," not a retryable error.
+- **Task-count caps:** Separate from the dollar caps, the platform limits how many tasks you can have **open at once** and how many you can **create per rolling 24h** (counted per agent and per owner account, including tasks you later cancel or that expire — so a rapid create-then-cancel loop still counts). `create_task` returns a `429` with `code: OPEN_TASK_LIMIT` or `TASK_CREATION_LIMIT` when a cap is hit. Unlike the `403` monthly cap, a `429` **is** retryable — back off and retry later (open-task caps free up as tasks are claimed/completed/cancelled; the creation-velocity cap frees up as the 24h window rolls forward).
 - **Revocable:** The owner can rotate or revoke the key at any time from `https://getterdone.ai/agent-owner` without affecting any other agent.
 - **Never transmitted outside GetterDone:** The MCP server uses the key only to mint short-lived Bearer tokens against `getterdone.ai`. It is never sent to third parties or written to logs.
 
@@ -329,7 +330,9 @@ Unlike digital API calls that complete in milliseconds, human physical labor tak
        │                                   (escrow released to worker)
        └──► dispute_task ──► [disputed]
                                   │
-                                  │ (worker contests)
+                                  ├── (uncontested for 24h) ────► [resolved]
+                                  │        (auto-resolved in your favor; escrow refunded)
+                                  │ (worker contests within 24h)
                                   ▼
                             [contested]  ← admin arbitration
                                   ├── agent withdraws dispute ──► [completed]
@@ -342,7 +345,7 @@ Unlike digital API calls that complete in milliseconds, human physical labor tak
 |-------|---------|----------------|
 | `payout_pending` | Approval committed; Stripe payout transfer initiating. If `approve_task` returns `402`, retry the same call — it is idempotent. | Held until payout succeeds |
 | `completed` | Payout confirmed; worker paid | Released to worker |
-| `resolved` | Admin sided with agent after contest | Returned to agent |
+| `resolved` | Dispute resolved in your favor — admin decision, or auto-resolved after the worker's 24h contest window lapsed (`autoResolved: true`) | Returned to agent |
 | `expired` | Deadline passed with no claim or submission | Returned to agent |
 | `cancelled` | Agent cancelled an unclaimed `open` task | Returned to agent |
 
@@ -426,7 +429,8 @@ Events you will receive:
 | `task.submitted` *(second, ~2–5s later — only if images are suspicious or likely_stock)* | Image authenticity alert — re-check before deciding |
 | `task.disputed` | You disputed (confirmation echo) |
 | `task.contested` | Worker is contesting your dispute |
-| `task.completed` | Task approved, funds released |
+| `task.auto_resolved` | Your dispute went uncontested for 24h — resolved in your favor, escrow refund dispatched (a `task.refunded` follows) |
+| `task.completed` | Task approved, funds released. Auto-approvals (24h review window expired) carry `task.autoApproved: true` and `extra.payout.autoApproved: true` — same event, distinguishable cause. On a worker's first qualifying payout, `extra.payout.setupFee` shows the one-time $2 Trust & Safety fee deducted from their side (your charge is unchanged) |
 | `task.expired` | Task expired without a claim or submission |
 | `task.refunded` | Escrow refunded (cancel / expire / dispute-won) — to the card for direct-charge tasks, or the wallet for legacy tasks |
 
@@ -560,7 +564,7 @@ Only call `create_task` once the user says "yes", "post it", or an equivalent un
 
 ### Step A: Post the Bounty
 
-**Platform fee:** GetterDone charges an "Agent Pays" service fee on top of the worker reward. Workers receive 100% of the listed `reward`; you are charged `reward + fee`. The fee is tiered:
+**Platform fee:** GetterDone charges an "Agent Pays" service fee on top of the worker reward. Workers receive 100% of the listed `reward` (less a one-time $2 Trust & Safety Setup Fee on their first payout — your charge is unaffected); you are charged `reward + fee`. The fee is tiered:
 
 | Reward | Platform fee | You pay |
 |--------|-------------|--------|
@@ -783,8 +787,11 @@ dispute_task({ taskId: "...", reason: "<user's reason>" })
 | Outcome | What happens next |
 |---------|------------------|
 | Approved | Escrow released to worker; rate_worker called; task complete |
-| Disputed | Worker notified; they may contest (→ `contested`); admin may adjudicate |
+| Disputed | Worker notified; they have **24 hours** to contest (→ `contested`); admin may adjudicate |
 | Worker contests | Show the worker's response to the user; ask if they want to maintain or withdraw the dispute |
+| Worker doesn't contest | After 24h the dispute auto-resolves in your favor — escrow is refunded and you receive `task.auto_resolved` then `task.refunded` webhooks |
+
+> ⚖️ **Disputing affects your reputation — dispute in good faith.** Once a task enters dispute it is permanently marked (`wasDisputed: true` on the task, visible via `get_task`), and that flag drives your **dispute rate** — it is *not* reset by winning or auto-resolving the dispute, so a pattern of frequent disputes lowers your reliability tier even when you prevail. If an admin decides a dispute **against** you (the worker is paid), it also increments a durable `disputesLost` counter surfaced by `get_reputation` and `get_agent_metrics`. Dispute genuinely deficient work, not borderline submissions.
 
 ---
 
@@ -815,7 +822,7 @@ Workers can flag tasks as unsafe, illegal, impossible, or spam. Two flags from a
 - You will receive a webhook when an admin resolves it
 
 ### Worker Files a Contest
-After you dispute, a worker may contest (`status: "contested"`). If they do, a platform admin will adjudicate. Continue monitoring via webhooks or polling `get_task` until the status resolves.
+After you dispute, a worker has **24 hours** to contest (`status: "contested"`). If they do, a platform admin will adjudicate. If they don't, the dispute auto-resolves in your favor after 24h (`status: "resolved"`, escrow refunded). Continue monitoring via webhooks or polling `get_task` until the status resolves.
 
 ### Vetting a Specific Worker
 After a task is claimed (`task.workerId` is populated), you can check the worker's track record:

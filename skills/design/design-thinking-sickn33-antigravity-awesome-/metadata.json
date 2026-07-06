@@ -1,0 +1,39 @@
+{
+  "name": "design-thinking",
+  "repo": "sickn33/antigravity-awesome-skills",
+  "path": "skills/design-thinking/SKILL.md",
+  "github_branch": "main",
+  "category": "design",
+  "source": "github.com/sickn33/antigravity-awesome-skills",
+  "dir_name": "design-thinking-sickn33-antigravity-awesome-",
+  "downloaded_at": "2026-07-06T04:07:09.542661Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "design",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for design: design, ux, frontend, animation",
+    "score": 4,
+    "runner_up": "marketing",
+    "runner_up_score": 3,
+    "signals": [
+      "design",
+      "ux",
+      "frontend",
+      "animation"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/design-thinking/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/design-thinking/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Direction and intent for frontend design. Use with design when defining purpose, tone, domain, color world, and review bar; includes cross-domain lens from cinema, architecture, marketing, UX, automotive, industrial design."
+}

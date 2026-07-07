@@ -1,0 +1,38 @@
+{
+  "name": "launch-readiness-auditor",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "launch/mobilize/launch-readiness-auditor/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "launch-readiness-auditor",
+  "downloaded_at": "2026-07-07T03:37:07.927801Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, framework, build",
+    "score": 3,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "framework",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/launch/mobilize/launch-readiness-auditor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/launch/mobilize/launch-readiness-auditor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"audit our launch plan\", \"are we ready to launch\", or run a T-1 launch-eve go/no-go before a committed date; runs RAMP LQS scoring with R1/A1/M1/P1 veto checks and a SHIP/FIX/BLOCK gate, and emits a gated audit artifact. Not for recording launch dates or stages \u2014 use launch-registry; not for running launch day itself \u2014 use launch-day-conductor. \u53d1\u5e03\u5c31\u7eea\u5ba1\u8ba1/LQS\u8bc4\u5206/\u53d1\u5e03\u524d\u653e\u884c"
+}

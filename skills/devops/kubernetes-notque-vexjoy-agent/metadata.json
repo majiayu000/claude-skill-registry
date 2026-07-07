@@ -1,0 +1,39 @@
+{
+  "name": "kubernetes",
+  "repo": "notque/vexjoy-agent",
+  "path": "skills/infrastructure/kubernetes/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/notque/vexjoy-agent",
+  "dir_name": "kubernetes-notque-vexjoy-agent",
+  "downloaded_at": "2026-07-07T03:53:31.742268Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "devops",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for devops: kubernetes, deploy, infra, infrastructure",
+    "score": 4,
+    "runner_up": "business",
+    "runner_up_score": 1,
+    "signals": [
+      "kubernetes",
+      "deploy",
+      "infra",
+      "infrastructure"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "notque",
+  "source_url": "https://github.com/notque/vexjoy-agent/blob/main/skills/infrastructure/kubernetes/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/notque/vexjoy-agent/blob/main/skills/infrastructure/kubernetes/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Kubernetes operations: debugging, security, RBAC, and infrastructure tooling."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "launch-asset-packager",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "launch/assemble/launch-asset-packager/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "launch-asset-packager",
+  "downloaded_at": "2026-07-07T03:37:04.220020Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, seo, content",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "seo",
+      "content"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/launch/assemble/launch-asset-packager/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/launch/assemble/launch-asset-packager/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"package the launch assets\", \"build a press kit\", or \"prep the store listing and go-live checklist\"; produces a tier-scoped launch asset manifest with production status \u2014 a press kit spec (factsheet, description, history, features, videos, images, logo and icon, awards, contact), demo script and screenshot specs, a launch FAQ, dual-store listing metadata drafts against the official character budgets (per App Store Connect / Play Console documentation), and a technical go-live checklist manifest (robots flip, sitemap, OG tags, analytics verification \u2014 execution stays with technical-seo-checker and serp-markup-builder). Not for the message copy itself \u2014 use message-house-builder or content-writer; not for landing page UX \u2014 use landing-optimizer; not for keyword research beyond the store surfaces \u2014 use keyword-research. \u53d1\u5e03\u8d44\u4ea7\u6253\u5305/press kit/\u5546\u5e97listing\u89c4\u683c/\u4e0a\u7ebf\u68c0\u67e5\u6e05\u5355"
+}

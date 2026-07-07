@@ -1,0 +1,37 @@
+{
+  "name": "launch-retro-analyzer",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "launch/prove/launch-retro-analyzer/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "launch-retro-analyzer",
+  "downloaded_at": "2026-07-07T03:37:02.354458Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: analysis=2, performance=2",
+    "score": 2,
+    "runner_up": "performance",
+    "runner_up_score": 2,
+    "signals": [
+      "analysis",
+      "analyze"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/launch/prove/launch-retro-analyzer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/launch/prove/launch-retro-analyzer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"run a launch retro / post-mortem\", \"compare launch results vs targets by channel\", or \"decide what to keep or kill for the next launch\"; produces a structured D1/W1/M1 retrospective \u2014 a per-channel actual-vs-target table (UTM-attributed own analytics as the truth column, platform self-reported numbers as reference, every figure labeled Measured / User-provided / Estimated), a 5-Whys chain on the single largest miss, keep / kill / change decisions per channel, 3-5 actionable learnings for the next launch, and an outcome snapshot submitted to the launch registry. Not for return math (CPA / ROI) \u2014 use roi-calculator; not for the stakeholder-facing report writeup \u2014 use report-generator; not for a metric deep-dive \u2014 use performance-analyzer. \u53d1\u5e03\u590d\u76d8/\u6e20\u9053\u5f52\u56e0/5-Whys/keep-kill"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "social-measurement-loop",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "social/observe/social-measurement-loop/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "social-measurement-loop",
+  "downloaded_at": "2026-07-07T03:37:07.126339Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, marketing=2",
+    "score": 2,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/social/observe/social-measurement-loop/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/social/observe/social-measurement-loop/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"run the weekly social readout\", \"which denominator does our engagement rate use\", or \"which posts won this week and what changes next cycle\"; produces the organic-social metric dictionary (every rate names its denominator \u2014 ERR engagement-by-reach vs ERI by-impressions vs ER-by-follower \u2014 locked across periods), median-not-mean per-post rollups with organic and boosted separated, EMV as labeled exec-translation only (never inside any score), an attributed CHAOSS/Orbit-style community-health readout with employees excluded, and the best/worst-performer write-back the next calendar cycle consumes. Not for dollar-ROI math or the SQS gate verdict \u2014 use roi-calculator and social-quality-auditor. \u793e\u5a92\u5468\u62a5/\u4e92\u52a8\u7387\u5206\u6bcd/\u6307\u6807\u5b57\u5178/\u590d\u76d8\u56de\u5199"
+}

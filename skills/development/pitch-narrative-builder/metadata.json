@@ -1,0 +1,37 @@
+{
+  "name": "pitch-narrative-builder",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "narrative/land/pitch-narrative-builder/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "pitch-narrative-builder",
+  "downloaded_at": "2026-07-07T03:37:05.282999Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, build",
+    "score": 2,
+    "runner_up": "creative",
+    "runner_up_score": 1,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/narrative/land/pitch-narrative-builder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/narrative/land/pitch-narrative-builder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"build our pitch deck narrative\", \"write a fundraising story\", or \"structure the sales pitch narrative\"; derives from the narrative canon a company pitch/deck narrative \u2014 problem \u2192 the undeniable shift \u2192 product-as-hero \u2192 proof \u2192 the ask \u2014 as a slide-beat outline (one narrative beat per slide, with the claim ID each proof beat rests on), for both a sales pitch and a fundraising deck. Every proof beat is labeled Measured / User-provided / '[needs source]' and unverified ones route to the claims candidates. Not for the launch-window battle cards and talk track \u2014 use sales-enablement-kit; not for the durable message hierarchy or the arc itself \u2014 use message-system-architect / strategic-narrative-designer; not for finished deck visual design \u2014 out of scope; not for claim adjudication \u2014 use offer-claims-registry. \u8def\u6f14\u53d9\u4e8b/\u878d\u8d44\u6545\u4e8b/\u9500\u552e pitch/\u5e7b\u706f\u8282\u62cd"
+}

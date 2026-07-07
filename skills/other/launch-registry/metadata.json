@@ -1,0 +1,38 @@
+{
+  "name": "launch-registry",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "protocol/launch-registry/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "launch-registry",
+  "downloaded_at": "2026-07-07T03:37:01.186146Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: marketing=3, product=3",
+    "score": 3,
+    "runner_up": "product",
+    "runner_up_score": 3,
+    "signals": [
+      "marketing",
+      "seo",
+      "campaign"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/protocol/launch-registry/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/protocol/launch-registry/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"log this launch\", \"what is our launch date / embargo\", \"record the stage change to beta / GA\", or \"update the channel submission ledger\"; maintains the canonical per-launch dossier and launch calendar under memory/launch-registry/ \u2014 tier, launch type, lifecycle stage (draft\u2192concept\u2192alpha\u2192beta\u2192GA, one-way GA), authoritative dates + embargo commitments, the channel submission ledger, asset-manifest version pointers, and the post-launch outcome snapshot \u2014 and promotes intake candidates in batch. Not for scoring the R1 stage-truth veto or issuing an LQS verdict \u2014 use launch-readiness-auditor; not for planning tier or timeline \u2014 use launch-tier-planner. \u53d1\u5e03\u53f0\u8d26/\u53d1\u5e03\u65e5\u5386/\u9636\u6bb5\u4e0e\u7981\u8fd0\u671f\u8bb0\u5f55"
+}

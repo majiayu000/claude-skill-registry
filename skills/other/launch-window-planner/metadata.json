@@ -1,0 +1,37 @@
+{
+  "name": "launch-window-planner",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "launch/research/launch-window-planner/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "launch-window-planner",
+  "downloaded_at": "2026-07-07T03:37:05.045298Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: performance=2, security=2",
+    "score": 2,
+    "runner_up": "security",
+    "runner_up_score": 2,
+    "signals": [
+      "latency",
+      "benchmark"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/launch/research/launch-window-planner/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/launch/research/launch-window-planner/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"pick a launch date\", \"plan the launch window\", or \"set the embargo and lift time\"; produces a candidate-window comparison table (conflict / tailwind / risk per window) built from industry-event cycles and the competitor launch calendar, a launch-week vs rolling-release format call, store-review buffer padding (labeled Estimated), and an embargo window definition (lift moment + timezone) submitted to the launch registry as a candidate. Not for judging the cultural moment itself \u2014 use trend-spotter; not for launch-day execution \u2014 use launch-day-conductor. \u53d1\u5e03\u62e9\u65f6/\u53d1\u5e03\u7a97\u53e3/\u7ade\u54c1\u65e5\u5386/\u7981\u8fd0\u671f\u7a97\u53e3/\u5ba1\u6838\u7f13\u51b2"
+}

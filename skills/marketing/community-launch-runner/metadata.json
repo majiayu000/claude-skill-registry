@@ -1,0 +1,39 @@
+{
+  "name": "community-launch-runner",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "launch/mobilize/community-launch-runner/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "community-launch-runner",
+  "downloaded_at": "2026-07-07T03:37:07.568456Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for marketing: marketing, content, social, campaign",
+    "score": 4,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "content",
+      "social",
+      "campaign"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/launch/mobilize/community-launch-runner/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/launch/mobilize/community-launch-runner/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"launch on Product Hunt / Hacker News\", \"prepare community or directory launch submissions\", or \"plan the launch submission waves\"; produces per-platform submission packages \u2014 a Product Hunt tagline / gallery / first-comment skeleton, a factual Show HN title and text, per-subreddit posts with a self-promotion rules table, tiered directory waves, and a regional channel matrix including Chinese communities \u2014 plus a platform red-line check (never solicit votes or organize voting rings) and T-0 submission-status lines for the launch registry. Not for paid amplification \u2014 use content-amplifier; not for creator channels \u2014 use campaign-planner; not for launch telemetry readouts \u2014 use launch-monitor; not for ongoing community presence or pre-launch karma-building outside the launch window \u2014 use participation-warmup-planner. \u793e\u533a\u53d1\u5e03/PH\u63d0\u4ea4\u5305/Show HN/\u76ee\u5f55\u6ce2\u6b21/\u5e73\u53f0\u7ea2\u7ebf/\u4e2d\u6587\u6e20\u9053"
+}

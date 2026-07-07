@@ -1,0 +1,38 @@
+{
+  "name": "social-creative-builder",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "social/craft/social-creative-builder/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "social-creative-builder",
+  "downloaded_at": "2026-07-07T03:37:03.279772Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, content, social",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "content",
+      "social"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/social/craft/social-creative-builder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/social/craft/social-creative-builder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"turn this idea into posts for every platform\", \"write the X thread / LinkedIn post / \u5c0f\u7ea2\u4e66 note\", or \"spec the carousel slides\"; turns one idea into N platform-native ready-to-paste packages \u2014 post/thread, caption, Threads text, \u5c0f\u7ea2\u4e66 note, link post with first-comment placement \u2014 each adapted per the dated platform norm card (never verbatim cross-posting), every product claim held to approved claims-ledger wording or flagged [needs source], every variant tagged {formula | hook family | CTA type | signal optimized}, plus a carousel slide-spec mode (intro/content/outro slide roles, per-element char budgets, \u5c0f\u7ea2\u4e66 3:4 / IG 4:5 / LinkedIn document PDF artboards, text-safe-zone + alt-text checklist). Not for creator deliverable briefs \u2014 use brief-generator; not for repurposing existing assets with paid boost \u2014 use content-amplifier. \u793e\u5a92\u6587\u6848/\u4e00\u7a3f\u591a\u53d1\u6539\u5199/\u5c0f\u7ea2\u4e66\u7b14\u8bb0/\u8f6e\u64ad\u56fe\u811a\u672c"
+}

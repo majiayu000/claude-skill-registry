@@ -1,0 +1,37 @@
+{
+  "name": "early-access-designer",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "launch/research/early-access-designer/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "early-access-designer",
+  "downloaded_at": "2026-07-07T03:37:04.336535Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: design=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "design",
+      "ux"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/launch/research/early-access-designer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/launch/research/early-access-designer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"design an early access program\", \"set up a waitlist and beta stages\", or \"define beta graduation criteria\"; produces a waitlist\u2192concept\u2192alpha\u2192beta\u2192GA stage ladder with per-stage purpose and opt-in semantics, quantified graduation criteria per stage (labeled Estimated), a cohort-gating and invite-throttling plan, tester recruitment with launch-day social-proof prep, a feedback-loop spec where every status change notifies its subscribers, and a referral-loop mechanism spec (invite codes, anti-abuse). Not for waitlist acquisition strategy or the capture-flow spec \u2014 use list-growth-designer; not for the canonical stage record \u2014 use launch-registry. waitlist/\u5185\u6d4b\u9636\u68af/\u62a2\u5148\u4f53\u9a8c/\u6bd5\u4e1a\u6807\u51c6/\u53cd\u9988\u95ed\u73af"
+}

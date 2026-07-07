@@ -1,0 +1,38 @@
+{
+  "name": "dark-social-attributor",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "social/observe/dark-social-attributor/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "dark-social-attributor",
+  "downloaded_at": "2026-07-07T03:37:04.583687Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, social, brand",
+    "score": 3,
+    "runner_up": "communication",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "social",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/social/observe/dark-social-attributor/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/social/observe/dark-social-attributor/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"figure out where our direct traffic really comes from\", \"measure dark social\", \"add a how-did-you-hear-about-us field\", or \"show social drives signups without click data\"; produces a share-link/UTM hygiene spec for owned share surfaces, a self-reported attribution field design that replaces an existing form field (free-text first, coded later), a GA4 direct-traffic decomposition read (deep-URL directs, mobile-app skew, private-push correlation) with every derived number hard-labeled Estimated/proxy, and a branded-search-lift proxy from GSC plus Wikipedia pageviews \u2014 the declared dark-social method behind ECHO O2. Not for paid-channel attribution reconciliation (platform-claimed vs analytics conversions) \u2014 use attribution-reconciler. \u6697\u793e\u4ea4\u5f52\u56e0/\u76f4\u63a5\u6d41\u91cf\u5206\u89e3/\u81ea\u62a5\u6765\u6e90\u5b57\u6bb5/\u5206\u4eab\u94fe\u8defUTM"
+}

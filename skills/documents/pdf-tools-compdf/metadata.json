@@ -1,0 +1,42 @@
+{
+  "name": "pdf-tools-compdf",
+  "repo": "ComPDFKit/compdf-skills",
+  "path": "skills/pdf-tools-compdf/SKILL.md",
+  "github_branch": "main",
+  "category": "documents",
+  "source": "github.com/ComPDFKit/compdf-skills",
+  "dir_name": "pdf-tools-compdf",
+  "downloaded_at": "2026-07-07T03:29:44.654794Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "documents",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for documents: pdf, word, excel, xlsx, docx, markdown, documentation",
+    "score": 7,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "pdf",
+      "word",
+      "excel",
+      "xlsx",
+      "docx",
+      "markdown",
+      "documentation"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "ComPDFKit",
+  "source_url": "https://github.com/ComPDFKit/compdf-skills/blob/main/skills/pdf-tools-compdf/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/ComPDFKit/compdf-skills/blob/main/skills/pdf-tools-compdf/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "PDF Toolkit handles mixed PDF workflows with a flexible toolset for page organization, basic editing, viewing, and general document processing, built on ComPDF\u2019s all-in-one PDF stack and best used when one request involves multiple PDF operations. It matches triggers such as \u201cpdf toolkit,\u201d \u201call-in-one pdf,\u201d \u201cprocess this pdf,\u201d \u201cpdf workflow,\u201d \u201chandle pdf file,\u201d and \u201cmultiple pdf operations.\u201d Example queries include \u201cMerge these files, rotate the wrong pages, and return a clean final PDF,\u201d \u201cHelp me organize this PDF before I send it to the client,\u201d and \u201cProcess this PDF end to end and give me a shareable output.\u201d"
+}

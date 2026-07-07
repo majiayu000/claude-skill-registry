@@ -1,0 +1,37 @@
+{
+  "name": "proof-point-packager",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "narrative/land/proof-point-packager/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "proof-point-packager",
+  "downloaded_at": "2026-07-07T03:37:03.039295Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, marketing=2",
+    "score": 2,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/narrative/land/proof-point-packager/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/narrative/land/proof-point-packager/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"package our proof points\", \"build reusable stat cards and case snippets\", or \"put proof where each pillar makes its claim\"; turns claims-ledger-approved proofs into reusable proof modules \u2014 stat cards, case snippets, testimonial blocks, comparison proofs \u2014 each pinned to a message-house pillar and the ledger claim ID it substantiates, and flags any pillar making a claim with no approved proof behind it. Never adjudicates a proof: unverified or ledger-absent proofs are marked '[needs source]' and routed to the claims candidates. Not for adjudicating or substantiating claims \u2014 use offer-claims-registry; not for fabricating a benchmark to fill a gap \u2014 a missing proof is flagged, not invented; not for scoring narrative quality \u2014 use narrative-quality-auditor. \u8bc1\u636e\u6a21\u5757/\u8bc1\u636e\u5361/\u5ba2\u6237\u6848\u4f8b/\u4e3b\u5f20\u5bf9\u9f50"
+}

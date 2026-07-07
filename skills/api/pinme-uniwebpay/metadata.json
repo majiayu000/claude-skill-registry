@@ -1,0 +1,38 @@
+{
+  "name": "pinme-uniwebpay",
+  "repo": "glitternetwork/pinme",
+  "path": "skills/pinme-uniwebpay/SKILL.md",
+  "github_branch": "main",
+  "category": "api",
+  "source": "github.com/glitternetwork/pinme",
+  "dir_name": "pinme-uniwebpay",
+  "downloaded_at": "2026-07-07T03:45:18.768221Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "api",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for api: api, sdk, endpoint",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "api",
+      "sdk",
+      "endpoint"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "glitternetwork",
+  "source_url": "https://github.com/glitternetwork/pinme/blob/main/skills/pinme-uniwebpay/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/glitternetwork/pinme/blob/main/skills/pinme-uniwebpay/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when generating, modifying, or reviewing PinMe Worker (Cloudflare Worker TypeScript) code that accepts payments through UniwebPay \u2014 payment links, products/prices, checkout sessions, payment status reads, refunds, subscriptions, or handling UniwebPay webhooks with @uniwebpay/sdk in a PinMe project."
+}

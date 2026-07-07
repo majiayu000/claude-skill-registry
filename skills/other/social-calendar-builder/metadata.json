@@ -1,0 +1,39 @@
+{
+  "name": "social-calendar-builder",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "social/craft/social-calendar-builder/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "social-calendar-builder",
+  "downloaded_at": "2026-07-07T03:37:03.421967Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: marketing=4, productivity=4",
+    "score": 4,
+    "runner_up": "productivity",
+    "runner_up_score": 4,
+    "signals": [
+      "marketing",
+      "content",
+      "social",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/social/craft/social-calendar-builder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/social/craft/social-calendar-builder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"build our social posting calendar\", \"set weekly slots and queue depth per channel\", or \"plan the evergreen recycle rotation\"; produces the always-on brand calendar \u2014 pillar allocation with hero/hub/help balance and give:ask targets (all labeled Estimated starting heuristics to calibrate against own analytics, never scored rules), per-channel recurring slots with queue depth, a batching workflow, an evergreen recycle cycle with freshness re-checks, deliberate open slots for realtime/trend moments fed by trend-spotter go/skip verdicts, and first-comment/publish-order ops \u2014 cadence commitments filed to the channel registry, and no batch ships to the queue without a SHIP verdict from social-quality-auditor pre-publish mode. Not for repurposing an existing asset or the paid-amplification calendar \u2014 use content-amplifier. \u793e\u5a92\u6392\u671f/\u5185\u5bb9\u65e5\u5386/\u680f\u76ee\u914d\u6bd4/\u5e38\u9752\u5faa\u73af\u590d\u7528"
+}

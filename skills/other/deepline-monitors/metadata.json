@@ -1,0 +1,37 @@
+{
+  "name": "deepline-monitors",
+  "repo": "getaero-io/gtm-eng-skills",
+  "path": "skills/deepline-monitors/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/getaero-io/gtm-eng-skills",
+  "dir_name": "deepline-monitors",
+  "downloaded_at": "2026-07-08T03:02:51.165512Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: documents=2, productivity=2",
+    "score": 2,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "doc",
+      "docs"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "getaero-io",
+  "source_url": "https://github.com/getaero-io/gtm-eng-skills/blob/main/skills/deepline-monitors/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/getaero-io/gtm-eng-skills/blob/main/skills/deepline-monitors/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "ACCESS-GATED beta. Deepline Monitors (dashboard name: Signal Radars) \u2014 provider event feeds (job posts, email replies, funding, intent) that stream into your warehouse and trigger plays. Only use if you have monitor access: run `deepline monitors status` first; if it reports no access, do NOT use this recipe \u2014 every command returns monitor_access_required. Ask a Deepline admin (Admin \u2192 Rollouts) for access."
+}

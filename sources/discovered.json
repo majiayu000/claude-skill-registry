@@ -1,7 +1,7 @@
 {
-  "discovered_at": "2026-07-07T04:01:47.710029Z",
+  "discovered_at": "2026-07-08T03:19:24.685494Z",
   "total_repos": 300,
-  "total_skills": 81,
+  "total_skills": 37,
   "scanned_repos": 300,
   "limits": {
     "max_repos": 300,
@@ -314,328 +314,152 @@
   ],
   "skills": [
     {
-      "repo": "ComPDFKit/compdf-skills",
-      "path": "skills/pdf-to-word-docx/SKILL.md"
-    },
-    {
-      "repo": "ComPDFKit/compdf-skills",
-      "path": "skills/pdf-tools-compdf/SKILL.md"
-    },
-    {
-      "repo": "ComPDFKit/compdf-skills",
-      "path": "skills/pdf-editor-compdf/SKILL.md"
-    },
-    {
-      "repo": "DheerG/swarms",
-      "path": "skills/gate-presentation/SKILL.md"
-    },
-    {
-      "repo": "NevaMind-AI/memU",
-      "path": ".claude/skills/memu/SKILL.md"
-    },
-    {
-      "repo": "OutlineDriven/odin-claude-plugin",
-      "path": "skills/minimalism-driven/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "protocol/launch-registry/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "protocol/channel-registry/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "launch/prove/launch-monitor/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "protocol/narrative-registry/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "launch/prove/momentum-planner/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "social/craft/short-video-scripter/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "social/host/social-selling-planner/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "launch/prove/launch-retro-analyzer/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "launch/research/positioning-mapper/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "social/host/social-quality-auditor/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "social/host/crisis-response-planner/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "launch/research/launch-tier-planner/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "narrative/land/proof-point-packager/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "social/observe/social-pulse-monitor/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "social/craft/social-creative-builder/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "social/craft/social-calendar-builder/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "social/host/engagement-inbox-manager/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "launch/mobilize/launch-day-conductor/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "launch/assemble/sales-enablement-kit/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "social/explore/voice-dossier-builder/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "launch/mobilize/press-media-relations/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "launch/assemble/launch-asset-packager/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "launch/research/early-access-designer/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "launch/assemble/message-house-builder/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "social/observe/dark-social-attributor/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "social/explore/platform-norm-profiler/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "social/observe/share-of-voice-tracker/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "launch/research/launch-window-planner/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "social/craft/advocacy-program-designer/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "narrative/land/pitch-narrative-builder/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "narrative/architect/story-bank-builder/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "social/observe/social-measurement-loop/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "narrative/trace/audience-belief-mapper/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "narrative/land/narrative-enablement-kit/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "launch/mobilize/community-launch-runner/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "launch/prove/launch-feedback-synthesizer/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "launch/mobilize/launch-readiness-auditor/SKILL.md"
-    },
-    {
-      "repo": "aaron-he-zhu/aaron-marketing-skills",
-      "path": "narrative/trace/positioning-truth-tracer/SKILL.md"
-    },
-    {
-      "repo": "agentkit-seo/agentkit-seo",
-      "path": "skills/agentkit-seo-vitaegraph/SKILL.md"
-    },
-    {
-      "repo": "agentkit-seo/agentkit-seo",
-      "path": ".skills/agent-skill/agentkit-seo-vitaegraph/SKILL.md"
-    },
-    {
-      "repo": "alirezarezvani/claude-skills",
-      "path": "engineering/strict-api/SKILL.md"
-    },
-    {
-      "repo": "alirezarezvani/claude-skills",
-      "path": "engineering/minimalist/SKILL.md"
-    },
-    {
-      "repo": "billy-enrizky/openbrowser-ai",
-      "path": "plugin/skills/e2e-testing/SKILL.md"
-    },
-    {
-      "repo": "billy-enrizky/openbrowser-ai",
-      "path": "plugin/skills/accessibility-audit/SKILL.md"
-    },
-    {
-      "repo": "billy-enrizky/openbrowser-ai",
-      "path": "plugin/skills/page-analysis/SKILL.md"
-    },
-    {
-      "repo": "billy-enrizky/openbrowser-ai",
-      "path": "plugin/skills/form-filling/SKILL.md"
-    },
-    {
-      "repo": "billy-enrizky/openbrowser-ai",
-      "path": "plugin/skills/deep-research/SKILL.md"
-    },
-    {
-      "repo": "billy-enrizky/openbrowser-ai",
-      "path": "plugin/skills/file-download/SKILL.md"
-    },
-    {
-      "repo": "billy-enrizky/openbrowser-ai",
-      "path": "plugin/skills/web-scraping/SKILL.md"
-    },
-    {
-      "repo": "bitjaru/styleseed",
-      "path": "engine/.claude/skills/ss-dial/SKILL.md"
-    },
-    {
-      "repo": "bitjaru/styleseed",
-      "path": "engine/.claude/skills/ss-build/SKILL.md"
-    },
-    {
-      "repo": "bitjaru/styleseed",
-      "path": "engine/.claude/skills/ss-restyle/SKILL.md"
-    },
-    {
       "repo": "boshu2/agentops",
-      "path": "images/gemini/skills/review/SKILL.md"
+      "path": "skills/gc-membrane/SKILL.md"
     },
     {
-      "repo": "boshu2/agentops",
-      "path": "images/gemini/skills/operationalize/SKILL.md"
+      "repo": "dongshuyan/compass-skills",
+      "path": "skills/run-history-skill-builder/SKILL.md"
     },
     {
-      "repo": "boshu2/agentops",
-      "path": ".agy-plugin/skills/review/SKILL.md"
+      "repo": "dongshuyan/compass-skills",
+      "path": "skills/run-history-skill-upgrader/SKILL.md"
     },
     {
-      "repo": "boshu2/agentops",
-      "path": ".agy-plugin/skills/plan/SKILL.md"
+      "repo": "getaero-io/gtm-eng-skills",
+      "path": "skills/deepline-monitors/SKILL.md"
     },
     {
-      "repo": "claude-world/director-mode-lite",
-      "path": "skills/handoff-claude/SKILL.md"
+      "repo": "gooseworks-ai/goose-skills",
+      "path": "skills/ads/capabilities/media-proxy/SKILL.md"
     },
     {
-      "repo": "glitternetwork/pinme",
-      "path": "skills/pinme-uniwebpay/SKILL.md"
+      "repo": "gooseworks-ai/goose-skills",
+      "path": "skills/ads/capabilities/ugc-fixloop/SKILL.md"
     },
     {
-      "repo": "notque/vexjoy-agent",
-      "path": "skills/engineering/php/SKILL.md"
+      "repo": "gooseworks-ai/goose-skills",
+      "path": "skills/ads/capabilities/render-song-mv/SKILL.md"
     },
     {
-      "repo": "notque/vexjoy-agent",
-      "path": "skills/engineering/kotlin/SKILL.md"
+      "repo": "gooseworks-ai/goose-skills",
+      "path": "skills/ads/capabilities/render-flatlay/SKILL.md"
     },
     {
-      "repo": "notque/vexjoy-agent",
-      "path": "skills/engineering/swift/SKILL.md"
+      "repo": "gooseworks-ai/goose-skills",
+      "path": "skills/ads/capabilities/render-hypermotion/SKILL.md"
     },
     {
-      "repo": "notque/vexjoy-agent",
-      "path": "skills/business/business-ops/SKILL.md"
+      "repo": "gooseworks-ai/goose-skills",
+      "path": "skills/ads/capabilities/render-multiworld/SKILL.md"
     },
     {
-      "repo": "notque/vexjoy-agent",
-      "path": "skills/infrastructure/kubernetes/SKILL.md"
+      "repo": "gooseworks-ai/goose-skills",
+      "path": "skills/ads/capabilities/create-vo-elevenlabs/SKILL.md"
+    },
+    {
+      "repo": "gooseworks-ai/goose-skills",
+      "path": "skills/ads/capabilities/render-photo-grid-card/SKILL.md"
+    },
+    {
+      "repo": "gooseworks-ai/goose-skills",
+      "path": "skills/lead-generation/capabilities/apollo-lead-finder/SKILL.md"
+    },
+    {
+      "repo": "gooseworks-ai/goose-skills",
+      "path": "skills/ads/packs/video-ad-formats/create-apple-notes-mockup/SKILL.md"
+    },
+    {
+      "repo": "gooseworks-ai/goose-skills",
+      "path": "skills/ads/capabilities/render-value-prop/SKILL.md"
+    },
+    {
+      "repo": "gooseworks-ai/goose-skills",
+      "path": "skills/lead-generation/capabilities/enrichment-nyne/SKILL.md"
+    },
+    {
+      "repo": "gooseworks-ai/goose-skills",
+      "path": "skills/lead-generation/capabilities/yc-batch-evaluator/SKILL.md"
+    },
+    {
+      "repo": "gooseworks-ai/goose-skills",
+      "path": "skills/ads/packs/video-ad-formats/create-chatgpt-mockup/SKILL.md"
+    },
+    {
+      "repo": "gooseworks-ai/goose-skills",
+      "path": "skills/ads/capabilities/render-cgi-sizzle/SKILL.md"
+    },
+    {
+      "repo": "gooseworks-ai/goose-skills",
+      "path": "skills/lead-generation/composites/inbound-lead-qualification/SKILL.md"
+    },
+    {
+      "repo": "gooseworks-ai/goose-skills",
+      "path": "skills/lead-generation/capabilities/linkedin-commenter-extractor/SKILL.md"
+    },
+    {
+      "repo": "pcliangx/AppGenesisForge",
+      "path": ".claude/skills/agf-code-map/SKILL.md"
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/neon-object-storage/SKILL.md"
+      "path": "skills/huggingface-spaces/SKILL.md"
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/appium-skill/SKILL.md"
+      "path": "skills/brooks-harness/SKILL.md"
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/re-create/SKILL.md"
+      "path": "skills/ask-matt/SKILL.md"
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/add-app-clip/SKILL.md"
+      "path": "skills/short/SKILL.md"
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/api-integration/SKILL.md"
+      "path": "skills/design-ux/SKILL.md"
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/rclone-cli/SKILL.md"
+      "path": "skills/marketing-plan/SKILL.md"
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/developer-listening/SKILL.md"
+      "path": "skills/github-presence/SKILL.md"
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/frontend-seo/SKILL.md"
+      "path": "skills/frontend-lighthouse/SKILL.md"
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/pr-merge-champion/SKILL.md"
+      "path": "skills/push-skill-to-github/SKILL.md"
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/prototype/SKILL.md"
+      "path": "skills/grilling/SKILL.md"
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/ab-testing/SKILL.md"
+      "path": "skills/anti-sleep/SKILL.md"
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "path": "skills/styleseed-design-review/SKILL.md"
+      "path": "skills/code-polish/SKILL.md"
+    },
+    {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "path": "skills/neon-functions/SKILL.md"
+    },
+    {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "path": "skills/polis-protocol/SKILL.md"
+    },
+    {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "path": "skills/bug-hunt-swarm/SKILL.md"
     }
   ]
 }

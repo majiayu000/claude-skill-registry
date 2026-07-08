@@ -1,0 +1,37 @@
+{
+  "name": "render-song-mv",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/ads/capabilities/render-song-mv/SKILL.md",
+  "github_branch": "main",
+  "category": "ai-ml",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "render-song-mv",
+  "downloaded_at": "2026-07-08T03:02:57.464277Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "ai-ml",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for ai-ml: ai, model",
+    "score": 2,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "ai",
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/render-song-mv/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/render-song-mv/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Assemble a song-driven music-video ad from a config \u2014 a generated sung track carries the whole narration across N tableaux (one keyframe -> one i2v clip per lyric beat) with NO separate voiceover, captions synced to the song's OWN word timings (script-window, never Whisper) and the hook word landing on the chorus drop, closed on a PIL brand end card. This is the FREE deterministic assembly stage (clip cut-to-timeline + captions + end card + FFmpeg composite); the song, keyframes, and clips come from create-music-elevenlabs / create-image-fal / create-video-fal. Use for the song-driven-music-video format."
+}

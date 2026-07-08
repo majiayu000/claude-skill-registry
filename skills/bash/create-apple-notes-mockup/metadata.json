@@ -1,0 +1,37 @@
+{
+  "name": "create-apple-notes-mockup",
+  "repo": "gooseworks-ai/goose-skills",
+  "path": "skills/ads/packs/video-ad-formats/create-apple-notes-mockup/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/gooseworks-ai/goose-skills",
+  "dir_name": "create-apple-notes-mockup",
+  "downloaded_at": "2026-07-08T03:02:58.971861Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, cli",
+    "score": 2,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "bash",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "gooseworks-ai",
+  "source_url": "https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/packs/video-ad-formats/create-apple-notes-mockup/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/packs/video-ad-formats/create-apple-notes-mockup/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Render pixel-accurate Apple Notes (iPhone, light mode) screenshot mockups from a JSON note spec. Outputs HTML + PNG at the iPhone 16/15 Pro native 1180\u00d72556. Supports paragraphs, images, checklists, dividers, autocorrect underline, smart quotes, and an optional iOS keyboard chrome overlay used by the parent video-ad molecule."
+}

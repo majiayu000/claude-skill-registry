@@ -1,0 +1,37 @@
+{
+  "name": "run-history-skill-upgrader",
+  "repo": "dongshuyan/compass-skills",
+  "path": "skills/run-history-skill-upgrader/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/dongshuyan/compass-skills",
+  "dir_name": "run-history-skill-upgrader",
+  "downloaded_at": "2026-07-08T03:00:48.483025Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, development=2",
+    "score": 2,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "shell",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "dongshuyan",
+  "source_url": "https://github.com/dongshuyan/compass-skills/blob/master/skills/run-history-skill-upgrader/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dongshuyan/compass-skills/blob/master/skills/run-history-skill-upgrader/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use real run evidence, validation failures, source drift, platform drift, and user feedback to plan and, only after explicit approval, apply structural upgrades to an existing skill. Use when the user asks to improve an existing skill from recent runs, recurring failures, outdated sources, excessive bloat, changed platform behavior, or validated workflow feedback. Do not use to create a brand-new skill or to execute the business workflow itself."
+}

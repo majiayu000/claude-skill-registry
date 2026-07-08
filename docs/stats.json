@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-07-07T04:45:39.945917Z",
-  "archive_skill_md_count_raw": 202914,
-  "archive_metadata_count_raw": 202912,
-  "indexed_skill_count_scan_shape": 202912,
-  "registry_skill_count_dedup": 160910,
+  "updated_at": "2026-07-08T04:04:16.028708Z",
+  "archive_skill_md_count_raw": 202956,
+  "archive_metadata_count_raw": 202954,
+  "indexed_skill_count_scan_shape": 202954,
+  "registry_skill_count_dedup": 160947,
   "total_plugins": 4,
   "categories": 42,
   "category_counts": [
@@ -20,7 +20,7 @@
     {
       "name": "ai-ml",
       "code": "ai-ml",
-      "count": 2628
+      "count": 2629
     },
     {
       "name": "analysis",
@@ -35,7 +35,7 @@
     {
       "name": "bash",
       "code": "bash",
-      "count": 542
+      "count": 544
     },
     {
       "name": "business",
@@ -65,17 +65,17 @@
     {
       "name": "data",
       "code": "dat",
-      "count": 49493
+      "count": 49496
     },
     {
       "name": "design",
       "code": "des",
-      "count": 14129
+      "count": 14132
     },
     {
       "name": "development",
       "code": "dev",
-      "count": 39714
+      "count": 39717
     },
     {
       "name": "devops",
@@ -85,7 +85,7 @@
     {
       "name": "documents",
       "code": "doc",
-      "count": 7965
+      "count": 7967
     },
     {
       "name": "domains",
@@ -130,17 +130,17 @@
     {
       "name": "marketing",
       "code": "mkt",
-      "count": 3352
+      "count": 3353
     },
     {
       "name": "orchestration",
       "code": "orchestration",
-      "count": 2887
+      "count": 2888
     },
     {
       "name": "other",
       "code": "oth",
-      "count": 1697
+      "count": 1721
     },
     {
       "name": "performance",
@@ -170,7 +170,7 @@
     {
       "name": "productivity",
       "code": "pro",
-      "count": 3440
+      "count": 3441
     },
     {
       "name": "quality",
@@ -195,7 +195,7 @@
     {
       "name": "testing",
       "code": "tst",
-      "count": 11470
+      "count": 11471
     },
     {
       "name": "travel",
@@ -227,7 +227,7 @@
     },
     {
       "repo": "sickn33/antigravity-awesome-skills",
-      "count": 1900
+      "count": 1915
     },
     {
       "repo": "majiayu000/claude-skill-registry",
@@ -266,34 +266,34 @@
   "index_size_bytes": 162,
   "index_size_gzip_bytes": 175,
   "search_shard_count": 6,
-  "search_largest_shard_bytes": 8388683,
-  "search_largest_shard_gzip_bytes": 2584808,
+  "search_largest_shard_bytes": 8388682,
+  "search_largest_shard_gzip_bytes": 2584566,
   "category_shard_count": 50,
-  "category_largest_part_bytes": 8388732,
-  "category_largest_part_gzip_bytes": 1736484,
-  "lite_index_count": 161352,
+  "category_largest_part_bytes": 8388735,
+  "category_largest_part_gzip_bytes": 1736700,
+  "lite_index_count": 161389,
   "lite_index_included_count": 5000,
   "lite_index_size_bytes": 3502495,
-  "lite_index_gzip_size_bytes": 682644,
+  "lite_index_gzip_size_bytes": 682645,
   "quality_index_size_bytes": 220,
-  "quality_index_gzip_size_bytes": 214,
+  "quality_index_gzip_size_bytes": 213,
   "quality_shard_count": 6,
-  "quality_largest_shard_bytes": 8388673,
-  "quality_largest_shard_gzip_bytes": 1757152,
+  "quality_largest_shard_bytes": 8388713,
+  "quality_largest_shard_gzip_bytes": 1757206,
   "security_index_size_bytes": 223,
   "security_index_gzip_size_bytes": 215,
   "security_shard_count": 19,
-  "security_largest_shard_bytes": 8388714,
-  "security_largest_shard_gzip_bytes": 1637562,
+  "security_largest_shard_bytes": 8388715,
+  "security_largest_shard_gzip_bytes": 1637601,
   "ranking_index_size_bytes": 220,
-  "ranking_index_gzip_size_bytes": 213,
+  "ranking_index_gzip_size_bytes": 214,
   "ranking_shard_count": 5,
-  "ranking_largest_shard_bytes": 8388689,
-  "ranking_largest_shard_gzip_bytes": 2221377,
-  "largest_generated_file_bytes": 8388732,
+  "ranking_largest_shard_bytes": 8388599,
+  "ranking_largest_shard_gzip_bytes": 2221258,
+  "largest_generated_file_bytes": 8388735,
   "security_scan": {
-    "total": 202912,
-    "passed": 194000,
+    "total": 202954,
+    "passed": 194042,
     "failed": 8912
   }
 }

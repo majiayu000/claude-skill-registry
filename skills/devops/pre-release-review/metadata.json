@@ -1,0 +1,41 @@
+{
+  "name": "pre-release-review",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/pre-release-review/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "pre-release-review",
+  "downloaded_at": "2026-07-09T03:51:47.934767Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "devops",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for devops: ci, cd, deploy, infra, infrastructure",
+    "score": 5,
+    "runner_up": "security",
+    "runner_up_score": 2,
+    "signals": [
+      "ci",
+      "cd",
+      "deploy",
+      "infra",
+      "infrastructure"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/pre-release-review/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/pre-release-review/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Run a read-only pre-release review for deploy readiness, migrations, config, secrets, rollout order, rollback risk, and launch blockers."
+}

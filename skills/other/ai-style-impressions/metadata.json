@@ -1,0 +1,37 @@
+{
+  "name": "ai-style-impressions",
+  "repo": "wanshuiyin/Anti-Autoresearch",
+  "path": "skills/ai-style-impressions/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/wanshuiyin/Anti-Autoresearch",
+  "dir_name": "ai-style-impressions",
+  "downloaded_at": "2026-07-10T03:55:18.541590Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-llm=2, ai-ml=2",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 2,
+    "signals": [
+      "ai",
+      "llm"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "wanshuiyin",
+  "source_url": "https://github.com/wanshuiyin/Anti-Autoresearch/blob/main/skills/ai-style-impressions/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wanshuiyin/Anti-Autoresearch/blob/main/skills/ai-style-impressions/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Transparent, itemized impressions of AI-generated WRITING STYLE \u2014 the repo's ONLY non-integrity track. Two passes: a deterministic defensive-hedge density screen (tools/check_ai_style.py, AIS-DEFENSIVE-HEDGE) plus a fresh cross-model GROSS-cases-only semantic pass over the 13 AIS-* style tells (broken narrative arc, LLM phrase tics, jargon-stuffing, invented codenames, clause/formula walls, gratuitous pseudocode, bullet overuse, bold-module spam, restatement loops, focus drift, single-style figures, appendix dumping). Every finding is named, LOCATED, span-anchored to the evidence ledger (claims.json), carries not_integrity_finding:true + false_positive_risk:high + an fp_case, and gets ZERO verdict weight: the adjudicator forces it to info, excludes it from overall_verdict, and renders it in a SEPARATE report section. NOT an AI-text classifier \u2014 no scores, no \"this is AI-written\", no authorship probability; a paper can be CLEAN_GIVEN_EVIDENCE and still list many. Emits ai-style-impressions.findings.json; computes NO verdict; if a tell is actually substantive it routes to the integrity auditor. Triggers: \"AI style\", \"vibe check\", \"writing fingerprint\", \"AI \u6587\u98ce\", \"vibe paper\"."
+}

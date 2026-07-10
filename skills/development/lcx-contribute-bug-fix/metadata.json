@@ -1,0 +1,38 @@
+{
+  "name": "lcx-contribute-bug-fix",
+  "repo": "code-yeongyu/oh-my-openagent",
+  "path": "packages/shared-skills/skills/lcx-contribute-bug-fix/SKILL.md",
+  "github_branch": "master",
+  "category": "development",
+  "source": "github.com/code-yeongyu/oh-my-openagent",
+  "dir_name": "lcx-contribute-bug-fix",
+  "downloaded_at": "2026-07-10T03:37:49.529129Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: dev, code, debug",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "dev",
+      "code",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "code-yeongyu",
+  "source_url": "https://github.com/code-yeongyu/oh-my-openagent/blob/master/packages/shared-skills/skills/lcx-contribute-bug-fix/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/code-yeongyu/oh-my-openagent/blob/master/packages/shared-skills/skills/lcx-contribute-bug-fix/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Contribute a verified bug fix for LazyCodex, lazycodex-ai, omo-codex, bundled Codex skills, or upstream Codex CLI bugs. Opens a fork PR only for upstream openai/codex; LazyCodex-owned defects become a verified-fix issue on code-yeongyu/lazycodex (never a PR \u2014 that repo is a generated distribution mirror). Use when the user asks to fix a bug, contribute a bug fix, contribute to fix bug, open a PR for a bug, or debug and PR a LazyCodex/Codex defect."
+}

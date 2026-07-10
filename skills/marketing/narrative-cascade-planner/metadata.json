@@ -1,0 +1,40 @@
+{
+  "name": "narrative-cascade-planner",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "narrative/land/narrative-cascade-planner/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "narrative-cascade-planner",
+  "downloaded_at": "2026-07-10T03:32:32.990677Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for marketing: marketing, seo, content, social, brand",
+    "score": 5,
+    "runner_up": "creative",
+    "runner_up_score": 3,
+    "signals": [
+      "marketing",
+      "seo",
+      "content",
+      "social",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/narrative/land/narrative-cascade-planner/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/narrative/land/narrative-cascade-planner/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"plan how our narrative lands on every surface\", \"write per-surface message-match specs\", or \"brief each creative builder from the canon\"; maps the narrative-registry canon onto every flagship surface (homepage, pricing, store listing, sales deck, social bio, docs, email) as a per-surface message-match spec \u2014 what claim, pillar, proof, and objection reframe each surface must carry \u2014 and cuts a handoff brief to each discipline's creative builder (content-writer, ad-creative-builder, email-creative-builder, social-creative-builder, message-house-builder), so the same story lands consistently everywhere. Not for writing the finished surface copy \u2014 use each discipline creative builder; not for the tier-scoped launch asset manifest \u2014 use launch-asset-packager; not for scoring cross-surface consistency \u2014 use narrative-quality-auditor; not for claim adjudication \u2014 use offer-claims-registry. \u53d9\u4e8b\u843d\u5730/\u9010\u9762\u6d88\u606f\u4e00\u81f4/\u521b\u610f\u4ea4\u63a5\u7b80\u62a5/\u753b\u5e03\u4f20\u5bfc"
+}

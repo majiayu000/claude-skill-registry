@@ -1,0 +1,38 @@
+{
+  "name": "teammode",
+  "repo": "code-yeongyu/oh-my-openagent",
+  "path": "packages/omo-codex/plugin/components/teammode/skills/teammode/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/code-yeongyu/oh-my-openagent",
+  "dir_name": "teammode",
+  "downloaded_at": "2026-07-10T03:37:53.709194Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: orchestration=3, testing=3",
+    "score": 3,
+    "runner_up": "testing",
+    "runner_up_score": 3,
+    "signals": [
+      "orchestration",
+      "coordination",
+      "multi-agent"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "code-yeongyu",
+  "source_url": "https://github.com/code-yeongyu/oh-my-openagent/blob/master/packages/omo-codex/plugin/components/teammode/skills/teammode/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/code-yeongyu/oh-my-openagent/blob/master/packages/omo-codex/plugin/components/teammode/skills/teammode/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Codex-only team orchestration: run a named team of cooperating Codex threads with durable, script-managed state. MUST USE when the user asks Codex to create, run, coordinate, inspect, archive, or delete a team of threads/sessions, or to work on something as a team in parallel. The main session is always the leader; members are defined by a concrete part, ownership area, or perspective - never a vague job role; a bundled cross-platform script writes the .omo/teams state plus an auto-generated member field manual. Use a team when the work is not perfectly isolated but parallelizing helps, or when a task still needs exploration under a clear goal; use plain subagents when scope is perfectly isolated or the goal is ambiguous. Triggers: team mode, teammode, make a team, run as a team, team of agents, coordinate threads, parallel Codex threads, archive the team, delete the team."
+}

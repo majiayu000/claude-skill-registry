@@ -1,0 +1,38 @@
+{
+  "name": "coding-agent-sessions",
+  "repo": "code-yeongyu/oh-my-openagent",
+  "path": "packages/shared-skills/skills/coding-agent-sessions/SKILL.md",
+  "github_branch": "master",
+  "category": "bash",
+  "source": "github.com/code-yeongyu/oh-my-openagent",
+  "dir_name": "coding-agent-sessions",
+  "downloaded_at": "2026-07-10T03:37:49.149205Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script, cli",
+    "score": 3,
+    "runner_up": "productivity",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "code-yeongyu",
+  "source_url": "https://github.com/code-yeongyu/oh-my-openagent/blob/master/packages/shared-skills/skills/coding-agent-sessions/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/code-yeongyu/oh-my-openagent/blob/master/packages/shared-skills/skills/coding-agent-sessions/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "MUST USE when asked to find, read, list, search, inspect, fetch, export, or reconstruct coding-agent sessions across Codex, Claude Code/Desktop, OpenCode, Senpi/pi, OpenClaw, Factory Droid, Amp, Gemini/Kimi/Qwen CLIs, Codebuff, Roo/Kilo/Cline, Kodu, Cursor CLI, Aider, or unknown local agent logs. Covers transcripts, session IDs, rollout JSONL, state SQLite, Claude projects/pre-compact histories, OpenCode messages/parts, child/subagent linkage, cwd/model/time/token filters, archives, and cost clues. Expands fuzzy recall into parallel query lanes and first probes known stores so absent platforms are skipped cheaply. Triggers: coding agent sessions, Codex/Claude/OpenCode/Senpi/pi/OpenClaw/Droid/Amp/Kodu/Cursor/Aider sessions, transcript search, session history, session ID, read transcript, token usage, subagent sessions, what did I do yesterday, did we already do this."
+}

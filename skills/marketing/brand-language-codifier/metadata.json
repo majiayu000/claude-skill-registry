@@ -1,0 +1,39 @@
+{
+  "name": "brand-language-codifier",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "narrative/architect/brand-language-codifier/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "brand-language-codifier",
+  "downloaded_at": "2026-07-09T03:31:03.605097Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, seo, content, brand",
+    "score": 4,
+    "runner_up": "writing",
+    "runner_up_score": 3,
+    "signals": [
+      "marketing",
+      "seo",
+      "content",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/narrative/architect/brand-language-codifier/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/narrative/architect/brand-language-codifier/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"codify our brand voice\", \"define naming rules for our products and tiers\", or \"write the tone-of-voice guide with banned phrases\"; produces the brand-level voice canon (register, tone spectrum, banned-phrase list, few-shot examples drawn only from the brand's own published material) and the naming tax (product / feature / tier naming rules plus approved and banned terms) that seeds the narrative-registry canon and that every channel's voice adaptation points up to. Not for per-platform voice adaptation \u2014 use channel-registry's voice-dossier; not for finished copy or blog posts \u2014 use content-writer; not for the message hierarchy itself \u2014 use message-system-architect; not for claim adjudication \u2014 use offer-claims-registry. \u54c1\u724c\u8bed\u6c14/\u8bcd\u6c47\u8868/\u547d\u540d\u7a0e/\u7981\u7528\u8bcd/\u54c1\u724c\u8bed\u8a00\u89c4\u8303"
+}

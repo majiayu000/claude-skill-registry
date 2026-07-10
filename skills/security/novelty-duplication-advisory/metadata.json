@@ -1,0 +1,37 @@
+{
+  "name": "novelty-duplication-advisory",
+  "repo": "wanshuiyin/Anti-Autoresearch",
+  "path": "skills/novelty-duplication-advisory/SKILL.md",
+  "github_branch": "main",
+  "category": "security",
+  "source": "github.com/wanshuiyin/Anti-Autoresearch",
+  "dir_name": "novelty-duplication-advisory",
+  "downloaded_at": "2026-07-10T03:55:20.068759Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "security",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for security: auth, audit",
+    "score": 2,
+    "runner_up": "ai-ml",
+    "runner_up_score": 1,
+    "signals": [
+      "auth",
+      "audit"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "wanshuiyin",
+  "source_url": "https://github.com/wanshuiyin/Anti-Autoresearch/blob/main/skills/novelty-duplication-advisory/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wanshuiyin/Anti-Autoresearch/blob/main/skills/novelty-duplication-advisory/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "MEMO-ONLY prior-work overlap advisory: surfaces the two ADVISORY taxonomy signals neither a tool nor a model can decide from the paper alone \u2014 ADV-TRIVIAL-COMBINATION (standard A+B+C / \u7f1d\u5408 stapling) and ADV-DUPLICATE-PUBLICATION (repackaged / duplicate submission). The executor RETRIEVES candidate prior work (DBLP fuzzy-title + boolean \u00b7 WebSearch \u00b7 WebFetch) from the paper's own title + contribution spans in the evidence ledger; TWO fresh cross-model codex reviewers (one per axis) LAY OUT the overlap side-by-side against each anchored contribution claim. It NEVER rules 'trivial' or 'duplicate' (that is a human judgment) and absence of a match is NOT evidence of originality. Emits novelty-duplication-advisory.memo.md + an info-only findings mirror; carries NO verdict weight \u2014 tools/adjudicate_findings.py lists it in MEMO_ONLY_SKILLS and caps it at info. Detect-only. Adapted from ARIS novelty-check, reframed from 'is MY idea novel' to 'here is the overlap a reviewer should weigh'. Triggers: \"novelty advisory\", \"duplication check\", \"prior-work overlap\", \"is this stapling\", \"\u7f1d\u5408\", \"\u67e5\u91cd\", \"\u91cd\u590d\u53d1\u8868\", \"duplicate submission\"."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "developer-churn",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/developer-churn/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "developer-churn",
+  "downloaded_at": "2026-07-09T03:51:57.599998Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, social, campaign",
+    "score": 3,
+    "runner_up": "documents",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "social",
+      "campaign"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/developer-churn/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/developer-churn/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "When the user wants to understand, reduce, or recover from developer churn. Trigger phrases include \"why developers leave,\" \"churn rate,\" \"win-back campaign,\" \"at-risk users,\" \"developer retention,\" \"preventing churn,\" or \"competitor switching.\""
+}

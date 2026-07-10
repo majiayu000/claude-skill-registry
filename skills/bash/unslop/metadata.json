@@ -1,0 +1,40 @@
+{
+  "name": "unslop",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/unslop/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "unslop",
+  "downloaded_at": "2026-07-10T03:53:14.417043Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, shell, script, cli",
+    "score": 4,
+    "runner_up": "quality",
+    "runner_up_score": 3,
+    "signals": [
+      "bash",
+      "shell",
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/unslop/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/unslop/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Post-process AI-generated text through the unslop CLI to strip AI writing patterns before publishing"
+}

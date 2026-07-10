@@ -1,0 +1,39 @@
+{
+  "name": "hyperplan",
+  "repo": "code-yeongyu/oh-my-openagent",
+  "path": ".agents/skills/hyperplan/SKILL.md",
+  "github_branch": "master",
+  "category": "orchestration",
+  "source": "github.com/code-yeongyu/oh-my-openagent",
+  "dir_name": "hyperplan-code-yeongyu-oh-my-openagent",
+  "downloaded_at": "2026-07-10T03:37:54.357104Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "orchestration",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for orchestration: orchestration, orchestrator, coordination, multi-agent",
+    "score": 4,
+    "runner_up": "planning",
+    "runner_up_score": 2,
+    "signals": [
+      "orchestration",
+      "orchestrator",
+      "coordination",
+      "multi-agent"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "code-yeongyu",
+  "source_url": "https://github.com/code-yeongyu/oh-my-openagent/blob/master/.agents/skills/hyperplan/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/code-yeongyu/oh-my-openagent/blob/master/.agents/skills/hyperplan/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Adversarial multi-agent planning skill. Self-orchestrates 5 hostile category members (unspecified-low, unspecified-high, deep, ultrabrain, artistry) via team-mode for ruthless cross-critique debate, distills only the defensible insights, then MANDATORILY hands the distilled insight bundle to the `plan` agent for executable plan formalization. Use when planning needs maximum rigor and surfacing of weak assumptions, blind spots, and over-engineering. Triggers: 'hyperplan', 'hpp', '/hyperplan', 'adversarial plan', 'hostile planning', 'cross-critique plan', '\ud558\uc774\ud37c\ud50c\ub79c', '\uc801\ub300\uc801 \uacc4\ud68d', '\uad50\ucc28 \ube44\ud3c9'."
+}

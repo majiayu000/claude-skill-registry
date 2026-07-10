@@ -1,0 +1,39 @@
+{
+  "name": "debugging",
+  "repo": "code-yeongyu/oh-my-openagent",
+  "path": "packages/shared-skills/skills/debugging/SKILL.md",
+  "github_branch": "master",
+  "category": "testing",
+  "source": "github.com/code-yeongyu/oh-my-openagent",
+  "dir_name": "debugging",
+  "downloaded_at": "2026-07-10T03:37:45.356174Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "testing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for testing: test, qa, pytest, playwright",
+    "score": 4,
+    "runner_up": "development",
+    "runner_up_score": 3,
+    "signals": [
+      "test",
+      "qa",
+      "pytest",
+      "playwright"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "code-yeongyu",
+  "source_url": "https://github.com/code-yeongyu/oh-my-openagent/blob/master/packages/shared-skills/skills/debugging/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/code-yeongyu/oh-my-openagent/blob/master/packages/shared-skills/skills/debugging/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "MUST USE for any real runtime debugging across ANY language or binary \u2014 crashes, silent failures, wrong responses, stuck processes, memory leaks, async misbehavior, unexplained timing, reverse engineering. Runs a hypothesis-driven loop: form \u22653 hypotheses, investigate in parallel, after 2 failed rounds spawn Oracles from orthogonal angles, confirm root cause, lock with a failing test, fix minimally, QA by actually USING the system, scrub artifacts. The actual HOW lives in `references/` \u2014 READ THEM. Triggers: 'debug this', 'why is X not working', 'hanging', 'attach a debugger', 'reverse engineer', 'pwndbg', 'gdb', 'lldb', 'node inspect', 'tsx debug', 'pdb', 'dlv', 'delve', 'rust-gdb', 'set a breakpoint', 'context window exploded', 'why is the response empty', 'attach the debugger', 'debug it', 'why is this happening', 'trace this bug', 'reproduce and fix', 'silent failure', 'HTTP 200 but empty', 'why did it stop', 'inspect the binary', 'reverse engineering', 'playwright'."
+}

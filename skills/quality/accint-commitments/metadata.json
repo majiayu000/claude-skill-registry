@@ -1,0 +1,37 @@
+{
+  "name": "accint-commitments",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/accint-commitments/SKILL.md",
+  "github_branch": "main",
+  "category": "quality",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "accint-commitments",
+  "downloaded_at": "2026-07-09T03:51:45.725291Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "quality",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for quality: review, validate",
+    "score": 2,
+    "runner_up": "bash",
+    "runner_up_score": 1,
+    "signals": [
+      "review",
+      "validate"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/accint-commitments/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/accint-commitments/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Triage acc's open promises and close them with honest real-world verdicts via acc_act(runtime=\"outcome\")."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "ss-verify",
+  "repo": "bitjaru/styleseed",
+  "path": "engine/.claude/skills/ss-verify/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/bitjaru/styleseed",
+  "dir_name": "ss-verify",
+  "downloaded_at": "2026-07-09T03:34:09.877348Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: design=3, development=3",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 3,
+    "signals": [
+      "design",
+      "ui",
+      "component"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "bitjaru",
+  "source_url": "https://github.com/bitjaru/styleseed/blob/main/engine/.claude/skills/ss-verify/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/bitjaru/styleseed/blob/main/engine/.claude/skills/ss-verify/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "The VISUAL gate \u2014 render the UI, screenshot it, and score what you actually SEE, not what the code says. Catches the tells that only show up in pixels (dead whitespace, cramping, a hero that doesn't dominate, fonts that didn't load, real rendered color, the squint \"does this look AI-made\" test) \u2014 the things /ss-score can't read from source. Renders empty/loading/error states too, then fixes and re-renders until it passes. Use as the final gate on any screen you can render."
+}

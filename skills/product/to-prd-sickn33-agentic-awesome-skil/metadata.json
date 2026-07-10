@@ -1,0 +1,39 @@
+{
+  "name": "to-prd",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/to-prd/SKILL.md",
+  "github_branch": "main",
+  "category": "product",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "to-prd-sickn33-agentic-awesome-skil",
+  "downloaded_at": "2026-07-10T03:53:15.306145Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "product",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for product: product, prd, feature",
+    "score": 3,
+    "runner_up": "workflow",
+    "runner_up_score": 2,
+    "signals": [
+      "product",
+      "prd",
+      "feature"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter",
+      "tags": "frontmatter:list"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/to-prd/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/to-prd/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Turn the current conversation into a PRD and publish it to the project issue tracker \u2014 no interview, just synthesis of what you've already discussed."
+}

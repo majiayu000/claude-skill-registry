@@ -1,0 +1,37 @@
+{
+  "name": "strategic-narrative-designer",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "narrative/architect/strategic-narrative-designer/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "strategic-narrative-designer",
+  "downloaded_at": "2026-07-09T03:31:03.863820Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, marketing=2",
+    "score": 2,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/narrative/architect/strategic-narrative-designer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/narrative/architect/strategic-narrative-designer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"design our change narrative\", \"build the old-world-to-new-game story arc\", or \"frame the shift our category is undergoing\"; produces a Raskin-style strategic narrative arc \u2014 old world \u2192 the undeniable shift \u2192 winners vs losers under the new rules \u2192 the promised land \u2192 proof the promised land is real \u2014 derived from the positioning truth set and the belief/objection map, feeding the TALE Architecture arc sub-item. Every proof beat is labeled Measured / User-provided / [needs source] and this skill never adjudicates a claim. Not for the message house hierarchy \u2014 use message-system-architect; not for the pitch deck narrative \u2014 use pitch-narrative-builder; not for claim substantiation \u2014 use offer-claims-registry. \u53d8\u9769\u53d9\u4e8b\u5f27/\u65e7\u4e16\u754c/\u5e94\u8bb8\u4e4b\u5730/\u6218\u7565\u53d9\u4e8b\u7ed3\u6784"
+}

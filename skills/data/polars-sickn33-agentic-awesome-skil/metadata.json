@@ -1,0 +1,39 @@
+{
+  "name": "polars",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/polars/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "polars-sickn33-agentic-awesome-skil",
+  "downloaded_at": "2026-07-10T03:53:15.624691Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "data",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for data: data, analytics, etl, pipeline",
+    "score": 4,
+    "runner_up": "workflow",
+    "runner_up_score": 3,
+    "signals": [
+      "data",
+      "analytics",
+      "etl",
+      "pipeline"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/polars/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/polars/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Fast in-memory DataFrame library for datasets that fit in RAM. Use when pandas is too slow but data still fits in memory. Lazy evaluation, parallel execution, Apache Arrow backend. Best for 1-100GB datasets, ETL pipelines, faster pandas replacement. For larger-than-RAM data use dask or vaex."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "opus-orchestrate",
+  "repo": "scdenney/open-science-skills",
+  "path": "plugin/skills/opus-orchestrate/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/scdenney/open-science-skills",
+  "dir_name": "opus-orchestrate",
+  "downloaded_at": "2026-07-09T03:50:37.141751Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "productivity",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for productivity: workflow, task, planning",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "workflow",
+      "task",
+      "planning"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "scdenney",
+  "source_url": "https://github.com/scdenney/open-science-skills/blob/main/plugin/skills/opus-orchestrate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/scdenney/open-science-skills/blob/main/plugin/skills/opus-orchestrate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Run a multi-model orchestration workflow with Claude Opus 4.8 as the lead, driven by ultracode (xhigh reasoning + dynamic Workflow fan-out). The lead is itself the deep reasoner, so it reasons directly on compact hard problems and delegates only to fan out or stay context-lean. Route mechanical work (boilerplate, tests, formatting, bulk edits) to a fast-worker subagent (Sonnet), parallel or context-heavy reasoning to deep-reasoner subagents (Opus), and fresh-perspective or high-stakes problems to Codex, a different-vendor GPT-5.5 peer. Use to orchestrate, delegate, fan out, run a Workflow, get a second opinion from Codex, run Opus and Codex in parallel and synthesize, or act as tech lead on Opus."
+}

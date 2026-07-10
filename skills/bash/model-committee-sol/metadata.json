@@ -1,0 +1,38 @@
+{
+  "name": "model-committee-sol",
+  "repo": "scdenney/open-science-skills",
+  "path": "plugin/skills/model-committee-sol/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/scdenney/open-science-skills",
+  "dir_name": "model-committee-sol",
+  "downloaded_at": "2026-07-09T03:50:37.699945Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script, cli",
+    "score": 3,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script",
+      "cli"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "scdenney",
+  "source_url": "https://github.com/scdenney/open-science-skills/blob/main/plugin/skills/model-committee-sol/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/scdenney/open-science-skills/blob/main/plugin/skills/model-committee-sol/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Run a deliberative two-model committee between GPT-5.5 and Claude Opus 4.8, chaired by GPT-5.6 \"Sol\" (via Codex). Same two deliberating members as model-committee; the difference is the chair \u2014 Sol aggregates the scores, applies the tie rule, and synthesizes the decision; being neither deliberating member, its read on which components are compatible sits outside both. Use when the user needs one consequential decision from multiple defensible options and wants a Sol-chaired deliberation. Suitable for architecture, research design and interpretation, manuscript strategy, ambiguous diagnosis, evaluation design, and policy or standards tradeoffs. Not for factual lookups, independent-coder reliability, open-ended brainstorming, routine implementation, or final high-stakes professional judgment."
+}

@@ -1,0 +1,39 @@
+{
+  "name": "apify-influencer-discovery",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/apify-influencer-discovery/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "apify-influencer-discovery",
+  "downloaded_at": "2026-07-09T03:51:56.657013Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: content, social, campaign, brand",
+    "score": 4,
+    "runner_up": "bash",
+    "runner_up_score": 3,
+    "signals": [
+      "content",
+      "social",
+      "campaign",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/apify-influencer-discovery/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/apify-influencer-discovery/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Find and evaluate influencers for brand partnerships, verify authenticity, and track collaboration performance across Instagram, Facebook, YouTube, and TikTok."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "participation-warmup-planner",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "social/explore/participation-warmup-planner/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "participation-warmup-planner",
+  "downloaded_at": "2026-07-09T03:31:03.412293Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, social, brand",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "social",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/social/explore/participation-warmup-planner/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/social/explore/participation-warmup-planner/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"plan the participation ramp before we promote\", \"how much account history or karma do we need in this community\", or \"design entry incentives and member lifecycle for our own Discord\"; produces the per-community pre-promotion warming plan \u2014 account-history/tenure expectations (Estimated, named sources), a give-before-ask ledger spec, a per-community etiquette + rule digest with last-verified dates, and the warming \u2192 active graduation criteria that channel-registry requires as state-transition evidence \u2014 plus the owned-community variant (entry paths + member lifecycle for your own Discord/Slack/forum/\u4f01\u4e1a\u5fae\u4fe1\u79c1\u57df). Not for launch-day submissions or T-0 threads \u2014 use community-launch-runner. \u793e\u533a\u9884\u70ed/\u5148\u7ed9\u540e\u53d6/\u8d26\u53f7\u517b\u6210/\u6bd5\u4e1a\u6807\u51c6"
+}

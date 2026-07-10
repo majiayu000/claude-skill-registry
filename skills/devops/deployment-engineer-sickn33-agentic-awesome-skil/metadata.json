@@ -1,0 +1,41 @@
+{
+  "name": "deployment-engineer",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/deployment-engineer/SKILL.md",
+  "github_branch": "main",
+  "category": "devops",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "deployment-engineer-sickn33-agentic-awesome-skil",
+  "downloaded_at": "2026-07-09T03:51:48.093335Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "devops",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for devops: devops, ci, cd, docker, kubernetes, deploy",
+    "score": 6,
+    "runner_up": "data",
+    "runner_up_score": 3,
+    "signals": [
+      "devops",
+      "ci",
+      "cd",
+      "docker",
+      "kubernetes",
+      "deploy"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/deployment-engineer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/deployment-engineer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Expert deployment engineer specializing in modern CI/CD pipelines, GitOps workflows, and advanced deployment automation."
+}

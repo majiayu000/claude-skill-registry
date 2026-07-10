@@ -1,0 +1,37 @@
+{
+  "name": "citation-forensics",
+  "repo": "wanshuiyin/Anti-Autoresearch",
+  "path": "skills/citation-forensics/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/wanshuiyin/Anti-Autoresearch",
+  "dir_name": "citation-forensics",
+  "downloaded_at": "2026-07-10T03:55:18.377926Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: data=2, security=2",
+    "score": 2,
+    "runner_up": "security",
+    "runner_up_score": 2,
+    "signals": [
+      "data",
+      "pipeline"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "wanshuiyin",
+  "source_url": "https://github.com/wanshuiyin/Anti-Autoresearch/blob/main/skills/citation-forensics/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wanshuiyin/Anti-Autoresearch/blob/main/skills/citation-forensics/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Citation-integrity forensics: is every reference real, correctly attributed, and used in a context the cited work actually supports? Catches hallucinated references (no paper at the claimed arXiv id/DOI/venue, fabricated authors/year), metadata drift (wrong year/venue/version), and wrong-context citations (a real paper cited for a claim it never makes \u2014 or argues against). A hot zone for machine-generated papers. Decidable at L0 (text + canonical sources). Span-anchored to the evidence ledger (claims.json); the executor gathers canonical facts (DBLP / arXiv / DOI), then one FRESH cross-model thread per cited key proposes findings; reviewer != adjudicator. Emits citation-forensics.findings.json; NEVER computes the verdict. Triggers: \"citation forensics\", \"check the references\", \"hallucinated citations\", \"wrong-context citation\", \"verify references\", \"\u5f15\u7528\u6838\u5bf9\"."
+}

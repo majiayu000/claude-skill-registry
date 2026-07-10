@@ -1,0 +1,37 @@
+{
+  "name": "baseline-comparison-audit",
+  "repo": "wanshuiyin/Anti-Autoresearch",
+  "path": "skills/baseline-comparison-audit/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/wanshuiyin/Anti-Autoresearch",
+  "dir_name": "baseline-comparison-audit",
+  "downloaded_at": "2026-07-10T03:55:19.727949Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: data=2, documents=2",
+    "score": 2,
+    "runner_up": "documents",
+    "runner_up_score": 2,
+    "signals": [
+      "data",
+      "pipeline"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "wanshuiyin",
+  "source_url": "https://github.com/wanshuiyin/Anti-Autoresearch/blob/main/skills/baseline-comparison-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wanshuiyin/Anti-Autoresearch/blob/main/skills/baseline-comparison-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Audit whether a paper's baseline comparisons are COMPLETE, FAIR, and SIGNIFICANT: a required recent SOTA baseline is missing while 'best/SOTA' is claimed (HP-MISSING-BASELINE); a baseline is undertuned / given less compute-tuning-data, run at a mismatched config, or the equal-budget ablation-as-baseline is absent (HP-WEAK-BASELINE); 'outperforms' is asserted over overlapping error bars or with no variance/seeds (HP-SIG-OVERLAP); and a cross-row 'improves over baseline by X%' is arithmetically wrong (HP-DELTA-ERROR, cross-row form only). A versioned per-domain baseline profile + a live leaderboard/recency search are assembled by the EXECUTOR as structured facts; a fresh cross-model reviewer (gpt-5.5 xhigh, read-only, fresh thread per dimension) PROPOSES findings, each span-anchored to a ledger claim_id; tools/adjudicate_findings.py DECIDES the verdict. Works at L0 (stated comparisons) and deepens at L2 (configs/result files). A completeness question it cannot settle internally becomes needs_external_check, never a guessed missing baseline. Emits baseline-comparison-audit.findings.json; computes NO verdict. Detect-only. Triggers: \"baseline audit\", \"missing baselines\", \"is the comparison fair\", \"weak baseline\", \"baseline \u8bef\u62a5\", \"SOTA earned?\"."
+}

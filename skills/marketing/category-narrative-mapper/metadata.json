@@ -1,0 +1,38 @@
+{
+  "name": "category-narrative-mapper",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "narrative/trace/category-narrative-mapper/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "category-narrative-mapper",
+  "downloaded_at": "2026-07-09T03:31:03.071828Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, seo, brand",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "seo",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/narrative/trace/category-narrative-mapper/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/narrative/trace/category-narrative-mapper/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"map the category narrative\", \"tear down how competitors tell their story\", or \"find the language conventions in our market\"; produces a category narrative map \u2014 the dominant stories and points of view in the category, its language conventions and framing clich\u00e9s, and a per-competitor narrative teardown (arc, claimed onlyness, proof pattern) plus how each rival's messaging has shifted over time (scraped copy vs archived copy). Not for the positioning canvas itself \u2014 use positioning-mapper; not for the beachhead's beliefs and objections \u2014 use audience-belief-mapper; not for SERP keyword targeting \u2014 use keyword-research; not for claim adjudication \u2014 use offer-claims-registry. \u54c1\u7c7b\u53d9\u4e8b/\u7ade\u4e89\u53d9\u4e8b\u62c6\u89e3/\u8bed\u8a00\u60ef\u4f8b/\u53d9\u4e8b\u6f14\u53d8"
+}

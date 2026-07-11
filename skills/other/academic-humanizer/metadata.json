@@ -1,0 +1,37 @@
+{
+  "name": "academic-humanizer",
+  "repo": "dongshuyan/compass-skills",
+  "path": "skills/academic-humanizer/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/dongshuyan/compass-skills",
+  "dir_name": "academic-humanizer",
+  "downloaded_at": "2026-07-11T02:55:54.112972Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, security=2",
+    "score": 2,
+    "runner_up": "security",
+    "runner_up_score": 2,
+    "signals": [
+      "shell",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "dongshuyan",
+  "source_url": "https://github.com/dongshuyan/compass-skills/blob/master/skills/academic-humanizer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/dongshuyan/compass-skills/blob/master/skills/academic-humanizer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Draft, audit, or minimally revise English- or Chinese-language academic prose to reduce formulaic, vacuous, mechanically repetitive, or process-leaking language while preserving claims, evidence strength, logical relations, manuscript-wide terminology identity, document-level pattern variation, and scholarly register. Use for papers, abstracts, grants, cover letters, and reviewer responses when the user asks to de-AI, humanize, audit AI-like phrasing, or rewrite text without changing meaning. English is primary; Chinese is supported. Not for detector evasion, policy circumvention, pure translation, non-academic copy, or adding facts, citations, examples, or author experiences that the source does not contain."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "file-headers",
+  "repo": "hoangsonww/Claude-Code-Agent-Monitor",
+  "path": ".claude/skills/file-headers/SKILL.md",
+  "github_branch": "master",
+  "category": "bash",
+  "source": "github.com/hoangsonww/Claude-Code-Agent-Monitor",
+  "dir_name": "file-headers",
+  "downloaded_at": "2026-07-11T02:58:58.121272Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, shell, script",
+    "score": 3,
+    "runner_up": "design",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "shell",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "hoangsonww",
+  "source_url": "https://github.com/hoangsonww/Claude-Code-Agent-Monitor/blob/master/.claude/skills/file-headers/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/hoangsonww/Claude-Code-Agent-Monitor/blob/master/.claude/skills/file-headers/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "MANDATORY for every coding agent (Claude Code, Codex, or any other) on every change-set \u2014 every applicable source file the agent creates or updates MUST start with the project's copyright/authorship header (file overview + exact author line). Use automatically whenever writing a new file or editing an existing one; do not wait to be asked. Covers JS/TS/TSX/CJS/MJS, Python, shell, and CSS. Includes the audit script to verify repo-wide compliance."
+}

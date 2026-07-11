@@ -1,0 +1,38 @@
+{
+  "name": "813-regulations-iso-42001",
+  "repo": "jabrena/plinth",
+  "path": "skills/813-regulations-iso-42001/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/jabrena/plinth",
+  "dir_name": "813-regulations-iso-42001",
+  "downloaded_at": "2026-07-11T02:59:58.773837Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: ai-llm=3, data=3",
+    "score": 3,
+    "runner_up": "data",
+    "runner_up_score": 3,
+    "signals": [
+      "ai",
+      "llm",
+      "prompt"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "jabrena",
+  "source_url": "https://github.com/jabrena/plinth/blob/main/skills/813-regulations-iso-42001/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jabrena/plinth/blob/main/skills/813-regulations-iso-42001/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when reviewing, designing, or modifying Java enterprise systems that use GenAI, LLMs, AI-assisted coding, RAG, AI agents, generated code, generated dependencies, prompt workflows, external model providers, or AI-enabled business logic and need ISO/IEC 42001 AI management system-aware engineering guidance. Part of Plinth Toolkit"
+}

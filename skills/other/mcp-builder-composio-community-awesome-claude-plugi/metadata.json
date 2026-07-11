@@ -1,0 +1,38 @@
+{
+  "name": "mcp-builder",
+  "repo": "composio-community/awesome-claude-plugins",
+  "path": "mcp-builder/skills/mcp-builder/SKILL.md",
+  "github_branch": "master",
+  "category": "other",
+  "source": "github.com/composio-community/awesome-claude-plugins",
+  "dir_name": "mcp-builder-composio-community-awesome-claude-plugi",
+  "downloaded_at": "2026-07-11T02:55:00.586740Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: api=3, documents=3",
+    "score": 3,
+    "runner_up": "documents",
+    "runner_up_score": 3,
+    "signals": [
+      "api",
+      "sdk",
+      "endpoint"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "composio-community",
+  "source_url": "https://github.com/composio-community/awesome-claude-plugins/blob/master/mcp-builder/skills/mcp-builder/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/composio-community/awesome-claude-plugins/blob/master/mcp-builder/skills/mcp-builder/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK)."
+}

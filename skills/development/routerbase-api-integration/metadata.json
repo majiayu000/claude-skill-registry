@@ -1,0 +1,29 @@
+{
+  "name": "routerbase-api-integration",
+  "description": "Integrate applications with RouterBase as an OpenAI-compatible model gateway for SDK migration, streaming, tool calling, JSON mode, and safe credential handling.",
+  "repo": "zenlee123/routerbase-agent-skills",
+  "path": "skills/routerbase-api-integration",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [
+    "routerbase",
+    "api",
+    "llm",
+    "integration",
+    "openai-compatible"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "routerbase-api-integration",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "references/routerbase-api.md"
+  ],
+  "author": "zenlee123",
+  "source_url": "https://github.com/zenlee123/routerbase-agent-skills/blob/main/skills/routerbase-api-integration/SKILL.md",
+  "license": "MIT-0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zenlee123/routerbase-agent-skills/blob/main/skills/routerbase-api-integration/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

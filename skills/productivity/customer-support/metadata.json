@@ -1,0 +1,39 @@
+{
+  "name": "customer-support",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/customer-support/SKILL.md",
+  "github_branch": "main",
+  "category": "productivity",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "customer-support",
+  "downloaded_at": "2026-07-12T03:16:37.030034Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "productivity",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for productivity: productivity, automation, workflow, task",
+    "score": 4,
+    "runner_up": "communication",
+    "runner_up_score": 3,
+    "signals": [
+      "productivity",
+      "automation",
+      "workflow",
+      "task"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/customer-support/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/customer-support/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Elite AI-powered customer support specialist mastering conversational AI, automated ticketing, sentiment analysis, and omnichannel support experiences."
+}

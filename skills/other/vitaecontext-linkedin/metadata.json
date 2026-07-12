@@ -1,0 +1,37 @@
+{
+  "name": "vitaecontext-linkedin",
+  "repo": "vitaecontext/vitaecontext",
+  "path": "skills/vitaecontext-linkedin/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/vitaecontext/vitaecontext",
+  "dir_name": "vitaecontext-linkedin",
+  "downloaded_at": "2026-07-12T03:18:29.935247Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: productivity=2, workflow=2",
+    "score": 2,
+    "runner_up": "workflow",
+    "runner_up_score": 2,
+    "signals": [
+      "workflow",
+      "task"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "vitaecontext",
+  "source_url": "https://github.com/vitaecontext/vitaecontext/blob/main/skills/vitaecontext-linkedin/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/vitaecontext/vitaecontext/blob/main/skills/vitaecontext-linkedin/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Optimize LinkedIn profile structure and discoverability for headline, about, featured, experience, skills, and AI-readable positioning. Use when the user asks to improve a LinkedIn profile, headline, about section, featured section, experience entry, skills list, creator visibility, or LinkedIn search and feed discoverability."
+}

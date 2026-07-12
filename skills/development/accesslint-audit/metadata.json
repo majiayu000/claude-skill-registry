@@ -1,0 +1,39 @@
+{
+  "name": "accesslint-audit",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/accesslint-audit/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "accesslint-audit",
+  "downloaded_at": "2026-07-12T03:16:33.596773Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "high",
+    "reason": "matched taxonomy keywords for development: dev, code, build, debug",
+    "score": 4,
+    "runner_up": "quality",
+    "runner_up_score": 2,
+    "signals": [
+      "dev",
+      "code",
+      "build",
+      "debug"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/accesslint-audit/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/accesslint-audit/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Find and fix WCAG 2.2 accessibility issues. Two modes \u2014 report (sweep a codebase or page, produce a prioritized written report, no edits) and fix (audit\u2192edit\u2192verify loop on a target). Prefers direct-CDP live-DOM auditing; falls back to a browser-MCP composition or HTML-string audits."
+}

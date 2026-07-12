@@ -1,0 +1,29 @@
+{
+  "name": "routerbase-model-routing",
+  "description": "Configure RouterBase model routing, fallback chains, cost-aware policies, latency controls, and provider failover for AI agent workflows.",
+  "repo": "zenlee123/routerbase-agent-skills",
+  "path": "skills/routerbase-model-routing",
+  "github_branch": "main",
+  "category": "development",
+  "tags": [
+    "routerbase",
+    "routing",
+    "llm",
+    "fallback",
+    "agents"
+  ],
+  "stars": 0,
+  "source": "Community Skills",
+  "dir_name": "routerbase-model-routing",
+  "archive_mode": "directory",
+  "bundled_files": [
+    "references/routerbase-models.md"
+  ],
+  "author": "zenlee123",
+  "source_url": "https://github.com/zenlee123/routerbase-agent-skills/blob/main/skills/routerbase-model-routing/SKILL.md",
+  "license": "MIT-0",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/zenlee123/routerbase-agent-skills/blob/main/skills/routerbase-model-routing/SKILL.md",
+  "permission_note": "Use according to upstream license terms and attribution requirements.",
+  "distribution": "compatible",
+  "license_class": "compatible"
+}

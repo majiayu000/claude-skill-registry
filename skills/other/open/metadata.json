@@ -1,0 +1,37 @@
+{
+  "name": "open",
+  "repo": "davepoon/buildwithclaude",
+  "path": "plugins/aigent-os/skills/open/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/davepoon/buildwithclaude",
+  "dir_name": "open",
+  "downloaded_at": "2026-07-12T03:03:01.166065Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, quality=2",
+    "score": 2,
+    "runner_up": "quality",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "davepoon",
+  "source_url": "https://github.com/davepoon/buildwithclaude/blob/main/plugins/aigent-os/skills/open/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/davepoon/buildwithclaude/blob/main/plugins/aigent-os/skills/open/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Boot the session, load context from the vault, and surface what matters"
+}

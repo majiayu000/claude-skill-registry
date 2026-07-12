@@ -1,0 +1,37 @@
+{
+  "name": "ip-check",
+  "repo": "majiayu000/spellbook",
+  "path": "skills/ip-check/SKILL.md",
+  "github_branch": "main",
+  "category": "bash",
+  "source": "github.com/majiayu000/spellbook",
+  "dir_name": "ip-check",
+  "downloaded_at": "2026-07-12T03:09:24.979548Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "bash",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for bash: bash, script",
+    "score": 2,
+    "runner_up": "ai-llm",
+    "runner_up_score": 1,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "majiayu000",
+  "source_url": "https://github.com/majiayu000/spellbook/blob/main/skills/ip-check/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/majiayu000/spellbook/blob/main/skills/ip-check/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u68c0\u6d4b\u4e00\u4e2a IP \u6216\u4f4f\u5b85/\u673a\u623f\u4ee3\u7406\u8282\u70b9\u7684\u8d28\u91cf\u2014\u2014\u6ce8\u518c\u5e93\u3001\u5730\u7406\u5e93\u4e00\u81f4\u6027\u3001ASN/org\u3001\u98ce\u63a7\u4fe1\u8a89\u3001\u9ed1\u540d\u5355\u3001\u4f4f\u5b85\u771f\u5b9e\u6027\u3001BGP \u5ba3\u544a\u3001\u76ee\u6807\u670d\u52a1(Grok/Claude/ChatGPT)\u89e3\u9501\u4e0e\u5ef6\u8fdf\u4e09\u89d2\u6d4b\u91cf\u3002\u5224\u5b9a\u8be5 IP \u80fd\u5426\u5b89\u5168\u7528\u4e8e AI \u670d\u52a1(\u907f\u514d\u88ab\u5730\u7406\u5e93\u8bef\u5224\u5230\u522b\u56fd\u5bfc\u81f4\u533a\u57df\u9501)\u3002\u5f53\u7528\u6237\u8bf4\"\u67e5\u8fd9\u4e2a IP\"\u3001\"\u8fd9\u4e2a\u8282\u70b9\u5728\u54ea\"\u3001\"\u8fd9\u4e2a\u4ee3\u7406\u80fd\u7528\u5417\"\u3001\"IP \u8d28\u91cf\u68c0\u6d4b\"\u3001\"\u9a8c\u6536\u4f4f\u5b85 IP\"\u3001\"\u4e3a\u4ec0\u4e48\u88ab\u5224\u5b9a\u5728 X \u56fd\"\u3001\"check ip\"\u3001\u7ed9\u51fa socks5 \u4ee3\u7406\u51ed\u8bc1\u95ee\u5f52\u5c5e\u6216\u89e3\u9501\u65f6\u4f7f\u7528\u3002"
+}

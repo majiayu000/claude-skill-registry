@@ -1,0 +1,38 @@
+{
+  "name": "057-design-feature-toggles",
+  "repo": "jabrena/plinth",
+  "path": "skills/057-design-feature-toggles/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/jabrena/plinth",
+  "dir_name": "057-design-feature-toggles",
+  "downloaded_at": "2026-07-12T03:07:12.196340Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: product=3, security=3",
+    "score": 3,
+    "runner_up": "security",
+    "runner_up_score": 3,
+    "signals": [
+      "product",
+      "feature",
+      "metrics"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "jabrena",
+  "source_url": "https://github.com/jabrena/plinth/blob/main/skills/057-design-feature-toggles/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/jabrena/plinth/blob/main/skills/057-design-feature-toggles/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when designing, implementing, reviewing, testing, or cleaning up feature toggles, feature flags, kill switches, runtime configuration gates, canary controls, staged rollouts, experiments, or temporary compatibility switches in Java enterprise systems. This should trigger for requests such as Design a feature toggle strategy; Review this feature flag; Add a kill switch safely; Test toggle on and off paths; Clean up an expired feature toggle; Plan controlled rollout and rollback behavior. Part of Plinth Toolkit"
+}

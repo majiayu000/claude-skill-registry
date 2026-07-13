@@ -1,0 +1,37 @@
+{
+  "name": "wireshark-analysis",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/wireshark-analysis/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "wireshark-analysis",
+  "downloaded_at": "2026-07-13T03:18:43.414482Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: data=2, security=2",
+    "score": 2,
+    "runner_up": "security",
+    "runner_up_score": 2,
+    "signals": [
+      "data",
+      "visualization"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/wireshark-analysis/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/wireshark-analysis/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Execute comprehensive network traffic analysis using Wireshark to capture, filter, and examine network packets for security investigations, performance optimization, and troubleshooting."
+}

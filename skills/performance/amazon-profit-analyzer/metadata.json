@@ -1,0 +1,38 @@
+{
+  "name": "amazon-profit-analyzer",
+  "repo": "nexscope-ai/Amazon-Skills",
+  "path": "amazon-profit-analyzer/SKILL.md",
+  "github_branch": "main",
+  "category": "performance",
+  "source": "github.com/nexscope-ai/Amazon-Skills",
+  "dir_name": "amazon-profit-analyzer",
+  "downloaded_at": "2026-07-13T03:14:28.263271Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "performance",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for performance: performance, optimize, benchmark",
+    "score": 3,
+    "runner_up": "analysis",
+    "runner_up_score": 2,
+    "signals": [
+      "performance",
+      "optimize",
+      "benchmark"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "nexscope-ai",
+  "source_url": "https://github.com/nexscope-ai/Amazon-Skills/blob/main/amazon-profit-analyzer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nexscope-ai/Amazon-Skills/blob/main/amazon-profit-analyzer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Comprehensive Amazon profit analysis and revenue optimization. Revenue waterfall analysis, hidden fee identification, ACoS impact assessment, return cost calculation, and profitability optimization strategies. Use when the user asks about Amazon profit analysis, profitability calculation, fee analysis, margin optimization, or revenue breakdown."
+}

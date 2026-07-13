@@ -1,0 +1,37 @@
+{
+  "name": "amazon-listing-optimization",
+  "repo": "nexscope-ai/Amazon-Skills",
+  "path": "amazon-listing-optimization/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/nexscope-ai/Amazon-Skills",
+  "dir_name": "amazon-listing-optimization",
+  "downloaded_at": "2026-07-13T03:14:37.289807Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: analysis=2, marketing=2",
+    "score": 2,
+    "runner_up": "marketing",
+    "runner_up_score": 2,
+    "signals": [
+      "analysis",
+      "analyze"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "nexscope-ai",
+  "source_url": "https://github.com/nexscope-ai/Amazon-Skills/blob/main/amazon-listing-optimization/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nexscope-ai/Amazon-Skills/blob/main/amazon-listing-optimization/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Amazon listing builder and optimizer for sellers. Two modes: (A) Create \u2014 build keyword-optimized listings from scratch using keyword lists + product characteristics + AI copywriting, (B) Optimize \u2014 audit existing listings, find keyword gaps, score across 8 dimensions, and rewrite with missing keywords. Integrates with amazon-keyword-research for keyword input. Works on 12 Amazon marketplaces. No API key required. Use when: (1) creating a new Amazon listing from keywords, (2) auditing an existing listing for SEO and conversion, (3) checking keyword coverage in title/bullets/description, (4) generating listing copy with target keywords and tone, (5) comparing listings against competitors, (6) preparing a listing for launch or relaunch."
+}

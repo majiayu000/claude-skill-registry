@@ -1,0 +1,37 @@
+{
+  "name": "amazon-sales-estimator",
+  "repo": "nexscope-ai/Amazon-Skills",
+  "path": "amazon-sales-estimator/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/nexscope-ai/Amazon-Skills",
+  "dir_name": "amazon-sales-estimator",
+  "downloaded_at": "2026-07-13T03:14:27.816594Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: analysis=2, performance=2",
+    "score": 2,
+    "runner_up": "performance",
+    "runner_up_score": 2,
+    "signals": [
+      "analysis",
+      "analyze"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "nexscope-ai",
+  "source_url": "https://github.com/nexscope-ai/Amazon-Skills/blob/main/amazon-sales-estimator/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nexscope-ai/Amazon-Skills/blob/main/amazon-sales-estimator/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Amazon sales volume estimator for sellers and product researchers. Estimate monthly sales and revenue from BSR (Best Seller Rank), ASIN, or keyword. Three modes: (A) BSR Calculator \u2014 input BSR + marketplace + price + category to get instant sales estimate, (B) ASIN Lookup \u2014 input ASIN to auto-fetch data and estimate sales, (C) Keyword Market Analysis \u2014 input keyword to analyze total market size and competition. Works on 12 Amazon marketplaces. No API key required. Use when: (1) estimating how many units a product sells per month, (2) sizing a market or niche opportunity, (3) analyzing competitor sales performance, (4) comparing sales across price points, (5) identifying top sellers vs long-tail distribution."
+}

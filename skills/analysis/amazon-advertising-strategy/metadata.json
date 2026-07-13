@@ -1,0 +1,38 @@
+{
+  "name": "amazon-advertising-strategy",
+  "repo": "nexscope-ai/Amazon-Skills",
+  "path": "amazon-advertising-strategy/SKILL.md",
+  "github_branch": "main",
+  "category": "analysis",
+  "source": "github.com/nexscope-ai/Amazon-Skills",
+  "dir_name": "amazon-advertising-strategy",
+  "downloaded_at": "2026-07-13T03:14:36.938484Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "analysis",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for analysis: analysis, analyze, insights",
+    "score": 3,
+    "runner_up": "business",
+    "runner_up_score": 2,
+    "signals": [
+      "analysis",
+      "analyze",
+      "insights"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "nexscope-ai",
+  "source_url": "https://github.com/nexscope-ai/Amazon-Skills/blob/main/amazon-advertising-strategy/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nexscope-ai/Amazon-Skills/blob/main/amazon-advertising-strategy/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Comprehensive Amazon advertising strategy and campaign optimization. Sponsored Products, Sponsored Brands, Sponsored Display campaign management, budget allocation, ACoS optimization, and performance tracking. Use when the user asks about Amazon PPC, advertising strategy, campaign optimization, or Amazon ads management."
+}

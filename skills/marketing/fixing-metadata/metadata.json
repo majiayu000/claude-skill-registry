@@ -1,0 +1,39 @@
+{
+  "name": "fixing-metadata",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/fixing-metadata/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "fixing-metadata",
+  "downloaded_at": "2026-07-13T03:18:38.111558Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, seo, content, social",
+    "score": 4,
+    "runner_up": "development",
+    "runner_up_score": 3,
+    "signals": [
+      "marketing",
+      "seo",
+      "content",
+      "social"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/fixing-metadata/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/fixing-metadata/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Audit and fix HTML metadata including page titles, meta descriptions, canonical URLs, Open Graph tags, Twitter cards, favicons, JSON-LD structured data, and robots directives. Use when adding SEO metadata, fixing social share previews, reviewing Open Graph tags, setting up canonical..."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "offsite-signal-analyzer",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "seo-geo/evaluate/offsite-signal-analyzer/SKILL.md",
+  "github_branch": "main",
+  "category": "data",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "offsite-signal-analyzer-aaron-he-zhu-aaron-marketing-skil",
+  "downloaded_at": "2026-07-13T03:00:07.345787Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "data",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for data: data, analytics, database",
+    "score": 3,
+    "runner_up": "development",
+    "runner_up_score": 2,
+    "signals": [
+      "data",
+      "analytics",
+      "database"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/seo-geo/evaluate/offsite-signal-analyzer/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/seo-geo/evaluate/offsite-signal-analyzer/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"analyze backlinks\", \"analyze my off-site signals\", or \"track AI traffic / ChatGPT / Perplexity referrals\"; profiles referring domains, anchor-text mix, toxic links, and disavow candidates (backlinks mode) or isolates AI-assistant referral sessions in GA4/GSC/logs and reports their trend, landing pages, and AI-vs-organic conversion (ai-referrals mode). Not for internal links \u2014 use site-structure-optimizer; not for keyword positions \u2014 use rank-tracker; not for multi-metric stakeholder reports \u2014 use performance-monitor. \u5916\u94fe\u5206\u6790/\u53cd\u5411\u94fe\u63a5/AI\u6d41\u91cf/AI\u5f15\u8350/ChatGPT\u6d41\u91cf/AI\u8f6c\u5316"
+}

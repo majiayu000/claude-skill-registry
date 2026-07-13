@@ -1,0 +1,37 @@
+{
+  "name": "amazon-keyword-tracker",
+  "repo": "nexscope-ai/Amazon-Skills",
+  "path": "amazon-keyword-tracker/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/nexscope-ai/Amazon-Skills",
+  "dir_name": "amazon-keyword-tracker",
+  "downloaded_at": "2026-07-13T03:14:28.481320Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: analysis=2, business=2",
+    "score": 2,
+    "runner_up": "business",
+    "runner_up_score": 2,
+    "signals": [
+      "analysis",
+      "analyze"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "nexscope-ai",
+  "source_url": "https://github.com/nexscope-ai/Amazon-Skills/blob/main/amazon-keyword-tracker/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/nexscope-ai/Amazon-Skills/blob/main/amazon-keyword-tracker/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Amazon keyword position monitoring and SERP analysis. Real-time position tracking, competitor movement alerts, search result changes, and keyword performance optimization. Use when the user asks about keyword monitoring, SERP tracking, position alerts, or search performance analysis."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "integrity-forensics",
+  "repo": "wanshuiyin/Auto-claude-code-research-in-sleep",
+  "path": "skills/integrity-forensics/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
+  "dir_name": "integrity-forensics",
+  "downloaded_at": "2026-07-13T03:20:40.854973Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: development=2, quality=2",
+    "score": 2,
+    "runner_up": "quality",
+    "runner_up_score": 2,
+    "signals": [
+      "dev",
+      "code"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "wanshuiyin",
+  "source_url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/main/skills/integrity-forensics/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/main/skills/integrity-forensics/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Run the Anti-Autoresearch integrity-forensics sweep (span-anchored evidence ledger \u2192 GPT auditors propose findings \u2192 deterministic rules-only adjudicator) against a paper via a SHA-pinned thin launcher \u2014 then convert the verdict into a typed policy gate (BLOCK/WARN/NO_NEW_BLOCKER) and an append-only obligations ledger. Use when user says \"integrity forensics\", \"forensic audit this paper\", \"\u6295\u7a3f\u524d\u81ea\u67e5\u8bda\u4fe1\", \"\u5ba1\u8fd9\u7bc7\u8bba\u6587\u7684\u8bda\u4fe1\", or says \"anti-autoresearch\" when the upstream repo's own skills are not installed. Also invoked by /paper-writing (submission self-forensics, default ON), /peer-review (forensic appendix), /resubmit-pipeline."
+}

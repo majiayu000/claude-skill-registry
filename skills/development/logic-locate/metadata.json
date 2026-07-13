@@ -1,0 +1,37 @@
+{
+  "name": "logic-locate",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/logic-locate/SKILL.md",
+  "github_branch": "main",
+  "category": "development",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "logic-locate",
+  "downloaded_at": "2026-07-13T03:18:40.401765Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "development",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for development: code, build",
+    "score": 2,
+    "runner_up": "productivity",
+    "runner_up_score": 1,
+    "signals": [
+      "code",
+      "build"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/logic-locate/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/logic-locate/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Locate the root cause of a CONFIRMED failure via backward-then-forward semi-formal tracing. Trigger when the user provides a stack trace, failing assertion, error message, or specific wrong-value observation \u2014 \"find the bug\", \"this test is failing\", \"track down this crash\", \"why is..."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "scientific-writing",
+  "repo": "sickn33/agentic-awesome-skills",
+  "path": "skills/scientific-writing/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/sickn33/agentic-awesome-skills",
+  "dir_name": "scientific-writing",
+  "downloaded_at": "2026-07-13T03:18:43.822252Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "ambiguous taxonomy keyword scores: bash=2, data=2",
+    "score": 2,
+    "runner_up": "data",
+    "runner_up_score": 2,
+    "signals": [
+      "bash",
+      "script"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "sickn33",
+  "source_url": "https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/scientific-writing/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/sickn33/agentic-awesome-skills/blob/main/skills/scientific-writing/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "This is the core skill for the deep research and writing tool\u2014combining AI-driven deep research with well-formatted written outputs. Every document produced is backed by comprehensive literature search and verified citations through the research-lookup skill."
+}

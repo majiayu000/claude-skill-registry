@@ -1,0 +1,38 @@
+{
+  "name": "entity-registry",
+  "repo": "aaron-he-zhu/aaron-marketing-skills",
+  "path": "protocol/entity-registry/SKILL.md",
+  "github_branch": "main",
+  "category": "marketing",
+  "source": "github.com/aaron-he-zhu/aaron-marketing-skills",
+  "dir_name": "entity-registry",
+  "downloaded_at": "2026-07-13T02:59:59.566352Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "marketing",
+    "status": "classified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "medium",
+    "reason": "matched taxonomy keywords for marketing: marketing, content, brand",
+    "score": 3,
+    "runner_up": "bash",
+    "runner_up_score": 2,
+    "signals": [
+      "marketing",
+      "content",
+      "brand"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "aaron-he-zhu",
+  "source_url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/protocol/entity-registry/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/main/protocol/entity-registry/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "Use when the user asks to \"optimize entity presence\", reconcile an entity identity, or update canonical Knowledge Graph facts; audits and maintains machine-facing identity, sameAs, schema, disambiguation, and AI-recognition evidence through the entities registry. Not for page-level AI-citation readiness - use geo-content-optimizer; not for human-facing brand canon - use narrative-registry. \u5b9e\u4f53\u6ce8\u518c/\u77e5\u8bc6\u56fe\u8c31"
+}

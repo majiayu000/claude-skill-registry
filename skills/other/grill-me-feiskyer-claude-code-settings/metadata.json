@@ -1,0 +1,36 @@
+{
+  "name": "grill-me",
+  "repo": "feiskyer/claude-code-settings",
+  "path": "skills/grill-me/SKILL.md",
+  "github_branch": "main",
+  "category": "other",
+  "source": "github.com/feiskyer/claude-code-settings",
+  "dir_name": "grill-me-feiskyer-claude-code-settings",
+  "downloaded_at": "2026-07-13T03:06:18.868307Z",
+  "classification": {
+    "schema_version": 1,
+    "category": "other",
+    "status": "unclassified",
+    "method": "taxonomy_keyword_v1",
+    "confidence": "low",
+    "reason": "top category ai-ml scored 1, below minimum score 2",
+    "score": 1,
+    "runner_up": "design",
+    "runner_up_score": 1,
+    "signals": [
+      "model"
+    ],
+    "semantic_sources": {
+      "name": "frontmatter",
+      "description": "frontmatter"
+    }
+  },
+  "author": "feiskyer",
+  "source_url": "https://github.com/feiskyer/claude-code-settings/blob/main/skills/grill-me/SKILL.md",
+  "license": "NOASSERTION",
+  "copyright": "Copyright belongs to upstream author(s); see https://github.com/feiskyer/claude-code-settings/blob/main/skills/grill-me/SKILL.md",
+  "permission_note": "Restricted or unknown license. Do not treat as MIT; verify upstream permission before reuse.",
+  "distribution": "restricted",
+  "license_class": "restricted",
+  "description": "\u9488\u5bf9\u65b9\u6848\u6216\u8bbe\u8ba1\u7684\u9ad8\u5f3a\u5ea6\u8ffd\u95ee\u5f0f\u9762\u8bd5\uff08adversarial design review / grill session\uff09\uff0c\u66b4\u9732\u5047\u8bbe\u6f0f\u6d1e\u4e0e\u7f3a\u5931\u7ea6\u675f\uff0c\u8fc7\u7a0b\u4e2d\u540c\u6b65\u7ef4\u62a4\u9886\u57df\u6a21\u578b\uff08\u672f\u8bed\u8868\u548c ADR\uff09\u3002\u624b\u52a8\u8c03\u7528 /grill-me\u3002"
+}

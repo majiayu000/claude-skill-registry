@@ -144,6 +144,12 @@ jobs:
           }
           EOF
 
+      - name: Validate final artifact API contract
+        run: |
+          python3 "${{ steps.srcpaths.outputs.core_dir }}/scripts/check_artifact_api.py" \
+            --root "$GITHUB_WORKSPACE" \
+            --docs-dir "$GITHUB_WORKSPACE/docs"
+
       - name: Validate canary artifact and write publish status
         env:
           CORE_REPO: ${{ steps.refs.outputs.core_repo }}

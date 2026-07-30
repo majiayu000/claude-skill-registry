@@ -329,7 +329,7 @@ Design documents follow this structure:
 - Compute: $0.0000166667 per GB-second
 
 **DynamoDB:**
-- On-demand: $1.25 per million write requests, $0.25 per million reads
+- On-demand: $0.625 per million write requests, $0.125 per million reads
 - Provisioned: $0.00065/WCU/hour, $0.00013/RCU/hour
 
 **API Gateway:**
